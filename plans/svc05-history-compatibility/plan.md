@@ -38,3 +38,5 @@
 2026-10-06 19:47 UTC：06单次center-only恢复完成，Lead独立比对原数据/身份/检查，窗口关闭。05新版本发布仍open。
 
 2026-10-06 20:04 UTC：R01两retained报告独审通过，05发布前置兼容缺口解除；[固定分阶段操作方案](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)已备，仍只准备/未执行。新窗口由Lead协调，后台目标af51、新页面d629、旧pointer/三产物保留明确；不新造部署模块。
+
+2026-10-06 20:16 UTC：05推进到可审执行输入：复用原SVC05观察方法和既有host，仅适配目标af51及维护变化。新源码未运行，需独审后由Lead固定原checkout并分配一次窗口；不新增普通GO确认门槛。

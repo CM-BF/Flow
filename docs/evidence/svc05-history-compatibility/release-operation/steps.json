@@ -1,0 +1,320 @@
+{
+  "kind": "fixed-procedural-command-input-not-a-permit",
+  "target": "af51c621696230fbced12227670f014ca73bd8a1",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "oneAtATime": true,
+  "automaticLoop": false,
+  "maintenanceEnvironment": "exact baseServiceEnvironment(center) from bound environment.mjs; direct maintenance-host is CLI child, no extra wrapper left alive on timeout",
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+  "recordPolicy": "exclusive reservation and each step intent before invocation; existing supervise(argv,118,2), then exclusive fsync result; no next command on unknown/nonzero or missing durable result",
+  "steps": [
+    {
+      "id": "01-before",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/01-before.json"
+      ],
+      "requiresSuccessfulReceipt": null,
+      "output": "01-before-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "02-preflight",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/01-before.json",
+        "preflight",
+        "{RUN}/02-preflight.json"
+      ],
+      "requiresSuccessfulReceipt": "01-before",
+      "output": "02-preflight-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "03-import-retained-0",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-0"
+      ],
+      "requiresSuccessfulReceipt": "02-preflight",
+      "output": "03-import-retained-0-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "04-import-retained-1",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/runs/retained-af51-20261006-1952/retained-1"
+      ],
+      "requiresSuccessfulReceipt": "03-import-retained-0",
+      "output": "04-import-retained-1-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "05-import-new-d629",
+      "kind": "report-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-preparation/candidate-compatibility"
+      ],
+      "requiresSuccessfulReceipt": "04-import-retained-1",
+      "output": "05-import-new-d629-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "06-artifact",
+      "kind": "artifact-copy",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+        "--execute-reviewed-d629"
+      ],
+      "requiresSuccessfulReceipt": "05-import-new-d629",
+      "output": "06-artifact-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "07-materials",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/07-materials.json"
+      ],
+      "requiresSuccessfulReceipt": "06-artifact",
+      "output": "07-materials-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "08-material-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/07-materials.json",
+        "materials",
+        "{RUN}/08-material-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "07-materials",
+      "output": "08-material-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "09-drain",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "bootstrap",
+        "/Users/citrine/.flow-personal"
+      ],
+      "requiresSuccessfulReceipt": "08-material-gate",
+      "output": "09-drain-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "10-drained",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/10-drained.json"
+      ],
+      "requiresSuccessfulReceipt": "09-drain",
+      "output": "10-drained-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "11-stop-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/10-drained.json",
+        "drained",
+        "{RUN}/11-stop-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "10-drained",
+      "output": "11-stop-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "12-refresh",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "refresh",
+        "/Users/citrine/.flow-personal",
+        "af51c621696230fbced12227670f014ca73bd8a1"
+      ],
+      "requiresSuccessfulReceipt": "11-stop-gate",
+      "output": "12-refresh-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "13-paused",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/13-paused.json"
+      ],
+      "requiresSuccessfulReceipt": "12-refresh",
+      "output": "13-paused-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "14-resume-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/13-paused.json",
+        "paused",
+        "{RUN}/14-resume-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "13-paused",
+      "output": "14-resume-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "15-resume",
+      "kind": "maintenance",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "resume",
+        "/Users/citrine/.flow-personal"
+      ],
+      "requiresSuccessfulReceipt": "14-resume-gate",
+      "output": "15-resume-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "16-resumed",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/16-resumed.json"
+      ],
+      "requiresSuccessfulReceipt": "15-resume",
+      "output": "16-resumed-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "17-publish-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/16-resumed.json",
+        "resumed",
+        "{RUN}/17-publish-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "16-resumed",
+      "output": "17-publish-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "18-publish",
+      "kind": "pointer-publish",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "publish",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--request",
+        "{RUN}/web-publish-request.json"
+      ],
+      "requiresSuccessfulReceipt": "17-publish-gate",
+      "output": "18-publish-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "19-published",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/observe.mjs",
+        "{RUN}/19-published.json"
+      ],
+      "requiresSuccessfulReceipt": "18-publish",
+      "output": "19-published-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    },
+    {
+      "id": "20-final-gate",
+      "kind": "readonly",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/preservation.mjs",
+        "{RUN}/01-before.json",
+        "{RUN}/19-published.json",
+        "published",
+        "{RUN}/20-final-gate.json"
+      ],
+      "requiresSuccessfulReceipt": "19-published",
+      "output": "20-final-gate-command.json",
+      "workSeconds": 118,
+      "exitSeconds": 2
+    }
+  ]
+}

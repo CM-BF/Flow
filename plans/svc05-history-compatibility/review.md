@@ -77,3 +77,7 @@ main `888cfd3b1c414b32298661f1fdf5f33bddbe956c` 的21绑定内容逐字相同；
 Execution Lead独立 APPROVED_SAME_VERSION_CENTER_RECOVERY target3271dcb449ce426d31136bd3ed03d2804fa4b1de，20原operation绑定/64表/8检查已核，0新probe。回执见[operation-independent-review](../../docs/evidence/svc05-history-compatibility/center-recovery/operation-independent-review.json)；main6223c7493a3b6f392813a5d9d82c24d87312ad26的41本片文件逐字相同，非祖先接收如实记录。
 
 R01 f74结果由Lead独立批准，两retained的新af51报告已齐，不扩大成个人发布。当前[release-operation](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)只读小提案待独立审查：现有host工具/单artifact搬运/三报告精确绑定、先后台后Web、允许变更与未知保持；0新增运行。原各source/raw/manifest均不改。
+
+## 2026-10-06 20:16 UTC 可执行观察增量待审
+
+Lead对033dd方案/4文档及41input独立通读核验，方向批准。为实际执行，仅新增observe.mjs/preservation.mjs与固定steps/request输入；原SVC05摘要、H bounded/durable及外层supervise方法直接沿用。source review待完成；仅Node --check，两脚本0import/PG/服务行为。原center-recovery恢复源码、raw和期限P2历史不改；af51更新时raw全保留与四维护字段/queue扫描时间投影、旧audit保留、新操作审计精确检查均需本delta审查。

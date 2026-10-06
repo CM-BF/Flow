@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 20:04 UTC；新发布只准备，原恢复已独审/main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 20:16 UTC；个人发布执行输入已备，未运行 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/server/src/context-transparency/store.ts, apps/server/src/context-transparency/attachment-history.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原中心和网页已恢复；两份旧页面与新后台的兼容报告也已独审通过，发布所需组合齐备。 |
-| 下一可用交付 | 审查固定方案后，先受管更新后台，再单独切换新网页；保留原会话和旧页面产物。 |
+| 当前产出 | 后台更新和新网页切换的兼容证据已齐；逐步检查与数据保留脚本已准备，等待独立核对和源码固定窗口。 |
+| 下一可用交付 | 按已授权方向先更新后台、核对保留数据并恢复接收，再单独切换网页；当前未操作个人服务。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；中心恢复独立批准已归档；R01结果f74限定批准；本次后台→Web操作方案待Lead审查 |
+| Review | [review.md](review.md)；033dd固定方案获Lead方向批准；新两脚本/逐步输入待独审，0个人运行 |
 | Claim | cd2d2e57-f633-444b-9797-f83a45624ae2 v2，仅own plan/evidence；两源码已交回停写 |
 | 架构影响 | 产品历史投影无新边界；新增固定目标操作脚本复用host锁/marker，file-only seam与Mac排他rename，非通用发布平台；仅同版本Web恢复已执行，d629搬运及af51新发布未启用。 |
 
@@ -73,3 +73,5 @@
 2026-10-06 19:47 UTC：Lead已独立比对恢复原始before/after/result，64表与8组检查成立；19:46:35窗口关闭，原checkout回clean main22a。原操作raw/manifest不改，无新增探针。实际center仍362、runner15、Web原caa1/v2；本次记录待main接收，新版发布TODO05保持open。
 
 2026-10-06 20:04 UTC：两retained→af51报告已由R01真实App和独审补齐，旧缺口仅为历史；新后台/网页尚未上线。[下一次固定操作方案](../../docs/evidence/svc05-history-compatibility/release-operation/README.md)区分停服前材料准备、后台drain/hold/refresh/resume、独立Web pointer切换。41输入binding，0新个人探针/PG/browser/provider；原恢复41文件main内容相同，原raw不改。
+
+2026-10-06 20:16 UTC：按Lead已准方向完成[可执行小增量](../../docs/evidence/svc05-history-compatibility/release-operation/executable-preparation.md)。仅2脚本语法解析0；未import/个人文件读取/PG/操作。旧中心恢复与033dd方案批准不自动扩大到本增量；fixed source/manifest随后绑定。raw/protected摘要同RR，新增审计与maintenance字段单列，不增加新的维护状态机。

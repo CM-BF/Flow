@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-06T20:15:22.089159+00:00",
+  "checks": [
+    {
+      "command": [
+        "node24",
+        "--check",
+        "observe.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedMs": 40
+    },
+    {
+      "command": [
+        "node24",
+        "--check",
+        "preservation.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedMs": 32
+    }
+  ],
+  "scope": "parse only; 0 imports/tests/PG/personal reads/provider"
+}
