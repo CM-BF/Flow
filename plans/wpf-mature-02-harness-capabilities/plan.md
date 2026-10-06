@@ -68,3 +68,7 @@ WPF-MATURE-02-03唯一新诊断batch已在Mika窗口中执行并封存：控制�
 ## WPF-MATURE-02-03 最小C文件描述符对照
 
 新的独立授权上限为一次必要编译调用及其如实列明子命令、最多三个合成目标、同一60秒含清理/末次持久化、2MiB含binary/object等已量输出。旧窗口/失败证据不动，不重试。当前只交[C源码与一页合同](../../docs/evidence/wpf-mature-02/fd-canary/contract.md)，先控制socket、同profile socket、同profile普通file，只测自身fstat/fcntl；profile仅追加自有binary literal，无真实Node/Codex/provider/auth/网络探测。固定source和最薄host组合独审后由Mika安排串行窗口。当前C/host组合已固定cf69dddff65d31a821a6c13b984ea0ef6d5fa648，20 distinct零目标检查与Node24惰性import通过；[v2执行合同](../../docs/evidence/wpf-mature-02/fd-canary/execution-plan-v2.md)取代旧临时输出口径。保持0编译/0目标，Mika组合独审与明确窗口之前不运行；这不满足实际catalog或隔离验收。
+
+## WPF-MATURE-02-03 最小logging/格式候选
+
+旧窗口6d faithful FAIL已审且已消费。GO明确授权在同一scope做下一候选源码：编译器有限原stdout/stderr先持久化、失败阶段/检查固定枚举；LLVM固定printArg有界解析，不将源码格式问题当旧raw归因。固定v2 `851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845`完成26/26受影响检查、9未选，0新增compile/target。原C/profile/进程权限不扩，旧raw/manifest/accounting按旧target保持；新input/manifest独立目录。下一步仅源独审，实际运行须Mika以整项目阻塞新事实另申请预算，当前授权0。

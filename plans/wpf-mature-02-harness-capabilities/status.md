@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:10:09 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:19:12 UTC / 2026-10-06 10:44:29 UTC（main21e0目录接收逐blob已核；本树仍基于受控main41315b） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
-| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / cf69dddff65d31a821a6c13b984ea0ef6d5fa648（C/host当前组合；metadata HEAD由Git核） |
-| 工作树dirty状态 | cf69dddff65d31a821a6c13b984ea0ef6d5fa648 clean时核；运行输入clean HEAD为cdb900d95d26f5a3ee8b35a43805e4212789a683；本次仅固定运行证据/metadata，提交后由Git核clean |
+| 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；受控main41315b / 851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845（logging/lexer v2候选；metadata HEAD由Git核） |
+| 工作树dirty状态 | 851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845 clean时核；当前仅status/review/plan/interface metadata，提交后由Git核clean。旧执行HEAD仍cdb900d9 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
+| 检查状态 | C_FD_V2_LOCAL_PASS（26/26受影响项，9未选；Node24惰性import/3语法通过，新增实际运行0）；C_FD_WINDOW_STOPPED（1编译exit0/0目标，cleanup=true，measurement=false/accounting=unknown，CLI1）；C_HOST_LOCAL_PASS（20 distinct零目标检查，分18+1+1，Node24惰性import/5语法通过）；CATALOG_LOCAL_PASS（33 distinct/strict0，分次证据）；DIAGNOSTIC_COMPLETE / CANARY_FAILED：一次batch2子进程，控制40bytes精确；canary SIGABRT/parent stderr0bytes；282.794417ms、清理完成。原工程检查未重跑 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源/薄consumer仍待Lead集成；不代表个人服务部署 |
-| 实现目标 | cf69dddff65d31a821a6c13b984ea0ef6d5fa648 |
-| 实现范围 | experiments/codex-app-server-conformance/fd-canary, docs/evidence/wpf-mature-02/fd-canary |
+| 实现目标 | 851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845 |
+| 实现范围 | experiments/codex-app-server-conformance/fd-canary/host.mjs, experiments/codex-app-server-conformance/fd-canary/report.mjs, experiments/codex-app-server-conformance/fd-canary/execute-reviewed.mjs, experiments/codex-app-server-conformance/fd-canary/host.test.ts, docs/evidence/wpf-mature-02/fd-canary-v2 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；文件描述符诊断唯一窗口已结束：编译正常退出，但测量前核验未知，三个目标未启动；自有资源已清理。 |
-| 下一可用交付 | 审查并接收本次失败证据；既有已审R06与薄入口可独立集成。实际诊断需后继预算与可判别方案。 |
+| 当前产出 | 原生配置目录已集成main，旧目录保持兼容；旧诊断失败证据已获独立接收；新的有界编译日志和失败分类候选通过局部检查，尚未实际运行。 |
+| 下一可用交付 | 独立审查新的日志与解析候选，再由lead申请一次新诊断预算；既有已审R06与薄入口仍可独立集成。 |
 | 当前阻塞 | ACTIVE: C诊断窗口已消费，编译后核验未知且三个目标未运行；实际Codex目录验证仍停止，后继实际诊断需要新预算/方案。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：当前组合cf69dddf APPROVED（Mika，2026-10-06 11:07:30 UTC，0P1/P2）；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
+| Review | [review.md](review.md)：当前v2候选851fd8c7 NOT_STARTED；旧结果6d1d9758 faithful FAIL APPROVED（Mika，11:11:14 UTC）；旧组合cf69dddf APPROVED；C三源72203208静态APPROVED；目录c9c6e891 APPROVED；test-only清理delta a761941f APPROVED；既有R06/薄consumer已审，诊断结果仅faithful FAIL evidence APPROVED |
 | 已审语义片段 | 0d0524c3439363d1fe60aad63f62817ba51fa2a5，历史27/27且独审APPROVED；旧manifest/raw不变，final算法副本现由薄入口替代 |
 | 架构影响 | 目录Module新增versioned reader/严格DTO，既有挂载与存储不变；R06历史private sink已审，process owner不变。最终target架构更新待Mika/ExecutionLead集成。 |
 
@@ -111,3 +111,9 @@ P3 delta固定a761941fce5b2b6dd12d8c974c6d2c7e51894628已由status_read/gpt-6-as
 ## 当前唯一C fd窗口结果
 
 [最终报告](../../docs/evidence/wpf-mature-02/fd-canary/run-report.md)绑定mika-c-fd-20261006-110819和执行HEADcdb900d9：开始11:08:42.729Z，1compile正常exit0/groupGone/close，0target，三项NOT_RUN。编译后产物/verbose核验未知，measurement=false/accounting=false；cleanup=true、retainedRoots=[]，结果已持久化，CLI1/1054.934625ms。可见268927B不等于完整计量；CLI和实际尾部归档另有清单，整体withinBudget不声明成功。实际诊断STOPPED，旧阶段的NOT_RUN/窗口待命是历史，不恢复预算，不读取raw或crash。源码/driver-input/host-manifest保持已审固定值；结果待Mika只读接收，不重跑。
+
+## logging/lexer v2候选：0新增实际运行
+
+固定 `851fd8c7a48b6ebec64cbf80ccda4eb6bcfaf845`，[候选README](../../docs/evidence/wpf-mature-02/fd-canary-v2/README.md)、[manifest](../../docs/evidence/wpf-mature-02/fd-canary-v2/manifest.json) 与 [input](../../docs/evidence/wpf-mature-02/fd-canary-v2/driver-input.json)。只为固定C编译保存≤64KiB/stream原始stdout/stderr到0600/wx文件，写前重复计入2MiB预算；先留证再health/parse，失败阶段/检查有限枚举，不透传原文。按固定LLVM18.1.8 printArg实现有界数据lexer，支持quoted exe及bare/quoted args，保留固定exe、owned输出、唯一-o与unknown拒绝；不据此推断旧失败原因。
+
+最终26/26直接受影响检查通过、9项未选，Node24惰性import与3语法通过。源码checkpoint391f67b4；C/profile/command/R06未改。旧fd-canary38份证据保持6d快照，旧archive对当时metadata的hash不伪称当前匹配。[旧结果正式收据](../../docs/evidence/wpf-mature-02/fd-canary-v2/previous-result-review.md)准确保存Mika faithful FAIL批准。当前新编译/目标均0，新运行授权NONE，候选仅交独审。

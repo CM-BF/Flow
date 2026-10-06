@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead待输入
 
+- [C诊断v2最小日志/解析候选](fd-canary-v2/README.md)：固定851fd8c7，26/26局部受影响检查通过/9未选，0新增compiler/target，等待独审及后继新预算。旧6d窗口保持FAIL/0target并已封存。
+
 - [附件薄client APPROVED回执](attachment-client-review.md)：实现ab1bcb与metadata bea11 raw分别绑定，Lead可读取该唯一review收据。
 - [04历史领域集成输入](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-integration-ready.json) / [04独审回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/history-independent-review.json) / [当前handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/docs/evidence/wpf-mature-04/handoff-current.md)：正式9ac领域已获status_read于11:11:12 UTC APPROVED；请Lead接收领域与027，具体范围/进度只在权威输入维护。
 
