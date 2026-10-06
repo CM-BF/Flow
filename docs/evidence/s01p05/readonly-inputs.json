@@ -1,0 +1,58 @@
+{
+  "base": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "observedAt": "2026-10-06 12:40:42 UTC",
+  "files": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/usage.ts",
+      "bytes": 5083,
+      "sha256": "ccecbc12914882ef9b74a9a12ec4b0718b6b9f5c908b6fccc7b05322273e6dac"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4095,
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20"
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    },
+    {
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    }
+  ],
+  "productionWrites": 0,
+  "pgHttpTestCalls": 0
+}
