@@ -80,7 +80,7 @@ it('preserves old Bearer HTTP and SSE without cookies or CSRF, and refuses mixed
     const client = new FlowClient({ baseUrl: host.baseUrl, token: 'legacy-owner' });
     await client.cancel('old', 'original-key'); for await (const _page of client.watch('old')) { /* consume real stream */ }
     expect(seen).toEqual([{ bearer: 'Bearer legacy-owner', csrf: undefined }, { bearer: 'Bearer legacy-owner', csrf: undefined }]);
-    expect(inits.every(init => init.credentials === undefined)).toBe(true);
+    expect(inits.every(init => init.credentials === 'omit')).toBe(true);
     // @ts-expect-error Runtime callers must not silently downgrade an explicit Bearer to cookies.
     expect(() => new FlowClient({ baseUrl: host.baseUrl, token: 'invalid-owner', browserSession: { csrfToken: () => undefined } })).toThrow();
     await expect(client.connectBrowserSession('token')).rejects.toThrow();

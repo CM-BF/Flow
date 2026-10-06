@@ -589,7 +589,7 @@ export class FlowClient {
       headers.set(BROWSER_SESSION_CSRF_HEADER, csrf);
     }
     if (init.body) headers.set('Content-Type', 'application/json');
-    return { ...init, headers, ...(this.csrfToken ? { credentials: 'include' as const } : {}) };
+    return { ...init, headers, credentials: this.csrfToken ? 'include' : 'omit' };
   }
 
   private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
