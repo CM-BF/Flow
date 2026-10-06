@@ -472,3 +472,65 @@ describe("trusted PluginHost lifecycle and authority", () => {
     expect(() => host.register(definition())).toThrow("disposed");
   });
 });
+
+it("isolates synchronous and asynchronous subscription failures while continuing fan-out", async () => {
+  const { host, navigation } = setup();
+  let updates = 0;
+  host.register(
+    definition((context) => {
+      implement(context);
+      context.navigation.subscribe(() => {
+        throw Error("sync subscriber");
+      });
+      context.navigation.subscribe(async () => {
+        await Promise.resolve();
+        throw Error("async subscriber");
+      });
+    }),
+  );
+  host.register({
+    manifest: {
+      id: "test.other",
+      version: "1.0.0",
+      hostApi: 1,
+      capabilities: [],
+      activationEvents: [],
+      commands: [],
+      contributions: [],
+    },
+    load: async () => ({
+      activate: (context) => {
+        context.navigation.subscribe(() => {
+          updates++;
+        });
+      },
+    }),
+  });
+  await host.activate("test.plugin");
+  await host.activate("test.other");
+  expect(() =>
+    navigation.set({ ...navigation.getSnapshot(), activeTaskId: "B" }),
+  ).not.toThrow();
+  await new Promise((resolve) => setTimeout(resolve, 0));
+  expect(updates).toBe(1);
+  expect(
+    host.getDiagnostics().filter((item) => item.phase === "subscription"),
+  ).toEqual([
+    {
+      pluginId: "test.plugin",
+      phase: "subscription",
+      message: "sync subscriber",
+    },
+    {
+      pluginId: "test.plugin",
+      phase: "subscription",
+      message: "async subscriber",
+    },
+  ]);
+  await host.deactivate("test.plugin");
+  expect(navigation.size).toBe(1);
+  navigation.set({ ...navigation.getSnapshot(), activeTaskId: "C" });
+  expect(updates).toBe(2);
+  await host.dispose();
+  expect(navigation.size).toBe(0);
+});

@@ -266,8 +266,16 @@ export class PluginHost {
       subscribe: (listener: () => void) => {
         this.current(entry, session);
         const unsubscribe = source.subscribe(() => {
-          if (entry.session === session && !session.controller.signal.aborted)
-            listener();
+          if (entry.session !== session || session.controller.signal.aborted)
+            return;
+          try {
+            // A plugin subscriber must not interrupt the App store's fan-out.
+            Promise.resolve(listener()).catch((error) =>
+              this.record(entry, "subscription", errorText(error)),
+            );
+          } catch (error) {
+            this.record(entry, "subscription", errorText(error));
+          }
         });
         const disposable = this.own(entry, session, { dispose: unsubscribe });
         return () => disposable.dispose();

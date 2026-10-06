@@ -211,7 +211,13 @@ export interface ContributionView {
 }
 export interface PluginDiagnostic {
   readonly pluginId: string;
-  readonly phase: "activate" | "command" | "dispose" | "render" | "register";
+  readonly phase:
+    | "activate"
+    | "command"
+    | "dispose"
+    | "render"
+    | "register"
+    | "subscription";
   readonly message: string;
 }
 export type WorkspaceDisplay = Readonly<
