@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 15:29:28 UTC |
+| 最近更新时间 | 2026-10-06 15:34:33 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility |
 | Branch | codex/web-current-preview-compatibility |
-| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / e212c2de2289a3d3bc3bc173b75050fb4d214270（本次运行前clean已核） |
-| 工作树dirty状态 | 运行前HEAD e212c2de为clean；本段仅新增原始运行证据及计划元数据，提交后clean另核 |
+| 工作基线 / HEAD | 362af3bac77541e5a60979326bcf4d4b8c947915 / dbaa88fa7a5adf1da077be7739842b6e42664c26（后继源码固定） |
+| 工作树dirty状态 | 负兼容676f双端clean已核；新源码dbaa已提交，本段仅计划/证据待提交，最终clean另核 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | FAILED 432b09ae1b552a68cc4720b369e42ed80bc942c9（实际A两项均失败）；B/Chrome NOT_RUN；原定向strict noEmit PASSED |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；432b源码条件批准，实际A失败；B未运行 |
-| 实现目标 | 432b09ae1b552a68cc4720b369e42ed80bc942c9 |
+| 本片段交付阶段 | review |
+| 检查状态 | NOT_RUN dbaa88fa7a5adf1da077be7739842b6e42664c26（新后端重绑）；旧432b实际A两项FAILED，B未运行 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；新后端重绑待独审；旧A失败/新组合未运行 |
+| 实现目标 | dbaa88fa7a5adf1da077be7739842b6e42664c26 |
 | 实现范围 | apps/web/test/web-current-preview.fixture.ts, apps/web/test/web-current-preview.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实兼容检查已复现附件历史缺陷，运行资源已清理 |
+| 当前产出 | 附件历史问题已定位，修复版本的验证入口已准备 |
 | 下一可用交付 | 后台最小修复后继续未完成的真实前端验证 |
-| 当前阻塞 | ACTIVE: 固定后台的附件历史记录不兼容；需原后台owner最小修复与新的明确准入，不能发布 |
+| 当前阻塞 | ACTIVE: 原后台附件历史检查失败；等待固定修复版本、来源审查和新的运行准入 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，完整兼容审查NOT_STARTED；432b源码条件APPROVED |
+| Review | [review.md](review.md)，新重绑源码及完整兼容审查NOT_STARTED；旧432b源码条件APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -68,3 +68,7 @@ manager于15:07:01Z一次实测free1,058,885,632B，低于启动1,107,296,256B�
 [结果与原样hash](../../docs/evidence/wpf-release03/history-result-152729.json)、[history raw](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/history.json)、[wire raw](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/wire.json)、[cleanup](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/cleanup.json)、[budget](../../docs/evidence/wpf-release03/runs/history-20261006-152729-727a99/budget.json)。专库marker确认后删除，唯一worker PID381 exit0，cleanup/errors=[]，supervisor exit1来自业务断言。B/Chrome NOT_RUN，compatibilityId=null，未生成/导入SVC全绿报告，0provider。窗口已交回；脚本及固定产物不改，不重试。仅原后台owner处理最小修复，后续必须固定新输入/准入。全机minimumFree1,103,908,864B与freeAtEnd1,102,282,752B只作共享观察，不归因本次物理写入。
 
 root已只读独立核10份raw共80,470B，见[原样结果审计](../../docs/evidence/wpf-release03/history-root-review-1527.json)；Lead已接收兼容失败与清理事实。此不构成完整兼容批准。新的最小后端组合由原owner固定提供，不在本树自行覆盖共享源码。
+
+## 2026-10-06 15:34:33 UTC 后继后端输入安全点
+
+原362负兼容记录676f已normalpush/local=remote/clean。只在两脚本增加显式准入的后端realpath/HEAD/tree及真实factory加载，固定dbaa88fa7a5adf1da077be7739842b6e42664c26；[接口](../../docs/evidence/wpf-release03/backend-input-interface.md)、[静态审计](../../docs/evidence/wpf-release03/backend-rebind-static-audit.json)。原断言/资源/累计计数不改；新目标未types/业务运行/PG/Chrome，实际候选由Lead受控交接。当前history/all并无独立B-only入口，不把all重跑A冒称只跑B。

@@ -1,33 +1,27 @@
 {
-  "implementationTarget": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "implementationTarget": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
   "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
-  "method": "Fixed git object bytes equal current source; no import or execution",
+  "method": "Fixed git bytes/current equality and source-only invariants; new tuple not imported/executed",
   "files": [
     {
       "path": "apps/web/test/web-current-preview.fixture.ts",
-      "bytes": 17862,
-      "sha256": "e56b952b92854bbb9a208ee7a87e763bf3d2b29e05f6e0b58614d5f968d3e18f"
+      "bytes": 20217,
+      "sha256": "bafbce3c48cc193fc60dd1a86f705abbcfcb9918cbf600d237eee99be24730e0"
     },
     {
       "path": "apps/web/test/web-current-preview.browser.ts",
-      "bytes": 34649,
-      "sha256": "ef6ae3609533d4188ef02897fe0c0399c7f2248cca05846219ea5ecc1afd6fee"
+      "bytes": 34964,
+      "sha256": "785c2ef5106846825d5a0f506a18403c1b57f4d5c4709502841ae3e0c7e5ae3a"
     }
   ],
   "checks": {
     "sourceDiffCheck": 0,
     "protectedDiff": "empty",
-    "productTypecheck": {
-      "state": "PASSED",
-      "result": "typecheck-result.json",
-      "log": "typecheck.log",
-      "execution": "static noEmit only; no product execution",
-      "target": "997d731a98c837ccfce61712d2c7318ae13fb3d2",
-      "currentDelta": "not rerun by explicit instruction; source-only resource guard changes"
-    },
-    "PG": "EXECUTED: one owned isolated database; cleanup removed=true/errors=[]",
+    "sourceAudit": "backend-rebind-static-audit.json",
+    "newTargetTypecheck": "NOT_RUN",
+    "newBackendPG": "NOT_RUN",
     "Chrome": "NOT_RUN",
-    "compatibility": "FAILED A-only (2/2 failed); B NOT_RUN; no SVC compatibility report"
+    "compatibility": "NOT_RUN for new backend; old362 A failure preserved separately"
   },
   "executionMode": "A-only first; B NOT_RUN unless independently admitted and A passed",
   "resourcePolicy": {
@@ -44,5 +38,12 @@
     "sourcePeakProof": false,
     "basis": "Lead prior same-factory database size12,360,727B; WAL/OS/other-process peak unknown; 250ms monitor is not hard quota"
   },
-  "runEvidence": "history-result-152729.json"
+  "historicalRunEvidence": "history-result-152729.json",
+  "backendInput": "fresh gate backend={path:absolute realpath,head:immutable full commit,tree:full Git tree}; no defaults",
+  "backendProvenance": {
+    "base": "362af3bac77541e5a60979326bcf4d4b8c947915",
+    "onlyChangedPath": "apps/server/src/context-transparency/store.ts",
+    "approvedSource": "cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd",
+    "requiredSha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+  }
 }

@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-06 15:34:33 UTC",
+  "target": "dbaa88fa7a5adf1da077be7739842b6e42664c26",
+  "previous": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+  "checks": {
+    "sourceBytesEqualFixed": true,
+    "historyAssertionBodyUnchanged": true,
+    "cumulativeCounterUnchanged": true,
+    "protectedLocalInputDiff": "empty",
+    "noRuntimeExecution": true
+  },
+  "historicalRun": {
+    "target": "432b09ae1b552a68cc4720b369e42ed80bc942c9",
+    "elapsedMs": 3874,
+    "remainingMs": 176126,
+    "bytes": 80470,
+    "phaseA": "FAILED",
+    "phaseB": "NOT_RUN"
+  },
+  "files": [
+    {
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 20217,
+      "sha256": "bafbce3c48cc193fc60dd1a86f705abbcfcb9918cbf600d237eee99be24730e0"
+    },
+    {
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 34964,
+      "sha256": "785c2ef5106846825d5a0f506a18403c1b57f4d5c4709502841ae3e0c7e5ae3a"
+    }
+  ]
+}

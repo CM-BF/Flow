@@ -27,3 +27,7 @@
 ## 2026-10-06 15:29:28 UTC 实际运行后clean-code/证据安全点
 
 固定432b两源码未改；仅归档唯一A准入、本人live核、真实两项失败及完整清理。准确区分历史NOT_RUN与本次业务FAILED、A与未跑B、worker exit0与supervisor业务exit1；不把cleanup成功当compatibility成功、不输出SVC全绿报告。raw history/wire/process/budget/cleanup原字节保留，以独立索引记录hash。累计预算不重置，不补跑types/browser。下一步仅元数据parser/链接/scope和normalpush回执，后台修复交唯一owner。
+
+## 2026-10-06 15:34:33 UTC 后端输入clean-code
+
+复用已读本地find-skills/codebase-design/clean-code。输入仅path/head/tree；校验函数统一用于supervisor/worker，报告与真正factory路径共享同一来源。不新造发布框架、不动态搜服务；原断言、累计计数和原始失败不变。源码diffcheck0及Python字节/固定断言比较通过（非产品测试）；类型/业务运行未重做。normal git add遇sparse索引拒绝后使用仅已领两文件的git add --sparse；未改sparse配置/扩checkout。待独审关注真实candidate依赖和A/B独立准入。

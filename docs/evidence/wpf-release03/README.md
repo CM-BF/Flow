@@ -1,4 +1,6 @@
-# RELEASE03 固定组合验证（A实际失败，B未运行）
+# RELEASE03 固定组合验证（旧A失败；新后端重绑待审）
+
+当前后继重绑target `dbaa88fa7a5adf1da077be7739842b6e42664c26` 已固定，未运行；[backend输入接口](backend-input-interface.md)。旧362结果仍绑定432b，未回填新后端。
 
 当前固定432b已完成唯一一次 A-only 真实HTTP检查：attachment-only与mixed两项均失败，复现固定362的附件历史缺口；专库/worker清理成功。累计3,874/180,000ms，B/Chrome NOT_RUN，0provider，无SVC全绿报告或发布操作。见[本次结果及原样hash](history-result-152729.json)。原strict noEmit成功与源码条件批准保持其历史范围，不等业务兼容通过。
 

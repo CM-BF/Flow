@@ -2,7 +2,7 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：432b09ae1b552a68cc4720b369e42ed80bc942c9
+Review target commit：dbaa88fa7a5adf1da077be7739842b6e42664c26
 
 Base：362af3bac77541e5a60979326bcf4d4b8c947915
 
@@ -29,3 +29,7 @@ Base：362af3bac77541e5a60979326bcf4d4b8c947915
 ## 2026-10-06 15:29:28 UTC 实际A证据待核
 
 一次已授权history-only运行已结束，两项失败，完整原始索引见[history-result](../../docs/evidence/wpf-release03/history-result-152729.json)。这不是新增源码审查finding或环境错误；需要原后台owner处理已知兼容缺口。B/Chrome未运行，未生成SVC兼容报告。上文15:07无gate为历史时点，不覆盖本次事实。
+
+## 2026-10-06 15:34:33 UTC 后继重绑待审
+
+当前target=dbaa88fa7a5adf1da077be7739842b6e42664c26，两脚本修改；仅静态hash/差异/断言不变审计，未重复类型或运行。旧432b源码批准与362实际兼容FAILED保留，不能扩为新tuple批准。新输入必须freshgate绝对realpath/HEAD/tree、仅已审store修复、实际factory从候选加载；计数不归零。[接口](../../docs/evidence/wpf-release03/backend-input-interface.md)。

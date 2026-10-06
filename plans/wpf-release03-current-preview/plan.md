@@ -26,3 +26,7 @@
 ## 实际阶段结果
 
 2026-10-06 15:27 UTC唯一A-only运行两项失败、资源清理完成；累计3,874ms。B仍NOT_RUN，RELEASE03-02不能勾全。原始证据见[状态](status.md)，原后台owner最小修复及新固定输入/准入是后继条件；不在本片改server或发布。
+
+## 2026-10-06 15:34:33 UTC 受控后端重绑
+
+原四scope足够增显式backend tuple与真实工厂加载；候选后端由Lead独立source-onlyprovision，不由本worker复制/merge。当前dbaa88fa7a5adf1da077be7739842b6e42664c26待源码独审/实际输入与freshgate；[精确接口](../../docs/evidence/wpf-release03/backend-input-interface.md)。保留旧负兼容10raw/3,874ms，剩余176,126ms，不自行重跑旧362。
