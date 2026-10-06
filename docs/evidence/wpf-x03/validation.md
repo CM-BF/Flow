@@ -24,3 +24,5 @@
 ## 未验证与输入复用
 
 本批只有公共协议HTTP fixture与真实App组合：0真实中心/数据库/SDK/模型/语音调用；不重复已审X03独立模块12checks及数据库实验，不把那些当本批重跑。当前App没有项目选择，默认personal；模块project范围仍来自X03原独审，本轮不增加选择器。04:36:39 UTC root已独立APPROVED，见[正式结论](../../../plans/wpf-x03-plugin-integration/review.md)；其读源码/hash/报告与CUA观察，不声称独立重跑作者8/7。main尚未集成本挂载。注册记录不表示包已下载/验证/运行，完整npm安装/隔离/版本执行生命周期仍由X01后继管理。
+
+04:37:33 UTC单次[dashboard观察](dashboard-observation.json)：本source current/clean/issues=[]，checks passed/review approved均绑定84、review proof unchanged，claim a1044bb0 v1 active matchesSource=true；main not-contained。该采样HEAD692eb7b，随后只提交本摘录与说明，不冒充采样到了后来的metadata SHA。实际运行Node24.20.0/pnpm9.15.4。
