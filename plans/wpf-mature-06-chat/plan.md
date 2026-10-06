@@ -36,3 +36,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 ### 语音成功路径与归属（09:09 UTC GO审计）
 
 沿原VOICE TODO：开始→停止→转写到当前pane可编辑草稿→用户明确Send/Queue；切pane、关闭、取消均释放mic，迟到不能污染另pane或新稿。失败退回文本，未经授权不新增付费调用。当前STEER独立模块已审不代表语音成功路径已完成。
+
+### 同一聊天呈现TODO的总体验收补充
+
+GO最新要求（非新增大task）：默认先正文、简短自然状态与需要行动；识别tool标题即可，native ID/Provider observations分页、来源计数/原因统一Details按需。系统状态与模型正文来源分开，不用模板冒充回复或模型润色；真实error/unknown/未确认取消/queue-steer受理≠生效及恢复动作必须可达。验收普通hi、正常stream/tool、queue等待、断线unknown四旅程，390及双pane不长期被工程说明占据。此为原MATURE06呈现验收、MATURE01视觉依赖，不扩大已审VISUAL或STEIRI业务写权。

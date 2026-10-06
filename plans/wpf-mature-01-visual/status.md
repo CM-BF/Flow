@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:24:43 UTC |
+| 最近更新 | 2026-10-06 09:31:08 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,7 +14,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | VISUAL01独立九scope实现轻质外壳、四主题与降级，正在真实App验证；整体材质扩展仍开放。 |
+| 当前产出 | VISUAL01四builtin材质/实际App片已root独审并push，待main；plugin材质/reload与完整视觉验收仍开放 |
 | 下一可用交付 | 固定实际App视觉子片，交独立审查与主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |

@@ -176,7 +176,7 @@ CONTEXT01 736ef/d6已mainfc113，59b9650收口后bfe v2释放。D06本轮2c/3a�
 - [x] **WPF-001-29** WPF-CHATREAD01沿REQ43：527已审并入d7e，cd26404收口后c832 v2释放；[唯一canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-readability/plans/wpf-chat-readability/status.md)。
 - [x] **WPF-001-30** D05FIT01四scope首次适配：0ac7已审并main9d6，0e52826收口且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md)。
 - [x] **WPF-001-31** WPF-STEER01沿REQ44独立控制模块：b2已审并入77c主线，01842收口后2bae v2释放，实际App另后继；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。
-- [ ] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
+- [x] **WPF-001-32** WPF-CONTEXTI01沿REQ42实际知识UI：d7e完整base，55fev1二十scope已开工；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。
 - [ ] **WPF-001-33** WPF-DPERF02批量Git树证明：已批准但为成熟度P1暂排队，尚未建树/take；保留2MiB/5s和缺失/unknown语义；[有界方案](../../docs/evidence/web-platform/dperf02-proposal.json)，新take后实现。
 
 ## 验收、风险与持续方式

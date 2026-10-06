@@ -77,3 +77,17 @@ MATURE06语音研究（root已读官方dictation/MDN与installed core0.3.22）�
 当前status已压缩为当前事实、稳定TODO、依赖与入口；此前全文原样移同目录status-history.md，明确仅历史。不清洗失败/JSON/hash、不重跑产品或dashboard。Mika02/04合法owner已改显式大task身份（D08作者只读确认）；本组没有改他人计划，最终实际关联仍待D08独审/部署。
 
 MATURE01主题扩展后继（root固定be50只读）：descendant!important的thread宽度/composer圆角仍阻根token覆盖；validation仅颜色名单，builtin四主题成功不证明完整材质插件。后继沿原主题TODO考虑一个typed token catalogue产生允许名称/数值域/映射/default，组件消费var回退、禁用清旧token；CSS.supports自定义变量不是值域校验，@property不能替代普通fallback。另initialTheme仅builtin会覆盖已保存pluginID，现reload测试仅builtin；待授权插件声明齐后恢复保存ID/scheme，缺失/禁用/换连接显式fallback，不首屏盲apply外部CSS。需真实外部theme材质/禁用与三reload状态验收。来源为root已读MDN@property/CSS.supports与CSS Variables规范，不是当前browser复现的插件缺陷。
+
+## 当前集中接收队列（2026-10-06 09:31:08 UTC）
+
+| Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
+| --- | --- | --- |
+| WPF-VISUAL01 → MATURE01，受控main接收 | a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231 / f708de549685099b370f4436fda2486e1e5671f2；root APPROVED，35e5 v2保留 | web-visual-shell / plans/wpf-visual01-shell / docs/evidence/wpf-visual01；九scope、七源码，实际App四builtin材质与390split；readonly source-binding/checks已对齐；无个人产物发布或整体MATURE01完成声明 |
+| D08 → D01，受控main接收及4320新UI部署 | eca59a5edab0820f724a9bd5bc854e22f48d9ea9 /4161606308a88d4672fa106e0c5c2fa6d30f8c63；root APPROVED，49510580 v1保留 | dashboard-task-links / plans/d08-task-links / docs/evidence/d08；九scope、七执行文件，registry仍Lead单写；45direct/5browser按作者/root归因，不重测 |
+| WPF-STEIRI01 → MATURE06，登记新source | 首82d2c98e407684b945467e1ce6b992dba6b4603c，base df29fb511df029a0922ace0f4973f3fe3736e502；bc0ded75 v1 /13scope | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；w01唯一owner已正式实施，父字段明确，不等登记 |
+| WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
+| D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
+
+这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。
+
+2026-10-06 09:32:24 UTC D01仅父身份metadata完成，正常push2f3f33b/clean、原产品零改；全部窄scope停写后[5fa8 v2 release](d01-parent-release-receipt.json)09:31:36.475Z，旧D01不继续修改。D08管理核七hash/范围正确，interface语法例子尚需inline-code避免断链，已交合法owner做单行metadata；不撤销root产品批准。

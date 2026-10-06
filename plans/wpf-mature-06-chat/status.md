@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:24:43 UTC |
+| 最近更新 | 2026-10-06 09:31:08 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,7 +14,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | stream、typed活动、queue与readability已分片交付；steering独立模块已审/main77接收，语音及跨reload恢复等仍开放。 |
+| 当前产出 | 已有stream与补充指令模块main；STEIRI01实际App接线已独立13scope正式实施，语音及自然状态呈现仍后继 |
 | 下一可用交付 | CONTEXTI主线/释放后接补充指令实际聊天UI，保持语音与恢复后继开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
