@@ -2,17 +2,17 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 04:47 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
+| 最近更新 / 最近main同步核验 | 2026-10-06 04:49 UTC / 04:28:28 D06 dashboard与4320图实际核验main4e |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `09f0dc3729a177804b5f85c2be388af6d98f5f93`（本次管理停点前实核） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `4a00f687c4f961384f9949795e08c35030d8aed3`（本次管理停点前实核） |
 | 工作树dirty状态 | 仅本管理范围的当前状态、队列研究和PROFILE派工文档pending |
 | 工作分支状态 | in-progress；按轮验收，持续目标未宣称完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | X03I01已由Lead集入80e；PROFILE a28（仅加test）独审中，QUEUE00 5acc reader固定审查中 |
+| 当前产出 | X03I01已由Lead集入80e；QUEUE00 5acc已审交付；PROFILE新增02683目录模式适配中，旧a28批准不覆盖新schema |
 | 下一可用交付 | WPF-QUEUE00最小能力兼容reader先行，PROFILE01独立模块并行；PROFILE App串接排其后 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -35,7 +35,7 @@
 | WPF-001-09 | in-progress | d01_owner | CHAT7cb/083已审集成main；真实两query仅Lead执行、结果未收到；profile/queue/steer/voice完整需求仍开放 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | in-progress | d01_owner | PROFILE01只含新模块/局部tests，fixed4e新树核clean后04:36:37.979Z take17093c4c v1，canonical ae47c8a已交root注册；实际App接入另受领 |
-| WPF-001-12 | in-progress | d01_owner | GoalOwner/Lead批准最小QUEUE00 reader先行，两旧路径正式移出CHATv3，新13185v1四scope开工；PROFILE App接线后排，模块并行 |
+| WPF-001-12 | completed | d01_owner | QUEUE00 5acc root限定APPROVED/final498 clean，scope/docs通过；已一次给root桥Lead ready+source，main集成另计 |
 
 ## 当前唯一owner、claim与下一步
 
@@ -126,3 +126,5 @@ PROFILE01下一ready仅新选择模块/局部tests/自己plan-evidence，不写A
 QUEUE00唯一status已建于web-queue-compatibility/plans/wpf-queue00-compatibility/status.md，f8928c72b3a96e4ad858cb8b46dfd07feac0c3d0，M2/priority1/targetUNKNOWN/NOT_STARTED已交root注册；take与status卡是否已挂分开记录。PROFILE8c6最终meta的6md21links/4TODO和base diffcheck通过，不替代root产品review。
 
 04:47 X03所有七scope停写并正式[release v2](../../docs/evidence/web-platform/x03-release-receipt.json)，精确04:46:47.517Z，旧canonical05b92 clean，此后不能在旧树补写。QUEUE00 afd的6md17links/4TODO/源码diff0管理核验通过，raw red/tests/typecheck空白保留，独立产品review未定。没有重复35tests/浏览器/模型。
+
+04:49当前结论：QUEUE00 final498b2cdc46eee484d8dd148715821ee800669965 clean/5acc批准已交root一次桥接，卡未注册历史保持、等Lead通知后owner单次实采。PROFILE a28旧合同批准保留，新02683要求goal-tools/unknown可见但不可用于chat、合法邻项不被拖失败，原九scope新增适配后绑定新target；root观察旧review解析unknown已交owner同轮格式修正，最终采state/target/proof不只issues。后继reader→PROFILE App→queue UI顺序明确，F01共享client候选未并入任何我方新树。

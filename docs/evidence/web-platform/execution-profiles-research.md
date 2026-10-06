@@ -48,3 +48,14 @@ App bound executionProfiles reader每连接一个catalog，picker首次需要时
 创建ACK在bind/首turn前由冻结outbox.creation核title/harness/requested及pin完整三元组和有无；wrong/missing/unexpected pin按unknown处理，不换key/选择，不发首turn。GET/turn ACK同样不能随较高revision改变已绑定creation。旧无pin保持legacy-default，不从后来的catalog迁移。
 
 catalog stale/401阻止新configured创建/选择，不阻断已发outbox原key/pin恢复；目录首次refresh/新部分页里缺少选择并不证明已删除，仍由中心准入核pin。候选验收含同model不同runner、refresh不改选择、receipt重试与stale分离、create丢ACK/turn丢ACK两阶段、wrongpin零turn、新draft和首ACK焦点、旧无pin、同ID跨center迟到清理、390双主题键盘。仅未来HTTPfixture，无模型/DB。模块APPROVED+精确含X03和模块的main+正式scope移交后才能实施；queue迁移会交叉Thread/projection，须明确串行顺序。
+
+
+## 04:49 新正式合同02683：目录可见性与普通聊天选择分离
+
+MainLead提供正式合同 `02683be019ae75591b21c1ada64e01669678f068`，管理实际git show核 execution-profiles.ts：access新增goal-tools，且此模式要求requireReadApproval=false与空材料摘要 `4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945`。普通chat不能选此模式。旧a28/base4e独立APPROVED仍是历史有效结论，不能据此声称新schema通过；本轮在现17093v1九scope继续适配，未另开agent/未改shared。
+
+新设计：目录读取成为DirectoryProfile（只读access字符串声明，其余DTO/identity/model/controls/limits/cursor严格核验）与可提交ProfileSelection分离。goal-tools/未知access条目保留并明确“不可用于普通聊天”、disabled，不让同页合法none/configured-readonly失败；不能把未知模式渲染成readonly。已知goal-tools跨字段约束仍核验，非mode格式错误继续整页原子拒绝，不能为可读性放宽身份/其他字段。configuredSelection与freezeConversationCreation自行显式allowlist仅none/configured-readonly，不依赖将来可能变宽的公共schema当权限门。
+
+验证新增：混合合法+goal-tools+unknown仍可分页/显示；disabled不可键盘或函数强选；直接helper拒绝目标模式且零发送；known goal-tools错误材料/审批、非mode畸形仍拒绝；已选合法项不被目录刷新替换。消费端不能继续假设每个目录项都是可提交ExecutionProfile，新的interface固定后再接线。PROFILE App接线仍待模块新target独审与准确main/新claim，不抢QUEUE00路径。
+
+root04:49:30.853Z一次看板曾见a28 final98671的status写APPROVED，但解析review.state=unknown/target=null；已交唯一owner沿可解析Review target commit/状态模板在后继最终metadata修正。不能仅issues=[]宣布review聚合正确；最后须实际state+target+proof，旧批准历史保留且不扩到新合同。

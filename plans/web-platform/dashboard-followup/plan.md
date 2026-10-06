@@ -1,10 +1,10 @@
 # WPF-D01 Dashboard 协作需求与来源登记
 
-更新：2026-10-06 04:08 UTC。唯一计划/status owner：d01_owner / gpt-6-astra ultra。父计划：[WPF-001](../plan.md)。固定文档基线 `d444608ab6c796c731e44e51a892868bf39bec2a`；本计划始终只做协作登记，没有第二个dashboard实现。
+更新：2026-10-06 04:50 UTC。唯一计划/status owner：d01_owner / gpt-6-astra ultra。父计划：[WPF-001](../plan.md)。固定文档基线 `d444608ab6c796c731e44e51a892868bf39bec2a`；本计划始终只做协作登记，没有第二个dashboard实现。
 
 ## 唯一实施边界
 
-紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止、重启、改代码或另派dashboard owner。用户U09架构tab已由主线D05部署，原canonical [D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录；root现观察图仍固定3773/O01开发中。GoalOwner新增授权固定8f架构刷新，待旧claim正式释放/转交后才另独立tree受领，当前本计划仍协作而非并发实现。
+紧凑中性工作台和高层语义由主线D03实现；D04负责PostgreSQL分配账本与领取展示。4320服务由原Lead单写管理，我方不停止、重启、改代码或另派dashboard owner。用户U09架构tab已由主线D05部署，原canonical [D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/plan.md)记录；D06已在独立树完成固定8f刷新（ef42277），实际main4e/4320部署已核，最终6ea2且claim v2 released。本计划保留后继快照提示/性能候选，未再领取实现。
 
 我方负责提交用户需求与canonical status来源，核对领取/来源是否真实呈现。手填进度只在各唯一status，JSON/网页派生；assignment账本只记owner/lead/scope/claim/handoff，不复制TODO/check/review。分支实现、检查、独立审查和main集成分开，缺失/过时/失败标未知，不猜百分比或ETA。
 
@@ -32,4 +32,10 @@ D04领取详情已经root实际CUA验证ID/version/lead/worker/scope/branch/时�
 
 04:07:57实际42来源、当前21activewriterclaims literal0overlap，PERF02 b617 main集成记录正确；仅X03新claim待canonical注册。管理者独立CUA实际看见owner/lead/worktree/branch/16scope/state/version与来源，见[领取可见实证](../../../docs/evidence/web-platform/assignment-visibility-verification.json)。U12不新增第二账本；进度仍唯一owner status。
 
-- [ ] WPF-D01-06：后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
+- [ ] **WPF-D01-06** 后继取得标题/renderer正式scope后，把架构短SHA与固定快照提示放标题旁。GoalOwner目视D06无阻塞但当前“当前代码”标题易与底部折叠说明不一致；不扩本轮四scope、不阻D06集成。
+
+- [ ] **WPF-D01-07** 评估单次snapshot内重复Git proof复用的收益与正确性；可能未来独立D07新树/take，不写当前dashboard或跨snapshot缓存事实。
+
+## 有证据的后继性能候选（未领取）
+
+root两次只读/api/snapshot工具elapsed约2.67/2.73秒、51源，属于端到端观察而非benchmark。源码aggregate.mjs对同task先compareImplementation(target)，review approved且target相同时再跑相同proof；proof.mjs每次spawn多条git。server已合并in-flight HTTP，无持续cache；可见页面20秒刷新。候选先做单次snapshot内部同key（worktree、target、HEAD、literal scopes）的Promise复用实验，不跨snapshot缓存dirty或claim、不降事实新鲜度。不同target必须分开；如果再考虑Git并发上限，先测进程/延时，不凭感觉限流。实验/实现须明确原owner停写与独立D07 scope/receipt，不因本协作计划获得写权，不阻PROFILE/queue当前交付。

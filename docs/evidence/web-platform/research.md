@@ -374,3 +374,6 @@ SVC README/cli当前status可输出credentialsFile而不输出token。后继copy
 root本段clean-code安全停点（正式X03审查04:36:39）：核bound reader窄接口、RegistryManagement懒载职责、卸载过期响应、局部错误与CSS边界及作者8/7行为证据。实际修复是owner探针发现import失败被浏览器缓存、Retry无效，改诚实手动reload说明，root补未发送draft先保留提示；无未解决blocking。后继CHAT04能力迁移/同revision动态事实与SVC首连仅研究、0凭据读取，无跨scope实现；不重复产品测试，不写released D06。
 
 管理工具实钟04:42:44 UTC，前一快照新授权段落写04:43系分钟估记，已改04:42；正式claim receipt、测试和原始采样时钟不改。后续派工时间以工具/PG receipt为准。
+
+
+root新增dashboard性能候选：两次51sources只读/api/snapshot工具elapsed约2.67/2.73s，非benchmark。aggregate同task在实现与approved review同target时重复compareImplementation，proof每次spawn多条git；server已有in-flight请求合并，无跨请求cache，可见页面20s刷新。候选单snapshot同(worktree,target,head,literal scopes)复用proof Promise，跨snapshot保持dirty/claim新鲜；不同target必须独立验证。进一步有界Git并发先测进程/延时再选。已列协作WPF-D01-07；无新D07树/take/生产修改，不抢scope。D06已release不能续写。

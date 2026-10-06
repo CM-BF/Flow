@@ -166,7 +166,7 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
-- [ ] **WPF-001-12** WPF-QUEUE00：先交兼容queue布尔能力的最小Web reader，保留false旧行为且不伪启用完整队列；projection+直接test已从CHATv3正式移入新13185v1四scope，fixed75a独立tree实施，供Lead成套发布。
+- [x] **WPF-001-12** WPF-QUEUE00：最小boolean reader已5acc限定APPROVED/final498，false旧行为保持且不伪启完整队列；source字段已交root一次桥接ready与注册，Lead成套集成另计。
 
 ## 验收、风险与持续方式
 
@@ -254,3 +254,5 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:43:26.665Z CHAT v2→v3原子移出projection.ts/conversation-projection.test.ts，其他12scope未变；04:43:35.187Z QUEUE00 claim13185d8f-fcc4-453b-9ff1-4e4ca38f0666 v1正式take四scope，fixed75a新树实核clean后开工，[receipt](../../docs/evidence/web-platform/queue00-take-receipt.json)。Lead确认X03 main80e已push/clean，旧owner仅metadata一次核main再release，服务59473不动；PROFILE候选b2b七源码限定范围已审无越界，产品review由root进行。
 
 04:47 X03旧owner提交05b92d30c953413ab66d8b69447c9b44c9121a6a记录main80e集成，正式a104 v2 released，七scope全停写；原receipt与后继研究保留。QUEUE00固定5acc/metadataafd已交root独审，最小读取兼容不等完整queue命令UI，注册待Lead通知。PROFILE候选a28仅补测试、4生产文件不变，等待整体结论。
+
+04:49 PROFILE新正式02683合同引入goal-tools，按GoalOwner新要求在原九scope做DirectoryProfile只读目录与聊天Selection分离：goal-tools/unknown条目可见禁选，不阻同页合法项，显式聊天allowlist与非mode严格校验；旧a28批准不扩到新schema。QUEUE00 5acc已独审、final498只读scope/docs通过，优先交Lead，不等PROFILE。后继PROFILE App接线在完整queue UI之前，旧projection/Thread必须新claim串行转交；public client83f7/400ae完整输入仍待独审和准确base，不并入QUEUE00。

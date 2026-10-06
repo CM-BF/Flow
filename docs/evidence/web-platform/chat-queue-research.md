@@ -71,3 +71,14 @@ owner复用workspace_panels_owner，但新功能仍须旧CHAT08259c1d v2相关pr
 
 
 后继解除策略已授权：WPF-QUEUE00 reader独立最小切片先行，不等完整queue UI/client，也不擅改shared。只接受实际boolean并维持false兼容，true的不可操作项必须明确而非默认宣称已支持。具体代码/行为边界由唯一owner冻结精确scope再领。MainLead按已审reader→contract/domain→mount成套交付，PROFILE App接线后排，PROFILE独立模块不受影响。Mika域impl ae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metadata aef5c6fcd3d811673e8eeb8cd67f225ba0941b8e获其root54项独审，是backend范围证据，不替代Web消费验证。
+
+
+## 04:49 固定输入与后继UI顺序
+
+QUEUE00 reader固定5acc5b1bde23e9c587a4580da55a75340811ecdd/base75a已root限定APPROVED，独立35tests与固定diffcheck；final498b2cdc46eee484d8dd148715821ee800669965 clean，管理6md17links4TODO/源码差异0核验。仅reader兼容，旧Thread静态文案留后继范围；不等完整queue命令UI，不包含browser/build/DB/模型检查。source尚待Leadregistry明确通知后一次实采，不能以claim可见当已注册。
+
+MainLead公共client实现83f7da6c6e366e3520c8373c7d21408dad5fb145、F01 metadata400ae113abcf4526a670f3100e8518ea834c04ed（管理git rev-parse核完整SHA）是后继受控输入候选，独立审查/准确base待Lead；允许未来完整merge受控foundation但不能进QUEUE00，更不能私改shared。后继顺序：reader成套集成→PROFILE真实App接线→完整queueUI；共享projection/Thread必须串行转交。
+
+root再核ae9 DTO/83f7 client要求：等待页按queueRevision一致合并，但sameRevision GET仍更新currentTurn.taskStatus/blocked/paused；enqueue/cancel/pause/resume各自冻结body/key，未知结果原key核对，旧ACK只确认历史不盖新GET；already-promoted展示真实turn目标而非撤回运行；pause与task cancel分别报告，pause replay后最新GET若他端resume/promote不能按历史currentTurn取消。现ConversationOutbox只处理follow-up，不得无辨别复用于所有queue操作。
+
+root已读本地AI Elements queue参考及[官方Queue](https://elements.ai-sdk.dev/components/queue)：它是Collapsible/ScrollArea/ItemAction可组合展示，可接中心waiting、不提供持久执行。官方[external-store runtime](https://www.assistant-ui.com/docs/api-reference/external-store/runtime)与queue-item仍要求steer/move/edit/remove且默认有打断；不能为列表可见伪接缺失命令。保持官方Thread，后继queue控制由public client事实驱动。项目已有radix-ui/Collapsible、没有Queue副本或ScrollArea封装；未来只取实际使用展示片段并固定上游来源，不全量CLI安装或擅改根依赖。本项已交owner只读设计，未take或实现。

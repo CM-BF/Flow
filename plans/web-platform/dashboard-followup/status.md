@@ -2,18 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 04:20 UTC |
+| 最近更新 | 2026-10-06 04:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | d01_owner（协作记录）；实际dashboard由原Lead负责 / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` |
 | Branch | `codex/web-platform-management` |
-| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `c9d9fb124c17f016230100ecbad22476d32a336d`（本段修改前核验） |
+| 工作基线 / HEAD | `d444608ab6c796c731e44e51a892868bf39bec2a` / `4a00f687c4f961384f9949795e08c35030d8aed3`（本段修改前核验） |
 | 工作树dirty状态 | 当前仅管理claim两目录的文档/来源证据待提交 |
-| 工作分支状态 | in-progress；来源/领取视图已证实，D06固定8f已正式转交独立实施 |
+| 工作分支状态 | in-progress；来源/领取视图已证实，D06固定8f已审集成并释放；后继候选未领取 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 七个WPF canonical源已聚合；42总来源与当前领取字段实际可见；D06刷新进入review |
-| 下一可用交付 | D06独立review和主线集成、canonical聚合 |
+| 当前产出 | D06 ef固定8f已审集成；root51源快照观察显示重复proof可实验，未实施 |
+| 下一可用交付 | 后继标题快照提示与单snapshot proof复用实验候选，先精确scope/新take |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,10 +30,11 @@
 | WPF-D01-04 | completed | d01_owner（协作）；原Lead实施 | U09架构tab已部署，root读取固定3773图；管理04:07 CUA见可访问架构入口；不是最新8f图已交付 |
 | WPF-D01-05 | completed | d01_owner（协作） | D06 ef42277独审通过，04:28实际47源/claim匹配/main4e同范围/4320部署；最终6ea2，v2释放 |
 | WPF-D01-06 | pending | d01_owner（协作） | GoalOwner非阻塞建议标题旁显示固定SHA/快照，待renderer新scope；本轮不改 |
+| WPF-D01-07 | pending | d01_owner（协作） | root两次2.67/2.73秒51源端到端观察与重复Git proof源码线索；先受控实验，未D07 take/实现 |
 
 ## 阻塞 / 风险 / 未验证
 
-没有需要用户新增决定。主线旧架构tab已部署但固定3773；新的8f刷新已由D06正式受领，独立候选review中，不把作者检查写成独审/集成完成；本协作记录不代表D03/D04代码、视觉或安全套件重新验收。详情决定NONE显示未知的部署后问题已交原owner。
+没有需要用户新增决定。主线架构tab已部署且D06固定8f数据已核；8f刷新已由D06 ef独审/主线集成、实际4320部署核验并v2释放；后继标题快照提示/性能实验未领取；本协作记录不代表D03/D04代码、视觉或安全套件重新验收。详情决定NONE显示未知的部署后问题已交原owner。
 
 ## 下一步与handoff
 
