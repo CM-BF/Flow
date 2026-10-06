@@ -1,0 +1,82 @@
+{
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "正在为聊天正文和输入框腾出空间，并保留需要处理的提醒",
+    "next": "更紧凑的执行选项和队列，配合可随时打开的详情",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": null,
+    "scopes": [
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/conversations.css",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-readability.browser.ts",
+      "apps/web/test/conversation-readability.fixture.ts"
+    ],
+    "errors": [
+      "实现目标需完整 SHA"
+    ]
+  },
+  "taskId": "WPF-CHATREAD01",
+  "owner": "workspace_panels_owner / gpt-6-astra ultra",
+  "branch": "codex/web-conversation-readability",
+  "branchState": "IN_PROGRESS",
+  "updatedAt": "2026-10-06T08:24:00.000Z",
+  "updatedRecord": "2026-10-06 08:24 UTC / 32c371d389a913f8dd71c3bd8b98dd0697411256",
+  "todos": [
+    {
+      "id": "WPF-CHATREAD01-01",
+      "state": "completed",
+      "owner": "workspace_panels_owner",
+      "evidence": "[receipt](../../docs/evidence/wpf-chat-readability/take-receipt.json)、[quality](../../docs/evidence/wpf-chat-readability/quality.md)"
+    },
+    {
+      "id": "WPF-CHATREAD01-02",
+      "state": "in-progress",
+      "owner": "workspace_panels_owner",
+      "evidence": "先按固定base读现有展示与fixture"
+    },
+    {
+      "id": "WPF-CHATREAD01-03",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "修改前基线与局部browser待运行"
+    },
+    {
+      "id": "WPF-CHATREAD01-04",
+      "state": "pending",
+      "owner": "workspace_panels_owner",
+      "evidence": "固定target/review/聚合待执行"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "32c371d389a913f8dd71c3bd8b98dd0697411256 / 当前HEAD由Git聚合",
+  "declaredDirty": "首canonical新增，尚未产品修改",
+  "checks": {
+    "state": "not_run",
+    "target": null,
+    "record": "NOT_RUN；先捕获修改前布局"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+  "mainRecord": "NOT_INTEGRATED",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}
