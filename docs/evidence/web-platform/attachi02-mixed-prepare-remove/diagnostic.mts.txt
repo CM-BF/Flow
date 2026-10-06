@@ -1,0 +1,47 @@
+import { createHash } from 'node:crypto';
+import { createRequire } from 'node:module';
+import { pathToFileURL } from 'node:url';
+import { readFileSync } from 'node:fs';
+import { ConversationAttachments, createAttachmentPlugin, ATTACHMENT_OPEN } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/src/plugin-integration/attachments.tsx';
+import { PluginHost } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/src/plugins/host.ts';
+import { createExistingAttachment } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/apps/web/src/attachments/adapter.ts';
+const wt='/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production';
+const sources=['apps/web/src/plugin-integration/attachments.tsx','apps/web/src/attachments/adapter.ts'];
+const hashes=()=>Object.fromEntries(sources.map(p=>[p,createHash('sha256').update(readFileSync(`${wt}/${p}`)).digest('hex')]));
+const beforeHashes=hashes();
+const require=createRequire(`${wt}/apps/web/package.json`), ar=createRequire(require.resolve('@assistant-ui/react'));
+const { BaseComposerRuntimeCore }=await import(pathToFileURL(ar.resolve('@assistant-ui/core/internal')).href);
+const hash=(text:string)=>createHash('sha256').update(text).digest('hex');
+const meta=(n:number)=>({reference:{kind:'upload',projectId:'project-a',resourceId:`20000000-0000-4000-8000-${String(n).padStart(12,'0')}`,version:1,contentDigest:hash('hello')},name:`note-${n}.txt`,mediaType:'text/plain',byteLength:5,state:'ready',retained:false,createdAt:'2026-10-06T00:00:00Z',expiresAt:'2099-10-07T00:00:00Z'});
+const scope='10000000-0000-4000-8000-000000000001';
+const cap={protocol:'text-v1',recoveryScopeId:scope,projectId:'project-a',requiresProject:true,mediaTypes:['text/plain'],extensions:['.txt'],maxFileBytes:8192,maxCombinedReferences:4,maxCombinedBytes:8192,order:'knowledge-then-attachments',unboundTtlSeconds:86400,resourcesPerProject:128,retainedBytesPerProject:1048576};
+const constant=(value:unknown)=>({getSnapshot:()=>value,subscribe:()=>()=>{}});
+const host=new PluginHost({navigation:constant({activeTaskId:null,workspaceTab:'files',workspaceOpen:false}),theme:constant({themeId:'light',scheme:'light',availableThemes:[]}),getContext:()=>({kind:'global'}),authorize:()=>true,execute:async()=>{}});
+let raw:string|null=null;
+const client={attachmentCapabilities:async()=>cap,attachments:async()=>({resources:[meta(1)],nextCursor:null}),attachment:async()=>meta(1),attachmentContent:async()=>{throw Error('Unexpected content');},attachmentUploadReceipt:async()=>{throw Error('Unexpected lookup');},uploadAttachment:async(_p:string,request:any,key:string)=>({replayed:false,uploadKey:key,recoveryScopeId:scope,requestDigest:'a'.repeat(64),resource:{...meta(2),name:request.name,byteLength:request.byteLength,reference:{...meta(2).reference,contentDigest:request.contentDigest}}})};
+let binding:ConversationAttachments;
+host.register(createAttachmentPlugin(()=>binding));
+binding=new ConversationAttachments({connectionId:'c',viewKey:'v',projectId:'project-a'},{host,client,signal:new AbortController().signal,current:()=>({viewId:'v',conversationId:'chat',projectId:'project-a',visible:true,online:true,canRead:true,canUpload:true,attachmentContext:true}),storage:{read:()=>raw,write:value=>{raw=value;}}});
+let called=0;
+class Composer extends BaseComposerRuntimeCore {
+ get canSend(){return !this.isEmpty&&!this.isSubmitting;} get canCancel(){return false;}
+ getAttachmentAdapter(){return {...binding.adapter,send:async()=>{throw Error('Controlled prepare rejection');}};}
+ getDictationAdapter(){return undefined;} threadMessageIds(){return [];}
+ async handleSend(){called++;throw Error('Unexpected onNew');} handleCancel(){}
+}
+const composer=new Composer(); let unbind:(()=>void)|undefined;
+const snapshot=()=>({text:composer.text,chips:composer.attachments.map((a:any)=>({id:a.id,status:a.status.type})),inputItems:binding.input!.getSnapshot().items.map(i=>i.id),held:binding.getSnapshot().submission?.state});
+try {
+ await host.execute(ATTACHMENT_OPEN,null,binding.context());await binding.input!.browse();
+ const selectedId=binding.input!.select(meta(1));await composer.addAttachment(createExistingAttachment(binding.input!,selectedId));
+ await composer.addAttachment(new File(['hello'],'uploaded.txt',{type:'text/plain'}));
+ const port={subscribe:(listener:()=>void)=>composer.subscribe(listener),getState:()=>({attachments:composer.attachments,submission:composer.submission,inTransit:composer.inTransit})};
+ unbind=binding.bindComposer(port);
+ composer.setText('original text');
+ binding.capture({ids:composer.attachments.map((a:any)=>a.id),submissionId:'diagnostic',intent:'send',text:'original text'},null);
+ await composer.send();await new Promise(resolve=>setImmediate(resolve));
+ const restored=snapshot();
+ await composer.removeAttachment(selectedId);await new Promise(resolve=>setImmediate(resolve));
+ const afterRemove=snapshot();
+ console.log(JSON.stringify({observedAt:new Date().toISOString(),purpose:'Pure-memory actual core + private binding; mixed complete/requires-action prepare rejection, explicit chip removal without text edit or recapture',beforeHashes,afterHashes:hashes(),restored,removedId:selectedId,afterRemove,onNewCalls:called,projectWrites:0,networkCalls:0,providerCalls:0},null,2));
+} finally {unbind?.();composer.__internal_dispose();binding.dispose();await host.dispose();}

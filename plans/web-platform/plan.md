@@ -366,3 +366,5 @@ GO首屏需求执行（11:44）：工程dashboard当前与下一交付应优先�
 原WPF-001-09的MATURE04-05依赖更新：main362已有contextHistory/owner GET/DTO公共输入，后续完整Web历史估算消费者待排程，无需再等contract；只读[current输入与语义](../../docs/evidence/web-platform/context-history-web-input.json)，原04大plan仍Mika唯一。保持unknown/null/权限与历史估算边界，真实detail按需；ATTACHI当前App窗口优先，不借此领取共享范围。
 
 最新调度：附件贯通与已审dashboard安全点后，原MATURE06-04连接/刷新/未决发送恢复完整旅程优先Arc/装饰，沿既有10:24验收；[原指令与共享接口队列](../../docs/evidence/web-platform/connection-recovery-priority.md)。Arc保持未领，认证与发送恢复独立Module/Interface、中心权威、不因重新认证自动重投，0provider且个人服务不动。
+
+当前U08/REQ37对照（D06 fixedaeb批）：用户最新重申“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”，沿已有规则与唯一D04账本，不新手填状态源。D06原树四literal fresh6cad30a2 v1，实际receipt与唯一source见[集中入口](../../docs/evidence/web-platform/mature-task-handoff.md)；领取、source登记、已审target、main和部署分别表达，释放也保持可读。

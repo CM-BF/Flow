@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-06T12:48:02.775408+00:00",
+  "task": "WPF-ATTACHI02",
+  "state": "MOVING_PRE_REVIEW_FINDING_FIXED_IN_ROOT_MEMORY_DIAGNOSTIC_NOT_FORMAL_APPROVAL",
+  "red": "12:42:58UTC actual core+binding mixed complete/requires-action prepare failure restoration then immediate complete remove left ghost input.items",
+  "fixed": "root12:44:49same diagnostic passed with ecec5a76 source hashes stable; original five module files unchanged per root",
+  "limits": "0network/PG/browser/model/project writes by reviewer; import helper only bypassesCSS, not browser evidence; no manager rerun; official review still NOT_STARTED until fixedcandidate",
+  "files": {
+    "diagnostic.mts.txt": {
+      "original": "/tmp/root-attachment-mixed-prepare-remove.mts",
+      "sha256": "e474400efee5abdf71007bb4b0964f383ad4e977bf09e5cb74514d5118c13324"
+    },
+    "red.json": {
+      "original": "/tmp/root-attachment-mixed-prepare-remove.json",
+      "sha256": "a3beeaae1975af7edaaa47daeebaad14d38adf9e6424a30593788bd5c781642e"
+    },
+    "fixed.json": {
+      "original": "/tmp/root-attachment-mixed-prepare-remove-fixed.json",
+      "sha256": "725b9fc6069709f89bcd06e591e3775e198dd887257fabeae2c1c75406902553"
+    },
+    "ignore-css.mjs.txt": {
+      "original": "/tmp/root-diagnostic-ignore-css.mjs",
+      "sha256": "9325963b65c1d0448fc00e383b7d1460727595584332958120d1ba280e36604b"
+    }
+  }
+}

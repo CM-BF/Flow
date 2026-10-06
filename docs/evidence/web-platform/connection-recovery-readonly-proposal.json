@@ -102,6 +102,20 @@
       "honestDurability": "Beforefirstjournalcommit crash has0HTTP but newestunpersistedtext may be lost; UI distinguishes saving/saved, recovery promise onlyafterdurablebarrier",
       "acceptance": "Crashboundaries/storageCAS/CREATEcheckpoint/twotabs/namespaces/reauth0POST/attachmentcapture+nextdraft; shareddecoder soleACKauthority, GETsametext is notacceptance",
       "executed": false
+    },
+    "capacityResearch": {
+      "fixedSource": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+      "source": "panels read-only + root acceptance; no experiment",
+      "constraints": [
+        "Turn16000 UTF16 units versus Queue16000 UTF8 bytes versus Steer16384 UTF8 bytes",
+        "128 maximum Chinese turn texts alone may be6144000 UTF8 bytes >4MiB",
+        "JSON control characters expand to6 ASCII characters; count final complete versioned serialized document UTF8 bytes",
+        "32 resident conversations per connection is not durable draft count across tabs/centers; current drafts have no text limit",
+        "Define namespace/count units, per-record growth/CREATE binding/ACK state reserve before freezing capacity",
+        "Preserve exact presence/order/two original keys/stable center+principal; no authority request truncation or unknown eviction",
+        "Storage admission failure keeps same receipt/full materials,nextdraft,0HTTP",
+        "Future send journal CAS does not fix current upload journal read-JSON-write cross-tab lost-update risk; no experiment confirms that risk"
+      ]
     }
   },
   "acceptance": [

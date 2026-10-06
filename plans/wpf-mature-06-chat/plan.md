@@ -60,3 +60,5 @@ T3固定输入后续已核：root实际只读SHA `9bd1d8009a6b7c50f9dd9458e2bf27
 Root方向已批准进入Interface与合法owner协调，不授共享中心写入；中心独立Module由Lead指定唯一writer先受领可独立六产品路径及own records，共享mount/exports/client/migration仍精确协调。Web consumer/Recovery拟panels pending legal scope；都直接父MATURE06。checkpoint保相同key/body/知识与附件有序refs及下一draft；center/principal来自中心、同中心不同账号隔离。容量候选先对齐公开正文上限，禁止静默截断/淘汰unknown。
 
 恢复持久化必须保ATTACHI同步handoff：原outbox/commands先同步生成publish唯一receipt，Thread同栈核对后consume；随后durable prepare/CAS dispatching成功才可HTTP。失败保同ID/key/body/材料与下一稿且本次0HTTP，everUnknown不降级；prepared恢复不发、dispatching恢复unknown，ACK未耐久仍unknown。CREATE绑定耐久后才允许turn；初次journal提交前的未保存稿不冒崩溃可恢复。详[crash边界候选](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)，只是后继设计约束，非当前生产复现。
+
+同TODO04容量冻结门槛（fixedaeb只读）：4MiB/32draft/128command仍proposal，普通turn16k UTF16、Queue16k UTF8、Steer16384 UTF8并不等价；128合法中文turn仅正文6,144,000bytes已超4MiB，JSON控制字符转义还会膨胀。计完整最终版本化record UTF8，明确namespace/记录单位及CREATE绑定、ACK状态增长预留；不得承诺所有合法输入均可恢复，不截断请求或淘汰unknown。未来发送journal CAS不自动覆盖当前上传journal跨tab read-modify-write风险，详原[候选Interface](../../docs/evidence/web-platform/connection-recovery-readonly-proposal.json)。本轮无实现/实验。

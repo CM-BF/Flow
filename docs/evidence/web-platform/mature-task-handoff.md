@@ -1,16 +1,16 @@
 # 成熟聊天大task来源与登记队列
 
-## SVC05 跨队发布窗口：集成暂冻（Lead通知，未复采样）
+## SVC05 窗口已正式关闭；D06 原源继续（本段取代窗口暂冻状态）
 
-GO授权个人后台固定 **362af3bac77541e5a60979326bcf4d4b8c947915** 更新，唯一operator **assignment_review** 执行fresh gates。原Flow目录为本窗口clean detached到362，**main/origin ref仍aeb764e5**；这不是main回退，不从临时HEAD推新feature base。集成冻结直到Lead明确resume关闭窗口；各独立WT正常工作，固定新App可交审，窗口后Lead自主接收。[原意及边界记录](svc05-runtime-window-notice.json)。
+Lead正式回执：原Flow恢复 main/origin **aeb764e5d2c2ec043ae8673cde2724f5330db2ab** clean，集成冻结解除。服务owner receipt 12:41:29.467Z 为后台 **362/v15 accepting**，Web仍 **8d8/caa1/v2**，原端口与会话保留，operator query/tab reload均0。[只读receipt引用与哈希](svc05-runtime-window-closed.json)。本组没有补服务/API/个人页面采样；[旧窗口通知](svc05-runtime-window-notice.json)仅历史。
 
-4320由独立I02树继续服务，**149来源为Lead通知**，未由本组重取API/浏览器验证。个人服务/tab/主动query不动；DPERF已关闭不重开。此次是授权运行窗口，不冒成功发布或新个人backend验收回执。
+**D06原唯一source重新受领，不另造任务。** 同 `dashboard-architecture-runtime/codex/dashboard-architecture-runtime`；source snapshot固定aeb、feature base631173。**6cad30a2-aa67-4baa-b465-4c957b682670 v1** 四literal已12:39:42.275Z COMMITTED，首canonical95d8664ca16c38cffc65774e9784bc83a43791ec，[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)、[实际D04 receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-aeb/take-receipt.json)。数据/源码/独立viewport正在固定，NOT_STARTED独审，未main；既有D06登记沿此源读取，当前领取UI展示未重采样。用户“其他 agent leads…不要 overlap；take 工作最好也在 dashboard 标清楚”沿U08/REQ37，status和原子claim是事实，队列只作入口。
 
-## 当前优先队列（12:30 UTC；以下较早时点只作历史）
+## 当前优先队列（当前安全点；以下较早时点只作历史）
 
 1. **MATURE04 × attachment-only**：Mika已确认收到，将交原合法owner修复；尚无固定修复target/claim回执。已确认范围是合法v2仅附件触发history known/min1拒绝，运行链影响尚未HTTP/PG验证，mixed材料coverage语义待其明确。[固定诊断与边界](context-attachment-shape-research/source-binding.json)。
-2. **ATTACHI02**：w01实际持0b7fc000 v2全24范围实施真实App/HTTP，未独审/未交付；唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)。SVC05等其固定Send/Queue输入，实施不等待发布准备。 新增[12:32–12:33 moving预审](attachi02-journal-protection-pre-review.json)：全局journal未知记录不得让无关view继承保护；合法privatebinding窄修和两binding定向测试，正式review仍待固定target。
-3. **下一完整旅程MATURE06-04**：附件与获审dashboard安全点后优先于Arc/装饰。Root已批准Interface/合法owner协调；请Lead指定中心session唯一writer，独立六产品路径+own records可先行，mount/exports/client/精确migration由Lead协调现写权。Web consumer/Recovery拟panels **pending legal scope，未领取**，App交集须ATTACHI02 main/release后fresh领取。详[具体dispatch及两Module接口](connection-recovery-readonly-proposal.json)、[共享writer观察](connection-session-shared-owner-observation.json)、[完整原要求](connection-recovery-priority.md)。
+2. **ATTACHI02**：w01实际持0b7fc000 v2全24范围实施真实App/HTTP，未独审/未交付；唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/plans/wpf-attach-i02-production-binding/status.md)。SVC05等其固定Send/Queue输入，实施不等待发布准备。 新增[12:32–12:33 moving预审](attachi02-journal-protection-pre-review.json)：全局journal未知记录不得让无关view继承保护；合法privatebinding窄修和两binding定向测试，正式review仍待固定target。另[混合prepare/remove红→修复诊断](attachi02-mixed-prepare-remove/source-binding.json)仅实际core+binding纯内存；root复验通过，不是App/HTTP正式review。
+3. **下一完整旅程MATURE06-04**：附件与获审dashboard安全点后优先于Arc/装饰。Root已批准Interface/合法owner协调；请Lead指定中心session唯一writer，独立六产品路径+own records可先行，mount/exports/client/精确migration由Lead协调现写权。容量/序列化与上传journal跨tab边界仍待接口冻结，不能承诺128合法请求都落4MiB。Web consumer/Recovery拟panels **pending legal scope，未领取**，App交集须ATTACHI02 main/release后fresh领取。详[具体dispatch及两Module接口](connection-recovery-readonly-proposal.json)、[共享writer观察](connection-session-shared-owner-observation.json)、[完整原要求](connection-recovery-priority.md)。
 4. **DPERF03已完成主线收口并释放**：5609五源已main a8aef，owner7cc5正常push双端clean，全七scope停写后db0b v3 released12:26:50.034Z，[原receipt](dperf03-main-release-receipt.json)。不是待接收任务。
 5. **实际看板148有限观察已到**：[root既有DOM/Lead账本来源](dashboard-148-root-dom-observation.json)。main a8aef/148、顶部ENG/TUI/WPF分散；未点击领取详情、未刷新或新GET，不扩大为完整交互复验。用户U08/REQ37的唯一status/fresh精确take/释放可见要求持续，不建重复事实源。
 
