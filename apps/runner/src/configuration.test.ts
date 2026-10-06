@@ -1,8 +1,17 @@
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
+import * as filesystem from 'node:fs/promises';
+import { constants } from 'node:fs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, expect, it, vi } from 'vitest';
 import { loadCodexRunnerConfiguration, loadRunnerAdapters, loadSelectedRunnerConfiguration } from './configuration.js';
+
+vi.mock('node:fs/promises', async importOriginal => {
+  const actual = await importOriginal<typeof import('node:fs/promises')>();
+  return { ...actual, stat: vi.fn(actual.stat), open: vi.fn(actual.open) };
+});
 
 const directories: string[] = [];
 afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
@@ -82,4 +91,25 @@ it('uses explicit mutually exclusive native selection while preserving fixture a
 
 it('does not accept launch permissions inside an otherwise valid Codex file', async () => {
   await expect(loadCodexRunnerConfiguration(await manifest({ ...codexProfile, env: { HOME: '/private' } }))).rejects.toThrow();
+});
+
+it('refuses a file replaced with a FIFO after inspection without blocking and closes its handle', async () => {
+  const actual = await vi.importActual<typeof import('node:fs/promises')>('node:fs/promises');
+  const file = await manifest(codexProfile);
+  let close: ReturnType<typeof vi.spyOn> | undefined;
+  vi.mocked(filesystem.stat).mockImplementationOnce(async path => {
+    const observed = await actual.stat(path);
+    await actual.unlink(path);
+    await promisify(execFile)('/usr/bin/mkfifo', [String(path)]);
+    return observed;
+  });
+  vi.mocked(filesystem.open).mockImplementationOnce(async (path, flags, mode) => {
+    // A regression fails here before it can block a worker in a FIFO open.
+    expect(Number(flags) & constants.O_NONBLOCK).not.toBe(0);
+    const handle = await actual.open(path, flags, mode);
+    close = vi.spyOn(handle, 'close');
+    return handle;
+  });
+  await expect(loadCodexRunnerConfiguration(file)).rejects.toThrow('manifest exceeds its size limit');
+  expect(close).toHaveBeenCalledExactlyOnceWith();
 });

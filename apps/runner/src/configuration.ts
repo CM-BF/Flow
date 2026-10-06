@@ -1,4 +1,5 @@
 import { open, stat } from 'node:fs/promises';
+import { constants } from 'node:fs';
 import { isAbsolute } from 'node:path';
 import type { HarnessAdapter } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
@@ -54,7 +55,7 @@ async function readManifest(path: string, harness: 'Claude' | 'Codex'): Promise<
   if (!isAbsolute(path)) throw new Error(`${harness} manifest must be a small, explicitly selected absolute file.`);
   const initial = await stat(path);
   if (!initial.isFile() || initial.size > maximumBytes) throw new Error(`${harness} manifest must be a small, explicitly selected absolute file.`);
-  const file = await open(path, 'r');
+  const file = await open(path, constants.O_RDONLY | constants.O_NONBLOCK);
   try {
     const opened = await file.stat();
     if (!opened.isFile() || opened.size > maximumBytes) throw new Error(`${harness} manifest exceeds its size limit.`);
