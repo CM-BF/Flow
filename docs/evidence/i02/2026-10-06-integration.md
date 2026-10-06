@@ -35,3 +35,16 @@ main/origin已于本记录前实际推送4e817611b669579f6194d27a09031ae30cefa2a
 集成只做必要差异与兼容性检查：Web源码相对b584零diff，frozen offline install/typecheck/build通过（两个>500kB chunk警告保留）；O01源码/任务受理/migration/goal-tools相对6bb零diff；组合root typecheck及真实PG目标CLI1/1 1.07s通过。原始stdout见web-host-*.txt/goals-lease-*.txt。不重复R03 54或Mika48、O01 11、外部24/9browser/3PG旅程，0模型。初步O01 merge因早期cherry历史出现add/add全部取owner完整6bb，无手工改领域逻辑；raw stdout空白保留，不以原证据whitespace改写结果。
 
 CHAT薄client841获Root源码/保存5项输出只读批准，仅传输/export；中心和真实回复尚在CHAT01/02，main接收接口不意味着聊天系统已完成。两轮native预算提案已条件批准，三端独审+实际main/配置固定后才运行，当前0调用。三队与39来源登记为metadata，仅注册校验/路径检查，不重跑产品全套。架构图仍固定3773，O01/I01/R03结构已主线的刷新由D05 owner维护待办。
+
+
+## 2026-10-06 03:59 UTC 第三接收批次
+
+完整集成候选012b676c13e5419935a92080406264191ddf2c77，来源逐项固定：CHAT01 typed d0f/metadata a9da（Root只读批准）；CHAT02 core2e+testfcbc/metadata42be（Execution Lead独审）与shared37ab（Root只读批准）；X02 core3d/metadata522703（Root批准）+F01 plugin消费者095497（Mika独审）；B01 impl70af/metadata b563（Mika独立8/8及真实after方法/数据批准）；Web PERF02 impla87f/metadata172d（外部Root独立13项和三规模内容hash审查）；E01 auth8e23/Paseodb2方法与观测（Root只读批准，禁止解读为产品安全采用或真实工程harness已选定）。
+
+各范围与已审来源核对零diff：B01两产品文件、PERF02 workspace-feed与窗口tests、E01 auth/Paseo原文probe、CHAT01 domain/contract、CHAT02 core与已审testdelta；受控merge无手工冲突修复/新领域实现。root typecheck与现有Web直接消费者typecheck均过，原始chat-plugin-typecheck.txt、chat-contract-web-typecheck.txt。PERF02与此前I01一起的Web类型检查另见performance-web-consumer.txt。没有重跑性能样本、Auth/Paseo probes或模块全套。
+
+CHAT生产直接consumer只选择3条、3/3（另外19未选）3.38s，已保留F01原始chat-production-consumer.txt：合成SDK实际adapter两轮/同native session、正文pending→success与重启去重、unknown与lazy长正文。CHAT02自身正式入口10/10整suite7.40s保留原失败/HTTP残留诊断及测试清理修复；这不证明生产graceful shutdown已修，R04独立准备。X02公共CLI真实PG1+client4共5/5，2.25s，登记仍unavailable，不假称npm安装/宿主加载。
+
+root lock和生产依赖未变；新增007/008/009按独立迁移编号在serve之前初始化，产品Web不能直连PG。41个dashboard来源新增CHAT03/P03只指各owner既有唯一三件套，不创造重复进度。架构图3773固定基线需后继同步本批结构，保留明确待更新。
+
+新Web聊天WPF-CHAT01仍在外部独立验收，未接收移动实现；本批main具备后端与正文事实，不宣称用户现在49922 fixture已变真实聊天。真实模型0调用。两次live预算仅在新Web也独审/main完整后使用；每query原始SDK估算known与保守上界，resume产品usage增量unknown如实保留。R04生产停机与CHAT03选择能力独立推进，不为新feature阻住本批已审交付。
