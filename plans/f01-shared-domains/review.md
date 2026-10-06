@@ -1,7 +1,7 @@
 # F01 当前032消息设置生产准备
 
 状态：NOT_STARTED
-Review target commit：5ce424ee5676b24863f3b0c3e5d21c578650a415
+Review target commit：a9ea7ca8ac00fef8243f0e0b7906b76b5652690a
 
 范围仅新增`packages/client/src/claude-message-settings-production.test.ts`，作者native_center_owner。源码准备未经运行/类型或正式review，CORE固定输入与factory032 await未应用；不得把下面O14批准提升给此片。[Interface](../../docs/evidence/f01/claude-message-settings-production-interface.md)。
 

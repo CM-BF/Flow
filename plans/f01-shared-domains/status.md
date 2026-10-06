@@ -16,7 +16,7 @@
 | 检查状态 | NOT_RUN 当前032准备；此前O14 PG2/2与旧CLI/types已独审并main，原证据保持 |
 | 已集成main状态 / HEAD | O14五源已main bd14f984e3927df139815597c4c3171af84ec4b7；032/C01本组合尚未main，个人服务不变 |
 | Review | NOT_STARTED 当前032准备；历史O14 73a已独审APPROVED/main，见review.md |
-| 实现目标 | 5ce424ee5676b24863f3b0c3e5d21c578650a415 |
+| 实现目标 | a9ea7ca8ac00fef8243f0e0b7906b76b5652690a |
 | 实现范围 | packages/client/src/claude-message-settings-production.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |

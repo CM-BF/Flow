@@ -1,6 +1,6 @@
 # F01 消息设置生产直接消费准备
 
-2026-10-06 17:14:15 UTC。准备源码 `5ce424ee5676b24863f3b0c3e5d21c578650a415`，只新增专测，**NOT_RUN**。F01 claim8470e7d2 v46已新增该literal；O14此前已main `bd14f984e3927df139815597c4c3171af84ec4b7`，原批准只覆盖73a，C01原树停止写。父能力合同CORE `ea276572c3c99fb8400808a93efc69ce530d55a4` 与C01 `563b1ea151d8d26a2100238d8faf26b697f38d71` 不重设计。CORE当前等待唯一正式独审；新test不表示生产已接入。
+2026-10-06 17:14:15 UTC。准备源码 `a9ea7ca8ac00fef8243f0e0b7906b76b5652690a`，只新增专测，**NOT_RUN**。F01 claim8470e7d2 v46已新增该literal；O14此前已main `bd14f984e3927df139815597c4c3171af84ec4b7`，原批准只覆盖73a，C01原树停止写。父能力合同CORE `ea276572c3c99fb8400808a93efc69ce530d55a4` 与C01 `563b1ea151d8d26a2100238d8faf26b697f38d71` 不重设计。CORE当前等待唯一正式独审；新test不表示生产已接入。
 
 生产改动只需从`conversations/message-settings-migration.ts`导入`migrateClaudeMessageSettings`，在现createServer migration block内、030后且authentication/package worker/scheduler/onReady扫描之前await。现profiles/conversations/queue已由唯一注册入口在全局authentication hook后挂载，无需第二route/鉴权或新timer。CORE未APPROVED及受控输入未接前不改该入口。
 
@@ -10,4 +10,6 @@
 
 动态资源闭包：沿已核208源/28SQL/19包的O14真实factory闭包，再增加032 SQL与migration入口；固定数组12/13、17/19不能被TSimport扫描遗漏。新增public client调用依赖C01固定方法/ACK/export；CORE约34源由Lead批准后受控接收，不能只复制DTO或伪造本树已有能力。实际输入准备状态见`claude-message-settings-production-inputs.json`。无新依赖安装/运行配置/公共client更改。
 
-准备命令（NOT_RUN）：`Node24 node_modules/vitest/vitest.mjs run packages/client/src/claude-message-settings-production.test.ts --maxWorkers=1 --no-cache`。须CORE正式APPROVED、固定输入/materialization完整、薄032接线固定且Leader明确独占PG窗口后执行。Web B正在占窗口，本片不会启动。
+准备命令（NOT_RUN）：`Node24 node_modules/vitest/vitest.mjs run packages/client/src/claude-message-settings-production.test.ts --maxWorkers=1 --no-cache`。须CORE正式APPROVED、固定输入/materialization完整、薄032接线固定且Leader明确独占PG窗口后执行。当前待TUI资源正常收尾及Lead重新排窗口，本片不会自行启动。
+
+只读直接消费者复核发现 registerRunner 既有签名只有一个参数，已仅修专测调用；其请求沿原client默认15s timeout，其余显式signal仍5s。没有扩client API，也未运行types或PG。
