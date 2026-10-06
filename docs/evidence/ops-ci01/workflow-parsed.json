@@ -1,0 +1,102 @@
+{
+  "name": "bounded zero-model contracts and PostgreSQL",
+  "on": {
+    "workflow_dispatch": null
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "concurrency": {
+    "group": "flow-bounded-ci-${{ github.ref }}",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "contracts-and-handler": {
+      "if": "github.event.repository.private == false",
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 12,
+      "services": {
+        "postgres": {
+          "image": "postgres:16.13-alpine",
+          "env": {
+            "POSTGRES_USER": "flow",
+            "POSTGRES_PASSWORD": "flow-local-only",
+            "POSTGRES_DB": "flow_c01"
+          },
+          "ports": [
+            "55432:5432"
+          ],
+          "options": "--health-cmd \"pg_isready -U flow -d flow_c01\" --health-interval 2s --health-timeout 2s --health-retries 30"
+        }
+      },
+      "env": {
+        "CI": "true",
+        "FLOW_TEST_DATABASE_URL": "postgresql://flow:flow-local-only@127.0.0.1:55432/flow_c01"
+      },
+      "defaults": {
+        "run": {
+          "shell": "bash"
+        }
+      },
+      "steps": [
+        {
+          "name": "Check out public source without retaining credentials",
+          "uses": "actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "with": {
+            "persist-credentials": false,
+            "fetch-depth": 1
+          }
+        },
+        {
+          "name": "Select pnpm without installing project packages or caching",
+          "uses": "pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1",
+          "with": {
+            "version": "9.15.4",
+            "run_install": false,
+            "cache": false
+          }
+        },
+        {
+          "name": "Select the project Node version without package-manager cache",
+          "uses": "actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020",
+          "with": {
+            "node-version": "24.20.0"
+          }
+        },
+        {
+          "name": "Install the locked public packages in this ephemeral runner",
+          "timeout-minutes": 5,
+          "run": "test \"$(node --version)\" = v24.20.0\ntest \"$(pnpm --version)\" = 9.15.4\ntimeout --kill-after=5s 240s pnpm install --frozen-lockfile --ignore-scripts --store-dir \"$RUNNER_TEMP/flow-ci-store\"\nnode --input-type=module - <<'NODE'\nimport { readFileSync } from 'node:fs';\nimport assert from 'node:assert/strict';\nassert.equal(JSON.parse(readFileSync('node_modules/vitest/package.json', 'utf8')).version, '4.0.18');\nassert.equal(process.env.FLOW_TEST_DATABASE_URL, 'postgresql://flow:flow-local-only@127.0.0.1:55432/flow_c01');\nNODE\ngit diff --exit-code -- package.json pnpm-lock.yaml pnpm-workspace.yaml\ngit rev-parse HEAD\n"
+        },
+        {
+          "name": "Run the two existing contract checks",
+          "id": "contracts",
+          "timeout-minutes": 2,
+          "run": "set +e\ntimeout --kill-after=5s 60s pnpm exec vitest run packages/contracts/src/contracts.test.ts --reporter=json --outputFile=\"$RUNNER_TEMP/flow-ci-contracts.json\"\ncode=$?\nprintf '%s\\n' \"$code\" > \"$RUNNER_TEMP/flow-ci-contracts.exit\"\nexit \"$code\"\n"
+        },
+        {
+          "name": "Run one real PostgreSQL and public HTTP handler check",
+          "id": "handler",
+          "timeout-minutes": 3,
+          "run": "set +e\ntimeout --kill-after=5s 120s pnpm exec vitest run apps/server/src/server.test.ts -t 'persists accepted commands across restart and rejects changed retries$' --reporter=json --outputFile=\"$RUNNER_TEMP/flow-ci-handler.json\"\ncode=$?\nprintf '%s\\n' \"$code\" > \"$RUNNER_TEMP/flow-ci-handler.exit\"\nexit \"$code\"\n"
+        },
+        {
+          "name": "Observe connections and normally remove only this job database",
+          "id": "cleanup",
+          "if": "always()",
+          "timeout-minutes": 1,
+          "env": {
+            "FLOW_CI_POSTGRES_ID": "${{ job.services.postgres.id }}"
+          },
+          "run": "# No FORCE, terminate-backend, host database or persistent volume access.\ntimeout --kill-after=2s 15s bash <<'CLEANUP'\nset -euo pipefail\n[[ \"$FLOW_CI_POSTGRES_ID\" =~ ^[0-9a-f]{12,64}$ ]]\nquery() { docker exec \"$FLOW_CI_POSTGRES_ID\" psql -X -qAt -U flow -d postgres -v ON_ERROR_STOP=1 -c \"$1\"; }\ntest \"$(query \"SELECT count(*) FROM pg_database WHERE datname='flow_c01'\")\" = 1\nconnections=unknown\nfor observation in {1..15}; do\n  connections=$(query \"SELECT count(*) FROM pg_stat_activity WHERE datname='flow_c01'\")\n  [[ \"$connections\" =~ ^[0-9]+$ ]]\n  if test \"$connections\" = 0; then break; fi\n  sleep 0.2\ndone\nif test \"$connections\" != 0; then\n  printf 'cleanup=unknown connections=%s; no normal DROP attempted\\n' \"$connections\"\n  exit 1\nfi\ndocker exec \"$FLOW_CI_POSTGRES_ID\" dropdb -U flow flow_c01\ntest \"$(query \"SELECT count(*) FROM pg_database WHERE datname='flow_c01'\")\" = 0\nprintf 'normal-drop; connections=0; database-absent\\n' > \"$RUNNER_TEMP/flow-ci-cleanup.txt\"\nCLEANUP\n"
+        },
+        {
+          "name": "Report exact selection, exit and cleanup facts",
+          "if": "always()",
+          "timeout-minutes": 1,
+          "run": "timeout --kill-after=2s 15s node --input-type=module - <<'NODE'\nimport { readFileSync, statSync, appendFileSync } from 'node:fs';\nimport { join } from 'node:path';\nconst read = (name, limit) => {\n  const path = join(process.env.RUNNER_TEMP, `flow-ci-${name}`);\n  if (statSync(path).size > limit) throw new Error('Bounded CI report exceeded its limit.');\n  return readFileSync(path, 'utf8');\n};\nlet good = true;\nconst facts = [];\nfor (const [name, expectedPassed, expectedPending] of [['contracts', 2, 0], ['handler', 1, 9]]) {\n  try {\n    const exit = Number(read(`${name}.exit`, 16));\n    const result = JSON.parse(read(`${name}.json`, 262144));\n    const passed = result.numPassedTests, failed = result.numFailedTests, pending = result.numPendingTests;\n    const selected = passed + failed;\n    const valid = exit === 0 && result.success === true && passed === expectedPassed && failed === 0\n      && pending === expectedPending && result.numTotalTests === expectedPassed + expectedPending;\n    facts.push({ name, exit, selected, passed, failed, unselected: pending, valid });\n    good &&= valid;\n  } catch { facts.push({ name, status: 'NOT_RUN_OR_REPORT_UNKNOWN' }); good = false; }\n}\nlet cleanup = 'unknown';\ntry { cleanup = read('cleanup.txt', 256).trim(); } catch { good = false; }\ngood &&= cleanup === 'normal-drop; connections=0; database-absent';\nconst summary = { source: process.env.GITHUB_SHA, facts, cleanup,\n  scope: 'contracts + real PostgreSQL/Fastify.inject; not socket HTTP, runner, model or UI',\n  modelExecution: 'not requested; no runtime or SDK entry selected', success: good };\nconst text = JSON.stringify(summary, null, 2);\nconsole.log(text);\nappendFileSync(process.env.GITHUB_STEP_SUMMARY, `\\n\\`\\`\\`json\\n${text}\\n\\`\\`\\`\\n`);\nif (!good) process.exitCode = 1;\nNODE\n"
+        }
+      ]
+    }
+  }
+}
