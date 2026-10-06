@@ -71,3 +71,7 @@ Root [原报告](../../docs/evidence/wpf-conversation-recovery/667-first-failure
 独立reviewer root于2026-10-06T18:19:47.437937Z对7cc给[APPROVED_SOURCE_SCOPED_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/7cc-root-source-review.json)，0blocking，P1默认激活/P2observer源码修复认可；原报告逐字归档。作者本次经独立gate运行[38/38 direct](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)，2.294s、清理通过。不得把作者运行改写成root重跑；真实IDB/React/cookie旅程和完整feature审查仍NOT_STARTED/targetUNKNOWN，首次真实失败不改绿。
 
 Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-root-review.json)逐字归档，核38/38含新增5生命周期+6observer、19源/gate绑定与完整清理；未独立复跑、不推真实浏览器或完整feature批准。
+
+## 2026-10-06 19:27:59 UTC — browser parent tail限定源码修复待审
+
+[Root固定7cc尾部审查](../../docs/evidence/wpf-conversation-recovery/browser-tail-root-review.json)两项P2按源码收敛：显式自有组消失才删scratch；reap后删除前及report/budget后终态配额/free/elapsed检查，异常判失败但继续安全清理。[修复接口与限制](../../docs/evidence/wpf-conversation-recovery/browser-tail-source.md)明确白名单MAC_CHROMIUM_TMPDIR/argv和原计时边界。本段尚未独立审查，0types/运行；旧38PASS不推本新parent已验，首真实browser失败未改绿。完整feature仍NOT_STARTED/targetUNKNOWN。

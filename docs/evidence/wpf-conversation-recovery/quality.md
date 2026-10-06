@@ -125,3 +125,9 @@ Root/peer同一真实P2：JSON.parse的any掩盖public结构中没有taskId。�
 19源码仍固定7cc，14原文件原样入direct-third，旧direct-first/second与browser10rawhash不变。累计direct6.868/30s与browser14.846267375/90s独立；后者首失败保留，无新types/HTTP/PG/Chrome/install/build。root源码APPROVED与作者行为PASS分别归因，fullfeature NOT_STARTED/main未接，不夸大局部验收。未新增产品复杂度或接口，本段无新未解决clean-code项；真实浏览器/完整覆盖限制继续开放。
 
 Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59bcd8327ec98edbeb6dd4993e995f4fa3f98c27c`；作者运行、root只读接受、完整feature未审三层分别标明。
+
+## 2026-10-06 19:27:59 UTC — browser parent tail clean-code安全点
+
+复用本地find-skills/codebase-design/clean-code/webapp-testing已固定版本，不安装。实际发现是错误文本暗含删除权限与最后子写入未做终态配额检查；改为显式所有权事实、独立观察与安全清理，错误传播到同一父errors。沿现父模块增加两个局部操作observeTail/persistReports，未新建监管框架或外部authority。DB close异常不跳过后续安全清理，硬截止可使最终budget失效；白名单启动记录不泄露继承环境。
+
+源码自审覆盖命名、职责、错误/清理路径、有限报告写入与预算边界；只browser parent改动，另外18源和worker/ENOENT helper不动。新行为NOT_RUN，38受控结果及首browser失败保留，未冒独立批准。当前账本未知，仅沿19:18:39合法观察与管理继续收口指令，无新资源/运行采样。

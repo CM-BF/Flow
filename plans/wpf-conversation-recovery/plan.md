@@ -74,3 +74,7 @@ RECOVERY01-05首一次真实浏览器cookieRead通过，随后草稿存储旅程
 ### 2026-10-06 18:39:00 UTC — 定向检查安全点
 
 RECOVERY01-04新增生命周期/observer共38受控case已单次通过，源7cc、执行bf14，[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-validation.md)。direct累计6.868/30s；剩余额度不授权重试。RECOVERY01-05真实browser首失败仍保留，修复后未重跑；RECOVERY01-06完整独审/main未完成，不因局部通过勾完TODO。
+
+### 2026-10-06 19:21:36 UTC — 同一browser父监督尾部修正
+
+仅ESRCH证明owned process group不存在；未知/活跃保留scratch并失败。确认组消失后、删除前独立检查scratch/evidence/free，无work-phase门槛；计量错误入raw，安全清理继续。报告/budget后再有界观察真实占用/耗时，失败不绿。显式MAC_CHROMIUM_TMPDIR归own scratch，仅记录白名单临时目录/实际argv，复用既有PID退出记录，不复制第二collector。原计时在准入/历史budget核验后开始；新尾部计量覆盖报告写入，不冒包含全部preflight/物理硬配额。无新运行预算。

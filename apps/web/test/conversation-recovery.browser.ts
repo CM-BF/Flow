@@ -39,6 +39,7 @@ type Init = { kind: "start"; directory: string; scratch: string; databaseUrl: st
 type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
   headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
 type WorkerResult = { checks: string[]; pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[] };
+type TailObservation = { phase: string; elapsedMs: number; scratchBytes: number | null; evidenceBytes: number | null; freeBytes: number | null; errors: string[] };
 
 async function supervisor() {
   requireThat(process.env.FLOW_RECOVERY_BROWSER === "1", "Separate real browser/PG approval is required");
@@ -88,9 +89,12 @@ async function supervisor() {
   };
   const hardStop = setTimeout(() => {
     signalGroups("SIGKILL");
-    writeFileSync(join(directory, "hard-stop.json"), JSON.stringify({ at: new Date().toISOString(), scratch, database: lease?.database,
-      databaseState: lease?.state, ownedPids: children.map(child => child.pid), cleanupConfirmed: false }), { mode: 0o600 });
-    process.exit(1); // Incomplete budget/lease remain; never green or automatically rerunnable.
+    Object.assign(budget, { complete: false, cleanupComplete: false, elapsedMs: performance.now() - began });
+    try {
+      writeFileSync(join(directory, "budget.json"), JSON.stringify(budget), { mode: 0o600 });
+      writeFileSync(join(directory, "hard-stop.json"), JSON.stringify({ at: new Date().toISOString(), scratch, database: lease?.database,
+        databaseState: lease?.state, ownedPids: children.map(child => child.pid), cleanupConfirmed: false }), { mode: 0o600 });
+    } finally { process.exit(1); } // Even a hard stop during final accounting invalidates the budget.
   }, gate.totalMs);
   const stop = (reason: string) => { if (!stopped) errors.push(reason); stopped = true; signalGroups("SIGTERM"); };
   const interrupted = () => stop("Supervisor interrupted"); process.once("SIGINT", interrupted); process.once("SIGTERM", interrupted);
@@ -129,8 +133,16 @@ async function supervisor() {
     scratch = await mkdtemp(join(gate.scratchParent, "flow-recovery-browser-"));
     await json(join(directory, "scratch-owner.json"), { scratch, maxBytes: gate.maxScratchBytes, retainedEvidence: false });
     await checkpoint();
-    const childEnv: NodeJS.ProcessEnv = { ...process.env, TSX_DISABLE_CACHE: "1", NODE_DISABLE_COMPILE_CACHE: "1", TMPDIR: scratch, TMP: scratch, TEMP: scratch, XDG_CACHE_HOME: join(scratch, "cache") };
+    const childEnv: NodeJS.ProcessEnv = { ...process.env, TSX_DISABLE_CACHE: "1", NODE_DISABLE_COMPILE_CACHE: "1", TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, XDG_CACHE_HOME: join(scratch, "cache") };
     delete childEnv.FLOW_RECOVERY_TEST_ADMIN;
+    const chromeExecutable = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", profile = join(scratch, "chrome");
+    const chromeArgs = ["--headless=new", "--remote-debugging-port=0", "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`,
+      "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"];
+    await json(join(directory, "launch-config.json"), {
+      temp: { TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, XDG_CACHE_HOME: join(scratch, "cache") },
+      worker: { executable: process.execPath, selectedArgv: [fileURLToPath(import.meta.url), "--worker"], inheritedRuntimeArguments: "not recorded" },
+      chrome: { executable: chromeExecutable, argv: chromeArgs },
+    }); // Deliberate whitelist: never serialize inherited environment or credential-bearing arguments.
     const worker = own(spawn(process.execPath, [...process.execArgv, fileURLToPath(import.meta.url), "--worker"], { cwd: root, detached: true,
       stdio: ["ignore", "pipe", "pipe", "ipc"], env: childEnv }));
     worker.on("message", message => {
@@ -140,10 +152,8 @@ async function supervisor() {
         chromeRequested = true;
         void (async () => {
           await checkpoint(); requireThat(scratch, "Scratch ownership missing");
-          const profile = join(scratch, "chrome"); await mkdir(profile); await checkpoint();
-          const chrome = own(spawn("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", ["--headless=new", "--remote-debugging-port=0",
-            "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`, "--no-first-run", "--no-default-browser-check",
-            "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"],
+          await mkdir(profile); await checkpoint();
+          const chrome = own(spawn(chromeExecutable, chromeArgs,
           { detached: true, stdio: ["ignore", "pipe", "pipe"], env: childEnv }));
           let port = "";
           while (!port) {
@@ -167,34 +177,85 @@ async function supervisor() {
     const grace = Math.min(performance.now() + 2000, hardAt - 12_000);
     while (performance.now() < grace && children.some(child => child.exitCode === null && child.signalCode === null)) await sleep(30);
     signalGroups("SIGKILL");
+    let allOwnedGroupsAbsent = true;
     for (const child of children) {
       await Promise.race([closed.get(child), sleep(Math.max(0, Math.min(500, hardAt - performance.now())))]);
       if (child.exitCode === null && child.signalCode === null) cleanupErrors.push(`Owned PID ${child.pid} exit unconfirmed`);
-      if (child.pid) try { process.kill(-child.pid, 0); cleanupErrors.push(`Owned process group ${child.pid} remains`); }
-      catch (error) { if ((error as NodeJS.ErrnoException).code !== "ESRCH") cleanupErrors.push(text(error)); }
+      let absent = false;
+      if (child.pid) {
+        try { process.kill(-child.pid, 0); cleanupErrors.push(`Owned process group ${child.pid} remains`); }
+        catch (error) {
+          if ((error as NodeJS.ErrnoException).code === "ESRCH") absent = true;
+          else cleanupErrors.push(`Owned process group ${child.pid} observation: ${text(error)}`);
+        }
+      } else cleanupErrors.push("Owned process has no confirmed PID");
+      allOwnedGroupsAbsent = allOwnedGroupsAbsent && absent;
     }
-    if (lease) { databaseCleanup = await lease.close(hardAt); cleanupErrors.push(...databaseCleanup.errors); }
+    if (lease) try { databaseCleanup = await lease.close(hardAt); cleanupErrors.push(...databaseCleanup.errors); }
+    catch (error) { cleanupErrors.push("Database cleanup: " + text(error)); }
+    const terminal: TailObservation[] = [];
+    const observeTail = async (phase: string, includeScratch = false, reserveBytes = 0): Promise<TailObservation> => {
+      const observation: TailObservation = { phase, elapsedMs: 0, scratchBytes: null, evidenceBytes: null, freeBytes: null, errors: [] };
+      const failed = (message: string) => { observation.errors.push(message); errors.push(`${phase}: ${message}`); };
+      try {
+        observation.freeBytes = await freeBytes(); minimumFreeBytes = Math.min(minimumFreeBytes, observation.freeBytes);
+        if (observation.freeBytes <= STOP_FREE) failed("Free space reached stop margin");
+      } catch (error) { failed("Free-space accounting: " + text(error)); }
+      try {
+        observation.evidenceBytes = await treeBytes(evidence);
+        if (observation.evidenceBytes > EVIDENCE_BYTES - reserveBytes) failed("Retained evidence limit reached");
+      } catch (error) { failed("Evidence accounting: " + text(error)); }
+      if (includeScratch && scratch) try {
+        observation.scratchBytes = await treeBytes(scratch, true); peakScratchBytes = Math.max(peakScratchBytes, observation.scratchBytes);
+        if (observation.scratchBytes > gate.maxScratchBytes) failed("Scratch limit reached after child reaping");
+      } catch (error) { failed("Scratch accounting: " + text(error)); }
+      observation.elapsedMs = performance.now() - began;
+      if (observation.elapsedMs > gate.totalMs || priorMs + observation.elapsedMs > TOTAL_MS) failed("Total browser budget exceeded");
+      return observation; // No work-deadline guard: cleanup observations use the same absolute hard stop.
+    };
+    terminal.push(await observeTail("after-reap-before-removal", allOwnedGroupsAbsent, 16 * 1024));
+    let scratchRemoved = !scratch;
     if (scratch) {
-      if (cleanupErrors.some(error => /process group|exit unconfirmed/.test(error))) cleanupErrors.push("Scratch retained because process ownership is unresolved");
+      if (!allOwnedGroupsAbsent) cleanupErrors.push("Scratch retained because owned-group absence is unresolved");
       else {
-        try { peakScratchBytes = Math.max(peakScratchBytes, await treeBytes(scratch, true)); await rm(scratch, { recursive: true }); }
+        // Accounting failures above remain failures; confirmed absence still permits safe cleanup.
+        try { await rm(scratch, { recursive: true }); }
         catch (error) { cleanupErrors.push("Scratch cleanup: " + text(error)); }
-        try { await lstat(scratch); cleanupErrors.push("Scratch still exists"); } catch (error) { if ((error as NodeJS.ErrnoException).code !== "ENOENT") cleanupErrors.push(text(error)); }
+        try { await lstat(scratch); cleanupErrors.push("Scratch still exists"); }
+        catch (error) { if ((error as NodeJS.ErrnoException).code === "ENOENT") scratchRemoved = true; else cleanupErrors.push(text(error)); }
       }
     }
     await logs;
     if (result?.cleanupErrors.length) cleanupErrors.push(...result.cleanupErrors);
     if (result?.failure) errors.push(result.failure);
-    if (await treeBytes(evidence) > EVIDENCE_BYTES - 16 * 1024) errors.push("No room for bounded final report");
-    const elapsedMs = performance.now() - began;
-    Object.assign(budget, { complete: true, cleanupComplete: cleanupErrors.length === 0, elapsedMs });
-    await json(join(directory, "supervisor.json"), { passed: !!result && !errors.length && !cleanupErrors.length && priorMs + elapsedMs <= TOTAL_MS,
-      errors, cleanupErrors, databaseCleanup, processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })), minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved: scratch ? !cleanupErrors.some(error => /Scratch/.test(error)) : true,
-      attribution: "250ms shared-volume observations are not hard quotas or exclusively attributable physical allocation", providerQueries: 0 });
-    await json(join(directory, "budget.json"), budget);
-    requireThat(await treeBytes(evidence) <= EVIDENCE_BYTES, "Final retained evidence exceeded 8MiB");
-    clearTimeout(hardStop); process.off("SIGINT", interrupted); process.off("SIGTERM", interrupted);
-    if (!result || errors.length || cleanupErrors.length || priorMs + elapsedMs > TOTAL_MS) process.exitCode = 1;
+    const persistReports = async (complete: boolean) => {
+      const elapsedMs = performance.now() - began;
+      Object.assign(budget, { complete, cleanupComplete: allOwnedGroupsAbsent && scratchRemoved && cleanupErrors.length === 0, elapsedMs });
+      await json(join(directory, "supervisor.json"), { passed: complete && allOwnedGroupsAbsent && scratchRemoved && !!result && !errors.length && !cleanupErrors.length && elapsedMs <= gate.totalMs && priorMs + elapsedMs <= TOTAL_MS,
+        errors, cleanupErrors, databaseCleanup, processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
+        allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
+        attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
+      await json(join(directory, "budget.json"), budget);
+    };
+    let postWrite: TailObservation | undefined;
+    try {
+      await persistReports(false);
+      terminal.push(await observeTail("after-initial-report-and-budget"));
+      await persistReports(true);
+      postWrite = await observeTail("after-final-report-and-budget");
+      if (postWrite.errors.length) {
+        terminal.push(postWrite);
+        await persistReports(false); // Bounded failure correction; no report/retry loop.
+        postWrite = await observeTail("after-failure-correction");
+      }
+    } catch (error) {
+      errors.push("Final report accounting: " + text(error));
+      try { await persistReports(false); } catch (failure) { errors.push("Failure report write: " + text(failure)); }
+    } finally {
+      console.log(JSON.stringify({ kind: "recovery-final-accounting", directory, postWrite, errors, cleanupErrors, allOwnedGroupsAbsent, scratchRemoved }));
+      clearTimeout(hardStop); process.off("SIGINT", interrupted); process.off("SIGTERM", interrupted);
+    }
+    if (!result || errors.length || cleanupErrors.length || !allOwnedGroupsAbsent || !scratchRemoved || performance.now() > hardAt || priorMs + performance.now() - began > TOTAL_MS) process.exitCode = 1;
   }
 }
 

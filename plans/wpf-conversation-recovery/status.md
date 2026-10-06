@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:39:00 UTC |
+| 最近更新 | 2026-10-06 19:27:59 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；固定source7cc7629b6603a6ccc7e2ab6143125dea8daae685；本轮执行metadata bf14ae68c2c9b1ba9666f9f5b6314ca15353625d；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源固定不改；本次独立第三轮证据及own metadata，提交/normal push后核双端clean |
+| 工作树dirty状态 | 3896 clean 输入已核；本段仅browser parent尾部与own metadata源码修复，其余18源冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
@@ -24,7 +24,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 active，仅原21scope；14:05:53.395Z正式收窄回执已核字段归档，所有ignored依赖只读 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；最近权属观察2026-10-06T19:18:39.046Z active/唯一owner/无overlap。19:24管理报告D04不可用，当前账本未知；沿本段既授权范围收口，未重新探测或扩权 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -159,3 +159,9 @@ Root静态点数纠正：当前直接文件展开38case，较旧27新增11（5�
 [第三轮结果](../../docs/evidence/wpf-conversation-recovery/direct-third/result.json)绑定bf14/7cc19源：38/38 PASS、0skip/todo/fail、exit0，supervisor2.294s/direct2.136s。累计6.868/30s，余23.132s仅算术；cleanup fulfilled/errors[]/owned group与scratch均不存在。原raw独立14文件归档，历史direct-second和首browser10raw逐字保留。[7cc root源码结论](../../docs/evidence/wpf-conversation-recovery/7cc-root-source-review.json)仅源码批准；本次是作者受控IDB事件/mockfetch结果，非root复跑或真实浏览器证明。types/browser未新增，完整feature NOT_STARTED/targetUNKNOWN/main未接。
 
 Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conversation-recovery/direct-third-root-review.json)逐字归档，核38/38含新增5生命周期+6observer、19源/gate绑定与完整清理；未独立复跑、不推真实浏览器或完整feature批准。
+
+## 2026-10-06 19:21:36 UTC — browser parent tail source-only修复启动
+
+[管理fresh领取](../../docs/evidence/wpf-conversation-recovery/browser-tail-claim.json)已本人核6ff v4/原21/唯一owner/无overlap。[Root尾部审查](../../docs/evidence/wpf-conversation-recovery/browser-tail-root-review.json)与[peer准备](../../docs/evidence/wpf-conversation-recovery/browser-tail-peer-report.md)确认：原删scratch依赖错误文字而非显式组消失；reap后删除前缺终态配额/free核；MAC_CHROMIUM_TMPDIR未显式覆盖（不推首轮启动失败）。仅browser父监督收敛，不改38测试/生产/fixture或原ENOENT helper。
+
+本段0runtime/import/types/HTTP/PG/Chrome/free；原14846.267375ms（14.846267375秒）与10raw保留，余75153.732625ms含15000ms清理只是算术，无新gate。direct6.868/30s、types52.814/60s原样。完整feature targetUNKNOWN/reviewNOT_STARTED。
