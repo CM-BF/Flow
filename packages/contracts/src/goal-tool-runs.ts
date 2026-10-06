@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { idSchema, type TaskSummary } from './tasks.js';
 import { ownershipSchema } from './runner.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
-import { goalCommandSchema, type GoalCommandResult, type GoalDefinition, type GoalSnapshot } from './goals.js';
+import { goalCommandSchema, type GoalCommandResult, type GoalDefinition, type GoalSnapshot, type GoalToolPort } from './goals.js';
 
 const commandKind = z.enum(['define-input', 'execute', 'accept-delivery']);
 export const goalToolScopeSchema = z.strictObject({
@@ -32,7 +32,7 @@ export const goalToolRevokeSchema = z.strictObject({ reason: z.string().trim().m
 export const goalToolAuditQuerySchema = z.strictObject({ after: z.coerce.number().int().min(0).default(0), limit: z.coerce.number().int().min(1).max(50).default(20) });
 export interface GoalToolRun {
   id: string; version: 1; goalId: string; taskId: string; scope: GoalToolScope;
-  mode: 'fixture'; usedCommands: number; createdAt: string;
+  mode: 'fixture' | 'claude'; usedCommands: number; createdAt: string;
   revokedAt: string | null; revocationReason: string | null;
 }
 export interface GoalToolRunAccepted { run: GoalToolRun; task: TaskSummary; replayed: boolean }
@@ -47,3 +47,9 @@ export interface GoalToolRunRevoked { run: GoalToolRun; changed: boolean; replay
 export type GoalToolSnapshotResult = GoalSnapshot;
 export type GoalToolInputResult = GoalDefinition;
 export type GoalToolCommandResult = GoalCommandResult;
+
+/** Host-only capability: methods close over runner authority; never serialized into SDK prompts. */
+export interface GoalToolCapability {
+  goalId: string; allowedNodeIds: readonly string[];
+  allowedCommands: readonly GoalToolScope['allowedCommands'][number][]; port: GoalToolPort;
+}
