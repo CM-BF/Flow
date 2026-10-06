@@ -1,0 +1,488 @@
+{
+  "at": "2026-10-06T07:57:11.632244+00:00",
+  "sourceHead": "f490dc96e11842b2f2c4e68879510611e8e14602",
+  "resultTarget": "160b580d516a819af63eb1457b482afb89182735",
+  "approver": "Mika independent; Goal Owner accepted",
+  "scopes": [
+    "experiments/assistant-stream-cost",
+    "plans/chat06-stream-cost",
+    "docs/evidence/chat06p01"
+  ],
+  "files": [
+    {
+      "path": "docs/evidence/chat06p01/README.md",
+      "bytes": 1089,
+      "sha256": "85af719754a443bf2b9e360a5ad445a35182f7ef2fa890c9afc523e21f087c8b",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/claim-receipt.json",
+      "bytes": 636,
+      "sha256": "11a3daf02895fc5fd82f28aa263ba2e3b295604b3b9b516b05d7a1615488c0dd",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/claim-request.json",
+      "bytes": 440,
+      "sha256": "565290c4a3267fb54534f0b5a81696654b8be1da9df88b34fd612e6580a72ea4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/dashboard-preparation.json",
+      "bytes": 887,
+      "sha256": "3277c15c448c9f072e264179949fd1e008fd4ae98852381a4ac34646ec0e1403",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/dashboard-readiness.json",
+      "bytes": 242,
+      "sha256": "415846adab9a8c7dc91fb1594c2bed15483e3b244825a4ea4b2e56c85db4c33b",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/dashboard-result-approved.json",
+      "bytes": 178,
+      "sha256": "efd99bc2d05414309eac565b06bea52e4207c6331512c5b11d3a1a3a42b6abb8",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/dependency-runtime.json",
+      "bytes": 2106,
+      "sha256": "184f66fba4ba8cfa4ec47d48eb9ec2265f88cdd7b287ed601a98b6815cc79443",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports-esm-result.json",
+      "bytes": 2574,
+      "sha256": "bdebe5d087b61a576332a62772fa8b17766def9e36715e19d498c977a3962a05",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports-esm.log",
+      "bytes": 121,
+      "sha256": "24d7400178c4c98802cf9fe60debaeea166f39d3bc197016dd7dc6e45a07047c",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports-fixed-result.json",
+      "bytes": 2579,
+      "sha256": "60401574621eaa587a12145a75888365a4b9672eba2ad2a282c82fd4c69fdff4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports-fixed.log",
+      "bytes": 523,
+      "sha256": "d96e3d8f1384a97f5914381652c1aca37b15e11785e58ed229d19452544326d5",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports-result.json",
+      "bytes": 2572,
+      "sha256": "ca4ff4f96d3c049f6713bb5fa6d5699d1beb63fd5e1e69e3bbc6cc4ddf371088",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-imports.log",
+      "bytes": 1340,
+      "sha256": "44178d788b0a4020638318a686b7ced5f00651c24e470535b8df81fa488a3cae",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-syntax-final-result.json",
+      "bytes": 2490,
+      "sha256": "035095b062ba33f87d13626e1560c70c06125d8d82c575b1f77e39d3ff801893",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-syntax-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-syntax-result.json",
+      "bytes": 2493,
+      "sha256": "679195c2b35f2ee67130837e38002863682e8d9fa632707ee37f66f5cbb31ba5",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-types-result.json",
+      "bytes": 2587,
+      "sha256": "fb69098945b308be80f6753162dcc7c2a0eb3799620bdf1cb924809e9ecce838",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/entry-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/execution-receipt.json",
+      "bytes": 842,
+      "sha256": "efcce773bd29e6cfad9f0f37d90ad576023e7d6dbee9d2d15a97e51351d0b4af",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/execution.log",
+      "bytes": 203,
+      "sha256": "4838f741871253f33649c63ebeff3e220f614738f5703cca248947071fb23538",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-complete-green-result.json",
+      "bytes": 2376,
+      "sha256": "b01d75bb1e6e6c39bd4328e1358679c22a5be204b8ea4094598a3c27c5499de7",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-complete-green.log",
+      "bytes": 334,
+      "sha256": "a3980f98eda5919cee7471e0877814d76bafdc79c7241b24e25d12f1e1ae84d9",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-first-green-result.json",
+      "bytes": 1885,
+      "sha256": "b11857e6f8b05a8a62d339076fcc96c93cb27314095cea31ba395017492b7cfa",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-first-green.log",
+      "bytes": 329,
+      "sha256": "a1a924502b643a9e33d61e3c7cc1b75ccd6c2f351bccfd0ac29484a3997555bc",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-red-result.json",
+      "bytes": 1885,
+      "sha256": "7ae7cdea901623a428a1036a12caf17c1111bbc463f475a729df87b30c1d76a1",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-red.log",
+      "bytes": 1092,
+      "sha256": "436c0894fada980e86bb205584996e765b0281f010672be581dd5c298ba85fa0",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-seven-green-result.json",
+      "bytes": 2688,
+      "sha256": "7604b3d7a77d85a1a7b41e6a20973e13c9ccdd62a4965adb91393af3539479d6",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-seven-green.log",
+      "bytes": 332,
+      "sha256": "5c2374a0cd7c4ea9f8f4534941a29f7dd0f5926f37792d7a120930da1a822870",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-types-fixed-result.json",
+      "bytes": 2597,
+      "sha256": "0cdb4231dfc8c8ed140e62b1cfb25fdf24e5fdbf96fa4b826331772c1a71a87b",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-types-fixed.log",
+      "bytes": 521,
+      "sha256": "fa5fd6fb343dc1ef4fdb673b0076fda279dce1411e5a5636f187c9f48362adb8",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-types-result.json",
+      "bytes": 2268,
+      "sha256": "40c8e3eb7226fe286187b90da8c865c6bd1d78e6438edc5da688f1b256fbbc6a",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/observer-types.log",
+      "bytes": 36007,
+      "sha256": "3f853273023bebaa3d0570158fb2a7eace74a42294c641190f0a1a102551250d",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/preparation-manifest.json",
+      "bytes": 4218,
+      "sha256": "7a612e16d7694f51696e9b9f6ee3828bab9567c7657b2d43a5e1ba8d8996abe0",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/pure-independent-review.json",
+      "bytes": 684,
+      "sha256": "cad93663e20dbad3a5b040d87b2130aa7ae14d8380b052a0ed56fab91566a660",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/quality.md",
+      "bytes": 5762,
+      "sha256": "ae864e48c6c3dfdde72f576f09c7d2ed98adcafaf8dfd440eeafa4ee8298850b",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-independent-review.json",
+      "bytes": 1068,
+      "sha256": "f14f86b546a8bedc0e32b73ddcfebaebf1900bd8cdda560e835fb20acf34f7bf",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-manifest.json",
+      "bytes": 15799,
+      "sha256": "cf1d2f67f32748c73bc2a348b7e1489cf97b720e498a363ba228de3bb4a47aeb",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-syntax-final-result.json",
+      "bytes": 2494,
+      "sha256": "d0aa2412efdb93e3a22ebc57966fa7bdd2433b8ed723dcdccfc46c9fc2870685",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-syntax-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-types-final-result.json",
+      "bytes": 2598,
+      "sha256": "ec5d3a162c6aeeb26b64237ec37c868f22d9cccd48b4e25f2a9f3b7b3197ba4c",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/readiness-types-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/result-independent-review.json",
+      "bytes": 1267,
+      "sha256": "1a69f869944b6d7f1830c9b30b057dd49cf9046aac6d8d8ce0f01a26930ecaf0",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/result-manifest.json",
+      "bytes": 14483,
+      "sha256": "245f31bed45337d97d517b0d3ffdb36349412b5ebdb12e5a149818d390719968",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/result-summary.json",
+      "bytes": 4792,
+      "sha256": "503953a32b58fa86563324978d535fa223fdca35114929e54d0f2c6f08638198",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/result.json",
+      "bytes": 2195798,
+      "sha256": "4826cc60e912bfd16571ffeb0142e9c2d18cfe12b70514bc2d307bf1e2b44363",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/results.md",
+      "bytes": 5558,
+      "sha256": "6089ac748ca0dbbd68b226e6247fab9a691b910b0fbfd31c8df92dca73984ca9",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/run-start.json",
+      "bytes": 3985,
+      "sha256": "3c5491772549b78e2c57d478b94290f626c0633d21cb48132b1328cc8fc937a4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/source-map.json",
+      "bytes": 1837,
+      "sha256": "c44648784a722c73ceb16bbd491788f314677020078663ade45adcda2e242610",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/window-authorization.json",
+      "bytes": 2066,
+      "sha256": "3171bfbf70e89a9fc565bbbb2a3a1b342b70c0bca047dcef7c473694c911cb18",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-final-green-result.json",
+      "bytes": 1558,
+      "sha256": "9f358aece73f8ab656c9ff3fa61ce10eb524f6ecedb5fb9cbc795c5cddc71548",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-final-green.log",
+      "bytes": 330,
+      "sha256": "1f82f03f9176de9fa3de741728c98f141966d3e7df3adfce2ea3911ebc98d7b1",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-first-green-result.json",
+      "bytes": 1566,
+      "sha256": "aa8c3fb6c5a6cf709c615c41c4050572ebc6fe45abd31b8568308bbd40fce602",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-first-green.log",
+      "bytes": 329,
+      "sha256": "ad15ffefe7da3056e95b723728a7f3c586e1b6315fba8dc11ae6cc71d91dea60",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-behavior-result.json",
+      "bytes": 1567,
+      "sha256": "2ae403bb98abeea22fc5588b5be82ec1816b135c895d9cc270cb2a9a293b70a4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-behavior.log",
+      "bytes": 1066,
+      "sha256": "10c2b48660b0d5cc143d653209f463978ff0c29063972a572bce04fed7e46621",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red-result.json",
+      "bytes": 1093,
+      "sha256": "b4855032c018ddee4e3d90dce1b621ff25958b782ee7dd3903f970e053c532d4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-red.log",
+      "bytes": 1142,
+      "sha256": "fc05b3f06950343fbdf3995dde58b1c05b4d425fd24465f9f8da05dafcd9cc4d",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-fixed-result.json",
+      "bytes": 1468,
+      "sha256": "b4d3e544eb9e24f9520a267f9d93a80df3ce84ee5edb8b4c7df52f79ee4c586c",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-fixed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types-result.json",
+      "bytes": 1455,
+      "sha256": "e70dfbd0d8543d045e6eb55a64df8acabd4d959fe726b8137d9669a66c497798",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "docs/evidence/chat06p01/workload-types.log",
+      "bytes": 234,
+      "sha256": "0866d5435938cc53bd3204f9a6d1adf6b05fe27985ff1109ee64ea486d346f68",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/README.md",
+      "bytes": 7116,
+      "sha256": "906d8cae0fa0498007a758e6a19d358434b207bf5db29cd26af2de51161346df",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/check.mjs",
+      "bytes": 2650,
+      "sha256": "6c78d05b0b907e4bd78f0e21ae57ba2b6c5e2bd92274a033614e876c5bcf40a4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/imports.ts",
+      "bytes": 614,
+      "sha256": "ce7dc121555bf15efa79188d1e83832cd7fb27f8c9c632b7a3ffeb96fb8d4ced",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.test.ts",
+      "bytes": 7340,
+      "sha256": "3819986ccfaf44c8f5832eccca4944320731a78b3ebfbcb766b1fa9dcff1ed33",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/observer.ts",
+      "bytes": 6253,
+      "sha256": "8bcf1f1e5675e7b8287a1bbcb5d962f3590643bf4e0af23e477d6e2cdaf80a98",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/run.mjs",
+      "bytes": 10012,
+      "sha256": "b463d9a02b89cb4b45a5cca1c79929086e6af8f8a206210302a95d97a475cceb",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/runtime.tsconfig.json",
+      "bytes": 1096,
+      "sha256": "2a2649bb55a23f2723262de2b73b0c71a377fcca375ed5df105b9696331aef3f",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/tsconfig.json",
+      "bytes": 413,
+      "sha256": "14772fdfc9462db079110808939112a960bea8365bb4cfc4774af4a06e5cb0ab",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/types.tsconfig.json",
+      "bytes": 1071,
+      "sha256": "551d9acc0bf582bbc31186ab65263d40ebf6a2dabdcb77958848c058c1132898",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/vitest.config.mjs",
+      "bytes": 714,
+      "sha256": "64b7f5fc39fc49222bfc629913ba72057e6c70acdda67cc787b1b09c8f663ce4",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/worker.ts",
+      "bytes": 11294,
+      "sha256": "67f8f0270bae4dc78edbb9eba1c9c464885ed9f6bafba1575e87c49bc6e80b2a",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.test.ts",
+      "bytes": 2739,
+      "sha256": "9d6850907da7757fd4eb08752f2990303369a1ae40ee8d032307f48a3931239a",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "experiments/assistant-stream-cost/workload.ts",
+      "bytes": 2011,
+      "sha256": "f23f3919a7c7d7e11e4ba4a05bc527be91bed6dee1dc765b288828855ab97421",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "plans/chat06-stream-cost/plan.md",
+      "bytes": 3768,
+      "sha256": "db3a338ef19f2e740ec63aa85660add995f360a2f7b00a557b805a94b543c39b",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "plans/chat06-stream-cost/review.md",
+      "bytes": 3051,
+      "sha256": "82af4105856b3caf428935d5d501471248dbeb36721b3e81404883decd211450",
+      "fixedTargetMatches": true
+    },
+    {
+      "path": "plans/chat06-stream-cost/status.md",
+      "bytes": 8025,
+      "sha256": "5850539753bb97731c88288a23aa1d6b9cb0f1115f1c97e77fc18eca8de6ea11",
+      "fixedTargetMatches": true
+    }
+  ],
+  "newTests": 0,
+  "providerQueries": 0,
+  "limitations": [
+    "Experiment only; existing product inputs retain historical fa9 hashes rather than being claimed equal to current main.",
+    "No throughput/SLO or production optimization claim."
+  ],
+  "personalRuntime": "b54de1dbb08e3ccc7d33a27295a318f2799e76ae / accepting v6; unchanged"
+}
