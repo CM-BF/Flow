@@ -1,0 +1,21 @@
+{
+  "pid": 87258,
+  "pgid": 87258,
+  "startedAt": "2026-10-06T19:09:31.963481+00:00",
+  "node": "/opt/homebrew/opt/node@24/bin/node",
+  "loader": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/node_modules/tsx/dist/loader.mjs",
+    "--input-type=module",
+    "-e",
+    "const entries = [[\"file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runtime.ts\", \"runRunner\"], [\"file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/execution-profiles.ts\", \"describeExecutionProfile\"], [\"file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/verifier.ts\", \"verifyText\"], [\"file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/index.ts\", \"createServer\"]]; for (const [url, name] of entries) { const m = await import(url); const type = typeof m[name]; console.log(JSON.stringify({ entry: url, export: name, type })); if (type !== \"function\") throw new Error(\"missing export\"); }"
+  ],
+  "environmentKeys": [
+    "PATH",
+    "TSX_DISABLE_CACHE",
+    "TMPDIR"
+  ]
+}
