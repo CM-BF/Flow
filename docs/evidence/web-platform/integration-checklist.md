@@ -17,7 +17,8 @@ root于2026-10-06T03:12:04.035Z实核下列五个唯一平级源及human字段�
 | WPF-CHAT01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations | codex/web-conversations | plans/wpf-chat01-conversations | docs/evidence/wpf-chat01 |
 | D06 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-refresh | codex/dashboard-architecture-refresh | plans/d06-architecture-refresh | docs/evidence/d06 |
 | WPF-X03I01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration | codex/web-plugin-management-integration | plans/wpf-x03-plugin-integration | docs/evidence/wpf-x03 |
-| WPF-PROFILE01（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
+| WPF-PROFILE01 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-execution-profiles | codex/web-execution-profiles | plans/wpf-profile01-execution-profiles | docs/evidence/wpf-profile01 |
+| WPF-QUEUE00（待注册） | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-queue-compatibility | codex/web-queue-compatibility | plans/wpf-queue00-compatibility | docs/evidence/wpf-queue00 |
 
 WPF-D01仅协作，无第二dashboard实现；七源均已实际聚合，未知/未验证项仍来自各owner。新增两项证据见[实采与19claim范围审计](chat-perf-source-verification.json)。来源登记不是实现/测试/review或main集成通过。专项旧源比对见[原始事实摘要](dashboard-source-verification.json)。
 
@@ -242,3 +243,13 @@ PROFILE01正式take：04:36:37.979Z，claim17093c4c-a8fa-4e43-bc72-6bd54cab0795 
 
 
 PROFILE01 canonical首commit ae47c8a1f8feb7b0dec71435e868c3a262c53d06已实核clean/status/interface，再给root桥Lead登记；targetUNKNOWN/reviewNOT_STARTED，模块与实际App消费明确分开。X03I01最终4b7e0f/实现84独审通过，source与7scope已注册，作者04:37单次实采checks/review/proof/claim齐，main尚未含。管理6md39links4TODO/保护path/源码diff0通过；两原始log whitespace例外不清洗、不重测。App私有四读reader→X03懒视图的架构影响交MainLead按集成target登记；D06旧release不能借此重写。
+
+
+## WPF-QUEUE00新受领与X03主线回报
+
+原CHAT owner明确两文件停写；管理04:43:22.632Z核v2/083clean，04:43:26.665Z [amend v3](chat-queue00-amend-receipt.json)仅移出apps/web/src/conversations/projection.ts与apps/web/test/conversation-projection.test.ts，其他12scope不变。新树web-queue-compatibility/codex/web-queue-compatibility固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133核clean，04:43:35.187Z [take13185v1](queue00-take-receipt.json)四scope（两文件+plans/wpf-queue00-compatibility/docs/evidence/wpf-queue00）。先source首commit再登记；兼容reader不是完整queue/pause UI，旧false路径保留，shared由Lead。
+
+Lead已回X03实际main80e3c50e7a368c562a7730567503d8c82772b77a push/clean与84blob无改，Web/root typecheck通过；这是Lead来源，本队owner在自身metadata局部实核后按授权release a104v1，raw回执待到。SVC常驻sourceAtStart75a不可自动写成80e能力；服务由SVC owner升级。PROFILE已登记51源，作者固定交付时自行一次实采，不重复管理采样。
+
+
+QUEUE00首canonical f8928c72b3a96e4ad858cb8b46dfd07feac0c3d0已管理者实核并发root一次桥接登记，worker workspace_panels_owner / lead external_web_d01_owner，M2/priority1/UNKNOWN/NOT_STARTED。检查时只有自身install.log新增，源码未改；后续开始局部red/green。PROFILE8c6 metadata clean与b2实现0diff，6md21links4TODO/diffcheck通过；作者04:44:34.265Z实采51源中的唯一source，checks b2/reviewnot_started/proofunchanged/claim匹配，报告保留真实bc3e采样HEAD而非换8c6。产品审查root独立负责，App消费仍后继。

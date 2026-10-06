@@ -101,7 +101,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-P01已审可信host | w01_owner / web-plugin-host / codex/web-plugin-host | claim v1：plugins、三plugin-host test/config、自身plan/evidence；保留修复责任，不写App |
 | WPF-I01主App挂载 | workspace_panels_owner / web-plugin-integration / codex/web-plugin-integration | 实现92a已审；claim b6666c29 v3：此前四文件转CHAT，现integration.css已正式转X03I01；其余literal保留；排除plugins |
 | WPF-PERF01测量 | w01_owner / web-performance / codex/web-performance | claim4553f315 v2保留fixture脚本+plan/evidence，probe已正式转PERF02；无生产/rootlock范围 |
-| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v2已将App/react转X03I01，原其余14scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
+| WPF-CHAT01持续对话 | workspace_panels_owner / web-conversations / codex/web-conversations | 已审7cb / 集成metadata083978b；claim08259c1d v3已将App/react转X03I01、projection及直接test转QUEUE00，原其余12scope保留；实现已在dd1/main4e，真实模型验收仍归Lead |
 | WPF-PERF02有界窗口 | w01_owner / web-activity-window / codex/web-activity-window | 实现a87已审且集成；claimd36cd583 v2 released，全部8scope停写，后续修复须新take |
 | WPF-X03I01实际插件管理挂载 | workspace_panels_owner / web-plugin-management-integration / codex/web-plugin-management-integration | claim a1044bb0 v1七scope，固定main4e；不改Mika模块/shared；canonical a534已建立 |
 | WPF-PROFILE01配置选择模块 | w01_owner / web-execution-profiles / codex/web-execution-profiles | claim17093c4c v1，04:36:37.979Z已take；仅7新模块/测试文件+两元数据目录，旧CHAT/App不转交 |
@@ -166,7 +166,7 @@ type WorkspacePanelsProps = {
 - [ ] **WPF-001-09** 优先推进U11真实持续对话：冻结center能力/会话/queue-steer接缝，分阶段独立派工并真实验收。
 - [x] **WPF-001-10** WPF-X03I01：消费Mika已审X03模块，在真实App设置挂载只读插件管理；84acdc整体限定APPROVED/final4b7e0f，独立scope/docs通过，交Lead集成仍另计。
 - [ ] **WPF-001-11** WPF-PROFILE01：独立新模块实现整份已发布执行配置选择、冻结creation与pin校验；局部测试/fixture后独审，真实App接线另受领，不能把模块完成当U11完成。
-- [ ] **WPF-001-12** WPF-QUEUE00：先交兼容queue布尔能力的最小Web reader，保留false旧行为且不伪启用完整队列；projection/直接tests与必要fixture精确范围停写移交、独立tree/receipt后实现，供Lead成套发布。
+- [ ] **WPF-001-12** WPF-QUEUE00：先交兼容queue布尔能力的最小Web reader，保留false旧行为且不伪启用完整队列；projection+直接test已从CHATv3正式移入新13185v1四scope，fixed75a独立tree实施，供Lead成套发布。
 
 ## 验收、风险与持续方式
 
@@ -249,4 +249,6 @@ U11/REQ41模型与权限选择候选：已有中心executionProfiles只表示run
 04:42 CHAT04发布顺序已确认有消费不兼容：当前已审Web assertCapabilities只接受queue=false，后台true会使会话snapshot失败。root已交MainLead成套部署门槛，保持旧false兼容；等后台独审/Lead client固定输入和最小Web迁移scope，先不改按钮或shared。PROFILE独立模块并行不受影响；后继PROFILE App接线与queue同需旧CHAT Thread/projection正式移交，按ready输入串行，不因同owner跳过新tree/claim。候选具体scope与验收见[配置研究](../../docs/evidence/web-platform/execution-profiles-research.md)和[队列研究](../../docs/evidence/web-platform/chat-queue-research.md)。
 
 
-04:43 GoalOwner与MainLead明确授权 WPF-QUEUE00 最小reader先行，PROFILE App接线排其后、PROFILE模块照常。拟独立web-queue-compatibility/codex/web-queue-compatibility，从明确固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133（或Lead后给精确base）初始化；仅projection/直接tests/必要HTTPfixture与自有plan-evidence，等owner精确scope与旧CHATv2停写后CAS，新take后才写。MainLead承诺不先启用queue=true，按reader→contract/domain→mount成套验证。Mika最终域implae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metaaef5c6fcd3d811673e8eeb8cd67f225ba0941b8e据其root已独审54项；这里只转交来源，不当本队重跑或Web/生产接线通过。合同沿79867且queue拓宽boolean。
+04:42 GoalOwner与MainLead明确授权 WPF-QUEUE00 最小reader先行，PROFILE App接线排其后、PROFILE模块照常。拟独立web-queue-compatibility/codex/web-queue-compatibility，从明确固定75a33dec228e17bbbd0d3be9fd01bc9ac18a0133（或Lead后给精确base）初始化；仅projection/直接tests/必要HTTPfixture与自有plan-evidence，等owner精确scope与旧CHATv2停写后CAS，新take后才写。MainLead承诺不先启用queue=true，按reader→contract/domain→mount成套验证。Mika最终域implae9d7203c30bdf5ec6825cee0e6ce86231c34cb2 / metaaef5c6fcd3d811673e8eeb8cd67f225ba0941b8e据其root已独审54项；这里只转交来源，不当本队重跑或Web/生产接线通过。合同沿79867且queue拓宽boolean。
+
+04:43:26.665Z CHAT v2→v3原子移出projection.ts/conversation-projection.test.ts，其他12scope未变；04:43:35.187Z QUEUE00 claim13185d8f-fcc4-453b-9ff1-4e4ca38f0666 v1正式take四scope，fixed75a新树实核clean后开工，[receipt](../../docs/evidence/web-platform/queue00-take-receipt.json)。Lead确认X03 main80e已push/clean，旧owner仅metadata一次核main再release，服务59473不动；PROFILE候选b2b七源码限定范围已审无越界，产品review由root进行。

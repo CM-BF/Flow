@@ -369,3 +369,8 @@ SVC01首连候选由GoalOwner经root报告：真实Web61228/center61227/main75a3
 固定main75a33dec228e17bbbd0d3be9fd01bc9ac18a0133，App Connection:879/897的URL本来可空；vite.config.ts通过FLOW_CENTER_URL代理/api，所以本机用户无需手填61227。现Same-origin proxy占位不够清晰，未来最小Web说明应解释留空连本地、另一个中心才填URL；onConnect只是构造client，不表示已认证。ownerToken只由本机操作方读取私有配置的单字段，不粘整配置或发聊天。root没有读取真实配置/凭据、没执行剪贴板/连接。
 
 SVC README/cli当前status可输出credentialsFile而不输出token。后继copy-owner-token CLI只能由SVC owner领取实施：校目录/0600/持有身份，仅用户显式调用后复制该字段到本机剪贴板，stdout/URL/日志/前端env都不含token，不创建匿名HTTP读凭据入口。这里只登记可用性候选与保护边界，不宣称工具已存在，不扩大本队X03/PROFILE范围。真正首连尚待用户认证，不把服务运行等于可直接聊天。
+
+
+root本段clean-code安全停点（正式X03审查04:36:39）：核bound reader窄接口、RegistryManagement懒载职责、卸载过期响应、局部错误与CSS边界及作者8/7行为证据。实际修复是owner探针发现import失败被浏览器缓存、Retry无效，改诚实手动reload说明，root补未发送draft先保留提示；无未解决blocking。后继CHAT04能力迁移/同revision动态事实与SVC首连仅研究、0凭据读取，无跨scope实现；不重复产品测试，不写released D06。
+
+管理工具实钟04:42:44 UTC，前一快照新授权段落写04:43系分钟估记，已改04:42；正式claim receipt、测试和原始采样时钟不改。后续派工时间以工具/PG receipt为准。
