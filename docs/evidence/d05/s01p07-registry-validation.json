@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-06T20:19:04.345Z",
+  "count": 175,
+  "uniqueIds": 175,
+  "task": {
+    "id": "S01P07",
+    "title": "领取回执与崩溃恢复",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+    "branch": "codex/runner-claim-recovery",
+    "planDir": "plans/s01p07-runner-claim-recovery",
+    "evidenceDir": "docs/evidence/s01p07"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "implementation",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 3,
+    "output": "已确定空闲领取少持久化、丢响应后同一领取身份可恢复的最小方案，中心、客户端和有限协议接线已有源码草稿；runner 持久恢复接线待完成。",
+    "next": "保持领取及时性与崩溃保护的中心、客户端和 runner 完整接线。",
+    "blocker": {
+      "state": "active",
+      "text": "旧 runner 三个直接消费者测试已追加写范围，待 Lead 供应源码；实现其余已领部分可继续，验证窗口未开。"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "onlyRegistryAndOwnMetadata": true
+}
