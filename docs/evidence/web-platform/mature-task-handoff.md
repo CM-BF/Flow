@@ -17,6 +17,7 @@
 | WPF-STEIRI01 → MATURE06，main收口完成 | 5cfebc639d7acd458d27f4543d00a32a9fd96fc7 / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner final8273d71ef8970399b9d4f171edafb99184316ec8 push/clean | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；11source零diff；十三scope全停写后[bc0ded75 v2 released](steiri01-main-release-receipt.json)；[独审](steiri01-independent-review.json)不冒真实provider/跨reload恢复 |
 | WPF-ACTIVITYREAD01 → MATURE06，main收口完成 | f2bcaae6623176acd718cf53707892154579970a / main f181d84b5fb3652d62e2a181acff442d42b3e066；owner finalbe977a23cff08edf6ac46d18750c3400bf9a2218 push/clean | web-activity-readability / plans/wpf-activity-readability / docs/evidence/wpf-activity-readability；四source零diff；六scope全停写后[6f427 v3 released](activityread01-main-release-receipt.json)，仅展开活动区简化 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
+| WPF-ATTACH01 → MATURE03，合同phase1实施/首source待owner提交 | fixed base f181d84b5fb3652d62e2a181acff442d42b3e066；[ef617d78 v1 take](attach01-contract-take-receipt.json)10:06:48.197Z，五literal | attachment-resources / plans/wpf-attach01-resources / docs/evidence/wpf-attach01；两个合同+一专测+自己plan/evidence，owner panels；小合同root审后Lead受控输入，runtime/export/migration不在此授权 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
 这些是正式当前队列；此前09:09/09:16待审描述仅历史。新功能仍由ExecutionLead独占main受控集成；无需GO转普通ready。D08部署后root一次实际检查六大task父关联/take展示才报告计划请求Done，不将局部片段当整体完成。
@@ -133,7 +134,7 @@ MATURE01既有主题扩展TODO的18literal只读proposal见[固定候选](theme-
 
 ## 2026-10-06 09:59:05 UTC 附件共享出口与后继架构维护准备
 
-双方只读附件方案已收，[集中依赖JSON](attachment-shared-dependencies.json)列完整15/23 literal、已核固定main187d和09:51账本初筛。唯一后端候选WPF-ATTACH01；独立Web候选WPF-ATTACHI01，后者plan/evidence已换独立路径，避免两worker同task/同evidence。root尚未冻结合同，未建树/take/选迁移号。panels后续cap/lookup/replay/pin/expiry/lock order与恢复scope细案已集中保留于依赖JSON的backendInterfaceProposal，仍提案。F01 v22明确占contracts/index、packages/client整目录、server/index，且后端提案内contracts/conversations.ts也冲突：请Lead选择其受控薄输入或正式scope交权，不能两边同时改。现迁移源码最高025只说明固定main内容，不预占下一编号。Web projection与F01/TUI共享ACK迁移需先固定接口和唯一调用点writer窗口；现free时点不代表预留。无明确Mika额外消费接口前不发送泛需求，02/04沿既有消费分工。
+双方只读附件方案已收，[集中依赖JSON](attachment-shared-dependencies.json)列完整15/23 literal、已核固定main187d和09:51账本初筛。唯一后端候选WPF-ATTACH01；独立Web候选WPF-ATTACHI01，后者plan/evidence已换独立路径，避免两worker同task/同evidence。当时root尚未冻结合同，未建树/take/选迁移号。panels后续cap/lookup/replay/pin/expiry/lock order与恢复scope细案已集中保留于依赖JSON的backendInterfaceProposal，仍提案。F01 v22明确占contracts/index、packages/client整目录、server/index，且后端提案内contracts/conversations.ts也冲突：请Lead选择其受控薄输入或正式scope交权，不能两边同时改。现迁移源码最高025只说明固定main内容，不预占下一编号。Web projection与F01/TUI共享ACK迁移需先固定接口和唯一调用点writer窗口；现free时点不代表预留。无明确Mika额外消费接口前不发送泛需求，02/04沿既有消费分工。
 
 GO经root请求原D06固定架构刷新已登记为后继维护：等本批D08/ACTIVITYREAD/STEIRI准确组合main安全点，由d01_owner用独立新树/窄fresh claim维护原D06唯一source；不新大task或抢产品worker。仅curated architecture-data.js、原D06自身plan/evidence与必要data直接test，renderer/五图交互不改。内容按固定源核Web/TUI/CLI→public client→center→runner host/adapter、PG轻投影/lazy detail、并发/unknown claim、stream/final/steering实际边界、Flow与SDK职责；TUI/Codexadapter/SVC04/附件未在target的标planned，源码/发布artifact/个人backend分别记录。runtime configurable concurrency不等入口configured或provider capacity。当前旧图9c6仅历史固定snapshot，未更新不伪装current；现在先附件/共享准备，不新take或重复产品/API采样。
 
@@ -142,3 +143,11 @@ GO经root请求原D06固定架构刷新已登记为后继维护：等本批D08/A
 w01补充的恢复方案仍待root合同冻结：按project+uploadKey查持久receipt，404仅此时无可见committed记录、不证明未提交或允许换key；可靠recoveryScopeId只能绑定命名空间/项目、不是授权。Web拟有界16条/64KiB元信息intent（无token/正文/File/base64），满则拒新handoff不静默淘汰unknown；显式重新授权/Recover，不自动遍历旧project，重选文件须同metadata/digest/length且保BOM/换行，不trim/NFC。同页/center重启/浏览器reload的恢复承诺分层，未知Send/Queue仍page-local，不能冒全部持久恢复。原Web23scope候选以recovery.ts替换receipts.ts，最终scope等共享合同和call-site交权后再核。
 
 原D06固定刷新现在可准备准确f181主线，旧dashboard-architecture-stream HEAD3b4a8b887c62ae6fd67b1c421a7c330fc4ec904f clean保持只读；待独立新WT/fresh四scope claim后维护唯一D06 source。只更新curated architecture-data.js、原D06计划/证据与必要architecture直接test，renderer/registry不动。源事实应含已接App stream/knowledge/steering及TUI首片，R05 adapter控制验收与真实provider、SVC04未发布、附件proposal分别标记；个人产物仍按服务owner回执，不将main当运行版本。
+
+## 2026-10-06 10:06:36 UTC 合同方向冻结与有界后继
+
+root已正式冻结双方text-v1等设计方向；ATTACH01仅f181独立树预检、两个typed文件+自身plan/evidence待fresh take，专测须先明列。小合同固定SHA经root审并由Lead发布后，Web新模块/HTTP fixture才与后端运行域并行；conversations/client/index/mount/migration均不在phase1，旧15范围不得一次预领。ATTACHI01仍只读，不复制协议。
+
+GO新增DPERF预算已写WPF-001-33与[原proposal](dperf02-proposal.json)：附件/已审发布及D06后才做≤60s/32MiB临时Git Trace2，量process工作量再择优化，0真实repo/4320压力。GO verification准确后端边界已在[原自然呈现研究](mature-theme-presentation-research.md)更正：服务确有version/inputDigest规则检查，公共TaskSummary不能替每artifact版本的工程验证。
+
+2026-10-06 10:07:21 UTC：ATTACH01 phase1本人复核f181/branch/clean，fresh ledger无冲突后五literal正式take并交panels；ATTACHI01仍只读。D06后继拟dashboard-architecture-runtime/codex/dashboard-architecture-runtime、固定f181、原四scope，旧e06a v2 released；尚未新take，管理本段提交后再独立办理。

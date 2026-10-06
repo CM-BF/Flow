@@ -17,7 +17,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 聊天补充指令、活动简化与任务关联已进入主线；附件资源和输入方案已收 |
+| 当前产出 | 聊天补充指令、活动简化与任务关联已进入主线；附件合同小片已开始实施 |
 | 下一可用交付 | 核实际看板关联；冻结附件合同与共享调用点，启动资源和输入接线；更新固定架构图 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -61,7 +61,7 @@
 | WPF-001-30 | completed | d01_owner | D05FIT01 0ac7已main9d6，两源码相同；最终0e52826 pushed/clean，四scope停写且5dc v2释放；[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) |
 | WPF-001-31 | completed | workspace_panels_owner | STEER01 b2模块已main77c，01842收口后2bae v2释放；App与跨reload恢复属MATURE06后继。 |
 | WPF-001-32 | completed | w01_owner | CONTEXTI 已正式main df29；fe2b收口/55fe v2释放，唯一source见当前表。 |
-| WPF-001-33 | pending | d01_owner | DPERF02方案已批准；成熟度P1优先，未take/建树，仍候选队列。 |
+| WPF-001-33 | pending | d01_owner | 附件/已审发布与D06后，临时Git Trace2 16/64/128量化工作量再选优化；总≤60s含清理/≤32MiB证据，保fresh与unknown；未take。 |
 | WPF-001-34 | in-progress | d01_owner | 六计划已登记111源（Lead09:09:25观察）；D08父关联已main f181待正式部署/实际页面核验，整体可见性验收未完成。 |
 
 ## 当前唯一来源、写权与下一步
@@ -84,7 +84,7 @@
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08首source f772及candidate沿队列供Lead读取；父关联必须部署后真实页面验证，当前未Done。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
 - CONTEXTI已main并释放；STEIRI01、ACTIVITYREAD和D08已main f181并全部停写释放，source见集中handoff。
-- GO已将MATURE03附件端到端责任交Web/root；panels后端/w01 Web仅只读proposal，root固定合同后新take。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
+- GO已将MATURE03附件端到端责任交Web/root；root已冻结附件设计；panels仅合同phase1五scope已take，w01 Web只读准备。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
 - 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户要求take在dashboard明确展示、各lead防overlap保持验收项。
 
 ## 当前服务与验收边界

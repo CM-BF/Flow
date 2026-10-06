@@ -50,5 +50,35 @@
     "scopeConflictWithD08": false,
     "reason": "proof.mjs is not in D08 scope; aggregate is not in this proposal",
     "implementationOwnerAfterFreshAssignment": "workspace_panels_owner proposed, no current writer grant"
+  },
+  "performanceExperimentUpdate": {
+    "source": "GO via root, 2026-10-06; bounded follow-up below attachment P1 and approved delivery, after D06 safe point",
+    "observedProduction": "main f181 /122-source normal GET ~6.5–7.3s only GO现场观察, not a controlled baseline or our measurement",
+    "hypotheses": [
+      "integrationProof repeats main dirty/untracked per task",
+      "tree issues ls-tree per literal scope",
+      "aggregate launches processes concurrently"
+    ],
+    "experiment": {
+      "sourceCounts": [
+        16,
+        64,
+        128
+      ],
+      "repository": "temporary Git objects and a small number of our own temporary worktrees, not pressure against real repo or 4320",
+      "capture": "Git Trace2 process starts, peak process count, wall time",
+      "totalSecondsIncludingCleanup": 60,
+      "maximumEvidenceBytes": 33554432
+    },
+    "decision": "Measure repeated work first, then choose snapshot-local reuse or approved bounded tree batching; no cache framework before evidence, no asserted benefit if absent",
+    "preserve": [
+      "different repository/commit/scope/required-path",
+      "missing/failure unknown",
+      "fresh dirty/claim each snapshot",
+      "never cache failure as green",
+      "no cross-snapshot TTL green"
+    ],
+    "limits": "synthetic128 is not runner/provider128; zero model/personal-service/productDB activity",
+    "scope": "fresh independent tree+claim required; no products edited in root/management tree"
   }
 }

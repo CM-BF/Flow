@@ -7,7 +7,7 @@
   "ledgerStatus": "available",
   "ledgerUse": "Existing 09:51 snapshot initial screening only; not fresh assignment or permission",
   "parent": "WPF-MATURE-03",
-  "status": "two read-only proposals; root contract decision pending; no trees/takes/writes",
+  "status": "phase1 five literal scopes COMMITTED; typed contract/Interface only, runtime/shared exports/migration not taken",
   "backend": {
     "candidateId": "WPF-ATTACH01",
     "owner": "workspace_panels_owner",
@@ -278,7 +278,7 @@
   },
   "backendInterfaceProposal": {
     "receivedAt": "2026-10-06T10:04:33.916853+00:00",
-    "status": "root final freeze pending; no write authorization",
+    "status": "design direction root accepted; exact typed fixed contract and phase1 review pending",
     "fixedRead": "187d97648dd2d4edf45641720f8ba771ea9f25fa",
     "candidateBase": "f181d84b5fb3652d62e2a181acff442d42b3e066",
     "capabilities": {
@@ -360,5 +360,31 @@
     },
     "scopeCoordination": "14 uncontested original backend literals + conversations.ts via F01 input/handoff; exact migration reserved then literal amended; F01 owns exports/client6methods/servermount+ordering, Web/root owns resource/context/PG implementation",
     "validation": "dedicated PG/HTTP: metadata excludes body; strict Unicode/BOM/limits; project/ref/version/digest; lostACK/restart/key/body conflict; lookup404 vs inflightcommit; TTL replay; concurrent pin/cleanup both lock orderings; pinned and knowledge audit retained; Send/Queue promotion/recovery and authorized HTTPclaim/fake HarnessAdapter exact prompt. 0provider or personal service."
+  },
+  "rootDesignDecision": {
+    "recordedAt": "2026-10-06 10:06:36 UTC",
+    "accepted": "latest backend text-v1/project capability/opaque ref/recovery namespace/original key/expiry/pin lock order/combined4and8192/knowledge-before-attachments/template1empty-template2nonempty/0provider PGHTTP",
+    "limits": "browser unknown Send/Queue reload still unsupported; no runtime/migration/write exports scope authorized by phase1",
+    "phase1Scopes": [
+      "packages/contracts/src/attachments.ts",
+      "packages/contracts/src/conversation-context.ts",
+      "packages/contracts/src/attachments.test.ts",
+      "plans/wpf-attach01-resources",
+      "docs/evidence/wpf-attach01"
+    ],
+    "tests": "exact additional schema test if owner requires, declared before same committed take",
+    "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+    "phaseOrder": "small typed contract + full Interface commit -> root review -> Lead controlled input -> UI fixture in parallel with later separately amended backend runtime"
+  },
+  "phase1Claim": {
+    "receipt": "attach01-contract-take-receipt.json",
+    "claimId": "ef617d78-eb39-484e-898e-5f057fca50d4",
+    "version": 1,
+    "committedAt": "2026-10-06T10:06:48.197Z",
+    "base": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources",
+    "branch": "codex/attachment-resources",
+    "owner": "workspace_panels_owner",
+    "overlap": []
   }
 }
