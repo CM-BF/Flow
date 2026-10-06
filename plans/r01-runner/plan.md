@@ -31,3 +31,5 @@
 - runtime 负责心跳、独立租约期限、decision/completed 和本地有界 outbox；adapter 通过公开 HarnessContext 提交数据并在动作前核对所有权。
 - 仅实现 fixture 六种场景与 `flow.text` v1；真实 Claude 属于后续 R02，当前不调用模型。
 - 测试使用 loopback 动态端口和独立临时目录模拟中心 HTTP 接口；本分支不启动或迁移数据库。与真实 C01/PostgreSQL 的联调由 I01 验证。
+
+2026-10-06 review 修复：固定并发 emit 的持久快照与发送批次一致性；ACK 按连续 durable prefix 验证。修复回归与具体提交见 status，独立复审待执行。

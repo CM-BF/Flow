@@ -28,9 +28,9 @@ export class EventOutbox {
     this.sequence += 1;
     const next = this.tail.then(async () => {
       if (this.events.length === 0) return;
-      await persist(this.file, { ...this.ownership, events: this.events });
-      if (this.failure) throw this.failure;
       const sending = { ...this.ownership, events: [...this.events] };
+      await persist(this.file, sending);
+      if (this.failure) throw this.failure;
       try {
         await this.report(sending);
         this.events = this.events.filter(event => event.sequence > sending.events.at(-1)!.sequence);
@@ -54,8 +54,9 @@ async function persist(file: string, batch: EventBatch) {
 
 export async function reportBatch(client: FlowClient, batch: EventBatch, signal: AbortSignal) {
   const acknowledgement = await client.report(batch, signal);
-  if (acknowledgement.lastSequence !== batch.events.at(-1)!.sequence
-      || !Number.isInteger(acknowledgement.accepted)
+  if (!Number.isSafeInteger(acknowledgement.lastSequence)
+      || acknowledgement.lastSequence < batch.events.at(-1)!.sequence
+      || !Number.isSafeInteger(acknowledgement.accepted)
       || acknowledgement.accepted < 0 || acknowledgement.accepted > batch.events.length) {
     throw new Error('The center returned an invalid event acknowledgement.');
   }

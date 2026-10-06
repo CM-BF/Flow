@@ -44,3 +44,12 @@ Owner：runner_owner / gpt-6-astra。Worktree：`/Users/citrine/Projects/AgentHa
 - 独立Node进程环境配置启动和SIGTERM退出；输出和持久记录不包含测试runner凭据。
 
 尚未宣称主机掉电持久性或在途工具副作用可撤回。每个attempt的待确认事件记录有界；历史产物及拒收后的待核对证据保留在runner工作目录，不自动删除，磁盘保留策略属于后续运维工作。
+
+
+## Review 修复 — 2026-10-06 01:13 UTC
+
+独立 reviewer 通过公开 `runRunner` / `HarnessAdapter` + loopback HTTP 和待确认磁盘记录边界复现 P1：首事件持久化尚未完成时追加第二事件，原实现发送 `[1,2]`，磁盘只有 `[1]`。相同外部行为测试在修复前失败；固定同一个 snapshot 先落盘再发送后通过。并发追加留给后续串行发送，不改事件 ID / 顺序。
+
+补充旧前缀重启回归：中心已持久化后续事件，而本地保留较早的相同事件前缀；合法 ACK `accepted=0,lastSequence=3` 可清理本地 seq1 重报。原实现严格等于批尾导致永久重试，现按连续 durable prefix 契约验证 `lastSequence >= batch尾` 且为安全整数，同时保持 accepted 范围校验。另验证过小/非整数前缀和超出批次的 accepted 不清理本地记录。
+
+clean-code 实际检查：快照命名、序列单一职责、异步共享状态、错误路径与不必要复杂度；仅固定发送快照并修正 ACK 判定，不引入额外状态机。测试为公开 Interface 回归，不模拟内部 outbox。`pnpm check` 28/28（runner 24、公共 4）与类型检查通过；`git diff --check` 通过；真实模型调用仍为 0。等待独立复审，不继承先前交付的任何 approval。
