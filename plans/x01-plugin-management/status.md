@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:48:21 UTC |
+| 最近更新时间 | 2026-10-06 15:53:31 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -14,16 +14,16 @@
 | 工作基线 / HEAD | base8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；host固定e6827d8a30fd103e34966a5d7298570545865057；center已main56d90 |
 | 工作树 dirty 状态 | host两源/raw固定e6827d8a30fd103e34966a5d7298570545865057；metadata独立，聚合读取实际clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | host 21/21（14旧+7新）/strict局部0；真实TLA撤权1red保留，23own roots已清理；0PG/provider |
+| 检查状态 | PASSED e6827d8a30fd103e34966a5d7298570545865057；host 21/21（14旧+7新）/strict局部0；原red/raw保留，本次metadata零重测 |
 | Review | APPROVED e6827d8a30fd103e34966a5d7298570545865057；Mika/gpt-6-astra 2026-10-06 14:47:23 UTC，0P1/P2 |
-| 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
+| 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | e6827d8a30fd103e34966a5d7298570545865057 |
 | 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 包加载与执行前分别核验当前权限的改动已独审通过，准备进入主线 |
-| 下一可用交付 | 将双阶段权限核验接入主线；中心实时授权和任务绑定仍是独立后继 |
+| 当前产出 | 静态安装公开入口及包加载、执行前两次权限核验已进入主线；完整插件运行管理仍未完成 |
+| 下一可用交付 | 本片段已交付；中心实时授权、任务绑定与真实runner执行链仍待协调后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -42,7 +42,7 @@
 
 ## 当前事实与边界
 
-静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。中心材料片a578已独审并正式main56d90接收，14不同检查含11真实PG/HTTP；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
+静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。中心材料片a578已独审并正式main56d90接收，14不同检查含11真实PG/HTTP；SDK/provider为0。host双gate已main fe1b，main7810已包含可选安装policy的factory/client/CLI入口：未配置policy时不挂载，安装完成不等于enabled/loaded/callable。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
@@ -105,3 +105,5 @@
 2026-10-06 14:46:08 UTC：host实现e6827d8a30fd103e34966a5d7298570545865057已冻结，[37项交审packet](../../docs/evidence/x01/host-gates-review-ready.md)准备独立review。当前21/strict通过不等于main能力；无新增检查，保留v5修复期。
 
 2026-10-06 14:48:21 UTC：接收Mika14:47:23对e6827d8a30fd103e34966a5d7298570545865057独立APPROVED；[稳定集成输入](../../docs/evidence/x01/host-gates-integration-ready.md)列两host源码、固定manifest/21与strict证据，0P1/P2。原源码/raw/support/manifest逐字保持、未重测；v5保留至正式main接收。完整X01原TODO未减少，中心live grant/runtime retained仍后继。
+
+2026-10-06 15:53:31 UTC：fresh owner HEAD96712f914ddb2cf4fae3b932ac48b41250a87bbd clean、6ddedc73 v5 ACTIVE四scope。补录15:11:44已完成的主线核验，并再次只读核host两源e682=fe1b=7810=owner；[接收记录](../../docs/evidence/x01/host-gates-main-acceptance.md)引用main生产安装13源收据。本片段delivered，原10TODO与未完成publicvertical保持；host两源明确停止写入，v5尚未amend交回。本次零工程测试/PG/provider。仅只读本树两个Vitest缓存，最多4096 allocated B，未删除、实际回收0 B；不扩大资源扫描。
