@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- **S01空领取测量：请Lead soleGit提供固定只读镜像。** [唯一61项source supply请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/idle-claim-cost/source-supply-request.json)固定8d84，57TS+4metadata共284628B，保持相对路径置于该证据的source-snapshot，不覆盖旧产品src；原owner claim508f v2已追加合法evidence，实际测量仍NOT_OPEN。
+
 - **numeric pagesize兼容名对照准备中，未开放运行。** [独立最小接口](native-pagesize-compat/interface.md)：同C/A、B唯一改hw.pagesize_compat，复用旧host；旧结果已审封存，安装内核映射/native原因仍未知。
 - **CHAT06P03已main接收并交回写权（Mika核验）。** [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-runner-hash/plans/chat06-runner-prefix-hash/status.md)：owner567d62042f273f6a8b23ff6da334e698bed94ff7 clean/pushed；main0b8cd6f4六源与refs一致，真实noEmit0已关闭类型P2，v2于18:22:14.915 RELEASED；[实际外部release](/tmp/flow-chat06p03-main-release-receipt.json)。无需重复集成或重测。
 
