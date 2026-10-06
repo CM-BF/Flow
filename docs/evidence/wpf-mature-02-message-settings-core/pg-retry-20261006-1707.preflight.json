@@ -1,0 +1,45 @@
+{
+  "windowId": "CORE-PG-RETRY-20261006-1707",
+  "state": "READY",
+  "at": "2026-10-06T17:08:38.212233+00:00",
+  "executionHead": "f8cfc7f0b5e99ae5cc1181218e07ccb10dc57a53",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "bindingsChecked": 236,
+  "errors": [],
+  "freeBytes": 1257181184,
+  "requiredFreeBytes": 1207959552,
+  "claim": {
+    "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+    "version": 3,
+    "state": "active",
+    "lead": "mika",
+    "worker": "status_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+    "branch": "codex/claude-message-settings-core"
+  },
+  "ledgerObservedAt": "2026-10-06T17:08:38.102Z",
+  "restoredInputs": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/four-sql-source-materialization.json",
+      "bytes": 2484,
+      "sha256": "74f262a5ecf07423200c74f17feb5e8c7d26e6eea7a018a1f564f2c7ee9a6bd0"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/runtime-read-closure-review.json",
+      "bytes": 73047,
+      "sha256": "0af5842095dcc9ebdf4cf7761abd6296dcd5b6dfe4028b29e28af962997a8c8b"
+    }
+  ],
+  "previousCleanupConfirmed": true,
+  "limits": {
+    "workMs": 120000,
+    "cleanupMs": 80000,
+    "totalMs": 200000,
+    "maxTasks": 32,
+    "maxHTTP": 256,
+    "rawBytes": 1048576,
+    "cacheBytes": 33554432,
+    "fixtureReceiptBytes": 32768
+  },
+  "scope": "only original eight-case PG/HTTP file; no provider; no automatic retry"
+}

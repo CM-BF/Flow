@@ -1,6 +1,14 @@
 # WPF-MATURE-02-CORE 独立审查
 
-**APPROVED — 仅固定 contract leaf，0 P1/P2；下一片不继承。**
+**NOT_STARTED — 当前完整纵向组合；原首leaf独审为下列历史，不自动继承。**
+
+## 当前纵向固定交审
+
+Review target commit: ea276572c3c99fb8400808a93efc69ce530d55a4
+
+生产checkpoint92f，ea为两test修复；完整34source/readonly/config与所有原raw绑定见[交付manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。已有SOURCE_REVIEW静态无剩余P1/P2；现29 distinct=16合同+5注入+8真实专库，contract/focused strict各0。最新8PG全部执行、14tasks11attempts116HTTP，清理conn0/absent。首PG beforeAll失败与第二窗口resource NOT_RUN原样，不能抹为通过。正式组合独审尚未收讫；F01 production mount/client/Web/TUI与真实provider未覆盖，完整准则见[review-ready](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-review-ready.md)。
+
+## 历史首leaf APPROVED（仅4e7）
 
 ## Target 与 scope
 

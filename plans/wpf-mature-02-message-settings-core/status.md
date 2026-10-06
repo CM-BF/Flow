@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 16:58:48 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:09:09 UTC / 首leaf接收 main 22d5ca67159b35bb794b2711cf6df0cb905b92e8 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
 | Branch | codex/claude-message-settings-core |
-| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 最近预核HEAD26eeced143f266acdc6909dcc782d7d50e39ab47；已执行PG HEAD723d4bb；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
-| 工作树dirty状态 | source ea276不变；本次仅封存4SQL恢复/静态closure及新窗口资源NOT_RUN |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 最新PG execution HEADf8cfc7f0b5e99ae5cc1181218e07ccb10dc57a53；source ea276572c3c99fb8400808a93efc69ce530d55a4不变；metadata提交以实际Git HEAD为准 |
+| 工作树dirty状态 | source ea276不变；本次仅封存8PG通过/清理raw与固定纵向交审metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | PARTIAL：21 distinct与两strict0已过；首PG初始化失败/8 skipped；新窗口因resource NOT_RUN，PG用例0通过/真实SDK未运行 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED：29 distinct分次（16合同+5注入+8PG）、两focused strict0；旧beforeAll失败/资源NOT_RUN保留，真实SDK/provider未运行 |
 | 已集成main状态 / HEAD | 首leaf已main 22d5ca67159b35bb794b2711cf6df0cb905b92e8；下一纵向已在本branch实施，未main |
 | 实现目标 | 纵向source ea276572c3c99fb8400808a93efc69ce530d55a4，生产checkpoint92f；已局部验证/未main；首leaf4e7历史已main |
 | 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 消息设置已沿中心和Claude执行入口接线，合同及注入执行检查通过 |
-| 下一可用交付 | 固定资源门槛满足并取得新独占窗口后，验证原8组专库行为 |
-| 当前阻塞 | ACTIVE: 4SQL输入已恢复；新窗口free低于1GiB+128MiB，NOT_RUN已交回，待资源与新授权；F01/Web/TUI共享接线待协作 |
+| 当前产出 | 消息设置纵向接线已通过合同、注入执行与专库持久化检查，待固定组合独审 |
+| 下一可用交付 | 独立审查固定纵向实现及29项证据，随后由Lead接收并完成共享消费者 |
+| 当前阻塞 | ACTIVE: 本片固定组合待独审；F01 production mount/client与Web/TUI共享接线待协作。验证资源阻塞已解除 |
 | 需用户决定 | NONE |
-| Review | NOT_STARTED（下一纵向正式交付审未开始）；SOURCE_REVIEW静态范围无剩余P1/P2，原.extend与cleanup P2已关闭；运行/外部消费待验证，详见review.md |
+| Review | NOT_STARTED（当前纵向完整组合）；既有SOURCE_REVIEW无剩余P1/P2，29项与两strict0已封存，不继承首leaf批准 |
 | Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal；[amend receipt](../../docs/evidence/wpf-mature-02-message-settings-core/next-slice-v3-amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -33,7 +33,7 @@
 | M02CORE-03 | completed | status_read | 5 selected / 5 passed；局部strict0；[checks](../../docs/evidence/wpf-mature-02-message-settings-core/checks.json) |
 | M02CORE-04 | completed | status_read | Mika15:31:09 / architecture_read15:31:25 UTC APPROVED，原packet不改 |
 | M02CORE-05 | completed | status_read | Lead main22d5已接两源/packet；owner逐字核两源；同core后继保留writer |
-| M02CORE-06 | in-progress | status_read | 39 literal完整caller已实施；[局部验证](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)为21 distinct及两项strict0，PG/共享消费/完整独审仍待验 |
+| M02CORE-06 | in-progress | status_read | 39 literal完整caller已实施；[局部验证](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-local-validation-manifest.json)为21 distinct及两项strict0，PG已8/8，完整独审/共享消费仍待验 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -83,3 +83,5 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 2026-10-06 16:52:30 UTC唯一PG窗口已结束并归还：1 failed suite/8 skipped（beforeAll ENOENT012），0用例断言通过；1legacy task/0attempt/0HTTP，库连接0/普通DROP后absent、errors=[]，所有owned进程/cache/temp已结束。原source ea276不变，无重试。完整[失败结果](../../docs/evidence/wpf-mature-02-message-settings-core/pg-once-result.md)与[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/pg-setup-failure-manifest.json)固定。此前“source闭包已补全”只对227清单为真，实际动态SQL读取还缺4项，现[精确补充](../../docs/evidence/wpf-mature-02-message-settings-core/pg-migration-read-closure-supplement.json)已提出；不改历史声明/raw来掩盖遗漏。
 
 2026-10-06 16:58:48 UTC CORE-PG-RETRY-20261006-1658唯一fresh预核NOT_RUN：free1,192,939,520B<1,207,959,552B，差15,020,032B。claim v3、HEAD26e、236source/input/config和两份外部receipt hash全符，前次库/process/cache清理已确立。0新Vitest/PG/HTTP/DB/child/provider，立即交回窗口；不降线、不循环df等涨、不自动第三次。Lead4SQL恢复与assignment175源/28SQL/10第三方入口静态齐备已归档，均不证明初始化通过。见[资源NOT_RUN](../../docs/evidence/wpf-mature-02-message-settings-core/pg-retry-resource-not-run.json)；旧失败raw/manifest保持原字节。
+
+2026-10-06 17:09:09 UTC CORE-PG-RETRY-20261006-1707明确独立窗口完成：fresh1,257,181,184B≥floor；8selected/8passed/0skip/exit0，14tasks11attempts116HTTP、sourceea不变。专库flow_message_settings_e768fe5964df4d76b685195129f171ad app/boss/pool/admin关闭、conn0/普通DROP后absent/errors=[]，worker/cache/temp清理，窗口已归还。29 distinct=16合同+5注入+8PG分次；原失败及1658资源NOT_RUN原样。见[完整固定交审入口](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-review-ready.md)与[manifest](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-delivery-manifest.json)。本片未正式APPROVED/未main，F01 production32/client/UI另验。

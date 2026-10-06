@@ -1,0 +1,66 @@
+{
+  "windowId": "CORE-PG-RETRY-20261006-1707",
+  "state": "FINISHED",
+  "startedAt": "2026-10-06T17:09:02.288281+00:00",
+  "finishedAt": "2026-10-06T17:09:09.484641+00:00",
+  "head": "f8cfc7f0b5e99ae5cc1181218e07ccb10dc57a53",
+  "sourceCommit": "ea276572c3c99fb8400808a93efc69ce530d55a4",
+  "exitCode": 0,
+  "elapsedMs": 7195.546707953326,
+  "rawBytes": 3291,
+  "limitFailure": null,
+  "cacheAfterBytes": 139,
+  "temporaryAfterBytes": 0,
+  "cachePeakObservedBytes": 2555455,
+  "cacheRemoved": true,
+  "ownTemporaryRootRemoved": true,
+  "ownedProcessExited": true,
+  "freeAfterBytes": 1247244288,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/wpf-mature-02-message-settings-core/vertical-pg-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "--reporter=json",
+    "--maxWorkers=1",
+    "apps/server/src/conversations/message-settings.test.ts"
+  ],
+  "scope": "one original eight-case private PG/HTTP file; no native SDK/provider; no automatic retry",
+  "testCounts": {
+    "numTotalTestSuites": 1,
+    "numFailedTestSuites": 0,
+    "numTotalTests": 8,
+    "numPassedTests": 8,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "selectedFiles": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/apps/server/src/conversations/message-settings.test.ts"
+  ],
+  "failedCases": [],
+  "fixtureReceiptBytes": 616,
+  "fixture": {
+    "database": "flow_message_settings_e768fe5964df4d76b685195129f171ad",
+    "creationRequested": true,
+    "counts": {
+      "tasks": 14,
+      "attempts": 11
+    },
+    "requests": 116,
+    "appClosed": true,
+    "bossClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "connections": 0,
+    "absent": true,
+    "errors": [],
+    "elapsedMs": 4006.8656659999997,
+    "finishedAt": "2026-10-06T17:09:09.412Z",
+    "pre032Absent": true,
+    "providerCalls": 0
+  }
+}
