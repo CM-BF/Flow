@@ -94,3 +94,6 @@ Mika发现定时扫描与手动领域测试竞争；已交原owner以显式facto
 
 ## SVC02薄client 05:22 UTC
 固定caea11bbd5589d33e1cad8d73a328587323ad873，4方法仅读维护快照/历史、发送drain/resume，精确保留CAS/operationId/key/原文与AbortSignal；不把计数或重放回执当停机许可，不包含host hold接口。真实HTTP1/1与noEmit通过，缺方法初红保留；无PG/进程/模型调用。沿既有传输Interface与错误机制，未扩第二调度器。
+
+## K01薄client 2026-10-06 05:24:09 UTC
+固定b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69，7方法保留原文/版本CAS/key/locator/digest/isCurrent/currentVersion，路径与查询编码、AbortSignal和409不暗重试。实际HTTP1/1及noEmit通过，缺方法red保留；不重跑K01完整领域、不声称生产015已挂载。沿既有传输，不缓存/修改原文，无模型。

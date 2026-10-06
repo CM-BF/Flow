@@ -1,8 +1,10 @@
 # F01 共享接线审查
 
-**当前增量状态：APPROVED（O05薄client e28；生产挂载待另审，下方历史批准保留）
-Review target commit：e28d547ed3b446a252595bd1960953382ffa4dd8
-Scope：X02公共挂载/export/client/CLI；CHAT生产入口37ab367另列同批检查。Mika独立只读APPROVED 095497：7薄client方法/CLI稳定key与schema/PG消费者检查完整核对，5源码与raw输出hash一致，无finding，未重跑。CHAT生产37ab由Goal Owner独立只读批准，核007/009迁移、鉴权后挂载、错误清理与10/10原始证据；未重跑。
+**当前增量状态：NOT_STARTED（K01薄client；历史独立批准见下方）**
+
+Review target commit：b5f7d3b58a1b3aaaae1d7afbb8881efa8e27ef69
+
+Scope：packages/client/src/index.ts、packages/client/src/knowledge.test.ts、packages/contracts/src/index.ts，仅七个知识传输方法；见knowledge-client-manifest.json。领域K01仍待独审，生产mount未写。
 
 ## 历史已审接线
 
@@ -66,3 +68,6 @@ Mika只读APPROVED固定208a928969c8e343ea09ecc06db80a6808bbbd74（clean53fcd1e�
 ## SVC02薄client待审
 Review target commit：caea11bbd5589d33e1cad8d73a328587323ad873
 三文件4方法，1/1 HTTP+noEmit，见maintenance-client-manifest.json；当前NOT_STARTED，不包含维护领域/host安全刷新。
+
+## SVC02薄client独立批准
+Mika独立只读APPROVED caea11bbd5589d33e1cad8d73a328587323ad873，现场clean294612ab；3源3输出hash和固定91878合同核一致，1/1 HTTP/noEmit原证据，无finding未重跑。manifest ace17c6aa83413998c8fc5b0a39faaf92f79ad3bd47d03ed63b593adc5e3deeb。限定薄传输，不含PG维护/host流程。
