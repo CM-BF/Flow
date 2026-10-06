@@ -89,3 +89,11 @@ Root已独立接受本轮受控证据：[原报告](../../docs/evidence/wpf-conv
 独立reviewer root；实际报告时间2026-10-06T19:37:18.288778+00:00；固定target7ca31ca3a65af587b1cf80713b03a6dbe22e1f75，观察metadata2b4acfb86e3fca6e41a4690f2348eb846be8ebb0且clean。[原文](../../docs/evidence/wpf-conversation-recovery/7ca-root-crashpad-source-review.json)APPROVED_SCOPED_CRASHPAD_PARENT_SOURCE_NOT_RUN / 0blocking。独审核19源/原10raw、worker不变、owned目录准备/环境/白名单及原清理路径；不复跑types/38/HTTP/PG/Chrome。
 
 批准只限本parent配置；installed154 Crashpad实际行为未验，未声称所有Chrome写路径受OS限制或曾复现Settings nested问题。76a两P2源码关闭仍原范围。首真实browser失败保留；下一实际run必须新gate并保原14846.267375ms累计。完整feature review NOT_STARTED/targetUNKNOWN不变。
+
+## 2026-10-06 19:51:04 UTC — RECOVERY-RESTORE-EDIT
+
+当前P1 CHANGES_REQUESTED_SOURCE_SCOPED：[固定源审](../../docs/evidence/wpf-conversation-recovery/restore-edit-root-review.json)。修复等待期间text/intent/profile/project/knowledge/附件/steering完整编辑保护、同view并发Restore及冲突后checkpoint；补App共用owner seam的deferred refresh回归源码，禁止只mock host.restore自证。当前0运行，不沿用38通过声称新修复已验；完整feature NOT_STARTED。
+
+## 2026-10-06 20:02:41 UTC — RECOVERY-RESTORE-EDIT 作者修复待复审
+
+限定target `2b01eb6ff345175f7073c4e57125f5eecfd52cac` / previous7ca / 本次8源，[manifest](../../docs/evidence/wpf-conversation-recovery/restore-edit-checkpoint.json)。P1作者SOURCE_ADDRESSED_PENDING_REVIEW；独审未到，不覆盖原CHANGES_REQUESTED结论。请核同view提前租约、完整editable fingerprint+edit-revert invalidation、App共用refresh/apply seam、prepare所有材料后再写editor、auth失效与并发、deferred当前稿正常CAS。当前50新增组合源码未运行、types未跑；旧38/原browser失败原样。完整feature仍NOT_STARTED/targetUNKNOWN。

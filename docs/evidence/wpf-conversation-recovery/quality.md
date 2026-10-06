@@ -141,3 +141,7 @@ Root受控证据接受报告已逐字归档，SHA256 `11492f4990a29ffe5aca3ec59b
 ## 2026-10-06 19:38:35 UTC — 7ca独审归档clean-code安全点
 
 本段复用既有local技能方法，仅核原审批字节、source/worker/原raw边界与单一状态记录；没有源码变化或新结构问题。Root确认同一owned路径复用于mkdir/env/日志、错误归原finally、无新framework，0blocking。19源固定7ca，10raw保持。没有用source批准冒充运行/完整验收，候选manifest保历史事实，最新审批在唯一status/review更新。0产品import/types/test/HTTP/PG/Chrome/free，正常封存后停写。
+
+## 2026-10-06 20:01:25 UTC — Restore编辑P1 clean-code安全点
+
+复用本地find-skills方法，读取clean-code/codebase-design现有版本，未安装。职责审查发现原binding无声丢通知、App等待后仅核auth、steering预检晚于写正文；修为私有完整稿租约与同一个App实际owner seam，材料校验仍各自原controller实现，避免复制校验/第二authority。名称区分check/bindView/apply与同步prepareRestore，旧restore保持立即语义；记录prepare闭包只同栈消费。静态复核修正一次误置handoff guard，移至真正restore入口（未运行）；核dispose清租约、并发早拒、受保护恢复无法回收、auth失败延迟保存。当前新12case/50总case及types/browser均未运行，完整feature未审。技能为方法参考，不扩大原21或运行许可。

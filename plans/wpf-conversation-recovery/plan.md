@@ -80,3 +80,11 @@ RECOVERY01-04新增生命周期/observer共38受控case已单次通过，源7cc�
 仅ESRCH证明owned process group不存在；未知/活跃保留scratch并失败。确认组消失后、删除前独立检查scratch/evidence/free，无work-phase门槛；计量错误入raw，安全清理继续。报告/budget后再有界观察真实占用/耗时，失败不绿。显式MAC_CHROMIUM_TMPDIR归own scratch，仅记录白名单临时目录/实际argv，复用既有PID退出记录，不复制第二collector。原计时在准入/历史budget核验后开始；新尾部计量覆盖报告写入，不冒包含全部preflight/物理硬配额。无新运行预算。
 
 2026-10-06 19:32:54 UTC：沿原-05准备项补自有scratch/crashpad的BREAKPAD_DUMP_LOCATION及白名单记录。此为配置source-only，不增加任务/范围/运行预算，不声明完整Chrome OS隔离。
+
+## 2026-10-06 19:51:04 UTC — RECOVERY-RESTORE-EDIT
+
+当前P1 CHANGES_REQUESTED_SOURCE_SCOPED：[固定源审](../../docs/evidence/wpf-conversation-recovery/restore-edit-root-review.json)。修复等待期间text/intent/profile/project/knowledge/附件/steering完整编辑保护、同view并发Restore及冲突后checkpoint；补App共用owner seam的deferred refresh回归源码，禁止只mock host.restore自证。当前0运行，不沿用38通过声称新修复已验；完整feature NOT_STARTED。
+
+### 2026-10-06 20:02:41 UTC — Restore冲突语义冻结
+
+RECOVERY01-03/04修复target `2b01eb6ff345175f7073c4e57125f5eecfd52cac`，见[接口/源码回归边界](../../docs/evidence/wpf-conversation-recovery/restore-edit-source.md)。当前50仅静态计数/未运行。Root澄清不新建slot或双存draft：Restore冲突不得删/套用旧record，当前新稿按原owner/slot与CAS正常保存，成功会更新同slot。已建conversation项目在应用前核中心身份，新chat项目选择受编辑租约保护。原38与所有预算/完整验收开放状态不变。

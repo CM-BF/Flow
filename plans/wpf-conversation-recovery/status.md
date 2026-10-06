@@ -2,29 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 19:38:35 UTC |
+| 最近更新 | 2026-10-06 20:02:41 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前限定source7ca31ca3a65af587b1cf80713b03a6dbe22e1f75；38受控执行仍bf14/7cc；当前metadata HEAD以Git为准 |
-| 工作树dirty状态 | 2b4acfb clean输入；19源固定7ca，本段仅审批metadata归档，normalpush后核local=origin/clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前P1限定source2b01eb6ff345175f7073c4e57125f5eecfd52cac；旧38受控执行仍bf14/7cc；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 0ac929 clean输入；8源码固定2b01，其余11源及首browser10raw保持；本次metadata正常push后核local=origin/clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 默认草稿保存受控检查通过；浏览器验证的清理与启动配置已通过限定源码审查，真实修复旅程待新运行窗口 |
-| 下一可用交付 | 在新准入后验证真实默认保存、材料恢复与原身份重试；重新连接仍不自动投递 |
-| 当前阻塞 | ACTIVE: 当前受控检查已通过，但修复后的真实浏览器旅程未运行；完整恢复及中心语义仍开放 |
+| 当前产出 | 恢复等待期间的新稿保护已修复源码；正文、设置与材料的冲突回归待运行和独立审查 |
+| 下一可用交付 | 独审本次恢复与编辑冲突修复；有新准入后验证完整实际恢复旅程 |
+| 当前阻塞 | ACTIVE: 新恢复冲突修复尚未独审或运行；首浏览器失败及完整中心恢复验收保持开放 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 首真实browser草稿旅程失败保留；当前7cc受控38/38 PASS，0skip/todo，direct累计6.868/30s、清理通过；types未新增52.814/60s，不代表真实IDB/App通过 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:35:01.030Z管理观察active/唯一owner/无overlap，本人核原件；只metadata封存，不含运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4，原21scope；2026-10-06T19:46:19.159Z管理fresh/唯一owner/nooverlap原件已核；本段source-only，不含运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -185,3 +185,13 @@ Root于2026-10-06T19:30:46.598697+00:00对76a给[APPROVED_SCOPED_PARENT_SOURCE_N
 Root于2026-10-06T19:37:18.288778+00:00对固定7ca31ca3a65af587b1cf80713b03a6dbe22e1f75给[APPROVED_SCOPED_CRASHPAD_PARENT_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/7ca-root-crashpad-source-review.json)，0blocking；10063B原文SHA256 `5ad7f65c856acf5193b44fd3a01dec63b4706c2d155efd177b5029a08f65b006`原样归档。76a原尾部源码批准保持。19源和10历史raw逐hash保持，本段仅metadata正常push，不改原候选manifest历史PENDING字段。
 
 此为配置与清理父监督源码审，不是installed Chrome154行为、完整OS写入隔离、真实IDB/材料恢复或完整feature通过。首browser14846.267375ms失败不改绿，余75153.732625ms含15000ms清理仍无新准入；38受控结果保持7cc范围。本段0runtime/types/38重跑/browser/free采样。完整feature NOT_STARTED/targetUNKNOWN/main未接；封存后停写等调度。
+
+## 2026-10-06 19:51:04 UTC — Restore与编辑竞态P1修复启动
+
+[Root原件](../../docs/evidence/wpf-conversation-recovery/restore-edit-root-review.json)指出等待refresh期间完整新稿可被覆盖、changed被丢弃；是固定源码路径，未新运行。本人核[19:46:19.159Z权属](../../docs/evidence/wpf-conversation-recovery/restore-edit-claim.json)原21/v4/唯一owner/nooverlap。沿原私有App/RecoveryHost加入同view租约、完整身份复核与延迟通知保存；原controller权威不变。0types/tests/import/HTTP/PG/Chrome/free，原38和browser14.846267375s原raw保持；完整feature NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-06 20:02:41 UTC — Restore编辑P1固定源码安全点
+
+固定 `2b01eb6ff345175f7073c4e57125f5eecfd52cac`，八源变化/另11源等7ca，[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/restore-edit-checkpoint.json)。同view租约与完整可编辑稿复核、等待通知保留、同步材料预检已源码落地；[实际接口与限制](../../docs/evidence/wpf-conversation-recovery/restore-edit-source.md)。作者标P1 SOURCE_ADDRESSED_PENDING_REVIEW，未自签关闭。新增12case，当前40普通+6/2/2参数=50静态总数，全数当前NOT_RUN；旧38只绑定7cc受控实证。
+
+Root澄清同slot不要求留两份：冲突不套用/删除旧稿，正常新稿CAS成功后允许更新该stable slot。项目是已建conversation的中心身份时由App核saved envelope，不把首次展示加载当编辑；新chat项目选择及所有材料仍完整守护。清理旧raw10份17415B逐hash相同，0types/tests/HTTP/PG/Chrome/import/free，原预算未消费。完整feature NOT_STARTED/targetUNKNOWN/main未接。源冻结交独审，normalpush后核clean。
