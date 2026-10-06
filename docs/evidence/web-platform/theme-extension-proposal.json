@@ -1,0 +1,42 @@
+{
+  "status": "read-only candidate; no new tree/take/writes; queued after attachment P1",
+  "source": "w01_owner bounded fixed-source proposal; root accepted direction only",
+  "fixedMain": "253035e11ab18ba33095c018949f856442021d49",
+  "fixedVisual": "a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231",
+  "candidateTaskId": "WPF-THEME01",
+  "parent": "WPF-MATURE-01",
+  "scopes": [
+    "apps/web/src/theme-tokens.ts",
+    "apps/web/src/themes.ts",
+    "apps/web/src/main.tsx",
+    "apps/web/src/App.tsx",
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/styles.css",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/theme-tokens.test.ts",
+    "apps/web/test/theme-preference.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/theme-extension.fixture.ts",
+    "apps/web/test/theme-extension.browser.ts",
+    "plans/wpf-theme01-extension",
+    "docs/evidence/wpf-theme01"
+  ],
+  "design": [
+    "single finite typed catalogue -> existing atomic validateTheme/authorized P01 host -> known CSS mapping; no arbitrary CSS/second registry",
+    "root token alias replaces local fixed material override; preserve forced-colors/reduced-transparency priority and official Thread inline defaults",
+    "persist requested preference separately from effective fallback; missing/session dispose do not erase requested plugin ID; explicit choice/disable policy distinct; old epoch cannot overwrite new choice",
+    "four builtins and actual Ocean contribution retained; test plugin reload/disabled/missing/late registration, declared capability does not grant authority"
+  ],
+  "validation": [
+    "finite token ranges/invalid atomic rejection",
+    "real computed material/radius/390 keyboard/forced colors",
+    "4builtin and actual plugin reload/disable/remove/late epoch",
+    "zero extra history/task reads"
+  ],
+  "claimBoundary": "09:48:45 owner observed STEIRI App/session/types/validation/plugin-host-test occupied. It is historical partial check, not all18 permission; fresh all scopes after needed release mandatory.",
+  "limits": "no browser reproduction of plugin startup/material extension gaps in this proposal; no SDK upgrade or product implementation"
+}

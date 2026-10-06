@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:40:30 UTC |
+| 最近更新 | 2026-10-06 09:54:02 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已有stream与补充指令模块main；STEIRI01实际App接线已独立13scope正式实施，语音及自然状态呈现仍后继 |
-| 下一可用交付 | 交付STEIRI01实际补充指令与ACTIVITYREAD展开活动区；语音、跨reload恢复及其余自然呈现仍开放 |
+| 当前产出 | STEIRI01固定5cf独立APPROVED，ACTIVITYREAD固定f2bc获root独审；两片已push/冻结待main，完整聊天仍开放 |
+| 下一可用交付 | Lead从集中队列受控接收STEIRI01与ACTIVITYREAD；语音、跨reload恢复及queue/stream自然呈现仍开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -36,7 +36,7 @@
 
 ## 依赖与领取
 
-STEER模块已main，STEIRI01十三scope正式实施；CONTEXTI已释放；CHAT10 admission/公共client已固定，个人steering仍off。真实provider观察预算须单独明确；voice公开输入依赖待核。
+STEER模块已main，STEIRI01十三scope已审冻结待main；CONTEXTI已释放；CHAT10 admission/公共client已固定，个人steering仍off。真实provider观察预算须单独明确；voice公开输入依赖待核。
 
 当前子任务各自唯一来源：[STEIRI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)、[ACTIVITYREAD01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-activity-readability/plans/wpf-activity-readability/status.md)；已收模块历史见[STEER01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md)。功能通过不等用户个人runtime已启用；源码main与服务owner最新固定产物回执分开，旧32c/v9仅历史。
 

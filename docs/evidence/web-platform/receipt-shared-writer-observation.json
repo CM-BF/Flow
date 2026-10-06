@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-10-06T09:51:27.662Z",
+  "state": "available",
+  "source": "D04 CLI list, dedicated coordination PG read-only; no dashboard API",
+  "paths": {
+    "apps/web/src/conversations/projection.ts": [],
+    "apps/web/src/conversation-context/receipts.ts": [],
+    "apps/web/src/execution-profiles/selection.ts": [],
+    "apps/web/src/conversation-context/selection.ts": []
+  },
+  "limitation": "Point-in-time free is not a grant. Future writer must fresh take. Existing Web snapshot/history merge remain local; await fixed F01 shared input."
+}

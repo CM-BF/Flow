@@ -43,5 +43,12 @@
     "https://git-scm.com/docs/git-ls-tree",
     "https://nodejs.org/api/child_process.html#maxbuffer-and-unicode"
   ],
-  "docsLimit": "Official Node generic documentation describes bytebuffer behavior; latest-v24 docs URL was inaccessible. No version upgrade or new API reliance; installed24 behavior to be verified by focused test."
+  "docsLimit": "Official Node generic documentation describes bytebuffer behavior; latest-v24 docs URL was inaccessible. No version upgrade or new API reliance; installed24 behavior to be verified by focused test.",
+  "queueClarification": {
+    "at": "2026-10-06 09:54:02 UTC",
+    "state": "approved proposal, not taken; deferred for MATURE03 attachment P1",
+    "scopeConflictWithD08": false,
+    "reason": "proof.mjs is not in D08 scope; aggregate is not in this proposal",
+    "implementationOwnerAfterFreshAssignment": "workspace_panels_owner proposed, no current writer grant"
+  }
 }

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:43:01 UTC / VISUAL正式4391接收并释放；D08仍待main/部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 09:54:02 UTC / STEIRI与ACTIVITYREAD已审入队；附件责任裁决落盘；D08仍待main/部署 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -17,14 +17,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 六项成熟聊天目标已登记；知识App已main；轻质视觉已main并释放，两层看板关联已审待集成，补充指令App与活动自然状态小片并行实施 |
-| 下一可用交付 | Lead接收D08并部署关联；SVC04受控发布视觉片；推进补充指令App实际接线 |
+| 当前产出 | 六项成熟目标已登记；知识App/轻质视觉已main；D08、补充指令App与活动自然状态片已审入队，附件后端与Web输入只读提案并行 |
+| 下一可用交付 | Lead已读取D08/STEIRI/ACTIVITYREAD，受控组合接收中；SVC04受控发布；root冻结附件合同后fresh领取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
-| 已集成main状态 / HEAD | 最新正式接收4391含VISUAL（a8）及先前df29的CONTEXTI与STEER；后继STEIRI独立实施。已审管理发布a5/33bd按当时快照同步，后续事实不继承旧审批；历史逐项见status-history.md |
+| 已集成main状态 / HEAD | 最新正式接收4391含VISUAL（a8）及先前df29的CONTEXTI与STEER；后继STEIRI已独审待main。已审管理发布a5/33bd按当时快照同步，后续事实不继承旧审批；历史逐项见status-history.md |
 | Review | [review.md](review.md)，本次固定发布APPROVED a5e500136438b197305339cbe0a5e10a196a4317；root2026-10-06 07:59 UTC；历史c075仅见归档，不覆盖本次 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -71,19 +71,20 @@
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
-| STEIRI01 → MATURE06 | [新App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，w01_owner，bc0ded75 v1十三scope | df29独立树正式实施，首82d2与登记输入已交集中队列 |
-| ACTIVITYREAD01 → MATURE06 | panels / web-activity-readability，6f427ac5 v2六scope；[原始take](../../docs/evidence/web-platform/activityread01-take-receipt.json) | 3418独立树已授权，首bd580/parser0已落盘，等待正常登记；不写STEIRI/原projection |
+| STEIRI01 → MATURE06 | [新App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，w01_owner，bc0ded75 v1十三scope | 5cf独立APPROVED，最终57f8已push/clean，十三scope产品停写待main |
+| ACTIVITYREAD01 → MATURE06 | panels / web-activity-readability，6f427ac5 v2六scope；[原始take](../../docs/evidence/web-platform/activityread01-take-receipt.json) | f2bc/rootAPPROVED，最终4f86已push/clean，六scope产品停写待main；不写STEIRI/原projection |
 | D08 → D01 | [关联source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-links/plans/d08-task-links/status.md)，panels，49510580 v1九scope | eca59/ce038已审push；待main/4320部署，不称关联UI已可见 |
 | STEER01 → MATURE06 | [模块source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/plans/wpf-steering-control/status.md) | 已main77c，2bae v2 released；原树只读；实际App接线现属STEIRI01独立13scope，原模块不再写 |
 | D05FIT01 | [已交source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-first-fit/plans/d05-first-fit/status.md) | 已main9d6/5dc v2 released；registry证据路径纠正仍现registry owner处理 |
-| DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 未建树/未take，排队，不算active writer |
+| DPERF02 | [有界提案](../../docs/evidence/web-platform/dperf02-proposal.json) | 未建树/未take，附件P1优先排队；四scope不含aggregate，不以D08占用作阻塞 |
 
 ## 当前依赖与登记队列
 
 - 六大task与Mika02/04唯一canonical、用户原话/Arc抽象、登记字段与待集成目标统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)。Web只拥有01/03/05/06，02/04不复制计划。
 - Lead09:09:25正式观察111 sources/current/issues[]，六MATURE/CONTEXTI/STEER/VISUAL已登记；本管理不重复API。D08首source f772及candidate沿队列供Lead读取；父关联必须部署后真实页面验证，当前未Done。
 - D05 registry evidenceDir应为docs/evidence/d05-first-fit；现owner仍Lead队，仅其可修registry，本组不抢写。
-- CONTEXTI已main并释放；STEIRI01已df29新树/fresh bc0ded75 v1正式13scope实施，source见集中handoff。
+- CONTEXTI已main并释放；STEIRI01与ACTIVITYREAD已固定独审、最终push待Lead受控接收，source见集中handoff。
+- GO已将MATURE03附件端到端责任交Web/root；panels后端/w01 Web仅只读proposal，root固定合同后新take。共享receipt四Web路径09:51:27 fresh账本无writer；仅时点观察，未来仍fresh take。
 - 跨lead接口/资源裁决才有界直接协调；GO每完整大task只独立blocker与Done一次。无不可解除的整体阻塞；用户要求take在dashboard明确展示、各lead防overlap保持验收项。
 
 ## 当前服务与验收边界

@@ -1,0 +1,46 @@
+{
+  "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+  "reviewedMetadata": "f7649e40db4eecd21881e46f1db6fb2ac26e390d",
+  "reviewer": "d01_owner / gpt-6-astra ultra",
+  "confirmedAt": "2026-10-06T09:50:22Z",
+  "decision": "APPROVED",
+  "blockingFindings": [],
+  "independentChecks": {
+    "passed": 60,
+    "files": 3,
+    "integration": 8,
+    "control": 33,
+    "pluginHost": 19,
+    "start": "2026-10-06T09:47:23Z",
+    "durationMs": 4560,
+    "exitCode": 0,
+    "log": "steiri01-independent-review-tests.log"
+  },
+  "sourceReview": [
+    "11 changed sources read; full identity + connection + authorization before and after private ports",
+    "P01 command write authorization calls raw private accept once; no recursive controller dispatch",
+    "generation cancellation for hidden/offline/revocation, original key retry preserves everUnknown",
+    "stable surface retains distinct draft; max8 bindings backpressure/no unknown eviction; closed-before-await dispose"
+  ],
+  "sourceBinding": "11 fixed/current/manifest/dev/prod SHA256 equal; 56 paths in13 claim scopes; product diffcheck0; tree clean after independent tests",
+  "cua": {
+    "fixture": "http://127.0.0.1:61475",
+    "actual": [
+      "normal and instruction drafts separate",
+      "Hide/reopen retained draft and returned focus to entry",
+      "one synthetic instruction received accepted receipt",
+      "next instruction + normal draft retained after close warning cancelled",
+      "disable revokes control, enable retains draft/receipt and requires explicit stale refresh",
+      "dark theme and author 390 light/dark images inspected"
+    ],
+    "consoleWarnError": [],
+    "temporaryTabClosed": true,
+    "serviceUntouched": true
+  },
+  "limits": [
+    "No real center/provider/product DB",
+    "No rerun of author dev10/prod10 browser suites or build/typecheck",
+    "No reload key persistence or model compliance claim",
+    "All source and metadata written only by owner; this review read-only"
+  ]
+}

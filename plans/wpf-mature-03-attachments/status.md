@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 09:40:30 UTC |
+| 最近更新 | 2026-10-06 09:54:02 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 知识选择Send/Queue实际App片CONTEXTI已main df29并收口；完整文件上传生命周期与@file仍开放 |
-| 下一可用交付 | 知识聊天已main；确认唯一附件资源后端owner及固定公共合同，再领取实际附件旅程 |
+| 当前产出 | CONTEXTI知识App已main；GO明确本组附件端到端责任，完整资源/输入两案准备中，上传与@file仍未实现 |
+| 下一可用交付 | Web/root端到端附件负责；panels后端/w01输入预览并行只读方案，root固定合同后独立领取实际片段 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-03-01 | completed | Web co-lead | CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。 |
-| WPF-MATURE-03-02 | pending | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。 |
+| WPF-MATURE-03-02 | in-progress | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。 |
 | WPF-MATURE-03-03 | pending | Web co-lead | 三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。 |
 | WPF-MATURE-03-04 | pending | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；材料真实进入model context。 |
 | WPF-MATURE-03-05 | pending | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；不支持中心明确plaintext路径；类型/大小/授权失败可行动。 |
@@ -36,10 +36,10 @@
 
 ## 依赖与领取
 
-CONTEXTI01已main并释放；附件资源生命周期唯一后端owner/公共合同尚待明确，接口缺口明确后协调，不自造prompt或目录权限。
+CONTEXTI01已main并释放；GO裁定Web/root端到端负责，panels只读后端资源proposal、w01只读Web输入/预览proposal。root待两案固定唯一轻引用/ready/read/retention接口，再fresh独立scope take；尚无附件实现写权。Lead只协调共享出口/迁移号/main。
 
 当前子任务唯一来源：[CONTEXTI01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)。该子任务直接归本大task，WPF管理只做来源追溯。
 
 登记/父关联待执行dashboard原owner处理，见[唯一管理登记队列](../../docs/evidence/web-platform/mature-task-handoff.md)。不得把新增字段等同已在页面显示；局部登记不阻断独立已授权实现。
 
-本段只读未发现唯一附件后端owner实质回执；建议Lead统筹共享资源模块、02只消费/04复用metadata，未擅自派写。固定owner/合同是后续上传接线依赖，非当前整个大task阻塞；不重复无变化催促。见[观察与解除条件](../../docs/evidence/web-platform/mature03-owner-observation.json)。
+原owner待定观察已由本轮GO正式责任裁决解除；[历史观察](../../docs/evidence/web-platform/mature03-owner-observation.json)不代表当前阻塞。02adapter只消费/04复用metadata；首类型片段不等于完整附件Done。旧scope不续写，不上传用户文件、不调用provider。

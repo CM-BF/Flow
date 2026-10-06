@@ -10,7 +10,7 @@
 | 用户来源 | [成熟度原话与六项分工](../../docs/evidence/web-platform/mature-task-handoff.md)；原WPF REQ仅追溯，不形成第三层 |
 | 收益 | 用户可通过按钮、拖放和@file把明确版本的材料附到当前草稿，并真实用于Send或Queue执行。 |
 | 边界 | 本计划定义完整用户结果；具体实现须独立worktree、fresh精确scope take和固定独审，计划目录领取不授产品写权 |
-| 依赖 | CONTEXTI01已main df29并收口释放；本地上传/runner文件与授权/版本合同的唯一后端owner尚待明确，接口缺口明确后协调，不自造prompt或目录权限。 |
+| 依赖 | CONTEXTI01已main df29并收口释放；GO已裁定Web/root端到端负责附件；拟panels后端资源、w01 Web输入/预览并行只读提案，root冻结公共合同后各自fresh take；Lead只协调占用中的共享出口/迁移编号/main。 |
 
 ## 已有能力与gap
 
@@ -39,8 +39,14 @@ root只读实际react0.15.23/core0.3.22：external-store-adapter.ts已有adapter
 
 ### 完整附件生命周期依赖（09:09 UTC GO审计）
 
-需和Mika/ExecutionLead明确唯一后端owner：浏览器引用必须落为runner固定可读输入，ready才可Send/Queue；删草稿、执行前重启后仍读取冻结版。上传中、失效、provider不支持须明确阻止，不能静默丢附件只发文字；取消/失败有界清理、使用中的材料不回收。MATURE02 adapter只消费该协议，04复用metadata；本Web不重领后端范围。沿原附件TODO验收，不扩大当前CONTEXTI20scope。
+历史09:09审计提出唯一后端owner待定；下述生命周期验收保持，责任已由本轮GO正式裁决明确为Web/root：浏览器引用必须落为runner固定可读输入，ready才可Send/Queue；删草稿、执行前重启后仍读取冻结版。上传中、失效、provider不支持须明确阻止，不能静默丢附件只发文字；取消/失败有界清理、使用中的材料不回收。MATURE02 adapter只消费该协议，04复用metadata；Web本组唯一后端worker和独立Web输入worker均须新隔离树/fresh literal take。沿原附件TODO验收，不继承已释放CONTEXTI写权。
 
-### 唯一附件后端owner：待协调依赖
+### 附件端到端责任已确定（GO正式裁决，经root转达）
 
-本管理本次只读Mika最近可见active turn及MATURE02/04唯一canonical依赖，未找到附件生命周期唯一owner/固定公共合同的实质回执；不据此声称全部历史无回复，也不重复催促。建议ExecutionLead选定唯一后端owner负责共享资源模块，MATURE02 adapter只消费、04复用metadata；这只是有界分工提案，不是给任何worker授权或另造上传协议。解除条件为owner+canonical+精确scope正式指定，以及ready/固定可读版本/retention与重启/使用中引用/取消失败有界清理的接口固定。详情见[一次观察](../../docs/evidence/web-platform/mature03-owner-observation.json)，默认文字路径不等于可以丢附件后发送。
+Web/root对MATURE03完整附件结果负责，授权本组唯一后端附件资源worker与独立Web输入/预览worker并行。当前派panels只读后端接口/scope方案、w01在STEIRI批准metadata安全点后只读Web方案；尚未为附件建树或take。root统一固定轻引用、ready、授权读取与保留合同，然后各自独立worktree/fresh literal claim。ExecutionLead仅协调已占共享index/合同出口、迁移编号与main，不再把“等待Lead后端owner”作为阻塞。02 adapter消费同一协议，04复用metadata，不造第二上传协议。此前[有界owner观察](../../docs/evidence/web-platform/mature03-owner-observation.json)仅保留其历史时点，已由本裁决解除。
+
+首个支持类型可做有界切片；完整验收仍是按钮/drag/@file→ready固定版本与顺序→Send/Queue→远端runner实际读取同材料并留输入证据。pending/expired/provider unsupported必须阻止并保草稿；不能丢附件只发文字。删除草稿不回收in-use，失败/取消有界清理；断线/重启/撤权/unknown保留身份与原键。复用project/context/storage授权、版本与预算，metadata首屏、正文按需。区分upload、knowledge和授权runner file，不用blob URL、绝对path或base64 timeline假接。先做真实PG/HTTP fixture，0provider；完整模型验收仍须单独明确预算。
+
+### 已安装adapter与提交语义（root只读研究）
+
+installed core0.3.22已有attachment add/send/remove接口；当前Thread.onNew仅消费text，忽略message.attachments，因此新输入必须显式映射授权不可变refs，paperclip/预览不等于已发送。现core remove仅对尚未complete的attachment调用adapter.remove，center/outbox负责保留与in-use回收，不能依赖删草稿回调。官方[附件指南](https://www.assistant-ui.com/docs/guides/attachments)与[custom adapter](https://www.assistant-ui.com/docs/integrations/attachments/custom-adapter)仅作为方法来源，当前网站推荐版本不构成本项目SDK升级授权。本段无上传、provider或实际附件输入验收。

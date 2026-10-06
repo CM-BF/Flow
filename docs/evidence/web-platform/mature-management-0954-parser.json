@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-06T09:54:35.758Z",
+  "kind": "management metadata only; independent STEIRI product review separately recorded",
+  "statuses": [
+    {
+      "id": "WPF-001",
+      "errors": [],
+      "human": true,
+      "todoCount": 34,
+      "orderAndCompletionMatch": true
+    },
+    {
+      "id": "WPF-MATURE-01",
+      "errors": [],
+      "human": true,
+      "todoCount": 5,
+      "orderAndCompletionMatch": true
+    },
+    {
+      "id": "WPF-MATURE-03",
+      "errors": [],
+      "human": true,
+      "todoCount": 6,
+      "orderAndCompletionMatch": true
+    },
+    {
+      "id": "WPF-MATURE-05",
+      "errors": [],
+      "human": true,
+      "todoCount": 5,
+      "orderAndCompletionMatch": true
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "errors": [],
+      "human": true,
+      "todoCount": 6,
+      "orderAndCompletionMatch": true
+    }
+  ],
+  "deliveries": [
+    {
+      "id": "WPF-STEIRI01",
+      "errors": [],
+      "human": true,
+      "checks": {
+        "state": "passed",
+        "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+        "record": "PASSED 5cfebc639d7acd458d27f4543d00a32a9fd96fc7；60局部/直接依赖、typecheck/build、dev/prod实际App各10组；[证据](../../docs/evidence/wpf-steer-i01/README.md)"
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7"
+      },
+      "todoCount": 4
+    },
+    {
+      "id": "WPF-ACTIVITYREAD01",
+      "errors": [],
+      "human": true,
+      "checks": {
+        "state": "passed",
+        "target": "f2bcaae6623176acd718cf53707892154579970a",
+        "record": "PASSED f2bcaae6623176acd718cf53707892154579970a; 作者direct16、Web tsc/build、dev13/prod12；root独立direct16及局部CUA；[证据](../../docs/evidence/wpf-activity-readability/validation.md)"
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "f2bcaae6623176acd718cf53707892154579970a"
+      },
+      "todoCount": 4
+    }
+  ],
+  "apiCalls": 0,
+  "managementProductReruns": 0
+}

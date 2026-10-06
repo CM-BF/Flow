@@ -78,13 +78,14 @@ MATURE06语音研究（root已读官方dictation/MDN与installed core0.3.22）�
 
 MATURE01主题扩展后继（root固定be50只读）：descendant!important的thread宽度/composer圆角仍阻根token覆盖；validation仅颜色名单，builtin四主题成功不证明完整材质插件。后继沿原主题TODO考虑一个typed token catalogue产生允许名称/数值域/映射/default，组件消费var回退、禁用清旧token；CSS.supports自定义变量不是值域校验，@property不能替代普通fallback。另initialTheme仅builtin会覆盖已保存pluginID，现reload测试仅builtin；待授权插件声明齐后恢复保存ID/scheme，缺失/禁用/换连接显式fallback，不首屏盲apply外部CSS。需真实外部theme材质/禁用与三reload状态验收。来源为root已读MDN@property/CSS.supports与CSS Variables规范，不是当前browser复现的插件缺陷。
 
-## 当前集中接收队列（2026-10-06 09:31:08 UTC）
+## 当前集中接收队列（2026-10-06 09:54:02 UTC）
 
 | Task / action | 固定实现 / 最终正常push、clean | 唯一canonical / 边界 |
 | --- | --- | --- |
 | WPF-VISUAL01 → MATURE01，主线收口完成 | a8b2b22a29bc3fb6ebd5252754d1e1cdbc975231 / main4391bbf9f1785212d098ef6aa1c01a0320a003d3；owner final558895d7a64e1502ac4b397e24daf7946296e0ca 已push/clean，35e5 v3 released | web-visual-shell / plans/wpf-visual01-shell / docs/evidence/wpf-visual01；七source/祖先已只读核，九scope停写；SVC04另受控发布个人产物，非整个MATURE01完成 |
 | D08 → D01，受控main接收及4320新UI部署 | eca59a5edab0820f724a9bd5bc854e22f48d9ea9 /ce038f0b064d1348d4aa77f1e91f223d7bc5ea31；root APPROVED，49510580 v1保留 | dashboard-task-links / plans/d08-task-links / docs/evidence/d08；九scope、七执行文件，registry仍Lead单写；45direct/5browser按作者/root归因，不重测 |
-| WPF-STEIRI01 → MATURE06，登记新source | 首82d2c98e407684b945467e1ce6b992dba6b4603c，base df29fb511df029a0922ace0f4973f3fe3736e502；bc0ded75 v1 /13scope | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；w01唯一owner已正式实施，父字段明确，不等登记 |
+| WPF-STEIRI01 → MATURE06，受控main接收 | 5cfebc639d7acd458d27f4543d00a32a9fd96fc7 /57f8aa94ac2c9fad148619594e1cab9237bd3773；d01独立APPROVED09:50:22，已push/clean；bc0ded75 v1保留 | web-steering-integration / plans/wpf-steer-i01-integration / docs/evidence/wpf-steer-i01；11source/13scope，产品停写；[独审](steiri01-independent-review.json)与[metadata审计](steiri-activityread-delivery-audit.json)，0真实provider/产品DB |
+| WPF-ACTIVITYREAD01 → MATURE06，受控main接收 | f2bcaae6623176acd718cf53707892154579970a /4f86c6251a73c33db5882e49a4aa031c52114e83；root APPROVED09:47:23，已push/clean；6f427 v2保留 | web-activity-readability / plans/wpf-activity-readability / docs/evidence/wpf-activity-readability；四source/六scope，产品停写；[范围文档审计](steiri-activityread-delivery-audit.json)，只覆盖展开活动区 |
 | WPF-CONTEXTI01，main收口 | main df29含d0e/009e十八source相同；owner fe2b9215d1b230424d9470b8d187eed3d7e77231 pushed/clean | 原20scope停写后[55fe v2 released](contexti01-main-release-receipt.json)09:27:04.696Z，旧树不续写；新STEIRI只经[fresh take](steiri01-take-receipt.json)受权 |
 | D01，合法owner显式父身份metadata | 2f3f33bf29177b930c524263115a5745ab67c66e 已push/clean，产品未改 | execution-dashboard原唯一plans/d01-execution-dashboard，只补大task/co-lead；D08读取原canonical，不复制状态 |
 
@@ -100,8 +101,22 @@ MATURE01原01/02 TODO已绑定[主题研究](mature-theme-presentation-research.
 
 MATURE03唯一附件资源后端owner尚无本次可读范围内的实质回执，[有界观察](mature03-owner-observation.json)明确限制；建议Lead统一共享资源模块owner，02adapter消费、04复用metadata。需要owner/canonical/scope与ready/固定版本/retention/清理合同；不私自领后端、不复制上传协议、不经GO普通转发、不重复催促。
 
-ACTIVITYREAD01首canonical bd580056d00a1d1f0d71c4d14002d3767e28ff23已owner建立、parser0/human完整；唯一web-activity-readability/plans/wpf-activity-readability、evidence docs/evidence/wpf-activity-readability，父06/co-lead正确。请Lead正常source批接，不把claim当已注册卡。D08/VISUAL仍等正式main/部署receipt；只读main80ba移动不当接收批准，收到后原owner仅metadata/停止写再release，4320部署后由root一次真实六大task关联核对。DPERF02仍等D08 aggregate写权释放后择优，当前未take。
+ACTIVITYREAD01首canonical bd580056d00a1d1f0d71c4d14002d3767e28ff23已owner建立、parser0/human完整；唯一web-activity-readability/plans/wpf-activity-readability、evidence docs/evidence/wpf-activity-readability，父06/co-lead正确。请Lead正常source批接，不把claim当已注册卡。D08/VISUAL仍等正式main/部署receipt；只读main80ba移动不当接收批准，收到后原owner仅metadata/停止写再release，4320部署后由root一次真实六大task关联核对。该时点曾误记DPERF02需等D08 aggregate；已在本轮更正：四scope含proof而不含aggregate，无literal依赖，当前只因P1附件优先排队、未take。
 
 2026-10-06 09:40:30 UTC 补同一安全点：REQ22–23/WPF-001-05与MATURE05-02/03已绑定[实际conversation/pane插件入口覆盖](conversation-plugin-coverage-research.md)，root固定80ba静态核查，非新browser finding，App/types仍待STEIRI释放。ACTIVITYREAD原15pass/1skip诊断暴露旧footer总数断言未计已有stream贡献；root批准只按ACTIVITY_OWNER过滤后保精确三项与原lazy/lifecycle断言。fresh09:39:33无重叠后[6f427 v2原子amend](activityread01-amend-receipt.json)09:39:42.651Z添加唯一direct test，六scope、无释放窗口，owner已收到正式receipt。
 
 2026-10-06 09:43:01 UTC VISUAL正式main receipt为4391bbf9f1785212d098ef6aa1c01a0320a003d3；owner现场已推进的main/origin253035e11ab18ba33095c018949f856442021d49 clean，accepted为其祖先且七source均与a8/manifest/current相同。owner仅metadata558895d正常push/clean、全部九scope停写，再fresh[35e5 v3 released](visual01-main-release-receipt.json)09:42:31.202Z。0产品复测/API/服务操作；SVC04唯一owner负责Web产物发布与回滚/旧lazyassets有界保留，不由本组重复实施；D08仍待正式main/4320部署。
+
+## 2026-10-06 09:54:02 UTC 集中责任裁决与共享接缝
+
+GO正式裁定MATURE03附件端到端归Web/root，原“等Lead后端owner”已解除；panels准备唯一后端资源、w01完成STEIRI收口后准备独立Web输入/预览，当前都是只读proposal，没有附件写权。root固定单一轻引用/ready/读取/保留合同后，各自独立树fresh claim；Lead仅协调共享出口、迁移编号和main，02adapter消费、04复用metadata。完整验收已更新[唯一大task](../../../plans/wpf-mature-03-attachments/plan.md)，包括真正runner同材料读取、in-use不回收、pending/expired/unsupported保稿阻止、重启/撤权/unknown身份及真实PG/HTTP fixture，0provider。首类型片段不勾整个附件Done。
+
+TUI-001/F01依赖：本管理使用既有专用协调PG配置做一次只读list（没有读取/输出凭据或dashboardAPI），09:51:27.662Z available；projection.ts、conversation-context/receipts.ts、execution-profiles/selection.ts、conversation-context/selection.ts四路径均无active/handoff writer，见[精确结果](receipt-shared-writer-observation.json)/[raw账本](receipt-shared-writer-ledger.json)。这不是写许可，F01固定公共输入后实际worker仍fresh take。最小迁移仅projection调用点及未知ACK HTTP专测；Web snapshot/history合并保本地，不能粗删同时用于read的assertSummary/assertTurn。receipts/profile-selection仍供Queue/freezing，须共享接口涵盖全部语义才移；invalid ACK保持unknown原key/body，不提前实现接口。
+
+DPERF02原四scope与D08九scope无literal冲突，root固定d7e→253 proof零diff是来源观察；不依赖D08部署。当前按GO附件P1优先排队，未take/建树，既定有界方案保留。当前两交付只做metadata/parser/hash/链接核，独立STEIRI60+CUA证据另列；ACTIVITYREAD无管理产品复跑，0新增4320采样/服务/模型。
+
+ExecutionLead新入站（root转达，本段收到）：已从唯一status实际读取D08 eca59、ACTIVITYREAD f2bc与STEIRI5cf获批/clean，按固定source、原独审及必要组合进入受控接收，不等待F01共享ACK后继。三源与S01P02本批正常补registry。这里只更新“已被Lead接收处理”，不是main或4320部署完成；无需重复报告/采样。SVC04登记main187d，个人静态仍原产物，发布未完成。
+
+F01/TUI共享receipt进一步边界：context/receipts.ts的freezeKnowledgeRequest供outbox/queue，assertContextReceiptMatches供projection/queue；profile.selection的assertCreationReceiptMatches也用于snapshot/history，不能删整文件或放宽读取策略。固定F01 target+出口协调后，先projection.ts调用点/独立consumer HTTP专测+自己plan/evidence；若公开context tuple guard需薄转接再精确amend receipts.ts并保freeze/queue，selection暂不改。验收null/malformed/wrong conversation、turn/text/revision/context顺序版本digest/profile/projectpresence→unknown原key/body，late epoch拒旧结果、旧replayed admission不回滚snapshot/known turn。四路径09:51:27无有效writer，只是时点观察；fresh take不以STEIRI App写权作无关阻塞，附件未来修改也另领取，187d文档不是F01固定产品输入。
+
+MATURE01既有主题扩展TODO的18literal只读proposal见[固定候选](theme-extension-proposal.json)，直接父MATURE01，未take/建树/实施；附件P1优先。单一typed token catalogue、受控root alias及requested/effective生命周期复用现P01；四内置成功不冒完整插件材质/插件reload完成。

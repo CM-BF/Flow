@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-06T09:55:21.357947+00:00",
+  "changedPaths": [
+    "docs/evidence/web-platform/dperf02-proposal.json",
+    "docs/evidence/web-platform/mature-management-0954-parser.json",
+    "docs/evidence/web-platform/mature-management-0954-quality.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/receipt-shared-writer-ledger.json",
+    "docs/evidence/web-platform/receipt-shared-writer-observation.json",
+    "docs/evidence/web-platform/steiri-activityread-delivery-audit.json",
+    "docs/evidence/web-platform/steiri01-independent-review-tests.log",
+    "docs/evidence/web-platform/steiri01-independent-review.json",
+    "docs/evidence/web-platform/theme-extension-proposal.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/plan.md",
+    "plans/wpf-mature-01-visual/status.md",
+    "plans/wpf-mature-03-attachments/plan.md",
+    "plans/wpf-mature-03-attachments/status.md",
+    "plans/wpf-mature-06-chat/status.md"
+  ],
+  "scopeOutside": [],
+  "localLinksChecked": 90,
+  "missingLinks": [],
+  "historyUnchanged": true,
+  "rawEvidenceUnmodified": true,
+  "cleanCode": {
+    "scope": "management metadata / independent review report",
+    "skills": [
+      "find-skills",
+      "clean-code",
+      "codebase-design"
+    ],
+    "method": "existing local skills reused; current responsibility replaces stale blocker; unique status/authority/target provenance kept; no extra registry/implementation"
+  },
+  "limits": "Fresh coordination PG read only, not dashboard API; no product writes; independent STEIRI test/CUA recorded separately; no real provider/DB",
+  "diffcheck": {
+    "sourceAndMarkdownExit": 0,
+    "fullExit": 2,
+    "rawException": "steiri01-independent-review-tests.log:14 original final blank line; preserved verbatim"
+  }
+}

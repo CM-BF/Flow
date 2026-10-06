@@ -1,0 +1,123 @@
+[
+  {
+    "task": "WPF-STEIRI01",
+    "at": "2026-10-06T09:53:02.846485+00:00",
+    "target": "5cfebc639d7acd458d27f4543d00a32a9fd96fc7",
+    "head": "57f8aa94ac2c9fad148619594e1cab9237bd3773",
+    "clean": true,
+    "remoteEqual": true,
+    "scopeCount": 13,
+    "claim": {
+      "claimId": "bc0ded75-3f9f-496b-abce-22b3af4f277a",
+      "version": 1,
+      "state": "active"
+    },
+    "changedPaths": 57,
+    "outside": [],
+    "sourceHashes": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "sha256": "9de8d08db9a3ab1f8649cbca354929cb60fbfb803d02781b7929ecbc0bfc42d1",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "sha256": "38669bba0b3697b48e180ee6119474cbeeda6ce9aa0f2a9bb1fc2148a5efd433",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "sha256": "eebfb3472c356f0e9514ec2984f4c12b624722263735b23f7d3b8b2feb9869b4",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "sha256": "30546e32c496a85e93503f25c2b3634fdefe25115b38cdc311a965ae3bfd9ef2",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/steering.tsx",
+        "sha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/plugins/types.ts",
+        "sha256": "8b122b79c5ffad718995943430bf6d2a621bbd6471b3536eac57c0a224ce294b",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/plugins/validation.ts",
+        "sha256": "773d721cf913d1f8f7efc5f8aba045c0df2514091280f6184e683dfcfc9704fb",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-steering-integration.browser.ts",
+        "sha256": "2cd31abe531daec079e3d7b7fe2688c0b310f7208a7a64dc086f48df4708690f",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-steering-integration.fixture.ts",
+        "sha256": "aa406044d781da809d9705ba347d486663a864b34cda4b08e7fa61bbd9b9699c",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-steering-integration.test.ts",
+        "sha256": "4c790b50111483b2e5411d6fade6465458558faf60ac3bd0174a205e6b7ef598",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/plugin-host.test.ts",
+        "sha256": "62197d2e224d715af7ec045d2b1f2fcbbc2c412353af07769614ad84bfa191f8",
+        "fixedCurrentManifestEqual": true
+      }
+    ],
+    "productTargetToHeadDiff": [],
+    "markdownCount": 6,
+    "localLinks": 30,
+    "missing": [],
+    "testsRerunByManagement": 60
+  },
+  {
+    "task": "WPF-ACTIVITYREAD01",
+    "at": "2026-10-06T09:53:02.846485+00:00",
+    "target": "f2bcaae6623176acd718cf53707892154579970a",
+    "head": "4f86c6251a73c33db5882e49a4aa031c52114e83",
+    "clean": true,
+    "remoteEqual": true,
+    "scopeCount": 6,
+    "claim": {
+      "claimId": "6f427ac5-8f10-4c02-8446-07cead914163",
+      "version": 2,
+      "state": "active"
+    },
+    "changedPaths": 46,
+    "outside": [],
+    "sourceHashes": [
+      {
+        "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "sha256": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/src/conversation-activity/native/tool.tsx",
+        "sha256": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-activity-integration.browser.ts",
+        "sha256": "f20e0f6b3c1ec78757a3522977188d76a271dc1f92b45fdf9fcadd0e2fc48f92",
+        "fixedCurrentManifestEqual": true
+      },
+      {
+        "path": "apps/web/test/conversation-activity-integration.test.ts",
+        "sha256": "f368c026291ff14441b301d34d02d71719afc8251fa4983ced209868abdfc5ab",
+        "fixedCurrentManifestEqual": true
+      }
+    ],
+    "productTargetToHeadDiff": [],
+    "markdownCount": 7,
+    "localLinks": 41,
+    "missing": [],
+    "testsRerunByManagement": 0
+  }
+]
