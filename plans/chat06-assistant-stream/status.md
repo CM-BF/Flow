@@ -37,3 +37,5 @@ claim62987833-3fa3-491e-ba0d-21dae383b24c v1，回执[claim-take](../../docs/evi
 ## 交付范围与停写
 
 实现5ff8880b3518992121216998c169dd01ab44cee0，证据[README](../../docs/evidence/chat06/README.md)/[manifest](../../docs/evidence/chat06/manifest.json)。250ms/8KiB是合并阈值而非实际首token保证；1MiB限额，未flush尾段非durable。presentation policy明确非provider身份关系，gap/aborted等unavailable。最终72条独立于旧CHAT05的85，不称真实模型/费用/页面验收。liveAssistantText未flip，但报告中已经产生typed stream refs；旧timeline不得把它们当通用detail路由。Lead协调Web先兼容reader/consumer后同批启用与022挂载。Root独立只读核对15 source/21 raw、SDK 3项与6项只读核对记录，未重跑/0provider，无P1/P2。所有源码停止写入，claim v1保留集成回修；不追加dashboard采样。
+
+2026-10-06 06:57:05 UTC 组合审查说明：领域实现仍为Root批准的5ff8880b3518992121216998c169dd01ab44cee0，不变更或重新命名该target。Lead授权的唯一消费者test delta d9a162738c5c3b3531fc7f5da3a5c0ea1e846e67改变4行：公共HTTP不暴露stream ref、原PG typed ref仍保存；该差异已由assignment_review在C02 target77f0b152a2be32806b17cc7f8a57d33afc2043b3独立APPROVED中明确覆盖，核consumer-final实际1/1、18未选，未重跑旧72。完整组合为已审领域加已审兼容消费者调整，不声称本树所有源码对5ff零差；非test领域源码保持。今后源码写入仅在已领取CHAT07树，本树只保留metadata/main接收与claim收尾。
