@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-06T10:38:23.974Z",
+  "sources": 129,
+  "registryValid": true,
+  "checks": [
+    {
+      "id": "WPF-RELEASE01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "planDir": "plans/wpf-release01-product-compatibility",
+      "errors": [],
+      "humanComplete": true
+    },
+    {
+      "id": "WPF-DPERF02",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-proof-batching",
+      "planDir": "plans/wpf-dashboard-proof-batching",
+      "errors": [],
+      "humanComplete": true
+    }
+  ],
+  "scope": "Registration/parser only; no product tests"
+}
