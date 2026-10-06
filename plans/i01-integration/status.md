@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:36 UTC / 2026-10-06 01:34 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:42 UTC / 2026-10-06 01:34 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-integration` |
 | Branch | `codex/m1-integration` |
-| 工作基线 / 本记录核验时HEAD | `647d57b4dfe84cfc242875ae010ac2d491ee80c8` / `c11ff52079c28c9a26c56528e5e11f046e46f1dd` |
-| 工作树dirty状态 | 本次根lock集成与状态更新待提交；实时Git由dashboard读取 |
-| 工作分支状态 | in-progress；C01/R01/L01/R02/W01/D01/LAB01交付已接收合入，正在真实Web闭环 |
-| 检查状态 | FAILED；`6434fba78bba5097376555a66114462f5432ca25`全检83/84、typecheck通过；唯一4320端口冲突已由948e6bc改动态端口，受影响SSE检查1/1通过；新增Web后全检待执行 |
+| 工作基线 / 本记录核验时HEAD | `647d57b4dfe84cfc242875ae010ac2d491ee80c8` / `f09bddae19da73fe7eb475e00a484f100748a551` |
+| 工作树dirty状态 | 本次Web证据/状态metadata待提交；实时Git由dashboard读取 |
+| 工作分支状态 | in-progress；C01/R01/L01/R02/W01/D01/LAB01交付已接收合入，真实Web闭环已通过，等待差异独立review |
+| 检查状态 | PASSED；`586840f`整合总检查typecheck及93/93，Web生产build通过；`de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`真实Web旅程通过，最终typecheck再通过；检查target须按证据分别核对 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；`0763d4653264b09ddd355c292fc8bd88dfc3c584`，应用尚未合入main |
 | Review | [review.md](review.md)；已有5个确定性场景及native cleanup独立复核；真实Web整合待review |
 
@@ -20,7 +20,7 @@
 | --- | --- | --- | --- |
 | I01-01 | completed | Execution Lead | C01/R01/L01实现及修复独立审查通过，见各review |
 | I01-02 | completed | Execution Lead | 5项真实PG/TCP/独立runner与CLI进程检查及SSE重连；6434fba独立重跑5/5通过 |
-| I01-03 | in-progress | Execution Lead | W01已接收b04df958，独立APPROVED实现866c20e；HTTP fixture证据已完成，真实Web关闭/CLI决策/重连正在验证 |
+| I01-03 | completed | Execution Lead | [真实Web闭环](../../docs/evidence/i01/m1-system.md)：整个浏览器退出、queued中心重启、CLI决策/取消、新浏览器同attempt/产物/验证、两主题，0模型 |
 | I01-04 | completed | Execution Lead | [native系统原始证据](../../docs/evidence/i01/native-system.json)：真实approve验证产物、cancel无产物；R02三项对照另见其报告；模型预算5/5已用完 |
 | I01-05 | in-progress | Execution Lead | cleanup P2已解决、端口冲突已修复；最终Web整合检查/review和main集成待完成 |
 
@@ -33,11 +33,11 @@
 
 ## 阻塞 / 风险 / 未验证
 
-端口冲突已解除，当前无需要用户决定的阻塞。完整Web真实中心旅程、根lock集成后总检查与最终独立review尚未完成。不证明DB硬故障/掉电、跨机、真实模型容量。运行中中心失联会保守中断adapter，uncertain保留占用且没有受审计核对恢复入口，见[恢复边界](../../docs/architecture/recovery-boundaries.md)。原生插件/技能仍加载，不能声称OS隔离或资源全部关闭。
+端口冲突已解除，当前无需要用户决定的阻塞。完整Web真实中心旅程和总检查已完成；最终差异独立review及main集成尚未完成。不证明DB硬故障/掉电、跨机、真实模型容量。运行中中心失联会保守中断adapter，uncertain保留占用且没有受审计核对恢复入口，见[恢复边界](../../docs/architecture/recovery-boundaries.md)。原生插件/技能仍加载，不能声称OS隔离或资源全部关闭。
 
 ## 下一步与handoff
 
-真实Web提交到PG持久受理，关闭整个浏览器，独立runner继续，CLI对同task决策/取消，新浏览器验证同attempt产物版本与独立验证；两主题截图与真实进程证据。通过后完成差异独立review及main集成。M1是持久执行基础，M2再验收统一跨任务决策/解释入口，不能据M1宣称最终心流体验实现。
+完成最终固定commit的差异独立review，然后按授权合入main。最终旅程task b8a001b0-5229-43e0-b704-9dbb66846916 / attempt a73af9f9-4fe2-48d0-b178-391c097f3d82；证据绑定de7d948。M1是持久执行基础，M2再验收统一跨任务决策/解释入口，不能据M1宣称最终心流体验实现。
 
 ## 需要用户决定
 
@@ -45,4 +45,4 @@
 
 ## Dashboard 同步
 
-本status为I01唯一手填事实源，已规范成可聚合字段表。D02正登记此worktree；聚合核验结果在交付时补充。分支、具体review target与main事实分别记录。
+本status为I01唯一手填事实源，已规范成可聚合字段表。D02已登记并核对本来源live/current、无解析错误（采样时保留旧FAILED历史）；最终交付后再次聚合。分支、具体review target与main事实分别记录。
