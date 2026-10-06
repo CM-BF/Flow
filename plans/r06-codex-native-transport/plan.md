@@ -13,8 +13,8 @@
 ## TODO
 
 - [x] R06-01 固定 scope、Interface、来源与技能记录。
-- [ ] R06-02 实现有界传输/初始化/关联/背压/退出语义。
-- [ ] R06-03 公开边界合成子进程行为检查、typecheck、清理证据。
+- [x] R06-02 实现有界传输/初始化/关联/背压/退出语义。
+- [x] R06-03 公开边界合成子进程行为检查、typecheck、清理证据。
 - [ ] R06-04 固定实现与 manifest、独立 review、集成。
 - [ ] R06-05 后继真实 app-server/adapter conformance（不在本片验收内）。
 

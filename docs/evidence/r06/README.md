@@ -1,6 +1,6 @@
 # R06 Codex native transport — 有界合成验收
 
-固定产品目标待本次 source commit 填入 manifest；基线 3d31ba89bc3696e64d15f12f9d8c703e4d7bd914。来源 [provenance](provenance.json)，小 [Interface](interface.md)，[质量记录](quality.md)。
+固定产品目标 **a239b14d5328c78cca02a8757e26f2b65502f926**；基线 3d31ba89bc3696e64d15f12f9d8c703e4d7bd914。来源 [provenance](provenance.json)，小 [Interface](interface.md)，[质量记录](quality.md)。
 
 ## 实际检查
 
