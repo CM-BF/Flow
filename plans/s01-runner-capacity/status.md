@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 09:01 UTC；父实验main事实保留，S01P01集成d7e1e64已核，最新main9d6bd45 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 10:03 UTC；后继固定 main 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | FLOW-001（[架构主计划](/Users/citrine/Projects/AgentHarness/Flow/plans/flow-001-architecture/plan.md)） |
 | co-lead | mika |
-| 单一status owner / model | mika / gpt-6-astra |
+| 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | base 115b0dbdfa02db5483f9e9699852682ce699633c；W2源码target 2ab7967f2eb808fecd1205f7552a119eee8e0b36，metadata后继单列 |
-| 工作树dirty状态 | 固定结果0dac4b92747db5a3c8ed2dc25301e7cbecc2e8bf clean，后继仅独审/状态/报告说明metadata |
+| 工作基线 / HEAD | 后继 base 4391bbf9f1785212d098ef6aa1c01a0320a003d3；受控合入 HEAD 7511f5592daa6a86076fabb53d7a6fd6e8226d4b；旧 W1/W2 基线与 target 不变 |
+| 工作树dirty状态 | mixed driver与准备证据待固定提交；仅三owned scope内变更，旧实验源码/raw零diff |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 2ab：11纯统计/预算/参数tests，noEmit0；W2实跑12tasks/12attempts且正常清理，结果0dac独审APPROVED |
+| 检查状态 | 新混合driver：14个纯unit通过、strict noEmit0；未运行真实PG/HTTP/runner负载。旧W1/W2检查限定历史target |
 | 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | 2ab7967f2eb808fecd1205f7552a119eee8e0b36 |
-| 实现范围 | experiments/runner-capacity |
+| 实现目标 | mixed准备待本次提交固定；旧W2 target 2ab7967f2eb808fecd1205f7552a119eee8e0b36保持历史绑定 |
+| 实现范围 | experiments/runner-capacity/mixed；新准备证据及本任务plan/status，无产品修改 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 串行瓶颈的实验已交付；并发核心及兼容修复已进入主线 |
-| 下一可用交付 | 本实验片段已交付；后继入口参数与恢复验收保留，当前优先接通Claude/Codex能力和上下文透明度 |
-| 当前阻塞 | NONE |
+| 当前产出 | 十六路实际执行的混合负载入口已完成，正在独立审查；尚无新容量实测结果 |
+| 下一可用交付 | 审查通过后在授权窗口取证，区分实际在途、取消收束和数据库等待 |
+| 当前阻塞 | 实际负载须入口固定并独审后由 co-lead 安排运行窗口；当前不运行 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，W2准备2ab与结果0dac均APPROVED；W1已批准并集成 |
+| Review | mixed准备待固定源码独审；[review.md](review.md)中W1/W2 APPROVED仅覆盖其历史target |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@
 | S01-05 | in-progress | 独立reviewer / Lead | W1/W2结果均独审APPROVED并main6426；完整S01后继ACK/browser仍开放 |
 | S01-06 | in-progress | 后继独立owner / Mika / Lead | [独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
 
-## 权限、优先级与事实边界
+## 历史权限、优先级与事实边界（当前接收见末节）
 
 claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。W1与W2许可均已执行、清理并释放；没有新的运行授权。
 
@@ -111,3 +111,17 @@ S01P01独立owner管理收口已完成：唯一分支HEAD `1c438be2d152a7b6b3b2f
 GO新大task的用户目标优先：WPF-MATURE-02唯一source为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/status.md`，owner chatui01_owner；WPF-MATURE-04为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md`，owner architecture_read；co-lead均mika。两项是独立大task，S01不是其父级，不在本文件复制其TODO或进度。
 
 S01P02仍未take/实现；所需main入口由R05 owner持有，后继应通过独立配置module及其main接线合同协调，不争夺路径。ACK/browser各2的窗口和方法仍保持未执行。此停点只更新合法owner的事实与大task关联，main集成不等于个人服务或provider并发验收。
+
+## 2026-10-06 09:46 UTC 新阶段接收与准备
+
+status_read / gpt-6-astra 接收 S01 唯一 owner，co-lead mika，所属 FLOW-001、阶段 M2。writer claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` accept v3 已于09:45:53.842Z COMMITTED；独立 scope=[] integration claim 已完成受控 main4391 合入并 release v2。未手工解决冲突，未纳入更新的 main253 F01。回执见[准备证据](../../docs/evidence/s01/mixed-preparation/accept.json)。
+
+新 GO 阶段独立上限40 tasks、60秒含清理、传输加证据64MiB、0provider；本方案固定32 tasks不补跑。旧44 tasks/38 attempts/20.925025秒及W1/W2源码、raw/hash冻结，不续耗旧额度。Mika已批准私有center进程透明Pool观测设计与1×16/4×4两组混合负载；只授权driver实施及纯unit/类型检查，未授权实际PG/HTTP/runner负载。实验仅在`experiments/runner-capacity/mixed/`新增；无产品pool/锁/schema/contract变化，无架构图更新需求。S01P02配置入口另有owner，本实验消费runRunner公开参数，不声称CLI已经部署。
+
+技能：本地find-skills发现并应用clean-code/codebase-design；brainstorming按现有实验的bounded后继给短设计，mika明确批准。命名区分acquisition、transaction elapsed和runner-row query elapsed；观测器独立、保持this/callback/返回值/错误透传，资源与证据有界。尚无新工程测试或真实负载。状态通过唯一status等待现有dashboard聚合。
+
+2026-10-06 10:00 UTC：新driver准备完成，固定前仅10纯unit/strict noEmit验证；最初8观测/预算/stream用例，加2项DB权属/lease/心跳/ACK门禁反例，共10不同用例，不能相加为18。初次类型检查暴露HarnessContext.task类型不声明实际运行时id，现显式guard后绑定claim map；原失败日志保留。center在dynamic import createServer前透明观测Pool，固定pg8.23.1源码hash并核pg-boss同一pg；Node流计数缺失/减少/超对象上界即UNKNOWN失败。窗口6秒与其后最多1500ms settlement分开，均在45+15秒内。
+
+旧W1/W2源/raw及所有既有experiments/runner-capacity、docs/evidence/s01路径相对接收98098354保持逐字节一致；只新增mixed与mixed-preparation。0新tasks/attempts/负载/provider。architecture_read进行固定源码独审，Mika安排后继运行；writer claim v3保留，不部署CLI/个人服务。架构影响仅实验观测，无产品Interface/schema/锁/pool配置变化。
+
+2026-10-06 10:03 UTC固定前：预审所提cleanup阶段预算与CREATE丢ACK已修，新增3个截止行为用例及1个自有流清理用例，现14个不同纯测试/strict noEmit0，旧8/10日志保留不累加。phase截止与UNKNOWN/retained语义见混合合同及quality；没有新负载，真实接线仍未验。10:02:58 fresh账本available确认本owner claim v3 ACTIVE/三scope不变。

@@ -63,3 +63,11 @@ DB/public行集清理后未留存，只认可固定程序完整断言通过，�
 两个非阻断P3已补在报告：首PG样本1条空application_name连接保留unknown；terminal后、runner close前一次claim HTTP failure不等于72事件ACK失败。全部12dispatch具lastFalse→firstTrue区间。原raw/manifest不改，DB/public原行集未留限制明确，不计算12/16速度比或provider容量。
 
 [结果独审回执](../../docs/evidence/s01/w2-result-independent-review.json)；[结果报告](../../docs/evidence/s01/w2-results.md)。可复制复审：固定0dac、比对manifest及5raw/support、18源码，重算sender/ACK/claim区间/分位数与清理，禁止重新运行负载。main事实另记。
+
+## S01 mixed 准备独立review（2026-10-06 10:03 UTC）
+
+状态 NOT_STARTED（固定target待本次提交后manifest绑定）；原W1/W2 APPROVED不覆盖本片。base main4391，经scope=[] integration合入7511f559，writer status_read/gpt-6-astra，三目录scope。reviewer architecture_read只读核资源/预算/并发证据，Mika复核。范围新增mixed driver/合同、准备证据与父plan/status；没有产品改动或实际负载。
+
+复制检查：先核codex/runner-capacity-probe真实HEAD/dirty，再核mixed-preparation/manifest.json所列target/source/raw。按1×16/4×4同child、32tasks不补跑、6秒+1500ms settlement、45+15秒与48+16MiB，以及DB权属/lease+adapter区间/ACK/心跳门禁审查。Pool装饰必须透传；PG行查询时间含执行往返，Lock采样遗漏不作零。cleanup未确认closed禁止DROP，creation unknown按唯一dbName核查，原证据冻结。默认不跑测试、DB、HTTP、runner或provider；回具体severity/行/触发，结论绑定target。
+
+作者预审修复：cleanup共用58秒尾部不足→分阶段截止/并行children；CREATE提交丢ACK→发送前creationRequested+最后自有DB核查。14纯tests、strict0；实际接线/清理/容量未知。独立结论待回填，空段不作approval。

@@ -68,3 +68,14 @@ GO/Lead已授权首个保守并行执行片段，由 s01p01_owner / gpt-6-astra 
 首片默认1、显式整数1..16；仅启动或本地active=0时运行既有全目录恢复，任何active存在都不重放其outbox。未知claim或缺completion ACK的持久绑定保守阻断新领取；已知其它attempt继续。收到assignment后先可靠保存绑定再清in-flight意图，不存在“清意图后、开始执行前”丢失占用的空窗。仅confirmed-final不能删除绑定。无新claim回执API/迁移，main/config接线仍由CHAT09/F01后继负责。
 
 S01-06转in-progress，表示独立后继已开工，不表示并发功能已验收。实验预算累计44 tasks/38 attempts、20.925025秒不变；W1/W2不重跑，capacity1/16暂缓，ACK/browser原验收继续开放。后继功能测试使用专库/动态端口及0模型确定性adapter，独立于原测量预算；实际并发、故障隔离、同session互斥、重启未知claim分别取证。Mika负责只读独审，ExecutionLead负责全局索引/聚合登记和已审片段集成。
+
+## S01-04 / S01-05 后继混合负载阶段（2026-10-06 09:46 UTC）
+
+owner status_read / gpt-6-astra，co-lead mika，所属 FLOW-001、M2。完整旧TODO及原预算证据保留；本节是既有S01的后继细项，不建立第三层任务。
+
+- [ ] 固定[混合负载合同](../../experiments/runner-capacity/mixed/README.md)、真实runtime/outbox driver与实验私有PG观测seam。
+- [ ] 纯观测透传/预算行为tests及strict noEmit；固定源码commit后独立review。
+- [ ] 由Mika明确安排一次真实窗口后运行2×16、1×16/4×4，实际16重叠、事件/心跳/轻读/取消直接取证。
+- [ ] 独审结果及清理、main接收；任何失败/unknown原样记录，不扩大额度或补跑。
+
+新阶段32固定tasks、总上限40，60秒含清理，传输加证据64MiB；0provider。受控main4391基线，无产品pool/锁/schema改动；旧累计44tasks/38attempts/20.925025秒不变。当前仅driver实施获批，真实负载尚未运行。
