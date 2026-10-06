@@ -183,3 +183,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-06T22:21:50.207329+00:00：新增CHAT05P01唯一来源（首canonical7d0751b2，12scope原子领取已核），合计180来源。仅登记真实实现中的状态，不把合同/首提交当完整长正文或UI已交付；架构固定基线不变。
 
 2026-10-06T22:24:27.267133+00:00：4320实际换载main60ca1942并返回180来源，CHAT05P01已显示实施摘要，快速设置已显示独审阶段；新原文片owner字段/TODO格式缺口交唯一owner修正，不改parser。旧自有dashboard进程正常exit143，个人61227/61228与用户标签不动。见[实际快照](../../docs/evidence/d05/chat05p01-registry-live.json)。
+
+2026-10-06 22:58 UTC：OPS-CI01独立source6ec54b2f/claim1de78d9e v1已登记，181唯一源；registry/parser errors[]/human完整，首调用缺taskId的调用方错误已修正且记录。仅远程文档候选准备，未启用workflow/远程运行。下一正常main批与4320载入后另记live事实；本项不改架构固定快照。

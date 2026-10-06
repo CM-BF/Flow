@@ -1,0 +1,119 @@
+{
+  "at": "2026-10-06T22:56:55.025529+00:00",
+  "reviewer": "assignment_review/gpt-6-astra",
+  "decision": "APPROVED_EXACT_OPERATOR_PENDING_FRESH_EXECUTION_GATES",
+  "findings": [],
+  "scriptSha256": "a7e0ba58b31fa2dea6685eff73d6c4335967fcc158e42ff4e5d018f65a4bdeef",
+  "priorScriptSha256": "ef018683e44d17cbd514be8790dafde87b9ce9902abbd2b320ef69dbeb985979",
+  "deltaOnly": [
+    "docstring two to three",
+    "three exact fixed tree names",
+    "read and hash lead-confirmation.json instead of manager-confirmation.json"
+  ],
+  "normalizedScriptEqualsApprovedPrior": true,
+  "inputBinding": {
+    "leadBindsOriginalManagerBytes": true,
+    "auditBindsSameOriginalManagerBytes": true,
+    "rootReviewBindsOwnerReceipt": true,
+    "managerRecordUnmodified": true
+  },
+  "candidates": [
+    {
+      "tree": "web-plugin-management-integration",
+      "head": "fc838e66621d1e68531c0fd8da989921f26e4991",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "recordedClaims": "released v2",
+      "recordedKernelProcessHits": 0,
+      "originalOwnerExit": 143,
+      "ownerPidGroupPortsAbsent": true
+    },
+    {
+      "tree": "web-profile-integration",
+      "head": "e90492d759421d153641a024ed0b6e1c42bf334e",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "recordedClaims": "released v2",
+      "recordedKernelProcessHits": 0,
+      "originalOwnerExit": 143,
+      "ownerPidGroupPortsAbsent": true
+    },
+    {
+      "tree": "web-steering-control",
+      "head": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+      "cache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "recordedClaims": "released v2",
+      "recordedKernelProcessHits": 0,
+      "originalOwnerExit": 143,
+      "ownerPidGroupPortsAbsent": true
+    }
+  ],
+  "retainedBehaviour": [
+    "Current clean fixed HEAD and no tracked cache files; fresh available ledger with all tree claims released.",
+    "Fresh kernel/process checks; every named parent and cache directory dev/ino/type, exact file set, regular nlink1 and full bytes/hash before mutation.",
+    "Exclusive durable per-cache intent and parent-directory fsync precede exact unlink; no recursive directory deletion. Real package siblings/source/claims/services untouched.",
+    "Each selected file parent and own identity rechecked immediately before unlink; same per-cache intent cannot be reused.",
+    "Primary exception stays original; space observation/persistence failures separately recorded, partial unknown retained. No automatic retry.",
+    "At preparation margin 1241513984 B no deletion; outer OPS14 supervision remains required per Lead, one cache per invocation."
+  ],
+  "freshExecutionPrerequisites": [
+    "Lead alone must run retained current guards for each exact cache, use specified OPS14 45s +0.5s TERM +2s kill/reap and at most16KiB capture.",
+    "Stop once preparation margin reached; no re-use for future trees or active/unknown preview.",
+    "This is bounded cooperative owner freeze, not OS isolation or global/future-consumer absence."
+  ],
+  "limitations": [
+    "Review consumes existing bounded audit/owner records. It does not resample lsof/ps, run operator/tests, restart previews or prove physical space recovery.",
+    "143 and absence establish retirement, not every async close-handler statement.",
+    "Historical managerConfirmationSha256 field in new operation record contains lead-confirmation hash; that lead document explicitly binds the original manager hash. They must remain separate audit objects.",
+    "CHAT05P01 product gate and resource reserve are unchanged; no PG permitted."
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-two/cleanup-chat.py",
+      "bytes": 6338,
+      "sha256": "ef018683e44d17cbd514be8790dafde87b9ce9902abbd2b320ef69dbeb985979"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/cleanup-three.py",
+      "bytes": 6400,
+      "sha256": "a7e0ba58b31fa2dea6685eff73d6c4335967fcc158e42ff4e5d018f65a4bdeef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/audit.json",
+      "bytes": 51714,
+      "sha256": "da84d8676a22285a25e895ab7dcf45412bd73322d87cf1c38dc099d1df03ab87"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/lead-confirmation.json",
+      "bytes": 464,
+      "sha256": "6636a08e0bafd15bbfa62af6b0025a250983340f752f01cd529940ce9d64f56a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/manager-confirmation.json",
+      "bytes": 5219,
+      "sha256": "94a8a85e048a32d9fe9665275be8a7b926e8ff86ad2df49be0baffa1115cdc31"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/owner-raw/receipt.json",
+      "bytes": 3432,
+      "sha256": "2c8b722f328e48286e2be4cd8da441598f245e5e613cbe44e93fe1a0f2b32b09"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/root-retirement-review.json",
+      "bytes": 2967,
+      "sha256": "ae5dc79ae1b774226df7abcce01f489393ab2b943163cfc8e62bbe8099400306"
+    }
+  ],
+  "operations": {
+    "projectWrites": 0,
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "cacheDeletion": 0,
+    "processSignals": 0
+  }
+}

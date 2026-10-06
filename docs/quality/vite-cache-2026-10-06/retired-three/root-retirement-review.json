@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-06T22:49:46.017600+00:00",
+  "reviewer": "root",
+  "result": "ACCEPTED_SCOPED_OWNED_PREVIEW_RETIREMENT_EVIDENCE",
+  "receipt": {
+    "path": "/private/tmp/three-preview-retirement-_v77xd5t/receipt.json",
+    "sha256": "2c8b722f328e48286e2be4cd8da441598f245e5e613cbe44e93fe1a0f2b32b09"
+  },
+  "manifest": {
+    "path": "/private/tmp/three-preview-retirement-_v77xd5t/manifest.json",
+    "sha256": "8ebc227b1b8d5f2e4eccfa03fdbd10334bbfc27d3864ae5e583940cac3053539",
+    "verifiedFiles": 35
+  },
+  "services": [
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+      "sourceHead": "05b92d30c953413ab66d8b69447c9b44c9121a6a",
+      "session": 96967,
+      "pid": 56147,
+      "pgid": 55402,
+      "ports": [
+        "59469",
+        "59470",
+        "59473"
+      ],
+      "actualSessionExitCode": 143,
+      "ownedPidGroupAndPortsAbsent": true,
+      "gitCleanObserved": true
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+      "sourceHead": "07cffeba1a818f5697c23efc37a7e5c2b813c035",
+      "session": 68857,
+      "pid": 8693,
+      "pgid": 8676,
+      "ports": [
+        "51830",
+        "51831",
+        "51832"
+      ],
+      "actualSessionExitCode": 143,
+      "ownedPidGroupAndPortsAbsent": true,
+      "gitCleanObserved": true
+    },
+    {
+      "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+      "sourceHead": "01842a87f768bd28ce7370681ff02d7b834765f7",
+      "session": 13237,
+      "pid": 46425,
+      "pgid": 45304,
+      "ports": [
+        "63247",
+        "63248",
+        "63251"
+      ],
+      "actualSessionExitCode": 143,
+      "ownedPidGroupAndPortsAbsent": true,
+      "gitCleanObserved": true
+    }
+  ],
+  "conclusion": "Three confirmed original-owner Node preview PIDs received normal SIGTERM sequentially; actual original sessions are terminal143 and subsequent exact PID/group/ports report no survivors. No fourth candidate, group signal, KILL, restart or cache removal.",
+  "limitations": [
+    "Exit143 is not proof every async close-handler statement completed.",
+    "Source/restart commands/incremental logs retained; restoration and dependency readiness were not executed.",
+    "No free space or actual storage benefit measured by this group.",
+    "Authoritative owner lifecycle metadata still needs exact valid claim, update, fixed commit and explicit stop/release; old released code claims are not revived.",
+    "Only original Lead may combine this receipt with fresh directory/kernel checks and released metadata claims before exact apps/web/node_modules/.vite cleanup. All real dependencies/other trees/retained services KEEP."
+  ],
+  "consumerEvidence": "/tmp/root-three-preview-frozen-consumers.json",
+  "noExtraRuntime": "Root read only35 named raw artifacts; no resampling, process operation, HTTP/PG/Chrome/test, cache traversal or project write."
+}

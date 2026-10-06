@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:48:14 UTC / main60ca1942 |
+| 最近更新 / 最近main同步核验 | 2026-10-06T23:02:46.680864+00:00 / previousmain37f75d36 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -12,15 +12,15 @@
 | 工作基线 / HEAD | mainaca6e892；本批已发布已审准备工具/看板parser/中心恢复证据，个人产品运行版本保持 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批仅12个固定文档/小回执逐hash/bytes同源、diff检查；未新增产品测试、PG、模型或服务操作。 |
-| 已集成main状态 / HEAD | main/origin60ca1942已接完整原文任务登记；本批仅归档资源独审小回执与180来源live事实。个人实际af51/v18、Web d629/v3，与源码main分开。 |
+| 检查状态 | 远程候选已独审；两文档fixed source逐字同、38项管理/缓存/登记固定输入核hash，未新增产品测试/安装/PG/provider。 |
+| 已集成main状态 / HEAD | 本批受控接收OPS-CI01已审文档、三缓存实际回执与181来源登记；远程尚未启用/运行。个人af51/v18与Web d629/v3不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 已审资源操作与180项计划的实际登记记录已收口；已完成产品源码继续保持。 |
-| 下一可用交付 | 本片段已交付；完整工具正文与消息设置后继分别等待领域验证和独审，按固定结果受控接收。 |
-| 当前阻塞 | ACTIVE: 磁盘余量仍不足后继PG/浏览器验证；本批文档接收不因此重复产品检查。 |
+| 当前产出 | 已审的远程最小验证文件和准确启用步骤已准备交用户；三处退役缓存收尾事实已接收。 |
+| 下一可用交付 | 本片段已交付；用户确认启用后才运行远程最小验证。本地运行仍按实际余量准入。 |
+| 当前阻塞 | ACTIVE: 本地余量仍不足PG/浏览器；远程仅文档候选，等待最终启用动作。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -267,3 +267,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 ## 2026-10-06 22:48:14 UTC 资源事实紧凑接收
 
 [12项固定绑定](../../docs/evidence/i02/dependency-retirement-compact-receipt.json)精确消费OPS e5dae1f9和D05 7b82e8c1，138719B。原完整operator/toy/61k行逐项journal/恢复map已在OPS权威树与remote固定Git保存；本批main只收小回执/状态，不再物化约9MB历史副本，不冒充可直接执行的restore输入。资源动作独立限定APPROVED，但共享卷仅+1769472B，后继运行门槛未到。无产品源码/用户服务变化。
+
+## OPS-CI01 与三缓存收尾受控接收
+
+见[固定输入回执](../../docs/evidence/i02/ops-ci01-intake.json)。CI范围仅两个docs文件和自身plan/evidence；没有`.github/workflows`文件、授权变化或远程运行。三缓存结果获独立审查，固定180文件而非真实npm依赖；原失败与unknown观察保留。该小管理批不重复任何产品测试，资源门槛未降低。

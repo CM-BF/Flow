@@ -1,0 +1,271 @@
+{
+  "at": "2026-10-06T23:00:24.210650+00:00",
+  "reviewer": "assignment_review/gpt-6-astra",
+  "decision": "APPROVED_LIMITED_ACTUAL_OPERATION",
+  "unresolvedFindings": [],
+  "wrapperReadFully": true,
+  "wrapperSha256": "a0b3b33f9dc3ceea3fe385ba4cf1702bee46e2b92e6662fda5924793217ed646",
+  "operatorSha256": "a7e0ba58b31fa2dea6685eff73d6c4335967fcc158e42ff4e5d018f65a4bdeef",
+  "OPS14ModuleSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "scope": "Thin wrapper plus three already-reviewed exact-cache operations; original cleanup source not re-reviewed. No operator execution, tests, consumers rescan, PG, provider or resource sampling.",
+  "checks": [
+    {
+      "tree": "web-plugin-management-integration",
+      "state": "COMPLETE",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "head": "fc838e66621d1e68531c0fd8da989921f26e4991",
+      "currentClean": true,
+      "pid": 80602,
+      "elapsedMs": 2183,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "primary": null,
+      "secondary": [],
+      "preservedCacheDirectories": [
+        {
+          "path": ".",
+          "dev": 16777234,
+          "ino": 117801657
+        },
+        {
+          "path": "deps",
+          "dev": 16777234,
+          "ino": 117801660
+        }
+      ],
+      "remainingRelativePaths": [
+        "deps"
+      ],
+      "sharedVolumeDeltaBytes": 17563648,
+      "freeAfterBytes": 1038979072,
+      "supervisorIntermediateUnknownPreserved": true
+    },
+    {
+      "tree": "web-profile-integration",
+      "state": "COMPLETE",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "head": "e90492d759421d153641a024ed0b6e1c42bf334e",
+      "currentClean": true,
+      "pid": 82311,
+      "elapsedMs": 1666,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "primary": null,
+      "secondary": [],
+      "preservedCacheDirectories": [
+        {
+          "path": ".",
+          "dev": 16777234,
+          "ino": 118048670
+        },
+        {
+          "path": "deps",
+          "dev": 16777234,
+          "ino": 118048671
+        }
+      ],
+      "remainingRelativePaths": [
+        "deps"
+      ],
+      "sharedVolumeDeltaBytes": 17686528,
+      "freeAfterBytes": 1056579584,
+      "supervisorIntermediateUnknownPreserved": true
+    },
+    {
+      "tree": "web-steering-control",
+      "state": "COMPLETE",
+      "files": 60,
+      "logicalBytes": 17530080,
+      "head": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+      "currentClean": true,
+      "pid": 83967,
+      "elapsedMs": 1589,
+      "exitCode": 0,
+      "ownedState": "absent",
+      "primary": null,
+      "secondary": [],
+      "preservedCacheDirectories": [
+        {
+          "path": ".",
+          "dev": 16777234,
+          "ino": 119697516
+        },
+        {
+          "path": "deps",
+          "dev": 16777234,
+          "ino": 119697517
+        }
+      ],
+      "remainingRelativePaths": [
+        "deps"
+      ],
+      "sharedVolumeDeltaBytes": 17731584,
+      "freeAfterBytes": 1073909760,
+      "supervisorIntermediateUnknownPreserved": true
+    }
+  ],
+  "deletedGeneratedFiles": 180,
+  "logicalSelectedBytes": 52590240,
+  "sumPerOperationSharedVolumeDeltaBytes": 52981760,
+  "observedIntervalSharedVolumeDeltaBytes": 52494336,
+  "lastRecordedFreeBytes": 1073909760,
+  "preparationThresholdBytes": 1241513984,
+  "preparationThresholdReached": false,
+  "PGAdmissionProved": false,
+  "preservationEvidence": [
+    "Only the180 fixed generated cache paths were in deletion lists; exact entry hashes/identities were validated by unchanged reviewed operator before unlink.",
+    "Each operator asserts real node_modules siblings dev/ino/mode equality and fixed Git HEAD/clean after unlink. Reviewer independently confirms fixed current HEAD/clean and identical two empty cache directories.",
+    "No real package payload/content-wide rehash is claimed; source/raw preservation follows exact-path restriction and tracked clean postconditions. Vite deps/package.json is generated cache metadata, not the installed npm package manifest.",
+    "Original owner143/absent records and released metadata claims remain separate from cache operations; reviewer did not re-stop/probe any service."
+  ],
+  "wrapperBoundaries": [
+    "Fixed OPS14 and operator hashes are asserted before launch; one child group per exact cache,45s work/.5sTERM/2scleanup/16KiB capture.",
+    "Exclusive durable reservations/output/supervision/summary; failure or unknown child/action stops later candidates, no retry.",
+    "Wrapper parent persistence has no independent wall deadline;45s policy bounds each supervised child. Actual wrapper completed and produced all reports, so no unresolved actual result.",
+    "Live free threshold checked before each cache; all three ran below the preparation stop threshold. No fourth operation authorized."
+  ],
+  "limits": [
+    "Logical bytes are not physical reclaimed bytes. Shared-volume free deltas include unrelated writes and must not be summed as exclusive APFS reclamation.",
+    "Final recorded free does not satisfy preparation margin; no PG readiness or fresh current free asserted.",
+    "Transient supervisor unknown/errno1 remains in original observations; final absent is after reap, not a rewritten history."
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/run-three.py",
+      "bytes": 3414,
+      "sha256": "a0b3b33f9dc3ceea3fe385ba4cf1702bee46e2b92e6662fda5924793217ed646"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/cleanup-three.py",
+      "bytes": 6400,
+      "sha256": "a7e0ba58b31fa2dea6685eff73d6c4335967fcc158e42ff4e5d018f65a4bdeef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/audit.json",
+      "bytes": 51714,
+      "sha256": "da84d8676a22285a25e895ab7dcf45412bd73322d87cf1c38dc099d1df03ab87"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/lead-confirmation.json",
+      "bytes": 464,
+      "sha256": "6636a08e0bafd15bbfa62af6b0025a250983340f752f01cd529940ce9d64f56a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/manager-confirmation.json",
+      "bytes": 5219,
+      "sha256": "94a8a85e048a32d9fe9665275be8a7b926e8ff86ad2df49be0baffa1115cdc31"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/owner-raw/receipt.json",
+      "bytes": 3432,
+      "sha256": "2c8b722f328e48286e2be4cd8da441598f245e5e613cbe44e93fe1a0f2b32b09"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/root-retirement-review.json",
+      "bytes": 2967,
+      "sha256": "ae5dc79ae1b774226df7abcce01f489393ab2b943163cfc8e62bbe8099400306"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/three-operation-summary.json",
+      "bytes": 9263,
+      "sha256": "bbff91808f30ca7b1c59abfdeccdec33d1778ac89e7efec8b162bf860c6bb992"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/independent-operator-review.json",
+      "bytes": 6024,
+      "sha256": "eb98f1586dacdcb68c5c8b632a39a39f81b32dc63daa9471429233031c617e13"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-supervisor-reservation.json",
+      "bytes": 259,
+      "sha256": "655d3f42fd11d4e1df1683760b64c995e2f14fb2b215e7bc280882c28e8f49ec"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-supervision.json",
+      "bytes": 531,
+      "sha256": "8cd975853e88f97226f84cab1d67abc59d49f3880e464fe10bfec87047e7af80"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-intent.json",
+      "bytes": 696,
+      "sha256": "62f4d4607c01b8a313f6ebf39d626f411cc72d901783df1da49e3d973520cf03"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration-cleanup.json",
+      "bytes": 2853,
+      "sha256": "54fd06a12ba91e3fbc451c0ee20cf02c3185bf8fe0665f21055f98035eb443fe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration.stdout",
+      "bytes": 247,
+      "sha256": "5cef1bd5e59667784b29baaf778f82cc719a3821d15fc57817afbf08ca0083c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-plugin-management-integration.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-supervisor-reservation.json",
+      "bytes": 249,
+      "sha256": "63b4dac9638d7805fbd231b7f3959d0ae4bf6f8b676fadeec494ef2a243ff10e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-supervision.json",
+      "bytes": 531,
+      "sha256": "ba9909cc7f681ed0c0211311a0d4607e469500815363b6f0be521a8c2dcebec1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-intent.json",
+      "bytes": 676,
+      "sha256": "1769cc5fbeafd797fc425f319e127a34575bc41233d534a6eb59cc8d9b667600"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration-cleanup.json",
+      "bytes": 2833,
+      "sha256": "b912d2087483108e3c09ba71bd36a31f488b8c379268d21a124c5cad9ddd1c2a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration.stdout",
+      "bytes": 237,
+      "sha256": "b9b5d82c8b3647fcdd1f50b58a7d127d180c38cef9a4915d93aea67485086e45"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-profile-integration.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-supervisor-reservation.json",
+      "bytes": 246,
+      "sha256": "bb7addb50ff49aba7dbf33e38c1a82c08ce177ad5460ebd5870c85e0c4840437"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-supervision.json",
+      "bytes": 531,
+      "sha256": "f6ffbdcdb7494131fe42b389736da65f5dc490e5221f1f446c4ec016763271ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-intent.json",
+      "bytes": 670,
+      "sha256": "cb2edc000a8fe5f8c9ca5bf6be94b57965f0aae07cfc1ee7d48e748822e531d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control-cleanup.json",
+      "bytes": 2827,
+      "sha256": "d7129475df4aa071f9b4a55acf60cd278a827ad868a9cd820efd71c69779e915"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control.stdout",
+      "bytes": 234,
+      "sha256": "0e435118461b4fd8c28768db4fbf8e18cd5c20c050f38981ca558ef78f1b9821"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/vite-cache-2026-10-06/retired-three/web-steering-control.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
