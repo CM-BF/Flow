@@ -2,12 +2,12 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T07:23:08.134817+00:00；固定main基线fa9a8288341d4f2bd8160e03fe9173dafa2de1a6 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 07:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | chat06p01_owner / gpt-6-astra（符合Sol以上门槛）；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/assistant-stream-cost-probe |
 | Branch | codex/assistant-stream-cost-probe |
-| 工作基线 / HEAD | base/head fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；方法44e1ccb8b8901d5eba41e971faa10a6b740735ae；纯生成器target 37709097b879a7afff32b25da971f559d740058a |
+| 工作基线 / HEAD | base fa9a8288341d4f2bd8160e03fe9173dafa2de1a6；纯生成target37709097b879a7afff32b25da971f559d740058a；安全点metadata HEAD5321c08f7c6a7110cb0470e938aad964dac62968 |
 | 工作树dirty状态 | 源码固定3770909；当前仅原始日志/manifest/status metadata待提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 37709097b879a7afff32b25da971f559d740058a；3个不同纯生成行为/noEmit0，仅准备片段；首依赖加载0test失败/行为红/类型失败均保留；0PG测量 |
@@ -19,8 +19,8 @@
 | 优先级 | 2 |
 | 当前产出 | 相同正文与三种分片的生成器已验证，正在审查测量准备 |
 | 下一可用交付 | 完成服务端观察器与隔离运行入口，再申请极小测量窗口 |
-| 当前阻塞 | NONE；当前授权的准备可继续，真实测量待窗口 |
-| 需用户决定 | NONE；测量窗口由Mika协调，尚未申请 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -44,3 +44,5 @@ claim ff4d1ec7-ecd2-4154-94a8-99804b3c1b49 v1 ACTIVE，COMMITTED 2026-10-06T07:1
 2026-10-06T07:23:08.134817+00:00 实质进展：固定纯生成器3770909，3个不同测试通过/noEmit0；源码预测显式标为非测量。首次Vitest依赖加载0tests与初次typecheck失败保留，见[manifest](../../docs/evidence/chat06p01/preparation-manifest.json)。第三方依赖从主repo既有安装解析，所有实验代码取本WT，无新安装或全局symlink。仅lib类型补ES2024适配Node24，原3条runtime测试未重复。
 
 本安全点交Mika只读审纯片段，暂时停止本feature写入转S01 W2只读审；返回后继续观察器，不新增agent。dashboard当前仍未登记该task，等待Lead登记，实际回执见[聚合观察](../../docs/evidence/chat06p01/dashboard-preparation.json)。
+
+解析字段按Lead反馈改为标准UTC及纯NONE；当前方法/纯准备无阻塞，真实PG矩阵尚未获窗口，不因字段规范化变更验收事实。未重测。
