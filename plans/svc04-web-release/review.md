@@ -5,9 +5,9 @@
 ## Target 与 scope
 
 - Plan：[plan.md](plan.md)；status：[status.md](status.md)。
-- Review target commit：待审查者核验并填写完整SHA；禁止笼统复用旧通过状态。
-- Base commit / head commit：待核验；worktree / branch / dirty status：待核验。
-- 本次scope与排除项：待填写；验收criteria与关键文件：按plan TODO、公共契约及status证据逐项列出。
+- Review target commit：544c32f2f2fd4377a93ce299465d0824c87818b3。
+- Base commit：4391bbf9f1785212d098ef6aa1c01a0320a003d3；实现head：544c32f2f2fd4377a93ce299465d0824c87818b3。Worktree：/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-artifact-release；branch：codex/web-artifact-release；后续仅metadata提交，reviewer仍须fresh核验。
+- 本次scope：manifest中10个source（9个tools源码/测试/README + 1个browser fixture）；排除真实个人部署/provider/任意后端兼容证明。原始检查及重叠口径见README；本模板不构成独立approval。
 - Reviewer / model / harness / 时间：待填写。
 
 ## 可直接复制的审查任务说明
@@ -28,7 +28,9 @@
 
 | 检查 | 执行状态 | 环境/commit | 结果与证据链接 |
 | --- | --- | --- | --- |
-| 待填写 | 未执行 | 未核验 | 无；模板不表示检查通过 |
+| 作者局部Node/真实PG/HTTP | 已执行，待独立核对 | 固定target，14不同用例分轮 | [README](../../docs/evidence/svc04/README.md)、[manifest](../../docs/evidence/svc04/manifest.json) |
+| 作者真实Chrome | 已执行，待独立核对 | 冷启动及发布/回退后旧tab lazy资源，5阶段 | 初次4个JS503，修复后58个JS全200；原始失败保留 |
+| 独立review | 未执行 | 待reviewer核验 | 无；作者记录不构成approval |
 
 ## Findings
 
