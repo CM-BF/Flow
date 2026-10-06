@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 11:21:28 UTC / main648e331c58043cf7ee307300521ab1c628cb2ee1 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 11:32:44 UTC / mainfd1322f9c0c1d085d5e343e39f6216b20d26c264 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +18,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已显示132项实际进度；工程写入与附件等五项新进展已登记，等待本批发布。 |
+| 当前产出 | 看板已显示137项进度；目标交付读口与原生工程身份两项新进展已登记，随本批更新展示。 |
 | 下一可用交付 | NONE（本片段已交付；结构变更时按维护规则更新） |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -73,3 +73,7 @@
 2026-10-06 11:00:58.883Z：实际4320重载132唯一来源，main4285182a clean；ACK01/ENG01B/TUI01C/SVC04人读字段完整、source live、errors/issues空。仅替换核PID18687的本看板服务，个人61227/61228未动；[实际快照摘要](../../docs/evidence/d05/proof-132-registry-live.json)。
 
 2026-10-06 11:21:28 UTC：登记ENG01C、S01P04、WPF-ATTACHI01、WPF-RELEASE02和WPF-WORKSPACEPERF01至137个唯一来源。三件套/证据目录实际存在，状态解析、人读字段与唯一父任务/co-lead通过；见[登记回执](../../docs/evidence/d05/engineering-attachment-137-registry-validation.json)。部署前仍以132实采为准；只维护登记，不改固定架构图、不跑产品或模型。
+
+2026-10-06T11:22:38.886Z实际137来源发布，main a3195c12；本批5项source live、人读完整、errors/issues空。原4320自有PID50668正常停止后新session5633，固定架构与个人服务不变；见[实采回执](../../docs/evidence/d05/engineering-attachment-137-registry-live.json)。
+
+2026-10-06 11:32:44 UTC：139个唯一source已校验；新O11/ENG01D三件套、parser、人读/父任务关联均完整，正式看板部署待本批main接收。[登记核验](../../docs/evidence/d05/goal-native-139-registry-validation.json)。固定架构图不变，无产品重测。
