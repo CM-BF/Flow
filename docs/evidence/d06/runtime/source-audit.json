@@ -1,0 +1,925 @@
+{
+  "observedAt": "2026-10-06T10:15:15.486Z",
+  "baseline": {
+    "commit": "f181d84b5fb3652d62e2a181acff442d42b3e066",
+    "date": "2026-10-06",
+    "verifiedAt": "2026-10-06T10:12:20Z",
+    "repository": "https://github.com/CM-BF/Flow"
+  },
+  "sourceFiles": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "sha256": "4a2cb7b2343158a1ecf5cd5b2add35e9e1e19c0f366c09fa649a949b853229f7",
+      "lines": 328
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "81a20492f80e58cdbc28a36c49ef514aae0c656782020c413ce8e11f4c29494c",
+      "lines": 92
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "lines": 98
+    },
+    {
+      "path": "apps/runner/package.json",
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063",
+      "lines": 19
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "lines": 100
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "lines": 22
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "b6461ea0edebe5ca7fb52ebbc0c62b678aeea891b00cf69b78a1636900c95ba8",
+      "lines": 39
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "sha256": "59ca472b509f580512b50d6c71406e3e66f411aabd2c8622a90c7ad703821df5",
+      "lines": 99
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a",
+      "lines": 12
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "lines": 20
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "lines": 121
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "5437645e446b53f558cb960582f09a90f1df49fb0c6a90be24c36d239f057bd2",
+      "lines": 254
+    },
+    {
+      "path": "apps/server/package.json",
+      "sha256": "2845ef2d760995fa471163249f5fba113082299f3e0c27ff920960c3f7fc32f9",
+      "lines": 23
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd",
+      "lines": 57
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "lines": 28
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa",
+      "lines": 129
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7",
+      "lines": 33
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "53375cfac10d497a2dedf4c0001d5473525ef8b4b2f16dff39021498b3b26bae",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sha256": "82a0b1293cb3a464945f106a8e3a4bf16a9541542659174e12cd5102ffefa34d",
+      "lines": 44
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "lines": 102
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sha256": "a54632c3c869f5f7c8d859d1dc3718c518883d9ebf56b429ae10718c47701fdf",
+      "lines": 112
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "sha256": "edaaa2736a714d7c8260df2003b8d36774ef81c70d583885b3d3bff6e1d7bfd6",
+      "lines": 33
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a",
+      "lines": 105
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2",
+      "lines": 86
+    },
+    {
+      "path": "apps/server/src/goals/index.ts",
+      "sha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842",
+      "lines": 54
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sha256": "552a44e1bd1c0469f43945667c925d9234af9b37eee5e224665fc35ab65dfdb0",
+      "lines": 204
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42",
+      "lines": 47
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21",
+      "lines": 106
+    },
+    {
+      "path": "apps/server/src/m2-workspace.ts",
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78",
+      "lines": 102
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c",
+      "lines": 45
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648",
+      "lines": 130
+    },
+    {
+      "path": "apps/server/src/plugins/index.ts",
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c",
+      "lines": 56
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd",
+      "lines": 157
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "sha256": "9e293af3092aba2e138cd8b36fd763ff29923a60bb8f8166bd5b8e490c8dcb8c",
+      "lines": 113
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a",
+      "lines": 17
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "c83f04c42ec26e69147baf929a18b53f49faf560602df4322cefccd67c40c7fc",
+      "lines": 84
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5",
+      "lines": 11
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "sha256": "9bb9781d4d435ead2b117177b97f0ab46b12af131100ca9c968bd73a109620f9",
+      "lines": 44
+    },
+    {
+      "path": "apps/web/README.md",
+      "sha256": "a10fe9d1ee4f73a7dea00110b370bd6b08df8aa111cd7c4c8af6383aa5d66bc8",
+      "lines": 59
+    },
+    {
+      "path": "apps/web/package.json",
+      "sha256": "f86e755a32cb6c3c5e81512ca2c0d06844438c67a905d97a4c90ce8d28444344",
+      "lines": 46
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "9de8d08db9a3ab1f8649cbca354929cb60fbfb803d02781b7929ecbc0bfc42d1",
+      "lines": 1042
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "lines": 888
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "sha256": "55eafaa0aa50a2531667b105801635042ae4391490b36a131c4d5de175af7830",
+      "lines": 153
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "sha256": "1a34e83b8236697e61a6cfd1e096bae389e7f08470d452e51cd93fc52390a704",
+      "lines": 79
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "577676a1357e6da20c613f6ed49301ebb954b0982e8b5db972067a2b7c21e004",
+      "lines": 92
+    },
+    {
+      "path": "apps/web/src/plugin-integration/data-renderers.ts",
+      "sha256": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6",
+      "lines": 62
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "30546e32c496a85e93503f25c2b3634fdefe25115b38cdc311a965ae3bfd9ef2",
+      "lines": 269
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+      "lines": 490
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sha256": "ba5564f67f0fec48a841ffdf840cc80e0327e73c1c8268a3e16919c094be6b11",
+      "lines": 28
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "sha256": "6ba964a2a7d94e42956be538f529a6ea8b1f0d6efd12b7b1ccd63e9e1fe7bca9",
+      "lines": 163
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "lines": 17
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "lines": 6
+    },
+    {
+      "path": "packages/storage/migrations/004-projects.sql",
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07",
+      "lines": 46
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6",
+      "lines": 21
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+      "lines": 44
+    },
+    {
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+      "lines": 47
+    },
+    {
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac",
+      "lines": 41
+    },
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "sha256": "1568387dcdf78205a592041d08b51cc1cbf80112b0d94fd1d83dbaa9d283a551",
+      "lines": 469
+    },
+    {
+      "path": "plans/flow-002-provider-harness/plan.md",
+      "sha256": "b85b5245ec4cbc7299cf8468f5a3c4a64b1a35089576cdc0a2451293912e4590",
+      "lines": 197
+    },
+    {
+      "path": "plans/templates/status.md",
+      "sha256": "285b484f43d1cc55f802356fafcdb891443f9bdcadb7f4b0b10f0f0c37632bfb",
+      "lines": 52
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "sha256": "88115b5d4781f92449aeea1cf20c872955d57c1ae1a0dbada16a1950fafd688e",
+      "lines": 124
+    }
+  ],
+  "evidence": [
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 158,
+      "text": "  registerKnowledgeRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 155,
+      "text": "  registerConversationContextRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 160,
+      "text": "  registerGoalGraphRunRoutes(app, pool, boss);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 151,
+      "text": "  registerNativeActivityRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 146,
+      "text": "  registerAssistantStreamRoutes(app, pool);"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 145,
+      "text": "  registerActiveSteeringRoutes(app, pool, { acceptCommands: options.activeSteering === true });"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "line": 83,
+      "text": "    if (options.packageFetchHost) packageWorker = await startPackageFetchWorker(pool, options.packageFetchHost);"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 149,
+      "text": "      afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === \"pending\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply pending. You can keep writing below.</p>}{last?.assistant.state === \"unavailable\" && <p className=\"flow-conversation-notice\" role=\"status\">Reply unavailable · {last.assistant.reason.replaceAll(\"-\", \" \")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 142,
+      "text": "      composerSubmit={intent === \"queue\" ? () => { if (!projection.sendDisabledReason(\"queue\")) runtime.thread.composer.send({ startRun: false }); } : undefined}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 141,
+      "text": "    <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder=\"Message Flow…\" sendLabel={intent === \"queue\" ? \"Add to queue\" : \"Send message\"}"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 90,
+      "text": "  const runtime = useExternalStoreRuntime<ThreadMessage>({ messageRepository: streamState.repository,"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "line": 100,
+      "text": "        if (intent === \"queue\") { if (!conversationQueueEnqueueSchema.safeParse({ expectedQueueRevision: queue.page?.queueRevision, text, knowledge: capture.knowledge }).success) throw Error(\"Use a non-empty message up to 16,000 UTF-8 bytes for the queue. Your references are kept.\"); }"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 37,
+      "text": "        <QueueSectionTrigger className=\"gap-2 bg-transparent px-2 py-1.5 text-xs\"><QueueSectionLabel label={page ? `${page.items.length} waiting loaded${page.nextCursor ? \"; more available\" : \"\"}` : \"Queue\"} /><span>{state.loading ? \"Refreshing…\" : state.stale ? \"Needs refresh\" : page?.paused ? \"Paused\" : \"Center queue\"}</span></QueueSectionTrigger>"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "line": 48,
+      "text": "          {cancelTarget && <div className=\"my-2 rounded border p-2\" role=\"group\" aria-label=\"Confirm current execution cancellation\"><p>Request cancellation of {cancelTarget}? Pausing and cancellation have separate receipts. Work already performed is not undone.</p><div className=\"mt-2 flex flex-wrap gap-2\"><Button type=\"button\" variant=\"destructive\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { await projection.cancelCurrentTask(cancelTarget); setCancelTarget(null); })}>Confirm execution cancellation</Button><Button type=\"button\" variant=\"outline\" size=\"sm\" onClick={event => void preserveFocus(event.currentTarget, async () => { setCancelTarget(null); })}>Keep execution</Button></div></div>}"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 28,
+      "text": "      FROM flow.knowledge_sources s JOIN flow.knowledge_versions v ON v.source_id=s.id AND v.version=s.current_version"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 29,
+      "text": "      JOIN flow.knowledge_chunks c ON c.source_id=s.id AND c.version=s.current_version WHERE s.project_id=$1"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 31,
+      "text": "      SELECT *,strpos(content,$2)>0 AS literal,ts_rank(search_vector,plainto_tsquery('simple',$2)) AS rank"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "line": 16,
+      "text": "    citation: { projectId: row.project_id, sourceId: row.id, version: row.current_version, contentDigest: row.content_digest, locator: { kind: 'utf8-bytes', start: row.start_byte, end: row.end_byte } },"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 31,
+      "text": "  const row = (await client.query<VersionRow>('INSERT INTO flow.knowledge_versions(source_id,version,content,content_digest) VALUES($1,$2,$3,$4) RETURNING source_id,version,content_digest,byte_length,created_at', [sourceId, version, text, sha256(text)])).rows[0]!;"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 33,
+      "text": "  await client.query(`INSERT INTO flow.knowledge_chunks(source_id,version,ordinal,start_byte,end_byte,content)"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "line": 55,
+      "text": "      if (source.current_version !== input.expectedVersion) throw new HttpError(409, 'knowledge_version_conflict', 'Read the current source version before publishing.');"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 37,
+      "text": "  const sources: FrozenSource[] = (await resolveCitationsInTransaction(client, projectId, citations)).map(({ citation, text, isCurrent, currentVersion }) => ({ citation, text, byteLength: Buffer.byteLength(text), currentVersionAtFreeze: currentVersion, isCurrentAtFreeze: isCurrent }));"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 30,
+      "text": "  await client.query('INSERT INTO flow.conversation_execution_inputs(id,context_id,user_text,template_version,execution_prompt,execution_input_digest) VALUES($1,$2,$3,1,$4,$5)', [id, contextId, userText, prompt, inputDigest(userText, prompt)]);"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 73,
+      "text": "  if (input.conversation_id !== conversationId) throw invalid();"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 93,
+      "text": "    const row = (await client.query<ContextRow>('SELECT id AS context_id,conversation_id,project_id,context_digest,sources,raw_bytes,created_at FROM flow.conversation_contexts WHERE id=$1 AND conversation_id=$2', [contextId, conversationId])).rows[0];"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "line": 77,
+      "text": "export async function executionInputForTask(client: PoolClient, taskId: string, rawPrompt: string): Promise<{ prompt: string; context: ConversationContextExecutionReference } | null> {"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 25,
+      "text": "  const context = await contextReference(client, row.conversation_input_id);"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "line": 27,
+      "text": "    ...(context ? { context } : {}), user: { role: 'user', text: row.user_text }, task: summary(task), ...await assistantProjection(client, task), telemetry: { kind: 'execution', taskId: task.id, title: 'Execution details' } };"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 50,
+      "text": "    ...(value.projectId === undefined ? {} : { projectId: value.projectId }),"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "line": 72,
+      "text": "    || (value.knowledgeContext !== undefined && typeof value.knowledgeContext !== \"boolean\")"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 8,
+      "text": "import { withRunnerAuthority } from '../goal-run-authority/runner-project-fence.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 62,
+      "text": "      if (run.scope.maxApplications === 0) throw new HttpError(403, 'goal_graph_scope', 'This grant permits proposals only.');"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 6,
+      "text": "import { commandInTransaction } from '../tasks.js';"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "line": 70,
+      "text": "      if (context.project.revision !== run.scope.baseRevision) throw new HttpError(409, 'stale_project_revision', 'The base graph changed; no silent rebase is allowed.');"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 11,
+      "text": "  const invoke = ownedCalls(input);"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 3,
+      "text": "import { ownedCalls, assertNativeGrant, type HostAuthority } from '../goal-tool-bridge/authority.js';"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "line": 19,
+      "text": "    commandGraph: (command, key) => invoke(signal => client.goalGraphCommand({ ...call, command }, key, signal)),"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 265,
+      "text": "  if (options.goalTools && options.goalGraphTools) throw new Error('Node and graph tools need separate configured profiles.');"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "line": 266,
+      "text": "  if ((options.goalTools || options.goalGraphTools) && (options.materialFiles.length || options.allowRead !== false || options.requireReadApproval)) throw new Error('Goal tools require an empty material scope and explicitly disabled material reads.');"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 2,
+      "text": "import { bindGraphToolCapability } from './goal-graph-tools/bind.js';"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 62,
+      "text": "    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop)"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 45,
+      "text": "  const active = new Map<string, Promise<void>>();"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 79,
+      "text": "        if (journal.unresolved(new Set(active.keys()))) {"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 83,
+      "text": "        if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wait(); continue; }"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "line": 206,
+      "text": "    if (options.activeSteering && adapter.name === 'claude') context.steering = {"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 15,
+      "text": "export async function fetchPackageArtifact(options: PackageArtifactOptions, input: unknown,"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 8,
+      "text": "import { stageStream, publishArtifact } from './storage.js';"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "line": 33,
+      "text": "    const receipt = packageArtifactSchema.parse({ ...request, artifactId: options.artifactId ?? randomUUID(), format: 'npm-tarball',"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 21,
+      "text": "  const verifier = ssri.create({ algorithms: ['sha512'] });"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 29,
+      "text": "    file = await open(join(directory, 'package.tgz'), 'wx', 0o600);"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "line": 58,
+      "text": "  await rename(staged.directory, join(root, 'artifacts', receipt.artifactId));"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 40,
+      "text": "export function createDataRendererRegistry(declarations: readonly DataDeclaration[], host: Lifecycle) {"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 81,
+      "text": "      if (disposed || !entry || entry.signal.aborted || host.list().find(item => item.id === declaration.ownerId)?.state !== \"active\")"
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "line": 73,
+      "text": "      if (!declaration) return { kind: \"unknown\", reason: \"No trusted renderer for this data type\" };"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 47,
+      "text": "  liveAssistantText?: boolean;"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "line": 44,
+      "text": "  steer: false;"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 85,
+      "text": "  const client = await pool.connect();"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 102,
+      "text": "    const locked = (await client.query<{ locked: boolean }>('SELECT pg_try_advisory_lock(hashtextextended($1,0)) AS locked', [lock])).rows[0]?.locked;"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 64,
+      "text": "    artifact = job.recovery"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "line": 65,
+      "text": "      ? await readPackageArtifact(host.root, job.attempt.artifact_id)"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "line": 67,
+      "text": "    detail:{id:row.detail_id,title:'Native activity'},status:unresolved && ended?'unknown':row.latest_phase};"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "line": 88,
+      "text": "    return {...reference(row),body:JSON.parse(detail.content)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "line": 52,
+      "text": "    return {taskId,attemptId,patches,nextCursor:patches.at(-1)?.sequence??after,hasMore:rows.length>limit};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "line": 15,
+      "text": "  const status=current.final_id?'final-available':ended?'interrupted':row.header.phase;"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 42,
+      "text": "    taskId:task.id,attemptId:attempt.id,nativeSessionId:attempt.native_session_id!,finalMessageId,retainStreamIds:retain,replaceStreamIds:blocks.filter(block=>!keep.has(block.id)).map(block=>block.id)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 42,
+      "text": "    taskId:task.id,attemptId:attempt.id,nativeSessionId:attempt.native_session_id!,finalMessageId,retainStreamIds:retain,replaceStreamIds:blocks.filter(block=>!keep.has(block.id)).map(block=>block.id)};"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "line": 43,
+      "text": "  await client.query('INSERT INTO flow.assistant_stream_settlements(attempt_id,task_id,final_id,data) VALUES($1,$2,$3,$4)',[attempt.id,task.id,finalMessageId,data]);"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 9,
+      "text": "    return entry.kind !== 'reference' || entry.reference.stream?.kind !== 'assistant-stream';"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 19,
+      "text": "  if (options.assistantStreamReadable !== true || !hasSinglePatchHeader(rawHeaders)) return false;"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "line": 41,
+      "text": "    supported = rawHeaders[index + 1] === 'patch-v1';"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "line": 10,
+      "text": "const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "line": 11,
+      "text": "const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);"
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "line": 11,
+      "text": "export class NativeSteeringHost {"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "line": 28,
+      "text": "export type SteeringStatus = 'accepted' | 'received' | 'observed-consumed' | 'rejected' | 'unknown';"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "line": 49,
+      "text": "  /** Receipts are authenticated runner observations, never independent proof of model compliance. */"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 4,
+      "text": "export const ASSISTANT_PATCH_BYTES = 8192;"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 5,
+      "text": "export const ASSISTANT_ATTEMPT_BYTES = 1048576;"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "line": 11,
+      "text": " * block-complete is a native block observation, NOT a successful Flow turn. */"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "line": 4,
+      "text": "export const MAX_ACTIVITY_DETAIL_BYTES = 65_536;"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "line": 6,
+      "text": "/** A truncated body is only a UTF-8 prefix, possibly invalid JSON; render as text."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "line": 52,
+      "text": "export function ConversationActivities({ viewId, projection, visible, children }: { viewId: string; projection: ConversationProjection; visible: boolean; children: ReactNode }) {"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "line": 85,
+      "text": "export function MessageFooter() {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "line": 54,
+      "text": "export function streamConversationMessages(turn: ConversationTurn, state: StreamState): ThreadMessageLike[] {"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 3,
+      "text": "  const limit = raw === undefined ? 1 : Number(raw);"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 4,
+      "text": "  if (!Number.isInteger(limit) || limit < 1 || limit > 16 || (raw !== undefined && String(limit) !== raw)) {"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "line": 7,
+      "text": "  if (mode === 'a2a' && limit !== 1) throw new Error('A2A runner supports a local attempt limit of 1 only.');"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "line": 14,
+      "text": "  const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "line": 30,
+      "text": "    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering, maxConcurrentAttempts });"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "line": 27,
+      "text": "  if (!manifestFile) return { harnesses: [fixture], adapters: [fixture.adapter], profile: null, activeSteering: false };"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "line": 31,
+      "text": "  const configured = configureClaudeHarness(JSON.parse(content));"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "line": 10,
+      "text": "      protocol: 'flow.native-harness.v1', harness: adapter.name, adapterVersion: adapter.version,"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "line": 11,
+      "text": "      ports: {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "line": 6,
+      "text": "export function configureCodexHarness(options: { publicProfile: CodexExecutionProfileConfiguration; createTransport: CodexTransportFactory }) {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "line": 2,
+      "text": "import { describeNativeHarness } from '../descriptor.js';"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "line": 14,
+      "text": "export function createCodexAdapter(configuration: CodexExecutionProfileConfiguration, createTransport: CodexTransportFactory): HarnessAdapter {"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "line": 6,
+      "text": "import { NativeExecutionError } from '../settlement.js';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 8,
+      "text": "import { commandDescriptors, createInteractionController } from '@flow/interaction';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 7,
+      "text": "import { FlowClient } from '@flow/client';"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "line": 9,
+      "text": "import { openIntentStore } from './intent-store.js';"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "line": 31,
+      "text": "      if (!state.busy) { try { await refresh(state.selected!.id, version); } catch { if (current(version)) patch({ connected: false, notice: 'Observation interrupted. Use /recover; center tasks continue.' }); } }"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "line": 74,
+      "text": "    const knowledge = controller?.freeze();"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "line": 75,
+      "text": "    this.projection.validateKnowledge(knowledge);"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "line": 110,
+      "text": "      admission: (options, signal) => this.read(entry, signal, bound => this.session.steeringAdmission(identity, options, bound)),"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "line": 37,
+      "text": "export class SteeringWorkspace {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "line": 32,
+      "text": "export class StreamConnectionBudget {"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "line": 46,
+      "text": "      if (count <= 8 && size <= 4 * 1024 * 1024) break;"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 9,
+      "text": "  await client.query('INSERT INTO flow.details(id,task_id,attempt_id,title,kind,content,media_type,artifact_version) VALUES($1,$2,$3,$4,$5,$6,$7,$8)', [id, taskId, attemptId, detail.title, detail.kind, detail.content, detail.mediaType, detail.artifactVersion ?? null]);"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 27,
+      "text": "  const inputDigest = sha256(JSON.stringify({ artifactVersion: event.artifactVersion, rule }));"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "line": 26,
+      "text": "  const rule = requested?.kind === 'contains' ? { kind: 'contains' as const, expected: requested.expected } : { kind: 'nonempty' as const };"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "line": 4,
+      "text": "import { verifyWebArtifact } from './web-artifact.mjs';"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "line": 6,
+      "text": "export async function startStaticWeb({ directory, artifact, repository, webPort, centerPort }) {"
+    },
+    {
+      "path": "docs/evidence/svc04/interface.md",
+      "line": 3,
+      "text": "`publishPreviewWeb({directory, artifact, expectedVersion, expectedBackendHead, compatibility})`、`rollbackPreviewWeb({...})`、`bootstrapPreviewWeb({...})`；操作由现CLI显式进入，加载现私有配置、复用同operation.lock。bootstrap只更新Web进程持有，publish/rollback只原子更新Web release指针。center/runner的PID/source、DB/token/profile/native目录及maintenance gate均不改。"
+    },
+    {
+      "path": "docs/evidence/svc04/interface.md",
+      "line": 3,
+      "text": "`publishPreviewWeb({directory, artifact, expectedVersion, expectedBackendHead, compatibility})`、`rollbackPreviewWeb({...})`、`bootstrapPreviewWeb({...})`；操作由现CLI显式进入，加载现私有配置、复用同operation.lock。bootstrap只更新Web进程持有，publish/rollback只原子更新Web release指针。center/runner的PID/source、DB/token/profile/native目录及maintenance gate均不改。"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "line": 27,
+      "text": "export function parseTaskLinks(taskId, rows) {"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "line": 91,
+      "text": "export function resolveTaskLinks(tasks) {"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 15,
+      "text": "用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "line": 65,
+      "text": "可信 npm 服务端扩展是明确 operator 授予的信任级别，在固定宿主接口运行；第三方未知 npm 不加载到中心进程或可信浏览器 realm，必须走隔离进程/容器、窄消息协议与文件/网络/时间/内存限制。JS context、隐藏 token 参数或 same-realm React ErrorBoundary 不是安全隔离。包预检也不执行未知 install hook。第三方 renderer 使用独立隔离文档/消息桥且逐次校验来源与 schema，不能读取宿主 DOM/连接凭据；无法建立隔离时保持不可启用，显示原因。"
+    }
+  ],
+  "absent": [
+    "packages/contracts/src/attachments.ts",
+    "tools/personal-preview/web-release.mjs"
+  ],
+  "presentMigrations": [
+    "020-native-activity.sql",
+    "022-assistant-stream.sql",
+    "023-plugin-package-fetches.sql",
+    "024-active-steering.sql",
+    "025-native-harness-sources.sql"
+  ],
+  "limits": "Fixed source inspection only; no product model/database/service verification. App mounts stream, knowledge and steering; native execution is configurable but configured/provider capacity is not inferred. Codex factory exists but ordinary startup remains fixture/Claude. Steering stays opt-in; package fetch is not installation. Fixed artifact and backend deployment require separate owner receipts; no personal service inspected."
+}

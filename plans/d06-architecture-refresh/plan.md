@@ -7,8 +7,8 @@
 四literal仅architecture-data.js、architecture.test.mjs、原D06 plan/evidence；renderer/CSS/registry/4320与所有产品实现不改。固定source逐条git对象核，未知部署不写成当前runtime。按[根模块规则](../../AGENTS.md#modular-design)复用现data Interface；没有新增产品Module或缓存。
 
 - [x] D06-01：独立树、精确claim、旧source停写与历史保存；唯一登记迁移列handoff待Lead办理。
-- [ ] D06-02：固定源码事实审阅与五图数据刷新。
-- [ ] D06-03：直接Node/来源审计、局部五图/浅深390/键盘与实际目视。
+- [x] D06-02：固定源码事实审阅与五图数据刷新。
+- [x] D06-03：直接Node/来源审计、局部五图/浅深390/键盘与实际目视。
 - [ ] D06-04：固定target独立review、正常push、Lead主线接收与停写释放。
 
 [状态](status.md) · [审查](review.md) · [原claim](../../docs/evidence/d06/runtime/take-receipt.json) · [历史](../../docs/evidence/d06/runtime/history.md) · [方法/质量](../../docs/evidence/d06/runtime/quality.md)。当前不声称main或部署；不跑全产品/真实服务/provider/产品DB。

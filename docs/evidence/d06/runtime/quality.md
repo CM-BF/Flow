@@ -7,3 +7,7 @@
 Module=策展固定源码数据；Interface=baseline/views/nodes/edges，由现architecture renderer读取，无网络/授权/状态机新增。图只说明所引用SHA，动态服务/个人artifact独立且缺receipt写unknown。扩展新模块需更新策展node及固定source证据；不自动扫描目录当能力，不复制领域逻辑。测试仅数据/source语义与局部浏览器布局，性能不宣称提速。
 
 开工clean-code：固定ID与source单一事实、旧记录原样归档、source/检查/部署分开、未知明确；尚无产品变更/测试。后继固定target再复核命名、接口、错误、重复与无关复杂度。
+
+2026-10-06 10:16:39 UTC 固定交付安全点：完整检查命名/节点职责/source Interface/错误边界/重复与范围。复用五图与现静态server，不添加renderer或领域逻辑。修复错误的未main计划引用、source-audit类名，以及全局替换误改blob说明；原失败保存，未删断言。15局部Node与61/119来源审计通过，五图最终browser/目视通过。并发/部署/provider与正文规则含义分别表达；源码固定 `1dcbc7c2db619e8b723f6847002f986458b52943`。无剩余作者已知blocking，独立审查仍NOT_STARTED。
+
+2026-10-06 10:17:15 UTC 固定交付安全点：完整检查命名/节点职责/source Interface/错误边界/重复与范围。复用五图与现静态server，不添加renderer或领域逻辑。修复错误的未main计划引用、source-audit类名，以及全局替换误改blob说明；原失败保存，未删断言。15局部Node与61/119来源审计通过，五图最终browser/目视通过。并发/部署/provider与正文规则含义分别表达；源码固定 `2c3160f42784ee814d968a953d557251c81a243d`。无剩余作者已知blocking，独立审查仍NOT_STARTED。

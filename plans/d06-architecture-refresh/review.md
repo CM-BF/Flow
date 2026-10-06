@@ -1,7 +1,23 @@
 # D06 独立审查
 
-NOT_STARTED。目标 UNKNOWN；基线f181d84b5fb3652d62e2a181acff442d42b3e066，worktree dashboard-architecture-runtime。旧2c独审只在历史，不继承本轮。
+状态: NOT_STARTED
+Review target commit: 2c3160f42784ee814d968a953d557251c81a243d
+Base commit: f181d84b5fb3652d62e2a181acff442d42b3e066
 
-验收：四scope；固定源码各node/line可追溯；五视图内含已main App stream/知识/steering和TUI/runnerhost职责；并发配置/部署/provider容量不混，正文规则检查不叫完整工程verified；planned与实际接线分明。局部Node/source审计和稳定浏览器布局/键盘/浅深390 evidence，0产品DB/model/真实4320。
+唯一owner d01_owner，worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime`，branch `codex/dashboard-architecture-runtime`。旧2c独审是历史，不能继承本轮。
 
-固定target后请独立reviewer只读核Git/source hashes、数据/test/执行脚本与报告绑定、实际preview；具体finding给owner修复，不直接改实现。当前未运行检查、无approval。
+## 验收与范围
+
+四literal claim84fd3e7d v1；五执行文件为data、直接test、runtime/source-audit、browser-check、preview。仅策展source与证据，无renderer/CSS/产品改动。目标准确表现已main的App stream/knowledge/steering、TUI/interaction、并发和unknown领取、native宿主/Codex工厂。区分默认配置/实际部署/provider容量，正文规则/逐版证据/工程验收，附件及发布后继不冒完成。
+
+## 作者证据
+
+[README](../../docs/evidence/d06/runtime/README.md)、[checks](../../docs/evidence/d06/runtime/checks.json)、[source-binding](../../docs/evidence/d06/runtime/source-binding.json)、[validation](../../docs/evidence/d06/runtime/validation.md)。15 Node、61来源/119行、五图Chrome/键盘/浅深390；执行真实1dcbc7c2db619e8b723f6847002f986458b52943+dirty原报告保留，五hash绑定target。预览49510/session2032，未查真实4320/产品DB/provider。
+
+## 独立review任务
+
+请只读先核worktree/base/head/dirty与claim。全读固定data/test/三证据脚本及来源；审图运行关系不把注入factory当普通生产启动。可运行15局部Node、读取报告/自己的Chrome预览核新节点与390；不要覆盖author审计报告。结果绑定上述target，具体finding交owner修复，不直接改树。确认hash/protected路径、main/部署边界及旧失败保存。
+
+## Findings与结论
+
+尚未独审；无通过结论。主线NOT_INTEGRATED，保持claim回修权。
