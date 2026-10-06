@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation
+
+ ❯ packages/client/src/goal-session-transport.test.ts (1 test | 1 failed) 30ms
+   × preserves goal-session detail/decision/cancel transport while allowing observation cancellation 30ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/goal-session-transport.test.ts > preserves goal-session detail/decision/cancel transport while allowing observation cancellation
+AssertionError: promise resolved "{ transport: true }" instead of rejecting
+
+- Expected
++ Received
+
+- Error {
+-   "message": "rejected promise",
++ {
++   "transport": true,
+  }
+
+ ❯ packages/client/src/goal-session-transport.test.ts:36:49
+     34|     status = 200;
+     35|     const signal = AbortSignal.abort();
+     36|     await expect(client.detail('detail', signal)).rejects.toThrow();
+       |                                                 ^
+     37|     await expect(client.decide('task', answer, 'frozen-decision-key', …
+     38|     await expect(client.cancel('task', 'frozen-cancel-key', signal)).r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  04:53:27
+   Duration  379ms (transform 136ms, setup 0ms, import 246ms, tests 30ms, environment 0ms)
+
