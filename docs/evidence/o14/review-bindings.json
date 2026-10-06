@@ -1,0 +1,992 @@
+{
+  "task": "O14",
+  "reviewer": "assignment_review",
+  "observedAt": "2026-10-06T14:48:48.869066+00:00",
+  "target": "b8081a8fba7468337f668670a67206005bc0a73f",
+  "head": "ac9d2cc940324f3d9c0adfa87240092223b49bcd",
+  "workingStatus": "",
+  "manifestSha256": "9fbad031ce1c94b7f5630a749a703b1735321eaee32ff56fac55d621f47a66a1",
+  "counts": {
+    "source": 14,
+    "protected": 44,
+    "evidence": 57,
+    "validation": 1
+  },
+  "entries": [
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/delivery.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/metadata.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-delivery/state.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/fixture.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/progression.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/provenance.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goal-progression/store.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/commands.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/goals.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "apps/server/src/goals/state.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "packages/contracts/src/goal-progression.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "source",
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "AGENTS.md",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "plans/AGENTS.md",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "package.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "pnpm-lock.yaml",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "tsconfig.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "vitest.config.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/database.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/tasks.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/events.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/commands.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/runners.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/scheduler.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/projects/storage.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goals/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-context/input.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-context/freshness.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-context/store.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-native-executions/store.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-native-executions/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-native-executions/runtime.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-native-executions/admission.test.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-delivery/plan.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-delivery/explanations.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/server/src/goal-delivery/details.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/runner/src/runtime.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/runner/src/claude.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/runner/src/outbox.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "apps/runner/src/execution-profiles.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/client/src/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/index.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/goals.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/tasks.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/runner.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/contracts/src/projects.ts",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/storage/migrations/004-projects.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/storage/migrations/006-goals.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "protected",
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true,
+      "baseMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/README.md",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/approved-design.md",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/claim.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/dependencies.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_3cd696d268084df194f7c89f43ae1565-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_41b9267495984675a8d8f09e7313cfd5-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_820af667f3d54135897a0bcd31e5e4ee-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_84c9fe3263f54090a484308aed0adbaf-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_c3489b53c8224d0fbd12ebb0588007b6-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_de64e78af19041bfbfb09bc7dbe9e5a8-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_e11af766ffc84edcb630623cceea4783-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/flow_o14_ee4fd72c30264bca8276efe98a6ca04d-facts.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/interface.md",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-delivery.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-delivery.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-delivery/cleanup.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-goals.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-goals.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-goals/cleanup.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/legacy-goals/diamond.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-first-gate.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-first.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-first.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-focused.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-focused.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-debug-fixed.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-debug-fixed.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-debug.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-debug.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-policy-fixed.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-journey-policy-fixed.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-matrix.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-matrix.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-memo-journey.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-memo-journey.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-second.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-second.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-verification-fixed.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/pg-verification-fixed.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/quality.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-domain.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-domain.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-final.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-final.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-first.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-first.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-second.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-second.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-tests-fixed.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-tests-fixed.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-tests.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/types-tests.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/validity-bound-green.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/validity-bound-green.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/validity-bound-red.exit",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/validity-bound-red.stdout",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "validation",
+      "path": "docs/evidence/o14/validity-bound.mjs",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o14/worktree.json",
+      "revision": "b8081a8fba7468337f668670a67206005bc0a73f",
+      "fixedMatches": true,
+      "currentMatches": true,
+      "blobMatches": true
+    }
+  ],
+  "mismatches": [],
+  "executedTests": false,
+  "providerCalls": 0
+}
