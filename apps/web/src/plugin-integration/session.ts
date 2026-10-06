@@ -1,3 +1,5 @@
+import { StreamConnectionBudget, STREAM_PANEL, type StreamIdentity, type StreamReaders, type StreamAuthority } from "../conversation-stream/host";
+import { createAssistantStreamPlugin } from "./react";
 import type { TaskSnapshot, Detail, EventPage, NativeActivity, NativeActivityPage } from "@flow/contracts";
 import { PluginHost } from "../plugins/host";
 import { createBuiltinPlugins } from "../plugins/builtins";
@@ -30,6 +32,7 @@ export interface AppActions {
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
   activity?: ActivityReaders;
+  stream?: StreamReaders;
   ownsMessage?(taskId: string, messageId: string, role: "user" | "assistant"): boolean;
   openTask(id: string): void;
   openWorkspace(id: string, tab: WorkspaceTabId): void;
@@ -48,6 +51,7 @@ export class AppPluginSession {
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
+  readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
@@ -104,6 +108,7 @@ export class AppPluginSession {
     this.host.register(createSamplePlugin());
     this.host.register(createTaskActionsPlugin());
     this.host.register(createActivityPlugin());
+    this.host.register(createAssistantStreamPlugin());
   }
 
   updateActions(actions: AppActions) { if (!this.closed) this.actions = actions; }
@@ -153,6 +158,25 @@ export class AppPluginSession {
     if (!permitted()) throw Error("Activity read belongs to an expired view.");
     return result;
   }
+  canReadStream(identity: StreamIdentity) {
+    const context: ResourceContext = { kind: "message", taskId: identity.taskId, messageId: identity.messageId, role: "user" };
+    return !this.closed && identity.connectionId === this.id && this.actions.hasDraft(identity.viewId)
+      && this.validContext(context) && this.host.checkView(STREAM_PANEL, context).ok
+      && this.authorizeResource("task.assistant-stream.read", context);
+  }
+  streamAuthority(): StreamAuthority {
+    const read = async <T,>(identity: StreamIdentity, signal: AbortSignal, operation: (readers: StreamReaders, signal: AbortSignal) => Promise<T>) => {
+      signal = AbortSignal.any([signal, this.signal]);
+      if (signal.aborted || !this.canReadStream(identity) || !this.actions.stream) throw Error("Assistant stream is not authorized in this view.");
+      const value = await operation(this.actions.stream, signal);
+      if (signal.aborted || !this.canReadStream(identity)) throw Error("Assistant stream belongs to an expired view.");
+      return value;
+    };
+    return { id: this.id, signal: this.signal, allowed: identity => this.canReadStream(identity), subscribe: this.host.subscribe,
+      metadata: (identity, options, signal) => read(identity, signal, (readers, signal) => readers.metadata(identity, options, signal)),
+      patches: (identity, options, signal) => read(identity, signal, (readers, signal) => readers.patches(identity, options, signal)) };
+  }
+  ownsStreamMessage(taskId: string, messageId: string, role: "user" | "assistant") { return !this.closed && this.streamBudget.ownsMessage(taskId, messageId, role); }
   canReadReply(viewId: string, taskId: string, messageId: string) {
     return !this.closed && this.actions.hasDraft(viewId) && this.validContext({ kind: "message", taskId, messageId, role: "assistant" });
   }
