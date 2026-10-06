@@ -5,7 +5,7 @@
 固定基线 fc113945ff73d1a43092d0a70b51e901aa4be1e2；唯一 owner w01_owner，派发 gpt-6-astra / ultra。八个 literal scope 见[领取回执](../../docs/evidence/wpf-context-receipts/take-receipt.json)。
 
 - [x] WPF-CONTEXT02-01：核领取、冻结接口与边界。
-- [ ] WPF-CONTEXT02-02：可选知识引用解析后深冻结；共享有序完整 tuple 回执校验与 Queue 实际调用；验证变异、未知受理和原键重试。
+- [x] WPF-CONTEXT02-02：可选知识引用解析后深冻结；共享有序完整 tuple 回执校验与 Queue 实际调用；验证变异、未知受理和原键重试。
 - [ ] WPF-CONTEXT02-03：局部检查、clean-code、固定 target 独立审查并交主线。
 - [ ] WPF-CONTEXT02-04：后继 owner 接实际 Send / Queue UI、项目选择及 create-only；本片不实施。
 

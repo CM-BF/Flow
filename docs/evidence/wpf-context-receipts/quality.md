@@ -8,3 +8,13 @@
 - /Users/citrine/.agents/skills/brainstorming/SKILL.md：沿已批准八范围设计，不重开设计审批。
 
 启动 clean-code：现 outbox/Queue 只顶层冻结；public schema parse 会复制，因此必须在 parse 后重新深冻结引用。共享 tuple guard 不应复制为两个略异实现。当前尚未写实现/未跑测试；后续实际发现和结果追加。
+
+## 2026-10-06 08:18:30 UTC 实施 / 固定候选停点
+
+clean-code 实际发现与修复：公共 schema.parse 会产生新的可变 knowledge 数组，原顶层冻结不足；现在统一 helper 在 parse 后冻结数组、citation 与 locator，避免两个命令路径复制限额/tuple规则。Queue 的读列表兼容与命令 ACK 不能混为一谈：保留原空 sources metadata 兼容，但非空附加来源不能确认为用户请求。错误均归现 unknown receipt，不新建状态机/自动重试/计时器。
+
+最小生产 diff：共享 receipts 40 行；outbox 仅增 optional refs、新 creation 项目约束与 helper；Queue 仅分离 enqueue parse+deep freeze 及 ACK guard。清码将 metadata currentVersion 检查改显式 number 判定，去掉隐式 Number 转换，并用公开 ConversationQueueEnqueue 类型说明解析后 DTO。
+
+测试先红：10 failed / 28 passed 证明旧实现不冻结 refs、错 ACK 被误收。最终 142/142 与 typecheck0；实 FlowClient + 内存 fetch 验证序列化/原键，未启动任何 HTTP/PG/模型。限额、创建项目不符前置拒绝不分配 key；unknown 后预算拒绝仍 unknown，既有明确 budget 拒绝保留 text/refs。没有更改旧 projection 或 UI，没有 claim 外接口“顺便优化”。
+
+局限：完整 project/capability 宿主门禁、Send 调用 guard 及 UI 接线明确后继；不把本片纯 helper 验证写成用户已可发送知识。6 源固定后仅 metadata 继续，独审 NOT_STARTED。

@@ -1,0 +1,175 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/web
+
+ ❯ test/conversation-outbox.test.ts (14 tests | 3 failed) 10ms
+     × freezes knowledge independently of the next draft and reuses it after a lost receipt 4ms
+     × requires a matching frozen creation project for new turns with knowledge before allocating a key 1ms
+     × keeps explicit empty knowledge distinct from an omitted field 0ms
+     ✓ detaches and freezes project identity through unknown CREATE and turn retries without adding knowledge 1ms
+     ✓ deep-freezes the cloned execution profile pin through unknown CREATE and turn retries 1ms
+     ✓ freezes sent payload and retries an unknown receipt with the same identity while a new draft remains independent 0ms
+     ✓ keeps creation and first turn keys separate and preserves an acknowledged conversation through a lost turn receipt 0ms
+     ✓ does not dispatch a second retry while the first attempt is pending 0ms
+     ✓ keeps a definite rejection visible and requires an explicit new submission to use a new revision/key 0ms
+     ✓ ignores stale acknowledgements/failures after a different explicit command 0ms
+     ✓ disposes the old connection without late callbacks reviving its command 0ms
+     ✓ preserves earlier receipt uncertainty when a later retry is definitely rejected 0ms
+     ✓ validates before replacing an existing rejection and publishes stable snapshots 0ms
+     ✓ does not let a pending or unknown admission be dismissed as if it never reached the center 0ms
+ ❯ test/conversation-queue.test.ts (24 tests | 7 failed) 33ms
+     × deep-freezes queued knowledge and retries the same key after loss while the next draft changes 8ms
+     × keeps missing knowledge acknowledgement unknown until an exact original-key replay 2ms
+     × keeps reversed knowledge acknowledgement unknown until an exact original-key replay 1ms
+     × keeps tuple knowledge acknowledgement unknown until an exact original-key replay 0ms
+     × keeps extra knowledge acknowledgement unknown until an exact original-key replay 0ms
+     × keeps malformed knowledge acknowledgement unknown until an exact original-key replay 0ms
+     ✓ rejects invalid reference input before HTTP and keeps definite budget rejection payload intact 2ms
+     × rejects unrequested nonempty context while plain and explicit-empty requests keep their wire shape 1ms
+     ✓ preserves optional context metadata in waiting items and accepts metadata-bearing receipts without context reads 1ms
+     ✓ rejects 16000 UTF-8 byte overflow before allocating a receipt or HTTP command 0ms
+     ✓ freezes each payload/key; unknown followed by unauthorized stays unknown and original enqueue retries unchanged 0ms
+     ✓ rejects malformed success receipts as unknown without applying their alleged queue facts 0ms
+     ✓ does not treat immutable old admission replay as current waiting membership 0ms
+     ✓ accepts changing currentTurn/blocked at the same revision and rejects lower-revision reads 0ms
+     ✓ keeps pages ordered without guessing total and replaces removed items on a refreshed loaded window 1ms
+     ✓ serializes refresh, pauses hidden reads, and ignores an old generation after a forced read 5ms
+     ✓ capability false performs no queue or detail reads and does not offer enqueue 0ms
+     ✓ loads detail only on demand, caches its text, and rejects a different conversation identity 0ms
+     ✓ unknown pause replay is historical; fresh GET selects current task and cancel is a separate key/result 1ms
+     ✓ a newer task between confirmation and cancellation stops the stale cancellation 0ms
+     ✓ continue freezes task identity from a fresh GET and 409 only refreshes without a fresh-key resend 0ms
+     ✓ same-page offline/visible changes preserve unknown payload/key and never cancel the task 0ms
+     ✓ a hidden page receives an already-sent command receipt without starting background queue reads 0ms
+     ✓ timeout becomes visible unknown while dispose ignores a late response 7ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 10 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/conversation-outbox.test.ts > conversation admission outbox > freezes knowledge independently of the next draft and reuses it after a lost receipt
+AssertionError: expected undefined to be 4 // Object.is equality
+
+- Expected: 
+4
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:14:55
+     12|     const box = setup(), first = box.begin(draft);
+     13|     draft.text = "next unsent"; ref.locator.end = 6; knowledge.splice(…
+     14|     expect(first.request.knowledge?.[0]?.locator.end).toBe(4);
+       |                                                       ^
+     15|     expect(Object.isFrozen(first.request.knowledge)).toBe(true); expec…
+     16|     box.fail(first.id, "lost", false); const retry = box.retry(first.i…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/10]⎯
+
+ FAIL  test/conversation-outbox.test.ts > conversation admission outbox > requires a matching frozen creation project for new turns with knowledge before allocating a key
+AssertionError: expected [Function] to throw an error
+
+- Expected: 
+null
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:25:105
+     23|     let keys = 0; const box = new ConversationOutbox(() => String(++ke…
+     24|     for (const settings of [creation, { ...creation, projectId: "proje…
+     25|       expect(() => box.begin({ ...input, conversationId: null, creatio…
+       |                                                                                                         ^
+     26|     expect(keys).toBe(0); expect(box.getSnapshot()).toBeNull();
+     27|     const first = box.begin({ ...input, conversationId: null, creation…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/10]⎯
+
+ FAIL  test/conversation-outbox.test.ts > conversation admission outbox > keeps explicit empty knowledge distinct from an omitted field
+AssertionError: expected undefined to deeply equal []
+
+- Expected: 
+[]
+
++ Received: 
+undefined
+
+ ❯ test/conversation-outbox.test.ts:34:37
+     32|   it("keeps explicit empty knowledge distinct from an omitted field", …
+     33|     const box = setup(), entry = box.begin({ ...input, knowledge: [] }…
+     34|     expect(entry.request.knowledge).toEqual([]); expect(Object.isFroze…
+       |                                     ^
+     35|     box.accept(entry.id); expect(box.begin(input).request).not.toHaveP…
+     36|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/10]⎯
+
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > deep-freezes queued knowledge and retries the same key after loss while the next draft changes
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ test/conversation-queue.test.ts:37:91
+     35|     const first = commands.getSnapshot()[0]!;
+     36|     const sent = api.enqueueConversationTurn.mock.calls[0]![1];
+     37|     expect(sent.knowledge).toEqual([citation()]); expect(Object.isFroz…
+       |                                                                                           ^
+     38|     api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId…
+     39|     await commands.retry(first.key); expect(commands.getSnapshot()[0]?…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/10]⎯
+
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > keeps missing knowledge acknowledgement unknown until an exact original-key replay
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > keeps reversed knowledge acknowledgement unknown until an exact original-key replay
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > keeps tuple knowledge acknowledgement unknown until an exact original-key replay
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > keeps extra knowledge acknowledgement unknown until an exact original-key replay
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > keeps malformed knowledge acknowledgement unknown until an exact original-key replay
+AssertionError: expected { slot: 'enqueue', …(5) } to match object { state: 'unknown', everUnknown: true }
+(7 matching properties omitted from actual)
+
+- Expected
++ Received
+
+  {
+-   "everUnknown": true,
+-   "state": "unknown",
++   "everUnknown": false,
++   "state": "accepted",
+  }
+
+ ❯ test/conversation-queue.test.ts:52:61
+     50|     api.enqueueConversationTurn.mockResolvedValueOnce({ conversationId…
+     51|     await commands.execute({ kind: "enqueue", conversationId: "chat", …
+     52|     const first = commands.getSnapshot()[0]!; expect(first).toMatchObj…
+       |                                                             ^
+     53|     commands.dismiss(first.key); expect(commands.getSnapshot()[0]).toB…
+     54|     api.enqueueConversationTurn.mockRejectedValueOnce(new FlowApiError…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/10]⎯
+
+ FAIL  test/conversation-queue.test.ts > queue commands and current projection > rejects unrequested nonempty context while plain and explicit-empty requests keep their wire shape
+AssertionError: expected 'accepted' to be 'unknown' // Object.is equality
+
+Expected: "unknown"
+Received: "accepted"
+
+ ❯ test/conversation-queue.test.ts:76:48
+     74|       api.enqueueConversationTurn.mockResolvedValueOnce({ conversation…
+     75|       await commands.execute({ kind: "enqueue", conversationId: "chat"…
+     76|       expect(commands.getSnapshot()[0]?.state).toBe("unknown");
+       |                                                ^
+     77|       expect(api.enqueueConversationTurn.mock.calls[0]![1]).toEqual(in…
+     78|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/10]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  10 failed | 28 passed (38)
+   Start at  01:16:09
+   Duration  293ms (transform 200ms, setup 0ms, import 345ms, tests 42ms, environment 0ms)
+
+undefined
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-receipts/apps/web:
+ ERR_PNPM_RECURSIVE_EXEC_FIRST_FAIL  Command failed with exit code 1: vitest run test/conversation-outbox.test.ts test/conversation-queue.test.ts
