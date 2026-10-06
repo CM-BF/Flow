@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 01:39 UTC / 2026-10-06 01:28 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 01:35 UTC / 2026-10-06 01:28 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | runner_owner / gpt-6-astra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m1-native-harness` |
