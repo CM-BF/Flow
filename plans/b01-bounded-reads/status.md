@@ -2,36 +2,36 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T03:46:10.218Z |
+| 最近更新 / 最近main同步核验 | 2026-10-06T03:49:08Z |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra（lead mika） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance |
 | Branch | codex/bounded-read-performance |
 | 工作基线 / HEAD | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 / 70af7b45814d5ed31d9638649512358e1a0a834b（实现target；metadata HEAD由Git聚合） |
 | 工作树dirty状态 | 03:44:08核验clean；本次仅更新交付metadata |
-| 工作分支状态 | completed（branch；after证据待独立复核/接收） |
+| 工作分支状态 | completed（branch，代码与after证据已批准；待main接收） |
 | 检查状态 | PASSED 8/8真实PG功能测试、局部typecheck，target 70af7b45814d5ed31d9638649512358e1a0a834b；首轮23检查/候选31检查；修后23项检查/8.887秒通过 |
-| 已集成main状态 / HEAD | 未集成 B01；03:44:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
+| 已集成main状态 / HEAD | 未集成 B01；03:49:08 main ac4e34de2331dce276440df8969883c1883060ef clean |
 | 实现目标 | 70af7b45814d5ed31d9638649512358e1a0a834b |
-| 实现范围 | experiments/bounded-reads, plans/b01-bounded-reads, docs/evidence/b01, apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts |
+| 实现范围 | apps/server/src/m2-workspace.ts, apps/server/src/m2-workspace.test.ts, experiments/bounded-reads |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 已修复workspace历史扫描，8项PG回归通过 |
-| 下一可用交付 | 实现独立审查已通过，修后正式短测通过，等待after证据复核与接收 |
+| 下一可用交付 | 代码与after证据均已批准，等待Execution Lead接收main |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 实现target70af7b4；修后性能证据待复核 |
+| Review | [review.md](review.md)，APPROVED 实现target70af7b4及after证据SHA256437262b7 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | B01-01 | completed | b01_bounded_reads | [首轮结果](../../docs/evidence/b01/initial-results.json)：23检查通过、临时资源清理；候选8组等价、已交具体修复 |
 | B01-04 | completed | b01_bounded_reads | 实现70af7b4已审；8/8功能，after23检查/8.887秒通过 |
-| B01-02 | completed | mika / b01_bounded_reads | [APPROVED target70af7b4](review.md)，独立8/8；after性能证据另复核 |
+| B01-02 | completed | mika / b01_bounded_reads | [APPROVED target70af7b4](review.md)，独立8/8；after样本/hash/清理已独立复核 |
 | B01-03 | pending | Execution Lead | 未集成 |
 
 ## 检查、风险与下一步
 
-领取回执 claimId 827ff1f2-bb11-45c3-824c-4ce63ab39a55 / version 2；2026-10-06T03:38:42.747Z amend 已提交。继续实现有界测量。API 消费者证据不代表 UI；128 合成任务不代表 128 agent。架构影响：内部projection读取改为per-task前缀游标；公共API/FSM/表结构/DB连接与外部依赖不变。dashboard固定架构数据待Execution Lead核实是否需同步中心投影说明与源码基线target（apps/server/src/m2-workspace.ts）；不将分支当main。
+领取回执 claimId 827ff1f2-bb11-45c3-824c-4ce63ab39a55 / version 2；2026-10-06T03:38:42.747Z amend 已提交。分支实现和证据已交付。API 消费者证据不代表 UI；128 合成任务不代表 128 agent。架构影响：内部projection读取改为per-task前缀游标；公共API/FSM/表结构/DB连接与外部依赖不变。dashboard固定架构数据待Execution Lead核实是否需同步中心投影说明与源码基线target（apps/server/src/m2-workspace.ts）；不将分支当main。
 
 ## Dashboard 同步
 
@@ -57,14 +57,18 @@
 
 ## 当前交付与handoff
 
-实现target 70af7b45814d5ed31d9638649512358e1a0a834b 已由mika独立APPROVED，claimv2保留。修后正式短测待Web计时窗口结束，8项功能与类型检查已通过；实现review已APPROVED；尚未修后性能证据复核/main集成。没有新用户决定。
+实现target 70af7b45814d5ed31d9638649512358e1a0a834b 已由mika独立APPROVED，claimv2保留。8项功能与类型检查已通过；修后正式短测已完成，代码与after证据均已APPROVED；尚未main集成。没有新用户决定。
 
 ## 2026-10-06T03:45Z 独立review交付
 
-mika逐一核写入锁/cursor前缀并独立8/8功能复跑，APPROVED实现70af7b4，0 findings；原始stdout已复制入本任务evidence。owner本次仅更新review/status/证据metadata。修后正式性能短测仍待Web计时窗口，claim保留不release。
+mika逐一核写入锁/cursor前缀并独立8/8功能复跑，APPROVED实现70af7b4，0 findings；原始stdout已复制入本任务evidence。owner本次仅更新review/status/证据metadata。该时点尚待Web计时窗口；后续03:46Z已完成且03:49Z已通过证据复核，claim保留不release。
 
 ## 2026-10-06T03:46Z 修后性能交付
 
 [after-results.json](../../docs/evidence/b01/after-results.json)：03:46:01.332Z–03:46:10.218Z，23命名检查/exit0/47,496,555bytes；全部五个临时DB/HTTP/pool已清理。source748df2d相对实现70af7b4只有metadata。128×128空workspace HTTP p50/p95/p99=5.569/6.121/6.298ms，1×16384为3.619/4.084/4.203ms（各n50）；主机背景负载不同，差额不作为净因果倍数/SLO。真实生产查询长历史全扫描已改为零行索引探测。
 
-已向mika发送after证据复核与交付请求；实现已APPROVED，当前待最终证据复核/Execution Lead main接收。claimv2保留，未release。
+已向mika发送after证据复核与交付请求；实现已APPROVED，after证据已获mika独立APPROVED，当前只待Execution Lead main接收。claimv2保留，未release。
+
+## 2026-10-06T03:49Z 最终证据复核
+
+mika独立核7个sourceFiles hash与source748df2d/实现70af7b4/工作树一致，重算4组workspace的n50分位数全部匹配；23检查、分页总数129/2064/16512/16385、真实INSERT索引计划及5库清理均核实。APPROVED after证据，未重跑性能；JSON SHA256为437262b7c5df5a68a554a3ac9c8ec05d258132f5019545d77712ceac75aa829d。当前可接收实现70af7b4及后续证据metadata；独占claimv2仍保留。实现范围字段仅列实际代码/测量入口，plan/docs为证据metadata不参与实现过期判定。

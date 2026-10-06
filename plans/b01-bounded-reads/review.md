@@ -2,7 +2,7 @@
 
 结论：**APPROVED**（实现与测量方法）；Reviewer：mika / gpt-6-astra ultra。2026-10-06T03:45Z由mika独立只读review消息回传，owner按原结论登记，不代表owner自审。
 
-Target：`70af7b45814d5ed31d9638649512358e1a0a834b`；base：`edee6b1c5d74c2ee46ec98bab2844579db6a00c4`；权威worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance`，branch `codex/bounded-read-performance`。后续metadata `c0f498aff201e9d79d7b98acd81c66b669b558fa`只更新计划记录，不变实现。审查范围为B01-01测量方法和B01-04 workspace局部实现；不以此批准尚未执行的修后性能结果或main集成。
+Target：`70af7b45814d5ed31d9638649512358e1a0a834b`；base：`edee6b1c5d74c2ee46ec98bab2844579db6a00c4`；权威worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/bounded-read-performance`，branch `codex/bounded-read-performance`。后续metadata `c0f498aff201e9d79d7b98acd81c66b669b558fa`只更新计划记录，不变实现。审查范围为B01-01测量方法和B01-04 workspace局部实现；after结果随后已独立复核批准（下节）；main集成仍由Execution Lead记录。
 
 ## 实际检查
 
@@ -17,6 +17,8 @@ Blocking findings：0。Nonblocking findings：0。无需review修复commit。Ow
 
 ## 限制与后续复核
 
-实现APPROVED不替代修后正式性能短测。等待Web计时窗口结束，在同一固定实现上跑有界after结果；mika再核最终证据范围即可，不因metadata或结果文件新增无故重跑已通过的同套行为测试。仍不声称全局O(1)、无锁等待、UI性能、模型并发容量或SLO。Main集成由Execution Lead记录。
+修后正式性能短测已于2026-10-06T03:46:01.332Z–03:46:10.218Z完成。mika于03:49Z回传after证据 **APPROVED**：逐一核7个sourceFiles hash与sourceCommit748df2d、已审70af7b4和工作树一致；独立重算4组workspace n50的p50/p95/p99全部匹配；23检查全pass，分页数129/2064/16512/16385齐全，真实INSERT长历史索引返回零行，五库cleanup明确。未重复性能运行。原始[after-results.json](../../docs/evidence/b01/after-results.json) SHA256：`437262b7c5df5a68a554a3ac9c8ec05d258132f5019545d77712ceac75aa829d`。
+
+代码与after证据均批准，仍不声称全局O(1)、无锁等待、UI性能、模型并发容量或SLO。Main集成由Execution Lead记录。当前追加的是metadata收尾，不改变已审代码与原始结果。
 
 可复制复审入口：先核worktree/base/head/dirty与claimv2，确认实现文件相对70af7b4未变化；读新增after结果、原始采样/资源/版本/hash与报告，检查限制未被移除。若有产品代码变化，绑定新target并按影响重新审查。

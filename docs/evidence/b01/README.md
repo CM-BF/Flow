@@ -13,7 +13,7 @@
 
 ## 初轮本机耗时
 
-各单元格为预热样本 n=50 的 p50 / p95 / p99（ms，nearest rank）；p99即最大样本，不能解释为稳定尾延迟。每个端点的首次请求单列原始JSON；PG/OS缓存未清空，没有物理冷缓存结论。初轮loadavg 13.67/10.79/9.27，背景负载较高且与Web队窗口尚待核对，绝对时延不可当SLO。
+各单元格为预热样本 n=50 的 p50 / p95 / p99（ms，nearest rank）；p99即最大样本，不能解释为稳定尾延迟。每个端点的首次请求单列原始JSON；PG/OS缓存未清空，没有物理冷缓存结论。初轮loadavg 13.67/10.79/9.27，背景负载较高，Web队已确认该时段存在功能浏览器背景噪声，绝对时延不可当SLO。
 
 | 合成任务×每任务事件 | snapshot | events首100条 | workspace追平后的空页 |
 | --- | --- | --- | --- |
@@ -26,7 +26,7 @@
 
 `apps/server/src/m2-workspace.ts` 的projectCommittedEvents更新查询在已追平后仍扫描全timeline和feed：128任务场景扫描16,384 timeline行+16,512 feed行，EXPLAIN实际6.713ms；单任务长历史空HTTP页仅470bytes，仍扫描16,384+16,385行、6.788ms。LIMIT200只约束投影插入数量，没有约束为寻找缺口而扫描的历史量。原始EXPLAIN ANALYZE/BUFFERS计划在JSON中。
 
-候选只使用现有索引和事务：每task通过 `(task_id,task_cursor)` 索引倒序取得最后投影cursor，再通过timeline主键按 `cursor > projected.task_cursor` 读最多200条；保留最终全局排序/总LIMIT200、投影锁及acceptance先于output。没有全局source sequence/createdAt高水位。候选已在受控窗口完成8组结果等价检查，现已按同样查询应用局部产品修复；分支功能测试通过，修后HTTP性能复测与独立代码review已完成，after证据复核/main集成另记。
+候选只使用现有索引和事务：每task通过 `(task_id,task_cursor)` 索引倒序取得最后投影cursor，再通过timeline主键按 `cursor > projected.task_cursor` 读最多200条；保留最终全局排序/总LIMIT200、投影锁及acceptance先于output。没有全局source sequence/createdAt高水位。候选已在受控窗口完成8组结果等价检查，现已按同样查询应用局部产品修复；分支功能测试通过，修后HTTP性能复测与独立代码review已完成，after证据复核也已批准，main集成另记。
 
 安全前提：现有events、commands、reconciliation和protocol-dispatch写timeline都在同task行锁内分配cursor并提交；同task较大cursor不会先于较小cursor提交。投影批次按每task cursor递增，因而已投影为前缀。跨task晚提交仍由各自独立cursor发现。交付前必须原样跑晚提交A/B、201task及并发投影回归，并新增同task锁/200事件边界证明。人工绕过行锁补写较小cursor不在该前提内，应明确而不是静默忽略。
 
@@ -34,7 +34,7 @@
 
 ## 当前边界
 
-产品局部修复已在分支通过功能回归，已获mika独立APPROVED，修后性能复测已完成，尚未集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。架构无产品变更。
+产品局部修复已在分支通过功能回归，已获mika独立APPROVED，修后性能复测已完成，尚未集成；独立review/main集成分别见[status](../../../plans/b01-bounded-reads/status.md)/[review](../../../plans/b01-bounded-reads/review.md)。没有真实模型容量、并发执行压测、跨机网络或UI性能证据。公共接口与FSM不变，内部workspace投影读取算法已改变。
 
 ## 候选对比与功能修复进展
 
@@ -64,3 +64,5 @@
 第二轮基线loadavg 5.57→5.73，after 3.77→4.57；虽避开Web正式计时窗口，仍有其他功能工作，两轮不是严格随机交替A/B。不能把HTTP差额全部归因于本修复，也不宣称SLO或容量。查询形状和功能回归提供因果依据，局部HTTP样本仅量化本机观察。snapshot/events查询未改，全部原始样本保留；例如after 1×128 snapshot p99=10.348ms，显示短样本仍有背景抖动，没有隐藏不利样本。
 
 此次资源：PID77562，临时DB名和动态端口见after.resources，全部dropped=true。没有读取用户文件、调用模型或改动现有预览服务。无需无依据扩大或重复全库测试。
+
+最终证据复核：mika已独立校验7个sourceFiles hash、4组workspace原始样本分位数、完整分页计数与五库清理，APPROVED after证据；JSON SHA256 `437262b7c5df5a68a554a3ac9c8ec05d258132f5019545d77712ceac75aa829d`。没有为此重复性能运行。
