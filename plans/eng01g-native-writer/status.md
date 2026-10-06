@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 12:30:22 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-06 12:33:22 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -15,7 +15,7 @@
 | 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 实现目标 | 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d |
-| 实现范围 | apps/runner/src/engineering/native-policy.test.ts, apps/runner/src/engineering/native-policy.ts, apps/runner/src/engineering/native-writer.test.ts, apps/runner/src/engineering/native-writer.ts, apps/runner/src/native-harness.test.ts, apps/runner/src/native-harness/codex/evidence.ts, apps/runner/src/native-harness/codex/exchange.test.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, docs/evidence/eng01g, plans/eng01g-native-writer |
+| 实现范围 | apps/runner/src/engineering/native-policy.test.ts, apps/runner/src/engineering/native-policy.ts, apps/runner/src/engineering/native-writer.test.ts, apps/runner/src/engineering/native-writer.ts, apps/runner/src/native-harness/codex/evidence.ts, apps/runner/src/native-harness/codex/exchange.test.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts |
 | 检查状态 | PASSED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d；105 distinct分轮，types0；[manifest](../../docs/evidence/eng01g/fixed-manifest.json) |
 | 已集成main状态 / HEAD | 已集成 / 557397e9f756bfd9500107d7c1d1ce0ae65f7906；[逐文件回执](../../docs/evidence/eng01g/main-receipt.json) |
 | 阶段 | M2 |
@@ -25,7 +25,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED 8f067b4b7a7acf3506ebcea08e8724cfa9baaf7d |
-| Claim | f7a3d631-5b1f-46eb-82b1-731cb6c18e17 v1，11 literal；本metadata提交后停止全部写入并release，最终回执由Lead登记 |
+| Claim | 原 f7a3d631-5b1f-46eb-82b1-731cb6c18e17 v2 RELEASED，11 literal已全部交回；本次只领status纠正事实范围，提交后release |
 | 架构影响 | 提取单Codex exchange给ordinary和工程writer；固定target交Lead同步架构，原runtime/中心/旧profile不改 |
 
 | TODO ID | 状态 | Owner | 证据 |
