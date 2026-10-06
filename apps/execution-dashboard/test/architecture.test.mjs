@@ -155,7 +155,10 @@ test('package artifacts and message renderers are modules without product activa
   for(const path of ['apps/web/src/App.tsx','apps/web/src/conversations/ConversationThread.tsx','apps/web/src/plugin-integration/session.ts']) assert.doesNotMatch(source(path),/data-renderers|ConversationDataRenderers/);
   const contracts=source('packages/contracts/src/conversations.ts');
   assert.match(contracts,/liveAssistantText: false/); assert.match(contracts,/steer: false/);
-  for(const path of ['apps/server/src/conversation-activity/index.ts','apps/server/src/native-assistant-stream/index.ts']) assert.throws(()=>execFileSync('git',['cat-file','-e',`${baseline.commit}:${path}`],{stdio:'pipe'}));
+  // CHAT05's actual module path is known; CHAT06 has no fixed module path at this baseline.
+  assert.throws(()=>execFileSync('git',['cat-file','-e',`${baseline.commit}:apps/server/src/native-activity/index.ts`],{stdio:'pipe'}));
+  const fixedFiles=execFileSync('git',['ls-tree','-r','--name-only',baseline.commit],{encoding:'utf8'}).split('\n');
+  assert.ok(!fixedFiles.some(path=>/^packages\/storage\/migrations\/(020|022)-/.test(path)));
   const modules=views.find(view=>view.id==='modules');
   assert.match(modules.nodes.find(node=>node.id==='packages').locality,/不解压\/install\/import\/scripts\/enable/);
   assert.match(modules.nodes.find(node=>node.id==='renderers').subtitle,/App尚未接/);

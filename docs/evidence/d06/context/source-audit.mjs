@@ -37,7 +37,8 @@ const sourceFiles = [...new Set(views.flatMap(view => view.nodes.map(node => nod
   const source = read(path);
   return { path, sha256: createHash('sha256').update(source).digest('hex'), lines: source.split('\n').length };
 });
-const absent = ['apps/server/src/conversation-activity/index.ts', 'apps/server/src/native-assistant-stream/index.ts'];
+// CHAT05 uses native-activity. CHAT06 is evidenced by its contract and migration, not a guessed module path.
+const absent = ['apps/server/src/native-activity/index.ts'];
 for (const path of absent) assert.throws(() => execFileSync('git', ['cat-file', '-e', `${baseline.commit}:${path}`], { stdio: 'pipe' }));
 const allFiles = execFileSync('git', ['ls-tree', '-r', '--name-only', baseline.commit], { encoding: 'utf8' }).split('\n');
 assert.ok(!allFiles.some(path => /^packages\/storage\/migrations\/(020|022)-/.test(path)));
