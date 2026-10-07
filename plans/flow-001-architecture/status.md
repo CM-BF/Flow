@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:28:02.278569+00:00 / main9f0fe5b2已推；R4归还，旧后台v19停止接新任务，精确未决记录处置准备中 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:50:56.237072+00:00 / mainae850已推；个人7d1/6c更新与恢复已实际完成，限定结果待独审封存 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin9f0fe5b2已接三插件片段及R2/R3/R4限定证据；个人后台仍af51、draining/v19，未refresh/resume。Web资产d629/v3、7d1宿主及原会话保留。 |
+| 已集成main状态 / HEAD | main/originae850；个人后台已使用固定7d1/6c产物、accepting/v21。Web资产d629/v3、旧会话/排队/配置保留；原排队任务在resume后自然running。完整领取ACK关联UNKNOWN。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新兼容读取已通过；个人旧后台暂时停止接新任务，持久未决领取记录已定位，正在准备受审处置。 |
-| 下一可用交付 | 核清未决领取记录与中心事实，按同一维护操作恢复用户接单或完成固定后台更新。 |
-| 当前阻塞 | ACTIVE: 个人后台的持久未决领取记录阻止实际接单；原owner正准备精确处置与恢复，排队任务和历史不得丢弃。 |
+| 当前产出 | 个人后台已更新并恢复接单，原排队任务自然转为运行；旧会话、配置和页面版本保留。 |
+| 下一可用交付 | 完成新版聊天界面与当前后台的实际联动，让用户使用已合入的恢复与消息设置能力。 |
+| 当前阻塞 | ACTIVE: 工程写入资格仍待既有用户选择；个人更新阻塞已解除，其余聊天验证继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -233,3 +233,7 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 2026-10-07T12:27:52.330992+00:00：SVC06前置调用r1漏输出参数，在snapshot/SQL前51ms退出，0个人读写/迁入；原失败35e22b6b经native限定APPROVED_PRECONDITION_FAILURE_FIDELITY，不改历史。修正为原facts入口的独占输出路径，新有限段沿[同一窗口记录](../../docs/quality/local-validation-svc06-personal-window-20261007.json)继续原一次迁入/发布授权；原5c29产品和root7524固定，非重放已消费个人操作。完整结果由原owner归档。
 
 2026-10-07T12:37:26.141032+00:00：SVC06新段12:35:37.013013Z归还；已实际迁入7d1/替换独立Web宿主/导入3报告及策略，旧后台与d629/v3仍保持。随后旧列历史摘要调用在模块静态链接时失败（62ms/0SQL）；尚未bootstrap/drain/refresh/resume。唯一owner封原[分阶段结果](../../../backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json)，只修观察调用并做0PG加载检查；无heavy预占，后续只接未消费维护阶段，不重放已完成副作用。
+
+## 2026-10-07 13:48 UTC：个人更新实际收尾
+
+个人后台已更新并恢复接单；原queued用户任务在既存最终快照中自然running。完整领取ACK关联仍UNKNOWN，不完成整体FLOW验收。实际时间、保留边界与原件链接见[OPS本次收尾](../ops-001-status-review/status.md#2026-10-07-1348-utc个人更新实际收尾)及[SVC06唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)，不另复制全部技术回执。

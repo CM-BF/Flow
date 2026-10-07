@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T13:46:09.299320+00:00",
-  "state": "RESERVED_FIXED_REVIEWED_HELD_CONTINUATION_NOT_STARTED",
+  "at": "2026-10-07T13:50:15.166538+00:00",
+  "state": "RETURNED_UPDATED_ACCEPTING_ACTUAL_CLAIM_ACK_UNKNOWN",
   "window": "svc06-personal-7d1-held-20261007-1347",
   "operator": "assignment_review",
   "coLead": "astra_ultra_execution_lead",
@@ -148,5 +148,51 @@
     "R4 bootstrap/drain"
   ],
   "continuationPlanSha256": "4f2f287976681c3b967f059ad4b6ad6df8e4096784733983694c24148c4ec1a1",
-  "actual": "NOT_STARTED"
+  "actual": {
+    "startedAt": "2026-10-07T13:47:33.200098Z",
+    "deadline": "2026-10-07T14:02:33.200098Z",
+    "wrapperPid": 24253,
+    "freeBeforeBytes": 21645111296,
+    "freshPins": 71,
+    "baselines": 4,
+    "claims": "SVC06 v9 / helper037f v2",
+    "root": "ae8500dd534a8ba18673a078c8563f4e3c13034e clean",
+    "freshNamespaceAbsent": true,
+    "result": "RESUMED_AND_OBSERVED",
+    "operatorMs": 75906,
+    "operatorExit": 0,
+    "termination": "Outer24324 and seven phase direct PIDs absent/dualEOF/no signals; detached new personal services preserved",
+    "completed": [
+      "fresh",
+      "hold-stop",
+      "retire",
+      "refresh",
+      "paused",
+      "resume",
+      "final"
+    ],
+    "runnerState": "accepting",
+    "runnerVersion": 21,
+    "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "oldGroupsAbsent": [
+      78240,
+      99312,
+      89438
+    ],
+    "newServicePids": {
+      "center": 46474,
+      "runner": 55337,
+      "web": 55432
+    },
+    "naturalUserWork": "Original queued task c8a0e95d-d84a-4e96-aef7-3384fbbe5291 now running; new attempt7525db4b-a383-413a-be8f-c3c512048ccf for original runner. No operator task/claim/query.",
+    "actualClaimRecovery": "UNKNOWN: complete requestId/center receipt/local assignment correlation not collected",
+    "originalIntentOutcome": "UNKNOWN; retirement is not an ACK",
+    "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1",
+    "review": "Raw sealing; independent actual fidelity review pending"
+  },
+  "returnedAt": "2026-10-07T13:48:49.163Z",
+  "sourceFreezeRelease": {
+    "at": "2026-10-07T13:50:15.166241+00:00",
+    "reason": "Actual maintenance returned with all operator/phase direct PIDs absent. New backend runs fixed artifact6c; no developer checkout pin required for service. Preserve new active user work."
+  }
 }
