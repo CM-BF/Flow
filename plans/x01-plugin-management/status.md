@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:50:53.042346+00:00 |
+| 最近更新时间 | 2026-10-07T11:53:57.304767+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -381,3 +381,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:49:18.967503+00:00：仅父范围metadata封存。routes.ts于11:37:21.075461Z STOP，v26→v27原子amend于11:37:21.188Z移出唯一literal；[正式回执](../../docs/evidence/x01/removal-routes-handback-receipt.json)。新X01-REMOVAL-REFERENCES01已在独立plugin-removal-references树由claim04e46691 v1接收，[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/plans/x01-removal-references/status.md)。原HOST固定source/actual/intake均不变，当前Original按三片索引受控接收中，本owner未据通知冒称已经main。旧树不恢复routes写权。
 
 2026-10-07T11:49:53.193598+00:00：只读正式main回执 docs/evidence/i02/x01-candidates-combined-intake.json，HOST+ACK+consumer已受控接收。原三片接收索引保原时间快照/bytes，不追写历史或重复检查。REMOVAL独立交审准备不混入原HOST产品/输入。
+
+2026-10-07T11:53:57.304501+00:00：X01-VERSION-LIFECYCLE01唯一接收入口：[main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/docs/evidence/x01-version-lifecycle/main-intake.json)，[子片status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/plans/x01-version-lifecycle/status.md)。固定交付fe8a15fb2cebfe512c2d62acabad0c87e47929e7；source201674/resultf09fd4a7，11:36:37结果独审0P1/P2，实际1/1且资源RETURN，main待接收。仅链接权威子片，不复制TODO，原三片索引保持原字节。
