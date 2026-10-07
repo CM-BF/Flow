@@ -1,6 +1,6 @@
 {
-  "state": "SOURCE_PROVISIONED_AND_TAKEN_WAITING_OWNER_SLOT",
-  "at": "2026-10-07T03:06:20.388297+00:00",
+  "state": "SOURCE_READY_REGISTRY_INTAKE_READY_NOT_OBSERVED_LOADED",
+  "at": "2026-10-07T03:19:25.748203+00:00",
   "taskId": "WPF-DASHBOARD-TIMING01",
   "parentTask": "D01",
   "owner": "w01_owner",
@@ -25,7 +25,15 @@
   "sourceProvision": "provision-actual.json",
   "take": "take-receipt.json",
   "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
-  "dispatch": "Root wakes W01 after manager becomes idle to retain global cap10. First initialize sole canonical trio then implement exact six scopes from fixed main and timing rules. No DPERF source carry. Local tests after ACCESS segment actual cleanup; no PG/Chrome grant.",
-  "startTime": "Owner will record first actual work using UTC clock; claim timestamp is not task start.",
-  "registry": "Original Lead registers unique status after first canonical trio. No actual loaded claim yet."
+  "dispatch": "Owner completed source and parser, now idle. No additional writer or rerun requested.",
+  "startTime": "2026-10-07T03:07:53.024Z",
+  "registry": "Exact owner request already present and ready for Original Lead normal canonical intake; no successful direct delivery or actual dashboard load claimed.",
+  "currentOwnerHead": "156b49d33d08a0d47521f8a231684050d648f9c2",
+  "firstCanonical": "f23c70ce99fb3b59d0707d09d332038a3a6ec6a4",
+  "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "dirty": false,
+  "completion": "NOT_COMPLETED",
+  "sourceReview": "../current-product-checkpoint-20261007/timing-source-parser-review.json",
+  "checks": "81/81 parser actualexit0, scoped root approved; browser/main/deployment NOT_RUN",
+  "registrationRequest": "owner-registration-request.json"
 }

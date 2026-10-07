@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-07T03:19:25.748203+00:00",
+  "scope": "Necessary management receipt only; no products/main/4320/personal/resource sampling",
+  "timing": {
+    "state": "SOURCE_READY_REGISTRY_INTAKE_READY_NOT_OBSERVED_LOADED",
+    "at": "2026-10-07T03:19:25.748203+00:00",
+    "taskId": "WPF-DASHBOARD-TIMING01",
+    "parentTask": "D01",
+    "owner": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+    "branch": "codex/dashboard-task-timing",
+    "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+    "sourceFiles": 37,
+    "sourceBytes": 572960,
+    "claim": {
+      "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+      "version": 1,
+      "scope": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/src/status.mjs",
+        "apps/execution-dashboard/test/status-timestamps.test.mjs",
+        "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "docs/evidence/wpf-dashboard-task-timing",
+        "plans/wpf-dashboard-task-timing"
+      ],
+      "committedAt": "2026-10-07T03:04:19.087Z"
+    },
+    "sourceProvision": "provision-actual.json",
+    "take": "take-receipt.json",
+    "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
+    "dispatch": "Owner completed source and parser, now idle. No additional writer or rerun requested.",
+    "startTime": "2026-10-07T03:07:53.024Z",
+    "registry": "Exact owner request already present and ready for Original Lead normal canonical intake; no successful direct delivery or actual dashboard load claimed.",
+    "currentOwnerHead": "156b49d33d08a0d47521f8a231684050d648f9c2",
+    "firstCanonical": "f23c70ce99fb3b59d0707d09d332038a3a6ec6a4",
+    "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
+    "dirty": false,
+    "completion": "NOT_COMPLETED",
+    "sourceReview": "../current-product-checkpoint-20261007/timing-source-parser-review.json",
+    "checks": "81/81 parser actualexit0, scoped root approved; browser/main/deployment NOT_RUN",
+    "registrationRequest": "owner-registration-request.json"
+  },
+  "quick": {
+    "ownerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "clean": true,
+    "strict": "PASS",
+    "direct": "26/26 PASS",
+    "review": "local-results-review.json",
+    "browser": "NOT_RUN",
+    "cumulativeMs": 5119,
+    "remainingMs": 24881
+  },
+  "recovery": {
+    "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+    "serialization": "old negative + new10 assertions PASS",
+    "review": "local-results-review.json",
+    "ownerReceipt": "Original owner will archive at safe point; manager does not write its status",
+    "browserRemainingMs": 51635.949333,
+    "browser": "previous FAILED preserved; no rerun"
+  },
+  "access": {
+    "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+    "ownerHeadObserved": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+    "dirty": false,
+    "direct": "35/35 PASS source+direct independently approved",
+    "browser": "FAILED 4/5 completed, fifth interrupted by caller scan ENOENT; product failure not established",
+    "actualExit": 1,
+    "actualOuterElapsedMs": 7480.106875067577,
+    "remainingBrowserMs": 52519,
+    "cleanup": "later exact owned absence/CDP refusal/scratch absent accepted; original exceptional EOFfalse/signal PermissionError retained",
+    "sharedWindow": "returned to Mika; no automatic second run",
+    "caller": "Original owner fixing smallest temporary runner; no product implementation change inferred",
+    "reviews": [
+      "access-source-direct-review.json",
+      "access-first-browser-review.json"
+    ],
+    "deployment": "NOT_RUN; registry183 live/current is only source registration"
+  },
+  "d04": {
+    "source": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+    "checks": "5/5 pureGit actually passed and root scoped accepted",
+    "pgCliIntegration": "NOT_RUN",
+    "mainRequest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/docs/evidence/d04/owned-worktree-lifecycle/main-intake.json"
+  },
+  "d06": {
+    "head": "9fb9ad57ec4a5deb71ac107e0b4bd2d7d0dd55ce",
+    "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+    "direct22": "NOT_RUN",
+    "entry": "node --test apps/execution-dashboard/test/architecture.test.mjs",
+    "staticObservation": "Entry imports server -> aggregate/ledger -> pg8.23.1; cannot call dependency-free. Reads Git fixed0da objects, own loopback static server. No runtime/package resolver executed; full readiness not claimed.",
+    "next": "Deferred at global slot safety point; no long preparation or duplicate packet."
+  }
+}

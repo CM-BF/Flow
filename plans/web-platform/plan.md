@@ -39,7 +39,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
 | U12 领取与跨Lead协作重申（root准确转述，压缩重申U08，非用户逐字） | take工作在dashboard标清、跨lead防overlap | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
 | U13 本机登录入口（GO经root准确转述，非逐字） | 4320提供打开Flow及按需掩码显示/复制登录凭据；真实本机安装验收 | [独立入口请求](../../docs/evidence/web-platform/dashboard-local-access-intake/request.json)；显式local-installation限定、可信固定来源，token不进日志/URL/聚合/Git；唯一operator恢复和发布，不代用户登录/刷新聊天 |
-| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)未实施 |
+| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)已由独立Timing源码72a实施/81parser获审，浏览器与发布另验 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 

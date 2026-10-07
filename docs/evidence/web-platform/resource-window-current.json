@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T03:06:47.197471+00:00",
-  "state": "WEB_LOCAL_SEGMENTS_COMPLETED_NO_HOLDER",
-  "groupWindowOwnership": "Web initial Quick→Recovery→D04 segment and subsequent ACCESS synthetic35 local segment both completed with owned cleanup. Web holder/gate/reservation null/null/false; no heavy/Chrome grant.",
+  "recordedAt": "2026-10-07T03:19:25.748203+00:00",
+  "state": "ACCESS_FIRST_BROWSER_FAILED_CLEANED_RETURNED",
+  "groupWindowOwnership": "ACCESS first isolated Chrome attempt ended exit1; exact later owned cleanup accepted and heavy window returned to Mika. Caller local repair belongs to ACCESS owner; manager starts no checks or new reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,12 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T03:06:20.388297+00:00",
-    "kind": "ACTUAL_WEB_LOCAL_SEGMENT_RETURNED_AND_TIMING_TAKEN",
-    "summary": "Quick strict+26direct、Recovery旧反例/新10断言、D04pureGit5均实际通过并清理；Timing37输入已供给与9a677 v1六scope已take，等待manager idle换W01。ACCESS源1e4/e7ca固定，原Lead回执03:04:03 snapshot183已实际登记live/current，仅implementation，按钮尚未发布。",
-    "source": "local-segment-20261007/segment.json",
-    "timing": "dashboard-task-timing-provision/current-intake.json",
-    "accessActual": "dashboard-local-access-intake/direct-owner-receipt.json"
+    "at": "2026-10-07T03:19:25.748203+00:00",
+    "kind": "CURRENT_RESULTS_AND_TIMING_SOURCE_READY",
+    "source": "current-product-checkpoint-20261007/intake.json",
+    "summary": "Timing source+81parser获审，唯一登记请求已存在待Lead正常接收；Quick c2/Recovery序列化/D04pureGit实际获审；ACCESS browser4/5后callerENOENT中断，资源清理归还，余52519ms未二跑。D04正常main接收入口已备，PG/CLI未跑。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1058,8 +1056,8 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "LOCAL_CHECKS_COMPLETE_BROWSER_VALIDATION_PENDING",
-    "priority": "Quick c2 and Recovery serialization actual results awaiting independent receipt. Browser b1 requires its own current evidence/boundary and heavy admission; Recovery remaining same-origin browser keeps old failures and remaining <=51635ms incl15s cleanup. D04 pureGit5 passed, PG/CLI not rerun. ACCESS synthetic35 local segment also passed/cleaned; actual installation/Chrome/publish remain pending.",
+    "state": "SOURCE_READY_BROWSER_AND_INTEGRATION_PENDING_NO_RESERVATION",
+    "priority": "ACCESS caller repair; Timing isolated browser pending; Quick/Recovery actual local results accepted, original browser budgets preserved. D04 normal scoped main intake ready, PG/CLI not rerun. D06 follow-up deferred, no manager local run.",
     "gate": null
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1296,16 +1294,16 @@
     "runtimeOrDomainApproval": false
   },
   "quickControlsPreparation": {
-    "state": "C2_TYPES_DIRECT_PASSED_RESULT_REVIEW_PENDING",
+    "state": "C2_TYPES_DIRECT_SCOPED_APPROVED_BROWSER_NOT_RUN",
     "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
-    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
-    "actualEvidence": "local-segment-20261007/report.md",
+    "currentOwnerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+    "actualEvidence": "current-product-checkpoint-20261007/local-results-review.json",
     "sourceSupplyReceipt": "message-settings02-c1-actual/lead-source-provision-receipt.json",
     "nextPreparationReview": "message-settings02-c1-actual/root-c2-static-preparation-review.json",
     "cumulativeMs": 5119,
     "remainingMs": 24881,
     "cleanupMs": 5000,
-    "direct": "26/26 PASS actual outer0; root evidence review pending",
+    "direct": "26/26 PASS independently accepted",
     "grant": false,
     "gate": null,
     "reservation": false

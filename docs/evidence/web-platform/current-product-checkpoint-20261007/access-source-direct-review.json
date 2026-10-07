@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-07T03:09:38.667063+00:00",
+  "reviewer": "/root independent",
+  "target": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadataObserved": "058b3f6f754abf2a7e0d6f0d582701f9240ffb2d",
+  "decision": "APPROVED_SCOPED_SOURCE_AND_35_DIRECT_BROWSER_AND_DEPLOYMENT_PENDING",
+  "errors": [],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4446,
+      "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "bytes": 7687,
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 8840,
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "bytes": 6064,
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "bytes": 1315,
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "bytes": 10492,
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "bytes": 7938,
+      "sha256": "748654ea07cf814665dffd582463ffb872feb596a92ccaea67990423d22d9f68",
+      "currentEqualsFixed": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "ACCESS-R1",
+      "severity": "P2",
+      "state": "CLOSED",
+      "description": "Visible dialog and README now explain owner token as this Flow installation management credential, distinct from Claude/Codex subscriptions."
+    },
+    {
+      "id": "ACCESS-R2",
+      "severity": "P2",
+      "state": "CLOSED",
+      "description": "README now distinguishes server file ownership validation from HTTP caller OS identity; local native processes can forge headers. No new authentication platform added."
+    }
+  ],
+  "reviewed": "Explicit opt-in and bounded no-follow descriptor read; directory identity and config binding; strict loopback Host/Origin/fetch gates; safe error projection before generic server catch; no credentials in public metadata/aggregation; DOM text and generation/abort/visibility cleanup; keyboard/native dialog and themes; isolated synthetic tests and browser fixture source.",
+  "actualChecks": {
+    "tests": 35,
+    "passed": 35,
+    "failed": 0,
+    "skipped": 0,
+    "actualExit": 0,
+    "parentElapsedMs": 184.53429103828967,
+    "nodeDurationMs": 118.73075,
+    "cleanup": "owned group absent, own scratch removed, no recorded errors",
+    "evidenceHashes": [
+      {
+        "path": "result.json",
+        "bytes": 626,
+        "sha256": "6da782733994e3798d64ba5fd929eb82b2532cf348bc9b9e2f3fd083140f6e13"
+      },
+      {
+        "path": "node.log",
+        "bytes": 2591,
+        "sha256": "5fd7f7b615b6f109a8ccc15ced7d2bc71fad56198ec13fd1f27939735592bd7e"
+      }
+    ]
+  },
+  "limits": [
+    "No application checks rerun by reviewer.",
+    "Native browser/clipboard/theme screenshots not yet executed.",
+    "Direct suite exercises new module/HTTP with synthetic configuration, not entire server mount, actual private installation, or deployed4320.",
+    "Local-only opt-in is not OS-user/process authentication.",
+    "No main integration, publication, user login or personal-service change approved by this review."
+  ],
+  "cleanCode": "Reviewed naming, single-purpose credential module and UI lifecycle, bounded error handling, small backward-compatible server seam, no unnecessary framework/store or launcher dependency."
+}
