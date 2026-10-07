@@ -2,6 +2,8 @@
 
 状态：NOT_STARTED；当前仅部署/retained3文档候选待独审，原产品批准保留于下段。
 
+Review target commit: ad77c8aa21d88540a890b22562e8bbb2ce56e541
+
 当前审查说明：只核deployment-candidate三份方案/输入及scope、保存事实、运行/回退边界；不得启动服务、测试或探测个人端口。候选没有可执行新入口，当前仅plan/evidence写权。
 
 ## 原连接修复（已批准，未改）

@@ -19,11 +19,11 @@
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
-| Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0 |
-| Head | 086ba13dc0b284d04dbc3753c66471bf6012328a；其后仅证据/状态固定 |
-| 工作树dirty状态 | 仅本scope记录封存；固定交付后核clean |
+| Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本次docs续接2f6ea9c8117c8b705548bcd1a216a5cf640fac44 |
+| Head | ad77c8aa21d88540a890b22562e8bbb2ce56e541；当前docs候选，其后只固定审查metadata |
+| 工作树dirty状态 | 仅自身候选与metadata；本次固定交付后核clean |
 | 工作分支状态 | review；部署候选文档待独审，已审产品停写 |
-| 实现目标 | 086ba13dc0b284d04dbc3753c66471bf6012328a |
+| 实现目标 | ad77c8aa21d88540a890b22562e8bbb2ce56e541 |
 | 实现范围 | docs/evidence/svc08/deployment-candidate/candidate.md, docs/evidence/svc08/deployment-candidate/retained-three.md, docs/evidence/svc08/deployment-candidate/inputs.json |
 | Claim | 原产品f578d8b1-4be5-4d89-9889-9fbd17fe0cc4 v2 released；新文档ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v1 active，仅plans/svc08-web-connection-lifecycle与docs/evidence/svc08 |
 | Review | NOT_STARTED 当前部署文档候选；原086产品APPROVED_LIMITED_PROXY_TERMINATION及main事实保持，[原样回执](../../docs/evidence/svc08/independent-review.json) |
@@ -47,6 +47,7 @@
 | --- | --- | --- | --- | --- | --- |
 | SVC08-W01 | 2026-10-07T03:13:31.000Z | 2026-10-07T03:15:08.399Z | 审查 | 固定输入交唯一独审，已获限定批准 | independent-review.json |
 | SVC08-W02 | 2026-10-07T03:15:08.399Z | 2026-10-07T03:17:28.292Z | 其他 | main回执已逐hash确认；本片完成 | main-receipt.json |
+| SVC08-W03 | 2026-10-07T03:38:17.937Z | OPEN | 审查 | 新部署文档固定后交Lead，只审方案不执行 | deployment-candidate/manifest.json |
 
 03:11:26.520536Z修复轮监督报告已完成，本队local已归还；0新测试/个人操作。
 
