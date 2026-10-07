@@ -1,6 +1,6 @@
 # WPF-DPERF04 首页轻摘要与按需核验
 
-状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-07 08:24:22 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-07 08:58:13 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与范围
 
@@ -15,10 +15,11 @@
 - [x] DPERF04-01 实现3读接口及真实首页消费者，保持旧snapshot与全部信息可达。
 - [ ] DPERF04-02 有界直接行为和后置浏览器验证、固定来源及原始证据。
 - [ ] DPERF04-03 独立review修复、主线接收与必要部署观察。
+- [ ] DPERF04-04 保留原窄屏light异常截图，补独立真实截图及对应DOM/viewport观察。
 
 ## 验证与资源
 
-当前cfd5组合限定源码独审0blocking；唯一Node直接单文件9叶项+父项10PASS，实际outer exit0与终态/hash匹配，保守计2866ms。新组合phase30s余27134ms；历史Node3950ms/原失败均保留，不继承旧PASS。当前浏览器仍0/60s含15清理、原8MiB raw/64MiB scratch；旧45f8/544c准备与native边界仅对旧输入成立，组合浏览器需要对应新来源绑定与资源交接。没有真实registry/PG/生产4320采样。GO旧慢响应与静态20ms仅单次来源观察，不作统计基准或宕机判断。
+当前cfd5组合限定源码独审0blocking；唯一Node直接单文件9叶项+父项10PASS，实际outer exit0与终态/hash匹配，保守计2866ms。新组合phase30s余27134ms；历史Node3950ms/原失败均保留，不继承旧PASS。当前浏览器实际summary9组与关联6组获限定独审，首轮FAIL保留；累计24464/余35536ms（含15秒清理），8MiB retained/64MiB scratch不变。7图中6图限定接受，窄屏light需补证；Timing/ACCESS原5+5组只接缝源码已审，仍NOT_RUN。后续沿已接受同native边界和精确输入，实际资源交接后才执行。没有真实registry/PG/生产4320采样。GO旧慢响应与静态20ms仅单次来源观察，不作统计基准或宕机判断。
 
 ## 完成条件
 

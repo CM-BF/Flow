@@ -6,9 +6,9 @@ Review target commit：08e9ee7e23157268d44bd2fdd460929a4ca5e626
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前受审目标为 `08e9ee7e23157268d44bd2fdd460929a4ca5e626`：四生产模块保持cfd5，后继只补原生close事件同步及Timing/ACCESS测试调用适配。后者仍NOT_RUN/待限定源码复审。
+当前受审目标为 `08e9ee7e23157268d44bd2fdd460929a4ca5e626`：四生产模块保持cfd5，后继只补原生close事件同步及Timing/ACCESS测试调用适配。后者仍NOT_RUN，但[生命周期限定源码审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json)已接受。
 
-原cfd5的16输入已获[root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)，其Node9叶+父10/10/实际outer0与owned清理由[root独立实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)接受。summary首红保留；后继1c190的summary9组+2PNG和c989的task-links6组+5PNG均actualPASS，正在本轮root独立实际核验。累计browser24464/余35536ms；Timing/ACCESS、main及部署尚未完成，顶层UNKNOWN。
+原cfd5的16输入已获[root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)，其Node9叶+父10/10/实际outer0与owned清理由[root独立实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)接受。summary首红保留；后继1c190的summary9组和c989的task-links6组由[root实际审查](../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json)限定接受。7张PNG中6张可作当前视觉证据；home-narrow-light底部重复页首带需[独立补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)，原因尚未证实，不能宣布全部图视觉通过。累计browser24464/余35536ms；Timing/ACCESS、main及部署尚未完成，顶层UNKNOWN。
 
 [当前16输入manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-source-manifest.json)与各run的固定SHA分开；旧source-manifest和旧审批保留当时NOT_RUN语境，不转移为新target通过。
 

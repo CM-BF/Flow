@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 08:51:33 UTC |
+| 最近更新时间 | 2026-10-07 08:58:13 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -13,23 +13,24 @@
 | 工作树dirty状态 | 当前16输入与08e9固定逐字；仅自然metadata封存，提交后核clean；四生产模块仍同cfd5 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | cfd5 Node10/10已独审；summary9组+2图、关联6组+5图实际PASS，首FAIL保留；browser累计24464/余35536ms，Timing/ACCESS适配未运行 |
+| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；7图中6图限定视觉接受，窄屏light补证OPEN；首FAIL保留，browser累计24464/余35536ms，Timing/ACCESS未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | 08e9ee7e23157268d44bd2fdd460929a4ca5e626 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间与本机入口的独立消费验收仍待完成 |
-| 下一可用交付 | 完成组合浏览器验收后交主线接收；当前实际浏览器尚未运行 |
+| 下一可用交付 | 完成Timing/ACCESS及窄屏light补证后交主线接收；已有summary/关联实际证据不迁移到待验项 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：cfd5源码/Node实际已审；summary与关联实际待本轮独审，后继Timing/ACCESS适配尚未运行 |
+| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；Timing/ACCESS接缝源码已审但未运行，窄屏light视觉补证OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
-| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；browser未运行 |
-| DPERF04-03 | pending | w01_owner | review/main/实际部署未完成 |
+| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6实际已审，Timing/ACCESS尚未运行 |
+| DPERF04-03 | pending | w01_owner | 整体验收/main/实际部署未完成 |
+| DPERF04-04 | pending | w01_owner | [窄屏light截图补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)：原图保留，原因未证，不影响9+6功能事实 |
 
 ## 来源与架构影响
 
@@ -153,8 +154,16 @@ clean-code：同一个scanner精确剪枝owned scratch，避免两遍非原子�
 
 ## 2026-10-07 关联实际与消费者接缝准备
 
-固定c989/actuala0e555，六组关联检查/五PNG、outer0/唯一PASS终态。7120.3628ms向上计7121，累计24464/余35536，总60000含15秒清理，首红不可回增。[关联原件](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-task-links/index.json)。08:48:21.257631Z实际结束，三个own groups ESRCH、HTTP/context/fixture/scratch关闭、完整EOF/drop0，立即归还浏览器。人工只读看了窄屏light首页和dark详情，文字可读/横向包含；不冒全部视图或a11y。
+固定c989/actuala0e555，六组关联检查/五PNG、outer0/唯一PASS终态。7120.3628ms向上计7121，累计24464/余35536，总60000含15秒清理，首红不可回增。[关联原件](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-task-links/index.json)。08:48:21.257631Z实际结束，三个own groups ESRCH、HTTP/context/fixture/scratch关闭、完整EOF/drop0，立即归还浏览器。首次作者只读观察不足以接受全部图；随后root发现窄屏light底部第二页首带，原图保留且该视觉证据OPEN。其他四关联图与两summary图获限定目视接受，不冒全部视图或a11y。
 
 后继source-only适配只改原三test：runBrowserCheck复用同监督/cleanup，Timing factory只建其既有HTTP fixture不造额外Git库；ACCESS明确noDefaults:true及唯一freshowneddefaultcontext，调用既有函数并核其关闭回执。父监督需精确local-access入口允许消费者正常close该Chrome后继续收worker结果，仍要求5项+HTTP/context清理；源码/生命周期差量交一次针对性审查后才能运行。summary与task-links行为主体不改，四生产模块逐字cfd5，权限和caps不扩大。
 
 clean-code复核：把真实fixture/context差异作为小调用参数，保一个预算/清理owner，未复制测试算法或引入第二authority；未跑Node/Chrome/PG，也未重跑已通过Node10。完整feature、main及部署仍未完成。
+
+## 2026-10-07 08:58:13 UTC 实际独审归档与视觉补证待办
+
+[root实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json)核57份raw、三次16source、outer终态与完整owned清理，接受summary9+关联6功能；7PNG中6图限定视觉接受，home-narrow-light底部重复页首的原因未证，须补一张独立命名的真实图。DPERF04-04保原图/hash，只在后续合法窗口记录同一390light页面的header数量/边界、viewport/scroll及有界帧观察，保持原几何断言；不延时盲试、不改图、不先改产品。
+
+[消费者生命周期限定源码审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json)接受08e9/ee11父/54cf worker：Timing原5组和ACCESS原5组仍NOT_RUN；默认context的正常关闭不等于遗漏worker/EOF/HTTP检查。实际先后为Timing→ACCESS，剩余预算允许才窄light补证；总spent24464/remaining35536含15秒清理。当前LAZY PG段与本浏览器串行，未占窗口/未采新free/无gate。
+
+本段只归档和校准当前文字；四生产模块及16固定输入不变，原首红/所有raw不改。clean-code复核区分功能与视觉证据，复用现cleanup owner；未重跑Node、Chrome或PG。

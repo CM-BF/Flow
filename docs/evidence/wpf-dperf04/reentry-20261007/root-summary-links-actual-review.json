@@ -1,0 +1,398 @@
+{
+  "reviewedAt": "2026-10-07T08:54:31.824676+00:00",
+  "reviewer": "root / gpt-6-astra ultra / independent read-only",
+  "decision": "SCOPED_BEHAVIOR_ACTUAL_ACCEPTED_VISUAL_FOLLOWUP_OPEN",
+  "archivesVerified": 57,
+  "runs": [
+    {
+      "run": "summary-20261007-084117-51ac56",
+      "actualHead": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+      "implementation": "cfd5a53323438709843828d74cab67502801060c",
+      "sourcePins": 16,
+      "index": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/index.json",
+      "state": "FAILED",
+      "checks": 6,
+      "screenshots": [],
+      "actual": {
+        "startedAt": "2026-10-07T08:41:34.711749+00:00",
+        "endedAt": "2026-10-07T08:41:42.969152+00:00",
+        "outerPid": 17048,
+        "actualExitCode": 1,
+        "outerElapsedMs": 8257.084332988597,
+        "conservativeChargeMs": 8258,
+        "stdoutBytes": 156,
+        "stderrBytes": 0,
+        "stdoutSha256": "947c7b3b30aab3c95d81fdd042f0635544750ed4adefcebd502a5f488ea630f7",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutComplete": true,
+        "stderrComplete": true
+      },
+      "terminal": {
+        "state": "FAILED",
+        "actualExitCode": 1,
+        "stopping": false,
+        "stopSignal": null,
+        "errorCount": 1,
+        "cleanupErrorCount": 0,
+        "afterFinalWritesElapsedMs": 8189
+      },
+      "freshProcessAbsence": [
+        {
+          "id": 17048,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 17048,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 21253,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 21253,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 17225,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 17225,
+          "kind": "group",
+          "state": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "chrome.stdout": {
+          "receivedBytes": 0,
+          "keptBytes": 0,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "chrome.stderr": {
+          "receivedBytes": 6401,
+          "keptBytes": 6401,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "worker": {
+          "receivedBytes": 889,
+          "keptBytes": 889,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        }
+      },
+      "bounds": {
+        "freeBytes": [
+          24065474560,
+          24077320192
+        ],
+        "scratchLogical": [
+          0,
+          9705677
+        ],
+        "scratchAllocated": [
+          0,
+          10215424
+        ],
+        "retainedBytes": [
+          856476,
+          921145
+        ]
+      }
+    },
+    {
+      "run": "summary2-20261007-084513-7e5bc3",
+      "actualHead": "6963627f9b7cfd488f1b6713cf5c837201e691af",
+      "implementation": "1c1901ebcda1bb9a711fd75684276df009b3e3f8",
+      "sourcePins": 16,
+      "index": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-second/index.json",
+      "state": "PASS",
+      "checks": 9,
+      "screenshots": [
+        "summary-detail-390-light.png",
+        "summary-detail-390-dark.png"
+      ],
+      "actual": {
+        "startedAt": "2026-10-07T08:45:26.654001+00:00",
+        "endedAt": "2026-10-07T08:45:35.738946+00:00",
+        "outerPid": 56165,
+        "actualExitCode": 0,
+        "outerElapsedMs": 9084.558582981117,
+        "conservativeChargeMs": 9085,
+        "stdoutBytes": 154,
+        "stderrBytes": 0,
+        "stdoutSha256": "37531d798a35cb6e6d5f8de761d87431c2bb08c9157ae4424908b80ebad7cb66",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutComplete": true,
+        "stderrComplete": true
+      },
+      "terminal": {
+        "state": "PASS",
+        "actualExitCode": 0,
+        "stopping": false,
+        "stopSignal": null,
+        "errorCount": 0,
+        "cleanupErrorCount": 0,
+        "afterFinalWritesElapsedMs": 9024
+      },
+      "freshProcessAbsence": [
+        {
+          "id": 56165,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 56165,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 58672,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 58672,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 56177,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 56177,
+          "kind": "group",
+          "state": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "chrome.stdout": {
+          "receivedBytes": 0,
+          "keptBytes": 0,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "chrome.stderr": {
+          "receivedBytes": 6464,
+          "keptBytes": 6464,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "worker": {
+          "receivedBytes": 1231,
+          "keptBytes": 1231,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        }
+      },
+      "bounds": {
+        "freeBytes": [
+          24064577536,
+          24077578240
+        ],
+        "scratchLogical": [
+          0,
+          9708029
+        ],
+        "scratchAllocated": [
+          0,
+          10215424
+        ],
+        "retainedBytes": [
+          1076301,
+          1304614
+        ]
+      }
+    },
+    {
+      "run": "links-20261007-084805-5ae2a4",
+      "actualHead": "a0e555a7801a01c5541f930525e5a954596e183d",
+      "implementation": "c989257251713b699d682c77f949db5bf21f29ac",
+      "sourcePins": 16,
+      "index": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/browser-task-links/index.json",
+      "state": "PASS",
+      "checks": 6,
+      "screenshots": [
+        "home-desktop-light.png",
+        "home-desktop-dark.png",
+        "home-narrow-light.png",
+        "home-narrow-dark.png",
+        "detail-narrow-dark.png"
+      ],
+      "actual": {
+        "startedAt": "2026-10-07T08:48:14.136928+00:00",
+        "endedAt": "2026-10-07T08:48:21.257631+00:00",
+        "outerPid": 58472,
+        "actualExitCode": 0,
+        "outerElapsedMs": 7120.362790999934,
+        "conservativeChargeMs": 7121,
+        "stdoutBytes": 154,
+        "stderrBytes": 0,
+        "stdoutSha256": "24e166444998b8a3da93d4b295ba0742cd6186c281f277ff050c8cd6301467a2",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutComplete": true,
+        "stderrComplete": true
+      },
+      "terminal": {
+        "state": "PASS",
+        "actualExitCode": 0,
+        "stopping": false,
+        "stopSignal": null,
+        "errorCount": 0,
+        "cleanupErrorCount": 0,
+        "afterFinalWritesElapsedMs": 7058
+      },
+      "freshProcessAbsence": [
+        {
+          "id": 58472,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 58472,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 63056,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 63056,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 58842,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 58842,
+          "kind": "group",
+          "state": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "chrome.stdout": {
+          "receivedBytes": 0,
+          "keptBytes": 0,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "chrome.stderr": {
+          "receivedBytes": 3934,
+          "keptBytes": 3934,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "worker": {
+          "receivedBytes": 944,
+          "keptBytes": 944,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        }
+      },
+      "bounds": {
+        "freeBytes": [
+          24026161152,
+          24037101568
+        ],
+        "scratchLogical": [
+          0,
+          8596937
+        ],
+        "scratchAllocated": [
+          0,
+          8847360
+        ],
+        "retainedBytes": [
+          1462720,
+          1962000
+        ]
+      }
+    }
+  ],
+  "budget": {
+    "totalMs": 60000,
+    "outerChargesMs": [
+      8258,
+      9085,
+      7121
+    ],
+    "spentMs": 24464,
+    "remainingMs": 35536,
+    "cleanupReserveMs": 15000,
+    "earlierParentTimingsPreserved": true
+  },
+  "behavior": [
+    "First summary FAILED after six groups at immediate native-dialog close focus assertion; preserve as failed.",
+    "1c1901 and c989 only wait passively for native close settlement and preserve exact activeElement assertions. Summary2 actual9/9 and task-links6/6 passed. Product unchanged for this synchronization fix.",
+    "Synthetic late transports ignore AbortSignal and settle actual late responses; not production latency, ledger authority or main integration proof."
+  ],
+  "visual": {
+    "inspected": 7,
+    "acceptedAsScopedVisual": 6,
+    "open": [
+      {
+        "file": "links-20261007-084805-5ae2a4/home-narrow-light.png",
+        "finding": "Bottom at roughly y757 repeats Flow/theme/refresh header; dark counterpart does not. Cause unproven. Preserve original, bounded followup required before all-seven visual acceptance."
+      }
+    ],
+    "notes": "Other light/dark details, desktop and narrow dark home readable without horizontal clipping. Dialog scroll and long technical identities wrap. Not full-page/data performance validation."
+  },
+  "limits": [
+    "Timing/ACCESS checks not run.",
+    "No authority take acquisition verified by injected fixture.",
+    "No separate socket probe beyond fixture closure/listening=false and fresh group absence.",
+    "No main integration/deployment."
+  ],
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "scope": "close-event synchronization, source/raw binding, cleanup/result accounting, seven images",
+    "finding": "Event settlement preserves exact focus assertions. Functional pass separated from anomalous screenshot; no arbitrary sleep or product edit requested."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "recordedAt": "2026-10-07T08:55:36.466889+00:00",
+  "recordedBy": "Web root / gpt-6-astra ultra / independent source-only review",
+  "runnerSha256": "ee11bdf71578623fb435257445ea91c25f7d0776a0700c6fa189901108ac9f2d",
+  "workerSha256": "54cf28b6dd4afc6e5734a0ceebd4d0c73655ac11a54ee4aa7e5dea00fd2c5ab0",
+  "sourceTarget": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+  "reviewedMetadataHead": "c9269234a671c7c10d2abb60831ca966bb3d8c9a",
+  "authority": {
+    "path": "/private/tmp/root-dperf04-1c19-routine-native-binding-20261007.json",
+    "sha256": "f6d330a85945a5bbbec0423938530d6f6fb9f37bf8700e63875d707f830efd69",
+    "furtherGOOrUserConfirmationRequired": false
+  },
+  "verified": {
+    "sourcePins": 16,
+    "readonlyPins": 82,
+    "prepared": [
+      "supervisor.py",
+      "parent.diff",
+      "source.diff",
+      "binding.json",
+      "report.md"
+    ]
+  },
+  "scope": [
+    "Three test consumer adapters; production and seven fixed supplied inputs unchanged.",
+    "Timing reuses existing HTTP fixture, registers close in owner stack, observes listening=false; original five check groups/two PNG remain.",
+    "ACCESS receives one fresh owned default context with noDefaults:true; original check owns actual close and reports context/http closure. No extra summary fixture/context, fake token only.",
+    "Parent accepts early Chrome code0 only for local-access after CDP, continues draining worker; requires actual worker exit0, PASSED report, five groups/two references, context/http closed, EOF and group absence. Other entries still reject early Chrome exit.",
+    "Existing native Chrome boundary, loopback/write sandbox for Node, finite deadline/cleanup/resource budgets unchanged."
+  ],
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Reviewed lifecycle responsibilities, error/cleanup paths, two consumer options against real needs, no duplicate scheduler or auth implementation.",
+    "unresolved": "Two screenshot references require actual files and visual inspection after execution. Existing narrow-light task-links image anomaly remains open."
+  },
+  "budget": {
+    "totalMs": 60000,
+    "spentMs": 24464,
+    "remainingMs": 35536,
+    "cleanupReserveMs": 15000,
+    "failedTimePreserved": true
+  },
+  "ownerAutonomy": "Original owner may bind exact later ordinary test/product corrections within same claimed finite segment; record real delta, preserve lifecycle/authority/budget/history. Integrity binding is not a fresh approval. Independently review actual at safe endpoint. Material lifecycle/permission changes need focused review.",
+  "runtime": "NOT_RUN; no fresh slot or free-space assertion. Coordinate latest other leads/resource use before actual. This does not reserve a browser or PG."
+}

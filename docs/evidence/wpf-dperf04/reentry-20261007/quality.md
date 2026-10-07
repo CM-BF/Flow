@@ -15,3 +15,7 @@
 实际单文件10/10，无产品修复重跑。两新case沿真实read-model/server Interface，覆盖轻timing无waiting及独立detail时间、时间格式问题不污染原进度、ACCESS POST先于通用GET限制且不泄漏至4读接口。旧7case全部执行，未扩大至未变81parser或ACCESS全套。复用原有bounded Node supervisor，适配16固定输入/10test/新phase，并沿已知规则保尾采样、EOF、非ENOENT扫描失败与软停止终态；runtime父源码/profile保原/tmp，准确路径/hash在index。没有新增通用框架。
 
 待验：浏览器自动刷新保原节点/焦点/选区、390两主题、实际首屏时延；源码/direct PASS不证明这些行为。原保护7与当前16source在执行后仍固定字节。
+
+## 2026-10-07 08:58:13 UTC 功能/视觉与消费者审查安全点
+
+复用既有find-skills、clean-code、webapp-testing方法；没有新依赖/运行。保原功能9+6和三次失败/耗时事实，修正“browser尚未运行”等过时当前文字。root独立接受6/7视觉图，明确窄light补证且原因未定。消费者默认context与HTTP清理责任由原审查接受，未复制算法/新runner；全部16源不改。
