@@ -1,0 +1,35 @@
+{
+  "gatePath": "/private/tmp/msgquick-b1-gate-20261007-0425.json",
+  "gateSha256": "89c0ec105057d3ffa8794028933feedc570e63c4e45ebd1dbdd4ca272563e38a",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-quick-controls",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "worker": "w01_owner",
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "createdAt": "2026-10-06T22:00:19.358Z",
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "bindingSha256": "2fc27b8b26c55670b3e11d7e8643d390ce417b27c61f4d1fa05829a8548f364a",
+  "manifestSha256": "89876dbb5eba0287af6727e05abb881116e177d5d25b739a43d3e1a0df4fd011",
+  "availableBytes": 25661136896,
+  "at": "2026-10-07T04:24:07.375739+00:00",
+  "status": "ADMITTED_NOT_RUN_AWAIT_ROOT_BINDING_GATE_CHECK",
+  "priorD06Return": "/private/tmp/d06-browser-a28e-4mmyk_zp/return.json"
+}

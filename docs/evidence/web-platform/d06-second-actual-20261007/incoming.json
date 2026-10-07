@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T04:21:47.767155+00:00",
+  "source": "Root specific inbound, no external tool/GET/process/resource sample by manager",
+  "d06": {
+    "at": "2026-10-07T04:19:53.053937+00:00",
+    "actualWindowReturned": true,
+    "actualExit": 0,
+    "startedAt": "2026-10-07T04:19:25.412665+00:00",
+    "finishedAt": "2026-10-07T04:19:34.292856+00:00",
+    "outerMs": 8879.763292032294,
+    "lateParentMs": 8817.920083063655,
+    "spentConservativeMs": 8880,
+    "previousSpentMs": 6733,
+    "cumulativeSpentMs": 15613,
+    "remainingMs": 74387,
+    "remainingIsNotPermission": true,
+    "actualGroups": 5,
+    "observations": 20,
+    "pngs": 20,
+    "ownedChecks": {
+      "workerPid": {
+        "pid": 80013,
+        "state": "absent"
+      },
+      "chromePid": {
+        "pid": 80234,
+        "state": "absent"
+      },
+      "workerGroup": {
+        "pgid": 80013,
+        "state": "absent"
+      }
+    },
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "doubleParentEOF": true,
+    "doubleChromeEOF": true,
+    "httpClosed": true,
+    "contextClosed": true,
+    "scratchAbsent": true,
+    "errors": [],
+    "resourceSampling": "Only approved parent sample; postcheck only exact owned PIDs/group, no external processes or service sampling."
+  },
+  "mikaSpecificSubline": {
+    "threadId": "01a10f3f-d011-7e62-acac-6a50cc0f6e7d",
+    "c02": "New directed process closure around04:18:37 per incoming; separate receipt from earlier04:11:49.742 historical line.",
+    "x01": "Actual CLOSED: types exit0 +5 negative cases PASS, internal2392.676ms/raw844B, both own groups absent/mergedEOF/bothTMP same-inode removed, no PG/HTTP/Chrome/provider/pending launch;9,699,328B returned.",
+    "meaning": "No heavy request; do not infer current holder from previous preparation."
+  },
+  "next": "Quick original b1 first browser native preparation approved; awaiting final same-packet binding and fresh admission before one run, no gate/reservation yet.",
+  "sourceNote": "D06 sourcea28e unchanged; actual evidence review pending; main/deploy not implied."
+}

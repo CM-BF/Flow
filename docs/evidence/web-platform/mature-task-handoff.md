@@ -4,13 +4,13 @@
 
 ## 当前窗口与用户交付
 
-**Web无heavy/local holder、gate或预约。** [SVC06后继精确清理原件](checkpoint-0413-20261007/svc06-cleanup-outer.json)证明04:13:44.010Z exit0/双EOF/owned absent、center stopped及DB removed，PG/heavy实际归还；首轮失败与曾保留资源记录保历史。D06是root明确下一0PG浏览器窗口，待同一包新HEAD/准入修订审查及fresh入场，尚未启动。仍保守采用4,053,008,384B高线，不为降额重绑；Mika C02已清理、X01仅源码准备，保留原较高local预算。
+**Web现无heavy/local holder、gate或预约。** [Quick唯一首次页面检查实际归还](quick-b1-actual-20261007/return.json)：04:26:26–38 outerexit1，第一组键盘选择模型仍为空而失败，0checks/0PNG；fixture/context/Chrome/两owned group/scratch均清理，Mika已获归还。原strict+26通过和c1失败不变；browser保守累计12326/余47674，不自动二跑。D06更早实际归还，完整组合已可接主线。
 
 **任务时间展示已接主线并部署。** [原Lead实际发布和owner完成回执](checkpoint-0400-20261007/timing-main-close.json)记录03:49:29Z的4320/source52fe/185来源；03:56:00.608Z任务核齐完成，owner4b78双端clean、[9a677v2已释放](checkpoint-0400-20261007/timing-release.json)。原183快照与未部署准备都是历史。首屏易读性是独立有界TIMING02候选，见下，不重开已完成的TIMING01或复用旧写权。
 
 **“打开Flow/登录凭据”已接主线并实际发布。** [Lead部署原件](checkpoint-0413-20261007/access-deployment-receipt.json)记录04:04:16.630Z/source451/4320/185来源、显式opt-in；Lead内存核200匹配且未存印token，自有临时tab默认空。GO另实际观察主动掩码加载、复制成功提示与关闭清空；未读取剪贴板值、未自动登录产品或发送聊天。原[35direct与第四5/5组合独审](checkpoint-0400-20261007/access-composition-review.json)及全部失败预算保留，无第五跑。owner最新269a8566 human摘要已修、十范围停写；README537窄doc与生命周期由原owner/Lead后续收口，不在管理树代写。
 
-**架构图连线背景修复已获源码审查，正在修订并存准入。** [首轮失败实证独审](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)接受2/5与完整清理，归因为既有renderer估宽缺口；[a28e源码批准](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json)未冒页面通过。[第二精确包审查](checkpoint-0400-20261007/d06-second-preparation-review.json)已限定批准，owner72167e26 clean、adf953v2五scope；原scenario不变，剩83267ms含15s清理，旧原件保留。唯一packet `/private/tmp/d06-browser-a28e-4mmyk_zp`，无gate/预约。旧待SVC06清理条件先获明确0PG并存许可替代，随后SVC06已实际清理归还；原完整高线保守保留，[新准入修订](checkpoint-0413-20261007/d06-coexistence-revision-report.md)另审，不称已发生并行。
+**架构图完整组合已获独审，正式交原Lead主线接收。** [唯一D06实际原件](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/index.json)记录a28e五图、宽窄屏/双主题20观察及20PNG、几何/键盘/固定源码下钻全部通过，真实outerexit0。原首轮FAIL与22direct保留；保守累计15613/余74387ms，余量不是第三次许可。[唯一主线handoff](d06-second-actual-20261007/main-handoff.json)固定target591/base6d05/exact8及final owner babd780eclean；root实际与组合均已接收。主线/真实4320部署分别待回执，不重跑既有组。
 
 [61228同版本恢复](dashboard-task-time-intake/personal-web-recovery-receipt.json)已由唯一operator完成；本组未采个人服务/容量。Recovery实际局部十项已由7440b59封存、Quick严格类型+26direct与D04五pureGit均已[root限定接收](current-product-checkpoint-20261007/local-results-review.json)，旧NOT_RUN只指历史准备或尚未执行的浏览器，不覆盖这些真实结果。
 
@@ -103,3 +103,11 @@ MATURE01/05/06视觉继续原计划；D06既有后继已由原owner在原五范�
 [时间展示易读层级后继](dashboard-task-time-intake/readability-followup.json)归原D01/U14，未take/未实施；原72a已main并实际部署，后继不得改其完成事实，ACCESS仍优先。
 
 本批有界只读接收：[Quick同一b1当前HEAD/已过c2原件重绑](checkpoint-0413-20261007/quick-b1-ready-report.md)仍无native边界接受/gate，少一个已存在依赖pin待root裁定，不运行；[snapshot超过5s观察研究](checkpoint-0413-20261007/snapshot-pending-sync-research.json)沿既有DPERF/D01后继，耗时归因尚未实测，保PENDING_SYNC、不重复GET全量来源。
+
+ACCESS当前真实发布source451与main422等receipt不表示README537已接收；[原owner唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json)中的README537/root92eaba仍是独立doc-only增量，owner269a停写，原35+5/token操作无需重复。
+
+D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actual-20261007/narrow-reading-followup.json)已归原D01/REQ39，源码字号算术与实际可读性分开，未take/不阻当前591接收。任务时间字段D06已补可信UNKNOWN/NOT_COMPLETED；Recovery字段只由原owner panels下次安全点补，不由W01或管理代写。
+
+[DPERF04复接当前ACCESS/Timing只读提案](quick-b1-actual-20261007/dperf04-resume-readonly-report.md)仍未amend/未实施；候选原7+4路径须在ACCESS doc-only537主线与停写释放后fresh核交集，TIMING02不得同时写app。现各owner一次PENDING_SYNC保真，不重复5s GET全扫185来源。
+
+[C02公开stream v2具体消费交接](quick-b1-actual-20261007/c02-public-stream-consumer-handoff.json)：Recovery唯一owner panels/7440/6ffv4原21保持；App与fixture现明确patch-v1，ConversationStreams是Provider。真正messages映射在Recovery原范围外，待C02固定合同与public-stream-next入口后fresh协调精确owner/scope，复用projectBodySegments并保source/channel/未知。当前不写UI、不交还App/Thread、不抢共享contract；此canonical为对co-lead具体请求的正常回应。

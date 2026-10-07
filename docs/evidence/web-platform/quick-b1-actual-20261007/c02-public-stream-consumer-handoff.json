@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T04:29:47.108443+00:00",
+  "state": "PUBLIC_STREAM_V2_CONTRACT_HANDOFF_PENDING_NO_UI_WRITE",
+  "source": "Root relays concrete C02/CHATUI01 subline request and its own bounded source observations; manager performs no new source/runtime scan. Direct app-server delivery was rejected and not retried.",
+  "requestingThread": "01a1105f-3ebd-76b2-8c77-d499a52772a2",
+  "recoveryOwner": {
+    "worker": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "branch": "codex/web-conversation-recovery",
+    "head": "7440b59c2fe64d696ca7afd3ab7c5ff3b135e43d",
+    "dirty": false,
+    "claim": "6ff988b2 v4, original21scope retained; this is attributed root observation, not new claim/read"
+  },
+  "currentSourceFacts": [
+    "App cookie client around1229 and fixture1278/1279 explicitly patch-v1; later fixed contract needed before explicit v2.",
+    "Metadata/patch ports789/790 share host. ConversationStreams is a provider, not the renderer.",
+    "Actual conversation-stream/messages.ts8/21 maps all BodySegment as text without source/channel; this path is outside originalRecovery21scope."
+  ],
+  "requiredHandoff": [
+    "C02 fixes exact public contract and supplies public-stream-next entry/path.",
+    "Coordinate exact new scope and responsible owner for messages mapping only after fixed consumer contract.",
+    "Reuse projectBodySegments; preserve public reasoning/body distinction and missing-thinking unknown, never invent missing reasoning.",
+    "No second stream state/store, no current App/Thread handback or UI write, no C02 shared-contract interference."
+  ],
+  "mapping": [
+    "Existing CHAT06/C02 consumer backlog",
+    "WPF-MATURE-06-03",
+    "WPF-REQ-04/10/11/12"
+  ],
+  "responseMechanism": "Canonical manager handoff for co-lead consumption; no prohibited cross-thread tool retry."
+}

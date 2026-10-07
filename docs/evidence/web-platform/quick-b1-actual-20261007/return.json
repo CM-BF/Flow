@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T04:29:09.848510+00:00",
+  "state": "FAILED_ACTUAL_CLEANUP_RETURNED_NO_RETRY",
+  "source": "Original W01 actual terminal receipt and exact parent/browser/outer originals; independent root actual review pending",
+  "head": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "actualStart": "2026-10-07T04:26:26.011693Z",
+  "actualFinish": "2026-10-07T04:26:38.337230Z",
+  "actualExit": 1,
+  "outerMs": 12325.373,
+  "terminalMs": 12284,
+  "earlyBudgetMs": 12282,
+  "conservativeSpentMs": 12326,
+  "remainingMs": 47674,
+  "budgetRule": "Root explicitly accepted ceil(max outer,terminal,budget); originals unchanged; remaining not permission.",
+  "checks": 0,
+  "screenshots": 0,
+  "failure": "First keyboard group browser.ts93 model select expected long model but remained empty until5000ms timeout; cause not yet classified. Not Chrome startup failure.",
+  "cleanup": {
+    "parent": 27230,
+    "workerGroup": 31548,
+    "chromeGroup": 27442,
+    "states": "all absent per actual owner terminal",
+    "chromeExit": 0,
+    "doubleEOF": true,
+    "droppedBytes": 0,
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "scratchAbsent": true,
+    "errors": []
+  },
+  "rawPointers": {
+    "packet": "/private/tmp/msgquick-b1",
+    "outer": "/private/tmp/msgquick-b1-outer-di68rhfu"
+  },
+  "ownStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+  "noRetry": true
+}

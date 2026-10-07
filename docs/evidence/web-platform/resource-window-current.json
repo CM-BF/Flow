@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T04:17:18.585584+00:00",
-  "state": "SVC06_ACTUAL_RETURN_NO_WEB_HOLDER_D06_NEXT_PENDING_REVIEW_ADMISSION",
+  "recordedAt": "2026-10-07T04:29:09.848510+00:00",
+  "state": "QUICK_B1_ACTUAL_FAILED_CLEANUP_RETURNED_NO_WEB_HOLDER",
   "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T04:15:54.437389+00:00",
-    "kind": "SVC06_ACTUAL_RETURN_D06_SPECIFIC_NEXT",
-    "source": "checkpoint-0413-20261007/incoming.json",
-    "summary": "SVC06后继精确清理实际完成、PG/heavy已归还，旧FAIL保留。D06为具体下一独占0PG浏览器窗口，修订待审/无gate或运行；仍保留4,053,008,384B高线。ACCESS已实际部署并主动操作观察，未产品登录。"
+    "at": "2026-10-07T04:29:09.848510+00:00",
+    "kind": "QUICK_B1_ACTUAL_RETURN_D06_MAIN_INTAKE_READY",
+    "source": "quick-b1-actual-20261007/return.json",
+    "summary": "Quick唯一首browser actualexit1/0checks后清理完整，Mika已获实际归还，无本组holder/gate/预约。D06完整组合已审/唯一main intake ready，宽窄几何键盘通过与新窄屏阅读后继分开。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1086,23 +1086,42 @@
       "currentEvidence": "checkpoint-0400-20261007/timing-main-close.json"
     },
     "d06": {
-      "ownerHead": "72167e26510388d28d9306225a9e30f9819b03ac",
+      "ownerHead": "babd780e7e5d08b70d12ae697711c9bcda035588",
       "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
       "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
-      "state": "SECOND_PACKET_HIGH_FLOOR_REVISION_PENDING_REVIEW_NOT_RUN",
+      "state": "READY_FOR_LEAD_MAIN_INTAKE_SCOPED_APPROVED",
       "manifestSha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95",
       "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
-      "review": "checkpoint-0400-20261007/d06-second-preparation-review.json",
-      "authority": "Root explicit next D06 after actual SVC06 return; revised binding review and fresh admission pending. No gate/start.",
-      "actualReceipt": "d06-browser-actual-20261007/return.json",
-      "conservativeSpentMs": 6733,
-      "remainingMs": 83267,
-      "sourceBoundary": "a28e renderer source approved; identicalscenario, firstfailure/oldraw preserved; actuallayout stillpending",
+      "review": "d06-second-actual-20261007/root-composition-review.json",
+      "authority": "Window actually returned; remaining budget is not new permission. No automatic third run.",
+      "actualReceipt": "d06-second-actual-20261007/return.json",
+      "conservativeSpentMs": 15613,
+      "remainingMs": 74387,
+      "sourceBoundary": "Actual all5groups/20observations/20PNG on a28e passed, pending independent review; main and live4320 not inferred.",
       "bindingSha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565",
       "futureCombinedFloorBytes": 4053008384,
       "combinedFloorAttribution": "Original1350565888 + conservative formerSVC06 allowance2684354560 + conservative Mika local18087936 =4053008384. SVC06/C02 actually cleaned; no present coexistence asserted.",
       "coexistenceEvidence": "checkpoint-0413-20261007/incoming.json",
-      "admissionRevision": "checkpoint-0413-20261007/d06-coexistence-revision-report.md"
+      "admissionRevision": "checkpoint-0413-20261007/d06-coexistence-revision-report.md",
+      "approvedComposition": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+      "mainIntake": "d06-second-actual-20261007/main-handoff.json",
+      "acceptedScope": "Geometry/keyboard/source-navigation passed;390 readable default mode is separate pendingD01 followup."
+    },
+    "quick": {
+      "ownerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+      "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+      "packet": "/private/tmp/msgquick-b1",
+      "bindingSha256": "2fc27b8b26c55670b3e11d7e8643d390ce417b27c61f4d1fa05829a8548f364a",
+      "manifestSha256": "89876dbb5eba0287af6727e05abb881116e177d5d25b739a43d3e1a0df4fd011",
+      "state": "FIRST_BROWSER_FAILED_OWNED_CLEANUP_COMPLETE_NO_RETRY",
+      "admission": "quick-b1-actual-20261007/admission.json",
+      "browserSpentMs": 12326,
+      "totalMs": 60000,
+      "cleanupMs": 15000,
+      "meaning": "Root checked exact native review+gate, dispatched original owner; actual process evidence pending, not inferred from chat activity.",
+      "actualReceipt": "quick-b1-actual-20261007/return.json",
+      "remainingMs": 47674,
+      "failure": "First native keyboard model selection remained empty; originalowner static cause investigation, no outcome assumption."
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1538,10 +1557,15 @@
   },
   "externalCurrentAdmission": {
     "owner": null,
-    "state": "SVC06_ACTUAL_CLEANUP_COMPLETE_NO_HEAVY_HOLDER",
-    "actualFinishedAt": "2026-10-07T04:13:44.010Z",
-    "evidence": "checkpoint-0413-20261007/svc06-cleanup-outer.json",
-    "mikaLocal": "C02 actual cleanup04:11:49.742Z; X01 source preparation only, conservative local allowance18,087,936B kept."
+    "state": "NO_REPORTED_HEAVY_HOLDER",
+    "svc06": "Actual returned04:13:44.010Z",
+    "mikaSubline": {
+      "threadId": "01a10f3f-d011-7e62-acac-6a50cc0f6e7d",
+      "c02": "New directed process closure around04:18:37 per incoming; separate receipt from earlier04:11:49.742 historical line.",
+      "x01": "Actual CLOSED: types exit0 +5 negative cases PASS, internal2392.676ms/raw844B, both own groups absent/mergedEOF/bothTMP same-inode removed, no PG/HTTP/Chrome/provider/pending launch;9,699,328B returned.",
+      "meaning": "No heavy request; do not infer current holder from previous preparation."
+    },
+    "evidence": "d06-second-actual-20261007/incoming.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1562,6 +1586,6 @@
       "limits": "83267total incl15000cleanup"
     }
   ],
-  "currentIntake": "checkpoint-0413-20261007/incoming.json",
+  "currentIntake": "quick-b1-actual-20261007/return.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants."
 }

@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T04:19:53.053937+00:00",
+  "actualWindowReturned": true,
+  "actualExit": 0,
+  "startedAt": "2026-10-07T04:19:25.412665+00:00",
+  "finishedAt": "2026-10-07T04:19:34.292856+00:00",
+  "outerMs": 8879.763292032294,
+  "lateParentMs": 8817.920083063655,
+  "spentConservativeMs": 8880,
+  "previousSpentMs": 6733,
+  "cumulativeSpentMs": 15613,
+  "remainingMs": 74387,
+  "remainingIsNotPermission": true,
+  "actualGroups": 5,
+  "observations": 20,
+  "pngs": 20,
+  "ownedChecks": {
+    "workerPid": {
+      "pid": 80013,
+      "state": "absent"
+    },
+    "chromePid": {
+      "pid": 80234,
+      "state": "absent"
+    },
+    "workerGroup": {
+      "pgid": 80013,
+      "state": "absent"
+    }
+  },
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "doubleParentEOF": true,
+  "doubleChromeEOF": true,
+  "httpClosed": true,
+  "contextClosed": true,
+  "scratchAbsent": true,
+  "errors": [],
+  "resourceSampling": "Only approved parent sample; postcheck only exact owned PIDs/group, no external processes or service sampling."
+}
