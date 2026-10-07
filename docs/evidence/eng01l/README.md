@@ -7,3 +7,5 @@
 架构影响：J固定recipe共用展开；新增只读factory及一个受信host组合叶子；R06/exchange/G/I/合同/旧锁定grant保持。prepare错误返回可观测的同一close句柄，取消超时仍持有真实pending drain；结果child/hostWrite/nativeWriteAccess分开。
 
 2026-10-07T07:42:43.794Z clean-code/结构复核：无第二loop/transport/授权schema；命名按profile、launch、FD-owner职责；错误不含原始系统/private内容，shutdown并行启动通道与FD收尾；局部检查只测这三职责及直接caller。未解：真实启动/OS限制/stock工具回调与模型资格，按后继分开。
+
+2026-10-07T08:15:55Z 当前交付：574实际入口修复已审并main9f314e89；随后一次stock initialize/close成立，原外层超预算FAIL与unknown保留，exact scratch已单次独立收尾。a4a结果34绑定获APPROVED_RESULT_WITH_PRESERVED_FAILURE；上文16例与0stock描述仅指原模块阶段。见[result-independent-review-message](result-independent-review-message.json)。真实工具回调、OS写拒绝、模型资格和全部writer撤销仍未证明。
