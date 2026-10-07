@@ -11,9 +11,14 @@
     "currentSuperseded": [
       "apps/server/src/native-activity-body/fixture.ts",
       "apps/server/src/native-activity-body/production.test.ts",
+      "docs/evidence/chat05p02/pg-entry/run.py",
+      "docs/evidence/chat05p02/README.md",
+      "docs/evidence/chat05p02/clean-code-20261007.md",
       "docs/evidence/chat05p02/local.py",
-      "docs/evidence/chat05p02/pg-entry/run.py"
-    ]
+      "plans/chat05p02-native-activity-body-wiring/review.md",
+      "plans/chat05p02-native-activity-body-wiring/status.md"
+    ],
+    "currentUnchangedCount": 344
   },
   "bindings": [
     {
@@ -178,6 +183,34 @@
       "bytes": 2985,
       "sha256": "685343e10ac2ae56b0d314e9fb6ddb18f33b1056d6f082623f2dbf1c4cdc20bc",
       "role": "input-or-derived"
+    },
+    {
+      "path": "docs/evidence/chat05p02/README.md",
+      "bytes": 1740,
+      "sha256": "2fdcdaaa20e0293ec233f99b144740d9e307aac54560537a35346535d6cd5dd4",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "docs/evidence/chat05p02/clean-code-20261007.md",
+      "bytes": 1083,
+      "sha256": "9027964fc279dd61c7dd4f2bc98f2fd62ca26d61bac765bc5b6d3abeade669d3",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/review.md",
+      "bytes": 1578,
+      "sha256": "97bc04eb6ef485c58ef5fbcb1b36de6dd0e5543588fd88899669f938f9410197",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/status.md",
+      "bytes": 5612,
+      "sha256": "8e445d28a7807d32184cd1798cf530dd9e35f2641cca5150b765798eefd7a923",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
     }
   ],
   "local": {
