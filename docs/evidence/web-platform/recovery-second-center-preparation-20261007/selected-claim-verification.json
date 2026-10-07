@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-07T10:56:01.423Z",
+  "source": "Normal D04 CLI list, selected records only; credential values not read or output",
+  "state": "available",
+  "manager": {
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "state": "active",
+    "scope": [
+      "docs/evidence/web-platform",
+      "plans/web-platform",
+      "plans/wpf-mature-01-visual",
+      "plans/wpf-mature-03-attachments",
+      "plans/wpf-mature-05-workspace",
+      "plans/wpf-mature-06-chat"
+    ],
+    "worker": "external_web_d01_owner",
+    "needsVerification": true,
+    "note": "Historical created observation preserved; current CLI returned active exact6; manager branch/base and own dirty changes checked."
+  },
+  "plugin": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "taskId": "WPF-PLUGIN-RUNTIME01",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+    "branch": "codex/web-plugin-runtime-management",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-07T10:50:07.619Z",
+    "createdAt": "2026-10-07T10:50:07.619Z"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T11:01:34.529Z",
+  "state": "HANDED_TO_OWNER_FRESH_NOT_RUN",
+  "coordinator": "d01_owner",
+  "owner": "workspace_panels_owner",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+  "executionHead": "291736984036d3a3d406561ace9b123fb6b5bcb7",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 exact21; owner fresh required",
+  "preparedManifest": {
+    "path": "/private/tmp/recovery-two-center-2f8-4xmazt8u/manifest.json",
+    "bytes": 7972,
+    "sha256": "871eea2773cc48ae8455023b524c095516664b60adada56e0693a20df00fe1df"
+  },
+  "managerReadproof": "Manifest SHA, six referenced inputs, 19 current=Git source hashes, clean execution HEAD checked; original runtime closure rehash belongs owner fresh",
+  "latestExternalReturn": "O16 R2 10:49:10.010Z runtime settled but DB/TMP KEEP; SVC r2 returned10:44:35.378972Z. No later competing actual/allocation received.",
+  "notReadyCompetitor": "Release fixed artifact/result reviewed; three non-secret normalized browserSettings fields and owned caller still missing; no reservation",
+  "runtime": {
+    "totalPhaseMs": 90000,
+    "spentMs": 0,
+    "firstAttemptMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "minimumAttemptMs": 60000,
+    "databases": 2,
+    "chrome": 1,
+    "conservativeConfiguredConnections": 27,
+    "providerActorsPersonal": 0,
+    "scratchBytes": 67108864,
+    "retainedBytes": 13631488,
+    "startupRetainedBelowBytes": 4194304,
+    "runReserveBytes": 9437184,
+    "additionalPlannedBytes": 139460608,
+    "minimumFreshAvailableBytes": 4219731968,
+    "higherActualCombinedWins": true,
+    "potentialLocalDeclarationBytes": 35651584
+  },
+  "selection": [
+    "cookieRead",
+    "secondCenterCycle"
+  ],
+  "oldCreditTransferred": false,
+  "charge": "ceil(max actual outer, late terminal, serialized parent)); remaining<60000 stops",
+  "ownerResponsibilities": [
+    "Immediate fresh original21 claim/clean source pins/runtime roots/prior raw and full resource sum; new conflicting actual means stop and report",
+    "One internal gate/run, fixed ef458 authorized test admin source,0600/exact identity; never output secret value",
+    "Independent db-a/db-b normal cleanup/receipts; failed B still cleans A; unknown never forced",
+    "Exact terminal adminenv deletion, PID/PGID/EOF/scratch/DB cleanup and actual resource return before metadata",
+    "Finite same-boundary diagnosis/fix/retest autonomously; material safety/lifecycle/acceptance changes concentrated review"
+  ],
+  "runtimeStart": null,
+  "mikaDelivery": "Successful tool message announcing next handoff, not an approval request or actual RUN",
+  "managerGateCreated": false
+}

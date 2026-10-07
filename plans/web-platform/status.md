@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:37:01.542662+00:00；Recovery路由修复所选2/2实际通过并完整清理归还，限定实际独审已接受 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:01:34.529Z；外组运行窗已归还，Recovery下一窗口已交原owner即时fresh，实际开始待报 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 看板摘要与按需详情已入主线并发布；快速设置组件已入主线。恢复与Steer所选旅程已有实际通过证据，旧失败保留，完整功能与真实后继接线仍分开验收。 |
-| 下一可用交付 | Recovery本次限定实际结果已独审接受并由原owner封存；后继第二中心、真实消息设置、LAZY与工具全文按各自交权排队。Release等待最终后台产物与原生运行入口；插件管理当前仅只读接口提案。 |
+| 下一可用交付 | 原Recovery owner已固定双中心准备，收到下一窗口并即时fresh后执行；插件模块七范围已正式领取、源码实施，App/session未交权。Release仍缺三个非秘密browserSettings字段与自有caller。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery于10:30:49.963Z完整清理并已交还Mika，本组0PG/Chrome/heavy及下一预约；SVC host10:26:05.098Z归还。下一共享PG已具体交Mika X01原owner fresh、尚未RUN；O16/C02历史KEEP仍UNKNOWN，潜在普通local32MiB及只读2MiB不冒实际holder。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：O16 R2运行窗归还但DB/TMP KEEP；Recovery已获下一唯一2DB/1Chrome有限段交接，当前待原owner即时fresh、尚非RUN。Release未READY，插件仅source；旧KEEP UNKNOWN保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -89,8 +89,9 @@
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
+| 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v1 exact7已COMMITTED | [精确登记入口](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/plugin-registration-request.json)待Original接收；领取与页面实际加载分开，App/session未交权。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2已释放仅历史；新后继两harness及own记录源码准备，最终backendtuple未齐，不启动兼容重段。 |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2仅历史。固定7d1/source6c与SVC限定结果已审；缺cookieOrigin/trustedOrigins/authEpoch规范化值（匹配61228/81a8abe）及自有caller，未READY/不占重窗。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |

@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-07T10:41:55.689Z",
+  "state": "available",
+  "scope": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-management/browser.ts",
+    "apps/web/src/plugin-management/runtime-command.ts",
+    "apps/web/test/plugin-runtime-command.test.ts",
+    "plans/wpf-plugin-runtime-management",
+    "docs/evidence/wpf-plugin-runtime-management"
+  ],
+  "conflicts": [
+    {
+      "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+      "version": 24,
+      "state": "active",
+      "task": "X01",
+      "worker": "architecture_read",
+      "matches": [
+        {
+          "proposed": "apps/web/src/plugin-management/PluginManagement.tsx",
+          "existing": "apps/web/src/plugin-management/PluginManagement.tsx"
+        },
+        {
+          "proposed": "apps/web/test/plugin-management/browser.ts",
+          "existing": "apps/web/test/plugin-management/browser.ts"
+        }
+      ]
+    }
+  ],
+  "note": "Preflight only; originalowner must fresh CAS take before editing. No new claim has been created."
+}

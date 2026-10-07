@@ -171,3 +171,7 @@ CHAT05后继[九固定源研究](../../docs/evidence/web-platform/composed-consu
 原MATURE06-04的[stale-route静态审查与新有限回归边界](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)由RECOVERY01唯一panels执行：长期route handler引用当前已提交回调，不能通过将session/groups重列为整个生命周期effect依赖而重建全部view；保证原durable prepare先于业务HTTP，配置恢复后存储失败仍禁止发送。复验须真实同document hash切换、Steer draft持久化及原ACK/恢复断言。两FAIL和未用旧额度保留；剩余第二中心不混入本段。
 
 READBOUND共享边界已[main81b/正式194登记](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)，仍只链接Mika唯一owner状态，不复制其任务/领取或推导本App已消费。
+
+本轮原RECOVERY01-03/05的[第二中心方案](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/two-center-report.md)在固定入口A→B→A→B中使用两真实DB及公共身份，最后B显式Restore；原owner仅两harness/direct专测与记录准备。principal-only和ignore-abort迟到ready为受控检查，不冒公共rotation或真实迟到响应已投递。两个lease/独立清理原件、失败仍清另一库及新2DB/1Chrome资源差量须固定源码后集中审查；原routefix段剩余额封存，不直接沿旧1DB门槛运行。原功能边界仍03/05；provider实际consume/apply、Queuepromotion等跨owner依赖如实列未验，不临时扩成当前渲染/触发/缓存必须新跑provider的前置。
+
+第二中心固定2f8的[源码与局部独审](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/two-center-source-local-review.json)已接受三test/16产品未变、2direct通过且55未选、affected noEmit0；只核本片不扩旧测试覆盖。双DB真实旅程尚未运行，完整owner准备与最新共享窗后fresh；新90秒含30秒清理、27配置连接上限和133MiB声明增量按最终包核，原routefix未用余额不转入。

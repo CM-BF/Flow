@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-07T10:45:48.386274+00:00",
+  "method": "Read-only fixed gitshow bytes compared during this batch, no runtime",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "approvedSource": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "products": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 28398,
+      "sha256": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b",
+      "sameApprovedSource": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6",
+      "sameApprovedSource": true
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead",
+      "sameApprovedSource": true
+    }
+  ],
+  "initialShortResolution": "git rev-parse b675 was ambiguous with tree/blobs; explicitly selected observed commit b67530bb then fullSHA resolved. No guessed code/execution result.",
+  "newTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "newBranch": "codex/web-plugin-runtime-management",
+  "managerPreflight": "Targetpath andbranch absent at manager read; owner mustfresh beforeprovision.",
+  "productScopePreflight": "plugin-scope-preflight.json",
+  "scopeGranted": false
+}

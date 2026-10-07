@@ -1,0 +1,137 @@
+{
+  "at": "2026-10-07T11:01:42.784Z",
+  "parser": "Current main status.mjs, two owned documents only; no aggregate or products",
+  "result": [
+    {
+      "id": "WPF-001",
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "看板摘要与按需详情已入主线并发布；快速设置组件已入主线。恢复与Steer所选旅程已有实际通过证据，旧失败保留，完整功能与真实后继接线仍分开验收。",
+        "next": "原Recovery owner已固定双中心准备，收到下一窗口并即时fresh后执行；插件模块七范围已正式领取、源码实施，App/session未交权。Release仍缺三个非秘密browserSettings字段与自有caller。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "本持续管理任务首次实际开工无独立时间证据，不以建树/领取/历史更新时间倒填；owner明确本任务尚未整体完成。字段按Lead固定79da合同。"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ],
+        "waiting": ""
+      },
+      "taskLinks": {
+        "kind": "unknown",
+        "reason": "旧记录未声明层级",
+        "parent": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "todoCount": 36
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "实时任务详情、原七组恢复、中心选择、提交/排队丢回执及完整草稿均有各自所选通过证据；修复同页面旧路由回调后，Steer保存、恢复、丢回执同key重试与下一稿所选2/2实际通过。旧失败保留，完整功能未验收。",
+        "next": "原owner已完成同入口双中心专测源码、2项受控身份/迟到检查与noEmit；集中源码/local审接受，浏览器仍未运行。完整准备固定后按27配置连接上限及新2DB/1Chrome组合fresh交接，旧routefix余额封闭。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ],
+        "waiting": ""
+      },
+      "taskLinks": {
+        "kind": "big",
+        "reason": "",
+        "parent": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "ownId": {
+          "state": "known",
+          "record": "[WPF-MATURE-06](plan.md)",
+          "id": "WPF-MATURE-06",
+          "location": "plan.md"
+        }
+      },
+      "todoCount": 6
+    }
+  ]
+}

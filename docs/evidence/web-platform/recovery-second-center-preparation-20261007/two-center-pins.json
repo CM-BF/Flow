@@ -1,0 +1,124 @@
+{
+  "state": "READ_ONLY_PROPOSAL_NOT_RUN",
+  "at": "2026-10-07T10:39:34.630648+00:00",
+  "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "actualInputMetadata": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+  "laterOwnerSeal": "8919b89bde85aa63c8a8d79978b201531370c533",
+  "initialObservation": {
+    "head": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+    "dirty": "owner metadata/raw sealing in progress; not touched; all source reads use fixed Git objects"
+  },
+  "sourcePins": [
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 41391,
+      "sha256": "393254158ec9f175e2aabbd98bc97d89690e389786dedf539aaa9d6a5c660a65"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 103044,
+      "sha256": "61c08ba798b81f8f0033ca010583a0f7436ba1234ebe097d09dd4dc031bec0d3"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 68432,
+      "sha256": "3954eabcba64425d7549653385d849dd6cb4a54805620e93d33dacb48128959d"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "packages/client/src/index.ts",
+      "bytes": 47838,
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    }
+  ],
+  "sameAtLaterSeal": [],
+  "priorResearch": [
+    {
+      "path": "/private/tmp/recovery-next-steer-center-readonly-x3dji7pd/report.md",
+      "bytes": 9772,
+      "sha256": "d345b2e66e9ac0d77c3698c69dc74bf27c0364be19ee5d97366c8e4bc058c819"
+    },
+    {
+      "path": "/private/tmp/recovery-next-steer-center-readonly-x3dji7pd/pins.json",
+      "bytes": 3371,
+      "sha256": "ce424b7e169979120290b1ce5c18dd45e33a641e7c31e1ac26fa9984293bb45e"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ],
+  "methods": [
+    "Local-first find-skills reused; no installation or web lookup.",
+    "Clean-code: reuse existing marked DB lease, exact public session tuple, original ACK loss, avoid a second identity source or mock authority.",
+    "Codebase-design: one fixture-owned fixed-origin switch with per-request captured target; no general proxy framework."
+  ],
+  "limits": {
+    "fixedSourceCount": 11,
+    "projectWrites": 0,
+    "claim": 0,
+    "productImportsOrChecks": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "resourceSamples": 0
+  }
+}

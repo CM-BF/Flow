@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-10-07T10:32:08.840473+00:00",
+  "oldPid": 81154,
+  "newPid": 95578,
+  "source": "b67530bb025162629895d11482b5505d4a885c91",
+  "bindingSource": "/tmp/flow-dashboard-local-binding-20261007.json",
+  "bindingSha256": "ed791d533c35b633684e88c82756aa4a04cb956b09bb5bc08c2e401e6f192756",
+  "log": "/tmp/flow-dashboard-195-20261007-1034.log",
+  "personalOperations": 0,
+  "tokenEndpointRead": false,
+  "tabsReloaded": 0,
+  "rootHTTP": 200,
+  "summaryHTTP": 200,
+  "summaryBytes": 519941,
+  "summaryKeys": [
+    "kind",
+    "version",
+    "generatedAt",
+    "readId",
+    "registryFingerprint",
+    "startedAt",
+    "completedAt",
+    "staleAfterHours",
+    "tasks",
+    "overview",
+    "milestones"
+  ],
+  "sourceCount": 195,
+  "taskObserved": {
+    "id": "X01-CLI-COMMANDS01",
+    "statusSource": {
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands/plans/x01-cli-commands/status.md",
+      "digest": "0ca19e69ff5eddbfb9059fd1fb82fd581c3063e6420fe3d21d723f4edd0ea49a",
+      "modifiedAt": "2026-10-07T10:26:15.044Z",
+      "readAt": "2026-10-07T10:32:09.221Z",
+      "declaredUpdatedAt": "2026-10-07T10:26:15.041Z",
+      "stale": false,
+      "ageHours": 0.09838333333333334,
+      "issues": [
+        "存在无法识别的 TODO 状态"
+      ],
+      "error": null,
+      "frozenCommit": null
+    }
+  },
+  "accessMetadataEnabled": true,
+  "accessHTTP": 200,
+  "completedAt": "2026-10-07T10:32:09.285492+00:00",
+  "scope": "Registry-only serving verification; no new visual/performance acceptance, no credential load/copy."
+}

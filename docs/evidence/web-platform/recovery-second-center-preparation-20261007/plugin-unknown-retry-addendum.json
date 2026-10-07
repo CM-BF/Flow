@@ -1,0 +1,92 @@
+{
+  "schema": 1,
+  "kind": "PLUGIN_RUNTIME_CONSUMER_UNKNOWN_RETRY_DESIGN_ADDENDUM",
+  "observedAt": "2026-10-07T10:41:46.140938+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "fixedMain": "b67530bb025162629895d11482b5505d4a885c91",
+  "sourcePins": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "bytes": 10806,
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d"
+    }
+  ],
+  "sourceFacts": [
+    {
+      "path": "packages/client/src/index.ts",
+      "lines": "536-561",
+      "fact": "Each commandPluginRuntime call validates and freezes input then distinguishes typed4xx versus UnknownPluginAcknowledgementError per attempt. It does not own prior UI command outcome or merge multiple retry observations."
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "lines": "41-77",
+      "fact": "Validated accepted runtime ACK carries fixed registration/revision/change/exact enable tuple; consumer must reuse decoder and retain original input/key. Consumer does not create a second ACK codec."
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "lines": "36-57",
+      "fact": "Runtime mutation wraps revision/material/runner checks inside command idempotency helper; a subsequent read or error is not an original-command result query."
+    }
+  ],
+  "crossLeadInterfaceDecision": {
+    "source": "Mika actual-return and Web-interface message received current turn",
+    "targetRunnerId": "Explicit operator UUID is supported by current public command contract; server validates registered runner, maintenance, exact published store/API1. No automatic runner registration or private policy reads.",
+    "unknown": "Only exact original key/body explicit retry can recover; later GET or non-original accepted ACK rejection cannot prove previous unknown write never occurred.",
+    "configAndGrants": "First slice read-only; separate shared ACK owner continues independently.",
+    "session": "Settings disclosure/dialog unmounts do not destroy pending authority; real App integration awaits Recovery scope handoff."
+  },
+  "requiredConsumerTransitions": [
+    {
+      "prior": "no pending command",
+      "observation": "schema/key preflight fails before command attempt",
+      "expected": "Preserve editable draft; no send and no UNKNOWN."
+    },
+    {
+      "prior": "first command attempt",
+      "observation": "typed center 409 rejection",
+      "expected": "Preserve draft, show explicit conflict; no auto rebase/retry. New command requires explicit user action."
+    },
+    {
+      "prior": "UNKNOWN with frozen original key/body",
+      "observation": "retryOriginal returns typed409/403/404 or other failure without validated original accepted ACK",
+      "expected": "Keep original pending identity and UNKNOWN; show retry observation separately, prevent new command. Do not reinterpret original as rejected."
+    },
+    {
+      "prior": "UNKNOWN with frozen original key/body",
+      "observation": "GET pluginRuntime succeeds or fails, including same plugin_ack_unknown code",
+      "expected": "Update read observation only; preserve original command outcome/identity. Read failure alone never creates pending mutation."
+    },
+    {
+      "prior": "UNKNOWN with frozen original key/body",
+      "observation": "exact original explicit retry returns validated ACK for original input",
+      "expected": "Resolve original command. Preserve newer editing draft separately and guard session epoch."
+    },
+    {
+      "prior": "submitting or UNKNOWN",
+      "observation": "Settings closes/collapses then reopens",
+      "expected": "Same session-owned controller/key/body; no automatic POST or new idempotency key."
+    }
+  ],
+  "minimalValidation": [
+    "Actual public FlowClient/helper with controlled transport: first lost/malformed ACK → retry typed409 → current GET success → exact original accepted replay. Assert no new key/body, no automatic calls, and pending not cleared before original ACK.",
+    "A separate initial409 case demonstrates definite first-attempt rejection remains distinct.",
+    "Retain existing preflight, singleflight, late-session and settings-unmount checks without broad repeated backend suites."
+  ],
+  "scope": "Design input for proposed independent runtime-command component; no project edits, no take/runtime, no claim of current-product defect or new approval gate.",
+  "cleanCode": {
+    "applied": "Keep outcome authority in the one session-owned narrow controller; shared client owns per-attempt decoding; separate read observation and command outcome; no second transport/outbox.",
+    "findings": "The proposed catch branch must consider prior UNKNOWN, not only current error class.",
+    "fix": "Recorded explicit transition and acceptance input before implementation.",
+    "remaining": "Future owner implementation and scoped verification pending."
+  }
+}

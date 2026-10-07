@@ -1,0 +1,38 @@
+{
+  "state": "READY_FOR_ORIGINAL_REGISTRY_INTAKE",
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "parentTaskId": "WPF-001",
+  "existingRequirement": "WPF-001-05 / X01-06 / U20",
+  "responsibleRegistryOwner": "Original Execution Lead; manager does not edit the registry",
+  "owner": "w01_owner",
+  "lead": "external_web_d01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "planDir": "plans/wpf-plugin-runtime-management",
+  "statusPath": "plans/wpf-plugin-runtime-management/status.md",
+  "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
+  "evidenceDir": "docs/evidence/wpf-plugin-runtime-management",
+  "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+  "claimVersion": 1,
+  "claimCommittedAt": "2026-10-07T10:50:07.619Z",
+  "scope": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/src/plugin-management/runtime-command.ts",
+    "apps/web/test/plugin-management/browser.ts",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-runtime-command.test.ts",
+    "docs/evidence/wpf-plugin-runtime-management",
+    "plans/wpf-plugin-runtime-management"
+  ],
+  "firstCanonicalHead": "c7a1db6015c64f555625af72f3e0f81552f5884c",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "registryObservation": {
+    "at": "2026-10-07T10:58:24.531Z",
+    "fixedRegistryPath": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/registry.mjs",
+    "exactTaskAndTreeSearchMatches": 0,
+    "meaning": "File source search only. Claim COMMITTED is not source registration, aggregation, or visible UI proof.",
+    "actualLoadedObservation": null
+  },
+  "delivery": "Formal take/canonical supplied to Mika; direct forwarding to Original is restricted. This canonical request is for Original existing reading path, not a claim of successful direct delivery.",
+  "sourceAuthority": "Only the owner status contains mutable feature progress; this is an intake pointer, not a second TODO list."
+}
