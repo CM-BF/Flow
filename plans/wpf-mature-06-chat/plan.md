@@ -196,3 +196,13 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 沿REQ22–23及MATURE06-03/04/05接收[固定源研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/official-thread-action-research.json)：官方SelectionToolbar Quote会直接修改composer，仅有button/render slot不能代表已获当前view/draft权限。现未挂该功能；当前发送/恢复冻结text、knowledge、materials、settings而无quote，这属于后继设计缺口，非已复现bug。未来owner须复用唯一host和当前完整草稿权限，明确用户可见正文表示或受控协调structured合同，保持unknown原body、Queue及下一草稿保护，不另造状态权威。
 
 官方Thread已有content-visibility与defer，不代表DOM数量有界。只有实际性能证据要求windowing时才在原性能/聊天后继处理，保message-ID、官方viewport/footer与焦点，不替换为自制壳。当前仅设计输入、实际NOT_RUN，不抢I01/Release/已排视觉或扩写权。
+
+### Queue resume ACK 共享语义后继
+
+沿原 TUI001-06/08 与 MATURE06-04/06，登记 Original 转述的 GO 固定035a只读发现：Web 对 queue resume ACK 的语义验证弱于 interaction，未完整检查未发生 promoted 时的 task 替换，以及 promoted task/turn/item 的绑定。此为固定源码观察，尚无本组复现或实现。
+
+由原 Lead 在既有 FLOW 计划协调 browser-safe 共享纯规则，先保留可复现反例，再验证两个真实消费者。Web 保留自己的持久化与展示职责；矛盾或身份不一致的 ACK 不能落成 accepted，原 key/body 与 UNKNOWN 保持。后继排在当前个人发布和默认宿主诊断之后，实施前核当前 queue writer 与精确交权，不新建重复大task，不取用 Arc 已授普通段。
+
+来源与排程事实见[管理原记录](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json)的 chatQueueAckFollowup；未继承个人部署或真实回执通过结论。
+
+本后继补充[固定035a四源研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json)：共享 package 目前没有 queue-control 导出，新增纯语义接口需原owner精确领取；五类定向反例保留历史 replay 与 latest mutable 状态的时态边界，不把重放回执直接与后来可变快照混比。仍为静态研究，未实施/未运行。

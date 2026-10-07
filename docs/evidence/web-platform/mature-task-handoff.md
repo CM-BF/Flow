@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T19:04:52.076Z：actual holder=NONE；唯一NEXT已授Original原native owner的默认三角色宿主检查。fixed source62373492 / 最新执行metadata 7beb04d5fd9d365765efa24e56b9aa2995e76b96 / [准备入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json)（24,186B/SHA8257f26e…e85f），原I02 035a独审已接受；逻辑ID `SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE`，仍同一19:04:52授权，metadata-only交付不重开grant；单次217.5s、PG26＋管理16、0Chrome/provider/个人/build/install，仅3role start/status/emptyTasks/stop/归属连接，不含旧8generation。紧前fresh全部固定输入/claim/新namespace/PG及完整free≥17,908,891,648B后才launch；此为NEXT不是START，无自动重试。隔离source与已有0PG普通段可继续，不实施测量冻结。SVC06B个人发布准备未READY，不预占。**
+**即时调度 2026-10-07T19:51:55.743Z：PERSONAL_UPDATE_STOPPED_DIAGNOSIS，个人更新仍占排他HOLD，无第二NEXT。Original固定cd27迁入＋3报告＋bootstrap/strict-idle完成；refresh于19:47:21.167Z失败 START_UNCONFIRMED_CHECK_STATUS（58.210s，operator114.242s/exit1），尚未checkpoint/resume或发布779。19:48:31.241仅外层调用RETURN、outer/refresh PIDabsent及EOF，不能据此认定detached个人服务已停或用户已恢复接单。原owner同op35d5a7ff正在有界只读核3角色/phase/maintenance，不重放/不发模型。用户恢复优先，实际服务身份闭合前不授PG/Chrome/build新窗口；隔离源码与已授普通段继续。原19:43:39.755 START和消费floor18,518,114,304B保持历史。**
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -18,7 +18,7 @@
 
 
 
-**当前前瞻预算：** 仍可能增长/保守未知＋本次默认宿主峰值＋一次reserve＝17,908,891,648B。本候选clone1GiB/private32MiB/PG128MiB/raw2MiB/record1MiB合计1,244,659,712B，只加一次；S01两个UNKNOWN TMP暂保512MiB与新离线seal1MiB分别列，已DROP的1GiB临时DBWAL不沿用。历史实际gate不改，详见[唯一账本](resource-window-current.json)。
+**19:04历史前瞻预算（已被页首取代）：** 仍可能增长/保守未知＋本次默认宿主峰值＋一次reserve＝17,908,891,648B。本候选clone1GiB/private32MiB/PG128MiB/raw2MiB/record1MiB合计1,244,659,712B，只加一次；S01两个UNKNOWN TMP暂保512MiB与新离线seal1MiB分别列，已DROP的1GiB临时DBWAL不沿用。历史实际gate不改，详见[唯一账本](resource-window-current.json)。
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 

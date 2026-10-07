@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:35:57.571Z；逐消息草稿/发送/队列/恢复所选旅程已主线接收，键盘边界后继仍开放 |
+| 最近更新 | 2026-10-07T19:42:15.315Z；保留已验恢复旅程，补原队列恢复回执身份验证后继，未增加产品实施或检查 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。 |
@@ -33,7 +33,7 @@
 | WPF-MATURE-06-01 | in-progress | Web co-lead | 逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。 |
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
 | WPF-MATURE-06-03 | in-progress | Web co-lead | 成功回复默认入口收敛，error/unknown/decision常显；390须区分侧栏开/关场景，自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。新增[累计活动缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)仅文档限定批准/产品未实施未测量。  U18恢复列表可读性按[既有计划](plan.md)待后继；不改原full7范围。 |
-| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。原中心与Recovery的历史取权见原件；Recovery原01–06工程已[main完成并释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，实际能力与边界沿[唯一owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)，不据此宣称整个大task通过。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E；该准备时点尚未第五跑为历史，后续实际以owner唯一status为准。 |
+| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。原中心与Recovery的历史取权见原件；Recovery原01–06工程已[main完成并释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，实际能力与边界沿[唯一owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)，不据此宣称整个大task通过。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E；该准备时点尚未第五跑为历史，后续实际以owner唯一status为准。  原 TUI001-06/08 的 queue resume ACK 共享语义按[既有计划](plan.md#queue-resume-ack-共享语义后继)排后继：两消费者身份一致，矛盾保持原 key/body UNKNOWN；未实施/未复现。 |
 | WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿；[GO官方adapter候选](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)与[root stop/cancel研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)仅只读后继，明确停止等待final/取消丢弃/Flow lease；无mic/自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |
 
@@ -45,7 +45,7 @@ STEER模块已main，STEIRI01十三scope已main f181并释放；CONTEXTI已释�
 
 root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见[真实页面专项](../../docs/evidence/web-platform/mature-dashboard-ui-acceptance.json)；此项通过不代表本大task完整功能验收完成。
 
-调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准。ATTACHI02已main cde并旧scope释放；恢复实现从正式组合84005独立新树开始，Arc18候选未领取。T3固定9bd1/MIT只借鉴职责与epoch方法，不引入外部实现。
+调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准。ATTACHI02已main cde并旧scope释放；该恢复准备历史从正式组合84005独立新树开始；当时 Arc18 尚未领取。当前 Arc 已沿独立工作区组合任务精确领取20项，实际以其唯一 status 为准。T3固定9bd1/MIT只借鉴职责与epoch方法，不引入外部实现。
 
 ## Recovery 历史实施入口（仅保来源，不用于当前派工）
 

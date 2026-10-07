@@ -1,0 +1,77 @@
+{
+  "reviewer": "root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T19:50:16.674258+00:00",
+  "task": "WPF-VISUAL01 Recovery appearance",
+  "decision": "SOURCE_AND_CAPTURE_REVIEW_APPROVED_WITH_DEPENDENCY_CLOSURE_HOLD",
+  "blockingFindings": [
+    {
+      "origin": "Owner late preparation self-check; adopted by independent review before dispatch",
+      "scope": "Runnable dependency preparation only",
+      "issue": "The 406-root declared dependencies/optional-dependencies snapshot omits installed peer roots. requiredUnresolved=[] only describes the recorded resolver edges and cannot establish a complete peer closure.",
+      "missingPeerNames": [
+        "@opentelemetry/api",
+        "@types/node",
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "missingUniqueRootCount": 4,
+      "reportedEdges": 118,
+      "evidence": {
+        "path": "/private/tmp/vis-recovery-b1/peer-closure-gap.json",
+        "bytes": 55988,
+        "sha256": "271d277d4180c25d83d38366d703f655d54cff70e1ad82bab0fc0dbf285f35a2"
+      },
+      "resolution": "Same owner adds these installed peers and their necessary dependencies to byte pins in own metadata, refreshes graph/manifest/head binding, records no unresolved required edges. No install, product change, PG/browser run or broad re-review of unchanged source."
+    }
+  ],
+  "fixedTargets": {
+    "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "metadataHead": "850ff106d7e9eabcf7672fc42365f48ba2729cbe",
+    "bindingSha256": "701ca97f980464cf14de925a2a4b63bb170acbfa2f869f71943bcc291c249743",
+    "manifestSha256": "3e520227381ea0fa9dea5c3382a7a782e1a81328963698558eb46b5326d4b2c1",
+    "captureSha256": "34dd9de2c1a6c9ca0d2d337fc94161eb001e6cac7c150dc8165943efd4f9eccf",
+    "parentWorkerSha256": "20e1bd43d804616c2fd92b46ea2f8fa288145ab502fad126b1286c1be0cc8095"
+  },
+  "verification": {
+    "inputCheck": {
+      "path": "/private/tmp/root-visual01-recovery-prep-input-check-20261007.json",
+      "bytes": 533,
+      "sha256": "442f11c1f9f194529927e7f38cf2002792c0bdaddb072e0e8ac76d4f664d947f"
+    },
+    "counts": {
+      "manifestFiles": 11,
+      "ownSourceFiles": 614,
+      "directSources": 28,
+      "links": 38,
+      "createdDirs": 8,
+      "packageRoots": 406,
+      "packageFiles": 17868,
+      "packageBytes": 184275294,
+      "nativeFiles": 14,
+      "diffLines": 39
+    },
+    "errors": [],
+    "gitBlobCheck": "All 614 recorded Git blobs match the fixed source index HEAD 5318e540f4efe014a7be9d03716ee36f0a1b21d0. All 28 direct current source hashes match. Final metadata HEAD rebind does not change these product sources. Later owner metadata33f034c reports the peer HOLD; the reviewed source target remains4ca unchanged.",
+    "packageClosure": "406 declared dependency/optional roots, 17868 files /184275294 bytes independently rehashed without mismatch. 38 link and 8 directory identities match. Complete installed peer closure is HOLD for four roots; no claim of runnable readiness.",
+    "captureDiff": "Independently regenerated full 39-line diff against the original passive MSG capture and matched exactly. Changes select the owned visual task/worktree/phase/appearance arguments/output namespace, retaining the original passive collection and parent cleanup ownership.",
+    "manifest": "All 11 final rows and both compressed/decompressed archive hashes verified; actual/ is empty."
+  },
+  "sourceReview": {
+    "taskIsolation": "Own fixed visual preset selects only appearance; MSG phase excluded; original MSG historical budget remains closed. Parent and worker remain the same actual App consumer test file at 4ca.",
+    "lifecycle": "Outer 60s bound reserves 30s for the existing parent cleanup, records actual exit plus both streams/EOF/drop counts; parent retains marked DB, HTTP, owned worker/Chrome and scratch authority. Outer success cannot substitute for exact cleanup observation.",
+    "assertions": [
+      "Original cookie-only session read group, then recovery dialog group at light and dark 390px.",
+      "Actual saved recovery draft is visible; dialog geometry stays within viewport and checks scroll width, corner radius, padding and visible Close control.",
+      "Enter opens recovery and Escape returns focus to Saved drafts and receipts. Two PNGs and two geometry records must be actually generated.",
+      "No independent visual approval until root views the actual two images. Observed scrollbar mode is not evidence for two OS modes."
+    ],
+    "resources": "60s total/30s cleanup; 1 isolated marked DB, proposed maximum 13 configured PG connections, one owned Chrome, two dynamic HTTP fixtures. 64MiB scratch+128MiB DB/WAL planning+10MiB retained+1MiB metadata=203MiB proposal; no resource grant is issued by this review.",
+    "scopeLimits": [
+      "No new product tests, imports, PG, HTTP, Chrome or user personal-service operations were executed in this review.",
+      "Appearance/cookie coverage does not imply complete recovery, provider, message-settings or arbitrary optional dependency-path validation.",
+      "614 own source and 406 installed dependency roots were statically verified; complete peer closure remains HOLD and no runtime loader pass is claimed."
+    ]
+  },
+  "beforeActual": "First close the four installed-peer input gap and obtain a targeted delta verification. Then manager queues a separate future window only after the current personal operation is truly returned; fresh exact claim/head/input/native identity, own namespace and complete capacity admission are still required. No old MSG or types budget transfers.",
+  "skillsAndCleanCode": "Applied existing find-skills discovery results and local assistant-ui/clean-code/codebase-design methods: preserve real consumer, use a task preset rather than copy App/state or a second supervisor, verify narrow responsibility and failure/cleanup paths. No duplicate implementation or library migration requested."
+}

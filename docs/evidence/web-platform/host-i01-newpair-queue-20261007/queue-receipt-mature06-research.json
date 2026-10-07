@@ -1,0 +1,67 @@
+{
+  "kind": "existing-MATURE06-queue-receipt-research-addendum",
+  "observedAt": "2026-10-07T19:42:47.078834+00:00",
+  "sourceCommit": "035a4dfce9cbf00691ecd432f560967abfef0044",
+  "decision": "BACKLOG_INPUT_ONLY_NO_NEW_CLAIM_OR_EXECUTION",
+  "sourceInputs": [
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 17132,
+      "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9"
+    },
+    {
+      "path": "packages/interaction/src/queue-control/index.ts",
+      "bytes": 4673,
+      "sha256": "1622c75652197569842e534d09ac3363fc0105ca276f5ba2a3056018553c4755"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    }
+  ],
+  "confirmedObservation": "The fixed Web resume receipt checks paused=false, exact revision increment, and the shape/state of any promoted item, but does not bind an absent promotion to the expected task or a present promotion to current task/turn/item. The fixed interaction implementation does these semantic checks. This corroborates the GO/Original input, not a separately discovered task.",
+  "designSeam": {
+    "responsibility": "A browser-safe, pure validator of an immutable pause/resume response against the original frozen request. Reuse from the existing two consumers.",
+    "outsideResponsibility": [
+      "Transport, FlowClient calls, retry scheduling and refreshing current queue state",
+      "Web recovery journal, private persistence/checkpoint representation and user-facing messages",
+      "Interaction controller/store and terminal projection"
+    ],
+    "integrationCaution": "Select a supported browser-safe package entry when the shared owner takes the existing task; do not deep-import an unexported path or pull the whole interaction controller into Web. Current package exports do not expose queue-control. No export or contract changes are made by this review."
+  },
+  "targetedRegressionMatrix": [
+    {
+      "case": "promoted=null and current task differs from expectedTaskId, including expectedTaskId=null",
+      "expect": "Reject immutable receipt; Web keeps original key/body in UNKNOWN; no automatic rewrite or resend."
+    },
+    {
+      "case": "promoted exists but taskId, turnId, turnNumber or queueItemId disagrees with currentTurn",
+      "expect": "Reject each identity mismatch before an accepted checkpoint."
+    },
+    {
+      "case": "Valid historical replay receipt while refreshed queue has since advanced",
+      "expect": "Accept the original immutable receipt and refresh current facts separately; never compare replay ACK to latest mutable state."
+    },
+    {
+      "case": "Valid no-promotion resume with unchanged expected task; valid bound promotion; allowed pause revision delta 0 or 1",
+      "expect": "Preserve both consumers existing successful behavior and explicit retry identity."
+    },
+    {
+      "case": "Transport failure followed by malformed or contradictory response on explicit retry",
+      "expect": "Retain the original request/key, mark UNKNOWN, do not clear unresolved state or persist an accepted checkpoint."
+    }
+  ],
+  "scope": "Existing TUI001-06/08 and MATURE06 successor, queued after personal publication/default-host diagnosis; Original owns shared-rule coordination; Web owns only its consumer changes after exact scope take. No parallel queue writer.",
+  "method": "find-skills existing local codebase-design/clean-code methods: one responsibility and a small shared seam; compare two real consumers; avoid duplicated conditionals and a new controller abstraction. Fixed-source read only; no imports, tests, PG, browser, project edits or service actions.",
+  "limitations": [
+    "No dynamic reproduction or test pass is claimed.",
+    "No separate severity finding is opened because this is already the GO/Original registered follow-up.",
+    "Shared API shape and target source must be chosen by the owning lead when dispatched."
+  ]
+}

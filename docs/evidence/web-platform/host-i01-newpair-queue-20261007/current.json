@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-07T19:04:52.076Z",
-  "state": "SVC09A_DEFAULT_THREE_ROLE_NEXT_NOT_STARTED",
+  "at": "2026-10-07T19:54:09.120Z",
+  "state": "PERSONAL_UPDATE_STOPPED_DIAGNOSIS",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
-  "decision": "Original approved default3role host selected unique217.5s next. No actualholder until START receipt. SVC06Bpersonalpublication notready anddoesnotreserve; source/isolatedordinary continue.",
+  "decision": "Personal refresh failed, outercallreturned but detached service state/accepting unknown. Original sameop readonly observation, user recovery priority; no otherheavyNEXT. Isolated source/local may continue.",
   "floor": {
     "previousComplete": 14414970880,
     "newS01Preparation16MiB": 16777216,
@@ -1343,13 +1343,22 @@
       "provider": 0,
       "scope": "Existing K01-06 caller150s source implementation/pure/types; no newheavy grant"
     },
-    "latestDrain": "Finalwholeteamdrain0child/PG/pending,source/supply/CLI/metadataSTOP: PROCESS18:37:13/6c881, unstarted8MiBwithdrawn;AV18:38:02 known1959af0a2 pushed/no freshdirty probe4MiB;K18:39:04 known3f08866d+3dirtymetadata~74.7KB1MiB;S01c751/input842STOP"
+    "latestDrain": "Finalwholeteamdrain0child/PG/pending,source/supply/CLI/metadataSTOP: PROCESS18:37:13/6c881, unstarted8MiBwithdrawn;AV18:38:02 known1959af0a2 pushed/no freshdirty probe4MiB;K18:39:04 known3f08866d+3dirtymetadata~74.7KB1MiB;S01c751/input842STOP",
+    "ordinaryLatest": {
+      "at": "2026-10-07T19:40:37.913Z",
+      "S01": "FULLRETURN19:33:01.365 then source84b5/packet86bb cleanSTOP; old16MiB forwardcap removed",
+      "Q01Previous": "New8MiB segment APPROVED19:31,49375B retained,4childRETURN19:22:32.454554; sealed06118de7/source01dfc89",
+      "Q01Successor": "19:34 new20min/new8MiB inclusive raw2MiB; max5serial30s/cumulative90s; pure types/collect/thinPGcaller source only,0PGHTTPChromeprovider",
+      "PROCESS": "FULLRETURN19:35 then abc0736/3fcdf cleanSTOP; old16MiB forwardcap removed",
+      "K01_AV03": "READY candidates CLOSED_NO_GRANT",
+      "architecture": "New2MiB resumed afteractualpersonalSTART; before19:44:41 safetySTOP0B/0child; no historicalgatechange"
+    }
   },
   "visual": {
     "task": "WPF-VISUAL01",
     "parent": "WPF-MATURE-01 original02/04",
     "owner": "w01_owner",
-    "state": "TYPES_PASSED_SOURCE_SAFE_STOP_BROWSER_NOT_RUN",
+    "state": "SOURCE_PREPARATION_RESUMED_PICKER_APPROVED_RECOVERY_NOT_READY",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
     "branch": "codex/web-shared-overlays",
     "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
@@ -1365,7 +1374,7 @@
     "fixedSupplyBytes": 5230960,
     "initialState": "Fixed3c bytes allmatch/clean;0sharedconfig/install/runtime",
     "sourceSwitch": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/source-switch-intake.json",
-    "canonical": "7a8e0e8fb40816fed8dfdadc14649bc55ab278a2 remoteequalclean",
+    "canonical": "33f034c30b84690e85753b3c14b5a8afcdb62ec9 remoteequalclean before current4peer delta",
     "D05": "208liveverified17:03:22/current/issues[]/uniqueactiveclaim matchesSource=true",
     "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
     "engineeringChecks": "Affected strict passed after first config/type failure;5765/30000 CLOSED; browser NOT_RUN",
@@ -1374,13 +1383,12 @@
     "runtime": "Browser NOT_RUN_NO_GRANT",
     "sourceSwitchState": "CLOSED_ACTUAL_LIVE_VERIFIED",
     "newSourcePreparationSegment": {
-      "authorizedAt": "2026-10-07T17:11:16.001Z",
-      "mode": "SOURCE_ONLY_NO_ENGINEERING_CHILD",
-      "growthCapBytes": 16777216,
-      "included": "source/ownmetadata/TMP staticproposal total; no dependencycopy/install/fullbuild/runtime",
-      "scope": "Existingacce2727v1exact8 only; trustedpreset + unifiednecessarylocalproposal",
-      "oldCreditTransferred": false,
-      "state": "SEALED_STOP_NO_FUTURE_GROWTH"
+      "state": "SOURCE_ONLY_NEW_10MIN_2MIB_NO_ENGINEERING",
+      "growthCapBytes": 2097152,
+      "old33f8MiBSealedStop": true,
+      "mode": "existingfourpeer closure only",
+      "recordedAt": "2026-10-07T19:55:05.405Z",
+      "authorization": "Manager followup_message in currentturn; exact message timestamp not independently recorded"
     },
     "presetDelta": "DefaultMSGclosedbudget/output unchanged;--visual-appearance restrictedtoappearance/ownevidence/new60s30cleanup;workerassertionsunchanged andother5files equal5f898",
     "localProposal": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json",
@@ -1468,6 +1476,17 @@
       "unusedTransferred": false,
       "ownerFinal": "7a8e0e8fb40816fed8dfdadc14649bc55ab278a2",
       "ownerFinalState": "remoteequalclean/all8STOP claimretained"
+    },
+    "recoveryPreparation": {
+      "state": "SOURCE_CAPTURE_APPROVED_DEPENDENCY_CLOSURE_HOLD",
+      "packet": "/private/tmp/vis-recovery-b1",
+      "runtimeProposal": "60s inclusive30cleanup;1DB13configuredPG,2owned dynamicHTTP,1Chrome",
+      "fixedClosure": "614own includes33SQL;406installed package roots/17868files184275294B readonlyhash;requiredunresolved[]",
+      "dependencySupply": "38exact readonly links exclusively materialized ownignored node_modules,8dirs/targettexts6189B,no payloadcopy/import/install",
+      "source": "4ca sixsourceunchanged",
+      "scope": "Current source-only8MiB segment; no free sampling or engineeringruntime/PG/HTTP/Chrome",
+      "review": "visual-recovery-preparation-review.json",
+      "remaining": "exact4installedpeerroots OTel/api + typesnode/react/reactdom andactualneededdependencies; one delta review, no source/capture resweep"
     }
   },
   "AV02Intake": {
@@ -1936,49 +1955,118 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "SVC09A_DEFAULT_THREE_ROLE_UNIQUE_NEXT",
-    "at": "2026-10-07T19:04:52.076Z",
-    "selectedHeavyCandidate": "SVC09A_DEFAULT_THREE_ROLE",
+    "state": "FORWARD_GROWTH_CLASSIFICATION_PERSONAL_CONSUMED_GATE_UNCHANGED",
+    "at": "2026-10-07T19:54:09.120Z",
     "termsBytes": {
       "residualUnknown": 13440909312,
       "priorK01Db": 134217728,
       "secondK01Db": 134217728,
       "R4KeepPendingClassification": 1243611136,
-      "MikaPureSourceLocal": 1048576,
-      "ArcSource": 16777216,
+      "MikaPureSourceLocal": 0,
+      "ArcSource": 0,
       "OriginalOrdinaryKeepPendingClassification": 35651584,
       "ReleaseC3PendingSeal": 0,
       "reserveOnce": 1073741824,
-      "AV03FailureMetadata": 4194304,
+      "AV03FailureMetadata": 0,
       "ReleaseMainCloseoutMetadata": 0,
-      "OriginalNewPublicationOrdinaryPendingStop": 33554432,
+      "OriginalNewPublicationOrdinaryPendingStop": 0,
       "S01UnknownRetainedScratchPotential": 536870912,
-      "VisualBrowserPreparationSource": 8388608,
-      "S01NewOfflineSeal": 1048576,
-      "selectedDefaultThreeRoleHost": 1244659712
+      "VisualBrowserPreparationSource": 2097152,
+      "S01NewOfflineSeal": 0,
+      "defaultHostKeepPendingClassification": 1244659712,
+      "selectedSVC06BPersonalPublication": 540016640,
+      "MikaQ01NewOrdinary": 0,
+      "MikaS01NewOrdinary": 0,
+      "MikaPROCESSNewOrdinary": 0,
+      "ArcNewOrdinaryTMPAndRaw": 0,
+      "MikaQ01SuccessorOrdinary": 8388608,
+      "MikaArchitectureNewMetadata": 2097152
     },
-    "minimumFreshFreeBytes": 17908891648,
-    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 1048576 + 16777216 + 35651584 + 0 + 1073741824 + 4194304 + 0 + 33554432 + 536870912 + 8388608 + 1048576 + 1244659712 = 17908891648",
-    "limits": "AV03 real DROP/ENOENT removes temporary161MiB, but new failuremetadata1MiB remains. VISUAL7a8e sealedSTOP removes10MiB ordinarycap. New Release maincloseout1MiB once. S01selectedpeak512MiB+1GiBDBWAL excludes its intrinsicreserve; shared1GiBreserve counted once. All historical consumed gates unchanged; residual/R4/OriginalKEEP retain conservative bounds. Kcaller16MiB not fully sealed remains, Arc16MiB remains. Release a831c sealedSTOP and7d60v3 released18:35:22 removes closeout1MiB; no historical gate rewritten. Final Mika drain: K source16MiB replaced1MiB dirtymetadata bound; AV former1MiB replaced4MiB source bound, no freshdirty probe; PROCESS unstarted8MiB withdrawn. All source/CLI STOP, not assumed clean from STOP. Newlyreported Original activeSVC06B32MiB distinct from old34MiB scratchKEEP; temporarily included once pending actualSTOP/growthclassification. Original18:45 fullSTOP confirmed, threechecksneverstarted; new32MiB retained as finite conservative unclassified dirty/preparation bound, not guessedzero. S01 real DBdrop/absence removes1GiBDBWAL planning from future; unknown2TMP conservatively retain512MiBexperiment bound pending ownclassification. New VISUAL onlysource/browser-preparation8MiB once; no browsergrant. No timecredit. NewS01 offline seal1MiB only once; new defaultHost peak includes explicit records1MiB in addition to clone1GiB/private32/raw2/PG128. R1-R4oldgrowth preserved separately, not readding sourcecaps; current host is functional, not performance measurement.",
-    "historicalConsumedAV03": {
-      "state": "AV03_GATE_CONSUMED",
-      "at": "2026-10-07T18:05:27.344Z",
-      "termsBytes": {
-        "residualUnknown": 13440909312,
-        "priorK01Db": 134217728,
-        "secondK01Db": 134217728,
-        "R4KeepPendingClassification": 1243611136,
-        "MikaPureSourceLocal": 16777216,
-        "ArcSource": 16777216,
-        "OriginalOrdinaryKeepPendingClassification": 35651584,
-        "ReleaseC3PendingSeal": 0,
-        "selectedAV03PG": 168820736,
-        "reserveOnce": 1073741824,
-        "VisualNewAffectedTypes": 10485760
+    "minimumFreshFreeBytes": 18396479488,
+    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 0 + 0 + 35651584 + 0 + 1073741824 + 0 + 0 + 0 + 536870912 + 2097152 + 0 + 1244659712 + 540016640 + 0 + 0 + 0 + 0 + 8388608 + 2097152 = 18396479488",
+    "method": "Retain all previously bounded unknown/KEEP, including full defaultHost envelope pending classification; add personal515MiB and new Mika ordinary40MiB once, reserveOnce unchanged. VISUAL sealed source and other known sealed terms will be classified at next natural batch; this grant deliberately uses the complete higher bound. Historical consumed gates unchanged. New Arc local TMP16MiB+raw2MiB once, independent of original16MiB source envelope; W01 sealed5318 old8MiB replaced by next source-only8MiB, equal-value replacement not duplicate. Mika19:34 Q01 successor new8MiB once; prior Q01 sealed evidence retained for next classification. S01 actual4child RETURN does not imply metadata growth0. No historical gate changed. Newarchitecture2MiB was0B/0child until19:44:41 safeSTOP, only resumes afterpersonalactualSTART; included in forwardonly. Known sealedS01/PROCESS/K/AV andOriginalpreparation caps removed with reportedfixedprovenance, personal consumed18518114304 remains unchanged. ActiveQ01successor8/VISUAL8/Arc16+ordinary18 and allunknownKEEP remain.",
+    "classificationEvents": [
+      {
+        "at": "2026-10-07T19:43:30.272Z",
+        "term": "MikaQ01NewOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Mika authoritative SOURCE_STOP06118de7/source01dfc89,4child19:22:32.454554 exact group and TMPRETURN,49375B sealed retained, independentapproval19:31. Immutable retained already reduces fresh free. Successor new8MiB separate term remains. No deletion/timecredit/historyrewrite.",
+        "reportedVia": "root19:34/19:31 messages"
       },
-      "minimumFreshFreeBytes": 16275210240,
-      "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 16777216 + 16777216 + 35651584 + 0 + 168820736 + 1073741824 + 10485760 = 16275210240"
-    }
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaS01NewOrdinary",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "S01 source84b5/packet86bb cleanSTOP;4childFULLRETURN19:33:01.365; fixed source/local now in independentreview",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaPROCESSNewOrdinary",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "PROCESS abc0736/3fcdf cleanSTOP;FULLRETURN19:35; independentreview pending doesnot imply growth",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaPureSourceLocal",
+        "beforeBytes": 1048576,
+        "afterBytes": 0,
+        "basis": "K8627 cleanSTOP reported root19:14; no newactual or pending child",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "AV03FailureMetadata",
+        "beforeBytes": 4194304,
+        "afterBytes": 0,
+        "basis": "AV6204 cleanSTOP/R2ready; no newactual, candidateCLOSED",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "S01NewOfflineSeal",
+        "beforeBytes": 1048576,
+        "afterBytes": 0,
+        "basis": "S01d6ce cleanSTOP reportedroot19:14; old2KEEP remains separate unknown512MiB, untouched",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "OriginalNewPublicationOrdinaryPendingStop",
+        "beforeBytes": 33554432,
+        "afterBytes": 0,
+        "basis": "Original source520d3/packet96e8/b895 cleanSTOP;3checks19:02:33.532 RETURN; current personal instance/records covered by separate selected515MiB",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "VisualBrowserPreparationSource",
+        "beforeBytes": 8388608,
+        "afterBytes": 2097152,
+        "basis": "Old33f034cleanSTOP19:49:13/fixed4ca, new10min2MiB fourpeer source-only delta replaces old8MiB.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "ArcSource",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "891f478 source/92d98f2 metadata actualremoteequalclean/exact20STOP; originalsource+TMP2.76MiB<16MiB sealed.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "ArcNewOrdinaryTMPAndRaw",
+        "beforeBytes": 18874368,
+        "afterBytes": 0,
+        "basis": "ARC local18020/60000 CLOSED/5exactPIDPGIDandTMPabsent,92d98seal completed; raw retained immutable no furthergrowth.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      }
+    ]
   },
   "SVC09AR4": {
     "state": "FAILED_RUNTIME_RETURN_WITH_KEEP",
@@ -2041,7 +2129,7 @@
     }
   },
   "arcSuccessor": {
-    "state": "CLAIM_COMMITTED_SOURCE_CANONICAL_INITIALIZING",
+    "state": "SOURCE_LOCAL_SEALED_STOP_REVIEW_PENDING",
     "owner": "workspace_panels_owner",
     "task": "WPF-WORKSPACEARC01 existingcandidate",
     "parent": "WPF-MATURE-05 original01/02/03/05",
@@ -2080,9 +2168,9 @@
     "branch": "codex/web-workspace-composition",
     "sourceBase": "f8853d4731eb6229337279079c24617c97d4f56b",
     "provision": "196 source files /1809043B / all hashes match; shared git config unchanged, no node_modules copy/install",
-    "runtime": "NOT_RUN; source implementation continues within exact20",
+    "runtime": "HTTP2/browser4 NOT_RUN_NO_GRANT",
     "registration": "AWAITING_ORIGINAL_D05_UNIQUE_SOURCE_REGISTRATION",
-    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/status.md",
+    "canonical": "92d98f2267ad932d156c6f07a9e4b86524503782 remoteequalclean",
     "sourceSwitchIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/source-switch-intake.json",
     "registrationRequest": "arc-source-registration-request.json",
     "latestD05Observation": {
@@ -2094,7 +2182,86 @@
       "mapping": "claim in claims/unregisteredAssignments; no normal summary/byTask registration, matchesSource=null",
       "userVisibility": "Existing IAB shows 已领取，进度来源待登记 and details; do not claim lost or unowned",
       "next": "Original soleD05 writer handles existing fixed818B request; no newclaim/mappingwriter/restartbyWeb"
-    }
+    },
+    "ordinaryLocal": {
+      "logicalId": "ARC-COMPOSITION-LOCAL-20261007-ONCE",
+      "grantedAt": "2026-10-07T19:29:55.701Z",
+      "state": "CLOSED_FULLRETURN_SELECTED_PASS_FIRST_FAILURES_RETAINED",
+      "owner": "workspace_panels_owner",
+      "claim": "c34d95d1 v1 exact20",
+      "phaseMs": 60000,
+      "eachChildMs": 20000,
+      "cleanupIncludedMs": 5000,
+      "tmpBytes": 16777216,
+      "rawBytes": 2097152,
+      "scope": "13 selected: layout6 + pluginHost2 + App private port5, then static-import affected noEmit. Excludes stream2 controlledHTTP and browser4. One serial Node and samegroup necessaryhelpers only.",
+      "preflight": "Owner freeze exact source/caller/config/readonly-resolver bindings and fresh claim20/nooverlap/native/free before first launch; private scope-only preparation fixes permitted within same phase. No repeated green checks or new approval per child. Preserve firstfail/raw, aggregate time, exact processes/logs/TMP closure.",
+      "network": 0,
+      "PG": 0,
+      "HTTP": 0,
+      "Chrome": 0,
+      "provider": 0,
+      "install": 0,
+      "build": 0,
+      "completeMinimumFreeBytes": 18509725696,
+      "actualChildActive": false,
+      "spentMs": 18020,
+      "remainingMs": 41980,
+      "attempts": [
+        {
+          "name": "direct-1",
+          "start": "2026-10-07T19:37:17.307715Z",
+          "pid": 54527,
+          "exit": 1,
+          "chargeMs": 1952,
+          "result": "8 PASS; App5 not loaded due fixed source supply missing module, not failed behavior assertion",
+          "closure": "owned group/scratch absent",
+          "consumedFloorBytes": 18509725696,
+          "freshFreeBytes": 19395317760
+        },
+        {
+          "name": "types-1",
+          "start": "2026-10-07T19:38:16.406483Z",
+          "pid": 92068,
+          "exit": 2,
+          "chargeMs": 4653,
+          "result": "four dotted relative import source omissions and two local test type problems; correcting within same phase",
+          "closure": "owned group/scratch absent"
+        },
+        {
+          "name": "direct-2",
+          "start": "2026-10-07T19:40:12.824336Z",
+          "pid": 66202,
+          "exit": 0,
+          "chargeMs": 2037,
+          "result": "13PASS/34NOT_SELECTED",
+          "closure": "owned group/scratch absent"
+        },
+        {
+          "name": "types-2",
+          "start": "2026-10-07T19:40:48.708599Z",
+          "pid": 88252,
+          "exit": 0,
+          "chargeMs": 4692,
+          "closure": "owned group/scratch absent"
+        },
+        {
+          "name": "types-3",
+          "start": "2026-10-07T19:43:33.739915Z",
+          "pid": 95910,
+          "exit": 0,
+          "chargeMs": 4686,
+          "closure": "allfiveexactPID/PGID ESRCH;scratchabsent;regularfilelogs not dualEOF"
+        }
+      ],
+      "next": "Natural fixed source/local/evidence seal, one independentreview; browser/streamHTTPNOT_RUN",
+      "currentChild": null,
+      "unusedTransferAuthorized": false,
+      "actualReturn": "2026-10-07T19:44:31.817845Z",
+      "result": "13PASS/34NOT_SELECTED; firsttypesexit2 then relevanttwofixchecks0; noHTTP/browser execution"
+    },
+    "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+    "allScopes": "c34d v1 exact20STOP retained"
   },
   "OriginalOrdinaryCurrent": {
     "state": "ACTUAL_CHECKS_RETURNED_SEAL_PENDING",
@@ -2279,7 +2446,7 @@
   },
   "OriginalNewQueuedSVC09A": {
     "logicalId": "SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE",
-    "state": "UNIQUE_NEXT_GRANTED_NOT_STARTED",
+    "state": "FAILED_ACTIVE_RESOURCES_RETURNED_KEEP",
     "grantedAt": "2026-10-07T19:04:52.076Z",
     "owner": "Original native_center_owner through original Lead only",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
@@ -2343,6 +2510,91 @@
     "returnRule": "One attempt only; report actualSTART/terminal/exactregisteredPIDPGID/EOF/DBmarkerOIDconnections/adminclose/KEEP separately. Callerexit alone doesnot return resources. DB/privateKEEP only, noDROP/signals beyond original reviewed supervisor; no retry/oldcredit.",
     "ordinaryRule": "Functional host verification can coexist with isolated already-authorized0PGHTTPChromeordinary/source. No secondheavy/PG/browserwindow or personal service changes. No performancefreeze.",
     "executionAtInitialGrant": "42f0d8668ea606f63a089008a0c6bf46f7e3db41",
-    "routineMetadataDelivery": "Original fresh confirms source62373492/prep8257/22pins/2inherit/2references/5runtime/2artifact unchanged, bothnewnamespacesabsent,0child/pending. Metadata-only delivery updates same unconsumed grant, no newsourceapproval or runtime."
+    "routineMetadataDelivery": "Original fresh confirms source62373492/prep8257/22pins/2inherit/2references/5runtime/2artifact unchanged, bothnewnamespacesabsent,0child/pending. Metadata-only delivery updates same unconsumed grant, no newsourceapproval or runtime.",
+    "actualStart": "2026-10-07T19:16:09.120Z",
+    "actualReturn": "2026-10-07T19:17:35.003Z",
+    "outerPid": 36049,
+    "outerElapsedMs": 29140,
+    "consumedFloorBytes": 17908891648,
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-window-return.json",
+    "receiptSha256": "e1437351b289d34bc5247eab5a7756de8cba9e7e0b3d3c58b17628029ed63aa5",
+    "databaseOid": 1348911,
+    "keep": "DB/private KEEP; no DROP; no three-role success",
+    "retry": false
+  },
+  "SVC06BPersonalPublication": {
+    "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+    "state": "PERSONAL_UPDATE_STOPPED_DIAGNOSIS",
+    "grantedAt": "2026-10-07T19:28:11.839Z",
+    "owner": "Original assignment_review under Original Lead",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+    "preparation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/web-publication-preparation.json",
+    "deliveryPrefixes": [
+      "96e8",
+      "b895"
+    ],
+    "review": "Original approved source+actual-local main089a6e460; eight source paths mainc15cdffcb",
+    "candidatePeakBytes": 540016640,
+    "completeMinimumFreeBytes": 18518114304,
+    "selectedTuple": "cd27/04da backend; Web779/c231; policy81a8; four formal reports unchanged",
+    "sequence": "Fresh private identities -> fixed cd27 import -> three retained reports -> reviewed original maintenance -> exact resumed-confirmed receipt -> fresh private Web instance -> fixed779 Web import -> fourth report -> explicit expectedVersion3 CAS publication. Old pointer retained until public publish action. No rebuilt artifacts.",
+    "limits": {
+      "importWorkMs": 120000,
+      "importTermMs": 500,
+      "importReapMs": 2000,
+      "maintenanceWorkMs": 900000,
+      "maintenanceReapMs": 2000,
+      "eachFixedWebActionWorkMs": 30000,
+      "eachFixedWebActionTermMs": 500,
+      "eachFixedWebActionReapMs": 2000,
+      "newLogicalBytes": 536870912,
+      "rawTotalBytes": 2097152,
+      "recordBytes": 1048576
+    },
+    "preflight": "Original sole operator fresh exact claim/source/runtime/tuple/report pins, private0600 six-file and three-process/CAS identity, unique idle and free>=latest complete floor. Personal input remains null until normal trusted freeze. No credentials in public records. Any mismatch or unknown stop before dependent side effects.",
+    "resourceRule": "Exclusive against other PG/Chrome/build/heavy or personal operations; isolated source and already-authorized nonmeasurement0PG ordinary can continue. No second heavy NEXT.",
+    "failureRule": "Preserve partial effects and unknown status; no automatic retry/rollback/delete journals/replay. Separate actualSTART, phase terminal, publication result, and exact resource RETURN; do not infer from elapsed time.",
+    "contractFreeze": {
+      "at": "2026-10-07T19:45:01.641Z",
+      "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+      "floorBytes": 18518114304,
+      "until": "Historical consumed gate immutable; independent future budget may change",
+      "prelaunchFact": "Original reports0START/0personal effects. Old18509725696 frozenoperator stopped at launch-before assert after newQ01 changed requiredfloor. Same unconsumed operator now routine rebinds18518114304 and directly fresh launches; free about19.38GB reported, exact sample belongs actualreceipt.",
+      "rule": "No secondgrant/sourceapproval. Existing authorized ordinary/source continues. Any new not-yet-authorized growth queues until actualSTART or explicitSTOP; do not mutate this fixed resource contract again. Historical/preflightfailure kept. No globalSTOP.",
+      "state": "CONSUMED_IMMUTABLE"
+    },
+    "actualStart": "2026-10-07T19:43:39.755Z",
+    "operator": "Original assignment_review",
+    "consumedFloorBytes": 18518114304,
+    "freshFreeBytes": 19391119360,
+    "privateInstanceSha256": "a064ed9155ebffb980af937672ddab8e4f2306e8f45dbb955ea41b0618a6600f",
+    "freshBindings": "48pins/inheritedclosure/sixprivatefiles matched by Original operator; values not copied",
+    "currentPhase": "same operation35d5a7ff boundedreadonly3role/phase/maintenance observation by Original owner",
+    "maintenance": "NOT_STARTED",
+    "webPublication": "NOT_STARTED",
+    "pid": "NOT_REPORTED",
+    "return": "NOT_FULLRETURN",
+    "terminalAt": "2026-10-07T19:47:21.167Z",
+    "outerCallReturnedAt": "2026-10-07T19:48:31.241Z",
+    "operatorElapsedMs": 114242,
+    "operatorExit": 1,
+    "refreshElapsedMs": 58210,
+    "primary": "START_UNCONFIRMED_CHECK_STATUS",
+    "completed": "fixedcd27 import,threeformalreports,bootstrap,strictidle",
+    "notCompleted": "checkpoint,resume,newWeb",
+    "returnState": "OUTER_RETURN_ONLY_PERSONAL_SERVICES_AND_ACCEPTING_UNCONFIRMED",
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-window-return.json",
+    "receiptBytes": 1032,
+    "receiptSha256": "9993c19e8edb7d4983efccb69f3ef96d40cfd9ffb8a683db6c27bc4893f80a47",
+    "priority": "User accepting/service recovery before any newheavy",
+    "prohibited": "No replay/model/newWeb/secondgrant/automaticrollback; only original sameop exactbounded observation and authorized recovery decision"
+  },
+  "chatQueueAckFollowup": {
+    "existingTask": "TUI001-06/08 and MATURE06",
+    "fixedObservation": "Original GO readonly fixed035a: Web queue resume ACK validation weaker than interaction; missing promoted task replacement and promoted task/turn/item binding checks",
+    "next": "Original FLOW plan owns shared browser-safe pure semantic rule, reproduce first and regress both consumers. Web retains private persistence/display; contradictory ACK keeps original key/body UNKNOWN.",
+    "priority": "After personal publication/default host diagnosis; no claim or overlap with current queue writer; not a duplicate task",
+    "runtime": "NOT_RUN_SOURCE_OBSERVATION_ONLY"
   }
 }

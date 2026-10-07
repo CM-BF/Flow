@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T19:23:51.264625+00:00",
+  "decision": "APPROVED_SOURCE_PREPARATION_NOT_BROWSER_RESULT",
+  "blockingFindings": [],
+  "target": {
+    "task": "WPF-VISUAL01",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "branch": "codex/web-shared-overlays",
+    "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "metadataHead": "5318e540f4efe014a7be9d03716ee36f0a1b21d0",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "claimVersion": 1
+  },
+  "fixedPacket": {
+    "path": "/private/tmp/vis-picker-b1",
+    "parentSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+    "workerSha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+    "bindingSha256": "9be956f5046c78cfc7438a0130cab7f4e55c4af690e0736f47782043dc8b54bc",
+    "manifestSha256": "1d0d89b460983c13d0677ffac714d25604e9c7633b8b9626dc6343eff7b6dad0"
+  },
+  "verified": [
+    "Read owner report, complete actual supervisor/worker difference hunks, worker lifecycle, supervisor admission and ownership checks, and exact scenario sections for the two overlay groups and bounded native filter evidence.",
+    "Independently regenerated diff hunks from actual files. Supervisor diff matched all72 lines against prm-b1/supervisor.py SHA671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b. Worker diff matched all98 lines against msgquick-full1/worker.mjs SHA53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb.",
+    "9 manifest file size/hash rows, 6 product/test source hashes, 222 read-only source dependencies, 37 exact external entry realpath/size/hash pins, and5 prepared hashes all matched. The6 source files also matched fixed Git implementation4ca1. No source changes were introduced by the final metadata-head rebind.",
+    "Final binding head5318 and final manifest rows were re-read after the ordinary metadata seal; errors were empty. No consumed-gate, scratch, raw, result, browser-budget, or worker.log existed at the bounded preparation observation.",
+    "The original6 behavior groups run before2 overlay groups; a successful close of the first context and fixture is required before creating the independent overlay fixture/context. No simultaneous fixture pair or new PG consumer was added.",
+    "Overlay assertions cover normal and180-character names, explicit Light/Dark390 themes, reduced-motion preference, disclosure behavior, body horizontal bounds, reachable Apply/Cancel footer before/after body scroll, Escape focus return, unchanged current selection before Apply, and one explicit desktop Apply.",
+    "Native filter inputs include their own bounded observed event records from the behavior scenario. The post-behavior diagnostic marker is distinct from those records; it does not claim OS physical-keyboard or IME testing.",
+    "Finally-path trace read/write errors are recorded while subsequent context/CDP/fixture cleanup still runs. Worker success alone is insufficient: parent requires the exact8 checks,7 image files, actual exit and resource cleanup evidence, plus the external outer-exit receipt."
+  ],
+  "proposedRun": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "httpFixtures": "2 sequential owned Vite fixtures",
+    "expectedBehaviorGroups": 6,
+    "expectedOverlayGroups": 2,
+    "expectedImages": 7,
+    "newImages": 5
+  },
+  "limits": [
+    "No application code, supervisor, worker, product import, browser, HTTP fixture, or PG execution was launched by this review. Browser result and screenshot quality remain NOT_RUN.",
+    "This is a controlled component and HTTP-catalog fixture. It does not prove real-center, actual-App send/queue/recovery, provider execution, physical keyboard/IME, or alternate OS scrollbar-mode coverage.",
+    "Recovery is a separate candidate: its38 proposed read-only links are not materialized and input closure remains HOLD. It is not approved for runtime by this Picker review.",
+    "The prepared floor is descriptive and is not a runtime admission. Manager must use the current complete forward floor, single-use allocation and exact native-Chrome-boundary record under the existing queue; personal publication keeps its higher priority. No additional product-source approval is required just for routine final review/admission bindings.",
+    "Outcome must remain failed on behavior, screenshot, cleanup, EOF, resource-cap, or actual-exit failure. Inspect generated images independently before claiming appearance acceptance."
+  ],
+  "cleanCode": {
+    "scope": "Prepared caller delta, sequential fixture/context ownership, error and cleanup paths, evidence semantics",
+    "findings": "No blocking naming, lifecycle, duplicate ownership, or assertion weakening found in the concentrated delta review. Original shared-source and dependency ownership is retained.",
+    "applied": "Validated actual differences instead of trusting the supplied diff; kept fixture result, actual browser appearance, runtime admission, and real-center integration separate. No new generalized executor or repeated green check was introduced."
+  }
+}

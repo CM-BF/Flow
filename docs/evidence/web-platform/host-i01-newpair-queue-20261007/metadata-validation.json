@@ -1,57 +1,68 @@
 {
-  "at": "2026-10-07T19:10:00.865032+00:00",
+  "at": "2026-10-07T19:55:05.661010+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-layout-confirmation-finding.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/personal-current-window-return.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-types-guard-result-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-default-host-return.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-preparation-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-preparation-review.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
-    "plans/wpf-mature-01-visual/status.md",
-    "plans/wpf-mature-05-workspace/plan.md",
-    "plans/wpf-mature-05-workspace/status.md"
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-06-chat/plan.md",
+    "plans/wpf-mature-06-chat/status.md"
   ],
   "links": [
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json",
-      "exists": true
-    },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "resource-window-current.json",
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-01-visual/status.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-types-guard-result-review.json",
+      "source": "plans/web-platform/status.md",
+      "target": "../../docs/evidence/web-platform/resource-window-current.json",
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json",
+      "source": "plans/wpf-mature-06-chat/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-05-workspace/status.md",
+      "source": "plans/wpf-mature-06-chat/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/status.md",
+      "target": "../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/status.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/status.md",
+      "target": "../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-06-chat/status.md",
       "target": "plan.md",
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-05-workspace/status.md",
-      "target": "plan.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/status.md",
-      "target": "plan.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/status.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json",
+      "source": "plans/wpf-mature-06-chat/status.md",
+      "target": "../../docs/evidence/web-platform/connection-recovery-priority.md",
       "exists": true
     }
   ],
@@ -346,6 +357,30 @@
     },
     {
       "file": "arc-accessibility-followup.json",
+      "match": true
+    },
+    {
+      "file": "svc09a-default-host-return.json",
+      "match": true
+    },
+    {
+      "file": "visual-picker-preparation-review.json",
+      "match": true
+    },
+    {
+      "file": "arc-layout-confirmation-finding.json",
+      "match": true
+    },
+    {
+      "file": "queue-receipt-mature06-research.json",
+      "match": true
+    },
+    {
+      "file": "personal-current-window-return.json",
+      "match": true
+    },
+    {
+      "file": "visual-recovery-preparation-review.json",
       "match": true
     }
   ],
