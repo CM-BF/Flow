@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "implementation",
+      "state": "review",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "材料引用查询、保留原因与有界分页已通过源码及局部独审，真实数据库验收准备就绪",
-    "next": "按固定准备执行一次真实SQL/owner HTTP验收；须先取得唯一资源窗口",
+    "output": "查询功能与独立收尾证据已审；夹具新增有界连接复核通过局部检查，等待增量审查",
+    "next": "独审夹具收尾增量，明确本片接收范围；不自动重跑真实用例",
     "blocker": {
       "state": "none",
       "text": ""
@@ -33,7 +33,7 @@
     },
     "source": {
       "state": "declared",
-      "record": "工具UTC实际开工；20min至11:56:23Z，等待计入；本次PG未开"
+      "record": "工具UTC实际开工；20min至11:56:23Z，等待计入；此项原准备时间记录；R1已实际执行并另收尾"
     },
     "issues": [],
     "waiting": ""
@@ -59,8 +59,8 @@
     }
   },
   "checks": {
-    "state": "passed",
-    "target": "81a064cb9f65da4b82bd2df042c4e5414f451811",
-    "record": "PASSED 81a064cb9f65da4b82bd2df042c4e5414f451811：8 direct/8pass与types0；list1仅收集、PG NOT_RUN。8child累计12.9147665s，原失败保留"
+    "state": "failed",
+    "target": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+    "record": "FAILED 5bd9ab34f08b64a8774ad1a05d83ca065a532ee3：PG1case passed但afterAll失败，callerUNKNOWN/KEEP；原local8/types0保持"
   }
 }

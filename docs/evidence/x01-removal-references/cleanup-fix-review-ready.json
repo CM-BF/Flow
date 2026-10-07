@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-07T12:08:14.825233+00:00",
+  "baseline": "951b40dcd411bf0827e0453211d42b6cf2df5a44",
+  "source": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "bindings": [
+    {
+      "path": "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 15702,
+      "sha256": "67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-wait.test.ts",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 3670,
+      "sha256": "de99430375bb539f6ea5aa5cc7fb5f5d7ed43b136924fe143670d0a148c5d91e"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-vitest.config.mjs",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 1529,
+      "sha256": "3c5ce157ae4ac4c0fa666fe854de8b0c26597f1552f764752154891f26f9fce3"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-tsconfig.json",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 796,
+      "sha256": "aa39e9f060d1c4c46a1d08926db8492b28d77276dae2a4cdc277b14faf6eb458"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-local.py",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 5767,
+      "sha256": "59cd25eb7f9b82c48eb8c590cb40c140be689986e5c2a373584671cf706dc058"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-local.json",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 23235,
+      "sha256": "b4cc8c03e26138a902b232c9e63a96fcf52b8eb9f07dbd075efefbfaa9f033ca"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-fix-interface.md",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 1913,
+      "sha256": "2f2711a93e041a756f5e27485693eed78612a9acf4abae94af90dd948a13c441"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/cleanup-static-source.json",
+      "commit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 655,
+      "sha256": "263a323c07e937af99685e7f96672b28253114977f70d4536f0fb20e02231d27"
+    }
+  ],
+  "summary": {
+    "files": 8,
+    "bytes": 53267,
+    "attempts": 3,
+    "supervisedSeconds": 1.43615266692359,
+    "rawBytes": 218
+  },
+  "fixedPreparedChangedOnly": [
+    "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts"
+  ],
+  "originalRunUnchanged": "R1 result/manifest/raw and its UNKNOWN preserved, no PG retry. Original 297-input manifest is historical, not a current executable package after this change.",
+  "checks": "fake on omission initial6fail; after fake correction6pass; focusedtypes0. 0PG/HTTP/TMPfixtures beyond three owned local roots, all removed.",
+  "sourcePostExecutionFixed": true,
+  "review": "PENDING",
+  "newPG": "NOT_OPEN; new namespace and binding required if later authorized"
+}
