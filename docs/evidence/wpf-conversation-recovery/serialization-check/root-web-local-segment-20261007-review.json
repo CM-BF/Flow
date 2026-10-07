@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T03:09:38.667063+00:00",
+  "reviewer": "/root independent",
+  "decision": "ACCEPTED_SCOPED_LOCAL_ACTUAL_RESULTS",
+  "errors": [],
+  "segment": "/private/tmp/web-local-segment-tvp1bssw/segment.json",
+  "segmentSha256": "32681de4b86591d9808e88b0f5326bb8382d909847d26e5d548f3acb5c292f70",
+  "actualTotalMs": 7673.935333034024,
+  "checks": {
+    "quick": {
+      "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+      "runHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+      "strict": "PASS",
+      "direct": "26/26 PASS, no skipped or todo",
+      "cumulativeMs": 5119,
+      "remainingMs": 24881,
+      "browser": "NOT_RUN"
+    },
+    "recovery": {
+      "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+      "runHead": "79fe564f009d5b78be0878b669a77068089c77ba",
+      "serialization": "old negative and new positive ten assertions PASS",
+      "nativeBrowser": "NOT_RUN; prior failed browser history and remaining51635ms unchanged"
+    },
+    "d04": {
+      "source": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+      "runHead": "7d9544fb041504a76988c5a53c9f1944ac5f19d9",
+      "pureGit": "5/5 PASS",
+      "coordinationPg": "NOT_RUN"
+    }
+  },
+  "cleanup": "All three external actual exits0, matching output hashes/bytes, dual EOF, no dropped bytes, owned groups absent; reported scratch clean. Original failures remain unchanged.",
+  "limits": [
+    "Read-only audit of original artifacts, not a rerun.",
+    "No PG/Chrome/provider/install or main/deployment result follows from these local checks."
+  ],
+  "cleanCode": "Prior source reviews combined with targeted behavior checks; original budgets, failed originals and narrow scope retained. No further repeated local tests needed absent changes."
+}

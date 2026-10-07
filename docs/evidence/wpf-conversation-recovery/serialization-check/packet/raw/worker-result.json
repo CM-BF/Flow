@@ -1,0 +1,37 @@
+{
+  "state": "PASS",
+  "outcomes": [
+    {
+      "name": "old-negative",
+      "state": "PASS",
+      "expectedFailure": {
+        "name": "ReferenceError",
+        "message": "__name is not defined",
+        "stack": "old-page-callback.js:1\n(()=>{const holder=window;const original=IDBDatabase.prototype.transaction;Object.defineProperty(IDBDatabase.prototype,\"transaction\",{configurable:true,writable:true,value:__name(function(...args){const transaction=original.apply(this,args);if(this.name===\"flow.conversation-recovery.v1\"&&args[1]===\"readwrite\")queueMicrotask(()=>transaction.abort());return transaction},\"value\")});holder.recoveryFixtureRestoreIdb=()=>{IDBDatabase.prototype.transaction=original;delete holder.recoveryFixtureRestoreIdb}})()\n                                                                                                                                                                            ^\n\nReferenceError: __name is not defined\n    at old-page-callback.js:1:173\n    at old-page-callback.js:1:506\n    at Script.runInContext (node:vm:149:12)\n    at evaluate (file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:34:47)\n    at oldNegative (file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:60:5)\n    at async file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:121:3"
+      },
+      "transformedSha256": "c8178724e0c7134eaab45a86e4845e102dc89f7d33891d1441fbf42d04f6f204",
+      "serializedSha256": "0f4ba09d580020bc2bd00d0f24fd49c3d38501a36be43c07a9df18dd94aefd1e"
+    },
+    {
+      "name": "new-positive",
+      "state": "PASS",
+      "checks": {
+        "wrapperInstalled": true,
+        "receiverPreserved": true,
+        "argumentsPreserved": true,
+        "returnPreserved": true,
+        "onlyTargetReadwriteAborts": true,
+        "abortDeferred": true,
+        "originalErrorPreserved": true,
+        "noGlobalNameHelper": true,
+        "restored": true,
+        "restoredReadwriteUntouched": true
+      },
+      "transformedSha256": "cf3345dc49b20cb27585b2b3a04b8646448676d6566a4f996a67f60fa4e6c340",
+      "serializedSha256": "66c554b804ebe3432362cbf799617a364a045193ca26f60d7fdbfb37ae2cbdde"
+    }
+  ],
+  "nodeVersion": "v24.20.0",
+  "transform": "Installed TSX t() ESM, its default keepNames/minifyWhitespace/target, explicit fixed root tsconfigRaw",
+  "boundary": "Actual installed TSX/esbuild transformation and isolated VM callbacks with modeled IDB; not native IDB, Playwright, HTTP, or browser journey."
+}

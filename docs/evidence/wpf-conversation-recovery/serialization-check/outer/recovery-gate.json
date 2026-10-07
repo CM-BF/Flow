@@ -1,0 +1,27 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "taskId": "WPF-RECOVERY01",
+  "mode": "recovery-page-evaluate-serialization",
+  "expiresAt": "2026-10-07T03:06:06.485819+00:00",
+  "bindingSha256": "c621fb17f782a85c6769af9c1100c58690340acf62ee69e43fcea08dfc79b0f3",
+  "runnerSha256": "da4ff263f30b6d0fdb15992b3b6aaec8293c573762f9a6ab92bba3270eae88a1",
+  "sandboxSha256": "2a45a93844eeff09932fcf952ce68d88f065e74951abeee8a3f7611c13597bef",
+  "implementation": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "claim": {
+    "id": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4
+  },
+  "overlaps": [],
+  "limits": {
+    "totalMs": 10000,
+    "workMs": 7000,
+    "cleanupReserveMs": 3000,
+    "tmpBytes": 8388608,
+    "rawBytes": 262144,
+    "pollMs": 50
+  },
+  "segment": "/private/tmp/web-local-segment-tvp1bssw/segment.json",
+  "source": "GO/Lead bounded local team segment; fresh manager pins/claim/resource receipt",
+  "head": "79fe564f009d5b78be0878b669a77068089c77ba"
+}

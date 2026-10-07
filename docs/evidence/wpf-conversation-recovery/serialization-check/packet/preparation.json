@@ -1,0 +1,57 @@
+{
+  "state": "PREPARED_NOT_RUN_NO_GATE",
+  "method": "Read fixed blobs and installed tool source; Python-only file preparation and AST parse of parent. No Node or esbuild import, syntax probe, test, service, free-space observation, or product write.",
+  "supervisorBase": {
+    "path": "/private/tmp/recovery50-once-en2_sud5/run.py",
+    "realpath": "/private/tmp/recovery50-once-en2_sud5/run.py",
+    "bytes": 21925,
+    "sha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7"
+  },
+  "supervisorDelta": {
+    "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/supervisor-adaptation.diff",
+    "bytes": 33018,
+    "sha256": "93542ece400df8ec2690e3c8c5914bca02a2c220d15f857716710ec8cc55fd6f"
+  },
+  "pythonPreparationExecutable": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+  "fixedCallbackExtractionsVerified": true,
+  "sourcePins": 19,
+  "toolPins": 14,
+  "parentPythonAst": "PARSED_WITHOUT_EXECUTION",
+  "workerJavaScriptSyntax": "NOT_EXECUTED_NOT_IMPORTED",
+  "gateExists": false,
+  "officialBasis": [
+    "https://playwright.dev/docs/evaluating",
+    "https://esbuild.github.io/api/#keep-names"
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "cleanCode": {
+    "scope": [
+      "run.py",
+      "worker.mjs",
+      "binding.json",
+      "sandbox.sb"
+    ],
+    "applied": "Separate gate/pins, one worker, explicit old/new cases, and cleanup/report failure paths. Actual TSX transform reused, no helper shim or copy of product command logic. Non-ENOENT accounting errors fail; scratch only removed after owned group absence; handled late stop emits FAIL/exit1.",
+    "unverified": "Node worker and sandbox behavior pending independent review and later one-shot admission; modeled IDB does not establish native IDB/page acceptance."
+  },
+  "toolConfiguration": "Actual TSX t() implementation plus fixed root tsconfigRaw (root package ESM, no extends); metadata-only loader source pins show ESM t(...,{tsconfigRaw:L(...)}) path. No loader/product module import.",
+  "terminalAccountingDelta": {
+    "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/terminal-accounting.diff",
+    "bytes": 2317,
+    "sha256": "59214abbb8a78d4e6b858b3e9b7bd76be9b9d5b52bb27b6e5f4dd00d66adff0a"
+  },
+  "terminalAcceptance": "Actual parent exit 0 plus exactly one terminal PASS line, no late-stop.json / later FAIL, worker result and current source/tool pins; raw count includes conservative 16384 B terminal capture reserve; manager must retain actual stdout/stderr/exit."
+}

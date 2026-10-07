@@ -1,0 +1,55 @@
+{
+  "head": "79fe564f009d5b78be0878b669a77068089c77ba",
+  "implementation": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "bindingSha256": "c621fb17f782a85c6769af9c1100c58690340acf62ee69e43fcea08dfc79b0f3",
+  "runnerSha256": "da4ff263f30b6d0fdb15992b3b6aaec8293c573762f9a6ab92bba3270eae88a1",
+  "limits": {
+    "totalMs": 10000,
+    "workMs": 7000,
+    "cleanupReserveMs": 3000,
+    "tmpBytes": 8388608,
+    "rawBytes": 262144,
+    "pollMs": 50
+  },
+  "samples": [
+    {
+      "elapsedMs": 200.98974998109043,
+      "tmpBytes": 103241,
+      "rawBytes": 0
+    },
+    {
+      "elapsedMs": 251.70324998907745,
+      "tmpBytes": 103241,
+      "rawBytes": 0
+    },
+    {
+      "elapsedMs": 278.8443330209702,
+      "tmpBytes": 108064,
+      "rawBytes": 4823
+    }
+  ],
+  "boundary": "Tool transform plus modeled IDB in isolated VMs; no browser or Flow imports.",
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs"
+  ],
+  "ownedPgid": 39905,
+  "postReapBeforeDelete": {
+    "tmpBytes": 108064,
+    "rawBytes": 4823
+  },
+  "cleanup": {
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "errors": []
+  },
+  "workerExit": 0,
+  "reason": null,
+  "softStopSignal": null,
+  "workerChecksPassed": true,
+  "elapsedMs": 281.10858309082687,
+  "state": "PASS"
+}

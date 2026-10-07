@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 02:20:08 UTC |
+| 最近更新 | 2026-10-07 03:30:53 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 9835e7488dd9b0b44b3afbc285336defdd739e98；其他18源=8ed；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 第三次失败已独立seal a344；当前9835仅browser一源窄修，其他18源不变，metadata后normalpush核clean |
+| 工作树dirty状态 | 19源仍固定9835；本段仅归档既有实际序列化证据，metadata后normalpush核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 前段真实恢复已取得局部实证；页面授权失效验证的注入脚本已窄修，等待局部检查 |
-| 下一可用交付 | 对固定注入回调做有界序列化验证；实际浏览器后继仍须单独准入 |
-| 当前阻塞 | ACTIVE: pageOnlyAuthLoss遇page.evaluate异常；后续CSRF/offline与视觉焦点未运行，完整旅程仍未闭合 |
+| 当前产出 | 前段真实恢复已有局部实证；页面注入脚本的真实转译与十项受控检查已通过 |
+| 下一可用交付 | 继续页面授权失效与后续恢复的实际浏览器验收，需后继独立运行安排 |
+| 当前阻塞 | ACTIVE: 注入脚本局部修复已验证，但pageOnlyAuthLoss及后续CSRF/offline/视觉焦点尚未浏览器复验，完整旅程未闭合 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 第三次browser page.evaluate __name未定义，actualexit1/清理完整；前段材料/CAS/同key重试PASS，晚累计38364.050667ms；原50与types范围不变 |
+| 检查状态 | FAILED: 第三次browser page.evaluate __name未定义，actualexit1/清理完整；前段材料/CAS/同key重试PASS；9835序列化旧负例+新十项PASS，非browser复验；晚累计38364.050667ms、原50/types不变 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；21:13:59.691Z管理fresh原件已本人窄核、唯一owner/nooverlap；仅metadata与/tmp准备，无gate或运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次03:30:04.633Z本人经安全CLI窄核active/原21/owner/WT/branch/version；仅既有实证metadata收口，非新运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -249,3 +249,9 @@ Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c218
 ## 2026-10-07 02:20:08 UTC — rec8ed注入序列化source安全点
 
 固定 `9835e7488dd9b0b44b3afbc285336defdd739e98`，[manifest](../../docs/evidence/wpf-conversation-recovery/page-evaluate-checkpoint.json)仅一browser。匿名value函数改原生method定义，保this/args/return/目标readwrite abort及恢复，未删后续断言。准确原因待同tsx/esbuild选项局部验证；当前local槽TUI占用，NOT_RUN。第三次失败独立metadata a344已pushclean，原晚预算不变；本次无新运行/类型/50/PG/Chrome或容量采样。
+
+## 2026-10-07 03:30:53 UTC — 已执行的9835序列化证据正常归档
+
+管理者在03:03:09.803532Z→03:03:10.126732Z已实际运行原受审packet，execution79fe/source9835；[全部原件](../../docs/evidence/wpf-conversation-recovery/serialization-check/archive.json)现在按唯一owner事实源归档，本次未重跑。旧匿名value回调经实际已装TSX/esbuild转换后在无helper的VM产生预期__name ReferenceError；新method回调十项全PASS（this/args/return、target-only readwrite deferred abort、原error/无全局helper/restore）。actualexit0、外层323.2180839404464ms，父早281.10858309082687ms与终态晚281.615ms分列；双EOF/丢弃0/ownedgroup与scratch清理齐。
+
+[Root限定实际审查](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json)和准备/9835源审原件逐字归档。只是实际转译+隔离VM中受控IDB，不是nativeIDB/Playwright或完整App旅程。第三次真实browserFAIL和全部旧raw不变，晚累计38364.050667ms/余51635.949333ms（下次整数最多51635含15000清理）保持，无新准入；50/types未重跑。19源码逐字等9835，完整feature targetUNKNOWN/reviewNOT_STARTED/main未接。

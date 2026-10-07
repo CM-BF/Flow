@@ -153,3 +153,9 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 ## 2026-10-07 02:20:08 UTC — rec8ed注入脚本作者待审
 
 作者固定9835源码修复，root已认可方向但本target尚待独审；同选项转译/受控注入检查NOT_RUN。完整feature NOT_STARTED/targetUNKNOWN，第三次FAIL与前段局部PASS分别保留。
+
+## 2026-10-07 03:30:53 UTC — 9835限定源审与实际局部转译证据
+
+[Root rec8ed/9835原审](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery-rec8ed-actual-and-9835-review.json)接受第三次失败/清理及9835 SOURCE_ONLY；[准备审查](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery9835-serialization-preparation-review.json)保原packet。管理者实际单次old-negative/new-positive十项PASS、actualexit0，root已给[ACCEPTED_SCOPED_LOCAL_ACTUAL_RESULTS](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json)。本owner只归档，无新测试/浏览器。
+
+该结果关闭本回调当前转译的已知__name依赖反例，但不推真实浏览器中的pageOnlyAuthLoss/后续旅程已过；原browser失败、预算、50受控范围、完整feature NOT_STARTED/targetUNKNOWN继续保持。

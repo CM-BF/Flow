@@ -1,0 +1,11 @@
+() => {
+        const holder = window as Window & { recoveryFixtureRestoreIdb?: () => void };
+        const original = IDBDatabase.prototype.transaction;
+        Object.defineProperty(IDBDatabase.prototype, "transaction", { configurable: true, writable: true,
+          value: function (this: IDBDatabase, ...args: Parameters<IDBDatabase["transaction"]>) {
+            const transaction = original.apply(this, args);
+            if (this.name === "flow.conversation-recovery.v1" && args[1] === "readwrite") queueMicrotask(() => transaction.abort());
+            return transaction;
+          } });
+        holder.recoveryFixtureRestoreIdb = () => { IDBDatabase.prototype.transaction = original; delete holder.recoveryFixtureRestoreIdb; };
+      }

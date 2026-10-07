@@ -1,0 +1,59 @@
+{
+  "reviewer": "/root independent read-only",
+  "at": "2026-10-07T02:38:01.788882+00:00",
+  "decision": "APPROVED_SCOPED_STATIC_SERIALIZATION_PACKET_NOT_RUN",
+  "packet": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7",
+  "head": "79fe564f009d5b78be0878b669a77068089c77ba",
+  "sourceTarget": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "files": {
+    "run.py": {
+      "bytes": 13401,
+      "sha256": "da4ff263f30b6d0fdb15992b3b6aaec8293c573762f9a6ab92bba3270eae88a1"
+    },
+    "worker.mjs": {
+      "bytes": 7559,
+      "sha256": "e961419c2d37f22bb81ae5b20d9c3c7b805d28cfe50f5dc749b8f7da419d62a6"
+    },
+    "binding.json": {
+      "bytes": 16936,
+      "sha256": "4f13154c9afe096cf6cf78db11c7c62c768f16660830185b2960302fcc435662"
+    },
+    "sandbox.sb": {
+      "bytes": 281,
+      "sha256": "2a45a93844eeff09932fcf952ce68d88f065e74951abeee8a3f7611c13597bef"
+    },
+    "README.md": {
+      "bytes": 7596,
+      "sha256": "690522be14e78afad69fec13845921dc89a70c22e497d8974d9f408ecfe6f7f3"
+    },
+    "candidate-manifest.json": {
+      "bytes": 2916,
+      "sha256": "01e8af348589bc5ff34b9b6729b614f0c47bc2ec490b15597f95e76742715d04"
+    }
+  },
+  "verified": {
+    "productPins": 19,
+    "toolAndConfigPins": 14,
+    "preparedPins": 5,
+    "fixedCallbacks": 2,
+    "errors": []
+  },
+  "acceptedScope": [
+    "Real installed TSX4.23.15 ESM transform with explicit pinned root tsconfigRaw and installed esbuild0.28.2; capture callback function then serialize to isolated VM without outer __name. No Flow product/browser module imported.",
+    "Old reference must throw expected missing __name before mutating IDB prototype. New scenario verifies ten specific modeled IDB invariants including exact receiver/arguments/return, deferred target-readwrite-only abort, original exception, no helper, restore and post-restore behavior.",
+    "One owned sandboxed Node group, explicit installed binary pin, private scratch/raw only and denied network; 10000ms inclusive/7000work/3000cleanup,8MiBtmp/256KiBraw. Unknown group retains scratch and fails; no global process cleanup.",
+    "Final accounting includes16KiB reserve for bounded terminal captures; handled late stop has one reporter, exits1, and cannot be accepted as PASS. Blocking OS/fatal external kill remain outside cooperative bound."
+  ],
+  "mandatoryActualAcceptance": [
+    "Manager fresh claim/current HEAD/pins/resource and actual local-slot admission; independent one-use gate bound to final reviewed state/binding/runner/sandbox.",
+    "Trusted actual outer exit0, exactly one complete terminal stdout PASS, no laterFAIL/late-stop file, empty parent stderr; do not accept worker-result alone.",
+    "Worker exit0, expected old-negative+new-positive and ten true checks; final cleanup/group/scratch absence, complete retained bytes/hashes and <=10000ms late elapsed.",
+    "Retain actual old error/transformed+serialized code and new result privately then archive nonsecret original evidence under owner scope; do not overwrite prior browser evidence."
+  ],
+  "notGranted": [
+    "No launch/gate/reservation by this review. Local slot currently under other leads; original Quick c1 sentence in README is historical and not scheduling authority.",
+    "No actual native IndexedDB/Playwright/HTTP/auth-loss/browser pass; modeled interface and callback-alone transformation have explicit limits.",
+    "No new browser budget: prior late38364.050667ms, remaining51635.949333ms, integer nextcap51635 incl15000cleanup unchanged."
+  ],
+  "cleanCode": "Read complete dedicated parent/worker and final terminal delta; exact real tool seam and original negative preserved, no global name shim or product changes. Preparation-only configuration mismatch seen in an earlier mutable read was confirmed already fixed at final e961419c bytes."
+}
