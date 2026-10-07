@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:31:45.985465+00:00 / 本次只核固定main e30d40cf actualExecution语义，部署未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:00:23.336Z / 固定 main7524a7fa个人预览配置与领取源码；个人部署/readiness未核 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,9 +11,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；source e7ff1a83，result 9b9c1182d2e649d2a68f3d3c7de980bac0e71fed；封口为本提交，旧源按历史Git保留 |
-| 工作树dirty状态 | fresh6dfbb213 clean；本次仅authority-inputs与本status文档更新，旧raw/manifest/sealed-accounting未改。 |
+| 工作树dirty状态 | fresh07341d46 clean=origin；本次仅父 plan/status/个人安装验收 metadata，旧 raw/manifest/封账未改；本提交后 clean 状态由 Git 回执确认。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | planning |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
 | 当前检查 | 6/6+sh0与唯一1native/1list/6models证据获20:42:21独立忠实性批准；CLI0、完整stdio、两root清理。无重测或新目标。 |
 | 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
@@ -22,8 +22,8 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude中心与公共客户端已在主线；Codex受控初始化后首次取得6个模型的目录，尚未验证账号或实际模型调用。 |
-| 下一可用交付 | 本目录片段已交付；受信host资料已刷新供ENG原owner消费，C02公开流沿其唯一status推进，真实模型资格与跨端验收仍开放。 |
-| 当前阻塞 | ACTIVE: PRODUCT_QUALIFICATION_PENDING：目录已读到，真实账号/模型、全部writer与完整跨端验收仍未完成。 |
+| 下一可用交付 | 让个人安装的用户可在 Web/TUI 选择下一条 Claude 消息设置；先交付两槽配置、精确目录与混合队列兼容，再独立验证真实模型效果。 |
+| 当前阻塞 | ACTIVE: PERSONAL_SETTINGS_NOT_ACTIVATED：现个人预览配置未声明逐消息设置；需在 SVC06 当前维护收尾后由合法 owner 接通两槽及目录/领取隔离。真实账号与模型后验另待额度。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | Mika/root 20:42:21 RESULT_FIDELITY_APPROVED/0P1P2绑定9b9c1182；仅真实目录、资源收束和计量忠实性，未知资格不升级。 |
@@ -39,10 +39,10 @@
 | WPF-MATURE-02-05 | pending | d01（Web子任务owner） | 按本大task接口独立交付，尚未获得本task跨端验收证据 |
 | WPF-MATURE-02-06 | pending | chatui01_owner | 真实续接/账号/取消恢复未验收 |
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
-| WPF-MATURE-02-08 | pending | chatui01_owner | 完整目标未验收 |
+| WPF-MATURE-02-08 | pending | chatui01_owner | [个人安装验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)：两槽兼容、真实 Web/TUI 可达与独立 provider 后验未完成；部署不等个人已启用 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
 | WPF-MATURE-02-10 | in-progress | status_read / mika | 首leaf已main；下一片profile/中心/adapter以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为唯一合同与范围来源，CORE源已main8d84、owner已释放，完整跨端产品后继仍开放 |
-| WPF-MATURE-02-11 | in-progress | native_center_owner / Lead协调WebTUI | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已固定F01函数/CLI、ACK/observed与Web/TUI最小接线及直接验收，MATURE02C01独立树已合法领取并开工；Web/TUI由原owner协调，本父未领产品源、不代记子进度 |
+| WPF-MATURE-02-11 | in-progress | native_center_owner / Lead协调WebTUI | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已固定F01函数/CLI、ACK/observed与Web/TUI最小接线及直接验收，MATURE02C01独立树已合法领取并开工；Web/TUI由原owner协调；新增个人安装的有限 choices、精确新 profile/runner/digest、下一条 snapshot 与旧 session/队列兼容验收，本父未领产品源、不代记子进度 |
 
 ## 接口与dashboard
 
@@ -69,3 +69,7 @@ Flow Node宿主、Node synthetic canary、固定Codex native是三种角色；�
 本轮沿固定本地find-skills/openai-docs/brainstorming与clean-code bdacd76检查窄接口、单一生命周期owner、旧默认、错误传播与计量；只新6组fake/sh加本次获授实际目标，未重跑历史全集。共享entry/probe历史源以61e28 Git冻结，当前改动e7ff已独审；raw/input/manifest不可回写。当前原始结果与外部clock见native-remote-status证据，本结果限定审查已通过，仍不宣称完整MATURE02交付。
 
 2026-10-07T05:31:45.985465+00:00 [受信host输入](../../docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md)已按原v6文档scope更新：目录6项与actual model未知分开，ENG01J固定五轮仅提供有限OS/既有R06启动事实，模型≥Sol/no-fallback/完整撤销仍待。资料缺口不全局阻断其OS实现。C02当前公开流准备仅链接[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/plans/wpf-mature-02-codex-continuity/status.md)，不复制子进度。0测试/目标/PG/provider，旧封账适用原Git不追改。
+
+## 个人安装验收同步（2026-10-07）
+
+本轮 fresh 13:00:23.336Z 账本 readId eed9166d-c355-4d00-854e-4675ebda6e09：父 claim0dd97484 v6 ACTIVE/3scope matchesSource，同 owner/树/分支；未借 C02 或 released CORE/SVC09 写权。固定输入07341d46、main7524a7fa，新增[验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)与 TODO08/11。个人配置/账号未读，0工程检查/服务/PG/provider。实施/独立 review/个人部署/完整完成时间仍 UNKNOWN；本片 metadata 的精确提交由 Git 记录，不能冒充实现开始。沿固定本地技能核单一生命周期、旧默认与 unknown 边界；架构双槽是 planned，待产品 owner 固定实现后 Lead 更新。唯一 status 供 dashboard 聚合，未新增状态库或大task。

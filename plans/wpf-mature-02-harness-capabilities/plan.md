@@ -25,11 +25,11 @@ Claude与Codex可被发现、选择和运行；model/thinking/fast/access从中�
 - [ ] WPF-MATURE-02-05：d01 Web选择、requested/actual/unsupported/unknown透明，thinking/fast/access独立语义验收。
 - [ ] WPF-MATURE-02-06：账号状态、Claude/Codex续接、错误/取消/恢复，真实边界证据；执行许可另定。
 - [ ] WPF-MATURE-02-07：独立review、每个小target及时commit/push/main集成与架构基线更新。
-- [ ] WPF-MATURE-02-08：按完整跨端验收矩阵验收；不以目录或fixture替代真正模型运行。
+- [ ] WPF-MATURE-02-08：按完整跨端验收矩阵验收，包含个人安装实际可选可用的逐消息设置：先零模型配置/目录/真实 Web 与 TUI 可达，再独立小预算 provider 后验；两槽兼容、旧 session 续接与 LIMIT 前资格隔离见[个人安装验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)。UI/后台部署、目录或 fixture 均不替代个人启用与实际模型运行。
 
 - [ ] WPF-MATURE-02-09：同harness空闲会话支持下一条设置变更；CAS/unknown ACK/恢复可追溯，历史/当前/入队配置冻结，跨harness路径明确，新选择使04测量失效。
 - [ ] WPF-MATURE-02-10：Claude产品core：兼容共享契约、中心CAS/幂等冻结message settings、既有Claude query传递；status_read/mika独立core首leaf已main，下一片按其精确接线请求完成现profile/中心/adapter，固定SDK注入与真实中心验收。
-- [ ] WPF-MATURE-02-11：共享consumer：同中心版本化DTO贯通client/interaction/Web/TUI下一草稿设置与历史snapshot；独立WT/owner/精确scope由Lead协调，未知ACK保原intent；client精确selector/ACK/CLI与Web/TUI草稿冻结/恢复及直接验收见[consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)。
+- [ ] WPF-MATURE-02-11：共享consumer：同中心版本化DTO贯通client/interaction/Web/TUI下一草稿设置与历史snapshot；独立WT/owner/精确scope由Lead协调，未知ACK保原intent；必须在个人安装实测新 runner/profile/digest 的有限 choices、下一条 snapshot、历史/队列冻结、两槽启停维护与旧会话兼容，参见[个人安装验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)；client精确selector/ACK/CLI与Web/TUI草稿冻结/恢复及直接验收见[consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)。
 
 ## 依赖与交接
 
@@ -100,3 +100,5 @@ Flow Node宿主、Node synthetic canary、固定Codex native binary是三角色�
 GO明确优先Claude逐消息设置，按TODO-10产品core→TODO-11共享consumer两个直接子任务推进，沿TODO-04/05/09验收。具体独立WT、sibling管理路径、共享writer/migration与四路径可移交请求见[唯一handoff](../../docs/evidence/wpf-mature-02/claude-message-settings-handoff.md)。本parent管理owner保留；四profile路径已明确停写并原子交回，child仍须fresh amend现有claim后接收。首leaf已main22d5，下一片精确source-only闭包/共享F01接线/唯一migration请求以[child handoff](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core/docs/evidence/wpf-mature-02-message-settings-core/next-slice-handoff.md)为权威，不复制子TODO。OpenSSL ca6a checkpoint保持PENDING_RESOURCE，不继续扩诊断。完整Codex能力及真实用户验收不删减。
 
 2026-10-06 17:16：TODO-03进入[真实native目录一次观察设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，GO授权准备，复用R06与原policy、最多1目标/45s/0turn；实际NOT_OPEN。ClaudeCORE已获限定批准，共享consumer/UI与完整能力验收继续推进，不以目录替代资格。
+
+2026-10-07T13:00:23.336Z：TODO08/11按 GO 要求补齐个人安装激活与真实选择验收；Claude 零模型接线先行，Codex writer/账号资格独立保持开放。本轮仅父 metadata，现 SVC06 维护与个人激活/模型后验窗口分开，不扩大旧运行额度。
