@@ -1,0 +1,27 @@
+{
+  "stoppedAt": "2026-10-07T08:33:32.465985+00:00",
+  "fromHead": "85598d30dd1a2e2093c95d0ca8ba9c410ef83afe",
+  "fixedMain": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "files": [
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "mainEqualsOwn": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "mainEqualsOwn": true
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "mainEqualsOwn": true
+    }
+  ],
+  "pendingChanges": false,
+  "reason": "LAZY固定main只读支持供给；三文件已main且无pending，STOP后正式部分交回，新owner须fresh领取。无语义改动。"
+}
