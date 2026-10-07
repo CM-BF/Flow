@@ -62,6 +62,9 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await expect(page.getByRole("button", { name: "Split chat", exact: true })).toBeDisabled();
       await expect(page.locator(".flow-pane-header")).toHaveCount(3);
       await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(3); await expect(pane(7)).toBeHidden();
+      await tab(7).press("Delete"); await expect(tab(7)).toHaveCount(0); await tab(1).click();
+      await expect(page.locator(".flow-pane-header").getByRole("tab")).toHaveCount(3);
+      for (const number of [1, 2, 3]) await expect(tab(number)).toHaveAttribute("aria-selected", "true");
       for (const number of [1, 2, 3]) await input(number).fill(`Independent draft ${number}`);
       const handles = await Promise.all([1, 2, 3].map(number => input(number).elementHandle()));
       await page.getByRole("button", { name: "Move pane 3 left", exact: true }).click();
