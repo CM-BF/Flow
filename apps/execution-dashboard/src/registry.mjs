@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['WPF-DASHBOARD-ACCESS01', '本机产品入口与连接资料', '工程协作', 'dashboard-local-access', 'wpf-dashboard-local-access'],
   ['OPS-CI01', '远程最小合同验证准备', '工程协作', 'ops-remote-validation', 'ops-ci01-remote-validation'],
   ['CHAT05P01', '工具完整原文保存与读取', '工作线', 'native-activity-body', 'chat05p01-native-activity-body'],
   ['WPF-MESSAGESETTINGS02', '聊天快速设置控件', '工作线', 'web-message-settings-quick-controls', 'wpf-message-settings-quick-controls'],
