@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T21:32:45.924161+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FAILED_COLD_RESULT_FIDELITY",
+  "blocking": [],
+  "target": "34c610a0237b217fed8828f5e85936e13e066fff",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-cold-result-manifest.json",
+    "bytes": 8719,
+    "sha256": "db978fff3f51ddfecf8670a4ef18a45f496ffded10116041636039ec1f6aa1fb"
+  },
+  "verification": {
+    "inheritedBindings": 4,
+    "resultBindings": 23,
+    "rawBytes": 23576,
+    "fixedCurrentHashAndIdentity": "all equal",
+    "reviewerRuntime": 0,
+    "privateBodyReads": 0
+  },
+  "actual": {
+    "selected": 1,
+    "passed": 0,
+    "operatorMs": 10993,
+    "primary": {
+      "phase": "host-consumer",
+      "name": "TypeError",
+      "code": null
+    },
+    "cleanupSqlState": "42P01",
+    "groups": [
+      87035,
+      90633,
+      95490
+    ],
+    "groupsState": "absent/dualEOF",
+    "operatorPid": 87034,
+    "operatorOwnership": "childPidOnly",
+    "operatorState": "absent/dualEOF",
+    "connections": "empty",
+    "adminClosed": true,
+    "launchAccounted": false,
+    "resourcesClosed": false,
+    "mayDrop": false,
+    "retention": "KEEP"
+  },
+  "forwardResourceClassification": {
+    "basis": "Fixed defaultSequence awaits before-default-start checkpoint before withPreviewLock/startPreviewServices. Durable work07 cold-artifact-controller is followed by work08 work-closure; no before-default-start or launch observation, archive persistenceFailures empty. Earlier fixed paths only verify/import/load/read/assertMarker; no detached service launch. All supervised work groups have absent/EOF receipts.",
+    "ownerPendingLaunch": "none from this completed once execution; no new launch authorized",
+    "clone": "static KEEP; future clone peak no longer reserved for this consumed attempt",
+    "private": "static KEEP with only separately registered metadata seal growth; no live owner writer from the attempt",
+    "lastObservedClone": {
+      "logicalBytes": 367071466,
+      "allocatedBytes": 401997824,
+      "physicalExclusiveBytes": null
+    },
+    "lastObservedPrivate": {
+      "logicalBytes": 43131,
+      "allocatedBytes": 245760,
+      "terminalMeasurement": false
+    },
+    "database": {
+      "disposition": "KEEP",
+      "lastObservedBytes": 7797783,
+      "terminalMeasurement": false,
+      "applicationConnections": "empty",
+      "physicalBackgroundGrowth": "UNKNOWN; shared PostgreSQL background activity not inspected",
+      "conservativeRemainingFutureBytes": 134217728
+    },
+    "accounting": "Fresh free includes existing retained bytes. Replace the consumed whole clone/private/PG peak by this narrower future classification, without double-adding registered ordinary metadata. No deletion or physical reclaim is authorized."
+  },
+  "limits": "Failure/42P01/logical cleanup false remain immutable. Control-flow no-launch conclusion is a separate limited forward classification, not a retroactive cleanup PASS. Static null-resolver defect is not substituted for missing original message/stack. No cold/4App/personal compatibility claim."
+}

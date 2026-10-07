@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-07T21:32:45.924161+00:00",
+  "directSourceBindings": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "18f0cd49f0febcc1fa22651e2bd20e589cba2d50",
+      "relativePath": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "18f0cd49f0febcc1fa22651e2bd20e589cba2d50",
+      "relativePath": "docs/evidence/svc06/browser-recovery/current-maintenance.mjs",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-maintenance.mjs",
+      "bytes": 14787,
+      "sha256": "4b0034c7cc12b410e65b78f2060dd368c0017a0cbd3387d2524401ca5603504e"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "18f0cd49f0febcc1fa22651e2bd20e589cba2d50",
+      "relativePath": "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "bytes": 7356,
+      "sha256": "f3e69b610a737d90490ff0a1c65c2a1a4e98a93662112c6c5edcddf201cc01a6"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "source": "2c6badbc4ae969ff1d527faddea296fad80745b3",
+      "relativePath": "docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "bytes": 14990,
+      "sha256": "82b048813aeedfc2f8f4a9fd83a7cb73dc28083707a38b84e37f73a21d3d4d2a"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "source": "2c6badbc4ae969ff1d527faddea296fad80745b3",
+      "relativePath": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "bytes": 7380,
+      "sha256": "f862c5964077b46431d8d446c31978469aecda40994a4340ef7b3b152f30f8ff"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "source": "2c6badbc4ae969ff1d527faddea296fad80745b3",
+      "relativePath": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+      "source": "5c93bc354989418bddfbf777052e3b2becd10b19",
+      "relativePath": "docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    }
+  ],
+  "inheritedReferences": [
+    "main7a6dfa56e/docs/evidence/i02/svc06b-migration-policy-ports-review.json",
+    "backend-browser-recovery/recovery-build-result-manifest.json at5938b9d64",
+    "main9c2886d95/docs/evidence/i02/svc09a-held-target-review.json"
+  ],
+  "scope": "Source-only caller preparation. Actual final dispatch must bind full inherited closures and corrected artifact after review; no arbitrary module is selected from JSON."
+}

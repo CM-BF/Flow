@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T21:30:37.400619+00:00",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/caller.mjs",
+      "bytes": 13214,
+      "sha256": "f746e5cf2a0b21bf2e7a956cfc5bfdd3e0d94131b0463336dfcfb7cfe0dcac72"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9889,
+      "sha256": "0fa9dd1bfd3c2c6e6e86d328605e1e5fd8b7b79a9443ea3991af9775bb7e084f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.test.mjs",
+      "bytes": 6852,
+      "sha256": "8e0c13542a0c30523badf68440a967000f892349719c60067e5e7be95b92640e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py",
+      "bytes": 5479,
+      "sha256": "1b6b861a2d60b2a91920de7e11901bfb1404d2c12cb23920e980a107ea551a3d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.test.py",
+      "bytes": 1656,
+      "sha256": "a29599fcbcd8b611c9c6d38f475a82e8533b916487b43e5fc3b92252abbf8719"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/local.py",
+      "bytes": 4375,
+      "sha256": "ca305969362fb441f5ae97dc4b86aff70a58545b7eed42dd2203fc0d21cfb8aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "queue": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+    "at": "2026-10-07T21:24:44.305Z",
+    "sha256": "1e49b139ab72d390c1604f984066bd205da7841473fd47fefd3eea3974c4dcd9"
+  },
+  "minimumFreeBytes": 17879990272,
+  "freeBytes": 18697719808,
+  "priorMs": 86,
+  "priorRawBytes": 388,
+  "secondsLimit": 30,
+  "rawLimit": 131072,
+  "scratchLimit": 8388608,
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "--test-isolation=none",
+      "--test-reporter=spec",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.test.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "-B",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.test.py"
+    ]
+  ],
+  "scratch": {
+    "path": "/private/tmp/flow-svc09-held-local-saumimmv",
+    "dev": 16777234,
+    "ino": 124530656
+  },
+  "PG": 0,
+  "provider": 0,
+  "personal": 0
+}

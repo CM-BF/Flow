@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T21:30:26.423914+00:00",
+  "reports": [
+    {
+      "exit": 1,
+      "elapsedMs": 43,
+      "rawBytes": 194,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      }
+    }
+  ],
+  "cleanup": "removed",
+  "scratch": "/private/tmp/flow-svc09-held-local-c2i73_6w",
+  "pg": 0,
+  "provider": 0,
+  "personal": 0
+}
