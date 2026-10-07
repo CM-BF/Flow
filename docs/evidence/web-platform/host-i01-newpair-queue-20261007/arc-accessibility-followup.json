@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "kind": "primary-source-research-not-implementation-review",
+  "date": "2026-10-07",
+  "author": "root / gpt-6-astra / ultra",
+  "target": "WPF-WORKSPACEARC01 / existing MATURE05 acceptance",
+  "scope": "Remote primary-source research during drain; artifact written only after canonical source resume. No project code edits, dependency changes, engineering tests, or browser checks.",
+  "method": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Reuse discovered local skills and existing stable-parent/host-boundary design. Read official React and W3C material, distinguish published pattern guidance from experimental examples, and add narrowly scoped acceptance notes. No installation or framework migration."
+  },
+  "findings": [
+    {
+      "id": "manual-tab-activation",
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "documented": "Tabs may activate manually using Enter or Space; automatic activation is recommended only when switching is effectively immediate. On closing a tab, focus moves to the following tab, or the preceding tab if there is no following tab; an empty tab set requires a logical focus destination.",
+      "application": "Retain planned manual activation. Review that focus movement alone does not mutate committed pane selection, projection, or composer authority. Verify close/split/merge focus destinations in the existing actual-App keyboard journey, without adding an unrelated test stage.",
+      "status": "Acceptance guidance; current Arc implementation not examined for this artifact."
+    },
+    {
+      "id": "tab-action-buttons",
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/examples/tabs-actions/",
+      "documented": "The aria-actions example explicitly identifies itself as experimental and intended for standards development, with incomplete browser and assistive-technology support.",
+      "application": "Do not treat this new example as a production recipe. Use established native buttons and menu semantics for plugin actions and ensure independent keyboard access. Avoid nested button markup. This is a design recommendation, not a claim of a current defect.",
+      "status": "No aria-actions adoption requested."
+    },
+    {
+      "id": "hidden-component-lifetime",
+      "source": "https://react.dev/reference/react/Activity",
+      "documented": "Activity preserves state and DOM while hidden, cleans up Effects, and recreates Effects when shown. Hidden children may still render at lower priority. DOM-side effects need appropriate cleanup.",
+      "application": "Activity is not automatic proof of zero background work or preserved transport/session authority. Keep current stable-parent implementation plan; explicit visibility, stream leases, invocation generations, and accepted-send recovery remain separate concerns. Any future Activity experiment must first verify installed React availability and lifecycle compatibility.",
+      "status": "Research only; no framework or dependency change in current slice."
+    },
+    {
+      "id": "splitter-semantics",
+      "source": "https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/",
+      "documented": "The pattern describes a focusable separator with an accessible primary-pane name, controlled-pane relationship, and current/minimum/maximum values. It notes that final pattern review awaits a complete functional example.",
+      "application": "For existing resize functionality, align keyboard and pointer clamping and keep accessible values tied to the actual pane ratio. Preserve the publication caveat in evidence. Do not introduce new collapse functionality merely to mirror the example.",
+      "status": "Existing resize acceptance guidance only."
+    },
+    {
+      "id": "compact-targets",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum",
+      "documented": "The minimum target-size criterion allows targets of at least 24 by 24 CSS pixels or specified exceptions, including adequate spacing or an equivalent control. Visible icon size and actual pointer target size can differ.",
+      "application": "Keep the requested compact chat rows while providing usable close/menu hit areas. Check actual geometry, especially tiny action targets directly adjacent to a large row target. A density choice need not enlarge all typography or row padding.",
+      "status": "No legal compliance or measured accessibility claim."
+    }
+  ],
+  "cleanCodeReview": {
+    "scope": "Research and proposed acceptance additions",
+    "findings": "Avoid duplicate layout writers, new framework abstraction, or extra approval gates. Keep focus, committed selection, draft identity, and transport authority separate. Reuse existing Arc acceptance journeys and archive this artifact in its own evidence scope.",
+    "fixes": "Scoped all conclusions to current Arc acceptance or explicitly future research; removed implied implementation defects and any assertion of executed tests.",
+    "unresolved": "Actual implementation and browser behavior await the owner's fixed source and bounded validation."
+  },
+  "delivery": "Manager and original Arc owner may archive in the next natural metadata batch after the S01 drain. No new task, claim, validation run, or approval is required solely for this research."
+}

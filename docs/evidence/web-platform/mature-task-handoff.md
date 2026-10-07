@@ -1,5 +1,11 @@
 # Web 当前交接与唯一来源
 
+**即时调度 2026-10-07T19:04:52.076Z：actual holder=NONE；唯一NEXT已授Original原native owner的默认三角色宿主检查。fixed source62373492 / 最新执行metadata 7beb04d5fd9d365765efa24e56b9aa2995e76b96 / [准备入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json)（24,186B/SHA8257f26e…e85f），原I02 035a独审已接受；逻辑ID `SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE`，仍同一19:04:52授权，metadata-only交付不重开grant；单次217.5s、PG26＋管理16、0Chrome/provider/个人/build/install，仅3role start/status/emptyTasks/stop/归属连接，不含旧8generation。紧前fresh全部固定输入/claim/新namespace/PG及完整free≥17,908,891,648B后才launch；此为NEXT不是START，无自动重试。隔离source与已有0PG普通段可继续，不实施测量冻结。SVC06B个人发布准备未READY，不预占。**
+
+**S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
+
+**测量冻结已解除：** S01活动资源已18:54:50.216335Z精确归还；三组进程/原组absent、端口拒连、专库正常DROP且独立观察name/OID不存在/0conn/adminclosed。两个TMP仍UNKNOWN KEEP，不读删，原caller processClosed=false/UNKNOWN_RETAIN与单A FAIL保留。各lead原合法隔离source与已授ordinary可恢复，新的heavy仍需单独ready-first准入。
+
 **AV前置历史：** 18:14:43旧admission超过55s，在Popen前0child0PG停止；其后同一grant重新fresh并18:21:48.308Z实际启动，历史前置失败保留，不计为第二次业务执行。
 
 **Release主线接收与释放：** Original main/origin `d669f3acb466f6f11bd6d81c1bffb7ffeedb5010` 已逐字接收已审两harness。原作者 a831c 双端clean，18:35:22.477Z [7d60v3正式释放](host-i01-newpair-queue-20261007/release-main-d669-claim-release.json)，释放后不再写入。个人网页CAS发布仍待Original既有两阶段准备及实际准入；稳定兼容执行器后继仍开放，不冒整体完成。
@@ -10,13 +16,13 @@
 
 **Original 唯一D05登记请求：** 原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，工程NOT_RUN保持。
 
-**即时调度 2026-10-07T18:35:31.791Z：当前heavy holder=NONE、已授NEXT=NONE。AV03已18:23:06.969Z完整归还，实际beforeAll外键失败，0 selected/0 pass/5 skipped；markedDB正常DROP、所有进程/连接/端口/TMP已闭，失败保真，不自动重跑。S01已审单臂性能候选现选中，本组、Mika与root均已排干，尚待Original明确safeSTOP；未授窗；其实际前暂停工程、供给及源码CLI，不能凭队列自行启动。**
 
-**当前前瞻预算：** S01候选与仍可能增长/未知项合计 17,694,982,144B，只有一次1GiB reserve；AV03已DROP/ENOENT的临时161MiB和VISUAL已封存10MiB不再计未来增长，Mika最终排干后，K仅1MiB未封metadata、AV源4MiB保守上界；Release收口已封存释放，不再计1MiB。旧AV实际消费16,275,210,240B与全部历史gate原样保留；逐项算式见[唯一账本](resource-window-current.json)。此数值尚非性能运行grant。
+
+**当前前瞻预算：** 仍可能增长/保守未知＋本次默认宿主峰值＋一次reserve＝17,908,891,648B。本候选clone1GiB/private32MiB/PG128MiB/raw2MiB/record1MiB合计1,244,659,712B，只加一次；S01两个UNKNOWN TMP暂保512MiB与新离线seal1MiB分别列，已DROP的1GiB临时DBWAL不沿用。历史实际gate不改，详见[唯一账本](resource-window-current.json)。
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release四版本已验证并main，原作者7d60v3已释放；个人发布待Original。VISUAL accev1/exact8已领取、源码与必要类型检查已完成安全STOP，浏览器验收尚未运行。Arc已c34d95d1v1精确20scope领取、源码实施中，尚无工程检查；I01已main并61abv2释放。领取、写入状态与实际运行分列。
+**当前领取与工作状态：** Release四版本已验证并main，原作者7d60v3已释放；个人发布待Original。VISUAL accev1/exact8已领取、必要类型检查已通过；已恢复原scope浏览器准备源码，实际浏览器验收尚未运行。Arc已c34d95d1v1精确20scope领取、源码实施中，尚无工程检查；I01已main并61abv2释放。领取、写入状态与实际运行分列。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

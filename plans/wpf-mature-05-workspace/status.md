@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T18:01:24.381Z；既有Arc组合工作区已在独立工作树精确领取20scope，正建立唯一进度来源并开始源码实施，尚未运行工程检查。 |
+| 最近更新 | 2026-10-07T19:02:13.880Z；Arc原20范围源码实施已恢复，首片明确最多三个pane；尚未运行工程或真实界面检查。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；完整Arc验收尚未完成。 |
@@ -18,7 +18,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge基础与唯一草稿身份约束，插件App接线已集成；原Arc组合pane已精确领取并开始源码实施，完整3+与布局恢复尚未验收。 |
-| 下一可用交付 | 原panels承接既有Arc片，在独立工作树精确领取后实现同一标签内的组合pane、稳定移动与布局操作；3+读取预算与公平性一并收敛，不能以旧两栏上限冒完整交付。数据库测量已停止并独立归还连接，现恢复固定供给、fresh精确领取后源码实施；工程检查另按有限段安排。 |
+| 下一可用交付 | 交付同一标签内最多三个组合pane、稳定移动与关闭恢复，保每个草稿身份；同时验证两条流读取预算在持续积压时公平轮转。原owner已领取实施，等待固定源码及必要有限检查，不能把旧两栏基础当完整交付。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,9 +30,9 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-MATURE-05-01 | pending | Web co-lead | 顶层tab/group包含任意有界pane数组，不写死两栏；首验A与B，最大pane数在实现前明确。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
-| WPF-MATURE-05-02 | pending | Web co-lead | 同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
-| WPF-MATURE-05-03 | pending | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
+| WPF-MATURE-05-01 | in-progress | Web co-lead | 顶层tab/group包含任意有界pane数组，不写死两栏；首验A与B，最大pane数在实现前明确。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
+| WPF-MATURE-05-02 | in-progress | Web co-lead | 同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
+| WPF-MATURE-05-03 | in-progress | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
 | WPF-MATURE-05-04 | pending | Web co-lead | 模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。 |
 | WPF-MATURE-05-05 | in-progress | Web co-lead | 实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；overview/feed观察与命令生命周期须分离，后台请求仅预算内观测，不从源码推算QPS/heap；关联MATURE06-04，没有实现的3+明确开放。新增[累计活动缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)仅文档限定批准/产品未实施未测量。 追加[Arc×MSG03六约束/八验收](plan.md#arc-msg03)，仅设计未运行。 |
 | WPF-MATURE-05-06 | pending | Web co-lead | [导航后继验收](plan.md#日用会话导航后继)与[11源研究](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-root-research.json)：近期语义/tie-break、全授权标题搜索、legacy cursor兼容、query隔离和>50真实验收；仅候选未take/未实现，恢复与设置优先。 |
@@ -60,3 +60,6 @@ WORKSPACEPERF01 [限定审查来源](../../docs/evidence/web-platform/workspacep
 CACHE已root结构批准并fresh领取883321bc v1十六scope，fixed fd1322新独立web-workspace-cache/codex同名；[receipt](../../docs/evidence/web-platform/workspacecache01-take-receipt.json)。固定4ec291c2381faa0fc212cf598b8126b9feecae71/final55b48b7daa6928839268c542080e2884a651a1f0已root限定批准并normalpush双端clean，唯一[source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-cache/plans/wpf-workspace-cache/status.md)。32含initial/open/protected，closed-clean0；reply2/2MiB、queue4/64KiB只正文UTF8。未提交profile/project选择、pending composer capture（即使items移除）、未dismiss receipts均保护。与ATTACHI02六条交集含两专测，短窗口后停写交权再amend；本片局部实现已审，已正式main017adc、owner10ca8双端clean后883321 v2 released，六交集全停写；后继仍fresh take；不冒heap/全workspace上限，原基线仍partial。root独立133/14hash/206deps、作者7分次browser68.689s边界见[管理审计](../../docs/evidence/web-platform/workspacecache01-candidate-management-audit.json)，不把早期不同App源码报告当最终完整矩阵。
 
 GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先于Arc/装饰。Arc18候选仅只读，既有05验收不删除，不预领ATTACHI共享App范围；[完整要求](../../docs/evidence/web-platform/connection-recovery-priority.md)。
+
+
+当前Arc实施继续沿原20scope与稳定composer父级。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
