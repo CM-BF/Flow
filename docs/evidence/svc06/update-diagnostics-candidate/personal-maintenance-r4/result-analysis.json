@@ -1,0 +1,143 @@
+{
+  "at": "2026-10-07T13:21:45.905888+00:00",
+  "window": "svc06-personal-7d1-20261007-1320",
+  "startedAt": "2026-10-07T13:19:32.771546+00:00",
+  "stoppedAt": "2026-10-07T13:19:54.167135+00:00",
+  "outcome": "STOP_KEEP_NO_RETRY_AFTER_BOOTSTRAP_BEFORE_REFRESH",
+  "completed": [
+    "facts-before",
+    "preflight",
+    "history-before",
+    "bootstrap"
+  ],
+  "firstFailure": {
+    "phase": "operation",
+    "safeCode": "RUNNER_ADMISSION_NOT_IDLE",
+    "source": "original release-operation/runner-files.mjs:71 idle(bytes)",
+    "meaning": "Strict v1 three-key/null inFlight/empty assignments predicate rejected; admission payload and error.runnerObservation were not persisted, so which predicate failed is UNKNOWN."
+  },
+  "bootstrap": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 19,
+    "state": "draining",
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-07T13:19:53.793Z",
+    "stopPermitted": false,
+    "provider": "not-probed",
+    "display": "停止接新任务"
+  },
+  "maintenanceEffects": {
+    "bootstrapCalls": 1,
+    "refreshCalls": 0,
+    "resumeCalls": 0,
+    "holdActionCalls": 0,
+    "readyPausedCheckpoint": false,
+    "operationRecordOutcome": "drain-requested inferred from passed original operation guards before localIdle; operation.json not written",
+    "actualBackendUpdate": "NOT_RUN",
+    "R2CompletedStagesReplayed": false
+  },
+  "observations": {
+    "before": "facts/preflight confirm af51 accepting18, three owned identities, original config/profile/pointer/64 protected table digests,5 task statuses unchanged against R2,27 migrations; C3 target6c/context separately valid",
+    "afterBootstrap": "Original operation code passed stored op target/artifact and same op/draining19/active0/uncertain0; state.backendArtifact null and three original owned identities running before first status/localIdle. These are control-flow facts, not a final complete snapshot.",
+    "unknown": "No post-stop personal probe; no admission payload or structured runnerObservation. No claim of currently idle files, hold state, all service termination, new source activation or successful maintenance."
+  },
+  "operator": {
+    "pid": 51100,
+    "exit_code": 1,
+    "elapsed_ms": 21477,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "phases": [
+    {
+      "phase": "facts-before",
+      "pid": 51181,
+      "exit_code": 0,
+      "elapsed_ms": 642,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "first_failure": null
+    },
+    {
+      "phase": "preflight",
+      "pid": 51818,
+      "exit_code": 0,
+      "elapsed_ms": 10733,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "first_failure": null
+    },
+    {
+      "phase": "history-before",
+      "pid": 60377,
+      "exit_code": 0,
+      "elapsed_ms": 240,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "first_failure": null
+    },
+    {
+      "phase": "bootstrap",
+      "pid": 60382,
+      "exit_code": 0,
+      "elapsed_ms": 9420,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "first_failure": null
+    },
+    {
+      "phase": "operation",
+      "pid": 65393,
+      "exit_code": 1,
+      "elapsed_ms": 348,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      }
+    }
+  ],
+  "terminationScope": "Six directly supervised PIDs (operator + five phase consumers) absent with both EOF and no signals. childPidOnly does not prove service groups absent; personal three roles were not stopped by this operator.",
+  "rawFiles": 17,
+  "rawBytes": 62104,
+  "operatorProviderQueries": 0,
+  "noCancellationRollbackOrJournalMutation": true,
+  "resourceReturn": "Reported to Lead immediately after stop; no pending invocation or live owned consumer. Original service maintenance drain remains, not normalized or resumed."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:18:09.116638+00:00；reader修复已独审，等待本次实际窗口；后台维护未开始 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:21:45.905888+00:00；R4已bootstrap/draining后因本地admission门停止，窗口归还；新后台未刷新 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；当前caller source 4916591ba89b2999404e3d13814968180594da98，原迁入5c29/产品源不改；helper独立c51 |
-| 工作树dirty状态 | 仅本次唯一独审与status转录；source491/helperc51及原运行参数全部停写 |
+| 工作树dirty状态 | 本次仅R4原件/结果/计划封存；source491/helperc51及已审参数保持，不重放已消费步骤 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | C3与R2部分结果、R3只读失败已独审；reader修复4/4+2入口检查通过，首轮2正例fixture红保留；bootstrap/refresh/resume NOT_RUN |
+| 检查状态 | R4事实/预检/旧列摘要/bootstrap完成；operation RUNNER_ADMISSION_NOT_IDLE，refresh/checkpoint/resume未运行；旧失败保持 |
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；剩余维护尚未运行。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已安装的新产物、网页宿主、兼容报告和策略保持；观察器已能区分旧报告与新配置报告，原失败保留，后台维护尚未开始。 |
-| 下一可用交付 | 新窗口与现场门禁满足后，继续尚未开始的后台维护。 |
-| 当前阻塞 | ACTIVE: 读取修正已独审通过，等待本次实际窗口；当前无运行占用。 |
+| 当前产出 | 后台已停止接收新任务；本地空闲门未通过，刷新尚未开始。已保留所有记录并归还运行窗口。 |
+| 下一可用交付 | 核清本地空闲门拒绝的依据，沿现有维护操作完成安全续接。 |
+| 当前阻塞 | ACTIVE: 本地admission未满足严格空闲条件，原因细项尚无持久证据；不得刷新或重放bootstrap。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR，2026-10-07T13:17:39.490305Z，source491/delivery5fe/helperc51；原R2/R3和c36批准边界保持，实际维护NOT_RUN。 |
+| Review | reader修复491/c51已独审；R4实际部分结果待Lead唯一独审，原R2/R3批准与FAIL/KEEP保持。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -157,7 +157,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |
 | SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | 2026-10-07T12:27:52.330992+00:00 | 审查与资源 | 原等待已随实际窗口结束；R2四阶段完成后12:35:37归还，非持续占用 | update-diagnostics-candidate/personal-actual-r2/window.json / stop.json |
 | SVC06-WAIT-REMAINING-R3 | UNKNOWN | 2026-10-07T13:05:06.328778+00:00 | 审查与资源 | 起点无单独依据；R3只读门失败后13:05:06.750720停止并归还，无维护动作 | update-diagnostics-candidate/personal-maintenance-r3/reservation.json / stop.json |
-| SVC06-WAIT-READER-REVIEW | 2026-10-07T13:15:07.139637+00:00 | ONGOING | 审查与资源 | reader修复已固定，等待差量审查及新窗口；无实际运行holder | update-diagnostics-candidate/compatibility-reader-repair/manifest.json |
+| SVC06-WAIT-READER-REVIEW | 2026-10-07T13:15:07.139637+00:00 | 2026-10-07T13:19:32.771546+00:00 | 审查与资源 | 审查和窗口等待已由R4实际启动结束；13:19:54停止归还，未持续占窗 | compatibility-reader-repair/independent-review.json / personal-maintenance-r4/reservation.json / stop.json |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -396,3 +396,13 @@ Source `4916591ba89b2999404e3d13814968180594da98`，helper独立`c51bffb4f91a33e
 ## 2026-10-07T13:18:09.116638+00:00：reader修复限定独审批准
 
 Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原样回执](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json)2523B/SHA9f56985e00bf83923d71d7dfbb0c428211377459725caeb143cc75dfe82aaa4f，18绑定及helper单pin核同，reviewer0重测/个人I/O。原4/4+2入口检查、首轮alias失败与53/8继承保持。当前尚无实际窗口，未创建r4 run或读取个人；R2四阶段禁止重放，R3FAIL/KEEP不改。
+
+## 2026-10-07T13:19:28.653940+00:00：R4实际窗口准入
+
+固定svc06-personal-7d1-20261007-1320已交唯一operator；source491/helperc51/原53+8+新增helper、root7524、v9/v1账本和新namespace均fresh核同。实际free 21684756480B高于组合6,953,631,744B；[准入](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-r4-execution-admission.json)。随后仅原一次剩余维护入口，R2四阶段不重放，尚未预判个人门禁/结果；原900+2秒及unknown KEEP保持。
+
+实际R4 operator已启动：2026-10-07T13:19:32.771546+00:00（原reservation）。本窗口holder为assignment_review；按原12phase顺序运行，结果待持久回执，0operator provider。
+
+## 2026-10-07T13:21:45.905888+00:00：R4实际停止与归还
+
+[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/RESULT.md)：operator21477ms/exit1，facts/preflight/history/bootstrap已完成；真实draining19/op e6550b3c-1f67-4c2c-869d-e84d5e838113，active0/uncertain0。本地strict admission门在operation报RUNNER_ADMISSION_NOT_IDLE，原因细项未持久，不猜成格式变化或实际有工作。refresh/hold/resume均0；当前后台尚未更新，不能重放已消费bootstrap。六直属PID absent/双EOF，无pending invocation；窗口已报Lead归还。没有追加个人probe，未取消任务或清journal；新结果待独立审查。
