@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:13:10 UTC；原失败保留，单次收尾入口准备待独审，资源仍KEEP |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:14:27 UTC；原失败残留已按独审入口单次正常收尾，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -20,11 +20,11 @@
 | 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物已成功构建并接收；首次独立宿主验证在中心身份确认处失败，已保留原结果和自有资源。 |
-| 下一可用交付 | 按已定位的身份观察限制完成受控收尾，再准备最小验证入口修正。 |
-| 当前阻塞 | ACTIVE: 原清理结果UNKNOWN；只读已定位自有中心仍活及专库3连接，等待受控收尾，不重试旅程。 |
+| 当前产出 | 固定后台产物已构建；首次宿主验证的残留中心与专库已正常收尾，原失败完整保留。 |
+| 下一可用交付 | 修正验证入口的身份监督位置，再完成真实三角色宿主与开发目录不可读验收。 |
+| 当前阻塞 | ACTIVE: 原宿主验证未通过，需最小入口修正；本次残留收尾已完成，等待独立结果核验。 |
 | 需用户决定 | NONE |
-| Review | 原构建与入口准备批准保持；本次实际失败结果PENDING Execution Lead，不将准备批准扩大到运行 |
+| Review | 原构建/入口准备批准保持；cleanup f46a经Lead全文审并授权一次，实际收尾结果PENDING，不扩大为宿主通过 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -133,3 +133,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:13:10 UTC：原失败资源的最窄收尾准备
 
 [固定方法与边界](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-FOLLOWUP.md)：可信身份观察留在原sandbox外，两次完整匹配后先私有持久意图，复用原一次TERM/marker/OID/零连接/checkpoint→normal DROP；原pending/UNKNOWN不覆盖，不删产物/private run。现仅source准备，执行NOT_RUN，等待Lead短独审；后继host仍open。
+
+## 2026-10-07 04:14:27 UTC：原失败残留的单次正常收尾
+
+[本次独立收尾原件](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)：外层672ms/exit0/双EOF/owned absent；原helper一次TERM使中心组stopped；marker/OID同值、零连接与先checkpoint后normal DROP/remaining=[]。原artifact/private run和失败raw不改；03/04实际host仍open，结果待Lead独审。

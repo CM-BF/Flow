@@ -1,3 +1,7 @@
+# 最新限定收尾待审
+
+2026-10-07 04:14:27 UTC：固定 f46a29ae26ebeb616343f95de68f8f967c8c8674 的 cleanup entry/input 已获 Execution Lead 同线程完整只读批准并单次执行；真实结果[cleanup-followup-result](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result.json)尚待独立核验。原host失败不改，不能将收尾成功作三角色验收通过。
+
 # 宿主首次实际失败结果：PENDING
 
 固定e6ff入口/source3230原产物首次运行work与cleanup均exit1；[结果及限制](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md)。原入口批准只证明准备，实际三角色未通过；center/DB未知KEEP，无重跑或清理冒称。下文历史准备/构建批准保持。

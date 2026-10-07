@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "pid": 73345,
+    "group": 73345,
+    "startedAt": "Tue Oct  6 21:04:44 2026",
+    "command": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node /private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/tools/personal-preview/cli.mjs internal-service /private/tmp/flow-svc06-fixed-artifact-c52Zw6 center --flow-preview=d8e57a7b-c6e7-495d-bc7d-391d4f7dca42",
+    "nonce": "d8e57a7b-c6e7-495d-bc7d-391d4f7dca42"
+  },
+  "database": [
+    {
+      "oid": 1206953,
+      "datname": "flow_preview_5104378c400a8a3a11597418"
+    }
+  ],
+  "markerConfirmed": true,
+  "method": "artifact.stopOwnedProcess once, then marker/OID/empty and normal DROP",
+  "noForce": true
+}

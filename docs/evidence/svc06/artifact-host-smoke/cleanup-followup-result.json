@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-07T04:14:27.748870+00:00",
+  "entrySource": "f46a29ae26ebeb616343f95de68f8f967c8c8674",
+  "toolExit": 0,
+  "toolChunk": "40de61",
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/reservation.json",
+      "bytes": 283,
+      "sha256": "dd108c1ad138e065d4fbdb905aa46737f592565dba352da49fd547268325cbd9",
+      "dev": 16777234,
+      "ino": 123431762,
+      "mode": "0600",
+      "mtimeNs": 1791346423463764381
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/identity-confirmation.json",
+      "bytes": 3294,
+      "sha256": "1b05544a7bd0a34d3a6c40dae879950d014c923b421dd26d77716522c6c58ec7",
+      "dev": 16777234,
+      "ino": 123431763,
+      "mode": "0600",
+      "mtimeNs": 1791346423739492489
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/cleanup-intent.json",
+      "bytes": 753,
+      "sha256": "f3f81c1cc59b68f1df0eb44f573c104f7bbb5f7d1fc89bbf3a2cd8cdd36740af",
+      "dev": 16777234,
+      "ino": 123431764,
+      "mode": "0600",
+      "mtimeNs": 1791346423806127150
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/center-stopped.json",
+      "bytes": 110,
+      "sha256": "9a8fa7b5e14c2b13ec59323e3a992942ca784d47e4145f23b92d1db7dfbc88c5",
+      "dev": 16777234,
+      "ino": 123431766,
+      "mode": "0600",
+      "mtimeNs": 1791346423904155760
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/cleanup-checkpoint.json",
+      "bytes": 714,
+      "sha256": "27d072c1135b2840361f7a573e21eb9044d23f622d8415500f76fdf20a6638b0",
+      "dev": 16777234,
+      "ino": 123431767,
+      "mode": "0600",
+      "mtimeNs": 1791346423952014944
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-followup-first/result.json",
+      "bytes": 805,
+      "sha256": "09103d7cf5d3781ec897978f0833fb2badedc90363ca83e2e1f887a87e94af0c",
+      "dev": 16777234,
+      "ino": 123431777,
+      "mode": "0600",
+      "mtimeNs": 1791346424010675949
+    }
+  ],
+  "privateBytes": 5959,
+  "outerResultEqualsPrivate": true,
+  "originalSixFilesUnchanged": true,
+  "supervisor": {
+    "pid": 79973,
+    "ownership": "childPidOnly",
+    "exit_code": 0,
+    "elapsed_ms": 672,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent"
+  },
+  "result": {
+    "startedAt": "2026-10-07T04:13:43.435Z",
+    "originalResultUnchanged": true,
+    "center": "stopped",
+    "database": "removed",
+    "stopCalls": 1,
+    "dropCalls": 1,
+    "failures": [],
+    "artifactRetained": true,
+    "privateRunRetained": true,
+    "freeBefore": 25804611584,
+    "databaseBefore": [
+      {
+        "oid": 1206953,
+        "datname": "flow_preview_5104378c400a8a3a11597418"
+      }
+    ],
+    "markerBefore": true,
+    "markerAfter": true,
+    "databaseAfterStop": [
+      {
+        "oid": 1206953,
+        "datname": "flow_preview_5104378c400a8a3a11597418"
+      }
+    ],
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 1.7295829999999341,
+          "rows": []
+        }
+      ]
+    },
+    "remaining": [],
+    "finishedAt": "2026-10-07T04:13:44.010Z",
+    "privateBytesBeforeResult": 5154
+  },
+  "newServiceProbesDuringPackaging": 0
+}
