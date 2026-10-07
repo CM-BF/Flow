@@ -1,0 +1,255 @@
+{
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+  },
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "manifestBytes": 3182109,
+  "webSourceDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts",
+  "web": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+  },
+  "webManifestBytes": 1651,
+  "webManifest": {
+    "format": 2,
+    "policy": "flow-static-web-v2",
+    "releaseId": "388371a4972c469b8ace623454594132",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "sourceTree": "f01fca67b9aa396ea6303fd2246c20c1d62d4277",
+    "lockDigest": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+    "toolchain": {
+      "node": "24.20.0",
+      "vite": "8.3.2"
+    },
+    "files": [
+      {
+        "path": "assets/PluginManagement-A83k3W8t.js",
+        "bytes": 9854,
+        "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+      },
+      {
+        "path": "assets/PluginManagement-Dok11XwQ.css",
+        "bytes": 2843,
+        "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+      },
+      {
+        "path": "assets/assistant-ui-C7NurJFc.js",
+        "bytes": 667364,
+        "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+      },
+      {
+        "path": "assets/assistant-ui-CcdakA0V.css",
+        "bytes": 966,
+        "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+      },
+      {
+        "path": "assets/index-CZaGITme.js",
+        "bytes": 790684,
+        "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+      },
+      {
+        "path": "assets/index-DzESKX8S.css",
+        "bytes": 112165,
+        "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+      },
+      {
+        "path": "assets/rolldown-runtime-qXqUbbKo.js",
+        "bytes": 773,
+        "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+      },
+      {
+        "path": "assets/theme-eZTSIgw9.js",
+        "bytes": 806,
+        "sha256": "926448efd702b51400e86ec9d45316a15f97ebe66832c40241a13832c56c2a45"
+      },
+      {
+        "path": "assets/workspace-OoYt4DTj.js",
+        "bytes": 1906,
+        "sha256": "83c03eceb9611c1beebeb62ef81d667f1baf114fc06f39a442d36bb8581e1aba"
+      },
+      {
+        "path": "index.html",
+        "bytes": 950,
+        "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3"
+      }
+    ],
+    "totalBytes": 1588311
+  },
+  "resources": {
+    "workSeconds": 120,
+    "cleanupSeconds": 30,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalBytes": 67108864,
+    "rawBytes": 2097152,
+    "newArtifactAndPrivateLogicalCap": 435524552,
+    "newPhysicalPlanningBytes": 606076928
+  },
+  "runName": "web-host-once",
+  "sourceDirectory": "/private/tmp/flow-svc08-flow-artifact-z5s5tT",
+  "sourceDirectoryIdentity": {
+    "dev": 16777234,
+    "ino": 123475174
+  },
+  "directory": "/private/tmp/flow-svc08-web-host-20261007",
+  "artifactEntries": 15546,
+  "artifactLogicalBytes": 363136427,
+  "cloneHelperSha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+  "artifactTotalLogicalBytes": 366318536,
+  "legacyBackendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+  "cloneDriver": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+    "bytes": 3281,
+    "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "runtimeBindings": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 41320,
+      "sha256": "6d85a9890d15dc619b22cce71bf88701fb70826ab646395c45dc803b9329efc0",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6800,
+      "sha256": "ca632440092ae3d403a65fffe8c5321232f83036aaf6558e6132c6cfad299206",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+      "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    }
+  ],
+  "artifactManifestIdentity": {
+    "dev": 16777234,
+    "ino": 123501822
+  },
+  "runtimeToolBindings": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    }
+  ],
+  "resolvedInputBindings": [
+    {
+      "name": "tsx loader",
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "dev": 16777234,
+      "ino": 123493693
+    },
+    {
+      "name": "pg entry",
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "realpath": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c",
+      "dev": 16777234,
+      "ino": 123490810
+    },
+    {
+      "name": "pg package",
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "realpath": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "dev": 16777234,
+      "ino": 123490930
+    },
+    {
+      "name": "vite entry",
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "realpath": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7",
+      "dev": 16777234,
+      "ino": 123494045
+    },
+    {
+      "name": "vite package",
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "realpath": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "bytes": 5081,
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "dev": 16777234,
+      "ino": 123494357
+    }
+  ],
+  "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13"
+}

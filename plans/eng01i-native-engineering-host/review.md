@@ -1,8 +1,8 @@
 # ENG01I 独立review
 
-状态：APPROVED_FIXED_ZERO_PROVIDER_PG_RESULT
+状态：APPROVED — 限定组合及R1公开收据/恢复（原独审标签 APPROVED_FIXED_ZERO_PROVIDER_PG_RESULT）
 
-Review target commit: c3d29e4a36af74380565922fbb838ebec1bf7afc（局部/PG准备候选，PG未运行）
+Review target commit: c3d29e4a36af74380565922fbb838ebec1bf7afc（局部模块及R1固定2例PG结果；真实native资格不在批准范围）
 
 Base: 280289008a5a3779e4e5e6453181b96062ed9514。Scope见status四产品literal。作者不能自审。
 

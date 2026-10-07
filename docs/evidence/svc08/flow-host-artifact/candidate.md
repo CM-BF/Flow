@@ -14,7 +14,7 @@
 
 1. **0PG 构建与加载**：完整 verify/Node身份/内部 Vite与pg解析，固定 static-web/host/preview 内容，serviceRuntime 的公开选择与来源拒绝。所有结果独立绑定新descriptor；不是完整internal-service启动。
 2. **真实隔离 Web 宿主**：现 `runService(...,'web')` 仍无条件 `assertMarker`，故必须另排一专库和明确marker，不能用0PG替代。只起自有Web角色、动态loopback端口，原有process/nonce与release目录，真实Vite/static子进程及身份/保留版本读取；center/runner不启动，使用合成状态保留断言不冒个人在线证明。必须先完整固定driver/输入/清理及预算，复用原SVC工具，不能使用 SVC06 仍unknown的宿主资源。开发树不可用验证不得靠禁掉ps而破坏身份观察；具体隔离方法仍待该片准备。
-3. **个人采用仍是独立操作**：产物要位于该installation的 backend-artifacts 下才可由现backendRuntime选择。隔离产物的迁入/正常校验、容量、同卷移动或确切复制策略尚未实施；不能把临时产物路径写成descriptor绕过现布局。新CLI从artifact直接执行replace时，普通load仍受原installation source限制，不能假称单有新descriptor即免除受控工具来源窗口。个人旧backend为af51/legacy Flow来源，root来源切换对其潜在动态读取的影响仍需明确证据；不得更改整个config.repository、state.source或state.backendArtifact来迁就新Web。实际操作前由owner固定这一最窄接缝，当前只承诺候选。
+3. **个人采用仍是独立操作**：产物要位于该installation的 backend-artifacts 下才可由现backendRuntime选择。隔离产物的迁入/正常校验、容量、同卷移动或确切复制策略尚未实施；不能把临时产物路径写成descriptor绕过现布局。工具输入冻结与checkout切换应区分：普通CLI从config.repository=Flow加载仅核moduleRoot真实路径；replace核backend state.source及owned身份，并不要求当前GitHEAD等于expectedBackendHead。因此未来可保Flow在明确固定已审新CLI版本并冻结实际8个host输入，调用replace；不必先把checkout切回af51，也不必从新artifact的CLI自举。新Web service独立从descriptor产物启动。实际driver仍须核工具bytes、旧center/runner身份和来源保留；不得更改整个config.repository、state.source或state.backendArtifact来迁就新Web。实际操作前由owner固定这一最窄接缝，当前只承诺候选。
 
 成功的Web-only部署必须保持center/runner记录、配置/profile/maintenance、release pointer与三个Web版本namespace。同一operation只观察；pending/unknown不换key、不自动重启，任何失败保留首错误和独立cleanup事实。后台任务未完成/lease/unknown不因Web ready而改变。旧tab不操作，长连接中断与页面旧lazy可达性分别验收。
 

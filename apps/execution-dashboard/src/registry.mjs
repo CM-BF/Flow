@@ -38,6 +38,7 @@ const assignments = [
   ['TUI01E', '终端队列控制与断线续接', '工作线', 'tui-queue-controls', 'tui01e-queue-controls'],
   ['WPF-CONNECTION01', '刷新后恢复中心连接', '工作线', 'browser-connection-session', 'wpf-connection-session'],
   ['S01P05', '执行事件状态写入优化', '工作线', 'event-state-persistence', 's01p05-event-state'],
+  ['ENG01J', '真实受限工程写入宿主', '工作线', 'engineering-native-authority', 'eng01j-native-write-authority'],
   ['ENG01I', '受信原生工程宿主编排', '工作线', 'engineering-native-host', 'eng01i-native-engineering-host'],
   ['SVC06', '后台固定版本与依赖发布', '工作线', 'backend-release', 'svc06-backend-release'],
   ['ENG01H', '原生工程用途与检查收据', '工作线', 'engineering-native-contract', 'eng01h-native-engineering-contract'],

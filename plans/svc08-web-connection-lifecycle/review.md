@@ -1,6 +1,6 @@
 # SVC08 独立 review
 
-状态：APPROVED；仅Web-only固定宿主选择局部组合，实际完整artifact/internal-service/个人部署未验。
+状态：APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING；产物构建/内部加载已审，真实Web宿主与个人部署仍未验。
 
 Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
 
@@ -36,3 +36,13 @@ Reviewer：astra_ultra_execution_lead / gpt-6-astra；2026-10-07T03:15:08.399916
 范围限合成loopback及Vite8.3.2的这条异常终结路径。原红terminal字段后变不作清理前证据；旧raw保持。未重复fullbuild，未做真实App/PG/Chrome/长期稳定性检查，不证明个人64CLOSED根因，不授权个人部署或重启。main接收独立记录于status。
 
 作者回应：接受限定结论，产品保持停写；只归档此独审及metadata，无新增源码/测试。
+
+## 2026-10-07T04:56:15.022905+00:00：固定Flow产物结果待审
+
+准备source20ed已由Execution Lead独立APPROVED_FIXED_BUILD_PREPARATION；[原件](../../docs/evidence/svc08/flow-host-artifact/build-once/preparation-independent-review.json)。本次一次真实build/import/selection结果已封，result review PENDING，不扩大旧bad019模块批准。0PG/host/provider/个人操作，原失败与e5均保持。
+
+## 2026-10-07T05:03:00.481Z：Flow来源产物结果独审
+
+Review target commit: 2479e54aacd67395b4c3ac2468a7158beb439705
+
+Reviewer native_center_owner / gpt-6-astra，04:59:09.482492Z，APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING；[原样报告](../../docs/evidence/svc08/flow-host-artifact/build-once/result-independent-review.json)，SHA256 5a4ff0762d62128e323c4b06669db04abb5ab2bf2dec6adad4b19bc360f9f85f；[原绑定](../../docs/evidence/svc08/flow-host-artifact/build-once/result-review-bindings.json)。23 fixed/current与3 private逐项同，0reviewer运行，无P1/P2。原30,732ms/exit0/双EOF/group absent、首EPERM unknown与时间/采样限制保持。真实host、旧tab/个人采用均不在本批准内。

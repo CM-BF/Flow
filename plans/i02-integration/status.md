@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:13.243146+00:00 / main ef3a6de8；本批仅已审结果与管理收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:13.243146+00:00 / main ee98e65c；本批固定Web宿主准备、ENG01J登记与时间metadata |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,8 +15,8 @@
 | 工作基线 / HEAD | main ef3a6de8；ENG01I closeout14228、SVC08构建结果228、六份管理docs独审，产品零改 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 已审文档及固定结果逐字接收；SVC08 23 bindings一致。0新工程检查/构建/PG/provider；ENG原wrapper exit1与缓存KEEP保持。 |
-| 已集成main状态 / HEAD | main ef3a6de8；本批仅文档/结果收口待ff。个人af51/accepting v18、Web d629/v3未变。 |
+| 检查状态 | PASSED 已审文档及固定结果逐字接收；SVC08实际结果23、后继准备38 bindings一致。0新工程检查/构建/PG/provider；ENG原wrapper exit1与缓存KEEP保持。 |
+| 已集成main状态 / HEAD | main ee98e65c；本批准备/登记待ff。个人af51/accepting v18、Web d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |

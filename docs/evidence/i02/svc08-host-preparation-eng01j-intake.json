@@ -1,0 +1,154 @@
+{
+  "at": "2026-10-07T05:12:20.881789+00:00",
+  "mainBefore": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "scope": "Fixed source registration and already independently reviewed preparation/metadata only; no actual host run, PG, provider or personal operation",
+  "preparationReview": "svc08-isolated-web-host-preparation-review.json",
+  "registrationReview": "eng01j-registration-review.json",
+  "engMetadataReview": "Lead read complete five-file bd741 delta; candidate is planned actual OS seam, not production native qualification; timing/token repair preserves original facts",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 642,
+      "sha256": "bba36777330fbe193230219679062d6d9c8a9bfa01cd60cd991d560f53d8e802"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/assignment-accept-request.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 221,
+      "sha256": "c573690e0565095761fc981ae77214cc050f55220c4726027a678bd4ee142c42"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/assignment-handoff-receipt.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 866,
+      "sha256": "dc16bc78953a08dd2e252938f7b142320509ab06405ece0165ad83e3c5efd978"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/assignment-handoff-request.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 504,
+      "sha256": "24ee3cc3a9654361c4f2c5f84c381153cf461f78e6274acc73a2199e41210b72"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/result-independent-review.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 2638,
+      "sha256": "5a4ff0762d62128e323c4b06669db04abb5ab2bf2dec6adad4b19bc360f9f85f"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/result-review-bindings.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 3528,
+      "sha256": "02b9b8bc3abffa09b0fc19082700843a84bf92488ecc976e01e676d8c20b69f1"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/candidate.md",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 5022,
+      "sha256": "d7c1746afd82a308f73cae1d2835b7d9e729c6252beb48918cdd03ea456125a6"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/handoff-before.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 727,
+      "sha256": "c1bc5b2cc0daedc9d56d106e952437b86fa33519d0e2498b0c37b01c5a9c6c0d"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/handoff-request.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 504,
+      "sha256": "24ee3cc3a9654361c4f2c5f84c381153cf461f78e6274acc73a2199e41210b72"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/README.md",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 5426,
+      "sha256": "55275a37790c48653a2a5a7465f734351cbaa6f9abf67f29a126234a2a8d2390"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/entry.mjs",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 20678,
+      "sha256": "6febd50fbb5830c3b08887cf5cc42a2a112bd12bebf7db2f435c2866d225b608"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/inputs.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 11157,
+      "sha256": "50dffb2dcd3cd9ddf7b308a61964ba5a7473308e5030e59ad1f2dbc33280f0af"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/manifest.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 13384,
+      "sha256": "33e328ac7f3c4705d5bf2488e9f3520b2dd7a858579627c705328dd8ee0929fd"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-checks.json",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 1957,
+      "sha256": "c6f0a4a7defe5f91eb62305a3e651a12efe9eed32d43432569977babfa49ffc8"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/supervise.py",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 3127,
+      "sha256": "957dc925e518fa154e3dbbe570ff8fbc0ff81eee0a6151b6d7d19a2e5b41f558"
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/review.md",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 4696,
+      "sha256": "60ee26f5006f0ffac73134184fb94f8f223204ed733017dd134785f2da47886c"
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/status.md",
+      "ref": "51f67dde71339ad3bdd598eb105652813f469e35",
+      "bytes": 11967,
+      "sha256": "ab7bba3a465646e5e9f1958bbc6e464c75c6beb458b392ea90700e6ba62d6eb3"
+    },
+    {
+      "path": "docs/evidence/eng01i/authority-candidate/interface.md",
+      "ref": "bd74146d94588269b7fbd430fabd42500b900c06",
+      "bytes": 6743,
+      "sha256": "d7f12e4ddb9a52c88a5f239a339a39fcbbeff612dcd77ca465a39357494e2eea"
+    },
+    {
+      "path": "docs/evidence/eng01i/authority-candidate/readonly-inputs.json",
+      "ref": "bd74146d94588269b7fbd430fabd42500b900c06",
+      "bytes": 5332,
+      "sha256": "4d158db11fd6d8c5e66fef1a808fc83ae0858864fa880c5b0114b7cc7d035419"
+    },
+    {
+      "path": "docs/evidence/eng01i/authority-candidate/status-check.json",
+      "ref": "bd74146d94588269b7fbd430fabd42500b900c06",
+      "bytes": 453,
+      "sha256": "5f5896c0ca92cba1105ffb19e1d8f157da6d705712eeebf8685e58b55209a179"
+    },
+    {
+      "path": "plans/eng01i-native-engineering-host/review.md",
+      "ref": "bd74146d94588269b7fbd430fabd42500b900c06",
+      "bytes": 2702,
+      "sha256": "5f69e0cc2d08898cb00b5c521bf7a258adfa787cba6b95ab2d2e2d11b1007b63"
+    },
+    {
+      "path": "plans/eng01i-native-engineering-host/status.md",
+      "ref": "bd74146d94588269b7fbd430fabd42500b900c06",
+      "bytes": 8543,
+      "sha256": "f8a486d00da2d6961177360db43c900cd4fc69684aa8a4e7ab6e53f9b1f63a37"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "ref": "50bb4a8eadf32f71804d4af4d24aceabba4b9191",
+      "bytes": 25385,
+      "sha256": "1802557f486f3dbfd7caa73cb8540899b3f3df2e648b1293c0da2bddefe5f417"
+    },
+    {
+      "path": "docs/evidence/d05/eng01j-source-registration.json",
+      "ref": "50bb4a8eadf32f71804d4af4d24aceabba4b9191",
+      "bytes": 996,
+      "sha256": "fd4e95c7a42d6ba16b9dc54a5aab8d7695e4ce2df041130a6b7aea720d8b33a0"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T04:59:09.482492+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "conclusion": "APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING",
+  "target": "2479e54aacd67395b4c3ac2468a7158beb439705",
+  "delivery": "228cf69829bbf8bcb9bc06b814354067127936fd",
+  "manifestSha256": "a0e6bfd98e96a6837e2f58085136f432ccd842bc2af21c7fb5ec9457e55a383a",
+  "bindings": {
+    "fixedGitAndWorking": 23,
+    "privateRetained": 3,
+    "errors": [],
+    "detailPath": "/tmp/flow-svc08-flow-artifact-result-bindings.json",
+    "detailSha256": "02b9b8bc3abffa09b0fc19082700843a84bf92488ecc976e01e676d8c20b69f1"
+  },
+  "read": [
+    "fixed20ed entry/runtime-proof/supervise caller",
+    "actual preflight/invocation/reservation/result/stdout/stderr/build-record/tool completion/window return",
+    "derived RESULT/analysis and retained manifest metadata"
+  ],
+  "observedResult": {
+    "singleInvocation": true,
+    "outerExitCode": 0,
+    "supervisedMs": 30732,
+    "budgetWorkSeconds": 420,
+    "eofBoth": true,
+    "ownedGroup": "absent",
+    "originalEPERMUnknownPreserved": true,
+    "entryElapsedMs": 30661,
+    "outerFinishedAt": "UNKNOWN retained as recorded",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+    "sourceTree": "bebc96ffa87519a8c3a4f94198a2d79cfe36739a",
+    "inventoryEntries": 15546,
+    "logicalBytes": 363136427,
+    "manifestIncludedBytes": 366318536,
+    "snapshots": 271,
+    "importers": 7,
+    "sqlCount": 30,
+    "stdoutEqualsDurableResult": true,
+    "stageAndPrepareLockAbsent": true,
+    "artifactRootAndOwnerRetained": true,
+    "rawBytesDefinedSubset": 16442,
+    "fullNewRawAndDerived": 27428,
+    "freshRequiredBytes": 3927965696,
+    "minimumSampledFreeBytes": 25165168640
+  },
+  "findings": [],
+  "limits": [
+    "Only real Flow422 artifact build/internal imports/read-only Web selector. No host/factory/runner/PG/browser/provider or personal deployment was executed.",
+    "center/runner selection preservation is pure resolver evidence, not running roles.",
+    "Development checkout denial and old-data/tab continuity remain untested.",
+    "Logical sizes and sampled volume availability are not independent physical peak measurements.",
+    "Reused previously approved61 source inputs; did not rerun build/import or re-review their whole domains."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "imports": 0,
+    "build": 0,
+    "PG": 0,
+    "services": 0,
+    "provider": 0,
+    "projectWrites": 0
+  }
+}
