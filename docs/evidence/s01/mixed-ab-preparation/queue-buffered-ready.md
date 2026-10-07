@@ -1,6 +1,6 @@
 # S01 explicit buffered single-arm preparation
 
-State: SOURCE_PREPARATION; actual PG/HTTP/performance NOT_RUN / NOT_OPEN. This is not a reuse of either consumed queue or offline replay window.
+State: SOURCE_AND_LOCAL_REVIEW_READY, source `839a1614bb8429922716fb86e8a9ebe6b2972967`; actual PG/HTTP/performance NOT_RUN / NOT_OPEN. This is not a reuse of either consumed queue or offline replay window.
 
 ## Interface and unchanged acceptance
 
@@ -23,3 +23,11 @@ Proposed output reservation is `docs/evidence/s01/pool-wait-run/buffered-single-
 16:57:00Z→17:12:00Z; max3 serial children/30s each/60s cumulative, new8MiB including TMP4MiB/raw512KiB. K01→AV03→S01 handoff is required before launch. Only new selection tests + changed sequence's existing direct tests, and focused noEmit including real driver; no old packing18/PG/native/provider tests. Reuse pg-delivery-chunk-local.py and fixed OPS14, explicit environment, single new queue-buffered-local.json; actual transcript/first failures/unknown are retained. Pure tests cannot prove real PG/HTTP or its resource closure.
 
 Skills: existing find-skills local-first, brainstorming bounded direction already authorized, codebase-design small selection Interface with shared lifecycle owner, fixed clean-code naming/single responsibility/finite errors/no duplicate driver or supervisor. Full final validation stays owned by existing runMixed. No installation or external skill refresh.
+
+## Recorded local outcome and review request
+
+2026-10-07T17:01:31Z FULLRETURN. Two children: new selection8/8 + existing changed sequence5/5; focused strict0. Raw659B; PID17548/20217 exit0/finalabsent/MERGED EOF/full capture/no first-secondary-signals. Initial EPERM observations remain in the report. Both own TMP same-inode samples245/0B were removed, with exact ENOENT observation after return. No third child, no PG/HTTP/listener/native/replay, no old green re-run. Supervisor total1261ms, caller total1352.374ms, toolreported0.75061/0.673053709s kept separate; no inferred whole-external wall or sampled peak.
+
+Single source of actual facts: [queue-buffered-local.json](queue-buffered-local.json). Exact review bindings: [queue-buffered-review-manifest.json](queue-buffered-review-manifest.json). Please review only new selector/identity/shared sequencing/wiring plus unchanged proof boundaries and this local evidence. Prior packing/O1/O2 verdicts remain their fixed histories. New source review is pending; pure success is not actual READY/OPEN.
+
+Future caller remains intentionally unchanged: its two-outcome validator, namespace/OPEN, five output names and fixed runtime input must receive an explicitly reviewed finite single-arm variant before launch. The old queue input-v2 must never be reused as if it bound this new entry. Current inner minimum floor is historical; future caller must supply the manager's current complete higher sum. Candidate root has not been created; actual output absence is rechecked at future admission, not inferred from this preparation.

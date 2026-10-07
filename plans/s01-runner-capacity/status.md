@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:57:00.000Z |
+| 最近更新 | 2026-10-07T17:02:46.250Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,20 +15,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 开段39d3b61a8e3b1a656a9316a01cee9d8fb82c7613=origin clean；仅本scope新入口/直接纯例/证据。 |
+| 工作树dirty状态 | 源839a1614bb8429922716fb86e8a9ebe6b2972967固定；本次只封局部结果与metadata，最终HEAD由Git读取。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805准备；execution1a3f8aa5edb2444f2960e7433b31ccaf8bd046af四arm actual PASS，结果独审APPROVED，0PG。 |
+| 检查状态 | PASSED 839a1614bb8429922716fb86e8a9ebe6b2972967：新选择8/8+受影响sequence5/5，focused types0；2children完整RETURN，非PG通过。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
-| 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
+| 实现目标 | 839a1614bb8429922716fb86e8a9ebe6b2972967 |
+| 实现范围 | experiments/runner-capacity/mixed/queue-buffered-main.ts, experiments/runner-capacity/mixed/queue-buffered.test.ts, experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/run-identity.ts, experiments/runner-capacity/mixed/ab-driver.ts, experiments/runner-capacity/mixed/ab-sequence.ts, experiments/runner-capacity/mixed/driver.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 保持原同步负载和完整验收，新增显式 buffered 单臂实验入口；已接收的离线模块与旧失败事实不变。 |
-| 下一可用交付 | 固定单臂选择、身份及完整验收复用的源码和纯检查；真实性能窗口尚未开放。 |
-| 当前阻塞 | ACTIVE: 本组 ordinary 按 K01→AV03→本片交接；当前仅源码准备，无实际子进程。 |
+| 当前产出 | 显式 buffered 单臂选择已实现并通过局部行为与类型检查；同步负载和原完整验收保持，准备独立审查。 |
+| 下一可用交付 | 独审单臂入口与局部证据；随后固定有限外层caller和完整实际输入，PG仍未开放。 |
+| 当前阻塞 | ACTIVE: 新入口待独审；实际运行还缺单臂caller/完整输入绑定与新的资源窗口。 |
 | 需用户决定 | NONE |
-| Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4准备及dfb实际结果；assignment_review对primary12最小main接收0P1/P2，范围见I02固定回执。 |
+| Review | PENDING 当前单臂选择；历史packing/ABBA/main批准保持独立。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:58Z fresh本人/WT/branch一致。 |
 | 架构影响 | 本片仅实验选择Interface：显式单次buffered复用原runMixed/centerDelivery/完整proof/final/cancel；原A/B默认顺序、产品pool/SQL和生产4fdd不改。 |
 
@@ -330,3 +330,13 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 ## 2026-10-07T16:57:00.000Z buffered 单臂准备段
 
 实际开始取工具clock，截止17:12:00Z；原claimv3/6已fresh。≤15min/新增8MiB含TMP4MiB及raw512KiB，最多3串行child各30s/累计60s；等待不续时，当前0child，0PG/HTTP/Chrome/provider/安装/build。本地find-skills优先已有brainstorming（已批准有界选择）、codebase-design小Interface复用、固定clean-code错误/身份/生命周期方法，不安装。原O1为per-query、不经过buffered finish；本片不是仅packing因果，亦不改变原burst失败或采用错峰取绿。
+
+2026-10-07T17:01:00.000Z ordinary START：AV03于17:00:48明确完整归还，现只运行本片纯选择/直接sequence与focused noEmit；固定source839a1614b。实际child UTC/PID/资源准入与终态以queue-buffered-local.json为准，不从本消息推算spawn。floor使用14,950,858,752B（高于最新forward下限），0PG/HTTP/actual replay。
+
+## 2026-10-07T17:02:46.250Z 单臂选择局部交付
+
+[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md) source `839a1614bb8429922716fb86e8a9ebe6b2972967`。本段原16:57→17:12截止未重置；AV03于17:00:48 FULLRETURN后才启动两检查。实际17:01:19.699–20.309Z与17:01:24.786–25.529Z，新8/8+直接sequence5/5、strict0，raw659B；两组最终absent/MERGED EOF及两同inodeTMP删除、17:01:31exactENOENT支持完整RETURN。原EPERM保留，监督/工具/单caller口径分列，末样本非peak。0PG/HTTP/listener/新性能/provider/旧KEEP访问。
+
+新入口只选择buffered、只一次A预算slot，使用新身份/同production4fdd及原burst6s/ACK4s/128/final/cancel门禁；A标签不代表旧O1。原O1 per-query失败/O2未跑与旧compiled/raw不改。本片不是packing因果或完整容量证明。旧caller固定两outcomes，尚不能启动此单臂；后继有限选择/input/资源与OPEN均未获。本地codebase-design/固定clean-code复核：选择Module保小Interface、共享生命周期不复制、未知不变PASS/删除；pure反例覆盖错误选择、二次side、失败/资源未知/账目漂移与原proof短ACK/缺最终持久状态。Dashboard沿唯一status，当前只parser核字段，不冒新增snapshot同步。
+
+本次metadata parser首调用误用了不存在的parse.mjs，工具ERR_MODULE_NOT_FOUND原输出保留；随后定位实际status.mjs，仅字段解析复核errors=[]/human.missing=[]/implementation.errors=[]。不是工程测试失败或追加工程child，不改历史开工UNKNOWN，不新GET。

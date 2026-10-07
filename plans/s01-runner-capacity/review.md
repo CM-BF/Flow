@@ -1,6 +1,10 @@
 # S01 独立审查
 
-## 当前：同policy packing ABBA准备
+## 当前：显式 buffered 单臂选择
+
+PENDING，source `839a1614bb8429922716fb86e8a9ebe6b2972967`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)。新8/8+共享sequence5/5、focusedtypes0，仅选择/身份/接线与局部结果待独审。实际PG/HTTP仍NOT_RUN_NOT_OPEN，旧caller未配单臂。
+
+## 历史：同policy packing ABBA准备
 
 PENDING，source `8a933df2e71e03aa3e9525649877794777ebdec4`，[唯一准备入口](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)。只读审new parent导出/workerFile、新finite ABBA、精确编译件/新caller和三局部结果；不重新审旧18/旧实际replay。Actual NOT_RUN_NOT_OPEN。
 
@@ -286,3 +290,7 @@ db_transaction_owner/gpt-6-astra于2026-10-07T16:18:22Z对dfb2105ba6e4f3eaa4512d
 ## 2026-10-07T16:49:39.801Z primary12主线接收批准
 
 main 8e5faabb2f5f4e86cf80044916857680d70912af，assignment_review批准最小private intake，P1/P2=0；固定[I02回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/s01-delivery-packing-minimal-intake.json)于16:46:58.852Z记录，owner16:48:50Z核main/origin clean及12leaf72498B逐字一致。只接primary12，optional wiring/旧contracts/package/lock和operator/raw复制排除。旧strict/pure/actual复用无重跑；不是真实center/default runner/128容量或S01整体批准。原source/result包不改。
+
+## 2026-10-07T17:02:46.250Z 显式buffered单臂独审待收
+
+Target `839a1614bb8429922716fb86e8a9ebe6b2972967`；入口 [queue-buffered-ready.md](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)，manifest绑定当前选择/接线及完整proof未变证据。新8/8+共享sequence5/5与focusedtypes0，2child完整收尾；独立review PENDING，实际PG/perf NOT_RUN_NOT_OPEN。审查重点：只选buffered、原A/B默认不漂移、固定生产身份与完整验收不被可选选择绕过、失败unknown仍保守。无新生产pool/SQL/调度变更，不把main离线12leaf批准继承成真实center接线。
