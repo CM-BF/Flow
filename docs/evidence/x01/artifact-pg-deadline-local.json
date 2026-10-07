@@ -1,0 +1,67 @@
+{
+  "sourceCommit": "f3f48929085a07a545b7cfd154d133ca99dcb8a2",
+  "startedAt": "2026-10-07T08:10:47.331909+00:00",
+  "endedAt": "2026-10-07T08:10:47.460349+00:00",
+  "elapsedBeforeReceipt": 0.12813404097687453,
+  "freeBefore": 24157007872,
+  "floorBytes": 4466937856,
+  "argv": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "docs/evidence/x01/artifact-pg-deadline.test.py"
+  ],
+  "process": {
+    "pid": 35037,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 128,
+    "observed_bytes": 98,
+    "retained_bytes": 98,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "label": "deadline",
+    "rawComplete": true
+  },
+  "unknown": false,
+  "raw": ".\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n",
+  "rawBytes": 98,
+  "rawSha256": "d10ffbd9f0faa72cd6837063279524e199b59fbc3d035051302a1e8dbc4b36ad",
+  "TMP": {
+    "created": 0,
+    "bytes": 0,
+    "retained": []
+  },
+  "PG": 0,
+  "provider": 0,
+  "limits": {
+    "childSeconds": 5,
+    "rawBytes": 4096,
+    "temporaryBytes": 1048576
+  },
+  "wholeExternalWall": null,
+  "outerTool": {
+    "exit": 0,
+    "waitWallSeconds": 0.102393084,
+    "meaning": "Tool wait duration, not a complete process wall guarantee."
+  }
+}
