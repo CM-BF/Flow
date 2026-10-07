@@ -20,8 +20,8 @@
 | 优先级 | 3 |
 | 当前产出 | 插件启用与冻结绑定领域已进入主线；工程受限启动层与固定网页宿主隔离结果已审。个人网页宿主采用首入口检查失败，尚未改变运行环境。 |
 | 下一可用交付 | 修正部署入口的文件身份检查后接续个人网页宿主采用；接收Codex公开流已审结果，并核真实文件辅助进程兼容性。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING；真实模型工程执行与完整界面旅程仍开放。当前已有可实施后继，未等待旧磁盘、旧进程或模型目录才开始实现。 |
-| 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
+| 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
 | 本片段交付阶段 | implementation |
@@ -196,3 +196,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T04:35:02.009743+00:00：SVC06固定d379新root实际04:31:30.466启动，work37293ms/cleanup449ms；三原helper组stopped、OID1208860及marker核对、连接[]、正常DROP remaining[]，0task/provider，未动个人服务。4开发路径EPERM负控制与真实3roles/网页身份/代理通过，首失败不改；独立结果封存仍待原owner交固定包。唯一PG窗口已明确归还给Web/Mika，ENG01I仍只准备不预占。原件沿[唯一SVC06状态](../../../backend-release/plans/svc06-backend-release/status.md)与main I02接收记录，不复制私有日志。D06已审exact8组合02c88028/main，04:32两静态文件HTTP200/hash同源，不重启/刷新用户tab。
 
 2026-10-07T04:58:50.168470+00:00：mainef3a6de8已受控接收ENG01I；两PG旅程2/2与独立结果审查保持范围，真实authority/模型与业务接受仍未完成。SVC08固定Flow422产物30732ms/组absent、0PG/provider/个人操作，窗口04:54:50结束；仅结果待独审。OPS资源计量后继复用Quick/ACCESS两consumer输入，原失败不改，未新增工程检查或扩大门槛。
+
+2026-10-07T06:01:08.284257+00:00：CI启用决定仅由OPS-CI01唯一source呈现；父任务需用户决定=NONE，只在阻塞引用依赖。原用户问题仍PENDING，未获得授权或启动远程CI；不改变历史UNKNOWN时间。

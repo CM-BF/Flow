@@ -23,8 +23,8 @@
 | 优先级 | 1 |
 | 当前产出 | 插件启用与冻结绑定领域已进入主线；工程受限启动层与固定网页宿主隔离结果已审。个人网页宿主采用首入口检查失败，尚未改变运行环境。 |
 | 下一可用交付 | 修正部署入口的文件身份检查后接续个人网页宿主采用；接收Codex公开流已审结果，并核真实文件辅助进程兼容性。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING；真实模型工程执行与完整界面旅程仍开放。当前已有可实施后继，未等待旧磁盘、旧进程或模型目录才开始实现。 |
-| 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
+| 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
 
@@ -459,3 +459,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T05:48:04Z：C02 actual原件05:41:35已清理，Web Recovery05:46:32虽准入但owner未启动/0actual；两co-lead明确下一shared→SVC08。Execution Lead已接受，唯一assignment执行固定cb220/a93（独审I02 svc08-personal-adoption-caller-review）原迁入→fresh request→CLI Web-only replace→post，fresh2.5GiB/live1GiB/原预算不变。仅16root工具及已解析依赖短freeze，个人af51/v18、d629v3/3retained不升级；0provider/不drain/不动tab。当前尚无成功结论，失败unknown保留不重试；实际结束才归还Recovery且新fresh，不复用过期gate。
 
 2026-10-07T05:53:04.970751+00:00：SVC08原migrate在05:49:01.811Z、60ms/exit1因固定系统Python被误套self/nlink1检查而停止；原b35fc741失败与private三原件保留。PID/组34255 absent、双EOF，动态module imports及个人读取/PG/HTTP/store/服务动作均0，后三阶段未调用。共享窗口已实际归还Web/Mika、16root工具短freeze解除；Recovery按fresh新gate接续，不复用旧准入。两worker在现scope修caller身份分类与单hw.pagesize机制对照，本队local串行，0provider；普通失败修正不再逐命令加审批。
+
+2026-10-07T06:01:08.284257+00:00：CI启用决定仅由OPS-CI01唯一source呈现；父任务需用户决定=NONE，只在阻塞引用依赖。原用户问题仍PENDING，未获得授权或启动远程CI；不改变历史UNKNOWN时间。
