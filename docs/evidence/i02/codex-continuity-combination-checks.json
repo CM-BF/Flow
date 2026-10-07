@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T04:12:33.928689+00:00",
+  "target": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+  "state": "failed-or-unknown",
+  "budget": {
+    "workSeconds": 45,
+    "cleanupSeconds": 4,
+    "rawBytes": 131072,
+    "temporaryBytes": 8388608
+  },
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123431494
+  },
+  "PG": 0,
+  "provider": 0,
+  "result": {
+    "pid": 44170,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 2,
+    "elapsed_ms": 8823,
+    "stdout": "apps/server/src/codex-continuity.test.ts(4,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.\napps/server/src/codex-continuity.test.ts(54,28): error TS7006: Parameter 'entry' implicitly has an 'any' type.\napps/server/src/codex-continuity.test.ts(56,28): error TS7006: Parameter 'entry' implicitly has an 'any' type.\ndocs/evidence/mature02c02/pg-fixture.ts(7,28): error TS2307: Cannot find module '@flow/client' or its corresponding type declarations.\n",
+    "stderr": "",
+    "observed_bytes": 493,
+    "retained_bytes": 493,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "tmpBytes": 1357860,
+  "tmpRemoved": true,
+  "finishedAt": "2026-10-07T04:12:42.755117+00:00"
+}

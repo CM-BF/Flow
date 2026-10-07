@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-06T21:20:22.293842+00:00",
+  "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+  "claimVersion": 1,
+  "availableBytes": 1160335360,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/contracts/src/codex-session.test.ts",
+    "packages/contracts/src/execution-profiles.test.ts",
+    "apps/runner/src/native-harness/codex/session-storage.test.ts",
+    "apps/runner/src/native-harness/codex/continuity.test.ts",
+    "apps/runner/src/engineering/native-policy.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter",
+    "default"
+  ],
+  "bounds": {
+    "ms": 30000,
+    "rawBytes": 16384,
+    "ownBytes": 33554432
+  },
+  "inputs": [
+    {
+      "path": "packages/contracts/src/codex-session.test.ts",
+      "bytes": 2676,
+      "sha256": "ee59da990ce08c3e87ba488bee1efe07412ec592c8d0431de5de4cb8ce915754"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 7332,
+      "sha256": "0975dada93212664c2ad09aa6a3e35124e344f8b59db95feeec2bb896963f863"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+      "bytes": 6207,
+      "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "bytes": 10574,
+      "sha256": "2f2cce3468a977f43db791451700da68d9d90e901b51c9250548ca2dba7642f5"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.test.ts",
+      "bytes": 5419,
+      "sha256": "32cecb16e5ed2b428c22d59a859f934e597237e038f6cb535b9df03e7eaaaf3e"
+    },
+    {
+      "path": "docs/evidence/mature02c02/vitest.config.mjs",
+      "bytes": 610,
+      "sha256": "7de7ddf8d4aed52d3a379a0983e90b6932400a57f7a052f5278f9ad30495fee1"
+    }
+  ],
+  "owned": [
+    {
+      "path": "/tmp/flow-c02-continuity-first-cache",
+      "dev": 16777234,
+      "ino": 123207929
+    },
+    {
+      "path": "/tmp/flow-c02-continuity-first-tmp",
+      "dev": 16777234,
+      "ino": 123207930
+    }
+  ],
+  "realTargets": 0,
+  "pg": 0,
+  "provider": 0
+}

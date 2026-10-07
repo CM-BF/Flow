@@ -48,7 +48,8 @@ export async function listNativeProfiles(pool: Pool, after: string | undefined, 
     const rows = (await client.query<ProfileRow>(`SELECT p.* FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id
       WHERE NOT r.revoked AND NOT (p.configuration ? 'turnSettings') AND (
         (p.configuration->>'harness'='claude' AND p.configuration->>'adapterVersion'='claude-sdk-0.3.290-v2') OR
-        (p.configuration->>'harness'='codex' AND p.configuration->>'adapterVersion'='codex-app-server-0.154.0-v1'))
+        (p.configuration->>'harness'='codex' AND p.configuration->>'adapterVersion'='codex-app-server-0.154.0-v1'
+          AND NOT (p.configuration ? 'sessionPersistence')))
       AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2`, [after ?? null, limit + 1])).rows;
     // Validate the sentinel too: it must not hide a corrupt next-page boundary.
     const entries = rows.map(nativeCatalogEntry);
@@ -120,7 +121,9 @@ export async function assertTaskExecutionProfile(client: PoolClient, task: TaskS
   const settings = checkTaskMessageSettings(task, profile);
   if (!settings.ok) throw new HttpError(409, settings.code, 'The frozen message settings cannot be admitted for this execution profile and session.');
   if (task.harness !== profile.configuration.harness) throw new HttpError(409, 'profile_harness_mismatch', 'The selected profile does not support this task harness.');
-  if (task.harness === 'codex' && task.resumeSessionId) throw new HttpError(409, 'native_resume_unsupported', 'This native harness does not support session resume.');
+  if (profile.configuration.harness === 'codex' && task.resumeSessionId && profile.configuration.sessionPersistence !== 'host-owned') {
+    throw new HttpError(409, 'native_resume_unsupported', 'This native harness does not support session resume.');
+  }
   if (task.resumeSessionId) {
     const session = (await client.query<{ runner_id: string }>('SELECT runner_id FROM flow.sessions WHERE id=$1 AND harness=$2', [task.resumeSessionId, task.harness])).rows[0];
     if (!session || session.runner_id !== profile.reference.runnerId) throw new HttpError(409, 'profile_session_mismatch', 'A resumed session must use its original configured runner.');

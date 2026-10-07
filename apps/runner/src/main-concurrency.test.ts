@@ -1,12 +1,12 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const dependencies = vi.hoisted(() => ({
-  load: vi.fn(), publish: vi.fn(), guard: vi.fn(),
+  codex: vi.fn(), load: vi.fn(), publish: vi.fn(), guard: vi.fn(),
   native: vi.fn<(options: Record<string, unknown>) => Promise<void>>(),
   endpoints: vi.fn(), protocol: vi.fn(), engineering: vi.fn(),
 }));
 vi.mock('./engineering/launch.js', () => ({ loadEngineeringRunner: dependencies.engineering }));
-vi.mock('./configuration.js', () => ({ loadRunnerConfiguration: dependencies.load }));
+vi.mock('./configuration.js', () => ({ loadRunnerConfiguration: dependencies.load, loadCodexProductionRunnerConfiguration: dependencies.codex }));
 vi.mock('./execution-profiles.js', () => ({ publishExecutionProfile: dependencies.publish, guardExecutionProfile: dependencies.guard }));
 vi.mock('./runtime.js', () => ({ runRunner: dependencies.native }));
 vi.mock('./protocol-dispatch/index.js', () => ({ loadProtocolEndpoints: dependencies.endpoints, runProtocolRunner: dependencies.protocol }));
@@ -21,6 +21,8 @@ beforeEach(() => {
   vi.stubEnv('FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS', undefined);
   vi.stubEnv('FLOW_A2A_ENDPOINTS_FILE', undefined);
   vi.stubEnv('FLOW_ENGINEERING_SETUP_FILE', undefined);
+  vi.stubEnv('FLOW_CODEX_PROFILE_FILE', undefined);
+  vi.stubEnv('FLOW_CODEX_LAUNCH_FILE', undefined);
   vi.stubEnv('FLOW_CLAUDE_MATERIALS_FILE', '/synthetic-materials.json');
   vi.stubEnv('FLOW_URL', 'http://synthetic.invalid');
   vi.stubEnv('FLOW_RUNNER_TOKEN', 'synthetic-token');
@@ -127,5 +129,40 @@ describe('dedicated engineering main entry', () => {
     configure(); dependencies.engineering.mockRejectedValue(new Error('private-storage-location')); await start();
     expect(dependencies.native).not.toHaveBeenCalled(); expect(process.exitCode).toBe(1);
     expect(process.stderr.write).toHaveBeenCalledExactlyOnceWith('Runner stopped: check its configuration, center authentication and local event storage.\n');
+  });
+});
+
+describe('persistent Codex main entry', () => {
+  function configure() {
+    vi.stubEnv('FLOW_CLAUDE_MATERIALS_FILE', undefined);
+    vi.stubEnv('FLOW_CODEX_PROFILE_FILE', '/operator-profile.json');
+    vi.stubEnv('FLOW_CODEX_LAUNCH_FILE', '/operator-launch.json');
+    dependencies.codex.mockResolvedValue({ adapters: [adapter], activeSteering: false });
+  }
+  it('awaits the guarded publication loader once before running the selected adapters', async () => {
+    configure(); vi.stubEnv('FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS', '2');
+    let release!: (value: unknown) => void;
+    dependencies.codex.mockImplementation(() => new Promise(resolve => { release = resolve; }));
+    const startup = start(); await vi.waitFor(() => expect(dependencies.codex).toHaveBeenCalledOnce());
+    expect(dependencies.native).not.toHaveBeenCalled(); release({ adapters: [adapter] }); await startup;
+    expect(dependencies.codex).toHaveBeenCalledWith(expect.objectContaining({ codexManifestFile: '/operator-profile.json', launchManifestFile: '/operator-launch.json', baseUrl: 'http://synthetic.invalid', token: 'synthetic-token' }));
+    expect(dependencies.native).toHaveBeenCalledWith(expect.objectContaining({ adapters: [adapter], activeSteering: false, maxConcurrentAttempts: 2 }));
+    expect(dependencies.publish).not.toHaveBeenCalled(); expect(dependencies.guard).not.toHaveBeenCalled(); expect(dependencies.load).not.toHaveBeenCalled();
+  });
+  it.each(['FLOW_CLAUDE_MATERIALS_FILE', 'FLOW_A2A_ENDPOINTS_FILE', 'FLOW_ENGINEERING_SETUP_FILE'])('rejects mixed %s before any loader or process', async name => {
+    configure(); vi.stubEnv(name, '/other'); await start(); noStartup();
+  });
+  it.each(['FLOW_CODEX_PROFILE_FILE', 'FLOW_CODEX_LAUNCH_FILE'])('requires both explicit files, including empty %s', async name => {
+    configure(); vi.stubEnv(name, ''); await start(); noStartup();
+  });
+  it('keeps unknown publication private and never starts the runner', async () => {
+    configure(); dependencies.codex.mockRejectedValue(new Error('private recipe identity')); await start();
+    expect(dependencies.native).not.toHaveBeenCalled(); expect(process.exitCode).toBe(1);
+    expect(process.stderr.write).toHaveBeenCalledExactlyOnceWith('Runner stopped: check its configuration, center authentication and local event storage.\n');
+  });
+  it.each(['SIGINT', 'SIGTERM'] as const)('passes %s to Codex startup and runner without leaving signal handlers', async name => {
+    configure(); const on = vi.spyOn(process, 'on');
+    dependencies.codex.mockImplementation(async options => { on.mock.calls.find(([signal]) => signal === name)![1](); expect(options.signal.aborted).toBe(true); throw new Error('aborted'); });
+    await start(); expect(dependencies.native).not.toHaveBeenCalled(); expect(process.exitCode).toBe(1);
   });
 });

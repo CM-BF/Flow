@@ -1,0 +1,38 @@
+{
+  "window": "MATURE02C02-PG-20261007-R1",
+  "source": "functions exec_command and write_stdin outputs, copied after completion",
+  "preToolUtcSecond": "2026-10-07 02:28:19 UTC",
+  "postToolUtcSecond": "2026-10-07 02:28:27 UTC",
+  "externalConservativeUpperBoundSeconds": 9,
+  "exactWholeToolWallSeconds": null,
+  "clockNote": "Second-resolution external envelope includes launch and final actual exit; individual call wait durations are not summed as whole elapsed.",
+  "calls": [
+    {
+      "chunkId": "fc8714",
+      "sessionId": 77795,
+      "reportedWaitSeconds": 1.00173975,
+      "state": "running"
+    },
+    {
+      "chunkId": "2cc2aa",
+      "reportedWaitSeconds": 3.651379959,
+      "exitCode": 1
+    }
+  ],
+  "finalStdoutAcknowledgement": {
+    "sourceChunk": "2cc2aa",
+    "resultFileSha256": "1652ef649968e1aa4c0ed66ed944c460ad5b4c39b82d42304dd55ee27520a5fe",
+    "delivery": {
+      "finalReceiptWritten": true,
+      "elapsedSeconds": 7.040807792,
+      "success": false
+    }
+  },
+  "internalClock": {
+    "startedAt": "2026-10-07T02:28:19.968989+00:00",
+    "beforeFinalReceiptAt": "2026-10-07T02:28:27.009561+00:00",
+    "beforeFinalReceiptElapsedSeconds": 7.040516667
+  },
+  "launchCount": 1,
+  "retries": 0
+}

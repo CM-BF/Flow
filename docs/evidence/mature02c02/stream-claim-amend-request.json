@@ -1,0 +1,41 @@
+{
+  "requestId": "889027dc-2198-43ca-b28f-1643c9f364e1",
+  "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+  "version": 4,
+  "actor": {
+    "lead": "mika",
+    "worker": "chatui01_owner"
+  },
+  "scope": [
+    "apps/runner/src/configuration.test.ts",
+    "apps/runner/src/configuration.ts",
+    "apps/runner/src/main-concurrency.test.ts",
+    "apps/runner/src/main.ts",
+    "apps/runner/src/native-harness/codex/adapter.test.ts",
+    "apps/runner/src/native-harness/codex/adapter.ts",
+    "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+    "apps/runner/src/native-harness/codex/continuity.test.ts",
+    "apps/runner/src/native-harness/codex/evidence.test.ts",
+    "apps/runner/src/native-harness/codex/evidence.ts",
+    "apps/runner/src/native-harness/codex/exchange.test.ts",
+    "apps/runner/src/native-harness/codex/exchange.ts",
+    "apps/runner/src/native-harness/codex/index.ts",
+    "apps/runner/src/native-harness/codex/launch.test.ts",
+    "apps/runner/src/native-harness/codex/launch.ts",
+    "apps/runner/src/native-harness/codex/peer.mjs",
+    "apps/runner/src/native-harness/codex/session-storage.test.ts",
+    "apps/runner/src/native-harness/codex/session-storage.ts",
+    "apps/runner/src/native-harness/codex/turn.ts",
+    "apps/runner/src/native-harness/codex/wire.ts",
+    "apps/runner/src/native-harness/descriptor.ts",
+    "apps/server/src/codex-continuity.test.ts",
+    "apps/server/src/execution-profiles/store.ts",
+    "docs/evidence/mature02c02",
+    "packages/contracts/src/codex-session.test.ts",
+    "packages/contracts/src/execution-profiles.test.ts",
+    "packages/contracts/src/execution-profiles.ts",
+    "packages/contracts/src/native-harness.ts",
+    "packages/contracts/src/tasks.ts",
+    "plans/wpf-mature-02-codex-continuity"
+  ]
+}

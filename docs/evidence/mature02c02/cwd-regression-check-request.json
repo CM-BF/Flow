@@ -1,0 +1,81 @@
+{
+  "schema": "flow.c02.cwd-regression-check-request.v1",
+  "status": "NOT_OPEN_NOT_RUN",
+  "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+  "claimVersion": 2,
+  "failedRunTarget": "d5e94525d8d9bc0119059f9c4c541b2b669a46be",
+  "expectedSelection": {
+    "selected": 1,
+    "notSelectedInFile": 7
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/native-harness/codex/continuity.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter=verbose",
+    "-t",
+    "keeps session storage fixed while each attempt uses its own working directory"
+  ],
+  "limits": {
+    "wallSecondsIncludingCleanup": 30,
+    "combinedRawBytes": 16384,
+    "ownedTmpCacheBytes": 33554432,
+    "minimumFreeBytes": 1107296256,
+    "actualCodex": 0,
+    "PG": 0,
+    "provider": 0
+  },
+  "environment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "remove": [
+      "NODE_OPTIONS",
+      "NODE_COMPILE_CACHE"
+    ],
+    "TMPDIR": "new exclusively owned root registered with dev/ino",
+    "FLOW_C02_TEST_CACHE": "new root/cache",
+    "FLOW_C02_CONTINUITY_REPORT": "new O_EXCL cleanup receipt"
+  },
+  "inputs": [
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+      "bytes": 5456,
+      "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "bytes": 7508,
+      "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+    },
+    {
+      "path": "apps/server/src/codex-continuity.test.ts",
+      "bytes": 12173,
+      "sha256": "cc6862d27e1f08e742bc26c680b135fba91d72fc56fab5b0d34f310c41df491d"
+    },
+    {
+      "path": "docs/evidence/mature02c02/vitest.config.mjs",
+      "bytes": 610,
+      "sha256": "7de7ddf8d4aed52d3a379a0983e90b6932400a57f7a052f5278f9ad30495fee1"
+    }
+  ],
+  "external": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    }
+  ],
+  "lifecycle": "Fresh exact claim/head/source/external/dependency gate; register own TMP identity before spawn; one fixed Node/Vitest worker; selected/pass/actual exit plus stdout/stderr closure and same-inode cleanup evidence. No automatic retry. No pre-existing KEEP root access.",
+  "redEvidence": "New regression is prepared but NOT_RUN against old fixture; no red/green runtime claim."
+}

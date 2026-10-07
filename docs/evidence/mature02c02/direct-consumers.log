@@ -1,0 +1,73 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity
+
+ ✓ apps/runner/src/engineering/native-writer.test.ts (21 tests) 1485ms
+   ✓ composes the native-file consumer with the same full host snapshot and independent checker after injected revocation  516ms
+   ✓ preserves hang as unknown even with an injected revoked receipt  305ms
+ ❯ apps/runner/src/native-harness/codex/adapter.test.ts (44 tests | 1 failed) 2508ms
+   ✓ constructs without native I/O and emits one bounded ordinary final with actual settings unknown 51ms
+   ✓ denies item/commandExecution/requestApproval without accepting the malicious subsequent final 41ms
+   ✓ denies item/fileChange/requestApproval without accepting the malicious subsequent final 41ms
+   ✓ denies item/permissions/requestApproval without accepting the malicious subsequent final 41ms
+   ✓ denies item/tool/call without accepting the malicious subsequent final 43ms
+   ✓ denies mcpServer/elicitation/request without accepting the malicious subsequent final 43ms
+   ✓ denies item/tool/requestUserInput without accepting the malicious subsequent final 41ms
+   ✓ denies account/chatgptAuthTokens/refresh without accepting the malicious subsequent final 41ms
+   ✓ denies attestation/generate without accepting the malicious subsequent final 40ms
+   ✓ denies execCommandApproval without accepting the malicious subsequent final 39ms
+   ✓ denies applyPatchApproval without accepting the malicious subsequent final 41ms
+   ✓ denies future/request without accepting the malicious subsequent final 40ms
+   ✓ denies a server request before the turn/start response without deadlocking the response consumer 41ms
+   ✓ rejects observed commandExecution, including terminal-only evidence 85ms
+   ✓ rejects observed fileChange, including terminal-only evidence 113ms
+   ✓ rejects observed mcpToolCall, including terminal-only evidence 78ms
+   ✓ rejects observed dynamicToolCall, including terminal-only evidence 77ms
+   ✓ rejects observed collabAgentToolCall, including terminal-only evidence 82ms
+   ✓ rejects observed subAgentActivity, including terminal-only evidence 81ms
+   ✓ rejects observed webSearch, including terminal-only evidence 79ms
+   ✓ rejects observed imageView, including terminal-only evidence 82ms
+   ✓ rejects observed imageGeneration, including terminal-only evidence 79ms
+   ✓ rejects observed functionCallOutput, including terminal-only evidence 78ms
+   ✓ rejects observed sleep, including terminal-only evidence 78ms
+   ✓ rejects observed hookPrompt, including terminal-only evidence 78ms
+   ✓ rejects observed contextCompaction, including terminal-only evidence 80ms
+   ✓ rejects observed futureItem, including terminal-only evidence 83ms
+   ✓ keeps wrong-thread unknown and hides assertion/native diagnostic payloads 43ms
+   ✓ keeps wrong-turn unknown and hides assertion/native diagnostic payloads 42ms
+   ✓ keeps unknown-phase unknown and hides assertion/native diagnostic payloads 39ms
+   ✓ keeps async unknown and hides assertion/native diagnostic payloads 38ms
+   ✓ keeps changed-item unknown and hides assertion/native diagnostic payloads 41ms
+   ✓ keeps multiple-final unknown and hides assertion/native diagnostic payloads 38ms
+   × keeps post-terminal unknown and hides assertion/native diagnostic payloads 43ms
+   ✓ keeps wrong-sandbox unknown and hides assertion/native diagnostic payloads 39ms
+   ✓ keeps eof unknown and hides assertion/native diagnostic payloads 41ms
+   ✓ keeps lost-start-response unknown and hides assertion/native diagnostic payloads 41ms
+   ✓ keeps oversize unknown and hides assertion/native diagnostic payloads 43ms
+   ✓ keeps wire-escape unknown and hides assertion/native diagnostic payloads 44ms
+   ✓ accepts native failed only as a settled failure without a final 39ms
+   ✓ accepts native interrupted only as a settled failure without a final 41ms
+   ✓ enforces host output and wall time independently of native provider budget 196ms
+   ✓ cannot convert a completed turn to success when owned child exit remains unconfirmed 40ms
+   ✓ refuses unsupported ports and missing pin before creating a transport 1ms
+ ✓ apps/runner/src/native-harness/codex/exchange.test.ts (1 test) 48ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 65 passed (66)
+   Start at  14:23:22
+   Duration  4.74s (transform 175ms, setup 0ms, import 420ms, tests 4.04s, environment 0ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/native-harness/codex/adapter.test.ts > keeps post-terminal unknown and hides assertion/native diagnostic payloads
+AssertionError: expected undefined to be an instance of NativeExecutionError
+ ❯ apps/runner/src/native-harness/codex/adapter.test.ts:82:17
+     80|   const api = await setup(mode);
+     81|   const error = await api.configured.adapter.run(api.context).catch(er…
+     82|   expect(error).toBeInstanceOf(NativeExecutionError); expect(error.set…
+       |                 ^
+     83|   expect(error).not.toHaveProperty('cause'); expect(error).not.toHaveP…
+     84|   expect(error.message).toBe('Native execution settlement is unknown.'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

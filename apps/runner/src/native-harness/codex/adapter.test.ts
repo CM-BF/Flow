@@ -7,7 +7,7 @@ import { afterEach, expect, it } from 'vitest';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
 import type { CodexExecutionProfileConfiguration } from '../../../../../packages/contracts/src/execution-profiles.js';
 import { createCodexTransport } from '../../codex/index.js';
-import type { CodexTransport, Json } from '../../codex/types.js';
+import type { CodexTransport, Inbound, Json } from '../../codex/types.js';
 import { NativeExecutionError } from '../settlement.js';
 import { configureCodexHarness, type CodexTransportFactory } from './index.js';
 
@@ -76,12 +76,36 @@ it.each(['commandExecution', 'fileChange', 'mcpToolCall', 'dynamicToolCall', 'co
   }
 });
 
-it.each(['wrong-thread', 'wrong-turn', 'unknown-phase', 'async', 'changed-item', 'multiple-final', 'post-terminal', 'wrong-sandbox', 'eof', 'lost-start-response', 'oversize', 'wire-escape'])('keeps %s unknown and hides assertion/native diagnostic payloads', async mode => {
+it.each(['wrong-thread', 'wrong-turn', 'unknown-phase', 'async', 'changed-item', 'multiple-final', 'wrong-sandbox', 'eof', 'lost-start-response', 'oversize', 'wire-escape'])('keeps %s unknown and hides assertion/native diagnostic payloads', async mode => {
   const api = await setup(mode);
   const error = await api.configured.adapter.run(api.context).catch(error => error);
   expect(error).toBeInstanceOf(NativeExecutionError); expect(error.settlement).toBe('unknown');
   expect(error).not.toHaveProperty('cause'); expect(error).not.toHaveProperty('actual'); expect(error).not.toHaveProperty('expected');
   expect(error.message).toBe('Native execution settlement is unknown.'); expect(api.events).toEqual([]);
+});
+
+it('keeps post-terminal unknown after the actual late peer item has been received and delivered', async () => {
+  let cached: Inbound | null | undefined, terminal: Inbound | undefined, delivered: Inbound | undefined;
+  const api = await setup('post-terminal', profile(), port => ({ ...port, async receive() {
+    if (cached !== undefined) { const message = cached; cached = undefined; delivered = message ?? undefined; return message; }
+    const message = await port.receive();
+    if (message?.kind === 'notification' && message.method === 'turn/completed') {
+      terminal = message;
+      // Serialize two real reads before exposing terminal, so this test observes the violation before controlled close.
+      cached = await port.receive();
+    }
+    return message;
+  } }));
+  const error = await api.configured.adapter.run(api.context).catch(error => error);
+  // These checks stay outside exchange's payload-hiding catch: a fixture assertion must not masquerade as rejection.
+  expect(terminal).toMatchObject({ kind: 'notification', method: 'turn/completed' });
+  const params = terminal!.params as { threadId: string; turn: { id: string } };
+  expect(delivered).toMatchObject({ kind: 'notification', method: 'item/completed',
+    params: { threadId: params.threadId, turnId: params.turn.id, item: { id: 'late' } } });
+  expect(error).toBeInstanceOf(NativeExecutionError); expect(error.settlement).toBe('unknown');
+  expect(error.message).toBe('Native execution settlement is unknown.');
+  expect(error).not.toHaveProperty('cause'); expect(error).not.toHaveProperty('actual'); expect(error).not.toHaveProperty('expected');
+  expect(api.events).toEqual([]);
 });
 
 it.each(['failed', 'interrupted'])('accepts native %s only as a settled failure without a final', async mode => {

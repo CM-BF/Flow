@@ -19,11 +19,11 @@ it('rejects unrecognized versions and provider limits while retaining null and t
     expect(nativeExecutionProfileConfigurationSchema.safeParse({ ...codex, ...changed }).success).toBe(false);
   }
 });
-it('requires a pinned ordinary Codex task and rejects unimplemented resume/fixture paths', () => {
+it('requires a pinned ordinary Codex task and defers resume support to center profile admission', () => {
   const task = { title: 'Native', prompt: 'hello', harness: 'codex', executionProfile: { id: '6a287c9c-e6c0-4b78-a63a-9fcc7a45d62f', runnerId: '5668918f-58a1-4703-89dc-705e92a8b4c4', configDigest: 'a'.repeat(64) } };
   expect(taskSubmissionSchema.parse(task)).toEqual(task);
   expect(taskSubmissionSchema.safeParse({ ...task, executionProfile: undefined }).success).toBe(false);
-  expect(taskSubmissionSchema.safeParse({ ...task, resumeSessionId: 'thread' }).success).toBe(false);
+  expect(taskSubmissionSchema.parse({ ...task, resumeSessionId: 'thread' })).toEqual({ ...task, resumeSessionId: 'thread' });
   expect(taskSubmissionSchema.safeParse({ ...task, fixture: { scenario: 'success' } }).success).toBe(false);
 });
 

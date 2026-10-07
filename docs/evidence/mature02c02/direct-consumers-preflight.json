@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-06T21:23:22.495995+00:00",
+  "claimVersion": 1,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/native-harness/codex/adapter.test.ts",
+    "apps/runner/src/native-harness/codex/exchange.test.ts",
+    "apps/runner/src/engineering/native-writer.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.consumers.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter",
+    "default"
+  ],
+  "availableBytes": 1149812736,
+  "bounds": {
+    "ms": 30000,
+    "rawBytes": 16384,
+    "ownBytes": 33554432
+  },
+  "inputs": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "bytes": 2083,
+      "sha256": "664494638268733c60b6764ea0306caeb590a5dca1d8dcf1302953c29f72c9e9"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "bytes": 12453,
+      "sha256": "be1cf98bfcfc16e64ac7f8dc5d9a46a6c855a364b7b75383d9256e5b8729cc30"
+    },
+    {
+      "path": "docs/evidence/mature02c02/vitest.consumers.config.mjs",
+      "bytes": 491,
+      "sha256": "525e408b5ad79796f39265b760a0570ccab4107c0816296bdf7eefecf45c9c6c"
+    }
+  ],
+  "owned": [
+    {
+      "path": "/tmp/flow-c02-consumers-cache",
+      "dev": 16777234,
+      "ino": 123208753
+    },
+    {
+      "path": "/tmp/flow-c02-consumers-tmp",
+      "dev": 16777234,
+      "ino": 123208754
+    }
+  ],
+  "execution": "Self-owned deterministic Node JSONL peers and synthetic Git calculator fixture; no Codex/native-model/PG/provider."
+}

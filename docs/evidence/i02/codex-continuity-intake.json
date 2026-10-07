@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-07T04:12:14.312506+00:00",
+  "mainBefore": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "target": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+  "metadata": "153a759697e32f3f48f5148e0bb2e5e0a4ae6aa6",
+  "base": "eae85567ba5dfb650ba71b473917130f87b5945c",
+  "productPreimagesEqual": 24,
+  "products": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704",
+      "bytes": 10414
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65",
+      "bytes": 6563
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b",
+      "bytes": 11273
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe",
+      "bytes": 3297
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a",
+      "bytes": 10676
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1",
+      "bytes": 2738
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+      "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34",
+      "bytes": 5456
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58",
+      "bytes": 7508
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "sha256": "5caa3b7e105a739f8d74a1c6847a738ccb584138e2633950916bf6235d592ba8",
+      "bytes": 4603
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6",
+      "bytes": 1109
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22",
+      "bytes": 17344
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075",
+      "bytes": 6077
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+      "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7",
+      "bytes": 6207
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407",
+      "bytes": 3899
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "sha256": "2b25b4d4862a72f41372d0fe586ea1edd0bbd38e20261137aa4599624cc22c30",
+      "bytes": 2858
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363",
+      "bytes": 2382
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "sha256": "f54045f6965bd3b0d2223ce5ed84ac026531f60ff6c16f22f1a8074dc5f801aa",
+      "bytes": 1213
+    },
+    {
+      "path": "apps/server/src/codex-continuity.test.ts",
+      "sha256": "cc6862d27e1f08e742bc26c680b135fba91d72fc56fab5b0d34f310c41df491d",
+      "bytes": 12173
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sha256": "828bcf4800df47fde5b9ac4683efa2f20fcd686f4e8d9a75181445620f644f44",
+      "bytes": 13758
+    },
+    {
+      "path": "packages/contracts/src/codex-session.test.ts",
+      "sha256": "ee59da990ce08c3e87ba488bee1efe07412ec592c8d0431de5de4cb8ce915754",
+      "bytes": 2676
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.test.ts",
+      "sha256": "0975dada93212664c2ad09aa6a3e35124e344f8b59db95feeec2bb896963f863",
+      "bytes": 7332
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938",
+      "bytes": 12208
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "sha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8",
+      "bytes": 1173
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "bytes": 6390
+    }
+  ],
+  "reviewManifestBindingsVerified": {
+    "R2@8501d96a": 34,
+    "loader@519f1b87": 23,
+    "main@afe3eb97": 33
+  },
+  "reviews": [
+    "architecture_read source/R2 result",
+    "status_read loader",
+    "architecture_read main recipe"
+  ],
+  "scope": "Approved public task/API plus persistent source/loader/main recipe; no pending stream changes, native or UI acceptance",
+  "checks": "combination noEmit pending; original 6 public PG and local checks reused",
+  "provider": 0,
+  "historicalUnknown": "R1 KEEP unchanged",
+  "importOnlyFix": {
+    "source": "92d019313aaa4c4f7f2574541640782e19f03527",
+    "reviewer": "status_read/gpt-6-astra",
+    "reviewedAt": "2026-10-07T04:14:09Z",
+    "verdict": "SOURCE_REVIEW_APPROVED",
+    "P1P2": 0,
+    "instruction": "Apply only these two fixture import replacements to the previously approved24source assembly. Do not merge65c stream ancestors.",
+    "bindings": [
+      {
+        "path": "apps/server/src/codex-continuity.test.ts",
+        "bytes": 12198,
+        "sha256": "a7c8d3472a6b32ee4d1d65327247d736a0f7573ded71f17fdb346381061050e2"
+      },
+      {
+        "path": "docs/evidence/mature02c02/pg-fixture.ts",
+        "bytes": 11657,
+        "sha256": "8bf21a12e6a3c2ed72c210ec547e5f34da7ffb867f009c2dabc4d58abb615b93"
+      }
+    ]
+  },
+  "importOnlyReviewSource": "c6e74be66f25d3165b74212806bcdf8d0419bf32",
+  "importFixAppliedAt": "2026-10-07T04:18:56.456683+00:00"
+}

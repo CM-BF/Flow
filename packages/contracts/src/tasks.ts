@@ -54,8 +54,8 @@ export const taskSubmissionSchema = z.strictObject({
     context.addIssue({ code: 'custom', message: 'Engineering intent requires its dedicated purpose profile and cannot reuse text verification or ordinary execution options.' });
   }
   if (task.executionProfile && !['claude', 'codex'].includes(task.harness)) context.addIssue({ code: 'custom', message: 'Execution profiles require a recognized native harness.' });
-  if (task.harness === 'codex' && !task.engineering && (!task.executionProfile || task.resumeSessionId || task.fixture)) {
-    context.addIssue({ code: 'custom', message: 'Codex tasks require an explicit profile and do not support resume or fixture options.' });
+  if (task.harness === 'codex' && !task.engineering && (!task.executionProfile || task.fixture)) {
+    context.addIssue({ code: 'custom', message: 'Codex tasks require an explicit profile and cannot use fixture options.' });
   }
   if (task.harness === 'a2a') {
     if (!task.protocol || task.resumeSessionId || task.fixture) context.addIssue({ code: 'custom', message: 'A2A tasks require an endpoint reference and cannot reuse native sessions or fixture options.' });

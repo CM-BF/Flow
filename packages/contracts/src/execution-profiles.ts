@@ -74,6 +74,7 @@ export const codexExecutionProfileConfigurationSchema = z.strictObject({
   sandboxMode: z.literal('read-only'),
   // Host resource bounds, never provider USD or turn-count guarantees.
   hostLimits: z.strictObject({ wallTimeMs: z.number().int().min(1).max(90_000), maxOutputBytes: z.number().int().min(1).max(1_048_576) }),
+  sessionPersistence: z.literal('host-owned').optional(),
 });
 export type CodexExecutionProfileConfiguration = z.infer<typeof codexExecutionProfileConfigurationSchema>;
 export const nativeExecutionProfileConfigurationSchema = z.discriminatedUnion('harness', [executionProfileConfigurationSchema, codexExecutionProfileConfigurationSchema]);

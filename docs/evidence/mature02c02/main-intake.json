@@ -1,0 +1,62 @@
+{
+  "source": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+  "status": "READY_FOR_CONTROLLED_INTAKE_NOT_INTEGRATED",
+  "stages": [
+    {
+      "kind": "core public API",
+      "source": "3c05038c0a8cc05c8e771797263bd5d710c05263",
+      "evidence": "pg-MATURE02C02-PG-20261007-R2.manifest.json",
+      "reviewedAt": "2026-10-07T03:16:29Z"
+    },
+    {
+      "kind": "loader seam",
+      "source": "519f1b87ff3b41b9a963b6e5dd99c7b117159375",
+      "evidence": "loader-review-manifest.json",
+      "reviewedAt": "2026-10-07T03:30:12Z"
+    },
+    {
+      "kind": "main recipe",
+      "source": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+      "evidence": "main-review-manifest.json",
+      "reviewedAt": "2026-10-07T03:45:14Z"
+    }
+  ],
+  "scope": "Public task API with injected transports, production startup source wiring, separate operator recipe. No native run or conversation/UI claim. Old first failures and R1 KEEP retained.",
+  "bindings": [
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PG-20261007-R2.manifest.json",
+      "bytes": 6385,
+      "sha256": "696658b969c250680c1aa17fe9b678b49c51151d92f40249f8ab23af0ebecb1c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-review-manifest.json",
+      "bytes": 4943,
+      "sha256": "2e6e9ee481798b3707ba96c78abf81793db8b440d2ff8203aafdf0f6abf97f98"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-review-manifest.json",
+      "bytes": 6322,
+      "sha256": "e565722dfcfd2d2194763917b6998af046b0520a60f8429963394fd724491ca7"
+    }
+  ],
+  "importOnlyFix": {
+    "source": "92d019313aaa4c4f7f2574541640782e19f03527",
+    "reviewer": "status_read/gpt-6-astra",
+    "reviewedAt": "2026-10-07T04:14:09Z",
+    "verdict": "SOURCE_REVIEW_APPROVED",
+    "P1P2": 0,
+    "instruction": "Apply only these two fixture import replacements to the previously approved24source assembly. Do not merge65c stream ancestors.",
+    "bindings": [
+      {
+        "path": "apps/server/src/codex-continuity.test.ts",
+        "bytes": 12198,
+        "sha256": "a7c8d3472a6b32ee4d1d65327247d736a0f7573ded71f17fdb346381061050e2"
+      },
+      {
+        "path": "docs/evidence/mature02c02/pg-fixture.ts",
+        "bytes": 11657,
+        "sha256": "8bf21a12e6a3c2ed72c210ec547e5f34da7ffb867f009c2dabc4d58abb615b93"
+      }
+    ]
+  }
+}

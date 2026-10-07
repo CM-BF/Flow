@@ -1,0 +1,33 @@
+{
+  "startUtc": "2026-10-06T21:26:50.726155+00:00",
+  "finishUtc": "2026-10-06T21:26:51.633763+00:00",
+  "elapsedSeconds": 0.9073261660523713,
+  "exitCode": 0,
+  "rawBytes": 442,
+  "rawSha256": "8c4683579ce0b08c591bce1154340cae9b83e86910125322fbdc493d05f4e2fb",
+  "ownFinalSampleBytes": 437,
+  "cleanup": [
+    {
+      "path": "/tmp/flow-c02-delta-cache",
+      "dev": 16777234,
+      "ino": 123210415,
+      "sameIdentity": true,
+      "sampledBytes": 437,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    },
+    {
+      "path": "/tmp/flow-c02-delta-tmp",
+      "dev": 16777234,
+      "ino": 123210416,
+      "sameIdentity": true,
+      "sampledBytes": 0,
+      "unexpectedFixturePaths": [],
+      "absent": true
+    }
+  ],
+  "withinRunBounds": true,
+  "actualCodexTargets": 0,
+  "pgCalls": 0,
+  "providerCalls": 0
+}

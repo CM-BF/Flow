@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T04:18:56.611650+00:00",
+  "target": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+  "importFix": "92d019313aaa4c4f7f2574541640782e19f03527",
+  "state": "passed",
+  "budget": {
+    "workSeconds": 45,
+    "cleanupSeconds": 4,
+    "rawBytes": 131072,
+    "temporaryBytes": 8388608
+  },
+  "freeBytes": 25669480448,
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123438222
+  },
+  "PG": 0,
+  "provider": 0,
+  "result": {
+    "pid": 65308,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 8984,
+    "stdout": "",
+    "stderr": "",
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "tmpBytes": 1357788,
+  "tmpRemoved": true,
+  "finishedAt": "2026-10-07T04:19:05.598023+00:00"
+}

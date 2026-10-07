@@ -1,0 +1,80 @@
+{
+  "window": "MATURE02C02-PG-20261007-R1",
+  "sourceHead": "6dd2ada464690b12e3854c4f7140d05f055d22f5",
+  "startedAt": "2026-10-07T02:28:19.968989+00:00",
+  "freeBefore": 26670526464,
+  "errors": [
+    "TESTS_FAILED_OR_SELECTION",
+    "RESULT_UNKNOWN"
+  ],
+  "actualCodex": 0,
+  "provider": 0,
+  "tempRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-fh9k6uax",
+  "tempIdentity": [
+    16777234,
+    123335449
+  ],
+  "pid": 69189,
+  "exitCode": 1,
+  "processGroup": {
+    "state": "absent",
+    "signals": [],
+    "observations": [
+      "absent"
+    ]
+  },
+  "stdioEof": [
+    "stderr",
+    "stdout"
+  ],
+  "observedRawBytes": 173,
+  "rawComplete": true,
+  "fixtureBinding": {
+    "bytes": 1492,
+    "sha256": "73bca3d28f4b37742d2308f338d7e53401461bd001469a33f5baea45d671d3fe",
+    "dev": 16777234,
+    "ino": 123335754
+  },
+  "vitestBinding": {
+    "bytes": 3270,
+    "sha256": "d469a4bb9b8f4c8a858eab4d51f18c4838ce744776bac58b4513ba415e27266a",
+    "dev": 16777234,
+    "ino": 123335759
+  },
+  "databaseReservationBinding": {
+    "bytes": 166,
+    "sha256": "f2c9c4463297d24afe21c2f524791d64ceae22d85c149e486bb6dc9911d73340",
+    "dev": 16777234,
+    "ino": 123335699
+  },
+  "databaseIdentityBinding": {
+    "bytes": 190,
+    "sha256": "797b80992987910c3e79f42a8b6d7dedb9857a11b15728c48aa8767f65685593",
+    "dev": 16777234,
+    "ino": 123335701
+  },
+  "selection": {
+    "selected": 6,
+    "passed": 5
+  },
+  "fixtureReceiptConfirmed": false,
+  "captures": {
+    "stdout": {
+      "bytes": 173,
+      "sha256": "1c4bddcde165e461f3d82b399c0891f62404e53574a9f9168052e9d9924c66e0",
+      "dev": 16777234,
+      "ino": 123335451
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 123335452
+    }
+  },
+  "retainedTempRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-fh9k6uax",
+  "finishedAt": "2026-10-07T02:28:27.009561+00:00",
+  "elapsedSeconds": 7.040516667,
+  "phase": "before-final-receipt",
+  "checksPassed": false
+}

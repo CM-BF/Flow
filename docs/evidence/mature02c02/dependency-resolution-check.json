@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-06T21:49:04.223585+00:00",
+  "elapsedSeconds": 0.04791424993891269,
+  "cases": 4,
+  "passed": 4,
+  "validKinds": {
+    "installed-third-party": 17,
+    "same-worktree-source": 3
+  },
+  "rejections": [
+    {
+      "case": "unknown-kind",
+      "rejected": "DEPENDENCY_KIND_UNKNOWN"
+    },
+    {
+      "case": "wrong-installed-sha",
+      "rejected": "DEPENDENCY_CHANGED"
+    },
+    {
+      "case": "wrong-own-source-sha",
+      "rejected": "DEPENDENCY_CHANGED"
+    }
+  ],
+  "subprocessCalls": 0,
+  "pg": 0,
+  "nativeTargets": 0,
+  "install": 0,
+  "scriptSha256": "df7494b720ddd23a89623eb34a893377c02e64c8c4bb88ac08e0f4d996ac7c06",
+  "limit": "only fixed dependency input parsing, not whole PG entry validation"
+}
