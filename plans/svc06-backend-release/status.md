@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:16:46 UTC；固定c2c结果已审并main，后继自有host准备未运行 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:29:30 UTC；c2c构建结果已main，固定宿主/迁移/策略入口待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；入口 fbdb93e08a18b6fe21b8750e2ec726388493f8e0；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅本次结果接收metadata与后继host候选；产品/fbdb入口不改 |
+| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
+| 工作树dirty状态 | 本次仅局部原件/manifest及own metadata待封定；3444895e入口与全部产品停止写入 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | fbdb93e08a18b6fe21b8750e2ec726388493f8e0 |
-| 实现范围 | docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py, docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json |
-| 检查状态 | PASSED fbdb93e08a18b6fe21b8750e2ec726388493f8e0；固定b2b一次离线构建与内部加载成功，实际host/配置兼容/个人更新未运行 |
+| 本片段交付阶段 | review |
+| 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
+| 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
+| 检查状态 | PASSED 3444895edf934c5c323639f232ef6fed7d51b022 仅3项纯guard与语法检查；真实copy/PG/宿主/迁移/策略旅程NOT_RUN，原构建结果独立保持 |
 | 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新的固定后台及网页宿主产物已构建完成，内部依赖与入口加载检查通过。 |
-| 下一可用交付 | 验证旧记录在新宿主迁移后保留，并验证默认关闭到显式浏览器登录配置的真实运行。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 固定后台产物已完成；旧记录迁移与浏览器登录配置的自有环境验证入口已准备，清理保护检查通过。 |
+| 下一可用交付 | 入口独审后验证旧记录保留、真实宿主升级与浏览器登录配置，个人安装保持不动。 |
+| 当前阻塞 | ACTIVE: 验证入口待独立审查及共享运行窗口，尚未开始真实宿主验证。 |
 | 需用户决定 | NONE |
-| Review | c2c实际构建/加载已限定APPROVED；下一自有host/迁移/配置入口准备中，尚未运行 |
+| Review | c2c构建/加载已限定APPROVED并main；3444895e宿主/迁移/策略入口PENDING，native_center_owner唯一只读审查中 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -205,3 +205,13 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 09:16:46 UTC：构建结果接收与下一自有宿主准备
 
 [唯一结果独审](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)于09:08:56.687153UTC限定批准，20fixed/current+3private+root一致；main9b270逐字接收b905。0重跑。下一[Interface](../../docs/evidence/svc06/b2b-host-policy/Interface.md)只准备固定af51旧数据→c2c真实factory/宿主/策略，不启动PG、不触个人；三真实App兼容仍独立。fresh ledger v7 active双scope已核。
+
+## 2026-10-07 09:29:30 UTC：真实宿主/迁移/策略入口固定待审
+
+固定source `3444895edf934c5c323639f232ef6fed7d51b022`；[单一manifest](../../docs/evidence/svc06/b2b-host-policy/entry-manifest.json)绑定7入口/511固定运行输入/4aliases及原始局部结果。09:26:26.023495Z→09:26:26.231667Z局部3个pure guard通过，2 JS syntax/Python AST/own status通过；4组absent/双EOF、493B raw、scratch正常清理，caller229ms。初始unknown观察原样保留，历史任务start UNKNOWN不补造。
+
+[检查与clean-code边界](../../docs/evidence/svc06/b2b-host-policy/LOCAL-RESULT.md)：work unknown时即使瞬时零连接也不能DROP；独立清理消费持久且绑定本run的组absent证据。新work180s+cleanup30s/.5TERM/2reap是本旅程待审预算，不宣称旧120s已覆盖。真实copy/PG/host/HTTP/provider/personal全部NOT_RUN；synthetic loader材料不能替代三真实App兼容。源停写交native_center_owner唯一独审。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-B2B-HOST-REVIEW | 2026-10-07T09:29:30Z | UNKNOWN | 审查 | 固定入口/局部证据交唯一独审；实际运行另等共享窗口 | 本次固定交审事件；b2b-host-policy/entry-manifest.json |

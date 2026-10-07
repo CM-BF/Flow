@@ -1,3 +1,7 @@
+## 2026-10-07 09:29:30 UTC：b2b真实宿主/迁移/策略入口 PENDING
+
+固定 `3444895edf934c5c323639f232ef6fed7d51b022`，[Interface](../../docs/evidence/svc06/b2b-host-policy/Interface.md)与[manifest](../../docs/evidence/svc06/b2b-host-policy/entry-manifest.json)。作者3个pure work-terminal guard、syntax/AST/status检查通过，原件见[局部记录](../../docs/evidence/svc06/b2b-host-policy/LOCAL-RESULT.md)；0PG/host/HTTP/copy/provider/personal。由native_center_owner唯一只读审入口/输入/cleanup，重点work unknown不得DROP、固定af51→c2c/b2b迁移、真实nonce组停止及synthetic loader限制；本条非批准。产品与原build/import不重审、不重跑。
+
 ## 2026-10-07 09:04:18 UTC：固定 b2b 实际结果 PENDING_RESULT_REVIEW
 
 一次离线构建与内部加载完成，产物c2c/固定b2b，原件见[RESULT](../../docs/evidence/svc06/update-b2b-candidate/RESULT.md)。source fbdb不变；作者仅报告真实结果，独立结论待Lead。30,975ms/exit0/组absent双EOF，0PG/provider/个人，兼容/实际更新仍open。
