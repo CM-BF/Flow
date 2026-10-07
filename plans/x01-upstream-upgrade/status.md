@@ -17,10 +17,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade |
 | Branch | codex/plugin-upstream-upgrade |
 | Base | 62e9a83923a3c2996b4ab32610e10e2069828c66 |
-| HEAD | 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9 |
+| HEAD | 9617bda0f25e11214a3f5893337d3bab733173c8 |
 | 工作树dirty状态 | own metadata implementation |
-| 实现目标 | 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9 |
-| 实现范围 | experiments/plugins/semver-range-upgrade, apps/runner/src/plugins/semver-upstream-upgrade.test.ts |
+| 实现目标 | 9617bda0f25e11214a3f5893337d3bab733173c8 |
+| 实现范围 | experiments/plugins/semver-range-upgrade,apps/runner/src/plugins/semver-upstream-upgrade.test.ts,apps/server/src/plugin-runtime/upstream-version-pg.test.ts,docs/evidence/x01-upstream-upgrade/execute-pg-once.py,docs/evidence/x01-upstream-upgrade/run-pg-preparation.py,docs/evidence/x01-upstream-upgrade/pg-input.json,docs/evidence/x01-upstream-upgrade/pg-tsconfig.json,docs/evidence/x01-upstream-upgrade/pg-vitest.config.mjs |
 | 检查状态 | PASSED 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9；types0、3/3；首suite失败保留 |
 | Review | 本地source5beb独审APPROVED 11:47:56Z；中心准备PENDING |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
@@ -46,3 +46,5 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | X01UP-05 | in-progress | db_transaction_owner | pg-window.md，中心准备待审/actual未执行 |
+
+中心准备固定target 9617bda0f25e11214a3f5893337d3bab733173c8，pg-review-ready.json唯一入口；独立源审未完成，不把5beb本地approval覆盖新fixture；没有PG预约。
