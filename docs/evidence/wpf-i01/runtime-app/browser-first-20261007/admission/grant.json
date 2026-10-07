@@ -1,0 +1,44 @@
+{
+  "allowRun": true,
+  "bindingSha256": "f6eea3905f44bbef93e81a8156ee5c6fd37970ccf078c21b9179d8964e1254aa",
+  "executionHead": "13ddb54aedad3e78797d7fe3b86775f191a30471",
+  "expiresAt": "2026-10-07T16:07:40.246113+00:00",
+  "totalMs": 60000,
+  "minimumFreeBytes": 16177627136,
+  "claim": "61abce36-a4d1-4531-9b04-dedaae86108b",
+  "version": 1,
+  "scopeCount": 8,
+  "uniqueHeavyHandoff": "d01 sole I01 after Web c1 RETURN2026-10-07T16:03:25.267185Z",
+  "run": "i01-browser-20261007-160438-84ee0c",
+  "claimObservation": {
+    "path": "/private/tmp/i01-browser-admission-cridfl87/preflight.json",
+    "sha256": "1b36832079da254972272bde048c15a28e7acf3f6a131053650a91790459868f"
+  },
+  "rootIdentities": {
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app": {
+      "dev": 16777234,
+      "ino": 124239683,
+      "uid": 501,
+      "mode": "0o755"
+    },
+    "/private/tmp/i01-runtime-app-browser-0uch3mbo": {
+      "dev": 16777234,
+      "ino": 124272377,
+      "uid": 501,
+      "mode": "0o700"
+    },
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node": {
+      "dev": 16777234,
+      "ino": 110837507,
+      "uid": 501,
+      "mode": "0o555"
+    },
+    "/Applications/Google Chrome.app": {
+      "dev": 16777234,
+      "ino": 2881973,
+      "uid": 501,
+      "mode": "0o775"
+    }
+  },
+  "singleUse": true
+}

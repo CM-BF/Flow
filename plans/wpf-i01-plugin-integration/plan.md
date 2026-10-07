@@ -20,7 +20,7 @@
 
 ## 当前运行边界
 
-原30s普通检查段已完成并CLOSED：4新增direct PASS/10旧未选，affected noEmit首红保留、窄fix后0；保守10834ms，未用19166不转用。root已批准49d71源码/local及固定caller准备。下一为独立一次60s候选（45s工作+15s清理），0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained，等待经理在SVC09A及新pair实际RETURN后的唯一交接；当前NOT_RUN/no grant。fresh完整组合取经理最新更高值（本批已知至少16175529984B），不能凭source批准占窗。source供给和历史KEEP不退款；见[准备单入口](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
+原30s普通检查段CLOSED：4新增direct PASS/10旧未选，affected noEmit首红与fix0保留；10834ms/未用19166不转用。首独立browser60s已实际FAILED（Files全页locator歧义），0/4完整组/0PNG，outerexit1与完整ownedRETURN见[原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。保守charge8540、未用51460封闭，无自动第二次。0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained边界保持。下一只在原browser中收窄活跃Conversation composer的Files定位，保原四组/对话框/回焦点/timeout；actual需另一次经理交接，不沿余量自行启动。
 
 ## 历史材料
 

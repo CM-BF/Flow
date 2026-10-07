@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:58:30.585Z；fixed source49d71的源码/局部及caller准备已独审；本次仅metadata封存，browser NOT_RUN |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:09:09.716Z；首browser实际FAILED、0/4完整组，owned资源已归还；本批失败原件封存 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app |
 | Branch | codex/web-plugin-runtime-app |
 | 工作基线 / HEAD | 3c9345df4aec85a37e8a2a155e079db260d515b1；metadata实际HEAD由Git记录 |
-| 工作树dirty状态 | 六source固定49d71；本批仅own metadata封存，原本地检查账CLOSED、0工程child |
+| 工作树dirty状态 | 六source固定49d71；本批仅own metadata封存；首browser失败结束、0工程child |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；4新增authority direct，10旧未选；六source/static-import affected noEmit0，首exit2保留；browser NOT_RUN |
+| 检查状态 | FAILED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；首browser Files locator歧义、0/4完整组；原4direct与affected noEmit0通过保留，首types红保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；fixed 3c9345df4aec85a37e8a2a155e079db260d515b1仅已包含runtime模块与MSG，未接本后继 |
 | 实现目标 | 49d71ef87a7af824c90f0e8c662b4677bbbef8a5 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/test/plugin-integration.test.ts, apps/web/test/plugin-management-integration.browser.ts, apps/web/test/plugin-management-integration.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 中心插件设置接线已完成源码与局部回归审查，草稿及待确认操作的浏览器验收已准备 |
-| 下一可用交付 | 验证真实聊天设置的启停、折叠恢复和断开后撤权，随后交主线接收 |
+| 当前产出 | 中心插件设置已通过源码及局部审查；浏览器验收遇到同名Files按钮定位歧义，失败与清理证据已保留 |
+| 下一可用交付 | 收窄到当前聊天的Files入口，固定测试修正后再排一次真实界面验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；限定源码+4direct/affected types及caller准备；browser NOT_RUN，见review当前入口 |
+| Review | APPROVED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；限定源码+4direct/affected types及caller准备；首browser FAILED/0完整组，actual独审待收，见review当前入口 |
 | Claim | 61abce36-a4d1-4531-9b04-dedaae86108b v1 ACTIVE exact8；COMMITTED 2026-10-07T15:12:21.486Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,12 +36,12 @@
 | WPF-I01-03 | completed | workspace_panels_owner | 原验证分层保留，新source尚未验 |
 | WPF-I01-04 | completed | workspace_panels_owner | [f4335主线收口](../../docs/evidence/wpf-i01/history/legacy-f4335/status.md) |
 | WPF-I01-05 | completed | workspace_panels_owner | [固定source/local独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)；mounted验收归06 |
-| WPF-I01-06 | in-progress | workspace_panels_owner | [四direct与affected types实际记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)；browser静态准备，NOT_RUN |
+| WPF-I01-06 | in-progress | workspace_panels_owner | [四direct与affected types实际记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)；[首browser失败原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/manifest.json)，0/4完整组 |
 | WPF-I01-07 | in-progress | workspace_panels_owner | 源码/local及准备独审APPROVED；浏览器actual与合法main接收未完成 |
 
 ## 等待记录
 
-早期源码开发期间checks未ready，不将SVC09A约束计为等待。新增4个authority回归与六source affected noEmit在drain解除后已实际完成；30s合计10834ms，账本CLOSED；未用19166不转额度。首types导入红与窄fix49d71保留。浏览器仍NOT_RUN、无预约。
+早期源码开发期间checks未ready，不将SVC09A约束计为等待。新增4个authority回归与六source affected noEmit在drain解除后已实际完成；30s合计10834ms，账本CLOSED；未用19166不转额度。首types导入红与窄fix49d71保留。首browser实际失败、owned资源完整归还；无新runtime预约。
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -53,16 +53,16 @@
 
 ## 当前普通Git事实
 
-首metadata391416dddd7c70fb379e5e01dd31dc5cefcda7df。两次正常push在15:13:55/15:16:16 UTC返回GitHub remote Internal Server Error；当时ls-remote无本branch。其后第三次正常push成功，实际ls-remote与本地769416a9a7e9f514bf0a2b85ef1cb221d4fad653相同；本次只有own metadata更新，六source不变。
+首metadata391416dddd7c70fb379e5e01dd31dc5cefcda7df。两次正常push在15:13:55/15:16:16 UTC返回GitHub remote Internal Server Error；当时ls-remote无本branch。其后第三次正常push成功，实际ls-remote与本地769416a9a7e9f514bf0a2b85ef1cb221d4fad653相同；本次首browser失败归档只有own metadata更新，六source仍49d71。
 
 ## 当前局部验收与限定
 
-[单记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/segment.json)：direct4通过；types首exit2仅fixture合同导入，两行修复后exit0/空log；三owned PID/group与scratch均已核absent。regular file log不冒双EOF。浏览器仍NOT_RUN；真实中心安全、插件加载/执行/provider不由这些受控回归证明。
+[单记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/segment.json)：direct4通过；types首exit2仅fixture合同导入，两行修复后exit0/空log；三owned PID/group与scratch均已核absent。regular file log不冒双EOF。首browser FAILED/0完整组；真实中心安全、插件加载/执行/provider不由这些受控回归证明。
 
-## 待实际浏览器接收
+## 首次实际浏览器结果
 
-[固定caller准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)：0PG、真实BrowserWorkspace+受控Cookie HTTP，四组；独立60s候选含15s清理/256MiB scratch/8MiB证据。准备独审APPROVED、NOT_RUN；尚无本人重窗口或运行grant。外层/Chrome生命周期与端口观察限制均写明，不复用local剩额。
+[固定caller准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)：0PG、真实BrowserWorkspace+受控Cookie HTTP，四组；独立60s候选含15s清理/256MiB scratch/8MiB证据。准备独审APPROVED；首actual FAILED/0完整组、0截图、0registry writes。见[原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。外层/Chrome生命周期与端口观察限制均写明，不复用local剩额。
 
 ## 本次独审与准备修复
 
-源码/局部审20d2接受49d71；caller初审626的I01-BROWSER-P2-01已在739复审闭合。plan/status/review三项可变元数据只留历史来源，218执行输入与42外部pin保持固定；三caller不变。[本批质量与来源](../../docs/evidence/wpf-i01/runtime-app/review-seal.md)。完整原审报告及初始来源措辞保留，status旧pin不虚绑49d71。新60s浏览器阶段尚未开始，不沿用本地余额。
+源码/局部审20d2接受49d71；caller初审626的I01-BROWSER-P2-01已在739复审闭合。plan/status/review三项可变元数据只留历史来源，218执行输入与42外部pin保持固定；三caller不变。[本批质量与来源](../../docs/evidence/wpf-i01/runtime-app/review-seal.md)。完整原审报告及初始来源措辞保留，status旧pin不虚绑49d71。首60s浏览器单次已结束，8540已计/51460未用封闭，未沿用本地余额；无自动第二次授权。

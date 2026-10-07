@@ -7,3 +7,8 @@
 本地30s账已CLOSED：1596+4556+4682=10834ms；首types红不删除，余19166不转。原segment/raw不改。caller静态准备仍0实际/无grant；最新完整资源下限来源root/经理16175529984B，未来必须取更高fresh完整sum。
 
 本批只做元数据schema/文件hash/相对链接/差量范围核对；不以再跑绿色类型或旧旅程消耗额度。D05 root已核live207新唯一source与claim matchesSource，未把旧dashboard观察冒当前实际API采样。
+
+
+## 2026-10-07T16:09:09.716Z 首browser失败安全点
+
+沿已装 find-skills/clean-code/codebase-design 方法检查实际失败归属与接口：失败是全页Files定位含两个合法入口；产品authority/四组断言不改。实际outer终态、worker失败与cleanup分别保留，原件逐hash归档16项19009B。无新抽象、无运行probe、不把0complete冒PASS；精确PID/PGID与路径删除观察独立于早期raw。后续最窄test locator修复与本次红分开固定。状态/计划/审查入口已同步FAILED；本地30s与browser60s余额都不转移。

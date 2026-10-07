@@ -1,0 +1,76 @@
+{
+  "run": "i01-browser-20261007-160438-84ee0c",
+  "phaseTotalMs": 60000,
+  "priorSpentMs": 0,
+  "actualParentExit": 1,
+  "actualOuterElapsedMs": 8539.12433295045,
+  "outerPostWriteElapsedMs": 8539.458874962293,
+  "parentRawElapsedMs": 8497.382333036512,
+  "parentFinalStdout": {
+    "state": "FAILED",
+    "startedAtApprox": "2026-10-07T16:04:51.069448+00:00",
+    "actualExit": 1,
+    "elapsedMs": 8497.382333036512,
+    "ownedGroupAbsent": true,
+    "scratchRemoved": true,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "peakSampledLogicalBytes": {
+      "scratch": 30478476,
+      "raw": 418120
+    },
+    "terminalFreeBytes": 20138516480,
+    "errors": [
+      "worker not passed",
+      "required four groups incomplete"
+    ],
+    "cleanupErrors": [],
+    "discardedOutputBytes": 0,
+    "interrupts": [],
+    "workerState": "FAILED",
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "checks": [],
+    "limits": {
+      "totalMs": 60000,
+      "cleanupReserveMs": 15000,
+      "scratchBytes": 268435456,
+      "rawBytes": 8388608
+    },
+    "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+    "executionHead": "13ddb54aedad3e78797d7fe3b86775f191a30471",
+    "grantSha256": "8459e92c2a646058c0aa75cfc6b4cbce937115b1330fe6a9a819f51d3376049f",
+    "cacheLinks": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+        "target": "/private/tmp/i01-runtime-app-browser-0uch3mbo/scratch/.vite",
+        "dev": 16777234,
+        "inode": 124300673
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+        "target": "/private/tmp/i01-runtime-app-browser-0uch3mbo/scratch/.vite-temp",
+        "dev": 16777234,
+        "inode": 124300675
+      }
+    ],
+    "chargeMs": 8498,
+    "independentPortProbe": false,
+    "PG": false,
+    "postWriteElapsedMs": 8498.974916059524,
+    "postWriteRawBytes": 419670
+  },
+  "chargeBasis": "ceil(max(actual outer, outer terminal post-write, parent final stdout, parent raw))",
+  "chargeMs": 8540,
+  "state": "FAILED",
+  "selectedCompleteGroups": 0,
+  "automaticRetryAuthorized": false,
+  "postCleanupObservedAt": "2026-10-07T16:07:09.871423+00:00",
+  "fullOwnedReturn": true,
+  "independentPortProbe": false,
+  "PG": false,
+  "adminEnv": "NOT_USED",
+  "remainingMs": 51460
+}
