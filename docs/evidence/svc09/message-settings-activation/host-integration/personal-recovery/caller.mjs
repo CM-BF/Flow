@@ -1,6 +1,6 @@
 /** Fixed public entrypoints around the held operation; no maintenance FSM or supervisor. */
 import assert from 'node:assert/strict';
-import { lstat, realpath, mkdir } from 'node:fs/promises';
+import { lstat, realpath } from 'node:fs/promises';
 import { statfsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
@@ -65,6 +65,18 @@ async function modules(plan, artifact) {
     target: artifact === TARGET ? await at(join(tools, 'maintenance-target.mjs')) : null,
     Pool: createRequire(join(root, 'package.json'))('pg').Pool };
 }
+/** Existing immutable imports are verified, never imported again by this continuation. */
+export async function verifyExistingRecovery(plan, mod) {
+  await mod.backend.verifyBackendArtifact({ directory: DIRECTORY, artifact: TARGET });
+  for (const item of plan.reports) {
+    const { bytes } = await privateBytes(item.path, item.bytes);
+    assert.equal(bytes.length, item.bytes); assert.equal(sha(bytes), item.sha256);
+    const report = JSON.parse(bytes); assert.equal(report.backendHead, TARGET.sourceHead);
+    assert.equal(report.artifact.artifactId, item.artifactId); assert.deepEqual(report.context, CONTEXT);
+    await mod.web.verifyWebCompatibility({ directory: DIRECTORY, artifact: report.artifact,
+      backendHead: TARGET.sourceHead, compatibilityId: item.compatibilityId, expectedContext: CONTEXT });
+  }
+}
 async function history(plan, mod, name, baseline) {
   const port = await at(join(PEER, 'docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs'));
   await port.snapshot(pathFor(plan, name), baseline && pathFor(plan, baseline),
@@ -112,32 +124,15 @@ export async function executePhase(plan, phase, healthy = () => {}) {
   await record(pathFor(plan, phase + '-intent'), { at: new Date().toISOString(), phase, operationId: OPERATION }); // Never replay a consumed phase.
   let value, primary;
   try {
-    healthy(); const mod = await modules(plan, index <= PHASES.indexOf('import-reports') ? OLD_BACKEND : TARGET); healthy();
+    healthy(); const mod = await modules(plan, phase === 'fresh' ? OLD_BACKEND : TARGET); healthy();
     if (phase === 'fresh') {
       await heldMigrationObserver(plan)(mod, plan.migration);
+      await verifyExistingRecovery(plan, mod);
       const view = await mod.maintain({ directory: DIRECTORY, action: 'status' });
       assert.equal(view.state, 'maintenance'); assert.equal(view.version, 23); assert.equal(view.operationId, OPERATION);
       assert.equal(view.activeAttempts, 0); assert.equal(view.uncertainAttempts, 0);
       await history(plan, mod, 'history-before');
       value = { snapshot: await snapshot(mod), view };
-    } else if (phase === 'import-artifact') {
-      await mkdir(plan.migration.runDirectory, { mode: 0o700 });
-      const input = { ...plan.migration, runIdentity: await directory(plan.migration.runDirectory) };
-      await mod.migration.migrateCurrentArtifact(mod, input, healthy, { validateInput: validateMigration, observeInstallation: heldMigrationObserver(plan) });
-      const result = await json(join(input.runDirectory, 'migration-result.json'));
-      assert.ok(['migrated', 'already-present-exact'].includes(result.outcome), 'IMPORT_UNCONFIRMED');
-      value = { outcome: 'new-artifact-imported', artifact: TARGET };
-    } else if (phase === 'import-reports') {
-      await heldMigrationObserver(plan)(mod, plan.migration);
-      const ids = [];
-      for (const item of plan.reports) {
-        const { bytes } = await privateBytes(item.path, item.bytes); assert.equal(bytes.length, item.bytes); assert.equal(sha(bytes), item.sha256);
-        const report = JSON.parse(bytes); assert.equal(report.backendHead, TARGET.sourceHead); assert.equal(report.artifact.artifactId, item.artifactId);
-        assert.deepEqual(report.context, CONTEXT);
-        const imported = await mod.preview.importPreviewCompatibility({ directory: DIRECTORY, reportDirectory: item.directory });
-        assert.equal(imported.compatibilityId, item.compatibilityId); ids.push(imported.compatibilityId); healthy();
-      }
-      await heldMigrationObserver(plan)(mod, plan.migration); value = { outcome: 'four-fixed-reports-imported', ids, published: false };
     } else if (phase === 'rebind') {
       value = await mod.target.rebindHeldPreviewTarget(targetRequest(plan), { loadCurrentConfiguration: mod.oldPreview.loadPreviewConfiguration });
       await record(pathFor(plan, 'target-result'), value); assertTargetBound(value);

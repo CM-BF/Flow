@@ -2,6 +2,8 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { isAbsolute, join } from 'node:path';
+// Same public serializer as maintenance-target; source/hash is bound by the caller packet.
+import { canonical } from '../../../../../../apps/server/src/database.ts';
 
 export const ROOT = '/Users/citrine/Projects/AgentHarness/Flow';
 export const DIRECTORY = '/Users/citrine/.flow-personal';
@@ -17,12 +19,10 @@ export const WEB_IDS = Object.freeze(['461a97321e8c752352f45012373d1dac1d3e2bfc8
   'd629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88']);
 export const NEW_WEB = '779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4';
 export const CONTEXT = Object.freeze({ format: 1, publicOrigin: 'http://127.0.0.1:61228', policySha256: '81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638' });
-export const PHASES = Object.freeze(['fresh', 'import-artifact', 'import-reports', 'rebind', 'refresh', 'checkpoint', 'resume', 'final']);
+export const PHASES = Object.freeze(['fresh', 'rebind', 'refresh', 'checkpoint', 'resume', 'final']);
 export const FILES = Object.freeze(['browser-session.json', 'claude.json', 'config.json', 'maintenance.json', 'state.json', 'web-release.json']);
 export const ROLES = Object.freeze(['center', 'runner', 'web']);
 export const sha = bytes => createHash('sha256').update(bytes).digest('hex');
-const canonical = value => JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
-  ? Object.fromEntries(Object.keys(current).sort().map(key => [key, current[key]])) : current);
 export const fingerprint = value => sha(canonical(value));
 const hash = value => assert.match(value, /^[a-f0-9]{64}$/);
 export function identity(value) {
@@ -57,7 +57,8 @@ export function validateMigration(input) {
   assert.equal(input.budget.addedBytes, 512 * 1024 ** 2); assert.equal(input.budget.rawBytes, 2 * 1024 ** 2);
 }
 export function validatePlan(plan) {
-  assert.equal(plan.purpose, 'SVC06B_SAME_HELD_OPERATION_RECOVERY');
+  assert.equal(plan.purpose, 'SVC06B_SAME_HELD_OPERATION_CONTINUATION');
+  assert.equal(plan.runDirectory, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once');
   assert.equal(plan.ready, true, 'FRESH_FACTS_AND_FOUR_REPORTS_REQUIRED');
   assert.equal(plan.operationId, OPERATION); assert.equal(plan.version, 23);
   assert.match(plan.requestId, /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/);
