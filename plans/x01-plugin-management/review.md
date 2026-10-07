@@ -1,3 +1,11 @@
+状态：PENDING（单条真实npm公开链验收准备；0PG）
+
+Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db
+
+[固定入口](../../docs/evidence/x01/public-runner-review-ready.json)，完整factory/runtime strict0、精确list1/0hooks。新caller复用既有OPS14与资源模块，实际PG未准入。旧七源接线批准保留如下。
+
+---
+
 状态：APPROVED（七源生产接线与有限局部结果；真实公共链未验）
 
 Review target commit: 2ea5adfedfe0187a49cde13c769823be753a1496

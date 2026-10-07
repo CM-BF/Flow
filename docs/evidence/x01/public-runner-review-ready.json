@@ -1,0 +1,27 @@
+{
+  "sourceCommit": "ced4679c9ce3c183044fb853d71f72de7fc214db",
+  "manifest": "docs/evidence/x01/public-runner-pg-manifest.json",
+  "manifestBytes": 108683,
+  "manifestSha256": "92cfda050e040556e7ca4963d54825aa231a0e192a2c714753496b384b9082f1",
+  "summary": {
+    "files": 277,
+    "bytes": 1369974,
+    "mirrorFiles": 260,
+    "mirrorBytes": 1207575,
+    "officialSql": 33,
+    "external": 28,
+    "links": 21
+  },
+  "review": "PENDING",
+  "PG": "NOT_OPEN",
+  "entry": "docs/evidence/x01/public-runner-pg-window-request.md",
+  "delta": "new real-HTTP/npm single-case consumer and fixed factory mirror; outer artifact recipe reused with namespace/claim/selection plus full public-traffic/tar receipt checks",
+  "alreadyApprovedInputs": [
+    "runtime9b639f79",
+    "wiring2ea5adfe",
+    "artifactf3f48929",
+    "semver4fc60b4c",
+    "pinningfe826801"
+  ],
+  "noRepeat": "19/9/3/5 and old PG suites unchanged/not run"
+}
