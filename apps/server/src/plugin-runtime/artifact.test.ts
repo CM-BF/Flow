@@ -72,7 +72,7 @@ test.each(['installationId','artifactSha256','treeDigest','ownerVersion','runner
   await expect(applyEvent(f.client,f.task,f.attempt,f.event)).rejects.toMatchObject({code:'plugin_artifact_identity'});
   expect(effects.artifact).not.toHaveBeenCalled();
 });
-test.each([[],[{phase:'load'}],[{phase:'invoke'}],[{phase:'load'},{phase:'load'}]])('missing or duplicate phase evidence fails closed: %j', async rows => {
+test.each([{rows:[]},{rows:[{phase:'load'}]},{rows:[{phase:'invoke'}]},{rows:[{phase:'load'},{phase:'load'}]}])('missing or duplicate phase evidence fails closed: $rows', async ({rows}) => {
   const f=fixture(); f.query.mockResolvedValue({rows,rowCount:rows.length});
   await expect(applyEvent(f.client,f.task,f.attempt,f.event)).rejects.toMatchObject({code:'plugin_artifact_authorization'});
   expect(effects.artifact).not.toHaveBeenCalled();
