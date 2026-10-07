@@ -28,14 +28,16 @@ export function persistentTransportFixture({ codeHome, threadId = 'persistent-th
         if (method === 'thread/start') {
           assert.ok(params && !Array.isArray(params) && typeof params === 'object');
           assert.equal(params.ephemeral, false); assert.equal(params.sandbox, 'read-only'); assert.equal(params.approvalPolicy, 'never');
+          assert.equal(params.cwd, options.workingDirectory);
           writeFileSync(join(options.codeHome, 'session.json'), JSON.stringify({ threadId: threadId, remembered: 'remembered 中文🙂' }), { flag: 'wx', mode: 0o600 });
         } else if (method === 'thread/resume') {
           const saved = JSON.parse(readFileSync(join(options.codeHome, 'session.json'), 'utf8')); state.reads++;
-          assert.deepEqual(params, { threadId: saved.threadId, model: 'fixture-model', serviceTier: null, cwd: codeHome, approvalPolicy: 'never', sandbox: 'read-only', excludeTurns: true });
+          assert.deepEqual(params, { threadId: saved.threadId, model: 'fixture-model', serviceTier: null, cwd: options.workingDirectory, approvalPolicy: 'never', sandbox: 'read-only', excludeTurns: true });
           if (mode === 'lost-resume') throw new CodexTransportError('TIMEOUT', 'unknown');
         } else if (method === 'turn/start') {
           assert.ok(params && !Array.isArray(params) && typeof params === 'object');
           assert.equal(params.threadId, threadId); assert.deepEqual(params.sandboxPolicy, { type: 'readOnly', networkAccess: false });
+          assert.equal(params.cwd, options.workingDirectory);
           await beforeTurn?.(instance);
           const saved = JSON.parse(readFileSync(join(options.codeHome, 'session.json'), 'utf8')); state.reads++;
           const final = { type: 'agentMessage', id: `final-${instance}`, text: saved.remembered as string, phase: 'final_answer', delivery: null, questions: null };

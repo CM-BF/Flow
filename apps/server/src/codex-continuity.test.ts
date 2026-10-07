@@ -38,7 +38,13 @@ const submission = (reference: Awaited<ReturnType<typeof registered>>['reference
   ...(resumeSessionId ? { resumeSessionId } : {}),
 });
 async function awaitTask(id: string) {
-  for (let i = 0; i < 40; i++) { const task = await owner.show(id); if (task.status === 'succeeded') return task; expect(['queued', 'running']).toContain(task.status); await sleep(50); }
+  for (let i = 0; i < 40; i++) {
+    const task = await owner.show(id);
+    // Keep only the latest already-read metadata; no extra request or private task content.
+    center.facts.lastTaskWait = { taskId: id, polls: i + 1, status: task.status, attemptId: task.attempt?.id ?? null, watermark: task.watermark };
+    if (task.status === 'succeeded') return task;
+    expect(['queued', 'running']).toContain(task.status); await sleep(50);
+  }
   throw new Error('Owned task did not finish in its polling budget.');
 }
 

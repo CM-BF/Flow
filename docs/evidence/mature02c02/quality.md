@@ -29,3 +29,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-06 21:58:02 UTC：clean-code安全点仅核stop_group错误单调性：第一次unknown立即返回，不用后续absent抹去未知；保留有限signals/observations及显式signal errno。4项纯注入反例覆盖unknown→absent、present→absent、signal EPERM和观察EPERM；0subprocess/真实signal/PG。复用原函数，无新监督器、不重跑既有types/8行为。reporter文档改为实际json，旧raw/manifest等待独立新绑定、不覆盖历史。
 
 2026-10-07 02:29:39 UTC：沿既有本地find-skills/clean-code/codebase-design方法只核本次结果边界：一次执行、主失败不被清理成功掩盖、原输出不可回写、worker退出与DB/TMP分别归属，metadata不引入第二状态机。5/6不当整体通过，第二任务失败原因尚UNKNOWN；旧unit/types不重跑，源码与准备manifest冻结。
+
+2026-10-07 02:38:35 UTC：按本地find-skills优先复用clean-code/codebase-design（同既存固定字节，无安装），分工独核runner与center链。fixture误把存储身份当执行工作目录；修为既有factory参数校验，补两不同cwd共享codeHome一项。保留原40×50ms/unknown/所有断言；最后GET有限元数据覆盖一条，不另请求。原R1痕迹不足处保持未知，0新检查/PG/KEEP根访问。

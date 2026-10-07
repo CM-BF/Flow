@@ -1,4 +1,4 @@
-import { lstatSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { lstatSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, expect, it } from 'vitest';
@@ -30,9 +30,9 @@ function setup(mode: ContinuityFixtureMode = 'success') {
   const storage = createCodexSessionStorage({ codeHome: root, runnerId, configDigest: pin.configDigest, createTransport });
   const configured = configureCodexHarness({ publicProfile: profile, sessionStorage: storage });
   const adapter = guardExecutionProfile(configured.adapter, pin, profile);
-  function context(resumeSessionId?: string): HarnessContext {
+  function context(resumeSessionId?: string, workingDirectory = root): HarnessContext {
     return { task: { title: 'Persistent fixture', prompt: 'Next turn', harness: 'codex', executionProfile: pin, ...(resumeSessionId ? { resumeSessionId } : {}) },
-      executionIdentity: { runnerId, taskId: `task-${events.length}`, attemptId: `attempt-${events.length}`, ownerVersion: 1 }, workingDirectory: root,
+      executionIdentity: { runnerId, taskId: `task-${events.length}`, attemptId: `attempt-${events.length}`, ownerVersion: 1 }, workingDirectory,
       signal: new AbortController().signal, async assertOwnership() {}, async emit(event) { events.push(event); }, async waitForDecision() { throw new Error('No interactive approval'); } };
   }
   return { root, adapter, context, calls, instances, events };
@@ -50,6 +50,24 @@ it('closes one transport and resumes the exact stored thread in another, using t
     { nativeSessionId: 'persistent-thread', content: 'remembered 中文🙂', settings: { actualExecution: { evidence: 'unknown', model: null } } },
   ]);
   expect(JSON.stringify(api.events)).not.toContain(api.root);
+});
+
+it('keeps session storage fixed while each attempt uses its own working directory', async () => {
+  const api = setup();
+  const firstDirectory = join(api.root, 'first-attempt'); const secondDirectory = join(api.root, 'second-attempt');
+  for (const directory of [firstDirectory, secondDirectory]) mkdirSync(directory, { mode: 0o700 });
+  await api.adapter.run(api.context(undefined, firstDirectory));
+  await api.adapter.run(api.context('persistent-thread', secondDirectory));
+  expect(api.calls).toMatchObject([
+    { method: 'thread/start', params: { cwd: firstDirectory } },
+    { method: 'turn/start', params: { cwd: firstDirectory } },
+    { method: 'thread/resume', params: { cwd: secondDirectory } },
+    { method: 'turn/start', params: { cwd: secondDirectory } },
+  ]);
+  expect(api.instances).toMatchObject([
+    { codeHome: api.root, closed: true, reads: 1 }, { codeHome: api.root, closed: true, reads: 2 },
+  ]);
+  expect(api.events.filter(event => event.type === 'assistant-final')).toHaveLength(2);
 });
 
 it.each(['wrong-resume', 'lost-resume'] as const)('does not start or replay a turn after %s', async mode => {
