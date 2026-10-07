@@ -1,5 +1,5 @@
 {
-  "state": "FIXED_GIT_SOURCE_MATERIALIZED_NOT_EXECUTED",
+  "state": "FIXED_BASE_MATERIALIZED_PLUS_POST_TYPES_CORRECTION_NOT_VERIFIED",
   "base": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
   "rows": [
     {
@@ -317,8 +317,8 @@
     {
       "path": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
       "ref": "CURRENT_OWNER",
-      "bytes": 12766,
-      "sha256": "f864d5bd2bbebb4f219cc1bdf5b6f8218e159a67896648540718c98a6026bdc7"
+      "bytes": 12774,
+      "sha256": "7e05568b9acc3b4950df95f366e471e6ccd22312291118994ff63eef70ccb113"
     },
     {
       "path": "apps/server/src/execution-profiles/publication.ts",
@@ -1443,7 +1443,7 @@
       "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
     }
   ],
-  "bytes": 1026644,
+  "bytes": 1026652,
   "externalPackages": [
     "@fastify/cors",
     "fastify",

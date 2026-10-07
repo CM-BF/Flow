@@ -1,6 +1,6 @@
 # CORE mixed queue claim eligibility
 
-本轮13:05:32–13:25:32 UTC，source-only，2MiB源码metadata；0工程child/types/collect/PG/HTTP服务/SDK/provider/browser/install。13:07:25 fresh free21,695,791,104B高于6,914,834,432B；没有用这个只读样本取得执行准入。
+本轮13:05:32–13:25:32 UTC，原source-only；13:12:46 Mika追加原段内最多2个ordinary child用于类型/收集，2MiB源码metadata、16MiBTMP/512KiBraw；0PG/HTTP服务/SDK/provider/browser/install。13:07:25 fresh free21,695,791,104B高于6,914,834,432B；没有用这个只读样本取得执行准入。
 
 ## Module / Interface
 
@@ -12,7 +12,7 @@
 
 ## Resource preparation / errors
 
-复用已审REMOVAL helper1424（fixture-source.json绑定），只改输入protocol一个literal；继续其已有FLOW_X01_PG环境界面，不造第二监督器。未来独立180s=110work+60cleanup+10final，1随机markedDB、1port0、pool4+server8+boss3+admin1=16连接（保守17）、160HTTP/128KiB每响应/4MiB每suite；32MiBTMP/4096entries、1MiBraw、DBWAL128MiB+1GiB不可支出reserve。实际input/caller/动态35SQL与外部依赖完整绑定、准入/operator/唯一namespace仍后续准备，当前没有actual recipe/OPEN。owner close、同OID/owner/marker、有限count0等待、普通DROP/absence与进程EOF/TMPidentity沿现helper；unknown KEEP，不terminate或FORCE。
+复用已审REMOVAL helper1424（fixture-source.json绑定），只改输入protocol一个literal；继续其已有FLOW_X01_PG环境界面，不造第二监督器。未来独立180s=110work+60cleanup+10final，1随机markedDB、1port0、pool4+server8+boss3+admin1=16连接（保守17）、160HTTP/128KiB每响应/4MiB每suite；32MiBTMP/4096entries、1MiBraw、DBWAL128MiB+1GiB不可支出reserve。实际input/caller/动态SQL与外部依赖完整绑定、准入/operator/唯一namespace仍后续准备，当前没有actual recipe/OPEN。owner close、同OID/owner/marker、有限count0等待、普通DROP/absence与进程EOF/TMPidentity沿现helper；unknown KEEP，不terminate或FORCE。
 
 性能只说明资格过滤在LIMIT前，不声称EXPLAIN/索引/时延已测。pending旧task可能留在队列，必须由旧runner或明确维护决定，不能借新runner强接旧native session。
 
@@ -23,4 +23,9 @@
 
 ## Static closure snapshot
 
-source-closure.json记录fixed7524与当前3个自有TS入口的静态依赖（含33 SQL），逻辑1,023,900B，external为已声明模块名，unresolved=[]。这是只读Git字节发现，不代表物化、模块成功import、外部依赖字节已绑定或动态运行闭包已通过；下一准备段需精确供给+types/list，实际PG仍需完整外部/符号链接/caller输入与唯一窗口。没有复制旧29项检查为本轮证据。
+source-closure.json记录fixed7524与当前3个自有TS入口的静态依赖（含33 SQL）并已按固定Git有界物化；240项逻辑约1.03MiB，external为声明模块名，unresolved=[]。两个实际types exit2，先缺package链接，后token参数推断过窄及package alias/types缺口；事后最小修正尚未复测。静态闭包不证明动态运行闭包通过，下一段仍需types/list及完整实际caller/外部/符号链接绑定和唯一PG窗口。没有复制旧29项检查为本轮证据。
+
+
+## 13:16:40 ordinary stop / clean-code safety point
+
+两个授权child已用完，原始types2→types2及77004B raw完整留local.json。第二次后只将测试HTTP token参数显式string（真实runner token非UUID）、加入既有@flow/plugin-runtime路径与已安装@types/pacote链接；未第三次跑types，未collect/运行5case。两个owned groups最终absent/merged EOF、无未知signal/secondary，两个TMP同identity采样删除absent；初始EPERM观测保留；elapsedBeforeReceipt总3.3235s不是whole wall/峰值。根级node_modules初供给不足的工程错误不隐去。SQL产品不变，收口检查无新增状态权威/重复调度器或权限放宽；main组合和真实资格SQL仍待验证。

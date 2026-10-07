@@ -23,7 +23,7 @@ const configuration: ExecutionProfileConfiguration = {
   permissionMode: 'dontAsk', access: 'none', requireReadApproval: false, materialScopeDigest: 'a'.repeat(64),
   limits: { maxTurns: 1, maxBudgetUsd: 0.1, timeoutMs: 1000 },
 };
-async function http<T>(path: string, body?: unknown, token = owner, status = 200): Promise<T> {
+async function http<T>(path: string, body?: unknown, token: string = owner, status = 200): Promise<T> {
   const response = await fixture.request(origin + path, { method: body === undefined ? 'GET' : 'POST',
     headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() },
     body: body === undefined ? undefined : JSON.stringify(body) });

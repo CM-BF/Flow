@@ -5,6 +5,9 @@
     "paths": {
       "@flow/contracts": [
         "../../../../packages/contracts/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "../../../../packages/plugin-runtime/src/package-store.ts"
       ]
     }
   },
