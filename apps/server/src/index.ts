@@ -1,3 +1,4 @@
+import { migratePluginVerification } from './plugin-runtime/verification.js';
 import { withStartupPhase, type StartupObserver } from './startup-progress.js';
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
@@ -111,7 +112,7 @@ export async function createServer(options: ServerOptions) {
       ['migrateContextObservationHistory', migrateContextObservationHistory],
       ['migrateBrowserSessions', migrateBrowserSessions],
       ['migratePluginInstallations', migratePluginInstallations],
-      ['migratePluginRuntime', migratePluginRuntime],
+      ['migratePluginRuntime', async (pool: Pool) => { await migratePluginRuntime(pool); await migratePluginVerification(pool); }],
       ['migrateGoalProgressions', migrateGoalProgressions],
       ['migrateGoalPlanConfirmations', migrateGoalPlanConfirmations],
       ['migrateClaudeMessageSettings', migrateClaudeMessageSettings],
