@@ -77,10 +77,30 @@ def process_closed(report):
 
 
 def selected_passed(result):
-    tests = [test for file in result.get('testResults', []) for test in file.get('assertionResults', []) if test.get('status') != 'pending']
-    return (result.get('success') is True and len(tests) == 2
-            and {test.get('title') for test in tests} == set(TEST_NAMES)
-            and all(test.get('status') == 'passed' for test in tests))
+    if not isinstance(result, dict) or result.get('success') is not True:
+        return False
+    if result.get('numFailedTests', 0) != 0 or result.get('numFailedTestSuites', 0) != 0:
+        return False
+    suites = result.get('testResults')
+    if not isinstance(suites, list) or not suites:
+        return False
+    selected = []
+    for suite in suites:
+        if not isinstance(suite, dict) or suite.get('status') != 'passed':
+            return False
+        assertions = suite.get('assertionResults')
+        if not isinstance(assertions, list):
+            return False
+        for test in assertions:
+            if not isinstance(test, dict) or test.get('status') not in ('passed', 'pending', 'skipped'):
+                return False
+            title, status = test.get('title'), test['status']
+            if title in TEST_NAMES:
+                if status != 'passed': return False
+                selected.append(title)
+            elif status == 'passed':
+                return False
+    return len(selected) == 2 and set(selected) == set(TEST_NAMES)
 
 
 def sample_tree(root, deadline, max_bytes, max_entries=2048):

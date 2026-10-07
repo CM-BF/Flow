@@ -30,14 +30,55 @@ class CandidateAdmission(unittest.TestCase):
         entry.validate_permit(self.permit(), 860)
 
     def test_wrong_selection_cannot_be_a_success(self):
-        result = {'success': True, 'testResults': [{'assertionResults': [{'title': name, 'status': 'passed'} for name in entry.TEST_NAMES]}]}
+        result = {'success': True, 'testResults': [{'status': 'passed', 'assertionResults': [{'title': name, 'status': 'passed'} for name in entry.TEST_NAMES]}]}
         self.assertTrue(entry.selected_passed(result))
         result['testResults'][0]['assertionResults'].append({'title': 'unrelated', 'status': 'passed'})
         self.assertFalse(entry.selected_passed(result))
 
     def test_failed_assertion_stays_failed(self):
-        result = {'success': False, 'testResults': [{'assertionResults': [{'title': name, 'status': 'passed'} for name in entry.TEST_NAMES]}]}
+        result = {'success': False, 'testResults': [{'status': 'passed', 'assertionResults': [{'title': name, 'status': 'passed'} for name in entry.TEST_NAMES]}]}
         self.assertFalse(entry.selected_passed(result))
+
+    def selected_result(self):
+        return {'success': True, 'testResults': [{'status': 'passed', 'assertionResults': [{'title': name, 'status': 'passed'} for name in entry.TEST_NAMES]}]}
+
+    def test_only_known_unselected_statuses_are_accepted(self):
+        result = self.selected_result()
+        result['testResults'][0]['assertionResults'] += [{'title': 'unrelated', 'status': status} for status in ['pending', 'skipped']]
+        self.assertTrue(entry.selected_passed(result))
+
+    def test_missing_duplicate_failed_extra_or_unknown_assertion_is_rejected(self):
+        import copy
+        original = self.selected_result()
+        mutations = [
+          lambda rows: rows.pop(),
+          lambda rows: rows.append(dict(rows[0])),
+          lambda rows: rows[0].update(status='failed'),
+          lambda rows: rows[0].update(status='skipped'),
+          lambda rows: rows.append({'title': 'extra', 'status': 'passed'}),
+          lambda rows: rows.append({'title': 'extra', 'status': 'future-unknown'}),
+        ]
+        for mutate in mutations:
+            with self.subTest(mutation=mutate):
+                result = copy.deepcopy(original); mutate(result['testResults'][0]['assertionResults'])
+                self.assertFalse(entry.selected_passed(result))
+
+    def test_suite_failure_and_malformed_report_are_rejected(self):
+        result = self.selected_result(); result['testResults'][0]['status'] = 'failed'
+        self.assertFalse(entry.selected_passed(result))
+        result = self.selected_result(); result['numFailedTestSuites'] = 1
+        self.assertFalse(entry.selected_passed(result))
+        for bad in [None, {}, {'success': True, 'testResults': None}, {'success': True, 'testResults': []}]:
+            self.assertFalse(entry.selected_passed(bad))
+
+    def test_fixed_original_pg_report_decodes_without_rewriting_caller_failure(self):
+        import json, hashlib
+        root = Path(__file__).parent / 'pg-run-4799eda499494ac79f211b89ead71ea8'
+        report = root / 'vitest.json'; old = root / 'result.json'
+        before = (hashlib.sha256(report.read_bytes()).hexdigest(), hashlib.sha256(old.read_bytes()).hexdigest())
+        self.assertTrue(entry.selected_passed(json.loads(report.read_text())))
+        self.assertFalse(json.loads(old.read_text())['testPassed'])
+        self.assertEqual(before, (hashlib.sha256(report.read_bytes()).hexdigest(), hashlib.sha256(old.read_bytes()).hexdigest()))
 
     def test_incomplete_capture_or_signal_is_unknown(self):
         report = {'exit_code': 1, 'owned_state': 'absent', 'capture': 'merged', 'eof': {'stdout': True}, 'observed_bytes': 1, 'retained_bytes': 1, 'first_failure': {'code': 'CHILD_EXIT_NONZERO'}, 'secondary_failures': [], 'signals': []}

@@ -23,16 +23,17 @@ sys.modules[spec.name] = ops
 spec.loader.exec_module(ops)
 
 label = sys.argv[1]
-rootguard = label.startswith('rootguard-')
+selector = label.startswith('selector-')
+rootguard = label.startswith('rootguard-') or selector
 budget = label.startswith('budget-') or rootguard
 preparation = label.startswith('prepare-') or budget
 if preparation:
-    OUTPUT = EVIDENCE / ('rootguard-local' if rootguard else 'admission-local' if budget else 'preparation-local')
+    OUTPUT = EVIDENCE / ('selector-local' if selector else 'rootguard-local' if rootguard else 'admission-local' if budget else 'preparation-local')
     OUTPUT.mkdir(exist_ok=True)
-assert label.startswith(('budget-', 'rootguard-')) or label in ('red', 'green', 'types', 'types-fixed', 'green-fixed', 'prepare-types', 'prepare-collect', 'prepare-caller', 'prepare-types-fixed', 'prepare-collect-fixed', 'prepare-caller-fixed')
+assert label.startswith(('budget-', 'rootguard-', 'selector-')) or label in ('red', 'green', 'types', 'types-fixed', 'green-fixed', 'prepare-types', 'prepare-collect', 'prepare-caller', 'prepare-types-fixed', 'prepare-collect-fixed', 'prepare-caller-fixed')
 record_path = OUTPUT / 'iterations.json'
 record = json.loads(record_path.read_text()) if record_path.exists() else {'runs': []}
-assert len(record['runs']) < (3 if rootguard else 5) and sum(run['elapsed_ms'] for run in record['runs']) < (30_000 if rootguard else 60_000)
+assert len(record['runs']) < (2 if selector else 3 if rootguard else 5) and sum(run['elapsed_ms'] for run in record['runs']) < (15_000 if selector else 30_000 if rootguard else 60_000)
 assert all(run['resourceConfirmed'] for run in record['runs'])
 assert not any(run['label'] == label for run in record['runs'])
 free = shutil.disk_usage(ROOT).free
@@ -42,13 +43,14 @@ if rootguard:
     canonical = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json')
     data = canonical.read_bytes(); facts = json.loads(data); admission = facts['forwardAdmission']; terms = admission['termsBytes']
     assert sum(terms.values()) == admission['minimumFreshFreeBytes']
-    own_included = any('Q01' in key and value == 4 * 1024 * 1024 for key, value in terms.items())
-    floor = max(16_620_257_280, admission['minimumFreshFreeBytes'] + (0 if own_included else 4 * 1024 * 1024))
+    own_included = any('Q01' in key and (not selector or 'selector' in key.lower()) and value == 4 * 1024 * 1024 for key, value in terms.items())
+    floor = max(0 if selector else 16_620_257_280, admission['minimumFreshFreeBytes'] + (0 if own_included else 4 * 1024 * 1024))
     resource_observation = {'path': str(canonical), 'sha256': hashlib.sha256(data).hexdigest(), 'at': facts['recordedAt'], 'terms': terms, 'ownIncluded': own_included, 'currentActual': facts.get('currentActual')}
 assert free >= floor
 started = datetime.datetime.now(datetime.timezone.utc)
 deadline = datetime.datetime(2026, 10, 7, 20, 25, 50, tzinfo=datetime.timezone.utc) if budget else datetime.datetime(2026, 10, 7, 19, 53, 50, tzinfo=datetime.timezone.utc)
 if rootguard: deadline = datetime.datetime(2026, 10, 7, 20, 42, 0, tzinfo=datetime.timezone.utc)
+if selector: deadline = datetime.datetime(2026, 10, 7, 21, 17, 45, tzinfo=datetime.timezone.utc)
 assert started < deadline
 scratch = Path('/tmp') / ('flow-s01q01-' + uuid.uuid4().hex)
 scratch.mkdir(mode=0o700)
@@ -65,7 +67,7 @@ if label.startswith('types'): argv = [NODE, str(EVIDENCE / 'node_modules/typescr
 if label.startswith(('prepare-types', 'budget-types')): argv = [NODE, str(EVIDENCE / 'node_modules/typescript/bin/tsc'), '--noEmit', '--project', str(EVIDENCE / 'types.tsconfig.json')]
 if label == 'budget-types-fixture': argv = [NODE, str(EVIDENCE / 'node_modules/typescript/bin/tsc'), '--noEmit', '--project', str(EVIDENCE / 'failure.types.tsconfig.json')]
 if label.startswith('prepare-collect'): argv = [NODE, str(EVIDENCE / 'node_modules/vitest/vitest.mjs'), 'list', '--config', str(EVIDENCE / 'queue.vitest.config.ts'), '--configLoader', 'runner', '--no-cache', '--json', '-t', '^(' + 'skips more than a default batch of paused queues without rotating them and scans again after explicit resume|keeps pause CAS authoritative when a candidate scan races promotion' + ')$']
-if label.startswith(('prepare-caller', 'budget-caller', 'rootguard-caller')): argv = ['/opt/homebrew/bin/python3.13', '-I', '-B', str(EVIDENCE / 'entry.test.py')]
+if label.startswith(('prepare-caller', 'budget-caller', 'rootguard-caller', 'selector-caller')): argv = ['/opt/homebrew/bin/python3.13', '-I', '-B', str(EVIDENCE / 'entry.test.py')]
 env = {'PATH': '/opt/homebrew/opt/node@24/bin:/opt/homebrew/bin:/usr/bin:/bin', 'HOME': str(scratch), 'TMPDIR': str(scratch), 'XDG_CACHE_HOME': str(scratch), 'CI': '1', 'NO_COLOR': '1'}
 (OUTPUT / (label + '-started.json')).write_text(json.dumps({'at': started.isoformat(), 'resourceObservation': resource_observation, 'freeBytes': free, 'floorBytes': floor, 'sourceHashes': source, 'scratch': {'path': str(scratch), 'dev': identity.st_dev, 'ino': identity.st_ino, 'marker': marker}}, indent=2) + '\n')
 report = ops.supervise(ops.Launch(tuple(argv), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(24, 2, 4, 131072 if rootguard else 262144))
