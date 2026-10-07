@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-07T23:52:20.270404Z",
+  "archivedAt": "2026-10-07T23:53:06.454Z",
+  "observer": "root / Mika; one actual read relayed to owner",
+  "method": "GET",
+  "route": "/api/task?task=X01-ARTIFACT-VERIFIER01",
+  "httpStatus": 200,
+  "responseBytes": 13672,
+  "taskId": "X01-ARTIFACT-VERIFIER01",
+  "taskGit": {
+    "head": "b711556cdc502ff8ac6b84b6c853805051dd7ac8",
+    "branch": "codex/plugin-artifact-verifier",
+    "dirty": false
+  },
+  "sourceStale": false,
+  "issues": [],
+  "timingIssues": [],
+  "waitingTableIssues": [],
+  "mainObservation": {
+    "head": "c39c36761cce9c9e77c164bd4469d3b418358a06",
+    "clean": true
+  },
+  "scope": "Actual aggregation observation only for b711556c. The later owner metadata/archive commit has not been probed. No second HTTP request, whole response copy, registry fingerprint or engineering checks.",
+  "authorization": "Original3MiB metadata tail, deadline2026-10-07T23:58:41.456Z, not new growth; prior STOP event retained."
+}

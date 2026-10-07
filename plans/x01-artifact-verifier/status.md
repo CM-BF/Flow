@@ -229,3 +229,7 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 本片旧“等待AV center/client主线接收”已解除；[owner核验记录](../../docs/evidence/x01-artifact-verifier/center-client-main-acceptance.json)只引用中央权威，不改原R3/input/失败raw或VAR295。0工程/PG/HTTP/provider，复用原R3实际5/5及11/11client有限证据。完整verifier admission/result/worker/T7和AV03/AV04、父X01仍OPEN；主线接收不代表个人e15/779已使用该能力。原任务开工14:29:36.000Z不重置，完成仍NOT_COMPLETED。
 
 本metadata段23:48:41.456–23:58:41.456，3MiB含自身index原子副本；两目录以外均STOP。clean-code复核名称、主线/部署/分片交付边界、唯一status与原历史证据链接；无新产品或测试。
+
+## 本片main回执的看板观察
+
+2026-10-07T23:53:06.454Z自然归档：root已于2026-10-07T23:52:20.270404Z单次读取本任务详情，HTTP200/13672B；实际观察head b711556cdc502ff8ac6b84b6c853805051dd7ac8、branch正确、dirty=false，source.stale=false、issues[]、timing.issues[]、waitingTable.issues[]。当时mainObservation c39c36761cce9c9e77c164bd4469d3b418358a06 clean。见[限定观察回执](../../docs/evidence/x01-artifact-verifier/center-client-dashboard-observation.json)。这仅证明b711可聚合，不称本次最终归档commit已被探过；owner无新HTTP/工程执行，不复制全响应或registry指纹。此前STOP保留，本次仅原3MiB尾内追加该事实后再次STOP。
