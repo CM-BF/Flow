@@ -11,6 +11,8 @@ import { sourceIdentity, ROOT } from './identity.mjs';
 import { BOUNDS, runPaths, measureRun } from './operator-bounds.mjs';
 import { startTotalDeadline } from './operator-watchdog.mjs';
 import { stageSpec, stagePassed, assertNativeReady } from './stage-policy.mjs';
+import { readPermitFile, validatePermit } from './permit.mjs';
+import { nativeEnvironmentPolicy, prepareDriverEnvironment } from './native-environment.mjs';
 
 function signalGroup(pgid, signal) {
   assert(Number.isSafeInteger(pgid) && pgid > 1);
@@ -81,9 +83,15 @@ export function operationArguments(args) {
 }
 export async function operate({ phase = 'rehearse', run: selectedRun, file } = {}) {
   const spec = stageSpec(phase);
-  if (['plan', 'children'].includes(phase)) assertNativeReady('native');
+  const rawPermit = ['plan', 'children'].includes(phase) ? await readPermitFile(file) : undefined;
+  const identity = await sourceIdentity();
+  if (rawPermit) {
+    // The driver subsequently binds children to the actual persisted confirmation before reserving a slot.
+    const permit = validatePermit(rawPermit, { identity, phase, confirmation: rawPermit.confirmation, environmentDigest: nativeEnvironmentPolicy.digest });
+    assertNativeReady('native', permit, nativeEnvironmentPolicy.digest);
+  }
   assert.equal(process.env.FLOW_O16_PG_WINDOW, 'approved-one-shot');
-  const identity = await sourceIdentity(), space = await statfs(ROOT); assert(space.bavail * space.bsize >= BOUNDS.startBytes);
+  const space = await statfs(ROOT); assert(space.bavail * space.bsize >= BOUNDS.startBytes);
   const run = selectedRun ?? `rehearsal-${randomUUID()}`, paths = runPaths(run, phase);
   if (phase === 'plan' || phase === 'rehearse') {
     await mkdir(join(paths.operatorRoot, '..'), { recursive: true, mode: 0o700 });
@@ -103,8 +111,11 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   const args = phase === 'rehearse'
     ? ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs']
     : ['--import', 'tsx', 'experiments/continuous-goal-acceptance/driver.mjs', phase, run, file];
+  const driverEnvironment = phase === 'rehearse' ? undefined : await prepareDriverEnvironment(paths.operator, run, phase);
+  if (driverEnvironment) await writeRecord(join(paths.operator, 'driver-environment.json'), driverEnvironment, { exclusive: true });
   const child = spawn(process.execPath, args,
-    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FLOW_O16_RUN: run, FLOW_O16_OPERATOR_PHASE: phase, TSX_DISABLE_CACHE: '1' } });
+    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: driverEnvironment?.environment
+      ?? { ...process.env, FLOW_O16_RUN: run, FLOW_O16_OPERATOR_PHASE: phase, TSX_DISABLE_CACHE: '1' } });
   const capture = index => chunk => {
     raw += chunk.length; if (raw > BOUNDS.rawBytes) outputFailed = true;
     const piece = chunk.subarray(0, Math.max(0, BOUNDS.rawBytes - written));

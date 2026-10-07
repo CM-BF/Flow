@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { dirname, isAbsolute, join } from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 
+export const NATIVE_MODEL = 'claude-sonnet-5-5';
 export const PHASE_LIMITS = Object.freeze({
   plan: Object.freeze({ queries: 1, maxTurns: 4, maxBudgetUsd: 0.20, timeoutMs: 90_000 }),
   children: Object.freeze({ queries: 2, maxTurns: 3, maxBudgetUsd: 0.10, timeoutMs: 60_000 }),
@@ -22,16 +23,18 @@ function immutable(value) {
 }
 
 /** Validates a trusted operator's handoff; a JSON field is not proof of human consent. */
-export function validatePermit(input, { identity, phase, confirmation, now = Date.now() }) {
+export function validatePermit(input, { identity, phase, confirmation, environmentDigest, now = Date.now() }) {
   const fields = ['kind', 'authorizedBy', 'approvalId', 'phase', 'sourceDigest', 'worktree', 'model', 'limits', 'approvedAt', 'expiresAt', 'authorizationReference'];
   if (phase === 'children') fields.push('confirmation');
+  if (environmentDigest !== undefined) fields.push('environmentDigest');
   check(exactKeys(input, fields) && Object.hasOwn(PHASE_LIMITS, phase), 'Invalid phase permit.');
   const approved = Date.parse(input.approvedAt), expires = Date.parse(input.expiresAt);
-  check(input.kind === 'flow.o16.phase-permit.v1' && input.authorizedBy === 'Goal Owner'
+  check(input.kind === (environmentDigest === undefined ? 'flow.o16.phase-permit.v1' : 'flow.o16.phase-permit.v2')
+    && (environmentDigest === undefined || hex(environmentDigest) && input.environmentDigest === environmentDigest) && input.authorizedBy === 'Goal Owner'
     && typeof input.approvalId === 'string' && /^[A-Za-z0-9-]{8,100}$/.test(input.approvalId)
     && input.phase === phase && hex(identity.digest) && input.sourceDigest === identity.digest
     && typeof identity.root === 'string' && identity.root.length <= 4096 && isAbsolute(identity.root) && input.worktree === identity.root
-    && input.model === 'sonnet' && isDeepStrictEqual(input.limits, PHASE_LIMITS[phase])
+    && input.model === (environmentDigest === undefined ? 'sonnet' : NATIVE_MODEL) && isDeepStrictEqual(input.limits, PHASE_LIMITS[phase])
     && typeof input.authorizationReference === 'string' && input.authorizationReference.trim().length >= 10 && input.authorizationReference.length <= 1000
     && typeof input.approvedAt === 'string' && typeof input.expiresAt === 'string'
     && Number.isFinite(approved) && Number.isFinite(expires) && Number.isFinite(now)
@@ -110,4 +113,11 @@ export async function consumeSlot(reservation, slot, assignment, { now = Date.no
   await writeExclusive(join(directory, `${prefix}-task-${digest(assignment.taskId)}.json`), binding);
   await writeExclusive(join(directory, `${prefix}-${slot}.json`), binding);
   return immutable(binding);
+}
+
+/** Only an already validated fresh v2 handoff can open the native environment seam. */
+export function assertNativePermit(permit, environmentDigest) {
+  check(validated.has(permit) && permit.kind === 'flow.o16.phase-permit.v2' && hex(environmentDigest)
+    && permit.phase === 'plan' && permit.environmentDigest === environmentDigest && Date.parse(permit.expiresAt) > Date.now(),
+    'A fresh source/environment-bound native permit is required; JSON login claims are not authorization.');
 }

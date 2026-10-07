@@ -16,6 +16,7 @@ import { runPhase, experimentStop } from './phase-host.mjs';
 import { confirmationDraft, validateConfirmation, expectedChildren } from './proposal.mjs';
 import { acceptObservedArtifact } from './decision.mjs';
 import { assertNativeReady, settleStage } from './stage-policy.mjs';
+import { nativeEnvironmentPolicy } from './native-environment.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
@@ -23,10 +24,10 @@ function output(run) { assert(/^[a-z0-9][a-z0-9-]{3,63}$/.test(run)); return joi
 function session(center, state) { return createGoalSession({ client: center.client, goalId: state.goalId,
   connectionId: state.connectionId, intents: goalJournal(join(center.root, 'intents')) }); }
 async function permitFor(mode, path, source, phase, confirmation) {
-  assertNativeReady(mode);
   if (mode === 'rehearsal') { assert(!path); return undefined; }
   assert(mode === 'native' && path, 'No real phase without a new explicit permit.');
-  const permit = validatePermit(await readPermitFile(path), { identity: source, phase, confirmation });
+  const permit = validatePermit(await readPermitFile(path), { identity: source, phase, confirmation, environmentDigest: nativeEnvironmentPolicy.digest });
+  assertNativeReady(mode, permit, nativeEnvironmentPolicy.digest);
   await reservePhase(RESERVATIONS, permit); return permit;
 }
 async function stateOf(center) { return readRecord(join(center.root, 'journey.json')); }
@@ -46,12 +47,14 @@ async function ensureCompleted(task) {
 /** Plan permission is distinct from later actual-proposal confirmation and child permission. */
 export async function plan(run, mode, permitPath) {
   experimentStop.signal.throwIfAborted();
-  assertNativeReady(mode);
+  assert(['native', 'rehearsal'].includes(mode));
+  if (mode === 'native') await readPermitFile(permitPath); // Refuse missing material before source loading or allocation.
   const source = await sourceIdentity(), permit = await permitFor(mode, permitPath, source, 'plan');
   const directory = output(run); await mkdir(RUNS, { recursive: true, mode: 0o700 }); await mkdir(directory, { mode: 0o700 });
   const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 0, workerStopped: true };
   await writeRecord(join(directory, 'plan.json'), report, { exclusive: true });
-  const center = await privateCenter(directory, source); let controller, primaryError;
+  // The driver's import TMPDIR is in evidence; runtime must keep its separate 8MiB namespace.
+  const center = await privateCenter(directory, source, mode === 'native' ? { temporaryParent: '/private/tmp' } : {}); let controller, primaryError;
   try {
     await center.start(false);
     const project = (await center.client.createProject({ title: 'O16 合成连续目标验收', workspaceId: 'personal' }, randomUUID(), signal())).snapshot.project;

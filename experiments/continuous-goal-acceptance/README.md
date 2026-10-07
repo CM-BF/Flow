@@ -1,25 +1,27 @@
 # O16 continuous goal acceptance consumer
 
 Original FLOW-001 / O01 / M02. The production implementation is unchanged at fixed base
-`8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974`. This experiment consumes O13 intake,
+`f5a13cbed6b75151f34e6924ec7e10c8894acf48`. This experiment consumes O13 intake,
 O07 native graph tools, O15 owner input confirmation, O14 production progression,
 O09 readonly Claude children, K03 fixed material, and O12 public observation/acceptance.
 
-Current state: implementation, **no O16 native query and no PG run yet**. Native permits
-are not granted. The historical O08/O10 permits are sealed and cannot be reused.
+Current state: the zero-model public PG journey is delivered; **no O16 native query has run**.
+The newly authorized planner envelope still needs its exact reviewed source/environment handoff
+and a fresh PG window. Historical O08/O10 permits are sealed and cannot be reused.
+See the current [environment Interface](../../docs/evidence/o16/native-environment-implementation/Interface.md).
 
 ## Finite stages
 
 All commands run in this worktree with the fixed Node24 executable and `--import tsx`.
 The driver only accepts a bounded run label; evidence lives in `docs/evidence/o16/runs`.
-No command defaults to native execution. Each PG stage also requires a Lead resource window. Current operator is zero-query-only; the native stage functions are preparation interfaces and need a separately reviewed real-phase operator window before use. Direct driver cleanup fails closed without the operator reservation.
+No command defaults to native execution. Each PG stage also requires a Lead resource window. The native planner requires a new v2 source/environment-bound permit and a separately reviewed real-phase window; native children remain disabled pending a later independent decision. Direct driver cleanup fails closed without the operator reservation.
 
 ```
 FLOW_O16_PG_WINDOW=approved-one-shot node --import tsx experiments/continuous-goal-acceptance/operator.mjs --rehearse
-node --import tsx experiments/continuous-goal-acceptance/driver.mjs plan RUN PLAN_PERMIT.json
-node --import tsx experiments/continuous-goal-acceptance/driver.mjs confirm RUN OWNER_CONFIRMATION.json
-node --import tsx experiments/continuous-goal-acceptance/driver.mjs children RUN CHILDREN_PERMIT.json
-node --import tsx experiments/continuous-goal-acceptance/driver.mjs decide RUN INDEPENDENT_DECISION.json
+node --import tsx experiments/continuous-goal-acceptance/operator.mjs --plan RUN PLAN_PERMIT.json
+node --import tsx experiments/continuous-goal-acceptance/operator.mjs --confirm RUN OWNER_CONFIRMATION.json
+node --import tsx experiments/continuous-goal-acceptance/operator.mjs --children RUN CHILDREN_PERMIT.json
+node --import tsx experiments/continuous-goal-acceptance/operator.mjs --decide RUN INDEPENDENT_DECISION.json
 ```
 
 `operator --rehearse` first writes a synced exclusive source/resource reservation, then supervises one test process independently: 120s work, 30s bounded group cleanup. It sums stdout, stderr, and this run's stage evidence; both DROP and directory removal recheck the shared 2MiB raw / 8MiB runtime / 1GiB free policy. A budget or process uncertainty leaves a STOP record and preserves resources. Both phase PGIDs remain in the durable resource file. The internal `rehearse` uses an explicitly synthetic proposal/query stream and synthetic acceptance.
@@ -63,7 +65,7 @@ acceptance uses O12's normal durable command path in dependency order.
 
 ## Bounds and limitations
 
-- Candidate native ceilings: planner 1 SDK query / 4 turns / $0.20 request / 90s; children 2
+- Authorized first-stage envelope (not yet run): exact claude-sonnet-5-5 planner 1 SDK query / 4 turns / $0.20 request / 90s; **historical, not inherited** children candidate 2
   SDK queries / 3 turns and $0.10 each / 60s each. SDK entry count and reported estimated cost
   are not a billing cap or count of provider HTTP calls. Auxiliary model usage remains visible.
 - `dontAsk`, requested tool lists, managed plugin names, and SDK init observations are not an
@@ -86,4 +88,4 @@ acceptance uses O12's normal durable command path in dependency order.
 
 ## 分阶段暂停准备
 
-O16-06 接口及实际分轮验证见[单一阶段说明](../../docs/evidence/o16/native-stages/README.md)。operator沿原watchdog提供有限phase入口；pause绑定实际提案/配置/源码/资源关闭，期限后只拒绝继续，不自动清理。当前native登录/其它SDK写入输入未固定，入口明确拒绝，不能以命令存在当模型许可。原已消费run不复用，旧raw/失败保留。
+O16-06 接口及实际分轮验证见[单一阶段说明](../../docs/evidence/o16/native-stages/README.md)。operator沿原watchdog提供有限phase入口；pause绑定实际提案/配置/源码/资源关闭，期限后只拒绝继续，不自动清理。该段历史native硬拒绝已由新的[环境接缝](../../docs/evidence/o16/native-environment-implementation/Interface.md)收敛：仅新v2精确匹配的plan可进入，命令或任意JSON不等于实际模型授权。原已消费run不复用，旧raw/失败保留。

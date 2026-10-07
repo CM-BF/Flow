@@ -33,8 +33,14 @@ export async function claimPausedResources(output, source, facts, stage) {
   await writeRecord(join(output, `pause-consumed-${receipt.phase}.json`), { receipt, continuedAt: new Date().toISOString() }, { exclusive: true });
   return receipt;
 }
+/** Keep actual runtime outside the metadata driver's private import TMPDIR. No PG or deletion here. */
+export async function allocateRuntimeDirectory(parent) {
+  const fixedParent = await realpath(parent); assert((await lstat(fixedParent)).isDirectory());
+  const path = await realpath(await mkdtemp(join(fixedParent, 'flow-o16-'))), info = await lstat(path);
+  return { path, dev: info.dev, ino: info.ino };
+}
 /** Owns only a random marked DB and its recorded dev/ino temporary directory. No existing service is reconfigured. */
-export async function privateCenter(output, source, { resume = false, stage } = {}) {
+export async function privateCenter(output, source, { resume = false, stage, temporaryParent = tmpdir() } = {}) {
   const gate = await resourceGate(), file = join(output, 'resources.json');
   let facts = resume ? await readRecord(file) : { kind: 'flow.o16.private-resources.v1', database: `flow_o16_${randomUUID().replaceAll('-', '')}`,
     marker: randomUUID(), sourceDigest: source.digest, startedAt: new Date().toISOString(), gate, creationRequested: false, created: false, marked: false };
@@ -116,8 +122,7 @@ export async function privateCenter(output, source, { resume = false, stage } = 
       facts.creationRequested = true; await checkpoint('before-create'); await admin.query(`CREATE DATABASE "${facts.database}"`);
       facts.created = true; await checkpoint('created-awaiting-marker');
       await admin.query(`COMMENT ON DATABASE "${facts.database}" IS '${facts.marker}'`); facts.marked = true; await checkpoint('marked');
-      const path = await realpath(await mkdtemp(join(tmpdir(), 'flow-o16-'))), info = await lstat(path);
-      facts.directory = { path, dev: info.dev, ino: info.ino }; await checkpoint('owned-directory-created');
+      facts.directory = await allocateRuntimeDirectory(temporaryParent); const path = facts.directory.path; await checkpoint('owned-directory-created');
       credentials = { ownerToken: randomUUID() }; await writeRecord(join(path, 'credentials.json'), credentials, { exclusive: true });
       await mkdir(join(path, 'intents'), { mode: 0o700 });
     }
