@@ -1,0 +1,40 @@
+{
+  "outerExit": 0,
+  "outerSummary": {
+    "state": "REMOVED",
+    "removed": true,
+    "elapsedMs": 607
+  },
+  "recordedAt": "2026-10-07T08:09:03.241494+00:00",
+  "actionFiles": [
+    {
+      "path": "docs/evidence/eng01l/stock-initialize/cleanup-once/checkpoint-before-removal.json",
+      "bytes": 1679,
+      "sha256": "d39652416b08c03ae1ffe6723521638cd65e73fc9a2e648908456a8009930a49"
+    },
+    {
+      "path": "docs/evidence/eng01l/stock-initialize/cleanup-once/lsof.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01l/stock-initialize/cleanup-once/lsof.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01l/stock-initialize/cleanup-once/policy.sb",
+      "bytes": 17870,
+      "sha256": "390e9b08debc0b501ac626592cfb673592ac7690ed896a2466a317d129dc594e"
+    },
+    {
+      "path": "docs/evidence/eng01l/stock-initialize/cleanup-once/result.json",
+      "bytes": 1682,
+      "sha256": "5905b80dc254d909ef91024c85c349f1293f37992ab936544f5de627f8f17c2f"
+    }
+  ],
+  "actionBytes": 21231,
+  "entryBytes": 7647,
+  "stockRerun": false,
+  "originalRunUnchanged": true
+}

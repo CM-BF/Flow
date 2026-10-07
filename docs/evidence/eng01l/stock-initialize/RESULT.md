@@ -9,3 +9,5 @@
 后继精确收尾候选（未执行）：确认原reservation与根/父身份、现目录限定分布、原自有进程退出事实及无当前重用消费者；保存workspace固定文件身份/内容和policy等必要证据、fresh最终checkpoint后仅该根正常收尾。因本次超过原预算，必须由Lead明确同run cleanup-only边界，不能靠调大原阈值或覆盖result把失败改绿；不需再启动native。
 
 0thread/turn/catalogue/tool/provider/PG/Chrome/个人操作。原生私有SQLite初始化不等于PG连接。nativeWriteAccess始终unknown；不证明OS写拒绝、模型资格、实际工具回调或全部writer撤销。产品六源已main9f314，结果与资源收尾独立待审。
+
+2026-10-07T08:09:55.319Z 独立后续收尾：Lead审exact方案后明确一次授权，原operator5c56在607ms /outer0完成。policy/hash与新checkpoint先耐久，fresh同113项own uid/dev/regular nlink1、无link/special；原组ESRCH、lsof正常无匹配且自身absent/EOF。仅原exact root正常删除及父目录sync；新增action21,231B+entry7,647B<32KiB。baseline原before inode仍未持久不补造。原run FAIL/UNKNOWN及1MiB超限保持，后续收尾成功单列，不将整体改PASS。

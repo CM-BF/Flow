@@ -1,0 +1,66 @@
+{
+  "kind": "EXACT_FOLLOWUP_CLEANUP",
+  "originalRunUnchanged": true,
+  "originalRunPassed": false,
+  "state": "REMOVED",
+  "removed": true,
+  "primaryFailure": null,
+  "stock": 0,
+  "provider": 0,
+  "PG": 0,
+  "groupObservation": "ESRCH",
+  "lsof": {
+    "pid": 68133,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 529,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": []
+  },
+  "inventory": {
+    "entries": 113,
+    "regularBytes": 2823900,
+    "sha256": "87262054e78ff56169417128af548610ba3a46b7641d216795f7fa3f1c81983b"
+  },
+  "filesObservedNow": {
+    "calculator.mjs": {
+      "dev": "16777234",
+      "ino": "123644163",
+      "hex": "30"
+    },
+    "baseline.txt": {
+      "dev": "16777234",
+      "ino": "123644164",
+      "hex": "30"
+    }
+  },
+  "baselineBeforeInode": "NOT_PERSISTED",
+  "policySha256": "390e9b08debc0b501ac626592cfb673592ac7690ed896a2466a317d129dc594e",
+  "root": {
+    "path": "/private/tmp/eng01l-initialize-3pgj9n6s",
+    "dev": "16777234",
+    "ino": "123644157",
+    "parent": "/private/tmp",
+    "parentDev": "16777234",
+    "parentIno": "113131031"
+  },
+  "requestSha256": "a274db3cd813f8be5a034417c3060b3fbdc089c314b5cbdb79e7abe2b6b85375",
+  "entrySha256": "6f0bbcf408252257c71bda1201861cea9b0e1f17258598b6de8a8a453157681c",
+  "elapsedMs": 607
+}
