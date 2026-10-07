@@ -287,3 +287,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07：受控接收SVC07产品e28/delivery4a85569b，2产品+67自有plan/evidence逐字绑定，[接收清单](../../docs/evidence/i02/svc07-controlled-intake.json)。前像及直接消费者无冲突；复用Mika分层独审15fake/types、2真实PG、1HTTP与正常清理，未重跑或合称同轮18项。旧HOLD/监督unknown和原始日志空行保留；不操作个人runtime，架构发布另由D06 owner处理。
 
 2026-10-07：TUI01G产品215/交付66ac窄接12源+43自有plan/evidence，前像无漂移；[固定55文件](../../docs/evidence/i02/tui01g-controlled-intake.json)。原结果335f独审APPROVED，51不同用例分轮通过/focusedtypes；3个Ink依赖身份失败保留、仅失败补跑，0集成重测。无HTTP/PG/真实PTY/browser/provider证据，完整双端验收仍开放，个人runtime不变。
+
+2026-10-07：仅接已独审管理源689677ae的FLOW/OPS两status，逐字绑定[收口回执](../../docs/evidence/i02/validation-throughput-status-intake.json)；SVC07/TUI01G主线事实与原并行规则已写回，SVC06/OPS14后继未冒完成，个人runtime不变。0产品修改/工程重测/provider。
