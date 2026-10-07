@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T21:21:46.304Z",
+  "source": "0004900193a83bdcdf1815d20cf5857fc8d1cdcb",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.test.mjs",
+      "bytes": 12638,
+      "sha256": "8a4b5a24f2d2534f37aa1d92743c8cc6d1174612ee1850f9de74be50310a93dd"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/migration-policy-interface.md",
+      "bytes": 2393,
+      "sha256": "8dc1591102dff86fff9d9802d8ad834ce346b898845029361d1002739c9176c0"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/migration-policy-local-reservation.json",
+      "bytes": 1427,
+      "sha256": "3117b8c4c6eac5679ca7f9389419efc703953d50029fb9f8678e09ea9b670a7e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/migration-policy-local-outer.json",
+      "bytes": 1183,
+      "sha256": "6ff3e58c54bb8ac8882b7baee785b2b64d95ec65e3244b59b04cb7911e910cb3"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/migration-policy-local-result.json",
+      "bytes": 1516,
+      "sha256": "398a425f3bbc489eab927a1a4295c48e40d05887db5376bf3698e37d1bc507f4"
+    }
+  ],
+  "inherited": "current-migration Module source7324/ac6; unchanged migration-adapter/clone/rename/store/retention closure; default old input/observer preserved",
+  "local": {
+    "selected": 4,
+    "new": 3,
+    "affected": 1,
+    "elapsedMs": 111,
+    "rawBytes": 588,
+    "groupAbsent": true,
+    "dualEOF": true,
+    "scratch": "REMOVED_EXACT_EMPTY"
+  },
+  "review": "PENDING",
+  "scope": "Trusted in-process validator/observer dependency ports only. New held23 recovery policy and actual personal operation are separate."
+}

@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T21:23:31.554Z",
+  "reviewer": "native_center_owner / independent peer",
+  "decision": "APPROVED_LIMITED_FIXED_RECOVERY_COLD_CALLER_PREPARATION",
+  "delivery": "4da4041717bb2ab7e9bcfa4b0bae575cf217cf68",
+  "source": "32f8d27cb0865c6d39ad31cc87a6f701f4ce282b",
+  "manifest": {
+    "canonicalWorktree": "backend-browser-recovery",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-cold-manifest.json",
+    "bytes": 5221,
+    "sha256": "133b68ab19d24b15a43c58b561ae933ae85fa5aafdc3375e05de623a4edebf29"
+  },
+  "fixedBindings": 21,
+  "fixedBytes": 58659,
+  "executionPins": 15,
+  "runtimePins": 6,
+  "local": {
+    "distinctCases": 8,
+    "node": 5,
+    "python": 3,
+    "elapsedMs": 231,
+    "rawBytes": 826,
+    "groups": "3 absent / dual EOF",
+    "scratch": "3 exact empty removed",
+    "preflightFailures": "Two zero-child resource refusals preserved; no actual cold namespace consumed at review"
+  },
+  "blockingFindings": [],
+  "review": [
+    "Real b692/f37a artifact controller and diagnostics; current runner nonce initialization asserted, no shadow controller.",
+    "Trusted defaults use legacy configuration with no task/provider; mutable onSpawn state and explicit error arrays required. Missing evidence refuses closure.",
+    "Original fixture work/cleanup/OPS14 reused with fixed dispatch; database and private root retained."
+  ],
+  "limits": [
+    "Preparation only: no actual cold, four real App compatibility or personal recovery claimed.",
+    "Original 26 PG connections plus 16 management margin, 215+.5+2 outer and existing resource bounds remain.",
+    "No duplicate source snapshots; canonical pushed fixed source and original local results remain available."
+  ]
+}

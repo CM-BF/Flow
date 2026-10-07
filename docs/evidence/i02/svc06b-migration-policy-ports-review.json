@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T21:23:31.554Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_TRUSTED_MIGRATION_POLICY_PORTS",
+  "source": "0004900193a83bdcdf1815d20cf5857fc8d1cdcb",
+  "delivery": "febd4281cff5521e94d817fde9ce2365fc93920d",
+  "bindingCount": 6,
+  "bindingBytes": 34004,
+  "mainSourceBeforeMatches": true,
+  "blockingFindings": [],
+  "checks": {
+    "selected": 4,
+    "new": 3,
+    "affected": 1,
+    "elapsedMs": 111,
+    "rawBytes": 588,
+    "groupAbsent": true,
+    "dualEOF": true,
+    "scratch": "REMOVED_EXACT_EMPTY"
+  },
+  "review": [
+    "Two trusted in-process dependency ports preserve strict default validator and observer; JSON does not select functions.",
+    "Validation still precedes I/O, full selected old artifact verification precedes module import. The same observer runs inside original preview lock before/after and at pre-rename checkpoint.",
+    "Runner confirmation, source inventory verification, preview/store locks, clone/fsync/no-replace rename, retention and unknown handling remain original shared lifecycle.",
+    "Read the shared migrateWithLocks and current I/O implementation; four direct results match original outer output and all six fixed/current hashes. No tests rerun."
+  ],
+  "limits": [
+    "New same-operation held23 policy is a separate fixed caller, not implicitly approved by these dependency ports.",
+    "No personal I/O or provider, PG, service or migration executed in this review."
+  ],
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/migration-policy-manifest.json",
+    "bytes": 1892,
+    "sha256": "6dfcc9e5e00f70795e3e49b556e06e5ea5b8b71dba91dfab0a7f2256c2c36228"
+  }
+}

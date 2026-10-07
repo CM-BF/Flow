@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
 import { createRequire } from 'node:module';
-import { validateCurrentMigrationInput, assertCurrentMigrationState, inspectCurrentStore, observeCurrentInstallation, currentMigrationIO, currentMigrationModulePaths, loadCurrentMigrationModules } from './current-migration.mjs';
+import { validateCurrentMigrationInput, assertCurrentMigrationState, inspectCurrentStore, observeCurrentInstallation, currentMigrationIO, currentMigrationModulePaths, loadCurrentMigrationModules, migrateCurrentArtifact } from './current-migration.mjs';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const artifact = (id, source) => ({ policy: 'flow.backend-artifact.v1', artifactId: id, manifestDigest: id, sourceHead: source });
 const old = artifact('7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920', '6c0fdcda8858aac33489c48c1948e902dd6a3d7e');
@@ -116,3 +116,42 @@ test('current migration loader paths select the installed current artifact witho
   const { Pool } = createRequire(join(ownRoot, 'package.json'))('pg');
   assert.equal(typeof Pool, 'function');
 });
+
+test('current migration trusted validation runs before IO and JSON cannot replace the strict default', async () => {
+  const value = { validateInput: () => {}, observeInstallation: () => {} };
+  await assert.rejects(loadCurrentMigrationModules(value));
+  await assert.rejects(migrateCurrentArtifact({}, value, () => {}));
+  const rejected = Object.assign(new Error('FIXED_CALLER_REJECTED'), { code: 'FIXED_CALLER_REJECTED' });
+  const validateInput = actual => { assert.equal(actual, value); throw rejected; };
+  await assert.rejects(loadCurrentMigrationModules(value, { validateInput }), error => error === rejected);
+  await assert.rejects(migrateCurrentArtifact({}, value, () => {}, { validateInput }), error => error === rejected);
+});
+
+test('current migration trusted fresh observer receives exact modules and input and preserves unknown', async () => {
+  const value = input(), mod = {}, failure = new Error('HELD_OBSERVATION_UNKNOWN'); let calls = 0;
+  const observeInstallation = async (actualMod, actualInput) => {
+    assert.equal(actualMod, mod); assert.equal(actualInput, value); calls += 1;
+    if (calls === 2) throw failure;
+    return { files: { preserved: true }, held: true };
+  };
+  const io = currentMigrationIO(mod, value, '/unused', () => {}, { observeInstallation });
+  assert.deepEqual(await io.fresh(), { files: { preserved: true }, held: true });
+  await assert.rejects(io.fresh(), error => error === failure);
+  assert.equal(calls, 2);
+});
+
+test('current migration wrapper observes trusted held policy inside original preview lock before any store or SQL', async () => scratch(async root => {
+  const value = input(), info = await lstat(root); value.runDirectory = root;
+  value.runIdentity = { dev: String(info.dev), ino: String(info.ino) };
+  const events = [], failure = new Error('EXACT_HELD_UNKNOWN');
+  const mod = { preview: {
+    loadPreviewConfiguration: async path => { assert.equal(path, value.installationDirectory); events.push('load'); return {}; },
+    withPreviewLock: async (_config, callback) => { events.push('lock'); try { return await callback(); } finally { events.push('unlock'); } },
+  } };
+  await assert.rejects(migrateCurrentArtifact(mod, value, () => { throw new Error('unexpected health IO'); }, {
+    validateInput: actual => { assert.equal(actual, value); events.push('validate'); },
+    observeInstallation: async (actualMod, actual) => { assert.equal(actualMod, mod); assert.equal(actual, value); events.push('held-observe'); throw failure; },
+  }), error => error === failure);
+  assert.deepEqual(events, ['validate', 'load', 'lock', 'held-observe', 'unlock']);
+  assert.deepEqual(await readdir(root), []);
+}));

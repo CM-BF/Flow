@@ -528,3 +528,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T21:13:17.959Z：固定恢复构建准备由native_center_owner独立限定批准，0P1/P2；复用4项局部检查，首轮缺收尾证据保持UNKNOWN并保留8519680B后续潜在增长。唯一资源owner已选本构建为NEXT，执行结果另记，个人服务仍未恢复。[独审](../../docs/evidence/i02/svc06b-recovery-build-review.json)。
 
 2026-10-07T21:16:53.374Z：新恢复产物b692/sourcef37a实际构建已由native_center_owner限定独审，11份原件逐固定Git与当前canonical核同；32.675秒、组absent/双EOF、0服务/PG/provider/个人。原构建完整RETURN；冷启动和四App新tuple仍待验证，当前个人三服务停止事实不变。[结果独审](../../docs/evidence/i02/svc06b-recovery-build-result-review.json)。
+
+2026-10-07T21:23:31.554Z：cold薄caller固定4da404独审0阻塞，8局部原件复用，实际窗口另记；迁入两受信策略port固定000490获Lead限定独审，6绑定/4定向例核同，默认旧行为及共享迁入生命周期不变。同op23新策略/个人执行仍须各自固定验收。[cold准备](../../docs/evidence/i02/svc06b-recovery-cold-preparation-review.json)、[迁入port](../../docs/evidence/i02/svc06b-migration-policy-ports-review.json)。
