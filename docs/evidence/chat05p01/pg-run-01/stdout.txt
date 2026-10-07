@@ -1,0 +1,12 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body[39m
+
+ [32m✓[39m apps/server/src/native-activity-body/body.test.ts [2m([22m[2m3 tests[22m[2m)[22m[33m 1985[2mms[22m[39m
+   [33m[2m✓[22m[39m recovers >2MiB input after an admitted lost ACK and restart, then pages all input/result bytes with no eager body [33m 699[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 23:37:52
+[2m   Duration [22m 3.17s[2m (transform 531ms, setup 0ms, import 1.09s, tests 1.98s, environment 0ms)[22m
+
+JSON report written to /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/pg-run-01/vitest.json

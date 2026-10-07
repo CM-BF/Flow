@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-07T06:40:19.954945+00:00",
+  "source": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+  "productSource": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "result": "PASSED_AUTHOR_EVIDENCE_PENDING_REVIEW",
+  "startedAt": "2026-10-07T06:37:51.861095+00:00",
+  "finishedAt": "2026-10-07T06:37:55.362725+00:00",
+  "selected": {
+    "numTotalTests": 3,
+    "numPassedTests": 3,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "supervisedMs": 3461,
+  "callerMeasuredMs": 3522,
+  "stdoutStderrBytes": 835,
+  "originalFiles": 7,
+  "originalBytesIncludingCache": 10869,
+  "liveMinimumSampledFreeBytes": 24356728832,
+  "databaseSizeBeforeDropBytes": 12729367,
+  "fixtureTmpEndBytes": 134870,
+  "retainedCacheBytes": 134,
+  "completeBytes": {
+    "inputBytes": 2160011,
+    "resultBytes": 72032,
+    "pageRequests": 10,
+    "pageWireBytes": 2985938,
+    "originalPendingEvents": 8,
+    "scope": "JSON wire and decoded body bytes; not PG/WAL/storage physical bytes"
+  },
+  "cleanup": "OID+marker matched; bounded zero connections; fsync before normalDROP; remaining[]; listener/admin closed; same directory dev/ino removed; final owned group absent and both EOF; original unknown errno1 observation retained",
+  "localHistory": "28 different prior local cases across rounds; new3 PG adds31 different across layers, never one31-case run",
+  "typeBoundary": "focused-tsconfig.json include ../../../apps/server/src/native-activity-body/**/*.ts includes fixture, but last noEmit0 preceded c687 fixture-only delta. New fixture noEmit NOT_RUN; thisPG uses Vitest transpilation and is not typecheck. No claim of newfixture types pass.",
+  "limits": [
+    "One fixed old-base domain fixture with explicit033/routes, not production factory/runner/client activation",
+    "0 native/provider/browser/hiddenthinking/personal operation",
+    "End samples and workload limits, not instantaneous temp/PG-WAL peak or capacitySLO",
+    "All old red/NOT_RUN records unchanged; no actual PG repeat"
+  ],
+  "operatorOuter": {
+    "toolSession": 71928,
+    "exitCode": 0,
+    "output": "PASSED / owned absent / cleanup CONFIRMED",
+    "source": "existing tool completion, no newprocess probe"
+  }
+}

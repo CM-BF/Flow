@@ -29,3 +29,7 @@ APPROVED_INCREMENTAL_LOCAL_EVIDENCE；唯一reviewer astra_ultra_execution_lead�
 ## 2026-10-07T06:32:28.622506+00:00：APPROVED_LIMITED_THREE_PG_ENTRY
 
 唯一Execution Lead审c687b1b63802298d27396aa4c40bd9075ccb1405，delivery8ae4d7a0，7entry+283input+21alias全同，0P1/P2、reviewer0运行。见[原件](../../docs/evidence/chat05p01/pg-entry/independent-review.json)。仅运行入口准备批准；原3PG、生产挂载、真实provider与完整领域验收不在本批准范围。
+
+## 2026-10-07T06:40:19.954945+00:00：原3PG结果 REQUEST_REVIEW
+
+固定c687入口/40af生产、原3行为断言不变。3/3原件与marker/OID/零连接/checkpoint/DROP/组absent/EOF全部保存，见[结果](../../docs/evidence/chat05p01/pg-run-01/RESULT.md)。请仅核新运行事实及绑定，不重跑局部或PG；本次fixture类型未重验，生产挂载/真实provider不在验收范围。

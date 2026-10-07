@@ -1,6 +1,6 @@
 # CHAT05P01 证据
 
-固定base fc3246b307f5436ccecb97f38ccaba10c7a72a5a，独立native-activity-body树。当前源码和纯模块检查已分片固定；生产开通与真实PG读写仍未验。
+固定base fc3246b307f5436ccecb97f38ccaba10c7a72a5a，独立native-activity-body树。当前原局部/类型已分轮验证，三项实际PG读写已通过待唯一结果独审；生产开通仍未验。
 
 - [Interface](interface.md)
 - [设计输入](design-input.json)
@@ -8,6 +8,8 @@
 - [技能与质量](quality.md)
 
 0provider；无安装/个人操作。纯模块验证准备与PG后验分开。
+
+## 历史准备与失败记录（不代表当前未跑状态）
 
 首轮纯检查：`pure-run-01` 21/22，>2MiB字节深比较超时（原exit1保留）；`pure-run-02` 仅该项1/1、8未选，完整Buffer字节比较后108ms。22不同检查分轮，不称一次22/22。2,097,275B材料被分为36事件/5批，最大JSON批702,184B；SDK mapper另核>2MiB公开材料与原prefix逐字相同。`types-run-01`记录实际tuple类型/narrowing和pg-boss声明缺件；前两者已修，依赖按批准精确链接。`types-run-02`因fresh1,011,576,832B未达门槛NOT_RUN，未启动compiler。之后新增final barrier与读取/预算保护检查尚NOT_RUN。
 
@@ -26,3 +28,7 @@ PG源码候选为`apps/server/src/native-activity-body/{fixture,body.test}.ts`�
 ## 2026-10-07剩余局部验证
 
 原10direct与focused types已实际补齐，见local-resumed-20261007/summary.json。10/10、types0、3762ms，两组absent/双EOF；总28不同跨轮（原22+6新，4outbox受影响旧重复），不是重复旧22。产品40af无改，PG3/生产挂载仍NOT_RUN。原独审继续SOURCE_APPROVED_PENDING_VALIDATION，本次新增运行结果独立待核。主线ee98的18产品路径前像无漂移，15只读输入变化列于main-preimage-resume，集成须保主线增量，不能覆盖旧整blob。
+
+## 2026-10-07三PG实际完成
+
+见[唯一原始结果](pg-run-01/RESULT.md)与[summary](pg-run-01/summary.json)：原3/3、0未选、exit0/3461ms；原28局部/旧类型未重复。专库/fixture/listener正常清理、组absent双EOF，初unknown原样保留。生产挂载与本次新fixture noEmit未验；等待限定结果独审和共享主线接线。

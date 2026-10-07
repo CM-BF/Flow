@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-07T06:32:28.622506+00:00 |
+| 更新时间 | 2026-10-07T06:40:19.954945+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初任务开工无可靠记录，保持UNKNOWN；旧局部05:12原reservation/result；本段PG准备只读核/领取见pg-entry/claim-observation与preparation，不替代最初时间 |
@@ -11,22 +11,22 @@
 | co-lead | Execution Lead |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 工具正文三项数据库场景的固定入口已获独立批准，原局部与类型证据保持；实际数据库检查尚未开始 |
-| 下一可用交付 | 取得共享运行窗口后执行原三项数据库场景并提交实际结果 |
-| 当前阻塞 | ACTIVE: 等待唯一共享数据库运行窗口；生产接线和整体容量后继仍未完成 |
+| 本片段交付阶段 | review |
+| 当前产出 | 工具正文三项真实数据库场景已通过：大材料可按原批次恢复并完整分页取回；专库与夹具已清理，生产开通仍未完成 |
+| 下一可用交付 | 独立核验本次数据库结果，随后处理主线共享输入对齐与正式开通 |
+| 当前阻塞 | ACTIVE: 实际数据库结果待独审；共享生产接线、整体容量和界面后继仍未完成 |
 | 需用户决定 | NONE |
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | 8ae4d7a0cf84ee85da00d20d245b4dade6412b79；本轮仅审查/准备观察metadata，c687入口与原生产40af不变 |
-| dirty | 本轮仅own review/status/preflight；提交后核clean |
+| HEAD | b3db8a89295b38cfd2fd1d944282f952598d130e 后继结果封包；固定c687入口与40af生产未改 |
+| dirty | 仅本次run原件/summary与own status；封包后核clean |
 | 工作分支状态 | in-progress |
 | 实现目标 | c687b1b63802298d27396aa4c40bd9075ccb1405 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | 原固定40af PASSED：10/10+focused types0，28不同分轮；本次fixture/PG入口仅静态读取与Python AST，3PG及新fixture类型NOT_RUN |
-| 独立review | APPROVED_LIMITED_THREE_PG_ENTRY c687b1b63802298d27396aa4c40bd9075ccb1405；原40af源与f507局部证据批准保持，3PG仍NOT_RUN |
+| 检查状态 | PASSED c687：原3PG/3过/0未选、exit0/3461ms、组absent双EOF/专库正常DROP；旧28局部与40af focused0分轮保持，新fixture noEmit NOT_RUN |
+| 独立review | c687入口已限定APPROVED；本次3PG实际结果PENDING，原40af源与f507局部证据批准保持 |
 | main集成 | 未集成 |
 | Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
 | 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
@@ -36,9 +36,9 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | CHAT05P01-01 | completed | assignment_review | 首合同7d075与claim已固定 |
-| CHAT05P01-02 | in-progress | assignment_review | 完整spool/固定重报已实现，28不同纯检查分轮通过 |
-| CHAT05P01-03 | in-progress | assignment_review | ingestion/033/reader源已固定；PG NOT_RUN |
-| CHAT05P01-04 | in-progress | assignment_review | pure-run-01/02及local-resumed 10/10；focused types0，原红保留；3PG另待 |
+| CHAT05P01-02 | completed | assignment_review | 28局部及本3PG：原批次持久恢复通过；正式开通另在05 |
+| CHAT05P01-03 | completed | assignment_review | 原3PG实际读写/授权/fence/033幂等通过，结果待独审 |
+| CHAT05P01-04 | completed | assignment_review | 原28局部分轮+本3PG，旧类型0；新fixture noEmit NOT_RUN边界明确，原红保持 |
 | CHAT05P01-05 | pending | assignment_review | 独审及共享集成未完成 |
 | CHAT05P01-06 | pending | assignment_review | UI/provider完整验收后继 |
 
@@ -71,3 +71,11 @@
 ## 2026-10-07T06:32:28.622506+00:00：三PG入口独审接收，等待实际窗口
 
 [唯一独审](../../docs/evidence/chat05p01/pg-entry/independent-review.json)于06:31:32.346220Z批准c687入口，7+283绑定/21aliases全同，无P1/P2。原样归档；[准备观察](../../docs/evidence/chat05p01/pg-entry/approved-preflight.json)核原v1 active、source/新namespace不存在与当次free=24381231104B。该空间只代表当次读取，不替代执行前fresh，也未取得PG holder。0product import/types/test/PG/provider；当前按Lead等待共享运行交接。
+
+## 2026-10-07T06:37:51.807947+00:00：唯一PG窗口接收及实际准入
+
+Web/Mika已由Lead明确交接，当前CHAT05P01持有唯一PG段。fresh原v1/source283files/21aliases零差，新pg-run-01不存在，实际free 24384274432 B通过原门槛。现在按c687原入口只执行三项PG，90s/.5TERM/2reap与原空间边界不改；0provider/个人操作。真实子进程开始与结果以pg-run-01 reservation/result为准；未知KEEP/noFORCE，不重试。
+
+## 2026-10-07T06:40:19.954945+00:00：原三项PG一次完成，窗口已归还
+
+实际06:37:51.861095Z→06:37:55.362725Z，原3/3、exit0、监督3461ms；2,160,011B输入与72,032B结果完整追回，10分页/2,985,938B wire。marker/OID/有界零连接→先行fsync→普通DROP/remaining[]，初始目录dev/ino→checkpoint→正常删除；listener/admin关闭、组最终absent/双EOF，原unknown保留。原始结果见[本次记录](../../docs/evidence/chat05p01/pg-run-01/RESULT.md)。0provider/个人操作；窗口已归还，仅封原件交审。原focused配置包含fixture，但上次types0早于c687改动，本次noEmit NOT_RUN，不冒称补跑。主线/生产开通仍open。

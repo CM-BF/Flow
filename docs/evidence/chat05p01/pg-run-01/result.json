@@ -1,0 +1,111 @@
+{
+  "endedAt": "2026-10-07T06:37:55.362725+00:00",
+  "supervision": {
+    "pid": 54307,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 3461,
+    "observed_bytes": 835,
+    "retained_bytes": 835,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "callerElapsedMs": 3522,
+  "rawBytes": 835,
+  "primaryFailure": null,
+  "observationErrors": [],
+  "status": "PASSED",
+  "databaseAndFixtureCleanup": "CONFIRMED",
+  "tmpPolicy": "KEEP cache/evidence; fixture removes only its own identified directory",
+  "finalTmp": {
+    "bytes": 134,
+    "files": [
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+    ],
+    "directories": [
+      "cache",
+      "cache/vitest",
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ]
+  },
+  "freeAfter": 24360443904,
+  "fixtureFinal": {
+    "database": "flow_chat05p01_bea243d091654eacb114b798ade357f4",
+    "marker": "b49ab45e-5742-4bd1-8d1d-2323acc9146e",
+    "provider": 0,
+    "runtimeProcesses": 0,
+    "allowanceBytes": 100663296,
+    "freeBeforeBytes": 24380551168,
+    "checkpoint": "docs/evidence/chat05p01/pg-run-01/fixture.jsonl",
+    "creationRequested": true,
+    "marked": true,
+    "databaseOid": 1236655,
+    "directory": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/pg-run-01/tmp/flow-chat05p01-pg-DFfHjt",
+      "dev": 16777234,
+      "ino": 123589599
+    },
+    "base": "http://127.0.0.1:52092",
+    "minObservedFreeBytes": 24356728832,
+    "droppedAcceptedAck": true,
+    "largeMaterial": {
+      "inputBytes": 2160011,
+      "resultBytes": 72032,
+      "pageRequests": 10,
+      "pageWireBytes": 2985938,
+      "originalPendingEvents": 8,
+      "scope": "JSON wire and decoded body bytes; not PG/WAL/storage physical bytes"
+    },
+    "interruptedAndConflict": true,
+    "legacyUnchanged": true,
+    "appClosed": true,
+    "listenerClosed": true,
+    "poolClosed": true,
+    "databaseBytes": "12729367",
+    "temporaryBytes": 134870,
+    "connections": [
+      {
+        "rows": [],
+        "remainingMs": 2998
+      }
+    ],
+    "databaseDropped": true,
+    "remaining": [],
+    "directoryRemoved": true,
+    "adminClosed": true,
+    "requests": 23,
+    "elapsedMs": 1977.7845,
+    "cleanupErrors": [],
+    "phase": "cleaned",
+    "at": "2026-10-07T06:37:55.330Z"
+  },
+  "selection": {
+    "numTotalTests": 3,
+    "numPassedTests": 3,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "persistedRawBytesBeforeResult": 7819
+}
