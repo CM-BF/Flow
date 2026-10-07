@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。55b两P2源码修复/定向4case与类型证据已独审接受，connection-choice实际2/2及owned清理已独立限定接受；不是整个feature批准。
+状态：IN_PROGRESS。55b两P2/4case/choice实证保原绑定；67f8三选择源码/local已接受，first-create2/2实际及owned清理已独立限定接受；B/Queue尚未运行，不是整个feature批准。
 
 Review target commit：`67f8fd25a129ef5c8882f07e54de87e20ed24429`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
@@ -211,3 +211,9 @@ Root已开始固定0141相对base84005完整差异审查；当前有连接选择
 ## 2026-10-07 06:36:20 UTC — CREATE/Queue三条补验候选
 
 固定`67f8fd25a129ef5c8882f07e54de87e20ed24429`只browser改变/18源及父监督不变，[checkpoint](../../docs/evidence/wpf-conversation-recovery/create-queue-checkpoint.json)。noEmit0/新增选择33实际PASS仅验证本地选择及类型；三真实场景NOT_RUN，完整review IN_PROGRESS；原55b/0141及其actual接受不回写成本目标全通过。本次delta独审PENDING。
+
+## 2026-10-07 06:51:40 UTC — first-create实际限定收口
+
+[67f8原始源审](../../docs/evidence/wpf-conversation-recovery/67f8-create-queue-source-root-review.json)0finding限定接受源码/local，不是runtime批准。本次[create-ack-loss实际2/2](../../docs/evidence/wpf-conversation-recovery/continuous-third-validation.md)已过且owned清理完成，待独立实证审；source67f8保持，B/Queue旅程NOT_RUN，完整review IN_PROGRESS。新段36096/150000、余113904，旧封套/失败不改；无自动后继，不改原full7断言。
+
+本批[root实际审](../../docs/evidence/wpf-conversation-recovery/continuous-third-root-review.json)限定接受first-create2/2与owned清理，0finding；上段“待独立实证审”为审查到达前记录，当前结论以本段为准，整个feature仍IN_PROGRESS。

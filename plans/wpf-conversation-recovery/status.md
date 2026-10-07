@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 06:36:20 UTC |
+| 最近更新 | 2026-10-07 06:51:40 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -13,27 +13,27 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前三补验源码 67f8fd25a129ef5c8882f07e54de87e20ed24429；55b生产与18其他源不变；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 源码已固定；本批仅own证据/状态封存，提交后以Git clean核验 |
+| 工作树dirty状态 | 源码67f8不变；本批仅实际run raw与own记录封存，提交后以Git clean核验 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 刷新恢复与切中心保稿已验证；新聊天两阶段/队列补验源码及局部检查已固定 |
-| 下一可用交付 | 补验新聊天两阶段与队列恢复，推进完整交付审查 |
+| 当前产出 | 已验证刷新/切中心保稿，以及新聊天CREATE回执丢失后的显式原键恢复 |
+| 下一可用交付 | 验证CREATE已绑定后的turn回执恢复及队列恢复，推进完整交付审查 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 原full7与choice2/2实际PASS保各自绑定；本次noEmit0+新增选择33断言通过，实际5828.643ms/30000。三补验真实browser NOT_RUN，新150s仍24589/125411，旧五FAIL不改 |
+| 检查状态 | 原full7/choice保原PASS；本次67f8 first-create真实2/2 PASS/exit0双EOF/owned清理，新段36096ms/余113904。本次独立实证审已限定接受；B/Queue/完整缺项NOT_RUN，旧五FAIL不改 |
 | 实现目标 | 67f8fd25a129ef5c8882f07e54de87e20ed24429 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS（55b两P2源/local已独审；connection-choice实际2/2及owned清理已独立限定接受）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本人06:27:54.643Z安全CLI窄核active/owner/WT/branch、overlap=[]，见create-queue-claim-observation.json；新runtime仍需fresh准入 |
+| Review | [review.md](review.md)，IN_PROGRESS（67f8源码/local已接受；full7、choice2/2及first-create2/2实际与owned清理分别独立限定接受）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；manager06:48:10.709711Z fresh核身份/overlap=[]及pins，owner启动前窄核gate/19hash/branch/clean，见continuous-third-admission/observation.json |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-RECOVERY01-01 | completed | workspace_panels_owner | 原21合法输入/唯一canonical及ConnectionSession/Journal有界实现完成；来源取权/50直接检查与full7实证各保边界 |
-| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 四类原authority/CREATE两key/strict屏障/CAS已实现并有直接检查；真实CREATE两阶段与Queue/Steer恢复仍未覆盖 |
+| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原四authority/屏障与CREATE两key已实现；CREATE ACK丢失真实恢复2/2通过，已绑定后丢turn/Queue/Steer尚待各自实证 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；完整profile/knowledge/steering和二中心待验 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
 | WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [原full7实际PASS](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)，原五FAIL保真；SSEdelivery/CREATE/QueueSteer等原验收尚未全部完成 |
@@ -324,3 +324,7 @@ GO实际看双390图后的原验收补充：恢复目录默认显示可读标题
 ## 2026-10-07 06:36:20 UTC — 三条补验固定安全点
 
 [源码与实际局部证据](../../docs/evidence/wpf-conversation-recovery/create-queue-validation.md)绑定`67f8fd25a129ef5c8882f07e54de87e20ed24429`，三有限选择复用原fault/helper/UI；CREATE两故障点与Queue双refs原身份断言已实现，真实browser全部NOT_RUN。新30s局部段仅noEmit与33选择断言累计5828.643ms/保守5829，两个owned Node组已清理，0服务；不重复旧50/119。原full7/choice与24589/150000账保持，不预占PG/Chrome、无gate/adminenv。本批完整review仍IN_PROGRESS，新增测试delta待独审。
+
+## 2026-10-07 06:51:40 UTC — first-create真实2/2与清理
+
+[本次原始记录](../../docs/evidence/wpf-conversation-recovery/continuous-third-validation.md)绑定执行beb6/source67f8，仅cookieRead+createAckLoss；显式同create key/body replay后继续原turn，同conversation/checkpoint及下一稿保留，0自动提交。actualexit0/双EOF/正常DROP0conn/owned组与scratch清理完整；charge11507→新段36096/余113904。旧full7/choice与五FAIL不变，无B/Queue自动续跑，完整feature IN_PROGRESS/main未接。[本次root独立实证审](../../docs/evidence/wpf-conversation-recovery/continuous-third-root-review.json)已限定接受；67f8源码/local限定独审已接受。

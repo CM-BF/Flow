@@ -180,3 +180,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 06:36:20 UTC — 原02/05补验源码固定
 
 三例已固定`67f8fd25a129ef5c8882f07e54de87e20ed24429`，详[限定验收表](../../docs/evidence/wpf-conversation-recovery/create-queue-validation.md)。Queue公开enqueue与promotion/Steer前提分开；三场景各cookieRead+一原身份恢复组，先create-ack-loss，再created-turn-ack-loss，再queue-ack-loss，各自新attempt，不将三个合进旧full7或用partial绿替代。noEmit/33选择实证不等真实UI运行；下一单次仍由fresh资源/claim/source/admin/gate绑定，原browser段spent24589/rem125411。本次新local实际5828.643ms/30s，不挪历史预算。
+
+## 2026-10-07 06:51:40 UTC — first-create实际限定收口
+
+[67f8原始源审](../../docs/evidence/wpf-conversation-recovery/67f8-create-queue-source-root-review.json)0finding限定接受源码/local，不是runtime批准。本次[create-ack-loss实际2/2](../../docs/evidence/wpf-conversation-recovery/continuous-third-validation.md)已过且owned清理完成，待独立实证审；source67f8保持，B/Queue旅程NOT_RUN，完整review IN_PROGRESS。新段36096/150000、余113904，旧封套/失败不改；无自动后继，不改原full7断言。

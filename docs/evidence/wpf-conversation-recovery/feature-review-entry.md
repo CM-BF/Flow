@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `67f8fd25a129ef5c8882f07e54de87e20ed24429`，完整feature `IN_PROGRESS`。本次仅原browser补CREATE两故障点/Queue原身份恢复三选择，18其他源与父监督函数逐字等55b；[当前19pin与delta](create-queue-checkpoint.json)、[新增选择33/noEmit实证与真实未验边界](create-queue-validation.md)。新增三journey真实browser NOT_RUN；该增量独审PENDING。下面55b清单/统计和原证据为已审基线，不冒其覆盖新增166行测试差异。
+当前组合target `67f8fd25a129ef5c8882f07e54de87e20ed24429`，完整feature `IN_PROGRESS`。本次仅原browser补CREATE两故障点/Queue原身份恢复三选择，18其他源与父监督函数逐字等55b；[当前19pin与delta](create-queue-checkpoint.json)、[新增选择33/noEmit实证与真实未验边界](create-queue-validation.md)。该增量源码/local独审已接受；first-create2/2实际及owned清理已独立接受，B/Queue仍NOT_RUN。下面55b清单/统计和原证据为已审基线，不冒其覆盖新增166行测试差异。
 
 ## 55b已审基线与原证据（历史固定）
 
@@ -58,3 +58,7 @@ GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标�
 [connection-choice实际回归](continuous-second-validation.md)绑定55b/执行0a661，2/2 selected PASS；原full7绑定0141不重跑，当前新增结果已获root限定实际证据接受。
 
 [root choice实际审](continuous-second-root-review.json)关闭SELECTING的定向实际验收；STEERING-TIMEOUT保4受控case限度，整体review仍IN_PROGRESS，无真实Steer HTTP/主线集成声明。
+
+## first-create实际限定补证
+
+执行beb6/source67f8，[2/2与原件](continuous-third-validation.md)及[root限定审](continuous-third-root-review.json)。只CREATE ACK丢失分支；已绑定后丢turn与Queue尚未实际运行，不替其他验收；预算新段36096/150000、余113904。

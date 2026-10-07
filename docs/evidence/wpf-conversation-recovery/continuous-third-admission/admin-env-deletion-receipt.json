@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T06:50:28.462836+00:00",
+  "state": "EXACT_ADMIN_ENV_DELETED",
+  "path": "/private/tmp/recovery-create-admission-65z5d8xx/admin.env",
+  "identity": {
+    "device": 16777234,
+    "inode": 123595219,
+    "mode": "0600",
+    "uid": 501
+  },
+  "secretContentRead": false,
+  "exactLstatAbsentAfter": true,
+  "run": "reccreate-20261007-064810-01f20b",
+  "receiptChecks": {
+    "actualExit": 0,
+    "dualEOF": true,
+    "allOwnedAbsent": true,
+    "scratchAbsent": true,
+    "normalDatabaseRemoved": true,
+    "remaining": [],
+    "fixtureComplete": true,
+    "newNetworkProcessResourceProbes": false
+  },
+  "sourcePins": [
+    {
+      "path": "/private/tmp/recovery-create-parent-tfgj5isw/actual-exit.json",
+      "bytes": 259,
+      "sha256": "9e07d265a53ff60e9815abc3cc0d1223115d831d7dcf46d1c0a9474bd5092c2a"
+    },
+    {
+      "path": "/private/tmp/recovery-create-parent-tfgj5isw/post-cleanup-observation.json",
+      "bytes": 556,
+      "sha256": "a6bcd3717d31b64037a4b45c093d410d60bb0d5598aa24d6bdc79842bd3209a3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "a4804a4d318078fcb9015af2f6e2bc6b36772084a655b647f1135c8f0effad6f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "90d07b8f19f7dcc744b9701f703592f731798dc2683f08394aeaf7a1df1a5a2a"
+    }
+  ]
+}

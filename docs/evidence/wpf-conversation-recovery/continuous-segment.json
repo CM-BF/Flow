@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "FULL7_AND_CONNECTION_CHOICE_SCOPED_EVIDENCE_ACCEPTED",
+  "state": "FULL7_CHOICE_FIRST_CREATE_SCOPED_EVIDENCE_ACCEPTED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 24589,
-  "runtimeRemainingMs": 125411,
+  "runtimeSpentMs": 36096,
+  "runtimeRemainingMs": 113904,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -57,15 +57,33 @@
       "fullFeaturePassed": false,
       "fullJourneyPassed": false,
       "independentReview": "continuous-second-root-review.json"
+    },
+    {
+      "run": "reccreate-20261007-064810-01f20b",
+      "journey": "create-ack-loss",
+      "executionHead": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+      "sourceTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+      "manifest": "continuous-third-manifest.json",
+      "passedGroups": 2,
+      "actualExit": 0,
+      "parentLateMs": 10902.810749999999,
+      "outerActualMs": 11506.23241707217,
+      "serializedParentMs": 10893.408625,
+      "chargedMs": 11507,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T06:49:18.895676+00:00",
+      "fullFeaturePassed": false,
+      "fullJourneyPassed": false,
+      "independentReview": "continuous-third-root-review.json"
     }
   ],
   "nextSelection": null,
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
-  "sourceCheckpoint": "feature-review-manifest.json",
+  "sourceTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "sourceCheckpoint": "create-queue-checkpoint.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
-  "currentReviewTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "currentReviewTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
