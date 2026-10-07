@@ -1,0 +1,62 @@
+{
+  "lead": "mika",
+  "stage": "X01_REMOVAL_REFERENCES_PG",
+  "state": "OPEN",
+  "window": "fca58812170d49aa8db35017fb6c1af6",
+  "head": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+  "claim": {
+    "claimId": "04e46691-f4fd-46cc-808c-59c391dfd015",
+    "version": 1,
+    "taskId": "X01-REMOVAL-REFERENCES01",
+    "lead": "mika",
+    "worker": "architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+    "branch": "codex/plugin-removal-references",
+    "scope": [
+      "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+      "apps/server/src/plugin-runtime/removal-references.test.ts",
+      "apps/server/src/plugin-runtime/removal-references.ts",
+      "apps/server/src/plugin-runtime/routes.ts",
+      "docs/evidence/x01-removal-references",
+      "packages/contracts/src/plugin-removal.ts",
+      "plans/x01-removal-references"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-07T11:37:33.044Z",
+    "createdAt": "2026-10-07T11:37:33.044Z"
+  },
+  "ledgerObservedAt": "2026-10-07T12:43:25.110Z",
+  "manifestSha256": "2c99bf0f413e462c369b535d9ab2317172bdb031b97a9a170afd843b62dec62e",
+  "pairedBytes": 5652873216,
+  "createdAt": "2026-10-07T12:43:25.119243+00:00",
+  "resources": {
+    "baseBytes": 1242562560,
+    "managerMinimumBytes": 6895435776,
+    "completeCombinationBytes": 6895435776,
+    "freeBytes": 21805223936,
+    "source": "Mika delegated d01 unique R2 NEXT after SVC06 RETURN12:35:37.013013Z. Web Plugin b1 START12:40:36.824929Z PGID64185 is isolated0PG Chrome+2ownHTTP73MiB, retain full declaration until RETURN. MSG03 ordinary22MiB and existing potential padding/all KEEP charged in manager floor; no deletion/zero assumption. One1GiB cleanup reserve. No later conflicting holder notification.",
+    "webPairBytes": 76546048,
+    "msg03LocalBytes": 23068672,
+    "retainedAreNotZero": true
+  },
+  "freshGate": {
+    "files": 301,
+    "external": 62,
+    "links": 21,
+    "gitEqualsWorktree": true,
+    "claimCount": 246,
+    "ledgerReadId": "5ec54057-91b8-4926-9fff-62225a0d1ada",
+    "ledgerSha256": "3600612e486f327f97f32bee55ab69c9cea89a7e1f9a2f64683563a9817a68b4",
+    "ledgerBytes": 207597,
+    "rootDev": 16777234,
+    "rootIno": 124099817,
+    "evidenceDev": 16777234,
+    "evidenceIno": 124100501,
+    "newRunAbsent": true,
+    "cliListUnavailable": "No configured shell coordination DB; used available canonical dashboard full-ledger snapshot instead."
+  }
+}

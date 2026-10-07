@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-07T12:44:47.552557+00:00",
+  "runtimeReturnObservedAt": "2026-10-07T12:43:47.783536Z",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-z0q54cxk",
+    "dev": 16777234,
+    "ino": 124144597,
+    "removed": true,
+    "sampleBytes": 3503,
+    "sampleEntries": 10,
+    "exactLstatENOENT": true
+  },
+  "externalAdmissionInput": {
+    "path": "/tmp/flow-removal-r2-admission-fca58812170d49aa8db35017fb6c1af6.json",
+    "observedBeforeUnlinkDev": 16777234,
+    "observedBeforeUnlinkIno": 124144582,
+    "bytes": 2555,
+    "sha256": "e7bef2bf34a4d9cc29e793e808b99159f094d53095bb86d4779346242d440719",
+    "source": "exclusive-created this turn; bounded NOFOLLOW read equals caller copied admission; final lstat identity rechecked",
+    "removed": true
+  },
+  "tool": {
+    "session": 82925,
+    "exitCode": 0,
+    "initialWaitSeconds": 1.001749458,
+    "finalWaitSeconds": 1.3167e-05,
+    "shellStart": "2026-10-07T12:43:29Z",
+    "shellEnd": "2026-10-07T12:43:32Z",
+    "secondsPrecisionEnvelopeUpperSeconds": 4,
+    "timeRealSeconds": 3.37,
+    "wholeExternalWall": "UNKNOWN",
+    "outputSource": "Concatenated exact exec/write_stdin output, archived after completion"
+  },
+  "resourcesReturned": true,
+  "oldR1": "Unchanged casePASS/suiteafterAllFAIL/callerUNKNOWN plus separately approved cleanup RETURN; no cause inference."
+}
