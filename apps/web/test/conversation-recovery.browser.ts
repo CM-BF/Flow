@@ -52,7 +52,8 @@ function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
 }
-type Gate = { allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
+type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
+type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number };
 type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; workDeadline: number };
 type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
@@ -70,6 +71,38 @@ function selectionPassed(journey: Journey, result: WorkerResult | undefined): bo
     && Array.isArray(result.checks) && result.checks.length === required.length && required.every(key => result.coverage?.[key] === "PASSED");
 }
 type TailObservation = { phase: string; elapsedMs: number; scratchBytes: number | null; evidenceBytes: number | null; freeBytes: number | null; errors: string[] };
+
+// Admission may acknowledge an independently reviewed failed attempt; its immutable FAIL is never rewritten.
+function priorAttemptCharge(run: string, budgetText: string, reconciliation?: FailureReconciliation, reviewText?: string): number {
+  const previous = JSON.parse(budgetText);
+  requireThat(previous.cleanupComplete === true && Number.isFinite(previous.elapsedMs) && previous.elapsedMs >= 0,
+    "Prior attempt lacks confirmed cleanup/accounting");
+  if (previous.complete === true) {
+    requireThat(!reconciliation, "A settled attempt must not use failure reconciliation");
+    return previous.elapsedMs;
+  }
+  requireThat(previous.complete === false && reconciliation?.run === run && digest(budgetText) === reconciliation.budgetSha256
+    && typeof reviewText === "string" && digest(reviewText) === reconciliation.reviewSha256,
+    "Prior incomplete attempt requires exact independently accepted reconciliation");
+  const review = JSON.parse(reviewText), cleanup = review.cleanup;
+  requireThat(review.run === run && review.decision === "ACCEPTED_FAILED_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_CASE_OR_FEATURE_PASS"
+    && review.observed?.budgetComplete === false && review.observed?.cleanupComplete === true
+    && Number.isInteger(review.actual?.exitCode) && review.actual.exitCode !== 0
+    && review.actual.stdoutEof === true && review.actual.stderrEof === true
+    && cleanup?.dualEof === true && cleanup.scratchAbsent === true
+    && cleanup.database?.confirmed === true && cleanup.database.removed === true && cleanup.database.connections === 0
+    && Array.isArray(cleanup.database.remaining) && cleanup.database.remaining.length === 0
+    && Array.isArray(cleanup.database.errors) && cleanup.database.errors.length === 0
+    && cleanup.fixture?.complete === true && Array.isArray(cleanup.fixture.errors) && cleanup.fixture.errors.length === 0
+    && Array.isArray(cleanup.freshOwnedProcessObservations) && cleanup.freshOwnedProcessObservations.length > 0
+    && cleanup.freshOwnedProcessObservations.every((value: { process?: string; group?: string }) => value.process === "ESRCH" && value.group === "ESRCH"),
+    "Failure reconciliation lacks independently accepted owned cleanup");
+  const charge = review.accounting?.chargeMs;
+  requireThat(Number.isSafeInteger(charge) && charge >= Math.ceil(previous.elapsedMs)
+    && Number.isFinite(review.actual.outerElapsedMs) && review.actual.outerElapsedMs >= 0 && charge >= Math.ceil(review.actual.outerElapsedMs),
+    "Failure reconciliation must conservatively charge the failed attempt");
+  return charge;
+}
 
 async function supervisor() {
   requireThat(process.env.FLOW_RECOVERY_BROWSER === "1", "Separate real browser/PG approval is required");
@@ -89,12 +122,24 @@ async function supervisor() {
   for (const path of sourcePaths) requireThat(sourceHashes[path] === gate.sourceHashes[path], `Admitted source mismatch: ${path}`);
   const dirty = !!execFileSync("git", ["status", "--porcelain"], { cwd: root, encoding: "utf8", timeout: 2000 }).trim();
   const runs = join(evidence, "browser-runs"); await mkdir(runs, { recursive: true });
+  const reconciliations = gate.reconciledFailures ?? [];
+  requireThat(Array.isArray(reconciliations) && reconciliations.length <= 8, "Invalid failure reconciliation list");
+  const remainingReconciliations = new Map<string, FailureReconciliation>();
+  for (const item of reconciliations) {
+    requireThat(item && /^[a-z0-9-]{1,48}$/.test(item.run) && /^[a-z0-9-]+\.json$/.test(item.reviewFile)
+      && /^[a-f0-9]{64}$/.test(item.budgetSha256) && /^[a-f0-9]{64}$/.test(item.reviewSha256)
+      && !remainingReconciliations.has(item.run), "Invalid or duplicate failure reconciliation");
+    remainingReconciliations.set(item.run, item);
+  }
   let priorMs = 0;
   for (const name of await readdir(runs)) {
-    const previous = JSON.parse(await readFile(join(runs, name, "budget.json"), "utf8"));
-    requireThat(previous.complete === true && previous.cleanupComplete === true && Number.isFinite(previous.elapsedMs), "Prior incomplete attempt requires explicit reconciliation");
-    priorMs += previous.elapsedMs;
+    const reconciliation = remainingReconciliations.get(name);
+    const budgetText = await readFile(join(runs, name, "budget.json"), "utf8");
+    const reviewText = reconciliation ? await readFile(join(evidence, reconciliation.reviewFile), "utf8") : undefined;
+    priorMs += priorAttemptCharge(name, budgetText, reconciliation, reviewText);
+    remainingReconciliations.delete(name);
   }
+  requireThat(remainingReconciliations.size === 0, "Failure reconciliation refers to an unknown run");
   // Preserve accounting for any run made with the older entry point; never silently start a new budget.
   for (const name of (await readdir(evidence)).filter(name => name.endsWith("-browser-budget.json"))) {
     const previous = JSON.parse(await readFile(join(evidence, name), "utf8"));
@@ -115,6 +160,7 @@ async function supervisor() {
   let minimumFreeBytes = Infinity, peakScratchBytes = 0, logBytes = 0, stopped = false, chromeRequested = false;
   let stopReason: string | undefined, interruptionRequested = false;
   let monitor: NodeJS.Timeout | undefined, monitoring: Promise<void> | undefined, logs = Promise.resolve();
+  let monitorRetiring = false;
   const signalGroups = (signal: NodeJS.Signals) => {
     for (const child of children) if (child.pid) try { process.kill(-child.pid, signal); }
     catch (error) { if ((error as NodeJS.ErrnoException).code !== "ESRCH") cleanupErrors.push(text(error)); }
@@ -139,14 +185,15 @@ async function supervisor() {
   };
   process.on("SIGINT", interrupted); process.on("SIGTERM", interrupted);
   const working = () => { requireThat(!stopped && performance.now() < hardAt - CLEANUP_MS, "Work deadline reached; cleanup reserve started"); };
-  const checkpoint = async () => {
+  const checkpoint = async (mode: "work" | "monitor" = "work") => {
     try {
       working();
       const free = await freeBytes(); minimumFreeBytes = Math.min(minimumFreeBytes, free);
       requireThat(free > STOP_FREE, "Free space reached stop margin");
       requireThat(await treeBytes(evidence) <= EVIDENCE_BYTES - 32 * 1024, "Evidence limit reached");
       if (scratch) { const bytes = await treeBytes(scratch, true); peakScratchBytes = Math.max(peakScratchBytes, bytes); requireThat(bytes <= gate.maxScratchBytes, "Scratch limit reached"); }
-      working();
+      // A timer already in flight still checks resources, but normal cleanup has retired its work guard.
+      if (mode === "work" || !monitorRetiring) working();
     } catch (error) { stop(text(error)); throw error; }
   };
   const own = (child: ChildProcess) => {
@@ -163,7 +210,7 @@ async function supervisor() {
   let databaseCleanup: Awaited<ReturnType<RecoveryDatabaseLease["close"]>> | undefined;
   try {
     await json(join(directory, "sources.json"), { sourceCommit, dirty, sourceHashes, journey: gate.journey, requiredGroups });
-    monitor = setInterval(() => { if (!monitoring) monitoring = checkpoint().catch(() => {}).finally(() => { monitoring = undefined; }); }, 250);
+    monitor = setInterval(() => { if (!monitoring) monitoring = checkpoint("monitor").catch(() => {}).finally(() => { monitoring = undefined; }); }, 250);
     await checkpoint(); // Before any Vite/PG/Playwright/business import or CREATE.
     const { RecoveryDatabaseLease } = await import("./conversation-recovery.fixture");
     await checkpoint();
@@ -213,7 +260,7 @@ async function supervisor() {
     if (!result) errors.push("Worker did not return a complete result");
   } catch (error) { errors.push(text(error)); }
   finally {
-    stopped = true; if (monitor) clearInterval(monitor); await monitoring;
+    monitorRetiring = true; stopped = true; if (monitor) clearInterval(monitor); await monitoring;
     signalGroups("SIGTERM");
     const grace = Math.min(performance.now() + 2000, hardAt - 12_000);
     while (performance.now() < grace && children.some(child => child.exitCode === null && child.signalCode === null)) await sleep(30);
