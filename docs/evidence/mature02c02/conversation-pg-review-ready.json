@@ -1,0 +1,43 @@
+{
+  "recordedAt": "2026-10-07T06:27:45.089507+00:00",
+  "status": "READY_FOR_PREPARATION_REVIEW_NOT_OPEN",
+  "source": "bfcb9b02adb05645a40da5772be5d462711ff5fc",
+  "fixtureSource": "42dece37acb10318499404ad83aba90d216043cf",
+  "productFix": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+  "manifest": {
+    "path": "docs/evidence/mature02c02/pg-conversation-source-manifest.json",
+    "bytes": 7809,
+    "sha256": "60c8a456bd4e9330d5af463b948c927c523679145a62090935b156becb75ea61"
+  },
+  "expandedInputs": {
+    "count": 317,
+    "bytes": 1810124,
+    "deltaBindings": 27,
+    "unchangedInherited": 290,
+    "GitWTerrors": [],
+    "SQL": 31
+  },
+  "externalVerified": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    }
+  ],
+  "linksVerified": 20,
+  "claim": "v12/full72",
+  "local": "conversation-pg-prepare-local.json: types0 + list6 only, 2 children closed; 822B, no PG hooks",
+  "actualPG": 0,
+  "reviewScope": [
+    "new six PG cases (real conversation API/session/typed replies/legacy/native directory/queue)",
+    "fixture conversationClient option only",
+    "existing caller finite manifest inheritance/claim/config/floor delta; original lifecycle and six-selection gate unchanged",
+    "317 expanded bindings,2external,20links,10 new output absence; no old full source rereview"
+  ],
+  "oldEvidence": "7070/d2ae raw immutable; old R1 KEEP untouched; unregistered caller root remains KEEP_UNKNOWN; this preparation does not close old resource gaps"
+}

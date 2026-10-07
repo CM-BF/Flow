@@ -1,0 +1,6 @@
+apps/server/src/conversations/codex-pg.test.ts > filters native-v1 before LIMIT while native-v2 exposes exact persistent pins
+apps/server/src/conversations/codex-pg.test.ts > applies 035 and preserves Claude creation while native creation requires a supported immutable pin
+apps/server/src/conversations/codex-pg.test.ts > filters mixed conversation pages before LIMIT and denies hidden direct route families
+apps/server/src/conversations/codex-pg.test.ts > continues two public conversation turns on the original session and preserves typed reply identity
+apps/server/src/conversations/codex-pg.test.ts > keeps queue receipts idempotent and promotes a pinned Codex task through existing controls
+apps/server/src/conversations/codex-pg.test.ts > rejects a corrupt native-v2 sentinel without replacing its immutable digest
