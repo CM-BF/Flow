@@ -75,7 +75,7 @@ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; comple
   steeringRecovery: { profile: import("@flow/contracts").ExecutionProfileReference | null; conversationId: string | null;
     turnId: string | null; actor: Awaited<ReturnType<SteeringSeed["activate"]>> | null; draftId: string | null;
     receiptId: string | null; commandId: string | null; browserPostCounts: number[];
-    draftFailureObservation: { inputMatches: boolean | null; records: unknown[]; recoveryAlerts: string[]; observationError: string | null } | null } };
+    draftFailureObservation: { inputMatches: boolean | null; records: unknown[]; recoveryAlerts: string[]; observationErrors: string[] } | null } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
   const required = selectedGroups(journey);
   return !!result && result.journey === journey && result.failure === null
@@ -752,23 +752,28 @@ async function worker(init: Init) {
       } catch (error) {
         // Failure-only observation of this owned fixture. Keep the original assertion/error;
         // do not save, send, extend its timeout or continue a partially failed journey.
-        const observation = { inputMatches: null as boolean | null, records: [] as unknown[], recoveryAlerts: [] as string[], observationError: null as string | null };
+        const observation = { inputMatches: null as boolean | null, records: [] as unknown[], recoveryAlerts: [] as string[], observationErrors: [] as string[] };
         steeringRecovery.draftFailureObservation = observation;
         try {
           observation.inputMatches = await instruction.inputValue({ timeout: 1000 }) === original;
+        } catch (failure) { observation.observationErrors.push("input: " + text(failure).slice(0, 512)); }
+        try {
           observation.records = (await records(page)).slice(0, 8).map(record => {
             const data = record.kind === "draft" && record.data ? object(record.data) : {};
-            const steering = Array.isArray(data.steering) ? data.steering : [];
-            return { id: record.id, kind: record.kind, version: record.version, owner: record.owner,
+            const steering = Array.isArray(data.steering) ? data.steering : [], owner = object(record.owner);
+            return { id: record.id, kind: record.kind, version: record.version,
+              owner: { viewKey: owner.viewKey, routeId: owner.routeId, projectId: owner.projectId },
               steering: steering.slice(0, 8).map(item => { const value = object(item); return {
                 taskId: value.taskId, turnId: value.turnId, messageId: value.messageId,
                 textMatches: value.text === original, textBytes: typeof value.text === "string" ? Buffer.byteLength(value.text) : null,
               }; }) };
           });
+        } catch (failure) { observation.observationErrors.push("records: " + text(failure).slice(0, 512)); }
+        try {
           await page.getByRole("button", { name: "Saved drafts and receipts", exact: true }).click({ timeout: 1000 });
           const dialog = page.getByRole("dialog", { name: "Saved drafts and receipts", exact: true });
           observation.recoveryAlerts = (await dialog.getByRole("alert").allTextContents()).slice(0, 8).map(value => value.slice(0, 512));
-        } catch (failure) { observation.observationError = text(failure).slice(0, 512); }
+        } catch (failure) { observation.observationErrors.push("alerts: " + text(failure).slice(0, 512)); }
         throw error;
       }
       const draft = (await steeringDraft(original))!; steeringRecovery.draftId = draft.id;
