@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "phase": "initialization",
+  "checks": [],
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "failure": "Error: Cannot find module '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/startup-progress.js' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/index.ts",
+  "pageErrors": [],
+  "consoleErrors": [],
+  "errorOverflow": false,
+  "cleanupErrors": [],
+  "wire": [],
+  "heldReads": [],
+  "timeOrigin": null,
+  "scope": "b129 independent App with synthetic history DTOs behind real Cookie authentication; not Arc-combined or backend observation production",
+  "limits": {
+    "sameViewTaskReplacement": "NOT_COVERED",
+    "heldDetail": "NOT_COVERED",
+    "hiddenArcWorkspace": "NOT_COVERED",
+    "pluginDisableDuringModalRead": "NOT_COVERED",
+    "authorityRevocationDuringRead": "NOT_COVERED"
+  }
+}

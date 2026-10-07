@@ -1,0 +1,28 @@
+{
+  "journey": "context-history",
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "completedGroups": [],
+  "checks": [],
+  "failure": "Error: Cannot find module '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/startup-progress.js' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/index.ts",
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "coverage": {
+    "cookie-no-task": "NOT_COMPLETED",
+    "decoded-read-states": "NOT_COMPLETED",
+    "lazy-detail": "NOT_COMPLETED",
+    "close-late-read": "NOT_COMPLETED",
+    "task-and-visibility": "NOT_COMPLETED",
+    "plugin-revoke": "NOT_COMPLETED",
+    "themes-keyboard": "NOT_COMPLETED",
+    "authority-revoke": "NOT_COMPLETED"
+  }
+}

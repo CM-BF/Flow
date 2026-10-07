@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "context-history",
+  "requiredGroups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "completedGroups": [],
+  "initialization": null,
+  "groupTimings": null,
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "Error: Cannot find module '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/startup-progress.js' imported from /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/server/src/index.ts",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_89f2274fd5994658a0085866640c518e",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3766660000001139,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.8742920000004233,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "task": "MATURE04-05",
+  "visualAppearancePhase": {
+    "id": "CONTEXT-HISTORY-MOUNTED-20261007",
+    "budgetMs": 90000,
+    "spentMs": 0,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 3339,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 3341,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 17824272384,
+  "peakScratchBytes": 8560055,
+  "logBytes": 1860,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 5737.116917,
+      "scratchBytes": 8560055,
+      "evidenceBytes": 460460,
+      "freeBytes": 17824272384,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 5748.180708,
+      "scratchBytes": null,
+      "evidenceBytes": 462878,
+      "freeBytes": 17832189952,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}
