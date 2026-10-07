@@ -34,7 +34,9 @@ def disposition(report):
             'phaseRecordsRequired': True, 'retry': False}
 
 def attempt_files(argv):
-    assert argv in (['--run-host-once'], ['--run-host-r2-once'], ['--run-host-r3-once']), 'EXACT_ARGUMENT_REQUIRED'
+    assert argv in (['--run-host-once'], ['--run-host-r2-once'], ['--run-host-r3-once'], ['--run-host-r4-once']), 'EXACT_ARGUMENT_REQUIRED'
+    if argv == ['--run-host-r4-once']:
+        return 'host-outer-r4-once', 'actual-host-r4-once', '--execute-host-r4-once'
     if argv == ['--run-host-r3-once']:
         return 'host-outer-r3-once', 'actual-host-r3-once', '--execute-host-r3-once'
     if argv == ['--run-host-r2-once']:

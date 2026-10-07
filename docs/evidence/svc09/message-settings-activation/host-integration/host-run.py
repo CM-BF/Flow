@@ -53,12 +53,27 @@ def work_environment(directory):
         'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
 
 def attempt_files(argv):
-    assert argv in (['--execute-host-once'], ['--execute-host-r2-once'], ['--execute-host-r3-once']), 'EXACT_ARGUMENT_REQUIRED'
+    assert argv in (['--execute-host-once'], ['--execute-host-r2-once'], ['--execute-host-r3-once'], ['--execute-host-r4-once']), 'EXACT_ARGUMENT_REQUIRED'
+    if argv == ['--execute-host-r4-once']:
+        return 'actual-host-r4-once', 'host-preparation-r4.json'
     if argv == ['--execute-host-r3-once']:
         return 'actual-host-r3-once', 'host-preparation-r3.json'
     if argv == ['--execute-host-r2-once']:
         return 'actual-host-r2-once', 'host-preparation-r2.json'
     return 'actual-host-once', 'host-preparation.json'
+
+def preparation_bindings(source, read_pin=pin):
+    if 'inherits' not in source:
+        return source['bindings']
+    inherited = source['inherits']
+    assert inherited['path'] == str(HERE / 'host-preparation-r3.json'), 'FIXED_PREPARATION_REQUIRED'
+    assert inherited['sha256'] == 'd17e168f280f7cb2f18ba57347fcdb16895336063b774b9191ea7545607e7b8c'
+    previous = json.loads(read_pin(inherited))['bindings']
+    replacements = {value['path']: value for value in source['bindings']}
+    previous_paths = {value['path'] for value in previous}
+    assert len(previous_paths) == len(previous) == 19, 'INHERITED_PIN_SET_INVALID'
+    assert len(replacements) == len(source['bindings']) and set(replacements) <= previous_paths, 'REPLACEMENT_PIN_SET_INVALID'
+    return [replacements.get(value['path'], value) for value in previous]
 
 def work_and_cleanup(child, node, namespace, directory, result, write=save):
     work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
@@ -84,7 +99,7 @@ def main(argv):
     fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
     # Final static source manifest is sealed after the bounded preparation checks.
     source = json.loads((HERE / preparation_name).read_bytes())
-    for value in source['bindings'] + fixed['bindings']:
+    for value in preparation_bindings(source) + fixed['bindings']:
         pin(value)
     assert fixed['format'] == 1 and fixed['providerCalls'] == 0
     source_root = Path(fixed['sourceDirectory']); info = source_root.lstat()

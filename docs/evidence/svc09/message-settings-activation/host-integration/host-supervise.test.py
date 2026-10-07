@@ -36,12 +36,15 @@ class OperatorBoundary(unittest.TestCase):
         names = outer.attempt_files(['--run-host-r3-once'])
         self.assertEqual(names, ('host-outer-r3-once', 'actual-host-r3-once', '--execute-host-r3-once'))
         self.assertEqual(operator.attempt_files([names[2]]), (names[1], 'host-preparation-r3.json'))
+        names = outer.attempt_files(['--run-host-r4-once'])
+        self.assertEqual(names, ('host-outer-r4-once', 'actual-host-r4-once', '--execute-host-r4-once'))
+        self.assertEqual(operator.attempt_files([names[2]]), (names[1], 'host-preparation-r4.json'))
 
     def test_unknown_or_user_supplied_attempt_paths_are_rejected_before_io(self):
-        for argv in ([], ['--run-host-r4-once'], ['--run-host-r3-once', '/tmp/arbitrary'], ['../other']):
+        for argv in ([], ['--run-host-r5-once'], ['--run-host-r4-once', '/tmp/arbitrary'], ['../other']):
             with self.assertRaisesRegex(AssertionError, 'EXACT_ARGUMENT_REQUIRED'):
                 outer.attempt_files(argv)
-        for argv in ([], ['--execute-host-r4-once'], ['--execute-host-r3-once', '/tmp/arbitrary']):
+        for argv in ([], ['--execute-host-r5-once'], ['--execute-host-r4-once', '/tmp/arbitrary']):
             with self.assertRaisesRegex(AssertionError, 'EXACT_ARGUMENT_REQUIRED'):
                 operator.attempt_files(argv)
 
@@ -64,6 +67,34 @@ class OperatorBoundary(unittest.TestCase):
         with self.assertRaises(FileExistsError):
             outer.reserve_attempt(scratch, 'host-outer-r3-once', 'actual-host-r3-once')
         r3.rmdir()
+        r4 = outer.reserve_attempt(scratch, 'host-outer-r4-once', 'actual-host-r4-once')
+        with self.assertRaises(FileExistsError):
+            outer.reserve_attempt(scratch, 'host-outer-r4-once', 'actual-host-r4-once')
+        r4.rmdir()
+        pending = scratch / 'actual-host-r4-once'; pending.mkdir()
+        with self.assertRaisesRegex(AssertionError, 'OPERATOR_NAMESPACE_EXISTS'):
+            outer.reserve_attempt(scratch, 'host-outer-r4-once', pending.name)
+        pending.rmdir()
+
+    def test_delta_preparation_inherits_fixed_pins_without_dropping_or_adding_inputs(self):
+        inherited = {'path': str(HERE / 'host-preparation-r3.json'),
+            'sha256': 'd17e168f280f7cb2f18ba57347fcdb16895336063b774b9191ea7545607e7b8c'}
+        previous = [{'path': f'/synthetic/{i}', 'sha256': 'old'} for i in range(19)]
+        replacement = {**previous[0], 'sha256': 'new'}
+        source = {'inherits': inherited, 'bindings': [replacement]}
+        def read_pin(value):
+            self.assertEqual(value, inherited)
+            return json.dumps({'bindings': previous}).encode()
+        self.assertEqual(operator.preparation_bindings(source, read_pin), [replacement, *previous[1:]])
+        for values in ([replacement, replacement], [{'path': '/outside/fixed-set'}]):
+            with self.assertRaisesRegex(AssertionError, 'REPLACEMENT_PIN_SET_INVALID'):
+                operator.preparation_bindings({**source, 'bindings': values}, read_pin)
+        with self.assertRaisesRegex(AssertionError, 'FIXED_PREPARATION_REQUIRED'):
+            operator.preparation_bindings({**source, 'inherits': {**inherited, 'path': '/arbitrary'}}, read_pin)
+        with self.assertRaises(AssertionError):
+            operator.preparation_bindings({**source, 'inherits': {**inherited, 'sha256': 'wrong'}}, read_pin)
+        with self.assertRaisesRegex(AssertionError, 'INHERITED_PIN_SET_INVALID'):
+            operator.preparation_bindings(source, lambda _: json.dumps({'bindings': previous[:-1]}).encode())
 
     def test_work_environment_resolves_actual_listener_tool_missing_from_old_path(self):
         previous = '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin'
