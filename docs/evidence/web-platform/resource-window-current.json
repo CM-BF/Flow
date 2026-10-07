@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T07:48:01.447294+00:00",
-  "state": "QUEUE_AND_QUICK_FULL_SIX_ACTUAL_RETURNED",
-  "groupWindowOwnership": "This team0PG/Chrome holder, no gate/reservation. RecoveryQueue selected2PASS and Quickcomponent6PASS/2PNG actually returned. CHAT05P02 latestreportedcleanup complete; does not infer global no-use.",
+  "recordedAt": "2026-10-07T08:11:22.802668+00:00",
+  "state": "ACCESS_PARTIAL_HANDOFF_DPERF_AMENDED_SSE_SCOPED_ACTUAL_ACCEPTED",
+  "groupWindowOwnership": "Selected task SSE actual passed and exact cleanup returned to Mika. Web has no actual PG/Chrome holder, gate or reservation. Root scoped actual review accepted; no whole-feature or global-idle claim.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T07:48:01.447294+00:00",
-    "kind": "OWNER_AUTONOMOUS_ACTUAL_CLOSEOUT",
-    "source": "queue-full6-closeout-20261007/current.json",
-    "summary": "Queue2/2 scoped accepted and fullQuick6/6 componentfixture approved; original failures retained. NextRecovery SSE within existing21 proposal review pending, no per-run managerpermit. Quick realhost/Send/Queue/main pending."
+    "at": "2026-10-07T08:11:22.802668+00:00",
+    "kind": "ACCESS_PARTIAL_HANDOFF_DPERF_V4_AND_SSE_ACTUAL_ACCEPTED",
+    "source": "access-sse-host-checkpoint-20261007/current.json",
+    "summary": "ACCESS v2 retains three scopes; DPERF original owner v4 exact eleven committed. Selected task SSE actual and cleanup accepted, charge10844/spent81002/rem68998. Real settings host design remains NOT_TAKEN."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1191,10 +1191,10 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "NO_RUNTIME_NEXT_SOURCE_AND_INTEGRATION",
+    "state": "SSE_SCOPED_ACTUAL_ACCEPTED_DPERF_SCOPE_AMENDED",
     "access": {
-      "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
-      "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
+      "ownerHead": "cb0dca62d20a3e4b8d91699190a94a7704ffc19b",
+      "state": "PRODUCT_PATHS_PARTIALLY_HANDOFF_README_AND_RECORDS_RETAINED",
       "actual": "fourth5/5 exit0/6237.586ms; nativehidden/tokenempty;03:51:35.626Z exactcleanup",
       "spentMs": 37077,
       "remainingMs": 22923,
@@ -1205,9 +1205,31 @@
         "fixedHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
         "sha256": "8e1808e0b58e177ebafed15dce2319c590330c7c21dbe7824541273b33c6afca"
       },
-      "next": "README537 approved delta and owner lifecycle closeout remain separately tracked; no product login/chat or automatic extra browser run.",
+      "next": "README/mainreceiptnormalcloseout only; sevenproduct/testremoved, no assumption wholeclaimreleased.",
       "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
-      "actualDeployment": "checkpoint-0413-20261007/access-deployment-receipt.json"
+      "actualDeployment": "checkpoint-0413-20261007/access-deployment-receipt.json",
+      "claim": {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/execution-dashboard/README.md",
+          "docs/evidence/wpf-dashboard-local-access",
+          "plans/wpf-dashboard-local-access"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-local-access",
+        "origin": "new",
+        "taskId": "WPF-DASHBOARD-ACCESS01",
+        "worker": "workspace_panels_owner",
+        "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+        "createdAt": "2026-10-07T02:52:33.082Z",
+        "updatedAt": "2026-10-07T08:01:16.565Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
     },
     "timing": {
       "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
@@ -1311,10 +1333,9 @@
       "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json"
     },
     "recovery": {
-      "ownerHead": "d321240c486f24a0944a0472cb6f3cebd571fc39",
-      "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
-      "packet": "/private/tmp/recovery-created-turn-344f-di09jc0_",
-      "state": "QUEUE_SELECTED_PASS_CLEANED",
+      "ownerHead": "109922a5d4c44216a56f7bc9e025e9b89dcc1ca2",
+      "source": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+      "state": "SELECTED_TASK_SSE_ACTUAL_ACCEPTED_CLEANED_RETURNED",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1338,30 +1359,29 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "ActualcookieRead+queueAckLoss2PASS, fullfeaturepending.",
-      "next": "Root formally dispatched SSE source implementation in original21, panels/Webroot originalWTbranch; no runtimeholder. Listener lifecycle targetreview beforeactual.",
+      "runtime": "TaskProjection actualselected2PASS/cleanreturned; notassistantpatchstream/fullfeature.",
+      "next": "Whole Recovery feature remains incomplete; next scoped validation follows original owner plan and actual cross-lead resource handoff, without per-run manager approvals.",
       "review": "quick-native1-recovery-review-20261007/recovery-feature-review.json",
-      "actualReceipt": "queue-full6-closeout-20261007/current.json",
-      "sourceReview": "recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json",
-      "manifestSha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793",
-      "preparationReview": "Root6f452 lifecycle32/noEmit accepted; 205pins fresh incl111raw, exactfailedreconciliation guarded.",
-      "actualReview": "queue-full6-closeout-20261007/recovery-queue-actual-review.json",
+      "actualReceipt": "access-sse-host-checkpoint-20261007/current.json",
+      "sourceReview": "access-sse-host-checkpoint-20261007/recovery-sse-local-review.json",
+      "actualReview": "access-sse-host-checkpoint-20261007/recovery-sse-actual-review.json",
       "newSegment": {
         "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
         "totalActualMs": 150000,
-        "spentMs": 70158,
-        "remainingMs": 79842,
+        "spentMs": 81002,
+        "remainingMs": 68998,
         "perRunMaximumMs": 60000,
         "cleanupMs": 15000,
         "oldEnvelopeClosed": true,
         "oldUnusedCreditTransferred": false,
         "ownerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
         "authorization": "continuous-validation-segments-20261007/recovery-segment-authorization.json",
-        "lastParentLateMs": 10469.796625,
-        "lastOuterMs": 11206.429125042632,
+        "lastParentLateMs": 10229.626375,
+        "lastOuterMs": 10843.4401670238,
         "chargeBasis": "ceil(max outer,late,parent); original raw unchanged",
-        "lastChargeMs": 11207,
-        "ownerHandoff": "queue-full6-closeout-20261007/recovery-sse-scope-readiness.json"
+        "lastChargeMs": 10844,
+        "ownerHandoff": "queue-full6-closeout-20261007/recovery-sse-scope-readiness.json",
+        "pendingLatestActualAccounting": false
       },
       "historicalFifthSelection": {
         "journey": "page-auth",
@@ -1389,12 +1409,12 @@
       },
       "fullReviewState": "IN_PROGRESS",
       "sourceLocal": {
-        "checks": 32,
+        "observerPass": 12,
         "noEmitExit": 0,
-        "actualMs": 5973.709,
-        "localSegmentMs": 20000,
-        "pgChrome": false,
-        "sourceReview": "recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json"
+        "elapsedMs": 6283.637208980508,
+        "segmentMs": 20000,
+        "PG": 0,
+        "Chrome": 0
       },
       "lastConsumedAdmission": {
         "state": "CONSUMED_PASS_CLEANED_ENV_DELETED",
@@ -1420,21 +1440,28 @@
             "reviewSha256": "5130342004510bc7f4e32211ad32388a334286780c12b632571ffc5c83cb2b8f"
           }
         ],
-        "adminEnvDeletionReceipt": "paired-return-owner-segment-20261007/admin-env-deletion-receipt.json"
+        "adminEnvDeletionReceipt": "paired-return-owner-segment-20261007/admin-env-deletion-receipt.json",
+        "observationMeaning": "Historical created-turn admission; latest SSE result is actualReceipt/actualReview above, no new admission."
       },
       "admission": null,
       "evidenceBudget": {
-        "bytes": 3131063,
+        "bytes": 3157504,
         "retainedTotalBytes": 9437184,
         "startupCeilingBytes": 4194304,
-        "headroomBytes": 1063241,
+        "headroomBytes": 1036800,
         "runReserveBytes": 5242880,
         "freshFloorBytes": 4054056960,
         "revision": "queue-full6-closeout-20261007/recovery-sse-scope-readiness.json",
         "historicalRawPreserved": true,
-        "nextNoDuplicateManifest": true
+        "nextNoDuplicateManifest": true,
+        "observationMeaning": "3157504B measured sourceprepared before latestactual; newarchivedbytes pendingownerreceipt, not resampled."
       },
-      "sourceCandidateState": "SSE_SOURCE_IMPLEMENTATION_NO_RUNTIME"
+      "sourceCandidateState": "SOURCE_LOCAL_AND_SELECTED_TASK_SSE_ACTUAL_ACCEPTED",
+      "historicalCreatedTurnPreparation": {
+        "packet": "/private/tmp/recovery-created-turn-344f-di09jc0_",
+        "manifestSha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793",
+        "preparationReview": "Root6f452 lifecycle32/noEmit accepted; 205pins fresh incl111raw, exactfailedreconciliation guarded."
+      }
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1541,7 +1568,7 @@
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
-  "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
+  "dperf04CurrentPreparation": "Historical544c/929b preparation remains at dperf04PreparationEvidence. Current original-owner v4 exact eleven is committed; fixed current-main composition and validation remain pending, see dperf04CurrentClaim.next.",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
   "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
@@ -1861,16 +1888,60 @@
     "note": "D04 five pureGit and Quick c2 strict+26 are actually passed; original NOT_RUN entries above are historical."
   },
   "dperf04CurrentClaim": {
-    "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
-    "version": 3,
-    "scopeCount": 7,
-    "serverAndAppReleased": true,
-    "bindingRecheckAtFutureAdmission": true,
-    "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
+    "freshReceipt": "access-sse-host-checkpoint-20261007/selected-claims.json",
+    "next": "access-sse-host-checkpoint-20261007/dperf04-reentry.json",
+    "blocker": "ACCESS seven-path dependency and own amendment resolved; current main composition/runtime closure remain original owner work.",
+    "historicalSelectedClaim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-06T16:10:21.626Z",
+      "updatedAt": "2026-10-07T02:54:43.654Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "currentClaimUpdate": {
+      "source": "Root inbound relaying original W01 actual receipt; no second manager ledger read",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 4,
+      "committedAt": "2026-10-07T08:09:31.783Z",
+      "scope": [
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail",
+        "apps/execution-dashboard/src/server.mjs",
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "apps/execution-dashboard/test/local-access.browser.mjs"
+      ],
+      "overlap": [],
+      "ownerStatusUpdated": true
+    }
   },
   "externalCurrentAdmission": {
-    "state": "LATEST_CHAT05P02_RETURN_REPORTED_NOT_GLOBAL_IDLE",
-    "basis": "OriginalLead via root:07:42:01.684Zactualcleanupcomplete,0of2fixtureFAIL,noauto-retryreservation.",
+    "state": "WEB_SSE_CLEANED_RETURNED_NO_SUBSEQUENT_HOLDER_REPORTED",
+    "basis": "Root independent SSE review34af accepted actual08:03:40.903729–08:03:51.747236Z and exactcleanup08:04:20.506604Z; sharedPG returned to Mika. No subsequent holder reported; not global idle.",
     "retainedC02OldKeepBytes": 33685504,
     "reservation": false,
     "latestMainIntake": {
@@ -1891,11 +1962,11 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Web has0actualPG/Chrome and no reservation; OriginalLead reports CHAT05P02 cleanup07:42:01.684Z afterfixture0/2FAIL.",
-    "Future actualholder still coordinated against fresh crosslead state; no inference globalresources idle.",
-    "RecoverySSE source implementation in existing21/noPGholder; listenerreview beforeactual. Quick7e9 final controlledmain-intake ready, productionhost/backenddependencies remain."
+    "No new Web gate or reservation; cross-lead actual handoff governs next shared window.",
+    "DPERF v4 exact eleven committed; owner current-main composition and runtime closure pending.",
+    "Real App MessageSettings fifteen-path candidate remains NOT_TAKEN."
   ],
-  "currentIntake": "queue-full6-closeout-20261007/current.json",
+  "currentIntake": "access-sse-host-checkpoint-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

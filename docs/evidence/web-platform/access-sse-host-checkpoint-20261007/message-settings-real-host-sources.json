@@ -1,0 +1,333 @@
+{
+  "timeUTC": "2026-10-07T07:59:49.251350+00:00",
+  "kind": "READ_ONLY_DESIGN_NOT_IMPLEMENTED_NOT_RUN",
+  "fixedMain": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+  "fixedRecovery": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "fixedQuick": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+  "quickProductionBaseline": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "quickBrowserImplementation": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "sources": [
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/App.tsx",
+      "blob": "d14d2550f622775e234118b155b941007030ff74",
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "bytes": 71660
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "blob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "bytes": 24416
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversations/projection.ts",
+      "blob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "bytes": 28678
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversations/outbox.ts",
+      "blob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "bytes": 8729
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "blob": "bfbfea3240ad9917c257eae386ce55b38857d37d",
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+      "bytes": 13034
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "blob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "bytes": 16768
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "blob": "cb376b2a6c83c13adbab2743e9d9be27c2b8acb7",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "bytes": 2254
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "bytes": 24603
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "blob": "f94b75d126125885bda0fc62f405c9dc59d0f293",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/recovery/binding.tsx",
+      "blob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "bytes": 33220
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "blob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "bytes": 14114
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "bytes": 22929
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugins/types.ts",
+      "blob": "2fedfc97799938c182d33777ff7672b98252abef",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "bytes": 6794
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugins/validation.ts",
+      "blob": "e97a20522a4f4621af64b252ec76b5cc28c5e8be",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "bytes": 8788
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugins/host.ts",
+      "blob": "d97812469d813db74c202825d8bec267ca4fbad8",
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "bytes": 21387
+    },
+    {
+      "commit": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "path": "apps/web/src/plugins/react.tsx",
+      "blob": "2af7f577118bb3cba07a4bfb6dcdee165172cb44",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "bytes": 12209
+    },
+    {
+      "commit": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "blob": "1a5d857a0ef3d462f82f44afd04b2cb6f949806b",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804
+    },
+    {
+      "commit": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "blob": "07c30504f9ec00ebe5cfec2d511a7f08463ea115",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "bytes": 5649
+    },
+    {
+      "commit": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "blob": "34ca8385986a41e91ecdccb30adbe022ca6198a0",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "bytes": 9174
+    },
+    {
+      "commit": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "blob": "b48661a9ece128de829e8110d70dfb88b7661e77",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "bytes": 2885
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/App.tsx",
+      "blob": "49c91049885c56837778ebe04f21f6cae6d139bb",
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "bytes": 50767
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "blob": "9e459b714d11f4a7c11b5459bc797a4640a7a119",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "bytes": 22770
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversations/projection.ts",
+      "blob": "f40fb3d6ec32d3501ffd602c418268485d724a92",
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "bytes": 24648
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversations/outbox.ts",
+      "blob": "dbed737aab5305b7c1ca75ab9bcc652c01e5dfe5",
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085",
+      "bytes": 5323
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "blob": "bfbfea3240ad9917c257eae386ce55b38857d37d",
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+      "bytes": 13034
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "blob": "99391575d41d52abe6625f5d705c6ef6ee12a04c",
+      "sha256": "34e813ff627be9a40bc079a4f99670c0b0b7bf364022a16842985d60c985a523",
+      "bytes": 11653
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "blob": "cb376b2a6c83c13adbab2743e9d9be27c2b8acb7",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "bytes": 2254
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "c9883d287d2c5bd391ef95808b8c72e6607eb3fa",
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38",
+      "bytes": 22822
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "blob": "f94b75d126125885bda0fc62f405c9dc59d0f293",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "bytes": 23725
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "blob": "8fa833dfef7d3ef7f170e9f26f6dc732d10a898f",
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee",
+      "bytes": 14325
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "blob": "07c30504f9ec00ebe5cfec2d511a7f08463ea115",
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "bytes": 5649
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "blob": "34ca8385986a41e91ecdccb30adbe022ca6198a0",
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "bytes": 9174
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "blob": "35757c68f80c87be239eb7a1d95fd2d4a645275d",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "bytes": 32735
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "blob": "563c2362dac7bcdcb7b02b484eb0b6621661042e",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "bytes": 4857
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/contracts/src/conversations.ts",
+      "blob": "d3d5b084920be2c59dec09338a386b3116b82343",
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "bytes": 7382
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "blob": "d626d66b47fdff4f698315d8d2cfa959e65d02e3",
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "bytes": 4175
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/client/src/index.ts",
+      "blob": "c037e85edc37a8768d6785a71b698edf9758b254",
+      "sha256": "bf2716c67e6d0cba75959c90ed31053c11bde3969da91fd1d0b6a6ed823352ba",
+      "bytes": 56010
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "blob": "ca395facf7a58c7d9aef1d98a3845ead8640edc7",
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "bytes": 15496
+    },
+    {
+      "commit": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+      "path": "packages/client/src/claude-message-settings-production.test.ts",
+      "blob": "a185c01e1204c55434339aa6373e0fece5a48fb8",
+      "sha256": "a4bbd54c08ce7ff25b6ed440d8aa77ef4850b0d1f25e19eda5280186ba63fb4a",
+      "bytes": 11539
+    }
+  ],
+  "references": [
+    {
+      "path": "/private/tmp/root-msgquick-compact-host-research-20261007.json",
+      "sha256": "6729eba4fec8b968449a7600e084c00ddd563e09c257dbb537de7a5064ebfd07",
+      "bytes": 7421
+    },
+    {
+      "path": "/private/tmp/message-settings-ownership-interface-c8e/report.md",
+      "sha256": "357a6ab824d70cd1eec3702028e3494646e25e2360f7a751eb13334eb517b082",
+      "bytes": 5616
+    },
+    {
+      "path": "/private/tmp/root-msgquick-full-six-actual-review.json",
+      "sha256": "86fa91a12a77d6059fe54d9c977307960841fb45d408c8541808d7ad3a647557",
+      "bytes": 7618
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    }
+  ],
+  "projectWrites": 0,
+  "engineeringChecks": 0,
+  "runtime": {
+    "Node": 0,
+    "imports": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "serviceGET": 0
+  },
+  "notes": [
+    "Only fixed Git objects; moving Recovery tests excluded. No fresh claim or runtime allocation asserted.",
+    "Two initial path reads failed and were corrected from git ls-tree: conversations/queue and assistant-ui/elements/thread.aui.tsx. No product command ran.",
+    "No upstream-current API assumptions; actual fixed repository interfaces are authoritative."
+  ]
+}

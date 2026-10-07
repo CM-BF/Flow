@@ -81,3 +81,5 @@ GO实际截图观察经root准确转述，非用户逐字：[固定组件六组�
 本后继尚未take/实施；组件主线接收、Recovery/App写权交接与真实backend028/032兼容须分别确认。个人仍af51/v18+d629/v3，原SVC06-05准备固定backend4fe33178与三保留artifact兼容；不是Web-only已可用或新发布系统。MATURE02父source不在本管理claim内，只经中央需求索引交其owner，不代写其状态。
 
 U19具体[只读源研究](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-host-source-research.json)固定7源与官方接口：窄屏sm:rounded-lg不能单独供应radius；可变目录将Apply推远。后继评估有界scroll body外的header/footer，长名可限高但键盘/触控可读完整且相似前缀可辨，复用Thread ComposerActions、现registry及host CAS。仅设计输入/未实施或运行，不撤组件6PASS。
+
+U19真实host的[具体接线候选](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-real-host-design.md)复用Thread ComposerActions与P01现context panel、App唯一C/ownership；Picker仅扩受控presentation，不重新造选择器/slot。实际Send/Queue/Recovery全链与紧凑主操作、正常名/长名/同前缀身份可辨一并验收；当前NOT_TAKEN，原六组只是固定叶组件。

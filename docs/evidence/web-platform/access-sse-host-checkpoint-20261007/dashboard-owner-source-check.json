@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T07:53:40.258856+00:00",
+  "scope": "Two bounded plain-text document endpoints; no full snapshot/ledger mutation/credentials/PG/browser. Unique owner document source verified, not whole UI or claim freshness.",
+  "priorProbe": "/private/tmp/root-dashboard-post-closeout-document-check-20261007.json records root wrongly parsing plain text as JSON; a probe error, not product failure. Preserved unchanged.",
+  "checks": [
+    {
+      "taskId": "WPF-001",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+      "matchesUniqueOwner": true,
+      "bytes": 30279,
+      "responseSha256": "cba35d4e5a9bd8271f106f8b227373c7be78db260271f13ad0b6e3db41c46b70"
+    },
+    {
+      "taskId": "WPF-MESSAGESETTINGS02",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+      "matchesUniqueOwner": true,
+      "bytes": 23240,
+      "responseSha256": "4b4544425d6e770d52980b32ef2ca7cf0351685da46b6e437e3930e4181c5109"
+    }
+  ]
+}
