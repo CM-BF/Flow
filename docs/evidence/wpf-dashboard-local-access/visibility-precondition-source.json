@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07 03:29:38 UTC",
+  "state": "SOURCE_FIXED_NOT_RUN",
+  "target": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "parentFailureMetadata": "9ef0a02fccd052d2f1b29df2699218139d83de05",
+  "changedSource": "apps/execution-dashboard/test/local-access.browser.mjs",
+  "productAndFirstFourGroups": "UNCHANGED",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/types/protocol.d.ts",
+      "bytes": 814210,
+      "sha256": "0410ed82a9ac63269dc1471ed249b280e2d461249a3a331e71cdb54cdf10db33"
+    }
+  ],
+  "sourceFacts": [
+    "coreBundle.js37638 sends focus emulation enabled:true for the main frame unless defaultContext/noDefaults.",
+    "protocol.d.ts2281-2296 getWindowForTarget without targetId uses associated session target, returns exact windowId/bounds.",
+    "protocol.d.ts2301-2310 window-state change leaves other fields unchanged; state only avoids combining minimized with size.",
+    "protocol.d.ts7121-7128 focus emulation controls focused/active simulation."
+  ],
+  "inference": "Focus emulation is a source-supported candidate for why previous run stayed visible; not experimentally proven unique cause.",
+  "change": "Only fifth group native visibility setup/owned cleanup/non-secret observations. No document property override, synthetic visibilitychange or assertion removal. No user tab/window operated.",
+  "budget": {
+    "previousConservativeMs": 18728,
+    "remainingMs": 41272,
+    "cleanupReserveMs": 15000,
+    "newRuntimeMs": 0
+  },
+  "references": [
+    "https://chromedevtools.github.io/devtools-protocol/tot/Emulation/#method-setFocusEmulationEnabled",
+    "https://chromedevtools.github.io/devtools-protocol/tot/Browser/#method-getWindowForTarget",
+    "https://chromedevtools.github.io/devtools-protocol/tot/Browser/#method-setWindowBounds",
+    "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API"
+  ]
+}

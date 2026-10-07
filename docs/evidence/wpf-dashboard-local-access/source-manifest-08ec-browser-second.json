@@ -1,8 +1,8 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "implementation": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
-  "state": "SOURCE_FIXED_VISIBILITY_PRECONDITION_NOT_RUN",
+  "implementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_FAILED_4_OF_5",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -42,8 +42,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/local-access.browser.mjs",
-      "bytes": 10153,
-      "sha256": "e151cf797bb8603a51f0849dd305015cc2ba9f5296cbe988cb6c643df9e12af4",
+      "bytes": 7938,
+      "sha256": "748654ea07cf814665dffd582463ffb872feb596a92ccaea67990423d22d9f68",
       "currentEqualsFixed": true
     }
   ],
@@ -54,10 +54,9 @@
   ],
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
-  "browserEntry": "Same checkLocalAccessBrowser({browser,expect,outputDirectory}); original first four groups and product unchanged. Fifth group disables Playwright focus override on its own page, switches own tab and if needed minimizes exact own window; asserts real hidden before token clearing. No third run granted.",
-  "runtime": "35direct passed at08ec, its dependency source unchanged; two original08ec browser runs FAILED4/5. Newccd885 fifth-group native visibility precondition NOT_RUN.",
+  "browserEntry": "checkLocalAccessBrowser({browser,expect,outputDirectory}) exported from test/local-access.browser.mjs; real server/UI with explicit empty snapshot/fake token. Two authorized isolated runs are archived separately; same original five groups, both FAILED with four groups passed.",
+  "runtime": "35/35 dedicated Node direct PASSED; browser-first parent accounting interrupted visibility; browser-second actual visibility precondition timed out. No third run.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
-  "deployment4320": "NOT_DEPLOYED",
-  "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+  "deployment4320": "NOT_DEPLOYED"
 }

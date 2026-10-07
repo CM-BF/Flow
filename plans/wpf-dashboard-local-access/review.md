@@ -31,3 +31,7 @@ Root原件 `docs/evidence/wpf-dashboard-local-access/root-source-direct-review.j
 ## 第二次实际浏览器安全点
 
 原08ec与五组断言未改。已审/tmp caller修复实际运行；第二轮FAILED：前4组通过，第5组页面visible未变hidden，5s等待超时。该事实仅限定可见性前提未达，不能判产品清除故障或整功能通过。两层双EOF与自有Chrome/组/HTTP/scratch清理闭合，终态日志完整319B/截断0；独立原件在 browser-second。首轮失败、caller修复两份root原报告已归档。第二轮尚待root实际审查；完整feature NOT_STARTED/main/部署待验，不自行批准。原60s保守余41272ms含15000mscleanup，无第三次运行授权。
+
+## 第五组前提修复候选
+
+Source target `ccd88577652369e17385a30c9a9a3dfa8e91d966`，只变browser真实visibility设置与own资源finally，产品08ec/前4组/两次失败原件不变。Root第二轮研究原件已归档；当前candidate尚待独立source review，未运行。原断言仍先hidden再token空；没有属性伪造、事件合成、跳过或降低验收。完整feature仍NOT_STARTED。

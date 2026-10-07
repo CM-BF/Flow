@@ -11,3 +11,5 @@
 2026-10-07 03:15:28 UTC 浏览器安全点：看到普通父监督os.walk onerror把短命Chrome目录ENOENT当致命，异常退出跳过drain导致parent EOF未知。失败保留，精确post-cleanup证明自有进程与scratch不留；不以补观察抹原PermissionError。只修下一运行者该两路径，08ec产品和五组场景保持冻结。两390截图已实际查看，真实凭据未读。
 
 2026-10-07 03:26:34 UTC 第二轮清理安全点：复用已读find-skills/clean-code与原有测试方法，未安装。运行者职责与产品验收分开：ENOENT只忽略已消失成员，其他IO错误保留；异常drain与终态日志计量归运行者，未改五组产品断言。两合成tail/EOF检查及root源码审与第二次native结果各自保留，不把source-only late signal变化称已动态发信号验证。第二次完整收尾证明当前错误不是原父EOF缺口；第五组真实visibility前提失败继续开放，不用模拟事件/改断言掩盖，待具体源定位。source七hash逐字等08ec，原first/direct证据不变；本段只metadata封存，无新运行。
+
+2026-10-07 03:29:38 UTC 源码clean-code安全点：按现有find-skills/webapp-testing/clean-code方法只修第五组实际前提，使用page-associated CDP session避开任意target枚举/用户window。窗口恢复、focusoverride恢复、sessiondetach、own tab关闭分别尝试且错误入原report，保主错误和context最终close；不新增通用runner或visibility调度器。记录状态/ID/布尔，不写凭据值。已核已装Playwright core和协议类型，只读官方CDP方法说明；source仅候选、0运行/无第三heavy，旧失败不改。

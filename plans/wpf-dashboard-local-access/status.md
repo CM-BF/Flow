@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:26:34 UTC |
+| 最近更新 | 2026-10-07 03:29:38 UTC |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成 |
@@ -14,14 +14,14 @@
 | 本片段交付阶段 | implementation |
 | 当前产出 | Flow 入口、显式凭据加载与前四组浏览器交互已验证；页面隐藏后的清除仍待验证 |
 | 下一可用交付 | 完成页面隐藏验收后，交付可由原服务发布者启用的本机入口 |
-| 当前阻塞 | 浏览器隐藏前提未触发；保留失败，待源码定位与后续运行安排 |
+| 当前阻塞 | 浏览器隐藏前提修正已固定待审；两轮失败保留，等待后续实际验证 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
-| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；实现 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7；metadata随后封存 |
+| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；产品08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7；测试前提ccd88577652369e17385a30c9a9a3dfa8e91d966；metadata随后封存 |
 | 工作树dirty状态 | 产品源码与35direct已固定；本次仅metadata封存，提交后核clean |
 | 工作分支状态 | in-progress / browser-partial / visibility-pending |
-| 实现目标 | 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7 |
+| 实现目标 | ccd88577652369e17385a30c9a9a3dfa8e91d966（仅browser前提；产品08ec不变） |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs |
 | 检查状态 | FAILED 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7：两次browser均4/5组完成；第二次visibility预期hidden实际visible超时；35direct已过；真实安装/部署 NOT_RUN |
 | Review | source+35direct 独立限定APPROVED；完整feature NOT_STARTED，browser失败保留 |
@@ -46,7 +46,7 @@
 
 ## 下一步与 handoff
 
-固定源码已交root独立审查；运行者修正已经复审并在第二次实际运行中完成双EOF/日志/清理；下一步只读定位真实visibility前提，未获得第三次heavy，不重复direct。main与4320部署由原operator受控；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
+固定源码已交root独立审查；运行者修正已经复审并在第二次实际运行中完成双EOF/日志/清理；第五组关闭Playwright focus override并用原生tab/确切自有window触发hidden，已固定待源审；未获得第三次heavy，不重复direct。main与4320部署由原operator受控；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
 
 ## 等待记录
 
@@ -73,3 +73,7 @@
 [第二轮原件与budget](../../docs/evidence/wpf-dashboard-local-access/browser-second/archive.json)：实际exit1，外层11246.743667ms，原前四组再次通过；第五组等待真实页面hidden时5秒超时，实际visible。该前提未达不等于产品清除handler失败。parent双EOF、Chrome正常exit0与双EOF、context/HTTPclosed、cleanupErrors[]；最终日志319B/截断0，03:26:34精确自有PID/组/端口/scratch复核均清理。原60s累计保守18728ms/余41272ms（含15s清理），原两次实际outer合18726.850542ms单列；不重置、不自动第三次。08ec七源码固定不变，首轮raw/35direct不改。
 
 [root首轮审查](../../docs/evidence/wpf-dashboard-local-access/root-access-first-browser-review.json)与[root运行者修正审查](../../docs/evidence/wpf-dashboard-local-access/root-access-caller-fix-review.json)原样归档；后二次实证尚待独立审，完整feature仍NOT_STARTED，main/个人安装/部署未验。
+
+## 隐藏前提源码修正（未运行）
+
+固定 `ccd88577652369e17385a30c9a9a3dfa8e91d966` 仅更新browser第5组：ownpage关闭Playwright焦点模拟，切own tab后若仍visible，仅最小化page关联的own window；先断言真实hidden，再保原清除/no-storage断言；finally恢复window/focusoverride并detach/close，失败保留。原前4组、产品六源与35direct不变。已装Playwright源码支持该前提原因候选，但不冒唯一动态根因或新PASS。[source记录](../../docs/evidence/wpf-dashboard-local-access/visibility-precondition-source.json)与[root第二轮研究](../../docs/evidence/wpf-dashboard-local-access/root-access-second-browser-research.json)；源码待独审，运行0，剩41272ms含15s清理不变。
