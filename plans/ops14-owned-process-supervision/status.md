@@ -6,12 +6,12 @@
 | 所属大task | [OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07 02:33:59 UTC |
+| 更新时间 | 2026-10-07 02:36:18 UTC |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 当前产出 | 已完成一次自有进程观察；确认未回收组长与活子进程的差异，原监督模块保持不变。 |
-| 下一可用交付 | 将已观察差异固化为一条共享回归，明确历史观察与当前状态的使用方式。 |
+| 下一可用交付 | 本次回归与原权限/活后代保护已通过，等待最后结果核验；真实后继调用方继续独立交接。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision |
@@ -20,8 +20,8 @@
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
 | Head | 12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2；后继仅证据 / 管理提交 |
 | 工作树 dirty 状态 | 本次证据归档后固定 clean |
-| 实现目标 | 12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2 |
-| 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery/supervise.py, docs/evidence/svc05-history-compatibility/center-recovery/supervision_test.py |
+| 实现目标 | 715525e4d1510b89be7e71a236d537b1f2953038 |
+| 实现范围 | tools/owned-process-supervision/supervise.test.py, docs/evidence/ops14/interface.md |
 | Claim | 2e51f5cb-638b-4c6f-bd49-944581c886ad v2 active；5 literal 范围见 svc05h-amend-receipt |
 | Review | APPROVED_LIMITED_SVC05H_CONSUMER 12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2；21bindings / 2直接consumer；原309/afd独审范围保持 |
 | 已集成 main 状态 | fc3246b307f5436ccecb97f38ccaba10c7a72a5a；2consumer对12c60、3共享源对afd逐字相同，0重测 |
@@ -46,3 +46,5 @@
 2026-10-07 02:32:36 UTC：14e8 probe 准备获 Lead 限定独审后按唯一许可运行，2 case完成/0PG/provider；source未改。详见 zombie-probe-conclusion / manifest。当前 shared 已有 unknown→自有reap→只读ESRCH 的边界，不凭本结果修改产品或真权限判断。局部槽已归还；不重跑旧矩阵。
 
 2026-10-07 02:33:59 UTC：根据原 owner/Lead 源码复核，只补 shared test 与 Interface，supervise.py 不改。新1+相邻权限/活后代3个直接用例候选固定于 zombie-regression-request.json，NOT_RUN；不重跑原15或probe。
+
+2026-10-07 02:36:18 UTC：715525 窄源已获 APPROVED_SOURCE，实际4/4（新1+原3，12未选）/1299ms，原两ResourceWarning保留，outer absent/EOF及各case原cleanup断言成立。结果 manifest 已固定待唯一增量审，0PG/provider，无原probe或全集重跑。a7cf 两case本机观察结果已限定独审通过。

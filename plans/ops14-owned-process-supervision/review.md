@@ -49,3 +49,14 @@ assignment_review，2026-10-06 22:05:04 UTC，APPROVED_LIMITED_SVC05H_CONSUMER�
 Review target commit: 14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9
 
 Lead 完整只读 probe/最后 exit 与记录界限，结论 APPROVED_PREPARATION，并明确许可 OPS14-ZOMBIE-ONCE-0233。新两 case 单次实际结果已固定，等待独立结果核验；原 module/consumer 独审不扩大，0 新产品代码。
+
+
+## 本机观察结果已审 / 共享窄回归结果待审
+
+Review target commit: a7cf38642a8f72f77d75e56a2ffcde8b16bbd476
+
+Lead APPROVED_LIMITED_OBSERVATION，13绑定与原始两case/cleanup/工具退出已独立核，无P1/P2、0复跑。转录见 zombie-probe-independent-approval.json。
+
+Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
+
+Lead APPROVED_SOURCE：新test与Interface窄差异、原实现未改，历史unknown和实际reap后末态区分正确。唯一4例运行现已固定；原ResourceWarning保留，实际结果待Lead增量核验，旧模块/消费者批准不扩大。

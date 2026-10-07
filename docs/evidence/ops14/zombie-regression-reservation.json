@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-07T02:35:16.575439+00:00",
+  "permit": "OPS14-REGRESSION-0236",
+  "sourceTarget": "715525e4d1510b89be7e71a236d537b1f2953038",
+  "freeBeforeBytes": 25758130176,
+  "requestSha256": "8e2a2d3c211010ab8b3b7a14d192a57bc1564263827983556fdd10f8f8a7da34",
+  "state": "reserved-one-shot",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_unreaped_eperm_remains_history_after_own_reap_confirms_absence",
+    "SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent",
+    "SupervisionTests.test_signal_permission_failure_does_not_escalate",
+    "SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped"
+  ],
+  "selectedExpected": 4,
+  "unselectedExpected": 12,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0
+}
