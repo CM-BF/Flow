@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-07T07:21:32.496907+00:00",
+  "scratch": "/private/tmp/eng01k-local-wbkdyj49",
+  "dev": 16777234,
+  "ino": 123618751,
+  "freeBytes": 24179105792,
+  "priorMs": 1452,
+  "mode": "tests",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-trusted-tool-writer/docs/evidence/eng01k/local/vitest.config.mjs",
+    "--reporter=verbose",
+    "-t",
+    "awaits one async host|returns unknown on async tool|cancelled observation|native cancellation seals|replay rechecks|async response cancellation|keeps the extracted ordinary|composes the native-file consumer"
+  ],
+  "sources": {
+    "apps/runner/src/engineering/native-tool-writer.ts": "70a0c8ca2ab8044a1673a0ebc43dabe133b281a0e6ef7ecd843495f0cd7d909b",
+    "apps/runner/src/engineering/native-tool-writer.test.ts": "0ba68da111368333959775b7459578ad18ad54c08a88e2cb21320b8717bb30dd",
+    "apps/runner/src/engineering/native-tool-policy.ts": "a23fe45f436c73264daa5248fe6ca3bd3becd99ddfef3497ba9cfd1d020571df",
+    "apps/runner/src/engineering/native-tool-policy.test.ts": "f17afae6a193b8897a8f192b99613da4b99aad38a9e64a2b05020e328aac8314",
+    "apps/runner/src/native-harness/codex/exchange.ts": "83afe744598e2743060e3e06d95dbf9fc6574b9dea979eb4d62947af0c12be40",
+    "apps/runner/src/native-harness/codex/exchange.test.ts": "308a03192a8f62ad96a452bf71566dac327c69ab0658151b5e54eb01a12ab5d5",
+    "docs/evidence/eng01k/local/run.py": "99c81f321d75c3f185dbf3e3709df6b824f2b452deb4543244e734d14e68bc8c",
+    "docs/evidence/eng01k/local/vitest.config.mjs": "3864ee6e4cb5d54a5d66a5cb373648880e7173b9a47e1cdaadf2c3f2e0367588",
+    "docs/evidence/eng01k/local/tsconfig.json": "e76c661cd79d9936de55d16795900834cd1d6893ef5e2342e471307627b1be8b",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0
+}

@@ -113,3 +113,9 @@ ENG01I四产品及两条公开HTTP/PG旅程已mainef3a6de8；它消费可注入N
 最小职责保持R06通信/生命周期、G写入策略、I编排、F完整内容检查和中心收据单一来源。真实authority.open/close须绑定同一task/attempt/runner/profile/lease与有限工作区；选择实际可强制的写入边界，并证明撤销后剩余进程不能继续修改本次内容集。workspaceWrite/requested model、模型自报和直接child close均不是这项证明。受信检查基线/监督器仍不归执行模型写；未知保留workspace/journal、不得重投或签发revoked。不能为绕过缺口新增第二执行器/SDK loop或任意字符串资格。
 
 并行输入与解除条件：Mika只提供其现有固定native身份/能力与来源观察、当前真实缺口；本队负责host实现与OS/sandbox接缝选择，并先完成0provider强制范围/取消/撤销/残留writer及恢复的直接消费者验证。公开目录只作配置候选。需要真实provider证明的实际model/no-fallback与真实源码修改另固定单合成repo、预算和新场景；没有新许可前不query、不改个人profile/服务，不复用旧封存额度。最终ENG001-05仍要求真实合格native改源码、停止后同内容集受信检查、固定diff/证据和独立actor接受；机械绿、注入authority或计划交付不关闭它。
+
+## 本机受信工具路线（2026-10-07）
+
+[J固定比较](../../../engineering-native-authority/docs/evidence/eng01j/helper-host/host-tool-comparison.md)选择原生工作区只读、受信host唯一单文件写FD的最小后继；[K唯一Interface](../../../engineering-trusted-tool-writer/docs/evidence/eng01k/interface.md)已实现取消封门、真实在途I/O收束及同R06 pump异步响应，限定源码42905d01独审通过，非stock工具回调或完整工程成功。下一组合仍由native_center_owner准备精确scope：固定真实只读native factory、单文件host gate、现有snapshot/checker和unknown保留；不加第二执行器，不把直属child close称所有writer撤销。旧fileChange recipe不变；新route必须明确作为受托host写入语义，不能冒充原生fileChange已验。
+
+模型资格的唯一问题已由GO提交用户，见[J状态](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)。答复前不签旧locked-no-fallback grant、不启动provider；provider接受配置或目录不证明实际模型身份。Linux/cgroup v2可访问仅环境事实，不意味着专域控制、Linux binary或撤销保证已备齐，保留为替代候选。原ENG001-05真实合格模型、全部写入者收束、固定检查与独立语义接受仍开放。

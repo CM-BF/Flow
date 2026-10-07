@@ -1,0 +1,204 @@
+{
+  "at": "2026-10-07T07:25:14.737269Z",
+  "source": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+  "rounds": [
+    {
+      "round": "round-01",
+      "result": "docs/evidence/eng01k/local/round-01/result.json",
+      "mode": "tests",
+      "exitCode": 0,
+      "elapsedMs": 691,
+      "rawBytes": 3676,
+      "privateBytes": 235,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": 18,
+      "selectionSummary": [
+        "Test Files  2 passed (2)",
+        "Tests  18 passed (18)"
+      ]
+    },
+    {
+      "round": "round-02",
+      "result": "docs/evidence/eng01k/local/round-02/result.json",
+      "mode": "types",
+      "exitCode": 0,
+      "elapsedMs": 761,
+      "rawBytes": 0,
+      "privateBytes": 0,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": null,
+      "selectionSummary": []
+    },
+    {
+      "round": "round-03",
+      "result": "docs/evidence/eng01k/local/round-03/result.json",
+      "mode": "tests",
+      "exitCode": 0,
+      "elapsedMs": 1572,
+      "rawBytes": 8665,
+      "privateBytes": 444,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": 8,
+      "selectionSummary": [
+        "Test Files  4 passed (4)",
+        "Tests  8 passed | 41 skipped (49)"
+      ]
+    },
+    {
+      "round": "round-04",
+      "result": "docs/evidence/eng01k/local/round-04/result.json",
+      "mode": "types",
+      "exitCode": 2,
+      "elapsedMs": 901,
+      "rawBytes": 2231,
+      "privateBytes": 0,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": null,
+      "selectionSummary": []
+    },
+    {
+      "round": "round-05",
+      "result": "docs/evidence/eng01k/local/round-05/result.json",
+      "mode": "types",
+      "exitCode": 2,
+      "elapsedMs": 979,
+      "rawBytes": 116,
+      "privateBytes": 0,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": null,
+      "selectionSummary": []
+    },
+    {
+      "round": "round-06",
+      "result": "docs/evidence/eng01k/local/round-06/result.json",
+      "mode": "types",
+      "exitCode": 0,
+      "elapsedMs": 926,
+      "rawBytes": 0,
+      "privateBytes": 0,
+      "group": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "selectedPassed": null,
+      "selectionSummary": []
+    }
+  ],
+  "distinctChecks": 23,
+  "newChecks": 21,
+  "oldDirectConsumers": 2,
+  "selectedAcrossRounds": 26,
+  "overlap": 3,
+  "names": [
+    "apps/runner/src/engineering/native-tool-policy.test.ts > async response cancellation seals admission while ownership is still pending",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > claimed completion with different content or a second tool item is rejected",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > old ordinary and file-change recipes remain incapable of accepting dynamic tool writes",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > readonly dynamic recipe accepts only its own successful host receipt and matching terminal item",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > same native call recovers a lost ACK without a second write",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > unstarted tool calls and native file/exec approvals cannot acquire host permission",
+    "apps/runner/src/engineering/native-tool-policy.test.ts > wrong thread, turn, tool or body is denied without using the write port",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > a timed out drain remains unknown even after the late operation settles",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > cancelled observation retains a real pending write until its eventual close",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > close seals admission before a late ownership check returns",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > close waits for real write settlement and FD close, not native process close",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > conflicting digest and unexpected path/oversized/base64 input are rejected before writing",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > file port rejects symlinks/hardlinks and detects a path replaced after open",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > native cancellation seals before ownership resume and does not claim native revocation",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > partial write or close errors keep unknown and never replay the operation",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > rejects another body or call id after one admission without an extra write",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > replay rechecks current ownership and cannot reuse a stale lease ACK",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > turn mismatch and a changed trusted binding cannot reopen a gate",
+    "apps/runner/src/engineering/native-tool-writer.test.ts > writes only the pinned calculator, fsyncs and retains its inode; ACK recovery never writes again",
+    "apps/runner/src/engineering/native-writer.test.ts > composes the native-file consumer with the same full host snapshot and independent checker after injected revocation",
+    "apps/runner/src/native-harness/codex/exchange.test.ts > awaits one async host tool response in the existing pump before accepting its final evidence",
+    "apps/runner/src/native-harness/codex/exchange.test.ts > keeps the extracted ordinary consumer on one receive pump and closes its owned JSONL peer",
+    "apps/runner/src/native-harness/codex/exchange.test.ts > returns unknown on async tool cancellation while its writer retains the pending effect"
+  ],
+  "processCallerMs": 5830,
+  "rawBytes": 14688,
+  "privateEndSamplePeakBytes": 444,
+  "privateLimitBytes": 16777216,
+  "rawLimitBytes": 2097152,
+  "processBudgetMs": 180000,
+  "allSupervisorGroupsAbsent": true,
+  "allEof": true,
+  "allExactScratchRemoved": true,
+  "provider": 0,
+  "PG": 0,
+  "stockNativeStarts": 0,
+  "browser": 0,
+  "installs": 0,
+  "limitations": [
+    "File writes use private synthetic fixture; native tool messages injected.",
+    "Two unchanged real Node JSONL consumers exercised synchronous compatibility; no provider/native binary.",
+    "23 distinct across rounds, not one full 23/23 run.",
+    "Types rounds04/05 failed and remain original; round06 passes.",
+    "Private bytes are per-round end observations, not a continuously sampled peak.",
+    "Entry ownership port and native read-only OS enforcement are trusted composition prerequisites, not furnished by this module.",
+    "Unknown tool observation stays unknown after late close; never NativeWriteAuthority.revoked."
+  ],
+  "outerToolObservations": [
+    {
+      "rounds": [
+        "01"
+      ],
+      "toolExitCode": 0
+    },
+    {
+      "rounds": [
+        "02"
+      ],
+      "toolExitCode": 0
+    },
+    {
+      "rounds": [
+        "03",
+        "04"
+      ],
+      "sessionId": 95943,
+      "toolExitCode": 1,
+      "scope": "last command types04; separate results retain tests03 exit0"
+    },
+    {
+      "rounds": [
+        "05"
+      ],
+      "sessionId": 90973,
+      "toolExitCode": 1
+    },
+    {
+      "rounds": [
+        "06"
+      ],
+      "sessionId": 4792,
+      "toolExitCode": 0
+    }
+  ]
+}

@@ -30,8 +30,15 @@ export interface CodexExchangeRecipe<Thread extends { threadId: string } = { thr
   checkCompletion(): void;
   respond(method: string, params: Json): { allowed: boolean; reply: Reply };
 }
+/** The trusted async recipe owns unfinished effects after an unknown reply. Keep the synchronous
+ * recipe's direct-call contract intact. Transport close is never tool writer revocation. */
+export type AsyncCodexExchangeRecipe<Thread extends { threadId: string } = { threadId: string }> = Omit<CodexExchangeRecipe<Thread>, 'respond'> & {
+  respond(method: string, params: Json, signal: AbortSignal): Promise<{ allowed: boolean; reply: Reply }>;
+};
 export async function runCodexExchange<Thread extends { threadId: string }>(createTransport: CodexTransportFactory, input: CodexExchangeInput,
-  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: CodexExchangeRecipe<Thread>) {
+  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: Omit<CodexExchangeRecipe<Thread>, 'respond'> & {
+    respond(method: string, params: Json, signal: AbortSignal): { allowed: boolean; reply: Reply } | Promise<{ allowed: boolean; reply: Reply }>;
+  }) {
   const deadline = new AbortController();
   const timer = setTimeout(() => deadline.abort(), limits.wallTimeMs);
   const signal = AbortSignal.any([input.signal, deadline.signal]);
@@ -106,7 +113,8 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
           if (message === null) break;
           if (++observed % 32 === 0) await yieldToIO(undefined, { signal });
           if (message.kind === 'server-request') {
-            const answer = recipe.respond(message.method, message.params);
+            const answer = await recipe.respond(message.method, message.params, signal);
+            signal.throwIfAborted();
             violated ||= !answer.allowed;
             await connected.respond(message.id, answer.reply);
             if (violated) wake();

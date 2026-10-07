@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T07:22:59.474393+00:00",
+  "scratch": "/private/tmp/eng01k-local-_u4fvsk9",
+  "dev": 16777234,
+  "ino": 123619409,
+  "freeBytes": 24187056128,
+  "priorMs": 4904,
+  "mode": "types",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-trusted-tool-writer/docs/evidence/eng01k/local/tsconfig.json"
+  ],
+  "sources": {
+    "apps/runner/src/engineering/native-tool-writer.ts": "70a0c8ca2ab8044a1673a0ebc43dabe133b281a0e6ef7ecd843495f0cd7d909b",
+    "apps/runner/src/engineering/native-tool-writer.test.ts": "0ba68da111368333959775b7459578ad18ad54c08a88e2cb21320b8717bb30dd",
+    "apps/runner/src/engineering/native-tool-policy.ts": "fe0648ca18c8593259069af33108f66f2695baa5f6b561a137c5f8ff823b84b7",
+    "apps/runner/src/engineering/native-tool-policy.test.ts": "f17afae6a193b8897a8f192b99613da4b99aad38a9e64a2b05020e328aac8314",
+    "apps/runner/src/native-harness/codex/exchange.ts": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+    "apps/runner/src/native-harness/codex/exchange.test.ts": "6dffda5ebf0f6664486f6083e6e76ab9c71992d317e119ad727064807b708349",
+    "docs/evidence/eng01k/local/run.py": "99c81f321d75c3f185dbf3e3709df6b824f2b452deb4543244e734d14e68bc8c",
+    "docs/evidence/eng01k/local/vitest.config.mjs": "3864ee6e4cb5d54a5d66a5cb373648880e7173b9a47e1cdaadf2c3f2e0367588",
+    "docs/evidence/eng01k/local/tsconfig.json": "e76c661cd79d9936de55d16795900834cd1d6893ef5e2342e471307627b1be8b",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0
+}

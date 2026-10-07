@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:25:47.787621+00:00 / main4fe33178已接X01/C02公共差量；本批接收已审父状态与ENG01K唯一来源登记，实际188/候选189分列 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:32:00.545553+00:00 / main3e4362b0；受信工具42905六源已独审并通过组合root types，随本批受控接收；看板实际189 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -358,3 +358,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## 2026-10-07 受信工具来源与状态接收
 
 两父status及ENG01K登记均获assignment_review独立文档批准，固定前像与main一致后仅接五个已审文件；[本批绑定](../../docs/evidence/i02/eng01k-source-status-intake.json)。历史时间未知、CI/模型资格用户待决和未部署边界保留；实际4320仍188来源，189部署另记。无工程重测、PG、provider或个人服务操作。
+
+## 受信工具限定接收
+
+[ENG01K固定组合](../../docs/evidence/i02/trusted-tool-intake.json)：6源完整独审、当前与固定哈希一致，I02现shared前像逐字匹配后接入；root noEmit0/9018ms。23不同作者检查复用不重跑，原两类型失败保留。单host写门与同pump异步响应不表示真实模型工具、OS只读native或授写资格已完成；个人服务/原grant不改。

@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T07:29:22.155013+00:00",
+  "mainBefore": "3e4362b08359433620a07b05bd034a25e2dd7c4b",
+  "source": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+  "review": "Execution Lead APPROVED local gate/recipe/async seam; no P1/P2",
+  "maxSeconds": 45,
+  "maxOwnBytes": 8388608,
+  "rawBytes": 65536,
+  "availableBytes": 24171114496,
+  "PG": 0,
+  "provider": 0,
+  "selection": "root noEmit only; fixed 23 distinct author checks not rerun",
+  "sources": [
+    {
+      "path": "apps/runner/src/engineering/native-tool-writer.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 9970,
+      "sha256": "70a0c8ca2ab8044a1673a0ebc43dabe133b281a0e6ef7ecd843495f0cd7d909b"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-writer.test.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 9655,
+      "sha256": "0ba68da111368333959775b7459578ad18ad54c08a88e2cb21320b8717bb30dd"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-policy.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 5703,
+      "sha256": "fe0648ca18c8593259069af33108f66f2695baa5f6b561a137c5f8ff823b84b7"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-policy.test.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 6448,
+      "sha256": "f17afae6a193b8897a8f192b99613da4b99aad38a9e64a2b05020e328aac8314"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 8686,
+      "sha256": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "fixedRef": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+      "bytes": 16827,
+      "sha256": "6dffda5ebf0f6664486f6083e6e76ab9c71992d317e119ad727064807b708349"
+    }
+  ]
+}

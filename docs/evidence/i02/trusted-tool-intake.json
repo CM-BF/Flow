@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T07:32:00.545553+00:00",
+  "source": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+  "delivery": "543324f47a21aaaeea0827be38f89160345f5237",
+  "review": "Execution Lead independent APPROVED; 6 complete source/test reads plus current/fixed bindings; no P1/P2",
+  "manifestSha256": "acc496cd2208f8864af10fda7e02b02e44265d6f1cbfffbdc0b7e1c5c26e7f3c",
+  "verifiedBindings": {
+    "source": 6,
+    "protected": 142,
+    "evidence": 45,
+    "installedEntry": 9
+  },
+  "preimages": "4 new + 2 exact main/base matches; no shared overwrite",
+  "integrationCheck": {
+    "kind": "root noEmit",
+    "exitCode": 0,
+    "elapsedMs": 9018,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    }
+  },
+  "authorChecks": "23 distinct across rounds (21 new, 2 old consumers); not rerun",
+  "limits": [
+    "0 provider/PG/stock start",
+    "No actual model qualification or NativeWriteAuthority grant",
+    "Native read-only OS host and actual dynamic callback remain open",
+    "Original synchronous callers and fileChange policy unchanged"
+  ],
+  "provider": 0,
+  "personalServices": "UNCHANGED",
+  "relatedDocs": {
+    "review": "native_center_owner APPROVED_DOCS 2026-10-07; complete six fixed/current files, zero runs",
+    "bindings": [
+      {
+        "path": "plans/d05-architecture-view/status.md",
+        "ref": "22d59f8f086860cfd798b2b51a1cd405a2937c58",
+        "bytes": 33771,
+        "sha256": "b797ec14583406d7ac7a0fe061165827d5ae0d4b84deab7ddbc2d76f1ca27ecd"
+      },
+      {
+        "path": "docs/evidence/d05/eng01k-live-before.json",
+        "ref": "22d59f8f086860cfd798b2b51a1cd405a2937c58",
+        "bytes": 1676,
+        "sha256": "bca29d3a8a291330f68b3ee6dd1a8c918eba5d1403b34e5388aba502c68674fe"
+      },
+      {
+        "path": "docs/evidence/d05/eng01k-live-checkpoint.json",
+        "ref": "22d59f8f086860cfd798b2b51a1cd405a2937c58",
+        "bytes": 260,
+        "sha256": "edfc7cd6ab4e537cc20b8bfbb371b77a2307cc6c97e68694b645ea29e483f1bf"
+      },
+      {
+        "path": "docs/evidence/d05/eng01k-live.json",
+        "ref": "22d59f8f086860cfd798b2b51a1cd405a2937c58",
+        "bytes": 1196,
+        "sha256": "f46b3525c3f6d87c766e3b80bee035a70c28ab5636b4d0b0e64a72646e94501a"
+      },
+      {
+        "path": "plans/eng01-engineering-delivery/plan.md",
+        "ref": "42ad8b072f950f48fe2bc7fa3acb81ba30ca6a7d",
+        "bytes": 19201,
+        "sha256": "84f246843d8931c8c4278dd6e218468f8fa6a125d080ff49102798b5372e50fa"
+      },
+      {
+        "path": "plans/eng01-engineering-delivery/status.md",
+        "ref": "42ad8b072f950f48fe2bc7fa3acb81ba30ca6a7d",
+        "bytes": 9103,
+        "sha256": "f96f101a3cdb60e9af99c31a4e9a0dd87e80f744215caa0543317590952d4536"
+      }
+    ]
+  }
+}
