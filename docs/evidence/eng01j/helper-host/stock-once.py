@@ -6,6 +6,7 @@ HERE = Path(__file__).resolve().parent
 OLD_SHIM = HERE.parent/'stock-helper/run.py'
 SUPERVISOR = ROOT/'tools/owned-process-supervision/supervise.py'
 NODE = '/opt/homebrew/opt/node@24/bin/node'
+PYTHON = '/opt/homebrew/opt/python@3.13/bin/python3.13'
 LOADER = '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs'
 NATIVE = '/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex'
 
@@ -49,6 +50,7 @@ def run():
     started=time.monotonic();deadline=started+10
     signal.signal(signal.SIGALRM,lambda *_:os._exit(124));signal.setitimer(signal.ITIMER_REAL,10)
     resource.setrlimit(resource.RLIMIT_CORE,(0,0))
+    if Path(sys.executable).resolve()!=Path(PYTHON).resolve():raise RuntimeError('INTERPRETER_CHANGED')
     out=HERE/'stock-run-once';out.mkdir(mode=0o700) # Exclusive; never replay a failed/unknown run.
     # Check the reused persistence module before importing it; no user/service reads.
     if digest(OLD_SHIM)!='d037b8a0c0075ae0727150344ec714ed41753d3bb6a2465e30081a6b5db23ba7':raise RuntimeError('SHIM_CHANGED')
@@ -99,7 +101,7 @@ def run():
         save(out/'policy.sb',policy)
         if measure(scratch)>1048576:raise RuntimeError('PRIVATE_BYTE_LIMIT')
         save(out/'stock-intent.json',{'maximumStockAttempts':1,'native':NATIVE,'shim':str(OLD_SHIM),'requestSha256':launch['requestSha256']})
-        raw=invoke('stock',(sys.executable,'-B',str(OLD_SHIM),'exec-only',str(control),str(control/'request.json')),env,16384,3)
+        raw=invoke('stock',(PYTHON,'-B',str(OLD_SHIM),'exec-only',str(control),str(control/'request.json')),env,16384,3)
         reply=json.loads(raw)
         facts={name:{'identity':identity(workspace/name),'hex':read_file(workspace/name,2).hex()} for name in before}
         result['fileFacts']=facts;result['responseMatchesExpected']=(reply=={'status':'ok','payload':{'operation':'fs/writeFile','response':{}}});result['writeAccess']='unknown'
