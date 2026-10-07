@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:08:38.232210+00:00 |
+| 最近更新时间 | 2026-10-07T07:22:01.129780+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v11 ACTIVE31scope](../../docs/evidence/x01/center-claim-pg-amend-v11.json)；在v10基础仅新增claim-pg.test.ts，c15五源与旧已审源保持固定 |
+| Claim | [v13 ACTIVE32scope](../../docs/evidence/x01/semver-amend-v13.json)；server/index已v12移出并STOP；semver新test与独立fixture目录合法追加 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 仅归档已审PG与READY intake；提交push后clean，源码/原始结果冻结 |
-| 工作分支状态 | approved |
-| 检查状态 | 中心实际PG6/6/107HTTP；完整资源收尾已独审。未重跑旧27/10/11 |
-| Review | db_transaction_owner 07:06:23Z APPROVED/0P1P2，fixed result05dd4050/packetb3fa09df；center-claim-pg-result-independent-review.json |
-| 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
-| 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
-| 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
-| 本片段交付阶段 | implementation |
+| 工作树 dirty 状态 | semver固定source 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9；源码/raw停止，metadata封存提交后clean待审 |
+| 工作分支状态 | review |
+| 检查状态 | semver9/9实际材料/loader检查，1tar；首次types语法失败保留，修后types0。原PG/旧tests未重跑 |
+| Review | 中心PG与main已接收；semver源码/结果独审PENDING，semver-review-ready.md |
+| 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
+| 实现目标 | 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9 |
+| 实现范围 | apps/runner/src/plugins/semver-package.test.ts, experiments/plugins/semver-compare, docs/evidence/x01/semver-local.py, docs/evidence/x01/semver-vitest.config.mjs, docs/evidence/x01/semver-tsconfig.json |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心领取片已进入主线；现将真实semver能力包接入已交付的材料与调用接口 |
-| 下一可用交付 | 受控接收中心领取片并交回共享入口；随后继续生产runner与真实npm能力 |
-| 当前阻塞 | NONE: 中心片READY待集成；当前0实际资源持有/待launch |
+| 当前产出 | 真实semver能力包已通过材料入库、加载、调用和产物验证，固定来源与结果正在独审 |
+| 下一可用交付 | 受控接收已审npm能力包，再接生产runner完整调用链 |
+| 当前阻塞 | NONE: 固定片待独审；当前0actual/待launch |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -35,10 +35,10 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入；新增现成npm能力固定来源/许可/版本及bundle或受控依赖验收，已选semver7.8.5/ISC compare，尚未构建/执行 |
+| X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；受控主线接收/完整生产任务与升级身份仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入；须另验至少一个现成npm能力及升级身份 |
+| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链/升级/三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -277,3 +277,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:15:18.602113+00:00：独核main9816正式I02回执及13产品逐字与本树相同，rootnoEmit0/9897ms，未重跑PG。明确立即STOP apps/server/src/index.ts；下一原子amend仅交回此literal给CHAT05P02，其余claim保留。原中心片delivered，真实semver包输入为新的独立后继，本段不改已审中心/claim/journal。
 
 2026-10-07T07:16:15.389Z：v13 COMMITTED32scope，仅新增semver-package.test.ts与experiments/plugins/semver-compare；server/index已v12交回。semver7.8.5/ISC九个实际输入与esbuild0.28.2已只读固定，无安装/复制node_modules。开始原有界20min能力包段，source/meta≤1MiB/TMP16MiB/raw256KiB/最多4child各60s；当前尚0运行。中心13源main9816保持固定，原输入/raw不改。
+
+2026-10-07T07:22:01.129780+00:00：semver source4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9，9/9及types修后0；最多4顶层全部已用，单tar子进程exit0，五own根确认absent，local已直交C02。首types失败/earlyunknown审计保留，wholeexternalwall不推定。新artifact+source/support固定待独审；主线center13已接、server/index于07:15:18.707Z v12原子交回CHAT05P02，不恢复写权。上游7实际module/ISC及tool固定、0install/network；packagebundle无externalruntimeimports。架构只新增trusted能力包产物，正式基线更新待main接收由Lead负责；fullX01不勾Done。

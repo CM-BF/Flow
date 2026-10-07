@@ -1,0 +1,256 @@
+{
+  "recordedAt": "2026-10-07T07:22:01.129780+00:00",
+  "sourceCommit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+  "base": "fdba6dcbedadb07360f734974062bcd81dd2a007",
+  "review": "PENDING",
+  "files": [
+    {
+      "path": "apps/runner/src/plugins/semver-package.test.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "23f4f0474da0642bf8e5ad6af87c5a99542cfec1",
+      "role": "source/support",
+      "bytes": 7960,
+      "sha256": "17fc11603b0883705087ea5c061c04174c5c12951ad728461066008e12fb4496"
+    },
+    {
+      "path": "docs/evidence/x01/claim-main-receipt.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "fa9c982e9a01823ec8400fafb8c2efd98105dd2f",
+      "role": "source/support",
+      "bytes": 9017,
+      "sha256": "93ef7d90ccc85d8b21df9dd82a035ee05a56e56be75ca48cb9d3145f3563a5f1"
+    },
+    {
+      "path": "docs/evidence/x01/semver-amend-request.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "34963b9030d4c73c0473033d7dcf845c91d3ac19",
+      "role": "source/support",
+      "bytes": 1591,
+      "sha256": "b105035a2f7a94ef716bf5b5265f0ec25602829ee17706d124b10c3db0543eb4"
+    },
+    {
+      "path": "docs/evidence/x01/semver-amend-v13.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "9cc31e9b99030925affb26af915b1d3ee4d297d6",
+      "role": "source/support",
+      "bytes": 1903,
+      "sha256": "4cd2012d06354e39ce085bd0f511ef24f2626dcd9f51860efc15902f78a63961"
+    },
+    {
+      "path": "docs/evidence/x01/semver-inputs.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "b9d366176938da311afd3522ea43cebabfbcb9ca",
+      "role": "source/support",
+      "bytes": 3883,
+      "sha256": "472fdc6b9d3e7bd42533716ab0aade35852c73a6d0c337e8e002d27b4a421956"
+    },
+    {
+      "path": "docs/evidence/x01/semver-interface.md",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "08063bbddc2ce521a7f6930f8a7b8abe375c5dbc",
+      "role": "source/support",
+      "bytes": 2048,
+      "sha256": "8bb64b634d3fa617b8869f2a8979faf97a4babc834ba781d492ac30fd8610f44"
+    },
+    {
+      "path": "docs/evidence/x01/semver-local.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "07e5d90eaf407113a71a3a7e56edf36d73d154db",
+      "role": "source/support",
+      "bytes": 29199,
+      "sha256": "4d77eaf53f0b33af89d380bf509fc9f837ac86b8e8735a58d4e974847130bce5"
+    },
+    {
+      "path": "docs/evidence/x01/semver-local.py",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "1c67499cfb7708da583032f6ce91b31bd370cd4e",
+      "role": "source/support",
+      "bytes": 5862,
+      "sha256": "ac8c346934bc0952ec052f00de569a5e5ebc08a27ca92fec53530e7b99a2761e"
+    },
+    {
+      "path": "docs/evidence/x01/semver-result-summary.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "68df23254c47e7f6093a933111d4666c0cde0cc7",
+      "role": "source/support",
+      "bytes": 2421,
+      "sha256": "c7f0ff52e1ac40bf00163c8358c19f2f5050ed6cd6c6dca4adb4d501b3bd0dce"
+    },
+    {
+      "path": "docs/evidence/x01/semver-tsconfig.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "f2cb5ae901bc307a591a6dd9a733b210155e6bc0",
+      "role": "source/support",
+      "bytes": 172,
+      "sha256": "a4891e3f46c54170099fb01368249a6bbbafa8749652aa59a0c4c352a17992a0"
+    },
+    {
+      "path": "docs/evidence/x01/semver-vitest.config.mjs",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "9a293422b74fdd6dda39e0a5ea24f769b847dd59",
+      "role": "source/support",
+      "bytes": 408,
+      "sha256": "f53d843505619e3619360137e1db6b0c70936553ae1bba07563486c07874592d"
+    },
+    {
+      "path": "docs/evidence/x01/server-entry-handback-request.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "0ce0ee04c87b672490a98ed6fece4dab51d5dfa6",
+      "role": "source/support",
+      "bytes": 1503,
+      "sha256": "7519eadf7ae199c2c4be78f868c16e4bb8ee105fe7c2a04e4fcf4d416dee9fbb"
+    },
+    {
+      "path": "docs/evidence/x01/server-entry-handback-v12.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "1ef012b865bc0e71bd2a4182a48f8ff0f1f9d87f",
+      "role": "source/support",
+      "bytes": 1817,
+      "sha256": "f16d3312a0ef832f6b8cb0254cee64e548c7a51e9e0b21356a3282525382d679"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/adapter.mjs",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "1a3f81dbd1fb24fd11529627bb0e67d0b70e8075",
+      "role": "source/support",
+      "bytes": 733,
+      "sha256": "36d45257abbf96d39870491dfefe1a278faa6686471851699e6f759a75c874bd"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/flow-plugin.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "4bc537558162df9bc5dd63c7f2e51b9f13e178ba",
+      "role": "source/support",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/index.mjs",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "4eca847e2de0acb141afc9d45c7e52ec4cf342e4",
+      "role": "source/support",
+      "bytes": 9749,
+      "sha256": "2ab17629625064a227043d068cbecdf184725391c606dc30b9aa9959ab3702b7"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/license.txt",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "19129e315fe593965a2fdd50ec0d1253bcbd2ece",
+      "role": "source/support",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/package.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "a2f90a217af7f0660a87887012e867b2c335cb83",
+      "role": "source/support",
+      "bytes": 98,
+      "sha256": "b84c47732858827c16694c3a6f65a005dd6519f089dee0b16c62dadda6f805f8"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/provenance.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "75b762b6fca3127021da82f5dc16aefa35d763a6",
+      "role": "source/support",
+      "bytes": 2397,
+      "sha256": "ace6bddcf7ba8c1888feb928495334dc5a3fe982c386dec00188da3f6c0481cf"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "60b637ad15eadc641c60a0b91687f56ec3519214",
+      "role": "unchanged-direct-consumer",
+      "bytes": 4764,
+      "sha256": "09b410abd6028019e3c74b38ef9596b5f1dd2981c40e9d9306efae6ecab6309d"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "8ba8a98a74f5422036b25f5ce5be7718849ffecf",
+      "role": "unchanged-direct-consumer",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "0a607a5486f39e8f4b9320cc85a901974e122a56",
+      "role": "unchanged-direct-consumer",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "2519f6730fc9d0574aaae997b847e98fdea12407",
+      "role": "unchanged-direct-consumer",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "role": "unchanged-direct-consumer",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-input.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "0a6601d1bebe564f213c2f8a9210e9b6c12ee953",
+      "role": "unchanged-direct-consumer",
+      "bytes": 25912,
+      "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-result.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "0308a9ebe85aecfed2293cac17222f4892fca238",
+      "role": "unchanged-direct-consumer",
+      "bytes": 5956,
+      "sha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "af3dbd86bc2839ac1eabbf6f615dbfac09309b8b",
+      "role": "unchanged-direct-consumer",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "role": "unchanged-direct-consumer",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    }
+  ],
+  "externalSourceAndBuildBindings": "docs/evidence/x01/semver-inputs.json (nine npm source/metadata/license plus exact esbuild binary; all rehashed at seal)",
+  "bindingCount": 28,
+  "boundBytes": 190266,
+  "newBytes": 81619,
+  "newDependencyInstall": false,
+  "artifactFolder": "experiments/plugins/semver-compare/package",
+  "priorScopesFrozen": "Center13 source/main9816, oldraw/manifest, c15/0224/967 unchanged; server/index stopped and removedv12",
+  "actual": {
+    "topLevelCommands": 4,
+    "tarChild": 1,
+    "selected": 9,
+    "passed": 9,
+    "typesFirstExit": 2,
+    "typesFinalExit": 0,
+    "rawBytes": 478,
+    "singleRecordBytes": 29199,
+    "rootsConfirmedAbsent": 5,
+    "peakTemporary": "UNKNOWN end samples only",
+    "externalWholeWall": null,
+    "PG": 0,
+    "provider": 0,
+    "nativeHarness": 0
+  },
+  "scope": "Trusted fixed installed npm source build-time bundle through prepare/read/import/invoke and artifact/verification. No center or runRunner connection, package isolation claim, verified upstream tarball, real version-upgrade workflow or full X01 completion."
+}

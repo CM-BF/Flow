@@ -1,3 +1,11 @@
+状态：PENDING（真实npm semver能力包及9例直接结果；中心旧片已main）
+
+Review target commit: 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9
+
+[固定交审入口](../../docs/evidence/x01/semver-review-ready.md)。0PG/provider/native模型；首次types失败保留，9/9与修后types0不等生产runRunner完整链。中心旧审批/历史原件保留。
+
+---
+
 状态：APPROVED（中心六组真实PG结果忠实性与最小intake；未main/非完整X01）
 
 Review target commit: 05dd405074fce86a5e9142f20278bd41e27e1e24
