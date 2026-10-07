@@ -1,0 +1,128 @@
+{
+  "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+  "result": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+  "status": "DELTA_REVIEW_PENDING",
+  "priorSource": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+  "findings": [
+    "tool public403 compatibility"
+  ],
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 11569,
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "sourceCommit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 7720,
+      "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/commands.ts",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 11569,
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 7720,
+      "sha256": "01e22e5661c336696c42d1e9ca51573da22a8e98c967e3e1b576cfcc75aa7d69"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-behavior-fix/output.log",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 6570,
+      "sha256": "fcabdf61cb5da663d8ac092f4eff79564bea84657637caef6032f375ae288002"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-behavior-fix/reservation.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 2874,
+      "sha256": "7bccf4e331219e90234c0c3b5d9be44e9115ee7dd4a7e65bd089984679f75300"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-behavior/output.log",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 11744,
+      "sha256": "a9a66cde16104710e73335a6e4b29ad2eb9eb7af460428ef0752d1492b78e25c"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-behavior/reservation.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 2870,
+      "sha256": "e2b8e892ceeb0f7e6db1f44a5edb3e9f30bdd67e22a19ec7cf2fb200a327c423"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-local.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 5788,
+      "sha256": "7fc3e7fa37b2707c2018f9af62611e8a5833700456cd44351eeceefcc78a0ac8"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-local.py",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 5101,
+      "sha256": "6f44e0487e615678560feab0afa07e08f8cff5b3507ba28cb1bf4b44171cfc13"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-tsconfig.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 164,
+      "sha256": "c514e345c59e323068813127070138edde1d1248cb78bc7f1972fefbf305e9fd"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-types/output.log",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair-types/reservation.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 2539,
+      "sha256": "62b51c7a7899b76287dce2ae499280ecf4ba34ba58605199fdec475aa6c2f34c"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/closure.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 67281,
+      "sha256": "6cc889eb6c1552c9dcf3d155f6280239ad5d62b210ca6f4ca39082f2818eff50"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/initial-review.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 753,
+      "sha256": "a91a198f5100d9b0b60cf82b9b82629a7c4ec62c9049103729cf5936404423ca"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/original-closure.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 67246,
+      "sha256": "3fd5837dd2b980d6098173e8bafd86b5e2d7ab1be138fe477e54c6049b71c0fa"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/start.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 399,
+      "sha256": "1ca043f7c2e25aeef8f48242bcdd0f9ab1c275f0e66621ef0dd9125bfebd1b08"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/repair/summary.json",
+      "sourceCommit": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+      "bytes": 950,
+      "sha256": "b37c5eaf1fef3ae106149180bc4bc5916caaef06bb4268d342dc27674a1c85a1"
+    }
+  ],
+  "productDelta": [
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts"
+  ],
+  "unchangedProductOtherThanThese": true,
+  "wholePG": "NOT_RUN",
+  "newTests": "3/3 and affectedtypes0; original15notrerun",
+  "oldRaw": "unchanged",
+  "cache": "originalclosure archived; one ignored .vite result excluded only from repair closure; not a runtime input"
+}
