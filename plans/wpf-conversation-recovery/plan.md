@@ -196,3 +196,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 07:25:47 UTC — 原02/05 CREATE第二故障点实际完成
 
 344f parent窄修后[同选组实际2/2](../../docs/evidence/wpf-conversation-recovery/continuous-fifth-validation.md)已跑通并清理，待本次root独审；两个CREATE故障点各独立actual来源，原失败保留。TODO02/05仍因Queue/SteerHTTP/SSEdelivery/材料完整组合等未验不勾选，06全feature review仍IN_PROGRESS。无新增journey或budget，当前58951/150000、剩91049。
+
+## 2026-10-07 07:43:27 UTC — 原02/05 Queue enqueue验收完成
+
+[真实选组](../../docs/evidence/wpf-conversation-recovery/continuous-sixth-validation.md)2/2与清理已独审接受；两CREATE故障点与Queue各有独立actual，仍不勾选包含Steer/全部材料/隔离的完整TODO。段账70158/余79842；后继仅[最小公开SSE入App提案](../../docs/evidence/wpf-conversation-recovery/remaining-validation-after-queue.md)，新增listener须针对生命周期审查，二中心须显式资源边界；不复跑原full7、不造新大计划。

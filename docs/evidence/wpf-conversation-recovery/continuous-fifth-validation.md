@@ -17,3 +17,5 @@ markedDB `flow_recovery_8706234e46f84e3997f663371d6383ea` 前后0conn、普通DR
 [固定manifest/原件](continuous-fifth-manifest.json)保存11raw26379B及outer实际exit/终态EOF/准入不含值资料。原111raw376527B逐hash保真；源19与344f和执行HEAD同。admin.env从未读取/打印/归档，manager待按已知dev16777234/ino123617443/uid501/0600 exact删除；回执到达本批则一并收，否则后续正常metadata补来源，不冒已经删除。
 
 已立即归还实际PG+Chrome，当前无后台运行/无自动下次或Queue gate。正常元数据收口不运行旧绿types/direct。
+
+后续实际回执：manager于07:27:11.260490Z完成[exact身份删除](continuous-fifth-admission/admin-env-deletion-receipt.json)，postENOENT、未读值。上段“待删除”为当时事实，现已闭合；原run与budget未改。

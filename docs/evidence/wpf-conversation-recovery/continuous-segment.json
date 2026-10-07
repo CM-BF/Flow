@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "CREATED_TURN_RETRY_SELECTED_ACTUAL_ACCEPTED_QUEUE_NOT_RUN",
+  "state": "QUEUE_SELECTED_ACTUAL_ACCEPTED_REMAINING_FEATURE_VALIDATION",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 58951,
-  "runtimeRemainingMs": 91049,
+  "runtimeSpentMs": 70158,
+  "runtimeRemainingMs": 79842,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -115,6 +115,26 @@
       "fullFeaturePassed": false,
       "independentReview": "continuous-fifth-root-review.json",
       "priorFailedBudgetReconciledNotRewritten": true
+    },
+    {
+      "run": "recqueue-20261007-073438-dbae9f",
+      "journey": "queue-ack-loss",
+      "executionHead": "fafc3334b8e99b3a80ccac82e472c8bf3fa61bd7",
+      "sourceTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "manifest": "continuous-sixth-manifest.json",
+      "passedGroups": 2,
+      "selectedPassed": true,
+      "actualExit": 0,
+      "outerActualMs": 11206.429125042632,
+      "parentLateMs": 10469.796625,
+      "serializedParentMs": 10461.797292000001,
+      "chargedMs": 11207,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T07:35:05.731349+00:00",
+      "fullJourneyPassed": false,
+      "fullFeaturePassed": false,
+      "independentReview": "continuous-sixth-root-review.json",
+      "adminEnvDeleted": true
     }
   ],
   "nextSelection": null,
@@ -137,5 +157,6 @@
     "failedAttemptReconciliation": "monitor-retirement-reconciliation.json",
     "rootReview": "monitor-retirement-root-review.json",
     "runtime": "continuous-fifth-manifest.json"
-  }
+  },
+  "nextProposal": "remaining-validation-after-queue.md"
 }

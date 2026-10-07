@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 07:25:47 UTC |
+| 最近更新 | 2026-10-07 07:43:27 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -13,31 +13,31 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前parent窄修 344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；18其他源同67f8/55b生产不变；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 源344f12已固定，当前仅own局部实证/状态封存，metadata HEAD以Git为准 |
+| 工作树dirty状态 | 源344f12保持冻结；本批仅own实证与状态封存，最终metadata HEAD/clean以Git交接为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CREATE两个回执丢失点的真实恢复均已跑通；队列恢复仍待验收 |
-| 下一可用交付 | 完成本轮独立验收并验证队列恢复，推进完整交付审查 |
+| 当前产出 | CREATE两个回执丢失点及队列入队后的原指令恢复已通过真实页面验收 |
+| 下一可用交付 | 补齐事件实时交付等剩余恢复验收，推进完整交付审查 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 本次created-turn重试2/2实际PASS、actualexit0/双EOF/owned清理已获独立限定接受；新段58951/余91049。原整体FAIL/旧五FAIL及各轮通过绑定均保留 |
+| 检查状态 | Queue入队恢复2/2实际PASS、exit0/双EOF/owned清理已获独立限定接受；新段70158/余79842。原full7、choice与CREATE各保源绑定；历史失败不改 |
 | 实现目标 | 344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS（67f8源码/local已接受；full7、choice2/2及first-create2/2实际与owned清理分别独立限定接受）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；manager06:48:10.709711Z fresh核身份/overlap=[]及pins，owner启动前窄核gate/19hash/branch/clean，见continuous-third-admission/observation.json |
+| Review | [review.md](review.md)，IN_PROGRESS；full7、choice、两个CREATE故障点及Queue入队实际与清理分别限定接受；完整feature未批准 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；owner07:34:38.039485Z正常CLI核active/本owner/WT/branch/exactscope，见continuous-sixth-parent/admission.json；同段元数据收口不新增领取 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-RECOVERY01-01 | completed | workspace_panels_owner | 原21合法输入/唯一canonical及ConnectionSession/Journal有界实现完成；来源取权/50直接检查与full7实证各保边界 |
-| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原四authority/屏障与CREATE两key已实现；CREATE ACK丢失真实恢复2/2通过，已绑定后丢turn重试2/2已过待独审，Queue/SteerHTTP尚待实证 |
+| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原四authority/屏障与两key已实现；CREATE两故障点及Queue enqueue原key/body/revision/双refs恢复各真实2/2并独审；promotion/SteerHTTP未验 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；完整profile/knowledge/steering和二中心待验 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
-| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [原full7实际PASS](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)，原五FAIL保真；SSEdelivery/CREATE/QueueSteer等原验收尚未全部完成 |
-| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 完整feature独审IN_PROGRESS，当前target344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；本次一browser增量待独审，main未接 |
+| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | 原full7、choice、CREATE两分支及Queue真实选组通过，历史FAIL保真；SSEdelivery/完整profileknowledge/Steer/二中心仍待验 |
+| WPF-RECOVERY01-06 | in-progress | workspace_panels_owner | 完整feature独审IN_PROGRESS，target344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；本轮Queue限定实际已接受，main未接 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -344,3 +344,7 @@ Root本次[限定独审](../../docs/evidence/wpf-conversation-recovery/monitor-r
 [本次actual](../../docs/evidence/wpf-conversation-recovery/continuous-fifth-validation.md)使用344f与exact失败账reconciliation，实际2/2/exit0/owned清理完成。原failedbudget与worker部分通过事实不改。新段charge11746累计58951/余91049，未新跑full7/choice/旧local，Queue尚NOT_RUN；root独审/managerexactenv回执待本轮来源收口。
 
 Root [344f本轮actual审](../../docs/evidence/wpf-conversation-recovery/continuous-fifth-root-review.json)已接受2组/owned清理，非整体feature；admin exact删除仍由manager待回执，本owner未读值/不操作。封存后停写归槽，Queue仍NOT_RUN。
+
+## 2026-10-07 07:43:27 UTC — Queue原指令恢复实际收口
+
+[本轮限定实证](../../docs/evidence/wpf-conversation-recovery/continuous-sixth-validation.md)为cookieRead+queueAckLoss 2/2、原revision/key/body/同item/双refs顺序及下一稿保留；root已接受，非promotion/Steer/fullfeature。新段70158/150000、余79842，ownedDB/三group/scratch和exactenv全部清理，资源已归还；旧五FAIL和created-turn父监督FAIL保留。只读[剩余最小验收提案](../../docs/evidence/wpf-conversation-recovery/remaining-validation-after-queue.md)优先公开SSE事件入App，不新task/scope或运行。07:27管理paired env回执本批补收；当前无后台holder，不占下队CHAT05P02窗口。

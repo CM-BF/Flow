@@ -383,7 +383,11 @@
     "scratchAbsent": true,
     "portObservation": "No additional endpoint probe; original fixture.close receipt is the HTTP closure source"
   },
-  "adminEnvDeletion": "PENDING_MANAGER_EXACT_IDENTITY_RECEIPT",
+  "adminEnvDeletion": {
+    "path": "continuous-fifth-admission/admin-env-deletion-receipt.json",
+    "at": "2026-10-07T07:27:11.260490+00:00",
+    "sha256": "38c1f932da6c23412bcefad6126c7d9ae4e34b538be4dae0af3502c994956fd1"
+  },
   "originalFailedBudgetUnchanged": [
     {
       "run": "recturn-20261007-070121-4aa406",

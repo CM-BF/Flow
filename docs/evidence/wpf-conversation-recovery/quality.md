@@ -243,3 +243,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 07:25:47 UTC — 344f实际重试收口clean-code
 
 复用原single-fileparent与worker，不改代码/断言/权限/清理。正常monitor退休与exact失败计费接缝已针对源审，本次实际selected2/2+outer0提供运行证据但不追溯原竞态唯一根因或改旧FAIL。按真实outer最大计费、独立精确组/目录观察、原DB与fixture清理分别记录；无全树/无业务额外probe。控制器/材料身份/下一稿原断言保留，0provider；未选组及完整feature开放。仅owner原件/plan/status/review封存，无新Node工程检查，源19不漂移。
+
+## 2026-10-07 07:43:27 UTC — Queue自治段收口clean-code
+
+find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安装。复用原single-fileparent、strict body-loss、公开UI/controller及原schema；本次仅selection/carry内部输入，0产品改写/新wrapper。错误路径与清理、selected/full/feature语义分开，费用取outer/late/parent最大值ceil；旧FAIL保真。只归档本轮小原件，旧19pin/大manifest用引用避免无意义复制；secret只受控env路径，exact删除不读值。未来SSE提案要求真实frame与App因果，拒status轮询或POST直返冒SSE；listener上限/关闭边界明确，尚无实现/运行。静态核19源固定相同；首次封存断言按此前引用计数122检查失败，改用Git唯一旧路径核实111raw390017B全部同fafc，本轮11raw26087B原SHA吻合；原报告不回写，纠正唯一计数口径。不重跑旧绿检查。

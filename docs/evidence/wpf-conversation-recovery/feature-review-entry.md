@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`，完整feature `IN_PROGRESS`。本次仅原browser parent退休/明确失败计费接缝，18其他源同67f8；[19pin/delta](monitor-retirement-checkpoint.json)、[32定向/noEmit实证](monitor-retirement-validation.md)，[root针对lifecycle独审](monitor-retirement-root-review.json)已接受。first-create2/2实际PASS保原绑定；created-turn原整体FAIL/worker2组通过/owned清理事实保留；344f本轮重试actual2/2/exit0已获root独立限定接受，Queue仍NOT_RUN。
+当前组合target `344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`，完整feature `IN_PROGRESS`。本次仅原browser parent退休/明确失败计费接缝，18其他源同67f8；[19pin/delta](monitor-retirement-checkpoint.json)、[32定向/noEmit实证](monitor-retirement-validation.md)，[root针对lifecycle独审](monitor-retirement-root-review.json)已接受。first-create2/2实际PASS保原绑定；created-turn原整体FAIL/worker2组通过/owned清理事实保留；344f本轮重试actual2/2/exit0已获root独立限定接受，Queue本轮2/2/exit0与owned清理已获[root限定接受](continuous-sixth-root-review.json)，不是promotion/Steer/fullfeature。
 ## 55b已审基线与原证据（历史固定）
 
 **Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际2/2及owned清理已独立限定接受）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
@@ -22,7 +22,7 @@
 | F13-1旧pending在reauth后自动续发；F13-2未存稿auth/center切换被卸载 | [原root](f13-root-source-review.json)、[2b01源审](2b01-restore-edit-root-approval.json)、50代际/原owner保护；本full7page-only abort→authloss→同页reconnect0POST | 二中心/换principal实际UI仍未覆盖 |
 | F13 failed/blocked-open缓存与晚success orphan | [原open审](f13-open-source-review.json)，50explicit retry/late close | 受控opening事件；不是全浏览器quota矩阵 |
 | R4-1 commit时namespace=null漏version；terminal reconcile后blocked残留 | [原4ba审](4ba-root-source-review.json)，50含commit-held/publicnull/reauth与只清原terminal blocker | actual App本轮保稿链已过，跨tab终态完整矩阵仍有限 |
-| M1静默少材料/M2分批验证乱序 | [1b8 root](1b8-material-root-review.json)，50send/queue完整性/先B后A/held隔离，本full7双真实chip/原refs/顺序/同body重试 | actualQueue提交仍未覆盖，不冒Turn可替代Queue |
+| M1静默少材料/M2分批验证乱序 | [1b8 root](1b8-material-root-review.json)，50send/queue完整性/先B后A/held隔离，本full7双真实chip/原refs/顺序/同body重试 | Queue enqueue实际现见continuous-sixth-validation；不冒promotion/Steer或全部材料组合 |
 | REC667默认checkpoint不激活/observer缺库造空v1悬挂 | [7cc审](7cc-root-source-review.json)，旧38新增生命周期/observer与当前50继承；本full7默认编辑/真实IDB恢复已过 | malformed/blocked各支仍受控证据 |
 | Restore等待中编辑丢失/同view双restore | [2b01 root](2b01-restore-edit-root-approval.json)+[peer](2b01-restore-edit-peer/report.md)，50使用真实App-used helper及deferred projection | 不冒mountedWorkspace全部材料prepare与并发编辑全浏览器覆盖 |
 | 同route多稿locator/对话框回焦 | [8ed审](8ed-identity-focus-root-approval.json)，本full7精确draftId+Enter/Escape+双390图 | 可读性后继已登记，不抹精确identity |
@@ -37,7 +37,7 @@
 
 ## 残留验收/风险
 
-完整CREATE两阶段lostACK/QueueSteer实际恢复、完整profile+knowledge+steering材料、二中心与变principal、SSE正文delivery仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
+CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/SteerHTTP、完整profile+knowledge+steering材料、二中心与变principal、SSE正文delivery仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
 
 GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标题/摘要/本地Intl时间，UUID/精确UTC留details，不预取正文；空text不判重复/自动删稿，保unknown/key/材料语义。仅后继记录，不阻当前固定代码审查或把这轮图片改成新产品FAIL。
 
@@ -61,3 +61,7 @@ GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标�
 ## first-create实际限定补证
 
 执行beb6/source67f8，[2/2与原件](continuous-third-validation.md)及[root限定审](continuous-third-root-review.json)。只CREATE ACK丢失分支；已绑定后丢turn与Queue尚未实际运行，不替其他验收；预算新段36096/150000、余113904。
+
+## Queue实际与剩余接口
+
+[第六次有限段实际](continuous-sixth-validation.md)绑定344f/fafc，root独立限定接受selected2/2；本source未变化。段累计70158/余79842，历史计费/失败保真。下一最小[只读提案](remaining-validation-after-queue.md)以公开取消事件验证真实SSE到App，不把握手或轮询当交付。
