@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "kind": "X01_STAGE_A_HOLD_RESULT",
+  "createdAt": "2026-10-07T02:22:09.756433+00:00",
+  "resultCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+  "executionHead": "0984405693f78768893c80a739b45de93b6f4f57",
+  "callerSourceCommit": "d6f52c3a0db45eb69a57c68c54ff47423a8ccb79",
+  "productSourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "result": "HOLD_NOT_SELECTED",
+  "resultReview": "PENDING",
+  "raw": [
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/reservation.json",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "1c901a50abc0a6e7350fe7db2b85d8af18ca66b1",
+      "bytes": 166,
+      "sha256": "e1f262bb0ce3f64cd4eba5d68ddcdfa3740efc31595ca5266683ec24d1739925"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/admission.json",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "69ea8f6c170721d50b88c648ff06a4e6345c4908",
+      "bytes": 1997,
+      "sha256": "8a076b5c93ccbef57b7f59626b653e5ca6dc34dc204f1c8d4c5f000db0db68d6"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/preflight.stdout",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "152d9244067679df3762f00ab46d6f444ea28b40",
+      "bytes": 289,
+      "sha256": "9680591844b72a2c872ff52f658663b32b5946da0dacb0f7e1b05bdb64594345"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/receipt.json",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "2242718395f63e27d295e2ce5df4e7b8ca43dccf",
+      "bytes": 1924,
+      "sha256": "fab4010fee94f6705163649e9677c8823fceea7708c6c2d0cf78cd57dcd117de"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-cli.stdout.txt",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "69f7ace7b9a23210747ec98697c0e570ceb85798",
+      "bytes": 407,
+      "sha256": "e07da8925b7b11203e82ad1578a921569d4e505869f49f1f17473e2a7d98fcfc"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-tool.json",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "72797c4e553d0591921e2ba3d77366d2c6b98ea9",
+      "bytes": 1289,
+      "sha256": "b240a79556e73df811a1d4dd15167d2de8b8957f708929025dbb0da2ddb31adc"
+    }
+  ],
+  "support": [
+    {
+      "path": "docs/evidence/x01/enable-binding-local-result.md",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "0eee25a76bbe239de31c9174b49ab3eeac891e6e",
+      "bytes": 2228,
+      "sha256": "c54d3f760218e1a33742698a1b59149021d3fad6c7b6ee739aab23551a14ddf8"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-quality.md",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "9f4005c45228101808784091d5bf85a9b559aa02",
+      "bytes": 9137,
+      "sha256": "b5f5d0a45f186375a2e192d3760c6a2f603b49781a3c39a4a30d4fc0ee4ab4a5"
+    },
+    {
+      "path": "plans/x01-plugin-management/status.md",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "4374bb1a480e10c4e3a9c5a88b87fd2ccc8f6d6b",
+      "bytes": 30922,
+      "sha256": "9de4815a3505ff758d775fa4103bac5bb2d35de9c53fd80c0a272d225f0918ae"
+    },
+    {
+      "path": "plans/x01-plugin-management/review.md",
+      "gitCommit": "799d52f2b7ebd042b0ede3b641b4e91480fb4b3e",
+      "gitBlob": "dd8084ec7440dd6b310ccaac424d4cd151f24e19",
+      "bytes": 11649,
+      "sha256": "781ac6a5afa3e99b16661d4d06dd3abf44c1c8c1e6f72c34e12511c48a555434"
+    }
+  ],
+  "fixedInputs": [
+    {
+      "path": "docs/evidence/x01/enable-binding-caller-manifest.json",
+      "gitCommit": "0984405693f78768893c80a739b45de93b6f4f57",
+      "gitBlob": "3488422ad12b2ccae5ccb978e69622b124f29e62",
+      "bytes": 11441,
+      "sha256": "9046ad8b0388e08765a43ef94539e73933aefc5f71fb2ca3a92ec38f69e6f136"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-input.json",
+      "gitCommit": "0984405693f78768893c80a739b45de93b6f4f57",
+      "gitBlob": "0a6601d1bebe564f213c2f8a9210e9b6c12ee953",
+      "bytes": 25912,
+      "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-result.json",
+      "gitCommit": "0984405693f78768893c80a739b45de93b6f4f57",
+      "gitBlob": "0308a9ebe85aecfed2293cac17222f4892fca238",
+      "bytes": 5956,
+      "sha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "gitCommit": "0984405693f78768893c80a739b45de93b6f4f57",
+      "gitBlob": "c32d87484658b2b54294a5bd2751e6d5e672cab0",
+      "bytes": 20143,
+      "sha256": "a6475cd55e6a56f31ddff0f21c03a1a4f89dbe2026682e782837b255163e5b74"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-launch.py",
+      "gitCommit": "0984405693f78768893c80a739b45de93b6f4f57",
+      "gitBlob": "2616e53bf1551e65a75c216ca982c71ddb1efedb",
+      "bytes": 2564,
+      "sha256": "b33f2b0f59b564134bb13b996bdae6dd46fdb02f57da3dcd04ce7a0aee01b0be"
+    }
+  ],
+  "observations": {
+    "preflightPid": 91903,
+    "preflightExitCode": 0,
+    "preflightStdoutBytes": 289,
+    "preflightEOF": true,
+    "finalOwnedState": "absent",
+    "historicalOwnershipUnknown": true,
+    "historicalErrno": 1,
+    "callerUnknown": true,
+    "callerExitCode": 1,
+    "strict": "NOT_RUN",
+    "vitest": "NOT_RUN",
+    "selected": null,
+    "passed": null,
+    "plannedCases": 17,
+    "actualTarChildren": 0,
+    "PG": 0,
+    "provider": 0,
+    "temporaryRootCreated": false,
+    "retainedEvidenceRoot": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-local-run",
+      "dev": 16777234,
+      "ino": 123333442
+    }
+  },
+  "timing": {
+    "externalClockBefore": "2026-10-07 02:20:15 UTC",
+    "externalClockAfter": "2026-10-07 02:20:15 UTC",
+    "externalClockResolutionSeconds": 1,
+    "execToolWaitWallSeconds": 0.0710825,
+    "callerBeforeReceiptMs": 168.34425006527454,
+    "callerBeforeCliMs": 168.7404999975115,
+    "completeWindowDurationMs": null,
+    "limitation": "Tool wall is a waiting-boundary observation, not full process duration or a hard 30-second proof. Distinct clocks are not added or corrected."
+  },
+  "accounting": {
+    "knownRuntimeFileBytes": 4376,
+    "callerKnownChargeWithCliReserve": 12568,
+    "callerRawAccountingComplete": false,
+    "knownArchiveSnapshotBytesExcludingManifest": 60008,
+    "manifestReservedBytes": 16384,
+    "futureReviewMetadataReserveBytes": 8192,
+    "conservativeKnownArchiveUpperBound": 84584,
+    "rawLimitBytes": 524288,
+    "completeRuntimeTotalBytes": null,
+    "knownDoesNotProveFullTotal": true,
+    "scope": "All six safe raw files and full snapshots of the four changed support/status files are conservatively charged, including duplicate CLI text in the tool envelope. Fixed preparation inputs are not new result bytes."
+  },
+  "unchanged": {
+    "productSourceDiffFromExecution": [],
+    "callerAndInputChanges": [],
+    "dependencyProvisionReceiptSha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9"
+  },
+  "executionAuthorization": "The only OPEN is consumed. No retry or Stage B/C/D execution is authorized by this result."
+}
