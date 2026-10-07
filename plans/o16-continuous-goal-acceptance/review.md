@@ -1,6 +1,6 @@
 # O16 独立审查
 
-状态：R2结果54bf/d82f已获APPROVED_LIMITED_RESULT并main f7864f88。当前私有错误诊断source49d待独立审查，不能继承旧源批准；累计2请求均失败，无第三次授权。
+状态：诊断49d/e413已获APPROVED_LIMITED_PRIVATE_ERROR_DIAGNOSTICS_SOURCE_AND_LOCAL_EVIDENCE并main fb647700，无P1/P2。R3只有新条件额度与候选，actual NOT_RUN；累计仍2/费用UNKNOWN/KEEP，原R2失败不改。
 
 当前 Review target commit：49d35d97e2d5d529d34dc29458ed2d95f2474909（诊断5源/测试），固定证据见private-error-diagnostics/delta-manifest。
 
@@ -63,3 +63,5 @@ Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P
 [原样独审](../../docs/evidence/o16/native-plan-20261007-r2/result-independent-review.json)核R2 28bindings+继承candidate，APPROVED_LIMITED_RESULT/noP1P2，mainf7864f88；只批准失败忠实性，不能称规划成功。
 
 新诊断source49d仅5源/测试（3原观察/worker+2新模块/专测）；[Interface](../../docs/evidence/o16/private-error-diagnostics/Interface.md)和[局部结果](../../docs/evidence/o16/private-error-diagnostics/RESULT.md)待唯一独审。重点私有0600/限界/固定目录身份、SDK结构字段白名单、第一异常不被诊断或cleanup覆盖、无正文保持unknown、原error仍拒绝。7 different/3轮/14选择，5fixture红保留；0PG/SDK/provider/认证，无新query许可。
+
+2026-10-07T11:10:14.122Z：原样归档[唯一诊断审查](../../docs/evidence/o16/private-error-diagnostics/independent-review.json)（assignment_review独立审查，Execution Lead记录，时间2026-10-07T11:05:58.578682Z）；5源36530B/21记录/5只读pin和7不同例三轮14选择已核，reviewer0重跑。main fb647700受控接收；本次仅候选metadata，未扩展诊断批准为真实SDK通过。[R3候选](../../docs/evidence/o16/native-plan-r3-candidate/candidate.json)沿新条件预算绑定source/env/SDK/目标，等待实际窗口；不重跑原检查或复用已消费许可。
