@@ -15,7 +15,7 @@ LANGUAGE sql STABLE AS $$
    AND i.receipt->'manifest'->>'schemaVersion'='1'
    AND i.receipt->'manifest'->>'hostApiMajor'=(binding).host_api_major::text
    AND i.receipt->'manifest'->>'kind' IN ('tool','verifier')
-   AND i.receipt->'artifact' @> (binding).artifact AND (binding).artifact @> (i.receipt->'artifact' - ARRAY['format','verifiedAt','source'])
+   AND i.receipt->'artifact' @> (binding).artifact AND (binding).artifact @> ((i.receipt->'artifact') - ARRAY['format','verifiedAt','source'])
    AND i.artifact @> (binding).artifact AND i.artifact_id=(binding).artifact->>'artifactId'
 $$;
 DO $$ BEGIN

@@ -24,6 +24,7 @@ const rule = { schemaVersion: 1 as const, algorithmId: 'flow.json-object.require
 const cap = { bindingProtocol: 'flow.plugin-verification.v1' as const, storeId: 'av03-material', hostApiMajor: 1 as const, algorithms: [{ id: rule.algorithmId, version: 1 as const }] };
 const toolCap = { bindingProtocol: 'flow.plugin-runtime.v1' as const, storeId: cap.storeId, hostApiMajor: 1 as const };
 async function request(path: string, body?: unknown, token: string = owner) {
+  if (!app || !base) throw new Error('AV03 server startup prerequisite is not ready');
   return fixture.request(base + path, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body) });
 }
 async function openApp(prior = false) {
@@ -122,15 +123,26 @@ afterAll(async () => {
 
 describe.sequential('AV03 real PostgreSQL', () => {
   test('036 rejects unverifiable history atomically and positively backfills compatible old tool writers', async () => {
-    const sql = await readFile(new URL('../../../../packages/storage/migrations/036-plugin-verification-bindings.sql', import.meta.url), 'utf8');
-    await expect(transaction(pool, async c => { await binding(c, old, { badTree: true }); await c.query(sql); })).rejects.toMatchObject({ code: '23514' });
-    expect((await pool.query("SELECT to_regclass('flow.plugin_binding_executions') AS name")).rows[0].name).toBeNull();
-    expect((await pool.query('SELECT 1 FROM flow.migrations WHERE version=36')).rowCount).toBe(0);
-    await migratePluginVerification(pool);
-    expect((await pool.query('SELECT kind FROM flow.plugin_binding_executions WHERE binding_id=$1', [historical.bindingId])).rows).toEqual([{ kind: 'tool' }]);
-    const added = await makeBinding(old); expect((await pool.query('SELECT kind FROM flow.plugin_binding_executions WHERE binding_id=$1', [added.b.bindingId])).rows).toEqual([{ kind: 'tool' }]);
-    expect((await pool.query('SELECT input_digest FROM flow.plugin_tool_bindings WHERE id=$1', [historical.bindingId])).rows[0].input_digest).toBe(historical.inputDigest);
-    await openApp(); await fixture.stage('migration-checked');
+    let primaryFailed = false;
+    try {
+      const sql = await readFile(new URL('../../../../packages/storage/migrations/036-plugin-verification-bindings.sql', import.meta.url), 'utf8');
+      await expect(transaction(pool, async c => { await binding(c, old, { badTree: true }); await c.query(sql); })).rejects.toMatchObject({ code: '23514' });
+      expect((await pool.query("SELECT to_regclass('flow.plugin_binding_executions') AS name")).rows[0].name).toBeNull();
+      expect((await pool.query('SELECT 1 FROM flow.migrations WHERE version=36')).rowCount).toBe(0);
+      await migratePluginVerification(pool);
+      expect((await pool.query('SELECT kind FROM flow.plugin_binding_executions WHERE binding_id=$1', [historical.bindingId])).rows).toEqual([{ kind: 'tool' }]);
+      const added = await makeBinding(old); expect((await pool.query('SELECT kind FROM flow.plugin_binding_executions WHERE binding_id=$1', [added.b.bindingId])).rows).toEqual([{ kind: 'tool' }]);
+      expect((await pool.query('SELECT input_digest FROM flow.plugin_tool_bindings WHERE id=$1', [historical.bindingId])).rows[0].input_digest).toBe(historical.inputDigest);
+      await fixture.stage('migration-checked');
+    } catch (error) {
+      primaryFailed = true; throw error;
+    } finally {
+      // This is the one planned current-server startup, even if an earlier assertion failed.
+      try { await openApp(); } catch (error) {
+        if (!primaryFailed) throw error;
+        facts.push({ kind: 'current-start-failed-after-primary' });
+      }
+    }
   });
   test('036 enforces immutable kind and exact source attempt with deferred mandatory verifier reference', async () => {
     await clearQueue(); const m = await material('verifier', await runner()), good = await makeBinding(m);

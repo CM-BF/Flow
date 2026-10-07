@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 五项数据库验收已执行但未通过，全部自有资源已关闭，失败原件已封存 |
+| 当前产出 | 数据库验收失败已独立核实，正在修复迁移表达式及后续用例的启动前置 |
 | 下一可用交付 | 修复首项数据库错误及后续用例失去服务地址的问题，再完成独立验收 |
 | 当前阻塞 | ACTIVE: 数据库迁移验收失败，中心领取片与后继受理片尚不能集成 |
 | 需用户决定 | NONE |
-| Review | R2 FAILED_RESULT_FIDELITY_REVIEW_PENDING；既有source/helper批准保留，未将准备批准转作实际通过 |
+| Review | R2失败忠实性22:10:07独审APPROVED；修复source待审，原5FAIL保持 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
@@ -182,3 +182,7 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T22:07:53.362Z：执行HEAD7620，22:05:50.907Z启动、22:05:54.764Z exit1；5 selected/0 passed/5 failed，0 skipped。首例期待23514但实际JSON语法错误，后四例/api/runners基址为空。原281pins/191external/16links/34SQL紧前核符，执行后281输入零变化；rootguard只证安全清理，不把失败改绿。准入floor17,091,395,584/free18,170,241,024，PG available91且预检poolclosed；全部旧KEEP保留。22:06:17.330Z FULL_RETURN：三组精确ESRCH/EOF、OID1358596同owner/marker/0conn普通DROP+absence、50370关闭、同inodeTMP删除及exactENOENT。
 
 证据[result-summary-r2.json](../../docs/evidence/x01-artifact-verifier/av03-pg/result-summary-r2.json)。结果忠实性待独审，未修改产品/fixture/旧raw；R2窗口已消费，禁止自动重试。AV03/04及X01完整目标仍OPEN，VAR前置未满足。原等待窗口至actualSTART关闭；新的等待是受影响源码修复与后继独立验证，不相加重叠事件。当前0actual/0待launch，本次仅原件封存与status/review，自然收口后STOP。
+
+## R3 前置窄修段
+
+2026-10-07T22:11:17.000Z–22:23:17.000Z，新2MiB内含source/metadata/TMP/raw，来自已计16MiB稳定池；≤2 child×30s/累计45s，0PG/HTTP/provider/install。fresha67v6/25有效。036只对artifact箭头结果明确括号，同文件其余箭头无同型减法组合；首例finally保一次原计划current startup，首错不被次错覆盖，启动未知仍依原fixture保持KEEP。后继请求显式拒未ready server。旧R2原件、5FAIL及281旧manifest保固定Git，不将本片静态/类型检查冒SQL成功。

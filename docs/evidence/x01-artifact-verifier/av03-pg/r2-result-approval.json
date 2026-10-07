@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T22:10:07.000Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "verdict": "FAILED_RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": "Source finding separately requires repair; not result evidence inconsistency",
+  "result": "5ac3fbe1f70997c0404380df565ee8396ca192a5",
+  "packet": "c08fb03fac0602821b03bf29279c492f11cc93f3",
+  "manifest": "729b5219f83946d00aa0cd276ee2c1461b867c45e77dcb2df7529b196f443123",
+  "bindings": 31,
+  "bytes": 325180,
+  "facts": "5selected/0passed/5failed,outer1/unknownfalse; full return;281prepared unchanged",
+  "sourceFinding": "036:18 JSON arrow operand requires parentheses before jsonb subtraction. Later four fail after baseline close because first case never reached current startup.",
+  "limits": "No source fix approval/newPG/TMP access. R2 remains FAILED."
+}
