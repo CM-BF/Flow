@@ -1,0 +1,119 @@
+{
+  "observedAt": "2026-10-07T08:47:11.212Z",
+  "main": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "source": "859e2a2b138e9d8c5121b29f651c8081325f6e5f",
+  "acceptedDelivery": "427e5c05eded1366457d46f770b700b508cfbaf8",
+  "independentReview": {
+    "path": "docs/evidence/i02/svc09-independent-review.json",
+    "sha256": "41a864eae5b04b8aaaf5e28cee2d698a1daacbcf627f809ab83ca2878c2d07ae"
+  },
+  "products": [
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.test.mjs",
+      "bytes": 5987,
+      "sha256": "a74aef0cd8684bcdac3b50b5a0bba99b72b6a8313dafe452b6db2261dabcf90b",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5394,
+      "sha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 2690,
+      "sha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 4358,
+      "sha256": "18872c678c13b52e8cda8239df26b1f596488348d1687df9c3a7450376237b41",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9796,
+      "sha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 19801,
+      "sha256": "f44c8f9bac3670bebc45645261b8560c23663cd94adde9ec08c35d4bdb2ec7cb",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 46785,
+      "sha256": "810f192a5f121b48a6c317be5a506e24346035b6793e2fb4b27dcf7a931da737",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 59165,
+      "sha256": "b35c6db81e6d4e0266a4fc0a3fbdf6d3f53303d1985244dbf9a1ff49e2f49a28",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 7633,
+      "sha256": "37cdcd83ac6c65ac3bb57cfaea876aed258f8f8b23897864feba78be9e5413b1",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 5568,
+      "sha256": "8a5eda79ec61ecda7bde7632b40dcaaff1ddc56d9d8241fecfe60ea4a4e0e237",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 9035,
+      "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 9975,
+      "sha256": "587dbf7dd2d26fc3b40bbb2d08b8d436780bf267ba47815cfdd79a1cf8711428",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.test.mjs",
+      "bytes": 22122,
+      "sha256": "40fc8b168d1eba30cb5e49dfe886cab900d014c42c4ff3d92b54fc8c0226035c",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594",
+      "sourceMainCurrentSame": true
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.test.mjs",
+      "bytes": 1226,
+      "sha256": "ef3b800a278436c019de21a4549261351be54ef6b06c3e919498adc7b4975e60",
+      "sourceMainCurrentSame": true
+    }
+  ],
+  "mainIntegrationTime": "UNKNOWN; parent confirmed actual clean/pushed receipt without an exact operation timestamp",
+  "taskCompletedAt": "2026-10-07T08:47:11.212Z",
+  "completionScope": "SVC09 source and bounded local delivery only; actual artifact/compatibility/personal deployment remain later SVC06 work",
+  "newTests": 0,
+  "newPersonalActions": 0
+}

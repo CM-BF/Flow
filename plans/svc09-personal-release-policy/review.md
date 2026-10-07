@@ -1,3 +1,5 @@
+APPROVED_SOURCE_AND_BOUNDED_LOCAL_EVIDENCE。唯一正式原件：[independent-review](../../docs/evidence/svc09/independent-review.json)，reviewer Execution Lead，2026-10-07T08:45:52.079720Z，0重测；main b2b5612b已精确接收17产品。后文为原交审范围/历史请求，保留不覆盖原证据。
+
 # SVC09 独立审查
 
 PENDING。实现target `859e2a2b138e9d8c5121b29f651c8081325f6e5f`，base `5b0bef86086a611937e098c78bc542fde6ed9539`；17精确产品路径见status/manifest。Lead分段预读不构成最终批准。
