@@ -1,0 +1,17 @@
+✔ fresh Web-only gate accepts nonzero user work and uncertain tasks without mutating facts (1.515166ms)
+✔ non-Web identity or maintenance drift fails the existing preservation gates (0.668167ms)
+✔ business changes remain explicitly unknown and never authorize rollback or reset (0.105167ms)
+✔ request freezes exact fresh CAS and fixed artifact without mutating the template (0.137292ms)
+✔ durable intent then verification/fsync/checkpoint precede exclusive publish (0.157667ms)
+✔ checkpoint failure prevents rename and leaves explicit unknown (0.147791ms)
+✔ rename ACK failure is preserved once with no replay, delete or second rename (0.115375ms)
+✔ preexisting target is fully verified and never cloned or published again (0.071083ms)
+✔ existing Darwin exclusive rename rejects overwrite and preserves both tiny directories (124.146541ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 175.380334

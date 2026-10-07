@@ -1,0 +1,19 @@
+# Personal Web-host adoption — preparation checks
+
+The caller is preparation only. No personal file, DB, listener or service was probed or modified. No artifact was copied. The actual namespace remains uncreated.
+
+`local-run.json` preserves the executed source hashes, exact selection, four original OPS14 reports and raw files. Nine tests passed: ongoing user work accepted without mutation; protected identity/maintenance drift rejected; business change remains unknown; fresh CAS request frozen; intent/fsync/checkpoint order; checkpoint failure; rename ACK unknown; preexisting exact destination; actual Darwin RENAME_EXCL refusal to overwrite plus successful tiny rename. Three JS syntax entrances and Python AST passed. Wall 313ms, supervised segments 310ms, raw 973B, all four groups absent with both EOF, no remaining tiny scratch. This does not exercise the live adapters or services. A later caller-only `webHost === null` precondition is source reviewed rather than included in those executed hashes; the nine procedure tests were not rerun.
+
+Implementation Interface:
+
+- `procedure.mjs`: fixed one-shot publish ordering and pure fresh/protection/request decisions. Tests use fake ports and synthetic nonempty business facts.
+- `caller.mjs`: original read-only facts Module, original preview/store locks, original verifier, exact clone, original RENAME_EXCL. It has no stop/spawn implementation. The runtime CLI alone owns Web replacement and its journal.
+- `supervise.py`: original OPS14; migrate 120+.5+2, request20+.5+2, replace28+0+2 PID-only **directly supervising CLI**, post20+.5+2. Each outer file is exclusive; a subsequent phase requires complete preceding EOF/exit0/owner absence. Reservation/output fsync after reap does not extend stop deadlines; end-to-end persistence wall is reported separately if observed.
+
+All source bindings and entry imports are local fixed paths. Reused facts imports only its three fixed helper modules; its exact `pg` resolution points to the already-installed web-attachment-production donor, now separately pinned. No installation or donor write. The root 16-module tool set remains frozen only for actual invocation, not unrelated feature work. `loadReleaseAssets` returns an assets/index structure; retained per-artifact paths come from the original `verifyWebArtifact`, and identity is checked against artifact/version rather than an invented installationId response field.
+
+Preservation is Web-only: no task/attempt/uncertain emptiness gate, maintenance mutation, business DML or added row locks. The original read-only snapshot retains raw table digests and only omits `queue_checked_at` from the conversation protected digest. Other table changes are `UNKNOWN_CONCURRENT_CHANGE`; a ready Web operation can therefore coexist with an unknown concurrent business observation. That result never authorizes rollback, overwriting state, retry, or a second request.
+
+Failure handling: existing locks run their original finally releases. Errors keep run/stage/artifact evidence; no cleanup is attempted by this caller. Durable migration intent precedes personal store creation; verified and synced checkpoint precedes exclusive rename. Rename ACK/result persistence uncertainty cannot cause another rename. Raw CLI completion precedes post checks; its original ready/unknown journal is never rewritten here. Original Web matching-nonce exit is recorded as observed, never normalized to exit0.
+
+Skill review at this implementation stop: local find-skills catalog found existing brainstorming, codebase-design and clean-code; accepted bounded design reused, no skill install. Checked naming/responsibility/error ownership/DRY: clone, artifact verifier, locks, rename syscall, process lifecycle and supervision remain original Modules. New logic is confined to this reviewed procedural composition and pure preservation decisions. No product exports, schema or scheduler changes.

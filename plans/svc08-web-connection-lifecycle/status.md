@@ -6,15 +6,15 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:27:31.281281+00:00 |
+| 更新时间 | 2026-10-07T05:40:53.000811+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 固定Flow产物已通过真实隔离网页宿主验收并获独立批准；进程和专库已收尾，个人服务保持原状。 |
-| 下一可用交付 | 受控接收隔离宿主结果；按固定候选准备仅网页宿主的个人采用。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 固定网页宿主及隔离运行结果已交付；仅替换网页宿主的个人采用步骤已实现，并完成局部故障检查。 |
+| 下一可用交付 | 独立审查迁入与替换调用层，然后在受管窗口采用固定网页宿主。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
@@ -22,13 +22,13 @@
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
 | Head | 隔离结果aa71a7a3855f27b80d7045ec64c0ca644d87156d / delivery604ce630b6703063c882d950f0b8fa4ca10fa6e1；个人候选随后固定 |
 | 工作树dirty状态 | 仅own plan/evidence封存本轮原始结果；提交后核clean |
-| 工作分支状态 | in-progress；隔离宿主结果已审待接收，个人采用仍为准备 |
+| 工作分支状态 | in-progress；隔离宿主结果已接收，个人采用源码待审 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
 | Review | APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
-| 已集成 main 状态 | INTEGRATED ee98e65c147cf2ef28ccf0f519952f60d56e9d4b；固定228构建结果与独审已接，四产品main422保持；本次隔离宿主结果尚待独审/受控接收 |
+| 已集成 main 状态 | INTEGRATED 1d49da00450ae078da13ef3e1f7807d0c00f4c3c；26份固定隔离结果/候选及原独审精确接收；固定构建与四产品main422保持；当前个人采用caller尚待独审，个人尚未操作 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
 
@@ -114,3 +114,7 @@
 唯一Lead于05:23:53.532074Z批准aa71/604ce：28 fixed/current、4 private和14原件副本全同，0重跑；原7断言/3HTTP/首unknown/stop code1与采样口径保持。仅原样归档[独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，原run结果冻结。
 
 [个人采用精确候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)分两个动作：同锁精确迁入，随后新fresh request调用root Flow固定CLI做一次replace-host。16 root工具模块对固定422/main e30及当前字节相同；仅解析pg/tsx已装入口metadata，0import/个人采样/PG/复制。backendArtifact不伪改，首个operator不能直接用c7b CLI；实际Web才选c7b。旧02:45私人摘要只历史输入，执行仍需新现场与窗口。完整SVC08/个人采用open。
+
+## 2026-10-07T05:40:53.000811+00:00：个人采用调用层局部检查
+
+原claim v6 fresh05:32:55.336Z确认后仅own docs实现。沿已接受候选复用原两锁、verify/clone、RENAME_EXCL和OPS14；Web-only无drain/hold/业务DML或任务归零。9个pure/tiny checks、3JS语法入口及Python AST通过，实际05:39:24.469522Z→05:39:24.782849Z/313ms/raw973B；4组absent/双EOF/自有scratch已清。最后仅caller补legacy webHost必须null的保守前置，未重跑无影响9项；该一行源审，不称个人运行。局部已交还native。见[固定候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)、[局部记录](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/local-run.json)。迁入/个人读取/HTTP/PG/服务全部NOT_RUN，root工具尚未冻结。

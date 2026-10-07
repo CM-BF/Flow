@@ -1,0 +1,203 @@
+{
+  "startedAt": "2026-10-07T05:39:24.469522+00:00",
+  "finishedAt": "2026-10-07T05:39:24.782849+00:00",
+  "wallMs": 313,
+  "freeBefore": 24761315328,
+  "sourceBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 4687,
+      "sha256": "443a74a647c1fdaf379eeccea7564149b9839112fdd84704094417349b61552a"
+    },
+    {
+      "path": "caller.mjs",
+      "bytes": 16967,
+      "sha256": "b7a149738212b6b7dea912be8898e2eef39e25cfe4498e18dbc9ca2c391e3349"
+    },
+    {
+      "path": "procedure.test.mjs",
+      "bytes": 5664,
+      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 5577,
+      "sha256": "1ce6abb7632609b7d53359774f09ad0cf1f864329cffa827d4ffeddfe2500d11"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 20391,
+      "sha256": "fd228b2cd12f0677c12a3f063f9781837da09db195475980a77531598db94ccc"
+    }
+  ],
+  "reports": [
+    {
+      "pid": 93272,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 215,
+      "stdout": "\u2714 fresh Web-only gate accepts nonzero user work and uncertain tasks without mutating facts (1.515166ms)\n\u2714 non-Web identity or maintenance drift fails the existing preservation gates (0.668167ms)\n\u2714 business changes remain explicitly unknown and never authorize rollback or reset (0.105167ms)\n\u2714 request freezes exact fresh CAS and fixed artifact without mutating the template (0.137292ms)\n\u2714 durable intent then verification/fsync/checkpoint precede exclusive publish (0.157667ms)\n\u2714 checkpoint failure prevents rename and leaves explicit unknown (0.147791ms)\n\u2714 rename ACK failure is preserved once with no replay, delete or second rename (0.115375ms)\n\u2714 preexisting target is fully verified and never cloned or published again (0.071083ms)\n\u2714 existing Darwin exclusive rename rejects overwrite and preserves both tiny directories (124.146541ms)\n\u2139 tests 9\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 175.380334\n",
+      "stderr": "",
+      "observed_bytes": 973,
+      "retained_bytes": 973,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 93276,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 31,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 93277,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 31,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 93278,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 33,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "pythonAst": "PASS",
+  "remainingScratch": [],
+  "rawBytes": 973,
+  "personalProbes": 0,
+  "PG": 0,
+  "provider": 0,
+  "Chrome": 0,
+  "budget": {
+    "cumulativeSeconds": 30,
+    "tmpBytes": 1048576,
+    "rawBytes": 131072,
+    "freshBytes": 1077936128
+  },
+  "commands": [
+    [
+      "node24",
+      "--test",
+      "procedure.test.mjs"
+    ],
+    [
+      "node24",
+      "--check",
+      "procedure.mjs"
+    ],
+    [
+      "node24",
+      "--check",
+      "caller.mjs"
+    ],
+    [
+      "node24",
+      "--check",
+      "procedure.test.mjs"
+    ]
+  ],
+  "unchangedTestedLogic": "Nine procedure and exclusive-rename cases; later caller-only legacy-selection assert is source-only until review, no personal execution"
+}

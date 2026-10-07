@@ -62,3 +62,7 @@ APPROVED_FIXED_ISOLATED_WEB_HOST_PREPARATION，唯一reviewer Execution Lead；[
 Review target commit: aa71a7a3855f27b80d7045ec64c0ca644d87156d
 
 APPROVED_ISOLATED_WEB_HOST_RESULT；唯一reviewer astra_ultra_execution_lead，05:23:53.532074Z。[原样回执](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json) SHA1fdfdd7b7d504ef0701c253ca5e2ee3963b992361f913b2de496622d2e5cc0e3。28固定/source/raw、4private及14原件副本核同，无P1/P2，reviewer0运行。只限这一次隔离真实Web/marker DB/合成保护哨兵；未知首观察/显式stop code1/未测个人边界保持。个人采用candidate是后继准备，不套本批准。
+
+## 2026-10-07T05:40:53.000811+00:00 — 个人采用caller待审
+
+仅docs范围薄procedure/caller/OPS14参数与tests，沿[候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)。局部9/9/4组收尾与语法通过，真实个人迁入/替换NOT_RUN；请完整审caller与固定来源、锁释放/no-replace、PID-only直指CLI、业务只读并发变化保留以及失败未知不重试。不重审旧构建/隔离结果，无新产品源。结果已main1d49，当前caller无独立批准。
