@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T10:20:12.584254+00:00",
+  "baseMethodSource": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "newCallerSource": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "oldArtifact": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+  "newArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "originalFailure": "b2b-host-policy r1 START_UNCONFIRMED_CHECK_STATUS; kept unchanged",
+  "changes": [
+    "New source artifact7d1/6c and exclusive private directory; actual sizes updated",
+    "Original journey/work-terminal bytes reused from exact methodSources, private entry relative import deterministically made local",
+    "Only new observer leaf read in work finally and independent cleanup after detached stop",
+    "Supervisor Python alias only; shared OPS14 unchanged",
+    "No change to host spawn/readiness10s/stop/DROP guard or semantic journey checks"
+  ],
+  "fixedRuntimeInputs": 514,
+  "legacyAliases": 4,
+  "runtimeReadonly": 3,
+  "connections": "Original CONNECTIONS.md applies: maximum15, old and new center sequential; diagnostics adds0",
+  "resourcesUnchangedExceptNewArtifactLogicalSize": true,
+  "privateStderrMax": 393216,
+  "actualRun": "NOT_RUN"
+}

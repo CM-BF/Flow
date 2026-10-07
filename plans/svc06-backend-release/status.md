@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:14:09 UTC；新诊断产物实际构建/import完成，窗口已归还，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:20:12 UTC；新产物结果已限定独审，诊断宿主后继准备待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/fc02已独审；新入口269034/delivery047363，固定runtime6c，结果记录正在提交 |
-| 工作树dirty状态 | 产品与运行入口停写；仅本次结果/own metadata收口 |
+| 工作基线 / HEAD | 产品3cb/fc02、runtime6c固定；新build结果32d441/d911已独审；新host观察源6cd5a15c/自有records收口 |
+| 工作树dirty状态 | 产品/已审build入口与raw停写；仅新host准备与own metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 诊断19 distinct局部已审不重跑；新6c实际build/import exit0，监督33332ms/owned absent/双EOF；旧c2c/r1原件保持 |
+| 检查状态 | 新6c产物build/import已限定独审；新增host观察3/3+entry语法0、caller168ms/413B/2组清理；真实新host NOT_RUN |
 | 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 带启动诊断的新产物已构建并完成内部加载检查，构建资源已归还。 |
-| 下一可用交付 | 审查本次结果，并用新产物准备能保留最早启动错误的宿主验证。 |
-| 当前阻塞 | ACTIVE: 本次构建结果待独审；真实宿主与配置验收仍未完成。 |
+| 当前产出 | 带诊断的新产物已通过独立结果审查；后续宿主验证已补齐可保留首错的观察。 |
+| 下一可用交付 | 审查固定宿主入口，取得实际窗口后运行迁移与浏览器策略验证。 |
+| 当前阻塞 | ACTIVE: 新宿主入口待独审和实际运行窗口；三App兼容与个人更新仍未验。 |
 | 需用户决定 | NONE |
-| Review | 源码3cb与入口269034已独审APPROVED；本次实际结果待唯一独审 |
+| Review | diagnostics产物32d441/d911获native唯一APPROVED_LIMITED_FIXED_ARTIFACT_BUILD_RESULT；新host准备待Lead独审 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -262,3 +262,7 @@ source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领
 ## 2026-10-07 10:14:09 UTC — 新诊断产物构建结束
 
 [唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/RESULT.md)：2026-10-07T10:12:06.871Z→2026-10-07T10:12:40.145Z，artifact7d1a3928/source6c，33SQL与内部加载通过；outer33332ms/exit0、组62953最终absent/双EOF，无signals。初unknown/EPERM保留，raw15077B；原r1失败、c2c与新根原件不变。实际窗口已归还，结果待独审；仅准备下一新host诊断，不运行PG/个人或重复build。03/04/05仍open。
+
+## 2026-10-07 10:20:12 UTC — 新产物批准与诊断宿主准备
+
+[唯一产物结果独审](../../docs/evidence/svc06/update-diagnostics-candidate/result-independent-review.json)限定APPROVED、P1/P2=0；21+3/private root绑定及原33332ms/33SQL/内部加载核同，0reviewer重跑。新[宿主Interface](../../docs/evidence/svc06/diagnostics-host-policy/Interface.md)固定7d1/6c、复用af51/d629/原旅程，只加私有输出metadata；514运行输入/4aliases/3runtime准备时核同。新增3tiny/语法已按原预算完成，本队local10:18:34.576Z归还；真实PG/host未运行，等独审及Lead窗口，不预占。原r1失败与所有unknown保持，完整03/04/05不完成。

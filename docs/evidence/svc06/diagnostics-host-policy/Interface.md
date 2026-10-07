@@ -8,7 +8,7 @@
 
 独立cleanup仍只用原stopOwnedProcess，DROP必须消费绑定本run/input的work终态且组absent；没有确认的writer即KEEP，即使瞬时零连接。新观察位于stop后、DROP前，但只提供证据，不替代nonce/marker/OID/有界零连接守卫。诊断错误不当成功，不延长原外层30s。
 
-预算原封不动：work180+cleanup30，各.5TERM/2reap；fresh≥2.5GiB并叠加当时实际并发、live1GiB；artifact副本512MiB+私有64MiB+PG96MiB+raw2MiB=674MiB（原packet的newPhysicalPlanningBytes=674MiB、含raw总676MiB保守规划沿用，不以逻辑bytes冒物理）。最多六份64KiB输出已含私有64MiB，outer两段各128KiB capture。实际连接最多15配置：旧server8+boss3→正常close→新center8+boss3，同顺序不重叠；fixture1+maintenance2+helper1。fresh检查cluster余量，非峰值实测。
+预算原封不动：work180+cleanup30，各.5TERM/2reap；fresh≥2.5GiB并叠加当时实际并发、live1GiB；artifact副本512MiB+私有64MiB+PG96MiB=672MiB；沿用原newPhysicalPlanningBytes=674MiB（含2MiB保守余量），再计raw2MiB为676MiB；不以逻辑bytes冒物理。最多六份64KiB输出已含私有64MiB，outer两段各128KiB capture。实际连接最多15配置：旧server8+boss3→正常close→新center8+boss3，同顺序不重叠；fixture1+maintenance2+helper1。fresh检查cluster余量，非峰值实测。
 
 准备只做新增观察器3个tiny文件例+entry语法，10s总段/1MiB临时与raw保留在既有局部预算内，0PG/host/provider；不重跑原terminal3例、诊断19例或build/import。方法复用既有find-skills/codebase-design/clean-code基线；本leaf只观察，不复制产品诊断写入/监督/维护FSM。
 
