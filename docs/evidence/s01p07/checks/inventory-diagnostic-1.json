@@ -1,0 +1,48 @@
+{
+  "startedAt": "2026-10-07T03:01:08.458787+00:00",
+  "finishedAt": "2026-10-07T03:01:08.721302+00:00",
+  "elapsedMs": 262.52758398186415,
+  "command": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "docs/evidence/s01p07/execute-pg.test.py",
+    "InventoryTests",
+    "-v"
+  ],
+  "pythonVersion": "3.13.3",
+  "exitCode": 0,
+  "pid": 69752,
+  "childExited": true,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "timeout": false,
+  "rawBytes": 734,
+  "rawLimit": 65536,
+  "source": [
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 16965,
+      "sha256": "0bc4313170282bcdaf4eef973e4a86b7c4b6557c47c0bd3c105c67edc54f885a"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    }
+  ],
+  "ownRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-inventory-fake-3cb36ew3",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123361891
+  },
+  "sameIdentity": true,
+  "tempEntriesAfterExit": 0,
+  "temporaryFinalBytes": 0,
+  "tempLimit": 1048576,
+  "rootAbsent": true,
+  "caseSelection": "InventoryTests only; original LifecycleTests not selected",
+  "providerCalls": 0,
+  "pgCalls": 0,
+  "oldRetainedRootTouched": false,
+  "budgetPassed": true
+}

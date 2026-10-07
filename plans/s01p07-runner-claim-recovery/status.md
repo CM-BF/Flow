@@ -2,7 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 02:54:01 UTC |
+| 最近更新 | 2026-10-07 03:01:08 UTC |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
@@ -10,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次execution HEAD 03d5543cebffeffa53924addd331e65d764586ce |
-| 工作树dirty状态 | 执行前03d5543c clean；本次仅新增R1运行证据与metadata，产品/PG输入冻结 |
+| 工作树dirty状态 | 本修复开始HEAD 16a938a465e49dfaf8a0b1ed1d4356bcc5eaa4b8 clean；仅wrapper/其fake源码与自有metadata，产品/fixture/旧输入和raw冻结 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | 历史85 distinct non-PG分批通过、focused strict5 exit0、3 wrapper fake均未重跑。新8组PG的R1窗口已消费：用例结果前TEMP_INVENTORY_UNKNOWN中止，0条case结果，选中数未知，不记通过或8 skipped。原4组capacity PG单列NOT_RUN |
+| 本片段交付阶段 | review |
+| 检查状态 | 历史85 distinct non-PG、focused strict5 exit0、3 wrapper fake均未重跑。新增诊断4项fake单次4/4 / exit0另列；R1 PG窗口已消费且0条case结果，不记通过或8 skipped。原4组capacity PG单列NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
 | 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源；PG未验） |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 非数据库行为证据保持通过；首次中心验证在用例前被临时目录计量门禁中止，运行进程已结束，失败原件与未知目录已保留。 |
-| 下一可用交付 | 定位本次目录计量未知并受控修复验证入口，再完成原中心事务与必要容量消费者验收。 |
-| 当前阻塞 | R1未产生用例结果，TEMP_INVENTORY_UNKNOWN具体原因未定；自有临时根KEEP。heavy实际已结束归还，后继运行须新窗口，无自动重试。 |
+| 当前产出 | 首次失败原件已获忠实性审查；目录计量首错诊断已补齐并通过4项定向反例，停止和保留规则不变。 |
+| 下一可用交付 | 完成诊断修复独审并固定新运行输入，再在新窗口完成原中心事务验收。 |
+| 当前阻塞 | ACTIVE: R1未得用例结果，具体触发原因无法追溯；诊断修复待独审，旧未知目录继续KEEP。heavy与本次local均已结束，后继PG NOT_OPEN。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，SOURCE_REVIEW APPROVED / VALIDATION_PENDING |
+| Review | [review.md](review.md)：原产品SOURCE_REVIEW APPROVED，R1 RESULT_FIDELITY_APPROVED；诊断修复4/4待独审，整体VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -48,3 +51,11 @@ CHAT05P01 的[只读接口对照与交接边界](../../docs/evidence/s01p07/chat
 2026-10-07 [PG恢复准入](../../docs/evidence/s01p07/pg-window-resumption.md)：fresh claim v2/18 ACTIVE；65固定绑定、30动态SQL、24依赖与231份既有源码闭包无缺失/漂移。原heavy启动线保持，单个有界local若配对则另计完整新增预算；不以旧串行文案默许并跑。此次仅静态核对与一次空间观察，0工程测试/PG/provider，原85非PG、strict5和3fake不重跑。
 
 R1实际窗口 `S01P07-PG-20261007-R1`：02:53:11–02:53:12 UTC，外部 time real 1.00s / exit1；wrapper 0.870s。Vitest PID/PGID97501一次TERM后exit143，双EOF、自有组absent；stdout仅90B横幅，stderr0。fixture receipt及其四个前置记录全部absent；原fixture必须先durable reservation再触DB，未见CREATE证据，未另查询PG，不能声称远端零连接或DROP通过。精确临时根 `flow-s01p07-pg-window-qsnu91s5` 身份仍同reservation，final/sample 1164095B，按unknown保留。原source/manifest不变，未重试；计量错误的具体原因仍未知，不以最后采样成功抹除首fault。外壳及准入事实见同一[运行记录](../../docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.outer.json)。
+
+R1后[最小诊断修复](../../docs/evidence/s01p07/inventory-diagnostic-fix.md)只补首错phase/errno/计数，4项新fake单次4/4、262.528ms、raw734B，自有空TMP同身份清理。原wrapper输入按历史Git冻结，当前修后wrapper不得沿用旧hash启动；产品、fixture及旧raw不变。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| S01P07-W01 | 2026-10-07T02:53:12.952049Z | OPEN | 验证失败 | R1结束后未有PG用例结果；诊断修复须独审、定向验证与新窗口 | checks/S01P07-PG-20261007-R1.json finishedAt；inventory-diagnostic-fix.md |

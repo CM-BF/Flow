@@ -69,6 +69,50 @@ def read_owned_json(path, maximum):
         os.close(descriptor)
 
 
+def sample_temporary(root, identity, record, scandir=os.scandir):
+    """Keep the first finite inventory diagnostic; never suppress the original failure."""
+    phase, count, size = "root-lstat", 0, 0
+    try:
+        current = root.lstat()
+        phase = "root-identity"
+        if not current.st_dev == identity.st_dev or not current.st_ino == identity.st_ino or root.is_symlink():
+            raise RuntimeError("ROOT_IDENTITY_UNKNOWN")
+        pending = [root]
+        while pending:
+            phase = "directory-open"
+            with scandir(pending.pop()) as entries:
+                phase = "directory-iterate"
+                for entry in entries:
+                    count += 1
+                    phase = "entry-limit"
+                    if count > 4096:
+                        raise RuntimeError("TEMP_INVENTORY_UNKNOWN")
+                    phase = "entry-symlink"
+                    if entry.is_symlink():
+                        raise RuntimeError("TEMP_INVENTORY_UNKNOWN")
+                    phase = "entry-type"
+                    if entry.is_dir(follow_symlinks=False):
+                        pending.append(Path(entry.path))
+                    elif entry.is_file(follow_symlinks=False):
+                        phase = "entry-stat"
+                        size += entry.stat(follow_symlinks=False).st_size
+                    else:
+                        phase = "node-kind"
+                        raise RuntimeError("TEMP_NODE_UNKNOWN")
+                    phase = "directory-iterate"
+                phase = "directory-close"
+        return size
+    except (OSError, RuntimeError) as error:
+        record.setdefault("firstInventoryFailure", {
+            "phase": phase,
+            "reason": "os-error" if isinstance(error, OSError) else phase,
+            "errno": error.errno if isinstance(error, OSError) else None,
+            "entriesCounted": count,
+            "fileBytesCounted": size,
+        })
+        raise
+
+
 def main():
     WT = Path(__file__).resolve().parents[3]
     EVIDENCE = WT / "docs/evidence/s01p07"
@@ -166,26 +210,6 @@ def main():
     streams = {}
 
 
-    def sample():
-        current = root.lstat()
-        if not current.st_dev == identity.st_dev or not current.st_ino == identity.st_ino or root.is_symlink():
-            raise RuntimeError("ROOT_IDENTITY_UNKNOWN")
-        pending, count, size = [root], 0, 0
-        while pending:
-            with os.scandir(pending.pop()) as entries:
-                for entry in entries:
-                    count += 1
-                    if count > 4096 or entry.is_symlink():
-                        raise RuntimeError("TEMP_INVENTORY_UNKNOWN")
-                    if entry.is_dir(follow_symlinks=False):
-                        pending.append(Path(entry.path))
-                    elif entry.is_file(follow_symlinks=False):
-                        size += entry.stat(follow_symlinks=False).st_size
-                    else:
-                        raise RuntimeError("TEMP_NODE_UNKNOWN")
-        return size
-
-
     try:
         if time.monotonic() - started > 10:
             raise RuntimeError("PREPARATION_TIMEOUT")
@@ -202,7 +226,7 @@ def main():
         while child.poll() is None or selector.get_map():
             elapsed = time.monotonic() - started
             try:
-                peak = max(peak, sample())
+                peak = max(peak, sample_temporary(root, identity, record))
                 if peak > TEMP_LIMIT and "TEMP_LIMIT" not in faults:
                     faults.append("TEMP_LIMIT")
             except (OSError, RuntimeError):
@@ -263,7 +287,7 @@ def main():
             except OSError as error: faults.append("RAW_CLOSE_" + str(error.errno))
     group_gone = child is None or bool(process_facts and process_facts["groupAbsent"])
     final_size = None
-    try: final_size = sample(); peak = max(peak, final_size)
+    try: final_size = sample_temporary(root, identity, record); peak = max(peak, final_size)
     except (OSError, RuntimeError): faults.append("FINAL_INVENTORY_UNKNOWN")
     if peak > TEMP_LIMIT and "TEMP_LIMIT" not in faults: faults.append("TEMP_LIMIT")
     fixture = None
