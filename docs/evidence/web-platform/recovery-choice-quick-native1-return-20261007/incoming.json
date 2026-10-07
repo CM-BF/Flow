@@ -1,0 +1,103 @@
+{
+  "recordedAt": "2026-10-07T06:19:47.237514+00:00",
+  "source": "Root actualco-lead handoff and originalowner receipts, no new manager service/runtime probe",
+  "svc08": {
+    "state": "ACTUAL_RETURNED",
+    "returnedAt": "2026-10-07T06:17:15.974Z",
+    "post": "ready-preserved",
+    "requestReplacePostOuterExits": [
+      0,
+      0,
+      0
+    ],
+    "ownedGroups": "absent",
+    "pipes": "dualEOF",
+    "protectionChecks": 11,
+    "tables": "64 UNCHANGED",
+    "preserved": "center/runner af51 accepting18 and Web d629v3; only hostc7b",
+    "readonlyHttp": 5,
+    "models": 0,
+    "userTaskOrTabActions": 0,
+    "freeze": "lifted"
+  },
+  "quickNative1": {
+    "state": "FAILED_INCONCLUSIVE_CLEANED_RETURNED",
+    "source": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+    "runHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+    "actual": {
+      "start": "2026-10-07T06:12:23.658295+00:00",
+      "end": "2026-10-07T06:12:34.859962+00:00",
+      "exit": 1,
+      "wallMs": 11221.448166994378,
+      "parentLateMs": 11182,
+      "chargeMs": 11222,
+      "newSegmentLimitMs": 90000,
+      "newSegmentRemainingMs": 78778,
+      "oldClosedActualMs": 30625
+    },
+    "scope": "Plain A Chineseaccessiblelabel absent beforekeys; B/modal unexecuted, original0/6/0PNG; notPicker failure/rootcauseproof",
+    "cleanup": {
+      "parentAndWorkerAndChromeGroups": [
+        {
+          "pgid": 56904,
+          "state": "ESRCH"
+        },
+        {
+          "pgid": 57021,
+          "state": "ESRCH"
+        },
+        {
+          "pgid": 56911,
+          "state": "ESRCH"
+        }
+      ],
+      "observedAt": "2026-10-07T06:14:38.628076+00:00",
+      "scratchAbsent": true,
+      "fixtureClosed": true,
+      "contextClosed": true,
+      "errors": [],
+      "pipes": "Outer both EOF; owned Chrome stdout/stderr and worker EOF, closed, zero dropped bytes. Chrome received owned SIGTERM and exited0; no SIGKILL recorded."
+    },
+    "review": "quick-native1-actual-review.json"
+  },
+  "quickNative2": {
+    "state": "PREPARED_NOT_ADMITTED_ROUTINE_BINDING_REVIEW_PENDING",
+    "source": "521a38395c4b9a38613937c83ce44215afc70280",
+    "ownerHead": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
+    "packet": "/private/tmp/msgquick-native2",
+    "newSegmentSpentMs": 11222,
+    "newSegmentRemainingMs": 78778,
+    "oldClosedMs": 30625,
+    "gate": null,
+    "reservation": false,
+    "boundary": "OnlyUTF8/publicprekeyfacts/primaryerrorpreservation source +routinecarry; manager may verify exactdiff/rebind existing431cf boundary later, no lifecycle/acceptance bypass."
+  },
+  "recovery": {
+    "state": "ADMITTED_NOT_STARTED",
+    "source": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+    "head": "0a661aa558840453ed3e0646db30b1073b5398ca",
+    "packet": "/private/tmp/recovery-connection-choice-55b-it_8ry_i",
+    "manifestSha256": "f5cd59ab7aa25d2154c9206c614cb619a8eb0c4c1c55fa0a742153bb4e9b4882",
+    "packetFilesSha256": "daa8160507c4ad129cc45bb75c08f8e03f9f89a038cc7fb9023ecd12417d8a65",
+    "journey": "connection-choice",
+    "required": [
+      "cookieRead",
+      "connectionChoice"
+    ],
+    "newSegmentSpentMs": 13134,
+    "newSegmentRemainingMs": 136866,
+    "singleMaximumMs": 60000,
+    "cleanupMs": 15000,
+    "rootSourceReview": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
+    "scope": "No full7rerun; selectedpass notwholefeature; originalparent unchanged; no newapproval loop.",
+    "runtimeChange": "chrome-pin-mismatch.json",
+    "currentManifestSha256": "e91b0852f78cdd725b393249fd1a8a407ba55ac070011e43f8b734c2f28813e2",
+    "currentPacketFilesSha256": "d685412687e6281b6fd23d0d94016d1563a8940955589a8aa355fe6cb16890bb",
+    "runtimeRevision": "chrome-patch-provenance.json",
+    "runtimeMismatchHistorical": "chrome-pin-mismatch.json",
+    "handoff": "recovery-handoff.json",
+    "gate": "recovery-gate.json",
+    "expiresAt": "2026-10-07T06:27:52.014038+00:00"
+  },
+  "nextSharedWindow": "SVC08r3returned; root/Mika expresslynextRecovery; revisedsamebundleChrome.99 freshpins/resources complete and newchoice2 gatecreated. Not actualRUN; Quicknative2queues/noChrome."
+}

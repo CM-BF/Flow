@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-07T06:21:15.515114+00:00",
+  "kind": "SAME_INSTALLED_CHROME_PATCH_PROVENANCE",
+  "bundlePath": "/Applications/Google Chrome.app",
+  "bundleRealpath": "/Applications/Google Chrome.app",
+  "bundleIdentifier": "com.google.Chrome",
+  "currentVersion": "154.0.8037.99",
+  "previousVersion": "154.0.8037.98",
+  "binary": {
+    "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "bytes": 367696,
+    "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+  },
+  "plist": {
+    "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+    "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+    "bytes": 18856,
+    "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+  },
+  "signatureIdentity": [
+    "Executable=/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "Identifier=com.google.Chrome",
+    "Format=app bundle with Mach-O universal (x86_64 arm64)",
+    "CDHash=48eaee23f3e02a1038601171758d371533c8b13b",
+    "Authority=Developer ID Application: Google LLC (EQHXZ8M8AV)",
+    "Authority=Developer ID Certification Authority",
+    "Authority=Apple Root CA",
+    "TeamIdentifier=EQHXZ8M8AV"
+  ],
+  "codesignDisplayExit": 0,
+  "identityBasis": "Current signed identifier/team/authority matches installed GoogleChrome expected vendor; earlier packet pinned binary/plist and version, not a full historic codesign dump. No claim of complete transitive/nativebyte coverage.",
+  "updateCause": "UNKNOWN; no assertion of auto-update",
+  "permissionAndLifecycle": "Samebundlelaunchpath; source55b/parent/scripts/flags/authority/lifecycle unchanged. Oldruntime evidence remains .98; futurechoice uses .99 and no causality inferred for Quickkeyboardfailure.",
+  "runtime": "No Chrome/PG/HTTP launched; no gate/env/resource sample."
+}

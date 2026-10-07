@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T06:20:00.556338+00:00",
+  "state": "NOT_ADMITTED_RUNTIME_PIN_CHANGED",
+  "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "expected": [
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
+    }
+  ],
+  "actual": {
+    "bytes": 367696,
+    "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+    "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "device": 16777234,
+    "inode": 123578051
+  },
+  "expectedChromeVersion": "154.0.8037.98",
+  "currentChromeVersion": "154.0.8037.99",
+  "expectedPlistSha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69",
+  "actualPlistSha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a",
+  "envCreated": false,
+  "gateCreated": false,
+  "runtimeLaunched": false,
+  "scope": "ExactChrome binary/plist readonly identity only; no process/service/resource sample."
+}
