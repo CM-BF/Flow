@@ -306,7 +306,7 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
         const wireIndex = records.length; records.push(record);
         await new Promise<void>((resolve, reject) => {
           let downstreamClosed = false;
-          const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers }, incoming => {
+          const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers, agent: false }, incoming => {
             record.status = incoming.statusCode!; const sse = /text\/event-stream/i.test(String(incoming.headers["content-type"]));
             if (sse) record.sse = { chunks: 0, bytes: 0, firstChunkAt: null, endedAt: null, closedAt: null };
             if (!selected && !heldLogout) response.writeHead(record.status, forwardHeaders(incoming.headers));
