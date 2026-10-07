@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T02:45:10.424003+00:00",
+  "target": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "reviewer": "/root read-only",
+  "decision": "ACCEPTED_SCOPED_PROPOSAL_NOT_IMPLEMENTED",
+  "report": {
+    "path": "/private/tmp/dashboard-task-time-943a/report.md",
+    "sha256": "d4850add43dc7de2795ee48a11587361297ef760c370e42ac1ff950d200cefcd"
+  },
+  "sourcePinCount": 8,
+  "sourcePinErrors": [],
+  "conclusions": [
+    "Reuse unique owner status and existing strict UTC core. DPERF05 only proves update parsing, not task elapsed time.",
+    "Optional missing/invalid timing facts belong to timing issues, not global status errors; no historical migration.",
+    "Elapsed is wall time including waits at snapshot.generatedAt, not measured active effort. Explicit incomplete differs from unknown completion. No mtime/claim/Git or branch delivery inference.",
+    "Review, main integration and deployment remain separately verified; historical milestone times cannot promote current target state.",
+    "Two product literals plus targeted tests is a reasonable proposed scope, pending final Lead field contract and actual writer handoff."
+  ],
+  "adjustments": [
+    "The report final future admission sentence is superseded by the latest Lead OPS direction: ordinary reversible implementation and local checks use one bounded continuous work segment, preserve failure originals and finish with one review/integration; no per-check preparation/permission chain. PG/Chrome/personal-service changes still retain necessary isolation.",
+    "NOT_COMPLETED is a proposed explicit fact representation, not a final new project-wide enum. Reuse Lead-selected equivalent if available.",
+    "If stale data retains a historical computed duration, label its observation instant and avoid a current/in-progress claim."
+  ],
+  "officialSources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse",
+      "basis": "Nonstandard parsing and date-time without timezone are unsuitable for authoritative instants."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Performance/now",
+      "basis": "Date wall clock can adjust; monotonic time is not a source for historical task instants."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API",
+      "basis": "Background timers are throttled; no per-card timer is needed for snapshot-time duration."
+    }
+  ],
+  "cleanCode": "Reviewed source isolation, input semantics, error locality and avoidance of unnecessary new timers/stores. No project implementation writes or application/test execution.",
+  "notRun": [
+    "parser tests",
+    "browser",
+    "real aggregation",
+    "personal services"
+  ]
+}

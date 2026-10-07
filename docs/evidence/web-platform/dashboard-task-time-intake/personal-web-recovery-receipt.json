@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-10-07T02:48:10.805158+00:00",
+  "source": "Lead actual handback via root, with manager bounded read of exact non-sensitive terminal/postcheck fields; no new process/HTTP/resource observation",
+  "canonicalRun": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z",
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/cli-checkpoint.json",
+      "bytes": 705,
+      "sha256": "573cb0f3ec9a505b0160766f30fd9e14f18465539c19452f7f962e4301a214a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/facts-after.json",
+      "bytes": 5577,
+      "sha256": "f5f7f4927617c79312bb052dab413976fc7ebcabf239ec4677a18c822e6932f7"
+    }
+  ],
+  "bootstrap": {
+    "startedAt": "2026-10-07T02:45:02.253755+00:00",
+    "finishedAt": "2026-10-07T02:45:03.223312+00:00",
+    "exit_code": 0,
+    "elapsed_ms": 968,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "bootstrapCalls": 1,
+    "providerQueries": 0
+  },
+  "postcheck": {
+    "at": "2026-10-07T02:45:34.853Z",
+    "passed": true,
+    "checks": {
+      "config.json": true,
+      "claude.json": true,
+      "maintenance.json": true,
+      "web-release.json": true,
+      "source": true,
+      "lockAbsent": true,
+      "centerPreserved": true,
+      "runnerPreserved": true,
+      "centerListener": true,
+      "webOwnedListener": true,
+      "oldWebGroupAbsent": true,
+      "databaseMetadataPreserved": true,
+      "rootReadable": true,
+      "identityMatches": true
+    },
+    "root": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "observedBytes": 950,
+      "completeWithinBound": true,
+      "bodyRecorded": false
+    },
+    "identity": {
+      "status": 200,
+      "contentType": "application/json",
+      "observedBytes": 278,
+      "completeWithinBound": true,
+      "bodyRecorded": false,
+      "identity": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "releaseVersion": 3,
+        "releasePolicy": "flow-web-release-v1"
+      }
+    },
+    "oldGroupAbsent": true
+  },
+  "coordination": {
+    "windowReturned": true,
+    "actualWebGrant": false,
+    "webHolder": null,
+    "webGate": null,
+    "webReservation": false,
+    "next": "Ready-first after fresh necessary admission; ordinary reversible local checks use bounded continuous work segments. Superseded windows are not reopened."
+  },
+  "preservation": "Lead reports backend/runner/pointers/config/DB unchanged, no user-tab reload/login/provider; no manager personal operations. Recovery does not mean local-access entry is implemented."
+}

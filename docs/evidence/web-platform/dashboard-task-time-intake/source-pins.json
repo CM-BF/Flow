@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T02:44:21.117393+00:00",
+  "fixedMain": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "mainEqualsOriginAtFreeze": true,
+  "readMode": "Git objects only",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 2378,
+      "sha256": "285b484f43d1cc55f802356fafcdb891443f9bdcadb7f4b0b10f0f0c37632bfb"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c"
+    },
+    {
+      "path": "plans/wpf-dperf05-status-timestamps/plan.md",
+      "commit": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+      "bytes": 2365,
+      "sha256": "060b3749776429075dc1d554b95700aebdfcba2b08fc5ad8eff735a8d7e2a905"
+    }
+  ],
+  "runtime": "NOT_RUN",
+  "scope": "Read-only proposal; no claim/implementation",
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ]
+}

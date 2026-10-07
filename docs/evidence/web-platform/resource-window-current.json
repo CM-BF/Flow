@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T02:40:35.366502+00:00",
-  "state": "NO_WEB_HOLDER_QUICK_C1_FAILED_CLEANED_RETURNED",
-  "groupWindowOwnership": "Quick c1 actual parent exit1; strict noEmit exit2 and no direct execution. Owned group/scratch cleanup confirmed. Local slot returned to Mika/Lead; no automatic follow-up.",
+  "recordedAt": "2026-10-07T02:49:23.987411+00:00",
+  "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
+  "groupWindowOwnership": "Lead confirms same-version 61228 Web recovery completed and exclusive window returned; Web has no actual holder, gate or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,16 +407,16 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "state": "FAILED_CLEANED_WINDOW_RETURNED",
-    "source": "Original outer actualexit, unique terminal seal and matching result/budget/step hashes read by manager",
-    "evidence": "message-settings02-c1-actual/window.json",
+    "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
+    "source": "Lead actual handback via root plus bounded original receipt read; no service/free/proc resample",
+    "evidence": "dashboard-task-time-intake/incoming.json",
     "webHolder": null,
     "newWebGrant": false,
-    "localCheckSlot": "Root relay: OPS14 followed by SVC06 planned local checks; no Web gate/reservation. C02 heavy window separately coordinated by Mika, actual latest terminal not sampled here.",
-    "next": "D04 source-only complete, pureGit pending. Quick exact missing input supplied by Lead, c2 static prepared only. No automatic runtime.",
-    "newUserSourceTask": "dashboard-local-access-intake/request.json; partial handoffs pending, no runtime reservation",
-    "personalService": "Lead reports user61228 unavailable; sole SVC operator assigned for same-version recovery after SVC06 safety point, no Web personal operations",
-    "heavyWindow": "Root relay reports C02 actual returned; no Web heavy grant/reservation"
+    "personalRecoveryStartedAt": "2026-10-07T02:45:02.253755+00:00",
+    "personalRecoveryFinishedAt": "2026-10-07T02:45:03.223312+00:00",
+    "next": "Ready-first with fresh necessary admission, original budgets and owner scopes; ordinary reversible local implementation uses one bounded modify/check/fix/recheck segment. No superseded window reuse; PG/Chrome/personal-service safeguards remain.",
+    "localSlot": "Mika actual OPEN local chain per root: X01 → C02 → REQ15, all 0PG/Chrome/provider/install. No Web holder.",
+    "webFollowingRequest": "After actual terminal cleanup of complete chain only, requested one ≤90s local segment preserving Quick28125ms/Recovery10s/D04≤30s caps; sent to Mika, no acceptance/reservation yet."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -904,6 +904,100 @@
         "webStarts": 0
       },
       "reason": "Historical resource hold and queue observation superseded by Lead capacity recovery/SVC07 allocation; original evidence retained"
+    },
+    {
+      "recordedAt": "2026-10-07T02:40:35.366502+00:00",
+      "historicalCurrentIndices": {
+        "state": "NO_WEB_HOLDER_QUICK_C1_FAILED_CLEANED_RETURNED",
+        "latestCoordination": {
+          "state": "FAILED_CLEANED_WINDOW_RETURNED",
+          "source": "Original outer actualexit, unique terminal seal and matching result/budget/step hashes read by manager",
+          "evidence": "message-settings02-c1-actual/window.json",
+          "webHolder": null,
+          "newWebGrant": false,
+          "localCheckSlot": "Root relay: OPS14 followed by SVC06 planned local checks; no Web gate/reservation. C02 heavy window separately coordinated by Mika, actual latest terminal not sampled here.",
+          "next": "D04 source-only complete, pureGit pending. Quick exact missing input supplied by Lead, c2 static prepared only. No automatic runtime.",
+          "newUserSourceTask": "dashboard-local-access-intake/request.json; partial handoffs pending, no runtime reservation",
+          "personalService": "Lead reports user61228 unavailable; sole SVC operator assigned for same-version recovery after SVC06 safety point, no Web personal operations",
+          "heavyWindow": "Root relay reports C02 actual returned; no Web heavy grant/reservation"
+        },
+        "nextWebReady": {
+          "state": "PREPARED_NO_HOLDER_WAIT_RESOURCE_AND_NEW_SCHEDULING",
+          "priority": "Recovery8ed/000a and DPERF544c/929b preparation approved, no gate. Settings01 delivered/main/released. Settings02 new six-scope source implementation only; runtime remains behind existing shared ready queue.",
+          "gate": null
+        },
+        "quickControlsPreparation": {
+          "request": "message-settings02-c1-prepared/request.json",
+          "state": "APPROVED_STATIC_PREPARATION_NOT_RUN",
+          "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "grant": false,
+          "reservation": false,
+          "gate": null,
+          "freeSample": false,
+          "runtimeStarted": false,
+          "queueUnchanged": "Lead SVC07/C02",
+          "ownerHeadAtPacketSeal": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+          "currentOwnerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+          "headRebindRequiredAtFutureAdmission": true
+        },
+        "quickControlsBrowserPreparation": {
+          "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",
+          "ownerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+          "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "evidence": "message-settings02-browser-prepared/request.json",
+          "actualChecks": "NOT_RUN",
+          "grant": false,
+          "gate": null,
+          "reservation": false,
+          "review": "message-settings02-browser-prepared/root-preparation-review.json",
+          "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+          "headRebindRequiredAtFutureAdmission": true,
+          "prerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run."
+        },
+        "quickControlsPortablePreparation": {
+          "state": "APPROVED_SCOPED_STATIC_PORTABLE_PREPARATION_NOT_RUN",
+          "evidence": "message-settings02-portable-prepared/intake.json",
+          "candidate": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+          "ownerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+          "productSource": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "grant": false,
+          "gate": null,
+          "reservation": false,
+          "runtimeStarted": false,
+          "review": "message-settings02-portable-prepared/root-preparation-review.json",
+          "ownerStoppedWriting": true,
+          "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2"
+        },
+        "latestSourceOnlyProgress": {
+          "at": "2026-10-06T23:53:02.712681+00:00",
+          "evidence": "architecture-snapshot-0da-intake/intake.json",
+          "runtimeGrant": false,
+          "holder": null,
+          "reservation": false
+        },
+        "latestMikaQueueIntake": {
+          "source": "Mika actual handback via root",
+          "SVC07": "PASS selected1/pass1 outerexit0 wall2.979205s;02:11:53.535889Z all cleanup; no pending launch",
+          "C02": "NOT_OPEN/no holder/gate/reservation; operator unavailable, explicit yield to Web one Recovery attempt",
+          "actualWebStart": "pending original owner acknowledgement"
+        }
+      },
+      "supersededBy": "dashboard-task-time-intake/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+      "state": "PERSONAL_61228_WEB_ONLY_RECOVERY_PRIORITY_NO_WEB_GRANT",
+      "latestCoordination": {
+        "state": "PERSONAL_61228_WEB_ONLY_RECOVERY_PRIORITY_NO_WEB_GRANT",
+        "source": "Lead incoming relayed by root; no Web service/process/resource sample",
+        "evidence": "dashboard-task-time-intake/incoming.json",
+        "webHolder": null,
+        "newWebGrant": false,
+        "actualPersonalRecoveryStart": null,
+        "actualPersonalRecoveryCompletion": null,
+        "next": "Await sole operator actual recovery/cleanup handback; no Web PG/Chrome/install/rebuild. Independent source work only after exact supply and claim. Ordinary reversible checks use bounded work segments when permitted, not per-command permit chains."
+      },
+      "supersededBy": "dashboard-task-time-intake/personal-web-recovery-receipt.json"
     }
   ],
   "dperf05Pure": {
@@ -951,8 +1045,8 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "PREPARED_NO_HOLDER_WAIT_RESOURCE_AND_NEW_SCHEDULING",
-    "priority": "Recovery8ed/000a and DPERF544c/929b preparation approved, no gate. Settings01 delivered/main/released. Settings02 new six-scope source implementation only; runtime remains behind existing shared ready queue.",
+    "state": "READY_FIRST_PENDING_ACTUAL_WEB_ADMISSION_NO_RESERVATION",
+    "priority": "Quick c2 static approved after supplied missing input; Recovery9835 source and serialization preparation approved; DPERF source only. Existing budgets and actual failures preserved, no new Web grant.",
     "gate": null
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1166,10 +1260,10 @@
     "sourceWriterClaimIsNotGitAuthority": true
   },
   "latestMikaQueueIntake": {
-    "source": "Mika actual handback via root",
-    "SVC07": "PASS selected1/pass1 outerexit0 wall2.979205s;02:11:53.535889Z all cleanup; no pending launch",
-    "C02": "NOT_OPEN/no holder/gate/reservation; operator unavailable, explicit yield to Web one Recovery attempt",
-    "actualWebStart": "pending original owner acknowledgement"
+    "source": "Root relay of latest Lead/Mika coordination, no Web resample",
+    "previousActualReturns": "SVC07 PASS cleanup; C02 heavy returned per root; Quick c1 FAILED cleanup; immutable receipts remain under existing history",
+    "current": "Mika OPEN X01 → C02 → REQ15 local chain per root; Web following request delivered but no actual handback.",
+    "webReservation": false
   },
   "opsWorkspaceCacheDependencies": {
     "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",
@@ -1189,18 +1283,19 @@
     "runtimeOrDomainApproval": false
   },
   "quickControlsPreparation": {
-    "request": "message-settings02-c1-prepared/request.json",
-    "state": "APPROVED_STATIC_PREPARATION_NOT_RUN",
+    "state": "C1_FAILED_CLEANED_C2_STATIC_APPROVED_NOT_RUN",
     "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+    "actualEvidence": "message-settings02-c1-actual/report.md",
+    "sourceSupplyReceipt": "message-settings02-c1-actual/lead-source-provision-receipt.json",
+    "nextPreparationReview": "message-settings02-c1-actual/root-c2-static-preparation-review.json",
+    "cumulativeMs": 1875,
+    "remainingMs": 28125,
+    "cleanupMs": 5000,
+    "direct": "NOT_RUN",
     "grant": false,
-    "reservation": false,
     "gate": null,
-    "freeSample": false,
-    "runtimeStarted": false,
-    "queueUnchanged": "Lead SVC07/C02",
-    "ownerHeadAtPacketSeal": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
-    "currentOwnerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
-    "headRebindRequiredAtFutureAdmission": true
+    "reservation": false
   },
   "currentOpsThreeFixtureRetirement": {
     "state": "THREE_PREVIEWS_RETIRED_LIFECYCLE_CLOSED_ALL_METADATA_CLAIMS_RELEASED",
@@ -1312,8 +1407,9 @@
     "gate": null,
     "reservation": false,
     "review": "message-settings02-browser-prepared/root-preparation-review.json",
-    "currentOwnerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
-    "headRebindRequiredAtFutureAdmission": true
+    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+    "headRebindRequiredAtFutureAdmission": true,
+    "prerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run."
   },
   "latestLeadExactCacheResult": {
     "state": "LEAD_THREE_EXACT_CACHES_COMPLETE_NO_NEW_WEB_GRANT",
@@ -1323,7 +1419,7 @@
     "managerResourceSample": false,
     "noFurtherCandidateAuthorized": true
   },
-  "currentCoordinationAudit": "resource-restored-svc07-handoff.json",
+  "currentCoordinationAudit": "dashboard-task-time-intake/incoming.json",
   "latestLeadResourceIntake": {
     "evidence": "resource-restored-svc07-handoff.json",
     "source": "Lead incoming through root",
@@ -1358,7 +1454,8 @@
     "reservation": false,
     "runtimeStarted": false,
     "review": "message-settings02-portable-prepared/root-preparation-review.json",
-    "ownerStoppedWriting": true
+    "ownerStoppedWriting": true,
+    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2"
   },
   "performanceMeasurementInterface": {
     "evidence": "req17-chat06-measurement-interface/report.md",
@@ -1367,10 +1464,10 @@
     "newTaskClaimGateOrReservation": false
   },
   "latestSourceOnlyProgress": {
-    "at": "2026-10-06T23:53:02.712681+00:00",
-    "evidence": "architecture-snapshot-0da-intake/intake.json",
-    "runtimeGrant": false,
-    "holder": null,
-    "reservation": false
+    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
+    "sourceReview": "APPROVED_SOURCE_ONLY",
+    "pureGit": "NOT_RUN",
+    "newRuntimeGrant": false
   }
 }

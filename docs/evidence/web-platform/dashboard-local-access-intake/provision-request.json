@@ -157,18 +157,28 @@
   "plannedTaskId": "WPF-DASHBOARD-ACCESS01",
   "plannedInitialScope": [
     "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/index.html",
     "apps/execution-dashboard/src/local-access.mjs",
     "apps/execution-dashboard/public/local-access.js",
     "apps/execution-dashboard/public/local-access.css",
     "apps/execution-dashboard/test/local-access.test.mjs",
     "apps/execution-dashboard/test/local-access.browser.mjs",
-    "apps/execution-dashboard/README.md",
     "plans/wpf-dashboard-local-access",
     "docs/evidence/wpf-dashboard-local-access"
   ],
-  "pendingLaterScope": "apps/execution-dashboard/public/index.html only after D05 original writer actual partial handoff",
+  "pendingLaterScope": [
+    "apps/execution-dashboard/README.md"
+  ],
   "existencePreflight": {
     "pathAbsent": true,
     "refAbsent": true
+  },
+  "pendingLaterCondition": "README remains D05 v5; do not write it. Initial nine now include released index; startup/limitations belong to own plan/evidence, README is not required to start.",
+  "scopeObservation": {
+    "observedAt": "2026-10-07T02:48:40.229Z",
+    "evidence": "../dashboard-task-time-intake/fresh-index-handoff.json",
+    "claim": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+    "version": 5,
+    "indexReleaseReceipt": "d05-index-release-receipt.json"
   }
 }

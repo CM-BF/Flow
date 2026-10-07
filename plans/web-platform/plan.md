@@ -6,7 +6,7 @@
 | --- | --- |
 | 计划编号 | WPF-001 |
 | 状态 | `in-progress`；持续目标按轮交付，不声称“完美”或无限优化已完成 |
-| 创建 / 最近更新 | 2026-10-06 / 2026-10-06 |
+| 创建 / 最近更新 | 2026-10-06 / 2026-10-07 |
 | 唯一管理 owner / model | d01_owner（本轮执行管理者）/ gpt-6-astra ultra |
 | Worktree / branch | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management` / `codex/web-platform-management` |
 | 固定基线 | `d444608ab6c796c731e44e51a892868bf39bec2a`；2026-10-06 02:07 UTC 核验 main clean 后创建，不追逐 main 后续 HEAD |
@@ -38,6 +38,8 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U10 插件管理入计划（原Goal Owner逐字转交，经root传达） | “plugin管理写进计划里” | 主线维护独立X01全产品插件管理canonical计划；我方链接追溯并继续P01/I01前置，不重复建立X01或扩大已领生产范围 |
 | U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
 | U12 领取与跨Lead协作重申（root准确转述，压缩重申U08，非用户逐字） | take工作在dashboard标清、跨lead防overlap | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
+| U13 本机登录入口（GO经root准确转述，非逐字） | 4320提供打开Flow及按需掩码显示/复制登录凭据；真实本机安装验收 | [独立入口请求](../../docs/evidence/web-platform/dashboard-local-access-intake/request.json)；显式local-installation限定、可信固定来源，token不进日志/URL/聚合/Git；唯一operator恢复和发布，不代用户登录/刷新聊天 |
+| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举由Lead统一，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)未实施 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -68,7 +70,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-13 | U00 D01独立于产品Web、本地可看 | D01已交付；主线D03后续 | Node内置HTTP+网页，无产品运行时依赖；不以日志堆砌首页 |
 | WPF-REQ-14 | U00 dashboard首页用户视角：里程碑/owner/实际进度/下一交付/阻塞/用户决定/review/main | 主线D03；WPF-D01协作登记 | 用户能区分实现、检查、独立审查、main集成；不猜百分比/ETA |
 | WPF-REQ-15 | U00 status唯一手填事实源；登记task→唯一owner worktree | 管理者、各owner、主线D03 | 无第二手填进度，JSON/网页只派生；保留原Lead17来源并显式追加新管理来源 |
-| WPF-REQ-16 | U00 来源/更新时间/HEAD/dirty及缺失/解析失败/过期明确 | 主线D03 | 状态/分支切换与缺失样本，空review不通过；文本转义、路径/realpath限制 |
+| WPF-REQ-16 | U00/U14 来源与时间、HEAD/dirty及缺失/解析失败/过期明确 | 原D01/D03展示owner；字段由Lead统一 | 启动/完成独立UTC声明，含等待历时按同一可信snapshot截止；结束未知、明确未完成、stale/frozen分开，不从mtime/claim猜时间。旧检查/review/current语义不被新可选时间异常污染；[合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md) |
 | WPF-REQ-17 | U03 root持续research、subagent管理 | root / d01_owner | root不写实现；管理者持久化研究→owner→验证；不以研究替代ready实施 |
 | WPF-REQ-18 | U00/U03 >=Sol、优先AstraUltra；当前cap4/满槽排队/项目10上限 | 管理者 | root+管理者+W01+panels=4；不再spawn，后续owner复用空位；项目总槽与原Lead协调 |
 | WPF-REQ-19 | U04/U05 全部用户话进plan、持续维护plan/status/review/dashboard | 管理者、各owner | 每条REQ有来源/owner/验收，新增plan必有三件套；原话与转述清楚区分 |
@@ -79,7 +81,7 @@ U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射
 | WPF-REQ-24 | U00 独立worktree/branch，先核验不重建/重置/覆盖 | 管理者、各owner | 记录base/head/dirty与允许范围；冲突交唯一owner，管理者不并发写W01 |
 | WPF-REQ-25 | U00 find-skills本地优先、固定来源，无重复安装 | 各owner | 每stack读本地skill并记录路径/hash/应用；assistant-ui/AI Elements/clean-code固定源 |
 | WPF-REQ-26 | U00 每段/约30min安全停点/交付clean-code | 各owner | 实际命名、职责、接口、错误、重复、复杂度、行为检查发现/修复记录 |
-| WPF-REQ-27 | U00 启动/实质进展/阻塞/交付/review修复更新状态/TODO/证据 | 各owner | status真实时间/目标SHA/检查/限制，完成可被dashboard读取 |
+| WPF-REQ-27 | U00/U14 启动/实质进展/阻塞/交付/review修复更新唯一状态与时间证据 | 各owner；Lead统一字段 | 不把更新时间、claim或分支完成当任务开始/完成；未记录保未知，不回填；分支/独审/main/部署各目标与时间独立，dashboard只读聚合 |
 | WPF-REQ-28 | U00 独立review绑定SHA，未审NOT_STARTED | root或独立reviewer；owner转录 | 新实现不继承旧approval；metadata diff和实现target区分，不虚报当前HEAD通过 |
 | WPF-REQ-29 | U00 feature分别提交/验证、不merge main、原Lead集成 | 各owner/原Lead | 完整SHA/branch/dirty/启动URL/checks/双主题图/技能/限制/plan-status-review回传 |
 | WPF-REQ-30 | U00 共享改动交清单，不动共享contracts与其他owner记录 | 管理者/原Lead | 依赖lock、索引、registry、未来后端能力在handoff逐项列明 |
@@ -135,11 +137,11 @@ U08/U12/REQ37的[领取显示固定源研究](../../docs/evidence/web-platform/d
 
 GO 既有 REQ17/Web性能与 CHAT06 的[有界测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)归本表 WPF-REQ-17/21 与 MATURE06-03，不新编号。后继复用真实 stream fixture/Thread，保持最终原文与完整SHA/replay/identity/unknown；分别量 actual digest bytes、parse输入/调用、真实commit与composer输入延迟，默认smooth/defer和终态显示追平分开。128/4096前缀求和仅算术，全部指标NOT_RUN；透明插桩须原shared/renderer owner协调，不改协议/依赖或引新框架。
 
-原 MSGQUICK-04 的[portable strict→26direct 候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已由唯一W01在原六scope的证据目录固定，产品fe6四源不变，候选已获限定静态独审、所有实际检查未运行。它复用原真实检查入口，外层CI containment与启用归原owner/GO；本地c1/b1不因此重写或继承远程结果。
+原 MSGQUICK-04 的[portable strict→26direct 候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已由唯一W01在原六scope的证据目录固定，产品fe6四源不变，portable候选仅获限定静态独审；本地c1随后类型失败/direct未启动，当前原件与已补输入见集中handoff。它复用原真实检查入口，外层CI containment与启用归原owner/GO；本地c1/b1不因此重写或继承远程结果。
 
 ## 执行顺序与交权规则
 
-当前优先级、fixed输入、检查窗口和具体下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及上列owner status；这里不再维护第二份滚动状态表。共享PG/Chrome由Lead明确交接，纯检查按自身获批预算独立fresh准入。所有项目写入先核D04精确范围与唯一writer；源码、独审、运行证据、main接收、实际页面发布分别记录。
+当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
 
 用户总槽位约束仍Root4/Web4/Mika4=12，本组root与三成员共4；claim数量不等运行agent数。普通进展通过唯一status聚合到dashboard，不重复普通外部消息。
 
@@ -213,7 +215,7 @@ GO 既有 REQ17/Web性能与 CHAT06 的[有界测量接口](../../docs/evidence/
 
 本轮用户再次强调与其他leads防overlap、take在dashboard标清楚，已对照U08完整原话和U12准确转述，仍归WPF-REQ-37，不新增平行需求。当前执行规则：每次开写先fresh D04按task/owner/worktree/branch与精确literal核冲突，收到COMMITTED receipt才可写；扩scope用当前version原子amend。唯一status继续承担进度事实，领取与release状态由账本聚合展示；owner完成正常push/双端clean并明确全scope停写后，管理fresh CAS release，原receipt进入集中证据。源缺失/陈旧或已释放不是默许抢写；跨lead共享路径必须明确交权。[固定main单一ledger展示链源码审查](../../docs/evidence/web-platform/dashboard-take-traceability-root-review.json)保留ID/version/owner/WT/branch/scope及unknown语义，不当实时部署验收。[18:45候选快照](../../docs/evidence/web-platform/web-current-claim-observation-1845.json)保留当时DPERF05 NOT_TAKEN事实；[最新18:49观察及原子回执](../../docs/evidence/web-platform/web-current-claim-observation-1849.json)记录DPERF05已COMMITTED并派工，其他active/RELEASED状态仍来自D04。未来开写仍查实时账本，不用历史快照授权。以下早期过渡记录仅解释历史，不覆盖当前规则。
 
-D04由原Execution Lead唯一承接并复用dashboard，我方不写D03/D04或共享registry。过渡期新take和transfer先读dashboard、对应权威status与live Git确认占用，再由原Lead单点登记；缺失/陈旧/冲突不当空闲。记录领取/更新时间用当前实观登记，不能倒填开始。分配账本只存lead/owner/task/scope/claim/handoff，不存第二套TODO/check/review，后者仍owner status唯一。
+以下仅早期交权历史：当时D04由原Execution Lead唯一承接。当前其明确委派的自有test lifecycle后继已由本管理者在原D04独立树fresh f61d v1五scope承接，不能扩至production ledger、D03或共享registry。过渡期新take和transfer先读dashboard、对应权威status与live Git确认占用，再由原Lead单点登记；缺失/陈旧/冲突不当空闲。记录领取/更新时间用当前实观登记，不能倒填开始。分配账本只存lead/owner/task/scope/claim/handoff，不存第二套TODO/check/review，后者仍owner status唯一。
 
 M02当前精确范围必须排除P01独占plugins与plugin-host测试；P01不写App、TaskThread或既有workspace。稳定host提交后通过明确handoff/cherry-pick交M02挂载，需要改host则回原唯一owner或登记转交。不同worktree不意味着允许同一功能逻辑重复实施。dashboard本身是只读视图；主线D04新增PostgreSQL工程协调独立schema/DB与CLI take/list/release/handoff，实现事务task/父子路径冲突核验、version与双方handoff、receipt后开写且不自动过期抢占。既有M02/P01合法实施继续并迁移登记；展示冲突时保留依赖集成关系，不以不同worktree掩盖重复实现。
 

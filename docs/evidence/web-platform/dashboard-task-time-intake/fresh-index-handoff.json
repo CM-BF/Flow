@@ -1,0 +1,54 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-07T02:48:40.229Z",
+  "claims": [
+    {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/README.md",
+        "apps/execution-dashboard/src/registry.mjs",
+        "docs/evidence/d05",
+        "plans/d05-architecture-view"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-architecture",
+      "origin": "new",
+      "taskId": "D05",
+      "worker": "astra_ultra_execution_lead",
+      "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+      "version": 5,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+      "createdAt": "2026-10-06T03:13:58.720Z",
+      "updatedAt": "2026-10-07T02:47:36.182Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  ]
+}

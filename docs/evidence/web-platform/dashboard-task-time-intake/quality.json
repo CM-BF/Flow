@@ -1,0 +1,52 @@
+{
+  "recordedAt": "2026-10-07T02:49:56.254474+00:00",
+  "model": "gpt-6-astra ultra",
+  "scope": "Manager claim632a v3, only web-platform plan/evidence; metadata-only substantive recovery/timing/rules/partial-handoff intake",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "applied": "Use installed local skills; no reinstall. Single fact source and narrow risk-scaled handoff; clear lifecycle names; separate actual terminal from planned source work; remove stale duplicate current narratives; preserve failures and unknown timestamps. Brainstorming/design inputs accepted by root, no new product implementation.",
+  "checks": {
+    "scopePaths": 15,
+    "jsonParse": "PASS",
+    "newOrChangedLocalLinks": 49,
+    "linkErrors": [],
+    "diffCheck": "PASS",
+    "byteMetric": "UTF-8 added diff lines plus complete untracked artifacts; no deleted-byte credit",
+    "addedBytesBeforeThisQualityFile": 53213,
+    "capBytes": 65536
+  },
+  "notRun": [
+    "product tests",
+    "Node import",
+    "HTTP",
+    "PG",
+    "Chrome",
+    "build",
+    "install",
+    "free/proc sampling",
+    "personal service operations"
+  ],
+  "findings": [
+    "Corrected stale Quick all-NOT_RUN and Recovery old-budget/current-head summaries",
+    "D05 README conflict excluded; later actual index release permits nine initial scopes",
+    "New time fields remain proposal; literal/enums controlled by Lead",
+    "Ordinary local checking follows bounded work segment, not per-check permission loops"
+  ],
+  "review": "Documentation candidate review pending for commit containing this file; prior product/task reviews unchanged"
+}

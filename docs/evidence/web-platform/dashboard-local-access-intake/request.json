@@ -1,5 +1,5 @@
 {
-  "state": "SOURCE_MODULE_SCOPE_AVAILABLE_PROVISION_PENDING_INDEX_HANDOFF_SEPARATE",
+  "state": "INITIAL_NINE_SOURCE_SCOPES_PROPOSED_PROVISION_PENDING_README_HELD",
   "source": "GO explicit local self-use dashboard access request relayed by root",
   "fixedResearchMain": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
   "proposedOwner": "workspace_panels_owner",
@@ -20,8 +20,15 @@
       "version": 4,
       "worker": "astra_ultra_execution_lead",
       "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
-      "literal": "apps/execution-dashboard/public/index.html",
-      "request": "Original current writer confirms stopped then atomically amend this literal out only; preserve all other scope. Manager does not mutate another Lead claim without exact handoff."
+      "request": "No further handoff required for initial nine. README stays outside scope; any later change requires original D05 current writer transfer.",
+      "literals": [
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/README.md"
+      ],
+      "currentVersion": 5,
+      "state": "INDEX_RELEASED_README_STILL_HELD",
+      "committedAt": "2026-10-07T02:47:36.182Z",
+      "receipt": "d05-index-release-receipt.json"
     },
     {
       "task": "WPF-DPERF04",
@@ -41,12 +48,14 @@
   "sourceSecurityResearch": "root-source-security-research.json",
   "personalInstallation": {
     "source": "Lead incoming relayed by root",
-    "state": "61228 user unavailable blocker; sole SVC operator assigned after SVC06 safety point to read exact existing af51/d629 v3 identity/lock/state and prepare same-version restoration",
+    "state": "61228 same-version bootstrap completed, exact terminal/postcheck and window return received; local-access not implemented",
     "webTeamOperation": "None; no process/port probe, restart, second service, token read or pointer/tab change",
-    "actualUserAcceptance": "Wait for clear operator recovery handback; isolated source work may continue"
+    "actualUserAcceptance": "Original 61228 installation restored; later local-access actual acceptance must preserve user tabs and cannot automatically log in for the user.",
+    "recoveryReceipt": "../dashboard-task-time-intake/personal-web-recovery-receipt.json"
   },
   "proposedTaskId": "WPF-DASHBOARD-ACCESS01",
   "provisionRequest": "provision-request.json",
-  "independentProgress": "After exact new-tree provisioning and fresh take, provider/UI/test modules may proceed without index; index wiring remains not writable until D05 partial handoff",
-  "tabPreservation": "Existing 4320 URL/hash/scroll and user61228/chat stay untouched. Original operator updates dashboard; validate new owned tab first. Any necessary user-dashboard reload preserves page state and is not inferred from publishing."
+  "independentProgress": "Exact new-tree provisioning receipt still pending. Fresh take initial nine includes index; README excluded and not an implementation prerequisite. No source written yet.",
+  "tabPreservation": "Existing 4320 URL/hash/scroll and user61228/chat stay untouched. Original operator updates dashboard; validate new owned tab first. Any necessary user-dashboard reload preserves page state and is not inferred from publishing.",
+  "ordinaryLocalMethod": "Bounded continuous implementation/check/fix/recheck work segment under Lead OPS; no per-check permission chain. Actual personal service and Chrome remain separately isolated."
 }
