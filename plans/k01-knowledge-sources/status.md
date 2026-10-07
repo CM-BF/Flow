@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 00:18 UTC |
+| 最近更新 | 2026-10-07 00:23 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
 | 需求来源 | [REQ-10 §9：版本化知识与授权一致的混合检索](../flow-001-architecture/full-plan-matrix.md) |
 | co-lead | mika |
-| 当前claim / scope | 4be228e2-64f8-46e6-94a8-aa7eb867d730 v1 ACTIVE；仅docs/evidence/k01、plans/k01-knowledge-sources |
+| 当前claim / scope | 4be228e2-64f8-46e6-94a8-aa7eb867d730 v1最后观察ACTIVE（Mika 00:22:16.673Z）；仅两metadata scope，最终push后全部停写待root release，尚未声明released |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 设计已固定；本次仅review/status/证据metadata收尾，提交后核clean |
-| 工作分支状态 | in-progress（旧产品已交付，本次仅留存后继规划） |
+| 工作树dirty状态 | 设计源固定；本次仅主线接收status/receipt管理收口，commit/push后核clean并全部停写 |
+| 工作分支状态 | in-progress（旧产品与本次规划均已接收，后续产品TODO保持开放） |
 | 检查状态 | NOT_RUN：本次规划未运行产品验证；旧ea0c4cba 31不同用例/noEmit/独审记录原样保留 |
-| 已集成main状态 / HEAD | 历史2026-10-06 05:38接收fb906cb42391971a8b315dbd813f7633927d7265时，main=origin/main clean且原9文件零diff；本次规划未集成，不能套用于c3ba（storage已有K02变化） |
+| 已集成main状态 / HEAD | 本次规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；3设计文件=target/WT/原manifest，0产品delta；旧产品fb906接收与31检查仅历史，不外推为当前产品零差异 |
 | 实现目标 | fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 原权威树a837e68c419930f96ffe2fa71672eaa9c750c8ba；规划target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
@@ -25,7 +25,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 持续更新与历史引用保护方案已独审，既有版本化来源能力保持不变 |
+| 当前产出 | 持续更新与历史引用保护设计已由主线接收，产品实施仍待后继 |
 | 下一可用交付 | 协调留存产品及直接消费者实施范围，落实持续发布与安全释放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -39,7 +39,7 @@
 | K01-04 | completed | b01_bounded_reads / Mika | Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[] |
 | K01-05 | completed | b01_bounded_reads / Lead | [main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff |
 | K01-06 | pending | Goal Owner / 后继任务owner | REQ-10 hybrid/vector、下游grant与消费/失效后继验收仍开放 |
-| K01-07 | completed | b01_bounded_reads / Mika | retention-design.md及固定输入；db_transaction_owner于00:16:39 UTC独立文档APPROVED |
+| K01-07 | completed | b01_bounded_reads / Mika | 文档独审APPROVED，规划已接收cd6938；[唯一规划main receipt](../../docs/evidence/k01/retention-planning-main-receipt.json) |
 | K01-08 | pending | 后续合法product owner | 身份/留存/保护实现，当前没有产品scope |
 | K01-09 | pending | 后续合法consumer owners | 新旧协议/冻结/ACK/history兼容，需协调现owner |
 | K01-10 | pending | 后续owner / Mika / Lead | K01-R01～R12全部NOT_RUN，独审/集成待后继 |
@@ -71,3 +71,5 @@
 2026-10-07 00:17 UTC：规划独审DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，无P1/P2，回执retention-independent-review.json。批准只覆盖3文档；K01-08～10仍pending、产品检查NOT_RUN，flow.commands生命周期与具体schema/协商由后续合法owner在实施前审定。本次仅review/status记录，无重新读取聚合/工程检查；snapshot仍单次超时UNKNOWN。最终metadata提交/推送后停止本次规划全部写入，claim4be228e2 v1保留待Lead协调。
 
 2026-10-07 00:18 UTC：Mika报告其00:17:59实际snapshot已核本任务source live/current/nonstale、21db1fc2 clean、review approved fd02/unchanged、checks not_run、10个TODO对应、claim v1 matchesSource。聚合发现REQ-10不是独立registry task，本次只将层级改为既有K01大task、REQ-10移到需求来源，co-lead保持mika；不造平行计划，不改已审3文档。此记录为Mika提供的聚合事实，本owner未再次请求dashboard或运行工程检查；提交/push后停止本次全部写入，待Mika实际读回关系字段。
+
+2026-10-07 00:23 UTC：Execution Lead已窄接规划到main/origin cd6938fdd50f297cdb4d652d3b38464d1de0b311，中央intake来源及hash、设计3文件target=main=WT=原manifest校核见唯一[retention-planning-main-receipt.json](../../docs/evidence/k01/retention-planning-main-receipt.json)。本次0产品delta、0新工程checks/PG/模型/dashboard采样。K01-08～10仍pending、R01～R12 NOT_RUN、flow.commands生命周期/具体协议与migration待未来合法范围；旧31及fb906只保留历史事实。原plan已审REQ-10文字作为需求追溯，当前大task层级仍K01，不改3设计文件。最终commit/push后停止本轮全部写入、无待写scope；claim v1为最后观察，待root原子release，结果仅/tmp，不在release后回填项目。
