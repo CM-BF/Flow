@@ -34,16 +34,17 @@ describe('chunk packing', () => {
   });
 
   it('keeps exact-fit boundaries, comma bytes and chunk ordinal digit changes', () => {
-    const reference = collect(3); reference.delivery.finish();
+    const boundaryEpoch = 'packing-boundary';
+    const reference = collect(3, 65536, boundaryEpoch); reference.delivery.finish();
     const referenceChunk = reference.messages[0]!;
     if (referenceChunk.kind !== 'pg-observation-chunk') throw new Error('wrong message');
     const twoBytes = Buffer.byteLength(JSON.stringify({ ...referenceChunk, samples: referenceChunk.samples.slice(0, 2) }));
     expect(twoBytes).toBeGreaterThanOrEqual(512);
-    const exact = collect(3, twoBytes); exact.delivery.finish();
+    const exact = collect(3, twoBytes, boundaryEpoch); exact.delivery.finish();
     expect(exact.messages.map(message => message.kind === 'pg-observation-chunk' ? message.samples.length : -1)).toEqual([2, 1]);
-    const below = collect(3, twoBytes - 1); below.delivery.finish();
+    const below = collect(3, twoBytes - 1, boundaryEpoch); below.delivery.finish();
     expect(below.messages.map(message => message.kind === 'pg-observation-chunk' ? message.samples.length : -1)).toEqual([1, 1, 1]);
-    const many = collect(130, 512); expect(many.delivery.finish().known).toBe(true);
+    const many = collect(130, 512, boundaryEpoch); expect(many.delivery.finish().known).toBe(true);
     expect(many.messages.length).toBeGreaterThan(100);
     many.messages.forEach((message, index) => {
       expect(message).toMatchObject({ kind: 'pg-observation-chunk', ordinal: index });

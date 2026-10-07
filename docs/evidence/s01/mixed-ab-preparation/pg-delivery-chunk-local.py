@@ -23,7 +23,7 @@ if helper.digest(helper.OPS)[1] != helper.OPS_SHA:
     raise ValueError('supervisor_changed')
 owned = load('s01_chunk_owned', helper.OPS)
 kind = sys.argv[1]
-if kind not in ('baseline', 'direct', 'types'):
+if kind not in ('direct', 'types'):
     raise ValueError('fixed_mode')
 started = time.monotonic(); end = started + 30
 path = HERE / 'pg-delivery-chunk-local.json'
@@ -66,9 +66,10 @@ run['head'] = subprocess.check_output(['/usr/bin/git', 'rev-parse', 'HEAD'], cwd
 if kind == 'types':
     argv = [helper.NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--noEmit', '-p', str(HERE / 'pg-delivery-chunk-tsconfig.json')]
 else:
-    pattern = 'bounds encoding work' if kind == 'baseline' else 'chunk packing|bounded chunks|a partially accepted flush|buffered samples|capacity |finite observation delivery replay'
+    pattern = 'chunk packing|bounded chunks|a partially accepted flush|buffered samples|capacity |finite observation delivery replay'
     argv = [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'pg-delivery-chunk-vitest.config.mjs'), '--configLoader', 'native', '-t', pattern]
 run['argv'] = argv
+path.write_text(json.dumps(record, indent=2) + '\n')
 report = owned.supervise(owned.Launch(tuple(argv), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(24, .5, 1, 32768))
 run['process'] = {k: v for k, v in dataclasses.asdict(report).items() if k not in ('stdout', 'stderr')}
 fd = os.open(raw_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
