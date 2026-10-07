@@ -1,0 +1,100 @@
+{
+  "kind": "CHAT05P02-original-PG01-failure-analysis",
+  "at": "2026-10-07T07:46:30.520455+00:00",
+  "source": "1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46",
+  "preparation": "4b0659fa79c00f24e384e64990fb91201da8569e",
+  "start": "2026-10-07T07:41:52.549090+00:00",
+  "end": "2026-10-07T07:42:01.684056+00:00",
+  "status": "FAIL_0_OF_2",
+  "callerStatus": "UNKNOWN_RETAIN",
+  "cleanup": "CONFIRMED",
+  "checks": {
+    "numTotalTests": 2,
+    "numPassedTests": 0,
+    "numFailedTests": 2,
+    "numPendingTests": 0,
+    "success": false
+  },
+  "supervisedMs": 9110,
+  "rawBytes": 3054,
+  "processGroup": {
+    "pid": 33832,
+    "state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    }
+  },
+  "fixtureFinal": {
+    "database": "flow_chat05p02_99e36788441e4e9bb9ea9c371274e409",
+    "marker": "7b0c1939-514e-4478-9d1b-4827fdfe43b0",
+    "provider": 0,
+    "runtimeProcesses": 0,
+    "allowanceBytes": 100663296,
+    "freeBeforeBytes": 24221818880,
+    "checkpoint": "docs/evidence/chat05p02/pg-run-01/fixture.jsonl",
+    "productionFactoryOnly": true,
+    "creationRequested": true,
+    "marked": true,
+    "databaseOid": 1251349,
+    "directory": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/docs/evidence/chat05p02/pg-run-01/tmp/flow-chat05p02-pg-6LoU0u",
+      "dev": 16777234,
+      "ino": 123636919
+    },
+    "base": "http://127.0.0.1:57601",
+    "minObservedFreeBytes": 24196182016,
+    "appClosed": true,
+    "listenerClosed": true,
+    "poolClosed": true,
+    "databaseBytes": "12827671",
+    "temporaryBytes": 2887032,
+    "connections": [
+      {
+        "rows": [],
+        "remainingMs": 2998
+      }
+    ],
+    "databaseDropped": true,
+    "remaining": [],
+    "directoryRemoved": true,
+    "adminClosed": true,
+    "requests": 257,
+    "elapsedMs": 7547.844625,
+    "cleanupErrors": [],
+    "phase": "cleaned",
+    "at": "2026-10-07T07:42:01.647Z"
+  },
+  "cacheKeep": {
+    "bytes": 132,
+    "files": [
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+    ],
+    "directories": [
+      "cache",
+      "cache/vitest",
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ]
+  },
+  "confirmed": [
+    {
+      "case": 1,
+      "failure": "Activity ID does not match its source.",
+      "location": "production.test.ts:27",
+      "sourceExplanation": "material used sha256(sessionId); actual store requires sha256(JSON.stringify([nativeSessionId,sourceMessageId,blockIndex,kind])). This explains the captured first rejection."
+    },
+    {
+      "case": 2,
+      "failure": "The center could not complete this request.",
+      "location": "production.test.ts:66",
+      "requestCount": 257,
+      "sourceExplanation": "onRequest rejects count>256 before route handling. Captured final count257 and generic500 are consistent with that bound. Earlier report errors/runner notices were not captured, so why task did not settle is NOT_PROVEN."
+    }
+  ],
+  "limits": [
+    "No PG rerun or input change within consumed window.",
+    "Original UNKNOWN_RETAIN is not rewritten; independently confirmed DB/listener/directory cleanup is distinct.",
+    "No native provider or personal operation; actual public enablement not approved.",
+    "Removed private spool was only recorded by identity/bytes, not by event payload; absent evidence cannot be reconstructed."
+  ]
+}
