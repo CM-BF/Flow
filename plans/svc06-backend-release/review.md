@@ -119,3 +119,7 @@ Reviewer `native_center_owner / gpt-6-astra`，原件时间 `2026-10-07T02:55:46
 ## 2026-10-07 09:16:46 UTC — b2b结果限定批准与main
 
 Execution Lead独立 `APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING`，target5d40/deliveryb905、原件[review](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)，P1/P2=0。main9b270接收35own路径；新host/迁移/配置、三App/个人仍未验。原build/raw不改、不重跑。
+
+## 2026-10-07 09:55:39 UTC — r1结果限定批准及诊断待审
+
+原件[唯一r1结果独审](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)，native_center_owner限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE；22+17+8原绑定全符，无P1/P2，0probe。Lead回执main8c2ae379已接47own路径。原host FAIL、runner数值exit NOT_OBSERVED与cleanup确认分别保留，不当运行成功。新诊断从b2b前像实现，待固定source/局部证据/唯一独审，不继承本次r1结果批准。

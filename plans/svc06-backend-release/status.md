@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:40:22 UTC；r1实际启动失败，原组与专库清理确认，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:55:39 UTC；r1失败/独立cleanup已审接main，当前启动诊断实施 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅封本次r1原始结果/分析/manifest及own metadata；344入口与产品不改 |
+| 工作基线 / HEAD | 诊断精确前像 b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；9ac6c3c708092d505b6476afb2cb6da6c05a9cd1固定供给，后继源码实施中 |
+| 工作树dirty状态 | 仅已领启动诊断产品与own records；原r1/c2c不改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
-| 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
-| 检查状态 | FAIL 3444895edf934c5c323639f232ef6fed7d51b022 实际r1停于默认宿主启动；独立cleanup确认，未重试；原3pure guard与构建结果保持 |
-| 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
+| 本片段交付阶段 | implementation |
+| 实现目标 | 9ac6c3c708092d505b6476afb2cb6da6c05a9cd1 |
+| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
+| 检查状态 | 新诊断直接检查NOT_RUN；原r1 FAIL与独立cleanup确认保持 |
+| 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成旧记录准备与新产物复制；真实启动在runner就绪检查处停止，测试进程和专库已正常清理。 |
-| 下一可用交付 | 审查本轮原始结果，并定位启动就绪失败后准备最小修复；保留旧数据与所有诊断原件。 |
-| 当前阻塞 | ACTIVE: 新宿主尚未完成启动，内部首因未被现有工具保存，需要有界诊断。 |
+| 当前产出 | 已审查并保留真实启动失败与清理证据；正在让启动失败留下可定位阶段和有界私有错误输出。 |
+| 下一可用交付 | 完成启动诊断及直接检查，独审后再准备新的真实宿主验证。 |
+| 当前阻塞 | ACTIVE: 新宿主内部首因尚未被旧工具保存，当前诊断修复中；真实宿主验收未完成。 |
 | 需用户决定 | NONE |
-| Review | 344准备已APPROVED；r1实际FAIL及cleanup证据PENDING_RESULT_REVIEW，交native_center_owner唯一只读核验 |
+| Review | r1已APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE；新诊断尚待检查与独审 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
-| 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
+| 架构影响 | 新增小型私有启动诊断Module；生命周期与TERM仍归原process，公开只受控摘要；实际宿主与后台产物不在本局部检查范围。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |

@@ -646,3 +646,16 @@ test('SVC09 maintenance qualification rejects old tools for configured policy or
     assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
   }, { webHost: true });
 });
+
+
+test('SVC06 changed startup diagnostics cannot qualify as the selected configured Web host', async () => {
+  await hostReplacementFixture(async f => {
+    const { backendHead } = await configuredHostProofs(f);
+    const path = join(f.hostRoot, 'tools/personal-preview/startup-diagnostics.mjs');
+    assert.ok(f.source.files.some(item => item.path === 'startup-diagnostics.mjs'));
+    await writeFile(path, (await readFile(path, 'utf8')) + '\n// different selected diagnostics\n');
+    await assert.rejects(f.replace({ ...f.request, expectedBackendHead: backendHead }), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    assert.equal(await readFile(join(f.directory, 'web-release.json'), 'utf8'), f.protectedBytes['web-release.json']);
+  }, { webHost: true });
+});
