@@ -4,7 +4,7 @@
 
 Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 
-范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple和公开设置已核齐；独立owned caller c2已通过集中delta审与精确native边界审；实际资源准入仍待管理者fresh，browser/PG/HTTP NOT_RUN。
+范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple和公开设置已核齐；独立owned caller c2已通过集中delta审与精确native边界审；实际资源准入仍待管理者fresh，browser/PG/HTTP旅程NOT_RUN；c2首次actual在sandbox-exec阶段FAILED，见下方本次边界。
 
 必须核：真实Chrome页面请求和Node APIRequestContext分离；exact proxy/Host与无fallback；原Bearer+独立Cookie补证；SSE与真实ACK prefix；原四观察与最终backend/context；owned cleanup、报告与未知失败。
 
@@ -23,3 +23,7 @@ Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 ## 当前 c2 caller：限定集中独审已通过
 
 [c2独审原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-root-review.json)与[native精确接受](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-native-boundary.json)绑定933c记录/parent3a9d/worker5800、71输入与14manifest；两finding CLOSED、0blocking。3helper实际/outer0/244ms/精确TMP absent已核。9658两harness及旧strict审查不变。批准仅准备源与这次局部实际，不给三App/Cookie/PG/Chrome通过或运行许可，不给6c缺失的lateLogout修复背书；后续metadata HEAD由TMP正常绑定，不追改历史审查target。
+
+## 当前 c2 actual：失败事实待独立证据接收
+
+[c2首实际原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)固定1e5f/parent3a9d，outer1/worker65、410ms，sandbox规则编译拒绝发生于Node前；真实三App/Cookie尚未进入。源码审批与3helper实际接受不撤改，也不充当完整runtime通过。生成profile原文以sandbox.sb保留并由索引明确非metadata，不改proof parser或隐藏后缀。无第二次运行。

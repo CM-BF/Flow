@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T11:44:05.173333+00:00",
+  "state": "ADMITTED_SINGLE_USE_NOT_YET_SPAWNED",
+  "free": 22003851264,
+  "floor": 6190268416,
+  "combinedKnown": "base complete floor includes 34MiB potential locals and historic KEEP/bootstrap676/types2MiB; manager soleNEXT unchanged",
+  "inputObservation": "baa46785914a850bf6d47768c2d6675a14750e38c27ef94becd378479939b1a9",
+  "gateSha256": "e0baea870d929c1643683186cae2f4c1bd3f022c3458d8e2e42b471524cb4c26",
+  "adminSource": {
+    "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-current-preview.browser.ts",
+    "field": "adminUrl",
+    "blobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7"
+  },
+  "adminIdentity": {
+    "dev": 16777234,
+    "ino": 124103009,
+    "uid": 501,
+    "nlink": 1,
+    "mode": "0600"
+  },
+  "run": "release01-c2-20261007-114405-6b2284",
+  "budget": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalEstimateBytes": 134217728,
+    "startFreeBytes": 6190268416,
+    "stopFreeBytes": 1207959552,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0
+  }
+}

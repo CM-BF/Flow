@@ -36,3 +36,6 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 
 ## 2026-10-07T11:40:37.791Z c2 review metadata seal
 沿本地find-skills发现/复用clean-code，重读安装文件而不联网/安装。仅归档两审查原件与校准当前/历史结论；命名/错误/边界复核保持P1真实ownership与P2独立pool事实，不增加抽象。当前源、旧raw、3helper实际不改。修正“待native审”过时状态，保无custom outer OS egress限制/NOT_RUN及未来freshgate条件。只single status parser/链接/pin核对，不重跑局部/工程/runtime。
+
+## 2026-10-07T11:45:48.838Z c2 首次实际失败安全点
+复用find-skills/clean-code既有方法：完整保留sandbox-exec真实145B原错，区分启动器拒绝/未进入产品/无数据库创建，不把acceptance缺失反推产品错误。outer实际与晚terminal取最大向上计410ms，runtime预算一次封闭；失败不能复用gate。21原件与generated profile逐字入索引，未知fixturecleanup原样，不造normalDROP。exact创建身份用于scratch/admin移除，所有已知PID/PGID核ESRCH。只metadata解析/链接核对，未修程序/重跑；后继最窄规则修正待管理同边界安排。

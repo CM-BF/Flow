@@ -30,3 +30,5 @@
 调用器c2准备已处理独立审查的目录ownership/P1与pg-boss连接声明/P2，真实helper三边界小额检查通过；详见[c2当前记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)。三App运行仍在RELEASE01-05未完成项，原c1及全部历史错误保留。
 
 c2集中审与native固定边界已接受（0blocking），原件见[c2记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)。RELEASE01-05仍需真实三App/Cookie验收；不以source/helper通过提前完成。
+
+首次c2实际已执行但sandbox启动前FAILED，未触三App/PG/Chrome。保410ms一次段、179590ms未用与完整清理，见[原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)。RELEASE01-05仍开放，须先处理这个具体caller语法缺陷；不放宽个人61228网络边界或以未知清理算通过。
