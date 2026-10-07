@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v28 ACTIVE53scope](../../docs/evidence/x01/removal-routes-handback-receipt.json)；routes.ts已正式STOP并移出供独立REMOVAL writer；两Web路径保持STOP |
+| Claim | [v28 ACTIVE53scope](../../docs/evidence/x01/process-host-handback-receipt.json)；7条runner路径已STOP交回供process-host新owner领取；routes.ts及两Web路径保持STOP |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -388,6 +388,6 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 
 2026-10-07T12:51:05.007678+00:00：只读正式[UPSTREAM main回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-upstream-intake/receipt.json)，4fdd856293a502209d7509ea37da901bbfd89f72已接固定源/实验/证据；真实7.8.4 false→7.8.5 true→回选4 false，A门禁仍在import/invoke前，不证明函数进行中升级/完整隔离。[子片唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/plans/x01-upstream-upgrade/status.md)。
 
-2026-10-07T12:51:05.007678+00:00：fresh父claimv28 ACTIVE53与REMOVALv1 ACTIVE7确认。只读process-host design d94：[候选部分移交建议](../../docs/evidence/x01/process-host-handoff-candidate.json)列7既有runner路径；当前未STOP/未amend/未交权，待Mika选首片后单独原子办理。host.ts/package-store/journal/outbox及main.ts不在本建议交回范围，新leaf与release闭包另fresh领取/协调。0工程检查/PG/产品写入；整个X01继续OPEN。
+2026-10-07T12:51:05.007678+00:00：fresh父claimv27 ACTIVE60与REMOVALv1 ACTIVE7确认。只读process-host design d94：[候选部分移交建议](../../docs/evidence/x01/process-host-handoff-candidate.json)列7既有runner路径；当前未STOP/未amend/未交权，待Mika选首片后单独原子办理。host.ts/package-store/journal/outbox及main.ts不在本建议交回范围，新leaf与release闭包另fresh领取/协调。0工程检查/PG/产品写入；整个X01继续OPEN。
 
 - 2026-10-07 process-host partial handback: exact seven paths STOP at 12:57:23.478328Z; atomic amend COMMITTED 2026-10-07T12:57:23.582Z changed X01 claim v27/60 → v28/53. [receipt](../../docs/evidence/x01/process-host-handback-receipt.json) / [STOP and main comparison](../../docs/evidence/x01/process-host-handback-stop.json). All seven owner blobs equal fixed main7524a7fa; no pending owner delta. New owner must fresh take before writing; X01 does not resume these paths. Other claim scope retained. This handback supersedes the earlier proposal only for these seven paths.
