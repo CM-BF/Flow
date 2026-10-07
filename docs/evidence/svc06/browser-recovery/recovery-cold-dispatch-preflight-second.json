@@ -1,0 +1,8 @@
+{
+  "recordedAt": "2026-10-07T21:19:28.536Z",
+  "primary": "EXACT_STALE_FLOOR_ASSERTION_BEFORE_LOCAL_LAUNCH",
+  "childLaunches": 0,
+  "scratchCreated": false,
+  "checksRun": 0,
+  "meaning": "Queue changed from16,625,762,304 to16,644,767,744 before unconsumed local call; original helper did not launch. Actual ordinary check uses max(current authoritative total, granted minimum), no exact equality or repeated build allocation."
+}

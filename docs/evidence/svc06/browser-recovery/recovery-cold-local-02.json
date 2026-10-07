@@ -1,0 +1,60 @@
+{
+  "startedAt": "2026-10-07T21:11:23.104003+00:00",
+  "floor": 18950717440,
+  "scratch": {
+    "path": "/private/tmp/svc06b-cold-argv-_6ewbkv8",
+    "dev": 16777234,
+    "ino": 124483147
+  },
+  "pg": 0,
+  "personalIO": 0,
+  "provider": 0,
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-run.py",
+      "bytes": 2558,
+      "sha256": "d575f1a2277bc2cf386893f6338a7b9fb4425724886e3540b318ff4a9ff1e778"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold.test.py",
+      "bytes": 1740,
+      "sha256": "cdf0fb4e974e95bf8a0fea13ee8c3b193fd6b8bacf3f8188a9a2f5443c584bb2"
+    }
+  ],
+  "report": {
+    "pid": 7735,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 58,
+    "stdout": "",
+    "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.004s\n\nOK\n",
+    "observed_bytes": 100,
+    "retained_bytes": 100,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_EXACT_EMPTY",
+  "returnedAt": "2026-10-07T21:11:23.163874+00:00"
+}

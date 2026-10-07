@@ -1,0 +1,65 @@
+{
+  "startedAt": "2026-10-07T21:10:05.835946+00:00",
+  "floor": 19216859136,
+  "scratch": {
+    "path": "/private/tmp/svc06b-cold-direct-b0ud45rq",
+    "dev": 16777234,
+    "ino": 124482809
+  },
+  "pg": 0,
+  "personalIO": 0,
+  "provider": 0,
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-consumer.mjs",
+      "bytes": 5752,
+      "sha256": "e005457c21f97cba8097fa05b8b9125a4b8d90f27f21dd51ca3409472e06b1d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-entry.mjs",
+      "bytes": 1907,
+      "sha256": "0a931ef1acc4ad188c21c91134a9571e67a749a9ac1e75036f6e9ddc53cb1888"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold.test.mjs",
+      "bytes": 4543,
+      "sha256": "d04d08dbd70dd9789b222203d3cbfd5be1d8b3427b922460bfc42ad699eda670"
+    }
+  ],
+  "report": {
+    "pid": 55791,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 100,
+    "stdout": "\u2714 cold input binds exact new source/artifact and excludes settings choices (1.65525ms)\n\u2714 cold positive uses current actual record and separates initialization from claim (0.217125ms)\n\u2714 cold old profile or missing positive cannot pass and changed identity is rejected first (0.366166ms)\n\u2714 cold cleanup accounts actual mutable launch state without requiring nonexistent readiness field (0.1385ms)\n\u2714 cold actual entry imports without a future artifact input and rejects wrong arguments before I/O (0.215417ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 56.134\n",
+    "stderr": "",
+    "observed_bytes": 628,
+    "retained_bytes": 628,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_EXACT_EMPTY",
+  "returnedAt": "2026-10-07T21:10:05.938691+00:00"
+}

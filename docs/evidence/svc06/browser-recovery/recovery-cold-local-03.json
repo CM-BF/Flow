@@ -1,0 +1,40 @@
+{
+  "returnedAt": "2026-10-07T21:19:28.535Z",
+  "report": {
+    "pid": 19336,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 73,
+    "stdout": "",
+    "stderr": ".\n----------------------------------------------------------------------\nRan 1 test in 0.021s\n\nOK\n",
+    "observed_bytes": 98,
+    "retained_bytes": 98,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_EXACT_EMPTY",
+  "cases": 1,
+  "scope": "Actual fixed Python inputs/pins/helpers import and dispatch; final launch calls substituted;0PG/service/provider/personal"
+}
