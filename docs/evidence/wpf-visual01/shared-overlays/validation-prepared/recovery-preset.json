@@ -1,0 +1,31 @@
+{
+  "state": "SOURCE_PREPARED_NO_RUNTIME_GRANT",
+  "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/apps/web/test/conversation-recovery.browser.ts",
+  "argv": [
+    "--visual-appearance"
+  ],
+  "approvalEnv": "FLOW_VISUAL01_BROWSER=1",
+  "gateEnv": "FLOW_RECOVERY_GATE=<fresh exact gate>",
+  "adminEnv": "FLOW_RECOVERY_TEST_ADMIN=<dedicated owned fixture source; never serialized>",
+  "gateExampleNotAdmission": {
+    "allowRun": false,
+    "journey": "appearance",
+    "visualAppearancePhase": {
+      "id": "VISUAL01-RECOVERY-APPEARANCE-20261007",
+      "budgetMs": 60000,
+      "spentMs": 0,
+      "cleanupMs": 30000
+    }
+  },
+  "evidenceRelative": "docs/evidence/wpf-visual01",
+  "runsRelative": "browser-appearance-runs",
+  "groups": [
+    "cookieRead",
+    "themes390"
+  ],
+  "pngs": [
+    "light-390.png",
+    "dark-390.png"
+  ],
+  "runtimeDependencySupply": "Own ignored exact package links + fixed TSX resolver still required before a reviewed actual browser package. Donor readonly; no shared config/install. Existing Vite fixture configLoader native, proxy:{} overrides config; no personal center access."
+}

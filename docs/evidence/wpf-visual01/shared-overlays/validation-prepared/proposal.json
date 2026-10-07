@@ -1,0 +1,110 @@
+{
+  "state": "PREPARED_SOURCE_ONLY_NO_LOCAL_OR_BROWSER_GRANT",
+  "task": "WPF-VISUAL01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "local": {
+    "phaseTotalMs": 30000,
+    "singleAttemptTotalMs": 20000,
+    "internalParentTotalMs": 18700,
+    "cleanupIncludedMs": 5000,
+    "tmpBytes": 8388608,
+    "retainedBytes": 1048576,
+    "metadataBytes": 1048576,
+    "processes": "One Python supervisor and one Node compiler child/owned PGID; no Vite/esbuild execution expected",
+    "network": false,
+    "PG": false,
+    "Chrome": false,
+    "provider": false,
+    "install": false,
+    "wholeSuite": false,
+    "entry": {
+      "path": "/private/tmp/visual01-local-prepared-20261007/run.py",
+      "sha256": "851b9d53f9dd2d2c1889ced5ff5ff6557db217689d33c9273f76620f900ee76d",
+      "from": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/run.py",
+      "fromSha256": "bf7bb914c54951f19ebe07900a951fbbaf7632dd308e8f0ee7b19c5454f2a05d",
+      "delta": "Only exact8 scope guard; existing compiler lifecycle/18.7s internal cap/5s cleanup unchanged",
+      "command": [
+        "python3",
+        "/private/tmp/visual01-local-prepared-20261007/run.py",
+        "/private/tmp/visual01-local-prepared-20261007"
+      ],
+      "childCommand": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "/private/tmp/visual01-local-prepared-20261007/types.json"
+      ]
+    },
+    "entries": [
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ],
+    "checks": "Affected strict/noUnchecked/noEmit only; CSS and actual UI explicitly unverified; zero compiler errors/actual child0+outer0/EOF/drop0+ownedgroup/scratchabsent required. Relevant narrow fix and directed retry only within phase total; no old credit."
+  },
+  "browser": {
+    "state": "NOT_ADMITTED_RUNTIME_DEPENDENCY_SUPPLY_PENDING",
+    "picker": {
+      "groups": 6,
+      "visualGroups": 2,
+      "screenshots": 5,
+      "entries": [
+        "checkMessageSettingsPicker",
+        "checkMessageSettingsOverlays"
+      ],
+      "needs": "Separate fresh real HTTP fixture for six behavior and overlay sample journey; reuse native sibling parent/worker; minimal dispatch/expected outputs diff still needs final native review. No cloning state authority.",
+      "proposedTotalMs": 90000,
+      "cleanupIncludedMs": 15000,
+      "scratchBytes": 67108864,
+      "retainedBytes": 8388608,
+      "PG": 0
+    },
+    "recovery": {
+      "preset": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/validation-prepared/recovery-preset.json",
+      "groups": [
+        "cookieRead",
+        "themes390"
+      ],
+      "screenshots": 2,
+      "proposedTotalMs": 60000,
+      "cleanupIncludedMs": 30000,
+      "scratchBytes": 67108864,
+      "retainedBytes": 9437184,
+      "DBWALPlanningBytes": 134217728,
+      "PG": 1,
+      "needs": "Exclusive own ignored package links/runtime TSX resolver before actual; preserve existing marker/drop and process groups. No MSG historical phase/output inheritance."
+    },
+    "scrollbars": "Observed mode plus interior spacing/geometry only. Alternate OS mode remains NOT_RUN absent actual observation; no OS preference changes."
+  },
+  "resource": "No free/proc sampling in this preparation; next actual uses manager fresh complete sum. Static source+metadata+TMP growth <=16MiB separate authorized envelope. No browser budget currently allocated.",
+  "sourceTarget": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb"
+}

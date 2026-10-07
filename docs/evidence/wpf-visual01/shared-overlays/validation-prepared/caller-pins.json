@@ -1,0 +1,47 @@
+{
+  "caller": {
+    "path": "/private/tmp/visual01-local-prepared-20261007/run.py",
+    "sha256": "851b9d53f9dd2d2c1889ced5ff5ff6557db217689d33c9273f76620f900ee76d",
+    "from": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/run.py",
+    "fromSha256": "bf7bb914c54951f19ebe07900a951fbbaf7632dd308e8f0ee7b19c5454f2a05d",
+    "delta": "Only exact8 scope guard; existing compiler lifecycle/18.7s internal cap/5s cleanup unchanged",
+    "command": [
+      "python3",
+      "/private/tmp/visual01-local-prepared-20261007/run.py",
+      "/private/tmp/visual01-local-prepared-20261007"
+    ],
+    "childCommand": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "--noEmit",
+      "-p",
+      "/private/tmp/visual01-local-prepared-20261007/types.json"
+    ]
+  },
+  "files": [
+    {
+      "path": "/private/tmp/visual01-local-prepared-20261007/run.py",
+      "realpath": "/private/tmp/visual01-local-prepared-20261007/run.py",
+      "bytes": 7811,
+      "sha256": "851b9d53f9dd2d2c1889ced5ff5ff6557db217689d33c9273f76620f900ee76d"
+    },
+    {
+      "path": "/private/tmp/visual01-local-prepared-20261007/caller.diff",
+      "realpath": "/private/tmp/visual01-local-prepared-20261007/caller.diff",
+      "bytes": 1341,
+      "sha256": "8c2c4db00443c8e743964595a615009ce822fa2a19fbd4a5f4d6051df8bef20d"
+    },
+    {
+      "path": "/private/tmp/visual01-local-prepared-20261007/sandbox.sb",
+      "realpath": "/private/tmp/visual01-local-prepared-20261007/sandbox.sb",
+      "bytes": 171,
+      "sha256": "b4c5ca66d5d7b8686fa42df5181924071d36da5568b373cd1e6a9aaf5f10b1a4"
+    },
+    {
+      "path": "/private/tmp/visual01-local-prepared-20261007/types.json",
+      "realpath": "/private/tmp/visual01-local-prepared-20261007/types.json",
+      "bytes": 11137,
+      "sha256": "a78fb28b0e71a9e633268254a002b817831c564e74beeab023ad87123bea32e4"
+    }
+  ]
+}

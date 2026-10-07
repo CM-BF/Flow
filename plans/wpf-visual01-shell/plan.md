@@ -32,4 +32,6 @@
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
 
-本次固定源码 5f8984d69e22f6c3a105f9adbaf9ba671cab96d3；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。尚无工程/浏览器实际许可，当前全部8scope停写保留待审。
+本次固定源码 2d73da15b41f115ec815f38b565fb4d80fd1b6fb；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。尚无工程/浏览器实际许可，当前全部8scope停写保留待审。
+
+后续 parent preset 将 appearance 的任务、账目、输出作为一个受信固定配置，不接收任意 evidence 路径。默认 MSG03 guard 不变；必要 local 与两 browser consumer 提案集中于[准备入口](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)，暂未获运行段。

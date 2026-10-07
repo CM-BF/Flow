@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T16:01:10.223115+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "state": "READ_ONLY_FIXED_SOURCE_NOTES_AWAITING_TYPES_AND_BROWSER_RESULTS",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "target": "5f8984d69e22f6c3a105f9adbaf9ba671cab96d3",
+  "paths": [
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "bytes": 8167,
+      "sha256": "84b9996a1a0650f068809a8da47d16d47618e3eac914259d59ba87fd8653e5cf"
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3897,
+      "sha256": "69f769a51c75551e4c0a31f76d074abe506572fe0aac679b0d2c42b54da0a569"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27940,
+      "sha256": "c15570e439005cac8bcfb5a9cb288de6bc78efbc4cf3384e440970be6fd088a1"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 5851,
+      "sha256": "61d3d22b868bc43cb3d1489b33814dc68c83c0df0e3d7c3b7a11391a9976b8a3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 140494,
+      "sha256": "9ccc4cb5ae3b0e4c9ba76741b0f499a66d9c6459a3316b58e675ad8ea685a727"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 48331,
+      "sha256": "c55b0a12c9be8bd52c920b70b4f336b2eab95aaf4a4df561515bcbfbbdb99782"
+    }
+  ],
+  "blockingSourceFindingAtThisStage": false,
+  "observations": [
+    "Read complete six-file diff. SharedDialog retains Radix structure/ref/close/focus semantics; styling changes backdrop/radius/padding/scroll bounds/shadow and uses existing color/theme tokens. No plugin capability expansion.",
+    "MessageSettingsPicker logic from function declaration through authority/filter handler is byte-identical; selection/Apply is still explicit, full tuple radio key and sameMessageSettings retained. Added native details only controls secondary filter disclosure.",
+    "Normal model catalog now receives visual hierarchy separate from180-characterstress model; full current/pending/model identities remain available in disclosure and accessible radio text. Footer/pending summary outside scrollable body keeps actions structurally reachable.",
+    "Old six behavior groups retain key state/commit assertions; keyboard path now accounts for native disclosure and traversesactualTab toApply. New overlay journey is additional, doesnotreplace behavior groups.",
+    "Recovery appearance test exercises existing actualApp journey and adds geometry/Closeviewport checks. New settings overlay journey uses realwidget/publicHTTP fixture, not wholeApp or realcenter proof.",
+    "Reducedmotion andforcedcolorsCSS preserved/extended; actual theme contrast/geometry/focus only established by future browser evidence."
+  ],
+  "neededValidation": [
+    "Affected types and relevant existingdirect behavior tests once; no needrerun fixedRelease/newpair for this differentfeature.",
+    "One appropriatelybudgeted browser segment must cover existing6behaviorgroups plus normal/longtwo-theme390 anddesktop screenshot, fixedfooter/Escape/focus/disclosure/noclipping; caller should account for five newPNGandgeometry outputs.",
+    "Recovery appearance remains separately selected realApp consumer. Actual measured scrollbar mode recorded; overlay0width isnotclassicmodecoverage.",
+    "If checks reveal source bugs, fix and review actualdelta; cannot mark fullvisual accepted from staticnotes."
+  ],
+  "mustNotClaim": [
+    "No engineeringchecks/browser/screenshots run for5f898 at thisnote.",
+    "No actualIME/nativeallOSscrollbarmatrix orperformance gain proven.",
+    "No mainintegration/deployment orfullplugincompletion."
+  ],
+  "cleanCode": {
+    "scope": "sharedDialogpresentation/MessageSettingsPickerdisclosure/layout plus twoconsumer testdeltas",
+    "finding": "No newcontroller/store or duplicated authority; inline presentationalrules extractedtoCSS. Actual browser result remainsrequired."
+  }
+}
