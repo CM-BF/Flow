@@ -1,0 +1,158 @@
+{
+  "recordedAt": "2026-10-07T04:56:15.022905+00:00",
+  "result": "ARTIFACT_AND_IMPORTS_PASSED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "entrySource": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+  },
+  "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "sourceTree": "bebc96ffa87519a8c3a4f94198a2d79cfe36739a",
+  "startedAt": "2026-10-07T04:54:19.375Z",
+  "entryFinishedAt": "2026-10-07T04:54:50.037Z",
+  "entryElapsedMs": 30661,
+  "outerElapsedMs": 30732,
+  "outerFinishedAt": "UNKNOWN: not separately captured",
+  "actualInvokedOnce": true,
+  "outer": {
+    "pid": 10435,
+    "exit_code": 0,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "originalEPERMUnknownPreserved": true,
+  "outerStdoutEqualsDurableResult": true,
+  "importProof": {
+    "importsAndReadOnlySelectionOnly": true,
+    "artifactSourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "realWebArtifactSelected": true,
+    "centerRunnerSelectionPreserved": true,
+    "wrongSourceRejected": true,
+    "factoryCalls": 0,
+    "runnerCalls": 0,
+    "providerCalls": 0,
+    "sdkVersion": "0.3.290",
+    "nativeBinaryExecuted": false,
+    "nativeBinaryBytes": 233260816,
+    "resolved": {
+      "pgEntry": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "sdkEntry": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "nativeMetadata": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "nativeBinary": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "viteEntry": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "tsxEntry": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/root/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    "delayedImports": [
+      "apps/server/src/index.ts",
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/maintenance-host.mjs"
+    ],
+    "developmentCheckoutIsolation": "NO mutation or removal; internal resolution/inventory proof only"
+  },
+  "sqlFilesVerified": 30,
+  "expectedClosure": {
+    "snapshots": 271,
+    "importers": 7,
+    "tools": [
+      "tsx4.23.15",
+      "pg8.23.1",
+      "vite8.3.2"
+    ]
+  },
+  "inventory": {
+    "logicalBytes": 363136427,
+    "entries": 15546,
+    "manifestBytesIncluded": 366318536,
+    "nodeImages": 20
+  },
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT",
+    "dev": 16777234,
+    "ino": 123475174,
+    "mode": "0700"
+  },
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/owner.json",
+      "dev": 16777234,
+      "ino": 123475176,
+      "mode": "0o600",
+      "bytes": 259,
+      "sha256": "fe2dc7bd45341c62377794c9fd5257b0b6300529d33c0f3866790f6d8414576d",
+      "retained": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/stage-4087b158-3831-4566-adb3-98bac85438af.json",
+      "dev": 16777234,
+      "ino": 123501837,
+      "mode": "0o600",
+      "bytes": 867,
+      "sha256": "6a2830f388a1dfa3fb0ab74f4bc243d85a3d144e55dd81631e1d51bc63b6a35f",
+      "retained": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "dev": 16777234,
+      "ino": 123501822,
+      "mode": "0o600",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "retained": true
+    }
+  ],
+  "cleanup": {
+    "buildRecord": "published/cleanup complete",
+    "storeEntries": [
+      "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "stage-4087b158-3831-4566-adb3-98bac85438af.json"
+    ],
+    "prepareLockAbsent": true,
+    "temporaryStageAbsent": true,
+    "finalOwnedGroupAbsent": true,
+    "PG": 0,
+    "servicesStarted": 0,
+    "artifactAndRootRetained": true
+  },
+  "resources": {
+    "preflightRequiredBytes": 3927965696,
+    "originalInputMinimumBytes": 3391094784,
+    "additionalConcurrentReserveBytes": 536870912,
+    "initialFreeBytes": 25611091968,
+    "minimumObservedFreeBytes": 25165168640,
+    "samples": 62,
+    "rawBytesIncludingOriginalBuildRecord": 16442,
+    "rawLimitBytes": 2097152,
+    "rawCounting": "outer/preflight/invocation/all actual-first files plus original retained build-record; summary itself excluded",
+    "physicalPeak": "NOT_MEASURED; sampled volume availability includes other writers"
+  },
+  "limits": [
+    "No actual host/factory/runner/provider/PG/Chrome or personal action",
+    "No development-checkout denial proof; this is internal resolution and read-only selection",
+    "center/runner selection preservation uses explicit pure resolver, not running roles",
+    "New artifact retained outside personal installation; no adoption or deployment",
+    "Olde5/source and every old failure untouched"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "observedAt": "2026-10-07T04:54:17.960508+00:00",
+  "operation": "SVC08-FLOW422-BUILD-R1",
+  "entrySource": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+  "deliveryBefore": "a359ed6cc0488c9dd0016869d245d1396cce6636",
+  "artifactSource": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "manifestSha256": "4576c3ecdf06e14b68f9f33de1be4bc56bdddadada2090fca1f1fff16f5c27da",
+  "sourceFixedCurrent": 6,
+  "runtimeMatched": 17,
+  "fixedGitInputs": 61,
+  "reusedProcedureMatched": 3,
+  "OPS14Matched": true,
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc08",
+      "plans/svc08-web-connection-lifecycle"
+    ],
+    "state": "active",
+    "branch": "codex/personal-web-connection-lifecycle",
+    "origin": "new",
+    "taskId": "SVC08",
+    "worker": "assignment_review",
+    "claimId": "ba1ff3b2-d830-4acf-b84f-be8df92c9c95",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+    "createdAt": "2026-10-07T03:29:21.929Z",
+    "updatedAt": "2026-10-07T04:42:47.430Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "freeBytes": 25611046912,
+  "requiredBytes": 3927965696,
+  "originalGateBytes": 3391094784,
+  "independentReserveBytes": 536870912,
+  "exclusiveDestinationsAbsent": [
+    "actual-first",
+    "outer-report.json"
+  ],
+  "holderBasis": "Lead ONE_SHOT SVC08-FLOW422-BUILD-R1 after actual ENG return04:50:47; peers notified; no other PG window was assigned to this owner",
+  "sideEffectsBeforeEntry": "no install/build/import/PG/service/provider",
+  "sourceUnchanged": true
+}

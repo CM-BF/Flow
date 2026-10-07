@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T04:52:46.667196+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "result": "APPROVED_FIXED_BUILD_PREPARATION",
+  "source": "20ed0ccd192127ed55f7f0677db17de32cc9e30e",
+  "delivery": "a359ed6cc0488c9dd0016869d245d1396cce6636",
+  "manifestSha256": "4576c3ecdf06e14b68f9f33de1be4bc56bdddadada2090fca1f1fff16f5c27da",
+  "artifactSource": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "artifactRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "read": [
+    "Full three-entry diff against fixed SVC06 procedure4de45996",
+    "Full new entry, supervisor, runtime proof and README",
+    "Actual serviceRuntime/backendRuntime source and fixed inputs"
+  ],
+  "verified": {
+    "entryCurrentAndFixed": 6,
+    "runtimeCurrent": 17,
+    "fixedGitInputs": 61,
+    "oldProcedureFixed": 3,
+    "sharedSupervisorHash": true,
+    "errors": []
+  },
+  "findings": [],
+  "scope": "Only one fixed Flow-source offline artifact build, imports and read-only role/source selection. Existing builder/OPS14 implementations unchanged. No PG, host launch, provider or personal deployment approval.",
+  "executionEnvelope": {
+    "workSeconds": 420,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 3391094784,
+    "liveReserveBytes": 1073741824,
+    "additionalBytes": 2317352960,
+    "rawBytes": 2097152,
+    "independentBrowserAndLocalReserveBytes": 536870912
+  },
+  "constraints": [
+    "One exclusive actual-first reservation; unknown retained and not rerun",
+    "Shared PG remains closed during this fixed artifact run; independent zero-PG browser permitted only with isolated inputs/outputs and combined reserve",
+    "Complete manifest and claim recheck immediately before running",
+    "Child group stop completes before outer persistence; outer filesystem sync is not a claimed hard deadline",
+    "No claim that dev-checkout denial, full deployment or old-data migration is proven by import-only checks"
+  ],
+  "reviewerTests": 0,
+  "providerCalls": 0
+}

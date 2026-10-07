@@ -105,3 +105,11 @@ ENG01G已main557397；唯一receive/close pump、finite file策略、真实assig
 ## 13:03 UTC 当前顺序
 
 ENG01I [唯一准备合同](../../../engineering-native-host/plans/eng01i-native-engineering-host/plan.md)已固定为docs-only候选并释放旧claim，尚无adapter产品改动。该暂停是2026-10-06历史安排。2026-10-07 Connection核心与SVC08限定片已交付后，原worker已fresh领取原六范围恢复宿主组合，独立局部/PG旅程先0provider验证；具体authority/模型/全部writer停止依据仍为ENG001-05真实执行门槛，不作为整个零模型组合前置。Mika唯一资格核验并行，SVC06后继另位推进；不新增资格probe或模型预算、不取消ENG真实写改与独立接受目标。
+
+## I接收后的真实授权宿主（2026-10-07）
+
+ENG01I四产品及两条公开HTTP/PG旅程已mainef3a6de8；它消费可注入NativeWriteAuthority，尚无真实host实现。下一ENG001-04实施owner明确为本队native_center_owner，co-lead负责与Mika冻结输入和最终工程验收。I原四产品先按mainreceipt交回，新宿主在独立worktree/fresh精确scope推进；不因目录出现gpt-6-astra/gpt-5.6-sol就认定实际执行资格，也不把整个实现挂成等待Mika。
+
+最小职责保持R06通信/生命周期、G写入策略、I编排、F完整内容检查和中心收据单一来源。真实authority.open/close须绑定同一task/attempt/runner/profile/lease与有限工作区；选择实际可强制的写入边界，并证明撤销后剩余进程不能继续修改本次内容集。workspaceWrite/requested model、模型自报和直接child close均不是这项证明。受信检查基线/监督器仍不归执行模型写；未知保留workspace/journal、不得重投或签发revoked。不能为绕过缺口新增第二执行器/SDK loop或任意字符串资格。
+
+并行输入与解除条件：Mika只提供其现有固定native身份/能力与来源观察、当前真实缺口；本队负责host实现与OS/sandbox接缝选择，并先完成0provider强制范围/取消/撤销/残留writer及恢复的直接消费者验证。公开目录只作配置候选。需要真实provider证明的实际model/no-fallback与真实源码修改另固定单合成repo、预算和新场景；没有新许可前不query、不改个人profile/服务，不复用旧封存额度。最终ENG001-05仍要求真实合格native改源码、停止后同内容集受信检查、固定diff/证据和独立actor接受；机械绿、注入authority或计划交付不关闭它。

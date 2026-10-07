@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:51:48.734975+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:57:58.016012+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -12,23 +12,23 @@
 | Branch | codex/engineering-native-host |
 | 工作基线 / HEAD | 原280289；受控main422→c0e0263dc01b9527293318a644f964bd048e2a86 / mergeea585db4d198df33b62453d5502f74772bbc3c25 |
 | 工作树dirty状态 | 本metadata提交后clean |
-| 工作分支状态 | review |
-| 本片段交付阶段 | review |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 实现目标 | c3d29e4a36af74380565922fbb838ebec1bf7afc |
 | 实现范围 | apps/runner/src/engineering/native-adapter.ts, apps/runner/src/engineering/native-adapter.test.ts, apps/runner/src/engineering/calculator-receipt.ts, apps/runner/src/engineering/calculator-receipt.test.ts |
 | 检查状态 | 30different分轮（原局部28＋R1 PG2）；C02直接3重叠；focused types0；R1 2/2、18未选/3829ms，DB与自有进程/tmp正常清理 |
-| 已集成main状态 / HEAD | 本片未集成；固定base 280289008a5a3779e4e5e6453181b96062ed9514 |
+| 已集成main状态 / HEAD | 已集成 ef3a6de8f07b44ec7aabe57502529de3794d4d2b，四产品逐字相同 |
 | 任务开工时间 | 2026-10-06T12:57:59.124Z |
-| 任务完成时间 | NOT_COMPLETED |
+| 任务完成时间 | 2026-10-07T04:57:58.016012+00:00 |
 | 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 写入、完整内容检查与公开收据的宿主组合及两个中心恢复旅程已通过，结果待独立复核 |
-| 下一可用交付 | 独立复核成功收据与丢失确认后的重启证据，再接收本片 |
+| 当前产出 | 写入、完整内容检查与公开收据的宿主组合及两个中心恢复旅程已通过独立审查，已进入主线 |
+| 下一可用交付 | 本片段已交付；真实宿主写入授权另片准备，未算本片生产资格 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED_MODULE_LOCAL_AND_PG_PREPARATION；R1实际2/2结果待独审 |
-| Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v1 active，6 literal；2026-10-07T04:18:16.925Z新take成功；原73bbb9e0 v2已released |
+| Review | [review.md](review.md)，APPROVED_FIXED_ZERO_PROVIDER_PG_RESULT，R1唯一结果审查已通过 |
+| Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v2 active，仅own plan/evidence；4产品已正式amend交回；原73bbb9e0 v2已released |
 | 架构影响 | 新native编排consumer，F消费公开wire；无启动入口/新loop，交Lead同步固定架构 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -36,7 +36,7 @@
 | ENG01I-01 | completed | native_center_owner | claim与Interface |
 | ENG01I-02 | completed | native_center_owner | [恢复Interface](../../docs/evidence/eng01i/resume/interface.md) |
 | ENG01I-03 | completed | native_center_owner | [局部原证据](../../docs/evidence/eng01i/local/README.md)；[PG固定候选](../../docs/evidence/eng01i/pg/window-request.md) |
-| ENG01I-04 | in-progress | native_center_owner | 模块/入口已审；R1结果待独审、未main |
+| ENG01I-04 | completed | native_center_owner | 模块/入口/R1结果已审，四产品main精确接收 |
 
 模块可用不等于concrete authority/production host/native用户验收完成。实际资格归Mika唯一owner；本片0provider，缺可信authority不启动transport。父ENG已登记本片恢复，聚合展示由Lead维护。
 
@@ -53,7 +53,7 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 | ENG01I-W02 | 2026-10-07T04:33:52.806000Z | 2026-10-07T04:48:10.330086Z | 其他 | 源码独审、作者修复/局部验证与PG准入等待交错；不是纯资源等待，净等待时长UNKNOWN | 原REQUEST_CHANGES、局部run、最终独审；不将该区间全计等待或工作 |
 | ENG01I-W03 | 2026-10-07T04:48:10.330086Z | 2026-10-07T04:50:04.101523+00:00 | 资源 | 最终准备审查后等待单次共享窗口；结束为本owner登记R1许可并开始fresh准入 | [本次许可](../../docs/evidence/eng01i/pg/window-R1-authorization.json) |
 
-等待区间是实际排程事实，不等于工作耗时。固定C02 main c0e0263d受控输入已核G默认thread/start，局部直接3例绿；本产品仍未独审/main。原两次wrapper缓存收尾exit1、一次测试类型红保持；所有自有进程/目录已确认收尾，真实PG尚未创建。
+等待区间是实际排程事实，不等于工作耗时。固定C02 main c0e0263d受控输入已核G默认thread/start，局部直接3例绿；本产品仍未独审/main。原两次wrapper缓存收尾exit1、一次测试类型红保持；当时所有自有进程/目录已确认收尾，真实PG当时尚未创建；后续R1已实跑并正常清理，见下方独立结果。
 
 2026-10-07T04:38:15.843894Z 自查修复：acquire部分成功后异常改unknown，新增真实lease1/1及focusedtypes0；原27/3重叠不重跑。assignment独审指出PG外层准备耗时未计入child预算与轮询query_timeout未按remaining的问题，dead2c4f准备source已窄修；PG仍NOT_RUN，完整fixed manifest另存final-preparation-manifest.json，旧manifest/raw保持。源码冻结待有限复审。
 
@@ -64,3 +64,7 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 2026-10-07T04:50:04.101523+00:00：最终唯一独审已原样归档，R1许可只限固定2PG例一次，额外为独立浏览器与三队local保512MiB，fresh总线1744830464B；原live/cleanup上限不变。尚未开始PG，先核claim/固定输入/归属与独占run。
 
 2026-10-07T04:51:48.734975+00:00：R1实际2/2于04:50:47.092199Z正常清理/归还窗口；单专库OID1214681、marker一致、连接[]后normalDROP且absent，自有组absent/双EOF/目录removed。原局部28+本轮2共30different分轮，0provider。见[实际摘要](../../docs/evidence/eng01i/pg/R1-README.md)；源码不变，结果封包待独审，未宣称真实模型/权限/生产资格。
+
+2026-10-07T04:56:21.047231+00:00：R1唯一结果独审原样归档；产品停写，main接收待Lead。后继仅在自有证据准备真实OS authority候选，不把当前注入authority旅程扩大为资格证明。
+
+2026-10-07T04:57:58.016012+00:00：收到main ef3a6de8f07b44ec7aabe57502529de3794d4d2b回执后核四产品与c3逐字同，完成本片。组合root types0为Lead实际集成证据；caller私有Node cache收尾exit1/KEEP如实保留，非类型失败且未重跑。正式amend v2交回四产品，仅保ownrecords供原ENG后继authority方案。完整ENG/native模型、权限、生产资格仍open。

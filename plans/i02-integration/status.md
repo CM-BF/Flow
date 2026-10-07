@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:56:02.907834+00:00 / mainbb99223a；本批ENG01I限定PG结果与四产品接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:13.243146+00:00 / main ef3a6de8；本批仅已审结果与管理收口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainbb99223a；ENG01I c3d四源与b612自有记录，SVC06两文件收口；其余源码保持 |
+| 工作基线 / HEAD | main ef3a6de8；ENG01I closeout14228、SVC08构建结果228、六份管理docs独审，产品零改 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED ENG01I原局部28+PG2，唯一结果独审295绑定与10安装入口一致；组合root noEmit exit0/9139ms。局部caller因编译缓存非空exit1，1,357,764B按原预算KEEP，不重跑。 |
-| 已集成main状态 / HEAD | mainbb99223a；本批ENG01I已审候选待ff发布。个人af51/accepting v18、Web d629/v3未变。 |
+| 检查状态 | PASSED 已审文档及固定结果逐字接收；SVC08 23 bindings一致。0新工程检查/构建/PG/provider；ENG原wrapper exit1与缓存KEEP保持。 |
+| 已集成main状态 / HEAD | main ef3a6de8；本批仅文档/结果收口待ff。个人af51/accepting v18、Web d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程宿主公开收据与丢失确认后的恢复旅程已获限定独审；连接修复的固定产物已构建，实际个人部署另验。 |
-| 下一可用交付 | 接收工程宿主组合并实施真实受限写入授权宿主；固定网页宿主产物结果独审和受管部署方案。 |
+| 当前产出 | 工程宿主公开收据与恢复旅程已进入主线；固定网页宿主产物构建结果通过独立审查，个人服务保持原版本。 |
+| 下一可用交付 | 真实受限写入授权宿主实现准备，以及固定网页宿主隔离运行验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
