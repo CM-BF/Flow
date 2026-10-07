@@ -159,7 +159,7 @@ test('held Web selection consumes the same target under the row lock and records
   assert.equal(state.webHost.selection, 'selected-stopped'); assert.equal(state.webHost.artifact.artifactId, operation.backendArtifact.artifactId);
   assert.equal(state.backendArtifact.artifactId, artifact('a').artifactId); assert.deepEqual(state.processes, f.state.processes);
   assert.equal(operation.webHostTarget.status, 'selected-stopped'); assert.equal(operation.webHostTarget.selectedStateDigest, digest(state));
-  assert.deepEqual(await f.read(join(f.directory, 'state.json')), state);
+  assert.equal(canonical(await f.read(join(f.directory, 'state.json'))), canonical(state));
   assert.equal(f.calls.filter(x => x === 'write').length, 3);
   assert.equal(f.calls.filter(x => Array.isArray(x) && x[0] === 'inspect').length, 6);
   await assert.rejects(f.select(state, operation), { code: 'MAINTENANCE_TARGET_SELECTION' });

@@ -29,7 +29,7 @@ commands = [(str(NODE), '--experimental-vm-modules', '--test', '--test-reporter=
  (str(NODE), '--import', 'tsx', '--experimental-vm-modules', '--test', '--test-reporter=spec', '--test-name-pattern=^(held Web target|SVC09 maintenance refresh|SVC09A holds every|SVC09A partial resume)', str(ROOT / 'tools/personal-preview/maintenance.test.mjs')),
  (str(NODE), '--import', 'tsx', str(HERE / 'maintenance-target-import.mjs'))]
 if sys.argv[1] == '02':
-    commands = commands[1:]  # Reserved only for affected consumers if the first round fails.
+    commands[0] = (str(NODE), '--experimental-vm-modules', '--test', '--test-reporter=spec', '--test-name-pattern=held Web selection consumes', str(ROOT / 'tools/personal-preview/maintenance-target.test.mjs'))
 paths = [ROOT / ('tools/personal-preview/' + name) for name in ('maintenance-target.mjs', 'maintenance-target.test.mjs', 'maintenance-host.mjs', 'maintenance.test.mjs', 'preview.mjs', 'process.mjs', 'backend-release/host.mjs', 'backend-release/files.mjs', 'web-release.mjs', 'browser-session-configuration.mjs')]
 paths += [ROOT / 'apps/server/src/database.ts', Path(__file__), HERE / 'maintenance-target-import.mjs', HERE / 'maintenance-target-04da-input.json', HERE / 'maintenance-target-04da.patch', SUPERVISOR, NODE, Path(sys.executable).resolve(), ROOT / 'node_modules/tsx/dist/loader.mjs', ROOT / 'node_modules/pg/lib/index.js', Path('/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/lib/typescript.js')]
 save('reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'inputs': [pin(p) for p in paths], 'commands': commands,
