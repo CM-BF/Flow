@@ -1,3 +1,5 @@
+> 当前后继：首轮实际几何失败后，D06 v2精确追加renderer，见[连线文字背景Interface](edge-label-bounds/interface.md)。下文是原5124数据片约定，不覆盖后继合法扩围。
+
 # 固定主线架构数据更新
 
 D06 原 owner d01_owner 在原树继续；直接父 D01。工作分支从6d05保留历史，策展输入固定 `0da869f7bad98771177472539b5a192365c15117`，不追 moving main。

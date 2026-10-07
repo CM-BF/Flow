@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T03:54:10.239499+00:00",
+  "stack": "Vanilla SVG renderer / fixed browser geometry",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    }
+  ],
+  "application": "Local discovery; reuse explicit approved narrow design and existing renderer Interface. No installation or new framework.",
+  "cleanCode": {
+    "naming": "fitEdgeLabels states one visual responsibility",
+    "interface": "Private helper only; original data and DOM consumer contract retained",
+    "layout": "All mounted text bbox reads finish before background writes; hidden initial draw deferred until tab activation",
+    "errorHandling": "No catch suppresses SVG/layout errors or weakens browser assertions",
+    "duplication": "One helper reused by draw and activation, no copied render tree",
+    "tests": "Original failure/raw preserved; meaningful existing real-browser geometry acceptance unchanged; source checks only, future runtime pending"
+  },
+  "remaining": [
+    "Independent fixed-source review",
+    "Real SVG layout after new source binding/window",
+    "Remaining five-view/narrow/theme/source navigation completion"
+  ]
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 UTC | 2026-10-07T03:48:45.913970+00:00 |
+| 最近更新时间 UTC | 2026-10-07T03:54:10.239499+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime |
 | Branch | codex/dashboard-architecture-runtime |
 | 工作基线 / HEAD | 分支base6d05ec467581e85d21d5532fd29a2bebd1411b41；策展fixed main0da869f7bad98771177472539b5a192365c15117；实际HEAD/dirty由Git聚合 |
-| 工作分支状态 | source-ready / direct-verified；browser-failed evidence sealed |
+| 工作分支状态 | source-ready / renderer-fix-review-pending；browser-failed evidence sealed |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新五图源码和定向验证已通过；页面实测发现数据图两条连线文字超出背景，前两图宽窄与双主题已验，原始失败已封存 |
-| 下一可用交付 | 独审归因连线背景几何失败，再按合法范围修复或处理剩余显示验收；主线接收仍待办 |
-| 当前阻塞 | 数据图“回复引用”“本地只读”文字背景bbox失败；来源归因待审，后两图未完成。无当前运行或自动复验许可，renderer/CSS不在本领取范围 |
+| 当前产出 | 新五图数据与定向验证已通过；页面实测发现的既有连线文字背景估宽问题已固定源码修复，待独审和实际复验 |
+| 下一可用交付 | 独审连线文字背景修复，再完成剩余五图显示验收与主线接收 |
+| 当前阻塞 | 首轮页面失败保留；修复使用实际文字边界，尚未独审或实际复验。无运行占用/预约，CSS不在范围 |
 | 需用户决定 | NONE |
-| 实现目标 | 5124e6cea1edd3437f765ff67aa13386ae845bfa |
-| 实现范围 | apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/test/architecture.test.mjs |
-| 检查状态 | FAILED 5124e6cea1edd3437f765ff67aa13386ae845bfa：browser2/5、8PNG、actualexit1；22direct原PASS保持，owned清理完整，不冒全部页面通过 |
+| 实现目标 | a28e8dac9ab3bd56231c13a0b090e986cc69eb0d |
+| 实现范围 | apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/test/architecture.test.mjs |
+| 检查状态 | NOT_RUN a28e8dac9ab3bd56231c13a0b090e986cc69eb0d；新修复仅静态diff/hash核对。原5124 browser FAILED 2/5、8PNG、actualexit1/清理完整及22direct PASS保持 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 本轮；旧aeb已main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd |
-| Review | [review.md](review.md)，APPROVED（仅SOURCE_ONLY_VALIDATION_PENDING，非feature/main批准） |
-| D04 claim | adf9539d-0d42-49b8-961b-f5195a4c10e9 v1 / 4 literal / 2026-10-06T23:36:04.842Z COMMITTED；[receipt](../../docs/evidence/d06/snapshot-0da/take-receipt.json) |
+| Review | [review.md](review.md)，NOT_STARTED（新renderer修复；原5124源码与22direct限定批准保历史） |
+| D04 claim | adf9539d-0d42-49b8-961b-f5195a4c10e9 v2 / 5 literal / 2026-10-07T03:51:56.566Z COMMITTED；[amend](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -39,3 +39,5 @@
 2026-10-07T03:44:22.300593+00:00：[五图浏览器静态候选](../../docs/evidence/d06/snapshot-0da/browser-preparation-20261007/index.json)已准备，复用原静态资产fixture和已实证清理方法；新labels/连线背景/canvas、窄屏局部滚动、双主题与键盘来源下钻未执行。无Chrome/PG/服务/容量采样，未取得运行窗口。
 
 [浏览器首轮原件](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json)：03:47:12.726875Z–03:47:19.459475Z，完整实际outer1/晚父终态/双EOF与owned清理；预算保守6733ms、余83267ms（非下一许可）。未重试或改生产源，结果待独审。
+
+当前renderer固定修复：[Interface](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)与[source proof](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/source-proof.json)。原26份首轮原件逐字不变；原90s剩83267ms含15s清理，非新运行许可。

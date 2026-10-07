@@ -12,3 +12,7 @@
 - [ ] D06-12：原Lead主线接收、唯一status收口、正常pushclean后停写释放。
 
 D06-01～08的完成事实与证据继续见历史，不重编号或撤销旧批准。status是唯一进度来源，D04是唯一领取来源；main registry已指向同一原树，无新父计划或重复source。
+
+## D06-11 实测显示缺口
+
+首轮新布局验收发现既有renderer中文背景估宽缺口。已[原子amend v2五范围](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json)，仅新增 architecture.js；修复[Interface及来源](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)复用挂载SVG bbox、批量读写。新source固定后独审，原22与首轮FAIL/清理/6733预算保留，未自动复跑。CSS/server/registry及五图文本数据不改，原D06-12主线交付仍待验。

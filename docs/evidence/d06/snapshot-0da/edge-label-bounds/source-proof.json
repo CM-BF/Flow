@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T03:54:10.239499+00:00",
+  "state": "SOURCE_FIXED_REVIEW_NOT_STARTED_RUNTIME_NOT_RUN",
+  "target": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "base": "cc1f83457f04a02147c854f0503409db1bebb355",
+  "curatedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+  "claimVersion": 2,
+  "changedSource": [
+    "apps/execution-dashboard/public/architecture.js"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "bytes": 8424,
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60",
+      "sameAsBase": false
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+      "sameAsBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "sameAsBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+      "sameAsBase": true
+    }
+  ],
+  "historicalBrowserFilesUnchanged": 26,
+  "checks": {
+    "gitDiffCheck": "PASS",
+    "newNodeChecks": "NOT_RUN",
+    "newBrowser": "NOT_RUN"
+  },
+  "budget": {
+    "conservativeSpentMs": 6733,
+    "remainingMs": 83267,
+    "cleanupIncludedMs": 15000,
+    "nextGrant": false
+  }
+}
