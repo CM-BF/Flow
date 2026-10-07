@@ -7,8 +7,8 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 
 - [x] **O16-01** 独立稀疏树、fresh原子claim、固定职责/Interface与已审输入。
 - [x] **O16-02** 有限两段许可/三槽持久reservation、unknown不可复投与观测边界。
-- [ ] **O16-03** 原生产模块的public journey组合、受管资源checkpoint与独立语义输入。
-- [ ] **O16-04** 零query纯检查及获串行窗口后的实际PG/MCP注入旅程，准确保存资源/原始失败。
+- [x] **O16-03** 原生产模块的public journey组合、受管资源checkpoint与独立语义输入。
+- [x] **O16-04** 零query纯检查及获串行窗口后的实际PG/MCP注入旅程，准确保存资源/原始失败。
 - [ ] **O16-05** 固定manifest、唯一独立review、按批准范围交付。
 - [ ] **O16-06** 单独新许可下真实plan；实际proposal后另许可确认/children，并由独立actor验收语义。当前未授权/未运行。
 
@@ -17,3 +17,5 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 仅可写 experiments/continuous-goal-acceptance、plans/o16-continuous-goal-acceptance、docs/evidence/o16。实际base8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974；proposal输入0132仅此前只读观察。所有源码/SQL/入口闭包将按新base重新固定，不能继承旧O08/O10 source guard。无产品改动、无provider/auth/个人服务、无新安装。PG需Lead窗口，源码/已安装依赖内小检查可独立推进。
 
 2026-10-07T08:17:45Z 续接：由原owner沿原claim验当前主线，先固定P02集成后精确base与动态输入闭包，再新的零模型公共旅程；旧26准备绿/FAIL/KEEP不重写。参见[current-main-resumption](../../docs/evidence/o16/current-main-resumption.md)。
+
+2026-10-07T08:38:29.810Z：新的固定f5a零模型公共旅程R1实际1/1，正常清理；O16-03/04按零模型组合范围完成，O16-05待本轮结果独审/集成，O16-06真实native规划/children与独立语义验收未授权未运行。历史base8bd/首次PG失败保持，不追溯改绿。

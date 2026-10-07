@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:35:06.043129+00:00 |
+| 最近更新 | 2026-10-07T08:38:29.810Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,28 +14,28 @@
 | HEAD | 输入c10f0d6b，实验差量343bd436；旧4ae修复/证据保留 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 原PG1选中/0通过/1失败保持；26不同准备绿不重跑；当前main默认加载1/1 exit0/1849ms/269B，组absent/EOF/exact tmpremoved；0新PG/provider |
-| Review | 当前main准备 APPROVED_CURRENT_MAIN_PREPARATION，I02 882f0ada；原4ae批准保留；新完整旅程结果待实际执行与独审 |
+| 检查状态 | 原PG1选中/0通过/1失败保持；原26准备不重跑；当前main加载1/1；新PG R1 1/1 outer0/9839ms，正常DROP/目录removed/3组+watchdog absent，0provider |
+| Review | 当前main准备 APPROVED_CURRENT_MAIN_PREPARATION，I02 882f0ada；新零模型PG结果待独立结果审查 |
 | 实现目标 | 343bd43691a5a179d256a2229a4db856d869a267；4ae旅程行为保持，精确主线输入差量 |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | 准备片已集成 aca6e89214711ef3787ac3e3ee3b2754bb40b960；138文件与924873固定交付一致，实际旅程未通过 |
+| 已集成main状态 | 原准备已main aca6/固定f5a输入；当前343两实验源差量与新PG R1结果待独审/主线接收。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 当前主线入口准备已审，正在执行新的零模型完整目标旅程；原失败及保留资源不变。 |
-| 下一可用交付 | 从公开目标入口到独立接受的真实旅程结果与资源收尾记录。 |
-| 当前阻塞 | NONE；已获一次新的独占数据库工作段，实际结果尚未产生。 |
+| 当前产出 | 新的零模型目标旅程已跑通：完整输入确认、两项依赖执行、固定产物与单独接受都有公开记录；本轮资源已清理。 |
+| 下一可用交付 | 独立审查并接收本轮完整旅程证据；真实模型规划与语义验收仍是后续阶段。 |
+| 当前阻塞 | ACTIVE: 本轮零模型结果等待独立审查；真实模型阶段仍未授权，旧失败资源继续保留。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | O16-01 | completed | native_center_owner | [claim](../../docs/evidence/o16/claim.json)、[Interface](../../docs/evidence/o16/interface.md) |
 | O16-02 | completed | native_center_owner | phase/assignment/query入口及合同/持久记录共25不同检查；无SDK query/auth；固定准备源已独立APPROVED |
-| O16-03 | in-progress | native_center_owner | public staged driver已实现、模块装配0通过；真实PG旅程1选中失败于独立接受，原始red与KEEP记录已固定 |
-| O16-04 | in-progress | native_center_owner | 25不同局部检查分轮通过；真实SDK MCP仅tools/list、不query；装配red后0；首次PG red保留，禁止自动复投 |
+| O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
+| O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | in-progress | native_center_owner | 固定manifest与准备独审已归档；实际PG首次red；CAS修复4ae源码独审通过；新增纯例1/1通过，准备片已独审并进main，最终旅程仍待；[原始记录](../../docs/evidence/o16/decision-cas-pure-run.json) |
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 
@@ -53,9 +53,13 @@
 | --- | --- | --- | --- | --- | --- |
 | O16-W01 | UNKNOWN | 2026-10-07T08:17:45Z | 排程/验证准备 | 旧旅程失败后阶段性暂停，开始无独立时间证据；当前原owner恢复当前主线准备，不将全间隔称资源等待 | 原status与本次Lead派工/current-main-resumption |
 | O16-W02 | 2026-10-07T08:17:45Z | 2026-10-07T08:23:56.323Z | 固定输入 | 等待P02组合后的准确main；可继续差异/源码与静态准备 | current-main-resumption.json |
+| O16-W03 | 2026-10-07T08:26:45.367Z | 2026-10-07T08:33:40.006Z | 独立审查 | 固定输入与加载证据审查；非纯资源等待 | I02 882f0ada/current-main-preparation-independent-review |
+| O16-W04 | 2026-10-07T08:33:40.006Z | 2026-10-07T08:35:17.433Z | 窗口与启动核对 | 新窗口许可后fresh身份/资源及操作输入耐久，旧窗口不复用 | current-main-pg-r1/operation-input与operator reservation |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
 2026-10-07T08:26:45.367Z：当前固定主线默认driver/operator import及sourceIdentity已通过1/1，actual digest86ace9e8，317源/资源条目与39alias；1849ms/269B，组39238最终absent/双EOF/无signals、scratch0B已removed。历史pre-reap EPERM保留。见[current-main-local/run](../../docs/evidence/o16/current-main-local/run.json)；新[current-main PG候选](../../docs/evidence/o16/current-main-pg-request.json)1selected待新窗口，未调用旅程/DB/模型。
 
 2026-10-07T08:35:06.043129+00:00：当前main准备独审已原样归档，334固定输入/39aliases/3runtime fresh一致，PG独占窗口已授；新的1选中旅程开始前记录已耐久，未复用旧许可。审查/窗口等待结束；见[current-main-pg-r1](../../docs/evidence/o16/current-main-pg-r1/operation-input.json)。
+
+2026-10-07T08:38:29.810Z：新独占窗口已完成并归还。1selected/1pass/outer0，独立接受的两条公开命令均ACK；原raw、固定artifact/version/CAS与清理见[current-main-pg-r1/RESULT](../../docs/evidence/o16/current-main-pg-r1/RESULT.md)。原FAIL/KEEP不改，实际模型/长程恢复/完整用户语义不升级；产品/实验源码本轮未变。

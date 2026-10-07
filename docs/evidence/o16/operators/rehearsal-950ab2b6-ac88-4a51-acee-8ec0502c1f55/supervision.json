@@ -1,0 +1,30 @@
+{
+  "driverPid": 90446,
+  "outcome": "processes-complete",
+  "phase": "work",
+  "samples": 189,
+  "ownedGroups": [
+    {
+      "pgid": 90446,
+      "state": "stopped"
+    },
+    {
+      "pgid": 93458,
+      "state": "stopped"
+    },
+    {
+      "pgid": 95930,
+      "state": "stopped"
+    }
+  ],
+  "reason": null,
+  "last": {
+    "freeBytes": 24050634752,
+    "rawBytes": 57397,
+    "runtimeBytes": 0,
+    "runtimeEntries": 0
+  },
+  "exitCode": 0,
+  "signalCode": null,
+  "elapsedMs": 9839
+}

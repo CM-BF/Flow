@@ -1,0 +1,63 @@
+{
+  "kind": "flow.o16.private-resources.v1",
+  "database": "flow_o16_7fe4d8d62a444ce198a126a8f5b73366",
+  "marker": "41b4a02d-b92c-4b33-b1a0-6f07e6e790b9",
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "startedAt": "2026-10-07T08:35:19.623Z",
+  "gate": {
+    "freeBytes": 24058474496,
+    "requiredBytes": 1207959552
+  },
+  "creationRequested": true,
+  "created": true,
+  "marked": true,
+  "phase": "cleaned",
+  "directory": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-o16-mY3g4f",
+    "dev": 16777234,
+    "ino": 123660056
+  },
+  "databaseBytes": 13687831,
+  "serverClosed": true,
+  "workersStopped": true,
+  "workerProcess": {
+    "pgid": 95930,
+    "groupLeader": true,
+    "state": "stopped"
+  },
+  "workerProcesses": [
+    {
+      "pgid": 93458,
+      "groupLeader": true,
+      "state": "stopped"
+    },
+    {
+      "pgid": 95930,
+      "groupLeader": true,
+      "state": "stopped"
+    }
+  ],
+  "connectionObservations": [
+    {
+      "elapsedMs": 1,
+      "rows": []
+    }
+  ],
+  "errors": [],
+  "endedAt": "2026-10-07T08:35:27.281Z",
+  "finalBudgetBeforeDrop": {
+    "freeBytes": 24052047872,
+    "rawBytes": 55196,
+    "runtimeBytes": 31031,
+    "runtimeEntries": 31
+  },
+  "databaseDropped": true,
+  "remaining": [],
+  "finalBudgetBeforeRemove": {
+    "freeBytes": 24050909184,
+    "rawBytes": 55340,
+    "runtimeBytes": 31031,
+    "runtimeEntries": 31
+  },
+  "directoryRemoved": true
+}
