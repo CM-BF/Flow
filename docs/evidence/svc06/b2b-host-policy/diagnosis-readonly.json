@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-07T09:41:54.550240+00:00",
+  "kind": "READONLY_SAVED_R1_DIAGNOSIS",
+  "runnerDirectory": {
+    "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/runner",
+    "dev": 16777234,
+    "ino": 123798443,
+    "directEntryCount": 0
+  },
+  "savedEvidence": "actual-r1/state-summary.json and work/cleanup records; original state/private configuration untouched",
+  "configurationLiteral": "fixed journey literal keys/order/values match b2b preview.mjs NATIVE_CONFIGURATION by source inspection",
+  "innerStdoutStderr": "NOT_CAPTURED; both fixed spawnOwnedProcess and runService use stdio ignore",
+  "runnerExitFilePresent": false,
+  "webExitFilePresent": false,
+  "knownOutcome": "original stopOwnedProcess confirms both known center/runner groups stopped; no pending recorded identity remains",
+  "causalConclusion": "UNRESOLVED: no saved inner exception or per-step timing, no remaining DB to inspect; absence of journal or exit file does not prove runner main never started",
+  "possibleBoundaryNotProvedCause": "role wrapper load/assertInstallationSource and serviceRuntime both verify full artifact before inner runner; waitReady uses fixed 10s including this work, while original catch collapses cause. No elapsed verification data was captured.",
+  "newProcessesOrQueries": 0,
+  "personalAccess": 0,
+  "retry": 0
+}

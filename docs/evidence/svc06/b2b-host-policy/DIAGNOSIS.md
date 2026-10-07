@@ -1,0 +1,9 @@
+# r1 最小只读诊断
+
+确定事实：原new center已通过ready，随后runner完整PID/PGID/nonce/command/start身份写入；进入其ready期间失败，Web未spawn。原saved错误只有START_UNCONFIRMED_CHECK_STATUS。runner目录当前为空且没有runner-exit.json；这不能证明runner main从未启动，也不能否定原helper已确认整组stopped。数据库已正常删除，不新建数据库还原本次错误。
+
+源码确证的诊断缺口：b2b process.mjs:37 和 preview.mjs:266 两级 stdio均ignore；preview.mjs:340附近catch只保lastError并转通用错误。因此原内层stderr/准确失败code与阶段耗时未保存，无法事后恢复。fixture claude.json字面字段/顺序和值与固定NATIVE_CONFIGURATION一致；并未发现可据此修正的fixture差异。
+
+可能的边界（未证实原因）：runService在启动真实runner前通过load/assertInstallationSource和serviceRuntime校验完整产物，而waitReady的10秒从wrapper身份捕获后开始，覆盖这些工作以及profile发布。没有每阶段耗时和原inner error，不能把此轮断言为超时、SDK加载失败或认证失败，也不能靠单纯加时凑绿。
+
+最小下一步建议：先保此次FAIL与清理独审；如需真实复现，应给一个有界的、精确匹配此次wrapper/child的私有诊断接缝，记录原启动阶段和脱敏错误/有限stderr，保持原nonce、stop、默认业务与全部断言。现docs scope未改冻结产品或artifact，尚未实现该接缝；若选择产品接口，需fresh取得实际文件scope并独审直接消费者。新host/PG运行必须新namespace和真实窗口，不重开r1、不重build/import。
