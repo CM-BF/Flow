@@ -1,8 +1,8 @@
 状态：PENDING（terminal恢复新增量；公开PG结果已独审）
 
-Review target commit: 2f7fcce82c76fce942a3f7e20eb046733ec38c72
+Review target commit: 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86
 
-新源码待固定与直接检查。公开PG resultc5dd/packetbbd 09:32:01正式APPROVED0P1P2见[回执](../../docs/evidence/x01/public-runner-pg-independent-review.json)；历史PENDING不代表当前结果状态。
+新源码已固定，11/11与types0；[review入口](../../docs/evidence/x01/terminal-review-ready.md)。公开PG resultc5dd/packetbbd 09:32:01正式APPROVED0P1P2见[回执](../../docs/evidence/x01/public-runner-pg-independent-review.json)；历史PENDING不代表当前结果状态。
 
 ---
 
