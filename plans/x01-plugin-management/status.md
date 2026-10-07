@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:49:27.481231+00:00 |
+| 最近更新时间 | 2026-10-07T05:54:11.464595+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 仅封存新片checks/metadata；最终提交推送后clean停写供独审 |
-| 工作分支状态 | in-progress |
+| 工作树 dirty 状态 | 本次仅归档已获独审及READY输入；提交推送后clean、5源与原raw停止写入 |
+| 工作分支状态 | approved |
 | 检查状态 | 新v3合同+journal 11/11、focusedtypes0，0PG；旧领域StageC27已独审并main |
-| Review | 新片 c15c7ddaef1d23a24a550c75a4d151a33be76f81 待独审；旧e628 R3与16-file intake APPROVED且main接收 |
+| Review | status_read 2026-10-07T05:52:15.936782Z 对c15五源与local结果APPROVED/0P1P2；旧领域已main |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | c15c7ddaef1d23a24a550c75a4d151a33be76f81 |
 | 实现范围 | packages/contracts/src/runner-claim.ts, packages/contracts/src/plugin-runner-claim.ts, packages/contracts/src/plugin-runner-claim.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-plugin-claim.test.ts |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件领域模块已接入主线；显式领取资格与持久请求恢复片已完成局部验证，待独立审查 |
+| 当前产出 | 插件领域模块已接入主线；显式领取资格与持久请求恢复已通过局部验证和独立审查，等待受控接入主线 |
 | 下一可用交付 | 受控接收v3合同和journal片，再接中心领取过滤、真实runner与现成npm能力 |
-| 当前阻塞 | ACTIVE: 新片独审待处理；共享client/exports/config仍由C02持有，生产领取和执行尚未接入 |
+| 当前阻塞 | NONE: 本片已审可接收；生产领取和执行为下一片，共享入口需与现owner精确交接 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。当前同claim v8已accept到plugin-enable-binding，17scope为14源码+034+两metadata；host两源已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v9为22scope，新增5个claim/journal literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -241,3 +241,8 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T05:42:46.859177+00:00: fresh a6d clean/v8后原子amend到v9 ACTIVE22scope（[回执](../../docs/evidence/x01/plugin-claim-amend-v9.json)），新增5精确literal。仅按fixedmain bf8读取已main S01P07 runner-claim/admission-journal两源作为新片基线；16intake源/既有raw固定不改。新片实现/验证未完成，不继承旧APPROVED；共享C02 index/config/main/tasks和CHAT05 runner.ts未领取不写。
 
 2026-10-07T05:49:27.481231+00:00：新片source c15c7ddaef1d23a24a550c75a4d151a33be76f81 完成types0+11/11，2受监督child/7真实journalfixture/2TMP均完整收束；[ready](../../docs/evidence/x01/plugin-claim-review-ready.md)。C02已明确共享client/index、contracts/index、config/main继续占用，本片避开。旧16域源逐main 5cd64a4d373a2919d0a00affcb2615667aa18d9a Git/WT/hash核符，停止旧源写入而保claim修复期。新v3尚无server/runtime发请求，不将资格合同和journal消费扩大为生产插件可用。架构新增现journal version3持久请求格式；main架构baseline待此片集成由Lead更新。
+
+
+## 2026-10-07T05:54:11.464595+00:00 v3合同与journal独审归档
+
+status_read于2026-10-07T05:52:15.936782Z独立SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，target `c15c7ddaef1d23a24a550c75a4d151a33be76f81` / packet `cfdade05a428c5bee721910d604259d5deff8791`，0P1/P2；[独审收据](../../docs/evidence/x01/plugin-claim-independent-review.json)、[五源READY输入](../../docs/evidence/x01/plugin-claim-integration-ready.json)。manifest/raw/5源保持固定，11/11与types0不重跑；fresh账本v9 ACTIVE22scope，保留review/集成修复期。当前片未main，完整X01未完成。架构影响：同一AdmissionJournal新增显式协议版本与host资格持久身份，中心/运行器仍未接v3；集成后固定基线图待Execution Lead核main target更新，不改共享图。旧16领域main5cd事实保持。

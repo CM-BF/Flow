@@ -1,8 +1,8 @@
-状态：PENDING（新v3领取合同与AdmissionJournal直接消费者；旧领域片已main）
+状态：APPROVED（仅v3领取合同与AdmissionJournal及局部结果；未接生产v3领取/执行）
 
 Review target commit: c15c7ddaef1d23a24a550c75a4d151a33be76f81
 
-[固定review入口](../../docs/evidence/x01/plugin-claim-review-ready.md)。新片11/11与focusedtypes0待独审；不继承旧R3批准。
+status_read/gpt-6-astra，2026-10-07T05:52:15.936782Z，0P1/P2。[独审回执](../../docs/evidence/x01/plugin-claim-independent-review.json)、[READY输入](../../docs/evidence/x01/plugin-claim-integration-ready.json)。5源/22bindings与6external核符，11/11及types0；原unknown审计/时钟限制保留。生产server/client/runtime与完整X01未覆盖。
 
 ---
 
