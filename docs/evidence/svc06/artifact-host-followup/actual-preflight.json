@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-07T04:31:30.466Z",
+  "state": "FRESH_PREFLIGHT_PASSED",
+  "source": "d37981b06ec70b9f9e6254b66e0a1b69d7555dc1",
+  "manifestSha256": "96c43a9dcdbf6b44f5a22436b6784fd803803c67cafea8206dd2f0eaed6d173e",
+  "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+  "claimVersion": 7,
+  "claimObservedAt": "2026-10-07T04:30:50.067Z",
+  "free": 25642360832,
+  "gate": 2684354560,
+  "newDirectoryAbsent": true,
+  "outerAbsent": true,
+  "sourceIdentity": {
+    "dev": 16777234,
+    "ino": 123378549
+  },
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 25064,
+      "sha256": "2abb23d9d80c8ba9a22f4115d289ba0506729c0745f32380d569ef79c73e24d1"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 3506,
+      "sha256": "39ac8f6c1e348529733daa493656cbda69d1b7f7580186f6992ad1f5f1a567b3"
+    },
+    {
+      "path": "clone-artifact.py",
+      "bytes": 3281,
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 5159,
+      "sha256": "860de6b43c79bc0b8c61c6e157e292929dcde632cc29e2332df828ff27c6745f"
+    },
+    {
+      "path": "service-boundary.mjs",
+      "bytes": 4214,
+      "sha256": "286f80e3d08c926c16ca8c29a4a6566fcb4c6bb97393d9bdf80d0ed0b670e3a9"
+    },
+    {
+      "path": "role-bootstrap.mjs",
+      "bytes": 1511,
+      "sha256": "73a0fb62ca8fb802b281672b77e7e8fbf9618658b169fbd934551eee867bf369"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2994,
+      "sha256": "3910ccd194505051222f3a8e659aa944eaa3137565ef55dbb69b93a43422337b"
+    },
+    {
+      "path": "local-independent-review.json",
+      "bytes": 986,
+      "sha256": "70fce0fe03cd660318e148b8207259dd58a5600e8576760bd05a8ea533d31f79"
+    }
+  ],
+  "fixedInputBindingsChecked": 17,
+  "holder": "Execution Lead assignment_review; Web/Mika returned per same-thread authoritative handoff",
+  "tasks": 0,
+  "provider": 0,
+  "personalActions": 0
+}

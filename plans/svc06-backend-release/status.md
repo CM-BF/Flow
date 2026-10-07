@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:25:09 UTC；局部隔离接缝已审；新root真实host入口待审/未执行 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:34:52 UTC；一次真实三宿主验证及独立收尾完成，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
-| 工作树dirty状态 | 原e6ff与e5产物固定；本轮仅own evidence后继入口/状态，提交后clean |
+| 工作树dirty状态 | 固定d379入口及e5产物不变；本次只封实际结果/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
-| 检查状态 | NOT_RUN d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；新root真实旅程尚未执行；a32c局部3/3已审，原e6ff FAILED历史保持 |
-| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
+| 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验及独立清理通过，结果待审；原e6ff FAILED保持 |
+| 已集成main状态 / HEAD | 构建及原结果已main/origin56672e7effec85792366beeacd724976646c50c8；d379准备独审随main5ecd26b6发布（Lead回执）。本次真实结果尚未审/尚未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定产物已构建，首宿主失败资源已收尾；验证入口已分离可信身份监督和受限服务，并通过局部检查。 |
-| 下一可用交付 | 在独立自有安装根验证三个真实宿主，确认服务运行不依赖开发目录。 |
-| 当前阻塞 | ACTIVE: 新真实宿主入口已获限定批准，等待唯一共享运行窗口；本次未执行复制或PG，原失败保持。 |
+| 当前产出 | 固定产物已在独立目录启动中心、执行器和网页；服务无法读取开发目录，验证资源已正常收尾。 |
+| 下一可用交付 | 完成本次结果独立审查；随后准备新版网页宿主的固定产物候选。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | a32c局部接缝批准保持；d379获APPROVED_FIXED_ZERO_TASK_HOST_FOLLOWUP，8entry/17fixed核同；真实三角色未验 |
+| Review | d379入口已获APPROVED_FIXED_ZERO_TASK_HOST_FOLLOWUP；本次实际结果PENDING，原失败与限定边界保留 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -35,8 +35,8 @@
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
-| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；host启动及checkout不可用仍未验 |
-| SVC06-04 | in-progress | assignment_review / 独立reviewer | [本轮7不同检查](../../docs/evidence/svc06/parser-builder-checks.md)通过且独审完成；完整运行后继open |
+| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已通过待审，默认部署链不扩大 |
+| SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果待独审，refresh/resume/旧数据后继open |
 | SVC06-05 | pending | 独立operator | 无个人操作许可 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
@@ -155,6 +155,10 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-HOST01 | 2026-10-07T03:59:40.000Z | 2026-10-07T04:04:40.248Z | 资源 | 首宿主入口准备获审后等待共享窗口；实际启动结束该等待 | 本status 03:59:40准备批准记录；artifact-host-smoke/host-invocation.json实际开始 |
 | SVC06-WAIT-HOST02 | 2026-10-07T04:26:16.664Z | 2026-10-07T04:30:05.131Z | 审查 | 新root后继入口已固定，等待独立审查；真实copy/PG未开始 | 入口d37981b06ec70b9f9e6254b66e0a1b69d7555dc1、delivery b1352784；本次owner交审事件 |
-| SVC06-WAIT-HOST03 | 2026-10-07T04:30:50.067Z | OPEN | 资源 | 固定后继入口已获审，等待唯一共享重窗口明确交接 | d379唯一independent-review与execution-preparation；当前0执行 |
+| SVC06-WAIT-HOST03 | 2026-10-07T04:30:50.067Z | 2026-10-07T04:31:30.466Z | 资源 | 固定入口获审后等待共享窗口；实际调用结束等待 | independent-review/execution-preparation与actual-invocation；阶段起点不冒任务起点 |
 
 2026-10-07T04:30:50.067Z：已转录[限定准备批准](../../docs/evidence/svc06/artifact-host-followup/independent-review.json)，8entry/17fixed无差、无blocking。一次执行身份已准备，尚未创建运行root/outer或复制/PG；原120s+30s、fresh2.5GiB/live1GiB和578MiB规划不变。
+
+## 2026-10-07 04:34:52 UTC：一次真实三宿主结果待审
+
+[结果及原件](../../docs/evidence/svc06/artifact-host-followup/RESULT.md)：调用04:31:30.466Z，独立清理04:32:08.205Z完成；work37,293ms+cleanup449ms、外层0/双EOF/监督组absent；三角色stopped，DB checkpoint→零连接→正常DROP/remaining=[]。Web诊断exit1按显式stop收尾观察保留，原失败/两产物根与私有诊断全保留。0task/provider/Chrome/个人操作；共享窗口已归还。批准仅准备，实际结果待唯一独审；03/04/05未整体完成。
