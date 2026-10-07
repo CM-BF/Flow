@@ -8,6 +8,7 @@ from pathlib import Path
 import stat
 import sys
 import time
+import tempfile
 from datetime import datetime, timezone
 
 sys.dont_write_bytecode = True
@@ -66,13 +67,13 @@ for name in names:
     result = {'name': name, 'startedAt': now(), 'freeBefore': before, 'requiredFree': required, 'command': COMMANDS[name]}
     if before < required or used_ms >= 177500 or used_raw >= 2 * 1024**2:
         result['status'] = 'NOT_RUN'; record['commands'].append(result); break
-    temp = run / (name + '-tmp'); temp.mkdir(mode=0o700); st = temp.stat(); identity = (st.st_dev, st.st_ino)
+    temp = Path(tempfile.mkdtemp(prefix='flow-svc09-' + name + '-')).resolve(); st = temp.stat(); identity = (st.st_dev, st.st_ino)
     env = {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin', 'HOME': str(temp), 'TMPDIR': str(temp), 'TMP': str(temp), 'TEMP': str(temp), 'FLOW_TEST_CACHE_DIR': str(temp / 'vite'), 'NODE_DISABLE_COMPILE_CACHE': '1', 'TSX_DISABLE_CACHE': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
     budget = min(30, (180000 - used_ms) / 1000 - 2.5)
     report = ops.supervise(ops.Launch(tuple(COMMANDS[name]), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION), ops.Policy(budget, .5, 2, min(256 * 1024, 2 * 1024**2 - used_raw)))
     used_ms += report.elapsed_ms; raw = len(report.stdout) + len(report.stderr); used_raw += raw
     data = dataclasses.asdict(report); data.pop('stdout'); data.pop('stderr')
-    result.update(supervision=data, rawBytes=raw, finishedAt=now(), tmpIdentity={'dev': identity[0], 'ino': identity[1]})
+    result.update(supervision=data, rawBytes=raw, finishedAt=now(), tmpPath=str(temp), tmpIdentity={'dev': identity[0], 'ino': identity[1]})
     for stream in ['stdout', 'stderr']:
         with (run / f'{name}.{stream}').open('xb') as output:
             output.write(getattr(report, stream)); output.flush(); os.fsync(output.fileno())
