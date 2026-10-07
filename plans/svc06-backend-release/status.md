@@ -352,3 +352,5 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 2026-10-07T12:25:24.759749+00:00：个人窗口启动前停止
 
 窗口svc06-personal-7d1-20261007-1224，fixed source5c29/delivery8825及native唯一准备批准。12:24:20.540207Z原53runtime/3input/4alias/978file/claim9核符，free21,806,919,680B。随后facts主入口遗漏必需output参数，2026-10-07T12:24:35.608129+00:00→2026-10-07T12:24:35.659519+00:00，51ms/exit1 OUTPUT_REQUIRED，在snapshot前停止；owned组absent/双EOF，0个人读写/SQL/迁入/服务/provider。原run和迁入outer未创建，窗口已告Lead归还，未自动重试。此为本operator调用错误，不推断固定artifact/产品失败。证据：[stop](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/stop.json) / [原始外层](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/fresh-before-outer.json)。
+
+2026-10-07T12:28:26.908779+00:00：仅调用更正准备，已原样归档唯一[migration-independent-review](../../docs/evidence/svc06/update-diagnostics-candidate/migration-independent-review.json)。[invocation-correction](../../docs/evidence/svc06/update-diagnostics-candidate/invocation-correction.json) 固定facts完整输出/摘要区分、replace请求去directory、TSX loader/cwd与bootstrap/refresh/resume位置参数；输出父为新自有0700证据目录，实际迁入namespace仍按5c29不变且未消费。0个人读取/PG/服务/测试，等待Lead新fresh窗口，旧R1失败不改。

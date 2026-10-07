@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-07T12:24:16.005022+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_MIGRATION_ADAPTER_AND_PERSONAL_PREPARATION",
+  "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "delivery": "8825109e3f016553ff3750f94ec26bd1a26de9a3",
+  "manifest": {
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/migration-manifest.json",
+    "bytes": 9451,
+    "sha256": "bd7ec874e33255da18fe4913e211c107e4fd949ff6212f2ac53a5c3cfa2f07cb"
+  },
+  "remainingFindings": [],
+  "closedFindings": [
+    "e4cd migration ports executable closure missing",
+    "30ce runner SQL unqualified schema; fixed flow.runners actual Pool port with primary/end preservation"
+  ],
+  "fixedBindings": {
+    "sourceFiles": 4,
+    "sourceBytes": 56923,
+    "evidenceFiles": 3,
+    "evidenceBytes": 3725,
+    "runtimeFiles": 53,
+    "runtimeBytes": 495153,
+    "rootFilesExact6c": 36,
+    "inheritedInputs": 3,
+    "aliases": 4
+  },
+  "originalChecks": {
+    "distinct": 10,
+    "runs": [
+      9,
+      1
+    ],
+    "milliseconds": 206,
+    "rawBytes": 1208,
+    "groupsAbsent": 2,
+    "bothEof": true,
+    "emptyScratchRemoved": true,
+    "historicalEpermObservationsPreserved": true
+  },
+  "reviewerActions": {
+    "tests": 0,
+    "personalReads": 0,
+    "PG": 0
+  },
+  "scope": "Fixed migration-supervise.py --execute-fixed-import only;7d1/6c, exactc7b+af51/null backend, five private file pins, preview/store locks, existing migrateOnce/clone/fullverify/fsync/no-replace. NEW_CHILD_SESSION120+.5+2/128KiB applies only new copy/rename group, never existing service signals.",
+  "laterSteps": "Existing reviewed public replace-host/compatibility import/policy/root bootstrap then artifact same-op refresh/checkpoint/resume remain their own existing tools; detached childPidOnly and900s drain-to-resume unchanged.",
+  "limits": "Preparation approval only; actual NOT_RUN at review. Fresh operator window required; unknown/timeout/mismatch KEEP, no replay/automatic cleanup/continuation. Fixed6c lacks later logout race fix.",
+  "provenance": "Recorded once from native_center_owner final review message to execution lead; no added review execution or invented review timestamp."
+}
