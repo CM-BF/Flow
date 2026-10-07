@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T11:18:42.661Z",
+  "scope": "fixed installed public code plus existing bounded private diagnostic shape; no process/auth/query/PG",
+  "sourceRuntimePinReference": "../native-plan-20261007-r3/preflight.json",
+  "nativeSHA256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+  "sdkSHA256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+  "snippets": [
+    {
+      "name": "auth-status-body",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "byteOffset": 208600911,
+      "bytes": 1672,
+      "sha256": "0c61a4b4501002752e481c87cf3754d21627274d70cb1b5483b44e96bfecacc9",
+      "excerpt": "async function fe(u,O,w){let{source:f,hasToken:m}=Dc(),{source:a}=yf(),_=!!process.env.ANTHROPIC_API_KEY&&!nw(),{tokenSource:A}=sCt(f,a),k=Vcr(f)&&A===\"none\",h=Ln(),I=cr(),P=EX(),v=Me()===\"gateway\"&&!mo(),C=!v&&(m||a!==\"none\"||_||P),d=\"none\";if(P)d=v?\"none\":\"third_party\";else if(A===\"claude.ai\")d=\"claude.ai\";else if(A===\"apiKeyHelper\")d=\"api_key_helper\";else if(A!==\"none\")d=\"oauth_token\";else if(a===\"ANTHROPIC_API_KEY\"||_||a===\"/login managed key\")d=\"api_key\";else if(a===\"apiKeyHelper\"&&k)d=\"api_key_helper\";let E;if(O.text){let r=JNe(w),s=r===void 0?void 0:await r,o=XNe([[...fen(s),...men()]]).flat(),p=pen(o).map((g)=>g.label?`${g.label}: ${g.value}`:g.value);if(p.length===0&&_)p.push(\"API key: ANTHROPIC_API_KEY\");if(!C)p.push(v?\"Not logged in. This session uses a Cloud gateway; start `claude` and sign in with /login.\":\"Not logged in. Run claude auth login to authenticate.\");E=e(n,{children:p.join(`\n`)})}else{let r=Me(),s=a!==\"none\"?a:_?\"ANTHROPIC_API_KEY\":null,o={loggedIn:C,authMethod:d,apiProvider:r,analyticsDisabled:Zh(),projectsDirectory:L(),configDirectory:we()},p=V4();if(p)o.forcedLoginMethod=p;let g=Wve();if(g!==void 0)o.allowedProviders=[...g];if(s)o.apiKeySource=s;let T=d===\"api_key\"&&a===\"/login managed key\"?h:void 0;if(d===\"claude.ai\")o.email=h?.emailAddress??null,o.orgId=h?.organizationUuid??null,o.orgName=h?.organizationName??null,o.subscriptionType=I??null;else if(T)o.email=T.emailAddress??null,o.orgId=T.organizationUuid??null,o.orgName=T.organizationName??null;else if(r===\"gateway\")o.email=mo()?.email??null;E=e(n,{children:S(o,null,2)})}y(\"cli_auth_status\"),u.render(e(mx,{children:E})),await u.waitUntilExit(),process.exit(C?0:1)}"
+    },
+    {
+      "name": "auth-status-public-command",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "byteOffset": 199689656,
+      "bytes": 443,
+      "sha256": "1c57cedddbe62f0dcda848eea59c0bca96d2d5666f662913a9cd89143c76a5fb",
+      "excerpt": ".command(\"status\").description(\"Show authentication status\").option(\"--json\",\"Output as JSON (default)\").option(\"--text\",\"Output as human-readable text\").action(g(async(R,v)=>{let[{authStatus:P},{createSubcommandRoot:A},{credentialsStoreFor:x}]=await Promise.all([import(\"/$bunfs/root/chunk-sn4vnp2s.js\"),import(\"/$bunfs/root/chunk-d9bwxhvd.js\"),import(\"/$bunfs/root/chunk-r2naaev5.js\")]);await P(await A(),v,x(R))})),G.command(\"logout\").descr"
+    },
+    {
+      "name": "storage-default-namespace",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "byteOffset": 183947321,
+      "bytes": 464,
+      "sha256": "e37e07fa65818bcf9e813456cfc8b205b062cd21714d0b2d134bc8a1f8e7d391",
+      "excerpt": "function Jb(){let e=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR;if(e!==void 0)return(e||u(o(),\".claude\")).normalize(\"NFC\");return we()}function VN(e=\"\"){let n=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR,t=n!==void 0?!n:!process.env.CLAUDE_CONFIG_DIR,r=n!==void 0?n.normalize(\"NFC\"):we(),c=t?\"\":`-${i(\"sha256\").update(r).digest(\"hex\").substring(0,8)}`;return`Claude Code${pn().OAUTH_FILE_SUFFIX}${e}${c}`}var s=/^[a-zA-Z0-9._-]+$/;function iT(){let e;try{e=process."
+    },
+    {
+      "name": "status-token-presence",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "byteOffset": 184820784,
+      "bytes": 641,
+      "sha256": "b341459dcc44c8ce94d22ecd1f6d1cef1b057cbbe519f8eb13d0709ce126e53a",
+      "excerpt": "function Dc(){if(uG()){if(_g())return{source:\"apiKeyHelper\",hasToken:!0};return{source:\"none\",hasToken:!1}}if(Bv()&&!a4t())return{source:\"ANTHROPIC_AUTH_TOKEN\",hasToken:!0};if(a.CLAUDE_CODE_OAUTH_TOKEN)return{source:\"CLAUDE_CODE_OAUTH_TOKEN\",hasToken:!0};if(SH()){if(p5(\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\"))return{source:\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\",hasToken:!0};return{source:\"CCR_OAUTH_TOKEN_FILE\",hasToken:!0}}if(_g()&&!hr())return{source:\"apiKeyHelper\",hasToken:!0};if(qc())return{source:\"profile\",hasToken:!0};let r=gn();if(YB(r?.scopes)&&r?.accessToken)return{source:\"claude.ai\",hasToken:!0};return{source:\"none\",has"
+    },
+    {
+      "name": "sdk-environment-augmentation",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "characterOffset": 1204956,
+      "bytes": 620,
+      "sha256": "63d07901cb66a938b4817fc58f97b9942875a41dbe6fb897922e436ad89e46f1",
+      "excerpt": "St=O?{...O}:{...process.env};if(!St.CLAUDE_CODE_ENTRYPOINT)St.CLAUDE_CODE_ENTRYPOINT=\"sdk-ts\";if(!St.CLAUDE_AGENT_SDK_VERSION)St.CLAUDE_AGENT_SDK_VERSION=\"0.3.290\";if(J)St.CLAUDE_CODE_ENABLE_SDK_FILE_CHECKPOINTING=\"true\";if(!Object.keys(St).some((Vt)=>Vt.toUpperCase()===\"CLAUDE_CODE_SDK_READS_SESSION_STATE\"))St.CLAUDE_CODE_SDK_READS_SESSION_STATE=\"1\";let y_=Cc(St.CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS),kZ=Number.isFinite(y_)&&y_>=0?y_:l_;if(hw)St.CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH=\"1\";if(_w)St.CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH=\"1\";if(K?.askUserQuestion?.previewFormat)St.CLAUDE_CODE_QUESTION_PREVIEW_FORMAT=K.askU"
+    }
+  ],
+  "privateDiagnostic": {
+    "reference": "../native-plan-20261007-r3/diagnostic-readonly.json",
+    "bytes": 647,
+    "sha256": "3689ed7e823ceb1d9b101fa6829b9880e39f0f1d01c3dc0364cb4d2211e31005",
+    "fieldsShape": {
+      "result": {
+        "type": "string",
+        "utf8Bytes": 34
+      },
+      "errors": {
+        "type": "NoneType"
+      }
+    },
+    "bodyPublished": false,
+    "classificationSource": "SDK assistant.error enumeration authentication_failed in original plan.json, not text heuristics"
+  },
+  "actualEnvironmentLimitation": "R3 recipe and SDK augmentation statically bound, no full credential-bearing child environment captured; future status must explicitly match public variables only"
+}
