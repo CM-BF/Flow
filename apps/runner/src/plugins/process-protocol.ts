@@ -2,19 +2,19 @@ import { once } from 'node:events';
 import type { Writable } from 'node:stream';
 import { z } from 'zod';
 
-export const PROCESS_PROTOCOL = 'flow.trusted-plugin-process.v1';
+export const PROCESS_PROTOCOL = 'flow.trusted-plugin-process.v2';
 export const FRAME_TOTAL = 256 * 1024;
 const identity = z.strictObject({ nonce: z.string().regex(/^[a-f0-9]{32}$/), bindingId: z.uuid(), invocationId: z.uuid(),
   taskId: z.uuid(), attemptId: z.uuid(), ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER) });
 export type ProcessIdentity = z.infer<typeof identity>;
 const envelope = { protocol: z.literal(PROCESS_PROTOCOL), identity, sequence: z.number().int().min(1).max(16) };
 export const frameSchema = z.discriminatedUnion('kind', [
-  z.strictObject({ ...envelope, kind: z.literal('init'), value: z.unknown() }),
+  z.strictObject({ ...envelope, kind: z.literal('init'), executionKind: z.enum(['tool', 'verifier']), value: z.unknown() }),
   z.strictObject({ ...envelope, kind: z.literal('check') }),
   z.strictObject({ ...envelope, kind: z.literal('authorize'), phase: z.enum(['load', 'invoke']) }),
   z.strictObject({ ...envelope, kind: z.literal('ack'), request: z.number().int().min(1).max(16), ok: z.boolean() }),
   z.strictObject({ ...envelope, kind: z.literal('result'), value: z.unknown() }),
-  z.strictObject({ ...envelope, kind: z.literal('error'), code: z.enum(['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED']) }),
+  z.strictObject({ ...envelope, kind: z.literal('error'), code: z.enum(['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'PACKAGE_KIND_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED']) }),
   z.strictObject({ ...envelope, kind: z.literal('abort') }),
 ]);
 export type ProcessFrame = z.infer<typeof frameSchema>;

@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T20:33:13.567Z",
+  "decision": "ACCEPT_EXISTING_INDEPENDENT_REVIEW_EXACT_FOUR_LEAVES",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T19:42:43.000Z",
+  "source": "abc0736dfbfe4c3dcbdd11d73e9386573ef565db",
+  "delivery": "3fcdf665a1110907418b277726a86415adf0fcfe",
+  "reviewArchive": "d48195622bc1d843ea3f6de783095c271ac6c45e",
+  "canonicalReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-approval-transcript.json",
+  "reviewArchiveSha256": "f284ecdbe7f8feb82d821f1f41bf501de1331fee2e557144d005b763f4dbce7a",
+  "manifestSha256": "253d88faba3c6c06cd5eaff8ade46d1d13a33f3a13ae09c9c87ab471ef857f80",
+  "bindingsVerified": 46,
+  "bytesVerified": 211580,
+  "scope": [
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-host.test.ts"
+  ],
+  "integrationReview": "Current four main preimages equal original4dc. Read explicit verifier dispatch/protocol delta; existing invokeInstalledVerifier is present. No novel integration code. No current runtime/main writes, no artifact input change.",
+  "evidence": {
+    "distinct": 10,
+    "new": 7,
+    "directOld": 3,
+    "typesExitCodes": [
+      0,
+      0
+    ],
+    "children": 5,
+    "supervisionMs": 6407,
+    "rawBytes": 3708,
+    "returnAt": "2026-10-07T19:35:26.901Z",
+    "originalFixtureFailurePreserved": true,
+    "historicalEPERMPreserved": true,
+    "wholeToolWall": "UNKNOWN",
+    "peak": "UNKNOWN"
+  },
+  "notValidated": [
+    "runRunner verifier dispatch",
+    "center authorization/verdict/completion gate",
+    "T7 actual release artifact",
+    "main integration of this extension",
+    "deployment",
+    "PG"
+  ],
+  "checks": "No repeat product tests, PG, browser, provider or deployment. Existing independent review and focused results reused.",
+  "blockingFindings": []
+}

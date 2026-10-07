@@ -19,9 +19,10 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
   const loader = createRequire(import.meta.url).resolve('tsx');
   const worker = fileURLToPath(new URL('./process-worker.ts', import.meta.url));
   const resources = await ProcessResources.open(options.resourceRoot);
-  return { invoke: (input: PluginToolInput) => invoke(input), close: () => resources.close() };
+  return { invoke: (input: PluginToolInput) => invoke(input, 'tool'),
+    invokeVerifier: (input: PluginToolInput) => invoke(input, 'verifier'), close: () => resources.close() };
 
-  async function invoke(original: PluginToolInput): Promise<PluginToolResult> {
+  async function invoke(original: PluginToolInput, executionKind: 'tool' | 'verifier'): Promise<PluginToolResult> {
     const input: PluginToolInput = { ...original, binding: structuredClone(original.binding), store: { ...original.store, allowedDigests: [...original.store.allowedDigests] } };
     if (input.signal.aborted) throw new PluginToolError('CANCELLED');
     if (!input.store.allowedDigests.includes(input.binding.material.artifact.sha256)) throw new PluginToolError('MATERIAL_MISMATCH');
@@ -94,7 +95,7 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
       if (!child.pid) throw new PluginToolError('OUTCOME_UNKNOWN');
       await resources.update(item, { state: 'spawned', childPid: child.pid, spawnedAt: new Date().toISOString() });
       if (input.signal.aborted) abort();
-      else await writer.send({ kind: 'init', value: { store: { ...input.store, allowedDigests: [input.binding.material.artifact.sha256] }, binding: input.binding, input: input.input } });
+      else await writer.send({ kind: 'init', executionKind, value: { store: { ...input.store, allowedDigests: [input.binding.material.artifact.sha256] }, binding: input.binding, input: input.input } });
       await finished;
       if (!closed || !protocolEof || !stdoutEof || !stderrEof || signalUnknown
         || !response && !failed || response && exitCode !== 0) remember(new PluginToolError('OUTCOME_UNKNOWN'));

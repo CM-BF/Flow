@@ -1,5 +1,5 @@
 import { createWriteStream } from 'node:fs';
-import { invokeInstalledTool, PluginToolError, type PluginToolInput } from './host.js';
+import { invokeInstalledTool, invokeInstalledVerifier, PluginToolError, type PluginToolInput } from './host.js';
 import { FrameReader, FrameWriter, sameIdentity, type ProcessFrame, type ProcessIdentity } from './process-protocol.js';
 
 const signal = new AbortController(); const output = createWriteStream('', { fd: 3, autoClose: false });
@@ -11,21 +11,22 @@ async function request(value: Record<string, unknown>): Promise<void> {
   try { await writer.send(value); await response; } finally { waiting = undefined; }
 }
 function stop() { signal.abort(); waiting?.reject(new PluginToolError('OUTCOME_UNKNOWN')); }
-async function execute(value: unknown): Promise<void> {
+async function execute(value: unknown, executionKind: 'tool' | 'verifier'): Promise<void> {
   try {
     const input = value as Omit<PluginToolInput, 'authorize' | 'assertOwnership' | 'signal'>;
-    const result = await invokeInstalledTool({ ...input, signal: signal.signal,
+    const invoke = executionKind === 'verifier' ? invokeInstalledVerifier : invokeInstalledTool;
+    const result = await invoke({ ...input, signal: signal.signal,
       assertOwnership: () => request({ kind: 'check' }), authorize: (_, phase) => request({ kind: 'authorize', phase }) });
     await writer!.send({ kind: 'result', value: result });
   } catch (error) {
-    const known = ['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED'];
+    const known = ['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'PACKAGE_KIND_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED'];
     await writer!.send({ kind: 'error', code: error instanceof PluginToolError && known.includes(error.code) ? error.code : 'PACKAGE_FAILED' }).catch(() => {});
   } finally { output.end(() => process.exit(0)); }
 }
 function accept(frame: ProcessFrame) {
   if (!identity) {
     if (frame.kind !== 'init') throw new Error('PROCESS_INIT_REQUIRED'); identity = frame.identity; writer = new FrameWriter(output, identity);
-    void execute(frame.value); return;
+    void execute(frame.value, frame.executionKind); return;
   }
   if (!sameIdentity(frame.identity, identity)) throw new Error('PROCESS_IDENTITY_INVALID');
   if (frame.kind === 'abort') { stop(); return; }
