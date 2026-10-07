@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:47:34Z |
+| 最近更新 | 2026-10-07T13:53:42.098Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,20 +15,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 新外壳de6af442b03533d48e5cdca7b9d6e2bde4229f2f已固定；本轮输入/范围/状态封存后核clean。 |
+| 工作树dirty状态 | 源码375ecccc427acf59d687153903bd032fb6e684bc及原输入已冻结；本次仅封pure结果，提交后核clean。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本窄修3 selected/3 pass/14未选与focused strict0，2raw457B；旧6/9/11 distinct分轮及首红独立保留，不相加。 |
+| 检查状态 | 新增caller5/5单轮、1child闭合；原3/6/9/11 distinct各target与首红独立保留，不重跑/不相加。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | de6af442b03533d48e5cdca7b9d6e2bde4229f2f |
-| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, experiments/runner-capacity/mixed/process.ts |
+| 实现目标 | 375ecccc427acf59d687153903bd032fb6e684bc |
+| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-operator-env.test.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 运行输入已固定；正在修复独审发现的外层环境隔离问题，并补输出截止时间反例。 |
-| 下一可用交付 | 完成外层门禁的独立审查和必要纯反例后，提交一次真实对照实验的运行条件。 |
-| 当前阻塞 | ACTIVE：新增外层调用尚未验证；真实性能窗口与最新完整资源合计未授权。 |
+| 当前产出 | 外层环境隔离问题已独审修复，五个纯反例通过；固定运行准备正做结果忠实性复核。 |
+| 下一可用交付 | 复核本次纯检查并确认完整资源与真实独占窗口后，执行聊天轻读与取消的对照测量。 |
+| 当前阻塞 | ACTIVE：纯检查结果待独审收口；真实对照实验未授窗口。 |
 | 需用户决定 | NONE |
-| Review | 原f722e28678e9e9af0e631af7539e1c6f70adf7c9于13:30:23Z独审通过；新增de6af外壳/缓存delta与本输入清单PENDING，只读审后另申请必要纯检查。 |
+| Review | db13:51:11Z对375ecccc427acf59d687153903bd032fb6e684bc DELTA_SOURCE_REVIEW_APPROVED，环境P2 CLOSED/0P1P2；5pure新结果待忠实性复核。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T13:34:26.938Z原子追加pool-wait-run，原五scope不变，输出目录尚未创建。 |
 | 架构影响 | 复用OPS14监督及原driver/child资源权威；新增同PID checkpoint→exec薄caller与固定输入清单，生产pool/SQL不变。当前新实验未main/未运行。 |
 
@@ -204,3 +204,9 @@ chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPR
 新12min源码段，自fresh289ce clean与claim508f v3/6全部身份核验后开工。db13:46:41对原de6/289ce指出唯一P2：整环境继承；旧包/675输入/33SQL/raw不改。本段只explicit环境+固定Git/Python隔离及CLI输出后绝对deadline判定，准备合成env/纯clock反例；ordinary尚未授权、0工程执行/PG/HTTP。复用本地find-skills、codebase-design与固定clean-code；不读取/输出其它真实环境或凭据。
 
 2026-10-07T13:51:11Z db对375e/a45增量源码APPROVED，原环境P2 CLOSED/0剩余P1P2，输出后期限修复通过静态核。依Mika条件仅准备一次≤30s ordinary纯检查；实际START与完整RETURN记本段单份queue-operator-env-local，现0PG/HTTP。
+
+## 2026-10-07T13:53:42.098Z 外层窄修pure检查归还
+
+[唯一交审入口](../../docs/evidence/s01/mixed-ab-preparation/queue-operator-env-result-ready.md)。已审source375e，5/5新纯例/787Braw，PID15216末态absent/MERGED EOF、无signals-secondary，初始EPERM保留；sameinode新TMP空样本0B清理absent。监督135ms/持久化后250.935ms/tool0.362040833s分开，whole准备+metadata不冒执行wall。13:52:24.441Z实际RETURN，0PG/HTTP/性能。原新5scopecaller输出及pool-wait-run根尚未创建，claimv3/6保留。
+
+本段自13:47:34Z连续，未重置12min；只源码env/CLI deadline与必要单purechild，未用第2额度，原675/223/33SQL和raw冻结。status唯一事实源，原taskstartUNKNOWN/NOT_COMPLETED、历史main/6TODO保持；本轮无dashboard GET，不把旧同步当新观察。
