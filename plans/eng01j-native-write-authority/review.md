@@ -9,3 +9,7 @@ Review target commit: 471b1d8b7b19d53e7c7e87efc525e9c193c5242e
 原[REQUEST_CHANGES](../../docs/evidence/eng01j/r1-independent-review.json)唯一P2已关闭：两专测使用Vitest，专用Darwin资源前提显式启用；普通1pass/3skip、实际canary4/4、focused类型0，继承FD真实对照保持。原syscall/编译/类型失败不改，新三轮outer数字exit未单独抄存保持null，不补造/不补跑。
 
 批准仅实际Darwin受限启动及R06机制，不证明真实native工具兼容、模型/no-fallback、provider网络、任意IPC、完整writer撤销或生产grant。stock helper与当前禁派生策略的条件源码冲突留后继零query方案；无个人服务操作。
+
+## stock helper 后继结果待审（2026-10-07T05:46:27.702748+00:00）
+
+原471限定APPROVED/mainbf8不变；本后继仅自有evidence入口source24ef5be77fcc0bfb4ee32fa98c53d653c2920427。两有限段的原失败均保存：首次shim拒绝未执行native，修正后FD对照通过，但stock binary初始化SIGABRT；无helper语义通过或新生产授权。结果待唯一review；原5产品零改。

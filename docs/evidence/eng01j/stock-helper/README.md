@@ -22,3 +22,7 @@
 新入口`--run-fd-fix`用exclusive run-fd-fix目录，原run-once不变。移除RLIMIT任意上界假设；单线程exec-only在dup/close请求后只枚举一次`/dev/fd`（≤256合法数字项），关闭>2；仅容忍listdir自身瞬态FD的EBADF，其他错误拒绝。随后只做fcntl/fstat，不再打开文件，确认stdin只读regular、stdout/stderr为监督pipes后exec。OPS14原Popen默认close_fds=True不改。
 
 同一个≤10秒段先加1个≤.8秒dummy exec，parent故意把自己打开的一个写FD标inheritable；在实际OPS14→shim→exec的child核该FD不存在、stdin只读且字节确切、1/2为pipes、host文件未变。之后原Node策略渲染和最多2个stock helper。四个子进程串行；总raw上限仍64KiB（dummy2KiB+policy4KiB+helper各20KiB=46KiB），同一截止与cleanup不放宽。不是重新运行已通过生产/syscall或模型检查。原失败保留，新段来源为Lead在原263ms清理后明确授权局部修正与新有限段；assignment/X01本队local均已归还。
+
+## 新段实际结果（2026-10-07T05:46:27.702748+00:00）
+
+source 24ef5be77fcc0bfb4ee32fa98c53d653c2920427，outer1、467ms，FD对照PASS。固定binary已真实启动，但Rust初始化报告guard page allocation EINVAL并SIGABRT（-6），stdout空；不能确认已处理helper请求。第二helper未启；两个文件仍0。3组最终absent/双EOF，raw1468B，私有末采1199B，先checkpoint再exact目录删除。这里只证明原策略下该固定binary本次初始化失败，具体原因未知；不将其直接归因某条sandbox规则、不修改原5产品、不自动重跑。[分析](fd-fix-analysis.json)/[原件](run-fd-fix/result.json)。
