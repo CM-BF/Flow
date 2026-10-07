@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import { syncBuiltinESMExports } from 'node:module';
-import { mkdtemp, mkdir, realpath, lstat, open, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, realpath, lstat, open, writeFile, readdir, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -23,6 +23,16 @@ async function checkpoint(path, value) {
   if (bytes.length > 16384) throw new Error('CHECKPOINT_LIMIT');
   const handle = await open(path, 'w', 0o600);
   try { await handle.writeFile(bytes); await handle.sync(); } finally { await handle.close(); }
+}
+async function privateBytes(path) {
+  let bytes = 0;
+  for (const entry of await readdir(path, { withFileTypes: true })) {
+    const child = join(path, entry.name);
+    if (entry.isDirectory()) bytes += await privateBytes(child);
+    else { assert.ok(entry.isFile()); bytes += (await lstat(child)).size; }
+    assert.ok(bytes <= 1048576, 'private fixture byte limit');
+  }
+  return bytes;
 }
 async function syntheticArtifact(directory) {
   const content = Buffer.from('<!doctype html><title>SVC08 synthetic</title>');
@@ -94,6 +104,7 @@ test('upstream completion, truncated FIN and RST settle downstream connections',
     web = await startStaticWeb({ directory, artifact, repository: process.cwd(), webPort, centerPort });
     assert.equal(frontendServers.length, 1);
     const frontend = frontendServers[0];
+    assert.equal(frontend.maxConnections, 64);
     for (const mode of ['complete', 'fin', 'rst']) {
       stage = mode;
       const outcome = { mode, firstFrame: false, bytes: 0, terminal: null };
@@ -114,7 +125,7 @@ test('upstream completion, truncated FIN and RST settle downstream connections',
       request.on('error', error => { outcome.requestError = error.code; end(true); });
       outcome.settledWithin300ms = await within(terminal, 300);
       await pause(15);
-      outcome.beforeOwnCleanup = { frontendConnections: await connections(frontend), frontendTracked: frontendSockets.size,
+      outcome.beforeOwnCleanup = { terminal: outcome.terminal, frontendConnections: await connections(frontend), frontendTracked: frontendSockets.size,
         upstreamConnections: await connections(upstream), upstreamTracked: upstreamSockets.size };
       report.cases.push(outcome);
       await checkpoint(evidence, report);
@@ -137,6 +148,8 @@ test('upstream completion, truncated FIN and RST settle downstream connections',
     assert.equal(report.requests, 4);
     const leaks = report.cases.filter(value => !value.firstFrame || !value.settledWithin300ms || value.beforeOwnCleanup.frontendConnections !== 0);
     assert.deepEqual(leaks.map(value => value.mode), [], 'upstream termination must settle downstream before fixture cleanup');
+    assert.equal(report.cases[0].beforeOwnCleanup.terminal, 'end');
+    assert.ok(report.cases.slice(1).every(value => value.beforeOwnCleanup.terminal === 'aborted'), 'truncation must not masquerade as normal EOF');
     assert.ok(report.events.filter(value => value.name === 'request').every(value => value.authorizationPreserved && value.originPreserved));
   } catch (error) {
     report.primaryFailure = { stage, name: error.name, code: error.code, message: error.message.slice(0, 512) };
@@ -144,7 +157,7 @@ test('upstream completion, truncated FIN and RST settle downstream connections',
   } finally {
     // Save the earliest result before cleanup; cleanup cannot turn a behavioral failure green.
     let durable = false;
-    try { await checkpoint(evidence, report); durable = true; }
+    try { report.privateBytesBeforeCleanup = await privateBytes(directory); await checkpoint(evidence, report); durable = true; }
     finally {
       for (const request of pending) request.destroy();
       for (const socket of frontendSockets) socket.destroy();

@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T03:10:40.822820+00:00",
+  "round": "original",
+  "freeBytes": 26541785088,
+  "sources": [
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "path": "tools/personal-preview/static-web-connections.test.mjs",
+      "bytes": 9666,
+      "sha256": "e606464e5c9159ebab2c5e43dc00dc3e6d2447699773f0b30167aa13cf9b6a31"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "docs/evidence/svc08/run-local.py",
+      "bytes": 3615,
+      "sha256": "e3b9b9541a8aff59fc43f9261724c5539adcbc70a3a06f408e5266d064dffc70"
+    }
+  ],
+  "requestsMax": 6,
+  "rawBytesMax": 65536,
+  "tmpBytesMax": 1048576,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "policy": {
+    "work": 7,
+    "term": 0.5,
+    "reap": 1,
+    "parent": 9.5
+  }
+}
