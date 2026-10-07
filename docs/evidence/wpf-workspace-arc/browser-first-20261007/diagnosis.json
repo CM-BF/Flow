@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T21:52:46.742725+00:00",
+  "finding": "TEST_PRECONDITION_ENTRY_MISMATCH",
+  "actual": [
+    "Owner token exact locator fill timed out at5s before first group",
+    "nine application GET requests and no browser-session GET/connect observed in bounded fixture reads",
+    "0of4/0PNG; no failure DOM captured"
+  ],
+  "static": [
+    "fixture.ts162-163 defines VITE_FLOW_FIXTURE=true",
+    "TaskThread.ts61 derives fixtureMode directly",
+    "App.tsx1372 chooses FixtureWorkspace if fixtureMode&&!search.has(recovery)",
+    "FixtureWorkspace1364-1367 starts bearer client immediately; Owner token Connection appears only after its disconnect",
+    "browser.ts47 omitted recovery query while line48 expected Connection",
+    "fixture.ts104-110 requires synthetic Cookie+CSRF; existing public BrowserWorkspace does that via explicit connect"
+  ],
+  "precedent": "fixedf885 I01 plugin-management-integration.browser.ts234 uses /?recovery#conversation=chat-1",
+  "fixCommit": "876731f4488419d4c9d84584a40944fcd848c0f2",
+  "fix": "Use ?recovery=1 URL and assert public Connect to Flow heading, then unchanged token/connect and four groups",
+  "notChanged": [
+    "product authorities/permissions",
+    "Cookie/CSRF fixture guards",
+    "default5s timeout",
+    "allfour groups and two screenshots",
+    "parent e744/worker/capture/native lifecycle"
+  ],
+  "validation": {
+    "engineeringTests": "NOT_RUN",
+    "reason": "One URL string and existing Playwright expect/getByRole call; no new type seam. Related actual browser requires independent phase. Prior greens not rerun."
+  },
+  "limits": [
+    "source explains observed mismatch, but no captured DOM or fresh actual afterfix",
+    "not productauthbug conclusion",
+    "firstbrowserFAIL/fullreturn12808CLOSED unaffected"
+  ],
+  "sourceInputs": [
+    {
+      "commit": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    },
+    {
+      "commit": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+      "path": "apps/web/src/TaskThread.tsx",
+      "bytes": 10543,
+      "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01"
+    },
+    {
+      "commit": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "bytes": 16524,
+      "sha256": "96c9b8cfd7647ac13c7cb1d89b7c91fd72d6015778b1aa5c7f9379dcbbb62b9f"
+    },
+    {
+      "commit": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "bytes": 19938,
+      "sha256": "d5e0b67eabcb053cb7a7f9c8b998bbaead85a1482e237425e9bb312967b38110"
+    },
+    {
+      "commit": "f8853d4731eb6229337279079c24617c97d4f56b",
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "bytes": 26157,
+      "sha256": "32e8699619cff57c112eb0767b54dee782bdbc001a7e17ad554eaa71d858d136"
+    }
+  ],
+  "cleanCode": "Fix at test-entry selection, keep actual public connection and assertion before actions; no fallback locator/first/nth/internal controller or second harness."
+}

@@ -1,5 +1,8 @@
 # WPF-WORKSPACEARC01 review
 
+当前target `876731f4488419d4c9d84584a40944fcd848c0f2`：仅browser公开Cookie入口前置2+/1-，独立差量review APPROVED（[root77c593](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/root-arc-first-browser-and-cookie-entry-review-20261007.json)）；修后actual NOT_RUN。首browser source7e911/execution16d579实际FAILED0/4/0PNG，12808ms CLOSED，资源完整RETURN；[原件](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/manifest.json)、[源码诊断](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/diagnosis.json)。原caller e744/7FS与产品/HTTP历史批准范围保持。
+
+
 APPROVED `7e911df40d8c0ff875ac96e0fab36a1a3a253940`，范围仅FIFO验收修正、3362ms受影响类型检查及原HTTP caller准备，见[root11e317](../../docs/evidence/wpf-workspace-arc/browser-refresh-20261007/root-arc-fifo-boundary-preparation-review-20261007.json)。两次HTTP整体FAIL原件保留：首3408/第二2652均独立CLOSED，不跨轮拼PASS。第二raw只有test65谓词false，没有具体peer trace；不能定产品唯一根因。
 
 真实batch响应边界验waiting FIFO C→A→B→C，不要求inflight peer锁步；保11cursor/实际最终内容/peak2/cache4MiB，≤48公开请求trace。修后第三HTTP已实际2PASS/11未选、2912ms，root e524实际限定独审APPROVED；请求trace未留存限制明确。当前browser90数据绑定已roota4e5限定批准：[入口](../../docs/evidence/wpf-workspace-arc/browser-refresh-20261007/entry.json)。原四组/双图与三caller不变，browser4/main仍未验，无runtimegrant。

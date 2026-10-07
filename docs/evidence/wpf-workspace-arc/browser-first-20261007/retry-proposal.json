@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T21:52:46.742725+00:00",
+  "source": "876731f4488419d4c9d84584a40944fcd848c0f2",
+  "packet": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6",
+  "sourceManifestAtPreparation": {
+    "path": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+    "realpath": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+    "bytes": 2377,
+    "sha256": "710173a29015f1eb8b88f1b646d2cfee4903732629995fd4f71375916643b807"
+  },
+  "finalManifestPath": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+  "runtime": "NOT_GRANTED",
+  "allowRun": false,
+  "oldRawNotModified": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-first-20261007/manifest.json",
+  "independentPhase": {
+    "id": "ARC-BROWSER-COOKIE-ENTRY-PROPOSED-20261007",
+    "state": "PROPOSAL_NOT_GRANTED",
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "spentMs": 0,
+    "singleAttempt": true,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1,
+    "provider": 0,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "previousBrowser": {
+      "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-first-20261007/accounting.json",
+      "outcome": "FAILED",
+      "state": "CLOSED",
+      "spentMs": 12808,
+      "unusedMs": 77192,
+      "transfer": false
+    },
+    "resources": "Independent new phase proposal only; no reservation/floor entitlement; manager fresh complete sum must be evidenced",
+    "parent": {
+      "path": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/run.py",
+      "realpath": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/run.py",
+      "bytes": 13757,
+      "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    }
+  }
+}

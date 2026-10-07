@@ -1,0 +1,52 @@
+{
+  "taskId": "WPF-WORKSPACEARC01",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+      "id": "WPF-MATURE-05",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web/root；执行管理d01_owner",
+      "value": "Web/root；执行管理d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "implementation": {
+    "target": "876731f4488419d4c9d84584a40944fcd848c0f2",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-stream/host.ts",
+      "apps/web/src/conversations/ConversationList.tsx",
+      "apps/web/src/plugin-integration/layout.ts",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/host.ts",
+      "apps/web/src/plugins/sample.tsx",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "apps/web/src/workspace-layout/layout.css",
+      "apps/web/src/workspace-state.ts",
+      "apps/web/test/conversation-stream-integration.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-layout.browser.ts",
+      "apps/web/test/workspace-layout.fixture.ts",
+      "apps/web/test/workspace-layout.test.ts"
+    ],
+    "errors": []
+  }
+}

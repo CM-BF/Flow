@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:45:12.092738+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:57:00.120352+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
-| 工作树dirty状态 | 本次metadata正常seal后全20 STOP保claim；0child/browser NO_GRANT |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 876731f4488419d4c9d84584a40944fcd848c0f2；metadata随后seal |
+| 工作树dirty状态 | 首browser实际FAIL已FULLRETURN；产品18源STOP，仅own metadata正常封存，0child/无重试grant |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | PASSED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；第三独立HTTP2PASS/0FAIL/11未选，2912ms；首两FAIL保留，browser4 NOT_RUN |
+| 检查状态 | NOT_RUN 876731f4488419d4c9d84584a40944fcd848c0f2；修后browser未运行，原7e911首browserFAILED0/4、0PNG/12808ms，原HTTP2PASS与旧失败保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 7e911df40d8c0ff875ac96e0fab36a1a3a253940 |
+| 实现目标 | 876731f4488419d4c9d84584a40944fcd848c0f2 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 两项HTTP验收已通过；调用器清理缺口已修复并获独审批准，真实浏览器验收尚未运行 |
+| 当前产出 | 两项HTTP验收已通过；首次浏览器连接前置失败已定位并窄修，修后四组尚待新窗口验证 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 浏览器公开Cookie入口前置修正已独审通过；四组仍待经理独立新运行，当前无grant |
 | 需用户决定 | NONE |
-| Review | APPROVED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；root11e317源码/准备+e524第三HTTP2actual限定通过；browser绑定a4e5批准，browser4仍NOT_RUN |
+| Review | APPROVED 876731f4488419d4c9d84584a40944fcd848c0f2；root77c593限定接受首FAIL/RETURN证据及query+heading修正，非browser PASS；原11e317/e524/2b2f批准边界保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -35,7 +35,7 @@
 | WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 共同稳定父级源码已接入；真实prepare-await/长正文阅读锚点/六显式body读取验收源码已写，未运行 |
 | WPF-WORKSPACEARC01-03 | in-progress | workspace_panels_owner | typed context/invocation lease源码已接入，5私有AppPort+2Host纯回归已通过，真实消费者待browser |
 | WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三独立HTTP同轮FIFO/hidden queued-dispose2PASS；旧两FAIL保留。六bodyflight/DOM/实际App仍待browser |
-| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types通过；第三HTTP同轮2PASS已root e524限定独审；browser NOT_RUN，旧两FAIL不抹 |
+| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types与第三HTTP同轮2PASS保留；首browser0/4FAIL已完整归还，修后NOT_RUN，全部失败不抹 |
 | WPF-WORKSPACEARC01-06 | pending | workspace_panels_owner | NOT_INTEGRATED |
 
 ## 等待记录
@@ -75,3 +75,11 @@
 2026-10-07T21:43:20.807362+00:00：仅调用器修复，产品source仍7e911；[新入口](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/entry.json)。首6FS PASS与最终7FS PASS原件分别保留，真实函数AST提取；child/toolexit0、exactPID/group及自有scratch归还。保守toolwall计315+249=564ms/40s CLOSED，余不转；regularlogs非双EOF、无独立outerwall。旧Arc browser身份P2见[root原审](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-timing-cleanup-review-20261007.json)，修后caller待审不冒browserPASS。
 
 2026-10-07T21:45:12.092738+00:00：[root 2b2f](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-owned-root-cleanup-final-review-20261007.json)限定接受最终e744 parent/7FS，P2 CLOSED/0blocking；207source/worker/capture不变。实际browser仍NOT_RUN、等待经理独立窗口；本段code/checks停止，仅正常seal与≤64KiB归档尾。
+
+2026-10-07T21:48:54.715720+00:00：ARC-COMPOSITION-BROWSER-20261007-ONCE actual START21:48:33.219292Z，run arc-browser-20261007-214832；outer47834/parent48789/worker48882，source7e911/execution16d579，单次90s=60work30cleanup，0PG/2HTTP/1Chrome。RUNNING，无PASS推断。准入free18,282,971,136>=15,953,690,624，原件/private/tmp/arc-browser-owned-cleanup-tp1sri1w/admission.json；本status更新晚于parentclean与固定pins通过。
+
+2026-10-07T21:50:13.121907+00:00：首browser实际21:48:33.219292Z START→21:48:46.026235Z outerterminal→21:49:26.737154Z精确FULLRETURN；0/4/0PNG。原5s连接前置Owner token定位失败，无失败DOM，不宣唯一产品根因。charge12808/90000 CLOSED、余77192不转；parent/outer1、两层stdout/stderr EOF、drop0，raw scenario context/httpclosed=true；worker result null/父场景闭合未知原文保留。exact4PID+2已知PGID/scratch/cachelinksabsent，无独立portprobe。原件[本轮入口](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/manifest.json)，0重试。
+
+2026-10-07T21:53:43.506270+00:00：[固定诊断](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/diagnosis.json)确认源码入口不一致：fixture true+无recovery query选择自动Bearer FixtureWorkspace，原case却找Cookie Connection；固定base同类I01公开query惯例已核。source876731f仅URL?recovery=1+Connect to Flow可见前置，四组/默认5s/产品权限/fixture不变，0新types/纯例/HTTP/browser。无失败DOM不冒实际UI截图；[后继90s候选](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/retry-proposal.json)仅proposal，原12808/90k CLOSED。
+
+2026-10-07T21:57:00.120352+00:00：[root77c593](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/root-arc-first-browser-and-cookie-entry-review-20261007.json)限定APPROVED/0blocking：首0/4FAIL和12808ms闭账、20原件、876入口修正已独立核验。修后actual NOT_RUN，无新types/HTTP/browser；本普通段源码/checks STOP，仅normal seal与≤64KiB审查尾。全20保claim，下一运行需经理独立新grant。

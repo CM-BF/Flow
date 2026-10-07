@@ -1,0 +1,135 @@
+{
+  "at": "2026-10-07T21:54:56.482565+00:00",
+  "decision": "APPROVED_FAILED_RUN_EVIDENCE_AND_NARROW_COOKIE_ENTRY_SOURCE",
+  "blockingFindings": [],
+  "actualFailure": {
+    "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+    "executionHead": "16d5793d13d814e2c7f50ecbe080be0eb6e5ba55",
+    "selected": 4,
+    "passed": 0,
+    "screenshots": 0,
+    "error": "locator.fill: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByLabel('Owner token', { exact: true })\n\n    at Module.checkWorkspaceLayout (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts:48:59)\n    at async <anonymous> (/private/tmp/arc-browser-owned-cleanup-tp1sri1w/worker.mjs:31:16)",
+    "outcome": "FAILED",
+    "parentErrorsPreserved": [
+      "worker not passed",
+      "required four groups incomplete",
+      "scenario resources not confirmed closed"
+    ],
+    "parentCleanupErrors": [],
+    "directScenarioCleanup": {
+      "contextClosed": true,
+      "httpClosed": true
+    },
+    "interpretation": "Owner token fill timed out before any selected group. Worker result null caused parent to conservatively report scenario closure unconfirmed; independent direct scenario evidence and reported owned process/scratch return are separate facts, not edits to that parent result."
+  },
+  "evidence": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-first-20261007/manifest.json",
+    "sha256": "e83fdb4d555d8e67e1dbd98e9e18df64afe8e04e5289aa9b2655e0ae57233426",
+    "files": 20,
+    "originalBytes": 309859,
+    "bothOriginalAndArchiveVerified": true,
+    "mismatches": []
+  },
+  "accounting": {
+    "id": "ARC-COMPOSITION-BROWSER-20261007-ONCE",
+    "state": "CLOSED",
+    "outcome": "FAILED",
+    "chargeMs": 12808,
+    "totalMs": 90000,
+    "unusedMs": 77192,
+    "creditTransfer": false,
+    "outerPostWriteElapsedMs": 12807.17416596599,
+    "parentMeasuredMs": 12767.014375072904,
+    "actualParentExit": 1,
+    "actualToolExit": 1,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "selectedCount": 4,
+    "passedCount": 0,
+    "PNG": 0,
+    "fullOwnedReturn": true,
+    "independentPortProbe": false,
+    "PG": false
+  },
+  "reportedReturn": {
+    "at": "2026-10-07T21:49:26.737154+00:00",
+    "processes": {
+      "pid:47834": "ESRCH",
+      "pid:48789": "ESRCH",
+      "pid:48882": "ESRCH",
+      "pid:49966": "ESRCH",
+      "pgid:48789": "ESRCH",
+      "pgid:48882": "ESRCH"
+    },
+    "scratchAbsent": true,
+    "cacheLinksAbsent": {
+      ".vite": true,
+      ".vite-temp": true
+    },
+    "PG": false,
+    "independentPortProbe": false,
+    "fixtureCloseReceipt": {
+      "contextClosed": true,
+      "httpClosed": true
+    },
+    "scenarioCleanupErrors": [],
+    "fullOwnedReturn": true
+  },
+  "actualToolExit": {
+    "tool": "exec_command/write_stdin session67537 chunkf1cdb2",
+    "exitCode": 1,
+    "outerTerminal": {
+      "run": "arc-browser-20261007-214832",
+      "postWriteElapsedMs": 12807.17416596599,
+      "actualParentExit": 1,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "errors": [
+        "actual parent exit 1"
+      ],
+      "signals": []
+    }
+  },
+  "sourceDiagnosis": {
+    "class": "FIXED_STATIC_BRANCH_EXPLAINS_ENTRY_MISMATCH; NO_CAPTURED_FAILED_DOM",
+    "evidence": [
+      "workspace-layout.fixture.ts:162-163 sets VITE_FLOW_FIXTURE to the string true.",
+      "TaskThread.tsx:61 sets fixtureMode when that string equals true.",
+      "App.tsx:1372 selects FixtureWorkspace without recovery query and BrowserWorkspace with that query.",
+      "Original workspace-layout.browser.ts:47 supplied only #conversation=chat-1, then requested the BrowserWorkspace login controls.",
+      "Actual nine API observations lacked browser-session traffic and were79B responses; consistent with the wrong fixture entry, not an independent failed-page screenshot."
+    ]
+  },
+  "approvedRepair": {
+    "source": "876731f4488419d4c9d84584a40944fcd848c0f2",
+    "delta": "One navigation URL gains ?recovery=1; one existing public Connect to Flow heading assertion precedes the unchanged Owner token/Connect workspace flow.",
+    "changedPin": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+      "bytes": 20050,
+      "sha256": "b1e293297aaf05a98ab6d1dab81b87d0d1301f875d6fb138c0b666c894114d5c",
+      "gitPath": "apps/web/test/workspace-layout.browser.ts",
+      "blob": "737a1a44e4f1df67c2446036943980d0bc1cfb3f"
+    },
+    "unchangedSourcePins": 206,
+    "externalAndResolverPinsUnchanged": true,
+    "callersUnchanged": true,
+    "preparedManifest": {
+      "path": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+      "sha256": "710173a29015f1eb8b88f1b646d2cfee4903732629995fd4f71375916643b807",
+      "filesVerified": 8
+    }
+  },
+  "limits": [
+    "This approves the failed evidence and narrow test-entry correction, not Arc feature/browser acceptance. New browser actual remains NOT_RUN.",
+    "All four group assertions, Cookie/CSRF requirements, timeout and production code remain unchanged.",
+    "No new types/pure/HTTP/browser runs were needed for this literal URL and existing locator assertion change; actual browser still needs a new manager-selected phase.",
+    "Old12808/90000 phase is CLOSED;77192 unused is not transferable.",
+    "Final metadataHead/review/manifest/globalfloor rebinding against same876 source and e744 native caller is routine, with fresh authority/resource checks at actual launch.",
+    "Root performs no service/PID/port probe or old KEEP access; reported return is evaluated from sealed original evidence."
+  ],
+  "quality": {
+    "cleanCodeAt": "2026-10-07T21:54:56.483533+00:00",
+    "finding": "Reuse existing BrowserWorkspace entry and public accessible heading; no product workaround, assertion weakening, retry loop or timeout inflation."
+  }
+}

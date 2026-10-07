@@ -36,3 +36,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T21:22:36.031590+00:00：TODO04/05的真实HTTP层第三独立2PASS已完成，原两FAIL保留；六bodyflight/真实prepare-await/长transcript锚点/双图仍NOT_RUN，不提前完成整个TODO。
 
 2026-10-07T21:43:20.807362+00:00：TODO05本次必要caller安全修复：原路径rmtree改为创建目录身份/祖先fd门禁，真实FS样本7PASS，不触旧KEEP。新40s局部封套实计564ms已关闭，原browser90仍未授运行；独审后沿既有四组候选，不增加产品验收组。
+
+2026-10-07T21:53:43.506270+00:00：TODO05首browser0/4FAIL已完整归还；876731f仅修现有受控BrowserWorkspace公开入口query+可见heading前置。真实四组仍未通过，旧90s已封，后继独立90s仅proposal；无新产品权限或断言放宽。
