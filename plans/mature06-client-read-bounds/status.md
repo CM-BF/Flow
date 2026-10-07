@@ -2,14 +2,14 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:08:44.048Z |
+| 最近更新时间 | 2026-10-07T14:10:18.091Z |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T09:32:16Z |
-| 任务完成时间 | 2026-10-07T10:07:46.923668+00:00（本片段） |
-| 任务时间来源 | 工具UTC开工观察；take COMMITTED09:33:26.277Z，index amend09:34:55.952Z |
+| 任务完成时间 | 2026-10-07T10:07:46.923Z |
+| 任务时间来源 | 开工：原工具UTC观察，保持09:32:16Z；完成：本片段既有[main-accepted.json](../../docs/evidence/mature06-readbound/main-accepted.json) observedAt=2026-10-07T10:07:46.923668+00:00，仅按时间契约规范为毫秒Z，原事件与原件不改；take COMMITTED09:33:26.277Z，index amend09:34:55.952Z |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds |
 | Branch | codex/client-read-bounds |
 | 工作基线 / HEAD | base d022c8003fc4bd8ba560f1a039411ed098186659 / source bc213e44db2b74130836782720728f8a59b52b99 |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | 44849884-baa7-4f09-a44b-085eb65b1220 v3 ACTIVE，6literal（index已交回）；原子CLI提交回执 |
+| Claim | 44849884-baa7-4f09-a44b-085eb65b1220 v3 ACTIVE，6literal（index已交回）；2026-10-07T14:09:35.742Z fresh账本确认本人，提交后全写STOP再release，后续实际状态以账本为准 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -48,3 +48,6 @@
 
 ## 主线接收与停止写入
 2026-10-07T10:07:46.923668+00:00 实际核对main81b4805c及当前1a6f82a1五路径逐bytes/hash一致，受控组合11/11与root noEmit0由Lead receipt提供，未重跑作者组。来源main-accepted.json。本片全部产品停止写入，client/index将以v2原子amend移交。登记已完成194来源，dashboard实际未reload，后续正常刷新确认，不重启/轮询。主线/部署时间分开：接收已观察于本时间，部署UNKNOWN。内部reader抽取不改公共方法签名；D06架构后继由Mika协调。
+
+## 时间字段格式收口
+2026-10-07T14:10:18.091Z metadata-only：仅规范既有完成时间字段并分离来源说明；原开工、产品、测试、main与部署事实不变。复用主线parseStatus核本status的errors、human.missing及timing.issues，结果记录在[quality.md](../../docs/evidence/mature06-readbound/quality.md)。本轮不新增工程测试/PG/服务动作；提交推送后全部范围停止写入，再按当前version释放claim，释放回执外置，不在release后回写。
