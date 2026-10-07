@@ -52,6 +52,12 @@ def work_environment(directory):
         'TMPDIR': str(directory / 'tmp'), 'CLAUDE_CONFIG_DIR': str(directory / 'home'),
         'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
 
+def attempt_files(argv):
+    assert argv in (['--execute-host-once'], ['--execute-host-r2-once']), 'EXACT_ARGUMENT_REQUIRED'
+    if argv == ['--execute-host-r2-once']:
+        return 'actual-host-r2-once', 'host-preparation-r2.json'
+    return 'actual-host-once', 'host-preparation.json'
+
 def work_and_cleanup(child, node, namespace, directory, result, write=save):
     work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
     result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof, 'firstFailure': work.first_failure}
@@ -71,18 +77,18 @@ def work_and_cleanup(child, node, namespace, directory, result, write=save):
     return work, cleanup
 
 def main(argv):
-    assert argv == ['--execute-host-once'], 'EXACT_ARGUMENT_REQUIRED'
+    namespace_name, preparation_name = attempt_files(argv)
     deadline = time.monotonic() + 215
     fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
     # Final static source manifest is sealed after the bounded preparation checks.
-    source = json.loads((HERE / 'host-preparation.json').read_bytes())
+    source = json.loads((HERE / preparation_name).read_bytes())
     for value in source['bindings'] + fixed['bindings']:
         pin(value)
     assert fixed['format'] == 1 and fixed['providerCalls'] == 0
     source_root = Path(fixed['sourceDirectory']); info = source_root.lstat()
     assert stat.S_ISDIR(info.st_mode) and not source_root.is_symlink() and info.st_uid == os.getuid()
     assert {'dev': str(info.st_dev), 'ino': str(info.st_ino)} == fixed['sourceIdentity']
-    namespace = HERE / 'actual-host-once'
+    namespace = HERE / namespace_name
     assert not namespace.exists(), 'ONCE_NAMESPACE_EXISTS'
     assert os.environ.get('FLOW_SVC09A_ADMIN_URL'), 'EXPLICIT_LOCAL_ADMIN_REQUIRED'
     free = min(shutil.disk_usage(HERE).free, shutil.disk_usage('/private/tmp').free)

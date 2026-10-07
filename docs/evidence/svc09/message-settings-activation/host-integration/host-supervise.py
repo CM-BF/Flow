@@ -33,18 +33,30 @@ def disposition(report):
             'servicesAndDatabase': 'NOT_INFERRED_FROM_CALLER_EXIT' if complete else 'UNKNOWN_KEEP',
             'phaseRecordsRequired': True, 'retry': False}
 
+def attempt_files(argv):
+    assert argv in (['--run-host-once'], ['--run-host-r2-once']), 'EXACT_ARGUMENT_REQUIRED'
+    if argv == ['--run-host-r2-once']:
+        return 'host-outer-r2-once', 'actual-host-r2-once', '--execute-host-r2-once'
+    return 'host-outer-once', 'actual-host-once', '--execute-host-once'
+
+
+def reserve_attempt(directory, outer_name, operator_name):
+    assert not os.path.lexists(directory / operator_name), 'OPERATOR_NAMESPACE_EXISTS'
+    namespace = directory / outer_name
+    namespace.mkdir(mode=0o700)  # Exclusive even if the previous caller never began.
+    return namespace
+
 
 def main(argv):
-    assert argv == ['--run-host-once'], 'EXACT_ARGUMENT_REQUIRED'
+    outer_name, operator_name, operator_argument = attempt_files(argv)
     fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
     ops = load_supervisor(fixed['supervisor'])
     assert os.environ.get('FLOW_SVC09A_ADMIN_URL'), 'EXPLICIT_LOCAL_ADMIN_REQUIRED'
-    assert not (HERE / 'actual-host-once').exists(), 'OPERATOR_NAMESPACE_EXISTS'
     # A second outer invocation is refused even if the operator failed before its own reservation.
-    namespace = HERE / 'host-outer-once'; namespace.mkdir(mode=0o700)
+    namespace = reserve_attempt(HERE, outer_name, operator_name)
     env = {'PATH': '/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1',
            'FLOW_SVC09A_ADMIN_URL': os.environ['FLOW_SVC09A_ADMIN_URL']}
-    report = supervise_operator(ops, [fixed['python']['path'], str(HERE / 'host-run.py'), '--execute-host-once'], env)
+    report = supervise_operator(ops, [fixed['python']['path'], str(HERE / 'host-run.py'), operator_argument], env)
     value = {'at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
              'scope': 'CALLER_PID_ONLY_NOT_DETACHED_SERVICE_GROUPS', 'limits': {'operatorSeconds': 215, 'termSeconds': .5, 'reapSeconds': 2},
              'report': {**vars(report), 'stdout': report.stdout.decode('utf8', 'replace'), 'stderr': report.stderr.decode('utf8', 'replace')},
