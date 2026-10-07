@@ -40,3 +40,5 @@ MSGAPP-02/03/04 勾选指源码实现，绑定 c4bee7707a273e98ba7b07dc061ec13e7
 ## 2026-10-07 首次实际安全点
 
 当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-first/manifest.json)，[SQL供给](../../docs/evidence/wpf-message-settings-app/runtime-sql-supply.json)。
+
+MSGAPP-05当前：两次actual保红，第二cookieRead通过/材料选项失败；仅fixture公开目录header透传修复，target 424c6466bd28a838b91cc490a7b52021202b4d17。新90s phase18962/余71038，相关复验待fresh窗口，未扩大场景或预算。

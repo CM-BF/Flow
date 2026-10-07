@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:29:41.344886+00:00；固定base c130，未追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:34:59.773610+00:00；固定base c130，未追moving main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
-| 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；c4bee7707a273e98ba7b07dc061ec13e78094c2f（实现固定，最终metadata HEAD见Git） |
-| 工作树dirty状态 | 本次仅own原件/metadata封存；17源码c4bee不变，normal push后clean |
+| 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；424c6466bd28a838b91cc490a7b52021202b4d17（实现固定；metadata HEAD见Git） |
+| 工作树dirty状态 | 本次仅own原件/metadata；fixture一行公开协议透传已固定，normal push后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 局部历史11PASS/57未选、probe6PASS/types8 exit0；首browser初始化FAIL，0组选定完成；清理已闭合 |
+| 检查状态 | 历史局部通过保留；第二browser cookieRead PASS、材料选择FAIL，未到adapter；两红及cleanup完整 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
-| 实现目标 | c4bee7707a273e98ba7b07dc061ec13e78094c2f |
+| 实现目标 | 424c6466bd28a838b91cc490a7b52021202b4d17 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/projection.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversation-context/receipts.ts, apps/web/src/recovery/binding.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.test.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/src/conversations/queue/ConversationQueue.tsx |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 首次隔离页面验收在初始化时发现两份缺失SQL依赖，已按固定版本补齐；尚未进入材料恢复场景 |
-| 下一可用交付 | 在原浏览器工作段剩余额度内重试材料恢复，再验真实聊天消息设置；保留首轮失败 |
+| 当前产出 | 已进入真实页面并通过登录检查；测试代理遗漏目录协议请求头已修复，材料恢复仍待复验 |
+| 下一可用交付 | 沿同一工作段剩余额度复验材料恢复，再验真实聊天设置；保留两轮失败 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS；c4bee源码与caller准备限定批准，首actualFAIL未冒场景通过 |
+| Review | [review.md](review.md)，IN_PROGRESS；c4bee准备已批准，424c fixture一行差量已获root dfe8限定源码批准，相关actual未验 |
 | Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 ACTIVE；exact19；fresh 2026-10-07T13:28:06.073Z/nooverlap |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -61,3 +61,11 @@
 [首轮22原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-first/manifest.json)：outer1/双EOF/drop0、0组选定完成，固定SQL017缺失导致server初始化FAIL；无Chrome/PNG/业务场景执行。DBmarker/0conn/normalDROP、fixture关闭、三个精确PID/PGID与scratch/env全部absent。保守charge3432，新90秒段spent3432/余86568，旧local与Recovery额度不转。
 
 [固定SQL供给](../../docs/evidence/wpf-message-settings-app/runtime-sql-supply.json) exclusive物化c130的017/019共3278B，完整33SQL逐blob/hash相等；模板文件名未被旧静态闭包捕捉，此修复不改migration或产品语义。后继fresh floor≥7511998464或实际更高组合，首gate7492599808不追改。
+
+## 第二次实际与公开协议透传
+
+[第二次23原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-second/manifest.json)：outer1/双EOF/drop0，初始化与cookieRead通过；模型A选项count0，材料hold未进入/无PNG。DBmarker0conn正常DROP、fixturecomplete、四PID/PGID/scratch/env闭合；charge15530，phase累计18962/余71038。
+
+[一行差量](../../docs/evidence/wpf-message-settings-app/fixture-protocol-fix.json)只在fixture透传既有X-Flow-Execution-Profile，保重复header/原count/5s/全部业务断言；无产品/actor/lifecycle变化。目录请求真实GET200与源码分支支持此缺口，不把未保存DOM的首因说成已actual证明。当前无holder；新actual需manager同段fresh交接。
+
+424c一行差量已获root dfe8限定源码批准/0finding，原件保存在own source-research；并非related actual已通过。

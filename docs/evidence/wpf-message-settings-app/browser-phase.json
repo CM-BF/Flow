@@ -1,9 +1,9 @@
 {
-  "state": "FIRST_ATTEMPT_FAILED_CLEANED_RETRY_READY_AFTER_FIXED_SUPPLY",
+  "state": "SECOND_FAILED_CLEANED_HEADER_FIX_READY_NOT_RUN",
   "id": "MSG03-BROWSER-20261007",
   "budgetMs": 90000,
-  "spentMs": 3432,
-  "remainingMs": 86568,
+  "spentMs": 18962,
+  "remainingMs": 71038,
   "perAttemptMaxMs": 60000,
   "perAttemptMinMs": 45000,
   "cleanupMs": 30000,
@@ -35,6 +35,13 @@
       "state": "FAIL_INITIALIZATION_ZERO_SELECTED",
       "chargeMs": 3432,
       "manifest": "browser-attempts/material-first/manifest.json"
+    },
+    {
+      "run": "msg03-material-20261007-133113-177e00",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_MATERIAL_SELECTION_COOKIE_READ_PASSED",
+      "chargeMs": 15530,
+      "manifest": "browser-attempts/material-second/manifest.json"
     }
   ]
 }

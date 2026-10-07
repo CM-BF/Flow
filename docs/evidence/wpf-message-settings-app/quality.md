@@ -17,3 +17,7 @@
 ## 2026-10-07T13:29:41.344886+00:00 首次actual与fixed SQL补供给
 
 复用本地find-skills/clean-code方法：保留真实错误和清理独立证据；无产品行为变化，不重测已绿local。确定server migrateGoalGraphRuns固定列表经模板URL读017/019，补两Git blob exclusive且逐33SQL核同，供给失败不说产品缺陷/浏览器PASS。未新装skill/deps或改shared配置。当前17source仍c4bee；自然记录首FAIL和同90s累计，无新框架。
+
+## 2026-10-07T13:34:59.773610+00:00 第二actual安全点
+
+clean-code复核：公开协议遗漏以单行白名单修复，沿原rawHeaders重复保持，不造特殊目录fallback/新网络fault/延长等待；失败与cleanup分别归档，原16源/局部绿不重跑。真因果仍由下一actual限定验证，0新权限与actor变化。

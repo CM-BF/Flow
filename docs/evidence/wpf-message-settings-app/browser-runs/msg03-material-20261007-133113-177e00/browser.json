@@ -1,0 +1,298 @@
+{
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7910.150458,
+    "elapsedMs": 7910.150458
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7910.237125,
+      "endedOffsetMs": 8913.816167,
+      "elapsedMs": 1003.5790420000003,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsMaterialReturn",
+      "startedOffsetMs": 8913.835500000001,
+      "endedOffsetMs": 14122.046833,
+      "elapsedMs": 5208.211332999999,
+      "outcome": "FAILED"
+    }
+  ],
+  "materialPreparation": [],
+  "pageErrors": [],
+  "failure": "expect(locator).toHaveCount(expected) failed\n\nLocator:  getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' })\nExpected: 1\nReceived: 0\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveCount\" getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' }) with timeout 5000ms\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' })\n    14 × locator resolved to 0 elements\n       - unexpected value \"0\"\n",
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/eea0ab09-1911-4ef0-b753-295c458ef00d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/eea0ab09-1911-4ef0-b753-295c458ef00d/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/eea0ab09-1911-4ef0-b753-295c458ef00d/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/319ccb21-4797-4889-bba2-9fd225327470",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "NOT_SELECTED",
+    "secondCenterCycle": "NOT_SELECTED",
+    "messageSettingsApp": "NOT_SELECTED",
+    "messageSettingsMaterialReturn": "FAILED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": null,
+    "conversationId": null,
+    "turnId": null,
+    "sameDocumentNavigation": null,
+    "originalTurnReceiptId": null,
+    "actor": null,
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": null
+  },
+  "secondCenter": {
+    "identities": [],
+    "baseUrl": null,
+    "draftA": null,
+    "draftB": null,
+    "receiptA": null,
+    "lateRead": null
+  }
+}

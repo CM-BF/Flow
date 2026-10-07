@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
-完整feature状态 **IN_PROGRESS**；当前组合 target **c4bee7707a273e98ba7b07dc061ec13e78094c2f** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /17源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；浏览器两旅程仍NOT_RUN、主线/个人部署未验。
+完整feature状态 **IN_PROGRESS**；当前组合 target **424c6466bd28a838b91cc490a7b52021202b4d17** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /17源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；浏览器两旅程仍NOT_RUN、主线/个人部署未验。
 
 旧[37166 CHANGES_REQUESTED](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-37166-source-review-20261007.json)、[9fc0两P2修复批准](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9fc0-source-local-review-20261007.json)及失败原件保留，旧十一direct不能替新mountedApp。root撤回exact File attachment readiness猜测，不记已证bug；保留有效B身份加强。单一[feature-review-entry](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)和[当前manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)指明源码/实际/未验范围。
 
@@ -11,3 +11,9 @@
 ## 2026-10-07 首次实际安全点
 
 当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-first/manifest.json)，[SQL供给](../../docs/evidence/wpf-message-settings-app/runtime-sql-supply.json)。
+
+## 当前固定差量与第二actual
+
+当前target 424c6466bd28a838b91cc490a7b52021202b4d17 仅fixture公开目录header一行透传；16其余源码不变，c4bee/root475e原批准与两FAIL均保持历史绑定。第二actual cookieRead PASS、material选择FAIL未进入hold，无PNG；当前phase18962/71038，清理闭合。源码链与实际限制见 ../../docs/evidence/wpf-message-settings-app/fixture-protocol-fix.json；不改原count/timeout或把准备当通过。
+
+424c一行差量已获root dfe8限定源码批准/0finding，原件保存在own source-research；并非related actual已通过。

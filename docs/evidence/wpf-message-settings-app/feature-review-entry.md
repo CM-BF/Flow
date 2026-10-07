@@ -1,6 +1,6 @@
 # MSG03 固定源码独审入口
 
-当前实现 **c4bee7707a273e98ba7b07dc061ec13e78094c2f**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
+当前实现 **424c6466bd28a838b91cc490a7b52021202b4d17**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
 
 固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / 两browser NOT_RUN / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
 
@@ -37,3 +37,9 @@ App每view唯一C与opaque ownership；P01现action/context私有port复用Picke
 ## 2026-10-07 首次实际安全点
 
 当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](browser-attempts/material-first/manifest.json)，[SQL供给](runtime-sql-supply.json)。
+
+## 当前固定差量与第二actual
+
+当前target 424c6466bd28a838b91cc490a7b52021202b4d17 仅fixture公开目录header一行透传；16其余源码不变，c4bee/root475e原批准与两FAIL均保持历史绑定。第二actual cookieRead PASS、material选择FAIL未进入hold，无PNG；当前phase18962/71038，清理闭合。源码链与实际限制见 fixture-protocol-fix.json；不改原count/timeout或把准备当通过。
+
+424c一行差量已获root dfe8限定源码批准/0finding，原件保存在own source-research；并非related actual已通过。
