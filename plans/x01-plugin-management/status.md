@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:57:52.959259+00:00 |
+| 最近更新时间 | 2026-10-07T06:05:13.906868+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 本次仅归档已获独审及READY输入；提交推送后clean、5源与原raw停止写入 |
-| 工作分支状态 | approved |
-| 检查状态 | 新v3合同+journal 11/11、focusedtypes0，0PG；旧领域StageC27已独审并main |
-| Review | status_read 2026-10-07T05:52:15.936782Z 对c15五源与local结果APPROVED/0P1P2；旧领域已main |
+| 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
+| 工作分支状态 | in-progress |
+| 检查状态 | 中心片types0/10定向通过（SQL边界fake+真实inject，0PG）；前片11和旧27不重跑 |
+| Review | 中心source 0224e94d1133a72478fdf50380f726bd2ba5922f 待独审；c15前片APPROVED保持 |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
-| 实现目标 | c15c7ddaef1d23a24a550c75a4d151a33be76f81 |
-| 实现范围 | packages/contracts/src/runner-claim.ts, packages/contracts/src/plugin-runner-claim.ts, packages/contracts/src/plugin-runner-claim.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-plugin-claim.test.ts |
-| 本片段交付阶段 | implementation |
+| 实现目标 | 0224e94d1133a72478fdf50380f726bd2ba5922f |
+| 实现范围 | apps/server/src/index.ts, apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/runner-claim-routes.ts, apps/server/src/runner-claim-routes.test.ts, apps/server/src/plugin-runtime/claim.ts, apps/server/src/plugin-runtime/claim.test.ts, docs/evidence/x01/center-claim-fixture.ts, docs/evidence/x01/center-claim-local.py, docs/evidence/x01/center-claim-vitest.config.mjs, docs/evidence/x01/center-claim-tsconfig.json |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已审领取合同和journal可接收；正把插件资格接入中心真实领取事务 |
-| 下一可用交付 | 中心按当前资格领取插件任务，旧runner安全跳过；之后接真实runner与现成npm能力 |
-| 当前阻塞 | NONE: 本片已审可接收；生产领取和执行为下一片，共享入口需与现owner精确交接 |
+| 当前产出 | 中心领取入口已接插件资格与旧runner过滤，局部类型和行为验证通过，待独审及真实专库验证 |
+| 下一可用交付 | 验证中心实际SQL与恢复后接真实runner执行和现成npm能力 |
+| 当前阻塞 | NONE: 固定小片可独审；真实PG尚未运行，需沿共享窗口安排 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -249,3 +249,7 @@ status_read于2026-10-07T05:52:15.936782Z独立SOURCE_AND_LOCAL_RESULT_REVIEW_AP
 
 
 中心领取段启动：固定main5cd四个当前入口/回执源码，新增8literal原子amend v10 COMMITTED 2026-10-07T05:57:01.914Z。当前只source，S01性能独占准备中，0新checks/PG；复用既有allocator、事务与flow.commands，不建第二领取状态权威。当前实现目标c15仍是已审前片，新中心尚未固定，不能继承批准。
+
+## 2026-10-07T06:05:13.906868+00:00 中心真实领取入口固定交审
+
+source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10。两个实际local进程于06:03:32.085299→06:03:49.535124 UTC结束并直接归还C02；types0+10/10，0PG/网络listener。固定main database donor在真实module位置加载、原callback事务实现参与；SQL fake不能替代真实PG过滤/并发保证，下一PG反例明确NOT_RUN。S01性能等待05:59前后仅依据MikaOPEN/06:00:50.057实际归还消息，不推独立壁钟。架构影响：原center启动消耗既有034，原领取路径支持严格v3；runtime/client/phase port未接，基线图待main后Lead更新。

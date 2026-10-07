@@ -1,3 +1,11 @@
+状态：PENDING（中心v3领取入口与局部结果；真实PG未运行）
+
+Review target commit: 0224e94d1133a72478fdf50380f726bd2ba5922f
+
+[固定交审入口](../../docs/evidence/x01/center-claim-review-ready.md)。旧c15五源批准保持；本片7源及支持代码尚待独审，types0/10通过不是PG/全X01验收。
+
+---
+
 状态：APPROVED（仅v3领取合同与AdmissionJournal及局部结果；未接生产v3领取/执行）
 
 Review target commit: c15c7ddaef1d23a24a550c75a4d151a33be76f81

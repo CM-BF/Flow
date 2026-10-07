@@ -1,0 +1,340 @@
+{
+  "startedAt": "2026-10-07T06:03:32.085299+00:00",
+  "startEpoch": 1791353012.0854511,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T06:03:32.086486+00:00",
+      "freeBeforeBytes": 24458911744,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-7h46bgdl",
+        "dev": 16777234,
+        "ino": 123555645,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/center-claim-tsconfig.json"
+      ],
+      "process": {
+        "pid": 42604,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2044,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T06:03:34.131483+00:00",
+      "elapsedBeforeReceiptSeconds": 2.044793040957302
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T06:03:48.424287+00:00",
+      "freeBeforeBytes": 24459202560,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-d61vam77",
+        "dev": 16777234,
+        "ino": 123555681,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 4122,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/center-claim-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-d61vam77/tests.json"
+      ],
+      "process": {
+        "pid": 51191,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1109,
+        "observed_bytes": 176,
+        "retained_bytes": 176,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "X01_FIXED_MAIN_DATABASE_LOADED\nX01_FIXED_MAIN_DATABASE_LOADED\nJSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-d61vam77/tests.json\n",
+      "rawBytes": 176,
+      "rawSha256": "52378dcd2103387700de143821310e4e46682d8b93eba2ef0afc5801775983d0",
+      "tests.json": {
+        "numTotalTestSuites": 2,
+        "numPassedTestSuites": 2,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 10,
+        "numPassedTests": 10,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791353028636,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "the production claim routes decode v3 and return an allocated binding through the real transaction path",
+                "status": "passed",
+                "title": "the production claim routes decode v3 and return an allocated binding through the real transaction path",
+                "duration": 106.07833299999999,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "malformed v2 opt-in fails before any transaction and legacy identity stays v2",
+                "status": "passed",
+                "title": "malformed v2 opt-in fails before any transaction and legacy identity stays v2",
+                "duration": 2.2422090000000026,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791353029406,
+            "endTime": 1791353029514.2422,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/runner-claim-routes.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "legacy and v2 apply qualification filtering before LIMIT, while v3 emits the exact frozen binding",
+                "status": "passed",
+                "title": "legacy and v2 apply qualification filtering before LIMIT, while v3 emits the exact frozen binding",
+                "duration": 24.06262499999997,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "ordinary tasks stay available to v2 and v3 without a binding field",
+                "status": "passed",
+                "title": "ordinary tasks stay available to v2 and v3 without a binding field",
+                "duration": 2.9039999999999964,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "current grant is rechecked under registration lock before allocation, including a change after SQL selection",
+                "status": "passed",
+                "title": "current grant is rechecked under registration lock before allocation, including a change after SQL selection",
+                "duration": 1.692542000000003,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "receipt replays never allocate or renew, disabled/newer revision preserves old pin while revoked tool permission does not",
+                "status": "passed",
+                "title": "receipt replays never allocate or renew, disabled/newer revision preserves old pin while revoked tool permission does not",
+                "duration": 1.3572500000000218,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cross-protocol or changed qualification reuses no allocated key; missing status writes nothing",
+                "status": "passed",
+                "title": "cross-protocol or changed qualification reuses no allocated key; missing status writes nothing",
+                "duration": 0.8109169999999608,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "expired, stale, completed and revoked ownership cannot recover an executable assignment",
+                "status": "passed",
+                "title": "expired, stale, completed and revoked ownership cannot recover an executable assignment",
+                "duration": 1.4136250000000246,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "full request is detached before checkout and duplicate or corrupt receipt evidence fails closed",
+                "status": "passed",
+                "title": "full request is detached before checkout and duplicate or corrupt receipt evidence fails closed",
+                "duration": 0.4762499999999932,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong host or revoked grant never reaches allocation, and capacity or maintenance blocks new opportunities",
+                "status": "passed",
+                "title": "wrong host or revoked grant never reaches allocation, and capacity or maintenance blocks new opportunities",
+                "duration": 0.5162500000000136,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791353029077,
+            "endTime": 1791353029110.5164,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T06:03:49.535112+00:00",
+      "elapsedBeforeReceiptSeconds": 1.1101621669949964
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 900,
+    "commands": 6,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 4072407040,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tar": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T06:03:49.535124+00:00",
+  "sourceAttribution": {
+    "kind": "sourceFixedBeforeBothCommands",
+    "sourceCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+    "files": [
+      {
+        "path": "apps/server/src/index.ts",
+        "bytes": 14801,
+        "sha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071"
+      },
+      {
+        "path": "apps/server/src/runners.ts",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      },
+      {
+        "path": "apps/server/src/runner-claim-receipts.ts",
+        "bytes": 2477,
+        "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+      },
+      {
+        "path": "apps/server/src/runner-claim-routes.ts",
+        "bytes": 1277,
+        "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+      },
+      {
+        "path": "apps/server/src/runner-claim-routes.test.ts",
+        "bytes": 2486,
+        "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+      },
+      {
+        "path": "apps/server/src/plugin-runtime/claim.ts",
+        "bytes": 2773,
+        "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+      },
+      {
+        "path": "apps/server/src/plugin-runtime/claim.test.ts",
+        "bytes": 6528,
+        "sha256": "d2e97ab9b88d48e773044e88a50fc237c1c29cfbbe3fce892e1de5de342a6883"
+      }
+    ]
+  },
+  "selection": {
+    "typesExit": 0,
+    "testFiles": 2,
+    "selected": 10,
+    "passed": 10,
+    "failed": 0,
+    "postgresqlExecuted": false,
+    "networkListeners": 0,
+    "mainDatabaseSha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+  },
+  "localReturnedAt": "2026-10-07T06:03:49.535124+00:00",
+  "limitsNote": "End-sample is not a hard resource peak. Source preparation and performance-window wait are not test execution. Whole external tool wall unknown."
+}
