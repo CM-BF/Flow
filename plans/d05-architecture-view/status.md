@@ -9,7 +9,7 @@
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -280,3 +280,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T17:02:13.739Z：main e5ecd07bc推送成功；自有4320原PID55292经精确args/cwd确认后正常停止，新PID50158实读208来源。两canonical current，公开登录入口binding保持，未读取token/刷新浏览器/操作个人服务。[实际回执](../../docs/evidence/d05/visual-queue-208-live.json)。此前source分支两次500失败不改写，随后按实际push结果另核。
 
 2026-10-07T21:59:16.198Z：按原D05 v6精确范围补三项唯一来源；仅登记和链接核对，不改原owner status、不推断历史时间，0工程测试/个人操作。候选审查与实际部署另记。
+
+2026-10-07T22:01:03.629Z：native_center_owner对固定d931003d8登记差异独立APPROVED/0P1P2，旧208逐字保持，211候选待main与实际换载；见[限定登记审查](../../docs/evidence/d05/three-canonical-211-review.json)。
