@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T15:00:11.690Z |
+| 更新时间 | 2026-10-07T15:05:02.127Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 双槽宿主模块已集成主线，正在准备独立安装验证；个人安装保持不变。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 双槽宿主模块已集成主线，新的组合来源已固定，产物构建候选待审；个人安装保持不变。 |
 | 下一可用交付 | 固定新宿主与领取资格的组合产物，在专库验证两槽登记、目录、领取和维护。 |
-| 当前阻塞 | ACTIVE: 真实宿主验证仍需固定组合产物与隔离入口；源码组合已具备，正在准备有限构建。 |
+| 当前阻塞 | ACTIVE: 产物构建候选等待独立审查和实际窗口；隔离宿主与个人激活仍未执行。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [隔离宿主候选](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)；源码组合与实际artifact待固定，个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [隔离宿主候选](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)；源码组合098b已固定，构建候选待审；实际artifact/个人/双端/provider仍开放 |
 
 ## 等待记录
 
@@ -58,3 +58,5 @@
 本工作段于2026-10-07T14:39:51.563Z首次fresh观察时已进入准备；14:44:58.126Z再次核claim v4、clean d409，仅own两个目录。历史首次任务开工UNKNOWN不重置。选择04da+15已审路径组合，33直接输入、7依赖输入和migration树同字节，投影archive1000文件/7,897,181B；不称full246或实际artifact。构建/PG/host均NOT_RUN。3个pre-I/O参数检查与两个work模块导入通过，实际artifact/runtime未加载；新candidate/实际入口与原SOURCE批准分开，没有SDK query或个人读取。
 
 Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（tree f9f149a4dda976dad500545df1b26f825ac5b59d）；后续仅据此准备既有builder有限段，未构建/启动。首次status解析缺ACTIVE前缀的原结果保留，纠正后另存同包status-parse-final.json。
+
+2026-10-07T15:05:02.127Z：已固定组合098b的[构建候选](../../docs/evidence/svc09/message-settings-activation/host-integration/build/recipe.md)。保留原工具/产物来源区别，81source/33SQL与既有安装闭包在实际构建断言；2新准备检查及AST通过，66ms/raw204B、15:03:25.060666Z组absent/双EOF/exact scratch removed。build/SDKimport/host/PG/provider仍NOT_RUN，等待准备独审及实际heavy排期，不预占。

@@ -1,0 +1,55 @@
+{
+  "kind": "SVC09A_FIXED_BUILD_INPUT_DELTA",
+  "target": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "sourceTree": "f9f149a4dda976dad500545df1b26f825ac5b59d",
+  "sourceArchive": {
+    "files": 1000,
+    "logicalBytes": 7897181
+  },
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "inherited": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "bytes": 40316,
+    "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+    "gitRef": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+    "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json"
+  },
+  "composition": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+    "bytes": 11340,
+    "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974"
+  },
+  "lateLogoutInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "bytes": 3271,
+    "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368",
+    "fixedRef": "a6adfd5970aa77c2440f8eeb89b285ed90bae565"
+  },
+  "sharedEntry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "bytes": 11839,
+    "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+  },
+  "runtimeProof": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "bytes": 5080,
+    "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "options": {
+    "evidenceDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build",
+    "temporaryPrefix": "/private/tmp/flow-svc09a-artifact-",
+    "runtimeProof": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs"
+  },
+  "meaning": "Original fixed builder on one new empty artifact store; resulting artifact archive is exact098b composition with203ec retention. Original inherited JSON and runtime/SQL/cache bindings stay byte-identical; changed source expectations are replaced by composition paths, not checked against stale source hashes."
+}

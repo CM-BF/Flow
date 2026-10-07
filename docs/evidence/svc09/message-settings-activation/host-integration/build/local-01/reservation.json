@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T15:03:24.992460+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/check.mjs"
+  ],
+  "freeBytes": 20794048512,
+  "pythonAST": "PASS",
+  "runtimeBudgetSeconds": 10,
+  "rawBytesCap": 262144,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-build-prepare-0q76lrbu",
+  "dev": 16777234,
+  "ino": 124237864,
+  "inputs": [
+    {
+      "path": "entry.mjs",
+      "bytes": 3233,
+      "sha256": "a8dd4ac596e0e728f4fef9283edf51e482e9f216db31e4f85cee43f2f967f5d7"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 2703,
+      "sha256": "7db4c589a10d2a60df1c248e835288acd4a4e31fe581048051c023f1d79ddebf"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 3898,
+      "sha256": "cf79be5795f3f8c7905e8bb45719a7fc704899017cd346876907535fe5f08623"
+    },
+    {
+      "path": "check.mjs",
+      "bytes": 1491,
+      "sha256": "22d9063b9df6afd0c6fb1e86eba9b09a29ab5e42a79e18f1dfaa23f83b0dcc85"
+    },
+    {
+      "path": "local-run.py",
+      "bytes": 3095,
+      "sha256": "517ceaa47480bce53c59c7997025fdb43e9bd3772b5dd0dcf6e70c4863c729df"
+    }
+  ]
+}

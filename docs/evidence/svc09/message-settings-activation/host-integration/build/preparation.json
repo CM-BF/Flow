@@ -1,0 +1,166 @@
+{
+  "kind": "SVC09A_FIXED_BUILD_PREPARATION",
+  "at": "2026-10-07T15:05:02.127Z",
+  "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "sourceTree": "f9f149a4dda976dad500545df1b26f825ac5b59d",
+  "assemblyReceipt": "m2-integration/docs/evidence/i02/svc09a-source-assembly/result.json at 098b assembly handoff",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "freshList": "active exact two own directories verified while sealing this packet; actual run must fresh again"
+  },
+  "bindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 3233,
+      "sha256": "a8dd4ac596e0e728f4fef9283edf51e482e9f216db31e4f85cee43f2f967f5d7"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 2703,
+      "sha256": "7db4c589a10d2a60df1c248e835288acd4a4e31fe581048051c023f1d79ddebf"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 3898,
+      "sha256": "cf79be5795f3f8c7905e8bb45719a7fc704899017cd346876907535fe5f08623"
+    },
+    {
+      "path": "check.mjs",
+      "bytes": 1491,
+      "sha256": "22d9063b9df6afd0c6fb1e86eba9b09a29ab5e42a79e18f1dfaa23f83b0dcc85"
+    },
+    {
+      "path": "local-run.py",
+      "bytes": 3095,
+      "sha256": "517ceaa47480bce53c59c7997025fdb43e9bd3772b5dd0dcf6e70c4863c729df"
+    },
+    {
+      "path": "recipe.md",
+      "bytes": 5203,
+      "sha256": "4321bdd4e061e52802d0cd00271e0e7c367aefd1a7e0958d726e9b717f8bdc85"
+    },
+    {
+      "path": "local-01/cleanup.json",
+      "bytes": 278,
+      "sha256": "21c7a2a239783caf3867b720db087183d069b61b2864397c93194ccf47f8204c"
+    },
+    {
+      "path": "local-01/reservation.json",
+      "bytes": 1267,
+      "sha256": "468317671524fa9ff6a8ce359ede77f16afd16d5b1c4fc0cd6e6e9acc4bc37af"
+    },
+    {
+      "path": "local-01/result.json",
+      "bytes": 653,
+      "sha256": "1f5c640aaed8dbdb33b4b9d9ba9eb059851b8c09e137b24786da8ce338d34bfa"
+    },
+    {
+      "path": "local-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local-01/stdout.txt",
+      "bytes": 204,
+      "sha256": "22a6608b5c1a5ad83d513959f6ab5a844942e31e1af4789e6bcd5163a1dc6ee2"
+    }
+  ],
+  "inherited": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "bytes": 40316,
+    "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+    "gitRef": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+    "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json"
+  },
+  "composition": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+    "bytes": 11340,
+    "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974"
+  },
+  "lateLogoutInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "bytes": 3271,
+    "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368",
+    "fixedRef": "a6adfd5970aa77c2440f8eeb89b285ed90bae565"
+  },
+  "methods": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "bytes": 11839,
+      "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "bytes": 5080,
+      "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "resources": {
+    "artifactFileAndManifestLimit": 1073741824,
+    "selectedSeedLogicalBytes": 354552778,
+    "sourceArchiveAllowance": 33554432,
+    "pnpmHomeCacheAllowance": 134217728,
+    "metadataAllowance": 536870912,
+    "rawBytes": 2097152,
+    "liveReserveBytes": 1073741824,
+    "additionalBudgetBytes": 2317352960,
+    "minimumFreeBytes": 3927965696,
+    "selectedSeedAllowance": 536870912,
+    "baseMinimumFreeBytes": 3391094784,
+    "coordinationAllowanceBytes": 536870912,
+    "coordinationAllowanceMeaning": "Conservative planning margin; not a claim that another task is running. At execution, add any actual concurrent allocation exceeding this margin; never lower base reserve."
+  },
+  "runtimePolicy": {
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outerCaptureBytes": 1048576,
+    "existingNamespace": "REFUSE_NO_RETRY"
+  },
+  "sourceExpectations": {
+    "inheritedUnchanged": 63,
+    "lateLogout": 3,
+    "composition": 15,
+    "unique": 81,
+    "sql": 33,
+    "snapshots": 271,
+    "importers": 7
+  },
+  "local": {
+    "path": "local-01",
+    "distinct": 2,
+    "passed": 2,
+    "pythonAST": "PASS",
+    "elapsedMs": 66,
+    "rawBytes": 204,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "scratch": "removed",
+    "returnedAt": "2026-10-07T15:03:25.060666Z"
+  },
+  "actual": {
+    "build": "NOT_RUN",
+    "artifact": "UNKNOWN",
+    "host": "NOT_RUN",
+    "PG": 0,
+    "provider": 0,
+    "personal": 0
+  },
+  "readiness": "READY_FOR_PREPARATION_REVIEW_NOT_EXECUTION",
+  "limits": "New fixed artifact only; no SDK/native process, actual host, browser, personal activation or actual account qualification."
+}
