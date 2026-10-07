@@ -358,7 +358,8 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
-      expireSessions: () => pool!.query("UPDATE flow.browser_sessions SET expires_at=clock_timestamp()-interval '1 second'"),
+      // Keep the expired row legal under 028's created/expires constraint, even immediately after login.
+      expireSessions: () => pool!.query("UPDATE flow.browser_sessions SET created_at=statement_timestamp()-interval '2 seconds', expires_at=statement_timestamp()-interval '1 second'"),
       revokeSessions: () => pool!.query("DELETE FROM flow.browser_sessions"),
     };
   } catch (error) { await close(); throw error; }
