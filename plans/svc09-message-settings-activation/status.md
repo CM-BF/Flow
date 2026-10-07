@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:48:12.215106Z |
+| 更新时间 | 2026-10-07T17:04:10.310331Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 双槽生命周期与分别领取已有隔离实证；最后断言的类型错误已在调用方修复，新增局部检查通过。 |
-| 下一可用交付 | SQL合同修复及新一次性宿主候选的独审；完整旅程与个人激活仍未验。 |
-| 当前阻塞 | ACTIVE: 完整宿主旅程仍未通过；修复与新候选待独审及实际窗口，旧失败原因保持未知，不能自动重投。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 双槽调用方修复及下一轮隔离宿主准备已获独审通过；已有局部与部分生命周期证据保留。 |
+| 下一可用交付 | Web诊断归还窗口后，执行新一次性隔离宿主旅程并核完整终态；个人激活仍未验。 |
+| 当前阻塞 | ACTIVE: 等待独立实际窗口；当前Web Cookie诊断优先。准备批准不等于运行授权，旧失败及未知原因保留。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | SQL/新候选source 9c73411578f2cf6552a8696511dc2af2402436da；R3 result42c181/delivery313418。 |
 | 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
-| 工作分支状态 | in-progress（产品已main停写；R3失败保真已独审，新caller差量待审） |
+| 工作分支状态 | in-progress（产品已main停写；R4准备已独审，source冻结，实际未运行） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | R3实际结果APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY，无P1/P2；I02 fixed17ac5917唯一原件。新SQL/R4准备待独审。 |
+| Review | R4准备APPROVED_FIXED_R4_HOST_PREPARATION，无P1/P2；唯一原件main c6ada2b76 docs/evidence/i02/svc09a-host-r4-preparation-review.json，16:51:24.998Z。R3限定批准不扩大。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
-| 运行窗口 | R3 16:33:21.000Z START；16:35:51.819021Z operator finished；16:36:44.486680Z runtime RETURN，8generation stopped/13 PID及组absent/DB连接[]，DB/private KEEP。 |
+| 运行窗口 | R4 NOT_RUN / 未授实际窗口；16:51:24.998Z准备批准后等待。此前局部16:46:53.482217Z RETURN；R3实际16:36:44.486680Z RETURN，DB/private KEEP。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)与三次host失败保真已独审；[SQL/R4局部](../../docs/evidence/svc09/message-settings-activation/host-integration/host-sql-contract-result.json)已固定待审；完整host/个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)与三次host失败保真已独审；[SQL/R4局部](../../docs/evidence/svc09/message-settings-activation/host-integration/host-sql-contract-result.json)与准备已独审，实际窗口待授；完整host/个人/双端/provider仍开放 |
 
 ## 等待记录
 
@@ -52,6 +52,8 @@
 | SVC09A-W05 | 2026-10-07T15:46:59.000Z | 2026-10-07T15:56:01.614895Z | 资源 | 窗口/floor与PG余量现已fresh满足，等待以本次START事件结束；此前仅只读准备 | Lead安排及host-fresh-readiness.json |
 | SVC09A-W06 | 2026-10-07T16:15:48.486779Z | 2026-10-07T16:23:00.380534Z | 验证失败 | R2输入路径合同不匹配；本次源码修复与直接消费者完成，期间含实施，不是纯资源等待 | host-r2-result-analysis.json；prepare-local-06/07 |
 | SVC09A-W07 | 2026-10-07T16:24:21.318911Z | 2026-10-07T16:33:21.000Z | 审查 | 新合同/R3候选固定后唯一窄审；实际窗口另协调，不预占 | host-path-contract-result.json；host-preparation-r3.json |
+| SVC09A-W08 | 2026-10-07T16:49:12.381941Z | 2026-10-07T16:51:24.998Z | 审查 | R4固定候选可审后获唯一准备批准；此前实际实现/局部检查不算纯等待 | host-preparation-r4.json at；I02唯一review at |
+| SVC09A-W09 | 2026-10-07T16:51:24.998Z | OPEN | 资源 | 准备批准后等待新的实际窗口；Web Cookie诊断优先，Lead明确下一调度且fresh门槛全满足才解除 | I02 review at；Lead本次排期消息；host-r4-review-receipt.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -104,3 +106,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 ## SQL合同与R4候选差量
 
 2026-10-07T16:48:12.215106Z：R3唯一保真批准已正常引用I02 fixed17ac5917，不复制审查原件；原code:null/FAIL/DB及private KEEP不改。新source9c734115只修改own caller，实际SQL text[]/受控SQLSTATE与phase及新R4namespace。局部首次有来源时间16:44:03.206402Z；两轮8不同（5新+3受影响）全绿，256ms/raw1337B，双组absent/双EOF、两exact空scratch移除，16:46:53.482217Z RETURN。固定数据库原schema被真实查询port专测消费，未连接PG；原终态/身份/ACK与清理断言未删。旧三轮入口不复用，新候选只给差量pin并校验继承原R3准备，actual R4尚未启动/未预占。最初本次源码编辑UTC未独立保留，不用提交时间冒充工作起点。
+
+2026-10-07T17:04:10.310331Z：正常收录R4唯一独审APPROVED_FIXED_R4_HOST_PREPARATION（main c6ada2b76，review16:51:24.998Z）。[本次收据](../../docs/evidence/svc09/message-settings-activation/host-integration/host-r4-review-receipt.json)仅引用原件，7源/21786B准备保持审定字节，两新namespace不存在。I01第三轮已完整归还，Web Cookie诊断90s为唯一NEXT，R4在后；没有新运行授权或资源预占。此安全点仅metadata，无工程复测/运行/个人读取，source停写。历史首次UNKNOWN与完整任务NOT_COMPLETED不变。

@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T17:04:10.310331Z",
+  "state": "APPROVED_FIXED_R4_HOST_PREPARATION",
+  "reviewRef": "c6ada2b76",
+  "reviewPath": "docs/evidence/i02/svc09a-host-r4-preparation-review.json",
+  "reviewAt": "2026-10-07T16:51:24.998Z",
+  "reviewSha256": "51c6e0641ffa3fadde9773f2e9cd726787884d24aaea191e4d0577349ede34e4",
+  "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "delivery": "fb3bd1b7d3fdb5c8c5b250fd2e0ae40cf919ae2c",
+  "packetBytes": 21786,
+  "packetSha256": "d38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2",
+  "scope": "Preparation and bounded local evidence only; no actual run authority",
+  "staticEntry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-r4-once"
+  ],
+  "source7Unchanged": true,
+  "newNamespaces": "absent",
+  "runtimeGate": "Full dependency/retained identity/floor/PG/holder freshness deferred to actual admission; no runtime import or current private-artifact access in this metadata step.",
+  "currentWait": {
+    "startedAt": "2026-10-07T16:51:24.998Z",
+    "endedAt": null,
+    "source": "R4 became review-approved at this recorded time; waiting for distinct actual-window grant. Lead reports I01 third FULL_RETURN and Web Cookie diagnostic90s unique NEXT before R4.",
+    "actualR4": "NOT_RUN",
+    "reservedResources": false
+  },
+  "preserved": "R1/R2/R3 failures and KEEP; original code:null; task first start UNKNOWN. No test/build/host/PG/provider/personal action."
+}

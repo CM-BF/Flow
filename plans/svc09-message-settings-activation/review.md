@@ -53,3 +53,9 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 2026-10-07T16:48:12.215106Z：assignment唯一APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY/noP1P2，原件I02 fixed17ac5917 `docs/evidence/i02/svc09a-host-r3-result-review.json`（review16:41:56.399Z）；45原件+2继承/19执行+6runtime，原UnknownError/code:null、FAIL/KEEP与完整旅程未通过保持。只引用不复制。
 
 新source9c73411578f2cf6552a8696511dc2af2402436da：typed SQL/安全错误phase与SQLSTATE、R4固定新模式、校验继承pin。8不同分两轮全绿，256ms/1337B；只原5新+3受影响消费者，不重跑旧host/build。结果见host-sql-contract-result.json；新差量尚待独审，实际R4 NOT_RUN。
+
+## R4准备限定批准
+
+2026-10-07T17:04:10.310331Z正常收录：assignment唯一 `APPROVED_FIXED_R4_HOST_PREPARATION`，P1/P2=0，review16:51:24.998Z；原件main c6ada2b76 `docs/evidence/i02/svc09a-host-r4-preparation-review.json`，不复制。source9c734115/deliveryfb3bd1b7与packet d38a5bfd不变；24新/引用绑定及19有效执行pin、原8例与双组收尾已核。审者5公开runtime重核，私有artifact仅继承原审pin的范围如实保留。
+
+批准仅准备与局部证据；实际R4 NOT_RUN，需Web Cookie唯一NEXT完整RETURN后Lead新调度及全部fresh门槛，不能沿旧许可重投。源码冻结，旧R3首因/FAIL/KEEP不变。
