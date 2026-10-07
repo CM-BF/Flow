@@ -27,3 +27,7 @@ Target `7324a2a0b495eb82e64693ec6d1b8781eb12d8c5`，current-migration.mjs / curr
 ## 当前迁入Module独审
 
 Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT_MODULE_AND_LOCAL_DELTA，无P1/P2，24绑定及6distinct/7selections原件核同、0重跑。原件：[唯一审查](../../docs/evidence/svc06/browser-recovery/current-migration-independent-review.json)。不批准个人实例/迁入/维护执行；后继v2读取接缝和薄调用仍待独审。
+
+## 薄入口和两读取port待独审
+
+固定source `6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba`，14source与7原证据绑定见[current-entry-result](../../docs/evidence/svc06/browser-recovery/current-entry-result.json)。9不同直接行为/10选择含已保留首红，最终9绿，另2加载/参数检查；6轮661ms/2580B，均absent/双EOF及exact空scratch清理。默认strict-v1保持，显式v2/固定artifact history依赖、旧facts解析闭包与原R2字节扣减各自有据。Reviewer尚未结论；template ready=false，不批准个人实例/执行。7324已审Module已main96b424777，本段不改其字节。

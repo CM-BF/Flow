@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:20:05.609Z；当前迁入Module已独审，实施本次薄入口与v2读取接缝 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:45:43.588Z；当前迁入Module已main，薄入口与读取接缝已固定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前迁入Module target7324a2a0b495eb82e64693ec6d1b8781eb12d8c5 |
-| 工作树dirty状态 | own调用装配与已领取reader接缝实施中；已审Module/产品/build入口保持不变 |
+| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前薄入口/两读取接缝target6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba |
+| 工作树dirty状态 | 本次source已固定停写，证据与status封存；已审Module/产品/build入口保持不变 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | 7324a2a0b495eb82e64693ec6d1b8781eb12d8c5 |
-| 实现范围 | docs/evidence/svc06/browser-recovery/current-migration.mjs, docs/evidence/svc06/browser-recovery/current-migration.test.mjs, docs/evidence/svc06/browser-recovery/retention-validate.py |
-| 检查状态 | artifact实际33158ms已审不重跑；retention5/5已审；当前迁入6distinct/7selections通过、244ms/1100B，两owned组absent/双EOF/空scratch清理；实际Node及自有cd27 pg形态加载通过，无连接；0个人/PG/clone/provider |
-| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审/尚未主线接收，新网页兼容和个人更新未验 |
+| 本片段交付阶段 | review |
+| 实现目标 | 6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba |
+| 实现范围 | docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs, docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs, docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs, docs/evidence/svc06/browser-recovery/runner-idle.mjs, docs/evidence/svc06/browser-recovery/history-port.test.mjs, docs/evidence/svc06/browser-recovery/current-import.mjs, docs/evidence/svc06/browser-recovery/current-maintenance.mjs, docs/evidence/svc06/browser-recovery/current-operator.py, docs/evidence/svc06/browser-recovery/current-update-template.json, docs/evidence/svc06/browser-recovery/current-entry.test.mjs, docs/evidence/svc06/browser-recovery/current-entry-load.mjs, docs/evidence/svc06/browser-recovery/current-operator.test.py, docs/evidence/svc06/browser-recovery/current-entry-readonly.json, docs/evidence/svc06/browser-recovery/retention-validate.py |
+| 检查状态 | 本次9distinct行为/10选择含1历史红，最终9绿；另2加载/参数检查；6轮661ms/2580B、6组absent/双EOF/exact空scratchremoved；旧绿不重跑，0个人/PG/clone/provider |
+| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850待独审，新网页兼容和个人更新未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版后台产物和保留旧产物的有界工具已交付；适配现有安装的迁入模块已通过审查，正在接好本次调用和维护检查。 |
-| 下一可用交付 | 完成可调用的迁入与维护入口，接齐兼容报告后固定真实参数。 |
-| 当前阻塞 | ACTIVE: 正式网页组合报告尚未齐备，真实安装参数及执行调用尚未封定，个人更新未进入执行。 |
+| 当前产出 | 新版后台产物和迁入模块已交付；本次维护入口及保留检查已完成局部验证，等待独立审查。 |
+| 下一可用交付 | 审查本次调用装配，接齐兼容报告后固定真实安装参数。 |
+| 当前阻塞 | ACTIVE: 正式网页报告和现场参数尚未齐备，本次调用装配待审；个人更新未进入执行。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact及retention工具均已独审/main；当前迁入Module APPROVED，只覆盖模块/参数与局部证据，不当现场ready |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v5 active；own双目录及runner-files.mjs/admission-preservation.test.mjs两个exact reader路径，15:13:58.307Z正式追加；已交产品全部停写 |
-| 架构影响 | 已main有限retention Interface；当前own迁入adapter复用原FSM/双锁/只读SQL，不改运行artifact；固定部署差异由Execution Lead登记 |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
+| 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850待接收，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -75,6 +75,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 | SVC06B-W04 | 2026-10-07T14:32:21.520Z | 2026-10-07T14:37:48.376Z | 审查 | 实际产物已独审并main接收，等待已结束 | result-manifest.json / actual-independent-review.json |
 
 | SVC06B-W05 | 2026-10-07T15:09:12.049Z | 2026-10-07T15:11:41.542Z | 审查 | 当前迁入Module正式独审通过，实际实例仍未封定 | current-migration-independent-review.json |
+| SVC06B-W06 | 2026-10-07T15:45:43.588Z | OPEN | 审查 | 固定薄入口及两个只读port待唯一独审，真实实例另待报告和fresh | current-entry-result.json / current-entry-interface.md |
 
 ## 当前增量记录
 
@@ -93,3 +94,6 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T15:09:12.049Z：retention正式独审及main接收已归档，14:53:53.391Z v4只保own双scope。当前迁入Module7324已固定，14:59:11.427237Z→14:59:11.546150Z为5/5；15:05:45.952618Z→15:05:46.080818Z补2/2；6distinct/7selections合计244ms/1100B，含原retention普通段5992ms。两个owned组/双EOF及exact空scratch正常清理，实际RETURN已交Lead/native。13静态source、4继承runtime绑定通过；本Module没有自启动入口，真实实例参数及OPS14薄调用仍未创建，个人安装没有读取或修改。新兼容报告等待保持，不占local/heavy。
 
 2026-10-07T15:20:05.609Z：归档Lead唯一current迁入Module批准；v5限定reader可选校验port，默认strict-v1保持，新增调用方绑定真实v2并保守拒绝未确认投递材料。固定fd9两readonly依赖按HEAD同bytes供给，见reader-support.json。当前只有源码准备；SVC09A构建尚未正式RETURN，故本段未启local/PG/个人读取。GitHub两次500（15:10:17Z、15:10:43Z）保留，remote仍1a489，按Lead停止网络重试；不把local fixed误称remote成功。
+
+2026-10-07T15:45:43.588Z：当前迁入Module7324已main96b424777，GitHub500历史保留，后续正常一次push。新增reader/history/薄入口source6c417850固定：9个不同直接行为，10次选择（首轮test TypeError红保留，最终9绿），另2项真实加载/参数检查；6轮合计661ms/2580B，全部owned组absent/双EOF/各exact空scratch同身份removed。原有普通段累计6653ms；最后实际RETURN15:42:48.372Z，0PG/个人/服务/provider。见[current-entry-result](../../docs/evidence/svc06/browser-recovery/current-entry-result.json)。旧facts的实际pg14包及旧工具与产物history依赖明确分开；原R2归档119396B继续扣原2MiB预算。真实报告和fresh实例仍缺，不声明现场ready。
+
