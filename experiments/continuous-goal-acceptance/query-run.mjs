@@ -3,6 +3,7 @@ import { createQueryObservation } from './query-policy.mjs';
 import { PHASE_LIMITS, consumeSlot, assertNativePermit, NATIVE_MODEL } from './permit.mjs';
 import { failureFact } from './stage-policy.mjs';
 import { GRAPH_TOOLS } from './config.mjs';
+import { sdkErrorKind } from './error-diagnostics.mjs';
 import { recordHostDecisions } from '../native-graph-acceptance/guard.mjs';
 
 function requireValue(value) { if (!value) throw new Error('The actual query request differs from the finite phase policy.'); }
@@ -35,7 +36,7 @@ export function oneShotQueryInput(input) {
 }
 
 /** The original adapter remains the sole stream consumer. This decorates that same iterator and its close. */
-export function createObservedQuery({ mode, phase, reservation, getBinding, nativeQuery, rehearseQuery, report, nativeEnvironment }) {
+export function createObservedQuery({ mode, phase, reservation, getBinding, nativeQuery, rehearseQuery, report, nativeEnvironment, recordError, persistObservation = async () => {} }) {
   const seenTasks = new Set(), seenSlots = new Set();
   report.queries = [];
   return input => {
@@ -65,7 +66,23 @@ export function createObservedQuery({ mode, phase, reservation, getBinding, nati
           row.entry = 'native-started-unknown'; report.nativeQueryCalls++;
           original = nativeQuery(actual);
         } else { row.entry = 'injected'; original = rehearseQuery(prepared, binding, row); }
-        for await (const frame of original) { observed.frame(frame); yield frame; }
+        for await (const frame of original) {
+          let first;
+          try { observed.frame(frame); } catch (error) { first = error; }
+          const errorKind = sdkErrorKind(frame);
+          if (errorKind) {
+            // Preserve the original observation rejection, even when diagnostics/checkpoint also fail.
+            first ??= new Error('SDK reported an unsuccessful result.');
+            row.firstFailure = failureFact(first); row.observation = observed.snapshot();
+            row.errorResult = { kind: errorKind, state: 'unknown', constraint: 'missing-recorder' };
+            try { if (recordError) row.errorResult = await recordError(frame, binding); }
+            catch (error) { row.diagnosticFailure = failureFact(error); }
+            try { await persistObservation(); }
+            catch (error) { row.evidenceFailure = failureFact(error); }
+          }
+          if (first) throw first;
+          yield frame;
+        }
         row.observation = observed.finish(); row.entry = mode === 'native' ? 'native-result-observed' : 'injected-result-observed';
       } catch (error) {
         row.observation = observed.snapshot(); row.failure = 'query-or-observation-unconfirmed'; row.firstFailure = failureFact(error);

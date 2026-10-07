@@ -1,0 +1,13 @@
+✔ diagnostic: success subtype plus is_error persists private text before public rejection (16.724208ms)
+✔ diagnostic: exclusive write failure keeps first SDK rejection and independent cleanup failure (5.841958ms)
+✔ diagnostic: public checkpoint failure remains separate from first SDK failure (5.61575ms)
+✔ diagnostic: success and earlier declaration rejection never write an error result (1.315417ms)
+✔ diagnostic: structured SDK error sources are bounded and never guessed from text (6.338625ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 282.192708

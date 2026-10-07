@@ -1,0 +1,72 @@
+✖ diagnostic: success subtype plus is_error persists private text before public rejection (4.282125ms)
+✔ diagnostic: missing invalid and over-bound body remains unknown with explicit limits (47.709209ms)
+✖ diagnostic: exclusive write failure keeps first SDK rejection and independent cleanup failure (7.278875ms)
+✖ diagnostic: public checkpoint failure remains separate from first SDK failure (0.865208ms)
+✖ diagnostic: success and earlier declaration rejection never write an error result (0.697417ms)
+✔ diagnostic: replaced private directory identity refuses the record (1.158958ms)
+✖ diagnostic: structured SDK error sources are bounded and never guessed from text (0.515166ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 2
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 349.299959
+
+✖ failing tests:
+
+test at experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:36:1
+✖ diagnostic: success subtype plus is_error persists private text before public rejection (4.282125ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:49:31
+      at run (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:31:18)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:38:19
+      at fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:24:15)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:57:1
+✖ diagnostic: exclusive write failure keeps first SDK rejection and independent cleanup failure (7.278875ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:49:31
+      at run (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:31:18)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:58:56
+      at async fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:24:9)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:64:1
+✖ diagnostic: public checkpoint failure remains separate from first SDK failure (0.865208ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:49:31
+      at run (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:31:18)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:65:19
+      at fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:24:15)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:69:1
+✖ diagnostic: success and earlier declaration rejection never write an error result (0.697417ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:49:31
+      at run (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:31:18)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:70:22
+      at fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:24:15)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:81:1
+✖ diagnostic: structured SDK error sources are bounded and never guessed from text (0.515166ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:49:31
+      at run (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:31:18)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:85:19
+      at fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs:24:15)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)

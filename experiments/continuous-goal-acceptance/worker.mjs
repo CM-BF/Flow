@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
+import { dirname } from 'node:path';
+import { createPrivateErrorRecorder } from './error-diagnostics.mjs';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
 import { NativeExecutionError } from '../../apps/runner/src/native-harness/settlement.ts';
@@ -58,8 +60,10 @@ function currentBinding(actual, selected) {
     process.send({ kind: 'observe-assignment', id, assignment: actual }, error => { if (error) finish(error); });
   });
 }
+const recordError = await createPrivateErrorRecorder({ directory: dirname(config.reportFile), sourceDigest: identity.digest,
+  phase: config.phase, secrets: [config.runnerToken] });
 const query = createObservedQuery({ mode: config.mode, phase: config.phase, reservation, getBinding: () => activeBinding,
-  nativeQuery, rehearseQuery, report, nativeEnvironment: config.mode === 'native'
+  nativeQuery, rehearseQuery, report, recordError, persistObservation: () => writeRecord(config.reportFile, report), nativeEnvironment: config.mode === 'native'
     ? { policy: nativeEnvironmentPolicy, binding: config.nativeEnvironment, source: identity } : undefined });
 try {
   const options = { ...adapterOptions(config.mode, config.phase, config.materialFile), query }, original = createClaudeAdapter(options);

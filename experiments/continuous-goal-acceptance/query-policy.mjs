@@ -7,6 +7,13 @@ const label = value => typeof value === 'string' && value.length > 0 && value.le
 const sameNames = (actual, expected) => Array.isArray(actual) && actual.every(value => typeof value === 'string')
   && isDeepStrictEqual([...actual].sort(), [...expected].sort());
 function check(condition, message) { if (!condition) throw new Error(message); }
+// Fixed SDK0.3.290 sdk.d.ts:3693; no inference from arbitrary error text.
+const SDK_ERRORS = new Set(['authentication_failed', 'oauth_org_not_allowed', 'account_on_hold', 'verification_required',
+  'billing_error', 'rate_limit', 'overloaded', 'invalid_request', 'model_not_found', 'server_error', 'unknown', 'max_output_tokens', 'cloud_credential_error']);
+const statusFact = value => value === null || Number.isInteger(value) && value >= 100 && value <= 599
+  ? { state: 'reported', value } : { state: 'unknown', value: null };
+const errorFact = value => SDK_ERRORS.has(value) ? { state: 'reported', value } : { state: 'unknown', value: null };
+
 
 /** Persist the worker's actual SDK entry counter even when no successful result exists. */
 export function recordQueryCount(report) {
@@ -20,7 +27,7 @@ export function createQueryObservation(phase) {
   check(Object.hasOwn(PHASE_LIMITS, phase), 'Unknown observation phase.');
   const limits = PHASE_LIMITS[phase], tools = phase === 'plan' ? GRAPH_TOOLS : ['Read'];
   const facts = { phase, declarationPolicy: DECLARATIONS.policy, effective: null, reads: [], result: null, permissionDenials: null,
-    toolExecutionEvidence: phase === 'plan' ? 'center-audit-required' : 'matching-read-result-required', semanticAcceptance: 'not-evaluated' };
+    toolExecutionEvidence: phase === 'plan' ? 'center-audit-required' : 'matching-read-result-required', semanticAcceptance: 'not-evaluated', sdkErrors: [], sdkErrorsOmitted: 0 };
   let frames = 0, failure = null;
   function observeInit(event) {
     const effective = { model: label(event.model), permissionMode: label(event.permissionMode), tools: event.tools,
@@ -55,7 +62,7 @@ export function createQueryObservation(phase) {
   function observeResult(event) {
     check(facts.effective && label(event.uuid) && event.session_id === facts.effective.nativeSessionId, 'Final identity is missing or mismatched.');
     const result = { subtype: label(event.subtype), isError: event.is_error, nativeSessionId: event.session_id, sourceMessageId: event.uuid,
-      numTurns: event.num_turns ?? null, sdkEstimatedCostUsd: event.total_cost_usd ?? null, modelUsage: event.modelUsage ?? null };
+      apiErrorStatus: statusFact(event.api_error_status), numTurns: event.num_turns ?? null, sdkEstimatedCostUsd: event.total_cost_usd ?? null, modelUsage: event.modelUsage ?? null };
     check(!facts.result || isDeepStrictEqual(result, facts.result), 'Conflicting native final.'); facts.result = structuredClone(result);
     check(Number.isInteger(result.numTurns) && result.numTurns >= 1 && result.numTurns <= limits.maxTurns
       && Number.isFinite(result.sdkEstimatedCostUsd) && result.sdkEstimatedCostUsd >= 0 && result.sdkEstimatedCostUsd <= limits.maxBudgetUsd,
@@ -68,6 +75,13 @@ export function createQueryObservation(phase) {
   }
   function observeFrame(event) {
     check(++frames <= 2048 && Buffer.byteLength(JSON.stringify(event) ?? '') <= 262_144, 'SDK observation bound exceeded.');
+    let diagnostic;
+    if (event?.type === 'assistant' && Object.hasOwn(event, 'error')) diagnostic = { source: 'assistant.error', error: errorFact(event.error) };
+    if (event?.type === 'system' && event.subtype === 'api_retry') diagnostic = { source: 'system.api_retry', error: errorFact(event.error), errorStatus: statusFact(event.error_status) };
+    if (diagnostic) {
+      if (facts.sdkErrors.length < 16) facts.sdkErrors.push({ frameNumber: frames, ...diagnostic });
+      else facts.sdkErrorsOmitted++;
+    }
     if (event?.type === 'system' && event.subtype === 'init') observeInit(event);
     if (['assistant', 'user'].includes(event?.type)) {
       check(event.parent_tool_use_id == null, 'Nested tool execution is outside the finite policy.');

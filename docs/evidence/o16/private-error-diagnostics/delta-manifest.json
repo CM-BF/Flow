@@ -1,0 +1,295 @@
+{
+  "kind": "flow.o16.private-error-diagnostics.delta.v1",
+  "at": "2026-10-07T11:03:05.283149+00:00",
+  "source": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+  "evidenceTarget": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+  "predecessor": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r2/result-manifest.json",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 8874,
+      "sha256": "9e99d31580a56abea29bdc68bd052dad5af3fcb2165b394dbae151988120badf"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/delta-manifest.json",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 9487,
+      "sha256": "d47e8aad3a880c40fa5e33fe51f46cfc4eae50ca8625decba41b00188965711f"
+    }
+  ],
+  "inheritedScope": "Original fixed sources/dependencies retained by reference; 3 prior experiment sources superseded and2new; previous mutable plan/status superseded here. No full source/raw copy.",
+  "changedSourcePaths": [
+    "experiments/continuous-goal-acceptance/error-diagnostics.mjs",
+    "experiments/continuous-goal-acceptance/error-diagnostics.test.mjs",
+    "experiments/continuous-goal-acceptance/query-policy.mjs",
+    "experiments/continuous-goal-acceptance/query-run.mjs",
+    "experiments/continuous-goal-acceptance/worker.mjs"
+  ],
+  "supersededSourcePaths": [
+    "experiments/continuous-goal-acceptance/query-policy.mjs",
+    "experiments/continuous-goal-acceptance/query-run.mjs",
+    "experiments/continuous-goal-acceptance/worker.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r2/result-independent-review.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2041,
+      "sha256": "6578da66cc243a78b37efac9cfe818d3df8d468368f567362712bea89807d1ee"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/Interface.md",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2790,
+      "sha256": "6c88684037ed38a17b72a74cea9b7dd5912d45c71831c51fdd3d8765cfe2b1bc"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/RESULT.md",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 1243,
+      "sha256": "5ed6beaae627d3420f25bf2f1b3cef9a04eeb90192e2bf6ba35075ea1c1c7008"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/readonly-inputs.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2506,
+      "sha256": "c6dcbde91fd3c0729460a6855d52375c9f2154766784fe6f140832824a57e76d"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-01/checkpoint.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 763,
+      "sha256": "5aa76de20fff0c8a7de3c1b42e867e925a5882078593248f62d48c384e4d0bfd"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-01/reservation.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2349,
+      "sha256": "8ede85e083d8db030543bff771ed8578029cdc950e5c6742332ecc523d75722a"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-01/result.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 834,
+      "sha256": "3034345ed455c2ae140c68824770bbda53e1fec7bb3e0377b26ece9efcf72745"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-01/stderr",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-01/stdout",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 7055,
+      "sha256": "0d5382366b34cc3d4a7f168c01f9a48d6a9f564d8e7fd8ab7c80408f6874a9bd"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-02/checkpoint.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 615,
+      "sha256": "3e00cda1ea767a7797b7c27e410de32a3b504911295c8e568c604cac7195f2b0"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-02/reservation.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2474,
+      "sha256": "85398720502e6f770cc9f63dcd1319a6d45a49ca899d3f68b6c808a0a7c1f419"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-02/result.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 686,
+      "sha256": "338e4384863b4a325207158a7928a9b870a5d880c91a564767460a738fefcc76"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-02/stderr",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-02/stdout",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 623,
+      "sha256": "43d9466a9f91a021609f8004ed82489a7f4da554e5ef08aec51d4c25c4af2a23"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-03/checkpoint.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 615,
+      "sha256": "bf3f2358208392f572e6b93aaf678c16334a5ce8c9107049db4064d802cec32e"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-03/reservation.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2428,
+      "sha256": "75f6f2ddc804fa0beea98c5dbf8c66b9173e22bff4044d77e03eb2a70819d0e6"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-03/result.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 686,
+      "sha256": "06fb448fec4a1cecf2f2797a3c95cb59bf055d9519e175cfd382cd34eafd54ca"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-03/stderr",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run-03/stdout",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 316,
+      "sha256": "f8d1d38a8fdd7a75d2cdf0a4ea4b571cefcf97611981408c0620e78f7d2c9a3b"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/run.py",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 4310,
+      "sha256": "a1524c3aea4e87ca755252bed701b1cd7c2a11186faad016c98f7a1db9901c5f"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/status-check.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 777,
+      "sha256": "f22655a08b10cefcc671c2c074b4dcb3655168c64ef41c0de64226a2c292ad9e"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/validation.json",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 2391,
+      "sha256": "11031a711273e4ddb3b57d78d4d81e0d6f8b48684bc27ed11abca6fd66814bc2"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/error-diagnostics.mjs",
+      "fixedRef": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "bytes": 5044,
+      "sha256": "f87638b251ff9686f3d781bef4ec2f505a76a8f2afb03a98efb0538633c9437e"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/error-diagnostics.test.mjs",
+      "fixedRef": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "bytes": 9123,
+      "sha256": "5a130d4803ebe3a3ce335f372653a9465f47fff10a558857f18b72260bd4ba0d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.mjs",
+      "fixedRef": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "bytes": 8388,
+      "sha256": "a70966ea499024b192f2f8cb28336fba15b9347e8879816cca8fd39d8e55b07b"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "fixedRef": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "bytes": 7465,
+      "sha256": "066471dbf652330ce740281872121366ad645d7ccb22777d38e224882ba3d71d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "fixedRef": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "bytes": 6510,
+      "sha256": "d9956c0022f346324ca0de3f47e39a2d26b3271680b47c81f1ca53657a7db2bd"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 10685,
+      "sha256": "5e24b490c3e80fa3e590b81714ac2cb5ed6d4f4bfb0aea2f438dbef51ddc77f6"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "6dcd5626f26faa3635998fb6046f9a434db3b439",
+      "bytes": 18068,
+      "sha256": "e475d561d199d382232dc32eb2837605a7ac494fe98168cd3917c7dbecba85aa"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/records.mjs",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 6411,
+      "sha256": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0"
+    },
+    {
+      "path": "experiments/native-graph-acceptance/guard.mjs",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 7880,
+      "sha256": "0eacf129f8a44d95e83052f5b949cf4c5a42c82f9ebfffa1b38259b3a99308de"
+    }
+  ],
+  "bindingCount": 33,
+  "runtime": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "readonlySkillsAndSDKDeclarations": "readonly-inputs.json (4skills+SDKd.ts); no imports or auth",
+  "roundSources": [
+    {
+      "directory": "run-01",
+      "fixedSource": "8d06b0ac4fed3d54caf2268585d4fdc6cb5b71ab",
+      "sourceHashesCheckedAgainstReservation": 8,
+      "preserveFailure": true
+    },
+    {
+      "directory": "run-02",
+      "fixedSource": "0cee7012f6df6bb0f0eb140e0ccc5eba43896aa3",
+      "sourceHashesCheckedAgainstReservation": 8,
+      "preserveFailure": false
+    },
+    {
+      "directory": "run-03",
+      "fixedSource": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+      "sourceHashesCheckedAgainstReservation": 8,
+      "preserveFailure": false
+    }
+  ],
+  "originalR2CurrentBindingsVerifiedUnchanged": 26,
+  "coreProductDiff": "none apps/packages vs predecessor",
+  "distinctNewChecks": 7,
+  "selectedAcrossRounds": 14,
+  "totalSupervisionMs": 1135,
+  "totalCallerMs": 1187,
+  "rawBytes": 7994,
+  "cleanup": "3groups absent/dualEOF/3exactscratchremoved; intermediateEPERM retained",
+  "sourceReview": "PENDING",
+  "limits": {
+    "SDKProcesses": 0,
+    "provider": 0,
+    "PG": 0,
+    "auth": 0,
+    "thirdQueryPermission": false,
+    "oldRawAndKEEP": "unchanged",
+    "realSDKDiagnosticPersistence": "NOT_RUN",
+    "rootCauseOfR2": "UNKNOWN"
+  }
+}
