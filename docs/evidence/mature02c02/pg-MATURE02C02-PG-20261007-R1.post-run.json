@@ -1,0 +1,22 @@
+{
+  "recordedAt": "2026-10-07T02:30:23.848141+00:00",
+  "method": "exact-path lstat only; no walk/delete/process scan or new PG connection",
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-fh9k6uax",
+      "state": "present",
+      "dev": 16777234,
+      "ino": 123335449,
+      "directory": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-fh9k6uax/flow-c02-public-vHq9ej",
+      "state": "absent"
+    }
+  ],
+  "tmpDisposition": "KEEP; fixtureReceiptConfirmed=false due test failure. No complete temp inventory was produced.",
+  "resourceEvidence": "Final fixture independently records runners/app/pools/admin closed, owned database DROP/absence and connections=0; outer records child exit/group absent/stdio EOF. No new DB query performed.",
+  "activeWork": "CLOSED; no pending launch; shared holder return reported to Mika",
+  "actualCodex": 0,
+  "provider": 0
+}

@@ -27,3 +27,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-06 21:49:04 UTC：固定封套独审发现依赖请求schema差异：17donor含package指纹、3本树条目不含；原provision请求保持原字节。显式kind分支改从302 source manifest取本树package.json固定指纹，未知kind拒绝。仅输入解析4/4（20合法bindings与3反例）、0subprocess/PG；不重跑types/8用例，不把此当外封套实际验证。
 
 2026-10-06 21:58:02 UTC：clean-code安全点仅核stop_group错误单调性：第一次unknown立即返回，不用后续absent抹去未知；保留有限signals/observations及显式signal errno。4项纯注入反例覆盖unknown→absent、present→absent、signal EPERM和观察EPERM；0subprocess/真实signal/PG。复用原函数，无新监督器、不重跑既有types/8行为。reporter文档改为实际json，旧raw/manifest等待独立新绑定、不覆盖历史。
+
+2026-10-07 02:29:39 UTC：沿既有本地find-skills/clean-code/codebase-design方法只核本次结果边界：一次执行、主失败不被清理成功掩盖、原输出不可回写、worker退出与DB/TMP分别归属，metadata不引入第二状态机。5/6不当整体通过，第二任务失败原因尚UNKNOWN；旧unit/types不重跑，源码与准备manifest冻结。
