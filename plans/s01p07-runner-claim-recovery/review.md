@@ -1,6 +1,6 @@
 # S01P07 独立审查
 
-**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备独审通过/真实PG仍NOT_RUN，NOT_INTEGRATED。R1失败与旧未知资源保持。**
+**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备独审通过/实际4/4结果待独审，NOT_INTEGRATED。R1失败与旧未知资源保持。**
 
 - Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
@@ -32,3 +32,5 @@ architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc0
 - 核原4case正文4633B逐字、main15847 donor同字节；runtime先settle再各库身份清理，aggregate/30outputs/有限selector；strict原2→修后0与collect4/0执行准确。
 - 仅准备批准；4组真实PG仍NOT_RUN/NOT_OPEN，产品未集成main。原85/8PG、R1/unknown资源、fixed manifests不重跑/不改。
 - 2026-10-07T03:41:52.772958+00:00 owner安全点沿既有clean-code方法核状态/target/链接及许可边界；仅2份metadata更新，无产品修改或工程检查。
+
+2026-10-07T03:45:30.058152+00:00 本次唯一capacity实际4/4，见[原始结果入口](../../docs/evidence/s01p07/pg-capacity-result-ready.md)。只补结果证据，source与已审输入不改；四专库/worker/EOF/精确自有TMP均清理。外壳UTC标记失败不掩盖，外部time/工具完成独立保留。RESULT_FIDELITY_REVIEW_PENDING，不提前给整体APPROVED，主线尚未接收。

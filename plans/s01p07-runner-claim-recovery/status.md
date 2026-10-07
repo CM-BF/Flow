@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:42:50.732592+00:00 |
+| 最近更新 | 2026-10-07T03:45:30.058152+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -12,31 +12,31 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；已审输入0a753088f477932140b10b288e907243cb265c27；R2 execution HEAD 44594beb1564732c00fb66721db2fd51b60b87e9 |
-| 工作树dirty状态 | 本次恢复时1de74274791d55d9808056456379b038b430aa5f=origin clean；仅归档准备独审，产品/PG inputs/manifest/raw均冻结。 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品83a0799；4capacity source68815dce/packet1de742；本次execution59d7ab4e7d14b9b5979221c249c0a68ba3836695。 |
+| 工作树dirty状态 | 本次execution59d7ab4e=origin clean；结束仅新增本轮结果/封存及本任务metadata，产品/测试/PG输入与历史raw均冻结。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | R2原8组PG 8/8、10task/80HTTP、exit0，另历史85 distinct non-PG分批共93行为；strict第5轮exit0、3 lifecycle fake与4诊断fake独立口径且未重跑。R1仅0条case结果，原4组capacity PG单列NOT_RUN |
+| 检查状态 | 分别保留：历史85 non-PG；R2中心8/8；本次原capacity4/4、20未选、13task/120HTTP。原strict5与本次局部strict修后0各有raw；没有将历史合算为新通过数。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
-| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源，R2中心8组已通过；原4capacity仍NOT_RUN） |
+| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源）；消费者68815dce，本次真实4/4已验、结果待审。 |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 原8组领取恢复验收已通过；四项原并发消费者的安全fixture适配、类型与收集检查已通过独立准备审查。 |
-| 下一可用交付 | 取得唯一PG执行窗口后验证四项原并发消费者，再完成产品交付与主线接收。 |
-| 当前阻塞 | ACTIVE: 已获唯一四项PG窗口，待本次fresh准入与实际结果；尚未验证前不标完成。旧R1原因UNKNOWN、旧根KEEP。 |
+| 当前产出 | 空闲领取与丢响应恢复的中心检查、四项原并发消费者均已完成，专库与运行资源全部清理；结果待独立审查。 |
+| 下一可用交付 | 完成本次四项结果忠实性独审，提交已验证源码与必要消费者给主线接收。 |
+| 当前阻塞 | ACTIVE: 本次结果独审及main接收待完成；当前无local/heavy holder。旧R1原因UNKNOWN、旧根KEEP，与本轮正常清理分开。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：R2结果已审；4capacity source68815/packet1de742于03:36:55Z SOURCE_AND_PREPARATION_REVIEW_APPROVED，0P1/P2；真实4PG NOT_RUN，NOT_INTEGRATED |
+| Review | [review.md](review.md)：产品SOURCE_REVIEW、R2结果及4capacity准备均已审；本次4/4结果待fidelity审，NOT_INTEGRATED。 |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
 | --- | --- | --- | --- |
 | S01P07-01 | completed | status_read | [接口](../../docs/evidence/s01p07/interface.md)；协议/职责与直接消费者范围已固定 |
-| S01P07-02 | in-progress | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
-| S01P07-03 | in-progress | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
-| S01P07-04 | in-progress | status_read | [R2](../../docs/evidence/s01p07/pg-run-r2-manifest.json)原8组通过；85非PG/strict0原件保留，原4capacity PG未跑，0provider；R1失败不抹 |
-| S01P07-05 | pending | status_read | 源审0P1/P2；R2结果已审 / 4capacity准备已审、真实消费者未跑 / NOT_INTEGRATED |
+| S01P07-02 | completed | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
+| S01P07-03 | completed | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
+| S01P07-04 | completed | status_read | 历史85非PG/R2中心8组/本次capacity4组各自原件，strict和资源闭合；本次结果待审，0provider |
+| S01P07-05 | in-progress | status_read | 已审source/准备，R2已审；本次4capacity结果待独审 / NOT_INTEGRATED |
 
 ## 架构与登记
 
@@ -73,3 +73,5 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:41:52.772958+00:00 恢复/独审接收：fresh协调账本available，原claim9ec4dbc8 v2/18 ACTIVE且WT/branch/owner一致。Mika转达architecture_read于2026-10-07T03:36:55Z对source68815dce87cc0a9498802de89448693215d028d6 / packet1de74274791d55d9808056456379b038b430aa5f的SOURCE_AND_PREPARATION_REVIEW_APPROVED、0P1/P2：22bindings113299B、原case正文/main15847 donor、4库清理/aggregate/30outputs/有限selector及strict2→0/collect4已核。只批准准备，4PG仍NOT_RUN；原200s/13task/640HTTP/15理论连接、32MiBTMP/raw1MiB/floor1207959552B不变。实际配对local须按开启时完整预算另加；Mika声明当前X01 local预算9568256B仅为协调输入，不作为我fresh准入或OPEN。无新测试/PG/旧根访问；本次只写status/review，等待下一唯一namespace。
 
 2026-10-07T03:42:50.732592+00:00 Mika授唯一heavy OPEN `S01P07-CAPACITY-20261007-R1`：Web Timing已03:41:04.044Z确认worker/Chrome/group/fixture/双EOF/目录清理归还。本次仅原4组/4serialDB/13task/640HTTP/15理论峰连接，200s/120work/70fixturecleanup、32MiBTMP/raw1MiB不变；保守配对本组单local9568256B+Web9437184B，fresh floor1226964992B。仅metadata固定clean执行HEAD后核原claim/source/22bindings/30SQL/24deps/30输出与组合空间，一次执行，未知不重试/不触旧根；actual结束即归还，不等封存。
+
+2026-10-07T03:45:30.058152+00:00 唯一`S01P07-CAPACITY-20261007-R1` actual已归还。4/4、20未选、13task/120HTTP、4数据库0conn普通DROP/absence、worker/group/EOF与5精确自有根全部闭合；无本轮KEEP。外壳UTC命令失败真实保留，wrapper/time/tool口径分列；[结果入口](../../docs/evidence/s01p07/pg-capacity-result-ready.md)。原85/8/4分组与target独立，不合成新一次结果；source/历史raw不变，下一步只结果独审/main接收。

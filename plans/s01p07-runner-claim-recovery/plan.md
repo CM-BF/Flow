@@ -17,11 +17,11 @@
 ## TODO
 
 - [x] **S01P07-01** 冻结协议、自身份、事务回执和日志职责；直接消费者范围齐备。
-- [ ] **S01P07-02** 中心复用原分配内核，非空回执与 attempt 同事务；完成 client/route 受权接线。
-- [ ] **S01P07-03** runner 默认 v2：持久机会、同 key 恢复、原 fatal/drain 与 pre-adapter heartbeat 保持。
-- [ ] **S01P07-04** 通过必要 contract/client/journal/runtime 与隔离 PG 事务检查，绑定真实选择数及清理证据。
+- [x] **S01P07-02** 中心复用原分配内核，非空回执与 attempt 同事务；完成 client/route 受权接线。
+- [x] **S01P07-03** runner 默认 v2：持久机会、同 key 恢复、原 fatal/drain 与 pre-adapter heartbeat 保持。
+- [x] **S01P07-04** 通过必要 contract/client/journal/runtime 与隔离 PG 事务检查，绑定真实选择数及清理证据。
 - [ ] **S01P07-05** 独立固定提交 review、直接消费者与 main 接收；唯一 status/dashboard 同步。
 
 ## 验收与限制
 
-当前已完成85不同非PG行为检查与局部strict，原失败与定向修后证据保留；真实PG/provider均未运行，PG窗口关闭。专库准备与精确依赖闭包固定后由lead安排。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。
+当前分别完成历史85不同非PG行为、R2中心8组PG、原capacity4组PG以及各自局部strict；原失败与修后证据保留，本次4组结果待独审/main接收。无provider调用；所有实际窗口已归还，不授权重跑。验证分层见接口页；旧 v1 unknown 与已持久 assignment 重启不运行 adapter，不能将本片描述为任意崩溃窗口的自动恢复。历史 S01 的空轮 API 计数不等物理 I/O；本片尚无优化实测。
