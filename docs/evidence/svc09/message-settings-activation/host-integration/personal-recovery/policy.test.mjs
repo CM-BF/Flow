@@ -8,8 +8,8 @@ export function example() {
   const state = { backendArtifact: OLD_BACKEND, source: { head: OLD_WEB.sourceHead, dirty: false }, webHost: { artifact: OLD_WEB }, processes };
   const operation = { operationId: OPERATION, phase: 'starting', backendArtifact: OLD_BACKEND, target: OLD_BACKEND.sourceHead };
   const release = { version: 3, current: WEB_IDS[2], artifacts: WEB_IDS.map(artifactId => ({ artifactId })) };
-  const plan = { purpose: 'SVC06B_SAME_HELD_OPERATION_RECOVERY', ready: true, operationId: OPERATION, version: 23,
-    requestId: '11111111-1111-4111-8111-111111111111', runDirectory: '/private/tmp/flow-svc06-held-recovery-toy',
+  const plan = { purpose: 'SVC06B_SAME_HELD_OPERATION_CONTINUATION', ready: true, operationId: OPERATION, version: 23,
+    requestId: '11111111-1111-4111-8111-111111111111', runDirectory: '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once',
     operationDigest: fingerprint(operation), stateDigest: fingerprint(state), releaseDigest: fingerprint(release),
     context: CONTEXT, reports: [...WEB_IDS, NEW_WEB].map((artifactId, index) => ({ artifactId, sourceHead: TARGET.sourceHead,
       compatibilityId: String(index + 1).repeat(64), sha256: String(index + 1).repeat(64), bytes: 100,

@@ -1,0 +1,12 @@
+✔ fingerprint uses the fixed real producer serializer for mixed keys and nested arrays (8.865ms)
+✔ real fact projector and target request carry all three producer digests (0.959292ms)
+✔ old caller state encoding and actual state changes are still rejected (1.980375ms)
+✔ continuation verifies four exact existing reports and never calls import (6.379917ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 129.985292

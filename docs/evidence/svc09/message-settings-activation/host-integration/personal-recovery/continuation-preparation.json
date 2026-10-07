@@ -1,0 +1,169 @@
+{
+  "at": "2026-10-07T22:33:22.917492+00:00",
+  "source": "e871d17e018461dd1288dba404930a50897b2c24",
+  "executionSourceStop": "Three runtime sources fixed; no product changes",
+  "inherited": [
+    {
+      "commit": "43448226508158e74356649230198699f0ad2cf1",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-result-manifest.json",
+      "sha256": "908989b2c70efac919bd68f9a38e3ec85270653ca6137199c32782173101c8bf"
+    },
+    {
+      "commit": "548490abb9d9d8d970384200a531b90d212358f2",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/final-preparation.json",
+      "sha256": "e97dee78525e3f188794cfcfe853b8e04d9567dc08e1405bc8bcc0fb5940b798"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9906,
+      "sha256": "a557cac268ae7d76fe8618d95cc4f5222ca81fe697f661ba84475387d4299750"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/caller.mjs",
+      "bytes": 12508,
+      "sha256": "3fb9ba2a0194122ee7605b11579c7f5257635281b0d453c65ed6635909912da3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py",
+      "bytes": 5805,
+      "sha256": "ffd363205eb4f6ab4fb2358d512de8d8a4be2c6231092a257de8f119677b3a38"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.test.py",
+      "bytes": 2173,
+      "sha256": "c2619ff4226c4dba4560e1f4828a4d29c42d3e01b924595e4d52b717e34213cf"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical.test.mjs",
+      "bytes": 4631,
+      "sha256": "807337d47800843e46957ce7bf9901c02dcc92ce2244b6e42cce0a12903e2885"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.test.mjs",
+      "bytes": 6886,
+      "sha256": "81ccb6a78c58f40047586a9bb4a697b4d908f7f6e02da66252f756abfc30039c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-dispatch.test.py",
+      "bytes": 2158,
+      "sha256": "b17005dad132a09b6a1e3a979d9fa89d9869a1095b5bd2cfa9c5ac033db20b08"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-runtime.json",
+      "bytes": 29337,
+      "sha256": "85d560eebe4b751734f02e47d14a8b62ad24735ce4fa0714a94af67d13c4cebd"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.pending.json",
+      "bytes": 13117,
+      "sha256": "2852c0d58846be7194e98d2596001b42bc59ce7392739ce1ce038c84a9f1c18f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-dispatch.json",
+      "bytes": 33133,
+      "sha256": "aa9f7c188c762d7cc852dd3eaf574816712710437ee8885b805f76f7f2245655"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-repair-result.json",
+      "bytes": 2152,
+      "sha256": "0addc029cc3edeb64ccfe5e091f04d7481f52a5c5c0ea88a9ecb8436b4d76ae8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/Interface.md",
+      "bytes": 11445,
+      "sha256": "3f638f3ea9a1f11f8c64e56fa953cf3101e756cc4129ea290eef6857903a02fb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-status-parse.json",
+      "bytes": 679,
+      "sha256": "56dbce8557c2614195ef144647a5932b869ea4504ffa9a61861d6fbf7eae4fac"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-status-parse-final.json",
+      "bytes": 657,
+      "sha256": "9b1a3e96cb76de71aaad44d0c50562b4996bfe4bbcf228e52adf6560271800b2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/1-outer.json",
+      "bytes": 515,
+      "sha256": "68b33f6fdb14a9588722b15912d934305ac4a42433ff1e2c8247b37d7656aafa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/1-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/1-stdout.txt",
+      "bytes": 480,
+      "sha256": "98b65b6d0c0af9af17416f59236dacb8a25b07cae68e89080ac7bc00edc39deb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/2-outer.json",
+      "bytes": 512,
+      "sha256": "37232148fc7e0729a9e72a1b772d7656914a9164e38725bce180ddce27124249"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/2-stderr.txt",
+      "bytes": 98,
+      "sha256": "fb184ea57734512b1f088f9181209901b9cd46df3eb7eaa2500ea9e48dde20b5"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/2-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/reservation.json",
+      "bytes": 7176,
+      "sha256": "4946e46487ce2337ba9812a50a6bc57e080ab0054c6c9367f1fff73f02bd697e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-01/result.json",
+      "bytes": 602,
+      "sha256": "3de9ea6923540d24750adacc17ce66f4d0415f449799b4b2923c0e4b6e829526"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-02/outer.json",
+      "bytes": 514,
+      "sha256": "1f0b6dc873999e029feea58f70a4354962b68d6289db8d47b611df1ee9debfe2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-02/reservation.json",
+      "bytes": 2948,
+      "sha256": "52ef9412076b8284efaf1b51167cc4e5b0344838c121c4fe77ba4981951333fd"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-02/result.json",
+      "bytes": 334,
+      "sha256": "9507a23345f8571e23a9d76afa12bc4c5582f6d1fc6d63f2fa43bf0e9c92453f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-02/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-local-02/stdout.txt",
+      "bytes": 155,
+      "sha256": "62f1a3712a9e51d8445ddf2e5208d8690e525eabb1487ea44b5d9fee36f179d4"
+    }
+  ],
+  "totalBytes": 147921,
+  "effectivePublicRuntimePins": 135,
+  "runtimeOriginals": "Only hashes of installed public dependency files; no copied package or private snapshot",
+  "admission": "NOT_SELECTED; ready false and resource floor/latest spawn unknown. No personal execution authorized.",
+  "namespaces": {
+    "privateRun": {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once",
+      "observedAbsent": true
+    },
+    "outer": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-once.json",
+      "observedAbsent": true
+    }
+  },
+  "provenance": "Runtime source final e871. First-run raw run.py preimage differs only inherited-dispatch 3 lines; second actual-dispatch test covers final. Two dormant policy test fixture literals adapted, no extra test pass claimed. Final input/admission dispatch reference corrected after second test; exact prior input and dispatch remain pinned in local02 reservation."
+}

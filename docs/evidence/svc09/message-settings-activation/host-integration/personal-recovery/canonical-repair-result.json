@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T22:32:44.468Z",
+  "source": "e871d17e018461dd1288dba404930a50897b2c24",
+  "baseFailure": "43448226508158e74356649230198699f0ad2cf1",
+  "decision": "READY_FOR_DELTA_REVIEW_NOT_EXECUTION",
+  "checks": {
+    "distinct": 6,
+    "selected": 6,
+    "passed": 6,
+    "elapsedMs": 299,
+    "rawBytes": 733,
+    "rounds": [
+      "canonical-local-01",
+      "canonical-local-02"
+    ],
+    "groupsAbsent": 3,
+    "dualEOF": true,
+    "scratchRemoved": 2
+  },
+  "provenance": "local01 precedes only the three-line inherited dispatch pin composition. local02 validates final source/actual JSON/135effective pins, replacing only final continuation execute. Old policy.test example two literals adapted but not reselected.",
+  "canonical": "Real public database.ts import, same 880060 bytes/hash; 14 installed pg packages/68files pinned, no Pool creation by hashing.",
+  "remaining": [
+    "fresh",
+    "rebind",
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "noReplay": [
+    "import-artifact",
+    "import-reports",
+    "bootstrap",
+    "hold",
+    "retire"
+  ],
+  "ready": false,
+  "pending": [
+    "INDEPENDENT_REVIEW",
+    "NEW_SELECT",
+    "SAME_CALL_FRESH"
+  ],
+  "unknown": "Failed leaf did not persist actual read digests. Original not-written/KEEP and possible concurrent change limitation preserved.",
+  "metadataFailure": "Initial Python text update failed source decoding before writes; no engineering child or mutation. Existing first status parse retained; final parse follows.",
+  "cleanCode": {
+    "at": "2026-10-07T22:32:44.468Z",
+    "result": "Single canonical authority; existing maintenance/continuation/OPS14; no new process or deletion authority."
+  },
+  "postcheckMetadata": {
+    "field": "continuation-input.pending.admission.dispatch",
+    "before": "dispatch.json (source/input binding only; ready=false rejects execution)",
+    "after": "dispatch.json (source/input binding only; ready=false rejects execution)",
+    "boundary": "Descriptive entry reference corrected after local02; input bytes and dispatch input pin updated. No runtime source/phase/tuple/authority change; no rerun."
+  }
+}
