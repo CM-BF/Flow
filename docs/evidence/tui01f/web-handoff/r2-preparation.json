@@ -1,0 +1,182 @@
+{
+  "kind": "flow.tui01f04.r2.preparation.v1",
+  "at": "2026-10-07T23:59:33.753364+00:00",
+  "source": "8cc10177f2dfa03f89d598260f742a5befd14d29",
+  "base": "196d705913afefd102b31e451baf8cfd7c4975cf",
+  "decision": "PENDING_INDEPENDENT_REVIEW_NOT_GRANTED",
+  "sourceIdentity": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+  "bindings": [
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 6414,
+      "sha256": "99665a6e48efc3e700d19d984a3c29158e83a8685789c6a235f665ca2d14fa94"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-run.test.py",
+      "bytes": 6390,
+      "sha256": "fa726e6072bfe3212bd601fe26d5fbb26c1c24b99d6571872422c79030995141"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-inputs.json",
+      "bytes": 4526,
+      "sha256": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-interface.md",
+      "bytes": 6197,
+      "sha256": "40d2249f6e86b6b470b6831026e1c641c360a1e2f47bca89c98642b6b7f32b49"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-permit.pending.json",
+      "bytes": 874,
+      "sha256": "11decb4e0153ec9dc821c6c123dcaeb6e7da8dc565e5ccf2db1fdc779161342c"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-summary.json",
+      "bytes": 2024,
+      "sha256": "bcffa241cb3e5eaaa3f33af8b4ff89c2fe9039b7ce35f3ee582348681157c8a4"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-test-provenance.json",
+      "bytes": 1712,
+      "sha256": "b298cf73bde0e292860b397051f32b317ffa993c1db32af17d56f8d10d3ef6d4"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-01/reservation.json",
+      "bytes": 1589,
+      "sha256": "60fca6cfe508b94e5ea201c600b03f69c2a64dc429fb9cb28b92e8892f59498c"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-01/outer.json",
+      "bytes": 2816,
+      "sha256": "0985d0e1aa26b869477f84281ed3e8f92122a7b155135fc87e79a6a7efd0ab3e"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-01/result.json",
+      "bytes": 482,
+      "sha256": "25e511de0fd1f655ae97737e1feb56e4ded7f851ec32230b391b2cb08f390e7a"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-02/reservation.json",
+      "bytes": 1737,
+      "sha256": "b5ee9e1b2328d0c81797cabefa93dc304bfff88c293998e5f1f5c7372223d6e2"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-02/outer.json",
+      "bytes": 954,
+      "sha256": "e4428dbef624d35d1294c295e75a8d9e76cb99380b4d8a11c073f5e9a2f370b5"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-02/result.json",
+      "bytes": 336,
+      "sha256": "a9bad6bc1524387f0a096da789454e00da840e0af809c8a6f655283246ab6183"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-03/reservation.json",
+      "bytes": 1920,
+      "sha256": "691f7842c75ef4ba3b81c20257a692d00b68010b255c40e8bc4c4bd54305e5fa"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-03/outer.json",
+      "bytes": 1961,
+      "sha256": "6481850aa12503614f20a478fb5a39a3ffeebe0779b9b925c7324a0d32276307"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-03/result.json",
+      "bytes": 338,
+      "sha256": "89206795814d700b003628a7f57ecd01b675e68ffefc3b47bccd434b19b3cf97"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-04/reservation.json",
+      "bytes": 1698,
+      "sha256": "613ccb153b440cbdc29dc6018d6616f373af96fd07d78d483078e406806b78a3"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-04/outer.json",
+      "bytes": 780,
+      "sha256": "cf3a6abae44c4308a89b4b83ed2857fdabee1dfc4fcc9e40fe4de3b5a5199fb6"
+    },
+    {
+      "path": "docs/evidence/tui01f/web-handoff/r2-local-04/result.json",
+      "bytes": 336,
+      "sha256": "503be6be8b6ee98c8b7872be2a4c011d789b5849c57894180c321969efd09174"
+    }
+  ],
+  "inherited": [
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/web-handoff/input-request.json",
+      "bytes": 181094,
+      "sha256": "98a84072d34db7a56f641f8d5067a2f0f34455f17b2dc7ed1ec25f9ff7c692a9"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/web-handoff/helper-inputs.json",
+      "bytes": 120012,
+      "sha256": "60e6a709087eb644e2697206d8f8404b8368eec17c810f553f047989d3d4f44e"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/web-handoff/independent-terminal-repair-review.json",
+      "bytes": 1727,
+      "sha256": "17f0a7142f663ae0f3eaf578c9bc04cf42a60fee396dab89a6620fb7e4b40df8"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/journey-runtime-dependency-view-proposal.json",
+      "bytes": 52026,
+      "sha256": "208877400a5bb025930c321578c3ffcdce9283bf6c6a474da0ca931dfe36d0de"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/journey-runtime-view-receipt.json",
+      "bytes": 4578,
+      "sha256": "983e13b9448f85b225104c94b985719468cb3ca45f35f5302648df3466def4ab"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/dependency-view.json",
+      "bytes": 4398,
+      "sha256": "5543887d9ddffeedc7bbb5700632c9441bc91e1736a9c7558d457eefb6576abc"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/web-handoff/dependency-ready.json",
+      "bytes": 683,
+      "sha256": "f20d767fedfab536e08b29216444a1640f8586bed7f0c47697e3c7f932cbeebb"
+    },
+    {
+      "commit": "196d705913afefd102b31e451baf8cfd7c4975cf",
+      "path": "docs/evidence/tui01f/web-handoff/import-only.mjs",
+      "bytes": 2700,
+      "sha256": "6691a45657c7d790184797fa3b9e8d31158f03a36d1108495188ba47e96a2641"
+    }
+  ],
+  "sourceFilesUnchanged": [
+    "apps/tui/src/task-controls/fixture.ts",
+    "experiments/tui-web-control-handoff/journey.ts",
+    "experiments/tui-web-control-handoff/preview.ts",
+    "experiments/tui-web-control-handoff/terminal.py"
+  ],
+  "namespace": {
+    "window": "flow-tui01f04-20261007-r2",
+    "outer": "docs/evidence/tui01f/web-handoff/r2-actual-once",
+    "permit": "docs/evidence/tui01f/web-handoff/r2-permit.json",
+    "created": false
+  },
+  "futureCandidate": {
+    "ChromePlanningBytes": 268435456,
+    "logicalDBPlanningBytes": 134217728,
+    "WALPlanningBytes": 1073741824,
+    "privateNonChromeBytes": 16777216,
+    "innerRawBytes": 4194304,
+    "outerRecordsPlanningBytes": 2097152,
+    "totalIncrementPlanningBytes": 1499463680,
+    "liveReserveBytesCountOnce": 1073741824,
+    "combinedFloor": "ONLY_NEW_EXPLICIT_RESOURCE_GRANT",
+    "hardCapCaveat": "Chrome/DB/WAL planning only; non-atomic meter and background growth not exact peaks."
+  },
+  "actual": "NOT_RUN",
+  "localSummary": "r2-local-summary.json",
+  "rawCopies": false
+}

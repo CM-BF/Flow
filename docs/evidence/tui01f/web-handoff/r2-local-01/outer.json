@@ -1,0 +1,39 @@
+{
+  "pid": 10821,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 567,
+  "stdout": "",
+  "stderr": "test_actual_741_inputs_and_original_identity (__main__.FixedCaller.test_actual_741_inputs_and_original_identity) ... ok\ntest_admission_rejects_missing_or_stale_authority (__main__.FixedCaller.test_admission_rejects_missing_or_stale_authority) ... ok\ntest_consumed_and_symlink_namespaces_refuse_before_launch (__main__.FixedCaller.test_consumed_and_symlink_namespaces_refuse_before_launch) ... ok\ntest_real_entry_reserves_and_constructs_validated_exact_launch (__main__.FixedCaller.test_real_entry_reserves_and_constructs_validated_exact_launch) ... FAIL\ntest_unknown_cli_and_record_overflow_refuse (__main__.FixedCaller.test_unknown_cli_and_record_overflow_refuse) ... ok\n\n======================================================================\nFAIL: test_real_entry_reserves_and_constructs_validated_exact_launch (__main__.FixedCaller.test_real_entry_reserves_and_constructs_validated_exact_launch)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.test.py\", line 72, in test_real_entry_reserves_and_constructs_validated_exact_launch\n    caller.main(['--run-r2-once'])\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py\", line 92, in main\n    validate_permit(permit, fixed, digest, datetime.now(timezone.utc), space.f_bavail*space.f_frsize)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py\", line 63, in validate_permit\n    assert type(floor) is int and floor >= 1024**3 + 128*1024**2 and free >= floor, 'FRESH_SPACE'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: FRESH_SPACE\n\n----------------------------------------------------------------------\nRan 5 tests in 0.460s\n\nFAILED (failures=1)\n",
+  "observed_bytes": 2091,
+  "retained_bytes": 2091,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

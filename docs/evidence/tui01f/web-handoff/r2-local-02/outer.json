@@ -1,0 +1,33 @@
+{
+  "pid": 25544,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 585,
+  "stdout": "",
+  "stderr": "test_real_entry_reserves_and_constructs_validated_exact_launch (__main__.FixedCaller.test_real_entry_reserves_and_constructs_validated_exact_launch) ... ok\ntest_consumed_and_symlink_namespaces_refuse_before_launch (__main__.FixedCaller.test_consumed_and_symlink_namespaces_refuse_before_launch) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.452s\n\nOK\n",
+  "observed_bytes": 400,
+  "retained_bytes": 400,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

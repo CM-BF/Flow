@@ -1,3 +1,9 @@
+# 当前 R2 薄启动准备：待独立审查
+
+Review target commit: 8cc10177f2dfa03f89d598260f742a5befd14d29
+
+NOT_REVIEWED。仅 own R2 caller/input/direct-test；[单份候选](../../docs/evidence/tui01f/web-handoff/r2-preparation.json)引用原741输入，不复制旧源。原5不同入口例/8选择与1真实受限import，首红及定向修正保留；0PG/Chrome/PTY/provider。请核单次namespace、真实OPS14委托、完整source/permit绑定、原counter限制与需要的真实功能窗口。以下历史批准不自动批准该新入口。
+
 # 当前 TUI01F-04 terminal观察增量
 
 状态：APPROVED；Execution Lead限定批准terminal观察修复，原full journey1/0保持失败，root cause仍unknown。

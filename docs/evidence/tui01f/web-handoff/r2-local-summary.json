@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T23:57:41.800184+00:00",
+  "source": "8cc10177f2dfa03f89d598260f742a5befd14d29",
+  "workSegmentStartedAt": "2026-10-07T23:43:59Z",
+  "engineeringReturnedAt": "2026-10-07T23:55:47.079051+00:00",
+  "distinctPythonCases": 5,
+  "pythonSelections": 8,
+  "importChecks": 1,
+  "initial": {
+    "selected": 5,
+    "passed": 4,
+    "failed": 1,
+    "exit": 1,
+    "reason": "Test fixture floor=1153433600 was below intrinsic 1207959552; positive stopped before OPS launch. Same invalid floor masked late HOLDER negative."
+  },
+  "targetedRepairs": [
+    {
+      "round": 2,
+      "selected": 2,
+      "passed": 2,
+      "reason": "Actual launch construction and consumed/symlink namespace cases after corrected fixture floor."
+    },
+    {
+      "round": 4,
+      "selected": 1,
+      "passed": 1,
+      "reason": "Admission negatives now assert exact controlled rejection codes, including HOLDER."
+    }
+  ],
+  "import": {
+    "round": 3,
+    "real": "Node24/tsx plus existing no-network/application-spawn guard; actual runJourney export",
+    "factoriesInvoked": 0
+  },
+  "elapsedMs": 2760,
+  "rawObservedBytes": 4039,
+  "ownedGroups": "4 absent; 4 dualEOF; 0 signals",
+  "scratch": "4 exact dev/ino empty removals; 0 current scratch KEEP",
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0,
+  "provider": 0,
+  "personal": 0,
+  "actualJourney": "NOT_RUN",
+  "historicalFailure": "terminal-request-capture remains original FAIL; approved independent cleanup retained; no old raw edits",
+  "provenance": "r2-run.py and r2-inputs.json identical across all rounds. Test only: local01 floor literal changed; local04 exact-code assertions strengthen same negative case. Reservation hashes retain every preimage.",
+  "metadataOnlyCorrections": [
+    "First manifest writer stopped on undefined local fixed before manifest write; no engineering child or actual namespace.",
+    "Own-status parser rejected +00:00 waiting timestamp; normalized recorded UTC to milliseconds Z. Waiting-start without exact evidence is UNKNOWN."
+  ]
+}

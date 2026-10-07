@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T23:59:03.635522+00:00",
+  "fixedTest": {
+    "commit": "8cc10177f2dfa03f89d598260f742a5befd14d29",
+    "path": "docs/evidence/tui01f/web-handoff/r2-run.test.py",
+    "sha256": "fa726e6072bfe3212bd601fe26d5fbb26c1c24b99d6571872422c79030995141"
+  },
+  "reconstruct01": "From final replace exact-code loop block with the original loop below, then replace minimumFreshFreeBytes=1024**3 + 128*1024**2 by minimumFreshFreeBytes=1153433600.",
+  "reconstruct02": "From final replace only exact-code loop block with original loop; corrected floor stays.",
+  "originalLoop": "        for change in [dict(ready=False), dict(startBefore=self.now.isoformat()),\n                       dict(sourceDigest='0'*64), dict(callerDigest='0'*64),\n                       dict(pgAvailable=41), dict(preflightPoolClosed=False), dict(providerCalls=1),\n                       dict(actualHolder='other'), dict(minimumFreshFreeBytes=1)]:\n            with self.subTest(change=change), self.assertRaises(AssertionError):\n",
+  "rows": [
+    {
+      "round": 1,
+      "bytes": 6192,
+      "sha256": "6434423878ae97faaf9dfca19ee5d9f83351c8bd58db3176015a9ee896ed9e4b",
+      "matchesOriginalReservation": true
+    },
+    {
+      "round": 2,
+      "bytes": 6203,
+      "sha256": "1b447f350a84415a9fae38e0325ad4b210cf1d88b47e989fe4a5387a432d8f66",
+      "matchesOriginalReservation": true
+    },
+    {
+      "round": 4,
+      "bytes": 6390,
+      "sha256": "fa726e6072bfe3212bd601fe26d5fbb26c1c24b99d6571872422c79030995141",
+      "matchesOriginalReservation": true
+    }
+  ],
+  "limits": "Only test fixture/code assertions changed; caller/input byte-identical across four reservations. No original run/raw replacement."
+}

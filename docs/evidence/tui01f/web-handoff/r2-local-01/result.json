@@ -1,0 +1,21 @@
+{
+  "startedAt": "2026-10-07T23:52:21.074296+00:00",
+  "returnedAt": "2026-10-07T23:52:21.642394+00:00",
+  "exitCode": 1,
+  "elapsedMs": 567,
+  "observedBytes": 2091,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "firstFailure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "scratchDisposition": "REMOVED_EXACT_EMPTY"
+}

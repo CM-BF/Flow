@@ -50,3 +50,5 @@
 2026-10-06 20:06:45 UTC：原04明确获实施授权，由native_center_owner合法接收v4；按[固定Interface](../../docs/evidence/tui01f/web-handoff/interface.md)实现测试driver。源码/便宜纯检查可推进；完整PG/Chrome旅程等待另行窗口，0provider。旧默认recipe与所有历史证据保持。
 
 2026-10-06 20:24:06 UTC：04四源准备target `d147a636f9cb54a8c87a89a89963d13e937cee9c`，原同一TODO进入独审；4纯检查/两focused types通过，完整双界面旅程NOT_RUN。固定Interface采用90s行为+60s收尾/150s独立总监督，原03证据和open TODO保持。
+
+2026-10-07T23:59:03.635522+00:00：TUI01F-04恢复准备已固定薄OPS14启动入口；原c612实验/fixture与af51/d629/ec30实际组合保持。新5不同纯入口例与实际受限import不替代真实PTY/Chrome；实际运行仍待独审与新窗口。完整04继续开放，原失败/KEEP不回填。见[本次Interface](../../docs/evidence/tui01f/web-handoff/r2-interface.md)。

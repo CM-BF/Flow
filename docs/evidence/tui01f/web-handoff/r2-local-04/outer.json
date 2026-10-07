@@ -1,0 +1,33 @@
+{
+  "pid": 32513,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 279,
+  "stdout": "",
+  "stderr": "test_admission_rejects_missing_or_stale_authority (__main__.FixedCaller.test_admission_rejects_missing_or_stale_authority) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.145s\n\nOK\n",
+  "observed_bytes": 227,
+  "retained_bytes": 227,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

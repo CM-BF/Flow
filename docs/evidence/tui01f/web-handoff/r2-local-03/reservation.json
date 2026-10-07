@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T23:53:04.060853+00:00",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/import-only.mjs",
+      "bytes": 2700,
+      "sha256": "6691a45657c7d790184797fa3b9e8d31158f03a36d1108495188ba47e96a2641"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-inputs.json",
+      "bytes": 4526,
+      "sha256": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 28785,
+      "sha256": "11961c79fb35e89b498d3818aef8e89a7ae9190cc5c1ea09a9ab67f336c00b2b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/import-only.mjs",
+    "--input-type=module",
+    "--eval",
+    "const m=await import('./experiments/tui-web-control-handoff/journey.ts');if(typeof m.runJourney!=='function')throw Error('ENTRY_MISSING');console.log(JSON.stringify({entry:'runJourney',invocations:0,PG:0,Chrome:0,PTY:0,provider:0}));"
+  ],
+  "floor": 12005801984,
+  "free": 17887117312,
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-r2-local-8bl3v8yh",
+    "dev": 16777234,
+    "ino": 124651718
+  },
+  "policy": {
+    "work": 30,
+    "term": 0.5,
+    "reap": 2,
+    "raw": 131072
+  },
+  "scope": "Real fixed Node/tsx import; existing resource guard; factories not invoked"
+}

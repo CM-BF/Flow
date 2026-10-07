@@ -2,30 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 22:42:03 UTC；main同步核验 2026-10-06 21:16:17 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:59:03.635Z；原c612/main421b接收保持，R2准备尚未main |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 历史首次开工无独立精确证据；本轮有界恢复准备于2026-10-07T23:43:59Z开始，不替代task首次开工。 |
 | 所属大task | [TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel |
 | Branch | codex/tui-task-cancel |
-| 工作基线 / HEAD | a89f42ab57acb53657af6a2d1b745dabd4d50aa5；04原准备d147 / 当前观察修复source c6120945c82f3b89266ea4f21f774c310e924409 |
-| 工作树dirty状态 | 四源/capture保持冻结；本次仅实际raw/状态，提交后clean |
+| 工作基线 / HEAD | 原基线a89f42ab57acb53657af6a2d1b745dabd4d50aa5；本段起始196d705913afefd102b31e451baf8cfd7c4975cf；新source 8cc10177f2dfa03f89d598260f742a5befd14d29 |
+| 工作树dirty状态 | 原四源和失败冻结；本次R2准备/原始局部记录与own metadata，交付提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | Actual F04 1 selected/0 passed/exit1；最早终端请求未捕获，独立cleanup exit0/正常清理；原4纯+2capture/两focused types仅准备历史 |
+| 本片段交付阶段 | review |
+| 检查状态 | 新5不同Python入口例8选择+1真实受限Node导入，2760ms/4039B；首floor fixture失败及HOLDER掩盖保留，定向修正；四组absent/双EOF/空scratch确删。0PG/Chrome/PTY/provider。旧F04实际1/0仍FAIL。 |
 | 已集成main状态 / HEAD | 421b2e89f10225bd37d1928ef2b627c6a375b76a；c612观察修复已精确接收，原d147准备/03历史接收保持；完整旅程仍原1/0失败。 |
-| 实现目标 | c6120945c82f3b89266ea4f21f774c310e924409 |
-| 实现范围 | experiments/tui-web-control-handoff/journey.ts, experiments/tui-web-control-handoff/terminal.py |
+| 实现目标 | 8cc10177f2dfa03f89d598260f742a5befd14d29 |
+| 实现范围 | docs/evidence/tui01f/web-handoff/r2-run.py, docs/evidence/tui01f/web-handoff/r2-run.test.py, docs/evidence/tui01f/web-handoff/r2-inputs.json |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 终端初屏与正常退出已单独验证；启动和收尾失败现可保留诊断，完整双界面接续仍待验证。 |
-| 下一可用交付 | 待资源及独占窗口满足后，按已审固定入口验证双界面接续。 |
-| 当前阻塞 | ACTIVE: 完整双界面接续仍待原门槛的资源复核和新独占窗口；源码修复已审，原首败根因仍未知。 |
+| 当前产出 | 下一次终端与网页接续的启动入口已固定，准备交独立审查；旧终端诊断修复和原失败保留。 |
+| 下一可用交付 | 独审后，在新功能窗口完成真实终端与网页交替操作同一会话。 |
+| 当前阻塞 | ACTIVE: 等待本次固定准备独审与新的数据库、浏览器和终端功能窗口；当前没有实际旅程运行。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，c612观察delta限定APPROVED；准备批准与实际失败保留，无全程新许可。 |
-| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v4 active；20:06:00.587Z accept；本次授权仅3实验源/fixture/自有记录 |
-| 架构影响 | 仅测试fixture新增显式factory/recipe与受管观察端口，组合固定真实Web/PTY；生产controller/权限/调度不变，固定架构输入由Execution Lead按实际验收接收。 |
+| Review | [review.md](review.md)：新R2 source等待独审；c612限定APPROVED与旧实际FAIL/独立cleanup保持。 |
+| Claim | 9fe77a96-ba0e-46e0-b697-0b3a9f1d1e3a v5 active；2026-10-07T23:44:15.712Z fresh核同owner/WT/branch，7原scope；本段仅3实验源/fixture/自有记录 |
+| 架构影响 | 仅实验启动装配改用已审OPS14；原journey/fixture拥有任务与清理，生产controller/权限/调度不变。固定af51/d629/ec30不覆盖已发布779全设置/恢复。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -93,3 +96,14 @@
 2026-10-06 22:42:03 UTC：fresh核原claim v4 active/本owner/本树后，仅将当前阻塞改为可解析ACTIVE字段并更新本次metadata时间；main核验时间、原失败/限定批准与全部产品/运行证据保持。未执行产品测试或新旅程。
 
 2026-10-06 23:21:49 UTC：六个已冻结共享产品路径正式停写，原 claim v5 原子移出交 TUI01G 新 claim；F04 实验/fixture/own records 七 scope 保持。原 F04 source/检查/失败与当前门槛不变，无重跑。见[精确 handback receipt](../../docs/evidence/tui01f/message-settings-scope-handback.json)。
+
+2026-10-07T23:43:59Z：原TUI01F-04恢复有界准备；fresh clean HEAD196d705913afefd102b31e451baf8cfd7c4975cf、claim v5同owner/七scope。487 backend与254 helper旧绑定全同，原capture继承O16四源已变，不能直接复用旧captureDigest；改在own证据内用OPS14薄入口直接监督已审journey，原三个实验源/fixture及c612观察修复保持。原terminal-request-capture失败原因仍未知，晚失败/settlement新证据将在下一actual保存；不重跑旧36/03/PTY绿例。本段≤20min，局部children≤90s/单≤30s，源/记录8MiB、scratch16MiB；0PG/Chrome/PTY/provider/个人，实际窗口未授。使用已装find-skills、brainstorming、codebase-design、clean-code，沿已确认有界方案复用监督与清理职责。
+
+2026-10-07T23:59:03.635Z：本段源码准备结束，source `8cc10177f2dfa03f89d598260f742a5befd14d29`；[唯一R2候选与责任边界](../../docs/evidence/tui01f/web-handoff/r2-interface.md) / [原始局部汇总](../../docs/evidence/tui01f/web-handoff/r2-local-summary.json)。23:52:21.074296Z开始局部检查，23:55:47.079051Z最终RETURN；首floor测试误构、迟到HOLDER负例被同floor掩盖及各定向修正全部保留。真实Node导入不调用factory，旧36/03不重跑。741继承源及c612四源未改；新entry固定af51/d629/ec30，不升级当前779或native验收。Chrome256MiB/DB128MiB与单列WAL1GiB只是前瞻预算，非硬cap或峰值；非原子目录计量限制和unknown保留不变。仅own metadata收口/独审等待，实际permit未创建、新namespace未消费，无运行许可。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| TUI04-R2-LOCAL-FLOOR | UNKNOWN | 2026-10-07T23:51:46.610Z | 资源 | ARC选中后普通增长须单列；Lead核完整floor并准入。开始UTC无独立时戳，不反推。 | 本轮Lead协调消息与local01 reservation |
+| TUI04-R2-REVIEW | 2026-10-07T23:59:03.635Z | OPEN | 审查 | 固定薄入口/局部证据待独审；实际旅程另需新窗口。 | r2-interface.md / r2-preparation.json |

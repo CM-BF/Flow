@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T23:52:21.074296+00:00",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.py",
+      "bytes": 6414,
+      "sha256": "99665a6e48efc3e700d19d984a3c29158e83a8685789c6a235f665ca2d14fa94"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.test.py",
+      "bytes": 6192,
+      "sha256": "6434423878ae97faaf9dfca19ee5d9f83351c8bd58db3176015a9ee896ed9e4b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-inputs.json",
+      "bytes": 4526,
+      "sha256": "dbbb2d8324b48cff339381f0f9791cd8ccb1fe19a6296589a0229a819caa35f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "argv": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/r2-run.test.py",
+    "-v"
+  ],
+  "floor": 12005801984,
+  "free": 17886240768,
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-tui01f-r2-local-6i6tzahw",
+    "dev": 16777234,
+    "ino": 124651530
+  },
+  "policy": {
+    "work": 30,
+    "term": 0.5,
+    "reap": 2,
+    "raw": 131072
+  },
+  "scope": "0PG/Chrome/PTY/provider/personal; stops before journey launch"
+}
