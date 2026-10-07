@@ -1,0 +1,197 @@
+{
+  "startedAt": "2026-10-07T04:37:53.392029+00:00",
+  "state": "UNKNOWN",
+  "unknown": true,
+  "limits": {
+    "protocol": "flow.x01.stage-c.v1",
+    "productCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 10,
+        "httpRequests": 256,
+        "connectionsMax": 17
+      },
+      "registry": {
+        "cases": 17,
+        "httpRequests": 160,
+        "connectionsMax": 15
+      }
+    },
+    "httpRequestsMax": 416,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 2,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "enable-binding-stage-c-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "Two serial dedicated DBs and WAL outside owned TMP; conservative extra reserve, not a measured or enforced DB size cap."
+  },
+  "processes": [
+    {
+      "pid": 29938,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 25,
+      "observed_bytes": 299,
+      "retained_bytes": 299,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 29959,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 4703,
+      "observed_bytes": 113,
+      "retained_bytes": 113,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "c88edb99fb254316a40e68bbecf7cbbc",
+      "sourceHead": "85b7726e4b0acdaed309020eb0e4e0237be048ed",
+      "suite": "runtime",
+      "database": "flow_x01_eb7a148eda67439280fb2bf2836fcb34",
+      "facts": [],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1210765",
+          "owner": "flow",
+          "marker": "x01:c88edb99fb254316a40e68bbecf7cbbc:runtime:f11ebbc1-5856-4134-b309-aa04ff215135"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:58421",
+          "closed": true
+        }
+      ],
+      "httpRequests": 14,
+      "responseBytes": 1049,
+      "workUntil": 1791347983391,
+      "cleanupUntil": 1791348043391,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T04:37:56.239Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_",
+      "dev": 16777234,
+      "ino": 123467679,
+      "removed": false
+    }
+  ],
+  "temporaryPeak": "UNKNOWN",
+  "window": "c88edb99fb254316a40e68bbecf7cbbc",
+  "executionHead": "85b7726e4b0acdaed309020eb0e4e0237be048ed",
+  "manifestSha256": "0dbf2641c62df312db671ef481e1cadf4c1ba004f04f9a9245e7dfbb5c377c13",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_",
+    "dev": 16777234,
+    "ino": 123467679,
+    "removed": false
+  },
+  "failure": {
+    "type": "ValueError"
+  },
+  "endedBeforePersistenceAt": "2026-10-07T04:37:58.224674+00:00",
+  "elapsedBeforePersistence": 4.832813291926868,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "runtime-reservation.json": 450,
+    "runtime-create-request.json": 353,
+    "output.log": 113,
+    "runtime-result.json": 1135,
+    "reservation.json": 281,
+    "launch.json": 188,
+    "preflight.stdout": 299,
+    "admission.json": 1956
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 5177,
+  "completeAccounting": false,
+  "rawBytesBeforeReceipt": 5177
+}

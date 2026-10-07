@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T04:36:52.290823+00:00 |
+| 最近更新时间 | 2026-10-07T04:40:57.010703+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -17,7 +17,7 @@
 | 工作基线 / HEAD | base60ca；Stage C准备source e7f220ee72c5c9bc091846be45ddd8b199dc6f71；metadata后续固定；未main |
 | 工作树 dirty 状态 | 本段仅两test资源hooks、own fixture/caller/输入/必要局部证据和status；交审后停止写入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | A17真实包/B九入口已独审；C原types0/collect27与旧21计数FAIL保持；本段受影响types0+5资源反例通过，实际27 PG/HTTP仍NOT_RUN |
+| 检查状态 | A17/Btypes与C准备局部通过；Stage C R1真实27=18过9失败，caller UNKNOWN/KEEP，未重跑 |
 | Review | Stage C preparation APPROVED：status_read04:36:01固定002/3e1；实际27 PG未运行 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 002159b96e98187a050313f2995e199fd2900198 |
@@ -25,9 +25,9 @@
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件模块与直接消费者检查已通过；正在补齐27项数据库验收的共同期限和资源收尾 |
+| 当前产出 | 首轮数据库验收18项通过、9项在注册受理处失败；正在依据原件修复并核实资源收尾 |
 | 下一可用交付 | 独审27项数据库验收准备，资源准入后运行真实PG/HTTP；后继生产工具调用链仍未接 |
-| 当前阻塞 | ACTIVE: Stage C实际PG尚NOT_OPEN，等待固定准备独审与具体重窗口；生产claim/runtime后继另协调 |
+| 当前阻塞 | ACTIVE: R1注册受理400待定位；caller错误地要求预期listener数，TMP保持KEEP；无新PG OPEN |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -201,3 +201,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T04:29:39.080100+00:00：准备独审发现唯一P2预枚举，source 002159b96e98187a050313f2995e199fd2900198改惰性scandir/同deadline与数量门禁，新增单例1/1、0.140859s/255B、进程与TMP全部确认清理并直交C02。7ea5固定DB/WAL128MiB保守额外reserve，实际floor覆盖且1GiB不可支出；原27、5/strict、历史FAIL均不重跑。此次状态仅准备修复待独审，不当PG已通过。
 
 2026-10-07T04:36:52.290823+00:00：准备独审通过；Web由Mika转达04:36实际0PG/Chrome/heavy并明确下一ready段交X01，SVC已闭合。当前仍0PG，Mika条件授权本owner在fresh v8/head/manifest/run absent/resource后为唯一R1生成准入。预算沿180s/2serialDB/416HTTP/TMP32MiB/raw1MiB，额外DB128MiB与C02保守18,087,936B叠加，1GiB收尾不可支出。
+
+2026-10-07T04:40:57.010703+00:00：[R1真实结果](../../docs/evidence/x01/enable-binding-stage-c-r1-result.md)封存，execution85b7726e、18/9、两实际专库close/0conn/ordinaryDROPabsence回执；外层UNKNOWN/KEEP不改，精确postflight仅复制已存在registry/Vitest/outer原件，0额外PG/cleanup。db_transaction_owner独审heavy归还，Web已收到真实终态。修复与后继窗口分开，不预占重资源。
