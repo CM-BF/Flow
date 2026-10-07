@@ -2,8 +2,8 @@
 
 所属[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)，co-lead Mika。目标：现FlowClient/CLI单registration材料引用一次一页，观测不等于删除许可。
 
-- [ ] X01RC-01 单一transport与纯ACK验证，保既有方法。
-- [ ] X01RC-02 CLI手动分页/错误语义，公开行为与focusedtypes。
+- [x] X01RC-01 单一transport与纯ACK验证，保既有方法。
+- [x] X01RC-02 CLI手动分页/错误语义，公开行为与focusedtypes。
 - [ ] X01RC-03 独审/窄main接收。
 
 Interface：pluginRemovalReferences(id,{materialInstallOperationId,cursor?},signal?)；plugin removal-references PLUGIN MATERIAL_INSTALL_OPERATION [--after CURSOR]。64KiBsuccess/4KiBerror/40条/opaque768，不自动翻页/GET/retry。空页也可next；409不reset；坏ACK UNKNOWN4，输入usage2。只核top注册/operation，同physicalmaterial引用允许不同operation；不以失微秒createdAt重构cursor或强加顺序。hostRelease unknown/physicalRemoval not-authorized/registration-only保持。

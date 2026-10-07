@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-07T12:28:07.062677+00:00",
+  "finishedAt": "2026-10-07T12:28:08.270898+00:00",
+  "wallBeforePersistenceSeconds": 1.2080267909914255,
+  "supervision": {
+    "pid": 85856,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1176,
+    "observed_bytes": 596,
+    "retained_bytes": 596,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 596,
+    "sha256": "61214cb99db9069c9469115febd338d1dfefdbe273cf329aa974445a0eb24001"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-removal-references-client/run-local.py": "7b2f2f6280231c8df2b7a9574a1ba2dd9329746f5232e0b422b8bed74ce7a4dd",
+    "packages/client/src/index.ts": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+    "packages/client/src/plugin-management.ts": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+    "apps/cli/src/index.ts": "29db99392dfe37891c515a0b18e31c2520a88fd2afd45f33c1f0b187a9a8c249",
+    "packages/client/src/plugin-host-candidates.test.ts": "b7526ef8d8ceba99ebad4eea7599dcfe11bbc7423d0c878b76134c11a65ad0d7",
+    "apps/cli/src/plugin-host-candidates.test.ts": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0",
+    "packages/client/src/plugin-command-ack.test.ts": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38",
+    "apps/cli/src/plugin-command-ack.test.ts": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6"
+  }
+}

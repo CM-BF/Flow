@@ -1,13 +1,15 @@
-"""One bounded X01 host candidate client local segment; shared OPS14 owns the child lifecycle."""
+"""One bounded X01 removal reference client local segment; shared OPS14 owns the child lifecycle."""
 from pathlib import Path
 import dataclasses,datetime,hashlib,importlib.util,json,os,sys,time
 ROOT=Path(__file__).resolve().parents[3]
 E=ROOT/'docs/evidence/x01-removal-references-client'
-name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix','delta-fix','types-final')
+name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix','delta-fix','types-final','consumers')
 node='/opt/homebrew/opt/node@24/bin/node'
 files=['packages/client/src/plugin-removal-references.test.ts','apps/cli/src/plugin-removal-references.test.ts']
+if name == 'consumers': files=['packages/client/src/plugin-host-candidates.test.ts','apps/cli/src/plugin-host-candidates.test.ts','packages/client/src/plugin-command-ack.test.ts','apps/cli/src/plugin-command-ack.test.ts']
 cmd=([node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'tsconfig.json')]
      if name.startswith('types') else [node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files])
+if name == 'consumers': cmd += ['-t', '^(reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts|prints one checked host page through real CLI and FlowClient without following its cursor|sends parsed configure and validates granted incomplete configuration without guessing current state|uses unchanged real CLI for configuration and grants with checked FlowClient receipts)$']
 if name == 'delta-fix': cmd += ['-t', 'keeps usage, unknown response']
 free=os.statvfs(ROOT).f_bavail*os.statvfs(ROOT).f_frsize
 # Preserve the existing conservative combination floor; refresh active declarations before each actual run.

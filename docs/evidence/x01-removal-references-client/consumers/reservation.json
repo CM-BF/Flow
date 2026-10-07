@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-07T12:28:07.062677+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/vitest.config.mjs",
+    "--no-cache",
+    "packages/client/src/plugin-host-candidates.test.ts",
+    "apps/cli/src/plugin-host-candidates.test.ts",
+    "packages/client/src/plugin-command-ack.test.ts",
+    "apps/cli/src/plugin-command-ack.test.ts",
+    "-t",
+    "^(reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts|prints one checked host page through real CLI and FlowClient without following its cursor|sends parsed configure and validates granted incomplete configuration without guessing current state|uses unchanged real CLI for configuration and grants with checked FlowClient receipts)$"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+  "free": 21780201472,
+  "required": 6500000000,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/consumers/tmp",
+    "dev": 16777234,
+    "ino": 124122685
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}
