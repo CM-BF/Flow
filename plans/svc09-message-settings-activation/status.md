@@ -47,3 +47,5 @@
 | UNKNOWN | UNKNOWN | 同队局部协调 | Lead组合检查和assignment入口检查期间持续源码准备；精确等待起止未记录，不当作测试耗时。实际运行各轮reservation/cleanup有UTC。 |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
+
+最终封包还识别本树 importlib 生成的23,243B OPS14 pyc；核源字节/header/codefilename及exact身份后于14:31:44.022522Z删除，另见[清理回执](../../docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json)。原7组/fixture收尾原件不改，无追加工程运行。

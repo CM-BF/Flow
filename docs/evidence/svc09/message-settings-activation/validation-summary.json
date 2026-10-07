@@ -221,5 +221,12 @@
     "rawBytes": 2097152,
     "simultaneousOwnedChildren": 4
   },
-  "actualReturn": "2026-10-07T14:26:57.937294+00:00"
+  "actualReturn": "2026-10-07T14:26:57.937294+00:00",
+  "postRunGeneratedCache": {
+    "path": "generated-cache-cleanup.json",
+    "bytes": 23243,
+    "state": "removed",
+    "completedAt": "2026-10-07T14:31:44.022522+00:00",
+    "boundary": "All seven fixture scratch roots were already empty/removed. Final git status additionally found the importlib cache in this worktree; original OPS14 source was unchanged. No runtime processes remained."
+  }
 }
