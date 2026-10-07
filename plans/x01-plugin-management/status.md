@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:57:52.806468+00:00 |
+| 最近更新时间 | 2026-10-07T10:02:14.221219+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | CLI startup新20min段09:50:37Z，基线main38110485；旧terminal20b独立READY |
-| 工作树 dirty 状态 | CLI startup新源/metadata实施中；已审terminal四源冻结 |
-| 工作分支状态 | implementation |
+| 工作基线 / HEAD | 固定源码c8ba6bcb98f697b222cc972d517ea2891dcd8d71；基线main3811048522dcc8a896e7ccf09872389b14bccd63；新20min段09:50:37Z |
+| 工作树 dirty 状态 | 源码已固定；仅交审metadata待提交，随后push/clean核验 |
+| 工作分支状态 | review |
 | 检查状态 | startup15选15过/55未选；首types2缺声明补齐后0，3进程/自有roots实际闭合，0PG |
-| Review | terminal20b/758已APPROVED；startup仅设计核验、实现未审 |
+| Review | startup源码/有限局部结果PENDING；terminal20b/758独立APPROVED/READY |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance均已main；runtime9b+公共wiring2ea已main3811048522dcc8a896e7ccf09872389b14bccd63，正式I02 x01-runtime-wiring-intake；本次terminal恢复未main |
-| 实现目标 | 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86 |
-| 实现范围 | apps/runner/src/{runtime.ts,outbox.ts,plugins/runtime.test.ts,plugins/terminal-outbox.test.ts}及docs/evidence/x01/terminal-* |
-| 本片段交付阶段 | implementation |
+| 实现目标 | c8ba6bcb98f697b222cc972d517ea2891dcd8d71 |
+| 实现范围 | apps/server/src/main.ts；apps/server/src/private-json-configuration.ts；apps/server/src/plugin-runtime-configuration.ts；apps/server/src/plugin-runtime-configuration.test.ts；packages/plugin-runtime/src/private-configuration.ts；packages/plugin-runtime/src/private-configuration.test.ts；apps/runner/src/configuration.ts；apps/runner/src/configuration.test.ts；apps/runner/src/main.ts；apps/runner/src/main-concurrency.test.ts；docs/evidence/x01/cli-startup-* |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实启动入口已接显式私有配置并通过局部检查，准备独立源码审查；终态恢复四叶仍独立READY |
+| 当前产出 | 私有可信配置已接入现有center和runner启动入口，局部检查通过并提交独立审查；终态恢复仍独立待集成 |
 | 下一可用交付 | 普通runner和center通过私有配置显式启用既有公共插件执行链 |
-| 当前阻塞 | NONE：本队local09:56:41已归还；真实CLI进程PG尚未准备/未OPEN |
+| 当前阻塞 | NONE：local实际已闭合；真实CLI进程PG未准备/未OPEN |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -339,3 +339,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T09:50:37Z新startup20min段：09:50:37.355原子v22→v23/59，chatui已核最小设计。此段0PG，独立terminal20b窄接收继续READY，不用新预算重跑旧11/1。
 
 2026-10-07T09:56:41Z：startup3children实际closed，types首缺声明原件保留→精确补fixedmain declaration→types0、15/15。真实local内部累计7.028s、wholeexternalwall未知。恢复20b四源未变，不为本startup重跑11/1。
+
+2026-10-07T10:02:14.221219+00:00：startup源码固定c8ba6bcb98f697b222cc972d517ea2891dcd8d71，[一次独审入口](../../docs/evidence/x01/cli-startup-review-ready.md)。fresh账本v23 ACTIVE59全身份不变。归档3child/15项与types修后0、290文件闭包及原失败；0新增工程执行/PG。架构影响为私有reader双consumer复用和两个既有进程入口显式可信配置；main架构基线待独审/接收后由Lead更新。terminal四叶20b独立READY不变。

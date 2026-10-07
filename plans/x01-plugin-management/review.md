@@ -1,3 +1,11 @@
+状态：PENDING（startup十源及有限局部结果；真实CLI进程未验）
+
+Review target commit: c8ba6bcb98f697b222cc972d517ea2891dcd8d71
+
+[固定交审入口](../../docs/evidence/x01/cli-startup-review-ready.md)。15/15、types0不代替独审；terminal20b历史批准与独立intake保持。
+
+---
+
 状态：APPROVED（仅terminal四源及11项局部结果；完整X01开放）
 
 Review target commit: 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86
