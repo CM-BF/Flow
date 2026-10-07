@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:55:28.992240+00:00",
-  "state": "ACTUAL_RETURNED_SCOPED_FULL7_ACCEPTED",
-  "groupWindowOwnership": "Recovery originalfull7 actual returned after exit0/owned cleanup and exactadminenv deletion. Shared window free; S01performance queued but not OPEN. No automatic next run.",
+  "recordedAt": "2026-10-07T06:10:49.993860+00:00",
+  "state": "QUICK_NATIVE_DIAGNOSTIC_ADMITTED_NOT_STARTED",
+  "groupWindowOwnership": "OriginalLead explicitly returned SVC08 after guardedrequeststop; S01closed. Quickindependent0PG fixture/Chrome single diagnostic admitted, originalowner notstarted; no personalservice or realcenter access.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:55:28.992240+00:00",
-    "kind": "RECOVERY_FULL7_ACTUAL_RETURNED_SCOPED_ACCEPTED",
-    "source": "recovery-full-return-20261007/return.json",
-    "summary": "Original full7 subset7/7 actualexit0; no fullfeature claim. Freshsegmentcharge13134/rem136866 fromceilmaxouter/late/parent. MarkedDB/ownedgroups/scratch/EOF complete; exactadminenvremoved withoutreading. Root actualreview accepted originalfull7+ownedcleanup, 0findings, notwholefeature."
+    "at": "2026-10-07T06:10:49.993860+00:00",
+    "kind": "SVC08_RETURN_QUICK_NATIVE_FIRST_DIAGNOSTIC_FRESH_ADMISSION",
+    "source": "quick-native1-recovery-review-20261007/incoming.json",
+    "summary": "OriginalLead actualreturned and co-lead handed Quicknext; fresh1aa/bdf/839ev1/325pins, available24439201792>=4053008384. Diagnostic45000incl15000cleanup,new90000spent0; old30625closed. No actualRUN yet."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1098,6 +1098,11 @@
       "at": "2026-10-07T05:52:55.088797+00:00",
       "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_RUNNING",
       "source": "continuous-validation-segments-20261007/recovery-full-actual-start.json"
+    },
+    {
+      "at": "2026-10-07T05:55:28.992240+00:00",
+      "state": "ACTUAL_RETURNED_SCOPED_FULL7_ACCEPTED",
+      "source": "recovery-full-return-20261007/return.json"
     }
   ],
   "dperf05Pure": {
@@ -1145,7 +1150,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "RECOVERY_ORIGINAL_FULL7_ACCEPTED_QUICK_SOURCE_APPROVED_NOT_RUN",
+    "state": "QUICK_DIAGNOSTIC_ADMITTED_RECOVERY_NEW_P2_FIX_BROWSER_PENDING",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1206,10 +1211,10 @@
     "quick": {
       "ownerHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
-      "packet": "/private/tmp/msgquick-b3",
-      "bindingSha256": "fb5d6a6f5ea9590f134f9b3c7a47a4b5de7b2aec0af9f6d04d28dce8ab401a2f",
-      "manifestSha256": "1ebf0b03a1ec1b18eac2e269144d5b79f9539028daf75173157c7215c9f9cb3f",
-      "state": "B3_CONSUMED_FAILED_CLEANED_RETURNED",
+      "packet": "/private/tmp/msgquick-native1",
+      "bindingSha256": "df7e1e583294dd7520c02e29d428db27d57232235733d09b58aac96a07d5fa85",
+      "manifestSha256": "68fe0db4677a16c56835726663c05029c3846c53495f3f9a744a028f535e1fdb",
+      "state": "NEW90S_FIRST_DIAGNOSTIC_ADMITTED_NOT_STARTED",
       "admission": "quick-b3-admission-20261007/gate.json (historical consumed)",
       "browserSpentMs": 30625,
       "totalMs": 60000,
@@ -1219,7 +1224,7 @@
       "remainingMs": 29375,
       "failure": "Parent retained evidence sampling limit; static non-atomic BASE minus scratch overcount defect. Actual transient is consistent, not exact causal proof.",
       "review": "quick-b3-return-navigation-20261007/quick-b3-failed-review.json",
-      "next": "Initial diagnostic source delta accepted; no actual run/gate/reservation. Recovery full7 takes next available shared window; Quick independent0PG browser follows fresh coordination.",
+      "next": "Originalowner executes firstdiagnostic fromfreshhandoff; DIAGNOSTIC_COMPLETE is measurement notfeaturePASS.",
       "preparationReview": "quick-b3-admission-20261007/quick-b3-native-review.json",
       "admissionPreparation": "quick-b3-admission-20261007/handoff.json",
       "newSegment": {
@@ -1231,18 +1236,23 @@
         "oldSpentMs": 30625,
         "oldRemainingNotTransferred": true,
         "authorization": "continuous-validation-segments-20261007/quick-segment-authorization.json",
-        "state": "INITIAL_SOURCE_DELTA_APPROVED_NOT_RUN",
-        "gate": null,
-        "reservation": false,
+        "state": "ADMITTED_NOT_STARTED",
+        "gate": "/private/tmp/msgquick-native1-admission-uvmtggp4/gate.json",
+        "reservation": true,
         "source": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
-        "review": "continuous-validation-segments-20261007/quick-diagnostic-source-review.json"
-      }
+        "review": "quick-native1-recovery-review-20261007/quick-source-review.json",
+        "nativeReview": "quick-native1-recovery-review-20261007/quick-native-review.json",
+        "handoff": "quick-native1-recovery-review-20261007/quick-handoff.json",
+        "expiresAt": "2026-10-07T06:15:26.617854+00:00"
+      },
+      "diagnosticSource": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+      "historyState": "Originalb1/b2/b3closed failures preserved; original60k30625 notnewsegmentcredit"
     },
     "recovery": {
-      "ownerHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
-      "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+      "ownerHead": "0a661aa558840453ed3e0646db30b1073b5398ca",
+      "source": "55b4917e732d11d5e5f660f9c22a1022d7094015",
       "packet": "/private/tmp/recovery-continuous-full-ready-pkyqyonj/handoff-delta.json",
-      "state": "ACTUAL_RETURNED_SCOPED_FULL7_ACCEPTED",
+      "state": "FULL19_REVIEW_P2_FIX_SOURCE_ACCEPTED_TARGETED_BROWSER_PENDING",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1267,8 +1277,8 @@
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
       "runtime": "Original full7 actual7/7 PASS/exit0, root scopedaccepted with ownedcleanup; fullfeature acceptance remains open.",
-      "next": "Originalowner archives actual+scope acceptance and conservative13134segmentcharge; no automatic successor run. Wholefeature remaining coverage uses uniqueowner plan.",
-      "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
+      "next": "Originalowner newconnection-choice actual needs appropriate nextfreshwindow; direct4/4 and scopedsourcefix accepted. Historicalfull7 remainsaccepted; no automaticrerun.",
+      "review": "quick-native1-recovery-review-20261007/recovery-feature-review.json",
       "admission": {
         "state": "CONSUMED_ACTUAL_RETURNED",
         "handoff": "continuous-validation-segments-20261007/recovery-renewed-handoff.json",
@@ -1289,7 +1299,7 @@
         "adminEnvDeletionReceipt": "recovery-full-return-20261007/admin-env-deletion-receipt.json"
       },
       "actualReceipt": "recovery-full-return-20261007/return.json",
-      "sourceReview": "continuous-validation-segments-20261007/recovery-source-review.json",
+      "sourceReview": "quick-native1-recovery-review-20261007/recovery-p2-fix-source-review.json",
       "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
       "preparationReview": "continuous-validation-segments-20261007/recovery-handoff-delta.json",
       "actualReview": "recovery-full-return-20261007/root-full7-actual-review.json",
@@ -1329,7 +1339,13 @@
           "themes390"
         ],
         "passingScope": "originalseven subset only, not fullfeature acceptance"
-      }
+      },
+      "reviewHistory": {
+        "0141": "CHANGES_REQUESTED_2P2",
+        "55b": "P2_FIX_SOURCE_ACCEPTED_CONNECTION_CHOICE_NOT_RUN",
+        "full7": "ACCEPTED_SCOPED_ACTUAL_NOT_WHOLEFEATURE"
+      },
+      "fullReviewState": "IN_PROGRESS"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1432,13 +1448,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "recovery-full-return-20261007/post-cleanup-observation.json",
+  "currentWindowEvidence": "quick-native1-recovery-review-20261007/quick-admission-observation.json",
   "webActualHolder": null,
-  "webGate": null,
+  "webGate": "/private/tmp/msgquick-native1-admission-uvmtggp4/gate.json",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": true,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1765,8 +1781,10 @@
   },
   "externalCurrentAdmission": {
     "owner": null,
-    "state": "SHARED_WINDOW_FREE_S01_PERFORMANCE_QUEUED_NOT_OPEN",
-    "source": "Root explicit actual Recovery return and queue message"
+    "state": "SVC08_AND_S01_EXPLICITLY_RETURNED",
+    "source": "quick-native1-recovery-review-20261007/incoming.json",
+    "actualSvc08ReturnTimestamp": "UNKNOWN_NOT_PROVIDED",
+    "next": "Ready-first explicit coordination, no inferred external holder."
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1776,9 +1794,9 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "S01 performance queued/not OPEN; actual ready-first handoff must remain explicit."
+    "Quick independent0PG diagnostic admission only; actual terminal andcleanup handback immediately. No other Web browser."
   ],
-  "currentIntake": "recovery-full-return-20261007/return.json",
+  "currentIntake": "quick-native1-recovery-review-20261007/incoming.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

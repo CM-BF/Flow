@@ -1,0 +1,125 @@
+{
+  "kind": "independent fixed-source review of two Recovery P2 fixes",
+  "recordedAt": "2026-10-07T06:09:40.418541+00:00",
+  "decision": "ACCEPTED_TWO_P2_SOURCE_FIXES_AND_TARGETED_LOCAL_EVIDENCE_NOT_WHOLE_FEATURE",
+  "base": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "firstFix": "ecce548a8043f52d437787f1da77cde8bfdc2579",
+  "target": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "originalReview": {
+    "path": "/private/tmp/root-recovery-0141-feature-review.json",
+    "bytes": 8603,
+    "sha256": "a15b03b77565d7be1bcc3b7a11dd3202a2e1fe0cde8a21e18240da8e9c995009"
+  },
+  "independentOriginalPeer": {
+    "path": "/private/tmp/recovery-0141-two-p2-peer/report.md",
+    "bytes": 3444,
+    "sha256": "75bc45513820e74522a8594aeaa057847270518e44e5b12cbd7150d55b117f90"
+  },
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "findings": [],
+  "resolvedAtSource": [
+    {
+      "id": "RECOVERY-FINAL-P2-SELECTING",
+      "resolution": "Background ready identity observation no longer clears selecting. Only explicit successful Connect/Check existing closes it; selection revision rejects stale explicit completions and effect cleanup guards a superseded session. Retained workspace and authority generation remain separate.",
+      "evidence": "New connection-choice browser journey checks one-center candidate URL/token remain after successful background session read, retained draft survives explicit Check existing and Connect, and no business POST is added. Source reviewed; this new browser journey is NOT_RUN."
+    },
+    {
+      "id": "RECOVERY-FINAL-P2-STEERING-TIMEOUT",
+      "resolution": "For an authorized current generation, deadline after digest/prepare/dispatch throws into recoverable unknown; pre-HTTP deadlines are locally blocked with exact original key/input. A successfully committed accepted checkpoint is published despite deadline without downgrade/resend. Revoked/stale generations still cannot publish.",
+      "evidence": "Four actual control+journal tests use deferred storage completion and a controlled deadline: prepare and dispatch each zero HTTP then explicit same-key retry; delayed durable accepted checkpoint no resend; revoked late completion retains durable receipt for explicit Restore."
+    }
+  ],
+  "localChecks": {
+    "direct": {
+      "source": "ecce548a8043f52d437787f1da77cde8bfdc2579",
+      "passed": 4,
+      "failed": 0,
+      "oldCasesNotRun": 50
+    },
+    "firstTypes": {
+      "source": "ecce548a8043f52d437787f1da77cde8bfdc2579",
+      "exit": 2,
+      "cause": "Two widened mock signatures; raw failure retained."
+    },
+    "finalTypes": {
+      "source": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "exit": 0,
+      "change": "Three vi.fn<SteeringPort[...]> type parameters only; no runtime branch or assertion changed."
+    },
+    "actualMs": 13221.340917050838,
+    "conservativeChargedMs": 13222,
+    "remainingLocalMs": 16778,
+    "segmentLimitMs": 30000,
+    "browserRuntimeByReviewer": 0,
+    "reviewerExecutedChecks": 0,
+    "cleanupScope": "Raw segment reports network denied and no product services; owner reports owned groups absent. Reviewer has not independently re-observed prior PIDs."
+  },
+  "browserEvidencePolicy": [
+    "The earlier full7 actual PASS remains valid for its bound 0141/765ab source and selected scope; do not relabel it as a post-fix rerun.",
+    "connection-choice needs the next owned browser actual run under the existing 150000ms segment; 13134ms used and 136866ms remaining.",
+    "No new runtime permission or resource reservation is granted by this source review. Existing manager resource handoff and fresh source/claim bindings apply."
+  ],
+  "featureReview": "IN_PROGRESS: source P2 blockers resolved; pending browser connection-choice plus previously explicit wider acceptance gaps. This is not main integration or whole-feature approval.",
+  "cleanCode": {
+    "scope": "Four-file delta, connection intent vs authority, deadline vs revocation, names and comments, exact receipt identity, directed tests.",
+    "result": "No additional blocking source findings; no broad refactor requested."
+  },
+  "bindings": [
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9"
+    },
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58"
+    },
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 54468,
+      "sha256": "809ba44244fe545cc2ded96536820a58b5b6a2a05d51488a37db75ffa5caf66b"
+    },
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 65658,
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b"
+    }
+  ],
+  "localRaw": [
+    {
+      "path": "/private/tmp/recovery-final-p2-local-hpwdw4no/segment.json",
+      "bytes": 3204,
+      "sha256": "300a1f2d43bca10fcd13203c1674d5938a2f113e92466ca0d720dd72c4236584"
+    },
+    {
+      "path": "/private/tmp/recovery-final-p2-local-hpwdw4no/direct.json",
+      "bytes": 21843,
+      "sha256": "0a0381cc0089b7cc0a2aa7111076a20717fc2feeb13084867ce8fe6b1206d65e"
+    },
+    {
+      "path": "/private/tmp/recovery-final-p2-local-hpwdw4no/direct.log",
+      "bytes": 81,
+      "sha256": "17b6d004575c9b84512104cd0f10a6f75f6516774f158574454b1ddb00227190"
+    },
+    {
+      "path": "/private/tmp/recovery-final-p2-local-hpwdw4no/types.log",
+      "bytes": 2478,
+      "sha256": "6bb6166e2e5c21e13cf9f3a33f9e373326f85d45c2028ddcc673e073b73f6c33"
+    },
+    {
+      "path": "/private/tmp/recovery-final-p2-local-hpwdw4no/types-fixed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

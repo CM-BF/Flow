@@ -4,7 +4,9 @@
 
 ## 当前窗口与用户交付
 
-**Recovery原七组实际通过、结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。本组holder/gate/预约均无，S01性能仅排队未OPEN，不自动开后继运行。
+**Quick原生控件诊断已fresh准入，尚未启动；Recovery两处修复源码已接受，新增浏览器回归待验。** [当前handoff](quick-native1-recovery-review-20261007/quick-handoff.json)绑定1aa/bdf/原6scope与独立native审批，single45s含15s清理、新90s累计0，到期06:15:26.617854Z；SVC08与S01均明确归还，无新个人服务操作。Recovery0141完整审查两P2保历史，原owner0a661/55b修复获[source审接受](quick-native1-recovery-review-20261007/recovery-p2-fix-source-review.json)，direct4/4与types红后0保原件，connection-choice仍NOT_RUN。原full7实际通过不回滚，完整feature未验收。[C02两类接口](quick-native1-recovery-review-20261007/c02-web-consumer-seams.json)严格分开，main公开v2不冒未main native候选；不占Recovery App范围。
+
+**已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。本组holder/gate/预约均无，S01性能仅排队未OPEN，不自动开后继运行。
 
 [正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
 

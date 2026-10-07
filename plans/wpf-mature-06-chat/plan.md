@@ -130,3 +130,8 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 原06-04/06沿[正式规则](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)和[root有限段授权](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-segment-authorization.json)继续；不是扩功能或放宽断言。历史90k五FAIL/late64134.08675原件永久保留并关闭新增消费，新150k只按该段真实运行累计、每次最多60k含15kcleanup，未用旧余量不转入。首次建议full原7组；相同安全/验收边界下由原owner连续修复与相关复测，pass后一次独审，不重复旧50/types/119等未受影响绿检查。每次真实专库/Chrome仍需明确holder、fresh输入/资源与唯一gate、完整owned清理；unknown/预算/越scope须停止，不自动无限重试，不触provider或个人服务。
 
 [0141最小源码审查](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-source-review.json)仅修自有fixture的合法过期时间对及授权防御总额；生产auth/schema未改，原7组及生命周期不变。是否通过仍以实际结果为准。
+
+
+本轮恢复列表可读性输入（U18，原TODO后继）：[GO实际观察及验收来源](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/incoming.json)指出UUID、工程收据及长UTC抢占主层。使用可读标题/摘要、Intl本地时间与紧凑层级，精确身份/UTC保留下钻；仅授权轻metadata或诚实fallback，不为title预取正文。No text不是重复/可删除证据，文件、知识、intent、unknown及原请求保持，不自动合并删除重发。沿既有web-design-guidelines/Arc方向，未take/未实施，不阻原full7限定结果。
+
+C02接口后继仅只读准备：见[固定消费接缝](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/c02-web-consumer-seams.json)。已main公开patch-v2与未main原生conversation/catalog候选分开；Host和channel映射须显式协调原owner/scope，复用官方Thread reasoning与共享projection，不全改HTTP头把reasoning冒正文，不新registry/轮询。Recovery finalintake按3client+session factory1重数，不抢现21scope。

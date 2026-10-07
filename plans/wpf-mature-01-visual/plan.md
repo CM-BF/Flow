@@ -70,3 +70,6 @@ app1750新增用户结果验收仍归原01-03/04与CHATREAD/REQ43：[固定506+a
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
 
 2026-10-06 安全点，原06-03/01-03 CHATREAD补[accepted queue六源研究](../../docs/evidence/web-platform/accepted-queue-506-research/report.md)：只将accepted enqueue收据作为最小紧凑候选；accepted cancel-item可能already-promoted、cancel-task仅请求接受，不能推无待办。unknown/rejected/sending、刷新失败/paused/blocked/current task确认、原key/context/动作和插件权限继续显著；展开前0详情预取。研究0运行、不新增任务或当前scope，后继仍真实用户验收。
+
+
+本轮恢复列表可读性输入（U18，原TODO后继）：[GO实际观察及验收来源](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/incoming.json)指出UUID、工程收据及长UTC抢占主层。使用可读标题/摘要、Intl本地时间与紧凑层级，精确身份/UTC保留下钻；仅授权轻metadata或诚实fallback，不为title预取正文。No text不是重复/可删除证据，文件、知识、intent、unknown及原请求保持，不自动合并删除重发。沿既有web-design-guidelines/Arc方向，未take/未实施，不阻原full7限定结果。

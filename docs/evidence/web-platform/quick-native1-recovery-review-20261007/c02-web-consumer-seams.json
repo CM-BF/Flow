@@ -1,0 +1,187 @@
+{
+  "kind": "read-only public stream and native conversation Web consumer seam research",
+  "recordedAt": "2026-10-07T06:08:47.623597+00:00",
+  "existingPlan": "MATURE06 / existing WPF Codex conversation consumer follow-up; no new task or claim",
+  "mainPublicStreamRef": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+  "pendingNativeConversationRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+  "distinction": [
+    "patch-v2 public stream contract/client/shared projection is integrated at the fixed main ref. It does not establish native conversation creation or real provider execution.",
+    "native-v1 conversation + native-v2 profile catalog interface is the C02 pending source slice, not yet an integrated/PG-reviewed guarantee at this observation.",
+    "Recovery currently owns App and connection changes. This research grants no write rights and no concurrent consumer edits."
+  ],
+  "skillsApplied": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "use": "Prefer existing local assistant-ui, codebase-design and clean-code; no install."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "use": "Reuse the existing official Thread grouped reasoning parts and its runtime message adapter."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "use": "One typed connection negotiation input propagated through client/authority/host, not duplicated independent booleans or a second stream store."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "use": "Checked protocol naming, authority boundaries, source/channel loss, error/fallback separation and unnecessary new abstractions."
+    }
+  ],
+  "observations": [
+    {
+      "id": "C02-WEB-1",
+      "fact": "FlowClient already selects patch-v2 headers for metadata, patch and block reads and conversation capabilities. Web client construction and three host updateHost calls are still patch-v1 at fixed main. StreamAuthority exposes no protocol input.",
+      "paths": [
+        "packages/client/src/index.ts",
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/plugin-integration/session.ts"
+      ],
+      "next": "Introduce one explicit, typed negotiation selection at the existing connection boundary and consistently pass it into existing FlowClient and StreamAuthority/host. Preserve existing invalidation when protocol/auth/view changes; no second polling/projection."
+    },
+    {
+      "id": "C02-WEB-2",
+      "fact": "Shared BodySegment preserves source and text/reasoning-summary/reasoning-text channel, but Web draftMessage maps every segment to a text part and drops source/channel from flowStream metadata. Merely flipping patch-v2 would show public reasoning channels as answer text.",
+      "paths": [
+        "packages/interaction/src/stream/presentation.ts",
+        "apps/web/src/conversation-stream/messages.ts"
+      ],
+      "next": "Map authorized published reasoning channels through the installed official Thread reasoning part; retain channel/source identity as needed for display and extensions. Do not fetch hidden/private provider reasoning or manufacture observations. Keep answer text separate."
+    },
+    {
+      "id": "C02-WEB-3",
+      "fact": "Official Thread already handles reasoning and group-reasoning with streaming state. Shared projection already owns byte patches, source-aware identity and explicit final replacement partitions.",
+      "paths": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "packages/interaction/src/stream/presentation.ts"
+      ],
+      "next": "Reuse these consumers. Validate installed ThreadMessageLike reasoning-part shape before coding; no second chat renderer, inferred last-block replacement or automatic detail fetch."
+    },
+    {
+      "id": "C02-WEB-4",
+      "fact": "Client counts depend on the integration baseline: main has two new FlowClient expressions in App; current Recovery source has three in App plus one SessionClient factory in connection/session.ts. The factory serves cookie session operations, so classify each construction rather than blindly change four strings.",
+      "paths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/connection/session.ts"
+      ],
+      "next": "Recount after Recovery intake and assign one owner for the exact final consumer scope. Avoid stale three-client instructions."
+    },
+    {
+      "id": "C02-WEB-5",
+      "fact": "Pending native conversation selects X-Flow-Conversation:native-v1 for the entire route family, including queue replay and details. nativeConversationProfiles uses a separate native-v2 catalog. Codex creation needs a complete host-owned profile pin and requested thinking unknown/tools none; typed replies preserve native identity and unknown effective facts.",
+      "paths": [
+        "packages/client/src/index.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/conversation-harness.ts"
+      ],
+      "next": "Consume only after C02 independent review/PG/main intake. Keep this codec separate from stream patch-v2 and Claude message-settings/steering codecs; do not use Quick controls to fabricate Codex settings."
+    }
+  ],
+  "acceptanceForExistingFollowup": [
+    "Default/legacy Claude remains supported; negotiated patch-v2 keeps Claude identity and behavior.",
+    "All three public Codex channels map to correct Thread parts; interleaved stream identities and valid UTF-8 patches retain source/turn/item/channel boundaries.",
+    "Canonical final replacement follows explicit replaceStreamIds only; unrelated reasoning/drafts are not erased and canonical text is not appended twice.",
+    "Hidden panes issue zero new reads; auth loss, protocol downgrade, source generation and owner changes reject stale responses with existing authority leases.",
+    "No eager body/detail/hidden-reasoning fetch; existing per-pane and connection cache budgets remain in force.",
+    "Once pending conversation interface is integrated, test native-v1 profile/create/follow-up/queue/replay and true unknown settings separately from mocked transport and real provider delivery.",
+    "Keep fixture, public center integration and real native/provider acceptance distinct in plan/status/review."
+  ],
+  "execution": {
+    "projectWrites": 0,
+    "runtimeTests": 0,
+    "networkCalls": 0,
+    "newClaims": 0
+  },
+  "bindings": [
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 6713,
+      "sha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "packages/client/src/index.ts",
+      "bytes": 54644,
+      "sha256": "8305feef971008fe610a68ed3fe5a52c2d55ff44b2a917eb868e8a0a2b7c670e"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 11315,
+      "sha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "bytes": 6328,
+      "sha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "bytes": 1934,
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "ref": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "ref": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "path": "packages/client/src/index.ts",
+      "bytes": 54887,
+      "sha256": "c4a7be6c6bca6e552aa732e9396bc7518e1370f608344e3a56d826562fe51ffc"
+    },
+    {
+      "ref": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "ref": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "ref": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "path": "docs/evidence/mature02c02/conversation-interface.md",
+      "bytes": 3583,
+      "sha256": "250713af003b768e0e96f38f3563d54bb057c9fa960a0f43a0c0fefdb7ccd815"
+    },
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9"
+    },
+    {
+      "ref": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    }
+  ]
+}

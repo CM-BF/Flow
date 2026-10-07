@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:54:50.370006+00:00；Recovery原七组实际通过、清理归还，限定结果独审已接受 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:08:31.455385+00:00；完整恢复两项修复源码已接受，新增浏览器回归待验，SVC08已归还，Quick诊断已fresh准入尚未启动 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 恢复的原七组真实旅程已通过并获限定独审接受，原owner正常封存；完整恢复覆盖继续沿原计划。快速设置的原生控件诊断源码已审，尚未运行新段。 |
+| 下一可用交付 | 恢复原七组通过保持，原owner完成两处修复源码，新增浏览器回归待验；快速设置开始原生控件对照定位，测量完成不冒功能通过。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery已实际清理归还并删除专用凭据；本组无PG/Chrome holder、gate或预约，S01性能仅排队未OPEN。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：S01与SVC08已明确实际归还；Quick独立0PG诊断已fresh准入尚未启动，Recovery局部段已结束且无PG/Chrome占用。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

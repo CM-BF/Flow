@@ -1,0 +1,37 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T06:09:26.617854+00:00",
+  "gate": "/private/tmp/msgquick-native1-admission-uvmtggp4/gate.json",
+  "gateSha256": "cdee61a931a81e12bf8e7be1f9f60531f282b51d0c908455c5714dba1ec9861e",
+  "expiresAt": "2026-10-07T06:15:26.617854+00:00",
+  "run": "msgquick-native1-20261007-060926-18698b",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "head": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+  "sourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+  "bindingSha256": "df7e1e583294dd7520c02e29d428db27d57232235733d09b58aac96a07d5fa85",
+  "manifestSha256": "68fe0db4677a16c56835726663c05029c3846c53495f3f9a744a028f535e1fdb",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-native1/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-native1-admission-uvmtggp4/gate.json"
+  ],
+  "selection": "diagnostic",
+  "singleRunMaximumMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentTotalMs": 90000,
+  "newSegmentSpentMs": 0,
+  "oldClosedActualMs": 30625,
+  "nativeReview": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-boundary-review.json",
+    "sha256": "431cfdb15ac29c7b9597f3056eb9b4dddb8c9c8cf4f475448e37bdd67c2b5b6d"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-source-review.json",
+    "sha256": "263ec06a322ecd0dca82835680336cdbd8e030289083814616f40088510702e8"
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "outerRequirements": "Unique owned outercapture; realexit/stdout/stderr/EOF/terminal hashes and ownedcleanup must agree. Chargeceilmax actualouter/late/parent. Do not infer diagnostic measurement is featurePASS. Report actualstart and terminal immediately; preserve FAIL/INCONCLUSIVE.",
+  "managerLaunch": false,
+  "noSecretsOrPersonalInputs": true
+}
