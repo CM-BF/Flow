@@ -43,6 +43,16 @@ def cleanup_tmp(root,identity,closed,confirmed,started,helper,facts):
  try:root.lstat();raise ValueError('TMP_NOT_ABSENT')
  except FileNotFoundError:facts['state']='absent'
 
+def validate_test_results(results,client_journey):
+ assertions=[case for suite in results['testResults']for case in suite['assertionResults']]
+ if any(case.get('status')not in ('passed','failed','skipped','pending')for case in assertions):raise ValueError('TEST_STATUS_UNKNOWN')
+ selected=[case for case in assertions if case['status']in ('passed','failed')]
+ unselected=[case for case in assertions if case['status']in ('skipped','pending')]
+ total,passed,pending=(3,1,2)if client_journey else(2,2,0)
+ if results.get('success')is not True or results.get('numTotalTests')!=total or results.get('numPassedTests')!=passed or results.get('numFailedTests')!=0 or results.get('numPendingTests')!=pending or len(assertions)!=total or len(selected)!=passed or len(unselected)!=pending or any(case['status']!='passed'for case in selected):raise ValueError('VALIDATION_NOT_PASSED')
+ if client_journey and selected[0].get('title')!='uses public FlowClient selection with real HTTP and the shared projection':raise ValueError('TEST_SELECTION_MISMATCH')
+ return {'total':total,'passed':passed,'failed':0,'pending':pending,'selected':len(selected),'unselected':len(unselected)}
+
 def main():
  started=time.monotonic();utc=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
  expected=os.environ.get('FLOW_LAZY_EXECUTION_HEAD');window=os.environ.get('FLOW_LAZY_WINDOW')
@@ -101,12 +111,9 @@ def main():
   child=read_receipt('child',8192);reservation=read_receipt('databaseReservation',8192);requested=read_receipt('createRequest',8192);owned=read_receipt('database',8192)
   confirm_fixture(fixture,child,reservation,requested,owned,window,head,report.pid)
   results=read_receipt('vitest',262144)
-  assertions=[case for suite in results['testResults']for case in suite['assertionResults']]
-  selected=[case for case in assertions if case.get('status')!='pending']
-  record['tests']={'total':results.get('numTotalTests'),'passed':results.get('numPassedTests'),'failed':results.get('numFailedTests'),'pending':results.get('numPendingTests'),'selected':len(selected)}
-  expected_total,expected_passed,expected_pending=(3,1,2)if client_journey else(2,2,0)
-  if report.exit_code!=0 or report.first_failure or results.get('success')is not True or results.get('numTotalTests')!=expected_total or results.get('numPassedTests')!=expected_passed or results.get('numFailedTests')!=0 or results.get('numPendingTests')!=expected_pending or len(assertions)!=expected_total or len(selected)!=expected_passed or any(case.get('status')!='passed'for case in selected):raise ValueError('VALIDATION_NOT_PASSED')
-  if client_journey and selected[0].get('title')!='uses public FlowClient selection with real HTTP and the shared projection':raise ValueError('TEST_SELECTION_MISMATCH')
+  record['tests']={key:results.get(field)for key,field in [('total','numTotalTests'),('passed','numPassedTests'),('failed','numFailedTests'),('pending','numPendingTests')]}
+  if report.exit_code!=0 or report.first_failure:raise ValueError('VALIDATION_NOT_PASSED')
+  record['tests'].update(validate_test_results(results,client_journey))
   fixture_confirmed=True
  except BaseException as error:record['primary']={'type':type(error).__name__,'code':str(error)if isinstance(error,ValueError)else'EXECUTION_OR_PERSISTENCE_UNKNOWN','errno':getattr(error,'errno',None)}
  finally:

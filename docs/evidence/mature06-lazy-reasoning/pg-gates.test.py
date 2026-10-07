@@ -1,5 +1,5 @@
 """Pure receipt/deadline counterexamples. No database, process spawn, or real root cleanup."""
-import copy,importlib.util,pathlib,types,unittest
+import copy,importlib.util,pathlib,types,unittest,json
 from unittest.mock import patch
 p=pathlib.Path(__file__).with_name('execute-pg.py')
 spec=importlib.util.spec_from_file_location('lazy_pg_gates',p);gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
@@ -40,5 +40,27 @@ class Gates(unittest.TestCase):
   helper=types.SimpleNamespace(temp_sample=lambda *_:{'logicalBytes':0});facts={'state':'KEEP'}
   with patch.object(gate.time,'monotonic',return_value=80),patch.object(gate.shutil,'rmtree')as remove:gate.cleanup_tmp(root,(1,2),True,True,0,helper,facts);remove.assert_called_once_with(root)
   self.assertEqual(facts['state'],'absent')
+
+class ResultSelection(unittest.TestCase):
+ def actual(self):
+  return json.loads(pathlib.Path(__file__).with_name('pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.vitest.json').read_text())
+ def assertions(self,result):return result['testResults'][0]['assertionResults']
+ def test_actual_skipped_shape_exposes_old_error_and_new_exact_selection(self):
+  result=self.actual();assertions=self.assertions(result)
+  self.assertEqual([case['status']for case in assertions],['skipped','skipped','passed'])
+  self.assertEqual(len([case for case in assertions if case['status']!='pending']),3)
+  self.assertEqual(gate.validate_test_results(result,True),{'total':3,'passed':1,'failed':0,'pending':2,'selected':1,'unselected':2})
+ def test_selected_failure_is_rejected(self):
+  result=self.actual();self.assertions(result)[2]['status']='failed'
+  result.update(success=False,numPassedTests=0,numFailedTests=1)
+  with self.assertRaisesRegex(ValueError,'VALIDATION_NOT_PASSED'):gate.validate_test_results(result,True)
+ def test_unknown_status_is_rejected(self):
+  result=self.actual();self.assertions(result)[0]['status']='unknown'
+  with self.assertRaisesRegex(ValueError,'TEST_STATUS_UNKNOWN'):gate.validate_test_results(result,True)
+ def test_extra_execution_and_wrong_title_are_rejected(self):
+  result=self.actual();self.assertions(result)[0]['status']='passed';result.update(numPassedTests=2,numPendingTests=1)
+  with self.assertRaisesRegex(ValueError,'VALIDATION_NOT_PASSED'):gate.validate_test_results(result,True)
+  result=self.actual();self.assertions(result)[2]['title']='unexpected execution'
+  with self.assertRaisesRegex(ValueError,'TEST_SELECTION_MISMATCH'):gate.validate_test_results(result,True)
 
 if __name__=='__main__':unittest.main()
