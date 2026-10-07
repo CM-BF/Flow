@@ -70,7 +70,16 @@ export class QueueDatabaseFixture {
   }
   private makePool(max: number) {
     const pool = new Pool({ connectionString: this.url.href, max, connectionTimeoutMillis: 1000, statement_timeout: 1500, query_timeout: 1800 });
-    pool.on('error', error => this.failure('aux-idle', error)); return pool;
+    pool.on('error', error => this.failure('aux-idle', error));
+    // Stop new direct test queries/transactions too; existing borrowers may rollback/release.
+    return new Proxy(pool, { get: (target, key) => {
+      const value: unknown = Reflect.get(target, key, target);
+      if (typeof value !== 'function') return value;
+      return (...args: unknown[]) => {
+        if (key === 'query' || key === 'connect') this.checkWork();
+        return Reflect.apply(value, target, args);
+      };
+    } });
   }
   additionalPool() { this.checkWork(); const pool = this.makePool(2); this.extraPools.add(pool); return pool; }
   async fetch(url: string, options: RequestInit = {}) {
