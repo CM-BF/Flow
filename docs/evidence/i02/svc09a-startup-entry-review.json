@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T20:36:30.514Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_OPTIONAL_STARTUP_ENTRY_OBSERVATION",
+  "source": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+  "delivery": "9f848ce17549f82dc61d0026d2e004bc8c3e8d1d",
+  "canonical": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-manifest.json",
+  "manifestSha256": "94963f28b6eda1a95c973cec98939103ddf60f0c79525ab226882e3cf90eeb97",
+  "fixedBindings": 38,
+  "fixedBytes": 228045,
+  "inheritedGitReferences": 2,
+  "scope": [
+    "apps/server/src/main.ts",
+    "apps/server/src/index.ts",
+    "apps/server/src/startup-progress.ts"
+  ],
+  "blockingFindings": [],
+  "review": [
+    "Read complete three source diffs, interface and real-entry synthetic-port tests, actual raw pass/fail/return records. All fixed bindings verified.",
+    "Index retains exact 31-migration sequence and lifecycle ownership; observer schema does not select work. Original swallowed scan failures and cleanup throws preserved; structural first error retained.",
+    "CORS Fastify thenable stays inside the original await and callback returns void; its actual installed no-listen consumer is separately checked.",
+    "Exact main preimages equal18bf. No pending AV semantic patch, role deadline, source-identity bypass or current artifact change."
+  ],
+  "evidence": {
+    "differentEntryCases": 10,
+    "typesInitialExit": 2,
+    "typesFinalExit": 0,
+    "elapsedMs": 7299,
+    "rawBytes": 79481,
+    "groups": "five final twice absent / dual EOF / no signals",
+    "scratch": "three exact empty directories removed",
+    "sourceProvenance": "nine cases on9b1; exact runtime-erased type repair; final8daa CORS void delta has one actual Fastify case and final types. No claim all9 rerun on final bytes.",
+    "reviewerTests": "NOT_RUN_DIRECT_EVIDENCE_REUSED"
+  },
+  "limits": [
+    "Static imports before main point remain outside this observer.",
+    "No PG, transport listener, real startup, historical cause, artifact build or personal deployment proved.",
+    "Old2515/098b and original FAIL/KEEP remain unchanged.",
+    "An observer footer does not prove ready/claim/resource closure."
+  ]
+}
