@@ -43,8 +43,23 @@ function drawEdge(edge) {
   group.append(svg('path',{d,'marker-end':'url(#architecture-arrow)'}));
   const custom=selectedView.routes?.[`${edge.from}:${edge.to}`];
   if(custom){d=custom.d;lx=custom.x;ly=custom.y;group.firstChild.setAttribute('d',d);}
-  const textWidth=Math.max(40,edge.label.length*8+14);
-  group.append(svg('rect',{x:lx-textWidth/2,y:ly-12,width:textWidth,height:19,rx:3}),svg('text',{x:lx,y:ly+1,'text-anchor':'middle'},edge.label));return group;
+  group.append(svg('rect',{x:lx-20,y:ly-12,width:40,height:19,rx:3}),svg('text',{x:lx,y:ly+1,'text-anchor':'middle'},edge.label));return group;
+}
+function fitEdgeLabels() {
+  if ($('#architecture-panel').hidden) return;
+  // Measure only mounted, visible text; finish all layout reads before writes.
+  const labels = [...canvas.querySelectorAll('.architecture-edge')].map(group => ({
+    background: group.querySelector('rect'),
+    bounds: group.querySelector('text').getBBox(),
+  }));
+  for (const { background, bounds } of labels) {
+    const width = Math.max(40, bounds.width + 14);
+    const height = Math.max(19, bounds.height + 6);
+    background.setAttribute('x', String(bounds.x + (bounds.width - width) / 2));
+    background.setAttribute('y', String(bounds.y + (bounds.height - height) / 2));
+    background.setAttribute('width', String(width));
+    background.setAttribute('height', String(height));
+  }
 }
 function sizeCanvas() {
   if ($('#architecture-panel').hidden) return;
@@ -71,7 +86,7 @@ function draw() {
   for(const group of selectedView.groups) canvas.append(svg('rect',{x:group.x,y:group.y,width:group.width,height:group.height,rx:12,class:'architecture-boundary'}),svg('text',{x:group.x+16,y:group.y+27,class:'boundary-title'},group.label));
   for(const edge of selectedView.edges) canvas.append(drawEdge(edge));
   for(const node of selectedView.nodes) canvas.append(drawNode(node));
-  selectNode(selectedView.nodes[0]); sizeCanvas();
+  selectNode(selectedView.nodes[0]); fitEdgeLabels(); sizeCanvas();
 }
 const viewSelect=$('#architecture-view');
 for(const view of views){const option=html('option',view.title);option.value=view.id;viewSelect.append(option);}
@@ -99,7 +114,7 @@ function activateTab() {
   $('#architecture-panel').hidden=!architecture; $('#progress-panel').hidden=architecture;
   $('#nav-progress').setAttribute('aria-current',architecture?'false':'page'); $('#nav-architecture').setAttribute('aria-current',architecture?'page':'false');
   $('#refresh').hidden=architecture;
-  if(architecture)sizeCanvas();
+  if(architecture){fitEdgeLabels();sizeCanvas();}
 }
 window.addEventListener('hashchange',activateTab);
 new ResizeObserver(()=>{if(viewportStates.get(selectedView.id).mode==='fit')sizeCanvas();}).observe(viewport);
