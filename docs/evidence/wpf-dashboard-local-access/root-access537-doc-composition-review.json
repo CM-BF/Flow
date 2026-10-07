@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-07T04:03:08.520817+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_COMPOSITION_WITH_CURRENT_CALLER_DOCUMENTATION",
+  "target": "53723697a796a1346164c4cddc82ab99baf168ea",
+  "previousApprovedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "parent": "a12defc50562251c3415f2ea344250f9afece7da",
+  "scope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4446,
+      "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+      "gitBlob": "acc36a5a401381da1746559ea5ff66f192783cd6"
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "bytes": 7687,
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "gitBlob": "dd0b793b473b4197475c075345cb66267228fb39"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 8840,
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "gitBlob": "da2e4eba4f66105fa65a8f29e5206532c53a6618"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "bytes": 6064,
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "gitBlob": "1c4f53fde7249b44c36daf636a4d08ff3eaf8b40"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "bytes": 1315,
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "gitBlob": "92b932cb79a690d2e3c1f015e6b58998571bb544"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "bytes": 10492,
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "gitBlob": "24471c288447b1f9865d66244b83de3d9a80145e"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "bytes": 9875,
+      "sha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0",
+      "gitBlob": "3eaabb1362e723233489a95fd4d88fb479846431"
+    },
+    {
+      "path": "apps/execution-dashboard/README.md",
+      "bytes": 15592,
+      "sha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93",
+      "gitBlob": "4060d5e1be54d9cc0915ad800f930375d43072dd"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+      "bytes": 4986,
+      "sha256": "ad33f2f1996d4e72b48bac04aa79aaad82d571f29b535c460077238857539faa",
+      "gitBlob": "b3b04b2b74e8f1fc5fba43826ac250aa2263c8b0"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+      "bytes": 1340,
+      "sha256": "37468d8f91a256ca7e342929ef79369493bc8c002378c67cb415b12c7b16d018",
+      "gitBlob": "6eb1250b5011dd0006e555816af0ce821a009231"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff",
+      "bytes": 2768,
+      "sha256": "f9a48970d7bfb9dba3b0dd3ac9370ea1af66a07b4d48941b3c0f64a46148ba52",
+      "gitBlob": "83d1732cbdce76bdf373e040a20b085ebcb8aa09"
+    }
+  ],
+  "finding": {
+    "id": "ACCESS-R3",
+    "severity": "P2",
+    "state": "CLOSED",
+    "description": "Current README had obsolete browser argument and pending-runtime wording after fixture seam changed. Now documents explicitownedDefaultContext/noDefaults and fresh exclusiveChrome ownership, actual35direct/fourth5fake results, caller actualexit/EOF/group/temp cleanup and separate realinstallation/deployment limits."
+  },
+  "reviewed": "Exact README5added1removed; no other app/test/evidence source changes. Sevenimplementation/test and four specialraw files exact previously approved366 bytes. Original35/5 actual source approvals and allthree failures preserved. No new runtime required for this documentation correction.",
+  "blockingFindings": [],
+  "cleanCode": "Current Interface instructions match implemented public fixture and explicit cleanup responsibilities; no invented historical label masking obsolete current docs.",
+  "preservedEvidence": {
+    "actualReview": "root-access3c0-browser-actual-review.json",
+    "actualReviewSha256": "594b2a5e9eabf938fca6bb7ef1f46148c2b0853a09ca2d0a0edbf862d4bb95a3",
+    "cumulativeConservativeMs": 37077,
+    "remainingMs": 22923
+  },
+  "limits": [
+    "Source/document composition approval, not another product execution.",
+    "Main integration/4320publication/realinstallation/userlogin remainNOT_RUN.",
+    "New ownerstatus/review/intake must bind this exact12path composition while retaining old366/08ec/3c0 approvals; no tests rerun or proof weakening."
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "implementation": "366a568f2750777f683941180b665af7c4a3effb",
-  "state": "APPROVED_FIXED_SOURCE_DIRECT35_BROWSER5_COMPOSITION_NOT_MAIN",
+  "implementation": "53723697a796a1346164c4cddc82ab99baf168ea",
+  "state": "APPROVED_537_COMPOSITION_ORIGINAL366_IN_MAIN_README_DELTA_PENDING",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -55,10 +55,10 @@
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
   "browserEntry": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller transfers only its fresh owned Chrome default context attached with documented noDefaults:true. Fixture sets page viewport explicitly and closes transferred context (which closes that owned browser); caller continues PID/EOF/process cleanup. Five groups unchanged; one actual fourth run passed at execution metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26.",
-  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent fixed366a composition review APPROVED, scope limited to fake/direct35/browser5; main/real installation not verified.",
+  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent fixed366a runtime composition and subsequent537 README-only composition reviews APPROVED, scope limited to fake/direct35/browser5; main/real installation not verified.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
-  "main": "NOT_INTEGRATED",
-  "deployment4320": "NOT_DEPLOYED",
+  "main": "Original366 exact12 integrated at451bf2ed1c0c3d7688073c8d060629f064044dc2; README537 delta still pending.",
+  "deployment4320": "PENDING_LEAD_PUBLICATION_RECEIPT",
   "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
   "browserSourceImplementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
   "reviewScope": [
@@ -74,5 +74,7 @@
     "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
     "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
     "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
-  ]
+  ],
+  "previousApprovedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "documentationSourceImplementation": "53723697a796a1346164c4cddc82ab99baf168ea"
 }

@@ -2,15 +2,15 @@
 
 状态：APPROVED
 
-Review target commit：366a568f2750777f683941180b665af7c4a3effb
+Review target commit：53723697a796a1346164c4cddc82ab99baf168ea
 
 Base：943a66bfa5f71f4a5000ff2674ac1973e85e0353
 
 Review scope：apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/README.md, docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout, docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff
 
-限定结论：root独立审核固定组合366a，APPROVED / 0 blocking，仅synthetic direct35与fake-only真实browser5及所列源码/证据。六产品/direct源==08ec、browser==3c0，实际运行head仍d0f6。main、4320发布、真实安装启用与用户登录未验；完整用户交付仍开放。
+限定结论：root独立审核固定组合53723697（README窄修，原366a实证组合保留），APPROVED / 0 blocking，仅synthetic direct35与fake-only真实browser5及所列源码/证据。六产品/direct源==08ec、browser==3c0，实际运行head仍d0f6。原366已main451bf2，README537尚待main；4320发布、真实安装启用与用户登录未验，完整用户交付仍开放。
 
-独立原件：[root composition review](../../docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json)。前三次失败/原始时长和清理证据全部保留；37077ms已耗/22923ms余额不是第五次许可。
+独立原件：[README composition review](../../docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json)与[原366a runtime composition review](../../docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json)。前三次失败/原始时长和清理证据全部保留；37077ms已耗/22923ms余额不是第五次许可。
 
 验收：可信固定config最小读取、Host/Origin/peer/no-store/错误保密、纯文本安全UI与explicit加载/显隐复制、代际取消、实际61228入口/空URL语义、保护原4320tab；default-off和remote禁用，fake与真实安装证据分开。
 
@@ -65,3 +65,11 @@ Root `root-access3c0-default-context-review.json` 已批准3c0d与caller准备�
 Root于03:55:16.359510Z完成固定366a组合审查，26第四次原件/归档/Git字节一致，七源身份、5组实际断言、nativehidden→tokenempty、两层EOF/清理与双390图均独立核对；0blocking。已原样归档，未执行任何新检查。顶部唯一当前结论替代历史NOT_STARTED；各段历史源审/失败/运行时点不改。
 
 精确12literal包含第四次新.diff/stdout/stderr，遵守现proof非metadata规则，不改parser、不改名。作者准备[main-intake](../../docs/evidence/wpf-dashboard-local-access/main-intake.json)列base预像/targethash、八个产品文档路径与own记录。仅原Lead受控集成/启用，真实安装凭据/发布未验；工作完成时间仍NOT_COMPLETED。
+
+## 2026-10-07 04:03:48 UTC — ACCESS-R3 文档P2关闭
+
+固定 `53723697a796a1346164c4cddc82ab99baf168ea` 只改当前README专测段5增/1删；35direct/第四5fake实际状态、ownedDefaultContext签名、freshPID/exclusiveprofile/noDefaults:true准入及caller清理责任准确。当前错误不再以historical解释。Root独立核其余11scope逐字等366a，ACCESS-R3 P2 CLOSED；顶部组合target更新为537，exact12不变。
+
+原366a/08ec/3c0源审与35/5实证、三失败及37077/余22923完整保留；本段0runtime，主线/真实安装/发布未验。Intake只更新组合target和README blob/hash、当前Interface及本批owner记录。
+
+主线接收补充（root转Lead）：原366/12已进入451bf2，owner只读固定blob核同；README537仍待单文件增量接收。新组合批准不冒主线已含README修正；部署/真实安装仍待原Lead完成回执。

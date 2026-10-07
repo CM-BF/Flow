@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:56:12 UTC |
+| 最近更新 | 2026-10-07 04:03:48 UTC |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成 |
@@ -12,20 +12,20 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | integration |
-| 当前产出 | 本机Flow入口已完成隔离验证与独立审查，等待主线接收 |
-| 下一可用交付 | 由原发布者集成并明确启用本机入口，验证真实安装 |
-| 当前阻塞 | NONE；已审待受控集成发布，真实安装尚未验证 |
+| 当前产出 | 本机Flow入口的原获审实现已进入主线；README修正待接收 |
+| 下一可用交付 | 接收README单文件修正；由原发布者完成启用与真实安装验证 |
+| 当前阻塞 | NONE；原发布者正在受控启用，实际完成与真实安装验证待回执 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
-| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；产品08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7；测试前提3c0dda7b7a8887ac763d8a1651231374b0f3356d；执行metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26；本次仅实证metadata封存 |
-| 工作树dirty状态 | 七源固定不变；本次仅metadata/实证封存，提交后核clean |
+| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；获审组合 53723697a796a1346164c4cddc82ab99baf168ea；产品08ec/测试3c0/执行d0f6原身份保留；本次仅文档批准metadata封存 |
+| 工作树dirty状态 | README窄修已固定；七产品/test源不变；本次仅metadata封存后核clean |
 | 工作分支状态 | in-progress / approved / waiting-main |
-| 实现目标 | 366a568f2750777f683941180b665af7c4a3effb |
+| 实现目标 | 53723697a796a1346164c4cddc82ab99baf168ea |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/README.md, docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout, docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff |
 | 检查状态 | PASSED 3c0dda7b7a8887ac763d8a1651231374b0f3356d：第四次browser实际5/5、exit0、原生hidden后token清空、owned清理完整；08ec之35direct保留不重跑；前三次FAILED保留；真实安装/部署 NOT_RUN |
-| Review | APPROVED 366a568f2750777f683941180b665af7c4a3effb；固定12literal/direct35/fake browser5独立组合批准，0blocking；真实安装/main/发布未验 |
-| 已集成main状态 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；本功能未集成 |
+| Review | APPROVED 53723697a796a1346164c4cddc82ab99baf168ea；固定12literal/README纠正+原direct35/fake browser5组合批准，ACCESS-R3 CLOSED；原366已main，README537待main/真实安装发布待回执 |
+| 已集成main状态 / HEAD | 451bf2ed1c0c3d7688073c8d060629f064044dc2；Lead报告main/origin clean，原366 exact12逐字相同已独立Git核；README537增量待main |
 | Dashboard 同步 | 首a6fb已由manager核并转READY_FOR_LEAD_INTAKE；实际登记/聚合待回执 |
 | Claim | 57735ff7-d631-4538-9faf-d7ac090837a2 v1；原10literal |
 
@@ -34,7 +34,7 @@
 | ACCESS01-01 | completed | workspace_panels_owner | provider/HTTP已实现，35direct通过且限定独审接受 |
 | ACCESS01-02 | completed | workspace_panels_owner | browser第四次5/5，原生hidden→token空/显隐复制/键盘焦点/双主题390独立实证审通过 |
 | ACCESS01-03 | completed | workspace_panels_owner | 35direct通过；第四次browser5/5；原三失败/早晚计时保留；60s保守累计37077/余22923ms含15s清理，无第五次许可 |
-| ACCESS01-04 | in-progress | workspace_panels_owner | 固定366a/12literal组合独审通过；main-intake齐，main/真实安装/部署未验 |
+| ACCESS01-04 | in-progress | workspace_panels_owner | 固定537/原12literal组合独审通过；README当前Interface已纠正；原366已main，README537增量与实际发布待接收 |
 
 ## 已完成与检查
 
@@ -103,3 +103,15 @@ context/HTTP closed；Chromeexit0、两层双EOF、errors/cleanupErrors/interrup
 Root固定组合target `366a568f2750777f683941180b665af7c4a3effb` / exact12literal已APPROVED、0blocking；[原件](../../docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json)与[main-intake](../../docs/evidence/wpf-dashboard-local-access/main-intake.json)原样/据固定blob生成。声明范围明确纳入README与第四次新增.diff/stdout/stderr，现proof正确把它们当非metadata，不改规则或文件名。35/direct与browser5原运行分别绑定08ec/3c0，不将366组合审查冒新执行。
 
 新head仅归档批准与主线输入，七源/README/原raw不改；原60s累计37077/余22923含15s清理，无第五次许可。角色为已审分支待集成，非已部署；主线、真实安装启用、原4320tab保留由原Lead受控接收验证。本owner本批normalpush/核remote clean后全十scope停写，claim留待合法handoff/release，不在释放后补写。
+
+## 2026-10-07 04:03:48 UTC — 当前README修正与新组合target
+
+ACCESS-R3 P2仅当前README检查状态/浏览器签名错误；修复固定 `53723697a796a1346164c4cddc82ab99baf168ea`，root[限定审查](../../docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json)已通过，其他11scope字节不变。原366a批准作为完整历史保留，当前实现/review目标统一537和原12literal；[main-intake](../../docs/evidence/wpf-dashboard-local-access/main-intake.json)更新README target hash/blob与当前ownedDefaultContext Interface。
+
+本段无runtime或新检查链，35/5及三失败/raw原样、累计37077/余22923不变。文档问题不冒产品失败或新测试通过。原57735v1十scope active，normalpush/remote同clean后再次全停写，等待原Lead合法接收；未release，不操作main/真实安装或服务。
+
+## 2026-10-07 04:04 UTC — 原366主线接收来源事实
+
+Root转Lead正式回执：main/origin `451bf2ed1c0c3d7688073c8d060629f064044dc2` clean，原366/a12之12范围已接收，26raw/2direct原件核对，无重测。本owner只读固定Git对象再核12路径逐字等366，见[原接收/README增量](../../docs/evidence/wpf-dashboard-local-access/main-initial-receipt.json)。新537 README尚未在main；后续仅README一文件diff加本轮owner批准记录，不重拷七产品/test或全八路径。
+
+Lead正在4320显式opt-in真实绑定发布，尚未收到完成回执，不能写已部署/真实安装已验。本owner不操作个人center/runner/tab，不新增runtime。当前task完成仍NOT_COMPLETED。

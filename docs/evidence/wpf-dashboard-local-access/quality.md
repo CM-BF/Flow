@@ -21,3 +21,5 @@
 2026-10-07 03:51:57 UTC 第四次实际检查/clean-code安全点：复用已读find-skills/webapp-testing/clean-code，当前仅证据metadata无产品改动。由caller明确拥有freshChrome/defaultcontext，fixture不再猜上下文或叠加focus特判；真实hidden与清除先后断言都通过。保源码结论、实际行为、资源采样口径及部署范围分离。所有失败/早晚时间原件保留；原七源hash与3c0d一致，不跑无变化35direct。截图为fake-only/空token，日志完整168B/截断0；终态5组与exit0、EOF/清理交root独审，不自行扩大到个人安装或全feature批准。
 
 2026-10-07 03:56:12 UTC 独审收口clean-code安全点：本段只元数据，复用现find-skills/clean-code方法核命名/模块责任/错误边界及证据归因。精确12范围包含原证据特殊扩展，不通过改parser或改名规避proof；base预像与target字节逐项核对，现七源/README/raw不动。实际启动/opt-in说明不含token或个人配置，不把fileUID称HTTP身份认证。保35/direct5browser与真实安装/main/发布边界，README旧browser参数历史提示在main-intake明确当前ownedDefaultContext Interface，无额外运行。
+
+2026-10-07 04:03:48 UTC README窄修clean-code：当前可执行Interface文档必须匹配实际导出，不能用historical解释过时签名。只改README专测段，准确说明35/5已过及fake边界；职责仍是caller拥有freshChrome/profile/预算/真实退出，fixture只接明确移交context并关闭HTTP/context。Root独立P2 CLOSED；其他11scope、101原raw逐hash未变。无产品/测试执行、不扩错误处理或运行框架，主线与真实部署未验。

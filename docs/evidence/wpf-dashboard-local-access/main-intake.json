@@ -1,22 +1,23 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
-  "state": "APPROVED_BRANCH_READY_FOR_LEAD_INTAKE_NOT_MAIN",
-  "at": "2026-10-07 03:56:12 UTC",
+  "state": "ORIGINAL366_IN_MAIN_README537_DELTA_READY",
+  "at": "2026-10-07 04:03:48 UTC",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
   "branch": "codex/dashboard-local-access",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "approvedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "approvedComposition": "53723697a796a1346164c4cddc82ab99baf168ea",
   "productSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
   "browserSource": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
   "executionMetadata": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
-  "ownerHeadObservedBeforeMetadata": "366a568f2750777f683941180b665af7c4a3effb",
+  "ownerHeadObservedBeforeMetadata": "53723697a796a1346164c4cddc82ab99baf168ea",
   "ownerDirtyObservedBeforeMetadata": false,
   "metadataSeal": "This intake/approval record is the subsequent metadata-only seal; final HEAD and remote equality are returned by the owner after commit/push. It is not the browser execution HEAD.",
   "review": {
-    "path": "docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json",
-    "sha256": "594b2a5e9eabf938fca6bb7ef1f46148c2b0853a09ca2d0a0edbf862d4bb95a3",
-    "decision": "APPROVED_FIXED_SOURCE_DIRECT35_AND_BROWSER5_COMPOSITION",
-    "blockingFindings": []
+    "path": "docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json",
+    "sha256": "92eaba6dd8f500bd53d4c0822c12662e4a41acfa86db013f41837efa550b0387",
+    "decision": "APPROVED_COMPOSITION_WITH_CURRENT_CALLER_DOCUMENTATION",
+    "blockingFindings": [],
+    "scope": "Original exact12; README-only correction independently reviewed, prior runtime evidence retained."
   },
   "reviewScope": [
     "apps/execution-dashboard/src/server.mjs",
@@ -147,9 +148,9 @@
         "gitBlob": "1dbf223d0aa6790fe050db682f48119f50f5a245"
       },
       "target": {
-        "bytes": 14861,
-        "sha256": "5cca704df9e7897929ff6e37e894712a6d289319644fbe01e52811f00b4a7956",
-        "gitBlob": "08ed959c069cdce17fe66e40dcf1ad7b0ac7c243"
+        "bytes": 15592,
+        "sha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93",
+        "gitBlob": "4060d5e1be54d9cc0915ad800f930375d43072dd"
       },
       "currentEqualsTarget": true
     },
@@ -229,6 +230,7 @@
     "docs/evidence/wpf-dashboard-local-access"
   ],
   "ownerChangedPathsAtApprovedTarget": [
+    "docs/evidence/wpf-dashboard-local-access/approval-metadata-claim.json",
     "docs/evidence/wpf-dashboard-local-access/browser-first/actual-exit.json",
     "docs/evidence/wpf-dashboard-local-access/browser-first/archive.json",
     "docs/evidence/wpf-dashboard-local-access/browser-first/post-cleanup.json",
@@ -345,6 +347,7 @@
     "docs/evidence/wpf-dashboard-local-access/implementation-interface.md",
     "docs/evidence/wpf-dashboard-local-access/initial-interface.md",
     "docs/evidence/wpf-dashboard-local-access/input-source-manifest.json",
+    "docs/evidence/wpf-dashboard-local-access/main-intake.json",
     "docs/evidence/wpf-dashboard-local-access/quality.md",
     "docs/evidence/wpf-dashboard-local-access/root-access-caller-fix-review.json",
     "docs/evidence/wpf-dashboard-local-access/root-access-ccd-visibility-review.json",
@@ -352,6 +355,7 @@
     "docs/evidence/wpf-dashboard-local-access/root-access-second-browser-research.json",
     "docs/evidence/wpf-dashboard-local-access/root-access-third-actual-research.json",
     "docs/evidence/wpf-dashboard-local-access/root-access-third-preparation-review.json",
+    "docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json",
     "docs/evidence/wpf-dashboard-local-access/root-access3c0-default-context-review.json",
     "docs/evidence/wpf-dashboard-local-access/root-source-direct-review.json",
     "docs/evidence/wpf-dashboard-local-access/source-manifest-08ec-browser-second.json",
@@ -402,7 +406,7 @@
     "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-dark.png"
   ],
   "deployment": {
-    "state": "NOT_RUN",
+    "state": "PENDING_LEAD_REPORTED_PREPARING_NO_COMPLETION_RECEIPT",
     "operator": "Original Execution Lead/service operator",
     "node": "Node24.20+",
     "entry": "/opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/src/server.mjs",
@@ -423,17 +427,49 @@
     "verificationBoundary": "Current proof is synthetic config/dynamic HTTP/fake token/owned browser. Actual installation credential loading/clipboard and publication remain unverified. Avoid token-visible DOM/screenshot/trace/networkbody/log capture.",
     "tabPolicy": "Retain existing4320 tab; original operator handles necessary source update/service publication, validate in a new owned tab. No changes to user product tabs."
   },
-  "currentBrowserInterface": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); defaultContext belongs to caller freshly spawned exclusive-profile Chrome attached via public noDefaults:true; caller retains PID/EOF cleanup. The approved README preserves its earlier {browser} test-harness paragraph as historical; use fixed3c0 fixture/current source-manifest for actual invocation.",
+  "currentBrowserInterface": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller freshly spawns owned Chrome PID with exclusive profile, attaches via public noDefaults:true, verifies one default context/initial blank page and explicitly transfers it. Fixture sets viewport and closes transferred context/own HTTP; caller retains actual PID/EOF/group/tmp/budget supervision. Current README matches this fixed interface; no shared/user browser is admitted.",
   "skillsAndQuality": "Local find-skills/clean-code/codebase-design/webapp-testing reused; no install. Provider owns bounded trusted-file/error handling, UI transienttoken lifecycle, caller nativebrowser ownership. Final metadata checks exact scope/source/raw/preimage consistency; no new product execution.",
   "unverified": [
-    "main integration",
-    "4320 publication",
+    "README537 incremental main intake",
+    "4320 publication completion",
     "real installation enablement and credential flow",
     "user login"
   ],
   "claim": {
     "id": "57735ff7-d631-4538-9faf-d7ac090837a2",
     "version": 1,
-    "state": "Active at03:56:12 narrow observation; owner stops all ten scopes after final push pending controlled handoff/release."
-  }
+    "state": "Active at04:02:35 narrow observation; owner stops all ten scopes after final push pending originalLead controlled intake/handoff/release."
+  },
+  "previousApprovedComposition": "366a568f2750777f683941180b665af7c4a3effb",
+  "reviewHistory": [
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json",
+      "sha256": "594b2a5e9eabf938fca6bb7ef1f46148c2b0853a09ca2d0a0edbf862d4bb95a3",
+      "decision": "APPROVED_FIXED_SOURCE_DIRECT35_AND_BROWSER5_COMPOSITION",
+      "blockingFindings": []
+    }
+  ],
+  "documentationCorrection": {
+    "finding": "ACCESS-R3",
+    "severity": "P2",
+    "state": "CLOSED_BY_INDEPENDENT_SOURCE_REVIEW",
+    "source": "53723697a796a1346164c4cddc82ab99baf168ea",
+    "changedPath": "apps/execution-dashboard/README.md",
+    "change": "Current documented test status and ownedDefaultContext invocation corrected; no product/test/runtime changes."
+  },
+  "mainReceipt": "docs/evidence/wpf-dashboard-local-access/main-initial-receipt.json",
+  "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+  "remainingProductIntakePaths": [
+    "apps/execution-dashboard/README.md"
+  ],
+  "remainingProductDelta": {
+    "commit": "53723697a796a1346164c4cddc82ab99baf168ea",
+    "parent": "a12defc50562251c3415f2ea344250f9afece7da",
+    "onlyProductPath": "apps/execution-dashboard/README.md",
+    "mainPreimageSha256": "5cca704df9e7897929ff6e37e894712a6d289319644fbe01e52811f00b4a7956",
+    "targetSha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93",
+    "targetBlob": "4060d5e1be54d9cc0915ad800f930375d43072dd",
+    "instruction": "Apply only README diff for537 plus current owner approval/status/evidence metadata. Original seven source/test paths and prior README are already integrated; do not recopy all eight product paths."
+  },
+  "productIntakePathsPurpose": "Historical original full eight-path intake already satisfied at451bf2 for366; only remainingProductIntakePaths now require product intake."
 }

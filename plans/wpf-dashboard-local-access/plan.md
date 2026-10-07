@@ -1,6 +1,6 @@
 # WPF-DASHBOARD-ACCESS01 · 从工程看板打开 Flow 与取得本机连接资料
 
-创建：2026-10-07 02:53:01 UTC；最近更新：2026-10-07 03:56:12 UTC。状态：in-progress。
+创建：2026-10-07 02:53:01 UTC；最近更新：2026-10-07 04:03:48 UTC。状态：in-progress。
 所属大task：[D01](../../../execution-dashboard/plans/d01-execution-dashboard/plan.md)。co-lead：Web /root（执行管理 d01_owner）。唯一 owner：workspace_panels_owner / gpt-6-astra。
 
 用户结果：4320 保留真实 Flow 61228 入口与非敏感连接说明；本机明确启用后，由用户主动加载、查看/复制 owner token，空 Center URL 使用产品已有 /api 代理。用户 tab 不被自动刷新或登录，center/runner 不在本片控制范围。
@@ -22,6 +22,6 @@ Node built-in local-access Module 只读取启动时绑定的唯一安装config.
 
 ## 当前验证条件
 
-源码08ec+35direct及3c0d默认context/caller已获限定独审；第四次隔离browser实际5/5通过，原生hidden→token空且全部自有资源清理。前三次失败原件保留；第四次实证已由root独立核对，组合366a/exact12获限定批准；主线和真实安装发布仍待接收。原60s保守累计37077/余22923ms含15s清理，不构成第五次许可。普通定向检查按一个有界工作段执行，失败保原raw并定向修复；真实浏览器与服务部署须独立隔离。无新增依赖或安装。main能力、fake fixture与真实安装验证分别记录。
+源码08ec+35direct及3c0d默认context/caller已获限定独审；第四次隔离browser实际5/5通过，原生hidden→token空且全部自有资源清理。前三次失败原件保留；第四次实证已由root独立核对，原366a实证组合及537 README纠正组合/exact12获限定批准；原366已进入451bf2，README537增量及真实安装发布仍待接收/验证。原60s保守累计37077/余22923ms含15s清理，不构成第五次许可。普通定向检查按一个有界工作段执行，失败保原raw并定向修复；真实浏览器与服务部署须独立隔离。无新增依赖或安装。main能力、fake fixture与真实安装验证分别记录。
 
 完成条件：四TODO都有对应固定实现/检查/独审/集成部署事实；不因source完成提前标整个用户结果完成。架构影响：dashboard新增默认关闭的本机凭据按需读取能力；待D06原owner后继更新，不编辑图。
