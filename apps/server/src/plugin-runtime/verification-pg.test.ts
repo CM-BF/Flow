@@ -143,7 +143,7 @@ describe.sequential('AV03 real PostgreSQL', () => {
     await transaction(pool, async c => {
       for (const [index, id] of queueOrder.entries()) await c.query('UPDATE flow.tasks SET created_at=$2::timestamptz WHERE id=$1', [id, queueTimes[index]]);
     });
-    const ordered = (await pool.query<{ id: string; created_at: Date }>('SELECT id,created_at FROM flow.tasks WHERE id=ANY($1::uuid[]) ORDER BY created_at,id', [queueOrder])).rows;
+    const ordered = (await pool.query<{ id: string; created_at: Date }>('SELECT id,created_at FROM flow.tasks WHERE id=ANY($1::text[]) ORDER BY created_at,id', [queueOrder])).rows;
     expect(ordered.map(row => row.id)).toEqual(queueOrder);
     expect(ordered.map(row => row.created_at.toISOString())).toEqual(queueTimes);
     const legacy = await request('/api/runner/claim', {}, h.token); expect(legacy.status).toBe(200);
