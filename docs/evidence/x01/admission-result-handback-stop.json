@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T20:32:42.793Z",
+  "state": "PERMANENT_STOP_EXACT_LEAVES",
+  "parentHead": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1",
+  "mainBase": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+  "receiverTask": "X01-VERIFIER-ADMISSION-RESULT01",
+  "receiverWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "paths": [
+    "apps/server/src/events.ts",
+    "apps/server/src/plugin-runtime/store.ts",
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/artifact.ts",
+    "packages/contracts/src/runner.ts"
+  ],
+  "sourceRows": [
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8563,
+      "sha256": "34b61bfc81dbd87741f0c58fe8adc3983b0a7bd41a07bfb881022845247a02ae",
+      "sourceCommit": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "bytes": 9647,
+      "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4",
+      "sourceCommit": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "bytes": 9868,
+      "sha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83",
+      "sourceCommit": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "bytes": 3260,
+      "sha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3",
+      "sourceCommit": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7405,
+      "sha256": "b78033357b34e17e66d3a8faf2a69163887fc4a33befe7c74abca834ed7a2dbc",
+      "sourceCommit": "f60b39357aafb84fe29d8b9fbea2b01b89664fb1"
+    }
+  ]
+}

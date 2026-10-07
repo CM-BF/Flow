@@ -415,3 +415,6 @@ PROCESS固定4dc十一源已远端main96b424777cd2c66e603157649e5a859ca1b914f6�
 
 
 2026-10-07T20:29:29.522Z：runner 启动结构化ready部分交权，仅本parent metadata/原子账本。apps/runner/src/main.ts于2026-10-07T20:29:04.157Z永久STOP，2026-10-07T20:29:04.252Z COMMITTED v32/42→v33/41，仅移出此leaf，余下scope保留。其字节等固定main 18bf17ea26cacb4a12cd89f962b455f6688f729d，无parent待集成差量；现有显式插件配置、普通native分支传入同runRunner、Codex/engineering/A2A隔离与信号收束须保留。Original assignment_review fresh take成功才写，禁止旧blob覆盖后继主线。唯一[handoff入口](../../docs/evidence/x01/runner-main-handoff-ready.json)记录前像/hash/receipt。0源码改动、0工程测试/产品PG/个人操作；未扩AV R2或新feature范围，父X01未完成。提交/push后STOP本metadata段，不恢复该leaf写权。
+
+
+2026-10-07T20:32:42.916Z：明确永久STOP本次5个精确leaf，原子amend 6ddedc73-f019-4073-b421-d23d3dc8dedd v33→v34 / 36scope；[回执](../../docs/evidence/x01/admission-result-handback-receipt.json)。移至独立X01-VERIFIER-ADMISSION-RESULT01，接收方须take成功后写；原固定源码/PG输入保持只读，未授新PG。
