@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-07T07:03:56.558586+00:00",
-  "state": "PENDING_RESULT_REVIEW",
+  "state": "READY",
   "sourceCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
   "testCommit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
   "resultCommit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
@@ -96,5 +96,16 @@
     "PG6/6 is real center SQL/HTTP evidence, not actual production runner/plugin package or semver capability.",
     "Do not rerun old27/local10/journal11 merely to accept this intake."
   ],
-  "mainIntegrated": false
+  "mainIntegrated": false,
+  "reviewState": "APPROVED",
+  "resultReview": {
+    "path": "docs/evidence/x01/center-claim-pg-result-independent-review.json",
+    "reviewedAt": "2026-10-07T07:06:23Z",
+    "reviewer": "db_transaction_owner",
+    "resultCommit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+    "packetCommit": "b3fa09dfd3e9fec0ea330eac783e4d90be7e6050",
+    "P1": 0,
+    "P2": 0
+  },
+  "intakeReadyAt": "2026-10-07T07:08:38.232210+00:00"
 }
