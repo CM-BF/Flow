@@ -2,7 +2,9 @@
 
 ## 当前：连接等待方法设计
 
-状态：PENDING；范围仅 [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md) 与本轮plan/status，固定提交后交chatui01_owner只读审。新实验NOT_OPEN，0工程执行。以下A/B批准是独立历史结果，已main f2ccb673接收，不继承到新设计。
+状态：DESIGN_REVIEW_APPROVED / 0 P1/P2。Review target commit: `f0f56e80bc4450b4b12f2a1218fefff4ef6e1208`，独立reviewer chatui01_owner / gpt-6-astra，2026-10-07T12:28:07Z。范围为 [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)（14506B，SHA d9bd156226b4182ec7f1ac40e55b28339e1a3c862f0e1a4a507c27281bc97e26）。只读核两次窄修后固定字节：IPC单变量、准确acquisition/transaction口径、真实conversation轻读、活动取消与各时钟、有限预算/UNKNOWN/KEEP和当前v2观测缺口；旧资源线不作为新OPEN。
+
+批准仅设计可进入合法实施准备，不批准新源码、PG READY/OPEN、性能因果或完整S01验收。审者0写/工程执行/import/PG/旧根访问；未重算旧58MiB原件。首片未加入完整checkout/hold追踪，后继输出路径须另amend；owner在唯一status记录。下面A/B批准是独立历史结果，已main f2ccb673接收，不继承为本新实验运行批准。
 
 ## 已交付A/B结果独审
 

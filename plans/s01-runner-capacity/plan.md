@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-07T05:46:42Z。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-07T12:28:56.483Z。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -126,3 +126,5 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 ## S01-04 / S01-06 连接等待与聊天响应设计（2026-10-07T12:16:51Z开工）
 
 沿原六TODO推进[最小方法设计](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)：先在固定main4fdd同负载下对照逐query IPC与中心有界累积，保留pool/SQL/同步节奏；真实conversation轻读与四cancel取用户结果。原数据只证明观察到排队，不将不同分母quantile相减归因。设计列出当前v2领取观测适配缺口、独立生命周期/预算与后继直接验证。两侧128活动fixture加各1合成聊天setup，总258task，是新的未开放预算；旧A/B256/原raw不改。当前DESIGN_READY/NOT_OPEN，不运行实验、不安装、不改产品。ACK/browser/native和完整S01仍开放。
+
+2026-10-07T12:28:56.483Z 方法设计已由chatui01_owner对固定f0f56e80bc4450b4b12f2a1218fefff4ef6e1208独审通过（0 P1/P2），见review；只可进入合法准备，真实运行NOT_OPEN，原六TODO完成状态未变。

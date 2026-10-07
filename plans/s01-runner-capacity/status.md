@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T12:24:20.957Z |
+| 最近更新 | 2026-10-07T12:28:56.483Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T11:08:24.990292+00:00（接收回执at；固定main f2ccb673已核） |
@@ -14,23 +14,23 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 结果 914cb63824f614223b62153c770186e9d46d586e；execution b75f1a2e250556265a24c825860e8549705b98cf；A/B固定历史生产输入见结果报告；当前metadata HEAD由Git读取 |
-| 工作树dirty状态 | 本段仅本status管理更新；source/raw/result manifests不变，提交后实际dirty由Git核对。 |
+| 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
+| 工作树dirty状态 | 本段仅方法设计与plan/status/review；原source/raw/result manifests零变更，提交后实际dirty由Git核对。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 本段仅原始证据只读重算与metadata校验，0工程检查；历史A/B各128 fixture PASS保持，不与新设计合并。 |
 | 已集成main状态 / HEAD | INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2：本次A/B及idle结果证据已接收；历史mixed/S01P07接收保持。非新的产品性能或provider验收。 |
-| 实现目标 | 914cb63824f614223b62153c770186e9d46d586e |
-| 实现范围 | docs/evidence/s01/mixed-ab-run/A/journals.json, docs/evidence/s01/mixed-ab-run/A/observations.json, docs/evidence/s01/mixed-ab-run/A/owned-resources.json, docs/evidence/s01/mixed-ab-run/A/reservation.json, docs/evidence/s01/mixed-ab-run/A/result.json, docs/evidence/s01/mixed-ab-run/B/journals.json, docs/evidence/s01/mixed-ab-run/B/observations.json, docs/evidence/s01/mixed-ab-run/B/owned-resources.json, docs/evidence/s01/mixed-ab-run/B/reservation.json, docs/evidence/s01/mixed-ab-run/B/result.json, docs/evidence/s01/mixed-ab-run/analyze.py, docs/evidence/s01/mixed-ab-run/cli-and-time.txt, docs/evidence/s01/mixed-ab-run/comparison.json, docs/evidence/s01/mixed-ab-run/inputs.json, docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json, docs/evidence/s01/mixed-ab-run/report.md, docs/evidence/s01/mixed-ab-run/reservation.json, docs/evidence/s01/mixed-ab-run/result.json, docs/evidence/s01/mixed-ab-run/result-manifest.json |
+| 实现目标 | f0f56e80bc4450b4b12f2a1218fefff4ef6e1208 |
+| 实现范围 | docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 4 |
-| 当前产出 | 已固定下一测量设计：先比较两种观察方式，再决定是否需要错峰对照；原测量与已接收成果保持不变。 |
-| 下一可用交付 | 独立审查最小设计后，准备真实聊天轻读与取消测量；运行需另行协调，当前没有新实验。 |
+| 当前产出 | 最小测量设计已独审通过：先比较观察数据交付方式对聊天轻读和取消的影响，连接池与SQL不变。 |
+| 下一可用交付 | 按已审设计准备两组同源测量；先适配当前领取协议和有限数据累积，再协调实际窗口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 新连接等待方法设计 PENDING；历史A/B结果914cb638独审APPROVED及main接收不变，不继承到本设计。 |
+| Review | DESIGN_REVIEW_APPROVED f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；chatui01_owner / gpt-6-astra，2026-10-07T12:28:07Z，0 P1/P2；仅方法设计，非实现或运行批准。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:16:51.374748Z只读CLI核owner/WT/branch/全部5范围保持。 |
-| 架构影响 | 本片只增加实验观察与证据，不改产品 Interface、FSM、数据库连接或外部依赖边界；无需更新产品架构图。S01P07已main0aa1d033，新增v2领取机会/runner自身份/持久日志语义，仍单admission loop无新scheduler；其权威status已登记架构图target/Execution Lead待更新，本树不代写图 |
+| 架构影响 | 本段仅方法设计，生产Module/Interface/FSM/数据库池不改；拟复用原实验观察器的有限delivery策略，不建追踪平台。未来实际实现与架构变化另记录；历史S01P07产品架构事实见其权威status。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -122,3 +122,11 @@ Dashboard唯一来源仍为本WT/codex/runner-capacity-probe的status，当前me
 2026-10-07T12:24:20.957Z 设计固定前质量核：复用本地find-skills/brainstorming/codebase-design/固定clean-code，按真实计时范围、Module所有权、取消/unknown和字节/时间上界核对；新设计只在本scope [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)。GO分组数据已只读重算一致；不将quantile相减，不把acquisition冒纯queue，不把IPC phase冒共同6秒。明确现driver对当前v2 claim的观测缺口；设计READY不等实现READY。原raw/source与六TODO三完成三开放保持，原A/B预算不为本方法设计重算。Dashboard沿本文件聚合，最近成功观察仍11:57:28.584Z/旧metadata，未重复GET或宣称本设计已同步。
 
 2026-10-07T12:24:20.957Z 本地状态解析：errors=[]、human.missing=[]、implementation.errors=[]，父FLOW-001/co-lead mika正确；仅原任务开工UNKNOWN提示保持。本轮未新请求dashboard，设计source与旧结果分开，未运行工程检查。
+
+## 2026-10-07T12:28:56.483Z 方法设计独审收口
+
+chatui01_owner于2026-10-07T12:28:07Z对 `f0f56e80bc4450b4b12f2a1218fefff4ef6e1208` 只读独审 DESIGN_REVIEW_APPROVED /0 P1/P2，精确设计SHA d9bd156226b4182ec7f1ac40e55b28339e1a3c862f0e1a4a507c27281bc97e26。O1/O2仅改变IPC交付，首片延后checkout→release/hold及完整emit偏差；现有数据不证明纯排队/因果。真实聊天轻读、取消前活动检查与三个独立时钟、258task新上限和所有未知/清理门禁已审。不是源码批准、PG READY/OPEN、最新main性能或完整S01完成。
+
+主线已接收的A/B/idle及原开放TODO不变。旧4,053,008,384/5,663,621,120B只作历史；本段Mika给出manager最低6,237,454,336B，未来还须按完整实际总账/唯一reserve与个人后台优先协调，不能据此启动。下一实际输出拟 `docs/evidence/s01/pool-wait-run`，不在当前5scope；未来须current-version原子amend成功才创建，当前未申请/未创建，旧mixed-ab-run冻结。
+
+本段从12:16:51Z连续计时，0工程测试/PG/provider/新观察器运行/安装。固定设计与本三份管理文档累计不足128KiB，低于本段2MiB；不计入或重算历史A/B最终4MiB封存账。clean-code/codebase-design复核已收窄首片侵入、保持错误/取消与资源单一权威，没有未解决P1/P2。唯一status可解析，展示最近实际观察仍11:57:28.584Z旧时点，不新GET/不冒当前已同步；owner与claim508f v2/all5保留，准备可继续但运行未开放。
