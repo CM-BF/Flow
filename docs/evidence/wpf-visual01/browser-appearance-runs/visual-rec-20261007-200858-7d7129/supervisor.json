@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "journey": "appearance",
+  "requiredGroups": [
+    "cookieRead",
+    "themes390"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "themes390"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7716.545666999999,
+    "elapsedMs": 7716.545666999999
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7716.614541999999,
+      "endedOffsetMs": 8745.895709,
+      "elapsedMs": 1029.281167,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "themes390",
+      "startedOffsetMs": 8745.919167,
+      "endedOffsetMs": 9167.683542,
+      "elapsedMs": 421.76437500000065,
+      "outcome": "PASSED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_e0f4cc05cdfd4a92a0c100cded5f8244",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.755833999999595,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.699958000001061,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "task": "WPF-VISUAL01",
+  "visualAppearancePhase": {
+    "id": "VISUAL01-RECOVERY-APPEARANCE-20261007",
+    "budgetMs": 60000,
+    "spentMs": 0,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 65128,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 68263,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 19256643584,
+  "peakScratchBytes": 26408620,
+  "logBytes": 3788,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 9636.243542,
+      "scratchBytes": 26408620,
+      "evidenceBytes": 3165785,
+      "freeBytes": 19256643584,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 9653.023208999999,
+      "scratchBytes": null,
+      "evidenceBytes": 3168258,
+      "freeBytes": 19283574784,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

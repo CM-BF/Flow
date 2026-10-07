@@ -1,0 +1,233 @@
+{
+  "reviewer": "root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T20:19:14.736177+00:00",
+  "task": "WPF-VISUAL01 Recovery appearance",
+  "decision": "APPROVED_SELECTED_RUNTIME_AND_TWO_THEME_VISUAL_RESULT",
+  "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "actualMetadataHead": "d85257e067eb96888f2b26479625b86572869995",
+  "run": "visual-rec-20261007-200858-7d7129",
+  "fixedSourceHashesChecked": 28,
+  "sourceMismatches": [],
+  "scope": {
+    "selectedGroups": [
+      "cookieRead",
+      "themes390"
+    ],
+    "fullJourneyPassed": false,
+    "passed": true,
+    "fixture": "Actual browser/App using the isolated synthetic HTTP fixture and marked test DB. This is not the user personal service or provider run.",
+    "notIncluded": [
+      "Picker runtime",
+      "Arc runtime",
+      "complete Recovery suite",
+      "personal publication",
+      "multiple OS scrollbar modes"
+    ]
+  },
+  "actual": {
+    "startedAt": "2026-10-07T20:13:37.668772+00:00",
+    "endedAt": "2026-10-07T20:13:47.992588+00:00",
+    "outerElapsedMs": 10323.775125085376,
+    "chargedMs": 10325,
+    "budgetMs": 60000,
+    "phase": "CLOSED",
+    "unusedNotTransferred": true,
+    "parentExit": 0,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "droppedBytes": 0,
+    "errors": []
+  },
+  "completeReturn": {
+    "receipt": {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/return-receipt.json",
+      "bytes": 2404,
+      "sha256": "de99e16b7518e7100d3feab8e1aa0b8f62d606ce4283f7683eaaa7e42dbb924d"
+    },
+    "observedAt": "2026-10-07T20:15:46.418134+00:00",
+    "state": true,
+    "ownProcessIdentities": [
+      {
+        "pid": 64539,
+        "process": "ABSENT_ESRCH",
+        "group": "ABSENT_ESRCH"
+      },
+      {
+        "pid": 64799,
+        "process": "ABSENT_ESRCH",
+        "group": "ABSENT_ESRCH"
+      },
+      {
+        "pid": 65128,
+        "process": "ABSENT_ESRCH",
+        "group": "ABSENT_ESRCH"
+      },
+      {
+        "pid": 68263,
+        "process": "ABSENT_ESRCH",
+        "group": "ABSENT_ESRCH"
+      }
+    ],
+    "scratch": {
+      "path": "/private/tmp/flow-recovery-browser-VHdotz",
+      "state": "ABSENT_ENOENT"
+    },
+    "adminInputDeleted": true,
+    "databaseRemoved": true,
+    "databaseConnections": 0,
+    "remainingDatabases": [],
+    "fixtureComplete": true,
+    "note": "Root inspected the exact actual receipt and parent/outer reports. Root did not repeat PG probes, process control or cleanup. The 38 prepared readonly links remain prepared inputs, not runtime scratch."
+  },
+  "independentVisualInspection": {
+    "method": "Both actual PNGs were opened with view_image and visually inspected by root. Screenshot presence alone was not used as acceptance.",
+    "light": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/light-390.png",
+      "bytes": 56066,
+      "sha256": "dc24079c094a432829213aa5ea5c2b01769d7772579015c6854287f0a3b27f52"
+    },
+    "dark": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/dark-390.png",
+      "bytes": 53410,
+      "sha256": "1cc32ab0c750dd228f5eff4d6c33db3b6f2563b7b82f6c2ad86def5395f9b389"
+    },
+    "observations": [
+      "Both 390x844 captures show the full saved-drafts dialog inside the viewport; content and controls remain legible in their own theme.",
+      "Chinese text and emoji render, the long conversation identifier wraps, and refresh/restore/remove controls remain accessible within the dialog.",
+      "Close control, keyboard focus indication, dimmed background and 14px corners are visible. No horizontal content clipping is visible."
+    ],
+    "geometry": {
+      "light": {
+        "client": 367,
+        "scroll": 367,
+        "width": 369,
+        "left": 10.5,
+        "right": 379.5,
+        "top": 231.359375,
+        "bottom": 612.640625,
+        "radius": 14,
+        "paddingEnd": 15.4,
+        "scrollbarWidth": 2,
+        "gutter": "stable",
+        "scrollbarCoverage": "observed mode only"
+      },
+      "dark": {
+        "client": 367,
+        "scroll": 367,
+        "width": 369,
+        "left": 10.5,
+        "right": 379.5,
+        "top": 231.359375,
+        "bottom": 612.640625,
+        "radius": 14,
+        "paddingEnd": 15.4,
+        "scrollbarWidth": 2,
+        "gutter": "stable",
+        "scrollbarCoverage": "observed mode only"
+      }
+    },
+    "limit": "Only this actual narrow-screen recovery-dialog state and observed scrollbar mode were visually accepted; no blanket full-page style approval."
+  },
+  "rawEvidence": {
+    "files": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/browser.json",
+        "bytes": 5040,
+        "sha256": "fc1c9704a93217b6b123ec9059106565cd84fc00306788b6be1ac5c4e352c50f"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/budget.json",
+        "bytes": 223,
+        "sha256": "d41d83924622a3d89ad782612f22ea4593e4308a757772ae3c206f2e21529b5b"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/dark-390.png",
+        "bytes": 53410,
+        "sha256": "1cc32ab0c750dd228f5eff4d6c33db3b6f2563b7b82f6c2ad86def5395f9b389"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-cleanup.json",
+        "bytes": 514,
+        "sha256": "b3950b75ad84efff8e6599e24572c39b48dcc0da8b9eed351e02a1ad0fc23bb9"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-owner.json",
+        "bytes": 164,
+        "sha256": "9ccd728358cb0e670a8061f8dd798f61032a97777a24d62435b1806d60eb43e6"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/fixture-cleanup.json",
+        "bytes": 102,
+        "sha256": "b9b9469d94a315f1ef2ab6d5eacde0b7d908c3f18f88783cdac99dd6a80187d1"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/launch-config.json",
+        "bytes": 1248,
+        "sha256": "b4b2a3532bdfa00d6f488a0e2845ddcd725d3d8540e68c6a89dcb6d4b6271f18"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/light-390.png",
+        "bytes": 56066,
+        "sha256": "dc24079c094a432829213aa5ea5c2b01769d7772579015c6854287f0a3b27f52"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-dark-geometry.json",
+        "bytes": 259,
+        "sha256": "dc87976f642aa4d8deeb603296f0eb8f8ad675bd4dff33ff1bc67994dd4e99ba"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-light-geometry.json",
+        "bytes": 259,
+        "sha256": "dc87976f642aa4d8deeb603296f0eb8f8ad675bd4dff33ff1bc67994dd4e99ba"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process-owner.json",
+        "bytes": 29,
+        "sha256": "043197d40a0eee119d3baa4e0946baa47ef566247f9b7cae3030ba9ca699ceb3"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process.log",
+        "bytes": 3788,
+        "sha256": "afb0bbbcbfeff27556d9f5c947a5a07172095daa7c5934d458e25889402a6cc3"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/scratch-owner.json",
+        "bytes": 114,
+        "sha256": "4a41a8f143cf9445f7d30c3e4b3bd6d482adcd46a2f7cd663107fb4b51a0d3a4"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/sources.json",
+        "bytes": 3524,
+        "sha256": "fa7dffa98bc772b294bc3621f7ef41c514c95b4ad80681c63fe701bebe7595d6"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/supervisor.json",
+        "bytes": 2640,
+        "sha256": "3a22008933cf70b4702466d26b8f0698fd0a9f17aaa5659b89a5c3f639c0959c"
+      },
+      {
+        "path": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/actual-exit.json",
+        "bytes": 915,
+        "sha256": "a705567ac2c920ae6d85a54f2222071e674dc30078747fbd70b8a940f3273951"
+      },
+      {
+        "path": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/parent.stderr.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/parent.stdout.jsonl",
+        "bytes": 595,
+        "sha256": "afb1f5f19a2ee252f6d4c588a1c2b7124c81a8ec2c7d3a9ae3a5942ee0ebc9d1"
+      },
+      {
+        "path": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/start.json",
+        "bytes": 215,
+        "sha256": "16c7004f7dbc50c96d25c40fd53f8372fcb44f65075a54f874d26be28c643bd1"
+      }
+    ],
+    "totalFiles": 19,
+    "totalBytes": 129105
+  },
+  "cleanCode": "Read-only end-of-segment review: preserved single parent cleanup authority, independent result/scope/return states, original phase closure and first-hand visual acceptance. No source changes or unnecessary reruns requested."
+}

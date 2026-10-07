@@ -1,0 +1,49 @@
+{
+  "reviewer": "root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T20:00:32.784139+00:00",
+  "decision": "DEPENDENCY_PEER_DELTA_APPROVED_SOURCE_PREPARATION_READY_NOT_ADMITTED",
+  "priorLimitedReview": {
+    "path": "/private/tmp/root-visual01-recovery-preparation-review-20261007.json",
+    "sha256": "abb32a57a66739d676a5184f91df578dd4a8bc20cbcf853d4f25797690b8060b"
+  },
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "metadataHead": "d85257e067eb96888f2b26479625b86572869995",
+  "pins": {
+    "peer-files.json": "a90e836991755ebd4b25ec440e7660544c15d93aa18ad91d13320c87b9288630",
+    "closure-index.json": "b4db128708edbd1ae0891366d60480ed6fbf6626dcfc93657a2fcd19882e56e9",
+    "binding.json": "593b408d7cd9cf04a865e80968742db0dd35f81798e424ee939079830a4a33b0",
+    "manifest.json": "d2ce2a4e6e881e4bc5326cc29c9bb28e6348ebbc2c0fa07ce38735bb16c616af",
+    "capture.py": "34dd9de2c1a6c9ca0d2d337fc94161eb001e6cac7c150dc8165943efd4f9eccf"
+  },
+  "delta": {
+    "roots": 6,
+    "files": 748,
+    "bytes": 5425840,
+    "names": [
+      "@opentelemetry/api",
+      "@types/node",
+      "@types/react-dom",
+      "@types/react",
+      "undici-types",
+      "csstype"
+    ]
+  },
+  "independentReadOnlyCheck": {
+    "method": "Rehashed all 748 delta files and package manifests, verified six directory identities and immutable base-index references. Independently followed installed peer dependencies from 412 package manifests through filesystem node_modules resolution; also checked new roots declared dependencies. No Node resolution process or product import executed.",
+    "resolvedInstalledPeerAndDeltaDependencyEdges": 258,
+    "unboundInstalledTargets": [],
+    "errors": []
+  },
+  "combined": {
+    "uniqueRoots": 412,
+    "files": 18616,
+    "bytes": 189701134
+  },
+  "holdDisposition": "The four missing installed peers and their two declaration dependencies are now pinned. The prior HOLD is preserved as historical evidence and closed by this delta only. Unchanged 406-root file payload was not rehashed again; its immutable index remains the previously verified0983a2 target.",
+  "beforeActual": "No runtime authorization or browser result is claimed. Current personal update remains stopped under diagnosis and is not FULLRETURN. Future manager admission/native boundary/fresh inputs and resource ledger still required. Source/capture unchanged; metadata-only final HEAD rebind needs consistency check, not another source review.",
+  "limitations": [
+    "No browser/native/PG/HTTP/product import or types were executed.",
+    "Static package closure does not establish every optional package code path or actual runtime success.",
+    "The future actual two theme screenshots still require independent visual inspection."
+  ]
+}

@@ -1,8 +1,8 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**APPROVED_SCOPED_TYPES / BROWSER_PENDING**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**APPROVED_SCOPED_TYPES_AND_RECOVERY_APPEARANCE / PICKER_NOT_RUN**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
 
-scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；浏览器/视觉目前 NOT_RUN，主线/部署 NOT_INTEGRATED。
+scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；Recovery appearance选定2组实际PASS及两390PNG已获root限定独立实际/视觉审；Picker NOT_RUN，主线/部署 NOT_INTEGRATED。
 
 独审者先核固定 Git target、实际文件 hash 和本次检查原件，再区分 source / local / browser / visual / main / deployment；禁止继承历史 a8 绿项。原 APPROVED 历史见[historical review](../../docs/evidence/wpf-visual01/shared-overlays/historical-review.md)。
 
@@ -16,7 +16,7 @@ scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, ap
 
 [两次原件与冻结输入](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/index.json)及[单一累计账](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/phase.json)。首红只有HTMLElement联合类型和精确声明路径问题；新增HTMLElement guard与3个d.ts路径后复验0。原期望、CSS、所有业务断言与运行器生命周期不变。5765/30000ms CLOSED；浏览器与图片仍未验。
 
-## 当前准备安全点
+## 历史准备安全点
 
 [root517678](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json)已原样归档。当前Picker新parent/worker差量仍待集中source/native审，Recovery完整resolver/link supply尚未ready；无新增实际检查。[准备报告](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/report.json)。
 
@@ -24,6 +24,10 @@ scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, ap
 
 Picker [f3b8限定源码准备审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)无blocking，非browser结果/native实际许可。Recovery当前[可审包](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)固定38links/JS+CSS+SQL/native输入，源/native集中审尚待；首批未物化状态留历史。原六源与已绿types未改/未重跑。
 
-## peer差量当前边界
+## 历史peer差量边界
 
 [abb32](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/root-preparation-review-with-peer-hold.json)已限定接受原614 own/406 roots/38 links/capture，依赖HOLD不回填。当前新[4peer与2必要声明依赖索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/closure-index.json)待delta确认；412总roots固定不等于实际运行通过。capture/parent与产品六源没有再次修改。
+
+## 当前Recovery选定实际范围
+
+[固定原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json)及[c666依赖delta审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-peer-delta-review.json)。经理已明确同capture/native边界并给唯一60s实际窗；实际exit0，cookieRead/themes390两个选定组通过，双390图/geometry已保存。原六源未变，无再次类型检查，Picker仍未运行；[root独审原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json)已逐28source/19原始runtime文件核对并亲看两PNG，0blocking；只接受当前Recovery窄屏状态/观测滚动条模式，不扩大为完整Recovery、Picker、Arc、main或部署。

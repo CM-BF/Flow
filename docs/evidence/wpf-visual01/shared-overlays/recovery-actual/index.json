@@ -1,0 +1,236 @@
+{
+  "task": "WPF-VISUAL01",
+  "run": "visual-rec-20261007-200858-7d7129",
+  "executedHead": "d85257e067eb96888f2b26479625b86572869995",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "actualToolExit": 0,
+  "actualCaptureExit": 0,
+  "actualParentExit": 0,
+  "selectedGroups": [
+    "cookieRead",
+    "themes390"
+  ],
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "visualReview": "APPROVED_SELECTED_RUNTIME_AND_TWO_THEME_VISUAL_RESULT",
+  "picker": "NOT_RUN",
+  "startedAt": "2026-10-07T20:13:37.668772Z",
+  "parentCaptureEndedAt": "2026-10-07T20:13:47.992588Z",
+  "exactReturnAt": "2026-10-07T20:15:46.418134Z",
+  "chargeMs": 10325,
+  "permittedMs": 60000,
+  "cleanupReserveMs": 30000,
+  "remainingUnspentMs": 49675,
+  "state": "CLOSED",
+  "measurement": "ceil(max capture actual-exit 10323.775125085376, outer terminal 10324.260291992687, parent terminal/budget9653.026249999999)); original reports unmodified",
+  "newRuntimeAllowed": false,
+  "limits": {
+    "scratchBytes": 67108864,
+    "retainedBytes": 10485760,
+    "metadataBytes": 1048576,
+    "configuredPgConnections": 13,
+    "managementAllowance": 16,
+    "minimumFreeBytes": 18632540160
+  },
+  "preparedReadonlyLinks": "KEEP, no active runtime resource",
+  "scope": "Actual owned fixture App recovery appearance and cookie-only read; no personal endpoint, complete Recovery matrix, Picker or two-OS scrollbar coverage",
+  "index": [
+    {
+      "source": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/parent.stderr.log",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/outer/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/actual-exit.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/outer/actual-exit.json",
+      "bytes": 915,
+      "sha256": "a705567ac2c920ae6d85a54f2222071e674dc30078747fbd70b8a940f3273951"
+    },
+    {
+      "source": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/start.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/outer/start.json",
+      "bytes": 215,
+      "sha256": "16c7004f7dbc50c96d25c40fd53f8372fcb44f65075a54f874d26be28c643bd1"
+    },
+    {
+      "source": "/private/tmp/vis-recovery-b1/actual/visual-rec-20261007-200858-7d7129/parent.stdout.jsonl",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/outer/parent.stdout.jsonl",
+      "bytes": 595,
+      "sha256": "afb1f5f19a2ee252f6d4c588a1c2b7124c81a8ec2c7d3a9ae3a5942ee0ebc9d1"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/gate.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/gate.json",
+      "bytes": 3832,
+      "sha256": "622bd9db14deb8268cfd96f1fd2d95460ccfd0e52f43bc05f094a5f9dbf24990"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/preflight.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/preflight.json",
+      "bytes": 1497,
+      "sha256": "cb5ae245c5b248ffa0936dc964f4cf364ce9cf2c463aa8e47af8599532aa4202"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/admin-input-identity.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/admin-input-identity.json",
+      "bytes": 381,
+      "sha256": "25c3b8f66dddedf250ed136712bacf37a1449fc35f6b13a5ccb930b4ac42e78b"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/final-resource-check.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/final-resource-check.json",
+      "bytes": 184,
+      "sha256": "d894c80a21adf789e4d4afc46bd6919d1b829585fa5eebae095f4edeaa8750fd"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/return-receipt.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/return-receipt.json",
+      "bytes": 2404,
+      "sha256": "de99e16b7518e7100d3feab8e1aa0b8f62d606ce4283f7683eaaa7e42dbb924d"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/outer.stdout",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/outer.stdout",
+      "bytes": 335,
+      "sha256": "01e3483c55e1fb9ecd7bac7697661aa565d6946beedc5b0df452bcb2766a7e95"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/outer.stderr",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/admission/outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/vis-recovery-b1/binding.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/packet/binding.json",
+      "bytes": 10946,
+      "sha256": "452829fa9a834913049703ce8c604488552fd2ce621578844a3927902a74fb39"
+    },
+    {
+      "source": "/private/tmp/vis-recovery-b1/manifest.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/packet/manifest.json",
+      "bytes": 2728,
+      "sha256": "40564390344820b7f9413b68d80869a8a353a91f99a7796b3d6aed0fab59eff3"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/binding-before.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/before/binding-before.json",
+      "bytes": 10662,
+      "sha256": "593b408d7cd9cf04a865e80968742db0dd35f81798e424ee939079830a4a33b0"
+    },
+    {
+      "source": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/manifest-before.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/before/manifest-before.json",
+      "bytes": 2728,
+      "sha256": "d2ce2a4e6e881e4bc5326cc29c9bb28e6348ebbc2c0fa07ce38735bb16c616af"
+    },
+    {
+      "source": "/private/tmp/root-visual01-recovery-peer-delta-review-20261007.json",
+      "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-peer-delta-review.json",
+      "bytes": 2757,
+      "sha256": "c666584a7984c8b63cdaa31a90289f79cf9f8694de1a1e4b798a33bd3d165bee"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/browser.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/browser.json",
+      "bytes": 5040,
+      "sha256": "fc1c9704a93217b6b123ec9059106565cd84fc00306788b6be1ac5c4e352c50f"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/budget.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/budget.json",
+      "bytes": 223,
+      "sha256": "d41d83924622a3d89ad782612f22ea4593e4308a757772ae3c206f2e21529b5b"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/dark-390.png",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/dark-390.png",
+      "bytes": 53410,
+      "sha256": "1cc32ab0c750dd228f5eff4d6c33db3b6f2563b7b82f6c2ad86def5395f9b389"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-cleanup.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-cleanup.json",
+      "bytes": 514,
+      "sha256": "b3950b75ad84efff8e6599e24572c39b48dcc0da8b9eed351e02a1ad0fc23bb9"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-owner.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/database-owner.json",
+      "bytes": 164,
+      "sha256": "9ccd728358cb0e670a8061f8dd798f61032a97777a24d62435b1806d60eb43e6"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/fixture-cleanup.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "b9b9469d94a315f1ef2ab6d5eacde0b7d908c3f18f88783cdac99dd6a80187d1"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/launch-config.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/launch-config.json",
+      "bytes": 1248,
+      "sha256": "b4b2a3532bdfa00d6f488a0e2845ddcd725d3d8540e68c6a89dcb6d4b6271f18"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/light-390.png",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/light-390.png",
+      "bytes": 56066,
+      "sha256": "dc24079c094a432829213aa5ea5c2b01769d7772579015c6854287f0a3b27f52"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-dark-geometry.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-dark-geometry.json",
+      "bytes": 259,
+      "sha256": "dc87976f642aa4d8deeb603296f0eb8f8ad675bd4dff33ff1bc67994dd4e99ba"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-light-geometry.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/overlay-recovery-light-geometry.json",
+      "bytes": 259,
+      "sha256": "dc87976f642aa4d8deeb603296f0eb8f8ad675bd4dff33ff1bc67994dd4e99ba"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process-owner.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process-owner.json",
+      "bytes": 29,
+      "sha256": "043197d40a0eee119d3baa4e0946baa47ef566247f9b7cae3030ba9ca699ceb3"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process.log",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/process.log",
+      "bytes": 3788,
+      "sha256": "afb0bbbcbfeff27556d9f5c947a5a07172095daa7c5934d458e25889402a6cc3"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/scratch-owner.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "4a41a8f143cf9445f7d30c3e4b3bd6d482adcd46a2f7cd663107fb4b51a0d3a4"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/sources.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/sources.json",
+      "bytes": 3524,
+      "sha256": "fa7dffa98bc772b294bc3621f7ef41c514c95b4ad80681c63fe701bebe7595d6"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/supervisor.json",
+      "path": "docs/evidence/wpf-visual01/browser-appearance-runs/visual-rec-20261007-200858-7d7129/supervisor.json",
+      "bytes": 2640,
+      "sha256": "3a22008933cf70b4702466d26b8f0698fd0a9f17aaa5659b89a5c3f639c0959c"
+    }
+  ],
+  "independentReview": {
+    "path": "docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json",
+    "sha256": "0e1de30920953fb2ef7b3ec62a482714b6b401464659883d5a11a04c2cef5576",
+    "reviewedAt": "2026-10-07T20:19:14.736177Z",
+    "limitedTo": [
+      "cookieRead",
+      "themes390",
+      "current narrow recovery-dialog state",
+      "observed scrollbar mode"
+    ]
+  }
+}

@@ -23,3 +23,7 @@
 ## 2026-10-07T19:56:33.621Z 四peer短段clean-code复核
 
 沿既读find-skills/clean-code方法，只补已知四root及其两个真实声明依赖，以单索引引用旧406不可变文件避免重扫/复制。source/capture/生命周期不变；命名区分base、peerDelta及组合、历史HOLD与待审当前。错误/缺口不覆盖旧报告，全部HOLD到独立delta接受。统一封存后更新Picker与Recovery执行HEAD，避免元数据自然追加留下失配。0新的工程检查/运行，无新增框架。
+
+## 2026-10-07T20:20:48.141Z Recovery实际段收口
+
+复用本地find-skills/webapp-testing/clean-code（原固定skills.json来源，无重装）。使用已审可信preset/capture，不新建runner；分列selected/full、actual退出/文件PASS、parent与outer保守计费、准备links KEEP与runtime资源归还。2组实际通过，原六源未改，错误/清理原件保真；首类型红与准备HOLD未抹。作者目视浅深390文本/按钮完整且无横裁，仅本fixture状态；独立目视由root0e1完成且限定接受；不拿截图存在代视觉。未解决：Picker实际和对应视觉、两OS滚动条模式、最终全片审/main/部署，未造新authority或扩大验收。

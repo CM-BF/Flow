@@ -28,11 +28,11 @@
 
 ## 验证与未验范围
 
-四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；PG、Chrome、构建及真实浏览器验收均 NOT_RUN。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
+四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；Recovery appearance 已实际通过cookieRead/themes390两个选定组，2张390图已独立目视接受；Picker、完整Recovery与构建仍未运行。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
 
-本次固定源码 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。必要局部30s段已CLOSED累计5765ms，当前全部8scope停写保留；浏览器未获实际段。
+本次固定源码 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。必要局部30s段已CLOSED累计5765ms，原类型段闭合；后续Recovery独立实际段见下文，未使用类型余额。
 
 后续 parent preset 将 appearance 的任务、账目、输出作为一个受信固定配置，不接收任意 evidence 路径。默认 MSG03 guard 不变；必要 local 与两 browser consumer 提案集中于[准备入口](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)，affected types已实际结束；browser仍待准备与实际段。
 
@@ -43,3 +43,11 @@
 ### Recovery准备闭合（source-only）
 
 38个private readonly links已exclusive供给，现固定614own与406installed roots完整字节；33SQL齐全。原TODO06仍等实际Picker/Recovery与目视，TODO07仍等最终独审/main；不以准备审完成任务。见[当前入口](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。
+
+### 2026-10-07 Recovery appearance 实际结果
+
+固定source `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`、执行HEAD `d85257e067eb96888f2b26479625b86572869995`。[单一原件索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json)记录真实outer/parent exit0、cookieRead与themes390选定PASS、两张390图及geometry；20:15:46.418134Z资源完整归还，10,325/60,000ms CLOSED。原parent9653.026ms不改写，保守账使用outer最晚观察向上取整；未用49,675ms不构成后继许可。
+
+TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚未执行；本次仅当前系统观测滚动条，不证明classic与overlay两OS模式。TODO07仍待全片独审与main接收。两个consumer分别保真，不以Recovery通过代Picker或个人页面恢复。
+
+[root0e1独审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json)接受本次选定行为、双主题当前dialog几何/可读性与完整归还，0blocking；不补签未运行Picker或全suite，原TODO06/07仍开放。

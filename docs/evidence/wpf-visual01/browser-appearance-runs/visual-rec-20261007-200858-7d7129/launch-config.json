@@ -1,0 +1,36 @@
+{
+  "temp": {
+    "TMPDIR": "/private/tmp/flow-recovery-browser-VHdotz",
+    "TMP": "/private/tmp/flow-recovery-browser-VHdotz",
+    "TEMP": "/private/tmp/flow-recovery-browser-VHdotz",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/flow-recovery-browser-VHdotz",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/flow-recovery-browser-VHdotz/crashpad",
+    "XDG_CACHE_HOME": "/private/tmp/flow-recovery-browser-VHdotz/cache"
+  },
+  "worker": {
+    "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "argv": [
+      "--import",
+      "tsx",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/apps/web/test/conversation-recovery.browser.ts",
+      "--worker",
+      "--visual-appearance"
+    ],
+    "inheritsNodeArguments": false
+  },
+  "chrome": {
+    "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "argv": [
+      "--headless=new",
+      "--remote-debugging-port=0",
+      "--remote-debugging-address=127.0.0.1",
+      "--user-data-dir=/private/tmp/flow-recovery-browser-VHdotz/chrome",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-sync",
+      "about:blank"
+    ]
+  }
+}

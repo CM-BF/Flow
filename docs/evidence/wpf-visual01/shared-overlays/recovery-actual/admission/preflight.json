@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T20:08:58.084406+00:00",
+  "head": "d85257e067eb96888f2b26479625b86572869995",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "sourceCount": 614,
+  "packageRoots": 412,
+  "packageFiles": 18616,
+  "links": 38,
+  "availableBytes": 19343990784,
+  "minimumFreeBytes": 18622054400,
+  "run": "visual-rec-20261007-200858-7d7129",
+  "errors": [],
+  "grant": "VISUAL-RECOVERY-APPEARANCE-20261007-ONCE; manager explicit 60s/30cleanup PG13+management16 accepted exact capture/native",
+  "sourceReview": "abb32+c666/f29a as dispatched; no additional source changes"
+}
