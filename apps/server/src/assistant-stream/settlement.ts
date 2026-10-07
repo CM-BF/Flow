@@ -36,7 +36,11 @@ export async function settleAssistantStream(client:PoolClient,task:TaskRecord,at
   const boundary=tools.at(-1)?.sequence??0;
   if(boundary && (await client.query(`SELECT 1 FROM flow.assistant_stream_blocks b JOIN flow.assistant_stream_patches p ON p.stream_id=b.id
     WHERE b.attempt_id=$1 AND b.first_sequence<$2 AND p.sequence>$2 AND octet_length(p.data->>'text')>0 LIMIT 1`,[attempt.id,boundary])).rowCount) unavailable='crossed-tool-boundary';
-  const retain=blocks.filter(block=>unavailable || block.first_sequence<boundary || block.header.phase==='superseded').map(block=>block.id);
+  const nativeFinal = task.submission.harness === 'codex'
+    ? (await client.query<{native_source_identity:{turnId:string;itemId:string}}>('SELECT native_source_identity FROM flow.assistant_messages WHERE id=$1 AND task_id=$2 AND attempt_id=$3', [finalMessageId,task.id,attempt.id])).rows[0]?.native_source_identity
+    : undefined;
+  if(task.submission.harness === 'codex' && !nativeFinal) unavailable='incomplete-stream';
+  const retain=blocks.filter(block=>unavailable || block.first_sequence<boundary || block.header.phase==='superseded' || (block.header.source==='codex.app-server.stream' && (block.header.channel!=='text' || block.header.nativeTurnId!==nativeFinal?.turnId || block.header.nativeMessageId!==nativeFinal?.itemId))).map(block=>block.id);
   const keep=new Set(retain);
   const data:AssistantStreamSettlement={policy:'flow.assistant-draft',policyVersion:'1',correlation:unavailable?'unavailable':'presentation-policy',unavailableReason:unavailable,
     taskId:task.id,attemptId:attempt.id,nativeSessionId:attempt.native_session_id!,finalMessageId,retainStreamIds:retain,replaceStreamIds:blocks.filter(block=>!keep.has(block.id)).map(block=>block.id)};

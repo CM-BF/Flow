@@ -111,7 +111,7 @@ def main():
     head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=WT, text=True, timeout=3).strip()
     if head != expected or subprocess.check_output(['git', 'status', '--porcelain'], cwd=WT, timeout=3): raise SystemExit('SOURCE_NOT_FIXED')
     manifest_name = os.environ.get('FLOW_C02_PG_MANIFEST', 'pg-source-manifest.json')
-    if manifest_name not in {'pg-source-manifest.json', 'pg-cwd-source-manifest.json'}: raise SystemExit('MANIFEST_NOT_REVIEWED')
+    if manifest_name not in {'pg-source-manifest.json', 'pg-cwd-source-manifest.json', 'pg-public-stream-source-manifest.json'}: raise SystemExit('MANIFEST_NOT_REVIEWED')
     manifest_bytes = (EVIDENCE / manifest_name).read_bytes()
     manifest = json.loads(manifest_bytes)
     for row in manifest['items']:
@@ -132,7 +132,9 @@ def main():
         finally: os.close(fd)
         if count != row['bytes'] or digest.hexdigest() != row['sha256']: raise SystemExit('EXTERNAL_CHANGED')
     verify_dependencies(json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links'], manifest['items'])
-    previous = json.loads((EVIDENCE / 'claim-amend-receipt.json').read_text())['claim']
+    public_stream = manifest_name == 'pg-public-stream-source-manifest.json'
+    claim_receipt = 'public-stream-pg-amend-receipt.json' if public_stream else 'claim-amend-receipt.json'
+    previous = json.loads((EVIDENCE / claim_receipt).read_text())['claim']
     ledger = json.loads(subprocess.check_output([NODE, '/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs', 'list'], cwd=WT, timeout=3, stderr=subprocess.DEVNULL))
     current = next((row for row in ledger['claims'] if row['claimId'] == previous['claimId']), None)
     if ledger['state'] != 'available' or current is None or any(current[key] != previous[key] for key in ['claimId', 'version', 'state', 'role', 'taskId', 'lead', 'worker', 'worktree', 'branch', 'scope']): raise SystemExit('CLAIM_UNKNOWN')
@@ -163,7 +165,7 @@ def main():
                     'FLOW_C02_PG_RECEIPT': prefix + '.fixture.json', 'FLOW_C02_PG_WORK_UNTIL': str(epoch + 60000),
                     'FLOW_C02_PG_CLEANUP_UNTIL': str(epoch + 110000)})
         command = [NODE, '/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs', 'run',
-                   '--config', 'docs/evidence/mature02c02/vitest.pg.config.mjs', '--configLoader', 'native',
+                   '--config', 'docs/evidence/mature02c02/' + ('vitest.public-stream-pg.config.mjs' if public_stream else 'vitest.pg.config.mjs'), '--configLoader', 'native',
                    '--reporter=json', '--outputFile=' + prefix + '.vitest.json']
         for channel in ['stdout', 'stderr']:
             streams[channel] = os.fdopen(os.open(prefix + '.' + channel, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600), 'wb')

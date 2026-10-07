@@ -1,0 +1,275 @@
+{
+  "recordedAt": "2026-10-07T04:49:43.969912+00:00",
+  "status": "SOURCE_AND_LOCAL_RESULTS_READY_FOR_INDEPENDENT_REVIEW",
+  "source": "5219ec25d6c52b54f7e46eac16766095c693c337",
+  "featureBase": "2b3b9db8f9a2cf8cf9ebbf85eaa13aad4d3fd599",
+  "earlierPublicSource": "9e212e503575f8f8d6d45bcb38032f6ec604de9",
+  "coalescingSource": "1160f60b578984b7b483f140616250e32d8e330c",
+  "measurementTests": "3921bec2271406f3c3018f9a99a3cb23639827c9",
+  "hostDelta": "5219ec25d6c52b54f7e46eac16766095c693c337",
+  "claim": {
+    "id": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 8,
+    "scopeCount": 51,
+    "state": "ACTIVE"
+  },
+  "bindings": [
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "bytes": 9218,
+      "sha256": "20c09e60f43395a61a68c3cc4a3b8460f40525fe78b233b92b391e398f9dc2fd"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.test.ts",
+      "bytes": 1185,
+      "sha256": "6f91b3d43a5f92bf66fe62e1e1636a9c2e1ed7c8ae2f03faee0b21953d9c65ca"
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.ts",
+      "bytes": 2004,
+      "sha256": "b8f1bdcba280ac998ac65ec8d18be560686bd0c5a420fbc87d3e06e18f54eeb3"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 3846,
+      "sha256": "e3dfdf9a8756c1d55163633783c265c821eeebc63ed0cc3e558b27aeb5dab776"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 9997,
+      "sha256": "c63d16a5a7c6c74a077c52ecd6c6fb11889b106d4c7630666240362ece480bed"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 6334,
+      "sha256": "b11b077934e7efd957ecad8080f87187bc2acc4c4368957c8565a55792ffb464"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "bytes": 7979,
+      "sha256": "8a78d5edfe305d962601e4d5ce3412ca720ee9a9435b52a36bb0f31c377c19d4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.test.ts",
+      "bytes": 6264,
+      "sha256": "a05b09e5c16c78ece48fb67985627de5bb6fe5acaa049b937cec00dc0b18553d"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.ts",
+      "bytes": 3542,
+      "sha256": "8ef11bc23287d59721106ac37b3fc832ec6793d0aff16345859bf6f675db400b"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 3101,
+      "sha256": "77ef8e0d8fe70290c2d6ea3d10ec9e915d672550f200437c526be34707681162"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "bytes": 13154,
+      "sha256": "ea01fdc87f5ef684b2a556e95b7bbff6d367738852cc760ba305645126811f36"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "bytes": 1937,
+      "sha256": "1c8ea750132e6ed58cf076a5a4e0bb1e8cdee426ce3a59f10b147987f41336ff"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/codex.test.ts",
+      "bytes": 4859,
+      "sha256": "0bb270264817fb37fdf86d94db3a5749ded027e6f685d3176b8c90f61bb901bd"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "bytes": 2339,
+      "sha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 6114,
+      "sha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "bytes": 5744,
+      "sha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "bytes": 5750,
+      "sha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 4546,
+      "sha256": "666650ceb633587edfbdded9ca2ee8277d6fbd64dac56594832ae0efcc98fc1f"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53521,
+      "sha256": "6a153d988c95b7ffc34cf3ab3dafab3ca7e4fb1c61d4915cdc0ff4d86a45e7dc"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.test.ts",
+      "bytes": 1671,
+      "sha256": "876427e7ded3a95405bb71761b391712753192fbfc666f1b5f395db2272065e0"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 6713,
+      "sha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b"
+    },
+    {
+      "path": "packages/interaction/src/stream/codex.test.ts",
+      "bytes": 6451,
+      "sha256": "0ec25de34364c6f1fc5d3166ae9de4a7be441af4cf142d7ffbe0289cabfb6878"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "bytes": 13765,
+      "sha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "bytes": 6328,
+      "sha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 11315,
+      "sha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7"
+    }
+  ],
+  "sourceBytes": 197677,
+  "segmentRecords": [
+    {
+      "path": "docs/evidence/mature02c02/public-stream-segment.json",
+      "bytes": 19869,
+      "sha256": "ceb600f62a38bb44556ab8e3b3345ab7078254b68ef741c154e150a3ef2612d5"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-types-fix-segment.json",
+      "bytes": 7269,
+      "sha256": "569530b91c40807dff337f9c5da8ceaa198e9c0c4d4e8d0f0aab5051de2c4e62"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-coalescing-segment.json",
+      "bytes": 14997,
+      "sha256": "fd78afa187fc2897e262f2bb75b67086893640889a411bab9b20426939503437"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-host-segment.json",
+      "bytes": 14860,
+      "sha256": "5c303a88a356865e2e7144a969d8099fbc0c0aa2fab53251d02643fca1f2cf2e"
+    }
+  ],
+  "rounds": [
+    {
+      "report": "public-stream-tests-first.vitest.json",
+      "selected": 89,
+      "passed": 89,
+      "newDistinct": 89
+    },
+    {
+      "report": "public-stream-coalescing-tests.vitest.json",
+      "selected": 49,
+      "passed": 49,
+      "newDistinct": 1
+    },
+    {
+      "report": "public-stream-host-tests.vitest.json",
+      "selected": 6,
+      "passed": 6,
+      "newDistinct": 3
+    }
+  ],
+  "distinctPassed": 93,
+  "runs": [
+    {
+      "name": "types-first",
+      "exitCode": 2,
+      "selection": null,
+      "startedAt": "2026-10-07T04:37:43.307201+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:37:45.005549+00:00"
+    },
+    {
+      "name": "tests-first",
+      "exitCode": 0,
+      "selection": {
+        "numTotalTests": 89,
+        "numPassedTests": 89,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "startedAt": "2026-10-07T04:38:16.031807+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:38:22.813145+00:00"
+    },
+    {
+      "name": "types-baseline-fixed",
+      "exitCode": 0,
+      "selection": null,
+      "startedAt": "2026-10-07T04:39:16.463605+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:39:18.344826+00:00"
+    },
+    {
+      "name": "coalescing-tests",
+      "exitCode": 0,
+      "selection": {
+        "numTotalTests": 49,
+        "numPassedTests": 49,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "startedAt": "2026-10-07T04:43:22.451416+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:43:26.301993+00:00"
+    },
+    {
+      "name": "types-coalescing",
+      "exitCode": 0,
+      "selection": null,
+      "startedAt": "2026-10-07T04:43:31.366064+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:43:33.224579+00:00"
+    },
+    {
+      "name": "host-tests",
+      "exitCode": 0,
+      "selection": {
+        "numTotalTests": 6,
+        "numPassedTests": 6,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "success": true
+      },
+      "startedAt": "2026-10-07T04:46:51.215895+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:46:52.027170+00:00"
+    },
+    {
+      "name": "types-host",
+      "exitCode": 0,
+      "selection": null,
+      "startedAt": "2026-10-07T04:46:56.799055+00:00",
+      "supervisorReturnedAt": "2026-10-07T04:46:58.695034+00:00"
+    }
+  ],
+  "rawArtifacts": 17,
+  "rawArtifactBytes": 46761,
+  "allCheckedProcessesAndOwnTMPClosed": true,
+  "noPendingLaunch": true,
+  "main": {
+    "continuityLoaderMain": "c0e0263dc01b9527293318a644f964bd048e2a86",
+    "privateKernel": "8c7f81b3",
+    "privateReceipt": "docs/evidence/i02/codex-stream-controlled-intake.json",
+    "public": "NOT_INTEGRATED"
+  },
+  "integrationMethod": "Apply feature delta/three-way merge over current main. packages/client/src/index.ts retains branch baseline; preserve main S01P07 methods. Do not wholesale replace current-main client from this old baseline.",
+  "limits": [
+    "Original types-first exit2 and historical unknown process observations retained; all final owned states absent and both EOF observed.",
+    "93 distinct across89,49,6 passing rounds, not one93-case run; original104+2 private-kernel checks not rerun.",
+    "Controlled-clock mapper32/512 same Unicode body emitted2 patches each with equal final digest. Synthetic JSONL asserts <=16 per run; exact console counters not retained by JSON reporter; actual HTTP request count NOT_MEASURED.",
+    "No real PG/native/provider/UI. Dynamic SQL pagination/source compatibility needs bounded PG validation before complete public delivery.",
+    "TMP active peaks, whole external metadata/Git/tool wall UNKNOWN; per-run/caller timestamps retain their actual scopes.",
+    "Web App HTTP header and conversation-stream Host protocol must upgrade together; renderer must keep public reasoning separate. No Web/TUI files changed."
+  ]
+}

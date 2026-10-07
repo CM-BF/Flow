@@ -1,0 +1,36 @@
+{
+  "kind": "C02_EXTERNAL_TOOL_OBSERVATION",
+  "window": "MATURE02C02-PUBLIC-STREAM-20261007-R1",
+  "executionHead": "562d807558046e9cb798e42a17bb08fe010895d5",
+  "externalStartUTC": "2026-10-07 05:41:30 UTC",
+  "toolExitObservedUTC": "2026-10-07 05:41:35 UTC",
+  "wholeWallExactSeconds": null,
+  "wholeWallConservativeUpperSeconds": 6,
+  "wholeWallBasis": "Independent UTC second samples before exec and after actual final exit, plus one second quantization allowance. PTY wait chunks are not execution wall.",
+  "initialChunk": "613b4a",
+  "finalChunk": "90dae7",
+  "waitChunkSeconds": [
+    1.001448166,
+    0.355631
+  ],
+  "toolExitCode": 0,
+  "delivery": {
+    "finalReceiptWritten": true,
+    "elapsedSeconds": 4.621742542,
+    "success": true
+  },
+  "operatorAdmission": {
+    "beforeOperatorAt": "2026-10-07T05:41:30.883342+00:00",
+    "freshFreeBytes": 24743190528,
+    "combinedFloorBytes": 4053008384,
+    "webRecordAt": "2026-10-07T05:37:29.755224+00:00",
+    "webCurrentSha256": "9ba1343dad6e760e99c762a62bba444df3c41789389c0157438bb3fcec7ddb91",
+    "tenOutputsAbsent": true
+  },
+  "heavyHolderReturned": true,
+  "newLaunchesPending": false,
+  "finalStdout": {
+    "bytes": 2021,
+    "sha256": "2d3712fee71f15a2f4a9e011ce56e9dec90a5f5b06e426f3281f6faec327e8c1"
+  }
+}

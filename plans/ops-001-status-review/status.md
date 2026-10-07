@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:36:47.554372+00:00 / mainbf8b5f1d；工程受限启动机制已接收，网页宿主隔离结果已审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:53:04.970751+00:00 / main5cd64a4d；插件启用领域与工程机制已接收，个人采用首入口失败已封存 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | mainbf8b5f1d已接ENG01J机制五源及SVC08隔离结果；4320实际186源/登录入口/计时保持。个人af51/accepting v18、Web d629/v3未变。 |
+| 已集成main状态 / HEAD | main5cd64a4d已接X01启用/冻结绑定领域与034、ENG01J机制及SVC08隔离结果；root/Web组合types通过。个人仍af51/accepting v18、Web d629/v3；本次个人采用在读取和副作用前停止。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 工程受限启动层已通过局部验证和独立审查进入主线；固定网页宿主已在隔离环境运行并收尾。完整工具正文局部验证通过，数据库与生产接线仍待完成。 |
-| 下一可用交付 | 完成固定网页宿主的个人采用准备；核真实Codex文件辅助进程兼容性。插件、聊天设置及工具原文按各自就绪顺序验收。 |
+| 当前产出 | 插件启用与冻结绑定领域已进入主线；工程受限启动层与固定网页宿主隔离结果已审。个人网页宿主采用首入口检查失败，尚未改变运行环境。 |
+| 下一可用交付 | 修正部署入口的文件身份检查后接续个人网页宿主采用；接收Codex公开流已审结果，并核真实文件辅助进程兼容性。 |
 | 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING；真实模型工程执行与完整界面旅程仍开放。当前已有可实施后继，未等待旧磁盘、旧进程或模型目录才开始实现。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
@@ -455,3 +455,7 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T05:36:47.554372+00:00：SVC08实际隔离Web工作05:20:27.448→05:20:48.080Z，cleanup05:20:48.327Z完成并归还唯一PG窗口；1场景/7断言/3静态HTTP，组/专库正常收尾，个人未操作。结果独审与候选已main1d49；后继两动作仅准备，先迁入再Web-only replace，不drain/停止后台。ENG01J发现器P2由原owner在同范围连续修复，普通1pass3skip、受控4/4、focused0后复审关闭；mainbf8接五源，真实native工具兼容/模型资格/全部writer撤销保持开放。原新三轮outer数值退出缺证据仍null。当前不是磁盘HOLD，独立PG/浏览器及三队local沿原规则，未开新provider预算。
 
 2026-10-07T05:38:29.547628+00:00：沿OPS-001-12/16补普通0provider专库和浏览器的有限新工作段：预算覆盖实际初始化/检查/清理，旧90/60秒非feature终身限额，co-lead在原安全边界内自治连续修复/相关复测、通过后一次独审。原失败/已消费段不改、共享holder/门槛/unknown和个人服务/模型边界不变；只改规则与管理文档，无运行。
+
+2026-10-07T05:48:04Z：C02 actual原件05:41:35已清理，Web Recovery05:46:32虽准入但owner未启动/0actual；两co-lead明确下一shared→SVC08。Execution Lead已接受，唯一assignment执行固定cb220/a93（独审I02 svc08-personal-adoption-caller-review）原迁入→fresh request→CLI Web-only replace→post，fresh2.5GiB/live1GiB/原预算不变。仅16root工具及已解析依赖短freeze，个人af51/v18、d629v3/3retained不升级；0provider/不drain/不动tab。当前尚无成功结论，失败unknown保留不重试；实际结束才归还Recovery且新fresh，不复用过期gate。
+
+2026-10-07T05:53:04.970751+00:00：SVC08原migrate在05:49:01.811Z、60ms/exit1因固定系统Python被误套self/nlink1检查而停止；原b35fc741失败与private三原件保留。PID/组34255 absent、双EOF，动态module imports及个人读取/PG/HTTP/store/服务动作均0，后三阶段未调用。共享窗口已实际归还Web/Mika、16root工具短freeze解除；Recovery按fresh新gate接续，不复用旧准入。两worker在现scope修caller身份分类与单hw.pagesize机制对照，本队local串行，0provider；普通失败修正不再逐命令加审批。

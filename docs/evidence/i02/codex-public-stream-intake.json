@@ -1,0 +1,220 @@
+{
+  "base": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529",
+  "featureBase": "2b3b9db8f9a2cf8cf9ebbf85eaa13aad4d3fd599",
+  "paths": [
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "20c09e60f43395a61a68c3cc4a3b8460f40525fe78b233b92b391e398f9dc2fd",
+      "bytes": 9218
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "6f91b3d43a5f92bf66fe62e1e1636a9c2e1ed7c8ae2f03faee0b21953d9c65ca",
+      "bytes": 1185
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "b8f1bdcba280ac998ac65ec8d18be560686bd0c5a420fbc87d3e06e18f54eeb3",
+      "bytes": 2004
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d",
+      "bytes": 4130
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "c63d16a5a7c6c74a077c52ecd6c6fb11889b106d4c7630666240362ece480bed",
+      "bytes": 9997
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "19c678fcada0c78eebde64482139342906c67fb1f6c8cf4f4c905cccd9ddc0b9",
+      "bytes": 8015
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "8a78d5edfe305d962601e4d5ce3412ca720ee9a9435b52a36bb0f31c377c19d4",
+      "bytes": 7979
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "6c282bc741a5fa30309372c1a0c4513522cac6b1ce19c389d3bbc54658365ae7",
+      "bytes": 10972
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "1be5b720b0727eeae7b92796dc16d895f6c707ded01cfef3aea2cf426c371df7",
+      "bytes": 4198
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "5647f245725d51c8951b6851c4217a90ab3167a9ad3f14e6f6f970fc7d5f4daa",
+      "bytes": 3197
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "ea01fdc87f5ef684b2a556e95b7bbff6d367738852cc760ba305645126811f36",
+      "bytes": 13154
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "1c8ea750132e6ed58cf076a5a4e0bb1e8cdee426ce3a59f10b147987f41336ff",
+      "bytes": 1937
+    },
+    {
+      "path": "apps/server/src/assistant-stream/codex.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "0bb270264817fb37fdf86d94db3a5749ded027e6f685d3176b8c90f61bb901bd",
+      "bytes": 4859
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7",
+      "bytes": 2339
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43",
+      "bytes": 6114
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8",
+      "bytes": 5744
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37",
+      "bytes": 5750
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "666650ceb633587edfbdded9ca2ee8277d6fbd64dac56594832ae0efcc98fc1f",
+      "bytes": 4546
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "mainEqualsBase": false,
+      "mainEqualsTarget": false,
+      "sourceSha256": "6a153d988c95b7ffc34cf3ab3dafab3ca7e4fb1c61d4915cdc0ff4d86a45e7dc",
+      "bytes": 53521
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "876427e7ded3a95405bb71761b391712753192fbfc666f1b5f395db2272065e0",
+      "bytes": 1671
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b",
+      "bytes": 6713
+    },
+    {
+      "path": "packages/interaction/src/stream/codex.test.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "0ec25de34364c6f1fc5d3166ae9de4a7be441af4cf142d7ffbe0289cabfb6878",
+      "bytes": 6451
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c",
+      "bytes": 13765
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087",
+      "bytes": 6328
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "mainEqualsBase": true,
+      "mainEqualsTarget": false,
+      "sourceSha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7",
+      "bytes": 11315
+    }
+  ],
+  "application": "reviewed delta; three-way clean",
+  "combination": {
+    "record": "codex-public-stream-combination/result.json",
+    "root": 0,
+    "web": 0,
+    "consumers": "27/27",
+    "elapsedMs": 16332,
+    "PG": 0,
+    "provider": 0,
+    "allGroupsAbsent": true,
+    "allEOF": true,
+    "tmpRemoved": true
+  },
+  "delivery": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+  "pgSourceRows": 308,
+  "pgArchiveRows": 32,
+  "postRunMetadataChanged": [
+    "plans/wpf-mature-02-codex-continuity/review.md",
+    "plans/wpf-mature-02-codex-continuity/status.md"
+  ],
+  "pgTests": "apps/server/src/assistant-stream/public-stream-pg.test.ts",
+  "pgReview": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.review.json.gz",
+  "pg": "6/6;189HTTP;injected transport;cleanup complete",
+  "metadataFiles": 234,
+  "deletedSnapshotPaths": [],
+  "runtimeProductAll24Exact": true,
+  "client": "clean three-way delta; main S01P07 methods retained",
+  "at": "2026-10-07T05:58:47.805722+00:00",
+  "reviews": {
+    "source": "public-stream-due-independent-review.json / 2ab3c6ff, original25-source review retained",
+    "actual": "pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.review.json.gz / 3e52daf7, APPROVED_SCOPED_ACTUAL_RESULT_FIDELITY",
+    "integration": "24 exact source blobs plus reviewed clean client delta over S01P07; 340 original fixed source/raw hashes checked; two later canonical metadata edits read"
+  },
+  "limits": [
+    "Actual PG6/6 uses injected transport; no native/provider/runRunner/outbox/UI evidence implied.",
+    "Web App patch-v2 opt-in remains separately owned; old Web compatibility consumer passed.",
+    "Private/current personal runtime unchanged; source integration is not deployment."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-07T05:46:27.702748+00:00",
+  "source": "24ef5be77fcc0bfb4ee32fa98c53d653c2920427",
+  "outcome": "STOCK_BINARY_INITIALIZATION_ABORTED",
+  "nativeBinaryLaunches": 1,
+  "confirmedHelperRequestResults": 0,
+  "semanticCasesCompleted": 0,
+  "secondCase": "NOT_RUN_AFTER_FIRST_FAILURE",
+  "fdControl": "PASS",
+  "outerExit": 1,
+  "nativeExit": -6,
+  "earliestNativeDiagnostic": "Rust std stack_overflow.rs:526 failed to allocate a guard page: Invalid argument (os error 22), fatal runtime initialization or cleanup bug; SIGABRT",
+  "rootCause": "UNKNOWN: no individual syscall/policy attribution or matched unsandboxed control; do not disable sandbox or infer that fs/writeFile was reached",
+  "processFacts": {
+    "state": "complete",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 5131,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 5132,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 5133,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 1199,
+    "removed": true
+  },
+  "elapsedMs": 467,
+  "rawBytes": 1468,
+  "finalContentsHex": {
+    "calculator.mjs": "30",
+    "baseline.txt": "30"
+  },
+  "scope": "Actual fixed binary under unchanged J policy, isolated initial exec only; not app-server spawn or model qualification.",
+  "priorFailure": "run-once pre-native SHIM_FD_LIMIT_UNKNOWN retained immutable at14b92285",
+  "next": "Inspect already saved native startup/source facts to identify a minimal faithful startup requirement before any further separately authorized execution. No provider/app-server or policy change in this packet."
+}

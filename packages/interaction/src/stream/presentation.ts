@@ -39,6 +39,8 @@ function replacements(state: StreamState, turn: ConversationTurn): ReadonlySet<s
 export const streamMessageId = (turnId: string, block: Pick<DraftBlock, "attemptId" | "streamId">) => `conversation-stream:${encodeURIComponent(turnId)}:${encodeURIComponent(block.attemptId)}:${block.streamId}`;
 export interface BodySegment {
   id: string; kind: 'draft' | 'final'; text: string; createdAt: string; taskId: string; attemptId: string;
+  source: 'claude.sdk.stream' | 'codex.app-server.stream' | 'assistant-final';
+  channel: 'text' | 'reasoning-summary' | 'reasoning-text';
   streamId: string | null; phase: DraftBlock['phase'] | 'final'; taskStatus: string;
   interrupted: boolean; observationPaused: boolean; truncated: boolean;
 }
@@ -48,7 +50,7 @@ function draftSegment(turn: ConversationTurn, block: Readonly<DraftBlock>, state
   const recordedInterrupted = state.metadata?.blocks.some(reference => reference.id === block.streamId && reference.status === 'interrupted') ?? false;
   const interrupted = recordedInterrupted || block.phase === 'incomplete' || block.phase === 'superseded' || ['failed', 'cancelled', 'uncertain'].includes(turn.task.status) || (ended && block.phase === 'streaming');
   return {id:streamMessageId(turn.id,block),kind:'draft',text:block.content,createdAt:block.createdAt,taskId:block.taskId,attemptId:block.attemptId,
-    streamId:block.streamId,phase:block.phase,taskStatus:turn.task.status,interrupted,observationPaused:paused,truncated:block.truncated};
+    source:block.source,channel:block.channel??'text',streamId:block.streamId,phase:block.phase,taskStatus:turn.task.status,interrupted,observationPaused:paused,truncated:block.truncated};
 }
 /** Presentation policy is the center's explicit partition, never inferred from text or last-block order. */
 export function projectBodySegments(turn: ConversationTurn, state: StreamState): BodySegment[] {
@@ -60,5 +62,5 @@ export function projectBodySegments(turn: ConversationTurn, state: StreamState):
   if (reply.state !== 'available' || (streaming && reply.source.attemptId !== state.patches!.attemptId)) return drafts;
   const full = finalMatchesTurn(state.final,turn) ? state.final : null;
   return [...drafts,{id:reply.messageId,kind:'final',text:full?.text ?? reply.text,createdAt:turn.createdAt,taskId:turn.task.id,attemptId:reply.source.attemptId,
-    streamId:null,phase:'final',taskStatus:turn.task.status,interrupted:false,observationPaused:false,truncated:full ? false : reply.truncated}];
+    source:'assistant-final',channel:'text',streamId:null,phase:'final',taskStatus:turn.task.status,interrupted:false,observationPaused:false,truncated:full ? false : reply.truncated}];
 }

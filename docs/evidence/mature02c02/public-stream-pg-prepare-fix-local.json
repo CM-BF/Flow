@@ -1,0 +1,166 @@
+{
+  "source": "4520a06e42ae7945ba6a2485ab1dabcb3a9113cb",
+  "startedAt": "2026-10-07T05:26:20.243536+00:00",
+  "budget": {
+    "wallSeconds": 300,
+    "commands": 2,
+    "childSeconds": 45,
+    "TMPBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "floorBytes": 4053008384
+  },
+  "runs": [
+    {
+      "kind": "types",
+      "startedAt": "2026-10-07T05:26:20.244972+00:00",
+      "freeBefore": 25126576128,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false",
+        "-p",
+        "docs/evidence/mature02c02/public-stream-pg-tsconfig.json"
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-public-pg-fix-vr946vfm",
+        "dev": 16777234,
+        "ino": 123531884,
+        "removed": true,
+        "sampleEntries": 0,
+        "sampleLogicalBytes": 0,
+        "activePeak": "UNKNOWN"
+      },
+      "pid": 36779,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2044,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T05:26:22.289242+00:00",
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true
+    },
+    {
+      "kind": "collect",
+      "startedAt": "2026-10-07T05:26:22.290457+00:00",
+      "freeBefore": 25126395904,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/mature02c02/vitest.public-stream-pg.config.mjs",
+        "--configLoader",
+        "native",
+        "--json",
+        "--no-color"
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-public-pg-fix-e0_omkqa",
+        "dev": 16777234,
+        "ino": 123531898,
+        "removed": true,
+        "sampleEntries": 0,
+        "sampleLogicalBytes": 0,
+        "activePeak": "UNKNOWN"
+      },
+      "pid": 37275,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1281,
+      "observed_bytes": 1663,
+      "retained_bytes": 1663,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T05:26:23.571516+00:00",
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-collect.stdout",
+          "bytes": 1663,
+          "sha256": "908c32e5373cbba540c9795005f14ac25ba2fdbd0fbaf118cff5f47f351d1143"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-collect.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "collected": 6,
+      "caseNames": [
+        "persists 32 fragments through real HTTP with separate channels, observer disconnect and matching final",
+        "persists 512 fragments through real HTTP with separate channels, observer disconnect and matching final",
+        "rejects unbound or foreign session/source/turn and stale attempt before durable writes",
+        "filters mixed historical metadata and patches before LIMIT for legacy/invalid readers and denies hidden direct blocks",
+        "replays an ACK-lost immutable event without duplicating its prefix or fabricating a final",
+        "keeps interrupted prefixes without a final after public cancellation or runner revocation"
+      ]
+    }
+  ],
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "previous": "public-stream-pg-prepare-local.json; original types2 preserved",
+  "finishedBeforePersistenceAt": "2026-10-07T05:26:23.572379+00:00",
+  "elapsedBeforePersistence": 3.3865879169898108,
+  "rawBytes": 1663,
+  "wholeToolWall": "UNKNOWN; tool waits are not total wall"
+}

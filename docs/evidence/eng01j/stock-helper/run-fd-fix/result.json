@@ -1,0 +1,69 @@
+{
+  "startedAt": "2026-10-07T05:45:25.228184+00:00",
+  "providerCalls": 0,
+  "PG": 0,
+  "cases": [],
+  "primaryFailure": {
+    "code": "ALLOWED_PROCESS_NOT_CLEAN",
+    "type": "RuntimeError"
+  },
+  "cleanup": {
+    "state": "complete",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 5131,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 5132,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 5133,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 1199,
+    "removed": true
+  },
+  "limits": {
+    "totalSeconds": 10,
+    "rawBytes": 65536,
+    "scratchBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01j-helper-utgj5gvs",
+    "dev": 16777234,
+    "ino": 123539224
+  },
+  "fdControl": {
+    "passed": true,
+    "facts": {
+      "extraFdAbsent": true,
+      "stdinReadonly": true,
+      "outputsArePipes": true,
+      "request": "{\"fixture\":\"readonly\"}\n"
+    }
+  },
+  "finalContentsHex": {
+    "calculator.mjs": "30",
+    "baseline.txt": "30"
+  },
+  "rawBytes": 1468,
+  "elapsedMs": 467,
+  "finishedAt": "2026-10-07T05:45:25.694891+00:00",
+  "passed": false
+}

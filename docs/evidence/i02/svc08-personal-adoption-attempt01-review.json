@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T05:55:53.845535+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "cb2205db380aa9d8bbb6ff42407ac7166d2a073a",
+  "result": "b35fc741efe5ebba36be617b00850c4fe490c1df",
+  "conclusion": "APPROVED_FAILED_RESULT_FIDELITY_CALLER_FIX_REQUIRED",
+  "bindingsVerified": 4,
+  "findings": [
+    {
+      "severity": "P2",
+      "id": "SVC08-CALLER-IDENTITY-01",
+      "scope": "personal-adoption/caller.mjs fixed() -> bounded()",
+      "fact": "Pinned system /usr/bin/python3 uid0/nlink78 rejected by self/nlink1 private-file guard before dynamic imports and personal reads. Fixed source bytes matched.",
+      "required": "Separate explicit pinned runtime identity from owned-private material identity; preserve nofollow/regular/size/hash and private guards; targeted local tests before new invocation."
+    }
+  ],
+  "actual": {
+    "elapsedMs": 60,
+    "exitCode": 1,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "personalReads": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "personalWrites": 0,
+    "remainingPhases": "NOT_RUN"
+  },
+  "history": "Original unknown/ERR_ASSERTION and all three private records retained; original preparation review not rewritten. No automatic retry or cleanup. Shared window returned; unchanged personal version preserved.",
+  "reviewerRuns": 0
+}

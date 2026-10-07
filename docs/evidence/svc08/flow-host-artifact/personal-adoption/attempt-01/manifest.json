@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T05:50:30.252027+00:00",
+  "target": "cb2205db380aa9d8bbb6ff42407ac7166d2a073a",
+  "originalManifestSha256": "a0a45ea01ab5435c63c0b37c70cf660e4f0c32774a52b0eea719eb1cef4220e4",
+  "bindings": [
+    {
+      "path": "attempt-01/reservation.json",
+      "bytes": 263,
+      "sha256": "3a36b4a19b653cacccbc4a9c0ad201f1d5873713ffc0e91e812946fbebb270ca",
+      "privatePath": "/private/tmp/flow-svc08-personal-adoption-20261007/reservation.json",
+      "privateIdentity": {
+        "dev": 16777234,
+        "ino": 123540617,
+        "mode": "0o600"
+      }
+    },
+    {
+      "path": "attempt-01/migrate-outer.json",
+      "bytes": 728,
+      "sha256": "55dbbcd73b109bcf4eebfbcc1ebc62323015c1d418cff280b927c3e165b7ad5b",
+      "privatePath": "/private/tmp/flow-svc08-personal-adoption-20261007/migrate-outer.json",
+      "privateIdentity": {
+        "dev": 16777234,
+        "ino": 123540618,
+        "mode": "0o600"
+      }
+    },
+    {
+      "path": "attempt-01/migrate-failure.json",
+      "bytes": 186,
+      "sha256": "3411e27911c45adfbb2fe8d22b04cf981639b6ba8a16cebbc878833a9be69fc9",
+      "privatePath": "/private/tmp/flow-svc08-personal-adoption-20261007/migrate-failure.json",
+      "privateIdentity": {
+        "dev": 16777234,
+        "ino": 123540619,
+        "mode": "0o600"
+      }
+    },
+    {
+      "path": "attempt-01/analysis.json",
+      "bytes": 1956,
+      "sha256": "9cc7eebe27114889e8f712036946fd6ed6b68368ee3366c4e4646c3e606dab46"
+    }
+  ],
+  "approvalDoesNotMeanExecutionPass": true,
+  "result": "FAIL / stop before personal reads",
+  "newRunWithoutCoordination": false
+}

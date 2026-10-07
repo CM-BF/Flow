@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T05:50:30.252027+00:00",
+  "outcome": "STOP_BEFORE_PERSONAL_READS",
+  "callerTarget": "cb2205db380aa9d8bbb6ff42407ac7166d2a073a",
+  "delivery": "18840954b5365b262df0e3288837d204b7127995",
+  "originalResult": "unknown / ERR_ASSERTION; unchanged",
+  "phase": "migrate",
+  "supervision": {
+    "pid": 34255,
+    "ownership": "newChildSession",
+    "exit_code": 1,
+    "elapsed_ms": 60,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "signals": []
+  },
+  "outerFullWallMs": null,
+  "deterministicSourceLocalization": {
+    "firstFailingBindingOrdinal": 29,
+    "path": "/usr/bin/python3",
+    "actualUid": 0,
+    "actualNlink": 78,
+    "requiredUid": 501,
+    "requiredNlink": 1,
+    "bytes": 118640,
+    "byteHashBindingMatched": true,
+    "code": "caller.modules -> fixed -> bounded applies owned-private-file uid/nlink predicate to pinned system executable",
+    "beforeDynamicModuleImports": true
+  },
+  "phasesNotCalled": [
+    "request",
+    "replace",
+    "post"
+  ],
+  "personalReads": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "personalWrites": 0,
+  "copy": 0,
+  "provider": 0,
+  "ownedPrivateRunKept": "/private/tmp/flow-svc08-personal-adoption-20261007",
+  "originalFiles": [
+    "migrate-failure.json",
+    "migrate-outer.json",
+    "reservation.json"
+  ],
+  "cleanup": "work group absent and both EOF; private namespace and original evidence KEEP, no new personal resource created",
+  "nextProposal": "Separate pinned read-only runtime metadata validation from owned-private-file validation. Keep O_NOFOLLOW/nonblocking/regular/exact size and byte hash/realpath/devino; bind system uid/nlink explicitly. Pure direct check before a separately coordinated fresh run. Do not retry this consumed namespace."
+}

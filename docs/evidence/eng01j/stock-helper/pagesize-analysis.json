@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T05:54:45.592407+00:00",
+  "source": "2a1224af8d86979a3ebd08ce7b69d028a7572ca0",
+  "result": "PAGE_SIZE_HYPOTHESIS_NOT_SUPPORTED",
+  "outerExit": 1,
+  "nativeHelperCalls": 0,
+  "completedCObservations": 2,
+  "values": {
+    "pagesize-base": {
+      "sysconf": -1,
+      "sysconfErrno": 1,
+      "getpagesize": -1,
+      "getpagesizeErrno": 1
+    },
+    "pagesize-read": {
+      "sysconf": -1,
+      "sysconfErrno": 1,
+      "getpagesize": -1,
+      "getpagesizeErrno": 1
+    }
+  },
+  "onlyPermissionAdded": "(allow sysctl-read (sysctl-name \"hw.pagesize\"))",
+  "limitsUnchanged": true,
+  "rawBytes": 2110,
+  "elapsedMs": 1043,
+  "cleanup": {
+    "state": "complete",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 97751,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97757,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97758,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97759,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 35382,
+    "removed": true
+  },
+  "inference": "This exact hw.pagesize read permission did not restore either libc query in the observed processes. No claim about the kernel canonical name, which rule denied the call, or the Rust binary root cause follows.",
+  "nativeBranch": "NOT_RUN because the explicit prerequisite was false",
+  "providerCalls": 0,
+  "PG": 0,
+  "productChanges": 0,
+  "next": "No further permission changes or retries in this segment; use these raw facts for limited independent review."
+}

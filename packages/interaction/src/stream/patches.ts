@@ -1,5 +1,5 @@
 import {
-  ASSISTANT_ATTEMPT_BYTES, assistantStreamDataSchema, idSchema,
+  ASSISTANT_ATTEMPT_BYTES, assistantStreamDataSchema, assistantStreamIdentity, idSchema,
   type AssistantStreamData, type AssistantStreamPage, type AssistantStreamPatch,
   type AssistantStreamReference, type AssistantStreamSettlement,
 } from "@flow/contracts";
@@ -35,11 +35,12 @@ function boolean(value: unknown): boolean { if (typeof value !== "boolean") thro
 function dataOf(value: Record<string, unknown>, text: unknown, fromBytes: unknown): AssistantStreamData {
   return assistantStreamDataSchema.parse({ type: value.type ?? "assistant-stream", streamId: value.streamId, nativeSessionId: value.nativeSessionId,
     nativeMessageId: value.nativeMessageId, parentToolUseId: value.parentToolUseId, source: value.source, sourceMessageId: value.sourceMessageId,
-    blockIndex: value.blockIndex, revision: value.revision, fromBytes, text, prefixDigest: value.prefixDigest,
+    ...(value.nativeTurnId !== undefined ? { nativeTurnId: value.nativeTurnId } : {}),
+    ...(value.channel !== undefined ? { channel: value.channel } : {}), blockIndex: value.blockIndex, revision: value.revision, fromBytes, text, prefixDigest: value.prefixDigest,
     phase: value.phase, reason: value.reason, truncated: value.truncated });
 }
 async function verifySource(value: AssistantStreamData) {
-  if (value.streamId !== await textDigest(JSON.stringify([value.nativeSessionId, value.nativeMessageId, value.blockIndex]))) throw Error("Stream identity does not match its source.");
+  if (value.streamId !== await textDigest(assistantStreamIdentity(value))) throw Error("Stream identity does not match its source.");
 }
 async function referenceOf(input: unknown, taskId: string, attemptId: string): Promise<AssistantStreamReference> {
   const value = object(input);
@@ -136,7 +137,7 @@ export async function applyPatchPage(state: PatchState, input: unknown, after: n
     last = patch.sequence;
     const reference = references.find(ref => ref.id === patch.streamId);
     if (!reference || reference.taskId !== patch.taskId || reference.attemptId !== patch.attemptId || reference.nativeSessionId !== patch.nativeSessionId
-      || reference.nativeMessageId !== patch.nativeMessageId || reference.blockIndex !== patch.blockIndex) throw Error("Patch has no matching current metadata.");
+      || reference.nativeMessageId !== patch.nativeMessageId || reference.blockIndex !== patch.blockIndex || reference.source !== patch.source || reference.channel !== patch.channel || reference.nativeTurnId !== patch.nativeTurnId) throw Error("Patch has no matching current metadata.");
     const fingerprint = await textDigest(JSON.stringify(patch));
     if (receipts[patch.sequence]) {
       if (receipts[patch.sequence] !== fingerprint) throw Error("A sealed patch changed on replay.");

@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T05:53:34.722046+00:00",
+  "status": "NOT_RUN",
+  "base": "b740bd4706faa4fd480f978209699dd4e0d311a8",
+  "entry": "run.py --run-pagesize",
+  "limits": {
+    "totalSeconds": 15,
+    "rawBytes": 65536,
+    "scratchBytes": 1048576,
+    "freshBytes": 1107296256,
+    "stockHelperMax": 2,
+    "provider": 0,
+    "PG": 0
+  },
+  "onlyPermissionAdded": "(allow sysctl-read (sysctl-name \"hw.pagesize\"))",
+  "bindings": [
+    {
+      "path": "docs/evidence/eng01j/stock-helper/run.py",
+      "bytes": 16449,
+      "sha256": "d037b8a0c0075ae0727150344ec714ed41753d3bb6a2465e30081a6b5db23ba7"
+    },
+    {
+      "path": "docs/evidence/eng01j/stock-helper/page-size.c",
+      "bytes": 465,
+      "sha256": "0ee36c8cbaee67cfd66f8df94440aaf386642a96e5f5f6c2b59b9138e5174c0d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.ts",
+      "bytes": 1660,
+      "sha256": "26c5585d2b256cab1c53d83b28c1ac494aead830fe4dc3f12a4552ff0a4da16c"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ]
+}

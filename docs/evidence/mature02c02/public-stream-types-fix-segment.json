@@ -1,0 +1,204 @@
+{
+  "kind": "bounded-local-segment",
+  "startedAt": "2026-10-07T04:39:16.447596+00:00",
+  "budget": {
+    "wallSeconds": 300,
+    "commands": 1,
+    "commandSeconds": 45,
+    "tmpBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "runs": [
+    {
+      "name": "types-baseline-fixed",
+      "startedAt": "2026-10-07T04:39:16.463605+00:00",
+      "freeBefore": 25632268288,
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-public-local-wvsd9ou0",
+        "dev": 16777234,
+        "ino": 123468524
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/public-stream-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+          "bytes": 7508,
+          "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.ts",
+          "bytes": 9997,
+          "sha256": "c63d16a5a7c6c74a077c52ecd6c6fb11889b106d4c7630666240362ece480bed"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+          "bytes": 10676,
+          "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/wire.ts",
+          "bytes": 2382,
+          "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/stream.ts",
+          "bytes": 2996,
+          "sha256": "ea68022ac4cbb59d0963f53f51e030ab07011447bb3696c5aa7145d82e028985"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+          "bytes": 6207,
+          "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/policy.ts",
+          "bytes": 1696,
+          "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.ts",
+          "bytes": 6334,
+          "sha256": "b11b077934e7efd957ecad8080f87187bc2acc4c4368957c8565a55792ffb464"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+          "bytes": 5504,
+          "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 3780,
+          "sha256": "197d74744418f7bd9b8aab340feaa1a14d379351107f851aa73102f020ab6f2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/stream.test.ts",
+          "bytes": 4316,
+          "sha256": "c6ef4a27213de46e71fd0a7a6c0641f8ce8166113100acb0f26aa40cc41e88eb"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/index.ts",
+          "bytes": 1109,
+          "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "bytes": 10214,
+          "sha256": "9c3a1e7ad1de055540763bcef81be8f5af50189e3bc9fb16c25be1c36d04b8a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+          "bytes": 3899,
+          "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+          "bytes": 11320,
+          "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+          "bytes": 5456,
+          "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/turn.ts",
+          "bytes": 3101,
+          "sha256": "77ef8e0d8fe70290c2d6ea3d10ec9e915d672550f200437c526be34707681162"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/peer.mjs",
+          "bytes": 7979,
+          "sha256": "8a78d5edfe305d962601e4d5ce3412ca720ee9a9435b52a36bb0f31c377c19d4"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-vitest.config.mjs",
+          "bytes": 972,
+          "sha256": "acaba6e796221ffb33aeb65fba50b5cc46f9942060d6086c294e7f5b09ce124b"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-tsconfig.json",
+          "bytes": 1092,
+          "sha256": "0a9191ecece0276ffa01afd2a831865cf5e7db78e9e82de2357274858da9eee4"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T04:39:18.344826+00:00",
+      "pid": 79096,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1881,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-types-baseline-fixed.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-types-baseline-fixed.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 256,
+        "activePeak": "UNKNOWN"
+      }
+    }
+  ],
+  "source": "6cbe91ff4f0839da185d75a3ab0440f0ace83060",
+  "noPG": true,
+  "noNativeProvider": true,
+  "rawArtifactBytes": 0,
+  "runtimeStatus": "CLOSED",
+  "updatedAt": "2026-10-07T04:39:18.345630+00:00",
+  "elapsedBeforePersistence": 1.898038,
+  "closedAt": "2026-10-07T04:40:35.501546+00:00",
+  "reason": "Changed direct-test input: exact c0e baseline blobs after first TS2307; no test rerun.",
+  "inputSupplement": "public-stream-source-baseline.json"
+}

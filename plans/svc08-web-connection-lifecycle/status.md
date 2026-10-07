@@ -6,29 +6,29 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:27:31.281281+00:00 |
+| 更新时间 | 2026-10-07T05:50:30.252027+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 固定Flow产物已通过真实隔离网页宿主验收并获独立批准；进程和专库已收尾，个人服务保持原状。 |
-| 下一可用交付 | 受控接收隔离宿主结果；按固定候选准备仅网页宿主的个人采用。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 首次采用入口在固定系统工具的文件检查中停止；尚未读取或改变个人服务，原失败与运行记录已保留。 |
+| 下一可用交付 | 修正只读系统工具与自有私有文件的身份检查区别，局部验证并复审后再协调新窗口。 |
+| 当前阻塞 | ACTIVE: 系统Python被错误套用自有文件uid/nlink门槛；原单次入口已停止，未进入个人迁入。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | 隔离结果aa71a7a3855f27b80d7045ec64c0ca644d87156d / delivery604ce630b6703063c882d950f0b8fa4ca10fa6e1；个人候选随后固定 |
-| 工作树dirty状态 | 仅own plan/evidence封存本轮原始结果；提交后核clean |
-| 工作分支状态 | in-progress；隔离宿主结果已审待接收，个人采用仍为准备 |
+| Head | 个人采用caller cb2205db380aa9d8bbb6ff42407ac7166d2a073a；当前仅metadata收口，产品仍bad019 |
+| 工作树dirty状态 | caller/source/raw已固定；仅own status元数据，提交后核clean |
+| 工作分支状态 | in-progress；个人采用caller已审待实际窗口，未执行 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
-| Review | APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
+| Review | APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
-| 已集成 main 状态 | INTEGRATED ee98e65c147cf2ef28ccf0f519952f60d56e9d4b；固定228构建结果与独审已接，四产品main422保持；本次隔离宿主结果尚待独审/受控接收 |
+| 已集成 main 状态 | INTEGRATED 1d49da00450ae078da13ef3e1f7807d0c00f4c3c；26份固定隔离结果/候选及原独审精确接收；固定构建与四产品main422保持；当前个人采用caller尚待独审，个人尚未操作 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
 
@@ -50,6 +50,7 @@
 | SVC08-W01 | 2026-10-07T03:13:31.000Z | 2026-10-07T03:15:08.399Z | 审查 | 固定输入交唯一独审，已获限定批准 | independent-review.json |
 | SVC08-W02 | 2026-10-07T03:15:08.399Z | 2026-10-07T03:17:28.292Z | 其他 | main回执已逐hash确认；本片完成 | main-receipt.json |
 | SVC08-W03 | 2026-10-07T03:38:17.937Z | 2026-10-07T03:39:37.692Z | 审查 | 新部署文档已获限定批准 | replace-host/candidate-independent-review.json |
+| SVC08-W04 | 2026-10-07T05:46:38.842Z | 2026-10-07T05:48:04.000Z | 资源 | caller已审，等待Lead实际共享运行窗口与工具短冻结 | caller-independent-review + fresh ledger/本owner开始等待记录 |
 
 03:11:26.520536Z修复轮监督报告已完成，本队local已归还；0新测试/个人操作。
 
@@ -114,3 +115,22 @@
 唯一Lead于05:23:53.532074Z批准aa71/604ce：28 fixed/current、4 private和14原件副本全同，0重跑；原7断言/3HTTP/首unknown/stop code1与采样口径保持。仅原样归档[独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，原run结果冻结。
 
 [个人采用精确候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)分两个动作：同锁精确迁入，随后新fresh request调用root Flow固定CLI做一次replace-host。16 root工具模块对固定422/main e30及当前字节相同；仅解析pg/tsx已装入口metadata，0import/个人采样/PG/复制。backendArtifact不伪改，首个operator不能直接用c7b CLI；实际Web才选c7b。旧02:45私人摘要只历史输入，执行仍需新现场与窗口。完整SVC08/个人采用open。
+
+## 2026-10-07T05:40:53.000811+00:00：个人采用调用层局部检查
+
+原claim v6 fresh05:32:55.336Z确认后仅own docs实现。沿已接受候选复用原两锁、verify/clone、RENAME_EXCL和OPS14；Web-only无drain/hold/业务DML或任务归零。9个pure/tiny checks、3JS语法入口及Python AST通过，实际05:39:24.469522Z→05:39:24.782849Z/313ms/raw973B；4组absent/双EOF/自有scratch已清。最后仅caller补legacy webHost必须null的保守前置，未重跑无影响9项；该一行源审，不称个人运行。局部已交还native。见[固定候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)、[局部记录](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/local-run.json)。迁入/个人读取/HTTP/PG/服务全部NOT_RUN，root工具尚未冻结。
+
+本轮caller固定提交：cb2205db380aa9d8bbb6ff42407ac7166d2a073a；独立审查待接，个人迁入/替换仍NOT_RUN。status标准解析errors/human/timing均[]，初次错误metadata模块路径原样保留status-parse.json。
+
+## 2026-10-07T05:47:08.127675+00:00：个人采用caller独立批准
+
+唯一review于2026-10-07T05:46:18.996142Z确认5source/32runtime/12evidence及9局部原件，无P1/P2；原样归档caller-independent-review.json，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。fresh账本05:46:38.842Z仍v6合法两scope。原固定cb2205/manifest不改，个人迁入/替换仍NOT_RUN；阶段migrate/request/replace/post使用同一新exclusive namespace，前段明确成功才后继。root工具短冻结与实际运行窗口由Lead协调；当前不读取个人、不创建执行namespace、不复制或起服务。无新测试。
+
+
+## 2026-10-07T05:48:49.882687Z：实际个人采用窗口准入
+
+Lead于05:48:04Z实际接收共享窗口并冻结16工具。fresh claim v6、5source+32runtime、原c7b manifest与dev/ino、新namespace不存在均核通过；free24,545,304,576B≥2.5GiB。准备由唯一operator启动原migrate；后继仅明确成功后继续。此时尚未个人读取/复制/服务操作，实际以private各phase原件为准，不把准入写成迁入完成。
+
+## 2026-10-07T05:50:30.252027+00:00：原单次migrate停止，窗口已报告归还
+
+05:49:01.811Z入口ERR_ASSERTION，原outer60ms/exit1，组34255最终absent/双EOF、无信号升级。固定第29runtime `/usr/bin/python3` 实际uid0/nlink78，而通用bounded错误要求uid501/nlink1；字节/hash仍同原固定输入。错误发生在全部Module导入前，无migration-before/intent/store/stage，0个人读取/PG/HTTP/复制/写入/服务。request/replace/post均未调用。原private namespace三件原样KEEP，脱敏原件与精确分析见[attempt-01](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-01/analysis.json)。仅报告最窄修正，cb220源码尚未改；禁止重试已消费namespace。

@@ -1,0 +1,96 @@
+{
+  "source": "fda0a0b2a3848463da18647b0296412d95a8c4f1",
+  "startedAt": "2026-10-07T05:25:15.053316+00:00",
+  "budget": {
+    "wallSeconds": 300,
+    "commands": 2,
+    "childSeconds": 45,
+    "TMPBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "floorBytes": 4053008384
+  },
+  "runs": [
+    {
+      "kind": "types",
+      "startedAt": "2026-10-07T05:25:15.055568+00:00",
+      "freeBefore": 25128820736,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false",
+        "-p",
+        "docs/evidence/mature02c02/public-stream-pg-tsconfig.json"
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-public-pg-local-2kkgh6k0",
+        "dev": 16777234,
+        "ino": 123531702,
+        "removed": false
+      },
+      "pid": 96135,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 2,
+      "elapsed_ms": 2088,
+      "observed_bytes": 1277,
+      "retained_bytes": 1277,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T05:25:17.143371+00:00",
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-local-types.stdout",
+          "bytes": 1277,
+          "sha256": "c5f6b01a3d958272dd3ff8d5397a836391d95d0c1b08cf4537d18adff72b393e"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-pg-prepare-local-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": false
+    }
+  ],
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "finishedBeforePersistenceAt": "2026-10-07T05:25:17.143847+00:00",
+  "elapsedBeforePersistence": 2.1667138329939917,
+  "rawBytes": 1277,
+  "wholeToolWall": "UNKNOWN; tool waits are not total wall"
+}

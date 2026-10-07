@@ -15,7 +15,9 @@ export const assistantStreamDataSchema = z.strictObject({
   nativeSessionId: idSchema,
   nativeMessageId: idSchema,
   parentToolUseId: z.null(),
-  source: z.literal('claude.sdk.stream'),
+  source: z.enum(['claude.sdk.stream', 'codex.app-server.stream']),
+  nativeTurnId: idSchema.optional(),
+  channel: z.enum(['text', 'reasoning-summary', 'reasoning-text']).optional(),
   sourceMessageId: idSchema,
   blockIndex: z.number().int().min(0).max(10000),
   revision: z.number().int().min(1).max(100000),
@@ -27,6 +29,9 @@ export const assistantStreamDataSchema = z.strictObject({
   truncated: z.boolean(),
 }).superRefine((patch, context) => {
   const problem = (message:string) => context.addIssue({code:'custom',message});
+  if (patch.source === 'claude.sdk.stream' && (patch.nativeTurnId !== undefined || patch.channel !== undefined)) problem('Claude source does not carry Codex identity.');
+  if (patch.source === 'codex.app-server.stream' && (!patch.nativeTurnId || !patch.channel)) problem('Codex source requires its observed turn and channel.');
+  if (patch.source === 'codex.app-server.stream' && patch.channel === 'text' && patch.blockIndex !== 0) problem('Agent text has one block per item.');
   if (['streaming','block-complete'].includes(patch.phase) && patch.reason !== null) problem('Open/complete blocks cannot carry an interruption reason.');
   if (patch.phase === 'incomplete' && (patch.reason === null || patch.reason === 'superseded')) problem('Incomplete blocks require an interruption reason.');
   if (patch.phase === 'superseded' && patch.reason !== 'superseded') problem('Replaced blocks require their explicit reason.');
@@ -34,6 +39,20 @@ export const assistantStreamDataSchema = z.strictObject({
   if (patch.phase === 'streaming' && patch.text === '') problem('An open patch must add text.');
 });
 export type AssistantStreamData = z.infer<typeof assistantStreamDataSchema>;
+/** The old Claude identity is byte-for-byte stable. Codex item IDs are scoped by turn and channel. */
+export function assistantStreamIdentity(value: Pick<AssistantStreamData, 'source' | 'nativeSessionId' | 'nativeMessageId' | 'blockIndex' | 'nativeTurnId' | 'channel'>): string {
+  return JSON.stringify(value.source === 'claude.sdk.stream'
+    ? [value.nativeSessionId, value.nativeMessageId, value.blockIndex]
+    : [value.source, value.nativeSessionId, value.nativeTurnId, value.nativeMessageId, value.channel, value.blockIndex]);
+}
+export type AssistantStreamProtocol = 'patch-v1' | 'patch-v2';
+/** Finite protocol negotiation: duplicates and unknown names never opt in. */
+export function assistantStreamProtocol(rawHeaders: readonly string[]): AssistantStreamProtocol | null {
+  const values: string[] = [];
+  for (let index = 0; index < rawHeaders.length; index += 2)
+    if (rawHeaders[index]?.toLowerCase() === 'x-flow-assistant-stream') values.push(rawHeaders[index + 1] ?? '');
+  return values.length === 1 && (values[0] === 'patch-v1' || values[0] === 'patch-v2') ? values[0] : null;
+}
 export interface AssistantStreamReference extends Omit<AssistantStreamData, 'type' | 'text' | 'fromBytes'> {
   id: string;
   taskId: string;

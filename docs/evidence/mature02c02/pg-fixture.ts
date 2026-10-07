@@ -91,6 +91,9 @@ export class ContinuityCenterFixture {
     const path = mkdtempSync(join(tmpdir(), 'flow-c02-public-')); const root: { path: string; dev?: number; ino?: number } = { path };
     this.roots.push(root); const stat = lstatSync(path); root.dev = stat.dev; root.ino = stat.ino; return path;
   }
+  readClient(assistantStreamProtocol: 'patch-v1' | 'patch-v2') {
+    return new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken, assistantStreamProtocol });
+  }
   async json(path: string, init: RequestInit = {}) {
     const response = await fetch(this.baseUrl + path, { ...init, headers: { Authorization: `Bearer ${this.ownerToken}`, ...init.headers }, signal: AbortSignal.timeout(3000) });
     return { status: response.status, value: await response.json() };

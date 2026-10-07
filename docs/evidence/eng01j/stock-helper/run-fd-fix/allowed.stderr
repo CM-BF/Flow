@@ -1,0 +1,5 @@
+
+thread 'main' (114942863) panicked at /rustc/59807616e1fa2540724bfbac14d7976d7e4a3860/library/std/src/sys/pal/unix/stack_overflow.rs:526:13:
+failed to allocate a guard page: Invalid argument (os error 22)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+fatal runtime error: initialization or cleanup bug, aborting

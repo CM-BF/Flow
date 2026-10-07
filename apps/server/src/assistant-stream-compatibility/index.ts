@@ -1,5 +1,6 @@
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
+import { assistantStreamProtocol } from '../../../../packages/contracts/src/assistant-stream.js';
 import type { TimelineEntry } from '@flow/contracts';
 
 /** Filter only at public legacy reads; callers calculate cursors from unfiltered rows. */
@@ -16,7 +17,7 @@ export interface ConversationReadOptions {
 }
 
 export async function negotiatedAssistantStream(app: FastifyInstance, pool: Pool, rawHeaders: readonly string[], options: ConversationReadOptions): Promise<boolean> {
-  if (options.assistantStreamReadable !== true || !hasSinglePatchHeader(rawHeaders)) return false;
+  if (options.assistantStreamReadable !== true || assistantStreamProtocol(rawHeaders) === null) return false;
   const routes = ['/api/tasks/:id/assistant-stream', '/api/tasks/:id/assistant-stream/patches', '/api/tasks/:id/assistant-stream/:blockId'];
   if (!routes.every(url => app.hasRoute({ method: 'GET', url }))) return false;
   try {
@@ -30,15 +31,4 @@ export async function negotiatedAssistantStream(app: FastifyInstance, pool: Pool
     if (['42P01', '42501'].includes((error as { code?: string }).code ?? '')) return false;
     throw error;
   }
-}
-
-function hasSinglePatchHeader(rawHeaders: readonly string[]): boolean {
-  let count = 0;
-  let supported = false;
-  for (let index = 0; index < rawHeaders.length; index += 2) {
-    if (rawHeaders[index]!.toLowerCase() !== 'x-flow-assistant-stream') continue;
-    count++;
-    supported = rawHeaders[index + 1] === 'patch-v1';
-  }
-  return count === 1 && supported;
 }

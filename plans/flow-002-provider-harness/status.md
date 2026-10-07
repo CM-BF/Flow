@@ -2,8 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 10:27:04 UTC / main8d8ab520a9d43c7b9dafb22911416ee799ebf665 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:53:04.970751+00:00 / main5cd64a4d；仅更新已审接缝事实与候选研究 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 整体首次实际工作事件未核，不由commit或本次记录推断；各子片时间沿其canonical来源。 |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
@@ -11,15 +14,15 @@
 | Branch | `codex/plan-status-review` |
 | 工作基线 / 本记录核验时HEAD | `3995ec16ce2cbcb4d5f5e99333b86575233fd89c` / `de7d948f31a264bd1d4d7c2c3ad8b5582a6818c4`（同步时观察值） |
 | 工作树dirty状态 | 仅本次人类摘要与事实对齐 |
-| 工作分支状态 | planning；原历史TODO与独立review边界保留 |
-| 已集成main状态 / HEAD | 8d8ab520a9d43c7b9dafb22911416ee799ebf665；已含TUI01A、R05C/C1、R05D配置D0、SVC04工具与D06固定f181图。真实Codex启动与实际新Web/旧后台兼容仍待验；个人backend/static保持b1c2e398、accepting v12。10:22:38.966Z实际看板126源/账本available；S01P03新canonical下一批登记。 |
+| 工作分支状态 | in-progress；历史选型完成不代表全部harness/真实工程验收完成 |
+| 已集成main状态 / HEAD | main5cd64a4d已含R05/R06接缝、ENG01I组合与ENG01J受限机制；Codex公共流固定结果待受控接收。个人运行事实只从FLOW-001/SVC读取；下方旧runtime值是历史观察。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 1 |
-| 当前产出 | 终端与网页正在共用发送确认规则；工程工作区通路正在接通，网页独立发布工具已进入主线。 |
-| 下一可用交付 | 核清Codex可信启动的实际运行边界，并完成受管工程工作区的首条交付通路。 |
+| 当前产出 | 原生Claude与Codex接入持续沿共同宿主契约推进；工程宿主组合和受限启动机制已入主线，真实工程写入与独立接受尚未完成。 |
+| 下一可用交付 | 接收已审Codex公开流，继续真实辅助进程兼容性和工程授权宿主；正式订阅登录仅保留后继候选。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -44,7 +47,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 当前用户授权配额为本队4/Web4/Mika4，总上限12；不是实际运行数。历史单树第5worker被拒是当时工具上限记录，不代表当前全队容量或产品runner容量。
+- 2026-10-06的三队12槽是历史授权；当前heartbeat上限10且服从实际工具cap，见OPS唯一规则。agent槽位与产品runner容量分开。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -64,3 +67,5 @@ Execution Lead已接管本权威status并核验实际owner交付；启动、实�
 2026-10-06 10:27:04 UTC：本批只对齐已审主线与实际运行版本。TUI01B共享ACK与跨客户端409读恢复由runner_owner独立实施；ENG01A E0收据关联/完成门禁限定批准，E1真实Git/checker纵向实施；SVC04的合成兼容与58项真实构建JS请求不替代个人新Web/旧b1c后台的兼容证据。完整工程、真实Codex与新Web发布保持open；不新增provider或重复产品检查。
 
 2026-10-06T14:35:35.073416+00:00：仅新增T09托管Agents API研究候选；本机Claude/Codex优先不变，无新环境/认证/provider与产品验证。上方10:27环境是历史观察；当前个人runtime362/v15、Web8d8/v2，主线观察59ef2134，参见FLOW-001和SVC05事实，不把新main当已部署版本。
+
+2026-10-07T05:53:04.970751+00:00：T09记录GO官方SIWC候选与明确非实施边界，见plan末节。0认证/注册/凭据/provider/工程检查；不阻当前C02/ENG工作，也不把目录或独立helper片段当真实模型资格。历史T07/T08/T09开放验收保留。

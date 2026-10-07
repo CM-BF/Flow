@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { once } from 'node:events';
 import type { AddressInfo } from 'node:net';
-import { expect, it } from 'vitest';
+import { expect, it, vi } from 'vitest';
 import { conversationCreationSchema } from '@flow/contracts';
 import { FlowClient } from './index.js';
 
@@ -41,4 +41,14 @@ it('opts in only snapshot reads and keeps stable creation receipts, task binding
     expect(requests.map(r => r.protocol)).toEqual([undefined, 'patch-v1', undefined, undefined, undefined, undefined, undefined]);
     expect(requests[2]).toMatchObject({ key: 'stable-create', body: input });
   } finally { await new Promise<void>(resolve => server.close(() => resolve())); }
+});
+
+it('sends the explicit v2 codec for task-bound reads without changing mutation receipts', async () => {
+  const seen: {path:string;headers:Headers}[]=[];
+  const fetch=vi.spyOn(globalThis,'fetch').mockImplementation(async (url,init)=>{seen.push({path:String(url),headers:new Headers(init?.headers)});return new Response('{}',{status:200,headers:{'content-type':'application/json'}})});
+  try {
+    const client=new FlowClient({baseUrl:'http://127.0.0.1:1',token:'fixture-only',assistantStreamProtocol:'patch-v2'});
+    await client.assistantStream('task');await client.assistantStreamPatches('task',{attemptId:'attempt'});await client.assistantStreamBlock('task','block');await client.conversation('conversation');
+    expect(seen.map(x=>x.headers.get('X-Flow-Assistant-Stream'))).toEqual(Array(4).fill('patch-v2'));
+  } finally {fetch.mockRestore();}
 });

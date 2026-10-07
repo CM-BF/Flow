@@ -20,6 +20,7 @@ async function finish() {
     const count = Number(mode.slice(7)); final.text = '中文🙂'.repeat(512);
     notification('thread/status/changed', { threadId, status: { type: 'active', activeFlags: [] } });
     notification('item/reasoning/summaryTextDelta', { threadId, turnId, itemId: 'reasoning', summaryIndex: 0, delta: '公开摘要🙂' });
+    item({ type: 'reasoning', id: 'reasoning', summary: ['公开摘要🙂'], content: [] });
     const characters = Array.from(final.text), width = characters.length / count;
     for (let index = 0; index < count; index++) {
       notification('item/agentMessage/delta', { threadId, turnId, itemId: final.id, delta: characters.slice(index * width, (index + 1) * width).join('') });

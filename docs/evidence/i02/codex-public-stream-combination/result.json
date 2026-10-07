@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-07T05:57:05.373885+00:00",
+  "finishedAt": "2026-10-07T05:57:21.706785+00:00",
+  "elapsedMs": 16332,
+  "reports": [
+    {
+      "pid": 17109,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9188,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "root"
+    },
+    {
+      "pid": 22812,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 5964,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "web"
+    },
+    {
+      "pid": 28351,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1176,
+      "observed_bytes": 162,
+      "retained_bytes": 162,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "consumers"
+    }
+  ],
+  "cleanup": {
+    "identityMatched": true,
+    "remainingEntries": [],
+    "removed": true
+  },
+  "selection": {
+    "numTotalTests": 27,
+    "numPassedTests": 27,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  }
+}

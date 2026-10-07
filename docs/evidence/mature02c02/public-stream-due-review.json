@@ -1,0 +1,71 @@
+{
+  "recordedAt": "2026-10-07T05:01:07.548017+00:00",
+  "status": "SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING",
+  "base": "4ecfea09698a42b2e59a684462e8891923a96c15",
+  "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529",
+  "bindings": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 4130,
+      "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 8015,
+      "sha256": "19c678fcada0c78eebde64482139342906c67fb1f6c8cf4f4c905cccd9ddc0b9",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.test.ts",
+      "bytes": 10972,
+      "sha256": "6c282bc741a5fa30309372c1a0c4513522cac6b1ce19c389d3bbc54658365ae7",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.ts",
+      "bytes": 4198,
+      "sha256": "1be5b720b0727eeae7b92796dc16d895f6c707ded01cfef3aea2cf426c371df7",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 3197,
+      "sha256": "5647f245725d51c8951b6851c4217a90ab3167a9ad3f14e6f6f970fc7d5f4daa",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-vitest.config.mjs",
+      "bytes": 1025,
+      "sha256": "ad7c9e0dcd2c4b4a1cc1c1dcd25ffc36f3c32bacca6aceece0660a37152008bc",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-tsconfig.json",
+      "bytes": 1158,
+      "sha256": "8ecc3966cf2998ad57a219480f4d6368d6b779cfa4a3ac923514bfedb9e38155",
+      "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529"
+    }
+  ],
+  "local": {
+    "path": "docs/evidence/mature02c02/public-stream-due-segment.json",
+    "bytes": 5560,
+    "sha256": "0161b0439cda2a0ed44b89f1c8148ba190c68110428726ea272bdc0751e9106f"
+  },
+  "selected": 15,
+  "passed": 15,
+  "failed": 0,
+  "unselected": 24,
+  "newCases": 6,
+  "directRegressionCases": 9,
+  "typesExit": 0,
+  "oldPublic93": "Original reports unchanged; no claim that this delta reran all93.",
+  "scope": "Fix the independently identified silent-buffer P2 only. Mapper earliest dirty deadline; same receive pump/one pending receive; serialized delivery+abort and existing ownership fences. No PG/native/provider/UI.",
+  "timing": "Fake-clock250ms tests assert due wakeup without next input, one pending receive, no timer after close. Actual OS event-loop latency is not a guaranteed real-time SLA; a blocked sink is bounded by abort/wall deadline.",
+  "failure": "emit failure/ownership loss/pending sink abort or deadline remain UNKNOWN; stop waiting does not attest uncooperative sink effects stopped. Buffered output is never fabricated as completed.",
+  "actualClosedAt": "2026-10-07T04:59:41.925939+00:00",
+  "rawArtifactBytes": 11631,
+  "localReturnedTo": "architecture_read",
+  "claim": "8ad6536b-1194-44a4-9078-a92215bec7a2 v8 ACTIVE51; retained",
+  "main": "Private old kernel@8c7f81b3; public and this delta NOT_INTEGRATED."
+}
