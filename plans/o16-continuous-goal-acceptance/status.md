@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:17:45Z |
+| 最近更新 | 2026-10-07T08:23:56.323Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -10,13 +10,13 @@
 | Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
-| 基线 | 8bd02cc3b9ec7afe5fec461e4d8ee05798e5d974 |
-| HEAD | 固定修复 4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa；当前仅证据/metadata |
+| 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
+| HEAD | 输入c10f0d6b，实验差量343bd436；旧4ae修复/证据保留 |
 | Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
 | 工作分支状态 | in-progress |
 | 检查状态 | failed：实际PG 1选中/0通过/1失败，独立接受rejected；26不同准备检查分轮通过；原25未重复；0provider |
 | Review | APPROVED_BOUNDED_PREPARATION current4ae；16bindings/新增1纯例原证据已独审，历史e931批准保留 |
-| 实现目标 | 4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa |
+| 实现目标 | 343bd43691a5a179d256a2229a4db856d869a267；4ae旅程行为保持，精确主线输入差量 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 准备片已集成 aca6e89214711ef3787ac3e3ee3b2754bb40b960；138文件与924873固定交付一致，实际旅程未通过 |
 | 任务开工时间 | UNKNOWN |
@@ -27,7 +27,7 @@
 | 优先级 | 2 |
 | 当前产出 | 正在将已审目标旅程对齐当前主线；原失败证据和资源保留。 |
 | 下一可用交付 | 固定当前主线输入与实际入口，再验证从目标到独立接受的完整零模型旅程。 |
-| 当前阻塞 | ACTIVE: 等待本批主线固定输入；源码准备继续，完整旅程尚需新的数据库窗口。 |
+| 当前阻塞 | ACTIVE: 当前主线输入已固定；完整零模型旅程等待新数据库窗口，局部加载准备继续。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -52,4 +52,6 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | O16-W01 | UNKNOWN | 2026-10-07T08:17:45Z | 排程/验证准备 | 旧旅程失败后阶段性暂停，开始无独立时间证据；当前原owner恢复当前主线准备，不将全间隔称资源等待 | 原status与本次Lead派工/current-main-resumption |
-| O16-W02 | 2026-10-07T08:17:45Z | NOT_ENDED | 固定输入 | 等待P02组合后的准确main；可继续差异/源码与静态准备 | current-main-resumption.json |
+| O16-W02 | 2026-10-07T08:17:45Z | 2026-10-07T08:23:56.323Z | 固定输入 | 等待P02组合后的准确main；可继续差异/源码与静态准备 | current-main-resumption.json |
+
+2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
