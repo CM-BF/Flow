@@ -1,8 +1,8 @@
 {
   "schema": "flow.av03.pg-prepared.v1",
-  "state": "P2_DELTA_REVIEW_PENDING_NOT_OPEN",
-  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
-  "support": "d3db51c448d112e49d132881dd442656bba04cc8",
+  "state": "PREPARED_NOT_OPEN",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "support": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
   "files": [
     {
       "path": ".gitignore",
@@ -12,9 +12,9 @@
     },
     {
       "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
-      "commit": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+      "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
       "bytes": 20283,
-      "sha256": "bc66ee8514f3101296cdafa5433c24ddd902137270a7c58c0fe3014f13f659ab"
+      "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/claim-receipt.json",
@@ -24,9 +24,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure.json",
-      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
       "bytes": 91001,
-      "sha256": "724bc5fbc0c0506014d6644a5976a625863fc3a5fa49d9f76340f9aa67cd25a7"
+      "sha256": "03a39f4bdfb662a3c2701aeb3b023446f5aa505b0076a8c38ebf79e1e745327b"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-check-once.py",
@@ -786,9 +786,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
-      "commit": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+      "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
       "bytes": 20283,
-      "sha256": "bc66ee8514f3101296cdafa5433c24ddd902137270a7c58c0fe3014f13f659ab"
+      "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification.test.ts",
@@ -1674,9 +1674,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request.json",
-      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
-      "bytes": 1892,
-      "sha256": "9edb3b3d886fc7765c30c78162f32a9b2521986df0bfc80ddf1ea2305ef9b2a7"
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 2321,
+      "sha256": "6152a8080fd9989aee9650c182fd45c8a5b226358c12be476034d3c291b7a5d7"
     },
     {
       "path": "package.json",
@@ -2905,7 +2905,7 @@
       "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
     }
   ],
-  "bytes": 1513019,
+  "bytes": 1513448,
   "sqlCount": 34,
   "previousManifestSha256": "c3d3b3d57dd6be4ecf81e8e67ffbe9bfedbfab308e8f9969a36515c17f4d8ed8",
   "previousManifest": "pg-isolated-manifest-before-p2.json"

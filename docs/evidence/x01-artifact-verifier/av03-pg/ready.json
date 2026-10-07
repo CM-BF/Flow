@@ -1,0 +1,110 @@
+{
+  "state": "PREPARED_NOT_OPEN",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "support": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "sourceApproval": "2026-10-07T17:27:40.000Z SOURCE_DELTA_REVIEW_APPROVED/0P1P2",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest.json",
+  "manifestSha256": "76ea6c70a4dd59544ff2e12b152413abcd1cc1e267bd5ecf765eabd6f47a052f",
+  "files": 281,
+  "bytes": 1513448,
+  "changes": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "previous": {
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 19484,
+        "sha256": "a113fda81d73fea549d541287fa4cff60727cea560022422557d929f07980e45"
+      },
+      "current": {
+        "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+        "bytes": 20283,
+        "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
+      }
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure.json",
+      "previous": {
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 91001,
+        "sha256": "447e4eadd36aea453f80bdbe4c15c861e7f747cb948ebe1fb2661bc9bb947b33"
+      },
+      "current": {
+        "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+        "bytes": 91001,
+        "sha256": "03a39f4bdfb662a3c2701aeb3b023446f5aa505b0076a8c38ebf79e1e745327b"
+      }
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "previous": {
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 19484,
+        "sha256": "a113fda81d73fea549d541287fa4cff60727cea560022422557d929f07980e45"
+      },
+      "current": {
+        "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+        "bytes": 20283,
+        "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
+      }
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request.json",
+      "previous": {
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 1755,
+        "sha256": "380e69ed8fdf8c2f0bd70636afe43f41890fbf8a5e4088a8e5fb5fa195ffabe1"
+      },
+      "current": {
+        "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+        "bytes": 2321,
+        "sha256": "6152a8080fd9989aee9650c182fd45c8a5b226358c12be476034d3c291b7a5d7"
+      }
+    }
+  ],
+  "unchangedInputs": 277,
+  "external": 191,
+  "links": 16,
+  "sql": 34,
+  "metadataBindings": [
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/source-delta-approval.json",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 1064,
+      "sha256": "0d0e6ed7e2727667b2f43157d9d54ffa4b1ea0ddac1f749b6965554ce30dfb0a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/metadata-close.json",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 666,
+      "sha256": "0f12906fe85764dc5f6f81141e2131ca2a264c4dee2ebee4f98210c04caef616"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/p2-delta.json",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 1707,
+      "sha256": "a5a6d18e2d194a5c48dfb4f436366c4001512e6053374766230f88d7c747ea10"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/preparation-review-initial.json",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 891,
+      "sha256": "fd8a613b2ca391c9d960102f7382b63ccb1e0fbd5f7495abab377f63af9d4544"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-before-p2.json",
+      "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+      "bytes": 162390,
+      "sha256": "c3d3b3d57dd6be4ecf81e8e67ffbe9bfedbfab308e8f9969a36515c17f4d8ed8"
+    }
+  ],
+  "priorResult": "preparation-result.json at417175656f62f01894cb9ad22a24b678e9acfe50 remains original local evidence only",
+  "newDeltaExecution": "NOT_RUN",
+  "windowCandidate": "window-request.json",
+  "namespace": "av03-verifier-claim-pg-run-r1",
+  "namespaceAbsent": true,
+  "admission": "NONE",
+  "actual": "HOLD/NOT_OPEN",
+  "resources": "180s=110work+60cleanup+10final; 1markedDB/17configuredconnections/1concurrentlistener(3serial lifetimes); 5cases/32tasks/20attempts/10runners/6registrations/160HTTP; TMP32MiB/raw1MiB/DBWAL128MiB/reserve1GiB once. Fresh full combined floor and unique manager NEXT still required.",
+  "bounds": "Synthetic installed/source records, no npm/provider/OSrunner/public verifier producer or result chain. No main integration claim."
+}
