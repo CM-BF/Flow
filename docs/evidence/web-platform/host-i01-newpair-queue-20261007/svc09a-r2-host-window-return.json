@@ -1,0 +1,117 @@
+{
+  "kind": "SVC09A_R2_PRE_IO_FAILURE_RUNTIME_RETURN",
+  "at": "2026-10-07T16:16:36.884252Z",
+  "outerFinishedAt": "2026-10-07T16:15:48.486779Z",
+  "outerElapsedMs": 3953,
+  "outerExit": 1,
+  "actualOperatorPid": 33075,
+  "originalReports": [
+    {
+      "pid": 33086,
+      "ownership": "newChildSession",
+      "exit_code": 0,
+      "elapsed_ms": 3699,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "owned_state": "absent",
+      "first_failure": null,
+      "signals": []
+    },
+    {
+      "pid": 33089,
+      "ownership": "newChildSession",
+      "exit_code": 1,
+      "elapsed_ms": 80,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "owned_state": "absent",
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "signals": []
+    },
+    {
+      "pid": 33090,
+      "ownership": "newChildSession",
+      "exit_code": 1,
+      "elapsed_ms": 81,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "owned_state": "absent",
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "signals": []
+    }
+  ],
+  "postFailureExactProcessObservations": [
+    {
+      "pid": 33075,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 33086,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 33089,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 33090,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    }
+  ],
+  "actualServices": 0,
+  "pendingServiceRecords": 0,
+  "fixtureDatabaseCreated": false,
+  "fixtureConnectionsOpened": false,
+  "basis": "Both exact entry argv regexes reject the underscore in the generated root before privateJson and before work/cleanup invocation. Config/state/startup-diagnostics are absent; records contains only operator-written work-outer.json. Top-level definitions do not create connections/listeners.",
+  "adminPreflightClosed": "host-r2-pg-admission.json",
+  "privateDirectory": {
+    "directory": "/private/tmp/flow-svc09a-host-e143n0_5",
+    "identity": {
+      "dev": "16777234",
+      "ino": "124305734"
+    },
+    "retention": "KEEP"
+  },
+  "clone": "KEEP; original full clone report retained",
+  "R1": "unchanged, no old DB/private reads",
+  "runtimeReturned": true,
+  "originalComplete": false,
+  "cleanupMeaning": "cleanup child rejected before entry; no service/database cleanup claimed",
+  "providerCalls": 0,
+  "personalIO": 0,
+  "retry": false
+}

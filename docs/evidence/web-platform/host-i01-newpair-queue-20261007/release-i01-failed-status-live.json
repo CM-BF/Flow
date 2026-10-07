@@ -1,0 +1,209 @@
+{
+  "observedAt": "2026-10-07T16:09:58.098868+00:00",
+  "source": "GET http://127.0.0.1:4320/api/summary readonly; after ownerfirst-failurestatus updates",
+  "responseBytes": 563322,
+  "tasks": [
+    {
+      "id": "WPF-RELEASE01",
+      "title": "真实网页发布兼容验证",
+      "role": "技术验证",
+      "sourceKey": "e70ba0e6f4de87ebf5298c57093c6e2e3a1475d6e87dbec3053c971819dc38d1",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md",
+        "digest": "ca83b11b6881d4c1b1cb37ec367ba2205b8eb7545b9400481991cad80ef39ac1",
+        "modifiedAt": "2026-10-07T16:09:01.940Z",
+        "readAt": "2026-10-07T16:09:58.022Z",
+        "declaredUpdatedAt": "2026-10-07T16:09:01.937Z",
+        "stale": false,
+        "ageHours": 0.015579166666666667,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "w01_owner / gpt-6-astra / ultra",
+        "branch": "codex/web-release-recovery",
+        "branchState": "in-progress",
+        "declaredHead": "固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写",
+        "declaredDirty": "本批仅own records封存首失败；两harness未改，两已交回产品持续STOP",
+        "updatedRecord": "2026-10-07T16:09:01.937Z",
+        "checks": {
+          "state": "unknown",
+          "target": null,
+          "record": "FAILED 新pair首次兼容，reports=null/0正式报告；原源码/旧consumer/固定artifact通过仍限历史范围"
+        },
+        "reviewRecord": "[review.md](review.md)：APPROVED 精确pair源码/调用边界；首actual FAILED及完整RETURN已独立接受，非compat通过",
+        "mainRecord": "NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线",
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "新网页产物已生成；新组合首次兼容检查失败，运行资源已完整归还",
+          "next": "修正未知回执恢复与流观察的测试顺序，固定差量审查后再安排验证",
+          "blocker": {
+            "state": "active",
+            "text": "兼容场景在恢复未知回执前等待尚未建立的流；后台迟到登出尚未实际检查"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工"
+          },
+          "issues": [
+            "任务开工时间未记录"
+          ]
+        },
+        "truncatedFields": []
+      },
+      "progress": {
+        "completed": 8,
+        "total": 10
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-01",
+          "title": "成熟双主题视觉"
+        },
+        "basis": "status-source"
+      },
+      "verification": {
+        "state": "not_loaded"
+      },
+      "assignment": {
+        "state": "pending"
+      }
+    },
+    {
+      "id": "WPF-I01",
+      "title": "Web 插件集成",
+      "role": "工作线",
+      "sourceKey": "824e6d66e5d4f99a83ea1512667953fa1f09515dedfacb1233e61c77522636ca",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/status.md",
+        "digest": "a424429e70a8aa1cdef2bc278eecc6dff26da77fb3094483ec1b5527f030ecce",
+        "modifiedAt": "2026-10-07T16:09:51.913Z",
+        "readAt": "2026-10-07T16:09:58.022Z",
+        "declaredUpdatedAt": "2026-10-07T16:09:51.912Z",
+        "stale": false,
+        "ageHours": 0.0016972222222222221,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "workspace_panels_owner / gpt-6-astra",
+        "branch": "codex/web-plugin-runtime-app",
+        "branchState": "in-progress",
+        "declaredHead": "3c9345df4aec85a37e8a2a155e079db260d515b1；metadata实际HEAD由Git记录",
+        "declaredDirty": "首FAIL执行49d71/13ddb已封存14b2202；本批仅browser locator源修与own metadata，0工程child/no runtime retry",
+        "updatedRecord": "2026-10-07T16:09:51.912Z；browser START 16:04:51.034343Z → FAILED/0完整组 → 精确RETURN 16:07:09.871423Z；现仅scoped Files测试定位窄修",
+        "checks": {
+          "state": "failed",
+          "target": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+          "record": "FAILED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；首browser Files locator歧义、0/4完整组/0PNG/0registry writes；原4direct与affected noEmit0通过保留，首types红保留"
+        },
+        "reviewRecord": "APPROVED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；限定源码+4direct/affected types及caller准备；首browser FAILED/0完整组，actual独审待收，见review当前入口",
+        "mainRecord": "NOT_INTEGRATED；fixed 3c9345df4aec85a37e8a2a155e079db260d515b1仅已包含runtime模块与MSG，未接本后继",
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "中心插件设置已通过源码及局部审查；浏览器验收遇到同名Files按钮定位歧义，失败与清理证据已保留",
+          "next": "收窄到当前聊天的Files入口，固定测试修正后再排一次真实界面验收",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "原task首次实际开工缺可靠事件；本续段实际供给开始2026-10-07T15:11:58.585Z见runtime-app/preflight，不重置原task时间、不取旧创建或claim为开工"
+          },
+          "issues": [
+            "任务开工时间未记录"
+          ]
+        },
+        "truncatedFields": []
+      },
+      "progress": {
+        "completed": 5,
+        "total": 7
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web/root；执行管理d01_owner",
+          "value": "Web/root；执行管理d01_owner"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)",
+          "reason": "父任务层级未明确或声明冲突",
+          "targetId": "WPF-001",
+          "title": "Web 平台持续执行"
+        },
+        "basis": "status-source"
+      },
+      "verification": {
+        "state": "not_loaded"
+      },
+      "assignment": {
+        "state": "pending"
+      }
+    }
+  ]
+}

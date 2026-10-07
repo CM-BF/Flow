@@ -1,0 +1,88 @@
+{
+  "reviewedAt": "2026-10-07T16:25:51.577208+00:00",
+  "reviewer": "/root gpt-6-astra ultra read-only",
+  "state": "ACCEPTED_FAILED_RESULT_AND_FULL_RETURN_NOT_COMPATIBILITY_PASS",
+  "source": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "executionHead": "16e56cf6b40d3213c5fc334f84689eb0473f5766",
+  "pins": [
+    {
+      "path": "/private/tmp/rel01-recovery-c2/terminal.json",
+      "bytes": 408,
+      "sha256": "f0effadd25dd470ecbedb4e51cb3035d10ade4accedb7b94ee14a17489bb4c79"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/result.json",
+      "bytes": 102590,
+      "sha256": "757e0fbf15a80bc5a222ea71dfc382094c748d63e4eb4050ad56ee9453b859f5"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/budget.json",
+      "bytes": 109,
+      "sha256": "f69f06c0f6048f1837e2136607f4e78d201b1536bc6db961165217d7544bcb61"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw-manifest.json",
+      "bytes": 3006,
+      "sha256": "a76d85da8669a5395342d212ee0553aaaca1f337f9aa0393a1e3ab5c447aef35"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2-actual-afw20vb4/outer-exit.json",
+      "bytes": 285,
+      "sha256": "91ca517cac657a06e21b565232e97d098ad6a303b2fe1619fe250f27e8de71e9"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2-actual-afw20vb4/return-receipt.json",
+      "bytes": 1779,
+      "sha256": "1b47b89668aa47c8e375fe84e3395f02da931e1a36b3de78cd5908ea95238fd9"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/browser-results.json",
+      "bytes": 15709,
+      "sha256": "4d9e08302bb5ad0252fb2609aaabfb5e5adc2798d30e073bb3e45535606fdfa9"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/recovery-779a-page.json",
+      "bytes": 5243,
+      "sha256": "639d490c7f4a1cf05d8b56553ef4668066df9d7b16658cec59969b1775ff0aac"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/recovery-779a-wire.json",
+      "bytes": 163190,
+      "sha256": "9c26ab34e9fe04ce9fe8bec2cc016ce1b73235459b5516dec64d38a74b14b80c"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/fixture-cleanup.json",
+      "bytes": 262,
+      "sha256": "573177f65804cca396a14c715aa9719dbceb5fa4a628e3c2551f7a9cf335600d"
+    }
+  ],
+  "verified": [
+    "All18 raw-manifest entries719707B match individual byte counts/hashes. Terminal result/budget/rawManifest hashes match; outer stdout exact terminal matches saved terminal.",
+    "Outer actual exit1, elapsed26553.256332990713ms, charged ceil26554. All4 inner streams EOF/drop0 and both outer EOF/drop0. Worker result failed/compatibility null; Chrome observed exit0/closed.",
+    "Independent exact RETURN16:23:57.272423Z records PID and PGID92775/92779/93030 ABSENT_ESRCH, scratch/profile absent, exact admininput identity deleted. Raw marked DB removal and center/proxy close true/errors[].",
+    "Parent fixtureCleanup UNKNOWN_OR_FAILED_SEE_RAW_KEEP remains unchanged; acceptance assertion short-circuits assignment, independent raw cleanup and return prove closure. Do not rewrite parent or infer a resource leak.",
+    "Browser failedAt asset-observation/recovery-779a; reports null and passedfalse. Old3 completed app objects do not authorize partial formal reports or overall publication."
+  ],
+  "failureAnalysis": {
+    "observed": "AssertionError:ERR_ASSERTION at asset-observation; pageErrors empty. Console records contain expected faulty original turn content-length mismatch plus GET /api/browser-session HTTP400.",
+    "inference": "At reviewed d032 asset-observation console-error assertion rejects400 while allowing narrowly bounded401; this is the first statically false assertion from retained page input. Generic captured error lacks line/stack, so retain inference qualification.",
+    "wireEvidence": "NewApp session wire contains10 GET records:9 status200 and1 status400, all bearerfalse. Origin/cookie/header cause is not established by this root review; do not whitelist400 merely to pass.",
+    "next": "Owner traces specific400 request/scenario and exact backend/public contract before proposing smallest correct fix. No new runtime/retry authorized."
+  },
+  "coverage": [
+    "Recorded progress passed durable-retry, late-logout, explicit-retry and legacy-read before failure. This does not produce completed recovery app or formal report.",
+    "Post-logout UNKNOWN retry remains unverified; current retry occurs beforelogout."
+  ],
+  "phase": {
+    "state": "CLOSED",
+    "chargeMs": 26554,
+    "totalMs": 180000,
+    "unusedMs": 153446,
+    "unusedTransferred": false
+  },
+  "runtimeAuthorized": false,
+  "quality": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Separated acceptance failure from resource cleanup, preserved error facts and exact input bindings, rejected blanket console suppression and misleading partial-pass reporting."
+  }
+}

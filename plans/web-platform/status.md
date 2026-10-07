@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:01:19.610Z；新网页产物已审，正式兼容与插件真实界面检查准备均通过；已按实际资源归还排顺序执行。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:30:26.498Z；两项网页检查失败均已完整归还；已审隔离宿主候选按ready-first获下一窗口，网页原作者继续窄修。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,10 +23,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 逐消息设置所选真实旅程已审并main3c9345，原写权已释放；最小新Web两文件修复在独立7272基底固定，后端cd27产物结果已审。个人网页仍旧版本。 |
-| 下一可用交付 | 优先完成新网页与后端的真实兼容并应用用户网页；插件实际管理入口已通过局部检查，浏览器检查随后执行。共享浮层源码已完成首片，待局部验证和实际视觉验收。 |
-| 当前阻塞 | ACTIVE: 新网页产物已生成，产物结果已独审通过，新pair真实兼容尚待；个人网页发布与真实设置目录仍未完成。 |
+| 下一可用交付 | 修正新网页资源观测与插件连接切换检查的具体问题，再按固定候选验收；正式兼容通过后才应用用户网页。共享浮层按安全空档完成局部与代表界面检查。 |
+| 当前阻塞 | ACTIVE: 新网页正式四版本兼容未通过，第二次失败停在资源观测，reports=null；个人真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：新网页正式兼容已实际运行，占用本组唯一数据库/浏览器窗口；I01等明确完整归还。原SVC09A数据库和私有目录KEEP保留，futurefloor至少16,175,529,984B。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：当前无actual holder；Original已审R3独立217.5s唯一NEXT，紧前fresh后START。futurefloor至少19,363,266,560B，已计R3不重复加。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

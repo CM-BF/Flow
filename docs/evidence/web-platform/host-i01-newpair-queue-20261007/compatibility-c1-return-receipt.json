@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-07T16:03:25.267185+00:00",
+  "actualOuterExit": 1,
+  "terminal": {
+    "state": "FAILED",
+    "declaredExit": 1,
+    "elapsedAfterFinalWritesMs": 56456.53529197443,
+    "resultSha256": "bcdf0dc2c4f48d3cc6412d525f52c29e3905840ac2b618f628f147edf27f8c23",
+    "budgetSha256": "3f3a15b37faae300fd1c7fa920ae223f66f4fc330158cc1e3e43d6fb6ffac974",
+    "rawManifestSha256": "d9007c569706d44f730d484cb9f246ec060854c975a0f36c8d5124ebe1d9abfd",
+    "groupsAbsent": true,
+    "scratchAbsent": true
+  },
+  "terminalMatchesStdout": true,
+  "terminalHashesMatch": true,
+  "processes": [
+    {
+      "kind": "PID",
+      "id": 98932,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 98932,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PID",
+      "id": 99111,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 99111,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PID",
+      "id": 99294,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 99294,
+      "state": "ABSENT"
+    }
+  ],
+  "scratchAbsent": true,
+  "fixtureCleanup": {
+    "databaseName": "flow_release_c1ffa8eb0b9a43d39ac84907d18b714a",
+    "marker": "7da464a9-e38c-4749-bbfe-e97637ee8a2d",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "adminInputDeletedExactIdentity": true,
+  "adminIdentity": {
+    "dev": 16777234,
+    "ino": 124296269
+  },
+  "outerEOF": {
+    "stdout": true,
+    "stderr": true,
+    "basis": "Actual waited parent exit and file handles closed"
+  },
+  "innerStreams": {
+    "worker.stdout": {
+      "received": 103,
+      "kept": 103,
+      "drop": 0,
+      "eof": true
+    },
+    "worker.stderr": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stdout": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stderr": {
+      "received": 24947,
+      "kept": 24947,
+      "drop": 0,
+      "eof": true
+    }
+  },
+  "runtimeChargeMs": 56504,
+  "phaseTotalMs": 180000,
+  "phaseRemainingUnspentMs": 123496,
+  "state": "FULL_RETURN",
+  "resultState": "FAILED"
+}

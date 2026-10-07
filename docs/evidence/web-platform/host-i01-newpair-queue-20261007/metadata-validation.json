@@ -1,35 +1,52 @@
 {
-  "at": "2026-10-07T16:03:01.058617+00:00",
+  "at": "2026-10-07T16:30:44.338312+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-review-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-source-manifest.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-caller-peer-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-caller-root-intake.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-native-boundary.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-design-decision.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-peer-feedback.md",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c1-failed-result-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c1-return-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c2-failed-result-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c2-focused-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c2-return-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c2-source-peer-review.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-preparation-approved.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-final-plan-provenance-receipt.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-source-local-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-fixed-candidates-observation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-before-pin-correction-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-first-accounting.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-first-actual-tool-exit.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-first-post-cleanup.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-second-accounting.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-browser-second-post-cleanup.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-first-failure-locator-fix-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-scoped-files-preparation-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-second-failure-return-review.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/manager-claim-current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/manager-claim.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/stable-compatibility-executor-followup.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/owner-status-second-failures-observation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/release-i01-failed-status-live.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-host-window-return.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-source-switch-request.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-take-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-r2-host-window-return.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
     "plans/web-platform/status.md",
     "plans/wpf-mature-01-visual/status.md",
-    "plans/wpf-mature-03-attachments/plan.md",
-    "plans/wpf-mature-03-attachments/status.md"
+    "plans/wpf-mature-03-attachments/plan.md"
   ],
   "links": [
+    {
+      "source": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-peer-feedback.md",
+      "target": "/private/tmp/root-attachment-action-seam-20261007/report.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json",
+      "exists": true
+    },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "host-i01-newpair-queue-20261007/i01-source-local-review.json",
@@ -38,16 +55,6 @@
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "host-i01-newpair-queue-20261007/i01-browser-preparation-approved.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/svc09a-host-window-return.json",
       "exists": true
     },
     {
@@ -62,12 +69,22 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/compatibility-c2-focused-review.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "host-i01-newpair-queue-20261007/compatibility-caller-root-intake.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "host-i01-newpair-queue-20261007/compatibility-native-boundary.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/compatibility-c1-return-receipt.json",
       "exists": true
     },
     {
@@ -87,37 +104,17 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/attachment-action-report.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-main-intake.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/stable-compatibility-executor-followup.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "arc-msg03-ownership-intake-20261007/intake.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json",
+      "target": "host-i01-newpair-queue-20261007/current.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "svc-held1347-core-ready-20261007/plugin-app-seam-peer.md",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "svc-held1347-core-ready-20261007/process-t7-release-input.json",
       "exists": true
     },
     {
@@ -131,13 +128,8 @@
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-03-attachments/status.md",
-      "target": "plan.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-03-attachments/status.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md",
+      "source": "plans/wpf-mature-03-attachments/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-design-decision.json",
       "exists": true
     }
   ],
@@ -184,6 +176,86 @@
     },
     {
       "file": "attachment-action-review-record.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c1-return-receipt.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c1-failed-result-review.json",
+      "match": true
+    },
+    {
+      "file": "attachment-action-peer-feedback.md",
+      "match": true
+    },
+    {
+      "file": "attachment-action-design-decision.json",
+      "match": true
+    },
+    {
+      "file": "i01-browser-first-accounting.json",
+      "match": true
+    },
+    {
+      "file": "i01-browser-first-post-cleanup.json",
+      "match": true
+    },
+    {
+      "file": "i01-browser-first-actual-tool-exit.json",
+      "match": true
+    },
+    {
+      "file": "release-i01-failed-status-live.json",
+      "match": true
+    },
+    {
+      "file": "i01-first-failure-locator-fix-review.json",
+      "match": true
+    },
+    {
+      "file": "svc09a-r2-host-window-return.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c2-focused-review.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c2-source-peer-review.json",
+      "match": true
+    },
+    {
+      "file": "i01-scoped-files-preparation-review.json",
+      "match": true
+    },
+    {
+      "file": "dashboard-fixed-candidates-observation.json",
+      "match": true
+    },
+    {
+      "file": "i01-before-pin-correction-receipt.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c2-return-receipt.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c2-failed-result-review.json",
+      "match": true
+    },
+    {
+      "file": "i01-browser-second-post-cleanup.json",
+      "match": true
+    },
+    {
+      "file": "i01-browser-second-accounting.json",
+      "match": true
+    },
+    {
+      "file": "i01-second-failure-return-review.json",
       "match": true
     }
   ],

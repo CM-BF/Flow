@@ -117,6 +117,10 @@ ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-
 
 ### 附件条目动作的同一插件授权边界
 
-沿 WPF-001-05 / REQ22–23 / 原03-03接受[固定七源接口研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md)。后继复用同一 `attachment.item.actions` 插槽、Host/session/binding 与有区分字段的 draft/project/recovery 上下文；首先接真实项目文件行和实际 Composer 草稿行，不把 task artifact 或恢复目录身份当草稿成员，不暴露 client/controller/任意回调。读取与草稿修改权限分开，执行及每个 await 后重验当前成员、固定版本和 lease；卸载不清草稿、已提交材料或未知回执。
+沿 WPF-001-05 / REQ22–23 / 原03-03接受[固定七源接口研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md)。后继复用同一 `attachment.item.actions` 插槽、Host/session/binding 与有区分字段的 draft/project/recovery 上下文；首片仅提供两个真实行的预览：项目文件行和实际 Composer 草稿行，不把 task artifact 或恢复目录身份当草稿成员，不暴露 client/controller/任意回调。读取与草稿修改权限分开，执行及每个 await 后重验当前成员、固定版本和 lease；卸载不清草稿、已提交材料或未知回执。
 
 原 I01 react/session 写权交回后，由既有接入 owner 在独立树合法领取最小范围；先核现有 `attachments/controller.ts` 的 preview/取消 signal 接口。只有确有缺口才精确扩该文件与行为测试，不新建缓存或第二状态权威。两消费者验收包括跨项目/撤权/卸载后的迟到拒绝，移除 A 后不回填 A、不改 B 或附件顺序。此为可实施设计输入，未领取、未实现、未运行；不能阻断已固定新网页发布或当前视觉片。
+
+[独立反馈采纳](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-design-decision.json)进一步固定首片 preview-only：行展示复用 `recoveryDraft` 的实际 membership，不能把含 held 材料的 `input.items` 当当前稿；同连接/view/project与权限布尔值不代表授权仍有效，复用私有 liveauth generation 与 exact binding/projection 即时撤销。单命令 signal 必须贯通实际 HTTP、缓存提交和 Composer 提交边界，不能只在 await 后抛错而宣称撤销了副作用。后继先只读核 controller/App/ConnectionSession，必要才扩精确写权；本研究不扩大当前 I01 或视觉范围。
+
+键盘后继修复边界进一步限定为 `@file + Tab` 分支本身：先排已处理事件、IME/keyCode229及Shift/Ctrl/Alt/Meta，再执行普通mention Tab；不要在整个onKeyDown函数统一对所有modifier早退。保留后续Ctrl/Meta+Shift+Enter提示、普通Queue Enter和assistant-ui默认处理。此固定9a815控制流复核沿原03-03/MATURE06-04，不扩大当前Release/I01范围，后继合法owner在独立小段实施真实消费者回归。

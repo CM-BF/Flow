@@ -1,0 +1,71 @@
+{
+  "returnedAt": "2026-10-07T16:23:57.272423+00:00",
+  "completeReturn": true,
+  "state": "FAILED",
+  "actualOuterExit": 1,
+  "chargeMs": 26554,
+  "limitMs": 180000,
+  "unusedMs": 153446,
+  "phase": "CLOSED",
+  "unusedTransferred": false,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 92775,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 92775,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 92779,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 92779,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 93030,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 93030,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "profileAbsent": true,
+  "adminInput": {
+    "identity": {
+      "dev": 16777234,
+      "ino": 124322800
+    },
+    "deleted": true,
+    "absent": true
+  },
+  "fixtureCleanup": {
+    "databaseName": "flow_release_d72dcd7f639842dcb1dbc8856d908bca",
+    "marker": "3df0f297-c8ee-4b57-947b-7f5cd7c31b9c",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "parentFixtureCleanup": "UNKNOWN_OR_FAILED_SEE_RAW_KEEP",
+  "parentFixtureCleanupMeaning": "Original acceptance assertion short-circuits assignment; actual raw cleanup kept separately.",
+  "innerEofDrop0": true,
+  "outerDualEofDrop0": true,
+  "terminalSha256": "f0effadd25dd470ecbedb4e51cb3035d10ade4accedb7b94ee14a17489bb4c79",
+  "outerExitSha256": "91ca517cac657a06e21b565232e97d098ad6a303b2fe1619fe250f27e8de71e9",
+  "rawManifestSha256": "a76d85da8669a5395342d212ee0553aaaca1f337f9aa0393a1e3ab5c447aef35",
+  "reports": null
+}

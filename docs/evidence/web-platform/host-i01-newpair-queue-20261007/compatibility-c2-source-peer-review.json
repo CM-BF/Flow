@@ -1,0 +1,86 @@
+{
+  "reviewer": "workspace_panels_owner / gpt-6-astra",
+  "observedAt": "2026-10-07T16:18:43.617720+00:00",
+  "decision": "APPROVED_SCOPED_SOURCE_DELTA_NOT_RUNTIME",
+  "target": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "parent": "fb25e2877ad0daaedcffcf5b8911d56256056bf4",
+  "findings": [],
+  "blockingP1P2": 0,
+  "scope": "Independent read-only peer review of the 34+/13- browser delta: retryCookieReceipt / completeTask running callback / lateLogout sequencing. No project changes; no Node/import/browser/PG/HTTP, no private env read. Fixed fixture direct context read only; no 74-pin closure rereview.",
+  "inputs": [
+    {
+      "commit": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "blob": "8eccfa4c8c515bd2d81ee34dd5253c2e2f389670",
+      "bytes": 35397,
+      "sha256": "3e9e776b8926d1ab6b96e9df1c97132465430842f737a0f98bdd2707d673b1a6"
+    },
+    {
+      "commit": "fb25e2877ad0daaedcffcf5b8911d56256056bf4",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "blob": "32dfcb4b7c2ba7e327d2ac6572f3a69a3553c29c",
+      "bytes": 33646,
+      "sha256": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08"
+    },
+    {
+      "commit": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "blob": "90899e97695da44707ee2cd65d3181555486c9d3",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d"
+    }
+  ],
+  "diff": {
+    "bytes": 12585,
+    "sha256": "8742dc96ff677a04742a308549bd91cdd7e9eb5cb61d5bf8c76dbbf8b8b7674c",
+    "numstat": "34\t13\tapps/web/test/web-release-compatibility.browser.ts"
+  },
+  "conclusions": [
+    {
+      "topic": "Real UNKNOWN survives reload before explicit retry",
+      "lines": "browser:218–250,170–177",
+      "evidence": "Fault path keeps one actual upstream accepted turn, browser observes failed same response body, captures exact durable unknown receipt id. New callback reloads the mounted page, waits for visible input, asserts original-path POST count stays1; exact receipt row still must contain unknown. Retry original request is clicked explicitly; accepted row required. Helper retains global turns POST count before the click. No synthetic page state/write/mock or catch-and-continue added."
+    },
+    {
+      "topic": "Original wire identity and single accepted turn remain strict",
+      "lines": "browser:246–250,259–265",
+      "evidence": "After retry there must be exactly2 original-path posts. Cookie+CSRF/noBearer, equal original key and byte body, replayed true, same turn id and same task id are asserted before logout and again after final completion. Center turns length1 remains. Moving retry earlier does not fabricate a second completion or erase UNKNOWN evidence."
+    },
+    {
+      "topic": "Callback executes in real running task interval",
+      "lines": "fixture:374–391; browser:238–256",
+      "evidence": "Unchanged fixture public client claims expected task, reports sequence1 session with actual attempt/ownerVersion, awaits callback before assistant-final/artifact/verification/completed reports. lateLogout independently reads running status before and after logout. Callback rejection prevents subsequent success events and propagates to full run failure. Synthetic protocol actor is not native provider execution."
+    },
+    {
+      "topic": "Independent draft survives each boundary",
+      "lines": "browser:220–221,233–236,170–182,250,253–259",
+      "evidence": "B draft is typed after Send detaches A; saved separately before first reload. Exact saved-draft row count1/text is restored explicitly after receipt retry. After logout/reconnect it is explicitly restored again and input equals draft; original-path POST count remains2 after reauth and restore. The new small restoreSavedDraft helper reuses the same assertions; it does not fake an empty draft or mutate IDB."
+    },
+    {
+      "topic": "Late logout cookie and stream assertions retained",
+      "lines": "browser:128–168; fixture:278–298",
+      "evidence": "Old authenticated Cookie SSE must have actual chunks and remain open before logout. Separate page issues real logout; unchanged proxy holds complete successful upstream response BEFORE headers and forwards original headers/body on release. Old browser-session read must become unauthenticated and captured old streams must close before reload/reconnect. Then real delayed response200/unauthenticated must finish with no Set-Cookie; exactly one new cookie retains its value; browser-session read ready and task still running. No JS ignored callback is substituted for cookie-jar proof."
+    },
+    {
+      "topic": "Fail-closed result and cleanup semantics unchanged",
+      "lines": "browser:302–307,335–373",
+      "evidence": "No swallowed assertion or alternate passing path. Browser check sets completed only after all assertions, closes context in finally and saves raw; runApps collects exact expected count4 in recovery composition, closes Chrome/fixture, settles proxy, imports reports only when errors[] and count exact. New bounded CookieStep only improves failedAt; it does not change success gates."
+    }
+  ],
+  "precisionLimits": [
+    "Retry now occurs after UNKNOWN reload but BEFORE lateLogout/reconnect. This proves Cookie/CSRF retry under the current session, NOT retry of an UNKNOWN request under the newly established post-logout session. Code assertion wording was accurately narrowed at262. Keep this distinction in actual report.",
+    "No-autoPOST checks in this delta are for original /turns path plus the helper global-turns count before explicit retry; they do not independently audit every possible mutation endpoint. Existing cookieReload initial flow additionally checks all POSTs. Do not claim wider coverage.",
+    "LateLogout SSE criterion is Cookie stream chunks/open/closure; it does not separately prove model content delivery or every reconnect race.",
+    "This review does not attest actual runtime result, remaining phase resources, installed resolver correctness, full caller lifecycle, deployment, or personal services. Root separately reviews c2 inputs/caller; prior lifecycle boundary remains."
+  ],
+  "cleanCode": {
+    "skills": "Reused already-read local find-skills/clean-code/codebase-design methods; no install or new framework.",
+    "actualApplication": [
+      "Checked helper extraction preserves the same UI assertions and centralizes explicit draft restore without duplicating authority.",
+      "Checked dependency ordering: public running event → awaited recovery retry → logout race → remaining task completion; callbacks preserve failure propagation.",
+      "Checked enum step diagnostics reset on phase advance and remain data-only, no second FSM.",
+      "Checked naming and report claims distinguish current Cookie retry from post-logout authority; no blocking scope regression found."
+    ]
+  },
+  "runtime": "NOT_RUN"
+}

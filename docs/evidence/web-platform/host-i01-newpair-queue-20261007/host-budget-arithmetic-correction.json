@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T16:09:44.186Z",
+  "reason": "Original/root found R1host envelope private32MiB was arithmetically charged as8MiB",
+  "correctCalculation": {
+    "clone1GiB": 1073741824,
+    "private32MiB": 33554432,
+    "PG128MiB": 134217728,
+    "raw2MiB": 2097152,
+    "sum": 1243611136
+  },
+  "previousRecordedBytes": 1218445312,
+  "missingBytes": 25165824,
+  "rule": "Historical consumedgate and failure/raw unchanged;R1KEEPnotrefunded;futureledger corrected explicitly",
+  "before": 16186081280,
+  "R2SeparateNewCandidateBytes": 1243611136,
+  "futureCompleteFloorBytes": 17454858240
+}

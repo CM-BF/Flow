@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-07T16:27:13.012082+00:00",
+  "checks": [
+    {
+      "kind": "pid",
+      "id": 50736,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 50745,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 50745,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 50748,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 50748,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 50750,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/scratch",
+      "state": "ABSENT_ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+      "state": "ABSENT_ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+      "state": "ABSENT_ENOENT"
+    }
+  ],
+  "fixture": {
+    "contextClosed": true,
+    "httpClosed": true,
+    "errors": []
+  },
+  "independentPortProbe": false,
+  "PG": false,
+  "adminEnv": "NOT_USED",
+  "errors": []
+}

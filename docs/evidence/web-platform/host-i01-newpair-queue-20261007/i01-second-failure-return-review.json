@@ -1,0 +1,70 @@
+{
+  "reviewedAt": "2026-10-07T16:28:39.417938+00:00",
+  "reviewer": "/root gpt-6-astra ultra read-only",
+  "decision": "ACCEPTED_FAILED_RESULT_AND_COMPLETE_OWNED_RETURN",
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "executionHead": "d7792f1b03d7e15c799c0d53618064e7b8fdccc4",
+  "run": "i01-files-20261007-162618-5fbf4e",
+  "pins": [
+    {
+      "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json",
+      "bytes": 3508,
+      "sha256": "64795de8b2a9e09ba94a35737437e6c7b12c1c1d71bd5ed5d232ee1c0ac72df1"
+    },
+    {
+      "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/actual-tool-exit.json",
+      "bytes": 703,
+      "sha256": "c5831812cb4ac7ac2500186a8e0fcbe2faaf44ee094012384604b72213dc744a"
+    },
+    {
+      "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/post-cleanup.json",
+      "bytes": 1204,
+      "sha256": "b1aaad1befbb3bdf900a4baa0c1a7f18002b1fb3f51e42444edbd460b3278fbe"
+    },
+    {
+      "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/accounting.json",
+      "bytes": 2786,
+      "sha256": "25c92c841b80eb707f4c8b9fa237d41ea23ca187df6796cef1135ac52148c6b5"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/raw/worker-result.json",
+      "bytes": 4143,
+      "sha256": "64858ff0b31ebb3f7828adbb19b95d1d0eaf1a363f131d65d53d45118d7be842"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/raw/result.json",
+      "bytes": 1929,
+      "sha256": "20543559c86f38b733effa87e7eb39bcebb4c07082625a66f261e0cacfd11cc1"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/outer/actual-exit.json",
+      "bytes": 994,
+      "sha256": "220768674614ba88e6295e21467f07cae5e38cf311f307ad5f51c5677f68ded3"
+    }
+  ],
+  "evidence": [
+    "All16 manifest entries25778B independently match byte count/hash. Tool terminal actualexit1 matches outer capture, parent and worker failure. No truncation or signals; outer/inner EOF and discard0 preserved.",
+    "Known PIDs50736/50745/50748/50750 and PGIDs50745/50748 absent at16:27:13.012082Z; scratch and both exactcache links ENOENT. Fixture context/http closed/errors[], Chrome exit0 and dualEOF. No PG/admin input or independent port probe.",
+    "Worker pageErrors[], checks2of4, screenshots[], three registry writes. Raw failure is Connect to Flow heading missing after Change connection; exact assertion at browser286 timed out5000ms. Not a wholeApp acceptance or theme screenshot pass.",
+    "First actual complete-draft and UNKNOWN collapse/close/exact original key-body explicit retry groups passed. Remaining workspace-loss and theme groups incomplete; do not claim final authority revocation or reconnect validation."
+  ],
+  "staticCandidate": {
+    "source": "ee9bd App.tsx952/890/883 and browser276-287",
+    "finding": "Change connection opens existing leaving confirmation when protected attachment drafts or steering risks exist. First group holds two actual attachments. Third group directly waits for Connection without exercising public Leave view and retain saved records.",
+    "confidence": "Strong static precondition explanation independently found by owner and root, but failed DOM was not retained. Not an independently observed runtime root cause.",
+    "correctNext": "Owner verifies attachment guard membership then updates only test to exercise actual public confirmation, retaining complete draft/revocation/reconnect assertions. Never delete product guard or invoke private disconnect to force pass."
+  },
+  "phase": {
+    "state": "CLOSED",
+    "chargeMs": 13436,
+    "totalMs": 60000,
+    "unusedMs": 46564,
+    "transferCreditMs": 0
+  },
+  "runtimeAuthorized": false,
+  "mainIntegrated": false,
+  "quality": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Distinguished actual failed observation from static cause inference; preserved protective user decision and existing source authority; reviewed exact cleanup and evidence consistency. No repeated tests or project implementation by root."
+  }
+}
