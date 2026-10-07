@@ -17,31 +17,39 @@ const version = {
 };
 const registration = { scope: { workspaceId: 'personal', projectId: null }, version };
 async function request(path: string, body?: unknown, options: { token?: string; key?: string } = {}) {
-  const response = await fetch(`${baseUrl}${path}`, {
+  return databaseFixture.request(`${baseUrl}${path}`, {
     method: body === undefined ? 'GET' : 'POST',
     headers: { authorization: `Bearer ${options.token ?? ownerToken}`, 'content-type': 'application/json', 'idempotency-key': options.key ?? randomUUID() },
-    body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(10_000),
+    body: body === undefined ? undefined : JSON.stringify(body),
   });
-  const raw = await response.text();
-  return { status: response.status, body: JSON.parse(raw), bytes: Buffer.byteLength(raw), raw };
 }
 async function startServer() {
   startupConfirmed = false;
-  server = await createServer({ databaseUrl, ownerToken });
-  if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
-    await migratePlugins(pool!);
-    registerPluginRoutes(server, pool!);
-  }
-  baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
-  startupConfirmed = true;
+  await databaseFixture.start(async () => {
+    server = await createServer({ databaseUrl, ownerToken });
+    if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
+      await migratePlugins(pool!);
+      registerPluginRoutes(server, pool!);
+    }
+    baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+    databaseFixture.listener(baseUrl); startupConfirmed = true;
+  });
+}
+async function closeServer() {
+  await server?.close();
+  if (server?.server.listening) throw new Error('X01 server is still listening');
+  if (baseUrl) databaseFixture.listenerClosed(baseUrl);
+  baseUrl = '';
+  server = undefined;
 }
 beforeAll(async () => {
   await databaseFixture.create();
   await startServer();
 }, 30_000);
 afterAll(async () => {
-  const closed = await Promise.allSettled([server?.close()]);
-  const result = await databaseFixture.finish({ startup: startupConfirmed, server: closed[0]!.status === 'fulfilled' });
+  const settled = await databaseFixture.settleStartup();
+  const closed = settled && await databaseFixture.close('server-close', closeServer);
+  const result = await databaseFixture.finish({ startup: startupConfirmed, server: closed });
   expect(result).toMatchObject({ cleanupConfirmed: true, retainedDatabase: null, errors: [],
     cleanup: { ownersClosed: true, poolClosed: true, adminClosed: true, identityConfirmed: true,
       connections: 0, dropAcknowledged: true, databaseAbsent: true } });
@@ -113,7 +121,7 @@ it('keeps the same registration receipt and immutable operation after the center
   const key = randomUUID(); const accepted = await request('/api/plugins', input, { key });
   expect(accepted.status).toBe(201);
   const id = accepted.body.snapshot.installation.id;
-  await server!.close(); await startServer();
+  await closeServer(); await startServer();
   expect((await request(`/api/plugins/${id}`)).body).toEqual(accepted.body.snapshot);
   const replay = await request('/api/plugins', input, { key });
   expect(replay.body).toEqual({ ...accepted.body, replayed: true });

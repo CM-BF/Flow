@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T03:42:55.732443+00:00 |
+| 最近更新时间 | 2026-10-07T04:22:57.274340+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；C资源源码1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8，局部执行37e4f169b97d70066fea8acbb85cc145167b7759；未main |
-| 工作树 dirty 状态 | 本段只有两test资源hooks与own helper/config/metadata；固定源码后补交审记录，最终提交后clean |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；本段资源入口正在固定源码；产品ade4未变，未main |
+| 工作树 dirty 状态 | 本段仅两test资源hooks、own fixture/caller/输入/必要局部证据和status；交审后停止写入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | Stage A strict0+17/17与Stage B九入口noEmit0已独审；C types0/collect命令0共27原case，owner旧21计数断言FAIL保留，0PG/body |
-| Review | PENDING Stage C fixture/局部记录独审；Stage B d17与Stage A 2dd587结果已APPROVED |
+| 检查状态 | A17真实包/B九入口已独审；C原types0/collect27与旧21计数FAIL保持；本段受影响types0+5资源反例通过，实际27 PG/HTTP仍NOT_RUN |
+| Review | PENDING 新Stage C共同期限/计量/执行输入独审；A/B已批准范围不变 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件模块与直接消费者检查已通过；数据库验收新增创建身份和安全收尾准备，尚未执行 |
-| 下一可用交付 | 独审当前数据库fixture与局部结果；按实际27原用例补共同期限/HTTP预算，再申请真实PG/HTTP验收 |
-| 当前阻塞 | ACTIVE: Stage C实际PG仍未开放，共同期限/HTTP计量准备未齐；生产claim/runtime接线仍待协调 |
+| 当前产出 | 插件模块与直接消费者检查已通过；正在补齐27项数据库验收的共同期限和资源收尾 |
+| 下一可用交付 | 独审27项数据库验收准备，资源准入后运行真实PG/HTTP；后继生产工具调用链仍未接 |
+| 当前阻塞 | ACTIVE: Stage C实际PG尚NOT_OPEN，等待固定准备独审与具体重窗口；生产claim/runtime后继另协调 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -180,3 +180,7 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T03:38:32.727114+00:00：Stage B固定d17abf于03:34:23 UTC经chatui01_owner独立RESULT_AND_DEPENDENCY_FIDELITY_REVIEW_APPROVED/0P1P2；4绑定与14精确links/package均符，唯一九入口types0，未扩大为PG或功能通过。原结果/raw不改。fresh03:31:46.826核v8 ACTIVE/17scope后，Stage C仅共用两现有test的资源fixture：持久CREATE前请求、ACK/OID/owner/marker、全部owners/pool结束及0连接后普通DROP；异常保留。原10+11行为用例主体与ade4逐字一致，产品实现/034未改；[固定输入](../../docs/evidence/x01/enable-binding-stage-c-source.json)。本段0types/collect/PG/HTTP/provider执行；C02当前local，未占等待槽。原A/B通过不覆盖本次新fixture。
 
 2026-10-07T03:42:55.732443+00:00：C02实际local归还后，Mika给定Web完整heavy276824064B+本段9568256B+1GiB合计floor1360134144B；fresh03:40:30.849核v8后执行一次types→collect，两个child均exit0/EOF/finalabsent，两ownTMP同inode清理absent。原收集计划漏计registry参数化：实际27=10+17；owner计数断言21导致最终exit1，首[完整记录](../../docs/evidence/x01/enable-binding-stage-c-local.json)保留FAIL，另[只读纠正](../../docs/evidence/x01/enable-binding-stage-c-analysis.json)记录真实名单/原断言不变。0PG或test body；没有为计数错误复跑。原件内部4.010s/raw6396B，外部wholewall未知。实际local已直接交REQ15 owner，当前无待launch/资源残留；下一PG需按27原case和共同期限/HTTP上界重新定界，不把此前21计划自动扩大。
+
+2026-10-07 04:12:19.700 UTC：fresh cc19 clean、claim v8 ACTIVE/17一致，恢复Stage C准备实现。C02于04:11:49.742实际closed后交本队local；当前仅源码，PG未开放。27原case/首21计数FAIL保持，不重跑A17/B九types/旧C collect；拟共同工作期限、HTTP分区总账和现OPS14薄caller，后继必要local仅2child各30s、段5min/TMP8MiB/raw256KiB/meta1MiB，组合floor保守4053008384B，待实际启动前fresh。
+
+2026-10-07T04:22:57.274340+00:00：fresh v8/17 scope核对，C02实际closed后完成本段两必要child：types0+5资源资格反例，2.392676s/844B，0PG/HTTP/provider，两group/EOF与ownTMP全部收束并直接告Web归还。新Stage C薄caller消费固定OPS14，27原断言逐字证明、共同work/cleanup期限与HTTP416上限；[窗口准备](../../docs/evidence/x01/enable-binding-stage-c-window.md)及[局部原记录](../../docs/evidence/x01/enable-binding-pg-preparation-local.json)。实际27/两DB未运行，旧21计数FAIL原件保持。SVC06已由原owner04:13:44闭合，不访问其资源；此事实不自动开放PG。架构影响仅测试资源所有权/验证入口，产品接口ade4与shared模块不变。

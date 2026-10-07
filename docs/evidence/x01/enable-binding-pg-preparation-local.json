@@ -1,0 +1,132 @@
+{
+  "startedAt": "2026-10-07T04:20:49.147387+00:00",
+  "floor": 4053008384,
+  "availableBytes": 25664909312,
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "commands": [
+    {
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-prep-9z0r2_la",
+        "dev": 16777234,
+        "ino": 123441484,
+        "removed": true,
+        "sampleBytes": 0,
+        "sampleEntries": 1
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--project",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-consumer-tsconfig.json"
+      ],
+      "report": {
+        "pid": 30488,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2322,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "stdout": "",
+        "stderr": ""
+      }
+    },
+    {
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-prep-tih_umrn",
+        "dev": 16777234,
+        "ino": 123441487,
+        "removed": true,
+        "sampleBytes": 0,
+        "sampleEntries": 1
+      },
+      "argv": [
+        "/opt/homebrew/opt/python@3.13/bin/python3.13",
+        "-B",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-pg-caller.test.py"
+      ],
+      "report": {
+        "pid": 32602,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 67,
+        "observed_bytes": 844,
+        "retained_bytes": 844,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "stdout": "test_bounded_read_rejects_symlink_and_oversize (__main__.ResourceQualification.test_bounded_read_rejects_symlink_and_oversize) ... ok\ntest_changed_cleanup_identity_preserves_replacement (__main__.ResourceQualification.test_changed_cleanup_identity_preserves_replacement) ... ok\ntest_complete_matching_receipts_are_required (__main__.ResourceQualification.test_complete_matching_receipts_are_required) ... ok\ntest_inventory_rejects_unknown_kind_identity_budget_and_deadline (__main__.ResourceQualification.test_inventory_rejects_unknown_kind_identity_budget_and_deadline) ... ok\ntest_unknown_owner_marker_connection_or_listener_never_confirms (__main__.ResourceQualification.test_unknown_owner_marker_connection_or_listener_never_confirms) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nOK\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "bytes": 14525,
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "bytes": 19458,
+      "sha256": "465a18b38718dc5bca3e43d31525c042b75f38a2274a0818e598427ab5c6424d"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-caller.test.py",
+      "bytes": 4786,
+      "sha256": "dbcb19e62bc834a7f47fed03f82dd175fc19a13479104985d9b07a40799c45a8"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-input.json",
+      "bytes": 766,
+      "sha256": "7288f02fb0007c9bb6428d1ab7e3d93876bf8169e58db0d61482eb42e0c4514f"
+    }
+  ],
+  "complete": true,
+  "elapsedSeconds": 2.392675624927506,
+  "endedBeforePersistenceAt": "2026-10-07T04:20:51.540101+00:00",
+  "rawObservedBytes": 844
+}

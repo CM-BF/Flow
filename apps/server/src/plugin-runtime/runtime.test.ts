@@ -22,31 +22,41 @@ const trustedHostPolicy: TrustedPluginHostPolicy = identity => {
   return identity.protocol === PLUGIN_RUNTIME_PROTOCOL && trustedHosts.has(hostKey(identity.runnerId, identity.storeId, identity.hostApiMajor));
 };
 async function request(path: string, body?: unknown, key = randomUUID(), token = owner) {
-  const response = await fetch(base + path, { method: body === undefined ? 'GET' : 'POST', headers: {
+  return databaseFixture.request(base + path, { method: body === undefined ? 'GET' : 'POST', headers: {
     authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': key },
-    body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(8000) });
-  const raw = await response.text(); return { status: response.status, body: JSON.parse(raw), raw, headers: response.headers };
+    body: body === undefined ? undefined : JSON.stringify(body) });
 }
 async function openApp() {
   startupConfirmed = false;
-  app = await createServer({ databaseUrl, ownerToken: owner, automaticQueueScan: false });
-  await migratePluginRuntime(pool);
-  // A real PgBoss client without another worker; createServer retains its existing task worker.
-  boss = new PgBoss({ connectionString: databaseUrl, max: 1, connectionTimeoutMillis: 1500 });
-  boss.on('error', () => { facts.push({ kind: 'send-client-error' }); });
-  await boss.start();
-  registerPluginRuntimeRoutes(app, pool, boss, trustedHostPolicy);
-  base = await app.listen({ host: '127.0.0.1', port: 0 });
-  startupConfirmed = true;
+  await databaseFixture.start(async () => {
+    app = await createServer({ databaseUrl, ownerToken: owner, automaticQueueScan: false });
+    await migratePluginRuntime(pool);
+    // A real PgBoss client without another worker; createServer retains its existing task worker.
+    boss = new PgBoss({ connectionString: databaseUrl, max: 1, connectionTimeoutMillis: 1500 });
+    boss.on('error', () => { facts.push({ kind: 'send-client-error' }); });
+    await boss.start();
+    registerPluginRuntimeRoutes(app, pool, boss, trustedHostPolicy);
+    base = await app.listen({ host: '127.0.0.1', port: 0 });
+    databaseFixture.listener(base); startupConfirmed = true;
+  });
+}
+async function closeApp() {
+  await app?.close();
+  if (app?.server.listening) throw new Error('X01 server is still listening');
+  if (base) databaseFixture.listenerClosed(base);
+  base = '';
+  app = undefined;
 }
 beforeAll(async () => {
   await databaseFixture.create();
   await openApp();
 }, 30_000);
 afterAll(async () => {
-  const closed = await Promise.allSettled([app?.close(), boss?.stop({ graceful: true, timeout: 5000 })]);
+  const settled = await databaseFixture.settleStartup();
+  const closed = settled ? await Promise.all([databaseFixture.close('server-close', closeApp),
+    databaseFixture.close('boss-close', () => boss?.stop({ graceful: true, timeout: 5000 }) ?? Promise.resolve())]) : [false, false];
   const result = await databaseFixture.finish({ startup: startupConfirmed,
-    server: closed[0]!.status === 'fulfilled', boss: closed[1]!.status === 'fulfilled' }, facts);
+    server: closed[0] === true, boss: closed[1] === true }, facts);
   expect(result).toMatchObject({ cleanupConfirmed: true, retainedDatabase: null, errors: [],
     cleanup: { ownersClosed: true, poolClosed: true, adminClosed: true, identityConfirmed: true,
       connections: 0, dropAcknowledged: true, databaseAbsent: true } });
@@ -156,7 +166,7 @@ test('configuration changes invalidate new bindings while an accepted binding an
   expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ currentRevision: 5, enabledRevision: 4, bindingAllowed: false, reason: 'revision-changed' });
   expect((await request(path, { ...input, expectedRevision: 5 })).status).toBe(409);
   expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, { expectedRevision: 5, reason: 'Stop new binding', change: { kind: 'disable' } })).status).toBe(200);
-  await app!.close(); await boss!.stop({ graceful: true, timeout: 5000 }); await openApp();
+  await closeApp(); await boss!.stop({ graceful: true, timeout: 5000 }); await openApp();
   expect((await request(path, input, key)).body).toEqual({ ...accepted.body, replayed: true });
   const read = await request(`/api/tasks/${binding.taskId}/plugin-binding`);
   expect(read.body).toEqual(binding); expect(read.headers.get('cache-control')).toBe('no-store'); expect(read.body.configuration).toEqual({ prefix: 'v1:' });
@@ -210,7 +220,7 @@ test.each(['registration-first', 'command-first', 'command-replay'] as const)('l
   const blocker = await pool.connect(); let pending: ReturnType<typeof request> | undefined;
   const waitUntil = async (read: () => Promise<boolean>) => {
     const deadline = Date.now() + 3000;
-    while (Date.now() < deadline) { if (await read()) return; await sleep(15); }
+    while (Date.now() < deadline) { databaseFixture.checkWork(); if (await read()) return; await sleep(15); }
     throw new Error('Owned lock-wait condition was not observed');
   };
   try {

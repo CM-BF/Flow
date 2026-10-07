@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-07T04:22:16.251693+00:00",
+  "method": "Exact original business assertion suffix equality after only listed resource transformations",
+  "files": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "assertionRegionNormalizedSha256": "d5254ffd17b164dc1506d059dce7f65f2ccc94be2048884e601bfb5ff514717a",
+      "oldCommit": "cc19f57ced0c230c53d1ae43b9889b50dad79764",
+      "equal": true,
+      "allowedResourceReplacements": [
+        [
+          "await closeApp();",
+          "await app!.close();"
+        ],
+        [
+          "databaseFixture.checkWork(); ",
+          ""
+        ]
+      ]
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "assertionRegionNormalizedSha256": "9c3cbe01dbf11b0ceca59aeb4864a7e4efa6c6dc151a9e65f8a40c36f7501c9f",
+      "oldCommit": "cc19f57ced0c230c53d1ae43b9889b50dad79764",
+      "equal": true,
+      "allowedResourceReplacements": [
+        [
+          "await closeServer();",
+          "await server!.close();"
+        ]
+      ]
+    }
+  ]
+}

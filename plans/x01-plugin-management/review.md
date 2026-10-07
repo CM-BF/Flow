@@ -1,3 +1,5 @@
+状态：PENDING（本次Stage C准备；真实27 PG/HTTP NOT_RUN）
+
 # X01 Stage B 直接消费者类型与依赖视图
 
 状态：PENDING（Stage C资源fixture源码已固定，必要局部检查尚未运行；A/B结果已分别独审）
