@@ -1,0 +1,33 @@
+{
+  "kind": "flow.connection.late-logout-result.v1",
+  "at": "2026-10-07T11:39:12.712964+00:00",
+  "source": "66caee46341c91db71a3590bfcd288396b30567a",
+  "selected": 4,
+  "passed": 4,
+  "unselected": 19,
+  "newDistinct": 1,
+  "oldDirectOverlap": 3,
+  "old22AllRerun": false,
+  "focusedTypes": {
+    "first": 0,
+    "afterBoundedObservationSeam": 0
+  },
+  "elapsedMsTotal": 7304,
+  "rawBytes": 597,
+  "allOwnedGroupsAbsent": true,
+  "allEOF": true,
+  "allScratchRemoved": true,
+  "database": {
+    "name": "flow_connection01_aa19b41525884545ba97e47c4f66bf7c",
+    "oid": 1302307,
+    "marker": "f1451484-27d6-4c97-b96a-f3ee374f5d9c",
+    "connectionsBeforeDrop": "observeConnections empty rows[]",
+    "normalDrop": true,
+    "removed": true
+  },
+  "providerCalls": 0,
+  "browserCalls": 0,
+  "personalServiceOperations": 0,
+  "scope": "Real isolated Fastify/HTTP/PG and existing authorizer/SSE composition; old1..28 fixture source; not current whole server35 or browser matrix/individual deployment",
+  "preservedHistory": "Old22 round failures unchanged; pre-reap unknown observations not rewritten; no authentication or query"
+}

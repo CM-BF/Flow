@@ -529,3 +529,14 @@ GO实核DPERF完成时间展示缺口：作者别名字段未被现有精确三�
 
 
 原MATURE02 TODO11真实App设置接线继续采用[Mika唯一consumer合同](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)的完整draft snapshot→材料await前freeze→Send/Queue原key→Recovery/CAS链。root已读c130仅有Picker/capture定义而无App消费；组件6组通过不能冒真实App可用。Recovery原owner完成main metadata与精确App/session交权后，再为原可用owner准备独立WT、合法exactclaim和唯一来源登记；Release优先，不等待lateLogout中心窄修，不新建第二FSM/store或重复设计。当前仅后继顺序，未授新writer。
+
+
+原U20可读runner候选后继的共享输入已推进：Mika提供[唯一组合接收索引](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-combined-intake-index.json)固定a4ebb279dd8613497cf9757ac187c3df923d5b37，sourcea298/clientbc54/ACKae148与HOST实际d05b获独审；未声称已main。未来沿单FlowClient query消费，候选不证明online/loaded/callable，同revision GET可反映policy变化且不消除UNKNOWN写。W01当前Release优先，不因该输入重复设计/运行或猜未集成字段。
+
+### 2026-10-07 本次自然安全点：既有后继输入与范围消歧
+
+Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-return-20261007/release-c2-first-actual-review.json)限定Node前sandbox语法，410ms失败与全清理保留；后继只改localhost规则并新10s局部语法验证，不复用未用179590。Recovery原06共享合同已由[固定主线consumer对齐](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)满足，由原owner两metadata收口，不新增browser门槛。
+
+原MATURE02/TODO11沿既有真实host设计推进WPF-MESSAGESETTINGS03候选，panels唯一owner；原15代码路径补ConversationQueue.tsx，使历史turn与队列展示自己的冻结requested，共16代码/test+2metadata。独立web-message-settings-app树/branch需fixed供给及fresh原子take后才写；不新增selector/store/TaskThread范围。安装官方composer的同步detach先于onNew边界按[固定研究](../../docs/evidence/web-platform/x01-version-return-20261007/message-settings-official-composer-ordering.json)落实，A等待材料时同正文异settings的B不得被清掉。
+
+插件HOST与严格ACK公共合同已[de547主线接收](../../docs/evidence/web-platform/x01-version-return-20261007/x01-candidates-main-intake.json)，不再等main；UI采纳留原owner后续自然段，候选不是online/loaded/callable，同revision GET仍可变化、GET不清UNKNOWN。

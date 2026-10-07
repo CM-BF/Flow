@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07T11:47:35.547628+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "FAILED_RUNTIME_EVIDENCE_AND_COMPLETE_OWNED_RETURN_ACCEPTED",
+  "sourceHead": "1e5f4b36f118456d39dcbe2c9eabd4ffb65394d9",
+  "deliveryHead": "7fa4bc014f3ad9d65b517e1868d40c73ef2c7543",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c2-first/index.json",
+      "bytes": 5440,
+      "sha256": "5b47e223afc1caea404a027a882ef7657680de7e2fb2b238ad8b7102c417d085"
+    },
+    {
+      "path": "/private/tmp/rel01-c2-actual-jxh2t3d9/cleanup-accounting.json",
+      "bytes": 1557,
+      "sha256": "08d5f4384a4c6d8e3061effaafd8800da5a71892cd0b49002c02caa6887b39b5"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/terminal.json",
+      "bytes": 408,
+      "sha256": "aae32158be07db40f7aa59c5cb5760059323f4d23fa545030f483f5bde927e82"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/supervisor.py",
+      "bytes": 18546,
+      "sha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/sandbox.sb",
+      "bytes": 421,
+      "sha256": "934446a15251a42ae293b3a73051fa4dc684add7a7d7628e632913937022ec30"
+    }
+  ],
+  "verified": {
+    "archive": "21 actual originals78638B all match archive bytes/hash; generated sandbox.sb explicitly executable source, not metadata.",
+    "terminal": "Unique real outer terminal matches disk and3 hashes; actual outer exit1, worker sandbox-exec65,145B stderr/0stdout, complete EOF/drop0.",
+    "cause": "Actual sandbox parser rejects remote ip literal127.0.0.1:61228 at sandbox.sb:9:25 before exec of Node. No fixture or Chrome handshake/report exists; product threeApps never entered.",
+    "pg": "Result pg1 is configured allowance, not observed launch. No Node means no fixture DB creation; raw fixtureCleanup UNKNOWN_OR_FAILED remains unmodified, not synthetic successful DB cleanup.",
+    "cleanup": {
+      "/private/tmp/rel01-c2/scratch": "ENOENT",
+      "/private/tmp/rel01-c2-actual-jxh2t3d9/admin-input": "ENOENT",
+      "pid:31447": "ESRCH",
+      "pgid:31447": "ESRCH",
+      "pid:31807": "ESRCH",
+      "pgid:31807": "ESRCH"
+    },
+    "time": {
+      "outerMs": 409.2979431,
+      "afterFinalWritesMs": 160.98537493962795,
+      "chargeMs": 410,
+      "phaseLimitMs": 180000,
+      "unusedMs": 179590,
+      "state": "FAILED_CLOSED_NO_AUTOMATIC_RETRY"
+    }
+  },
+  "finding": {
+    "id": "REL-C2-SANDBOX-SYNTAX",
+    "priority": 2,
+    "file": "/private/tmp/rel01-c2/supervisor.py",
+    "line": 130,
+    "problem": "Generated network deny filter is invalid on this installed macOS; actual run cannot start Node.",
+    "narrowCorrection": "Use supported localhost:61228 in the same remote deny clause; preserve deny network*, loopback-only allowances, file-write restrictions and fixed native Chrome boundary. Do not delete the deny or broaden egress.",
+    "primaryLocalEvidence": [
+      {
+        "file": "/System/Library/Sandbox/Profiles/container.sb",
+        "line": 845,
+        "clause": "(deny network-outbound (remote ip \"localhost:631\"))"
+      },
+      {
+        "file": "/System/Library/Sandbox/Profiles/application.sb",
+        "line": 763,
+        "clause": "(deny network-outbound (remote ip \"localhost:631\"))"
+      }
+    ],
+    "primaryOnlineSource": "https://raw.githubusercontent.com/openai/codex/main/codex-rs/sandboxing/src/seatbelt.rs",
+    "onlineObservation": "Per-port remote rules use localhost:{port}; implementation evidence, not a promise about every installed macOS.",
+    "validation": "New candidate must preserve failed c2. A tiny bounded sandbox-exec compilation using the exact generated profile and /usr/bin/true can validate this parser correction with0PG/Chrome/network. It is not a runtime compatibility result or proof of complete network enforcement. No request to personal61228. Manager owns any subsequent one-shot actual admission."
+  },
+  "unchangedAcceptance": "c2 scratch identity fixes and conservative12 connection configuration remain accepted; original product9658/worker5800/inputs477c untouched. No old test rerun required for this syntax delta.",
+  "quality": "Clean-code checkpoint: concrete parser failure, one rule correction, fixed failure preservation; no new generic supervisor, state machine or broad exception. Root performed read-only inspection only."
+}

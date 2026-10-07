@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-07T11:45:00.668096+00:00",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "order": [
+    "ACK",
+    "HOST",
+    "CONSUMER"
+  ],
+  "reviewedSourceRows": [
+    {
+      "slice": "ACK",
+      "path": "packages/client/src/index.ts",
+      "source": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sha256": "0a2ae1315646ef0b5a8de79cc22b35398258e396fb8981182ac659812b9e27f0",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "ACK",
+      "path": "packages/client/src/plugin-management.ts",
+      "source": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sha256": "f2c8635347fcf76c09074ff5ecd5c7eb35c2d8a7e3b611092d790b488f492a11",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "ACK",
+      "path": "packages/client/src/plugin-command-ack.test.ts",
+      "source": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sha256": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "ACK",
+      "path": "apps/cli/src/plugin-command-ack.test.ts",
+      "source": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sha256": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "ACK",
+      "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "source": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sha256": "d95a44bf46be153c3fe509ed3de57c2578c17a6e1fdbf5527cd8fc1d0daad8c3",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "01e653c45aab17c60e5894b8674b170aacf431895afb7a0ff1e39aa1e9dffd6f",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/host-candidates.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "7f67d72a7dc5fbb7475a6bd1e328b6e6c963c7031a376a9abb7efa3d94f3e774",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/host-candidates.test.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "f2c5502710d0766f034ea8b2f6e8c3cc2e5df36b6f8774235760ce56adc826b4",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "80b9179f142deb26ee2017b266620e6e9db62dbf92e056df8334c923129c2bae",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "HOST",
+      "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "source": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "packages/client/src/index.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "packages/client/src/plugin-management.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "apps/cli/src/index.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "packages/client/src/plugin-host-candidates.test.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "b7526ef8d8ceba99ebad4eea7599dcfe11bbc7423d0c878b76134c11a65ad0d7",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "apps/cli/src/plugin-host-candidates.test.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0",
+      "preimage": "MATCH"
+    },
+    {
+      "slice": "CONSUMER",
+      "path": "docs/evidence/x01-host-candidates-client/fixtures.ts",
+      "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sha256": "2760fb6d1b9a0710047b447dc10af15ecb8dd1b66d1c6de8689f8db2ce2b09e6",
+      "preimage": "MATCH"
+    }
+  ],
+  "rows": 18,
+  "uniqueProductPaths": 16,
+  "receivedPaths": 119,
+  "receivedBytes": 557722,
+  "excluded": "No whole HOST branch/ownX01 tree overlay; later untracked removal records and all unrelated main/source remain untouched. Fixed input references kept; no copying private credentials or user logs.",
+  "necessaryCombination": "3 selected mock-fetch public client/CLI cases plus current root noEmit; no PG/provider/full matrix.",
+  "independentIntakeReview": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_CONTROLLED_INTAKE",
+    "target": "a5e1734276ef891df2ca47523b5109f0d87f84b9",
+    "findings": [],
+    "rows": 18,
+    "uniqueProductPaths": 16,
+    "receivedPaths": 119,
+    "receivedBytes": 557722,
+    "scope": "Canonical review coverage, sequential preimages, final hashes and necessary support; no new execution or domain re-review."
+  },
+  "combination": {
+    "path": "x01-candidates-combination/result.json",
+    "rootNoEmitExit": 0,
+    "selected": 3,
+    "passed": 3,
+    "unselected": 33,
+    "milliseconds": 11366,
+    "rawBytes": 506,
+    "twoGroups": "absent/dualEOF/no firstFailure",
+    "scratch": "exact pre-recorded dev/ino empty removed",
+    "PG": 0,
+    "provider": 0
+  },
+  "updatedAt": "2026-10-07T11:48:02.617996+00:00"
+}

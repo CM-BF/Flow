@@ -1,18 +1,22 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T11:34:26.420Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T11:49:53.257Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
-**Recovery 主线已接收：** [Original 固定主线回执](release-caller-recovery-main-20261007/recovery-main-intake.json)绑定 `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`、target2f8/base84005的16生产+3test精确delta，原03/05已接收。原owner已bc25收口，6ff v5仅两metadata，19源码已原子移出；06保lateLogout中心响应顺序后继，个人部署/三App兼容另计。组合types6024ms通过，3项1,357,748B scratch KEEP/allocated UNKNOWN保留。
+**Recovery 主线合同已对齐：** [原19源主线接收](release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner仅6ff v5两metadata自然收口，19源码已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
 
 ## 当前窗口与用户交付
 
-[本次当前入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；当前X01 VERSION LIFECYCLE唯一NEXT owner fresh，尚非RUN。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01顺序c2源与最小纯local准备，未获三App运行。插件direct调用器TMP草稿STOP，旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
+[本次当前入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；随后X01 VERSION LIFECYCLE已实际11:34:20.882389启动、11:34:41.853508 exact归还；[实际原件](x01-version-return-20261007/current.json)区分delivery与收尾复核，现无新NEXT。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01 c2修复及3场景局部实际已获[集中接受](x01-version-return-20261007/release-c2-delta-review.json)，native固定边界已接受；最终1e5f/c2绑定后已执行一次，[实际失败/清理](x01-version-return-20261007/release-c2-failed-cleanup-accounting.json)在Node前被sandbox语法拒绝，0Chrome/fixture未入、410ms封账并11:44:37.704120归还，不自动重跑。插件direct调用器TMP草稿STOP，旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
-**Release输入已供给：** [固定公开配置](recovery-two-center-actual-20261007/release-public-settings-supply.json)、final7d1/source6c与三App均已绑定；当前阻点是[c1生命周期/连接预算审查](release-caller-recovery-main-20261007/release-c1-caller-root-review.json)的两项修复，不再等待同字段。c1原件保留，c2仅原owner同scope；兼容实际仍NOT_RUN，无重预约。
+**Release实际失败已归还：** [c2独立实际审查](x01-version-return-20261007/release-c2-first-actual-review.json)确认Node前sandbox语法拒绝，410ms/旧180s封账、0DB/Chrome。W01已完成同限制localhost规则修正及[47ms语法检查](x01-version-return-20261007/release-c3-local-segment.json)，等一次固定delta审，没有下一重窗口；原产物/settings已经供给。
 
-**新来源待中央登记：** [WPF-PLUGIN-RUNTIME01精确登记请求](recovery-second-center-preparation-20261007/plugin-registration-request.json)仍待Original登记进度source；[root现有IAB观察](release-caller-recovery-main-20261007/dashboard-claim-ui-observation.json)已确认reload后存在“已领取，进度来源待登记”卡片和0a9v1/7scope/原owner详情。领取已可见与业务进度未登记须分开，不声称没有任何看板入口。
+**真实聊天设置下一片：** [原TODO11范围提案](x01-version-return-20261007/message-settings-app-scope-report.md)复用现设计；派工前补原需求中Queue冻结requested展示的ConversationQueue.tsx，共18literal。WPF-MESSAGESETTINGS03 / panels / web-message-settings-app候选尚未供给或领取，不能按旧Recovery写权开工。
+
+**插件共享候选与ACK已main：** [de547正式接收](x01-version-return-20261007/x01-candidates-main-intake.json)解除共享合同等待，不代表模块UI或真实App已采用；W01 Release优先。
+
+**插件来源已登记：** [root11:39:58 API观察](x01-version-return-20261007/dashboard-registry-update.json)确认WPF-PLUGIN-RUNTIME01唯一live/sourceCurrent、0a9v1 matchesSource；此前11:25:50 claim-only入口与登记pending为历史。剩余父层级关联UNKNOWN由原owner下个自然metadata批修，不扩parser或重复登记。
 
 快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已b90f封存并在09:45:37.210Z完成[839e v2精确释放](svc06-return-steer-handoff-20261007/quick-release-receipt.json)，六scope停写；通用proof七个既存wrapper UNKNOWN保持，四源main接收为独立事实；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
 

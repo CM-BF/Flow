@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T11:45:46.465742+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_SHARED_LOGOUT_CONTRACT_FOR_EXISTING_RECOVERY_CONSUMER",
+  "main": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "centerSource": "66caee46341c91db71a3590bfcd288396b30567a",
+  "webSource": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "centerReceipt": {
+    "path": "docs/evidence/i02/late-logout-review-intake.json",
+    "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "bytes": 1991,
+    "sha256": "47e56bab52022eb19ee933e750735dc1e57bc91ad9468c8a97841d89dce3ad7d"
+  },
+  "exactMainSources": [
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 3452,
+      "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8"
+    }
+  ],
+  "consumerPins": [
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "git": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    }
+  ],
+  "checked": [
+    "All3 center source files in fixedmain7272151 equal independently reviewed66caee46 bytes.",
+    "Only production behavior delta is omitting logout Set-Cookie after exact awaited revoke; request Origin/CSRF checks, no-store and unauthenticated DTO remain.",
+    "HTTP test hook holds logout response after revocation, permits new Connect, releases old response and asserts no Set-Cookie, new read/write authorization, old session/SSE invalidation and running task retention.",
+    "Assignment review accepts4selected real HTTP/PG plus focused types; no browser used. Root did not rerun those tests.",
+    "Current FlowClient consumes typed unauthenticated JSON, never requires Set-Cookie. Existing Web logout synchronously revokes local authority and applies completion only for current generation. Whole Web session equals2f8 and public session DTO equals centerbase; current client was read/pinned without claiming unrelated historical whole-file equality."
+  ],
+  "recoveryTodo06": {
+    "sharedContract": "Original lateLogout response-order successor independently reviewed and main-integrated; no Web consumer source delta is needed.",
+    "webIntake": "19 Recovery source files already accepted mainc130 with composed03/05 evidence, unchanged by this center fix.",
+    "closureAssessment": "Original06 main/shared-contract handoff is satisfied by exact source/main intake and compatible existing consumer. No new browser/provider gate is imposed solely for header omission. Owner may record bounded06 completion with explicit limits.",
+    "notClaims": [
+      "No new real browser cookie-jar ordering run",
+      "No guarantee of concurrent Connect response ordering or general account rotation",
+      "No personal installation/deployment",
+      "Fixed7d1/source6c release artifact still lacks this fix; do not rebind"
+    ]
+  },
+  "findings": [],
+  "quality": {
+    "method": "Existing clean-code: single revoke authority, stable public DTO/client, no Web cookie workaround or new FSM.",
+    "newRuntime": 0,
+    "newProjectWrites": 0,
+    "unresolvedConsumerSourceBlockers": 0
+  }
+}

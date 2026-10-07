@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T11:49:53.257Z",
+  "owner": "w01_owner",
+  "task": "WPF-RELEASE01",
+  "claim": "38b9a7ff-c9be-4b56-af50-e076afb603bc v1 exact4",
+  "state": "ACTUAL_PASS_SYNTAX_ONLY_CLOSED",
+  "change": "Generated sandbox remote deny literal127.0.0.1:61228 -> localhost:61228; all other restrictions/worker/product unchanged",
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "EXACT_GENERATED_PROFILE",
+    "/usr/bin/true"
+  ],
+  "totalMs": 10000,
+  "workMs": 5000,
+  "cleanupMs": 5000,
+  "scratchBytes": 8388608,
+  "rawBytes": 1048576,
+  "pg": 0,
+  "chrome": 0,
+  "node": 0,
+  "network": 0,
+  "minimumFreshBytes": 6190268416,
+  "oldPhase": "180000 limit/410 charged/179590unused CLOSED_NO_TRANSFER",
+  "acceptance": "Syntax compilation only; not network enforcement or threeApp compatibility; root once delta/local review before new actual admission",
+  "actualReceipt": "release-c3-syntax-receipt.json",
+  "chargedMs": 47,
+  "unusedMs": 9953
+}

@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**Recovery 主线已接收：** [Original 固定主线回执](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)绑定 `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`、target2f8/base84005的16生产+3test精确delta，原03/05已接收。原owner已bc25收口，6ff v5仅两metadata，19源码已原子移出；06保lateLogout中心响应顺序后继，个人部署/三App兼容另计。组合types6024ms通过，3项1,357,748B scratch KEEP/allocated UNKNOWN保留。
+**Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner仅6ff v5两metadata自然收口，19源码已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:36:55.539Z；Recovery19源main已核，Original bootstrap已实际归还；Release c1需c2修复，X01 lifecycle唯一NEXT fresh未RUN |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:49:53.257Z；Release c2失败/完整归还获独审，c3语法local47ms通过待一次差量审；Recovery原06合同满足待原owner记录收口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,10 +23,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 看板摘要/详情与快速设置组件已入主线；Recovery固定Web实现和原03/05矩阵已组合独审接受。插件类型修后通过、direct原JSON15/15，但父FAIL和82毫秒超额真实保留；App后继与主线/部署另计。 |
-| 下一可用交付 | Recovery已bc25收main metadata，6ff v5移出19源码；Release c2修清理身份/12连接并集中delta审，无重预约；插件direct调用器草稿安全STOP，原父失败保留。 |
+| 下一可用交付 | Release c3同限制语法修正与47ms极小local通过，待固定差量审，未发下一兼容窗；panels先Recovery两metadata完成，再原TODO11独立18literal供给/take，尚无新写权。插件HOST/ACK已main，UI采用待原owner安全点。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Original bootstrap11:27:03.659Z实际归还；X01 VERSION LIFECYCLE已交Mika唯一NEXT fresh，尚非RUN。Web0重；新旧KEEP与未知allocated不置零。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Release c2已11:44:37.704120Z exact归还，0Chrome/fixture未入、父UNKNOWN清理字段原样保留；当前无NEXT，不自动重试。旧KEEP/未知allocated不置零。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

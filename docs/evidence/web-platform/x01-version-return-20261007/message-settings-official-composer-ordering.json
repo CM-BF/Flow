@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T11:43:34.408150+00:00",
+  "kind": "READ_ONLY_EXISTING_TODO11_IMPLEMENTATION_NOTE",
+  "parent": "WPF-MATURE-01 U19 / WPF-MATURE-02 TODO11; existing message-settings-real-host-design.md",
+  "noNewTask": true,
+  "mainObserved": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "skillUse": "Existing local find-skills / assistant-ui / codebase-design / clean-code methodology; inspected installed primary source, no dependency installation or runtime imports.",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+      "bytes": 2995,
+      "sha256": "eca9c8f55657de768140bac406c84ac18a94111eeb9f99c8d9f30be17dc07a28"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/default-thread-composer-runtime-core.ts",
+      "bytes": 5064,
+      "sha256": "b066eab15936e5886cc53382f0020993e78e6c92d147544a8055aa9b7465e4a7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtimes/external-store/external-store-thread-runtime-core.ts",
+      "bytes": 41161,
+      "sha256": "11ec03e09d2c49916fd75fb768aba7ed52c2081a858f230b4490071da8d91688"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    }
+  ],
+  "observations": [
+    {
+      "source": "@assistant-ui/core0.3.22 src/runtime/base/base-composer-runtime-core.ts:302-356",
+      "fact": "send captures text/material submission, detaches text/attachments, then synchronously notifies composer subscribers at350 before immediate dispatch or awaited material preparation. There is no messageSettings field in this library submission."
+    },
+    {
+      "source": "@assistant-ui/core0.3.22 src/runtimes/external-store/external-store-thread-runtime-core.ts:724-741",
+      "fact": "The path can await tool invocation abort before invoking onNew, even when attachments are already complete; onNew is not the start of draft detachment."
+    },
+    {
+      "source": "Flow ConversationThread.tsx:162-185",
+      "fact": "Existing submit owns pending capture and calls beginHandoff before official composer.send. Composer subscription rebuilds the text cache on library notifications. Existing pending capture is the correct place to add frozen settings, with sole App settings authority preserved independently."
+    }
+  ],
+  "implementationConsequences": [
+    "Implement existing design new-draft ownership invalidation at the actual validated host send/detach boundary, before yielding to composer.send/onNew/material await. Do not wait for ACK or onNew to distinguish the next draft.",
+    "Capture complete A request settings synchronously with text/intent/materials; the official pending and receipt pipeline then transports only A, irrespective of next-draft B.",
+    "The decision to retain chosen settings for the next draft does not preserve old opening ownership. A fresh draft with equal tuple is still a new ownership lineage.",
+    "Do not allow a composer text-only notification to erase the sole App settings field, mint a new settings store, or treat the transient empty text as consent to overwrite a settings-only B.",
+    "Keep existing send no-op/disabled/rejected semantics explicit; a rejected or disabled attempt must not leave orphaned pending capture. This note does not prescribe a new FSM or change assistant-ui internals."
+  ],
+  "boundedValidationGuidance": [
+    "Existing planned real App pending-material A / new B case should inspect both wire A and next-draft B, including equal text/different settings.",
+    "Existing stale opening test should hold an opening across the host send boundary and confirm old Apply/omit cannot write the next draft even before onNew executes.",
+    "Use actual installed runtime/host integration where validating this ordering; a manually mocked onNew callback alone cannot prove composer detachment semantics."
+  ],
+  "notClaims": [
+    "No implementation finding against a yet-unwritten Quick host",
+    "No new test run or source changes",
+    "No new public API, plugin slot, arbitrary UI store or requirement outside the existing design"
+  ]
+}
