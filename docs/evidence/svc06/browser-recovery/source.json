@@ -1,0 +1,136 @@
+{
+  "task": "SVC06B",
+  "at": "2026-10-07T14:11:19.268665+00:00",
+  "base": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "priorSource": "66caee46341c91db71a3590bfcd288396b30567a",
+  "priorBase": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "priorMain": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "composition": [
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "baseBlob": "56d7b1e19c15ff9291fc66dcca4c5f07cdb9f1b1",
+      "reviewedBlob": "36e27d797ef35e481126ef1dcc93850ca8ee0097",
+      "mainBlob": "36e27d797ef35e481126ef1dcc93850ca8ee0097",
+      "targetBlob": "36e27d797ef35e481126ef1dcc93850ca8ee0097",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12",
+      "originalBaseBlob": "56d7b1e19c15ff9291fc66dcca4c5f07cdb9f1b1"
+    },
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "baseBlob": "72b4dc587983c4931b29a2616f01631ea147de92",
+      "reviewedBlob": "8c86b3cc8990d87168b199b157a2b3d0a1e82e06",
+      "mainBlob": "8c86b3cc8990d87168b199b157a2b3d0a1e82e06",
+      "targetBlob": "8c86b3cc8990d87168b199b157a2b3d0a1e82e06",
+      "bytes": 3452,
+      "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868",
+      "originalBaseBlob": "72b4dc587983c4931b29a2616f01631ea147de92"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "baseBlob": "e838b97d6054902cc1414ffc167d02cc104411c0",
+      "reviewedBlob": "7c7a0a6332fcbadc03aaac19c8a092597eadafb4",
+      "mainBlob": "7c7a0a6332fcbadc03aaac19c8a092597eadafb4",
+      "targetBlob": "7c7a0a6332fcbadc03aaac19c8a092597eadafb4",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8",
+      "originalBaseBlob": "e838b97d6054902cc1414ffc167d02cc104411c0"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+      "baseBlob": null,
+      "reviewedBlob": "c7236ddc1dc1032bf2aaa11e727c329f5b4cfa12",
+      "mainBlob": "c7236ddc1dc1032bf2aaa11e727c329f5b4cfa12",
+      "targetBlob": "c7236ddc1dc1032bf2aaa11e727c329f5b4cfa12",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    }
+  ],
+  "productionMeaning": "Only logout stops sending a deletion Set-Cookie after exact token/origin/epoch revocation; no other source/dependency/migration changes.",
+  "provision": {
+    "task": "SVC06B",
+    "startedAt": "2026-10-07T14:07:49.426228+00:00",
+    "finishedAt": "2026-10-07T14:07:50.275127+00:00",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "branch": "codex/backend-browser-recovery",
+    "base": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "method": "Existing source-operator; new worktree-only sparse config and exact tracked source selection",
+    "sourceFiles": 858,
+    "sourceLogicalBytes": 6290303,
+    "limitBytes": 16777216,
+    "dependenciesCopied": false,
+    "installed": false,
+    "historicalRawCopied": false,
+    "globalGitConfigChanged": false,
+    "dirtyAfterProvision": [],
+    "selectionSha256": "36c257d185387d1bdfe6ce33633a0d4a416aa35b952b812c64729c0433979de8",
+    "selectionRule": "Fixed Git tracked apps/packages src, migrations/SQL and package/tsconfig/vite/vitest metadata; tools/personal-preview; exact root/plan rules/templates. No dependencies or historical evidence."
+  },
+  "claim": {
+    "requestId": "svc06b-initial-source-take-20261007",
+    "action": "take",
+    "committedAt": "2026-10-07T14:08:10.726Z",
+    "claim": {
+      "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+      "version": 1,
+      "taskId": "SVC06B",
+      "lead": "astra_ultra_execution_lead",
+      "worker": "assignment_review",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "branch": "codex/backend-browser-recovery",
+      "scope": [
+        "apps/server/src/browser-session/fixture.ts",
+        "apps/server/src/browser-session/index.ts",
+        "apps/server/src/browser-session/session.test.ts",
+        "docs/evidence/svc06/browser-recovery",
+        "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+        "plans/svc06-browser-recovery"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-07T14:08:10.726Z",
+      "createdAt": "2026-10-07T14:08:10.726Z"
+    }
+  },
+  "priorIndependentReviews": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/x01-version-return-20261007/late-logout-main-receipt.json",
+      "bytes": 1991,
+      "sha256": "47e56bab52022eb19ee933e750735dc1e57bc91ad9468c8a97841d89dce3ad7d",
+      "decision": "APPROVED_SOURCE_AND_LIMITED_DIRECT_VALIDATION"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json",
+      "bytes": 4138,
+      "sha256": "076cd9e6bf8b3562fcb9fdba9aef38327afdfe001849e609c8787c707db858f3",
+      "decision": "ACCEPTED_SHARED_LOGOUT_CONTRACT_FOR_EXISTING_RECOVERY_CONSUMER"
+    }
+  ],
+  "skills": {
+    "taskStack": "Fixed Node24/TypeScript backend source composition and offline artifact preparation",
+    "selected": [
+      {
+        "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+        "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+      },
+      {
+        "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+        "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+      },
+      {
+        "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+        "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+      }
+    ],
+    "cleanCodeOrigin": "sickn33/agentic-awesome-skills@bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5, existing global baseline docs/quality/skills.md",
+    "method": "Reuse prior reviewed Modules and bounded execution Interface; no new runner/installer/authorization FSM; compare exact Git pre/postimages, explicit unchanged dependencies and errors/lifecycle limits. No new skill installation."
+  },
+  "newEngineeringChecks": "NOT_RUN; source-only Git composition and own status parse only; prior4selected PG and2focusedtypes are referenced, not rerun or promoted to new browser/artifact proof.",
+  "personalOperations": 0,
+  "provider": 0
+}
