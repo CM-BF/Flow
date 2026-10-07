@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T02:37:24.418925+00:00",
+  "author": "/root read-only research",
+  "target": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "state": "DESIGN_INPUT_NO_IMPLEMENTATION_OR_PRIVATE_FILE_READ",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9"
+    }
+  ],
+  "existingFacts": [
+    "Dashboard Node HTTP server binds127.0.0.1, accepts loopback Host, GET-only routes, no-store/nosniff/no-referrer/CSP self and frame-ancestors none.",
+    "Dashboard navigation has a static61228 product link. app.js/architecture.js matched no innerHTML/eval/document.write sinks in targeted read; app.js stores theme only. This is not an exhaustive XSS security audit.",
+    "Personal preview creates a0700 outside-source installation directory and0600 config.json with ownerToken. Center launcher injects that field as FLOW_TOKEN; it is distinct from runner/provider credentials.",
+    "loadPreviewConfiguration imports PG and service/publishing modules; new dashboard read capability should not import the entire launcher or add service control."
+  ],
+  "proposedInterface": [
+    "An explicit, default-off local installation option binds one canonical installation directory, expected nonsecret installation identity and correct loopback product origin. No browser-supplied file/path/URL, no default remote/enterprise exposure.",
+    "Public connection metadata may expose enabled/productURL/center-relative-path/help only. Keep it separate from status aggregation and architecture. Never serialize raw install config.",
+    "One dedicated on-demand credential POST accepts only exact allowed Host/listening authority and loopback peer, exact same Origin, same-origin fetch metadata and a deliberate custom header. Reject missing/null/mismatched Origin, cross-site/same-site other-port, navigation, non-POST and OPTIONS; emit no permissive CORS. Do not trust Forwarded headers.",
+    "Provider reads only configured config.json using bounded file size, owner/mode/type/symlink and installation identity checks. Prefer descriptor-based open with no-follow and validation to avoid checking one inode then reading another. Project only the owner credential; sanitize errors without configuration, paths or credential bytes.",
+    "Maintain no-store on success/failure, no-referrer/nosniff/frame protection, no-cache client fetch; no token in initialHTML,staticassets,GET snapshot,logs,URL,plan/evidence,localStorage/sessionStorage.",
+    "UI independent local-access module: masked initially without hidden token in DOM; show/copy is explicit; pending requests use generation/abort so a late response cannot reveal after close/hide; clear DOM/memory on hide/dialog-close/visibility-away. No automatic clipboard clearing or extra browser credential platform.",
+    "Clipboard success only after writeText resolves. On denied/unsupported operation show an actionable failure and allow explicit reveal/manual copy; preserve keyboard focus/escape/return and theme/narrow layout. Avoid promising clipboard support after an asynchronous fetch without testing user-activation behavior."
+  ],
+  "testAcceptance": [
+    "Bounded synthetic config/HTTP tests for default-off, wrong Host/origin/peer, null/missing Origin, same-site other-port, forged forwarded headers, non-POST/preflight, no secret in metadata/snapshot/errors, bad mode/uid/symlink/oversize/corrupt identity and failure cleanup.",
+    "Real browser fake-credential fixture covers default masking, explicit show/hide, successful copy and denied clipboard, late fetch after close, keyboard/narrow/light/dark. Only fake data in screenshots/logs.",
+    "Separate explicitly enabled real local installation acceptance: correct source and correct productURL, actual show/copy and connection via existing product form, no model/chat submission or center/runner restart, preserve original usertab/page. Keep real credential entirely in memory; no screenshots/DOM dumps/network traces while exposed, no payload/clipboard logging; retain only boolean outcomes and nonsecretidentity/source.",
+    "Deploy only reviewed code using original dashboard operator; restart only dashboard as authorized, retain original browser tab and page. Main/integration and published behavior stay separate from source/fixture approval."
+  ],
+  "sources": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Site",
+      "basis": "Same-origin includes scheme/host/port; same-site is insufficient and Sec-prefix is browser-controlled."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin",
+      "basis": "Same-origin POST normally carries Origin; null/missing is a distinct case requiring explicit policy."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText",
+      "basis": "Promise resolves after clipboard update; secure context and NotAllowedError."
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API",
+      "basis": "Browsers differ; transient user activation may be required."
+    }
+  ],
+  "skills": "Existing find-skills, codebase-design, clean-code and webapp-testing reused; no installs. Separate private credential read module behind a narrow Interface; public aggregation stays untouched. No service helper was run.",
+  "claimBoundary": "Current exact writer conflicts identified by manager: D05 index.html and DPERF04 server.mjs. Must obtain explicit current-version partial scope handoffs before new task take/writes. No arbitrary file-read API or workaround to writer ownership."
+}
