@@ -6,7 +6,7 @@
 
 - [x] **TIMING02-01** 等待派生、紧凑时间与有效关系阅读归组。
 - [x] **TIMING02-02** 必要pure回归和原6组browser实际通过；双图已独立目视批准，范围另列。
-- [ ] **TIMING02-03** 固定source独审、main接收与发布分列。
+- [x] **TIMING02-03** 固定source独审、main接收与发布分列。
 
 25min/16MiB源段，pure累计60s，最多3次各20s含5scleanup，单Node；0PG/HTTP/Chrome/provider/build/install。
 
@@ -14,7 +14,7 @@
 
 status解析新增waitingTable，保完整waiting原文，等待issues独立；human派生只排序和按现resolver已验证关系归组。app复用一个本地Intl formatter并保每值GMT偏移、原UTC与来源下钻；刷新仅改变历时/等待新鲜度节点，不替换阅读中的表、依据或所选文字。现summary DTO不扩载等待表，因此首屏仅紧凑任务时间，详情展示可读等待原因。
 
-浏览器复用原五组与双390，并加信号归组一组；本次6组已实际通过、2PNG生成，已获限定独立实际/视觉批准。源码/限定验收与main接收均已完成；D05登记/部署尚未验证，本task整体完成保持NOT_COMPLETED。
+浏览器复用原五组与双390，并加信号归组一组；本次6组已实际通过、2PNG生成，已获限定独立实际/视觉批准。源码/限定验收与main接收均已完成；D05登记/实际部署与Root只读UI已核齐，本task完成。
 
 ### 浏览器调用准备 2026-10-07T21:01:31.914Z
 
@@ -29,3 +29,7 @@ status解析新增waitingTable，保完整waiting原文，等待issues独立；h
 ### 主线事实 2026-10-07T21:52:33.492Z
 
 [固定main七源接收](../../docs/evidence/wpf-dashboard-timing-readability/main-close/README.md)已核齐。TIMING02-03的独审与主线部分完成，部署分层仍由管理后继确认；本owner工程片段delivered/全9STOP并释放，不继续占用产品写权。无新工程检查。
+
+### 完成 2026-10-07T22:09:07.984Z
+
+[最终部署接受条件](../../docs/evidence/wpf-dashboard-timing-readability/deployment-close/README.md)已核齐，三TODO全完成；开工保持20:41:20.224Z，完成来源为本次核齐时刻。历史分阶段未验结论保原时点，不重复任何工程验证。

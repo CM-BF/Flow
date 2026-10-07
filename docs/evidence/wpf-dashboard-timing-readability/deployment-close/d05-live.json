@@ -1,0 +1,297 @@
+{
+  "startedAt": "2026-10-07T22:01:35.689Z",
+  "source": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "oldPid": 50158,
+  "oldCwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "previousPublicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "oldConfirmedAbsent": true,
+  "newPid": 57950,
+  "log": "/tmp/flow-dashboard-211-20261007-2203.log",
+  "summaryHttp": 200,
+  "summaryCount": 211,
+  "generatedAt": "2026-10-07T22:01:36.229Z",
+  "selected": [
+    {
+      "id": "WPF-DASHBOARD-TIMING02",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/plans/wpf-dashboard-timing-readability/status.md",
+        "digest": "aa77a197370e0b7bbb1d46a8f913ee9ced353aa0a963507a73c61d66e3c54947",
+        "modifiedAt": "2026-10-07T21:52:33.527Z",
+        "readAt": "2026-10-07T22:01:36.229Z",
+        "declaredUpdatedAt": "2026-10-07T21:52:33.492Z",
+        "stale": false,
+        "ageHours": 0.15076027777777778,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "w01_owner / gpt-6-astra ultra",
+        "branch": "codex/dashboard-task-timing-readability",
+        "branchState": "in-progress",
+        "declaredHead": "86112a35effcd4d809b5e7b91d9759cdb19d2008 / 当前HEAD由Git读取",
+        "declaredDirty": "仅本次main事实metadata正常封存；全9scope STOP，实际claim以D04账本/manager释放回执为准",
+        "updatedRecord": "2026-10-07T21:52:33.492Z",
+        "checks": {
+          "state": "passed",
+          "target": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+          "record": "PASSED 94ed7d17604dc652ee31ee53c0bba4046fef256d 98项纯回归与本次6组browser PASS；双390图已限定独审通过；首红保留"
+        },
+        "reviewRecord": "[review.md](review.md) APPROVED 94ed7d17604dc652ee31ee53c0bba4046fef256d source/local及限定browser/visual通过",
+        "mainRecord": "INTEGRATED 2c96618a1b72472b91bfbcbaaf1758478f8b8873 七源逐字固定94ed；本次0产品复测；D05/部署未验",
+        "human": {
+          "delivery": {
+            "state": "delivered",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "紧凑任务时间与事项阅读已交主线，保留明确优先级、未知信息与原始依据",
+          "next": "本源码片段已交付；实时看板登记与部署由既有管理路径确认",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T20:41:20.224Z",
+            "record": "2026-10-07T20:41:20.224Z"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "领取后本owner开始实现，见[source switch](../../docs/evidence/wpf-dashboard-timing-readability/source-switch.json)，不倒用领取时刻"
+          },
+          "issues": []
+        },
+        "truncatedFields": []
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+          "reason": "父任务status 陈旧或时钟待核实",
+          "targetId": "D01",
+          "title": "工程进度"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "WPF-WORKSPACEARC01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/status.md",
+        "digest": "4f7416da9eefc311c7612d976f0b25d64c9f554daef3c80771f7a3aeb6958b2e",
+        "modifiedAt": "2026-10-07T21:57:00.122Z",
+        "readAt": "2026-10-07T22:01:36.229Z",
+        "declaredUpdatedAt": "2026-10-07T21:57:00.120Z",
+        "stale": false,
+        "ageHours": 0.07669694444444444,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "workspace_panels_owner / gpt-6-astra",
+        "branch": "codex/web-workspace-composition",
+        "branchState": "in-progress",
+        "declaredHead": "base f8853d4731eb6229337279079c24617c97d4f56b / source 876731f4488419d4c9d84584a40944fcd848c0f2；metadata随后seal",
+        "declaredDirty": "首browser实际FAIL已FULLRETURN；产品18源STOP，仅own metadata正常封存，0child/无重试grant",
+        "updatedRecord": "2026-10-07T21:57:00.120352+00:00；本次不新核main",
+        "checks": {
+          "state": "not_run",
+          "target": "876731f4488419d4c9d84584a40944fcd848c0f2",
+          "record": "NOT_RUN 876731f4488419d4c9d84584a40944fcd848c0f2；修后browser未运行，原7e911首browserFAILED0/4、0PNG/12808ms，原HTTP2PASS与旧失败保留"
+        },
+        "reviewRecord": "APPROVED 876731f4488419d4c9d84584a40944fcd848c0f2；root77c593限定接受首FAIL/RETURN证据及query+heading修正，非browser PASS；原11e317/e524/2b2f批准边界保留",
+        "mainRecord": "NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成",
+        "human": {
+          "delivery": {
+            "state": "implementation",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "两项HTTP验收已通过；首次浏览器连接前置失败已定位并窄修，修后四组尚待新窗口验证",
+          "next": "可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取",
+          "blocker": {
+            "state": "active",
+            "text": "浏览器公开Cookie入口前置修正已独审通过；四组仍待经理独立新运行，当前无grant"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "unknown",
+            "at": null,
+            "record": "UNKNOWN"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "前期只读研究首时刻未单独记录，不用ledger/commit猜；本源码实施实际开始2026-10-07T17:58:48.865Z见[provision](../../docs/evidence/wpf-workspace-arc/provision.json)，本片尚未完成"
+          },
+          "issues": [
+            "任务开工时间未记录"
+          ]
+        },
+        "truncatedFields": []
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web/root；执行管理d01_owner",
+          "value": "Web/root；执行管理d01_owner"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-05",
+          "title": "单标签双面板工作区"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "X01-VERIFIER-ADMISSION-RESULT01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/status.md",
+        "digest": "7566c7150ccc10dae5cfa3ccd9a327fdaab9955a7bacd80f6a14b2cb46218f46",
+        "modifiedAt": "2026-10-07T21:44:35.749Z",
+        "readAt": "2026-10-07T22:01:36.229Z",
+        "declaredUpdatedAt": "2026-10-07T21:44:35.747Z",
+        "stale": false,
+        "ageHours": 0.2834672222222222,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "declarations": {
+        "owner": "architecture_read / gpt-6-astra",
+        "branch": "codex/plugin-verifier-admission-result",
+        "branchState": "in-progress（核心已审，真实事务准备）",
+        "declaredHead": "57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+        "declaredDirty": "所有源和工程检查STOP；封包push后clean，claim保留",
+        "updatedRecord": "2026-10-07T21:44:35.747Z",
+        "checks": {
+          "state": "passed",
+          "target": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+          "record": "PASSED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：修复3/3公共调用反例和affected strict0；旧15distinct不重跑/旧错误保留，PG NOT_RUN"
+        },
+        "reviewRecord": "APPROVED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：db 2026-10-07T21:12:11.000Z；P2 CLOSED/0P1P2，原CHANGES_REQUESTED保留",
+        "mainRecord": "NOT_INTEGRATED；AV036/center14前置尚待真实PG及受控接收",
+        "human": {
+          "delivery": {
+            "state": "review",
+            "source": "explicit"
+          },
+          "phase": "M2",
+          "priority": 1,
+          "output": "真实事务验收用例与清理门禁已完成局部审查，数据库验收尚未运行",
+          "next": "前置中心资格验收通过后，在独立窗口验证受理与事件整批回滚",
+          "blocker": {
+            "state": "active",
+            "text": "等待前置数据库验收通过及独立运行窗口"
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "timing": {
+          "started": {
+            "state": "known",
+            "at": "2026-10-07T20:31:27.000Z",
+            "record": "2026-10-07T20:31:27.000Z"
+          },
+          "completed": {
+            "state": "not_completed",
+            "at": null,
+            "record": "NOT_COMPLETED"
+          },
+          "source": {
+            "state": "declared",
+            "record": "本owner本段首次实际clock；25min截止20:56:27Z，包含等待"
+          },
+          "issues": []
+        },
+        "truncatedFields": []
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "reason": "",
+          "targetId": "X01",
+          "title": "插件管理计划"
+        },
+        "basis": "status-source"
+      }
+    }
+  ],
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "completedAt": "2026-10-07T22:01:36.306Z"
+}

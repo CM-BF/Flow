@@ -3,44 +3,44 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-DASHBOARD-TIMING02 |
-| 最近更新 | 2026-10-07T21:52:33.492Z |
+| 最近更新 | 2026-10-07T22:09:07.984Z |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability |
 | Branch | codex/dashboard-task-timing-readability |
 | 工作基线 / HEAD | 86112a35effcd4d809b5e7b91d9759cdb19d2008 / 当前HEAD由Git读取 |
-| 工作树dirty状态 | 仅本次main事实metadata正常封存；全9scope STOP，实际claim以D04账本/manager释放回执为准 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 仅本次部署事实metadata正常封存；两记录scope完成并STOP，实际释放以D04账本/管理回执为准；产品七scope不恢复 |
+| 工作分支状态 | completed |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 1 |
-| 当前产出 | 紧凑任务时间与事项阅读已交主线，保留明确优先级、未知信息与原始依据 |
-| 下一可用交付 | 本源码片段已交付；实时看板登记与部署由既有管理路径确认 |
+| 当前产出 | 紧凑任务时间、等待依据与事项归组已上线，原定验收及主线、部署事实已核齐 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 任务开工时间 | 2026-10-07T20:41:20.224Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 领取后本owner开始实现，见[source switch](../../docs/evidence/wpf-dashboard-timing-readability/source-switch.json)，不倒用领取时刻 |
+| 任务完成时间 | 2026-10-07T22:09:07.984Z |
+| 任务时间来源 | 原开工见[source switch](../../docs/evidence/wpf-dashboard-timing-readability/source-switch.json)；完成为本owner核齐D05实际部署/Root只读UI与全部原验收时刻，见[完成证据](../../docs/evidence/wpf-dashboard-timing-readability/deployment-close/verification.json)，非commit或领取时间 |
 | 实现目标 | 94ed7d17604dc652ee31ee53c0bba4046fef256d |
 | 实现范围 | apps/execution-dashboard/public/app.js, apps/execution-dashboard/public/styles.css, apps/execution-dashboard/src/human.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/test/human-summary.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs, apps/execution-dashboard/test/task-timing.browser.mjs |
 | 检查状态 | PASSED 94ed7d17604dc652ee31ee53c0bba4046fef256d 98项纯回归与本次6组browser PASS；双390图已限定独审通过；首红保留 |
 | Review | [review.md](review.md) APPROVED 94ed7d17604dc652ee31ee53c0bba4046fef256d source/local及限定browser/visual通过 |
-| 已集成main状态 / HEAD | INTEGRATED 2c96618a1b72472b91bfbcbaaf1758478f8b8873 七源逐字固定94ed；本次0产品复测；D05/部署未验 |
-| D04 claim | d26ac1d8-edf1-413d-ae67-68ce807e9fca v1 exact9，已完成并全scope STOP；实际释放以账本/管理回执为准 |
+| 已集成main状态 / HEAD | INTEGRATED 2c96618a1b72472b91bfbcbaaf1758478f8b8873 七源逐字94ed；已部署source 69a71e3d9888c24c8f7c7a5965487f106c065c17，22:01:36.229Z summary211/sourceCurrent=true；无新产品复测 |
+| D04 claim | 原d26 v2已released；本次96b557dd-d41a-4464-a01e-fc7e69743f5b v1只两metadata scope，完成并STOP，实际释放以账本/管理回执为准 |
 | 架构影响 | 唯一status派生与现UI阅读层，无第二状态源 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | TIMING02-01 | completed | w01_owner | [固定7源](../../docs/evidence/wpf-dashboard-timing-readability/source-manifest.json) |
 | TIMING02-02 | completed | w01_owner | [纯回归98通过/首红保留](../../docs/evidence/wpf-dashboard-timing-readability/local-accounting.json)；本次6组browser PASS/2PNG，限定视觉已独审 |
-| TIMING02-03 | in-progress | root / w01_owner | source/local独审通过；browser6组/双图/完整RETURN独审通过；[主线已接收](../../docs/evidence/wpf-dashboard-timing-readability/main-close/README.md)，D05 registry/live与部署仍未验证（管理后继） |
+| TIMING02-03 | completed | root / w01_owner | 独审/主线已接收；[D05部署与Root实际UI](../../docs/evidence/wpf-dashboard-timing-readability/deployment-close/README.md)已核齐，无重复产品运行 |
 
 ## 当前限定边界
 
-唯一status仍是事实源。优先级只影响派生显示；分组保每task/owner/原文，不借子任务结果改变父状态。等待表异常独立于任务历时与原检查状态。首页DTO继续不带waiting大原文；可读等待表在按需详情，旧无结构化表的snapshot仍可下钻原文。当前canonical已交D05，实际新登记/页面读取未在本段观察。
+唯一status仍是事实源。优先级只影响派生显示；分组保每task/owner/原文，不借子任务结果改变父状态。等待表异常独立于任务历时与原检查状态。首页DTO继续不带waiting大原文；可读等待表在按需详情，旧无结构化表的snapshot仍可下钻原文。当前canonical已由D05实际读取sourceCurrent=true，Root已在既有IAB观察时间与归组；本owner只核原件，不再次开页面。
 
-本轮已运行自有syntheticHTTP/Chrome，0PG/真实registry；本次限定视觉已独审，main七源已接收，部署未确认。无实时now计时、偏好store或Markdown渲染框架；旧详情DOM/展开/焦点/选区及等待阅读已通过原6组真实浏览器断言，限本synthetic状态。
+本轮已运行自有syntheticHTTP/Chrome，0PG/真实registry；本次限定视觉已独审，main七源已接收，D05实际部署及Root只读UI已核齐。无实时now计时、偏好store或Markdown渲染框架；旧详情DOM/展开/焦点/选区及等待阅读已通过原6组真实浏览器断言，限本synthetic状态。
 
 局部60秒段已CLOSED：3次共725ms（按外层较大值上取整），未用59,275ms不触发追加检查。最后静态模块语法/唯一status解析与8链接通过；所有实际组、EOF、scratch已归还。按组内最高优先成员排序组、组内再排序，归组后不声称每一行仍严格全局排序。
 
@@ -62,6 +62,10 @@
 
 2026-10-07T21:39:26.313Z：[root实际与两390图独审](../../docs/evidence/wpf-dashboard-timing-readability/browser-first/root-actual-review.json)APPROVED/0blocking，固定94ed实现不变。仅本synthetic六组与当前浅深截图阅读范围；无live4320/main/registry/部署验证。[最小主线接收入口](../../docs/evidence/wpf-dashboard-timing-readability/main-intake.json)已准备。本批normalpush后全9scope STOP、d26v1保留；无新runtime。
 
-## 主线事实收口 2026-10-07T21:52:33.492Z
+## 历史：主线事实收口 2026-10-07T21:52:33.492Z
 
 [固定I02收据](../../docs/evidence/wpf-dashboard-timing-readability/main-close/README.md)已亲核；source/review target仍94ed，历史raw/首FAIL不改。工程片段delivered，全9STOP待CAS释放；任务整体完成仍NOT_COMPLETED，原TIMING02-03的部署分层尚由D05管理确认，无当前产品阻塞。0HTTP/PG/Chrome/产品检查。
+
+## 当前完成与停写 2026-10-07T22:09:07.984Z
+
+[部署/可见UI/唯一source的完成证据](../../docs/evidence/wpf-dashboard-timing-readability/deployment-close/README.md)已核齐，全部TIMING02 TODO完成。原94ed、98pure、6browser/双图及首FAIL不变；本次0产品复验/部署操作。live D01父源陈旧显示unknown保留，不能替父补状态；本任务唯一sourceCurrent=true/issues[]。两records scope normalpush后STOP并释放，不再写已释放产品范围。
