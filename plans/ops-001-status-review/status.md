@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
 | 已集成main状态 / HEAD | main/origin18144593已接任务时间规则与同版本Web恢复；个人仍af51/accepting v18、d629/v3，根因后继未完成。本次三队局部段规则待独审接收。 |
-| Review | [review.md](review.md)：历史固定批准保持；本次三队局部并行规则待独立文档审查。 |
+| Review | [review.md](review.md)：历史固定批准保持；dd7538三队局部段与e65628新树自助增量分别获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
