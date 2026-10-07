@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:58:32.280796+00:00 |
+| 更新时间 | 2026-10-07T06:00:44.071Z |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
@@ -20,17 +20,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | 个人采用caller cb2205db380aa9d8bbb6ff42407ac7166d2a073a；当前仅metadata收口，产品仍bad019 |
-| 工作树dirty状态 | caller/source/raw已固定；仅own status元数据，提交后核clean |
-| 工作分支状态 | in-progress；个人采用caller已审待实际窗口，未执行 |
+| Head | runtime身份修复 d95c249dc6b48848128ca068ea93dfda3494e812；本次仅metadata收口，四产品仍bad019 |
+| 工作树dirty状态 | 修复source/raw已固定且停写；本次仅own status及解析记录，提交后核clean |
+| 工作分支状态 | in-progress；原caller实际early FAIL，身份修复d95c249独审中，新个人运行未执行 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
-| Review | APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
+| Review | d95c249 runtime身份增量PENDING独立复审；原APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
-| 已集成 main 状态 | INTEGRATED 1d49da00450ae078da13ef3e1f7807d0c00f4c3c；26份固定隔离结果/候选及原独审精确接收；固定构建与四产品main422保持；当前个人采用caller尚待独审，个人尚未操作 |
+| 已集成 main 状态 | INTEGRATED 5cae7a25a7af723f9d9bae2666daeafbee004c8f；Lead确认接收原caller/独审及b35fc741首失败原件；更早隔离结果1d49保留。d95c249身份修复待独审/集成；个人读取及采用仍未发生 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
-| 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
+| 看板 | Lead已确认实际4320载入186权威source；本owner状态可被当前parseStatus聚合，未为本次metadata刷新页面 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
