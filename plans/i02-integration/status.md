@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:25:25.202799+00:00 / main311e6215；已审SVC08实际采用与ENG helper准备窄接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:49:44.594127+00:00 / main3ee3c048；CHAT05领域与ENG单helper结果已审，本批组合类型通过 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main311e62158186177e344b49d24ed32e335268be1d；本批SVC08仅own records，ENG四源精确delta，OPS两status |
+| 工作基线 / HEAD | main3ee3c0486023feabcc9053a53b2d5c2808aebf59；CHAT05十八源前像同base，ENG本批仅own记录 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 原ENG新5/5与focused types0，105绑定+14安装入口独审；SVC08三phase原exit0/11保护/64表/5HTTP已核。不重跑历史检查。 |
-| 已集成main状态 / HEAD | main311e6215已含Codex公开流等前批；本批固定差异接收待fast-forward。实际Web宿主已采用c7b/source422；backend af51/v18、网页d629/v3不变。 |
+| 检查状态 | CHAT05原3PG/3过/3461ms、18绑定及清理独审；类型依赖P2已窄修关闭，组合root noEmit exit0/9991ms。ENG单stock成功/574ms仅机制范围；不重跑PG或旧矩阵。 |
+| 已集成main状态 / HEAD | main3ee3c048已含SVC08实际采用收口与ENG四源；CHAT05领域及ENG新实验记录候选待类型修正后受控接收。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 个人网页宿主已从固定产物运行，原后台、用户数据和保留网页资源保持；原生文件工具的有界准备接口已审。 |
-| 下一可用交付 | 接收工具全文数据库验证结果；推进真实原生文件工具兼容与Codex、界面恢复。 |
+| 当前产出 | 大于单包上限的工具材料已可在数据库场景中恢复和完整分页读取；原生文件工具完成一次受限写入验证，完整工程执行仍开放。 |
+| 下一可用交付 | 接入工具全文公共读取与运行时；继续原生工程宿主与Codex、界面恢复验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

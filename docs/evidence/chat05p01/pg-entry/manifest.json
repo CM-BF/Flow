@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T06:30:16.629495+00:00",
+  "source": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+  "originalProductSource": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "base": "9edbd709d9d52d4a6b1313d34ca97806313df310",
+  "status": "PREPARATION_REVIEW_REQUESTED_PG_NOT_RUN",
+  "bindings": [
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 10428,
+      "sha256": "29a65ba40e63c5ff686c804876a4cd84e3411632b3679cdadda95c5b6b6d0820",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/README.md",
+      "bytes": 5286,
+      "sha256": "2afb5c350d2a29adf8eeaf76486efcf0bb830d9eb123b83bf69d1b12eec568e5",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/claim-observation.json",
+      "bytes": 1238,
+      "sha256": "3e9220f381b51b1b694cae8762e806810694da27d5abaca208f956fa2dd66da4",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/config.mjs",
+      "bytes": 406,
+      "sha256": "3b24f85002a359286ab759a95a13340cf578b67d19d513082f222154d5ba38da",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/inputs.json",
+      "bytes": 111693,
+      "sha256": "e92067c2ad2b77faf92cf129b4966e52513c6b36a1d0f091f2d8d46b58835dd5",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/preparation.json",
+      "bytes": 855,
+      "sha256": "8fb41ec845449067f7570e0dcc7f463e7734e12d3143a179d3f0efd5f3010d23",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/run.py",
+      "bytes": 7476,
+      "sha256": "d3cfbfe67644033ebb4f0b7c4c66684b9552439b96188acb71da0efcb04ff939",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405"
+    }
+  ],
+  "closure": "inputs.json pins283 files (209 source/31 SQL; fixture is the only source delta) and21 existing aliases. No new dependency or installation.",
+  "verification": "Read/hash/resolve-only, Python AST and status parse; no product import/test/typecheck/PG. Task start UNKNOWN preserved as parser timing issue.",
+  "criteria": [
+    "Original three behavioral cases and production code unchanged",
+    "Single marked DB/OID, normal checkpoint-before-DROP after bounded zero connections",
+    "One OPS14 session, fixed90s normal-suite budget+.5TERM/2reap, no auto followupcleanup",
+    "Original28 local/types results not reused as validation of new fixture or PG"
+  ],
+  "staticPreparationErrors": [
+    "Initial workspace metadata loop expected version; corrected to ownWorkspace/manifest checks before any runtime; no product execution"
+  ]
+}

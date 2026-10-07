@@ -1,0 +1,204 @@
+{
+  "at": "2026-10-07T05:14:02.132Z",
+  "sourceTarget": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 24739,
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/adapter.test.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 3033,
+      "sha256": "dd4b581313bb0c71f4dd783a3f36b75bcc09569a78f6c5f09c50394c39521fbe"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/body.test.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 10666,
+      "sha256": "5d16d3be0d119ed987f2d118a38d62b405fe58d5c49821934bb0380293516ad2"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/plan.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 3961,
+      "sha256": "58ab5036500464a9a634cd3de3472da64d2947585b60080a913526612c87dec9"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/spool.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 7919,
+      "sha256": "a6c0d17b91a532e06f222a57357d7dc01c7bcfb3bd39840d6c6d5cf6b8d1e1d8"
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 5178,
+      "sha256": "db7d993cfa67d130429bc889f76e130308076af0ad3add824d67cacd5076305e"
+    },
+    {
+      "path": "apps/runner/src/native-activity/mapper.test.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 5661,
+      "sha256": "741f428656377d3660094a2fbd4312cabbf31f5747e0efb41ff64100a39fbfb9"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 8740,
+      "sha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 8925,
+      "sha256": "01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/body.test.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 8541,
+      "sha256": "a3c3598dc335ebc7e7860bb32ef237c57e1c97e683d0ca7416b09c33c41f9561"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/codec.test.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 2228,
+      "sha256": "1e344f3f1b3ab2d3dd2812b274346e4d5f888b64e8c82c2d769bdb70c7accfff"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 8351,
+      "sha256": "eddb66ae48ae2d2eb9993485291f03b0d4f86d4b9afda2697a320e83519ca513"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 1914,
+      "sha256": "df6162150507f7754777bd0ce74862ec0cef20207b5f70e204a3c60ee61bd859"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/read.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 3538,
+      "sha256": "0480c2fffda5c775c4c9fa20d9edbbfa6d13e05610f5bdbbbf458c31947ca288"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/store.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 8418,
+      "sha256": "0f2b4960dbcd2b685428d5083f9fec6ce69121f51e3a5b108e52904c4068ea69"
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 3091,
+      "sha256": "bc0545b5ddd1f1972a0370c556a627555ef78530b2e0dd08da3f5febf7894e4e"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 7753,
+      "sha256": "cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918"
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "bytes": 1398,
+      "sha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e"
+    }
+  ],
+  "newEvidenceBindings": [
+    {
+      "path": "docs/evidence/chat05p01/resumed-local.py",
+      "bytes": 6479,
+      "sha256": "45e383bd1cf417763476d6eac00ecc314793ad1cc0d19193b312f27c2c51542d"
+    },
+    {
+      "path": "docs/evidence/chat05p01/main-preimage-resume.json",
+      "bytes": 6344,
+      "sha256": "2cc6dad38b6af9ac3fc88e0660f75405f71d4221a68ce1cf4a0fb21fa079633b"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/direct-checkpoint.json",
+      "bytes": 2047,
+      "sha256": "8236217930af049bd7e2a8cbdf453a5318d5787c904dd714872c58a02aa26d2a"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/direct-tmp/vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 403,
+      "sha256": "1178eb0ccf51863e3e695c3f54d69a2b9bb9d21523915591a924b8fe8defffca"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/direct.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/direct.stdout",
+      "bytes": 984,
+      "sha256": "771e874374f597e5a3e217cbc76712f9aa122ae3e4ead677814b51fd49ecf82a"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/reservation.json",
+      "bytes": 224,
+      "sha256": "9265f53c2c8e639e5eeeeb5cf6ad1eaa528f725a9fed1c63fca4b714ad07ee0d"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/result.json",
+      "bytes": 4778,
+      "sha256": "c52c29405824097c1dfe143184d3128a8470b971ab0de36333ffbd19c4758ebb"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/summary.json",
+      "bytes": 1009,
+      "sha256": "f7080e01f93755aaf74d612f6c82b84e754e8e46c4e104b29e9582a27c25a894"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/types-checkpoint.json",
+      "bytes": 1511,
+      "sha256": "1a92ed25f102f5539b7553308e80659af00cdc3adaa2f5b98f91a3d7369dac3d"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/chat05p01/local-resumed-20261007/types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "evidenceCount": 12,
+  "sourceCount": 18,
+  "preparationHistory": "Previous source manifest and raw immutable; no new source/test cases.",
+  "runScope": {
+    "at": "2026-10-07T05:14:02.132Z",
+    "source": "40af6d9071c621707971fd983a85dd9145f065fd",
+    "selected": 10,
+    "passed": 10,
+    "unselected": 11,
+    "newDistinct": 6,
+    "oldDirectRepeatedBecauseAffected": 4,
+    "distinctAcrossHistoricalRounds": 28,
+    "types": {
+      "exitCode": 0,
+      "scope": "focused-tsconfig only, not root"
+    },
+    "supervisedTotalMs": 3762,
+    "rawBytes": 984,
+    "groups": "both absent / both EOF",
+    "fixtureDirectoriesAfter": [],
+    "retainedCacheBytes": 403,
+    "typesTmpRemoved": true,
+    "runtimeRecordLabelCorrection": "result.json newTestsSelected=10 means actual selected in this new run; only six are new distinct, four original outbox direct consumers were rerun as planned. Original record preserved.",
+    "PG3": "NOT_RUN",
+    "productDelta": false,
+    "review": "SOURCE_APPROVED_PENDING_VALIDATION retained; this result awaits independent evidence review",
+    "resourceLimits": "100ms metadata observations/final sample, not exclusive physical peak or hard allocation reservation."
+  }
+}

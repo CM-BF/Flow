@@ -1,0 +1,69 @@
+{
+  "name": "types",
+  "startedAt": "2026-10-07T05:12:32.768024+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/chat05p01/focused-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "budgetSeconds": 30,
+  "incrementBytes": 8388608,
+  "rawLimit": 1048576,
+  "freeBefore": 25133572096,
+  "requiredFree": 1082130432,
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123510826
+  },
+  "supervision": {
+    "pid": 45133,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 2367,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T05:12:35.136408+00:00",
+  "rawBytes": 0,
+  "resourceObservation": {
+    "samples": 24,
+    "errors": [],
+    "minFree": 25133195264,
+    "maxTmpBytes": 0,
+    "sampledNotPhysicalPeak": true
+  },
+  "tmpAfter": {
+    "bytes": 0,
+    "files": [],
+    "missedTransientChildren": 0,
+    "atomic": false
+  },
+  "tmpRemoved": false,
+  "status": "PASSED"
+}

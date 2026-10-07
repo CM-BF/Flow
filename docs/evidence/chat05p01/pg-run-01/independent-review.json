@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T06:43:28.502402+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+  "delivery": "788bda855055367b6d78247201db481eba654566",
+  "verdict": "APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE",
+  "P1": 0,
+  "P2": 0,
+  "resultManifestSha256": "eb242d79ddef88cd0dd430780ff6e96a0e3c356487fc2c0e9b6f361ded41ab65",
+  "checkedBindings": 18,
+  "mismatches": [],
+  "scope": "Existing complete40af source review and28distinct local evidence unchanged; c687 fixture/caller approved separately. Read3 actual assertions, raw fixture checkpoints, result, stdout and manifest; no repeat PG/provider. Canonical currentstatus delta read against published03:22 snapshot.",
+  "actual": {
+    "selected": 3,
+    "passed": 3,
+    "pending": 0,
+    "supervisedMs": 3461,
+    "exitCode": 0,
+    "finalGroup": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "initialUnknownErrno": 1,
+    "databaseRemaining": [],
+    "cleanupErrors": [],
+    "inputBytes": 2160011,
+    "resultBytes": 72032,
+    "pageRequests": 10,
+    "pageWireBytes": 2985938
+  },
+  "limits": [
+    "Actual explicit033/module mounting fixture, not default production factory/runtime enablement.",
+    "Raw prefix history remains legacy; page/body success is not tool or model success.",
+    "Perattempt limits are not aggregate host disk/memory or historical recovery bounds.",
+    "New fixture noEmit was NOT_RUN at author handoff; integration type check separately required.",
+    "28local plus3PG across runs, not one31case run; original failures/unknown preserved."
+  ],
+  "reviewerRuns": 0
+}

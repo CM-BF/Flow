@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T06:24:56.906741+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "delivery": "ca6d55bd86b96117f83898bb6a12c567afd235c6",
+  "verdict": "APPROVED_LIMITED_STOCK_HELPER_PREPARATION",
+  "P1": 0,
+  "P2": 0,
+  "findings": [],
+  "manifestSha256": "bf07df209a5b0149422122820983d6584663261d38efe8f3efbbcb43f6593ee6",
+  "bindingAudit": {
+    "product": 4,
+    "protected": 80,
+    "evidence": 18,
+    "plan": 3,
+    "installedEntries": 14,
+    "mismatches": []
+  },
+  "reviewScope": [
+    "Full four-file delta relative471b1d8 and unchanged identity/R06 consumers",
+    "Exact fixed startup recipe derivation; narrow workspace data-write and separate private state",
+    "One-use immutable helper request with no initialize; no process spawned by preparation",
+    "Bounded same-inode/byte observation, unknown on incomplete/error/replacement, never revoked",
+    "Original 5 new passes and focused types0; 4 old skipped; 2 groups absent dualEOF; normal private cleanup"
+  ],
+  "limits": [
+    "No stock helper execution, provider, app-server tool delegation or model qualification demonstrated.",
+    "Full writer termination domain remains open; all writeAccess outcomes unknown.",
+    "Original positive recipe startup does not prove derived profile startup; planned actual test remains NOT_RUN."
+  ],
+  "reviewerEngineeringTests": 0,
+  "reviewerProviderCalls": 0
+}

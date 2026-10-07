@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T06:29:49.902906+00:00",
+  "status": "SOURCE_PREPARATION_ONLY_NOT_RUN",
+  "fixedCurrentFiles": 283,
+  "aliasCount": 21,
+  "mismatches": [],
+  "originalSources": 209,
+  "SQLResources": 31,
+  "newSourceDelta": [
+    "apps/server/src/native-activity-body/fixture.ts"
+  ],
+  "testDefinitions": 3,
+  "PythonAST": "PARSED_NO_IMPORT",
+  "productImports": 0,
+  "tests": 0,
+  "types": 0,
+  "PG": 0,
+  "provider": 0,
+  "preparationError": {
+    "kind": "KeyError: version",
+    "cause": "Metadata loop first assumed an own workspace package had a version field",
+    "correction": "Use explicit ownWorkspace/manifest bytes/hash; no install, package change or runtime attempt"
+  },
+  "previousResults": "28 different local across rounds plus focused exit0 remain historical fixed40af evidence; no rerun or transfer of approval to new fixture"
+}

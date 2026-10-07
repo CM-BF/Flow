@@ -1,0 +1,197 @@
+{
+  "at": "2026-10-06T22:15:25.235241+00:00",
+  "task": "CHAT05P01",
+  "kind": "READ_ONLY_INTERFACE_AND_SCOPE_PROPOSAL",
+  "parent": "FLOW-001 / CHAT05-06 / REQ15",
+  "model": "gpt-6-astra",
+  "base": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body",
+  "branch": "codex/native-activity-body",
+  "ledger": {
+    "path": "/tmp/flow-chat05p01-design-ledger.json",
+    "observedAt": "2026-10-06T22:11:01.718Z",
+    "taskIdAlreadyClaimed": false,
+    "claimTaken": false
+  },
+  "decision": "Durable complete tool material spool followed by bounded immutable chunk events in the existing outbox and reportEvents transaction; separate authorized descriptor/chunk reads. Existing 2MiB/50 event envelope stays unchanged.",
+  "alternatives": [
+    {
+      "choice": "Raise existing prefix/detail/batch limits",
+      "reasonRejected": "Does not preserve the missing tail, exceeds recovery-file constraints, loses original bytes before persistence and still permits final/order gaps."
+    },
+    {
+      "choice": "New generic object upload/store service",
+      "reasonRejected": "Unnecessary second lifetime/auth/cleanup authority for this tool-activity slice."
+    }
+  ],
+  "interface": {
+    "hostPort": "HarnessContext.activityBodies?: { publish(input: {activity: NativeActivityData, completeBody: Uint8Array, representation: \"sdk-public-material-utf8-v1\"}): Promise<void> }. Host-owned port; await means all immutable body events acknowledged, not tool success. Absent port retains explicit legacy prefix-only behavior.",
+    "outbox": "EventOutbox.emitActivityBody(input): serialize through the existing event tail/barrier; durable complete raw bytes and frozen event IDs/sequences before first network chunk. replayPending also consumes this fixed spool using original ownership/IDs, never reruns adapter or changes ownerVersion.",
+    "wire": "One new native-activity-body discriminant with a finite start/chunk/seal action schema. Existing native-activity prefix event remains unchanged. Start binds activityId/attempt/session/source identity and full bytes/digest; chunk carries index/offset/base64 bytes/sha256; seal verifies declared count, total bytes and original digest.",
+    "ingestion": "saveNativeActivityBody(client, task, attempt, event), assertNativeActivityBodiesFinalizable(client,attemptId). Called by existing applyEvent/reportEvents while original locks/transaction/auth remain authoritative. Final guard also covers active-steering applyEvent path.",
+    "reader": "GET /api/tasks/:taskId/native-activities/:activityId/body => lightweight descriptor; GET same /body/chunks?afterIndex&limit => explicit bounded bytes and stable body identity. Existing owner/browser-session route authentication; runner-role read refused. Public thin client methods supplied by Lead. No generic details endpoint for large content.",
+    "identity": "activityId remains SHA256(session/sourceMessage/block/kind); body ID is scoped to that immutable activity and attempt. Descriptor includes protocol, representation, full digest/declaredBytes/chunkBytes/received counts/status. Cursor is tied to body ID and index, not current task activity cursor.",
+    "status": "receiving | complete | interrupted; body completeness independent of tool phase/success. Absent new storage => legacy/not-recorded, never infer a recoverable tail. Pending bytes after lease/attempt ends remain incomplete; no new tail accepted once terminal.",
+    "representationLimit": "Preserve bytes of the provider-public material available from SDK, with explicit fixed JSON/UTF8 representation. SDK-decoded objects do not prove original network JSON whitespace/key formatting. No hidden/redacted thinking payload, auth or entire SDK frame is spooled."
+  },
+  "candidateLimits": {
+    "completeBodyBytes": 8388608,
+    "attemptBodyBytes": 16777216,
+    "attemptBodyCount": 256,
+    "chunkDecodedBytes": 65536,
+    "chunksPerTransportBatch": 8,
+    "transportBatchBytesMax": 2097152,
+    "transportEventsMax": 50,
+    "readerChunksMax": 4,
+    "readerDecodedBytesMax": 262144,
+    "backpressure": "One material transfer in flight per attempt; next provider material/final awaits durable completion. Bound full frame material count before accepting; upstream SDK frame allocation is outside this spool memory claim. Per-attempt retention is finite, with host worst-case multiplication by registered capacity reported rather than claiming free space reservation."
+  },
+  "durabilityAndRecovery": [
+    "Prevalidate body/aggregate/count limits; write owner-private regular file plus manifest using exclusive staging, hash/length checks, fsync file and parent, atomic publish. No symlink/arbitrary input path. Freeze event envelopes before sending; no giant pending-events JSON.",
+    "Reuse original transport pending batch and acknowledgement checks. A spool replays the same frozen batches; duplicate center events do not count twice. Lost ACK, partial write or unknown lease/fence keeps source and intent; no fresh IDs, alternate attempt or automatic model retry.",
+    "Startup recovery preserves existing current authority checks. Replay only existing frozen events; stale/completed new-tail append is refused and retained incomplete. A crash before final does not synthesize assistant-final/completed.",
+    "Final and successful completed require all announced materials sealed. Failed/cancelled ended attempt can expose interrupted material. New body events cannot follow a canonical final. Durable body seal is content-integrity evidence, not semantic/tool success.",
+    "Ordinary native activity observations remain immutable; the material/chunk tables append separate evidence. Completed manifest is immutable. Any chunk/source/digest conflict aborts the full transaction. Seal verifies the full bounded body once; no prefix aggregation on every chunk.",
+    "Body buffers never enter task snapshot/SSE: existing activity light refs stay. Explicit descriptor/chunk reader reveals body only after expansion. Existing legacy detail prefix remains readable; its historical omitted tail is unrecoverable."
+  ],
+  "proposedWriterScopes": [
+    "packages/contracts/src/native-activity-body.ts",
+    "apps/runner/src/native-activity-body",
+    "apps/runner/src/native-activity/index.ts",
+    "apps/runner/src/native-activity/mapper.test.ts",
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/claude.ts",
+    "apps/server/src/native-activity-body",
+    "plans/chat05p01-native-activity-body",
+    "docs/evidence/chat05p01"
+  ],
+  "newFiles": [
+    "apps/runner/src/native-activity-body/spool.ts",
+    "apps/runner/src/native-activity-body/transport.ts",
+    "apps/runner/src/native-activity-body/body.test.ts",
+    "apps/runner/src/native-activity-body/recovery.test.ts",
+    "apps/runner/src/native-activity-body/adapter.test.ts",
+    "apps/server/src/native-activity-body/store.ts",
+    "apps/server/src/native-activity-body/queries.ts",
+    "apps/server/src/native-activity-body/index.ts",
+    "apps/server/src/native-activity-body/body.test.ts"
+  ],
+  "sharedCoordination": [
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "change": "Import new wire schema and add optional host-owned activityBodies port; no event/batch limit change.",
+      "ledger": "Unclaimed in saved fresh snapshot; Lead coordination before writing."
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "change": "Bind optional publish port to current EventOutbox and frozen executionIdentity; recovery through existing replayPending. No terminal/unknown semantics rewrite.",
+      "ledger": "S01P07 status_read active claim 9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2: must coordinate narrow hook/handoff."
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "change": "One ingestion dispatch + final/successful completion guard using new module, same TX.",
+      "ledger": "Unclaimed in saved snapshot; proposed Lead shared hookup."
+    },
+    {
+      "path": "packages/storage/migrations/NNN-native-activity-bodies.sql",
+      "change": "Forward migration new descriptor/chunk tables keyed to native_activities; number allocated by Lead, no assumption033 is free."
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "change": "Migration before scheduler and owner route mount; shared active S01P07 scope."
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "change": "Public types export; shared active S01P07 scope."
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "change": "Transparent owner descriptor/chunk GETs with signal; shared active S01P07 scope."
+    }
+  ],
+  "validation": {
+    "firstNoPG": [
+      ">64KiB and a single SDK material >2MiB in one native frame; roundtrip bytes/full digest, UTF8 boundary and base64 chunk validation, every emitted EventBatch stays<=2MiB/50.",
+      "Original complete bytes and frozen envelopes durable before first send; fault at spool/fsync/rename/send/ACK/cleanup, replay with identical envelopes and body, bounded count/total/quota rejection.",
+      "Concurrent emit and final/steering-final cannot overtake body; explicit final guard invocation; stale/incomplete stays unknown and original files remain.",
+      "Old mapper/outbox direct consumers: legacy prefix hash/truncation unchanged, hidden/redacted thinking excluded from new body path. Injected SDK tools only, zero query.",
+      "Path regular-file/identity/symlink/corruption and failure backpressure; page descriptor never contains body."
+    ],
+    "laterOneOwnedPGWindow": [
+      "Real factory/runner HTTP with session/attempt/fence and owner auth; exact replay/restart no double count; changed chunk/sequence/digest/other attempt rejected transactionally.",
+      "Declared-limit >2MiB tool result crosses several batches, sealed full-byte digest; bounded pages reconstruct exact original; final waits complete; late-tail/new-final conflict rejected.",
+      "Owner lightweight view/SSE contain references only; expanded chunk pages bounded; old historical prefix returned as legacy without invented bytes. Random marked DB/checkpoint/finite connections/owned cleanup per current approved method."
+    ],
+    "notClaimed": [
+      "No browser/UI integration, real provider run, hidden reasoning capture, attachment lifecycle or second scheduler",
+      "No blanket crash/disk durability claim until relevant failure cases prove exact boundary",
+      "No PG tests run during this design step"
+    ]
+  },
+  "sourceBindings": [
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7285,
+      "sha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465"
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "bytes": 4127,
+      "sha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "bytes": 8230,
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4"
+    },
+    {
+      "path": "apps/server/src/native-activity/index.ts",
+      "bytes": 1459,
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "path": "apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    }
+  ],
+  "activity": {
+    "projectWrites": 0,
+    "claimMutations": 0,
+    "imports": 0,
+    "tests": 0,
+    "PGProduct": 0,
+    "provider": 0,
+    "install": 0
+  }
+}

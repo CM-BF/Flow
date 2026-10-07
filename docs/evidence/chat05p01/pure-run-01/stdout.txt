@@ -1,0 +1,22 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body
+
+ ❯ apps/runner/src/native-activity-body/body.test.ts (9 tests | 1 failed) 11334ms
+   × durably freezes a >2MiB material before first send and transmits every byte under the unchanged batch cap 11145ms
+   ✓ recovers lost ACK with only the original frozen IDs, body and owner fence 49ms
+   ✓ keeps later completion behind the last material ACK 29ms
+   ✓ deduplicates a confirmed source and rejects changed bytes under that source identity 33ms
+   ✓ retains corrupt complete material and does not send a guessed recovery 20ms
+   ✓ retains incomplete staging and symlink material as unknown 20ms
+   ✓ does not recover a body across a rejected owner fence or erase its source 23ms
+   ✓ rejects oversized body or mutated prefix before allocating durable job envelopes 8ms
+   ✓ keeps empty material explicit and still rejects an oversized legacy single batch 6ms
+ ✓ apps/runner/src/native-activity/mapper.test.ts (7 tests) 43ms
+ ✓ apps/runner/src/outbox.test.ts (4 tests) 15ms
+ ✓ apps/server/src/native-activity-body/codec.test.ts (2 tests) 4ms
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  1 failed | 21 passed (22)
+   Start at  15:29:10
+   Duration  12.30s (transform 205ms, setup 0ms, import 552ms, tests 11.39s, environment 0ms)
+

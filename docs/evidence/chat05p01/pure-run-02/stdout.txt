@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body
+
+stdout | apps/runner/src/native-activity-body/body.test.ts > durably freezes a >2MiB material before first send and transmits every byte under the unchanged batch cap
+{"case":"large-material","bytes":2097275,"batches":5,"events":36,"maxBatchBytes":702184}
+
+ ✓ apps/runner/src/native-activity-body/body.test.ts (9 tests | 8 skipped) 108ms
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 8 skipped (9)
+   Start at  15:29:56
+   Duration  464ms (transform 170ms, setup 0ms, import 271ms, tests 108ms, environment 0ms)
+

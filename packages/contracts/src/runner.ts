@@ -7,6 +7,7 @@ import { assistantStreamDataSchema, assistantStreamMarkerSchema } from './assist
 import { claudeAssistantFinalDataSchema, codexAssistantFinalDataSchema } from './assistant.js';
 import { contextObservationEventSchema } from './context-observation-event.js';
 import { nativeActivityDataSchema } from './native-activity.js';
+import { nativeActivityBodyEventSchema, type NativeActivityBodyPublisher } from './native-activity-body.js';
 import { nativeEngineeringVerificationDataSchema } from './engineering-native.js';
 import { engineeringVerificationDataSchema } from './engineering.js';
 import { harnessSchema, idSchema, MAX_DETAIL_BYTES, MAX_BATCH_BYTES, type DecisionAnswer, type TaskSubmission, type AttemptView, type HarnessName } from './tasks.js';
@@ -48,6 +49,11 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   assistantStreamDataSchema.safeExtend(envelope),
   assistantStreamMarkerSchema.extend(envelope),
   nativeActivityDataSchema.safeExtend(envelope),
+  z.discriminatedUnion('action', [
+    nativeActivityBodyEventSchema.options[0].extend(envelope),
+    nativeActivityBodyEventSchema.options[1].extend(envelope),
+    nativeActivityBodyEventSchema.options[2].extend(envelope),
+  ]),
   contextObservationEventSchema,
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
@@ -80,6 +86,8 @@ export interface HarnessExecutionIdentity {
 }
 
 export interface HarnessContext {
+  /** Explicit compatible-center host opt-in; absent retains legacy prefixes. */
+  activityBodies?: NativeActivityBodyPublisher;
   readonly executionIdentity?: HarnessExecutionIdentity;
   steering?: ActiveSteeringPort;
   task: TaskSubmission;

@@ -1,0 +1,21 @@
+apps/runner/src/native-activity-body/body.test.ts(36,67): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(36,104): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(37,54): error TS18046: 'chunk' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(40,58): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(57,48): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(57,84): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(57,97): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(58,33): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(58,70): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(97,36): error TS18046: 'e' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(97,68): error TS18046: 'e' is of type 'unknown'.
+apps/runner/src/native-activity-body/body.test.ts(97,77): error TS18046: 'e' is of type 'unknown'.
+apps/runner/src/outbox.ts(52,51): error TS18046: 'event' is of type 'unknown'.
+apps/runner/src/outbox.ts(52,91): error TS2339: Property 'sequence' does not exist on type '{}'.
+apps/runner/src/outbox.ts(122,62): error TS2339: Property 'sequence' does not exist on type '{}'.
+apps/server/src/native-activity-body/store.ts(38,62): error TS18048: 'observation' is possibly 'undefined'.
+apps/server/src/tasks.ts(6,29): error TS2307: Cannot find module 'pg-boss' or its corresponding type declarations.
+apps/server/src/tasks.ts(46,76): error TS7006: Parameter 'text' implicitly has an 'any' type.
+apps/server/src/tasks.ts(46,82): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(52,34): error TS2345: Argument of type '(ZodObject<{ action: ZodLiteral<"chunk">; index: ZodNumber; offset: ZodNumber; bytes: ZodNumber; sha256: ZodString; base64: ZodString; ... 5 more ...; sequence: ZodNumber; }, $strict> | ZodObject<...> | ZodObject<...>)[]' is not assignable to parameter of type 'readonly [$ZodTypeDiscriminable<string>, ...$ZodTypeDiscriminable<string>[]]'.
+  Source provides no match for required element at position 0 in target.

@@ -45,3 +45,18 @@ it('bounds UTF-8 details with honest full-content digest and truncation metadata
   expect(Buffer.byteLength(body!.content)).toBeLessThanOrEqual(MAX_ACTIVITY_DETAIL_BYTES);
   expect(body!.content).not.toContain('�'); expect(body?.sha256).toBe(createHash('sha256').update(text).digest('hex'));
 });
+
+it('opt-in retains complete >2MiB public tool material while the legacy prefix remains byte-identical', async()=>{
+  const {nativeActivityObservations}=await import('./index.js');
+  const input=assistant([{type:'tool_use',id:'large',name:'Read',input:{text:'🌱'.repeat(550_000)}}]);
+  const legacy=mapNativeActivity(input,'session'),observed=[...nativeActivityObservations(input,'session',true)];
+  expect(observed.map(item=>item.activity)).toEqual(legacy);
+  expect(observed[0]!.material!.content.byteLength).toBeGreaterThan(2*1024*1024);
+  expect(createHash('sha256').update(observed[0]!.material!.content).digest('hex')).toBe(legacy[0]!.body!.sha256);
+  expect([...nativeActivityObservations(input,'session')][0]!.material).toBeUndefined();
+});
+it('never offers hidden/redacted reasoning or text frames to the tool material port',async()=>{
+  const {nativeActivityObservations}=await import('./index.js');
+  const entries=[...nativeActivityObservations(assistant([{type:'thinking',thinking:'public',signature:'PRIVATE'},{type:'redacted_thinking',data:'PRIVATE'},{type:'text',text:'public'}]),'session',true)];
+  expect(entries.every(entry=>entry.material===undefined)).toBe(true);expect(JSON.stringify(entries)).not.toContain('PRIVATE');
+});
