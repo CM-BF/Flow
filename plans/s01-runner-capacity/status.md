@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:42:50.435Z |
+| 最近更新 | 2026-10-07T15:50:10.137Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -22,13 +22,13 @@
 | 实现目标 | 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff |
 | 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 减少观察数据打包时的重复编码，直接行为与字节边界检查已完成；原失败及修复记录保留。 |
-| 下一可用交付 | 独立审查这次局部优化与检查结果，再安排有依据的后续对照。 |
-| 当前阻塞 | ACTIVE: 本局部源码与结果待独立审查；没有新的性能窗口授权。 |
+| 当前产出 | 局部打包优化已独审通过，正在准备同一信息与发送策略的前后对照，避免把聚合差异误作算法收益。 |
+| 下一可用交付 | 固定旧新打包四侧顺序与相同输入，完成编译和有限调度检查；实际测量另行安排。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING 当前packing源码/局部结果；旧32cb actual15:23:32已独审APPROVED，边界独立。 |
+| Review | 前片e488于15:44:49 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2；本ABBA准备待独审。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:39:40Z后fresh身份一致，review期保留。 |
 | 架构影响 | 仅现私有pg-delivery Module内部chunk构造；Interface/record/SQL聚合/消费者/最终完整envelope校验不变。旧生成JS属于历史actual，不以新TS替换。 |
 
@@ -282,3 +282,9 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 2026-10-07T15:35:56.672Z 安全checkpoint：本次只有owner状态形状解析（非工程测试），主线parser blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4返回errors=[]/human.missing=[]，父FLOW-001/co-lead mika正确，原任务开工UNKNOWN为唯一timing提示。未请求snapshot/声称新HEAD已聚合。工程child0/raw0/TMP0，manager drain仍阻新launch；本源片SOURCE_READY/VALIDATION_PENDING，不将此停止点当完整任务完成。
 
 2026-10-07T15:42:50.435Z 普通actual RETURN：15:41:12.861Z首child→15:41:49.291Z末child，共4串行/监督2589ms/raw3836B，组absent/MERGED EOF/四TMP同identity有界计量后清除且精确ENOENT，已即时归还Mika ordinary。首direct17/18红为fixture507B低于最小512，延长允许epoch后原断言1/1，strict两次0；18distinct分轮，不拼成最终全跑。产品自11ab固定未变，旧actual/compiled/raw保持；本段未跑PG/replay/provider。编码量测试221718B计长工作/111104B输出仅验证算法工作量界，不证明CPU/延迟改善；没有旧实现新baseline。总新source/metadata/raw低于2MiB，末TMP样本350/0/326/0B不冒峰值。
+
+## 2026-10-07T15:50:10.137Z 同policy packing ABBA准备
+
+新独立段15:47:10Z开始→16:02:10Z截止，不延旧段。fresh508fv3/exact6/e488 clean；[前片独审](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json)已归档。四个串行worker计划old→new→new→old，均buffered、同2048trace/64×32节奏/完整receiver；仅worker pg-delivery.js不同，旧其余五JS精确复用且原目录不改。parent arm只export并允许固定workerFile，新薄ABBA coordinator复用原生命周期/接收逻辑；不复制监督器。
+
+本段仅source+strict emit/五个有限调度pure例，最多3child/每30s/累计60s/new16MiB；最新ordinary floor至少15,927,017,472B或更高，已含本段一次。0PG/HTTP/replay/Chrome/provider/安装，未来actual60s/临时raw8MiB只是NOT_OPEN候选。源/编译/输入固定后一次独审，旧actual/compiled/KEEP保持。

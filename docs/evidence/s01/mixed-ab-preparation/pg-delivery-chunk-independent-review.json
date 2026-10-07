@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T15:44:49Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "packet": "e4883856fbb054a1965c8b79b593bb225740d38f",
+  "source": "75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff",
+  "product": "11abf474fdb7c25cef2ebdc0135da1d0c0bcf5cf",
+  "manifestSha256": "bc22887a703c10bcb92ae713dd88901716669274c35cbea1741429485b8bd9bf",
+  "bindings": 16,
+  "bytes": 144448,
+  "result": "18 distinct in rounds, fixture failure preserved, strict0; 4 closed groups and raw3836B. No actual replay or CPU improvement conclusion.",
+  "sourceOfReceipt": "root handoff explicitly carrying formal db result; old raw and manifest unchanged"
+}

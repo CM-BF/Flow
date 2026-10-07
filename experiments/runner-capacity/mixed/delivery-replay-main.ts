@@ -13,7 +13,7 @@ const FILE = fileURLToPath(import.meta.url);
 const TRANSPORT = Object.freeze({ ...CONTRACT, softBytes: 4 * 1024 * 1024, totalBytes: 4 * 1024 * 1024,
   responseBytes: DELIVERY_ENVELOPE_BYTES, ipcPendingBytes: 1024 * 1024 });
 const faultCode = (error: unknown) => error instanceof Error ? error.message.split('\n')[0]?.slice(0, 160) ?? 'unknown' : 'unknown';
-function loadTrace(path: string, hash: string) {
+export function loadTrace(path: string, hash: string) {
   const fd = openSync(path, constants.O_RDONLY | constants.O_NOFOLLOW);
   try { const st = fstatSync(fd); assert(st.isFile() && st.size <= 2 * 1024 * 1024, 'trace_file'); return decodeReplayTrace(readFileSync(fd), hash); }
   finally { closeSync(fd); }
@@ -70,9 +70,9 @@ function workerEnvironment() {
     NODE_DISABLE_COMPILE_CACHE: '1' };
 }
 
-async function arm(mode: DeliveryInput['mode'], path: string, hash: string, trace: ReplayTrace) {
+export async function arm(mode: DeliveryInput['mode'], path: string, hash: string, trace: ReplayTrace, workerFile = FILE) {
   const started = performance.now(); const receipt = replayReceiver(trace, mode);
-  const child = fork(FILE, ['--worker', mode, path, hash], { execPath: process.execPath, execArgv: [],
+  const child = fork(workerFile, ['--worker', mode, path, hash], { execPath: process.execPath, execArgv: [],
     env: workerEnvironment(), stdio: ['ignore', 'pipe', 'pipe', 'ipc'] });
   let failure: string | null = null; let readySeen = false; let result: RecordValue | null = null;
   let firstMessageMs: number | null = null; let summaryMs: number | null = null; let resultMs: number | null = null;
