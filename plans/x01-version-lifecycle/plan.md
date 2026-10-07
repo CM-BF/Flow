@@ -6,7 +6,7 @@
 
 - [x] X01LIFE-01 固定材料、真实 phase gate 与有限准备输入。
 - [x] X01LIFE-02 专用单case源码、focused types 与 collect，独立只读准备审。
-- [ ] X01LIFE-03 新独立PG窗口实际A/B/C与资源闭合；未OPEN不运行。
+- [x] X01LIFE-03 新独立PG窗口实际A/B/C与资源闭合；未OPEN不运行。
 - [ ] X01LIFE-04 固定实际结果独审、主线接收与完整边界登记。
 
 A由生产 runRunner 执行，transport委托真实pluginRunner，load ACK返回前受控Promise gate暂停。已持有attempt且load授权有真实DB回执；尚未invoke，不称工具函数已运行中。切B时注册增revision，select清空config/grants，显式configure、grant、enable。B完成后恢复A，A必须继续使用原材料/配置/pin。回滚选择A后重复配置授权启用，新C绑定A。保存A事件前缀，后续只可追加；旧binding逐字不变。禁用挡新admit，撤tool挡新的phase授权；原大task工具实际执行中版本切换缺口仍开放，不以本片勾全X01-04。

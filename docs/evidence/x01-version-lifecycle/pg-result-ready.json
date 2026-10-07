@@ -1,0 +1,30 @@
+{
+  "resultCommit": "f09fd4a7db3f2fc62da6e2681b64f12dd7d1c024",
+  "executionHead": "9f447b8f7a3e444b70efeb12ff9b1d082d1f5b45",
+  "source": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "manifest": "docs/evidence/x01-version-lifecycle/pg-output-manifest.json",
+  "manifestSha256": "542ecc692a9ab38552fac2a1e0f6ea36aa7c848d8f874afc2b9867c586ad524d",
+  "inputManifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "rawCount": 12,
+  "rawBytes": 24608,
+  "selection": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "http": {
+    "center": 100,
+    "centerPayloadBytes": 62736,
+    "registry": 4,
+    "tarDownloads": 2
+  },
+  "closedAt": "2026-10-07T11:34:25.533528Z",
+  "tmpExactAbsentAt": "2026-10-07T11:34:41.853508Z",
+  "reviewScope": "actual result fidelity, original source/input unchanged, admission/counters/time/resource boundaries; no new test execution or old KEEP access",
+  "limits": [
+    "A active before module load/invoke, not tool-function-in-flight upgrade",
+    "same upstream semver7.8.5 two Flow wrappers",
+    "public runRunner in process, not OS runner or model",
+    "no main intake or whole X01 approval"
+  ]
+}
