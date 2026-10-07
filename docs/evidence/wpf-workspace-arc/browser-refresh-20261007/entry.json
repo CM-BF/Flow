@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T21:06:54.437128+00:00",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "preparedFromCleanHead": "0e2fef15fd2d10eada086614fc5a4b95d18048b3",
+  "packet": "/private/tmp/arc-browser-7e911-xdme2rv7",
+  "binding": {
+    "path": "/private/tmp/arc-browser-7e911-xdme2rv7/binding.json",
+    "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/binding.json",
+    "bytes": 145780,
+    "sha256": "20840e2b0e3c1b2ffd22e571095e1d3d5b0412fac876bb044cea1c8f7da60210"
+  },
+  "finalManifest": "External packet manifest.json finalized once grant-template binds post-seal clean metadata HEAD; returned with final receipt, avoiding recursive Git hash",
+  "callers": [
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+        "bytes": 8351,
+        "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/capture.py",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/capture.py",
+        "bytes": 8351,
+        "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+      },
+      "byteIdentical": true
+    },
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+        "bytes": 10087,
+        "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/run.py",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/run.py",
+        "bytes": 10087,
+        "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+      },
+      "byteIdentical": true
+    },
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+        "bytes": 5014,
+        "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/worker.mjs",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/worker.mjs",
+        "bytes": 5014,
+        "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+      },
+      "byteIdentical": true
+    }
+  ],
+  "state": "PREPARED_NOT_GRANTED",
+  "groups": [
+    "layout-navigation",
+    "three-pane-reads",
+    "prepare-await-stable",
+    "refresh-theme"
+  ],
+  "budgets": {
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1,
+    "PNG": 2
+  },
+  "rootFIFOReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-refresh-20261007/root-arc-fifo-boundary-preparation-review-20261007.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-refresh-20261007/root-arc-fifo-boundary-preparation-review-20261007.json",
+    "bytes": 4241,
+    "sha256": "11e317b7ca60e113107afe4f544e7b62c78100f6a8d2df34b23a23fee3d40888"
+  }
+}

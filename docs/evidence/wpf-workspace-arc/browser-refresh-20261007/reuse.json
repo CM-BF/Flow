@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-07T21:06:54.437128+00:00",
+  "oldPacket": "/private/tmp/arc-runtime-preparation-0xrqtd0l",
+  "oldManifest": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "bytes": 6833,
+    "sha256": "7e4be770c3ffcaa059297ef368e79b68647bfd888c18172000b4f51302b18382"
+  },
+  "oldBinding": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "bytes": 145780,
+    "sha256": "d3a966fa23785bce73676af01050a53ba2dca19ce3faba7e46e14940d5d308e3"
+  },
+  "sourceBefore": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "sourceAfter": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "changedSource": [
+    {
+      "relative": "apps/web/test/conversation-stream-integration.test.ts",
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "bytes": 15237,
+        "sha256": "c408119608d89475ef98acf1ac37d27d4eec646cc24dfc4a756145e89efc8df2",
+        "gitPath": "apps/web/test/conversation-stream-integration.test.ts",
+        "blob": "07b58d3d07df22c7c2761421fc13b41733756490"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "bytes": 19433,
+        "sha256": "3c65cda68939996c9533796665f6edb25a66828bad6f0ae8765749f492c3ec7d",
+        "gitPath": "apps/web/test/conversation-stream-integration.test.ts",
+        "blob": "0eb6f3b734265d320373e22d6fa3ee5c59dee491"
+      }
+    }
+  ],
+  "sourceCount": 207,
+  "unchangedSourceCount": 206,
+  "externalPinsUnchanged": 43,
+  "resolverLinksUnchanged": 33,
+  "HTTPToolsUnchanged": 4,
+  "callers": [
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+        "bytes": 8351,
+        "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/capture.py",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/capture.py",
+        "bytes": 8351,
+        "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+      },
+      "byteIdentical": true
+    },
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+        "bytes": 10087,
+        "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/run.py",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/run.py",
+        "bytes": 10087,
+        "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+      },
+      "byteIdentical": true
+    },
+    {
+      "old": {
+        "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+        "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+        "bytes": 5014,
+        "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+      },
+      "new": {
+        "path": "/private/tmp/arc-browser-7e911-xdme2rv7/worker.mjs",
+        "realpath": "/private/tmp/arc-browser-7e911-xdme2rv7/worker.mjs",
+        "bytes": 5014,
+        "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+      },
+      "byteIdentical": true
+    }
+  ],
+  "dataChanges": [
+    "source/preparedHead provenance",
+    "one test pin",
+    "new private packet namespace",
+    "candidate minimumFreeBytes; manager fresh sum still required",
+    "new unconsumed proposal phase and final clean executionHead in grant-template after metadata seal"
+  ],
+  "requiredGroupsUnchanged": [
+    "layout-navigation",
+    "three-pane-reads",
+    "prepare-await-stable",
+    "refresh-theme"
+  ],
+  "sameLimits": {
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1,
+    "PNG": 2
+  },
+  "grant": false,
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-refresh-20261007/root-arc-fifo-boundary-preparation-review-20261007.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-refresh-20261007/root-arc-fifo-boundary-preparation-review-20261007.json",
+    "bytes": 4241,
+    "sha256": "11e317b7ca60e113107afe4f544e7b62c78100f6a8d2df34b23a23fee3d40888"
+  },
+  "limitations": [
+    "Two independent HTTP FAIL phases remain separate; no combined PASS",
+    "Browser four groups never run; root source/preparation approval does not authorize runtime",
+    "No new all-source/external physical scan in metadata-only refresh; fresh actual must verify all fixed inputs",
+    "Old7097 packet and raw preserved unchanged"
+  ]
+}

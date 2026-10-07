@@ -21,3 +21,5 @@ Current source `7097c4d1cc429ee87e507a2210f2e9cceac99b56` (one browser file delt
 2026-10-07T20:50:23.889173Z：第二HTTP原件见[manifest](http-second-20261007/manifest.json)：修后hiddenPASS/backlogFAIL，2652CLOSED。source仍fe7，0额外runtime，当前整体FAILED/待根actual与归因。
 
 2026-10-07T20:54:44.938055Z：当前source 7e911df40d8c0ff875ac96e0fab36a1a3a253940 与[batch-boundary入口](http-fifo-boundary-20261007/entry.json)待集中审；仅test改变，两个原FAIL不改写。修后type0不是HTTPPASS，第三候选无grant。
+
+2026-10-07T21:06:54.437128+00:00：7e911 root11e317限定源码与local/caller准备批准归档于browser-refresh-20261007；原browser四组选定/双图/生命周期不变，本次新包仅source/test1pin/HEAD/路径/floor数据差量。HTTP两FAIL与browserNOT_RUN保持。

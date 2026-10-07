@@ -15,3 +15,5 @@
 2026-10-07T20:50:23.889173Z：clean-code实际检查本次错误与结果分层：原两case独立fixture，afterEach与组收尾无错误；childexit1/selectedFAIL不包装成产品唯一缺陷。提出eligibility与inflight的最窄证据缺口，不加新framework/不改源码/不重复绿。
 
 2026-10-07T20:54:44.938055Z：clean-code实际复核：barrier只1–2peer，cursor可选过滤为原真实响应，单一releaseTask负责恢复原end/原bytes且幂等，finally清理；测试以明确occupancy界定waiting，布局/调度产品不改；避免以全局round同步制造错误职责。trace≤48 publicrows+4indices无secret/body，noEmit0/3362；旧假设仍不冒actual根因。
+
+2026-10-07T21:06:54.437128+00:00：clean-code实际检查：仅1个既有test执行pin更新、metadata provenance与运行grant分离；3caller逐字复用，不复制历史raw、不增加supervisor/无产品改动；真实全输入/容量验证留实际准入，未冒静态physical全扫描。

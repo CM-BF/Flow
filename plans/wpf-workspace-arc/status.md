@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:54:44.938055Z；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:06:54.437128+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
-| 工作树dirty状态 | 本次正常seal后全20 STOP保claim；0child/无HTTP或browsergrant |
+| 工作树dirty状态 | 本8min/2MiB刷新已完成；本次seal后全20 STOP保claim，0工程child/无HTTP或browsergrant |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | FAILED fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；修后HTTP1PASS/1FAIL/11未选，2652ms；两轮分别保留，browser4 NOT_RUN |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | IN_PROGRESS 7e911df40d8c0ff875ac96e0fab36a1a3a253940；新test验收语义/原caller例行绑定待集中审，旧7b962与两个actual层级保留 |
+| Review | APPROVED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；root11e317限定FIFO source/local/caller准备；browser数据绑定更新待审、actual NOT_RUN，两HTTP FAIL保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -61,3 +61,5 @@
 2026-10-07T20:50:23.889173Z：第二原件已[归档](../../docs/evidence/wpf-workspace-arc/http-second-20261007/manifest.json)，当前全20scope STOP保claim；root7b962源批准保留。两轮HTTP均整体FAIL，旧3408与新2652均单独CLOSED。不存在第三NEXT或browsergrant。
 
 2026-10-07T20:54:44.938055Z：原10min/4MiB source段固定7e911，只改test39+/20-。不是已证productbug修复；明确修正全peer锁步谓词为真实waiting FIFO优先，增加≤48公共请求trace。新changed types3362/20000 CLOSED/未用16638不转，PID/PGID82919与scratch精确归还。新独立HTTP30候选[入口](../../docs/evidence/wpf-workspace-arc/http-fifo-boundary-20261007/entry.json)，无第三actualgrant/browsergrant。
+
+2026-10-07T21:06:54.437128+00:00：正常fresh c34d v1 exact20/overlap[]、0e2f clean后刷新browser候选；207源仅原HTTP test一pin更新、43external/33resolver复用、三caller逐字不变。新包见[entry](../../docs/evidence/wpf-workspace-arc/browser-refresh-20261007/entry.json)，90=60work30cleanup、0PG/2HTTP/1Chrome、256MiBscratch/8MiBraw、原四组/双图均未运行。root11e317源码准备批准已归档，Q01持有PG且本段不占NEXT。

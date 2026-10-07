@@ -1,0 +1,79 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "peerReviewer": "w01_owner / gpt-6-astra ultra, independent read-only source review returned in collaboration",
+  "at": "2026-10-07T20:58:24.869247+00:00",
+  "decision": "APPROVED_FIFO_ACCEPTANCE_CORRECTION_LOCAL_TYPES_AND_UNCHANGED_CALLER_PREPARATION",
+  "blockingP1P2": 0,
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "metadataHead": "0e2fef15fd2d10eada086614fc5a4b95d18048b3",
+  "branch": "codex/web-workspace-composition",
+  "cleanAndTrackingRemoteEqual": true,
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 exact20 retained",
+  "manifest": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/manifest.json",
+    "bytes": 2342,
+    "sha256": "25cd96573b22538cc1c580f4054cc85792d08083e1b74d349efbdeb49e841bb5"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/binding.json",
+    "bytes": 145776,
+    "sha256": "e8b44afe24b98f3a1731fb51ecc9d89dd648f61846208c69b6804fa112eaa167"
+  },
+  "caller": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "checks": {
+    "manifestFiles": 8,
+    "manifestBytes": 157792,
+    "errors": [],
+    "sourcePins": 207,
+    "onlyChangedSource": "apps/web/test/conversation-stream-integration.test.ts",
+    "externalEntryPinsUnchanged": 43,
+    "resolverLinksUnchanged": 33,
+    "httpToolsVerified": 4,
+    "callerAndSelection": "byte-identical 8c0179 / same two cases",
+    "sandboxChange": "own fresh output path only"
+  },
+  "acceptanceCorrection": [
+    "Explicitly withdraw the global all-peers-second-before-any-third assumption: work-conserving FIFO protects eligible waiters, not lockstep with still-inflight peers. This is a explained test-oracle correction, not hiding or overwriting prior actual failures.",
+    "Real A/B fourth response bodies at cursor72 hold both leases; visible C executes its queued microtask before release. Releasing A admits C while A cannot reacquire; releasing B admits already-waiting A.",
+    "With other leases held, C finishes its first complete batch and yields to B; A completes its next batch and yields to queued C. These repeated boundaries test actual waiters, rather than all peers regardless of eligibility.",
+    "Original HTTP end/body/status/headers remain intact. Peer independently checked four-page projection/host loading/queueMicrotask ordering and fixture inflight-close semantics.",
+    "All three actual final79 contents, eleven per-task page cursors, peak<=2 and4MiB cache assertions remain. Finally emits<=48 real request entries plus boundary indices/omitted count; it is a release-time trace, not a substitute for final resource RETURN."
+  ],
+  "local": {
+    "segment": {
+      "path": "/private/tmp/arc-fifo-boundary-local-uummjeb9/segment.json",
+      "bytes": 3575,
+      "sha256": "0e1342f0d6e120a7957547c07e49bf4173ac9a40b591280c76fed692ff8da25a"
+    },
+    "cleanup": {
+      "path": "/private/tmp/arc-fifo-boundary-local-uummjeb9/post-cleanup.json",
+      "bytes": 171,
+      "sha256": "4700c9d530392e9b894848c26a0dec956e8384c7b238048a062e445281db3eff"
+    },
+    "actualExit": 0,
+    "chargedMs": 3362,
+    "allocatedMs": 20000,
+    "logBytes": 0,
+    "exactPIDAndGroup82919": "ESRCH in owner receipt, scratch absent",
+    "phase": "CLOSED",
+    "unusedNotTransferred": true
+  },
+  "history": "First3408ms and second2652ms HTTP each1PASS1FAIL remain separate CLOSED results; cannot combine into overall PASS. No product defect root cause has been established.",
+  "newCandidate": {
+    "state": "PREPARED_NOT_RUN_NOT_GRANTED",
+    "totalMs": 30000,
+    "workMs": 20000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576,
+    "Chrome": 0,
+    "PG": 0,
+    "needs": "fresh manager complete floor/clean execution HEAD/current candidate grant; personal restoration priority; no automatic retry"
+  },
+  "cleanCode": "Focused test barrier and bounded diagnostic trace reuse existing real fixture; no product authority, new framework or duplicate runtime supervisor. Source/local approval is scoped; actual FIFO/hidden result remains NOT_RUN.",
+  "rootOrPeerRuntimeChecks": 0
+}
