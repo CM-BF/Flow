@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:01:09.501594+00:00 |
+| 最近更新时间 | 2026-10-07T08:04:20Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,10 +15,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，元数据封存后clean |
+| 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，输入闭包与准备结果已封存，当前提交后clean |
 | 工作分支状态 | review |
 | 检查状态 | PG准备focusedtypes0/list5（0hooks/0case执行/0PG），2组与TMP全闭合；原19/9/3不重跑 |
-| Review | 来源六源已07:52:01独审APPROVED/READY；五组PG准备待独审，actual NOT_OPEN |
+| Review | 来源六源已07:52:01独审APPROVED/READY；[五组PG准备](../../docs/evidence/x01/artifact-pg-review-ready.md)待独审，actual NOT_OPEN |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
 | 实现目标 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 |
 | 实现范围 | apps/server/src/plugin-runtime/artifact-pg.test.ts, docs/evidence/x01/artifact-pg-once.py, docs/evidence/x01/artifact-pg-local.py, docs/evidence/x01/artifact-pg-input.json, docs/evidence/x01/artifact-pg-tsconfig.json, docs/evidence/x01/artifact-pg-vitest.config.mjs |
@@ -35,7 +35,7 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；受控主线接收/完整生产任务与升级身份仍开放 |
+| X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；完整生产任务与上游升级身份仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
 | X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链/升级/三端仍未完成 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v13为32scope，server/index已v12停止并交回；新增semver fixture/test，仍保留5个claim/journal及7个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v17为43scope，server/index已v12停止并交回；semver与pinning已main，新增来源事务五组fixture及既有来源接缝，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -297,3 +297,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:57:06.081085+00:00：来源正式[独审](../../docs/evidence/x01/artifact-provenance-independent-review.json)与[六源独立intake](../../docs/evidence/x01/artifact-provenance-integration-ready.json)READY，禁止整文件覆盖当前main native-body/Codex；需主线直接组合检查。07:55:01.176Z原子amend v17后新增5组PG源码，0actualPG，无预占。
 
 2026-10-07T08:01:09.501594+00:00：主线5b0bef86 [精确回执](../../docs/evidence/x01/semver-main-receipt.json)8产品/fixture bindings零错，semver与pinning已接收不扩为provenance/main生产链。PG新准备从07:53:37累计，07:57安全停点/07:58恢复没有重置；2child types0/list5/0hooks，07:59:02.436182Z实际归还local，raw29B/两组ownedabsent/EOF/TMP同inode删除。原source/旧raw不动，0PG实际，等待固定准备独审+实际holder交接。
+
+2026-10-07T08:04:20Z：五组来源事务准备固定source376954ac/result581cb9c1；[唯一交审入口](../../docs/evidence/x01/artifact-pg-review-ready.md)绑定264文件/1326129B、31SQL、27external/21links。两次准备检查已消费，types0/list5不等case通过；实际PG未开，run不存在，无窗口预占。原07:53:37段不重置；formal provenance六源READY保持；semver/pinning主线5b0bef收据已核，不重跑9/3。当前本组local由LAZY归还但本owner不新增检查。
