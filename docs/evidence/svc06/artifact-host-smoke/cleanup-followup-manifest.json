@@ -1,0 +1,32 @@
+{
+  "preparedAt": "2026-10-07T04:13:30.904118+00:00",
+  "source": "f46a29ae26ebeb616343f95de68f8f967c8c8674",
+  "approval": "Execution Lead 2026-10-07 same-thread one-shot cleanup; fixed entry/input reviewed, supervisor explicitly childPidOnly",
+  "entryBindings": [
+    {
+      "path": "cleanup-followup.mjs",
+      "bytes": 10293,
+      "sha256": "695605db12184faf2bf890eee8c8f9fe8c2717c237f32d349f79761049337f32"
+    },
+    {
+      "path": "cleanup-followup-supervise.py",
+      "bytes": 2574,
+      "sha256": "6c708f8e570d8c92498385feb49390d54f870917b1f24fd65dd0e3509d5b78eb"
+    },
+    {
+      "path": "cleanup-followup-inputs.json",
+      "bytes": 3455,
+      "sha256": "f1bc6bc6e6f873c442c9933eb5ee7753a9037b2c72d36cf649073dcfff4b9e85"
+    },
+    {
+      "path": "CLEANUP-FOLLOWUP.md",
+      "bytes": 2737,
+      "sha256": "8cc8fe77ef5b6bc2f1616c461f6276e657bf722db85f918d5ac6abf9dab81a79"
+    }
+  ],
+  "originalFailureManifest": {
+    "path": "result-manifest.json",
+    "sha256": "989fcba03ca807764f9edffaee46eb7cf07cdffb3a5010935556f83e13b0783c"
+  },
+  "actualExecution": "NOT_RUN"
+}
