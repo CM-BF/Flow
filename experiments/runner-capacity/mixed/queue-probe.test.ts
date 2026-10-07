@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+import type { ConversationAssistantReply } from '../../../packages/contracts/src/conversations.js';
 import { expect, test } from 'vitest';
 import { ComparisonBudget } from './ab-budget.js';
 import { QUEUE_PROBE, queueContract } from './queue-probe.js';
@@ -19,15 +21,48 @@ test('queue policy pins one production baseline and charges 129 per side without
   expect(() => budget.submit()).toThrow();
 });
 
+function completedChatReply() {
+  const content = 'c'.repeat(1024), version = createHash('sha256').update(content).digest('hex');
+  const chat: ChatProbe = { conversationId: 'chat', turnId: 'turn', taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1, content, version, sessionId: 'session', detailId: 'detail' };
+  // Full DTO returned by fixed 4fdd conversations/replies.ts legacyReply, including reference identity.
+  const assistant = { state: 'available', role: 'assistant', messageId: 'artifact:detail', text: content, truncated: false,
+    contentRef: { kind: 'artifact', id: 'detail', title: 'Synthetic chat reply', taskId: 'task', attemptId: 'attempt' },
+    source: { kind: 'adapter-final-artifact', adapterVersion: 'claude-sdk-0.3.290-v1', taskId: 'task', attemptId: 'attempt', artifactId: 'result', artifactVersion: version, detailId: 'detail' },
+  } satisfies ConversationAssistantReply;
+  return { chat, turn: { id: 'turn', conversationId: 'chat', task: { id: 'task' }, assistant } };
+}
+
 test('real conversation lightweight shapes must contain the completed same-task assistant body', () => {
-  const chat: ChatProbe = { conversationId: 'chat', turnId: 'turn', taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1, content: 'c'.repeat(1024), version: 'digest', sessionId: 'session' };
-  const turn = { id: 'turn', task: { id: 'task' }, assistant: { state: 'available', text: chat.content, truncated: false, source: { taskId: 'task', attemptId: 'attempt', artifactVersion: 'digest' } } };
+  const { chat, turn } = completedChatReply(), conversation = { id: chat.conversationId };
   expect(chatReadPath(chat, 0)).toBe('/api/conversations/chat');
   expect(chatReadPath(chat, 1)).toBe('/api/conversations/chat/turns?after=0&limit=20');
-  validateChatRead(chat, { conversation: { id: 'chat' }, lastTurn: turn }, false);
-  validateChatRead(chat, { turns: [turn] }, true);
-  expect(() => validateChatRead(chat, { turns: [{ ...turn, assistant: { ...turn.assistant, text: 'telemetry' } }] }, true)).toThrow();
-  expect(() => validateChatRead(chat, { turns: [turn, turn] }, true)).toThrow();
+  expect(validateChatRead(chat, { conversation, lastTurn: turn }, false)).toBe(chat.detailId);
+  expect(validateChatRead({ ...chat, detailId: undefined }, { conversation, turns: [turn] }, true)).toBe(chat.detailId);
+  expect(() => validateChatRead(chat, { conversation, turns: [{ ...turn, assistant: { ...turn.assistant, text: 'telemetry' } }] }, true)).toThrow();
+  expect(() => validateChatRead({ ...chat, version: 'invalid' }, { conversation, turns: [turn] }, true)).toThrow('queue_chat_read_digest');
+  expect(() => validateChatRead(chat, { conversation, turns: [turn, turn] }, true)).toThrow();
+});
+
+test('legacy chat source rejects wrong discriminant adapter task attempt artifact version and detail', () => {
+  const { chat, turn } = completedChatReply();
+  for (const change of [{ kind: 'assistant-final' }, { adapterVersion: 'other' }, { taskId: 'other' }, { attemptId: 'other' },
+    { artifactId: 'other' }, { artifactVersion: 'other' }, { detailId: 'other' }]) {
+    const source = { ...turn.assistant.source, ...change };
+    expect(() => validateChatRead(chat, { conversation: { id: chat.conversationId }, turns: [{ ...turn, assistant: { ...turn.assistant, source } }] }, true)).toThrow();
+  }
+  const source = { taskId: 'task', attemptId: 'attempt', artifactVersion: chat.version };
+  expect(() => validateChatRead(chat, { conversation: { id: chat.conversationId }, lastTurn: { ...turn, assistant: { ...turn.assistant, source } } }, false)).toThrow();
+});
+
+test('legacy chat source binds detail reference message and conversation on every read', () => {
+  const { chat, turn } = completedChatReply();
+  const check = (assistant: unknown) => validateChatRead(chat, { conversation: { id: chat.conversationId }, lastTurn: { ...turn, assistant } }, false);
+  for (const change of [{ kind: 'detail' }, { id: 'other' }, { taskId: 'other' }, { attemptId: 'other' }, { title: 'other' }]) {
+    expect(() => check({ ...turn.assistant, contentRef: { ...turn.assistant.contentRef, ...change } })).toThrow();
+  }
+  expect(() => check({ ...turn.assistant, messageId: 'artifact:other' })).toThrow();
+  expect(() => validateChatRead(chat, { conversation: { id: 'other' }, lastTurn: turn }, false)).toThrow();
+  expect(() => validateChatRead(chat, { conversation: { id: chat.conversationId }, turns: [{ ...turn, conversationId: 'other' }] }, true)).toThrow();
 });
 
 test('clean bound v2 opportunity is distinguishable from legacy unknown, foreign and retained assignment', () => {

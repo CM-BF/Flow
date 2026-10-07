@@ -4,7 +4,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { productionModule } from './ab-input.js';
 import type { Row } from './proof.js';
 export type ExperimentHttp = (path: string, body?: unknown, options?: { token?: string; key?: string }) => Promise<Row>;
-export type ChatProbe = { conversationId: string; turnId: string; taskId: string; attemptId: string; runnerId: string; ownerVersion: number; content: string; version: string; sessionId: string };
+export type ChatProbe = { conversationId: string; turnId: string; taskId: string; attemptId: string; runnerId: string; ownerVersion: number; content: string; version: string; sessionId: string; detailId?: string };
 const digest = (value: string) => createHash('sha256').update(value).digest('hex');
 /** A protocol-only synthetic result, using the existing public conversation fixture seam. No SDK/adapter/provider. */
 export async function createCompletedChat(http: ExperimentHttp, submit: () => void, sourceDirectory: string, deadline: number, work: () => void): Promise<ChatProbe> {
@@ -41,9 +41,9 @@ export async function createCompletedChat(http: ExperimentHttp, submit: () => vo
   ].map((event, index) => ({ ...event, id: randomUUID(), sequence: index + 1 }));
   const ack = await http('/api/runner/events', { attemptId: attempt.id, ownerVersion: attempt.ownerVersion, events }, credentials);
   assert.equal(ack.accepted, 5); assert.equal(ack.lastSequence, 5);
-  const probe = { conversationId, turnId, taskId, attemptId: attempt.id as string, runnerId: registration.runnerId as string,
+  const probe: ChatProbe = { conversationId, turnId, taskId, attemptId: attempt.id as string, runnerId: registration.runnerId as string,
     ownerVersion: attempt.ownerVersion as number, content, version, sessionId };
-  validateChatRead(probe, await http(chatReadPath(probe, 0)), false);
+  probe.detailId = validateChatRead(probe, await http(chatReadPath(probe, 0)), false);
   validateChatRead(probe, await http(chatReadPath(probe, 1)), true);
   return probe;
 }
@@ -52,9 +52,19 @@ export function chatReadPath(chat: ChatProbe, index: number) {
 }
 export function validateChatRead(chat: ChatProbe, response: Row, page: boolean) {
   const turn = page ? response.turns?.[0] : response.lastTurn;
+  assert.equal(response.conversation?.id, chat.conversationId, 'queue_chat_conversation_identity');
   if (page) assert.equal(response.turns.length, 1);
-  else assert.equal(response.conversation.id, chat.conversationId);
-  assert(turn && turn.id === chat.turnId && turn.task.id === chat.taskId, 'queue_chat_read_identity');
-  assert.deepEqual(turn.assistant.source, { taskId: chat.taskId, attemptId: chat.attemptId, artifactVersion: chat.version });
-  assert(turn.assistant.state === 'available' && turn.assistant.text === chat.content && turn.assistant.truncated === false, 'queue_chat_read_content');
+  assert(turn && turn.id === chat.turnId && turn.conversationId === chat.conversationId && turn.task.id === chat.taskId, 'queue_chat_read_identity');
+  const assistant = turn.assistant;
+  assert(assistant?.state === 'available' && assistant.role === 'assistant' && assistant.text === chat.content && assistant.truncated === false, 'queue_chat_read_content');
+  assert.equal(digest(assistant.text), chat.version, 'queue_chat_read_digest');
+  const detailId: unknown = assistant.source?.detailId;
+  assert(typeof detailId === 'string' && detailId.length > 0, 'queue_chat_detail_identity');
+  if (chat.detailId !== undefined) assert.equal(detailId, chat.detailId, 'queue_chat_detail_changed');
+  assert.deepEqual(assistant.source, { kind: 'adapter-final-artifact', adapterVersion: 'claude-sdk-0.3.290-v1',
+    taskId: chat.taskId, attemptId: chat.attemptId, artifactId: 'result', artifactVersion: chat.version, detailId });
+  assert.equal(assistant.messageId, 'artifact:' + detailId, 'queue_chat_message_identity');
+  assert.deepEqual(assistant.contentRef, { kind: 'artifact', id: detailId, title: 'Synthetic chat reply', taskId: chat.taskId, attemptId: chat.attemptId });
+  // The server allocates this detail ID; pin the first verified reference for subsequent reads.
+  return detailId;
 }

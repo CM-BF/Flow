@@ -21,7 +21,7 @@ assert hashlib.sha256(MODULE.read_bytes()).hexdigest() == EXPECTED
 spec = importlib.util.spec_from_file_location('s01_owned', MODULE)
 owned = importlib.util.module_from_spec(spec); sys.modules[spec.name] = owned; spec.loader.exec_module(owned)
 kind, suffix = sys.argv[1:]
-assert kind in ('tests', 'types', 'queue-tests', 'queue-types') and suffix in ('1', '2', '3', '4', '5')
+assert kind in ('tests', 'types', 'queue-tests', 'queue-types', 'chat-tests', 'chat-types') and suffix in ('1', '2', '3', '4', '5')
 output = HERE / ('pg-wiring-' + kind + '-' + suffix)
 for extension in ('.raw', '.json'):
     try: os.lstat(str(output) + extension)
@@ -29,11 +29,13 @@ for extension in ('.raw', '.json'):
     else: raise RuntimeError('output already exists')
 started = time.monotonic()
 if kind.startswith('queue-'): assert datetime.now(timezone.utc).isoformat() < '2026-10-07T13:18:35'  # Leaves a full child/cleanup before this segment's unchanged deadline.
-queue = kind.startswith('queue-')
-prior = [json.loads(path.read_text()) for path in HERE.glob('pg-wiring-queue-*-*.json')] if queue else []
+chat = kind.startswith('chat-')
+queue = kind.startswith('queue-') or chat
+if chat: assert datetime.now(timezone.utc).isoformat() < '2026-10-07T13:38:45'
+prior = [json.loads(path.read_text()) for path in HERE.glob('pg-wiring-' + ('chat' if chat else 'queue') + '-*-*.json')] if queue else []
 assert sum(item.get('process', {}).get('elapsed_ms', 0) for item in prior) < 120000
 record = {'kind': kind, 'startedAt': datetime.now(timezone.utc).isoformat(), 'source': {}, 'supervisorSha': EXPECTED,
-          'floorBytes': 6934233088 if queue else 6895435776, 'limits': {'workSeconds': 55, 'rawBytes': 524288, 'tmpBytes': 16777216}, 'wholeExternalWall': None}
+          'floorBytes': 7511998464 if chat else (6934233088 if queue else 6895435776), 'limits': {'workSeconds': 55, 'rawBytes': 524288, 'tmpBytes': 16777216}, 'wholeExternalWall': None}
 paths = ('experiments/runner-capacity/mixed/pg-delivery.ts', 'experiments/runner-capacity/mixed/pg-delivery-bridge.ts',
                  'experiments/runner-capacity/mixed/claim-observation.ts', 'experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts',
                  'experiments/runner-capacity/mixed/child.ts', 'experiments/runner-capacity/mixed/driver.ts', 'experiments/runner-capacity/mixed/process.ts', 'experiments/runner-capacity/mixed/ab-input.ts',
@@ -44,6 +46,7 @@ paths = ('experiments/runner-capacity/mixed/pg-delivery.ts', 'experiments/runner
 if queue:
     paths += tuple('experiments/runner-capacity/mixed/' + name for name in ('ab-budget.ts', 'ab-driver.ts', 'ab-sequence.ts', 'run-identity.ts', 'proof.ts', 'queue-main.ts', 'queue-probe.ts', 'queue-probe.test.ts', 'queue-chat.ts', 'queue-proof.ts', 'queue-journal.ts', 'queue-dependencies.json', 'queue-source-bindings.ts'))
     paths += ('docs/evidence/s01/mixed-ab-preparation/queue-tsconfig.json', 'docs/evidence/s01/mixed-ab-preparation/queue-vitest.config.mjs')
+if chat: paths += ('packages/contracts/src/conversations.ts', 'docs/evidence/s01/mixed-ab-preparation/pg-wiring-local.py')
 for relative in paths:
     data = (ROOT / relative).read_bytes(); record['source'][relative] = {'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest()}
 vfs = os.statvfs(ROOT); record['freeBytes'] = vfs.f_bavail * vfs.f_frsize
@@ -55,6 +58,7 @@ command = [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config'
 if kind == 'tests' and suffix == '2': command += ['-t', '^full envelope cap']
 if kind == 'tests' and suffix == '3': command += ['-t', '^v2']
 if kind == 'tests' and suffix == '4': command += ['-t', '^real existing child']
+if kind == 'chat-tests': command += ['-t', '^(real conversation lightweight|legacy chat source)']
 if kind == 'queue-tests': command += ['-t', '^queue boundary' if suffix == '2' else '^(queue policy|real conversation lightweight|clean bound v2|cancellation proof|first unavailable)']
 record['argv'] = command
 report = owned.supervise(owned.Launch(tuple(command), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(55, .5, 1, 524288))
