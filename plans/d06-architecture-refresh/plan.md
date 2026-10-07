@@ -16,3 +16,5 @@ D06-01～08的完成事实与证据继续见历史，不重编号或撤销旧批
 ## D06-11 实测显示缺口
 
 首轮新布局验收发现既有renderer中文背景估宽缺口。已[原子amend v2五范围](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json)，仅新增 architecture.js；修复[Interface及来源](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)复用挂载SVG bbox、批量读写。新source固定后独审，原22与首轮FAIL/清理/6733预算保留，未自动复跑。CSS/server/registry及五图文本数据不改，原D06-12主线交付仍待验。
+
+后继a28e renderer已获限定source批准；首轮FAIL归因/清理独审已接收。第二candidate只绑定新source/currentHEAD与剩余83267ms，scenario所有断言原样；实际运行仍待具体heavy交接，不重跑原22。

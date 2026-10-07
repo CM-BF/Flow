@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T03:56:02.494376+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_SCOPED_RENDERER_SOURCE_BROWSER_FIX_NOT_YET_VERIFIED",
+  "target": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "base": "cc1f83457f04a02147c854f0503409db1bebb355",
+  "metadataObserved": "be85d5a83c471965c7d7da6bbf7e3200bf134c90",
+  "scope": [
+    "apps/execution-dashboard/public/architecture.js"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "bytes": 8424,
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60",
+      "sameAsBase": false
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+      "sameAsBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "sameAsBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+      "sameAsBase": true
+    }
+  ],
+  "claim": {
+    "id": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "version": 2,
+    "amendAt": "2026-10-07T03:51:56.566Z",
+    "exactScopeCount": 5
+  },
+  "findings": [],
+  "reviewed": [
+    "Confirmed changed source exactly one renderer file,19added4removed; data/CSS/directtest byte-identical.",
+    "Private fitEdgeLabels reads all mounted text bounds in one batch then writes rects in one batch, horizontal7/vertical3 padding and existing minimum40x19; labels/routes/semantics unchanged.",
+    "Hidden initial panel skips measurement; activateTab measures only after unhide; view changes measure after mounting all new edges. Existing SVG coordinate zoom and local narrow-screen scroll retained.",
+    "Current systemfont/staticCSS has no new asynchronous font load introduced; no per-edge read-after-write loop or new store/dependency.",
+    "Original browser scenario hash unchanged and assertions still independently compare text/background and full edge/canvas, allfiveviews ×1280/390 ×light/dark plus keyboardsource; actual layout remains pending."
+  ],
+  "priorEvidence": {
+    "sourceDirect22": "5124 prior approval preserved; unchanged data/test do not need another direct run",
+    "firstBrowser": "root-d06-first-browser-actual-review.json; actual2/5failed on data Chinese labels,6732.224458ms/outerexit1,fullcleanup; baseline attribution confirms existing renderer defect"
+  },
+  "requiredNext": [
+    "Prepare fresh immutable packet bindinga28e renderer/currentmetadata, same original scenario and cleanup harness with explicit83267total/68267work/15000cleanup.",
+    "Retain firstfailure and26original archive files; no assertion weakening or budgetreset.",
+    "Only a concrete sharedheavy handoff plus freshclaim/resourcepins permits secondactual run; sourceapproval does not reserve or start a window."
+  ],
+  "budget": {
+    "originalTotalMs": 90000,
+    "conservativeSpentMs": 6733,
+    "remainingMs": 83267,
+    "cleanupReserveMs": 15000
+  },
+  "cleanCode": "Named private measurement method keeps renderer responsibility local, no Interface expansion or mockDOM tests that duplicate implementation. One bounded layout-read batch followed by writes.",
+  "limits": [
+    "Root performed only staticGit/source/evidence checks; no Node/Chrome/HTTP/PG/productruntime launched.",
+    "No main integration/deployment or new browserPASS claim.",
+    "Expanded background may expose geometry elsewhere; unchanged original allviewscenario must check it before delivery."
+  ]
+}

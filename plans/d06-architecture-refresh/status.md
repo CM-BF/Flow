@@ -10,19 +10,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime |
 | Branch | codex/dashboard-architecture-runtime |
 | 工作基线 / HEAD | 分支base6d05ec467581e85d21d5532fd29a2bebd1411b41；策展fixed main0da869f7bad98771177472539b5a192365c15117；实际HEAD/dirty由Git聚合 |
-| 工作分支状态 | source-ready / renderer-fix-review-pending；browser-failed evidence sealed |
+| 工作分支状态 | source-approved / browser-second-prepared；browser-first-failed evidence sealed |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新五图数据与定向验证已通过；页面实测发现的既有连线文字背景估宽问题已固定源码修复，待独审和实际复验 |
-| 下一可用交付 | 独审连线文字背景修复，再完成剩余五图显示验收与主线接收 |
-| 当前阻塞 | 首轮页面失败保留；修复使用实际文字边界，尚未独审或实际复验。无运行占用/预约，CSS不在范围 |
+| 当前产出 | 新五图数据与定向验证已通过；页面实测发现的既有连线文字背景估宽问题已固定源码修复，已获限定源码批准，待实际复验 |
+| 下一可用交付 | 完成已获源码批准的连线背景修复页面验收，再接入主线 |
+| 当前阻塞 | 首轮页面失败保留；修复使用实际文字边界，已获源码审查，尚未实际复验。无运行占用/预约，CSS不在范围 |
 | 需用户决定 | NONE |
 | 实现目标 | a28e8dac9ab3bd56231c13a0b090e986cc69eb0d |
 | 实现范围 | apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/test/architecture.test.mjs |
 | 检查状态 | NOT_RUN a28e8dac9ab3bd56231c13a0b090e986cc69eb0d；新修复仅静态diff/hash核对。原5124 browser FAILED 2/5、8PNG、actualexit1/清理完整及22direct PASS保持 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 本轮；旧aeb已main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd |
-| Review | [review.md](review.md)，NOT_STARTED（新renderer修复；原5124源码与22direct限定批准保历史） |
+| Review | [review.md](review.md)，APPROVED（a28e仅renderer源码；原5124源码与22direct限定批准保历史，完整页面未过） |
 | D04 claim | adf9539d-0d42-49b8-961b-f5195a4c10e9 v2 / 5 literal / 2026-10-07T03:51:56.566Z COMMITTED；[amend](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -41,3 +41,5 @@
 [浏览器首轮原件](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json)：03:47:12.726875Z–03:47:19.459475Z，完整实际outer1/晚父终态/双EOF与owned清理；预算保守6733ms、余83267ms（非下一许可）。未重试或改生产源，结果待独审。
 
 当前renderer固定修复：[Interface](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)与[source proof](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/source-proof.json)。原26份首轮原件逐字不变；原90s剩83267ms含15s清理，非新运行许可。
+
+2026-10-07T03:59:21.673046+00:00：[root首轮失败实证审](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)及[a28e限定源码批准](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json)已归档；[第二静态候选](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/candidate.json)保原scenario/剩余83267ms、无gate/预约/运行。

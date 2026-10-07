@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-07T03:50:28.303899+00:00",
+  "reviewer": "/root independent",
+  "decision": "ACCEPT_FAILED_RENDER_EVIDENCE_AND_CLEANUP_EXISTING_RENDERER_DEFECT",
+  "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "metadata": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+  "actual": {
+    "startedAt": "2026-10-07T03:47:12.726875+00:00",
+    "finishedAt": "2026-10-07T03:47:19.459475+00:00",
+    "parentPid": 65126,
+    "actualExit": 1,
+    "outerElapsedMs": 6732.224458013661,
+    "stdoutBytes": 1063,
+    "stderrBytes": 0
+  },
+  "returnEvidence": {
+    "at": "2026-10-07T03:47:53.087519+00:00",
+    "window": "D06-512-BROWSER-ONCE-20261007",
+    "state": "FAILED_CLEANED_RETURNED",
+    "actualExit": 1,
+    "outerElapsedMs": 6732.224458013661,
+    "lateParentElapsedMs": 6674.343332997523,
+    "conservativeSpentMs": 6733,
+    "remainingMs": 83267,
+    "budgetAccounting": "Conservative ceil(max outer actual wall, latest parent wall), no next-run grant. Earlier disk result preserved.",
+    "selectedGroups": 5,
+    "completedGroups": 2,
+    "screenshots": 8,
+    "failure": "data/light/1280 edge text over background: 回复引用, 本地只读; fitsCanvas true. Attribution pending static review; no product edit or retry.",
+    "cleanup": {
+      "workerPgid": 65294,
+      "chromePid": 65535,
+      "ownedGroupAbsent": true,
+      "chromeExit": {
+        "code": 0,
+        "signal": null
+      },
+      "doubleParentEOF": true,
+      "contextClosed": true,
+      "httpClosed": true,
+      "scratchAbsent": true,
+      "errors": []
+    },
+    "rawAndOuterBytes": 1386844,
+    "rawLimit": 8388608,
+    "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+    "head": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+    "nextReservation": false
+  },
+  "completedGroups": [
+    "runtime: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "modules: fixed labels/edges, 1280+390, light+dark, keyboard+source"
+  ],
+  "actualScreenshots": 8,
+  "rawFiles": 19,
+  "rawBytes": 1386844,
+  "rawPins": {
+    "raw/modules-1280-light.png": "0d4b1eddebc4683ca48eb67c8d219f4feb9c2be8b8155c20a36fddb67bdb2aeb",
+    "raw/modules-390-dark.png": "7d127db17d8c5b8f1604d6c0c7372f4c83c5c2e5fdeb15b90bb41a3847847e9e",
+    "raw/runtime-1280-dark.png": "641e8f8c3b1bb275f14a95876f5bf9cb4f53dbd1dd644fbbd69f39ee2d078506",
+    "raw/result.json": "980bf01a16b21bd2fd221ba432cbe4477b0644623fde1e7e191307497f5930cb",
+    "raw/runtime-390-light.png": "9facf15e96280f3e4d884cd5a80d930d95d0efe1313251b3afb5fd0ff563f769",
+    "raw/runtime-390-dark.png": "e08c65f280cac963bdac7356a8be1940d916482b9d4cdd187a3d4cace0cc3633",
+    "raw/parent-stdout.log": "57cbdb4ff495711ae270954ce7e8e1186ffd40550343c332ad2d943e94f0e06c",
+    "raw/chrome.log": "8a826dd876004a5750d19d034348e403d2c5ed802497fef6c079102b19d43133",
+    "raw/modules-390-light.png": "2ddd6d71f47d5fb6a74f4a05a11abb7dae6812bbf1d10f1bdf9812465d839b49",
+    "raw/runtime-1280-light.png": "c55a7089e2e0dbc87b6e61f4fb5c0129eebc5d0c3b2347ad165f1053aa48109b",
+    "raw/worker-result.json": "8f722f23db874116b6dcbb16f5885f4c1d5fe098203f651734c7991927bd694b",
+    "raw/modules-1280-dark.png": "bd752405af5d9cd50da9818998bfd9b01129987d6d655226356eccfa892b1d59",
+    "raw/browser-results.json": "6d61c60b25cd7bc616dfbdc14be4709bfcb203f9e35c65d2b0da95c1dc801dee",
+    "raw/owned.json": "031f9d7975671f956b5f502d852fdf125dc3a38e76c730c5127146aea823a541",
+    "raw/parent-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "outer/stdout.txt": "5a2740c136dd520115e4479d8a9b829a08040e537cd14adc67c6bb5cfebc2ec8",
+    "outer/actual-exit.json": "60b83623e2891c90a2889b9143202f0a70eba71462eccb9a9801b76bd7cd2fd6",
+    "outer/started.json": "0e792ad353f7cc238ff9cce01594e17984726bcb20dc9c31547645845985a3d8",
+    "outer/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finding": {
+    "severity": "P2",
+    "scope": "Existing architecture edge-label background sizing",
+    "observed": "AssertionError [ERR_ASSERTION]: data/light/1280 edge text/background and canvas bounds\n+ actual - expected\n\n+ [\n+   {\n+     fitsCanvas: true,\n+     label: '回复引用',\n+     length: 439,\n+     marker: 'url(#architecture-arrow)',\n+     textFitsBackground: false\n+   },\n+   {\n+     fitsCanvas: true,\n+     label: '本地只读',\n+     length: 107,\n+     marker: 'url(#architecture-arrow)',\n+     textFitsBackground: false\n+   }\n+ ]\n- []\n\n    at Module.checkArchitectureBrowser (file:///private/tmp/d06-browser-512-tz5of84t/scenario.mjs:90:18)\n    at async file:///private/tmp/d06-browser-512-tz5of84t/worker.mjs:28:16",
+    "attribution": "Both failing four-CJK labels and their complete edge definition unchanged from fixed0da baseline to5124; architecture.js and architecture.css also byte-identical. This stricter test reveals an existing renderer defect, not a new5124 data regression.",
+    "sourceMechanism": "Renderer estimates background width as label.length*8+14 while CSS text font size14px. Exact glyph width is not represented by character count; need measured geometry rather than altered label semantics.",
+    "remedy": "Owner must first atomically amend claim for exact architecture.js. Keep text and assertions; measure mounted SVG text bbox plus padding with grouped reads/writes. No globalCSS or data wording workaround, no scope expansion before receipt."
+  },
+  "visualReview": {
+    "opened": [
+      "runtime-1280-light.png",
+      "modules-390-dark.png"
+    ],
+    "findings": "Representative actual runtime layout and modules narrow dark view render with fixedsource disclosure and controlled graph viewport. Data failing state has noPNG because assertion precedes capture; remaining data/states/dependencies full render is unverified."
+  },
+  "cleanCode": "Fix responsibility at edge background sizing, avoid language-specific constants/space padding or weakening geometry assertion. Existing diagram data stays semantic.",
+  "limits": [
+    "Original22direct approved unaffected by this source attribution; no test rerun by root.",
+    "New rendererfix requires fixedtarget source review and directlyaffected checks; original6733charged/83267remaining includes15000cleanup, no automaticnewrun.",
+    "Main/4320publication of D06 remains pending."
+  ]
+}
