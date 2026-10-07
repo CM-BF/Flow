@@ -107,3 +107,21 @@ test.each([false, true])('real existing child launch/reporter closes idle IPC wi
     for (const peer of owned) if (peer.child.exitCode === null) await stopProcess(peer, performance.now() + 1000);
   }
 });
+
+
+test('first unavailable pins history without claiming live execution or allowing empty regression', () => {
+  for (const response of [{ ...request, state: 'missing' }, { ...request, state: 'unavailable', identity: { ...identity, ownerVersion: 3 } },
+    { ...assigned(), identity: { ...identity, ownerVersion: 3 }, assignment: { task: { id: 'task' }, attempt: { id: 'attempt', runnerId: 'runner', ownerVersion: 3 } } }]) {
+    const o = createClaimObservation(['task']);
+    o.observe('/api/runner/claim-opportunity/status', request, { ...request, state: 'unavailable', identity }, 'runner');
+    expect(o.claims.size).toBe(0);
+    expect(() => o.observe('/api/runner/claim-opportunity/status', request, response, 'runner')).toThrow();
+    expect(() => o.observe('/api/runner/claim-opportunity', request, { ...request, state: 'empty' }, 'runner')).toThrow();
+  }
+  const o = createClaimObservation(['task']); const historical = { ...identity };
+  o.observe('/api/runner/claim-opportunity/status', request, { ...request, state: 'unavailable', identity: historical }, 'runner');
+  historical.ownerVersion = 99;
+  expect(o.observe('/api/runner/claim-opportunity/status', request, assigned(), 'runner')).toMatchObject({ replay: false, claim: identity });
+  expect(o.observe('/api/runner/claim-opportunity/status', request, assigned(), 'runner')).toMatchObject({ replay: true, claim: identity });
+  expect(o.claims.size).toBe(1);
+});

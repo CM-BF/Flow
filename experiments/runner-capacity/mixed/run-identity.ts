@@ -1,5 +1,7 @@
 import { createHash } from 'node:crypto';
+import { queueSourceBindings } from './queue-source-bindings.js';
 import { CONTRACT, LARGE_CONTRACT, type RunContract } from './contract.js';
+import { QUEUE_PROBE, isQueueIdentity, queueContract } from './queue-probe.js';
 import { COMPARISON, sideContract, type Side } from './ab-budget.js';
 
 type SourceBinding = Readonly<{ path: string; bytes: number; sha256: string }>;
@@ -98,6 +100,11 @@ export function selectRunIdentity(name = 'legacy-v1'): RunIdentity {
       output: COMPARISON.output + '/' + side, preparation: COMPARISON.preparation,
       requiredSources: Object.freeze([{ path: 'apps/server/src/events.ts', bytes: side === 'A' ? 8678 : 8529,
         sha256: side === 'A' ? '4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853' : '270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02' }]) });
+  }
+  if (isQueueIdentity(name)) {
+    const side = name === 'queue-probe-O1-v1' ? 'A' : 'B';
+    return Object.freeze({ id: name, base: QUEUE_PROBE.revisions[side], contract: queueContract(side),
+      output: QUEUE_PROBE.output + '/' + (side === 'A' ? 'O1' : 'O2'), preparation: QUEUE_PROBE.preparation, requiredSources: Object.freeze(queueSourceBindings.map(row => Object.freeze({ ...row }))) });
   }
   throw new Error('Unreviewed mixed-run identity.');
 }

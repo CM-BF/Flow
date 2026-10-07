@@ -10,7 +10,7 @@ const id = (value: unknown): string => {
 };
 const equal = (a: ObservedClaim, b: ObservedClaim) => a.taskId === b.taskId && a.attemptId === b.attemptId && a.runnerId === b.runnerId && a.ownerVersion === b.ownerVersion;
 export function createClaimObservation(taskIds: readonly string[]) {
-  const allowed = new Set(taskIds); const claims = new Map<string, ObservedClaim>(); const receipts = new Map<string, ObservedClaim>();
+  const allowed = new Set(taskIds); const claims = new Map<string, ObservedClaim>(); const receipts = new Map<string, ObservedClaim>(); const liveKeys = new Set<string>();
   function observe(path: string, request: unknown, response: unknown, authenticatedRunner?: string) {
     const legacy = path === '/api/runner/claim';
     const status = path === '/api/runner/claim-opportunity/status';
@@ -27,6 +27,7 @@ export function createClaimObservation(taskIds: readonly string[]) {
         const historical: ObservedClaim = { taskId: id(receipt.taskId), attemptId: id(receipt.attemptId), runnerId: id(receipt.runnerId), ownerVersion: receipt.ownerVersion as number };
         const previous = receipts.get(key);
         if (!allowed.has(historical.taskId) || historical.runnerId !== authenticatedRunner || !Number.isSafeInteger(historical.ownerVersion) || historical.ownerVersion < 1 || previous && !equal(previous, historical)) throw new Error('mixed_claim_identity_conflict');
+        receipts.set(key, { ...historical });
         return; // A historical receipt is not a live assignment or execution authority.
       }
       if (body.state === (status ? 'missing' : 'empty')) {
@@ -44,11 +45,15 @@ export function createClaimObservation(taskIds: readonly string[]) {
       const previous = receipts.get(key);
       if (previous) {
         if (!equal(previous, claim)) throw new Error('mixed_claim_identity_conflict');
-        return { claim: { ...claim }, replay: true, requestId: object(request).requestId as string };
+        const live = claims.get(claim.taskId);
+        if (live && liveKeys.has(key)) {
+          if (!equal(live, claim)) throw new Error('mixed_claim_identity_conflict');
+          return { claim: { ...claim }, replay: true, requestId: object(request).requestId as string };
+        }
       }
     }
     if (claims.has(claim.taskId) || [...claims.values()].some(value => value.attemptId === claim.attemptId)) throw new Error('mixed_claim_identity_conflict');
-    claims.set(claim.taskId, { ...claim }); if (key) receipts.set(key, { ...claim });
+    claims.set(claim.taskId, { ...claim }); if (key) { receipts.set(key, { ...claim }); liveKeys.add(key); }
     return { claim: { ...claim }, replay: false, ...(key ? { requestId: object(request).requestId as string } : {}) };
   }
   return { observe, claims };

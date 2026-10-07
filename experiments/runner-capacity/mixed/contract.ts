@@ -1,4 +1,5 @@
 export interface RunContract {
+  queueProbe?: Readonly<{ activityTailMs: number; emitTailMs: number; lightReadLimit: number; ownerHttpLimit: number; runnerHttpLimit: number }>;
   version: number; base: string; tasks: number; maximumTasks: number; totalMs: number; workMs: number;
   caseMs: number; cancelMs: number; eventsPerSecond: number; messageBytes: number; heartbeatMs: number;
   pollMs: number; requestMs: number; leaseMs: number; readIntervalMs: number; maxReads: number; observationMs: number;

@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { CONTRACT, type RunContract } from './contract.js';
 import type { Observation } from './process.js';
 export type Row = Record<string, any>;
-export type CaseResult = { id: string; taskIds: string[]; cancelled: string[]; gate: Row[]; windowComplete: boolean; settledByDeadline: boolean; final?: Row[]; events?: Row[]; sessions?: Row[]; totals?: Row; activity?: Row; measureSentMs?: number; sampledOwnership?: Row; failure?: string };
+export type CaseResult = { queueCenterBoundaries?: unknown; queueCancellation?: unknown; queueReads?: unknown; id: string; taskIds: string[]; cancelled: string[]; gate: Row[]; windowComplete: boolean; settledByDeadline: boolean; final?: Row[]; events?: Row[]; sessions?: Row[]; totals?: Row; activity?: Row; measureSentMs?: number; sampledOwnership?: Row; failure?: string };
 export function validGate(result: CaseResult, rows: Row[], claims: Observation[], ready: Observation[], acks: Observation[], heartbeats: Observation[], contract: RunContract = CONTRACT) {
   const scenario = contract.cases.find(value => value.id === result.id) ?? contract.cases[0]!;
   const expected = scenario.runners * scenario.slots;

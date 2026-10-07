@@ -5,7 +5,7 @@ import { CONTRACT, deferred, type RunContract } from './contract.js';
 import type { OwnedProcess } from '../processes.js';
 import type { RecordValue } from './channel.js';
 export type Observation = RecordValue & { receivedMs: number; pid: number };
-export async function launch(config: Record<string, unknown>, owned: OwnedProcess[], receive: (value: Observation) => void, charge: (kind: string, bytes: number) => void, timeoutMs: number, contract: RunContract = CONTRACT): Promise<OwnedProcess> {
+export async function launch(config: Record<string, unknown>, owned: OwnedProcess[], receive: (value: Observation) => void, charge: (kind: string, bytes: number) => void, timeoutMs: number, contract: RunContract = CONTRACT, checkpoint?: (process: OwnedProcess) => Promise<void>): Promise<OwnedProcess> {
   const child = fork(fileURLToPath(new URL('./child.ts', import.meta.url)), [], {
     execPath: process.execPath, execArgv: ['--import', 'tsx'],
     env: { PATH: process.env.PATH, ...(config.pgDelivery ? { NODE_DISABLE_COMPILE_CACHE: '1', TMPDIR: process.env.TMPDIR, TMP: process.env.TMP, TEMP: process.env.TEMP } : {}), TSX_TSCONFIG_PATH: typeof config.sourceDirectory === 'string' ? join(config.sourceDirectory, 'tsconfig.json') : fileURLToPath(new URL('./tsconfig.json', import.meta.url)) },
@@ -24,7 +24,7 @@ export async function launch(config: Record<string, unknown>, owned: OwnedProces
   child.once('error', () => ready.reject(new Error('child_spawn_failed')));
   child.once('exit', () => ready.reject(new Error('child_exited_before_ready')));
   const timer = setTimeout(() => ready.reject(new Error('child_ready_timeout')), timeoutMs);
-  try { await transmit(result, config, charge, contract); result.ready = await ready.promise; return result; }
+  try { await checkpoint?.(result); await transmit(result, config, charge, contract); result.ready = await ready.promise; return result; }
   finally { clearTimeout(timer); }
 }
 export async function transmit(owned: OwnedProcess, record: Record<string, unknown>, charge: (kind: string, bytes: number) => void, contract: RunContract = CONTRACT) {

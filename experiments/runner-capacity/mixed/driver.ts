@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { createHash, randomUUID } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
-import { mkdir, mkdtemp, readFile, readdir, realpath, rm, stat, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, readdir, realpath, rm, stat, writeFile, open, lstat } from 'node:fs/promises';
 import { tmpdir, loadavg } from 'node:os';
 import { join, resolve, relative, dirname } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
@@ -12,6 +12,10 @@ import { ObservationArchive } from './observation-archive.js';
 import { memoryObservation } from './channel.js';
 import { deliveryInput, deliveryReceipt, DELIVERY_BASELINE, type DeliveryInput } from './pg-delivery-bridge.js';
 import { Budget, type BudgetObserver } from './contract.js';
+import { QUEUE_PROBE, isQueueIdentity } from './queue-probe.js';
+import { createCompletedChat, chatReadPath, validateChatRead, type ChatProbe } from './queue-chat.js';
+import { resolvedQueueJournal } from './queue-journal.js';
+import { validateQueueCancellation } from './queue-proof.js';
 import { COMPARISON } from './ab-budget.js';
 import { selectRunIdentity, verifyRunSources } from './run-identity.js';
 import { launch, transmit, type Observation } from './process.js';
@@ -29,9 +33,11 @@ export async function runMixed(windowId: string, target: string, identity?: stri
   // New production recipe/output ownership is a separate preparation gate; old A/B cannot opt into this path.
   if (delivery) { assert.equal(run.base, DELIVERY_BASELINE, 'Delivery requires the fixed current-production recipe.'); assert.equal(contract.cases.length, 1); }
   assert(/^[a-zA-Z0-9-]{8,100}$/.test(windowId), 'A separately authorized window ID is required.');
-  const comparing = run.id === 'event-state-A-v1' || run.id === 'event-state-B-v1';
+  const probing = isQueueIdentity(run.id);
+  if (probing) assert(delivery && comparison?.sourceDirectory, 'queue_fixed_source_delivery_required');
+  const comparing = probing || run.id === 'event-state-A-v1' || run.id === 'event-state-B-v1';
   assert.equal(Boolean(comparison), comparing, 'Comparison inputs require the fixed outer entry.');
-  if (contract.persistentSessions) assert.equal(windowId, comparing ? COMPARISON.windowId : 's01-128-after-light-reads-once', 'Unexpected128 window identity.');
+  if (contract.persistentSessions) assert.equal(windowId, probing ? QUEUE_PROBE.windowId : comparing ? COMPARISON.windowId : 's01-128-after-light-reads-once', 'Unexpected128 window identity.');
   assert(/^[a-f0-9]{40}$/.test(target), 'Fixed reviewed source target is required.');
   const git = (...args: string[]) => execFileSync('git', args, { encoding: 'utf8', ...(comparison ? { timeout: Math.max(1, Math.min(5000, comparison.deadlineMs - performance.now())), maxBuffer: 1024 * 1024 } : {}) }).trim();
   assert.equal(git('rev-parse', 'HEAD'), target, 'Source HEAD differs from reviewed target.');
@@ -57,10 +63,13 @@ export async function runMixed(windowId: string, target: string, identity?: stri
   let admin: Pool | undefined, observer: Pool | undefined, center: OwnedProcess | undefined, runner: OwnedProcess | undefined;
   let databaseFinal: Row | undefined;
   let resourcesClosed = false;
+  const databaseMarker = randomUUID(); let databaseIdentity: { oid: number; marker: string } | undefined;
+  let workdirIdentity: { dev: number; ino: number } | undefined;
   let baseUrl = '', workdir = '', creationRequested = false, creationAcknowledged = false; let observerLoop: Promise<void> | undefined;
   let observationStop = false; let observedCase: CaseResult | undefined; let latestRows: Row[] = []; let latestSnapshotStart = 0;
   const streams = new StreamBytes(8);
   const requests = new Set<Promise<unknown>>();
+  const queueRunnerIds = new Set<string>(); let queueVerified = false;
   const token = randomUUID(); const background = { node: process.version, dependencyBindings: bindings, loadStart: loadavg(), loadEnd: [] as number[] };
   function fail(code: string) { if (!errors.includes(code)) errors.push(code); halt.abort(); }
   function charge(kind: string, bytes: number) { try { budget.charge(kind, bytes); } catch { fail('total_byte_budget_exceeded'); } }
@@ -83,7 +92,11 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     if (prepaidBytes === undefined) budget.charge('evidence', Buffer.byteLength(text));
     else assert.equal(Buffer.byteLength(text), prepaidBytes, 'observation_reservation_mismatch');
     if (performance.now() >= deadlineAt(contract.cleanup.result)) throw new Error('evidence_deadline');
-    await writeFile(join(output, name), text, { flag: 'wx', mode: 0o600 });
+    if (probing) {
+      const file = await open(join(output, name), 'wx', 0o600);
+      try { await file.writeFile(text); await file.sync(); } finally { await file.close(); }
+      const directory = await open(output, 'r'); try { await directory.sync(); } finally { await directory.close(); }
+    } else await writeFile(join(output, name), text, { flag: 'wx', mode: 0o600 });
   }
   async function query(pool: Pool, sql: string, parameters: unknown[] = [], cleanupQuery = false) {
     if (!cleanupQuery) work();
@@ -101,23 +114,24 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       const measured = streams.sample(); charge('driver-pg-node-streams', measured.delta); if (!measured.complete) fail('driver_stream_accounting_unknown');
     }
   }
-  function http(path: string, body?: unknown) {
-    const pending = performHttp(path, body); requests.add(pending);
+  let ownerRequests = 0;
+  function http(path: string, body?: unknown, options?: { token?: string; key?: string }) {
+    const pending = performHttp(path, body, options); requests.add(pending);
     void pending.then(() => requests.delete(pending), () => requests.delete(pending));
     return pending;
   }
-  async function performHttp(path: string, body?: unknown) {
-    work(); const start = performance.now(); const payload = body === undefined ? undefined : JSON.stringify(body);
+  async function performHttp(path: string, body?: unknown, options?: { token?: string; key?: string }) {
+    work(); if (probing && ++ownerRequests > contract.queueProbe!.ownerHttpLimit) throw new Error('queue_owner_http_limit'); const start = performance.now(); const payload = body === undefined ? undefined : JSON.stringify(body);
     charge('owner-http-request', Buffer.byteLength(payload ?? ''));
     let status: number | null = null;
     try {
       const response = await fetch(baseUrl + path, { method: body === undefined ? 'GET' : 'POST',
-        headers: { authorization: 'Bearer ' + token, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: payload,
+        headers: { authorization: 'Bearer ' + (options?.token ?? token), 'content-type': 'application/json', 'idempotency-key': options?.key ?? randomUUID() }, body: payload,
         signal: AbortSignal.any([halt.signal, AbortSignal.timeout(contract.requestMs)]) });
       status = response.status; const text = await boundedText(response, contract.responseBytes);
       charge('owner-http-response', Buffer.byteLength(text)); assert(response.ok, 'owner_http_rejected');
       return JSON.parse(text);
-    } finally { receive({ kind: 'owner-http', pid: process.pid, receivedMs: performance.now(), path, status, elapsedMs: performance.now() - start }); }
+    } finally { receive({ kind: 'owner-http', pid: process.pid, receivedMs: performance.now(), path, status, ...(probing ? { sentDriverMs: start } : {}), elapsedMs: performance.now() - start }); }
   }
   const records = (kind: string, id: string) => observations.filter(value => value.kind === kind && value.caseId === id);
   async function until(predicate: () => boolean, deadline: number, reason: string) {
@@ -139,18 +153,36 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     url.pathname = '/postgres'; url.searchParams.set('application_name', 'flow-s01-mixed-admin');
     const options = { max: 1, connectionTimeoutMillis: 1000, statement_timeout: 1000, query_timeout: 1500 };
     admin = new Pool({ ...options, connectionString: url.href }); admin.on('connect', client => streams.addPgClient(client)); admin.on('error', () => fail('admin_connection_failed'));
+    if (probing) await evidence('create-request.json', { windowId, target, databaseName, marker: databaseMarker, requestedAt: new Date().toISOString() });
     creationRequested = true;
     await query(admin, 'CREATE DATABASE "' + databaseName + '"'); creationAcknowledged = true;
+    if (probing) {
+      await query(admin, 'COMMENT ON DATABASE \"' + databaseName + '\" IS \'' + databaseMarker + '\'');
+      const identity = (await query(admin, `SELECT oid::int AS oid,shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1`, [databaseName])).rows[0];
+      assert(identity && Number.isSafeInteger(identity.oid) && identity.marker === databaseMarker, 'queue_database_identity_unknown');
+      databaseIdentity = { oid: identity.oid, marker: identity.marker };
+      await evidence('database-identity.json', { windowId, target, databaseName, ...databaseIdentity, createAcknowledged: true });
+    }
     url.pathname = '/' + databaseName; url.searchParams.set('application_name', 'flow-s01-mixed-center');
     const databaseUrl = url.href;
     url.searchParams.set('application_name', 'flow-s01-mixed-observer'); observer = new Pool({ ...options, connectionString: url.href }); observer.on('connect', client => streams.addPgClient(client)); observer.on('error', () => fail('observer_connection_failed'));
     workdir = await mkdtemp(join(tmpdir(), 'flow-s01-mixed-'));
-    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    if (probing) { const identity = await lstat(workdir); assert(identity.isDirectory() && !identity.isSymbolicLink()); workdirIdentity = { dev: identity.dev, ino: identity.ino }; await evidence('runner-directory.json', { workdir, ...workdirIdentity }); }
+    const checkpoint = probing ? async (child: OwnedProcess) => {
+      const saved = await beforeDeadline(Math.min(startedMs + contract.workMs, performance.now() + contract.requestMs), () => evidence(child.role + '-spawn.json', { windowId, target, pid: child.pid, role: child.role, driverPid: process.pid, spawnObservedAt: new Date().toISOString(), processGroup: 'inherits outer supervised group' }));
+      assert.equal(saved.state, 'settled', 'queue_child_checkpoint_unknown');
+    } : undefined;
+    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract, checkpoint);
     baseUrl = String(center.ready.baseUrl);
     assert(/^http:\/\/127\.0\.0\.1:\d+$/.test(baseUrl), 'Unexpected center endpoint.');
-    runner = await launch({ role: 'runner', runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    runner = await launch({ role: 'runner', runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract, checkpoint);
     const pgVersion = (await query(observer, 'SHOW server_version')).rows[0].server_version;
     await evidence('owned-resources.json', { databaseName, workdir, processes: owned.map(p => ({ role: p.role, pid: p.pid })), baseUrl, pgVersion });
+    let chat: ChatProbe | undefined;
+    if (probing) {
+      chat = await createCompletedChat(http, () => budget.submit(), comparison!.sourceDirectory, Math.min(startedMs + contract.workMs, performance.now() + 45000), work);
+      await evidence('chat-fixture.json', { ...chat, providerCalls: 0, basis: 'public protocol synthetic completion, not SDK/native' });
+    }
     observerLoop = (async () => {
       while (!observationStop && !halt.signal.aborted) {
         const began = performance.now();
@@ -179,6 +211,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       for (let index = 0; index < scenario.runners; index++) {
         const registration = await http('/api/runners', { name: 'S01 mixed ' + scenario.id + ' ' + index, harnesses: ['fixture'], capacity: scenario.slots });
         assert(typeof registration.runnerId === 'string' && typeof registration.token === 'string', 'Invalid runner registration.');
+        if (probing) queueRunnerIds.add(registration.runnerId);
         registrations.push({ ...registration, directory: join(workdir, scenario.id, String(index)), slots: scenario.slots });
       }
       for (let index = 0; index < scenario.runners * scenario.slots; index++) {
@@ -207,7 +240,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       while (!records('window-end', result.id).length) {
         work(); assert(performance.now() < windowStart + contract.caseMs + contract.requestMs, 'missing_window_end');
         const now = performance.now();
-        if (result.cancelled.length && !cancelled && now >= windowStart + contract.cancelMs) {
+        if (!probing && result.cancelled.length && !cancelled && now >= windowStart + contract.cancelMs) {
           cancelled = true;
           for (const taskId of result.cancelled) cancellations.push(http('/api/tasks/' + taskId + '/cancel', {}).then(response => {
             assert(response.id === taskId && response.status === 'cancel_requested', 'Cancellation was not accepted for the bound running task.');
@@ -217,22 +250,50 @@ export async function runMixed(windowId: string, target: string, identity?: stri
         if (now >= nextRead) {
           nextRead = now + contract.readIntervalMs;
           if (reads.size >= contract.maxReads) skipped++;
+          else if (probing && readIndex >= contract.queueProbe!.lightReadLimit) throw new Error('queue_light_read_limit');
           else {
             const index = readIndex++; const taskId = result.taskIds[index % result.taskIds.length]!;
-            const path = '/api/tasks/' + taskId + (index % 2 ? '/events?after=0&limit=20' : '');
-            const read = http(path).then(() => {}).catch(() => fail('light_read_failed')).finally(() => reads.delete(read)); reads.add(read);
+            const path = chat ? chatReadPath(chat, index) : '/api/tasks/' + taskId + (index % 2 ? '/events?after=0&limit=20' : '');
+            const sentDriverMs = performance.now();
+            const read = http(path).then(response => {
+              if (chat) validateChatRead(chat, response, index % 2 === 1);
+              if (probing) receive({ kind: 'light-read-result', pid: process.pid, receivedMs: performance.now(), caseId: result.id, index, sentDriverMs, succeeded: true });
+            }).catch(() => { if (probing) receive({ kind: 'light-read-result', pid: process.pid, receivedMs: performance.now(), caseId: result.id, index, sentDriverMs, succeeded: false }); fail('light_read_failed'); }).finally(() => reads.delete(read)); reads.add(read);
           }
         }
         await sleep(5);
       }
       if (delivery && records('window-end', result.id)[0]?.epoch !== delivery.epoch) throw new Error('runner_epoch_unknown');
       result.windowComplete = true;
+      const readsAtWindowEnd = reads.size;
+      if (probing) receive({ kind: 'driver-boundary', pid: process.pid, receivedMs: performance.now(), caseId: result.id, boundary: 'window-end', lightReadsInFlight: readsAtWindowEnd, ownerRequestsInFlight: requests.size });
       if (delivery) {
         await transmit(center, { kind: 'pg-phase', epoch: delivery.epoch, phase: 'after' }, charge, contract);
         await until(() => observations.some(value => value.kind === 'pg-phase-ack' && value.epoch === delivery.epoch && value.deliveryPhase === 'after'), performance.now() + contract.requestMs, 'pg_phase_unknown');
       }
+      if (probing) {
+        // Fresh server fence immediately before the four commands; no already-completed target counts as cancellation.
+        const rows = (await query(observer, `SELECT t.id,t.status,t.current_attempt_id,t.owner_version AS task_version,
+          a.id AS attempt_id,a.runner_id,a.owner_version,a.completed_at,a.lease_expires_at>clock_timestamp() AS live
+          FROM flow.tasks t JOIN flow.attempts a ON a.id=t.current_attempt_id WHERE t.id=ANY($1::text[])`, [result.cancelled])).rows;
+        assert.equal(rows.length, 4, 'queue_cancel_targets_missing');
+        for (const row of rows) {
+          const original = result.gate.find(item => item.task_id === row.id);
+          assert(original && row.status === 'running' && row.completed_at === null && row.live && row.task_version === row.owner_version &&
+            row.attempt_id === original.attempt_id && row.owner_version === original.owner_version && row.runner_id === original.runner_id, 'queue_cancel_target_not_active');
+        }
+        receive({ kind: 'cancel-fence', pid: process.pid, receivedMs: performance.now(), caseId: result.id, rows });
+        for (const taskId of result.cancelled) {
+          const sentDriverMs = performance.now(); const key = randomUUID();
+          receive({ kind: 'cancel-send', pid: process.pid, receivedMs: sentDriverMs, caseId: result.id, taskId, key });
+          cancellations.push(http('/api/tasks/' + taskId + '/cancel', {}, { key }).then(response => {
+            assert(response.id === taskId && response.status === 'cancel_requested', 'queue_cancel_not_accepted');
+            receive({ kind: 'cancel-accepted', pid: process.pid, receivedMs: performance.now(), caseId: result.id, taskId, sentDriverMs });
+          }).catch(() => fail('cancel_http_failed')));
+        }
+      }
       phase = scenario.id + ':settlement';
-      const settlementDeadline = records('window-end', result.id)[0]!.receivedMs + contract.settlementMs;
+      const settlementDeadline = records('window-end', result.id)[0]!.receivedMs + contract.settlementMs + (contract.queueProbe?.activityTailMs ?? 0);
       await Promise.all(cancellations); await Promise.all(reads);
       await until(() => records('adapter-end', result.id).length === result.taskIds.length && completionAcks(records('event-ack', result.id)).size === result.taskIds.length,
         settlementDeadline, 'completion_settlement_timeout');
@@ -247,6 +308,17 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       result.final = (await query(observer, 'SELECT t.id,t.status,t.verification_status,a.id AS attempt_id,a.runner_id,a.owner_version,a.completed_at,a.last_sequence,a.native_session_id FROM flow.tasks t JOIN flow.attempts a ON a.task_id=t.id WHERE t.id=ANY($1::text[]) ORDER BY t.id', [result.taskIds])).rows;
       result.events = (await query(observer, 'SELECT e.* FROM flow.runner_events e JOIN flow.attempts a ON a.id=e.attempt_id WHERE a.task_id=ANY($1::text[]) ORDER BY e.attempt_id,e.sequence', [result.taskIds])).rows;
       validateFinal(result, records('event-ack', result.id));
+      if (probing) {
+        receive({ kind: 'final-state-observed', pid: process.pid, receivedMs: performance.now(), caseId: result.id, rows: result.final });
+        result.queueCancellation = validateQueueCancellation(result, observations);
+        const boundaries = observations.filter(row => row.kind === 'center-boundary' && row.epoch === delivery!.epoch);
+        assert.equal(boundaries.length, 2, 'queue_center_boundary_missing');
+        assert.deepEqual(boundaries.map(row => row.requestedPhase), ['measure', 'after']);
+        assert(boundaries.every(row => row.known === true && Number.isSafeInteger(row.acquisitionsInFlight) && Number.isSafeInteger(row.queriesInFlight)), 'queue_center_boundary_unknown');
+        result.queueCenterBoundaries = boundaries;
+        assert.equal(records('light-read-result', result.id).length, readIndex, 'queue_light_read_unknown');
+        result.queueReads = { issued: readIndex, settled: records('light-read-result', result.id).length, skipped, inFlightAtWindowEnd: readsAtWindowEnd, boundaryBasis: 'driver receipt, not synchronized runner epoch' };
+      }
       if (contract.persistentSessions) {
         result.sessions = (await query(observer, 'SELECT id,harness,runner_id,active_task_id FROM flow.sessions ORDER BY id')).rows;
         result.totals = (await query(observer, 'SELECT (SELECT count(*) FROM flow.tasks) AS tasks,(SELECT count(*) FROM flow.attempts) AS attempts,(SELECT count(*) FROM flow.sessions) AS sessions')).rows[0];
@@ -254,9 +326,10 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       }
       const perRunner = new Map<string, number>(); for (const row of result.final) perRunner.set(row.runner_id, (perRunner.get(row.runner_id) ?? 0) + 1);
       assert.equal(perRunner.size, scenario.runners); assert([...perRunner.values()].every(count => count === scenario.slots), 'Runner topology differs from the fixed configuration.');
-      const caseJournals = await journals(join(workdir, scenario.id), contract.journalFiles);
+      const caseJournals = await journals(join(workdir, scenario.id), contract.journalFiles, probing ? queueRunnerIds : undefined);
       if (contract.persistentSessions) assert.equal(caseJournals.length, scenario.runners, 'unexpected_journal_count');
       if (caseJournals.some(file => file.unresolved)) { await evidence(result.id + '-retained-journals.json', caseJournals); throw new Error('case_admission_or_outbox_retained'); }
+      if (probing) queueVerified = true;
       observedCase = undefined;
     }
   } catch (error) {
@@ -294,12 +367,13 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     if (observerClosed.state !== 'settled') { streams.destroyOwned(); cleanup.push({ observerRetained: true }); fail('observer_close_unknown'); }
     if (creationRequested && admin) {
       if (!creationAcknowledged) cleanup.push({ databaseName, creationUnknown: true });
-      if (!allChildrenClosed || observerClosed.state !== 'settled' || drained.state !== 'settled') {
+      if (probing && (!creationAcknowledged || !databaseIdentity) || !allChildrenClosed || observerClosed.state !== 'settled' || drained.state !== 'settled') {
         cleanup.push({ databaseName, retained: true, reason: 'owned_connections_not_confirmed_closed' }); fail('database_retained');
       } else {
-        const exists = await beforeDeadline(deadlineAt(contract.cleanup.exists), () => query(admin!, 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
+        const exists = await beforeDeadline(deadlineAt(contract.cleanup.exists), () => query(admin!, probing ? `SELECT oid::int AS oid,shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1` : 'SELECT 1 FROM pg_database WHERE datname=$1', [databaseName], true));
         if (exists.state !== 'settled') { cleanup.push({ databaseName, retained: true, creationUnknown: !creationAcknowledged }); fail('database_existence_unknown'); }
         else if (!exists.value.rowCount) cleanup.push({ databaseName, absentAtCheck: true, creationUnknown: !creationAcknowledged });
+        else if (probing && (exists.value.rows[0]?.oid !== databaseIdentity?.oid || exists.value.rows[0]?.marker !== databaseIdentity?.marker)) { cleanup.push({ databaseName, retained: true, reason: 'database_identity_changed' }); fail('database_identity_unknown'); }
         else {
           const connections = await beforeDeadline(deadlineAt(contract.cleanup.connections), () => query(admin!, 'SELECT pid FROM pg_stat_activity WHERE datname=$1', [databaseName], true));
           if (connections.state !== 'settled' || connections.value.rows.length) {
@@ -322,12 +396,17 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     const finalStreams = streams.sample(); charge('driver-pg-node-streams', finalStreams.delta); if (!finalStreams.complete) fail('driver_stream_accounting_unknown');
     if (workdir) {
       const archived = await beforeDeadline(deadlineAt(contract.cleanup.journal), async () => {
-        const retained = await journals(workdir, contract.journalFiles);
+        const retained = await journals(workdir, contract.journalFiles, probing && queueVerified ? queueRunnerIds : undefined);
         if (performance.now() >= deadlineAt(contract.cleanup.journal)) throw new Error('journal_archive_deadline');
         await evidence('journals.json', retained);
         if (performance.now() >= deadlineAt(contract.cleanup.journal)) throw new Error('journal_removal_deadline');
         if (retained.some(file => file.unresolved) || !allChildrenClosed) { cleanup.push({ workdir, retained: true }); fail('admission_or_outbox_retained'); }
-        else { await rm(workdir, { recursive: true }); cleanup.push({ workdir, removed: true }); }
+        else {
+          if (probing) { const current = await lstat(workdir); assert(workdirIdentity && current.isDirectory() && !current.isSymbolicLink() && current.dev === workdirIdentity.dev && current.ino === workdirIdentity.ino, 'queue_directory_identity_unknown'); }
+          await rm(workdir, { recursive: true });
+          if (probing) { let absent = false; try { await lstat(workdir); } catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') absent = true; else throw error; } assert(absent, 'queue_directory_absence_unknown'); }
+          cleanup.push({ workdir, ...(probing ? workdirIdentity : {}), removed: true });
+        }
       });
       if (archived.state !== 'settled') { cleanup.push({ workdir, retained: true }); fail('journal_cleanup_unknown'); }
     }
@@ -357,7 +436,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
   if (performance.now() > deadlineAt(contract.totalMs)) fail('total_time_exceeded_after_evidence_write');
   return { output, success: errors.length === 0, errors, resourcesClosed, tasksSentOrUnknown: budget.tasks, finalElapsedMs: performance.now() - startedMs, finalMeasuredBytes: budget.usedBytes };
 }
-async function journals(root: string, maxFiles = 300): Promise<Row[]> {
+async function journals(root: string, maxFiles = 300, queueRunnerIds?: ReadonlySet<string>): Promise<Row[]> {
   const found: Row[] = []; let files = 0;
   async function walk(directory: string) {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -368,7 +447,7 @@ async function journals(root: string, maxFiles = 300): Promise<Row[]> {
         assert(++files <= maxFiles, 'Runner file count exceeded.'); const size = (await stat(path)).size; assert(size <= 256 * 1024, 'Runner file size exceeded.');
         if (!entry.name.endsWith('.json') && !entry.name.endsWith('.tmp')) continue;
         const bytes = await readFile(path); const parsed = JSON.parse(bytes.toString('utf8'));
-        const unresolved = entry.name !== 'admission.json' || parsed.inFlight !== null || !Array.isArray(parsed.assignments) || parsed.assignments.length !== 0;
+        const unresolved = entry.name !== 'admission.json' || (queueRunnerIds ? !resolvedQueueJournal(parsed, queueRunnerIds) : parsed.inFlight !== null || !Array.isArray(parsed.assignments) || parsed.assignments.length !== 0);
         found.push({ path: relative(root, path), bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex'), unresolved, value: parsed });
       }
     }

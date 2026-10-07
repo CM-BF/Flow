@@ -41,11 +41,11 @@ export function preparedGit(preparationDeadlineMs: number, accounting: InputAcco
   if (now() >= preparationDeadlineMs) throw new Error('comparison_preparation_exhausted');
   accounting.work(); return bytes;
 }
-function frozenFiles(repo: string, side: Side, accounting: InputAccounting, preparationDeadlineMs: number): InputFile[] {
+function frozenFiles(repo: string, side: Side, accounting: InputAccounting, preparationDeadlineMs: number, revision = COMPARISON.revisions[side]): InputFile[] {
   const git = (args: string[], input?: string) => {
     return preparedGit(preparationDeadlineMs, accounting, timeout => execFileSync('git', ['-C', repo, ...args], { input, maxBuffer: 12 * 1024 * 1024, timeout }));
   };
-  const rows = git(['ls-tree', '-rz', COMPARISON.revisions[side], '--', ...INPUT_PATHS]).toString('utf8').split('\0').filter(Boolean);
+  const rows = git(['ls-tree', '-rz', revision, '--', ...INPUT_PATHS]).toString('utf8').split('\0').filter(Boolean);
   const entries = rows.map(row => {
     const match = /^(100644|100755) blob ([a-f0-9]{40})\t([^\0]+)$/.exec(row);
     assert(match, 'unexpected_input_mode'); return { oid: match[2]!, path: inputPath(match[3]!) };
@@ -112,4 +112,17 @@ export async function exportInputs(repo: string, root: string, accounting: Input
       files: files.map(file => ({ path: file.path, oid: file.oid, bytes: file.bytes.length, sha256: createHash('sha256').update(file.bytes).digest('hex') })) });
   }
   return manifest;
+}
+
+/** One fixed baseline reused by both delivery policies; no moving worktree production imports. */
+export async function exportQueueInput(repo: string, root: string, accounting: InputAccounting, deadline: number) {
+  const { DELIVERY_BASELINE } = await import('./pg-delivery-bridge.js');
+  const encoded = await readFile(new URL('./queue-dependencies.json', import.meta.url));
+  accounting.chargeCommon('dependency-bindings', encoded.length);
+  const bindings = JSON.parse(encoded.toString('utf8')) as ExternalBinding[];
+  const files = frozenFiles(repo, 'A', accounting, deadline, DELIVERY_BASELINE);
+  const directory = resolve(root, 'production');
+  const dependencies = await materializeInput(repo, directory, files, accounting, bindings);
+  return [{ side: 'shared', revision: DELIVERY_BASELINE, directory, dependencies,
+    files: files.map(file => ({ path: file.path, oid: file.oid, bytes: file.bytes.length, sha256: createHash('sha256').update(file.bytes).digest('hex') })) }];
 }

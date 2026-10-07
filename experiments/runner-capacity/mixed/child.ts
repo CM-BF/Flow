@@ -31,22 +31,27 @@ let casePromise: Promise<void> | undefined;
 let measure = deferred<number>();
 let currentCase = '';
 let windowTimer: ReturnType<typeof setTimeout> | undefined;
+let boundarySnapshot = (): Record<string, unknown> => ({});
 process.on('message', (message: { kind?: string; epoch?: unknown; phase?: unknown }) => {
-  if (message.kind === 'pg-phase') delivery?.phase(message.epoch, message.phase);
+  if (message.kind === 'pg-phase') {
+    if (contract.queueProbe) send({ kind: 'center-boundary', epoch: message.epoch, requestedPhase: message.phase, ...boundarySnapshot() });
+    delivery?.phase(message.epoch, message.phase);
+  }
   if (message.kind === 'stop') stop();
   if (message.kind === 'stop-case') { stoppedAtMs ??= performance.now(); send({ kind: 'stop-case-received', caseId: currentCase, stoppedAtMs }); caseControl?.abort(); }
   if (message.kind === 'measure') {
     if (pgDelivery && message.epoch !== pgDelivery.epoch) { send({ kind: 'failure', code: 'pg_epoch_unknown' }); process.exitCode = 1; stop(); return; }
     const epoch = pgDelivery ? { epoch: pgDelivery.epoch } : {};
     const beganMs = performance.now(); measure.resolve(beganMs);
-    send({ kind: 'window-start', caseId: currentCase, beganMs, ...epoch });
-    windowTimer = setTimeout(() => send({ kind: 'window-end', caseId: currentCase, beganMs, endedMs: performance.now(), ...epoch }), contract.caseMs);
+    send({ kind: 'window-start', caseId: currentCase, beganMs, ...epoch, ...(contract.queueProbe ? { boundary: boundarySnapshot() } : {}) });
+    windowTimer = setTimeout(() => send({ kind: 'window-end', caseId: currentCase, beganMs, endedMs: performance.now(), ...epoch, ...(contract.queueProbe ? { boundary: boundarySnapshot() } : {}) }), contract.caseMs);
   }
 });
 async function center(config: { databaseUrl: string; ownerToken: string }) {
   const streams = new StreamBytes(contract.ownedStreams);
   delivery = pgDelivery ? centerDelivery(pgDelivery, send, () => { process.exitCode = 1; shutdown.abort(); }) : undefined;
-  const observer = observePg(pg.Pool.prototype, event => delivery ? delivery.record(event) : send({ ...event }), undefined, client => streams.addPgClient(client));
+  const observer = observePg(pg.Pool.prototype, event => delivery ? delivery.record(event) : send({ ...event }), undefined, client => streams.addPgClient(client), Boolean(contract.queueProbe));
+  boundarySnapshot = () => observer.boundary();
   const sample = () => send({ kind: 'stream-bytes', ...streams.sample() });
   const sampleTimer = setInterval(sample, contract.observationMs);
   let app: Awaited<ReturnType<typeof import('../../../apps/server/src/index.js')['createServer']>> | undefined;
@@ -71,15 +76,19 @@ async function runCase(input: CaseInput) {
   const signal = AbortSignal.any([shutdown.signal, caseControl.signal]); stoppedAtMs = null;
   const claimObservation = createClaimObservation(input.taskIds); const claims = claimObservation.claims;
   let claimCodec: Promise<{ decodeRunnerClaimResponse(value: unknown, request: unknown, operation: 'claim' | 'status'): unknown }> | undefined;
-  const originalFetch = globalThis.fetch; let active = 0; let requestOrdinal = 0;
+  const originalFetch = globalThis.fetch; let active = 0; let requestOrdinal = 0; let requestsSettled = 0;
+  let inFlight = 0;
   const emissions = new Map<string, { ordinal: number; startedChildMs: number }>();
+  boundarySnapshot = () => ({ requestsStarted: requestOrdinal, requestsSettled, inFlight, activeAdapters: active, pendingEmits: emissions.size });
   globalThis.fetch = async (target, init) => {
     const url = new URL(typeof target === 'string' ? target : target instanceof URL ? target.href : target.url);
     if (url.origin !== input.baseUrl || !url.pathname.startsWith('/api/runner/')) throw new Error('mixed_unowned_destination');
     const start = performance.now(); const payload = typeof init?.body === 'string' ? init.body : '';
     const body = payload ? JSON.parse(payload) : {};
     const path = url.pathname;
-    const ordinal = ++requestOrdinal; let status: number | null = null; let stage = 'fetch';
+    const ordinal = ++requestOrdinal;
+    if (contract.queueProbe && ordinal > contract.queueProbe.runnerHttpLimit) throw new Error('queue_runner_http_limit');
+    let status: number | null = null; let stage = 'fetch';
     const bound = body.attemptId ? [...claims.values()].find(value => value.attemptId === body.attemptId) : undefined;
     const headers = new Headers(init?.headers);
     const registration = input.runners.find(value => headers.get('authorization') === 'Bearer ' + value.token);
@@ -87,6 +96,7 @@ async function runCase(input: CaseInput) {
       attemptId: bound?.attemptId ?? null, runnerId: bound?.runnerId ?? registration?.runnerId ?? null,
       sentChildMs: start, ownerVersion: bound?.ownerVersion ?? null };
     if (contract.persistentSessions) send({ kind: 'runner-request-send', caseId: input.caseId, ...identity, stoppedAtMs });
+    inFlight++;
     try {
       const response = await originalFetch(target, init); status = response.status; stage = 'body';
       const text = await boundedText(response, contract.responseBytes);
@@ -118,7 +128,7 @@ async function runCase(input: CaseInput) {
       send({ kind: 'runner-http-error', caseId: input.caseId, path, elapsedMs: performance.now() - start,
         ...identity, status, stage, errorClass: requestErrorClass(error), settledChildMs: performance.now(), stoppedAtMs,
         transferBytes: Buffer.byteLength(payload), aborted: signal.aborted, requestSignalAborted: init?.signal?.aborted ?? false }); throw error;
-    }
+    } finally { requestsSettled++; inFlight--; }
   };
   const fixture = createFixtureAdapter();
   const adapter: HarnessAdapter = {
@@ -127,6 +137,8 @@ async function runCase(input: CaseInput) {
       const taskId = 'id' in context.task && typeof context.task.id === 'string' ? context.task.id : undefined;
       const identity = taskId ? claims.get(taskId) : undefined;
       if (!identity) throw new Error('mixed_missing_claim_identity');
+      const cancelled = () => send({ kind: 'control-abort', caseId: input.caseId, ...identity, observedChildMs: performance.now() });
+      if (contract.queueProbe) context.signal.addEventListener('abort', cancelled, { once: true });
       active++; send({ kind: 'adapter-enter', caseId: input.caseId, ...identity, active });
       try {
         await fixture.run(context);
@@ -135,22 +147,24 @@ async function runCase(input: CaseInput) {
         const began = await abortable(measure.promise, context.signal);
         send({ kind: 'barrier-released', caseId: input.caseId, ...identity, waitingAtMs, releasedAtMs: performance.now(), beganMs: began });
         let emissionOrdinal = 0;
-        while (performance.now() < began + contract.caseMs
-          && (!contract.persistentSessions || emissionOrdinal < contract.eventsPerSecond * contract.caseMs / 1000)) {
+        const activityMs = contract.caseMs + (contract.queueProbe?.emitTailMs ?? 0);
+        while (performance.now() < began + activityMs
+          && (!contract.persistentSessions || emissionOrdinal < contract.eventsPerSecond * activityMs / 1000)) {
           context.signal.throwIfAborted();
           const started = performance.now();
           emissionOrdinal++; emissions.set(identity.attemptId, { ordinal: emissionOrdinal, startedChildMs: started });
           try {
+            if (contract.queueProbe) send({ kind: 'emit-start', caseId: input.caseId, ...identity, emissionOrdinal, startedChildMs: started });
             await context.emit({ type: 'message', text: 'm'.repeat(contract.messageBytes) });
             send({ kind: 'emit-ack', caseId: input.caseId, ...identity, emissionOrdinal, startedChildMs: started, elapsedMs: performance.now() - started });
           } finally { emissions.delete(identity.attemptId); }
-          const next = Math.min(began + contract.caseMs, started + 1000 / contract.eventsPerSecond);
+          const next = Math.min(began + activityMs, started + 1000 / contract.eventsPerSecond);
           await sleep(Math.max(0, next - performance.now()), undefined, { signal: context.signal });
         }
-        while (contract.persistentSessions && performance.now() < began + contract.caseMs) {
-          await sleep(Math.max(1, Math.ceil(began + contract.caseMs - performance.now())), undefined, { signal: context.signal });
+        while (contract.persistentSessions && performance.now() < began + activityMs) {
+          await sleep(Math.max(1, Math.ceil(began + activityMs - performance.now())), undefined, { signal: context.signal });
         }
-      } finally { active--; send({ kind: 'adapter-end', caseId: input.caseId, ...identity, active, interrupted: context.signal.aborted }); }
+      } finally { if (contract.queueProbe) context.signal.removeEventListener('abort', cancelled); active--; send({ kind: 'adapter-end', caseId: input.caseId, ...identity, active, interrupted: context.signal.aborted }); }
     },
   };
   try {
@@ -160,7 +174,7 @@ async function runCase(input: CaseInput) {
       pollIntervalMs: contract.pollMs, requestTimeoutMs: contract.requestMs,
       onNotice: notice => send({ kind: 'notice', caseId: input.caseId, notice }) }).catch(error => { caseControl?.abort(); throw error; })));
     if (results.some(result => result.status === 'rejected')) throw new Error('runtime_failed');
-  } finally { clearTimeout(windowTimer); globalThis.fetch = originalFetch; send({ kind: 'case-runtime-settled', caseId: input.caseId, active }); }
+  } finally { clearTimeout(windowTimer); globalThis.fetch = originalFetch; boundarySnapshot = () => ({}); send({ kind: 'case-runtime-settled', caseId: input.caseId, active }); }
 }
 function canonical(value: unknown): string {
   if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
