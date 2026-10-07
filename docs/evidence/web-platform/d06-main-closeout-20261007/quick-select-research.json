@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T04:33:29.012478+00:00",
+  "state": "PRIMARY_SOURCE_RESEARCH_NOT_RUNTIME_DIAGNOSIS",
+  "task": "WPF-MESSAGESETTINGS02",
+  "sources": [
+    {
+      "url": "https://playwright.dev/docs/api/class-keyboard#keyboard-press",
+      "fact": "keyboard.press is a shortcut for key down/up. This specifies event delivery, not a guarantee that a native select commits a particular option after ArrowDown then Enter."
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element",
+      "fact": "Select selection updates notify input/change; the standard discusses multiple user mechanisms and platform-dependent option navigation. This does not establish the behavior of this exact Chrome154 run."
+    }
+  ],
+  "observedFailure": "Native model select remained empty after original ArrowDown/Enter; before/after selection and events were not retained. Root-cause is unresolved.",
+  "nextEvidence": "Observe bounded keydown/keyup/input/change and current focus,value,selectedIndex,declared options at the actual owned select, without preventing defaults, changing selection or adding keys. Prepared TMP worker injection can keep fe6 scenario/product pins and accepted c2 prerequisite unchanged. Use standalone string script to avoid transpiler __name/closure serialization. Record onfailure and detach/limit observation; retain original6assertions.",
+  "scope": "No new browser/Chrome/import/PG/service action. Docs do not authorize changing the expected result, replacing keyboard with selectOption, or declaring product defect.",
+  "quality": "Separate failure, hypothesis, normative references and runtime proof; collect only missing evidence before modifying behavior."
+}

@@ -1,0 +1,34 @@
+{
+  "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
+  "externalCurrentAdmission": {
+    "owner": null,
+    "state": "NO_REPORTED_HEAVY_HOLDER",
+    "svc06": "Actual returned04:13:44.010Z",
+    "mikaSubline": {
+      "threadId": "01a10f3f-d011-7e62-acac-6a50cc0f6e7d",
+      "c02": "New directed process closure around04:18:37 per incoming; separate receipt from earlier04:11:49.742 historical line.",
+      "x01": "Actual CLOSED: types exit0 +5 negative cases PASS, internal2392.676ms/raw844B, both own groups absent/mergedEOF/bothTMP same-inode removed, no PG/HTTP/Chrome/provider/pending launch;9,699,328B returned.",
+      "meaning": "No heavy request; do not infer current holder from previous preparation."
+    },
+    "evidence": "d06-second-actual-20261007/incoming.json"
+  },
+  "nextExternalQueue": [
+    {
+      "owner": "Lead SVC06",
+      "state": "LEAD_ACCEPTED_PENDING_ACTUAL_START_CLEANUP",
+      "limits": "120swork+30cleanup/1DB2ports3groups/0Chrome"
+    },
+    {
+      "owner": "Web D06",
+      "state": "READY_WAIT_CONCRETE_HANDOFF_NO_RESERVATION",
+      "limits": "83267total incl15000cleanup"
+    }
+  ],
+  "currentWindowReturn": "d06-browser-actual-20261007/return.json",
+  "latestCoordination": {
+    "at": "2026-10-07T04:29:09.848510+00:00",
+    "kind": "QUICK_B1_ACTUAL_RETURN_D06_MAIN_INTAKE_READY",
+    "source": "quick-b1-actual-20261007/return.json",
+    "summary": "Quick唯一首browser actualexit1/0checks后清理完整，Mika已获实际归还，无本组holder/gate/预约。D06完整组合已审/唯一main intake ready，宽窄几何键盘通过与新窄屏阅读后继分开。"
+  }
+}

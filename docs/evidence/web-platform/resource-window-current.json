@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T04:29:09.848510+00:00",
-  "state": "QUICK_B1_ACTUAL_FAILED_CLEANUP_RETURNED_NO_WEB_HOLDER",
-  "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
+  "recordedAt": "2026-10-07T04:38:26.484692+00:00",
+  "state": "EXTERNAL_X01_ACTUAL_RUN_WEB_NO_HOLDER_OR_RESERVATION",
+  "groupWindowOwnership": "Mika X01 actual PG RUN after04:37:25.761Z fresh; wait actualcleanup. Web0PG/Chrome/local/gate/reservation; no automatic concurrent heavy run.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T04:29:09.848510+00:00",
-    "kind": "QUICK_B1_ACTUAL_RETURN_D06_MAIN_INTAKE_READY",
-    "source": "quick-b1-actual-20261007/return.json",
-    "summary": "Quick唯一首browser actualexit1/0checks后清理完整，Mika已获实际归还，无本组holder/gate/预约。D06完整组合已审/唯一main intake ready，宽窄几何键盘通过与新窄屏阅读后继分开。"
+    "at": "2026-10-07T04:38:26.484692+00:00",
+    "kind": "X01_ACTUAL_RUN_D06_RELEASED_WEB_IDLE",
+    "source": "d06-main-closeout-20261007/current.json",
+    "summary": "X01实际PG已启动，等待真实cleanup；Web无holder/预约。D06已主线及静态资产发布、v3释放。Quick b2只TMP准备。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "d06-browser-actual-20261007/return.json",
+  "currentWindowReturn": "quick-b1-actual-20261007/return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1086,18 +1086,18 @@
       "currentEvidence": "checkpoint-0400-20261007/timing-main-close.json"
     },
     "d06": {
-      "ownerHead": "babd780e7e5d08b70d12ae697711c9bcda035588",
+      "ownerHead": "79b3d992b73bf386a80dc01bdfb031290b9641fb",
       "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
       "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
-      "state": "READY_FOR_LEAD_MAIN_INTAKE_SCOPED_APPROVED",
+      "state": "DELIVERED_MAIN_STATIC_ASSETS_CLAIM_RELEASED",
       "manifestSha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95",
-      "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
+      "proposal": "Historical first6733/second8880 =>15613spent;74387 remaining is not further permission, both packets consumed.",
       "review": "d06-second-actual-20261007/root-composition-review.json",
       "authority": "Window actually returned; remaining budget is not new permission. No automatic third run.",
       "actualReceipt": "d06-second-actual-20261007/return.json",
       "conservativeSpentMs": 15613,
       "remainingMs": 74387,
-      "sourceBoundary": "Actual all5groups/20observations/20PNG on a28e passed, pending independent review; main and live4320 not inferred.",
+      "sourceBoundary": "Actual geometry/keyboard/source navigation scoped approved and main/staticassets delivered; default390 readability separate pending followup.",
       "bindingSha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565",
       "futureCombinedFloorBytes": 4053008384,
       "combinedFloorAttribution": "Original1350565888 + conservative formerSVC06 allowance2684354560 + conservative Mika local18087936 =4053008384. SVC06/C02 actually cleaned; no present coexistence asserted.",
@@ -1105,10 +1105,17 @@
       "admissionRevision": "checkpoint-0413-20261007/d06-coexistence-revision-report.md",
       "approvedComposition": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
       "mainIntake": "d06-second-actual-20261007/main-handoff.json",
-      "acceptedScope": "Geometry/keyboard/source-navigation passed;390 readable default mode is separate pendingD01 followup."
+      "acceptedScope": "Geometry/keyboard/source-navigation passed;390 readable default mode is separate pendingD01 followup.",
+      "main": "02c8802800e28439bc5bf69c86f2c7705aa9764e",
+      "mainReceipt": "d06-main-closeout-20261007/current.json",
+      "claim": {
+        "id": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+        "version": 3,
+        "state": "released"
+      }
     },
     "quick": {
-      "ownerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+      "ownerHead": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-b1",
       "bindingSha256": "2fc27b8b26c55670b3e11d7e8643d390ce417b27c61f4d1fa05829a8548f364a",
@@ -1118,10 +1125,11 @@
       "browserSpentMs": 12326,
       "totalMs": 60000,
       "cleanupMs": 15000,
-      "meaning": "Root checked exact native review+gate, dispatched original owner; actual process evidence pending, not inferred from chat activity.",
+      "meaning": "ActualFAILED0/6/0PNG, exactcleanup accepted; firstpacket consumed. NewTMP diagnostics prepare only, no runtime or reservation.",
       "actualReceipt": "quick-b1-actual-20261007/return.json",
       "remainingMs": 47674,
-      "failure": "First native keyboard model selection remained empty; originalowner static cause investigation, no outcome assumption."
+      "failure": "First native keyboard model selection remained empty; originalowner static cause investigation, no outcome assumption.",
+      "review": "d06-main-closeout-20261007/quick-b1-failed-review.json"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1556,16 +1564,12 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": null,
-    "state": "NO_REPORTED_HEAVY_HOLDER",
-    "svc06": "Actual returned04:13:44.010Z",
-    "mikaSubline": {
-      "threadId": "01a10f3f-d011-7e62-acac-6a50cc0f6e7d",
-      "c02": "New directed process closure around04:18:37 per incoming; separate receipt from earlier04:11:49.742 historical line.",
-      "x01": "Actual CLOSED: types exit0 +5 negative cases PASS, internal2392.676ms/raw844B, both own groups absent/mergedEOF/bothTMP same-inode removed, no PG/HTTP/Chrome/provider/pending launch;9,699,328B returned.",
-      "meaning": "No heavy request; do not infer current holder from previous preparation."
-    },
-    "evidence": "d06-second-actual-20261007/incoming.json"
+    "owner": "Mika X01",
+    "state": "ACTUAL_RUN",
+    "source": "d06-main-closeout-20261007/current.json",
+    "freshAt": "2026-10-07T04:37:25.761Z",
+    "cleanup": "PENDING_ACTUAL_RECEIPT",
+    "noElapsedHandoff": true
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1574,18 +1578,7 @@
     "pureGit": "NOT_RUN",
     "newRuntimeGrant": false
   },
-  "nextExternalQueue": [
-    {
-      "owner": "Lead SVC06",
-      "state": "LEAD_ACCEPTED_PENDING_ACTUAL_START_CLEANUP",
-      "limits": "120swork+30cleanup/1DB2ports3groups/0Chrome"
-    },
-    {
-      "owner": "Web D06",
-      "state": "READY_WAIT_CONCRETE_HANDOFF_NO_RESERVATION",
-      "limits": "83267total incl15000cleanup"
-    }
-  ],
-  "currentIntake": "quick-b1-actual-20261007/return.json",
+  "nextExternalQueue": [],
+  "currentIntake": "d06-main-closeout-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants."
 }

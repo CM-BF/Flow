@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T04:29:58.931145+00:00",
+  "taskParent": "D01",
+  "state": "READ_ONLY_RESEARCH_PENDING_OWNER_PLAN_NOT_TAKEN",
+  "source": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+  "origin": "GO actual screenshot/readability finding; independently read same renderer/CSS/scenario and representative existing screenshots, no new runtime.",
+  "gap": {
+    "defaultFitFloor": 0.42,
+    "baseFontsPx": {
+      "nodeTitle": 18,
+      "nodeSubtitle": 13,
+      "edgeLabel": 14,
+      "boundaryTitle": 15
+    },
+    "effectiveAtFloorPx": {
+      "nodeTitle": 7.56,
+      "nodeSubtitle": 5.46,
+      "edgeLabel": 5.88,
+      "boundaryTitle": 6.3
+    },
+    "inference": "Source arithmetic under uniform SVG viewBox scaling, not a newly measured browser output. Existing390 screenshot confirms visibly tiny diagram text.",
+    "oldAssertion": "localScrollWidth > localClientWidth establishes scrollability only; readable minimum wording does not establish readable text."
+  },
+  "acceptanceBoundary": "Existing5/5 geometry/labels/keyboard/source and20screens stay valid only within those checks. Root actual/composition approval does not certify graph text readability at42%. GO explicitly requests planned successor without interrupting591 intake or real chat priorities.",
+  "preferredDesign": [
+    "Keep existing graph/data/theme primitives and font family. Default 阅读 uses100% SVG scale: title18/subtitle13/edge14/boundary15 CSS px; local pan/scroll remains. These are project design targets, not claims of external accessibility standards.",
+    "Rename current fit action 适配概览 and explicitly mark current mode/zoom; overview can shrink by deliberate user action. Provide 恢复阅读/100% action. Resize must preserve user reading/manual mode and per-view selection; do not silently revert to tiny fit.",
+    "On explicit keyboard Enter/Space selection, make existing details visible. Simplest candidate: focus a temporary-focusable details heading after scrollIntoView(nearest), plus 返回所选节点 button restores node focus/local viewport. Do not move focus on mere focus/hover or background resize. Compare with a compact inline details region only if current layout makes return navigation awkward.",
+    "Reuse selectedView.nodes/edges to give selected-node adjacent relationship text if needed; one derived view, no second editable topology or graph library. Full graph remains pan/zoom capable."
+  ],
+  "verification": [
+    "Preserve existing5views,2themes,390+desktop bounds/source/keyboard assertions. Add actual screen font evidence for title/subtitle/edge/boundary in default阅读: computed font-size times getScreenCTM scale (uniform mapping verified), plus readable screenshot inspection. getBBox alone is not a screen-text-size test.",
+    "Check overview is explicitly selected and labelled, restoring阅读 returns targets; view changes and resize preserve chosen mode/selection rather than unintended auto-fit.",
+    "Explicit keyboard selection makes detail heading actually within viewport and focused; return control restores matching selected node/focus without page horizontal overflow. Test reduced motion with no smooth forced animation.",
+    "Preserve original591 screenshots/scenario/results; any successor assertions are new evidence, not edited historical PASS."
+  ],
+  "candidateScope": "Renderer architecture.js, architecture.css, existing toolbar markup index.html only if needed, targeted architecture tests/browser scenario and new own plan/evidence; exact literals and unique owner/claim must be planned after D06 intake, not granted here. Do not modify architecture-data snapshot to hide readability.",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/frontend-design/SKILL.md",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "applied": "Respect existing quiet typography/theme; visual hierarchy and actual screenshot critique; bounded deliberate controls, no redesign decoration."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "applied": "Preserve renderer/data interface; separate view mode from numeric zoom; derive relationships without duplicate state; validate actual reading behavior."
+    }
+  ],
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.js",
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/scenario.mjs",
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/modules-390-dark.png",
+      "sha256": "3b8ed35549ce5aa80f6c8499481c6a9376e0231ac0346622eeb32b400d13d1a4"
+    }
+  ],
+  "runtime": "No launch/import/GET/PG/resource sample, no project modification; design proposal not implemented or dynamically verified."
+}

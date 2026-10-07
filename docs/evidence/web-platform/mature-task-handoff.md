@@ -1,16 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T04:14:05.957986+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
+更新：2026-10-07T04:37:53.387420+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
 
 ## 当前窗口与用户交付
 
-**Web现无heavy/local holder、gate或预约。** [Quick唯一首次页面检查实际归还](quick-b1-actual-20261007/return.json)：04:26:26–38 outerexit1，第一组键盘选择模型仍为空而失败，0checks/0PNG；fixture/context/Chrome/两owned group/scratch均清理，Mika已获归还。原strict+26通过和c1失败不变；browser保守累计12326/余47674，不自动二跑。D06更早实际归还，完整组合已可接主线。
+**Web现无heavy/local holder、gate或预约。** [Quick唯一首次页面检查实际归还](quick-b1-actual-20261007/return.json)：04:26:26–38 outerexit1，第一组键盘选择模型仍为空而失败，0checks/0PNG；fixture/context/Chrome/两owned group/scratch均清理，Mika已获归还。原strict+26通过和c1失败不变；browser保守累计12326/余47674，不自动二跑。D06更早实际归还且已接主线。SVC06已04:32:08.205Z实际清理；Mika X01已在04:37:25.761Z fresh后实际启动原27项PG旅程，等待真实cleanup，不按预计时长交接；本组不争占。
 
 **任务时间展示已接主线并部署。** [原Lead实际发布和owner完成回执](checkpoint-0400-20261007/timing-main-close.json)记录03:49:29Z的4320/source52fe/185来源；03:56:00.608Z任务核齐完成，owner4b78双端clean、[9a677v2已释放](checkpoint-0400-20261007/timing-release.json)。原183快照与未部署准备都是历史。首屏易读性是独立有界TIMING02候选，见下，不重开已完成的TIMING01或复用旧写权。
 
-**“打开Flow/登录凭据”已接主线并实际发布。** [Lead部署原件](checkpoint-0413-20261007/access-deployment-receipt.json)记录04:04:16.630Z/source451/4320/185来源、显式opt-in；Lead内存核200匹配且未存印token，自有临时tab默认空。GO另实际观察主动掩码加载、复制成功提示与关闭清空；未读取剪贴板值、未自动登录产品或发送聊天。原[35direct与第四5/5组合独审](checkpoint-0400-20261007/access-composition-review.json)及全部失败预算保留，无第五跑。owner最新269a8566 human摘要已修、十范围停写；README537窄doc与生命周期由原owner/Lead后续收口，不在管理树代写。
+**“打开Flow/登录凭据”已接主线并实际发布。** [Lead部署原件](checkpoint-0413-20261007/access-deployment-receipt.json)记录04:04:16.630Z/source451/4320/185来源、显式opt-in；Lead内存核200匹配且未存印token，自有临时tab默认空。GO另实际观察主动掩码加载、复制成功提示与关闭清空；未读取剪贴板值、未自动登录产品或发送聊天。原[35direct与第四5/5组合独审](checkpoint-0400-20261007/access-composition-review.json)及全部失败预算保留，无第五跑。owner最新269a8566 human摘要已修、十范围停写；**唯一待接增量为README537 + root92eaba批准 + owner269a记录**；e29主线尚无537证据。由Lead接这一doc-only增量后正常owner收口/release，不重测token/clipboard。
 
-**架构图完整组合已获独审，正式交原Lead主线接收。** [唯一D06实际原件](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/index.json)记录a28e五图、宽窄屏/双主题20观察及20PNG、几何/键盘/固定源码下钻全部通过，真实outerexit0。原首轮FAIL与22direct保留；保守累计15613/余74387ms，余量不是第三次许可。[唯一主线handoff](d06-second-actual-20261007/main-handoff.json)固定target591/base6d05/exact8及final owner babd780eclean；root实际与组合均已接收。主线/真实4320部署分别待回执，不重跑既有组。
+**架构图已接主线并提供新资产，原领取已释放。** [本轮唯一收口](d06-main-closeout-20261007/current.json)核target591/exact8与main02c880/current/owner逐字同，Lead04:32:08两静态资产GET200匹配；final owner79b3双端clean，adf953v3于04:36:37.937Z释放。原22direct与5组20观察/PNG的几何和键盘范围已独审，旧失败/预算不变；390默认阅读字号仍是[既有D01/REQ39后继](d06-main-closeout-20261007/d06-reading-research.json)，不冒完整视觉可读通过。
 
 [61228同版本恢复](dashboard-task-time-intake/personal-web-recovery-receipt.json)已由唯一operator完成；本组未采个人服务/容量。Recovery实际局部十项已由7440b59封存、Quick严格类型+26direct与D04五pureGit均已[root限定接收](current-product-checkpoint-20261007/local-results-review.json)，旧NOT_RUN只指历史准备或尚未执行的浏览器，不覆盖这些真实结果。
 
@@ -49,7 +49,7 @@
 | 任务开始/完成/历时展示 | w01_owner；dashboard-task-timing；codex/dashboard-task-timing | 9a677471 v2 RELEASED / 原6 scopes；[已部署185/完成](dashboard-task-timing-provision/current-intake.json) |
 | 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v3 / 7 scopes（server/app已移出）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
 | D04自有测试worktree生命周期 | d01_owner；dashboard-coordination；codex/dashboard-coordination | f61d41f5 v1 / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/plans/d04-coordination/status.md) · [交接](d04-owned-worktree-lifecycle-intake/handoff.json) |
-| 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v2 COMMITTED / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
+| 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v3 RELEASED / 原5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
 | 旧 ACTIVITY 预览生命周期记录 | workspace_panels_owner；web-conversation-activity；codex/web-conversation-activity | 707b1c6c v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md) · [释放receipt](ops-two-fixture-retirement/activity-retirement-release-receipt.json) |
 | 旧 CHAT 预览生命周期记录 | workspace_panels_owner；web-conversations；codex/web-conversations | da159c3d v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md) · [释放receipt](ops-two-fixture-retirement/chat-retirement-release-receipt.json) |
 | 三项原 owner 预览生命周期记录 | workspace_panels_owner；plugin-management / profile / steering 三原树 | 741c80b3 / d9f7ff54 / 40ec6625 各 v2 RELEASED / 各3 metadata scopes；[精确唯一status/HEAD/回执](ops-three-fixture-retirement/manager-confirmation.json) |
@@ -111,3 +111,5 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 [DPERF04复接当前ACCESS/Timing只读提案](quick-b1-actual-20261007/dperf04-resume-readonly-report.md)仍未amend/未实施；候选原7+4路径须在ACCESS doc-only537主线与停写释放后fresh核交集，TIMING02不得同时写app。现各owner一次PENDING_SYNC保真，不重复5s GET全扫185来源。
 
 [C02公开stream v2具体消费交接](quick-b1-actual-20261007/c02-public-stream-consumer-handoff.json)：Recovery唯一owner panels/7440/6ffv4原21保持；App与fixture现明确patch-v1，ConversationStreams是Provider。真正messages映射在Recovery原范围外，待C02固定合同与public-stream-next入口后fresh协调精确owner/scope，复用projectBodySegments并保source/channel/未知。当前不写UI、不交还App/Thread、不抢共享contract；此canonical为对co-lead具体请求的正常回应。
+
+[Quick原失败独审](d06-main-closeout-20261007/quick-b1-failed-review.json)已接受真实失败与清理；owner3a4双端clean。后继仅独立TMP b2观察/carry准备，不修改四fe6或原b1，无运行授权。[C02接缝只读研究](d06-main-closeout-20261007/c02-stream-research.json)归原CHAT06映射，固定合同与新scope交接前不写UI。

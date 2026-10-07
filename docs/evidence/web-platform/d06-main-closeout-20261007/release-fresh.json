@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T04:36:37.876607+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06",
+      "plans/d06-architecture-refresh"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-architecture-runtime",
+    "origin": "new",
+    "taskId": "D06",
+    "worker": "d01_owner",
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+    "createdAt": "2026-10-06T23:36:04.842Z",
+    "updatedAt": "2026-10-07T03:51:56.566Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "79b3d992b73bf386a80dc01bdfb031290b9641fb",
+  "remoteEqual": true,
+  "clean": true,
+  "stoppedWriting": true
+}

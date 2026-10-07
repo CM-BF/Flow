@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-07T04:38:26.484692+00:00",
+  "d06": {
+    "task": "D06",
+    "ownerHead": "79b3d992b73bf386a80dc01bdfb031290b9641fb",
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+    "integratedMain": "02c8802800e28439bc5bf69c86f2c7705aa9764e",
+    "uniqueStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md",
+    "mainReadproof": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/main-closeout-20261007/main-readproof.json",
+    "exactSourceCount": 8,
+    "ownerCleanRemoteEqual": true,
+    "completedAt": "2026-10-07T04:35:12.794Z",
+    "started": "UNKNOWN",
+    "deployment": "Lead static2 GET200 at04:32:08.460355Z equals main, no new request/restart/original-tab reload",
+    "release": {
+      "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+      "version": 3,
+      "state": "released",
+      "at": "2026-10-07T04:36:37.937Z",
+      "path": "release-receipt.json"
+    },
+    "remainingReadingAcceptance": "ExistingD01/REQ39 pending; geometry5/5 not default390 readability approval"
+  },
+  "quick": {
+    "ownerHead": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+    "cleanRemoteEqual": "Owner observed after one samecommit normal push retry; first commit_refs failure is historical",
+    "actualState": "FAILED0/6/0PNG; cleanup accepted",
+    "spentMs": 12326,
+    "remainingMs": 47674,
+    "review": "quick-b1-failed-review.json",
+    "next": "Only separate TMPb2 diagnostic/carry preparation, original b1 and fourfe6 unchanged; no runtime/gate/reservation"
+  },
+  "svc06": {
+    "source": "Root relayed actual Lead receipt, no new service query",
+    "returnedAt": "2026-10-07T04:32:08.205Z",
+    "workMs": 37293,
+    "cleanupMs": 449,
+    "actualExit": 0,
+    "ownedAbsent": true,
+    "doubleEOF": true,
+    "webRunnerCenter": "helper stopped",
+    "database": "marker/OID1208860/conn[]/normalDROP remaining[]",
+    "nextReservation": false
+  },
+  "x01": {
+    "source": "Root actual incoming from Mika owner, no manager resource/process sample",
+    "state": "ACTUAL_RUN",
+    "freshAt": "2026-10-07T04:37:25.761Z",
+    "actualStarted": "After samefresh per owner actualRUN receipt; exact process handle not supplied in this summary",
+    "ownerHead": "85b7726e",
+    "claim": "v8/17",
+    "manifest": "0dbf… per incoming, not treated as a full localpin",
+    "cases": 27,
+    "totalMs": 180000,
+    "pgSerial": 2,
+    "tmpMiB": 32,
+    "rawMiB": 1,
+    "freshAvailableBytes": 25634607104,
+    "requiredBytes": 1260650496,
+    "includedBudgets": "128MiB DB + C02local18087936B",
+    "chrome": 0,
+    "provider": 0,
+    "native": 0,
+    "cleanup": "PENDING_ACTUAL_RECEIPT_NO_ELAPSED_ASSUMPTION"
+  },
+  "web": {
+    "heavyHolder": null,
+    "localHolder": null,
+    "gate": null,
+    "reservation": false
+  },
+  "access": {
+    "state": "PRODUCT_DEPLOYED_DOC_ONLY_PENDING",
+    "pendingTarget": "53723697a796a1346164c4cddc82ab99baf168ea",
+    "rootReview": "92eaba approved README-only",
+    "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
+    "observedMain": "e29e5d82d3d1a3f58fe6fac909fae52e83f7bc49",
+    "mainReadme": "Root read once still old; no 537 main proof. No product retest/token/clipboard work."
+  },
+  "x01OfferHistory": {
+    "source": "Root concrete coordination via Mika",
+    "state": "OFFERED_NEXT_READY_PG_PENDING_REVIEW_AND_FRESH_NOT_RUN",
+    "cases": 27,
+    "totalMs": 180000,
+    "tmpMiB": 32,
+    "rawMiB": 1,
+    "dbWalMiB": 128,
+    "reserveMiB": 1024,
+    "requires": "fixeddelta review + ownfresh gate; no inferred actualRUN"
+  }
+}
