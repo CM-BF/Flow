@@ -5,7 +5,7 @@
   "evidenceRef": "a502f09176a0e196cf9f8333206b13900aefbc4c",
   "PG": "NOT_RUN",
   "providerCalls": 0,
-  "sourceDigest": "f5d964cd967fc4c7dff645f764ba686918d5f47ffffc56587668d2d19e39612d",
+  "sourceDigest": "fc7b4fcfc0fa37ac09050b57887b06596738b879553754acea33323d6b8c54f5",
   "bindings": [
     {
       "path": "apps/runner/package.json",
@@ -97,6 +97,13 @@
       "ref": "c0e0263dc01b9527293318a644f964bd048e2a86",
       "bytes": 4507,
       "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "category": "source",
+      "ref": "b0581d2e6d82c31a7180a22e450d06c3fc266ac5",
+      "bytes": 4794,
+      "sha256": "eaa5656eb571c8ec658ff9636b35e018e025b53b2c4d704646313884c98d20b2"
     },
     {
       "path": "apps/runner/src/engineering/calculator-receipt.ts",
@@ -2387,7 +2394,7 @@
     }
   ],
   "counts": {
-    "source": 3,
+    "source": 4,
     "protected": 257,
     "evidence": 64
   }
