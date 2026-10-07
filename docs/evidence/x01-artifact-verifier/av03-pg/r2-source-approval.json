@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T18:37:13.000Z",
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "state": "SOURCE_DELTA_APPROVED",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Project-current-revision setup P2",
+  "evidence": "Authoritative test/mirror same diff;public pre036 POST projects;201 and project/graph revision1/empty nodes;returnedsnapshot.project.id;existing createProject same-TX dual INSERT",
+  "priorAudit": "r2-synthetic-audit.json: complete fixed4323 seed SQL audit found no additional certain defect",
+  "limits": "Static source only;0types/child/PG;originalR1 remains FAILED;review did not itself authorize R2 namespace/manifest or actual window"
+}

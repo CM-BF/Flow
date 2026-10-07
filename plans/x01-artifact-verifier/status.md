@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T18:36:44.880Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:04:48.494Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | R2 source10bd0219已固定；只准备独立candidate metadata，提交push后clean STOP |
+| 工作树dirty状态 | R2已审source10bd及固定1959准备输入冻结；本轮metadata提交push后clean STOP |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 10bd0219f84c34008a0255bfed282052a91bce7c：R2源修仅静态；R1保持FAILED/0selected5skipped，原结果审通过仅忠实性 |
+| 检查状态 | NOT_RUN 10bd0219f84c34008a0255bfed282052a91bce7c：R2仅静态批准，0新types/collect/PG；R1 FAILED/0selected5skipped及原raw保持 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
 | 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（center局部已审，真实PG R1准备数据失败；未获得真实矩阵通过） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 项目测试准备已复用现有中心创建接口；原失败与完整资源归还已独审，修复尚未运行 |
-| 下一可用交付 | 审查修复后，在另行批准的窗口完成五项数据库验收 |
-| 当前阻塞 | ACTIVE: 修复后的数据库验收尚未运行，中心领取片暂不能作为已通过结果集成 |
+| 当前产出 | 项目测试准备修复已通过独立审查，下一次数据库验收配方已封存；五项真实验收仍未运行 |
+| 下一可用交付 | 在新的独立窗口完成五项数据库验收 |
+| 当前阻塞 | ACTIVE: 等待独立数据库验证窗口，中心领取片尚缺五项真实验收通过证据 |
 | 需用户决定 | NONE |
-| Review | R1 FAILED_RESULT_FIDELITY_REVIEW_APPROVED 18:30:02；R2 source10bd0219增量待审，0新工程执行 |
+| Review | SOURCE_DELTA_APPROVED 10bd0219f84c34008a0255bfed282052a91bce7c，2026-10-07T18:37:13.000Z/0P1P2；R1失败忠实性18:30:02批准；R2真实PG未运行 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
@@ -157,3 +157,11 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 2026-10-07T18:30:02.000Z root独立FAILED_RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定result2f32/packet77d；只证明失败分类和资源归还忠实，原R1仍FAILED。新段18:32:07.763Z–18:44:07.763Z，新增4MiB、0engineering/PG/HTTP/Chrome/provider。fresh a67v4/30有效。修复source 10bd0219f84c34008a0255bfed282052a91bce7c 使用pre036公开项目创建接口，其现有command事务同时保存项目及修订，采用返回项目id；两工厂/036及五case断言不变。db18:33只读审计未发现第二确定SQL建数缺陷，静态计数14task/9attempt/5runner/6registration不代表通过。
 
 R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RUN，不复用R1window。只更新本次test/镜像和小绑定，原R1raw/manifest完整保留。新源码须定向类型验证待ordinary允许，本段不运行；center产品仍NOT_INTEGRATION_READY_PG_REQUIRED，AV03/04未完成。
+
+## R2准备审结与metadata收尾
+
+2026-10-07T18:37:13.000Z db独立SOURCE_DELTA_APPROVED/0P1P2，固定10bd正本/镜像的公开项目创建与返回身份；原4323 synthetic SQL审计未见第二确定缺陷。该批准仅静态，不代表五case通过。18:38:02.000Z按S01 drain全部STOP；18:58:01.926Z经理解除，新的metadata-only段19:01:47.984Z–19:09:47.984Z/1MiB，不延长旧source段。fresh a67v4/1959=origin clean；0工程child/PG/HTTP/provider。
+
+唯一新候选入口[r2-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json)，manifest14a6aaaf/281pins191external16links34SQL；六rowdelta、275原样，旧R1raw/source/manifest固定Git引用不改。未来独立180s=110work+60cleanup+10final、17配置PG连接、原5case，当前NOT_OPEN/NOT_RUN/0admission/namespace未创建。完整invocation先固定于r2-invocation.json，未来fresh准入后立即调用，避免聊天间过期。root明确test-only既有route复用不补冗余types/collect。
+
+原R1保持FAILED/0selected5skipped，其root18:30忠实性批准与资源FULL_RETURN分列。center仍NOT_INTEGRATION_READY_PG_REQUIRED；AV03/04完整目标、公有producer与PROCESS T7不由本片完成。提交push后STOP保claim；当前无actual/待launch。

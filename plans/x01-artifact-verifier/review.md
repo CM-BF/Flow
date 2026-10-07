@@ -1,6 +1,6 @@
 # X01-ARTIFACT-VERIFIER01 独立设计审查
 
-状态：R1失败忠实性已批准；R2项目准备源修SOURCE_DELTA_REVIEW_PENDING。旧批准保留各自范围。
+状态：R2项目准备SOURCE_DELTA_APPROVED（静态）；真实五例仍NOT_RUN。R1失败忠实性已批准，旧批准保持各自范围。
 Review target commit: e746029f6daa5751f59813f5c18012b782824d54
 
 ## 固定输入与审查范围
@@ -58,3 +58,7 @@ chatui01_owner / gpt-6-astra：DESIGN_DELTA_REVIEW_APPROVED，target bc5b68a0e4e
 ## R1独立失败审查 / R2源修待审
 
 root于2026-10-07T18:30:02.000Z批准result2f32/packet77d失败忠实性，0P1P2；原R1不改绿。R2 source 10bd0219f84c34008a0255bfed282052a91bce7c仅项目公共创建与返回身份，保五例/旧工厂/DDL/故意非法绑定。0新工程child或PG，source-only段18:32:07.763Z–18:44:07.763Z；请db只读核最小delta与namespace绑定，不重审全部闭包或转移旧local通过。
+
+## R2固定源增量批准归档
+
+2026-10-07T18:37:13.000Z db_transaction_owner/gpt-6-astra，SOURCE_DELTA_APPROVED/0P1P2，source10bd0219f84c34008a0255bfed282052a91bce7c。公共createProject同事务创建项目/修订，201及返回project/graph身份断言符合现合约，原P2关闭。无types/PG/child，原R1FAILED不改。新namespace/manifest由owner只作字节与literal差量封存，不声称审者授权actual；未来必须新唯一NEXT/fresh门禁。详见av03-pg/r2-source-approval.json、r2-ready.json。

@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-07T19:06:06.677Z",
+  "state": "METADATA_CLOSED_STOP",
+  "start": "2026-10-07T19:01:47.984Z",
+  "deadline": "2026-10-07T19:09:47.984Z",
+  "metadataRowsBeforeThisReceipt": [
+    {
+      "path": "plans/x01-artifact-verifier/review.md",
+      "bytes": 7129,
+      "sha256": "be9ec1d195096034c33378746a9769fcbaa8fa973830aa92655436cc504f17a5"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/status.md",
+      "bytes": 23145,
+      "sha256": "0aa97a8c41d29e06eb6e943c33c45ef11ceced222b8a8c412cfc2d574b201f12"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-invocation.json",
+      "bytes": 2660,
+      "sha256": "cb8eeaf72550d9004de9b47ddb16cde2f70184c8d8f05bbfc252903320306cc3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-metadata-start.json",
+      "bytes": 2493,
+      "sha256": "4ff5965cd4195b996480cf8caf0b33979898dcca758e5b12bf9076b8a5087ccd"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json",
+      "bytes": 2209,
+      "sha256": "2bf7297ee55963466dadde030bca64b21ead15d10b216ab458711d47d4ad698f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-source-approval.json",
+      "bytes": 708,
+      "sha256": "0e65c24a45c626501770f46e2e16b87f94af014114673482d44d1d4a14764051"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-status-parse.json",
+      "bytes": 353,
+      "sha256": "9eed7ae98e1cc3499e76a5574e7fab9222a44eee331e1ddb28878913efb8e445"
+    }
+  ],
+  "metadataLogicalBytesBeforeThisReceipt": 38697,
+  "thisReceiptReserveBytes": 16384,
+  "metadataCap": 1048576,
+  "priorSourceSegmentRows": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r2.json",
+      "bytes": 91001,
+      "sha256": "1a8d25dbd5f5c9fda1d59a5b11d10bb6f8f072cde415c598ce219ee9947ebd52"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input-r2.json",
+      "bytes": 2423,
+      "sha256": "4158b2e8d556331e08707bbbc8c55711c9264a68769132b9d0168d5d223862eb"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r2.json",
+      "bytes": 162547,
+      "sha256": "14a6aaaf8c9c62e98d1f87a77059f88917daaee9b6fc0ce537b8713bb09e5ba1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+      "bytes": 18385,
+      "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-quality.json",
+      "bytes": 757,
+      "sha256": "61385587a91d04c8f623445629a8a6dcf49caf33dd560753bfb1a4bc4542c20f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-review-ready.json",
+      "bytes": 7436,
+      "sha256": "c6e6c61863d06ea34db5c8dbad7f92bd1c7671d5ae7f9aa01f62ae1d189a8053"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-source-delta.json",
+      "bytes": 1061,
+      "sha256": "8e02f5b4cfd3d436f99aacebcd15b3b1de7dd7eccd2c325f218c9fe65ced426c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-source-start.json",
+      "bytes": 2488,
+      "sha256": "3cf33bf9e275d0d9cc00cdd93261cdeb0957f1c9b91b15cc77e7231d6a3eb24f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-synthetic-audit.json",
+      "bytes": 1107,
+      "sha256": "6de49207343e66b4857ed7985ea3c14382db8def3a7b8bbb708b10e5b23b175a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/result-approval-r1.json",
+      "bytes": 596,
+      "sha256": "3ec6bda7ed4b6dbe367cd1dc047cee99d56c9518f99a0d5365a35a49ada5e161"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request-r2.json",
+      "bytes": 2269,
+      "sha256": "e8e318abac1a438b2bd4b8983442ae0699aec2e2ac7bf159061c8d4534d16e16"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/review.md",
+      "bytes": 6578,
+      "sha256": "f974f81c7b0dd37284e7ffe6262938f6303d10b35fef47dfd46f12f0ee4496c0"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/status.md",
+      "bytes": 21840,
+      "sha256": "d940ca2a8182ca131e37629e680e56215a9036d0bfb9b836da007cb14d8c4a13"
+    }
+  ],
+  "priorSourceSegmentLogicalBytes": 359654,
+  "priorSourceCap": 4194304,
+  "measurement": "Whole changed-file logical byte sums including existing text, conservative growth upper bound;not filesystem peak",
+  "sourceUnchangedThisSegment": true,
+  "R1RawUnchanged": true,
+  "manifestR2Unchanged": true,
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "newNamespace": false,
+  "claimRetained": "a67v4 ACTIVE30",
+  "quality": "Names/one-state-source/check boundaries/literal paths and UTC times reviewed;parseStatus errors/humanMissing/timingIssues empty;no redundant engineering checks",
+  "methods": "Installed find-skills/codebase-design/clean-code baseline reused;no install/source updates"
+}
