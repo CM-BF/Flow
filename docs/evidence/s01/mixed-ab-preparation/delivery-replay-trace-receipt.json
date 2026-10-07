@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-10-07T14:22:36.029Z",
+  "source": {
+    "result": "bf8813327ca60d645d03e8d9f9218e30d455cd3f",
+    "path": "docs/evidence/s01/pool-wait-run/O1/observations.json",
+    "bytes": 43858197,
+    "sha256": "b998c5eaf2b242d13afd404f9cbaea5c32651a6e3d1587ebd393baa3a96250fc"
+  },
+  "readPasses": 1,
+  "extracted": 2048,
+  "eligible": 20952,
+  "kindCounts": {
+    "sql": 1542,
+    "transaction": 132,
+    "pool-acquisition": 374
+  },
+  "nonSQLLogicalJSONBytes": 126851,
+  "trace": {
+    "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-trace.json",
+    "bytes": 491756,
+    "sha256": "b65bdc168a504b5d7f301e17cdb184fa90695752bebc137ffdedb59adc6bc6f2"
+  },
+  "noProjectImportOrTests": true,
+  "sourceUnchanged": true
+}

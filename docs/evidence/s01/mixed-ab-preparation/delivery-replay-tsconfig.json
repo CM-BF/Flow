@@ -1,0 +1,10 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "files": [
+    "../../../../experiments/runner-capacity/mixed/delivery-replay.ts",
+    "../../../../experiments/runner-capacity/mixed/delivery-replay-main.ts",
+    "../../../../experiments/runner-capacity/mixed/delivery-replay.test.ts"
+  ],
+  "include": []
+}

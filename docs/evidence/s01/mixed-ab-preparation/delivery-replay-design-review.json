@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-10-07T14:22:00Z",
+  "timePrecision": "minute as reviewer message",
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "target": "376bcdb238d64bfbb95c11029d02770c86f09440",
+  "verdict": "DESIGN_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "requiredImplementation": [
+    "call centerDelivery.phase(newEpoch,measure), new ordinal 1-based; control/summary included in full JSON envelope/pending",
+    "record wall includes pacing; separate synchronous call/finish/CPU/wait; common parent arm start to all receipt/close, not first-message receive span",
+    "augment deliveryReceipt with finite SQL group/count/elapsed and nonSQL full-field/ordinal-mapping equivalence; no duplicate/extra message; callbacks drain and parent complete"
+  ],
+  "runtimeOrSourceApproved": false
+}
