@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07 04:13:52 UTC |
+| 更新时间 | 2026-10-07T04:35:10.784347Z |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
@@ -64,3 +64,5 @@
 2026-10-07T03:57:24.093Z：v3成功amend后实际开始Web-only selector实施。新局部从first-reservation记录的实际开工至04:04:03.717Z最后结果；三轮累计2282ms，独审/主线/个人部署时间不得用此替代。已于该安全点实际归还本队local，后续仅封包。个人固定源仍需独立artifact，不把e5的backend-release来源改称Flow。
 
 2026-10-07T04:13:52.609172+00:00：实际逐hash核主线后收口selector片段；独审04:09:30.655440Z，main intake04:10:00.787603Z。完整SVC08/个人部署仍NOT_COMPLETED。后继[固定Flow产物短候选](../../docs/evidence/svc08/flow-host-artifact/candidate.md)仅准备，未建立构建或PG窗口；本队后续优先ENG01I。
+
+2026-10-07T04:35:10.784347Z 安全交接：仅校准Flow422候选中的工具输入冻结与checkout切换，未改产品/构建/服务。原owner native_center_owner 已停止本树全部写入，按原ba1ff v4仅plan/evidence向同lead的assignment_review正式handoff；接收以账本accept为准，由接收者更新唯一owner与实际后继开始。当前产品/历史证据与真实部署NOT_RUN保持。
