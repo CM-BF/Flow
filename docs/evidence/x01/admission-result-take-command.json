@@ -1,0 +1,36 @@
+{
+  "requestId": "x01-verifier-admission-result-take-20261007-203127",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "taskId": "X01-VERIFIER-ADMISSION-RESULT01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "branch": "codex/plugin-verifier-admission-result",
+  "scope": [
+    "apps/server/src/events.ts",
+    "apps/server/src/plugin-runtime/store.ts",
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/artifact.ts",
+    "packages/contracts/src/runner.ts",
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "packages/contracts/src/plugin-verification-admission.ts",
+    "packages/contracts/src/plugin-verification-event.ts",
+    "packages/plugin-runtime/src/verification-input.ts",
+    "packages/plugin-runtime/src/verification-input.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.ts",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "apps/server/src/plugin-runtime/verification-result.ts",
+    "apps/server/src/plugin-runtime/verification-result.test.ts",
+    "apps/server/src/plugin-runtime/verification-routes.ts",
+    "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+    "apps/server/src/plugin-verification-configuration.ts",
+    "apps/server/src/plugin-verification-configuration.test.ts",
+    "docs/evidence/x01-verifier-admission-result",
+    "plans/x01-verifier-admission-result"
+  ]
+}

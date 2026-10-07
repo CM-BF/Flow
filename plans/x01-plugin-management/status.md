@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v33 ACTIVE41scope](../../docs/evidence/x01/runner-main-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；server main.ts已STOP交startup observer；runner main.ts已永久STOP交回供Original恢复owner接收；本次仅parent metadata |
+| Claim | [v34 ACTIVE36scope](../../docs/evidence/x01/admission-result-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；server main.ts已STOP交startup observer；runner main.ts已永久STOP交回供Original恢复owner接收；本次仅parent metadata |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
