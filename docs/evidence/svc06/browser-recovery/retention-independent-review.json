@@ -1,0 +1,72 @@
+{
+  "task": "SVC06B",
+  "at": "2026-10-07T14:52:50.773Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "conclusion": "APPROVED_BOUNDED_RETENTION_SOURCE_AND_DIRECT_CONSUMERS",
+  "source": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+  "observedRecord": "bb4062ba7012ad2fde9338c724bbb3ceb6d9cffb",
+  "mainBefore": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "claim": "95f47f5c-7256-44f5-b97b-c20b6756a2cc v3 active, fresh list checked",
+  "findings": [],
+  "scope": [
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f",
+      "baseBytes": 3480,
+      "baseSha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a",
+      "baseBytes": 6289,
+      "baseSha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 9255,
+      "sha256": "c3db62e3fdefda33b1c321446b1a2581ebb109f948c6789e7447f4f9a7feb3b6",
+      "baseBytes": 4145,
+      "baseSha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2"
+    }
+  ],
+  "reviewed": [
+    "Full three-leaf delta; count4, single1GiB and aggregate2GiB remain separate bounded controls. Fourth is a finite separately qualified successor slot, not unlimited retention.",
+    "One pure admission interface used by prepare and future verified importer; it does not verify provenance/content or authorize deletion. Build reserves maximum while import must use complete verifier bytes including manifest.",
+    "prepare still holds store lock, fully verifies old manifests, rejects unknown stages/store names, reuses a matching artifact without changing it and refuses a fifth before building.",
+    "All three source hashes/bytes/current/fixed source agree and current main has exact reviewed base images; seven fixed historical record hashes agree.",
+    "Five newly selected direct tests cover history2-to3/4, count5 refusal, worst-case build vs actual import, exact byte boundaries, invalid inputs, legacy manifest reuse and unknown-file/lock preservation. Original four cases not rerun."
+  ],
+  "validation": {
+    "newDistinct": 5,
+    "selected": 5,
+    "passed": 5,
+    "oldFileCasesNotSelected": 4,
+    "elapsedMs": 5748,
+    "rawBytes": 597,
+    "ownedState": "absent",
+    "dualEof": true,
+    "scratchCleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+  },
+  "raw": {
+    "path": "retention-local-01.json",
+    "bytes": 2305,
+    "sha256": "b5ab3c208e7170b9a2f0a765093f36096c73d339e9a14481788ab84692a42f56"
+  },
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "limits": [
+    "Existing cd27 artifact remains unchanged; this approval does not make a new artifact or prove live installation capacity.",
+    "Managed-update candidate is a design/preparation record only. New migration binding, actual old/new Web tuple reports, fixed operator and fresh actual state remain required before personal execution.",
+    "One shortened historical d629 identity in draft candidate was returned for metadata correction; it is not an executable fixed input or product-source finding.",
+    "No automatic cleanup, rollback, intent retirement or reuse of consumed operation permissions."
+  ],
+  "metadataCorrection": {
+    "source": "1a4893be85d21ed712509dd6b48bef45792dc3bd",
+    "at": "2026-10-07T14:53:15.653Z",
+    "scope": "one line in managed-update-candidate.md",
+    "result": "exact complete d629 descriptor restored; no source/test or old raw change"
+  }
+}

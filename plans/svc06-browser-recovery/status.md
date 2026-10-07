@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:51:06.694Z；actual已main b37e404d；retention工具203ec及候选交独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:09:12.049Z；retention工具已main fd9dd5a9；当前迁入Module固定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；实现source 04da80692e79e2b7c3f6341c7fa76515a3f719a3；调用source 6bebf75f24a80b38d821efd3aaf8db24a0d62e2e；actual构建结果已固定 |
-| 工作树dirty状态 | 本批固定提交；3工具及候选交审停写，原browser四文件/build入口已交回 |
+| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前迁入Module target7324a2a0b495eb82e64693ec6d1b8781eb12d8c5 |
+| 工作树dirty状态 | 本批own records封定后停写供审；所有已交产品及build入口保持不变 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 203ecae58686b889f39eaef3e1b61d8ffc0bb1cb |
-| 实现范围 | tools/personal-preview/backend-release/files.mjs, tools/personal-preview/backend-release/index.mjs, tools/personal-preview/backend-release/artifact.test.mjs |
-| 检查状态 | 4/4纯入口197ms总段，group absent/双EOF/空scratch同身份removed；271缓存index/17runtime相符；status parser errors/human/timing=[]；本次离线build/verify/import exit0，33158ms；新增retention 5/5、5748ms/597B/组absent/双EOF/空tmp清理；0新PG/type矩阵/provider/个人 |
-| 已集成main状态 / HEAD | 三leaf原语义已main7272151；本片只在固定6c组合，不覆盖moving main；新artifact cd27实际结果已独审并main b37e404da18d8b63a5b38ad20cf55850a9781dd5；新网页组合/受管更新未验 |
+| 实现目标 | 7324a2a0b495eb82e64693ec6d1b8781eb12d8c5 |
+| 实现范围 | docs/evidence/svc06/browser-recovery/current-migration.mjs, docs/evidence/svc06/browser-recovery/current-migration.test.mjs, docs/evidence/svc06/browser-recovery/retention-validate.py |
+| 检查状态 | artifact实际33158ms已审不重跑；retention5/5已审；当前迁入6distinct/7selections通过、244ms/1100B，两owned组absent/双EOF/空scratch清理；实际Node及自有cd27 pg形态加载通过，无连接；0个人/PG/clone/provider |
+| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module待审/未集成，新网页兼容和个人更新未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版网页所需的后台产物已审并交付；保留旧产物的有界更新工具已完成直接验证，待独审。 |
-| 下一可用交付 | 独审保留工具及更新清单；随后固定迁入装配并接网页兼容报告。 |
-| 当前阻塞 | ACTIVE: 网页组合报告尚未齐备，个人更新未进入执行。 |
+| 当前产出 | 新版后台产物和保留旧产物的有界工具已交付；适配现有安装的迁入模块已完成直接检查，正在审查。 |
+| 下一可用交付 | 审查迁入模块，接齐网页兼容报告后固定本次真实参数及执行入口。 |
+| 当前阻塞 | ACTIVE: 正式网页组合报告尚未齐备，真实安装参数及执行调用尚未封定，个人更新未进入执行。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；原域审复用，APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION，Lead 2026-10-07T14:26:01.460Z，main 6fd214eb6；实际结果APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY（2026-10-07T14:37:48.376Z）；新retention工具/候选PENDING |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v3 active；files.mjs/index.mjs/artifact.test.mjs+own plan/evidence；原三leaf/support/build-entry已amend释放 |
-| 架构影响 | 候选artifact运行代码不变；工具新增单一retention准入Interface，复用prepare/import；待独审/main接收后登记，不改固定cd27 |
+| Review | [review.md](review.md)；artifact及retention工具均已独审/main；当前迁入Module PENDING，只覆盖模块/参数与局部证据，不当现场ready |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v4 active；仅docs/evidence/svc06/browser-recovery与plans/svc06-browser-recovery；14:53:53.391Z已归还3工具，原browser/support/build-entry亦已释放 |
+| 架构影响 | 已main有限retention Interface；当前own迁入adapter复用原FSM/双锁/只读SQL，不改运行artifact；固定部署差异由Execution Lead登记 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | SVC06B-02 | completed | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，Lead限定独审已通过 |
 | SVC06B-03 | completed | assignment_review / Execution Lead | 实际artifact cd27/04da及内部加载通过，独审批准并main b37e404d |
 | SVC06B-04 | pending | 原Web owner / assignment_review | 新backend cd27已供给；等原Web owner准确新descriptor及组合验证，旧C3不能替代 |
-| SVC06B-05 | in-progress | assignment_review | [retention-result](../../docs/evidence/svc06/browser-recovery/retention-result.json)，5/5及候选固定待独审；不改cd27 |
+| SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，3产品scope已释放；不改cd27 |
 
 ## 等待与实际时间
 
@@ -74,6 +74,8 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 | SVC06B-W03 | UNKNOWN | OPEN | 接口 | 原Web owner提供准确新网页descriptor并验证本cd27后台组合；旧C3不可替代 | 原派工 / 本次RESULT.md；首次等待时点无独立来源 |
 | SVC06B-W04 | 2026-10-07T14:32:21.520Z | 2026-10-07T14:37:48.376Z | 审查 | 实际产物已独审并main接收，等待已结束 | result-manifest.json / actual-independent-review.json |
 
+| SVC06B-W05 | 2026-10-07T15:09:12.049Z | OPEN | 审查 | 当前迁入Module及直接guard证据待独审，正式实例仍未封定 | current-migration-result.json / 本次固定交接 |
+
 ## 当前增量记录
 
 2026-10-07T14:46:55.936Z：归档actual独审及main b37e404d；本次更新准备读核起点观测14:42:28Z（更早精确起点UNKNOWN）。历史三backend合计1,100,405,879B；Lead已授count≤4/总2GiB/单项1GiB策略，14:44:35.053Z原子amend v3，原browser/build源停写。原已消费运行不重放；新Web报告等待仍open，0个人I/O。
@@ -85,5 +87,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 | 后继技术字段 | 当前事实 |
 | --- | --- |
 | Artifact source / descriptor | 04da / cd27，actual已审并main b37e404d；本次工具source不改变它 |
-| 新工具接口 / review | 203ecae58686b889f39eaef3e1b61d8ffc0bb1cb；assertBackendRetention当前待独审；架构登记owner Execution Lead |
+| 新工具接口 / review | 203ecae58686b889f39eaef3e1b61d8ffc0bb1cb；assertBackendRetention已独审并main fd9dd5a9；架构登记owner Execution Lead |
 | 个人运行事实来源 | 13:47–13:49已审held历史7d1/6c、accepting21、Webd629/v3；本段0个人I/O，不能声称当前仍完全相同 |
+
+2026-10-07T15:09:12.049Z：retention正式独审及main接收已归档，14:53:53.391Z v4只保own双scope。当前迁入Module7324已固定，14:59:11.427237Z→14:59:11.546150Z为5/5；15:05:45.952618Z→15:05:46.080818Z补2/2；6distinct/7selections合计244ms/1100B，含原retention普通段5992ms。两个owned组/双EOF及exact空scratch正常清理，实际RETURN已交Lead/native。13静态source、4继承runtime绑定通过；本Module没有自启动入口，真实实例参数及OPS14薄调用仍未创建，个人安装没有读取或修改。新兼容报告等待保持，不占local/heavy。
