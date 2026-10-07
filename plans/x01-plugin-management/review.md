@@ -1,3 +1,11 @@
+状态：PENDING（terminal恢复新增量；公开PG结果已独审）
+
+Review target commit: 2f7fcce82c76fce942a3f7e20eb046733ec38c72
+
+新源码待固定与直接检查。公开PG resultc5dd/packetbbd 09:32:01正式APPROVED0P1P2见[回执](../../docs/evidence/x01/public-runner-pg-independent-review.json)；历史PENDING不代表当前结果状态。
+
+---
+
 状态：PENDING（公开npm运行链唯一真实PG结果忠实性；准备已通过）
 
 Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db

@@ -1,0 +1,12 @@
+{
+  "baseManifest": "docs/evidence/x01/public-runner-pg-manifest.json",
+  "sha256": "92cfda050e040556e7ca4963d54825aa231a0e192a2c714753496b384b9082f1",
+  "source": "ced4679c9ce3c183044fb853d71f72de7fc214db",
+  "mirrorFilesVerified": 260,
+  "errors": [],
+  "resolution": "terminal-inputs override only exact changed files; remaining relative imports use immutable public-runner-inputs via rootDirs/Vite narrow resolver",
+  "unchangedOverlay": {
+    "apps/runner/src/admission-journal.ts": "own c15, byte-identical actual product",
+    "apps/runner/src/outbox.test.ts": "main d022c8003fc4bd8ba560f1a039411ed098186659 (same current main38110485)"
+  }
+}

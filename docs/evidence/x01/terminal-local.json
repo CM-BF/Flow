@@ -1,0 +1,429 @@
+{
+  "startedAt": "2026-10-07T09:41:47.819465+00:00",
+  "startEpoch": 1791365567.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T09:41:47.820471+00:00",
+      "freeBeforeBytes": 23290859520,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-dagolmch",
+        "dev": 16777234,
+        "ino": 123969205,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/terminal-tsconfig.json"
+      ],
+      "process": {
+        "pid": 95319,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1586,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T09:41:49.407865+00:00",
+      "elapsedBeforeReceiptSeconds": 1.5870779170654714
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T09:42:00.964751+00:00",
+      "freeBeforeBytes": 23302668288,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a",
+        "dev": 16777234,
+        "ino": 123969283,
+        "removed": true,
+        "endSample": {
+          "entries": 6,
+          "bytes": 8293,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/terminal-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tests.json"
+      ],
+      "process": {
+        "pid": 6955,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1471,
+        "observed_bytes": 110,
+        "retained_bytes": 110,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tests.json\n",
+      "rawBytes": 110,
+      "rawSha256": "b54626abb120f8f25165e7c54663e9568a17557eab71f0006be6a47e364b02a2",
+      "tests.json": {
+        "numTotalTestSuites": 3,
+        "numPassedTestSuites": 3,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 18,
+        "numPassedTests": 11,
+        "numFailedTests": 0,
+        "numPendingTests": 7,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791366121187,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "flushes the durable prefix, freezes concurrent allocation, then continues after a committed final",
+                "status": "passed",
+                "title": "flushes the durable prefix, freezes concurrent allocation, then continues after a committed final",
+                "duration": 26.538290999999987,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "a definitive conflict consumes no sequence and can continue the same attempt",
+                "status": "skipped",
+                "title": "a definitive conflict consumes no sequence and can continue the same attempt",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "a lost response confirms the original receipt without another submission",
+                "status": "skipped",
+                "title": "a lost response confirms the original receipt without another submission",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "absence after timeout retains exact bytes, freezes all output and recovers only a committed receipt after restart",
+                "status": "skipped",
+                "title": "absence after timeout retains exact bytes, freezes all output and recovers only a committed receipt after restart",
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366122225,
+            "endTime": 1791366122251.5383,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/terminal-inputs/apps/runner/src/outbox.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "v3 claim persists before package dispatch and reports artifact verification completed through the original outbox",
+                "status": "passed",
+                "title": "v3 claim persists before package dispatch and reports artifact verification completed through the original outbox",
+                "duration": 66.36537499999997,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "lost claim ACK recovers exactly the durable full request and does not allocate under another key",
+                "status": "skipped",
+                "title": "lost claim ACK recovers exactly the durable full request and does not allocate under another key",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unknown phase ACK retains assignment and restart never reinvokes the package",
+                "status": "passed",
+                "title": "unknown phase ACK retains assignment and restart never reinvokes the package",
+                "duration": 22.905750000000012,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unknown package outcome retains assignment and restart never reinvokes the package",
+                "status": "passed",
+                "title": "unknown package outcome retains assignment and restart never reinvokes the package",
+                "duration": 22.635875000000055,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persisted v3 with no current port fails before claim or execution and preserves its request",
+                "status": "skipped",
+                "title": "persisted v3 with no current port fails before claim or execution and preserves its request",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "ordinary v3 assignment still follows the original adapter path",
+                "status": "passed",
+                "title": "ordinary v3 assignment still follows the original adapter path",
+                "duration": 49.135332999999946,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "legacy no-port polling uses only the unchanged v2 transport",
+                "status": "skipped",
+                "title": "legacy no-port polling uses only the unchanged v2 transport",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "store-only runtime opt-in consumes the real FlowClient plugin domain and its bearer request",
+                "status": "skipped",
+                "title": "store-only runtime opt-in consumes the real FlowClient plugin domain and its bearer request",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal ACK loss replays the fixed complete bundle and old pin after a material upgrade without reinvoke",
+                "status": "passed",
+                "title": "terminal ACK loss replays the fixed complete bundle and old pin after a material upgrade without reinvoke",
+                "duration": 41.24637500000006,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal ACK followed by admission persistence failure keeps the bundle until restart completes the journal",
+                "status": "passed",
+                "title": "terminal ACK followed by admission persistence failure keeps the bundle until restart completes the journal",
+                "duration": 43.41554199999996,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal crash after admission completion before unlink replays without leaving an assignment or reinvoking",
+                "status": "passed",
+                "title": "terminal crash after admission completion before unlink replays without leaving an assignment or reinvoking",
+                "duration": 50.425500000000056,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal owner-fenced replay retains original bytes and admission without repacking ownership or invoking",
+                "status": "passed",
+                "title": "terminal owner-fenced replay retains original bytes and admission without repacking ownership or invoking",
+                "duration": 30.17649999999992,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366121744,
+            "endTime": 1791366122070.1765,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/runtime.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal batch validates before sequence allocation and snapshots all data before durable report",
+                "status": "passed",
+                "title": "terminal batch validates before sequence allocation and snapshots all data before durable report",
+                "duration": 16.82250000000002,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "terminal persistence failure reports nothing and remains sticky without allocating another sender",
+                "status": "passed",
+                "title": "terminal persistence failure reports nothing and remains sticky without allocating another sender",
+                "duration": 1.4670830000000024,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366122406,
+            "endTime": 1791366122424.467,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/terminal-outbox.test.ts"
+          }
+        ]
+      },
+      "fixtures.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-C1gwOL",
+            "dev": 16777234,
+            "ino": 123969361,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-Wun4Ry",
+            "dev": 16777234,
+            "ino": 123969368,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-yfYr7u",
+            "dev": 16777234,
+            "ino": 123969373,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-g1CoMi",
+            "dev": 16777234,
+            "ino": 123969378,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-xTLlFg",
+            "dev": 16777234,
+            "ino": 123969386,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-WCOJVC",
+            "dev": 16777234,
+            "ino": 123969393,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-vMPHAb",
+            "dev": 16777234,
+            "ino": 123969400,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-plugin-runtime-iYbzYD",
+            "dev": 16777234,
+            "ino": 123969408,
+            "removed": true
+          }
+        ]
+      },
+      "terminal-fixtures.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-terminal-outbox-qZUmgd",
+            "dev": 16777234,
+            "ino": 123969424,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-terminal-g1ba9g6a/tmp/flow-terminal-outbox-vsgGkW",
+            "dev": 16777234,
+            "ino": 123969426,
+            "removed": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T09:42:02.436975+00:00",
+      "elapsedBeforeReceiptSeconds": 1.4716419579926878
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 6100000000,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T09:42:02.436987+00:00"
+}

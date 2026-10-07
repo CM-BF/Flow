@@ -1,0 +1,27 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "public-runner-inputs",
+    "paths": {
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    },
+    "rootDirs": [
+      "terminal-inputs",
+      "public-runner-inputs"
+    ]
+  },
+  "include": [
+    "terminal-inputs/apps/runner/src/plugins/runtime.test.ts",
+    "terminal-inputs/apps/runner/src/plugins/terminal-outbox.test.ts",
+    "terminal-inputs/apps/runner/src/outbox.test.ts"
+  ],
+  "exclude": []
+}
