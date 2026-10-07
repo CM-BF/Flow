@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:30:13.065598+00:00 / main3e4362b0；J固定helper证据已main，K受信工具与异步接缝已独审、组合types0，待本批main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:40:04.396366+00:00 / main d5567801；K固定工具与异步接缝已接收，L只读宿主组合已独立领取实施 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -17,13 +17,13 @@
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | ENG01K 23不同局部分轮（21新/2旧）及类型红后0获限定独审；I02组合root noEmit0/9018ms。原失败/未验范围保持；父文档无工程重测。 |
-| 已集成main状态 / HEAD | A至I、J固定helper机制证据已主线；K source42905d01已审待当前批接收。注入工具消息不是stock实际回调；个人服务与旧grant未变。 |
+| 已集成main状态 / HEAD | A至I、J固定helper机制证据已主线；K source42905d01已于d5567801受控接收。注入工具消息不是stock实际回调；个人服务与旧grant未变。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 受信宿主的单文件写工具已通过取消、重复请求和在途写入收束检查；原工作区、检查和公开收据可复用，真实模型工程交付尚未完成。 |
-| 下一可用交付 | 把只读原生进程与唯一宿主写句柄组合成可验收接缝；在用户资格决定前继续零模型实现，不启动真实授写。 |
+| 下一可用交付 | 由原owner在ENG01L组合只读原生启动与受信宿主写入；先局部验证，再固定无模型运行候选。 |
 | 当前阻塞 | ACTIVE: [ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)模型资格含义待用户答复；真实工具回调和宿主强制边界仍未验，零模型组合继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：I模块、准备与两PG结果分别APPROVED限定范围；完整ENG未验收。 |
@@ -35,7 +35,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner / Execution Lead | I已main；[J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)维护强制层与唯一资格待决，[K](../../../engineering-trusted-tool-writer/plans/eng01k-trusted-tool-writer/status.md)受信工具与同pump接缝已审，后续只读native组合待精确领取。 |
+| ENG001-04 | in-progress | native_center_owner / Execution Lead | I已main；[J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)维护强制层与唯一资格待决，[K](../../../engineering-trusted-tool-writer/plans/eng01k-trusted-tool-writer/status.md)受信工具与同pump接缝已main；[L](../../../engineering-readonly-tool-host/plans/eng01l-readonly-tool-host/status.md)原owner已在独立树领取实施。 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:32:00.545553+00:00 / main3e4362b0；受信工具42905六源已独审并通过组合root types，随本批受控接收；看板实际189 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:49:14.988603+00:00 / main d5567801；本批只接已审登记与父摘要，实际看板189 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main9816e87a7690d7d36ac25cb8537bc9c8f41364c8；C02按逐path原base差量，两个公共index无冲突三方保留主线能力 |
+| 工作基线 / HEAD | main d556780129897582f09945c0621aa2ed64fb52f7；已审文档预像全部逐字匹配，产品候选独立收口 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | C02原23source+2validation已审，两个原结果61 bindings固定/hash相符；组合root noEmit0/9784ms，旧ACK54+profile5实际HTTP通过，0PG/provider重跑。 |
-| 已集成main状态 / HEAD | main/origin9816e87a已接X01 claim/中心13源、S01P08与工具全文领域。C02本批类型/直接消费者通过待快进；4320实际188源。个人backend af51/v18、Web d629/v3保持。 |
+| 检查状态 | 本批仅7份已审登记/父文档预像与固定字节核对、status解析；0产品重测。P02原两PG失败清理完毕，定向修复中；ENG01L原16局部通过，真实入口静态长度缺口修复中。 |
+| 已集成main状态 / HEAD | main/origin d5567801 已含 Codex 公共会话与 ENG01K；本批登记及父摘要受控接收。实际4320为189来源，190登记待正常加载；个人 af51/v18、d629/v3/c7b宿主不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件领取及恢复接线已进入主线，看板实际显示188个来源；Codex普通会话接收与读取的公共协议已审并通过组合兼容检查。 |
-| 下一可用交付 | 接收Codex会话公共协议并移交共享入口，继续工具全文接线、受信工程写入口及界面恢复。 |
+| 当前产出 | 会话公共协议和受信工程工具已进入主线。看板来源与用户摘要按各任务实际事实更新，主线交付与个人网页部署分别记录。 |
+| 下一可用交付 | 接收工具全文与工程宿主的定向修复验证，推进可实际登录并恢复会话的新版本。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -362,3 +362,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## 受信工具限定接收
 
 [ENG01K固定组合](../../docs/evidence/i02/trusted-tool-intake.json)：6源完整独审、当前与固定哈希一致，I02现shared前像逐字匹配后接入；root noEmit0/9018ms。23不同作者检查复用不重跑，原两类型失败保留。单host写门与同pump异步响应不表示真实模型工具、OS只读native或授写资格已完成；个人服务/原grant不改。
+
+## 2026-10-07T07:49:14.988603+00:00 用户交付状态收口
+
+[七文件固定接收](../../docs/evidence/i02/user-delivery-status-intake.json)：D05新ENG01L来源、ENG父计划与FLOW/OPS用户摘要分别复用唯一独立审查。零产品修改和工程重测；P02原PG失败与清理分别保留，L真实入口缺口交原owner定向修复，未接其尚需修正的产品候选。

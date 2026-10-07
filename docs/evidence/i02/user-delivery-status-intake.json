@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T07:49:14.988603+00:00",
+  "mainBefore": "d556780129897582f09945c0621aa2ed64fb52f7",
+  "bindings": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "ref": "d179a56bffdd17df7e9700e42bb9e27d60c60b17",
+      "review": "native_center_owner APPROVED_DOCS_REGISTRATION_ONLY",
+      "bytes": 25905,
+      "sha256": "be9fb30ef002f1ec26355b8beb992228d15985bb6ec6d5dd321965471139e9d4",
+      "preimage": "exact"
+    },
+    {
+      "path": "docs/evidence/d05/eng01l-registration.json",
+      "ref": "d179a56bffdd17df7e9700e42bb9e27d60c60b17",
+      "review": "native_center_owner APPROVED_DOCS_REGISTRATION_ONLY",
+      "bytes": 1042,
+      "sha256": "4de836b13cbca38cf3958968c7e5d1a13d301b6201ae410eaf5ea824e42a90c2",
+      "preimage": "exact"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "ref": "d179a56bffdd17df7e9700e42bb9e27d60c60b17",
+      "review": "native_center_owner APPROVED_DOCS_REGISTRATION_ONLY",
+      "bytes": 34133,
+      "sha256": "dad5564234d547bfc55f3443c79a62fe61c9eee301a5dc1bfeb0abe1a11d0d2f",
+      "preimage": "exact"
+    },
+    {
+      "path": "plans/eng01-engineering-delivery/plan.md",
+      "ref": "5fb047ef39995f6a225232855f8a0a18e022c699",
+      "review": "assignment_review APPROVED_DOCS",
+      "bytes": 19923,
+      "sha256": "1b985393868f2d4f93a43a096ac8be630e41792dc9da572e28a5de566bf41a9f",
+      "preimage": "exact"
+    },
+    {
+      "path": "plans/eng01-engineering-delivery/status.md",
+      "ref": "5fb047ef39995f6a225232855f8a0a18e022c699",
+      "review": "assignment_review APPROVED_DOCS",
+      "bytes": 9141,
+      "sha256": "0b3a9a056b0d17c8b729c7aa1f9713072328165e706989147de9955b138f603e",
+      "preimage": "exact"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "ref": "952f1a45c2241b40c5bd4789314b95b8823527d9",
+      "review": "assignment_review APPROVED_DOCS",
+      "bytes": 31454,
+      "sha256": "f4ad39a191e75e9061a1c5c656b164b04448f8a5d08a8730970fad942d451ab5",
+      "preimage": "exact"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "ref": "952f1a45c2241b40c5bd4789314b95b8823527d9",
+      "review": "assignment_review APPROVED_DOCS",
+      "bytes": 89626,
+      "sha256": "c5517b0adf3a71c0099086c7f9292f11a9cd177143b46bf9952a40a86dbf255e",
+      "preimage": "exact"
+    }
+  ],
+  "review": "Existing independent reviews reused; no new product changes",
+  "tests": 0,
+  "PG": 0,
+  "provider": 0,
+  "dashboard": "registry190 candidate; actual189 remains until controlled reload",
+  "personal": "af51/v18 + d629/v3 + c7b host unchanged"
+}

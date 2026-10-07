@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:21:07.364824+00:00 / main4fe33178；X01领取中心、Codex会话公共差量已接收，实际看板188来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:47:00.430324Z / main d5567801；已合入与个人部署分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin4fe33178b17925d558b5608f1b3c4ae69b3d06d5已接X01 claim/journal/中心与C02公共会话协议；组合类型与旧ACK/profile59直接消费者通过。个人backend af51/v18、Web d629/v3/c7b宿主保持，未部署新会话或全文模块。 |
+| 已集成main状态 / HEAD | main/origin d556780129897582f09945c0621aa2ed64fb52f7 已含 Codex 公共会话协议和 ENG01K 受信工具片。个人仍 backend af51/v18、Web d629/v3/c7b宿主；新恢复、逐消息设置和完整工具正文未部署。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
-| 优先级 | 1 |
-| 当前产出 | 已审插件与会话差量及时进入主线；共享入口按原子交权转交后继，看板实际加载188来源并保留登录与计时。隔离局部检查与浏览器/PG按现规则并行。 |
-| 下一可用交付 | 收口工具全文共享出口及工程工具pump交接，持续接收已审成果；原owner维护真实开工/完成和等待来源。 |
-| 当前阻塞 | ACTIVE: [OPS-CI01](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)启用待用户；[ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)授写资格待用户答复；其余工作继续。 |
+| 优先级 | 4 |
+| 当前产出 | 看板已提供登录入口与任务时间；各组独立的小检查可并行进行，失败记录与资源清理结果分别保留。 |
+| 下一可用交付 | 让已审聊天功能进入实际可用更新，并及时接收工具全文和工程宿主的定向验证结果。 |
+| 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -469,3 +469,11 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T06:19:44.585953+00:00：SVC08 r3实际06:16:50.640Z开始，06:17:15.974Z ready-preserved；request9450/replace14905/post737ms，三outer exit0/absent/双EOF，原migrate未重跑。旧Web nonce匹配exit1/stopped原样保留，新Web组运行；11保护true、64表摘要UNCHANGED、5HTTP共30790B全200。backend af51/v18与d629/v3/三个retained不变，0provider/业务DML/用户tab操作。06:17:44Z已把共享窗口归还两co-lead且解除16工具freeze；原r1/r2失败保留。这里只证明本次采用/保留/有限读取，不追认旧故障根因或完整SVC06后台部署。
 
 2026-10-07T06:51:08.604977+00:00：CHAT05原3PG于06:37:51.861095Z启动、06:37:55.330Z持久cleaned、06:37:55.362725Z结束；3/3、组absent/双EOF、marker/OID核后普通DROP/remaining[]，窗口已直接归还两co-lead。ENG独立stock于06:44:31.242028Z结束，单文件0→X/旁文件不变、574ms、两组清理；仅机制证据，writeAccess仍unknown。二者固定结果独审及主线接收见I02；组合类型原TS2307保留，类型层窄修后9991ms/exit0，不重跑PG。完整公共开通、app-server派生/模型资格/全部writer撤销仍open。历史开工UNKNOWN、CI唯一PENDING决定及原失败保持，不重复询问用户。
+
+## 2026-10-07T07:47:00.430324Z 当前交付与部署边界
+
+用户待决仍由 [OPS-CI01](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md) 与 [ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md) 各自作为唯一入口；父摘要只说明影响，不重复提问。
+
+CHAT05P02 原两项 PG 验证失败已保留，07:42:01.684Z 自有数据库、连接、进程组和端口确认收尾；原 owner 定向修正测试身份并补首因观察，不扩大生产校验或重复旧绿检查。ENG01L 已通过限定注入验证，真实入口准备发现策略参数长度与传输上限不符，原 owner 在原范围修正；不把注入通过当真实原生启动。
+
+SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方案](../../../backend-release/docs/evidence/svc06/update-4fe-candidate/candidate.md)。新后台还需显式浏览器会话配置接线，以及三个保留网页与新后台的实际兼容依据；个人版本和用户标签不在本管理收口改变。新版网页还受现有保留版本满额约束，旧页惰性资源不能仅按安静期或页面关闭事件退役。

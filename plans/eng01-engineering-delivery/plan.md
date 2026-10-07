@@ -119,3 +119,7 @@ ENG01I四产品及两条公开HTTP/PG旅程已mainef3a6de8；它消费可注入N
 [J固定比较](../../../engineering-native-authority/docs/evidence/eng01j/helper-host/host-tool-comparison.md)选择原生工作区只读、受信host唯一单文件写FD的最小后继；[K唯一Interface](../../../engineering-trusted-tool-writer/docs/evidence/eng01k/interface.md)已实现取消封门、真实在途I/O收束及同R06 pump异步响应，限定源码42905d01独审通过，非stock工具回调或完整工程成功。下一组合仍由native_center_owner准备精确scope：固定真实只读native factory、单文件host gate、现有snapshot/checker和unknown保留；不加第二执行器，不把直属child close称所有writer撤销。旧fileChange recipe不变；新route必须明确作为受托host写入语义，不能冒充原生fileChange已验。
 
 模型资格的唯一问题已由GO提交用户，见[J状态](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)。答复前不签旧locked-no-fallback grant、不启动provider；provider接受配置或目录不证明实际模型身份。Linux/cgroup v2可访问仅环境事实，不意味着专域控制、Linux binary或撤销保证已备齐，保留为替代候选。原ENG001-05真实合格模型、全部写入者收束、固定检查与独立语义接受仍开放。
+
+## 当前只读宿主组合（2026-10-07）
+
+K六源及直接消费者已按固定42905d01进入main d5567801；单工具gate与异步pump不会签发模型资格或nativeWriteAccess。原native_center_owner已在[ENG01L唯一计划](../../../engineering-readonly-tool-host/plans/eng01l-readonly-tool-host/plan.md)独立领取：复用J固定profile与R06单transport、K唯一host文件句柄，把只读原生启动和取消后实际IO收束组合；先局部合成验证。stock启动/系统权限canary须固定有界输入后另验，真实provider仍无新预算。J继续唯一模型资格待决，ENG001-05与完整工程验收保持开放，不把注入transport或宿主代写改称原生fileChange已完成。
