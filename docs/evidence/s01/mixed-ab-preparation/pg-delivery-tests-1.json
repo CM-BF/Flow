@@ -1,0 +1,101 @@
+{
+  "kind": "tests",
+  "startedAt": "2026-10-07T12:33:44.131411+00:00",
+  "source": {
+    "experiments/runner-capacity/mixed/pg-delivery.ts": {
+      "bytes": 7601,
+      "sha256": "e9c12b28f405bb07d5346f13a624355bbe7108af1ee8031af5b066baa6e9845f"
+    },
+    "experiments/runner-capacity/mixed/pg-delivery.test.ts": {
+      "bytes": 8708,
+      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774"
+    },
+    "experiments/runner-capacity/mixed/observe-pg.ts": {
+      "bytes": 5337,
+      "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e"
+    },
+    "experiments/runner-capacity/mixed/channel.ts": {
+      "bytes": 1675,
+      "sha256": "f99b9c46fb03ab785aa45d2df1d1c1ed9dda8a29751cfbf5345249d67c135830"
+    },
+    "experiments/runner-capacity/mixed/contract.ts": {
+      "bytes": 4545,
+      "sha256": "0011e93cc596bccaa01e2d740aa7b9b2bc719b47372d94e35063028737c8d504"
+    },
+    "tsconfig.json": {
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/pg-delivery-vitest.config.mjs": {
+      "bytes": 281,
+      "sha256": "a13814461d022d6d5f8d082ae0f33b69fea20ab91bedac2916c9df42c08c8870"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/pg-delivery-tsconfig.json": {
+      "bytes": 254,
+      "sha256": "02ce5d0cada4bc169184556fba305997e5c2a0ac18e78b542199980590083f58"
+    }
+  },
+  "supervisorSha": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "floorBytes": 6795821056,
+  "limits": {
+    "workSeconds": 55,
+    "rawBytes": 524288,
+    "tmpBytes": 16777216
+  },
+  "wholeExternalWall": null,
+  "freeBytes": 21760729088,
+  "tmp": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-delivery-0bix7x_d",
+    "dev": 16777234,
+    "ino": 124139650,
+    "removed": true,
+    "lastSampleBytes": 138,
+    "entries": 4
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/pg-delivery-vitest.config.mjs",
+    "--configLoader",
+    "native"
+  ],
+  "process": {
+    "pid": 3801,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 443,
+    "observed_bytes": 330,
+    "retained_bytes": 330,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "path": "pg-delivery-tests-1.raw",
+    "bytes": 330,
+    "sha256": "e3687c540c929231e56dd2cce32f53868ff8ebe6c054c08c7bf55f061776ef30"
+  },
+  "endedAt": "2026-10-07T12:33:44.579134+00:00",
+  "elapsedBeforePersistenceMs": 447.7458749897778
+}

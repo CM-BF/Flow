@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-10-07T12:36:58.660613+00:00",
+  "scope": "private observer delivery/source + local result, no driver/PG/performance",
+  "bindings": [
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "bytes": 7601,
+      "sha256": "e9c12b28f405bb07d5346f13a624355bbe7108af1ee8031af5b066baa6e9845f"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.test.ts",
+      "bytes": 8708,
+      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md",
+      "bytes": 5095,
+      "sha256": "ed9e7faf3376faac589e21efb490aa8e084c24933655c51343555b98bc9d0a65"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-local.py",
+      "bytes": 5308,
+      "sha256": "05169690a190c3d85e114bd6782eb3126a66c9756390412c29c3e45962783f53"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-vitest.config.mjs",
+      "bytes": 281,
+      "sha256": "a13814461d022d6d5f8d082ae0f33b69fea20ab91bedac2916c9df42c08c8870"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-tsconfig.json",
+      "bytes": 293,
+      "sha256": "11bca42020dbc37259bf180785a155a6e27baedf24230e9a9824e8a7b817d79c"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-tsconfig-before.json",
+      "bytes": 254,
+      "sha256": "02ce5d0cada4bc169184556fba305997e5c2a0ac18e78b542199980590083f58"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-tests-1.json",
+      "bytes": 3120,
+      "sha256": "0a6b067d20a7084471ac623b01001007e19ed04fb7b52c7b840b36f001947581"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-tests-1.raw",
+      "bytes": 330,
+      "sha256": "e3687c540c929231e56dd2cce32f53868ff8ebe6c054c08c7bf55f061776ef30"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-types-1.json",
+      "bytes": 3236,
+      "sha256": "9be85fd121b430ff96c14127d5228562527af0d9b7d58f61169f85108e3ce8ea"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-types-1.raw",
+      "bytes": 467,
+      "sha256": "347eebb32f77449c96119190a93abdbac4f8903cc2e185c122134ef474e3fe11"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-types-2.json",
+      "bytes": 3073,
+      "sha256": "1ef4246d7ea32ce85db5c7883964e0fa9d2ce1770004add43538ba5b62e1f7a6"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-types-2.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "bytes": 37766,
+  "tests": {
+    "selected": 11,
+    "passed": 11
+  },
+  "types": [
+    2,
+    0
+  ],
+  "rawBytes": 797,
+  "actualClosedAt": "2026-10-07T12:34:05.853303Z",
+  "wholeExternalWall": null,
+  "newRunOpen": false
+}
