@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-07T21:59:37.073Z",
+  "kind": "THREE_EXISTING_CANONICAL_REGISTRATION_ONLY",
+  "base": "8e55155509923f571e95d3f87d118671c5a26c40",
+  "claim": "3a6240d0-f861-41fd-b245-3546b2e2dbf3 v6",
+  "count": 211,
+  "previousActualCount": 208,
+  "records": [
+    {
+      "task": {
+        "id": "WPF-DASHBOARD-TIMING02",
+        "title": "任务时间与事项阅读",
+        "role": "工程协作",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+        "branch": "codex/dashboard-task-timing-readability",
+        "planDir": "plans/wpf-dashboard-timing-readability",
+        "evidenceDir": "docs/evidence/wpf-dashboard-timing-readability"
+      },
+      "branch": "codex/dashboard-task-timing-readability",
+      "head": "ae8c93042eaec15c54331b9bba31062de49231a2",
+      "files": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/plans/wpf-dashboard-timing-readability/plan.md",
+          "bytes": 3241,
+          "sha256": "74a23739359094c9a4c04f4570eb11b21b3be21f7c1c2289806f3640cee26843"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/plans/wpf-dashboard-timing-readability/status.md",
+          "bytes": 6989,
+          "sha256": "aa77a197370e0b7bbb1d46a8f913ee9ced353aa0a963507a73c61d66e3c54947"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/plans/wpf-dashboard-timing-readability/review.md",
+          "bytes": 3767,
+          "sha256": "490b81d3527b02d395cf15bbf1c99ef8cfcee95e8216b9e361594cdf319aae61"
+        }
+      ],
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": []
+    },
+    {
+      "task": {
+        "id": "WPF-WORKSPACEARC01",
+        "title": "可组合的会话工作区",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+        "branch": "codex/web-workspace-composition",
+        "planDir": "plans/wpf-workspace-arc",
+        "evidenceDir": "docs/evidence/wpf-workspace-arc"
+      },
+      "branch": "codex/web-workspace-composition",
+      "head": "f6ec53bb98f8900c2823fbd46b6dfdae45f5c883",
+      "files": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/plan.md",
+          "bytes": 5320,
+          "sha256": "84c3647844d1550e69654cc31d75145ae04dff633572540a1e181b060c9022cd"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/status.md",
+          "bytes": 12737,
+          "sha256": "4f7416da9eefc311c7612d976f0b25d64c9f554daef3c80771f7a3aeb6958b2e"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/plans/wpf-workspace-arc/review.md",
+          "bytes": 3346,
+          "sha256": "ba1c4aa8ccfdfb7411046a24bec2189f923b01bf0dd5c39d55dccb9e48581af7"
+        }
+      ],
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间未记录"
+      ]
+    },
+    {
+      "task": {
+        "id": "X01-VERIFIER-ADMISSION-RESULT01",
+        "title": "插件验证受理与结果归属",
+        "role": "工作线",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+        "branch": "codex/plugin-verifier-admission-result",
+        "planDir": "plans/x01-verifier-admission-result",
+        "evidenceDir": "docs/evidence/x01-verifier-admission-result"
+      },
+      "branch": "codex/plugin-verifier-admission-result",
+      "head": "d407eff55811813df912771a43f8cfb6149db2f5",
+      "files": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/plan.md",
+          "bytes": 1361,
+          "sha256": "2ecac5409b81e368900c9ed3f8f41c63cf951cbd422ea3ead8d9176c7ceef0f2"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/status.md",
+          "bytes": 8204,
+          "sha256": "7566c7150ccc10dae5cfa3ccd9a327fdaab9955a7bacd80f6a14b2cb46218f46"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/plans/x01-verifier-admission-result/review.md",
+          "bytes": 4046,
+          "sha256": "86c1f28efea47409033a08abff759056ecbdd705f8ebf73666c60bce432659bc"
+        }
+      ],
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": []
+    }
+  ],
+  "ownStatus": {
+    "errors": [],
+    "missing": [],
+    "timing": [
+      "任务开工时间未记录"
+    ]
+  },
+  "engineeringTests": 0,
+  "personalActions": 0,
+  "deployment": "NOT_RUN",
+  "boundary": "Original owner status unchanged; UNKNOWN remains UNKNOWN. No task creation or duplicate progress authority."
+}

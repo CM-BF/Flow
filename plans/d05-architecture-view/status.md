@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:02:13.739Z / main/origin e5ecd07bc；208唯一来源已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:59:16.198Z / main49a9c5feb；211来源登记候选，实际仍208待发布 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 初始D05完整任务开工UNKNOWN；本次来源维护实际开始2026-10-07T16:59:18.942Z，以领取核验为据；完成和部署分开记录。 |
+| 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | main/origin e5ecd07bc已接收；4320实际208来源，视觉外壳与暂停队列均live/current。个人服务、原用户页面和正在验证的fixture未动。 |
+| 已集成 main 状态 | 本次新增三来源尚未集成；历史208来源已部署，TIMING02功能已main2c96618a1但本次看板换载未验。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示视觉外壳和暂停聊天改进的当前负责人进度。 |
-| 下一可用交付 | 本次来源更新已交付；后续审查与验证结果由各原负责人维护。 |
+| 当前产出 | 已补齐任务时间阅读、会话工作区和插件验证的唯一进度入口，待审查发布。 |
+| 下一可用交付 | 看板显示这三项真实负责人、当前进展及有据的时间。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -278,3 +278,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T17:01:14.121Z：唯一独审APPROVED_SOURCE_REGISTRATION/0P1P2，固定29093a34d；[审查](../../docs/evidence/d05/visual-queue-208-review.json)。两次远端500拒绝保留，当前仅本地固定提交，受控接收与实际208部署尚未发生。
 
 2026-10-07T17:02:13.739Z：main e5ecd07bc推送成功；自有4320原PID55292经精确args/cwd确认后正常停止，新PID50158实读208来源。两canonical current，公开登录入口binding保持，未读取token/刷新浏览器/操作个人服务。[实际回执](../../docs/evidence/d05/visual-queue-208-live.json)。此前source分支两次500失败不改写，随后按实际push结果另核。
+
+2026-10-07T21:59:16.198Z：按原D05 v6精确范围补三项唯一来源；仅登记和链接核对，不改原owner status、不推断历史时间，0工程测试/个人操作。候选审查与实际部署另记。
