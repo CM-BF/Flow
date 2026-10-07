@@ -58,3 +58,7 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 2026-10-06 15:20 UTC：新87dc纯模块已独立批准并进入integration，来源与范围见[review](review.md)。不完成03/04/05，后继接线/安装仍受原资源条件约束。
 
 2026-10-06 15:26 UTC：纯87dc片段已通过等价提交进入main，见[closure-main-receipt](../../docs/evidence/svc06/closure-main-receipt.json)。这是本纯模块delivered，非完整产物完成；03/04/05与资源条件保持。
+
+## 2026-10-07 02:53:50 UTC：正式构建接线局部结果
+
+原SVC06-03/04内正式parser/builder已固定 `b21890799fe11b8f1937e4b08382c997877f6d53`，私有yaml2.9.0真实消费及6新模块+1直接消费者7 distinct通过，原失败保持；详见[结果](../../docs/evidence/svc06/parser-builder-checks.md)。本片源码停写待独审。下一完整构建需独立固定整体一致Git target、真实closure/物理峰值/合计窗口，≥2.5GiB与保1GiB不变；不得以本历史owner树的旧workspace manifests混合新main锁当完整运行输入。03/04/05仍open。

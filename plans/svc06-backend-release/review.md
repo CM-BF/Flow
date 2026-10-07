@@ -1,3 +1,7 @@
+# 当前正式parser/builder增量：REVIEW_PENDING
+
+目标 `b21890799fe11b8f1937e4b08382c997877f6d53`；base `1b41f58816341f77e69a64d1cb5cfe7650c01b49`，7产品/测试源，检查7 distinct分轮。原selected递归疑点与red保持，现单文件fd clone；[本轮manifest](../../docs/evidence/svc06/parser-builder-manifest.json)。请唯一reviewer核新增接线/共享根lock主线12行保留/实际私有parser及原始检查；不重跑原87dc7例，不扩大为完整artifact/PG/个人操作批准。
+
 # SVC06 Review
 
 当前片段状态：APPROVED（仅纯闭包选择与暂存配置）
