@@ -21,4 +21,6 @@
 
 见[7805计划原件](../../docs/evidence/wpf-release01/fixed-origin/previous-plan.md)。其中build方法不再作为后继入口。
 
-2026-10-07：f3d限定源审0blocking；唯一strict检查发现adapterVersion声明过宽，9658仅type-only公共接口修正，NOT_RETESTED。首失败/1170ms/完整清理保留；暂停本四scope写入并保claim，管理顺序先DPERF收口，后独立10s必要复验。
+历史首段2026-10-07：f3d限定源审0blocking；唯一strict检查发现adapterVersion声明过宽，9658仅type-only公共接口修正，NOT_RETESTED。首失败/1170ms/完整清理保留；暂停本四scope写入并保claim，管理顺序先DPERF收口，后独立10s必要复验。
+
+当前：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05仍待最终tuple、caller与三App真实兼容，不把类型检查当四check通过。四scope停写，38b9v1保留，无运行预约。

@@ -30,3 +30,6 @@ Source self-review followup: Cookie独立probe先于App选择，浏览器默认f
 
 ## 2026-10-07T10:18:03.068392+00:00 fixed-origin local safe point
 Reused local find-skills and clean-code (no install): keep public profile interface type instead of string/cast; bounded nonsecret phase diagnostics preserve original errors, all-wire captures Cookie early failure. First noEmit exit2 retained; correction NOT_RETESTED. No PG/Chrome/HTTP/product import. Compiler shim and actual _tsc.js both pinned in types-first/binding.json; original runner/profile retained by exact TMP pins. Metadata only parser/links follow; source remains frozen for DPERF handoff.
+
+## 2026-10-07T10:21:39.254787+00:00 必要类型复验收口
+公共profile字段类型修正与运行逻辑分离，root9658delta已接受；新独立10s受影响noEmit0/904ms，原失败1170ms完整保留，不挪余额。命名/接口/错误/重复检查未增加框架，phase只nonsecret枚举，真实compat未运行。使用本地clean-code/find-skills沿既有方法；无安装、deps或其他树写入。四scopeSTOP，claim保留。

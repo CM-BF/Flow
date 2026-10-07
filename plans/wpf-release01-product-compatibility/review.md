@@ -1,10 +1,10 @@
 # WPF-RELEASE01 review
 
-**状态：NOT_STARTED**
+**状态：APPROVED（仅两harness源码；真实三App兼容尚未执行）**
 
 Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 
-范围：本次固定 public origin / 三 retained App successor 两harness。设计限定接受见[原件](../../docs/evidence/wpf-release01/fixed-origin/design-review.json)；不等于源码或实际兼容通过。后继最终backend为空；f3d源码限定0blocking（[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)）。唯一strict首红exit2/父exit1保留；当前9658公共类型索引修正未复验、最终delta审未完成，browser/真实compat仍NOT_RUN。固定入口/缺件见[implementation](../../docs/evidence/wpf-release01/fixed-origin/implementation.md)，两源hash见[source manifest](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)。
+范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple/native caller/budget闭包未齐，browser/PG/HTTP NOT_RUN。
 
 必须核：真实Chrome页面请求和Node APIRequestContext分离；exact proxy/Host与无fallback；原Bearer+独立Cookie补证；SSE与真实ACK prefix；原四观察与最终backend/context；owned cleanup、报告与未知失败。
 

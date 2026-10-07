@@ -1,6 +1,6 @@
 {
-  "state": "SOURCE_FIXED_NOT_RETESTED",
-  "at": "2026-10-07T10:18:03.068392+00:00",
+  "state": "SOURCE_APPROVED_TYPES_PASSED_COMPAT_NOT_RUN",
+  "at": "2026-10-07T10:21:39.254787+00:00",
   "base": "41276e2ecd154087f66958339d9abfce4d44964c",
   "sourceFiles": [
     {
@@ -15,7 +15,7 @@
     }
   ],
   "finalBackendTuple": null,
-  "checks": "f3d strict FAILED;9658 NOT_RETESTED;actualcompat NOT_RUN",
+  "checks": "strict/noUnchecked/noEmit PASS at9658; f3d first FAIL retained; actualcompat NOT_RUN",
   "runtimeEntry": "runReleaseCompatibility(admission, explicitAdminUrl, lifetime) export; importing has no top-level launch",
   "lifetimeOwner": "Existing admitted parent/worker must supply checkpoint+signal+owned Chrome launcher/receipt/close; no new supervisor",
   "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",

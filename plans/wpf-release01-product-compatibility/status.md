@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:18:03.068392+00:00 |
+| 最近更新时间 | 2026-10-07T10:21:39.254787+00:00 |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -13,17 +13,17 @@
 | 工作树dirty状态 | 源码9658a6b763de69038778de1b0c16de64ff824c75已固定；本次metadata正常封存，提交后clean/remote回执另证 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | FAILED：f3d唯一strict exit2；9658 type-only修正NOT_RETESTED。browser/PG/真实compat NOT_RUN；历史7805不继承 |
+| 检查状态 | PASSED 9658a6b763de69038778de1b0c16de64ff824c75：两harness strict/noUnchecked/noEmit实际exit0；首f3d红保留。仅类型检查，browser/PG/compat NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前后继；历史7805于c450c2da7e6185b88db9f46e0299ee504ee6f3e8接收 |
 | 实现目标 | 9658a6b763de69038778de1b0c16de64ff824c75 |
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 固定地址验证入口已完成限定源码审查；已修正局部类型声明，等待相关复验 |
-| 下一可用交付 | 完成必要类型复验；最终后台交付和受控调用器就绪后安排真实兼容验证 |
+| 当前产出 | 固定地址验证入口已完成限定源码审查；局部类型复验已通过，真实兼容待最终后台和受控调用器 |
+| 下一可用交付 | 最终后台交付和受控调用器就绪后安排真实兼容验证 |
 | 当前阻塞 | ACTIVE: 最终后台产物与公开会话策略配置尚待原发布负责人提供；不阻塞本段源码实施 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，f3d限定源码已审0blocking；9658类型修正NOT_RETESTED/待delta复审 |
+| Review | [review.md](review.md)，APPROVED（仅两harness源码）；f3d源审与9658 type-only修正已独立接受，实际compat未验 |
 | 开工 UTC | UNKNOWN |
 | 完成 UTC | NOT_COMPLETED |
 | 时间来源 | 历史完整任务开工未重建；本次后继实际开工 2026-10-07T10:01:18.415296+00:00，见 [segment-start](../../docs/evidence/wpf-release01/fixed-origin/segment-start.json) |
@@ -34,11 +34,11 @@
 | RELEASE01-01 | completed | w01_owner | [历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json) |
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
-| RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审0blocking，9658类型delta待核 |
-| RELEASE01-05 | pending | w01_owner | 最终tuple、限定源码审与必要局部检查/三App真实四项兼容待完成；当前真实compat0actual，已有strict首红 |
+| RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
+| RELEASE01-05 | pending | w01_owner | 最终tuple与受控caller待闭合，三App真实四项compat待完成；strict复验PASS/真实compat0actual，首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
-## 结构化等待
+## 等待记录
 
 | 开始 UTC | 结束 UTC | 原因 | Owner | 解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -50,6 +50,10 @@
 
 唯一status仍供原source登记读取；未自行请求dashboard服务。架构影响仅受控验证接口/owned proxy，不改产品或共享契约；最终固定target交co-lead独审后由原Lead判断是否更新固定架构视图。历史状态原件见[previous-status](../../docs/evidence/wpf-release01/fixed-origin/previous-status.md)。
 
-## 2026-10-07 局部检查安全点
+## 历史 2026-10-07 首次局部检查安全点
 
 [唯一strict首红](../../docs/evidence/wpf-release01/fixed-origin/types-first/result.json)：父实际exit1、compiler exit2，stdout852B/双EOF/drop0，owned PGID16208和scratch已清；晚terminal1169.181ms按1170ms记账，原20s段CLOSED、未用18830ms不转credit。[f3d限定独审](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)与9658 type-only修正分开；后者复用公共配置类型，不硬编码版本/不cast，尚未复验。已授权后继独立10s段按管理顺序在DPERF收口后再fresh，不自动运行。当前四scope停止写入，claim38b9v1保留；不等于释放。
+
+## 当前必要复验与停写
+
+[type-only修正独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)已接受。原20s首红1170ms CLOSED；新独立10s段actual parent0/compiler0，晚903.769ms按904ms记，双EOF/drop0/groupAbsent/scratchAbsent。[必要复验独审](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)、[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)与[外层退出](../../docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json)固定；未用9096ms不触发再测。仅严格类型范围PASS，无产品import/PG/Chrome/HTTP/build/provider。当前四scope停止写入，claim38b9v1保留，最终backend tuple与native caller/budget闭包仍缺；不沿旧tuple启动。
