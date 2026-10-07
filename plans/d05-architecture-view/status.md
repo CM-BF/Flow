@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:07:03.250053+00:00 / maina72181d7；本机登录入口与计时保持、186源旧实际，新增两源待本批发布 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:14:08.283582+00:00 / main9816e87a；188唯一来源已实际载入，登录与计时保持 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | UNKNOWN |
-| 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以本次登记/进程替换时间补造。当前来源更新实采05:15:46.943Z，见eng01j-live.json。 |
+| 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T07:14:08.283Z，见chat05p02-s01p08-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | completed |
-| 已集成 main 状态 | edee6b1c5d74c2ee46ec98bab2844579db6a00c4 已推送；2026-10-06 03:30 UTC实测4320部署，后续metadata不要求精确追赶main HEAD |
+| 已集成 main 状态 | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 已推送，含0b275两来源登记；4320实际188源。后续metadata另记。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；186个唯一来源已加载，缺证时间保持未知。 |
-| 下一可用交付 | 把工具全文接线与原生流式授权优化的唯一进度来源加入看板；保留登录及时间入口。 |
+| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；188个唯一来源已加载，工具全文接线与流式授权优化状态可见，缺证时间保持未知。 |
+| 下一可用交付 | 本片段已交付；后续来源随各owner正式三件套正常登记。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -218,3 +218,7 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 2026-10-07T05:15:46.943Z：ENG01J登记已审并main e30d40cf；确认旧61730命令/cwd/唯一4320归属后正常结束，新51982从同一m2-integration启动。实际snapshot186源，ENG01J issues/human.missing/timing.issues均空，显示有据05:07:35.705Z开工。按需登录metadata仍enabled，未读取token；个人config/state摘要与61227/61228监听PID保持，未刷新用户tab。[实际回执](../../docs/evidence/d05/eng01j-live.json)。仅看板来源加载，不声明工程native或个人部署通过。
 
 2026-10-07T07:07:03.250053+00:00：仅登记CHAT05P02与S01P08两原owner来源，真实三件套/固定HEAD已核；188来源是本批候选，未当作旧进程已载入。S01产品已maina721，P02是刚领取实施，两者不共用完成状态。见[登记输入](../../docs/evidence/d05/chat05p02-s01p08-registration.json)，0产品重测。
+
+## 2026-10-07 两来源实际发布
+
+0b275三文件差异由native_center_owner独立只读APPROVED_DOCS_REGISTRATION_ONLY，6份固定三件套绑定无差异，0工程运行。main9816e87a已接收；4320自有旧进程51982已确认退出，新25011实际返回188源，两新canonical均live。本机登录metadata仍启用；个人配置/状态/发布指针摘要和61227/61228身份保持，未读取token endpoint或刷新原tab。见[实际回执](../../docs/evidence/d05/chat05p02-s01p08-live.json)。

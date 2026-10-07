@@ -20,3 +20,7 @@ Reviewer逐行查看源码及test传输修复，实际CUA查看运行/模块/数
 ## 可复制复审任务
 
 先读本plan/status，核实际branch/base/head/dirty，对具体新commit只读审查差异及其源码依据；检查证据区分自己执行与作者保存，默认不改实现。直接修复需Sol以上、独立worktree和有效claim。记录severity/blocking、限制与复审target，不把本approval泛化到后续实现。
+
+## 两来源登记独审 2026-10-07
+
+APPROVED_DOCS_REGISTRATION_ONLY — native_center_owner / gpt-6-astra，target0b27528ac50729b96e595bf375ecd0dbc73a071a相对5152f32a，共3文件。两source/branch/evidence与6份固定三件套bytes/hash一致；188候选和186旧实际明确分开，历史UNKNOWN保留；P1/P2=0、reviewer工程运行/写入=0。主线接收9816e87a，实际载入回执另列，不扩大原产品approval。
