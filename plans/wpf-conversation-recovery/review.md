@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 独立审查
 
-状态：CHANGES_REQUESTED。Root完整固定0141审查提出两项P2：显式中心选择被背景read关闭、Steer存储屏障跨deadline后卡sending；本批原21内窄修，原full7实证不变。
+状态：IN_PROGRESS。55b两P2源码修复/定向4case与类型证据已独审接受，connection-choice实际待验；不是整个feature批准。
 
 Review target commit：`55b4917e732d11d5e5f660f9c22a1022d7094015`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
@@ -193,3 +193,7 @@ Root已开始固定0141相对base84005完整差异审查；当前有连接选择
 ## 2026-10-07 06:09:00 UTC — 正式两P2修复回执
 
 原完整0141审查：[root](../../docs/evidence/wpf-conversation-recovery/0141-feature-root-review.json)/[peer](../../docs/evidence/wpf-conversation-recovery/0141-feature-peer-review/report.md)。当前target`55b4917e732d11d5e5f660f9c22a1022d7094015`，四源最小delta；SELECTING/STEERING-TIMEOUT源码addressed，定向4PASS+类型exit0（原红保留）。accepted deadline保持knownaccepted、旧generation忽略；connection-choice只测试源未实际运行。状态CHANGES_REQUESTED直到独立复审收口，不因4PASS冒整个feature批准。
+
+## 2026-10-07 06:10:15 UTC — 55b限定复审
+
+[原始报告](../../docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json) SHA256 `ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7`，两P2 SOURCE_ADDRESSED/0新增finding。Root独立核4PASS/50未跑、两次types/源pins，未重跑检查或观察过去PID。完整review IN_PROGRESS，chooser实际NOT_RUN；旧0141 full7实证不扩至新分支。

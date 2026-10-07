@@ -227,3 +227,5 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 06:09:00 UTC — final P2 bounded clean-code review
 
 复用本地find-skills/clean-code/codebase-design；本次bounded设计直接对应已批准两P2，不安装技能/不造框架。App区分用户选择意图与authready观察，revision不进入持久namespace；Steer区分stale-generation、写前deadline与durableaccepted，保持原authority/key。检查命名/单一职责/错误收口/重复/接口：未引入新公有API或state store，保留原full7断言；新增4case覆盖慢prepare/dispatch、accepted延迟及撤权，旧50未重跑。类型首红为mock字符串宽化，改用原SteeringPort签名后noEmit0。新browser选择映射保持Gate→Init→Worker→parent一致；mounted chooser待真实验证，类型和受控测试不能替代。原始局部日志无numericPGID，清理结论来自同一inline父的ESRCH判断，不能冒独立进程审计。
+
+2026-10-07 06:10:15 UTC：55b正式限定复审已归档，0新增finding。源码未再修改/无新检查；临时scratch已删除，原raw保留。剩余chooser实际验收另需真实资源交接，不把静态修复或4控制测试代替它。

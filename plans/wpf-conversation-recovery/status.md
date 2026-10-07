@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 06:09:00 UTC |
+| 最近更新 | 2026-10-07 06:10:15 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -26,7 +26,7 @@
 | 实现目标 | 55b4917e732d11d5e5f660f9c22a1022d7094015 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，CHANGES_REQUESTED（root固定0141两项P2；55b源码修复/4定向PASS待独审及chooser实际）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
+| Review | [review.md](review.md)，IN_PROGRESS（55b两P2源修复和定向实证已独审接受；connection-choice实际待验）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
 | 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本段本人安全CLI核active/owner/WT/branch、overlap=[]，见final-p2-claim-observation（06:02:12.724Z）；不等资源准入 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
@@ -306,3 +306,7 @@ GO实际看双390图后的原验收补充：恢复目录默认显示可读标题
 ## 2026-10-07 06:09:00 UTC — 完整审查两P2窄修与定向检查
 
 [正式0141审查](../../docs/evidence/wpf-conversation-recovery/0141-feature-root-review.json)CHANGES_REQUESTED，两项原scope修复固定`55b4917e732d11d5e5f660f9c22a1022d7094015`（ecce为行为源，55b仅mock类型补注）。当前SELECTING与STEERING-TIMEOUT标SOURCE_ADDRESSED待独审；新connection-choice两组实际App旅程NOT_RUN，原full7与所有旧FAIL不变。[4个新增受控case/noEmit](../../docs/evidence/wpf-conversation-recovery/final-p2-local-index.json)：4PASS、旧50未执行、初类型红保留后exit0。新local段实际13221.340917ms/保守13222，余16778；0网络/PG/Chrome，无资源holder；browser段仍spent13134/rem136866。当前实现target明确，不退回UNKNOWN；主线未接。
+
+## 2026-10-07 06:10:15 UTC — 两P2修复限定独审接受
+
+[55b正式root结论](../../docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json)：ACCEPTED_TWO_P2_SOURCE_FIXES_AND_TARGETED_LOCAL_EVIDENCE_NOT_WHOLE_FEATURE/0新增finding。完整review转IN_PROGRESS，两P2源码addressed；connection-choice NOT_RUN，旧0141 full7 PASS保原绑定。未重复检查，无当前holder/新gate，source55b冻结；原先CHANGES_REQUESTED保历史。
