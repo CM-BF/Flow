@@ -23,13 +23,15 @@ export function createCodexAdapter(configuration: CodexExecutionProfileConfigura
     const factory = profile.sessionPersistence ? sessionTransport(sessionStorage!, profile, context) : createTransport!;
     const stream = new CodexAssistantStream(); let publishedSession: string | undefined;
     const publishStream = async (delta: CodexStreamDelta, signal: AbortSignal) => {
+      const patches = stream.accept(delta);
+      if (!patches.length) return;
       await context.assertOwnership(); signal.throwIfAborted();
       if (publishedSession === undefined) {
         await context.emit({ type: 'session', nativeSessionId: delta.threadId, adapterVersion: profile.adapterVersion });
         publishedSession = delta.threadId;
       }
       if (publishedSession !== delta.threadId) throw new NativeExecutionError('unknown');
-      for (const patch of stream.accept(delta)) { await context.assertOwnership(); signal.throwIfAborted(); await context.emit(patch); }
+      for (const patch of patches) { await context.assertOwnership(); signal.throwIfAborted(); await context.emit(patch); }
     };
     const final = await runOrdinaryCodexTurn(profile, factory, {
       onStream: publishStream, onStreamComplete: publishStream,

@@ -2,6 +2,7 @@ import { mkdtemp, lstat, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { expect, it } from 'vitest';
+import { createHash } from 'node:crypto';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
 import { createCodexTransport } from '../../codex/index.js';
 import type { CodexTransport } from '../../codex/types.js';
@@ -39,10 +40,33 @@ it.each([32,512])('publishes session then public patches and one final from %i r
     expect(patches.filter(p=>p.channel==='text').map(p=>p.text).join('')).toBe('中文🙂'.repeat(512));
     expect(patches.filter(p=>p.channel==='reasoning-summary').map(p=>p.text).join('')).toBe('公开摘要🙂');
     expect(patches.filter(p=>p.phase==='block-complete')).toHaveLength(2);
+    expect(patches.length).toBeLessThanOrEqual(8);
     expect(events.filter(event=>event.type==='assistant-final')).toHaveLength(1); expect(events.at(-3)?.type).toBe('assistant-final');
     expect(JSON.stringify(events)).not.toContain('private-server'); expect(child!.snapshot().state).toBe('closed');
   } finally {
     if(child) expect((await child.close()).child).toBe('confirmed-exited');
     const current = await lstat(root); expect([current.dev,current.ino]).toEqual([identity.dev,identity.ino]); await rm(root,{recursive:true});
   }
+});
+
+it('coalesces receive bursts by byte/time while retaining first text and completion with equal Unicode prefixes', () => {
+  const text = '中文🙂'.repeat(512), observations: { fragments:number; emits:number; digest:string }[] = [];
+  for (const fragments of [32,512]) {
+    let now = 1; const stream = new CodexAssistantStream(() => now);
+    const point = '中文🙂'.repeat(512 / fragments), patches = [];
+    for (let i=0;i<fragments;i++) patches.push(...stream.accept({...delta,delta:point}));
+    expect(patches).toHaveLength(1); // First observable prefix is not delayed.
+    patches.push(...stream.accept({...delta,delta:'',completedText:text}));
+    expect(patches.map(patch=>patch.text).join('')).toBe(text);
+    const digest=createHash('sha256').update(text).digest('hex');
+    expect(patches.at(-1)).toMatchObject({phase:'block-complete',prefixDigest:digest});
+    observations.push({fragments,emits:patches.length,digest});
+  }
+  expect(observations[0]!.emits).toBe(2); expect(observations[1]!.emits).toBe(2);
+  expect(observations[0]!.digest).toBe(observations[1]!.digest);
+  let now=0; const timed=new CodexAssistantStream(()=>now);
+  expect(timed.accept({...delta,delta:'a'})).toHaveLength(1);
+  now=249; expect(timed.accept({...delta,delta:'b'})).toEqual([]);
+  now=250; expect(timed.accept({...delta,delta:'c'})).toMatchObject([{text:'bc',fromBytes:1}]);
+  now=251; expect(timed.accept({...delta,delta:'x'.repeat(8192)})).toMatchObject([{text:'x'.repeat(8192),fromBytes:3}]);
 });
