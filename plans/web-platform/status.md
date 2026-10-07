@@ -18,7 +18,7 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
-| 下一可用交付 | 完成Recovery已获限定审查的脚本修正验证与剩余旅程；Quick首类型检查发现隔离源码输入缺项，待原供给者补齐并重新准入，26direct尚未执行。看板摘要详情和架构新快照仍各待必要验证，不自动接跑已过检查。 |
+| 下一可用交付 | 完成Recovery已获限定审查的脚本修正验证与剩余旅程；Quick首类型检查发现隔离源码输入缺项，原Lead已补齐该输入，仍待剩余包重新准入，26direct尚未执行。看板摘要详情和架构新快照仍各待必要验证，不自动接跑已过检查。 |
 | 当前阻塞 | ACTIVE: Recovery本轮页面在授权丢失场景的求值步骤中断，前置保存/材料/重放/CAS已有实际进展但剩余离线和390键盘尚未执行；完整清理后已归还窗口。Quick c1实际strict失败/direct未运行且已完整清理，local槽归Mika安排OPS14，本组无holder/gate/预约。远程CI仍不覆盖这些Web验收，workspace-cache依赖不可直接运行；完整消息旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
@@ -145,3 +145,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 本安全点可聚合入口：[设置控件固定base/唯一owner/原8take](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)、[RELEASE main/release](../../docs/evidence/web-platform/release03-main-intake.json)、[Recovery首轮失败与清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)。任务进度仍取各owner唯一status；[Lead18:15:17登记/实际来源回执](../../docs/evidence/web-platform/message-settings-registration-intake.json)只证明来源展示，未证明设置功能已交付。
 
 本轮真实检查：[Quick c1首类型失败/完整清理与供给缺项](../../docs/evidence/web-platform/message-settings02-c1-actual/report.md)；[Recovery8ed失败及9835限定源码审](../../docs/evidence/web-platform/recovery01-8ed-actual/root-actual-and-source-review.json)。两项终态已归窗，不自动接续验证。
+
+[D04测试自有worktree后继](../../docs/evidence/web-platform/d04-owned-worktree-lifecycle-intake/handoff.json)在原树新精确领取并完成fa6f源码限定独审；真实pureGit检查仍待独立准入。新4320本机“打开Flow/登录凭据”入口正由panels只读收敛最窄路径与root可信边界，新独立树/范围尚未领取，不占旧Recovery/Quick范围。

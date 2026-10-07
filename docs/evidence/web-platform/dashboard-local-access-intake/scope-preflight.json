@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-10-07T02:36:17.970220+00:00",
+  "scopeStatus": "PROPOSED_NOT_TAKEN",
+  "proposedSourcePaths": [
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs"
+  ],
+  "overlaps": [
+    {
+      "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+      "version": 4,
+      "taskId": "D05",
+      "worker": "astra_ultra_execution_lead",
+      "state": "active",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+      "pairs": [
+        {
+          "requested": "apps/execution-dashboard/public/index.html",
+          "held": "apps/execution-dashboard/public/index.html"
+        }
+      ]
+    },
+    {
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 1,
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "state": "active",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "pairs": [
+        {
+          "requested": "apps/execution-dashboard/src/server.mjs",
+          "held": "apps/execution-dashboard/src/server.mjs"
+        }
+      ]
+    }
+  ]
+}

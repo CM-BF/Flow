@@ -1,0 +1,52 @@
+{
+  "reviewer": "/root independent read-only; parallel W01 review supplied",
+  "at": "2026-10-07T02:34:22.136064+00:00",
+  "decision": "APPROVED_SCOPED_SOURCE_ONLY_VALIDATION_PENDING",
+  "base": "1caac8c4856fed6de59d3f7467885563a187a758",
+  "target": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/test/coordination.test.mjs",
+      "sha256": "5b4c27e630532b641a62cedc178309a48c429bcf91cc960e5b51e718ab24d20e",
+      "bytes": 11128
+    },
+    {
+      "path": "apps/execution-dashboard/test/owned-worktrees.mjs",
+      "sha256": "4a5e3e0556bec05339c4fd1ec4c1934bb1de5b3852b67e351a7ec29c3155c79a",
+      "bytes": 8137
+    },
+    {
+      "path": "apps/execution-dashboard/test/owned-worktrees.test.mjs",
+      "sha256": "fe89bf5d55a91bf54adac869b3f219ce4b00df339f41fe275391641f59573ea6",
+      "bytes": 6299
+    }
+  ],
+  "finding": {
+    "id": "D04-INIT-CLEANUP",
+    "severity": "P2",
+    "state": "CLOSED_SOURCE_ONLY",
+    "initialTarget": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e",
+    "evidence": "After mkdtemp, realpath/root identity and final initialHead/common-dir reads could reject before owner return and outside cleanup catch.",
+    "repair": "80340a2c60935bdc94da39be7abc5e93337123bd and final fa6f retain exact createdRoot and put all later initializer steps in one catch that preserves the original error plus cleanup errors. No injected runtime failure was run."
+  },
+  "scopeReviewed": [
+    "Original 42 assertions and four coordination test declarations preserved; public CLI/PG/snapshot behavior still exercised by original test body.",
+    "Five full Flow HEAD worktrees replaced by five branches in a tiny private Git repository; FLOW_COORDINATION_REPO points at that repository.",
+    "Canonical paths and porcelain-z exact records, creation intent before Git mutations, one-force formal remove, registration disappearance and exact branch OID/use checks precede root deletion.",
+    "Cleanup continues after an owned failure, retains unknown/locked/nonowned items, and preserves primary and cleanup errors independently of pool.end failure.",
+    "Five standalone pure Git cases cover normal five trees, owned symlink alias/spaces, real post-checkout partial creation, locked failure with later cleanup, and non-owned sentinel retention. No pg/server/ledger import in new test."
+  ],
+  "peer": {
+    "path": "/private/tmp/d04-310e-owned-worktrees-peer/report.md",
+    "sha256": "090877e057b7e891496cea416a800ab3637a8705128fd9f90b0694b5325e5025",
+    "target": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e",
+    "findings": "Same P2; final repair reviewed by root, not by that earlier peer report."
+  },
+  "notVerified": [
+    "All five pure Git cases NOT_RUN, including alias and injected hook error.",
+    "No Node syntax/import, real PG/CLI or full dashboard test rerun. No resource-time/byte saving measurement.",
+    "No historical leftovers cleaned or attributed. No production coordination database, contract, dashboard display or main integration change."
+  ],
+  "next": "Only original owner under fresh exact claim may run the standalone pure Git test after bounded local-slot admission. Preserve error evidence, measure actual owned Git registrations/branches and cleanup. No whole coordination test invocation is authorized by this source review.",
+  "cleanCode": "Reviewed lifecycle ownership and explicit failure propagation; closed one actual control-flow leak. Private helper remains specific to this fixture, no dependency injection framework or production abstraction."
+}

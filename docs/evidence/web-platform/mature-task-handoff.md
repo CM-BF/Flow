@@ -4,15 +4,21 @@
 
 ## 当前局部窗口已归还
 
-[Quick c1实际失败与清理](message-settings02-c1-actual/window.json)：strict noEmit exit2，缺少传递源码goal-plan-confirmation，26direct未执行。outer实际exit1、唯一terminal seal和原件hash吻合；owned group/scratch均清理。早result1874ms、晚terminal1875ms分列，保守累计1875/剩28125ms，非新许可。Web holder/gate/reservation已清空，局部槽立即交回Mika安排OPS14；不自动接b1、Recovery小检查或重试。[唯一缺项供给请求](message-settings02-c1-actual/missing-input-handoff.json)已由root交Mika协调原provision operator，本组未物化。
+[Quick c1实际失败与清理](message-settings02-c1-actual/window.json)：strict noEmit exit2，缺少传递源码goal-plan-confirmation，26direct未执行。outer实际exit1、唯一terminal seal和原件hash吻合；owned group/scratch均清理。早result1874ms、晚terminal1875ms分列，保守累计1875/剩28125ms，非新许可。Web holder/gate/reservation已清空，局部槽立即交回Mika安排OPS14；不自动接b1、Recovery小检查或重试。[唯一缺项供给请求](message-settings02-c1-actual/missing-input-handoff.json)已由原Lead完成单文件物化，原receipt保留；本组未物化，原失败仍不改判。
 
 [Recovery8ed原失败与完整清理](recovery01-8ed-actual/window.json)保留：outer exit1、晚累计38364.050667ms；[9835源码修复限定独审](recovery01-8ed-actual/root-actual-and-source-review.json)通过，局部序列化与浏览器复验尚未运行。
+
+## 新用户入口的精确交权请求
+
+[4320“打开Flow / 登录凭据”独立片](dashboard-local-access-intake/request.json)由panels拟接，当前只读、未建树/未take/未run。请原D05 writer在安全点确认并partial-amend释放 **index.html**（3a624 v4，保其他范围）；DPERF04 **server.mjs**已获W01停写声明并原子移出，b554现v2保其他8scope，[回执](dashboard-local-access-intake/dperf-server-receipt.json)。不能把停写/旧branch完成当已释放，不隐性改共享入口。 [唯一供给请求](dashboard-local-access-intake/provision-request.json)固定943a/27文件515876B、dashboard-local-access原路径不存在，待原Git operator执行或明确单次委派；可先fresh领取独立模块范围，index交权后再amend，不阻全部源码。Root与panels正合可信安装provider和独立UI小模块设计；61228当前用户不可访问由唯一SVC operator按原版本恢复，本组不另行探测/启动服务，真实安装验收待恢复交接；token不进入管理/源码/日志/URL/聚合或静态产物。
 
 ## 本轮管理输入
 
 [固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；仅管理验收差异获独立文档批准，产品未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。此前root入站free888332KiB属历史观察；最新资源恢复与窗口分配见下。
 
 ## 已固定源码交接
+
+[D04 测试生命周期后继](d04-owned-worktree-lifecycle-intake/handoff.json)已新领取f61d v1五scope：三测试源码fa6f获限定source-only批准，owner7d9544已push/clean；五项pureGit全NOT_RUN，未占运行槽。
 
 [D06 原五图后继已在原树领取并固定](architecture-snapshot-0da-intake/report.md)：原owner d01_owner、adf9539d v1四范围；两源5124、owner9fb9双端clean。固定0da事实获root/peer限定source-only批准，新22direct/页面均未运行；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)仍是功能权威，无新运行窗口。
 

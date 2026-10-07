@@ -1,5 +1,5 @@
 {
-  "state": "PENDING_ORIGINAL_PROVISION_OPERATOR",
+  "state": "EXACT_SOURCE_MATERIALIZED_BY_ORIGINAL_LEAD",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
   "sourceHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
   "path": "packages/contracts/src/goal-plan-confirmation.ts",
@@ -9,5 +9,9 @@
   "authority": "Request only; no manager file materialization/shared config mutation or new runtime grant",
   "delivery": "Root reports delivered to Mika through existing concrete dependency coordination; direct Lead tool rejected input and was not retried",
   "directToolError": "direct app-server input is not allowed for multi-agent v2 sub-agents",
-  "next": "Original Lead provision operator decides exact single-blob materialization; later packet rebind and separate runtime admission required"
+  "next": "Input file supplied only; c1 failed evidence remains, no passed checks or retry grant. c2 static review and fresh current HEAD/pins/gate required.",
+  "receipt": {
+    "path": "lead-source-provision-receipt.json",
+    "sha256": "cb3afb8fa0c1edaf4743ead3d3e0bcb9aaa8f1bf62587dccedd3ada93c208469"
+  }
 }
