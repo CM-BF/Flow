@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T21:39:50.246Z",
+  "decision": "APPROVED_FORWARD_R4_CLASSIFICATION_ONLY",
+  "owner": "native_center_owner",
+  "delivery": "0be5884cc4937c7bf98dedcab5d072622783e7c1",
+  "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-forward-classification.json",
+  "bytes": 3925,
+  "sha256": "80bc69ebd000a24406087ccb803194b7e112e805e612d25dcbe218b11e192e1d",
+  "fixedInputs": 5,
+  "original": {
+    "actualReturnAt": "2026-10-07T17:10:57.626406Z",
+    "exactObservedAt": "2026-10-07T17:10:44.590706Z",
+    "exactIdentities": 6,
+    "allAbsent": true,
+    "pendingRecords": 0,
+    "registeredGenerations": 1,
+    "registeredCenterStopped": true,
+    "DBOid": 1340622,
+    "connections": [],
+    "adminClosed": true,
+    "workComplete": false,
+    "fullGenerationsStopped": false,
+    "cleanupConfirmed": false,
+    "mayDrop": false,
+    "disposition": "KEEP"
+  },
+  "ownerContinuation": "No restart, write, delayed consumer or pending launch was authorized or performed by this owner against the R4 retained namespace after its RETURN; later attempts used distinct namespaces. Original R4 raw remain sealed and matched fixed Git above. This is owner/source evidence, not a new system-wide process probe.",
+  "forward": {
+    "clone": "static KEEP; no future clone copy allocation for the consumed attempt",
+    "private": "static KEEP; no active owner runtime writer; existing occupation already reflected by fresh disk free",
+    "database": {
+      "futureReservedBytes": 134217728,
+      "reason": "Application connections closed; shared PostgreSQL background physical growth remains unknown. No terminal DB measurement or deletion inferred."
+    },
+    "replacementForPriorFullCandidateBytes": 1243611136,
+    "remainingFutureBytes": 134217728,
+    "releasedFutureReservationBytes": 1109393408,
+    "otherUnknownAllocations": "Unchanged; do not deduct any unrelated KEEP or metadata allocation."
+  },
+  "limits": "Seven unstarted prospective generations are not live writers. False full-eight-generation cleanup/DROP guards remain unchanged. No physical reclaim, final size, root-cause or host success claim."
+}

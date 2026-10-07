@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T21:37:06.231Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_RECOVERY_R2_BUILD_PREPARATION",
+  "delivery": "d95b202f64ab08ecf265b87326778fadb57b7811",
+  "canonical": "backend-browser-recovery",
+  "preparation": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-preparation.json",
+    "bytes": 6035,
+    "sha256": "dc7f8c5af371c3aea70bc9eb2ec0b8975d36a2d1378a6b23c907cf1109af6fce"
+  },
+  "artifactSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "tree": "27cf190b00b3244026952ab85b0d922368676715",
+  "bindingReadback": {
+    "count": 15,
+    "bytes": 26453,
+    "fixedCurrentHashEqual": true
+  },
+  "local": {
+    "distinctCases": 5,
+    "elapsedMs": 332,
+    "rawBytes": 727,
+    "groups": "3 absent / dual EOF",
+    "scratch": "3 exact empty removed"
+  },
+  "review": [
+    "Existing builder/OPS14 reused; trusted input/evidence/prefix options leave old defaults unchanged.",
+    "New exclusive successor namespace; actual fixed input loading proves77 source bindings and corrected preview hash before build.",
+    "Fixed999-source archive7863679 bytes; no unrelated dependencies/SQL change."
+  ],
+  "blockingFindings": [],
+  "limits": [
+    "Preparation only; actual new artifact, cold startup, four-App compatibility and personal restoration not yet verified.",
+    "420s work plus0.5s TERM/2s reap,2317352960 additional bytes,2MiB raw/1MiB OPS capture unchanged.",
+    "Fresh complete coordinated floor and actual selection required; no holder inferred from READY.",
+    "Original build/cold/unknown local results and KEEP immutable; no retry of old once."
+  ]
+}

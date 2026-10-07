@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T21:39:50.246Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_HELD_RECOVERY_SOURCE_PREPARATION",
+  "delivery": "0be5884cc4937c7bf98dedcab5d072622783e7c1",
+  "source": "42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799",
+  "manifest": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/manifest.json",
+    "bytes": 10720,
+    "sha256": "abf47ee9b63f3f517acab3d649948135e846b67bc9ceeefa17446010cb3c3962"
+  },
+  "readback": {
+    "bindings": 31,
+    "bytes": 80777,
+    "fixedCurrentHashes": "equal"
+  },
+  "local": {
+    "distinctCases": 7,
+    "passed": 7,
+    "finalMs": 119,
+    "finalRawBytes": 796,
+    "allRoundsMs": 205,
+    "allRoundsRawBytes": 1184,
+    "earlyFailures": "Two zero-selection failures retained; no source behavior inferred from them.",
+    "groups": "4 absent / dual EOF",
+    "scratch": "3 exact empty removed"
+  },
+  "review": [
+    "Single target policy; selected old cd27,old Webhost7d1,state.source6c remain distinct.",
+    "Trusted migration ports preserve full artifact verification,locks,runner confirmation and exclusive publish.",
+    "Four new-source reports precede target rebind; old bootstrap/hold/retirement never replay.",
+    "Checkpoint checks all roles/old groups,nonce-bound runner initialization,history,release pointer and maintenance23 before explicit resume; actual claim remains NOT_OBSERVED.",
+    "Original continuation/OPS14 owns900s deadline and child-only supervision; detached personal services are never guessed stopped by outer exit."
+  ],
+  "blockingFindings": [],
+  "ready": "NOT_READY_FOR_PERSONAL_EXECUTION",
+  "remaining": [
+    "replacement descriptor from source880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "actual cold success",
+    "four final-source App reports",
+    "fresh private6pins/installation and held23 facts",
+    "final dispatch and actual window"
+  ],
+  "scope": "Source-only; b692/f37 candidate is obsolete. Final corrected tuple/closure/fresh inputs require delta review. No personal read/write, PG, provider, build or service action performed by reviewer."
+}
