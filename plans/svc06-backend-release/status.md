@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:14:27 UTC；原失败残留已按独审入口单次正常收尾，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:14:27 UTC；原失败残留已按独审入口单次正常收尾，收尾限定接受，真实host仍open |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -22,9 +22,9 @@
 | 优先级 | 2 |
 | 当前产出 | 固定后台产物已构建；首次宿主验证的残留中心与专库已正常收尾，原失败完整保留。 |
 | 下一可用交付 | 修正验证入口的身份监督位置，再完成真实三角色宿主与开发目录不可读验收。 |
-| 当前阻塞 | ACTIVE: 原宿主验证未通过，需最小入口修正；本次残留收尾已完成，等待独立结果核验。 |
+| 当前阻塞 | ACTIVE: 原宿主验证未通过，需最小入口修正；本次残留收尾已完成并获限定接受；真实host后继待最小入口修正。 |
 | 需用户决定 | NONE |
-| Review | 原构建/入口准备批准保持；cleanup f46a经Lead全文审并授权一次，实际收尾结果PENDING，不扩大为宿主通过 |
+| Review | 原构建/入口准备批准保持；cleanup f46a经Lead全文审并授权一次，实际收尾结果已获Lead限定接受并归还窗口，不扩大为宿主通过 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 

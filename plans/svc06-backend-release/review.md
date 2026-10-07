@@ -1,3 +1,7 @@
+## 2026-10-07 04:14:53 UTC 原失败残留收尾限定接受
+
+Execution Lead 已直接核 outer/private result 通过并归还 PG 窗口；[固定结果绑定](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result-manifest.json)。仅原残留正常清理，原 host FAIL 与后继未验边界保持，无新probe。
+
 # 最新限定收尾待审
 
 2026-10-07 04:14:27 UTC：固定 f46a29ae26ebeb616343f95de68f8f967c8c8674 的 cleanup entry/input 已获 Execution Lead 同线程完整只读批准并单次执行；真实结果[cleanup-followup-result](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result.json)尚待独立核验。原host失败不改，不能将收尾成功作三角色验收通过。

@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-07T04:14:53.331099+00:00",
+  "target": "70c126aec4cf116d65939fa578e96e9e48de933f",
+  "entrySource": "f46a29ae26ebeb616343f95de68f8f967c8c8674",
+  "resultReview": {
+    "reviewer": "astra_ultra_execution_lead",
+    "scope": "Lead directly read outer/private result; cleanup accepted and PG window returned; original host FAIL unchanged",
+    "recordSource": "same-thread authoritative message",
+    "reviewerReruns": 0
+  },
+  "bindings": [
+    {
+      "path": "cleanup-followup.mjs",
+      "bytes": 10293,
+      "sha256": "695605db12184faf2bf890eee8c8f9fe8c2717c237f32d349f79761049337f32"
+    },
+    {
+      "path": "cleanup-followup-supervise.py",
+      "bytes": 2574,
+      "sha256": "6c708f8e570d8c92498385feb49390d54f870917b1f24fd65dd0e3509d5b78eb"
+    },
+    {
+      "path": "cleanup-followup-inputs.json",
+      "bytes": 3455,
+      "sha256": "f1bc6bc6e6f873c442c9933eb5ee7753a9037b2c72d36cf649073dcfff4b9e85"
+    },
+    {
+      "path": "cleanup-followup-manifest.json",
+      "bytes": 1094,
+      "sha256": "1f805acacd37e10b92cffa016765ef75f8c537dcf41b292955ac9fb356b13ba5"
+    },
+    {
+      "path": "cleanup-followup-outer.json",
+      "bytes": 1013,
+      "sha256": "4e848c9d838bb7a8e91d511885a7fd87deabb26cb94d19e8e0a51f2eafdaf588"
+    },
+    {
+      "path": "cleanup-followup-stdout.txt",
+      "bytes": 107,
+      "sha256": "57bb76c6ca5e4037a13854565c123aafb623c913fad3b4eaa712e464e99d8b03"
+    },
+    {
+      "path": "cleanup-followup-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "cleanup-followup-result.json",
+      "bytes": 3567,
+      "sha256": "805b552bf8bfddbc40c952a3e51d66a7cab3595f150e7e06e32c0650fb61a27f"
+    },
+    {
+      "path": "CLEANUP-RESULT.md",
+      "bytes": 1170,
+      "sha256": "6b04cb6898d93ed1f63097afb8adaaf094cedf4db8f95dba64e9a2a709e4f2c5"
+    },
+    {
+      "path": "cleanup-followup-private-center-stopped.json",
+      "bytes": 110,
+      "sha256": "9a8fa7b5e14c2b13ec59323e3a992942ca784d47e4145f23b92d1db7dfbc88c5"
+    },
+    {
+      "path": "cleanup-followup-private-cleanup-checkpoint.json",
+      "bytes": 714,
+      "sha256": "27d072c1135b2840361f7a573e21eb9044d23f622d8415500f76fdf20a6638b0"
+    },
+    {
+      "path": "cleanup-followup-private-cleanup-intent.json",
+      "bytes": 753,
+      "sha256": "f3f81c1cc59b68f1df0eb44f573c104f7bbb5f7d1fc89bbf3a2cd8cdd36740af"
+    },
+    {
+      "path": "cleanup-followup-private-reservation.json",
+      "bytes": 283,
+      "sha256": "dd108c1ad138e065d4fbdb905aa46737f592565dba352da49fd547268325cbd9"
+    },
+    {
+      "path": "cleanup-followup-private-result.json",
+      "bytes": 805,
+      "sha256": "09103d7cf5d3781ec897978f0833fb2badedc90363ca83e2e1f887a87e94af0c"
+    }
+  ]
+}
