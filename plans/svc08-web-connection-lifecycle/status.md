@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:47:08.127675+00:00 |
+| 更新时间 | 2026-10-07T05:50:30.252027+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 仅替换网页宿主的个人采用步骤已获独立批准；固定产物和隔离运行结果已交付，个人环境尚未改变。 |
-| 下一可用交付 | 在协调窗口内先迁入固定产物，再单次替换网页宿主并核保留事实。 |
-| 当前阻塞 | ACTIVE: 等待共享运行窗口实际交接；收到后先核原准入，失败或未知即停止。 |
+| 当前产出 | 首次采用入口在固定系统工具的文件检查中停止；尚未读取或改变个人服务，原失败与运行记录已保留。 |
+| 下一可用交付 | 修正只读系统工具与自有私有文件的身份检查区别，局部验证并复审后再协调新窗口。 |
+| 当前阻塞 | ACTIVE: 系统Python被错误套用自有文件uid/nlink门槛；原单次入口已停止，未进入个人迁入。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
@@ -50,6 +50,7 @@
 | SVC08-W01 | 2026-10-07T03:13:31.000Z | 2026-10-07T03:15:08.399Z | 审查 | 固定输入交唯一独审，已获限定批准 | independent-review.json |
 | SVC08-W02 | 2026-10-07T03:15:08.399Z | 2026-10-07T03:17:28.292Z | 其他 | main回执已逐hash确认；本片完成 | main-receipt.json |
 | SVC08-W03 | 2026-10-07T03:38:17.937Z | 2026-10-07T03:39:37.692Z | 审查 | 新部署文档已获限定批准 | replace-host/candidate-independent-review.json |
+| SVC08-W04 | 2026-10-07T05:46:38.842Z | 2026-10-07T05:48:04.000Z | 资源 | caller已审，等待Lead实际共享运行窗口与工具短冻结 | caller-independent-review + fresh ledger/本owner开始等待记录 |
 
 03:11:26.520536Z修复轮监督报告已完成，本队local已归还；0新测试/个人操作。
 
@@ -125,4 +126,11 @@
 
 唯一review于2026-10-07T05:46:18.996142Z确认5source/32runtime/12evidence及9局部原件，无P1/P2；原样归档caller-independent-review.json，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。fresh账本05:46:38.842Z仍v6合法两scope。原固定cb2205/manifest不改，个人迁入/替换仍NOT_RUN；阶段migrate/request/replace/post使用同一新exclusive namespace，前段明确成功才后继。root工具短冻结与实际运行窗口由Lead协调；当前不读取个人、不创建执行namespace、不复制或起服务。无新测试。
 
-| SVC08-W04 | 2026-10-07T05:46:38.842Z | OPEN | 资源 | caller已审，等待Lead实际共享运行窗口与工具短冻结 | caller-independent-review + fresh ledger/本owner开始等待记录 |
+
+## 2026-10-07T05:48:49.882687Z：实际个人采用窗口准入
+
+Lead于05:48:04Z实际接收共享窗口并冻结16工具。fresh claim v6、5source+32runtime、原c7b manifest与dev/ino、新namespace不存在均核通过；free24,545,304,576B≥2.5GiB。准备由唯一operator启动原migrate；后继仅明确成功后继续。此时尚未个人读取/复制/服务操作，实际以private各phase原件为准，不把准入写成迁入完成。
+
+## 2026-10-07T05:50:30.252027+00:00：原单次migrate停止，窗口已报告归还
+
+05:49:01.811Z入口ERR_ASSERTION，原outer60ms/exit1，组34255最终absent/双EOF、无信号升级。固定第29runtime `/usr/bin/python3` 实际uid0/nlink78，而通用bounded错误要求uid501/nlink1；字节/hash仍同原固定输入。错误发生在全部Module导入前，无migration-before/intent/store/stage，0个人读取/PG/HTTP/复制/写入/服务。request/replace/post均未调用。原private namespace三件原样KEEP，脱敏原件与精确分析见[attempt-01](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-01/analysis.json)。仅报告最窄修正，cb220源码尚未改；禁止重试已消费namespace。

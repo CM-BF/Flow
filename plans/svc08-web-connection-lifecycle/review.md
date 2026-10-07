@@ -70,3 +70,5 @@ APPROVED_ISOLATED_WEB_HOST_RESULT；唯一reviewer astra_ultra_execution_lead，
 ## 2026-10-07T05:47:08.127675+00:00 — APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER
 
 Execution Lead唯一独审绑定cb2205db380aa9d8bbb6ff42407ac7166d2a073a/deliverya93，5+32+12全部一致，无P1/P2。原件[caller-independent-review](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。仅准备批准，实际迁入/replace/post均未执行；保持fresh共享窗口、16工具短冻结、未知停止和Web-only语义。原9检查不重跑，最后null门仅source审。
+
+首次真实采用入口未通过：cb220原准备批准保持历史；运行在动态Module导入/个人读取前因系统Python uid/nlink检查失败，原ERR_ASSERTION/exit1/60ms/组absent与双EOF已保存。不是迁入、服务或数据保留验收通过；修复及新运行待原owner固定/独审与窗口。
