@@ -1,0 +1,135 @@
+{
+  "at": "2026-10-07T23:41:49.495Z",
+  "base": "c414c0d0de44fd0c7d38d46da109b7598412055e",
+  "canonical": "79ea930fd",
+  "scope": "Exact AV center with SQL repair, startup composition and client authorization; no whole branch merge",
+  "independentIntakeCheck": "native_center_owner confirmed 13 exact preimages plus current startup parent;56 direct external inputs equal main; old journal4 already main skipped",
+  "approvals": [
+    "av03-center-independent-approval.json ea3 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "av03-pg/r3-approval.json ead8 SOURCE_LOCAL_AND_PREPARATION_DELTA_REVIEW_APPROVED",
+    "av03-pg/r3-result-approval.json 5/5 actual PG limited result approval",
+    "client-authorize/approval.json b65 runtime/90c final types SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED"
+  ],
+  "assemblyReview": {
+    "reviewer": "Execution Lead / gpt-6-astra",
+    "source": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+    "decision": "APPROVED_SCOPED_STARTUP_COMPOSITION",
+    "P1P2": 0,
+    "finding": "Current index equals exact parent. Three-line change imports tested migration and awaits it immediately after migratePluginRuntime inside existing startup observer phase; preserves lifecycle, ordering, errors and all other current startup changes. No old ea3 whole index restore.",
+    "validation": "Static direct-consumer review; reuse fixed actual PG migration and source/local approvals. No new tests or production migration."
+  },
+  "rows": [
+    {
+      "path": "apps/server/src/index.ts",
+      "source": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+      "beforeSha256": "122073baec75e1dbb829ec92c2e8495ce969e19f9a772e50398e6e4fac428a70",
+      "afterSha256": "483198deda3f56d7c022ad36ae098ccab3107abad346f5a4a17ce7f6795cf2aa",
+      "bytes": 17395
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15",
+      "afterSha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7",
+      "bytes": 4000
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": null,
+      "afterSha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395",
+      "bytes": 4724
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": null,
+      "afterSha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5",
+      "bytes": 5316
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50",
+      "afterSha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652",
+      "bytes": 2736
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3",
+      "afterSha256": "3f30f9e9f4b554346ebf1a72e544af56cc9f55b513529dc802d8078067a34ab7",
+      "bytes": 8525
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c",
+      "afterSha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a",
+      "bytes": 1423
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+      "afterSha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019",
+      "bytes": 21699
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "beforeSha256": "4dc8629df0b96862988418fb47faf8a12b9337f0a898e0841294725c705bf7b6",
+      "afterSha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328",
+      "bytes": 14007
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "beforeSha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9",
+      "afterSha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+      "bytes": 3922
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": null,
+      "afterSha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1",
+      "bytes": 696
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524",
+      "afterSha256": "95bee3168ae770493d53f741acdc8cd62614536e704619480e62f6fe5e0be069",
+      "bytes": 3201
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "beforeSha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f",
+      "afterSha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955",
+      "bytes": 5976
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "beforeSha256": null,
+      "afterSha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
+      "bytes": 5115
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "beforeSha256": null,
+      "afterSha256": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278",
+      "bytes": 21055
+    }
+  ],
+  "files": 15,
+  "bytes": 119790,
+  "limits": [
+    "Center claim binding and thin client only; complete verifier admission/result/worker execution chain remains open.",
+    "Preserve R1/R2 failures and limited R3 result; no new PG/engineering/provider/installation/personal action.",
+    "Fixed deployed e15/779 remains unchanged; main acceptance is not personal deployment."
+  ]
+}

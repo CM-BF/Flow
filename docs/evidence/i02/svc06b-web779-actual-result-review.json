@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T23:40:01.257Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY",
+  "blockingP1P2": 0,
+  "source": "6491c4815cd6daf8f640648d5e8a25a599d8cd92",
+  "target": "5719f0a4cb252324fa1434a7870bf615f31f66dd",
+  "manifest": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-web-result-manifest.json",
+    "bytes": 12804,
+    "sha256": "63741f3d5f218b09a7bd673420a7df0f90eec28769d357bd09fab6fe48bbdb42",
+    "fixedBindings": 22,
+    "fixedBytes": 118188,
+    "safePrivateCopyReferences": 8,
+    "safePrivateBytes": 5361
+  },
+  "verified": [
+    "All22 fixed/current bytes and hashes match target5719. Eight public safe copies match recorded private reference size/hash; reviewer did not read private originals. Source6491 and inherited dd6 overlay unchanged.",
+    "Actual input changes only ready, removal of missing marker, fresh floor and new admission; same-call fixed identity8606ms/exit0 then transfer16994ms/exit0 then publish13918ms/exit0, all three registered groups absent, dual EOF, no signals or failures.",
+    "Actual START23:35:35.341Z before latest23:37:16.629Z; transfer confirmed before publish; complete RETURN23:36:06.257Z. Actual free17882730496 >= new full floor12240683008.",
+    "Public CAS committed779/v4 with three prior artifacts retained and exact four compatibility reports. Fixed880060 planWebRelease calls full loadReleaseAssets before commit and webIdentity verifies current tuple after commit.",
+    "Public readonly19ms three GETs independently recorded: identity779/v4+880060/context81a8 and one new779/one oldd629 versioned JS each200 with exact manifest size/hash;20287body bytes.",
+    "Actual caller verifies exact browser policy/profile/config/maintenance identities and stable process state except allowed webReleaseOperation. Existing center/runner/Web processes remain running; no operator task/provider/reload/service stop."
+  ],
+  "limits": [
+    "No full browser UI/chat journey, user task assignment NOT_OBSERVED, no post-publication full business history read.",
+    "local04 default discovery FAIL, capture truncation and escaped/uncaptured UNKNOWN remain; this publication does not clear unknown or retroactively claim zero side effects.",
+    "Persistent personal services intentionally retained; completed operator namespaces KEEP as immutable evidence, not deleted.",
+    "Private originals trusted only through prior bound operator and exact public safe copies; no reviewer private/PG/HTTP/runtime checks."
+  ]
+}
