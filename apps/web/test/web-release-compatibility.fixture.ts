@@ -15,6 +15,8 @@ export type Artifact = { artifactId: string; sourceHead: string; manifestDigest:
 type Identity = { dev: number; ino: number };
 export type AppInput = { label: string; artifact: Artifact; artifactRoot: string; rootIdentity: Identity; distIdentity: Identity;
   format: 1 | 2; releaseId: string | null; manifest: FilePin };
+export const RECOVERY_RELEASE_SOURCE = "7272151bb1e3e59e08937dca44949dcdeb42f009";
+export type RecoveryAdmission = Admission & { recoveryApp: AppInput };
 export type PublicContext = { format: 1; publicOrigin: string; policySha256: string };
 export type Admission = {
   finalBackend: { directory: string; root: string; artifact: Artifact & { policy: "flow.backend-artifact.v1" }; sourceTree: string; node: string; pins: FilePin[] };
@@ -27,6 +29,15 @@ export type Admission = {
 export type Lifetime = { signal: AbortSignal; checkpoint: () => Promise<void> };
 type AssetFile = { path: string; bytes: number; sha256: string };
 export type LoadedApp = AppInput & { files: AssetFile[]; snapshot: { index: AssetFile; assets: Map<string, AssetFile> } };
+export function assertRecoveryAdmission(input: RecoveryAdmission) {
+  assert.ok(input.recoveryApp && input.finalBackend, "New Web and corrected backend descriptors required; no 6c/7d1 fallback");
+  assert.equal(input.finalBackend.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
+  assert.equal(input.recoveryApp.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
+  assert.match(input.recoveryApp.artifact.artifactId, /^[a-f0-9]{64}$/);
+  assert.equal(input.recoveryApp.artifact.manifestDigest, input.recoveryApp.artifact.artifactId);
+  assert.equal(input.recoveryApp.format, 2); assert.match(input.recoveryApp.releaseId ?? "", /^[a-f0-9]{32}$/);
+  assert.ok(!retained.some(value => value[0] === input.recoveryApp.artifact.artifactId));
+}
 type Center = { listen(options: { host: string; port: number }): Promise<unknown>; close(): Promise<void>; server: Server };
 type PoolLike = { query(text: string, values?: unknown[]): Promise<{ rows: Record<string, unknown>[]; rowCount: number | null }>; end(): Promise<void> };
 type Runtime = {
@@ -108,18 +119,32 @@ async function runtime(input: Admission, life: Lifetime): Promise<Runtime> {
     adapterVersion: contracts.CLAUDE_CONTEXT_SOURCE.adapterVersion, releaseAsset: tools.releaseAsset,
     importWebCompatibility: tools.importWebCompatibility, verifyWebCompatibility: tools.verifyWebCompatibility };
 }
-async function loadApps(inputs: AppInput[], life: Lifetime): Promise<LoadedApp[]> {
+async function loadApps(inputs: AppInput[], life: Lifetime, recoveryApp?: AppInput): Promise<LoadedApp[]> {
   assert.equal(inputs.length, retained.length); assert.equal(new Set(inputs.map(app => app.label)).size, inputs.length);
-  const loaded: LoadedApp[] = [];
-  for (let i = 0; i < inputs.length; i++) {
-    const app = inputs[i]!, expected = retained[i]!; assert.match(app.label, /^[a-z0-9-]{1,32}$/);
-    assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
-    assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
+  const admitted = recoveryApp ? [...inputs, recoveryApp] : inputs;
+  assert.equal(new Set(admitted.map(app => app.label)).size, admitted.length);
+  const loaded: LoadedApp[] = []; let totalBytes = 0;
+  for (let i = 0; i < admitted.length; i++) {
+    const app = admitted[i]!, expected = retained[i]; assert.match(app.label, /^[a-z0-9-]{1,32}$/);
+    if (expected) {
+      assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
+      assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
+    } else {
+      assert.equal(app, recoveryApp); assert.equal(app.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
+      assert.equal(app.format, 2); assert.match(app.releaseId ?? "", /^[a-f0-9]{32}$/);
+      assert.ok(!inputs.some(value => value.releaseId === app.releaseId), "New namespace must be distinct");
+    }
     await directory(app.artifactRoot, app.rootIdentity); const dist = join(app.artifactRoot, "dist"); await directory(dist, app.distIdentity);
     assert.equal(app.manifest.path, join(app.artifactRoot, "manifest.json")); assert.equal(app.manifest.sha256, app.artifact.manifestDigest);
     const manifest = JSON.parse((await pinnedBytes(app.manifest, 64 * 1024)).toString("utf8"));
     assert.equal(manifest.sourceHead, app.artifact.sourceHead); assert.equal(manifest.format, app.format);
-    assert.equal(manifest.releaseId ?? null, app.releaseId); assert.equal(manifest.files.length, 10);
+    assert.equal(manifest.releaseId ?? null, app.releaseId);
+    assert.equal(manifest.policy, app.format === 2 ? "flow-static-web-v2" : "flow-static-web-v1");
+    assert.ok(Array.isArray(manifest.files));
+    if (expected) assert.equal(manifest.files.length, 10);
+    else assert.ok(manifest.files.length > 0 && manifest.files.length <= 128, "New App manifest file bound");
+    assert.equal(manifest.totalBytes, manifest.files.reduce((sum: number, file: AssetFile) => sum + file.bytes, 0));
+    totalBytes += manifest.totalBytes; assert.ok(Number.isSafeInteger(totalBytes) && totalBytes <= 192 * 1024 * 1024);
     const files: AssetFile[] = manifest.files;
     const assets = new Map<string, AssetFile>(); let index: AssetFile | undefined;
     for (const file of files) {
@@ -134,7 +159,8 @@ async function loadApps(inputs: AppInput[], life: Lifetime): Promise<LoadedApp[]
   return loaded;
 }
 export type Wire = { method: string; path: string; status: number; key?: string; body?: string; response?: Record<string, any>;
-  forwardedStream?: string; profile?: string; bearer: boolean; receivedBytes: number; complete: boolean; responseSha256?: string;
+  forwardedStream?: string; profile?: string; bearer: boolean; cookie: boolean; csrf: boolean;
+  logoutHold?: { received: boolean; released: boolean; downstreamFinished: boolean; setCookie: boolean }; receivedBytes: number; complete: boolean; responseSha256?: string;
   sse?: { chunks: number; bytes: number; firstChunkAt: string | null; endedAt: string | null; closedAt: string | null };
   fault?: { contentLength: number; prefixBytes: number; prefixSha256: string; headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string } };
 const hopHeaders = ["connection", "keep-alive", "proxy-connection", "proxy-authenticate", "proxy-authorization", "te", "trailer", "transfer-encoding", "upgrade"];
@@ -176,6 +202,7 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
   assert.ok(Number.isSafeInteger(centerPort) && centerPort > 0 && centerPort <= 65535); assert.notEqual(centerPort, 61228); let app: LoadedApp | undefined, legacy = false, faultArmed = false, publicEnabled = false;
   const records: Wire[] = [], errors: string[] = [], rejected: string[] = [], sockets = new Set<Socket>(), upstreams = new Set<ReturnType<typeof httpRequest>>();
   const pending = new Set<Promise<void>>(); let captured = 0, port = 0, closing = false;
+  let logoutArmed = false, releaseHeldLogout: (() => void) | undefined;
   const canaryPath = `/__flow_proxy_canary_${randomUUID()}`; let canaryObserved = false;
   const track = (operation: Promise<void>) => { pending.add(operation); void operation.catch(error => { errors.push(errorCode(error)); }).finally(() => pending.delete(operation)); };
   const server = createServer((request, response) => {
@@ -202,10 +229,13 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
         const body = Buffer.concat(chunks); const isSession = url.pathname.startsWith("/api/browser-session");
         const selected = faultArmed && request.method === "POST" && /^\/api\/conversations\/[^/]+\/turns$/.test(url.pathname);
         if (selected) faultArmed = false;
+        const heldLogout = logoutArmed && request.method === "POST" && url.pathname === "/api/browser-session/logout";
+        if (heldLogout) logoutArmed = false;
         const headers = forwardHeaders(request.headers); if (legacy) delete headers["x-flow-assistant-stream"];
         // Preserve public Host/Origin/Cookie/CSRF; upstream destination is always this owned listener.
         headers.host = url.host; headers.connection = "close";
         const record: Wire = { method: request.method!, path, status: 0, bearer: String(headers.authorization ?? "").startsWith("Bearer "),
+          cookie: typeof headers.cookie === "string", csrf: typeof headers["x-flow-csrf"] === "string",
           receivedBytes: 0, complete: false, ...(request.headers["idempotency-key"] ? { key: String(request.headers["idempotency-key"]) } : {}),
           ...(!isSession && body.length ? { body: body.toString("utf8") } : {}),
           ...(headers["x-flow-assistant-stream"] ? { forwardedStream: String(headers["x-flow-assistant-stream"]) } : {}),
@@ -216,13 +246,13 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
           const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers }, incoming => {
             record.status = incoming.statusCode!; const sse = /text\/event-stream/i.test(String(incoming.headers["content-type"]));
             if (sse) record.sse = { chunks: 0, bytes: 0, firstChunkAt: null, endedAt: null, closedAt: null };
-            if (!selected) response.writeHead(record.status, forwardHeaders(incoming.headers));
+            if (!selected && !heldLogout) response.writeHead(record.status, forwardHeaders(incoming.headers));
             const capture: Buffer[] = []; const digest = createHash("sha256"); let captureBytes = 0;
             incoming.on("data", (chunk: Buffer) => {
               record.receivedBytes += chunk.length; digest.update(chunk);
               if (record.sse) { record.sse.chunks++; record.sse.bytes += chunk.length; record.sse.firstChunkAt ??= new Date().toISOString(); }
-              if (!sse && !isSession) { captureBytes += chunk.length; if (captureBytes <= 128 * 1024) capture.push(chunk); else { incoming.destroy(); reject(Error("UPSTREAM_CAPTURE_CAP")); } }
-              if (!selected && !response.write(chunk)) { incoming.pause(); response.once("drain", () => incoming.resume()); }
+              if (!sse && (!isSession || heldLogout)) { captureBytes += chunk.length; if (captureBytes <= (heldLogout ? 16 : 128) * 1024) capture.push(chunk); else { incoming.destroy(); reject(Error("UPSTREAM_CAPTURE_CAP")); } }
+              if (!selected && !heldLogout && !response.write(chunk)) { incoming.pause(); response.once("drain", () => incoming.resume()); }
             });
             incoming.once("error", error => downstreamClosed ? resolve() : reject(error));
             incoming.once("aborted", () => downstreamClosed ? resolve() : reject(Error("UPSTREAM_INCOMPLETE")));
@@ -234,6 +264,20 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
                 if (/application\/json/i.test(String(incoming.headers["content-type"]))) record.response = JSON.parse(bytes.toString("utf8"));
                 if (record.response && url.pathname === "/api/runners") delete record.response.token;
                 if (selected) { assert.ok(record.status >= 200 && record.status < 300, "Selected upstream ACK was not successful"); await truncateAck(incoming, response, bytes, record); }
+              }
+              if (heldLogout) {
+                assert.ok(incoming.complete && record.status === 200, "Held logout must be a real complete success");
+                assert.equal(releaseHeldLogout, undefined);
+                const bytes = Buffer.concat(capture);
+                const held = { received: true, released: false, downstreamFinished: false, setCookie: incoming.headers["set-cookie"] !== undefined };
+                record.logoutHold = held;
+                // Hold the actual response before headers. Forward bytes and Set-Cookie unchanged on release.
+                releaseHeldLogout = () => {
+                  assert.ok(!response.destroyed && !response.headersSent); releaseHeldLogout = undefined; held.released = true;
+                  response.writeHead(record.status, forwardHeaders(incoming.headers));
+                  response.end(bytes, () => { held.downstreamFinished = true; resolve(); });
+                };
+                return;
               }
               if (!selected) response.end(); resolve();
             })().catch(reject)); });
@@ -257,10 +301,12 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
   return { url: `http://127.0.0.1:${port}`, canaryUrl: `http://127.0.0.1:${port}${canaryPath}`, records, errors, rejected,
     assertCanary() { assert.equal(canaryObserved, true, "Chrome must prove absolute-form proxy route before accessing public origin"); },
     select(value: LoadedApp) { app = value; legacy = false; faultArmed = false; },
+    holdNextLogout() { assert.equal(logoutArmed, false); assert.equal(releaseHeldLogout, undefined); logoutArmed = true; },
+    releaseLogout() { assert.ok(releaseHeldLogout, "No complete held response"); releaseHeldLogout(); },
     setLegacy(value: boolean) { legacy = value; }, arm() { assert.equal(faultArmed, false); faultArmed = true; },
     async settle() { await Promise.all([...pending]); assert.deepEqual(errors, []); },
     async close() {
-      closing = true;
+      closing = true; logoutArmed = false; releaseHeldLogout = undefined;
       const upstreamClosed = [...upstreams].map(upstream => new Promise<void>(resolve => { upstream.once("close", resolve); }));
       for (const upstream of upstreams) upstream.destroy();
       await closeServer(server, sockets); await Promise.all(upstreamClosed); await Promise.allSettled([...pending]);
@@ -274,10 +320,10 @@ export async function until<T>(read: () => Promise<T>, predicate: (value: T) => 
     await new Promise(resolve => setTimeout(resolve, 30)); } while (performance.now() < end);
   throw Error("FIXTURE_CONDITION_DEADLINE");
 }
-export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime) {
+export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime, recoveryApp?: AppInput) {
   life.signal.throwIfAborted(); await life.checkpoint();
   const outputInfo = await directory(input.output); assert.equal(outputInfo.mode & 0o077, 0); assert.deepEqual(await readdir(input.output), []);
-  const tools = await runtime(input, life); const apps = await loadApps(input.apps, life); await life.checkpoint();
+  const tools = await runtime(input, life); const apps = await loadApps(input.apps, life, recoveryApp); await life.checkpoint();
   const adminIdentity = new URL(adminUrl); assert.ok(adminIdentity.protocol === "postgres:" || adminIdentity.protocol === "postgresql:");
   assert.equal(adminIdentity.hostname, "127.0.0.1", "Explicit owned test PG only"); assert.ok(adminIdentity.port && adminIdentity.pathname === "/postgres");
   const databaseName = `flow_release_${randomUUID().replaceAll("-", "")}`, marker = randomUUID(), token = `release-owned-${randomUUID()}`;
@@ -301,7 +347,7 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
     await saveJson(input.output, "fixture-cleanup.json", cleanup); return cleanup;
   };
   try {
-    await saveJson(input.output, "inputs.json", { backend: input.finalBackend, apps: input.apps, context: input.context, browserSettings: input.browserSettings, databaseName, marker, providerQueries: 0 });
+    await saveJson(input.output, "inputs.json", { backend: input.finalBackend, apps: input.apps, recoveryApp: recoveryApp ?? null, context: input.context, browserSettings: input.browserSettings, databaseName, marker, providerQueries: 0 });
     await life.checkpoint(); cleanup.create = "UNKNOWN"; const admin = pool(adminUrl);
     try { await admin.query(`CREATE DATABASE "${databaseName}"`); cleanup.create = "CONFIRMED"; } finally { await admin.end(); }
     await life.checkpoint(); const own = pool(databaseUrl.href);
@@ -315,7 +361,7 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
     const client = new tools.Client({ baseUrl: centerUrl, token: runner.token });
     const configuration = { harness: "claude", adapterVersion: tools.adapterVersion, model: "release-synthetic", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: hash("[]"), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60_000 } } as const;
     const { profile } = await client.publishExecutionProfile({ configuration }, life.signal); await life.checkpoint();
-    const completeTask = async (taskId: string, text: string) => {
+    const completeTask = async (taskId: string, text: string, whileRunning?: () => Promise<void>) => {
       const claimed = await until(() => client.claim(life.signal), value => value.assignment !== null, life); assert.ok(claimed.assignment);
       const assignment = claimed.assignment; assert.equal(assignment.task.id, taskId);
       const nativeSessionId = randomUUID(), sourceMessageId = randomUUID(), artifactId = randomUUID(), content = "Release fixture reply: " + text;
@@ -331,6 +377,7 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
       for (let sequence = 1; sequence <= events.length; sequence++) {
         const event = tools.parseEvent({ ...Object(events[sequence - 1]), id: randomUUID(), sequence });
         await client.report({ attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion, events: [event] }, life.signal); await life.checkpoint();
+        if (sequence === 1 && whileRunning) await whileRunning();
       }
     };
     const request = async (path: string) => { assert.ok(path.startsWith("/api/") && !path.includes("\\") && !path.includes("#")); await life.checkpoint();
