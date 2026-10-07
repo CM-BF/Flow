@@ -6,9 +6,9 @@ import { exclusive } from './host-fixture.mjs';
 
 export function failure(error, phase) {
   const name = ['Error', 'TypeError', 'RangeError', 'AssertionError', 'AbortError', 'TimeoutError'].includes(error?.name) ? error.name : 'UnknownError';
-  if (error?.code === 'MIXED_TASK_QUERY_FAILED') {
+  if (['MIXED_TASK_QUERY_FAILED', 'DEFAULT_EMPTY_QUERY_FAILED'].includes(error?.code)) {
     const sqlState = error.cause?.code;
-    return { phase: 'mixed-final-task-query', sourcePhase: phase, name, code: error.code,
+    return { phase: error.code === 'MIXED_TASK_QUERY_FAILED' ? 'mixed-final-task-query' : 'default-empty-task-query', sourcePhase: phase, name, code: error.code,
       sqlState: typeof sqlState === 'string' && sqlState.length === 5 && /^[0-9A-Z]{5}$/.test(sqlState) ? sqlState : null };
   }
   return { phase, name, code: /^[A-Z][A-Z0-9_]{0,63}$/.test(error?.code ?? '') ? error.code : null };

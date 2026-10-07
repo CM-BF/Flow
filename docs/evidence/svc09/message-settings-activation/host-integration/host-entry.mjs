@@ -22,8 +22,9 @@ export function assertResourceSample({ directory, databaseBytes, freeBytes }) {
   assert.ok(freeBytes >= 1024 ** 3, 'LIVE_RESERVE_LIMIT');
 }
 
-export async function main(argv) {
+export async function main(argv, { consumer = runHostConsumer, purpose = null } = {}) {
   const input = await privateJson(validateArguments(argv));
+  if (purpose !== null) assert.equal(input.purpose, purpose, 'HOST_PURPOSE_MISMATCH');
   const root = validateHostInput(input); await rootIdentity(input);
   assert.equal(input.records, join(input.directory, 'records'));
   assert.equal(input.providerCalls, 0);
@@ -47,13 +48,13 @@ export async function main(argv) {
     const { Pool } = createRequire(join(root, 'package.json'))('pg');
     pool = new Pool(poolOptions(setup.config.databaseUrl));
     phase = 'host-consumer';
-    const result = await runHostConsumer({ input, pool, checkpoint });
+    const result = await consumer({ input, pool, checkpoint });
     await checkpoint('work-complete', result);
   } catch (error) { primary = failure(error, phase); }
   finally {
     if (pool) try { await pool.end(); } catch (error) { cleanupFailures.push(failure(error, 'work-pool-close')); }
   }
-  const result = { phase, primary, cleanupFailures, workComplete: !primary && cleanupFailures.length === 0,
+  const result = { phase, purpose, primary, cleanupFailures, workComplete: !primary && cleanupFailures.length === 0,
     providerCalls: 0, cleanup: 'PENDING_INDEPENDENT_OWNER', privateDirectory: 'KEEP' };
   await record('work-closure', result); // Preserve the first failure even when resource measurement itself failed.
   await exclusive(join(input.records, 'work-result.json'), result);

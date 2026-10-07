@@ -21,9 +21,9 @@ export function mayDrop({ outer, work, closure, allStopped, databaseCreated }) {
     && allStopped && databaseCreated;
 }
 
-export function ownedRecords(records, state, directory) {
+export function ownedRecords(records, state, directory, generationPhases = ['default-legacy', 'settings-published', 'both-refreshed-held']) {
   const found = new Map();
-  const generations = records.filter(record => ['default-legacy', 'settings-published', 'both-refreshed-held'].includes(record.phase));
+  const generations = records.filter(record => generationPhases.includes(record.phase));
   for (const source of [...generations.map(record => record.fact?.processes), state?.processes]) {
     for (const [role, value] of Object.entries(source ?? {})) {
       assert.ok(['center', 'runner', 'runner-settings', 'web'].includes(role), 'UNDECLARED_RECORD_KEY');

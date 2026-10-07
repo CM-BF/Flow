@@ -10,9 +10,9 @@ SUPERVISOR = ROOT / 'tools/owned-process-supervision/supervise.py'
 assert hashlib.sha256(SUPERVISOR.read_bytes()).hexdigest() == '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
 spec=importlib.util.spec_from_file_location('svc09a_controller_ops14', SUPERVISOR)
 ops=importlib.util.module_from_spec(spec);sys.modules[spec.name]=ops;spec.loader.exec_module(ops)
-assert sys.argv[1:] in [[], ['--import']]
-import_only=bool(sys.argv[1:])
-run=HERE/('controller-local-02' if import_only else 'controller-local-01');run.mkdir()
+assert sys.argv[1:] in [[], ['--import'], ['--default']]
+import_only=sys.argv[1:]==['--import']; default_only=sys.argv[1:]==['--default']
+run=HERE/('controller-local-03' if default_only else 'controller-local-02' if import_only else 'controller-local-01');run.mkdir()
 def save(name,value):
  data=value if isinstance(value,bytes) else (json.dumps(value,indent=2)+'\n').encode()
  fd=os.open(run/name,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
@@ -21,9 +21,11 @@ free=shutil.disk_usage(ROOT).free;assert free>=1024**3+32*1024**2+2*1024**2
 scratch=Path(tempfile.mkdtemp(prefix='flow-svc09a-controller-',dir='/private/tmp'));before=scratch.lstat()
 paths=['tools/personal-preview/'+s for s in ['preview.mjs','preview.test.mjs','process.mjs','process.test.mjs']]
 if import_only: paths += ['docs/evidence/svc09/message-settings-activation/host-integration/'+p for p in ['controller-loader.mjs','controller-import-check.mjs','controller-driver-inputs.json','controller-local.py']]
+if default_only: paths = ['docs/evidence/svc09/message-settings-activation/host-integration/'+p for p in ['default-host.mjs','default-host.test.mjs','default-host.test.py','host-entry.mjs','host-cleanup.mjs','host-records.mjs','host-run.py','host-supervise.py','controller-local.py']]
 pattern='SVC09A readiness|SVC09A startup launches|SVC09A startup profile'
 commands=[(NODE,'--experimental-vm-modules','--test','--test-concurrency=1','--test-reporter=spec','--test-name-pattern='+pattern,*[str(ROOT/p) for p in paths if p.endswith('.test.mjs')])]
 if import_only: commands=[(NODE,str(HERE/'controller-import-check.mjs'),'--load-controller-only')]
+if default_only: commands=[(NODE,'--test','--test-reporter=spec',str(HERE/'default-host.test.mjs')),(sys.executable,str(HERE/'default-host.test.py'))]
 save('reservation.json',{'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'commands':commands,'cumulativeSecondsCap':120,'rawBytesCap':2097152,'scratchBytesCap':33554432,'maxConcurrentChildren':3,'freeBytes':free,'scratch':str(scratch),'dev':before.st_dev,'ino':before.st_ino,'inputs':[{'path':p,'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in paths],'provider':0,'pg':0})
 reports=[]
 for index,command in enumerate(commands):

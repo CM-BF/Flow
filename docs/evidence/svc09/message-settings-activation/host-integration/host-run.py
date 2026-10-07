@@ -53,6 +53,8 @@ def work_environment(directory):
         'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
 
 def attempt_files(argv):
+    if argv == ['--execute-default-host-once']:
+        return 'actual-default-host-once', 'default-host-preparation.json'
     assert argv in (['--execute-host-once'], ['--execute-host-r2-once'], ['--execute-host-r3-once'], ['--execute-host-r4-once']), 'EXACT_ARGUMENT_REQUIRED'
     if argv == ['--execute-host-r4-once']:
         return 'actual-host-r4-once', 'host-preparation-r4.json'
@@ -63,6 +65,17 @@ def attempt_files(argv):
     return 'actual-host-once', 'host-preparation.json'
 
 def preparation_bindings(source, read_pin=pin):
+    if source.get('purpose') == 'SVC09A_DEFAULT_THREE_ROLE_START_STOP':
+        inherited = source['inherits']
+        assert inherited['path'] == str(HERE / 'host-preparation-r4.json'), 'FIXED_PREPARATION_REQUIRED'
+        assert inherited['sha256'] == 'd38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2'
+        previous = preparation_bindings(json.loads(read_pin(inherited)), read_pin)
+        replacements = {value['path']: value for value in source['bindings']}
+        old = {value['path'] for value in previous}
+        additions = {str(HERE / name) for name in ('default-host.mjs', 'controller-loader.mjs', 'controller-driver-inputs.json')}
+        assert len(replacements) == len(source['bindings']) and set(replacements) <= old | additions, 'REPLACEMENT_PIN_SET_INVALID'
+        assert additions <= set(replacements), 'DEFAULT_DRIVER_PINS_REQUIRED'
+        return [replacements.get(value['path'], value) for value in previous] + [replacements[path] for path in sorted(additions)]
     if 'inherits' not in source:
         return source['bindings']
     inherited = source['inherits']
@@ -75,8 +88,11 @@ def preparation_bindings(source, read_pin=pin):
     assert len(replacements) == len(source['bindings']) and set(replacements) <= previous_paths, 'REPLACEMENT_PIN_SET_INVALID'
     return [replacements.get(value['path'], value) for value in previous]
 
-def work_and_cleanup(child, node, namespace, directory, result, write=save):
-    work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
+def work_and_cleanup(child, node, namespace, directory, result, write=save, purpose=None):
+    assert purpose in (None, 'SVC09A_DEFAULT_THREE_ROLE_START_STOP'), 'HOST_PURPOSE_MISMATCH'
+    work_entry = 'default-host.mjs' if purpose else 'host-entry.mjs'
+    cleanup_entry = 'default-host.mjs' if purpose else 'host-cleanup.mjs'
+    work = child([*node, str(HERE / work_entry), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
     result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof, 'firstFailure': work.first_failure}
     result['persistenceFailures'] = []
     try:
@@ -87,7 +103,7 @@ def work_and_cleanup(child, node, namespace, directory, result, write=save):
         result['persistenceFailures'].append({'phase': 'work-record', 'type': type(error).__name__})
     # Cleanup gets only this exact installation and original work disposition, including unknown.
     # A failed work record must not skip service stop; missing disposition refuses DROP.
-    cleanup = child([*node, str(HERE / 'host-cleanup.mjs'), '--cleanup-once', str(directory / 'input.json')], 30, 2, 131072)
+    cleanup = child([*node, str(HERE / cleanup_entry), '--cleanup-once', str(directory / 'input.json')], 30, 2, 131072)
     write(namespace / 'cleanup-outer.json', report_value(cleanup))
     result['cleanup'] = {'exit': cleanup.exit_code, 'ownedState': cleanup.owned_state, 'eof': cleanup.eof, 'firstFailure': cleanup.first_failure}
     result['complete'] = not result['persistenceFailures'] and work.exit_code == 0 and not work.first_failure and terminated(work) and cleanup.exit_code == 0 and not cleanup.first_failure and terminated(cleanup)
@@ -99,6 +115,8 @@ def main(argv):
     fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
     # Final static source manifest is sealed after the bounded preparation checks.
     source = json.loads((HERE / preparation_name).read_bytes())
+    purpose = 'SVC09A_DEFAULT_THREE_ROLE_START_STOP' if argv == ['--execute-default-host-once'] else None
+    assert source.get('purpose') == purpose, 'HOST_PURPOSE_MISMATCH'
     for value in preparation_bindings(source) + fixed['bindings']:
         pin(value)
     assert fixed['format'] == 1 and fixed['providerCalls'] == 0
@@ -120,7 +138,7 @@ def main(argv):
     identity = directory.lstat()
     for name in ('home', 'tmp', 'records', 'backend-artifacts'):
         (directory / name).mkdir(mode=0o700)
-    value = {**fixed, 'directory': str(directory), 'records': str(directory / 'records'),
+    value = {**fixed, 'purpose': purpose, 'directory': str(directory), 'records': str(directory / 'records'),
         'directoryIdentity': {'dev': str(identity.st_dev), 'ino': str(identity.st_ino)}}
     save(directory / 'input.json', value)
     save(namespace / 'owned-root.json', {'directory': str(directory), 'identity': value['directoryIdentity'], 'retention': 'KEEP'})
@@ -132,14 +150,14 @@ def main(argv):
             ops.Policy(available, .5, 2, output_bytes))
     clone = child([fixed['python']['path'], fixed['clone']['path'], str(directory / 'input.json')], 20, 37, 16384)
     save(namespace / 'clone-outer.json', report_value(clone))
-    result = {'at': utc(), 'work': 'NOT_RUN', 'cleanup': 'NOT_RUN', 'directory': str(directory), 'retention': 'KEEP', 'providerCalls': 0}
+    result = {'at': utc(), 'purpose': purpose, 'work': 'NOT_RUN', 'cleanup': 'NOT_RUN', 'directory': str(directory), 'retention': 'KEEP', 'providerCalls': 0}
     if clone.exit_code == 0 and not clone.first_failure and terminated(clone):
         root = directory / 'backend-artifacts' / fixed['artifact']['artifactId'] / 'root'
         loader = Path(fixed['tsxRelative'])
         assert not loader.is_absolute() and '..' not in loader.parts
         node = [fixed['node']['path'], '--import', str(root / loader)]
         env['FLOW_SVC09A_ADMIN_URL'] = os.environ['FLOW_SVC09A_ADMIN_URL']
-        work, cleanup = work_and_cleanup(child, node, namespace, directory, result)
+        work, cleanup = work_and_cleanup(child, node, namespace, directory, result, purpose=purpose)
         if terminated(work) and terminated(cleanup):
             # Archive only checkpoint material; never config, token, environment or diagnostic bodies.
             names = sorted((directory / 'records').iterdir()); assert len(names) <= 160
