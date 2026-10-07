@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 三棵已集成工作树完成有限收尾核对，全部KEEP；退役条件与证据唯一来源已明确。空间变化后，原已准备验证按fresh门槛恢复，尚不宣称运行通过。 |
+| 当前产出 | 三棵已集成工作树完成有限收尾核对，全部KEEP；退役条件与证据唯一来源已独审。SVC07原HTTP直接检查已由原owner完成1/1并归还窗口；其固定证据审查、C02与其他关键路径继续。 |
 | 下一可用交付 | 先完成SVC07已审HTTP直接消费者，再按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI；每项保留原packet、预算、独审与实际清理回执。 |
 | 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
@@ -390,3 +390,5 @@ fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输�
 工程验证优先：SVC07-HTTP-RESOURCE-RECOVERED-20261007 沿原packet/60秒含清理与fresh资源门槛，由Mika原owner接续；Web确认实际无重运行holder后才运行。此管理片不占PG/Chrome窗口，也不把磁盘增长归因本组。随后仍按SVC07→C02→关键用户路径ready顺序；CI原PENDING不变。
 
 另收到已复核D04测试临时worktree路径别名/清理一致性源码缺口，已直接交Web原owner协调精确scope与自有合成仓库局部修复；不清30条历史登记，不改真实协调库，普通进展仍原status。
+
+2026-10-07 02:13 UTC：三树准备文档固定a60614fe获assignment_review限定APPROVED_DOCS，无finding；4文档增量/6链接核对，0产品检查。Mika随后已回SVC07原HTTP 1选中/1通过、2.98秒，专库/两次监听/自有进程组/tmp均清理，窗口归还；只是读取原owner回执，本Lead未重跑。C02沿原packet交Mika与Web直接协调next holder，尚未在本记录宣称运行通过；TUI01G仅原小检查由原ownerfresh准入，不能借旧资源值启动。候选三树仍KEEP。
