@@ -1,0 +1,13 @@
+--- /private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/worker.mjs
++++ /private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs
+@@ -28,8 +28,8 @@
+  while(!port){if(launchError)throw launchError;if(report.chromeExit||report.interrupts.length||Date.now()>=until)throw new Error('Chrome readiness failed');try{port=Number((await readFile(join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0]);}catch(error){if(error.code!=='ENOENT')throw error;}if(!port)await delay(50);}
+  report.cdpPort=port;browser=await chromium.connectOverCDP(`http://127.0.0.1:${port}`,{timeout:3000,noDefaults:true});
+  report.contextAdmission={chromePid:chrome.pid,profile,ownership:'fresh PID/exclusive profile; scenario creates and closes one own context; no user browser'};
+- report.result=await scenario.checkPluginRuntimeApp({browser,outputDirectory:output,signal:cancellation.signal});
+- report.state=report.result.passed&&report.result.checks.length===binding.requiredGroups?'PASSED':'FAILED';
++ report.result=await scenario.checkWorkspaceLayout({browser,outputDirectory:output,cacheDirectory:join(scratch,'vite'),signal:cancellation.signal});
++ report.state=JSON.stringify(report.result.selected)===JSON.stringify(binding.requiredGroupNames)&&JSON.stringify(report.result.passed)===JSON.stringify(binding.requiredGroupNames)&&!report.result.error&&!report.result.cleanupErrors.length?'PASSED':'FAILED';
+ } catch(error){report.error=String(error.stack??error).slice(0,8192);}
+ finally {
+  clearTimeout(workTimer);

@@ -1,0 +1,81 @@
+--- /private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/run.py
++++ /private/tmp/arc-runtime-preparation-0xrqtd0l/run.py
+@@ -1,5 +1,5 @@
+ import os,pathlib,subprocess,json,time,signal,shutil,selectors,datetime,errno,hashlib,sys,math
+-root=pathlib.Path(__file__).parent;binding=json.loads((root/'binding.json').read_text());grant_path=pathlib.Path(sys.argv[1]);grant=json.loads(grant_path.read_text());assert grant.get('allowRun') is True and grant['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest();assert datetime.datetime.fromisoformat(grant['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc);assert grant['totalMs']==60000 and grant['minimumFreeBytes']>=binding['limits']['minimumFreeBytes'];raw=root/'raw';scratch=root/'scratch';assert not raw.exists() and not scratch.exists();raw.mkdir(mode=0o700);scratch.mkdir(mode=0o700);start=time.monotonic();errors=[];cleanup_errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None;dropped_bytes=0
++root=pathlib.Path(__file__).parent;binding=json.loads((root/'binding.json').read_text());grant_path=pathlib.Path(sys.argv[1]);grant=json.loads(grant_path.read_text());assert grant.get('allowRun') is True and grant['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest();assert datetime.datetime.fromisoformat(grant['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc);assert grant['totalMs']==90000 and grant['minimumFreeBytes']>=binding['limits']['minimumFreeBytes'];raw=root/'raw';scratch=root/'scratch';assert not raw.exists() and not scratch.exists();raw.mkdir(mode=0o700);scratch.mkdir(mode=0o700);start=time.monotonic();errors=[];cleanup_errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None;dropped_bytes=0
+ 
+ def stop(signum,frame):
+  interrupts.append(signum)
+@@ -45,6 +45,9 @@
+  for row in binding['sourcePins']+binding['externalPins']:
+   path=pathlib.Path(row['path']);data=path.read_bytes()
+   if str(path.resolve())!=row['realpath'] or len(data)!=row['bytes'] or hashlib.sha256(data).hexdigest()!=row['sha256']:raise RuntimeError('fixed input mismatch '+row['path'])
++ for row in binding['resolverLinks']:
++  path=pathlib.Path(row['path'])
++  if not path.is_symlink() or str(path.resolve())!=str(pathlib.Path(row['target']).resolve()):raise RuntimeError('resolver identity mismatch '+str(path))
+  for directory in [pathlib.Path(binding['worktree']),pathlib.Path(binding['worktree'])/'apps/web']:
+   for name in ['.env','.env.local','.env.development','.env.development.local']:
+    if os.path.lexists(directory/name):raise RuntimeError('unexpected env input; not read')
+@@ -61,9 +64,9 @@
+   os.set_blocking(stream.fileno(),False);handle=(raw/('parent-'+name+'.log')).open('wb');handles.append(handle);selector.register(stream,selectors.EVENT_READ,(name,handle));eof[name]=False
+  while selector.get_map() or process.poll() is None:
+   elapsed=time.monotonic()-start
+-  if elapsed>45 and 'work-timeout' not in errors:
++  if elapsed>60 and 'work-timeout' not in errors:
+    errors.append('work-timeout');signal_owned(signal.SIGTERM)
+-  if elapsed>55:break
++  if elapsed>85:break
+   drain(.1)
+   sample()
+  exit_code=process.poll()
+@@ -71,22 +74,22 @@
+ finally:
+  if process:
+   if process.poll() is None:signal_owned(signal.SIGTERM)
+-  until=min(start+57.5,time.monotonic()+2.5)
++  until=min(start+87.5,time.monotonic()+2.5)
+   while (selector.get_map() or process.poll() is None) and time.monotonic()<until:
+    try:drain(.05)
+    except OSError as error:cleanup_errors.append('drain '+type(error).__name__);break
+   if process.poll() is None:
+    signal_owned(signal.SIGKILL);cleanup_errors.append('worker needed SIGKILL')
+-  until=start+59
++  until=start+89
+   while selector.get_map() and time.monotonic()<until:
+    try:drain(.05)
+    except OSError as error:cleanup_errors.append('final drain '+type(error).__name__);break
+-  try:exit_code=process.wait(timeout=max(.1,start+59-time.monotonic()))
++  try:exit_code=process.wait(timeout=max(.1,start+89-time.monotonic()))
+   except subprocess.TimeoutExpired:cleanup_errors.append('worker not reaped')
+   try:
+    os.killpg(process.pid,0)
+    signal_owned(signal.SIGTERM)
+-   until=min(start+59,time.monotonic()+.5)
++   until=min(start+89,time.monotonic()+.5)
+    while time.monotonic()<until:
+     try:os.killpg(process.pid,0)
+     except ProcessLookupError:absent=True;break
+@@ -111,18 +114,18 @@
+   except BaseException as error:errors.append('scratch cleanup '+type(error).__name__)
+  else:errors.append('owned group unknown/live; scratch retained')
+  elapsed=(time.monotonic()-start)*1000
+- if elapsed>60000:errors.append('duration bound')
++ if elapsed>90000:errors.append('duration bound')
+  try:
+   worker=json.load(open(raw/'worker-result.json'))
+   if worker.get('state')!='PASSED' or worker.get('interrupts') or worker.get('cleanupErrors'):errors.append('worker not passed')
+   scenario=worker.get('result') or {}
+-  if not scenario.get('passed') or [row.get('name') for row in scenario.get('checks',[])]!=binding['requiredGroupNames']:errors.append('required four groups incomplete')
++  if scenario.get('selected')!=binding['requiredGroupNames'] or scenario.get('passed')!=binding['requiredGroupNames'] or scenario.get('error') or scenario.get('cleanupErrors'):errors.append('required four groups incomplete')
+   if scenario.get('cleanup',{}).get('contextClosed') is not True or scenario.get('cleanup',{}).get('httpClosed') is not True:errors.append('scenario resources not confirmed closed')
+  except BaseException as error:errors.append('worker result unavailable');worker={}
+  if not all(eof.values()) or len(eof)!=2:errors.append('missing EOF')
+- report={'state':'PASSED' if exit_code==0 and not errors and not cleanup_errors and not interrupts and not dropped_bytes else 'FAILED','startedAtApprox':datetime.datetime.fromtimestamp(time.time()-elapsed/1000,datetime.timezone.utc).isoformat(),'actualExit':exit_code,'elapsedMs':elapsed,'ownedGroupAbsent':absent,'scratchRemoved':not scratch.exists(),'stdoutEOF':eof.get('stdout'),'stderrEOF':eof.get('stderr'),'peakSampledLogicalBytes':peaks,'terminalFreeBytes':final_free,'errors':errors,'cleanupErrors':cleanup_errors,'discardedOutputBytes':dropped_bytes,'interrupts':interrupts,'workerState':worker.get('state'),'chromeExit':worker.get('chromeExit'),'checks':worker.get('result',{}).get('checks',[]) if worker.get('result') else [],'limits':{'totalMs':60000,'cleanupReserveMs':15000,'scratchBytes':268435456,'rawBytes':8388608},'source':binding['source'],'executionHead':grant['executionHead'],'grantSha256':hashlib.sha256(grant_path.read_bytes()).hexdigest(),'cacheLinks':link_receipts,'chargeMs':math.ceil(elapsed),'independentPortProbe':False,'PG':False}
++ report={'state':'PASSED' if exit_code==0 and not errors and not cleanup_errors and not interrupts and not dropped_bytes else 'FAILED','startedAtApprox':datetime.datetime.fromtimestamp(time.time()-elapsed/1000,datetime.timezone.utc).isoformat(),'actualExit':exit_code,'elapsedMs':elapsed,'ownedGroupAbsent':absent,'scratchRemoved':not scratch.exists(),'stdoutEOF':eof.get('stdout'),'stderrEOF':eof.get('stderr'),'peakSampledLogicalBytes':peaks,'terminalFreeBytes':final_free,'errors':errors,'cleanupErrors':cleanup_errors,'discardedOutputBytes':dropped_bytes,'interrupts':interrupts,'workerState':worker.get('state'),'chromeExit':worker.get('chromeExit'),'checks':worker.get('result',{}).get('passed',[]) if worker.get('result') else [],'limits':{'totalMs':90000,'cleanupReserveMs':30000,'scratchBytes':268435456,'rawBytes':8388608},'source':binding['source'],'executionHead':grant['executionHead'],'grantSha256':hashlib.sha256(grant_path.read_bytes()).hexdigest(),'cacheLinks':link_receipts,'chargeMs':math.ceil(elapsed),'independentPortProbe':False,'PG':False}
+  (raw/'result.json').write_text(json.dumps(report,indent=2)+'\n')
+- if size(root,scratch)>8388608 or time.monotonic()-start>60 or interrupts:report['state']='FAILED'
++ if size(root,scratch)>8388608 or time.monotonic()-start>90 or interrupts:report['state']='FAILED'
+  report['postWriteElapsedMs']=(time.monotonic()-start)*1000;report['postWriteRawBytes']=size(root,scratch)
+  print(json.dumps(report,indent=2),flush=True)
+  raise SystemExit(0 if report['state']=='PASSED' else 1)

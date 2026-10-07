@@ -22,3 +22,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 技能沿已读本地find-skills/brainstorming/assistant-ui/codebase-design/clean-code；路径及SHA见references。每工作段/约30分钟安全点核单一权威、接口、错误/取消、重复与有意义消费者验收。独审只绑定fixed target；任何NOT_RUN不外推。
 
 原静态关闭确认P2已经过真实host/port纯回归：prepare/commit分别核原调用权限，确认回调不能在plugin或layout代次改变后恢复。对应TODO03；actual有效UI确认仍归TODO05。
+
+2026-10-07T20:15:52.827442Z 准备检查点：原source/local已独审批准；复用I01 absolute-deadline parent/worker/capture，HTTP2独立30s、browser4一次90s均仅proposal。原主题组内加reduce偏好+可见布局computed styles观察，非全App无动画声明。所有原组与长transcript锚点/真实prepare-await保留；0actual，候选一次集中审后经理派窗。

@@ -1,6 +1,6 @@
 {
-  "state": "PROPOSAL_NOT_AUTHORIZED",
-  "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+  "state": "PREPARED_NOT_GRANTED",
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
   "localPhase": {
     "state": "CLOSED",
@@ -18,7 +18,10 @@
     "Chrome": 0,
     "sequentialOwnedHTTP": 1,
     "fixture": "existing actual StreamHost + shared projection, not a reducer mirror",
-    "noAutomaticRetry": true
+    "noAutomaticRetry": true,
+    "caller": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/run.py",
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576
   },
   "browser": {
     "entry": "apps/web/test/workspace-layout.browser.ts#checkWorkspaceLayout",
@@ -42,7 +45,12 @@
     "singlePngBytes": 524288,
     "originalUserServices": "untouched",
     "parent": "reuse previously reviewed owned I01 browser capture/Chrome supervisor; future exact binding required, no new framework",
-    "boundary": "real BrowserWorkspace with synthetic Cookie/CSRF HTTP, real material adapter after validation held by fixture-only Vite wrapper, not center-session security/native/provider evidence"
+    "boundary": "real BrowserWorkspace with synthetic Cookie/CSRF HTTP, real material adapter after validation held by fixture-only Vite wrapper, not center-session security/native/provider evidence",
+    "caller": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+    "preparedSourcePins": 207,
+    "externalPins": 43,
+    "startupLimitBytes": 2097152,
+    "minimumFutureFreeBytes": 18622054400
   },
   "requiredBeforeRuntime": [
     "independent fixedsource/fixture review",
@@ -53,5 +61,15 @@
   "currentChild": 0,
   "gate": null,
   "env": null,
-  "reservation": null
+  "reservation": null,
+  "packet": "/private/tmp/arc-runtime-preparation-0xrqtd0l",
+  "sourceReview": "891f source/local APPROVED; 7097 browser observation delta + callers awaiting focused review",
+  "preparationTypes": {
+    "state": "CLOSED",
+    "totalMs": 20000,
+    "spentMs": 4683,
+    "unusedMs": 15317,
+    "transfer": false,
+    "result": "affected noEmit0; no direct rerun"
+  }
 }

@@ -1,0 +1,37 @@
+{
+  "origin": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k",
+  "originalCallers": [
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/run.py",
+      "realpath": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/run.py",
+      "bytes": 9807,
+      "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/worker.mjs",
+      "realpath": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/worker.mjs",
+      "bytes": 4828,
+      "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/capture.py",
+      "realpath": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/capture.py",
+      "bytes": 8348,
+      "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+    }
+  ],
+  "changes": [
+    "single browser candidate 90s=60work+30cleanup, same absolute outer deadline/drain/reap model",
+    "Arc fixed four selected/passed names and explicit context/HTTP receipts",
+    "Arc fixture cacheDirectory in own scratch",
+    "actual readonly resolver symlink targets checked",
+    "no mutable metadata execution pins"
+  ],
+  "sourceCount": 207,
+  "externalCount": 42,
+  "limitations": [
+    "No independent port probe; fixture close and exact owned group absence both required",
+    "synthetic HTTP Cookie fixture is not real center session safety",
+    "NOT_RUN; prepared native identity is not an actual browser grant"
+  ]
+}

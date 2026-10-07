@@ -1,0 +1,80 @@
+{
+  "preparedAt": "2026-10-07T20:15:52.827442Z",
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "executionHead": "legitimate final metadata HEAD returned after seal; fresh clean required at runtime",
+  "packet": "/private/tmp/arc-runtime-preparation-0xrqtd0l",
+  "manifest": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "bytes": 6833,
+    "sha256": "7e4be770c3ffcaa059297ef368e79b68647bfd888c18172000b4f51302b18382"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "bytes": 145780,
+    "sha256": "d3a966fa23785bce73676af01050a53ba2dca19ce3faba7e46e14940d5d308e3"
+  },
+  "callers": [
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+      "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+      "bytes": 8351,
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+      "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+      "bytes": 10087,
+      "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+      "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+      "bytes": 5014,
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    }
+  ],
+  "HTTPCaller": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/run.py",
+    "realpath": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "sourcePins": 207,
+  "externalPins": 43,
+  "sourceRootReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/root-arc-source-local-review-20261007.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/root-arc-source-local-review-20261007.json",
+    "bytes": 7088,
+    "sha256": "afb5559ca7a628c8d3281306173b30a149361ec46ff229f97c1321eb4749e15d"
+  },
+  "runtime": "NOT_RUN/NOT_GRANTED",
+  "localChargeMs": 4683,
+  "preparedBytes": 224471,
+  "newEnvelopes": {
+    "preparationTotal": 16777216,
+    "sourceMetadataPins": 7340032,
+    "TMP": 8388608,
+    "raw": 1048576
+  },
+  "browserProposal": {
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1
+  },
+  "HTTPProposal": {
+    "totalMs": 30000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTPSequential": 1
+  }
+}

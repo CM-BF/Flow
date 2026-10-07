@@ -11,3 +11,7 @@ Root静态P2 [original](root-arc-layout-confirmation-static-finding-20261007.jso
 HTTP2与browser4全部NOT_RUN。[runtime proposal](runtime-proposal.json)不是grant。浏览器有真实long transcript消息锚点、他pane更新、resize、focus、真实adapter准备中move/merge/split、A冻结/B完整refs、6显式bodyflight和真实390双theme源码；没有实际截图。剩余风险：共享projection fairness、隐藏撤销/scroll测高、真实官方composer准备lifetime都需要actual。fixture是假Cookie/公共合成HTTP，不是PG/真实中心安全、runner/provider、个人发布。MATURE05-04/06不在此片完成。
 
 旧I01/MSG/Recovery/ACCESS均released且没有写入。原源码供给f885不漂movingmain，无安装/共享Gitconfig修改。main NOT_INTEGRATED。
+
+## 2026-10-07 runtime preparation checkpoint
+
+Current source `7097c4d1cc429ee87e507a2210f2e9cceac99b56` (one browser file delta from891f; other17 exact). Root source/local approval afb5559 retained. New affected noEmit0,4683ms/20s CLOSED; no original13rerun. Prepared HTTP2 and originalbrowser4 are NOT_RUN/NOT_GRANTED. Reduced-motion observation belongs to refresh-theme only. [Entry](runtime-preparation-20261007/entry.json), [source/local review](root-arc-source-local-review-20261007.json).

@@ -1,0 +1,36 @@
+--- /private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/capture.py
++++ /private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py
+@@ -1,4 +1,4 @@
+-"""Passive actual-exit capture for the owned I01 caller; no DB or second Chrome supervisor."""
++"""Passive actual-exit capture for the owned Arc caller; no DB or second Chrome supervisor."""
+ from pathlib import Path
+ import argparse, datetime, hashlib, json, math, os, selectors, signal, subprocess, sys, time
+ 
+@@ -7,15 +7,15 @@
+ parser.add_argument('--output', required=True)
+ args = parser.parse_args()
+ root=Path(__file__).parent
+-base=Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app')
++base=Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition')
+ gate_path,output=Path(args.grant),Path(args.output)
+ gate=json.loads(gate_path.read_text())
+-assert gate.get('allowRun') is True and gate['totalMs']==60000
++assert gate.get('allowRun') is True and gate['totalMs']==90000
+ assert gate['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest()
+ assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc)
+ assert output==root/'outer' and not (root/'raw').exists() and not (root/'scratch').exists()
+ output.mkdir(mode=0o700, exist_ok=False)
+-started = time.monotonic(); hard = started + gate['totalMs']/1000; work = hard-15
++started = time.monotonic(); hard = started + gate['totalMs']/1000; work = hard-30
+ started_at = datetime.datetime.now(datetime.timezone.utc).isoformat()
+ errors, signals = [], []
+ child = None; sent_term = False; sent_kill = False
+@@ -116,7 +116,7 @@
+     exit_code=child.poll() if child else None
+     if exit_code != 0: errors.append('actual parent exit '+str(exit_code))
+     if len(streams)!=2 or any(not s['EOF'] or s['droppedBytes'] for s in streams.values()):errors.append('incomplete outer streams')
+-    report={'run':gate['run'],'startedAt':started_at,'endedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'outerPid':os.getpid(),'parentPid':child.pid if child else None,'exitCode':exit_code,'elapsedMs':(time.monotonic()-started)*1000,'signals':signals,'streams':{name:{**s,'sha256':s['sha256'].hexdigest()} for name,s in streams.items()},'errors':errors,'cleanupAuthority':'Only I01 parent owns worker/Chrome/cache links/scratch; fixture owns two HTTP listeners; PG is absent. Separate exact post-cleanup observation required; absent not inferred here.'}
++    report={'run':gate['run'],'startedAt':started_at,'endedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'outerPid':os.getpid(),'parentPid':child.pid if child else None,'exitCode':exit_code,'elapsedMs':(time.monotonic()-started)*1000,'signals':signals,'streams':{name:{**s,'sha256':s['sha256'].hexdigest()} for name,s in streams.items()},'errors':errors,'cleanupAuthority':'Only Arc parent owns worker/Chrome/cache links/scratch; fixture owns two HTTP listeners; PG is absent. Separate exact post-cleanup observation required; absent not inferred here.'}
+     try: (output/'actual-exit.json').write_text(json.dumps(report,indent=2)+'\n')
+     except OSError as error: errors.append('terminal write: '+str(error))
+     terminal={'outerTerminal':True,'run':gate['run'],'actualParentExit':exit_code,'postWriteElapsedMs':(time.monotonic()-started)*1000,'stdoutEOF':streams.get('stdout',{}).get('EOF',False),'stderrEOF':streams.get('stderr',{}).get('EOF',False),'errors':errors,'signals':signals}

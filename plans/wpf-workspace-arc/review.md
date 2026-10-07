@@ -1,7 +1,5 @@
 # WPF-WORKSPACEARC01 Review
 
-状态：NOT_STARTED。当前固定目标：`891f478cb0823f2ff1d02c75abefd1485bb826b6`，base `f8853d4731eb6229337279079c24617c97d4f56b`。exact18源码/test和全部验证边界统一在[review-entry](../../docs/evidence/wpf-workspace-arc/review-entry.md)；不由owner自评APPROVED。
+当前：IN_PROGRESS `7097c4d1cc429ee87e507a2210f2e9cceac99b56`。root已对891f完整18source/local出具[限定APPROVED](../../docs/evidence/wpf-workspace-arc/root-arc-source-local-review-20261007.json)，0blocking；不把此源审冒actual。新7097仅browser原refresh-theme内reduced-motion观察与context/http明确清理收据；affected noEmit0，4,683ms/20,000 CLOSED。此最小差量与固定HTTP2/browser4调用器等待一次集中准备审。
 
-已完成限定local：13PASS/34未选、affected noEmit0；18020/60000 CLOSED。首direct模块加载失败和首types2不改写。实际HTTP2、browser4、截图和main均未完成。root早期静态设计/dirty finding不是最终fixedsource批准。
-
-原P2确认授权回调已修并新增实际host/port回归，但最终源修接受由独立review给出。共同stable composer/FIFO/缓存与真实滚动材料await仍需actual；不把reducer纯绿冒UI全验收。
+原13PASS/34NOT_SELECTED、types首红及五次精确cleanup原件保留。HTTP2/browser4/双390PNG尚未运行，main NOT_INTEGRATED；旧local与此次types未用额度均不转运行。所有固定来源和边界见[review-entry](../../docs/evidence/wpf-workspace-arc/review-entry.md)。
