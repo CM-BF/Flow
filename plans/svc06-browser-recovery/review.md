@@ -67,3 +67,7 @@ Target20dc149c78dd4c7d172c609360051e2cec852aae。NOT_STARTED independent review;
 ## Web-only父目录P2修复待复审
 
 2026-10-07T22:31:27.195Z：原20dc的P2由Lead发现，source 225a71eeea583200139aace9464d907b10a5c4f4 已修系统临时父目录/新owned目录的不同合同；新增2/2真实创建例通过，原检查保留。见[单份增量](../../docs/evidence/svc06/browser-recovery/recovery-web-parent-fix.json)。独审PENDING，canonical/后继成功回执未绑定，NOT_READY，不批准个人发布。
+
+## Web-only公共canonical与continuation回执重绑待审
+
+2026-10-07T22:37:18.739Z：固定source ef281959728334e2b3f0f5d847e0452108d37c06；父目录225a已获Lead限定APPROVED，原P2及原件保留。本次6/6直接消费者及原始监督见[重绑结果](../../docs/evidence/svc06/browser-recovery/recovery-web-continuation.json)，仅3新leaf和自己的记录，恢复135pins不变。独审PENDING，未来个人ready=false；不得从源批准推定现场恢复或网页发布完成。

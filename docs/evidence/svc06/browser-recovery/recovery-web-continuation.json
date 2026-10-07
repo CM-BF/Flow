@@ -1,0 +1,123 @@
+{
+  "at": "2026-10-07T22:37:18.739Z",
+  "source": "ef281959728334e2b3f0f5d847e0452108d37c06",
+  "base": "70dbcc0a60e20be95e3f0979fa4c1ef0f6f2c7c0",
+  "state": "SOURCE_READY_FOR_REVIEW_ACTUAL_NOT_READY",
+  "segment": {
+    "startedAt": "2026-10-07T22:34:24.000Z",
+    "source": "clock observation at new authorized segment after prior deadline",
+    "deadline": "2026-10-07T22:50:00.000Z",
+    "checksMaximumSeconds": 30,
+    "scratchMaximumBytes": 8388608,
+    "actualReturn": "2026-10-07T22:36:07.207564Z"
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 13686,
+      "sha256": "256bead94501d1ca64df456514126c7a1dffe6f2c7518d086d2c9d88dba3c191"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 11991,
+      "sha256": "9c57e920344b7e50fc0943e548d473e86c3df3d91788d3c0f6375fffb3522a50"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-input.template.json",
+      "bytes": 3869,
+      "sha256": "a96f726b434a4ffe70e89e054e44744ba55fdbad168ed94e02ca47d27dfdfc74"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-04-reservation.json",
+      "bytes": 3619,
+      "sha256": "33891f1b68711c29de6289dffb5dfd7f075767a33ae35313c1299b0515688559"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-04-outer.json",
+      "bytes": 1268,
+      "sha256": "d9360ecdfae4e9049ae3ba5487c125cf7e63829670a18d6dfc7a3f0eb874786b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-04-result.json",
+      "bytes": 416,
+      "sha256": "4f132c58be208403ab679f9d1c907d80b52ced6270e239a0b19cd5ada5b49147"
+    }
+  ],
+  "interface": {
+    "responsibility": "Web-only transfer then public version3-to4 CAS; existing transfer/release APIs retain mutation and locking authority.",
+    "canonical": "After full installed e15 verification, modules() imports canonical from that exact verified root/apps/server/src/database.ts. Hash state/operation with it; no duplicated serializer or mutable main runtime import.",
+    "canonicalSource": {
+      "commit": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "path": "apps/server/src/database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    "receipt": "/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json",
+    "receiptRequired": "Exact pinned successful resumed-confirmed final; current owned launch and operation digests must match. Recovery initialization, accepting and actualClaim remain distinct.",
+    "fixedTuple": "e15/880060 backend+Webhost, Web779/c231, policy81a8, four Web b422 reports; default template ready=false",
+    "preserved": "All old retained backend/Web artifacts, config/token/profile/process identity/task/tab; no restart/query/retry/rollback. Parent contract/exclusive namespace unchanged.",
+    "actualMissing": [
+      "Successful new continuation final receipt and independent result acceptance",
+      "Fresh six private file pins, current release/CAS and three owned identities/listeners/current runner initialization",
+      "Full installed artifact/runtime identity, effective invocation pins and actual resource-owner window/floor",
+      "One hash-bound0600 instance; execute with existing OPS14 recipe only after actual authorization"
+    ]
+  },
+  "validation": {
+    "selected": 6,
+    "passed": 6,
+    "new": 2,
+    "affected": 4,
+    "elapsedMs": 240,
+    "rawBytes": 665,
+    "groupAbsent": true,
+    "dualEOF": true,
+    "signals": [],
+    "scratch": "Exact empty owned root removed",
+    "consumer": "Actual publish() with six owned synthetic files/four reports and injected public ports; actual public canonical imported from fixed byte-identical source. Mixed-case/numeric nested keys make legacy serialization differ. New receipt path old-path negative.",
+    "runtime": "canonical-runtime.json at0b599 is reused by exact hash;68 public dependency files verified, no copied package/Pool/PG. Node24 tsx loader pin in reservation.",
+    "notRepeated": [
+      "Parent directory2cases",
+      "Unchanged8-case draft matrix",
+      "Cold/4App/build/transfer matrix"
+    ]
+  },
+  "references": {
+    "draft": {
+      "commit": "310b70bf92787aa248ee6d3db7fe7c023480105a",
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-preparation.json",
+      "scope": "Original draft/raw remain unchanged; not current execution packet"
+    },
+    "parentContract": {
+      "source": "225a71eeea583200139aace9464d907b10a5c4f4",
+      "result": "70dbcc0a60e20be95e3f0979fa4c1ef0f6f2c7c0",
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-parent-fix.json",
+      "review": "Lead APPROVED_LIMITED_OUTPUT_PARENT_CONTRACT/0P1P2 via message22:32; formalI02 combined record pending"
+    },
+    "continuation": {
+      "commit": "0b599a9ce5b71b0ab70700cf7ddd28f9bfa705cd",
+      "source": "e871d17e018461dd1288dba404930a50897b2c24",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-preparation.json",
+      "sha256": "72940b492935374605583ad0727c440289396b46564e48a23b96fea10a8d114a",
+      "scope": "Independently approved preparation only, not a successful final receipt"
+    },
+    "testCanonicalRuntime": {
+      "commit": "0b599a9ce5b71b0ab70700cf7ddd28f9bfa705cd",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-runtime.json",
+      "sha256": "85d560eebe4b751734f02e47d14a8b62ad24735ce4fa0714a94af67d13c4cebd"
+    }
+  },
+  "quality": {
+    "at": "2026-10-07T22:37:18.739Z",
+    "methods": "Existing find-skills discovery; reread local clean-code/codebase-design. Single producer serializer, existing mutation owners, small explicit runtime dependency; no new supervisor/state machine.",
+    "unresolved": "Independent source review and future successful recovery/fresh actual inputs"
+  },
+  "boundaries": {
+    "recovery135PinsModified": 0,
+    "personalIO": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "actualReady": false
+  }
+}
