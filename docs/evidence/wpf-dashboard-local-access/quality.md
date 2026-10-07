@@ -15,3 +15,5 @@
 2026-10-07 03:29:38 UTC 源码clean-code安全点：按现有find-skills/webapp-testing/clean-code方法只修第五组实际前提，使用page-associated CDP session避开任意target枚举/用户window。窗口恢复、focusoverride恢复、sessiondetach、own tab关闭分别尝试且错误入原report，保主错误和context最终close；不新增通用runner或visibility调度器。记录状态/ID/布尔，不写凭据值。已核已装Playwright core和协议类型，只读官方CDP方法说明；source仅候选、0运行/无第三heavy，旧失败不改。
 
 2026-10-07 03:39:46 UTC 第三次终态clean-code/证据安全点：原生hidden前提没有达到，保留true命令完成与visible观测的差异，不能把CDP调用成功当DOM状态成功。原断言未弱化，资源与产品结果分列；parent与Chrome日志均终态EOF，0截断、0cleanup错误，exact组/端口/scratch复核后归还窗口。仅metadata归档，本段不改源码/不第四次运行。原两轮失败和根源候选推断保持历史，等待具体前提定位。
+
+2026-10-07 03:46:17 UTC clean-code安全点：复用已读find-skills/webapp-testing/clean-code，纠正context创建职责而非增加visibility假状态或privatePW接缝；删除无效新session focus特判，保公开noDefaults与显式移交所有权。已核defaultcontext关闭browser的实际源码及Browser.close的targetclosed处理，caller需明确只own freshChrome准入；fixture不探测个人浏览器。仅test一源6增/11删，0runtime，其他6源等08ec。第四运行包只在own/tmp按剩29161/工作14161/清理15000重绑，不扩监督。

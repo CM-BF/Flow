@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T03:39:59.953257+00:00",
+  "reviewer": "/root independent",
+  "decision": "ACCEPT_THIRD_FAILED_EVIDENCE_AND_CLEANUP_NOT_BROWSER_APPROVAL",
+  "source": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "rawDirectory": "/private/tmp/access01-browser-third-2855hbyp",
+  "actual": {
+    "exit": 1,
+    "outerElapsedMs": 12110.540500027128,
+    "groupsPassed": 4,
+    "groupsTotal": 5,
+    "visibility": {
+      "before": "visible",
+      "focusEmulationDisabled": true,
+      "afterOwnedTabSwitch": "visible",
+      "windowId": 975387409,
+      "windowStateBefore": "normal",
+      "ownedWindowMinimized": true,
+      "windowRestored": true,
+      "focusEmulationRestored": true,
+      "sessionDetached": true,
+      "otherPageClosed": true
+    },
+    "cumulativeConservativeMs": 30839,
+    "remainingTotalMs": 29161,
+    "cleanupIncludedMs": 15000,
+    "cleanupClosed": true
+  },
+  "pins": {
+    "actual-exit.json": "50ff7028f77a78227f7af26b6b2e6813e5e0fa322238b12493dbe318baa34fc7",
+    "terminal.stdout": "da1f30a14571a5bf31f8eb0a8d0b533739a4aed0ddc59cfab280653ce228938d",
+    "raw/worker-result.json": "76ae65cda0bc44f3713e6caa241dc23ce2f9d613b037332ba671fb0036f82635",
+    "post-cleanup.json": "180e1382ea6d1fd68d82ab22e97a7ac8e9d2c7afaf9d2e5cb9c050056864bc0e"
+  },
+  "finding": {
+    "severity": "P2 verification prerequisite",
+    "description": "Sending focus-emulation false on a newly attached CDP session did not yield actual hidden. Product token-clear handler was not reached by native-hidden evidence, so no product failure or browser PASS is established.",
+    "sourceSupportedCandidate": "Chromium EmulationHandler tracks focus flag and capture_handle per handler: enabled==current flag returns early and the captured handle is released by that handler only. Playwright enables it on its own page session. Separate new session false does not establish clearing original capture. This explains the evidence but remains an inference for the exact installed browser.",
+    "boundedRemedy": "Use documented connectOverCDP({noDefaults:true}) only with the fresh owned Chrome default context. Pass the explicitly owned context into the fixture; do not browser.newContext() because documented noDefaults does not cover it. Preserve all five assertions and real hidden-before-tokenempty, restore/close all owned resources. No synthetic hidden/event or product relaxation.",
+    "sources": [
+      "https://playwright.dev/docs/api/class-browsertype#browser-type-connect-over-cdp",
+      "https://raw.githubusercontent.com/microsoft/playwright/v1.63.0/packages/playwright-core/src/server/chromium/crPage.ts",
+      "https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/content/browser/devtools/protocol/emulation_handler.cc"
+    ]
+  },
+  "cleanCode": "Correct responsibility at test browser/context ownership boundary instead of adding more window fallbacks or modifying product security behavior. Reuse original runner; no new lifecycle framework.",
+  "limitations": [
+    "No fourth runtime approved here. Remaining budget29161 includes15000 cleanup.",
+    "Product seven source files and direct35 unchanged; no rerun required for those source-only facts.",
+    "Main/publication/real installation remain unverified."
+  ]
+}

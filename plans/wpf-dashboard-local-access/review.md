@@ -41,3 +41,7 @@ Source target `ccd88577652369e17385a30c9a9a3dfa8e91d966`，只变browser真实vi
 Root已对ccd885前提及第三caller给限定源码批准，原件归档于本evidence。实际第三run仍FAILED：原前4组PASS，focus模拟已关闭、自有window最小化命令成功，但真实visibility仍visible。没有跳过hidden或伪造事件，后续token清除不冒通过。全部自有清理、双EOF与actualexit1原件已归档 browser-third；本轮待root实证审，不自行APPROVED。
 
 完整feature仍NOT_STARTED，真实安装/主线/4320发布未验。余29161ms含15000cleanup只是原60s余额，非第四次许可；source/direct35无变化不重跑。
+
+## 2026-10-07 03:46:17 UTC — 默认context唯一接缝候选
+
+Source `3c0dda7b7a8887ac763d8a1651231374b0f3356d` 仅fixture入口/显式viewport/删除旧focusoverride。Root第三次FAILED实证研究已原样归档，当前修正待源码独审，0运行。公共noDefaults只作用于defaultContext；caller未来明示freshPID/profile/唯一context及blank初始页的准入，fixture只关闭该已移交context，原监督继续实际退出/EOF收尾。全部五组断言保留，产品08ec+direct35不变；完整feature NOT_STARTED，旧三失败不改。
