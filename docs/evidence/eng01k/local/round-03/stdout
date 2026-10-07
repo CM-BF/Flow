@@ -1,0 +1,58 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-trusted-tool-writer[39m
+
+ [32m✓[39m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mawaits one async host tool response in the existing pump before accepting its final evidence[32m 7[2mms[22m[39m
+ [32m✓[39m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mreturns unknown on async tool cancellation while its writer retains the pending effect[32m 2[2mms[22m[39m
+ [32m✓[39m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mkeeps the extracted ordinary consumer on one receive pump and closes its owned JSONL peer[32m 43[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mpreserves the same Unicode final and published summary through 32 paced real JSONL fragments
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mpreserves the same Unicode final and published summary through 512 paced real JSONL fragments
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mstill rejects a real JSONL burst exceeding the R06 instantaneous queue
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22myields a hot ready-notification pump to cancellation without changing the terminal requirement
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mdoes not await a pending stream sink forever after input-abort
+ [2m[90m↓[39m[22m apps/runner/src/native-harness/codex/exchange.test.ts[2m > [22mdoes not await a pending stream sink forever after deadline
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mrefuses missing authority, missing assignment and unknown models before any transport can exist
+ [32m✓[39m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcomposes the native-file consumer with the same full host snapshot and independent checker after injected revocation[33m 543[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcannot convert a completed final and child exit into stopped when revocation is unknown
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcannot convert a completed final and child exit into stopped when revocation is wrong
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcannot convert a completed final and child exit into stopped when revocation is throw
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves wrong-model as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves wrong-thread as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves command as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves terminal-tool as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves changed as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves incomplete as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves reroute as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves eof as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mpreserves hang as unknown even with an injected revoked receipt
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcloses an ambiguous open-fails authority without creating a transport
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mcloses an ambiguous bad-grant authority without creating a transport
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mmaps a native settled failure only after the separately injected whole-write revocation
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mdoes not promote pre-dispatch ownership loss or cancellation
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mbounds an unresponsive authority without claiming its pending work stopped
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mbounds a stalled ownership check without opening or promoting a writer
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-writer.test.ts[2m > [22mnever reopens the same assignment writer after an unknown first invocation
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mwrites only the pinned calculator, fsyncs and retains its inode; ACK recovery never writes again
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mrejects another body or call id after one admission without an extra write
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mreplay rechecks current ownership and cannot reuse a stale lease ACK[32m 3[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mconflicting digest and unexpected path/oversized/base64 input are rejected before writing
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mturn mismatch and a changed trusted binding cannot reopen a gate
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mclose seals admission before a late ownership check returns
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mclose waits for real write settlement and FD close, not native process close
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22ma timed out drain remains unknown even after the late operation settles
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mpartial write or close errors keep unknown and never replay the operation
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mnative cancellation seals before ownership resume and does not claim native revocation[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mcancelled observation retains a real pending write until its eventual close[32m 0[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mfile port rejects symlinks/hardlinks and detects a path replaced after open
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mreadonly dynamic recipe accepts only its own successful host receipt and matching terminal item
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22msame native call recovers a lost ACK without a second write
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mwrong thread, turn, tool or body is denied without using the write port
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22munstarted tool calls and native file/exec approvals cannot acquire host permission
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mclaimed completion with different content or a second tool item is rejected
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22masync response cancellation seals admission while ownership is still pending[32m 4[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mold ordinary and file-change recipes remain incapable of accepting dynamic tool writes
+
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m8 passed[39m[22m[2m | [22m[33m41 skipped[39m[90m (49)[39m
+[2m   Start at [22m 00:21:32
+[2m   Duration [22m 1.21s[2m (transform 134ms, setup 0ms, import 363ms, tests 605ms, environment 0ms)[22m
+

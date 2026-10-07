@@ -1,7 +1,6 @@
 import { isDeepStrictEqual } from 'node:util';
 import { z } from 'zod';
-import type { Json, Reply } from '../codex/types.js';
-import type { CodexExchangeRecipe } from '../native-harness/codex/exchange.js';
+import type { AsyncCodexExchangeRecipe } from '../native-harness/codex/exchange.js';
 import { CodexTurnEvidence, type CodexItemPhase } from '../native-harness/codex/evidence.js';
 import { assertOrdinaryItem, denyCodexRequest } from '../native-harness/codex/policy.js';
 import { nativeId } from '../native-harness/codex/wire.js';
@@ -17,14 +16,11 @@ const itemSchema = z.strictObject({ type: z.literal('dynamicToolCall'), id: nati
   status: z.enum(['inProgress', 'completed', 'failed']),
   contentItems: z.array(output).max(1).nullable().optional(), success: z.boolean().nullable().optional(),
   durationMs: z.number().int().nonnegative().max(Number.MAX_SAFE_INTEGER).nullable().optional() });
-export type AsyncToolRecipe = Omit<CodexExchangeRecipe, 'respond'> & {
-  respond(method: string, params: Json, signal: AbortSignal): Promise<{ allowed: boolean; reply: Reply }>;
-};
 
 /** Experimental stock dynamic-tools protocol. It requires a separately enforced read-only native
  * launch and a trusted file gate; configuration echoes are not observed model identity or grants. */
 export function createNativeToolRecipe(options: { model: NativeEngineeringModel; cwd: string; prompt: string;
-  writer: TrustedToolWriter }): AsyncToolRecipe {
+  writer: TrustedToolWriter }): AsyncCodexExchangeRecipe {
   const model = nativeEngineeringModelSchema.parse(options.model);
   if (!options.cwd.startsWith('/') || Buffer.byteLength(options.cwd) > 4096 || Buffer.byteLength(options.prompt) > 65_536) throw Error('Tool recipe input exceeds bounds.');
   let item: { id: string; args: string; completed: boolean; outcome?: ToolWriteOutcome } | undefined;

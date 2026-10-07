@@ -20,7 +20,7 @@ function toolPeer(afterReply: (reply: Reply, push: (frame: Inbound) => void) => 
   function push(frame: Inbound) { if (pending) { const callback = pending; pending = undefined; callback(frame); } else frames.push(frame); }
   const port: CodexTransport = {
     ready: Promise.resolve({ userAgent: 'injected', platformFamily: 'fixture', platformOs: 'fixture' }), closed: Promise.resolve(close),
-    async request(method) {
+    async request(method): Promise<Json> {
       if (method === 'thread/start') return { thread: { id: 'thread' }, model: 'gpt-6-astra', approvalPolicy: 'never', sandbox: { type: 'readOnly', networkAccess: false } };
       // The real transport's JSONL response and notifications are exercised by the two unchanged consumers below.
       setImmediate(() => {

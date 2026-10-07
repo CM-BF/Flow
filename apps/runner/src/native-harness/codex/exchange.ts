@@ -28,12 +28,15 @@ export interface CodexExchangeRecipe<Thread extends { threadId: string } = { thr
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
   checkCompletion(): void;
-  /** The trusted recipe owns unfinished effects after an unknown reply. Await one response in the
-   * same receive pump; a transport close is not a tool writer's settlement or revocation. */
-  respond(method: string, params: Json, signal: AbortSignal): { allowed: boolean; reply: Reply } | Promise<{ allowed: boolean; reply: Reply }>;
+  respond(method: string, params: Json): { allowed: boolean; reply: Reply };
 }
+/** The trusted async recipe owns unfinished effects after an unknown reply. Keep the synchronous
+ * recipe's direct-call contract intact. Transport close is never tool writer revocation. */
+export type AsyncCodexExchangeRecipe<Thread extends { threadId: string } = { threadId: string }> = Omit<CodexExchangeRecipe<Thread>, 'respond'> & {
+  respond(method: string, params: Json, signal: AbortSignal): Promise<{ allowed: boolean; reply: Reply }>;
+};
 export async function runCodexExchange<Thread extends { threadId: string }>(createTransport: CodexTransportFactory, input: CodexExchangeInput,
-  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: CodexExchangeRecipe<Thread>) {
+  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: CodexExchangeRecipe<Thread> | AsyncCodexExchangeRecipe<Thread>) {
   const deadline = new AbortController();
   const timer = setTimeout(() => deadline.abort(), limits.wallTimeMs);
   const signal = AbortSignal.any([input.signal, deadline.signal]);
