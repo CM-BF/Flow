@@ -1,0 +1,138 @@
+{
+  "state": "RESULT_REVIEW_PENDING",
+  "executionHead": "44594beb1564732c00fb66721db2fd51b60b87e9",
+  "productTarget": "83a0799293057f7472f0329c61e566708b2a2381",
+  "inputTarget": "0a753088f477932140b10b288e907243cb265c27",
+  "input": {
+    "path": "docs/evidence/s01p07/pg-diagnostic-slot-request.json",
+    "bytes": 4544,
+    "sha256": "e38ad3e89ac723d516f3f27a5d13eae8bebe72d85bab9d4829c2ffa2304bc909"
+  },
+  "preparation": {
+    "path": "docs/evidence/s01p07/pg-diagnostic-prepared-manifest.json",
+    "bytes": 2193,
+    "sha256": "b447364061f483912ab41843b0bf410f95de22cec71067e53b62b151aa059b8d"
+  },
+  "files": [
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.json",
+      "bytes": 1740,
+      "sha256": "d84c0ba5fb012977f6a5abfa5bac0b06b0b1fc3cc0d3a59c9b591b5806db868e"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.stdout",
+      "bytes": 2243,
+      "sha256": "f304d35e0fd0ea9d2c6169e5ac01dbb72a8b882495506c1e481b715ea86188f7"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.fixture.json",
+      "bytes": 2237,
+      "sha256": "b97652eecb9b42cf636101c45e62e41a66879eeeb8ed6eaa60805e497bafdd8e"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.reservation.json",
+      "bytes": 546,
+      "sha256": "70a1687734f9288998e005e126cbff0f03fc9aa41215d89f1373b6197d8538d2"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.child.json",
+      "bytes": 184,
+      "sha256": "f10ff97d6d78d9c2ff94bf978239039d5f54f578c3fedbd9e0907c08efbb166b"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.fixture.json.reservation.json",
+      "bytes": 223,
+      "sha256": "0d3b297c123e9907cf0a5aadbc8e6e80cc78e3208550fbc7908da7fcbaad3e53"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.fixture.json.root.json",
+      "bytes": 222,
+      "sha256": "f0bf0c0008b9adf1fef4bb9462ce8a36d242b32dbfe24fab2b2aa0b34e605e92"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.fixture.json.create-request.json",
+      "bytes": 206,
+      "sha256": "d0b697ddcf153e0ee64e3e02d633f6261d89150340504ce9726c5a02a3fa3a49"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.fixture.json.database.json",
+      "bytes": 242,
+      "sha256": "388a630621f0d39221c8e3bd833f8c4f62cb2791072ef5b016314e47c5b652f0"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R2.outer.json",
+      "bytes": 4341,
+      "sha256": "fb5e2db8ab6612c5251da3c9aada4088bcf6a1b0d26001fe459439fd0f658d1b"
+    }
+  ],
+  "totalBytes": 12184,
+  "result": {
+    "selected": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0,
+    "tasks": 10,
+    "http": 80,
+    "fixtureElapsedMs": 2046.1182910000002,
+    "wrapperElapsedSeconds": 3.8461873329943046,
+    "outerSeconds": 3.91,
+    "toolExit": 0,
+    "rawObservedBytes": 2243,
+    "temporarySampledPeakBytes": 3036442,
+    "caseResults": [
+      {
+        "name": "binds self identity to bearer authority and persists no receipt for twelve empty observations or legacy empty claims",
+        "state": "pass"
+      },
+      {
+        "name": "serializes concurrent requests for one key into one attempt and one resume-session occupation",
+        "state": "pass"
+      },
+      {
+        "name": "separates the same request UUID by authenticated runner and cannot read a different runner receipt",
+        "state": "pass"
+      },
+      {
+        "name": "rolls allocation, session occupation and compact receipt back together after a post-insert failure",
+        "state": "pass"
+      },
+      {
+        "name": "looks up committed allocation before maintenance/capacity, preserves current lease without renewal, and rejects revoke",
+        "state": "pass"
+      },
+      {
+        "name": "returns only historical identity after expiry, completed cancellation or a stale owner, never a new attempt",
+        "state": "pass"
+      },
+      {
+        "name": "keeps the first nonempty receipt through a real server restart and reuses the original v1 allocation filters",
+        "state": "pass"
+      },
+      {
+        "name": "uses a fresh integer lease from a fractional PG remainder and fences before the public runtime executes once",
+        "state": "pass"
+      }
+    ],
+    "cleanup": {
+      "appClosed": true,
+      "poolClosed": true,
+      "adminClosed": true,
+      "connections": 0,
+      "databaseAbsent": true,
+      "databaseIdentityConfirmed": true,
+      "rootAbsent": true,
+      "startupSettled": true
+    },
+    "rootAbsenceObserved": {
+      "wrapperRoot": "ENOENT",
+      "fixtureRoot": "ENOENT"
+    },
+    "providerCalls": 0
+  },
+  "historicalBoundary": "R1 failed/qsnu KEEP is unchanged and untouched, cause UNKNOWN. Original85 nonPG/strict5/3 wrapper fake plus diagnostic4 reused, not rerun. Original4 capacity realPG NOT_RUN. No performance/capacity/provider claim."
+}
