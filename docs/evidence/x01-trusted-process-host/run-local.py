@@ -3,7 +3,7 @@ from pathlib import Path
 import dataclasses,datetime,hashlib,importlib.util,json,os,sys,time
 ROOT=Path(__file__).resolve().parents[3]
 E=ROOT/'docs/evidence/x01-trusted-process-host'
-name=sys.argv[1];assert name in ('types','types-fix','behavior','behavior-fix','types-final','direct')
+name=sys.argv[1];assert name in ('types','types-fix','behavior','behavior-fix','types-final','direct','settlement','types-settlement')
 node='/opt/homebrew/opt/node@24/bin/node'
 files=['apps/runner/src/plugins/process-host.test.ts','apps/runner/src/plugins/execution.test.ts','apps/runner/src/configuration.test.ts']
 cmd=([node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'tsconfig.json')]
@@ -11,6 +11,9 @@ cmd=([node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'ts
 if name == 'direct':
  files=['apps/runner/src/plugins/runtime.test.ts','apps/runner/src/plugins/execution.test.ts']
  cmd=[node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files,'-t','trusted direct']
+if name == 'settlement':
+ files=['apps/runner/src/plugins/execution.test.ts']
+ cmd=[node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files,'-t','trusted settlement|trusted worker keeps current invoke grant']
 free=os.statvfs(ROOT).f_bavail*os.statvfs(ROOT).f_frsize
 # Preserve the existing conservative combination floor; refresh active declarations before each actual run.
 floor=7500000000

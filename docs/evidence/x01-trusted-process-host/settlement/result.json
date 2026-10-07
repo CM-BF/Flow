@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-07T13:19:37.325716+00:00",
+  "finishedAt": "2026-10-07T13:19:38.552558+00:00",
+  "wallBeforePersistenceSeconds": 1.2265896670287475,
+  "supervision": {
+    "pid": 55153,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1214,
+    "observed_bytes": 458,
+    "retained_bytes": 458,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 458,
+    "sha256": "3c106a065fa6816aba731e541933bc5412d085b61623230dc9a7adb885961d0d"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-trusted-process-host/run-local.py": "f2645bf0354091ebd122e643fd1093baaea09b1073a27f078b140bfe2644d02e",
+    "apps/runner/src/plugins/process-host.ts": "941138dc50f201aef5d89d2a993756e492876400b14219e22922fc2196525297",
+    "apps/runner/src/plugins/process-worker.ts": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "apps/runner/src/plugins/process-protocol.ts": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "apps/runner/src/plugins/process-resources.ts": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "apps/runner/src/plugins/execution.ts": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "apps/runner/src/configuration.ts": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "apps/runner/src/runtime.ts": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "apps/runner/src/plugins/execution.test.ts": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+  }
+}

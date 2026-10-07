@@ -28,7 +28,7 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
     const identity: ProcessIdentity = { nonce: randomBytes(16).toString('hex'), bindingId: input.binding.bindingId,
       invocationId: input.binding.invocationId, taskId: input.binding.taskId, attemptId: input.binding.attemptId, ownerVersion: input.binding.ownerVersion };
     const item = await resources.reserve(identity);
-    let first: unknown, failed = false, stopping = false, signalUnknown = false, checks = 0, authorizations = 0, busy = false;
+    let first: unknown, failed = false, settlementUnknown = false, stopping = false, signalUnknown = false, checks = 0, authorizations = 0, busy = false;
     let result: PluginToolResult | undefined, response = false, protocolEof = false, stdoutEof = false, stderrEof = false;
     let diagnosticBytes = 0, exitCode: number | null = null, exitSignal: string | null = null, closed = false;
     let term: ReturnType<typeof setTimeout> | undefined, final: ReturnType<typeof setTimeout> | undefined;
@@ -37,7 +37,10 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
       stdio: ['pipe', 'pipe', 'pipe', 'pipe'], shell: false });
     const pipe = child.stdio[3] as Readable; const writer = new FrameWriter(child.stdin!, identity);
     let finishWait!: () => void; const finished = new Promise<void>(resolve => { finishWait = resolve; });
-    function remember(error: unknown) { if (!failed) { failed = true; first = error; } }
+    function remember(error: unknown) {
+      if (error instanceof PluginToolError && error.code === 'OUTCOME_UNKNOWN') settlementUnknown = true;
+      if (!failed) { failed = true; first = error; }
+    }
     function kill(signal: NodeJS.Signals) {
       if (closed || child.exitCode !== null || child.signalCode !== null) return;
       try { if (!child.kill(signal)) signalUnknown = true; } catch { signalUnknown = true; }
@@ -93,7 +96,8 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
       if (input.signal.aborted) abort();
       else await writer.send({ kind: 'init', value: { store: { ...input.store, allowedDigests: [input.binding.material.artifact.sha256] }, binding: input.binding, input: input.input } });
       await finished;
-      if (!closed || !protocolEof || !stdoutEof || !stderrEof || signalUnknown || !response || !failed && exitCode !== 0) remember(new PluginToolError('OUTCOME_UNKNOWN'));
+      if (!closed || !protocolEof || !stdoutEof || !stderrEof || signalUnknown
+        || !response && !failed || response && exitCode !== 0) remember(new PluginToolError('OUTCOME_UNKNOWN'));
       if (!failed) { await input.assertOwnership(); if (input.signal.aborted) remember(new PluginToolError('OUTCOME_UNKNOWN')); }
     } catch (error) { stop(error); await finished; }
     finally {
@@ -103,6 +107,13 @@ export async function createTrustedProcessHost(options: { resourceRoot: string; 
       catch { remember(new PluginToolError('OUTCOME_UNKNOWN')); }
       if (processClosed) { try { await resources.finish(item); } catch { remember(new PluginToolError('OUTCOME_UNKNOWN')); resources.keep(); } }
       else { resources.keep(); remember(new PluginToolError('OUTCOME_UNKNOWN')); }
+    }
+    if (settlementUnknown) {
+      // A known plugin/authorization failure cannot certify later process or resource settlement.
+      if (first instanceof PluginToolError && first.code === 'OUTCOME_UNKNOWN') throw first;
+      const unknown = new PluginToolError('OUTCOME_UNKNOWN');
+      if (failed) Object.defineProperty(unknown, 'cause', { value: first, configurable: true });
+      throw unknown;
     }
     if (failed) throw first;
     if (!result) throw new PluginToolError('OUTCOME_UNKNOWN'); return result;

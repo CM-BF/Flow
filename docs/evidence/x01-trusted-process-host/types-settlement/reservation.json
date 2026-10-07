@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T13:19:43.386744+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/tsconfig.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+  "free": 21670969344,
+  "required": 7500000000,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/types-settlement/tmp",
+    "dev": 16777234,
+    "ino": 124158969
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

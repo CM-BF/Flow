@@ -191,3 +191,24 @@ test('trusted direct diagnostic overflow discards text and retains uncertain bus
     expect(facts[0]!.diagnosticBytes).toBeGreaterThan(16384); expect(JSON.stringify(facts)).not.toContain('PRIVATE');
   });
 });
+
+
+test('trusted settlement retains package failure as cause when owned scratch cannot be cleared', async () => {
+  await withPackage(async ({ input, root }) => {
+    const facts: ProcessObservation[] = [];
+    const host = await createTrustedProcessHost({ resourceRoot: join(root, 'process'), observe: fact => facts.push(fact) });
+    input.invokeTool = host.invoke;
+    try {
+      await expect(executePluginTool(input)).rejects.toMatchObject({ name: 'PluginExecutionUnsettled',
+        bindingId: input.binding.bindingId, invocationId: input.binding.invocationId,
+        cause: { code: 'OUTCOME_UNKNOWN', cause: { code: 'PACKAGE_FAILED' } } });
+      expect(facts).toHaveLength(1); expect(facts[0]).toMatchObject({ exitCode: 0, processClosed: true,
+        protocolEof: true, stdoutEof: true, stderrEof: true });
+      expect(await fs.readFile(join(root, 'process/scratch/00/owned-note'), 'utf8')).toBe('owned test marker');
+      expect(await fs.readdir(join(root, 'process/receipts'))).toEqual(expect.arrayContaining(['owner.json', 'slot-00.json']));
+      // Resource HOLD rejects before another spawn; no automatic retry or receipt adoption.
+      await expect(executePluginTool(input)).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
+      expect(facts).toHaveLength(1);
+    } finally { await expect(host.close()).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN'); }
+  }, () => `import {writeFileSync} from 'node:fs';export const hostApiMajor=1;export function invoke(){writeFileSync('owned-note','owned test marker');throw new Error('package failed')}`);
+});

@@ -10,21 +10,21 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | review |
-| 当前产出 | 私有配置可选择每次调用独立进程，真实执行路径和有限取消检查通过，待独审。 |
-| 下一可用交付 | 固定首产品与局部证据交独审；发布产物验证由后继完成。 |
+| 当前产出 | 资源收尾未知会保留未结算任务，原插件失败仍可追溯；窄修已通过定向检查。 |
+| 下一可用交付 | 固定窄修交独立复审，随后形成受控主线输入；发布验证仍是后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
 | HEAD | af43f7e61395125aed3f0725a9e4305c9e086cdd |
-| 工作树dirty状态 | 固定产品后仅review交接metadata；最终提交clean。 |
+| 工作树dirty状态 | 窄修与本次证据待固定；无其他范围变化，ordinary已归还。 |
 | 实现目标 | af43f7e61395125aed3f0725a9e4305c9e086cdd |
 | 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
 | 检查状态 | PASSED af43f7e61395125aed3f0725a9e4305c9e086cdd 11/11 + 3/3分轮，focused types0；原首types2保留，PG/release NOT_RUN。 |
-| Review | 当前产品af43f7e61395125aed3f0725a9e4305c9e086cdd NOT_STARTED；设计e870批准独立保留。 |
+| Review | 原13:17:06唯一P2已修，当前PENDING_DELTA_REVIEW；不冒批准。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
-| 最近更新时间 | 2026-10-07T13:10:15.304149+00:00 |
+| 最近更新时间 | 2026-10-07T13:20:57.204225+00:00 |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -66,3 +66,7 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 2026-10-07T13:10:15.304149+00:00 ordinary RETURN：五组最终absent/mergedEOF/完整raw，五ownTMP同inode空目录移除；当前仅metadata，0PG/provider/服务。11+3为两个互不重叠selected组，14distinct，非单次14/14。runtime mock与真实executePluginTool/worker范围分开。架构后继：Original/Web D06在main接收后更新runner→process host边，当前未更新/未部署。
 
 2026-10-07T13:10:59.985318+00:00 首产品 source af43f7e61395125aed3f0725a9e4305c9e086cdd 固定。初次git add因五个newleaf不在private sparse而只形成5aa99db8局部提交；立即在本树追加exact sparse leaf并提交af43，全11产品/test均Git=已测试WT，未改源/重跑。当前请求独立产品审查；登记与实际live聚合未收到新正式回执，task-intake仍唯一登记入口。
+
+13:18:13Z恢复独立15min修复段，deadline13:33:13Z；freshledger原v2/14 ACTIVE，当前ordinary等待architecture RETURN。0PG/provider/personal。
+
+13:19:59Z P2段ordinary RETURN：2selected/2pass/18未选，focusedtypes0，两个组absent/EOF/完整raw、空TMP同inode移除。原14distinct与本新增1distinct分轮，不重测hang。当前仅固定/独审metadata，0PG/provider/服务。
