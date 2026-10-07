@@ -396,5 +396,20 @@
       "docs/evidence/svc06",
       "plans/svc06-backend-release"
     ]
+  },
+  "retentionFollowup": {
+    "at": "2026-10-07T07:50:04.229239+00:00",
+    "source": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+    "path": "tools/personal-preview/web-release.mjs",
+    "bytes": 12759,
+    "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+    "maxArtifacts": 3,
+    "maxRetainedBytes": 201326592,
+    "existingSavedArtifacts": 3,
+    "newFourthArtifact": "REJECTED_BY_CURRENT_PUBLISH",
+    "personalFreshRead": false,
+    "automaticRetirement": false,
+    "tabLifetimeProof": "UNKNOWN; TTL/pagehide is not proof",
+    "backendAndWebReadiness": "Separate gates; no limit change or removal authorized here"
   }
 }

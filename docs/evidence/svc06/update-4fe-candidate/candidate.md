@@ -4,13 +4,15 @@
 
 **先补实际host接入，再构建新后台，随后才新Web。** 4fe具备浏览器会话与消息设置服务端能力，但 `environment.mjs` 的center环境只传旧五字段；原baseServiceEnvironment也不透传 `FLOW_BROWSER_SESSION_JSON`。真实runService→server/main因而默认不启browserSession，读取诚实返回unsupported。外部塞环境不能绕过白名单。4fe可作功能基线，最终artifact必须绑定包含必要已审host薄接线的一致main，不能把原4fe重标为已启用。
 
-最窄候选是受信安装目录中一个显式可选、0600/no-follow的小浏览器策略文件（无token），由host读取、核原安装身份后仅向center序列化 `cookieOrigin/trustedOrigins/authEpoch`；缺文件保持默认off，非法内容拒绝启动。原config/token/claude.json字节保持，不能偷偷新建策略、复制token或扩大信任origin。复用server既有strict语义/CSRF/epoch规则；Web代理现changeOrigin=false保留公开Host，实际组合须验证公开origin。拟独立正式scope：`tools/personal-preview/{browser-session-configuration.mjs,browser-session-configuration.test.mjs,environment.mjs,environment.test.mjs,preview.mjs}`，必要preview直接消费者在scope确认时精确追加；现在仅提案，当前v7只持自身plan/evidence。
+最窄候选是受信安装目录中一个显式可选、0600/no-follow的小浏览器策略文件（无token），由host读取、核原安装身份后仅向center序列化 `cookieOrigin/trustedOrigins/authEpoch`；缺文件保持默认off，非法内容拒绝启动。策略存在但非法或身份/hash不符，必须在prepare/preflight、任何drain/stop之前拒绝；实际runService仍复核相同固定身份/hash，不能只在停服务后才发现。兼容报告必须绑定实际cookieOrigin/trustedOrigins/authEpoch策略配置；同source不等于同cookie部署已验。原config/token/claude.json字节保持，不能偷偷新建策略、复制token或扩大信任origin。复用server既有strict语义/CSRF/epoch规则；Web代理现changeOrigin=false保留公开Host，实际组合须验证公开origin。拟独立正式scope：`tools/personal-preview/{browser-session-configuration.mjs,browser-session-configuration.test.mjs,environment.mjs,environment.test.mjs,preview.mjs}`，必要preview直接消费者在scope确认时精确追加；现在仅提案，当前v7只持自身plan/evidence。
 
 构建复用已审SVC06 prepare/verify与SVC08 Flow来源薄入口/OPS14。固定4fe的9份dependency输入（7个package、lock、workspace）与已建Flow422逐字相同，16个root工具也列明实比；这支持复用既有选择方法，不是新cache完整性或构建成功证据。新artifact `sourceRepository` 必须真实Flow，禁止复用e5来源WT或更改c7b描述。原offline/frozen/ignore-scripts/private-store、clone/install各180s、外层420s+.5TERM/2reap、raw2MiB/live1GiB不降低；新source/stage/seed/install/final同时存在的总空间按新固定输入核，至少沿原fresh3,927,965,696B候选，执行前fresh，不能拿历史空间准入。
 
 4fe相对af51新增SQL028–035；实际factory会在既有迁移链依次处理35（conversation模块）、028、029、034、030、031、032。033文件虽存在但此base未挂载，不能承诺完整工具正文接线已部署。迁移先在自有专库用实际factory/旧schema有代表性历史做前进与幂等验收，禁止手工补表/routes。保留原64表/既有行身份、runner凭据/profile、消息/任务历史；新增表列及必要维护audit变化须逐项事先声明，不能把所有差异泛化为允许。不做DB自动回滚，不把新schema可启动当旧数据兼容。
 
-进入个人安装前，三个保留Web artifact `461a9732…` / `caa1e938…` / `d629631d…` 均须绑定新实际backend target的真实App兼容报告。现报告是af51，不可换tuple或用Quick组件/Story完成冒称App。Web新候选由Web原owner提供明确真实接线source/artifact及其报告；后台成功后再用现有独立Web CAS发布，不提前换指针。
+进入个人安装前，三个保留Web artifact `461a9732…` / `caa1e938…` / `d629631d…` 均须绑定新实际backend target的真实App兼容报告。现报告是af51，不可换tuple或用Quick组件/Story完成冒称App。Web新候选由Web原owner提供明确真实接线source/artifact及其报告；后台成功后才考虑独立Web CAS发布，不提前换指针。
+
+**现有保留版本已经满额，新Web发布是独立待解依赖。** 固定4fe的`web-release.mjs:5,79–85,129–150`限制最多3artifact、192MiB原文总量，publish会在原retained集合上追加而不会删除，第四个新ID会报`WEB_RETENTION_BUDGET_EXCEEDED`。三个现存ID来自已保存r3，不是当前fresh个人读取；进入实际操作前仍须核当前集合。不得默默抬上限、修改旧指针或自动退役；TTL、安静期、pagehide或断开观察均不能证明旧tab永久关闭，其惰性chunk仍可能访问。后继需要独立、可审的旧版本保留/退役语义与用户旧页保证；当前不自行选择旧artifact移除。后台薄接线与旧三App兼容可先推进，新Web可发布保持单独open。
 
 个人动作仍未开启。候选流程复用原installation锁、exclusive intent、精确产物迁入/验证：全部材料与报告先齐→fresh身份/工作与保留基线→maintenance bootstrap指定backendArtifact→等待原工作完成（不cancel）→同operation hold→原refresh→核保护checkpoint→显式同op resume。**原refresh确实依次停止/重启Web、runner、center三roles**，不是仅两后台角色；它保留独立c7b Webhost选择与原d629/v3/retained指针，故原页面网络可短暂断开但不操作/刷新用户tabs。owned nonce未知或active/uncertain/pending任何无法确认，停止后继；原journal不清空，不复用过去意图退役授权。每阶段明确结果才后继，失败/unknown保留原件与维护态，禁止自动重试/重置key/DB回滚。
 
