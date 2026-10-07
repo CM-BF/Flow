@@ -1,0 +1,234 @@
+{
+  "at": "2026-10-07T12:57:09.017220+00:00",
+  "integrationBase": "1302ac3ccdde44c99347840029e79c3059bb05e1",
+  "rootMainFrozen": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+  "state": "SCOPED_INTEGRATION_STAGED_NOT_MAIN",
+  "rows": [
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "562228945aebc41e80e877187697b348f8f756c8",
+      "bytes": 5824,
+      "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc",
+      "preimageSha256": "01e653c45aab17c60e5894b8674b170aacf431895afb7a0ff1e39aa1e9dffd6f"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "48307cecbcae4cc953ae86de7af72cf8499df27b",
+      "bytes": 5437,
+      "sha256": "b47999b523c9b908aef41b60a35a367ab7664ddee371bf88b16102b774bc5c39",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "e8cdbb5fcf0d899ef18103b73f85a37899036236",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references.test.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "d974c6ee3df36cc410f8e97ee4c13f09438f07fc",
+      "bytes": 8667,
+      "sha256": "bfdd94aa57cc1ac8ffcf9d8dee8e4fca5d858c37484b687724f46bc61aee5c06",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "070341eb72ac378d7a19e2e307c6bc86a71f59d9",
+      "bytes": 12543,
+      "sha256": "d9ca0d41c88bf63648f7553b09057eb648fab266668704ea7bc9a4add438ebb3",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+      "originCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "mode": "100644",
+      "blob": "9f27ed6b05ef5a96575620b85ec95e3e51015677",
+      "bytes": 15702,
+      "sha256": "67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "docs/evidence/x01-removal-references/pg-input.json",
+      "originCommit": "68f5575e65f723e2b07b4be3d37adb53a1d56521",
+      "mode": "100644",
+      "blob": "8beca3cfd89920fe8a9c250143a4532b2298ddb8",
+      "bytes": 1276,
+      "sha256": "fb0c2603e6d2cf1932e8892813169005493b578fe87c3b3d0636ab7a174495f5",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/index.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "045ef7a9f5fadc0587db63aa2bed6a30a6799b4e",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+      "preimageSha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/plugin-management.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "63e845baaa45ed9752437e9313b2cb0dde1f53e3",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+      "preimageSha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/plugin-removal-references.test.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "a32650a72939747520f6859a8d76f837e34218c0",
+      "bytes": 5540,
+      "sha256": "835df85a636678100b1e02031ac53d8d20674b4fb9f4c934e5c71215ee1e3b43",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "apps/cli/src/index.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "cdad5cbf24a0d694942a38d51b2cee7b5d869767",
+      "bytes": 30134,
+      "sha256": "29db99392dfe37891c515a0b18e31c2520a88fd2afd45f33c1f0b187a9a8c249",
+      "preimageSha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "apps/cli/src/plugin-removal-references.test.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "290feb46a461e9c22305a3d03eb70706b9cb2079",
+      "bytes": 2069,
+      "sha256": "217a64008d56f60487c6d42864e32139ff617ba1d84ec8ecdfd1c21ea657c596",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "docs/evidence/x01-removal-references-client/fixtures.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "3427f1531074e15db4b9004f42903cffb7163394",
+      "bytes": 1078,
+      "sha256": "3dd49737c7427d0e0819e20a3dcb237c565468b0f41b62ed35af5f8795df2335",
+      "preimageSha256": null
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "originCommit": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "mode": "100644",
+      "blob": "99ac2cd9f08cbca5ac269cdf3766eaf9c3e3581e",
+      "bytes": 21512,
+      "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+      "preimageSha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "originCommit": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "mode": "100644",
+      "blob": "19cb2929daee913cb69b6138d9902ee6b9853cc4",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "preimageSha256": null
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "originCommit": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "mode": "100644",
+      "blob": "c76edd2b1eaa45240d8e644625fd6ebe207f55a9",
+      "bytes": 39142,
+      "sha256": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+      "preimageSha256": "f919352290f8086c20bfd929628ec83e9332ddd3237bb9ecfd45b144a6444414"
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "originCommit": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "mode": "100644",
+      "blob": "7340b476c1a996c72ea75a439a21b5a7324ffc0c",
+      "bytes": 7258,
+      "sha256": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+      "preimageSha256": "b4819af5412cea6320be099a040837bfbccbfaec94f74d1f5951609a8f104e5d"
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "originCommit": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "mode": "100644",
+      "blob": "4d2cdb86f55558cb6b7ac44c28f1f67e25ac0b39",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab",
+      "preimageSha256": null
+    }
+  ],
+  "packets": [
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+      "sealedHead": "5f78a1bc57765223387887681f330570f2f815c5",
+      "intakePath": "docs/evidence/x01-removal-references/main-intake.json",
+      "intakeBytes": 8534,
+      "intakeSha256": "6370e6bd0ff1ef31c56cd322200a94cb83a9c3e52c6342bd265c118c3aba0f96",
+      "review": "docs/evidence/x01-removal-references/review-approval.json",
+      "actualR2": {
+        "result": "0b1e0d412c38c69b451951c4848e151ed6e2d3e7",
+        "packet": "6c7b2495fe53f1997a654479e77600aa2f365548",
+        "reviewReady": "docs/evidence/x01-removal-references/removal-r2-review-ready.json",
+        "resultReview": "RESULT_FIDELITY_REVIEW_APPROVED",
+        "approval": "docs/evidence/x01-removal-references/removal-r2-review-approval.json"
+      }
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+      "sealedHead": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+      "intakePath": "docs/evidence/x01-removal-references-client/main-intake.json",
+      "intakeBytes": 4121,
+      "intakeSha256": "f0a6739ac2066be0f4a4449622ecaa48210ae70a6cfa144b2e5071516be3d0b5",
+      "review": {
+        "at": "2026-10-07T12:30:38Z",
+        "reviewer": "chatui01_owner",
+        "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+        "P1": 0,
+        "P2": 0
+      },
+      "actualR2": null
+    },
+    {
+      "task": "WPF-PLUGIN-RUNTIME01",
+      "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+      "sealedHead": "8b31599feb392fc0013c754023058f807860caec",
+      "intakePath": "docs/evidence/wpf-plugin-runtime-management/main-intake.json",
+      "intakeBytes": 4199,
+      "intakeSha256": "d8c0c5a4135f34e12b8c3e5a773eeb3eb56aec62bf0e64928667f5d11c7bd7dc",
+      "review": "browser-b2-actual/root-actual-visual-review.json",
+      "actualR2": null
+    }
+  ],
+  "validation": "Focused strict TypeScript combination passed: exit0,2932ms,0stderr/stdout; process group final absent/dual EOF. Original transient EPERM and initial scratch KEEP preserved; exact owned compile-cache follow-up removed only after fresh identity/absence checks. Original independent source/local/PG/browser approvals retained at fixed canonical commits, no rerun, no copied historical source closure.",
+  "scope": "Backend read-only reference page + matching shared client/CLI; independently reviewed standalone Web plugin module. No physical removal/production App injection/new deployment."
+}

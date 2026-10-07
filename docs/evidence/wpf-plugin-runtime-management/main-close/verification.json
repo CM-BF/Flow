@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-10-07T13:28:34.664Z",
+  "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "main": "9f0fe5b2c096a49195ff8060d97584de235785d2",
+  "actualMainRefObserved": "9f0fe5b2c096a49195ff8060d97584de235785d2",
+  "fixedMainIsAncestorOfActualMain": true,
+  "ownerHead": "8b31599feb392fc0013c754023058f807860caec",
+  "receiptSource": "9f0fe5b2c096a49195ff8060d97584de235785d2:docs/evidence/i02/plugin-removal-and-management-intake/receipt.json",
+  "receiptSha256": "e40dc870123fafc7a614b8f5095397f211fce043d714ac1f3e1e834bef0683f7",
+  "receiptOriginalState": "SCOPED_INTEGRATION_STAGED_NOT_MAIN",
+  "receiptStateExplanation": "Original receipt was sealed before main FF and remains unmodified. Main membership is established separately by fixed Git object inclusion/ancestor and five current/source/main byte matches plus root explicit main handoff.",
+  "sources": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21512,
+      "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+      "mainEqualsTargetEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "mainEqualsTargetEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 39142,
+      "sha256": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+      "mainEqualsTargetEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 7258,
+      "sha256": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+      "mainEqualsTargetEqualsCurrent": true
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab",
+      "mainEqualsTargetEqualsCurrent": true
+    }
+  ],
+  "combinedCheckFromOriginalReceipt": "Focused strict TypeScript combination passed: exit0,2932ms,0stderr/stdout; process group final absent/dual EOF. Original transient EPERM and initial scratch KEEP preserved; exact owned compile-cache follow-up removed only after fresh identity/absence checks. Original independent source/local/PG/browser approvals retained at fixed canonical commits, no rerun, no copied historical source closure.",
+  "checksExecutedByOwnerThisSegment": [],
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ],
+    "state": "active",
+    "branch": "codex/web-plugin-runtime-management",
+    "origin": "new",
+    "taskId": "WPF-PLUGIN-RUNTIME01",
+    "worker": "w01_owner",
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+    "createdAt": "2026-10-07T10:50:07.619Z",
+    "updatedAt": "2026-10-07T10:50:07.619Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "completionScope": "Standalone management module accepted main; no production App/session wiring, HOST candidate UI, references UI or deployment."
+}

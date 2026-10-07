@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T13:31:20.069211+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_SCOPED_EXISTING_PRODUCT_PLUS_EXACT_ARCHIVE_SUPPLEMENT",
+  "findings": [],
+  "fixedTarget": "8b31599feb392fc0013c754023058f807860caec",
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "priorActualReview": {
+    "path": "/private/tmp/root-plugin-browser-b2-actual-visual-review-20261007.json",
+    "sha256": "df06464b7dd84ada480f4f3c7c707cd8035a75fffac0ca10c512dddcf8e5da24"
+  },
+  "supplement": {
+    "path": "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/sandbox.sb",
+    "bytes": 360,
+    "sha256": "65eae8671ba2dbabad1d9f2073c9cf56e6990c8ef8b6477941efdc67e3372085",
+    "actualOriginal": "/private/tmp/prm-b2/sandbox.sb",
+    "independentRead": "Root read all360bytes and verified git8b315/current/original actual bytes equal.",
+    "content": "Historical sandbox profile: default allow, deny writes except exact owned old scratch/raw and /dev/null, deny network except localhost bind/inbound/outbound. Archive does not launch anything or add product behavior."
+  },
+  "scope": "Combine existing approved five product/test paths with this exact one historical evidence artifact for fixed8b315 review. This supplements the classifier-visible archive only; no blanket approval of arbitrary future .sb files or active runtime command. No source change, new test or parser exemption requested.",
+  "mainBoundary": "Original main9f0fe5b2c096a49195ff8060d97584de235785d2 intake remains exactly the five product paths. This archive review does not add a sixth product path to main acceptance and does not claim mounted App integration or deployment.",
+  "next": "Original owner may record this bounded review in its current normal main-close metadata and release its original claim after actual stop/clean receipt. Release feature27c is separate."
+}

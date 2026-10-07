@@ -1,0 +1,200 @@
+{
+  "observedAt": "2026-10-07T13:29:40.933Z",
+  "kind": "OWN_METADATA_ONLY",
+  "statusSha256": "4e0303d35427bb6474f090382f6a517604adbafabd86e11ae670a351f7577f40",
+  "parsed": {
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-07T10:48:09.218Z",
+        "record": "2026-10-07T10:48:09.218Z"
+      },
+      "completed": {
+        "state": "known",
+        "at": "2026-10-07T13:28:34.664Z",
+        "record": "2026-10-07T13:28:34.664Z"
+      },
+      "source": {
+        "state": "declared",
+        "record": "[source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；本独立模块完成于本次[主线核齐](../../docs/evidence/wpf-plugin-runtime-management/main-close/verification.json) observedAt；不代表整个X01-06或后继TODO05完成"
+      },
+      "issues": [],
+      "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| PLUGIN-RUNTIME-W01 | UNKNOWN | 2026-10-07T10:46:23.929Z | 接口 | X01 两条路径等待 STOP/amend，现已移出；未知等待起点不补造 | [实际 handback](../../docs/evidence/wpf-plugin-runtime-management/x01-handback-receipt.json) |\n| PLUGIN-RUNTIME-W02 | UNKNOWN | 2026-10-07T12:07:49.693Z | 验证失败 | 原direct记录不完整，修复调用器后的新独立完整终态已通过；未知起点不推断 | [actual outer](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/outer/outer-exit.json) |\n| PLUGIN-RUNTIME-W03 | UNKNOWN | 2026-10-07T12:40:36.824Z | 资源 | manager确认个人窗口归还；实际本次已START，未知等待开始不补造 | [真实开始](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/outer/outer-start.json) |\n| PLUGIN-RUNTIME-W04 | 2026-10-07T12:40:49.209Z | 2026-10-07T12:50:00.119Z | 验证失败 | 保留原自然焦点断言；窄修后真实六组复验通过，等待已解除 | [首红](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/outer/outer-exit.json) / [复验实际结束](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/outer-exit.json) |"
+    },
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+        "id": "X01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web / root；external_web_d01_owner",
+        "value": "Web / root；external_web_d01_owner"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 4,
+      "output": "独立插件启停模块已进入主线，未知结果重试、会话隔离及刷新焦点已有验证",
+      "next": "本片段已交付；真实App接线、日用后端候选和任务引用视图另行推进",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "scopes": [
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/test/plugin-management/browser.ts",
+        "apps/web/test/plugin-management/fixture/main.tsx",
+        "apps/web/test/plugin-runtime-command.test.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-PLUGIN-RUNTIME01",
+    "owner": "w01_owner / gpt-6-astra Ultra",
+    "branch": "codex/web-plugin-runtime-management",
+    "branchState": "delivered",
+    "updatedAt": "2026-10-07T13:28:34.664Z",
+    "updatedRecord": "2026-10-07T13:28:34.664Z；固定 main 9f0fe5b2c096a49195ff8060d97584de235785d2 已核五源",
+    "todos": [
+      {
+        "id": "WPF-PLUGIN-RUNTIME01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)"
+      },
+      {
+        "id": "WPF-PLUGIN-RUNTIME01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[原六组受控组件旅程与双主题图](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)已独审；真实App接线未包含"
+      },
+      {
+        "id": "WPF-PLUGIN-RUNTIME01-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)、原strict0与[a952六browser](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)各保固定范围；旧局部父FAIL和首browser FAIL不改"
+      },
+      {
+        "id": "WPF-PLUGIN-RUNTIME01-04",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[a952源码与实际独审通过](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/root-actual-visual-review.json)；[正式主线接收及五源核对](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md)"
+      },
+      {
+        "id": "WPF-PLUGIN-RUNTIME01-05",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "[后继只读引用研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)，NOT_TAKEN；待共享输入集成与精确scope，不属本次b1验收"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "b67530bb025162629895d11482b5505d4a885c91；原0bc浏览器首红保留；焦点窄修复 a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+    "declaredDirty": "本批仅主线收据/计划收口；五源逐字a952/main，正常推送后clean并全七scope STOP",
+    "checks": {
+      "state": "passed",
+      "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "record": "PASSED a952ae81fefd3a82c9dfe42067048bcf2702d1c3 原6组/2图独审通过、outer0及清理；历史6544 strict/direct15单列，main组合strict0/2932ms；未重跑"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED a952原五源/受控模块六组及折叠B双390图；已主线接收；未部署",
+    "mainRecord": "INTEGRATED 9f0fe5b2c096a49195ff8060d97584de235785d2；五源逐字a952，[固定接收](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md)；未部署",
+    "next": "临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，本独立模块已main接收；尚非App接线/部署。",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3"
+  },
+  "proof": {
+    "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+    "head": "8b31599feb392fc0013c754023058f807860caec",
+    "scopes": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts"
+    ],
+    "observedAt": "2026-10-07T13:29:40.861Z",
+    "state": "unknown",
+    "implementationChanges": [],
+    "outsideChanges": [
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/sandbox.sb"
+    ],
+    "metadataChanges": [
+      "docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/claim-seal-observation.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/index.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/metadata-check.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/admission.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/gate.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/outer-exit.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/outer-start.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/outer-stderr.txt",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/outer-stdout.txt",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/outer/return-receipt.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/binding.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/browser-budget.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/child-gate.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/consumed-gate.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/manifest.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/result.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/runtime-evidence-manifest.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/worker.log",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/quality.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/root-actual-visual-review.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/runtime/browser-results.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/runtime/chrome.log",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/runtime/owned-chrome.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/runtime/plugin-runtime-dark-390.png",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/runtime/plugin-runtime-light-390.png",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/status-parser.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/summary.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/metadata-check.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/quality.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-input-audit.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/source-manifest.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/static-check.json",
+      "docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/status-parser.json",
+      "docs/evidence/wpf-plugin-runtime-management/main-intake.json",
+      "plans/wpf-plugin-runtime-management/plan.md",
+      "plans/wpf-plugin-runtime-management/review.md",
+      "plans/wpf-plugin-runtime-management/status.md",
+      "docs/evidence/wpf-plugin-runtime-management/quality.md",
+      "docs/evidence/wpf-plugin-runtime-management/main-close/README.md",
+      "docs/evidence/wpf-plugin-runtime-management/main-close/claim-observation.json",
+      "docs/evidence/wpf-plugin-runtime-management/main-close/previous-status.md",
+      "docs/evidence/wpf-plugin-runtime-management/main-close/receipt.json",
+      "docs/evidence/wpf-plugin-runtime-management/main-close/verification.json"
+    ],
+    "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+  }
+}

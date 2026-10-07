@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:28:34.664Z；固定 main 9f0fe5b2c096a49195ff8060d97584de235785d2 已核五源 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:54:44.662Z；固定 b675 输入；本批未读 moving main |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Web / root；external_web_d01_owner |
 | 任务开工时间 | 2026-10-07T10:48:09.218Z |
-| 任务完成时间 | 2026-10-07T13:28:34.664Z |
-| 任务时间来源 | [source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；本独立模块完成于本次[主线核齐](../../docs/evidence/wpf-plugin-runtime-management/main-close/verification.json) observedAt；不代表整个X01-06或后继TODO05完成 |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | [source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；完成尚未满足 |
 | 单一status owner / model | w01_owner / gpt-6-astra Ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management |
 | Branch | codex/web-plugin-runtime-management |
 | 工作基线 / HEAD | b67530bb025162629895d11482b5505d4a885c91；原0bc浏览器首红保留；焦点窄修复 a952ae81fefd3a82c9dfe42067048bcf2702d1c3 |
-| 工作树dirty状态 | 本批仅主线收据/计划收口；五源逐字a952/main，正常推送后clean并全七scope STOP |
-| 工作分支状态 | delivered |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED 8b31599feb392fc0013c754023058f807860caec 组合记录：a952原6组/2图与清理已审，第6档案限定源确认；历史6544与main strict分列，无新run |
-| 已集成main状态 / HEAD | INTEGRATED 9f0fe5b2c096a49195ff8060d97584de235785d2；仅五产品源逐字a952；第6归档非main交付，[固定接收](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md)；未部署 |
-| 实现目标 | 8b31599feb392fc0013c754023058f807860caec |
-| 实现范围 | apps/web/src/plugin-management/PluginManagement.tsx, apps/web/src/plugin-management/runtime-command.ts, apps/web/test/plugin-management/browser.ts, apps/web/test/plugin-management/fixture/main.tsx, apps/web/test/plugin-runtime-command.test.ts, docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/packet/sandbox.sb |
+| 工作树dirty状态 | 本批仅证据/计划收口；五源逐字a952，正常推送后全七范围STOP保claim |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | integration |
+| 检查状态 | PASSED（限定模块）：a952 browser原6组/2图独审通过、outer0及完整清理；历史6544 strict0/direct15按原输入单列，b1首红不改 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；b675 是共享输入，不含本模块 |
+| 实现目标 | a952ae81fefd3a82c9dfe42067048bcf2702d1c3 |
+| 实现范围 | apps/web/src/plugin-management/PluginManagement.tsx, apps/web/src/plugin-management/runtime-command.ts, apps/web/test/plugin-management/browser.ts, apps/web/test/plugin-management/fixture/main.tsx, apps/web/test/plugin-runtime-command.test.ts |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 独立插件启停模块已进入主线，未知结果重试、会话隔离及刷新焦点已有验证 |
-| 下一可用交付 | 本片段已交付；真实App接线、日用后端候选和任务引用视图另行推进 |
+| 当前产出 | 插件启停模块已验证未知结果重试、会话隔离和刷新焦点，窄屏浅深主题可读 |
+| 下一可用交付 | 将已审模块与固定证据交主线接收；真实App接线和日用后端候选另行推进 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 8b315固定5产品+1档案；原a952六组及折叠B双390图，main仅5产品/未部署 |
+| Review | [review.md](review.md)，APPROVED a952原五源/受控模块六组及折叠B双390图；未集成main/未部署 |
 | 领取 | 0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1；[COMMITTED 原件](../../docs/evidence/wpf-plugin-runtime-management/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -35,7 +35,7 @@
 | WPF-PLUGIN-RUNTIME01-01 | completed | w01_owner | [固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md) |
 | WPF-PLUGIN-RUNTIME01-02 | completed | w01_owner | [原六组受控组件旅程与双主题图](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)已独审；真实App接线未包含 |
 | WPF-PLUGIN-RUNTIME01-03 | completed | w01_owner | [direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)、原strict0与[a952六browser](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)各保固定范围；旧局部父FAIL和首browser FAIL不改 |
-| WPF-PLUGIN-RUNTIME01-04 | completed | w01_owner | [a952源码与实际独审通过](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/root-actual-visual-review.json)；[正式主线接收及五源核对](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md) |
+| WPF-PLUGIN-RUNTIME01-04 | in-progress | w01_owner | [a952源码与实际独审通过](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/root-actual-visual-review.json)；[精确主线接收清单](../../docs/evidence/wpf-plugin-runtime-management/main-intake.json)待接收 |
 | WPF-PLUGIN-RUNTIME01-05 | pending | w01_owner | [后继只读引用研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)，NOT_TAKEN；待共享输入集成与精确scope，不属本次b1验收 |
 
 ## 等待记录
@@ -49,7 +49,7 @@
 
 ## 边界与下一步
 
-临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，本独立模块已main接收；尚非App接线/部署。
+临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，当前是 branch 实施而非已部署。
 
 ## Dashboard 同步
 
@@ -87,16 +87,10 @@ Root 于2026-10-07T11:39:58Z已观察4320两API，模块source live/current、�
 
 本安全点已接[root a952/b2源码审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)与[同native边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json)，0finding；只绑定reviewed状态和最终metadata HEAD，不重跑/不造gate。剩额与原失败不变。
 
-## 历史：独立验收与待主线交接停点
+## 当前独立验收与主线交接停点
 
 [b2真实原件与独立目视](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)：a952原六组全部通过，outer0/唯一PASS/全部sealed hash与EOF/完整清理一致，2张390×844图限定Center B高级身份折叠态。浅色自然焦点环可见；深色在切主题后取得，不推定另一次深色键盘验证。App/session、后台加载、真实principal隔离、授权HOST候选和removal仍后继。
 
 原60s browser段CLOSED：b1首红12385ms+b2保守7566ms=19951ms，40049ms未用；parent历史19864与terminal7480原样保留。12:50:25.968903Z全部owned资源实际归还；当前无运行、无待launch，不以余量追加检查。正常metadata push/clean后全七scope停止写入、0a9 v1保留，等待管理交接；未release。
 
 [固定五源接收清单](../../docs/evidence/wpf-plugin-runtime-management/main-intake.json)保base/源commit/逐文件hash/启动fixture/历史检查边界。Review APPROVED与main NOT_INTEGRATED分列，完整任务仍NOT_COMPLETED。架构影响仅branch中的session-owned窄command controller与可选管理port，主线接入由既有X01/Web流程另行登记，不声称已部署。
-
-## 当前主线交付与停止写入
-
-[固定main收据及五源核对](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md)确认限定模块已接收。Review保持APPROVED固定a952，检查保持各自真实输入；main为9f0fe5b2，deployment未执行。任务完成仅本已领模块，TODO05及真实App/session/HOST/removal后继保持开放、NOT_TAKEN，整个X01-06不置Done。正常push/clean后全七scope停止写入；实际claim释放状态以账本及管理TMP回执为准，释放后不回写。Release另一claim不受本次影响。
-
-固定审查闭包补充：[root档案限定审](../../docs/evidence/wpf-plugin-runtime-management/main-close/root-archive-supplement-review.json)核历史360B sandbox.sb与8b315/current/原b2运行包相同。实现/审查声明采用8b315的5产品+1exact归档共6scope；claim仍原7，main接收仍只5产品。此声明不把档案变第6产品、不改proof parser/不改文件后缀/不新增运行；原a952实际批准及所有失败原件保留。

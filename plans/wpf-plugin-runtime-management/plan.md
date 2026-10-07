@@ -1,6 +1,6 @@
 # WPF-PLUGIN-RUNTIME01：中心插件启停模块
 
-状态：in-progress（已审待主线接收）；创建：2026-10-07T10:51:19.274Z；更新：2026-10-07T12:54:44.662Z。这是 [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) 原 X01-06 的有界模块子片（Mika正式确认，root核canonical），WPF-001-05仅保管理追溯，co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
+状态：delivered（独立管理模块已主线接收）；创建：2026-10-07T10:51:19.274Z；更新：2026-10-07T13:28:34.664Z。这是 [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) 原 X01-06 的有界模块子片（Mika正式确认，root核canonical），WPF-001-05仅保管理追溯，co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
 
 ## 目标与范围
 
@@ -21,7 +21,7 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 - [x] WPF-PLUGIN-RUNTIME01-01：公共读取与 session command controller；明确错误/冻结/失效。
 - [x] WPF-PLUGIN-RUNTIME01-02：管理组件启停与只读身份/可用性展示；fixture 持有实际生命周期。
 - [x] WPF-PLUGIN-RUNTIME01-03：受影响直接测试、类型与浏览器入口准备/实际验证，失败保真。
-- [ ] WPF-PLUGIN-RUNTIME01-04：固定源码独审与限定主线接收。
+- [x] WPF-PLUGIN-RUNTIME01-04：固定源码独审与限定主线接收。
 - [ ] WPF-PLUGIN-RUNTIME01-05：后继只读任务引用视图（NOT_TAKEN）；固定client与契约集成后另行确定scope，不是当前七范围实现或b1验收条件。
 
 ## 验收与边界
@@ -68,8 +68,12 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 
 本自然封存已收到[a952/b2限定独审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)：0finding、同native边界接受，实际仍未复验。正常metadata HEAD重绑不触发递归source review；下一运行继续manager唯一资源协调。
 
-## 当前固定交付与后继
+## 历史：固定交付与主线待接收
 
 [a952五源/六组/双图独立接受](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)，真实outer0、唯一PASS和完整cleanup；原b1焦点失败保留，不能补签旧五组。60s浏览器段以19951ms已用/40049ms未用安全关闭，不追加运行。截图为synthetic DTO真实HTTP模块的折叠B状态，未冒真实App和全平台验收。
 
 [主线接收包](../../docs/evidence/wpf-plugin-runtime-management/main-intake.json)列base、六个产品commit、五个最终literal/hash、fixture启动说明及各固定检查。下一步由原集成owner接收；本owner正常封存后全七scope STOP、claim保留，main/部署仍未发生。真实App/session、日用可读后端候选与removal引用按既定独立后继，不把整个X01-06标Done。
+
+## 当前限定交付完成
+
+[正式main接收](../../docs/evidence/wpf-plugin-runtime-management/main-close/README.md)固定9f0fe5b2与a952五源相同；原检查/独审不变，无重跑。独立模块完成核齐时间见唯一status与verification；真实App/session、日用HOST候选与TODO05引用UI仍未实施，不把整个X01-06或部署视为完成。七scope在normalpush/clean后STOP并fresh原子释放；后继重新协调权限，不恢复本旧claim。
