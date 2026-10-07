@@ -1,6 +1,6 @@
 # WPF-I01 主 App 插件挂载与运行时管理接线
 
-当前原任务后继：in-progress；固定base 3c9345df4aec85a37e8a2a155e079db260d515b1。所属[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)，沿原X01-06/WPF001-05职责；不新增大task。唯一owner workspace_panels_owner / gpt-6-astra，codex/web-plugin-runtime-app。本段真实供给开始2026-10-07T15:11:58.585Z；原task首次实际开工缺可靠事件，UNKNOWN不从旧03:00创建时间或take猜测。
+当前原任务后继：completed；固定base 3c9345df4aec85a37e8a2a155e079db260d515b1。所属[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)，沿原X01-06/WPF001-05职责；不新增大task。唯一owner workspace_panels_owner / gpt-6-astra，codex/web-plugin-runtime-app。本段真实供给开始2026-10-07T15:11:58.585Z；原task首次实际开工缺可靠事件，UNKNOWN不从旧03:00创建时间或take猜测。
 
 ## 当前接口与验收
 
@@ -16,7 +16,7 @@
 - [x] **WPF-I01-04** 原固定target独审/main收口完成，f4335历史保留。
 - [x] **WPF-I01-05** 既有centerRuntime接入App/session/Settings，live epoch失效与完整草稿保护；fixed49d71源码与相关局部独审通过，mounted证明归06。
 - [x] **WPF-I01-06** 4direct/affected types与真实App/Cookie受控HTTP四组实际通过；[第三实际](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)，真实中心安全/provider不在此证明内。
-- [ ] **WPF-I01-07** 新固定组合独立review与合法main接收，原发布组合不暗换。
+- [x] **WPF-I01-07** 新固定组合独立review与合法main接收完成；[main5592回执/精确六文件核验](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/verification.json)，原发布组合不暗换。
 
 ## 当前运行边界
 

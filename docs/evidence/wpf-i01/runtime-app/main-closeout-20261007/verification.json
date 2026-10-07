@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-07T17:10:04.144Z",
+  "main": "5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3",
+  "implementationTarget": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "ownerHeadBeforeSeal": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+  "receipt": {
+    "fixedRef": "5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3:docs/evidence/i02/i01-runtime-app-intake.json",
+    "bytes": 6247,
+    "sha256": "09ceabe771436439184c758a3084bfd458d12b64ce665ec38e2735b19881b652"
+  },
+  "exactSix": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e",
+      "mainTargetOwnerBytesEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d",
+      "mainTargetOwnerBytesEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907",
+      "mainTargetOwnerBytesEqual": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "bytes": 17691,
+      "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631",
+      "mainTargetOwnerBytesEqual": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "bytes": 26157,
+      "sha256": "32e8699619cff57c112eb0767b54dee782bdbc001a7e17ad554eaa71d858d136",
+      "mainTargetOwnerBytesEqual": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "bytes": 19746,
+      "sha256": "6578782e1a787f769d92f18bf53cf46d5b5f5e35b128962344880202dfaf137d",
+      "mainTargetOwnerBytesEqual": true
+    }
+  ],
+  "validation": "read-only Git/byte comparison only; no product or runtime recheck",
+  "completionSource": "Owner completed exact main receipt and all six target/source byte verification at observedAt; does not infer original task start from commits/claims",
+  "limits": [
+    "original two browser FAILs unchanged",
+    "third actual 4 groups PASS remains controlled HTTP fixture; not real center safety/plugin execution/personal deployment",
+    "no source or shared manifest change"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "observedAt": "2026-10-07T17:10:57.026Z",
+  "scope": "one own-status/review metadata parse; no engineering/runtime test",
+  "parser": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+    "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+  },
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "unknown",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "设置页运行时插件管理、会话撤权与草稿保护已验证并合法合入主线；双主题窄屏已验",
+    "next": "本工程片已交付；真实中心安全、插件执行与个人部署不在本片证明内，发布组合未被暗换",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [
+      "本片段交付阶段"
+    ],
+    "complete": false
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "known",
+      "at": "2026-10-07T17:10:04.144Z",
+      "record": "2026-10-07T17:10:04.144Z"
+    },
+    "source": {
+      "state": "declared",
+      "record": "原task首次实际开工缺可靠事件；本续段实际供给开始2026-10-07T15:11:58.585Z见runtime-app/preflight；完成为owner在2026-10-07T17:10:04.144Z完成固定main回执与六文件逐字核验的实际观察，见[verification](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/verification.json)，不按commit/claim推算"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "早期源码开发期间checks未ready，不将SVC09A约束计为等待。新增4个authority回归与六source affected noEmit在drain解除后已实际完成；30s合计10834ms，账本CLOSED；未用19166不转额度。首types导入红与窄fix49d71保留。首browser实际失败、owned资源完整归还；无新runtime预约。\n| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| I01-LOCAL-DRAIN | 2026-10-07T15:31:31.437Z | 2026-10-07T15:37:56.812Z | 资源 | 已ready检查在首child前停止；待经理确认Web构建实际RETURN | [实际观察](../../docs/evidence/wpf-i01/runtime-app/local-drain.json)；开始/结束为owner观察与恢复fresh时点，不反推消息到达时间；Web实际RETURN15:34:52.365620Z来源manager |"
+  },
+  "checks": {
+    "state": "passed",
+    "target": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+    "record": "PASSED 5438e375a92f47c1a68d81aeed172a1bfdf05962；第三实际四组/双图/owned清理闭合；两旧FAIL保留，非真实中心安全或插件执行"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED（精确六source组合5438；原source/local与第三mounted actual限定通过，已合法main接收5592）。",
+    "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f"
+  },
+  "main": "INTEGRATED 5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3；[原Lead接收回执](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/i01-runtime-app-intake.json)，target5438 exact6逐字同",
+  "todos": [
+    {
+      "id": "WPF-I01-01",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-02",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-03",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-04",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-05",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-06",
+      "state": "completed"
+    },
+    {
+      "id": "WPF-I01-07",
+      "state": "completed"
+    }
+  ]
+}

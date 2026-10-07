@@ -4,29 +4,29 @@
 | --- | --- |
 | 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:01:29.394778Z；第三四组/双图/RETURN独审APPROVED，固定5438六source待main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:10:04.144Z；fixed main 5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3 精确六source与target5438逐字核同，原Lead回执已核 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原task首次实际开工缺可靠事件；本续段实际供给开始2026-10-07T15:11:58.585Z见runtime-app/preflight，不重置原task时间、不取旧创建或claim为开工 |
+| 任务完成时间 | 2026-10-07T17:10:04.144Z |
+| 任务时间来源 | 原task首次实际开工缺可靠事件；本续段实际供给开始2026-10-07T15:11:58.585Z见runtime-app/preflight；完成为owner在2026-10-07T17:10:04.144Z完成固定main回执与六文件逐字核验的实际观察，见[verification](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/verification.json)，不按commit/claim推算 |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app |
 | Branch | codex/web-plugin-runtime-app |
 | 工作基线 / HEAD | 3c9345df4aec85a37e8a2a155e079db260d515b1；metadata实际HEAD由Git记录 |
-| 工作树dirty状态 | 本批仅own metadata封存；正常push后全8scope STOP，actual Git HEAD见封存回执；0工程child/NO_NEXT |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 工作树dirty状态 | 本批仅own metadata；normalpush/clean后全8scope STOP并由外部fresh CAS释放；释放后不补项目写入 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 5438e375a92f47c1a68d81aeed172a1bfdf05962；第三实际四组/双图/owned清理闭合；两旧FAIL保留，非真实中心安全或插件执行 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；fixed 3c9345df4aec85a37e8a2a155e079db260d515b1仅已包含runtime模块与MSG，未接本后继 |
+| 已集成main状态 / HEAD | INTEGRATED 5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3；[原Lead接收回执](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/i01-runtime-app-intake.json)，target5438 exact6逐字同 |
 | 实现目标 | 5438e375a92f47c1a68d81aeed172a1bfdf05962 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/test/plugin-integration.test.ts, apps/web/test/plugin-management-integration.browser.ts, apps/web/test/plugin-management-integration.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 运行时插件管理已接入设置页；关闭后可继续原操作，重连后保留草稿并撤销旧操作权限；窄屏双主题已验证 |
-| 下一可用交付 | 将已审App接线纳入主线；真实中心与个人部署仍按各自交付范围验收 |
+| 当前产出 | 设置页运行时插件管理、会话撤权与草稿保护已验证并合法合入主线；双主题窄屏已验 |
+| 下一可用交付 | 本工程片已交付；真实中心安全、插件执行与个人部署不在本片证明内，发布组合未被暗换 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 5438e375a92f47c1a68d81aeed172a1bfdf05962；[source/local](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)与[第三实际](../../docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json)限定通过，精确六source待main |
+| Review | APPROVED 5438e375a92f47c1a68d81aeed172a1bfdf05962；[source/local](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)与[第三实际](../../docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json)限定通过；main exact6已接收 |
 | Claim | 61abce36-a4d1-4531-9b04-dedaae86108b v1 ACTIVE exact8；COMMITTED 2026-10-07T15:12:21.486Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | WPF-I01-04 | completed | workspace_panels_owner | [f4335主线收口](../../docs/evidence/wpf-i01/history/legacy-f4335/status.md) |
 | WPF-I01-05 | completed | workspace_panels_owner | [固定source/local独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)；mounted验收归06 |
 | WPF-I01-06 | completed | workspace_panels_owner | [四direct与affected types实际记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)；[第二browser原件](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json)，2/4完整组/整体FAIL；[第三实际4/4与双图](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)通过，owned清理闭合 |
-| WPF-I01-07 | in-progress | workspace_panels_owner | 源码/local与第三browser actual独审APPROVED；[main-intake](../../docs/evidence/wpf-i01/runtime-app/main-intake.json)，仅合法main接收未完成 |
+| WPF-I01-07 | completed | workspace_panels_owner | source/local与第三实际独审APPROVED；[main fixed receipt与六文件核验](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/verification.json)，全部8scope待本批正常push后STOP/外部CAS释放 |
 
 ## 等待记录
 
@@ -74,3 +74,7 @@
 ## 第三次实际当前事件
 
 2026-10-07T16:58:02.535880Z START；run i01-leave-20261007-165756-53bb61，outer90137/parent90144。独立60s不借旧额度；0PG/2ownedHTTP/1Chrome。fresh218source+42external+11packet通过，完整free20,051,828,736B，actualfloor18,119,655,424B（保frozenbinding更高线，经理最新14,950,858,752B）。实际outer terminal16:58:11.349458Z/exit0；16:58:52.399044Z精确FULLRETURN，4/4/双PNG。计费8814/60000、未用51186封闭；无自动重跑。context/两HTTP closed、outer与Chrome双EOF、精确PID/组及scratch/cachelinks absent。未做独立portprobe。
+
+## 当前主线收口
+
+固定main `5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3` 已合法接收target5438六文件；原回执6247B/SHA256 `09ceabe771436439184c758a3084bfd458d12b64ce665ec38e2735b19881b652`。仅复制这份小回执，不复制原runtime raw。两次FAIL与第三4/4、双PNG、无独立portprobe/受控Cookie HTTP边界保持。没有新工程检查或部署。

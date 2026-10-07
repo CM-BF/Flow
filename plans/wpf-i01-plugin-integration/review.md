@@ -1,8 +1,8 @@
 # WPF-I01 当前后继独立 review
 
-状态：APPROVED（精确六source组合5438；原source/local与第三mounted actual限定通过，待合法main接收）。
+状态：APPROVED（精确六source组合5438；原source/local与第三mounted actual限定通过，已合法main接收5592）。
 
-Target: `5438e375a92f47c1a68d81aeed172a1bfdf05962`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
+Review target commit: `5438e375a92f47c1a68d81aeed172a1bfdf05962`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
 当前唯一[六source manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)。49d71源码/local由[root20d2](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)批准（4PASS/10未选、affected noEmit首2/fix0）；ee9bd scoped Files由[root5b002](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)批准。5438仅增加四行真实公开附件离开确认，获[root3bcc](../../docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json)APPROVED/0finding；产品、四组、原held ACK/reconnect/完整draft及timeout不变。第三实际4/4已通过，见下方当前证据。
 
@@ -12,7 +12,7 @@ Target: `5438e375a92f47c1a68d81aeed172a1bfdf05962`；Base: `3c9345df4aec85a37e8a
 
 ## 当前第三actual
 
-[18原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)：8814/60000已计、余51186封闭。原两次FAIL保留。root[第三actual独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json)APPROVED/0blocking；四组、原key/body、截图与清理已独核。main尚未接收；[精确接收清单](../../docs/evidence/wpf-i01/runtime-app/main-intake.json)。
+[18原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)：8814/60000已计、余51186封闭。原两次FAIL保留。root[第三actual独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json)APPROVED/0blocking；四组、原key/body、截图与清理已独核。main `5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3`已接收精确六文件，见[实际回执与核验](../../docs/evidence/wpf-i01/runtime-app/main-closeout-20261007/verification.json)；[精确接收清单](../../docs/evidence/wpf-i01/runtime-app/main-intake.json)。
 
 ## 原始review历史（不作当前批准）
 

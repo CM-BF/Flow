@@ -1,0 +1,124 @@
+{
+  "at": "2026-10-07T17:05:27.267Z",
+  "state": "CONTROLLED_EXACT_SIX_PATH_INTAKE",
+  "base": "b293afc825a298f06fdd81148c49128f166e0610",
+  "target": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "ownerHead": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+  "claim": "61abce36-a4d1-4531-9b04-dedaae86108b v1 STOP",
+  "reviewer": "Web root / gpt-6-astra ultra; existing source/local and third mounted-result approval",
+  "P1": 0,
+  "P2": 0,
+  "source": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e",
+      "preimageMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d",
+      "preimageMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "478f8f2130cfa43bb192ca1574dd385c7eb1740c",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907",
+      "preimageMatches": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "d9afe2b8853600544724091f158c1bbdfe3f27cc",
+      "bytes": 17691,
+      "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631",
+      "preimageMatches": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "37146d539ce126321292418061869c6cba6244d2",
+      "bytes": 26157,
+      "sha256": "32e8699619cff57c112eb0767b54dee782bdbc001a7e17ad554eaa71d858d136",
+      "preimageMatches": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "originCommit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "mode": "100644",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "blob": "34408d434242fb3e6263740678e519c26ab00008",
+      "bytes": 19746,
+      "sha256": "6578782e1a787f769d92f18bf53cf46d5b5f5e35b128962344880202dfaf137d",
+      "preimageMatches": true
+    }
+  ],
+  "evidence": [
+    {
+      "originCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+      "path": "docs/evidence/wpf-i01/runtime-app/main-intake.json",
+      "mode": "100644",
+      "bytes": 5971,
+      "sha256": "479db4c14399b2015b4dd339b153f0dc38b19f6d17fdcbd193bb6e4994ca0906",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/main-intake.json"
+    },
+    {
+      "originCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+      "path": "docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json",
+      "mode": "100644",
+      "bytes": 8405,
+      "sha256": "20d2ce5e943819bfefd1e64eb9fb78a66a11cf9ceef015b952961e66e84d3253",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json"
+    },
+    {
+      "originCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+      "path": "docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json",
+      "mode": "100644",
+      "bytes": 5826,
+      "sha256": "5b0026d12efc5026310c5d5d8ead1c59e2a4c54ec0976f2b297cba53d0a22c55",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json"
+    },
+    {
+      "originCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+      "path": "docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json",
+      "mode": "100644",
+      "bytes": 2696,
+      "sha256": "3bccb60a207ee7b0c1773549841b6b32afc503a01fef420e9ea75598b39c2b7e",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json"
+    },
+    {
+      "originCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+      "path": "docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json",
+      "mode": "100644",
+      "bytes": 8819,
+      "sha256": "90195130a59c63a6bc3fdb2afe827708bc1c5f580ec53269b6f70d285e59c086",
+      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json"
+    }
+  ],
+  "validation": "Fresh main preimages exactly match six declared base blobs; target/owner disk equal; main changes since source base in web/client/contracts limited to four unrelated verifier contracts/tests. Reuse direct4/types0 and mounted fourgroup/twotheme reviewed evidence; no redundant tests.",
+  "browserScope": "Actual App/FlowClient over controlled Cookie/registry HTTP; not real center/runner/PG/security",
+  "failedHistory": "First/second browser FAIL preserved in original canonical Git/raw; no copied historical tree",
+  "deployment": "Not a personal Web release; fixed779/c231 and2515/098b/cd27/04da unchanged",
+  "timing": {
+    "reviewedAt": "2026-10-07T17:00:29.814635Z",
+    "intakeStartedAt": "2026-10-07T17:05:27.267Z"
+  },
+  "architecture": "Existing session owns runtime management commands; no new transport/scheduler/state authority"
+}
