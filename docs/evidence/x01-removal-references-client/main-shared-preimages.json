@@ -1,0 +1,28 @@
+{
+  "mainObservedCleanAt": "2026-10-07T12:16:18Z",
+  "main": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+  "rows": [
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 68285,
+      "sha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba",
+      "baseSha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 9257,
+      "sha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6",
+      "baseSha256": "ABSENT_AT_BASE"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 29194,
+      "sha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93",
+      "baseSha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449"
+    }
+  ],
+  "note": "Mika authorized exact three shared main leaves after STOP/amend/newtake; plugin-management absent at dependency base, now own scope; base is branch not main"
+}

@@ -1,0 +1,139 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client
+
+ ❯ packages/client/src/plugin-removal-references.test.ts (12 tests | 12 failed) 18ms
+   × reads one reference page, retaining same-material different operations and server microsecond order 14ms
+   × preserves empty pages with next and only fetches again when explicitly called 0ms
+   × detaches the query and uses existing cookie authentication without a write or CSRF request 0ms
+   × rejects unverified removal registration as UNKNOWN without retry 0ms
+   × rejects unverified removal query operation as UNKNOWN without retry 0ms
+   × rejects unverified removal duplicate binding as UNKNOWN without retry 0ms
+   × rejects unverified removal repeated cursor as UNKNOWN without retry 0ms
+   × rejects unverified removal deletion authority as UNKNOWN without retry 0ms
+   × rejects unverified removal cross-registration coverage as UNKNOWN without retry 0ms
+   × rejects unverified removal oversized page as UNKNOWN without retry 0ms
+   × preserves typed revision conflicts and maps malformed, oversized and cancelled reads to UNKNOWN 0ms
+   × rejects bad inputs before transport and accepts the full 40 item page and 768 character opaque cursor 1ms
+ ❯ apps/cli/src/plugin-removal-references.test.ts (2 tests | 2 failed) 16ms
+   × prints the checked observation and manual continuation without claiming deletion permission 14ms
+   × keeps usage, unknown response and typed stale-cursor rejection distinct without resetting the cursor 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 14 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/cli/src/plugin-removal-references.test.ts > prints the checked observation and manual continuation without claiming deletion permission
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ apps/cli/src/plugin-removal-references.test.ts:8:76
+      6| it('prints the checked observation and manual continuation without cla…
+      7|   const body = { ...page(), references: [], nextCursor: 'Next_page' };…
+      8|   const result = await cli(['--after', 'Prior_page']); expect(result.c…
+       |                                                                            ^
+      9|   expect(String(fetch.mock.calls[0]![0])).toContain('&cursor=Prior_pag…
+     10|   expect(result.out[0]).toContain('not-authorized'); expect(result.out…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/14]⎯
+
+ FAIL  apps/cli/src/plugin-removal-references.test.ts > keeps usage, unknown response and typed stale-cursor rejection distinct without resetting the cursor
+AssertionError: expected 2 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 2
+
+ ❯ apps/cli/src/plugin-removal-references.test.ts:15:83
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > reads one reference page, retaining same-material different operations and server microsecond order
+TypeError: client(...).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:9:25
+      7|   const body = page(); body.references = [reference(12), reference(10)…
+      8|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(re…
+      9|   expect(await client().pluginRemovalReferences(id, query)).toEqual(bo…
+       |                         ^
+     10|   expect(fetch).toHaveBeenCalledTimes(1);
+     11|   const [url, init] = fetch.mock.calls[0]!;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > preserves empty pages with next and only fetches again when explicitly called
+TypeError: client(...).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:19:25
+     17|   const empty = { ...page(), references: [], nextCursor: 'Opaque_micro…
+     18|   const fetch = vi.spyOn(globalThis, 'fetch').mockResolvedValueOnce(re…
+     19|   expect(await client().pluginRemovalReferences(id, query)).toEqual(em…
+       |                         ^
+     20|   await client().pluginRemovalReferences(id, { ...query, cursor: empty…
+     21|   expect(String(fetch.mock.calls[1]![0])).toContain('&cursor=Opaque_mi…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > detaches the query and uses existing cookie authentication without a write or CSRF request
+TypeError: (intermediate value).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:25:122
+     23| it('detaches the query and uses existing cookie authentication without…
+     24|   const input = { ...query }; const fetch = vi.spyOn(globalThis, 'fetc…
+     25|   const body = await new FlowClient({ baseUrl: 'https://flow.example',…
+       |                                                                                                                          ^
+     26|   expect(body.materialInstallOperationId).toBe(material); expect(fetch…
+     27|   const headers = new Headers(fetch.mock.calls[0]![1]?.headers); expec…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal registration as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal query operation as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal duplicate binding as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal repeated cursor as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal deletion authority as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal cross-registration coverage as UNKNOWN without retry
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects unverified removal oversized page as UNKNOWN without retry
+TypeError: client(...).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:39:25
+     37| ] as const)('rejects unverified removal %s as UNKNOWN without retry', …
+     38|   const body = page(); mutate(body); const fetch = vi.spyOn(globalThis…
+     39|   await expect(client().pluginRemovalReferences(id, { ...query, cursor…
+       |                         ^
+     40|   expect(fetch).toHaveBeenCalledTimes(1);
+     41| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > preserves typed revision conflicts and maps malformed, oversized and cancelled reads to UNKNOWN
+TypeError: client(...).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:46:25
+     44|     .mockResolvedValueOnce(new Response('{')).mockResolvedValueOnce(ne…
+     45|     .mockResolvedValueOnce(new Response('x'.repeat(4097), { status: 50…
+     46|   await expect(client().pluginRemovalReferences(id, { ...query, cursor…
+       |                         ^
+     47|   for (let i = 0; i < 3; i++) await expect(client().pluginRemovalRefer…
+     48|   const abort = new AbortController(); abort.abort(new Error('panel cl…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/14]⎯
+
+ FAIL  packages/client/src/plugin-removal-references.test.ts > rejects bad inputs before transport and accepts the full 40 item page and 768 character opaque cursor
+TypeError: client(...).pluginRemovalReferences is not a function
+ ❯ packages/client/src/plugin-removal-references.test.ts:58:70
+     56|   expect(() => client().pluginRemovalReferences('not-a-uuid', query)).…
+     57|   const body = page(); body.references = Array.from({ length: 40 }, (_…
+     58|   fetch.mockResolvedValueOnce(response(body)); expect(await client().p…
+       |                                                                      ^
+     59| });
+     60| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/14]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  14 failed (14)
+   Start at  05:21:50
+   Duration  651ms (transform 240ms, setup 0ms, import 445ms, tests 34ms, environment 0ms)
+

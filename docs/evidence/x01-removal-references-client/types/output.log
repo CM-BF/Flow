@@ -1,0 +1,21 @@
+packages/client/src/index.ts(9,10): error TS2305: Module '"../../contracts/src/assistant-stream.js"' has no exported member 'ASSISTANT_SELECTION_PROTOCOL'.
+packages/client/src/index.ts(9,40): error TS2724: '"../../contracts/src/assistant-stream.js"' has no exported member named 'assistantStreamSelectionSchema'. Did you mean 'assistantStreamReasonSchema'?
+packages/client/src/index.ts(9,104): error TS2724: '"../../contracts/src/assistant-stream.js"' has no exported member named 'AssistantStreamProtocol'. Did you mean 'AssistantStreamPatch'?
+packages/client/src/index.ts(9,134): error TS2724: '"../../contracts/src/assistant-stream.js"' has no exported member named 'AssistantStreamSelection'. Did you mean 'AssistantStreamSettlement'?
+packages/client/src/index.ts(9,165): error TS2724: '"../../contracts/src/assistant-stream.js"' has no exported member named 'AssistantStreamSelectedPage'. Did you mean 'AssistantStreamPage'?
+packages/client/src/index.ts(9,199): error TS2724: '"../../contracts/src/assistant-stream.js"' has no exported member named 'AssistantStreamSelectedPatchPage'. Did you mean 'AssistantStreamPatchPage'?
+packages/client/src/index.ts(10,10): error TS2305: Module '"@flow/contracts"' has no exported member 'CONVERSATION_HEADER'.
+packages/client/src/index.ts(10,31): error TS2305: Module '"@flow/contracts"' has no exported member 'NATIVE_CONVERSATION_VERSION'.
+packages/client/src/index.ts(10,60): error TS2724: '"@flow/contracts"' has no exported member named 'NATIVE_EXECUTION_PROFILE_V2'. Did you mean 'NativeExecutionProfile'?
+packages/client/src/index.ts(10,89): error TS2724: '"@flow/contracts"' has no exported member named 'nativeExecutionProfileCatalogV2PageSchema'. Did you mean 'nativeExecutionProfileCatalogPageSchema'?
+packages/client/src/index.ts(10,137): error TS2724: '"@flow/contracts"' has no exported member named 'NativeExecutionProfileCatalogV2Page'. Did you mean 'NativeExecutionProfileCatalogPage'?
+packages/client/src/index.ts(11,15): error TS2305: Module '"@flow/contracts"' has no exported member 'NativeActivityBodyDescriptor'.
+packages/client/src/index.ts(11,45): error TS2724: '"@flow/contracts"' has no exported member named 'NativeActivityBodySupport'. Did you mean 'NativeActivityBody'?
+packages/client/src/index.ts(15,10): error TS2724: '"@flow/contracts"' has no exported member named 'runnerIdentitySchema'. Did you mean 'runnerEventSchema'?
+packages/client/src/index.ts(15,32): error TS2305: Module '"@flow/contracts"' has no exported member 'runnerClaimRequestSchema'.
+packages/client/src/index.ts(15,58): error TS2305: Module '"@flow/contracts"' has no exported member 'decodeRunnerClaimResponse'.
+packages/client/src/index.ts(15,90): error TS2305: Module '"@flow/contracts"' has no exported member 'RunnerIdentity'.
+packages/client/src/index.ts(15,111): error TS2305: Module '"@flow/contracts"' has no exported member 'RunnerClaimRequest'.
+packages/client/src/index.ts(15,136): error TS2724: '"@flow/contracts"' has no exported member named 'RunnerClaimResponse'. Did you mean 'ClaimResponse'?
+packages/client/src/index.ts(132,59): error TS7006: Parameter 'block' implicitly has an 'any' type.
+packages/client/src/index.ts(681,121): error TS2554: Expected 3 arguments, but got 4.

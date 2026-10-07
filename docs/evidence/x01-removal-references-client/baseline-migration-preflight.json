@@ -1,0 +1,97 @@
+{
+  "from": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+  "to": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+  "borrowedRows": [
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "apps/cli/src/watch.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 3573,
+      "sha256": "69bd0c2ac53fa795e8f8490576cf68b73a03ae56fadde2c936dc8895b328415e",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "packages/client/src/plugin-host-candidates.test.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 5598,
+      "sha256": "b7526ef8d8ceba99ebad4eea7599dcfe11bbc7423d0c878b76134c11a65ad0d7",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "apps/cli/src/plugin-host-candidates.test.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 1834,
+      "sha256": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "packages/client/src/plugin-command-ack.test.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 7647,
+      "sha256": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "apps/cli/src/plugin-command-ack.test.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 3382,
+      "sha256": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "docs/evidence/x01-host-candidates-client/fixtures.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 1037,
+      "sha256": "2760fb6d1b9a0710047b447dc10af15ecb8dd1b66d1c6de8689f8db2ce2b09e6",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 1228,
+      "sha256": "d95a44bf46be153c3fe509ed3de57c2578c17a6e1fdbf5527cd8fc1d0daad8c3",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    },
+    {
+      "path": "docs/evidence/x01-cli-commands/fixtures.ts",
+      "source": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+      "bytes": 2727,
+      "sha256": "0c0d85c3d68e962dfca95b27ae35e7cf201c0a15c815fc85d4a0a99645385796",
+      "mode": "0444",
+      "borrowedReadOnly": true
+    }
+  ],
+  "borrowedVerifiedMainBytes": true,
+  "authorization": "Mika current message: commit all own work/evidence, backup ref, rebase only own delta; no history/base overlay; exact removal contract81a remains read-only",
+  "priorChecks": "14/14 new behavior green; 21 mixed-base types diagnostics retained; not validation of new base"
+}

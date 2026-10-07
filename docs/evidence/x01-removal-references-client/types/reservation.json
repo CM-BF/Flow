@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T12:22:33.633977+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/tsconfig.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+  "free": 21799297024,
+  "required": 6500000000,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/types/tmp",
+    "dev": 16777234,
+    "ino": 124120679
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

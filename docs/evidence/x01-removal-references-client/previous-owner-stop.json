@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T12:17:22.759105+00:00",
+  "scope": [
+    "apps/cli/src/index.ts",
+    "packages/client/src/index.ts",
+    "packages/client/src/plugin-management.ts"
+  ],
+  "state": "STOPPED_WRITING",
+  "owner": "db_transaction_owner",
+  "oldClaim": "3f0e3404-8415-4cc6-8b8f-88b8f7317dc9",
+  "purpose": "handoff shared three leaves to new removal references client; old owner will not resume writes"
+}
