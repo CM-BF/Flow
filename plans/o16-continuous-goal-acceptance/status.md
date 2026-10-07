@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:29:24.726081+00:00 |
+| 最近更新 | 2026-10-07T11:44:43.555762+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -14,20 +14,20 @@
 | HEAD | 实验诊断source49d仍main；同runtime auth caller dff8e1f8 / result477e；封存缺口另列 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 同runtime auth一次：loggedIn=false/authMethodnone，native174ms/exit1；准备+实际1085ms，两组absent/双EOF/无signals，私有427B KEEP。3纯自检+syntax0，0query；真实SDK仍累计3。 |
-| Review | R3结果已限定独审/main f68dbb71；同runtime公开状态结果待独立限定审查；native原结构被大小写冲突覆盖，按剩余证据限定 |
+| 检查状态 | 同runtime auth公开false/none/firstParty；准备787ms有原始监督记录。native174ms/exit1/absent及私有427B仅工具回执/派生摘要口径，完整native结构缺失；0新检查，SDK累计3。 |
+| Review | 同runtime结果APPROVED_LIMITED_REMAINING_AUTH_STATUS_EVIDENCE_WITH_RECORD_LOSS，唯一I02审查见source-resolution.json；完整native观察链未获批准，缺口不重建。 |
 | 实现目标 | 49d35d97e2d5d529d34dc29458ed2d95f2474909 |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | 诊断49d main fb647700；R3固定失败8e/8d已main f68dbb71，限定忠实性独审在I02 o16-native-r3-result-review.json；289产品仍f5a，无重测。 |
+| 已集成main状态 | 诊断49d main fb647700；R3失败main f68dbb71；同runtime auth f85a已main62e9a839，唯一I02 o16-same-runtime-auth-review.json仅批准剩余证据；本次只读源码结论文档待接收，289产品仍f5a，无重测。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 同版本私有环境的公开状态未识别登录来源，已保存白名单结果与收尾事实；没有新增模型请求。 |
-| 下一可用交付 | 完成本次限定独审，并只读明确私有环境与既有认证来源解析的差异。 |
-| 当前阻塞 | ACTIVE: 规划报告认证失败，同环境状态也未识别来源；实际来源差异尚未定位，三次模型额度已用完。 |
+| 当前产出 | 同版本私有环境未识别登录的现有证据已审并接收；已明确认证来源的解析路径，实际未识别原因仍未知。 |
+| 下一可用交付 | 收录本次解析路径结论；进一步运行诊断须先明确可区分的非秘密观察与授权边界。 |
+| 当前阻塞 | ACTIVE: 现有源码只能说明来源选择，不能证明钥匙串实际读取或认证成功；原native完整观察链缺失，三次模型额度已用完。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN/无第4次；R3结构authentication_failed。后续一次同runtime auth公开false/none，0query；独立审查需保留[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)，旧FAIL/KEEP和children未授权不变 |
+| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN/无第4次；R3结构authentication_failed。后续一次同runtime auth公开false/none，0query；限定独审/main62e9仍保留[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)，旧FAIL/KEEP和children未授权不变 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -127,3 +127,5 @@
 2026-10-07T11:25:52.629Z：同runtime[公开认证状态](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)仅一次，loggedIn=false/authMethodnone，原生exit1不是认证通过。11:24:40.634148Z两组absent/双EOF后归还local；新私有427B材料按原empty-only规则KEEP，原stdout/stderr不保存/hash/外发。原SDK3/无第四次，旧KEEP与R3失败不改。待一次结果独审；后继仅源码归因，不让用户盲目重新登录。
 
 2026-10-07T11:29:24.726081+00:00：封存自查发现仅大小写不同的RESULT.json覆盖原result.json；477e已固定事后摘要，原native完整结构未能保留。另记[fidelity-gap](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)与[disposition](../../docs/evidence/o16/same-runtime-auth-once/disposition-summary.json)，剩余工具白名单回执/预约/准备/cleanup分别限定，不重跑或补造。现送唯一限定独审。
+
+2026-10-07T11:44:43.555762+00:00：fresh55c4v1/clean f85a后，仅归档assignment已有[固定源码解析结论](../../docs/evidence/o16/same-runtime-auth-once/source-resolution.json)。空secure override选择默认Keychain service，但文件fallback仍私有HOME，security默认搜索路径不能证明实际访问；私有CLAUDE_CONFIG_DIR改变global config路径。14公开env已含SDK3变量，未确认缺项/版本不兼容，不归因用户退出。auth剩余证据已获限定独审并main62e9；原覆盖丢失/摘要口径不补造。0新auth/query/PG/工程检查/私有配置读取，源码和全部KEEP不变；后继解除条件明确，不签新许可。
