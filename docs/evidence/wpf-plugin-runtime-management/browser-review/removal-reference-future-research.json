@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-07T12:35:37.022576+00:00",
+  "author": "root / GPT-6 Astra Ultra",
+  "kind": "READ_ONLY_FUTURE_CONSUMER_RESEARCH",
+  "parent": "X01 plugin lifecycle; future Web consumer, not current seven-path runtime-management slice",
+  "clientSource": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+  "clientDelivery": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+  "requiredContractSource": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/packages/contracts/src/plugin-removal.ts",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/packages/client/src/index.ts",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/packages/client/src/plugin-management.ts",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/packages/client/src/plugin-removal-references.test.ts",
+      "bytes": 5540,
+      "sha256": "835df85a636678100b1e02031ac53d8d20674b4fb9f4c934e5c71215ee1e3b43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/client-interface.md",
+      "bytes": 1243,
+      "sha256": "e89b6e8414590495f08d72215e9513649a318c38deb670efb1a87a7c8724bbc4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json",
+      "bytes": 4121,
+      "sha256": "f0a6739ac2066be0f4a4449622ecaa48210ae70a6cfa144b2e5071516be3d0b5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21430,
+      "sha256": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/use-read.ts",
+      "bytes": 1061,
+      "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba"
+    }
+  ],
+  "finding": "A reviewed read-only removal-reference client now exists, but the current Web PluginManagement has no reference observation surface. Its generic useRead intentionally retains prior data and discards typed error details; directly reusing it across material/cursor identity changes would obscure the new API semantics.",
+  "proposedBehavior": [
+    "Expose a host-owned View task references action for the selected registration and exact material installation operation, through the existing management extension surface. Keep the consumer read-only.",
+    "Show active, uncertain and historical classifications with their server reason, task/attempt binding and full inspectable identity. Do not call historical rows live users of the material.",
+    "Label coverage registration tool-task bindings and host release unknown. Empty results and historical-only pages never become safe-to-uninstall or physical-removal permission.",
+    "Read exactly one page per explicit action, up to 40 rows/64 KiB. Empty pages can have Next. Preserve opaque cursor and server ordering/microsecond timestamps. Independent snapshots do not support total counts or a global all-clear.",
+    "Bind reader lifetime/cache to session, registration and installation operation; display response currentRevision/version/store/material identity. Abort on close/change and reject a late old result. Separate current data from retained stale data.",
+    "On typed plugin_removal_cursor_changed 409, keep the attempted cursor and current evidence; offer explicit Restart from first page. UNKNOWN read errors are read failures, never a pending write command or permission for retrying a different operation.",
+    "Do not deduplicate same physical material across different installation operations by operation id; the response explicitly permits references through other operations. Render text through React and preserve control-character identities as inspectable escaped text.",
+    "Keep the existing runtime command controller and original UNKNOWN write key/body independent from these reads. A reference refresh must not issue enable/disable/removal or reset a pending command."
+  ],
+  "acceptanceCases": [
+    "One bounded read; empty-with-next explicit continuation; no auto page loop.",
+    "Same material with a different installation operation and sub-millisecond ordered references remain visible.",
+    "Late response after changing material/session cannot overwrite the new identity.",
+    "Cursor 409 requires explicit restart; malformed/aborted response stays unknown, without any write.",
+    "Empty/historical pages retain host-release unknown and no physical removal authorization.",
+    "390px light/dark, keyboard expansion/paging, reduced motion, long exact identities and escaped text."
+  ],
+  "integrationBoundary": "Client plus required contract must be accepted into the chosen implementation baseline before a new Web slice consumes it. Current Plugin claim seven paths, current browser packet and MSG03 scope are unchanged. Manager should preserve this as explicit pending plan/TODO, then take exact paths through normal ownership before implementation.",
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Separate read observations from mutation authority; reuse public validated client and host-owned extension seam; avoid a second plugin lifecycle store or a broad useRead rewrite only to support one typed paged reader.",
+    "actualFindings": [
+      "Generic useRead erases typed errors, so the future consumer needs a narrow typed read presentation rather than claiming all failure reasons are equivalent.",
+      "Identity changes require scoped state or explicit current/stale presentation; cached old data must not look like the newly selected material."
+    ],
+    "implementedFixes": "None: research and plan input only, no source edits."
+  },
+  "runtime": "0 imports/execution/tests, 0 PG/Chrome/provider/services. Personal exclusive window respected."
+}

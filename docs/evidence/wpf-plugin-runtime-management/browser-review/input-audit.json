@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T12:29:43.498077+00:00",
+  "counts": {
+    "sources": 5,
+    "readOnlyDependencies": 75,
+    "prepared": 5,
+    "external": 105,
+    "node": 1,
+    "priorReviews": 2,
+    "manifest": 9
+  },
+  "logicalReadBytes": {
+    "sources": 84860,
+    "readOnlyDependencies": 683721,
+    "prepared": 47572,
+    "external": 635000858,
+    "node": 50320,
+    "priorReviews": 31980,
+    "manifest": 137966
+  },
+  "mismatches": [],
+  "pythonAst": "parsed only, no imports or execution",
+  "baseIdentityMatches": true,
+  "localGit": {
+    "head": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+    "origin": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+    "branch": "codex/web-plugin-runtime-management",
+    "dirty": ""
+  },
+  "runtimeMarkersPresent": []
+}

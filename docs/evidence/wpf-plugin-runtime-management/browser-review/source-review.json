@@ -1,0 +1,82 @@
+{
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "at": "2026-10-07T12:33:49.874689+00:00",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "reviewedHead": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+  "implementation": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "preparedBinding": {
+    "path": "/private/tmp/prm-b1/binding.json",
+    "bytes": 63408,
+    "sha256": "f1cc130e88866448887f7e6b9eb52891836bde6743fd3e62a18a2eb2ead4f765"
+  },
+  "preparedManifest": {
+    "path": "/private/tmp/prm-b1/manifest.json",
+    "bytes": 1889,
+    "sha256": "91a6bb61b4ad8a89af59ea29b67d8a01bd4e2cc2c9c1d98c2155b032b51310ef"
+  },
+  "runnerSha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "inputAudit": {
+    "path": "/private/tmp/root-plugin-browser-b1-input-audit-20261007.json",
+    "bytes": 759,
+    "sha256": "c1645bdc3efa0ae38ca89ccc5d001836be1bf0dda5bbcb7f07001f3df8b4062a"
+  },
+  "actualExecution": "NOT_RUN",
+  "findings": [],
+  "decision": "APPROVED_SOURCE_PREPARATION",
+  "scope": "Fixed standalone Plugin runtime-management HTTP fixture, browser worker and owned-process supervisor. This is source review, not browser, visual, real-center, production App or main-integration approval.",
+  "reviewMethod": [
+    "Read changed own browser and fixture source plus unchanged runtime controller/component boundaries.",
+    "Read complete supervisor, worker, prepared runtime aliases and tsconfig; compare carried lifecycle changes.",
+    "Independently verify all fixed own/read-only/prepared/external pins, real paths, packet identity and local clean branch/HEAD; parse Python AST without executing imports."
+  ],
+  "verifiedDesign": [
+    "Fixture uses real PluginHost, PluginManagement, runtime-command and FlowClient against controlled HTTP DTOs; never calls the legacy PG fixture. Vite configFile:false and envDir:false, explicit aliases and dynamic loopback ports avoid the production proxy/configuration.",
+    "Fixture replaces irrelevant App-session store coupling with constant Readable ports; no production store fork or settings authority change.",
+    "Six checks preserve draft and original command identity through 409/UNKNOWN/read refresh and stale session ACK; decoded HTTP-read and settled-button waits prevent a false refresh assertion.",
+    "Two 390px light/dark images cover the specified collapsed Center B state only. Keyboard refresh is exercised; screenshots still need independent visual inspection.",
+    "Supervisor owns separate Chrome and Node process groups, finite work and cleanup deadlines, bounded output capture, TERM/KILL/reap and EOF checks, exact created scratch identity and failure/KEEP behavior.",
+    "Public OPS measurement is partially adopted for retained packet/raw bytes. Scratch remains independently sampled for logical/allocated usage; these are sampled limits, not an atomic OS disk quota.",
+    "Real external supervisor exit 0 plus a unique matching terminal seal, worker completion and complete cleanup are required; a disk PASS alone is insufficient."
+  ],
+  "proposedEnvelope": {
+    "totalMs": 60000,
+    "workMs": 45000,
+    "cleanupMs": 15000,
+    "nativeChrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTPListeners": 2,
+    "pg": 0,
+    "provider": 0,
+    "personalService": 0,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576
+  },
+  "notProven": [
+    "No execution of the changed browser source or runtime resolver in this review.",
+    "No screenshots or browser performance claim yet.",
+    "Synthetic A/B DTO switching does not prove isolation of two real centers or principals.",
+    "Unchanged component/controller direct and prior strict checks are historical scoped evidence, not new browser evidence.",
+    "Full App/session wiring and later HOST candidate API consumption remain separate work."
+  ],
+  "executionBoundary": "Original svc06-personal-7d1-20261007-1230 exclusive window is still active pending explicit RETURN. This review creates no runtime gate and releases no resources. Existing manager admission must use fresh combined resource/claim/source state after RETURN.",
+  "routineMetadataBinding": "Owner may bind these review references and the resulting metadata-only clean HEAD without re-review when runnable/source/pinned dependency bytes and reviewed native authority are unchanged."
+}

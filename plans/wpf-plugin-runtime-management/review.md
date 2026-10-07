@@ -1,12 +1,12 @@
 # 当前浏览器准备审查入口
 
-状态：UNKNOWN（当前浏览器源码/调用器 PREPARED，尚无新实际）
+状态：APPROVED（限定 APPROVED_SOURCE_PREPARATION；browser/visual NOT_RUN）
 
 Review target commit：0bc393de593fd9d057efa08cd6d4ff261f99b24f
 
-Scope：原五产品 literal；其中 PluginManagement.tsx/runtime-command.ts/direct test 逐字等于旧6544，只有 browser.ts 与 fixture/main.tsx 两源准备改变。精确[五源与caller pins](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/source-manifest.json)、[两生命周期diff](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)可供独审。
+Scope：原五产品 literal；其中 PluginManagement.tsx/runtime-command.ts/direct test 逐字等于旧6544，只有 browser.ts 与 fixture/main.tsx 两源准备改变。精确[五源与caller pins](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/source-manifest.json)、[两生命周期diff](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)已由root固定独审，0 finding。
 
-旧strict与r4 direct15 actual限定批准保留，不迁移成两新fixture/六browser通过。当前source/native approval为空，个人排他窗口不运行。源码复核重点：私有真实JS/CSS映射、decoded read后UNKNOWN、真实组件/controller生命周期不变、native外层隔离差异、scratch identity KEEP、OPS unknown保真与actual外层退出联合终态。
+旧strict与r4 direct15 actual限定批准保留，不迁移成两新fixture/六browser通过。[source独审](../../docs/evidence/wpf-plugin-runtime-management/browser-review/source-review.json)与[native边界接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/native-boundary.json)已归档；个人排他窗口不运行。已审范围：私有真实JS/CSS映射、decoded read后UNKNOWN、真实组件/controller生命周期不变、native外层隔离差异、scratch identity KEEP、OPS unknown保真与actual外层退出联合终态。
 
 ## 历史已审模块与direct（原文保留）
 
@@ -26,6 +26,6 @@ Scope：原五产品 literal；其中 PluginManagement.tsx/runtime-command.ts/di
 
 原产品target6544和五scope不变。新调用器只在TMP，state PREPARED_NOT_RUN，见[精确准备提案](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/preparation-summary.json)；新20s/5cleanup不等运行许可，不把旧JSON通过归为新证据。源审需核pre-spawn raw拒绝、互斥计量、异常独立cleanup、真实exit/双EOF与最终outer合同。完整模块仍UNKNOWN。
 
-## 当前 r4 源审与实际结果
+## 历史：r4 源审与实际结果
 
 [r4源审](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/root-source-review.json)0blocking；[新actual](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)parent/child0、15/15、内外双EOF/0drop、exact cleanup、882ms。旧direct JSON部分证据不替换，此次是新的独立有限段。[root实际独审](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/root-actual-review.json)已APPROVED_DIRECT15_ACTUAL_AND_COMPLETE_RETURN/0finding；整体UNKNOWN因browser/生产App仍未验，不冒完整模块审批。

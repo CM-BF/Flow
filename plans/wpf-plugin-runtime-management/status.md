@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:26:15.877Z；固定 b675 输入，浏览器准备源 0bc393de593fd9d057efa08cd6d4ff261f99b24f |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:35:50.516Z；固定 b675 输入，浏览器准备源 0bc393de593fd9d057efa08cd6d4ff261f99b24f |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
@@ -14,7 +14,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management |
 | Branch | codex/web-plugin-runtime-management |
 | 工作基线 / HEAD | b67530bb025162629895d11482b5505d4a885c91；组件/控制器6544字节未变；浏览器准备 0bc393de593fd9d057efa08cd6d4ff261f99b24f |
-| 工作树dirty状态 | 本批仅两browser fixture源码与own records；正常提交推送后七范围STOP保claim |
+| 工作树dirty状态 | 本批仅own records与TMP元数据绑定；五产品源码不变，正常推送后七范围STOP保claim |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | UNKNOWN 当前浏览器准备尚未运行；6544限定strict与r4 direct15原通过保留，三未变组件/控制器/direct源不重测；旧父FAILED保留 |
@@ -23,19 +23,20 @@
 | 实现范围 | apps/web/src/plugin-management/PluginManagement.tsx, apps/web/src/plugin-management/runtime-command.ts, apps/web/test/plugin-management/browser.ts, apps/web/test/plugin-management/fixture/main.tsx, apps/web/test/plugin-runtime-command.test.ts |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 启停模块的直接回归已通过；独立浏览器入口已隔离站点配置并保留真实组件与请求，准备交互验收 |
-| 下一可用交付 | 独立审查并运行六组管理界面场景与两张窄屏图 |
-| 当前阻塞 | ACTIVE: 新浏览器调用器尚待独立审查与合法实际资源段 |
+| 当前产出 | 启停模块的直接回归已通过；浏览器入口和启动边界已独审，交互与窄屏效果待实际验证 |
+| 下一可用交付 | 在合法资源窗口验证六组管理界面场景与两张窄屏图 |
+| 当前阻塞 | ACTIVE: 等待个人服务排他窗口实际归还及合法浏览器资源段 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN；旧6544/direct15已独审，当前两fixture与native准备未获新实际结论 |
+| Review | [review.md](review.md)，APPROVED_SOURCE_PREPARATION；固定0bc源码与native边界已接受，browser/visual NOT_RUN，不冒全模块验收 |
 | 领取 | 0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1；[COMMITTED 原件](../../docs/evidence/wpf-plugin-runtime-management/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | WPF-PLUGIN-RUNTIME01-01 | completed | w01_owner | [固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md) |
-| WPF-PLUGIN-RUNTIME01-02 | in-progress | w01_owner | 实际模块/fixture/六组浏览器入口已固定，NOT_RUN |
+| WPF-PLUGIN-RUNTIME01-02 | in-progress | w01_owner | 实际模块/fixture/六组入口已固定并获source独审，browser/visual NOT_RUN |
 | WPF-PLUGIN-RUNTIME01-03 | in-progress | w01_owner | [新direct15通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)，[旧有限段](../../docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json)首红/启动失败/第三父失败均保留；browser未跑 |
-| WPF-PLUGIN-RUNTIME01-04 | pending | w01_owner | 源码分段已审；整体 UNKNOWN / 未接主线 |
+| WPF-PLUGIN-RUNTIME01-04 | pending | w01_owner | 当前固定源码/调用器已审；整体browser待验 / 未接主线 |
+| WPF-PLUGIN-RUNTIME01-05 | pending | w01_owner | [后继只读引用研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)，NOT_TAKEN；待共享输入集成与精确scope，不属本次b1验收 |
 
 ## 等待记录
 
@@ -43,6 +44,7 @@
 | --- | --- | --- | --- | --- | --- |
 | PLUGIN-RUNTIME-W01 | UNKNOWN | 2026-10-07T10:46:23.929Z | 接口 | X01 两条路径等待 STOP/amend，现已移出；未知等待起点不补造 | [实际 handback](../../docs/evidence/wpf-plugin-runtime-management/x01-handback-receipt.json) |
 | PLUGIN-RUNTIME-W02 | UNKNOWN | 2026-10-07T12:07:49.693Z | 验证失败 | 原direct记录不完整，修复调用器后的新独立完整终态已通过；未知起点不推断 | [actual outer](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/outer/outer-exit.json) |
+| PLUGIN-RUNTIME-W03 | UNKNOWN | OPEN | 资源 | 个人服务排他窗口未见实际归还，随后仍需fresh浏览器准入；不从准备时间猜等待开始 | [当前准备收口](../../docs/evidence/wpf-plugin-runtime-management/browser-review/seal-record.json) |
 
 ## 边界与下一步
 
@@ -70,4 +72,6 @@ Root 于2026-10-07T11:39:58Z已观察4320两API，模块source live/current、�
 
 [固定源码与调用器](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/source-manifest.json)、[边界/六组/资源提案](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)。私有Vite不读站点配置/env/proxy，真实React/Tailwind/CSS；fixture只读常量端口不导入App session，真实host/controller/client保留。UNKNOWN刷新等待真实解码与read settlement，图仅Center B高级身份折叠态，不冒全部展开长UUID。
 
-候选PREPARED，source/native approval为空，无gate/Chrome/PG/Node import/types/direct/free。60s含15s cleanup、64MiB scratch/8MiB retained+1MiB metadata只是新browser提案，旧30s失败与882ms已闭合direct段不转credit。公共OPS helper仅retained；全局个人服务排他窗口优先，普通PG+独立0PG配对不覆盖它。真实App接线与日用HOST候选仍独立后继。
+候选REVIEWED_SOURCE_BOUND，[source/native独审原件](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)已归档；browser/visual仍NOT_RUN，无gate/Chrome/PG/Node import/types/direct/free。60s含15s cleanup、64MiB scratch/8MiB retained+1MiB metadata只是新browser提案，旧30s失败与882ms已闭合direct段不转credit。公共OPS helper仅retained；全局个人服务排他窗口优先，普通PG+独立0PG配对不覆盖它。真实App接线与日用HOST候选仍独立后继。
+
+本次为metadata安全收口，后继fresh资源下限至少6,795,821,056B或当时更高完整组合；不是实际free或运行授权。TMP最终HEAD按本次正常clean提交重绑，不改变0bc源码/runner/worker。七范围STOP保claim。

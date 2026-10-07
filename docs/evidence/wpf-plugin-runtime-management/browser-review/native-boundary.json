@@ -1,0 +1,54 @@
+{
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "at": "2026-10-07T12:33:49.874689+00:00",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "reviewedHead": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+  "implementation": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "preparedBinding": {
+    "path": "/private/tmp/prm-b1/binding.json",
+    "bytes": 63408,
+    "sha256": "f1cc130e88866448887f7e6b9eb52891836bde6743fd3e62a18a2eb2ead4f765"
+  },
+  "preparedManifest": {
+    "path": "/private/tmp/prm-b1/manifest.json",
+    "bytes": 1889,
+    "sha256": "91a6bb61b4ad8a89af59ea29b67d8a01bd4e2cc2c9c1d98c2155b032b51310ef"
+  },
+  "runnerSha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "inputAudit": {
+    "path": "/private/tmp/root-plugin-browser-b1-input-audit-20261007.json",
+    "bytes": 759,
+    "sha256": "c1645bdc3efa0ae38ca89ccc5d001836be1bf0dda5bbcb7f07001f3df8b4062a"
+  },
+  "actualExecution": "NOT_RUN",
+  "findings": [],
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "scope": "Exact supervisor/worker native Chrome boundary for this first finite standalone Plugin module browser phase only. No inherited or general browser authority.",
+  "acceptedFacts": [
+    "Chrome is a fresh owned sibling with separate user-data/cache/temp/crash directories, loopback CDP, about:blank start, disabled background/update/sync behavior and the built-in Chrome sandbox retained.",
+    "Chrome has no custom outer OS write or network-egress sandbox. Fixture isolation and startup flags are not an OS egress guarantee. This limitation is explicit and accepted for the fixed local fixture.",
+    "Node worker is separately sandboxed to loopback networking and own scratch/output writes. Token/proxy and unrelated project service configuration are not passed as runtime inputs.",
+    "No existing user Chrome profile, personal backend, PG database, provider call or station service is part of this phase.",
+    "Parent supervises both owned groups and cleanup; a missing/unknown exit, EOF, measurement or scratch identity cannot become successful release."
+  ],
+  "activation": "Source/native acceptance only. Actual run requires existing fresh one-use manager gate after explicit personal-window RETURN. No gate was created and no browser was started by this review."
+}

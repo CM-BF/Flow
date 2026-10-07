@@ -22,12 +22,13 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 - [ ] WPF-PLUGIN-RUNTIME01-02：管理组件启停与只读身份/可用性展示；fixture 持有实际生命周期。
 - [ ] WPF-PLUGIN-RUNTIME01-03：受影响直接测试、类型与浏览器入口准备/实际验证，失败保真。
 - [ ] WPF-PLUGIN-RUNTIME01-04：固定源码独审与限定主线接收。
+- [ ] WPF-PLUGIN-RUNTIME01-05：后继只读任务引用视图（NOT_TAKEN）；固定client与契约集成后另行确定scope，不是当前七范围实现或b1验收条件。
 
 ## 验收与边界
 
 覆盖首次 enable/disable ACK、preflight、initial409、unknown→retry409→GET仍unknown→原ACK、重复点击、close/collapse重挂、晚session、exact输入不变。浏览器仅模块 fixture，可读性/键盘/390双主题，未获实际窗口前 NOT_RUN。单文件 direct/noEmit 提案先给准确依赖/预算，0PG/Chrome 本源码段。不执行现历史浏览器自动 DB 入口。
 
-固定 base b67530bb025162629895d11482b5505d4a885c91，已含 shared client 9f5d。当前20ac及6544源码限定独审已完成，strict0已接受；direct15 JSON仅部分证据/父FAILED，旧任务证据不继承。技能见 evidence/skills.json；clean-code 检查命名、单一 authority、错误/取消、重复和必要场景，记录实际发现。
+固定 base b67530bb025162629895d11482b5505d4a885c91，已含 shared client 9f5d。当前6544 strict0与新r4 direct15完整实际已独审接受；原30秒段direct JSON仅部分证据/父FAILED仍保留，旧失败不改判。技能见 evidence/skills.json；clean-code 检查命名、单一 authority、错误/取消、重复和必要场景，记录实际发现。
 
 ## 历史：2026-10-07T11:03:07.706Z 源码安全点
 
@@ -48,3 +49,11 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## 模块浏览器准备（当前 source-only）
 
 [固定入口与验收提案](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)沿原六组/两390图，不调用legacy双PG、不引入production App session或新HOST DTO。当前只准备，旧strict/direct15不能当浏览器通过。后继日用候选资料以root固定de547公共接口研究为输入：绑定snapshot revision/version，空页可next/cursor409显式重启，同名按exact runner/store/API消歧；读取失败不造writeUNKNOWN、候选刷新不改冻结key/body。尚未在本slice实现。
+
+## 当前准备独审安全点
+
+固定0bc五源与b1调用器已获[源码/原生边界独审](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)，0 finding；browser六组/visual两图仍NOT_RUN。个人服务排他窗口未见RETURN，未产生gate或实际资源采样。下一实际准入采用最新完整组合，不将6.199GB历史下限误当当前授权。只记录元数据并将最终clean HEAD在TMP内routine重绑；七范围STOP、claim保留，不继承旧strict/direct为browser通过。
+
+## 未实施后继：查看任务引用
+
+[root固定研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)只作后继输入：client676ed590须连同contract81a064cb集成基线后才能消费。单页最多40条/64KiB，empty仍可next，registration-only与independent snapshot不推总量或全局安全移除；hostRelease为unknown、physicalRemoval未授权。复用既有宿主管理扩展点，窄identity-bound读展示保留typed cursor409并显式restart；session/material/installation operation变更使旧响应失效，旧物料数据不能显示为当前物料。不得新增生命周期store，不得改UNKNOWN命令的冻结key/body。本后继尚未领取或实现，不扩大本次七scope/六browser验收。

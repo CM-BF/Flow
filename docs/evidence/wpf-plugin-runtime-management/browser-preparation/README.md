@@ -1,3 +1,5 @@
+> 历史准备快照：下文为空的approval/PREPARED描述对应12:26固定材料。当前source/native已独审，见[本次收口](../browser-review/README.md)；browser/visual仍NOT_RUN。
+
 # Plugin runtime module browser — PREPARED / NOT_RUN
 
 This new packet calls only createPluginRuntimeManagementFixture + runPluginRuntimeManagementChecks from the fixed own browser module. It does not call the legacy two-PG function. Current source is recorded in binding; source/native approvals are null, no gate exists. Source-only preparation is not browser or product check PASS.
