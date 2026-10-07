@@ -2,6 +2,8 @@
 
 ## 当前：完整legacy回复来源窄修
 
+**SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED**，chatui01_owner/gpt-6-astra，2026-10-07T13:30:23Z，fixed f722e28678e9e9af0e631af7539e1c6f70adf7c9 /a180eeb3；legacy DTO P2 CLOSED，0P1/P2。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json)。只批准该delta与pure结果忠实，完整runtime/outputscope/性能仍NOT_READY/NOT_OPEN。下面交审文字保留为先前事实。
+
 状态PENDING。Review target commit: `f722e28678e9e9af0e631af7539e1c6f70adf7c9`。入口[queue-chat-fix-ready](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-ready.md)；仅3源增量/2child原件，3pass14未选与strict0，不重审45原绑定。固定4fdd真实完整DTO与source/contentRef/message/bodyhash闭合；当前新P2 owner修复待原chatui确认。13:22:36原审对130c/456为SOURCE_CHANGES_REQUESTED/1新P2，旧unavailable历史P2已CLOSED；原6distinct/strict/资源忠实结论保持，正式原件[queue-independent-review](../../docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json)。
 
 ## 历史：queue recipe + 历史身份P2修复

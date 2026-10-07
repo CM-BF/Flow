@@ -1,0 +1,47 @@
+{
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T13:30:23Z",
+  "recordedAt": "2026-10-07T13:30:48Z",
+  "source": "f722e28678e9e9af0e631af7539e1c6f70adf7c9",
+  "packet": "a180eeb3a18107d2521dfba981732329c9972168",
+  "verdict": "SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "closedFinding": "13:22:36 legacy DTO P2",
+  "manifest": {
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-review.json",
+    "sha256": "9c80fb244e5bbcb99a4483a0af4dd2f57379c100ab709afc9b2395845f917a3f",
+    "bindings": 10,
+    "bytes": 59839,
+    "gitWorkingTreeBytesHashesEqual": true
+  },
+  "sourceFindings": "Fixed4fdd legacyReply/turnViews/snapshot/turnPage match complete source discriminant, adapter, task, attempt, artifactId/version/detailId; first verified message/contentRef/bodySHA pins server detailId for subsequent reads. No typedfinal event, so this fixture uses legacy. First self-consistency is not independent DB identity or actual GET evidence.",
+  "localResults": {
+    "selected": 3,
+    "passed": 3,
+    "unselected": 14,
+    "strictExit": 0,
+    "rawBytes": 457,
+    "supervisorElapsedMs": 2484,
+    "pids": [
+      31888,
+      41030
+    ],
+    "finalOwnedAbsent": true,
+    "mergedEof": true,
+    "observedEqualsRetained": true,
+    "signals": [],
+    "secondary": [],
+    "tmpSameIdentityRemoved": true,
+    "tmpFinalSampleBytes": [
+      233,
+      0
+    ],
+    "initialEpermPreserved": true,
+    "peak": null,
+    "wholeExternalWall": null
+  },
+  "scope": "Only complete legacy reply identity fix, direct tests and local caller selector/deadline/floor record. Original45bindings/history/raw unchanged; original6/9/11 not re-reviewed or re-run.",
+  "remaining": "Complete runtime/dynamicSQL/outer inputs, new outputscope and fresh resource sum NOT_READY. ActualPG/HTTP/performance NOT_RUN/NOT_OPEN. No main/product/provider/SDK/SLO conclusion.",
+  "reviewerActions": "Read-only fixed source/raw/hash; no writes/imports/checks/PG/TMP access. Reused local find-skills/codebase-design/clean-code."
+}

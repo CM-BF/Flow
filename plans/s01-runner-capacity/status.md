@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:28:15.974410+00:00 |
+| 最近更新 | 2026-10-07T13:30:48Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 源码f722e28678e9e9af0e631af7539e1c6f70adf7c9已固定；当前仅本段结果/独审交付metadata，提交后核clean。 |
+| 工作树dirty状态 | 源码f722e28678e9e9af0e631af7539e1c6f70adf7c9已停写；本次仅归档正式独审，metadata提交后核clean。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 本窄修3 selected/3 pass/14未选与focused strict0，2raw457B；旧6/9/11 distinct分轮及首红独立保留，不相加。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | f722e28678e9e9af0e631af7539e1c6f70adf7c9 |
 | 实现范围 | experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/queue-chat.ts, experiments/runner-capacity/mixed/queue-proof.ts, experiments/runner-capacity/mixed/queue-journal.ts, experiments/runner-capacity/mixed/queue-main.ts, experiments/runner-capacity/mixed/queue-probe.test.ts, experiments/runner-capacity/mixed/claim-observation.ts, experiments/runner-capacity/mixed/driver.ts, experiments/runner-capacity/mixed/child.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 已修复聊天完整回复来源与详情引用校验，定向身份反例通过，已停止源码写入等待窄复审。 |
-| 下一可用交付 | 来源修复独审通过后，准备完整生产输入和新输出范围，再申请真实专库性能窗口。 |
-| 当前阻塞 | ACTIVE：等待完整回复来源窄复审；实际实验输入、输出范围和性能窗口仍未就绪。 |
+| 当前产出 | 本片段已交付：聊天完整回复来源校验修复经独审通过，局部检查及资源收尾证据已确认。 |
+| 下一可用交付 | 继续准备真实对照实验的完整生产输入、输出范围和资源门禁；尚未进行新性能运行。 |
+| 当前阻塞 | ACTIVE：完整运行输入、动态SQL/外层监督和新输出范围仍未就绪，真实性能窗口未开放。 |
 | 需用户决定 | NONE |
-| Review | PENDING：f722e28678e9e9af0e631af7539e1c6f70adf7c9 /queue-chat-fix-ready；原history P2 CLOSED，新来源P2已修待正式复核。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；本段实际CLI核self/WT/branch/all5相符；pool-wait-run未领取未创建。 |
+| Review | SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED：chatui01_owner，2026-10-07T13:30:23Z，sourcef722e28678e9e9af0e631af7539e1c6f70adf7c9/packeta180eeb3，legacy DTO P2 CLOSED，0P1/P2。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T13:30:48Z本段fresh CLI核self/WT/branch/all5相符；保review/main期，pool-wait-run未领取未创建。 |
 | 架构影响 | 私有配方复用同outer/driver/child/监督；增加public合成聊天、有限交付策略身份与同钟取消证明。生产pool/SQL/协议不变，未增加新运行平台；当前源码未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -182,3 +182,7 @@ find-skills/codebase-design/clean-code质量结果见入口，私有实验模块
 ## 2026-10-07T13:28:15.974410+00:00 窄修交审与 ordinary RETURN
 
 固定source `f722e28678e9e9af0e631af7539e1c6f70adf7c9`，入口 [queue-chat-fix-ready](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-ready.md)，[局部新原件](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-local.json)。实际两child13:26:52.558227Z至13:27:04.850378Z，工具13:27:09Z观察closed；3pass/14未选及strict0，监督2484ms/raw457B，完整捕获/两groupabsent/两TMP同identity清理。raw、旧review与失败/EPERM保真；没有PG/真实HTTP/性能运行。ordinary已归还，当前0待launch。源码STOP、claim保review期；新输出未领取，完整S01 NOT_COMPLETED。dashboard仍从本唯一status聚合，最近已知同步是历史时点，本段未GET，不冒新展示。
+
+## 2026-10-07T13:30:48Z 独审接收
+
+chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED，legacy来源P2 CLOSED、0P1/P2，见[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json)。10bindings/59839B、3pass/14未选/strict0、457B原件及两组/TMP关闭均忠实；初EPERM、监督累计2484ms与wholewall/peak UNKNOWN保留。本次仅metadata，不再工程运行/PG/旧根访问；原CHANGES_REQUESTED/raw/source/manifest保持。通过不把新recipe变为READY或OPEN，也不表示main接收。claim继续保留，整体S01开放TODO不变。
