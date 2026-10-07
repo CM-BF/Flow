@@ -74,3 +74,9 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 [新Web实际](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)已生成descriptor779a/sourcec231，两产品1cea与批准d736不变。RELEASE01-08保持pending：两descriptors已齐，结果独审已APPROVED，当前需要两harness最小pair guard适配后再真实兼容，不借本次构建或旧三App报告冒通过。资源已归还，无第二build/Chrome/PG预约；独立150s段按外层观察上界25241ms CLOSED。
 
 新pair source2f679及受控caller已[固定准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)，RELEASE01-08继续pending真实兼容/发布；当前只待集中源/边界审，不重复设计或产品绿检查。
+
+## 当前新 pair 首实际安全点
+
+[原件与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)：source2f679准备已审，首次actual FAILED/完整RETURN，180s CLOSED56504ms、未用123496ms不转。reports=null/0正式报告，RELEASE01-08保持未完成。harness在UNKNOWN原key恢复之前等待Cookie流，需窄修顺序；后台lateLogout NOT_REACHED，不能替后台定性。原三App断言与全部失败保持，不自动重试。
+
+- [ ] RELEASE01-10 当前组合收口后，分离稳定compat executor与可信管理方固定版本输入；合法新pair不再改通用harness，仍校验hash/角色/来源/browser-session policy、同pair actual、错误tuple/旧报告拒绝。后继验收两个合法pair同executor及错pair拒绝，分别记录准备/审查/actual耗时；复用OPS-001-14/16，不造新平台。

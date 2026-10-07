@@ -1,0 +1,196 @@
+{
+  "at": "2026-10-07T16:05:21.927183+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "ACCEPTED_FAILED_ACTUAL_RESULT_AND_FULL_RETURN_NOT_COMPATIBILITY_PASS",
+  "source": "2f6792ca3f19fcd1d54563531c302937f607c892",
+  "executionMetadata": "53980e73480d0a5af5538e4f5d3de5892c082f12",
+  "actualExit": 1,
+  "elapsedMs": 56503.46962502226,
+  "chargeMs": 56504,
+  "phaseBudgetMs": 180000,
+  "unusedMs": 123496,
+  "phaseClosed": true,
+  "unusedTransfer": false,
+  "terminal": {
+    "state": "FAILED",
+    "declaredExit": 1,
+    "elapsedAfterFinalWritesMs": 56456.53529197443,
+    "resultSha256": "bcdf0dc2c4f48d3cc6412d525f52c29e3905840ac2b618f628f147edf27f8c23",
+    "budgetSha256": "3f3a15b37faae300fd1c7fa920ae223f66f4fc330158cc1e3e43d6fb6ffac974",
+    "rawManifestSha256": "d9007c569706d44f730d484cb9f246ec060854c975a0f36c8d5124ebe1d9abfd",
+    "groupsAbsent": true,
+    "scratchAbsent": true
+  },
+  "rawChecks": [
+    {
+      "path": "chrome-parent.json",
+      "bytes": 1263,
+      "matches": true
+    },
+    {
+      "path": "chrome.log",
+      "bytes": 24947,
+      "matches": true
+    },
+    {
+      "path": "worker.json",
+      "bytes": 1241,
+      "matches": true
+    },
+    {
+      "path": "worker.log",
+      "bytes": 103,
+      "matches": true
+    },
+    {
+      "path": "fixture/all-wire.json",
+      "bytes": 222414,
+      "matches": true
+    },
+    {
+      "path": "fixture/browser-results.json",
+      "bytes": 15330,
+      "matches": true
+    },
+    {
+      "path": "fixture/cookie-policy.json",
+      "bytes": 785,
+      "matches": true
+    },
+    {
+      "path": "fixture/fixture-cleanup.json",
+      "bytes": 262,
+      "matches": true
+    },
+    {
+      "path": "fixture/inputs.json",
+      "bytes": 7908,
+      "matches": true
+    },
+    {
+      "path": "fixture/owned-chrome.json",
+      "bytes": 702,
+      "matches": true
+    },
+    {
+      "path": "fixture/recovery-779a-page.json",
+      "bytes": 2194,
+      "matches": true
+    },
+    {
+      "path": "fixture/recovery-779a-wire.json",
+      "bytes": 51917,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-461a-page.json",
+      "bytes": 1887,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-461a-wire.json",
+      "bytes": 46267,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-caa1-page.json",
+      "bytes": 2377,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-caa1-wire.json",
+      "bytes": 56173,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-d629-page.json",
+      "bytes": 2377,
+      "matches": true
+    },
+    {
+      "path": "fixture/retained-d629-wire.json",
+      "bytes": 66071,
+      "matches": true
+    }
+  ],
+  "rawErrors": [],
+  "fullReturnReceipt": {
+    "path": "/private/tmp/rel01-recovery-c1-actual-an571_hj/return-receipt.json",
+    "bytes": 2215,
+    "sha256": "e4e6da2515b4617cc94b8ae2db0d3613635eb931eb9f9a6f9d8405eff25944f0",
+    "at": "2026-10-07T16:03:25.267185+00:00",
+    "processes": [
+      {
+        "kind": "PID",
+        "id": 98932,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 98932,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 99111,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 99111,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 99294,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 99294,
+        "state": "ABSENT"
+      }
+    ],
+    "scratchAbsent": true,
+    "adminInputDeletedExactIdentity": true
+  },
+  "fixtureCleanup": {
+    "databaseName": "flow_release_c1ffa8eb0b9a43d39ac84907d18b714a",
+    "marker": "7da464a9-e38c-4749-bbfe-e97637ee8a2d",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "interpretation": [
+    "Exact terminal matches finalstdout and pinned result/budget/rawmanifest; all18 raw files match504218bytes. Actual waitedexit1,4innerstreams EOF/drop0, ownedscratchabsent.",
+    "Return receipt records exactPID/PGID98932/99111/99294ABSENT and exact privateinput deletion; reviewer never opened privateadmin/env or ran process/PG/browser checks.",
+    "Parentresult.fixtureCleanup remainsUNKNOWN_OR_FAILED_SEE_RAW_KEEP because overall acceptance failed before assigning that field. Independent fixed rawfixturecleanup and returnreceipt agree normalmarkedDBDROP/center+proxyclose/errors[]; preserve parentrecord, do not rewrite it.",
+    "Three retainedApps completed their recorded read/send/same-keyrecover/negotiation stages. New779a reached late-logout afterCookieReload/ACKloss/taskcompletion, where this attempt failed. There are no four formal reports and no compatibility admission.",
+    "Stored error isError:OPERATION_FAILED; exact assertion/cause isnotavailable from the concise result alone. Owner is doing fixedsource/boundednetwork+UI diagnosis; no backend or Web regression is inferred merely from the phase name.",
+    "No auto retry, no unused123496ms reuse; no deployment. UnrelatedI01 may use its own fresh phase after manager confirmsRETURN."
+  ],
+  "failure": {
+    "failedAt": {
+      "phase": "late-logout",
+      "app": "recovery-779a"
+    },
+    "errors": [
+      "Error:OPERATION_FAILED"
+    ],
+    "partialCompletedApps": [
+      "retained-461a",
+      "retained-caa1",
+      "retained-d629"
+    ],
+    "reports": null,
+    "providerQueries": 0
+  },
+  "runtimeGranted": false,
+  "cleanCode": {
+    "scope": "failed result provenance/partial-stage versus formalreport/actualclosure",
+    "finding": "Failure preserved; diagnostics must distinguish raw cleanup proof from parent acceptance short-circuit. No additional product tests performed."
+  }
+}

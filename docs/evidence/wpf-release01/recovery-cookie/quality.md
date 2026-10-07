@@ -38,3 +38,7 @@
 ## 2026-10-07T15:47:12.247Z exact-pair / clean-code
 
 沿find-skills本地匹配继续用clean-code：完整两descriptor常量命名区分Web/backend职责；复用深层真实manifest/verifier，未造第二codec；三guard不放宽已审旅程。新caller只入口/固定计数/稀疏树实际模块解析差量，旧生命周期与错误/cleanup合同逐字其余不变。已核74pins、parent AST（非执行）、browser逐字8964、两产品逐字1cea；未运行candidate、types或compat。未解决项仅集中source/native审及实际资源准入。
+
+## 2026-10-07T16:09:01.937Z 首次新pair实际失败封存/只读归因
+
+复用本地find-skills与clean-code（/Users/citrine/.agents/skills/find-skills/SKILL.md、clean-code/SKILL.md），不安装。实际检查单一职责/错误处理：阶段已知但errorCode统一化使具体deadline不可直接观察；当前保原错误，后继仅有限预定义阶段码，不保存URL/token/body/error.message。原UNKNOWN权威不为测试改写，harness需先用公开恢复再等待真实accepted流。未改生产/调用器/生命周期，未重跑工程检查。首raw及root三审原件逐字归档；reports null与部分旅程分开，原parent cleanupUNKNOWN与独立完整RETURN分开。

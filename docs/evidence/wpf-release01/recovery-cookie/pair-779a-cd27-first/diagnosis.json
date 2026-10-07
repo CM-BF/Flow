@@ -1,0 +1,88 @@
+{
+  "observedAt": "2026-10-07T16:08:19.193350+00:00",
+  "state": "FAILED_NO_RETRY",
+  "sourcePins": [
+    {
+      "commit": "2f6792ca3f19fcd1d54563531c302937f607c892",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 33646,
+      "sha256": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08",
+      "lines": "127-131, 219-243"
+    },
+    {
+      "commit": "2f6792ca3f19fcd1d54563531c302937f607c892",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d",
+      "lines": "71-74, 327-332, 375-391"
+    },
+    {
+      "commit": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "lines": "314-369"
+    },
+    {
+      "commit": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "lines": "95-100, 128-130"
+    }
+  ],
+  "actual": {
+    "outerExit": 1,
+    "chargeMs": 56504,
+    "phaseTotalMs": 180000,
+    "phaseState": "CLOSED",
+    "unusedMs": 123496,
+    "formalReports": null,
+    "officialCompatibilityReportsAccepted": 0,
+    "failedAt": {
+      "phase": "late-logout",
+      "app": "recovery-779a"
+    },
+    "rawErrors": [
+      "Error:OPERATION_FAILED"
+    ],
+    "newAppWireCount": 24,
+    "newAppSse": 0,
+    "newAppStreamGet": 0,
+    "newAppLogoutPost": 0,
+    "allSse": 6,
+    "allCookieSse": 0,
+    "newAppPageErrors": []
+  },
+  "finding": {
+    "id": "REL-REC-C1-PRECONDITION",
+    "classification": "harness sequencing / required cookie SSE not established",
+    "expected": "Before logout, at least one current Cookie-only SSE record with chunks > 0 and no closedAt.",
+    "observed": "Zero Cookie SSE / stream GET in new App; no logout POST reached. Old six SSE records all Bearer.",
+    "sourceExplanation": "Fault truncates first turn ACK. Dispatch keeps UNKNOWN, lastTurn stays null, catch returns undefined without accepted update/schedule. Explicit Recovery retry is located after lateLogout. Therefore the harness waits for a stream observation before restoring the accepted turn that establishes it.",
+    "certainty": "Raw establishes missing SSE and no logout. Source strongly locates the first until precondition. Original error has no stack/substep and was sanitized to Error:OPERATION_FAILED; FIXTURE_CONDITION_DEADLINE is inferred, not a captured cause.",
+    "notEstablished": [
+      "Backend 04da late logout regression",
+      "new cookie preservation under held old logout",
+      "new App four compatibility checks complete",
+      "deployment eligibility"
+    ]
+  },
+  "cleanup": {
+    "originalParentFixtureCleanup": "UNKNOWN_OR_FAILED_SEE_RAW_KEEP",
+    "reason": "Parent acceptance assertion short-circuits its summary; original is retained.",
+    "independentRawFixtureCleanup": {
+      "databaseName": "flow_release_c1ffa8eb0b9a43d39ac84907d18b714a",
+      "marker": "7da464a9-e38c-4749-bbfe-e97637ee8a2d",
+      "create": "CONFIRMED",
+      "markerWritten": true,
+      "databaseRemoved": true,
+      "centerClosed": true,
+      "proxyClosed": true,
+      "errors": []
+    },
+    "fullReturn": "outer/return-receipt.json",
+    "resourcesReturnedAt": "2026-10-07T16:03:25.267185Z"
+  },
+  "nextSourceOnly": "Retain original UNKNOWN through actual reload; explicitly retry original key/body and verify accepted identity before waiting for the live Cookie stream and exercising late logout while task is running. No automatic new run; source delta needs focused review."
+}

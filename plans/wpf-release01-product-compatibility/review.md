@@ -1,8 +1,10 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED（精确新pair guard与四App caller集中独审待完成；运行未授权）**
+**当前状态：APPROVED 精确pair源码/调用准备；首次actual FAILED已独立核验，不是兼容批准。**
 
-Review target commit：2f6792ca3f19fcd1d54563531c302937f607c892。范围：apps/web/test/web-release-compatibility.fixture.ts。两descriptor分别固定、三guard14+/4-；实际输入/最小父worker差量见[准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)。原browser行为逐字8964；无本轮产品运行。
+Review target commit：2f6792ca3f19fcd1d54563531c302937f607c892。范围：apps/web/test/web-release-compatibility.fixture.ts。原browser逐字8964；[源审与native批准、首次失败实际](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)分层归档。180s段CLOSED56504ms，完整RETURN；旧三App只有阶段完成，reports=null，0正式报告，newApp lateLogout未真正发请求。
+
+[只读归因](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/diagnosis.json)定位harness等待cookie流前置位于UNKNOWN显式恢复之前。原统一错误没有完整stack，故不把推断deadline写成原始exception，也不据此认定后台04da回归。首失败保留；后继最小场景修复/兼容重验、main与用户发布仍未完成。
 
 ## 已批准：最小旧consumer与新Web artifact实际
 

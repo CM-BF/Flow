@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T15:47:12.247Z |
+| 最近更新时间 | 2026-10-07T16:09:01.937Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 新pair guard已固定；本批仅own records，已交回两产品持续STOP |
+| 工作树dirty状态 | 本批仅own records封存首失败；两harness未改，两已交回产品持续STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED 旧consumer affected noEmit/精确1case及本次固定Web artifact构建/验证；首resolverFAIL保留；新pair browser/compat未运行 |
+| 检查状态 | FAILED 新pair首次兼容，reports=null/0正式报告；原源码/旧consumer/固定artifact通过仍限历史范围 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线 |
 | 实现目标 | 2f6792ca3f19fcd1d54563531c302937f607c892 |
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新网页和修正后台产物已供齐，真实兼容的精确输入与调用准备已固定 |
-| 下一可用交付 | 完成新产物组合及调用器集中审，安排真实兼容验证 |
-| 当前阻塞 | NONE |
+| 当前产出 | 新网页产物已生成；新组合首次兼容检查失败，运行资源已完整归还 |
+| 下一可用交付 | 修正未知回执恢复与流观察的测试顺序，固定差量审查后再安排验证 |
+| 当前阻塞 | ACTIVE: 兼容场景在恢复未知回执前等待尚未建立的流；后台迟到登出尚未实际检查 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED 当前2f679精确pair guard/新caller集中审；d736源码及固定artifact实际均已批准 |
+| Review | [review.md](review.md)：APPROVED 精确pair源码/调用边界；首actual FAILED及完整RETURN已独立接受，非compat通过 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -38,14 +38,16 @@
 | RELEASE01-05 | completed | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；[c3唯一actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)三App各4项与独立Cookie PASS/完整cleanup，全部首红保留 |
 | RELEASE01-06 | completed | w01_owner | [限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付 |
 | RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
-| RELEASE01-08 | pending | w01_owner | [同任务唯一新Web生产接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)；[新Web产物已实际生成](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)；[产物实际独审通过](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/root-actual-review.json)，新pair兼容/发布未完成 |
+| RELEASE01-08 | pending | w01_owner | [同任务唯一新Web生产接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)；[新Web产物已实际生成](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)；[产物实际独审通过](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/root-actual-review.json)，[首实际FAILED/完整RETURN](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)，reports=null/0正式报告；新pair兼容/发布未完成 |
 | RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，[集中独审已批准](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)；非mounted/compat通过 |
+| RELEASE01-10 | pending | w01_owner | 本组合收口后的稳定executor/可信输入分责后继，尚未实施；见[plan.md](plan.md) |
 
 ## 等待记录
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
+| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | OPEN | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |
 | RELEASE01-W02 | UNKNOWN | 2026-10-07T14:54:01.259Z | 产物供给 | 外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作 | [接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json) |
 | RELEASE01-W03 | UNKNOWN | 2026-10-07T14:47:33.469Z | 后台供给 | 本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知 | [后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md) |
 
@@ -144,3 +146,9 @@ Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 fin
 ## 当前：精确新pair源码准备
 
 2026-10-07T15:47:12.247Z：[source2f679与固定caller](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)仅独立descriptor守卫及四App入口适配；browser行为原字节不变。PREPARED/无gate，new native/source集中审尚待。新180s/30cleanup只是未授提案，0运行/资源采样；已闭build25241与旧兼容23495均不转信用。全exact4正常seal后STOP保claim，集中审安全点可交后继独立源码，但真实发布优先。
+
+## 当前新 pair 首次实际失败与有界诊断
+
+2026-10-07T16:09:01.937Z：[38原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)固定outer1/末terminal一致/完整RETURN16:03:25.267185Z。新180s独立段CLOSED56504ms、未用123496ms不转信用；不是artifact150s余额。旧三App旅程完成但正式reports=null，不能将部分成功导入发布报告。
+
+Root准备源/native批准与失败实际/清理独审已原样归档。newApp原始Error:OPERATION_FAILED未保细节；24条wire无Cookie SSE/stream GET/logout POST。固定源码先在UNKNOWN状态等待SSE，后才显式retry原key/body，说明fixture前置尚未建立；后台04da lateLogout行为NOT_REACHED，未判回归或安全。原parent fixtureCleanup UNKNOWN短路文字不改，fixture原始DB/HTTP清理与full-return independently证实资源已归还。后继仅原两harness窄修获授源码准备，尚无新runtime。
