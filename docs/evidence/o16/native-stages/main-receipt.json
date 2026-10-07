@@ -1,0 +1,23 @@
+{
+  "observedAt": "2026-10-07T09:35:36.989312+00:00",
+  "main": "d022c8003fc4bd8ba560f1a039411ed098186659",
+  "source": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+  "delivery": "78df3980d04182976b4dc445e6cb4d32d8bd5901",
+  "decision": "APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE",
+  "exactOwnPaths": 216,
+  "currentOwnerAndFixedMainMatched": 216,
+  "intake": {
+    "path": "docs/evidence/i02/o16-native-stages-intake.json",
+    "bytes": 42097,
+    "sha256": "4cbd5c236d6e6c692afae10628cc9b3b733ea77f802ee3c671cb96b8d441a96b"
+  },
+  "independentReview": {
+    "path": "independent-review.json",
+    "bytes": 2690,
+    "sha256": "3a5f656a605336fac98d60d2873ecda0dea18733c216ecdf04670ed376569c1a"
+  },
+  "testsRerun": 0,
+  "provider": 0,
+  "PG": 0,
+  "limits": "Only staged experiment implementation and local evidence; native login/write bounds, new independent budgets and staged PG/native journeys remain open. Old FAIL/KEEP unchanged."
+}

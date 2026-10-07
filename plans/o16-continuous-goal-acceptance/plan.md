@@ -23,3 +23,5 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 2026-10-07T08:45:28.873Z：O16-01～05按零模型公开旅程范围已独审并受控main b768接收；实际1selected1pass/0provider。O16-06及真实模型语义、长期恢复连续性未完成；本片三scope停止写入归还，不扩大旧特殊窗口。
 
 2026-10-07T09:00:26.182Z：O16-06原owner新take开始分阶段准备，具体最小差量/登录来源与持久会话边界见[native-stages候选](../../docs/evidence/o16/native-stages/candidate.md)。既有真实query许可尚未授；此处不是等待预算替代实现。原零模型完成与旧失败保持。
+
+2026-10-07T09:35:36.989312+00:00：O16-06分阶段实现与16不同局部证据已限定独审并main d022；O16-06仍未完成。后继[环境输入收敛](../../docs/evidence/o16/native-stages/native-environment-readonly.md)仅只读，真实plan/children仍要求独立新预算与实际登录/总写入边界；不修改已审实验源或复用旧窗口。
