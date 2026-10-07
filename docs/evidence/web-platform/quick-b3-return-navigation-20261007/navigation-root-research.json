@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T05:24:51.059240+00:00",
+  "task": "WPF-MATURE-05",
+  "state": "READ_ONLY_INTERFACE_PROPOSAL_NOT_TAKEN",
+  "fixedMain": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "sources": [
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3834,
+      "sha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 5515,
+      "sha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "bytes": 3366,
+      "sha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3309,
+      "sha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 6621,
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 54279,
+      "sha256": "ee3c8caba6274830bd0183011612153ecbb716bd890c3d3a62d4d18553208d96",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 24648,
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationList.tsx",
+      "bytes": 1475,
+      "sha256": "0f2ea12125b11f867cc342d84be4f930bbacf2d6f3f248aa980ec78c9299ae68",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81",
+      "workingCopyEqualsFixed": true
+    }
+  ],
+  "sourceInstruction": "GO direct delegated message: recent conversations plus authorized full-title search; keep current Recovery/Quick first; add to existing parent, not a new large task.",
+  "facts": [
+    "Conversation creation uses randomUUID; current list query id > after ordered id ASC, not chronological recency.",
+    "Catalog requests limit50. ConversationList filters only loaded state.items via lowercase title.includes. App placeholder Find a chat does not communicate that local-page scope.",
+    "Legacy contract accepts only after(length<=128) and limit<=50; FlowClient.conversations exposes only these options. Silently replacing existing ID cursor/order would break existing consumers.",
+    "ConversationSummary already carries createdAt/updatedAt/projectId. In inspected current writers updated_at changes on turn admission; execution-task progress/queue pause update different state. It must not be labeled last viewed or all background activity.",
+    "Catalog sequence counter discards superseded result and dispose aborts center lifetime, but there is no query/project/sort binding or per-new-query request cancellation because no server search exists.",
+    "Server list maps rows to conversation summaries; title search need not read turn bodies/details or eagerly fetch every page."
+  ],
+  "proposedDecisions": [
+    "Define default recency explicitly, preferably latest accepted user turn with creation fallback from actual persisted metadata, stable id tie-break. Reading/selecting a chat must not secretly update server recency. If a separate local recently-opened list is desired, label it separately.",
+    "Keep legacy omitted-mode ID paging unchanged; introduce an explicit supported listing/search mode through the existing conversation/client seam. A new bounded opaque cursor must carry version, filter/sort identity and ordered position; do not reinterpret old ID cursors or silently send new fields to old strict centers.",
+    "Search bounded normalized title query over the actual authorized center/project scope at the server. Define literal wildcard escaping/case behavior, query length and result/encoded-response limits; parameterize SQL. Project selection is a filter within real authorization, not an authorization grant.",
+    "Use deterministic keyset ordering and a documented concurrent-admission refresh contract. Mutable activity time can move rows between pages; a timestamp ceiling alone is not a historical snapshot. Do not claim gap-free snapshot pagination without the necessary server representation.",
+    "Keep current rendered order stable until explicit refresh/new query/load-more boundary; new background work can expose an update notice rather than repeatedly moving focused rows. Preserve selected chat and its draft independently of list visibility.",
+    "Catalog binds generation, center identity, project, normalized query, sort and cursor; cancel superseded in-flight requests and discard all stale outcomes. Small debounce may reduce actual requests but must be verified; empty state, retry and legacy loaded-only filtering must be accurately labeled.",
+    "Use bounded light summaries and existing data/cache seams. No eager all-page scan, full task body/detail requests, or separate search state ledger."
+  ],
+  "acceptance": [
+    ">50 conversations with an exact match only on an unloaded legacy page; new search finds it in bounded result requests.",
+    "Same timestamps use deterministic tie-break; next pages/refresh preserve documented behavior under accepted new messages without duplicates or hidden focus/draft mutation.",
+    "Rapid q changes and center/project changes reject late old responses; server filtering never crosses authorization. Include malformed/foreign cursor and unsupported old center.",
+    "Empty/error/keyboard narrow and themes preserve interaction; background activity does not continuously reshuffle selected/focused rows.",
+    "Record actual request count, response bytes and local timings on fixed isolated fixtures. Index presence is not a latency claim; do not benchmark user service or real repo."
+  ],
+  "scopeCoordinationCandidates": [
+    "packages/contracts/src/conversations.ts query/new summary or cursor shape",
+    "packages/client/src/index.ts typed list options and response consumers",
+    "apps/server/src/conversations/index.ts and queries.ts; existing admission metadata only if recency definition truly needs it",
+    "new migration index only after actual query and existing indexes inspected; never rewrite007",
+    "Web ConversationCatalog/projection.ts and ConversationList.tsx",
+    "App.tsx eventual UI binding remains Recovery-owned; no overlapping writer"
+  ],
+  "openQuestionsForOwners": [
+    "Fresh claim ownership/shared conversation writer and public-contract owner; future exact take before implementation.",
+    "Version negotiation for legacy/current listing and the cursor refresh semantics under concurrent updates.",
+    "Concrete title query normalization and conservative bounded defaults derived from consumer shape."
+  ],
+  "skills": [
+    "Local find-skills",
+    "codebase-design small shared Interface across real server/client/catalog callers",
+    "clean-code distinct catalog/draft authority and explicit cancellation/error semantics"
+  ],
+  "limits": {
+    "projectWrites": false,
+    "claimTaken": false,
+    "runtime": false,
+    "db": false,
+    "browser": false,
+    "provider": false,
+    "personalService": false,
+    "performanceRegressionClaim": false
+  }
+}

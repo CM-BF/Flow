@@ -28,6 +28,8 @@
 - [ ] **WPF-MATURE-05-04** 兼容内容种类与窄屏：模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。
 - [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；另核overview/feed同时服务sidebar的观察与命令生命周期，按visible overview/聊天隐藏overview/pagehidden区分请求，不能仅离开overview就全停；后继裁剪必须保raw稀疏cursor/watermark、阅读anchor/hasEarlier/可重取和单一轻摘要来源，不用DOM推算CPU/heap；关联MATURE06-04，没有实现的3+明确开放。 长时活动读取的累计缓存验收见[本条补充](#活动读取累计缓存验收)。
 
+- [ ] **WPF-MATURE-05-06** 完成日用会话导航：近期会话排序和全授权标题搜索采用明确兼容合同；有界摘要/分页与稳定选择、草稿和焦点；完整验收见[导航后继](#日用会话导航后继)，当前未take。
+
 ## 验证与交付规则
 
 每个实际子task直接链接本大task稳定ID及co-lead；进度只维护其唯一status。仅完整TODO验收通过、证据环境/固定源码明确并完成受控主线集成后才可将本大taskDone；当前所有大task验收仍开放。普通片段ready/review/merge/claim不向GO发送，内部worker通信保留，需GO解决的整任务独立blocker仅一次。新scope依D04查重/原子领取，本计划不授权重启个人服务、刷新用户tab或新增provider调用。验证按影响范围，不为文档重复产品测试。
@@ -90,3 +92,18 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 同一app1750验收补[root固定506导航两源研究](../../docs/evidence/web-platform/app1750-narrow-navigation-root.md)：fresh窄屏与desktop resize须分别验；导航开关expanded与关闭/选会话后的焦点回交需真实键盘验证，保持main/draftMap和原plugin slots身份。源码推导不等运行bug，原native disclosure/modal取舍按实际交互核；不阻RELEASE或新建任务。
 
 原05-03插件菜单验收补充（fixed main22a，仅研究）：[九源报告](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/report.md)与[root限定核验](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/root-review.json)确认外层workspace.tabs、header/actions及active artifact.actions已接P01，剩余一项是右侧Task workspace逐内置tab动作位，尤其inactive detail B。后继必须在A激活时准确绑定B原task/tab身份；仅显示/展开菜单零正文GET，显式读取才沿原reference.load；禁用/卸载/撤权、换连接和B关闭后旧callback受tab lifetime限制，不能借全局active A或第二tab状态源；390浅深与键盘核动作发现、tab焦点/激活和关闭回交，不在role=tab内嵌button。04内容/窄屏与05真实App验收沿用。具体接缝由原P01接口owner协调，不在此新建slot/公共契约/任务或领取写权；原Close/Delete和私有布局owner保持，Recovery P1优先。全部为源码覆盖和候选验收，不是运行通过。
+
+### 日用会话导航后继
+
+来源是GO经root准确转述（管理U17），不是用户逐字。固定ee98的[11源研究](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-root-research.json)发现当前随机UUID创建、ID升序分页、Catalog每页50，列表只在已加载items上按title过滤；这是日用能力缺口，不是已测性能回归。updated_at目前随turn admission变化，不能标成最近浏览或所有后台活动。
+
+用户结果及验收：
+
+- 默认能找回近期使用/活动会话；实施前冻结真实排序语义、创建fallback和稳定ID tie-break。若另提供本地最近打开历史须明确区分，后台活动不得不断抢动当前行。选中会话、pane、草稿与焦点独立保留。
+- 标题搜索覆盖当前中心/项目真实授权范围；项目筛选不授新权。复用conversation/client接口和轻摘要，不先拉全库、正文或详情；“仅筛选已加载页”须诚实标注，不能冒全库搜索。
+- 旧省略模式保after/limit与ID cursor兼容（当前after<=128、limit<=50）；新模式需明确能力/version/query/project/sort绑定，定义规范化、大小写/通配字面转义、query与结果字节上限及参数化查询。不能暗改旧cursor或向旧strict中心盲发新字段。
+- 新旧响应按中心/项目/query/sort/cursor generation隔离，快换时取消旧请求并丢迟到结果。连续翻页/刷新在同时间戳及并发新活动下须有明确去重和刷新合同；可变活动时间加时间上限并不自动形成历史snapshot。
+- 有界前端列表/summary缓存与按需分页；更新提示或显式刷新代替后台重排。空结果、错误/重试、键盘、窄屏和主题必须可用。
+- 固定隔离材料至少>50会话，只有未加载页出现命中；覆盖同时间戳、连续翻页/刷新、快换query、切中心/项目、恶意/外来cursor与旧中心能力。记录真实请求数、响应bytes及局部延迟；有index不等低延迟承诺。
+
+[共享接口与精确路径候选](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-scope-candidates.json)仅用于协调原center/contract/Web writer。App/projection仍属Recovery，后继不借旧claim写入；未来fresh查重、独立树和精确take后实施，不新增大task/第二搜索状态源。当前恢复/模型设置验收优先；不要求等全部Web完成才协调共享接口。本文不授权真实用户服务扫描、全库预取、provider或运行。

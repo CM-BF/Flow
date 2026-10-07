@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:19:32.149050+00:00",
-  "state": "QUICK_B3_ADMITTED_NOT_STARTED_SVC08_NEXT_SHARED_PG",
-  "groupWindowOwnership": "Web has no actual PG/Chrome holder. Quick b3 short single independent0PG browser handoff admitted but not launched; original Lead holds explicit next shared PG handoff for SVC08, actual start not reported. Recovery own local8MiB allowance reserved; no fifth browser gate.",
+  "recordedAt": "2026-10-07T05:29:56.950734+00:00",
+  "state": "QUICK_B3_FAILED_CLEANED_RETURNED_RECOVERY_PAGE_AUTH_PREPARED",
+  "groupWindowOwnership": "Web no actual PG/Chrome holder, gate or reservation. Quick b3 failed and exact owned cleanup completed. SVC08 actual PG returned to Mika05:20:48.327Z; C02 preparation NOT_OPEN in latest incoming. Recovery fifth page-auth is prepared, not admitted.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:19:32.149050+00:00",
-    "kind": "X01_R3_RETURN_SVC08_SHARED_PG_HANDOFF_QUICK_B3_INDEPENDENT_ADMISSION",
-    "source": "quick-b3-admission-20261007/incoming.json",
-    "summary": "X01 R3 actual fully returned; work end, outer exit and final TMP cleanup distinct. SVC08 explicitly NEXT_READY_SHARED_PG, no actual start reported. Quick b3 admitted not started with fresh combined4,053,008,384B floor; 18468 spent/41532 remaining includes15s cleanup. No manager runtime."
+    "at": "2026-10-07T05:29:56.950734+00:00",
+    "kind": "QUICK_B3_ACTUAL_RETURN_SVC08_RETURN_RECOVERY_SELECTION_READY",
+    "source": "quick-b3-return-navigation-20261007/incoming.json",
+    "summary": "Quick b3 FAILED0/6/0PNG with complete passive trace, owned cleanup and root failed-actual acceptance; charge12157/cumulative30625/rem29375 incl15s. Recovery dd664 source/local scoped accepted; fifth page-auth2 groups prepared only, noenv/gate. NavigationU17/MATURE05-06 plan only."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "recovery-fourth-return-20261007/return.json",
+  "currentWindowReturn": "quick-b3-return-navigation-20261007/incoming.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1033,6 +1033,17 @@
         "summary": "cookieRead passed; saved.txt tooltip timed out in textIntentDraft, later groups incomplete/not run and0PNG. Actual owned cleanup accepted for handoff; env exactdeleted. Conservative late cumulative54883.199542, remaining35116.800458. Root independent feature review pending; no automatic retry."
       },
       "currentIntake": "recovery-fourth-return-20261007/return.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:19:32.149050+00:00",
+      "state": "QUICK_B3_ADMITTED_NOT_STARTED_SVC08_NEXT_SHARED_PG",
+      "latestCoordination": {
+        "at": "2026-10-07T05:19:32.149050+00:00",
+        "kind": "X01_R3_RETURN_SVC08_SHARED_PG_HANDOFF_QUICK_B3_INDEPENDENT_ADMISSION",
+        "source": "quick-b3-admission-20261007/incoming.json",
+        "summary": "X01 R3 actual fully returned; work end, outer exit and final TMP cleanup distinct. SVC08 explicitly NEXT_READY_SHARED_PG, no actual start reported. Quick b3 admitted not started with fresh combined4,053,008,384B floor; 18468 spent/41532 remaining includes15s cleanup. No manager runtime."
+      },
+      "currentIntake": "quick-b3-admission-20261007/incoming.json"
     }
   ],
   "dperf05Pure": {
@@ -1080,7 +1091,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "QUICK_B3_SINGLE_ADMISSION_RECOVERY_SOURCE_ONLY_NO_PG_RESERVATION",
+    "state": "RECOVERY_FIFTH_PREPARED_QUICK_FAILURE_DIAGNOSIS_NO_ADMISSION",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1139,31 +1150,30 @@
       }
     },
     "quick": {
-      "ownerHead": "f9fa995516b8c169edf17fbe1a28e044b6c619b4",
+      "ownerHead": "e42bb0299990ebedf2b49a02634575c25bbfeb6b",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-b3",
       "bindingSha256": "fb5d6a6f5ea9590f134f9b3c7a47a4b5de7b2aec0af9f6d04d28dce8ab401a2f",
       "manifestSha256": "1ebf0b03a1ec1b18eac2e269144d5b79f9539028daf75173157c7215c9f9cb3f",
-      "state": "B3_ADMITTED_NOT_STARTED",
-      "admission": "/private/tmp/msgquick-b3-admission-okeh9ium/gate.json",
-      "browserSpentMs": 18468,
+      "state": "B3_CONSUMED_FAILED_CLEANED_RETURNED",
+      "admission": "quick-b3-admission-20261007/gate.json (historical consumed)",
+      "browserSpentMs": 30625,
       "totalMs": 60000,
       "cleanupMs": 15000,
-      "meaning": "b1/b2 failures preserved; exact accounting helper5PASS and native preparation accepted, b3 browser not started. c2 strict+26 remains historical actualPASS.",
-      "actualReceipt": "quick-b2-return-20261007/incoming.json",
-      "remainingMs": 41532,
+      "meaning": "Third actualFAILED0/6/0PNG; passive trace complete, cause not uniquely proven. c2 strict+26 and helper5PASS remain scoped evidence.",
+      "actualReceipt": "quick-b3-return-navigation-20261007/incoming.json",
+      "remainingMs": 29375,
       "failure": "Parent retained evidence sampling limit; static non-atomic BASE minus scratch overcount defect. Actual transient is consistent, not exact causal proof.",
-      "review": "quick-b2-return-20261007/quick-b2-failed-review.json",
-      "next": "Original W01 executes once after manager FINAL and before exact gate expiry; no automatic retry or source change.",
+      "review": "quick-b3-return-navigation-20261007/quick-b3-failed-review.json",
+      "next": "Original owner preserves actual failure and diagnosis; no automatic fourth browser or current gate/reservation.",
       "preparationReview": "quick-b3-admission-20261007/quick-b3-native-review.json",
-      "admissionPreparation": "quick-b3-admission-20261007/handoff.json",
-      "gateExpiresAt": "2026-10-07T05:22:10.498646+00:00"
+      "admissionPreparation": "quick-b3-admission-20261007/handoff.json"
     },
     "recovery": {
-      "ownerHead": "1bc4f20b9257b294adcadd6b68b1b9e015e04e86",
-      "source": "1bc4f20b9257b294adcadd6b68b1b9e015e04e86",
-      "packet": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0",
-      "state": "FOCUS_PRECONDITION_SOURCE_REVIEWED_MINIMAL_JOURNEY_SELECTION_IMPLEMENTATION_NO_FIFTH_RUN",
+      "ownerHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
+      "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
+      "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
+      "state": "FIFTH_PAGE_AUTH_STATIC_PREPARED_NOT_ADMITTED",
       "budget": {
         "authoritativePreviousMs": 38364.050667,
         "thisLateMs": 16519.148875,
@@ -1175,7 +1185,7 @@
         "earlierOriginalBudgetPreserved": true
       },
       "runtime": "Fourth PG+HTTP+Chrome attempt consumed and actual cleaned; no current holder/gate/reservation.",
-      "next": "Root source-only accepted two expectations after final Escape; 18 other sources unchanged. Original owner may implement full/recovery-chain/page-auth/csrf-offline/appearance selection in existing browser scope, preserving full chain and required assertions, with own local <=30s/8MiB pure checks only. No PG/HTTP/Chrome/provider or fifth gate.",
+      "next": "Need exact current PG handoff plus preparation acceptance before new env/gate; four old failures and original budget retained.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
         "handoff": "recovery-admission-handoff.json",
@@ -1190,7 +1200,18 @@
         "envDeletion": "recovery-fourth-return-20261007/admin-env-deletion-receipt.json"
       },
       "actualReceipt": "recovery-fourth-return-20261007/return.json",
-      "sourceReview": "quick-b3-admission-20261007/recovery-focus-review.json"
+      "sourceReview": "quick-b3-return-navigation-20261007/recovery-journey-source-review.json",
+      "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
+      "fifthSelection": {
+        "journey": "page-auth",
+        "required": [
+          "cookieRead",
+          "pageOnlyAuthLoss"
+        ],
+        "otherGroups": "NOT_SELECTED",
+        "fullJourneyPassed": false
+      },
+      "preparationReview": "PENDING_ROOT_STATIC_PACKET_ACCEPTANCE"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1293,13 +1314,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "quick-b3-admission-20261007/handoff.json",
+  "currentWindowEvidence": "quick-b3-return-navigation-20261007/quick-b3-failed-review.json",
   "webActualHolder": null,
-  "webGate": "/private/tmp/msgquick-b3-admission-okeh9ium/gate.json",
+  "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": true,
+  "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1625,22 +1646,11 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": "OriginalLead",
-    "state": "NEXT_READY_SHARED_PG_HANDED_TO_ORIGINAL_LEAD",
-    "entryShort": "c854/51f",
-    "categories": [
-      "single dedicated DB",
-      "owned services"
-    ],
-    "workMs": 120000,
-    "cleanupMs": 30000,
-    "freshFloorBytes": 2684354560,
-    "liveReserveBytes": 1073741824,
-    "declaredBytes": 606076928,
-    "actualStart": "NOT_REPORTED",
-    "meaning": "Do not infer actualRUN from ready/handoff; Web does not consume its PG slot.",
-    "authority": "Original Execution Lead explicitly accepted sole PG handoff and may fresh admit reviewed c854/51f 120s+30s single marked DB/0runner/provider. No additional Root/Mika approval; actual start not reported. Independent0PG browser may coexist under combined budget.",
-    "source": "quick-b3-admission-20261007/incoming.json"
+    "owner": null,
+    "state": "SVC08_ACTUAL_PG_RETURNED_TO_MIKA_CURRENT_NEXT_READY_UNCONFIRMED",
+    "actualReturnAt": "2026-10-07T05:20:48.327Z",
+    "c02": "NOT_OPEN; root read-only preparation review requested, actual start not reported",
+    "source": "quick-b3-return-navigation-20261007/incoming.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1650,15 +1660,15 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "SVC08 sole next shared PG; original Lead fresh admission; actual RUN not reported"
+    "Mika current next ready PG requires explicit actual handoff; no current owner inferred from preparation"
   ],
-  "currentIntake": "quick-b3-admission-20261007/incoming.json",
+  "currentIntake": "quick-b3-return-navigation-20261007/incoming.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
     "fixedRuleCommit": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
     "path": "docs/quality/local-validation.md#ready-validation",
     "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
-    "application": "Quick b3 dedicated0PG dynamic fixture/profile/output may coexist with SVC08 isolated PG after exact combined fresh admission. Outer reserve is included within8MiB retained; Recovery8MiB local is reserved. Actual starts remain separate from handoffs."
+    "application": "Prior Quick b3 independent0PG gate consumed and returned. No current Web gate. Recovery fifth uses PG+HTTP+Chrome, so needs explicit shared PG handoff and its exact fresh combined admission; source review is not runtime permission."
   }
 }

@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-07T05:21:55.165541+00:00",
+  "decision": "APPROVED_SCOPED_SCENARIO_SELECTION_SOURCE_AND_LOCAL_EVIDENCE_NOT_BROWSER_PASS",
+  "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "base": "1bc4f20b9257b294adcadd6b68b1b9e015e04e86",
+  "sourcePath": "apps/web/test/conversation-recovery.browser.ts",
+  "sourceSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+  "scope": "One existing browser runner/test file only; 18 other fixed sources byte-identical. No fixture/product change.",
+  "reviewed": [
+    "Five explicit journeys; missing/unknown/prototype-name selector rejected at gate before side effects. Same value flows Gate\u2192Init\u2192result.",
+    "Parent independently derives exact required ordered groups; matching completed groups/check count/PASS coverage and zero primary/page/cleanup failure are necessary. Zero or partial selection cannot pass.",
+    "Full retains original seven group order and assertion bodies. Recovery chain retains material\u2192cross-tab CAS\u2192same-key lost-ACK. Unselected groups are NOT_SELECTED; no catch-and-continue contaminated state.",
+    "Each independent attempt owns original new markedDB/fixture data and new context. page-auth first checkpoints a real draft; csrf-offline checkpoints its own expected text; appearance checkpoints and asserts a real saved row, not empty screenshot. BrowserContext alone is not called server isolation.",
+    "Timing uses monotonic worker initialization and at most7 group records. UI preparation is included in group elapsed; no measured speed claim before actual browser.",
+    "Native supervisor, DB identity and cleanup, total deadlines and original failed-run carry retained. FullJourneyPassed is limited to original seven-group subset, not full feature acceptance."
+  ],
+  "local": {
+    "firstSourceSha256": "c19304a5412db295440b566fc41d2572ca449a0f05a0c36bb79b34a25f23d360",
+    "finalSourceSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+    "cumulativeMs": 12462.476999964565,
+    "finalTypecheckExit": 0,
+    "finalPureAssertions": 119,
+    "evidence": [
+      {
+        "path": "/private/tmp/recovery-journey-local-697ukvp0/result.json",
+        "sha256": "01678d6effc96bc696dd9264e9fadefc594faa732927255fc8984966f6abfe17"
+      },
+      {
+        "path": "/private/tmp/recovery-journey-local-697ukvp0/result-2.json",
+        "sha256": "8b89267aff34512b208ea8d522ba59eb18c16015724619b47b6169e44021cb54"
+      },
+      {
+        "path": "/private/tmp/recovery-journey-local-697ukvp0/selection-check.cjs",
+        "sha256": "ddadefba04c8d149fa8730ed33c28e81d8dc6034ab1f75490a5a69aada4c9612"
+      },
+      {
+        "path": "/private/tmp/recovery-journey-local-697ukvp0/selection-timing-check.cjs",
+        "sha256": "82f2d08103f5831c73164fa88557dbeb61f93680ae381d36d8d197b03f66cb40"
+      },
+      {
+        "path": "/private/tmp/recovery-journey-local-697ukvp0/3.stdout.log",
+        "sha256": "2e19d4548d2053c68aed2b1abeaf179e3f16750a2718792a85ceac551cade942"
+      }
+    ],
+    "boundary": "Actual extracted selection/run callbacks only; deterministic stub clock, no browser/IDB/HTTP/PG/provider. Two source revisions recorded separately."
+  },
+  "limitations": [
+    "No independent new runtime by root; owner actual output/commands/byte counts reviewed.",
+    "Type and extracted-function checks do not validate independent UI setup or server lifecycle. Browser still NOT_RUN for this target.",
+    "Initialization import failure before try yields no worker timing/result; parent reports missing outcome, not successful setup. Timing numbers are observations, not performance guarantees."
+  ],
+  "nextRecommendation": {
+    "journey": "page-auth",
+    "reason": "Directly exercise independent real cookie/IDB-abort/page-preservation gap without unrelated material tooltip predecessor; prior callback fix was not reached in fourth run.",
+    "maximumAdmittedMs": 35116,
+    "cleanupReserveMs": 15000,
+    "cumulativePriorMs": 54883.199542,
+    "gate": "NOT_CREATED",
+    "fullE2E": "Still required; do not equate independent selection with full original journey."
+  },
+  "fullFeatureReview": "NOT_STARTED",
+  "runtime": "NOT_RUN",
+  "skills": "Local find-skills/codebase-design/clean-code/webapp-testing. Official isolation/serial docs inform separation, but pinned source and owned fixture determine actual shared dependencies."
+}

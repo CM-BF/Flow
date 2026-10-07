@@ -42,6 +42,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)已由独立Timing源码72a实施，parser与5项浏览器实际获审；main/发布另计，后继易读层级沿同U14排队 |
 | U15 日常文件附件能力（GO经root准确转述，非逐字） | 常用Markdown/代码文本按真实能力支持，大小与总context预算明确可配置；授权workspace/runner文件与中心上传资源分清，选后同版本材料经Send/Queue到实际runner | 沿[原MATURE03-02/新明确03-07](../wpf-mature-03-attachments/plan.md)；一份项目>8KiB Markdown和一份源文件是未来验收材料。复用storage/context/附件接口，先只读合同准备，不只改常量、不造第二上传体系；无provider/个人文件读取上传许可 |
 | U16 恢复验收的真实依赖（GO经root准确转述，非逐字） | 不让无关材料/tooltip失败阻断全部认证失效、离线和窄屏检查；列真实依赖，独立者隔离context/服务数据与精确选择 | 归[原MATURE06-04/06](../wpf-mature-06-chat/plan.md)，保真实恢复链、最终E2E和所有原断言/失败/预算；不catch污染状态继续、不以局部PASS冒完整通过、不加provider或新框架 |
+| U17 日用会话导航（GO经root准确转述，非逐字） | 默认可找回近期使用/活动会话，冻结排序语义和稳定tie-break；按中心/项目真实授权搜索全标题，不把已加载50条过滤称完整搜索 | 沿[原MATURE05-06](../wpf-mature-05-workspace/plan.md)独立后继；有界轻摘要/分页、旧cursor兼容及query绑定，保护聊天/草稿/焦点；覆盖>50、未加载页命中与快换query/中心，记录实际请求/字节/局部延迟。当前只计划/接口研究未take，恢复与设置优先 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 01:31 UTC |
+| 最近更新 | 2026-10-07T05:29:56.950734+00:00；会话导航后继已登记，未实施 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-05](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已有split/merge与workspace-state基础；尚未完成一个顶层tab内A与B组合的完整验收。 |
-| 下一可用交付 | CACHE关闭视图/正文保护已main；附件安全点后先MATURE06-04恢复，Arc布局/插件入口仍候选未领 |
+| 下一可用交付 | 恢复与快速设置验收后，推进近期会话与完整标题搜索的兼容接口；复用有界摘要与分页，Arc组合/插件入口继续作为既有后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -32,6 +32,7 @@
 | WPF-MATURE-05-03 | pending | Web co-lead | 比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。 |
 | WPF-MATURE-05-04 | pending | Web co-lead | 模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。 |
 | WPF-MATURE-05-05 | in-progress | Web co-lead | 实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；overview/feed观察与命令生命周期须分离，后台请求仅预算内观测，不从源码推算QPS/heap；关联MATURE06-04，没有实现的3+明确开放。新增[累计活动缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)仅文档限定批准/产品未实施未测量。 |
+| WPF-MATURE-05-06 | pending | Web co-lead | [导航后继验收](plan.md#日用会话导航后继)与[11源研究](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-root-research.json)：近期语义/tie-break、全授权标题搜索、legacy cursor兼容、query隔离和>50真实验收；仅候选未take/未实现，恢复与设置优先。 |
 
 ## 依赖与领取
 

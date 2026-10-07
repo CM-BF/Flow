@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-07T05:29:56.950734+00:00",
+  "sources": "Original Lead/Mika/Root inbound and bounded original-owner git/status reads. No independent service/PG/browser/resource probe.",
+  "quick": {
+    "ownerHead": "e42bb0299990ebedf2b49a02634575c25bbfeb6b",
+    "branch": "codex/web-message-settings-quick-controls",
+    "clean": true,
+    "localEqualsRemote": true,
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "state": "B3_CONSUMED_FAILED_CLEANED_RETURNED",
+    "actualReturnAt": "2026-10-07T05:21:05.923599Z",
+    "actualExit": 1,
+    "outerMs": 12156.567208003253,
+    "passedGroups": 0,
+    "requiredGroups": 6,
+    "png": 0,
+    "traceBytes": 9529,
+    "traceEvents": 10,
+    "causality": "Native key events reached connected/focused/enabled model select; no input/change and value stayed empty. Cause not uniquely proven.",
+    "cleanup": "Three original owned groups and scratch absent, allEOF/0drop; fixture/context closed; Chromeexit0. No broader service state inferred.",
+    "conservativeThisMs": 12157,
+    "conservativeSpentMs": 30625,
+    "remainingMs": 29375,
+    "cleanupIncludedMs": 15000,
+    "originalParentBudgetPreserved": true,
+    "review": "quick-b3-failed-review.json",
+    "next": "No automatic fourth attempt or product mutation; originalowner evidence sealed, narrow diagnosis follows actual evidence."
+  },
+  "recovery": {
+    "head": "5e629909fb96bebe703ab75670daa9e67ab29979",
+    "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
+    "branch": "codex/web-conversation-recovery",
+    "clean": true,
+    "claim": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 exact21 active",
+    "state": "FIFTH_PAGE_AUTH_STATIC_PREPARED_NOT_ADMITTED",
+    "sourceReview": "recovery-journey-source-review.json",
+    "local": {
+      "cumulativeMs": 12462.476999964565,
+      "noEmitExit": 0,
+      "pureAssertions": 119,
+      "boundary": "No native browser/IDB/HTTP/PG/provider proof."
+    },
+    "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
+    "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
+    "packetReview": "Root preparation review pending incoming; source review alone is not gate.",
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "otherGroups": "NOT_SELECTED",
+    "fullJourneyPassed": false,
+    "priorLateMs": 54883.199542,
+    "maxNextTotalMs": 35116,
+    "cleanupMs": 15000,
+    "gate": null,
+    "adminEnv": null,
+    "reservation": false,
+    "next": "Need exact current PG handoff plus preparation acceptance before new env/gate; four old failures and original budget retained."
+  },
+  "svc08": {
+    "state": "ACTUAL_PG_RETURNED_TO_MIKA",
+    "actualReturnAt": "2026-10-07T05:20:48.327Z",
+    "source": "OriginalLead actual receipt relayed by Root",
+    "next": "Mika current next ready; C02 preparation reported NOT_OPEN, no actual start provided.",
+    "managerProbe": false
+  },
+  "web": {
+    "pgHolder": null,
+    "browserHolder": null,
+    "gate": null,
+    "reservation": false,
+    "noAutomaticRetry": true
+  },
+  "navigation": {
+    "parent": "WPF-MATURE-05",
+    "todo": "WPF-MATURE-05-06",
+    "userTrace": "U17",
+    "state": "REQUIREMENT_AND_INTERFACE_RESEARCH_NOT_TAKEN",
+    "review": "navigation-root-research.json"
+  }
+}

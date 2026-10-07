@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:19:32.149050+00:00；Quick独立浏览器已准入未启动，SVC08共享PG已交原Lead；实际开始分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:29:56.950734+00:00；Quick第三次失败已清理归还，Recovery第五仅准备，导航后继已持久 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 本机入口已发布，剩说明文档增量待接收；快速设置将继续观察真实键盘选择。草稿恢复已补焦点前置，并分清独立验收与完整恢复链；常用Markdown和源码附件能力已纳入既有后继，尚未实现。 |
+| 下一可用交付 | 快速设置已有完整键盘诊断，根因待定位；恢复将先验独立的重新认证与页内草稿保留。近期会话与完整标题搜索已纳入工作区后继，尚未实现；本机入口说明文档增量仍待接收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无实际PG/Chrome占用；Quick独立浏览器一次准入已交接、尚未启动。SVC08共享PG交原Lead自行fresh准入，未收到实际启动；Recovery仅源码及有界局部检查，无新浏览器许可。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Quick第三次已失败并完整归还，Web无PG/Chrome holder、gate或预约。SVC08已于05:20:48.327Z归还PG给Mika；Recovery第五仅准备，须明确交接和fresh准入。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

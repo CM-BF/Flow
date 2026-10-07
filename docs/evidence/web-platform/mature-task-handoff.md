@@ -1,14 +1,14 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:19:32.149050+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
+更新：2026-10-07T05:29:56.950734+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
 
 ## 当前窗口与用户交付
 
-**Quick独立浏览器已准入，尚未启动；本组无实际PG或Chrome holder。** [本次唯一交接](quick-b3-admission-20261007/handoff.json)绑定f9fa/current claim与全部输入，gate到05:22:10.498646Z，原owner仅一次b3。累计18468ms、剩41532ms含15s清理；已有两次失败完整保留，计量helper五项通过及native准备批准不等浏览器通过。管理本段不启动Chrome，实际终态由owner回报。
+**Quick第三次实际失败，独立浏览器窗口已归还；Web现无PG/Chrome holder、gate或预约。** [本次实际与来源](quick-b3-return-navigation-20261007/incoming.json)、[root限定审查](quick-b3-return-navigation-20261007/quick-b3-failed-review.json)记录05:21:05.923599Z返回，outerexit1/12156.567ms、0/6组/0PNG；三原组与scratch absent、全EOF/0drop、fixture/contextclosed。完整9529B/10条被动trace见按键抵达有效焦点选框、没有input/change、值仍空，尚不能唯一归因产品。保守本次12157、累计30625/余29375含15s清理，原parent30563与全部旧失败保持。owner e42bb双端clean；不自动第四跑，c2 strict+26及helper5PASS不冒页面通过。
 
-**共享PG已从X01 R3明确交给原Lead的SVC08。** [本批入站](quick-b3-admission-20261007/incoming.json)分列X01报告工作结束05:10:08.767637Z、外层exit0时点05:10:08.797797Z、原件复制和exactTMP清理05:10:46.060203Z；27/27、双库/4listeners/groups/EOF完整闭合，原失败和UNKNOWN历史保留。SVC08为NEXT_READY_SHARED_PG，原Lead可直接fresh准入已审单专库120s+30s，无需新Root/Mika批准；尚未收到实际启动，不冒RUN。Quick完全独立0PG可并行，fresh组合预算同时保SVC08、各队local与一份reserve。
+**SVC08实际PG已05:20:48.327Z归还给Mika。** 原Lead实际receipt经root传入；当前下一ready需具体交接，C02准备仍NOT_OPEN，不能把只读审查当RUN。X01 R3此前完整归还以及R1/R2失败/UNKNOWN原件保留；本组没有新PG预约。
 
-**Recovery第四次失败保留，未启动第五次。** [实际归还与env删除](recovery-fourth-return-20261007/return.json)保cookieRead通过、saved.txt tooltip超时、后续未运行及0PNG；晚累计54883.199542ms，未来整数最多35116含15s清理。owner已封存a816，焦点前置1bc仅两条expect获[源码窄审](quick-b3-admission-20261007/recovery-focus-review.json)。原owner正在原范围实现有限journey选择，保完整共享恢复链和full7组，独立场景隔离数据/context，NOT_SELECTED不冒通过；仅自有local30s/8MiB纯检查，不开PG/HTTP/Chrome。验收依赖要求归[既有MATURE06](quick-b3-admission-20261007/recovery-validation-dependencies.json)。
+**Recovery第五次只准备独立page-auth两组，未准入。** [源码/局部证据独审](quick-b3-return-navigation-20261007/recovery-journey-source-review.json)绑定dd664，原owner5e629clean；五种有限journey保原full7组、真实恢复链和全部断言，每attempt独立DB/fixture/context，未选为NOT_SELECTED。局部noEmit0/119受控断言不等nativebrowser/IDB通过。[有界输入核验](quick-b3-return-navigation-20261007/bounded-verification.json)确认第五包manifest/source相符；仅cookieRead/pageOnlyAuthLoss为required，fullJourneyPassed=false。四次失败与累计54883.199542保持，下一最多35116含15s清理；root静态packet接受和实际PG交接到齐前不建env/gate，不自动第五跑。
 
 **任务时间展示已接主线并部署。** [原Lead实际发布和owner完成回执](checkpoint-0400-20261007/timing-main-close.json)记录03:49:29Z的4320/source52fe/185来源；03:56:00.608Z任务核齐完成，owner4b78双端clean、[9a677v2已释放](checkpoint-0400-20261007/timing-release.json)。原183快照与未部署准备都是历史。首屏易读性是独立有界TIMING02候选，见下，不重开已完成的TIMING01或复用旧写权。
 
@@ -127,3 +127,5 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 [常用文件能力的新验收](recovery-fourth-return-20261007/attachment-practical-files-requirement.json)已写原MATURE03-02与稳定03-07、U15；GO转述的8KiB限制/项目文件字节不冒本组实测。先只读真实消费者接口，后继实用能力优先于附件装饰/插件菜单，既有Recovery/Quick失败与完整约束不降低；无新claim、产品或上传/provider动作。
 
 [Recovery真实依赖验收](quick-b3-admission-20261007/recovery-validation-dependencies.json)已落MATURE06-04/06和U16；[常用文件共享接口候选](quick-b3-admission-20261007/practical-files-shared-candidates.json)沿MATURE03-02/07，17源研究揭示private runner输入和DB/context多层预算，未take、不改旧migration/共享源。Quick b3计量helper五项实际通过、精确native准备已审，仍未浏览器执行；下一准入见resource current，不沿旧失败gate。
+
+[日用会话导航U17/原MATURE05-06](../../../plans/wpf-mature-05-workspace/plan.md#日用会话导航后继)新增近期语义、全授权标题搜索与有界分页验收；[11源研究](quick-b3-return-navigation-20261007/navigation-root-research.json)及[共享接口候选](quick-b3-return-navigation-20261007/navigation-scope-candidates.json)仅准备，未take，恢复/快速设置优先。

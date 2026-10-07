@@ -1,0 +1,43 @@
+{
+  "state": "NOT_TAKEN_NOT_IMPLEMENTED",
+  "parent": "WPF-MATURE-05",
+  "todo": "WPF-MATURE-05-06",
+  "source": "navigation-root-research.json",
+  "priority": "Recovery and Quick actual acceptance first; this independent interface followup can coordinate with center owners without waiting for whole Web completion.",
+  "candidateInterfaces": [
+    {
+      "area": "Existing shared conversation contract/client",
+      "paths": [
+        "packages/contracts/src/conversations.ts",
+        "packages/client/src/index.ts"
+      ],
+      "condition": "Freeze explicit new query/sort/cursor capability while keeping omitted legacy after/limit behavior; current writer must be fresh coordinated."
+    },
+    {
+      "area": "Existing center conversation list",
+      "paths": [
+        "apps/server/src/conversations/index.ts",
+        "apps/server/src/conversations/queries.ts"
+      ],
+      "condition": "Real authorization and bounded summaries; admission metadata only if chosen recency definition actually requires it. No old migration007 edit; any new index follows fixed query and current index review."
+    },
+    {
+      "area": "Web catalog/list and eventual host binding",
+      "paths": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/App.tsx"
+      ],
+      "condition": "App/projection remain Recovery-owned. No overlapping write or currentclaim amendment. Independent typed interface/tests can be planned after exact owner handoff."
+    }
+  ],
+  "notYetFixed": [
+    "Recent activity definition and concurrency refresh behavior",
+    "Title normalization/wildcard escaping/case/query/result byte bounds",
+    "Explicit old-center capability behavior and versioned cursor contract",
+    "Exact future tests/new paths and execution worktree"
+  ],
+  "newClaim": false,
+  "newWorktree": false,
+  "runtime": false
+}
