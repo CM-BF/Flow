@@ -1,0 +1,114 @@
+{
+  "state": "SOURCE_LOCAL_COMPLETE_AWAITING_INDEPENDENT_RESULT_REVIEW",
+  "recordedAt": "2026-10-07T23:03:54.928249+00:00",
+  "taskId": "MATURE04-05",
+  "sourceTarget": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "baseline": "ac25816373f5199c891c0ae5f6346d28d83dd8b2",
+  "productBase": "b1291faae260be8d86ada12ff63341d44efc2709",
+  "arcComparison": "e611342f16504444264c5f242859392d82520e32",
+  "productPins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "blob": "ac9d3a1ec89a2ddeebb08f9d80797aa57078eb49",
+      "bytes": 76498,
+      "sha256": "312099f71e238537d716dfc29b0b24dbde9557ac8568effc0a0beddc19f0818c"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "blob": "6ebdc518183d5438dd797befb4225313f3869000",
+      "bytes": 7723,
+      "sha256": "583705bc6908455e3e32f92fc076f61be377b9e541179eeb804542eb99f28918"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/binding.test.ts",
+      "blob": "6639dac02a391e3a339fa323f0bbaaf22fff17b8",
+      "bytes": 5060,
+      "sha256": "a30a0a89006993468efecf454fe954a6e53c0c7d392b9f03044daabce15645ba"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/binding.ts",
+      "blob": "28e3337401ea448af3ce129a58c830168d8347bf",
+      "bytes": 4418,
+      "sha256": "ebbf827cfb0cdfaba94c2b19df648bd1581e363512c402eca44279cd42f46884"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "blob": "113f4cbfb8b7b12beb85b4345650c29bd8d8a160",
+      "bytes": 29957,
+      "sha256": "cd59be625918652833bf125eacbe54e0598cb1a3ae4c2f66f81ec397e82de598"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/context-history.tsx",
+      "blob": "67a5df8591888e57101495fcc3cc9fd236f55ba5",
+      "bytes": 2785,
+      "sha256": "a7f1361b31331b756d8e20ef91b616a60279239158f2a9cdbe65e871daf8a649"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "c2433801494ebeb6bd0807cef10afc8c6fe1a060",
+      "bytes": 30788,
+      "sha256": "f7bf0edda9bc51e37cbdc0c4b085acf0f2e0406998648f3dc6daf0fd572d7f45"
+    }
+  ],
+  "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+  "claimVersion": 2,
+  "scopeCount": 6,
+  "implementation": [
+    "App supplies private current identity/authorization and real FlowClient readers; request pre/post checks",
+    "session owns per-view map; conversation/task/auth/document/host updates invalidate; exact cleanup",
+    "Thread keeps official runtime/material/settings behavior and adds existing Context surface",
+    "no task produces existing host alert; no fabricated task/current capacity",
+    "wrap unbroken model/title; actual390 NOT_RUN"
+  ],
+  "unchanged": [
+    "public plugin capability/type/validation",
+    "draft/material/settings/Recovery authority",
+    "Arc source; narrow independent b129 delta only",
+    "original16controller tests not rerun"
+  ],
+  "local": {
+    "attempts": 4,
+    "types": "FINAL_PASSED_WITH_TWO_SETUP_FAILURES_PRESERVED",
+    "newBindingCases": 12,
+    "bindingResult": "12/12 PASS",
+    "chargedMs": 9553,
+    "capMs": 60000,
+    "phase": "CLOSED",
+    "thirdPreparation": "PRESTART_RESOURCE_HOLD preserved; later fresh new namespace admitted under classified canonical",
+    "initialTwoFailures": [
+      "vite/client type library configuration",
+      "readonly source/alias supply for direct App consumers"
+    ],
+    "checksNotRepeated": [
+      "old16controller pure",
+      "browser",
+      "full product suite"
+    ],
+    "allOwnedReturned": true
+  },
+  "rawIndex": "raw-index.json",
+  "current": "current.json",
+  "consumerSupply": "consumer-supply.json",
+  "preimages": "../thin-wiring-preimages.json",
+  "priorModuleApproval": "../root-module-review.json",
+  "requiredFuture": [
+    "independent actual result review",
+    "mounted no-turn/real decoder error/keyboard/long-model390",
+    "controlled Arc merge and combined lifecycle validation"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T22:59:36.300293+00:00",
+    "skills": "reuse local find-skills/assistant-ui/ai-elements/codebase-design/clean-code and accepted brainstorm design; no reinstall",
+    "findingsFixed": [
+      "added task/auth/document subscriptions and paired disposal",
+      "aligned fixture task identity before any direct run",
+      "wrapped top observed model and detailtitle"
+    ],
+    "notClaimed": "source architecture does not prove browser interaction or performance"
+  },
+  "staticReview": {
+    "path": "root-static-review.json",
+    "sha256": "40b4993ebca2aff895d11d8303ee5d929a3c42530fb131b17c1c66043e4433c6"
+  },
+  "finalEvidenceBytes": 675789
+}

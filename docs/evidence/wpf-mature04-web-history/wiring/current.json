@@ -1,0 +1,155 @@
+{
+  "observedAt": "2026-10-07T23:03:54.928249+00:00",
+  "stage": "SOURCE_LOCAL_COMPLETE_AWAITING_RESULT_REVIEW",
+  "sourceHead": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "start": "2026-10-07T22:49:21Z",
+  "deadline": "2026-10-07T23:14:21Z",
+  "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+  "claimVersion": 2,
+  "runs": [
+    {
+      "name": "types-1",
+      "state": "FAILED",
+      "sourceHead": "1428c54164f7962eaa164fa1a7f5a611a5e72c40",
+      "startedAt": "2026-10-07T22:52:27.164067+00:00",
+      "finishedAt": "2026-10-07T22:52:27.910330+00:00",
+      "pid": 59236,
+      "pgid": 59236,
+      "childExit": 2,
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 179,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "lateMs": 823.461,
+      "chargeMs": 1004,
+      "canonicalResource": "docs/evidence/wpf-mature04-web-history/wiring/local/types-1/resource.json",
+      "terminalSha256": "4be9cd924e8d36c7b21cf78df9344c4a8fbf4e1b98d2cae852fc8490f86c212c"
+    },
+    {
+      "name": "types-2",
+      "state": "FAILED",
+      "sourceHead": "1428c54164f7962eaa164fa1a7f5a611a5e72c40",
+      "startedAt": "2026-10-07T22:53:10.504170+00:00",
+      "finishedAt": "2026-10-07T22:53:14.173240+00:00",
+      "pid": 86378,
+      "pgid": 86378,
+      "childExit": 2,
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 23357,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "lateMs": 3773.211,
+      "chargeMs": 3774,
+      "canonicalResource": "docs/evidence/wpf-mature04-web-history/wiring/local/types-2/resource.json",
+      "terminalSha256": "c73188d8b84bc7cc2c6efed7724d14b92f129a4f31cdb591f8e13328fbc74d99"
+    },
+    {
+      "name": "types-3-ready",
+      "state": "PASSED",
+      "sourceHead": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+      "startedAt": "2026-10-07T23:02:30.353493+00:00",
+      "finishedAt": "2026-10-07T23:02:34.825105+00:00",
+      "pid": 50521,
+      "pgid": 50521,
+      "childExit": 0,
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "lateMs": 4581.7,
+      "chargeMs": 4582,
+      "canonicalResource": "docs/evidence/wpf-mature04-web-history/wiring/local/types-3-ready/resource.json",
+      "terminalSha256": "9c346c2b35fb8987b7f9601832efa4e567b5937c85b9a4e66207bbc73f230e24"
+    },
+    {
+      "name": "direct-1",
+      "state": "PASSED",
+      "sourceHead": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+      "startedAt": "2026-10-07T23:02:50.486919+00:00",
+      "finishedAt": "2026-10-07T23:02:50.574805+00:00",
+      "pid": 63469,
+      "pgid": 63469,
+      "childExit": 0,
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 1027,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "lateMs": 192.252,
+      "chargeMs": 193,
+      "canonicalResource": "docs/evidence/wpf-mature04-web-history/wiring/local/direct-1/resource.json",
+      "terminalSha256": "55ceb95b1c66c0cc5e24c126fc9ae27314f10360548c4d111dff378a2e9591d3"
+    }
+  ],
+  "chargedMs": 9553,
+  "grantMs": 60000,
+  "childrenStarted": 4,
+  "maxChildren": 4,
+  "prestartHold": {
+    "at": "2026-10-07T22:54:13.449572+00:00",
+    "canonicalAt": "2026-10-07T22:52:57.418Z",
+    "canonicalSha256": "10372d639024ad4fb43cdb406167708fa7e22b95d4c2242eaad40b9325ecfad9",
+    "termsSum": 18018336768,
+    "minimumFreshFreeBytes": 18018336768,
+    "topLevelFloor": 18018336768,
+    "available": 18001485824,
+    "childStarted": false,
+    "state": "PRESTART_RESOURCE_HOLD"
+  },
+  "newTypes": "PASSED on final ed5 sources; initial two FAILED setup attempts preserved",
+  "newBindingTests": "12/12 PASSED on final ed5 sources",
+  "browser": "NOT_RUN",
+  "arcCombined": "NOT_RUN",
+  "architecture": "Private App-authorized context reads; session-owned map and abort/subscription cleanup; existing Thread/host and Dialog. No new capability/contract/store. Parent architecture and full CT matrix remain with architecture_read/Mika.",
+  "phaseState": "CLOSED",
+  "returnReceipt": "return.json",
+  "furtherLaunches": false,
+  "unusedMsNotCredit": 50447
+}

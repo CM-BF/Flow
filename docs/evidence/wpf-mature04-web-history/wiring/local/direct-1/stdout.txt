@@ -1,0 +1,20 @@
+✔ private reader rejects before HTTP when App authorization is absent (1.372458ms)
+✔ private reader rechecks connectionId after await (0.170375ms)
+✔ private reader rechecks viewKey after await (0.087666ms)
+✔ private reader rechecks conversationId after await (0.081041ms)
+✔ private reader rechecks taskId after await (0.098875ms)
+✔ private reader rechecks authorityGeneration after await (0.082541ms)
+✔ no turn yields an explicit command error and zero reads (0.187709ms)
+✔ host disable and hidden view abort the registered session binding (0.427333ms)
+✔ view release and session lifetime prevent late history publication (0.233875ms)
+✔ same-target reconfiguration preserves opening without another read (0.239ms)
+✔ detail requires the same task and known attempt before any request (0.124792ms)
+✔ authorization revoked during the real private-port await rejects the result (0.054084ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 39.658542
