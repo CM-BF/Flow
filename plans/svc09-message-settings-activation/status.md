@@ -6,30 +6,30 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T17:41:44.367Z |
+| 更新时间 | 2026-10-07T18:03:43.714Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 默认启动失败与资源归还已获限定独审；正在补充启动判定的直接诊断，旧失败与保留材料不变。 |
-| 下一可用交付 | 可区分身份、监听和健康判定的固定控制器及局部证据；真实默认启动仍需新窗口。 |
-| 当前阻塞 | ACTIVE: 默认中心未确认就绪，底层原因未知；本次未进入设置槽和混合任务，完整旅程未过且不自动重投。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 启动判定诊断已合入主线；固定控制器的独立加载检查通过，正在准备默认三角色的最小启动闭环。 |
+| 下一可用交付 | 加载装配的限定独审与默认启动候选；真实宿主仍需新的运行窗口。 |
+| 当前阻塞 | ACTIVE: 默认中心尚无完整启动闭环通过证据；原失败底层原因未知，完整双槽与混合任务继续开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | SQL/新候选source 9c73411578f2cf6552a8696511dc2af2402436da；R3 result42c181/delivery313418。 |
-| 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
-| 工作分支状态 | in-progress（四产品路径已重新原子领取；诊断实现中，真实宿主未重启） |
+| Head | 四源f0e434bd已main；装配source c1e7ad877；旧R4结果a4a2/307d不变。 |
+| 实现目标 | f0e434bd04c496fbd60e8458c3f840f4d7b25e80 |
+| 工作分支状态 | in-progress（四产品已审/main并归还；own装配待审，下一默认宿主未启动） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
-| 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v5；17:36:56.263Z追加preview/process两源与专测四literal，own两个目录保持；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-amend-receipt.json) |
-| Review | R4结果APPROVED_LIMITED_R4_FAILED_RESULT_FIDELITY，main abdf69692d3c8a96f91fbe1b283aeea1c32c39ee docs/evidence/i02/svc09a-host-r4-result-review.json；本次新诊断源码尚未审。 |
-| 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
+| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/process.mjs, tools/personal-preview/process.test.mjs |
+| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v6；18:00:38.649Z归还四产品，仅own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-product-return-receipt.json) |
+| Review | 四源APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE，17:57:03Z；唯一main496b的docs/evidence/i02/svc09a-startup-controller-review.json。装配独审待完成。R4限定结果批准/main abdf69692保留。 |
+| 检查状态 | 新10+受影响2=12/12，476ms/raw1750B；注释前像与KEEP如实。另actual Node import/参数1场景100ms/raw4786B，组absent/双EOF，新shadow和scratch移除；累计576ms。旧33不重跑。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
+| 已集成main状态 | 原双槽11源main246ed0f；本次诊断四源main496b1d68caad14c7bc40a05b86b2136b12d68ca7，Lead确认逐字f0且main/origin clean；2515/098b旧产物未改变，个人未部署本片。 |
 | 运行窗口 | R4 2026-10-07T17:09:28.039Z START；32,137ms operator exit1；2026-10-07T17:10:57.626406Z实际RETURN。1center stopped/6PID及组absent/连接[]；DB/private KEEP，旧R1–R3不动。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)与三次host失败保真已独审；[SQL/R4局部](../../docs/evidence/svc09/message-settings-activation/host-integration/host-sql-contract-result.json)与准备已独审，实际窗口待授；完整host/个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | 四次实际失败保真已独审；诊断四源已main，[固定加载候选](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-interface.md)待限定独审。默认3role新段未跑，完整双槽/SQL/个人仍开放 |
 
 ## 等待记录
 
@@ -116,3 +116,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 ## 默认启动直接诊断
 
 2026-10-07T17:41:44.367Z：本次fresh账本17:36:05.821Z核四路径无holder后，v5原子amend成功；clean307d前像与098b及fixed main f8853d473四路径逐字无差。实际实施开始以17:36:56.263Z领取及随后的工具写入为来源，历史首次UNKNOWN保持。选用已有find-skills/codebase-design/clean-code/brainstorming本地方法；方案已由Lead明确选定，受限last-results复用实际predicate及原failure持久化，保10s/短路/信号/布尔wrapper，不新造observer。原2515产物和runtime不动，独立controller只通过已核artifact公开load/lock/status/stop消费；status port默认原行为。局部检查尚未启动，K01测量已由窗口owner告知终止但开始局部前再次核实际owner状态。R4 result独审及main receipt一次引用如上，旧FAIL/KEEP与完整双槽/SQL/个人验收开放。
+
+2026-10-07T18:03:43.714Z：四产品f0已获唯一限定独审/main496，fresh18:00:07.331Z核v5及main四前像同后，18:00:38.649Z原子amend v6归还产品。局部实际17:47:04.837869Z RETURN：12/12，但empty-only wrapper exit1/tsx23686B KEEP；不当成产品失败或清理完成。17:58:45.927475Z实际Node加载RETURN：100ms、组absent双EOF，shadow/exact scratch移除。累计576ms/6536B；新装配scope尚未获得独审，原2515产物不变。R4唯一限定结果批准main abdf69692已收，旧UNKNOWN/FAIL/KEEP不改。下一继续own默认启动caller准备，无实际host窗口，不与Web/O16归因混淆。

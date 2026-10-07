@@ -1,0 +1,28 @@
+{
+  "taskId": "SVC09A",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  }
+}

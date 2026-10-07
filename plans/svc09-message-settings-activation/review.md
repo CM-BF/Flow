@@ -63,3 +63,9 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 ## R4实际结果待唯一保真审查
 
 2026-10-07T17:12:27.253897Z：同已审9c734/d38a入口实际一次，outer32,137ms/exit1，原START_UNCONFIRMED_CHECK_STATUS保留；仅一个center产生并停止。实际资源17:10:57.626406Z RETURN与完整旅程FAIL/DB及private KEEP分开。未到新SQL/mixed与完整生命周期，不能由准备批准或R3部分证据升级本次通过。新raw/结果等唯一只读审查，无自动下一次。
+
+## Controller source / loader boundary
+
+2026-10-07T18:03:43.714Z：source f0e434bd04c496fbd60e8458c3f840f4d7b25e80四产品获assignment唯一APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE（0P1/P2），原件main496b docs/evidence/i02/svc09a-startup-controller-review.json，17:57:03Z。12例只对注释前像运行，反替换精确绑定；外层KEEP/exit1不覆盖12/12。main496b逐字接收并产品scope归还。
+
+loader c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792另待review；[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-interface.md)、[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-result.json)。该真实import/参数检查无PG/服务/provider，不能冒宿主或R4根因通过。

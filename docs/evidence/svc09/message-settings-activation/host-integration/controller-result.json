@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T18:03:43.714Z",
+  "productSource": "f0e434bd04c496fbd60e8458c3f840f4d7b25e80",
+  "loaderSource": "c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792",
+  "localCases": {
+    "selected": 12,
+    "passed": 12,
+    "new": 10,
+    "affectedExisting": 2,
+    "elapsedMs": 476,
+    "rawBytes": 1750,
+    "wrapperExit": 1,
+    "cleanup": "KEEP",
+    "retainedBytes": 23686,
+    "retainedEntries": 3,
+    "sourceCaveat": "preview comment-only post-check change; reversible exact preimage in controller-comment-delta.json"
+  },
+  "actualImport": {
+    "scenarios": 1,
+    "assertionScope": [
+      "actual module import",
+      "original public ports and distinct start",
+      "invalid status port rejected before private I/O",
+      "existing namespace rejected"
+    ],
+    "elapsedMs": 100,
+    "rawBytes": 4786,
+    "wrapperExit": 0,
+    "scratch": "removed"
+  },
+  "totalElapsedMs": 576,
+  "totalRawBytes": 6536,
+  "groups": 2,
+  "ownedState": "absent",
+  "dualEOF": true,
+  "pg": 0,
+  "provider": 0,
+  "services": 0,
+  "limitations": [
+    "Shadow loader not yet independently approved",
+    "Actual default host NOT_RUN",
+    "No new R4 root cause",
+    "R1-R4 FAIL/KEEP unchanged"
+  ],
+  "mainReceipt": {
+    "commit": "496b1d68caad14c7bc40a05b86b2136b12d68ca7",
+    "review": "docs/evidence/i02/svc09a-startup-controller-review.json",
+    "state": "APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE"
+  },
+  "productScopeReturn": "controller-product-return-receipt.json"
+}
