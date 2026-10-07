@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 import { Pool } from 'pg';
 import * as vm from 'node:vm';
 import { startPreview, statusPreview, stopPreview } from './preview.mjs';
@@ -163,11 +163,12 @@ test('an unverified backend descriptor fails before drain and preserves all old 
 
 // Link the complete, unchanged maintenance module to explicit in-memory ports. No PG
 // module, migration, CLI, signal or service is executed by these order/argument checks.
-async function maintenancePorts({ configured = true, prepareFailure = false, selected = null, action = 'bootstrap', settings = false, secondState, active = 0, unknownRecord = null, failCommand = null } = {}) {
+async function maintenancePorts({ configured = true, prepareFailure = false, selected = null, action = 'bootstrap', settings = false, secondState, active = 0, unknownRecord = null, failCommand = null, targetSelection = false, targetSelectionFailure = false, legacy = false } = {}) {
   const calls = [];
   const config = { directory: '/synthetic-preview', runner: { runnerId: 'runner', token: 'fixture-only' } };
   const state = { backendArtifact: { artifactId: 'old' }, webHost: { artifact: { artifactId: 'independent-old-web' } }, processes: { center: 'center', runner: 'runner', web: 'web' } };
   const operation = { operationId: 'operation', phase: action === 'resume' ? 'ready-paused' : 'drain-requested', initialVersion: 7, drainKey: 'legacy-drain', holdKey: 'legacy-hold', resumeKey: 'legacy-resume', backendArtifact: selected };
+  if (targetSelection) operation.webHostTarget = { status: 'pending', artifact: selected };
   const slots = [{ id: 'legacy', key: 'runner', runner: config.runner }];
   if (settings) {
     slots.push({ id: 'settings', key: 'runner-settings', runner: { runnerId: 'settings-runner', token: 'settings-fixture' }, configDigest: 'digest' });
@@ -178,6 +179,11 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
   const views = new Map(slots.map(slot => [slot.runner.runnerId, { ...view, ...(slot.id === 'settings' ? { state: secondState ?? view.state, activeAttempts: active } : {}) }]));
   const commandReceipts = new Set();
   const ports = {
+    './maintenance-target.mjs': { selectHeldPreviewWebHost: async (_config, _pool, selectedState, selectedOperation) => {
+      calls.push(['select-target']);
+      if (targetSelectionFailure) throw Object.assign(new Error('MAINTENANCE_TARGET_CHANGED'), { code: 'MAINTENANCE_TARGET_CHANGED' });
+      selectedState.webHost = { artifact: selected, selection: 'selected-stopped' }; selectedOperation.webHostTarget.status = 'selected-stopped';
+    } },
     './runner-slots.mjs': { readRunnerSlots: async () => slots, slotServiceKeys: value => ['center', ...value.map(slot => slot.key), 'web'] },
     pg: { Pool: class { async query() { calls.push(['identity']); return { rowCount: 1 }; } async end() { calls.push(['end']); } } },
     './preview.mjs': {
@@ -187,7 +193,7 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
       withPreviewLock: async (_config, callback) => callback(),
       assertPreviewMarker: async () => { calls.push(['marker']); },
       preparePreviewWeb: async (...args) => { calls.push(['prepare', ...args]); if (prepareFailure) throw Object.assign(new Error('WEB_HOST_POLICY_UNSUPPORTED'), { code: 'WEB_HOST_POLICY_UNSUPPORTED' }); return 'prepared-web'; },
-      startPreviewServices: async (...args) => { calls.push(['start', ...args]); },
+      startPreviewServices: async (...args) => { calls.push(['start', ...args]); if (targetSelection) args[1].processes.web = { pid: 12345, nonce: 'synthetic-new-launch', role: 'web' }; },
     },
     './process.mjs': {
       inspectOwnedProcess: async record => { calls.push(['inspect', record]); return record === unknownRecord ? 'unknown' : 'running'; },
@@ -211,7 +217,15 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
   };
   const context = vm.createContext({ process: { argv: ['node', '/not-the-module'] } });
   const url = new URL('./maintenance-host.mjs', import.meta.url);
-  const module = new vm.SourceTextModule(await readFile(url, 'utf8'), { context, identifier: url.href, initializeImportMeta: meta => { meta.url = url.href; } });
+  let source = await readFile(url, 'utf8');
+  if (legacy) {
+    const pin = JSON.parse(await readFile(new URL('../../docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-04da-input.json', import.meta.url), 'utf8'));
+    source = (await execute('/usr/bin/git', ['show', `${pin.source}:${pin.path}`], { cwd: repository, timeout: 1500 })).stdout;
+    assert.equal(createHash('sha256').update(source).digest('hex'), pin.baseSha256);
+    for (const change of pin.changes) { assert.equal(source.split(change.before).length, 2); source = source.replace(change.before, change.after); }
+    assert.equal(createHash('sha256').update(source).digest('hex'), pin.candidateSha256);
+  }
+  const module = new vm.SourceTextModule(source, { context, identifier: url.href, initializeImportMeta: meta => { meta.url = url.href; } });
   await module.link(async specifier => {
     const values = specifier.startsWith('node:') ? await import(specifier) : ports[specifier];
     assert.ok(values, `undeclared maintenance dependency ${specifier}`);
@@ -354,4 +368,37 @@ test('SVC09A a later accepting version cannot be mistaken for this operation res
   f.views.get('runner').state = 'accepting'; f.views.get('runner').version = 10;
   await assert.rejects(f.run(), { code: 'MAINTENANCE_OPERATION_UNCONFIRMED' });
   assert.equal(f.calls.some(call => call[0] === 'command'), false);
+});
+
+
+test('held Web target refresh consumes selection before prepare and starts matching backend and Web', async () => {
+  const selected = { artifactId: 'new', sourceHead: 'e'.repeat(40) };
+  const f = await maintenancePorts({ action: 'refresh', selected, targetSelection: true }); await f.run();
+  assert.ok(f.calls.findIndex(call => call[0] === 'select-target') < f.calls.findIndex(call => call[0] === 'prepare'));
+  assert.equal(f.calls.find(call => call[0] === 'start')[4], selected);
+  assert.equal(f.state.webHost.artifact, selected); assert.equal(f.state.webHost.selection, 'ready');
+  assert.equal(f.state.webHost.recordSha256, createHash('sha256').update(JSON.stringify(f.state.processes.web)).digest('hex'));
+  const savedStates = f.calls.filter(call => call[0] === 'save' && call[1].endsWith('/state.json'));
+  assert.deepEqual(savedStates.map(call => call[2].webHost.selection), ['starting', 'ready']);
+  assert.equal(f.operation.phase, 'ready-paused');
+});
+test('held Web target selection failure preserves pause and prevents prepare, stop and start', async () => {
+  const f = await maintenancePorts({ action: 'refresh', selected: { artifactId: 'new', sourceHead: 'e'.repeat(40) }, targetSelection: true, targetSelectionFailure: true });
+  await assert.rejects(f.run(), { code: 'MAINTENANCE_TARGET_CHANGED' });
+  assert.ok(!f.calls.some(call => ['prepare', 'save', 'stop', 'start', 'command'].includes(call[0])));
+  assert.equal(f.state.webHost.artifact.artifactId, 'independent-old-web');
+});
+
+test('held Web target fixed04da refresh consumes the exact minimal delta without slots or new DDL', async () => {
+  const selected = { artifactId: 'new', sourceHead: 'e'.repeat(40) };
+  const f = await maintenancePorts({ action: 'refresh', selected, targetSelection: true, legacy: true }); await f.run();
+  assert.ok(f.calls.findIndex(call => call[0] === 'select-target') < f.calls.findIndex(call => call[0] === 'prepare'));
+  assert.equal(f.calls.find(call => call[0] === 'start')[4], selected); assert.equal(f.state.webHost.artifact, selected);
+  assert.deepEqual(f.calls.filter(call => call[0] === 'stop').map(call => call[1]), ['web', 'runner', 'center']);
+  assert.ok(!f.calls.some(call => ['command', 'migrate'].includes(call[0])));
+});
+test('held Web target fixed04da failure keeps old selection and prevents lifecycle calls', async () => {
+  const f = await maintenancePorts({ action: 'refresh', selected: { artifactId: 'new', sourceHead: 'e'.repeat(40) }, targetSelection: true, targetSelectionFailure: true, legacy: true });
+  await assert.rejects(f.run(), { code: 'MAINTENANCE_TARGET_CHANGED' });
+  assert.ok(!f.calls.some(call => ['prepare', 'save', 'stop', 'start', 'command'].includes(call[0])));
 });

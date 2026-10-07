@@ -9,6 +9,7 @@ import { readRunnerSlots, slotServiceKeys } from './runner-slots.mjs';
 import { inspectOwnedProcess, stopOwnedProcess } from './process.mjs';
 import { migrateRunnerMaintenance, commandRunnerMaintenance, readRunnerMaintenance } from '../../apps/server/src/runner-maintenance/index.ts';
 
+import { selectHeldPreviewWebHost } from './maintenance-target.mjs';
 import { readWebRelease } from './web-release.mjs';
 import { backendById, backendRuntime } from './backend-release/host.mjs';
 import { pinnedBrowserSessionConfiguration } from './browser-session-configuration.mjs';
@@ -114,6 +115,7 @@ async function refresh(config, pool, state, target, _backendId, slots) {
   const facts = await processFacts(state, slots);
   if (Object.values(facts).includes('unknown')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   if (operation.phase === 'ready-paused' && operation.target === target && Object.values(facts).every(value => value === 'running')) return { ...summary(slots, views), update: 'ready-paused', source: target };
+  if (operation.webHostTarget?.status === 'pending') await selectHeldPreviewWebHost(config, pool, state, operation);
   const artifact = await preparePreviewWeb(config, target, operation.backendArtifact);
   await confirmSource();
   for (const role of [...slotServiceKeys(slots)].reverse()) {
@@ -123,7 +125,12 @@ async function refresh(config, pool, state, target, _backendId, slots) {
   await confirmSource();
   operation.phase = 'starting'; operation.target = target;
   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);
+  if (operation.webHostTarget) { state.webHost.selection = 'starting'; await savePreviewJson(join(config.directory, 'state.json'), state); }
   await startPreviewServices(config, state, artifact, operation.backendArtifact);
+  if (operation.webHostTarget) {
+    state.webHost.selection = 'ready'; state.webHost.recordSha256 = createHash('sha256').update(JSON.stringify(state.processes.web)).digest('hex');
+    await savePreviewJson(join(config.directory, 'state.json'), state);
+  }
   await confirmSource();
   operation.phase = 'ready-paused';
   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);

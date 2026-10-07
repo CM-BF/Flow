@@ -61,3 +61,5 @@ Native独审APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE：22固定+17�
 2026-10-07T12:21:19.964262+00:00：D05实际部署两metadata3bad31e0获native_center_owner限定APPROVED_DOCS，无finding；实际202、sourceCurrent、人读完整/时间issues[]。原sampler的selected.mode=null是未取source.mode；Lead补一次只读公开summary，source.mode=live、readAt12:21:04.698Z、status digest e0d48a83c6a21cdbf4d8e1db1e68eb324514187f414ec2357c6e05bb502fbe52，真实parent=MATURE02/Web；未改原回执null或声称浏览器实测。源码仍4fdd、个人不变，metadata不再次重启。
 
 2026-10-07T20:53:40.546Z：SVC06B source77b489ea545bae1939f64f4669aeaa3f84816b01限定APPROVED_CURRENT_CHILD_INITIALIZATION，0blocking；完整源/直接消费者及持久失败边界已读，36固定绑定+5runtime核同。25不同局部与types0复用，未复测。个人恢复与实际claim未验，详见[审查](../../docs/evidence/i02/svc06b-runner-initialization-review.json)。
+
+2026-10-07T20:59:25.042Z：APPROVED_LIMITED_HELD_TARGET_AND_REFRESH_CONSUMER，sourceddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39，deliverybe5f2f0cf832a41e1c76179d935228656cd52e57，无blocking；唯一审查与受限验收见 docs/evidence/i02/svc09a-held-target-review.json。未启动新产品检查或个人操作。

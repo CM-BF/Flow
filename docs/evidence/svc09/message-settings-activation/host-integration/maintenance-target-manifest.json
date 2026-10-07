@@ -1,0 +1,211 @@
+{
+  "kind": "svc09a-held-target-source-and-local-evidence-v1",
+  "createdAt": "2026-10-07T20:55:18.255732+00:00",
+  "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+  "recordsCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 11
+  },
+  "bindings": [
+    {
+      "path": "tools/personal-preview/maintenance-target.mjs",
+      "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+      "bytes": 14660,
+      "sha256": "1e96204b15b6341b2f7119cf24a9eb4f1858fe477b18c17916de3e7522c2154b"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-target.test.mjs",
+      "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+      "bytes": 16843,
+      "sha256": "7b668fc6a7efc18157f991758f44e02edd45526b5d431422dd62b33237f23ca3"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+      "bytes": 13178,
+      "sha256": "1edc25d054fdbb02b947231a8c73df72c6956734960ef9a5f12cf79b4e750da4"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+      "bytes": 31052,
+      "sha256": "37c6c62f4473a2c398b83ef9bdec5ee1b58cbfbbb9326e016560c4f0a6123085"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-04da-input.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 1606,
+      "sha256": "b1817c5044ada4673b12412d4c9b9d53f59774cbb7a94775561bf2a0a42c48f1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-04da.patch",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 2099,
+      "sha256": "fa814cad1d7fa2ab6ce5a94ed5faa55c5962e81e423093631bda3ffb21f72a64"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-amend-receipt.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 895,
+      "sha256": "19c07623060f3c49f695b78aeb53a6c4247c661846ffb784c539cfe331ea2eca"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-amend-request.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 444,
+      "sha256": "d6266efc23b0f31af3ab4f3d28e085ee2caba55dac463eec55f1050d703cc153"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-import.mjs",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 1190,
+      "sha256": "a71c2deb0ba54858620ea740d2db6ae870052138687b6d5dc672f2b063ca9f0a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-interface.md",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 6105,
+      "sha256": "49f58899d4779185f0036fc3f60c8bd90744475340311c1b36941076294af12a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local.py",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 5487,
+      "sha256": "089629faac67c5778634ca79ad50576fe2bba0602509d3e7aeabcd482f8f7012"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-result.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 2438,
+      "sha256": "1ae95fb106c3a377f48111decceaa47e97d65d14e60adf62faa8d44d2d302934"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/01-outer.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 662,
+      "sha256": "b05ee1bba5893e8b492f9ca9591a56700f3cd2bd75c5aaafa0c145388a0fb275"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/01-stderr.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/01-stdout.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 5152,
+      "sha256": "9f64fcd51cbab1a19ec20c6191fa81ed4c65930b16c1e6df253db830cb486dd7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/reservation.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 9840,
+      "sha256": "9917b4b90eb507682cbb3c5351dc3960bc3c4c72ca439c879a9da0358fa273e1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/result.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 640,
+      "sha256": "a0bd0aedc3a156651b8fb802c6dce0502b37b335de9b71d911ded80ac16e1540"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/01-outer.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 515,
+      "sha256": "46aac884df4082ad679d2929b8ca1077e48aa289b160167944d3b4a423dae886"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/01-stderr.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/01-stdout.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 415,
+      "sha256": "02e3f4a86d36259835ef8a45b9817f1ddb28ea8725dc9c1f423815a77e0172db"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/02-outer.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 517,
+      "sha256": "e03b4f38849062f622790b7522b41e3220959a0b85adaefc5dd98056f32f6f0f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/02-stderr.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/02-stdout.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 1033,
+      "sha256": "ded2c110f144ff547edf640294c802753eef9e2a38412b580b38b37d2ad472ce"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/03-outer.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 515,
+      "sha256": "e0c420d681b8a07bb727d41a2536c955c1b169df23da1ca96ddc896886c53f37"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/03-stderr.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/03-stdout.txt",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 111,
+      "sha256": "f9139ffbecc83133bb10b1f2bb5c094c16043cb53bebbf07e4e5fec4e47f70d1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/reservation.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 9902,
+      "sha256": "5b50eb427beb0e3597e851b84c03d2e0cef831aad34c5188aacf37e7101b16f6"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/result.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 881,
+      "sha256": "9803d3c5bdc2009b9396d04a3d27fb388097d02939daff3b9c08bffe0d4b889c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-web-amend-request.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 560,
+      "sha256": "0d26f681334337b6b0eeb0dead2f4b4c87ce7dad80006a3a4cc72506047b1c5f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-web-amend-receipt.json",
+      "sourceCommit": "9b0f48f4a4d3486117a86bae6c3603dd1639f535",
+      "bytes": 857,
+      "sha256": "fc901c8279c8ea4671d110ab07571165941a1c42e0fe64a162b24432183b90da"
+    }
+  ],
+  "bindingCount": 30,
+  "bindingBytes": 127597,
+  "inherited": [
+    {
+      "source": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "meaning": "unchanged main preimage before this minimal consumer delta"
+    },
+    {
+      "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "meaning": "full base SHA and exact old-to-new consumer replacements are recorded once in maintenance-target-04da-input.json; no current slots source is copied"
+    }
+  ],
+  "runtimeAndDirectDependencyPins": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-01/reservation.json",
+  "round2RuntimeAndChangedTestPin": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-local-02/reservation.json",
+  "result": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-result.json",
+  "authority": "source and bounded injected consumers only; no artifact/PG/cold-start/personal recovery executed",
+  "provenance": "round1 failed assertion retained; only cross-context equality and selection recipe changed after round1; production source69f354 unchanged at finalsource"
+}

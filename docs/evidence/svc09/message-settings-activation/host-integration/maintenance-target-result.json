@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-10-07T20:54:31.589982+00:00",
+  "sourceCommit": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+  "productionSource": "69f354614",
+  "result": "PASSED_BOUNDED_LOCAL_CONSUMERS",
+  "checks": {
+    "distinct": 22,
+    "selections": 23,
+    "firstRound": {
+      "selected": 15,
+      "passed": 14,
+      "failed": 1,
+      "cause": "cross-VM object prototype equality in the new selected-state assertion; the original raw remains unchanged"
+    },
+    "secondRound": {
+      "affectedLeaf": 1,
+      "maintenanceConsumers": 7,
+      "passed": 8,
+      "actualNodeImportAndInputGuard": true
+    },
+    "elapsedMs": 1226,
+    "rawBytes": 6711,
+    "ownedGroups": 4,
+    "ownedGroupsFinal": "absent",
+    "dualEOF": true,
+    "scratchRemoved": 2
+  },
+  "startAt": "2026-10-07T20:52:37.764501+00:00",
+  "returnAt": "2026-10-07T20:52:55.098158+00:00",
+  "pg": 0,
+  "services": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "limits": {
+    "checksMs": 120000,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "evidence": [
+    "maintenance-target-local-01/result.json",
+    "maintenance-target-local-02/result.json"
+  ],
+  "scope": [
+    "trusted old legal loader port, same operation and held version, canonical full input digests",
+    "new backend and Web selected from the same immutable descriptor; old Webhost/process records preserved",
+    "actual database transaction helper with synthetic Pool; actual exclusive fsync+rename on own toy files",
+    "current maintenance consumer and exact fixed04da minimal consumer; no unchanged PG or host journey selected"
+  ],
+  "notProven": [
+    "real runner row locking and real installed old loader authority",
+    "new immutable recovery assembly, reports and cold startup",
+    "personal operation changes, actual claim receipt, model identity or provider qualification"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T20:54:31.589982+00:00",
+    "applied": [
+      "local find-skills baseline",
+      "codebase-design: one target-evolution Module, reuses original transaction/private writer/preview lifecycle",
+      "clean-code: explicit small request, bounded audit, shared guards, primary/cleanup separated; no new supervisor, CLI or scheduler"
+    ],
+    "scope": "four claimed product leaves plus the precise legacy consumer patch",
+    "remaining": "real artifact/operator and cold three-role validation require independently reviewed fixed composition/window"
+  }
+}

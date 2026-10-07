@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T20:59:25.042Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_HELD_TARGET_AND_REFRESH_CONSUMER",
+  "target": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39",
+  "delivery": "be5f2f0cf832a41e1c76179d935228656cd52e57",
+  "mainPreimage": "770bd2c057f0df595c3184524573c6d446ec232d",
+  "manifestSha256": "32d5c056cdec8ca8b6d54ba9af3f014697e72a66e842742b624ad6017751186a",
+  "fixedBindingsChecked": 30,
+  "fixedBindingBytes": 127597,
+  "runtimeAndDependencyPins": {
+    "round1": 21,
+    "round2": 21,
+    "round1Changes": "Only assertion cross-VM equality and local selection recipe changed; original input hashes/raw preserved; round2 all current pins match"
+  },
+  "scope": [
+    "tools/personal-preview/maintenance-target.mjs",
+    "tools/personal-preview/maintenance-target.test.mjs",
+    "tools/personal-preview/maintenance-host.mjs",
+    "tools/personal-preview/maintenance.test.mjs"
+  ],
+  "blockingFindings": [],
+  "review": [
+    "Explicit trusted fixed old-loader port; request cannot supply config, preserves original marker/token/source ownership.",
+    "Full operation/state/release CAS, same runner row lock/held version, zero incomplete attempts and all exact owned groups stopped. Queued facts are preserved, no task or claim is issued.",
+    "Verifies new immutable backend and independent Web host plus every retained page at new source before DB lock. Missing release/reports reject.",
+    "One bounded durable operation audit; later refresh selects Web through original public loader, records selected-stopped/starting/ready tied to actual process. Partial write/commit/cleanup remains unconfirmed; no automatic replay, reset, rollback or resume.",
+    "Current-main maintenance preimages equal fixed86112a; exact04da consumer has separate before/after digest and real injected refresh check, no multi-slot source copy.",
+    "Applied existing find-skills/codebase-design/clean-code: one target-evolution responsibility with original lock/transaction/private-save/lifecycle interfaces."
+  ],
+  "evidence": {
+    "distinctPassed": 22,
+    "selections": 23,
+    "firstRound": "14 passed, 1 cross-VM prototype assertion failure preserved",
+    "secondRound": "1 affected leaf + 7 refresh consumers passed; actual Node/tsx import/input guard passed",
+    "elapsedMs": 1226,
+    "rawBytes": 6711,
+    "groups": "4 absent, dual EOF",
+    "scratch": "2 exact empty removed",
+    "reviewerTests": "NOT_RUN_EXISTING_DIRECT_EVIDENCE_REUSED"
+  },
+  "limits": [
+    "No real PG/artifact inventory/cold startup/personal operation in these local checks.",
+    "Final04da composition, immutable artifact, four actual App compatibility tuples and default current-boot three-role readiness remain required.",
+    "Personal service remains stopped and maintenance23; initialization is not acceptance or actual claim.",
+    "Only manifest-bound evidence and four product leaves received; unrelated old branch sources and historical evidence copies are not imported."
+  ]
+}
