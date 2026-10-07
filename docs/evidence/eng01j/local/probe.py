@@ -33,6 +33,18 @@ def child(scratch):
     compile_result = subprocess.run([CLANG, '-isysroot', '/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk', '-std=c11', '-Wall', '-Wextra', '-Werror', '-Os', '-fno-modules', str(C_SOURCE), '-o', str(binary)], env=env, capture_output=True, timeout=5)
     print(json.dumps({'stage': 'compile', 'exit': compile_result.returncode, 'stdout': compile_result.stdout.decode(errors='replace'), 'stderr': compile_result.stderr.decode(errors='replace')}), flush=True)
     if compile_result.returncode: return 1
+    if os.environ.get('FLOW_ENG01J_DIRECT') == '1':
+        inherited = scratch / 'r06-inherited.txt'; inherited.write_text('0')
+        fd = os.open(inherited, os.O_WRONLY)
+        try:
+            direct_env = {**env, 'TSX_DISABLE_CACHE': '1', 'FLOW_ENG01J_SCRATCH': str(scratch), 'FLOW_ENG01J_CANARY': str(binary), 'FLOW_ENG01J_INHERITED_FD': str(fd)}
+            test_source = ROOT/'apps/runner/src/engineering/native-authority.test.ts'
+            policy_test = ROOT/'apps/runner/src/engineering/native-authority-darwin.test.ts'
+            js = 'await import(' + json.dumps(test_source.as_uri()) + '); await import(' + json.dumps(policy_test.as_uri()) + ');'
+            result = subprocess.run([NODE, '--import', '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs', '--input-type=module', '-e', js], env=direct_env, stdin=subprocess.DEVNULL, capture_output=True, timeout=5, pass_fds=(fd,))
+            print(json.dumps({'stage':'r06-direct', 'exit':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace'),'inheritedContent':inherited.read_text()}), flush=True)
+            return result.returncode
+        finally: os.close(fd)
     policy = scratch / 'policy.sb'
     js = "import {writeFileSync} from 'node:fs'; import {createDarwinWriteProfile} from " + json.dumps(POLICY.as_uri()) + "; writeFileSync(process.argv[1],createDarwinWriteProfile({root:process.argv[2],executable:process.argv[3],writableFile:process.argv[2]+'/calculator.mjs'}));"
     render = subprocess.run([NODE, '--input-type=module', '-e', js, str(policy), str(scratch), str(binary)], env=env, capture_output=True, timeout=3)
@@ -80,9 +92,9 @@ def run(round_id):
     if free < 1107296256: save(out/'not-run.json', {'freeBytes':free,'minimumBytes':1107296256}); return 3
     scratch = Path(tempfile.mkdtemp(prefix='eng01j-', dir='/private/tmp'))
     identity = scratch.stat()
-    save(out/'reservation.json', {'scratch':str(scratch),'dev':identity.st_dev,'ino':identity.st_ino,'freeBytes':free,'sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [C_SOURCE,POLICY,SUPERVISOR,Path(__file__)]},'previousSupervisedMs':used,'providerCalls':0,'PG':0})
+    save(out/'reservation.json', {'scratch':str(scratch),'dev':identity.st_dev,'ino':identity.st_ino,'freeBytes':free,'sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [C_SOURCE,POLICY,SUPERVISOR,Path(__file__),ROOT/'apps/runner/src/engineering/native-authority.ts',ROOT/'apps/runner/src/engineering/native-authority.test.ts',ROOT/'apps/runner/src/engineering/native-authority-darwin.test.ts']},'previousSupervisedMs':used,'providerCalls':0,'PG':0})
     spec=importlib.util.spec_from_file_location('owned_supervise',SUPERVISOR); module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
-    report=module.supervise(module.Launch((sys.executable,'-B',str(Path(__file__).resolve()),'child',str(scratch)),str(ROOT),{'PATH':'/usr/bin:/bin','TMPDIR':str(scratch),'HOME':str(scratch),'PYTHONDONTWRITEBYTECODE':'1'},module.Ownership.NEW_CHILD_SESSION),module.Policy(9,.2,.8,65536))
+    report=module.supervise(module.Launch((sys.executable,'-B',str(Path(__file__).resolve()),'child',str(scratch)),str(ROOT),{'PATH':'/usr/bin:/bin','TMPDIR':str(scratch),'HOME':str(scratch),'PYTHONDONTWRITEBYTECODE':'1','FLOW_ENG01J_DIRECT':os.environ.get('FLOW_ENG01J_DIRECT','0')},module.Ownership.NEW_CHILD_SESSION),module.Policy(9,.2,.8,65536))
     (out/'stdout').write_bytes(report.stdout); (out/'stderr').write_bytes(report.stderr)
     value=dataclasses.asdict(report);value.pop('stdout');value.pop('stderr')
     private_bytes=sum(p.stat().st_size for p in scratch.rglob('*') if p.is_file())

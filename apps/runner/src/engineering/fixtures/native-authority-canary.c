@@ -23,7 +23,25 @@ static void write_path(const char *name, const char *path) {
   errno = 0; ssize_t n = write(fd, "X", 1); error = errno;
   close(fd); result(name, n, error);
 }
+static int protocol(const char *descriptor) {
+  alarm(3);
+  char input[4096];
+  if (!fgets(input,sizeof input,stdin) || !strstr(input,"initialize")) return 70;
+  puts("{\"id\":1,\"result\":{\"userAgent\":\"flow-own-canary\",\"platformFamily\":\"unix\",\"platformOs\":\"macos\",\"codexHome\":\"own-canary\"}}");
+  fflush(stdout);
+  if (!fgets(input,sizeof input,stdin) || !strstr(input,"initialized")) return 71;
+  errno=0;long inherited=write(atoi(descriptor),"F",1);int inherited_error=errno;
+  errno=0;int fd=open("calculator.mjs",O_WRONLY|O_NOFOLLOW);long allowed=-1;
+  if(fd>=0){allowed=write(fd,"X",1);close(fd);}
+  errno=0;fd=open("baseline.txt",O_WRONLY|O_NOFOLLOW);int denied_error=errno;
+  if(fd>=0)close(fd);
+  printf("{\"method\":\"canary/result\",\"params\":{\"pid\":%ld,\"inheritedWrite\":%ld,\"inheritedErrno\":%d,\"allowedWrite\":%ld,\"deniedOpen\":%d,\"deniedErrno\":%d}}\n",(long)getpid(),inherited,inherited_error,allowed,fd,denied_error);
+  fflush(stdout);
+  while(fgets(input,sizeof input,stdin)) { /* Host closes the same R06 handle. */ }
+  return 0;
+}
 int main(int argc, char **argv) {
+  if (argc == 3 && strcmp(argv[1],"app-server") == 0) return protocol(argv[2]);
   if (argc != 4) return 64;
   alarm(3);
   const char *root = argv[1];
