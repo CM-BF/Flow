@@ -14,7 +14,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | 本段源码与局部检查已完成，封存后STOP；原packet b5ab59f clean起点 |
+| 工作树dirty状态 | STOP；PG准备source bcbce5cca9dbe4b8d504e0b06deed40f0039f765，最终metadata提交后clean |
 | 工作分支状态 | review |
 | 检查状态 | PASSED: 原16pure；本段新PG类型0/精确8收集0执行；真实PG/SQL/EXPLAIN NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
@@ -64,3 +64,7 @@ source e1b02772853d08cf1069bc16a8b47b7ca717f633，manifest.json绑定6实现/检
 ## 本段交付事实
 
 22:25:42.918271Z普通FULLRETURN（pg-local-results.md），0待launch。原source审查22:13:34Z已归档；PG准备新源待独审，实际运行CLOSED。原task22:03:42起点/NOT_COMPLETED不变，main未集成。512文件/20alias runtime绑定复用已有供给不复制；外部package入口绑定不冒完整所有第三方执行文件闭包。新直接局部types覆盖实际consumer，真实execute/native/progression组合后继开放。
+
+## 本段最终封存
+
+PG准备target bcbce5cca9dbe4b8d504e0b06deed40f0039f765；唯一pg-review-ready.json绑定13源/5检查原件，已知原iterations前三run不变。开始22:17:21Z，普通RETURN22:25:42.918271Z，源码STOP 2026-10-07T22:27:25.096345+00:00。实际task finish仍NOT_COMPLETED，main未集成；实跑CLOSED。首git add因sparse只提交新产品test（6931fa51a），随后合法--sparse收全部自有源形成当前target，没有执行后改test/fixture。PG验证consumer细节见pg-preparation.md，独审后再定actual窗口。

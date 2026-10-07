@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-07T22:27:25.096345+00:00",
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "priorSource": "e1b02772853d08cf1069bc16a8b47b7ca717f633",
+  "priorPacket": "b5ab59fc098a3fc628e6c973c34af1798f0c1ab2",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13111,
+      "sha256": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.ts",
+      "bytes": 2658,
+      "sha256": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.test.ts",
+      "bytes": 6988,
+      "sha256": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.pg.test.ts",
+      "bytes": 10967,
+      "sha256": "7e3facdf9b70aaccd418b53514b67fa65a0cd49569d96171e52b22eb07343995"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-fixture.ts",
+      "bytes": 11166,
+      "sha256": "ef9664ce14762e9cf29199d3f85e265af5dabc57310c328e99a1ba453117f4a9"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-entry.py",
+      "bytes": 15527,
+      "sha256": "b3eb09e0a8e8b9b0a2ca1fcab2e9a5ab66b70f1b96756d90b7ca64a5a47b3352"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg.vitest.config.ts",
+      "bytes": 267,
+      "sha256": "89e72c53303f02fe7a6f4e5fde82c794b926de9a9bb86086704c68c549dbb78b"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-types.tsconfig.json",
+      "bytes": 628,
+      "sha256": "9b4cfd17510716c56264fb7199aca4d756f08af09650acc0d0a7ebb2faf415e0"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/check.py",
+      "bytes": 5769,
+      "sha256": "78e337ead4746957154e75245d252dde075eced4c3a84b9eb8c39e9d6dd56131"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-runtime-inputs.json",
+      "bytes": 171092,
+      "sha256": "1dc843902fe2f3b1e5727104828180618e1c1b785161314a017b7f4d3bdd2e54"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-closed-permit.json",
+      "bytes": 1132,
+      "sha256": "8afdf1217844ce4a8821ff628f1b60647fd8f6915e87495df8776b5dca1ffc16"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-provenance.json",
+      "bytes": 966,
+      "sha256": "4d0fbe03bce6e817c04ca1d705655c7b0de47df228ed8597bbc57b2a03d36e55"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-preparation.md",
+      "bytes": 5280,
+      "sha256": "882d656b6780a973017f696bbb844217d63be2ed6664ac5d8e74f745b3338a00"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/iterations.json",
+      "bytes": 9659,
+      "sha256": "24d14b4ffd4b9fe9216089a11edea170923f91bb44b02db50efc2dd2a4e4fc04"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-types-started.json",
+      "bytes": 4581,
+      "sha256": "c1a44b36354adf45b4274928dfb827d1885471ffa9a36afc696c03088b668b44"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-collect-started.json",
+      "bytes": 4622,
+      "sha256": "f9f27c8069a73b0dcd4cdaa07c70f0ff56e555433f0f191447c0a4c86713f028"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-collect.log",
+      "bytes": 1817,
+      "sha256": "3adcdadcd1a55c6fa386acf77cf0a596bba6ff0f70deb9a54d00349c5e991415"
+    }
+  ],
+  "checks": {
+    "types": {
+      "exit": 0
+    },
+    "collect": {
+      "exit": 0,
+      "selected": 8,
+      "executed": 0,
+      "passed": null
+    },
+    "priorPure16": "not rerun"
+  },
+  "resources": {
+    "children": 2,
+    "supervisedMilliseconds": 2328,
+    "rawBytes": 1817,
+    "fullReturn": "2026-10-07T22:25:42.918271Z",
+    "pg": 0,
+    "pendingLaunches": 0
+  },
+  "limitations": [
+    "PG/SQL/EXPLAIN/competition NOT_RUN",
+    "new caller adaptation source review pending; no new caller pure",
+    "same output/first errors use old SELECT independent oracle",
+    "public runner writes and end-to-end execute/native/progression not covered",
+    "512 bound file rows do not prove every external runtime JS/dylib; actual preparation dependency review required"
+  ],
+  "stage": "PREPARATION_REVIEW_READY_NOT_OPEN"
+}
