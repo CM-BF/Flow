@@ -200,3 +200,11 @@ FLOW-002-T07 / REQ-06的实际源码修改、监督检查与固定产物交付�
 GO于本日完成官方只读研究并交付的候选输入：[Agents API architecture](https://developers.openai.com/api/docs/guides/agents-api/architecture)、[self-hosted environments](https://developers.openai.com/api/docs/guides/agents-api/environments/self-hosted)、[overview](https://developers.openai.com/api/docs/guides/agents-api/overview)。其托管Codex harness提供session/compaction/recovery，自托管exec-server主动WebSocket连接，应用消费事件/webhook；采用API费率、alpha示例与独立environment key。以上作为GO来源记录归档，本次未启动环境、安装、认证、query或兼容实验。它不是当前本机订阅或固定0.154 app-server的兼容/替代证明。
 
 决定仍优先本机Claude+Codex；未来作为独立adapter候选，Flow保持目标、授权、预算与独立验收权威。原生harness与执行环境是否抽成独立Interface，须由两个真实消费者的需求决定，不提前建立通用层或第二Flow调度器。本次不改变T09验收、不打断O14/COST/Codex现行工作。
+
+## 2026-10-07 T09 / 登录后继：Sign in with ChatGPT 候选
+
+本段归档GO本轮已打开的一手研究输入：[开源/自托管token sharing](https://developers.openai.com/siwc/token-sharing-open-source)、[sign-in](https://developers.openai.com/siwc/sign-in)、[app-server](https://developers.openai.com/siwc/codex-app-server)、[preview limitations](https://developers.openai.com/siwc/preview-limitations)。这是后继正式登录adapter候选；本段未独立复跑认证或验证固定0.154兼容，不能据文档推断Flow现账号可用。
+
+该候选区分同用户/workspace的client registration与各host稳定opaque ID，不授ChatGPT历史。应用需自己的用户consent和授权持久化；初次dynamic_agent_client、callback返回issued client_id，PKCE/state/nonce及127.0.0.1 loopback均属登录Interface。不得复制其他应用OAuth client或凭据。app-server的Responses provider由应用负责refresh→restart→resume；model/list可能是bundled catalog，只有该请求成功推理才支持实际访问结论。预览约束含store:false、stream:true、本地history/resume与有限模型/API/hosted工具；voice/transcription不在此路线。
+
+收益是正式订阅来源与多runner身份边界；代价是新增明确consent、refresh owner和预览兼容责任。当前本机Claude/Codex优先路径不变；若后续实施，Mika沿原MATURE02/FLOW002冻结最小auth接口和固定版离线兼容输入，Flow仍拥有授权/预算/验收。当前不造OAuth服务、不注册client、不读取/复制/输出token、不改已有登录、不新增query预算。
