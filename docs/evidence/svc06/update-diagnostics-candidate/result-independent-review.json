@@ -1,0 +1,82 @@
+{
+  "reviewedAt": "2026-10-07T10:17:01.898579+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_FIXED_ARTIFACT_BUILD_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "artifactSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "entrySource": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+  "resultTarget": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+  "delivery": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+  "manifest": {
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/result-manifest.json",
+    "bytes": 8608,
+    "sha256": "39543ab2150514d9e5647c7da1e766222ed4ae084444aee29276330fc764a670"
+  },
+  "bindingAudit": {
+    "fixedGitAndCurrent": 21,
+    "allBytesAndHashesMatch": true,
+    "retainedPrivateFiles": 3,
+    "privateHashAndIdentityMatch": true,
+    "retainedRootIdentityMatch": true,
+    "artifactManifestBytes": 3196606,
+    "artifactManifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sqlFixedGitInputArtifactMatches": 33,
+    "diagnosticFourSourceBlobsMatch": 4,
+    "fullInventoryPayloadRehashRepeated": false,
+    "preparation109Bindings": "Reuse Lead fixed approval; not repeated"
+  },
+  "observedResult": {
+    "entryElapsedMs": 33273,
+    "outerElapsedMs": 33332,
+    "exitCode": 0,
+    "ownedPid": 62953,
+    "ownedFinalState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "firstFailure": null,
+    "observationsPreserved": [
+      "unknown/EPERM",
+      "absent",
+      "absent"
+    ],
+    "outerStdoutEqualsDurableResult": true,
+    "importsStdoutEqualsRuntimeProof": true,
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "installation": "Offline frozen scripts-disabled; 7 importers / 271 snapshots, downloaded 0 in original producer output",
+    "inventoryEntries": 15628,
+    "logicalBytes": 363845121,
+    "includingManifestBytes": 367041727,
+    "rawBytesIncludingOriginalProducerRecord": 15077,
+    "internalProof": "Artifact-local imports and Web descriptor selection; wrong source rejected; center/runner descriptor selections unchanged; diagnostics exports/65536 constant loaded",
+    "factoryCalls": 0,
+    "runnerCalls": 0,
+    "nativeBinaryExecuted": false,
+    "providerCalls": 0
+  },
+  "cleanup": {
+    "producerRecord": "published / cleanup complete",
+    "prepareLockAndTemporaryStageDirectories": "Absent in original passed entry and bounded current store listing",
+    "artifactAndRoot": "Intentionally retained; 3 private bindings and root identity verified",
+    "noHostOrDatabaseCreatedByThisEntry": true
+  },
+  "limits": [
+    "No actual host readiness or old runner failure root cause proven",
+    "No PG migration, maintenance, real retained App compatibility, personal adoption or native model qualification",
+    "Internal resolution only; development checkout was not removed or mutated",
+    "Volume availability sampling is not exclusive physical allocation or peak evidence",
+    "Future host candidate must recheck this exact descriptor/source/retained artifact and obtain its own bounded runtime authorization"
+  ],
+  "reviewActions": {
+    "readOnlyGitAndEvidence": true,
+    "tests": 0,
+    "imports": 0,
+    "builds": 0,
+    "PG": 0,
+    "hostOrServiceOperations": 0,
+    "provider": 0,
+    "personalDirectoryReads": 0
+  },
+  "findings": []
+}
