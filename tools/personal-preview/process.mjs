@@ -21,15 +21,28 @@ export async function inspectOwnedProcess(record) {
   return current.group === record.group && current.startedAt === record.startedAt && current.command === record.command
     && current.command.includes(`--flow-preview=${record.nonce}`) ? 'running' : 'unknown';
 }
-export async function ownsListener(record, port) {
-  if (await inspectOwnedProcess(record) !== 'running') return false;
+/** One real probe supplies both the readiness evidence and the legacy boolean. No command output is retained. */
+export async function observeOwnedListener(record, port) {
+  const ownerState = await inspectOwnedProcess(record);
+  const result = { owned: false, ownerState, phase: 'owner', listenerCount: null, code: null, exitCode: null };
+  if (ownerState !== 'running') return result;
   try {
+    result.phase = 'listener-query';
     const { stdout } = await execute('lsof', ['-nP', `-iTCP:${port}`, '-sTCP:LISTEN', '-t'], { timeout: 1000 });
     const pids = [...new Set(stdout.trim().split(/\s+/).map(Number))];
-    if (!pids.length || pids.some(pid => !Number.isSafeInteger(pid) || pid < 2)) return false;
-    for (const pid of pids) if ((await identity(pid))?.group !== record.group) return false;
-    return true;
-  } catch { return false; }
+    result.phase = 'listener-pids';
+    if (!pids.length || pids.some(pid => !Number.isSafeInteger(pid) || pid < 2)) return result;
+    result.listenerCount = pids.length; result.phase = 'listener-owner';
+    for (const pid of pids) if ((await identity(pid))?.group !== record.group) return result;
+    return { ...result, owned: true, phase: 'confirmed' };
+  } catch (error) {
+    result.code = ['ENOENT', 'EACCES', 'EPERM', 'ETIMEDOUT', 'ERR_CHILD_PROCESS_STDIO_MAXBUFFER'].includes(error?.code) ? error.code : null;
+    result.exitCode = Number.isSafeInteger(error?.code) ? error.code : null;
+    return result;
+  }
+}
+export async function ownsListener(record, port) {
+  return (await observeOwnedListener(record, port)).owned;
 }
 export async function spawnOwnedProcess({ args, cwd, env, onSpawn }) {
   if (process.platform === 'win32') throw new Error('POSIX process ownership is required.');

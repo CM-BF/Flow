@@ -1,4 +1,6 @@
-import { readFile, lstat, realpath } from 'node:fs/promises';
+import { readFile, lstat, realpath, open } from 'node:fs/promises';
+import { constants } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { BACKEND_POLICY, verifyBackendArtifact } from './index.mjs';
 import { fail } from './files.mjs';
@@ -24,6 +26,75 @@ export async function backendRuntime(config, artifact) {
   const entry = join(verified.root, 'tools/personal-preview/cli.mjs');
   if (!verified.manifest.inventory.entries.some(value => value.path === 'tools/personal-preview/backend-release/host.mjs')) fail('BACKEND_HOST_VERSION_UNSUPPORTED');
   return { root: verified.root, entry, artifact };
+}
+const statIdentity = info => [info.dev, info.ino, info.uid, info.mode, info.size, info.mtimeMs, info.ctimeMs];
+async function launchRuntimeIdentity(config, artifact) {
+  const store = join(config.directory, 'backend-artifacts');
+  const location = join(store, artifact.artifactId), root = join(location, 'root');
+  const directories = [];
+  for (const path of [config.directory, store, location, root]) {
+    const info = await lstat(path);
+    if (!info.isDirectory() || info.isSymbolicLink() || info.uid !== process.getuid()
+      || (path !== root && (info.mode & 0o777) !== 0o700) || await realpath(path) !== path) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+    // Installation state changes during startup; its inode/permissions, not its directory mtime, are fixed.
+    directories.push([info.dev, info.ino, info.uid, info.mode]);
+  }
+  const path = join(location, 'manifest.json');
+  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
+  try {
+    const before = await file.stat();
+    if (!before.isFile() || before.nlink !== 1 || before.uid !== process.getuid()
+      || (before.mode & 0o777) !== 0o600 || before.size > 32 * 1024 ** 2) fail('BACKEND_MANIFEST_INVALID');
+    const bytes = Buffer.alloc(before.size + 1); let length = 0;
+    while (length < bytes.length) { const read = await file.read(bytes, length, bytes.length - length, null); if (!read.bytesRead) break; length += read.bytesRead; }
+    const identity = statIdentity(before), after = await file.stat(), named = await lstat(path);
+    if (length !== before.size || named.isSymbolicLink() || named.nlink !== 1
+      || JSON.stringify(identity) !== JSON.stringify(statIdentity(after))
+      || JSON.stringify(identity) !== JSON.stringify(statIdentity(named))) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+    const hash = createHash('sha256').update(bytes.subarray(0, length)).digest('hex');
+    if (hash !== artifact.manifestDigest) fail('BACKEND_MANIFEST_MISMATCH');
+    return JSON.stringify({ directories, manifest: identity, hash });
+  } finally { await file.close(); }
+}
+/** One wrapper launch only. Full verification establishes the result; reuse rechecks its
+ * namespace, exact descriptor and private root/manifest identity. Nothing survives this object. */
+export function createLaunchRuntimeResolver(resolveRuntime = backendRuntime) {
+  let namespace, verified, sealed = false, busy = false, failed = false, candidates = 0;
+  return Object.freeze({
+    seal() { if (busy || failed) fail('BACKEND_LAUNCH_UNCONFIRMED'); sealed = true; },
+    async resolve(config, input) {
+      if (busy || failed) fail('BACKEND_LAUNCH_UNCONFIRMED');
+      busy = true;
+      try {
+        const nextNamespace = JSON.stringify([config.directory, config.repository]);
+        if (namespace !== undefined && namespace !== nextNamespace) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+        namespace = nextNamespace;
+        const artifact = input == null ? null : Object.freeze(webHostArtifactDescriptor(input));
+        const key = JSON.stringify(artifact);
+        if (verified && key !== verified.key && sealed) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+        // Legacy repository resolution retains the original path and does not acquire a cache.
+        if (!artifact) {
+          if (verified) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+          return await resolveRuntime(config, null);
+        }
+        const identity = await launchRuntimeIdentity(config, artifact);
+        if (verified?.key === key) {
+          if (identity !== verified.identity) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+          return verified.runtime;
+        }
+        // assertInstallationSource may inspect current and pending backend descriptors.
+        if (++candidates > 2) fail('BACKEND_LAUNCH_UNCONFIRMED');
+        const runtime = await resolveRuntime(config, artifact);
+        if (identity !== await launchRuntimeIdentity(config, artifact)
+          || runtime.root !== join(config.directory, 'backend-artifacts', artifact.artifactId, 'root')
+          || runtime.entry !== join(runtime.root, 'tools/personal-preview/cli.mjs')
+          || JSON.stringify(runtime.artifact) !== key) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
+        verified = { key, identity, runtime: Object.freeze({ root: runtime.root, entry: runtime.entry, artifact }) };
+        return verified.runtime;
+      } catch (error) { failed = true; throw error; }
+      finally { busy = false; }
+    },
+  });
 }
 /** Web selection is separate from the artifact selected for center/runner/maintenance. */
 export function webHostArtifactDescriptor(value) {
