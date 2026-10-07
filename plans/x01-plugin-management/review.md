@@ -1,3 +1,11 @@
+状态：APPROVED（仅真实公开链准备源码/类型与收集证据；PG NOT_OPEN）
+
+Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db
+
+chatui01_owner/gpt-6-astra 2026-10-07T09:20:40Z，0P1/P2。[正式回执](../../docs/evidence/x01/public-runner-independent-review.json)。连接配置实际8+3+4+1=16，保守17上限不变；原window/manifest不改。未执行PG，不是完整public链通过。
+
+---
+
 状态：PENDING（单条真实npm公开链验收准备；0PG）
 
 Review target commit: ced4679c9ce3c183044fb853d71f72de7fc214db

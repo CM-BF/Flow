@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:17:48.727994+00:00 |
+| 最近更新时间 | 2026-10-07T09:21:38.447259+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 新段09:02:16Z；固定test e6ad1c0f / support ced4679c，main1e12eaf1真实closure；新packet准备固定 |
-| 工作树 dirty 状态 | 新test+支持ced4679c已固定；仅本次manifest/review/status收尾，旧产品/raw不变 |
-| 工作分支状态 | review |
+| 工作树 dirty 状态 | 准备packet2d9c2bf3已push clean；本次仅正式独审metadata，原source/manifest/raw冻结 |
+| 工作分支状态 | implementation |
 | 检查状态 | 完整createServer/runRunner类型闭包strict0；精确list1/0hooks/0case执行，两child及两个TMP已闭合；真实PG NOT_OPEN |
-| Review | 新公开链准备PENDING；旧2ea5adfe已08:59:36独审APPROVED，旧来源5/5不变 |
+| Review | chatui01_owner 2026-10-07T09:20:40Z SOURCE_AND_PREPARATION_RESULT_REVIEW_APPROVED/0P1P2；仅准备 |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
 | 实现目标 | ced4679c9ce3c183044fb853d71f72de7fc214db |
 | 实现范围 | apps/server/src/plugin-runtime/public-runner-pg.test.ts；docs/evidence/x01/public-runner-*（固定镜像/实际PG薄入口/局部证据） |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实npm插件公开运行链的单条验收已具备固定输入，完整类型检查通过，待独立准备审查 |
-| 下一可用交付 | 独审通过后，在独立专库实际运行公开安装、启用、任务执行与来源产物的一条用例 |
-| 当前阻塞 | NONE：新准备交独审；实际PG NOT_OPEN，完整CLI与精确pin恢复仍开放 |
+| 当前产出 | 真实npm公开运行链验收准备已通过独立审查；尚待专用数据库窗口验证实际行为 |
+| 下一可用交付 | 取得实际窗口后运行单条公开安装、启用、runner执行与来源产物验收 |
+| 当前阻塞 | 等待实际PG准入；0活动资源/无预约，完整CLI与精确pin恢复仍开放 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -323,3 +323,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T09:02:16Z 开始独立20min公开链准备段，v21/52仅追加单新test。原max2×60s/120s、16MiB TMP/512KiB raw；Mika按221TS/1,122,779B完整闭包于本段明确source/meta上限由1改2MiB，其余不变。09:12–09:13 strict0/list1（0hooks、0PG、0tar）实际完成并向status_read归还local。260固定物化文件1,207,575B含33官方SQL与5semver材料；首source-only供给对不存在schema.sql路径拒绝，0物化/0工程child，随后按真实database.ts内联schema+官方迁移完整供给。旧approved wiring及来源5/5原件保持；新PG入口未运行。
 
 2026-10-07T09:17:48.727994+00:00 本段新test/source e6ad1c0f、支持ced4679c固定；[唯一交审入口](../../docs/evidence/x01/public-runner-review-ready.json)绑定277文件1,369,974B、28external（新增真实tar）/21links、33官方SQL。两准备child strict0/list1均闭合；只收集未执行业务，0PG/HTTP/tar。新run-r1 absent且无admission，实际不占PG或local。旧runtime-wiring窄intake仍可独立受控接收，不能以本准备证明完整X01。下一次真正运行需准备独审和fresh实际窗口。
+
+2026-10-07T09:20:40Z 独审确认ced4679c/2d9c2bf3准备APPROVED0P1/P2；09:21 fresh v21 ACTIVE52/head clean核符后仅归档。实际连接配置8(server)+3(PgBoss)+4(fixture)+1(admin)=16≤保守17；原受审window的max12描述不精确，本文与正式回执纠正，固定输入预算/原件不改。实际PG NOT_OPEN/0预约，local已closed；新AGENTS每Lead1+3总12替代旧历史10，仍受工具实际cap。
