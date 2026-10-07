@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-07T10:31:19.844249+00:00",
+  "source": "fixed-bootstrap-fixture-delta",
+  "freshFree": 22712803328,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-bootstrap-direct-local-7irh4_c0",
+  "scratchIdentity": {
+    "dev": 16777234,
+    "ino": 124038851
+  },
+  "checks": [
+    {
+      "name": "bootstrap-direct-1",
+      "pid": 69319,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 160,
+      "stdout": {
+        "bytes": 203,
+        "sha256": "4f477e6f5ef496159b846698196c8547c3b9bcd0f3ee1fa8c76582349387adad"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "observed_bytes": 203,
+      "retained_bytes": 203,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "pythonAST": "parsed-without-import",
+  "scratchEntriesAfter": 0,
+  "scratchRemoved": true,
+  "finishedAt": "2026-10-07T10:31:20.006201+00:00",
+  "elapsedMs": 199
+}

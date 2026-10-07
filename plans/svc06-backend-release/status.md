@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:27:59 UTC；三角色/迁移达到，发布fixture首错，独立清理确认并归还 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:35:07 UTC；r1失败限定独审归档，r2初始化修正及定向例已封定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/runtime6c固定；新host6cd/4a6实际r1已消费，结果records正在固定 |
-| 工作树dirty状态 | 产品/运行入口停写；仅本次结果/只读诊断与own metadata |
+| 工作基线 / HEAD | 产品3cb/runtime6c固定；r1结果77cf/fe46已限定独审；r2 source ea6bd5852c2754f4179bb6da467caf8d6d67a368，records封定中 |
+| 工作树dirty状态 | 产品与r2源码停写；仅本次局部raw/review/status/manifest封定 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 新host三角色ready、27→35及defaultoff；首错WEB_RELEASE_BOOTSTRAP_REQUIRED，work57759ms/cleanup393ms，实际窗归还；完整策略链未通过 |
+| 检查状态 | r1三角色ready/27→35后BOOTSTRAP_REQUIRED，cleanup确认；r2一个真实loader/CAS直接例原红→1/1，syntax0，379ms/2456B/三组absent，实际host NOT_RUN |
 | 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物的三项服务与数据库迁移已运行；发布初始化检查暴露测试顺序问题，资源已正常清理。 |
-| 下一可用交付 | 审查本次失败记录，修正隔离测试的首次发布步骤后继续剩余策略验收。 |
-| 当前阻塞 | ACTIVE: 隔离测试首次发布步骤需窄修；策略刷新和个人更新尚未验收。 |
+| 当前产出 | 首次发布的隔离测试步骤已修正，定向检查通过；上一轮失败与正常清理已完成独立核验。 |
+| 下一可用交付 | 审查这次最小修正后，在新的隔离环境继续验证策略刷新与保留数据。 |
+| 当前阻塞 | ACTIVE: 最小修正待独立审查及新的共享运行窗口；个人更新尚未验收。 |
 | 需用户决定 | NONE |
-| Review | 新build结果和host准备已审；本次host失败/cleanup事实待独立结果审查 |
+| Review | r1结果APPROVED_LIMITED_FAILED_HOST_RESULT_ACCOUNTING；r2 source ea6bd准备待独审，不扩大为真实host通过 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物实际build/import完成待结果独审，三App配置兼容/个人更新仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2修正待实际验证，三App配置兼容/个人仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -272,3 +272,7 @@ source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领
 ## 2026-10-07 10:27:59 UTC — 诊断宿主r1实际失败与清理
 
 [RESULT](../../docs/evidence/svc06/diagnostics-host-policy/RESULT.md)固定事实：三角色ready、defaultOff=true、27→35迁移；首次release fixture误用publish于空pointer，被原产品BOOTSTRAP保护拒绝。work57,759ms/exit1、cleanup393ms/exit0，10:26:05.098Z三组stopped/专库normalDROP/两监督组absent双EOF；stderr0B，Web显式stop数值exit1原样保留。旧runner首因仍UNKNOWN，不因本次ready改旧记录。真实window已归还；本次结果待独审，下一仅新namespace的fixture窄修，不重构建或触个人。
+
+## 2026-10-07 10:35:07 UTC — r1限定结果批准与r2准备
+
+[原件独审](../../docs/evidence/svc06/diagnostics-host-policy/result-independent-review.json)核28fixed/current+31private+11副本，保FAIL/normalDROP及35迁移/三roles边界；旧runner首因unknown。r2仅首次bootstrap及新namespace，514中513原输入不变；[最小准备](../../docs/evidence/svc06/diagnostics-host-bootstrap/README.md)记录1行为原红→绿、syntax0、379ms、2456B与完整局部清理。10:31:20.006201Z实际local归还，未启动r2 PG/host；等待起点此封定前无单独时间原件，UNKNOWN，不以commit推算。原03/04/05仍open。

@@ -145,3 +145,9 @@ native_center_owner对32d441cc/deliveryd911限定APPROVED_LIMITED_FIXED_ARTIFACT
 ## 2026-10-07 10:28 UTC — 诊断宿主准备批准与r1结果待审
 
 Lead原件[APPROVED](../../docs/evidence/svc06/diagnostics-host-policy/independent-review.json)绑定6cd/4a6，20bindings/3method/3runtime与514输入同，P1/P2=0。本次实际r1的三角色/迁移已到、release fixture首错与cleanup分别记[RESULT](../../docs/evidence/svc06/diagnostics-host-policy/RESULT.md)；结果待独立审查，不以清理通过冒完整host通过。不改原r1、artifact或产品guard。
+
+## 2026-10-07 10:35:07 UTC — r1失败结果限定批准；r2最小修正待审
+
+Execution Lead原件 [review](../../docs/evidence/svc06/diagnostics-host-policy/result-independent-review.json)，1900B/SHA793439100ec327c6f28785df9bc6dc880cd946cfd7333ca3ec1880b9f91bbb22，实际review时间10:30:51.985739Z；target77cf/deliveryfe46，APPROVED_LIMITED_FAILED_HOST_RESULT_ACCOUNTING，无finding。只批准失败事实/正常cleanup，非完整host/三App/个人通过。
+
+r2 source ea6bd5852c2754f4179bb6da467caf8d6d67a368，唯一期待版本0首次publish→bootstrap；entry/observer/outer不变，新r2namespace。一个真实loader/CAS direct例原fixtureENOENT保留，补空report目录后1/1、syntax0、379ms/2456B，3组absent双EOF，两scratch removed。作者clean-code复核见[README](../../docs/evidence/svc06/diagnostics-host-bootstrap/README.md)，准备等待Lead独审，实际host NOT_RUN。

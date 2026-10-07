@@ -1,0 +1,44 @@
+{
+  "reviewedAt": "2026-10-07T10:30:51.985739+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_FAILED_HOST_RESULT_ACCOUNTING",
+  "findings": [],
+  "target": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+  "delivery": "fe46e1c04c7da32fe20c25a1374884b2db13283e",
+  "manifest": {
+    "path": "docs/evidence/svc06/diagnostics-host-policy/result-manifest.json",
+    "bytes": 20879,
+    "sha256": "548591927ecf49b3a06f3110211f8b5e394103f936c9a4f11ee08a5311d2ddef"
+  },
+  "checked": {
+    "fixedAndCurrentBindings": 28,
+    "privateHashBytesModeIdentity": 31,
+    "byteExactCopies": 11,
+    "testsRerun": 0,
+    "PGOrProvider": 0
+  },
+  "actual": {
+    "workExit": 1,
+    "workMilliseconds": 57759,
+    "primary": "WEB_RELEASE_BOOTSTRAP_REQUIRED",
+    "cleanupExit": 0,
+    "cleanupMilliseconds": 393,
+    "allRecordedServiceGroups": "stopped",
+    "outerOwners": "absent with EOF",
+    "database": "marker/OID1282326, zero connections, normal DROP remaining[]",
+    "privateRoots": "retained"
+  },
+  "supported": [
+    "three roles reached ready; default browser policy off",
+    "migrations27 to35 recorded; representative data equality/idle passed before failure by fixed control-flow, no separately stored after snapshot",
+    "fixed method called initial publish with no pointer; fixed product guard requires bootstrap and correctly rejected before commit",
+    "three bounded private stderr files empty/complete; cleanup explicit exit records do not explain prior run cause"
+  ],
+  "notSupported": [
+    "complete maintenance/policy/refresh/resume journey",
+    "three real App compatibility",
+    "personal update",
+    "cause or repair of old runner readiness failure"
+  ],
+  "scope": "Faithful failed run plus confirmed normal cleanup only. Next new isolated fixture may fix initial action under unchanged product/CAS/report checks; this run is not replayable."
+}
