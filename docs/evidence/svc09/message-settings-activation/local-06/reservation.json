@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T14:23:39.762848+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-name-pattern=SVC09A controlled startup|SVC09A startup profile mismatch|SVC09A failed new-slot|SVC09A selected runtime",
+    "tools/personal-preview/startup-diagnostics.test.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/maintenance.test.mjs"
+  ],
+  "head": "7098c67a6198dcf448c69cd61a43918b8a2c93cf",
+  "freeBytes": 21353852928,
+  "priorWorkMs": 2659,
+  "segmentBudgetMs": 240000,
+  "tmpCapBytes": 33554432,
+  "rawCapBytes": 2097152,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09a-r5ovevps",
+  "dev": 16777234,
+  "ino": 124190539,
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "bytes": 13446,
+      "sha256": "d4fa4a64baf7f108126258431cadc16ffe232aa9b7fb4b690fba01d884527a3b"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 73747,
+      "sha256": "ba023dd358604c078f44a51151523082a39e7e3d5910372fd6a8aefcd01a6043"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 26264,
+      "sha256": "144149b5d964c0cb17945da53ee586b5bbf2c2ab033c59be3fc68beee929d89d"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 54643,
+      "sha256": "aeeb6b1bfcd8a3e89e7e8eef5cd59f50305e6aeb7fda318c74edaa3e355acfe4"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 12513,
+      "sha256": "db06a2e1369ebb176d01033eb84101e8b27d386b9b2ca3f595a4acb8eb3ffaee"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5753,
+      "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    }
+  ]
+}

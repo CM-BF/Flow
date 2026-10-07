@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T14:20:28.091943+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-name-pattern=SVC09A explicit activation|SVC09A failed new-slot|SVC09A selected runtime",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/maintenance.test.mjs"
+  ],
+  "head": "15f20f1f93ceb607d65255e7ad9da9b73dd9f83b",
+  "freeBytes": 21382254592,
+  "priorWorkMs": 1566,
+  "segmentBudgetMs": 240000,
+  "tmpCapBytes": 33554432,
+  "rawCapBytes": 2097152,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09a-dk44iu5a",
+  "dev": 16777234,
+  "ino": 124189857,
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 72146,
+      "sha256": "498e6c693e779ec74cf8c7e754d0a242316d09f76afda268db1b2088984c0d8f"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 25700,
+      "sha256": "e48e02b0de9da08098f8184f99fc248fc312d3c7268e6e92447577dc6c03c134"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T14:26:57.936888+00:00",
+  "report": {
+    "pid": 26674,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 189,
+    "observed_bytes": 974,
+    "retained_bytes": 974,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "counts": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0
+  },
+  "rawBytes": 974,
+  "priorWorkMs": 3255,
+  "fixturePeakBytes": "NOT_SAMPLED; bounded self-owned small fixtures"
+}
