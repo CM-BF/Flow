@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T03:19:25.466752+00:00 |
+| 最近更新时间 | 2026-10-07T03:21:59.672788+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4冻结；后继支持源码5fcadf8f1b8084d56670393a8ec07ebfb644015f，未main |
-| 工作树 dirty 状态 | 固定0fad准备包clean；当前只归档独审和实际local接收，提交后clean |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4冻结；caller5fcadf8f；实际执行ebd0e591c6b056e7d3b9460557715bc36eebf31c，尚未main |
+| 工作树 dirty 状态 | 执行前ebd0e591 clean；当前仅本次9raw/单结果/工具观察与own metadata归档，产品和调用方未改；提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASS 七组内存Report回归7/7及忠实性独审；后继Stage A strict/Vitest17项与11tar NOT_RUN；旧HOLD完整保留 |
-| Review | APPROVED 5fcadf8f SOURCE/PREPARATION_REVIEW（chatui01_owner，03:16:39UTC，0P1/P2）；Stage A实际结果未产生 |
+| 检查状态 | PASS Stage A单次strict0与17/17（合同6+实际包11）；11tar closed0，12自有TMP exact absent；旧HOLD和7例记录保留且未重跑 |
+| Review | PENDING 本次Stage A R2固定结果忠实性独审；产品ade4及caller5fc准备源码APPROVED保持 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 5fcadf8f1b8084d56670393a8ec07ebfb644015f |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md, docs/evidence/x01/enable-binding-ownership.test.py, docs/evidence/x01/enable-binding-stage-a-input-r2.json, docs/evidence/x01/enable-binding-stage-a-r2.md |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 调用方消费修复已通过七组回归与独审；原合同和实际包执行准备使用独立运行目录 |
-| 下一可用交付 | 执行原strict与17项产品/11tar局部检查，保完整退出与资源收尾证据；失败不自动重跑 |
-| 当前阻塞 | NONE 本次局部槽已由REQ15明确清理归还；Mika授权原30秒Stage A，仍须即时资源/账本/输入门禁，未知立即保留停止 |
+| 当前产出 | 插件执行合同及真实自有包的局部检查已通过，临时资源已清理；完整中心与runner链路尚未验证 |
+| 下一可用交付 | 接收本次局部结果独审，继续既定旧消费者与领域PG验收；生产runner工具接线及现成npm能力仍后继 |
+| 当前阻塞 | ACTIVE: 领域PG、旧消费者和生产runner共享接线仍待各自依赖与资源段；本次局部槽已归还C02，未启动后继 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -162,3 +162,9 @@ fresh v8 ACTIVE17、原e484 clean。已接chatui01_owner于03:11:53对e484七组
 | X01-STAGE-A-R2-LOCAL | 2026-10-07T03:15:38.909093+00:00 | 2026-10-07T03:16:55.571215+00:00 | local资源 | REQ15主线接收修复先行，等待其明确终态归还；X01固定增量须独审 | Mika当前派工与db_transaction_owner直接交接；本status |
 
 2026-10-07T03:19:25.466752+00:00：接chatui对0fad准备限定APPROVED。REQ15于其03:16:55.571215Z收口记录确认local已完成，直接交还；本owner03:18:33固定ae899独审接收11/11/资源closed。Mika随后明确授本次30秒原Stage A段，无已知heavy holder。本owner03:19:01.954856Z fresh核v8 ACTIVE17；现在仅准备即时运行，未把授权写作检查通过。
+
+## 2026-10-07T03:21:59.672788+00:00 — Stage A实际单次通过
+
+Mika将30秒local段正式交本owner；03:19:49.463834Z fresh账本v8 ACTIVE17与clean ebd0e591相符，独立admission由受委派operator排他创建并由caller复制封存，free26527911936B≥合计1107828736B。实际03:19:54.282027Z开始，strict0、17选17过，11真实tar全exit0；preflight/strict/tests三监督进程final absent/EOF完整，无failure/unknown。外层`time -p` real2.37s，caller CLI前2346.240ms与UTC秒级保守≤10s分别记录，不把工具等待wall叠加。
+
+[单结果/绑定](../../docs/evidence/x01/enable-binding-stage-a-result-r2.json)及[工具原输出](../../docs/evidence/x01/enable-binding-stage-a-tool-r2.json)保留原9raw15301B、全部child/根身份和原CLI；记录自身/工具/外部准入副本共27484B，小于512KiB。12个精确TMP路径03:20:11及最终归档lstat全部absent；32MiB仍是结束采样非硬峰值。local已direct交chatui01_owner接C02，并通知S01 heavy owner核对未来local预算。0PG/Chrome/provider/install/重试。产品ade4、旧HOLD原件、原manifest和7dep供给全不变。boolean/integer/enum实际字符串传包的独立断言仍未覆盖，不借17通过扩称。
