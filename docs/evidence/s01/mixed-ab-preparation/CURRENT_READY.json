@@ -1,5 +1,5 @@
 {
-  "state": "CURRENT_READY_FOR_MANAGER_HANDOFF_NOT_OPEN",
+  "state": "CONSUMED_O1_FAIL_O2_NOT_RUN_NO_RETRY",
   "recordedAt": "2026-10-07T13:58:41.052Z",
   "taskId": "S01",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
@@ -90,5 +90,9 @@
     "five caller outputs plus run root absent",
     "actual holders returned, current complete floor at least9296871424 or higher; exact cluster/WAL filesystem conditions",
     "whole external tool clock and all original 300s/512MiB/unknown KEEP gates"
-  ]
+  ],
+  "currentState": "CONSUMED_O1_FAIL_O2_NOT_RUN_NO_RETRY",
+  "currentResult": "docs/evidence/s01/pool-wait-run/report.md",
+  "historicalPreparationNote": "Original fields below describe pre-admission only; execution67d0 consumed this window once, active resources RETURN and two roots KEEP.",
+  "historicalState": "CURRENT_READY_FOR_MANAGER_HANDOFF_NOT_OPEN"
 }

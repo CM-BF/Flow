@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:58:41.052Z |
+| 最近更新 | 2026-10-07T14:11:39.121Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 已审源码375ecccc427acf59d687153903bd032fb6e684bc/输入/raw全部STOP；本次只归档结果独审与CURRENT_READY，metadata提交后核clean。 |
+| 工作树dirty状态 | 执行前67d0c84d=origin clean；已审源码/输入冻结，本次仅新增实际原件、离线结果和本metadata，提交后核clean。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新增caller5/5单轮、1child闭合；原3/6/9/11 distinct各target与首红独立保留，不重跑/不相加。 |
+| 检查状态 | 唯一queue实际O1 FAIL/O2 NOT_RUN；旧caller5/5和3/6/9/11各target与首红保留，不相加不重跑。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | 375ecccc427acf59d687153903bd032fb6e684bc |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-operator-env.test.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 运行准备及五个纯反例已独审通过，固定实验已进入资源窗口队列，尚未实际运行。 |
-| 下一可用交付 | 获得独占窗口并完成最新资源核验后，交付聊天轻读与取消的真实对照测量。 |
-| 当前阻塞 | ACTIVE：等待manager排队后的明确性能窗口与完整资源核验；当前无运行许可。 |
+| 当前产出 | 真实负载暴露持续ACK跨度不足，第二组按门禁未启动；轻读与取消部分观测已保留，活动资源已归还。 |
+| 下一可用交付 | 固定失败结果与保留资源后完成独立忠实性、最小根因审查，再据证据决定后续修复。 |
+| 当前阻塞 | ACTIVE：本次持续负载验收失败，两组对照不足；两份自有目录KEEP，待独审确定后继，不占运行窗口。 |
 | 需用户决定 | NONE |
-| Review | db13:51:11Z源APPROVED及13:54:42Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；限定375e源码与5合成pure例，不含实际PG/HTTP/performance。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T13:34:26.938Z原子追加pool-wait-run，原五scope不变，输出目录尚未创建。 |
-| 架构影响 | 复用OPS14监督及原driver/child资源权威；新增同PID checkpoint→exec薄caller与固定输入清单，生产pool/SQL不变。当前新实验未main/未运行。 |
+| Review | 实际结果待db独立忠实性/最小根因审查；已审375e caller与5pure批准仍仅原范围。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；14:04:29.236Z fresh全身份匹配，pool-wait-run本次唯一窗口已消费。 |
+| 架构影响 | 复用OPS14、原driver/child及固定4fdd；只SQL观察投递候选O1实际、O2未启，未改生产pool/SQL；当前实验模块未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -220,3 +220,13 @@ chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPR
 futurefloor当前至少9,296,871,424B或manager更高sum，input原minimum只作历史，actual参数必须higher；个人常驻服务/已知用户负载后续UNKNOWN保留，不探/停个人任务。300s/512MiB、同4fdd/O1O2单变量与旧KEEP不变；实际NOT_RUN_NOT_OPEN。原taskstartUNKNOWN/M2/整体NOT_COMPLETED与历史main事实保持，status唯一源/本段无dashboardGET，旧来源观察不冒本次新同步。
 
 本metadata段13:57:24Z开始，沿本地find-skills/codebase-design/固定clean-code核唯一入口/原件冻结/资源与时间口径；无新Module/框架，保claim并STOP等待明确实际派工。
+
+## 2026-10-07T14:11:39.121Z 唯一queue窗口失败封存与实际归还
+
+实际checkpoint START2026-10-07T14:05:05.778649Z，PID/PGID100；outer14:05:30.030995Z终态/tool1。O1 FAIL(insufficient_window_ack_span、admission_or_outbox_retained)、O2 NOT_RUN，0自动重试。129总task/attempt/session；128负载中37个ACK跨度未达4秒，20/20聊天轻读和四取消仅部分观测，不替代失败的完整验证链。见[报告](../../docs/evidence/s01/pool-wait-run/report.md)及原result/observations；performance、provider/SLO和完整S01没有通过。
+
+原普通DROP/absence成立；14:08:08.536Z exact数据库不存在/0conn、后查pool关闭；三PID ESRCH、双EOF/groupabsent与端口61。原caller processClosed=false/UNKNOWN_RETAIN不改写，与实际活动holder0分列。runner/source两精确目录KEEP（只lstat）；从未访问旧未知根。root已即时转manager RETURN；当前无actual/待launch，新窗口未经授权。
+
+固定execution67d0c84d3e8a629d78335b8866173e04d7249e36、source375ecccc427acf59d687153903bd032fb6e684bc及input-v2 SHA970f071e原字节不变。计量139378995B已含final4MiB，不另扩预算；time-p24.56s、entry24.130684s、outer24.466051s与工具秒级≤54s观察包围分列。离线metadata不回写运行时长。真实背景个人服务/用户任务后续UNKNOWN、Web ordinary仅potential，未假定两侧背景一致。
+
+沿本地find-skills/codebase-design/固定clean-code检查原件忠实、唯一生命周期/错误与预算边界；0补跑工程测试/清理/安装。本唯一status为dashboard来源，最后成功API观察仍11:57历史，未新GET、不冒称新结果已聚合。原任务开工UNKNOWN、六TODO/整体NOT_COMPLETED、已main历史A/B/idle保持；claim保留结果独审期。

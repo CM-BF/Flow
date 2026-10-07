@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "windowId": "s01-pool-wait-delivery-once",
+  "executionHead": "67d0c84d3e8a629d78335b8866173e04d7249e36",
+  "source": "375ecccc427acf59d687153903bd032fb6e684bc",
+  "toolSessionId": 44631,
+  "toolCompletionObservedAt": "2026-10-07T14:05:58Z",
+  "clockObservationBasis": "second-resolution clock tool; observed envelope <=54s from 14:05:05Z, not exact tool duration; poll wall times not summed",
+  "declaredBackground": {
+    "personalServices": 3,
+    "personalConnections": 15,
+    "userTaskSubsequentStatus": "UNKNOWN_NOT_QUERIED",
+    "webOrdinary": "potential only; <=20s/1Node/16MiB TMP+2MiB raw, within declared22MiB; actual overlap UNKNOWN",
+    "controlledEquality": false
+  },
+  "calls": {
+    "queue_preflight_0": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "1497ec",
+        "wall_time_seconds": 0.113229667,
+        "exit_code": 0,
+        "original_token_count": 105,
+        "output": "{\"at\": \"2026-10-07T14:04:29.393061+00:00\", \"head\": \"67d0c84d3e8a629d78335b8866173e04d7249e36\", \"clean\": true, \"inputSha\": \"970f071eb7eb275145c81a6b6d0f6193ed5737c6e0a2b48051ada414f3819512\", \"currentBindings\": 121, \"productionFiles\": 675, \"productionBytes\": 4931265, \"sqlFiles\": 33, \"plannedAbsence\": 6, \"freeBytes\": 21576814592, \"floor\": 9296871424, \"rootIdentity\": {\"dev\": 16777234, \"ino\": 118589194}, \"errors\": []}\n"
+      }
+    },
+    "queue_preflight_1": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "dea442",
+        "wall_time_seconds": 0.081701042,
+        "exit_code": 0,
+        "original_token_count": 223,
+        "output": "{\"observedAt\": \"2026-10-07T14:04:29.236489+00:00\", \"claim\": {\"lead\": \"mika\", \"next\": null, \"role\": \"writer\", \"scope\": [\"docs/evidence/s01/idle-claim-cost\", \"docs/evidence/s01/mixed-ab-preparation\", \"docs/evidence/s01/mixed-ab-run\", \"docs/evidence/s01/pool-wait-run\", \"experiments/runner-capacity/mixed\", \"plans/s01-runner-capacity\"], \"state\": \"active\", \"branch\": \"codex/runner-capacity-probe\", \"origin\": \"new\", \"taskId\": \"S01\", \"worker\": \"status_read\", \"claimId\": \"508f9c85-a27c-4382-bfe9-caca43be4b0e\", \"version\": 3, \"worktree\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe\", \"createdAt\": \"2026-10-06T13:42:24.119Z\", \"updatedAt\": \"2026-10-07T13:34:26.938Z\", \"observedAt\": null, \"needsVerification\": false}}\n{\"at\":\"2026-10-07T14:04:29.321Z\",\"version\":\"16.13\",\"recovery\":false,\"data_directory\":\"/var/lib/postgresql/data\",\"wal_bytes\":\"67108864\",\"poolClosed\":true}\n"
+      }
+    },
+    "queue_preflight_2": {
+      "status": "fulfilled",
+      "value": {
+        "chunk_id": "e1fbb7",
+        "wall_time_seconds": 0.048387792,
+        "exit_code": 0,
+        "original_token_count": 15,
+        "output": "2c45767d4802 flow-f00-postgres-1 127.0.0.1:55432->5432/tcp\n"
+      }
+    },
+    "queue_preflight_fs": {
+      "chunk_id": "f11979",
+      "wall_time_seconds": 0.129956917,
+      "exit_code": 0,
+      "original_token_count": 101,
+      "output": "Filesystem           1024-blocks    Used Available Capacity Mounted on\n/dev/vdb1             39306712  21328972  17977740  54% /etc/resolv.conf\n/dev/vdb1             39306712  21328972  17977740  54% /etc/resolv.conf\n{\"at\":\"2026-10-07T14:04:49.168Z\",\"max_connections\":100,\"reserved_connections\":3,\"declaredPersonal\":15,\"experimentPeak\":13,\"poolClosed\":true,\"actualOtherConnectionCount\":\"NOT_QUERIED\"}\n"
+    },
+    "queue_actual_before": {
+      "current_time": "2026-10-07 14:05:05 UTC"
+    },
+    "queue_actual_command": "set -euo pipefail\nsource /tmp/flow-coordination.env\nexec /usr/bin/env -i PATH=/usr/bin:/bin FLOW_S01_ADMIN_URL=\"$FLOW_COORDINATION_DATABASE_URL\" FLOW_S01_QUEUE_OPEN=s01-pool-wait-delivery-once /usr/bin/time -p /opt/homebrew/bin/python3.13 -I -B docs/evidence/s01/mixed-ab-preparation/queue-operator.py 67d0c84d3e8a629d78335b8866173e04d7249e36 970f071eb7eb275145c81a6b6d0f6193ed5737c6e0a2b48051ada414f3819512 9296871424",
+    "queue_actual_exec": {
+      "chunk_id": "c90fe5",
+      "wall_time_seconds": 1.000663625,
+      "session_id": 44631,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "queue_actual_poll1": {
+      "chunk_id": "ec41a5",
+      "wall_time_seconds": 5.001530292,
+      "session_id": 44631,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "queue_actual_poll2": {
+      "chunk_id": "e6ec86",
+      "wall_time_seconds": 0.000007,
+      "exit_code": 1,
+      "original_token_count": 37,
+      "output": "{\"window\": \"s01-pool-wait-delivery-once\", \"verdict\": \"FAIL_OR_UNKNOWN\", \"persistedElapsedMs\": 24466.050707967952}\nreal 24.56\nuser 13.77\nsys 4.41\n"
+    },
+    "queue_postclose_exact": {
+      "chunk_id": "f987bb",
+      "wall_time_seconds": 0.016788041,
+      "exit_code": 0,
+      "original_token_count": 133,
+      "output": "{\"observedAt\": \"2026-10-07T14:07:56.949+00:00\", \"pids\": [{\"pid\": 100, \"state\": \"absent\", \"errno\": 3}, {\"pid\": 108, \"state\": \"absent\", \"errno\": 3}, {\"pid\": 173, \"state\": \"absent\", \"errno\": 3}], \"port59253\": {\"connectEx\": 61}, \"roots\": [{\"path\": \"/tmp/flow-s01-ab-input-9145b45f-55c9-40a7-be03-74f58dd8c739\", \"dev\": 16777234, \"ino\": 124180211, \"directory\": true, \"symlink\": false, \"action\": \"KEEP\"}, {\"path\": \"/tmp/flow-s01-mixed-Zwn2dy\", \"dev\": 16777234, \"ino\": 124181018, \"directory\": true, \"symlink\": false, \"action\": \"KEEP\"}]}\n"
+    },
+    "queue_postclose_db": {
+      "chunk_id": "7e53ca",
+      "wall_time_seconds": 0.000009834,
+      "exit_code": 0,
+      "original_token_count": 43,
+      "output": "{\"observedAt\":\"2026-10-07T14:08:08.536Z\",\"databaseName\":\"flow_s01_mixed_100_4187789a46fc413f88394a2b387a88e1\",\"databaseRows\":0,\"connections\":0,\"postcheckPoolClosed\":true}\n"
+    }
+  },
+  "resourceReturn": {
+    "at": "2026-10-07T14:08:08.536Z",
+    "activeResourcesReturned": true,
+    "retainedFiles": true,
+    "unchangedAutomaticVerdict": "FAIL_OR_UNKNOWN",
+    "noRetry": true
+  }
+}

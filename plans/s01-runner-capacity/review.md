@@ -1,6 +1,12 @@
 # S01 独立审查
 
-## 当前：完整legacy回复来源窄修
+## 当前：queue唯一实际失败结果待审
+
+状态 PENDING / RESULT_FIDELITY_REVIEW。Execution `67d0c84d3e8a629d78335b8866173e04d7249e36`；source `375ecccc427acf59d687153903bd032fb6e684bc`。唯一[结果报告](../../docs/evidence/s01/pool-wait-run/report.md)，固定result/manifest由READY给出。O1 FAIL/O2 NOT_RUN、tool1、两个KEEP与活动资源RETURN均原样，要求独立核原raw/部分分母/预算/资源及最小根因，不工程运行或清未知。原准备/pure批准不当实际通过。
+
+以下均为历史固定目标，不能当本次实际性能结论。
+
+## 历史：完整legacy回复来源窄修
 
 **SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED**，chatui01_owner/gpt-6-astra，2026-10-07T13:30:23Z，fixed f722e28678e9e9af0e631af7539e1c6f70adf7c9 /a180eeb3；legacy DTO P2 CLOSED，0P1/P2。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json)。只批准该delta与pure结果忠实，完整runtime/outputscope/性能仍NOT_READY/NOT_OPEN。下面交审文字保留为先前事实。
 
@@ -19,7 +25,7 @@ chatui01_owner / gpt-6-astra，2026-10-07T13:03:04Z，source `b846778835f3cb6dbb
 状态：SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0 P1/P2，chatui01_owner / gpt-6-astra，2026-10-07T12:38:58Z。Review target commit: `0316465419025204d7feffc558c2c80bc9374689`。入口[pg-delivery-interface.md](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)与[固定源/局部结果binding](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-review.json)；仅新实验Module/直接tests、11/11+types2→0及3child资源证据，0PG/性能。原driver/默认A/B/产品不变；[正式回执](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json)绑定e5dd74fb packet及13bindings37766B。3raw797B/资源末态/原types失败与early EPERM保留；不批准完整实验READY、性能或PG OPEN。审者0写/工程执行/PG，未访问TMP或旧根。
 
 
-## 当前：连接等待方法设计
+## 历史：连接等待方法设计
 
 状态：DESIGN_REVIEW_APPROVED / 0 P1/P2。Review target commit: `f0f56e80bc4450b4b12f2a1218fefff4ef6e1208`，独立reviewer chatui01_owner / gpt-6-astra，2026-10-07T12:28:07Z。范围为 [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)（14506B，SHA d9bd156226b4182ec7f1ac40e55b28339e1a3c862f0e1a4a507c27281bc97e26）。只读核两次窄修后固定字节：IPC单变量、准确acquisition/transaction口径、真实conversation轻读、活动取消与各时钟、有限预算/UNKNOWN/KEEP和当前v2观测缺口；旧资源线不作为新OPEN。
 

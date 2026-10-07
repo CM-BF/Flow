@@ -1,0 +1,356 @@
+{
+  "recordedAt": "2026-10-07T14:09:38.822Z",
+  "basis": "Offline Python standard-library read of frozen O1 JSON; no project import/test/PG; nearest-rank distributions; no source repair.",
+  "verdict": "O1_FAIL_O2_NOT_RUN",
+  "observationCount": 89167,
+  "kindCounts": {
+    "driver-query": 207,
+    "memory": 69,
+    "stream-bytes": 112,
+    "pg-observation": 71690,
+    "ready": 2,
+    "owner-http": 169,
+    "pg-activity": 102,
+    "attempt-snapshot": 95,
+    "runner-request-send": 4493,
+    "runner-http": 4387,
+    "claim": 128,
+    "heartbeat": 2048,
+    "adapter-enter": 128,
+    "event-ack": 2179,
+    "adapter-ready": 128,
+    "center-boundary": 2,
+    "pg-phase-ack": 2,
+    "window-start": 1,
+    "barrier-released": 128,
+    "emit-start": 1411,
+    "light-read-result": 20,
+    "emit-ack": 1411,
+    "window-end": 1,
+    "driver-boundary": 1,
+    "cancel-fence": 1,
+    "cancel-send": 4,
+    "cancel-accepted": 4,
+    "control-abort": 4,
+    "adapter-end": 128,
+    "runner-http-error": 106,
+    "read-summary": 1,
+    "case-runtime-settled": 1,
+    "child-settled": 2,
+    "center-settled": 1,
+    "pg-delivery-summary": 1
+  },
+  "case": {
+    "tasks": 128,
+    "uniqueTasks": 128,
+    "claims": 128,
+    "uniqueAttempts": 128,
+    "gateRows": 128,
+    "windowComplete": true,
+    "settledByDeadline": true,
+    "failure": "insufficient_window_ack_span",
+    "databaseTotals": {
+      "tasks": 129,
+      "attempts": 129,
+      "sessions": 129
+    },
+    "databaseAttemptsCompletedAtSet": 129,
+    "databaseSessionsStillActive": 0,
+    "completionAckOutcomes": {
+      "cancelled": 4,
+      "succeeded": 124
+    }
+  },
+  "partialSustainedEvidence": {
+    "runnerClockStartMs": 9431.427833,
+    "runnerClockEndMs": 15431.427833,
+    "windowBoundaryStart": {
+      "requestsStarted": 1635,
+      "requestsSettled": 1632,
+      "inFlight": 3,
+      "activeAdapters": 128,
+      "pendingEmits": 0
+    },
+    "windowBoundaryEnd": {
+      "requestsStarted": 3247,
+      "requestsSettled": 3019,
+      "inFlight": 228,
+      "activeAdapters": 128,
+      "pendingEmits": 128
+    },
+    "allAdapterOverlapMs": 8784.564,
+    "eligibleAckCount": {
+      "n": 128,
+      "min": 5,
+      "p50": 6,
+      "p95": 6,
+      "max": 6
+    },
+    "eligibleAckSpanMs": {
+      "n": 128,
+      "min": 3821.4326249999995,
+      "p50": 4662.347916999999,
+      "p95": 4735.904583,
+      "max": 4772.584124999999
+    },
+    "attemptsBelowTwoAcks": 0,
+    "attemptsBelow4000ms": 37,
+    "meaning": "Observed intervals and partial ACK evidence only; runtime validateWindow failed, so not 128 sustained proof or performance success."
+  },
+  "reads": {
+    "issued": 20,
+    "skipped": 38,
+    "observedSettled": 20,
+    "successes": 20,
+    "driverSendToValidatedReceiptMs": {
+      "n": 20,
+      "min": 7.021082999999635,
+      "p50": 617.5403750000005,
+      "p95": 955.6089579999989,
+      "max": 974.2510000000002
+    },
+    "unknownMissing": 0
+  },
+  "cancellations": [
+    {
+      "taskId": "93936427-3a6f-4e0b-ab58-12695b38206a",
+      "driverSendToAckMs": 495.5533749999995,
+      "runnerSignalToEndMs": 429.6287919999995,
+      "runnerIdentityMatches": true,
+      "newEmitStartsAfterAbort": 0,
+      "finalTaskState": "NOT_VERIFIED_BECAUSE_PRIOR_ASSERTION_ABORTED",
+      "driverSendToFinalObservationMs": null
+    },
+    {
+      "taskId": "9552b56b-dc08-44b4-87fd-8f61e58a2054",
+      "driverSendToAckMs": 495.0988749999997,
+      "runnerSignalToEndMs": 397.7862090000017,
+      "runnerIdentityMatches": true,
+      "newEmitStartsAfterAbort": 0,
+      "finalTaskState": "NOT_VERIFIED_BECAUSE_PRIOR_ASSERTION_ABORTED",
+      "driverSendToFinalObservationMs": null
+    },
+    {
+      "taskId": "4c36c337-ad39-4b72-97ef-9eda0d74f9ad",
+      "driverSendToAckMs": 495.0611250000002,
+      "runnerSignalToEndMs": 355.925709000001,
+      "runnerIdentityMatches": true,
+      "newEmitStartsAfterAbort": 0,
+      "finalTaskState": "NOT_VERIFIED_BECAUSE_PRIOR_ASSERTION_ABORTED",
+      "driverSendToFinalObservationMs": null
+    },
+    {
+      "taskId": "39862f31-f363-45ca-b88b-2002ce87c787",
+      "driverSendToAckMs": 494.7000000000007,
+      "runnerSignalToEndMs": 352.5856249999997,
+      "runnerIdentityMatches": true,
+      "newEmitStartsAfterAbort": 0,
+      "finalTaskState": "NOT_VERIFIED_BECAUSE_PRIOR_ASSERTION_ABORTED",
+      "driverSendToFinalObservationMs": null
+    }
+  ],
+  "runnerHTTP": {
+    "issued": 4493,
+    "settledUnique": 4493,
+    "errorRecords": 106,
+    "errorClasses": {
+      "abort": 106
+    },
+    "issuedWithoutSettled": 0,
+    "unissuedResults": 0,
+    "note": "All phases; error records kept including shutdown/abort, not removed from denominator.",
+    "settledResponseRecords": 4387
+  },
+  "centerLocalPhase": {
+    "before:pool-acquisition": {
+      "elapsedMs": {
+        "n": 3502,
+        "min": 0.002375000000029104,
+        "p50": 141.5711250000004,
+        "p95": 258.74791600000026,
+        "max": 334.9305839999997
+      },
+      "settleWaitingMax": 109,
+      "settleTotalMax": 8
+    },
+    "before:transaction": {
+      "elapsedMs": {
+        "n": 1825,
+        "min": 0.5751659999996264,
+        "p50": 29.30358299999989,
+        "p95": 64.30425000000014,
+        "max": 155.56725000000006
+      },
+      "settleWaitingMax": 110,
+      "settleTotalMax": 8
+    },
+    "before:sql": {
+      "elapsedMs": {
+        "n": 23187,
+        "min": 0.07174999999915599,
+        "p50": 0.32208299999911105,
+        "p95": 21.61779099999876,
+        "max": 119.51212499999997
+      },
+      "settleWaitingMax": 110,
+      "settleTotalMax": 8
+    },
+    "measure:pool-acquisition": {
+      "elapsedMs": {
+        "n": 2983,
+        "min": 0.0016250000007858034,
+        "p50": 329.416792,
+        "p95": 807.2636249999996,
+        "max": 930.9016250000004
+      },
+      "settleWaitingMax": 249,
+      "settleTotalMax": 8
+    },
+    "measure:transaction": {
+      "elapsedMs": {
+        "n": 1425,
+        "min": 0.7282090000007884,
+        "p50": 33.13145799999984,
+        "p95": 64.79262500000004,
+        "max": 104.68283300000076
+      },
+      "settleWaitingMax": 250,
+      "settleTotalMax": 8
+    },
+    "measure:sql": {
+      "elapsedMs": {
+        "n": 16544,
+        "min": 0.07250000000021828,
+        "p50": 0.31691700000010314,
+        "p95": 26.978541000000405,
+        "max": 102.449208
+      },
+      "settleWaitingMax": 250,
+      "settleTotalMax": 8
+    },
+    "after:pool-acquisition": {
+      "elapsedMs": {
+        "n": 2848,
+        "min": 0.033082999998441665,
+        "p50": 421.82745799999975,
+        "p95": 725.8756670000002,
+        "max": 792.9098750000012
+      },
+      "settleWaitingMax": 239,
+      "settleTotalMax": 8
+    },
+    "after:transaction": {
+      "elapsedMs": {
+        "n": 1497,
+        "min": 0.6102089999985765,
+        "p50": 30.560582999998587,
+        "p95": 44.542750000000524,
+        "max": 99.22220799999923
+      },
+      "settleWaitingMax": 240,
+      "settleTotalMax": 8
+    },
+    "after:sql": {
+      "elapsedMs": {
+        "n": 17649,
+        "min": 0.09162500000093132,
+        "p50": 0.28733400000055553,
+        "p95": 24.83995800000048,
+        "max": 54.4988749999975
+      },
+      "settleWaitingMax": 240,
+      "settleTotalMax": 8
+    }
+  },
+  "centerBoundaries": [
+    {
+      "kind": "center-boundary",
+      "epoch": "s01-pool-wait-delivery-once-A",
+      "requestedPhase": "measure",
+      "known": true,
+      "acquisitionsStarted": 3566,
+      "acquisitionsSettled": 3566,
+      "acquisitionsInFlight": 0,
+      "queriesStarted": 23253,
+      "queriesSettled": 23251,
+      "queriesInFlight": 2,
+      "openTransactions": 2,
+      "basis": "observed calls only; begin-to-end state, not checkout hold or arrival queue",
+      "childMs": 11347.297166,
+      "pid": 108,
+      "receivedMs": 11828.458125,
+      "phase": "eight-by-sixteen:window"
+    },
+    {
+      "kind": "center-boundary",
+      "epoch": "s01-pool-wait-delivery-once-A",
+      "requestedPhase": "after",
+      "known": true,
+      "acquisitionsStarted": 6806,
+      "acquisitionsSettled": 6574,
+      "acquisitionsInFlight": 232,
+      "queriesStarted": 39828,
+      "queriesSettled": 39820,
+      "queriesInFlight": 8,
+      "openTransactions": 8,
+      "basis": "observed calls only; begin-to-end state, not checkout hold or arrival queue",
+      "childMs": 17374.79,
+      "pid": 108,
+      "receivedMs": 17857.686916,
+      "phase": "eight-by-sixteen:window"
+    }
+  ],
+  "deliverySummaries": [
+    {
+      "kind": "pg-delivery-summary",
+      "mode": "per-query",
+      "epoch": "s01-pool-wait-delivery-once-A",
+      "phase": "cleanup",
+      "closed": true,
+      "known": true,
+      "failure": null,
+      "observed": 71690,
+      "counts": {
+        "pool-acquisition": 9448,
+        "sql": 57495,
+        "transaction": 4747
+      },
+      "retainedBytes": 0,
+      "outputMessages": 71690,
+      "outputBytes": 21177605,
+      "sampleCount": 0,
+      "sqlGroups": 0,
+      "deliveryPhase": "after",
+      "childMs": 23318.527333,
+      "pid": 108,
+      "receivedMs": 23798.824166
+    }
+  ],
+  "childSettled": [
+    {
+      "kind": "child-settled",
+      "dropped": 0,
+      "childMs": 21339.660333,
+      "pid": 173,
+      "receivedMs": 23749.322666,
+      "phase": "cleanup"
+    },
+    {
+      "kind": "child-settled",
+      "dropped": 0,
+      "childMs": 23318.583916,
+      "pid": 108,
+      "receivedMs": 23798.889166,
+      "phase": "cleanup"
+    }
+  ],
+  "limits": [
+    "No O2 means no per-query versus buffered contrast.",
+    "Acquisition connect-to-settle can include connection establishment; settle counts are not arrival queue or complete peak.",
+    "BEGIN-to-COMMIT/ROLLBACK transaction elapsed is not complete checkout hold.",
+    "Center local measure is not a calibrated shared 6s window; IPC driver phase kept separately in raw.",
+    "Per-query delivery emits IPC on every query; observer overhead/background confound timings.",
+    "No true native/provider, latest-main, SLO, 128 SDK capacity or latency benefit conclusion.",
+    "Sustained assertion stops final task/event/cancellation verification; partial raw is not full recipe acceptance."
+  ]
+}
