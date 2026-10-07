@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:15:06.638Z / AV02已main；AV03四叶main前像337060ab核符 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:33:43.875Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -12,29 +12,29 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
-| 工作基线 / HEAD | 依赖固定main96b/merge6915；AV02 source989已main e271fb21；当前AV03 source e746029f6daa5751f59813f5c18012b782824d54 |
-| 工作树dirty状态 | AV03四源已固定；本次批准/intake metadata提交后clean |
+| 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
+| 工作树dirty状态 | 产品已固定，结果与review输入封存后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED e746029f6daa5751f59813f5c18012b782824d54：AV03 10selected10pass/4未选、focused types0；0PG/provider |
-| 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；当前AV03 NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | e746029f6daa5751f59813f5c18012b782824d54（AV03 journal接缝独审批准，待窄集成） |
-| 实现范围 | packages/contracts/src/verifier-runner-claim.ts,packages/contracts/src/verifier-runner-claim.test.ts,apps/runner/src/admission-journal.ts,apps/runner/src/admission-verifier-claim.test.ts |
+| 检查状态 | PASSED ea3c4599b00505c950cc34ada8a350082fe76747：局部12 distinct分轮通过；types0绑定334，最后scope负例1/1绑定本source；SQL/PG NOT_RUN |
+| 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
+| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验，待独审及真实PG） |
+| 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已通过独审，等待主线接收 |
-| 下一可用交付 | 接收v4资格journal接缝；中心验证任务、来源授权与完整运行链仍待实现 |
+| 本片段交付阶段 | review |
+| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已主线接收；正在连接中心领取和客户端确认 |
+| 下一可用交付 | 中心领取、来源资格和客户端确认接缝；真实数据库验证与验证任务生产链仍待完成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV03 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:08:39.000Z；AV02独立已main |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v3 ACTIVE16，15:57:01.967Z原子追加AV03四leaf；原AV02九改源冻结 |
-| 架构影响 | AV03 branch仅扩同一journal快照协议和显式资格API；无第二状态权威，center/SQL/runtime/v4 HTTP未接。main图更新target交Execution Lead |
+| Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING；既有journal与AV02独审批准保持原范围 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
+| 架构影响 | 同一claim/receipt新增显式v4；036独立正向kind与精确来源引用，旧协议LIMIT前排除verifier；新schema和动态SQL未实跑，main图更新待本片接收由Execution Lead核。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
 | AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
-| AV-03 | in-progress | architecture_read，a67v3 | 本段仅四leaf资格+journal接缝；center/runner纵向与PG仍未实现/未运行 |
+| AV-03 | in-progress | architecture_read，a67v4 | journal四叶已main；center/v4局部已验待审，真实SQL与完整生产链仍OPEN |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -105,3 +105,13 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 ## AV03 独审批准与窄接收
 
 2026-10-07T16:15:06.638Z：db_transaction_owner于16:08:39独立批准固定e746/f9ea/651，0P1/P2；原派发失败及原raw保留。四路径及七required-existing直接支持的main前像逐字核符，唯一接收入口 [av03-main-intake.json](../../docs/evidence/x01-artifact-verifier/av03-main-intake.json)。AV03 journal片已审待集成，完整AV03及AV04仍OPEN；本次0工程child/PG。新接口候选精确前像与parent手交清单见 [av03-next-scope-observation.json](../../docs/evidence/x01-artifact-verifier/av03-next-scope-observation.json)，仅提案，migration号未分配且未take。metadata commit/push后STOP，保留a67v3/16。
+
+## AV03 center/v4新段
+
+实际开始2026-10-07T16:17:37.000Z，截止16:42:37.000Z；newlogical16MiB（TMP≤8MiB/raw≤1MiB包含）、≤6serial/各30s/累计120s，0PG/HTTP监听/Chrome/provider/install/fullbuild。parent八leaf STOP→v31移出后本claimv4成功追加14，036有Original固定分配；只合法owned paths按fixedmain337供给，其他路径不覆盖。ordinary已获b01实际RETURN；freshfloor≥17,960,271,872B或更高完整sum。journal四叶main b79121e19正式接收，后继两个codec可扩；原journalfixedraw不改。新kind来源为准确installed manifest，验证引用与来源项目关联失败关闭；本片不提供新verification task写入口。
+
+## AV03 center 当前结果与剩余边界
+
+2026-10-07T16:33:43.875Z：固定source ea3c4599b00505c950cc34ada8a350082fe76747，六child10418ms/raw115319B。行为首12选11过1夹具失败→该例修复1过→scope实权补强该例1过，共12distinct（9新+3直接旧），不是单次12/12。types2缺固定依赖→0→0；末次types绑定334，后续scope短谓词和直接反例只作定向行为验证，036全为静态未PG。每次sourceHashes和失败原raw保留。最后16:32:23.773Z FULL RETURN，六group absent/MERGED EOF与六TMP同identity移除。原五次RETURN与第六次重新交接分列，最新floor19,363,266,560不回填旧gate。wholeexternalwall/peak UNKNOWN。
+
+固定输入 [av03-center-result-summary.json](../../docs/evidence/x01-artifact-verifier/av03-center-result-summary.json)；[接口](../../docs/evidence/x01-artifact-verifier/av03-center-interface.md)、[真实PG剩余矩阵](../../docs/evidence/x01-artifact-verifier/av03-center-pg-matrix.md)。PG测试literal已claim但尚未写，NOT_PREPARED/NOT_RUN/NOT_OPEN。无公开verification-task写入口，runtime/phase/verdict completion尚未闭合，完整AV03/X01不完成。当前仅metadata封存和只读独审，0actual/待launch。

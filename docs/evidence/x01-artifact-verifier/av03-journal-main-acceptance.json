@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T16:29:39.775Z",
+  "main": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "receipt": "docs/evidence/i02/x01-artifact-verifier-av03-intake.json",
+  "receiptSha256": "29cb2b4b6ea00870f9be96db9a2a0f2b256f848991ded97230f0b24230121186",
+  "rows": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 14222,
+      "sha256": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a"
+    },
+    {
+      "path": "apps/runner/src/admission-verifier-claim.test.ts",
+      "bytes": 7850,
+      "sha256": "677d997da31d282cddc5997e99863ba59098c18fa621977754a5a22a65bdc568"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "bytes": 1888,
+      "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "bytes": 2399,
+      "sha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524"
+    }
+  ],
+  "boundary": "Journal slice accepted; not current center/migration slice or deployment."
+}

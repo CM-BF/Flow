@@ -42,3 +42,7 @@ chatui01_owner / gpt-6-astra：DESIGN_DELTA_REVIEW_APPROVED，target bc5b68a0e4e
 ## AV03 独立源码与局部结果批准
 
 2026-10-07T16:08:39.000Z，db_transaction_owner/gpt-6-astra：SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2；source e746029f6daa5751f59813f5c18012b782824d54 / result f9ea88e8dc38b0d912935739412af0d2a0f88705 / packet 6517781df1127f6f508d67de6710cc89b23e9b14。25bindings93251B、73closure388701B、10external全核符；10pass/4未选、types0，两child闭合，2TMP/11fixture收据支持，原EPERM/wholewall/peakUNKNOWN保留。仅请求codec+真实FS journal，不包括center/响应ACK/SQL/HTTP/runtime分派或main。正式归档av03-independent-approval.json；无需重跑。
+
+## AV03 center source/local review pending
+
+2026-10-07T16:33:43.875Z，target ea3c4599b00505c950cc34ada8a350082fe76747；接口/检查边界见av03-center-result-summary.json。db_transaction_owner已接固定源窄审，SQL/migration真实性仍待PG；不继承journal或AV02批准，不重审其冻结源。

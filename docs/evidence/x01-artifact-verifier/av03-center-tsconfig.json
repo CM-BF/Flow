@@ -1,0 +1,27 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "./av03-center-inputs",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "./av03-center-inputs/packages/contracts/src/verifier-runner-claim.test.ts",
+    "./av03-center-inputs/packages/client/src/plugin-runner.test.ts",
+    "./av03-center-inputs/apps/server/src/plugin-runtime/verification.test.ts",
+    "./av03-center-inputs/apps/server/src/runner-claim-routes.test.ts",
+    "./av03-center-inputs/apps/server/src/index.ts"
+  ]
+}

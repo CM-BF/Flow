@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T16:32:22.397Z",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-center-vitest.config.mjs",
+    "--no-cache",
+    "packages/contracts/src/verifier-runner-claim.test.ts",
+    "packages/client/src/plugin-runner.test.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/server/src/runner-claim-routes.test.ts",
+    "-t",
+    "AV03 center verifier assignment traverses",
+    "--reporter=json"
+  ],
+  "floor": 19363266560,
+  "free": 20108312576,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-center-behavior-final/tmp",
+    "dev": 16777234,
+    "ino": 124331661
+  },
+  "maxSeconds": 30,
+  "cumulativeMaxSeconds": 120,
+  "rawMaxBytes": 1048576,
+  "tmpMaxBytes": 8388608
+}

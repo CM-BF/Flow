@@ -1,0 +1,11 @@
+# Required PostgreSQL validation — NOT_PREPARED / NOT_RUN / NOT_OPEN
+
+Use the existing marked dedicated DB / real createServer / FlowClient fixture and current bounded operator; no second scheduler or service. A fixture extension and complete migration/runtime bindings are still required. Do not run the old prepared public/process/REMOVAL suites against this new migration without fresh fixture compatibility review.
+
+1. Migration036 on valid historical tool bindings: exact installed receipt positively backfills tool; valid old tool insertion still works. A second isolated migration transaction with corrupt/missing manifest must rollback, never infer tool. Immutable kind and verifier reference UPDATE/DELETE fail; verifier missing reference fails deferred COMMIT; wrong source attempt fails composite FK; tool+verifier reference fails kind FK. No034/035 edit.
+2. Mixed queue: old v1/v2 skip all plugin work before LIMIT; v3 skips earlier verifier but reaches later tool/ordinary; v4 without tool cap skips tool, matches only exact store/API/algorithm verifier; ordinary path stays available. Prove with real SQL, not substring assertions.
+3. v4 concurrent samekey returns one attempt/compact receipt; cross v2/v3/v4 or qualification changes409 before allocation. Status/restart returns identical pin/owner with declining lease, no renewal. Capacity and original resumed-session runner fence retain semantics.
+4. Source-project authority: direct and applicable conversation agree, missing/conflicting/moved project rejects. Exact source task/attempt/artifact/version/body hash and bounded content rejects mismatches; registration scope cannot be forged in binding. Registration grant change waiting on lock rejects before attempt/receipt/session writes.
+5. Authenticated owner/runner routes, maintenance/revoke/stale attempt/cancel/unknown receipt behavior. Synthetic installed/verifier rows only establish qualification/schema; they do not prove public installation/admission, npm verification execution, center result recomputation or complete AV03.
+
+Future budget must count actual source fixtures/rows/connections/listeners/HTTP/persisted bytes and bind all new SQL and current main support. No actual PG admission or namespace is created by this document.

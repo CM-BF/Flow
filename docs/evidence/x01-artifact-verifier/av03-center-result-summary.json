@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T16:33:43.875Z",
+  "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "state": "LOCAL_PASSED_PG_NOT_RUN_REVIEW_PENDING",
+  "distinctPassed": 12,
+  "newDistinct": 9,
+  "directLegacyDistinct": 3,
+  "rounds": [
+    {
+      "name": "behavior",
+      "passed": 11,
+      "failed": 1,
+      "unselected": 8
+    },
+    {
+      "name": "behavior-fix",
+      "passed": 1,
+      "failed": 0,
+      "unselected": 19
+    },
+    {
+      "name": "behavior-final",
+      "passed": 1,
+      "failed": 0,
+      "unselected": 19
+    }
+  ],
+  "types": [
+    2,
+    0,
+    0
+  ],
+  "typeScope": "Final types0 binds 334e20a2; subsequent ea3 adds current registration scope equality and targeted negative, behavior-final passed. New SQL has static review only, no PG execution.",
+  "children": 6,
+  "supervisionMs": 10418,
+  "rawBytes": 115319,
+  "finalReturnAt": "2026-10-07T16:32:23.773Z",
+  "earlierReturn": "After first five checks, lane returned; final targeted check separately authorized and recorded. Earlier raw/gates remain unchanged.",
+  "closure": {
+    "count": 223,
+    "bytes": 1097985,
+    "errors": []
+  },
+  "scope": "Production v4 route plus SQL fake, finite contracts and real FlowClient mock-fetch. No actual migration/SQL/PG/listener/package/runner invocation. No new public verification-task producer.",
+  "resources": "6groups finalabsent/mergedEOF, six sameidentity TMP removed; initial EPERM retained. Wholeexternalwall/peak UNKNOWN. No PG/Chrome/provider/installation.",
+  "next": "Real PostgreSQL migration/eligibility/fence matrix and immutable admission/result gate; runtime verifier dispatch remain open."
+}
