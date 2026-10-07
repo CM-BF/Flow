@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:04:28.261877+00:00 / mainf7864f88；已审插件进程与规划失败记录已接收，补首次后台采用入口资格 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:19:16.492Z / main a9436d72；本批接已审SVC首次采用直接消费者和管理收口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainf7864f88；本批仅已审首次后台采用候选，不覆盖正在实施的插件候选接口 |
+| 工作基线 / HEAD | main a9436d72；仅已审固定输入与自身集成记录 |
 | 工作树dirty状态 | 本批已审固定片接收；未知既有__pycache__不纳入提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 插件真实进程和规划第二次失败记录均限定独审通过并接收；首次采用候选2文档独审，35源码/配置输入与固定版一致。0重复工程检查/PG/provider。 |
-| 已集成main状态 / HEAD | main/originf7864f88已接后台隔离成功、插件真实进程和规划第二次失败原件；本批仅首次采用候选。个人backend af51/v18、Web d629/v3/c7b历史记录未更新。 |
+| 检查状态 | SVC首次采用准备独审通过，7源/10记录及依赖固定；3新guard通过，真实PG待排。S01/Lazy原批准已受控接收；0重复工程检查/模型。 |
+| 已集成main状态 / HEAD | main a9436d72已接规划诊断和R3候选、S01/Lazy固定成果；本批SVC首次采用待本次fast-forward。个人backend af51/v18、Web d629/v3/c7b仍是既有部署事实。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 新版后台隔离更新证据已进入主线；插件已完成真实后台与执行进程的固定材料执行和正常重启验收。 |
-| 下一可用交付 | 完成旧页面对新版后台的兼容验证与首次采用场景核对，推进可实际使用的更新；规划补齐错误诊断。 |
-| 当前阻塞 | ACTIVE: 真实页面兼容与后台首次采用仍待验证；规划的前两次失败缺少完整错误依据，诊断修复正在独审。 |
+| 当前产出 | 已审容量与按需读取成果已进入主线；后台首次采用的准备和局部验证已通过独审，规划第三次失败原件已完成独立核读。 |
+| 下一可用交付 | 接收恢复界面的已审组合，完成旧页面兼容与后台首次采用验证，推进可体验更新。 |
+| 当前阻塞 | ACTIVE: 个人新版仍待真实页面兼容和首次采用验证；规划认证失败，累计三次后转零模型定位，不自动重试。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -396,3 +396,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T10:27:15.047170+00:00：本批[固定记录接收](../../docs/evidence/i02/svc06-o16-fixed-records-intake.json)：SVC06 7d1/6c构建限定APPROVED，O16真实首段FAILED_RETAINED由Lead核14raw/28绑定；SDK entry1而顶层旧0矛盾保留，费用未知、DB/tmp KEEP，未重跑或消耗第二许可。新host入口只准备批准；其随后实际返回由原owner固定/独审另收，不能把记录接收当个人部署。OPS单份固定来源方法已独审，效果仍待新小片采用。
 
 2026-10-07T11:04:28.261877+00:00：[首次采用入口限定文档审查](../../docs/evidence/i02/svc06-first-adoption-entry-review.json)通过，明确隔离r2前置与个人首次采用差异；旧源码/原件不改、首次直接消费者仍未运行，三真实App报告待齐。X01与O16R2固定结果已分别main221921/f786，不将失败结果接收说成规划通过。
+
+2026-10-07T11:19:16.492Z：SVC首次采用消费者独审见[本次限定审查](../../docs/evidence/i02/svc06-first-adoption-consumer-review.json)，未预填backend identity、无真实服务refresh重复，PG待既有ready队列。O16 R3原owner已报告认证结构错误和11:14:22Z窗口归还，独立结果审查已限定通过，本批接收原件；认证具体原因仍由零模型诊断核实。S01/Lazy既有成果接收见[固定回执](../../docs/evidence/i02/approved-backlog-receipt-20261007-1109.json)，没有产品/模型验收重跑。
+
+本批O16 R3结果唯一独审为[限定失败忠实性批准](../../docs/evidence/i02/o16-native-r3-result-review.json)，28固定输入74187B及原candidate引用核对；私有正文不复制。累计3、无第四次、DB/tmp KEEP和未知费用均保留，不升级为目标旅程通过。

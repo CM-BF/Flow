@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T11:19:47.911965+00:00",
+  "reviewer": "assignment_review / GPT-6 Astra / independent read-only",
+  "recordedBy": "astra_ultra_execution_lead",
+  "target": "8e56205b65ecc79ff8fbb37e67c16834d0a08e22",
+  "delivery": "8d2aef8f7f58225aaa82a686e6e6d17f5ecd7a29",
+  "verdict": "APPROVED_LIMITED_FAILED_RESULT_FIDELITY",
+  "findings": [],
+  "manifest": {
+    "path": "docs/evidence/o16/native-plan-20261007-r3/result-manifest.json",
+    "bytes": 9625,
+    "sha256": "1478154827d695c658bfc61f7e9a1b3d3c9fd57b83edc5c45b4972d493698f08"
+  },
+  "bindingChecks": {
+    "fixedAndCurrent": 28,
+    "bytes": 74187,
+    "inheritedCandidateBytes": 3955,
+    "rawCount": 14,
+    "rawBytes": 16958,
+    "privateDiagnostic": "Only lstat regular/dev/ino/uid0600/nlink1/size647 matched; reviewer did not read body or independently hash private content; saved owner diagnostic hash is provenance."
+  },
+  "facts": {
+    "SDKCallsThisRun": 1,
+    "SDKCallsCumulative": 3,
+    "assistantError": "authentication_failed",
+    "resultSubtype": "success",
+    "isError": true,
+    "apiErrorStatus": null,
+    "successfulProposal": false,
+    "successfulPause": false,
+    "applyCalls": 0,
+    "children": 0,
+    "SDKEstimateUsd": 0,
+    "accountCost": "UNKNOWN; old cost unknown preserved",
+    "resourceCheckpoint": "2026-10-07T11:13:59.555Z",
+    "windowReturned": "2026-10-07T11:14:22.783Z",
+    "ownedGroups": "all3 ESRCH",
+    "targetConnections": [],
+    "observerPoolClosed": true,
+    "DBAndPrivateRoot": "KEEP",
+    "primaryAndOuterFailure": "Error/null and driver-nonzero/unknown-retain retained",
+    "operatorMs": 26170
+  },
+  "limits": [
+    "Does not attribute R1/R2 or establish the credential/Keychain root cause.",
+    "Does not authorize a fourth query, login/logout, credential extraction or an account change.",
+    "No tests/SDK/PG/personal operation or credential content read by reviewer.",
+    "Zero-model authentication diagnosis may continue separately under original owner/scope."
+  ]
+}

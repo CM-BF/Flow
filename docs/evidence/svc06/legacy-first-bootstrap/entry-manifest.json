@@ -1,0 +1,142 @@
+{
+  "kind": "SVC06_FIRST_LEGACY_BOOTSTRAP_DIRECT_CONSUMER_PREPARATION",
+  "sourceTarget": "ff445959425128876d5dd6abdb719196cc2867e6",
+  "inheritedInputs": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/inputs.json",
+    "bytes": 142654,
+    "sha256": "6caaa42e2dd553c5c3187a3418cba4a4533ed7a9964a955b9a9f52e5d8e923f9"
+  },
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 19531,
+      "sha256": "61b0a87d6fc8640eb539a048749b4c06a49a74a7aa7f0f6acc6144e1f3d541b1",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "journey.mjs",
+      "bytes": 11511,
+      "sha256": "4e4fd7629bef1b2d35878f13aae14c0c743b906568ebbd2f04699f75bb397377",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "legacy-state.mjs",
+      "bytes": 657,
+      "sha256": "c78b3c63004d0a8d8a131c7bd92c88888963833a1093eef06737fdcdb0ac60aa",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "legacy-state.test.mjs",
+      "bytes": 1202,
+      "sha256": "943aa4535fbecd8cc9767a6d72b854f756045549d57c1400edabf5e5ffc7e888",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 30574,
+      "sha256": "a47f51cb38be0576a3aef2b1f336e517314bbcce3f84dd688793c648ad450f3c",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    },
+    {
+      "path": "Interface.md",
+      "bytes": 5595,
+      "sha256": "46a56d456797e52d005b7c064b68c41e0e8ca08ee636d87c0963ad640b69357a",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6"
+    }
+  ],
+  "unchangedSupervisor": {
+    "path": "../diagnostics-host-bootstrap/supervise.py",
+    "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+  },
+  "pg": "NOT_RUN",
+  "scope": "Real PG maintenance with owned idle roles; no actual service refresh or App compatibility",
+  "recordsTarget": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430",
+  "evidenceBindings": [
+    {
+      "path": "local-entry-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-entry-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-guard.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-guard.stdout",
+      "bytes": 388,
+      "sha256": "1aa9f9e2547fb2778ba29c318a67f0241541986d8f5bdfef6cc930e3ca4c17a6",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-journey-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-journey-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-status.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-status.stdout",
+      "bytes": 79,
+      "sha256": "2486ff5527e08cb27b7886fcc0612e9a2329533c82649fc65bc9934dc1021c6a",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "local-validation.json",
+      "bytes": 7633,
+      "sha256": "99104808831f7000ccfa88f0a0dc907b9b2f60017e4c85123f3c099647d4f687",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    },
+    {
+      "path": "CHECKS.md",
+      "bytes": 1145,
+      "sha256": "d4821d2b3ad72af81cfd69c5a8de04d06fc2d17711e9a9ca44352c3ee912403a",
+      "ref": "49d9de021bcfe522342a5d9ca0ea6b04eebfb430"
+    }
+  ],
+  "inheritedFixedInputCount": 514,
+  "newReadonlyCount": 44,
+  "aliases": 22,
+  "runtimePackageInventoryReuse": {
+    "packagePrefixes": 15,
+    "files": 978,
+    "bytes": 6609996,
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+  },
+  "review": "NOT_STARTED",
+  "local": {
+    "differentTests": 3,
+    "passed": 3,
+    "syntax": 2,
+    "statusParser": "errors/humanMissing=[]; historical task-start UNKNOWN retained",
+    "processMs": 202,
+    "rawBytes": 467,
+    "groupsAbsent": 4,
+    "scratchRemoved": 4
+  }
+}

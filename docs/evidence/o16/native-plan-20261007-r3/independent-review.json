@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T11:11:52.718692+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "candidateTarget": "1dc2278d54426bb30836968c0190c90e13ebd425",
+  "delivery": "58fd3adbc6c06df310c0d1e89de80024105e9297",
+  "manifest": "docs/evidence/o16/native-plan-r3-candidate/manifest.json",
+  "manifestSha256": "d2e87d2910d1e1d6711bb12932fed671276c4b2e9e6a2a10e3433163a732f0ed",
+  "verdict": "APPROVED_FIXED_CANDIDATE_PENDING_FRESH_ACTUAL_ADMISSION",
+  "findings": [],
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "bindingCheck": "7candidate48784B+2inherited fixed/current bytes+hash allsame; no repeated tests",
+  "authorization": "O16-GO-PLANNER-R3-20261007 new conditional GO budget, not prior consumed R1/R2",
+  "boundaries": [
+    "One original-goal planner SDK query, claude-sonnet-5-5,max4turn,requestedUSD0.20,query90s,work120+cleanup30/outer150s",
+    "Raw2MiB/private8MiB; private8192/text4096 included; no additional write allowance",
+    "Max1proposal/0apply/0child/2nodes1edge; cumulative SDK<=3,no fourth/retry/fallback",
+    "Original source/env/SDK/native, actual goal/profile/tools/grant and new namespace/once permit must freshly match before run",
+    "Existing normal same-account auth refresh only; no credential copy,newlogin,account/API key change",
+    "Prior R1 cost UNKNOWN,R2SDK estimate0/accountUNKNOWN,all prior FAIL/KEEP immutable",
+    "Success stops own runtime/connections with finite15min pause; actual proposal requires independent acceptance and children separate authorization"
+  ],
+  "pending": [
+    "Actual shared-holder handoff/startBefore and fresh original resource/connection/claim/runtime gates",
+    "Real SDK diagnostic persistence and actual proposal remain NOT_RUN"
+  ],
+  "executionByReview": {
+    "provider": 0,
+    "PG": 0,
+    "tests": 0,
+    "personal": 0
+  }
+}

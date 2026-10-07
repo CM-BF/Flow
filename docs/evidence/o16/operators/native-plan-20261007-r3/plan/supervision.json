@@ -1,0 +1,28 @@
+{
+  "driverPid": 12043,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 487,
+  "ownedGroups": [
+    {
+      "pgid": 12043,
+      "state": "stopped"
+    },
+    {
+      "pgid": 14564,
+      "state": "stopped"
+    }
+  ],
+  "reason": "driver-nonzero",
+  "last": {
+    "freeBytes": 22159511552,
+    "rawBytes": 13575,
+    "runtimeBytes": 18225,
+    "runtimeEntries": 24,
+    "runtimeState": "measured"
+  },
+  "stopCheckpoint": "pending",
+  "exitCode": 1,
+  "signalCode": null,
+  "elapsedMs": 26170
+}

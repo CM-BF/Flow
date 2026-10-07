@@ -161,3 +161,7 @@ Lead原件[APPROVED_LIMITED_PREPARATION](../../docs/evidence/svc06/diagnostics-h
 唯一reviewer astra_ultra_execution_lead/gpt-6-astra，reviewedAt2026-10-07T10:49:17.625668+00:00；target92a207b5bbca513efc6ac6f8191b31c51467a3ac / deliverya0117ed097ccaa26fcfe05e0374af9e336032bdb。原件[result-independent-review](../../docs/evidence/svc06/diagnostics-host-bootstrap/result-independent-review.json)，2142B/SHAd653b04c8db91bae7325139ed0f9fe695743a94301d8a1ea2bbfb20f9e50a219。APPROVED_LIMITED_ISOLATED_HOST_RESULT，无P1/P2；39fixed/current+50private+15copies核同，0重复测试/PG/provider。
 
 接受固定7d1/source6c的自有隔离三role刷新恢复、27→35、原业务列保留、默认off与两项pre-drain拒绝/cookie-CSRF-logout、pointer/config/profile保留，以及六nonce组停止/normalDROP。合成loader报告不证明三真实App或个人部署；两代Web显式stop exit1、旧c2c/r1和首因UNKNOWN、非原子资源样本/配置15非实测峰值全部保留。作者只转录，无后继probe。
+
+## 首次legacy采用入口待审
+
+Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-bootstrap](../../docs/evidence/svc06/legacy-first-bootstrap/Interface.md)。独立review NOT_STARTED；3/3 cleanup guard+语法/status有限局部已过，真实PG未运行。审查应核negative不drain/state不变、root真实生成op、artifact同op/audit1、legacy cleanup reservation/终态身份；不扩真实App/个人批准。原r2批准与失败原件保持。
