@@ -1,10 +1,18 @@
-# 本次待审：root pg 闭包
+# 当前实际artifact结果：APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS
 
-Target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；仅3文件，1生产来源行和2直接测试。见[局部结果](../../docs/evidence/svc06/root-pg-checks.md)。PENDING Execution Lead；不扩大原2aff批准。
+Execution Lead唯一限定批准target `935df27d952d98077f4ed7763966b7023cf93c9d`，原件时间2026-10-07T03:38:27.829073+00:00；[独审转录](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)。17 fixed/current条目与3保留产物身份核同，完整raw/result逐值相符、无findings、0重跑。entry4de/source3230一次实际结果见[原始结果](../../docs/evidence/svc06/artifact-first-run/RESULT.md)；仅真实构建/安装/导入批准，不含真实host、开发checkout不可用或个人部署。
+
+# 当前完整artifact执行入口：APPROVED_FIXED_ARTIFACT_ENTRY
+
+Source `4de45996435dd86c3409910dad787e99efc9cd63` / artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；[manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)绑定原始cache失败、固定源码/实际构建工具和新入口。Execution Lead唯一只读批准：[原回执](../../docs/evidence/svc06/artifact-first-run/independent-review.json)。无P1/P2、0重跑；此段为当时仅执行准备批准；其后实际构建/安装/import结果见顶部独审，PG/host仍未验。
+
+# 根pg闭包：APPROVED_LIMITED_ROOT_PG_CLOSURE
+
+Target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；仅3文件，1生产来源行和2直接测试。见[局部结果](../../docs/evidence/svc06/root-pg-checks.md)。Execution Lead唯一限定批准；[原回执](../../docs/evidence/svc06/root-pg-independent-review.json)。三源已main3230，不扩大原2aff或完整产物批准。
 
 # 当前宿主工具闭包：APPROVED_LIMITED_HOST_TOOL_CLOSURE
 
-Target `2affec4cc7a899082cbf48fce5bbd0f77293676c`，base `59c0fccb41e33076d50c5f782683c9f3fd25061e`。仅4产品/测试文件与本片plan/evidence；2新反例red后selector7+staging1绿、固定main只读选择1次。Execution Lead已完成本片唯一独审，[转录](../../docs/evidence/svc06/host-tools-independent-review.json)；无P1/P2，原b218批准不扩大。完整artifact未执行。
+Target `2affec4cc7a899082cbf48fce5bbd0f77293676c`，base `59c0fccb41e33076d50c5f782683c9f3fd25061e`。仅4产品/测试文件与本片plan/evidence；2新反例red后selector7+staging1绿、固定main只读选择1次。Execution Lead已完成本片唯一独审，[转录](../../docs/evidence/svc06/host-tools-independent-review.json)；无P1/P2，原b218批准不扩大；本段当时完整artifact未执行，后续结果见顶部。
 
 # 当前正式parser/builder增量：APPROVED_LIMITED_PARSER_BUILDER
 

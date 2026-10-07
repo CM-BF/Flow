@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T03:13:33.709995+00:00",
+  "scope": "exact three prior mismatches; metadata only; no payload reads or mutation",
+  "mismatches": [
+    {
+      "path": "files/c2/a6a7f253ad253e075af3f1eab442fd28001b0bc59c84140c64c6b63ffacfe7fe3d98f3aa80b9cf10c7b2cba62c26700e2235d327c6a576cc8f8342cb290e7e",
+      "actual": {
+        "regular": true,
+        "symlink": false,
+        "bytes": 37012,
+        "mode": "0o755",
+        "nlink": 2,
+        "dev": 16777234,
+        "ino": 116249646
+      },
+      "indexReferences": [
+        {
+          "package": "pg-boss@12.37.0",
+          "file": "dist/cli.js",
+          "expectedBytes": 37012,
+          "expectedMode": "0o644"
+        }
+      ]
+    },
+    {
+      "path": "files/01/c581d9e4f281cc5b3bf83c796fefa584b52d43563c5adc8c7dae7f8c590695aaab630e619a960b16c9ef0e3de6eb9ef0b1c3db072798c8b059b24f6a3e2555",
+      "actual": {
+        "regular": true,
+        "symlink": false,
+        "bytes": 1109,
+        "mode": "0o755",
+        "nlink": 2,
+        "dev": 16777234,
+        "ino": 118474306
+      },
+      "indexReferences": [
+        {
+          "package": "@npmcli/installed-package-contents@4.0.0",
+          "file": "bin/index.js",
+          "expectedBytes": 1109,
+          "expectedMode": "0o644"
+        }
+      ]
+    },
+    {
+      "path": "files/28/bde0d8e3076f0e7be1a9fc34b5ed87c53d65b3fc369e26621a167390df26b2b1936202f14b02a0679d0d7ec9d45868cb00e92e5a255c371f0ffb19029ed9a3",
+      "actual": {
+        "regular": true,
+        "symlink": false,
+        "bytes": 1289,
+        "mode": "0o755",
+        "nlink": 2,
+        "dev": 16777234,
+        "ino": 116251628
+      },
+      "indexReferences": [
+        {
+          "package": "safe-regex2@5.1.1",
+          "file": "bin/safe-regex2.js",
+          "expectedBytes": 1289,
+          "expectedMode": "0o644"
+        }
+      ]
+    }
+  ]
+}

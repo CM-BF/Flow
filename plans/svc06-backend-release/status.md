@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:22:06 UTC；宿主工具已main，新根pg解析增量待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:40:05 UTC；首次完整artifact结果限定独审通过 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,29 +10,29 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 本片base 82bebb856d1bdaca5bf5b9836491ef553f67df53；根pg增量 893324703fe35c3b9fca1dbfbec96bdd6b4405fa |
-| 工作树dirty状态 | 根pg源码已固定停写；完整产物入口仅准备，未运行 |
-| 工作分支状态 | completed |
-| 本片段交付阶段 | review |
-| 实现目标 | 893324703fe35c3b9fca1dbfbec96bdd6b4405fa |
-| 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
-| 检查状态 | PASSED 893324703fe35c3b9fca1dbfbec96bdd6b4405fa；根pg3 distinct分轮绿，原1 red保留；完整产物NOT_RUN |
-| 已集成main状态 / HEAD | parser/builder b218七源及59c记录已接收 main/origin a2e7803161ffb7e2158eaf3c13531448d2a777b0，七源逐字相同；[接收事实](../../docs/evidence/svc06/parser-builder-main-receipt.json)。宿主工具2aff四源已main8c80a7105cf442783e83184a14e34c8da08ebe16逐字相同；[回执](../../docs/evidence/svc06/host-tools-main-receipt.json)。根pg新增delta尚未main |
+| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；本入口source 4de45996435dd86c3409910dad787e99efc9cd63 |
+| 工作树dirty状态 | 产品与entry未改；仅独审转录与scope交回metadata |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | integration |
+| 实现目标 | 4de45996435dd86c3409910dad787e99efc9cd63 |
+| 实现范围 | docs/evidence/svc06/artifact-first-run/entry.mjs, docs/evidence/svc06/artifact-first-run/runtime-proof.mjs, docs/evidence/svc06/artifact-first-run/supervise.py, docs/evidence/svc06/artifact-first-run/inputs.json |
+| 检查状态 | PASSED 4de45996435dd86c3409910dad787e99efc9cd63；一次完整artifact+verify+30SQL/import exit0，0PG/host生命周期 |
+| 已集成main状态 / HEAD | rootpg893324三源已main/origin 3230becf07b804479ec4dc7ef02fcaff58cc3858逐字同；[回执](../../docs/evidence/svc06/root-pg-main-receipt.json)。入口已审、实际产物构建与导入已完成且结果限定独审通过；本轮结果待main接收，真实host仍open |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定宿主工具已接收；新补的数据库驱动根级入口已通过定向检查，等待独立审查。 |
-| 下一可用交付 | 接收根级驱动修正后，固定一致输入，准备一次真实产物构建与内部解析验证。 |
+| 当前产出 | 固定后台产物已完成一次真实离线构建，内部依赖和SQL资源校验通过；原始结果已获独立核验通过；实际宿主启动仍待验证。 |
+| 下一可用交付 | 用保留产物准备真实宿主启动和开发目录不可用验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 根pg 893324703fe35c3b9fca1dbfbec96bdd6b4405fa PENDING；原2aff APPROVED_LIMITED_HOST_TOOL_CLOSURE及main事实保持；完整产物未验 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
-| 架构影响 | 私有host工具来源表声明根tsx/pg与固定Web Vite，沿原图遍历/根staging投影；不装Web workspace，不改公开host/FSM。真实产物仍待集成验收。 |
+| Review | APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS 935df27d；Execution Lead唯一限定独审，完整host生命周期仍open |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v6，7 literal scopes；[四宿主共享文件正式交回](../../docs/evidence/svc06/host-scope-return-receipt.json) |
+| 架构影响 | 执行入口只复用原prepare/verify与OPS14；server/runner/host根tsx/pg/Vite已固定，0PG导入验证与真正host生命周期/开发树不可用验收分开。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
-| SVC06-03 | in-progress | assignment_review | 正式parser/builder接线局部已固定；完整产物与checkout隔离未验 |
+| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；host启动及checkout不可用仍未验 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | [本轮7不同检查](../../docs/evidence/svc06/parser-builder-checks.md)通过且独审完成；完整运行后继open |
 | SVC06-05 | pending | 独立operator | 无个人操作许可 |
 
@@ -95,3 +95,17 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:22:06 UTC：根宿主pg解析闭包
 
 [局部结果](../../docs/evidence/svc06/root-pg-checks.md)：source `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；1 red→3 green及固定8c锁纯选择，0安装/完整构建。原宿主工具2aff已main8c，本增量待唯一独审；完整artifact输入随后固定，不以8c缺rootpg当完整正例。03/04/05仍open。
+
+## 2026-10-07 03:30:05 UTC：首次真实artifact入口固定
+
+[唯一入口/预算](../../docs/evidence/svc06/artifact-first-run/README.md) / [manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)。source `4de45996435dd86c3409910dad787e99efc9cd63`，artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；420s工作+.5TERM/2reap，原clone/install180s不增。新增空间预算2,317,352,960B与1GiB收尾对应fresh3,391,094,784B，比原2.5GiB更严格；不计clone节省、不称硬预留。原cache3mode观察红不重跑；SDK实际metadata/路径只读确认。完整build/import/PG/host仍NOT_RUN，03/04/05不勾。产品/entry全停写供唯一审查。
+
+2026-10-07 03:30:32 UTC：已归档[唯一执行入口批准](../../docs/evidence/svc06/artifact-first-run/independent-review.json)，17运行/58固定source/14entry独立核同，无P1/P2。限定准备，实际build/install/import仍NOT_RUN；entry与输入全停写，等待Lead协调共享窗口，执行时重新按固定fresh/独占原件准入。
+
+实际首次artifact entry开始：2026-10-07T03:34:34.540Z，来源exclusive actual-first/reservation.json；03:34:22 fresh claim v5/source与26,326,294,528B余量通过3,391,094,784B门槛。仅fixed3230一次执行，0PG/Chrome/provider/个人操作；输出与结果待原始Report，不预判成功。
+
+实际结果：entry 2026-10-07T03:34:34.540Z→2026-10-07T03:34:59.865Z；outer25,390ms/exit0/完整EOF/整个组absent。重窗口已归还，[完整原件与范围](../../docs/evidence/svc06/artifact-first-run/RESULT.md)；真正host生命周期和开发checkout不可用验收仍后继，原03/04/05保持open。
+
+## 2026-10-07 03:40:05 UTC：首次完整产物结果限定批准
+
+[唯一独审](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)绑定935df27d原结果、17固定Git条目及3保留artifact/owner/checkpoint；真实安装/import与清理事实批准，reviewer0重跑。原raw/失败和产品入口全不改；本轮integration，真实host/checkout不可用与个人部署保持open。claim已原子v6交回四宿主共享文件给后继SVC08，不以本SVC整体未完阻占。

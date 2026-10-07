@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T03:36:37.667554+00:00",
+  "state": "HEAVY_WINDOW_RETURNED",
+  "entryFinishedAt": "2026-10-07T03:34:59.865Z",
+  "outerExit": 0,
+  "ownedPid": 30697,
+  "wholeOwnedGroup": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "raw": "outer-report.json",
+  "checkpoint": "actual-first/result.json",
+  "stageCleanup": "complete",
+  "prepareLockAbsent": true,
+  "retainedArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "manifestDigest": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "sourceHead": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "retainedRoot": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6",
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "personalActions": 0,
+  "remainingWork": "metadata and independent result review only; artifact retained for separately scheduled host journey"
+}

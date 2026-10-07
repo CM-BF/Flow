@@ -74,3 +74,9 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 ## 2026-10-07 03:22:06 UTC：根级数据库驱动闭包
 
 宿主工具2aff已main8c80a7105cf442783e83184a14e34c8da08ebe16。实际根tools静态pg导入新增同表来源与投影，target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；[3项局部结果](../../docs/evidence/svc06/root-pg-checks.md)不代替真实安装。完整产物必须消费含修复的一致main，03/04/05保持open。
+
+## 2026-10-07 03:30:05 UTC：真实产物首次执行准备
+
+rootpg已main3230，原局部批准不扩。唯一[执行入口](../../docs/evidence/svc06/artifact-first-run/README.md)固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`，原prepare/verify/OPS14负责隔离安装与停止。新更严格fresh门槛与500ms观测边界已写明，不运行个人服务/PG或启动provider；完整artifact实际结果与真正host隔离仍分别待验，03/04/05继续open。
+
+2026-10-07首次真实fixed3230产物构建与内部解析已过，限定结果见[RESULT](../../docs/evidence/svc06/artifact-first-run/RESULT.md)。原开发树未改/未隔绝，真实宿主生命周期与后续个人部署仍未验，不整体完成03/04/05。

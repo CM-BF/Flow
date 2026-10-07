@@ -301,3 +301,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T03:26:16.305465+00:00：SVC06 rootpg已审3源已main3230；TIMING185登记与CHAT05失效空间阻塞修正随本批接收。SVC08固定086已main158但个人未部署；实际个人仍af51/v18、Web d629/v3。新增来源随ACCESS受控部署加载，未单独重启4320；无产品重测。
 
 2026-10-07T03:37:43.712900+00:00：隔离artifact与0PG浏览器调度规则按独审固定target受控接收，[五文件对照](../../docs/evidence/i02/isolated-artifact-browser-intake.json)。SVC06实跑原始结果未因管理发布直接获整体批准，个人服务未操作。
+
+2026-10-07T03:40:56.914861+00:00：SVC06真实artifact/import结果限定APPROVED后按5eb固定36文件精确接收，见[结果对照](../../docs/evidence/i02/svc06-artifact-result-intake.json)。0新增产品/安装/PG/provider；保留e5产物供原host后继，03/04/05开放。SVC08部署设计限定审查，真实部署仍未执行。
