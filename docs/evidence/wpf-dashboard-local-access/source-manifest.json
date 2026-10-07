@@ -1,8 +1,8 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "implementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
-  "state": "SOURCE_FIXED_BROWSER_FIVE_GROUPS_PASSED_AWAITING_RUNTIME_REVIEW",
+  "implementation": "366a568f2750777f683941180b665af7c4a3effb",
+  "state": "APPROVED_FIXED_SOURCE_DIRECT35_BROWSER5_COMPOSITION_NOT_MAIN",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -55,9 +55,24 @@
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
   "browserEntry": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller transfers only its fresh owned Chrome default context attached with documented noDefaults:true. Fixture sets page viewport explicitly and closes transferred context (which closes that owned browser); caller continues PID/EOF/process cleanup. Five groups unchanged; one actual fourth run passed at execution metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26.",
-  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent runtime review pending.",
+  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent fixed366a composition review APPROVED, scope limited to fake/direct35/browser5; main/real installation not verified.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
   "deployment4320": "NOT_DEPLOYED",
-  "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+  "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "browserSourceImplementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "reviewScope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+  ]
 }
