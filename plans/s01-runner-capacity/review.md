@@ -244,3 +244,7 @@ db_transaction_owner于13:54:42Z固定result3fdb488064a3414d4ad9903667253e06aa23
 ## 2026-10-07T14:35:56.899Z 固定轨迹策略准备
 
 设计376bcdb经db于14:22 DESIGN_REVIEW_APPROVED/0P1P2；实现bee336a01505e42bbba0e9154f8ade75eee2f244与新operator/pure反例待独立源码审查。0新运行，不继承原fidelity或方法批准为源码/实际通过。入口：`docs/evidence/s01/mixed-ab-preparation/delivery-replay-ready.md`。
+
+## 2026-10-07T14:51:05.201Z replay窄修交审
+
+旧bee/fd7的process_closed P2按首错/信号/捕获完整性修正；source d28166e81bcdbb9fb537b40144f7be07a2539130 改为固定编译JS入口及精确已知输出准入。原review为CHANGES_REQUESTED，不覆盖。新manifest6binding与input-v2，0工程执行；等待db独立delta审。当前准备不表示compile/replay通过或许可。

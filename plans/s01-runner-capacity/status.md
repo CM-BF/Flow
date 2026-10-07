@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T14:42:47.919Z |
+| 最近更新 | 2026-10-07T14:52:51.000Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | source bee336a01505e42bbba0e9154f8ade75eee2f244 已固定；本次收口仅preparation/status/review metadata，提交后核clean。 |
+| 工作树dirty状态 | 窄修source d28166e81bcdbb9fb537b40144f7be07a2539130已固定；本段普通局部授权单独记录，不追溯延长原source段。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本replay准备0工程执行，8语义+3caller反例仅源码；旧queue O1FAIL/O2NOT_RUN及全部旧通过/首红按原target保留。 |
+| 检查状态 | 新15min普通段准备4个caller反例、fixed tsc strict/emit六JS和8个直接TS例；尚未START，实际replay仍NOT_OPEN。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | bee336a01505e42bbba0e9154f8ade75eee2f244 |
-| 实现范围 | experiments/runner-capacity/mixed/delivery-replay.ts, experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-replay.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py |
+| 实现目标 | d28166e81bcdbb9fb537b40144f7be07a2539130 |
+| 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 正在修复诊断入口未知状态的保留门禁，并准备无loader辅助进程的固定JS执行入口。 |
-| 下一可用交付 | 固定窄修源码、预编译与顺序检查准入，再交独审；本段不运行。 |
-| 当前阻塞 | ACTIVE：原准备独审1P2待修；编译、纯检查与实际诊断均未运行未授权。 |
+| 当前产出 | 已固定诊断入口的未知保留修复，正在生成并核验直接JS运行输入。 |
+| 下一可用交付 | 完成caller、编译与直接语义检查后一次独立审查；实际诊断仍单独等待窗口。 |
+| 当前阻塞 | ACTIVE：普通局部检查已授权尚待完成；实际replay尚未开放。 |
 | 需用户决定 | NONE |
-| Review | db14:22 DESIGN_REVIEW_APPROVED376bcdb/0P1P2；当前源码bee336a01505e42bbba0e9154f8ade75eee2f244待独审，原失败fidelity批准不继承为本实验通过。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T14:22:05.264Z fresh完整身份匹配，本片未修改claim。 |
-| 架构影响 | 私有replay Module复用centerDelivery/channel/OPS14，新增有限语义receiver与顺序parent/worker，无生产pool/SQL或服务改变；新增Module尚未main。 |
+| Review | db对bee/fd7 SOURCE_CHANGES_REQUESTED/1P2；本delta d28166e81bcdbb9fb537b40144f7be07a2539130待窄复审，不将旧方法批准继承为实现通过。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T14:53:01Z fresh完整身份匹配，范围未改。 |
+| 架构影响 | 私有replay复用原delivery/channel与OPS14；计划以固定tsc六JS消除实际loader helper，顺序检查只接纳精确已知输出。无生产pool/SQL/服务改动，当前私有Module未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -252,3 +252,9 @@ GO/Mika新方向只落小[delivery-strategy-replay设计](../../docs/evidence/s0
 ## 2026-10-07T14:41:05Z 窄修准备启动
 
 新15分钟source-only段，截止14:56:05Z；fresh508f v3/full6本人/原树、fd7f438b=origin clean。按db固定review修唯一process_closed P2，同时预备固定tsc输出六运行JS与精确已知输出准入。0工程child/编译/PG/replay；原18绑定、input、trace和全部原始失败按Git历史保留。
+
+2026-10-07T14:51:05.201Z：本窄修SOURCE_STOP，交审source d28166e81bcdbb9fb537b40144f7be07a2539130；唯一当前入口 [delivery-replay-ready-v2](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-ready-v2.md)。P2是否关闭由独审决定；当前0实际holder/NEXT，无编译/PG/replay。原任务startUNKNOWN/M2/开放TODO不变。
+
+## 新普通局部段（与历史source段分开）
+
+实际起点2026-10-07T14:52:51.000Z、截止15:07:51Z。Mika新授权最多8个串行工程child/累计180s/单child whole40s；TMP/emit8MiB、raw256KiB、metadata1MiB、总新增16MiB；source/trace原预算保持。fresh floor11640438784B；ordinary授权不开放PG/HTTP/性能replay。使用既有OPS14和显式环境，源P2修复与未知KEEP门禁由独立review交叉核；结果单记录delivery-replay-local-segment.json。

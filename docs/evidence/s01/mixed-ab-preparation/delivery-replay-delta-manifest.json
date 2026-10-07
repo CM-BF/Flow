@@ -1,0 +1,47 @@
+{
+  "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+  "preparedAt": "2026-10-07T14:51:05.201Z",
+  "state": "DELTA_SOURCE_REVIEW_READY_NOT_COMPILED_NOT_OPEN",
+  "bindings": [
+    {
+      "path": "experiments/runner-capacity/mixed/delivery-replay-main.ts",
+      "bytes": 12539,
+      "sha256": "f1f5c1d1971b2427ef098e6d35ef7b33fadf177c19e53aa80e02ec0b1e784cf9"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py",
+      "bytes": 19175,
+      "sha256": "0d9afada16a67333fb2aa0b387b372b09b3b085705a25c0679ae9f16bd5260c7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py",
+      "bytes": 3914,
+      "sha256": "87d670a4f6f361f7fba2ce23eb836d76e27f56d6ee2e77b040be4bb201e12f81"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json",
+      "bytes": 295,
+      "sha256": "a7156a025790f5c455dad7a4264f7474d1408a905dc02c6d6c51014bf9d9226d"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-input-v2.json",
+      "bytes": 25559,
+      "sha256": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-source-review-v1.json",
+      "bytes": 733,
+      "sha256": "02e3a61fae456338f15bb68a8dcb5ee1eec1c4a4befc75c65e577260ca434f4c"
+    }
+  ],
+  "totalBytes": 62215,
+  "inputSha256": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+  "oldPacket": "fd7f438bccd5a946eaa0ffcb6b19210ceee0783e",
+  "oldInputsUnchanged": [
+    "delivery-replay-input.json",
+    "delivery-replay-preparation-manifest.json",
+    "delivery-replay-trace.json"
+  ],
+  "runtimeGeneratedArtifacts": "NOT_EMITTED",
+  "engineeringChecks": 0
+}
