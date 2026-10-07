@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T04:58:59.635390+00:00 |
+| 最近更新时间 | 2026-10-07T05:01:33.536708+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；R2实际执行2f018b27，新namespace源77ed66ba；结果随后固定，未main |
-| 工作树 dirty 状态 | 只新增R2原raw/outer副本和结果状态；产品与执行输入未改，封包后clean停写 |
+| 工作基线 / HEAD | base60ca；R3候选source37177aba665fa8d787e40c2a18c4d124bdf819ca，R2结果源d9f3a4aa/manifest e49b246d，未main |
+| 工作树 dirty 状态 | 仅维护夹具公开命令/R3 namespace与必要focused类型/结果输入；封包后clean停写供独审 |
 | 工作分支状态 | in-progress |
-| 检查状态 | Stage C R2实际27=26过1失败（registry17/runtime9），资源全部闭合；R1失败/UNKNOWN原件保留，0自动R3 |
-| Review | R2结果忠实性PENDING；083085窄修及local已chatui04:50:38批准 |
+| 检查状态 | R2原27=26过1失败保留；修后单runtime.fixture noEmit0，未重跑用例；R3 NOT_OPEN |
+| Review | R2结果忠实性与37177维护夹具/R3准备PENDING；原083批准保持 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 77ed66bab3ff72513436ab936811e03f8cbb3e18 |
+| 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 数据库验收已通过26项，剩余1项被维护状态夹具的不完整字段设置挡住；实际资源已全部收尾 |
-| 下一可用交付 | 独审本轮结果并修正维护夹具的合法状态组合，再单独准入完成原27项；生产调用链仍未接 |
-| 当前阻塞 | ACTIVE: 1个maintenance_operation约束失败待窄修与下一PG准入；本次资源已归还，无待运行第三窗 |
+| 当前产出 | 剩余维护夹具已复用公开命令修正并通过定向类型检查；原26过1失败记录与完整资源收尾已封存 |
+| 下一可用交付 | 独审R2原件及维护夹具窄修，通过后另行准入R3完成原27项 |
+| 当前阻塞 | ACTIVE: R2结果/维护夹具新源待独审；R3未OPEN，无资源占用，等待实际PG交接 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -219,3 +219,9 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 ## 2026-10-07T04:58:59.635390+00:00 Stage C R2实际终态
 
 [R2结果](../../docs/evidence/x01/enable-binding-stage-c-r2-result.md)：唯一实际27=26过1失败、199HTTP；两专库全部identity→0conn→普通DROP/absence，四listeners、两受监督进程、TMP均闭合。caller FAILED/unknown=false，业务非零不是资源未知。8.80s外部time与8.737759s内部单列。已直接归还Web；旧R1原件保持，无自动R3。唯一错误来自runtime.fixture只改maintenance_state、未给016要求的operation_id；本次尚未改源或重跑。
+
+## 2026-10-07T05:01:33.536708+00:00 维护夹具窄修/R3候选
+
+固定`37177aba665fa8d787e40c2a18c4d124bdf819ca`：runtime.test只将非法直接UPDATE改为已存在的owner HTTP maintenance/drain（version0/独立operationId/reason），断言200与准确draining/version1/operationId后仍执行原load/invoke/cancel/lease/revoke全部断言。状态、revision、operation和audit由原维护Module拥有；没有改016 CHECK、生产代码或删场景。比R2多1次HTTP，仍在原runtime256/total416已声明上界内。
+
+[focused类型](../../docs/evidence/x01/enable-binding-maintenance-fix-local.json)：05:00:53.151613–55.267568Z，单runtime.fixture noEmit0/0B，PID37593最终absent/EOF、TMP同inode删，无PG/用例执行。新config仅该直接consumer，无alias或tsconfig放宽。R3只换4个namespace字面及对应input/manifest绑定，236源码/31SQL/原27cases与180s等界限不变；0admission/0reservation，需独审和新窗口。已直归还local给C02并通知Web。

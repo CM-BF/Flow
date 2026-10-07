@@ -1,3 +1,11 @@
+状态：PENDING（R2结果忠实性及维护夹具/R3准备；不含实际R3通过）
+
+Review target commit: 37177aba665fa8d787e40c2a18c4d124bdf819ca
+
+R2固定结果d9f3a4aa/e49b246d：27=26过1失败、资源完整closed；原件不改。当前唯一行为差异是在原runtime用例经公开maintenance/drain建立合法状态，其余caller仅namespace替换；单focused noEmit0，原27未重跑。
+
+---
+
 状态：PENDING（Stage C R2实际失败结果忠实性；26过1失败，不是整片验收通过）
 
 Review target commit: 77ed66bab3ff72513436ab936811e03f8cbb3e18

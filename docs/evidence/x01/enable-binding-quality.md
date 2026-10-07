@@ -89,3 +89,8 @@ chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。�
 ## 2026-10-07T04:58:59.635390+00:00 R2实际失败与收尾
 
 复用原fixture、OPS14和四namespace增量执行，未创建新监督器。原27选择完整，26通过、1直接SQL夹具遗漏maintenance_operation_id触发既有CHECK；不删断言/放宽产品约束/自动重跑。业务失败与资源资格分开：caller FAILED且known完整，2DB/4listeners/2groups/TMP均闭合；原UNKNOWN失败历史不改。命名/职责/错误界限沿本地clean-code、codebase-design检查；下一仅合法维护tuple窄修待固定独审，main/生产caller仍未交付。
+
+
+## 2026-10-07T05:01:33.536708+00:00 维护fixture错误的最小修复
+
+clean-code/codebase-design安全点：复用既有maintenance公开命令而非补另一个SQL状态写入，maintenanceModule继续拥有version/operation/audit；新增fixture断言证准确draining状态，原后继phase断言全部保留。没有新抽象/loader/监督器，caller仍四namespace字面。单直接fixture类型无alias通过；原26/1失败保留且真实修后PG尚未运行。R2结果、37177固定源和R3输入一次交独审，停止写入释放review槽。
