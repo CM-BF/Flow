@@ -1,4 +1,5 @@
 import { ConversationMessageSettings, createMessageSettingsPlugin, type MessageSettingsPort } from "./message-settings";
+import type { AppLayoutPort } from "./layout";
 import { RecoveryWorkspace, createRecoveryPlugin, type RecoveryHost } from "../recovery/binding";
 import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
 import type { RecoveryStorage } from "../attachments/recovery";
@@ -52,6 +53,7 @@ interface CenterRuntimeBinding {
 
 /** Private App capabilities. This object is never supplied to a plugin. */
 export interface AppActions {
+  layout?: AppLayoutPort;
   knowsTask(id: string): boolean;
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
@@ -112,12 +114,25 @@ export class AppPluginSession {
       navigation: this.navigation,
       theme: this.theme,
       getContext: () => this.context,
+      captureLayoutInvocation: context => {
+        if (this.closed || !this.actions.layout) throw Error("Layout actions are unavailable in this connection.");
+        return this.actions.layout.capture(context);
+      },
       authorize: (_plugin, capability, context) => this.authorizeResource(capability, context),
       execute: async (command, args, meta) => {
         this.assertCurrent(meta.signal);
         if (!this.validContext(meta.context)) throw Error("This resource is no longer available in this connection.");
         // The host validates the command's argument shape and invocation identity first.
-        if (command === "flow.chat.open") {
+        if (command === "flow.conversation.open") {
+          if (meta.context.kind !== "conversation" || !this.actions.layout) throw Error("Conversation layout is unavailable.");
+          this.actions.layout.open(meta.context, meta.signal);
+        } else if (command === "flow.view.close") {
+          if (meta.context.kind !== "pane" || !this.actions.layout) throw Error("Pane layout is unavailable.");
+          this.actions.layout.close(meta.context, meta.signal);
+        } else if (command === "flow.layout.change") {
+          if (meta.context.kind !== "pane" || !this.actions.layout) throw Error("Pane layout is unavailable.");
+          this.actions.layout.change(meta.context, (args as import("../plugins/types").HostCommandArgs["flow.layout.change"]).change, meta.signal);
+        } else if (command === "flow.chat.open") {
           const { taskId } = args as { taskId: string };
           if (!this.actions.knowsTask(taskId)) throw Error("This task is not known to this connection.");
           this.actions.openTask(taskId);
@@ -380,6 +395,7 @@ export class AppPluginSession {
   }
   private validContext(context: ResourceContext) {
     if (context.kind === "global") return true;
+    if (context.kind === "conversation" || context.kind === "pane") return this.actions.layout?.allows(context) === true;
     if (context.kind === "composer") return context.isDraft && this.actions.hasDraft(context.viewId);
     if (context.kind === "workspace" && context.taskId === null) return true;
     if (!context.taskId || !this.actions.knowsTask(context.taskId)) return false;

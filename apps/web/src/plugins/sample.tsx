@@ -12,6 +12,7 @@ export function createSamplePlugin(
       hostApi: 1,
       capabilities: [
         "ui.navigate",
+        "ui.layout",
         "theme.write",
         "theme.register",
         "composer.write",
@@ -20,6 +21,9 @@ export function createSamplePlugin(
         "command:sample.notes.open",
         "command:sample.notes.theme",
         "command:sample.notes.insert",
+        "command:sample.notes.split",
+        "command:sample.notes.merge",
+        "command:sample.notes.close-view",
         "view:workspace.tabs",
       ],
       commands: [
@@ -27,7 +31,7 @@ export function createSamplePlugin(
           id: "sample.notes.open",
           title: "Open task",
           capability: "ui.navigate",
-          contexts: ["task"],
+          contexts: ["task", "conversation"],
         },
         {
           id: "sample.notes.theme",
@@ -41,8 +45,14 @@ export function createSamplePlugin(
           capability: "composer.write",
           contexts: ["composer"],
         },
+        { id: "sample.notes.split", title: "Split this chat", capability: "ui.layout", contexts: ["pane"] },
+        { id: "sample.notes.merge", title: "Merge these panes", capability: "ui.layout", contexts: ["pane"] },
+        { id: "sample.notes.close-view", title: "Close this chat", capability: "ui.navigate", contexts: ["pane"] },
       ],
       contributions: [
+        { kind: "menu", id: "sample.notes.split-menu", title: "Split this chat", slot: "chat.tab.actions", commandId: "sample.notes.split" },
+        { kind: "menu", id: "sample.notes.merge-menu", title: "Merge these panes", slot: "chat.tab.actions", commandId: "sample.notes.merge" },
+        { kind: "menu", id: "sample.notes.close-view-menu", title: "Close this chat", slot: "chat.tab.actions", commandId: "sample.notes.close-view" },
         {
           kind: "button",
           id: "sample.notes.open-button",
@@ -96,11 +106,28 @@ export function createSamplePlugin(
           context.command("sample.notes.open", {
             parse: () => undefined,
             run: async (_, command) => {
+              if (command.resource.kind === "conversation") {
+                await command.execute("flow.conversation.open", { conversationId: command.resource.conversationId }); return;
+              }
               if (command.resource.kind !== "task")
                 throw Error("Task required");
               await command.execute("flow.chat.open", {
                 taskId: command.resource.taskId,
               });
+            },
+          });
+          for (const kind of ["split", "merge"] as const) context.command(`sample.notes.${kind}`, {
+            parse: () => undefined,
+            run: async (_, command) => {
+              if (command.resource.kind !== "pane") throw Error("Actual conversation pane required");
+              await command.execute("flow.layout.change", { paneId: command.resource.paneId, change: { kind } });
+            },
+          });
+          context.command("sample.notes.close-view", {
+            parse: () => undefined,
+            run: async (_, command) => {
+              if (command.resource.kind !== "pane") throw Error("Actual conversation pane required");
+              await command.execute("flow.view.close", { viewKey: command.resource.viewKey });
             },
           });
           context.command("sample.notes.theme", {

@@ -26,6 +26,37 @@ async function setup(count=1){
  return{fixture,stream,client,projections,tasks,open,session,hosts,start};
 }
 describe("actual conversation stream host",()=>{
+ it("Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",async()=>{
+  const s=await setup(3); s.stream.setDelay(8);
+  for(const task of s.tasks) for(let index=0;index<80;index++) s.stream.append(task,` ${index}`);
+  await s.session.host.activate(STREAM_OWNER); s.hosts[0]!.setVisible(true);s.hosts[1]!.setVisible(true);
+  await vi.waitFor(()=>expect(s.stream.reads.filter(row=>row.kind==="patches").length).toBeGreaterThanOrEqual(2));
+  s.hosts[2]!.setVisible(true);
+  await vi.waitFor(()=>expect(s.hosts.every(host=>host.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes(" 79")))).toBe(true));
+  const pages=s.stream.reads.filter(row=>row.kind==="patches");
+  // Each bounded batch is four eight-patch pages. No host begins its third batch
+  // before both peers have begun their second, including the late joiner.
+  for(const task of s.tasks){
+   const third=pages.findIndex(row=>row.taskId===task&&row.after===192);expect(third).toBeGreaterThan(0);
+   for(const peer of s.tasks.filter(id=>id!==task))expect(pages.slice(0,third).some(row=>row.taskId===peer&&row.after>=96)).toBe(true);
+   expect(pages.filter(row=>row.taskId===task).map(row=>row.after)).toEqual(Array.from({length:11},(_,index)=>index*24));
+  }
+  expect(s.stream.peak).toBeLessThanOrEqual(2);
+  expect(s.hosts.reduce((sum,host)=>sum+host.cached().reduce((bytes,entry)=>bytes+(entry.module.getSnapshot().patches?.totalBytes??0),0),0)).toBeLessThanOrEqual(4*1024*1024);
+ });
+ it("Arc removes hidden or closed FIFO waiters without retaining a reserved lease",async()=>{
+  const s=await setup(3);s.stream.setDelay(35);await s.session.host.activate(STREAM_OWNER);
+  s.hosts.forEach(host=>host.setVisible(true));
+  await vi.waitFor(()=>expect(s.stream.reads).toHaveLength(2));
+  s.hosts[2]!.setVisible(false);
+  await vi.waitFor(()=>expect(s.hosts.slice(0,2).every(host=>host.getSnapshot().messages.length===2)).toBe(true));
+  expect(s.stream.reads.some(row=>row.taskId===s.tasks[2])).toBe(false);
+  s.hosts[2]!.setVisible(true);await vi.waitFor(()=>expect(s.hosts[2]!.getSnapshot().messages.length).toBe(2));
+  s.hosts[2]!.dispose();const closed=s.stream.reads.filter(row=>row.taskId===s.tasks[2]).length;
+  s.stream.append(s.tasks[0]!," survives waiter removal");await s.projections[0]!.refresh();
+  await vi.waitFor(()=>expect(s.hosts[0]!.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes("survives waiter removal"))).toBe(true));
+  expect(s.stream.reads.filter(row=>row.taskId===s.tasks[2])).toHaveLength(closed);expect(s.stream.peak).toBeLessThanOrEqual(2);
+ });
  it("requires independent plugin permission, retains canonical complete state, and has zero inactive reads",async()=>{
   const s=await setup();s.hosts[0]!.setVisible(true);await new Promise(resolve=>setTimeout(resolve,20));expect(s.stream.reads).toEqual([]);
   expect(s.session.host.checkView(STREAM_PANEL,{kind:"global"}).ok).toBe(false);await s.start();expect(s.stream.reads).toHaveLength(2);

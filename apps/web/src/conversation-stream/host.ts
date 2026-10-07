@@ -32,13 +32,26 @@ const bytes = (entry: Entry) => entry.module.getSnapshot().patches?.totalBytes ?
 export class StreamConnectionBudget {
   private hosts = new Set<ConversationStreamHost>();
   private leases = new Set<ConversationStreamHost>();
+  private waiting = new Set<ConversationStreamHost>();
   private clock = 0;
   touch() { return ++this.clock; }
   add(host: ConversationStreamHost) { this.hosts.add(host); }
-  remove(host: ConversationStreamHost) { this.leases.delete(host); this.hosts.delete(host); this.wake(); }
-  acquire(host: ConversationStreamHost) { if (this.leases.has(host)) return true; if (this.leases.size >= 2) return false; this.leases.add(host); return true; }
-  release(host: ConversationStreamHost) { if (this.leases.delete(host)) this.wake(); }
-  private wake() { for (const host of this.hosts) host.requestPump(); }
+  remove(host: ConversationStreamHost) { this.hosts.delete(host); this.withdraw(host); }
+  acquire(host: ConversationStreamHost) {
+    if (this.leases.has(host)) return true;
+    if (!this.hosts.has(host) || !host.hasQueuedWork()) return false;
+    this.waiting.add(host); this.grantWaiting(); return this.leases.has(host);
+  }
+  release(host: ConversationStreamHost) { if (this.leases.delete(host)) this.grantWaiting(); }
+  withdraw(host: ConversationStreamHost) { this.waiting.delete(host); this.leases.delete(host); this.grantWaiting(); }
+  private grantWaiting() {
+    // Reserve the freed lease before waking: synchronous reacquire cannot pass an older waiter.
+    for (const host of this.waiting) {
+      if (!this.hosts.has(host) || !host.hasQueuedWork()) { this.waiting.delete(host); continue; }
+      if (this.leases.size >= 2) break;
+      this.waiting.delete(host); this.leases.add(host); host.requestPump();
+    }
+  }
   enforce() {
     const all = [...this.hosts].flatMap(host => host.cached().map(entry => ({ host, entry })));
     let size = all.reduce((sum, item) => sum + bytes(item.entry), 0), count = all.length;
@@ -71,6 +84,7 @@ export class ConversationStreamHost {
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   current() { return !this.disposed && !this.authority.signal.aborted; }
   cached() { return [...this.entries.values()]; }
+  hasQueuedWork() { return this.current() && this.visible && [...this.entries.values()].some(entry => entry.dirty && entry.failures < 3 && this.readable(entry)); }
   ownsMessage(taskId: string, messageId: string, role: "user" | "assistant") { const member = this.state.members.get(messageId); return this.current() && member?.taskId === taskId && member.role === role && this.projection.getSnapshot().turns.some(turn => turn.id === member.turnId && turn.task.id === taskId); }
   attach() {
     this.mounted++;
@@ -139,8 +153,11 @@ export class ConversationStreamHost {
       const active = [...this.entries.values()].find(entry => entry.active);
       if (active) {
         const state = active.module.getSnapshot();
-        if (state.loading || (state.hasMore && !state.error)) return;
+        if (state.loading) return;
         active.failures = state.error ? active.failures + 1 : 0;
+        // A projection flight already bounds its pages. Yield after each completed batch,
+        // keeping continuation dirty so all visible hosts can progress through a backlog.
+        active.dirty ||= state.hasMore && !state.error;
         this.deactivate(active);
       }
       const latestId = this.projection.getSnapshot().snapshot?.lastTurn?.id;
@@ -149,7 +166,7 @@ export class ConversationStreamHost {
       if (next && this.budget.acquire(this)) {
         next.dirty = false; next.active = true;
         next.module.updateHost({ turn: next.turn, capability: true, protocol: "patch-v1", visible: true, online: true, finalContent: this.fullContent(next.turn) });
-      }
+      } else if (!next) this.budget.withdraw(this);
       this.publish();
     } finally { this.syncing = false; }
   }

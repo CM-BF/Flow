@@ -14,8 +14,9 @@ import {
   useState,
   useSyncExternalStore,
   type ReactNode,
-  type KeyboardEvent,
   type RefObject,
+  type SetStateAction,
+  type CSSProperties,
 } from "react";
 import { FlowClient } from "@flow/client";
 import type { PluginRegistryReader } from "./plugin-management/PluginManagement";
@@ -66,12 +67,14 @@ import { applyTheme, initialTheme, themes, type Theme } from "./themes";
 import { AppPluginSession, type AppActions } from "./plugin-integration/session";
 import { PluginProvider, AppSlot, PluginRail, PluginSettings, PluginWorkspace } from "./plugin-integration/react";
 import {
-  closeChat,
-  mergeChats,
-  openChat,
-  splitChat,
-  type ChatGroup,
+  mergeChats, splitChat, MAX_VISIBLE_PANES, MAX_OPEN_VIEWS,
+  emptyLayout, activeWorkspace, layoutGroups, updateWorkspace, addWorkspace, removeWorkspace, selectLayoutView,
+  renameLayoutView, closeLayoutView, reorderPane, resizePanes, readLayout,
+  type ChatGroup, type WorkspaceLayout,
 } from "./workspace-state";
+import { AppLayoutPort, type LayoutCloseAuthorization } from "./plugin-integration/layout";
+import { WorkspaceTabs, PaneTabs } from "./workspace-layout/WorkspaceTabs";
+import "./workspace-layout/layout.css";
 
 const statusLabels: Record<TaskStatus, string> = {
   queued: "Queued",
@@ -112,30 +115,6 @@ function IconButton({
       {children}
     </button>
   );
-}
-function navigateChatTabs(
-  event: KeyboardEvent<HTMLButtonElement>,
-  group: ChatGroup,
-  id: string,
-  activate: (id: string) => void,
-  close: (id: string) => void,
-) {
-  const index = group.tabs.indexOf(id);
-  let next = index;
-  if (event.key === "ArrowRight") next = (index + 1) % group.tabs.length;
-  else if (event.key === "ArrowLeft")
-    next = (index - 1 + group.tabs.length) % group.tabs.length;
-  else if (event.key === "Home") next = 0;
-  else if (event.key === "End") next = group.tabs.length - 1;
-  else if (event.key === "Delete") {
-    event.preventDefault();
-    close(id);
-    return;
-  } else return;
-  event.preventDefault();
-  const target = group.tabs[next]!;
-  activate(target);
-  document.getElementById(`tab-${target}`)?.focus();
 }
 function CloseChatButton({
   view,
@@ -407,16 +386,27 @@ function Workspace({
   const list = useSyncExternalStore(catalog.subscribe, catalog.getSnapshot);
   const [views] = useState(() => new Map<string, View>());
   const [drafts] = useState(() => new Map<string, DraftState>());
-  const [groups, setGroups] = useState<ChatGroup[]>([]);
-  const currentGroups = useRef(groups);
-  currentGroups.current = groups;
+  const [layout, setLayout] = useState<WorkspaceLayout>(emptyLayout);
+  const [layoutPort] = useState(() => new AppLayoutPort());
+  useLayoutEffect(() => () => layoutPort.suspend(), [layoutPort]);
+  const workspace = activeWorkspace(layout), groups = workspace.panes, activeGroup = workspace.activePaneId;
+  const currentLayout = useRef(layout);
+  const currentGroups = useRef(layoutGroups(layout));
+  const visibleGroups = useRef(groups);
+  useLayoutEffect(() => { currentLayout.current = layout; currentGroups.current = layoutGroups(layout); visibleGroups.current = groups; }, [layout, groups]);
+  const setGroups = (update: SetStateAction<ChatGroup[]>) => setLayout(previous => updateWorkspace(previous, tab => ({
+    ...tab, panes: typeof update === "function" ? update(tab.panes) : update,
+  })));
+  const setActiveGroup = (id: string) => setLayout(previous => {
+    const owner = previous.tabs.find(tab => tab.panes.some(pane => pane.id === id));
+    return owner ? { ...previous, activeTabId: owner.id, tabs: previous.tabs.map(tab => tab === owner ? { ...tab, activePaneId: id } : tab) } : previous;
+  });
   const [retainedOpen, setRetainedOpen] = useState(false);
   const [capacityBlocked, setCapacityBlocked] = useState(false);
   const retainedInvoker = useRef<HTMLElement | null>(null);
   const retainedDestination = useRef<string | null>(null);
   const showRetained = (full: boolean) => { retainedInvoker.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; retainedDestination.current = null; setCapacityBlocked(full); setRetainedOpen(true); };
   const lastRoute = useRef(location.hash);
-  const [activeGroup, setActiveGroup] = useState("main");
   const [sidebar, setSidebar] = useState(() => window.innerWidth > 800);
   const [query, setQuery] = useState("");
   const [panelOpen, setPanelOpen] = useState(false);
@@ -451,7 +441,7 @@ function Workspace({
         const [oldId, existing] = cached; view = existing; views.delete(oldId); views.set(id, existing);
         const draft = drafts.get(oldId); if (draft) { drafts.set(id, draft); drafts.delete(oldId); }
         setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[id] = next[oldId]!; delete next[oldId]; } return next; });
-        setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? id : tab), activeId: group.activeId === oldId ? id : group.activeId })));
+        setLayout(previous => renameLayoutView(previous, oldId, id));
         session?.recovery.changed(existing.key);
       }
     }
@@ -473,40 +463,35 @@ function Workspace({
       view.projection.setOnline(navigator.onLine && authorizedRef.current);
       view.conversation?.setOnline(navigator.onLine && authorizedRef.current);
       if (recovery && session && view.conversation) view.conversation.configureRecovery(session.recovery.commandPort(view.key));
-      if (!id.startsWith("draft-") && !view.conversation) void view.projection.select(id);
+      // Selecting a legacy task performs HTTP work. Defer it until this view is visible.
     }
     return view;
   };
   const newChat = () => {
     session?.closeMessageSettings();
+    if (currentGroups.current.reduce((count, pane) => count + pane.tabs.length, 0) >= MAX_OPEN_VIEWS) { setRecoveryError("Close an open chat before opening another workspace view."); return; }
     if (!canOpenConversation(residentCount(), false)) { showRetained(true); return; }
     const id = `draft-${crypto.randomUUID()}`;
     if (!ensureView(id)) return;
     setCapacityBlocked(false); setOverview(false);
     if (!profiles.getSnapshot().loaded && !profiles.getSnapshot().loading) void profiles.refresh();
     if (window.innerWidth <= 800) setSidebar(false);
-    setGroups((previous) =>
-      previous.length
-        ? openChat(previous, activeGroup, id)
-        : [{ id: "main", tabs: [id], activeId: id }],
-    );
+    setLayout(previous => selectLayoutView(previous, activeGroup, id));
   };
   const select = (id: string) => {
     session?.closeMessageSettings();
+    const openRoutes = currentGroups.current.flatMap(pane => pane.tabs);
+    if (!openRoutes.includes(id) && openRoutes.length >= MAX_OPEN_VIEWS) { setRecoveryError("Close an open chat before opening another workspace view."); return; }
     if (!ensureView(id)) { history.replaceState(null, "", lastRoute.current || location.pathname + location.search); return; }
     setCapacityBlocked(false); setOverview(false);
     if (window.innerWidth <= 800) setSidebar(false);
-    setGroups((previous) => {
-      const group = previous.find((item) => item.tabs.includes(id));
-      if (group) setActiveGroup(group.id);
-      return previous.length
-        ? openChat(previous, activeGroup, id)
-        : [{ id: "main", tabs: [id], activeId: id }];
-    });
+    setLayout(previous => selectLayoutView(previous, activeGroup, id));
     history.replaceState(null, "", id.startsWith("conversation:") ? `#conversation=${encodeURIComponent(id.slice(13))}` : `#task=${encodeURIComponent(id)}`);
   };
   const hideSettings = () => session?.closeMessageSettings();
   const routeActions = useRef({ select, newChat, hideSettings });
+  const initialRoute = useRef(location.hash);
+  const routeInitialized = useRef(false);
   useLayoutEffect(() => {
     // Route listeners outlive renders; dispatch through the last committed session/actions.
     routeActions.current = { select, newChat, hideSettings };
@@ -515,6 +500,7 @@ function Workspace({
     void refreshChats();
     void conversations.refresh();
     const followRoute = () => {
+      if (!routeInitialized.current) { initialRoute.current = location.hash; return; }
       const params = new URLSearchParams(location.hash.slice(1));
       const conversation = params.get("conversation");
       const id = params.get("task");
@@ -523,7 +509,6 @@ function Workspace({
       else if (location.hash === "#workspace") { routeActions.current.hideSettings(); setOverview(true); }
       else routeActions.current.newChat();
     };
-    followRoute();
     const online = () =>
       views.forEach((view) => { view.projection.setOnline(authorizedRef.current); view.conversation?.setOnline(authorizedRef.current); });
     const offline = () =>
@@ -548,7 +533,12 @@ function Workspace({
   const selectedTaskId = selectedTask?.id ?? null;
   useEffect(() => {
     const visible = new Set(overview || !pageVisible || !authorized ? [] : groups.map(group => group.activeId));
-    views.forEach((view, id) => { view.projection.setVisible(visible.has(id)); view.conversation?.setVisible(visible.has(id)); });
+    views.forEach((view, id) => {
+      const shown = visible.has(id);
+      view.projection.setVisible(shown); view.conversation?.setVisible(shown);
+      if (shown && !view.conversation && view.projection.getSnapshot().task?.id !== id && view.projection.getSnapshot().connection !== "connecting")
+        void view.projection.select(id);
+    });
   }, [groups, overview, pageVisible, views, authorized]);
   const syncWorkspaceSummaries = useCallback((tasks: TaskSummary[]) => {
     tasks.forEach(task => { catalog.syncSummary(task); views.get(task.id)?.projection.syncSummary(task); });
@@ -575,7 +565,7 @@ function Workspace({
     setPanelOpen(false);
     requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('.flow-workspace-bar button[aria-label="Toggle workspace panel"]')?.focus());
   };
-  const [leaving, setLeaving] = useState<{ kind: "view"; id: string } | { kind: "connection" } | null>(null);
+  const [leaving, setLeaving] = useState<{ kind: "view"; id: string; key: string; authorization?: LayoutCloseAuthorization } | { kind: "workspace"; id: string; keys: string[] } | { kind: "connection" } | null>(null);
   const protectedReasons = (id: string, view: View) => retentionReasons({
     text: drafts.get(id)?.text ?? "",
     unsubmittedProfile: !!view.conversation && !view.conversation.getSnapshot().snapshot && Object.hasOwn(profileSelections, view.key),
@@ -593,12 +583,23 @@ function Workspace({
     setPanelFocusRequest(previous => previous?.taskId === taskId ? null : previous);
     view.conversation?.dispose(); view.projection.disconnect();
   };
+  const retainOrRelease = (id: string, discardSteering = false) => {
+    const closing = views.get(id);
+    if (closing && discardSteering) session?.steering.closeView(closing.key);
+    if (closing?.conversation) {
+      const reasons = protectedReasons(id, closing);
+      closing.conversation.setVisible(false); closing.projection.setVisible(false);
+      closing.conversation.clearReadCache(); session?.steering.hide(closing.key);
+      if (!reasons.length) releaseConversation(closing);
+    }
+    else { if (closing) session?.steering.closeView(closing.key); closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
+  };
   const closeNow = (id: string, discardSteering = false) => {
     session?.closeMessageSettings();
-    const next = closeChat(groups, id);
-    setGroups(next);
-    const targetGroup =
-      next.find((group) => group.id === activeGroup) ?? next[0];
+    const next = closeLayoutView(layout, id);
+    setLayout(next);
+    const remaining = activeWorkspace(next).panes;
+    const targetGroup = remaining.find(group => group.id === activeGroup) ?? remaining[0];
     if (targetGroup) setActiveGroup(targetGroup.id);
     else history.replaceState(null,"",location.pathname+location.search);
     requestAnimationFrame(() => {
@@ -609,18 +610,50 @@ function Workspace({
           );
       target?.focus();
     });
-    const closing = views.get(id);
-    if (closing && discardSteering) session?.steering.closeView(closing.key);
-    if (closing?.conversation) {
-      const reasons = protectedReasons(id, closing);
-      closing.conversation.setVisible(false); closing.projection.setVisible(false);
-      closing.conversation.clearReadCache(); session?.steering.hide(closing.key);
-      if (!reasons.length) releaseConversation(closing);
-    }
-    else { if (closing) session?.steering.closeView(closing.key); closing?.projection.disconnect(); views.delete(id); drafts.delete(id); }
+    retainOrRelease(id, discardSteering);
     void refreshChats();
   };
-  const close = (id: string) => { const view = views.get(id); if (view && session?.steering.risks(view.key)) setLeaving({ kind: "view", id }); else closeNow(id); };
+  const close = (id: string, authorization?: LayoutCloseAuthorization) => {
+    authorization?.check();
+    const view = views.get(id);
+    if (view && (session?.steering.risks(view.key) || session?.getViewProtection(view.key).length))
+      setLeaving({ kind: "view", id, key: view.key, authorization });
+    else { authorization?.commit(); closeNow(id); }
+  };
+  const confirmLeave = () => {
+    const destination = leaving; setLeaving(null);
+    try {
+      if (destination?.kind === "view") {
+        if (views.get(destination.id)?.key !== destination.key) throw Error("The original view changed. Confirm its current identity before closing.");
+        destination.authorization?.commit(); closeNow(destination.id, true);
+      } else if (destination?.kind === "workspace") void closeWorkspaceNow(destination.id, destination.keys, true);
+      else if (destination) void disconnectNow();
+    } catch (error) { setRecoveryError(error instanceof Error ? error.message : "This close belongs to an expired layout action."); }
+  };
+  const closeWorkspaceNow = async (id: string, keys: string[], confirmed = false) => {
+    const generation = recovery?.session.getSnapshot().generation;
+    try {
+      if (recovery) await session?.recovery.flush();
+      if (!authorizedRef.current || session?.signal.aborted || (recovery && (!recovery.session.authorized(recovery.namespace) || recovery.session.getSnapshot().generation !== generation)))
+        throw Error("Authorize the original connection before closing these workspace views.");
+      const current = currentLayout.current, tab = current.tabs.find(item => item.id === id);
+      const routes = tab?.panes.flatMap(pane => pane.tabs) ?? [], currentKeys = routes.map(route => views.get(route)?.key);
+      if (!tab || keys.length !== currentKeys.length || keys.some(key => !currentKeys.includes(key)))
+        throw Error("This workspace changed while confirmation was open. Check its current chats before closing it.");
+      if (!confirmed && routes.some(route => protectedReasons(route, views.get(route)!).length)) { setLeaving({ kind: "workspace", id, keys }); return; }
+      session?.closeMessageSettings();
+      const next = removeWorkspace(current, id); setLayout(next);
+      routes.forEach(route => retainOrRelease(route, true));
+      requestAnimationFrame(() => document.getElementById(`workspace-tab-${next.activeTabId}`)?.focus());
+      void refreshChats();
+    } catch (error) { setRecoveryError(error instanceof Error ? error.message : "The workspace draft checkpoint did not finish."); }
+  };
+  const closeWorkspace = (id: string) => {
+    const routes = layout.tabs.find(tab => tab.id === id)?.panes.flatMap(pane => pane.tabs) ?? [];
+    const keys = routes.map(route => views.get(route)!.key);
+    if (routes.some(route => protectedReasons(route, views.get(route)!).length)) setLeaving({ kind: "workspace", id, keys });
+    else void closeWorkspaceNow(id, keys);
+  };
   const accepted = (oldId: string, id: string) => {
     void refreshChats();
     const view = views.get(oldId);
@@ -635,7 +668,7 @@ function Workspace({
       views.delete(oldId); views.set(nextId, view);
       const draft = drafts.get(oldId); if (draft) { drafts.set(nextId, draft); drafts.delete(oldId); }
       setPanelTabs(previous => { const next = { ...previous }; if (next[oldId]) { next[nextId] = next[oldId]!; delete next[oldId]; } return next; });
-      setGroups(previous => previous.map(group => ({ ...group, tabs: group.tabs.map(tab => tab === oldId ? nextId : tab), activeId: group.activeId === oldId ? nextId : group.activeId })));
+      setLayout(previous => renameLayoutView(previous, oldId, nextId));
       session?.recovery.changed(view.key);
       if (!stillOpen && !protectedReasons(nextId, view).length) releaseConversation(view);
       void conversations.refresh(); return;
@@ -643,13 +676,7 @@ function Workspace({
     views.delete(oldId);
     view.title = view.projection.getSnapshot().task?.title ?? "Task";
     views.set(id, view);
-    setGroups((previous) =>
-      previous.map((group) => ({
-        ...group,
-        tabs: group.tabs.map((tab) => (tab === oldId ? id : tab)),
-        activeId: group.activeId === oldId ? id : group.activeId,
-      })),
-    );
+    setLayout(previous => renameLayoutView(previous, oldId, id));
   };
   const taskView = (taskId: string) => [...views.entries()].find(([, view]) => view.projection.getSnapshot().task?.id === taskId);
   const conversationOwnsTask = (taskId: string) => [...views.values()].some(view => view.conversation?.getSnapshot().turns.some(turn => turn.task.id === taskId));
@@ -769,6 +796,7 @@ function Workspace({
     },
   } : undefined;
   const actions: AppActions = {
+    layout: layoutPort,
     ...(recoveryHost ? { recovery: recoveryHost } : {}),
     ...(centerRuntime ? { centerRuntime } : {}),
     messageSettings: {
@@ -778,7 +806,7 @@ function Workspace({
         return { draft: view.settings, generation: recovery?.session.getSnapshot().generation ?? 0,
           context: { profile: snapshot?.snapshot?.conversation.executionProfile ?? null, capability: snapshot?.snapshot?.capabilities.messageSettings ?? null },
           editable: authorizedRef.current && (!recovery || recovery.session.authorized(recovery.namespace))
-            && !overview && document.visibilityState === "visible" && currentGroups.current.some(group => group.activeId === entry[0])
+            && !overview && document.visibilityState === "visible" && visibleGroups.current.some(group => group.activeId === entry[0])
             && snapshot?.connection === "live" };
       },
       replace: (key, expected, value) => {
@@ -884,14 +912,79 @@ function Workspace({
     try { if (recovery) await session?.recovery.flush(); onDisconnect(); }
     catch (error) { setRecoveryError(error instanceof Error ? error.message : "Local recovery has not finished. Keep this page open."); }
   };
+  useLayoutEffect(() => {
+    layoutPort.configure({
+      authorityKey: () => !session || session.signal.aborted || !activeRuntimeWorkspace.current || !authorizedRef.current || document.visibilityState !== "visible" || (recovery && !recovery.session.authorized(recovery.namespace))
+        ? null : `${session.id}:${recovery?.session.getSnapshot().generation ?? 0}`,
+      layout: () => layout,
+      panesVisible: () => !overview && document.visibilityState === "visible",
+      viewKey: route => views.get(route)?.key,
+      knowsConversation: id => conversations.getSnapshot().items.some(item => item.id === id)
+        || [...views.values()].some(view => view.conversation?.getSnapshot().snapshot?.conversation.id === id),
+      openConversation: id => select(`conversation:${id}`),
+      closeView: (key, authorization) => { const entry = viewEntry(key); if (!entry) throw Error("The original view is closed."); close(entry[0], authorization); },
+      changePane: (context, change) => {
+        const tab = activeWorkspace(layout), pane = tab.panes.find(item => item.id === context.paneId);
+        const route = pane?.tabs.find(id => views.get(id)?.key === context.viewKey);
+        if (tab.id !== context.workspaceId || !pane || !route) throw Error("The original pane has changed.");
+        if (change.kind === "split" && (pane.tabs.length < 2 || tab.panes.length >= MAX_VISIBLE_PANES)) throw Error("Split needs another chat and supports at most three visible panes.");
+        session?.closeMessageSettings();
+        setLayout(previous => updateWorkspace(previous, current => {
+          if (current.id !== context.workspaceId || !current.panes.some(item => item.id === pane.id && item.tabs.includes(route))) return current;
+          if (change.kind === "split") {
+            const id = `pane-${crypto.randomUUID()}`;
+            const panes = splitChat(current.panes.map(item => item.id === pane.id ? { ...item, activeId: route } : item), pane.id, id);
+            return { ...current, panes, activePaneId: id };
+          }
+          if (change.kind === "merge") return { ...current, panes: mergeChats(current.panes, route), activePaneId: current.panes[0]!.id };
+          return { ...current, panes: change.kind === "swap" ? reorderPane(current.panes, pane.id, change.direction) : resizePanes(current.panes, pane.id, change.share) };
+        }));
+      },
+    });
+  });
+  const storageKey = recovery ? `flow.workspace-layout.v1:${namespaceKey(recovery.namespace)}` : null;
+  const [loadedLayoutKey, setLoadedLayoutKey] = useState<string | null>(null);
+  useEffect(() => {
+    if (!session || !authorized || loadedLayoutKey === (storageKey ?? session.id)) return;
+    let restored: WorkspaceLayout | null = null;
+    try {
+      const raw = storageKey ? localStorage.getItem(storageKey) : null;
+      if (raw && raw.length <= 65536) {
+        restored = readLayout(JSON.parse(raw));
+        if (restored) {
+          const routes = layoutGroups(restored).flatMap(pane => pane.tabs);
+          const missing = routes.filter(route => !views.has(route) && (route.startsWith("draft-") || route.startsWith("conversation:"))
+            && ![...views.values()].some(view => route === `conversation:${view.conversation?.getSnapshot().snapshot?.conversation.id}`));
+          // Preflight all capacity before creating any view; hidden references never read bodies.
+          if (residentCount() + missing.length > MAX_RESIDENT_CONVERSATIONS) throw Error("Saved layout exceeds the available local view capacity.");
+          for (const route of routes) if (!ensureView(route)) throw Error("The saved layout could not open every view.");
+        }
+      }
+    } catch { restored = null; setRecoveryError("The saved workspace layout could not be read. Chat recovery records are unchanged."); }
+    routeInitialized.current = true;
+    const params = new URLSearchParams(initialRoute.current.slice(1)), conversation = params.get("conversation"), task = params.get("task");
+    const route = conversation ? `conversation:${conversation}` : task;
+    let next = restored ?? currentLayout.current;
+    if (route && (layoutGroups(next).some(pane => pane.tabs.includes(route)) || layoutGroups(next).reduce((sum, pane) => sum + pane.tabs.length, 0) < MAX_OPEN_VIEWS) && ensureView(route))
+      next = selectLayoutView(next, activeWorkspace(next).activePaneId, route);
+    setLayout(next);
+    if (initialRoute.current === "#workspace") setOverview(true);
+    else if (!route && !restored) routeActions.current.newChat();
+    setLoadedLayoutKey(storageKey ?? session.id);
+  }, [session, authorized, storageKey, loadedLayoutKey]);
+  useEffect(() => {
+    if (!authorized || !storageKey || loadedLayoutKey !== storageKey) return;
+    try { localStorage.setItem(storageKey, JSON.stringify(layout)); }
+    catch { setRecoveryError("The workspace layout could not be saved on this device."); }
+  }, [layout, authorized, storageKey, loadedLayoutKey]);
   if (!session) return <p role="status">Opening workspace…</p>;
   return (
     <PluginProvider session={session}><SteeringSurfaces workspace={session.steering} />{recovery && <RecoverySurface workspace={session.recovery} />}{recoveryError && <p role="alert">{recoveryError}</p>}
-    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>{session.hasProtectedAttachments() && !session.steering.risks() ? "Leave attachment drafts?" : "Leave unconfirmed steering receipts?"}</DialogTitle><DialogDescription>Closing or changing the displayed center does not cancel work or delete saved recovery records. A command may already be accepted. Keep this page open while a draft checkpoint is blocked; original file bytes are not saved. Restoring a saved receipt never sends it automatically.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={() => { const destination = leaving; setLeaving(null); if (destination?.kind === "view") closeNow(destination.id, true); else if (destination) void disconnectNow(); }}>Leave view and retain saved records</Button></DialogFooter></DialogContent></Dialog>
+    <Dialog open={!!leaving} onOpenChange={open => { if (!open) setLeaving(null); }}><DialogContent><DialogHeader><DialogTitle>{leaving?.kind === "workspace" ? "Close workspace tabs?" : session.hasProtectedAttachments() && !session.steering.risks() ? "Leave attachment drafts?" : "Leave unconfirmed steering receipts?"}</DialogTitle><DialogDescription>Closing or changing the displayed center does not cancel work or delete saved recovery records. A command may already be accepted. Keep this page open while a draft checkpoint is blocked; original file bytes are not saved. Restoring a saved receipt never sends it automatically.</DialogDescription></DialogHeader><DialogFooter><Button variant="outline" onClick={() => setLeaving(null)}>Keep this page</Button><Button onClick={confirmLeave}>{leaving?.kind === "workspace" ? "Close workspace and retain saved records" : "Leave view and retain saved records"}</Button></DialogFooter></DialogContent></Dialog>
     <Dialog open={retainedOpen} onOpenChange={setRetainedOpen}><DialogContent onCloseAutoFocus={event => { event.preventDefault(); const destination = retainedDestination.current; requestAnimationFrame(() => { const target = destination ? document.getElementById(`tab-${destination}`) : retainedInvoker.current; if (target?.isConnected) target.focus(); }); }}><DialogHeader><DialogTitle>Retained chats</DialogTitle><DialogDescription>{residentCount()} / {MAX_RESIDENT_CONVERSATIONS} conversation views in this connection. Close an empty chat to free a place. Drafts and receipts are kept until you resolve them.</DialogDescription></DialogHeader>
       {capacityBlocked && <p role="alert">No place for another chat. Your current tabs, route and drafts were kept.</p>}
       <ul className="max-h-64 space-y-2 overflow-y-auto">{[...views].filter(([, view]) => view.conversation).map(([id, view]) => {
-        const open = groups.some(group => group.tabs.includes(id)), reasons = protectedReasons(id, view);
+        const open = layoutGroups(layout).some(group => group.tabs.includes(id)), reasons = protectedReasons(id, view);
         return <li key={view.key}><Button variant="outline" onClick={() => { retainedDestination.current = id; select(id); setRetainedOpen(false); }}>{view.conversation?.getSnapshot().snapshot?.conversation.title ?? "New chat"}</Button><p className="text-xs">{open ? "Open" : "Closed, retained"}{reasons.length ? ` · ${reasons.join(", ")}` : " · No local material"}</p></li>;
       })}</ul><DialogFooter><Button onClick={() => setRetainedOpen(false)}>Close retained chats</Button></DialogFooter></DialogContent></Dialog>
     <div className="flow-shell">
@@ -979,7 +1072,7 @@ function Workspace({
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
-          <ConversationList catalog={conversations} selectedId={selectedId?.startsWith("conversation:") ? selectedId.slice(13) : undefined} query={query} onSelect={id => select(`conversation:${id}`)} />
+          <ConversationList catalog={conversations} selectedId={selectedId?.startsWith("conversation:") ? selectedId.slice(13) : undefined} query={query} onSelect={id => select(`conversation:${id}`)} renderActions={id => <AppSlot slot="sidebar.item.actions" context={{ kind: "conversation", conversationId: id }} />} />
           {overview && <details className="flow-legacy-tasks"><summary>Execution tasks</summary>
             {loadingList && <p role="status">Loading tasks…</p>}
             {list.error && <p role="alert">{list.error}</p>}
@@ -1015,12 +1108,15 @@ function Workspace({
             <button
               className="flow-view-action"
               disabled={
-                !focused || focused.tabs.length < 2 || groups.length > 1
+                !focused || focused.tabs.length < 2 || groups.length >= MAX_VISIBLE_PANES
               }
               onClick={() => {
                 const id = `group-${crypto.randomUUID()}`;
-                setGroups((previous) => splitChat(previous, activeGroup, id));
-                setActiveGroup(id);
+                session.closeMessageSettings();
+                setLayout(previous => updateWorkspace(previous, tab => {
+                  const panes = splitChat(tab.panes, tab.activePaneId, id);
+                  return panes === tab.panes ? tab : { ...tab, panes, activePaneId: id };
+                }));
               }}
             >
               <Columns2 size={15} />
@@ -1030,8 +1126,8 @@ function Workspace({
               <button
                 className="flow-view-action"
                 onClick={() => {
-                  setGroups((previous) => mergeChats(previous, selectedId!));
-                  setActiveGroup(groups[0]!.id);
+                  session.closeMessageSettings();
+                  setLayout(previous => updateWorkspace(previous, tab => ({ ...tab, panes: mergeChats(tab.panes, selectedId!), activePaneId: tab.panes[0]!.id })));
                 }}
               >
                 Merge tabs
@@ -1052,113 +1148,47 @@ function Workspace({
           setPanel(`detail:${referenceId}`, taskId);
           void ensureView(taskId)?.projection.loadDetail(referenceId);
         }} />}
+        {!overview && <><WorkspaceTabs layout={layout} onSelect={id => { session.closeMessageSettings(); setLayout(previous => previous.tabs.some(tab => tab.id === id) ? { ...previous, activeTabId: id } : previous); }}
+          onAdd={() => { session.closeMessageSettings(); setLayout(previous => addWorkspace(previous, `workspace-${crypto.randomUUID()}`)); }} onClose={closeWorkspace} />
+          {groups.length > 1 && <div className="flow-pane-ratios">{groups.slice(0, -1).map((pane, index) => <label key={pane.id}>
+            <span>Pane {index + 1} / {index + 2}</span><input type="range" aria-label={`Resize panes ${index + 1} and ${index + 2}`} min={15} max={85}
+              value={Math.round(100 * (pane.weight ?? 1) / ((pane.weight ?? 1) + (groups[index + 1]!.weight ?? 1)))}
+              onChange={event => { const value = Number(event.target.value) / 100; setGroups(previous => resizePanes(previous, pane.id, value)); }} /></label>)}</div>}</>}
         <div className="flow-work-area" hidden={overview}>
-          <div
-            className={`flow-chat-groups ${groups.length > 1 ? "split" : ""}`}
-          >
-            {groups.length === 0 ? (
-              <div className="flow-no-chat">
-                <Button variant="outline" onClick={newChat}>
-                  New chat
-                </Button>
-              </div>
-            ) : (
-              groups.map((group) => (
-                <div
-                  className={`flow-chat-group ${focused?.id === group.id ? "focused" : ""}`}
-                  key={group.id}
-                  onFocusCapture={() => setActiveGroup(group.id)}
-                >
-                  <div
-                    className="flow-tabs"
-                    role="tablist"
-                    aria-label={`Chat group ${group.id}`}
-                  >
-                    {group.tabs.map((id) => (
-                      <div
-                        key={views.get(id)!.key}
-                        className={`flow-tab ${group.activeId === id ? "selected" : ""}`}
-                      >
-                        <button
-                          role="tab"
-                          id={`tab-${id}`}
-                          aria-controls={`panel-${id}`}
-                          tabIndex={group.activeId === id ? 0 : -1}
-                          onKeyDown={(event) =>
-                            navigateChatTabs(
-                              event,
-                              group,
-                              id,
-                              (next) => {
-                                setActiveGroup(group.id);
-                                setGroups((previous) =>
-                                  previous.map((item) =>
-                                    item.id === group.id
-                                      ? { ...item, activeId: next }
-                                      : item,
-                                  ),
-                                );
-                              },
-                              close,
-                            )
-                          }
-                          aria-selected={group.activeId === id}
-                          onClick={() => {
-                            setActiveGroup(group.id);
-                            setGroups((previous) =>
-                              previous.map((item) =>
-                                item.id === group.id
-                                  ? { ...item, activeId: id }
-                                  : item,
-                              ),
-                            );
-                          }}
-                        >
-                          <ChatTitle view={views.get(id)!} />
-                        </button>
-                        <CloseChatButton
-                          view={views.get(id)!}
-                          onClose={() => close(id)}
-                        />
-                      </div>
-                    ))}
-                  </div>
-                  {group.tabs.map((id) => (
-                    <div
-                      role="tabpanel"
-                      id={`panel-${id}`}
-                      aria-labelledby={`tab-${id}`}
-                      className="flow-tab-body"
-                      hidden={group.activeId !== id}
-                      key={views.get(id)!.key}
-                    >
-                      <ChatPane
-                        viewId={id}
-                        visible={authorized && !overview && pageVisible && group.activeId === id}
-                        view={views.get(id)!}
-                        drafts={drafts}
-                        profiles={profiles}
-                        profileSelection={profileSelections[views.get(id)!.key] ?? defaultProfileSelection}
-                        onProfileSelection={selection => { session.closeMessageSettings(); const view = views.get(id)!; view.settings = messageSettingsDraft(view.settings.value); const key = view.key; profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
-                        onDraftChange={() => session.recovery.changed(views.get(id)!.key)}
-                        onIntent={intent => { session.closeMessageSettings(); const view = views.get(id)!; view.settings = messageSettingsDraft(view.settings.value); view.intent = intent; setGroups(previous => [...previous]); session.recovery.changed(view.key); }}
-                        onAccepted={(taskId) => accepted(id, taskId)}
-                        onActivate={() => setActiveGroup(group.id)}
-                        onInspect={taskId => { setActiveGroup(group.id); void inspect(id, taskId); }}
-                        onOpenTask={select}
-                        onOpenReference={(referenceId) => {
-                          setActiveGroup(group.id);
-                          setPanel(`detail:${referenceId}`, id);
-                          void views
-                            .get(id)!
-                            .projection.loadDetail(referenceId);
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              ))
-            )}
+          <div id="workspace-panes" role="tabpanel" aria-labelledby={`workspace-tab-${workspace.id}`}
+            className="flow-chat-groups flow-arc-panes"
+            style={{ gridTemplateColumns: groups.length ? groups.map(pane => `minmax(0, ${pane.weight ?? 1}fr)`).join(" ") : "minmax(0, 1fr)" }}>
+            {!groups.length && <div className="flow-no-chat"><Button variant="outline" onClick={newChat}>New chat</Button></div>}
+            {groups.map((pane, position) => <div key={`header-${pane.id}`}
+              style={{ gridColumn: position + 1, gridRow: 1, "--pane-stack-row": position * 2 + 1 } as CSSProperties}>
+              <PaneTabs pane={pane} position={position} total={groups.length} focused={focused?.id === pane.id}
+                renderTitle={id => <ChatTitle view={views.get(id)!} />}
+                renderClose={id => <CloseChatButton view={views.get(id)!} onClose={() => close(id)} />}
+                renderActions={id => <AppSlot slot="chat.tab.actions" context={{ kind: "pane", workspaceId: workspace.id, paneId: pane.id, viewKey: views.get(id)!.key }} />}
+                onSelect={id => { session.closeMessageSettings(); setLayout(previous => updateWorkspace(previous, tab => ({ ...tab, activePaneId: pane.id,
+                  panes: tab.panes.map(item => item.id === pane.id ? { ...item, activeId: id } : item) }))); }}
+                onClose={close} onMove={direction => { session.closeMessageSettings(); setGroups(previous => reorderPane(previous, pane.id, direction)); }} />
+            </div>)}
+            {/* A pane move changes placement only: every open composer keeps this parent and view.key. */}
+            {layoutGroups(layout).flatMap(pane => pane.tabs.map(id => ({ pane, id }))).map(({ pane, id }) => {
+              const view = views.get(id); if (!view) return null;
+              const position = groups.findIndex(item => item.id === pane.id), shown = position >= 0 && pane.activeId === id;
+              return <div role="tabpanel" id={`panel-${id}`} aria-labelledby={`tab-${id}`} className="flow-tab-body"
+                data-composer-view={view.key} data-pane-id={pane.id} hidden={!shown} key={view.key}
+                style={{ gridColumn: position + 1, gridRow: 2, "--pane-stack-row": position * 2 + 2 } as CSSProperties}
+                onFocusCapture={() => setActiveGroup(pane.id)}>
+                <ChatPane viewId={id} visible={authorized && !overview && pageVisible && shown} view={view} drafts={drafts}
+                  profiles={profiles} profileSelection={profileSelections[view.key] ?? defaultProfileSelection}
+                  onProfileSelection={selection => { session.closeMessageSettings(); view.settings = messageSettingsDraft(view.settings.value); const key = view.key;
+                    profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
+                  onDraftChange={() => session.recovery.changed(view.key)}
+                  onIntent={intent => { session.closeMessageSettings(); view.settings = messageSettingsDraft(view.settings.value); view.intent = intent;
+                    setGroups(previous => [...previous]); session.recovery.changed(view.key); }}
+                  onAccepted={taskId => accepted(id, taskId)} onActivate={() => setActiveGroup(pane.id)}
+                  onInspect={taskId => { setActiveGroup(pane.id); void inspect(id, taskId); }} onOpenTask={select}
+                  onOpenReference={referenceId => { setActiveGroup(pane.id); setPanel(`detail:${referenceId}`, id); void view.projection.loadDetail(referenceId); }} />
+              </div>;
+            })}
           </div>
           <div className="flow-panel-mount" hidden={!panelOpen} ref={panelContainer}>
             {selected && (panelOpen || panelVisited) ? (

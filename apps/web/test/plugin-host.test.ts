@@ -126,6 +126,27 @@ function definition(
 }
 
 describe("trusted PluginHost lifecycle and authority", () => {
+  it("validates real Arc slot contexts and refuses a bridge redirected away from its original pane", async () => {
+    expect(() => validateSlot("chat.tab.actions", { kind: "pane", workspaceId: "workspace", paneId: "pane", viewKey: "view" })).not.toThrow();
+    expect(() => validateSlot("chat.tab.actions", { kind: "task", taskId: "A" })).toThrow();
+    expect(() => validateContext({ kind: "pane", workspaceId: "workspace", paneId: "pane", viewKey: "view", taskId: "A" })).toThrow();
+    const s = setup(); s.port.captureLayoutInvocation = () => ({ signal: new AbortController().signal, check() {} });
+    s.host.register(definition(context => context.command("test.plugin.open", { parse: args => args,
+      run: (_, command) => command.execute("flow.layout.change", { paneId: "other", change: { kind: "resize", share: .5 } }),
+    }), { capabilities: ["ui.layout"], contributions: [], commands: [{ id: "test.plugin.open", title: "Resize", capability: "ui.layout", contexts: ["pane"] }] }));
+    expect((await s.host.execute("test.plugin.open", undefined, { kind: "pane", workspaceId: "workspace", paneId: "pane", viewKey: "view" })).ok).toBe(false);
+    expect(s.calls).toEqual([]); await s.host.dispose();
+  });
+  it("does not revive a pending Arc command when the plugin is disabled and activated again", async () => {
+    const s = setup(), entered = deferred<void>(), gate = deferred<void>();
+    s.port.captureLayoutInvocation = () => ({ signal: new AbortController().signal, check() {} });
+    s.host.register(definition(context => context.command("test.plugin.open", { parse: () => undefined, run: async (_, command) => {
+      entered.resolve(); await gate.promise; await command.execute("flow.conversation.open", { conversationId: "B" });
+    } }), { contributions: [], commands: [{ id: "test.plugin.open", title: "Open", capability: "ui.navigate", contexts: ["conversation"] }] }));
+    const old = s.host.execute("test.plugin.open", undefined, { kind: "conversation", conversationId: "B" }); await entered.promise;
+    await s.host.deactivate("test.plugin"); await s.host.activate("test.plugin"); gate.resolve();
+    expect((await old).ok).toBe(false); expect(s.calls).toEqual([]); await s.host.dispose();
+  });
   it("allows the declared composer context panel only in a composer and rechecks knowledge authority", async () => {
     const s = setup(); const declaration = manifest({ capabilities: ["knowledge.read"], activationEvents: ["view:chat.composer.context"], commands: [], contributions: [{ kind: "panel", id: "test.plugin.knowledge-panel", slot: "chat.composer.context", title: "Knowledge", capability: "knowledge.read" }] });
     s.host.register({ manifest: declaration, load: async () => ({ activate(context) { context.contribute("test.plugin.knowledge-panel", () => null); } }) });
