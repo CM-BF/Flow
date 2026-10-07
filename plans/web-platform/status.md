@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:48:54.583073+00:00；Steer实际失败但自有资源全清并已归还Mika，Quick已释放，Release只读准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:03:06.799593+00:00；Steer第二次失败并清理归还，不再自动复跑；Release原owner新四范围领取已提交 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 快速消息设置组件已入主线，真实消息入口尚未接线。完整草稿的选定恢复旅程已有通过证据；看板组合、时间正文与窄屏补证已获限定独审，旧失败保留。 |
-| 下一可用交付 | 看板固定成果待原Lead接主线；Quick组件已完成主线收口，真实App接线待新scope。Steer先定位草稿持久化前提失败；三份保留页面兼容只读准备等待最终后台产物。 |
+| 下一可用交付 | 看板固定成果待原Lead接主线；Quick组件已收口，真实App接线待新scope。Steer依据新只读观测定位草稿持久化缺口；Release先实现隔离兼容工具，真实验证等待最终后台产物。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Steer09:47:01.712298Z实际失败，草稿IDB前提超时；自有PG/Chrome/临时凭据已清理并交回Mika。本组无运行或预约，原owner只做局部诊断；Quick已释放，Release仅只读。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Steer第二次失败后于10:01:10.297001Z完整归还PG/Chrome/临时凭据；余量低于最小启动额度，不开第三次。本组无运行或预约，Release仅新合法四范围源码实现。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

@@ -1,0 +1,95 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "at": "2026-10-07T09:57:50.749697+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "sourceTarget": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
+  "metadataHead": "f0a97719f470e7536c705cc3fac2453b634c5978",
+  "remoteHead": "f0a97719f470e7536c705cc3fac2453b634c5978",
+  "clean": true,
+  "originalPacket": {
+    "path": "/private/tmp/recovery-steering-source-a9a_3bcn/packet.json",
+    "sha256": "f0c9e3ed32895a0273caeb051c4be48a2af97447b7f315ace69784554a09f0b9",
+    "bytes": 7480
+  },
+  "previousBinding": {
+    "path": "/private/tmp/recovery-steering-typed-35_vapn9/binding-delta.json",
+    "sha256": "16a377bf68e3defff3e331fcf041875c583540f75a68f90dbe3995d8afedd6fe",
+    "bytes": 2422
+  },
+  "sourceManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/steering-diagnostic-checkpoint.json",
+    "sha256": "e6d4200e65d66ea7620b7f10354ea1956d88ba4b5accb97452d8c77c2d649ae0",
+    "bytes": 1887
+  },
+  "unchangedSourceCount": 18,
+  "changedSourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "blob": "75f0cac6b3a1005c23a5a507a8a0b6bffa10564c",
+      "bytes": 101545,
+      "sha256": "d94f1d71a842df27dd31a5be8e5a7ff7e762142b89388a6e9f2bceb3c530fb55",
+      "previousSha256": "507d6fbbb0d1af52ac843591bb7940f20ca778814d7e17fed8ad9de95ee56fff"
+    }
+  ],
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/steering-diagnostic-root-review.json",
+    "sha256": "be4aa94d2cd79573314630c7e68bdd27da48eeadddcae98aacf712ee1585f734",
+    "bytes": 6544
+  },
+  "firstFailedActual": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/steering-first-manifest.json",
+    "sha256": "110beb807facc01012e87546cb06832641f2229594888513d5d2903ecc44b8ea",
+    "bytes": 6531
+  },
+  "phase": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/steering-phase.json",
+    "sha256": "b656ca824f6b35ed33a87edfa0c482c368b2a7d1458c86feb79ef572258bdcee",
+    "bytes": 5005
+  },
+  "journey": "steering-recovery",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "remainingMs": 42668,
+  "maximumWorkMs": 27668,
+  "cleanupReserveMs": 15000,
+  "parentMinimumAttemptMs": 30000,
+  "oldCreditTransferred": false,
+  "entry": "apps/web/test/conversation-recovery.browser.ts",
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "nextActualRequirements": [
+    "Manager concrete unique sharedPG+Chrome handoff and fresh combination/resource.",
+    "Recheck exact6ffv4/exact21, fixed HEAD/source19/read-only runtime/nativeChrome pins and old raw unchanged.",
+    "Fresh unique gate with current phase17332/42668; original consumed run cannot reopen.",
+    "New private0600 adminenv only from authorized fixedtest source; retain exactidentity deletion receipt."
+  ],
+  "currentNonRuntimeChecks": [
+    "19Gitsource/current bytes match:18baseline+1diagnosticpin",
+    "11first raw +10outer archives original byte pairs verified",
+    "git diff --check0",
+    "normalpush then actual ls-remote equals cleanHEAD"
+  ],
+  "unchangedLimits": {
+    "phaseRuntimeMs": 60000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "databases": 1,
+    "chrome": 1,
+    "syntheticProtocolActors": 1,
+    "runnerProcesses": 0,
+    "providerCalls": 0,
+    "leaseMs": 60000
+  },
+  "fullFeatureReview": "IN_PROGRESS_NOT_APPROVED",
+  "diagnosticTypes": "NOT_RUN; prior noEmit binds54952"
+}

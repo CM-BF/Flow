@@ -1,16 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T09:45:52.557902+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T10:03:06.799593+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-SVC06 host-r1已于09:38:00.412Z实际失败并清理归还，见[唯一新交接](svc06-return-steer-handoff-20261007/current.json)；旧180+30 offer不再构成hold。Steer源码边界与相关类型检查获审，原panels09:46:44.379716–09:47:01.712298Z实际Steer段失败，首草稿IDB前提超时；自有DB/进程/流/scratch/env全部清理，已即时归还Mika，后续无预约。仅cookieRead通过，失败不冒feature通过，root结果审待完成。Quick原owner已完成组件主线metadata收口及精确释放，现转Release只读准备。
+SVC06此前已归还；Steer第二次同段实际仍FAIL，新只读观察未找到Steer draft，0SteerPOST。自有资源于10:01:10.297001Z完整清理并归还Mika，[本次计费与交接](steering-diagnostic-release-preparation-20261007/current.json)保留两次失败及剩25247ms低于启动下限，不自动第三次。Release原owner已新38b9v1精确四范围领取，仅源码实现；最终backendtuple与运行仍待输入。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
 快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已b90f封存并在09:45:37.210Z完成[839e v2精确释放](svc06-return-steer-handoff-20261007/quick-release-receipt.json)，六scope停写；通用proof七个既存wrapper UNKNOWN保持，四源main接收为独立事实；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
 
-DPERF固定bc612组合已[独审接受](svc06-window-quick-closeout-20261007/dperf-final-composite-review.json)，metadata9f54已封存并全十一scope停写；[唯一主线接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json)已送Mika转原Lead，尚不冒Original最终收件或main已接。DPERF本次有限段已实际全部清理归还，结果范围见唯一status；固定权限、资源和清理边界见[集中源码审查](main-intake-handoff-checkpoint-20261007/dperf-followup-source-review.json)，不会把准备或图片数量自动升级为视觉通过。Recovery原owner仅Steer source准备，第二中心未选，不预占PG；其已接受的selected结果不等整体feature完成或原claim释放。
+DPERF固定bc612组合已[独审接受](svc06-window-quick-closeout-20261007/dperf-final-composite-review.json)，metadata9f54已封存并全十一scope停写；[唯一主线接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json)已送Mika，随后OriginalLead直接向root确认实际收到并正在受控接收；仍不冒main完成或部署。DPERF本次有限段已实际全部清理归还，结果范围见唯一status；固定权限、资源和清理边界见[集中源码审查](main-intake-handoff-checkpoint-20261007/dperf-followup-source-review.json)，不会把准备或图片数量自动升级为视觉通过。Recovery原owner仅Steer source准备，第二中心未选，不预占PG；其已接受的selected结果不等整体feature完成或原claim释放。
 
 ## 历史安全点：2026-10-07 09:17 消费者复验与归还
 
@@ -89,18 +89,19 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 
 [历史21:01:31 D04 观察](web-source-dispatch-take-observation-2101.json)当时核对四个原 claim active、无 overlap；当前 Settings 已按下表释放。
 [21:05:22 同范围补派观察](web-p2-source-dispatch-take-observation-2105.json)保持原 owner 与范围，无 overlap。
-以下是来源指针，不另维护 TODO、检查或 review 状态；本批[选定账本核对](main-intake-handoff-checkpoint-20261007/selected-claims.json)确认manager v3/6、DPERF v4/11、ACCESS v2/3、Quick v1/6。新写入和运行前仍须 fresh 核验。
+以下是来源指针，不另维护 TODO、检查或 review 状态；此前[选定账本核对](main-intake-handoff-checkpoint-20261007/selected-claims.json)是历史观察；随后Quick v2实际释放、Release新38b9v1四范围已COMMITTED，见下方原子receipt。Manager v3/6、DPERF v4/11、ACCESS v2/3未获新变更回执。新写入和运行前仍须 fresh 核验。
 
 | 工作 | 唯一 owner / worktree / branch | 原 claim 与唯一 status |
 | --- | --- | --- |
 | Web 管理 | d01_owner；web-platform-management；codex/web-platform-management | 632a7149 v3 / 6 scopes；[status](../../../plans/web-platform/status.md) |
 | 草稿恢复 | workspace_panels_owner；web-conversation-recovery；codex/web-conversation-recovery | 6ff988b2 v4 / 21 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
 | 逐消息设置控件 | w01_owner；web-message-settings；codex/web-message-settings | a5b0c231 v2 RELEASED / 原8 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
-| 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v1 COMMITTED / 6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [原子receipt](message-settings-quick-controls-provision/take-receipt.json) |
+| 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v2 RELEASED / 原6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [释放receipt](svc06-return-steer-handoff-20261007/quick-release-receipt.json) |
 | 本机打开Flow/登录凭据 | workspace_panels_owner；dashboard-local-access；codex/dashboard-local-access | 57735ff7 v2 / 3 scopes（README与own plan/evidence；七产品已移出）；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md) · [已登记来源请求](dashboard-local-access-intake/registration-request.json) |
 | 任务开始/完成/历时展示 | w01_owner；dashboard-task-timing；codex/dashboard-task-timing | 9a677471 v2 RELEASED / 原6 scopes；[已部署185/完成](dashboard-task-timing-provision/current-intake.json) |
 | 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v4 / 11 scopes（组合接线已重新领取，精确literal见账本）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
 | D04自有测试worktree生命周期 | d01_owner；dashboard-coordination；codex/dashboard-coordination | f61d41f5 v1 / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/plans/d04-coordination/status.md) · [交接](d04-owned-worktree-lifecycle-intake/handoff.json) |
+| 保留真实App兼容后继 | w01_owner；web-release-compatibility；codex/web-release-compatibility | 38b9a7ff v1 ACTIVE / 4 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) · [新take receipt](steering-diagnostic-release-preparation-20261007/release-successor-take-receipt.json) |
 | 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v3 RELEASED / 原5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
 | 旧 ACTIVITY 预览生命周期记录 | workspace_panels_owner；web-conversation-activity；codex/web-conversation-activity | 707b1c6c v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md) · [释放receipt](ops-two-fixture-retirement/activity-retirement-release-receipt.json) |
 | 旧 CHAT 预览生命周期记录 | workspace_panels_owner；web-conversations；codex/web-conversations | da159c3d v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md) · [释放receipt](ops-two-fixture-retirement/chat-retirement-release-receipt.json) |
@@ -192,3 +193,5 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 ## 本次Release后继限制
 
 原W01在Quick实际释放后，仅做三retained真实App的只读/TMP兼容准备；[三manifest与30资产完整性](svc06-return-steer-handoff-20261007/release-three-app-integrity.json)不等真实浏览器兼容。OriginalLead的SVC06 r1诊断可能生成新backend/sourceartifact tuple，旧b2b/c2c构建历史保留，三App实际重段必须等已审最终tuple，不重build、不将动态origin手填61228、不接个人服务。当前不复用旧Release领取或新建writer。
+
+原DPERF受控部署继续原D05 operator。[已有4320发布入口](steering-diagnostic-release-preparation-20261007/dashboard-deployment-entry-handoff.json)只提供09:03:39最后观察96517、原Node24精确argv/cwd和非secret绑定receipt；不是fresh进程身份或经理启停授权，原operator须现场核验再受控替换，保ACCESS opt-in/个人服务及用户tab。

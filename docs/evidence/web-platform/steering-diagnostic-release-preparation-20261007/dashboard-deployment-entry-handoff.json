@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T10:05:22.334630+00:00",
+  "scope": "Read-onlyexistingcanonicalreceipts;0service/processprobe/0stopstart/0token-or-envvalue-read",
+  "originalOperator": "ExecutionLead-controlled D05 dashboard operator; no new Web operator",
+  "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md",
+  "lastObservedService": {
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/lazy-meter-live.json",
+    "at": "2026-10-07T09:03:11.757512Z",
+    "observedAt": "2026-10-07T09:03:39.634234Z",
+    "source": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+    "oldPid": 80476,
+    "oldAbsent": true,
+    "newPid": 96517,
+    "log": "/tmp/flow-dashboard-193-20261007-0903.log",
+    "sources": 193,
+    "isFreshIdentity": false
+  },
+  "startupReceipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/svc09-live-before.json",
+    "at": "2026-10-07T08:20:19.000475Z",
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/tmp/flow-coordination.env",
+      "apps/execution-dashboard/src/server.mjs",
+      "--local-installation"
+    ],
+    "bindingReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/svc09-live-started.json",
+    "envValueRead": false,
+    "boundary": "Explicitlocaloptin+fixednonsecretinstallation binding retained; no credentialendpoint orpersonalservice/taboperation."
+  },
+  "requiredOperatorAction": "Originaloperator freshactualPID/command/cwd/ownership before controlled4320replacement; oldreceiptPIDalone isnot killauthorization. PreserveACCESS privacy and currentregistry/TIMING whenloadingnewDPERF. No manager restart.",
+  "delivery": {
+    "mikaToolSend": "success",
+    "originalRequestReceivedViaRoot": true,
+    "finalOriginalReply": "pending"
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/lazy-meter-live.json",
+      "bytes": 1554,
+      "sha256": "488a9002f4030e659a154949a90b1967a4531743e72e61fc8a45c755d0c35556"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/svc09-live-before.json",
+      "bytes": 452,
+      "sha256": "f750b74d80f92a0f0605b7f8881e3f7fd10e535385bfed814ecf78337aa318c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/svc09-live-started.json",
+      "bytes": 454,
+      "sha256": "77fb91c9defeebbbf14089466b5b6c9c79608df9a746f49b4d21d7053134a01d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md",
+      "bytes": 36228,
+      "sha256": "2331d87cb846b7e8c7fbd098909c6d14f4a625006f18450a6d45c38a671baa30"
+    }
+  ]
+}
