@@ -625,3 +625,10 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 ### O16 认证环境的单因素候选（2026-10-07，仅研究）
 
 [Hermes仓库问题29015](https://github.com/NousResearch/hermes-agent/issues/29015)报告macOS Claude2.1.145在私有HOME下出现false/none/firstParty，普通HOME有登录；这是旧版本用户复现，不能作为本机2.1.290根因。本次已实际打开来源，未运行。现O16“公开接口不区分下层存储结果”仍有效，但不意味着所有环境因素已穷尽。原owner在发布收口后可设计同一固定binary、其余配置与Keychain服务命名不变、仅HOME因素对照的零模型公开四字段观察；先明确正常身份读取和可能初始化写入边界，再在合法范围决定是否执行。不得Keychain/config symlink、读取或复制凭据、换账户、登录、第四次SDK query；不把参考workaround当本项目授权。原R1/R2/R3失败、累计3、未知费用和KEEP全部保留；此候选NOT_RUN、不新建auth任务。
+
+
+### REQ-18 / R05：配置材料快照的长期保留（2026-10-07，待测）
+
+承接既有runner资源生命周期验收。GO只读输入绑定main `7524a7fa6768ace7e284fc80d7cc25c1407ec2a9`：`apps/runner/src/claude.ts:55,216–235`在每次attempt（包括续聊）复制配置的materialFiles到新的materials目录；`runtime.ts:218`隔离attempt目录，所核结束路径未见退役，复制在adapter的try/finally之前。单次32×1MiB不等于跨attempt总量有界。这是源码候选，非已测磁盘原因、全部外部回收不存在或token浪费结论。
+
+后继用户结果是长期材料保留/回收有明确owner与界限，重复及失败不持续堆积；沿原Claude adapter/runner生命周期选择最小接口，不新增大task或泛化缓存。排在当前个人发布、已ready聊天之后，尚未领取/NOT_RUN、不增加运行预算。先以零模型小例核相同材料两次续聊、复制中途失败、已确认结束与unknown保留的文件数/实际bytes，核旧native引用仍可用。已确认且符合保留策略才退役，不能在finally统一删除、不动用户或未知材料；单次、并发与历史累计口径分别记录。

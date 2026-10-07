@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:11:11.398534+00:00 / main/origin e0295747；三保留App真实兼容已独审并接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:01:58.555725+00:00 / main/origin 7524a7fa固定；R2部分更新已归还，后台维护尚未开始 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin e0295747已接三个保留App→固定后台7d1/source6c的真实兼容与验证入口；个人仍af51/v18、Web d629/v3/c7b，现场未更新。 |
+| 已集成main状态 / HEAD | main/origin 7524a7fa固定；个人后台仍af51/v18未切换；Web资产d629/v3不变，宿主已7d1。R2已完成产物迁入、Web宿主替换、三报告导入及策略写入，窗口12:35:37Z归还。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 三个保留网页已验证可与新版后台协同，兼容证据已进入主线；个人更新清单独审只剩一处迁入入口待补。 |
-| 下一可用交付 | 补齐固定产物迁入入口并复审后，在受控维护窗口更新个人后台，保留现有页面、会话与任务。 |
-| 当前阻塞 | ACTIVE: 个人更新需补齐可调用的产物迁入入口；完成后与既有运行窗口协调。规划认证原因仍未知，远程验证和工程授写保持原用户待决。 |
+| 当前产出 | 新版后台产物、网页宿主和三份兼容记录已准备到个人安装；原后台仍在运行。剩余切换入口已通过独立审查，已协调唯一操作者接续更新。 |
+| 下一可用交付 | 完成受控个人后台更新和恢复接单核验，保留现有页面、会话与任务。 |
+| 当前阻塞 | ACTIVE: 个人后台切换已取得独占窗口，等待操作者fresh核验后执行剩余步骤；已完成阶段不重放。规划认证原因仍未知，远程验证和工程授写保持原用户待决。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -531,3 +531,9 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 此次兼容状态引用Web唯一WPF-RELEASE01的c3 actual（source9658，owner记录11:55:28，三App各四项及独立Cookie通过，清理完成）；结果独审仍待收口。没有新个人操作；main183aba3a仅接已审插件版本回滚测试/证据。
 
 2026-10-07T12:11:11.398534+00:00：三页面兼容等待以Web唯一实际独审11:59:06.606725Z解除；[主线接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/retained-app-7d1-intake/receipt.json)绑定e0295747与一次1321ms定向类型检查，未重跑PG/Chrome。SVC个人清单e4cd独审仅迁入ports执行闭包待补，由原assignment_review在原双metadata范围处理；准备不预占共享窗口，Mika已归还removal、upstream为原下一段，用户更新在输入齐后优先协调。0个人变更。
+
+2026-10-07T12:23:06.297978+00:00：固定个人更新准备获native唯一窄审批准，保留两项原P2与9+1用例；分配一次[7d1更新窗口](../../docs/quality/local-validation-svc06-personal-window-20261007.json)给原assignment_review，实际尚须fresh门禁。此前三App与两个插件实际片均已接收；当前仅个人受控窗口排他，独立源码/局部段可并行。从drain起15min、512MiB新增/2MiBraw、0operator query；未知停止、不盲重放，源码与实际部署仍分开。
+
+2026-10-07T12:27:52.330992+00:00：SVC06前置调用r1漏输出参数，在snapshot/SQL前51ms退出，0个人读写/迁入；原失败35e22b6b经native限定APPROVED_PRECONDITION_FAILURE_FIDELITY，不改历史。修正为原facts入口的独占输出路径，新有限段沿[同一窗口记录](../../docs/quality/local-validation-svc06-personal-window-20261007.json)继续原一次迁入/发布授权；原5c29产品和root7524固定，非重放已消费个人操作。完整结果由原owner归档。
+
+2026-10-07T12:37:26.141032+00:00：SVC06新段12:35:37.013013Z归还；已实际迁入7d1/替换独立Web宿主/导入3报告及策略，旧后台与d629/v3仍保持。随后旧列历史摘要调用在模块静态链接时失败（62ms/0SQL）；尚未bootstrap/drain/refresh/resume。唯一owner封原[分阶段结果](../../../backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json)，只修观察调用并做0PG加载检查；无heavy预占，后续只接未消费维护阶段，不重放已完成副作用。
