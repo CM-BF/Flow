@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T12:09:16.843Z",
+  "scope": "Only two manager-owned status files; no aggregate or product checks",
+  "results": [
+    {
+      "path": "plans/web-platform/status.md",
+      "id": "WPF-001",
+      "errors": [],
+      "humanMissing": [],
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "本持续管理任务首次实际开工无独立时间证据，不以建树/领取/历史更新时间倒填；owner明确本任务尚未整体完成。字段按Lead固定79da合同。"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ],
+        "waiting": ""
+      },
+      "todos": 36
+    },
+    {
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "id": "WPF-MATURE-06",
+      "errors": [],
+      "humanMissing": [],
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ],
+        "waiting": ""
+      },
+      "todos": 6
+    }
+  ]
+}

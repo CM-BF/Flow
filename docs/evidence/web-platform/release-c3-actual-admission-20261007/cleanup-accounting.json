@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-07T11:53:59.732591+00:00",
+  "state": "PASS_PENDING_INDEPENDENT_REVIEW",
+  "actualOuterExit": 0,
+  "outerElapsedMs": 23494.6680069,
+  "lateTerminalElapsedMs": 23419.321166933514,
+  "parentElapsedMs": 23418.656458961777,
+  "chargeMs": 23495,
+  "phaseMs": 180000,
+  "unusedMs": 156505,
+  "phaseState": "CLOSED_ONE_ATTEMPT",
+  "oldC2": "FAILED410/179590unused CLOSED no transfer",
+  "terminalUniqueMatch": true,
+  "terminalHashesMatch": true,
+  "outerBothEOF": true,
+  "outerBytes": 478,
+  "streams": {
+    "worker.stdout": {
+      "received": 71,
+      "kept": 71,
+      "drop": 0,
+      "eof": true
+    },
+    "worker.stderr": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stdout": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stderr": {
+      "received": 12405,
+      "kept": 12405,
+      "drop": 0,
+      "eof": true
+    }
+  },
+  "workerExit": 0,
+  "chromeExit": {
+    "code": 0,
+    "signal": null,
+    "at": "2026-10-07T11:53:36.801051+00:00"
+  },
+  "chromeCloseObserved": true,
+  "ownedIdentities": [
+    {
+      "kind": "PID",
+      "id": 66659,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 66659,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 66920,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 66920,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 73869,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 73869,
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "scratchCleanup": {
+    "state": "REMOVED_OWNED",
+    "removed": true
+  },
+  "adminCleanup": {
+    "path": "/private/tmp/rel01-c3-actual-yakasi5w/admin-input",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124107769
+    },
+    "exactDeleted": true,
+    "absent": true
+  },
+  "fixtureCleanup": {
+    "databaseName": "flow_release_2cd2f2afaa7e46a19575c8cef72f754e",
+    "marker": "98b23df8-1781-4adc-85e6-ccd9f69a901e",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "compatibilityIds": [
+    "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+    "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+    "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+  ],
+  "reports": 3,
+  "apps": 3,
+  "rawFiles": 46,
+  "rawBytes": 409095
+}

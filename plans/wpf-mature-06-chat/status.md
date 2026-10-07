@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:36:55.539Z；Recovery原03/05已main c130，lateLogout中心原后继保留；原owner metadata收口/交权 |
+| 最近更新 | 2026-10-07T11:53:30.205Z；Recovery原01–06有界工程完成、已main并6ff v6释放，整个成熟度目标仍沿各原子片与实际体验推进 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。 |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | Recovery固定Web实现与原03/05工程矩阵已组合独审接受并按19源delta进入c130主线；历史失败与受控/实际边界原样保留，不继承为整个成熟度任务验收。 |
-| 下一可用交付 | Recovery原owner已bc25收口，6ff v5仅两metadata/19生产test已原子交出，新writer须fresh take；06保lateLogout响应清新cookie中心原后继。Quick真实App后继按合法App/session交权继续，不等新provider或重复通用重连。 |
+| 当前产出 | Recovery固定Web实现/原03–05工程矩阵与06共享合同main交接已完成；唯一owner287947保历史失败和实际/受控范围，不继承为整个成熟度任务通过。 |
+| 下一可用交付 | Recovery原工程已交付并释放；真实聊天设置按原MATURE02 TODO11独立18literal请求固定源供给，再fresh take。LAZY/工具正文/实际provider等既有后继保持各唯一owner与范围。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -33,7 +33,7 @@
 | WPF-MATURE-06-01 | in-progress | Web co-lead | 逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。 |
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
 | WPF-MATURE-06-03 | in-progress | Web co-lead | 成功回复默认入口收敛，error/unknown/decision常显；390须区分侧栏开/关场景，自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。新增[累计活动缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)仅文档限定批准/产品未实施未测量。  U18恢复列表可读性按[既有计划](plan.md)待后继；不改原full7范围。 |
-| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels RECOVERY01已新21scope COMMITTED并正式派工；个人服务不动/0provider，完整验收见plan。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E；该准备时点尚未第五跑为历史，后续实际以owner唯一status为准。 |
+| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。原中心与Recovery的历史取权见原件；Recovery原01–06工程已[main完成并释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，实际能力与边界沿[唯一owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)，不据此宣称整个大task通过。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E；该准备时点尚未第五跑为历史，后续实际以owner唯一status为准。 |
 | WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿；[GO官方adapter候选](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)与[root stop/cancel研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)仅只读后继，明确停止等待final/取消丢弃/Flow lease；无mic/自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |
 
@@ -47,7 +47,9 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 调度以[GO经root原指令](../../docs/evidence/web-platform/connection-recovery-priority.md)为准。ATTACHI02已main cde并旧scope释放；恢复实现从正式组合84005独立新树开始，Arc18候选未领取。T3固定9bd1/MIT只借鉴职责与epoch方法，不引入外部实现。
 
-RECOVERY01直接子task由workspace_panels_owner唯一实施；新树 `web-conversation-recovery / codex/web-conversation-recovery`，**6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v1** fresh21 scope COMMITTED13:46:08.213Z，[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json) / [来源资源及派工审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。首canonical dcaf6356已到，实际parser0/6TODO/人类完整，[SOURCE_READY](../../docs/evidence/web-platform/recovery01-source-ready.json)为历史首入口；后续d679/Lead14:51:18正式登记已闭合。当前实际源码/领取以owner status与v4原21为准，没有另造手填子任务进度。
+## Recovery 历史实施入口（仅保来源，不用于当前派工）
+
+RECOVERY01直接子task由workspace_panels_owner唯一实施；新树 `web-conversation-recovery / codex/web-conversation-recovery`，**6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v1** fresh21 scope COMMITTED13:46:08.213Z，[回执](../../docs/evidence/web-platform/recovery01-take-receipt.json) / [来源资源及派工审计](../../docs/evidence/web-platform/recovery01-dispatch-audit.json)。首canonical dcaf6356已到，实际parser0/6TODO/人类完整，[SOURCE_READY](../../docs/evidence/web-platform/recovery01-source-ready.json)为历史首入口；后续d679/Lead14:51:18正式登记已闭合。该首take与后来v4/21均历史；当前领取已v6 RELEASED，完成内容以owner287947唯一status与上述释放回执为准。
 
 F01 clientd6d与production9406独审已闭合，domain582f及13源正式main84005且hash一致；本批Lead实际组合selected1pass/2unselected和root/Webtypes0，不是13tests、未重跑领域全量。factory会话仍显式opt-in，Node jar/loopback不替代本片浏览器cookie→read→SSE→reload；个人入口未变。
 

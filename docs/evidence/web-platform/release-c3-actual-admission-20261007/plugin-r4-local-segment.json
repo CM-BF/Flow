@@ -1,0 +1,40 @@
+{
+  "authorizedAt": "2026-10-07T12:07:40.403Z",
+  "state": "OWNER_FRESH_NOT_YET_ACTUAL",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "claim": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1 exact7",
+  "preparedHead": "61a7ac957a683f714b446d19aa090e32aafbe8be",
+  "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "rootSourceReview": "root-plugin-direct-r4-source-review.json",
+  "parentSha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3",
+  "budget": {
+    "totalMs": 20000,
+    "cleanupMs": 5000,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "minimumFreshBytes": 6199705600,
+    "nodeProcesses": 1,
+    "workerThreads": 1,
+    "esbuild": "necessary same-owned-group only"
+  },
+  "selection": "15 exact direct names; strict not repeated",
+  "networkPGChromeProvider": 0,
+  "pairedWith": "UPSTREAM sole PG NEXT, this9MiB included in34MiB potentiallocal envelope; fresh higher actual sum wins",
+  "oldPhase": {
+    "chargedMs": 30082,
+    "limitMs": 30000,
+    "state": "CLOSED_FAILED",
+    "creditTransferMs": 0
+  },
+  "freshOwnerRequired": [
+    "claim/HEAD/clean/pins/manifest",
+    "positive effectiveRaw pre-spawn",
+    "owned identity/newoutput",
+    "complete current resources",
+    "actual outer exit + unique terminal + EOF + exactcleanup"
+  ],
+  "independentActualReview": "NOT_RUN"
+}

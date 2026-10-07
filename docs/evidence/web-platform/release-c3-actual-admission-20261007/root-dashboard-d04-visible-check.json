@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T12:03:04.855728+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "kind": "existing live dashboard read-only observation, not product test rerun",
+  "url": "http://127.0.0.1:4320/",
+  "apiObservation": "12:01:28Z summary and assignments",
+  "apiFacts": {
+    "D04Priority": 4,
+    "D04SourceCurrent": true,
+    "D04HumanMissing": [],
+    "D04Claim": "f61d41f5-644a-4013-bd30-9ea298b9027d v1 / 5",
+    "ReleaseClaim": "38b9a7ff-c9be-4b56-af50-e076afb603bc v1 / 4",
+    "RemovalClaim": "04e46691-f4fd-46cc-808c-59c391dfd015 v1 / 7",
+    "threeClaimSourceMatches": true,
+    "unregisteredAssignments": 0
+  },
+  "visiblePageSync": "2026-10-07T12:02:10Z",
+  "visibleFacts": {
+    "activeFirstThree": [
+      "ENG-001",
+      "TUI-001",
+      "WPF-001"
+    ],
+    "D04NoLongerFirstThree": true,
+    "RemovalBlocker": "dedicated database observed one connection and not dropped; owned TMP retained; requires controlled resource check",
+    "RemovalClaim": "claimed",
+    "historicalFocusedPluginCard": "Explicitly states no longer in current unregistered list, keeps old focused observation only; not current duplicate claim."
+  },
+  "actions": "Read existing tab DOM only and preserve tab; no reload, no new Chrome, no product navigation/login, no credentials read, no mutations or fixture runtime.",
+  "limitations": "Current leaf declarations and review/main intake remain separately authoritative. This verifies metadata visibility; does not rerun D04 PG/CLI/page behavioral acceptance or attest every task is current."
+}

@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner仅6ff v5两metadata自然收口，19源码已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
+**Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner287947已完成原01–06，6ff v6两metadata已[正式释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，19源码此前已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:49:53.257Z；Release c2失败/完整归还获独审，c3语法local47ms通过待一次差量审；Recovery原06合同满足待原owner记录收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:09:16.788Z；Recovery原工程已main/释放；Release三App实际已独审；Plugin定向检查已归还，结果独审待收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 看板摘要/详情与快速设置组件已入主线；Recovery固定Web实现和原03/05矩阵已组合独审接受。插件类型修后通过、direct原JSON15/15，但父FAIL和82毫秒超额真实保留；App后继与主线/部署另计。 |
-| 下一可用交付 | Release c3同限制语法修正与47ms极小local通过，待固定差量审，未发下一兼容窗；panels先Recovery两metadata完成，再原TODO11独立18literal供给/take，尚无新写权。插件HOST/ACK已main，UI采用待原owner安全点。 |
+| 当前产出 | Recovery原Web工程已入主线并完成交接；三份保留App与固定后台的实际兼容验证已独审通过。插件15项定向检查实际通过并清理归还，旧失败保留，结果独审待收。 |
+| 下一可用交付 | Release c3实际原件/3兼容报告已root独审批准，c06fa clean并已提交canonical精确主线接收入口，无后继运行；原TODO11独立18literal源供给精确请求待Original亲供/授权再fresh take。插件HOST/ACK已main，UI采用待原owner安全点。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Release c2已11:44:37.704120Z exact归还，0Chrome/fixture未入、父UNKNOWN清理字段原样保留；当前无NEXT，不自动重试。旧KEEP/未知allocated不置零。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：REMOVAL补清理12:02:47.282218实际归还，原失败与其他KEEP保留；下一X01-UPSTREAM仅fresh交接，未报actual。Web当前0PG/Chrome/local，Release固定实际已独审、等待原Lead接收。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

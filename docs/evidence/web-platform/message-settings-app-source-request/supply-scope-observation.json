@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-07T11:49:14.412Z",
+  "source": "/private/tmp/recovery-final-close-ledger-20261007.json",
+  "state": "available",
+  "scope": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "conflicts": []
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "conflicts": []
+    },
+    {
+      "path": "plans/wpf-message-settings-app",
+      "conflicts": []
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app",
+      "conflicts": []
+    }
+  ],
+  "notAuthorization": true
+}

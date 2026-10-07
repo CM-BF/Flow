@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T12:00:38.467Z",
+  "state": "READY_FOR_ORIGINAL_CONTROLLED_INTAKE_NOT_MAIN_OR_DEPLOYED",
+  "owner": "w01_owner",
+  "task": "WPF-RELEASE01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+  "branch": "codex/web-release-compatibility",
+  "source": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "sealedHead": "c06fa79c931998eb03a9d04d441681767fd796bf",
+  "review": "root-c3-actual-compatibility-review.json",
+  "reviewSha256": "69e9f80966f076d1a198e3ef1f7393bb6b2ed7b981a102d7610c06f666674fc8",
+  "exactHarnessSources": {
+    "apps/web/test/web-release-compatibility.browser.ts": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+    "apps/web/test/web-release-compatibility.fixture.ts": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+  },
+  "archiveIndex": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json",
+  "archiveIndexSha256": "6ab6135c6849be169d18b1f911581e637136bb54ea8ba0f754637bc9686b6e0f",
+  "nonmetadataScope": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/nonmetadata-scope.json",
+  "backendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "publicContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "compatibilityReports": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "compatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+      "checks": [
+        "read",
+        "send",
+        "recover",
+        "negotiation"
+      ],
+      "reportPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/report.json",
+      "reportBytes": 791,
+      "reportSha256": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+      "fourCheckDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9"
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "compatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "checks": [
+        "read",
+        "send",
+        "recover",
+        "negotiation"
+      ],
+      "reportPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/report.json",
+      "reportBytes": 791,
+      "reportSha256": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "fourCheckDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a"
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "compatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0",
+      "checks": [
+        "read",
+        "send",
+        "recover",
+        "negotiation"
+      ],
+      "reportPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/report.json",
+      "reportBytes": 791,
+      "reportSha256": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0",
+      "fourCheckDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+    }
+  ],
+  "scope": "3 actual immutableApps through fixedorigin proxy and exactbackend; independentcookieCSRF; no rebuild/lateLogout/deployment/provider proof",
+  "sharedWindow": "Returned11:53:59.732591; not reserved during intake",
+  "transport": "Published canonical for Original proactive read; direct Original app-server route remains rejected/not claimed sent",
+  "ownerReviewArchive": "Root result just available; author may archive during next legitimate naturalrecordssafe point, not a prerequisite for original review of fixedc06/rawrootreport",
+  "formalReadiness": "READY_FIXED_THREE_REPORTS_CONTEXT_AND_ROOT_ACTUAL_APPROVAL",
+  "originalNext": "Original controlled intake and independent preparation/review of operation inputs; no repeated compatibility request and no manager deployment authorization",
+  "resourceCondition": "Current X01cleanup-only exclusiveholder must actually return before any otherheavy operation; preparation notreservation"
+}

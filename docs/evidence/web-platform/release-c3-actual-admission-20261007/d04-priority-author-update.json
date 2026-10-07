@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T12:01:03.314Z",
+  "source": "GO explicit scheduling correction relayed root; prior manager plan priority4 remains authoritative request",
+  "claimObservedAt": "2026-10-07T12:01:03.135Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/test/coordination.test.mjs",
+      "apps/execution-dashboard/test/owned-worktrees.mjs",
+      "apps/execution-dashboard/test/owned-worktrees.test.mjs",
+      "docs/evidence/d04",
+      "plans/d04-coordination"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-coordination",
+    "origin": "new",
+    "taskId": "D04",
+    "worker": "external_web_d01_owner",
+    "claimId": "f61d41f5-644a-4013-bd30-9ea298b9027d",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination",
+    "createdAt": "2026-10-07T02:28:02.264Z",
+    "updatedAt": "2026-10-07T02:28:02.264Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "headBefore": "2dd7a31f63a3a530f974b3faaf7ad9f650858c1a",
+  "changedScope": [
+    "plans/d04-coordination/status.md",
+    "docs/evidence/d04/priority-records-20261007"
+  ],
+  "priorityBefore": 1,
+  "priorityAfter": 4,
+  "statusOwner": "d01_owner / Astra Ultra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination",
+  "preserved": [
+    "fa6f fixed source approval",
+    "actual5pureGit PASS",
+    "PG/CLI4 and page NOT_RUN",
+    "mainNOT_INTEGRATED",
+    "historical03:04 deployment observation",
+    "startUNKNOWN and ongoingNOT_COMPLETED, no inferred worktime"
+  ],
+  "skillMethod": "Existing local find-skills/clean-code reused; singleauthor source, exact claimedmetadata, no duplicate progress table",
+  "newProductTests": 0,
+  "newPG": 0,
+  "newChrome": 0,
+  "newAggregate": 0
+}

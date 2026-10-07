@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-07T11:53:53.350Z",
+  "source": "w01_owner actualSTART message",
+  "actualStartedAt": "2026-10-07T11:53:13.603234Z",
+  "state": "RUNNING",
+  "runId": "release01-c3-20261007-115305-4777b7",
+  "outerPid": 66659,
+  "execSession": 26489,
+  "executionHead": "5df2b26281881cc992af80a2c0bb92cba9b61435",
+  "parentSha256": "2500ca2900b4b912fdaf1a0964d2728d3b677f1a16defc36bdf0e845332062f0",
+  "workerSha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751",
+  "outerDirectory": "/private/tmp/rel01-c3-actual-yakasi5w",
+  "gateSha256": "15616ed31c94ad6a74f3f1a13dbc57b148899dfffbde65640d58b57a65beed9f",
+  "fresh": {
+    "at": "2026-10-07T11:53:05Z",
+    "availableBytes": 21982142464,
+    "floorBytes": 6190268416,
+    "inputMatch": "71+4 prepared/30assets/15628backend entries/20Node images/rootidentity",
+    "clean": true
+  },
+  "limits": {
+    "phaseMs": 180000,
+    "cleanupMs": 30000,
+    "pgDatabases": 1,
+    "configuredConnections": 12,
+    "chrome": 1,
+    "provider": 0
+  },
+  "oldC2": "410msFAILED/CLOSED no unusedcredit",
+  "releaseRule": "Only actual terminal and owned cleanup receipt returns this window, not expected time"
+}

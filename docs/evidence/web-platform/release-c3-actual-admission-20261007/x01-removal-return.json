@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-10-07T12:06:18.867Z",
+  "state": "RETURNED_AFTER_SEPARATE_CLEANUP_ONLY",
+  "task": "X01-REMOVAL-REFERENCES01",
+  "actualReturn": "2026-10-07T12:02:47.282218+00:00",
+  "originalState": "UNKNOWN_KEEP/afterAllFAIL unchanged; selected1 does not mean suitePASS",
+  "cleanupElapsedAfterPersistenceSeconds": 0.16751445806585252,
+  "wholeExternalWall": "UNKNOWN",
+  "databaseOid": 1306114,
+  "normalDropAndAbsence": true,
+  "temporaryIdentity": {
+    "dev": 16777234,
+    "ino": 124112945,
+    "absent": true
+  },
+  "sourceReceipt": "x01-removal-r1-cleanup-only.json",
+  "delivery": "x01-removal-r1-cleanup-delivery.json",
+  "otherKEEP": "C02/O16 historical namespaces untouched",
+  "independentResultReview": "SEPARATE_NOT_REPLACED_BY_MANAGER"
+}

@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T11:52:23.273Z",
+  "task": "WPF-RELEASE01",
+  "owner": "w01_owner",
+  "claim": "38b9a7ff-c9be-4b56-af50-e076afb603bc v1 exact4",
+  "state": "UNIQUE_NEXT_OWNER_FRESH_NOT_ACTUAL",
+  "source": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "preparedHead": "b8c602313fc895740570fcc133530a70a9f79380",
+  "caller": "/private/tmp/rel01-c3/handoff.json",
+  "rootReviews": [
+    "root-c3-delta-review.json",
+    "root-c3-native-acceptance.json"
+  ],
+  "phase": {
+    "limitMs": 180000,
+    "cleanupMs": 30000,
+    "maximumAttempts": 1,
+    "priorCreditMs": 0,
+    "oldC2": "410used/179590unused CLOSED; no transfer"
+  },
+  "resources": {
+    "pgDatabases": 1,
+    "configuredConnections": 12,
+    "chrome": 1,
+    "provider": 0,
+    "personal": 0,
+    "scratchBytes": 67108864,
+    "dbWalPlanningBytes": 134217728,
+    "retainedRawBytes": 8388608,
+    "outerIncludedBytes": 262144,
+    "metadataBytes": 1048576,
+    "minimumFreshBytes": 6190268416,
+    "completeHigherFreshSumRequired": true,
+    "potentialLocalsBytes": 35651584,
+    "oldKeep": "C02/O16R1/R2/R3/bootstrap KEEP and maintypes1357748 logical UNKNOWN allocated preserved"
+  },
+  "conditions": [
+    "fresh exactclaim/branchclean/source/runtime/assets/fullbackendclosure/roots",
+    "no later contradictory externalactual or assignedNEXT",
+    "ephemeral600 admin input exactcreate/delete/no secret output",
+    "owner immediately reports actualstart/terminal/cleanup; unknown cleanup notPASS",
+    "only routine reviewed-binding metadata delta allowed without source rereview"
+  ],
+  "runtimeGrantNotCurrentRun": true
+}

@@ -1,0 +1,90 @@
+{
+  "state": "READ_ONLY_STATIC_SUPPLY_CHECKED_NOT_RUNTIME_READY",
+  "parentTask": "WPF-MATURE-02",
+  "existingTodo": "WPF-MATURE-02-11",
+  "candidateTask": "WPF-MESSAGESETTINGS03",
+  "owner": "workspace_panels_owner",
+  "fixedSource": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "futureWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "futureBranch": "codex/web-message-settings-app",
+  "provisioned": false,
+  "newClaim": false,
+  "sourceFiles": 369,
+  "sourceBytes": 2650881,
+  "scopeLiteralCount": 18,
+  "packageCandidates": 43,
+  "entryTypeToolPins": 351,
+  "oneHopManifestPins": 203,
+  "requiredOneHopMissing": 0,
+  "unknown": "Full recursive package payload/type/native resolution not executed or proven",
+  "outputBudgetBytes": 2097152,
+  "outputBytesIncludingManifest": 1699254,
+  "files": [
+    {
+      "file": "add-root-entries.py",
+      "bytes": 2391,
+      "sha256": "6b2f0392a84e5759a19bdb80de797659ade510eea8645b6421383e803817c5ca"
+    },
+    {
+      "file": "inspect.py",
+      "bytes": 17513,
+      "sha256": "ce1f7eac6f3786549c39cec7e08895644df95693642dbeb4f54c0be7fc9907c5"
+    },
+    {
+      "file": "report.md",
+      "bytes": 8657,
+      "sha256": "080f9bf1b6446490009898ca6d361424bb890a06b4b2f41b27d2bf6aa9edff1a"
+    },
+    {
+      "file": "resolver-audit.json",
+      "bytes": 1094946,
+      "sha256": "42b3e6d55d7deaf430f0ec56994ccf3d8fd192589efed273c277559ac821223d"
+    },
+    {
+      "file": "source-recheck.json",
+      "bytes": 559683,
+      "sha256": "b4a06a0b0fb43db409cec3f061333b4ad2789a0546f2ebce2757fba7aad08e6a"
+    },
+    {
+      "file": "summary.json",
+      "bytes": 386,
+      "sha256": "afeb8dea093f76b062478535b64d76370b50cc86547861d15e131781d438eda1"
+    },
+    {
+      "file": "workspace-mapping.json",
+      "bytes": 2295,
+      "sha256": "941f39fbf13a540d41e6e4ff62772e2d66947c40ecb5720b59dbe9e54d4a8c86"
+    },
+    {
+      "file": "write-report.py",
+      "bytes": 10653,
+      "sha256": "8583bcd305c09cc57f94edfef758e6ab1366625d3a139e7e7dc53cf4b876eee9"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "activity": {
+    "projectWrites": 0,
+    "node": 0,
+    "imports": 0,
+    "tests": 0,
+    "build": 0,
+    "install": 0,
+    "network": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "resourceSamples": 0,
+    "dependencyCopies": 0
+  },
+  "completedAt": "2026-10-07T12:06:38.376256+00:00"
+}

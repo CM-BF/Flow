@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T11:50:29.546Z",
-  "state": "RELEASE_C2_FAILED_RETURNED_C3_SYNTAX_PASSED_REVIEW_PENDING_NO_HEAVY_NEXT",
-  "groupWindowOwnership": "Releasec2actualfail returned11:44:37.704120 exactownedcleanup;0currentPGChromeheavy/noNEXT. PriorX01/centeractualreturned. No time-based inferred release or automaticretry.",
+  "recordedAt": "2026-10-07T12:08:54.688Z",
+  "state": "X01_REMOVAL_RETURNED_UPSTREAM_SOLE_NEXT_NOT_ACTUAL",
+  "groupWindowOwnership": "REMOVAL cleanup-only actual12:02:47.282218 RETURN: sameOID1306114 zero connections ordinaryDROP/absence and exactTMP removed. PriorR1 UNKNOWN_FAIL preserved. SoleNEXT X01-UPSTREAM-UPGRADE01 ownerfresh notRUN; Web0actualPG/Chrome/local/noNEXT. OlderKEEP unchanged.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,8 +407,8 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T11:50:29.546Z",
-    "event": "Release c3syntax47msPASS actual returned; no heavy NEXT",
+    "at": "2026-10-07T12:06:18.867Z",
+    "event": "ExactREMOVALcleanupRETURN verified from receipt; upstreamsource/prep/claim/clean checked, soleNEXT ownerfresh",
     "currentExternalAndWebHeavyHolder": null,
     "retainedAddition": {
       "recoveryMainTypesLogicalBytes": 1357748,
@@ -418,7 +418,7 @@
       "source": "main c130 recovery-intake.json"
     },
     "priorKEEP": "C02/O16R1/R2/R3 and existing artifact/private run KEEP preserved; no zero assumption",
-    "recoveryClaim": "6ff v5 ACTIVE metadata2,19source removed11:35:58.001Z; owner bc25STOP/freshnewconsumer needed",
+    "recoveryClaim": "6ff v6 RELEASED11:52:40.337Z; original01–06 engineering complete/head287947; newTODO11 needs newprovision/take",
     "singleWebCoordinator": "d01_owner",
     "source": "x01-version-return-20261007/current.json",
     "pluginSourceRegistration": "Observed root API11:39:58 registeredunique live/sourceCurrent/0a9v1matchesSource; parent declaration unknown nextowner metadata"
@@ -563,25 +563,17 @@
   },
   "currentWindowReturn": {
     "task": "WPF-RELEASE01",
-    "actualStartedAt": "2026-10-07T11:44:11.655199Z",
-    "actualTerminalAt": "2026-10-07T11:44:12.064497Z",
-    "cleanupConfirmedAt": "2026-10-07T11:44:37.704120Z",
-    "actualExit": 1,
-    "workerExit": 65,
-    "chargeMs": 410,
-    "phaseLimitMs": 180000,
-    "phaseState": "FAILED_CLOSED_ONE_ATTEMPT",
-    "unusedMsNoCreditTransfer": 179590,
-    "causeObserved": "sandbox-exec rejected remote ip127.0.0.1:61228 grammar before Node",
-    "chrome": "NOT_SPAWNED",
-    "fixture": "NOT_ENTERED; rawfixtureCleanupUNKNOWN preserved",
-    "configuredPgField": "1 allowance is not actual DB launch",
-    "groups": "31447/31807 PID+PGID ESRCH",
-    "streams": "outerdualEOF,workerdualEOF/drop0",
-    "scratch": "REMOVED_OWNED/exactabsent",
-    "admin": "dev16777234ino124103009 exactdeleted/absent; valuesnotprinted",
-    "receipt": "x01-version-return-20261007/release-c2-failed-cleanup-accounting.json",
-    "review": "Root result review pending; no automatic retry"
+    "run": "release01-c3-20261007-115305-4777b7",
+    "actualStart": "2026-10-07T11:53:13.603234Z",
+    "outerTerminal": "2026-10-07T11:53:37.097902Z",
+    "completeReturn": "2026-10-07T11:53:59.732591Z",
+    "actualOuterExit": 0,
+    "chargeMs": 23495,
+    "phaseMs": 180000,
+    "unusedMs": 156505,
+    "state": "CLOSED_ONE_ATTEMPT_ROOT_ACTUAL_APPROVED",
+    "receipt": "release-c3-actual-admission-20261007/cleanup-accounting.json",
+    "owned": "3PID3PGIDfreshESRCH/4innerEOFdrop0/outerdualEOF/scratchadminexactabsent/markedDBnormalDROP/centerproxyclosed"
   },
   "coordinationHistory": [
     {
@@ -1224,17 +1216,9 @@
   },
   "nextWebReady": {
     "task": "WPF-RELEASE01",
-    "state": "C3_EXACT_SOURCE_AND_SYNTAX_LOCAL_AWAITING_ONE_DELTA_REVIEW_NOT_HEAVY_READY",
-    "ownerHead": "7fa4bc014f3ad9d65b517e1868d40c73ef2c7543",
-    "lastFixedCaller": "/private/tmp/rel01-c2/handoff.json",
-    "lastActualReview": "x01-version-return-20261007/release-c2-first-actual-review.json",
-    "lastActualReviewSha256": "563407ad1260745f38282f5a6d550a2e27656f5871ffdb177cbbebf059a27264",
-    "pending": [
-      "W01 c3 fixedbinding/clean seal and root single delta+syntaxactual review; no oldunused credit"
-    ],
-    "configuredConnections": 12,
-    "futureMinimumFreshBytes": 6190268416,
-    "oldPhase": "410/180000FAILED_CLOSED unused179590NOT_TRANSFERRED"
+    "state": "ACTUAL_APPROVED_READY_FOR_CONTROLLED_INTAKE_NO_RUNTIME_NEXT",
+    "ownerHead": "c06fa79c931998eb03a9d04d441681767fd796bf",
+    "mainIntake": "release-c3-actual-admission-20261007/main-intake.json"
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1725,7 +1709,14 @@
       "observedAt": null
     }
   },
-  "externalCurrentAdmission": null,
+  "externalCurrentAdmission": {
+    "state": "SOLE_NEXT_FRESH_NOT_ACTUAL",
+    "task": "X01-UPSTREAM-UPGRADE01",
+    "lead": "mika",
+    "owner": "db_transaction_owner",
+    "record": "release-c3-actual-admission-20261007/x01-upstream-next.json",
+    "minimumFreshBytes": 6199705600
+  },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
     "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
@@ -1734,12 +1725,11 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "NO_HEAVY_NEXT",
-    "web": "Release c3 only source/local authorized; new heavy needs review+fresh actual resource handoff",
-    "quick": "panels Recovery metadata06close then existingTODO11 sourceprovision/take; no newwriter yet",
-    "other": "No later externalactual/readyrequest received; oldKEEP retained"
+    "state": "UPSTREAM_SOLE_NEXT_OWNER_FRESH",
+    "actualHeavyHolder": null,
+    "noSecondNext": true
   },
-  "currentIntake": "x01-version-return-20261007/current.json",
+  "currentIntake": "release-c3-actual-admission-20261007/main-intake.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
@@ -1756,34 +1746,66 @@
   },
   "webOrdinaryLocal": {
     "state": "RETURNED",
-    "owner": "w01_owner",
-    "phase": "Release c3 syntax-only",
-    "actualStart": "2026-10-07T11:49:28.189547Z",
-    "actualEnd": "2026-10-07T11:49:28.201658Z",
-    "chargeMs": 47,
-    "limitMs": 10000,
-    "phaseState": "CLOSED",
-    "exit": 0,
-    "pg": 0,
-    "chrome": 0,
-    "node": 0,
-    "network": 0,
-    "cleanup": "PID/PGID28192ESRCH; twoexactTMPabsent/dualEOFdrop0",
-    "receipt": "x01-version-return-20261007/release-c3-syntax-receipt.json"
+    "task": "WPF-PLUGIN-RUNTIME01",
+    "actualStart": "2026-10-07T12:07:48.812128Z",
+    "actualEnd": "2026-10-07T12:07:49.693475Z",
+    "actualReturn": "2026-10-07T12:08:23.129744+00:00",
+    "currentLocal": 0,
+    "record": "release-c3-actual-admission-20261007/plugin-r4-cleanup-accounting.json",
+    "actualChecks": "outer0/child0/15exactPASS/dualEOF/drop0/exactowned absent",
+    "chargeMs": 882,
+    "phase": "new20sCLOSED; unused19118notcredit; old30082FAILED preserved",
+    "independentActualReview": "PENDING"
   },
   "externalPreviousReturn": {
-    "task": "Original center lateLogout",
-    "state": "ACTUAL_RETURNED_SCOPED_FOUR_PG_CHECKS_REVIEW_SEPARATE",
-    "source": "66caee46341c91db71a3590bfcd288396b30567a",
-    "reportedFinal": "92e56865",
-    "actualReturn": "2026-10-07T11:37:58.902201Z",
-    "databaseOid": 1302307,
-    "database": "marker/0conn/normalDROP removed",
-    "ownedGroups": "absent/dualEOF",
-    "scratch": "removed",
-    "providerChromePersonal": 0,
-    "limits": "4selected19unselected; fixtureold1..28 scope, not wholecurrentserver/browser",
-    "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/docs/evidence/wpf-connection-session/late-logout/pg-01/operation-report.json"
+    "task": "X01-REMOVAL-REFERENCES01",
+    "state": "RETURNED_AFTER_SEPARATE_CLEANUP_ONLY",
+    "actualReturn": "2026-10-07T12:02:47.282218+00:00",
+    "record": "release-c3-actual-admission-20261007/x01-removal-return.json"
   },
-  "retiredNextWebReadySnapshot": "release-caller-recovery-main-20261007/historical-next-web-ready-58ef.json (historical owner/packet/budget snapshots only; no permission/currentstatus)"
+  "retiredNextWebReadySnapshot": "release-caller-recovery-main-20261007/historical-next-web-ready-58ef.json (historical owner/packet/budget snapshots only; no permission/currentstatus)",
+  "quickAppSourceProvision": {
+    "state": "REQUESTED_EXACT_SOURCE_PROVISION_NOT_TAKEN",
+    "request": "message-settings-app-source-request/request.json",
+    "scopeCount": 18,
+    "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+    "authority": "WAITING_ORIGINAL_EXPLICIT_PROVISION_OR_ONE_TIME_OPERATOR_RECEIPT",
+    "runtimeReservation": null,
+    "sourceClosure": {
+      "files": 369,
+      "logicalBytes": 2650881,
+      "report": "message-settings-app-source-request/supply-report.md",
+      "thirdPartyResolver": "READONLY_COMPLETE 43candidate/351pins/203manifest/315firstlevel; no missingnecessary firstlevel; no runtime/fullpayload proof"
+    },
+    "resolverReport": "message-settings-app-source-request/resolver-completion-report.md"
+  },
+  "recoveryFinalClosure": {
+    "ownerHead": "2879477536796656227e67a0cd53641af73cb305",
+    "state": "ORIGINAL_ENGINEERING_DELIVERED_MAIN_INTEGRATED_CLAIM_RELEASED",
+    "completedAt": "2026-10-07T11:50:39Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/wpf-conversation-recovery",
+        "plans/wpf-conversation-recovery"
+      ],
+      "state": "released",
+      "branch": "codex/web-conversation-recovery",
+      "origin": "new",
+      "taskId": "WPF-RECOVERY01",
+      "worker": "workspace_panels_owner",
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 6,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "createdAt": "2026-10-06T13:46:08.213Z",
+      "updatedAt": "2026-10-07T11:52:40.337Z",
+      "observedAt": null
+    },
+    "receipt": "release-c3-actual-admission-20261007/recovery-final-release-receipt.json",
+    "productSource": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "noNewRuntime": true,
+    "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
+  }
 }

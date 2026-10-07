@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T12:01:55.217Z",
+  "source": "Mika terminal via root",
+  "task": "X01-REMOVAL-REFERENCES01",
+  "state": "TERMINAL_UNKNOWN_KEEP_CLEANUP_ONLY_AUTHORIZED_STILL_EXCLUSIVE",
+  "actualTerminalAt": "2026-10-07T12:00:14.926733Z",
+  "exit": 1,
+  "outerSecondsReported": 4.15,
+  "groups": [
+    27816,
+    27842
+  ],
+  "groupsAbsent": true,
+  "mergedEOF": true,
+  "secondarySignals": [],
+  "appBossPoolAdminClosed": true,
+  "portClosed": 64030,
+  "database": {
+    "name": "flow_x01_8c07aa72e0814fab904e7505cc7d9c59",
+    "oid": 1306114,
+    "ownerMarkerMatches": true,
+    "observedConnections": 1,
+    "drop": "NOT_ATTEMPTED",
+    "state": "KEEP"
+  },
+  "tmp": {
+    "suffix": "txfsxrqu",
+    "dev": 16777234,
+    "ino": 124112945,
+    "state": "KEEP"
+  },
+  "cleanupOnly": {
+    "newTotalLimitMs": 60000,
+    "owner": "architecture_read",
+    "noNewApplicationOrTaskRun": true,
+    "noCreateDatabase": true,
+    "sameOidOwnerMarkerOnly": true,
+    "dropOnlyAfterObservedZeroConnections": true,
+    "noTerminateNoForceNoOtherServices": true,
+    "unknownOrRemainingConnection": "KEEP and retain blocked disposition; no secondNEXT",
+    "tmp": "Only after ownerclosed and same dev/ino boundedcleanup",
+    "mustRecordActualElapsedAndPostflight": true
+  },
+  "windowNotReturned": true
+}

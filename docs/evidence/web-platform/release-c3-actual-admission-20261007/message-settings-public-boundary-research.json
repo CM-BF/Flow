@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T12:00:54.170064+00:00",
+  "researcher": "root / gpt-6-astra / ultra",
+  "task": "WPF-MATURE-02 original TODO11 / WPF-MESSAGESETTINGS03",
+  "baseline": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "mode": "Read-only fixed Git source; no imports, installs, tests, browser or project edits",
+  "pins": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "path": "packages/interaction/src/index.ts",
+      "bytes": 475,
+      "sha256": "3e2a37a73589c675145f32753ff455bb7e5c46e6084ca497585c0a2445063286"
+    },
+    {
+      "path": "packages/interaction/src/message-settings/index.ts",
+      "bytes": 6609,
+      "sha256": "5200eeef87190c44356f25629901180f8515413ca0ea4dcbf7e8beaa6796e37d"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 2885,
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "reuse-existing-public-codec",
+      "evidence": "packages/client/src/index.ts:647-651; conversation-acknowledgement.ts:100-109,185-201",
+      "observation": "enqueueConversationTurn freezes serialized input, and whenever messageSettings is present routes through the public decodeConversationQueueAccepted. The decoder requires a waiting immutable receipt, original revision+1/preview, and exact public settings snapshot equality; failures become UnknownConversationAcknowledgementError. decodeConversationQueueAccepted is publicly exported at client/index.ts:23.",
+      "application": "Keep the existing FlowClient public path and receipt FSM; do not duplicate a new settings ACK validator or bypass the public client. Existing real-App planned wrong/unknown receipt cases remain relevant."
+    },
+    {
+      "kind": "unexported-helper-boundary",
+      "evidence": "packages/interaction/package.json exports; src/index.ts entire barrel; src/message-settings/index.ts settingsEvidence",
+      "observation": "settingsEvidence exists as an interaction internal source but is not exported by the current package root or declared subpaths. Its requested/observed separation is useful reference, but a direct private deep import is not an available public API.",
+      "application": "Do not import @flow/interaction/message-settings or reach across private source paths; MSG03 has no shared package export write scope. Use already public contracts and actual recorded turn fields in the local planned renderer. If a shared renderer/helper is truly necessary, coordinate the explicit shared change instead of silently modifying package exports."
+    },
+    {
+      "kind": "bounded-options-and-reachable-footer",
+      "evidence": "ExecutionProfilePicker.tsx MessageSettingsPicker and execution-profiles.css .ep-dialog",
+      "observation": "Picker builds filters from at most the already validated declared choice list; current .ep-dialog scrolls the entire dialog, including Apply, and current summary/radio text permits wrapping. Existing accepted 390px/180-character/equal-prefix cases require actual layout work; static wrapping alone does not prove Apply visibility.",
+      "application": "Implement the already accepted controlled presentation and locally scoped body/footer layout in the existing two authorized picker files. Preserve full accessible option names and distinguish equal-prefix values. Do not add virtualization or a second selection state merely for a bounded maximum of 32 tuples. Actual host browser/theme/keyboard proof remains pending."
+    }
+  ],
+  "scopeImpact": "No new feature, leaf, write path, test suite, runtime request or blocker. These are integration notes for the existing 18-literal owner plan.",
+  "cleanCode": "Reviewed reuse, public interfaces, bounded work and single responsibility; no source edits or new findings requiring separate task."
+}

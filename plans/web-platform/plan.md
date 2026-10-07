@@ -444,7 +444,7 @@ D06本片已[主线与资产发布收口并释放](../../docs/evidence/web-platf
 
 个人发布须沿[原Lead依赖核对](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/publication-dependency.json)：backend af51/v18缺新browser-session/message-settings/028/032，Web仍d629/v3。原SVC06-05准备backend4fe331与保留artifact兼容后，才评估新的Recovery实际App；Quick fe6未App接线、C02 native/LAZY未被当前Recovery消费各自分列，不用main事实替代部署可用性。
 
-GO经OriginalLead/root新调度要求：[D04测试生命周期后继与OPS例行记录优先级4](../../docs/evidence/web-platform/queue-full6-closeout-20261007/priority-coordination.json)。D04唯一owner仍d01_owner、原dashboard-coordination树；本批仅632a六管理范围，未跨树更改其当前priority1，待原owner下一合法正常status更新执行。保真实用户影响、独立blocker与UNKNOWN历史，不改聚合器/测试、不抢Recovery/Quick。
+GO经OriginalLead/root新调度要求：[D04测试生命周期后继与OPS例行记录优先级4](../../docs/evidence/web-platform/queue-full6-closeout-20261007/priority-coordination.json)。D04唯一owner仍d01_owner、原dashboard-coordination树；此前仅经理排队未改owner，现已在fresh f61d v1合法原scope安全点完成[作者priority4与用户摘要修正](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/d04-priority-author-update.json)，5955bba3双端clean；单ownparser确认priority4/human完整，历史开工UNKNOWN保留。保真实用户影响、独立blocker与UNKNOWN历史，不改聚合器/测试、不抢Recovery/Quick。
 
 原MATURE02 TODO11 / MSGQUICK05 [真实App接线设计](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-real-host-design.md)及[候选范围/验收](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-host-followup.json)已接受方向，12产品+3现有Recovery测试仍NOT_TAKEN。CompleteDraft/App保存恢复、Thread同步capture、Send/Queue显式构造当前漏messageSettings；复用现public合同，以App每View唯一C和非持久Symbol/CAS贯通全链，P01 actions+composer.context按Knowledge模式接同面板，不新slot/store。发后保用户显式C供后续稿、每新稿换ownership，omit仅省略，不由A/B/profile自动赋值或冒observed。原TODO11 plan32与consumer Web段未发现明确一次性/发后必清C相反要求；capturedA/ACK不能清B、独立ABC保护仍保。先合法固定已审Recovery+Quick+当前main组合，再精确交权，不覆盖旧App全文件；旧leaf26/6不能算真实host通过。
 
@@ -540,3 +540,5 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 原MATURE02/TODO11沿既有真实host设计推进WPF-MESSAGESETTINGS03候选，panels唯一owner；原15代码路径补ConversationQueue.tsx，使历史turn与队列展示自己的冻结requested，共16代码/test+2metadata。独立web-message-settings-app树/branch需fixed供给及fresh原子take后才写；不新增selector/store/TaskThread范围。安装官方composer的同步detach先于onNew边界按[固定研究](../../docs/evidence/web-platform/x01-version-return-20261007/message-settings-official-composer-ordering.json)落实，A等待材料时同正文异settings的B不得被清掉。
 
 插件HOST与严格ACK公共合同已[de547主线接收](../../docs/evidence/web-platform/x01-version-return-20261007/x01-candidates-main-intake.json)，不再等main；UI采纳留原owner后续自然段，候选不是online/loaded/callable，同revision GET仍可变化、GET不清UNKNOWN。
+
+本次D04作者优先级4已在[12:02真实看板观察](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/root-dashboard-d04-visible-check.json)显示：首屏前三不再由D04占据；旧展开领取卡保留焦点而明确已不在未登记列表，是焦点保留行为，不当重复领取缺陷。没有修改排序/聚合器或另跑浏览器。
