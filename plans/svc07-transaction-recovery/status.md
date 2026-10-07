@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 21:29:34 UTC；固定分支基线22a，main未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:11 UTC实际HTTP完成；固定分支基线22a，main未集成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,21 +10,21 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect |
 | Branch | codex/server-transaction-disconnect |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次只读记录前HEAD997a9f5fe6062bd317f91b33c63573f4b58f5013 |
-| 工作树dirty状态 | 997a9f5 clean已核；本次仅追加Lead只读门槛观察与本status，233执行输入/manifest/既有raw不变 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；本次执行HEAD1b3e16626c214f179640574dcd3ba93de10213ed |
+| 工作树dirty状态 | 执行前1b3e166 clean已核；本次仅新HTTP原始输出/结果归档及status/review/README，233执行输入/manifest/旧raw不变；提交后另核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 实现目标 | e28c4ed0a30ec2800eeca2ca5c444c0081c38165 |
 | 实现范围 | apps/server/src/database.ts, apps/server/src/database-transaction.test.ts |
-| 检查状态 | PASSED e28c4ed0a30ec2800eeca2ca5c444c0081c38165：显式fake15/15，局部types exit0；[证据](../../docs/evidence/svc07/checks.md) |
+| 检查状态 | PASSED：产品e28显式fake15/15、局部types exit0、真实PG2/2；本次固定HTTP1/1、exit0、wall2.979205s，19HTTP/cleanup CONFIRMED；各自范围不累计，[HTTP证据](../../docs/evidence/svc07/http-checks.md) |
 | 已集成main状态 / HEAD | 未集成；分支基线22a不含本片修复 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 事务断连保护已通过定向验证、独立审查及隔离的真实连接恢复验证 |
-| 下一可用交付 | 完成必要直接消费者检查，再将事务断连保护纳入主线 |
-| 当前阻塞 | ACTIVE: 真实HTTP验证尚未启动，可用磁盘空间低于既定门槛；等待Lead安排空间恢复及下一共享窗口 |
+| 当前产出 | 事务断连保护已通过真实连接恢复和HTTP并发领取、命令重放及重启验证 |
+| 下一可用交付 | 完成HTTP结果独立核验，将已验证的事务保护纳入主线 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED产品e28及真实PG结果05a3e901；HTTP准备包35f78c8b APPROVED；实际HTTP HOLD/NOT_RUN |
+| Review | [review.md](review.md)，APPROVED产品e28及真实PG结果05a3e901；HTTP准备包35f78c8b APPROVED；本次HTTP结果待固定target独审 |
 | Claim | 3bbb8293-c36d-40c8-a133-723463801943 v1 ACTIVE；4 literal scopes仅领取事实，非产品target范围；[原子回执](../../docs/evidence/svc07/claim-receipt.json) |
 | 架构影响 | 借用期连接错误/释放生命周期变化；产品source已固定，待集成时由 Execution Lead 更新 apps/execution-dashboard/public/architecture-data.js，分支设计未作为main事实 |
 
@@ -33,11 +33,11 @@
 | SVC07-01 | completed | db_transaction_owner | 固定22a输入与20:03:32.621Z原子领取 |
 | SVC07-02 | completed | db_transaction_owner | 首红保留；[15例绿色与类型检查](../../docs/evidence/svc07/checks.md) |
 | SVC07-03 | completed | db_transaction_owner / Mika | 15/15+types0，固定source独审APPROVED/0 P1/P2 |
-| SVC07-04 | in-progress | db_transaction_owner / mika / Execution Lead | [专库探针与监督封套](../../docs/evidence/svc07/pg-window.md)已固定 edbe2e0a04b58fd95207904889cbc0e7e5666c53；产品/packet独审完成；真实PG2/2、cleanup CONFIRMED；[实际证据](../../docs/evidence/svc07/pg-checks.md)，HTTP消费者/main仍未执行 |
+| SVC07-04 | in-progress | db_transaction_owner / mika / Execution Lead | 真实PG2/2及本次[HTTP1/1](../../docs/evidence/svc07/http-checks.md)、cleanup CONFIRMED；HTTP结果待固定target独审，main接收与架构同步仍开放 |
 
 ## Dashboard 同步
 
-本 status 为唯一手填事实源。新任务等待 Execution Lead 登记本权威 worktree 并核聚合；不编辑生成 JSON。首片与后续真实消费者验收分开，尚无完成结论。
+本 status 为唯一手填事实源；任务已有权威worktree，当前结果随本status正常聚合，最新聚合快照待Lead定向核对，不编辑生成JSON。产品/真实PG/HTTP消费者与main接收分别记录，SVC07-04未因本次HTTP通过提前关闭。
 
 ## 真实连接验收准备与安全停写点
 
@@ -68,3 +68,9 @@ Lead后续指派原owner在本evidence内准备独立HTTP旅程；209源/869209B
 Mika 2026-10-06 21:05:11UTC，target35f78c8b1edc67f1646b395dd62bc1cf389ebef9 / manifest13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06，准备审APPROVED/0 P1/P2，非实际HTTP通过。21:08获窗口后仅执行一次入口，exit2 HOLD，0 child/PG/HTTP、8实际输出全absent；随后只读free1176248320B，比原floor1207959552B少31711232B。claim v1及233 inputs/18deps一致；[HOLD原事实](../../docs/evidence/svc07/http-hold-20261006-2108.json)。窗口已交回，0待launch，不降门槛/清理他人资源/自动重跑。责任人Lead安排空间与下一明确窗口；owner仅本结果/status/review归档，固定执行输入不变。
 
 2026-10-06 21:29:34 UTC：Mika/Lead新窗口准入仅作只读观察（2026-10-06 21:28:25UTC），free1143750656B <1207959552B，未调用entry、0child/PG/HTTP；21:27:19个人窗口已归还，本次资源已明确交回Web，无预约。此为Lead回传事实，不伪称owner新磁盘测量；SVC停止执行与输入修改，owner专注REQ15。后继仅待新的明确窗口和原门槛满足。
+
+## HTTP唯一实际窗口与归还
+
+2026-10-07 02:11:50.753Z入口fresh确认claim v1/233输入/18依赖/clean HEAD1b3e166及8输出absent，free26,694,959,104B。Web manager无holder确认后，Mika明确GO原一次窗口；[实际HTTP检查](../../docs/evidence/svc07/http-checks.md)selected1/pass1、launcher/child exit0、总wall2.979205375s，19HTTP/4断言。专DB/OID+marker/连接0/普通DROP后absence/admin.end及两listener关闭均由fixture确认，PGID2952 absent/EOF完整、TMP同身份删除且再次lstat absent。本次7原始输出4935B/全部regular0600，raw413B；产品/准备包不变，历史HOLD与PGID391 UNKNOWN保留。
+
+Mika已只读核原结果与资源closure并明确归还窗口、通知Web manager；0待launch/0本次待清理身份，未开放C02或后继验证。当前只归档结果并commit/push供固定target忠实性独审，不把消息预核冒充最终approval。main仍未集成，SVC07-04保持开放。

@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-07T02:13:56.364264+00:00",
+  "executionHead": "1b3e16626c214f179640574dcd3ba93de10213ed",
+  "preparedReviewTarget": "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+  "productTarget": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "window": "SVC07-HTTP-RESOURCE-RECOVERED-20261007",
+  "inputManifestSha256": "13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06",
+  "fixedInputs": {
+    "count": 233,
+    "bytes": 1394168,
+    "unchangedAtArchive": true
+  },
+  "state": "PASSED",
+  "selected": 1,
+  "passed": 1,
+  "launcherExit": 0,
+  "childExit": 0,
+  "wallSeconds": 2.979205375071615,
+  "elapsedBasis": "original wrapper monotonic elapsed from before preflight; not a sum of tool polling times",
+  "httpRequests": 19,
+  "assertions": [
+    "concurrent-command-replay",
+    "same-db-restart-replay-and-changed-payload-rejected",
+    "two-runner-claim-exactly-once",
+    "cancellation-history-and-revoked-runner"
+  ],
+  "files": [
+    {
+      "path": "docs/evidence/svc07/http-run-reservation.json",
+      "bytes": 152,
+      "sha256": "ea6383ac6b9ce4bca00bfb7139b5cf3203cec228267d19af3c779dbf5c652b0b",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-database.json",
+      "bytes": 213,
+      "sha256": "a316c432fae418890b08d7f5e20f1e2cf60570c4819ca64e686f3a46b02d8d3d",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-server-1.json",
+      "bytes": 270,
+      "sha256": "693fa1cc07230c0e297fc6b556372fb8b83a8eec496dfd47f6281ff20730d639",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-server-2.json",
+      "bytes": 270,
+      "sha256": "e07c1b5b1944eeba14f1761d119d602f30fe05e3006565b6a4ff030e036681c8",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-result.json",
+      "bytes": 1029,
+      "sha256": "8d2ef4cb219b775f411442b975d14f5827811a6f8fba05b5441a1a01fa293a0a",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-output.log",
+      "bytes": 413,
+      "sha256": "8779c5eccb692a7c2e1b4df1d00d5feba26bc5660fe215c471e4fda2a6b41f76",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/svc07/http-exit.json",
+      "bytes": 2588,
+      "sha256": "31016cb8ffff2aa9d567ca815d5b455613d3495db646c7062823cc4c57dd3729",
+      "mode": "0o600"
+    }
+  ],
+  "totalOriginalOutputBytes": 4935,
+  "temporaryAbsentAtArchive": true,
+  "cleanupEvidence": "fixture observed dedicated DB identity, zero connections, normal DROP/absence and closed listeners/admin; wrapper observed own group absent/EOF; no new DB or port probe during archive",
+  "windowReturned": true,
+  "returnEvidence": "Mika explicitly returned the window and notified Web manager after cross-checking raw outputs; C02 has no grant",
+  "finalResultReview": "PENDING_FIXED_RESULT_COMMIT",
+  "limitations": [
+    "One real HTTP direct-consumer journey; not whole HTTP regression or main integration",
+    "No real COMMIT acknowledgement-loss injection",
+    "Old HOLD and supervisor PGID391 EPERM/UNKNOWN remain unchanged",
+    "No rerun of old 15 fake, 2 PG disconnect, types, collection or supervision checks"
+  ]
+}

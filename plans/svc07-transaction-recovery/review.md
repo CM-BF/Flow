@@ -53,3 +53,11 @@ Mika / gpt-6-astra，2026-10-06 20:44:52UTC，target `05a3e901f4abf6f11cb7067cfc
 Mika / gpt-6-astra，2026-10-06 21:05:11UTC，固定target `35f78c8b1edc67f1646b395dd62bc1cf389ebef9` / manifest `13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06`，**APPROVED /0 P1/P2**。233文件1394168B逐Git(commit)=WT且bytes/hash一致；18依赖realpath/packagehash一致，8实际输出absent，产品e28两源不变。已核createServer固定闭包/30 SQL、source身份、claim+disk准入、wx输出、同库两个server生命周期、DB OID+marker+零连接普通DROP、primary失败保真及未知、shared supervisor预算、types/import证据范围。此审只批准准备包，不代表实际HTTP/main通过。
 
 随后owner一次入口在准入HOLD，未打开attempt；[记录](../../docs/evidence/svc07/http-hold-20261006-2108.json)。无fixture/封套/manifest修改，未自动重跑。
+
+## 2026-10-07 HTTP实际结果（待固定target忠实性独审）
+
+Lead新窗口由Mika在Web manager无活动holder确认后明确交接；原入口在执行HEAD `1b3e16626c214f179640574dcd3ba93de10213ed`运行一次。selected1/pass1、exit0、wall2.979205375s、19HTTP/4断言；[checks](../../docs/evidence/svc07/http-checks.md)与[原始输出清单](../../docs/evidence/svc07/http-output-manifest.json)记录事实与限定范围。
+
+Mika已在本次消息只读核7raw/4935B均regular0600、raw413B/hash、233输入/产品未变和实际TMP不存在；fixture记录专库/两listener关闭、连接0、DB absence及admin.end，外层记录PGID2952 absent/EOF完整。此为归档前交叉核对，不把待提交结果target写成已批准。窗口已明确归还；下一步绑定结果commit独审，仅核忠实性与新证据，不重跑旧检查。
+
+本次不注入真实COMMIT丢ACK，不证明全HTTP回归或main接收；旧HOLD/监督PGID391 UNKNOWN保留。原产品e28、PG05a3、HTTP准备35f的批准范围均不改写。
