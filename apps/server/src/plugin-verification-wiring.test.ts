@@ -27,7 +27,7 @@ vi.mock('pg', async () => {
   return { Pool };
 });
 vi.mock('./scheduler.js', () => ({ startScheduler: domain.scheduler }));
-vi.mock('./events.js', () => ({ reportEvents: domain.events }));
+vi.mock('./events.js', async original => ({ ...await original<typeof import('./events.js')>(), reportEvents: domain.events }));
 vi.mock('./plugin-runtime/verification-admission.js', () => ({ admitPluginVerification: domain.admit }));
 vi.mock('./plugin-runtime/commands.js', () => ({ authorizePluginPhase: domain.authorize, changePluginRuntime: domain.change, admitPluginToolTask: vi.fn() }));
 vi.mock('./plugin-runtime/store.js', async original => ({
