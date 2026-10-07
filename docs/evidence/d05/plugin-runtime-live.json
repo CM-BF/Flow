@@ -1,0 +1,147 @@
+{
+  "at": "2026-10-07T11:37:30.180273+00:00",
+  "source": "51dc0b47f2fd5033779e7e33982c9c101fd8fae3",
+  "oldPid": 95578,
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "tokenRead": false,
+  "personalChanges": 0,
+  "tabsReloaded": 0,
+  "state": "CONFIRMED_HTTP_SUMMARY_AND_PUBLIC_METADATA",
+  "newPid": 94149,
+  "log": "/tmp/flow-dashboard-196-20261007-1140.log",
+  "oldConfirmedAbsent": true,
+  "metadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "summaryKeys": [
+    "kind",
+    "version",
+    "generatedAt",
+    "readId",
+    "registryFingerprint",
+    "startedAt",
+    "completedAt",
+    "staleAfterHours",
+    "tasks",
+    "overview",
+    "milestones"
+  ],
+  "summaryBytes": 525047,
+  "summaryObservedAt": "2026-10-07T11:37:30.582683+00:00",
+  "summaryCount": 196,
+  "followupSummaryObservedAt": "2026-10-07T11:40:10.498540+00:00",
+  "followupSummaryBytes": 524945,
+  "summaryStatus": 200,
+  "selectedTask": {
+    "id": "WPF-PLUGIN-RUNTIME01",
+    "title": "插件启停与运行状态",
+    "role": "工作线",
+    "sourceKey": "d6d4b51635c7b10eed8ea3f6f9291c0efe7120983361866a88d53c48f2eab40c",
+    "sourceCurrent": true,
+    "source": {
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
+      "digest": "3310cc603ed4dd50bdceb84d9e21ae333451910a025924ca1e0db1acd1b480f8",
+      "modifiedAt": "2026-10-07T11:13:41.413Z",
+      "readAt": "2026-10-07T11:40:10.452Z",
+      "declaredUpdatedAt": "2026-10-07T11:13:41.411Z",
+      "stale": false,
+      "ageHours": 0.4414002777777778,
+      "issues": [],
+      "error": null,
+      "frozenCommit": null
+    },
+    "declarations": {
+      "owner": "w01_owner / gpt-6-astra Ultra",
+      "branch": "codex/web-plugin-runtime-management",
+      "branchState": "in-progress",
+      "declaredHead": "b67530bb025162629895d11482b5505d4a885c91；首 canonical c7a1db6015c64f555625af72f3e0f81552f5884c；实现 6544b66b9b711ba861c67547417c3eb5c5bca074",
+      "declaredDirty": "五产品源已固定；本次记录提交后全部七范围 STOP，claim 保留",
+      "updatedRecord": "2026-10-07T11:13:41.411Z；固定 b675 输入",
+      "checks": {
+        "state": "unknown",
+        "target": null,
+        "record": "strict PASS；direct JSON 15/15，但父 FAILED / child exit NOT_CAPTURED；browser6 NOT_RUN"
+      },
+      "reviewRecord": "[review.md](review.md)，UNKNOWN；20ac 源码限定审通过，6544 为同边界导入/类型修复待实际集中核验",
+      "mainRecord": "NOT_INTEGRATED；b675 是共享输入，不含本模块",
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 4,
+        "output": "独立启停模块已修复刷新新鲜度；类型检查通过，命令回归记录仍待完整验收",
+        "next": "集中核验本次检查记录，再安排受控模块交互验收",
+        "blocker": {
+          "state": "active",
+          "text": "直接测试父流程输出不完整，浏览器验收尚未执行；等待本次证据独审与后续安排"
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T10:48:09.218Z",
+          "record": "2026-10-07T10:48:09.218Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "[source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；完成尚未满足"
+        },
+        "issues": []
+      },
+      "truncatedFields": []
+    },
+    "progress": {
+      "completed": 0,
+      "total": 4
+    },
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "Web / root；external_web_d01_owner",
+        "value": "Web / root；external_web_d01_owner"
+      },
+      "parent": {
+        "state": "unknown",
+        "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)",
+        "reason": "父任务层级未明确或声明冲突",
+        "targetId": "WPF-001",
+        "title": "Web 平台持续执行"
+      },
+      "basis": "status-source"
+    },
+    "verification": {
+      "state": "not_loaded"
+    },
+    "assignment": {
+      "state": "pending"
+    }
+  },
+  "limitations": [
+    "HTTP summary and public access metadata only; no browser interaction or credential body read.",
+    "The declared parent may remain unknown until its unique owner clarifies the existing parent association.",
+    "No personal service operation or tab reload."
+  ]
+}
