@@ -37,3 +37,5 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## Guard副本与输入重绑结论
 
 2026-10-07T21:43:37.054Z归档b01 21:41:41 COPY_AND_BINDING_DELTA_REVIEW_APPROVED：227/51cc+405d，原operatorP2 CLOSED，0P1P2；295本地固定文件hash符，2变293原样，191external/16links数据不变。parent1d85四pureFS有独立批准；本审不替db五case/fixture，不称实际PG。owner按分项批准和固定输入核验封CLOSED候选，须先AV R2通过再申请独立窗口。原caseP2/--json误写/types失败/所有raw保持，最后project_limit仍NOT_RUN。
+
+21:44:05Z db仅覆盖核a263：candidate/reviews/helper审批/invocation相互一致，固定准备分项已审且无新增源缺口，PREPARED_CLOSED_WAIT_AV_R2准确；不扩大wholeclosure/PG批准。原检查与静态增量范围保持，见transaction-pg/coverage-approval.json。

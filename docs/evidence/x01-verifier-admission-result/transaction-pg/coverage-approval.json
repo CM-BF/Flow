@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T21:44:05.000Z",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "state": "PREPARATION_REVIEW_COVERAGE_CONFIRMED",
+  "P1": 0,
+  "P2": 0,
+  "target": "a2630f3cda86e46f0843b56dbe0a5ee7e8c1a290",
+  "candidateState": "PREPARED_CLOSED_WAIT_AV_R2",
+  "manifestBytes": 174649,
+  "manifestSha256": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08",
+  "conclusion": "Fixed preparation has scoped independent reviews; only explicit prerequisite and future admission remain, not a new source gap.",
+  "required": [
+    "AV R2 real PG success and prerequisite acceptance",
+    "Future unique manager NEXT with fresh cleanHEAD/claim<=60s/295inputs191external16links/rootidentity/unusednamespace/currentcompletefloor/admission"
+  ],
+  "scope": "Review coverage and mutual references only; no broad whole-closure semantic reapproval, no engineering/PG/TMP access. 57b188 delta NOT_RUN and old types/list not PG success."
+}
