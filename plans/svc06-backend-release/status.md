@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:42:05.963018Z；本地guard/实际调用入口检查收尾，0个人I/O；新窗口未领取 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:49:09.195637Z；新受控段七步完成、共享窗口已归还；个人实际后台6c/accepting21，原件待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原产品3cb/目标产物7d1/source6c不变；当前精确intent续接caller ec9c775462de61487836665973e792b4b15d616d，原core独立0f5891da；root工具上下文ae8500dd |
-| 工作树dirty状态 | 本次仅own证据与status封存；caller/core停止写入待独审，个人无新动作 |
+| 工作树dirty状态 | 仅本次actual原件/result/status封存；源码ec9c/core0f589不变，已消费段不再执行 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 12guard（9新）+3caller纯例通过；实际Node/PG模块0connect导入与参数检查通过；6组absent/双EOF/所有exact scratch清理；个人续接NOT_RUN |
-| 已集成main状态 / HEAD | R4实际与限定独审已main9f0fe5b2c096a49195ff8060d97584de235785d2；当前root ae8500dd仅管理后继，43工具来源不变。已消费R2迁入/Web-host/三报告/策略与R4 bootstrap保持；个人后台最后确认为af51/draining19，refresh/resume尚未执行。新v2精确intent续接未集成/未实际运行。 |
+| 检查状态 | 已审入口一次真实执行7阶段全部0；outer75906ms/7phase75811ms，监督直属PIDabsent/双EOF；旧三组checkpoint独立全组absent，actualClaimRecovery UNKNOWN |
+| 已集成main状态 / HEAD | R4实际与独审已main9f0fe；当前rootae8500dd管理后继、固定43工具来源不变。个人本次已实际更新到7d1/source6c、accepting21；Webd629/v3及3retained不变。本次actual源码/证据尚待独审与受控main接收，不追metadata链。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已查明旧本地未决记录阻止接单，并完成保留排队任务的精确修复入口；尚未修改该个人记录。 |
-| 下一可用交付 | 独立核验后，在同一维护操作中安全处置未决记录、刷新服务并解除停止接单。 |
-| 当前阻塞 | ACTIVE: 本次精确续接入口待独审和实际运行窗口；原未决记录与排队任务保留，不能重放已完成步骤。 |
+| 当前产出 | 个人后台已完成安全更新并解除停止接单；恢复前旧数据与排队任务保持，恢复后原排队任务已自然开始运行。 |
+| 下一可用交付 | 独立核验本次更新与保留证据；完整领取链尚未核清，不追加任务或模型调用。 |
+| 当前阻塞 | ACTIVE: 本次实际更新结果待独立核验；完整领取证据仍未知，原失败和历史未决结果保留。 |
 | 需用户决定 | NONE |
-| Review | R4实际失败与drain已独审/main9f0；0f5891da guard模块限定独审通过。caller ec9c7754待最终独审，旧结果不重写。 |
+| Review | ec9c7754/core0f589唯一准备独审通过；本次actual-result等待native唯一独立核读，原R4失败不改。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -418,3 +418,11 @@ Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原
 ## 精确未决intent续接实现（2026-10-07 13:29–13:42 UTC）
 
 [Interface/运行顺序](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/Interface.md) / [唯一manifest](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json)。037f v2 exact scope于13:29:15.075Z已原子领取；新合同只允许完整R4旧列证据与排队状态保持，不要求取消任务，不改变原默认零pending。局部实际1464ms，全部自有组/临时目录已清理。原R4窗口已结束；当前等待新caller独审与fresh受控窗口，不把旧900s延长。未来仅启动/accepting证据不足时actualClaimRecovery=UNKNOWN，完整任务不提前Done。
+
+## 新受控续接实际开工
+
+2026-10-07T13:47:33.200098+00:00：窗口svc06-personal-7d1-held-20261007-1347，fresh claims/71pins/4基线与实际空间通过，启动唯一原固定7阶段；900秒新截止2026-10-07T14:02:33.200098+00:00（另2秒reap）。原R4已结束且不延长，R2/bootstrap不重放。
+
+## 同operation精确处置与实际后台更新（2026-10-07 13:47–13:49 UTC）
+
+[本次RESULT](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md) / [唯一manifest](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result-manifest.json)。新窗口13:47:33.200098Z实际开始，13:48:49.163241Z wrapper退出，13:49:09.195637Z确认并RETURN。hold20→原intent退休→6c refresh→保留checkpoint→resume21全部完成；新三roles运行，旧center/runner/Web全部组停止。新队列任务自然running如实记录，operator0query，actualClaimRecovery=UNKNOWN（未获完整receipt/assignment链），不将本片提升为完整FLOW Done。原4阶段及bootstrap不重放；旧FAIL/KEEP保留。

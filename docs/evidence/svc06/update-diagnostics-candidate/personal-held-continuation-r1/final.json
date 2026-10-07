@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-07T13:48:49.137Z",
+  "outcome": "resumed-confirmed",
+  "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+  "runner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "maintenance_state": "accepting",
+    "maintenance_version": 21,
+    "maintenance_operation_id": null,
+    "maintenance_updated_at": "2026-10-07T13:48:45.599Z"
+  },
+  "oldGroups": [
+    {
+      "role": "center",
+      "group": 78240,
+      "absent": true
+    },
+    {
+      "role": "runner",
+      "group": 99312,
+      "absent": true
+    },
+    {
+      "role": "web",
+      "group": 89438,
+      "absent": true
+    }
+  ],
+  "processes": {
+    "center": {
+      "pid": 46474,
+      "group": 46474,
+      "identity": "running",
+      "recordSha256": "279ed6574882f457378b5514c164cbb5da8ae8ca0de39f1087402d45f4e9a882"
+    },
+    "runner": {
+      "pid": 55337,
+      "group": 55337,
+      "identity": "running",
+      "recordSha256": "eb0b01ab57f11931232408fade5443e8171a5550814000d88416718501f4585b"
+    },
+    "web": {
+      "pid": 55432,
+      "group": 55432,
+      "identity": "running",
+      "recordSha256": "674dcb6fff4d5b212c590a18530528b87cbe0b42aa896f03e81c95e9553a2247"
+    }
+  },
+  "runtimeSource": {
+    "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "dirty": false
+  },
+  "tuple": {
+    "backendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "context": {
+      "format": 1,
+      "publicOrigin": "http://127.0.0.1:61228",
+      "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    },
+    "compatibilityIds": {
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+    }
+  },
+  "policyPin": {
+    "directory": "/Users/citrine/.flow-personal",
+    "rootDev": "16777234",
+    "rootIno": "117819905",
+    "file": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "uid": "501",
+      "mode": "33152",
+      "nlink": "1",
+      "bytes": "205",
+      "modifiedNs": "1791376463623390214",
+      "changedNs": "1791376463623390214",
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    }
+  },
+  "finalTasksEqualPaused": false,
+  "boundary": "Preservation proved before explicit resume; subsequent user work is not reverted or suppressed.",
+  "startupConfirmed": true,
+  "acceptingConfirmed": true,
+  "actualClaimRecovery": "UNKNOWN",
+  "claimBoundary": "No operator claim/model/task. A clean v2 journal, accepting, or a saved configuredProfile does not prove this process completed a claim request."
+}

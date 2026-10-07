@@ -1,0 +1,155 @@
+{
+  "at": "2026-10-07T13:49:09.195637+00:00",
+  "window": "svc06-personal-7d1-held-20261007-1347",
+  "state": "RETURN",
+  "outcome": "RESUMED_AND_OBSERVED",
+  "completed": [
+    "fresh",
+    "hold-stop",
+    "retire",
+    "refresh",
+    "paused",
+    "resume",
+    "final"
+  ],
+  "outer": {
+    "pid": 24324,
+    "exit_code": 0,
+    "elapsed_ms": 75906,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": []
+  },
+  "phaseReports": [
+    {
+      "pid": 24425,
+      "exit_code": 0,
+      "elapsed_ms": 8901,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 32938,
+      "exit_code": 0,
+      "elapsed_ms": 578,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 32964,
+      "exit_code": 0,
+      "elapsed_ms": 903,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 33001,
+      "exit_code": 0,
+      "elapsed_ms": 51300,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 67438,
+      "exit_code": 0,
+      "elapsed_ms": 5574,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 72460,
+      "exit_code": 0,
+      "elapsed_ms": 5023,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 74384,
+      "exit_code": 0,
+      "elapsed_ms": 3532,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    }
+  ],
+  "retirement": "retired",
+  "originalClaimOutcome": "UNKNOWN",
+  "paused": {
+    "outcome": "ready-paused-preservation-confirmed",
+    "oldGroups": [
+      {
+        "role": "center",
+        "group": 78240,
+        "absent": true
+      },
+      {
+        "role": "runner",
+        "group": 99312,
+        "absent": true
+      },
+      {
+        "role": "web",
+        "group": 89438,
+        "absent": true
+      }
+    ],
+    "runnerState": "maintenance",
+    "runnerVersion": 20,
+    "admission": {
+      "version": 2,
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "assignments": 0,
+      "opportunityIdSha256": "56cd973c345c85616f152b061e5cd59ed45851cdc3801e12bf2004bc93890bd9",
+      "bytes": 135,
+      "sha256": "57fb41734e155de41d21fc42e19e8b5ebf4e1249ebad3e4e959810f0d1c8956f",
+      "dev": 16777234,
+      "ino": 124171426,
+      "meaning": "Bound initialization only; not a successful empty claim HTTP receipt."
+    }
+  },
+  "final": {
+    "outcome": "resumed-confirmed",
+    "runnerState": "accepting",
+    "runnerVersion": 21,
+    "runtimeSource": {
+      "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+      "dirty": false
+    },
+    "startupConfirmed": true,
+    "acceptingConfirmed": true,
+    "actualClaimRecovery": "UNKNOWN",
+    "finalTasksEqualPaused": false
+  },
+  "providerQueries": 0,
+  "personalServices": "New owned roles intentionally remain running; no shared validation process remains."
+}

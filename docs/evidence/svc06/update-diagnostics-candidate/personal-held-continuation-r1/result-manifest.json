@@ -1,0 +1,371 @@
+{
+  "kind": "one-authorized-held-intent-maintenance-actual-result",
+  "source": "ec9c775462de61487836665973e792b4b15d616d",
+  "coreSource": "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0",
+  "preparedDelivery": "e7d50fe3c7fcbdc65760d3c82e463c47fda9f048",
+  "window": "svc06-personal-7d1-held-20261007-1347",
+  "recordedAt": "2026-10-07T13:51:14.750425+00:00",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+      "bytes": 14335,
+      "sha256": "39262108ee6fb91f227a51aa6d15b6e0c0ed029903a3549009ba0b33e05b409d"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/run.py",
+      "bytes": 5120,
+      "sha256": "b509c8972d024b214be72c0faee4aacea29e3cf2d326aa08a425c004d5f8f04a"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/plan.json",
+      "bytes": 11875,
+      "sha256": "4f2f287976681c3b967f059ad4b6ad6df8e4096784733983694c24148c4ec1a1"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json",
+      "bytes": 9911,
+      "sha256": "5373429039d5d87ddaf5e7c652be7cb6d97fdde3eb22fdaecfcac12384add0c7"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/Interface.md",
+      "bytes": 5896,
+      "sha256": "7621eed23ac6d4ed4e5c1c1b862182122389980535527cb6ead20e7b409fae36"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+      "bytes": 13635,
+      "sha256": "31327493595a85a74d95416607c9b8e8b6386618d6d480b58fc5a3775655b252"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "bytes": 7380,
+      "sha256": "f862c5964077b46431d8d446c31978469aecda40994a4340ef7b3b152f30f8ff"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "bytes": 6842,
+      "sha256": "ccdcd30bcc51affd4a8a1e2d8e8c1718de3f60594330be2359842fa5b438016a"
+    }
+  ],
+  "resultBindings": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/checkpoint.json",
+      "bytes": 3214,
+      "sha256": "0b0084dc14112d1508a6e77d6b573ec0f158f49c488d1d604f0018be6b125a39"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-before.json",
+      "bytes": 30179,
+      "sha256": "93482780f552a9d50367c1d9af1e524b9a03b80b8f644acc91bdb48df7170cbb"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-final.json",
+      "bytes": 34249,
+      "sha256": "70098f3ca547fa9c62794e51de35858340c9528e443e74e82d5f2053debbfa38"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-paused.json",
+      "bytes": 34044,
+      "sha256": "d15b2ec6d14ab3e35ba37e7b8f3940dc0cda6cd01b1f6e33412a4f1f506f201c"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final-invocation.json",
+      "bytes": 657,
+      "sha256": "0158a235a99faff5f7504dff17d9f6660e6de2a7f080b9d7b4ed6ddc9cf5fdab"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final-outer.json",
+      "bytes": 396,
+      "sha256": "b9a19627a3cac0f903f01589344f1f8939b56f7c23d290bdbcaa87277d541dc3"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final.json",
+      "bytes": 2866,
+      "sha256": "91bfae6e769f19c227ad39a8ad54113bdae2b32bb84f3f918351deea4f6b8071"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh-invocation.json",
+      "bytes": 657,
+      "sha256": "80659d2ab07159c6c468c1a95db6fc008c2bd25b790e26d70527c3b9d051ddd4"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh-outer.json",
+      "bytes": 396,
+      "sha256": "d09cb16ed3d83c857bc68e405ac9e68a9addea939aecbc063668aeb1f29cdd69"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh.json",
+      "bytes": 949,
+      "sha256": "396ccd593d162aeb548251786b356ed1ff203b6d4aaa983433eacb15eff2cad0"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-before.json",
+      "bytes": 21923,
+      "sha256": "0c324d6f22b4ea966facf0d76bc799e8e823be16543debaf8d92e3291035df8c"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-fresh.json",
+      "bytes": 21967,
+      "sha256": "ac76108a7d9de82ab81d2394abc1a7504f25b458504e5a3726cc17ed79de4d46"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-paused.json",
+      "bytes": 22363,
+      "sha256": "1e922c0e36b9bbbe2877ffd693fc91ac1f3232ae43617a4428ffe09f2c3776fe"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-retired.json",
+      "bytes": 22011,
+      "sha256": "09633f48583d9d200893df8dc7296baa83806083e3962a840ff86df003f62a16"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-intent.json",
+      "bytes": 361,
+      "sha256": "6f5d8e73d44c48b5b3f9a08398e3a39ca9d5e4a4eb5204828c2707266442d1fc"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop-invocation.json",
+      "bytes": 665,
+      "sha256": "9f8ecfd92a8e16a49a1bdaf1d4e972341e3533282517ca0b46afd795a16834d5"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop-outer.json",
+      "bytes": 399,
+      "sha256": "332e14c274416427216a3027e9ae5da98a2924b8b4e2cb318caddeec2422ee75"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop.json",
+      "bytes": 242,
+      "sha256": "8cfcb49d08d2dab1cf90a1efe514c6c14991addbdf964e14a5fa5884c8c2ba5c"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold.json",
+      "bytes": 311,
+      "sha256": "725bcb0f3bce9a2fbb705f33c3d59e15c3bd66f608da3662a2263b1de29ef905"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/maintenance-deadline.json",
+      "bytes": 166,
+      "sha256": "6388df4d7cfadb013bbe8b8ef601ee178167d858322b636dc7814d6390e6b34c"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/operation.json",
+      "bytes": 494,
+      "sha256": "a8dd5d8b9fbb22a51e20a7fa6f41ef28a3633dfb5f9edac09f1a43011f96c0eb"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/paused-invocation.json",
+      "bytes": 659,
+      "sha256": "2360ca38342a9a71cb5d7b75c7f53cde44c337b0da55ad0d2f560beffe70a3ce"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/paused-outer.json",
+      "bytes": 397,
+      "sha256": "a8a6361d9601d56490e072516d9a538466900070a730c6ca6d4badd016fbfcee"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/refresh-invocation.json",
+      "bytes": 771,
+      "sha256": "c3150b4da2406123296b13511b351b7f2e316f506dfde4edfb2be16934e099c8"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/refresh-outer.json",
+      "bytes": 742,
+      "sha256": "eb19a1b352e98bdb24ea4b1cbbeaf959366748f410bd2c95f1df50b7deeac486"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/reservation.json",
+      "bytes": 270,
+      "sha256": "db380dd2a00ceaee9b47127818f73908e7fab49309a7aa2801ea8e103c296412"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result.json",
+      "bytes": 187,
+      "sha256": "5da141f24d1cb03a748b9622330f805540f6dbdbbb885cc1c99ac8cb7ae7b8d6"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/resume-invocation.json",
+      "bytes": 713,
+      "sha256": "5e71606b688c765690b6cc959b8584f039bb9ad9ca83b20384ba578809fd5992"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/resume-outer.json",
+      "bytes": 625,
+      "sha256": "52c56fc1b43507bdc88eca5fc89a43574aaa31cef83255917fad92c3a97f453a"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retire-invocation.json",
+      "bytes": 659,
+      "sha256": "45d774522cfeffeccbbafe4f7921224f80df33a29ce27c3c4789814d24a4c583"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retire-outer.json",
+      "bytes": 396,
+      "sha256": "7c11d2e2f8a0eec856c8577a56fa3b98f2cb1fdb3c57252646900a05e2592de7"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/intent.json",
+      "bytes": 3044,
+      "sha256": "ff4701d17bf1d97a9d6e1be1d21f4acc46f3429dec54a14c0a09ccd5ac0ed61c"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/pre-rename-confirmation.json",
+      "bytes": 2321,
+      "sha256": "8c8a4adb671de684b04a9636d78825ed4f7eaf22eec2ba7ce1e5a5463e447da4"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/result.json",
+      "bytes": 405,
+      "sha256": "16a6cedfd917984973743171cfd134e72e872e6b33159fc71b9adabc0f7bcb68"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-private-bindings.json",
+      "bytes": 2512,
+      "sha256": "50059e19127132ca7030dbee1661e609ae03e01ebc7b0dac55072108677efd98"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement.json",
+      "bytes": 450,
+      "sha256": "27d5e606348b3847a6dff8986684292c8b1e48b49b382332302a478fafa55d4d"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-start.json",
+      "bytes": 1068,
+      "sha256": "75b3f088ed39805e1cef1110bb04b68b5741af04ef6c5ac5556592e313a9542b"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-launch.json",
+      "bytes": 239,
+      "sha256": "148c1b035fdaa913ee9d32450f226e6027b7336909a8ad061896e89ab313621f"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-continuation-r1-outer.json",
+      "bytes": 1684,
+      "sha256": "748c2fdb9dc77ab98282911a316b46f54188bc1c7f0331c368b96c8058b48b61"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-continuation-r1-wrapper.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-wrapper-exit.json",
+      "bytes": 83,
+      "sha256": "fcce16d3fa6cda3e3f234e43a25657ecf5477e0a352effa59f9c0c04c21a6f01"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-return.json",
+      "bytes": 3354,
+      "sha256": "2b61b0df594ed4722405c700061685f36f5a7f85a031f4431f65fe564e33b651"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md",
+      "bytes": 2832,
+      "sha256": "e30f97df7bda7a50348f1cd8c68dd96e1be776307c0c2294009222c24022ae20"
+    }
+  ],
+  "rawFiles": 42,
+  "rawBytes": 219088,
+  "privateOriginals": {
+    "archive": {
+      "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4",
+      "dev": "16777234",
+      "ino": "124170989",
+      "uid": 501,
+      "mode": 448
+    },
+    "files": [
+      {
+        "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4/original.bin",
+        "dev": "16777234",
+        "ino": "124170990",
+        "uid": 501,
+        "nlink": 1,
+        "mode": 384,
+        "bytes": 80,
+        "sha256": "cad3b336e5c36bf584eadc516625cb0c24be6ff1bda71680975ed896f6b23c31"
+      },
+      {
+        "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4/intent.json",
+        "dev": "16777234",
+        "ino": "124170991",
+        "uid": 501,
+        "nlink": 1,
+        "mode": 384,
+        "bytes": 3044,
+        "sha256": "ff4701d17bf1d97a9d6e1be1d21f4acc46f3429dec54a14c0a09ccd5ac0ed61c",
+        "copy": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/intent.json"
+      },
+      {
+        "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4/replacement.bin",
+        "dev": "16777234",
+        "ino": "124170992",
+        "uid": 501,
+        "nlink": 1,
+        "mode": 384,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      {
+        "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4/pre-rename-confirmation.json",
+        "dev": "16777234",
+        "ino": "124170994",
+        "uid": 501,
+        "nlink": 1,
+        "mode": 384,
+        "bytes": 2321,
+        "sha256": "8c8a4adb671de684b04a9636d78825ed4f7eaf22eec2ba7ce1e5a5463e447da4",
+        "copy": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/pre-rename-confirmation.json"
+      },
+      {
+        "path": "/Users/citrine/.flow-personal/admission-retirement-bab13484-e849-4527-9e6b-61faccf9f8f4/result.json",
+        "dev": "16777234",
+        "ino": "124170996",
+        "uid": 501,
+        "nlink": 1,
+        "mode": 384,
+        "bytes": 405,
+        "sha256": "16a6cedfd917984973743171cfd134e72e872e6b33159fc71b9adabc0f7bcb68",
+        "copy": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/result.json"
+      }
+    ],
+    "meaning": "Original intent UUID contents stay only in private original.bin; JSON confirmation/audit copies contain bounded identities/digests, no credentials. Not a claim ACK."
+  },
+  "start": "2026-10-07T13:47:33.200098Z",
+  "wrapperEnd": "2026-10-07T13:48:49.163241Z",
+  "confirmedReturn": "2026-10-07T13:49:09.195637Z",
+  "supervision": {
+    "outerMs": 75906,
+    "phaseMs": 75811,
+    "exit0": true,
+    "outerAnd7PhasesAbsentDualEOF": true,
+    "signals": [],
+    "doesNotClaimWholeGroupsFromChildPidOnly": true
+  },
+  "result": {
+    "retired": "exact-original-intent-only",
+    "oldClaimOutcome": "UNKNOWN",
+    "runtimeSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "runnerState": "accepting",
+    "runnerVersion": 21,
+    "startupConfirmed": true,
+    "actualClaimRecovery": "UNKNOWN",
+    "oldGroupsAbsentBeforeResume": true,
+    "queuedTaskPreservedUntilResume": true,
+    "naturalQueuedTaskNowRunning": true,
+    "operatorQueryCount": 0,
+    "R2OrBootstrapReplay": false
+  },
+  "review": "PENDING independent result fidelity; no new execution authorized by this record"
+}
