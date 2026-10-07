@@ -1,0 +1,29 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "./inputs",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "files": [
+    "./inputs/packages/plugin-runtime/src/verification-input.test.ts",
+    "./inputs/apps/server/src/plugin-verification-configuration.test.ts",
+    "./inputs/apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "./inputs/apps/server/src/plugin-runtime/verification-result.test.ts",
+    "./inputs/apps/server/src/plugin-runtime/verification-routes.ts",
+    "./inputs/apps/server/src/events.ts",
+    "./inputs/apps/runner/src/plugins/execution.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

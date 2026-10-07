@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-10-07T20:31:27.000Z",
+  "deadline": "2026-10-07T20:56:27.000Z",
+  "base": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+  "handbacks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/admission-result-handback-receipt.json",
+      "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+      "version": 34,
+      "count": 36,
+      "at": "2026-10-07T20:32:42.865Z"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/admission-result-handback-receipt.json",
+      "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+      "version": 6,
+      "count": 25,
+      "at": "2026-10-07T20:32:43.180Z"
+    }
+  ],
+  "scopeCount": 23,
+  "maxLogicalBytes": 16777216,
+  "localMaxChildren": 6,
+  "localPerChildSeconds": 40,
+  "localCumulativeSeconds": 150,
+  "rawMaxBytes": 2097152,
+  "sourceMethod": "Fixed main sparse source; pending AV dependency only own evidence input mirror, no unclaimed tracked overlay",
+  "newScope": [
+    "apps/server/src/events.ts",
+    "apps/server/src/plugin-runtime/store.ts",
+    "apps/server/src/plugin-runtime/commands.ts",
+    "apps/server/src/plugin-runtime/artifact.ts",
+    "packages/contracts/src/runner.ts",
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "packages/contracts/src/plugin-verification-admission.ts",
+    "packages/contracts/src/plugin-verification-event.ts",
+    "packages/plugin-runtime/src/verification-input.ts",
+    "packages/plugin-runtime/src/verification-input.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.ts",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "apps/server/src/plugin-runtime/verification-result.ts",
+    "apps/server/src/plugin-runtime/verification-result.test.ts",
+    "apps/server/src/plugin-runtime/verification-routes.ts",
+    "apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+    "apps/server/src/plugin-verification-configuration.ts",
+    "apps/server/src/plugin-verification-configuration.test.ts",
+    "docs/evidence/x01-verifier-admission-result",
+    "plans/x01-verifier-admission-result"
+  ]
+}
