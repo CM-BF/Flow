@@ -1,0 +1,46 @@
+{
+  "startedAt": "2026-10-07T20:44:54.861337+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=SVC06B initialization",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "freeBytes": 19245248512,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-04-egto_08h",
+    "dev": 16777234,
+    "ino": 124475019
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "c6ca8c0711b4c08bc6c9582da63253fa2c0b0c53972d8eb169daf3de54daed41"
+    },
+    {
+      "path": "apps/runner/src/runtime-initialization.test.ts",
+      "sha256": "20ea1b5d96d7d4e623cd213a9e23b1ec47a5e3b5b8f35c29e2499864e8f15980"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "sha256": "183a9562fb985c4eb87690fcc59af074fb1608c883072ae6cc4f4351a55b8f4d"
+    }
+  ]
+}

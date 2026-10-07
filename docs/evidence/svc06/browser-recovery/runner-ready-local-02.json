@@ -1,0 +1,98 @@
+{
+  "startedAt": "2026-10-07T20:43:15.183649+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runner-ready-vitest.config.mjs"
+  ],
+  "freeBytes": 19251056640,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-02-9xztbx18",
+    "dev": 16777234,
+    "ino": 124474697
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "peerMetadataWithinTmpBytes": 524288,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "c6ca8c0711b4c08bc6c9582da63253fa2c0b0c53972d8eb169daf3de54daed41"
+    },
+    {
+      "path": "apps/runner/src/runtime-initialization.test.ts",
+      "sha256": "20ea1b5d96d7d4e623cd213a9e23b1ec47a5e3b5b8f35c29e2499864e8f15980"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "sha256": "882385d311836c456a0156444bcd529c6729052e44294c305f38c4069f7604c5"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "sha256": "203db0177d40e335c6ca59db9660bd347c00f3e682d6a47c054b2dce921b7dbc"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "sha256": "77fb61f6367f2c82cfa5bcf8938deb2ba61a59e6311728bc3cf310dc9255020c"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "sha256": "d1f8d8656834d4b2507e992e717c593fd2d75cb18dd61e19f90316e6b347f88b"
+    }
+  ],
+  "report": {
+    "pid": 14092,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1022,
+    "stdout": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery\n\n \u2713 apps/runner/src/runtime-initialization.test.ts (10 tests) 105ms\n\n Test Files  1 passed (1)\n      Tests  10 passed (10)\n   Start at  13:43:15\n   Duration  741ms (transform 347ms, setup 0ms, import 519ms, tests 105ms, environment 0ms)\n\n",
+    "stderr": "",
+    "observed_bytes": 332,
+    "retained_bytes": 332,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:43:16.206952+00:00",
+  "remaining": [
+    "vite",
+    "vite/vitest",
+    "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+  ],
+  "scratchBytes": 131,
+  "cleanup": "KEEP_NONEMPTY"
+}

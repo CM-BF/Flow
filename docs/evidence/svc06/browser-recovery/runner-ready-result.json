@@ -1,0 +1,118 @@
+{
+  "at": "2026-10-07T20:51:34.773Z",
+  "source": "77b489ea545bae1939f64f4669aeaa3f84816b01",
+  "state": "FIXED_SOURCE_LOCAL_PASS_REVIEW_PENDING",
+  "mainPreimage": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+  "tests": {
+    "distinctFinalPassed": 25,
+    "new": 18,
+    "affected": 7,
+    "selections": 30,
+    "passedSelections": 29,
+    "failedSelectionsPreserved": 1,
+    "focusedTypesFinalExit": 0,
+    "typesFirstFailure": "missing exact A2A subpath/MCP declaration aliases; raw retained",
+    "mainFixtureFirstFailure": "unused protocol import not isolated; raw retained; pure direct main consumer fixed and rerun only once"
+  },
+  "elapsedMs": 8042,
+  "rawBytes": 7634,
+  "actualStart": "2026-10-07T20:43:14.909360+00:00",
+  "actualReturn": "2026-10-07T20:49:13.482717+00:00",
+  "allGroupsAbsent": true,
+  "allDualEOF": true,
+  "signals": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "removedEmptyScratch": 3,
+  "keptScratch": [
+    {
+      "identity": {
+        "path": "/private/tmp/svc06b-ready-02-9xztbx18",
+        "dev": 16777234,
+        "ino": 124474697
+      },
+      "bytes": 131,
+      "entries": [
+        "vite",
+        "vite/vitest",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+      ]
+    },
+    {
+      "identity": {
+        "path": "/private/tmp/svc06b-ready-03-9254z11l",
+        "dev": 16777234,
+        "ino": 124475013
+      },
+      "bytes": 1357796,
+      "entries": [
+        "node-compile-cache",
+        "node-compile-cache/v24.20.0-arm64-964aae3f-501",
+        "node-compile-cache/v24.20.0-arm64-964aae3f-501/d1bae4a2"
+      ]
+    },
+    {
+      "identity": {
+        "path": "/private/tmp/svc06b-ready-05-4ztlg7j5",
+        "dev": 16777234,
+        "ino": 124475350
+      },
+      "bytes": 1357716,
+      "entries": [
+        "node-compile-cache",
+        "node-compile-cache/v24.20.0-arm64-964aae3f-501",
+        "node-compile-cache/v24.20.0-arm64-964aae3f-501/d1bae4a2"
+      ]
+    },
+    {
+      "identity": {
+        "path": "/private/tmp/svc06b-ready-06-znwbk3sn",
+        "dev": 16777234,
+        "ino": 124475386
+      },
+      "bytes": 130,
+      "entries": [
+        "vite",
+        "vite/vitest",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+      ]
+    },
+    {
+      "identity": {
+        "path": "/private/tmp/svc06b-ready-07-8yhhoh46",
+        "dev": 16777234,
+        "ino": 124475669
+      },
+      "bytes": 131,
+      "entries": [
+        "vite",
+        "vite/vitest",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+      ]
+    }
+  ],
+  "totalKeptBytes": 2715904,
+  "budget": {
+    "workSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072,
+    "withinTmpPeerMetadataReserve": 524288
+  },
+  "pg": 0,
+  "httpListener": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "artifactBuild": 0,
+  "deployment": "NOT_RUN",
+  "actualClaim": "NOT_OBSERVED"
+}

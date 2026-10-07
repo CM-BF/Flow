@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:14:35.626Z；恢复源码窄修实施中，个人服务操作未重启 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T20:51:34.773Z；本次初始化证据已固定待独审，个人服务操作未重启 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,21 +14,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
 | 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前新增Web调用source 520d3cb7bdb352a1462d83c214e63c8a47c218f4；原6c417入口已main |
-| 工作树dirty状态 | 原520调用和已消费实际原件不变；main c29前像的单launch runtime复用修复实施中 |
+| 工作树dirty状态 | 原已消费实际原件不变；本次7 authored源停写，fixed57ab只读依赖供给与04da静态候选分列 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 单launch runtime复用source de77924faee33bf00d40c272052a762dad04ed1e 待独审；原520执行/52d95失败原件冻结 |
-| 实现范围 | 本次仅own evidence内current-web-transfer/actions及三直接检查、current-operator参数、template和formal输入；精确8source见web-publication-preparation.json；原已审reader/产品停写 |
-| 检查状态 | 本次Web微型fixture9/9、4argv+未知拒绝/3真实Policy边界、1受限Node导入；三轮619ms/raw1251B、三组absent/双EOF/空scratchremoved；0PG/HTTP/个人/provider。旧红绿保留不重跑 |
+| 实现目标 | 单launch runtime复用source de77924faee33bf00d40c272052a762dad04ed1e 已独审/main57ab；当前 child IPC 初始化正证据 source 77b489ea545bae1939f64f4669aeaa3f84816b01 待独审；原520执行/52d95失败原件冻结 |
+| 实现范围 | 本次runner runtime/main/直接专测、preview两文件、startup diagnostics两文件；相对fixed57ab的精确7path；恢复候选只移必要04da差量 |
+| 检查状态 | 本次25 distinct最终绿/focused types0；8轮8042ms/raw7634B，组均absent/双EOF，3空scratch移除/5派生cache共2715904B KEEP；两装配红保留。0PG/服务/个人/provider。原绿不重跑 |
 | 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
-| 下一可用交付 | 交付减少启动重复校验的修复及可信初始化证据，再以固定新宿主恢复服务；新版网页仍待发布。 |
-| 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需明确网页启动失败并采用受审恢复路径。禁止盲重试或自动回滚。 |
+| 下一可用交付 | 启动重复校验修复已接收；当前初始化证据待独审，再组合受管恢复入口并验证新宿主冷启动和网页兼容，恢复服务后发布新版网页。 |
+| 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需完成新固定宿主、冷启动/兼容和受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v7 active；原scope加preview.mjs、backend-release/host.mjs及runtime.test.mjs；19:59:21.785Z原子receipt。其它产品停写 |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
 | 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850已main72f5758bc，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -144,3 +144,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T20:14:35.626Z：Lead已限定批准52d95失败原件保真，不代表部署通过。v7精确scope核领后，从main c29逐字供给preview/host前像，复用find-skills/clean-code/codebase-design的单职责与有界状态方法。单launch验证复用只核相同namespace/descriptor及private root/manifest；无global缓存，不调就绪10s。20:02:40.328Z受审history只读77表，仅维护审计21→23且旧行全保留，其余76表旧列摘要相同；不推断全面无副作用。新ready正证据需runner初始化notice后继接缝，当前仅旧profile/存活不能满足；原actual claim UNKNOWN。
 
 2026-10-07T20:23:51.276Z：runtime复用窄片9/9及实际preview import已完成，4轮合计1613ms/3266B，20:21:01.676045Z实际RETURN；4组absent/双EOF/4exact空scratchremoved。local02/03仅检查脚本装配失败保留，后续只修真实相对路径与pg官方import入口；无生产重测。见[runtime-reuse-interface](../../docs/evidence/svc06/browser-recovery/runtime-reuse-interface.md)与result。产品源待独审，尚无新artifact/服务动作；旧profile假ready缺口单列后继，不能凭本片检查宣称恢复。
+
+2026-10-07T20:34:55.940Z：runner-ready 实施段从原子amend实际成功开始。复用已审 runtime reuse/main57ab；仅本次child越过本地初始化guard的正IPC证据可补充旧profile，初始化与中心accepting/实际领取分开。当前0个人操作、0构建、0PG/provider；新恢复artifact待本片与原维护目标切换接口固定，不能改旧产物。
+
+2026-10-07T20:51:34.773Z：runner-ready source 77b489ea545bae1939f64f4669aeaa3f84816b01 固定待独审；检查实际段20:43:14.909360Z→20:49:13.482717Z已RETURN。本片25 distinct最终绿，原两装配失败/五cache KEEP保留；[结果](../../docs/evidence/svc06/browser-recovery/runner-ready-result.json)/[Interface](../../docs/evidence/svc06/browser-recovery/runner-ready-interface.md)。单launch复用已获Lead独审并main57ab（I02 svc06b-runtime-reuse-review.json）。当前仅源码/记录，恢复artifact/cold startup/4App新tuple/个人同op23续接均未执行。实际领取无新证据必须单列NO_ASSIGNMENT_OBSERVED。

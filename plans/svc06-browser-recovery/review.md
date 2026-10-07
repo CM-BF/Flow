@@ -45,3 +45,7 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## Web779薄调用源码独审已收
 
 2026-10-07T19:13:10.034Z，Lead唯一 `APPROVED_LIMITED_FIXED_WEB_TRANSFER_AND_PUBLICATION_SOURCE`，source520d3cb7bdb352a1462d83c214e63c8a47c218f4，无blocking；[I02原审查](../../../m2-integration/docs/evidence/i02/svc06b-web-publication-source-review.json)。8源与三轮实际输入逐字同，9行为/5argv/3Policy/受限import及619ms/1251B/完整RETURN已核，reviewer0重跑。仅源码/局部证据批准；个人fresh/pins/namespace/唯一窗口仍待，不代表实际更新或新页面已可见。
+
+## Runner initialization 当前小片待独审
+
+固定source 77b489ea545bae1939f64f4669aeaa3f84816b01；相对main57ab仅7 authored源/专测，source-only只读依赖逐字供给不属产品新实现。复用已批准de779/main57ab，不重审9绿。范围与25 distinct/原红/KEEP见[Interface](../../docs/evidence/svc06/browser-recovery/runner-ready-interface.md)及result。当前结论PENDING，作者自查不是独审；冷启动/新artifact/新兼容/个人恢复未执行。
