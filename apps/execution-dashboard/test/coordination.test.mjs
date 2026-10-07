@@ -2,17 +2,16 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { mkdtemp, writeFile, rm, mkdir, symlink } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
+import { writeFile, rm, symlink } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import pg from 'pg';
 import net from 'node:net';
 import { fixture } from './fixture.mjs';
+import { createOwnedWorktrees } from './owned-worktrees.mjs';
 import { coordinationPool, initializeLedger, applyCommand, readAssignments, assignmentSnapshot } from '../src/coordination/ledger.mjs';
 import { literalScope, scopesOverlap } from '../src/coordination/input.mjs';
 const execute = promisify(execFile);
-const repository = fileURLToPath(new URL('../../../', import.meta.url));
 const cli = fileURLToPath(new URL('../src/coordination/cli.mjs', import.meta.url));
 const adminUrl = process.env.FLOW_COORDINATION_TEST_ADMIN;
 
@@ -26,26 +25,26 @@ test('literal paths compare by segments, reject traversal/globs, and normalize d
 });
 
 test('independent PostgreSQL processes allocate atomically, replay receipts, fence changes and retain handoff occupancy', { skip: !adminUrl, timeout: 20000 }, async context => {
-  const temporary = await mkdtemp(path.join(tmpdir(), 'flow-claims-test-'));
+  const owned = await createOwnedWorktrees();
+  const { root: temporary, repository, inputs } = owned;
   const dbName = `flow_claims_test_${process.pid}`;
-  const admin = new pg.Pool({ connectionString: adminUrl });
+  let admin;
   let pool;
+  let failure;
   try {
+    admin = new pg.Pool({ connectionString: adminUrl });
     await admin.query(`CREATE DATABASE ${dbName}`);
     const target = new URL(adminUrl); target.pathname = `/${dbName}`;
     pool = coordinationPool(target.toString());
     await initializeLedger(pool);
-    const worktrees = [];
+    const peers = [];
     for (let index = 0; index < 5; index++) {
-      const worktree = path.join(temporary, `tree${index}`);
-      await execute('git', ['-C', repository, 'worktree', 'add', '--detach', worktree, 'HEAD']);
-      worktrees.push(worktree);
+      peers.push(await owned.add(`tree${index}`, `codex/d04-test-${process.pid}-${index}`));
     }
-    // Detached trees are deliberately refused; test peers use explicit local branch names.
-    for (let index = 0; index < 5; index++) await execute('git', ['-C', worktrees[index], 'switch', '-c', `codex/d04-test-${process.pid}-${index}`]);
-    const command = (id, index, scope, taskId = id) => ({ requestId: id, actor: { lead: 'lead', worker: id }, taskId, role: 'writer', branch: `codex/d04-test-${process.pid}-${index}`, worktree: worktrees[index], scope });
+    const worktrees = peers.map(peer => peer.worktree);
+    const command = (id, index, scope, taskId = id) => ({ requestId: id, actor: { lead: 'lead', worker: id }, taskId, role: 'writer', ...peers[index], scope });
     const peer = async input => {
-      const file = path.join(temporary, `${input.requestId}.json`);
+      const file = path.join(inputs, `${input.requestId}.json`);
       await writeFile(file, JSON.stringify(input));
       try {
         const result = await execute(process.execPath, [cli, 'take', file], { env: { ...process.env, FLOW_COORDINATION_DATABASE_URL: target.toString(), FLOW_COORDINATION_REPO: repository }, timeout: 5000 });
@@ -77,10 +76,10 @@ test('independent PostgreSQL processes allocate atomically, replay receipts, fen
     assert.deepEqual((await readAssignments(pool)).claims.find(c => c.claimId === current.claimId).scope, ['foo']);
     const amended = await applyCommand(pool, update('amend', { scope: ['foo', 'new/file'] }), repository);
     await assert.rejects(applyCommand(pool, update('release', { stoppedWriting: true }), repository), error => error.code === 'STALE_VERSION');
-    await assert.rejects(applyCommand(pool, update('handoff', { stoppedWriting: true, next: { lead: 'other', worker: 'other', worktree: worktrees[2], branch: `codex/d04-test-${process.pid}-2` } }), repository), error => error.code === 'STALE_VERSION');
+    await assert.rejects(applyCommand(pool, update('handoff', { stoppedWriting: true, next: { lead: 'other', worker: 'other', worktree: worktrees[2], branch: peers[2].branch } }), repository), error => error.code === 'STALE_VERSION');
     current = amended.claim;
     await assert.rejects(applyCommand(pool, update('release'), repository), error => error.code === 'INVALID');
-    const next = { lead: 'next-lead', worker: 'next-worker', worktree: worktrees[2], branch: `codex/d04-test-${process.pid}-2` };
+    const next = { lead: 'next-lead', worker: 'next-worker', worktree: worktrees[2], branch: peers[2].branch };
     await symlink(temporary, path.join(worktrees[2], 'foo'));
     await assert.rejects(applyCommand(pool, update('handoff', { stoppedWriting: true, next }), repository), error => error.code === 'INVALID');
     await rm(path.join(worktrees[2], 'foo'));
@@ -112,15 +111,21 @@ test('independent PostgreSQL processes allocate atomically, replay receipts, fen
       assert.ok(snapshot.unregisteredAssignments.every(value => value.state !== 'released'));
       assert.equal(snapshot.tasks.length, 2, 'unregistered claim paths are never read as progress sources');
     } finally { if (priorUrl === undefined) delete process.env.FLOW_COORDINATION_DATABASE_URL; else process.env.FLOW_COORDINATION_DATABASE_URL = priorUrl; }
+  } catch (error) {
+    failure = error;
   } finally {
-    if (pool) await pool.end();
-    const listing = await execute('git', ['-C', repository, 'worktree', 'list', '--porcelain']);
-    for (const line of listing.stdout.split('\n')) if (line.startsWith(`worktree ${temporary}/`)) await execute('git', ['-C', repository, 'worktree', 'remove', '--force', line.slice(9)]);
-    for (let index = 0; index < 5; index++) await execute('git', ['-C', repository, 'branch', '-D', `codex/d04-test-${process.pid}-${index}`]).catch(() => {});
-    await admin.query(`DROP DATABASE IF EXISTS ${dbName} WITH (FORCE)`);
-    await admin.end();
-    await rm(temporary, { recursive: true, force: true });
+    const errors = [];
+    const attempt = async action => { try { await action(); } catch (error) { errors.push(error); } };
+    if (pool) await attempt(() => pool.end());
+    await attempt(async () => { errors.push(...(await owned.cleanup()).errors); });
+    if (admin) {
+      await attempt(() => admin.query(`DROP DATABASE IF EXISTS ${dbName} WITH (FORCE)`));
+      await attempt(() => admin.end());
+    }
+    if (errors.length) throw new AggregateError(failure ? [failure, ...errors] : errors,
+      'Coordination test cleanup failed; owned leftovers retained', { cause: failure ?? errors[0] });
   }
+  if (failure) throw failure;
 });
 
 test('missing and unreachable coordination databases return unknown within bounded time', async () => {
