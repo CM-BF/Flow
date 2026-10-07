@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T02:31:33.280028+00:00",
+  "scope": [
+    "apps/execution-dashboard/test/coordination.test.mjs",
+    "apps/execution-dashboard/test/owned-worktrees.mjs",
+    "apps/execution-dashboard/test/owned-worktrees.test.mjs"
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "application": "local matching skill discovery; existing versions reused, no install",
+      "localContentSha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "application": "bounded existing flow; prior Lead approved concrete synthetic repo/exact-owned lifecycle design followed without expanding approval",
+      "localContentSha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "application": "private owner Interface reused directly by production test caller and independent behavior tests; no general Git framework",
+      "localContentSha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "application": "exact ownership names; creation/cleanup responsibility; errors preserved and later cleanup attempted; changed anonymous cleanup swallowing to explicit aggregated failure",
+      "localContentSha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "findingsFixed": [
+    "Removed real Flow repo dependency for five temporary trees",
+    "Recorded creation intent before Git awaits",
+    "Changed recursive outer test cleanup to rmdir so retained leftovers are not erased",
+    "Git environment rejects inherited GIT_* location overrides and global/system config for owned fixture commands",
+    "Independent review initialization P2: all operations after mkdtemp now have exact-root cleanup and preserve original failure"
+  ],
+  "validation": "Static text/hash/protected input comparison and git diff --check only; all Node/pureGit/PG/browser checks NOT_RUN",
+  "limits": "No measured byte/time improvement or full D04 behavior approval",
+  "staticChecks": {
+    "metadataLocalLinks": 15,
+    "diffCheck": "PASS",
+    "sourceRuntime": "NOT_RUN"
+  }
+}

@@ -1,3 +1,11 @@
+# 当前测试生命周期后继审查
+
+Target `fa6f8835d95e5e59fb62e14db5561498c741a4e3`；base1caac8c4856fed6de59d3f7467885563a187a758。APPROVED_SOURCE_ONLY；root固定fa6f限定三测试源码及own记录，所有新检查NOT_RUN。旧审批保留如下，仅原账本/展示交付，不覆盖本后继。[固定manifest](../../docs/evidence/d04/owned-worktree-lifecycle/source-manifest.json) / [Interface](../../docs/evidence/d04/owned-worktree-lifecycle/interface.md)。验收：canonical身份与创建intent；只exact自有worktree/branch；错误不吞且后续清理继续；normal/alias/midfailure/lock/sentinel由真实helper合成repo验证，无真实PG/历史清理。
+
+初审310e发现初始化末尾metadata读取不在清理try内；80340a先纳入末尾读取，fa6f进一步将canonicalize/lstat至所有初始化步骤统一纳入原try/catch，CLOSED_SOURCE_ONLY；[root正式审](../../docs/evidence/d04/owned-worktree-lifecycle/root-fa6f-source-review.json)核对最终target。无新测试运行。
+
+## 历史审查原文
+
 # D04 独立 review
 
 **状态：APPROVED**

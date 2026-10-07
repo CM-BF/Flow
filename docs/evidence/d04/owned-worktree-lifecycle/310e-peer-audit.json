@@ -1,0 +1,47 @@
+{
+  "target": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e",
+  "base": "1caac8c4856fed6de59d3f7467885563a187a758",
+  "at": "2026-10-07T02:33:00.951226+00:00",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/test/owned-worktrees.mjs",
+      "bytes": 8013,
+      "sha256": "0c2b851090a16bd7fdb5c4ce048b5612a9a6b5b9def3241637c26362fa900945",
+      "commit": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e"
+    },
+    {
+      "path": "apps/execution-dashboard/test/owned-worktrees.test.mjs",
+      "bytes": 6299,
+      "sha256": "fe89bf5d55a91bf54adac869b3f219ce4b00df339f41fe275391641f59573ea6",
+      "commit": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e"
+    },
+    {
+      "path": "apps/execution-dashboard/test/coordination.test.mjs",
+      "bytes": 11128,
+      "sha256": "5b4c27e630532b641a62cedc178309a48c429bcf91cc960e5b51e718ab24d20e",
+      "commit": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e"
+    }
+  ],
+  "sourceRead": "git show fixed objects only",
+  "observedHead": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+  "observedBranch": "codex/dashboard-coordination",
+  "dirtyOwnerMetadataOnly": [
+    " M plans/d04-coordination/plan.md",
+    " M plans/d04-coordination/review.md",
+    " M plans/d04-coordination/status.md",
+    "?? docs/evidence/d04/owned-worktree-lifecycle/"
+  ],
+  "coordinationAssertions": {
+    "base": 42,
+    "target": 42
+  },
+  "testDefinitions": {
+    "coordinationBase": 4,
+    "coordinationTarget": 4,
+    "pureGitNew": 5
+  },
+  "runtime": "NOT_RUN",
+  "writes": "Only this private TMP report/audit; no project edits",
+  "findingCount": 1,
+  "decision": "CHANGES_REQUESTED_SCOPED_SOURCE_ONLY"
+}

@@ -1,0 +1,46 @@
+{
+  "implementation": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+  "base": "1caac8c4856fed6de59d3f7467885563a187a758",
+  "claimId": "f61d41f5-644a-4013-bd30-9ea298b9027d",
+  "claimVersion": 1,
+  "sources": {
+    "apps/execution-dashboard/test/coordination.test.mjs": "5b4c27e630532b641a62cedc178309a48c429bcf91cc960e5b51e718ab24d20e",
+    "apps/execution-dashboard/test/owned-worktrees.mjs": "4a5e3e0556bec05339c4fd1ec4c1934bb1de5b3852b67e351a7ec29c3155c79a",
+    "apps/execution-dashboard/test/owned-worktrees.test.mjs": "fe89bf5d55a91bf54adac869b3f219ce4b00df339f41fe275391641f59573ea6"
+  },
+  "protectedInputs": {
+    "apps/execution-dashboard/src/coordination/ledger.mjs": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+    "apps/execution-dashboard/src/coordination/input.mjs": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+    "apps/execution-dashboard/src/coordination/cli.mjs": "a3fdc296e1af25050453f253776c0c80b506ae3bfee14ee5384f13bc3425ff87",
+    "apps/execution-dashboard/test/fixture.mjs": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757"
+  },
+  "staticChecks": {
+    "oldBusinessAssertLines": 42,
+    "newBusinessAssertLines": 42,
+    "unchangedUnreachableAndSilentTests": true,
+    "pureGitTestNames": [
+      "five owned trees use a tiny synthetic repository and leave no owned registration or branch",
+      "an owned symlink tmp alias and spaces resolve to the same exact registered identity",
+      "a real post-checkout failure after Git registration is recovered from the creation intent",
+      "a locked owned tree retains its root and reports failure while later owned trees are removed",
+      "non-owned worktree, branch and root sentinel survive and block recursive root removal"
+    ],
+    "importsExecuted": false,
+    "syntaxOrProductTests": "NOT_RUN"
+  },
+  "review": "APPROVED_SOURCE_ONLY_VALIDATION_PENDING",
+  "runtime": "NOT_RUN",
+  "main": "NOT_INTEGRATED",
+  "previousImplementation": "310e0eed725fb3a3d8ef1be959e7058f51b2f17e",
+  "sourceReviewFinding": {
+    "initializationFailure": "CLOSED_SOURCE_ONLY",
+    "fix": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+    "scope": "canonicalize/lstat/init/commit/head/common-dir all covered by same exact-createdRoot cleanup catch",
+    "runtime": "NOT_RUN"
+  },
+  "sourceHistory": [
+    "310e0eed725fb3a3d8ef1be959e7058f51b2f17e",
+    "80340a2c60935bdc94da39be7abc5e93337123bd"
+  ],
+  "reviewEvidence": "root-fa6f-source-review.json"
+}

@@ -1,6 +1,6 @@
 # D04 — 多 Lead 领取登记
 
-状态：completed。Owner：Execution Lead / Astra Ultra。用户已授权，Goal Owner 已确认 PostgreSQL 方案。
+状态：in-progress（本次仅测试生命周期后继；原账本交付保留）。Owner：d01_owner / Astra Ultra，原Execution Lead已明确委派。用户已授权，Goal Owner 已确认 PostgreSQL 方案。
 
 ## 目标与方案
 
@@ -28,3 +28,9 @@ apps/execution-dashboard/、plans/d04-coordination/、docs/evidence/d04/；Lead 
 ## Skills
 
 本地 find-skills 发现并读取 codebase-design / clean-code / brainstorming / webapp-testing。实际应用：事务/幂等/冲突隐藏在账本模块，CLI/网页共用读接口；公开行为及两个真实 process 测试；按已获明确授权的设计直接实施，不新增 skill 审批。clean-code 每工作段/交付/合并前；浏览器明确 ready locator，不等 SSE networkidle。
+
+## 2026-10-07 原 D04-02 有界后继
+
+原账本/展示交付不撤销。仅修coordination测试自有Git生命周期：以最小自有合成repo创建五个worktrees，保原PG/CLI/snapshot断言；canonical tmp身份、创建前登记intent、精确porcelain-z登记、正式remove确认后删自有branch，失败继续清理且保原异常，未知/锁定项保根，不清历史或prune。新增两个私有测试文件与原coordination.test.mjs，原plan/evidence共五scope；[正式领取](../../docs/evidence/d04/owned-worktree-lifecycle/take-receipt.json)。
+
+- [ ] D04-02-LIFECYCLE：normal/alias/中途失败/locked-remove/非自有哨兵回归，固定源码独审后再申请一次pureGit小准入；当前全部NOT_RUN，不触真实coordPG或整个dashboard，不声称性能收益。
