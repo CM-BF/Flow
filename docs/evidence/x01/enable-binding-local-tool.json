@@ -1,0 +1,25 @@
+{
+  "kind": "X01_STAGE_A_EXTERNAL_TOOL_OBSERVATION",
+  "executionHead": "0984405693f78768893c80a739b45de93b6f4f57",
+  "sourceCommit": "d6f52c3a0db45eb69a57c68c54ff47423a8ccb79",
+  "tool": "exec_command",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "start": {
+    "current_time": "2026-10-07 02:20:15 UTC"
+  },
+  "result": {
+    "chunk_id": "10e259",
+    "wall_time_seconds": 0.0710825,
+    "exit_code": 1,
+    "original_token_count": 102,
+    "output": "{\"receiptWritten\":true,\"failure\":{\"type\":\"RuntimeError\",\"code\":\"CHECK_WINDOW_FAILED\"},\"unknown\":true,\"rawDiskBytes\":4376,\"rawLimitBytes\":524288,\"elapsedBeforeCliMs\":168.7404999975115,\"observedUnretainedBytes\":0,\"rawAccountingComplete\":false,\"temporaryRemoved\":false,\"selected\":null,\"passed\":null,\"wholeToolExitRequiresExternalObservation\":true,\"knownChargeWithCliReserve\":12568,\"withinKnownRawBudget\":true}\n"
+  },
+  "end": {
+    "current_time": "2026-10-07 02:20:15 UTC"
+  },
+  "clockLimitations": [
+    "UTC observations are only second-resolution.",
+    "exec_command.wall_time_seconds and caller monotonic elapsed have distinct measurement boundaries; neither is substituted for the other.",
+    "No source/check retry followed this tool exit."
+  ]
+}
