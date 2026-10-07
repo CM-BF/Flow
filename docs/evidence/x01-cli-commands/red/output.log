@@ -1,0 +1,100 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands
+
+ ❯ packages/client/src/plugin-runtime.test.ts (10 tests | 10 failed) 15ms
+   × connects four owner methods to the original authenticated bounded transport 12ms
+   × freezes input before await and accepts the historical ACK even after current state changes 0ms
+   × rejects mismatched admission task as UNKNOWN, never input validation 0ms
+   × rejects mismatched admission digest as UNKNOWN, never input validation 0ms
+   × rejects mismatched admission registration as UNKNOWN, never input validation 0ms
+   × rejects mismatched admission revision as UNKNOWN, never input validation 0ms
+   × rejects mismatched admission title as UNKNOWN, never input validation 0ms
+   × rejects mismatched admission harness as UNKNOWN, never input validation 0ms
+   × rejects wrong runtime/operation/enable identities and malformed read ACKs 0ms
+   × retains route/key/body on ambiguous transmission and never retries; typed409 stays a rejection 0ms
+ ❯ apps/cli/src/plugin-runtime.test.ts (3 tests | 2 failed) 18ms
+   × runs the actual CLI through FlowClient for all four commands 14ms
+   ✓ returns usage2 before transport for missing key/invalid input/oversized encoded file 2ms
+   × separates unknown ACK exit4 from request usage2 and trusted business409 exit3 1ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 12 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/cli/src/plugin-runtime.test.ts > runs the actual CLI through FlowClient for all four commands
+AssertionError: expected 2 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 2
+
+ ❯ apps/cli/src/plugin-runtime.test.ts:13:53
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/12]⎯
+
+ FAIL  apps/cli/src/plugin-runtime.test.ts > separates unknown ACK exit4 from request usage2 and trusted business409 exit3
+AssertionError: expected 2 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 2
+
+ ❯ apps/cli/src/plugin-runtime.test.ts:27:73
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/12]⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > connects four owner methods to the original authenticated bounded transport
+TypeError: client(...).pluginRuntime is not a function
+ ❯ packages/client/src/plugin-runtime.test.ts:8:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/12]⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > freezes input before await and accepts the historical ACK even after current state changes
+TypeError: client(...).admitPluginToolTask is not a function
+ ❯ packages/client/src/plugin-runtime.test.ts:19:26
+     17|   const request=structuredClone(input);let resolve!: (r:Response)=>voi…
+     18|   const fetch=vi.spyOn(globalThis,'fetch').mockImplementation(()=>new …
+     19|   const pending=client().admitPluginToolTask(id,request,'same-key');re…
+       |                          ^
+     20|   await vi.waitFor(()=>expect(fetch).toHaveBeenCalledOnce());resolve(r…
+     21|   expect((await pending).replayed).toBe(true);expect(JSON.parse(String…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/12]⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission task as UNKNOWN, never input validation
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission digest as UNKNOWN, never input validation
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission registration as UNKNOWN, never input validation
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission revision as UNKNOWN, never input validation
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission title as UNKNOWN, never input validation
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects mismatched admission harness as UNKNOWN, never input validation
+TypeError: client(...).admitPluginToolTask is not a function
+ ❯ packages/client/src/plugin-runtime.test.ts:26:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/12]⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > rejects wrong runtime/operation/enable identities and malformed read ACKs
+TypeError: client(...).commandPluginRuntime is not a function
+ ❯ packages/client/src/plugin-runtime.test.ts:31:27
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/12]⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > retains route/key/body on ambiguous transmission and never retries; typed409 stays a rejection
+TypeError: client(...).commandPluginRuntime is not a function
+ ❯ packages/client/src/plugin-runtime.test.ts:37:25
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/12]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  12 failed | 1 passed (13)
+   Start at  03:11:46
+   Duration  599ms (transform 220ms, setup 0ms, import 412ms, tests 33ms, environment 0ms)
+

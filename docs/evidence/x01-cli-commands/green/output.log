@@ -1,0 +1,42 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands
+
+ ❯ packages/client/src/plugin-runtime.test.ts (15 tests | 1 failed) 29ms
+   ✓ connects four owner methods to the original authenticated bounded transport 20ms
+   ✓ freezes input before await and accepts the historical ACK even after current state changes 1ms
+   ✓ rejects mismatched admission task as UNKNOWN, never input validation 1ms
+   ✓ rejects mismatched admission digest as UNKNOWN, never input validation 0ms
+   ✓ rejects mismatched admission registration as UNKNOWN, never input validation 0ms
+   ✓ rejects mismatched admission revision as UNKNOWN, never input validation 0ms
+   ✓ rejects mismatched admission title as UNKNOWN, never input validation 1ms
+   ✓ rejects mismatched admission harness as UNKNOWN, never input validation 0ms
+   ✓ rejects wrong runtime/operation/enable identities and malformed read ACKs 2ms
+   ✓ retains route/key/body on ambiguous transmission and never retries; typed409 stays a rejection 0ms
+   × validates disable receipts and preserves cookie/CSRF transport 1ms
+   ✓ freezes enable identity while a response is pending 0ms
+   ✓ rejects binding and runtime reads for a different identity 0ms
+   ✓ bounds malformed, oversized success and proxy errors without claiming rejection 1ms
+   ✓ records cancellation after transmission as UNKNOWN without replay 0ms
+ ✓ apps/cli/src/plugin-runtime.test.ts (3 tests) 28ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/plugin-runtime.test.ts > validates disable receipts and preserves cookie/CSRF transport
+UnknownPluginAcknowledgementError: The plugin response could not be verified. The request outcome is unknown.
+ ❯ FlowClient.pluginAcknowledgement packages/client/src/index.ts:561:13
+    559|       if (error instanceof FlowApiError && error.status >= 400 && erro…
+    560|         && typeof error.code === 'string' && error.code !== 'http_erro…
+    561|       throw new UnknownPluginAcknowledgementError(identity);
+       |             ^
+    562|     }
+    563|   }
+ ❯ packages/client/src/plugin-runtime.test.ts:47:11
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 17 passed (18)
+   Start at  03:15:26
+   Duration  581ms (transform 196ms, setup 0ms, import 371ms, tests 57ms, environment 0ms)
+
