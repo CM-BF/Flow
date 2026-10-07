@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T16:18:22Z",
+  "recordedAt": "2026-10-07T16:26:41.893Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "sourceOfReceipt": "root formal handoff of completed independent read-only review",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "result": "dfb2105ba6e4f3eaa4512d13b58bb0bead7c04ec",
+  "execution": "1a3f8aa5edb2444f2960e7433b31ccaf8bd046af",
+  "manifestSha256": "c371f4b85ad0ac17b2a07244c03b1837528a0cecb853da7ccd7260f9ae421882",
+  "resultBindings": 8,
+  "resultBindingBytes": 25935,
+  "originalArtifacts": 5,
+  "originalBytes": 12112,
+  "rawBytes": 5266,
+  "inputs": {
+    "count": 93,
+    "bytes": 18421447,
+    "unchangedGitBindings": 49,
+    "unchangedExternalBindings": 44
+  },
+  "verified": "Four fixed ABBA arms; raw/record/analysis, 2048 input/506 nonSQL/4 groups/4 messages; known success/pending-drop0; n2 means/CPU/differences independently recomputed. Coordinator15395/four workers closed, EOF/capture complete, historical EPERM and nofirst/secondary/signals preserved. ExactTMP identity/removal evidence retained.",
+  "clockBoundary": "time1.17s/caller950.969ms/supervisor783ms/delayed22s observation envelope separate; precise whole external wall UNKNOWN.",
+  "resourceBoundary": "Caller free20164481024 and outerfree20165656576 both >=17454858240. Original logical2319695<8MiB is not peak. No reviewer工程/import/replay/KEEP/write.",
+  "limits": "Fixed trace, fixedABBA, n2 descriptive only; no general performance/pool/128 capacity inference. Actual window consumed, no new OPEN. Main NOT_INTEGRATED; whole S01 NOT_COMPLETED.",
+  "closeoutBudget": {
+    "preSealFullChangedFilesBytes": 123932,
+    "tmpReservationBytes": 2097152,
+    "rawReservationBytes": 131072,
+    "thisSealAllowanceBytes": 65536,
+    "conservativeCapChargeBytes": 2417692,
+    "originalActualCapBytes": 8388608,
+    "method": "Recomputed using all current changed paths at full length plus this seal allowance; replaces previous metadata estimate rather than adding a second global cleanup reserve."
+  },
+  "freshClaim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 3,
+    "scopes": 6,
+    "owner": "status_read",
+    "state": "active",
+    "at": "2026-10-07T16:26:41.893Z"
+  }
+}
