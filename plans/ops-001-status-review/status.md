@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:50:26.003Z / main4bab97a8e；真实入口修复和7项直接检查已独审，等待当前GDEP验证精确归还后的新恢复窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:03:29.033Z / main71288a457；原operator完成紧前核对并实际开始剩余恢复，结果尚未产生 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/originae328cf28；看板211来源已部署。e15隔离冷启动/四App及上一caller独审保持；个人仅先前导入产物和四报告，尚未refresh/resume/发布779。本次续接0phase，原操作仍维护23。 |
+| 已集成main状态 / HEAD | main/origin71288a457已接收恢复实际入口与网页后继精确绑定的独审；隔离冷启动/四App通过。个人已导入产物和四报告，仍未恢复接单或发布新网页。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 恢复入口合同已修复并获独立审查，真实入口的7项检查通过；个人服务尚未恢复。 |
-| 下一可用交付 | 当前验证资源归还后，核对新窗口与现场身份，直接继续未执行的恢复步骤；随后发布新网页。 |
-| 当前阻塞 | ACTIVE: 个人服务尚未恢复；当前等待另一项数据库验证完成精确资源归还。恢复执行者和已审输入已就绪，未消费旧窗口。远程验证仍等待原CI选择。 |
+| 当前产出 | 个人服务的剩余恢复步骤已实际开始；新版网页准备已审，等待恢复结果。 |
+| 下一可用交付 | 核对本次恢复结果和当前运行就绪，再交付新版网页。 |
+| 当前阻塞 | ACTIVE: 个人服务恢复正在执行，尚无完成结果；历史失败与未知材料保留，CI启用决定仍待原入口答复。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -593,3 +593,9 @@ OPS-001-12/16本段方法增量：SVC09A R2的真实mkdtemp字母表与入口不
 2026-10-07T22:20:43.000Z：本次恢复22:17:23.713320Z实际开始、22:18:46.870374Z终止，22:20:13.131180Z完整归还。产物/四报告已导入；rebind返回identity/MAINTENANCE_TARGET_CHANGED、mutation=not-written，未到refresh/checkpoint/resume，0新服务/provider/网页发布。旧失败与KEEP保留，既有操作23不重放；仅原owner继续有界首因定位。唯一原件与后继见[恢复owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，不以本次caller失败否定既有隔离冷启动/兼容证据。
 
 2026-10-07T22:41:45.537Z：续接实际START22:37:56.465903Z、entry exit22:37:56.647208Z，outer51ms；真实executor窗口名前置不符，未到phase，未创建新私有namespace。22:40:21.259Z准确RETURN，四自有PID及预检组absent、EOF/signals[]/pending0，预检两pool.end完成而远端零连接NOT_OBSERVED。原作者修复、独立review核完整真实调用链；旧产物/报告迁入和FAIL/KEEP不变，0新模型/任务/服务动作。唯一原件见[恢复owner](../../../personal-message-settings/plans/svc09-message-settings-activation/status.md)，不把本次失败归作资源等待。
+
+2026-10-07T22:59:46.311Z：P0资源分类复用既有原件，未清理或运行探针。原owner只读确认：`selectedRecoveryColdR2` 的1,244,659,712B中，clone/private/raw/records共1,110,441,984B已封存无后继writer，保留DB OID1356518的134,217,728B增长规划/未知；`selectedHeld23E15PersonalRecovery` 538,968,064B在434的22:20:13RETURN后封存，已导入e15/四报告为现存stock；`selectedHeld23E15Continuation` 2,097,152B在99ad的51ms前阶段失败/22:40:21RETURN后封存、namespace未创建。三项未来增长可分类减少1,651,507,200B，已交Web唯一资源owner采用；不称物理回收，不改历史floor/失败、不删KEEP，也不把个人DB未知归0。13,440,909,312B残差保持，已于16:46扣除的R1/R2/R3 3,462,397,952B不重复扣。原件见[冷启动结果](../../../backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json)、[首段结果](../../../personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-result-manifest.json)、[前阶段失败](../../../personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result-manifest.json)。当前R2新512MiB+2MiB只计一次；真实单项2.5GiB/存活1GiB/其他未分类项保持，旧inline18GB字面门槛不替代未来明确资源合同。
+
+2026-10-07T23:03:05.005Z：Web资源唯一账本已在23:01:55.363Z将三笔确认封存项从未来增长预算移除，旧冷启动仅保留128MiB数据库增长，并重选同一未消费R2，完整门槛16,341,663,744B、最晚启动23:05:55.363Z。原operator已接续；尚未收到actualSTART，不能把选择当执行。旧18GB组合门槛留作历史，本次实际策略2.5GiB初始/1GiB运行保护不减。又定位14:30 cd27构建2,317,352,960B确实继承在13GB残差内且原owner确认封存无writer；15:14 2515同额仍待原owner确认，不在本次固定窗口中临时改门槛。引用原Web bc3b2c658/4fd3321ef及I02构建独审，未新扫KEEP、未删材料、未把预算重算称磁盘回收。
+
+2026-10-07T23:03:29.033765Z：同一次未消费R2实际START，135固定输入、claim v12、六现场文件身份、公共canonical、两完整产物清单、四报告、held23/旧三角色停止、PG余量及关闭均经原operator紧前确认。只继续fresh/rebind/refresh/checkpoint/resume/final，900秒原界限；0导入重放/provider/新网页发布。此时是执行开始而非恢复完成，实际终态与精确RETURN沿原owner回执。
