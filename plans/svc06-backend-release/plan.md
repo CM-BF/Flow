@@ -1,6 +1,6 @@
 # SVC06 固定后台发布产物
 
-创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v9，仅own plan/evidence；共享产品已停写交回。固定产物构建、真实三宿主/checkout不可读实验及自有refresh/resume、旧数据/策略检查已独审并main；2026-10-07个人后台7d1/source6c已实际更新并获结果独审，当前仅该批main接收与完整实际领取链的限定剩余，不能再将个人部署记为未验。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v9，仅own plan/evidence；共享产品已停写交回。固定产物构建、真实三宿主/checkout不可读实验及自有refresh/resume、旧数据/策略检查已独审并main；2026-10-07个人后台7d1/source6c已实际更新并获结果独审，本批已main0da0dfcc接收，当前仅完整实际领取链的限定剩余，不能再将个人部署记为未验。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
@@ -33,7 +33,7 @@
 - [x] **SVC06-02** 在可用worker安全点固定最小实现scope/依赖产物策略与直接消费者后take。
 - [x] **SVC06-03** 实现产物准备、校验及现host启动接线，证明开发checkout独立性；限定实验前提与来源见下方验收收口。
 - [x] **SVC06-04** 自有环境局部兼容/失败/保留检查与独立review，受控main接收；包含已审refresh/resume、旧数据与配置检查，历史失败保留。
-- [ ] **SVC06-05** 真实个人发布及固定身份/数据/网页保留已实际通过并独审；本批结果待main接收，完整实际领取链仍UNKNOWN，后继验收不由accepting/profile替代。
+- [ ] **SVC06-05** 真实个人发布及固定身份/数据/网页保留已实际通过并独审；本批结果已main0da0dfcc接收，完整实际领取链仍UNKNOWN，后继验收不由accepting/profile替代。
 
 ## 已收到的固定工具研究（GO只读输入）
 
@@ -103,6 +103,6 @@ SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388，复用其受信policy/�
 
 - **03完成**：真实固定产物准备/验证/内部解析及三个真实host已有独审和main接收；[checkout拒读实验](../../docs/evidence/svc06/artifact-host-followup/RESULT.md)只证明其明确实验边界，个人实际发布另外验证默认生产入口。
 - **04完成**：[固定7d1的自有旅程独审](../../docs/evidence/svc06/diagnostics-host-bootstrap/result-independent-review.json)覆盖真实三角色refresh/resume、27→35迁移、旧列保留、默认off/非法策略停前拒绝、cookie/CSRF/logout与正常收尾，已main6571056455be3e4289f162041746420246ac2db4。既有原红、Web显式stop exit1、旧runner首因UNKNOWN不改。
-- **05已实证部分**：[实际结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md)完成个人固定更新和保留，唯一[结果独审](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)固定I02 `84d43d931bf1dc3498f562b93e00915d760e6ba4`、target `acbdc40358a858256967a7322109331a28f4a2fb`。剩余仅本批受控main接收和实际领取链的证据限制；不追加模型/任务或现场探针凑验收，不将父FLOW完整验收提前完成。
+- **05已实证部分**：[实际结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md)完成个人固定更新和保留，唯一[结果独审](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)固定I02 `84d43d931bf1dc3498f562b93e00915d760e6ba4`、target `acbdc40358a858256967a7322109331a28f4a2fb`。本批已main0da0dfcc受控接收；剩余仅实际领取链的证据限制；不追加模型/任务或现场探针凑验收，不将父FLOW完整验收提前完成。
 
 以下各历史时间段的当时open/NOT_RUN陈述保留为过程证据，以本节和唯一status为当前事实。

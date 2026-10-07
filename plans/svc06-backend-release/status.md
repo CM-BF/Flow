@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:33.910561Z独审原件已固定；七步实际完成并归还，个人后台6c/accepting21；本次结果待main接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:04:18.858043+00:00；已核main0da0dfcc接收本次固定更新与独审，个人后台6c/accepting21为已存实际结果 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04已按原范围完成；05个人部署/保留已通过并独审，本批main接收与完整实际领取链仍待收口。阶段build/host/独审/main分别见下方原记录。 |
+| 任务时间来源 | 初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04已按原范围完成；05个人部署/保留已通过并独审，本批main已接收；完整实际领取链仍UNKNOWN。阶段build/host/独审/main分别见下方原记录。 |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -14,21 +14,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原产品3cb/目标产物7d1/source6c不变；当前精确intent续接caller ec9c775462de61487836665973e792b4b15d616d，原core独立0f5891da；root工具上下文ae8500dd |
-| 工作树dirty状态 | actual固定acbdc403已clean/pushed；本次仅plan/status/review正常收口，源码ec9c/core0f589与原raw不变，已消费段不再执行 |
+| 工作树dirty状态 | f686已clean/pushed并main接收；本次仅main receipt正常收口，源码ec9c/core0f589与原raw不变，提交后全停写并释放scope |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | 已审入口一次真实执行7阶段全部0；outer75906ms/7phase75811ms，监督直属PIDabsent/双EOF；旧三组checkpoint独立全组absent，actualClaimRecovery UNKNOWN |
-| 已集成main状态 / HEAD | R4实际与独审已main9f0fe；当前rootae8500dd管理后继、固定43工具来源不变。个人本次已实际更新到7d1/source6c、accepting21；Webd629/v3及3retained不变。本次actual固定acbdc403已独审APPROVED，尚待受控main接收，不追metadata链。 |
+| 已集成main状态 / HEAD | main/origin0da0dfcc68da42cc38d7c8e982f6b16321118391已接142精确archive路径、f686三件套、c51 reader与0f589 core及唯一独审。本片已交付；个人固定7d1/source6c、accepting21、Webd629/v3及3retained不变；运行不是moving main。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 个人后台已更新，中心已恢复允许接单；恢复前旧数据与排队任务保持，恢复后原排队任务已自然开始运行。 |
-| 下一可用交付 | 将已独立核验的更新与保留记录接收主线；完整领取链尚未核清，不追加任务或模型调用。 |
-| 当前阻塞 | ACTIVE: 本次实际更新记录待主线接收；完整领取链仍未知，原失败和历史未决结果保留。 |
+| 下一可用交付 | 本片段已交付；完整领取链仍待后继可信证据，不追加任务或模型调用。 |
+| 当前阻塞 | ACTIVE: 完整领取链仍未知；本片段部署与保留已交付，原失败和历史未决结果保留。 |
 | 需用户决定 | NONE |
 | Review | native_center_owner对acbdc403唯一APPROVED_HELD_CONTINUATION_RESULT_FIDELITY，无P1/P2；I02原件84d43d93；0reviewer个人读取/重测，原R4失败不改。 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9与secondary037f v2：本次metadata提交后全停写并按固定request释放；结果以协调账本receipt为准，不在release后写本scope。产品早已交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | completed | assignment_review | 真实完整artifact构建/校验/内部解析与三host/checkout拒读实验已限定独审并main；固定个人默认维护入口另有本次实际证据 |
 | SVC06-04 | completed | assignment_review / 独立reviewer | 自有三role refresh/resume、27→35迁移、旧列/指针/策略与失败拒绝已独审并main657105；旧失败、Web stop exit1及UNKNOWN保留 |
-| SVC06-05 | in-progress | assignment_review | C3三App已审；个人7d1/source6c更新、身份/旧数据/配置/Web与三retained保持已实证并独审acbdc403；本批main接收待办，完整实际领取链UNKNOWN，非个人未验 |
+| SVC06-05 | in-progress | assignment_review | C3三App已审；个人7d1/source6c更新、身份/旧数据/配置/Web与三retained保持已实证并独审acbdc403；已main0da0dfcc接收；完整实际领取链UNKNOWN，非个人未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -433,3 +433,9 @@ Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原
 原件时间2026-10-07T13:56:33.910561Z；native_center_owner唯一`APPROVED_HELD_CONTINUATION_RESULT_FIDELITY`，无P1/P2，I02 fixed `84d43d931bf1dc3498f562b93e00915d760e6ba4` 的[正式记录](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)。target acbdc403，53绑定302141B、42raw219088B逐字同；0重跑/个人原件读取/服务动作。原raw/manifest不改，不追加现场probe。
 
 按原TODO验收，03产物/checkout独立性、04自有兼容/失败/保留与独审main已完成；05个人实际更新/保留已验且独审，本次main接收尚待Lead。完整领取链未采仍UNKNOWN，原claim outcome和历史失败不被新部署结果追认；任务完成NOT_COMPLETED与父FLOW验收分开。clean-code/计划复核只纠正当前陈述、复用唯一review和原件，历史条目不改，不新建运行器或重复测试。
+
+## 主线接收与停止写入
+
+2026-10-07T14:04:18.858043+00:00：[本次main receipt](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/main-receipt.json)核固定main0da0dfcc；I02精确142路径567050B已接，15项直接旧缺件/结果/三件套对固定来源逐字同。仅Git原件核对，0重复工程检查/个人读取。部署片段delivered；实际领取链UNKNOWN和原claim结果UNKNOWN保持，任务总完成不冒充FLOW完整Done。
+
+本提交完成后原v9和secondary v2全部停写，使用receipt中的两个稳定requestId正式release；释放真实结果保存在协调账本及交Lead的/tmp回执，成功后不再写原scope。后继两槽功能须新的独立树/固定base/原子take，不复用此写权。

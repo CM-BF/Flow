@@ -1,0 +1,110 @@
+{
+  "startedAt": "2026-10-07T14:15:50.997Z",
+  "mainBase": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "freeBefore": 21388587008,
+  "limits": {
+    "workSeconds": 60,
+    "cleanupSeconds": 2,
+    "rawBytes": 1048576,
+    "scratchBytes": 8388608,
+    "topLevelChildren": 2
+  },
+  "scratch": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-core-claim-intake-hse806ld",
+    "dev": 16777234,
+    "ino": 124187960
+  },
+  "provider": 0,
+  "PG": 0,
+  "listener": 0,
+  "runs": [
+    {
+      "pid": 10278,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1154,
+      "observed_bytes": 145,
+      "retained_bytes": 145,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "direct",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/i02/core-claim-integration.vitest.mjs",
+        "--reporter=json",
+        "--outputFile=/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/core-claim-integration/selected.json"
+      ],
+      "passed": true
+    },
+    {
+      "pid": 11283,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2100,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "-p",
+        "docs/evidence/i02/core-claim-integration.tsconfig.json"
+      ],
+      "passed": true
+    }
+  ],
+  "rawBytes": 145,
+  "scratchBytesAtClose": 0,
+  "elapsedMs": 3258,
+  "finishedAt": "2026-10-07T14:15:54.253Z",
+  "passed": true,
+  "scratchRemoved": true
+}

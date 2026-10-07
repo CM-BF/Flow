@@ -1,0 +1,161 @@
+{
+  "at": "2026-10-07T14:00:26.111Z",
+  "taskId": "WPF-MATURE-02-CORE",
+  "state": "READY",
+  "owner": "architecture_read",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
+  "branch": "codex/claude-settings-claim-eligibility",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "result": "a66627678c22fc229fa085a07a07732a07e84da3",
+  "resultPacket": "069bf1526755555220426e00c9328a6e0655ab00",
+  "mainObservation": {
+    "head": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "originSame": true,
+    "clean": true,
+    "productIntegrated": false,
+    "freshAtIntakeRequired": true
+  },
+  "rows": [
+    {
+      "kind": "product",
+      "path": "apps/server/src/runners.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 20703,
+      "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+      "mainPreimage": {
+        "state": "EXACT_BASE",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      }
+    },
+    {
+      "kind": "test",
+      "path": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 12774,
+      "sha256": "7e05568b9acc3b4950df95f366e471e6ccd22312291118994ff63eef70ccb113",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/enable-binding-pg-fixture.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 15698,
+      "sha256": "85095bbdfa2ff54e763e8519ffebe6d6af3899a4379a0c04fe4a8f0bbbf43367",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-input.json",
+      "sourceCommit": "edeff973f50fdf657a3a4d3e8356bbb0db9dea00",
+      "bytes": 2240,
+      "sha256": "5190f405db59bf64157890f0a1d5417f8786f6c565a28346ffab5ade1072d7ff",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "optionalConfig",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-vitest.config.mjs",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 656,
+      "sha256": "513a2a26c7bd8e44ce0507606a2626959755615e3f8fb0b8e21510d6573b6857",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    }
+  ],
+  "patch": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.patch",
+    "bytes": 1528,
+    "sha256": "09fc5d9bf0bd80c19c854092e2b659aab93d4226cc06645462e448e8a9c98edc"
+  },
+  "requiredRows": 4,
+  "optionalRows": 1,
+  "dependencyClosure": {
+    "testDirectImports": [
+      "@flow/contracts",
+      "packages/contracts/src/claude-turn-settings.ts",
+      "packages/contracts/src/execution-profiles.ts",
+      "packages/contracts/src/runner-claim.ts",
+      "packages/contracts/src/plugin-runner-claim.ts",
+      "packages/contracts/src/plugin-runtime.ts",
+      "apps/server/src/index.ts",
+      "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/enable-binding-pg-fixture.ts"
+    ],
+    "helperDirectImports": [
+      "node:crypto",
+      "node:fs",
+      "node:fs/promises",
+      "node:path",
+      "pg"
+    ],
+    "helperRuntimeRead": "./pg-input.json",
+    "dynamicSql": "33 fixed SQL files from pg-isolated-manifest; no DDL change or migration intake",
+    "preparedExecutionManifest": {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-isolated-manifest.json",
+      "sha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b"
+    },
+    "materializationRule": "Consume current main direct modules and existing dependencies; validation-only snapshots are not product overlays. Preserve current removal/plugin routes."
+  },
+  "reviews": {
+    "source": {
+      "at": "2026-10-07T13:23:26Z",
+      "reviewer": "Mika",
+      "verdict": "SOURCE_REVIEW_APPROVED",
+      "receipt": "source-independent-review.json"
+    },
+    "operator": {
+      "at": "2026-10-07T13:42:48Z",
+      "reviewer": "chatui01_owner",
+      "verdict": "OPERATOR_PREPARATION_DELTA_REVIEW_APPROVED",
+      "receipt": "pg-operator-independent-reviews.json"
+    },
+    "actualResult": {
+      "at": "2026-10-07T13:59:19Z",
+      "reviewer": "chatui01_owner",
+      "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+      "P1": 0,
+      "P2": 0,
+      "result": "a66627678c22fc229fa085a07a07732a07e84da3",
+      "packet": "069bf1526755555220426e00c9328a6e0655ab00",
+      "receipt": "pg-result-independent-review.json"
+    }
+  },
+  "validation": {
+    "actual": "5 selected / 5 passed / suitePASS / 67HTTP / 0provider; full resource return",
+    "resultManifest": "pg-result-manifest.json",
+    "integrationRecommended": [
+      "One affected type closure against actual resulting main",
+      "Two direct consumers apps/server/src/runner-claim-routes.test.ts and apps/server/src/plugin-runtime/claim.test.ts, 10 declared tests; final selection owned by integrator"
+    ],
+    "doNotRepeat": "No blind PG rerun or old whole-suite runs for this intake; drift that changes semantics must be reviewed first."
+  },
+  "evidenceIntake": "Fixed result packet/manifests and review receipts below identify exact raw/support evidence; no validation source mirrors or future work. Prepared input copies are not product overlays.",
+  "boundaries": [
+    "No provider/account usability/SDK execution or personal two-slot activation",
+    "No new DTO/DDL/queue/runner loop",
+    "No main acceptance until independent actual result review and integrator fresh preimage+direct checks",
+    "Historical CORE task start UNKNOWN remains unchanged"
+  ],
+  "requiredEvidenceManifests": [
+    {
+      "commit": "069bf1526755555220426e00c9328a6e0655ab00",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-manifest.json",
+      "sha256": "a8186b97f587b2433594733e2a16a4fbcd1ba9ea7bba0fb32e601927a4fdf87b",
+      "bindingCount": 24,
+      "totalBoundBytes": 200702
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-independent-review.json",
+      "bytes": 1968,
+      "sha256": "2711c87cd5c944aaecb4f7891a5aa629d0c4c08768114379591f8ab066680dd3",
+      "source": "same final intake commit"
+    }
+  ],
+  "writing": "STOP after metadata commit/push; claim retained for intake/repair,0actual/0pendingLaunch"
+}

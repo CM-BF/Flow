@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../apps/server/src/runners.ts",
+    "../../../apps/server/src/runner-claim-routes.test.ts",
+    "../../../apps/server/src/plugin-runtime/claim.test.ts",
+    "../../../apps/server/src/execution-profiles/message-settings-claim-pg.test.ts"
+  ],
+  "exclude": []
+}

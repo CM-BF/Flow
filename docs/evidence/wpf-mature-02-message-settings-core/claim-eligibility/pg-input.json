@@ -1,0 +1,58 @@
+{
+  "protocol": "flow.m02.settings-claim-pg.v1",
+  "productCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 5,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "message-settings-claim-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "name": "v1 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+    },
+    {
+      "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "name": "v2 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+    },
+    {
+      "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "name": "v3 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+    },
+    {
+      "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "name": "keeps a resumed legacy session on its original runner while the opt-in runner claims later work"
+    },
+    {
+      "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "name": "does not impose Claude message settings on an ordinary fixture task"
+    }
+  ],
+  "tasksMax": 13,
+  "attemptsMax": 10,
+  "scope": "Public profile publication, v1/v2/v3 claim before-LIMIT eligibility and legacy-session pin; one schema-legal missing-snapshot historical seed per protocol. No provider/SDK execution.",
+  "runnersMax": 10,
+  "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "metadataRunners": 10,
+  "providerCalls": 0
+}

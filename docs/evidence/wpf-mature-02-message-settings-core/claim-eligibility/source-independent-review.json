@@ -1,0 +1,41 @@
+{
+  "verdict": "SOURCE_REVIEW_APPROVED",
+  "reviewer": "Mika/root",
+  "at": "2026-10-07T13:23:26Z",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "packet": "7ecbc452b7abe4f1e3e3368b3fcb948613a1904a",
+  "P1": 0,
+  "P2": 0,
+  "scope": "5-line SQL and five PG case sources; v1-v3 shared allocation, profile assertion, receipt/session fence; limited local evidence only",
+  "bindings": 13,
+  "bindingBytes": 126024,
+  "closureFiles": 240,
+  "closureBytes": 1026652,
+  "sqlFiles": 33,
+  "local": {
+    "types": [
+      2,
+      2,
+      0
+    ],
+    "collect": [
+      1,
+      0
+    ],
+    "collectedTitles": 5,
+    "rawBytes": 79244,
+    "supervisorMilliseconds": 7965,
+    "receiptElapsedSeconds": 7.967196375015192,
+    "allOwnedAbsent": true,
+    "allMergedEOF": true,
+    "allOwnedTemporaryIdentityRemoved": true,
+    "wholeWall": "UNKNOWN",
+    "failuresAndInitialEPERMPreserved": true
+  },
+  "notApproved": [
+    "actual PG",
+    "performance",
+    "personal activation",
+    "main integration"
+  ]
+}

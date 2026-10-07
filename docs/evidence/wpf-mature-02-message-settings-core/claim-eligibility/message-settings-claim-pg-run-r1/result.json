@@ -1,0 +1,257 @@
+{
+  "startedAt": "2026-10-07T13:54:32.619878+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.m02.settings-claim-pg.v1",
+    "productCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 5,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "message-settings-claim-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "name": "v1 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+      },
+      {
+        "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "name": "v2 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+      },
+      {
+        "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "name": "v3 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity"
+      },
+      {
+        "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "name": "keeps a resumed legacy session on its original runner while the opt-in runner claims later work"
+      },
+      {
+        "file": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "name": "does not impose Claude message settings on an ordinary fixture task"
+      }
+    ],
+    "tasksMax": 13,
+    "attemptsMax": 10,
+    "scope": "Public profile publication, v1/v2/v3 claim before-LIMIT eligibility and legacy-session pin; one schema-legal missing-snapshot historical seed per protocol. No provider/SDK execution.",
+    "runnersMax": 10,
+    "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+    "metadataRunners": 10,
+    "providerCalls": 0
+  },
+  "processes": [
+    {
+      "pid": 94433,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 23,
+      "observed_bytes": 429,
+      "retained_bytes": 429,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 94454,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 3761,
+      "observed_bytes": 69,
+      "retained_bytes": 69,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "4345a9e2d10447d3ac5236ba09929d95",
+      "sourceHead": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
+      "suite": "runtime",
+      "database": "flow_x01_963baaa69af640acb1e8207a30685151",
+      "facts": [
+        {
+          "protocol": "v1",
+          "legacyTask": "7dbaf0a7-5f88-480d-89a8-bfb295baad4d",
+          "missingSnapshot": "ab4ed75e-1944-47cd-8fc7-c5f6b971baa1",
+          "eligible": "dca696e1-fc44-4f88-8128-29979d6551c6",
+          "providerCalls": 0
+        },
+        {
+          "protocol": "v2",
+          "legacyTask": "60ecc0cd-e523-46bb-9a4d-205cfdc03a50",
+          "missingSnapshot": "3896c7d6-f2a7-47f5-b8f5-b8cc5903b9fc",
+          "eligible": "b5c31bdf-25f8-4b85-9cd3-c2ef21625baa",
+          "providerCalls": 0
+        },
+        {
+          "protocol": "v3",
+          "legacyTask": "eab00f29-df04-4ab7-96c6-b4977f2512ab",
+          "missingSnapshot": "6a3f0a0e-1c96-4305-90b5-40fc6177c8c9",
+          "eligible": "995ac420-fc57-4bc2-8f4d-7d1dd09d5a9e",
+          "providerCalls": 0
+        },
+        {
+          "kind": "bounded-counts",
+          "counts": {
+            "tasks": 13,
+            "attempts": 10,
+            "runners": 10
+          }
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1317812",
+          "owner": "flow",
+          "marker": "x01:4345a9e2d10447d3ac5236ba09929d95:runtime:25f8ae27-728e-491c-a8b9-a1456e93a042"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true,
+        "connectionObservations": [
+          {
+            "at": "2026-10-07T13:54:36.409Z",
+            "connections": 0
+          }
+        ]
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:58176",
+          "closed": true
+        }
+      ],
+      "httpRequests": 67,
+      "responseBytes": 31024,
+      "workUntil": 1791381382619,
+      "cleanupUntil": 1791381442619,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T13:54:36.435Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "4345a9e2d10447d3ac5236ba09929d95",
+  "executionHead": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
+  "manifestSha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b",
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-rh3iovbw",
+    "dev": 16777234,
+    "ino": 124172637,
+    "removed": true,
+    "sampleBytes": 5553,
+    "sampleEntries": 10
+  },
+  "selection": {
+    "numTotalTests": 5,
+    "numPassedTests": 5,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "httpRequests": 67,
+  "responseBytes": 31024,
+  "unselectedCount": 0,
+  "selectedCount": 5,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 2279,
+    "runtime-reservation.json": 406,
+    "runtime-create-request.json": 353,
+    "output.log": 69,
+    "runtime-result.json": 2113,
+    "reservation.json": 283,
+    "launch.json": 188,
+    "preflight.stdout": 429,
+    "admission.json": 2276
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 8798,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 8798,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T13:54:36.482454+00:00",
+  "elapsedBeforePersistence": 3.8627031670184806
+}

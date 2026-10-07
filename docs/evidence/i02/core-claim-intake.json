@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-07T14:16:52.118Z",
+  "kind": "APPROVED_CORE_CLAIM_INTAKE_WITH_DIRECT_CONSUMERS",
+  "base": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "ownerFinal": "ae6a2f2ce7505d0eccb6b0d8ee29654013127545",
+  "rows": [
+    {
+      "kind": "product",
+      "path": "apps/server/src/runners.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 20703,
+      "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+      "mainPreimage": {
+        "state": "EXACT_BASE",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      }
+    },
+    {
+      "kind": "test",
+      "path": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 12774,
+      "sha256": "7e05568b9acc3b4950df95f366e471e6ccd22312291118994ff63eef70ccb113",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/enable-binding-pg-fixture.ts",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 15698,
+      "sha256": "85095bbdfa2ff54e763e8519ffebe6d6af3899a4379a0c04fe4a8f0bbbf43367",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "requiredSupport",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-input.json",
+      "sourceCommit": "edeff973f50fdf657a3a4d3e8356bbb0db9dea00",
+      "bytes": 2240,
+      "sha256": "5190f405db59bf64157890f0a1d5417f8786f6c565a28346ffab5ade1072d7ff",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    },
+    {
+      "kind": "optionalConfig",
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-vitest.config.mjs",
+      "sourceCommit": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "bytes": 656,
+      "sha256": "513a2a26c7bd8e44ce0507606a2626959755615e3f8fb0b8e21510d6573b6857",
+      "mainPreimage": {
+        "state": "ABSENT"
+      }
+    }
+  ],
+  "productPreimage": "runners.ts matched the reviewed base exactly; 5 SQL lines only. No loop/DTO/DDL or profile authority changes.",
+  "domainReview": {
+    "source": {
+      "at": "2026-10-07T13:23:26Z",
+      "reviewer": "Mika",
+      "verdict": "SOURCE_REVIEW_APPROVED",
+      "receipt": "source-independent-review.json"
+    },
+    "operator": {
+      "at": "2026-10-07T13:42:48Z",
+      "reviewer": "chatui01_owner",
+      "verdict": "OPERATOR_PREPARATION_DELTA_REVIEW_APPROVED",
+      "receipt": "pg-operator-independent-reviews.json"
+    },
+    "actualResult": {
+      "at": "2026-10-07T13:59:19Z",
+      "reviewer": "chatui01_owner",
+      "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+      "P1": 0,
+      "P2": 0,
+      "result": "a66627678c22fc229fa085a07a07732a07e84da3",
+      "packet": "069bf1526755555220426e00c9328a6e0655ab00",
+      "receipt": "pg-result-independent-review.json"
+    }
+  },
+  "fixedResultManifest": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result-manifest.json",
+    "commit": "069bf1526755555220426e00c9328a6e0655ab00",
+    "sha256": "a8186b97f587b2433594733e2a16a4fbcd1ba9ea7bba0fb32e601927a4fdf87b",
+    "bindings": 24,
+    "bytes": 200702,
+    "fixedGitHashMatches": 24
+  },
+  "validation": {
+    "original": "5 selected/5 passed/67 HTTP; independently approved; not rerun",
+    "direct": {
+      "selected": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "files": [
+        "apps/server/src/runner-claim-routes.test.ts",
+        "apps/server/src/plugin-runtime/claim.test.ts"
+      ],
+      "mode": "fake Pool plus Fastify inject, no PG or listening socket"
+    },
+    "focusedTypes": {
+      "exit": 0,
+      "config": "docs/evidence/i02/core-claim-integration.tsconfig.json"
+    },
+    "result": "docs/evidence/i02/core-claim-integration/result.json",
+    "elapsedMs": 3258,
+    "scratchRemoved": true,
+    "actualStart": "2026-10-07T14:15:50.997Z",
+    "actualEnd": "2026-10-07T14:15:54.253Z",
+    "provider": 0,
+    "personalOperations": 0
+  },
+  "authorityMigration": {
+    "task": "WPF-MATURE-02-CORE",
+    "from": "claude-message-settings-core",
+    "to": "claude-settings-claim-eligibility",
+    "newClaim": "651c4eb4-ca60-41c3-9702-872c242e12d0 v1",
+    "source": "owner-switch-intake.json",
+    "oldReleaseConfirmed": true
+  },
+  "registry": {
+    "target": "5c9be36a1e0e9bf9d137da5d54a3cd84ea97205e",
+    "count": 204,
+    "reviewer": "assignment_review",
+    "verdict": "APPROVED_DOCS_AND_SOURCE_NAVIGATION",
+    "P1": 0,
+    "P2": 0,
+    "paths": [
+      "apps/execution-dashboard/src/registry.mjs",
+      "docs/evidence/d05/personal-successor-registry.json",
+      "plans/d05-architecture-view/status.md"
+    ],
+    "actualReload": "NOT_YET"
+  },
+  "svc06Closeout": {
+    "target": "2c6badbc4ae969ff1d527faddea296fad80745b3",
+    "paths": [
+      "plans/svc06-backend-release/plan.md",
+      "plans/svc06-backend-release/status.md",
+      "plans/svc06-backend-release/review.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/main-receipt.json"
+    ],
+    "review": "Execution Lead read complete fixed metadata delta and main receipt; changes only record already integrated0da and original released ownership. No new runtime assertion; actual claim correlation remains UNKNOWN."
+  },
+  "limits": [
+    "This is main source intake, not personal two-slot activation or provider/account qualification.",
+    "Historical raw/failures unchanged; no validation-only source mirrors overlaid.",
+    "Original two I02 __pycache__ directories remain untracked and untouched."
+  ]
+}
