@@ -1,0 +1,170 @@
+{
+  "at": "2026-10-07T09:46:13.103868+00:00",
+  "base": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "method": "exact fixed Git bytes only; own clean old preimages checked; no dependency install or shared tree write",
+  "files": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "kind": "owned-editable-preimage",
+      "before": {
+        "bytes": 27844,
+        "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+      },
+      "after": {
+        "bytes": 46785,
+        "sha256": "810f192a5f121b48a6c317be5a506e24346035b6793e2fb4b27dcf7a931da737"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "kind": "owned-editable-preimage",
+      "before": {
+        "bytes": 28803,
+        "sha256": "c0f5313b4bf6431329ca5ed921545efc9714579f8e8b67b6a50959448ff299d0"
+      },
+      "after": {
+        "bytes": 59165,
+        "sha256": "b35c6db81e6d4e0266a4fc0a3fbdf6d3f53303d1985244dbf9a1ff49e2f49a28"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "kind": "owned-editable-preimage",
+      "before": {
+        "bytes": 3493,
+        "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+      },
+      "after": {
+        "bytes": 3493,
+        "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/process.test.mjs",
+      "kind": "owned-editable-preimage",
+      "before": {
+        "bytes": 2311,
+        "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+      },
+      "after": {
+        "bytes": 2311,
+        "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 2899,
+        "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4"
+      },
+      "after": {
+        "bytes": 4368,
+        "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": null,
+      "after": {
+        "bytes": 7335,
+        "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 1983,
+        "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+      },
+      "after": {
+        "bytes": 2690,
+        "sha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 8163,
+        "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+      },
+      "after": {
+        "bytes": 9035,
+        "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 12759,
+        "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+      },
+      "after": {
+        "bytes": 15567,
+        "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": null,
+      "after": {
+        "bytes": 1182,
+        "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 6387,
+        "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+      },
+      "after": {
+        "bytes": 7633,
+        "sha256": "37cdcd83ac6c65ac3bb57cfaea876aed258f8f8b23897864feba78be9e5413b1"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 4881,
+        "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929"
+      },
+      "after": {
+        "bytes": 5394,
+        "sha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "kind": "fixed-readonly-direct-consumer-input",
+      "before": {
+        "bytes": 9335,
+        "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb"
+      },
+      "after": {
+        "bytes": 9796,
+        "sha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8"
+      },
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+    }
+  ]
+}

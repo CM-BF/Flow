@@ -6,6 +6,7 @@ import { createHash, randomUUID } from 'node:crypto';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { buildEnvironment } from './environment.mjs';
+import { assertArtifactStorageSlots, assertRetainedAssetBytes } from './web-retention-policy.mjs';
 const execute = promisify(execFile);
 const entry = fileURLToPath(import.meta.url);
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -71,31 +72,45 @@ export async function verifyWebArtifact({ directory, artifact }) {
   if (JSON.stringify(actual.files) !== JSON.stringify(manifest.files) || actual.totalBytes !== manifest.totalBytes) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
   return { dist, manifest };
 }
-/** Trusted frozen worktree build. Installation and the current published pointer are untouched. */
-export async function prepareWebArtifact({ repository, target, directory, releaseId }) {
+async function executeArtifactBuild(repository, outDir, releaseId) {
+  await execute(process.execPath, [entry, 'internal-build', repository, outDir, ...(releaseId ? [releaseId] : [])], {
+    cwd: repository, env: buildEnvironment(), timeout: 90_000, killSignal: 'SIGKILL', maxBuffer: 65_536,
+  });
+}
+/** Trusted constructor port: the CLI uses only the default build implementation. */
+export function createWebArtifactPreparer({ build = executeArtifactBuild } = {}) {
+  return options => prepare(options, build);
+}
+async function prepare({ repository, target, directory, releaseId }, build) {
   if (releaseId !== undefined && !/^[a-f0-9]{32}$/.test(releaseId)) fail('WEB_RELEASE_NAMESPACE_INVALID');
   const source = await sourceIdentity(repository, target); const root = await artifactRoot(directory);
   const require = createRequire(join(repository, 'apps/web/package.json'));
   const vite = JSON.parse(await readFile(require.resolve('vite/package.json'))).version;
-  // Reuse only fully verified bytes for this exact source and toolchain; never adopt a partial stage.
-  for (const artifactId of await readdir(root)) {
-    if (!/^[a-f0-9]{64}$/.test(artifactId)) continue;
-    const candidate = { artifactId, manifestDigest: artifactId, sourceHead: target };
+  const committed = (await readdir(root)).filter(name => /^[a-f0-9]{64}$/.test(name));
+  assertArtifactStorageSlots(committed.length);
+  let storedBytes = 0; const stored = [];
+  for (const artifactId of committed) {
     const manifest = JSON.parse(await manifestBytes(join(root, artifactId)));
+    if (!Number.isSafeInteger(manifest.totalBytes) || manifest.totalBytes < 0 || manifest.totalBytes > MAX_BYTES) fail('WEB_ARTIFACT_INTEGRITY_MISMATCH');
+    storedBytes += manifest.totalBytes; assertRetainedAssetBytes(storedBytes);
+    stored.push({ artifactId, manifest });
+  }
+  // Reuse only fully verified bytes for this exact source and toolchain; never adopt a partial stage.
+  for (const { artifactId, manifest } of stored) {
+    const candidate = { artifactId, manifestDigest: artifactId, sourceHead: target };
     if (manifest.releaseId !== releaseId || manifest.sourceHead !== target || manifest.sourceTree !== source.sourceTree || manifest.lockDigest !== source.lockDigest
       || manifest.toolchain?.node !== process.versions.node || manifest.toolchain?.vite !== vite) continue;
     await verifyWebArtifact({ directory, artifact: candidate }); return candidate;
   }
-  if (releaseId && (await readdir(root)).filter(name => /^[a-f0-9]{64}$/.test(name)).length >= 3) fail('WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED');
+  assertArtifactStorageSlots(committed.length, true);
   const stage = join(root, `.stage-${randomUUID()}`); await mkdir(stage, { mode: 0o700 });
   try {
     try {
-      await execute(process.execPath, [entry, 'internal-build', repository, join(stage, 'dist'), ...(releaseId ? [releaseId] : [])], {
-        cwd: repository, env: buildEnvironment(), timeout: 90_000, killSignal: 'SIGKILL', maxBuffer: 65_536,
-      });
+      await build(repository, join(stage, 'dist'), releaseId);
     } catch { fail('WEB_BUILD_FAILED'); }
     if (JSON.stringify(await sourceIdentity(repository, target)) !== JSON.stringify(source)) fail('SOURCE_CHANGED_DURING_BUILD');
     const content = await filesAt(join(stage, 'dist'));
+    assertRetainedAssetBytes(storedBytes + content.totalBytes);
     const manifest = { format: releaseId ? 2 : 1, policy: releaseId ? 'flow-static-web-v2' : 'flow-static-web-v1', ...(releaseId ? { releaseId } : {}), ...source, toolchain: { node: process.versions.node, vite }, ...content };
     const bytes = Buffer.from(`${JSON.stringify(manifest)}\n`); const digest = sha(bytes);
     const artifact = { artifactId: digest, sourceHead: target, manifestDigest: digest };
@@ -105,6 +120,8 @@ export async function prepareWebArtifact({ repository, target, directory, releas
     await verifyWebArtifact({ directory, artifact }); return artifact;
   } finally { await rm(stage, { recursive: true, force: true }); }
 }
+/** Trusted frozen worktree build; current published pointer is untouched. */
+export const prepareWebArtifact = createWebArtifactPreparer();
 async function build(repository, outDir, releaseId) {
   const require = createRequire(join(repository, 'apps/web/package.json'));
   const vite = await import(pathToFileURL(require.resolve('vite')).href);

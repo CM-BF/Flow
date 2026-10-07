@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { baseServiceEnvironment } from './environment.mjs';
-import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration } from './preview.mjs';
+import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration, replacePreviewWebHost, assertPreviewMaintenanceRuntime } from './preview.mjs';
 import { maintenanceRuntime } from './backend-release/host.mjs';
 import { join } from 'node:path';
 try {
@@ -23,7 +23,12 @@ try {
     let result;
     if (subcommand === 'prepare' && Object.keys(options).sort().join() === '--directory,--release-id,--target') result = await preparePreviewRelease({ directory: privateDirectory, target: options['--target'], releaseId: options['--release-id'] });
     else if (subcommand === 'import-compatibility' && Object.keys(options).sort().join() === '--directory,--report-directory') result = await importPreviewCompatibility({ directory: privateDirectory, reportDirectory: options['--report-directory'] });
-    else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
+    else if (subcommand === 'replace-host' && Object.keys(options).sort().join() === '--directory,--request') {
+      const input = await readPreviewJson(options['--request']);
+      if (Object.hasOwn(input, 'directory')) throw new Error('USAGE');
+      result = await replacePreviewWebHost({ ...input, directory: privateDirectory });
+      if (result.outcome !== 'ready') process.exitCode = 1;
+    } else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
       const input = await readPreviewJson(options['--request']);
       const allowed = ['expectedVersion', 'expectedBackendHead', 'compatibilityId', ...(subcommand === 'bootstrap' ? [] : ['artifact'])];
       if (Object.keys(input).sort().join() !== allowed.sort().join()) throw new Error('USAGE');
@@ -35,6 +40,7 @@ try {
     if (directoryFlag !== '--directory' || !privateDirectory || extra.length || (subcommand === 'refresh' ? option !== '--target' || !value : subcommand === 'bootstrap' ? option && (option !== '--backend-artifact' || !value) : option)) throw new Error('USAGE');
     const config = await loadPreviewConfiguration(privateDirectory);
     const runtime = await maintenanceRuntime(config);
+    await assertPreviewMaintenanceRuntime(config, runtime);
     const host = join(runtime.root, 'tools/personal-preview/maintenance-host.mjs');
     const child = spawn(process.execPath, ['--import', 'tsx', host, subcommand, privateDirectory, subcommand === 'refresh' ? value : '', subcommand === 'bootstrap' && option ? value : ''], { env: baseServiceEnvironment('center'), cwd: runtime.root, stdio: 'inherit' });
     process.exitCode = await new Promise(resolve => { child.once('error', () => resolve(1)); child.once('exit', code => resolve(code ?? 1)); });

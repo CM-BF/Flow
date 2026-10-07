@@ -1,3 +1,7 @@
+## r1结果限定事实批准；新启动诊断实现中
+
+[唯一独审原件](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)绑定c408，22+17+8全核；APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，无P1/P2、0重跑。原hostFAIL保持。新启动诊断尚未审，不扩大旧准备/结果批准。
+
 ## 2026-10-07 09:40:22 UTC：r1结果PENDING_RESULT_REVIEW
 
 source344不改；[result-manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)绑定22结果文件、17私有原件身份/hash、8逐字副本。实际FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED；首保存错误/缺失detached stderr、runner数值exit未观测与真实helper stopped分别记录。申请native唯一只读结果审，0重跑/新probe；真实宿主/策略/迁移结论不通过，旧准备批准不扩大。

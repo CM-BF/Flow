@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import { normalizeBrowserSessionSettings, browserCompatibilityContext } from './browser-session-configuration.mjs';
 
 const systemKeys = ['PATH', 'HOME', 'USER', 'LOGNAME', 'SHELL', 'TMPDIR', 'TMP', 'TEMP', 'LANG', 'LC_ALL', 'LC_CTYPE', 'TZ'];
 const providerKeys = ['ANTHROPIC_API_KEY', 'ANTHROPIC_AUTH_TOKEN', 'CLAUDE_CODE_OAUTH_TOKEN', 'CLAUDE_CONFIG_DIR', 'ANTHROPIC_BASE_URL',
@@ -10,13 +11,22 @@ export function baseServiceEnvironment(role, inherited = process.env) {
   const keys = role === 'runner' ? [...systemKeys, ...providerKeys] : systemKeys;
   return Object.fromEntries(keys.filter(key => inherited[key] !== undefined).map(key => [key, inherited[key]]));
 }
-export function serviceEnvironment(role, config, inherited = process.env) {
+export function serviceEnvironment(role, config, inherited = process.env, browserSession = null, backendHead = null) {
   const env = baseServiceEnvironment(role, inherited);
   if (role === 'center') Object.assign(env, { DATABASE_URL: config.databaseUrl, FLOW_TOKEN: config.ownerToken,
     FLOW_PORT: String(config.centerPort), FLOW_HOST: '127.0.0.1', FLOW_ORIGIN: `http://127.0.0.1:${config.webPort}` });
   else if (role === 'runner') Object.assign(env, { FLOW_URL: `http://127.0.0.1:${config.centerPort}`, FLOW_RUNNER_TOKEN: config.runner.token,
     FLOW_RUNNER_WORKDIR: join(config.directory, 'runner'), FLOW_CLAUDE_MATERIALS_FILE: join(config.directory, 'claude.json') });
   else Object.assign(env, { FLOW_CENTER_URL: `http://127.0.0.1:${config.centerPort}`, VITE_FLOW_FIXTURE: 'false' });
+  if (browserSession !== null) {
+    const normalized = normalizeBrowserSessionSettings(browserSession);
+    if (role === 'center') env.FLOW_BROWSER_SESSION_JSON = JSON.stringify(normalized);
+    if (role === 'web') {
+      if (!/^[a-f0-9]{40}$/.test(backendHead ?? '')) throw Object.assign(new Error('WEB_BACKEND_SOURCE_MISMATCH'), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
+      env.FLOW_PREVIEW_WEB_COMPATIBILITY_CONTEXT = JSON.stringify(browserCompatibilityContext(normalized));
+      env.FLOW_PREVIEW_WEB_BACKEND_HEAD = backendHead;
+    }
+  }
   return env;
 }
 

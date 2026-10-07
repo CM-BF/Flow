@@ -28,7 +28,7 @@
 | 当前阻塞 | ACTIVE: 新宿主尚未完成启动，内部首因未被现有工具保存，需要有界诊断。 |
 | 需用户决定 | NONE |
 | Review | 344准备已APPROVED；r1实际FAIL及cleanup证据PENDING_RESULT_REVIEW，交native_center_owner唯一只读核验 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -233,3 +233,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [唯一结果](../../docs/evidence/svc06/b2b-host-policy/RESULT.md) / [原件manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)：09:37:20.428380Z调用；work39,646ms/exit1，最早保存错误START_UNCONFIRMED_CHECK_STATUS，checkpoint start-default-off；旧27迁移/自有turn取消和factory close已完成。center ready后runner身份已捕获，runner ready未完成，Web未启动；旧工具未捕获detached stderr，原因与runner数值exit不猜测。
 
 09:38:00.412Z独立cleanup293ms/exit0；两监督组absent/双EOF、center/runner原helper stopped，center匹配nonce exit0。marker/OID1274706/有界连接[]/normalDROP remaining[]；工作组absence原件先持久。实际窗已归还；原artifact/clone/root/诊断保留、不重放r1。0provider/个人，唯一fixture任务在runner前取消；后继35迁移/配置/HTTP/refresh未验，不将cleanup升格为host成功。当前结果待native独审，局部只读诊断可独立继续，原SVC06-03/04/05全部保持open。
+
+## 启动诊断窄修开工（2026-10-07T09:45:30.035Z）
+
+r1结果已native限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，原件[归档](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)。按Lead派工fresh无冲突后amend v8，当前仅启动诊断[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md)；b2b产品前像供给，原产物/r1不动，0PG/个人。实际首次任务start仍UNKNOWN；此为本小片领取/实施起点。

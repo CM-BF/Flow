@@ -3,24 +3,26 @@ import { join, extname } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { verifyWebArtifact } from './web-artifact.mjs';
 import { readWebRelease, loadReleaseAssets, releaseAsset } from './web-release.mjs';
+import { validateBrowserCompatibilityContext } from './browser-session-configuration.mjs';
 function fail(code) { const error = new Error(code); error.code = code; throw error; }
-export function createWebReleaseSnapshot(directory, { read = readWebRelease } = {}) {
+export function createWebReleaseSnapshot(directory, { read = readWebRelease, expectedContext = null, expectedBackendHead = null } = {}) {
+  if (expectedContext !== null) expectedContext = validateBrowserCompatibilityContext(expectedContext);
   let hasRelease = false;
   let cached; let cachedBytes; let loading = Promise.resolve();
   return async function snapshot() {
     loading = loading.catch(() => {}).then(async () => {
       const release = await read(directory);
-      if (!release) { if (hasRelease) fail('WEB_RELEASE_METADATA_MISSING'); return null; }
+      if (!release) { if (hasRelease || expectedContext !== null) fail('WEB_RELEASE_METADATA_MISSING'); return null; }
       hasRelease = true;
       const bytes = JSON.stringify(release);
       if (cached && (release.version < cached.version || release.version === cached.version && bytes !== cachedBytes)) fail('WEB_RELEASE_VERSION_CONFLICT');
-      if (bytes !== cachedBytes) { const verified = await loadReleaseAssets({ directory, release }); cached = verified; cachedBytes = bytes; }
+      if (bytes !== cachedBytes) { const verified = await loadReleaseAssets({ directory, release, expectedContext, expectedBackendHead }); cached = verified; cachedBytes = bytes; }
       return cached;
     });
     return loading;
   };
 }
-export async function startStaticWeb({ directory, artifact, repository, webPort, centerPort }) {
+export async function startStaticWeb({ directory, artifact, repository, webPort, centerPort, expectedContext = null, expectedBackendHead = null }) {
   for (const port of [webPort, centerPort]) if (!Number.isSafeInteger(port) || port < 1 || port > 65535) fail('INVALID_PORT');
   const { dist } = await verifyWebArtifact({ directory, artifact });
   let assetResponses = 0;
@@ -48,7 +50,7 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
       timer = setTimeout(cancel, 5000); timer.unref();
     });
   }
-  const snapshot = createWebReleaseSnapshot(directory);
+  const snapshot = createWebReleaseSnapshot(directory, { expectedContext, expectedBackendHead });
   await snapshot();
   const require = createRequire(join(repository, 'apps/web/package.json'));
   const { preview } = await import(pathToFileURL(require.resolve('vite')).href);
@@ -68,7 +70,8 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
             response.setHeader('cache-control', 'no-store');
             if (path === '/__flow_preview_identity') {
               response.setHeader('content-type', 'application/json');
-              response.end(JSON.stringify(active ? { ...active.artifact, releaseVersion: active.version, releasePolicy: 'flow-web-release-v1' } : artifact)); return;
+              response.end(JSON.stringify(active ? { ...active.artifact, releaseVersion: active.version, releasePolicy: 'flow-web-release-v1',
+                runtimeCompatibility: { backendHead: active.verifiedTuple.backendHead, context: active.verifiedTuple.context } } : artifact)); return;
             }
             if (!active) { next(); return; }
             const asset = await releaseAsset(active, path, request.headers.accept?.includes('text/html'));
@@ -83,7 +86,16 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
     } }],
     preview: { host: '127.0.0.1', port: webPort, strictPort: true, open: false, cors: false,
       headers: { 'Cache-Control': 'no-store' },
-      proxy: { '^/api(?:/|$)': { target: `http://127.0.0.1:${centerPort}`, changeOrigin: false, ws: false } } },
+      proxy: { '^/api(?:/|$)': { target: `http://127.0.0.1:${centerPort}`, changeOrigin: false, ws: false,
+        configure(proxy) {
+          proxy.on('proxyRes', (upstream, _request, downstream) => {
+            // A truncated upstream body must not leave its downstream response open
+            // or be represented as a successful, complete HTTP body.
+            upstream.once('aborted', () => downstream.destroy());
+            upstream.once('error', () => downstream.destroy());
+          });
+        },
+      } } },
   });
   server.httpServer.maxConnections = 64;
   return { artifact, close: async () => {
@@ -94,7 +106,9 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
     const [directory, repository, webPort, centerPort, artifactId, sourceHead, manifestDigest] = process.argv.slice(2);
-    const server = await startStaticWeb({ directory, repository, webPort: Number(webPort), centerPort: Number(centerPort), artifact: { artifactId, sourceHead, manifestDigest } });
+    const expectedContext = process.env.FLOW_PREVIEW_WEB_COMPATIBILITY_CONTEXT === undefined ? null
+      : validateBrowserCompatibilityContext(JSON.parse(process.env.FLOW_PREVIEW_WEB_COMPATIBILITY_CONTEXT));
+    const server = await startStaticWeb({ directory, repository, expectedContext, expectedBackendHead: process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null, webPort: Number(webPort), centerPort: Number(centerPort), artifact: { artifactId, sourceHead, manifestDigest } });
     let closing = false;
     const stop = async () => { if (closing) return; closing = true; try { await server.close(); } catch { process.exitCode = 1; } };
     process.on('SIGTERM', stop); process.on('SIGINT', stop);

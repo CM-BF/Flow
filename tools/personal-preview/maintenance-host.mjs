@@ -10,6 +10,7 @@ import { migrateRunnerMaintenance, commandRunnerMaintenance, readRunnerMaintenan
 
 import { readWebRelease } from './web-release.mjs';
 import { backendById, backendRuntime } from './backend-release/host.mjs';
+import { pinnedBrowserSessionConfiguration } from './browser-session-configuration.mjs';
 
 const execute = promisify(execFile);
 const roles = ['center', 'runner', 'web'];
@@ -41,11 +42,14 @@ function assertOperation(operation, view) {
 }
 async function bootstrap(config, pool, state, target, backendId) {
   const backendArtifact = backendId ? await backendById(config.directory, backendId) : state.backendArtifact ?? null;
+  const browser = await pinnedBrowserSessionConfiguration(config);
   if (backendArtifact) {
     await backendRuntime(config, backendArtifact);
     if (!await readWebRelease(config.directory)) fail('BACKEND_REQUIRES_WEB_RELEASE');
-    await preparePreviewWeb(config, backendArtifact.sourceHead);
   }
+  // Qualification uses the actual selected Web host, including a separately installed host.
+  // Invalid configuration or missing tuple evidence must not first be discovered after drain.
+  if (backendArtifact || browser.context !== null) await preparePreviewWeb(config, backendArtifact?.sourceHead ?? (target || undefined), backendArtifact);
   const facts = await processFacts(state);
   if (Object.values(facts).some(value => value !== 'running')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   await migrateRunnerMaintenance(pool);
@@ -74,7 +78,7 @@ async function refresh(config, pool, state, target) {
   const facts = await processFacts(state);
   if (Object.values(facts).includes('unknown')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   if (operation.phase === 'ready-paused' && operation.target === target && Object.values(facts).every(value => value === 'running')) return { ...view, update: 'ready-paused', source: target };
-  const artifact = await preparePreviewWeb(config, target);
+  const artifact = await preparePreviewWeb(config, target, operation.backendArtifact);
   await confirmSource();
   // The durable gate and HTTP denial of maintenance resume protect this interval.
   // No PG transaction spans shutdown or startup, which need database migrations themselves.
