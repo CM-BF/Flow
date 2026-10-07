@@ -1,0 +1,146 @@
+{
+  "startedAt": "2026-10-07T06:44:30.821662+00:00",
+  "sourceTarget": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "stockAttempts": 1,
+  "providerCalls": 0,
+  "PG": 0,
+  "browser": 0,
+  "primaryFailure": null,
+  "cleanup": {
+    "state": "complete",
+    "identityMatched": true,
+    "privateBytesAtEnd": 18923,
+    "removed": true
+  },
+  "reports": [
+    {
+      "stage": "prepare",
+      "pid": 87368,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 310,
+      "observed_bytes": 199,
+      "retained_bytes": 199,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "stage": "stock",
+      "pid": 87655,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 100,
+      "observed_bytes": 69,
+      "retained_bytes": 69,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "limits": {
+    "seconds": 10,
+    "rawBytes": 65536,
+    "privateBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01j-stock-host-m7wfrx6b",
+    "dev": "16777234",
+    "ino": "123593772"
+  },
+  "fileFacts": {
+    "calculator.mjs": {
+      "identity": {
+        "dev": "16777234",
+        "ino": "123593778",
+        "size": 1,
+        "mode": 33188,
+        "uid": 501,
+        "nlink": 1
+      },
+      "hex": "58"
+    },
+    "baseline.txt": {
+      "identity": {
+        "dev": "16777234",
+        "ino": "123593779",
+        "size": 1,
+        "mode": 33188,
+        "uid": 501,
+        "nlink": 1
+      },
+      "hex": "30"
+    }
+  },
+  "responseMatchesExpected": true,
+  "writeAccess": "unknown",
+  "finalFiles": {
+    "calculator.mjs": {
+      "identity": {
+        "dev": "16777234",
+        "ino": "123593778",
+        "size": 1,
+        "mode": 33188,
+        "uid": 501,
+        "nlink": 1
+      },
+      "hex": "58"
+    },
+    "baseline.txt": {
+      "identity": {
+        "dev": "16777234",
+        "ino": "123593779",
+        "size": 1,
+        "mode": 33188,
+        "uid": 501,
+        "nlink": 1
+      },
+      "hex": "30"
+    }
+  },
+  "rawBytes": 268,
+  "evidenceBytesBeforeCheckpoint": 22740,
+  "finishedAt": "2026-10-07T06:44:31.242028+00:00",
+  "elapsedMs": 574,
+  "passed": true
+}

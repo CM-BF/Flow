@@ -1,6 +1,6 @@
 {
   "task": "ENG01J-05-stock-one",
-  "state": "EXECUTED_ONCE_RESULT_PENDING_REVIEW",
+  "state": "PREPARED_NOT_RUN",
   "callerSource": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
   "productSource": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
   "productApproval": "helper-host/independent-review.json",
@@ -132,7 +132,7 @@
       "realpath": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
       "bytes": 222655232,
       "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
-      "use": "Executed once by the reviewed sandboxed standalone helper caller; exact reply/file facts in stock-run-once. No model/provider/app-server invocation."
+      "use": "Preparation hash only, never executed"
     },
     {
       "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
@@ -158,7 +158,5 @@
     "Outcome evidence compares exact payload/file identities and bytes; the same host.observe closure is not carried across the separate preparer process.",
     "Installed entry hashes are not exhaustive transitive payload/dynamic-library attestation.",
     "No app-server delegation, model qualification, or all-writer revocation demonstrated."
-  ],
-  "result": "stock-run-once/result.json",
-  "executedInputArchive": "stock-inputs-executed.json"
+  ]
 }

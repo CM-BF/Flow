@@ -25,3 +25,5 @@ Review target commit: 471b1d8b7b19d53e7c7e87efc525e9c193c5242e
 固定source f15dc1cca0e3ec9575a6b0dc0260e7de5725b383，5新例/4旧未选+focused types0。只准备受限单行helper启动，不注册G authority，不跑真实helper；[Interface](../../docs/evidence/eng01j/helper-host/interface.md)、[原始检查](../../docs/evidence/eng01j/helper-host/run.json)。本增量尚无独立批准；原471/失败保真审查均保持原范围。
 
 2026-10-07T06:29:51.627056+00:00：f15/ca6 获[APPROVED_LIMITED_STOCK_HELPER_PREPARATION](../../docs/evidence/eng01j/helper-host/independent-review.json)，无P1/P2；105固定/current与14入口相同，0reviewer运行。已main de1fe732；后续薄caller不在本批准内，stock实际0次。
+
+2026-10-07T06:45:45.308718+00:00：单stock caller d44/d2ef获[APPROVED_LIMITED_SINGLE_STOCK_HELPER_CALLER](../../docs/evidence/eng01j/helper-host/caller-independent-review.json)。随后一次实际受限helper PASS，574ms/raw268B/正常清理；当前结果尚待独审。只独立fs/writeFile，非app-server派生或完整grant；旧失败不改。

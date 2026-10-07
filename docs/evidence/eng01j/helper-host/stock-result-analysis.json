@@ -1,0 +1,73 @@
+{
+  "callerSource": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+  "preparedDelivery": "d2efbf5e3890f3d755c9a65e74f7c9ef109499ad",
+  "productSource": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "verdict": "AUTHOR_SINGLE_STOCK_HELPER_PASS_PENDING_REVIEW",
+  "outerTool": {
+    "exitCode": 0,
+    "wallTimeSeconds": 0.677822417,
+    "stdout": "{\"passed\": true, \"stockAttempts\": 1, \"elapsedMs\": 574, \"cleanup\": \"complete\"}\n",
+    "source": "Actual tools.exec_command response, no retry"
+  },
+  "inputBindingsVerified": 22,
+  "claimVersion": 1,
+  "preflightFreeBytes": 24370835456,
+  "preflightRunAbsent": true,
+  "limits": {
+    "seconds": 10,
+    "rawBytes": 65536,
+    "privateBytes": 1048576
+  },
+  "facts": {
+    "stockAttempts": 1,
+    "stockProcessExit": 0,
+    "expectedPayload": true,
+    "calculatorSameInode": true,
+    "calculatorHex": "58",
+    "baselineHex": "30",
+    "writeAccess": "unknown",
+    "supervisedMs": 410,
+    "operatorElapsedMs": 574,
+    "rawBytes": 268,
+    "privateBytesAtEnd": 18923,
+    "retainedRunBytes": 28658,
+    "groups": [
+      {
+        "stage": "prepare",
+        "pid": 87368,
+        "state": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      },
+      {
+        "stage": "stock",
+        "pid": 87655,
+        "state": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "signals": []
+      }
+    ],
+    "cleanup": {
+      "state": "complete",
+      "identityMatched": true,
+      "privateBytesAtEnd": 18923,
+      "removed": true
+    }
+  },
+  "timeSemantics": "startedAt in original result is recorded after fixed input hashing, before child stages. elapsedMs begins before input hashing; neither is the overall task wall clock.",
+  "scope": [
+    "One independent initial-exec stock helper under derived fixed recipe; no R06 initialization/app-server delegation.",
+    "No model/provider/network qualification or NativeWriteAuthority grant; writeAccess unknown.",
+    "Private bytes are end sampling, not continuous peak/quota.",
+    "Process absence/EOF supports own experiment cleanup, not proof of all writers revoked.",
+    "Original syscall/shim/native/pagesize failures stay immutable; no old check reruns.",
+    "The prep Node did not persist its observe closure; actual result comes from this caller payload/file facts."
+  ],
+  "metadataCorrection": "The original executed input inherited a preparation-only use label on the binary. Archived exact bytes/hash remain stock-inputs-executed.json; current stock-inputs corrects use/state after actual single execution without changing bindings or source."
+}

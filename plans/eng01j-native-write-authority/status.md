@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:32:51.999568+00:00 |
+| 最近更新 | 2026-10-07T06:45:45.308718+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -17,15 +17,15 @@
 | 实现目标 | f15dc1cca0e3ec9575a6b0dc0260e7de5725b383；ENG01J-05四源增量，原471已main历史保留 |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | 新四源5/5、4旧未选、focused types0；0stock/PG/provider，[本轮](../../docs/evidence/eng01j/helper-host/run.json)。原471四不同检查/原红与限制保持，不合并成一轮 |
-| 已集成main状态 / HEAD | bf8b5f1d5f554b3195b04b150821d8262a4daef1 已clean/push；5产品及4eb自有记录逐字接收，独审转录metadata后继另批 |
+| 已集成main状态 / HEAD | de1fe7328f65182b88fdb396e617bcf26b9f0135已clean/push，f15四源与ca6记录精确接收；原bf8历史保持，本次单stock结果尚待独审接收 |
 | 任务开工时间 | 2026-10-07T05:07:35.705Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原生单文件工具准备接口已审并进入主线；正在固定下一次实际调用入口 |
-| 下一可用交付 | 薄调用入口独审后验证一次原生文件请求，完整写入者停止仍另验 |
-| 当前阻塞 | ACTIVE: 已有受限原生初始化正例，但工程文件工具兼容与全部写入者停止尚未闭合，完整工程写入未通过 |
+| 当前产出 | 受限原生文件工具已成功完成一次独立单文件请求，原始结果待审 |
+| 下一可用交付 | 验收这次独立文件请求，再接完整原生工具链与可信停止边界 |
+| 当前阻塞 | ACTIVE: 独立单文件请求已验；完整工具派生、模型资格与全部写入者停止仍未闭合，完整工程写入未通过 |
 | 需用户决定 | NONE |
 | Review | 四源 APPROVED_LIMITED_STOCK_HELPER_PREPARATION；薄caller待审，[review.md](review.md)保留旧范围 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
@@ -77,3 +77,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T06:29:51.627056+00:00：新四源f15获[限定独审](../../docs/evidence/eng01j/helper-host/independent-review.json)，105固定/14安装输入与5新/types已核，reviewer0重测。main/origin de1fe7328f65182b88fdb396e617bcf26b9f0135已精确接收f15+ca6；旧C/R06不变。当前产品四源停写，原七scope只在own evidence准备最薄stock caller，真实helper尚未执行。
 
 2026-10-07T06:32:51.999568+00:00：薄caller固定d44c1bc2c48f96145a519b64f9220baf468bdee8，原4产品f15不变；[唯一实际候选入口](../../docs/evidence/eng01j/helper-host/caller-readiness.md)与22输入已封，只静态/Python AST、不import/启动。至多1stock/总10s含收尾、64KiB raw/1MiB私有、原fresh线；等待Lead新增caller边界独审与明确实际窗口，不自动运行。
+
+2026-10-07T06:45:45.308718+00:00：caller d44/d2ef 获[限定独审](../../docs/evidence/eng01j/helper-host/caller-independent-review.json)，按唯一授权执行一次stock，原run目录前不存在。实际结果06:44:31.242028Z收尾：outer0，总574ms（含固定输入核）、两子监督310+100ms，raw268B、私有末采18,923B；calculator原inode变X、baseline0，payload严格成功，writeAccess unknown。两组最终absent/双EOF/signals[]，checkpoint先于exact目录正常删除；已直接归还local。0PG/browser/provider/个人；不复跑旧probe，四产品不变。[原件/限定分析](../../docs/evidence/eng01j/helper-host/stock-result-analysis.json)待唯一结果独审。

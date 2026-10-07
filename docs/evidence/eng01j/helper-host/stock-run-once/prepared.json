@@ -1,0 +1,47 @@
+{
+  "launch": {
+    "policySha256": "f57aaf9a414d4661d823d62f92461f6bf62d551be2d8cc970cce9b6c57e44066",
+    "requestSha256": "75f6d036910155bbf802ae68ee188598ce8219d352d6a817d03a829248988cf3",
+    "executable": "/usr/bin/sandbox-exec",
+    "native": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "helperArgument": "--codex-run-as-fs-helper",
+    "cwd": "/private/tmp/eng01j-stock-host-m7wfrx6b/workspace",
+    "environment": {
+      "PATH": "/usr/bin:/bin",
+      "LANG": "C",
+      "HOME": "/private/tmp/eng01j-stock-host-m7wfrx6b/runtime/state",
+      "TMPDIR": "/private/tmp/eng01j-stock-host-m7wfrx6b/runtime/state",
+      "CODEX_HOME": "/private/tmp/eng01j-stock-host-m7wfrx6b/runtime/state"
+    },
+    "stdin": "readonly-regular-file",
+    "extraDescriptors": "closed",
+    "writeAccess": "unknown"
+  },
+  "before": {
+    "calculator.mjs": {
+      "dev": "16777234",
+      "ino": "123593778",
+      "size": 1,
+      "mode": 33188,
+      "uid": 501,
+      "nlink": 1
+    },
+    "baseline.txt": {
+      "dev": "16777234",
+      "ino": "123593779",
+      "size": 1,
+      "mode": 33188,
+      "uid": 501,
+      "nlink": 1
+    }
+  },
+  "request": {
+    "operation": "fs/writeFile",
+    "params": {
+      "path": "file:///private/tmp/eng01j-stock-host-m7wfrx6b/workspace/calculator.mjs",
+      "dataBase64": "WA==",
+      "followSymlinks": false,
+      "sandbox": null
+    }
+  }
+}
