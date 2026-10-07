@@ -1,11 +1,11 @@
 {
-  "source": "4f6bc7f6be93095a1b92a78acb0e165632307e15",
+  "source": "201674f49b538917f6f46cbdb02da4ed65191d02",
   "testSource": "0ab4fcb34405db6f4697b4679445d97a1029225a",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
   "manifest": "docs/evidence/x01-version-lifecycle/pg-manifest.json",
-  "manifestSha256": "cde9b5825d62417da7c6a947e088e148b9a6ab8298b8ba3e40b1fc8fdc2524ed",
+  "manifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
   "fileCount": 403,
-  "fileBytes": 1934326,
+  "fileBytes": 1935237,
   "externalCount": 35,
   "links": 20,
   "local": {
@@ -27,5 +27,6 @@
     "priorManifestSha256": "40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53",
     "finding": "P2 invalid UUID phase key; source changes to actual runtime stable64hex tuple. Same true403/no invoke/no artifact remain.",
     "newChecks": "NOT_RUN; literal data-key fix, same import/type. Prior local sources preserved in v1/v2 txt."
-  }
+  },
+  "callerDelta": "Actual app hook all owner+runner traffic; helper owner-only count separately named. Resource/selection/lifecycle unchanged."
 }
