@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T19:16:09.120Z",
+  "logicalId": "SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE",
+  "supervisorPid": 36049,
+  "argv": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-default-host-once"
+  ],
+  "limits": {
+    "operatorWorkSeconds": 215,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outerMilliseconds": 217500,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "rawBytes": 2097152,
+    "recordsBytes": 1048576,
+    "pgBytes": 134217728,
+    "pgPeakConnections": 26,
+    "pgManagementMargin": 16,
+    "roles": 3,
+    "tasks": 0,
+    "attempts": 0,
+    "providerQueries": 0
+  },
+  "admission": "default-host-admission.json"
+}

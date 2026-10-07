@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-07T19:16:09.109Z",
+  "logicalId": "SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE",
+  "decision": "ADMITTED_ONE_ATTEMPT",
+  "source": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+  "execution": "7beb04d5fd9d365765efa24e56b9aa2995e76b96",
+  "preparation": {
+    "bytes": 24186,
+    "sha256": "8257f26e39895cbb25d585b74ef66e30cde167e032464f75732117b22792e85f"
+  },
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "state": "active",
+    "branch": "codex/personal-message-settings",
+    "origin": "new",
+    "taskId": "SVC09A",
+    "worker": "native_center_owner",
+    "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "createdAt": "2026-10-07T14:08:33.408Z",
+    "updatedAt": "2026-10-07T18:00:38.649Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "pins": {
+    "effectiveExecution": 22,
+    "records": 19,
+    "runtime": 6,
+    "controller": 0
+  },
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "manifestDigest": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f"
+  },
+  "sourceIdentity": {
+    "dev": "16777234",
+    "ino": "124240699"
+  },
+  "artifactRootIdentity": {
+    "dev": "16777234",
+    "ino": "124240706"
+  },
+  "namespacesAbsent": true,
+  "window": {
+    "at": "2026-10-07T19:04:52.076Z",
+    "state": "SVC09A_DEFAULT_THREE_ROLE_NEXT_NOT_STARTED",
+    "queueSha256": "c5b7670814bdaff659bd1fe295312d92e1460c8e37da395f929c304b89c5fd34",
+    "resourceSha256": "c204c6c1edc6932b788456e09eb9488af7c8c8be68d02d63146bfe94e6b94436"
+  },
+  "freeBytes": 19427762176,
+  "minimumFreshFloorBytes": 17908891648,
+  "pg": {
+    "maximum": 100,
+    "active": 10,
+    "available": 90,
+    "required": 42,
+    "adminPoolClosed": true
+  },
+  "limits": {
+    "operatorWorkSeconds": 215,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outerMilliseconds": 217500,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "rawBytes": 2097152,
+    "recordsBytes": 1048576,
+    "pgBytes": 134217728,
+    "pgPeakConnections": 26,
+    "pgManagementMargin": 16,
+    "roles": 3,
+    "tasks": 0,
+    "attempts": 0,
+    "providerQueries": 0
+  },
+  "retention": "DB_AND_PRIVATE_KEEP_NO_DROP",
+  "providerCalls": 0
+}

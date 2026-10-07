@@ -1,0 +1,33 @@
+{
+  "pid": 57566,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 186,
+  "stdout": "{\"purpose\":\"SVC09A_DEFAULT_THREE_ROLE_START_STOP\",\"processes\":[{\"role\":\"center\",\"pid\":48884,\"group\":48884,\"nonce\":\"6f5723a9-b1fd-42ef-9e78-7c6d9afbacfc\",\"state\":\"stopped\"}],\"failures\":[],\"database\":\"KEEP\",\"directory\":\"KEEP\",\"mayDrop\":false,\"resourcesClosed\":true,\"adminClosed\":true,\"providerCalls\":0,\"launchAccounted\":true,\"tasks\":{\"tasks\":0,\"attempts\":0},\"connections\":{\"state\":\"empty\",\"observations\":[{\"elapsedMs\":1.9710420000000113,\"rows\":[]}]}}\n",
+  "stderr": "",
+  "observed_bytes": 449,
+  "retained_bytes": 449,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

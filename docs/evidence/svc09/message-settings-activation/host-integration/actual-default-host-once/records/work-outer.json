@@ -1,0 +1,17 @@
+{
+  "pid": 40589,
+  "ownership": "newChildSession",
+  "exit_code": 1,
+  "owned_state": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  }
+}

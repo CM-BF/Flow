@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-07T19:17:35.003Z",
+  "logicalId": "SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE",
+  "startedAt": "2026-10-07T19:16:09.120Z",
+  "outerElapsedMs": 29140,
+  "workComplete": false,
+  "primary": {
+    "phase": "host-consumer",
+    "name": "Error",
+    "code": "START_UNCONFIRMED_CHECK_STATUS"
+  },
+  "cleanupResourcesClosed": true,
+  "launchAccounted": true,
+  "processes": [
+    {
+      "role": "outer-supervisor",
+      "pid": 36049,
+      "pidState": "absent"
+    },
+    {
+      "role": "operator",
+      "pid": 36278,
+      "pidState": "absent"
+    },
+    {
+      "role": "clone-outer.json",
+      "pid": 36374,
+      "ownership": "newChildSession",
+      "pidState": "absent",
+      "groupState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "exit": 0
+    },
+    {
+      "role": "work-outer.json",
+      "pid": 40589,
+      "ownership": "newChildSession",
+      "pidState": "absent",
+      "groupState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "exit": 1
+    },
+    {
+      "role": "cleanup-outer.json",
+      "pid": 57566,
+      "ownership": "newChildSession",
+      "pidState": "absent",
+      "groupState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": [],
+      "exit": 0
+    },
+    {
+      "role": "center",
+      "pid": 48884,
+      "group": 48884,
+      "nonce": "6f5723a9-b1fd-42ef-9e78-7c6d9afbacfc",
+      "state": "stopped",
+      "pidState": "absent",
+      "groupState": "absent"
+    }
+  ],
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 1.9710420000000113,
+        "rows": []
+      }
+    ]
+  },
+  "adminClosed": true,
+  "tasks": {
+    "tasks": 0,
+    "attempts": 0
+  },
+  "database": "KEEP",
+  "directory": "KEEP",
+  "mayDrop": false,
+  "returned": true,
+  "scope": "One actual center only; runner/Web not started. No three-role success; exact registered resources returned, historical KEEP unchanged.",
+  "providerCalls": 0,
+  "retry": false
+}

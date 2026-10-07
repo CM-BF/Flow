@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T19:03:59.002Z |
+| 更新时间 | 2026-10-07T19:20:39.057Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 启动诊断已合入主线，固定加载装配获限定批准；默认三角色启动与停止准备已获独立限定批准，等待新的运行窗口。 |
-| 下一可用交付 | 固定控制器驱动的默认三角色启动、空任务核对和停止候选；真实运行待新的共享窗口与现场资源准入。 |
-| 当前阻塞 | ACTIVE: 默认中心尚无完整启动闭环通过证据；原失败底层原因未知，完整双槽与混合任务继续开放。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 默认启动已实际验证并保留失败：中心未确认监听归属；本次进程和数据库连接已收束，原始诊断已保存。 |
+| 下一可用交付 | 这次最小默认启动结果的独立审查，以及基于已保存直接诊断的有限定位。 |
+| 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | 四源f0已main；loader c1e/745已审；默认闭环source62373492cf2db5c0fe62731a5138c7d40482be5c / delivery42f0d8668，旧R4原件不变。 |
 | 实现目标 | 62373492cf2db5c0fe62731a5138c7d40482be5c |
-| 工作分支状态 | in-progress（四产品及loader已审；默认3role caller准备已审，等待实际窗口） |
-| 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
+| 工作分支状态 | in-progress（默认启动实际结果已封存待独审；固定产品与入口停止写入） |
+| 工作树dirty状态 | 仅本次own原始结果与状态封存；产品、入口、准备包未改变 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation（仅own准备；四产品已归还） |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v6；18:00:38.649Z归还四产品，仅own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-product-return-receipt.json) |
 | Review | 四源APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE，17:57:03Z；唯一main496b的docs/evidence/i02/svc09a-startup-controller-review.json。装配APPROVED_LIMITED_FIXED_CONTROLLER_LOADER_AND_IMPORT（I02 svc09a-controller-loader-review.json）；默认准备APPROVED_LIMITED_DEFAULT_HOST_PREPARATION（I02 svc09a-default-host-preparation-review.json，2026-10-07T18:44:52.319Z），0blocking，仅准备。R4限定结果批准/main abdf69692保留。 |
 | 检查状态 | 新10+受影响2=12/12，476ms/raw1750B；注释前像与KEEP如实。另actual Node import/参数1场景100ms/raw4786B，组absent/双EOF，新shadow和scratch移除；累计865ms；默认caller12不同/15选择全绿，289ms/raw1953B、三组absent/双EOF/exact scratch移除。旧33不重跑。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
 | 已集成main状态 | 原双槽11源main246ed0f；本次诊断四源main496b1d68caad14c7bc40a05b86b2136b12d68ca7，Lead确认逐字f0且main/origin clean；2515/098b旧产物未改变，个人未部署本片。 |
-| 运行窗口 | R4 2026-10-07T17:09:28.039Z START；32,137ms operator exit1；2026-10-07T17:10:57.626406Z实际RETURN。1center stopped/6PID及组absent/连接[]；DB/private KEEP，旧R1–R3不动。 |
+| 运行窗口 | 默认最小旅程 2026-10-07T19:16:09.120Z START；operator29,140ms/exit1；2026-10-07T19:17:35.003Z实际RETURN。仅center stopped/全部6PID与4自有组absent/连接empty/adminClosed；DB/private KEEP、禁止DROP，无重试。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | 四次实际失败保真已独审；诊断四源已main，固定加载和默认准备均获限定独审；[待窗口输入](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-awaiting-window.json)。默认3role新段未跑，完整双槽/SQL/个人仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | 四次实际失败保真已独审；诊断四源已main，固定加载和默认准备均获限定独审；[待窗口输入](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-awaiting-window.json)。默认3role一次实际失败且资源已RETURN；[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)待独审，完整双槽/SQL/个人仍开放 |
 
 ## 等待记录
 
@@ -54,7 +54,7 @@
 | SVC09A-W07 | 2026-10-07T16:24:21.318911Z | 2026-10-07T16:33:21.000Z | 审查 | 新合同/R3候选固定后唯一窄审；实际窗口另协调，不预占 | host-path-contract-result.json；host-preparation-r3.json |
 | SVC09A-W08 | 2026-10-07T16:49:12.381941Z | 2026-10-07T16:51:24.998Z | 审查 | R4固定候选可审后获唯一准备批准；此前实际实现/局部检查不算纯等待 | host-preparation-r4.json at；I02唯一review at |
 | SVC09A-W09 | 2026-10-07T16:51:24.998Z | 2026-10-07T17:09:28.039Z | 资源 | Web Cookie诊断完整RETURN后，Lead给唯一R4NEXT；本次fresh通过并实际START解除等待 | I02 review at；host-r4-actual-admission.json；host-r4-launch.json |
-| SVC09A-W10 | 2026-10-07T18:44:52.319Z | OPEN | 资源 | 默认三角色准备已审；等待新共享窗口、完整forward floor与现场PG/身份准入，期间仅metadata/只读准备 | I02 svc09a-default-host-preparation-review.json；default-host-awaiting-window.json |
+| SVC09A-W10 | 2026-10-07T18:44:52.319Z | 2026-10-07T19:16:09.120Z | 资源 | 唯一新窗口与现场准入通过，等待以实际START结束；此前仅metadata/只读准备 | I02 svc09a-default-host-preparation-review.json；default-host-admission.json；default-host-start.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -127,3 +127,9 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T18:33:34.910203Z：封包自查将启动身份观察改用controller实际call-state，避免onSpawn落盘失败时重读旧state漏记；缺观察/记录错误继续unknown。final source 62373492cf2db5c0fe62731a5138c7d40482be5c；仅5相关定向（3受影响+2新）通过，107ms/raw592B，18:31:50.096255Z独立组与scratch收尾。默认片总12不同/15选择、289ms/1953B，原raw不改。尚无真实host运行；本次status parser首调用参数顺序错误已保留说明，改为权威签名后errors/humanMissing空、历史UNKNOWN提示保留。
 
 2026-10-07T19:03:59.002Z：正常收录默认三角色准备唯一APPROVED_LIMITED_DEFAULT_HOST_PREPARATION，原source62373492/packet8257保持。fresh v6仅own两scope、clean42f0；22执行pin/2继承/2引用/5公开runtime与2artifact根身份均符，新双namespace仍不存在。Web18:58:01快照当前无actual holder，但本候选明确QUEUED_NO_GRANT；当前forward floor 16663183360不含未选本候选增量1243611136，不将空闲或示意加总当运行准入。PG现场容量尚未采样，0工程重测/PG fixture/host/provider/build，DB/private KEEP，旧四轮不触。
+
+## 默认启动唯一实际段
+
+2026-10-07T19:16:09.120Z：原窗口19:04:52.076Z唯一选择后，fresh claim v6、22执行/19记录/6runtime与固定准备和controller闭包吻合，两新namespace不存在；free19427762176B ≥完整floor17908891648B，PG100/10/90可用≥42且预检pool关闭。一次固定入口创建新目录和标记DB，0模型/个人。
+
+2026-10-07T19:17:35.003Z：实际FAIL和资源RETURN分开。首错为START_UNCONFIRMED_CHECK_STATUS；末次直接predicate仅证center owner running、listener-query exit1/ownedfalse，health短路未到。唯一center已停止；operator/clone/work/cleanup及outer PID均absent，受监督EOF齐全，独立cleanup的launchAccounted/resourcesClosed=true、连接empty/adminClosed。DB/private保持KEEP，不DROP，不重试。见[原件和限制](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)。固定入口和产物未修改；此次结果待独立审查，任务完整完成仍NOT_COMPLETED。

@@ -1,0 +1,39 @@
+{
+  "pid": 40589,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 23867,
+  "stdout": "{\"phase\":\"host-consumer\",\"purpose\":\"SVC09A_DEFAULT_THREE_ROLE_START_STOP\",\"primary\":{\"phase\":\"host-consumer\",\"name\":\"Error\",\"code\":\"START_UNCONFIRMED_CHECK_STATUS\"},\"cleanupFailures\":[],\"workComplete\":false,\"providerCalls\":0,\"cleanup\":\"PENDING_INDEPENDENT_OWNER\",\"privateDirectory\":\"KEEP\"}\n",
+  "stderr": "",
+  "observed_bytes": 290,
+  "retained_bytes": 290,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
