@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T21:34:04.618Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_SOURCE_RESOLVER_CORRECTION",
+  "delivery": "9e9e5973a919f0ad6e4230ef49ea2e2dcfff8b60",
+  "source": "9d7fb0b7213f71a04d1fb220457c1076d799dfe3",
+  "base": "f37a3612068c7215994750574a7451ede841bcce",
+  "sourceCommit": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "tree": "27cf190b00b3244026952ab85b0d922368676715",
+  "ref": "refs/heads/codex/svc06b-recovery-runtime",
+  "path": "tools/personal-preview/preview.mjs",
+  "before": {
+    "bytes": 48650,
+    "sha256": "dfd8c6e2e85aa38e112c340389d8f00e02bd82610c2515ce49a30ea806b6d158"
+  },
+  "after": {
+    "bytes": 48676,
+    "sha256": "ab59c6be5be67b00eda33bb0c8e1769feac98e1c32dc80a4a96de9de0baee2b2"
+  },
+  "changes": [
+    "default load resolver null -> backendRuntime",
+    "runService load receives launchRuntime.resolve",
+    "runService serviceRuntime receives launchRuntime.resolve"
+  ],
+  "local": {
+    "priorDefaultCases": 5,
+    "newRealWrapperCases": 3,
+    "elapsedMs": 306,
+    "rawBytes": 1008,
+    "processes": "both groups absent / dual EOF; exact empty scratch removed"
+  },
+  "review": [
+    "Actual fixed preview/host bodies exercised; full verifier and side-effect ports injected, not real cold proof.",
+    "All six other composition leaves unchanged. host.mjs is byte-identical to reviewed 1520 implementation; three adapted callsites now preserve original function shape.",
+    "Temporary Git object-tree composition only; no checkout/index/shared config change."
+  ],
+  "failureHistory": "b692 cold FAIL TypeError/code:null and cleanup42P01/KEEP remain original; first stack unavailable, static defect not inserted into original raw.",
+  "limits": [
+    "No build, cold, compatibility, personal or provider action from this review.",
+    "New immutable artifact and current-source four-App compatibility required before same held operation recovery."
+  ]
+}

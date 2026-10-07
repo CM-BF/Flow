@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:16:53.374Z / main/origin ce9a0911e；固定恢复产物已构建并独审，冷启动/兼容/个人恢复仍未验 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:34:55.011Z / main/origin 7a6dfa56e；冷启动失败已独审，固定恢复源适配已修正 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main ce9a0911e；本段只接11份已审构建结果原件与精简receipt，不变产品 |
+| 工作基线 / HEAD | main 7a6dfa56e；本段接收冷启动失败/资源分类与3行固定发布源修复审查，不改当前主线产品 |
 | 工作树dirty状态 | 自身状态及精简独审记录；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 固定恢复产物真实构建32.675秒及内部加载已独审；33SQL/7修正源核同，未重复构建/工程检查 |
-| 已集成main状态 / HEAD | main b00b8b9b0已含启动/维护目标修正及冷启动helper审查；恢复构建源f37a为独立固定ref，个人三个服务仍停止 |
+| 检查状态 | 固定恢复源默认加载5项及实际启动入口3项局部检查通过；旧冷启动1/0失败及KEEP保留，未重复PG/构建 |
+| 已集成main状态 / HEAD | main 7a6dfa56e已含受信迁入策略接缝；新固定源880060a为独立ref，尚未生成/启动新产物 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新版产物和旧页兼容报告已迁入，但服务刷新失败并已停止；当前个人入口不可用，原数据和发布指针保留。 |
-| 下一可用交付 | 恢复包已生成；下一步验证真实冷启动与新旧网页兼容，然后恢复个人服务接单并发布新版网页。 |
-| 当前阻塞 | ACTIVE: 个人入口仍停止；启动修正已独审，当前需完成固定恢复产物、隔离启动与网页兼容，再沿原维护操作恢复。 |
+| 当前产出 | 个人入口仍停止。恢复产物在隔离启动前失败，发布适配的三个调用错误已修复并通过局部检查。 |
+| 下一可用交付 | 构建修正后的固定恢复包，验证真实启动与新旧网页兼容后，沿原维护操作恢复个人服务接单。 |
+| 当前阻塞 | ACTIVE: 个人服务尚未恢复；修正后的固定发布源仍需新产物、实际冷启动和网页兼容验证。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -530,3 +530,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T21:16:53.374Z：新恢复产物b692/sourcef37a实际构建已由native_center_owner限定独审，11份原件逐固定Git与当前canonical核同；32.675秒、组absent/双EOF、0服务/PG/provider/个人。原构建完整RETURN；冷启动和四App新tuple仍待验证，当前个人三服务停止事实不变。[结果独审](../../docs/evidence/i02/svc06b-recovery-build-result-review.json)。
 
 2026-10-07T21:23:31.554Z：cold薄caller固定4da404独审0阻塞，8局部原件复用，实际窗口另记；迁入两受信策略port固定000490获Lead限定独审，6绑定/4定向例核同，默认旧行为及共享迁入生命周期不变。同op23新策略/个人执行仍须各自固定验收。[cold准备](../../docs/evidence/i02/svc06b-recovery-cold-preparation-review.json)、[迁入port](../../docs/evidence/i02/svc06b-migration-policy-ports-review.json)。
+
+2026-10-07T21:34:55.011Z：隔离冷启动21:23:48.339Z开始→21:23:59.394Z结束，1/0 FAIL，原TypeError/缺stack、cleanup42P01及DB/private KEEP不改。独审核3组和operator absent/双EOF、pool关闭/连接空；固定控制流在启动前结束，因此clone/private为静态存量，PG背景增长另留128MiB保守值，非清理PASS。主线正确的resolver默认值和函数调用在04da发布适配中被改错，是本轮明确返工原因；3行修正后8个不同局部例通过，fixed source880060a已封，尚未实际build/cold/兼容或恢复。见 [失败接收](../../docs/evidence/i02/svc06b-cold-failure-intake.json) 与 [适配审查](../../docs/evidence/i02/svc06b-resolver-adaptation-review.json)。
