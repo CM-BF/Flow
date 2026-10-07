@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:25:02.763Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:36:22.656Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | R3原件与结果metadata封存，提交push后clean STOP；产品未改 |
+| 工作树dirty状态 | R3实际结果已审；本轮metadata提交push后clean STOP；产品未改 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED ead8db7e6ac4a47e02790afb3b8551ebee9188ba：R3真实五例5/5、suite成功；R1/R2原失败独立保留 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
@@ -21,12 +21,12 @@
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | review |
-| 当前产出 | 中心能按明确验证器资格领取任务，迁移、权限和重放五项数据库验收已通过 |
-| 下一可用交付 | 固定本次结果供独立审查，通过后提交主线窄接收 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 中心领取资格、迁移与重放五项数据库验收已通过独立审查，等待主线接收 |
+| 下一可用交付 | 已审中心领取片等待主线窄接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | R3实际结果待独审；22:16:41源/local/准备APPROVED；R1/R2失败忠实性批准保留 |
+| Review | R3实际结果22:29:10独审APPROVED；22:16:41源/local/准备APPROVED；R1/R2失败忠实性批准保留 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R3已证明有限动态SQL矩阵，完整运行时与公开产物验证仍OPEN；主线图待接收 |
 
@@ -198,4 +198,10 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 | 等待事件 | 开始UTC | 结束UTC | 依据 |
 | --- | --- | --- | --- |
 | R3真实窗口等待 | 2026-10-07T22:19:03.666Z | 2026-10-07T22:23:41.256Z | 固定ready→actual；不与源段相加 |
-| R3结果独审等待 | 2026-10-07T22:25:02.763Z | OPEN | 固定原件封包后交独审 |
+| R3结果独审等待 | 2026-10-07T22:25:02.763Z | 2026-10-07T22:29:10.000Z | 固定原件封包后交独审 |
+
+## R3结果批准与当前owner前置接收同意
+
+2026-10-07T22:36:22.656Z：归档b01 22:29:10结果忠实性APPROVED/0新增P1P2；原29+10bindings与完整FULL_RETURN已核，numeric identity followup22:25:02.763为独立后验，不倒填22:24收尾。原R1/R2失败、所有raw和manifest不改。唯一[r3-result-approval.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r3-result-approval.json)。当前VAR owner明确同意Original按ea3固定verification.ts/test前置窄接收，R3成功与结果独审条件已满足；VAR53d后继及其工作树保持不覆盖。main receipt仍NOT_RECEIVED，父X01/完整AV03/AV04不勾完成。
+
+本次AV metadata→VAR schema修复连续段实际开始22:35:47.945Z，截止22:55:47.945Z，总新8MiB在既有稳定池内；本AV阶段0工程/PG，commit/push后STOP再切VAR。
