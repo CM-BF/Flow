@@ -13,10 +13,10 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | SVC06固定42文件/7产品源逐字相同、11直接输入保持；原7 distinct与独审复用，0新增工程检查/PG/provider。 |
-| 已集成main状态 / HEAD | main18144593已含OPS14、个人Web同版本恢复和时间规则；本次SVC06候选待fast-forward。个人仍af51/accepting v18、Web d629/v3。 |
+| 已集成main状态 / HEAD | main18144593已含OPS14、个人Web同版本恢复和时间规则；SVC06七源已main/origin a2e78031精确接收。个人仍af51/accepting v18、Web d629/v3。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
 | 当前产出 | 个人页面已恢复访问；后台发布的依赖解析与构建接线已通过局部检查和独立审查，正在接收。 |
 | 下一可用交付 | 固定后台产物的实际安装、启动和隔离验证；登录入口与任务时间展示由Web组并行实现。 |
@@ -291,3 +291,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07：仅接已独审管理源689677ae的FLOW/OPS两status，逐字绑定[收口回执](../../docs/evidence/i02/validation-throughput-status-intake.json)；SVC07/TUI01G主线事实与原并行规则已写回，SVC06/OPS14后继未冒完成，个人runtime不变。0产品修改/工程重测/provider。
 
 2026-10-07T02:59:58.580Z：受控接收SVC06 b218/59c的7产品源及35本轮记录，全部固定blob相同，11直接输入不变，lock仅增加yaml且保留既有plugin-runtime；[回执](../../docs/evidence/i02/svc06-parser-builder-intake.json)。复用唯一独审和7不同局部证据，不将本片当完整后台产物或个人部署。
+
+2026-10-07T03:03:24.435Z：OPS三队普通local段及co-lead新树自助两段限定独审后受控接收；D05登记ACCESS唯一source，183来源，actual4320载入仍待正常重载核验。[本批绑定](../../docs/evidence/i02/throughput-access-intake.json)。SVC06七源已main a2e，完整artifact仍待必需Vite宿主闭包与真实产物验证；普通产品源码未由metadata批改写。

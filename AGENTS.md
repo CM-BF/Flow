@@ -14,6 +14,7 @@
 - 分派开发任务时，明确对应的分支和 worktree 路径；主 agent 和子 agents 只能在各自被分配的 worktree 内修改该 feature。
 - 开工前检查所在 worktree、分支和未提交修改。各 feature 在自己的 worktree 中完成提交与验证，再通过明确的合并流程集成；不得覆盖其他 worktree 的工作。
 - Worktree 优先放在项目目录外；若使用项目内的 `.worktrees/`，必须保持该目录被 Git 忽略。只读研究和审查不属于功能开发，无需另建 worktree。
+- co-lead常规自助创建本组**新的**独立worktree，并按[已有模块闭包方法](docs/quality/local-validation.md#source-operator)有界物化源码，无需每片再向原Git operator申请许可。先固定base、唯一路径/分支，已有目标或归属未知即停核，不覆盖同树dirty；产品写入仍须原子scope领取。main/共享Git配置、已有他人树、安装/完整构建和跨owner交权仍按原归属协调，不随此委派开放。
 
 ## Stack 与任务开始前的技能发现
 

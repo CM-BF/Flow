@@ -77,7 +77,7 @@
 - 并行features的plan/status/review由各owner在自己的worktree维护；跨任务汇总和索引由Execution Lead负责，不并发编辑他人status。review者默认只读实现，若要写review记录先明确该文件唯一owner与范围；实际写入仍须模型>=Sol。
 - review.md至少包含target/scope、base/head、验收criteria/关键文件、已执行与未执行检查、证据链接、独立review步骤、severity/blocking findings、结论/限制、作者回应/修复commit和复审。新建模板明确 `NOT_STARTED`，空模板不能当approval。
 - review模板须包含可复制任务说明，先验证实际worktree/base/head，结论绑定具体commit。Claude Code或其他外部agent可只读审查；直接修改Flow文件仍受Sol以上门槛与独立worktree规则约束。
-- 当前用户授权每Lead任务1+3，三队4/4/4总上限12；实际并行度受运行时cap和ready独立任务数限制。区分期望和实际，不虚称可用槽；运行时拒绝后记录准确错误，不反复无意义探测或通过新task绕过。
+- 2026-10-06每Lead任务1+3、三队总12为历史授权；本次heartbeat用户上限10，实际并行仍受工具cap和ready独立任务数限制。以根AGENTS及OPS当前规则为准，不把局部检查并行上限当新增agent槽；拒绝后不反复唤醒或新建task绕cap。
 - 目录迁移必须更新本地相对链接、README索引与状态，并验证原始实验JSON/hash未被修改。
 
 ## Dashboard 同步

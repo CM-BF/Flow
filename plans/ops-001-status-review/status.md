@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T02:49:12.685Z / main943a66bf；本次个人Web恢复实际事实见SVC05H唯一source |
+| 最近更新 / 最近main同步核验 | 2026-10-07T02:59:12.368Z / main18144593；本轮只更新局部并行规则 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main943a66bf保持；02:45:03UTC同版本Web-only bootstrap一次成功，d629/v3 HTTP200，center/runner af51与accepting v18及用户事实保持；root源码窗口02:45:52UTC恢复main clean。实际部署未升级新功能，根因未解决。 |
-| Review | [review.md](review.md)：本次收尾准备a60614fe限定APPROVED_DOCS；历史规则与全计划review不被扩大 |
+| 已集成main状态 / HEAD | main/origin18144593已接任务时间规则与同版本Web恢复；个人仍af51/accepting v18、d629/v3，根因后继未完成。本次三队局部段规则待独审接收。 |
+| Review | [review.md](review.md)：历史固定批准保持；dd7538三队局部段与e65628新树自助增量分别获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 个人页面已同版本恢复可访问，后台与用户记录保持；SVC07与TUI01G已进入主线。任务时间与普通局部迭代规则收口，展示由Web组沿唯一status接入。 |
+| 当前产出 | 个人页面已同版本恢复；登录入口和时间展示正在实现。三队可各自进行相互隔离的局部检查，减少无共享资源的排队。 |
 | 下一可用交付 | 继续Codex普通会话、连接恢复与快捷设置必要验证；固定后台产物接线恢复。时间规则发布与看板展示分别验收，不阻聊天关键路径。 |
-| 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
+| 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本地按各任务原门槛和合计预算执行，不再整体HOLD或争抢唯一local槽。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -417,3 +417,9 @@ X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复�
 | OPS-001-16 | in-progress | Execution Lead / Web co-lead展示 | 时间契约与连续局部迭代规则79da82ae已获native限定文档独审；dashboard呈现和活跃owner接入未完成，不把本次docs写成完整交付。 |
 
 2026-10-07T02:52:28.328Z：OPS-001-16规则已固定79da82ae并获native独立APPROVED_DOCS；Web已收到冻结两字段Interface，登录入口独立source-only建树也已明确委派Web唯一operator。D05停写释放index/README（v6）；根/plans规则转入本管理claim v4。当前只是规则/接口交付，看板实际显示未验；6处链接及diff检查，无产品测试。
+
+2026-10-07T02:53:55.409Z：规则target79da82ae及独审记录4cc6f226已受控main18144593并推送；02:53:16.744Z实际4320读取FLOW/OPS均live、human字段完整/无missing，已显示页面恢复与验证队列。此为摘要聚合，时间UI仍由Web组实施，未冒充实际展示通过。SVC06当前仅一个隔离6+1局部段（累计120s/16MiB+128KiB），与Mika专库窗口按既有有限并行协调；完整build未开。
+
+2026-10-07T02:59:12.368Z：按GO新资源决定，普通隔离局部检查改为三队各最多一段、全队最多三段；已一次直接同步Web/Mika。共享重旅程仍唯一holder，原时间/字节/进程/cleanup/unknown边界及总agent10不变；原禁止并跑packet由owner最小修订。只改现规则/计划/状态，不运行产品检查或新资源采样。
+
+2026-10-07T03:01:19.303Z：新建本组独立树与有界模块源码物化改为co-lead常规自助；main/共享Git配置/他人树/安装/fullbuild/跨owner交权仍按原归属。此前ACCESS已由Web取得claim，不重复创建；新时间UI沿冻结合同自主供给。三队局部段与此source规则统一本批docs交付，0产品运行。
