@@ -1,7 +1,7 @@
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { expect, type Browser, type BrowserContext, type Page, type Request as BrowserRequest, type Response as BrowserResponse } from "@playwright/test";
-import { startWorkspaceLayoutFixture } from "./workspace-layout.fixture";
+import { startWorkspaceLayoutFixture, workspaceReadKind } from "./workspace-layout.fixture";
 import type { DraftRecord } from "../src/recovery/journal";
 import { readRecoveryDraft } from "../src/recovery/binding";
 
@@ -40,7 +40,7 @@ function observeBodyRequests(page: Page, origin: string, expected: readonly stri
   };
   const requested = (request: BrowserRequest) => {
     const url = new URL(request.url()); if (url.origin !== origin) return;
-    const kind = /\/details\/|\/queue\/[^/]+$/.test(url.pathname) ? "body" : /\/tasks\/[^/]+\/stream$/.test(url.pathname) ? "stream" : null;
+    const kind = workspaceReadKind(url.pathname);
     if (!kind) return;
     if (rows.length >= 64) { error("Client read identity bound"); return; }
     if (kind === "body" && (request.method() !== "GET" || !expected.includes(url.pathname) || rows.some(row => row.kind === "body" && row.path === url.pathname))) error("Unexpected or duplicate body request");
@@ -85,6 +85,13 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
     await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
     await page.getByLabel("Owner token", { exact: true }).fill("flow-fixture-only"); await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
     await expect(input(1)).toBeVisible();
+    await page.evaluate(async () => {
+      await document.fonts.ready;
+      await new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve())));
+    });
+    const desktop = await page.screenshot({ fullPage: false }); expect(desktop.length).toBeLessThanOrEqual(512 * 1024);
+    const desktopPath = join(outputDirectory, "arc-desktop-ready.png"); await writeFile(desktopPath, desktop);
+    result.observations.desktopStage = { stage: "connected-before-layout-actions", path: desktopPath, bytes: desktop.length, viewport: page.viewportSize(), at: new Date().toISOString() };
     await run("layout-navigation", async () => {
       await chooseChat(2); await chooseChat(3);
       await tab(1).focus(); await tab(1).press("ArrowRight"); await expect(tab(2)).toBeFocused(); await expect(tab(3)).toHaveAttribute("aria-selected", "true");

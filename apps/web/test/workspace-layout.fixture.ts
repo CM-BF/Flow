@@ -7,6 +7,13 @@ import { attachmentUploadSchema, type AttachmentAccepted, type AttachmentMetadat
 import { createConversationFixture } from "./conversation.fixture";
 import { installStreamFixture } from "./conversation-stream-integration.fixture";
 
+/** Classify public API paths, never similarly named Vite modules or list reads. */
+export function workspaceReadKind(pathname: string): "body" | "stream" | null {
+  if (/^\/api\/details\/[^/]+$/.test(pathname)
+    || /^\/api\/conversations\/[^/]+\/(?:turns\/[^/]+\/details\/[^/]+|queue\/[^/]+)$/.test(pathname)) return "body";
+  return /^\/api\/tasks\/[^/]+\/stream$/.test(pathname) ? "stream" : null;
+}
+
 const hash = (text: string) => createHash("sha256").update(text).digest("hex");
 const id = (number: number) => `10000000-0000-4000-8000-${String(number).padStart(12, "0")}`;
 const probeId = "\0virtual:arc-material-probe";
@@ -113,14 +120,15 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
   fixture.server.on("request", (request, response) => { void (async () => {
     const url = new URL(request.url ?? "/", "http://fixture"), method = request.method ?? "GET";
     if (reads.length >= 768) throw Error("Arc HTTP observation bound");
-    const row = { method, path: url.pathname, bytes: 0, bodyRead: /\/details\/|\/queue\/[^/]+$/.test(url.pathname), ended: false }; reads.push(row);
+    const kind = workspaceReadKind(url.pathname);
+    const row = { method, path: url.pathname, bytes: 0, bodyRead: kind === "body", ended: false }; reads.push(row);
     const originalEnd = response.end.bind(response);
     response.end = ((chunk: unknown, ...args: unknown[]) => {
       if (typeof chunk === "string" || Buffer.isBuffer(chunk)) { row.bytes += Buffer.byteLength(chunk); if (row.bodyRead) bodyBytes += Buffer.byteLength(chunk); }
       return Reflect.apply(originalEnd, response, [chunk, ...args]);
     }) as typeof response.end;
     response.once("close", () => { row.ended = true; });
-    if (/\/tasks\/[^/]+\/stream$/.test(url.pathname)) {
+    if (kind === "stream") {
       observe("stream-arrive", url.pathname);
       response.once("finish", () => observe("stream-finish", url.pathname, response.statusCode));
       response.once("close", () => observe("stream-close", url.pathname, response.statusCode));
