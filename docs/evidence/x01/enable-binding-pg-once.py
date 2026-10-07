@@ -67,7 +67,13 @@ def tree_sample(root, identity, deadline, limits):
         if total > limits['temporaryBytes']: raise ValueError('Temporary sample over budget')
         rows.append((path, item.st_dev, item.st_ino, stat.S_ISDIR(item.st_mode)))
         if stat.S_ISDIR(item.st_mode):
-            for child in sorted(path.iterdir()): walk(child)
+            with os.scandir(path) as entries:
+                while True:
+                    if time.monotonic() >= deadline: raise TimeoutError('Inventory deadline')
+                    if len(rows) >= limits['temporaryEntries']: raise ValueError('Inventory entry limit')
+                    try: entry = next(entries)
+                    except StopIteration: break
+                    walk(path / entry.name)
     first = root.lstat()
     if (first.st_dev, first.st_ino) != identity: raise ValueError('Root identity changed')
     walk(root)
@@ -238,12 +244,15 @@ def main():
             if reserved:
                 assert_directory(RUN, run_identity)
                 output_sizes = {}
-                for path in RUN.iterdir():
-                    gate()
-                    if len(output_sizes) >= 24: raise ValueError('Output count limit')
-                    item = path.lstat()
-                    if not stat.S_ISREG(item.st_mode): raise ValueError('Unexpected output kind')
-                    output_sizes[path.name] = item.st_size
+                with os.scandir(RUN) as outputs:
+                    while True:
+                        gate()
+                        if len(output_sizes) >= 24: raise ValueError('Output count limit')
+                        try: entry = next(outputs)
+                        except StopIteration: break
+                        item = (RUN / entry.name).lstat()
+                        if not stat.S_ISREG(item.st_mode): raise ValueError('Unexpected output kind')
+                        output_sizes[entry.name] = item.st_size
                 written = sum(output_sizes.values())
                 report['outputBytesBeforeReceipt'] = output_sizes
             tail = sum(max(0, process['observed_bytes'] - process['retained_bytes']) for process in report['processes'])

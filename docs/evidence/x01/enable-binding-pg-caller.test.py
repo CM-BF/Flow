@@ -6,6 +6,8 @@ from pathlib import Path
 import tempfile
 import time
 import unittest
+from unittest.mock import patch
+from types import SimpleNamespace
 
 spec = importlib.util.spec_from_file_location('x01_pg_caller', Path(__file__).with_name('enable-binding-pg-once.py'))
 caller = importlib.util.module_from_spec(spec)
@@ -59,6 +61,24 @@ class ResourceQualification(unittest.TestCase):
             with self.assertRaises(TimeoutError): caller.tree_sample(root, identity, time.monotonic() - 1, limits)
             (root / 'alias').symlink_to(root / 'data')
             with self.assertRaises(ValueError): caller.tree_sample(root, identity, time.monotonic() + 1, limits)
+
+    def test_inventory_consumes_directory_lazily_under_entry_limit(self):
+        with tempfile.TemporaryDirectory(prefix='x01-caller-lazy-') as directory:
+            root = Path(directory).resolve(); item = root.lstat(); (root / 'data').write_bytes(b'1')
+            class Entries:
+                calls = 0
+                def __enter__(self): return self
+                def __exit__(self, *args): return False
+                def __next__(self):
+                    self.calls += 1
+                    if self.calls > 1: raise AssertionError('Read beyond the remaining entry budget')
+                    return SimpleNamespace(name='data')
+            entries = Entries()
+            with patch.object(caller.os, 'scandir', return_value=entries):
+                with self.assertRaisesRegex(ValueError, 'entry limit'):
+                    caller.tree_sample(root, (item.st_dev, item.st_ino), time.monotonic() + 1,
+                                       dict(temporaryEntries=2, temporaryBytes=4))
+            self.assertEqual(entries.calls, 1)
 
     def test_changed_cleanup_identity_preserves_replacement(self):
         with tempfile.TemporaryDirectory(prefix='x01-caller-delete-') as directory:

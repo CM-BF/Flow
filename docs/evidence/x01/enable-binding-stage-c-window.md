@@ -28,3 +28,5 @@
 沿既有本地find-skills→codebase-design/clean-code，固定来源复用不安装。资源状态由唯一fixture/OPS14拥有，入口只绑定/核验并保未知；27断言与产品实现ade4不变。对同一beforeAll失败、晚startup、未确认CREATE/DROP、checkpoint损坏、输出截断，结果均保守UNKNOWN/KEEP。所有旧red、StageA HOLD、StageC旧21计数FAIL保持。完整X01仍缺production claim/runtime资格/真实有用npm bundle与公开端到端旅程。
 
 2026-10-07T04:27Z：按Mika补充仅input/caller floor与reservation分项纳入128MiB DB/WAL reserve；旧局部类型/5反例不重跑，其证据绑定e7源。本预算算术增量待同次独审，不产生OPEN。
+
+2026-10-07T04:28:39.725000+00:00：独审P2发现directory排序会在门禁前预枚举。仅改TMP采样及有限RUN会计为with scandir惰性next，每项前核截止/数量；超界UNKNOWN/KEEP，最大恰满时也保守拒绝而不探测第4097项。新增1个不建海量文件的懒迭代反例，等待Mika批准的≤5s定向检查；原5/strict结果不改。
