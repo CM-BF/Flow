@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T22:00:24.751Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_RETARGET_AND_READONLY_FACTS_RESULT",
+  "target": "4e527c531b118e0d96e3e95fe1b0edc2e11f488e",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "manifest": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-manifest.json",
+    "bytes": 7609,
+    "sha256": "888e5992a8ff2c123d4a2e8118e266922d1018d5a967a3db9361a58a5186c4a2",
+    "bindings": 29,
+    "boundBytes": 69386,
+    "fixedGitAndCurrentMatched": true
+  },
+  "actual": {
+    "start": "2026-10-07T21:53:19.106796Z",
+    "return": "2026-10-07T21:53:24.200188Z",
+    "elapsedMs": 5085,
+    "exit": 0,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "initialEPERM": "preserved observation; no direct reinterpretation as absent",
+    "ready": false,
+    "maintenanceVersion": 23,
+    "oldRoles": "all stopped",
+    "poolEnd": "resolved",
+    "remoteConnections": "NOT_OBSERVED",
+    "personalWrites": 0,
+    "providerQueries": 0
+  },
+  "review": [
+    "Single TARGET/clone/window retarget uses verified e15/880060; inherited31 sources remain linked, no duplicated closure.",
+    "Six-file point observation unchanged before/after, same held operation and old roles; not atomic authority or future execution permission.",
+    "Original zero-child preflight failure preserved; system Python uid follows fixed pin, private file ownership remains strict.",
+    "Original invocation5144B unchanged. Collector12 reads do not conceal additional verified public-loader/inventory reads.",
+    "Four pure collector and two affected policy checks passed with original raw; no re-execution by reviewer."
+  ],
+  "blocking": [],
+  "next": [
+    "exact cold PASS",
+    "four exact compatibility reports",
+    "final caller/dispatch and actual resource selection"
+  ],
+  "boundary": "No permission to replay prior bootstrap/hold/retirement or mutate personal installation from this point observation."
+}

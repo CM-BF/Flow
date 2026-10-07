@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T22:01:03.629Z",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_SOURCE_REGISTRATION",
+  "target": "d931003d843ee324c189b691bfb6afc7cc1dbe8d",
+  "base": "8e55155509923f571e95d3f87d118671c5a26c40",
+  "files": 3,
+  "checks": [
+    "Full three-file delta read; three canonical branches/trios/evidence match Web request.",
+    "Nine canonical file current bytes/hash match fixed registration receipt.",
+    "Remove three added rows/mappings: registry byte-identical to previous208.",
+    "No other owner status changed.211candidate/208actual and TIMING02 main/deploy distinct; Arc historical start UNKNOWN preserved."
+  ],
+  "blocking": [],
+  "engineeringTests": 0,
+  "HTTP": 0,
+  "boundary": "Source registration only; live4320 deployment separately observed."
+}
