@@ -41,3 +41,9 @@ architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc0
 - 27raw28919B逐targetGit=WT/bytes/hash；manifest SHA48985fa4328cb60547cbb046b6c73d53eef444ddc9e6f95875badc221f985c22，22输入execution=target=WT，产品/准备未改。4pass/20未选、13task120HTTP、4库OID-marker/0conn普通DROP/absence、PID31444/双EOF/groupabsence、5个新root精确ENOENT均符。
 - main15847实际加载、spawn前组合门槛、sample峰值及两UTC标记ENOENT原样；wrapper6.819s/time6.93s/21s扩大观察包络分列准确。审者仅只读，无测试/import/PG/旧根访问/清理/写入。
 - 批准只限四项原消费者与已观察资源；不推最新main全集/吞吐/R1原因。原85非PG、中心8PG、本次4PG各自固定，不合成新单批。main NOT_INTEGRATED；owner冻结源/raw、保留claim直至正式接收。
+
+## 主线fixture导入组合修复（限定独审通过）
+
+2026-10-07T03:55:50.792346+00:00 target `7d3757128fa45363c846036a96ea73346185829a` 仅四处package导入改相对公开入口；新绑定见 [main-import-fix.json](../../docs/evidence/s01p07/main-import-fix.json)。原source/results批准保持各固定Git范围；本次无新运行，主线组合types由Lead复验。
+
+2026-10-07T03:59:48.259902+00:00 归档db_transaction_owner/gpt-6-astra于2026-10-07T03:59:12Z的SOURCE_REVIEW_APPROVED/0P1P2。两源WT=7d375712，diff恰四行import；package exports与相对入口相同，原Bundler/相对.js→TS约定保持。审者0import/type/test/PG/写；主线实际组合复验仍待Lead，原PG结果不回填新target。

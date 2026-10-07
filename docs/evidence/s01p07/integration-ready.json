@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-07T03:50:49.198515+00:00",
+  "at": "2026-10-07T03:59:48.259902+00:00",
   "state": "INTEGRATION_READY_NOT_INTEGRATED",
   "base": "22a0806bc2465e11096949618113833f31766b19",
   "owner": "status_read",
@@ -115,15 +115,17 @@
   "requiredTestFixtures": [
     {
       "path": "docs/evidence/s01p07/capacity-center.ts",
-      "target": "68815dce87cc0a9498802de89448693215d028d6",
-      "bytes": 6283,
-      "sha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62"
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 6333,
+      "sha256": "a69ba0be712c4197a04c68cd998b28b0b7afe7083f1c13ba7dba8d9781ae54b2",
+      "historicalValidatedTarget": "68815dce87cc0a9498802de89448693215d028d6"
     },
     {
       "path": "docs/evidence/s01p07/pg-fixture.ts",
-      "target": "68815dce87cc0a9498802de89448693215d028d6",
-      "bytes": 13409,
-      "sha256": "f111069487403bf585e1f742d67b7a02808127a0e655eefaffe27233122d1831"
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 13459,
+      "sha256": "48f4844895067368156682b56e0f9c731799849d96fecb4fd56ba97f4b8482d4",
+      "historicalValidatedTarget": "68815dce87cc0a9498802de89448693215d028d6"
     }
   ],
   "privateValidationInputs": [
@@ -217,5 +219,20 @@
     "R1 unknown root untouched; successful later runs do not establish its cause.",
     "Two shell UTC markers failed; raw retains errors, wrapper/time/tool and21s wider observation envelope kept separate.",
     "Main receipt still required. Task remains incomplete until integration/status handoff."
-  ]
+  ],
+  "mainCombinationDelta": {
+    "source": "7d3757128fa45363c846036a96ea73346185829a",
+    "evidence": "docs/evidence/s01p07/main-import-fix.json",
+    "state": "SOURCE_REVIEW_APPROVED",
+    "scope": "Four fixture imports only. Original source/PG reviews stay bound to historical Git; current main types pending Lead.",
+    "review": {
+      "reviewer": "db_transaction_owner / gpt-6-astra",
+      "at": "2026-10-07T03:59:12Z",
+      "state": "SOURCE_REVIEW_APPROVED",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "P1": 0,
+      "P2": 0,
+      "scope": "Exactly four import path replacements in two fixtures; public exports unchanged. Static only, no main types or PG rerun."
+    }
+  }
 }

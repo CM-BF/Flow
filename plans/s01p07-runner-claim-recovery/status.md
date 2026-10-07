@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:53:01.250208+00:00 |
+| 最近更新 | 2026-10-07T03:59:48.259902+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -12,8 +12,8 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品83a0799；4capacity source68815dce/packet1de742；本次execution59d7ab4e7d14b9b5979221c249c0a68ba3836695。 |
-| 工作树dirty状态 | 恢复时6ef29263=origin clean；本次仅状态/审查/接收清单metadata，源码/raw/已固定manifest全部冻结。 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品83a0799；4capacity source68815dce/packet1de742；本次execution59d7ab4e7d14b9b5979221c249c0a68ba3836695；主线fixture导入修复7d375712。 |
+| 工作树dirty状态 | 本段恢复时2fc7d538=origin clean；四import修复7d375712已push，其余产品/断言/raw/历史manifest冻结；当前仅本任务metadata收口；源已停写、claim保留至main回执。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
 | 检查状态 | 分别保留：历史85 non-PG；R2中心8/8；本次原capacity4/4、20未选、13task/120HTTP。原strict5与本次局部strict修后0各有raw；没有将历史合算为新通过数。 |
@@ -23,9 +23,9 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 空闲领取与丢响应恢复已完成源码及必要直接消费者验证，四项并发结果也已通过独审，现可由主线接收。 |
+| 当前产出 | 空闲领取与丢响应恢复已完成必要验证及独审；主线组合发现的测试入口解析问题已作四行修复并通过独审，等待主线复验接收。 |
 | 下一可用交付 | 将已审8项产品变更及必要测试接入主线，完成集成核对后交回写入范围。 |
-| 当前阻塞 | ACTIVE: 等待主线受控接收；实现、分支验证和独立审查已完成。无实际local/heavy holder，旧R1未知资源保留。 |
+| 当前阻塞 | ACTIVE: 实现、分支验证及导入窄修独审已完成，等待主线定向组合复验和接收回执。无实际local/heavy holder，旧R1未知资源保留。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：产品、准备和分轮结果均已独审；capacity结果168678c3于03:48:41.637621Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；NOT_INTEGRATED。 |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
@@ -79,3 +79,7 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:50:49.198515+00:00 独立结果审接收：db_transaction_owner / gpt-6-astra于2026-10-07T03:48:41.637621Z对result168678c38ed8458420d902c49cfffaf98be226b8 / packet6ef2926344031c7796ea427704c9f4359d5b72fb给出RESULT_FIDELITY_REVIEW_APPROVED、0P1/P2。27raw28919B与22准备输入、原4断言、DB/process/root清理和UTC错误/计量口径全部核符，审者0运行/PG/写。只补[main接收映射](../../docs/evidence/s01p07/integration-ready.json)：8产品@83a、8直接测试+2必需fixture@68815，私有验证输入另列；共享文件须按base→target增量受控合并，不能旧blob覆盖main。原85/8/4各自独立目标保留；待main回执，claim不release。
 
 2026-10-07T03:53:01.250208+00:00 交付聚合核对：既有4320/api/snapshot一次5s GET超时，PENDING_SYNC，不重试；唯一权威仍为本WT/branch状态。沿既有find-skills/clean-code/codebase-design基线复核本段状态、固定输入映射及历史/主线边界，仅metadata，无工程重测。
+
+2026-10-07T03:55:50.792346+00:00 主线组合窄修：fresh claim v2/18 ACTIVE、2fc7d538 clean后，仅两个fixture的四处import改为仓库相对public index；固定7d3757128fa45363c846036a96ea73346185829a，见[当前绑定](../../docs/evidence/s01p07/main-import-fix.json)。两包exports原指相同src/index.ts，无产品/断言/manifest依赖变化。原85/8/4及raw/result manifests均按历史Git保留；未重跑types/PG，交db_transaction_owner限定只读审，main仍NOT_INTEGRATED。
+
+2026-10-07T03:59:48.259902+00:00 四import修复限定独审接收：db_transaction_owner/gpt-6-astra，2026-10-07T03:59:12Z，SOURCE_REVIEW_APPROVED/0P1P2，绑定7d375712。仅消除docs层对ignored包链接的依赖，公开入口/行为不变；未声称本树或main重新types/PG通过。现接收映射只将两fixture更新到7d375712，原85/8/4与旧manifest逐历史target保留。Lead负责当前main root noEmit及contracts/client两直接文件；无新测试范围。
