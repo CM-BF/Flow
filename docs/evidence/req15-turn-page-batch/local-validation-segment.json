@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "task": "REQ15",
+  "owner": "db_transaction_owner",
+  "recordedAt": "2026-10-07T02:53:18.669123+00:00",
+  "state": "LOCAL_TYPES_PASSED_COLLECTED_TWO_PG_NOT_RUN",
+  "executionHead": "011f85d42c315d21755da6739106dbe0dbf7b52d",
+  "runnerSourceCommit": "2deb4b865332981fc4a184c04913313b12766ce8",
+  "runnerSha256": "9e577e8b5255d59bcbb5f5b3a261ee359daa84045cb95c0f15f859d2328dff0c",
+  "pgPreparationSourceCommit": "5ddddd6a7991243b5c42e223b11df879f0fa9498",
+  "pgPreparationManifestSha256": "df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e",
+  "productValidationBase": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "authorization": "Mika bounded local segment; actual local handoff from chatui01_owner after C02 cleanup; no PG grant",
+  "claimObservation": {
+    "observedAt": "2026-10-07T02:50:51.360Z",
+    "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+    "version": 1,
+    "state": "ACTIVE",
+    "identityAndTenScopesMatched": true
+  },
+  "preflightObservation": {
+    "headClean": true,
+    "inputsMatched": 95,
+    "inputBytes": 429768,
+    "dependenciesMatched": 9,
+    "driverInputsMatched": 8,
+    "availableBytes": 26581078016,
+    "lightFloorBytes": 1107296256,
+    "newOutputsAbsent": true
+  },
+  "budgets": {
+    "segmentMaxSeconds": 300,
+    "maxCommandStarts": 4,
+    "perCommandMaxSeconds": 30,
+    "combinedRawMaxBytes": 262144,
+    "ownTmpSampleMaxBytes": 33554432,
+    "sourceMetadataCloseoutMaxLogicalBytes": 1048576
+  },
+  "actual": {
+    "commandStarts": 2,
+    "repairs": 0,
+    "reruns": 0,
+    "combinedRawBytes": 536,
+    "checkWallSecondsSum": 2.237946290988475,
+    "executionWindowStart": "2026-10-07T02:50:51.360Z",
+    "executionWindowEnd": "2026-10-07T02:51:07.554926+00:00",
+    "wholeSegmentDurationBasis": "Observed wall-clock timestamps; per-command monotonic durations exclude interpreter startup/final receipt persistence",
+    "pg": 0,
+    "http": 0,
+    "provider": 0,
+    "native": 0,
+    "old26TestsRerun": false,
+    "oldStrictRerun": false
+  },
+  "runs": [
+    {
+      "kind": "pg-types",
+      "launcherExit": 0,
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/req15-turn-page-batch/tsconfig.pg.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+      "at": "2026-10-07T02:50:54.844217+00:00",
+      "endedAt": "2026-10-07T02:50:56.135982+00:00",
+      "wallSeconds": 1.3532348329899833,
+      "childExit": 0,
+      "pid": 20935,
+      "pgid": 20935,
+      "collected": null,
+      "selected": null,
+      "passed": null,
+      "rawBytes": 0,
+      "rawComplete": true,
+      "eof": true,
+      "groupState": "absent",
+      "tmpAbsentObservedAfter": true,
+      "tmpMeasurement": "before/after sample, not realtime isolation"
+    },
+    {
+      "kind": "pg-collect",
+      "launcherExit": 0,
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "list",
+        "docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts",
+        "--config",
+        "docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs",
+        "--configLoader",
+        "runner",
+        "--no-cache",
+        "--json",
+        "--no-color"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+      "at": "2026-10-07T02:51:06.737267+00:00",
+      "endedAt": "2026-10-07T02:51:07.554926+00:00",
+      "wallSeconds": 0.8847114579984918,
+      "childExit": 0,
+      "pid": 24153,
+      "pgid": 24153,
+      "collected": 2,
+      "selected": null,
+      "passed": null,
+      "rawBytes": 536,
+      "rawComplete": true,
+      "eof": true,
+      "groupState": "absent",
+      "tmpAbsentObservedAfter": true,
+      "tmpMeasurement": "before/after sample, not realtime isolation"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-types.json",
+      "bytes": 2855,
+      "sha256": "53f4567f189f515e15e34fa219767cc48894824862d5698d37a613598a66067b",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-collect.json",
+      "bytes": 3058,
+      "sha256": "29a81da76614084c7a81c19c581e97e8b7b2758c4016ea01c2dd16e7d99a8f16",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-collect.log",
+      "bytes": 536,
+      "sha256": "2538049a7503e92a1f7672723666d2be0e85a99b31c1ea0a6a08cc3fc1b78851",
+      "mode": "0600",
+      "regular": true
+    }
+  ],
+  "cleanup": {
+    "bothReceiptsReportSameInodeEmptyTmpRemoval": true,
+    "bothTmpPathsIndependentlyObservedAbsent": true,
+    "newProcessScan": false,
+    "processClosureBasis": "Supervisor own-group observations, child exit and EOF in immutable receipts",
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "unexecuted": {
+    "realPgCases": 2,
+    "pgOutputPathsStillAbsent": [
+      "pg-run-reservation.json",
+      "pg-database.json",
+      "pg-result.json",
+      "pg-output.log",
+      "pg-exit.json",
+      "pg-tmp"
+    ],
+    "httpConsumer": "Integration point",
+    "mainIntegrated": false
+  },
+  "review": "PENDING_SEGMENT_END_INDEPENDENT_REVIEW",
+  "limitations": [
+    "Collect is not test execution and does not demonstrate SQL behavior.",
+    "TMP is a before/after sample, not realtime isolation.",
+    "No throughput, roundtrip or UTF8 byte result exists until the real PG cases run."
+  ]
+}

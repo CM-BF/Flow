@@ -5,7 +5,7 @@ import { idSchema } from '@flow/contracts';
 import { HttpError, transaction } from '../database.js';
 import { integerQuery } from '../queries.js';
 import { assistantMessage, assistantMessages } from './store.js';
-export { readAssistantFinal, readAssistantFinalPreview, type AssistantFinalPreview } from './store.js';
+export { readAssistantFinal, readAssistantFinalPreview, readAssistantFinalPreviews, type AssistantFinalPreview, type AssistantFinalBinding, type AssistantFinalPreviewResult } from './store.js';
 
 export async function migrateAssistantMessages(pool: Pool): Promise<void> {
   await transaction(pool, async client => {

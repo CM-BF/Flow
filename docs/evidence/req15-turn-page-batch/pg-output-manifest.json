@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "task": "REQ15",
+  "window": "REQ15-PG-20261007-R1",
+  "recordedAt": "2026-10-07T03:07:40.672129+00:00",
+  "executionHead": "8da3ea07e8d567583797fef3dcc42ef91564af92",
+  "inputManifestSha256": "df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e",
+  "pgSourceCommit": "5ddddd6a7991243b5c42e223b11df879f0fa9498",
+  "productValidationBase": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "files": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-run-reservation.json",
+      "bytes": 200,
+      "sha256": "2d876147dc025819abe2d9840e74f12d7bead2feec100baacdd2d0a689433538",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-database.json",
+      "bytes": 174,
+      "sha256": "062c1eeafeb81b91b81915c399f03b3ed3714da333603846aa2e15280bb895d2",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-result.json",
+      "bytes": 6657,
+      "sha256": "2f58593072e73ba5e1c201b8fc61606fd9325302f27ac69e9f624fb0fb1ed76b",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-output.log",
+      "bytes": 584,
+      "sha256": "af4642a247e0f7287ad8a38c4f00a6d9da9b500480a034085807edee43c52f46",
+      "mode": "0600",
+      "regular": true
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-exit.json",
+      "bytes": 2997,
+      "sha256": "ae4f7786a9d25e64b372a140a4a5406f8a08e023831f77334218d6ecc5c979e4",
+      "mode": "0600",
+      "regular": true
+    }
+  ],
+  "fileCount": 5,
+  "totalBytes": 10612,
+  "execution": {
+    "launcherExit": 0,
+    "childExit": 0,
+    "selected": 2,
+    "passed": 2,
+    "startedAt": "2026-10-07T03:07:00.012295+00:00",
+    "endedAt": "2026-10-07T03:07:01.041357+00:00",
+    "wallSeconds": 1.1504937920253724,
+    "elapsedBasis": "Existing wrapper preflight through cleanup before final receipt; excludes interpreter startup and final persistence",
+    "rawBytes": 584,
+    "rawSha256": "af4642a247e0f7287ad8a38c4f00a6d9da9b500480a034085807edee43c52f46",
+    "captureComplete": true,
+    "lifecycleKnown": true
+  },
+  "cleanup": {
+    "fixtureDatabase": {
+      "identity": {
+        "database": "flow_req15_1eb15243a312",
+        "marker": "d6a146d8-98d6-42b7-808b-c24f457dde4e",
+        "oid": 1193363,
+        "createAcknowledged": true,
+        "markerAcknowledged": true
+      },
+      "cleanup": {
+        "status": "CONFIRMED",
+        "originalsSettled": true,
+        "subjectEndAcknowledged": true,
+        "writerEndAcknowledged": true,
+        "connectionsZero": true,
+        "databaseAbsent": true,
+        "adminEndAcknowledged": true,
+        "secondaryFailures": []
+      }
+    },
+    "supervisorGroupAbsent": true,
+    "supervisorEof": true,
+    "temporarySameInodeEmptyRemovalReported": true,
+    "temporaryIndependentLstatAbsent": true,
+    "externalProcessScan": false,
+    "independentDatabaseReconnection": false,
+    "secondaryFailures": []
+  },
+  "measurementBoundary": "One fixture sample; serial subject queryCalls/ReadyForQuery includes transaction control; UTF8 text DataRow field payload only, excludes protocol framing/TLS/socket bytes. Typed full digest remains in PG, legacy full content remains transferred. No throughput claim or comparison with historical fake214/SQL252.",
+  "review": "PENDING_FIXED_RESULT_REVIEW",
+  "unexecuted": [
+    "HTTP direct consumer at integration point",
+    "main integration"
+  ],
+  "oldChecksRerun": false
+}

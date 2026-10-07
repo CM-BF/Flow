@@ -1,0 +1,35 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch
+
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps mixed 50 turns equivalent to single reads with a constant query bound 10ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains limit+1 paging, cross-conversation filtering and empty pages without projection reads 2ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves conversation/task 404 and rolls back the same borrowed client 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current attempt binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current owner binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current session binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves frozen message settings, observed effective settings and allowlisted context 3ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps empty/over-budget turnViews free of SQL and leaves unknown failures unchanged 1ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy missing result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-artifact result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-typed result distinct from a valid final 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for empty 4ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for escapes 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 ASCII 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4001 ASCII prefix 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 BMP prefix 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 UTF16 emoji 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4002 UTF16 emoji 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for 4000 codepoint emoji 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for split surrogate 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining exact 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for combining overflow 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > preserves the single preview UTF16 boundary for ZWJ sequence 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > keeps mixed 50 results aligned, paired and isolated when rows arrive out of order 2ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > does no reads for empty or rejected over-budget input 0ms
+ ✓ apps/server/src/assistant/final-preview-batch.test.ts > keeps single-item validation failures throwing and unknown query failures unchanged 0ms
+
+ Test Files  2 passed (2)
+      Tests  26 passed (26)
+   Start at  14:42:36
+   Duration  561ms (transform 197ms, setup 0ms, import 374ms, tests 27ms, environment 0ms)
+

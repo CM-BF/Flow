@@ -1,0 +1,68 @@
+{
+  "observedAt": "2026-10-06T23:19:09.107441+00:00",
+  "authorization": "GO exact REQ15 two-blob source-only delegation; Lead confirmed not started; original owner explicitly paused at fresh claim v1",
+  "state": "COMPLETE_CLEAN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+  "branch": "codex/conversation-turn-page-batch",
+  "head": "d9e31e7baf4180c7a94cb0575947f0e03bcd291a",
+  "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+  "claimVersion": 1,
+  "claimFreshObservedAt": "2026-10-06T23:17:58.407Z",
+  "sourceRequestSha256": "5844c5a2e26099362ec85cd4b5aff89562a988177af8eab0cc1fd59ecefe22e1",
+  "fixedBase": "22a0806bc2465e11096949618113833f31766b19",
+  "files": [
+    {
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "baseBlob": "7149885ce600dc9bb762ef9710f270f4e548ad2a",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "baseBlob": "54009ca22519226c062a3777e2ffc192d766f454",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    }
+  ],
+  "materializedBytes": 2681,
+  "preservedExistingTrackedFiles": 121,
+  "existingTrackedBytesUnchanged": true,
+  "preservedExistingSql": [
+    {
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "baseBlob": "a7a6e3233b994d72a73f8eeeea7501d44958e00d",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "baseBlob": "f0d6c435cf7ac88fe3a76e5a9e5975511ed7f79d",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    }
+  ],
+  "indexContentBeforeAfterSha256": "5e0d4d0fa00a6d7811f12b2e49fe22cd3e67405bdfb7a9454af0f89b02d6161e",
+  "indexBinaryBeforeSha256": "7ea81ffbb075f887e00d97201d4ec71cbcdf9544960f65558915603cb36618de",
+  "indexBinaryAfterSha256": "d3053da2502d6178f82d7d0d512da93559485e3ad4e3d8164ac436b60b14ee49",
+  "indexChangeScope": "Only 007/025 skip-worktree flags cleared; all staged blob/mode/path entries unchanged",
+  "sparseBeforeSha256": "791d42a9343dbc49da4dafe9c45693de78dc2ecefd35ca69049424b328100c60",
+  "sparseAfterSha256": "0cc6f251f6c6bbef1e94ac70217a2739360277c94eb5b6fccfa4350607d93c7a",
+  "sparseChangeScope": "Preserved existing bytes and appended only missing exact 007/025 literals; no sparse reset/reapply",
+  "worktreeConfigUnchanged": true,
+  "mainBefore": {
+    "head": "93a92c918b29126b6761b02258cef523906eca94",
+    "indexSha256": "75ade463cb8a16c2b2d38d7afa16c8d682780a64c516f1f8b2c6a02044052aa6",
+    "sharedConfigSha256": "427de0e0c68c1b773ae68a17a4373e1526c92ae8430cd12dd71492ff7caa2ec7"
+  },
+  "mainAfter": {
+    "head": "93a92c918b29126b6761b02258cef523906eca94",
+    "indexSha256": "75ade463cb8a16c2b2d38d7afa16c8d682780a64c516f1f8b2c6a02044052aa6",
+    "sharedConfigSha256": "427de0e0c68c1b773ae68a17a4373e1526c92ae8430cd12dd71492ff7caa2ec7"
+  },
+  "mainProtectedUnchanged": true,
+  "availableBeforeBytes": 1070821376,
+  "availableAfterBytes": 1070768128,
+  "dependencyCopies": 0,
+  "installImportTypesTestPgBrowserProviderCalls": 0,
+  "operatorStoppedWriting": true
+}

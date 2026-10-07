@@ -4,7 +4,7 @@ import type { ConversationList, ConversationSnapshot, ConversationTurnPage } fro
 import { HttpError, transaction } from '../database.js';
 import { loadTask } from '../tasks.js';
 import { sessionEvidence } from './replies.js';
-import { conversationCapabilities, conversationView, lastTurn, loadConversation, turnView, type ConversationRow, type TurnRow } from './state.js';
+import { conversationCapabilities, conversationView, lastTurn, loadConversation, turnView, turnViews, type ConversationRow, type TurnRow } from './state.js';
 
 export async function conversationSnapshot(pool: Pool, id: string): Promise<ConversationSnapshot> {
   return transaction(pool, async client => {
@@ -27,8 +27,7 @@ export async function turnPage(pool: Pool, id: string, after: number, limit: num
   return transaction(pool, async client => {
     const conversation = conversationView(await loadConversation(client, id));
     const rows = (await client.query<TurnRow>('SELECT * FROM flow.conversation_turns WHERE conversation_id=$1 AND number>$2 ORDER BY number LIMIT $3', [id, after, limit + 1])).rows;
-    const turns = [];
-    for (const row of rows.slice(0, limit)) turns.push(await turnView(client, row));
+    const turns = await turnViews(client, rows.slice(0, limit));
     return { conversation, turns, nextCursor: rows.length > limit ? turns.at(-1)!.number : null };
   }, true);
 }
