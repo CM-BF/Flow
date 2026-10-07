@@ -1,0 +1,19 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "at": "2026-10-07T09:45:42Z",
+  "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+  "packet": "75830d236f8d1707d00308744841fc6c4a7acccd",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "manifestSha256": "23e70b4a8de9bb18ce0f1e90b6980b7b0b5cad1db4b2cad562f9afe9a79d296a",
+  "scope": "Four product paths vs main38110485,22bindings298449B+6external; 11/11 and types0; injected host/transport plus own filesystem, not real PG/npm in this slice. Main P02 body/steering intact.",
+  "limits": [
+    "Before-result durability remains UNKNOWN",
+    "No CLI or arbitrary side-effect recovery claim",
+    "Initial EPERM/wholewall/peak UNKNOWN preserved",
+    "Current production batch3 and emit1; map-before-length not P2 for trusted consumers, no preparse hard allocation cap claim"
+  ],
+  "nonBlocking": "At next relevant interface change, reject non-array/length outside1..50 before mapping and prior sticky failure check; no retest required for approved slice."
+}

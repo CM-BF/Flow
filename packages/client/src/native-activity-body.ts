@@ -1,3 +1,4 @@
+import { readBoundedJson } from './response-json.js';
 import {
   nativeActivityBodyDescriptorSchema, nativeActivityBodyPageSchema, nativeActivityBodySupportSchema,
   NATIVE_ACTIVITY_BODY_LIMITS as limits,
@@ -124,30 +125,8 @@ async function sha256(bytes: Uint8Array<ArrayBuffer>): Promise<string> {
   return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
-/** Used by the existing transport's bounded JSON seam, including error bodies. */
+/** Material policy stays narrower than the shared JSON decoder. */
 export async function readBoundedNativeBodyJson(response: Response, maxBytes: number, signal?: AbortSignal): Promise<unknown> {
   if (!Number.isSafeInteger(maxBytes) || maxBytes < 1 || maxBytes > NATIVE_BODY_RESPONSE_BYTES.page) throw new Error('Invalid material response bound.');
-  signal?.throwIfAborted();
-  if (!response.body) throw new Error('Material response has no body.');
-  const reader = response.body.getReader();
-  const abort = () => { void reader.cancel().catch(() => undefined); };
-  signal?.addEventListener('abort', abort, { once: true });
-  const parts: string[] = [], decoder = new TextDecoder('utf-8', { fatal: true });
-  let total = 0;
-  try {
-    for (;;) {
-      signal?.throwIfAborted();
-      const chunk = await reader.read();
-      signal?.throwIfAborted();
-      if (chunk.done) break;
-      total += chunk.value.byteLength;
-      if (total > maxBytes) throw new Error('Material response exceeds its byte limit.');
-      parts.push(decoder.decode(chunk.value, { stream: true }));
-    }
-    parts.push(decoder.decode());
-    return JSON.parse(parts.join('')) as unknown;
-  } finally {
-    signal?.removeEventListener('abort', abort);
-    void reader.cancel().catch(() => undefined); reader.releaseLock();
-  }
+  return readBoundedJson(response, maxBytes, signal, 'Material response');
 }

@@ -1,0 +1,104 @@
+{
+  "startedAt": "2026-10-07T09:56:57.901841+00:00",
+  "freeBefore": 23263301632,
+  "limits": {
+    "totalWorkSeconds": 60,
+    "rawBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-client-terminal-intake-gyfp_82g",
+    "dev": 16777234,
+    "ino": 123977053
+  },
+  "runs": [
+    {
+      "pid": 47434,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1570,
+      "observed_bytes": 753,
+      "retained_bytes": 753,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "direct",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/runner/src/outbox.test.ts",
+        "apps/runner/src/outbox-resume.test.ts",
+        "apps/runner/src/native-activity-body/host-production.test.ts",
+        "--no-file-parallelism"
+      ],
+      "passed": true
+    },
+    {
+      "pid": 49179,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9269,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "passed": true
+    }
+  ],
+  "rawBytes": 753,
+  "scratchBytesObserved": 1357820,
+  "elapsedMs": 10841,
+  "finishedAt": "2026-10-07T09:57:08.742406+00:00",
+  "passed": true,
+  "scratchRemoved": true
+}

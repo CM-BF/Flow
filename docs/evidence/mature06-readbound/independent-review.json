@@ -1,0 +1,27 @@
+{
+  "reviewedAt": "2026-10-07T09:48:57Z",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "sourceCommit": "bc213e44db2b74130836782720728f8a59b52b99",
+  "packetCommit": "da44078aa58291ea2dc095a6b2484af7eefa4c29",
+  "manifestSha256": "a86b80ce431fa21c48a7de2d9f43dc18831cf3af947b234ec2fb52ac66395872",
+  "manifestFiles": 38,
+  "manifestBytes": 227783,
+  "local": {
+    "selected": 45,
+    "passed": 45,
+    "typesExit": 0,
+    "pureCallerSelected": 12,
+    "pureCallerPassed": 12,
+    "redSelected": 9,
+    "redFailed": 7,
+    "redPassed": 2,
+    "rawBytes": 4564,
+    "supervisionMs": 12605
+  },
+  "resources": "all four final groups absent/merged EOF/full capture; red original KEEP preserved with separately authorized inode-empty cleanup; later same-inode empty TMP removed",
+  "boundary": "product delta and finite local fidelity only; not real production HTTP/Web/provider/deployment or latest-main whole-suite",
+  "reviewActions": "read-only, no execution/import/tests/PG/write"
+}

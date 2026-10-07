@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:52:56 UTC / main 8c2ae379；接收O16已核环境准备 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:58:22 UTC / main b1042071；已审终态恢复/读取上限组合通过 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 8c2ae379；本批仅O16环境准备与既有登录公开状态证据，无产品源 |
+| 工作基线 / HEAD | main b1042071；X01终态恢复20b四源与READBOUND bc213五源，原main前像逐hash相符 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批O16环境材料限定独审、10证据/9输入/6代码片段核同；0重跑、0PG、0provider。SVC06原失败与确认清理分别已接收。 |
-| 已集成main状态 / HEAD | main/origin 8c2ae379已接X01八产品及SVC06 r1失败/清理。O16本批只归档准备证据；个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
+| 检查状态 | 作者两片已有独审；当前组合11个原outbox/正文host直接消费者通过、root noEmit0；0PG/provider。原失败/未覆盖范围保留。 |
+| 已集成main状态 / HEAD | main/origin b1042071已接O16环境准备；当前终态/读限额9源组合待本次受控发布。个人backend af51/v18、Web d629/v3/c7b保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件执行接线已进入主线；固定后台的真实启动失败与清理证据已独审，原版本继续服务。 |
-| 下一可用交付 | 补齐后台启动首因诊断后继续验证；保留网页兼容与目标旅程准备同步推进。 |
+| 当前产出 | 插件完成结果的持久恢复和客户端读取上限已审，当前主线组合检查通过。 |
+| 下一可用交付 | 发布这两项已审接线；继续补齐固定后台启动诊断，再验证新后台与保留网页。 |
 | 当前阻塞 | ACTIVE: 新后台尚未确认runner就绪，原owner正在补齐诊断；个人运行版本未变更。 |
 | 需用户决定 | NONE |
 

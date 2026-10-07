@@ -1,0 +1,23 @@
+{
+  "startedAt": "2026-10-07T09:43:48.809382+00:00",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/docs/evidence/mature06-readbound/supervision-policy.test.py"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds",
+  "free": 23303495680,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/docs/evidence/mature06-readbound/caller-tests/tmp",
+    "dev": 16777234,
+    "ino": 123970043
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

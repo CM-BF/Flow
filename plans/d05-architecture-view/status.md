@@ -2,18 +2,18 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:03:39.634234+00:00 / main1e12eaf1；193唯一来源已实际加载 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:58:53 UTC / main b1042071；追加已领已审READBOUND单一来源 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | UNKNOWN |
 | 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T08:20:31.727602+00:00，见svc09-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
-| 工作分支状态 | completed |
+| 工作分支状态 | in-progress |
 | 已集成 main 状态 | main/origin1e12eaf13a02b45a99dfe126bc182c2ea45a8390已接LAZY与OPS-METER登记；4320实际193源，个人服务未变。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据与任务时间，193个唯一来源已加载；按需读取与资源计量的实际进度可见。 |
-| 下一可用交付 | 本次来源发布已完成；各工作线继续读取唯一负责人的实际状态。 |
+| 当前产出 | 看板已提供登录凭据与任务时间；客户端读取上限的新工作线正在加入唯一来源导航。 |
+| 下一可用交付 | 发布新增来源登记，继续读取原owner的真实进度；不复制其状态。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

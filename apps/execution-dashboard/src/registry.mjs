@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['MATURE06-READBOUND01', '客户端响应读取上限', '工作线', 'client-read-bounds', 'mature06-client-read-bounds'],
   ['OPS-METER01', '有界资源计量与验证复用', '工程协作', 'owned-resource-measurement', 'ops-meter01-resource-measurement'],
   ['MATURE06-LAZY01', '推理正文按需读取', '工作线', 'lazy-reasoning-reads', 'mature06-lazy-reasoning'],
   ['SVC09', '保留旧页面的新版本发布', '工作线', 'personal-release-policy', 'svc09-personal-release-policy'],

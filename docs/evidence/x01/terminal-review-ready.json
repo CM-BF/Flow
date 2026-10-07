@@ -1,0 +1,247 @@
+{
+  "sourceCommit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+  "generatedAt": "2026-10-07T09:44:12.254594+00:00",
+  "status": "PENDING_INDEPENDENT_REVIEW",
+  "sourcePaths": [
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/plugins/runtime.test.ts",
+    "apps/runner/src/plugins/terminal-outbox.test.ts"
+  ],
+  "sourceBaselines": {
+    "apps/runner/src/outbox.ts": "3811048522dcc8a896e7ccf09872389b14bccd63",
+    "apps/runner/src/runtime.ts": "3811048522dcc8a896e7ccf09872389b14bccd63",
+    "apps/runner/src/plugins/runtime.test.ts": "3811048522dcc8a896e7ccf09872389b14bccd63",
+    "apps/runner/src/plugins/terminal-outbox.test.ts": null
+  },
+  "bindings": [
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "21d7543eb7bfea1a9c8e2c78c496f16dcfb8ab1e",
+      "bytes": 9711,
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "9c0fcaf36db73e05a0c96e0d0f44f2c6f9148ff3",
+      "bytes": 21786,
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "cd1d5f47885755b9d714cb739cc031d34ddcb2d6",
+      "bytes": 15424,
+      "sha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18"
+    },
+    {
+      "path": "apps/runner/src/plugins/terminal-outbox.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "acc46560fb60508ef82faf7ceb913266b8d53c0c",
+      "bytes": 2643,
+      "sha256": "09ade285c84af7fc9acfe681792c83892687da491805fc5bb46cea27c003dd55"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/admission-journal.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "02119f49bae73cae2c27d10472b08edbeb8712fa",
+      "bytes": 10960,
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/outbox.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "b06cf851511af1aeae752544940019c256408e87",
+      "bytes": 5323,
+      "sha256": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/outbox.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "21d7543eb7bfea1a9c8e2c78c496f16dcfb8ab1e",
+      "bytes": 9711,
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/runtime.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "cd1d5f47885755b9d714cb739cc031d34ddcb2d6",
+      "bytes": 15424,
+      "sha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/terminal-outbox.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "acc46560fb60508ef82faf7ceb913266b8d53c0c",
+      "bytes": 2643,
+      "sha256": "09ade285c84af7fc9acfe681792c83892687da491805fc5bb46cea27c003dd55"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-inputs/apps/runner/src/runtime.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "9c0fcaf36db73e05a0c96e0d0f44f2c6f9148ff3",
+      "bytes": 21786,
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-local.py",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "3d0745c4cbf5699c7b4c7d0663b61a2ca05fd971",
+      "bytes": 5233,
+      "sha256": "220683a1e4648cf8d6c9f30b9b4236d812f591cd80b9dd818a9b890d8e421d7a"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-local.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "a53f56f9f39e8789da0067c8208d4b1c832cf1ba",
+      "bytes": 16782,
+      "sha256": "a94cb223a8ead61c7d3f09b13d9e507252666287a040c0747a5d1df4e85e9a93"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-tsconfig.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "13863ed59a9b12c8098510409f064f28cbcf2ac8",
+      "bytes": 678,
+      "sha256": "b9e7ebf3f14a2d8aabf3964c3beda8cfe80972d5c5c1aaf18f0a9358c40cbb13"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-vitest.config.mjs",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "7f74a88790e74874a3f2fc8c8dd140be8e3cd4a5",
+      "bytes": 1536,
+      "sha256": "3e2ed73c6ef7412c9d21dc22d4789bcd2176a14f91e06510af6dfc3b821a8d42"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-close.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "00cda24cbd1c25ef9ec6eb54d146556f267166a9",
+      "bytes": 1977,
+      "sha256": "28fb8df5e33d4b262d6d937977227a23a0fee5f3698cd90f5972f0200454b9f5"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-quality.md",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "9610b6b5a90cb294775ff1ea7216826d87000759",
+      "bytes": 1816,
+      "sha256": "a3e711a9244bee5ddc9db409a078d1681c9ddb99b2ec461d6d6c858cb5a063fb"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-reused-input.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "e372dd0b4bd01a57300e98517be7bfeafe37cc5c",
+      "bytes": 650,
+      "sha256": "b15f33679c6800b6f92486283beb55ebf885a3caccc33fb0e3361bc9a7a80ed4"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-outbox-interface.md",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "3e2bb5dcb0cd443d19a3cd85687d4f2d041c20ee",
+      "bytes": 1916,
+      "sha256": "0f47caa48617cb6a596c0f8a6922cc2c0c14c44dd504b0e7bb2355ce8eefe2b3"
+    },
+    {
+      "path": "docs/evidence/x01/terminal-outbox-amend-v22.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "18530754b9c58c4b25cff1db0501a29fe4bc79a1",
+      "bytes": 2754,
+      "sha256": "73e8434fa7c2a47338b559ceb5680f25bde4e4654d788718c4b747d645998e3c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "af3dbd86bc2839ac1eabbf6f615dbfac09309b8b",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-manifest.json",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "blob": "97f6e20ddbc0df4135d4a1ec62af69806826901a",
+      "bytes": 108683,
+      "sha256": "92cfda050e040556e7ca4963d54825aa231a0e192a2c714753496b384b9082f1"
+    }
+  ],
+  "bytes": 298449,
+  "external": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/tar/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "reusedClosure": {
+    "manifest": "docs/evidence/x01/public-runner-pg-manifest.json",
+    "mirrorFiles": 260,
+    "unchanged": true,
+    "note": "Only six exact overlay files; no full mirror resupply. Check record attributes current source bytes after run; no claim of precommitted execution HEAD."
+  },
+  "directResults": {
+    "types": 0,
+    "selected": 11,
+    "passed": 11,
+    "unselected": 7,
+    "topLevelChildren": 2,
+    "rawBytes": 110,
+    "fixtureRoots": 10,
+    "oldSteeringFixture": 1,
+    "PG": 0,
+    "npmInvocation": 0,
+    "wholeExternalWall": null
+  },
+  "scope": "Terminal-result-ready report-only recovery: inject host/transport + real own filesystem. File and directory sync ordering; no hardware power-failure claim. Runtime keeps phase/outcome unknown and stale-owner fences.",
+  "notCovered": [
+    "CLI startup/configuration",
+    "unknown invocation before durable result",
+    "actual PG recovery/restart",
+    "hostile npm isolation",
+    "complete X01"
+  ],
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  }
+}

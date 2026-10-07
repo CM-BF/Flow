@@ -1,0 +1,19 @@
+{
+  "requestId": "readbound01-dbowner-take-20261007-0933",
+  "actor": {
+    "lead": "mika",
+    "worker": "db_transaction_owner"
+  },
+  "taskId": "MATURE06-READBOUND01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds",
+  "branch": "codex/client-read-bounds",
+  "scope": [
+    "packages/client/src/response-json.ts",
+    "packages/client/src/response-json.test.ts",
+    "packages/client/src/native-activity-body.ts",
+    "packages/client/src/assistant-stream-bounds.test.ts",
+    "plans/mature06-client-read-bounds",
+    "docs/evidence/mature06-readbound"
+  ]
+}

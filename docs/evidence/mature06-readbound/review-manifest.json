@@ -1,0 +1,200 @@
+{
+  "sourceCommit": "bc213e44db2b74130836782720728f8a59b52b99",
+  "createdAt": "2026-10-07T09:45:42.370608+00:00",
+  "sourceBase": "d022c8003fc4bd8ba560f1a039411ed098186659",
+  "files": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 63703,
+      "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418"
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459"
+    },
+    {
+      "path": "packages/client/src/response-json.test.ts",
+      "bytes": 1866,
+      "sha256": "e9b57c7104f8822e87cdccc3ffa2d2e454a2960ac6b7da6bca3584bba148613c"
+    },
+    {
+      "path": "packages/client/src/assistant-stream-bounds.test.ts",
+      "bytes": 8679,
+      "sha256": "49c1c4ec1ac967ca7d70d21d33bc03d540a1b40bb7e60e9280828d15fd217891"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.test.ts",
+      "bytes": 11836,
+      "sha256": "08382ba0cfc011ee204e2b0617867bf7fca0c2735319f5534c7feb8c0da39ab0"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 13408,
+      "sha256": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/caller-tests/output.log",
+      "bytes": 45,
+      "sha256": "b87a78575ac6ed0fda9285190aa2cc48d090a1e9a779835334883c9c619d1d29"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/caller-tests/reservation.json",
+      "bytes": 792,
+      "sha256": "66fd0ae37107931f89d95d523962db3ffc9533dd10924e2f3ceb779a90e4b647"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/caller-tests/result.json",
+      "bytes": 2086,
+      "sha256": "41e2deea716ab7bf40926556b6e8e65b6ee00a7ef480a8623e5dc464be47aa00"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/claim.json",
+      "bytes": 368,
+      "sha256": "353aa4b9916dcc016b0c40e992c89f25ed090f3f061cf5bd22cfd5ddf7870a48"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/client-index-stop-readbound.json",
+      "bytes": 924,
+      "sha256": "99cd3ea4ff0817c32bb2e85fc7bc87472605986c59e892235f9896d7f648312b"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/dependencies.json",
+      "bytes": 1580,
+      "sha256": "2d2375d38783ba228e04255b5dd10c401674c0d595e3f63611e78b1d489cbd5f"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/design.md",
+      "bytes": 1557,
+      "sha256": "be7bfaa044ee81fe2ca91d5b19a26f4fb30a34480c3a720fa7dc4be50fdef037"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/flow-readbound01-index-amend-20261007-0935.json",
+      "bytes": 491,
+      "sha256": "fcf24824cee72d50f404d77881d55d1889ea44faa4887acc9d0ecb4166c8acf3"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/flow-readbound01-take-20261007-0933.json",
+      "bytes": 619,
+      "sha256": "c0411d09a6a60ec82b92e21bbc7696cba2eb836960250f3f770aacb34148f3c7"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/green/output.log",
+      "bytes": 528,
+      "sha256": "34216722e1853f02eea12c19384408a0a9c94d99374fa3263f13e4081c106b1a"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/green/reservation.json",
+      "bytes": 1126,
+      "sha256": "a9dc613c541332492618882d3e7e5b647c33a3c5bc283983998feee69aec7316"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/green/result.json",
+      "bytes": 2088,
+      "sha256": "fa1f77d43184259cab76af05a345ed4750592f028590909433d4414615afda8d"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/index-x01-baseline.txt",
+      "bytes": 62869,
+      "sha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/main-dependency.json",
+      "bytes": 714,
+      "sha256": "b6debfae7f258fcf6a306d0968cf42a88ed40dcc731a53715fd25f81a9634b56"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/quality.md",
+      "bytes": 3457,
+      "sha256": "3ef393ee13c35054015a66a7585eac6de133647561777eb5c1b41463ec1b1e09"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/red/assistant-stream-bounds.test.txt",
+      "bytes": 4740,
+      "sha256": "b406ab99b04e1192d8fab0de37a301c77925bfba7953b1c4cfdd468d95d72935"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/red/cleanup-followup.json",
+      "bytes": 373,
+      "sha256": "9f1a2ee3786d91ba27b0bf088b0a069a1dc6d1adcedee9cc48fa4e817679b330"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/red/output.log",
+      "bytes": 3991,
+      "sha256": "4ef5f8d81b49560ce49a73823d062c787d8b9b8891c0a3db2c15c1f70e78fd81"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/red/reservation.json",
+      "bytes": 967,
+      "sha256": "bff59e459ed67650cc808ff6853d1fc7e9a31b5800df87b663f58805477b225c"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/red/result.json",
+      "bytes": 1851,
+      "sha256": "eb7d07f2094dca2964c470c40dccd0c49c4b96793562e520d3abe14318a39f16"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/run-local.py",
+      "bytes": 4305,
+      "sha256": "108810e7b40ddc7cc57af509adc3cb0ed21c409a8ff2db147b00052863f252d5"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/supervision-policy.test.py",
+      "bytes": 1310,
+      "sha256": "410e520451ee8f79fbc470187ed20fffe96dc8f5a5bcadfcc857e7d39fcaef25"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/support/packages/client/src/plugin-runner.ts",
+      "bytes": 2687,
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/task-registration-intake.json",
+      "bytes": 452,
+      "sha256": "738cec4992ac61c0ad649f2aac49d176b126e0edb53bde58ff78ad1a39c0db49"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/terminal-outbox-amend-v22.json",
+      "bytes": 2754,
+      "sha256": "73e8434fa7c2a47338b559ceb5680f25bde4e4654d788718c4b747d645998e3c"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/tsconfig.json",
+      "bytes": 471,
+      "sha256": "62644869c0aaf1ccc239858789a65d980ee70f058ec7c2beed140d18909f0c31"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/types/output.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/types/reservation.json",
+      "bytes": 888,
+      "sha256": "0c2ac337d70051c2bc04aad1a41763d1a2557ef6803ddd9dbeea19cae6c70283"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/types/result.json",
+      "bytes": 2083,
+      "sha256": "cb26acd6b0b9e9630cbd9b6c62ea2d5d9042755b900415e33a52ea2c2c2773e3"
+    },
+    {
+      "path": "docs/evidence/mature06-readbound/vitest.config.mjs",
+      "bytes": 760,
+      "sha256": "646e871ca063e03e1a1b8947b38d17da353809c241cf1fd98a0675f99ef8df16"
+    }
+  ],
+  "count": 38,
+  "bytes": 227783,
+  "scope": "fixed product + direct inputs + raw evidence; excludes later status/review metadata"
+}

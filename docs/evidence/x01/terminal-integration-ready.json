@@ -1,0 +1,63 @@
+{
+  "state": "READY",
+  "sourceCommit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+  "baseCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+  "product": [
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "bytes": 9711,
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4",
+      "baseCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "baseSha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "bytes": 21786,
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8",
+      "baseCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "baseSha256": "f921a78627da108a0cff3fd3d22f8fbc988e1796790beeeb7ee011ee1ec7d302"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "bytes": 15424,
+      "sha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18",
+      "baseCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "baseSha256": "e0e977543e57343351b872ea4beffec84adb217e1a5c7cf83d27173c1513d6cd"
+    },
+    {
+      "path": "apps/runner/src/plugins/terminal-outbox.test.ts",
+      "commit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "bytes": 2643,
+      "sha256": "09ade285c84af7fc9acfe681792c83892687da491805fc5bb46cea27c003dd55",
+      "baseCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "baseSha256": null
+    }
+  ],
+  "patch": {
+    "path": "docs/evidence/x01/terminal-intake.patch",
+    "bytes": 18804,
+    "sha256": "d382e3c2e3260c5a267dd0e1c7079d4bc2dd337c98717be2b07afb2858cf3209"
+  },
+  "review": "terminal-review-ready.json",
+  "evidence": [
+    "terminal-local.json",
+    "terminal-close.json",
+    "terminal-quality.md",
+    "terminal-outbox-interface.md",
+    "terminal-reused-input.json"
+  ],
+  "checks": {
+    "selected": 11,
+    "passed": 11,
+    "unselected": 7,
+    "focusedNoEmit": 0,
+    "PG": 0,
+    "npm": 0
+  },
+  "scope": "Only result-ready reporting recovery; no repeated invocation, startup CLI or arbitrary side-effect recovery claim. Preserve current main P02/LAZY/Codex and do narrow preimage-checked delta.",
+  "reviewReceipt": "terminal-independent-review.json",
+  "reviewedAt": "2026-10-07T09:45:42Z"
+}
