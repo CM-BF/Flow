@@ -7,19 +7,11 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
 import { sha, safeError, protectedState, requireFresh, protection, requestFrom, migrateOnce } from './procedure.mjs';
+import { privateBytes as bounded, runtimeBytes as fixed } from './file-readers.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 const execute = promisify(execFile);
 let resourceFailure = null;
 function healthy() { if (resourceFailure) throw resourceFailure; }
-async function bounded(path, limit = 65536) {
-  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
-  try {
-    const info = await file.stat(); assert.ok(info.isFile() && info.uid === process.getuid() && info.nlink === 1 && info.size <= limit);
-    const buffer = Buffer.alloc(limit + 1); let length = 0;
-    while (length < buffer.length) { const row = await file.read(buffer, length, buffer.length - length, null); if (!row.bytesRead) break; length += row.bytesRead; }
-    assert.ok(length <= limit); return { bytes: buffer.subarray(0, length), info };
-  } finally { await file.close(); }
-}
 async function json(path, limit) { return JSON.parse((await bounded(path, limit)).bytes); }
 async function sync(path, directory = false) {
   const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
@@ -40,12 +32,6 @@ async function directory(path, expected = null) {
 }
 async function space(path, minimum) {
   const s = await statfs(path), free = Number(s.bavail) * Number(s.bsize); assert.ok(free >= minimum, 'SPACE_GATE'); return free;
-}
-async function fixed(row, path = row.path) {
-  const { bytes, info } = await bounded(path, row.bytes);
-  assert.equal(bytes.length, row.bytes); assert.equal(sha(bytes), row.sha256);
-  if (row.realpath) assert.equal(await realpath(path), row.realpath);
-  if (row.dev) { assert.equal(info.dev, row.dev); assert.equal(info.ino, row.ino); }
 }
 async function modules(input) {
   for (const row of input.rootToolClosure) await fixed(row, join(input.repository, row.path));

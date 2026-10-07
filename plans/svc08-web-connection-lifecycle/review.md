@@ -72,3 +72,7 @@ APPROVED_ISOLATED_WEB_HOST_RESULT；唯一reviewer astra_ultra_execution_lead，
 Execution Lead唯一独审绑定cb2205db380aa9d8bbb6ff42407ac7166d2a073a/deliverya93，5+32+12全部一致，无P1/P2。原件[caller-independent-review](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。仅准备批准，实际迁入/replace/post均未执行；保持fresh共享窗口、16工具短冻结、未知停止和Web-only语义。原9检查不重跑，最后null门仅source审。
 
 首次真实采用入口未通过：cb220原准备批准保持历史；运行在动态Module导入/个人读取前因系统Python uid/nlink检查失败，原ERR_ASSERTION/exit1/60ms/组absent与双EOF已保存。不是迁入、服务或数据保留验收通过；修复及新运行待原owner固定/独审与窗口。
+
+## 2026-10-07T05:58:32.280796+00:00 — runtime身份delta待独审
+
+原attempt-01失败保留；5源delta把private和fixed readonly runtime分开，32固定输入显式uid/nlink/devino/realpath。6不同直接case分轮红绿+Python exact reader、语法证据；原9不重跑。审查[delta manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-delta-manifest.json)，不得据此声称个人采用通过；新namespace未创建，无PG/HTTP/个人探测。

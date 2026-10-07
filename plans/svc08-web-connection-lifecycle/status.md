@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:50:30.252027+00:00 |
+| 更新时间 | 2026-10-07T05:58:32.280796+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 首次采用入口在固定系统工具的文件检查中停止；尚未读取或改变个人服务，原失败与运行记录已保留。 |
-| 下一可用交付 | 修正只读系统工具与自有私有文件的身份检查区别，局部验证并复审后再协调新窗口。 |
-| 当前阻塞 | ACTIVE: 系统Python被错误套用自有文件uid/nlink门槛；原单次入口已停止，未进入个人迁入。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 系统工具身份检查已窄修并通过定向验证；首次停止原件保留，个人环境未改变。 |
+| 下一可用交付 | 独立复审身份修复后，在新协调窗口继续固定网页宿主采用。 |
+| 当前阻塞 | ACTIVE: 修复已验证，等待独立复审及新的实际执行窗口；已消费运行目录不重用。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
@@ -134,3 +134,9 @@ Lead于05:48:04Z实际接收共享窗口并冻结16工具。fresh claim v6、5so
 ## 2026-10-07T05:50:30.252027+00:00：原单次migrate停止，窗口已报告归还
 
 05:49:01.811Z入口ERR_ASSERTION，原outer60ms/exit1，组34255最终absent/双EOF、无信号升级。固定第29runtime `/usr/bin/python3` 实际uid0/nlink78，而通用bounded错误要求uid501/nlink1；字节/hash仍同原固定输入。错误发生在全部Module导入前，无migration-before/intent/store/stage，0个人读取/PG/HTTP/复制/写入/服务。request/replace/post均未调用。原private namespace三件原样KEEP，脱敏原件与精确分析见[attempt-01](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-01/analysis.json)。仅报告最窄修正，cb220源码尚未改；禁止重试已消费namespace。
+
+2026-10-07T05:53:30.716791+00:00：fresh账本05:51:51.685Z仍v6原两scope。只修private/runtime读取职责并显式绑定身份；5定向case待本队local交还，原attempt-01/私有namespace全部KEEP。无个人probe/PG/HTTP/服务。
+
+## 2026-10-07T05:58:32.280796+00:00：runtime身份修复定向验证完成
+
+使用显式manifest uid/nlink与十进制dev/ino，Node BigInt/Python exact int比较，私有self/nlink1不变。原local首4绿2红保留；两受影响正例及两表示敏感负例补测均过，6不同case，原9不重跑；32runtime真实只读gate全过，无模块导入。05:54:40.997373Z→05:56:34.437431Z分三轮实测456ms/raw3253B，6组absent/双EOF/各scratch清。原60s/8MiB段已交Lead接C02。见[runtime identity delta](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-fix.md)。个人/PG/HTTP/服务/复制均0，新r2仅声明未创建。

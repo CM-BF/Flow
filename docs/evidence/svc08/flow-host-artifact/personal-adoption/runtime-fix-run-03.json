@@ -1,0 +1,72 @@
+{
+  "startedAt": "2026-10-07T05:56:34.328353+00:00",
+  "finishedAt": "2026-10-07T05:56:34.437431+00:00",
+  "wallMs": 109,
+  "freeBefore": 24549728256,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern",
+    "pinned Python rejects|both readers reject",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs"
+  ],
+  "sourceBindings": [
+    {
+      "path": "file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    },
+    {
+      "path": "file-readers.test.mjs",
+      "bytes": 3123,
+      "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 24716,
+      "sha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a"
+    }
+  ],
+  "reports": [
+    {
+      "pid": 98536,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 108,
+      "stdout": "\u2714 pinned Python rejects wrong owner, link count, inode, realpath, hash and missing pins (8.094959ms)\n\u2714 both readers reject a symlink even when it points at the correctly pinned owned file (2.515042ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 63.425583\n",
+      "stderr": "",
+      "observed_bytes": 319,
+      "retained_bytes": 319,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "rawBytes": 319,
+  "remainingScratch": [],
+  "reason": "Representation change affects runtime negative and symlink pins; verify rejection after valid decimal identity rather than premature pin validation",
+  "personalReads": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0
+}

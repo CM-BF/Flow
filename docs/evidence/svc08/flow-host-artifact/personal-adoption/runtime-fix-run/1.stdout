@@ -1,0 +1,48 @@
+✖ real root-owned Python is accepted only with its explicit full readonly pin (0.688375ms)
+✔ pinned Python rejects wrong owner, link count, inode, realpath, hash and missing pins (0.739125ms)
+✔ the same system binary remains forbidden as a mutable private file (2.1335ms)
+✔ owned private regular bytes pass; hardlinked private material is still rejected (1.97575ms)
+✔ both readers reject a symlink even when it points at the correctly pinned owned file (1.3205ms)
+✖ all 32 declared runtime inputs pass the same readonly gate without importing their modules (10.993542ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 4
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 66.521
+
+✖ failing tests:
+
+test at file-readers.test.mjs:20:1
+✖ real root-owned Python is accepted only with its explicit full readonly pin (0.688375ms)
+  AssertionError [ERR_ASSERTION]: RUNTIME_IDENTITY_PIN_REQUIRED
+      at runtimeBytes (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs:25:65)
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs:22:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1397:25)
+      at Test.start (node:internal/test_runner/test:1257:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at file-readers.test.mjs:41:1
+✖ all 32 declared runtime inputs pass the same readonly gate without importing their modules (10.993542ms)
+  AssertionError [ERR_ASSERTION]: RUNTIME_IDENTITY_PIN_REQUIRED
+      at runtimeBytes (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs:25:65)
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs:44:126)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
