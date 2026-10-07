@@ -33,18 +33,21 @@ class OperatorBoundary(unittest.TestCase):
         names = outer.attempt_files(['--run-host-r2-once'])
         self.assertEqual(names, ('host-outer-r2-once', 'actual-host-r2-once', '--execute-host-r2-once'))
         self.assertEqual(operator.attempt_files([names[2]]), (names[1], 'host-preparation-r2.json'))
+        names = outer.attempt_files(['--run-host-r3-once'])
+        self.assertEqual(names, ('host-outer-r3-once', 'actual-host-r3-once', '--execute-host-r3-once'))
+        self.assertEqual(operator.attempt_files([names[2]]), (names[1], 'host-preparation-r3.json'))
 
     def test_unknown_or_user_supplied_attempt_paths_are_rejected_before_io(self):
-        for argv in ([], ['--run-host-r3-once'], ['--run-host-r2-once', '/tmp/arbitrary'], ['../other']):
+        for argv in ([], ['--run-host-r4-once'], ['--run-host-r3-once', '/tmp/arbitrary'], ['../other']):
             with self.assertRaisesRegex(AssertionError, 'EXACT_ARGUMENT_REQUIRED'):
                 outer.attempt_files(argv)
-        for argv in ([], ['--execute-host-r3-once'], ['--execute-host-r2-once', '/tmp/arbitrary']):
+        for argv in ([], ['--execute-host-r4-once'], ['--execute-host-r3-once', '/tmp/arbitrary']):
             with self.assertRaisesRegex(AssertionError, 'EXACT_ARGUMENT_REQUIRED'):
                 operator.attempt_files(argv)
 
     def test_consumed_operator_or_outer_namespace_refuses_reuse_without_touching_old_attempt(self):
         scratch = Path(os.environ['FLOW_SVC09A_PREPARE_SCRATCH'])
-        self.assertTrue(str(scratch).startswith('/private/tmp/flow-svc09a-prepare-'))
+        self.assertTrue(str(scratch).startswith(('/private/tmp/flow-svc09a-prepare-', '/private/tmp/flow-svc09a-host-')))
         old = scratch / 'actual-host-once'; old.mkdir()
         with self.assertRaisesRegex(AssertionError, 'OPERATOR_NAMESPACE_EXISTS'):
             outer.reserve_attempt(scratch, 'host-outer-once', old.name)
@@ -57,6 +60,10 @@ class OperatorBoundary(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError, 'OPERATOR_NAMESPACE_EXISTS'):
             outer.reserve_attempt(scratch, 'host-outer-r2-once', pending.name)
         self.assertFalse(reserved.exists()); pending.rmdir(); old.rmdir()
+        r3 = outer.reserve_attempt(scratch, 'host-outer-r3-once', 'actual-host-r3-once')
+        with self.assertRaises(FileExistsError):
+            outer.reserve_attempt(scratch, 'host-outer-r3-once', 'actual-host-r3-once')
+        r3.rmdir()
 
     def test_work_environment_resolves_actual_listener_tool_missing_from_old_path(self):
         previous = '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin'

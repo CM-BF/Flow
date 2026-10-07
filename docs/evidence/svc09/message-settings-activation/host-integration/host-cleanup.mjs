@@ -6,6 +6,12 @@ import { pathToFileURL, fileURLToPath } from 'node:url';
 import { validateHostInput } from './host-consumer.mjs';
 import { poolOptions, exclusive } from './host-fixture.mjs';
 import { privateJson, recorder, savedWork, rootIdentity, failure } from './host-records.mjs';
+import { hostInputPath } from './host-paths.mjs';
+
+export function validateCleanupArguments(argv) {
+  assert.equal(argv.length, 2); assert.equal(argv[0], '--cleanup-once');
+  return hostInputPath(argv[1]);
+}
 
 export function mayDrop({ outer, work, closure, allStopped, databaseCreated }) {
   return outer.owned_state === 'absent' && outer.eof?.stdout === true && outer.eof?.stderr === true
@@ -109,9 +115,7 @@ export async function cleanup(input) {
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
-    assert.equal(process.argv.length, 4); assert.equal(process.argv[2], '--cleanup-once');
-    assert.match(process.argv[3], /^\/private\/tmp\/flow-svc09a-host-[A-Za-z0-9-]+\/input\.json$/);
-    const result = await cleanup(await privateJson(process.argv[3]));
+    const result = await cleanup(await privateJson(validateCleanupArguments(process.argv.slice(2))));
     process.stdout.write(JSON.stringify(result) + '\n'); process.exitCode = result.cleanupConfirmed ? 0 : 1;
   } catch (error) { process.stderr.write(JSON.stringify(failure(error, 'cleanup-entry-or-persistence')) + '\n'); process.exitCode = 1; }
 }

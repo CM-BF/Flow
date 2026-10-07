@@ -53,7 +53,9 @@ def work_environment(directory):
         'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
 
 def attempt_files(argv):
-    assert argv in (['--execute-host-once'], ['--execute-host-r2-once']), 'EXACT_ARGUMENT_REQUIRED'
+    assert argv in (['--execute-host-once'], ['--execute-host-r2-once'], ['--execute-host-r3-once']), 'EXACT_ARGUMENT_REQUIRED'
+    if argv == ['--execute-host-r3-once']:
+        return 'actual-host-r3-once', 'host-preparation-r3.json'
     if argv == ['--execute-host-r2-once']:
         return 'actual-host-r2-once', 'host-preparation-r2.json'
     return 'actual-host-once', 'host-preparation.json'

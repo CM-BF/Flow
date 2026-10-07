@@ -9,11 +9,11 @@ import { statfs } from 'node:fs/promises';
 import { validateHostInput, runHostConsumer } from './host-consumer.mjs';
 import { setupFixture, poolOptions, exclusive } from './host-fixture.mjs';
 import { privateJson, recorder, rootIdentity, failure } from './host-records.mjs';
+import { hostInputPath } from './host-paths.mjs';
 
 export function validateArguments(argv) {
   assert.equal(argv.length, 2); assert.equal(argv[0], '--work-once');
-  assert.match(argv[1], /^\/private\/tmp\/flow-svc09a-host-[A-Za-z0-9-]+\/input\.json$/);
-  return argv[1];
+  return hostInputPath(argv[1]);
 }
 
 export function assertResourceSample({ directory, databaseBytes, freeBytes }) {

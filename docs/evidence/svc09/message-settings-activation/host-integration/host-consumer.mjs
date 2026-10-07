@@ -6,11 +6,12 @@ import { readFile, lstat, realpath } from 'node:fs/promises';
 import { join, isAbsolute } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
+import { isHostDirectory } from './host-paths.mjs';
 const digest = bytes => createHash('sha256').update(bytes).digest('hex');
 const fail = code => { throw Object.assign(new Error(code), { code }); };
 
 export function validateHostInput(input) {
-  if (!input || input.format !== 1 || !/^\/private\/tmp\/flow-svc09a-host-[A-Za-z0-9-]+$/.test(input.directory ?? '')
+  if (!input || input.format !== 1 || !isHostDirectory(input.directory)
     || !/^[a-f0-9]{40}$/.test(input.sourceHead ?? '') || !/^[a-f0-9]{64}$/.test(input.artifact?.artifactId ?? '')
     || input.artifact.manifestDigest !== input.artifact.artifactId || input.artifact.sourceHead !== input.sourceHead
     || !isAbsolute(input.repository ?? '') || !Array.isArray(input.choices) || input.choices.length !== 2) fail('HOST_FIXED_INPUT_REQUIRED');
