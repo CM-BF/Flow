@@ -1,0 +1,31 @@
+{
+  "target": "e8700b2b3e1d717df2c5c41a3a349af31c616cd6",
+  "baseDesign": "f2884fa869ff231278e8116ddefa0e1029440eca",
+  "preparedAt": "2026-10-07T12:52:51.930Z",
+  "files": [
+    {
+      "path": "plans/x01-trusted-process-host/plan.md",
+      "bytes": 7125,
+      "sha256": "d9d5bcc48d2f3365639887ee07a3002a5b4e5b395a7746505de8cbcb31093e74"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/interface.md",
+      "bytes": 15929,
+      "sha256": "7aebe9c17b5c164aa8834972837a8993bf030175c3c5a01a690c337307c303c5"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/quality.md",
+      "bytes": 1425,
+      "sha256": "dc42f062ea9f18eb92eadd9d585dcccc4497fd85efed3c8e7fb44168b6e12687"
+    }
+  ],
+  "totalBytes": 24479,
+  "changes": [
+    "32-slot/260KiB receipt admission and bounded identity-safe recovery",
+    "stdout/stderr drain/discard only; count/EOF/fixed code"
+  ],
+  "originalInputManifestUnchanged": true,
+  "runs": 0,
+  "claim": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "claimVersion": 1
+}

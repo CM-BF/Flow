@@ -17,14 +17,14 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | f2884fa869ff231278e8116ddefa0e1029440eca（计划固定） |
+| HEAD | e8700b2b3e1d717df2c5c41a3a349af31c616cd6（设计修复固定） |
 | 工作树dirty状态 | 本次仅审查交接metadata，提交后clean；0产品变化 |
-| 实现目标 | f2884fa869ff231278e8116ddefa0e1029440eca |
+| 实现目标 | e8700b2b3e1d717df2c5c41a3a349af31c616cd6 |
 | 实现范围 | plans/x01-trusted-process-host/plan.md,docs/evidence/x01-trusted-process-host/interface.md |
 | 检查状态 | NOT_RUN design-only；0工程tests/PG/provider/服务 |
-| Review | CHANGES_REQUESTED 原设计2P2；已修设计待固定增量审 |
+| Review | CHANGES_REQUESTED 原设计2P2；修复e870已固定待增量审 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
-| 最近更新时间 | 2026-10-07T12:52:23.245Z |
+| 最近更新时间 | 2026-10-07T12:52:51.930Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
