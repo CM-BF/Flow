@@ -155,7 +155,7 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       for (const row of bodyObserver!.bodies()) { expect(row.status).toBe(200); expect(row.finishedMs).toBeDefined(); expect(row.failedMs).toBeUndefined(); }
       expect(bodyObserver!.snapshot().errors).toEqual([]);
       for (const number of [1, 2, 3]) {
-        await expect(pane(number).locator(".flow-reply-detail pre")).toContainText(`long reply ${number}`);
+        await expect.poll(() => pane(number).locator(".flow-reply-detail pre").textContent()).toBe("A thoughtful reply with a longer explanation.\n".repeat(130));
         await expect(pane(number).getByRole("region", { name: "Conversation queue", exact: true }).locator("pre")).toHaveText(`Waiting chat-${number} ` + "body ".repeat(240));
       }
       const viewport = pane(1).locator('[data-slot="aui_thread-viewport"]'), anchor = pane(1).getByText("long reply 1", { exact: true });
