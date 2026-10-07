@@ -1,0 +1,130 @@
+{
+  "source": "84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2",
+  "baseline": "d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae",
+  "createdAt": "2026-10-07T19:38:05.237Z",
+  "review": "PENDING",
+  "files": [
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 4130,
+      "sha256": "b96401022911b7d4c6d75424dbaf2b868dd84035842a680386fbf23b1cd0e501",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 16484,
+      "sha256": "ee3639e0f09b58484330fe9a6e352ae7c912fda8306f620beb471d3013023fcf",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "bytes": 8714,
+      "sha256": "5871faea12a4752b1f00dff5b6234dc70eb517521e01ea3a7eadcacb58a4c14c",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "bytes": 5367,
+      "sha256": "e5d46ccae8820398c5bceec8465a5074d70c4e31774f24b577035b6c4985cb82",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts",
+      "bytes": 6198,
+      "sha256": "718679a5ae9db673cc20e3b0a150f8369ad7d6959fd623d58d10112635e65991",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts",
+      "bytes": 10412,
+      "sha256": "6c653713accf2aa6ec4d0e2dd8d80452473265524dc0b7bda0b920e50b5fc62b",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts",
+      "bytes": 6216,
+      "sha256": "88fe6ebb7c518ace5447957dbd8d08ad141da7d440fc8361406dc231a79c2ec3",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 4691,
+      "sha256": "a838aef1863c9491868ff68a28d3af12474f75aa36112f1628f58db5a8bdc280",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 6097,
+      "sha256": "88a4a2f0d2a09be795b7a8e6e5ad9ca3450d7a7902e37a0524cf769da91391b6",
+      "mode": "0o644"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 3137,
+      "sha256": "52fd3dd943b16cbe82cfe5e01427f9275720a65a3b2a30c6639e77c5661ff484",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py",
+      "bytes": 13799,
+      "sha256": "7eb81cd05edf53254f25532450bde6469239245af2310d53791928cd948e6521",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-tsconfig.json",
+      "bytes": 276,
+      "sha256": "1ea8d61e51926f1c106c174482b749efa0d638c0175540451ff9c15b66eea0f3",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-vitest.config.mjs",
+      "bytes": 466,
+      "sha256": "6d68f324d0afb0582b8f59880b93c75d0fcc95948460b6d56eb41e1321786ba2",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tsconfig.json",
+      "bytes": 391,
+      "sha256": "ed472aeea3ce891dc58e46762f54882a40cfc975e6d9533703378e46fa6d6639",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md",
+      "bytes": 5061,
+      "sha256": "052f3a1fb3994343edf634a5b4b82c6548f4cda4be837b4822a6610dee77d84b",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-local.json",
+      "bytes": 91793,
+      "sha256": "5bc2442cffdf73ca8343530937da9a11673824379b1fe554c670ef3f044d75e2",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-1.raw",
+      "bytes": 758,
+      "sha256": "bf73c71493fcab36c38097abac8e6e9b796717a6149dc648ec3b25e5cf87bb3c",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-2.raw",
+      "bytes": 1220,
+      "sha256": "0e2e0fca3cf92d183064cb92ccef338261edd1a0604d34f77836aacc16f2fda7",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-3.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-4.raw",
+      "bytes": 944,
+      "sha256": "c80da53d314d24bb7752beeaf642915faad935ec3a6ddea08fad950d46ee89cd",
+      "mode": "0o600"
+    }
+  ],
+  "totalBytes": 186154,
+  "excludes": "old raw/compiled/manifest/KEEP; current plan/status mutable excluded"
+}

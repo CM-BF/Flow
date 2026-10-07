@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T19:09:07.770Z |
+| 最近更新 | 2026-10-07T19:38:05.237Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | Execution c7519722ea8464558b74183b888e934350b7ac83 = origin clean启动；现仅封本次actual原件与结果metadata，最终结果HEAD由Git读取。 |
+| 工作树dirty状态 | 背压修复源码已固定84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2；当前只封单记录/manifest/status，最终packet由Git读取。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | FAILED c7519722ea8464558b74183b888e934350b7ac83：单A insufficient_window_ack_span，3/128不足4s；observer未完整交付。历史5pure/13+types不当实际通过。 |
+| 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | c7519722ea8464558b74183b888e934350b7ac83 |
-| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.test.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
+| 实现目标 | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 |
+| 实现范围 | experiments/runner-capacity/mixed/channel.ts, experiments/runner-capacity/mixed/child.ts, experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-bridge.ts, experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 单臂已实际运行，持续ACK及观察交付校验未通过；活动进程、端口和专库已归还，两个临时目录保守留存。 |
-| 下一可用交付 | 独立核验失败结果与资源回执，再确定最小诊断；本窗口已消费，未授权重跑。 |
-| 当前阻塞 | ACTIVE: 原128同步负载完整验收未过，观察交付缺少最终汇总；仅结果待审，无实际资源holder或待启动检查。 |
+| 当前产出 | 观察交付已改为有限回调排干并通过局部检查，正在独立审查；原容量运行仍失败，活动资源已归还，两个未知目录继续保留。 |
+| 下一可用交付 | 独立审查背压修复与有限反例；通过后才准备新的实际输入，不沿用已消费的性能窗口。 |
+| 当前阻塞 | ACTIVE: 原128同步负载完整验收仍未过；背压修复待独立审查，无实际holder或待启动检查。 |
 | 需用户决定 | NONE |
-| Review | RESULT_FIDELITY_PENDING，本次execution c7519722ea8464558b74183b888e934350b7ac83；原source ece924/839a已审，仅历史源码与pure范围。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T18:52:36.571Z实际准入核本人/WT/branch/exactscope/nooverlap，0take/amend。 |
-| 架构影响 | 本次只运行已有单buffered选择与caller，复用fixed4fdd/原同步burst/完整proof；无source或产品变化。原offline packing/replay main事实保持，真实容量验收仍未完成。 |
+| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2；前actual d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae 已db19:14:33忠实性批准，非实验通过。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T19:19:13.341Z本人/WT/branch fresh核符，0take/amend。 |
+| 架构影响 | 本次在私有observer/reporter边界增加有限异步结束交付与首错事实；保持packing/字节上限及driver完整receipt权威。原offline main范围不扩大。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -364,3 +364,13 @@ Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APP
 首断言proof.ts:57：128attempt内3个eligible ACK span<4s，707eligible emits；后续完整final/queue/journal成功链未执行。center16个chunk、0summary、child dropped1；PG完整计量UNKNOWN，19read/4cancel ACK仅部分事实。固定123输入/源码与execution零diff，原per-query O1FAIL/O2NOT_RUN及历史raw不变。仅局部experiment结果未集成main；main8e5已接范围仍为offline packing/replay。
 
 沿本地find-skills/codebase-design/固定clean-code核命名、单一状态与错误/资源职责：runtime判定、post-run RETURN、原审批与新result明确分层，未复制原raw或新造框架。实际分类账88,825,297B含既有4MiB final reserve，byteAccountingComplete=false保留；封存新metadata和原件字节由同一manifest计量，不冒物理峰值。后继先在drain前完成可执行invocation准备，不把协调等待写成SQL耗时；当前STOP保claim、无新窗口。
+
+## 2026-10-07T19:18:14.000Z 回调背压修复段
+
+25分钟至19:43:14Z，fresh 19:19:13.341Z claim508f v3/exact6/本人WT分支相符；起点d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae clean。最多6串行child/各40s/累计150s/new16MiB含raw2MiB；0PG/HTTP/性能/Chrome/provider/旧KEEP访问。当前source准备，无child。原失败结果db19:14:33忠实性批准（root转达）：24bindings16658807B、123inputs相符、707eligible/3不足4s、活动RETURN与2KEEP分立；此批准不确认同步flush是本次因果。
+
+## 2026-10-07T19:38:05.237Z 背压修复局部交付
+
+[唯一交审入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。原同步8000条延迟callback反例证明pending门槛确实拒绝；修复保持1MiB pending/4MiB retention/64KiB envelope及原ACK4s。新8+直接packing4+seam4=16pass，focusedstrict0，真实现child空闲停止2pass；baseline另1，不称最终23全集。4raw2922B/4top-level groups最终absent/MERGED EOF/无signals-secondary，早期EPERM保留；4sameidentityTMP已删，实际最后19:33:01.365Z归还。4083ms仅监督累计、wholeexternalwall/activepeakUNKNOWN。最末bridge仅删除重复不可达guard，其余source与修后检查字节一致。原实际失败/raw/input/compiled/两KEEP未改未读。
+
+find-skills复用本地版本，codebase-design让reporter拥有回调/预算、packer单一、bridge拥有summary、driver拥有完整接收；clean-code核首错/取消/一次finish及无额外queue。此单一status供dashboard聚合，未重复GET。实际工程0PG/HTTP/provider/性能，4checks收口后0待launch。Root补充ACK时延线索仅后继：三不足4s由真实串行ACK和6s边界触发，不能证明pool原因；本片不修改负载/证明。

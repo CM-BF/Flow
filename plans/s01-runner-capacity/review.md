@@ -1,8 +1,12 @@
 # S01 独立审查
 
+## 当前：回调背压修复待独审
+
+SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING，固定源码 `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。有限callback排干/首错/单packer，baseline1、修后16/strict0、existing child2分轮；0实际PG/性能，不改原actualFAIL。
+
 ## 当前：单 buffered 臂实际失败结果
 
-RESULT_FIDELITY_PENDING。Execution `c7519722ea8464558b74183b888e934350b7ac83`；[唯一结果入口](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/READY.md)。首失败3/128 ACK span不足4s，observer16chunks/无summary/center dropped1；原caller UNKNOWN_RETAIN与两个KEEP不改。独审仅忠实性/固定输入/资源与时间边界，不运行、清理或把源审批继承为容量通过。
+RESULT_FIDELITY_REVIEW_APPROVED /0P1/P2，db_transaction_owner，2026-10-07T19:14:33Z（root转达）；固定d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae。24bindings16658807B及123inputs吻合。Execution `c7519722ea8464558b74183b888e934350b7ac83`；[唯一结果入口](../../docs/evidence/s01/pool-wait-run/buffered-single-v1/READY.md)。首失败3/128 ACK span不足4s，observer16chunks/无summary/center dropped1；原caller UNKNOWN_RETAIN与两个KEEP不改。独审仅忠实性/固定输入/资源与时间边界，不运行、清理或把源审批继承为容量通过。
 
 ## 已审：单臂caller/input与pure结果
 

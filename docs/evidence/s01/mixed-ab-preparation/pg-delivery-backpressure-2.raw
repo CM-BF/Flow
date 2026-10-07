@@ -1,0 +1,15 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe[39m
+
+ [32m✓[39m experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts [2m([22m[2m10 tests[22m[2m | [22m[33m6 skipped[39m[2m)[22m[32m 4[2mms[22m[39m
+[90mstdout[2m | experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts[2m > [22m[2mchunk packing[2m > [22m[2mbounds encoding work by output size without repeatedly encoding growing prefixes
+[22m[39m{"evidence":"finish-encoding-work","rows":576,"encodedWorkBytes":221635,"outputBytes":111104}
+
+ [32m✓[39m experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32m✓[39m experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts [2m([22m[2m9 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[32m 107[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m16 passed[39m[22m[2m | [22m[33m7 skipped[39m[90m (23)[39m
+[2m   Start at [22m 19:31:25
+[2m   Duration [22m 439ms[2m (transform 71ms, setup 0ms, import 94ms, tests 121ms, environment 0ms)[22m
+
