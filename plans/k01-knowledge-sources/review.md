@@ -1,9 +1,9 @@
 # K01-06 查询计划诊断准备独立review
 
 状态：NOT_STARTED
-Review target commit：UNKNOWN
+Review target commit：c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5
 
-本轮只审plan.md的K01-06增补与docs/evidence/k01/query-plan-diagnostic.md（固定提交后填写target）。基线88bee460；产品只读3c9345df，无产品/PG/工程检查。请Mika核源码定位和9个Git输入hash、12原金样本、current/history计数、row/bytes/latency口径、候选语义与停止/清理边界；文档批准不得当执行窗口或性能结论。原留存与原产品批准如下，仅历史。
+本轮只审plan.md的K01-06增补与docs/evidence/k01/query-plan-diagnostic.md（固定c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5）。基线88bee460；产品只读3c9345df，无产品/PG/工程检查。请Mika核源码定位和9个Git输入hash、12原金样本、current/history计数、row/bytes/latency口径、候选语义与停止/清理边界；文档批准不得当执行窗口或性能结论。原留存与原产品批准如下，仅历史。
 
 # K01 留存规划独立review
 

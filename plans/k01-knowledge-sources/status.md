@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 14:55 UTC |
+| 最近更新 | 2026-10-07 14:57 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -11,28 +11,28 @@
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；本段实际开始2026-10-07T14:53:11Z，来源clock工具与Mika派工，见下文工作段 |
-| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v1 ACTIVE，14:53:37.117Z COMMITTED；仅 docs/evidence/k01 与 plans/k01-knowledge-sources |
+| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v1 ACTIVE最后确认14:53:37.117Z；仅两metadata scope，最终push后STOP，保留独审期占用 |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 文档规划中；原产品及冻结证据不改，收口提交后核clean |
+| 工作树dirty状态 | 诊断设计源固定；本轮仅交付metadata收口，提交后核clean并停止全部写入 |
 | 工作分支状态 | in-progress（旧产品与本次规划均已接收，后续产品TODO保持开放） |
 | 检查状态 | NOT_RUN：本段仅检索诊断准备，0工程测试/产品PG；旧31项仅历史 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段检索诊断准备未集成，未运行 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
-| 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段待固定提交，不merge/rebase |
+| 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | plans/k01-knowledge-sources/plan.md, docs/evidence/k01/query-plan-diagnostic.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已确认当前检索的查询结构，正在补齐可复核的诊断方案 |
-| 下一可用交付 | 交付有限金样本、执行计划与传输量测量方案，供独立审查 |
+| 当前产出 | 已形成检索查询计划诊断方案，保留原词法命中与引用语义 |
+| 下一可用交付 | 完成本诊断方案的独立文档审查，再决定专库入口与窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；本段NOT_STARTED；留存fd02与旧产品批准仅历史 |
+| Review | [review.md](review.md)；本段NOT_STARTED，绑定c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；留存fd02及原产品批准仅历史 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -82,3 +82,11 @@
 2026-10-07T14:53:11Z实际开始，预算至15:03:11Z（≤10分钟）；只读main与官方方法、仅文档metadata。旧claim4be228e2已v2 RELEASED于00:24:07.059Z，本次fresh ledger14:53:31.415Z确认available后以新claim恢复两scope，[领取回执](../../docs/evidence/k01/query-plan-claim-receipt.json)。不恢复产品权、不安装/调整SQL/pool/扩展、不运行产品PG/测试。原retention设计/输入/manifest/旧31检查原样保留；K01-08～10与flow.commands依赖及R01～12仍NOT_RUN。
 
 架构影响：本段没有产品Interface/运行/DB边界变化，未来查询形状比较仍须合法产品scope和直接语义验证；当前无架构图更新。
+
+2026-10-07T14:57:04Z：分支文档片段交付target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5（clock读取与实际commit后确认），独立文档审查NOT_STARTED；本段main集成/部署/完整完成均NOT_DONE。内容、相对链接与范围核对：6个修改/新增文档42551B≤128KiB、链接errors[]、git diff --check通过；仅文档一致性检查，不计工程测试。产品及retention-design/inputs/manifest零diff，旧31项和R01～12未重跑。最终push后STOP，无待写产品范围；claim保留由Mika协调独审/收口。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| K01-QP-REVIEW | 2026-10-07T14:57:04Z | OPEN | 审查 | 查询计划诊断文档待Mika独审；真实PG仍NOT_OPEN，独审不自动授予运行 | c2ed3bb固定提交与本段派工 |
