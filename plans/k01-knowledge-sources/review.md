@@ -1,9 +1,11 @@
 # K01-06 诊断入口准备（当前）
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：e1a785387b74ddf506914cbb35afbb6ccb81b8bd
 
 本段仅实验入口与纯检查，8 caller+3 synthetic listener / 最终focused noEmit通过；实际PG/HTTP NOT_OPEN。唯一证据为 docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json 与append-only iterations.jsonl。请独立核闭合/EOF/信号异常门禁、env allowlist、17外部及3内部alias、marked scratch exact清理与未知保留，以及listen独立settlement/abort/final close。原Python3.9预启动失败0child、原HOLD/旧.local KEEP保留；旧corpus4不重复执行。末两check源字节绑定最终代码，早期caller差异明确列出，不能称所有检查在末target重跑。原245源码/33动态SQL与18连接/真实factory超时、生产查询捕获/DB身份完整入口仍需审查；此处不自行批准PG。
+
+2026-10-07T15:50:57Z：Mika委派k01_query_review独立只读 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，固定e1a785387b74ddf506914cbb35afbb6ccb81b8bd，现场edef5aa70=origin clean，0P1/P2。15source/7raw/245Git/17aliasmetadata及5runBindings吻合；4child5471ms/raw623B、8caller+3synthetic listener/2noEmit与清理事实成立。历史EPERM与最终闭合区分、真实first/signal/capture错误不放行；listen独立settlement修复关闭P2，未知仍KEEP。审查者未运行测试/import/PG/HTTP/网络，完整范围/限制见[独审回执](../../docs/evidence/k01/query-entry-independent-review.json)。批准仅源码与局部结果忠实性，真实Fastify/PG生命周期、查询计划与资源峰值仍NOT_RUN；本次runtime候选metadata单独待核，不扩大此批准。
 
 # K01-06 查询计划诊断准备独立review
 

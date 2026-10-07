@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 15:46 UTC |
+| 最近更新 | 2026-10-07 16:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -10,14 +10,14 @@
 | co-lead | mika |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现段15:01:34Z–15:21:34Z已封存；新修复段15:28:30Z–15:48:30Z；来源clock与Mika派工 |
+| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现/修复段已封存；当前metadata/runtime准备15:55:02Z–16:07:02Z；来源clock与Mika派工 |
 | 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 ACTIVE，15:01:40.433Z COMMITTED amend；原两metadata scope+experiments/knowledge-search |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 最终metadata待提交；实现已固定，旧raw与.local不改；push后全部STOP |
-| 工作分支状态 | review（本段入口/纯检查交独立审查；历史与开放验收不变） |
+| 工作树dirty状态 | 候选metadata待commit/push；起点edef5aa70=origin clean，已审源与旧raw/KEEP不改；提交后STOP |
+| 工作分支状态 | review（入口/局部结果已审；future runtime绑定候选待核，历史与开放验收不变） |
 | 检查状态 | PASSED e1a785387b74ddf506914cbb35afbb6ccb81b8bd；8 caller+3 synthetic listener；最终focused noEmit exit0，PG/HTTP NOT_OPEN |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
 | 实现目标 | e1a785387b74ddf506914cbb35afbb6ccb81b8bd |
@@ -28,11 +28,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 检索诊断入口已补齐检查闭合、环境隔离与监听收尾保护；纯检查通过 |
-| 下一可用交付 | 完成入口独立审查后再决定数据库测量窗口 |
-| 当前阻塞 | NONE |
+| 当前产出 | 检索诊断入口及纯检查已独审通过，专库候选运行输入已固定 |
+| 下一可用交付 | 补齐配置供给与合计资源门槛后排诊断窗口；当前未运行数据库 |
+| 当前阻塞 | 实际诊断尚缺合法配置供给确认与合计字节门槛落实；运行窗口未开放 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；新入口待独立审查；c2ed仅历史设计APPROVED |
+| Review | [review.md](review.md)；入口及局部结果APPROVED；本段runtime绑定待审，PG NOT_OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -108,3 +108,7 @@
 2026-10-07 15:34 UTC：caller闭合判定/显式env及新scratch正常清理已实施，7个meaningful caller用例待执行；旧corpus源逐字未改，因此不计划重跑旧4项。当前source检查与类型仍NOT_RUN，Web新排他build要求继续source-only。futurePG额外准入项为listen独立settlement，不把createServer已settle当listen保证，尚未运行/批准任何PG。旧raw/.local从未改动或清理；新的逻辑字节计量排除旧KEEP子树，不把读取旧TMP当本段必要动作。
 
 2026-10-07T15:45:17.411812Z：本段4个实际child全部exit0/final absent/完整MERGED EOF，8 caller + 3 synthetic listener通过，focused noEmit两次exit0（末次绑定最终监听修复）。每个新scratch以原dev/ino/marker清理且exact lstat ENOENT；预启动Python3.9 import失败0child及自己的scratch归还原记录保留，不改失败为通过。初始只读EPERM与最终闭合事实分列，旧.local KEEP不动。普通槽已向Mika完整归还，停止新launch。唯一结果入口[manifest](../../docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json)，逐run源hash解释较早caller与末次源差异；旧corpus4未重跑。全部产品路径无修改，真实PG/HTTP/EXPLAIN NOT_OPEN；监听纯Promise行为不冒充Fastify生命周期验收。最终metadata commit/push后本段全部STOP，claim v2保留待独审，未采dashboard。
+
+2026-10-07T15:55:02Z：新12分钟metadata/runtime准备段开始，截止16:07:02Z；fresh HEAD edef5aa70a290b34b2fe749c7be2ea39acfcb394=origin clean，Mika fresh核claim30965v2三scope。k01_query_review于15:50:57Z批准固定e1a785387入口与局部结果、0P1/P2；只读审查15源码/7raw/245固定输入/17aliasmetadata和5runBindings，11不同用例/2noEmit/4child5471ms均吻合。批准不覆盖真实PG/Fastify生命周期或查询计划/性能。当前仅归档一次批准与准备runtime路径/输入/closed默认许可；0工程child/PG/HTTP/DBconnect/模型，不创建actualnamespace、不占窗、不碰旧.local。Original SVC09A soleNEXT及Web后继优先，未来PG候选NOT_OPEN；本prep新增≤4MiB，候选128MiB DB/8MiB local未获运行预算。
+
+2026-10-07 16:01 UTC：future runtime候选固定在[唯一输入manifest](../../docs/evidence/k01/query-pg-runtime-inputs.json)与[候选说明](../../docs/evidence/k01/query-pg-ready.md)，单一closed/expired permit为query-pg-closed-permit.json。静态核245产品文件/33SQL、17外部+3内部alias、Node24.20.0/Python3.13.3_1/TSX4.23.15/esbuild0.28.2 loader/helper输入均一致；未执行二进制/导入运行入口。此段0工程child/PG/HTTP/DBconnect/模型/namespace/资源探针，新增及修改7份metadata合计71132B（收口文字增加后仍远低4MiB）。源码相对已审e1a785387零diff，旧raw/manifest/KEEP不动。现有fixed fixture的FLOW_K01_TEST_ADMIN供给接口已非敏感定位，但合法实际来源待Mika确认；8MiB local/2MiB合计raw与已有16MiB caller/2MiB单result保护不同，未来OPEN前必须落实合计门槛。候选120s/18配置连接/1856chunks/5.5MiB/10EXPLAIN/30计时SELECT保留；30不是全SQL数，DB128MiB是末样本而非峰值硬配额。Original SVC09A/Web优先，本候选无预约；本prep floor不当未来PG准入。最终commit/push后STOP，claim v2保留、无新dashboard采样。

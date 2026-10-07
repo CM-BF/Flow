@@ -29,3 +29,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07 15:20 UTC：本段最终复核只归档真实一次4/4纯测试与OPS14 UNKNOWN errno1。源前后/固定依赖matched、无signals；后续absence不覆盖unknown，禁止自动重试/类型检查。测试selected4与资源HOLD分别记录，0PG/HTTP/模型，代码8c5fa9682保持不变。新入口未正式独审，类型与实际生命周期/EXPLAIN均待后继，未据纯用例关闭K01-06或留存验收。Mika已即时收到START/RETURN/HOLD。
 
 2026-10-07 15:46 UTC：新独立修复段复用本地find-skills/codebase-design/固定clean-code与行为测试方法，无新安装。闭合判定复用OPS14最终ownership语义，业务失败与资源闭合分开；显式env排除无关host输入，依赖实际alias与manifest双核；唯一scratch owner用身份及lstat确认，旧KEEP不触。listen独立Promise/abort/settlement后最终close，无法确认仍KEEP，未造框架或改产品factory。8 caller/3 synthetic Promise与最终noEmit通过，4实际child均正常归还；Python3.9预启动import失败原样留存，固定Python3.13并提前版本/import校验。clean-code命名/职责/错误保真/有限资源与测试复核完成；正式独审待Mika/db，PG实际生命周期与性能仍NOT_OPEN。
+
+2026-10-07 15:55 UTC：新12分钟metadata/runtime准备沿本地find-skills/codebase-design/固定clean-code，0安装/工程/PG。一次归档k01_query_review 15:50:57Z源码及局部结果批准，不重写旧manifest/raw。运行职责分为已审operator、单DB owner与生产search；静态绑定实际Node/Python、TSX及esbuildhelper、245源码/33动态SQL和17外部/3内部alias，不复制旧KEEP或整个依赖树。凭据只指定合法来源和变量，不记录值/hash。保持单一closed-expired permit，不造新审批工具；明确查询采样数不是总SQL，16MiB caller/2MiB单result与原8MiB/2MiB合计口径的未闭合差异，未来OPEN前必须确认。

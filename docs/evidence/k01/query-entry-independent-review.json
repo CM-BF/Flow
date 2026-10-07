@@ -1,0 +1,36 @@
+{
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewedAt": "2026-10-07T15:50:57Z",
+  "reviewer": "k01_query_review, independent readonly reviewer delegated by Mika",
+  "implementationTarget": "e1a785387b74ddf506914cbb35afbb6ccb81b8bd",
+  "observedHead": "edef5aa70a290b34b2fe749c7be2ea39acfcb394",
+  "observedClean": true,
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": {
+    "sourceFiles": 15,
+    "rawEvidence": 7,
+    "fixedProductFiles": 245,
+    "externalAliases": 17,
+    "runBindings": 5,
+    "actualChildren": 4,
+    "operatorElapsedMs": 5471,
+    "rawBytes": 623,
+    "callerTests": 8,
+    "syntheticListenerTests": 3,
+    "focusedNoEmitRuns": 2,
+    "minFreeBytes": 20315815936,
+    "requiredFreeBytes": 14414970880
+  },
+  "closure": "All final absent / complete MERGED EOF and capture; no first/secondary/signal faults; scratch exact identity return. Python3.9 0child failure retained. Old raw unchanged and old .local KEEP not accessed.",
+  "scope": "Entry source and local result fidelity only; real Fastify/PG lifecycle, query plan, performance, observed connection/storage peaks remain NOT_RUN. No engineering checks/imports/PG/HTTP/network executed by reviewer.",
+  "resolved": "Closed predicate preserves real signal/capture/first errors; listen independent settlement/abort/final close/listening=false; database unknown still KEEP.",
+  "sourceRecord": {
+    "path": "docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json",
+    "bytes": 9989,
+    "sha256": "b5679abf9ec4bd7521633e053557ed77cd4608d5356ff2f31e8928fc505163d6"
+  }
+}
