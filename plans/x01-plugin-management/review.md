@@ -1,8 +1,8 @@
 状态：PENDING（中心六组真实PG结果忠实性；源码/准备批准保持）
 
-Review target commit: 2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae
+Review target commit: 05dd405074fce86a5e9142f20278bd41e27e1e24
 
-本次执行6/6、107HTTP与资源全部收尾；[结果入口](../../docs/evidence/x01/center-claim-pg-result.md)。固定结果commit将在结果manifest绑定。不授下一窗口/完整X01通过。
+本次执行6/6、107HTTP与资源全部收尾；[结果入口](../../docs/evidence/x01/center-claim-pg-result.md)。[固定结果清单](../../docs/evidence/x01/center-claim-pg-result-manifest.json)与最小intake已绑定。不授下一窗口/完整X01通过。
 
 ---
 

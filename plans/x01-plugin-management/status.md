@@ -18,7 +18,7 @@
 | 工作树 dirty 状态 | 实际PG原件与结果封存中；产品/fixture/运行器冻结，提交push后clean待独审 |
 | 工作分支状态 | review |
 | 检查状态 | 中心实际PG 6/6；107HTTP/12tasks/7registrations；进程/专库/监听器/TMP完整收尾。原27/10/11未重跑 |
-| Review | 中心source/local及PG准备APPROVED；本次6/6结果忠实性PENDING，见center-claim-pg-result.md |
+| Review | 中心source/local及PG准备APPROVED；本次6/6结果忠实性PENDING；fixed result 05dd405074fce86a5e9142f20278bd41e27e1e24 / center-claim-pg-result-ready.md |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
 | 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
