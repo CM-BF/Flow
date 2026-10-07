@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-07T05:54:50.370006+00:00",
+  "state": "ACTUAL_RETURNED_SCOPED_FULL7_ACCEPTED",
+  "run": "recfull-20261007-055138-6c925b",
+  "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "runOwnerHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+  "startedAt": "2026-10-07T05:52:11.626281Z",
+  "endedAt": "2026-10-07T05:52:24.761068Z",
+  "exitCode": 0,
+  "selected": 7,
+  "passed": 7,
+  "journey": "full",
+  "scope": "Original seven-group subset only; full feature acceptance still open.",
+  "outerElapsedMs": 13133.751874906011,
+  "parentLateMs": 12501.139416,
+  "parentEarlierMs": 12495.784625,
+  "budget": {
+    "newTotalActualMs": 150000,
+    "chargeFormula": "ceil(max(actualOuterMs,parentLateMs,parentEarlierMs))",
+    "chargedActualMs": 13134,
+    "remainingMs": 136866,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "originalRawPreserved": true
+  },
+  "cleanup": {
+    "database": "flow_recovery_e33f017541fc4b32b9fe1024556e3656",
+    "normalDrop": true,
+    "remaining": [],
+    "connections": 0,
+    "ownedGroups": [
+      42838,
+      45492
+    ],
+    "groupsState": "ABSENT_ESRCH",
+    "scratchAbsent": true,
+    "fixtureComplete": true,
+    "providerQueries": 0,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "adminEnvDeletion": "admin-env-deletion-receipt.json"
+  },
+  "review": {
+    "state": "ACCEPTED_SCOPED_FULL7_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE",
+    "path": "root-full7-actual-review.json",
+    "sha256": "7ef31369949ad5b45465f418bad189aa7d06c5961a1d1d730331e5aed9be3b28",
+    "findings": 0
+  },
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "externalQueue": "S01 performance queued, not OPEN; no actual PG holder reported.",
+  "managerNewRuntime": false,
+  "rawOuter": "/private/tmp/recovery-continuous-full-parent-nq1e5a53",
+  "rawRun": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b",
+  "pngCount": 2
+}

@@ -163,7 +163,7 @@ D01既有U14/REQ16/27/37的[时间信息层级后继](../../docs/evidence/web-pl
 - [x] **WPF-001-02** 明确owner/独占范围/接口/依赖，建立无编号冲突的后续plan/status/review。
 - [x] **WPF-001-03** 接收官方Thread与panels独立提交，完成W01集成、回归与独立review闭环。
 - [x] **WPF-001-04** 向主线D03交付管理来源登记清单并只读验证；02:38:47.600Z新版22源中3个WPF源完整无issues（仅登记验证，不表示实现完成）。
-- [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收；REQ22–23的实际conversation sidebar与组合pane扩展入口关联MATURE05-02/03，preconnect/reauth连接页真实贡献另沿同一插件覆盖后继，见[静态覆盖检查](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，待现writer交权后独立领取。[固定2498连接页候选](../../docs/evidence/web-platform/connection-plugin-2498/report.md)复用唯一P01 host、settings.sections和Appearance；preauth审定builtin与postauth私有lease/撤权分开，六产品+两专测仅候选、未授权take。
+- [ ] **WPF-001-05** 已审P01/I01前置继续与X01/X02衔接完整插件管理，保留中心生命周期/权限/隔离/CLI与后续Web消费验收；REQ22–23的实际conversation sidebar与组合pane扩展入口关联MATURE05-02/03，preconnect/reauth连接页真实贡献另沿同一插件覆盖后继，见[静态覆盖检查](../../docs/evidence/web-platform/conversation-plugin-coverage-research.md)，待现writer交权后独立领取。[固定2498连接页候选](../../docs/evidence/web-platform/connection-plugin-2498/report.md)复用唯一P01 host、settings.sections和Appearance；preauth审定builtin与postauth私有lease/撤权分开，六产品+两专测仅候选、未授权take。 新增[固定插件槽消费研究](../../docs/evidence/web-platform/recovery-full-return-20261007/plugin-slot-research.json)归REQ22/23：composer.context声明尚无泛型consumer、assistant footer未泛型枚举，不把内建面板当完整可插拔。后继sample贡献须不改App/Thread即可呈现，双pane身份/启停撤权/隐藏不激活/键盘与双主题验收；复用现host/registry/PluginView，不新task/take或第二插件状态，也不挤当前Recovery/Quick。
 - [x] **WPF-001-06** 建立WPF-PERF01生产基线及下一有证据优化轮：3d47基线/a87窗口获审、a87已实际集入main8f1481d；未来证据另开有限工作包，不宣称无限优化完成。
 - [x] **WPF-001-07** 将完整M02工作入口交给独立Web消费owner，单独验证、review与集成。
 - [x] **WPF-001-08** 收取两owner精确literal范围并交主线单点登记，验证D04领取/转交/冲突展示，避免多lead重复派工。

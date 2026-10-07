@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:52:25.444218+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T05:54:50.370006+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**Recovery已由原owner实际启动，等待本次终态和清理。** [实际启动回执](continuous-validation-segments-20261007/recovery-full-actual-start.json)记录05:52:11.626281Z、parent42366/exec59984；765ab/19源与新gate再次核同。SVC08已明确归还，旧dm3准入撤销；当前唯一full7首轮60000ms含15000cleanup，新150s累计从0开始。新_f2cv0m2/admin.env仍由manager在actual终态后exact删除，不提前记资源归还。Quick仅源码接受，无并行Chrome。
+**Recovery原七组实际通过、结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。本组holder/gate/预约均无，S01性能仅排队未OPEN，不自动开后继运行。
 
 [正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
 

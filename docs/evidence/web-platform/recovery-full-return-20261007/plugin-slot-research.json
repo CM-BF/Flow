@@ -1,0 +1,74 @@
+{
+  "task": "Existing WPF-001-05 / WPF-REQ-22/23 complete plugin system",
+  "mode": "READ_ONLY_INTERFACE_RESEARCH_NOT_IMPLEMENTED_NOT_TAKEN",
+  "observedAt": "2026-10-07T05:53:09.113616+00:00",
+  "sourceHead": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "ecec5a76bb0c0e89c4ac3b5cd4f4d56345299d737e15ca86088f244228fcd56b"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    }
+  ],
+  "findings": [
+    {
+      "scope": "Composer context slot",
+      "fact": "SlotId and manifest validation accept chat.composer.context panels and button/menu contributions, but current product JSX has no generic subscribeSlot/chat.composer.context + renderer enumeration or AppSlot consumer for that slot. Knowledge and attachment render their own fixed panel IDs.",
+      "implication": "Declaring a new valid composer-context contribution alone does not make it appear; current builtins do not establish arbitrary plugin composition coverage.",
+      "qualification": "Static extensibility gap; not a browser-observed failure of the existing builtin attachment/knowledge panels."
+    },
+    {
+      "scope": "Message footer role coverage",
+      "fact": "ResourceContext.message accepts user and assistant. Product MessageFooter returns only stream draft status for recognized assistant drafts, then returns null unless a task is mapped and role=user. Generic panel/button/menu enumeration therefore applies only to user message footers.",
+      "implication": "A valid extension targeting an assistant message footer is not rendered by this consumer. Existing message-actions support both roles, and stream-draft status must remain separate.",
+      "qualification": "Existing footer implementation may intentionally attach stream status to user messages; this is a complete-plugin-system scope gap, not evidence that streaming itself fails."
+    }
+  ],
+  "designConstraints": [
+    "Use existing host registry, capability checks, PluginView/ExtensionSlot, and existing Thread component injection points; do not add a second plugin store or host.",
+    "Define per-pane composer context ownership and mount policy; generic enumeration must not double-render existing builtin dialogs or eagerly activate hidden panels.",
+    "Preserve existing material/knowledge ownership, draft generation, auth revoke, hidden split pane and dispose behavior; no generic raw DOM mutation hook.",
+    "Choose documented footer availability by role, or render authorized assistant contributions alongside preserved stream status; contribution absence must not be silently called full coverage."
+  ],
+  "acceptanceForExistingPlan": [
+    "A sample external-to-builtin contribution appears in composer-context and assistant-final footer without editing App/Thread integration code.",
+    "Two split panes with distinct view/task contexts invoke the matching command, preserve drafts, and use unique DOM ids.",
+    "Enable, disable, failed activation, removal and auth revoke hide/clean only the matching contribution; builtin knowledge/material UI is not duplicated.",
+    "Both themes, narrow viewport, native keyboard/focus restoration and reduced motion; a hidden pane does not fetch or activate contributions just to enumerate metadata."
+  ],
+  "nonChanges": [
+    "No project edits, claim, new task, tests, server or browser calls.",
+    "Generic plugins/react.tsx PluginTabs uses unprefixed IDs, but current production uses WorkspaceContributions with useId; no production duplicate-ID defect is claimed."
+  ],
+  "methods": [
+    "Existing local codebase-design: deepen the existing registry consumer instead of scattering per-plugin conditionals.",
+    "Existing clean-code: one ownership model, distinguish declared API from actual rendered coverage; avoid speculative abstraction."
+  ]
+}
