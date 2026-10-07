@@ -1,5 +1,5 @@
 {
-  "state": "PARTIAL_NOT_READY_CLEANUP_P2",
+  "state": "CLEANUP_DELTA_REVIEW_PENDING_NOT_OPEN",
   "source": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
   "caseDeltaExecution": "NOT_RUN",
   "files": [
@@ -23,9 +23,9 @@
     },
     {
       "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/enable-binding-pg-once.py",
-      "sourceCommit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
-      "bytes": 20706,
-      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+      "sourceCommit": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
+      "bytes": 21290,
+      "sha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
     },
     {
       "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts",
@@ -1751,9 +1751,9 @@
     },
     {
       "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-once.py",
-      "sourceCommit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+      "sourceCommit": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
       "bytes": 18425,
-      "sha256": "c326ecf2ced45c0af64871748a87b097d34ec6b13b2cf2a945a5078c140376d0"
+      "sha256": "5d320bd5212f55e0eb9d095e33820236a3e5720679dfc31658e79a53d57c1c77"
     },
     {
       "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/runtime-inputs.json",
@@ -2995,5 +2995,13 @@
     "linksVerified": true,
     "errors": []
   },
-  "blockedBy": "Inherited cleanup helper root identity is checked after child deletion. No actual admission or execution is authorized."
+  "blockedBy": "Guard repaired and four pure filesystem cases passed; exact consumer and binding independent review pending.",
+  "rootGuard": {
+    "sourceParent": "1d85f3d3e",
+    "resultParent": "0b9a444832f76e7a03fc0b1d8bd995a9bdc568a4",
+    "changedRows": 2,
+    "unchangedRows": 293,
+    "review": "PENDING",
+    "actual": "NOT_OPEN_NOT_RUN"
+  }
 }

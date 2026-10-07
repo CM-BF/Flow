@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T21:36:30.771Z",
+  "state": "REVIEW_PENDING",
+  "target": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
+  "parentSource": "1d85f3d3e",
+  "helperSHA256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5",
+  "changedRows": [
+    {
+      "before": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/enable-binding-pg-once.py",
+        "sourceCommit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+        "bytes": 20706,
+        "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+      },
+      "after": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/enable-binding-pg-once.py",
+        "sourceCommit": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
+        "bytes": 21290,
+        "sha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
+      }
+    },
+    {
+      "before": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-once.py",
+        "sourceCommit": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+        "bytes": 18425,
+        "sha256": "c326ecf2ced45c0af64871748a87b097d34ec6b13b2cf2a945a5078c140376d0"
+      },
+      "after": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-once.py",
+        "sourceCommit": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
+        "bytes": 18425,
+        "sha256": "5d320bd5212f55e0eb9d095e33820236a3e5720679dfc31658e79a53d57c1c77"
+      }
+    }
+  ],
+  "unchangedRows": 293,
+  "externalUnchanged": 191,
+  "linksUnchanged": 16,
+  "priorManifestSha256": "63141f8629fdf142befbe43bba10b34c49d4c310a2117c0b6cdba28df8ede290",
+  "manifestSha256": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08",
+  "historicalArchives": "pre-root-guard-manifest/candidate byte-identical to8e963; local raw unchanged",
+  "actual": "NOT_OPEN_NOT_RUN"
+}
