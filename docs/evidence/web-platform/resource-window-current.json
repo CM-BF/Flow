@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T03:43:24.378221+00:00",
-  "state": "WEB_RETURNED_MIKA_S01P07_CAPACITY_OPEN_ADMISSION",
-  "groupWindowOwnership": "SVC06 returned03:34:59.865Z; ACCESS returned03:38:53.274Z; Timing returned03:41:04Z. Web no actual holder/gate/reservation. Mika accepted/opened S01P07 capacity admission; actual worker start not yet received. D06 preparation only.",
+  "recordedAt": "2026-10-07T03:46:01.611311+00:00",
+  "state": "NO_HEAVY_HOLDER_AFTER_MIKA_S01P07_RETURN",
+  "groupWindowOwnership": "SVC06/ACCESS/Timing and now Mika S01P07 capacity all returned with actual receipts. No Web or Mika heavy holder/reservation. ACCESS source preparation and D06 static browser candidate do not reserve a window.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T03:43:24.378221+00:00",
-    "kind": "ACTUAL_RETURNS_AND_MIKA_S01P07_CAPACITY_ADMISSION",
-    "source": "window-actuals-0341-20261007/intake.json",
-    "summary": "原SVC06/ACCESS/Timing均实际结束并归还。Mika已OPEN S01P07-CAPACITY-20261007-R1准入；4serialPG/200s总/0provider，尚无实际start回执。Web无运行占用，不沿旧offer开新窗口。"
+    "at": "2026-10-07T03:46:01.611311+00:00",
+    "kind": "MIKA_S01P07_ACTUAL_RETURN_NO_CURRENT_HOLDER",
+    "source": "window-actuals-0341-20261007/mika-actual-return.json",
+    "summary": "S01P07 4/4实际通过并完整收尾归还；本组无holder/gate/预约。Timing已封存main-intake，D06仅静态浏览器候选待审，ACCESS只准备修复。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "window-actuals-0341-20261007/intake.json",
+  "currentWindowReturn": "window-actuals-0341-20261007/mika-actual-return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1056,7 +1056,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "NO_RESERVATION_WAIT_ACTUAL_HANDBACK",
+    "state": "READY_FIRST_AFTER_SOURCE_REVIEW_AND_FRESH_ADMISSION_NO_RESERVATION",
     "access": {
       "ownerHead": "309ed1e8f0ee37c2842c956adb36762fbd0b6efe",
       "actual": "Third failed 4/5 exit1; real hidden remained visible. Original product clear handler not reached by hidden evidence. Owned cleanup complete.",
@@ -1070,9 +1070,20 @@
       "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
       "actual": "5/5 browser PASS actualexit0, 6410.498ms; exact cleanup03:41:04Z; scoped root accepted.",
       "review": "window-actuals-0341-20261007/timing-browser-review.json",
-      "next": "Owner main-intake seal; registry185 not observed loaded."
+      "next": "Owner main-intake seal; registry185 not observed loaded.",
+      "ownerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed"
     },
-    "d06": "Temporary browser caller static preparation only, no run or reservation."
+    "d06": {
+      "ownerHead": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+      "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+      "packet": "/private/tmp/d06-browser-512-tz5of84t",
+      "state": "SOURCE_REVIEWED_NATIVE_BOUNDARY_ACCEPTED_FRESH_ADMISSION_NEXT",
+      "manifestSha256": "7d61f3370c3b9b7e6b54372b1b4d64e5668f2d1747dda383c5c4935289b7f5b1",
+      "proposal": "90s including15s cleanup;256MiB TMP/8MiBraw;5views/20PNG; no grant.",
+      "review": "window-actuals-0341-20261007/d06-browser-preparation-review.json",
+      "window": "D06-512-BROWSER-ONCE-20261007",
+      "authority": "Root explicit next exclusive90s after Mika actualreturn; fresh owner/claim/pins/combined resources and one gate still required. No runtime started at this record."
+    }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1432,9 +1443,12 @@
     "gate": null,
     "reservation": false,
     "review": "message-settings02-browser-prepared/root-preparation-review.json",
-    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+    "currentOwnerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
     "headRebindRequiredAtFutureAdmission": true,
-    "prerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run."
+    "prerequisite": "Same-source c2 strict+26 actual PASS accepted. Browser still NOT_RUN; precise native boundary, actual current HEAD/input rebind and fresh window/resources required.",
+    "historicalPrerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run.",
+    "ownerHeadMeaning": "ownerHead38bf is the frozen original browser preparation; it is not the current owner checkout.",
+    "prerequisiteEvidence": "current-product-checkpoint-20261007/local-results-review.json"
   },
   "latestLeadExactCacheResult": {
     "state": "LEAD_THREE_EXACT_CACHES_COMPLETE_NO_NEW_WEB_GRANT",
@@ -1489,11 +1503,10 @@
     "newTaskClaimGateOrReservation": false
   },
   "latestSourceOnlyProgress": {
-    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
-    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
-    "sourceReview": "APPROVED_SOURCE_ONLY",
-    "pureGit": "NOT_RUN",
-    "newRuntimeGrant": false
+    "state": "HISTORICAL_FIELD_RETIRED",
+    "historyKey": "historicalSourceOnlyProgress024613",
+    "currentEvidence": "current-product-checkpoint-20261007/local-results-review.json",
+    "note": "D04 five pureGit and Quick c2 strict+26 are actually passed; original NOT_RUN entries above are historical."
   },
   "dperf04CurrentClaim": {
     "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
@@ -1504,15 +1517,16 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": "Mika",
-    "window": "S01P07-CAPACITY-20261007-R1",
-    "state": "OPEN_ADMISSION_ACTUAL_START_NOT_RECEIVED",
-    "selectedGroups": 4,
-    "serialPG": true,
-    "totalMs": 200000,
-    "workMs": 120000,
-    "cleanupMs": 70000,
-    "providerCalls": 0,
-    "source": "Root/Mika specific coordination inbound; no manager runtime or resource sample."
+    "owner": null,
+    "window": null,
+    "state": "RETURNED_NO_RESERVATION",
+    "evidence": "window-actuals-0341-20261007/mika-actual-return.json"
+  },
+  "historicalSourceOnlyProgress024613": {
+    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
+    "sourceReview": "APPROVED_SOURCE_ONLY",
+    "pureGit": "NOT_RUN",
+    "newRuntimeGrant": false
   }
 }

@@ -1,6 +1,6 @@
 {
-  "state": "SOURCE_REGISTERED_185_BROWSER_VERIFIED_NOT_DEPLOYED",
-  "at": "2026-10-07T03:43:24.378221+00:00",
+  "state": "SCOPED_APPROVED_MAIN_INTAKE_READY_REGISTERED_NOT_DEPLOYED",
+  "at": "2026-10-07T03:46:01.611311+00:00",
   "taskId": "WPF-DASHBOARD-TIMING01",
   "parentTask": "D01",
   "owner": "w01_owner",
@@ -25,10 +25,10 @@
   "sourceProvision": "provision-actual.json",
   "take": "take-receipt.json",
   "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
-  "dispatch": "Actual browser complete/cleaned; owner prepares normal main intake. No runtime reservation.",
+  "dispatch": "Owner sealed source/parser/browser approval and main intake; no runtime holder. Actual185 load still pending controlled deployment.",
   "startTime": "2026-10-07T03:07:53.024Z",
   "registry": "Original Lead inbound: main bf7eca59 registers Timing source 185 and SVC08 source 184. Actual 185 load not observed; planned once with future ACCESS controlled deployment. Actual snapshot183 remains historical.",
-  "currentOwnerHead": "156b49d33d08a0d47521f8a231684050d648f9c2",
+  "currentOwnerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed",
   "firstCanonical": "f23c70ce99fb3b59d0707d09d332038a3a6ec6a4",
   "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
   "dirty": false,
@@ -40,5 +40,9 @@
   "registeredSourceCount": 185,
   "actualLoadedSourceCount": 183,
   "actualLoadedAt": "2026-10-07T03:04:03.308Z",
-  "browserReview": "../window-actuals-0341-20261007/timing-browser-review.json"
+  "browserReview": "../window-actuals-0341-20261007/timing-browser-review.json",
+  "mainIntake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/docs/evidence/wpf-dashboard-task-timing/main-intake.json",
+    "sha256": "50c649534f4b314096621e5a7ebb3df5850169b5752725ad4135a4a325a1fde1"
+  }
 }

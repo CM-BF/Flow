@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T03:43:24.378221+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-07T03:46:01.611311+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 当前窗口与用户可用性
 
-**Web 当前 local/heavy 均无 holder，gate/reservation 为 null/false。SVC06、ACCESS、Timing已依次实际归还；[Mika现接S01P07 capacity准入](window-actuals-0341-20261007/intake.json)，已OPEN但尚未收到实际start。** 不再沿旧SVC06 offer派工；D06只准备，ACCESS无后继预约。
+**Web 与 Mika 当前均无 heavy holder/预约；Web gate 为 null。** SVC06、ACCESS、Timing已实际归还，[Mika S01P07 capacity随后亦完成并归还](window-actuals-0341-20261007/mika-actual-return.json)。ACCESS只准备修复、D06浏览器候选已获[本次限定准备及native边界接受](window-actuals-0341-20261007/d06-browser-preparation-review.json)，root明确交下一次独占短窗，待fresh准入后实际执行；本记录尚未启动。
 
 [61228 同版本恢复实际完成并归还](dashboard-task-time-intake/personal-web-recovery-receipt.json)：唯一 SVC operator 一次 bootstrap exit0/968ms，root/identity 200、d629/v3匹配，后台/runner/配置/DB保持，0provider、未刷新或登录用户tab。本组只读原件；没有新服务/容量采样。**Web holder/gate/reservation 仍为 null/null/false。** 已恢复 ready-first 协调，旧特殊窗口不复开，具体下一运行仍保必要 fresh 准入和原预算。
 
@@ -18,7 +18,7 @@
 
 [任务开始、完成与进行中历时合同](dashboard-task-time-intake/report.md)归原REQ16/27/37/D01，8个固定来源已核；当前72a已实施、parser与实际页面均获限定批准，主线功能接收/发布待验。时间只取唯一owner显式声明，不用mtime/claim/更新时间猜历史；[Lead固定79da合同](dashboard-task-time-intake/lead-time-contract.md)已给三字段、NOT_COMPLETED/UNKNOWN及单源等待表，规则已由Lead报告入main18144593，显示片已在独立Timing树实现，未部署。Mika局部链已实际清理，S01P07失败16a938独审后归还heavy（未查询DB清理、旧TMP KEEP）；SVC06本次03:34:59.865Z实际结束并归还，后续当前分配见页首；GO/Lead新规则允许每队一个普通隔离local段、全队最多三个。本队原≤90s已实际结束，结果见页首；原失败与累计预算不重置。普通可逆本地工作按[Lead新OPS规则](dashboard-task-time-intake/incoming.json)采用有界连续修改→局部检查→修失败→定向复测，复用运行器/单份记录后一次独审，不再逐检查造许可链；PG/Chrome/迁移/个人服务仍保必要隔离。
 
-[任务时间展示SOURCE_READY](dashboard-task-timing-provision/current-intake.json)：WPF-DASHBOARD-TIMING01 → D01 / w01_owner，dashboard-task-timing/codex同名、9a677471 v1六scope。首f23c70ce、最新156b49d clean、源码72a、parser与[5项页面实际结果](window-actuals-0341-20261007/timing-browser-review.json)获限定审查；[owner唯一登记请求](dashboard-task-timing-provision/owner-registration-request.json)已存在，Lead已在main bf7eca59登记Timing185与SVC08 184；实际185尚未加载，计划随ACCESS未来受控部署一次加载。03:04:03.308Z的183实际快照保留历史，登记不等于加载或产品部署。
+[任务时间展示SOURCE_READY](dashboard-task-timing-provision/current-intake.json)：WPF-DASHBOARD-TIMING01 → D01 / w01_owner，dashboard-task-timing/codex同名、9a677471 v1六scope。首f23c70ce、最新080e1f0 clean、源码72a、parser与[5项页面实际结果](window-actuals-0341-20261007/timing-browser-review.json)获限定审查；[owner唯一登记请求](dashboard-task-timing-provision/owner-registration-request.json)已存在，Lead已在main bf7eca59登记Timing185与SVC08 184；实际185尚未加载，计划随ACCESS未来受控部署一次加载。03:04:03.308Z的183实际快照保留历史，登记不等于加载或产品部署；[唯一main接收包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/docs/evidence/wpf-dashboard-task-timing/main-intake.json)已封存。
 
 ## 本轮管理输入
 
@@ -28,7 +28,7 @@
 
 [D04 测试生命周期后继](d04-owned-worktree-lifecycle-intake/handoff.json)已新领取f61d v1五scope：三测试源码fa6f获限定source-only批准，owner2dd7已修规范review顶栏并push/clean；五项pureGit已在本次局部段实际全过/清理，结果已root限定接收；PG/CLI四项和页面NOT_RUN。
 
-[D06 原五图后继已在原树领取并固定](architecture-snapshot-0da-intake/report.md)：原owner d01_owner、adf9539d v1四范围；两源5124不变，owner5136已封存实际22direct，后继cff46b8d原样归档审查并获[root限定实际接收](svc06-heavy-handoff-20261007/d06-actual-review.json)。范围21源码/data+1自有HTTP（9请求），exit0与owned清理均接受；新页面/主线/发布仍未验；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)仍是功能权威，无新运行窗口。
+[D06 原五图后继已在原树领取并固定](architecture-snapshot-0da-intake/report.md)：原owner d01_owner、adf9539d v1四范围；两源5124不变，owner5136已封存实际22direct，后继cff46b8d原样归档审查并获[root限定实际接收](svc06-heavy-handoff-20261007/d06-actual-review.json)。范围21源码/data+1自有HTTP（9请求），exit0与owned清理均接受；新页面/主线/发布仍未验；后继owner ba9e9aaa已固定[浏览器静态候选](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-preparation-20261007/index.json)，已获本次准备及native边界接受，待fresh准入；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)仍是功能权威，无新运行窗口。
 
 ## 资源与窗口历史入口
 
