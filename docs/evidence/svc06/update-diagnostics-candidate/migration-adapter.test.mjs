@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertMigrationState, checkStoreBudget, migrateWithLocks } from './migration-adapter.mjs';
+import { assertMigrationState, checkStoreBudget, migrateWithLocks, confirmMigrationRunner } from './migration-adapter.mjs';
 const input = { installationDirectory: '/owned-install', repository: '/fixed-source', artifact: { artifactId: 'new' }, retainedArtifact: { artifactId: 'c7b' }, artifactTotalLogicalBytes: 40, expectedSource: { head: 'af51', dirty: false }, expectedWebHost: { operationId: 'old', artifact: { artifactId: 'c7b' } } };
 const state = () => ({ source: structuredClone(input.expectedSource), webHost: structuredClone(input.expectedWebHost) });
 test('settled c7b is retained; null, foreign, pending and selected-backend states reject', () => {
@@ -58,4 +58,21 @@ test('failed unknown-result persistence remains secondary to the original failur
 });
 test('fresh marker failure never opens the artifact store and normal lock releases',async()=>{
  const h=harness({fail:'marker'});await assert.rejects(h.run(),{code:'PRIMARY'});assert.ok(!h.calls.includes('store'));assert.equal(h.calls.at(-1),'preview:exit');
+});
+
+test('actual runner port qualifies flow.runners, bounds one pool and preserves closure on each outcome', async()=>{
+  const expected={id:'runner',maintenance_state:'accepting',maintenance_version:18,maintenance_operation_id:null};
+  for(const mode of ['success','mismatch','query-error','query-and-close-error']) {
+    const calls=[];let options;
+    class Pool {
+      constructor(value){options=value;}
+      async query(sql,values){calls.push('query');assert.equal(sql,'SELECT id,maintenance_state,maintenance_version,maintenance_operation_id FROM flow.runners WHERE id=$1');assert.deepEqual(values,['runner']);if(mode.startsWith('query'))throw Object.assign(new Error('not public'),{code:'PRIMARY'});return{rows:[mode==='mismatch'?{...expected,maintenance_version:19}:expected]};}
+      async end(){calls.push('end');if(mode==='query-and-close-error')throw Object.assign(new Error('not public either'),{code:'ECLOSE'});}
+    }
+    const work=confirmMigrationRunner(Pool,{databaseUrl:'fixture-only',runner:{runnerId:'runner'}},expected);
+    if(mode==='success')await work;
+    else if(mode==='mismatch')await assert.rejects(work,{code:'ERR_ASSERTION'});
+    else await assert.rejects(work,error=>error.code==='PRIMARY'&&(mode!=='query-and-close-error'||error.recordError.code==='ECLOSE'));
+    assert.equal(options.max,1);assert.equal(options.connectionTimeoutMillis,1500);assert.equal(options.statement_timeout,1500);assert.equal(options.query_timeout,2000);assert.deepEqual(calls,['query','end']);
+  }
 });

@@ -101,18 +101,26 @@ export async function migrateWithLocks(mod, input, run, io) {
     });
   });
 }
+// Separate only the actual read-only connection port so its SQL and closure are exercised without a database.
+export async function confirmMigrationRunner(Pool, config, expected) {
+  const pool = new Pool({ connectionString: config.databaseUrl, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 1500, query_timeout: 2000, application_name: 'svc06-artifact-import-readonly' });
+  let primary = null;
+  try {
+    const rows = (await pool.query('SELECT id,maintenance_state,maintenance_version,maintenance_operation_id FROM flow.runners WHERE id=$1', [config.runner.runnerId])).rows;
+    assert.deepEqual(rows, [expected], 'RUNNER_MAINTENANCE_CHANGED');
+  } catch (error) { primary = error; }
+  finally {
+    try { await pool.end(); }
+    catch (error) { if (primary) primary.recordError = safeError(error); else primary = error; }
+  }
+  if (primary) throw primary;
+}
 function productionIO(mod, input, run, healthy) {
   const rec = (name, value) => record(join(run, name), value);
   return {
     record: rec, fresh: () => freshInstallation(mod, input),
     space: async () => { healthy(); return free(input.installationDirectory, input.budget.freshBytes); },
-    runner: async config => {
-      const pool = new mod.Pool({ connectionString: config.databaseUrl, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 1500, query_timeout: 2000, application_name: 'svc06-artifact-import-readonly' });
-      try {
-        const rows = (await pool.query('SELECT id,maintenance_state,maintenance_version,maintenance_operation_id FROM runners WHERE id=$1', [config.runner.runnerId])).rows;
-        assert.deepEqual(rows, [input.expectedRunner], 'RUNNER_MAINTENANCE_CHANGED');
-      } finally { await pool.end(); }
-    },
+    runner: config => confirmMigrationRunner(mod.Pool, config, input.expectedRunner),
     original: async () => {
       await directory(input.sourceDirectory, input.sourceDirectoryIdentity);
       const original = await mod.backend.verifyBackendArtifact({ directory: input.sourceDirectory, artifact: input.artifact });
