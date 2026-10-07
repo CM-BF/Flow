@@ -77,19 +77,31 @@
       "sha256": "903180a14c48872382ecb92a47fb9facce3dc3bacc2c62f66af9604c2167508e"
     },
     {
-      "path": "plans/o16-continuous-goal-acceptance/review.md",
-      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
-      "bytes": 12157,
-      "sha256": "bb764a2b2d7ba0496f50227e836b4c5345967ea1aa623e1fb6ae3fb095be7d26"
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+      "bytes": 21363,
+      "sha256": "746e87f182b72c750cdf8f832af6cf7090b7e9526c87a80ff5473bd81f18bb84"
     },
     {
-      "path": "plans/o16-continuous-goal-acceptance/status.md",
-      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
-      "bytes": 20798,
-      "sha256": "5e622eb901ddf80b78682ea24517ddd3e0397c0a48f4d748737a8956d9d38754"
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+      "bytes": 12419,
+      "sha256": "485e09daf06d1f2f7c12815a6e600311d67ffba3061af9f6bb7e33da3adecd64"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/disposition-summary.json",
+      "fixedRef": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+      "bytes": 1694,
+      "sha256": "c059c83b9d372419d7f08a0bda72b7e12293756b7fc783ef09770c4f295450a0"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md",
+      "fixedRef": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+      "bytes": 1390,
+      "sha256": "c47538c73d7836d74494e9468dab8cf38c8c22f8f1ebdcee70fb43beabdf1812"
     }
   ],
-  "bindingCount": 14,
+  "bindingCount": 16,
   "inherited": [
     {
       "path": "docs/evidence/o16/native-plan-20261007-r3/preflight.json",
@@ -135,5 +147,21 @@
   "checks": "3 pure safe_status checks plus Node syntax; no old suites rerun",
   "cleanup": "two owned groups absent/dual EOF; native initialization427B exact new scratch KEEP; selfcheck own bytecode cleaned; old KEEP untouched",
   "sensitiveRaw": "279B memory-only, never archived/hashed/emitted",
-  "scope": "Fixed public status route, not SDK query authorization/account logout/model qualification"
+  "scope": "Fixed public status route, not SDK query authorization/account logout/model qualification",
+  "supersededMetadataBindings": [
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 12157,
+      "sha256": "bb764a2b2d7ba0496f50227e836b4c5345967ea1aa623e1fb6ae3fb095be7d26"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 20798,
+      "sha256": "5e622eb901ddf80b78682ea24517ddd3e0397c0a48f4d748737a8956d9d38754"
+    }
+  ],
+  "dispositionTarget": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+  "fidelity": "Original native result.json overwritten by derived RESULT.json on case-insensitive filesystem before477e; original full observations unavailable; remaining facts separately sourced by disposition-summary.json. Original raw stdout was intentionally never persisted."
 }
