@@ -1,0 +1,560 @@
+--- a/tools/personal-preview/backend-release/host.mjs
++++ b/tools/personal-preview/backend-release/host.mjs
+@@ -1,4 +1,6 @@
+-import { readFile, lstat, realpath } from 'node:fs/promises';
++import { readFile, lstat, realpath, open } from 'node:fs/promises';
++import { constants } from 'node:fs';
++import { createHash } from 'node:crypto';
+ import { join } from 'node:path';
+ import { BACKEND_POLICY, verifyBackendArtifact } from './index.mjs';
+ import { fail } from './files.mjs';
+@@ -24,6 +26,75 @@
+   const entry = join(verified.root, 'tools/personal-preview/cli.mjs');
+   if (!verified.manifest.inventory.entries.some(value => value.path === 'tools/personal-preview/backend-release/host.mjs')) fail('BACKEND_HOST_VERSION_UNSUPPORTED');
+   return { root: verified.root, entry, artifact };
++}
++const statIdentity = info => [info.dev, info.ino, info.uid, info.mode, info.size, info.mtimeMs, info.ctimeMs];
++async function launchRuntimeIdentity(config, artifact) {
++  const store = join(config.directory, 'backend-artifacts');
++  const location = join(store, artifact.artifactId), root = join(location, 'root');
++  const directories = [];
++  for (const path of [config.directory, store, location, root]) {
++    const info = await lstat(path);
++    if (!info.isDirectory() || info.isSymbolicLink() || info.uid !== process.getuid()
++      || (path !== root && (info.mode & 0o777) !== 0o700) || await realpath(path) !== path) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++    // Installation state changes during startup; its inode/permissions, not its directory mtime, are fixed.
++    directories.push([info.dev, info.ino, info.uid, info.mode]);
++  }
++  const path = join(location, 'manifest.json');
++  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
++  try {
++    const before = await file.stat();
++    if (!before.isFile() || before.nlink !== 1 || before.uid !== process.getuid()
++      || (before.mode & 0o777) !== 0o600 || before.size > 32 * 1024 ** 2) fail('BACKEND_MANIFEST_INVALID');
++    const bytes = Buffer.alloc(before.size + 1); let length = 0;
++    while (length < bytes.length) { const read = await file.read(bytes, length, bytes.length - length, null); if (!read.bytesRead) break; length += read.bytesRead; }
++    const identity = statIdentity(before), after = await file.stat(), named = await lstat(path);
++    if (length !== before.size || named.isSymbolicLink() || named.nlink !== 1
++      || JSON.stringify(identity) !== JSON.stringify(statIdentity(after))
++      || JSON.stringify(identity) !== JSON.stringify(statIdentity(named))) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++    const hash = createHash('sha256').update(bytes.subarray(0, length)).digest('hex');
++    if (hash !== artifact.manifestDigest) fail('BACKEND_MANIFEST_MISMATCH');
++    return JSON.stringify({ directories, manifest: identity, hash });
++  } finally { await file.close(); }
++}
++/** One wrapper launch only. Full verification establishes the result; reuse rechecks its
++ * namespace, exact descriptor and private root/manifest identity. Nothing survives this object. */
++export function createLaunchRuntimeResolver(resolveRuntime = backendRuntime) {
++  let namespace, verified, sealed = false, busy = false, failed = false, candidates = 0;
++  return Object.freeze({
++    seal() { if (busy || failed) fail('BACKEND_LAUNCH_UNCONFIRMED'); sealed = true; },
++    async resolve(config, input) {
++      if (busy || failed) fail('BACKEND_LAUNCH_UNCONFIRMED');
++      busy = true;
++      try {
++        const nextNamespace = JSON.stringify([config.directory, config.repository]);
++        if (namespace !== undefined && namespace !== nextNamespace) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++        namespace = nextNamespace;
++        const artifact = input == null ? null : Object.freeze(webHostArtifactDescriptor(input));
++        const key = JSON.stringify(artifact);
++        if (verified && key !== verified.key && sealed) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++        // Legacy repository resolution retains the original path and does not acquire a cache.
++        if (!artifact) {
++          if (verified) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++          return await resolveRuntime(config, null);
++        }
++        const identity = await launchRuntimeIdentity(config, artifact);
++        if (verified?.key === key) {
++          if (identity !== verified.identity) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++          return verified.runtime;
++        }
++        // assertInstallationSource may inspect current and pending backend descriptors.
++        if (++candidates > 2) fail('BACKEND_LAUNCH_UNCONFIRMED');
++        const runtime = await resolveRuntime(config, artifact);
++        if (identity !== await launchRuntimeIdentity(config, artifact)
++          || runtime.root !== join(config.directory, 'backend-artifacts', artifact.artifactId, 'root')
++          || runtime.entry !== join(runtime.root, 'tools/personal-preview/cli.mjs')
++          || JSON.stringify(runtime.artifact) !== key) fail('BACKEND_LAUNCH_IDENTITY_CHANGED');
++        verified = { key, identity, runtime: Object.freeze({ root: runtime.root, entry: runtime.entry, artifact }) };
++        return verified.runtime;
++      } catch (error) { failed = true; throw error; }
++      finally { busy = false; }
++    },
++  });
+ }
+ /** Web selection is separate from the artifact selected for center/runner/maintenance. */
+ export function webHostArtifactDescriptor(value) {
+--- a/tools/personal-preview/preview.mjs
++++ b/tools/personal-preview/preview.mjs
+@@ -10,12 +10,12 @@
+ import { Pool } from 'pg';
+ import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
+ import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
+-import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
++import { readRunnerInitialization, openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
+ import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
+ import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
+ import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
+ 
+-import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor } from './backend-release/host.mjs';
++import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor, createLaunchRuntimeResolver } from './backend-release/host.mjs';
+ import { prepareBackendArtifact } from './backend-release/index.mjs';
+ import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility, loadReleaseAssets } from './web-release.mjs';
+ 
+@@ -52,12 +52,12 @@
+   await outsideGit(actual);
+   return actual;
+ }
+-async function load(directory, serviceRole = null) {
++async function load(directory, serviceRole = null, launchRuntime = null) {
+   const path = await directoryPath(directory);
+   const config = await privateJson(join(path, 'config.json'));
+   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
+     || !/^flow_preview_[a-f0-9]{24}$/.test(config.databaseName) || !/^[a-f0-9-]{36}$/.test(config.installationId)) fail('CONFIGURATION_IDENTITY_MISMATCH');
+-  await assertInstallationSource(config, repository, serviceRole);
++  await assertInstallationSource(config, repository, serviceRole, launchRuntime);
+   const url = new URL(config.databaseUrl);
+   const admin = new URL(config.adminUrl);
+   if (url.pathname !== `/${config.databaseName}` || !['postgres:', 'postgresql:'].includes(admin.protocol) || admin.hostname !== '127.0.0.1' || admin.pathname !== '/postgres'
+@@ -161,7 +161,7 @@
+   const deadline = Date.now() + 10_000;
+   do {
+     if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
+-    if (role === 'runner') { if (await configuredProfile(config)) return; }
++    if (role === 'runner') { if (await readRunnerInitialization({ directory: config.directory, recordKey: role, record, runnerId: config.runner?.runnerId }) && await configuredProfile(config)) return; }
+     else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
+       && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead))) return;
+     await sleep(50);
+@@ -235,7 +235,9 @@
+ /** Private child entry: credentials stay in its environment and never appear in arguments or output. */
+ export async function runService(directory, role) {
+   if (!roles.includes(role)) fail('UNKNOWN_SERVICE');
+-  const config = await load(directory, role);
++  const launchRuntime = createLaunchRuntimeResolver();
++  const config = await load(directory, role, launchRuntime);
++  launchRuntime.seal();
+   const nonce = process.argv.find(value => value.startsWith('--flow-preview='))?.slice('--flow-preview='.length);
+   const deadline = Date.now() + 2000;
+   let owned = false;
+@@ -256,7 +258,7 @@
+     const browser = await readBrowserSessionLaunch(config);
+     const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
+     await stage('runtime');
+-    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);
++    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime);
+     let args; let cwd = runtime.root;
+     if (role === 'center') args = ['--import', 'tsx', 'apps/server/src/main.ts'];
+     else if (role === 'runner') args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
+@@ -270,9 +272,9 @@
+         String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
+     }
+     await stage('child-spawn');
+-    child = spawn(process.execPath, args, { cwd, env, stdio: ['ignore', 'ignore', 'pipe'] });
++    child = spawn(process.execPath, args, { cwd, env, stdio: role === 'runner' ? ['ignore', 'ignore', 'pipe', 'ipc'] : ['ignore', 'ignore', 'pipe'] });
+     process.on('SIGTERM', stop); process.on('SIGINT', stop);
+-    const result = await observeStartupChild(child, diagnostic);
++    const result = await observeStartupChild(child, diagnostic, role === 'runner' ? { runnerId: config.runner.runnerId } : {});
+     diagnostic = null;
+     await save(join(config.directory, `${role}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
+     process.exitCode = result.code ?? (stopping ? 0 : 1);
+--- a/tools/personal-preview/startup-diagnostics.mjs
++++ b/tools/personal-preview/startup-diagnostics.mjs
+@@ -1,5 +1,5 @@
+ import { constants, writeSync, fsyncSync, fstatSync } from 'node:fs';
+-import { open, lstat, realpath, mkdir, rename } from 'node:fs/promises';
++import { open, lstat, realpath, mkdir, rename, unlink } from 'node:fs/promises';
+ import { join } from 'node:path';
+ import { createHash, randomUUID } from 'node:crypto';
+ 
+@@ -68,7 +68,8 @@
+   const identity = await privateDirectory(parent);
+   const stem = join(parent, `${role}-${nonce}`);
+   const output = await open(`${stem}.stderr`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
+-  let stream, retained = 0, observed = 0, writeError, closed = false;
++  let stream, retained = 0, observed = 0, writeError, closed = false, runtimeInitialized;
++  let writes = Promise.resolve();
+   const digest = createHash('sha256');
+   async function checkIdentity() {
+     const current = await privateDirectory(directory), child = await privateDirectory(parent);
+@@ -85,16 +86,20 @@
+       if (state.processes?.[role]?.nonce !== nonce || state.processes[role].pid !== pid) fail();
+     } finally { await file.close(); }
+   }
+-  async function record(phase, detail = {}) {
++  async function persist(phase, detail) {
+     if (!phases.includes(phase)) fail();
+     await checkIdentity();
+-    const value = { format: 1, role, nonce, pid, phase, at: new Date().toISOString(), ...detail };
++    const value = { format: 1, role, nonce, pid, phase, at: new Date().toISOString(), ...detail, ...(runtimeInitialized ? { runtimeInitialized } : {}) };
+     try { privateFile(await lstat(`${stem}.json`, { bigint: true }), 4096); }
+     catch (error) { if (error.code !== 'ENOENT') throw error; }
+     const temporary = `${stem}.${randomUUID()}.tmp`;
+     const file = await open(temporary, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
+     try { await file.writeFile(JSON.stringify(value) + '\n'); await file.sync(); } finally { await file.close(); }
+     await rename(temporary, `${stem}.json`); await syncDirectory(parent);
++  }
++  function record(phase, detail = {}) {
++    writes = writes.then(() => persist(phase, detail));
++    return writes;
+   }
+   const streamError = error => { writeError ??= startupErrorCode(error); };
+   const consume = bytes => {
+@@ -114,6 +119,18 @@
+   catch (error) { await output.close(); throw error; }
+   return {
+     stage: phase => record(phase),
++    async initialized(childPid, runnerId) {
++      if (closed || role !== 'runner' || runtimeInitialized || !Number.isSafeInteger(childPid) || childPid < 2
++        || typeof runnerId !== 'string' || runnerId.length < 1 || runnerId.length > 256) fail();
++      // Publish only after the record and its directory are durable. Any failed write/sync leaves
++      // this bounded marker, so even a renamed-but-unconfirmed positive record is not readiness.
++      const pending = await open(`${stem}.initializing`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
++      try { await pending.sync(); } finally { await pending.close(); }
++      runtimeInitialized = { protocol: 'flow.runner-startup.v1', childPid, runnerId };
++      await record('child-running');
++      // This is the final publication operation. A crash can retain the marker, conservatively.
++      await unlink(`${stem}.initializing`);
++    },
+     capture(stderr) {
+       if (stream || closed || !stderr) fail(); stream = stderr;
+       stream.on('data', consume); // Beyond 64KiB, drain without retaining or queuing any further chunks.
+@@ -141,15 +158,55 @@
+ }
+ 
+ /** Observe the actual child through exit even when diagnostic persistence fails. */
+-export async function observeStartupChild(child, diagnostic) {
++export async function observeStartupChild(child, diagnostic, { runnerId } = {}) {
++  let ended = false, initialization;
++  let diagnosticError, stderr;
+   const exited = new Promise(resolve => {
+-    child.once('error', error => resolve({ code: null, signal: 'start-error', startupError: startupErrorCode(error) }));
+-    child.once('exit', (code, signal) => resolve({ code, signal }));
++    child.once('error', error => { ended = true; resolve({ code: null, signal: 'start-error', startupError: startupErrorCode(error) }); });
++    child.once('exit', (code, signal) => { ended = true; resolve({ code, signal }); });
+   });
+-  let diagnosticError, stderr;
++  const initialized = value => {
++    // One parent-created channel, one exact message. Neither stderr nor SDK events enter here.
++    if (!ended && value && Object.keys(value).sort().join() === 'protocol,runnerId,type'
++      && value.protocol === 'flow.runner-startup.v1' && value.type === 'runtime-initialized'
++      && value.runnerId === runnerId && typeof runnerId === 'string' && runnerId.length <= 256) {
++      initialization = Promise.resolve().then(() => diagnostic.initialized(child.pid, runnerId))
++        .catch(error => { diagnosticError ??= startupErrorCode(error); });
++    }
++    if (child.connected) { try { child.disconnect(); } catch { /* A closed one-shot channel never licenses a second message. */ } }
++  };
++  if (runnerId !== undefined && child.connected) child.once('message', initialized);
+   try { diagnostic.capture(child.stderr); } catch (error) { diagnosticError = startupErrorCode(error); child.stderr?.on('error', () => {}); child.stderr?.resume(); }
+   try { await diagnostic.stage('child-running'); } catch (error) { diagnosticError ??= startupErrorCode(error); }
+   const result = await exited;
++  child.off('message', initialized);
++  await initialization;
+   try { stderr = await diagnostic.finish(result, result.startupError ? { code: result.startupError } : undefined); } catch (error) { diagnosticError ??= startupErrorCode(error); }
+   return { ...result, ...(stderr ? { stderr } : {}), ...(diagnosticError ? { diagnosticError } : {}) };
+ }
++
++/** A published profile is durable configuration. Only a receipt from this launch proves local initialization. */
++export async function readRunnerInitialization({ directory, recordKey, record, runnerId }) {
++  if (recordKey !== 'runner' || !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(record?.nonce ?? '')
++    || !Number.isSafeInteger(record?.pid) || record.pid < 2 || typeof runnerId !== 'string' || runnerId.length < 1 || runnerId.length > 256) return false;
++  const parent = join(directory, 'startup-diagnostics'), path = join(parent, `${recordKey}-${record.nonce}.json`);
++  try {
++    await privateDirectory(directory); await privateDirectory(parent);
++    const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
++    try {
++      const before = await file.stat({ bigint: true }); privateFile(before, 4096);
++      const bytes = Buffer.alloc(4097); let size = 0;
++      while (size < bytes.length) { const part = await file.read(bytes, size, bytes.length - size, size); if (!part.bytesRead) break; size += part.bytesRead; }
++      const after = await file.stat({ bigint: true }), named = await lstat(path, { bigint: true }); privateFile(after, 4096);
++      if (!sameIdentity(before, after) || !sameIdentity(after, named) || before.mtimeNs !== after.mtimeNs || before.size !== after.size || size !== Number(before.size)) fail();
++      // A failed persistence stage can leave a valid-looking JSON file. It remains unconfirmed.
++      try { privateFile(await lstat(join(parent, `${recordKey}-${record.nonce}.initializing`), { bigint: true }), 0); return false; }
++      catch (error) { if (error.code !== 'ENOENT') throw error; }
++      const value = JSON.parse(bytes.subarray(0, size).toString('utf8')), initialized = value.runtimeInitialized;
++      return value.format === 1 && value.role === 'runner' && (value.recordKey ?? value.role) === recordKey && value.nonce === record.nonce
++        && value.pid === record.pid && value.phase === 'child-running' && initialized?.protocol === 'flow.runner-startup.v1'
++        && initialized.runnerId === runnerId && Number.isSafeInteger(initialized.childPid) && initialized.childPid > 1
++        && Object.keys(initialized).sort().join() === 'childPid,protocol,runnerId';
++    } finally { await file.close(); }
++  } catch (error) { if (error.code === 'ENOENT') return false; throw error; }
++}
+--- a/apps/runner/src/runtime.ts
++++ b/apps/runner/src/runtime.ts
+@@ -14,7 +14,8 @@
+ import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
+ import { NativeActivityBodyHost } from './native-activity-body/host.js';
+ 
+-export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
++export type RunnerNotice = { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
++  | { type: 'runtime-initialized'; runnerId: string; attemptId?: never };
+ export interface RunnerOptions {
+   baseUrl: string;
+   token: string;
+@@ -51,7 +52,7 @@
+   const active = new Map<string, Promise<void>>();
+   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
+   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
+-  let runnerId: string | undefined, queryOpportunity = true;
++  let runnerId: string | undefined, queryOpportunity = true, initialized = false;
+   function failed(error: unknown) {
+     if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
+     else if (!options.signal.aborted) {
+@@ -94,6 +95,12 @@
+         const opportunity = journal.opportunity;
+         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
+         if (options.signal.aborted || recoveryPending) continue;
++        if (!initialized) {
++          initialized = true;
++          // This attests local initialization, never center admission or an actual claim.
++          try { options.onNotice?.({ type: 'runtime-initialized', runnerId }); } catch { /* Observer failure cannot alter execution or replace its primary error. */ }
++          if (options.signal.aborted) continue;
++        }
+         let requestedAt = performance.now();
+         let response = queryOpportunity ? await client.claimOpportunityStatus(opportunity, requestSignal(options)) : undefined;
+         if (!response || response.state === 'missing') {
+--- a/apps/runner/src/main.ts
++++ b/apps/runner/src/main.ts
+@@ -2,7 +2,7 @@
+ import { loadCodexProductionRunnerConfiguration, loadRunnerConfiguration } from './configuration.js';
+ import { parseRunnerConcurrency } from './concurrency-configuration.js';
+ import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
+-import { runRunner } from './runtime.js';
++import { runRunner, type RunnerNotice } from './runtime.js';
+ import { loadProtocolEndpoints, runProtocolRunner } from './protocol-dispatch/index.js';
+ 
+ const shutdown = new AbortController();
+@@ -24,7 +24,12 @@
+     token: process.env.FLOW_RUNNER_TOKEN ?? '',
+     workingDirectory: process.env.FLOW_RUNNER_WORKDIR ?? '',
+     signal: shutdown.signal,
+-    onNotice: (notice: unknown) => process.stderr.write(`${JSON.stringify(notice)}\n`),
++    onNotice: (notice: RunnerNotice | { type: 'protocol-uncertain'; attemptId?: string }) => {
++      if (notice.type === 'runtime-initialized') {
++        // Only the service parent creates this private channel; SDK output is not a readiness input.
++        try { process.send?.({ protocol: 'flow.runner-startup.v1', type: notice.type, runnerId: notice.runnerId }, () => {}); } catch { /* Missing observation remains unknown to the parent. */ }
++      } else process.stderr.write(`${JSON.stringify(notice)}\n`);
++    },
+   };
+   if (codexSelected) {
+     const loaded = await loadCodexProductionRunnerConfiguration({ ...common, codexManifestFile: codexManifestFile!, launchManifestFile: launchManifestFile! });
+--- a/tools/personal-preview/maintenance-host.mjs
++++ b/tools/personal-preview/maintenance-host.mjs
+@@ -8,6 +8,7 @@
+ import { inspectOwnedProcess, stopOwnedProcess } from './process.mjs';
+ import { migrateRunnerMaintenance, commandRunnerMaintenance, readRunnerMaintenance } from '../../apps/server/src/runner-maintenance/index.ts';
+ 
++import { selectHeldPreviewWebHost } from './maintenance-target.mjs';
+ import { readWebRelease } from './web-release.mjs';
+ import { backendById, backendRuntime } from './backend-release/host.mjs';
+ import { pinnedBrowserSessionConfiguration } from './browser-session-configuration.mjs';
+@@ -78,6 +79,7 @@
+   const facts = await processFacts(state);
+   if (Object.values(facts).includes('unknown')) fail('EXISTING_PROCESSES_UNCONFIRMED');
+   if (operation.phase === 'ready-paused' && operation.target === target && Object.values(facts).every(value => value === 'running')) return { ...view, update: 'ready-paused', source: target };
++  if (operation.webHostTarget?.status === 'pending') await selectHeldPreviewWebHost(config, pool, state, operation);
+   const artifact = await preparePreviewWeb(config, target, operation.backendArtifact);
+   await confirmSource();
+   // The durable gate and HTTP denial of maintenance resume protect this interval.
+@@ -89,7 +91,12 @@
+   await confirmSource();
+   operation.phase = 'starting'; operation.target = target;
+   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);
++  if (operation.webHostTarget) { state.webHost.selection = 'starting'; await savePreviewJson(join(config.directory, 'state.json'), state); }
+   await startPreviewServices(config, state, artifact, operation.backendArtifact);
++  if (operation.webHostTarget) {
++    state.webHost.selection = 'ready'; state.webHost.recordSha256 = createHash('sha256').update(JSON.stringify(state.processes.web)).digest('hex');
++    await savePreviewJson(join(config.directory, 'state.json'), state);
++  }
+   await confirmSource();
+   operation.phase = 'ready-paused';
+   await savePreviewJson(join(config.directory, 'maintenance.json'), operation);
+--- /dev/null
++++ b/tools/personal-preview/maintenance-target.mjs
+@@ -0,0 +1,187 @@
++import { constants } from 'node:fs';
++import { open } from 'node:fs/promises';
++import { isAbsolute, join } from 'node:path';
++import { createHash } from 'node:crypto';
++import { Pool } from 'pg';
++import { canonical, transaction } from '../../apps/server/src/database.ts';
++import { readPreviewJson, withPreviewLock, assertPreviewMarker, inspectPreviewWebHostSource } from './preview.mjs';
++import { backendRuntime, serviceRuntime, webHostArtifactDescriptor } from './backend-release/host.mjs';
++import { saveJson } from './backend-release/files.mjs';
++import { readWebRelease, findWebCompatibility, loadReleaseAssets } from './web-release.mjs';
++import { pinnedBrowserSessionConfiguration } from './browser-session-configuration.mjs';
++import { inspectOwnedProcess } from './process.mjs';
++
++const uuid = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/;
++const hash = /^[a-f0-9]{64}$/;
++const roles = ['center', 'runner', 'web'];
++const fingerprint = value => createHash('sha256').update(canonical(value)).digest('hex');
++const fail = code => { throw Object.assign(new Error(code), { code }); };
++const codes = new Set(['MAINTENANCE_TARGET_INPUT', 'MAINTENANCE_TARGET_LOADER', 'MAINTENANCE_TARGET_CHANGED',
++  'MAINTENANCE_TARGET_OPERATION', 'MAINTENANCE_TARGET_HOLD', 'MAINTENANCE_TARGET_BUSY', 'MAINTENANCE_TARGET_PROCESSES',
++  'MAINTENANCE_TARGET_WEB', 'MAINTENANCE_TARGET_SELECTION', 'MAINTENANCE_TARGET_AUDIT_LIMIT', 'MAINTENANCE_TARGET_WRITE_UNCONFIRMED',
++  'BACKEND_MANIFEST_MISMATCH', 'BACKEND_INSTALLATION_SOURCE_MISMATCH', 'WEB_COMPATIBILITY_REQUIRED',
++  'WEB_COMPATIBILITY_INVALID', 'EIO', 'ENOSPC', 'EACCES', 'EPERM', 'EEXIST', 'ENOENT']);
++function failure(phase, error) {
++  let code = null;
++  try { if (codes.has(error?.code) || /^[0-9A-Z]{5}$/.test(error?.code ?? '')) code = error.code; } catch { /* Unknown stays unknown. */ }
++  return { phase, code };
++}
++function request(value) {
++  const keys = ['directory', 'operationId', 'requestId', 'expectedVersion', 'expectedOperationDigest', 'expectedStateDigest',
++    'expectedWebReleaseDigest', 'expectedBackendArtifact', 'expectedWebHostArtifact', 'targetArtifact'];
++  if (!value || Object.keys(value).sort().join() !== keys.sort().join() || !isAbsolute(value.directory ?? '')
++    || !uuid.test(value.operationId ?? '') || !uuid.test(value.requestId ?? '')
++    || !Number.isSafeInteger(value.expectedVersion) || value.expectedVersion < 1
++    || !['expectedOperationDigest', 'expectedStateDigest', 'expectedWebReleaseDigest'].every(key => hash.test(value[key] ?? ''))) fail('MAINTENANCE_TARGET_INPUT');
++  const expectedBackendArtifact = webHostArtifactDescriptor(value.expectedBackendArtifact);
++  const targetArtifact = webHostArtifactDescriptor(value.targetArtifact);
++  const expectedWebHostArtifact = value.expectedWebHostArtifact === null ? null : webHostArtifactDescriptor(value.expectedWebHostArtifact);
++  if (targetArtifact.artifactId === expectedBackendArtifact.artifactId) fail('MAINTENANCE_TARGET_INPUT');
++  return { ...value, expectedBackendArtifact, expectedWebHostArtifact, targetArtifact };
++}
++function same(actual, expected) { return canonical(actual ?? null) === canonical(expected ?? null); }
++
++async function durableJson(directory, path, value) {
++  if (Buffer.byteLength(JSON.stringify(value) + '\n') > 65536) fail('MAINTENANCE_TARGET_AUDIT_LIMIT');
++  await saveJson(path, value); // Exclusive temp, file fsync and rename; a failed temp is retained.
++  const handle = await open(directory, constants.O_RDONLY | constants.O_DIRECTORY | constants.O_NOFOLLOW);
++  try { await handle.sync(); } finally { await handle.close(); }
++  if (!same(await readPreviewJson(path), value)) fail('MAINTENANCE_TARGET_WRITE_UNCONFIRMED');
++}
++async function retainedWeb(config, release, target) {
++  if (!release || !Array.isArray(release.artifacts) || !release.artifacts.length) fail('MAINTENANCE_TARGET_WEB');
++  const { context } = await pinnedBrowserSessionConfiguration(config);
++  // Always qualify every retained page against the NEW source, including legacy context=null.
++  for (const artifact of release.artifacts) await findWebCompatibility({ directory: config.directory, artifact,
++    backendHead: target.sourceHead, expectedContext: context });
++  await loadReleaseAssets({ directory: config.directory, release, expectedBackendHead: target.sourceHead, expectedContext: context });
++}
++async function heldRunner(client, config, operationId, version) {
++  await client.query("SET LOCAL lock_timeout='2s'; SET LOCAL statement_timeout='3s'; SET LOCAL idle_in_transaction_session_timeout='10s'");
++  const row = (await client.query('SELECT id,token_hash,revoked,maintenance_state,maintenance_version,maintenance_operation_id FROM flow.runners WHERE id=$1 FOR UPDATE', [config.runner.runnerId])).rows[0];
++  if (!row || row.id !== config.runner.runnerId || row.revoked || row.token_hash !== createHash('sha256').update(config.runner.token).digest('hex')
++    || row.maintenance_state !== 'maintenance' || row.maintenance_version !== version
++    || row.maintenance_operation_id !== operationId) fail('MAINTENANCE_TARGET_HOLD');
++  const counts = (await client.query(`SELECT count(*)::int AS active,count(*) FILTER(WHERE t.status='uncertain')::int AS uncertain
++    FROM flow.attempts a JOIN flow.tasks t ON t.id=a.task_id WHERE a.runner_id=$1 AND a.completed_at IS NULL`, [config.runner.runnerId])).rows[0];
++  if (counts?.active !== 0 || counts?.uncertain !== 0) fail('MAINTENANCE_TARGET_BUSY');
++}
++async function stopped(state) {
++  if (!state.processes || Object.keys(state.processes).sort().join() !== [...roles].sort().join()) fail('MAINTENANCE_TARGET_PROCESSES');
++  for (const role of roles) if (await inspectOwnedProcess(state.processes[role]) !== 'stopped') fail('MAINTENANCE_TARGET_PROCESSES');
++}
++
++/** Explicit trusted operator only. loadCurrentConfiguration is a fixed old installation's
++ * public loader, wired by the reviewed operator; it is never supplied by request JSON.
++ * No state/config rewrite, process start, maintenance transition or automatic retry occurs. */
++export async function rebindHeldPreviewTarget(input, { loadCurrentConfiguration } = {}) {
++  let phase = 'request', primary = null, writeAttempted = false, observedWritten = false;
++  const cleanup = [];
++  let result = null;
++  try {
++    input = request(input);
++    if (typeof loadCurrentConfiguration !== 'function') fail('MAINTENANCE_TARGET_LOADER');
++    phase = 'load-current-installation';
++    const config = await loadCurrentConfiguration(input.directory);
++    if (config.directory !== input.directory || !config.runner?.runnerId || !config.runner?.token) fail('MAINTENANCE_TARGET_LOADER');
++    phase = 'preview-lock';
++    await withPreviewLock(config, async () => {
++      let pool;
++      try {
++        phase = 'identity'; await assertPreviewMarker(config);
++        const operationPath = join(config.directory, 'maintenance.json');
++        const readInputs = async () => ({ operation: await readPreviewJson(operationPath),
++          state: await readPreviewJson(join(config.directory, 'state.json')), release: await readWebRelease(config.directory) });
++        const original = await readInputs();
++        const verifyInputs = ({ operation, state, release }) => {
++          if (fingerprint(operation) !== input.expectedOperationDigest || fingerprint(state) !== input.expectedStateDigest
++            || fingerprint(release) !== input.expectedWebReleaseDigest) fail('MAINTENANCE_TARGET_CHANGED');
++          if (operation.operationId !== input.operationId || !['drain-requested', 'starting', 'ready-paused'].includes(operation.phase)
++            || !same(operation.backendArtifact, input.expectedBackendArtifact) || operation.target !== input.expectedBackendArtifact.sourceHead
++            || operation.slots !== undefined || operation.webHostTarget !== undefined
++            || !same(state.backendArtifact, input.expectedBackendArtifact)) fail('MAINTENANCE_TARGET_OPERATION');
++          if (state.pendingWebHost || !same(state.webHost?.artifact, input.expectedWebHostArtifact)
++            || !release || !Array.isArray(release.artifacts) || !release.artifacts.length) fail('MAINTENANCE_TARGET_WEB');
++          if (!state.processes || Object.keys(state.processes).sort().join() !== [...roles].sort().join()) fail('MAINTENANCE_TARGET_PROCESSES');
++        };
++        verifyInputs(original);
++        // Verify the immutable target and each retained page before taking the DB row lock.
++        // A missing release must never fall through to preparePreviewWeb's build path.
++        phase = 'verify-target'; await backendRuntime(config, input.targetArtifact);
++        phase = 'verify-old-web-host'; await serviceRuntime(config, original.state, 'web');
++        phase = 'verify-new-web-host'; await serviceRuntime(config, { ...original.state, pendingWebHost: { artifact: input.targetArtifact } }, 'web');
++        phase = 'verify-retained-web'; await retainedWeb(config, original.release, input.targetArtifact);
++        phase = 'pool-open';
++        pool = new Pool({ connectionString: config.databaseUrl, max: 1, connectionTimeoutMillis: 1500,
++          statement_timeout: 3000, application_name: 'flow-preview-maintenance-target' });
++        phase = 'runner-lock';
++        result = await transaction(pool, async client => {
++          await heldRunner(client, config, input.operationId, input.expectedVersion);
++          phase = 'owned-stopped'; await stopped(original.state);
++          phase = 'compare-before-write';
++          const current = await readInputs(); verifyInputs(current);
++          const history = current.operation.targetRebindings ?? [];
++          if (!Array.isArray(history) || history.length >= 4 || history.some(item => item?.requestId === input.requestId)) fail('MAINTENANCE_TARGET_AUDIT_LIMIT');
++          const audit = { requestId: input.requestId, operationId: input.operationId, version: input.expectedVersion,
++            beforeDigest: input.expectedOperationDigest, before: { phase: current.operation.phase, target: current.operation.target, backendArtifact: current.operation.backendArtifact,
++              webHost: current.state.webHost ?? null, processes: current.state.processes },
++            after: { target: input.targetArtifact.sourceHead, backendArtifact: input.targetArtifact, webHostArtifact: input.targetArtifact },
++            stateDigest: input.expectedStateDigest, webReleaseDigest: input.expectedWebReleaseDigest,
++            webHostArtifact: input.expectedWebHostArtifact, recordedAt: new Date().toISOString() };
++          const next = { ...current.operation, phase: 'target-bound', target: input.targetArtifact.sourceHead,
++            backendArtifact: input.targetArtifact, webHostTarget: { policy: 'flow.held-web-target.v1', status: 'pending',
++              requestId: input.requestId, expectedVersion: input.expectedVersion, artifact: input.targetArtifact,
++              stateDigest: input.expectedStateDigest, webReleaseDigest: input.expectedWebReleaseDigest }, targetRebindings: [...history, audit] };
++          if (Buffer.byteLength(JSON.stringify(next) + '\n') > 65536) fail('MAINTENANCE_TARGET_AUDIT_LIMIT');
++          phase = 'operation-write'; writeAttempted = true;
++          await durableJson(config.directory, operationPath, next);
++          observedWritten = true; phase = 'transaction-close';
++          return { operationId: input.operationId, requestId: input.requestId, version: input.expectedVersion,
++            target: input.targetArtifact.sourceHead, artifactId: input.targetArtifact.artifactId, operationDigest: fingerprint(next) };
++        });
++      } catch (error) { primary ??= failure(phase, error); }
++      finally {
++        if (pool) try { await pool.end(); } catch (error) { cleanup.push(failure('pool-close', error)); }
++      }
++    });
++  } catch (error) {
++    if (primary || result) cleanup.push(failure('lock-release', error)); else primary = failure(phase, error);
++  }
++  return { outcome: primary || cleanup.length ? 'unconfirmed' : 'target-bound',
++    mutation: observedWritten ? 'observed-written' : writeAttempted ? 'unknown' : 'not-written',
++    primary, cleanup, result, maintenance: 'held-required', retry: 'not-authorized', actualClaim: 'unknown' };
++}
++
++/** Called only by refresh inside the existing preview lock. No start, hold CAS, or retry.
++ * A partial two-file write leaves mismatched digests and must be separately reconciled. */
++export async function selectHeldPreviewWebHost(config, pool, state, operation) {
++  const intent = operation.webHostTarget;
++  if (!intent || intent.policy !== 'flow.held-web-target.v1' || intent.status !== 'pending'
++    || operation.phase !== 'target-bound' || operation.slots !== undefined || !uuid.test(intent.requestId ?? '')
++    || !Number.isSafeInteger(intent.expectedVersion) || intent.expectedVersion < 1
++    || !hash.test(intent.stateDigest ?? '') || !hash.test(intent.webReleaseDigest ?? '')
++    || !same(webHostArtifactDescriptor(intent.artifact), operation.backendArtifact)
++    || operation.target !== intent.artifact.sourceHead || state.pendingWebHost) fail('MAINTENANCE_TARGET_SELECTION');
++  const operationPath = join(config.directory, 'maintenance.json'), statePath = join(config.directory, 'state.json');
++  const originalOperationDigest = fingerprint(operation);
++  const compare = async () => {
++    if (fingerprint(await readPreviewJson(operationPath)) !== originalOperationDigest
++      || fingerprint(await readPreviewJson(statePath)) !== intent.stateDigest || fingerprint(state) !== intent.stateDigest
++      || fingerprint(await readWebRelease(config.directory)) !== intent.webReleaseDigest) fail('MAINTENANCE_TARGET_CHANGED');
++  };
++  await assertPreviewMarker(config); await compare();
++  await backendRuntime(config, intent.artifact);
++  await retainedWeb(config, await readWebRelease(config.directory), intent.artifact);
++  // The pending operation already authorizes this fixed new module's public loader.
++  const source = await inspectPreviewWebHostSource({ directory: config.directory, webHostArtifact: intent.artifact });
++  await transaction(pool, async client => {
++    await heldRunner(client, config, operation.operationId, intent.expectedVersion);
++    await stopped(state); await compare();
++    const selected = { ...state, webHost: { operationId: operation.operationId, artifact: intent.artifact, source,
++      selection: 'selected-stopped', targetRequestId: intent.requestId } };
++    await durableJson(config.directory, statePath, selected);
++    const next = { ...operation, webHostTarget: { ...intent, status: 'selected-stopped', selectedStateDigest: fingerprint(selected) } };
++    await durableJson(config.directory, operationPath, next);
++    Object.assign(state, selected); Object.assign(operation, next);
++  });
++}
