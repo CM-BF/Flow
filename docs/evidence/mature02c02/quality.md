@@ -31,3 +31,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-07 02:29:39 UTC：沿既有本地find-skills/clean-code/codebase-design方法只核本次结果边界：一次执行、主失败不被清理成功掩盖、原输出不可回写、worker退出与DB/TMP分别归属，metadata不引入第二状态机。5/6不当整体通过，第二任务失败原因尚UNKNOWN；旧unit/types不重跑，源码与准备manifest冻结。
 
 2026-10-07 02:38:35 UTC：按本地find-skills优先复用clean-code/codebase-design（同既存固定字节，无安装），分工独核runner与center链。fixture误把存储身份当执行工作目录；修为既有factory参数校验，补两不同cwd共享codeHome一项。保留原40×50ms/unknown/所有断言；最后GET有限元数据覆盖一条，不另请求。原R1痕迹不足处保持未知，0新检查/PG/KEEP根访问。
+
+2026-10-07 02:50:51 UTC：本段沿已安装技能复核职责与证据：fixture只校验既有factory cwd，持久root保持独立；1例验证通过，7旧例未选。首轮选错Python及后续ANSI摘要解析错误均保留原件，用离线核对纠正，不增加执行/重跑；之后用固定runtime/结构化report避免该类重复。流程仅一个local段，未建立新审批链或改业务断言。持久化后内部时间、外部tool最终exit、wait口径分开；未捕获紧邻外部开始UTC，wholewall保持unknown。旧PG KEEP根未触碰，当前产品/源无新delta。

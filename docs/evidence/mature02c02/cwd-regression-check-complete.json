@@ -1,0 +1,95 @@
+{
+  "kind": "C02_CWD_REGRESSION_LOCAL_SEGMENT",
+  "sourceHead": "da6b3de389af21333e5150db0564edef76b979d5",
+  "startedAt": "2026-10-07T02:50:07.017176+00:00",
+  "previousNotRun": "cwd-regression-check.json",
+  "correction": "Use fixed OPS14 Python 3.13 instead of system Python 3.9; no product change",
+  "python": "3.13.3",
+  "actualCodex": 0,
+  "PG": 0,
+  "provider": 0,
+  "execution": "RUN",
+  "freeBeforeBytes": 26568175616,
+  "freshGateReference": {
+    "path": "cwd-regression-check.json",
+    "sha256": "baf517c958da177c02e6f0ca571ae21e45bfb54843669bd3067a8c1c00e91c19"
+  },
+  "temporary": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-cwd-5ffs9p9e",
+    "dev": 16777234,
+    "ino": 123357235,
+    "removed": true,
+    "closedSample": {
+      "entries": 8,
+      "logicalBytes": 907,
+      "allocatedBytes": 8192,
+      "activePeak": "unknown"
+    }
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/native-harness/codex/continuity.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter=verbose",
+    "-t",
+    "keeps session storage fixed while each attempt uses its own working directory"
+  ],
+  "childStartedAt": "2026-10-07T02:50:07.076353+00:00",
+  "childFinishedAt": "2026-10-07T02:50:07.969976+00:00",
+  "supervision": {
+    "pid": 89630,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 894,
+    "observed_bytes": 1705,
+    "retained_bytes": 1705,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "utf8": "\n\u001b[1m\u001b[46m RUN \u001b[49m\u001b[22m \u001b[36mv4.0.18 \u001b[39m\u001b[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity\u001b[39m\n\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mcloses one transport and resumes the exact stored thread in another, using the same trusted directory\n \u001b[32m✓\u001b[39m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mkeeps session storage fixed while each attempt uses its own working directory\u001b[32m 8\u001b[2mms\u001b[22m\u001b[39m\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mdoes not start or replay a turn after wrong-resume\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mdoes not start or replay a turn after lost-resume\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mrejects a different profile id using the existing execution guard before any factory\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mdoes not publish a final after unknown-close\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mdoes not publish a final after approval\n \u001b[2m\u001b[90m↓\u001b[39m\u001b[22m apps/runner/src/native-harness/codex/continuity.test.ts\u001b[2m > \u001b[22mpreserves old ephemeral refusal and the separate engineering start recipe\n\n\u001b[2m Test Files \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[90m (1)\u001b[39m\n\u001b[2m      Tests \u001b[22m \u001b[1m\u001b[32m1 passed\u001b[39m\u001b[22m\u001b[2m | \u001b[22m\u001b[33m7 skipped\u001b[39m\u001b[90m (8)\u001b[39m\n\u001b[2m   Start at \u001b[22m 19:50:07\n\u001b[2m   Duration \u001b[22m 635ms\u001b[2m (transform 318ms, setup 0ms, import 507ms, tests 24ms, environment 0ms)\u001b[22m\n\n",
+    "bytes": 1705,
+    "sha256": "982e2d626f1690ffcb793cfa9b2cb7d18fce3412b3ae6884b8398fcc7d489640"
+  },
+  "processAndCaptureConfirmed": true,
+  "fixtures": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-cwd-5ffs9p9e/tmp/flow-c02-continuity-Yl6Tyc",
+      "dev": 16777234,
+      "ino": 123357322,
+      "absent": true
+    }
+  ],
+  "fixtureReceiptSha256": "301500e22943dfb73565a82e1b9fb0c99eb3f0d1e139fab67d63e594ee0c9d40",
+  "selected": null,
+  "passed": 0,
+  "notSelected": null,
+  "success": false,
+  "beforePersistenceAt": "2026-10-07T02:50:07.971196+00:00",
+  "elapsedBeforePersistenceSeconds": 0.9540801660623401
+}

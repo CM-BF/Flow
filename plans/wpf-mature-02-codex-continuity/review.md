@@ -1,5 +1,9 @@
 # C02 Review
 
+当前fixture delta da6b3de389af21333e5150db0564edef76b979d5：SOURCE_REVIEW_APPROVED / PUBLIC_API_VALIDATION_PENDING，architecture_read/gpt-6-astra，2026-10-07 02:42:01 UTC，0 P1/P2。3测试源与4请求input逐Git/WT/hash吻合；原R1失败/原件与旧负例保持。
+
+2026-10-07 02:50:51 UTC：新增cwd回归实际1/1通过、7未选，test process exit0。初次Python3.9在spawn前TypeError为0tests；改固定Python3.13后运行一次，外层ANSI计数解析误判exit1，离线核原1705B完整raw纠正，不重跑/不改原件。资源closed/absent及同inode清理完整；结果见cwd-regression-local-result.json，待固定结果复核，公开PG/真实native/用户连续聊天未据此验收。
+
 413420a1c0abc76850ab61f8bf67c9d9ac81a494：SOURCE_REVIEW_APPROVED / VALIDATION_PENDING，0 P1/P2。
 
 architecture_read / gpt-6-astra 于 2026-10-06 21:26:29 UTC 独审 storage/index/adapter/descriptor 与两个新测试；Mika/root 补 contracts/tasks/turn/wire/store 与固定0.154 resume schema并接收结论。仅固定源码审查，不是首片完整验收。
