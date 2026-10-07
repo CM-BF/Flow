@@ -52,4 +52,6 @@
 
 ## SVC05H01-08：恢复当前已发布网页的访问
 
-- [ ] **SVC05H01-08**：按原FLOW-001/REQ19范围，固定af51后台/d629网页v3，以既有web bootstrap仅替换Web；保center/runner/令牌/DB/任务/pointer和三个retained。新独立review、一次操作/source-window、前后保护事实与main收口分别留证。当前仅只读准备，不复用历史许可、不新增provider或刷新用户tab。方案：[本次唯一proposal](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json)。
+- [ ] **SVC05H01-08**：按原FLOW-001/REQ19范围，固定af51后台/d629网页v3，以既有web bootstrap仅替换Web；保center/runner/令牌/DB/任务/pointer和三个retained。新独立review、一次操作/source-window、前后保护事实与main收口分别留证。实际恢复与独立结果核验已完成，当前只待记录main接收；不复用历史许可、不新增provider或刷新用户tab。方案：[本次唯一proposal](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json)。
+
+2026-10-07 02:47:57 UTC：08已单次恢复网页访问，首页/identity200、原后台与发布tuple保持；旧Web exit1与根因unknown保留。结果由native独立限定批准、源窗口CLOSED，TODO暂保开放仅等记录main接收，不代表完整FLOW完成。见[实际记录](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-analysis.json)。

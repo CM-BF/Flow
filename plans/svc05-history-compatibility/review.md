@@ -163,3 +163,13 @@ Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5
 ## 当前d629/v3网页同版本恢复（待审）
 
 本次仅新web-recovery-d629-20261007记录；旧发布与中心恢复批准不扩大。已固定一次只读facts、原af51 bootstrap入口、当前准确请求tuple与38来源绑定。新操作NOT_RUN，作者不自批，待native_center_owner独立方案审查。
+
+### d629同版本Web恢复准备独审
+
+native_center_owner 独立 APPROVED_PREPARATION_ONLY `246db0d4beb277a14bc61816999308d6cf1ecfe7`，无P1/P2。6own/8af51/32runtime与3份retained报告12checks均匹配；Vite动态入口缺项已补，request0600。原件[独审](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/independent-review.json) / [绑定](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/independent-bindings.json)。reviewer无新probe/服务/PG；仅准备，实际操作未发生，旧许可不重用。
+
+## 2026-10-07 02:47:57 UTC：d629同版本Web实际恢复独立 APPROVED
+
+Reviewer native_center_owner；准备target `246db0d4beb277a14bc61816999308d6cf1ecfe7`，运行 `run-20261007T024419Z`。原件[结果review](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-independent-review.json)，SHA256 `ad5ba1e9117a3ea7f993c9f4e6003b4a5f797144f0dd8be064fdf38cbc76d043`；9份run原始文件绑定全匹配。一次CLI exit0/968ms/1379B/双EOF/operator absent，14后置检查全true，首页与identity200，旧组absent、新Webowned/listener。配置/后台runner/source/完整release tuple/DB元数据保持。无P1/P2，reviewer未新probe或执行。
+
+旧Web匹配nonce exit1仍原样；未证明原socket根因、未操作用户tab，不扩到浏览器功能或整个FLOW验收。Lead单独关闭源窗口并恢复main943a；[操作manifest](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-manifest.json)封存原始结果与独审，当前只待记录main接收。

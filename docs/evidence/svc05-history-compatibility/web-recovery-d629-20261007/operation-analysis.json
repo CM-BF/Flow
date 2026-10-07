@@ -1,0 +1,111 @@
+{
+  "at": "2026-10-07T02:47:57.088801+00:00",
+  "preparationTarget": "246db0d4beb277a14bc61816999308d6cf1ecfe7",
+  "run": "run-20261007T024419Z",
+  "result": "APPROVED_LIMITED_SAME_VERSION_RECOVERY_RESULT",
+  "timeline": {
+    "initialObservation": "2026-10-07T02:38:44.763Z",
+    "bootstrapStartedAt": "2026-10-07T02:45:02.253755+00:00",
+    "bootstrapFinishedAt": "2026-10-07T02:45:03.223312+00:00",
+    "postObservation": "2026-10-07T02:45:34.853Z",
+    "checkoutRestoredAt": "2026-10-07T02:45:52.107001+00:00",
+    "metadataRecordedAt": "2026-10-07T02:47:57.088801+00:00"
+  },
+  "operation": {
+    "bootstrapCalls": 1,
+    "exitCode": 0,
+    "elapsedMs": 968,
+    "operatorPid": 27036,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": null
+  },
+  "postChecks": {
+    "config.json": true,
+    "claude.json": true,
+    "maintenance.json": true,
+    "web-release.json": true,
+    "source": true,
+    "lockAbsent": true,
+    "centerPreserved": true,
+    "runnerPreserved": true,
+    "centerListener": true,
+    "webOwnedListener": true,
+    "oldWebGroupAbsent": true,
+    "databaseMetadataPreserved": true,
+    "rootReadable": true,
+    "identityMatches": true
+  },
+  "http": {
+    "root": {
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "observedBytes": 950,
+      "completeWithinBound": true,
+      "bodyRecorded": false
+    },
+    "identity": {
+      "status": 200,
+      "contentType": "application/json",
+      "observedBytes": 278,
+      "completeWithinBound": true,
+      "bodyRecorded": false,
+      "identity": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "releaseVersion": 3,
+        "releasePolicy": "flow-web-release-v1"
+      }
+    }
+  },
+  "oldWeb": {
+    "group": 99351,
+    "absent": true,
+    "exit": {
+      "at": "2026-10-07T02:45:02.620Z",
+      "code": 1,
+      "signal": null,
+      "oldNonceMatched": true
+    }
+  },
+  "newWeb": {
+    "pid": 27112,
+    "group": 27112,
+    "identity": "running",
+    "recordSha256": "e7ce674852447bc8d2319bbab373e5b457b2b8ffb46524dc6a62c925a4f1b699",
+    "members": [
+      {
+        "pid": 27112,
+        "ppid": 1,
+        "group": 27112
+      },
+      {
+        "pid": 27144,
+        "ppid": 27112,
+        "group": 27112
+      }
+    ]
+  },
+  "preserved": [
+    "config/profile/maintenance/release byte hashes",
+    "center and runner full process-record hashes",
+    "runtime source af51",
+    "complete release tuple and three retained descriptors",
+    "database marker and observed maintenance/task/queue metadata"
+  ],
+  "limits": [
+    "No new probe in closeout; only saved evidence read.",
+    "Observed database metadata equality is not a fresh 64-table body/hash check.",
+    "Old matching-nonce exit code 1 remains; socket failure root cause NOT_PROVEN.",
+    "HTTP root/identity recovery is not browser/UserTab functional acceptance.",
+    "No operator provider query, task creation, user-tab reload, center/runner restart or pointer change.",
+    "Full FLOW-001 goal remains outside this fragment."
+  ],
+  "sourceWindow": "CLOSED_RESTORED_MAIN",
+  "mainIntegration": "PENDING",
+  "review": "operation-independent-review.json"
+}
