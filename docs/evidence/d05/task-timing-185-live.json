@@ -1,0 +1,158 @@
+{
+  "at": "2026-10-07T03:49:47.232619+00:00",
+  "keys": [
+    "generatedAt",
+    "staleAfterHours",
+    "main",
+    "tasks",
+    "assignments",
+    "unregisteredAssignments",
+    "overview",
+    "milestones"
+  ],
+  "count": 185,
+  "selected": [
+    {
+      "id": "WPF-DASHBOARD-TIMING01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T03:43:09.826Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/plans/wpf-dashboard-task-timing/status.md",
+        "syncedAt": "2026-10-07T03:49:34.987Z",
+        "stale": false,
+        "ageHours": 0.12638527777777778
+      },
+      "timing": null,
+      "human": null,
+      "errors": null,
+      "review": {
+        "state": "unknown",
+        "record": "APPROVED",
+        "target": "72a9407e2e733479631b9409c36113e8f450b6f1",
+        "proof": {
+          "target": "72a9407e2e733479631b9409c36113e8f450b6f1",
+          "head": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+          "scopes": [
+            "apps/execution-dashboard/src/status.mjs",
+            "apps/execution-dashboard/public/app.js",
+            "apps/execution-dashboard/test/status-timestamps.test.mjs",
+            "apps/execution-dashboard/test/task-timing.browser.mjs"
+          ],
+          "observedAt": "2026-10-07T03:49:35.098Z",
+          "state": "unknown",
+          "implementationChanges": [],
+          "outsideChanges": [
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs"
+          ],
+          "metadataChanges": [
+            "docs/evidence/wpf-dashboard-task-timing/README.md",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first-status-parser.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/README.md",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/actual-exit.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/actual-summary.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/admission-preflight.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/archive.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/browser-results.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/chrome.log",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/execution-start.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/manifest.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/outer-stderr.log",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/outer-stdout.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/owned.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/parent-stderr.log",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/parent-stdout.log",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/post-cleanup.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/preparation.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/result.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/task-timing-dark-390.png",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/task-timing-light-390.png",
+            "docs/evidence/wpf-dashboard-task-timing/browser-first/worker-result.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-readiness/inputs.json",
+            "docs/evidence/wpf-dashboard-task-timing/browser-readiness/report.md",
+            "docs/evidence/wpf-dashboard-task-timing/main-intake.json",
+            "docs/evidence/wpf-dashboard-task-timing/parser-first/result.json",
+            "docs/evidence/wpf-dashboard-task-timing/parser-first/stderr.log",
+            "docs/evidence/wpf-dashboard-task-timing/parser-first/stdout.log",
+            "docs/evidence/wpf-dashboard-task-timing/quality.md",
+            "docs/evidence/wpf-dashboard-task-timing/registration-request.json",
+            "docs/evidence/wpf-dashboard-task-timing/root-72a-browser-actual-review.json",
+            "docs/evidence/wpf-dashboard-task-timing/root-72a-source-parser-review.json",
+            "docs/evidence/wpf-dashboard-task-timing/root-browser-preparation-review.json",
+            "docs/evidence/wpf-dashboard-task-timing/source-manifest.json",
+            "plans/wpf-dashboard-task-timing/plan.md",
+            "plans/wpf-dashboard-task-timing/review.md",
+            "plans/wpf-dashboard-task-timing/status.md"
+          ],
+          "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+        },
+        "declarationProof": "unknown"
+      }
+    },
+    {
+      "id": "SVC08",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T03:43:15.021Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/plans/svc08-web-connection-lifecycle/status.md",
+        "syncedAt": "2026-10-07T03:49:34.987Z",
+        "stale": false,
+        "ageHours": 0.19832972222222223
+      },
+      "timing": null,
+      "human": null,
+      "errors": null,
+      "review": {
+        "state": "not_started",
+        "record": "NOT_STARTED；当前仅部署/retained3文档候选待独审，原产品批准保留于下段。",
+        "target": "ad77c8aa21d88540a890b22562e8bbb2ce56e541"
+      }
+    },
+    {
+      "id": "OPS-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T03:37:24.403Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+        "syncedAt": "2026-10-07T03:49:34.987Z",
+        "stale": false,
+        "ageHours": 0.21946361111111112
+      },
+      "timing": null,
+      "human": null,
+      "errors": null,
+      "review": {
+        "state": "unknown",
+        "record": "SCOPED_REVIEW_COMPLETE — 仅模板与plans规则范围完成只读审查，不代表应用approval。**",
+        "target": "edca9fc5fe950a05ffe1ff89e5d31686182fb38c"
+      }
+    }
+  ],
+  "deployment": {
+    "at": "2026-10-07T03:49:29.583273+00:00",
+    "oldPid": 69115,
+    "oldConfirmedAbsent": true,
+    "newPid": 43188,
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "source": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "port": 4320,
+    "log": "/tmp/flow-dashboard-timing185-20261007.log",
+    "personalChanges": 0,
+    "tabsReloaded": 0,
+    "appSha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+    "rootStatus": 200
+  },
+  "actualBrowser": {
+    "method": "Codex IAB new temporary tab4; original tabs untouched",
+    "checkedAt": "2026-10-07T03:50:31.222396+00:00",
+    "visible": [
+      "185 sources",
+      "SVC08 card start 2026-10-07 03:03:21.259 UTC",
+      "SVC08 inclusive elapsed 0d 0h 46m 13s at snapshot03:49:34.987Z",
+      "Detail current completion NOT_COMPLETED, owner provenance, original waiting records and explicit wallclock-not-CPU meaning",
+      "Historical missing source/start remains unknown"
+    ],
+    "temporaryTabClosed": true
+  }
+}

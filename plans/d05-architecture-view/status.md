@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:25:48.805837+00:00 / main3230becf；登记185，实际运行加载待ACCESS部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:49:47.232619+00:00 / main52fe6669；计时与185源实际已部署 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,8 +18,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已登记任务时间展示和网页连接修复的唯一来源；进度继续读取原负责人状态。 |
-| 下一可用交付 | 随登录入口的受控部署加载新增来源，不为登记单独重启。 |
+| 当前产出 | 看板已显示任务开始、完成声明与含等待历时，并加载185个唯一来源；缺少历史依据的时间明确显示未知。 |
+| 下一可用交付 | 本片段已交付；登录入口独立验收后继续受控部署。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -203,3 +203,7 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-07T03:10:35.358722+00:00：登记SVC08唯一来源，184项；仅registry/source事实，真实检查与修复以原owner为准。见[登记](../../docs/evidence/d05/svc08-registry-intake.json)。本次没有产品检查/个人服务操作，actual载入待下个看板发布安全点。
 
 2026-10-07T03:25:48.805837+00:00：TIMING01 source156b/claim9a677v1按唯一请求登记185；保留其browser未验。SVC08来源184已main，实际4320当前载入183，新增两源随ACCESS部署加载；未重启/新增产品检查。证据[登记](../../docs/evidence/d05/task-timing-registry-intake.json)。
+
+## 2026-10-07T03:49:47.232619+00:00 计时与185来源实际加载
+
+[受管重载与真实IAB核对](../../docs/evidence/d05/task-timing-185-live.json)：52fe6669已审计时，旧69115确认身份后正常结束，新43188仅持4320；已实际见任务开工UTC、完成声明、含等待壁钟与详情来源。原用户tabs、个人61227/61228未改。TIMING01父链接/组合review范围两项metadata由Web owner收口，不改renderer或重跑原检查。
