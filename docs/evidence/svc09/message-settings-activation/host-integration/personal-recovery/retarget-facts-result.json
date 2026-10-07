@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-07T21:54:55.323660+00:00",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "kind": "HELD23_RETARGET_AND_SINGLE_READONLY_FACTS_DELTA",
+  "ready": false,
+  "inheritedPacket": "0be5884cc4937c7bf98dedcab5d072622783e7c1",
+  "preparationReviews": [
+    {
+      "main": "a8bd47b5e",
+      "path": "docs/evidence/i02/svc06b-held-recovery-preparation-review.json",
+      "decision": "APPROVED_LIMITED_HELD_RECOVERY_SOURCE_PREPARATION",
+      "at": "2026-10-07T21:39:50.246Z"
+    },
+    {
+      "path": "docs/evidence/i02/svc06b-held-facts-preparation-review.json",
+      "decision": "APPROVED_LIMITED_READONLY_FRESH_FACTS_PREPARATION",
+      "at": "2026-10-07T21:49:22.957Z"
+    }
+  ],
+  "target": {
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "descriptorSha256": "26349779972db34080f542199a17d01efbef13ee29e14681210aad2814957953"
+  },
+  "targetReference": "policy.mjs TARGET at00dcd + peer-recovery-r2-build-review.json; e15/source880060, cold/App/personal not implied",
+  "local": {
+    "freshFacts": {
+      "selected": 4,
+      "passed": 4,
+      "elapsedMs": 63,
+      "rawBytes": 561,
+      "path": "fresh-local-01",
+      "policyProvenance": "Reservation used original42a2 OLD held projection; target is not consumed by fresh collector. Own fresh-facts source/test equal00dcd."
+    },
+    "retarget": {
+      "selected": 2,
+      "passed": 2,
+      "elapsedMs": 60,
+      "rawBytes": 305,
+      "path": "retarget-local-01",
+      "distinctNew": 0,
+      "source": "00dcd",
+      "scope": "Affected TARGET/clone policy consumers; existing cases reselected, no artifact import."
+    },
+    "allThisOrdinary": {
+      "elapsedMs": 328,
+      "rawBytes": 2050,
+      "distinct": 11,
+      "earlyZeroSelectionFailures": 2,
+      "groupsAbsentDualEOF": 6,
+      "exactScratchRemoved": 5
+    }
+  },
+  "actual": {
+    "logicalId": "SVC06B-HELD23-READONLY-FRESH-FACTS-20261007-ONCE",
+    "start": "2026-10-07T21:53:19.106796Z",
+    "return": "2026-10-07T21:53:24.200188Z",
+    "operatorPid": 32628,
+    "childPid": 35267,
+    "elapsedMs": 5085,
+    "exitCode": 0,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "firstFailure": null,
+    "outcome": "OBSERVED_HELD23_NOT_EXECUTION_AUTHORIZATION",
+    "ready": false,
+    "sameOperation": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+    "maintenanceVersion": 23,
+    "threeOldRoles": {
+      "center": "stopped",
+      "runner": "stopped",
+      "web": "stopped"
+    },
+    "databasePoolClosed": true,
+    "remoteZeroConnectionBarrier": "NOT_OBSERVED",
+    "maximumPool": 1,
+    "namespace": "/private/tmp/flow-svc06-held-facts-20261007-once",
+    "namespaceDisposition": "KEEP",
+    "rawRecordBytes": 6914,
+    "captureBytes": 113,
+    "personalWrites": 0,
+    "services": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "preflight": {
+    "first": "21:52:18 zero-child PIN_FILE from incorrect universal uid501 check on fixed root-owned /usr/bin/python3. Original STOP retained; namespace not created, no pool. Parent explicitly allowed same unconsumed grant correction.",
+    "second": "Exact source/direct pins and effective inherited sources, installed cd27 full inventory, package aliases/roots/versions/file hashes checked in the same operator call before Node. 12858 files/15628 installed entries; floor15689515008/free18235240448.",
+    "checksPrecision": "Public file pin check compared regular-file kind, recorded/default owner uid, byte length and hash; package alias/root identities and installed links explicitly checked. It did not add a universal nlink1 rule to root system runtime; collector privateBytes enforces owned nlink1 separately.",
+    "record": "fresh-actual-once/preflight-02.json"
+  },
+  "readBoundary": "12 means collector two passes over six files. Old legal loader additionally parses config/state/maintenance/browser-policy and verifies artifact inventory. Claude credential body never parsed/copied/emitted; only permitted hashes persisted. Original invocation retained byte-for-byte.",
+  "evidenceLimits": [
+    "Point observation, not atomic snapshot or recovery authority; actual lock/CAS rechecks remain required.",
+    "Pool end resolved; no new remote connection probe or DB-marker query.",
+    "Original b692 cold TypeError/code null and cleanup42P01/KEEP, R1-R4 failures and all prior records unchanged.",
+    "Target replacement is one trusted policy tuple, not scattered runtime overrides. No final dispatch or recovery grant yet."
+  ],
+  "next": "Final e15 cold evidence + four source/context reports + exact candidate/dispatch and real window. No automatic personal mutation."
+}

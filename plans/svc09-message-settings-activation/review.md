@@ -103,3 +103,7 @@ source `233ef91d369e7d7f58bdec8a34f523ed27017639`；claim v7。14新直接例与
 2026-10-07T21:37:48.007638+00:00：source42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799，7不同检查通过、累计205ms/1184B；前两次0选择/退出1保留，最终119ms/796B。实际运行、完整闭包dispatch、修正artifact/cold/四App报告/新现场事实均未齐，NOT_READY；不把Lead预读无新增阻断当正式批准。最小manifest绑定原源码/原件与继承出处，无副本包。
 
 Peer cold结果34c610的独立限定结论见own `host-integration/peer-recovery-cold-review.json`，本owner0重跑/0私有正文，原TypeError null/42P01/KEEP保留；与owncaller源码审查职责分开。
+
+## e15与只读事实增量
+
+2026-10-07T21:54:55.323660+00:00：正式收录I02唯一 svc06b-held-recovery-preparation-review（main a8bd，21:39:50.246Z）与 svc06b-held-facts-preparation-review（21:49:22.957Z），分别仅42a2调用/00dcd只读准备批准。e15构建结果独立限定结论见own peer-recovery-r2-build-review.json；不代替cold/App/现场恢复。当前retarget-facts-manifest绑定本次一次只读原件与2受影响例，实际结果待Lead唯一保真独审。

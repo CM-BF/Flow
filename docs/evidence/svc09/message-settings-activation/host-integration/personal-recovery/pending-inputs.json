@@ -5,7 +5,7 @@
   "version": 23,
   "candidateArtifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
   "candidateSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
-  "targetState": "NOT_READY_COLD_FOUR_REPORTS_FRESH_FACTS_DISPATCH_REQUIRED",
+  "targetState": "NOT_READY_COLD_FOUR_REPORTS_DISPATCH_AND_ACTUAL_WINDOW_REQUIRED",
   "freshPersonalInputs": null,
   "reports": null,
   "dispatch": null,
@@ -13,11 +13,20 @@
   "providerQueries": 0,
   "publishNewWeb": false,
   "oldStagesReplay": false,
-  "meaning": "Pending values deliberately prevent execution; no current personal facts have been read or fabricated.",
+  "meaning": "Final-target build and one metadata-only personal observation are available. Cold/four reports/final dispatch/actual recovery window remain required; ready:false. Original private pins are point observations and must be rechecked under operation locks.",
   "buildResultReference": {
     "worktree": "backend-browser-recovery",
     "commit": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
     "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
     "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+  },
+  "freshFacts": {
+    "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+    "path": "fresh-actual-once/facts.json",
+    "sha256": "f86a283fa9a9b71c49bbeb6882d622c5c9baa81e7028d657dfe2519ad887bd30",
+    "at": "2026-10-07T21:53:19.198Z",
+    "finishedAt": "2026-10-07T21:53:24.176Z",
+    "ready": false,
+    "scope": "Point facts only; all six pins/digests/process identities rechecked under actual operation locks. Remote zero-connection barrier not observed."
   }
 }

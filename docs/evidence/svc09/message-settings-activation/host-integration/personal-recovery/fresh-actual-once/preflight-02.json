@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T21:53:19.099749+00:00",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "state": "active",
+    "branch": "codex/personal-message-settings",
+    "origin": "new",
+    "taskId": "SVC09A",
+    "worker": "native_center_owner",
+    "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 12,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "createdAt": "2026-10-07T14:08:33.408Z",
+    "updatedAt": "2026-10-07T21:00:39.748Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "pins": 12858,
+  "installedInventoryEntries": 15628,
+  "manifestSha256": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+  "sameCallPins": true,
+  "floor": 15689515008,
+  "free": 18235240448,
+  "namespace": {
+    "path": "/private/tmp/flow-svc06-held-facts-20261007-once",
+    "dev": 16777234,
+    "ino": 124567922
+  },
+  "priorPreflight": "root-owned fixed public python pin rejected by mistaken uid501 check; corrected to exact pin uid, no prior child/private namespace",
+  "readBoundary": "collector12 plus original public loader own configuration/policy reads; no personal mutation"
+}

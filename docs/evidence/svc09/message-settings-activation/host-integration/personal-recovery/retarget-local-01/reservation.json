@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T21:48:18.724611+00:00",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-isolation=none",
+    "--test-reporter=spec",
+    "--test-name-pattern=fixed held contract|migration policy",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.test.mjs"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9892,
+      "sha256": "45769d204bd1df546868ec42126cd44dc100c7a2aaeeab1c73f1d2d3d5ff0b18"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.test.mjs",
+      "bytes": 6855,
+      "sha256": "8487109f4b771f1d08d8bf12424e89fff7cf8a82107886e697f9b8e341fb9d73"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "priorMs": 268,
+  "priorRawBytes": 1745,
+  "totalWorkMs": 30000,
+  "rawLimit": 131072,
+  "scratchLimit": 8388608,
+  "floor": 16635330560,
+  "free": 18285187072,
+  "queueAt": "2026-10-07T21:47:48.334Z",
+  "queueSha256": "70d9264bd879c0de993e16728acb385bc6a82f0942a31d2d5d611e3597513f16",
+  "scratch": {
+    "path": "/private/tmp/flow-svc09-held-retarget-xp7v7ar2",
+    "dev": 16777234,
+    "ino": 124564239
+  },
+  "PG": 0,
+  "personal": 0,
+  "provider": 0
+}

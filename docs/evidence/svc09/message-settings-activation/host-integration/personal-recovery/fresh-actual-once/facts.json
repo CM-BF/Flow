@@ -1,0 +1,97 @@
+{
+  "kind": "SVC06B_HELD23_READONLY_FACTS",
+  "ready": false,
+  "at": "2026-10-07T21:53:19.198Z",
+  "outcome": "OBSERVED_HELD23_NOT_EXECUTION_AUTHORIZATION",
+  "phase": "complete",
+  "databasePoolClosed": true,
+  "cleanup": [],
+  "personalWrites": 0,
+  "providerQueries": 0,
+  "databaseMarker": "NOT_OBSERVED_THIS_ENTRY",
+  "actualClaim": "NOT_OBSERVED",
+  "installationIdentity": {
+    "dev": "16777234",
+    "ino": "117819905"
+  },
+  "privateFiles": {
+    "browser-session.json": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "bytes": 205,
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    },
+    "claude.json": {
+      "dev": "16777234",
+      "ino": "117819909",
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+    },
+    "config.json": {
+      "dev": "16777234",
+      "ino": "117819925",
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "maintenance.json": {
+      "dev": "16777234",
+      "ino": "124458071",
+      "bytes": 572,
+      "sha256": "f7d57609881b6cda4c106cb0741ff8850b8b27480b663c3ba853d938e5e609b4"
+    },
+    "state.json": {
+      "dev": "16777234",
+      "ino": "124458345",
+      "bytes": 4321,
+      "sha256": "2b7abddafb589cdd794089d5a43ac204cb83898dd0ecea6cc7b0443d3c108613"
+    },
+    "web-release.json": {
+      "dev": "16777234",
+      "ino": "123210668",
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "stateDigest": "b302cfd6203b6101338acfab0a04ca43f9f3c9b6a139ece85eac3459fe663f1c",
+  "operationDigest": "acb2889bd5b04b5fc0003e4210c1a945c241ebf647a333abf39c5c0f67827a53",
+  "releaseDigest": "ced7621a45ed8ef1b2bae3a11592650d047559c33b4c1c43f9a9e4c80b77d942",
+  "processDigests": {
+    "center": "874ccdfe33f811537d4c933e504213271d170bd66e27ece029fc3aa0dd6df2c9",
+    "runner": "06b682415cfbecbd124dbbb08e30da6ca6e81a05e9bdf65c30645b9bcfbd2df0",
+    "web": "dd901962b21f73e1deb1c3af79215c0df0f706f2855a498a213d93b3d0d4c93f"
+  },
+  "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+  "version": 23,
+  "expectedRunner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "maintenance_state": "maintenance",
+    "maintenance_version": 23,
+    "maintenance_operation_id": "35d5a7ff-5ef7-4938-9584-adb27f5357ff"
+  },
+  "source": {
+    "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "dirty": false
+  },
+  "backendArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+  },
+  "webHostArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "releaseVersion": 3,
+  "currentWebArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "processes": {
+    "center": "stopped",
+    "runner": "stopped",
+    "web": "stopped"
+  },
+  "finishedAt": "2026-10-07T21:53:24.176Z",
+  "elapsedMs": 4978,
+  "boundary": "Stable six-file observation and stopped old roles are point facts; actual recovery rechecks them under its locks. Missing/error remains unknown, no retry or service action."
+}

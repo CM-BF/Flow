@@ -6,33 +6,33 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T21:37:48.007638+00:00 |
+| 更新时间 | 2026-10-07T21:54:55.323660+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 同一维护操作的恢复调用已固定并通过局部检查，正在收口独立审查；新产物尚不能用于现场恢复。 |
-| 下一可用交付 | 修正后产物、冷启动和兼容报告齐备后，固定一次恢复输入与现场检查点。 |
-| 当前阻塞 | ACTIVE: 恢复产物存在已确认的适配错误，修正源已固定；仍需新产物冷启动、四份兼容报告和现场事实，不能沿旧产物恢复。 |
+| 当前产出 | 恢复调用已绑定修正产物，现场只读观察确认原维护状态与旧服务停止；新产物仍待冷启动和兼容验证。 |
+| 下一可用交付 | 冷启动与四份兼容报告齐备后，固定同一维护操作的恢复输入和检查点。 |
+| 当前阻塞 | ACTIVE: 新产物冷启动、四份兼容报告与最终执行输入尚未全部齐备，当前只读事实不能授权恢复。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799（同操作23恢复调用源码及原件） |
-| 实现目标 | 42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799 |
-| 工作分支状态 | review（同操作23恢复调用；实际输入未齐，NOT_READY） |
-| 工作树dirty状态 | 仅own计划/manifest收口；产品范围已归还，无个人操作 |
+| Head | 00dcd1b998e59efcf9a72721fbd75ee20c5be065（e15绑定与只读事实入口） |
+| 实现目标 | 00dcd1b998e59efcf9a72721fbd75ee20c5be065 |
+| 工作分支状态 | review（e15绑定与实际只读结果；恢复仍NOT_READY） |
+| 工作树dirty状态 | 仅own结果/计划收口，产品已归还；本次个人读取只读、无服务动作 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | held-target与cold helpers原限定独审已main；42a2调用结构Lead只读未见新增阻断，最终packet待限定准备审查；实际执行未授权 |
-| 检查状态 | 本片7不同直接例通过，最终119ms/796B；两次入口0选中失败保留，累计205ms/1184B，4组absent双EOF/3exact空scratchremoved。0PG/服务/个人/provider。 |
+| Review | 42a2恢复调用与00dcd只读入口已获Lead限定准备批准；本次实际只读结果待唯一独审，不冒恢复通过 |
+| 检查状态 | 原7不同+新4不同通过，2受影响例复选；普通累计328ms/2050B，原两次零选择失败保留。实际只读5085ms exit0/组absent双EOF；无个人写/服务/provider。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | held-target四产品main9c2886d95及中心接线86112a35e保持；cold helper固定Git来源已获I02 b00b8b9b0限定独审。42a2恢复调用尚未集成/未执行，不冒个人已恢复。 |
-| 运行窗口 | 本owner普通局部于2026-10-07T21:30:37.525086Z完整RETURN，无服务/PG。Peer cold实际失败RETURN21:23:59.394704Z仅作有限保真独审，DB/private KEEP；无新个人窗口。 |
+| 已集成main状态 | 原held-target/main9c288、cold helper/I02 b00与42a2准备独审main a8bd保持；e15构建仅获有限结果审查，本次现场只读结果待审，不冒个人恢复。 |
+| 运行窗口 | 只读一次START21:53:19.106796Z→RETURN21:53:24.200188Z；pool.end true，remote零连接未观察，ready:false。普通local21:48:18.809211Z RETURN；无pendinglaunch。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
-| 看板 | 唯一own status已正常更新；本片待限定准备审查，完整默认/双槽/个人激活仍开放。 |
+| 看板 | 唯一own status已更新；完整默认/双槽/个人激活仍开放。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -57,7 +57,7 @@
 | SVC09A-W10 | 2026-10-07T18:44:52.319Z | 2026-10-07T19:16:09.120Z | 资源 | 唯一新窗口与现场准入通过，等待以实际START结束；此前仅metadata/只读准备 | I02 svc09a-default-host-preparation-review.json；default-host-admission.json；default-host-start.json |
 | SVC09A-W11 | 2026-10-07T20:06:52.758952Z | 2026-10-07T20:13:35.898Z | 审查/接口 | 五 leaf 已获限定批准并main；两真实入口已原子交权，随后是实际实现/检查，不算纯等待 | I02 svc09a-startup-progress-review.json；claim v8 amend回执 |
 | SVC09A-W12 | 2026-10-07T20:34:53.035420Z | 2026-10-07T20:36:30.514Z | 审查 | 实际入口接线已获唯一限定批准；真实host未安排，不预占运行资源 | startup-entry-result.json；本次source8daa |
-| SVC09A-W13 | 2026-10-07T21:37:48.007638+00:00 | OPEN | 审查/输入 | 恢复调用源码/局部证据固定后待限定独审；新artifact/cold/四报告/现场facts/dispatch另须齐备，不预占actual窗口 | personal-recovery/result.json；source42a2；Lead新source880060消息 |
+| SVC09A-W13 | 2026-10-07T21:37:48.007Z | 2026-10-07T21:39:50.246Z | 审查 | 恢复调用源码/局部证据已获限定独审；后续cold/四报告/dispatch仍须齐备，不预占actual窗口 | personal-recovery/result.json；source42a2；Lead新source880060消息 |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -172,3 +172,9 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T21:37:48.007638+00:00：source42a2的纯策略、实际公开调用与既有continuation装配已固定；[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/Interface.md)及[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/result.json)保留7不同通过与两次0选择入口失败。源尚绑定旧b692候选且明确NOT_READY；Lead已给修正source880060，但没有新descriptor/cold/四报告/6现场pin/dispatch，不能执行。旧cd27迁入/hold/bootstrap/retire不重放，新artifact须经既有受管迁入和报告导入后才rebind。
 
 同段对peer实际cold失败给唯一[限定保真审查](../../docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-review.json)，固定34c610原件不改；控制流未到launch，clone/private静态KEEP、DB背景增长仍保守留128MiB，不能冒cleanup通过。另按Lead要求仅据已sealed R4收据作[前瞻资源分类](../../docs/evidence/svc09/message-settings-activation/host-integration/host-r4-forward-classification.json)，旧FAIL/cleanupConfirmed=false/mayDrop=false原样。无新probe/删除/个人读取。
+
+## 新目标绑定与一次只读事实
+
+2026-10-07T21:54:55.323660+00:00：source00dcd绑定e15/source880060，原42a2准备已获Lead限定批准/main a8bd；00dcd只读入口4例获21:49:22.957Z限定批准。两受影响policy例2/2、60ms/305B，旧检查与旧失败均不重跑。实际授权只读一次5085ms/exit0，同op23、六文件两读一致、旧三role stopped；pool.end true与remote零连接NOT_OBSERVED分开。早期0child uid校验错误原件保留，修正后未改变入口或预算。原invocation的12次仅collector口径，公有loader自身读/校验不计其中。
+
+[单份结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-result.json)和[增量绑定](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-manifest.json)。ready:false，KEEP不删除，个人配置/服务/provider无写入或运行。实际恢复仍缺cold、四报告、dispatch及新窗口；不得沿本只读grant执行恢复。
