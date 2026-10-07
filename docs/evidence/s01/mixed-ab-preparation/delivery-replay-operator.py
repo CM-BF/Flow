@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 
 START = time.monotonic()
 ROOT = Path(__file__).resolve().parents[4]
+EXPECTED_ROOT = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe')
+BRANCH = 'codex/runner-capacity-probe'
 HERE = Path(__file__).resolve().parent
 NODE = '/opt/homebrew/opt/node@24/bin/node'
 PYTHON = '/opt/homebrew/bin/python3.13'
@@ -51,6 +53,11 @@ def save(path, value):
     fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
     with os.fdopen(fd, 'wb') as handle:
         handle.write(data); handle.flush(); os.fsync(handle.fileno())
+    directory = os.open(path.parent, os.O_RDONLY)
+    try:
+        os.fsync(directory)
+    finally:
+        os.close(directory)
 
 def environment(tmp):
     return {'PATH': '/usr/bin:/bin', 'LANG': 'C', 'LC_ALL': 'C', 'TZ': 'UTC',
@@ -121,7 +128,7 @@ def main(mode, head, input_sha, floor):
     record = {'window': WINDOW, 'mode': mode, 'head': head, 'inputSha': input_sha, 'startedAt': utc(),
               'wholeLimitSeconds': whole, 'faults': [], 'wholeExternalWall': None, 'activePeakBytes': None}
     tmp = None; identity = None; report = None; output = HERE / f'delivery-replay-{mode}-r1'
-    if not sys.flags.isolated or not sys.flags.dont_write_bytecode or mode not in MODES:
+    if ROOT != EXPECTED_ROOT or not sys.flags.isolated or not sys.flags.dont_write_bytecode or mode not in MODES:
         raise ValueError('fixed_isolated_entry_required')
     if os.environ.get('FLOW_S01_REPLAY_OPEN') != WINDOW + ':' + mode:
         raise ValueError('separate_named_open_required')
@@ -136,7 +143,8 @@ def main(mode, head, input_sha, floor):
             raise ValueError('fixed_input_changed')
         if row.get('realpath') and str(path.resolve()) != row['realpath']:
             raise ValueError('dependency_target_changed')
-    for args, expected in ((['rev-parse', 'HEAD'], head), (['status', '--porcelain'], '')):
+    for args, expected in ((['rev-parse', 'HEAD'], head), (['rev-parse', 'origin/' + BRANCH], head),
+                           (['branch', '--show-current'], BRANCH), (['status', '--porcelain'], '')):
         actual = subprocess.check_output(['/usr/bin/git', *args], cwd=ROOT, env=environment(Path('/tmp')), timeout=3).decode().strip()
         if actual != expected:
             raise ValueError('execution_git_identity')
