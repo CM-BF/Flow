@@ -209,3 +209,7 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 ## reader修复唯一独审批准
 
 2026-10-07T13:17:39.490305Z，Execution Lead独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR，无P1/P2；[原件](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json)绑定491/5fe/c51、18项90210B。批准仅准备，实际剩余维护待新窗口/fresh gates；原R2已完成阶段、R3只读失败/KEEP保持。作者仅转录，不重跑。
+
+## 保留排队的精确intent合同（2026-10-07）
+
+独立reviewer native_center_owner 已只读批准 secondary source `0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0` 四文件的限定guard/实际SQL生产者；旧默认pending0保持，12/12原记录核读、0reviewer运行/个人访问。本结论不批准现场操作。实际caller source `ec9c775462de61487836665973e792b4b15d616d` / delivery `e7d50fe3c7fcbdc65760d3c82e463c47fda9f048` 已交其唯一审查，manifest与原件在 [queued-intent-contract](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json)。原R4失败、drain19、旧claim结果UNKNOWN均不改。

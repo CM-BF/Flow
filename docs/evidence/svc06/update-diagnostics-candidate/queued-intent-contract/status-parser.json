@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07T13:44:34.012Z",
+  "firstInvocation": {
+    "taskIdMissing": true,
+    "errors": [
+      "状态标题与登记任务 ID 不符"
+    ],
+    "meaning": "Caller omitted required taskId; not a product/status content failure."
+  },
+  "correctInvocation": {
+    "taskId": "SVC06",
+    "errors": [],
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 2,
+      "output": "已查明旧本地未决记录阻止接单，并完成保留排队任务的精确修复入口；尚未修改该个人记录。",
+      "next": "独立核验后，在同一维护操作中安全处置未决记录、刷新服务并解除停止接单。",
+      "blocker": {
+        "state": "active",
+        "text": "本次精确续接入口待独审和实际运行窗口；原未决记录与排队任务保留，不能重放已完成步骤。"
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04/05尚未全部验收；阶段build/host/独审/main分别见下方原记录。"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": "| 等待ID | 开始 | 结束 | 类别 | 说明 | 来源 |\n| SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |\n| SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |\n| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | 2026-10-07T12:27:52.330992+00:00 | 审查与资源 | 原等待已随实际窗口结束；R2四阶段完成后12:35:37归还，非持续占用 | update-diagnostics-candidate/personal-actual-r2/window.json / stop.json |\n| SVC06-WAIT-REMAINING-R3 | UNKNOWN | 2026-10-07T13:05:06.328778+00:00 | 审查与资源 | 起点无单独依据；R3只读门失败后13:05:06.750720停止并归还，无维护动作 | update-diagnostics-candidate/personal-maintenance-r3/reservation.json / stop.json |\n| SVC06-WAIT-READER-REVIEW | 2026-10-07T13:15:07.139637+00:00 | 2026-10-07T13:19:32.771546+00:00 | 审查与资源 | 审查和窗口等待已由R4实际启动结束；13:19:54停止归还，未持续占窗 | compatibility-reader-repair/independent-review.json / personal-maintenance-r4/reservation.json / stop.json |\n| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| SVC06-WAIT-HOST01 | 2026-10-07T03:59:40.000Z | 2026-10-07T04:04:40.248Z | 资源 | 首宿主入口准备获审后等待共享窗口；实际启动结束该等待 | 本status 03:59:40准备批准记录；artifact-host-smoke/host-invocation.json实际开始 |\n| SVC06-WAIT-HOST02 | 2026-10-07T04:26:16.664Z | 2026-10-07T04:30:05.131Z | 审查 | 新root后继入口已固定，等待独立审查；真实copy/PG未开始 | 入口d37981b06ec70b9f9e6254b66e0a1b69d7555dc1、delivery b1352784；本次owner交审事件 |\n| SVC06-WAIT-HOST03 | 2026-10-07T04:30:50.067Z | 2026-10-07T04:31:30.466Z | 资源 | 固定入口获审后等待共享窗口；实际调用结束等待 | independent-review/execution-preparation与actual-invocation；阶段起点不冒任务起点 |\n2026-10-07T04:30:50.067Z：已转录[限定准备批准](../../docs/evidence/svc06/artifact-host-followup/independent-review.json)，8entry/17fixed无差、无blocking。一次执行身份已准备，尚未创建运行root/outer或复制/PG；原120s+30s、fresh2.5GiB/live1GiB和578MiB规划不变。"
+    }
+  },
+  "source": "ec9c775462de61487836665973e792b4b15d616d",
+  "engineeringRerun": false,
+  "personalIO": false
+}
