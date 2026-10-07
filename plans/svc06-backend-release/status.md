@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:29:30 UTC；c2c构建结果已main，固定宿主/迁移/策略入口待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:35:19 UTC；source344入口准备独审已批准，实际运行仍待共享窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 本次仅局部原件/manifest及own metadata待封定；3444895e入口与全部产品停止写入 |
+| 工作树dirty状态 | 仅归档唯一独审、连接账与fresh只读事实；344入口/manifest c4d6/产品零改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
 | 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
 | 检查状态 | PASSED 3444895edf934c5c323639f232ef6fed7d51b022 仅3项纯guard与语法检查；真实copy/PG/宿主/迁移/策略旅程NOT_RUN，原构建结果独立保持 |
 | 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物已完成；旧记录迁移与浏览器登录配置的自有环境验证入口已准备，清理保护检查通过。 |
+| 当前产出 | 固定后台产物及自有宿主验证入口已通过审查，旧记录与登录配置的真实验证待运行。 |
 | 下一可用交付 | 入口独审后验证旧记录保留、真实宿主升级与浏览器登录配置，个人安装保持不动。 |
-| 当前阻塞 | ACTIVE: 验证入口待独立审查及共享运行窗口，尚未开始真实宿主验证。 |
+| 当前阻塞 | ACTIVE: 等待共享数据库窗口，真实宿主验证尚未开始。 |
 | 需用户决定 | NONE |
-| Review | c2c构建/加载已限定APPROVED并main；3444895e宿主/迁移/策略入口PENDING，native_center_owner唯一只读审查中 |
+| Review | APPROVED_PREPARATION_ONLY；source3444895e/delivery5563e011，native_center_owner唯一独审0 P1/P2；真实copy/PG/host仍NOT_RUN |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -214,4 +214,14 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| SVC06-WAIT-B2B-HOST-REVIEW | 2026-10-07T09:29:30Z | UNKNOWN | 审查 | 固定入口/局部证据交唯一独审；实际运行另等共享窗口 | 本次固定交审事件；b2b-host-policy/entry-manifest.json |
+| SVC06-WAIT-B2B-HOST-REVIEW | 2026-10-07T09:29:30Z | 2026-10-07T09:31:39.196669Z | 审查 | 固定入口/局部证据交唯一独审；实际运行另等共享窗口 | 本次固定交审事件；b2b-host-policy/entry-manifest.json |
+
+## 2026-10-07 09:35:19 UTC：宿主准备已审，等待真实窗口
+
+[原样唯一审查](../../docs/evidence/svc06/b2b-host-policy/independent-review.json)绑定344/5563，APPROVED_PREPARATION_ONLY，无P1/P2。fresh[只读准入](../../docs/evidence/svc06/b2b-host-policy/prewindow-preflight.json)核7入口/511运行输入/3解释器与监督身份/4aliases同，claim v7有效，c2c manifest/source root同，run与outer未消费；free 23,421,153,280B，未将其当未来准入。未运行copy/PG/HTTP/host；协调账本只读查询与fixture分开。
+
+[实际连接容量账](../../docs/evidence/svc06/b2b-host-policy/CONNECTIONS.md)：本成功链保守最大15（business8+boss3+fixture1+maintenance2+helper1），旧新中心严格顺序，cleanup最多2；非总库峰值实测。原work180+cleanup30、fresh2.5GiB/live1GiB、规划674MiB+2MiB raw=676MiB保持。真实App兼容/个人采用仍独立。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-B2B-HOST-WINDOW | 2026-10-07T09:31:39.196669Z | UNKNOWN | 资源 | 已审入口等待Lead交付实际共享PG窗口；未预占 | b2b-host-policy/independent-review.json；本次执行协调 |
