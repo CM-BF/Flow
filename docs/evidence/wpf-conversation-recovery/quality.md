@@ -291,3 +291,7 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 复用已读 find-skills/clean-code/codebase-design/webapp-testing，bounded design已获root明确接受；0安装。本段09:20:51 fresh原21/nooverlap后，仅两test实现synthetic protocol actor与独立steering-recovery。复核职责：fixture封装token、一次seed/claim/session，browser只走真实App/公开恢复与原strict-prefix fault；无第二网络系统、私有state/SQL注入或伪native ACK。以独立closure保actor令牌不进入wire/WorkerResult；60s lease覆盖≤45s工作且无heartbeat循环，claim等待独立5s/最多50请求及原whole-worker取消。原17source逐字相同、旧selection映射全保；git diff --check0。
 
 实际改进：明确steering command ACK身份分支，选定原receipt id而非任意accepted；草稿按task/turn筛选唯一行，原message identity及下一稿原样比对；真实center accepted/replayed不升级为consumed/applied。防御TOTAL 300000只对应旧90+旧150+新≤60phase上限，不复活旧余23553；新selector每次硬≤60s/15s清理。当前只静态读/字节比较，类型、真实HTTP/PG/Chrome均NOT_RUN，需集中actor/lifecycle源码审与后继实际有限段。未发现需生产源码修复的已证实缺陷。
+
+## 2026-10-07 09:41:05 UTC — Steer affected-type工作段结束
+
+应用已读本地find-skills/clean-code/codebase-design：复核公共actor边界、单次成功claim与有限就绪轮询区别、固定frozen identity/next-draft，以及原错误/清理路径。Root集中source审0blocking，Web noEmit首跑通过未产生修复；源码19hash仍54952。复用原runner仅预算/源绑定参数变化，sandbox禁网络/项目写，实际charge7682ms/20s含5s清理；日志0B与精确Node组/TMP收尾见steering-local。只静态与类型证据，不以constant counters冒网络审计或Steer浏览器已过；SVC06共享资源不动，完整feature IN_PROGRESS。

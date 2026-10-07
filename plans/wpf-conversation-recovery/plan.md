@@ -236,3 +236,7 @@ Root接受固定27f后的bounded设计：仅该selected selector允许一个synt
 ## 2026-10-07 09:31:59 UTC — Steer源码固定（原02/03/05）
 
 `54952b1011f03f8823db3744c4d1ac27e0407bc7` 两专测新增cookieRead+steeringRecovery，17其他源/旧11selector不变，见[单一源码验收入口](../../docs/evidence/wpf-conversation-recovery/steering-source.md)。原150s phase封存126447/23553，不挪未用余额；新独立<=60s/15s清理phase仅准备，等待新actor/lifecycle source review与真实资源交接。当前0运行，原TODO02/03/05/06不提前完成。
+
+## 2026-10-07 09:41:05 UTC — 原02/03/05的Steer source/type安全点
+
+集中source review dd02已通过；source54952未再变，独立local20s实际7682ms/noEmit0/cleanup完整。无重跑旧绿检查，新Steer phase remains spent0且未占PG/Chrome；后继仅等待manager实际共享窗口交接与fresh输入，原task/claim不变，不把消息的NEW_TASK标记解释成新计划。TODO02/03/05/06保持各自未完成验收。

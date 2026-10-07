@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-07T09:38:48.935256+00:00",
+  "claimObservedAt": "2026-10-07T09:37:48.988Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "head": "0f4bbcc3578dffaef74a24732129d54d8c282ba0",
+  "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "sourceManifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/steering-source-checkpoint.json",
+  "sourceManifestSha256": "21f915ffcc0aa4e679a66fdaa5e9785108652904cb9420dcfb38cca1dd25ad07",
+  "verifiedSourceCount": 19,
+  "tools": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/tsconfig.json",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/tsconfig.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/tsconfig.json",
+      "sha256": "af4bdc0413d25d7cc3ce81a6f2bd2d5488719e8434d155c4abd2427a24273b59"
+    }
+  ],
+  "runner": {
+    "path": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/run.py",
+    "sha256": "41794c06b79a022ce69d91fb661f36f3d726f2f25a87ae892bfd4e87a0dae444",
+    "baseline": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/complete-draft-local-fixed/run.py",
+    "baselineSha256": "ca409fd9bdd3e26e598ab3e2cedf6081c3902e11d975b39251dd09322633e662",
+    "delta": "source SHA, previous0, 20s total/15s work only; same runner and stricter 8MiB tmp limit retained"
+  },
+  "sandbox": {
+    "path": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/sandbox.sb",
+    "sha256": "64410e004d2e212534791056111034d420bcb132be26849a58f0fdf7b2a68850"
+  },
+  "phaseBudgetMs": 20000,
+  "previousSpentMs": 0,
+  "cleanupReserveMs": 5000,
+  "tmpMaximumBytes": 8388608,
+  "authorizedTmpBytes": 16777216,
+  "rawMaximumBytes": 1048576,
+  "availableBytes": 22722994176,
+  "minimumForThisLocalPlusReserveBytes": 1091567616,
+  "resourceStatement": "Manager authorized this single Web local; shared PG/Chrome reserved to SVC06 and not used here. Current free is actual; no global idle inferred.",
+  "network": "deny",
+  "PG": false,
+  "Chrome": false,
+  "HTTP": false,
+  "provider": false,
+  "oldTypesCreditTransferred": false
+}

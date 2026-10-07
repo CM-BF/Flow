@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`54952b1011f03f8823db3744c4d1ac27e0407bc7`；两专测新增Steer草稿/未知ACK独立选组，actor/lease/lifecycle delta待root一次聚焦审查，types/browser未运行。旧target2e7203完整草稿selected2/2 actual和两红保持原范围与原件；不以新源码准备冒整体feature通过。
+状态：IN_PROGRESS。当前target`54952b1011f03f8823db3744c4d1ac27e0407bc7`；两专测新增Steer草稿/未知ACK独立选组，actor/lease/lifecycle delta已获[root集中源码批准](../../docs/evidence/wpf-conversation-recovery/steering-root-source-review.json)，Web noEmit首跑exit0，browser未运行。旧target2e7203完整草稿selected2/2 actual和两红保持原范围与原件；不以新源码准备冒整体feature通过。
 
 Review target commit：`54952b1011f03f8823db3744c4d1ac27e0407bc7`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；本轮对27f仅2专测变化，其他17源逐字相同。见[固定源码包](../../docs/evidence/wpf-conversation-recovery/steering-source-checkpoint.json)与[边界/验收](../../docs/evidence/wpf-conversation-recovery/steering-source.md)。
 
@@ -259,3 +259,7 @@ Root [本轮实际独审](../../docs/evidence/wpf-conversation-recovery/continuo
 [Root聚焦源审](../../docs/evidence/wpf-conversation-recovery/complete-draft-root-review.json)绑定fea37，new synthetic publisher/真实Prepare链0blocking；其后4a只修新增筛选的JSON窄读取，原observer/17源不变。[19源引用、首红/后绿、有限budget](../../docs/evidence/wpf-conversation-recovery/complete-draft-checkpoint.json)是本次唯一增量入口。current target `4a60980b6dc756d46a720a9cbcb157a549555010`，types exit0，completeDraft browser **NOT_RUN**。不把受控声明profile当native/runner在线或model通过；原SSE实际限定接受完整原文已自然归档。
 
 [首红+fixed noEmit独立原文](../../docs/evidence/wpf-conversation-recovery/complete-draft-local-root-review.json)已随本批收录：原件/类型修正/PID-group与TMP清理核同，source接受延续；不是completeDraft实际通过。
+
+## 2026-10-07 09:41:05 UTC — Steer集中源码审与作者noEmit实际
+
+Root固定54952/0f4b审[原报告](../../docs/evidence/wpf-conversation-recovery/steering-root-source-review.json)，0blocking，17未变源码/10公共锚点/独立60s phase边界核同。本次作者noEmit一次PASS、原件见[local manifest](../../docs/evidence/wpf-conversation-recovery/steering-local/manifest.json)，不是root复跑或Steer真实UI通过。完整feature IN_PROGRESS，原完整草稿/各实际选组结论仍原范围，第二中心与真实runner应用未验。

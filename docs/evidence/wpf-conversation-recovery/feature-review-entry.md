@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `54952b1011f03f8823db3744c4d1ac27e0407bc7`；[19源码/两专测delta](steering-source-checkpoint.json)，[新Steer真实接口与限定断言](steering-source.md)等待actor/lifecycle聚焦源码审，NOT_RUN。原2e7203完整草稿第三轮selected2/2 actual及前两FAIL不变；此前full7/choice/CREATE两故障点/Queue/taskSSE均保原绑定。完整feature IN_PROGRESS，Steer实际/第二中心/真实runner应用仍开放。
+当前组合target `54952b1011f03f8823db3744c4d1ac27e0407bc7`；[19源码/两专测delta](steering-source-checkpoint.json)，[新Steer真实接口与限定断言](steering-source.md)已获actor/lifecycle聚焦源码批准，相关Web noEmit首跑通过；新Steer browser NOT_RUN。原2e7203完整草稿第三轮selected2/2 actual及前两FAIL不变；此前full7/choice/CREATE两故障点/Queue/taskSSE均保原绑定。完整feature IN_PROGRESS，Steer实际/第二中心/真实runner应用仍开放。
 
 ## 55b已审基线与原证据（历史固定）
 

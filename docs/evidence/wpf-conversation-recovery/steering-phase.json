@@ -1,8 +1,8 @@
 {
   "id": "RECOVERY-STEERING-20261007",
-  "state": "SOURCE_PREPARED_NOT_RUN",
+  "state": "SOURCE_APPROVED_LOCAL_NOEMIT_PASSED_BROWSER_NOT_RUN",
   "sourceTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
-  "authorization": "Root NEW_TASK: independent <=60s steering phase, source implementation/static preparation only; one focused actor/lifecycle review before runtime coordination",
+  "authorization": "Original RECOVERY01 continuation within existing6ffv4/exact21, not a new task or claim. Root authorized an independent <=60s steering phase after focused actor/lifecycle source review; actual shared resources remain manager-coordinated.",
   "selection": {
     "journey": "steering-recovery",
     "requiredGroups": [
@@ -52,7 +52,6 @@
   "holder": "NONE",
   "actual": "NOT_RUN",
   "remainingPrerequisites": [
-    "Focused source review of new actor/session/lease/fault and selected browser assertions",
     "Fresh original claim/HEAD/clean/source+read-only runtime pins",
     "Explicit unique shared PG+Chrome handoff and current combined resource observation",
     "Unique bound internal run inputs and private 0600 adminenv from already-authorized test source, exact deletion on terminal",
@@ -80,5 +79,19 @@
     "belowMinimum": "No attempt; do not enlarge phase or use historical unused credit",
     "onAmbiguousAccountingOrCleanup": "FAIL_CLOSED; no subsequent attempt until exact reconciliation",
     "actualGateState": "NOT_CREATED"
+  },
+  "focusedSourceReview": {
+    "path": "steering-root-source-review.json",
+    "sha256": "dd02c29a0304e769820fadf9c71c2a242aba5484a37b0e8fd059c4b921a64260",
+    "scope": "source54952/metadata0f4b; actor/lease/fault/identity-nextdraft source approval only"
+  },
+  "localValidation": {
+    "path": "steering-local/manifest.json",
+    "sha256": "9d2b32763e42da9c57d82bf0b3e573ba505c0e0c8ddcb4cb6630c2b7ef142949",
+    "state": "PASS_WEB_NOEMIT",
+    "budgetMs": 20000,
+    "spentMs": 7682,
+    "remainingMs": 12318,
+    "browserPhaseDeductionMs": 0
   }
 }
