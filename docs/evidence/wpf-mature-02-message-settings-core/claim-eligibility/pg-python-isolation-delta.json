@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-07T13:41:20.504Z",
+  "priorSource": "f471c30c7939eac89158d3e68130b1b971a28eac",
+  "reviewer": "chatui01_owner",
+  "finding": "Same startup-isolation P2: inner Python without-I can load user site before controlled Node exec; outer-I not inherited across exec. No actual private files/environment examined.",
+  "change": "Only inner Python argv adds-I before-B and sentinel asserts exact inner flags",
+  "oldResult": "Original1/1 retained at2fc9e108; does not prove newflag assertion executed",
+  "newResult": "NOT_RUN; first sentinel allowance consumed, no automatic secondchild",
+  "PG": "NOT_OPEN"
+}

@@ -30,6 +30,8 @@ launches = [n for n in ast.walk(tree) if isinstance(n, ast.Call) and isinstance(
 assert len(launches) == 2
 assert ast.unparse(launches[0].args[2]) == 'fixed_environment()'
 assert ast.unparse(launches[1].args[2]) == 'env'
+assert isinstance(launches[1].args[0], ast.Tuple)
+assert [ast.literal_eval(flag) for flag in launches[1].args[0].elts[1:3]] == ['-I', '-B']
 assignments = [n for n in ast.walk(tree) if isinstance(n, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'env' for t in n.targets)]
 assert len(assignments) == 1 and isinstance(assignments[0].value, ast.Call) and assignments[0].value.func.id == 'pg_environment'
 execs = [n for n in ast.walk(tree) if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) and n.func.attr == 'execve']
