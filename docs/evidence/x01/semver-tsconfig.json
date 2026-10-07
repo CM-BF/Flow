@@ -1,0 +1,9 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../apps/runner/src/plugins/semver-package.test.ts"
+  ],
+  "exclude": [
+    "../../../node_modules"
+  ]
+}

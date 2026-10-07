@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-10-07T07:17:36.736520+00:00",
+  "upstream": {
+    "name": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "repository": "https://github.com/npm/node-semver",
+    "donorRoot": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver",
+    "files": [
+      {
+        "path": "functions/compare.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/functions/compare.js",
+        "bytes": 170,
+        "sha256": "d404b5aa48aaddc8a654c5da8fb7d4443404b7948589b21ac4b045d1cee4e34c"
+      },
+      {
+        "path": "classes/semver.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/classes/semver.js",
+        "bytes": 9891,
+        "sha256": "813b2c185512d30c9b931c2fed8140889d9d7490ceeeedc370da30337dc8ca57"
+      },
+      {
+        "path": "internal/debug.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/internal/debug.js",
+        "bytes": 240,
+        "sha256": "8a9f420572260f3cf944463b5090d62a60f0730589dc23a7ec4ca25e2ee41bb3"
+      },
+      {
+        "path": "internal/constants.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/internal/constants.js",
+        "bytes": 873,
+        "sha256": "38a112baf27ceca0260082ff26ac2fd7a9861cab1af12dd65e720277f68e6ce9"
+      },
+      {
+        "path": "internal/re.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/internal/re.js",
+        "bytes": 8139,
+        "sha256": "5833262888e2b5d843a69193f83c05e374818dbe55379b497819b5bf58e48cd8"
+      },
+      {
+        "path": "internal/parse-options.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/internal/parse-options.js",
+        "bytes": 338,
+        "sha256": "fdf51d0de8d5442c35a997ef58cd530d239ce206f961d14c5121354451b01d01"
+      },
+      {
+        "path": "internal/identifiers.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/internal/identifiers.js",
+        "bytes": 525,
+        "sha256": "b4916b09dc7869ae0eb05e71c855c942a3a7365f7e6e89185d59a9e45a2451d7"
+      },
+      {
+        "path": "package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/package.json",
+        "bytes": 1661,
+        "sha256": "7c94cb7f2a53c27b20d76386ec144c062894dbcc909cfabd0f728c37874b1776"
+      },
+      {
+        "path": "LICENSE",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/semver@7.8.5/node_modules/semver/LICENSE",
+        "bytes": 765,
+        "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+      }
+    ],
+    "runtimeFiles": [
+      "functions/compare.js",
+      "classes/semver.js",
+      "internal/debug.js",
+      "internal/constants.js",
+      "internal/re.js",
+      "internal/parse-options.js",
+      "internal/identifiers.js"
+    ],
+    "scope": "Exact installed files verified; registry tarball/SRI not independently fetched or authenticated."
+  },
+  "build": {
+    "tool": "esbuild",
+    "version": "0.28.2",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/bin/esbuild",
+    "bytes": 10590882,
+    "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384",
+    "define": {
+      "process.env.NODE_DEBUG": "\"\""
+    },
+    "platform": "neutral",
+    "format": "esm",
+    "target": "es2023",
+    "bundle": true,
+    "minify": true,
+    "legalComments": "none",
+    "externalImports": []
+  }
+}

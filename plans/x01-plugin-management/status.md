@@ -22,10 +22,10 @@
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
 | 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心真实领取与恢复验收已获独立批准，等待受控主线接收 |
+| 当前产出 | 中心领取片已进入主线；现将真实semver能力包接入已交付的材料与调用接口 |
 | 下一可用交付 | 受控接收中心领取片并交回共享入口；随后继续生产runner与真实npm能力 |
 | 当前阻塞 | NONE: 中心片READY待集成；当前0实际资源持有/待launch |
 | 需用户决定 | NONE |
@@ -273,3 +273,7 @@ source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10�
 Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实际06:58:40.476848→06:58:49.193344（final persistence前），time real8.89s；六组原选择6/6，107HTTP、12tasks/7registrations，两个监督进程、一个markedDB/零连接普通DROPabsence、两个listener与同inodeTMP均确认收尾。历史EPERM审计保留、unknown=false；[原件与边界](../../docs/evidence/x01/center-claim-pg-result.md)。PG实际已直接交回Web/C02知悉，metadata不占窗口。旧准备/raw/源/依赖不变，不跑额外检查。结果忠实性待独审；中心片与c15尚无新main receipt。完成接收后立即STOP并部分amend交回server/index.ts给CHAT05，不等待完整runtime/semver。架构影响仍原v3 center资格/双namespace receipt，不新增运行权威；全X01未完成。
 
 2026-10-07T07:08:38.232210+00:00：fresh07:07:24.414Z核v11 ACTIVE31/唯一树未变；归档db于07:06:23对05dd结果/b3fa包的APPROVED，19bindings157495B/12raw22173B、6/6/107HTTP与资源及时钟边界均通过。中心8源[READY intake](../../docs/evidence/x01/center-claim-integration-ready.json)保持原blob，旧c15五源独立前置、16领域已main事实不覆盖；main接收尚未发生。PG已归还、不等待metadata/review占资源；本段0工程child/PG，只四metadata≤96KiB。main receipt后立即STOP并原子amend交回server/index.ts给CHAT05，不绑定完整X01后继；当前不提前释放。应用原本地技能核命名/职责/错误与收尾证据，架构影响仍原center v3入口，dashboard基线接收后由Lead更新。
+
+2026-10-07T07:15:18.602113+00:00：独核main9816正式I02回执及13产品逐字与本树相同，rootnoEmit0/9897ms，未重跑PG。明确立即STOP apps/server/src/index.ts；下一原子amend仅交回此literal给CHAT05P02，其余claim保留。原中心片delivered，真实semver包输入为新的独立后继，本段不改已审中心/claim/journal。
+
+2026-10-07T07:16:15.389Z：v13 COMMITTED32scope，仅新增semver-package.test.ts与experiments/plugins/semver-compare；server/index已v12交回。semver7.8.5/ISC九个实际输入与esbuild0.28.2已只读固定，无安装/复制node_modules。开始原有界20min能力包段，source/meta≤1MiB/TMP16MiB/raw256KiB/最多4child各60s；当前尚0运行。中心13源main9816保持固定，原输入/raw不改。
