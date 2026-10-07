@@ -1,0 +1,13 @@
+diff --git a/apps/web/test/plugin-management-integration.browser.ts b/apps/web/test/plugin-management-integration.browser.ts
+index d25c8d470..8a44f888f 100644
+--- a/apps/web/test/plugin-management-integration.browser.ts
++++ b/apps/web/test/plugin-management-integration.browser.ts
+@@ -239,7 +239,7 @@ export async function checkPluginRuntimeApp({ browser, outputDirectory, signal }
+       await settings.click();
+       await page.locator(".ep-option").filter({ hasText: "i01-model" }).getByRole("radio").check();
+       await page.getByRole("button", { name: "应用", exact: true }).click(); await expect(settings).toBeFocused();
+-      const files = page.getByRole("button", { name: "Files", exact: true });
++      const files = page.locator('.flow-chat-group.focused .flow-tab-body:not([hidden]) [data-composer-view="conversation:chat-1"]').getByRole("button", { name: "Files", exact: true });
+       await files.click(); await expect(page.getByRole("dialog", { name: "Project text files", exact: true })).toBeVisible();
+       await page.getByRole("button", { name: "Browse files", exact: true }).click();
+       for (const file of fixture.files) await page.getByRole("button", { name: `Use ${file.name}`, exact: true }).click();

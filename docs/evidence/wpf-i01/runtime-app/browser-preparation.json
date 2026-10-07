@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-07T15:58:30.585Z",
-  "state": "APPROVED_PREPARATION_BROWSER_NOT_RUN_NO_MANAGER_HANDOFF",
-  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
-  "packet": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
-  "bytes": 6419,
-  "sha256": "bdcdf71cfd0ce0bc20dd91d77f164bdd954be06aa733a038353b8ba565f50070",
+  "at": "2026-10-07T16:13:17.181Z",
+  "state": "SCOPED_FILES_FIX_PREPARED_NOT_RUN_NO_MANAGER_HANDOFF",
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "packet": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/manifest.json",
+  "bytes": 4238,
+  "sha256": "0211d709aa2091a2c9520ba5cd1e36606cd19f227e772a1262c04273f1340bb2",
   "runtimeGranted": false,
   "budgetProposal": {
     "totalMs": 60000,
@@ -12,15 +12,16 @@
     "cleanupMs": 15000,
     "scratchBytes": 268435456,
     "rawBytes": 8388608,
-    "minimumFreeBytes": 14691794944
+    "minimumFreeBytes": 17454858240
   },
   "notes": [
-    "Local30s CLOSED: spent10834, unused19166 not transferable.",
-    "Source/local and caller preparation approved; await sole manager browser handoff after SVC09A then higher-priority Web newpair actualRETURN.",
-    "No real center security, PG/provider, individualHTTPport probe or new browser outcome claimed.",
-    "Require actual outerexit0 plus finalstdout terminal, bothEOF/drop0, exactgroups/cache/scratch and fixtureclose. Raw PASSED alone insufficient."
+    "First browser actual FAILED0/4/0PNG/0registry writes with exact owned RETURN; charge8540/60k unused51460 CLOSED, not transferred.",
+    "Scoped Files single-line correction approved5b002; all other product/tests and four groups remain unchanged.",
+    "Three caller files byte-identical; only browser source pin, declared source and future minimum floor changed. New private namespace, no gate/env/runtime.",
+    "New independent candidate60s=45work+15cleanup awaits explicit manager handoff/current complete floor. No true center/PG/provider or individual HTTP port probe attestation.",
+    "Accept only actual outerexit plus final stdout terminal, complete groups and exact resources; early raw alone insufficient."
   ],
-  "latestFutureMinimumFreeBytes": 16175529984,
+  "latestFutureMinimumFreeBytes": 17454858240,
   "futureFloorSource": "root/manager latest complete declared floor after AV03/K01 potential; future fresh grant must use latest higher sum, frozen packet minimum remains historical.",
   "sourceCount": 218,
   "externalCount": 42,
@@ -41,9 +42,14 @@
     "sha256": "73918579217542b235d934f488eb4f4da739026c747747a446a4de3c5ec95fb2"
   },
   "routinePlanProvenanceApproval": "root direct message accepts third exact ownplan provenance move; no caller/product change or new source review needed.",
-  "currentPreparedArchive": "browser-prepared-20261007/manifest.json",
+  "currentPreparedArchive": "browser-scoped-files-prepared-20261007/manifest.json",
   "executionMetadata": {
-    "beforeSeal": "3c14c3fcc24b40e6c371470e9e70e06fe7d1d6d6",
-    "policy": "Use the fresh clean metadata HEAD produced by this natural seal and verified local=actual remote. No grant yet; source target stays49d71."
+    "sourceFixHead": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+    "policy": "Fresh clean metadata HEAD produced by this seal, verified local=actual remote, is execution candidate only; no gate/grant currently."
+  },
+  "sourceDeltaAndFirstFailureReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json",
+    "bytes": 5826,
+    "sha256": "5b0026d12efc5026310c5d5d8ead1c59e2a4c54ec0976f2b297cba53d0a22c55"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "claimObservedAt": "2026-10-07T16:10:06.179Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/plugin-management-integration.browser.ts",
+      "apps/web/test/plugin-management-integration.fixture.ts",
+      "docs/evidence/wpf-i01",
+      "plans/wpf-i01-plugin-integration"
+    ],
+    "state": "active",
+    "branch": "codex/web-plugin-runtime-app",
+    "origin": "new",
+    "taskId": "WPF-I01",
+    "worker": "workspace_panels_owner",
+    "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+    "createdAt": "2026-10-07T15:12:21.486Z",
+    "updatedAt": "2026-10-07T15:12:21.486Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "method": "fixed source plus actual strict locator failure; no runtime",
+  "sourceBefore": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "changedPath": "apps/web/test/plugin-management-integration.browser.ts",
+  "old": "const files = page.getByRole(\"button\", { name: \"Files\", exact: true });",
+  "new": "const files = page.locator('.flow-chat-group.focused .flow-tab-body:not([hidden]) [data-composer-view=\"conversation:chat-1\"]').getByRole(\"button\", { name: \"Files\", exact: true });",
+  "unchanged": "four groups, all predicates/timeouts, public dialog and return focus, lifecycle and product sources",
+  "semanticBinding": {
+    "route": "conversation:chat-1",
+    "activeRegion": ".flow-chat-group.focused .flow-tab-body:not([hidden])",
+    "composerOwner": "[data-composer-view=\"conversation:chat-1\"]",
+    "basis": [
+      "App.tsx:251 renders ConversationThread with actual viewId",
+      "ConversationThread.tsx:248 PluginThreadScope editableComposer viewId",
+      "react.tsx:120-122 emits data-composer-view from ThreadScope",
+      "react.tsx:300 closes Project text files and targets same view composer Files",
+      "App.tsx:917 sidebar Files belongs to Workspace tools nav outside focused tab body"
+    ]
+  },
+  "limits": "Static semantic disambiguation only, not mounted proof. No first/nth. Remaining global buttons unchanged, no proven ambiguity found in this bounded read."
+}

@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-07T16:12:06.733774+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "ACCEPTED_FAILED_ACTUAL_RETURN_AND_APPROVED_ONE_LINE_TEST_FIX",
+  "failedSource": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "failedExecutionHead": "13ddb54aedad3e78797d7fe3b86775f191a30471",
+  "failedRun": "i01-browser-20261007-160438-84ee0c",
+  "actualExit": 1,
+  "chargeMs": 8540,
+  "totalMs": 60000,
+  "unusedMs": 51460,
+  "closed": true,
+  "unusedTransfer": false,
+  "rawChecks": [
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/chrome.log",
+      "bytes": 168,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/owned.json",
+      "bytes": 600,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/parent-stderr.log",
+      "bytes": 0,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/parent-stdout.log",
+      "bytes": 1895,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/result.json",
+      "bytes": 1550,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/start.json",
+      "bytes": 565,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/raw/worker-result.json",
+      "bytes": 2087,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/outer/actual-exit.json",
+      "bytes": 993,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/outer/parent.stderr.log",
+      "bytes": 0,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/outer/parent.stdout.jsonl",
+      "bytes": 1683,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/outer/start.json",
+      "bytes": 214,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-browser-admission-cridfl87/accounting.json",
+      "bytes": 2415,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-browser-admission-cridfl87/actual-tool-exit.json",
+      "bytes": 630,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-browser-admission-cridfl87/grant.json",
+      "bytes": 1339,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-browser-admission-cridfl87/post-cleanup.json",
+      "bytes": 1105,
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/i01-browser-admission-cridfl87/preflight.json",
+      "bytes": 3765,
+      "matches": true
+    }
+  ],
+  "fullReturnAt": "2026-10-07T16:07:09.871423+00:00",
+  "postCleanup": {
+    "observedAt": "2026-10-07T16:07:09.871423+00:00",
+    "checks": [
+      {
+        "kind": "pid",
+        "id": 5928,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "kind": "pid",
+        "id": 6135,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "kind": "pgid",
+        "id": 6135,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "kind": "pid",
+        "id": 6268,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "kind": "pgid",
+        "id": 6268,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "kind": "pid",
+        "id": 7080,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/scratch",
+        "state": "ABSENT_ENOENT"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+        "state": "ABSENT_ENOENT"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+        "state": "ABSENT_ENOENT"
+      }
+    ],
+    "independentPortProbe": false,
+    "PG": false,
+    "adminEnv": "NOT_USED",
+    "errors": []
+  },
+  "resultLimits": [
+    "Actual firstgroup Files.click strictmode matchedsidebarbutton andcomposerbutton; raw worker result records both.0completegroups/0PNG, no productregression inferred.",
+    "Outerexit1/dualEOF/nodrop; worker/Chrome exit/EOF and context+HTTPclose proof read; exact PID/group/cache/scratch closure from owner freshreceipt. No independent per-portprobe, PG orprivateadmin input.",
+    "16raw files19009B hashverified. OldrawFAIL/status/remainingbudget preserved; no automaticretry orreuse."
+  ],
+  "sourceFix": {
+    "target": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+    "path": "apps/web/test/plugin-management-integration.browser.ts",
+    "bytes": 25857,
+    "sha256": "4577820d4433f1e091dcdbe575db025ec280166bae5d93ad5742ebb828d93008",
+    "diff": "One line: globalFiles selector now scoped to focused visible tab and exactdata-composer-view=conversation:chat-1.",
+    "review": "Read completeGitdelta and fixedApp\u2192ConversationThread\u2192PluginThreadScope\u2192ComposerActions chain. Targets actualfixtureconversation composer, excludesrail; nofirst/nth. Fourgroups/timeouts/assertions/productscallerunchanged.",
+    "blockingFindings": [],
+    "actualProof": "NOT_RUN onfixedselector; staticsemanticbinding isnotmountedacceptance."
+  },
+  "next": "Owner may prepare new privatepacket by routine sourcepin/path/cleanmetadata rebind, keepingparent/worker/capture lifecycle hashes except exactpath changes. Newactualsinglephase requires managerfreshhandoff aftercurrentS01/R2 queue and highercompletefloor; rootgrantsnoactual here. No needrepeatpassedtypes for a one-line locatorstring.",
+  "cleanCode": {
+    "scope": "specific testconsumer ownership andfailedvidence",
+    "finding": "Locator now names semanticowner instead of global text or incidentalorder. Product/source49dlocal approvalunchanged; browseracceptancepending."
+  }
+}

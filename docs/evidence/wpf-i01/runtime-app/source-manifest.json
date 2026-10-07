@@ -1,5 +1,5 @@
 {
-  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
   "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
   "scope": [
     "apps/web/src/App.tsx",
@@ -36,9 +36,9 @@
     },
     {
       "path": "apps/web/test/plugin-management-integration.browser.ts",
-      "bytes": 25749,
-      "sha256": "f8fdfe52263264355911397d4fb5120dd7bff87b64809776deb450e312e37589",
-      "blob": "d25c8d470eb31c130a09e0d3c94ce86bf6a69546"
+      "bytes": 25857,
+      "sha256": "4577820d4433f1e091dcdbe575db025ec280166bae5d93ad5742ebb828d93008",
+      "blob": "8a44f888f5a40e115cf3b827851938eb550794bf"
     },
     {
       "path": "apps/web/test/plugin-management-integration.fixture.ts",
@@ -47,6 +47,6 @@
       "blob": "34408d434242fb3e6263740678e519c26ab00008"
     }
   ],
-  "checks": "PASSED scoped direct4 / affected noEmit; first type error retained",
-  "browser": "NOT_RUN"
+  "checks": "Prior scoped direct4 / affected noEmit bound49d71 retained; single locator-only delta source-reviewed, no new checks run.",
+  "browser": "First49d71 FAILED0/4; ee9bd locator fix NOT_RUN"
 }

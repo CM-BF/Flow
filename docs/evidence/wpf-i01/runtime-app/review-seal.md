@@ -12,3 +12,8 @@
 ## 2026-10-07T16:09:09.716Z 首browser失败安全点
 
 沿已装 find-skills/clean-code/codebase-design 方法检查实际失败归属与接口：失败是全页Files定位含两个合法入口；产品authority/四组断言不改。实际outer终态、worker失败与cleanup分别保留，原件逐hash归档16项19009B。无新抽象、无运行probe、不把0complete冒PASS；精确PID/PGID与路径删除观察独立于早期raw。后续最窄test locator修复与本次红分开固定。状态/计划/审查入口已同步FAILED；本地30s与browser60s余额都不转移。
+
+
+## 2026-10-07T16:13:17.181Z scoped Files source safety point
+
+Clean-code/已装技能方法复用：仅test定位一行，把公共Files绑定focused活跃tab内固定conversation:chat-1的composer ownership；不按DOM顺序选first/nth，不更改生产组件名称或scope。App251→ConversationThread248→react120–122及react300回焦点链静态复核；四组/所有判据/timeout/lifecycle保留。root5b002接受ee9bd与首FAIL/RETURN，失败原件未改。新prepared目录150319B，218source只一pin变、42external同、三caller字节同；旧余额封闭且新候选NO_GRANT。没有新types/direct/browser。独立portprobe未做继续保留限制。

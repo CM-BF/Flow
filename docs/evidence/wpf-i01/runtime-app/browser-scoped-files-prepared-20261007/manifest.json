@@ -1,0 +1,97 @@
+{
+  "state": "PREPARED_NOT_RUN_PENDING_SOURCE_DELTA_REVIEW_AND_NEW_RUNTIME_HANDOFF",
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+  "files": [
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/README.md",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/README.md",
+      "bytes": 1966,
+      "sha256": "78cc60a44aa176de0c237d1aeaeec1ce422e9ae34a1b03d786cd32b716984a4e"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/binding.json",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/binding.json",
+      "bytes": 110368,
+      "sha256": "1c172d66c99780e8ec1459628e999f63848dec8e72533096b220bc52efed99b3"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/capture.py",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/capture.py",
+      "bytes": 8348,
+      "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/files-locator-static-proof.json",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/files-locator-static-proof.json",
+      "bytes": 2443,
+      "sha256": "7f5369420f84675785fcf79e60f5cb6b74e2abab7079a87da465ae73a5f0ff62"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/grant-template.json",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/grant-template.json",
+      "bytes": 401,
+      "sha256": "92f9a3d58bc32d33b43cc03c5ddae2e53a4cc42ab853e286a6aed075314d6972"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/phase.json",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/phase.json",
+      "bytes": 1173,
+      "sha256": "f298c0fd4d2dae9686d99032f3a4810b62347846316ce89fad692f5f85cadc3c"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/reuse.json",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/reuse.json",
+      "bytes": 4043,
+      "sha256": "d460a8a2b687f09d6b8ddc9f68d8c1d9a1038837642815c3e7a5f25c50fdd95d"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/run.py",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/run.py",
+      "bytes": 9807,
+      "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/source.diff",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/source.diff",
+      "bytes": 1235,
+      "sha256": "52085aef870d5d3da6ef9eeeebb080e0743493973af73fe0227630dd6bd6a797"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/worker.mjs",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/worker.mjs",
+      "bytes": 4828,
+      "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/binding.diff",
+      "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/binding.diff",
+      "bytes": 1469,
+      "sha256": "b664b88132da01b9b7a4f6ad61cdc83291f2e52f75608cfc1d1873c52834e4d7"
+    }
+  ],
+  "sourceCount": 218,
+  "externalCount": 42,
+  "allowRun": false,
+  "budgetProposal": {
+    "totalMs": 60000,
+    "workMs": 45000,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "minimumFreeBytes": 17454858240
+  },
+  "callerUnchanged": true,
+  "consumedPacketUnmodified": {
+    "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
+    "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
+    "bytes": 6419,
+    "sha256": "bdcdf71cfd0ce0bc20dd91d77f164bdd954be06aa733a038353b8ba565f50070"
+  },
+  "priorRawManifest": {
+    "path": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+    "realpath": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+    "bytes": 3277,
+    "sha256": "cffbd4f6b778f767c0676c46501820507b418001751903b382a9118aac905713"
+  }
+}

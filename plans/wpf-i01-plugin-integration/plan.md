@@ -20,7 +20,7 @@
 
 ## 当前运行边界
 
-原30s普通检查段CLOSED：4新增direct PASS/10旧未选，affected noEmit首红与fix0保留；10834ms/未用19166不转用。首独立browser60s已实际FAILED（Files全页locator歧义），0/4完整组/0PNG，outerexit1与完整ownedRETURN见[原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。保守charge8540、未用51460封闭，无自动第二次。0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained边界保持。下一只在原browser中收窄活跃Conversation composer的Files定位，保原四组/对话框/回焦点/timeout；actual需另一次经理交接，不沿余量自行启动。
+原30s普通检查段CLOSED：4新增direct PASS/10旧未选，affected noEmit首红与fix0保留；10834ms/未用19166不转用。首独立browser60s已实际FAILED（Files全页locator歧义），0/4完整组/0PNG，outerexit1与完整ownedRETURN见[原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。保守charge8540、未用51460封闭，无自动第二次。0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained边界保持。ee9bd已仅在原browser中收窄活跃Conversation composer的Files定位，保原四组/对话框/回焦点/timeout；actual需另一次经理交接，不沿余量自行启动。
 
 ## 历史材料
 

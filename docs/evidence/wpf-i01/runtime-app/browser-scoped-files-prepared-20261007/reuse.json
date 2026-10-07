@@ -1,0 +1,88 @@
+{
+  "originalConsumedPacket": "/private/tmp/i01-runtime-app-browser-0uch3mbo",
+  "originalManifest": {
+    "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
+    "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
+    "bytes": 6419,
+    "sha256": "bdcdf71cfd0ce0bc20dd91d77f164bdd954be06aa733a038353b8ba565f50070"
+  },
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "changedSource": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/test/plugin-management-integration.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/test/plugin-management-integration.browser.ts",
+        "bytes": 25857,
+        "sha256": "4577820d4433f1e091dcdbe575db025ec280166bae5d93ad5742ebb828d93008"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/test/plugin-management-integration.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/test/plugin-management-integration.browser.ts",
+        "bytes": 25857,
+        "sha256": "4577820d4433f1e091dcdbe575db025ec280166bae5d93ad5742ebb828d93008"
+      }
+    }
+  ],
+  "callerByteIdentity": [
+    {
+      "old": {
+        "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+        "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+        "bytes": 9807,
+        "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+      },
+      "new": {
+        "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/run.py",
+        "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/run.py",
+        "bytes": 9807,
+        "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+      }
+    },
+    {
+      "old": {
+        "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+        "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+        "bytes": 4828,
+        "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+      },
+      "new": {
+        "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/worker.mjs",
+        "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/worker.mjs",
+        "bytes": 4828,
+        "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+      }
+    },
+    {
+      "old": {
+        "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+        "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+        "bytes": 8348,
+        "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+      },
+      "new": {
+        "path": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/capture.py",
+        "realpath": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/capture.py",
+        "bytes": 8348,
+        "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+      }
+    }
+  ],
+  "inputCounts": {
+    "execution": 218,
+    "external": 42
+  },
+  "changedRuntimeLifecycle": false,
+  "originalPreparationReview": {
+    "path": "/private/tmp/root-i01-browser-preparation-approved-20261007.json",
+    "realpath": "/private/tmp/root-i01-browser-preparation-approved-20261007.json",
+    "bytes": 3895,
+    "sha256": "73918579217542b235d934f488eb4f4da739026c747747a446a4de3c5ec95fb2"
+  },
+  "unchangedProductSourceLocalReview": {
+    "path": "/private/tmp/root-i01-runtime-app-source-local-review-20261007.json",
+    "realpath": "/private/tmp/root-i01-runtime-app-source-local-review-20261007.json",
+    "bytes": 8405,
+    "sha256": "20d2ce5e943819bfefd1e64eb9fb78a66a11cf9ceef015b952961e66e84d3253"
+  },
+  "historicalProvenance": "plan/status/review remain non-execution provenance; original pins/report retained in consumed packet; do not copy consumed gate/raw or rewrite prior files."
+}

@@ -1,14 +1,14 @@
 # WPF-I01 当前后继独立 review
 
-状态：APPROVED（限定源码、相关局部检查与浏览器准备；首actual browser FAILED，0/4完整组；actual独审待收）
+状态：APPROVED（限定源码、相关局部检查与浏览器准备；首actual browser FAILED，0/4完整组；失败/ownedRETURN与scoped locator修复已独审，修后actual NOT_RUN）
 
-Target: `49d71ef87a7af824c90f0e8c662b4677bbbef8a5`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
+Target: `ee9bd1179bb0e10828a1173beadcbd551c8be1bc`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
-唯一源码入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source。root [source/local正式审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json) 接受4新增authority direct PASS/10旧未选；affected noEmit首exit2与fixture导入修复后exit0保留，0blocking。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)已独立核验，非全Web检查或mounted证明。
+唯一源码入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source。原49d71由root [source/local正式审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json) 接受4新增authority direct PASS/10旧未选；affected noEmit首exit2与fixture导入修复后exit0保留，0blocking。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)已独立核验，非全Web检查或mounted证明。
 
-Caller [初审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json) 的可变metadata执行pin P2，已由[复审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)关闭。初审把两个metadata均简称at49d的措辞留历史：review旧pin匹配49d，status旧pin仅准备时工作树捕获。当前自然plan更新同原理把其单一pin移historical，root消息明确接受；218执行输入、42外部pin与三caller没有产品/生命周期差量。[当前准备与精确manifest](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
+Caller [初审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json) 的可变metadata执行pin P2，已由[复审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)关闭。初审把两个metadata均简称at49d的措辞留历史：review旧pin匹配49d，status旧pin仅准备时工作树捕获。原自然plan更新同原理把其单一pin移historical，root消息明确接受；218执行输入、42外部pin与三caller没有产品/生命周期差量。[当前准备与精确manifest](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
 
-首实际执行49d71/metadata13ddb为FAILED：Files全页locator匹配两按钮，0/4完整组、0PNG。原件见[首实际manifest](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/manifest.json)，资源完整归还，8540计费/51460未用封闭；下一locator修复另固定、无重跑授权。真实BrowserWorkspace加受控Cookie HTTP不等真实中心session安全、provider、包执行或部署。要求actual outerexit与finalstdout终态、双EOF/drop0和独立exactRETURN；早期raw PASSED不足。fixture关闭与group absence不冒独立逐端口探测。原I01/MSG/runtime叶子通过仅历史。
+首实际执行49d71/metadata13ddb为FAILED：Files全页locator匹配两按钮，0/4完整组、0PNG。原件见[首实际manifest](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/manifest.json)，资源完整归还，8540计费/51460未用封闭；单行scoped locator修复ee9bd已由[root集中审](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)接受。App/ConversationThread/ComposerActions归属链保证语义收窄，无first/nth；其余五source及所有四组判据未变，新actual无授权。真实BrowserWorkspace加受控Cookie HTTP不等真实中心session安全、provider、包执行或部署。要求actual outerexit与finalstdout终态、双EOF/drop0和独立exactRETURN；早期raw PASSED不足。fixture关闭与group absence不冒独立逐端口探测。原I01/MSG/runtime叶子通过仅历史。
 
 ## 原始review历史（不作当前批准）
 
