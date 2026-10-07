@@ -36,7 +36,9 @@ export type AsyncCodexExchangeRecipe<Thread extends { threadId: string } = { thr
   respond(method: string, params: Json, signal: AbortSignal): Promise<{ allowed: boolean; reply: Reply }>;
 };
 export async function runCodexExchange<Thread extends { threadId: string }>(createTransport: CodexTransportFactory, input: CodexExchangeInput,
-  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: CodexExchangeRecipe<Thread> | AsyncCodexExchangeRecipe<Thread>) {
+  limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: Omit<CodexExchangeRecipe<Thread>, 'respond'> & {
+    respond(method: string, params: Json, signal: AbortSignal): { allowed: boolean; reply: Reply } | Promise<{ allowed: boolean; reply: Reply }>;
+  }) {
   const deadline = new AbortController();
   const timer = setTimeout(() => deadline.abort(), limits.wallTimeMs);
   const signal = AbortSignal.any([input.signal, deadline.signal]);
