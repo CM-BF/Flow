@@ -4,7 +4,7 @@
 
 ## 当前窗口与用户交付
 
-**SVC08已明确实际归还，Recovery原owner接下一窗口，尚无实际启动回执。** [最新真实交接](continuous-validation-segments-20261007/svc08-return-recovery-renewed.json)保SVC08 guard拒绝/全部服务动作0及owned组收尾；[新的fresh准入](continuous-validation-segments-20261007/recovery-renewed-handoff.json)固定765ab/0141，full7单次60s含15s清理，新150s累计0。旧dm3 gate与原件保留但已撤销、旧env已删除；新gate到期05:57:38.376664Z，不是续旧gate。新env仅按路径使用，manager按exact身份收尾删除。本组actual holder尚null，原owner实际启动后再记录。
+**Recovery已由原owner实际启动，等待本次终态和清理。** [实际启动回执](continuous-validation-segments-20261007/recovery-full-actual-start.json)记录05:52:11.626281Z、parent42366/exec59984；765ab/19源与新gate再次核同。SVC08已明确归还，旧dm3准入撤销；当前唯一full7首轮60000ms含15000cleanup，新150s累计从0开始。新_f2cv0m2/admin.env仍由manager在actual终态后exact删除，不提前记资源归还。Quick仅源码接受，无并行Chrome。
 
 [正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
 
