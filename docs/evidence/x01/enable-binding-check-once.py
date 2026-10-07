@@ -251,10 +251,13 @@ def main():
             if os.statvfs(ROOT).f_bavail * os.statvfs(ROOT).f_frsize < FLOOR:
                 raise ValueError('Resource reserve changed before next command')
             result = supervise(label, [sys.executable, str(EVIDENCE / 'enable-binding-launch.py'), label, nonce, str(run_identity[0]), str(run_identity[1])], env, seconds)
-            checkpoint = json.loads(read_regular(RUN / (label + '-launch.json'), 4096)[0])
-            if checkpoint.get('nonce') != nonce or checkpoint.get('label') != label or checkpoint.get('pid') != result.pid or checkpoint.get('pgid') != result.pid:
+            try:
+                checkpoint = json.loads(read_regular(RUN / (label + '-launch.json'), 4096)[0])
+                if checkpoint.get('nonce') != nonce or checkpoint.get('label') != label or checkpoint.get('pid') != result.pid or checkpoint.get('pgid') != result.pid:
+                    raise ValueError('Same-PID launch checkpoint differs')
+            except Exception:
                 report['unknown'] = True
-                raise ValueError('Same-PID launch checkpoint differs')
+                raise
             sample_temporary()
             if result.exit_code != 0:
                 raise RuntimeError('Business check failed; complete raw is retained')
