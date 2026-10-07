@@ -70,4 +70,10 @@ class EntryTests(unittest.TestCase):
             dangling=root/'dangling';dangling.symlink_to(missing);self.assertFalse(module.is_absent(dangling))
             with patch.object(Path,'lstat',side_effect=PermissionError(1,'synthetic')):
                 with self.assertRaises(PermissionError):module.is_absent(missing)
+    def test_owned_budget_counts_nested_names_and_rejects_symlinks(self):
+        with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
+            root=Path(base);(root/'.local').mkdir();(root/'.local'/'data').write_bytes(b'four')
+            self.assertEqual(module.logical_bytes(root,owned=True),4)
+            (root/'link').symlink_to(root/'.local')
+            with self.assertRaises(ValueError):module.logical_bytes(root,owned=True)
 if __name__=='__main__':unittest.main()

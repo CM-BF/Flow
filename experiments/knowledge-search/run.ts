@@ -1,6 +1,7 @@
 import { lstat, realpath } from 'node:fs/promises';
 import { isAbsolute, join } from 'node:path';
 import { OwnedDatabase, durableJson, errorFact } from './owned-database.js';
+import { StorageBudget } from './budget.js';
 import { measure } from './measurement.js';
 // Only the reviewed operator may open this mode after an actual PG window is granted.
 if (process.env.FLOW_K01_QUERY_PG_OPEN !== 'reviewed') throw new Error('PG_NOT_OPEN');
@@ -15,7 +16,11 @@ const result: Record<string, unknown> = { startedAt: new Date(start).toISOString
   configuration: { automaticQueueScan: false, leaseMs: 300000, background: 'lease sweep and pg-boss remain enabled',
     diagnosticStatementMs: 1500, diagnosticLockMs: 500, factoryBusinessStatementMs: 10000, pgBossStatementMs: 'unchanged factory/default; no shared override' },
   budget: { totalMs: 120000, workMs: 70000, cleanupMs: 40000, receiptMs: 10000 } };
-const database = new OwnedDatabase(databaseUrl, join(namespace, 'owned'), start);
+const record = process.env.FLOW_K01_QUERY_RECORD_DIRECTORY ?? '';
+const baseBytes = Number(process.env.FLOW_K01_QUERY_BASE_BYTES);
+if (!isAbsolute(record) || await realpath(record) !== record || !Number.isSafeInteger(baseBytes) || baseBytes < 0) throw new Error('BUDGET_INPUT');
+const budget = new StorageBudget(namespace, record, baseBytes, () => Buffer.byteLength(JSON.stringify(result, null, 2) + "\n"));
+const database = new OwnedDatabase(databaseUrl, join(namespace, 'owned'), start, budget);
 let failed = false;
 const measurement: Record<string, unknown> = {}; result.measurement = measurement;
 try { await measure(database, await database.open(), measurement); }
@@ -24,5 +29,13 @@ finally { result.cleanup = await database.close(); result.resourceFacts = databa
 const cleanup = result.cleanup as Awaited<ReturnType<OwnedDatabase['close']>>;
 result.endedAt = new Date().toISOString(); result.elapsedMs = Date.now() - start;
 result.passed = !failed && cleanup.absent && cleanup.adminClosed && cleanup.errors.length === 0;
-await durableJson(join(namespace, 'result.json'), result);
+try {
+  result.storage = budget.snapshot();
+  await durableJson(join(namespace, 'result.json'), result, 2 * 1024 * 1024, budget);
+} catch (error) {
+  // The reserved bounded parent capture keeps the original failure and cleanup facts when a receipt cannot be persisted.
+  result.passed = false;
+  console.error(JSON.stringify({ passed: false, receiptFailure: errorFact(error), failure: result.failure ?? null,
+    cleanup, resourceFacts: database.facts, measurementRetained: false }));
+}
 if (!result.passed) process.exitCode = 1;

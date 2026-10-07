@@ -4,11 +4,13 @@ import { dirname } from 'node:path';
 import { setTimeout as delay } from 'node:timers/promises';
 import { Pool } from 'pg';
 import type { FastifyInstance } from 'fastify';
+import { localAdminUrl, type StorageBudget } from './budget.js';
 import { acceptableIdentity, remainingMs, type DatabaseIdentity } from './corpus.js';
 
-export async function durableJson(path: string, value: unknown, maxBytes = 2 * 1024 * 1024) {
+export async function durableJson(path: string, value: unknown, maxBytes = 2 * 1024 * 1024, budget?: StorageBudget) {
   const bytes = Buffer.from(JSON.stringify(value, null, 2) + '\n');
   if (bytes.length > maxBytes) throw new Error('RECEIPT_LIMIT');
+  budget?.write(bytes.length);
   const file = await open(path, 'wx', 0o600);
   try { await file.writeFile(bytes); await file.sync(); } finally { await file.close(); }
   const directory = await open(dirname(path), 'r');
@@ -49,15 +51,14 @@ export class OwnedDatabase {
   startupAttempted = false;
   healthy = true;
   readonly facts: Record<string, unknown> = { configuredConnections: { admin: 1, auxiliary: 6, business: 8, pgBoss: 3, total: 18 }, observedPeak: 'unknown' };
-  constructor(readonly adminUrl: string, readonly prefix: string, readonly start: number) {
-    const endpoint = new URL(adminUrl);
-    if (!['postgres:', 'postgresql:'].includes(endpoint.protocol) || !['127.0.0.1', 'localhost', '[::1]'].includes(endpoint.hostname) || endpoint.pathname !== '/postgres') throw new Error('LOCAL_ADMIN_REQUIRED');
+  constructor(readonly adminUrl: string, readonly prefix: string, readonly start: number, readonly budget?: StorageBudget) {
+    localAdminUrl(adminUrl);
     this.admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 1000, statement_timeout: 1500, lock_timeout: 500, query_timeout: 1800, application_name: 'k01-query-admin' });
     this.admin.on('error', error => { this.healthy = false; this.facts.adminError = errorFact(error); });
   }
   get workUntil() { return this.start + 70_000; }
   get cleanupUntil() { return this.start + 110_000; }
-  requireWork() { if (!this.healthy) throw new Error('POOL_UNKNOWN'); const left = remainingMs(this.workUntil, Date.now(), 70_000); if (left < 2000) throw new Error('WORK_QUERY_RESERVE'); return Math.min(left, 1500); }
+  requireWork() { this.budget?.work(); if (!this.healthy) throw new Error('POOL_UNKNOWN'); const left = remainingMs(this.workUntil, Date.now(), 70_000); if (left < 2000) throw new Error('WORK_QUERY_RESERVE'); return Math.min(left, 1500); }
   async bounded<T>(action: () => Promise<T>, until: number): Promise<T> {
     const timeout = remainingMs(until, Date.now(), 110_000);
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -72,17 +73,17 @@ export class OwnedDatabase {
     if ((await this.admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [this.database])).rowCount) throw new Error('DATABASE_EXISTS');
     this.requireWork();
     const owner = (await this.admin.query<{ owner: string }>('SELECT current_user AS owner')).rows[0]!.owner;
-    await durableJson(this.prefix + '.database-reservation.json', { database: this.database, marker: this.marker, owner, createdAt: new Date().toISOString() }, 8192);
+    await durableJson(this.prefix + '.database-reservation.json', { database: this.database, marker: this.marker, owner, createdAt: new Date().toISOString() }, 8192, this.budget);
     this.requireWork(); this.creationAttempted = true;
     // Lost CREATE acknowledgement remains unknown: no name-only cleanup is ever authorized.
     await this.admin.query('CREATE DATABASE "' + this.database + '"'); this.creationAcknowledged = true;
-    await durableJson(this.prefix + '.create-ack.json', { database: this.database, creationAcknowledged: true }, 8192);
+    await durableJson(this.prefix + '.create-ack.json', { database: this.database, creationAcknowledged: true }, 8192, this.budget);
     this.requireWork();
     await this.admin.query('COMMENT ON DATABASE "' + this.database + '" IS \'' + this.marker + '\'');
     this.requireWork();
     this.identity = (await this.admin.query<DatabaseIdentity>('SELECT oid::text AS oid,pg_get_userbyid(datdba) AS owner,shobj_description(oid,\'pg_database\') AS marker FROM pg_database WHERE datname=$1', [this.database])).rows[0];
     if (!acceptableIdentity(true, this.identity, { oid: this.identity?.oid ?? '', owner, marker: this.marker })) throw new Error('DATABASE_IDENTITY');
-    await durableJson(this.prefix + '.database-identity.json', { database: this.database, identity: this.identity }, 8192);
+    await durableJson(this.prefix + '.database-identity.json', { database: this.database, identity: this.identity }, 8192, this.budget);
     this.creationReceiptSaved = true;
     const url = new URL(this.adminUrl); url.pathname = '/' + this.database;
     // Startup needs its migration budget, rather than applying the measurement statement limit to DDL.
