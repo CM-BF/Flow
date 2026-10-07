@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 08:30:29 UTC |
+| 最近更新 | 2026-10-07 08:44:43 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,32 +12,32 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前complete-draft专测4a60980b6dc756d46a720a9cbcb157a549555010；17其他源同d68，metadata HEAD以Git为准 |
-| 工作树dirty状态 | 两专测源已固定；本批仅own接口/检查源码/记录封存，最终clean以Git回执为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前locator修复bc3e06315bc80542547c11fa69adabda3fe62b79；18源同4a，metadata HEAD以Git为准 |
+| 工作树dirty状态 | 本批仅已固定browser locator与own失败证据/记录封存；最终clean以Git回执为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | CREATE和队列原指令恢复已验收；已打开的任务详情收到实时状态与新时间线 |
-| 下一可用交付 | 补齐准备后的完整草稿材料恢复验收，再处理身份隔离 |
+| 下一可用交付 | 修正专测定位后继续完整草稿材料恢复验收，再处理身份隔离 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | SSE任务详情2/2及原选组实证保绑定；当前complete-draft新actor源审0blocking，noEmit首红两类型错已修后exit0且独立证据已接受，浏览器NOT_RUN。local17647/24000、余6353；浏览器81002/150000、余68998，9MiB留存/4MiB启动 |
-| 实现目标 | 4a60980b6dc756d46a720a9cbcb157a549555010 |
+| 检查状态 | complete-draft首轮FAIL：仅cookieRead通过，profile控件定位超时、尚无CREATE/turn；清理已独审确认。locator源码已修未复测，不重跑原绿types/12observer。新browser段96678/150000、余53322含15s清理；旧raw不改 |
+| 实现目标 | bc3e06315bc80542547c11fa69adabda3fe62b79 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，IN_PROGRESS；full7、choice、两个CREATE故障点及Queue入队实际与清理分别限定接受；完整feature未批准 |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本次normal CLI本人核active/WTbranch/精确scope/overlap[]，见complete-draft-claim.json |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；08:38本轮准入本人normal CLI核active/WTbranch/精确scope/overlap[]，原件continuous-eighth-parent/admission.json |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-RECOVERY01-01 | completed | workspace_panels_owner | 原21合法输入/唯一canonical及ConnectionSession/Journal有界实现完成；来源取权/50直接检查与full7实证各保边界 |
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原四authority/屏障与两key已实现；CREATE两故障点及Queue enqueue原key/body/revision/双refs恢复各真实2/2并独审；promotion/SteerHTTP未验 |
-| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；prepared profile/knowledge+双文件恢复选组已备，实际NOT_RUN；steering和二中心待验 |
+| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；prepared profile/knowledge+双文件首轮定位失败尚未进入，locator已修未复测；steering和二中心待验 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
-| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | 原full7、choice、CREATE两分支及Queue真实选组通过，历史FAIL保真；SSE任务详情delivery本次2/2，complete-draft选组已固定仍NOT_RUN，Steer/二中心待验 |
-| WPF-RECOVERY01-06 | in-progress | workspace_panels_owner | 完整feature独审IN_PROGRESS；SSE任务详情2/2已独立限定接受；当前complete-draft两专测fixed，新actor源审0blocking/noEmit首红修后0；actual NOT_RUN，产品批准与旧raw保原范围；main未接 |
+| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | 原full7、choice、CREATE两分支及Queue真实选组通过，历史FAIL保真；SSE任务详情delivery本次2/2，complete-draft首轮FAIL/定位已修待复测，Steer/二中心待验 |
+| WPF-RECOVERY01-06 | in-progress | workspace_panels_owner | 完整feature独审IN_PROGRESS；SSE任务详情2/2已独立限定接受；当前complete-draft首轮FAIL已独审，newactor源审/noEmit保原绑定；locator已修未复测，产品批准与旧raw保原范围；main未接 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -366,3 +366,7 @@ Root [344f本轮actual审](../../docs/evidence/wpf-conversation-recovery/continu
 原6ffv4/exact21 fresh合法；按root边界及recipe更正，只原fixture/browser实现cookieRead+completeDraft：新draft先选profile/project并由真实Prepare CREATE确认项目（0turn），才添加knowledge与双file；后续保存→reload/显式Restore无新增业务POST/无正文预取→metadata验证→首turnexactrefs。一个synthetic公开profile publisher/token仅内存，0runner进程/claim/heartbeat/native/provider；现仅source，PG无预约。局部types只用SSE20s余13716ms（保6284charge），不重跑12observer。SSEactual审34af本自然批归档，runtime81002/余68998不变。
 
 2026-10-07 08:29:19 UTC 本批源码固定4a60980，17其他源同d68；类型首红与修后绿/实际清理分别归档，新actor聚焦审绑定fea37。下一仅待共享PG真实交接后本select实际验证；没有当前gate/adminenv，不以无逐run审批称总体阻塞。原所有FAIL/raw保持，完整feature IN_PROGRESS；本批normalpush后metadataHEAD/dirty以Git回执为准。
+
+## 2026-10-07 08:44:43 UTC — complete-draft首红与定位窄修
+
+[第八run原件](../../docs/evidence/wpf-conversation-recovery/continuous-eighth-validation.md)保cookieRead通过/completeDraft定位FAIL；尚无CREATE或turn。Root限定接受首红与owned清理，不冒产品失败或完整通过。固定`bc3e06315bc80542547c11fa69adabda3fe62b79`只把profile/settings指向真实composer header，原断言/timeout/Files/Knowledge不变。charge15676→段96678/余53322，旧90s/所有FAIL不改；当前DPERF实际占browser，本owner无holder，复测待真实归还与fresh输入。0新增types/direct/observer/PG/Chrome。

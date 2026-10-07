@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `4a60980b6dc756d46a720a9cbcb157a549555010`；仅原两harness新增真实Prepare后的完整草稿恢复选组，17其他源同d68。完整feature IN_PROGRESS。[最小delta/17源引用](complete-draft-checkpoint.json)、[真实准备顺序与synthetic publisher边界](complete-draft-source.md)。本次complete-draft浏览器 NOT_RUN；新actor源审0blocking、类型首红修正后exit0；[原任务详情SSE实际2/2](continuous-seventh-validation.md)已独立限定接受。原full7/choice/CREATE两点/Queue入队各保持固定绑定，旧FAIL不改。
+当前组合target `bc3e06315bc80542547c11fa69adabda3fe62b79`；[locator最小delta/18源引用](complete-draft-locator-checkpoint.json)。complete-draft首轮[FAIL与完整清理](continuous-eighth-validation.md)已独审：仅cookieRead通过，profile locator选错actions容器，尚无CREATE/turn；本fix仅真实header定位5+/3-，原断言/timeout不变、未复测。原新actor source和fixed noEmit认可保原绑定，不冒browser通过。完整feature IN_PROGRESS，原full7/choice/CREATE两点/Queue/任务详情SSE与旧失败均不改。
 
 ## 55b已审基线与原证据（历史固定）
 

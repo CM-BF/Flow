@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "COMPLETE_DRAFT_SOURCE_TYPES_READY_BROWSER_NOT_RUN",
+  "state": "COMPLETE_DRAFT_FIRST_FAILED_LOCATOR_FIXED_NOT_RETESTED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 81002,
-  "runtimeRemainingMs": 68998,
+  "runtimeSpentMs": 96678,
+  "runtimeRemainingMs": 53322,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -154,25 +154,45 @@
       "fullJourneyPassed": false,
       "fullFeaturePassed": false,
       "adminEnvDeleted": true
+    },
+    {
+      "run": "reccomplete-20261007-083815-ad30e8",
+      "journey": "complete-draft",
+      "executionHead": "2910b0e3ed8fe4f28ecae069f8e25579323c3cef",
+      "sourceTarget": "4a60980b6dc756d46a720a9cbcb157a549555010",
+      "manifest": "continuous-eighth-manifest.json",
+      "passedGroups": 1,
+      "selectedPassed": false,
+      "actualExit": 1,
+      "outerActualMs": 15675.927916076034,
+      "parentLateMs": 15117.757791,
+      "serializedParentMs": 15105.328625,
+      "chargedMs": 15676,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T08:39:56.398276+00:00",
+      "fullJourneyPassed": false,
+      "fullFeaturePassed": false,
+      "independentReview": "continuous-eighth-root-review.json",
+      "adminEnvDeleted": true
     }
   ],
   "nextSelection": {
     "journey": "complete-draft",
-    "source": "4a60980b6dc756d46a720a9cbcb157a549555010",
-    "state": "NOT_RUN",
+    "source": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+    "state": "LOCATOR_FIXED_NOT_RETESTED",
     "requiredGroups": [
       "cookieRead",
       "completeDraft"
     ],
-    "sourceReview": "complete-draft-root-review.json",
+    "sourceReview": "Root read bc3e eight-line delta against actual ConversationThread header; no new source blocker, runtime pending; final actual review will include delta",
     "localValidation": "complete-draft-checkpoint.json"
   },
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
-  "sourceCheckpoint": "sse-delivery-checkpoint.json",
+  "sourceTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "sourceCheckpoint": "complete-draft-locator-checkpoint.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
-  "currentReviewTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "currentReviewTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",

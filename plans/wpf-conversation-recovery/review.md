@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target4a60980b6dc756d46a720a9cbcb157a549555010；complete-draft新增准备链/一个synthetic publisher已获聚焦源码及fixed noEmit限定接受，真实browser尚未运行。原full7/choice/CREATE两点/Queue/SSE任务详情各有固定限定独审；promotion/Steer/完整材料组合/二中心未验，不自评整体feature通过。
+状态：IN_PROGRESS。当前target`bc3e06315bc80542547c11fa69adabda3fe62b79`；complete-draft首轮cookieRead通过、profile按钮定位失败，未进入CREATE/材料恢复。Root[首红/清理限定审](../../docs/evidence/wpf-conversation-recovery/continuous-eighth-root-review.json)接受真实失败，先前actor source review漏该locator，不追溯改为PASS。Root已只读核bc3e与实际header DOM，无新增source blocker；定位尚未复测；原通过选组/17产品源与完整feature边界保留。
 
-Review target commit：`4a60980b6dc756d46a720a9cbcb157a549555010`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`bc3e06315bc80542547c11fa69adabda3fe62b79`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21 scope，完整feature未批准。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 

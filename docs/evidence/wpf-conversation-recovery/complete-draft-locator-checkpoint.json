@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07 08:44:43 UTC",
+  "target": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "base": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "changed": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 88507,
+      "sha256": "112bfdc57aa710b080cc3799a016ae18916ac15ea53c23a95c417d596bab6ca8",
+      "blob": "c13bd298fee05fda2cac044d42558b56d9c48f0a"
+    }
+  ],
+  "unchangedSources": {
+    "count": 18,
+    "reference": "complete-draft-checkpoint.json",
+    "sha256": "dcef0b076d7e3ee27a04dbea6d08c663473afd0aff9c30624f8a79d51c2ae78d",
+    "target": "4a60980b6dc756d46a720a9cbcb157a549555010"
+  },
+  "change": "Scope profile and locked settings to unique visible composer configuration header; files/knowledge stay in actions slot",
+  "assertionsTimeoutsAuthorityUnchanged": true,
+  "runtime": "NOT_RETESTED",
+  "checks": "git diff --check only; no repeated types/observer/direct",
+  "failedAttempt": "continuous-eighth-manifest.json",
+  "budget": {
+    "spentMs": 96678,
+    "remainingMs": 53322,
+    "nextMaximumMs": 53322,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startBytes": 4194304
+  }
+}

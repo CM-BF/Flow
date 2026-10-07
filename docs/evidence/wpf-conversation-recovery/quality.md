@@ -273,3 +273,7 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 ### 2026-10-07 08:29:19 UTC — 本段类型结果与清理
 
 原fea37 noEmit实际exit2，5818.783ms；观察器records()的窄返回type不含knowledge，错误仅在新selector读取。fixed4a用现object(record.data)先验证对象再读，不扩大observer输出接口或用any掩盖；行为assertions不变。复测5543.033ms/exit0/log0B，root只批准的有限4000ms追加已记。local累计17647/24000；首97540与后57437 PID/group分别freshESRCH、两ownTMP均已原样归档后删除；日志为文件而非pipes，不宣称双EOF。无PG/Chrome/HTTP/provider/observer重测，旧浏览器段81002/剩68998不变。新synthetic actorroot固定fea审0blocking，后4a只类型读取修正；完整feature仍IN_PROGRESS。
+
+### 2026-10-07 08:44:43 UTC — completeDraft locator clean-code安全点
+
+复用已读本地find-skills/clean-code/codebase-design/webapp-testing，无安装。真实首红揭示测试Interface错位：plugin-integration/react.tsx:122仅actions span，ConversationThread.tsx:56配置header由thread.aui.tsx:273–276放在Composer前。固定bc3e06315bc80542547c11fa69adabda3fe62b79分清configuration与actions的单一职责，仅用唯一visible匹配/count1，未用first/nth掩盖歧义；profile/settings三处统一同小locator，Files/Knowledge仍原slot。错误原件/独审不回写，未加sleep/timeout/移除断言/产品测试开关；0新runtime，git diff --check0。保remaining53322且DPERF未归还不launch。
