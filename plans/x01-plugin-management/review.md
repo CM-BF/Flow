@@ -1,8 +1,8 @@
-状态：PENDING（startup十源及有限局部结果；真实CLI进程未验）
+状态：APPROVED（startup十源及有限局部结果；真实CLI进程未验）
 
 Review target commit: c8ba6bcb98f697b222cc972d517ea2891dcd8d71
 
-[固定交审入口](../../docs/evidence/x01/cli-startup-review-ready.md)。15/15、types0不代替独审；terminal20b历史批准与独立intake保持。
+chatui01_owner/gpt-6-astra于2026-10-07T10:04:52Z独审APPROVED/0P1P2。[正式回执](../../docs/evidence/x01/cli-startup-independent-review.json)，[十源窄intake](../../docs/evidence/x01/cli-startup-integration-ready.json)。原15/15/types证据不扩为真实CLI/PG；ordinary SDK静态加载与0插件load/invoke已明确。terminal20b历史批准与独立intake保持。
 
 ---
 

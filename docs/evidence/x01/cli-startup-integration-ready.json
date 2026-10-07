@@ -1,5 +1,5 @@
 {
-  "status": "PENDING_INDEPENDENT_REVIEW",
+  "status": "READY",
   "createdAt": "2026-10-07T10:03:22.062469+00:00",
   "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
   "sourceBaseline": "3811048522dcc8a896e7ccf09872389b14bccd63",
@@ -125,5 +125,16 @@
     "Actual server/runner process entry PG journey",
     "Management CLI commands",
     "Unknown invocation effects and complete X01"
-  ]
+  ],
+  "independentReview": {
+    "path": "docs/evidence/x01/cli-startup-independent-review.json",
+    "at": "2026-10-07T10:04:52Z",
+    "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+    "P1": 0,
+    "P2": 0
+  },
+  "wordingClarification": "Frozen cli-startup-quality.md phrase \"0 npm import\" means zero plugin npm load/invoke. Configuration tests statically import installed SDK nativeQuery through claude.ts without calling it. Ordinary dependency module loading is not claimed zero. This addendum corrects the wording without altering the reviewed source/input/raw.",
+  "mainIntegrated": false,
+  "mainReceipt": null
 }
