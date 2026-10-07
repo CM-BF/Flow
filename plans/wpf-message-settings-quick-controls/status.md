@@ -5,7 +5,7 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 06:55:52 UTC |
+| 最近更新时间 | 2026-10-07 06:59:15 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
@@ -121,3 +121,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 ## Native typeahead C 当前准备 · 2026-10-07 06:55:52 UTC
 
 诊断source `ac44d327cdff3180c0dff36c3e199cd47669fc88`、[精确范围/来源](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json)。只C一次m/可信原生事件后modal；旧A/B和六组不变。源码/父worker待独审，NOT_RUN，无noEmit或26重复；runtime新段仍23322、余66678，旧30625闭合。当前资料仅支持独立typeahead假设，不证明Chrome154根因；无gate/窗口预约。等待W04仍OPEN，开始UNKNOWN不补造；固定源码不等解除验证等待。
+
+### C 后继编码前提修正 · 2026-10-07 06:59:15 UTC
+
+诊断目标 `2e71bea91c188c5f13723dace905fe429d83834b`；原ac44保持历史。仅React fixture HTML响应明确UTF-8，C的characterSet断言不弱化。固定Vite transform/插件源码未自动补charset；这次是静态预防、非实际复现。原六组/三产品源/父worker不改，runtime/noEmit/26仍无新增。当前候选待固定审，预算23322/余66678保持。[依据](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json)。

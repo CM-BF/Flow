@@ -111,3 +111,7 @@ outeractualexit1/单一FAILEDseal/trace hash与null manifest一致；两PNG缺�
 ## 2026-10-07 06:55:52 UTC · Native typeahead C source-only
 
 find-skills优先复用已装本地技能，无安装/联网：find-skills、webapp-testing、clean-code的实际SHA列本次source记录。沿已批准owned浏览器fixture而非新launch框架；测量与功能验收分开，先precondition再真实键、真实trusted事件，失败不伪造成功。clean-code核命名、单一mode分支、共用arm和保稿断言、首错误/trace异常保真；只新增必要typeahead语义，无额外store/helper文件。原A/B/六组/三源hash逐字保护。未解决：尚无C实际观测、精确154根因未知，所有旧FAIL保留。noEmit未重复，0产品import/runtime/free；仅文本/固定hash/diff检查。
+
+## 2026-10-07 06:59:15 UTC · C charset 窄修
+
+沿已读find-skills/webapp-testing/clean-code，查实际固定Vite/React HTML transform而不假定自动补charset。只修custom响应声明一行，保持断言与错误保真；无新抽象/依赖/行为实验。未复现编码失败，已在状态限定；只文本/hash/diff核对，无noEmit/26/Chrome/free。

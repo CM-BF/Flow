@@ -87,3 +87,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 ## Native typeahead C 源准备 · 2026-10-07 06:55:52 UTC
 
 新增诊断目标 `ac44d327cdff3180c0dff36c3e199cd47669fc88`，独立源码/packet审查 NOT_STARTED。当前完整feature仍UNKNOWN；原fe6 source及26direct审批不扩到本诊断。见[设计与最小diff](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/README.md)。仅新plain C/native m有因果区分力的输入，成功后同m一次modal；不重跑已失败A/B、不替代原六组。旧actual/账23322+30625原样，runtime0，无新gate。
+
+### C 后继编码前提修正 · 2026-10-07 06:59:15 UTC
+
+诊断目标 `2e71bea91c188c5f13723dace905fe429d83834b`；原ac44保持历史。仅React fixture HTML响应明确UTF-8，C的characterSet断言不弱化。固定Vite transform/插件源码未自动补charset；这次是静态预防、非实际复现。原六组/三产品源/父worker不改，runtime/noEmit/26仍无新增。当前候选待固定审，预算23322/余66678保持。[依据](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json)。

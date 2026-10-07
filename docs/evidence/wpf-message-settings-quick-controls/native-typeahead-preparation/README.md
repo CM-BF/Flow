@@ -7,3 +7,7 @@ plain不选→INCONCLUSIVE/modal不执行；plain选/modal不选→仅该对照�
 实际新段仍23322/90000，余66678；旧30625及unused29375已封闭。一次最多45s含15s清理，64MiB scratch/8MiB总retained，0PG/provider/个人服务。本段无runtime/noEmit/26direct/容量采样。四源及原函数体hash见[source-manifest](source-manifest.json)。父/worker最小TMP后继 `/private/tmp/msgquick-typeahead1` 是管理准备artifact；metadata最终HEAD在提交后仅于TMP绑定，无递归项目提交、无gate/native批准冒用。
 
 清理与接收合同沿原：双独立owned groups/完整EOF/fixture-context-scratch/终态资源与seal/实际outerexit一致。新worker仅增加被动keypress与C入口；parent仅新mode与三诊断carry。prepared/null native pointer，不代表可执行。
+
+## UTF-8 静态预防 · 2026-10-07 06:59:15 UTC
+
+当前诊断source `2e71bea91c188c5f13723dace905fe429d83834b` 只比原ac44增加 `/` React文档响应的 `charset=utf-8`。C的UTF-8断言、三个options和可信事件均不放宽。[固定Vite/React插件源码核验](charset-static-review.json)：直接transform不自动注入charset，custom response不走静态文件header。尚无实际modal编码失败复现，故仅静态预防，不冒产品红或运行通过。原ac44 source/manifest/git记录和TMP `before-utf8-ac44`全保。父74dc/worker53d6字节不变，只重绑source与最终metadata。
