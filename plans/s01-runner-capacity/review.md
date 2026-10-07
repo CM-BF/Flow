@@ -1,6 +1,10 @@
 # S01 独立审查
 
-## 当前：观察交付策略诊断源码与局部结果
+## 当前：唯一replay实际结果待独审
+
+PENDING。执行32796520b07d4eed9f34c7c1db757740b7e20452/source d28166e81bcdbb9fb537b40144f7be07a2539130，报告delivery-replay-report.md、单记录delivery-replay-actual.json。两策略计量完整性PASS仅支持这2048记录的策略成本观测；JSON更少而完整wall更长，无原pool/128容量因果结论。请一次核新五原件、语义计数、时钟与资源事实，不重跑/访问旧KEEP。固定result target由本结果提交提供。
+
+## 历史：观察交付策略诊断源码与局部结果
 
 **SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0 P1/P2**，db_transaction_owner / gpt-6-astra，2026-10-07T14:59:26Z。source `d28166e81bcdbb9fb537b40144f7be07a2539130`，result `dbada7cc04cf152124ffc108760828d4d2c83a88`，execution `9365f91a8aba12aea17dd19710343edb382dc5c8`。唯一[当前READY](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md)。31bindings142910B逐Git=WT/len/SHA/regular/mode核符，manifest0fcd584c0729a0064e100a1e66c73b530d47d765b450a1eca469ae08071c7fdc；源码/config/input-v2从source→execution→result未改。
 

@@ -1,5 +1,7 @@
 # S01 delivery replay：当前局部结果与后继入口
 
+> 窗口已消费：2026-10-07T15:18:36.341Z实际启动、15:18:44.466Z完整RETURN。以下为执行前固定准备历史，不能再次据此launch；当前唯一交付为[delivery-replay-report.md](delivery-replay-report.md)，actual结果待独审。
+
 2026-10-07T14:56:51.621Z。源码 **d28166e81bcdbb9fb537b40144f7be07a2539130**；局部执行 **9365f91a8aba12aea17dd19710343edb382dc5c8**。db于2026-10-07T14:59:26Z完成SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，固定result dbada7cc04cf152124ffc108760828d4d2c83a88；原P2 CLOSED。claim508f v3/full6继续持有，source STOP；**实际replay NOT_RUN_NOT_OPEN**。
 
 ## 本次实际范围
