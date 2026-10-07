@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:18:53.213489+00:00；旧main接收事实不变。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:30:16.831684+00:00；旧main接收事实不变。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,19 +15,19 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | 公开流及静默到期刷新已通过独立源码与局部结果审查；正在准备真实数据库/HTTP的持久化、权限和旧客户端兼容验收。界面由原owner接线。 |
-| 下一可用交付 | 复用现有专库夹具准备公开流六组真实HTTP验收；固定输入交审后另排PG窗口，当前不运行PG。 |
+| 当前产出 | 公开流及静默到期刷新已通过独立源码与局部结果审查；真实数据库/HTTP的六组持久化、权限和旧客户端兼容用例已准备，类型检查通过、收集数6；等待独立准备审查。界面由原owner接线。 |
+| 下一可用交付 | 公开流六组专库/HTTP准备包交Web co-lead独立只读审查；随后另排真实PG窗口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | fresh 69de41a7 clean；本段独审归档/新PG准备形成后续metadata与测试改动。 |
-| HEAD（最近观察） | 69de41a7dbc937b980f542a35ba70a0a91a7248f（本段开工fresh clean） |
+| 工作树dirty状态 | 输入快照2a125afa clean；本次仅准备包/status元数据待固定，不含实际PG。 |
+| HEAD（最近观察） | 2a125afa10530753e7b2dc69f4ba93c2eab91bbc（新source/local检查快照） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v9 ACTIVE，52 literal；fresh读取仍同owner/branch；[精确receipt](../../docs/evidence/mature02c02/public-stream-pg-amend-receipt.json) |
-| 实现目标 | 5219ec25d6c52b54f7e46eac16766095c693c337（当前公开流）；历史连续性首片413420a1等按各自intake保留。 |
-| 实现范围 | 公开流25路径逐项见public-stream-review-ready.json；本次修复仅codex/{adapter,exchange,stream,turn}.ts、stream.test.ts和own验证配置，不扩51literal。 |
-| Review | status_read 2026-10-07T05:06:55Z APPROVED source2ab3c6ff/packet69de；静默buffer P2 CLOSED，0剩余P1/P2。原25源审查与15定向/strict0范围分开；真实公开PG/HTTP待验。 |
+| 实现目标 | 公开流2ab3c6ff（独审通过）；PG测试准备4520a06e42ae7945ba6a2485ab1dabcb3a9113cb；历史连续性首片413420a1等按各自intake保留。 |
+| 实现范围 | 公开流25路径及到期delta沿各固定审查；新PG仅新增assistant-stream/public-stream-pg.test.ts，复用own fixture/operator/config，claim v9/52。 |
+| Review | status_read 2026-10-07T05:06:55Z APPROVED source2ab3c6ff/packet69de；静默buffer P2 CLOSED，0剩余P1/P2。原25源审查与15定向/strict0范围分开；真实公开PG/HTTP待验；新准备包308输入/20links/2external，类型0、仅收集6，独立准备审查PENDING。 |
 | 检查 | 原失败及修后历史记录保留，不重跑旧types/unit。R1 6选5过1失败，旧TMP KEEP。cwd单例1通过/7未选及原Python/ANSI计数错误原件保留。R2单次公开PG/HTTP 6选6过、child/tool exit0，DB/服务/双EOF/组与本次TMP清理确认。0实际Codex/provider/install。 loader focused types0；两直接文件42选41过1失败，端点断言窄修后1过/19未选，共42 distinct；原失败保留。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；新public stream尚NOT_INTEGRATED。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -85,3 +85,5 @@ Stream独审status_read 2026-10-07T04:20:47Z APPROVED/0P1P2，原pending-sink P2
 2026-10-07T05:01:07.548017+00:00 到期flush唯一增量：[review-ready](../../docs/evidence/mature02c02/public-stream-due-review.json) / [单段原件](../../docs/evidence/mature02c02/public-stream-due-segment.json)。2ab3c6ff五源加2直接配置；15选15过/24未选（6新timer行为+9直接回归），strict0；两组末态absent/双EOF、TMP同inode删除，raw11631B；04:59:38.218939→04:59:41.925939Z仅caller范围，tool wait不等wholewall。全部实际local已交回X01，0待launch/PG/native/provider，原93与R1/KEEP不变。
 
 2026-10-07T05:18:53.213489+00:00 独立到期修复批准已归档 [receipt](../../docs/evidence/mature02c02/public-stream-due-independent-review.json)。旧PENDING段落保留为历史，不代表当前等待。新PG只准备，不复跑未改93/15/旧6PG；保留R1 KEEP，完整C02-04真实native及C02-05会话/UI仍未完成。
+
+2026-10-07T05:30:16.831684+00:00 公开流真实PG下一入口：[public-stream-pg-window](../../docs/evidence/mature02c02/public-stream-pg-window.md)。source4520a06e/input2a125afa，308输入1705071B/30SQL/20links/2external，10新输出absent，NOT_OPEN。实际local首次types2保留，最小类型修后types0、collect6（非pass），两次成功child/EOF/TMPclosed；原失败TMP另同inode空目录收尾。全部local已归还，0PG/native/provider/待launch，旧R1/R2/KEEP不变。准备独审由Web co-lead在已有owner槽只读进行，禁止以准备成功代替真实HTTP或UI。
