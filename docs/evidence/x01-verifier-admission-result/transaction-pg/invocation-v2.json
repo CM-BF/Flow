@@ -1,0 +1,43 @@
+{
+  "state": "PREPARED_CLOSED_REVIEW_PENDING_WAIT_MAIN_INTAKE",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "argv": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C",
+    "LC_ALL=C",
+    "TZ=UTC",
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-I",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/pg-v2-once.py",
+    "--admission",
+    "<FRESH_ABSOLUTE_ADMISSION_PATH>",
+    "--sha256",
+    "<SHA256_OF_EXACT_ADMISSION_BYTES>"
+  ],
+  "callerCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+  "callerSha256": "53e5f1b28351ad6c566a72f59d9e9cb27e85d1cac1cbf30e11c52c7d3cf9f2d5",
+  "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+  "admissionInterface": {
+    "lead": "mika",
+    "stage": "VAR_TRANSACTION_PG",
+    "state": "OPEN only after prerequisites and future manager NEXT",
+    "claim": "fresh exact cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24 matching claim-receipt-v2.json",
+    "ledgerObservedAt": "fresh <=60s at original caller start; invocation prepared first",
+    "head": "future clean executionHEAD=origin",
+    "window": "fresh32hex generated only for actual grant",
+    "pairedBytes": "future manager complete floor minus fixed base1242562560; no historical free sample reuse"
+  },
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/var-transaction-pg-v2-run-r1",
+  "current": "0actual/0admission/namespace not created",
+  "preconditions": [
+    "AV R3 actual5/5 and independentresultapproved; AV mainintake receipt stillrequired",
+    "v2 preparation metadata approval",
+    "Unique managerNEXT and fresh295/191/16/claimv2/namespace/head/free gates"
+  ],
+  "outerEvidence": "Use existing OPS14 operator; record outer PID/PGID/exit/EOF and wall separately; no additional supervisor logic.",
+  "failure": "Preserve actual result and raw; no retry or forced DROP; unknown KEEP.",
+  "reviewAssembly": "v2/candidate.json plus prior fixed review coverage; no actualpermission"
+}
