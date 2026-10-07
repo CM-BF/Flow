@@ -1,0 +1,80 @@
+{
+  "startedAt": "2026-10-07T04:04:21.733990+00:00",
+  "kind": "authorized-once-host-smoke",
+  "source": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "artifact": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+  "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+  "claimVersion": 7,
+  "claimObservedAt": "2026-10-07T04:03:49.603Z",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123378549,
+    "mode": "0o700"
+  },
+  "free": 25857392640,
+  "gate": 2684354560,
+  "webFiles": 10,
+  "bindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 21582,
+      "sha256": "677231869d2fae8b6c5ee57a9cd99d17c15764f806769a30d82921fe63a4ea67"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 3491,
+      "sha256": "238292f4ac39185b0c5e1dfd3cc6df5819bc0120564c01f0def730a4c449f9f7"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 4087,
+      "sha256": "51b7567ca0d8232de56f2b0f498945fd4729d707939cece0f967f8c1ccd1bfa4"
+    },
+    {
+      "path": "PROPOSAL.md",
+      "bytes": 5531,
+      "sha256": "0ebcb333dced1196a1cb6f33fe82759ceac9d37a8552d88a2d7e4255eb0d4d2d"
+    },
+    {
+      "path": "isolation-check.mjs",
+      "bytes": 4458,
+      "sha256": "36782212b47b1e7c10de7fad9458978aad8251a9bf76c7bef6615facd5a448ee"
+    },
+    {
+      "path": "isolation-input.json",
+      "bytes": 390,
+      "sha256": "6eb7690056e8549c695845d89b408ac732e1ea8e03fc39abaed8a862c1666fa3"
+    },
+    {
+      "path": "isolation-outer.json",
+      "bytes": 1814,
+      "sha256": "4c460b49f237142abe924f2f867b0b44be0f894ce3423f5ad209c8cc5e2434d8"
+    },
+    {
+      "path": "isolation-checkpoint.json",
+      "bytes": 1395,
+      "sha256": "1b93c90ecd5322f7806eb27955281588ab9dc39454b8aedb22092f95e8064f7f"
+    },
+    {
+      "path": "isolation-result.json",
+      "bytes": 1483,
+      "sha256": "f804105af84e9879b39a4f4c91b58a2cde85a61b3ef3831c92af9f71aa5b7b19"
+    },
+    {
+      "path": "build-main-receipt.json",
+      "bytes": 409,
+      "sha256": "64169c24093d4710bba417aa6263ee12ecadc941116e15a6585bf58bedfb27a2"
+    }
+  ],
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "allAdmissionChecks": true,
+  "tasks": 0,
+  "provider": 0,
+  "Chrome": 0,
+  "personalActions": 0,
+  "adminSource": "existing private installation config adminUrl; value never recorded"
+}

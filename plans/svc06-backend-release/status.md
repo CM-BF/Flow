@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:59:40 UTC；构建结果已main，host入口准备独审通过；实际旅程待窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:06:15 UTC；宿主首次实际运行失败，原始结果已保存；未知自有资源KEEP |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
-| 工作树dirty状态 | 交付b6dddd1f已固定并推送；当前仅准备独审转录metadata |
+| 工作树dirty状态 | e6ff入口及产物保持固定；本次仅实际结果与状态metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
 | 实现范围 | docs/evidence/svc06/artifact-host-smoke/entry.mjs, docs/evidence/svc06/artifact-host-smoke/supervise.py, docs/evidence/svc06/artifact-host-smoke/inputs.json |
-| 检查状态 | NOT_RUN e6ff0f1f2e7743496f1f17144343a28716c03b38；host/PG未验；本机拒读检查一次138ms通过，入口仅语法检查 |
-| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；实际未运行、未main |
+| 检查状态 | FAILED e6ff0f1f2e7743496f1f17144343a28716c03b38；work/cleanup均exit1；四路径拒读成立，三角色host未通过，center/DB未知保留 |
+| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物的真实构建、依赖和资源解析已通过并接收；已确认本机能让自有进程拒读开发目录。 |
-| 下一可用交付 | 共享窗口交付后，用已审入口和保留产物验证真实宿主能否在开发目录不可读时运行。 |
-| 当前阻塞 | ACTIVE: 实际宿主旅程等待共享运行窗口；入口准备已审，当前不占窗口。 |
+| 当前产出 | 固定后台产物已成功构建并接收；首次独立宿主验证在中心身份确认处失败，已保留原结果和自有资源。 |
+| 下一可用交付 | 只读核对保存的启动与清理证据，确认未知资源状态后再安排最小修正。 |
+| 当前阻塞 | ACTIVE: 首中心身份未获确认，自有数据库及中心资源保持未知；不得自动重试或清除。 |
 | 需用户决定 | NONE |
-| Review | 构建结果APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS；新host入口APPROVED_PREPARATION_ONLY Execution Lead，完整生命周期仍open |
+| Review | 原构建与入口准备批准保持；本次实际失败结果PENDING Execution Lead，不将准备批准扩大到运行 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -121,3 +121,9 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:59:40 UTC：宿主入口准备限定批准
 
 [唯一独审转录](../../docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json)核10个固定入口/证据、实际artifact manifest、cleanup helper、OPS14及d629十文件。无P1/P2、reviewer0重跑；本片仅准备通过。实际host/PG仍NOT_RUN，不重建或补测，不占窗口，原03/04与个人部署边界保持。
+
+实际宿主唯一运行开始：2026-10-07T04:04:40.248274+00:00，e6ff/固定e5原入口；fresh 25,857,392,640B通过2.5GiB门槛、claim v7与固定输入已核。120s工作+30s独立清理，0task/provider/Chrome/个人服务操作。结果待原始Report，不预判通过；本条仅记录真实开始。
+
+## 2026-10-07 04:06:15 UTC：首次宿主实际失败与资源保持
+
+[本次结果](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md) / [完整监督原件](../../docs/evidence/svc06/artifact-host-smoke/host-outer.json)。主失败和独立cleanup失败分别保存；两个监督组absent，但中心detached组与DB未知，未DROP/未强停，原artifact与private run保留。执行owner已结束并立即报告Lead；没有自动重试，03/04/05不勾选。
