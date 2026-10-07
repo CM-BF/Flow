@@ -117,3 +117,5 @@ Peer cold结果34c610的独立限定结论见own `host-integration/peer-recovery
 ## 同操作续接窄修
 
 434482原实际部分失败/RETURN获assignment限定APPROVED、0P1/P2，main e8e1313a4 / I02 svc06b-held-e15-r1-result-review.json。e871公共canonical/六phase停写待独审；6不同直接例299ms/733B保留分轮原件。新continuation-input.pending及dispatch ready:false，无个人继续执行许可。
+
+2026-10-07T22:34:17Z：assignment只读复审0b599/e871 APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION，0P1/P2；27bindings/2继承/135effective全符，6例原件无重跑。仅准备批准，实际续接仍须新SELECT与fresh，旧grant失效。

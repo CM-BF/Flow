@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:32:44.468Z |
+| 更新时间 | 2026-10-07T22:34:17Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 已修复恢复调用的摘要不一致；新产物和报告已迁入，服务仍停止。 |
-| 下一可用交付 | 独审后在新窗口只续目标切换、启动检查与恢复。 |
-| 当前阻塞 | ACTIVE: 窄修和剩余阶段候选待独审及新资源窗口；旧失败与KEEP不变。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 恢复调用的摘要修复及剩余阶段已通过独立审查，服务仍停止。 |
+| 下一可用交付 | 等待新运行窗口后，只续目标切换、启动检查与恢复。 |
+| 当前阻塞 | ACTIVE: 等待新的独占个人恢复窗口；旧许可已消费，当前无待启动进程。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | e871d17e018461dd1288dba404930a50897b2c24（公共canonical/六阶段） |
 | 实现目标 | e871d17e018461dd1288dba404930a50897b2c24 |
-| 工作分支状态 | review（窄修与续接候选固定，ready:false） |
-| 工作树dirty状态 | 仅本次own候选及证据封定；三执行源停写 |
+| 工作分支状态 | reviewed（0b599/e871固定，等待实际新窗口） |
+| 工作树dirty状态 | 源码与135pins冻结；仅本次批准及等待状态正常收口 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | 434482失败/RETURN获APPROVED_LIMITED_PARTIAL_HELD_RECOVERY_RESULT_FIDELITY，main e8e1313a4；e871窄修待独审。 |
+| Review | APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION，assignment独立核0b599/e871，0P1/P2；27bindings148073B/135effective824217B。 |
 | 检查状态 | 6不同/6选择通过，299ms/733B，3组absent双EOF、2exact空scratchremoved；0PG/服务/个人/provider。 |
 | 验证限制 | 个人仅新产物/报告迁入完成；rebind not-written，refresh/resume未运行。新续接无实际grant。 |
 | 已集成main状态 | 实际失败保真已main e8e1313a4；本次窄修与新续接尚未集成。 |
-| 运行窗口 | 实际START22:17:23.713320Z；terminal22:18:46.870374Z；精确RETURN22:20:13.131180Z。fresh/迁入/报告完成，rebind not-written，后4阶段未运行，0provider。 |
+| 运行窗口 | 旧段22:20:13.131180Z精确RETURN；新等待22:34:17Z始，来源Lead协调请求。新logical SVC06B-HELD23-E15-CONTINUATION-20261007-ONCE尚未SELECT，无pending launch。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
 | 看板 | 唯一own status如实记录部分迁入与恢复失败；完整双槽/个人settings激活仍开放。 |
 
@@ -190,3 +190,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T22:24:41.972383+00:00：实际恢复在rebind identity返回MAINTENANCE_TARGET_CHANGED/not-written后停止，前3阶段已消费不可重放，后4阶段NOT_RUN。22:20:13精确RETURN已交资源owner；七直属PID/旧三role组absent、连接[]/adminclosed，childPidOnly不提升全组语义。已保存snapshot纯计算证明仅state的生产canonical与旧caller摘要不相等；未保存rebind当时三项实际digest，不能排除同时外部变化。见[原结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-result.json)与[有限诊断](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-diagnosis.json)。本段只复用公共canonical修调用方，0新现场/服务/PG/provider，不变更生产校验；工作段至22:35Z、检查累计30s/tmp8MiB。
 
 2026-10-07T22:32:44.468Z：e871三执行源停止；新六phase已删除两个已消费import动作。真实公共canonical与880060同字节；旧expected摘要和原件不改。4 Node+1 Python原件231ms，后置继承dispatch装配只补1例68ms，135有效公开pin核同，仅最后execute替换。新input.ready=false/window和floor空，当前无child。clean-code安全点核单一序列化权威与原维护/监督器复用；旧toy仅同步purpose/namespace两literal，不算新增绿。metadata首个Python文本写入因编码解析0写退出，状态解析仍保其当时事实；本次重新正常写状态，非工程检查失败。
+
+2026-10-07T22:34:17Z：assignment已正式限定批准0b599/e871，0P1/P2。135pins与执行源停止写入；Lead同刻请求新唯一恢复窗口，实际等待从本事件开始，尚未SELECT。旧grant不复用、不进入任何import/bootstrap/hold/retirement。仅后续准入资源字段可按新grant绑定，完整任务仍开放。
