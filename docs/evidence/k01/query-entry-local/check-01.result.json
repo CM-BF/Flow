@@ -1,0 +1,38 @@
+{
+  "pid": 60763,
+  "ownership": "newChildSession",
+  "capture": "merged",
+  "exit_code": 0,
+  "elapsed_ms": 471,
+  "observed_bytes": 321,
+  "retained_bytes": 321,
+  "eof": {
+    "stdout": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "sourceChanged": [],
+  "fixedInputsAfter": "matched",
+  "mode": "pure",
+  "resourceConfirmed": false,
+  "outputSha256": "cffce97ab01a7aef9b34039b13e5bb5f1d01f3e2eb402f62a60618b766fd7827",
+  "sourceHead": "8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9",
+  "endedAt": "2026-10-07T15:19:45.008488+00:00",
+  "logicalBytes": 1222922
+}

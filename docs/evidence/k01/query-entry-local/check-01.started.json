@@ -1,0 +1,82 @@
+{
+  "mode": "pure",
+  "startedAt": "2026-10-07T15:19:44.450872+00:00",
+  "sourceHead": "8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9",
+  "authority": "Mika resource release: SVC09A RETURN15:14:38.558644 and S01 RETURN15:18:44.466; parent notice2026-10-07T15:19",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/vitest.config.mjs",
+    "--no-cache"
+  ],
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "sourceFiles": [
+    {
+      "path": "corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "entry.py",
+      "bytes": 7274,
+      "sha256": "15a9ff8e075de5292a67bda1a24be21a0d3982a1b852dc2e38f9f4462a281f88"
+    },
+    {
+      "path": "local-permit.json",
+      "bytes": 405,
+      "sha256": "09302c98e1260015e685cc67912ccf12fa93be1f5a2ed3a5aabc10bc4bfbf51d"
+    },
+    {
+      "path": "materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "measurement.ts",
+      "bytes": 13394,
+      "sha256": "856530a4bc25f011f87126425fc4c1aedaa7ecd8e2ca270ed5872f98d75d3002"
+    },
+    {
+      "path": "owned-database.ts",
+      "bytes": 9292,
+      "sha256": "6d64fa0a086bc8f9382a9c2f7da9c8ee5759ecde4f73068d85a0b7f87e153240"
+    },
+    {
+      "path": "preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "run.ts",
+      "bytes": 2271,
+      "sha256": "c4895400a8a88754726bbd87e8cc88785f62a112fc41ae1b88bc7d3bc52fe48a"
+    },
+    {
+      "path": "source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "vitest.config.mjs",
+      "bytes": 173,
+      "sha256": "7362611fefea54c5e2237de2465627930aed18a4ae0875f0c8767746da71ad05"
+    }
+  ]
+}

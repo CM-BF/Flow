@@ -1,0 +1,45 @@
+{
+  "protocol": "flow.k01.query-entry-local-result.v1",
+  "sourceTarget": "8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "segmentStartedAt": "2026-10-07T15:01:34Z",
+  "childStartedAt": "2026-10-07T15:19:44.372427Z",
+  "childReturnedAt": "2026-10-07T15:19:45.008488Z",
+  "children": 1,
+  "elapsedMs": 471,
+  "pure": {
+    "selected": 4,
+    "passed": 4,
+    "exitCode": 0
+  },
+  "types": "NOT_RUN",
+  "pg": "NOT_OPEN",
+  "readiness": "HOLD",
+  "reason": "OPS14 group observation first UNKNOWN errno1, later absent does not erase uncertainty",
+  "signals": [],
+  "providerCalls": 0,
+  "raw": [
+    {
+      "path": "docs/evidence/k01/query-entry-local/check-01.log",
+      "bytes": 321,
+      "sha256": "cffce97ab01a7aef9b34039b13e5bb5f1d01f3e2eb402f62a60618b766fd7827"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-local/check-01.result.json",
+      "bytes": 819,
+      "sha256": "231fbe5f96db4a185f6767a5a1b977fedbc1244fc612836f6ef748c7110e8251"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-local/check-01.started.json",
+      "bytes": 2659,
+      "sha256": "0ca0c362ebde6f64f9bc3fd092eb59b65c480d1a80e4a5a186e106e2706ee20a"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-local/local-permit.json",
+      "bytes": 405,
+      "sha256": "09302c98e1260015e685cc67912ccf12fa93be1f5a2ed3a5aabc10bc4bfbf51d"
+    }
+  ],
+  "scope": "source preparation and four pure tests; no lifecycle/PG/performance result",
+  "next": "Mika coordinate existing OPS14 owner; do not weaken UNKNOWN. noEmit and independent entry review remain pending."
+}

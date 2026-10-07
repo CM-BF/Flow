@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 15:15 UTC |
+| 最近更新 | 2026-10-07 15:20 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,11 +16,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 合法实验范围准备中；产品路径及c2ed诊断设计不改 |
+| 工作树dirty状态 | 实验源固定8c5fa9682；本次仅结果/状态归档，最终提交push后STOP |
 | 工作分支状态 | in-progress（检索诊断设计已审待主线接收；原产品/留存为历史接收，开放验收不变） |
-| 检查状态 | NOT_RUN：源准备已完成；4纯用例/noEmit尚未执行，工程child等待SVC09A actualRETURN；PG/HTTP NOT_OPEN |
+| 检查状态 | PARTIAL：4/4纯用例exit0；OPS14 UNKNOWN errno1触发HOLD；noEmit NOT_RUN、PG/HTTP NOT_OPEN |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段检索诊断准备未集成，未运行 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
@@ -28,9 +28,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 检索诊断入口和金样本已准备，等待资源条件完成纯检查 |
-| 下一可用交付 | 交付可审入口及纯检查证据；实际数据库测量仍未开放 |
-| 当前阻塞 | NONE |
+| 当前产出 | 检索金样本纯检查已通过；入口仍待类型检查与独立审查 |
+| 下一可用交付 | 解除监督器未知门禁后完成入口验证；实际数据库测量仍未开放 |
+| 当前阻塞 | 检查监督器首次进程组观察未知，已停止后继检查；由既有监督模块owner定位后再开有界检查段 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；新入口NOT_STARTED；c2ed仅历史设计APPROVED |
 
@@ -98,3 +98,7 @@
 2026-10-07T15:01:34Z：新20分钟准备段开始，截止15:21:34Z。fresh492a16f=origin clean后amend v2，仅新增experiments/knowledge-search；receipt为docs/evidence/k01/query-entry-amend-receipt.json。S01窗口优先，工程child尚未启动；最多5串行child/各≤30s/累计≤90s。首次静态供给误猜plugin-runtime index被Git拒绝，后按固定package.exports修正；245项/1112251B/33SQL在自有ignored source目录。依赖初次zod顶层缺项，已改精确既有pnpm唯一安装目录链接，无安装/产品改写。实际PG/HTTP/browser/provider均NOT_OPEN。
 
 2026-10-07 15:15 UTC：固定245项/1112251B/33动态SQL输入静态hash一致，17已有依赖metadata及3内部包指向本供给；实验正文/metadata约100KiB、含供给总逻辑约1.22MiB，均在本段预算内。四纯用例与strict noEmit入口已备；0工程child/0产品import/0PG/HTTP/browser。Mika15:09明确SVC09A为唯一离线build owner，S01非active但本工程检查仍排他；仅收到actualRETURN后在本段剩余时间运行，否则固定源STOP。当前无性能/索引/生命周期通过结论，未采dashboard。
+
+2026-10-07T15:17:20Z：入口源checkpoint已提交8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9并push，apps/packages相对本段492a16f零diff。唯一实验记录experiments/knowledge-search/preparation.json包含静态输入hash/字节和真实准备失败摘要（原tool transcript未伪造为raw文件）。当前4纯用例/noEmit尚NOT_RUN，0工程child，不称准备源已验证；新独审NOT_STARTED，历史c2ed设计批准不外推。未新增dashboard/PG采样，保持本段15:21:34截止。
+
+2026-10-07T15:19:44.372427Z→15:19:45.008488Z：Mika已转SVC09A与S01实际RETURN，fresh可用空间20376842240B≥14338424832B，源/依赖检查后启动唯一pure child。4/4通过/exit0/471ms/EOF，OPS14 PID60763首次group UNKNOWN errno1、后续absent；按原门禁保持HOLD，0 signals，未启动第二child/noEmit/PG。原始started/result/log及许可逐字归档在docs/evidence/k01/query-entry-local，唯一record.json区分测试通过与资源未知；不把后续absence抹去先前unknown，不清理未知process/TMP或新增探针。当前本片未验证完成，原c2ed批准仍仅设计。最终metadata commit/push后STOP，claim v2三scope保留，Mika协调既有OPS14 owner后另授有界段；截止不延长。
