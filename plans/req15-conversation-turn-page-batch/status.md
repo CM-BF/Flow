@@ -2,38 +2,38 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:09:43 UTC；真实PG结果独审APPROVED，分支可受控集成；HTTP/main仍开放 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:19:09 UTC；主线Pool mock小增量已独审通过，11/11定向证据固定，恢复受控集成队列 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原20:36:40.398Z领取仅证明claim；20:39:12UTC首份质量记录说明已开展，但没有首次实际开工的精确事件，故不猜时间。完整HTTP/main验收尚未结束 |
 | 分支交付时间 | 2026-10-07T03:07:40.672129Z为本次结果manifest封存观察；固定结果b00a181f与后续metadata提交分别见HEAD，不用Git时间冒充实际交付 |
-| 独立审查时间 | 2026-10-07T03:08:27Z，targetb00a181f真实PG结果；前一局部段2026-10-07T02:58:41Z，target01d798 |
+| 独立审查时间 | 2026-10-07T03:18:33Z，targetae899312主线mock增量；真实PG结果2026-10-07T03:08:27Z，targetb00a181f |
 | 主线集成时间 / 部署时间 | UNKNOWN / UNKNOWN；本功能未集成，未部署 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品d209eb7275777d50f214fd73f66d6b3c1520c459；PG source5ddddd6a7991243b5c42e223b11df879f0fa9498；运行HEAD8da3ea07e8d567583797fef3dcc42ef91564af92；PG结果b00a181f38c261d33651368d82a040db3ab0bb18 |
-| 工作树dirty状态 | b00a181f结果已固定/push；本次仅4份检查/质量/status/review归档；提交后核clean，95输入及产品字节不变 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；六产品d209；PG结果b00a181f；fixturefix source9e6cc60bcd1cbdef538cbce9300f09aace6c8a26；新结果ae899312a2942c112dfca6cdf5b1cb472daf3488 |
+| 工作树dirty状态 | source9e6与结果ae899已固定/push；本次仅3份metadata归档审查，提交后核clean并停写待main接收 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
-| 实现目标 | b00a181f38c261d33651368d82a040db3ab0bb18 |
-| 产品验证基线 | d209eb7275777d50f214fd73f66d6b3c1520c459；原8产品/测试、fake26/26及strict-v2已独审；当前5dd仅增加未运行的PG验证准备，不新增产品行为 |
-| 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py |
-| 检查状态 | PASSED b00a181f38c261d33651368d82a040db3ab0bb18 真实PG2selected/2passed/exit0；types exit0、collect2（非pass）及旧d209 fake26/26/strict-v2证据分别保留。HTTP/main NOT_RUN |
+| 实现目标 | ae899312a2942c112dfca6cdf5b1cb472daf3488 |
+| 产品验证基线 | 六产品始终d209eb7275777d50f214fd73f66d6b3c1520c459；完整8source/tests当前固定9e6cc60b（仅turn-page-batch.test mock接口变化），旧26/strict按原d209证明范围保留 |
+| 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py, docs/evidence/req15-turn-page-batch/main-database.ts, docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs |
+| 检查状态 | PASSED ae899312a2942c112dfca6cdf5b1cb472daf3488 主线database固定字节下turn-page-batch.test.ts单文件11selected/11passed/exit0；旧26/strict/PG2各自历史target未重跑，HTTP/main仍开放 |
 | 已集成main状态 / HEAD | 尚未受控接收；产品d209与结果b00a181f均为分支证据，main检查由原集成owner完成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量分页和并发快照已通过真实数据库验证及独审，等待主线接收 |
-| 下一可用交付 | 主线接收批量读取改动，并完成HTTP直接消费者验证 |
+| 当前产出 | 批量读取测试已适配主线连接管理，定向检查与独审通过，等待主线接收 |
+| 下一可用交付 | 主线继续接收，并完成现有HTTP直接消费者验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
-| Review | [review.md](review.md)：chatui01_owner于2026-10-07T03:08:27Z批准b00a181f真实PG结果忠实性，0 P1/P2；01d798局部段及产品/PG源码批准保留 |
-| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；实际入口03:06:59.993Z fresh核10scope/身份全符；原[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
+| Review | [review.md](review.md)：architecture_read于2026-10-07T03:18:33Z批准source9e6/targetae899小增量，0 P1/P2；此前产品与PG结果批准范围保留 |
+| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；owner03:15:45.728Z fresh核身份/10scope全符；原[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
 | 架构影响 | conversation读取新增内部批量Interface，外部契约/事务所有者不变；待更新target为产品d209/后续main接收，责任mika协调架构基线owner，不冒称图已同步 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -115,3 +115,9 @@ Mika已确认上述有界局部段，恢复窗口实际归还后即可采用，�
 HTTP接收入口（按fixed22a只读核）：`apps/server/src/conversations/index.ts:38–40` 的 `GET /api/conversations/:id/turns?after=...&limit=...` 直接调用turnPage。最小既有消费者候选为 `apps/server/src/conversations/conversations.test.ts:134–160` 的 `pages immutable turns and returns long assistant content only through an owned lazy detail`：保留长Unicode预览/≤4000且无孤高代理、owned lazy detail、跨会话404、after空页、limit51→400与不可变user文本断言。该历史fixture硬绑flow_chat01且CREATE/DROP；不能直接在共享库启动，集成owner须沿专属库/动态port生命周期受控适配，保留断言，不在本分支另造完整fixture。
 
 产品6源固定d209且与本交付一致：assistant/{store,index}.ts、conversations/{queries,replies,state,turn-read}.ts；完整8source/tests再加assistant/final-preview-batch.test.ts和conversations/turn-page-batch.test.ts，逐literal见上述manifest。范围接收后按Mika安排交还给C02 policy消费者，当前原claim仍保留，未经amend/release不推断其写权。
+
+2026-10-07 03:17:45 UTC main直接消费者兼容修复：Lead核主线SVC07已用callback checkout及client listener，原测试connect只返回Promise会挂起。只改本scope turn-page-batch.test.ts：EventEmitter提供真实on/removeListener，connect支持Pool callback与Promise，原全部断言保留；不向生产transaction加兼容分支，不改本树database.ts或六产品。固定donor main8c80a7105cf442783e83184a14e34c8da08ebe16的database.ts7789B/SHA277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653，逐字等于已审SVCe28，在own evidence置0444只读；Vite仅映射解析到本树database.js的相对import，transform校验固定SHA并产生日志marker证明实际加载。
+
+architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pages-main payload，03:16:06.400242Z至03:16:07.202537Z单次child，11selected/11passed/exit0/0.877739s，raw1908B含donor LOADED marker；PGID87744 absent/EOF、signals/secondary空，TMP空同inode删除且owner精确lstat absent。local实际终态已直接交回architecture_read。0PG/HTTP/provider，未重跑旧26、strict/types/collect或2PG。[单份新记录](../../docs/evidence/req15-turn-page-batch/main-database-validation.json) SHAb96634b098b587e6268975b7dfae47ea190eb17d3c3e2b4ef7f620c184074933绑定完整8源55483B及2输出5332B，source9e6/结果ae899；当前小增量独审PENDING，旧PG原件/manifest未改变。新集成应以此8源为准，替代先前2abe manifest中唯一旧test blob；6产品仍d209，HTTP入口与专库适配边界保持原段。
+
+2026-10-07 03:19:09 UTC 收口：architecture_read/gpt-6-astra于2026-10-07T03:18:33Z对source9e6cc60bcd1cbdef538cbce9300f09aace6c8a26 / resultae899312a2942c112dfca6cdf5b1cb472daf3488给出SOURCE_AND_RESULT_REVIEW_APPROVED /0 P1/P2。14bindings逐Git=WT/bytes/hash，donor=main8c80=SVCe28，唯一mock修复保留全部断言，11/11真实单文件、raw1908B完整/最终group absent/无signals或secondary、精确TMP lstat absent；reviewer0运行/import/PG/写。批准限本mock兼容及局部consumer证据，非HTTP/main。最小intake现用main-database-validation.json的8源，6产品不变，仅test新blob；当前integration、claim保留，提交/push后完全停写等待接收和后续scope交回。

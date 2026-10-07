@@ -41,3 +41,9 @@ chatui01_owner 23:38:54UTC fixture/SQL/observer/两case APPROVED/0 P1/P2；Mika/
 2026-10-07 03:09:02 UTC：沿已固定find-skills/clean-code/codebase-design方法，仅执行原有2例，不改产品、fixture、封套或95输入；不加第二平台/重试或OPS迁移。检查测量名与口径、同client RR所有权、paired task/attempt、per-task LIMIT2、first failure与cleanup边界，原始stdout不改行尾。两例实际通过，原raw/marker/进程与DB closure分别保留，[checks](checks.md)报告样本字段UTF8与真实8次query/ReadyForQuery，不将fake214或旧SQL252冒充基线。当前HTTP/main尚未验，PG结果独审待回传。
 
 本段独审已由chatui01_owner于2026-10-07T03:08:27Z完成，绑定b00a181f，RESULT_FIDELITY_REVIEW_APPROVED/0 P1/P2；准确范围与未执行边界见唯一review。source未改，无需为metadata复跑任何检查。
+
+## 主线直接消费者兼容安全点
+
+2026-10-07 03:17:45 UTC：find-skills本地匹配Node/TS/Vitest测试依赖接口，沿固定clean-code/codebase-design只修测试替身职责：真实EventEmitter处理client listener，Pool callback/Promise双形态提供借出client。没有生产兼容补丁或重复transaction实现；main只读donor为已审完整字节，窄resolve seam与transform SHA/加载marker固定依赖。原断言全保留，单文件11/11，新raw及所有权清理有证据；旧26/strict/2PG不重复或改写。source9e6/结果ae899，当前增量独审待完成，HTTP/main仍open。
+
+2026-10-07T03:18:33Z architecture_read对source9e6/targetae899独审SOURCE_AND_RESULT_REVIEW_APPROVED/0 P1/P2；14绑定、donor相等、11/11 raw与资源closure全符，准确范围见review。本次仅归档，不重复任何工程检查。

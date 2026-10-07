@@ -1,8 +1,8 @@
 # REQ15 独立审查
 
-状态：APPROVED（b00a181f两例真实PG结果忠实性；HTTP/main未验）
+状态：APPROVED（ae899312主线Pool mock小增量与局部结果；HTTP/main仍开放）
 
-Review target commit: b00a181f38c261d33651368d82a040db3ab0bb18
+Review target commit: ae899312a2942c112dfca6cdf5b1cb472daf3488
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
@@ -87,3 +87,13 @@ Target `b00a181f38c261d33651368d82a040db3ab0bb18`；已审产品/fixture/封套�
 chatui01_owner / gpt-6-astra，2026-10-07T03:08:27Z，target `b00a181f38c261d33651368d82a040db3ab0bb18`，**RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2**。独核output manifest SHAe4e6a60ad448d78efb11c2ac26f53f9f4fa0d9bcc011a84916a444c5aab274fc及5原件10612B Git=WT/len/hash/0600；原95 inputs429768B/df2cd82…439e跨execution8da=target=WT全符。raw584B实际2选2过，exit/process/fixture互符；PID/PGID72871 exit0/合并EOF/group absent/signals空。专库OID1193363与marker跨3原件一致，三池关闭、零连接普通DROP+absence有源码与receipt支持；reviewer仅对精确TMP lstat absent，未重连DB/扫描进程。
 
 六measurement分项算术全符；mixed50 queryCalls=Ready8含BEGIN/COMMIT，field115722=68123+133+47466、JSON96098B；RR task结果屏障后writer COMMIT ACK、旧pair→下一事务新pair断言与receipt一致。1.150494s为wrapper preflight至cleanup、final persistence前，非解释器/工具完整wall。批准严格限两case真实PG结果/资源/测量忠实性，不批准HTTP/main、吞吐/完整wire/历史样本比较。审者0test/import/PG/cleanup/写。作者接受，无修复；转integration，原REQ15-04继续待HTTP与main。
+
+## 主线Pool mock直接消费者小增量
+
+Target `ae899312a2942c112dfca6cdf5b1cb472daf3488`，source9e6cc60bcd1cbdef538cbce9300f09aace6c8a26，相对25be仅turn-page-batch.test.ts mock变化，无断言/产品改动。只读donor main8c80a710 database7789B/SHA277ab008…5653等于已审SVCe28；窄Vite映射与transform哈希/LOADED marker确保单文件11/11实际使用该字节。原run-check新增固定pages-main，记录8MiB TMP采样，复用原supervisor，无新框架。2原件5332B及完整8源55483B见main-database-validation.json（SHAb96634b0…74933）；PGID87744 absent/EOF/TMP同inode清理与独核absence。待architecture_read只读核此delta/绑定/忠实性，无需重审旧产品或复跑26/PG。
+
+## 主线Pool mock增量独立结论
+
+architecture_read / gpt-6-astra，2026-10-07T03:18:33Z，source `9e6cc60bcd1cbdef538cbce9300f09aace6c8a26` / target `ae899312a2942c112dfca6cdf5b1cb472daf3488`：**SOURCE_AND_RESULT_REVIEW_APPROVED /0 P1/P2**。只按fixedGit审查；现场dirty仅owner三份收口metadata。唯一test delta EventEmitter+callback/Promise connect未删断言，六产品及productiondatabase相对25be无diff。donor7789B/SHA277ab…5653逐字=main8c80=已审SVCe28；窄resolve与transform LOADED marker证明本轮加载，14bindings全Git=WT/hash/bytes，validation SHAb966…4933。
+
+单文件11/11 exit0/raw1908B完整、observed=retained/最终group absent、无signals/secondary，TMP当前精确lstat absent。审者0tests/import/PG/write。批准仅mock兼容与本局部消费者，不重发旧26/PG2批准或扩大到真实HTTP/main。作者接受，无修复；恢复integration队列，不再运行检查。
