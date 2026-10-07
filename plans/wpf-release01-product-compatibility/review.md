@@ -2,7 +2,7 @@
 
 **当前状态：NOT_STARTED，固定诊断候选待独立源码/边界审。**
 
-Review target commit：cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。[候选与局部提案](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)仅准备。新类型检查/诊断actual NOT_RUN；正式四App仍FAILED，reports=null，不可部署。
+Review target commit：fc2916c275efe86203d91ec33656ea9871eac42a。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。[候选与局部提案](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)仅准备。新类型检查/诊断actual NOT_RUN；正式四App仍FAILED，reports=null，不可部署。
 
 ## 历史：d032源码及第二实际失败
 
@@ -90,3 +90,5 @@ Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 ## 历史 c3 actual PASS（独立证据审前）
 
 [65原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json)及[限定结果与清理](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)：真实outer0/23,495ms、3App各4观察/3compat IDs、独立Cookie probe；完整marked DB/HTTP/Chrome/PGID/scratch/admin清理。作者仅报告实际，不自行批准独立review。原源码/准备批准与失败不改，主线/部署仍未接收。
+
+2026-10-07T16:40:47.350Z：诊断字节计数单行差量已按实际saveJson格式修正；原compact计量历史保候选before，父/worker不变，集中复审待回。

@@ -54,3 +54,5 @@
 ## 2026-10-07T16:37:19.057Z Cookie诊断源码安全点
 
 复用本地find-skills、brainstorming bounded、clean-code：已有root/manager明确批准窄诊断设计，无新平台或审批层。实际两harness增加可选观察与具名diagnostic入口；不复制public链、formal assertions或report codec。观察职责只读，原handler拥有错误与socket处理；原消费包不改。纯文本核formal console/check段和importReports逐字保持；Python仅AST检查候选parent。类型/浏览器均NOT_RUN，必要类型提案已列。未解决：原400具体code/连接因果未观察，snapshot关联不足保UNKNOWN。技能路径/来源沿既有基线，不重装。
+
+2026-10-07T16:40:47.350Z clean-code窄复核：诊断限额原用compact JSON，实际pretty+newline可超32KiB；已单行统一序列化表达式，保原cap与失败关闭，不加重复serializer/helper。仅静态文本核，0工程检查。

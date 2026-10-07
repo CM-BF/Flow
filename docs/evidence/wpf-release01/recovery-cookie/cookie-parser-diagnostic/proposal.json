@@ -1,7 +1,7 @@
 {
   "state": "PREPARED_NOT_RUN_PENDING_SOURCE_NATIVE_REVIEW",
   "at": "2026-10-07T16:37:19.057Z",
-  "source": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
   "previousSource": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
   "claim": {
     "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
@@ -65,8 +65,8 @@
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
-      "bytes": 40985,
-      "sha256": "b44e0e69d7b549ba8f99b49cd4d636746dcbfefcd678a0bc92e6ddc042a45f53"
+      "bytes": 41001,
+      "sha256": "798d58bb61e2c30420425bd59c62f1aeccec3374fe9ce08ebba91d941403c187"
     }
   ],
   "preparedPins": [
@@ -111,8 +111,8 @@
     {
       "path": "/private/tmp/rel01-recovery-diagnostic-c1/source.diff",
       "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/source.diff",
-      "bytes": 20532,
-      "sha256": "da883b8c9a0dbc86d9f1bbb6d0b18b5df59882cb4e5e65c6f7d8e59dca6c1478"
+      "bytes": 20548,
+      "sha256": "38e00ef3e7e4e2e7ba866a8aea5342e00fd82569d34c4096f37e5a06bdb69e47"
     },
     {
       "path": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py.diff",
@@ -131,7 +131,7 @@
     "path": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
     "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
     "bytes": 3754,
-    "sha256": "288fc4e518b6dc9c7cd864995d8215ad16b253aac9fb247df322d0ac8685d3b7"
+    "sha256": "9979ede5085680a7c69eefc2bbe4ac358d0ad82f5f9a9adf201800c1c993416e"
   },
   "guardrails": [
     "No original Fastify listener removal/replacement or socket handling change",
@@ -159,5 +159,17 @@
     "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae",
     "lines": "963\u20131003; generic400 body985"
   },
-  "notProven": "Exact clientError code and culprit in c2. Same error body alone cannot prove proxy, App, or backend regression."
+  "notProven": "Exact clientError code and culprit in c2. Same error body alone cannot prove proxy, App, or backend regression.",
+  "capFix": {
+    "at": "2026-10-07T16:40:47.350Z",
+    "previousSource": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+    "delta": {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/cap-fix.diff",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/cap-fix.diff",
+      "bytes": 995,
+      "sha256": "5eb4c7afe77009284e1329fea801188bbbab3c61464f1510f458643eb2625d06"
+    },
+    "actualChecks": "NOT_RUN; static expression equality only",
+    "runnableUnchanged": true
+  }
 }
