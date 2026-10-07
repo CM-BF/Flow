@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T17:47:04.359536+00:00",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--experimental-vm-modules",
+      "--test",
+      "--test-concurrency=1",
+      "--test-reporter=spec",
+      "--test-name-pattern=SVC09A readiness|SVC09A startup launches|SVC09A startup profile",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/preview.test.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/process.test.mjs"
+    ]
+  ],
+  "cumulativeSecondsCap": 120,
+  "rawBytesCap": 2097152,
+  "scratchBytesCap": 33554432,
+  "maxConcurrentChildren": 3,
+  "freeBytes": 18677645312,
+  "scratch": "/private/tmp/flow-svc09a-controller-4955vg0q",
+  "dev": 16777234,
+  "ino": 124390230,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56590,
+      "sha256": "12d4726b85ca3d41fcb2c88d0aa16c797d01ccce0bf1d56f290d5cb9890e3341"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 80285,
+      "sha256": "c21b595156ac820cbee941095689b6a7256e203c43f68f2433eaffdf1116871d"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 4296,
+      "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4"
+    },
+    {
+      "path": "tools/personal-preview/process.test.mjs",
+      "bytes": 5948,
+      "sha256": "25778ab1abca2a1c731b41a993af8898a08667645247f35b5f5e540714b3951c"
+    }
+  ],
+  "provider": 0,
+  "pg": 0
+}

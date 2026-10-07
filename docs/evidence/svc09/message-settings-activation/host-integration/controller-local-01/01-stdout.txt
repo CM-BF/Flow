@@ -1,0 +1,24 @@
+(node:88746) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SVC09A startup launches the two declared runner identities through the existing owned process port (199.036042ms)
+✔ SVC09A startup profile mismatch preserves primary and stops all records created in that start (30.571667ms)
+✔ SVC09A readiness owner unknown short-circuits and is persisted before cleanup (7.139667ms)
+✔ SVC09A readiness listener failure retains bounded last result and the unchanged ten second deadline (6.25675ms)
+✔ SVC09A readiness non-success health status keeps the primary when stop is unknown (7.837333ms)
+✔ SVC09A readiness fetch cause exposes only an allowed code and missing fields stay unknown (17.404542ms)
+✔ SVC09A readiness uses the explicit artifact status port after the same three default launches (8.408167ms)
+✔ SVC09A readiness default status port preserves the original status contract (6.996708ms)
+✔ SVC09A readiness invalid status port is rejected before any configuration or process access (0.292625ms)
+(node:88748) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SVC09A readiness listener structured and boolean interfaces each reuse one real predicate probe (4.376416ms)
+✔ SVC09A readiness listener owner mismatch and malformed or foreign listener stay false (3.2755ms)
+✔ SVC09A readiness listener separates executable errors and numeric exits without retaining output (3.20775ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 431.65225
