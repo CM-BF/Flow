@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:51:08.604977+00:00 / mainf39a5dfe；工具全文领域、PG结果和原生单文件工具机制证据已接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:21:07.364824+00:00 / main4fe33178；X01领取中心、Codex会话公共差量已接收，实际看板188来源 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | mainf39a5dfea0a33ef55631cb7e29291deca6d4e0d2已接CHAT05领域及ENG单helper证据；新增测试类型依赖P2窄修后root noEmit0。个人backend af51/v18、网页d629/v3与固定c7b宿主保持，集成不表示新模块已启用。 |
+| 已集成main状态 / HEAD | main/origin4fe33178b17925d558b5608f1b3c4ae69b3d06d5已接X01 claim/journal/中心与C02公共会话协议；组合类型与旧ACK/profile59直接消费者通过。个人backend af51/v18、Web d629/v3/c7b宿主保持，未部署新会话或全文模块。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 大材料完整取回与中断恢复已通过隔离验证，模块已进入主线；原生文件工具完成一次受限写入，个人网页宿主保持已更新版本。 |
-| 下一可用交付 | 把工具全文读口接入实际聊天；继续Codex会话、界面恢复与原生工程宿主组合验收。 |
-| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
+| 当前产出 | 插件领取与Codex普通会话的公共协议已进入主线；工具全文领域可恢复大材料，网页保持原已部署版本。完整原生工程和实际跨端旅程仍未关闭。 |
+| 下一可用交付 | 把工具全文公共读取接入宿主；独立推进受信单文件写工具与实际聊天恢复/设置验收。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING；[ENG01J资格决定](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)由GO向用户提出，答复前维持原授写拒绝。其他源码、受控验收与集成继续，不等待旧磁盘或槽位条件。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 

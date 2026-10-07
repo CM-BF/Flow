@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:51:08.604977+00:00 / mainf39a5dfe；工具全文领域、PG结果和原生单文件工具机制证据已接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:21:07.364824+00:00 / main4fe33178；X01领取中心、Codex会话公共差量已接收，实际看板188来源 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | mainf39a5dfea0a33ef55631cb7e29291deca6d4e0d2已接CHAT05领域及ENG单helper证据；新增测试类型依赖P2窄修后root noEmit0。个人backend af51/v18、网页d629/v3与固定c7b宿主保持，集成不表示新模块已启用。 |
+| 已集成main状态 / HEAD | main/origin4fe33178b17925d558b5608f1b3c4ae69b3d06d5已接X01 claim/journal/中心与C02公共会话协议；组合类型与旧ACK/profile59直接消费者通过。个人backend af51/v18、Web d629/v3/c7b宿主保持，未部署新会话或全文模块。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 大材料完整取回与中断恢复已通过隔离验证，模块已进入主线；原生文件工具完成一次受限写入，个人网页宿主保持已更新版本。 |
-| 下一可用交付 | 把工具全文读口接入实际聊天；继续Codex会话、界面恢复与原生工程宿主组合验收。 |
-| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
+| 当前产出 | 已审插件与会话差量及时进入主线；共享入口按原子交权转交后继，看板实际加载188来源并保留登录与计时。隔离局部检查与浏览器/PG按现规则并行。 |
+| 下一可用交付 | 收口工具全文共享出口及工程工具pump交接，持续接收已审成果；原owner维护真实开工/完成和等待来源。 |
+| 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING；[ENG01J资格决定](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)由GO向用户提出，答复前维持原授写拒绝。其他源码、受控验收与集成继续，不等待旧磁盘或槽位条件。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
