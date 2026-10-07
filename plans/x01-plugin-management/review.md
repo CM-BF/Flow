@@ -1,3 +1,13 @@
+# X01 host candidates actual result review
+
+状态：PENDING（唯一新PG结果忠实性；原source/local/preparation已独审通过）
+
+Review target commit: d05b33a552168aadf07ec1ecabe43c29ff3e0faf
+
+实际1selected/1pass/旧10unselected，完整owned资源先归还，见[结果入口](../../docs/evidence/x01/host-candidates-pg-result-ready.md)。限定真实owner HTTP/SQL候选与重验，不冒npm执行/完整X01；历史source批准保留。
+
+---
+
 # X01 host candidates formal review
 
 状态：APPROVED（候选源码/有限局部结果/独立PG准备；实际PG NOT_OPEN）

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:11:36.064948+00:00 |
+| 最近更新时间 | 2026-10-07T11:20:53.836740+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,21 +14,21 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；review packet 82cca2124bd7c234f21088cca53adc46f50751f6；metadata段起点e9ca6fd7 clean |
-| 工作树 dirty 状态 | 仅正式review/READY/status元数据收口；原固定源码/raw/manifest不改 |
+| 工作基线 / HEAD | execution 0bf7e6c7b040494d26bfb6d0a2b44c750ed68e1c；candidate source a2981b71；实际结果 d05b33a552168aadf07ec1ecabe43c29ff3e0faf；旧376输入/原manifest不改 |
+| 工作树 dirty 状态 | 原actual原件已固定；当前仅结果manifest/status交审封包 |
 | 工作分支状态 | review |
-| 检查状态 | PASSED a2981b71b47d254356152c505ddfff29edd76446：10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN |
-| Review | chatui01_owner 2026-10-07T11:08:43Z SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED / 0 P1/P2；原P2 CLOSED |
-| 检查范围 | 10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN；非完整X01通过 |
-| 检查目标 | a2981b71b47d254356152c505ddfff29edd76446 |
+| 检查状态 | PASSED d05b33a552168aadf07ec1ecabe43c29ff3e0faf：候选真实PG1 selected/1 passed，旧10 unselected；local10 distinct分轮/types0独立保留 |
+| Review | source/local/preparation chatui11:08:43 APPROVED；实际PG结果待固定忠实性独审 |
+| 检查范围 | 真实SQL/owner HTTP候选新1例；synthetic材料不冒npm执行；旧10不选 |
+| 检查目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
-| 实现目标 | a2981b71b47d254356152c505ddfff29edd76446 |
+| 实现目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
 | 实现范围 | apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/host-candidates.ts,apps/server/src/plugin-runtime/host-candidates.test.ts,apps/server/src/plugin-runtime/runtime.test.ts,packages/contracts/src/plugin-runtime-hosts.ts |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 按名称选择授权后端的合同、中心接口和不可选原因已独审通过；真实SQL验证准备就绪 |
-| 下一可用交付 | 领取独立资源窗口后验证候选分页、鉴权及当前信任重验，再交主线接收 |
+| 当前产出 | 按名称选择授权后端、不可选原因与当前信任重验已通过真实数据库和鉴权验收，结果待独审 |
+| 下一可用交付 | 独审实际结果后，受控接收候选中心接口并衔接已审客户端/管理命令 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -371,3 +371,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:07:54.580857+00:00：本20min段安全停止写源码/执行，交审packet82cca212已pushclean；chatui实际running正做P2 delta与最终准备复审。manifest SHA8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1。当前0local/PG/待launch，claimv26保留审查/修复，合同767不变供已独审consumer；若准备批准仍须独立新180s实际窗口，不自行启动。当前差额仅独审结论/后继真实PG，不以本segment延时等待或推定通过。
 
 2026-10-07T11:11:36.064948+00:00：新≤4min metadata段自11:10:20Z开始，原10:48:53段已结束不重置。归档[正式批准](../../docs/evidence/x01/host-candidates-independent-review.json)与[唯一READY入口](../../docs/evidence/x01/host-candidates-ready.json)，review-target仍a298；旧manifest/PENDING准备记录/raw不重写。候选实际PG未开、无reservation，须资源经理NEXT与fresh完整门槛。0工程child/新PG。ACK与候选consumer分别链接其唯一owner intake，父计划不复制子taskTODO；两Web产品STOP和client共享写权边界保持。主线221921c0只接原process证据，当前候选七源未main。
+
+2026-10-07T11:20:53.836740+00:00：独立候选PG R1执行0bf7，11:18:44.075676Z launch3581→11:18:47.316809Z deliveryPASSED，1/1、旧10unselected，106HTTP/26141B，45metadata runners/0tasks。两ownedgroups/mergedEOF、DB1297894同marker0conn普通DROPabsence、listener59987closed、TMP同inode10项6535Bremoved/11:19:02.617209exactENOENT，立即返Mika/db不等待metadata占窗。新[结果入口](../../docs/evidence/x01/host-candidates-pg-result-ready.md)待独审；旧376输入/raw/历史失败不改。实际floor5,479,333,888B启动前fresh完整核，O16/C02旧KEEP不访问。无重跑/新预约。架构待main接收后由Lead更新候选读边及policy投影；wholeX01继续OPEN。
