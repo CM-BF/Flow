@@ -1,0 +1,265 @@
+{
+  "kind": "SVC06B_FIXED_RECOVERY_COLD_FAILED_RESULT",
+  "at": "2026-10-07T21:27:49.215Z",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-manifest.json",
+      "bytes": 5221,
+      "sha256": "133b68ab19d24b15a43c58b561ae933ae85fa5aafdc3375e05de623a4edebf29"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-preparation.json",
+      "bytes": 15061,
+      "sha256": "843c2eec49903eecef0ec628852835774c36bc34de6a26e64baa295aa6b8bdae"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-inputs.json",
+      "bytes": 6102,
+      "sha256": "55b3e2724a60ce40db454a1f2408584f64c6ab564c07ef2983409c250deee832"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-dispatch.json",
+      "bytes": 2311,
+      "sha256": "4a53ee934f29c240af16043e53a73c113cd2bf1f6b487e2b115edd807cbc2bcb"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-actual-admission.json",
+      "bytes": 4821,
+      "sha256": "6efe899d14d4c45767a51932880ae81e09b2cee8118f46fb7098426823090c0e",
+      "dev": 16777234,
+      "ino": 124512941,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/cleanup-outer.json",
+      "bytes": 1202,
+      "sha256": "c6091b932f192dd766a867bf770abfde07bc3a39118a85eef8316567effbf3d1",
+      "dev": 16777234,
+      "ino": 124528741,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/clone-outer.json",
+      "bytes": 849,
+      "sha256": "07fbde9d3758eb03dfe3e1a963f92cb91ec01d39bf57f9b2d6a833f8ab8859c8",
+      "dev": 16777234,
+      "ino": 124528607,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/owned-root.json",
+      "bytes": 150,
+      "sha256": "a4976705fc2cc69f629cf3cef8b29553e3d237dd86e1899dd3c75fa00effbc7e",
+      "dev": 16777234,
+      "ino": 124512951,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/cleanup-01-default-registered-stop.json",
+      "bytes": 312,
+      "sha256": "125329ac4b3d50feb9ee18ee17cdf66db6ef62779e0185d702033407ca9ea3ad",
+      "dev": 16777234,
+      "ino": 124528743,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/cleanup-02-default-closure.json",
+      "bytes": 535,
+      "sha256": "2ca264f20b836d10ecde8807627124b74abda2d14ead1f1960b68c0206b2d845",
+      "dev": 16777234,
+      "ino": 124528744,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/cleanup-result.json",
+      "bytes": 451,
+      "sha256": "8c88381dce44033d9d1030c16d215f335df97c92c3ca3a5453a47a4e5adea910",
+      "dev": 16777234,
+      "ino": 124528745,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-01-database-create-intent.json",
+      "bytes": 637,
+      "sha256": "cd2354f067d9684278bbf036f5320b8ca9c28a05846e3358906ceaeeed89552e",
+      "dev": 16777234,
+      "ino": 124528746,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-02-pg-capacity.json",
+      "bytes": 453,
+      "sha256": "d168a65d09204e3b3647d264da3d3fe7c24ef4b54bfbf25c79bfa9d70b18060f",
+      "dev": 16777234,
+      "ino": 124528747,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-03-database-created.json",
+      "bytes": 619,
+      "sha256": "766f523b931d80a413b159effaa9700242ae7c321bad731db7e70126f86823c5",
+      "dev": 16777234,
+      "ino": 124528748,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-04-database-marked.json",
+      "bytes": 618,
+      "sha256": "0912194f7103c4d532ee3d139b47dc849b245b14c4a8d9749820c1c32d0690b5",
+      "dev": 16777234,
+      "ino": 124528749,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-05-setup-pool-closure.json",
+      "bytes": 464,
+      "sha256": "c538bc4e356c64d4232408a11836ed41b90a8b9a257b41f26a91b8969ab3adbb",
+      "dev": 16777234,
+      "ino": 124528750,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-06-synthetic-web-loader.json",
+      "bytes": 908,
+      "sha256": "5b01f2b1e48785deee03b30b806d24fe787de7122f7097900122207b9b9ce533",
+      "dev": 16777234,
+      "ino": 124528751,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-07-cold-artifact-controller.json",
+      "bytes": 831,
+      "sha256": "96cbf6c36492ec7feaefbfb8351541be840af8cd5ffc9b783000f0ce040c143e",
+      "dev": 16777234,
+      "ino": 124528752,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-08-work-closure.json",
+      "bytes": 348,
+      "sha256": "88b5b1c1c1a92cdff7ad43149b2298654ca1feab8606acc92af3b3a475533ac3",
+      "dev": 16777234,
+      "ino": 124528753,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-outer.json",
+      "bytes": 323,
+      "sha256": "292bbbe965414c2f93c89dd1650968793fda8cb88063023e606aed9f4764d168",
+      "dev": 16777234,
+      "ino": 124528754,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/records/work-result.json",
+      "bytes": 267,
+      "sha256": "b8d95c57f9b3e56b98627bdbd33486afedaf75e8a0dd88a0ed0c1972844c50e1",
+      "dev": 16777234,
+      "ino": 124528755,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/reservation.json",
+      "bytes": 1193,
+      "sha256": "7df526ac19c524f771bd23edf31d470304bf476f9547dd1123733a31be27a94e",
+      "dev": 16777234,
+      "ino": 124512944,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/result.json",
+      "bytes": 908,
+      "sha256": "2b0cbcba4a65f4a5a025051734076d13ab94dc3efd9e98a20c7417ced29b0f85",
+      "dev": 16777234,
+      "ino": 124528756,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-once/work-outer.json",
+      "bytes": 995,
+      "sha256": "43e86bb5ea7afa42d9a1870d238fb1c1719e3443325c5f915acac40f21bb45fb",
+      "dev": 16777234,
+      "ino": 124528736,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-outer-once/outer-report.json",
+      "bytes": 2004,
+      "sha256": "77bc62e82d5b7e35f67b47ef26fb984d314335049d2e4545a01a8247537f0cb6",
+      "dev": 16777234,
+      "ino": 124528757,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-return.json",
+      "bytes": 2403,
+      "sha256": "0814b35d5c12df57500a8a0af33904990eab84df3cd00b87480c31380662ff72",
+      "dev": 16777234,
+      "ino": 124530087,
+      "mode": "0o644",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-result.json",
+      "bytes": 2285,
+      "sha256": "b3b331fdf0623025ab0f78ec445298e2b4250e51db388fdddd13b9fdd7327a0b",
+      "dev": 16777234,
+      "ino": 124530088,
+      "mode": "0o644",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "rawFiles": 23,
+  "rawBytes": 23576,
+  "inheritedExecution": "recovery-cold-manifest.json / preparation 15execution + 6runtime; no source changes",
+  "privateResources": "identity and KEEP from original owned-root/setup/cleanup records; no new private content read",
+  "result": "FAIL_NOT_COLD_PASS",
+  "review": "PENDING_INDEPENDENT",
+  "noRerun": true
+}

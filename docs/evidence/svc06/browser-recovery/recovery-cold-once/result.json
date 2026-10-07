@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T21:23:53.389345Z",
+  "purpose": "SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE",
+  "work": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "cleanup": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "directory": "/private/tmp/flow-svc09a-host-6c885ec9",
+  "retention": "KEEP",
+  "providerCalls": 0,
+  "persistenceFailures": [],
+  "complete": false,
+  "finishedAt": "2026-10-07T21:23:59.394704Z"
+}

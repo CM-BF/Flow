@@ -1,0 +1,39 @@
+{
+  "pid": 95490,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 547,
+  "stdout": "{\"purpose\":\"SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE\",\"processes\":[],\"failures\":[{\"phase\":\"default-empty-task-query\",\"sourcePhase\":\"owned-observation\",\"name\":\"Error\",\"code\":\"DEFAULT_EMPTY_QUERY_FAILED\",\"sqlState\":\"42P01\"}],\"database\":\"KEEP\",\"directory\":\"KEEP\",\"mayDrop\":false,\"resourcesClosed\":false,\"adminClosed\":true,\"providerCalls\":0,\"launchAccounted\":false,\"connections\":{\"state\":\"empty\",\"observations\":[{\"elapsedMs\":2.1731249999999704,\"rows\":[]}]}}\n",
+  "stderr": "",
+  "observed_bytes": 451,
+  "retained_bytes": 451,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

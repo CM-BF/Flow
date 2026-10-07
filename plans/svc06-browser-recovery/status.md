@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:21:46.304Z；恢复产物已构建并获限定独审，cold固定调用待审/窗口；迁入观察策略最小接缝已交审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:27:49.215Z；恢复产物构建通过，但首次真实冷启动在公开配置读取入口失败；窗口已归还，保留原件并修正固定组合 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,7 +24,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
-| 下一可用交付 | 启动重复校验修复已接收；初始化证据已接收；正在组合受管恢复入口，再验证新宿主冷启动和网页兼容，恢复服务后发布新版网页。 |
+| 下一可用交付 | 修正恢复组合的默认配置读取参数，再用新固定产物验证三服务冷启动和网页兼容，之后沿原维护操作恢复服务并发布新版网页。 |
 | 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需完成新固定宿主、冷启动/兼容和受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
@@ -160,3 +160,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:19:57.621Z：冷启动薄caller source32f8、实际b692参数72fb26fc6fec7c5f528ac5851bed9b22034b286f已固定交独审；5 Node+3 Python=8 distinct，231ms/raw826B，3groupabsent双EOF/3空tmpremoved。两次未launch资源前置断言原件保留，0PG/个人；当前准备齐，等唯一冷启动窗口及Web新tuple报告，非产品阻塞。build5938已获native限定结果批准，待Lead正常main接收。
 
 2026-10-07T21:21:46.304Z：原currentMigration两受信策略port source0004900193a83bdcdf1815d20cf5857fc8d1cdcb固定；4/4（3新1旧受影响），111ms588B/组83552absent双EOF/空tmpremoved，0PG/provider/个人。默认旧validator/observer保持，新held23策略由native固定caller独立负责；[Interface](../../docs/evidence/svc06/browser-recovery/migration-policy-interface.md)。cold4da参数包不受此差量影响。
+
+2026-10-07T21:23:48.339Z：唯一b692/f37冷启动ACTUAL START；15执行/6runtime/claimv8/2namespace与PG26+16余量fresh符合，preflight pool已关，free18716520448B≥17889427456B。原215+.5+2/0task/provider/Chrome/个人；见recovery-cold-actual-admission.json。
+
+2026-10-07T21:27:49.215Z：首次 b692/f37 冷启动实际 21:23:48.339Z→21:23:59.394704Z 已 STOP/RETURN，0/1 通过。公开配置加载入口 host-consumer TypeError/code:null，未到 before-default-start；原错误 message/stack 未捕获，不补造。clone/work/cleanup 三组及直属 operator 均 absent/双EOF；独立清理注册 processes[]、目标连接[]/admin关闭，但 launchAccounted=false/resourcesClosed=false，DB/private KEEP，secondary 42P01不覆盖首错。见[唯一失败结果](../../docs/evidence/svc06/browser-recovery/recovery-cold-result-manifest.json)。当前个人服务未动，仍原 sameop23/all-stopped 历史最后观察；不重试原namespace、不称冷启动通过。静态确定04da适配patch把load默认resolver写成null，区别于已审主线正确默认，修复需新source/产物。迁入策略port000490已获Lead限定APPROVED，无个人执行授权由此新增。

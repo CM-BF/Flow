@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T21:23:48.485044Z",
+  "freeBytes": 18716811264,
+  "minimumFreshFloorBytes": 2317352960,
+  "sourceHead": "f37a3612068c7215994750574a7451ede841bcce",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "manifestDigest": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "sourceHead": "f37a3612068c7215994750574a7451ede841bcce"
+  },
+  "limits": {
+    "cloneSeconds": 20,
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "overallAdmissionDeadlineSeconds": 215,
+    "rawBytes": 2097152,
+    "recordsBytes": 1048576,
+    "privateBytes": 33554432,
+    "privateEntries": 4096,
+    "artifactCloneBytes": 1073741824,
+    "PGBytes": 134217728,
+    "PGConnectionsPeak": 26,
+    "PGManagementMargin": 16,
+    "residentProcesses": 3,
+    "totalWithTransientProcesses": 16,
+    "explicitHTTPRequests": 96,
+    "mixedTasks": 0,
+    "mixedAttempts": 0,
+    "nativeQueries": 0,
+    "outerOperatorWorkSeconds": 215,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "totalSupervisedEnvelopeSeconds": 217.5,
+    "settingsSlots": 0
+  },
+  "providerCalls": 0
+}
