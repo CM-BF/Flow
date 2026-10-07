@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T04:56:02.907834+00:00",
+  "original": "eng01i-combination-types.json",
+  "compiler": {
+    "exitCode": 0,
+    "elapsedMs": 9139,
+    "ownedGroup": "absent",
+    "fullEOF": true
+  },
+  "wrapperExit": 1,
+  "reason": "Caller required an empty TMP for removal; Node24 TypeScript populated a compile-cache within the declared 8MiB budget. Compiler result is unchanged.",
+  "temporaryBytes": 1357764,
+  "retainedPath": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-eng01i-intake-32wox1ye",
+  "postObservation": {
+    "dev": 16777234,
+    "ino": 123502048,
+    "uid": 501,
+    "mode": "0700",
+    "files": 1
+  },
+  "disposition": "KEEP; original pre-run identity was held in process memory but not durably recorded. No deletion or repeat compiler invocation.",
+  "productAcceptance": "This bounded retained cache does not change the successful compiler or fixed source result; no live child/PG remains.",
+  "scope": "Do not infer unknown historical resource cleanup. Future local invocation disables Node compile cache or records TMP identity before launch."
+}

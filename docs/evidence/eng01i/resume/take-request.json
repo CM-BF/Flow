@@ -1,0 +1,19 @@
+{
+  "requestId": "e4bf6cfd-f059-48f6-b381-e0afc7bd8086",
+  "actor": {
+    "lead": "astra_ultra_execution_lead",
+    "worker": "native_center_owner"
+  },
+  "taskId": "ENG01I",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host",
+  "branch": "codex/engineering-native-host",
+  "scope": [
+    "apps/runner/src/engineering/native-adapter.ts",
+    "apps/runner/src/engineering/native-adapter.test.ts",
+    "apps/runner/src/engineering/calculator-receipt.ts",
+    "apps/runner/src/engineering/calculator-receipt.test.ts",
+    "plans/eng01i-native-engineering-host",
+    "docs/evidence/eng01i"
+  ]
+}

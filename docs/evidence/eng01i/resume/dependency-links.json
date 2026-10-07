@@ -1,0 +1,48 @@
+{
+  "method": "exclusive absent symlink; no install/copy/donor modification",
+  "preparationError": "initial donor root zod missing; no links created before resolving exact installed .pnpm path",
+  "bindings": [
+    {
+      "target": "node_modules/zod",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "name": "zod",
+      "version": "4.6.5",
+      "packageSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "target": "node_modules/vitest",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "name": "vitest",
+      "version": "4.0.18",
+      "packageSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "target": "node_modules/typescript",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "name": "typescript",
+      "version": "5.9.3",
+      "packageSha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "target": "node_modules/@types/node",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "name": "@types/node",
+      "version": "24.19.1",
+      "packageSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "target": "node_modules/@flow/contracts",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/packages/contracts",
+      "name": "@flow/contracts",
+      "version": "workspace",
+      "packageSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "target": "node_modules/@flow/client",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/packages/client",
+      "name": "@flow/client",
+      "version": "workspace",
+      "packageSha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    }
+  ]
+}

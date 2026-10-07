@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:38:50.337581+00:00 / maine29e5d82；本批固定后台实验结果独审接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:56:02.907834+00:00 / mainbb99223a；本批ENG01I限定PG结果与四产品接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main422f4b15；只接afe3已审24源与92d两import，不混新stream实现 |
+| 工作基线 / HEAD | mainbb99223a；ENG01I c3d四源与b612自有记录，SVC06两文件收口；其余源码保持 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED afe3eb972266c53e867e5db232d53d51d6a666c4 + 92d01931两import；根noEmit exit0/8984ms，自有组absent与tmp清理。前轮缺alias失败保留。 |
-| 已集成main状态 / HEAD | mainc0e0263d已接C0224源与92d两import，原S01P07/ACCESS/计时/SVC08仍保留。个人af51/accepting v18、Web d629/v3未变；本批同步已审宿主收尾与管理记录。 |
+| 检查状态 | PASSED ENG01I原局部28+PG2，唯一结果独审295绑定与10安装入口一致；组合root noEmit exit0/9139ms。局部caller因编译缓存非空exit1，1,357,764B按原预算KEEP，不重跑。 |
+| 已集成main状态 / HEAD | mainbb99223a；本批ENG01I已审候选待ff发布。个人af51/accepting v18、Web d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 固定后台在隔离目录启动中心、执行器和网页的零任务实验已获限定独审；原失败及正常收尾事实保留。看板登录、时间和固定架构已实际展示。 |
-| 下一可用交付 | 工程宿主公开收据与恢复的局部旅程，以及网页连接修复的固定Flow来源产物；个人发布和真实模型工程仍需各自验收。 |
+| 当前产出 | 工程宿主公开收据与丢失确认后的恢复旅程已获限定独审；连接修复的固定产物已构建，实际个人部署另验。 |
+| 下一可用交付 | 接收工程宿主组合并实施真实受限写入授权宿主；固定网页宿主产物结果独审和受管部署方案。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -324,3 +324,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T04:38:50.337581+00:00：受控接收SVC06 b3d固定结果与OPS 485限定文档；[结果独审](../../docs/evidence/i02/svc06-host-followup-result-review.json)、[来源逐文件绑定](../../docs/evidence/i02/svc06-result-ops-intake.json)。0新测试/provider/个人服务操作，main接收不代表默认部署链完成。
 
 2026-10-07T04:41:47.076164+00:00：C02私有流内核6源按原APPROVED de0f受控接收，主线preimage六项全同；[来源与限定审查](../../docs/evidence/i02/codex-stream-controlled-intake.json)、[一次组合类型检查](../../docs/evidence/i02/codex-stream-combination-types.json)exit0/9170ms/组absent。原106项分轮证据直接复用，0PG/provider。公共v2读取/真实Codex/UI均未随此批准。
+
+2026-10-07T04:56:02.907834+00:00：受控接收ENG01I c3四源及b612自有记录，主线前像四项等于c0e；[结果独审](../../docs/evidence/i02/eng01i-pg-result-review.json)、[精确输入](../../docs/evidence/i02/eng01i-controlled-intake.json)、[组合类型检查](../../docs/evidence/i02/eng01i-combination-types.json)与[缓存保留说明](../../docs/evidence/i02/eng01i-combination-types-retention.json)。真实模型/权限强制/生产注册仍开放；SVC06只接已审实验main回执两文件，0新增PG/provider/个人操作。

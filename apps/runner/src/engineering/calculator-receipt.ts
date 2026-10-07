@@ -1,20 +1,13 @@
 import { isDeepStrictEqual } from 'node:util';
 import { z } from 'zod';
-import { ENGINEERING_MAX_FILES, engineeringFileSchema, engineeringSnapshotJson } from '../../../../packages/contracts/src/engineering.js';
+import { engineeringSnapshotJson } from '../../../../packages/contracts/src/engineering.js';
+import { nativeEngineeringCheckEvidenceSchema, NATIVE_ENGINEERING_RECEIPT_MAX_BYTES } from '../../../../packages/contracts/src/engineering-native.js';
 import { checkCalculatorSnapshot, type CalculatorCheckReport } from './calculator-checker.js';
-import { CALCULATOR_SOURCE_MAX_BYTES } from './calculator-source.js';
 import { digest } from './resources.js';
 
-export const CALCULATOR_RECEIPT_MAX_BYTES = 524_288;
-const id = z.string().min(1).max(128), hash = z.string().regex(/^[a-f0-9]{64}$/), commit = z.string().regex(/^[a-f0-9]{40}$/);
-export const calculatorExecutionIdentitySchema = z.strictObject({ taskId: id, attemptId: id, ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), runnerId: id });
-const receiptSchema = z.strictObject({
-  protocol: z.literal('flow.calculator-workspace-check.v1'), writerSettlement: z.literal('not-attested'), identity: calculatorExecutionIdentitySchema,
-  workspace: z.strictObject({ leaseId: z.uuid(), baseCommit: commit, headCommit: commit, files: z.array(engineeringFileSchema).max(ENGINEERING_MAX_FILES), beforeDigest: hash, afterDigest: hash }),
-  source: z.string().max(CALCULATOR_SOURCE_MAX_BYTES).nullable(),
-  diff: z.strictObject({ content: z.string().max(262_144).refine(value => Buffer.byteLength(value) <= 262_144), digest: hash }),
-  report: z.unknown(),
-});
+export const CALCULATOR_RECEIPT_MAX_BYTES = NATIVE_ENGINEERING_RECEIPT_MAX_BYTES;
+export const calculatorExecutionIdentitySchema = nativeEngineeringCheckEvidenceSchema.shape.identity;
+const receiptSchema = nativeEngineeringCheckEvidenceSchema;
 export type CalculatorReceipt = Readonly<Omit<z.infer<typeof receiptSchema>, 'report'> & { report: CalculatorCheckReport }>;
 export type CalculatorReceiptInput = Omit<CalculatorReceipt, 'protocol' | 'writerSettlement' | 'report'>;
 

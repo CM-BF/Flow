@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-07T04:33:52.806000Z",
+  "fixedApprovedMain": "c0e0263dc01b9527293318a644f964bd048e2a86",
+  "merge": "ea585db4d198df33b62453d5502f74772bbc3c25",
+  "prior": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "conflicts": [],
+  "directDelta": "exchange adds optional threadMethod, default thread/start preserved; engineering recipe omits it. Ordinary turn adds explicit host-owned resume; engineering does not call it. No C02 stream successor.",
+  "actualChecks": "local/c02-result.json:3 passed/24 unselected,1824ms; no whole-suite rerun"
+}

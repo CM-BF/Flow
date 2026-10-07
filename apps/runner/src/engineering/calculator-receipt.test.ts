@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { expect, it } from 'vitest';
 import { engineeringReceiptSchema, engineeringSnapshotJson } from '../../../../packages/contracts/src/engineering.js';
 import { CALCULATOR_RECEIPT_MAX_BYTES, calculatorReceiptJson, createCalculatorReceipt, parseCalculatorReceipt, type CalculatorReceiptInput } from './calculator-receipt.js';
+import { nativeEngineeringCheckEvidenceSchema } from '../../../../packages/contracts/src/engineering-native.js';
 import { digest } from './resources.js';
 
 const source = 'export const add=(a,b)=>a+b;\nexport const subtract=(a,b)=>a-b;\n';
@@ -47,4 +48,12 @@ it('rejects changed diff, absent identity, extra fields and oversized serialized
   expect(() => parseCalculatorReceipt(JSON.stringify({ ...JSON.parse(json), completed: true }))).toThrow();
   expect(() => parseCalculatorReceipt(' '.repeat(CALCULATOR_RECEIPT_MAX_BYTES + 1))).toThrow('text boundary');
   expect(() => parseCalculatorReceipt(null)).toThrow('text boundary');
+});
+
+it('preserves the original calculator JSON field order while using the shared wire schema', () => {
+  const receipt = createCalculatorReceipt(input());
+  const text = calculatorReceiptJson(receipt), wire = nativeEngineeringCheckEvidenceSchema.parse(JSON.parse(text));
+  expect(calculatorReceiptJson(wire)).toBe(text);
+  expect(Object.keys(JSON.parse(text))).toEqual(['protocol', 'writerSettlement', 'identity', 'workspace', 'source', 'diff', 'report']);
+  expect(Object.keys(JSON.parse(text).report)).toEqual(['protocol', 'checker', 'binding', 'sourceDigest', 'checks', 'result']);
 });

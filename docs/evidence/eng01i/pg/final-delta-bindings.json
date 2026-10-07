@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-07T04:48:10.330086+00:00",
+  "delivery": "53851a85fcac9bd098ca4dfc35ce0e42102d6497",
+  "manifestSha256": "f030cbcd656dcbb4082a3ec9c0371f203faa1f327f72ff7bb700a0710faf7eb0",
+  "inheritedUnchanged": 334,
+  "previousFullAudit": "/tmp/flow-eng01i-delta-bindings.json",
+  "metadataMismatchPreserved": "First final verification found local/README.md changed outside initial two superseded paths. Corrected solely in53851 manifest; original manifests/raw unchanged.",
+  "deltaBindings": [
+    {
+      "path": "docs/evidence/eng01i/local/README.md",
+      "ref": "f855f77da751f8a762a8df8363330d141e393759",
+      "bytes": 2351,
+      "sha256": "d4a458158adc413bab662f42247526eba4277efe561da375502e001bc13b9914",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-cleanup.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 192,
+      "sha256": "5b24300599602dd57d436fcc37c44e90b5516933bfefd13ad3238d6eaefbcd4d",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-reservation.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 1269,
+      "sha256": "f02df8c1499e99c8beaaa9b9563691e9e0d03b94a215deed8a2c94c2c4551109",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-result.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 860,
+      "sha256": "00b017016eebd5a9b48e3ee3e13a5f5a4b58ae2e1b42d5606007623b9a73a41c",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-stderr.log",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-stdout.log",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/local/querytypes-tool-exit.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 305,
+      "sha256": "a64f2f88f16aa1c7702ec9534a3c9f9bc70d917973055fedc00797b44cf30999",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/pg/fixture.ts",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 8446,
+      "sha256": "e775cf5fbe0ec8653766d10bd573b83bd4c6ca900367aec29d12d788745706aa",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/pg/original-independent-bindings.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 94147,
+      "sha256": "b3208fbd490a11d3fbbb4589eeeae06b82b2408ca1290b0d1e7f64a38a043eef",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/pg/original-independent-review.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 5308,
+      "sha256": "ed7d81d46bde152aefa7b0fb298069d1b461437ed0aa706068d13f1be9485203",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/pg/preflight.json",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 52973,
+      "sha256": "2b4a4b0277444b2f444d88fd9b4261fbff331fe9cd111cf72ec77cf453c157ba",
+      "fixedCurrentMatch": true
+    },
+    {
+      "path": "docs/evidence/eng01i/pg/run.py",
+      "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
+      "bytes": 7222,
+      "sha256": "a56b4ec0c3a2e5a66cdf7b792290843122c8205dd38048ab1f6ead26bf035a65",
+      "fixedCurrentMatch": true
+    }
+  ],
+  "errors": []
+}

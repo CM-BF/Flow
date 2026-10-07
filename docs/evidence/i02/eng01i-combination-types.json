@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T04:55:15.376707+00:00",
+  "source": "c3d29e4a36af74380565922fbb838ebec1bf7afc",
+  "baseMain": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
+  "reason": "Four accepted ENG sources combined with main C02 private stream changes",
+  "budget": {
+    "seconds": 45,
+    "term": 0.5,
+    "reap": 2,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "freshFreeBytes": 25198104576,
+  "result": {
+    "pid": 35500,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 9139,
+    "stdout": "",
+    "stderr": "",
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "temporaryBytes": 1357764,
+  "temporaryRemoved": false,
+  "PG": 0,
+  "provider": 0
+}

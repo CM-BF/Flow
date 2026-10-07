@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T04:28:42.479656+00:00",
+  "method": "absent-only links to installed fixed packages; no install/copy/donor change",
+  "bindings": [
+    {
+      "target": "node_modules/pg",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "name": "pg",
+      "version": "8.23.1",
+      "packageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "target": "node_modules/pg-boss",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "name": "pg-boss",
+      "version": "12.37.0",
+      "packageSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+    },
+    {
+      "target": "node_modules/fastify",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "name": "fastify",
+      "version": "5.12.5",
+      "packageSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "target": "node_modules/@fastify/cors",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "name": "@fastify/cors",
+      "version": "11.3.0",
+      "packageSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+    },
+    {
+      "target": "node_modules/tar",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "name": "tar",
+      "version": "7.5.22",
+      "packageSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    },
+    {
+      "target": "node_modules/pacote",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "name": "pacote",
+      "version": "21.5.1",
+      "packageSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f"
+    },
+    {
+      "target": "node_modules/ssri",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "name": "ssri",
+      "version": "13.0.1",
+      "packageSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151"
+    },
+    {
+      "target": "node_modules/npm-package-arg",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "name": "npm-package-arg",
+      "version": "13.0.2",
+      "packageSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad"
+    },
+    {
+      "target": "node_modules/@types/pg",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "name": "@types/pg",
+      "version": "8.23.1",
+      "packageSha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3"
+    },
+    {
+      "target": "node_modules/@types/npm-package-arg",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "name": "@types/npm-package-arg",
+      "version": "6.1.4",
+      "packageSha256": "16a651807f0f05fce6ced63db0cd2a0e443d7807a70430ec74bbc28b6264e184"
+    },
+    {
+      "target": "node_modules/@types/pacote",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "name": "@types/pacote",
+      "version": "11.1.8",
+      "packageSha256": "f301ffbda6e67dba33178aee43aa2c06dd8f533d5e99515a0eda6e8a8094569a"
+    },
+    {
+      "target": "node_modules/@types/ssri",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "name": "@types/ssri",
+      "version": "7.1.5",
+      "packageSha256": "6c6c1bd2678420b9874942a395e49f888b552a0aeb650cd8a5c72a8ac8fb6eb2"
+    },
+    {
+      "target": "node_modules/tsx",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "name": "tsx",
+      "version": "4.23.15",
+      "packageSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "target": "node_modules/@flow/plugin-runtime",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/packages/plugin-runtime",
+      "workspace": true
+    }
+  ]
+}

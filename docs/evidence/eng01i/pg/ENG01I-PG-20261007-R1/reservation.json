@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T04:50:43.251487+00:00",
+  "window": "ENG01I-PG-20261007-R1",
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-eng01i-pg-ohtfdxh0",
+  "dev": 16777234,
+  "ino": 123473874,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/docs/evidence/eng01i/local/vitest.config.mjs",
+    "apps/runner/src/engineering/native-adapter.test.ts",
+    "-t",
+    "public native host PG journey"
+  ],
+  "freeBytes": 25671512064,
+  "preflightSha256": "2b4a4b0277444b2f444d88fd9b4261fbff331fe9cd111cf72ec77cf453c157ba",
+  "workSeconds": 120,
+  "totalSeconds": 150,
+  "stdoutStderrBytes": 1048576,
+  "allEvidenceBytes": 2097152,
+  "runtimeBytes": 8388608,
+  "providerCalls": 0
+}

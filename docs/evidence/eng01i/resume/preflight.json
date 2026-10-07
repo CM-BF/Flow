@@ -1,0 +1,162 @@
+{
+  "preparedAt": "2026-10-07T04:14:58.117056+00:00",
+  "task": "ENG01I",
+  "mode": "READONLY_RESUME_PROPOSAL_NO_TAKE",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host",
+  "branch": "codex/engineering-native-host",
+  "head": "66fc4068a9ba19d288024ef2d36caf40d41c2af3",
+  "status": "",
+  "oldClaim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "apps/runner/src/engineering/calculator-receipt.ts",
+      "apps/runner/src/engineering/native-adapter.test.ts",
+      "apps/runner/src/engineering/native-adapter.ts",
+      "docs/evidence/eng01i",
+      "plans/eng01i-native-engineering-host"
+    ],
+    "state": "released",
+    "branch": "codex/engineering-native-host",
+    "origin": "new",
+    "taskId": "ENG01I",
+    "worker": "native_center_owner",
+    "claimId": "73bbb9e0-7580-455c-920d-9695a0633289",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host",
+    "createdAt": "2026-10-06T12:57:59.124Z",
+    "updatedAt": "2026-10-06T12:59:48.559Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-07T04:14:57.482Z",
+  "proposedScopes": [
+    "apps/runner/src/engineering/native-adapter.ts",
+    "apps/runner/src/engineering/native-adapter.test.ts",
+    "apps/runner/src/engineering/calculator-receipt.ts",
+    "apps/runner/src/engineering/calculator-receipt.test.ts",
+    "plans/eng01i-native-engineering-host",
+    "docs/evidence/eng01i"
+  ],
+  "conflicts": [],
+  "proposedControlledInput": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "inputBindings": [
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "fixedMainBytes": 5521,
+      "fixedMainSha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "fixedMainBytes": 4176,
+      "fixedMainSha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "fixedMainBytes": 1514,
+      "fixedMainSha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "fixedMainBytes": 2845,
+      "fixedMainSha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "fixedMainBytes": 3858,
+      "fixedMainSha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "fixedMainBytes": 4507,
+      "fixedMainSha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "fixedMainBytes": 1711,
+      "fixedMainSha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "fixedMainBytes": 12205,
+      "fixedMainSha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "fixedMainBytes": 4956,
+      "fixedMainSha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "fixedMainBytes": 4272,
+      "fixedMainSha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "fixedMainBytes": 6307,
+      "fixedMainSha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "fixedMainBytes": 5378,
+      "fixedMainSha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "fixedMainBytes": 2271,
+      "fixedMainSha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "fixedMainBytes": 7285,
+      "fixedMainSha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "fixedMainBytes": 4520,
+      "fixedMainSha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "fixedMainBytes": 2276,
+      "fixedMainSha256": "dfe8cbe012a1708c692d99608b1d86944ec15ce9709a981ae08dd8f7752ac6f1",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "fixedMainBytes": 15713,
+      "fixedMainSha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583",
+      "baseEqualsFixedMain": false
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "fixedMainBytes": 5640,
+      "fixedMainSha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "baseEqualsFixedMain": true
+    },
+    {
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "fixedMainBytes": 4211,
+      "fixedMainSha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2",
+      "baseEqualsFixedMain": true
+    }
+  ],
+  "strategy": "Preserve original own Interface/docs, consume fixed approved main422 before tests; old280 domain/G/F/H and pump bytes unchanged, runtime changed (outbox bytes unchanged) and must use new shared recovery inputs. Do not copy unreviewed C02 checkout or modify shared runtime/contracts/pump. Fresh atomic take required before ENG01I project writes."
+}
