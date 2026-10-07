@@ -120,3 +120,5 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候选，空响应复用已durable key且不新增本地journal/中心永久empty receipt，保留500ms轮询；首次非空分配与compact receipt同事务，durable accept绑定原key和同attempt，历史receipt不当当前执行授权。v1未知请求、已持久assignment及过期/uncertain保持保守，不删journal或复活旧租约。上述为19:54时设计；现S01P07已由独立runner-claim-recovery树交付main0aa1d033，85非PG/8中心PG/4capacity分轮证据和主线组合核对见其权威status。该子任务claim已release，本树无其产品写权；不把功能验收当idle或A/B优化测量。
 
 A/B是此前另一准备片，仍NOT_RUN/NOT_OPEN，须独立资源和运行条件，不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。本S01架构影响仍仅实验观察；S01P07已将main0aa1d033架构target交Execution Lead更新，关联见本status。
+
+2026-10-07 A/B实际已在唯一窗口完成并归还，固定结果`914cb63824f614223b62153c770186e9d46d586e`及报告见唯一status；无一致延迟收益结论，原S01-04/05/06验收和未完成TODO保持，不因本局部结果改完整plan完成。

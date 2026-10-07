@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:56:14.683444+00:00 |
+| 最近更新 | 2026-10-07T06:05:59.823099+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原task实际开工缺可复核时间；本次管理段开始为2026-10-07T05:45:30Z工具UTC，不替代原task开工。原验收仍有开放项。 |
@@ -13,22 +13,22 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 本次更新前 HEAD 121c3022f55f6b4cff5711f00f7038bff8740d80；idle 只读产品基线 8d84d529a0756116bd0fc8bad969d61a6c26248e；提交后实际 HEAD 由 Git/聚合器读取 |
-| 工作树dirty状态 | 开始时 clean；本次仅唯一status与A/B operator handoff，实验源码和封存结果不变 |
+| 工作基线 / HEAD | 结果 914cb63824f614223b62153c770186e9d46d586e；execution b75f1a2e250556265a24c825860e8549705b98cf；A/B固定历史生产输入见结果报告；当前metadata HEAD由Git读取 |
+| 工作树dirty状态 | 本次仅唯一status/review/plan收口；实际source和原raw均固定不改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a；一次实际空领取观察及清理/预算通过；准备 9 distinct fake、pure/runtime strict0、2 syntax0 分次通过，原 runtime strict2 保留 |
-| 已集成main状态 / HEAD | idle 结果主线接收未证：固定main bf8b5f1d5f554b3195b04b150821d8262a4daef1 无该结果目录/对应I02回执；历史mixed已接收。独立S01P07已main0aa1d033，不能代替idle或A/B接收 |
-| 实现目标 | e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a |
-| 实现范围 | experiments/runner-capacity/mixed/execute-idle.mjs, experiments/runner-capacity/mixed/idle-claim.vitest.config.mjs, experiments/runner-capacity/mixed/idle-claim-observer.ts, experiments/runner-capacity/mixed/idle-claim-budget.ts, experiments/runner-capacity/mixed/idle-claim-pure-tsconfig.json, experiments/runner-capacity/mixed/idle-claim-observer.test.ts, experiments/runner-capacity/mixed/idle-claim.test.ts, experiments/runner-capacity/mixed/idle-claim-budget.test.ts, experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json, docs/evidence/s01/idle-claim-cost/source-snapshot, docs/evidence/s01/idle-claim-cost/fixed-input-v3.json, docs/evidence/s01/idle-claim-cost/run, docs/evidence/s01/idle-claim-cost/result-manifest.json |
+| 检查状态 | PASS：唯一A/B各128fixture任务/attempt/session，全部清理通过；仅本次真实实验，不与旧64准备/128/idle合并 |
+| 已集成main状态 / HEAD | 本次A/B NOT_INTEGRATED / 独审待审；idle主线接收仍未证；历史mixed及独立S01P07 main0aa1d033不受影响 |
+| 实现目标 | 914cb63824f614223b62153c770186e9d46d586e |
+| 实现范围 | docs/evidence/s01/mixed-ab-run/A/journals.json, docs/evidence/s01/mixed-ab-run/A/observations.json, docs/evidence/s01/mixed-ab-run/A/owned-resources.json, docs/evidence/s01/mixed-ab-run/A/reservation.json, docs/evidence/s01/mixed-ab-run/A/result.json, docs/evidence/s01/mixed-ab-run/B/journals.json, docs/evidence/s01/mixed-ab-run/B/observations.json, docs/evidence/s01/mixed-ab-run/B/owned-resources.json, docs/evidence/s01/mixed-ab-run/B/reservation.json, docs/evidence/s01/mixed-ab-run/B/result.json, docs/evidence/s01/mixed-ab-run/analyze.py, docs/evidence/s01/mixed-ab-run/cli-and-time.txt, docs/evidence/s01/mixed-ab-run/comparison.json, docs/evidence/s01/mixed-ab-run/inputs.json, docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json, docs/evidence/s01/mixed-ab-run/report.md, docs/evidence/s01/mixed-ab-run/reservation.json, docs/evidence/s01/mixed-ab-run/result.json, docs/evidence/s01/mixed-ab-run/result-manifest.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 单个闲置执行器的空领取成本已测清并双审；据此推进的领取恢复改动已由独立子任务交付主线。 |
-| 下一可用交付 | 在独占窗口执行已审事件写入A/B对照，交付两侧真实结果及完整清理；尚未运行，不重做旧测量。 |
-| 当前阻塞 | ACTIVE: A/B已备妥固定调用，等待Recovery实际收尾、跨队普通运行安全停点和Mika唯一独占OPEN；当次磁盘/PG-WAL准入仍待fresh确认。 |
+| 当前产出 | 事件写入A/B已真实完成并清理；SQL调用减少，但本样本未显示一致的延迟收益。 |
+| 下一可用交付 | 交付A/B固定结果的独立审查与主线接收；不追加同窗口负载。 |
+| 当前阻塞 | NONE（本次运行已结束；等待结果独审及受控接收，不再占运行窗口） |
 | 需用户决定 | NONE |
-| Review | APPROVED e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a；Mika 2026-10-06 19:15:35 UTC、architecture_read 2026-10-06 19:16:32 UTC，0 P1/P2；只批准本次结果忠实性 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE；2026-10-07本次operator准备一次CLI list核对 owner/WT/branch/5 scopes 一致，保留原范围 |
+| Review | PENDING 914cb63824f614223b62153c770186e9d46d586e；仅A/B实际结果待独审，旧准备和idle批准不继承为结果通过 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE；2026-10-07T05:59:24.685660Z一次CLI核owner/WT/branch/all5，保留原范围 |
 | 架构影响 | 本片只增加实验观察与证据，不改产品 Interface、FSM、数据库连接或外部依赖边界；无需更新产品架构图。S01P07已main0aa1d033，新增v2领取机会/runner自身份/持久日志语义，仍单admission loop无新scheduler；其权威status已登记架构图target/Execution Lead待更新，本树不代写图 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -36,9 +36,9 @@
 | S01-01 | completed | mika | [权威输入研究](../../docs/evidence/s01/research.md) |
 | S01-02 | completed | mika | [实验合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
 | S01-03 | completed | mika | 薄实验入口和功能 smoke 已交付；历史失败与修复原件保留 |
-| S01-04 | in-progress | status_read / mika | W1/W2、停止修复后 32 tasks、128 fixture 实际执行和本次 idle 测量已分别封存；原 ACK/browser 验收仍开放，优化 A/B 未运行 |
+| S01-04 | in-progress | status_read / mika | W1/W2、停止修复后 32 tasks、128 fixture 实际执行和本次 idle 测量已分别封存；原 ACK/browser 验收仍开放，优化 A/B 已实际完成待独审 |
 | S01-05 | in-progress | status_read / mika / Lead | 各固定结果已有独审，历史 mixed 已 main；当前 idle 双审通过待主线接收，完整计划尚未验收 |
-| S01-06 | in-progress | status_read / mika / 后继独立owner | [idle 单次结果](../../docs/evidence/s01/idle-claim-cost/result-ready.md)已交付测量；S01P07已独立实现、验证和main接收，见下方固定回执；完整父计划和未运行A/B仍开放 |
+| S01-06 | in-progress | status_read / mika / 后继独立owner | [idle 单次结果](../../docs/evidence/s01/idle-claim-cost/result-ready.md)已交付测量；S01P07已独立实现、验证和main接收，见下方固定回执；完整父计划仍开放，A/B实际结果待独审接收 |
 
 ## 当前片段：已审空闲领取测量
 
@@ -50,7 +50,7 @@
 
 ## 未运行与后继边界
 
-- **A/B：** 固定准备 `d3ba03a88b8d25d134b7abade7f55f8198b182ba` 已审；64 distinct 是分次最终覆盖，实际 A/B **NOT_RUN / NOT_OPEN**。本段静态复核旧source/依赖仍匹配，见[当前准备核对](../../docs/evidence/s01/mixed-ab-preparation/current-readiness.md)。它需另行满足磁盘、PG/WAL及串行窗口条件；不是本次 idle 交付阻塞，也没有新运行许可。见[准备入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)。
+- **A/B：** 唯一s01-event-state-ab-once实际于05:59:51.473Z启动、06:00:31.510Z观察tool exit0；06:00:50.057Z精确资源复核后归还。A/B各128fixture PASS，0provider；[报告](../../docs/evidence/s01/mixed-ab-run/report.md) / [manifest](../../docs/evidence/s01/mixed-ab-run/result-manifest.json)，结果target 914cb63824f614223b62153c770186e9d46d586e，独审PENDING、main NOT_INTEGRATED。SQL调用53279→48601，窗口event HTTP p50 52.831→61.405ms，不能称整体提速。旧64项只是准备分轮覆盖，不重复运行。
 - **S01P07：** 沿 S01-06 的独立产品子任务已完成并main接收，权威[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/plans/s01p07-runner-claim-recovery/status.md)现场HEAD dcf12c721141054a99d2f58e870b62cb77e67a94 clean。本段重新核固定main0aa1d033的[I02回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/s01p07-intake.json)24bindings全部匹配；其为本次main bf8b5f1d祖先。85非PG、中心8PG、capacity4PG分轮证据不合成新通过数；主线组合types0/新contracts+client两文件8/8是接收检查。claim9ec4dbc8 v3于2026-10-07T04:10:43.562Z RELEASED，外部receipt已只读核；原S01 claim独立保留。旧v1 unknown及已持久assignment仍保守，不重放旧journal，不把功能通过当优化收益测量。
 - **完整验收：** 六个稳定 TODO 保持原完成状态；真实 provider/ACK/browser、完整未知恢复等未证事项没有因局部测量通过而完成。
 
@@ -85,3 +85,9 @@
 ## 2026-10-07T05:56:14.683444+00:00 A/B operator准备
 
 Fresh claim508f v2/all5/owner/WT/branch相符，观察HEAD121c3022=origin clean，41 unique源绑定匹配d3ba叠加包，run根absent。精确window仍s01-event-state-ab-once；[operator handoff](../../docs/evidence/s01/mixed-ab-preparation/operator-handoff.md)列出调用与候选资源线5,663,621,120B（共享floor+512MiB实验+1GiB PG/WAL调度预留，非已测占用）。本段只读/metadata≤64KiB、NOT_OPEN、0磁盘采样/PG/runner/测试/导出。Web直发一次agent-not-found，Mika沿既有协调路径接手；不重复唤醒或等时钟推定归还。源、旧raw/manifest、原6TODO/main事实不变。唯一status继续可聚合，展示仍PENDING_SYNC；不新增全snapshot轮询。
+
+## 2026-10-07T06:05:59.823099+00:00 唯一A/B实际交付
+
+结果 914cb63824f614223b62153c770186e9d46d586e，execution b75f1a2e；所有实际原件冻结。原300s/512MiB门禁通过：entry27.710442s、time-p28.02s、tool观察包围40.037s分列；累计可见191067625B含既有4MiB最终预留。两专库普通DROP/absence、四child close0、两个journal根及source-root absent，独占已即时归还；没有额外再运行、未知根访问或个人服务变更。A/B两侧各128任务/attempt/session、2304事件、1536窗内emit、30 live/fenced样本；分母和观察开销见report/comparison，不当provider/SLO/最新main或整体性能改善。
+
+本段沿本地find-skills/codebase-design/固定clean-code方法，只核单一编排、固定输入、生命周期/错误、各时间与字节口径；离线分析无新产品行为/框架。新报告/analysis/manifest及本status/review用原4MiB reserve，已测加64KiB后继metadata留额397266B内；不重复加全部已计raw。六TODO状态不改，整体S01未完成。唯一status已同步，dashboard新展示未查询为PENDING_SYNC，不拿旧观察填本次成功。

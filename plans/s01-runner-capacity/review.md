@@ -1,5 +1,16 @@
 # S01 独立审查
 
+状态：PENDING（本次固定事件写入A/B结果忠实性；不是复用旧准备批准）
+Review target commit: `914cb63824f614223b62153c770186e9d46d586e`
+
+Execution `b75f1a2e250556265a24c825860e8549705b98cf`，source准备d3ba；A3e670/Baae1各128fixture，唯一窗口已消费并归还。入口 [report.md](../../docs/evidence/s01/mixed-ab-run/report.md) / [result-manifest.json](../../docs/evidence/s01/mixed-ab-run/result-manifest.json)，SHA0540ceeb808fcc515558aad7b6d7e3b3fe3e90824ce17123ad8216fdd3794992。18原件/分析绑定58372291B；41源码沿原overlay不变，原64检查不重跑。
+
+审者只读核raw/源绑定、任务与ACK分母、SQL分类/latency口径、cleanup、191067625B计量及4MiB reserve；尤其不从两PASS/总elapsed推导提速。time-p28.02s、entry27.710442s、工具观察40.037s包围各自保留；PG/WAL仅前置空间、end/peak未测。原始errors=[]也不当完整性能或全系统无错误证明。0provider/native。main NOT_INTEGRATED；独审发现交owner，不执行新探针或触旧unknown根。
+
+Owner 2026-10-07T06:05:59.823099+00:00 clean-code收口：原raw/source固定，offline脚本集中投影统计，样本与未知明确；等待独立审者填写合法回执。本次不自审批准。
+
+## 历史idle结果独审（不覆盖本次A/B）
+
 状态：APPROVED（仅当前单 runtime 空领取结果忠实性；不表示完整 S01 完成或 main 已接收）
 Review target commit: `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`
 
