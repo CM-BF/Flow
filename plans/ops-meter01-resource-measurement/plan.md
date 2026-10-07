@@ -9,7 +9,7 @@
 ## TODO
 
 - [x] OPS-METER01-01：实际两caller、独立source供给、fresh atomic take及小Interface。
-- [ ] OPS-METER01-02：标准库模块与有界目录/错误直接验证，保留失败原件。
+- [x] OPS-METER01-02：标准库模块与有界目录/错误直接验证，保留失败原件。
 - [ ] OPS-METER01-03：固定源码/证据交独立review并受控main接收。
 - [ ] OPS-METER01-04：两个Web原owner的新caller版本接入；本片仅接口交接，未接不勾完成。
 

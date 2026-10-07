@@ -1,0 +1,25 @@
+test_device_crossing_is_unknown (__main__.MeasurementTests.test_device_crossing_is_unknown) ... ok
+test_directory_replaced_by_symlink_before_open_is_never_followed (__main__.MeasurementTests.test_directory_replaced_by_symlink_before_open_is_never_followed) ... ok
+test_entry_and_depth_limits_return_partial_unknown (__main__.MeasurementTests.test_entry_and_depth_limits_return_partial_unknown) ... ok
+test_enumerated_directory_disappears_before_open (__main__.MeasurementTests.test_enumerated_directory_disappears_before_open) ... ok
+test_enumerated_leaf_disappears_and_is_counted_separately (__main__.MeasurementTests.test_enumerated_leaf_disappears_and_is_counted_separately) ... ok
+test_enumeration_io_error_is_not_swallowed_and_fd_is_closed (__main__.MeasurementTests.test_enumeration_io_error_is_not_swallowed_and_fd_is_closed) ... ok
+test_first_failure_survives_close_failure (__main__.MeasurementTests.test_first_failure_survives_close_failure) ... ok
+test_invalid_policy_or_exclusion_rejected_before_observation (__main__.MeasurementTests.test_invalid_policy_or_exclusion_rejected_before_observation) ... ok
+test_leaf_and_directory_symlinks_are_counted_never_followed (__main__.MeasurementTests.test_leaf_and_directory_symlinks_are_counted_never_followed) ... ok
+test_leaf_replacement_between_stats_is_identity_unknown (__main__.MeasurementTests.test_leaf_replacement_between_stats_is_identity_unknown) ... ok
+test_missing_allocated_accounting_is_unknown (__main__.MeasurementTests.test_missing_allocated_accounting_is_unknown) ... ok
+test_missing_or_replaced_root_is_unknown_not_zero_success (__main__.MeasurementTests.test_missing_or_replaced_root_is_unknown_not_zero_success) ... ok
+test_nested_exclusion_and_absent_exclusion_are_literal (__main__.MeasurementTests.test_nested_exclusion_and_absent_exclusion_are_literal) ... ok
+test_opened_directory_disconnection_is_not_transient_enoent (__main__.MeasurementTests.test_opened_directory_disconnection_is_not_transient_enoent) ... ok
+test_permission_failure_is_unknown_with_safe_errno (__main__.MeasurementTests.test_permission_failure_is_unknown_with_safe_errno) ... ok
+test_quick_and_dperf_shapes_exclude_scratch_without_subtraction (__main__.MeasurementTests.test_quick_and_dperf_shapes_exclude_scratch_without_subtraction) ... ok
+test_regular_sparse_and_hardlink_counts_use_observed_blocks_per_path (__main__.MeasurementTests.test_regular_sparse_and_hardlink_counts_use_observed_blocks_per_path) ... ok
+test_root_symlink_and_excluded_symlink_fail_closed (__main__.MeasurementTests.test_root_symlink_and_excluded_symlink_fail_closed) ... ok
+test_special_file_is_unknown (__main__.MeasurementTests.test_special_file_is_unknown) ... ok
+test_time_bound_rejects_late_result_and_closes_descriptors (__main__.MeasurementTests.test_time_bound_rejects_late_result_and_closes_descriptors) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.017s
+
+OK

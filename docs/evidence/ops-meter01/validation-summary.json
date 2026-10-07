@@ -1,0 +1,47 @@
+{
+  "task": "OPS-METER01",
+  "at": "2026-10-07T08:57:40.341809+00:00",
+  "source": "c1699914",
+  "selected": 20,
+  "passed": 20,
+  "failed": 0,
+  "distinctChecks": 20,
+  "rounds": 1,
+  "testElapsedMs": 17,
+  "supervisedChildMs": 178,
+  "callerMs": 205,
+  "stdoutStderrBytes": 2949,
+  "actualGroup": 49132,
+  "finalOwnedState": "absent",
+  "dualEOF": true,
+  "signals": [],
+  "historicalObservation": "pre-reap EPERM/unknown preserved in report; final two observations absent",
+  "cleanup": {
+    "at": "2026-10-07T08:56:18.257227+00:00",
+    "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-meter01-9ak7zh_h",
+    "state": "removed",
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "elapsedMs": 205
+  },
+  "initialFreeBytes": 23954067456,
+  "declaredMaxSyntheticLogicalBytes": 2101248,
+  "peakMeasurement": "NOT_MEASURED",
+  "scope": "Standard-library synthetic directory tests and injected filesystem failures only; two real caller-shaped calculations, not adoption or real browser validation.",
+  "notRun": [
+    "real Quick or DPERF caller",
+    "PG",
+    "browser",
+    "network",
+    "provider",
+    "personal services"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T08:57:40.341809+00:00",
+    "review": "Small one measurement API; public result defines partial/unknown. Descriptor traversal and errors hidden in one scan implementation. No duplicated process loop or deletion policy. Names/accounting/finite memory/time reviewed; no unresolved author finding.",
+    "limits": "Synchronous filesystem calls remain externally supervised; non-atomic inode observations are not security/cleanup proof."
+  }
+}
