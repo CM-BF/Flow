@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T21:36:30.468Z",
-  "state": "NOT_READY_CLEANUP_DELTA_REVIEW_PENDING",
+  "at": "2026-10-07T21:43:02.889Z",
+  "state": "READY_CLOSED_CANDIDATE_NOT_OPEN",
   "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
   "support": "b0231f79168f869b9f81af29476f3677c5b931d0",
   "preparedPacket": "1959af0a256f7d259add1593ecec1f29abc0a07e",
@@ -13,10 +13,10 @@
   "external": 191,
   "links": 16,
   "sql": 34,
-  "deltaRows": 7,
-  "unchangedRows": 274,
-  "deltaBindingValidation": "Relative to prior v5 R2 only claim receipt metadata changed; 280 rows unchanged; all product/test/fixture/caller bytes frozen; actual NOT_OPEN/NOT_RUN.",
-  "callerValidation": "Only resource helper fixed hash changed; cleanup behavior reviewed independently before future actual. No new PG.",
+  "deltaRows": 2,
+  "unchangedRows": 279,
+  "deltaBindingValidation": "Relative to pre-root-guard f44 manifest only resource helper and caller fixed hash change; other279 rows/191external/16links unchanged. Independent review21:41:41 closed P2.",
+  "callerValidation": "Canonical helper1d85 independently approved with4/4pureFS; owncaller only fixed helper hash changed and independently reviewed; no PG or old checks rerun.",
   "futureBudget": {
     "totalSeconds": 180,
     "work": 110,
@@ -64,6 +64,7 @@
     "changedRows": 2,
     "unchangedRows": 279,
     "caseSourceUnchanged": true,
-    "review": "PENDING"
-  }
+    "review": "APPROVED root-guard-approval.json"
+  },
+  "manifestStateSnapshot": "Pinned manifest state is pre-review snapshot; this separate approval and current ready supersede that review-pending label without altering the fixed manifest."
 }

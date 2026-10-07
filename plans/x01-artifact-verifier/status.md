@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:48:21.740Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:43:02.889Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | R2已审source10bd与所有源码冻结；仅claim receipt metadata重绑v5，提交push后clean STOP |
+| 工作树dirty状态 | 所有产品/用例冻结；本轮资源helper副本与binding已审，metadata提交push后clean STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 10bd0219f84c34008a0255bfed282052a91bce7c：R2仅静态批准，0新types/collect/PG；R1 FAILED/0selected5skipped及原raw保持 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
@@ -22,12 +22,12 @@
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 项目测试准备修复已通过独立审查，下一次数据库验收配方已封存；五项真实验收仍未运行 |
+| 当前产出 | 数据库验收配方的清理安全问题已修复并通过独审，五项真实验收仍未运行 |
 | 下一可用交付 | 在新的独立窗口完成五项数据库验收 |
 | 当前阻塞 | ACTIVE: 等待独立数据库验证窗口，中心领取片尚缺五项真实验收通过证据 |
 | 需用户决定 | NONE |
 | Review | SOURCE_DELTA_APPROVED 10bd0219f84c34008a0255bfed282052a91bce7c，2026-10-07T18:37:13.000Z/0P1P2；R1失败忠实性18:30:02批准；R2真实PG未运行 |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；19:46:46.413Z仅移出server/index.ts，正式STOP交startup observer；其余scope含036保留，AV02九叶冻结 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；fresh21:33:32.045Z核；server/index及verification/execution四叶已STOP交权，其余保留 |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -174,3 +174,5 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T20:32:43.202Z：明确永久STOP本次4个精确leaf，原子amend a67ba659-d859-40d6-82c6-2b7333087639 v5→v6 / 25scope；[回执](../../docs/evidence/x01-artifact-verifier/admission-result-handback-receipt.json)。移至独立X01-VERIFIER-ADMISSION-RESULT01，接收方须take成功后写；原固定源码/PG输入保持只读，未授新PG。
 
 2026-10-07T21:36:30.468Z cleanup guard修复中：当前R2暂NOT_READY/NOT_OPEN，继承helper root-swap P2由parent canonical修复，4纯FS通过待独审；本树仅精确副本和caller SHA更新，原R1/历史manifest/raw不改。旧READY归档pre-root-guard文件，待独审和新binding闭合才恢复CLOSED候选。
+
+2026-10-07T21:43:02.889Z：helper canonical1d85/result0b9a 4/4纯FS获b01 21:36:02批准；本树b023/ab15两row副本/binding于21:41:41独审APPROVED0P1P2。R2恢复READY_CLOSED，仍NOT_OPEN/NOT_RUN；281中2变279原样，191external/16links原样，原R1失败及旧manifest/f44完整archive不改。固定入口av03-pg/r2-ready.json；原pendingmanifest是历史审前快照，由root-guard-approval单独补充，不覆盖原件。当前0child/PG/待launch。

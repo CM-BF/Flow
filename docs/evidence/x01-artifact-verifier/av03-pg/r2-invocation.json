@@ -1,5 +1,5 @@
 {
-  "state": "CLOSED_REVIEW_PENDING_NOT_OPEN",
+  "state": "CLOSED_CANDIDATE_NOT_OPEN",
   "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
   "argv": [
     "/usr/bin/env",
@@ -44,5 +44,6 @@
   "onFailure": "Preserve raw/result/receipt;no automatic second actual or forced DROP. Confirm resource state before RETURN;unknown KEEP.",
   "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/av03-verifier-claim-pg-run-r2",
   "current": "0actual/0admission/0newnamespace",
-  "claimRebinding": "Only receipt metadata changed; original argv/caller/environment/deadlines unchanged; pre-handback invocation preserved."
+  "claimRebinding": "Only receipt metadata changed; original argv/caller/environment/deadlines unchanged; pre-handback invocation preserved.",
+  "rootGuardReview": "root-guard-approval.json; independently approved helper/caller binding, actual still requires future NEXT and fresh gates"
 }
