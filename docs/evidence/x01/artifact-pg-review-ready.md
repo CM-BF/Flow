@@ -1,3 +1,13 @@
+# X01 final deadline P2 delta — REVIEW / NOT_OPEN
+
+Source: `f3f48929085a07a545b7cfd154d133ca99dcb8a2`; result: `39594de44062a73f792d7fb8fb5f8eecebc73654`. Manifest SHA256 `95d87bb88b7cfed355860d2c9d820dffe07d8d2fc92c6b41832f3cf898f3780d`, 96263 bytes; 266 files / 1330933 bytes, 31SQL/27external/21links. Original263 unaffected file bindings, all external and links unchanged from7aa; one caller row refreshed and two new direct regression/result rows.
+
+08:08:22 fixed7aa CHANGES_REQUESTED (one P2) is retained below/by Git. New same-origin cleanup stops at170s to reserve10s final; output inventory requires3s remaining, receipt save requires2s immediately before write. The immutable receipt explicitly says before-final-persistence; an independent post-save delivery carries elapsed and UNKNOWN/nonzero on deadline overrun. Output delivery is flushed and the final return also refuses zero after the same deadline. fsync cannot be hard-interrupted; no claim that the pre-save snapshot includes its duration.
+
+New segment08:09:31, max5min and one pure child<=5s. One direct clock test passed (late save, insufficient pre-save reserve, normal completion branches), exit0/raw98B/internal0.128134s; final group absent/mergedEOF, no TMP created, no PG. No oldtypes/list/19/9/3 rerun. New local closed08:10:47 and returned. Strict UNKNOWN/KEEP and actual PG NOT_OPEN persist. Review only this deadline delta plus its clock result.
+
+---
+
 # X01 artifact association PG preparation — REVIEW / NOT_OPEN
 
 Source: `376954ac8a95ca29df13cc84a4e7a3828c489af9` (new fixture and PG selector from `705176abfd11b770f2fccd2f77375f63999db830`; subsequent local clock/whitespace-only change). Preparation result: `581cb9c1a1ee8dbd398a5978e0aac760b0c5a81d`. Approved product source: `685978f6d6f9552a789e0df10da13df7a0757505`.

@@ -1,3 +1,11 @@
+状态：PENDING（final deadline P2窄修与1纯时钟反例待复审，0PG）
+
+Review target commit: f3f48929085a07a545b7cfd154d133ca99dcb8a2
+
+原7aa于2026-10-07T08:08:22Z CHANGES_REQUESTED，唯一P2为最终写盘跨总期限可仍返回成功；[固定增量](../../docs/evidence/x01/artifact-pg-review-ready.md)。其余五组静态链/输入/准备types与list已核无新增P1/P2；不将其视为实际PG通过。
+
+---
+
 状态：PENDING（新增五组真实事务验收准备，0实际PG）
 
 Review target commit: 376954ac8a95ca29df13cc84a4e7a3828c489af9

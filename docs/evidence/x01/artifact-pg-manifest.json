@@ -1,8 +1,8 @@
 {
-  "sourceCommit": "376954ac8a95ca29df13cc84a4e7a3828c489af9",
-  "resultCommit": "581cb9c1a1ee8dbd398a5978e0aac760b0c5a81d",
+  "sourceCommit": "f3f48929085a07a545b7cfd154d133ca99dcb8a2",
+  "resultCommit": "39594de44062a73f792d7fb8fb5f8eecebc73654",
   "productCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
-  "preparedAt": "2026-10-07T08:04:09.831432+00:00",
+  "preparedAt": "2026-10-07T08:11:44.372049+00:00",
   "scope": "Five selected real artifact association transaction cases; preparation only, actual PG NOT_OPEN. Inherited old suites are source/history inputs and NOT_SELECTED.",
   "files": [
     {
@@ -1035,6 +1035,20 @@
       "sha256": "eea1f530a6702d53976e571e3bc53d7906138339d4e5d371792cb2660847ee56"
     },
     {
+      "path": "docs/evidence/x01/artifact-pg-deadline-local.json",
+      "commit": "39594de44062a73f792d7fb8fb5f8eecebc73654",
+      "blob": "094766454ebaddff851602ff333d7d5efa1fac4d",
+      "bytes": 1620,
+      "sha256": "3cb4d065b33b9111856e26b2827c14e42fe1b3defdba010f5c3b27a09aa5f84b"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-deadline.test.py",
+      "commit": "39594de44062a73f792d7fb8fb5f8eecebc73654",
+      "blob": "6fd5a207035fbdab852535e95fa8bac88a2392c3",
+      "bytes": 2023,
+      "sha256": "9aa0202e5ca47bcf1424ff5cf12fb284410838b3d316268eaa5d846be3206cf8"
+    },
+    {
       "path": "docs/evidence/x01/artifact-pg-input.json",
       "commit": "581cb9c1a1ee8dbd398a5978e0aac760b0c5a81d",
       "blob": "68d92d0133b0284fabaa35c8fe68d480577909d5",
@@ -1057,10 +1071,10 @@
     },
     {
       "path": "docs/evidence/x01/artifact-pg-once.py",
-      "commit": "581cb9c1a1ee8dbd398a5978e0aac760b0c5a81d",
-      "blob": "848bb27888b1acc068d175b8224052a10fee1ce1",
-      "bytes": 15908,
-      "sha256": "c3890ffea5e4473563649c291156dc7f6326a35ce46f6476c4423d2651c0dcd1"
+      "commit": "39594de44062a73f792d7fb8fb5f8eecebc73654",
+      "blob": "86fe9655e77bbe86eba8c0750e0968fe3ea5923f",
+      "bytes": 17069,
+      "sha256": "3049b162335344d072aaa98dfd1cd520a35a1d7f7c66ca68d40ea08f7b4e7cf9"
     },
     {
       "path": "docs/evidence/x01/artifact-pg-preparation-result.json",
@@ -2105,8 +2119,8 @@
     }
   ],
   "summary": {
-    "files": 264,
-    "bytes": 1326129,
+    "files": 266,
+    "bytes": 1330933,
     "officialSql": 31,
     "external": 27,
     "links": 21
@@ -2133,5 +2147,16 @@
     ],
     "runtimeSourceChanged": false,
     "runAbsent": true
+  },
+  "deadlineDelta": {
+    "previousPacket": "7aaafb3f804ed9428a5d270944381dd30f0cf10f",
+    "previousManifestSha256": "67f5c56122ab1db7d9d0d26fa9f738da47e2ad7f3c41a6a6b34108db20f2fffb",
+    "changed": [
+      "docs/evidence/x01/artifact-pg-once.py",
+      "docs/evidence/x01/artifact-pg-deadline.test.py",
+      "docs/evidence/x01/artifact-pg-deadline-local.json"
+    ],
+    "other263Bindings": "unchanged",
+    "scope": "Final receipt snapshot/delivery timing only; original fixture, selection, input limits, dependencies unchanged."
   }
 }
