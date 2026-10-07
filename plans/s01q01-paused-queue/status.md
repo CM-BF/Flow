@@ -13,7 +13,7 @@
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
-| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0；当前修复 01dfc89e43fb7793bc3d022b05ea34c129755073；promotion仍42c零diff |
+| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source 7da2a44608fd92e578863e6d6e39ad18aae98a13；promotion仍42c零diff |
 | 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
 | 工作分支状态 | review |
 | 检查状态 | PARTIAL 7da2a44608fd92e578863e6d6e39ad18aae98a13；caller11/fixture13纯例与wholequeue/fixture测试types0；末次permit读取接线NOT_RUN，实际PG/HTTP NOT_RUN |
@@ -60,3 +60,5 @@
 2026-10-07T20:06:50Z：新20min/new8MiB段，fresh ae72652=origin clean、claimv1四scope匹配（20:06:50.760Z）。归档db20:03:44限定审查，0新P1/P2且PG NOT_READY。最多5串行child/30s/累计90s，raw2MiB含总8；0PG/HTTP/Chrome/provider/旧KEEP。技能沿既有本地find-skills/codebase-design/固定clean-code，复用单一caller/fixture，不改promotion与业务断言。
 
 2026-10-07T20:23:52.494436+00:00：本段source 7da2a44608fd92e578863e6d6e39ad18aae98a13，5child监督3714ms/raw3109B，FULLRETURN 2026-10-07T20:19:35.111707+00:00。24distinct pure、2focusedtypes0；初caller因/tmp非canonical测试路径3失败已纠正，原件保留。最后外部permit/read seam静态修复未追加第6child，PARTIAL准确保留；不把采样当peak，不把WAL reserve当实测。claimv1继续保留，产品promotion/业务断言及旧raw零改；本次仅源入口待审，main未集成，原TODO03/04开放。封存push后STOP/0待launch，所有普通工程已归还；无真实PG/HTTP/provider/新actualnamespace。
+
+2026-10-07T20:24:04Z：packet a30b8d16ceab188702e40ba55ab26c80cbe9eb08已push且HEAD=origin clean。收口保守当前changed23文件225311B，三份自有静态编辑脚本29439B已精确删除；工程TMP按5次独立同身份ENOENT回执，未实测瞬时峰值，不伪称总量硬隔离。最终metadata push后全部STOP，新增growth关闭；上限8MiB未用于新工程/实际PG。
