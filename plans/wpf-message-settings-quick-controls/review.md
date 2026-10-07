@@ -1,11 +1,13 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（当前完整fixture实际证据待独审）。更新时间：2026-10-07 07:41:46 UTC。
+状态：APPROVED。更新时间：2026-10-07 07:46:07 UTC。
 
-- 当前 Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05；四源精确范围保持。
-- [root输入语义源审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json)：APPROVED source-only/0 blocking；单browser noEmit1274.848ms已限定接收。
-- [本次完整实际](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)：actualouterexit0/PASSseal、6/6fixture组和2PNG、所有owned清理；root实际审查待收，作者不自行批准。原fe6 strict/26direct只对应未变业务源，旧全部FAIL原样保留。
-- 限制：native CDP printable键属于浏览器可信输入，非physical IME或OS-popup证明。App/Send/Queue/Recovery生产宿主、main及部署均未完成。
+- Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。
+- Scope：apps/web/src/execution-profiles/ExecutionProfilePicker.tsx；apps/web/test/message-settings.test.ts；apps/web/test/message-settings.fixture.tsx；apps/web/test/message-settings.browser.ts。
+- [root正式实际结论](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)：APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP，0 blocking。原输入语义[source审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json)及单browser noEmit、原fe6 strict/26direct各按范围保留。
+- 实际：outerexit0/唯一PASSseal，6/6fixture组、Light/Dark390两PNG、四个native字符键完整可信事件和owned清理。34原件与7runtime/4source已独立核。全局后续passive trace达cap/drop8，不冒全程完整trace；四filter各10条验收记录完整。
+- 限制：CDP printable可信浏览器输入，不是physical IME或OS-popup验收。两图是180字符压力fixture；紧凑主入口/完整身份下钻/主操作可见性列原MATURE01和MATURE02 TODO11后继。生产App/Send/Queue/Recovery/P01接线、main及部署未完成。
+- 当前：[主线接收包](../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json)，仅四源；原旧FAIL和诊断从不改写为PASS，MSGQUICK-05仍待接收。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 

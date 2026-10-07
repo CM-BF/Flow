@@ -139,4 +139,6 @@ find-skills优先复用本地clean-code/webapp-testing（本段只读复核，�
 
 复用已读本地 find-skills、clean-code、webapp-testing 方法；既有已审native sibling/Node sandbox优先于重新造runner。本段parent仅固定source/真实C carry/新增native-filter raw+seal，worker逐字未变，生命周期/权限/cleanup未扩。角色、命名和异常职责复核：字符输入helper只做严格前置→真实CDP键→被动证据→断言；finally detach/失败JSON保留，零兜底值赋入；parent独立核exact6+2PNG和filterproof，不把磁盘PASS当actualexit。
 
-首个full run成功，不存在为过测试降低断言。6/6+2PNG与4个字符键事件实际通过；原failed诊断和旧预算全留。终态阅读脚本首个只读尝试用 owned-chrome.json 的不存在 pid 字段发生KeyError，未运行产品/改raw；立即按实际 chromePid 字段核三group并保存postrun，这仅readback字段修正。截图目视长model换行、横向无裁切/内部纵向滚动；不扩大到真实App、physical IME或OS-popup。actual独审待root、main接收另行，完整task NOT_COMPLETED。
+首个full run成功，不存在为过测试降低断言。6/6+2PNG与4个字符键事件实际通过；原failed诊断和旧预算全留。终态阅读脚本首个只读尝试用 owned-chrome.json 的不存在 pid 字段发生KeyError，未运行产品/改raw；立即按实际 chromePid 字段核三group并保存postrun，这仅readback字段修正。截图目视长model换行、横向无裁切/内部纵向滚动；不扩大到真实App、physical IME或OS-popup。root限定组件/full-six actual独审已收/0blocking；main接收另行，完整task NOT_COMPLETED。
+
+本段最终记录：owner单status解析 errors=[]/5TODO；34原件/345prior/4fixed sources与链接检查0错。收到GO观察后仅登记现有MATURE01/02后继，不动已验产品。正式actual审已原样归档，后续全局trace drop8明确保留，不说全程无事件丢弃。完成后只正常push/双端clean并停止写入，claim保留待main。

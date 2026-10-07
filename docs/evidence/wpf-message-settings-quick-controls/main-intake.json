@@ -1,6 +1,6 @@
 {
   "taskId": "WPF-MESSAGESETTINGS02",
-  "state": "PENDING_INDEPENDENT_ACTUAL_REVIEW_AND_LEAD_INTAKE",
+  "state": "APPROVED_COMPONENT_READY_FOR_LEAD_MAIN_INTAKE",
   "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
   "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
   "testedMetadataHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
@@ -41,19 +41,38 @@
       "sha256": "60ac0f33b03322de663d049ecea2abf149f3dcfcf69fae9ee886b00831a7d542"
     },
     "sourceReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json",
-    "actualReview": null
+    "actualReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "sha256": "86fa91a12a77d6059fe54d9c977307960841fb45d408c8541808d7ad3a647557",
+      "decision": "APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP"
+    }
   },
   "boundaries": [
     "Current authorized full tuples only; required opaque ownership and synchronous real fixture host CAS",
     "Six actual fixture groups /two390PNG; CDP printable trusted browser input, not physical IME/native OS menu",
     "Old failure/provision/history evidence immutable; no Settings01 result inheritance",
     "Production App/Send/Queue/Recovery/P01 consumption remains separate TODO11 successor",
-    "No main or personal deployment performed by this owner"
+    "No main or personal deployment performed by this owner",
+    "Global later passive trace cap/drop8 preserved; four per-filter acceptance records complete, not full-session event exhaustiveness."
   ],
   "budget": {
     "oldClosedMs": 30625,
     "newSpentMs": 47496,
     "newUnusedMs": 42504,
     "noFurtherRunPlanned": true
-  }
+  },
+  "existingTaskFollowups": [
+    {
+      "task": "WPF-MATURE-01",
+      "area": "floating layer presentation",
+      "observation": "180-character stress name repeats in heading and candidate; Apply below initial viewport. Current two screenshots are fixture pressure cases, not all-App failure.",
+      "required": "Reuse existing corner/shadow/material tokens; narrow primary apply/cancel discoverable; normal-label and long-label screenshots."
+    },
+    {
+      "task": "WPF-MATURE-02 / TODO-11",
+      "area": "real host compact quick settings",
+      "required": "Compact model/thinking/effort/speed primary entry; full directory/explanation drill-down; visually bounded long name with full identity inspectable/distinguishable; exact authorized tuple, explicit Apply and draft ownership/live CAS preserved.",
+      "scopeStatus": "Successor not claimed/implemented by this receipt; no new major task"
+    }
+  ]
 }

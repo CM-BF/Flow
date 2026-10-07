@@ -5,28 +5,28 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 07:41:46 UTC |
+| 最近更新时间 | 2026-10-07 07:46:07 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 模型、思考力度与速度快速选择已完成完整交互验证，原稿及已发送和排队样本保持不变 |
-| 下一可用交付 | 经独立审查后接入主线的快速设置受控组件 |
-| 当前阻塞 | REVIEW: 完整六组交互及双主题窄屏已通过，等待本轮实际证据独审；真实消息宿主接线仍属后继 |
+| 当前产出 | 模型、思考力度与速度快速选择已完成组件验收和独立审查，原稿及已发送和排队样本保持不变 |
+| 下一可用交付 | 受控快速设置组件的主线接收；真实消息入口按原后继接线 |
+| 当前阻塞 | WAITING: 本片已审，等待主线接收；生产App入口及紧凑浮层展示仍是原任务后继 |
 | 需用户决定 | NONE |
-| 本片段交付阶段 | review |
-| 工作分支状态 | in-progress |
+| 本片段交付阶段 | integration |
+| 工作分支状态 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls |
 | Branch | codex/web-message-settings-quick-controls |
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
 | HEAD | dde571be8853698f8943f952ddef2c648d2e1294（四筛选框字符键验收源；metadata单独） |
-| Dirty | 四源固定；本次metadata正常收口后核双端clean |
+| Dirty | 本次元数据提交后核双端clean；四源码逐字等于已审目标 |
 | 实现目标 | dde571be8853698f8943f952ddef2c648d2e1294 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
 | 检查状态 | PASS dde571 六组fixture+双390PNG、actualexit0/完整seal/ownedcleanup；单browser noEmit1274.848ms，原fe6 strict/26direct按未变业务源保留，全部历史FAIL不改 |
-| Review | UNKNOWN（dde571输入语义源码已独审通过；本次六组实际证据独审待收，未集成main） |
+| Review | APPROVED dde571be8853698f8943f952ddef2c648d2e1294（限定受控组件及完整六组fixture；非生产App接线） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；此前 actual parseStatus errors=[] / 5 TODO；仅解析本任务status，未采页面 |
@@ -38,7 +38,7 @@
 | MSGQUICK-01 | completed | w01_owner | [receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md) |
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
-| MSGQUICK-04 | in-progress | w01_owner | [完整六组/双390PNG/清理](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)、原c2 strict/26direct；dde571源码已独审，本次实际待root独审；新段47496/90000ms、余42504ms，旧30625封闭及所有FAIL保留 |
+| MSGQUICK-04 | completed | w01_owner | [root限定组件/完整六组独审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)，6/6+2PNG、单browser noEmit、原strict/26direct；全部旧FAIL保留，新段47496/余42504，原30625闭合 |
 | MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
 
 ## 边界与架构影响
@@ -154,4 +154,10 @@ source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../
 
 [本次原件](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)：fixed dde571/run421e9ee，actualouterexit0/唯一PASSseal、6组和2PNG完成。m/自/高/标每个10条原生CDP可信事件、完整value/index1及零提前commit；后续键盘/Apply/CAS/双pane/A-B-C/后页profile21/双主题390均过。此为受控fixture验收，不是physical IME/OSpopup或真实App接线。旧FAIL与C诊断结论不改。
 
-本次ceil max9869ms，新段累计47496/余42504，旧30625封闭。parent/worker/Chrome三个groups ESRCH，fixture/context已关，双EOF0drop/profile+scratchabsent/errors[]；资源已实际归还，无第二轮或无关检查。原源码source-only独审已收，本次actual独审待root；Main/部署/任务完成仍未发生。
+本次ceil max9869ms，新段累计47496/余42504，旧30625封闭。parent/worker/Chrome三个groups ESRCH，fixture/context已关，双EOF0drop/profile+scratchabsent/errors[]；资源已实际归还，无第二轮或无关检查。原源码与本次actual均已获root限定独审APPROVED/0 blocking；Main/部署/任务完成仍未发生。
+
+## 本次限定独审与主线交接 · 2026-10-07 07:46:07 UTC
+
+[root实际独审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)：APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP/0blocking；34原件/7runtime/4source、6exact组、四组各10可信native记录及fresh三groups/scratch核同。全局后续passive trace截断/drop8如实保留，首四filter的完整验收记录不受影响；不宣称全程无截断trace。MSGQUICK-04完成，MSGQUICK-05主线待接，完整任务NOT_COMPLETED。
+
+[main-intake](../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json)仅四产品/测试路径；原MATURE01浮层与MATURE02 TODO11保紧凑入口、长名下钻、窄屏主操作及正常/压力双样本后继，未扩大本片写权。资源已归还，无追加run。

@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 当前证据
 
-最新 [完整六组实测](native-printable-full-20261007/README.md)：fixed dde571 / run421e9ee，actualouterexit0+唯一PASSseal、6组+双390PNG及ownedcleanup均通过。四native filters m/自/高/标有完整可信事件记录；不是物理IME/OSpopup或生产宿主证明。新段累计47496/余42504ms、旧30625闭合。输入语义源码已root独审，本次actual独审待收；主线/部署未发生。
+最新 [完整六组实测](native-printable-full-20261007/README.md)：fixed dde571 / run421e9ee，actualouterexit0+唯一PASSseal、6组+双390PNG及ownedcleanup均通过。四native filters m/自/高/标有完整可信事件记录；不是物理IME/OSpopup或生产宿主证明。新段累计47496/余42504ms、旧30625闭合。输入语义源码和本次actual已[root限定独审批准](native-printable-full-20261007/root-actual-review.json)/0blocking；主线/部署未发生。
 
 原[c2 strict/26direct](c2-actual-20261007/README.md)在未变业务范围保留；单browser noEmit1274.848ms通过，未重复26。[C定向通过](native-typeahead-second-20261007/README.md)及全部旧失败按原事实保留，portable仍NOT_RUN/remote未启用。
 

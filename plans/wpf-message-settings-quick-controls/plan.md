@@ -21,14 +21,14 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 - [x] MSGQUICK-01：核准确 worktree、base、live claim，建立唯一三件套与本地技能记录。
 - [x] MSGQUICK-02：快速选择、合法 tuple 投影与 ownership/opening 双层失效实现。
 - [x] MSGQUICK-03：新增直接/fixture/browser 回归源码与精确只读依赖验证提案。
-- [ ] MSGQUICK-04：获准后运行必要检查，固定实现/manifest、独立审查。
+- [x] MSGQUICK-04：必要检查及完整六组/双390图已通过，固定dde571与独立限定审查完成。
 - [ ] MSGQUICK-05：正式主线接收并收口；TODO-11 真实宿主接线另列后继。
 
 ## 验收与限制
 
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
-当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码已root限定批准，本次实际审查待收。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04等独审，MSGQUICK-05等主线；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
+当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码及本次实际均已root限定批准/0blocking。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04已完成，MSGQUICK-05等主线；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
 
 ## 历史 MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
@@ -112,4 +112,10 @@ source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../
 
 ## 完整六组实际 · 2026-10-07 07:41:46 UTC
 
-六组/双390图、所有原行为断言已完成，检查已结束并归还资源。本次只自然证据封存，不继续消耗余量；独审完成后进入主线接收，生产宿主仍为TODO-11后继。
+六组/双390图、所有原行为断言已完成，检查已结束并归还资源。本次只自然证据封存，不继续消耗余量；现已独立限定批准，进入主线接收，生产宿主仍为TODO-11后继。
+
+## GO 产品观察与现有后继（本次受控组件检查不改判）
+
+本次两张390图是180字符长名称的压力fixture，顶部摘要与候选完整长名重复占高，Apply在首屏外；不是正常名称/完整App截图，也不据此撤销本次限定6组行为通过。由co-lead在原MATURE01浮层与MATURE02/TODO11真实宿主接线继续：模型/思考力度/速度用紧凑主入口，完整目录和解释下钻；长名限制可见高度但完整身份仍可查看、区分，窄屏应用/取消易找，并复用现有圆角、阴影、材质tokens。后继验收分别保存正常标签与长名称截图。
+
+此后继仍须exact授权tuple、明确Apply、draft ownership/live CAS；不增加自动选择或第二草稿store。当前未领取生产App/浮层范围，co-lead另按已有任务与合法scope组织，不另造大task、不把后继完成反写当前受控组件。
