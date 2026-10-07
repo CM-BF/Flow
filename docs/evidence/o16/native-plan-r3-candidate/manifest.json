@@ -1,0 +1,93 @@
+{
+  "kind": "flow.o16.native-plan-candidate-bindings.v1",
+  "recordedAt": "2026-10-07T11:10:51.562Z",
+  "candidateTarget": "1dc2278d54426bb30836968c0190c90e13ebd425",
+  "source": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "sourceMain": "fb64770082be8e88c6c4ae58d235033636dde1b9",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/native-plan-r3-candidate/README.md",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 1734,
+      "sha256": "171df4084595243cd41b625c31e4499ddc1c4664ed87058ec3adb418e0a4cbfe"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r3-candidate/candidate.json",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 6999,
+      "sha256": "010555b3db31017279521ca11b9e973017379fa30224889b841483b2bfc93e85"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r3-candidate/fixed-inputs.json",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 7050,
+      "sha256": "8726bc3a71d521622f3ce9340b1f29d508c309c2e4f005e5efa2e67f2a8682f2"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r3-candidate/status-check.json",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 798,
+      "sha256": "c3c34fa6a298f4fe3325cd64d0b41d24e008b9a932e860784dfffad388c94426"
+    },
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/independent-review.json",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 1745,
+      "sha256": "db39e8ac6839fd83d2c54676f942b39d682be65fcb0df24a67826725d6a57a63"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 11320,
+      "sha256": "405a131a56194d40e19311dd07b61c0372d5718ecc6826a2993575f7f0ac110d"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "1dc2278d54426bb30836968c0190c90e13ebd425",
+      "bytes": 19138,
+      "sha256": "1f35137405a8b72f0e61a129bde9f0b1a02d59bef709043ebf03c5d92c5ab6cc"
+    }
+  ],
+  "bindingCount": 7,
+  "bindingBytes": 48784,
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/private-error-diagnostics/delta-manifest.json",
+      "fixedRef": "e41321ee76577631fed07b772c8f61e61536d580",
+      "bytes": 12231,
+      "sha256": "d532ed213e41cbb26d4140f8554ee9c63fa352c80130eef53a54499f50cd27bc"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r2/result-manifest.json",
+      "fixedRef": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+      "bytes": 8874,
+      "sha256": "9e99d31580a56abea29bdc68bd052dad5af3fcb2165b394dbae151988120badf"
+    }
+  ],
+  "supersedesInheritedMetadataOnly": [
+    "plans/o16-continuous-goal-acceptance/status.md",
+    "plans/o16-continuous-goal-acceptance/review.md"
+  ],
+  "reviewProvenance": {
+    "fixedRef": "fb64770082be8e88c6c4ae58d235033636dde1b9",
+    "path": "docs/evidence/i02/o16-private-error-diagnostics-review.json",
+    "localCopy": "docs/evidence/o16/private-error-diagnostics/independent-review.json",
+    "verbatim": true
+  },
+  "runtimePins": "fixed-inputs.json: 3 stat/realpath pins matched prior actual content hashes; fresh execution rehash still required",
+  "fullSourceOrRawCopiesAdded": 0,
+  "execution": "NOT_RUN_WAITING_LEAD_ACTUAL_WINDOW",
+  "newBudgetId": "O16-GO-PLANNER-R3-20261007",
+  "proposedRun": "native-plan-20261007-r3",
+  "newPermitCreated": false,
+  "newReservationCreated": false,
+  "SDKQueriesThisPreparation": 0,
+  "previousActualSDKQueryCalls": 2,
+  "maximumCumulativeSDKEntries": 3,
+  "previousAccountCost": "UNKNOWN",
+  "oldKEEP": "untouched",
+  "checksRerun": false,
+  "metadataCheck": "Only own parseStatus/JSON/source-byte/namespace observations; historical start UNKNOWN warning retained"
+}
