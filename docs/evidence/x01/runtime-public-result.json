@@ -1,0 +1,72 @@
+{
+  "sourceCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+  "initialSourceCommit": "a7a7da61",
+  "record": "docs/evidence/x01/runtime-public-local.json",
+  "recordSha256": "6274a1d69bce49bbb724afc93aa65f6dae15fb977ce2d3aebe9ceafddd8d0213",
+  "selected": 11,
+  "passed": 11,
+  "types": 0,
+  "initialTypesExit": 2,
+  "initialFailure": "new fixture adapter required version field",
+  "sourceInputs": "docs/evidence/x01/runtime-public-input.json",
+  "sourceMethod": "fixed main2a7 direct closure + exact four owner source/test files; runner contract only approved685978 import/optional addition; no P02/Codex removals",
+  "rawBytes": 362,
+  "topLevelChildren": 3,
+  "engineeringChildSeconds": 4.240182999987155,
+  "endedAt": "2026-10-07T08:38:40.949358+00:00",
+  "fixtureRoots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-XOPGZk",
+      "dev": 16777234,
+      "ino": 123661625,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-IwkMty",
+      "dev": 16777234,
+      "ino": 123661634,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-ZXc2kW",
+      "dev": 16777234,
+      "ino": 123661643,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-jKmpn2",
+      "dev": 16777234,
+      "ino": 123661648,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-9yATwB",
+      "dev": 16777234,
+      "ino": 123661653,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-H6VLoD",
+      "dev": 16777234,
+      "ino": 123661656,
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-Re0XT7",
+      "dev": 16777234,
+      "ino": 123661664,
+      "removed": true
+    }
+  ],
+  "fixtureRootsExactAbsentObservedAt": "2026-10-07T08:40:13.443686+00:00",
+  "completeLocalResourceReceipts": true,
+  "wholeExternalWall": null,
+  "peakTempBytes": null,
+  "realPackageInvocations": 0,
+  "PG": 0,
+  "network": 0,
+  "tar": 0,
+  "provider": 0,
+  "scope": "actual runRunner/journal/outbox and executePluginTool, injected package host/JSON transport; no public HTTP or main FlowClient hookup",
+  "legacySourcesNotRetested": "old19/9/3/5PG"
+}

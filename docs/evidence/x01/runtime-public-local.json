@@ -1,0 +1,409 @@
+{
+  "startedAt": "2026-10-07T08:38:28.862276+00:00",
+  "startEpoch": 1791361631.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T08:38:28.863347+00:00",
+      "freeBeforeBytes": 24061435904,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-81nh5ynt",
+        "dev": 16777234,
+        "ino": 123661304,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/runtime-public-tsconfig.json"
+      ],
+      "process": {
+        "pid": 4299,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1695,
+        "observed_bytes": 246,
+        "retained_bytes": 246,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "docs/evidence/x01/runtime-main-inputs/apps/runner/src/plugins/runtime.test.ts(109,25): error TS2741: Property 'version' is missing in type '{ name: \"fixture\"; run(context: HarnessContext): Promise<void>; }' but required in type 'HarnessAdapter'.\n",
+      "rawBytes": 246,
+      "rawSha256": "e0f5a67bab9d3559a815945fdf7019470b60584dce20cc9178f4f9436db9e2c5",
+      "finishedAt": "2026-10-07T08:38:30.560010+00:00",
+      "elapsedBeforeReceiptSeconds": 1.6962718749418855
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T08:38:38.347811+00:00",
+      "freeBeforeBytes": 24061259776,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-dg7d1vji",
+        "dev": 16777234,
+        "ino": 123661463,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/runtime-public-tsconfig.json"
+      ],
+      "process": {
+        "pid": 12624,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1397,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T08:38:39.745847+00:00",
+      "elapsedBeforeReceiptSeconds": 1.3974984170636162
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T08:38:39.802354+00:00",
+      "freeBeforeBytes": 24061005824,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr",
+        "dev": 16777234,
+        "ino": 123661530,
+        "removed": true,
+        "endSample": {
+          "entries": 5,
+          "bytes": 5279,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/runtime-public-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tests.json"
+      ],
+      "process": {
+        "pid": 14161,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1143,
+        "observed_bytes": 116,
+        "retained_bytes": 116,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tests.json\n",
+      "rawBytes": 116,
+      "rawSha256": "d752e54e923377a807e38e031ba9309471276490eb58068682cf7a90d07afc33",
+      "tests.json": {
+        "numTotalTestSuites": 2,
+        "numPassedTestSuites": 2,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 11,
+        "numPassedTests": 11,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791362320006,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "claim snapshots the complete request before awaiting the shared transport",
+                "status": "passed",
+                "title": "claim snapshots the complete request before awaiting the shared transport",
+                "duration": 3.1317920000000186,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "status rejects a claim-only ACK and changed qualification without retry",
+                "status": "passed",
+                "title": "status rejects a claim-only ACK and changed qualification without retry",
+                "duration": 0.8282920000000047,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "publication requires the exact explicit ACK",
+                "status": "passed",
+                "title": "publication requires the exact explicit ACK",
+                "duration": 0.42891599999998675,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "phase request preserves stable key and rejects a changed ownership ACK",
+                "status": "passed",
+                "title": "phase request preserves stable key and rejects a changed ownership ACK",
+                "duration": 0.9110000000000014,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791362320928,
+            "endTime": 1791362320933.911,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runtime-main-inputs/packages/client/src/plugin-runner.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "v3 claim persists before package dispatch and reports artifact verification completed through the original outbox",
+                "status": "passed",
+                "title": "v3 claim persists before package dispatch and reports artifact verification completed through the original outbox",
+                "duration": 56.052916000000096,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "lost claim ACK recovers exactly the durable full request and does not allocate under another key",
+                "status": "passed",
+                "title": "lost claim ACK recovers exactly the durable full request and does not allocate under another key",
+                "duration": 33.32195899999999,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unknown phase ACK retains assignment and restart never reinvokes the package",
+                "status": "passed",
+                "title": "unknown phase ACK retains assignment and restart never reinvokes the package",
+                "duration": 23.37337500000001,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "unknown package outcome retains assignment and restart never reinvokes the package",
+                "status": "passed",
+                "title": "unknown package outcome retains assignment and restart never reinvokes the package",
+                "duration": 27.37629199999992,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persisted v3 with no current port fails before claim or execution and preserves its request",
+                "status": "passed",
+                "title": "persisted v3 with no current port fails before claim or execution and preserves its request",
+                "duration": 15.726625000000013,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "ordinary v3 assignment still follows the original adapter path",
+                "status": "passed",
+                "title": "ordinary v3 assignment still follows the original adapter path",
+                "duration": 38.77879199999995,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "legacy no-port polling uses only the unchanged v2 transport",
+                "status": "passed",
+                "title": "legacy no-port polling uses only the unchanged v2 transport",
+                "duration": 11.499082999999928,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791362320558,
+            "endTime": 1791362320764.499,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runtime-main-inputs/apps/runner/src/plugins/runtime.test.ts"
+          }
+        ]
+      },
+      "fixtures.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-XOPGZk",
+            "dev": 16777234,
+            "ino": 123661625,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-IwkMty",
+            "dev": 16777234,
+            "ino": 123661634,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-ZXc2kW",
+            "dev": 16777234,
+            "ino": 123661643,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-jKmpn2",
+            "dev": 16777234,
+            "ino": 123661648,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-9yATwB",
+            "dev": 16777234,
+            "ino": 123661653,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-H6VLoD",
+            "dev": 16777234,
+            "ino": 123661656,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-runtime-public-o8lv2awr/tmp/flow-plugin-runtime-Re0XT7",
+            "dev": 16777234,
+            "ino": 123661664,
+            "removed": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T08:38:40.949344+00:00",
+      "elapsedBeforeReceiptSeconds": 1.1464127079816535
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1500,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 1048576
+  },
+  "floorBytes": 4071096320,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T08:38:40.949358+00:00"
+}

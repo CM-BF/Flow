@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:23:49.955908+00:00 |
+| 最近更新时间 | 2026-10-07T08:40:13.443686+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v17 ACTIVE43scope](../../docs/evidence/x01/artifact-pg-amend-v17.json)；唯一追加artifact-pg.test.ts |
+| Claim | [v18 ACTIVE48scope](../../docs/evidence/x01/runtime-public-amend-v18.json)；已正式取得runtime/server出口与domain leaf，client/index仍属LAZY |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，输入闭包与准备结果已封存，当前提交后clean |
-| 工作分支状态 | integration |
-| 检查状态 | 新来源PG五组5/5、56HTTP、1DB全部闭合；原准备/19/9/3不重跑 |
-| Review | 来源六源07:52:01、准备08:12:25、实际PG五组08:19:57均已独审APPROVED/0P1P2；限定各自范围 |
+| 工作树 dirty 状态 | 9b639f79367a118562da4fe7c8d977173a488200四源固定；本段3child闭合，结果和74源固定镜像归档中 |
+| 工作分支状态 | review |
+| 检查状态 | 新接缝strict首2→修后0；11/11直接行为，3child/7fixture+3TMP收尾；0PG/真实package/网络 |
+| Review | 新runtime/domain接缝待独审；旧来源六源+真实5PG仍APPROVED/READY独立intake |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
-| 实现目标 | 685978f6d6f9552a789e0df10da13df7a0757505 |
-| 实现范围 | apps/runner/src/plugins/execution.ts, apps/server/src/events.ts, apps/server/src/plugin-runtime/artifact.ts, apps/server/src/plugin-runtime/artifact.test.ts, packages/contracts/src/runner.ts, packages/contracts/src/plugin-artifact.ts |
-| 本片段交付阶段 | integration |
+| 实现目标 | 9b639f79367a118562da4fe7c8d977173a488200 |
+| 实现范围 | apps/runner/src/runtime.ts, apps/runner/src/plugins/runtime.test.ts, packages/client/src/plugin-runner.ts, packages/client/src/plugin-runner.test.ts |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件产物来源关联与真实事务验收已获独审，已准备窄改动主线接收 |
-| 下一可用交付 | 将来源接缝窄改动集成主线；随后按交权顺序接通真实runner公开调用链 |
-| 当前阻塞 | ACTIVE: 后继共享入口待正式交权；client先由LAZY接入后交回。当前来源接缝已可独立集成 |
+| 当前产出 | 现有runner已具备持久插件领取和逐阶段执行接缝，直接行为验证完成 |
+| 下一可用交付 | 独审该运行时增量；共享client入口交回后接入同一认证传输，再补显式中心挂载 |
+| 当前阻塞 | ACTIVE: 完整公开链还需LAZY交回client/index、中心显式policy与generic retry绑定保护；本次运行时片已可独立审查 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v17为43scope，server/index已v12停止并交回；semver与pinning已main，新增来源事务五组fixture及既有来源接缝，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；历史v17为43scope；server/index此前v12停止并交回，现P02释放后本任务v18重新领取；semver与pinning已main，新增来源事务五组fixture及既有来源接缝，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -307,3 +307,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:18:57.808104+00:00：artifact PG-R1固定result5068c6fa6b1cdfc7766f735a494c771892d7f3c1，5/5、56HTTP、1专库/1监听器/2受监督进程与exactTMP已闭合；08:17:02实际终态后即时归还Mika，0后继launch。原180s与身份/预算不变，pre-save/post-save/externaltime分开；[唯一结果入口](../../docs/evidence/x01/artifact-pg-result-ready.md)待chatui独审。原输入/7aa/96f及19/9/3原件不改，来源六源尚未main、完整public运行链未完成。
 
 2026-10-07T08:23:49.955908+00:00：PG结果chatui08:19:57独审APPROVED归档；[canonical六源窄intake](../../docs/evidence/x01/artifact-provenance-integration-ready.json)关联原六源批准/19局部+新5PG结果与精确cleanup，阶段integration。只读main2a7e004b已含P02f5a13cbe，三直接既有消费者相对d556零diff，原18500B窄patch apply--check0；不是main组合通过，不全文件覆盖native-body/Codex。新账本P02v5 RELEASED08:20:34已观察，正式handback仍待本owner收据且本段不amend；runtime/server随后X01协调、client先LAZY，四启动scope当前仅接线准备。0工程child/新PG，claimv17保留。
+
+2026-10-07T08:27:11Z：开始原25min生产接缝段；v18于08:30:00.290Z原子amend成功，28e8317e只接固定main2a7六入口基线。源码编辑不占local；LAZY先运行其明示局部段。0PG/native/provider。领域transport只接既有FlowClient request port，无第二fetch/调度器；完整生产mount与共享client接线仍开放。
+
+2026-10-07T08:40:13.443686+00:00：本段source `9b639f79367a118562da4fe7c8d977173a488200`，11/11和types0，初始TS2741红原件保留。3进程/3ownTMP与7journal fixture已闭合，08:38:40.949344Z local直接归还LAZY。详见[runtime结果](../../docs/evidence/x01/runtime-public-result.json)、[Interface](../../docs/evidence/x01/runtime-public-interface.md)。整个X01未Done；source readonly待审，v18保留修复期。
