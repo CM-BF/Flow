@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T20:32:02.476Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_SINGLE_LAUNCH_RUNTIME_REUSE",
+  "target": "de77924faee33bf00d40c272052a762dad04ed1e",
+  "delivery": "642b6d9f53abc48e8dad7178c6b6272a69556bec",
+  "mainPreimage": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "manifestSha256": "068237d66a78f5864da71d0e7debeb6fe81b0791763f305b6f80d250591386c4",
+  "fixedBindingsChecked": 20,
+  "fixedBindingBytes": 108071,
+  "scope": [
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/backend-release/host.mjs",
+    "tools/personal-preview/backend-release/runtime.test.mjs"
+  ],
+  "blockingFindings": [],
+  "review": [
+    "Complete source and direct-consumer test review; descriptor/root/manifest identity, one inflight, terminal failure, bounded candidate count and one-launch ownership remain explicit.",
+    "Only exact three product blobs accepted; readonly suppliers are not overwritten. Current two existing production preimages equal c29; test path is new.",
+    "Independent source review uses existing find-skills/codebase-design/clean-code: one resolver with two real callers; no global cache, lifecycle authority, timeout increase or claim readiness assertion."
+  ],
+  "evidence": {
+    "checksPassed": 9,
+    "realPreviewImport": "PASS with permission boundary; zero operational calls",
+    "elapsedMs": 1613,
+    "rawBytes": 3266,
+    "groups": "all absent / dual EOF / no signals; initial EPERM preserved",
+    "scratch": "four exact empty directories removed",
+    "preservedFailures": [
+      "local02 module path",
+      "local03 pg CJS route"
+    ],
+    "reviewerTests": "NOT_RUN_EXISTING_DIRECT_EVIDENCE_REUSED"
+  },
+  "limits": [
+    "Managed immutable artifact contract; root/manifest pins do not detect adversarial same-owner descendant mutation.",
+    "Not an assertion of the historical startup root cause.",
+    "No artifact build, service/PG/provider operation or personal recovery performed; current stopped state unchanged.",
+    "Current-launch runner initialization proof, exact new artifact compatibility and same-operation recovery remain open.",
+    "The separate 04da minimal candidate is not integrated or runtime-approved by this review."
+  ]
+}

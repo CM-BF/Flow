@@ -17,7 +17,7 @@ import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
-import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor } from './backend-release/host.mjs';
+import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor, createLaunchRuntimeResolver } from './backend-release/host.mjs';
 import { prepareBackendArtifact } from './backend-release/index.mjs';
 import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility, loadReleaseAssets } from './web-release.mjs';
 
@@ -54,12 +54,12 @@ async function directoryPath(input) {
   await outsideGit(actual);
   return actual;
 }
-async function load(directory, serviceRole = null) {
+async function load(directory, serviceRole = null, resolveRuntime = backendRuntime) {
   const path = await directoryPath(directory);
   const config = await privateJson(join(path, 'config.json'));
   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
     || !/^flow_preview_[a-f0-9]{24}$/.test(config.databaseName) || !/^[a-f0-9-]{36}$/.test(config.installationId)) fail('CONFIGURATION_IDENTITY_MISMATCH');
-  await assertInstallationSource(config, repository, serviceRole);
+  await assertInstallationSource(config, repository, serviceRole, resolveRuntime);
   const url = new URL(config.databaseUrl);
   const admin = new URL(config.adminUrl);
   if (url.pathname !== `/${config.databaseName}` || !['postgres:', 'postgresql:'].includes(admin.protocol) || admin.hostname !== '127.0.0.1' || admin.pathname !== '/postgres'
@@ -331,7 +331,9 @@ export async function activatePreviewMessageSettings({ directory, recipe }) {
 /** Private child entry: credentials stay in its environment and never appear in arguments or output. */
 export async function runService(directory, recordKey) {
   const role = runnerServiceRole(recordKey);
-  const config = await load(directory, role);
+  const launchRuntime = createLaunchRuntimeResolver();
+  const config = await load(directory, role, launchRuntime.resolve);
+  launchRuntime.seal();
   const slots = await readRunnerSlots(config);
   const slot = slots.find(value => value.key === recordKey);
   if (role === 'runner' && !slot) fail('UNDECLARED_SERVICE_RECORD');
@@ -355,7 +357,7 @@ export async function runService(directory, recordKey) {
     const browser = await readBrowserSessionLaunch(config);
     const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null, slot);
     await stage('runtime');
-    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);
+    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime.resolve);
     let args; let cwd = runtime.root;
     if (role === 'center') args = ['--import', 'tsx', 'apps/server/src/main.ts'];
     else if (role === 'runner') args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
