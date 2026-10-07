@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 11:27:03 UTC；原准备review已main f68dbb71（Lead回执）；首次采用单例已实际通过并归还，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 11:44:37 UTC；main62e9已接首次采用结果与独审，原件和路径映射已核 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,22 +13,22 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 基线10ba847d79206493d01943ddc9b73d035a0ff289；首次采用source ff445/185ab不变；本次只封实际结果与metadata |
-| 工作树dirty状态 | 产品与运行入口停写；本次实际结果/状态封存待提交 |
+| 工作基线 / HEAD | 本次metadata前像d112f3f5b87940d05a80b29d3dbcdbc072437ec7；首次采用source ff445/185ab不变；本次仅status/main receipt |
+| 工作树dirty状态 | 全部产品与运行源停写；本次metadata独立提交，提交前仅status/main receipt变化 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
-| 已集成main状态 / HEAD | main657105已收r2结果、c38fa3a1已收个人候选；main f68dbb71已收首次采用准备review。首次采用实际单例通过，结果尚待独审/接收；不宣称个人更新已发生。 |
+| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 首次从开发入口采用后台产物并接续同一维护操作已在隔离环境验证；证据待独立审查。 |
-| 下一可用交付 | 完成本次结果独立审查；随后与真实App兼容报告汇合，准备个人受控更新。 |
-| 当前阻塞 | ACTIVE: 本次实际结果等待独立审查；个人更新仍等三个保留版本的真实App报告及现场核验。 |
+| 当前产出 | 首次采用后台产物的隔离验证已审并进入主线，本片段已交付。 |
+| 下一可用交付 | 汇合三个保留版本的真实App兼容证据，完成个人更新前的现场核验。 |
+| 当前阻塞 | ACTIVE: 个人更新仍等三个保留版本的真实App报告及现场核验。 |
 | 需用户决定 | NONE |
-| Review | 首次采用准备ff445/185ab已限定批准；实际单例passed/5checks与独立normalDROP结果PENDING_RESULT_REVIEW；原r2独审/main657105保持。 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
+| Review | APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL：sourceff445/result5963/delivery5be；5checks与清理成立，真实App/个人未验；独审0重跑。 |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -321,3 +321,13 @@ Lead于2026-10-07T11:18:46.472543+00:00独审 [唯一原件](../../docs/evidence
 ## 2026-10-07 11:27:03 UTC：首次采用实际通过并归还
 
 [唯一结果](../../docs/evidence/svc06/legacy-first-bootstrap/RESULT.md)：11:26:28.127Z启动→11:27:03.659Z外层0，work35086ms/cleanup373ms；5checks成立、audit恰1、state无backendArtifact且受保护bytes未变。两监督组absent/双EOF、三idle nonce组stopped、专库OID1299961正常DROP remaining[]。只是首次入口/真实维护FSM组合，不冒三实际服务/App兼容/个人更新；原partial-unknown诊断与所有历史失败保持。共享窗口已实际归还，产品/入口不变，结果待独审；任务总完成NOT_COMPLETED及03/04/05开放不改。
+
+## 首次采用限定批准与产品范围交回
+
+2026-10-07T11:30:09.205740+00:00：Lead唯一[结果独审](../../docs/evidence/svc06/legacy-first-bootstrap/result-independent-review.json) APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL，无finding；28固定/current、11安全副本、23私有lstat与2目录核验，未读取私有credential正文或重测。实际结果/原partial-unknown边界不改。6已稳定diagnostics产品路径与fixed6c/main/root当前逐字一致，原子amend v8→v9仅保留自有plan/evidence，见[receipt](../../docs/evidence/svc06/legacy-first-bootstrap/diagnostics-product-return-receipt.json)。产品写权已全归还；原App等待与03/04/05开放保持。
+
+## 首次采用结果主线收口
+
+2026-10-07T11:44:37.221Z：main `62e9a83923a3c2996b4ab32610e10e2069828c66` 已接首次采用实际结果及唯一独审，见[本次接收核对](../../docs/evidence/svc06/legacy-first-bootstrap/main-receipt.json)。25同路径原件逐字相同，准备review与main I02原件等字节，2计划在main准确对应5be（本树后续d112正常更新）；结果I02 review与自有副本相同。intake时间来自原件11:32:50.555840Z，不猜main push时点。当前候选仍7d1/source6c；最近封存个人参考仍af51/v18、d629/v3/c7b，本段未fresh采个人，不能由main接收推断运行部署升级。三真实App报告由Web继续，任务总开工UNKNOWN与03/04/05开放保持；仅own两metadata scope继续active。clean-code/文档复核只核单一事实源、限定结论和引用，无重复原件或新增执行框架；0产品测试/PG验证/provider/个人操作。
+
+本次仅该status复用main7272151bb1e3e59e08937dca44949dcdeb42f009的parseStatus：errors=[]、human.missing=[]，所属FLOW-001/co-lead已识别；timing仅历史任务开工UNKNOWN提示，保持原值。新增接收记录相对链接可达。

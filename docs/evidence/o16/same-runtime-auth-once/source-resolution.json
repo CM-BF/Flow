@@ -1,0 +1,116 @@
+{
+  "kind": "flow.o16.auth-source-resolution.v1",
+  "recordedAt": "2026-10-07T11:44:43.555762+00:00",
+  "scope": "Existing fixed public binary-source findings only; no new native/auth/query/test or private configuration read",
+  "sourceOfConclusions": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "form": "Direct read-only message to Execution Lead, reconfirmed to author; no separate upstream report",
+    "newBinaryReadByAuthor": false
+  },
+  "claim": {
+    "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+    "version": 1,
+    "freshState": "active",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "branch": "codex/continuous-native-goal-acceptance",
+    "cleanHeadBefore": "f85a54bd46f9879fb500cbc38e07bb4046759a7f"
+  },
+  "fixedNative": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+    "bytes": 233260816,
+    "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+    "dev": "16777234",
+    "ino": "116957779"
+  },
+  "sourceSlices": [
+    {
+      "byteOffset": 183946121,
+      "bytes": 8000,
+      "sha256": "94d2c9f2abf015869fb6e8ee9ab701040d4c0cc91d4eff13fa70d8b59245ae90",
+      "symbols": "Jb/VN/iT; default namespace and account selection"
+    },
+    {
+      "byteOffset": 183953900,
+      "bytes": 7600,
+      "sha256": "df6a39ec5f7e4da601e40aefab639123ed5d29b0f93dc4cf25c935ef4afb0970",
+      "symbols": "secure storage / security default search path"
+    },
+    {
+      "byteOffset": 181929121,
+      "bytes": 600,
+      "sha256": "8c45437ea531a91b2b45ba97ea6d2c278718128b68208a54d88b6d91cee8b9bc",
+      "symbols": "qgr global configuration path"
+    }
+  ],
+  "reusedInputs": {
+    "recipe": "prepared.json",
+    "recipeDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+    "publicEnvironmentKeys": 14,
+    "sdkAddedKeys": [
+      "CLAUDE_CODE_ENTRYPOINT",
+      "CLAUDE_AGENT_SDK_VERSION",
+      "CLAUDE_CODE_SDK_READS_SESSION_STATE"
+    ],
+    "sdkAddedKeysIncludedIn14": true,
+    "priorPublicSource": "../same-runtime-auth-candidate/readonly-inputs.json",
+    "resultManifest": "manifest.json",
+    "manifestSHA256": "fb07927438c1902505a7d266d58a36021d35fef5e05de1d02549a6dd55a7ff33"
+  },
+  "staticFindings": [
+    "CLAUDE_SECURESTORAGE_CONFIG_DIR is present with empty string, an explicit override rather than an absent variable. VN selects the default Keychain service namespace without a config-directory hash suffix.",
+    "iT selects account from the public USER value citrine in this recipe. This is a lookup parameter, not proof of retrieved authentication.",
+    "Jb file fallback remains os.homedir() + /.claude; for this recipe HOME is the owned private home, not the user real HOME.",
+    "security uses its default search path without a concrete HOME or keychain-file argument. Static resolution does not establish search-path contents, successful access, a matching entry or valid credentials.",
+    "qgr resolves global configuration under CLAUDE_CONFIG_DIR as .claude${suffix}.json; the private config directory changes this file path.",
+    "The saved 14 public environment keys already include the 3 SDK augmentation variables. No missing variable or binary-version incompatibility has been established."
+  ],
+  "observedResult": {
+    "source": "disposition-summary.json and surviving records, limited by fidelity-gap.md",
+    "loggedIn": false,
+    "authMethod": "none",
+    "apiProvider": "firstParty",
+    "subscriptionType": "ABSENT_NOT_INFERRED"
+  },
+  "cause": "UNKNOWN",
+  "notEstablished": [
+    "Actual Keychain read success or failure",
+    "User account logout",
+    "A causal configuration or version mismatch",
+    "A working SDK query authentication route"
+  ],
+  "mainReceipt": {
+    "main": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+    "delivery": "f85a54bd46f9879fb500cbc38e07bb4046759a7f",
+    "reviewPath": "docs/evidence/i02/o16-same-runtime-auth-review.json",
+    "reviewBytes": 1975,
+    "reviewSHA256": "4b0618ee16a29c3617f347ee0e7c7c94de4ba9543b90e1d962528b15a712c29d",
+    "decision": "APPROVED_LIMITED_REMAINING_AUTH_STATUS_EVIDENCE_WITH_RECORD_LOSS",
+    "reviewAt": "2026-10-07T11:32:30.280843+00:00",
+    "intakePath": "docs/evidence/i02/adoption-auth-intake.json",
+    "newReviewCopy": false
+  },
+  "fidelity": {
+    "gap": "fidelity-gap.md",
+    "originalNativeObservations": "UNAVAILABLE_AFTER_CASE_INSENSITIVE_NAME_COLLISION",
+    "reconstructed": false,
+    "native174msAbsentAnd427B": "Tool-receipt/derived-summary scope only; not restored original native observation chain"
+  },
+  "boundedNextConditions": [
+    "Choose a concrete supported same-account authentication route with explicit source and private-environment write boundaries before proposing any change; these static path findings alone do not select a working route.",
+    "Any further runtime diagnostic needs a separately bounded, explicitly authorized non-secret observation that can distinguish lookup/access/recognition; current scope performs none and does not ask the user to relogin based on unknown cause.",
+    "Any future SDK planner entry needs a new Goal Owner query budget plus fixed reviewed source/environment/runtime and fresh resource authorization. Public auth status, whether true or false, is not that authorization."
+  ],
+  "unchangedBoundaries": {
+    "SDKQueriesCumulative": 3,
+    "accountCost": "UNKNOWN",
+    "fourthQuery": "NOT_AUTHORIZED",
+    "oldFailureAndKEEP": "UNCHANGED",
+    "newAuthStatus": 0,
+    "newQuery": 0,
+    "newPG": 0,
+    "newEngineeringTests": 0,
+    "credentialReadsCopiesExports": 0,
+    "environmentOrProductChanges": 0,
+    "noNewPermit": true
+  }
+}

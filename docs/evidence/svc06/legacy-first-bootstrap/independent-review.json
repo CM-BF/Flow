@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T11:18:46.472543+00:00",
+  "reviewer": "astra_ultra_execution_lead / GPT-6 Astra / independent read-only",
+  "source": "ff445959425128876d5dd6abdb719196cc2867e6",
+  "delivery": "185ab067ef610df9976e38b877aab72755125705",
+  "verdict": "APPROVED_PREPARATION_AND_LOCAL_ONLY",
+  "findings": [],
+  "manifest": {
+    "path": "backend-release/docs/evidence/svc06/legacy-first-bootstrap/entry-manifest.json",
+    "bytes": 4917,
+    "sha256": "60ae81fb7d49176e8ade6be1ae582db8ee99d5e3251922c06c78b2b8ea756cef"
+  },
+  "verified": {
+    "sourceBindings": 7,
+    "evidenceBindings": 10,
+    "newReadonlyInputs": 44,
+    "aliases": 22,
+    "rootPackagePrefixes": 15,
+    "rootPackageFiles": 978,
+    "rootPackageBytes": 6609996,
+    "inheritedInputManifest": true,
+    "supervisorIdenticalToApprovedR2": true,
+    "fixedAndCurrentBytesEqual": true
+  },
+  "reviewScope": [
+    "Complete new journey and cleanup guard plus entry delta against approved r2. No product source change.",
+    "Legacy state lacks backendArtifact; artifact entry rejects before DB drain; root fixed maintenance module creates the true operation; artifact entry continues same operation and exact audit1.",
+    "Three owned idle child groups are explicitly fixtures, not real services. Canonical DB migrations1/2/16 and registerRunner retained.",
+    "Cleanup requires exact reservation/config/marker/OID and work writer absent; operation if present must match artifact and drain phase; unknown KEEP, no FORCE.",
+    "New 3/3 guards,2 syntax/status records retained; reviewer repeated no test/PG/provider.",
+    "Existing artifact inventory reused for root dependency bytes. No rebuild or install; real three retained App compatibility remains separate."
+  ],
+  "actualPG": "NOT_RUN",
+  "futureWindow": {
+    "exclusiveWith": "Actual shared PG holder or personal service operation unless specifically coordinated",
+    "connectionsConfiguredMax": 4,
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalPhysicalPlanningBytes": 706740224,
+    "rawBytes": 2097152
+  },
+  "limits": [
+    "No personal operation authorized by this review.",
+    "No service refresh/resume duplicated; those remain scoped r2 evidence.",
+    "Ordinary bounded fixture fixes may continue in original scope with relevant checks; changed ownership/cleanup or acceptance semantics require delta review."
+  ]
+}

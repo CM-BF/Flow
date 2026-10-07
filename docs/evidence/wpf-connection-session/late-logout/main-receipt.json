@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-07T11:46:00.003450+00:00",
+  "main": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "delivery": "92e568656ff0072eab4e49ef8a512b954113a080",
+  "source": "66caee46341c91db71a3590bfcd288396b30567a",
+  "production": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+  "base": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "intakeMode": "Exact scoped bytes; not whole-branch ancestry",
+  "comparedChangedPaths": 44,
+  "allDeliveryMainCurrentEqual": true,
+  "pathListSHA256": "f5492724b4714775258de611e9a68f0288c6a752ea96c84492dd1cd9c014eba7",
+  "review": {
+    "path": "docs/evidence/i02/late-logout-review-intake.json",
+    "bytes": 1991,
+    "sha256": "47e56bab52022eb19ee933e750735dc1e57bc91ad9468c8a97841d89dce3ad7d",
+    "decision": "APPROVED_SOURCE_AND_LIMITED_DIRECT_VALIDATION",
+    "reviewAt": "2026-10-07T11:43:18.197342+00:00"
+  },
+  "newEngineeringRuns": 0,
+  "limits": [
+    "SQL1..28 isolated fixture only; not current35 or browser matrix",
+    "fixed7d1/source6c artifact excludes repair",
+    "No personal deployment or full WPF-MATURE-06 completion"
+  ]
+}

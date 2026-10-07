@@ -71,3 +71,9 @@ Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P
 2026-10-07T11:25:52.629Z：同runtime[auth status结果](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)待只读独审，caller dff8e1f8，3新纯白名单例+syntax0；一次native状态false/exit1，0query/两组absent，原raw不外发。请区分状态观察与真实query认证，不从false推账户退出；新scratch非空KEEP和旧资源不改。
 
 同runtime auth封存补注：result477e是大小写碰撞后派生摘要；原native完整结构未保留。独立审查只能按fidelity-gap/disposition列出的剩余原件与工具回执限定，不能将摘要升级为原始supervisor记录；无重跑。
+
+## 2026-10-07T11:44:43.555762+00:00 同runtime剩余证据独审与源码结论收口
+
+assignment_review完成唯一限定审查，无新P1/P2；main `62e9a83923a3c2996b4ab32610e10e2069828c66` 的 `docs/evidence/i02/o16-same-runtime-auth-review.json` 为权威原件，引用/hash见[本次记录](../../docs/evidence/o16/same-runtime-auth-once/source-resolution.json)，不复制另一份报告。16固定/4继承/2模块核同，批准范围为存活原件及明示限定的摘要；不批准完整native审计或认证可用性。原CASE覆盖缺口、累计3/费用UNKNOWN/无第四次/KEEP不变。
+
+本次只归档该reviewer已有固定二进制源码结论：路径选择不等于实际读取；不新跑auth/query、不读用户配置或凭据、不更改recipe。根因UNKNOWN，未证明缺环境变量或版本不兼容，未把旧真实HOME登录状态迁移为私有环境资格。

@@ -1,0 +1,47 @@
+{
+  "pid": 95961,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 1236,
+  "observed_bytes": 506,
+  "retained_bytes": 506,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "name": "selected",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/client/src/plugin-command-ack.test.ts",
+    "packages/client/src/plugin-host-candidates.test.ts",
+    "apps/cli/src/plugin-host-candidates.test.ts",
+    "--no-cache",
+    "--maxWorkers",
+    "1",
+    "--configLoader",
+    "runner",
+    "-t",
+    "freezes parsed values and accepts an old replay without a current GET|freezes the requested material before awaiting and uses the existing cookie GET transport|prints one checked host page through real CLI and FlowClient without following its cursor"
+  ]
+}

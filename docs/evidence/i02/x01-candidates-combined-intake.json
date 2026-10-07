@@ -139,5 +139,30 @@
   "receivedPaths": 119,
   "receivedBytes": 557722,
   "excluded": "No whole HOST branch/ownX01 tree overlay; later untracked removal records and all unrelated main/source remain untouched. Fixed input references kept; no copying private credentials or user logs.",
-  "necessaryCombination": "3 selected mock-fetch public client/CLI cases plus current root noEmit; no PG/provider/full matrix."
+  "necessaryCombination": "3 selected mock-fetch public client/CLI cases plus current root noEmit; no PG/provider/full matrix.",
+  "independentIntakeReview": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_CONTROLLED_INTAKE",
+    "target": "a5e1734276ef891df2ca47523b5109f0d87f84b9",
+    "findings": [],
+    "rows": 18,
+    "uniqueProductPaths": 16,
+    "receivedPaths": 119,
+    "receivedBytes": 557722,
+    "scope": "Canonical review coverage, sequential preimages, final hashes and necessary support; no new execution or domain re-review."
+  },
+  "combination": {
+    "path": "x01-candidates-combination/result.json",
+    "rootNoEmitExit": 0,
+    "selected": 3,
+    "passed": 3,
+    "unselected": 33,
+    "milliseconds": 11366,
+    "rawBytes": 506,
+    "twoGroups": "absent/dualEOF/no firstFailure",
+    "scratch": "exact pre-recorded dev/ino empty removed",
+    "PG": 0,
+    "provider": 0
+  },
+  "updatedAt": "2026-10-07T11:48:02.617996+00:00"
 }

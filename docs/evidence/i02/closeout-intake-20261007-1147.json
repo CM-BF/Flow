@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T11:47:03.414336+00:00",
+  "records": [
+    {
+      "task": "SVC06",
+      "base": "5be3154a097451b30ffabb233133a47d546982b5",
+      "delivery": "7afa5d718781e54ae956d613e955554d221ca74e",
+      "paths": [
+        "docs/evidence/svc06/legacy-first-bootstrap/diagnostics-product-return-receipt.json",
+        "docs/evidence/svc06/legacy-first-bootstrap/diagnostics-product-return-request.json",
+        "docs/evidence/svc06/legacy-first-bootstrap/main-receipt.json",
+        "docs/evidence/svc06/legacy-first-bootstrap/result-independent-review.json",
+        "plans/svc06-backend-release/review.md",
+        "plans/svc06-backend-release/status.md"
+      ],
+      "preimages": "EXACT"
+    },
+    {
+      "task": "O16",
+      "base": "f85a54bd46f9879fb500cbc38e07bb4046759a7f",
+      "delivery": "c42cd877c576b17c6e2eb828ca07ee245d6be4ef",
+      "paths": [
+        "docs/evidence/o16/quality.md",
+        "docs/evidence/o16/same-runtime-auth-once/source-resolution.json",
+        "plans/o16-continuous-goal-acceptance/review.md",
+        "plans/o16-continuous-goal-acceptance/status.md"
+      ],
+      "preimages": "EXACT"
+    },
+    {
+      "task": "CONNECTION",
+      "base": "92e568656ff0072eab4e49ef8a512b954113a080",
+      "delivery": "441c7bae6b7eb0dc8ce612efa99dbecbdc46ae3f",
+      "paths": [
+        "docs/evidence/wpf-connection-session/late-logout/independent-review-intake.json",
+        "docs/evidence/wpf-connection-session/late-logout/main-receipt.json",
+        "plans/wpf-connection-session/plan.md",
+        "plans/wpf-connection-session/review.md",
+        "plans/wpf-connection-session/status.md"
+      ],
+      "preimages": "EXACT"
+    }
+  ],
+  "additionalExactReviewLink": "docs/evidence/svc06/legacy-first-bootstrap/independent-review.json",
+  "newProduct": 0,
+  "newTests": 0,
+  "newProvider": 0
+}
