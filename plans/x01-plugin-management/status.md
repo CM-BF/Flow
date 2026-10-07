@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v28 ACTIVE53scope](../../docs/evidence/x01/process-host-handback-receipt.json)；7条runner路径已STOP交回供process-host新owner领取；routes.ts及两Web路径保持STOP |
+| Claim | [v29 ACTIVE52scope](../../docs/evidence/x01/process-host-handback-receipt.json)；7条runner路径已STOP交回供process-host新owner领取；routes.ts及两Web路径保持STOP |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -390,4 +390,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 
 2026-10-07T12:51:05.007678+00:00：fresh父claimv27 ACTIVE60与REMOVALv1 ACTIVE7确认。只读process-host design d94：[候选部分移交建议](../../docs/evidence/x01/process-host-handoff-candidate.json)列7既有runner路径；当前未STOP/未amend/未交权，待Mika选首片后单独原子办理。host.ts/package-store/journal/outbox及main.ts不在本建议交回范围，新leaf与release闭包另fresh领取/协调。0工程检查/PG/产品写入；整个X01继续OPEN。
 
-- 2026-10-07 process-host partial handback: exact seven paths STOP at 12:57:23.478328Z; atomic amend COMMITTED 2026-10-07T12:57:23.582Z changed X01 claim v27/60 → v28/53. [receipt](../../docs/evidence/x01/process-host-handback-receipt.json) / [STOP and main comparison](../../docs/evidence/x01/process-host-handback-stop.json). All seven owner blobs equal fixed main7524a7fa; no pending owner delta. New owner must fresh take before writing; X01 does not resume these paths. Other claim scope retained. This handback supersedes the earlier proposal only for these seven paths.
+- 2026-10-07 process-host partial handback: exact seven paths STOP at 12:57:23.478328Z; atomic amend COMMITTED 2026-10-07T12:57:23.582Z changed X01 claim v27/60 → v29/52. [receipt](../../docs/evidence/x01/process-host-handback-receipt.json) / [STOP and main comparison](../../docs/evidence/x01/process-host-handback-stop.json). All seven owner blobs equal fixed main7524a7fa; no pending owner delta. New owner must fresh take before writing; X01 does not resume these paths. Other claim scope retained. This handback supersedes the earlier proposal only for these seven paths.
+
+
+2026-10-07T13:07:54.544Z：已明确STOP apps/server/src/runners.ts，13:07:40.252Z X01当前version原子amend移出（v28/53→v29/52）；随后同CORE task新writer take651c4eb4 v1/4已提交。源逐字等fixed main7524、无未交delta，不恢复该叶写权。正式[handback receipt](../../docs/evidence/x01/settings-claim-handback-receipt.json)；CORE后继唯一[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)。原X01其它范围/完整验收不变。
