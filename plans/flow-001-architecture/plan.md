@@ -567,3 +567,31 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 [Apple launchd说明](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)（2026-10-06实际打开）要求受监督进程不得自行daemonize。平台适配与SVC06固定release通过小接口组合，现有短命OPS14不变；本轮未安装或修改任何launchd/Docker策略。
 
 固定只读接口核对见[生命周期后继证据](../../docs/quality/selfhost-lifecycle-2026-10-06.md)。
+
+
+### REQ-18：插件宿主组合下的连接与控制响应（2026-10-07，待测）
+
+- [ ] **FLOW-001-T04-POOL-01** 沿原 REQ-18 / S01 容量验收，确认100+实际执行扩展时，已启用的插件下载/安装不会令心跳、取消和交互控制失去预先声明的响应边界。Execution Lead负责范围与排期；实施owner未领取，当前仅补验收条件、NOT_RUN。聊天关键路径与现有恢复队列优先，不增加运行预算或降低资源门槛。
+
+**已确认事实与限制。** 只读输入为 main `05cdc51e9668d8e3b5219440361ee6b8f1b3a549`：`apps/server/src/index.ts:72` 业务池max8、获取连接5s、SQL statement_timeout10s；`scheduler.ts:5` pg-boss独立池max3、获取连接5s。这是每中心实例的配置，不是每runner的连接配额。SSE每观察者250ms读取，事务释放连接；心跳、控制与扫描仍共享业务池。`plugin-package-fetches/worker.ts:83–128`在启用host后为session advisory lock持续持有一个业务连接，含空闲及下载阶段；`plugin-installations/commands.ts:100–132`在文件准备期间也持有会话连接。这些事实不证明已发生饥饿、连接泄漏或生产事故。
+
+原[S01结果](../../docs/evidence/s01/mixed-128-run/report.md)是8个runRunner实例位于同一runner OS进程、128个实际fixture attempts、6秒窗口；业务池获取连接n4691、p95约203ms、最大632ms含连接建立，FOR SHARE分类仍UNKNOWN。它不证明128个原生模型、长时容量或本次插件组合；[LAB02](../../docs/evidence/lab02/README.md)则仅是观察者。既有固定source/raw/批准不变，S01原唯一[计划](../s01-runner-capacity/plan.md)与owner继续负责其既有容量工作，本条不复制一套实验。
+
+| Module / Interface | 组合验收责任 |
+| --- | --- |
+| 中心组合入口与业务Pool | 固定实际启用host、中心实例数、每池上限/保留用途；读出totalCount/idleCount/waitingCount并分开记录checkout等待、连接建立及SQL/事务时间。 |
+| 下载/安装宿主 | 保留session advisory fence、事务与外部I/O分界、停止与unknown恢复；记录占用开始/结束、空闲持有及资源释放，不以文件阶段的无SQL当无连接占用。 |
+| runner/公开控制调用者 | 固定真实runner进程/实例/attempt数量及身份；观测心跳、取消受理与实际停止、交互读写的请求至回执时间、错误/超时及租约/fence结果。 |
+| 原S01观测入口 | 复用已有有界计量与资源归属；观察不写业务状态、不构建第二账本/调度器，观测者数量与执行者数量分别计数。 |
+
+**最小组合与顺序。** 先在自有0模型小例核直接消费者和持有/释放因果，再按独立固定容量预算决定100+ fixture与后续原生/长期阶段；本次没有开放任何阶段。固定禁用两host、仅下载、仅安装、两者同时启用四种配置。启用后分别覆盖空闲、受控在途网络/文件阶段及正常停止；下载只用自有loopback合成材料，禁止用公共registry波动冒充受控条件。非SQL停顿必须有界、可收束，不以Promise.race遗弃仍有副作用的工作。
+
+**运行前必须冻结的判定。** 具体场景的执行/观察拓扑、持续时间、心跳间隔/lease、每类控制响应最大界限及统计口径、并发请求数、总时间/字节和清理预算均须在原S01候选中明确；未声明界限不能报告PASS。逐组合保存两池及所有中心实例的连接预算合计和管理余量、占用/排队峰值及有界样本、checkout等待分布、真实心跳/取消/交互延迟和错误。取消受理ACK不等于adapter停止；同时保留实际生效、未决与unknown。池等待、SQL时间、事务/非SQL持有时间不混算，低采样未见等待不证明无等待。
+
+正常收束须核自有宿主停止、锁/会话与连接释放、已接受工作及持久恢复事实；连接丢失、取消和错误不得跨session替换原写者或重投unknown。不能只把持锁连接还池、在另一会话接管、增大池数或删掉插件功能便宣布解决。若测得问题，再以最小Module/Interface选择修复，保持所有权与恢复不变量；不先造通用quota或隔离框架。
+
+与既有 **FLOW-001-T04-SCAN-01**（上文“队列与目标扫描的锁隔离后继”）交叉引用：该项仍负责单实体行锁、queue→goal同轮阻塞及整轮/关闭截止，本项负责可选host组合对共享连接及控制响应的影响；不得重立扫描任务或用大负载替代原因果小例。SQL语句超时不覆盖JS获取连接、外部文件/网络阶段，也不是事务或整轮总截止。
+
+一手来源（2026-10-07只读核）：[pg.Pool](https://node-postgres.com/apis/pool)的满池FIFO及totalCount/idleCount/waitingCount；[pool sizing](https://node-postgres.com/guides/pool-sizing)的跨实例总量/管理余量；[pg-boss constructor](https://pgboss.io/api/constructor)的实例max共享（本地绑定12.37.0，网页非固定包行为证明）；[PG16客户端超时](https://www.postgresql.org/docs/16/runtime-config-client.html)的服务器命令时间范围。实际安装版本与固定源码在未来候选再次绑定，网页不替代运行证据。
+
+架构影响：本条只记录现存连接生命周期及待测组合，未改产品Interface/运行图；未来实施若调整池/宿主职责，由该owner更新既有D06固定架构输入。方法采用本地find-skills发现、codebase-design的Module/Interface职责与clean-code的单一事实源/无重复；只做文档内容、链接与独立审查，不运行工程检查。
