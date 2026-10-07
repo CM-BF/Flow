@@ -54,8 +54,7 @@ export async function createTaskTimingFixture() {
         let overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
         if (state.signals) {
           tasks[0].status = parseStatus(ownerStatus('T01', { 优先级: '8', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择' }), 'T01');
-          tasks[1].status = parseStatus(ownerStatus('T02', { 优先级: '1', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择', 单一statusowner: 'child-owner' }), 'T02');
-          tasks[1].status.owner = 'child-owner';
+          tasks[1].status = parseStatus(ownerStatus('T02', { 优先级: '1', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择', '单一 status owner': 'child-owner' }), 'T02');
           tasks[1].links = { kind: 'subtask', parent: { state: state.unknownRelation ? 'unknown' : 'known', targetId: 'T01', reason: state.unknownRelation ? 'fixture 未核实关系' : '' }, coLead: { state: 'known', value: 'fixture' } };
           overview = humanOverview(tasks);
         }
