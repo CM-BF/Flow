@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 07:41:01 UTC；下一更新仅固定源码研究，未采个人事实 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 08:57:48 UTC；固定b2b来源/依赖；未采个人事实 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
-| 工作树dirty状态 | 仅下一候选与状态文档；既有产品/raw全停写 |
+| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；入口 fbdb93e08a18b6fe21b8750e2ec726388493f8e0；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
+| 工作树dirty状态 | 固定入口已提交；仅本轮manifest/status收口，产品/raw全停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
-| 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
-| 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
-| 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验与独立清理已获限定独审；原e6ff FAILED保持 |
-| 已集成main状态 / HEAD | INTEGRATED a040a364d426f4f8583fbfc67e5922077ba1f9ac；本实验30固定源/结果绑定逐字相同，[main回执](../../docs/evidence/svc06/artifact-host-followup/main-receipt.json)；不追逐无关metadata主线 |
+| 本片段交付阶段 | review |
+| 实现目标 | fbdb93e08a18b6fe21b8750e2ec726388493f8e0 |
+| 实现范围 | docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py, docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json |
+| 检查状态 | NOT_RUN fbdb93e08a18b6fe21b8750e2ec726388493f8e0；仅271cache索引/metadata观察已完成，实际b2b构建/安装/import/PG未运行；原已绿构建与旧FAIL保持 |
+| 已集成main状态 / HEAD | 原零任务host实验已main a040a364d426f4f8583fbfc67e5922077ba1f9ac；新策略SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；本次薄entry待独审/接收，未产新artifact |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已明确新后台更新前还需接入浏览器会话配置；现有部署和数据保持不变。 |
-| 下一可用交付 | 受信宿主配置的小接线与固定后台更新候选；新网页等待实际应用产物。 |
-| 当前阻塞 | ACTIVE: 新宿主接线及保留网页与候选后台的兼容证据尚未完成 |
+| 当前产出 | 新宿主的浏览器配置与四版本保留规则已接入；已整理对应固定后台产物的构建入口。 |
+| 下一可用交付 | 构建新的固定后台及网页宿主产物，为三个旧页面兼容验证提供输入。 |
+| 当前阻塞 | ACTIVE: 构建入口待审和运行窗口；新配置组合的页面兼容仍待验证 |
 | 需用户决定 | NONE |
-| Review | 既有零任务host结果APPROVED保持；本次SVC06-05只读候选待Lead核，不代表更新就绪 |
+| Review | 原限定构建/host与SVC09独审保持；新b2b薄入口PENDING，不代表实际构建或个人更新就绪 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
-| 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
+| 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | pending | assignment_review | update-4fe-candidate/candidate.md；仅只读准备，个人更新未开启 |
+| SVC06-05 | in-progress | assignment_review | update-b2b-candidate/candidate.md；新宿主接线已main，固定产物/三App配置兼容/个人更新仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -178,3 +178,11 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 2026-10-07更新候选补充：固定4fe最多3保留Web，已保存r3恰3个；第四新ID会拒绝，后台接通与新Web可发布分别open。不用TTL/pagehide当旧页关闭，不抬上限或自动退役。浏览器策略须prepare/preflight在drain/stop前拒绝非法身份，runService仍复核；兼容报告包含实际origin/epoch配置。本次0个人采样/运行。
 
 下一版保留策略已获规划/实施方向授权，见[集中策略与迁入顺序](../../docs/evidence/svc06/update-4fe-candidate/retention-next-policy.md)：建议固定4项/192MiB/32reports并保全部旧资源，先新宿主支持再第四项CAS；当前c7b仍count3，后台更新不自动升级独立Web宿主。产品尚未领取/实现，0个人读取与运行。
+
+## 2026-10-07 08:57:48 UTC：固定 b2b 产物准备
+
+[最新候选](../../docs/evidence/svc06/update-b2b-candidate/candidate.md) / [原入口与预算](../../docs/evidence/svc06/update-b2b-candidate/build-once/README.md)。source fbdb93e08a18b6fe21b8750e2ec726388493f8e0，严格 b2b，旧4fe候选以上记录仅历史。实际cache观察08:50:31.367Z→08:50:33.487Z，2172ms/exit0/108679B/组absent双EOF；只索引/metadata，不是payload完整性。17runtime/69fixedsource核同，原raw模式文案错误另有更正，不改原件。新build/install/import/PG/personal全部NOT_RUN，未占重窗口。规划新增2,317,352,960B+1GiB收尾+512MiB协调余量，fresh最低3,927,965,696B；执行时还须核实际并发，原420+.5+2不变。
+
+此阶段首次实际准备观察来源source-delta.json 08:49:41.486497Z，不冒完整任务首次开工。等待入口独审自本次固定交付起，结束UNKNOWN；独审/共享窗口由Lead解除，个人更新尚无实际窗口。
+
+新薄entry/proof语法均exit0，Python只AST不执行；自身status parser errors/humanMissing=[]，历史任务开工UNKNOWN提示保持。原checker将timing提示并入退出条件得到exit1，原件与解释见[准备检查](../../docs/evidence/svc06/update-b2b-candidate/preparation-checks.json)/[限定分析](../../docs/evidence/svc06/update-b2b-candidate/preparation-checks-analysis.json)，不复跑为绿。3组absent双EOF、总128ms、0scratch，local已归还；实际构建仍NOT_RUN。

@@ -1,0 +1,129 @@
+{
+  "source": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+  "boundaries": "Only new entry/proof syntax and own status parser; no product tests/imports/build/install/PG/provider/personal reads",
+  "pythonSyntax": "AST_PARSED_NO_EXECUTION",
+  "results": [
+    {
+      "label": "entry-syntax",
+      "startedAt": "2026-10-07T08:58:05.734119+00:00",
+      "finishedAt": "2026-10-07T08:58:05.779311+00:00",
+      "report": {
+        "pid": 13705,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 45,
+        "stdout": "",
+        "stderr": "",
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "proof-syntax",
+      "startedAt": "2026-10-07T08:58:05.779331+00:00",
+      "finishedAt": "2026-10-07T08:58:05.815381+00:00",
+      "report": {
+        "pid": 13706,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 36,
+        "stdout": "",
+        "stderr": "",
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "own-status-parser",
+      "startedAt": "2026-10-07T08:58:05.815397+00:00",
+      "finishedAt": "2026-10-07T08:58:05.862139+00:00",
+      "report": {
+        "pid": 13707,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 1,
+        "elapsed_ms": 47,
+        "stdout": "{\"errors\":[],\"humanMissing\":[],\"timingIssues\":[\"\u4efb\u52a1\u5f00\u5de5\u65f6\u95f4\u672a\u8bb0\u5f55\"]}\n",
+        "stderr": "",
+        "observed_bytes": 79,
+        "retained_bytes": 79,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    }
+  ],
+  "totalProcessMs": 128,
+  "temporaryFilesCreated": 0
+}

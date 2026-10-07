@@ -1,6 +1,6 @@
 # SVC06 固定后台发布产物
 
-创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v7，仅own plan/evidence；共享产品已停写交回；真实固定产物构建/import已审并main，后继零任务真实三宿主/checkout不可读实验已通过待独审；默认部署链、refresh/resume与个人服务验收仍open。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v7，仅own plan/evidence；共享产品已停写交回；真实固定产物构建/import已审并main，后继零任务真实三宿主/checkout不可读实验已限定批准并main；默认部署链、refresh/resume与个人服务验收仍open。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
@@ -88,3 +88,7 @@ rootpg已main3230，原局部批准不扩。唯一[执行入口](../../docs/evid
 ## 2026-10-07 04:34:52 UTC：真实宿主后继结果
 
 [固定d379一次结果](../../docs/evidence/svc06/artifact-host-followup/RESULT.md)完成新root/e5精确CoW、真实center/runner/Web、四路径拒读及独立正常收尾；0tasks/provider/个人操作。实验端exact spawn变换与可信外层监督是证据前提，不扩大为默认生产部署。原e6ff失败/收尾和全部artifact/private run保留；SVC06-03/04仍待本结果独审/接收及既有兼容后继，05不勾完成。
+
+## 2026-10-07 08:57:48 UTC：原SVC06-05继续固定候选
+
+SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388，复用其受信policy/预停服务资格/配置报告tuple/集中保留边界；[最新候选](../../docs/evidence/svc06/update-b2b-candidate/candidate.md)取代旧4fe作为下一实际输入，旧记录不改。只在本v7 own两scope准备固定Flow-source薄入口，顺序为legacy先新Webhost→三retained真实v2新tuple→新backend+policy→第四App独立CAS。当前仅准备/元数据观察，实际构建与后继验收仍open，不扩原03/04/05完成范围。
