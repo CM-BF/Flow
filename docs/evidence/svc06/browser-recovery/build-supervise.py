@@ -9,10 +9,15 @@ import sys
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
 
-def main(argv):
-    if argv != ['--execute-fixed-build']:
+def main(argv, *, inputs_path=HERE / 'build-inputs.json', entry_path=HERE / 'build-entry.mjs',
+         output_path=HERE / 'outer-report.json', argument='--execute-fixed-build'):
+    # Only the fixed in-process recovery caller supplies these paths. The old CLI
+    # retains its exact entry and consumed namespace; no new command-line override.
+    if argv != [argument]:
         raise ValueError('EXACT_BUILD_ARGUMENT_REQUIRED')
-    delta = json.loads((HERE / 'build-inputs.json').read_bytes())
+    for path in (inputs_path, entry_path, output_path):
+        assert isinstance(path, Path) and path.is_absolute() and path.parent.is_relative_to(HERE)
+    delta = json.loads(inputs_path.read_bytes())
     binding = delta['supervisor']
     module_path = Path(binding['path'])
     assert str(module_path.resolve()) == binding['realpath']
@@ -22,10 +27,10 @@ def main(argv):
     sys.modules[spec.name] = ops
     spec.loader.exec_module(ops)
     # Refuse an already consumed outer destination before launching any child.
-    output = HERE / 'outer-report.json'
+    output = output_path
     fd = os.open(output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
     report = ops.supervise(
-        ops.Launch(('/opt/homebrew/opt/node@24/bin/node', str(HERE / 'build-entry.mjs'), '--execute-fixed-build'),
+        ops.Launch(('/opt/homebrew/opt/node@24/bin/node', str(entry_path), argument),
                    str(HERE.parents[3]), {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin',
                    'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1'}, ops.Ownership.NEW_CHILD_SESSION),
         ops.Policy(420, .5, 2, 1024 * 1024))
@@ -36,7 +41,7 @@ def main(argv):
     with os.fdopen(fd, 'w', encoding='utf8') as stream:
         json.dump(result, stream, ensure_ascii=False)
         stream.write('\n'); stream.flush(); os.fsync(stream.fileno())
-    parent = os.open(str(HERE), os.O_RDONLY)
+    parent = os.open(str(output.parent), os.O_RDONLY)
     try:
         os.fsync(parent)
     finally:

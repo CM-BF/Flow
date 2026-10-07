@@ -1,0 +1,84 @@
+{
+  "kind": "SVC06B_FIXED_RECOVERY_BUILD",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "target": "f37a3612068c7215994750574a7451ede841bcce",
+  "sourceTree": "de843e0fda82600b4d7600c76614c9794c17e3af",
+  "sourceArchive": {
+    "files": 999,
+    "logicalBytes": 7863653
+  },
+  "prior": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+    "bytes": 3271,
+    "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368"
+  },
+  "composition": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-source.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-source.json",
+    "bytes": 4251,
+    "sha256": "ca2be71ce9a0c597e1b490b71aa35687c0305715f19c06197b97c3a4ebf77830"
+  },
+  "sourceChanges": [
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 8924,
+      "sha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 48650,
+      "sha256": "dfd8c6e2e85aa38e112c340389d8f00e02bd82610c2515ce49a30ea806b6d158"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 14601,
+      "sha256": "3190f12de066ef1377f5de966819a08dd6980e13fa4867336aa09a708c1601f1"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 17786,
+      "sha256": "398201e036cedafc801634b50d8f43eb30eb1ef81640bc224f6eae80960d023e"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 3744,
+      "sha256": "2c0e6f72f63ce91716287e195c798e69ad1d15c160c0b64c7703aff09e6726c7"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 10380,
+      "sha256": "1e8dad55f7daa34a826e19b1adbc7b65e42b7825cbc9aae3a857759275171a13"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-target.mjs",
+      "bytes": 14660,
+      "sha256": "1e96204b15b6341b2f7119cf24a9eb4f1858fe477b18c17916de3e7522c2154b"
+    }
+  ],
+  "sharedEntry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "bytes": 11839,
+    "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+  },
+  "runtimeProof": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "bytes": 5080,
+    "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "minimumFreeBytes": 3927965696,
+  "options": {
+    "evidenceDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-once",
+    "temporaryPrefix": "/private/tmp/flow-svc06b-recovery-artifact-",
+    "runtimeProof": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs"
+  },
+  "forwardAdmission": "Original builder floor only; operator must additionally admit current authoritative complete team floor before this single launch. No resource window is consumed by this input."
+}
