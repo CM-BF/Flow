@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:40:05 UTC；首次完整artifact结果限定独审通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:52:51 UTC；构建结果已main，后继host入口待审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；本入口source 4de45996435dd86c3409910dad787e99efc9cd63 |
-| 工作树dirty状态 | 产品与entry未改；仅独审转录与scope交回metadata |
+| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
+| 工作树dirty状态 | host入口已固定；仅manifest与状态收口metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 实现目标 | 4de45996435dd86c3409910dad787e99efc9cd63 |
-| 实现范围 | docs/evidence/svc06/artifact-first-run/entry.mjs, docs/evidence/svc06/artifact-first-run/runtime-proof.mjs, docs/evidence/svc06/artifact-first-run/supervise.py, docs/evidence/svc06/artifact-first-run/inputs.json |
-| 检查状态 | PASSED 4de45996435dd86c3409910dad787e99efc9cd63；一次完整artifact+verify+30SQL/import exit0，0PG/host生命周期 |
-| 已集成main状态 / HEAD | rootpg893324三源已main/origin 3230becf07b804479ec4dc7ef02fcaff58cc3858逐字同；[回执](../../docs/evidence/svc06/root-pg-main-receipt.json)。入口已审、实际产物构建与导入已完成且结果限定独审通过；本轮结果待main接收，真实host仍open |
+| 本片段交付阶段 | review |
+| 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
+| 实现范围 | docs/evidence/svc06/artifact-host-smoke/entry.mjs, docs/evidence/svc06/artifact-host-smoke/supervise.py, docs/evidence/svc06/artifact-host-smoke/inputs.json |
+| 检查状态 | NOT_RUN e6ff0f1f2e7743496f1f17144343a28716c03b38；host/PG未验；本机拒读检查一次138ms通过，入口仅语法检查 |
+| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口未审/未运行/未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物已完成一次真实离线构建，内部依赖和SQL资源校验通过；原始结果已获独立核验通过；实际宿主启动仍待验证。 |
-| 下一可用交付 | 用保留产物准备真实宿主启动和开发目录不可用验收。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 固定后台产物的真实构建、依赖和资源解析已通过并接收；已确认本机能让自有进程拒读开发目录。 |
+| 下一可用交付 | 独审已固定的三角色启动入口，再用保留产物验证真实宿主能否在开发目录不可读时运行。 |
+| 当前阻塞 | ACTIVE: 实际宿主旅程等待入口独审及共享运行窗口；当前不占窗口。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS 935df27d；Execution Lead唯一限定独审，完整host生命周期仍open |
+| Review | 构建结果APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS；新host入口PENDING Execution Lead，完整生命周期仍open |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v6，7 literal scopes；[四宿主共享文件正式交回](../../docs/evidence/svc06/host-scope-return-receipt.json) |
-| 架构影响 | 执行入口只复用原prepare/verify与OPS14；server/runner/host根tsx/pg/Vite已固定，0PG导入验证与真正host生命周期/开发树不可用验收分开。 |
+| 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -109,3 +109,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:40:05 UTC：首次完整产物结果限定批准
 
 [唯一独审](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)绑定935df27d原结果、17固定Git条目及3保留artifact/owner/checkpoint；真实安装/import与清理事实批准，reviewer0重跑。原raw/失败和产品入口全不改；本轮integration，真实host/checkout不可用与个人部署保持open。claim已原子v6交回四宿主共享文件给后继SVC08，不以本SVC整体未完阻占。
+
+## 2026-10-07 03:52:51 UTC：原产物后继宿主入口
+
+[短方案](../../docs/evidence/svc06/artifact-host-smoke/PROPOSAL.md) / [固定入口manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。已有e5产物不改不重建；限定纯检查实证四开发路径/别名均EPERM、自有tmp可读、child继承，138ms/exit0/两EOF/组absent且原unknown观察保留。这里只验证本机机制，实际center/runner/Web、PG、maintenance与App仍NOT_RUN。主线56672已接构建结果，03/04继续保留真实host和恢复/旧数据兼容验收。

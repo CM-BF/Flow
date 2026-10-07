@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T03:52:51.960902+00:00",
+  "source": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 21582,
+      "sha256": "677231869d2fae8b6c5ee57a9cd99d17c15764f806769a30d82921fe63a4ea67"
+    },
+    {
+      "path": "supervise.py",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 3491,
+      "sha256": "238292f4ac39185b0c5e1dfd3cc6df5819bc0120564c01f0def730a4c449f9f7"
+    },
+    {
+      "path": "inputs.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 4087,
+      "sha256": "51b7567ca0d8232de56f2b0f498945fd4729d707939cece0f967f8c1ccd1bfa4"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "PROPOSAL.md",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 5531,
+      "sha256": "0ebcb333dced1196a1cb6f33fe82759ceac9d37a8552d88a2d7e4255eb0d4d2d"
+    },
+    {
+      "path": "isolation-check.mjs",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 4458,
+      "sha256": "36782212b47b1e7c10de7fad9458978aad8251a9bf76c7bef6615facd5a448ee"
+    },
+    {
+      "path": "isolation-input.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 390,
+      "sha256": "6eb7690056e8549c695845d89b408ac732e1ea8e03fc39abaed8a862c1666fa3"
+    },
+    {
+      "path": "isolation-outer.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 1814,
+      "sha256": "4c460b49f237142abe924f2f867b0b44be0f894ce3423f5ad209c8cc5e2434d8"
+    },
+    {
+      "path": "isolation-checkpoint.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 1395,
+      "sha256": "1b93c90ecd5322f7806eb27955281588ab9dc39454b8aedb22092f95e8064f7f"
+    },
+    {
+      "path": "isolation-result.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 1483,
+      "sha256": "f804105af84e9879b39a4f4c91b58a2cde85a61b3ef3831c92af9f71aa5b7b19"
+    },
+    {
+      "path": "build-main-receipt.json",
+      "fixedRef": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 409,
+      "sha256": "64169c24093d4710bba417aa6263ee12ecadc941116e15a6585bf58bedfb27a2"
+    }
+  ],
+  "reusedArtifact": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+  "reusedBuildManifestSha256": "dcc2729bf0b540d2d0d84f69a395d621041374e2e5b68b14bf989376be22b80a",
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "cleanupHelper": {
+    "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+    "artifactInventorySha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+    "fixedRef": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "validation": {
+    "isolationOnly": {
+      "exit": 0,
+      "outerMs": 138,
+      "owned": "absent",
+      "eof": true,
+      "details": "four exact source aliases EPERM, own tmp readable, child inherits"
+    },
+    "nodeSyntax": 0,
+    "pythonAST": "parsed without importing",
+    "host": "NOT_RUN",
+    "pg": "NOT_RUN",
+    "maintenance": "NOT_RUN",
+    "appCompatibility": "NOT_RUN"
+  },
+  "sourceReview": "PENDING_EXECUTION_LEAD",
+  "limits": [
+    "Three zero-task internal-service roles are smoke only",
+    "No rebuild/install or personal actions",
+    "No maintenance refresh/resume/replay or App browser compatibility claim",
+    "No unavailable checkout claim until actual artifact-host positive run under refusal profile"
+  ]
+}

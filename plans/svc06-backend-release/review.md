@@ -1,3 +1,7 @@
+# 下一host smoke入口：PENDING
+
+Source `e6ff0f1f2e7743496f1f17144343a28716c03b38`；[manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。实际PG/三角色host未运行，局部只验证本机拒读机制及入口语法；不能沿用下面构建结果批准。完整03/04仍open。
+
 # 当前实际artifact结果：APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS
 
 Execution Lead唯一限定批准target `935df27d952d98077f4ed7763966b7023cf93c9d`，原件时间2026-10-07T03:38:27.829073+00:00；[独审转录](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)。17 fixed/current条目与3保留产物身份核同，完整raw/result逐值相符、无findings、0重跑。entry4de/source3230一次实际结果见[原始结果](../../docs/evidence/svc06/artifact-first-run/RESULT.md)；仅真实构建/安装/导入批准，不含真实host、开发checkout不可用或个人部署。
