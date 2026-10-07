@@ -1,0 +1,85 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads
+
+ ❯ packages/client/src/assistant-stream.test.ts (7 tests | 4 failed) 45ms
+   ✓ opts in only snapshot reads and keeps stable creation receipts, task bindings, patch cursors and errors 34ms
+   ✓ sends the explicit v2 codec for task-bound reads without changing mutation receipts 1ms
+   × reads text by default and detaches explicit block selection before asynchronous transport 4ms
+   × requires a matching acknowledgement on every metadata page 0ms
+   ✓ rejects wrong selection, attempt, hidden reasoning, regressing cursors and malformed patches without retry 1ms
+   × keeps empty selected cursors and complete block reads separate from conversation v2 and propagates abort/errors 0ms
+   × binds the public methods to the existing projection and rejects an old server before any body request 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/assistant-stream.test.ts > reads text by default and detaches explicit block selection before asynchronous transport
+Error: Invalid material response bound.
+ ❯ readBoundedNativeBodyJson packages/client/src/native-activity-body.ts:129:108
+    127| /** Used by the existing transport's bounded JSON seam, including erro…
+    128| export async function readBoundedNativeBodyJson(response: Response, ma…
+    129|   if (!Number.isSafeInteger(maxBytes) || maxBytes < 1 || maxBytes > NA…
+       |                                                                                                            ^
+    130|   signal?.throwIfAborted();
+    131|   if (!response.body) throw new Error('Material response has no body.'…
+ ❯ boundedJson packages/client/src/index.ts:752:68
+ ❯ FlowClient.request packages/client/src/index.ts:754:35
+ ❯ FlowClient.assistantStreamSelectedPatches packages/client/src/index.ts:139:18
+ ❯ packages/client/src/assistant-stream.test.ts:80:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  packages/client/src/assistant-stream.test.ts > requires a matching acknowledgement on every metadata page
+Error: Invalid material response bound.
+ ❯ readBoundedNativeBodyJson packages/client/src/native-activity-body.ts:129:108
+    127| /** Used by the existing transport's bounded JSON seam, including erro…
+    128| export async function readBoundedNativeBodyJson(response: Response, ma…
+    129|   if (!Number.isSafeInteger(maxBytes) || maxBytes < 1 || maxBytes > NA…
+       |                                                                                                            ^
+    130|   signal?.throwIfAborted();
+    131|   if (!response.body) throw new Error('Material response has no body.'…
+ ❯ boundedJson packages/client/src/index.ts:752:68
+ ❯ FlowClient.request packages/client/src/index.ts:754:35
+ ❯ FlowClient.assistantStream packages/client/src/index.ts:109:18
+ ❯ FlowClient.assistantStreamSelectedMetadata packages/client/src/index.ts:121:12
+ ❯ packages/client/src/assistant-stream.test.ts:97:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  packages/client/src/assistant-stream.test.ts > keeps empty selected cursors and complete block reads separate from conversation v2 and propagates abort/errors
+Error: Invalid material response bound.
+ ❯ readBoundedNativeBodyJson packages/client/src/native-activity-body.ts:129:108
+    127| /** Used by the existing transport's bounded JSON seam, including erro…
+    128| export async function readBoundedNativeBodyJson(response: Response, ma…
+    129|   if (!Number.isSafeInteger(maxBytes) || maxBytes < 1 || maxBytes > NA…
+       |                                                                                                            ^
+    130|   signal?.throwIfAborted();
+    131|   if (!response.body) throw new Error('Material response has no body.'…
+ ❯ boundedJson packages/client/src/index.ts:752:68
+ ❯ FlowClient.request packages/client/src/index.ts:754:35
+ ❯ FlowClient.assistantStreamSelectedPatches packages/client/src/index.ts:139:18
+ ❯ packages/client/src/assistant-stream.test.ts:134:13
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  packages/client/src/assistant-stream.test.ts > binds the public methods to the existing projection and rejects an old server before any body request
+AssertionError: expected 'Invalid material response bound.' to contain 'Unconfirmed'
+
+Expected: "Unconfirmed"
+Received: "Invalid material response bound."
+
+ ❯ packages/client/src/assistant-stream.test.ts:168:44
+    166|     projection.updateHost({ turn, protocol: selectedProtocol, capabili…
+    167|     await projection.refresh();
+    168|     expect(projection.getSnapshot().error).toContain('Unconfirmed');
+       |                                            ^
+    169|     await expect(projection.openReasoning(streamId)).rejects.toThrow();
+    170|     expect(fetch).toHaveBeenCalledTimes(1);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 3 passed (7)
+   Start at  01:36:51
+   Duration  619ms (transform 306ms, setup 0ms, import 459ms, tests 45ms, environment 0ms)
+

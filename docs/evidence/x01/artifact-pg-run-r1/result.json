@@ -1,0 +1,225 @@
+{
+  "startedAt": "2026-10-07T08:16:57.389102+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.artifact-pg.v1",
+    "productCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 5,
+        "httpRequests": 256,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 256,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "artifact-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "name": "exact source is readable and same-sequence replay preserves a single artifact association"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "name": "wrong frozen material rolls back the full batch prefix before artifact detail timeline and ACK"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "name": "missing invocation phase rejects source and rolls back prefix without discarding prior load authorization"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "name": "phase receipts from a different historical attempt cannot authorize the current artifact association"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+        "name": "legacy artifact without source retains original storage and is not labelled verified plugin provenance"
+      }
+    ],
+    "tasksMax": 5,
+    "registrationsMax": 5,
+    "attemptsMax": 6,
+    "scope": "One bounded association transaction suite; known material/historical phase metadata seed, no npm or public runRunner execution."
+  },
+  "processes": [
+    {
+      "pid": 58931,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 26,
+      "observed_bytes": 277,
+      "retained_bytes": 277,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 58952,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 4945,
+      "observed_bytes": 144,
+      "retained_bytes": 144,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "a048b1eb49ca461da526411f1ff3e1b6",
+      "sourceHead": "14bc0ba4534bd9926d6b8508387b6fc26015ed91",
+      "suite": "runtime",
+      "database": "flow_x01_18482bb2853643f8bb5178230de3ac2b",
+      "facts": [
+        {
+          "kind": "bounded-fixture-counts",
+          "counts": {
+            "tasks": 5,
+            "registrations": 5
+          }
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1261301",
+          "owner": "flow",
+          "marker": "x01:a048b1eb49ca461da526411f1ff3e1b6:runtime:e566f376-1d6e-4db0-9868-9bf18c85b99e"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:60440",
+          "closed": true
+        }
+      ],
+      "httpRequests": 56,
+      "responseBytes": 49020,
+      "workUntil": 1791361127388,
+      "cleanupUntil": 1791361187388,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T08:17:02.452Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "a048b1eb49ca461da526411f1ff3e1b6",
+  "executionHead": "14bc0ba4534bd9926d6b8508387b6fc26015ed91",
+  "manifestSha256": "95d87bb88b7cfed355860d2c9d820dffe07d8d2fc92c6b41832f3cf898f3780d",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-e3llmx2e",
+    "dev": 16777234,
+    "ino": 123651570,
+    "removed": true,
+    "sampleBytes": 4800,
+    "sampleEntries": 10
+  },
+  "selection": {
+    "numTotalTests": 5,
+    "numPassedTests": 5,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "httpRequests": 56,
+  "responseBytes": 49020,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 2331,
+    "runtime-reservation.json": 450,
+    "runtime-create-request.json": 353,
+    "output.log": 144,
+    "runtime-result.json": 1264,
+    "reservation.json": 281,
+    "launch.json": 188,
+    "preflight.stdout": 277,
+    "admission.json": 3439
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 9129,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 9129,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T08:17:02.478694+00:00",
+  "elapsedBeforePersistence": 5.089794290950522
+}

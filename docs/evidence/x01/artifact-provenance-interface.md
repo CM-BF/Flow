@@ -1,0 +1,13 @@
+# Plugin artifact source association
+
+Bounded design authorized by Mika; X01 claim v16 owns the six product/test paths. The existing `executePluginTool` carries its host result as optional `pluginSource` into the strict artifact contract. The server's real `applyEvent`, inside `reportEvents`' existing owned-attempt/event-sequence transaction, validates the frozen binding/material and both historical load/invoke receipts for that exact attempt/owner/runner before saving the artifact plus a small JSON detail/reference. No new endpoint, authorization authority, migration or runtime loop.
+
+The DTO is fixed-size identities/digests (under 1 KiB), has no paths, credentials or arbitrary metadata. The output artifact ID/version are separately recorded alongside the package artifact identity. Legacy artifact events omit the field and take the original save/timeline path with zero new database queries. Existing sequence idempotency prevents duplicate handling of the same accepted event. Source failure aborts the surrounding transaction.
+
+The center proves association to frozen identity and recorded authorization; the runner reports the code identity. This is not independent attestation that particular npm code executed. No current grant reauthorization is performed on output: revocation governs phase execution, while historical receipts remain immutable. Real SQL/HTTP and full production `runRunner` remain pending. Runtime/client/shared exports remain held by CHAT05; no new sender negotiation is silently enabled.
+
+Direct changes use the X01 branch versions of events.ts/runner.ts; current main d556780129897582f09945c0621aa2ed64fb52f7 has additional native-body branches and Codex union members. Main intake must apply the narrow additive diff with three-way merge, preserving those existing changes; wholesale replacement is forbidden. No stale startup file is overwritten. C02's four startup paths were formally handed back and claimed v15, but not edited or materialized here.
+
+SQL dependencies: existing 034 binding/phase immutable tables and original details/artifacts/timeline columns only. No dynamic SQL file added. Local tests cross actual applyEvent/producer with injected SQL/storage boundaries; they are not PG/rollback proofs. The original 27/6 PG, 9 semver and 3 pinning checks are not repeated.
+
+Local segment: at most 4 necessary top-level children, 60 s each, 20 min segment, 16 MiB owned TMP, 256 KiB raw, 1 MiB source/metadata; no tar/PG/browser/provider/native/install. Reuses fixed OPS14 and X01 bounded sampling/identity cleanup, one local record. Status_read actually returned local before this segment's checks.

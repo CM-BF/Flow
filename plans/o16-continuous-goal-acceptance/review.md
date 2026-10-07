@@ -1,6 +1,6 @@
 # O16 独立审查
 
-状态：当前main准备APPROVED；新零模型公开旅程1/1已执行，结果独审PENDING。历史准备/CAS与原失败保留。
+状态：APPROVED_ZERO_MODEL_PUBLIC_JOURNEY；当前零模型公开旅程1/1独立读核并受控main b768。历史准备/CAS/失败保留；真实native验收未覆盖。
 
 Review target commit：4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa
 
@@ -23,3 +23,5 @@ Review target commit：4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa
 2026-10-07T08:35:06.043129+00:00：当前main准备唯一独审 APPROVED_CURRENT_MAIN_PREPARATION，target343bd436/delivery275c28ad，334绑定+39aliases/3runtime，无P1/P2。原件[current-main-preparation-independent-review.json](../../docs/evidence/o16/current-main-preparation-independent-review.json)。仅准备与加载批准，新PG结果另审。
 
 2026-10-07T08:38:29.810Z：新固定source343/currentmainf5a的零模型PG R1完成1/1，outer0/正常资源清理，待独立结果审查；作者没有自批。原件[result](../../docs/evidence/o16/current-main-pg-r1/RESULT.md)。本轮不改变实验/产品源，不重跑旧26，不授权真实模型或旧KEEP清理。
+
+2026-10-07T08:45:28.873Z：唯一结果独审APPROVED_ZERO_MODEL_PUBLIC_JOURNEY，target3fe343ef/delivery697e2b27/source343；354 fixed/current绑定和实际1/1、精确清理已核，无P1/P2，reviewer0重跑。原件[current-main-pg-r1/independent-review.json](../../docs/evidence/o16/current-main-pg-r1/independent-review.json)。本次42路径精确接main b768，不能用feature/main祖先关系替代内容比较；模型/工程资格/真实用户语义/恢复连续性均未证明。

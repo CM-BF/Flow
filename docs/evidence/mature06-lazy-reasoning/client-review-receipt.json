@@ -1,0 +1,37 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T08:42:02Z",
+  "recordedAt": "2026-10-07T08:43:35.483632+00:00",
+  "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+  "packet": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "manifestSHA256": "168f4c76a8caae7009d7dbca7aec12c45b843a32fb585b110c01e48b700d5631",
+  "bindings": 18,
+  "bindingBytes": 133559,
+  "actual": {
+    "distinctCases": 7,
+    "firstSelected": 7,
+    "firstPass": 3,
+    "firstFail": 4,
+    "fixedPass": 5,
+    "fixedUnselected": 2,
+    "strictExits": [
+      0,
+      0
+    ],
+    "rawBytes": 5651,
+    "children": 4,
+    "allClosed": true
+  },
+  "boundary": [
+    "Only two client semantic paths relative fixed main2a7e; seven support files are exact main bytes.",
+    "Projection remains the sole metadata-first, full content/source/digest, lifetime and 3MiB resident authority.",
+    "response.json transient memory and HTTP error bodies are not bounded by that resident limit; no network hard cap claim.",
+    "No actual new-client PG/HTTP/UI/native/provider or main intake proved.",
+    "Initial failure/EPERM and peak/wholeExternalWall UNKNOWN preserved."
+  ],
+  "reviewExecution": false
+}

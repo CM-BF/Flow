@@ -1,0 +1,92 @@
+{
+  "state": "READY",
+  "sourceCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+  "review": "docs/evidence/x01/artifact-provenance-independent-review.json",
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "e8dc727720c620fb307378a05c6a18c2cccd2136",
+      "bytes": 4841,
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "8889d86ea394d33e1dbc58d31d96ca595221c141",
+      "bytes": 8563,
+      "sha256": "34b61bfc81dbd87741f0c58fe8adc3983b0a7bd41a07bfb881022845247a02ae",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "dc9df3d7e65478e9f9ba2a0b98990abbb58ecb2d",
+      "bytes": 3260,
+      "sha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.test.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "18672e8462e3a56b284ff521ab9a3735e0d78193",
+      "bytes": 8696,
+      "sha256": "e583ebf1eb61df0ec54e20ab82ad60673301270e4a8e8218c9b71a1ab37cfb1b",
+      "role": "product/test"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "1b3e7d8864d04a3dd24245df0d17a1fbcc6026cd",
+      "bytes": 7405,
+      "sha256": "b78033357b34e17e66d3a8faf2a69163887fc4a33befe7c74abca834ed7a2dbc",
+      "role": "product/test"
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "abdd262b2dde01f20594b9dbab205a0d58a8660b",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df",
+      "role": "product/test"
+    }
+  ],
+  "narrowPatch": "docs/evidence/x01/artifact-provenance-main-delta.patch",
+  "patchBase": "ca851c4ebcfac0d6ef9d455dbd444ce3307fc99a",
+  "mainPatchCheck": "docs/evidence/x01/artifact-provenance-main-current-compatibility.json",
+  "evidence": [
+    "docs/evidence/x01/artifact-provenance-manifest.json",
+    "docs/evidence/x01/artifact-provenance-local.json",
+    "docs/evidence/x01/artifact-provenance-result-summary.json",
+    "docs/evidence/x01/artifact-provenance-interface.md",
+    "docs/evidence/x01/artifact-pg-independent-review.json",
+    "docs/evidence/x01/artifact-pg-result-manifest.json",
+    "docs/evidence/x01/artifact-pg-result-ready.md"
+  ],
+  "integrationRule": "Apply narrow additive patch; preserve current native-body/Codex. Direct main composition check required. Do not wholesale replace events.ts/runner.ts. No new migration;034 already main.",
+  "remaining": "Main direct composition/intake of these exact six source deltas; public v3 client/runtime/startup/trusted enable-load-invoke/semver chain remains open. Actual five-case SQL association/rollback is now independently approved.",
+  "updatedAt": "2026-10-07T08:23:49.955908+00:00",
+  "checkedMain": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "originalMainPatchCheck": "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+  "checks": {
+    "local": {
+      "resultCommit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "passed": 19,
+      "typesExit": 0,
+      "review": "docs/evidence/x01/artifact-provenance-independent-review.json"
+    },
+    "PG": {
+      "resultCommit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "packetCommit": "7b261e458b45535c7ec57efa78d122bfd637dbc5",
+      "selected": 5,
+      "passed": 5,
+      "HTTP": 56,
+      "resultManifest": "docs/evidence/x01/artifact-pg-result-manifest.json",
+      "manifestSha256": "94ead80d183d0a69b8921f2c8d7d52b32efb34e45b33c2df8f05e2a74f681265",
+      "review": "docs/evidence/x01/artifact-pg-independent-review.json",
+      "actualResourceReturned": true
+    }
+  },
+  "resultEvidenceRule": "Read14 run/tool files referenced by fixed result manifest at5068c6fa; retain original raw. No rerun/overlay of older main source. The optional PG test/support is reproduction evidence at fixed execution14bc, not a new production source overlay."
+}

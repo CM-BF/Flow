@@ -1,0 +1,60 @@
+{
+  "source": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+  "previousSource": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+  "previousPacket": "7f4aca4802b35177432875103cfaf52145e13ddc",
+  "review": "CHANGES_REQUESTED 2P2 at07:58:24; this fix pending independent review",
+  "at": "2026-10-07T08:04:26.285809+00:00",
+  "bindings": [
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 12248,
+      "sha256": "93cbe2e2e91f8c95d7b54ea01a153df7cc23ff81f59ed1d28e77b4a0f80595b2"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 4935,
+      "sha256": "52ac6a2699a835dd123d8c4c1d9a1af947c28a3d2201ecf726f7358ede40fb16"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-input-v2.json",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 53085,
+      "sha256": "9fd422b9191a4d22ea9c12c488f34d74d7aa49801244cbedbe312032b474b477"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-fix-local.json",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 5204,
+      "sha256": "0bd7722c3e72a3d020d6e0cda5a8555d7d335f256ef7bb6137a6d888be86b395"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-fix-gates.txt",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 1104,
+      "sha256": "109b099acd098aed99f1090cdd6fd43faeb3545c36c95766d7f6e3f63433d11d"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 5941,
+      "sha256": "1c65167a25d035aefa9a67c58a2a537e8696a202bd76fc55e862d0a7f1d673c0"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-preparation-review-receipt.json",
+      "fixedGit": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+      "bytes": 703,
+      "sha256": "76fc4df02d218a1756410a59a4804c4599d7f6a512b14484bb5f1e40f2e7feda"
+    }
+  ],
+  "bindingBytes": 83220,
+  "inputSHA": "9fd422b9191a4d22ea9c12c488f34d74d7aa49801244cbedbe312032b474b477",
+  "runtimeBindings": 244,
+  "runtimeBytes": 1109739,
+  "changedRuntimeBindings": [
+    "docs/evidence/mature06-lazy-reasoning/execute-pg.py"
+  ],
+  "checks": "7/7 pure receipt/deadline counterexamples,1104B/138ms;1child finalabsent/mergedEOF/TMP64Bclosed sample removed. No PG/HTTP/old types/list/core rerun. Tested execute source equals0f425; final8c84 only CLI safe-confirmed boolean changed (not gate functions).",
+  "actual": "NOT_OPEN / NOT_RUN"
+}

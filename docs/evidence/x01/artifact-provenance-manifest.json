@@ -1,0 +1,266 @@
+{
+  "recordedAt": "2026-10-07T07:50:28.682835+00:00",
+  "baseCommit": "ca851c4ebcfac0d6ef9d455dbd444ce3307fc99a",
+  "sourceCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+  "resultCommit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+  "files": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "e8dc727720c620fb307378a05c6a18c2cccd2136",
+      "bytes": 4841,
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "8889d86ea394d33e1dbc58d31d96ca595221c141",
+      "bytes": 8563,
+      "sha256": "34b61bfc81dbd87741f0c58fe8adc3983b0a7bd41a07bfb881022845247a02ae",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "dc9df3d7e65478e9f9ba2a0b98990abbb58ecb2d",
+      "bytes": 3260,
+      "sha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3",
+      "role": "product/test"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.test.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "18672e8462e3a56b284ff521ab9a3735e0d78193",
+      "bytes": 8696,
+      "sha256": "e583ebf1eb61df0ec54e20ab82ad60673301270e4a8e8218c9b71a1ab37cfb1b",
+      "role": "product/test"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "1b3e7d8864d04a3dd24245df0d17a1fbcc6026cd",
+      "bytes": 7405,
+      "sha256": "b78033357b34e17e66d3a8faf2a69163887fc4a33befe7c74abca834ed7a2dbc",
+      "role": "product/test"
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "abdd262b2dde01f20594b9dbab205a0d58a8660b",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df",
+      "role": "product/test"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-local.py",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "58ff432d1e17312bd0f62e2bdb10b9b571a73c57",
+      "bytes": 4853,
+      "sha256": "b46b4fba890feab03b6f99fe4f8c99ea4b62245111f0478fe5da99f50c782949",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-tsconfig.json",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "d378424f2ebe934e829c1b9d2d0a386559d25750",
+      "bytes": 206,
+      "sha256": "e09ec5ba03e8a7eda78f6cf8c308f5cc7769c5cab191e8614f9f1f91013ce5b9",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-vitest.config.mjs",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "1e147a3e7ae37c300bbb64b2c8291d2fe4d48503",
+      "bytes": 1178,
+      "sha256": "9b26e311ec4c742a06581e2494c6b9e1f7bdf9b7da3b956d22f97240787ca295",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-interface.md",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "1a3b2a00929db1174ab9d786349d99c2bbf709a2",
+      "bytes": 2651,
+      "sha256": "637fb478283be12e574f35dede96223754f3aca41c418be1d80f6f96fc39c9d8",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-local.json",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "51698e4fe4ebcd68031e0f3c7847e7f0f5083d6f",
+      "bytes": 16332,
+      "sha256": "58130fd4edcb259d85c4a005deb6bb6d397c1c163ed0edd3009b2416b29a34d1",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-result-summary.json",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "c5539e35a0ddae36ec67f12064d7871f600624cb",
+      "bytes": 1514,
+      "sha256": "663a5e37d42b011ad429963b5d9db3e3c3b661d09f9ba80aba06f0ded95b801a",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-main-delta.patch",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "2ca548791850a3a57a06d72be9a3e89097774554",
+      "bytes": 18500,
+      "sha256": "06dc8b584d5261e9c74e91d20a45b1944c6c31fc72adc8015736935eaf83bbf5",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "6ed4318ec99dd7c6ffdad0379a585528d0c6f9ee",
+      "bytes": 1100,
+      "sha256": "e5df01d9bc9e06dd1bbb62a197fd7b8ade38b7025b5699701a4a94e97917c644",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "f87898f22d4f09ea378758524808a17ec84fc3ce",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "feee5819d517bc4ea2b36420735abc53921c6b27",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "2f14c740247c30d5f511bd9be4888c96ed8d4553",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "0148eeb30ebde7f259fb559bc0dc9142216ea4d2",
+      "bytes": 20183,
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "8ba8a98a74f5422036b25f5ce5be7718849ffecf",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "0a607a5486f39e8f4b9320cc85a901974e122a56",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "6939466d1802ada95d4889c83d42374cc1b8903c",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "f3fd735ff233ccea86d20acf113d43677cda8572",
+      "bytes": 1512,
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-database.ts",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "af89fcd73ae817ba7ce0a68fc01f77b7ed78e9ed",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "af3dbd86bc2839ac1eabbf6f615dbfac09309b8b",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56",
+      "role": "direct-input/evidence"
+    },
+    {
+      "path": "tsconfig.json",
+      "commit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "blob": "835349029f0f4a864538ec6bc3917d911e9a9713",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "role": "direct-input/evidence"
+    }
+  ],
+  "external": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "node_modules/@types/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/package.json",
+      "bytes": 1089,
+      "sha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3"
+    },
+    {
+      "path": "node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    }
+  ],
+  "count": 27,
+  "bytes": 183207,
+  "PG": "NOT_RUN",
+  "review": "PENDING"
+}

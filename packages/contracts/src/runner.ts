@@ -1,3 +1,4 @@
+import { pluginArtifactSourceSchema } from './plugin-artifact.js';
 import type { GoalGraphCapability, GoalGraphRunReference } from './goal-graph-runs.js';
 import type { ConversationContextExecutionReference } from './conversation-context.js';
 import type { GoalToolCapability, GoalToolRunReference } from './goal-tool-runs.js';
@@ -58,7 +59,7 @@ export const runnerEventSchema = z.discriminatedUnion('type', [
   z.strictObject({ ...envelope, type: z.literal('message'), text: z.string().min(1).max(4000) }),
   z.strictObject({ ...envelope, type: z.literal('detail'), title, content, mediaType: z.string().max(120) }),
   z.strictObject({ ...envelope, type: z.literal('decision'), decisionId: idSchema, prompt: z.string().min(1).max(2000) }),
-  z.strictObject({ ...envelope, type: z.literal('artifact'), artifactId: idSchema, title, version: digest, content, mediaType: z.string().max(120) }),
+  z.strictObject({ ...envelope, type: z.literal('artifact'), artifactId: idSchema, title, version: digest, content, mediaType: z.string().max(120), pluginSource: pluginArtifactSourceSchema.optional() }),
   z.discriminatedUnion('verifierId', [
     z.strictObject({ ...envelope, type: z.literal('verification'), artifactId: idSchema, artifactVersion: digest, verifierId: z.literal('flow.text'), verifierVersion: z.literal('1'), inputDigest: digest, result: z.enum(['passed', 'failed']), evidence: z.string().min(1).max(4000) }),
     engineeringVerificationDataSchema.extend(envelope),

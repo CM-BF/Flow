@@ -1,0 +1,426 @@
+{
+  "startedAt": "2026-10-07T07:46:38.622055+00:00",
+  "startEpoch": 1791359198.622307,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T07:46:38.623034+00:00",
+      "freeBeforeBytes": 24215080960,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-6en25tbl",
+        "dev": 16777234,
+        "ino": 123638964,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/artifact-provenance-tsconfig.json"
+      ],
+      "process": {
+        "pid": 7296,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1528,
+        "observed_bytes": 1017,
+        "retained_bytes": 1017,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "apps/server/src/plugin-runtime/artifact.test.ts(75,141): error TS2345: Argument of type '(rows: { phase: string; } | { phase: string; } | undefined) => Promise<void>' is not assignable to parameter of type '(...args: [] | [{ phase: string; }] | [{ phase: string; }, { phase: string; }]) => Awaitable<void>'.\n  Types of parameters 'rows' and 'args' are incompatible.\n    Type '[] | [{ phase: string; }] | [{ phase: string; }, { phase: string; }]' is not assignable to type '[rows: { phase: string; } | { phase: string; } | undefined]'.\n      Type '[]' is not assignable to type '[rows: { phase: string; } | { phase: string; } | undefined]'.\n        Source has 0 element(s) but target requires 1.\napps/server/src/plugin-runtime/artifact.test.ts(76,63): error TS18048: 'rows' is possibly 'undefined'.\napps/server/src/plugin-runtime/artifact.test.ts(76,68): error TS2339: Property 'length' does not exist on type '{ phase: string; } | { phase: string; }'.\n  Property 'length' does not exist on type '{ phase: string; }'.\n",
+      "rawBytes": 1017,
+      "rawSha256": "e6b2125ab38f1211b009847fb20721d941b2e8eabaab1d1e6dd0681837ff8cbf",
+      "finishedAt": "2026-10-07T07:46:40.152158+00:00",
+      "elapsedBeforeReceiptSeconds": 1.5286719580180943
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T07:46:50.958688+00:00",
+      "freeBeforeBytes": 24214589440,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-g__7616j",
+        "dev": 16777234,
+        "ino": 123639024,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/artifact-provenance-tsconfig.json"
+      ],
+      "process": {
+        "pid": 11717,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1639,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T07:46:52.599257+00:00",
+      "elapsedBeforeReceiptSeconds": 1.639782959013246
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T07:46:58.043582+00:00",
+      "freeBeforeBytes": 24213401600,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-8jv0qmp4",
+        "dev": 16777234,
+        "ino": 123639040,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 5636,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/artifact-provenance-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-8jv0qmp4/tests.json"
+      ],
+      "process": {
+        "pid": 18311,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 844,
+        "observed_bytes": 152,
+        "retained_bytes": 152,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "X01_FIXED_MAIN_DATABASE_LOADED\nJSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-8jv0qmp4/tests.json\n",
+      "rawBytes": 152,
+      "rawSha256": "dfbd6bc8b6f19f18f49f19809bdddce57776b45c6abe86ab830618828a805697",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 19,
+        "numPassedTests": 19,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791359218279,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "legacy artifact codec preserves bytes and actual event entry performs no source query",
+                "status": "passed",
+                "title": "legacy artifact codec preserves bytes and actual event entry performs no source query",
+                "duration": 3.988749999999982,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "real event entry validates binding and exact phase tuple before saving the associated artifact/reference",
+                "status": "passed",
+                "title": "real event entry validates binding and exact phase tuple before saving the associated artifact/reference",
+                "duration": 1.8469170000000759,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong bindingId is rejected before any artifact write",
+                "status": "passed",
+                "title": "wrong bindingId is rejected before any artifact write",
+                "duration": 0.6119580000000724,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong invocationId is rejected before any artifact write",
+                "status": "passed",
+                "title": "wrong invocationId is rejected before any artifact write",
+                "duration": 0.19558300000005602,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong taskId is rejected before any artifact write",
+                "status": "passed",
+                "title": "wrong taskId is rejected before any artifact write",
+                "duration": 0.1682500000000573,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong attemptId is rejected before any artifact write",
+                "status": "passed",
+                "title": "wrong attemptId is rejected before any artifact write",
+                "duration": 0.14458300000001145,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong artifactId is rejected before any artifact write",
+                "status": "passed",
+                "title": "wrong artifactId is rejected before any artifact write",
+                "duration": 0.15037500000005366,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong installationId cannot reuse a source association",
+                "status": "passed",
+                "title": "wrong installationId cannot reuse a source association",
+                "duration": 0.14733400000000074,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong artifactSha256 cannot reuse a source association",
+                "status": "passed",
+                "title": "wrong artifactSha256 cannot reuse a source association",
+                "duration": 0.14195900000004258,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong treeDigest cannot reuse a source association",
+                "status": "passed",
+                "title": "wrong treeDigest cannot reuse a source association",
+                "duration": 0.1674160000000029,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong ownerVersion cannot reuse a source association",
+                "status": "passed",
+                "title": "wrong ownerVersion cannot reuse a source association",
+                "duration": 0.1220419999999649,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "wrong runner cannot reuse a source association",
+                "status": "passed",
+                "title": "wrong runner cannot reuse a source association",
+                "duration": 0.09604100000001381,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or duplicate phase evidence fails closed: []",
+                "status": "passed",
+                "title": "missing or duplicate phase evidence fails closed: []",
+                "duration": 0.14483300000006238,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or duplicate phase evidence fails closed: [ { phase: 'load' } ]",
+                "status": "passed",
+                "title": "missing or duplicate phase evidence fails closed: [ { phase: 'load' } ]",
+                "duration": 0.08645799999999326,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or duplicate phase evidence fails closed: [ { phase: 'invoke' } ]",
+                "status": "passed",
+                "title": "missing or duplicate phase evidence fails closed: [ { phase: 'invoke' } ]",
+                "duration": 0.1059579999999869,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or duplicate phase evidence fails closed: [ Array(2) ]",
+                "status": "passed",
+                "title": "missing or duplicate phase evidence fails closed: [ Array(2) ]",
+                "duration": 0.09241599999995742,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "typed source rejects extra, malformed and unbounded data without changing legacy codec",
+                "status": "passed",
+                "title": "typed source rejects extra, malformed and unbounded data without changing legacy codec",
+                "duration": 0.36424999999997,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "a source storage failure propagates to the existing report transaction instead of fabricating success",
+                "status": "passed",
+                "title": "a source storage failure propagates to the existing report transaction instead of fabricating success",
+                "duration": 0.15416700000002947,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "existing execution producer carries its host source into the typed artifact and actual event consumer",
+                "status": "passed",
+                "title": "existing execution producer carries its host source into the typed artifact and actual event consumer",
+                "duration": 1.825917000000004,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791359218837,
+            "endTime": 1791359218847.826,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T07:46:58.890522+00:00",
+      "elapsedBeforeReceiptSeconds": 0.8451866250252351
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "floorBytes": 4071096320,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T07:46:58.890541+00:00"
+}

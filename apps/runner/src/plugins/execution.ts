@@ -56,7 +56,7 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
     if (!isPersistablePluginText(result.content)) throw new PluginToolError('OUTPUT_REJECTED');
     const artifactId = `plugin-${binding.invocationId}`;
     return { artifact: { type: 'artifact', artifactId, title: 'Plugin tool output', content: result.content,
-      mediaType: 'text/plain', version: textDigest(result.content) }, verification: verifyText(artifactId, result.content, verification), provenance: result.provenance };
+      mediaType: 'text/plain', version: textDigest(result.content), pluginSource: { protocol: 'flow.plugin-artifact.v1', ...result.provenance } }, verification: verifyText(artifactId, result.content, verification), provenance: result.provenance };
   } catch (error) {
     if (error instanceof PluginAuthorizationUnknown || error instanceof PluginToolError && error.code === 'OUTCOME_UNKNOWN') {
       throw new PluginExecutionUnsettled(binding.bindingId, binding.invocationId, { cause: error });

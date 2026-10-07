@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:45:52.079720+00:00 / main b7687ff3；SVC09固定发布工具与原件受控接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:55:45.365013+00:00 / main b2b5612b；LAZY/X01必要组合3/3和strict0 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main b7687ff3b33d538e2b41e05ec849f670d9b9d8bb；SVC09 17产品与自身记录精确输入 |
+| 工作基线 / HEAD | main b2b5612b；本批仅已审LAZY12路径、X01六路径窄delta和自身证据 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | SVC09 44 distinct局部通过，116绑定与2别名独核；17产品完整delta独审，无冲突无重测。O16完整零模型旅程已main。 |
-| 已集成main状态 / HEAD | main/origin b7687ff3已接O16与OPS；本次SVC09待提交fast-forward，个人部署另行。 |
+| 检查状态 | 本批3 selected/3pass/0fail，未选择其余原检查；root noEmit0，两组absent/双EOF。84固定manifest绑定一致，0PG/provider。 |
+| 已集成main状态 / HEAD | main/origin b2b5612b已含SVC09；本固定接收批经I02单次提交/fast-forward发布，精确回执见lazy-x01-intake.json。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 完整目标旅程的零模型验收已接入主线；新版发布规则已审查通过。 |
-| 下一可用交付 | 准备固定后台与网页组合，让连接恢复和聊天设置进入个人预览。 |
+| 当前产出 | 按需读取推理正文与插件产物来源关联已通过审查和必要组合检查。 |
+| 下一可用交付 | 固定后台产物与网页兼容组合继续准备；前端接入按需读取并独立验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 

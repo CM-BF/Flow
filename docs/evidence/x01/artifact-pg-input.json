@@ -1,0 +1,55 @@
+{
+  "protocol": "flow.x01.artifact-pg.v1",
+  "productCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 5,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 256,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "artifact-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "name": "exact source is readable and same-sequence replay preserves a single artifact association"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "name": "wrong frozen material rolls back the full batch prefix before artifact detail timeline and ACK"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "name": "missing invocation phase rejects source and rolls back prefix without discarding prior load authorization"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "name": "phase receipts from a different historical attempt cannot authorize the current artifact association"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "name": "legacy artifact without source retains original storage and is not labelled verified plugin provenance"
+    }
+  ],
+  "tasksMax": 5,
+  "registrationsMax": 5,
+  "attemptsMax": 6,
+  "scope": "One bounded association transaction suite; known material/historical phase metadata seed, no npm or public runRunner execution."
+}

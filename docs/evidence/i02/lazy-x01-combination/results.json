@@ -1,0 +1,83 @@
+[
+  {
+    "name": "direct",
+    "pid": 83462,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1138,
+    "observed_bytes": 7369,
+    "retained_bytes": 7369,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "command": [
+      "node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+      "run",
+      "apps/server/src/plugin-runtime/artifact.test.ts",
+      "packages/client/src/assistant-stream.test.ts",
+      "-t",
+      "legacy artifact codec|existing execution producer|binds the public methods",
+      "--reporter=json"
+    ],
+    "at": "2026-10-07T08:54:32.949535+00:00"
+  },
+  {
+    "name": "types",
+    "pid": 84534,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 11099,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "command": [
+      "node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "at": "2026-10-07T08:54:44.050503+00:00"
+  }
+]

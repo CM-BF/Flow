@@ -47,7 +47,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 2026-10-06的三队12槽是历史授权；当前heartbeat上限10且服从实际工具cap，见OPS唯一规则。agent槽位与产品runner容量分开。
+- 当前并发授权沿OPS唯一规则：每Lead 1+3、三队总12；旧heartbeat的10仅为历史，实际仍服从threadlimit与ready工作。agent槽位与产品runner容量分开。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff

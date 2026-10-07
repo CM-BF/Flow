@@ -9,7 +9,7 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 - [x] **O16-02** 有限两段许可/三槽持久reservation、unknown不可复投与观测边界。
 - [x] **O16-03** 原生产模块的public journey组合、受管资源checkpoint与独立语义输入。
 - [x] **O16-04** 零query纯检查及获串行窗口后的实际PG/MCP注入旅程，准确保存资源/原始失败。
-- [ ] **O16-05** 固定manifest、唯一独立review、按批准范围交付。
+- [x] **O16-05** 固定manifest、唯一独立review、按批准范围交付。
 - [ ] **O16-06** 单独新许可下真实plan；实际proposal后另许可确认/children，并由独立actor验收语义。当前未授权/未运行。
 
 [设计](../../docs/evidence/o16/approved-proposal.md)与[Interface](../../docs/evidence/o16/interface.md)是本片范围说明。严格沿[根模块规则](../../AGENTS.md#modular-design)：原runner/SDK adapter/center scan单一权威，实验只拥有许可、私有资源和证据生命周期。O12没有confirmation command、中心没有独立artifact rejection reason字段；此实验不补第二领域，明确留后继。
@@ -19,3 +19,5 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 2026-10-07T08:17:45Z 续接：由原owner沿原claim验当前主线，先固定P02集成后精确base与动态输入闭包，再新的零模型公共旅程；旧26准备绿/FAIL/KEEP不重写。参见[current-main-resumption](../../docs/evidence/o16/current-main-resumption.md)。
 
 2026-10-07T08:38:29.810Z：新的固定f5a零模型公共旅程R1实际1/1，正常清理；O16-03/04按零模型组合范围完成，O16-05待本轮结果独审/集成，O16-06真实native规划/children与独立语义验收未授权未运行。历史base8bd/首次PG失败保持，不追溯改绿。
+
+2026-10-07T08:45:28.873Z：O16-01～05按零模型公开旅程范围已独审并受控main b768接收；实际1selected1pass/0provider。O16-06及真实模型语义、长期恢复连续性未完成；本片三scope停止写入归还，不扩大旧特殊窗口。

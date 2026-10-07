@@ -1,0 +1,85 @@
+{
+  "source": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+  "at": "2026-10-07T07:56:05.120088+00:00",
+  "state": "REVIEW_PENDING / PG_NOT_OPEN",
+  "bindings": [
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 8120,
+      "sha256": "4e803166b1feed7b24da6065fa7e7d70e308f91e06291508aabc5257a2aac1c7"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-child.py",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 535,
+      "sha256": "9aa1c8ff9998ed97e8e5243f008d2218adfdd997b5c65eb4a1c253d9e56df2e5"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-input.json",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 52970,
+      "sha256": "06ca8fe114cd992b5ac27f9ae27599a198297f568e69122d4f6c8deb3ac576d1"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-local.json",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 10700,
+      "sha256": "25e44a1ac5f4f6183d180fd17fbc83e85a35f3de24fc9deae43a7552ddf2da2c"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-types.txt",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-collect.txt",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 303,
+      "sha256": "2113edc5238c1ba3271e2f3f2d48a0f32697a917bf5fb34951478d950656ad5a"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-vitest.config.mjs",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 1619,
+      "sha256": "14d61a6d1dda4794e3ad23bb6968ac99f7727e428a722356621bc0446d3f12af"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-tsconfig.json",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 2057,
+      "sha256": "3c9ade536724574a8a48240b0338aa8a902291f073f4e52311311fefa5d30273"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-dependencies.json",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 4134,
+      "sha256": "8f0425565a60a08aed6fecedf988cbeae3c7c62ef45362bfddac479d18d2b40d"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 5482,
+      "sha256": "4fced5a07878c1f3f1e7fcb807de72ffa6f03e6b2b54361dbb58ac25c7ca3586"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/lifecycle-review-receipt.json",
+      "fixedGit": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+      "bytes": 689,
+      "sha256": "36c5290b0b3370d921c9f46d07c454609e05ff35f23a2d4498f4a3b8e1e7d1a0"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+      "fixedGit": "f1fce60ff786844da656afeafebcd4a34f3abab1",
+      "bytes": 10050,
+      "sha256": "f2b6a9f71b714718192a295334dbcda775b510eb670246947fc656f04228314f"
+    }
+  ],
+  "bindingBytes": 96659,
+  "runtimeInputCount": 244,
+  "runtimeInputBytes": 1105611,
+  "inputSHA": "06ca8fe114cd992b5ac27f9ae27599a198297f568e69122d4f6c8deb3ac576d1",
+  "checks": "focused fixture types0; list2/0hooks, not passed tests;2children finalabsent/EOF/TMPremoved;303Braw; new Python AST syntax only/no import/execution",
+  "coreReview": "60db/5e8 independently approved07:47; no old14/fix4 rerun"
+}

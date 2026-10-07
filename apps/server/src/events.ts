@@ -6,7 +6,8 @@ import { assertControlledFinal, closePendingSteering, recordSteeringResult } fro
 import { canonical, HttpError, sha256, transaction } from './database.js';
 import { ownedAttempt, type AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
-import { saveArtifact, saveDetail, verifyArtifact } from './evidence.js';
+import { saveDetail, verifyArtifact } from './evidence.js';
+import { recordPluginArtifact } from './plugin-runtime/artifact.js';
 import { assertEngineeringCompletion } from './engineering/verification.js';
 import { record as recordContextObservation } from './context-transparency/store.js';
 import { recordUsage } from './usage.js';
@@ -52,9 +53,9 @@ export async function applyEvent(client: PoolClient, task: TaskRecord, attempt: 
     const reference = await saveDetail(client, task.id, attempt.id, { title: `Usage: ${event.source}`, kind: 'usage', content: JSON.stringify(event), mediaType: 'application/json' });
     await appendTimeline(client, task, { kind: 'reference', reference });
   }
-  else if (event.type === 'detail' || event.type === 'artifact' || event.type === 'verification') {
-    const reference = event.type === 'artifact' ? await saveArtifact(client, task, attempt.id, event)
-      : event.type === 'verification' ? await verifyArtifact(client, task, attempt.id, event)
+  else if (event.type === 'artifact') await recordPluginArtifact(client, task, attempt, event);
+  else if (event.type === 'detail' || event.type === 'verification') {
+    const reference = event.type === 'verification' ? await verifyArtifact(client, task, attempt.id, event)
       : await saveDetail(client, task.id, attempt.id, { title: event.title, kind: 'detail', content: event.content, mediaType: event.mediaType });
     await appendTimeline(client, task, { kind: 'reference', reference });
   }

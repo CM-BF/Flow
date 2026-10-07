@@ -1,0 +1,52 @@
+{
+  "window": "MATURE06-LAZY01-PG-20261007-R1",
+  "executionHead": "3a293dc4b186aa6ccad6fefd7662385e44686c44",
+  "outerClockBefore": "2026-10-07 08:09:52 UTC",
+  "outerClockCompleted": "2026-10-07 08:09:56 UTC",
+  "conservativeSecondsEnvelope": 5,
+  "physicalTimeP": {
+    "real": 3.6,
+    "user": 1.75,
+    "sys": 0.5
+  },
+  "toolExitCode": 0,
+  "toolSession": 66306,
+  "chunks": [
+    {
+      "chunk": "d5f663",
+      "output": "{\"launchGateAt\": \"2026-10-07T08:09:52.267617+00:00\", \"freeBytes\": 24162050048, \"combinedFloor\": 4466937856, \"pairedX01Bytes\": 1052672}\n"
+    },
+    {
+      "chunk": "6e2840",
+      "exitCode": 0,
+      "output": "{\"window\": \"MATURE06-LAZY01-PG-20261007-R1\", \"delivery\": {\"finalReceiptWritten\": true, \"elapsedAfterReceipt\": 3.4924557090271264, \"success\": true}, \"primary\": null, \"secondary\": [], \"internalChecksPassed\": true, \"processClosed\": true, \"fixtureReceiptConfirmed\": true, \"tmp\": {\"path\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy-pg-mf355e63\", \"state\": \"absent\", \"dev\": 16777234, \"ino\": 123648994, \"closedSample\": {\"entries\": 4, \"logicalBytes\": 138, \"activePeak\": \"unknown\"}}, \"elapsedSeconds\": 3.4919921250548214}\nreal 3.60\nuser 1.75\nsys 0.50\n"
+    }
+  ],
+  "timingBoundary": "clock source before exec and after final tool return; seconds-resolution envelope adds1. PTY waits are not whole wall. Caller elapsedBeforeResult3.491992125 and elapsedAfterReceipt3.492455709 differ from time-p3.60; final tool completion observed separately.",
+  "preflight": {
+    "at": "2026-10-07T08:09:27.534648+00:00",
+    "claimVersion": 3,
+    "scopes": 12,
+    "runtimeBindings": 244,
+    "external": 19,
+    "outputsAbsent": 10,
+    "freeBytes": 24163835904,
+    "baseFloor": 4463788032,
+    "metadataReserve": 2097152,
+    "headClean": true,
+    "errors": []
+  },
+  "pairedAdmission": {
+    "x01PureBytes": 1052672,
+    "combinedFloor": 4466937856,
+    "beforeSpawn": true,
+    "endpointIsolation": "X01 pure Python no PG/HTTP/provider/shared writes; others metadata; root grants unique PG"
+  },
+  "postExactRootLstat": {
+    "at": "2026-10-07T08:10:09.589576+00:00",
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy-pg-mf355e63",
+    "state": "ENOENT"
+  },
+  "noExtraProbe": "No new PG/group scan or old-root walk; lifecycle facts from fixed caller/fixture.",
+  "wholeWindowResult": "within90s observed; no relaunch"
+}

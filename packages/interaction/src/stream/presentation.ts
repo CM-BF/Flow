@@ -29,7 +29,10 @@ function replacements(state: StreamState, turn: ConversationTurn): ReadonlySet<s
   if (final.messageId !== metadata.finalMessageId || final.messageId !== settlement.finalMessageId || final.taskId !== metadata.taskId
     || final.attemptId !== metadata.attemptId || final.attemptId !== patches.attemptId || final.nativeSessionId !== settlement.nativeSessionId) return new Set();
   if (!finalMatchesTurn(final, turn)) return new Set();
-  const complete = metadata.blocks.length === patches.blocks.length && metadata.blocks.every(reference => {
+  const selected=state.selections!==undefined;
+  const required=selected ? metadata.blocks.filter(reference=>settlement.replaceStreamIds.includes(reference.id)) : metadata.blocks;
+  if(selected && required.some(reference=>reference.source!=='claude.sdk.stream' && reference.channel!=='text'))return new Set();
+  const complete = (selected || metadata.blocks.length === patches.blocks.length) && required.every(reference => {
     const block = patches.blocks.find(value => value.streamId === reference.id);
     return block && block.revision === reference.revision && block.bytes === reference.bytes && block.prefixDigest === reference.prefixDigest
       && block.nativeSessionId === reference.nativeSessionId && block.lastSequence === reference.lastSequence;
@@ -57,7 +60,8 @@ export function projectBodySegments(turn: ConversationTurn, state: StreamState):
   if (turn.id !== state.scope.turnId || turn.conversationId !== state.scope.conversationId || turn.task.id !== state.scope.taskId) throw Error('Stream messages do not belong to this turn.');
   const streaming = state.enabled && state.patches && state.patches.attemptId === state.metadata?.attemptId;
   const replaced = streaming ? replacements(state, turn) : new Set<string>();
-  const drafts = streaming ? state.patches!.blocks.filter(block => !replaced.has(block.streamId) && block.content !== '').map(block => draftSegment(turn,block,state)) : [];
+  const bodies=[...(state.patches?.blocks??[]),...(state.selections?.flatMap(selection=>selection.patches?.blocks??[])??[])];
+  const drafts = streaming ? bodies.filter(block => !replaced.has(block.streamId) && block.content !== '').map(block => draftSegment(turn,block,state)) : [];
   const reply = turn.assistant;
   if (reply.state !== 'available' || (streaming && reply.source.attemptId !== state.patches!.attemptId)) return drafts;
   const full = finalMatchesTurn(state.final,turn) ? state.final : null;

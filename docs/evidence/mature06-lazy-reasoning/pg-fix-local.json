@@ -1,0 +1,149 @@
+{
+  "startedAt": "2026-10-07T08:01:38.141210+00:00",
+  "runs": [
+    {
+      "mode": "pg-fix-gates",
+      "startedAt": "2026-10-07T08:01:38.175205+00:00",
+      "freeBytes": 24217088000,
+      "inputs": [
+        {
+          "path": "packages/contracts/src/assistant-stream-selection.test.ts",
+          "bytes": 1218,
+          "sha256": "cfcbedb567c44875aaeff3c7d49af35f477f97b7871e439b1c13f4c717481369"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/selection.test.ts",
+          "bytes": 3859,
+          "sha256": "22322f43eca5f25e6d8c7e901729f73c9248391571bb39a29e129bdaac13ac14"
+        },
+        {
+          "path": "packages/interaction/src/stream/selection.test.ts",
+          "bytes": 14538,
+          "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7"
+        },
+        {
+          "path": "packages/contracts/src/assistant-stream.ts",
+          "bytes": 7985,
+          "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/index.ts",
+          "bytes": 2917,
+          "sha256": "8771a580393c624b3415ceb69a5d156d90499ac1d329ffadaa9eb42f3af97939"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/queries.ts",
+          "bytes": 6742,
+          "sha256": "d5b031448f4797fbedf236bd756692ff8d9736bf4078ed4c61c65390f4e8edd8"
+        },
+        {
+          "path": "packages/interaction/src/stream/projection.ts",
+          "bytes": 19907,
+          "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+        },
+        {
+          "path": "packages/interaction/src/stream/patches.ts",
+          "bytes": 16646,
+          "sha256": "4b2dd931035cbbc18f202b5d6a551bdee4101a3c25458385aeec427d459e3d6a"
+        },
+        {
+          "path": "packages/interaction/src/stream/presentation.ts",
+          "bytes": 6756,
+          "sha256": "a545a75c1215d1a49753d5e295ceea4bcd7381bd49e18a0a92b62bc01b2433de"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/vitest.config.mjs",
+          "bytes": 784,
+          "sha256": "688ad849345f1e099bb9c322ef9dcabfc26cf3cf761bb5bbfc563f459dd7ac59"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/tsconfig.json",
+          "bytes": 1373,
+          "sha256": "7f8e0e4a791fad38999921451f969401a125178678658415b019885e9b5facb3"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+          "bytes": 12288,
+          "sha256": "33f5caf0d7e12e48e8e4217012154895544e10f62e99a5e829a432556efeb1d3"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+          "bytes": 4935,
+          "sha256": "52ac6a2699a835dd123d8c4c1d9a1af947c28a3d2201ecf726f7358ede40fb16"
+        }
+      ],
+      "supervisorSHA": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/bin/python3.13",
+        "-B",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+        "--verbose"
+      ],
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy01-9ncaktiu",
+        "dev": 16777234,
+        "ino": 123644481,
+        "closedSampleBytes": 64,
+        "closedSampleNodes": 1,
+        "peakBytes": null,
+        "removed": true
+      },
+      "finishedAt": "2026-10-07T08:01:38.314783+00:00",
+      "process": {
+        "pid": 8751,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 138,
+        "observed_bytes": 1104,
+        "retained_bytes": 1104,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/mature06-lazy-reasoning/pg-fix-gates.txt",
+        "bytes": 1104,
+        "sha256": "109b099acd098aed99f1090cdd6fd43faeb3545c36c95766d7f6e3f63433d11d"
+      }
+    }
+  ],
+  "limit": {
+    "children": 4,
+    "eachSeconds": 60,
+    "rawBytes": 262144,
+    "tmpBytes": 8388608
+  },
+  "actualScope": "pure/injected only; no HTTP/PG/provider/native",
+  "segmentStartedAt": "2026-10-07T07:59:19Z",
+  "rawBytes": 1104,
+  "limitClarification": {
+    "inheritedDescriptorChildren": 4,
+    "authorizedMaximumChildren": 2,
+    "actualCodeEnforcedMaximumChildren": 2,
+    "actualChildren": 1,
+    "reason": "Original limit descriptor is inherited from old runner; assert gate used2 for gate_mode. No additional child authorized or run."
+  },
+  "postRunDelta": {
+    "path": "execute-pg.py",
+    "change": "CLI prints independently confirmed boolean rather than consulting untrusted loaded fixture shape. Tested gate functions unchanged; no rerun needed."
+  }
+}

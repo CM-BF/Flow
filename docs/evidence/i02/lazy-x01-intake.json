@@ -1,0 +1,756 @@
+{
+  "at": "2026-10-07T08:54:21.385546+00:00",
+  "base": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "lazyExactProducts": [
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 2917,
+      "sha256": "8771a580393c624b3415ceb69a5d156d90499ac1d329ffadaa9eb42f3af97939"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 6742,
+      "sha256": "d5b031448f4797fbedf236bd756692ff8d9736bf4078ed4c61c65390f4e8edd8"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 19907,
+      "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 16646,
+      "sha256": "4b2dd931035cbbc18f202b5d6a551bdee4101a3c25458385aeec427d459e3d6a"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 6756,
+      "sha256": "a545a75c1215d1a49753d5e295ceea4bcd7381bd49e18a0a92b62bc01b2433de"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream-selection.test.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 1218,
+      "sha256": "cfcbedb567c44875aaeff3c7d49af35f477f97b7871e439b1c13f4c717481369"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/selection.test.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 3859,
+      "sha256": "22322f43eca5f25e6d8c7e901729f73c9248391571bb39a29e129bdaac13ac14"
+    },
+    {
+      "path": "packages/interaction/src/stream/selection.test.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "bytes": 14538,
+      "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+      "source": "f1fce60ff786844da656afeafebcd4a34f3abab1",
+      "bytes": 10050,
+      "sha256": "f2b6a9f71b714718192a295334dbcda775b510eb670246947fc656f04228314f"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "bytes": 62574,
+      "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "bytes": 13408,
+      "sha256": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468"
+    }
+  ],
+  "lazyEvidenceSource": "697c093975d083327799a7f532e66e6da7e22532",
+  "x01PatchSha256": "06dc8b584d5261e9c74e91d20a45b1944c6c31fc72adc8015736935eaf83bbf5",
+  "x01SourceReview": "docs/evidence/x01/artifact-provenance-independent-review.json",
+  "x01PGReview": "docs/evidence/x01/artifact-pg-independent-review.json",
+  "verifiedManifestBindings": [
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "packages/interaction/src/stream/projection.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "packages/interaction/src/stream/selection.test.ts",
+      "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+      "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/lifecycle-local.json",
+      "source": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+      "sha256": "8a44a2aaaa0ab1c6eda8114c930cb97109ca8e24a9c241b44f700f2aea56a7ea"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-red.txt",
+      "source": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+      "sha256": "9469f544592ae8ba1146f62032d4d1e96587c7edd4929d2e607e4d0a15879b2f"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-green.txt",
+      "source": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+      "sha256": "0686444d9c1c3c701463a2a999c4342598018b1c4e0b1db44f22b0b7b0e48d81"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-types.txt",
+      "source": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "manifest": "lifecycle-fix-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "source": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+      "sha256": "5d57a462efd70178470a5dd4e0fc006da3b8f961ebfd863a4f6fa4de04f447b1"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.reservation.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "8c860e2c86d13119a3c0f8d3efef4321dd80241f9eebd268744c164ee9c0e903"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.root.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "998c6ebc5111711ff990bff2bf1516ed7a7f11b21dffd608277c746cf2a9aa53"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.child.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "3accc94adb32e82dca1ffc4d07ceeee0d198f8c79ed08c886730734587fcb994"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.stdout",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "c2c3972c2b8e5f19aecfea68253f70e62ca81cd93becdfd0415698ac439d4965"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "477e97f7e28bd65917950b5a3c1c49ac761ebc1fa7225b30e2e0096ea4342be8"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.vitest.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "78338c122eee7c7b4d2bceeb7d288e593f726c85836180e7a156d399e8d9880f"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.result.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "198430d899e68aac664c7970bccba42aa62374e96f157367465181121edeee4d"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.reservation.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "032fc9ffca4bb2de3aec41d4703090cc4719a0ce9c71d1a068c6ddf824759c0a"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.create-request.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "362d0afe62cce183056d4e781379e3ed0dbff730efd5da38bc43c3a81a4fd215"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.database.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "0b7822aa80841baa956d2fc66571099dc21cd1935dc8e7a69b83d5da4c666a5f"
+    },
+    {
+      "manifest": "pg-result-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.tool.json",
+      "source": "9ee27ae1a176bdbcb65e3c80a5c7c975e2d66124",
+      "sha256": "223bb576120dbe29511d83076590ab5fca3a8975f2ec6121d9a85df61e0f4bd0"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "packages/client/src/index.ts",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-baseline.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "970cfbfefe44857820e0ef9e0ef4d3f37c92c592693620613515bc201f1338cc"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-closure.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "efd0f82f877fe8b953410cccc52905a019017e647228d3ec7f96f7757006ca9c"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-supply.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "a7ceda7e0299599f749ee6165d315f5db157792cae033ab540da9a5acad3037c"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support2-supply.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "40602bf56fd5ba004ab2e3ed9e29f5a4122edea4ee5fc66d08667f7da06b003e"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-stop-receipt.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "41ef025fec13bea34973cb9a27a16de71ed7540c63582114da1e80c31bdfffb1"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support2-stop-receipt.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "7eb99a8a14aae6cbdd4bc528a7e3f58e559775ed0a11c56feeb8cd6940fe5776"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-claim-receipt.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "0ebb34dd66b9ba335de2a3552e89a24450f3497c2cd0ab6a45c20cf06c9eb3f9"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-interface.md",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "708622903d877c0f50fe33aa9856bd078d2a2e9d9384fbc72efed1cd8c10d202"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tsconfig.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "1f40cdaf3549188d737826ea6167e9cfc57447d655a1da9405d5faab5796dfd7"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-vitest.config.mjs",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "fb26c584b536c6cd580de91c2c836c899c82380365183dd60c8be38fc71a299e"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "e55bddf20ce5c530559c68b34b3f58b14a6cbbd503e241e3474ab474b4449686"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-local.json",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "5957a37afe289084dc6c35e1c68fe53f529d011da205b439c54bbc9a2c1f842f"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-types.txt",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tests.txt",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "8ec716ff66701d5e01fde20690bd19d1064ad0ad5eb9fdbcc0a3bca6a6167739"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tests-fix.txt",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "94846b27725735da4fa2d1c17e98273665cfe91c234dbac38c5c70ee740451e1"
+    },
+    {
+      "manifest": "client-review-manifest.json",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-types-fix.txt",
+      "source": "55dc7de880747a86ed4b64fe7c9ba8cf31c6017b",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/runner/src/plugins/execution.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/events.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "34b61bfc81dbd87741f0c58fe8adc3983b0a7bd41a07bfb881022845247a02ae"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/plugin-runtime/artifact.test.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "e583ebf1eb61df0ec54e20ab82ad60673301270e4a8e8218c9b71a1ab37cfb1b"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "packages/contracts/src/runner.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "b78033357b34e17e66d3a8faf2a69163887fc4a33befe7c74abca834ed7a2dbc"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-local.py",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "b46b4fba890feab03b6f99fe4f8c99ea4b62245111f0478fe5da99f50c782949"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-tsconfig.json",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "e09ec5ba03e8a7eda78f6cf8c308f5cc7769c5cab191e8614f9f1f91013ce5b9"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-vitest.config.mjs",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "9b26e311ec4c742a06581e2494c6b9e1f7bdf9b7da3b956d22f97240787ca295"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-interface.md",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "637fb478283be12e574f35dede96223754f3aca41c418be1d80f6f96fc39c9d8"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-local.json",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "58130fd4edcb259d85c4a005deb6bb6d397c1c163ed0edd3009b2416b29a34d1"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-result-summary.json",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "663a5e37d42b011ad429963b5d9db3e3c3b661d09f9ba80aba06f0ded95b801a"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-main-delta.patch",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "06dc8b584d5261e9c74e91d20a45b1944c6c31fc72adc8015736935eaf83bbf5"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "e5df01d9bc9e06dd1bbb62a197fd7b8ade38b7025b5699701a4a94e97917c644"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/evidence.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/timeline.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/server/src/runners.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/runner/src/plugins/host.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "apps/runner/src/verifier.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "packages/contracts/src/index.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/center-claim-database.ts",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "manifest": "artifact-provenance-manifest.json",
+      "path": "tsconfig.json",
+      "source": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/admission.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "eaff13c5b69d4cf4e6d5086f54106db10fdf0b463bdc810a649095e746bda88a"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/launch.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "936febeb8ea9b56d2cf4b464bcb9a658d8e9eaffa6447df1198a464e30ec893b"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/output.log",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "2cad6f4cb58cb88e30552dfaa7b5b6a83217236d76c0f667b446dba1ddd675b4"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/owner-close.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "a4dc2fdd9a045052d88bc5ccb42d2520d33da6a5e27e4006bedab8c1cf90f64e"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/preflight.stdout",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "7ffc9f272899c7f3a37fe594d12b05d2860e3b9da9211635783a96256363e7a4"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/reservation.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "4bff5eeee5ec59a931c5c78179cfb93407d51fa71e0417c24799a318c8740f80"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/result.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "9d1942e81e25876df49d9063209a29246630a87f25e9218a880ea771a4e8ef2c"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-create-request.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "44ee3dd86e0e1c7ba013b885e4478f80ef64db27afd25ad846835ee229d8749c"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-created.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "b817dc9fd41a494b6129a2370682f30c8e2b410055a986fee77084c74940a93e"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-reservation.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "aa8d2770f0460493c030b3838b56188ad0eb1a4c2637b63a5f8360024247f2ba"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-result.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "0e3c5ad0887660061c0a7f0f701da9448206db8bbda24f7bfcc5573c64e9bb18"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/tool-output.log",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "2e36482baec5f0a68dda14636d0e3076945e76b5d2e81e7ddddf723a6bce93eb"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/tool.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "f6a350b3bcc6751c35d52c646b9b06b010333687f2172b24105962f9837778c9"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-run-r1/vitest.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "d6d0878d642ba6d7fec563c7cbdef52720fa48e81e7d6c92ce01ff5cfb83ef11"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-manifest.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "95d87bb88b7cfed355860d2c9d820dffe07d8d2fc92c6b41832f3cf898f3780d"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-input.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "adf881e667b4234d1d59b22282846188e6f265f7286957d41be802c71c148a9e"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-once.py",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "3049b162335344d072aaa98dfd1cd520a35a1d7f7c66ca68d40ea08f7b4e7cf9"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-preparation-review.json",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "2867bdab88ed7ca8912eff91673438d85966d7a6c0cd3e0e47db0774f9e0e821"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/artifact-pg-vitest.config.mjs",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "514919863b0d9241d0ac9969d91769cf69e759a8b9f524a121dcf8f3e13677b2"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a"
+    },
+    {
+      "manifest": "artifact-pg-result-manifest.json",
+      "path": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "source": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "sha256": "1c081810f0140ade643ba8642743eec47c42085eab64f234c91daee812f01d0f"
+    }
+  ],
+  "allAppliedPaths": [
+    "apps/runner/src/plugins/execution.ts",
+    "apps/server/src/assistant-stream/index.ts",
+    "apps/server/src/assistant-stream/queries.ts",
+    "apps/server/src/assistant-stream/selection-pg.test.ts",
+    "apps/server/src/assistant-stream/selection.test.ts",
+    "apps/server/src/events.ts",
+    "apps/server/src/plugin-runtime/artifact.test.ts",
+    "apps/server/src/plugin-runtime/artifact.ts",
+    "docs/evidence/mature06-lazy-reasoning/client-baseline.json",
+    "docs/evidence/mature06-lazy-reasoning/client-claim-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/client-integration-ready.json",
+    "docs/evidence/mature06-lazy-reasoning/client-integration-ready.md",
+    "docs/evidence/mature06-lazy-reasoning/client-interface.md",
+    "docs/evidence/mature06-lazy-reasoning/client-local.json",
+    "docs/evidence/mature06-lazy-reasoning/client-review-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/client-review-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/client-support-closure.json",
+    "docs/evidence/mature06-lazy-reasoning/client-support-stop-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/client-support-supply.json",
+    "docs/evidence/mature06-lazy-reasoning/client-support2-stop-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/client-support2-supply.json",
+    "docs/evidence/mature06-lazy-reasoning/client-tests-fix.txt",
+    "docs/evidence/mature06-lazy-reasoning/client-tests.txt",
+    "docs/evidence/mature06-lazy-reasoning/client-tsconfig.json",
+    "docs/evidence/mature06-lazy-reasoning/client-types-fix.txt",
+    "docs/evidence/mature06-lazy-reasoning/client-types.txt",
+    "docs/evidence/mature06-lazy-reasoning/client-vitest.config.mjs",
+    "docs/evidence/mature06-lazy-reasoning/integration-ready.json",
+    "docs/evidence/mature06-lazy-reasoning/integration-ready.md",
+    "docs/evidence/mature06-lazy-reasoning/interface.md",
+    "docs/evidence/mature06-lazy-reasoning/lifecycle-fix-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/lifecycle-local.json",
+    "docs/evidence/mature06-lazy-reasoning/lifecycle-review-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/local.json",
+    "docs/evidence/mature06-lazy-reasoning/p2-green.txt",
+    "docs/evidence/mature06-lazy-reasoning/p2-red.txt",
+    "docs/evidence/mature06-lazy-reasoning/p2-types.txt",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.child.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.create-request.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.database.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.reservation.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.reservation.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.result.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.root.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.stdout",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.tool.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.vitest.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-collect.txt",
+    "docs/evidence/mature06-lazy-reasoning/pg-fix-gates.txt",
+    "docs/evidence/mature06-lazy-reasoning/pg-fix-local.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-fix-review-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-fix-review-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-input-v2.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-input.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-local.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-result-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-result-ready.md",
+    "docs/evidence/mature06-lazy-reasoning/pg-result-review-receipt.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-review-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/pg-types.txt",
+    "docs/evidence/mature06-lazy-reasoning/quality.md",
+    "docs/evidence/mature06-lazy-reasoning/review-manifest.json",
+    "docs/evidence/mature06-lazy-reasoning/run-local.py",
+    "docs/evidence/mature06-lazy-reasoning/tests-fix.txt",
+    "docs/evidence/mature06-lazy-reasoning/tests.txt",
+    "docs/evidence/mature06-lazy-reasoning/types-fix.txt",
+    "docs/evidence/mature06-lazy-reasoning/types.txt",
+    "docs/evidence/x01/artifact-pg-independent-review.json",
+    "docs/evidence/x01/artifact-pg-input.json",
+    "docs/evidence/x01/artifact-pg-manifest.json",
+    "docs/evidence/x01/artifact-pg-once.py",
+    "docs/evidence/x01/artifact-pg-preparation-review.json",
+    "docs/evidence/x01/artifact-pg-result-manifest.json",
+    "docs/evidence/x01/artifact-pg-result-ready.md",
+    "docs/evidence/x01/artifact-pg-run-r1/admission.json",
+    "docs/evidence/x01/artifact-pg-run-r1/launch.json",
+    "docs/evidence/x01/artifact-pg-run-r1/output.log",
+    "docs/evidence/x01/artifact-pg-run-r1/owner-close.json",
+    "docs/evidence/x01/artifact-pg-run-r1/preflight.stdout",
+    "docs/evidence/x01/artifact-pg-run-r1/reservation.json",
+    "docs/evidence/x01/artifact-pg-run-r1/result.json",
+    "docs/evidence/x01/artifact-pg-run-r1/runtime-create-request.json",
+    "docs/evidence/x01/artifact-pg-run-r1/runtime-created.json",
+    "docs/evidence/x01/artifact-pg-run-r1/runtime-reservation.json",
+    "docs/evidence/x01/artifact-pg-run-r1/runtime-result.json",
+    "docs/evidence/x01/artifact-pg-run-r1/tool-output.log",
+    "docs/evidence/x01/artifact-pg-run-r1/tool.json",
+    "docs/evidence/x01/artifact-pg-run-r1/vitest.json",
+    "docs/evidence/x01/artifact-pg-vitest.config.mjs",
+    "docs/evidence/x01/artifact-provenance-independent-review.json",
+    "docs/evidence/x01/artifact-provenance-integration-ready.json",
+    "docs/evidence/x01/artifact-provenance-interface.md",
+    "docs/evidence/x01/artifact-provenance-local.json",
+    "docs/evidence/x01/artifact-provenance-local.py",
+    "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+    "docs/evidence/x01/artifact-provenance-main-current-compatibility.json",
+    "docs/evidence/x01/artifact-provenance-main-delta.patch",
+    "docs/evidence/x01/artifact-provenance-manifest.json",
+    "docs/evidence/x01/artifact-provenance-result-summary.json",
+    "docs/evidence/x01/artifact-provenance-tsconfig.json",
+    "docs/evidence/x01/artifact-provenance-vitest.config.mjs",
+    "packages/client/src/assistant-stream.test.ts",
+    "packages/client/src/index.ts",
+    "packages/contracts/src/assistant-stream-selection.test.ts",
+    "packages/contracts/src/assistant-stream.ts",
+    "packages/contracts/src/plugin-artifact.ts",
+    "packages/contracts/src/runner.ts",
+    "packages/interaction/src/stream/patches.ts",
+    "packages/interaction/src/stream/presentation.ts",
+    "packages/interaction/src/stream/projection.ts",
+    "packages/interaction/src/stream/selection.test.ts",
+    "plans/mature06-lazy-reasoning/plan.md",
+    "plans/mature06-lazy-reasoning/review.md",
+    "plans/mature06-lazy-reasoning/status.md"
+  ],
+  "checks": {
+    "directSelected": 3,
+    "passed": 3,
+    "failed": 0,
+    "unselected": 23,
+    "rootNoEmitExit": 0,
+    "newPG": 0,
+    "provider": 0,
+    "raw": "lazy-x01-combination/results.json"
+  },
+  "personalRuntimeChanged": false,
+  "completedAt": "2026-10-07T08:55:45.365013+00:00",
+  "metadata": [
+    {
+      "source": "2fdad8e588df407e3a0113edb91166801097dcd9",
+      "paths": [
+        "AGENTS.md",
+        "docs/quality/local-validation.md",
+        "plans/AGENTS.md",
+        "plans/flow-001-architecture/status.md",
+        "plans/flow-002-provider-harness/status.md",
+        "plans/ops-001-status-review/status.md"
+      ],
+      "review": "assignment_review APPROVED_DOCS sixfile; existing source reviewers and exact main receipts preserved"
+    },
+    {
+      "source": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "paths": [
+        "docs/evidence/o16/current-main-pg-r1/independent-review.json",
+        "docs/evidence/o16/current-main-receipt.json",
+        "plans/o16-continuous-goal-acceptance/plan.md",
+        "plans/o16-continuous-goal-acceptance/review.md",
+        "plans/o16-continuous-goal-acceptance/status.md"
+      ],
+      "review": "Execution Lead read complete own metadata delta; fixed previous product and raw unchanged"
+    },
+    {
+      "source": "4346e927",
+      "paths": [
+        "docs/evidence/svc09/independent-review.json",
+        "docs/evidence/svc09/main-receipt.json",
+        "docs/evidence/svc09/status-close-parse.json",
+        "plans/svc09-personal-release-policy/plan.md",
+        "plans/svc09-personal-release-policy/review.md",
+        "plans/svc09-personal-release-policy/status.md"
+      ],
+      "review": "Execution Lead read complete own metadata delta; fixed previous product and raw unchanged"
+    }
+  ],
+  "composition": "Reviewed additive artifact patch applies without conflicts; existing P02/Codex events and runner contract remain. LAZY twelve product/test blobs exactly approved source; no support baseline overlay.",
+  "limits": "Core/client and artifact association approved only; no Web lazy host or full plugin trusted startup/recovery completion; backend release candidate remains b2b."
+}

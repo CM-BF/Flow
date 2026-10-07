@@ -1,0 +1,106 @@
+{
+  "source": "2949569bcac7d3b0257a0026f488f42eb6276222",
+  "clientBaseline": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "implementationPaths": [
+    "packages/client/src/index.ts",
+    "packages/client/src/assistant-stream.test.ts"
+  ],
+  "supportOnlyCommits": [
+    "d20eb91f",
+    "d8476c12"
+  ],
+  "coreDependency": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+  "bindings": [
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 62574,
+      "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733"
+    },
+    {
+      "path": "packages/client/src/assistant-stream.test.ts",
+      "bytes": 13408,
+      "sha256": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-baseline.json",
+      "bytes": 652,
+      "sha256": "970cfbfefe44857820e0ef9e0ef4d3f37c92c592693620613515bc201f1338cc"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-closure.json",
+      "bytes": 8795,
+      "sha256": "efd0f82f877fe8b953410cccc52905a019017e647228d3ec7f96f7757006ca9c"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-supply.json",
+      "bytes": 2787,
+      "sha256": "a7ceda7e0299599f749ee6165d315f5db157792cae033ab540da9a5acad3037c"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support2-supply.json",
+      "bytes": 2498,
+      "sha256": "40602bf56fd5ba004ab2e3ed9e29f5a4122edea4ee5fc66d08667f7da06b003e"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support-stop-receipt.json",
+      "bytes": 1185,
+      "sha256": "41ef025fec13bea34973cb9a27a16de71ed7540c63582114da1e80c31bdfffb1"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-support2-stop-receipt.json",
+      "bytes": 1186,
+      "sha256": "7eb99a8a14aae6cbdd4bc528a7e3f58e559775ed0a11c56feeb8cd6940fe5776"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-claim-receipt.json",
+      "bytes": 1187,
+      "sha256": "0ebb34dd66b9ba335de2a3552e89a24450f3497c2cd0ab6a45c20cf06c9eb3f9"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-interface.md",
+      "bytes": 3006,
+      "sha256": "708622903d877c0f50fe33aa9856bd078d2a2e9d9384fbc72efed1cd8c10d202"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tsconfig.json",
+      "bytes": 1227,
+      "sha256": "1f40cdaf3549188d737826ea6167e9cfc57447d655a1da9405d5faab5796dfd7"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-vitest.config.mjs",
+      "bytes": 664,
+      "sha256": "fb26c584b536c6cd580de91c2c836c899c82380365183dd60c8be38fc71a299e"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "bytes": 7760,
+      "sha256": "e55bddf20ce5c530559c68b34b3f58b14a6cbbd503e241e3474ab474b4449686"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-local.json",
+      "bytes": 20979,
+      "sha256": "5957a37afe289084dc6c35e1c68fe53f529d011da205b439c54bbc9a2c1f842f"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tests.txt",
+      "bytes": 5306,
+      "sha256": "8ec716ff66701d5e01fde20690bd19d1064ad0ad5eb9fdbcc0a3bca6a6167739"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-tests-fix.txt",
+      "bytes": 345,
+      "sha256": "94846b27725735da4fa2d1c17e98273665cfe91c234dbac38c5c70ee740451e1"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/client-types-fix.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "totalBytes": 133559
+}
