@@ -1,0 +1,207 @@
+{
+  "at": "2026-10-07T23:22:12.469Z",
+  "source": "6491c4815cd6daf8f640648d5e8a25a599d8cd92",
+  "parent": "99c0f0864",
+  "scope": "Same Web-only caller, non-reentrant preview-lock status reader repair; actual publication NOT_RUN",
+  "ready": false,
+  "inheritedPreparation": {
+    "commit": "99c0f0864",
+    "pin": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-actual-preparation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-actual-preparation.json",
+      "dev": "16777234",
+      "ino": "124631218",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 19713,
+      "sha256": "c6f4135c01a92092c3155624743065b33e650c8c352c6c4cbc643100399062c2"
+    }
+  },
+  "inheritedInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+    "dev": "16777234",
+    "ino": "124631032",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 6729,
+    "sha256": "407d40bb531ceafc0878aa65c00f58668fe25be41a642d8ce76d74258b502e08"
+  },
+  "inheritedRecipe": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-execution-recipe.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-execution-recipe.json",
+    "dev": "16777234",
+    "ino": "124631217",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 5211,
+    "sha256": "7392bb3bfe19e944616f9a2d844e454b53759f66251cea6e98e7ab79c5a9e7c4"
+  },
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "dev": "16777234",
+      "ino": "124594455",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 14999,
+      "sha256": "9603d719df6fef634d4f1301a76232c2cb0540dd7e23eb8c1885d52ca44e6f0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "dev": "16777234",
+      "ino": "124594603",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 19586,
+      "sha256": "57ed7df43f43af7056d341495aca138d73f3e6956e1e783616fe37d52666199c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-reservation.json",
+      "dev": "16777234",
+      "ino": "124634065",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3251,
+      "sha256": "1a208d4abbf12b721d556dbb9e181a5d02d1187fd6f94a9784fc9627c5edaf08"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-outer.json",
+      "dev": "16777234",
+      "ino": "124634066",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 2636,
+      "sha256": "1f43f55a362c02c14f15c37d59f82f37989f829c51a77a6b653b1c662843d0d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-01-result.json",
+      "dev": "16777234",
+      "ino": "124634067",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 253,
+      "sha256": "0f60cc4cf2c4bf678c1607f9e3edd162d8272cab3696719796e47e9018598479"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-reservation.json",
+      "dev": "16777234",
+      "ino": "124636704",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3243,
+      "sha256": "770a5fe35b0c19f1726208c417d1df3fc4cad88f320624483cda612de0dd4659"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-outer.json",
+      "dev": "16777234",
+      "ino": "124636765",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 9860,
+      "sha256": "1882255158bf5326a18f3a1b59e690cb12f50d968ec317f7493a3c89f31e0d65"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-02-result.json",
+      "dev": "16777234",
+      "ino": "124636766",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 253,
+      "sha256": "a3f205924d0a09c11da3f37b2da1a6b4f247302c030b7aeb87f37642486aed84"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-reservation.json",
+      "dev": "16777234",
+      "ino": "124636820",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3244,
+      "sha256": "f936f27c842406a71dcdf5caf023c72cb359aa26702ede3138fc8911bc275baf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-outer.json",
+      "dev": "16777234",
+      "ino": "124637041",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 1229,
+      "sha256": "180922986da82349bdb850a2b99cba81b3554ff7b902c7e87a5d944dadbc2757"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-03-result.json",
+      "dev": "16777234",
+      "ino": "124637042",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 252,
+      "sha256": "786a1d8bc5b775419121642889b3b96b8b78895de6cff4e9d0ecbe033abc2981"
+    }
+  ],
+  "effectiveSourceOverlay": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "dev": "16777234",
+      "ino": "124594455",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 14999,
+      "sha256": "9603d719df6fef634d4f1301a76232c2cb0540dd7e23eb8c1885d52ca44e6f0b"
+    }
+  ],
+  "effectivePins": "Original16 source closure and6runtime inherited; replace only recovery-web-publication.mjs by this exact source overlay. Test file is evidence only; original input/argv/namespaces unchanged. Artifact source880060/e15 and full installed inventory gate unchanged.",
+  "publicDependency": "Actual immutable e15 public preview lock plus runner-maintenance index/store/database loaded in direct tests. Production uses createRequire(verifiedRoot/package.json)(pg).Pool and dynamically imports verifiedRoot/apps/server/src/runner-maintenance/index.ts; all covered by complete artifact inventory, not moving main.",
+  "behavior": {
+    "before": "transfer holds preview.withPreviewLock; guard->observe->maintenance status reacquires same non-reentrant operation.lock and refuses",
+    "after": "same transfer/outerlock/guard; observe validates exact config marker, fixed runnerId, token_hash and NOT revoked, then calls existing readRunnerMaintenance read-only transaction; Pool finally.end",
+    "unchanged": [
+      "6file/3process/current initialization/recovery digest/accepting24 checks",
+      "complete artifact and four compatibility checks",
+      "exclusive transfer/fsync/no-replace/count/bytes/CAS v3→v4",
+      "unknown stops without retry/rollback; retained artifact/data/config/profile/tab preserved",
+      "old products, failed namespaces, private input, recovery135pins"
+    ]
+  },
+  "checks": {
+    "distinct": 6,
+    "selections": 12,
+    "firstRun": "module-discovery failure before selected case (sparse preview pg resolution); retained",
+    "secondRun": "6 fixture EEXIST failures before lock/guard; retained",
+    "lastRun": "6/6 passed actual immutable lock and public read-only store with only external DB connection/query injected; actual microartifact transfer/fsync/exclusive rename ran only under exact own scratch",
+    "cases": [
+      "prior nested acquisition rejects",
+      "same real transfer+actual observe succeeds/old pointer retained",
+      "true pre-existing lock retained/refuses",
+      "revoked identity refuses/no CAS/Pool ends",
+      "identity mismatch refuses/no CAS/Pool ends",
+      "status unknown refuses/no CAS/Pool ends"
+    ],
+    "elapsedMs": 1079,
+    "rawBytes": 11630,
+    "returnedAt": "2026-10-07T23:20:28.763455+00:00",
+    "groupsAbsent": 3,
+    "dualEOF": true,
+    "exactEmptyScratchRemoved": 3,
+    "initialUnknownObservations": "All raw include preliminary EPERM/unknown observation before final absent; retained, not discarded",
+    "pg": 0,
+    "personalIO": 0,
+    "provider": 0
+  },
+  "quality": {
+    "at": "2026-10-07T23:22:12.469Z",
+    "method": "Existing clean-code/codebase-design/find-skills methods: state ownership/lock stays in original module; reuse public read-only store; one small status method, bounded Pool lifetime and exact identity predicate; no new supervisor/FSM.",
+    "pending": "Independent delta review; latest unique window and immediate identity/resource gates before actual."
+  }
+}

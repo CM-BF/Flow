@@ -1,0 +1,33 @@
+{
+  "pid": 57233,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 577,
+  "stdout": "✔ lock integration reproduces old nested lock rejection with actual transfer and lock (17.685167ms)\n✔ lock integration actual transfer guard reads public status without lock reacquisition (204.282375ms)\n✔ lock integration real pre-existing lock is retained and refuses transfer (5.116666ms)\n✔ lock integration revoked refuses transfer and CAS and closes pool (11.65175ms)\n✔ lock integration identity-mismatch refuses transfer and CAS and closes pool (6.545416ms)\n✔ lock integration unknown refuses transfer and CAS and closes pool (6.403417ms)\nℹ tests 6\nℹ suites 0\nℹ pass 6\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 534.731\n",
+  "stderr": "",
+  "observed_bytes": 668,
+  "retained_bytes": 668,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

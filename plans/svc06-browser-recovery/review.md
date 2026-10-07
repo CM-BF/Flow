@@ -81,3 +81,7 @@ Target20dc149c78dd4c7d172c609360051e2cec852aae。NOT_STARTED independent review;
 2026-10-07T23:16:58.021Z：Lead已限定批准f0f/d813 exact R2路径，原ef canonical/父目录批准保持。个人R2实际结果146654的6phase/当前初始化/accepting24已由本worker独立只读核准，具体正式记录由Lead写I02；不复制私有历史或原raw。本任务本次只读参数与既有OPS14 recipe见[单份准备](../../docs/evidence/svc06/browser-recovery/recovery-web-actual-preparation.json)。
 
 最后实际调用闭包发现新准备P2：transfer外层preview锁与observe内maintenance status锁冲突。原f0批准及fixture原件保持，未称真实迁入通过；新source未修改，待同scope修复及真实锁消费者独审。发布仍NOT_RUN，当前个人三服务保留运行。
+
+## 非重入锁P2修复待独审
+
+2026-10-07T23:22:12.469Z：source6491c4815cd6daf8f640648d5e8a25a599d8cd92，单份[源码/直接消费者overlay](../../docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json)保留原99c0只读输入和调用参数，不复制closure。6新直接例最终通过；0PG/个人操作，原两红/unknown观察保留。P2修复由Lead独审，作者本地通过不作实际授权；产物与恢复输入不变。

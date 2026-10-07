@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-07T23:19:47.380514+00:00",
+  "floor": 11983781888,
+  "free": 17955823616,
+  "queueAt": "2026-10-07T23:18:36.376Z",
+  "scratch": {
+    "path": "/private/tmp/svc06b-web-lock-mi9_6prz",
+    "dev": 16777234,
+    "ino": 124634064
+  },
+  "limits": {
+    "seconds": 60,
+    "tmpBytes": 2097152,
+    "rawBytes": 2097152
+  },
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "--test",
+    "--test-reporter=spec",
+    "--test-name-pattern=lock integration",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 14999,
+      "sha256": "9603d719df6fef634d4f1301a76232c2cb0540dd7e23eb8c1885d52ca44e6f0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 19321,
+      "sha256": "2f070a81a684455fd3de3e6d68f1c7df6a8c452e919b250daebd036eaf8ad6e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "bytes": 12331,
+      "sha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/preview.mjs",
+      "bytes": 57126,
+      "sha256": "882385d311836c456a0156444bcd529c6729052e44294c305f38c4069f7604c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/server/src/runner-maintenance/index.ts",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/server/src/database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "producerMatch": "public lock function and runner-maintenance index/store/database exactly880060; actual functions imported, only external DB connection/query injected",
+  "personal": 0,
+  "pg": 0
+}
