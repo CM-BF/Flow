@@ -160,9 +160,10 @@ def main():
         except FileNotFoundError: continue
         raise SystemExit('OUTPUT_EXISTS_NO_RETRY')
     fs = os.statvfs(WT); free = fs.f_bavail * fs.f_frsize
-    if free < 1207959552: raise SystemExit('RESOURCE_NOT_RUN')
+    required_free = 4053008384 if conversation else 1207959552
+    if free < required_free: raise SystemExit('RESOURCE_NOT_RUN')
     record = {'window': window, 'sourceHead': head, 'inputManifest': {'name': manifest_name, 'sha256': hashlib.sha256(manifest_bytes).hexdigest()},
-              'startedAt': at.isoformat(), 'freeBefore': free, 'errors': [], 'actualCodex': 0, 'provider': 0}
+              'startedAt': at.isoformat(), 'freeBefore': free, 'requiredFreeBytes': required_free, 'errors': [], 'actualCodex': 0, 'provider': 0}
     errors = record['errors']; root = None; child = None; streams = {}; eof = set(); selector = selectors.DefaultSelector(); observed = 0
     def phase(name, reserve):
         if time.monotonic() + reserve >= start + 120:
