@@ -19,5 +19,29 @@
   "mustNewGrantAccept": "available=max_connections-current includes this probe admin in current and does not subtract reserved connection slots. This is an instantaneous total-free-slots observation, not reservation/exclusive access.33 means planned17 configured+16 external headroom only if the new manager grant explicitly accepts this meaning/threshold and binds this source. Different threshold requires coordination, never self-authorization.",
   "unchangedRuntime": "295files/191external/16links and fixedcaller53e5f; fixed180s110/60/10 and exact5cases preserved. Runtime executes once only after newgrant, observed<=60s claim, cleanhead, allpins/newnamespace/free and acceptedbounded capacity preflight;no retry.",
   "futureProbeEvidence": "Persist beforelaunchclock and fixedsource hash; OPS14 exactPID/group/EOF/exit/firstfailure/retainedbytes and post-return clock; bound10s. No bare inlineNode-e probe.",
-  "noNewGrowthAuthorization": true
+  "noNewGrowthAuthorization": true,
+  "planningClarifiedAt": "2026-10-07T23:36:28.247Z",
+  "proposedNewActualBudget": {
+    "executionPlanningBytes": 168820736,
+    "temporaryBytes": 33554432,
+    "rawBytes": 1048576,
+    "databaseAndWalPlanningBytes": 134217728,
+    "naturalResultSealIncludingIndexBytes": 3145728,
+    "combinedNewPlanningBytes": 171966464,
+    "indexAtomicCopyObservedBytes": 2418882,
+    "tailRemainingBeforeNewMetadataBytes": 726846,
+    "tailBoundary": "3MiB tail includes index atomic temporary copy and fresh result metadata/source references. Do not copy old closure. Recheck actual index+new files before mutation; bound exceeded requires STOP, never borrow execution reserve.",
+    "globalCleanupReserveBytes": 1073741824,
+    "fixedCallerBaseFloorBytes": 1242562560,
+    "pairedBytes": "New manager fullfloor minus1242562560; include3MiB tail and all valid terms, count global reserve only once.",
+    "runtimeSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalSeconds": 10,
+    "externalPreflightMaxSeconds": 10,
+    "configuredPG": 17,
+    "externalHeadroom": 16,
+    "threshold": "33 instantaneous total-free slots (max_connections-current, probe included, reserved slots not deducted), explicitly accepted and source-bound in new grant.",
+    "actualGrant": "NONE; existing personal779 sole window is unaffected"
+  }
 }
