@@ -1,0 +1,21 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch
+
+REQ15_MAIN_DATABASE_LOADED 277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps mixed 50 turns equivalent to single reads with a constant query bound 11ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains limit+1 paging, cross-conversation filtering and empty pages without projection reads 2ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves conversation/task 404 and rolls back the same borrowed client 1ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current attempt binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current owner binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > retains the current session binding and never falls back from typed invalid 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > preserves frozen message settings, observed effective settings and allowlisted context 3ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps empty/over-budget turnViews free of SQL and leaves unknown failures unchanged 1ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy missing result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-artifact result distinct from a valid final 0ms
+ ✓ apps/server/src/conversations/turn-page-batch.test.ts > keeps the legacy invalid-typed result distinct from a valid final 0ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  20:16:06
+   Duration  471ms (transform 214ms, setup 0ms, import 356ms, tests 18ms, environment 0ms)
+

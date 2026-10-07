@@ -1,0 +1,112 @@
+{
+  "recordedAt": "2026-10-07T03:16:55.571215+00:00",
+  "sourceCommit": "9e6cc60bcd1cbdef538cbce9300f09aace6c8a26",
+  "productSourceUnchangedFrom": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "files": [
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    },
+    {
+      "path": "apps/server/src/assistant/final-preview-batch.test.ts",
+      "bytes": 5348,
+      "sha256": "ed597db77862c9a94ac64372c478ab203e2a6b7bc08beae65439202580e53846"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 11107,
+      "sha256": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3309,
+      "sha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "bytes": 2234,
+      "sha256": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-page-batch.test.ts",
+      "bytes": 14104,
+      "sha256": "0aac7b0b71ec6e34659ef0c71b562f0b53b59721a97c7fff8ccd9b17305dd256"
+    }
+  ],
+  "supportFiles": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/run-check.py",
+      "bytes": 7834,
+      "sha256": "d8e05bb614498d1eb7fc3ea4e8d1be2d9078e1177ca56d4e5b8619a65f18ca8a"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/main-database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs",
+      "bytes": 1047,
+      "sha256": "3c37e7f574be27d76a156f0a216238c5b2e318ae08930db5fb38e2f5165fcda5"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/main-database-input.json",
+      "bytes": 961,
+      "sha256": "7f381a28a9e229313408b8db8294c0d593cfe104480c8d4472d7384f623fdaa8"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pages-main-1.json",
+      "bytes": 3424,
+      "sha256": "c13ec2c40c7c980518062c1fa301512d333f0dec8e9792fc2f4e83987ad8e783"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pages-main-1.log",
+      "bytes": 1908,
+      "sha256": "3eed7deb71e36b15ca87fe6c0adbc293aec12297d1264865de06e743ccd70af4"
+    }
+  ],
+  "actual": {
+    "startedAt": "2026-10-07T03:16:06.400242+00:00",
+    "endedAt": "2026-10-07T03:16:07.202537+00:00",
+    "selected": 11,
+    "passed": 11,
+    "exit": 0,
+    "wallSeconds": 0.8777394589269534,
+    "rawBytes": 1908,
+    "rawSha256": "3eed7deb71e36b15ca87fe6c0adbc293aec12297d1264865de06e743ccd70af4",
+    "childStarts": 1,
+    "retries": 0,
+    "pg": 0,
+    "http": 0,
+    "donorTransformMarkerObserved": true
+  },
+  "cleanup": {
+    "supervisorGroupAbsent": true,
+    "stdoutEof": true,
+    "signals": [],
+    "secondaryFailures": [],
+    "tmpSameInodeEmptyRemovalReported": true,
+    "tmpIndependentLstatAbsent": true
+  },
+  "boundaries": [
+    "Only turn-page-batch.test.ts was selected, not the old 26-case suite.",
+    "The main donor is an exact read-only evidence copy of reviewed SVC07 bytes; this worktree production database.ts remains unchanged.",
+    "The Vite pre-resolve rule maps only the absolute equivalent of apps/server/src/database.js; transform verifies bytes and records a loaded marker.",
+    "Old PG2/2 evidence remains unchanged and was not rerun; HTTP remains open at integration.",
+    "TMP uses before/after sampling, not a realtime hard limit."
+  ],
+  "review": "PENDING_FIXED_FIXTURE_DELTA_REVIEW"
+}
