@@ -1,0 +1,98 @@
+{
+  "kind": "SVC09A_R4_EXACT_PROCESS_RETURN_READONLY",
+  "at": "2026-10-07T17:10:44.590706Z",
+  "registered": [
+    {
+      "role": "center",
+      "pid": 40028,
+      "group": 40028,
+      "nonce": "bfc9db3c-0139-43d3-a709-02549dd2c0ed",
+      "pending": false
+    }
+  ],
+  "pendingRecords": 0,
+  "identities": [
+    {
+      "role": "outer-wrapper",
+      "pid": 25564,
+      "ownership": "wrapperPidOnly",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    },
+    {
+      "role": "operator",
+      "pid": 25565,
+      "ownership": "childPidOnly",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    },
+    {
+      "role": "clone",
+      "pid": 25566,
+      "ownership": "newChildSession",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    },
+    {
+      "role": "work",
+      "pid": 28961,
+      "ownership": "newChildSession",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    },
+    {
+      "role": "cleanup",
+      "pid": 50220,
+      "ownership": "newChildSession",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    },
+    {
+      "role": "center",
+      "pid": 40028,
+      "ownership": "recordedServiceGroup",
+      "nonce": "bfc9db3c-0139-43d3-a709-02549dd2c0ed",
+      "processObservation": {
+        "state": "absent",
+        "errno": 3
+      },
+      "sameNumberGroupObservation": {
+        "state": "absent",
+        "errno": 3
+      }
+    }
+  ],
+  "allAbsent": true,
+  "signalsSent": 0,
+  "scope": "Only this run recorded PIDs/groups. No inference about nonexistent future generations or unrelated processes."
+}

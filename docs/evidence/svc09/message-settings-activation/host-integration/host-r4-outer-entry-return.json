@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-07T17:10:00.236Z",
+  "outerPid": 25564,
+  "exitCode": 1,
+  "signal": null,
+  "rawBytes": 531,
+  "truncated": false,
+  "stdout": "{\"outerReport\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-outer-r4-once/outer-report.json\", \"elapsedMs\": 32137, \"operatorReturned\": false, \"operatorOwnedState\": \"absent\", \"firstFailure\": {\"phase\": \"work\", \"code\": \"CHILD_EXIT_NONZERO\", \"type\": \"SupervisionFailure\", \"errno\": null, \"message\": \"child exit nonzero\"}, \"secondaryFailures\": [], \"servicesAndDatabase\": \"UNKNOWN_KEEP\", \"phaseRecordsRequired\": true, \"retry\": false}\n",
+  "stderr": "",
+  "scope": "Entry close only; detached services/DB require phase records and exact return observations"
+}

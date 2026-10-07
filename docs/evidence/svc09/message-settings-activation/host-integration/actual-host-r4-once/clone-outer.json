@@ -1,0 +1,33 @@
+{
+  "pid": 25566,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 4807,
+  "stdout": "{\"regularFiles\": 12679, \"directories\": 2209, \"internalSymlinks\": 742, \"regularLogicalBytes\": 367105165, \"regularAllocatedBytes\": 402042880, \"cloneFallback\": false, \"physicalExclusiveBytes\": null, \"finalManifestVerification\": \"performed by original verifier immediately after copy\"}\n",
+  "stderr": "",
+  "observed_bytes": 282,
+  "retained_bytes": 282,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

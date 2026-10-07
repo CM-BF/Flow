@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T17:10:00.229545Z",
+  "scope": "CALLER_PID_ONLY_NOT_DETACHED_SERVICE_GROUPS",
+  "limits": {
+    "operatorSeconds": 215,
+    "termSeconds": 0.5,
+    "reapSeconds": 2
+  },
+  "report": {
+    "pid": 25565,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 32137,
+    "stdout": "{\"at\": \"2026-10-07T17:09:32.986444Z\", \"work\": {\"exit\": 1, \"ownedState\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"firstFailure\": {\"phase\": \"work\", \"code\": \"CHILD_EXIT_NONZERO\", \"type\": \"SupervisionFailure\", \"errno\": null, \"message\": \"child exit nonzero\"}}, \"cleanup\": {\"exit\": 1, \"ownedState\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"firstFailure\": {\"phase\": \"work\", \"code\": \"CHILD_EXIT_NONZERO\", \"type\": \"SupervisionFailure\", \"errno\": null, \"message\": \"child exit nonzero\"}}, \"directory\": \"/private/tmp/flow-svc09a-host-zduxu054\", \"retention\": \"KEEP\", \"providerCalls\": 0, \"persistenceFailures\": [], \"complete\": false, \"finishedAt\": \"2026-10-07T17:10:00.223405Z\"}\n",
+    "stderr": "",
+    "observed_bytes": 686,
+    "retained_bytes": 686,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": []
+  },
+  "disposition": {
+    "operatorReturned": false,
+    "operatorOwnedState": "absent",
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondaryFailures": [],
+    "servicesAndDatabase": "UNKNOWN_KEEP",
+    "phaseRecordsRequired": true,
+    "retry": false
+  }
+}

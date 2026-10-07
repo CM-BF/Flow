@@ -1,0 +1,39 @@
+{
+  "pid": 50220,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 106,
+  "stdout": "{\"processes\":[{\"role\":\"center\",\"pid\":40028,\"nonce\":\"bfc9db3c-0139-43d3-a709-02549dd2c0ed\",\"state\":\"stopped\"}],\"failures\":[],\"database\":\"KEEP\",\"directory\":\"KEEP\",\"providerCalls\":0,\"mayDrop\":false,\"cleanupConfirmed\":false}\n",
+  "stderr": "",
+  "observed_bytes": 221,
+  "retained_bytes": 221,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

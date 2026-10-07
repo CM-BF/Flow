@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T17:08:21.099993Z",
+  "phase": "file-admission-reader",
+  "errorType": "KeyError",
+  "controlledKey": "SVC09AR4",
+  "cause": "Preflight reader incorrectly expected queue-only SVC09AR4 field on resource-window-current.json too. Both files contain forwardAdmission. Use selected candidate from each common field, and SVC09AR4 only on queue file.",
+  "actualHostStarts": 0,
+  "newNamespacesCreated": 0,
+  "PGProbes": 0,
+  "artifactAndSourceChanged": false,
+  "scope": "Caller prelaunch observation only; no original runtime failure inferred."
+}

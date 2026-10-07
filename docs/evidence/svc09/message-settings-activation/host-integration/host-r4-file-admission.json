@@ -1,0 +1,54 @@
+{
+  "kind": "SVC09A_R4_FRESH_FILE_ADMISSION",
+  "at": "2026-10-07T17:08:21.799883Z",
+  "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "delivery": "fb3bd1b7d3fdb5c8c5b250fd2e0ae40cf919ae2c",
+  "currentMetadata": "cd3806654f1aae1f4fad757cb6c350ffa9d56930",
+  "preparation": {
+    "path": "host-preparation-r4.json",
+    "bytes": 21786,
+    "sha256": "d38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2"
+  },
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "state": "active",
+    "freshAt": "2026-10-07T17:07:03.636Z"
+  },
+  "pins": {
+    "effectiveExecution": 19,
+    "runtime": 6,
+    "inheritanceReferences": 2,
+    "newLocalSource": 1,
+    "schemaInput": 1,
+    "preservedResult": 1,
+    "evidence": 13,
+    "mismatches": 0,
+    "retainedArtifactIdentities": 4,
+    "oldKEEPDirectoryIdentities": 3
+  },
+  "windowInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "sha256": "717a99f0b175bf9bd24544640fffca4aff1bab9d47f1ff151d9e86f68da29516",
+      "state": "DIAGNOSTIC_RETURN_R4_UNIQUE_NEXT_I01_MAIN_INTEGRATED",
+      "at": "2026-10-07T17:08:10.883Z"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "sha256": "7dbd640234973e06136eff42a6750e02f1fca3a93003f5f7b99948fc85a4f5a4",
+      "state": "DIAGNOSTIC_RETURN_R4_UNIQUE_NEXT_I01_MAIN_INTEGRATED",
+      "at": "2026-10-07T17:08:10.883Z"
+    }
+  ],
+  "minimumCompleteFloorBytes": 15927083008,
+  "observedFreeBytes": 19990114304,
+  "newNamespacesAbsent": true,
+  "review": "mainc6ada2b76/docs/evidence/i02/svc09a-host-r4-preparation-review.json",
+  "actualStatus": "FILES_ADMITTED_UNCONSUMED",
+  "entry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-r4-once"
+  ]
+}

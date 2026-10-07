@@ -1,0 +1,75 @@
+{
+  "kind": "SVC09A_R4_FRESH_FILE_ADMISSION",
+  "at": "2026-10-07T17:09:28.029Z",
+  "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "delivery": "fb3bd1b7d3fdb5c8c5b250fd2e0ae40cf919ae2c",
+  "currentMetadata": "cd3806654f1aae1f4fad757cb6c350ffa9d56930",
+  "preparation": {
+    "path": "host-preparation-r4.json",
+    "bytes": 21786,
+    "sha256": "d38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2"
+  },
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "state": "active",
+    "freshAt": "2026-10-07T17:07:03.636Z"
+  },
+  "pins": {
+    "effectiveExecution": 19,
+    "runtime": 6,
+    "inheritanceReferences": 2,
+    "newLocalSource": 1,
+    "schemaInput": 1,
+    "preservedResult": 1,
+    "evidence": 13,
+    "mismatches": 0,
+    "retainedArtifactIdentities": 4,
+    "oldKEEPDirectoryIdentities": 3
+  },
+  "windowInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "sha256": "73037048e6b02dfb7d96c7e197167bc1bd1cf1bc77f47b3fb59a57a12439bd18",
+      "state": "DIAGNOSTIC_RETURN_R4_UNIQUE_NEXT_I01_MAIN_INTEGRATED",
+      "at": "2026-10-07T17:08:41.539Z"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "sha256": "5076b8909ebaad923701e7c3290aa2e0d7f99781002f6a56baf3b8328bb31b05",
+      "state": "DIAGNOSTIC_RETURN_R4_UNIQUE_NEXT_I01_MAIN_INTEGRATED",
+      "at": "2026-10-07T17:08:41.539Z"
+    }
+  ],
+  "minimumCompleteFloorBytes": 15927083008,
+  "observedFreeBytes": 19646095360,
+  "newNamespacesAbsent": true,
+  "review": "mainc6ada2b76/docs/evidence/i02/svc09a-host-r4-preparation-review.json",
+  "actualStatus": "ADMITTED_ONCE",
+  "entry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-r4-once"
+  ],
+  "event": "START_AUTHORIZED_ENTRY",
+  "PG": {
+    "kind": "SVC09A_R4_CLUSTER_ADMISSION_READONLY",
+    "at": "2026-10-07T17:08:42.055Z",
+    "ownConfiguredMax": 26,
+    "managementMargin": 16,
+    "adminInput": "Existing coordination env URL with pathname /postgres only; no value persisted",
+    "failures": [],
+    "maximum": 100,
+    "current": 10,
+    "available": 90,
+    "admitted": true,
+    "adminPoolClosed": true,
+    "finishedAt": "2026-10-07T17:08:42.066Z"
+  },
+  "outerSeconds": 217.5,
+  "selectedJourneys": 1,
+  "providerCalls": 0,
+  "personalIO": 0,
+  "builds": 0,
+  "oldR1R2R3": "KEEP unchanged"
+}

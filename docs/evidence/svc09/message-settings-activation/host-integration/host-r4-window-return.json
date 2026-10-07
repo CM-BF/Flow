@@ -1,0 +1,61 @@
+{
+  "kind": "SVC09A_R4_ACTUAL_RUNTIME_RETURN_WITH_KEEP",
+  "at": "2026-10-07T17:10:57.626406Z",
+  "actualStart": "2026-10-07T17:09:28.039Z",
+  "outerFinishedAt": "2026-10-07T17:10:00.229545Z",
+  "outerElapsedMs": 32137,
+  "outerExit": 1,
+  "operatorOwnedState": "absent",
+  "work": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "primary": {
+    "phase": "host-consumer",
+    "name": "Error",
+    "code": "START_UNCONFIRMED_CHECK_STATUS"
+  },
+  "cleanup": {
+    "registeredGenerations": 1,
+    "allReportedStopped": true,
+    "mayDrop": false,
+    "fullGenerationsStopped": false,
+    "workComplete": false,
+    "originKnown": true,
+    "cleanupConfirmed": false,
+    "failures": []
+  },
+  "exactProcessObservation": {
+    "identities": 6,
+    "allAbsent": true,
+    "pendingRecords": 0,
+    "at": "2026-10-07T17:10:44.590706Z"
+  },
+  "database": {
+    "name": "flow_preview_cb646cf9ec7e2b4f05df788b",
+    "oid": 1340622,
+    "connections": [],
+    "adminClosed": true,
+    "disposition": "KEEP_NO_DROP"
+  },
+  "privateDirectory": "/private/tmp/flow-svc09a-host-zduxu054",
+  "privateDisposition": "KEEP",
+  "runtimeReturned": true,
+  "overallResult": "FAILED_NOT_HOST_PASS",
+  "providerCalls": 0,
+  "personalIO": 0,
+  "automaticRetry": false,
+  "oldR1R2R3": "Untouched KEEP",
+  "scope": "One actual center was registered/stopped; other seven prospective generations never became active and are not assumed present. Full-eight-generation DROP gate remains false, independently observed actual processes/DB connections are closed."
+}

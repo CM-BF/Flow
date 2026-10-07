@@ -1,0 +1,176 @@
+{
+  "kind": "SVC09A_R4_ACTUAL_FAILED_HOST_RESULT",
+  "at": "2026-10-07T17:12:27.253897Z",
+  "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "preparationDelivery": "fb3bd1b7d3fdb5c8c5b250fd2e0ae40cf919ae2c",
+  "preparationSHA256": "d38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2",
+  "state": "FAILED_AT_DEFAULT_START_CONFIRMED_RUNTIME_RETURN_KEEP",
+  "actualStart": "2026-10-07T17:09:28.039Z",
+  "actualOperatorEnd": "2026-10-07T17:10:00.223405Z",
+  "runtimeReturnAt": "2026-10-07T17:10:57.626406Z",
+  "selectedJourneys": 1,
+  "actualHostInvocations": 1,
+  "rawOperatorMatchesPersistedResult": true,
+  "reports": [
+    {
+      "phase": "operator",
+      "pid": 25565,
+      "ownership": "childPidOnly",
+      "elapsed_ms": 32137,
+      "exit_code": 1,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "signals": [],
+      "rawBytes": 686
+    },
+    {
+      "phase": "clone",
+      "pid": 25566,
+      "ownership": "newChildSession",
+      "elapsed_ms": 4807,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "signals": [],
+      "rawBytes": 282
+    },
+    {
+      "phase": "work",
+      "pid": 28961,
+      "ownership": "newChildSession",
+      "elapsed_ms": 27127,
+      "exit_code": 1,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "signals": [],
+      "rawBytes": 241
+    },
+    {
+      "phase": "cleanup",
+      "pid": 50220,
+      "ownership": "newChildSession",
+      "elapsed_ms": 106,
+      "exit_code": 1,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "signals": [],
+      "rawBytes": 221
+    }
+  ],
+  "supervisedRawBytes": 1430,
+  "entryRawBytes": 531,
+  "primary": {
+    "phase": "host-consumer",
+    "name": "Error",
+    "code": "START_UNCONFIRMED_CHECK_STATUS"
+  },
+  "originalStartupCause": "UNKNOWN; START_UNCONFIRMED_CHECK_STATUS is the saved public failure, no underlying readiness operation error or private diagnostic body examined for this result.",
+  "prelaunchFailure": {
+    "path": "host-r4-preflight-first-failure.json",
+    "actualStarts": 0,
+    "PGProbes": 0,
+    "meaning": "Wrong reader field on aggregate window document, corrected to queue-owned field before one actual invocation; no source/preparation change."
+  },
+  "observed": [
+    "Fixed source098b/artifact2515 copied and original runtime verification reached before-start checkpoint.",
+    "Disposable DB created/marked and setup pool closed. Synthetic loader report is NOT_APP/NOT_PERSONAL.",
+    "Only center40028 registered; original cleanup helper reported stopped. No pending process record.",
+    "Six exact PID/same-number group observations absent; owned DB OID1340622 connections[] and adminClosed."
+  ],
+  "notReached": [
+    "default-legacy success checkpoint",
+    "settings publication",
+    "drain/hold/refresh/resume",
+    "mixed task submission or claims",
+    "new final text[] query and terminal assertions",
+    "normal DROP gate"
+  ],
+  "cleanup": {
+    "registeredGenerations": 1,
+    "allReportedStopped": true,
+    "mayDrop": false,
+    "fullGenerationsStopped": false,
+    "workComplete": false,
+    "originKnown": true,
+    "cleanupConfirmed": false,
+    "failures": []
+  },
+  "resourceReturn": {
+    "exactIdentityCount": 6,
+    "allAbsent": true,
+    "pendingRecords": 0,
+    "database": {
+      "name": "flow_preview_cb646cf9ec7e2b4f05df788b",
+      "oid": 1340622,
+      "connections": [],
+      "adminClosed": true,
+      "disposition": "KEEP_NO_DROP"
+    },
+    "privateDirectory": "/private/tmp/flow-svc09a-host-zduxu054",
+    "privateDisposition": "KEEP",
+    "runtimeReturned": true,
+    "incompleteJourneyDoesNotImplyOtherSevenProspectiveGenerationsAreActive": true
+  },
+  "resourceSamples": {
+    "count": 7,
+    "maxObservedPrivateLogicalBytes": 43407,
+    "maxObservedPrivateAllocatedBytes": 245760,
+    "maxObservedPrivateEntries": 92,
+    "maxObservedDatabaseBytes": 7797783,
+    "minObservedFreeBytes": 19638190080,
+    "meaning": "Phase samples only, last before-start; excludes cloned artifact. Neither atomic nor peak nor post-start complete measurement claim.",
+    "artifactCloneLogicalBytes": 367105165,
+    "artifactCloneAllocatedBytes": 402042880,
+    "artifactExclusivePhysicalBytes": null
+  },
+  "limitsUnchanged": {
+    "operatorSeconds": 215,
+    "outerEnvelopeSeconds": 217.5,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "PGBytes": 134217728,
+    "rawBytes": 2097152,
+    "PGConnectionsPeak": 26,
+    "managementMargin": 16
+  },
+  "providerCalls": 0,
+  "personalIO": 0,
+  "builds": 0,
+  "browser": 0,
+  "oldR1R2R3": "Immutable original results/raw and KEEP untouched. No recovered/backfilled R3 SQLSTATE.",
+  "retry": "No automatic retry. Any future run needs new namespace, reviewed necessary delta and fresh shared window."
+}

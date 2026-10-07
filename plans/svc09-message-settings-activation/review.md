@@ -59,3 +59,7 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 2026-10-07T17:04:10.310331Z正常收录：assignment唯一 `APPROVED_FIXED_R4_HOST_PREPARATION`，P1/P2=0，review16:51:24.998Z；原件main c6ada2b76 `docs/evidence/i02/svc09a-host-r4-preparation-review.json`，不复制。source9c734115/deliveryfb3bd1b7与packet d38a5bfd不变；24新/引用绑定及19有效执行pin、原8例与双组收尾已核。审者5公开runtime重核，私有artifact仅继承原审pin的范围如实保留。
 
 批准仅准备与局部证据；实际R4 NOT_RUN，需Web Cookie唯一NEXT完整RETURN后Lead新调度及全部fresh门槛，不能沿旧许可重投。源码冻结，旧R3首因/FAIL/KEEP不变。
+
+## R4实际结果待唯一保真审查
+
+2026-10-07T17:12:27.253897Z：同已审9c734/d38a入口实际一次，outer32,137ms/exit1，原START_UNCONFIRMED_CHECK_STATUS保留；仅一个center产生并停止。实际资源17:10:57.626406Z RETURN与完整旅程FAIL/DB及private KEEP分开。未到新SQL/mixed与完整生命周期，不能由准备批准或R3部分证据升级本次通过。新raw/结果等唯一只读审查，无自动下一次。
