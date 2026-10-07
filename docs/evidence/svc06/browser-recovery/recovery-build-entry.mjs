@@ -52,13 +52,15 @@ async function readPin(binding) {
   return bytes;
 }
 
-export async function loadRecoveryBuild() {
-  const bytes = await readFile(join(here, 'recovery-build-inputs.json'));
+export async function loadRecoveryBuild({ inputPath = join(here, 'recovery-build-inputs.json'),
+  evidenceDirectory = join(here, 'recovery-build-once'),
+  temporaryPrefix = '/private/tmp/flow-svc06b-recovery-artifact-' } = {}) {
+  const bytes = await readFile(inputPath);
   const delta = JSON.parse(bytes), prior = JSON.parse(await readPin(delta.prior));
   const original = await readPin(prior.inherited);
   for (const binding of [delta.composition, delta.sharedEntry, delta.runtimeProof, delta.supervisor]) await readPin(binding);
-  assert.equal(delta.options.evidenceDirectory, join(here, 'recovery-build-once'));
-  assert.equal(delta.options.temporaryPrefix, '/private/tmp/flow-svc06b-recovery-artifact-');
+  assert.equal(delta.options.evidenceDirectory, evidenceDirectory);
+  assert.equal(delta.options.temporaryPrefix, temporaryPrefix);
   assert.equal(delta.options.runtimeProof, delta.runtimeProof.path);
   return { inputBytes: Buffer.from(JSON.stringify(recoveryBuildInput(original, prior, bytes))), delta };
 }
