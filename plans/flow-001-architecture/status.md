@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:47:00.430324Z / main d5567801；已合入与个人部署分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:02:37.739545Z / main 9f314e89；已合入与个人部署分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin d556780129897582f09945c0621aa2ed64fb52f7 已含 Codex 公共会话协议和 ENG01K 受信工具片。个人仍 backend af51/v18、Web d629/v3/c7b宿主；新恢复、逐消息设置和完整工具正文未部署。 |
+| 已集成main状态 / HEAD | main/origin 9f314e89 已含 Codex 公共会话、ENG01L 只读宿主组合及 X01 固定插件测试证据。个人仍 backend af51/v18、Web d629/v3/c7b宿主；新恢复、逐消息设置和完整工具正文未部署。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 现有个人网页保持可访问；新会话协议和受信工程工具已合入。聊天恢复、消息设置及工具完整正文仍在完成实际使用链路。 |
-| 下一可用交付 | 先交可实际登录并恢复会话的新版本；同时修复工具全文验证材料，推进工程宿主的真实只读启动。 |
+| 下一可用交付 | 先交可实际登录并恢复会话的新版本，保全旧页面资源；工具全文验证修复后接续完整目标交付旅程。 |
 | 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -208,3 +208,7 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 CHAT05P02 原两项 PG 验证失败已保留，07:42:01.684Z 自有数据库、连接、进程组和端口确认收尾；原 owner 定向修正测试身份并补首因观察，不扩大生产校验或重复旧绿检查。ENG01L 已通过限定注入验证，真实入口准备发现策略参数长度与传输上限不符，原 owner 在原范围修正；不把注入通过当真实原生启动。
 
 SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方案](../../../backend-release/docs/evidence/svc06/update-4fe-candidate/candidate.md)。新后台还需显式浏览器会话配置接线，以及三个保留网页与新后台的实际兼容依据；个人版本和用户标签不在本管理收口改变。新版网页还受现有保留版本满额约束，旧页惰性资源不能仅按安静期或页面关闭事件退役。
+
+2026-10-07T08:02:37.739545Z：主线9f314e89已接收ENG01L受审源码与X01包固定/版本固定证据，实际4320为190来源。ENG01L隔离原生initialize已READY、关闭已确认，但目录测量返回unknown，原件与scratch KEEP；不称完整工程资格或全writer撤销。P02 PG02于07:59:48.421609Z终止：0/2失败原件保留，专库/组/端口/exact tmp确认清理归还；原owner只修测试wrapper的已消费body cancel与注入adapter的harness身份，生产store不放宽，未预占下一PG。
+
+REQ19下一片由assignment_review承担SVC09（尚在原P02安全收口前的只读准备）：受信浏览器策略停服务前校验/实际host传递，加集中count/bytes/report策略，使新Web在保留旧三项资源下有正式第四项发布路径。方案见 [原SVC06候选](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/candidate.md) 与 [集中保留规划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/retention-next-policy.md)。未take不写产品；未构建新artifact或操作个人服务。后台策略/迁移、旧App真实兼容、新宿主先读三项后第四CAS均保持独立验收。

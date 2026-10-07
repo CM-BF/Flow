@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T08:08:42.451376+00:00",
+  "target": "3483dae334c06038d9b065b3fabd967419289dd3",
+  "reviewer": "native_center_owner/gpt-6-astra",
+  "verdict": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "bindings": [
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "bytes": 68432,
+      "sha256": "cedbd38d678e879a90fc67759f7ca11d633193cd0f939ecd8a28fbfe24d487ff"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 32721,
+      "sha256": "86d4f9bd5a24c31d3634ea22356249144be456c710874eace7cbc3df034c494b"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 90437,
+      "sha256": "5d318949bd71cf24a50f97ab29f42aedd6bef5692aed64eb38303b14746943ea"
+    }
+  ],
+  "limits": "SVC09 remains proposed scope; O16 original FAIL/KEEP and no-resume scope preserved; initialize ready and cleanup unknown are separate; no product changes or new model/personal authorization",
+  "tests": 0
+}
