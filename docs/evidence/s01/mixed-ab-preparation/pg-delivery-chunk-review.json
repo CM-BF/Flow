@@ -1,69 +1,111 @@
 {
-  "source": "a4ceb283b37dc5cd73ebb072bb912d110b59f78a",
+  "source": "75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff",
   "base": "32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a",
   "bindings": [
     {
       "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
       "bytes": 7920,
-      "sha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2"
+      "sha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts",
-      "bytes": 6208,
-      "sha256": "839827b2e92ba5d00fba9fbcbc8707ae4d46ca2167e48e2cc032e91a1296a8fd"
+      "bytes": 6216,
+      "sha256": "88fe6ebb7c518ace5447957dbd8d08ad141da7d440fc8361406dc231a79c2ec3",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/pg-delivery.test.ts",
       "bytes": 8708,
-      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774"
+      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/delivery-replay.test.ts",
       "bytes": 6433,
-      "sha256": "3ddbecb4734eaf93fc6640bfa652c0c2a32906375d26149444727e658adc825e"
+      "sha256": "3ddbecb4734eaf93fc6640bfa652c0c2a32906375d26149444727e658adc825e",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
       "bytes": 4597,
-      "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e"
+      "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/delivery-replay.ts",
       "bytes": 8513,
-      "sha256": "10871b0ba30b929ffdedc76bea9c605dafc8bad1dea12dd96b3a569a6ff358c5"
+      "sha256": "10871b0ba30b929ffdedc76bea9c605dafc8bad1dea12dd96b3a569a6ff358c5",
+      "mode": "0o644"
     },
     {
       "path": "experiments/runner-capacity/mixed/channel.ts",
       "bytes": 1909,
-      "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c"
+      "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c",
+      "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py",
-      "bytes": 6147,
-      "sha256": "35374d02b4af8206f7000f69c684ceefbab4b91ab08bfb3d013b73a62eece401"
+      "bytes": 6392,
+      "sha256": "7c6b20c48ea3de51b751c798abf633bddfd584363a5deca832f2f96c3be607be",
+      "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json",
       "bytes": 440,
-      "sha256": "914408c1e1c91a1a54eea449936a43b6600ff8512cb86dfcbb80c12e33910e8b"
+      "sha256": "914408c1e1c91a1a54eea449936a43b6600ff8512cb86dfcbb80c12e33910e8b",
+      "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs",
       "bytes": 500,
-      "sha256": "8ba9ceeb3ecdf955ab049f2188da477b0e8727a2d54f0276a4e95a3188cf2c91"
+      "sha256": "8ba9ceeb3ecdf955ab049f2188da477b0e8727a2d54f0276a4e95a3188cf2c91",
+      "mode": "0o644"
     },
     {
       "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-result-review.json",
       "bytes": 1050,
-      "sha256": "2f99d2d7df6824dea35f515fcedda92dcc83d580ff58e1bde774d62b292c1426"
+      "sha256": "2f99d2d7df6824dea35f515fcedda92dcc83d580ff58e1bde774d62b292c1426",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.json",
+      "bytes": 87934,
+      "sha256": "b84810a5837683ad5a157bbf0716d320f7a89f9a86fd6c0b10077723ecccb1a4",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-1.raw",
+      "bytes": 2910,
+      "sha256": "624645866e03db64d8dd5d91451a8d7ce11a3112ee2b08b2b6ee8bedd8d7e59f",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-2.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-3.raw",
+      "bytes": 926,
+      "sha256": "8e9280de9914813e9d5da6b8bfa6c25e2041b0afe63b8d9890272432471d476e",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-4.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": "0o600"
     }
   ],
-  "bytes": 52425,
-  "validation": "NOT_RUN; manager ordinary drain before first child. Fixed source only, no actual replay.",
+  "bytes": 144448,
+  "validation": "18 distinct in rounds: 17/18 first, corrected boundary1/1; focused strict0 both before/after. Original failure retained. Four owned groups/EOF/TMP closed. No new actual replay.",
   "priorInputsUnchanged": [
     "delivery-replay-input-v2.json",
     "delivery-replay-js-v2/manifest.json",
     "delivery-replay-actual.json",
     "delivery-replay-result-manifest.json"
-  ]
+  ],
+  "product": "11abf474fdb7c25cef2ebdc0135da1d0c0bcf5cf"
 }

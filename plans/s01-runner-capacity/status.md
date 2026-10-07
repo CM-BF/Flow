@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:35:01.986Z |
+| 最近更新 | 2026-10-07T15:42:50.435Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 源码a4ceb283b37dc5cd73ebb072bb912d110b59f78a已固定；本次metadata封存后核clean/origin。旧actual/source/compiled/raw不改。 |
+| 工作树dirty状态 | 本轮四raw/单记录与结果metadata待封存；源码75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff已固定，最终核clean/origin。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 当前packing窄修；历史32796520b07d4eed9f34c7c1db757740b7e20452 actual结果已独审，不继承为本优化收益。 |
+| 检查状态 | PASSED 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff：18 distinct分轮（首17/18、修夹具后1/1）及最终strict0；原失败保留，非性能replay。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | a4ceb283b37dc5cd73ebb072bb912d110b59f78a |
+| 实现目标 | 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff |
 | 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 已确认聚合发送过程中会反复编码增长中的内容，正在减少这部分额外工作；此前诊断结果已独立审查。 |
-| 下一可用交付 | 保持数据、字节边界和未知处理不变的局部优化，以及直接行为验证。 |
-| 当前阻塞 | ACTIVE：共享构建排程已要求暂停新检查；当前0检查进程，仅继续源码，未授新性能运行。 |
+| 当前产出 | 减少观察数据打包时的重复编码，直接行为与字节边界检查已完成；原失败及修复记录保留。 |
+| 下一可用交付 | 独立审查这次局部优化与检查结果，再安排有依据的后续对照。 |
+| 当前阻塞 | ACTIVE: 本局部源码与结果待独立审查；没有新的性能窗口授权。 |
 | 需用户决定 | NONE |
-| Review | 历史replay 32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a 于15:23:32 RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；新packing源码与检查待审。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:25:09Z fresh完整身份匹配，继续持有。 |
+| Review | PENDING 当前packing源码/局部结果；旧32cb actual15:23:32已独审APPROVED，边界独立。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:39:40Z后fresh身份一致，review期保留。 |
 | 架构影响 | 仅现私有pg-delivery Module内部chunk构造；Interface/record/SQL聚合/消费者/最终完整envelope校验不变。旧生成JS属于历史actual，不以新TS替换。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -280,3 +280,5 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 2026-10-07T15:35:01.986Z 源码checkpoint：a4ceb283b37dc5cd73ebb072bb912d110b59f78a已push，11abf474仅finish的17增8删；[本片唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)。旧record/send/聚合/接口/actual输入原样；新直接检查已固定但0执行，Web独占构建drain优先，不把准备当通过。四新例及6个模块直接影响例、8个receiver语义例共18候选，focused strict另1child。没有运行旧64/实际replay，累计child0/raw0/TMP0；源码/新文档当前小于128KiB，不重算旧trace或退还KEEP。
 
 2026-10-07T15:35:56.672Z 安全checkpoint：本次只有owner状态形状解析（非工程测试），主线parser blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4返回errors=[]/human.missing=[]，父FLOW-001/co-lead mika正确，原任务开工UNKNOWN为唯一timing提示。未请求snapshot/声称新HEAD已聚合。工程child0/raw0/TMP0，manager drain仍阻新launch；本源片SOURCE_READY/VALIDATION_PENDING，不将此停止点当完整任务完成。
+
+2026-10-07T15:42:50.435Z 普通actual RETURN：15:41:12.861Z首child→15:41:49.291Z末child，共4串行/监督2589ms/raw3836B，组absent/MERGED EOF/四TMP同identity有界计量后清除且精确ENOENT，已即时归还Mika ordinary。首direct17/18红为fixture507B低于最小512，延长允许epoch后原断言1/1，strict两次0；18distinct分轮，不拼成最终全跑。产品自11ab固定未变，旧actual/compiled/raw保持；本段未跑PG/replay/provider。编码量测试221718B计长工作/111104B输出仅验证算法工作量界，不证明CPU/延迟改善；没有旧实现新baseline。总新source/metadata/raw低于2MiB，末TMP样本350/0/326/0B不冒峰值。

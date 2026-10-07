@@ -1,6 +1,6 @@
 # S01 buffered chunk packing
 
-Source `a4ceb283b37dc5cd73ebb072bb912d110b59f78a`, product delta `11abf474fdb7c25cef2ebdc0135da1d0c0bcf5cf`; base `32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a`. [Bindings](pg-delivery-chunk-review.json). SOURCE_READY / VALIDATION_PENDING, ordinary paused before any child. This is not a new replay grant.
+Source `75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff`, product delta `11abf474fdb7c25cef2ebdc0135da1d0c0bcf5cf`; base `32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a`. [Bindings](pg-delivery-chunk-review.json). SOURCE_AND_LOCAL_RESULT_READY; four bounded children closed. This is not a new replay grant.
 
 ## Responsibility and invariant
 
@@ -12,10 +12,16 @@ Finite copied fields contain permitted enum/epoch text and validated numbers. Un
 
 Four new cases cover bounded encoding work, exact boundaries and separate array commas with ordinal 9/10 and 99/100, oversized/private-field rejection, and an injected final-encoding mismatch proving the final check remains authoritative. Selected existing tests cover samples/SQL aggregation, sample/group/byte capacity, partial sink, and the actual receiver's eight finite semantic cases. No whole old A/B/64-test or real replay rerun.
 
-The local caller reuses fixed OPS14 and its already-reviewed strong process/capture predicate plus bounded same-inode inventory before deletion. Explicit environment/dependencies/source inputs, final process/EOF and each raw are recorded in one `pg-delivery-chunk-local.json`; unknown keeps its own root and stops new launches. Each mode gets at most 30 seconds; five children/90 cumulative and original 15:45:09Z wall cutoff remain. Subsequent commands require resumed ordinary authorization; new actual replay remains NOT_OPEN. All old source, generated JS/input manifests/raw stay fixed at their historical Git.
+The local caller reuses fixed OPS14 and its already-reviewed strong process/capture predicate plus bounded same-inode inventory before deletion. Explicit environment/dependencies/source inputs, final process/EOF and each raw are recorded in one `pg-delivery-chunk-local.json`; unknown keeps its own root and stops new launches. Each mode gets at most 30 seconds; five children/90 cumulative and original 15:45:09Z wall cutoff remain. This ordinary segment is complete; new actual replay remains NOT_OPEN. All old source, generated JS/input manifests/raw stay fixed at their historical Git.
 
-Future ordinary command (not executed at this source checkpoint): `/usr/bin/env -i /opt/homebrew/bin/python3.13 -I -B docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py direct`, then `types`. Latest declared fresh floor 14,414,970,880B; manager higher sum wins. Shared build drain currently blocks launch. 0 PG/HTTP/provider/Chrome/install/performance replay.
+Executed ordinary entry: `/usr/bin/env -i /opt/homebrew/bin/python3.13 -I -B docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py direct`, then `types`. Latest declared fresh floor 14,414,970,880B; manager higher sum wins. Shared build/K01 waiting was retained; actual resumed after K01 RETURN. 0 PG/HTTP/provider/Chrome/install/performance replay.
 
 ## Independent review request
 
 Review only this `pg-delivery.ts` delta, four new direct tests and the eventual bounded local result. Check exact output semantics, header/array accounting and final full-envelope authority; no need to re-review old 2048-trace actual. The db15:23:32 result approval is archived separately in [result-review](delivery-replay-result-review.json) and does not approve this optimization. Original O1 FAIL/O2 NOT_RUN and all KEEP unchanged. Skills: existing local find-skills/codebase-design/clean-code; narrow responsibility, explicit unknown, no redundant framework.
+
+## Actual local result
+
+Original direct18 selected17pass/1fail (fixture507B below minimum512), strict0; only extend fixture epoch and rerun that boundary1pass/22unselected, finalstrict0. Product packing source stayed identical throughout all four children; 18distinct in rounds, not final18-suite rerun. Raw3836B; four owned groups finalabsent/MERGED EOF, full observed=retained, no secondary/signals, first expectednonzero and initialEPERM preserved. Four same-identity bounded TMP samples deleted; owner exactENOENT recorded. Supervision2589ms versus caller2816.85ms, wholeexternal/peak UNKNOWN. [Single record](pg-delivery-chunk-local.json).
+
+Deterministic work counter: finish serialized221718B of JSON values for111104B actual output/576rows, satisfying linear-work regression. No old-version execution baseline, new replay, CPU or latency comparison was run; this is not evidence of online performance gains. Module unchanged after product11ab.

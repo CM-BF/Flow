@@ -2,7 +2,7 @@
 
 ## 当前：buffered packing 窄修准备
 
-PENDING，固定source a4ceb283b37dc5cd73ebb072bb912d110b59f78a，现0工程检查；[唯一窄审入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)和11bindings固定。只减增长prefix的重复编码，最终send完整JSON门禁保留，不是实际性能结论。
+PENDING，固定source 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff，已完成18distinct分轮+strict0；[唯一窄审入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)和16bindings固定。只减增长prefix的重复编码，最终send完整JSON门禁保留，不是实际性能结论。
 
 ## 已交付：唯一replay实际结果独审
 

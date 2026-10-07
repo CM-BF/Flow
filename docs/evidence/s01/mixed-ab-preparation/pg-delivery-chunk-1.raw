@@ -1,0 +1,34 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe[39m
+
+ [32m✓[39m experiments/runner-capacity/mixed/pg-delivery.test.ts [2m([22m[2m11 tests[22m[2m | [22m[33m5 skipped[39m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m experiments/runner-capacity/mixed/delivery-replay.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+[90mstdout[2m | experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts[2m > [22m[2mchunk packing[2m > [22m[2mbounds encoding work by output size without repeatedly encoding growing prefixes
+[22m[39m{"evidence":"finish-encoding-work","rows":576,"encodedWorkBytes":221718,"outputBytes":111104}
+
+ [31m❯[39m experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts [2m([22m[2m4 tests[22m[2m | [22m[31m1 failed[39m[2m)[22m[32m 10[2mms[22m[39m
+     [32m✓[39m bounds encoding work by output size without repeatedly encoding growing prefixes[32m 6[2mms[22m[39m
+[31m     [31m×[31m keeps exact-fit boundaries, comma bytes and chunk ordinal digit changes[39m[32m 2[2mms[22m[39m
+     [32m✓[39m rejects an oversized item and does not admit private Unicode or escaped input fields[32m 1[2mms[22m[39m
+     [32m✓[39m rechecks the complete encoded envelope before the sink even if its size differs from packing[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts[2m > [22mchunk packing[2m > [22mkeeps exact-fit boundaries, comma bytes and chunk ordinal digit changes
+[31m[1mAssertionError[22m: expected 507 to be greater than or equal to 512[39m
+[36m [2m❯[22m experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts:[2m42:22[22m[39m
+    [90m 40| [39m    if (referenceChunk.kind !== 'pg-observation-chunk') throw new Erro…
+    [90m 41| [39m    const twoBytes = Buffer.byteLength(JSON.stringify({ ...referenceCh…
+    [90m 42| [39m    [34mexpect[39m(twoBytes)[33m.[39m[34mtoBeGreaterThanOrEqual[39m([34m512[39m)[33m;[39m
+    [90m   | [39m                     [31m^[39m
+    [90m 43| [39m    const exact = collect(3, twoBytes, boundaryEpoch); exact.delivery.…
+    [90m 44| [39m    expect(exact.messages.map(message => message.kind === 'pg-observat…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m2 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m17 passed[39m[22m[2m | [22m[33m5 skipped[39m[90m (23)[39m
+[2m   Start at [22m 15:41:13
+[2m   Duration [22m 372ms[2m (transform 68ms, setup 0ms, import 93ms, tests 30ms, environment 0ms)[22m
+
