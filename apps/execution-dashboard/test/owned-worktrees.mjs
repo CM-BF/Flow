@@ -50,6 +50,8 @@ export async function createOwnedWorktrees(parent = tmpdir()) {
   const inputs = path.join(root, 'inputs');
   const owned = [];
   let disposed = false;
+  let initialHead;
+  let commonDirectory;
   try {
     await mkdir(repository);
     await mkdir(inputs);
@@ -58,13 +60,13 @@ export async function createOwnedWorktrees(parent = tmpdir()) {
     await git(repository, 'add', 'fixture.txt');
     await git(repository, '-c', 'user.name=Flow fixture', '-c', 'user.email=fixture@invalid',
       '-c', 'commit.gpgsign=false', '-c', 'core.hooksPath=/dev/null', 'commit', '-m', 'Fixture');
+    initialHead = await git(repository, 'rev-parse', 'HEAD');
+    commonDirectory = await realpath(path.join(repository, '.git'));
   } catch (error) {
     try { await rm(root, { recursive: true }); }
     catch (cleanupError) { throw new AggregateError([error, cleanupError], 'Fixture initialization and cleanup failed', { cause: error }); }
     throw error;
   }
-  const initialHead = await git(repository, 'rev-parse', 'HEAD');
-  const commonDirectory = await realpath(path.join(repository, '.git'));
 
   async function verifyRepository() {
     const identity = await lstat(root);
