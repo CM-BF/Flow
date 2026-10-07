@@ -1,0 +1,301 @@
+{
+  "at": "2026-10-07T02:53:50.230974+00:00",
+  "sourceTarget": "b21890799fe11b8f1937e4b08382c997877f6d53",
+  "base": "1b41f58816341f77e69a64d1cb5cfe7650c01b49",
+  "review": "PENDING",
+  "implementationFiles": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "tools/personal-preview/backend-release/artifact.test.mjs",
+    "tools/personal-preview/backend-release/build.mjs",
+    "tools/personal-preview/backend-release/clone-store.py",
+    "tools/personal-preview/backend-release/runtime-installation.mjs",
+    "tools/personal-preview/backend-release/runtime-installation.test.mjs"
+  ],
+  "checks": {
+    "distinct": 7,
+    "runCount": 4,
+    "totalSelectedExecutions": 9,
+    "cumulativeSupervisorMs": 1684,
+    "fullArtifact": "NOT_RUN",
+    "unchangedSelectorChecks": "NOT_RERUN"
+  },
+  "bindings": [
+    {
+      "kind": "source",
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4145,
+      "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6619,
+      "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "source",
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10065,
+      "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 9549,
+      "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "directInput",
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 4881,
+      "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929",
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache/stdout.txt",
+      "bytes": 1097,
+      "sha256": "d11513a8c24ec24f13279fb80d955877ad05834f2fa721a44e83cef12f16fc65"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache-external/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache-external/stdout.txt",
+      "bytes": 237,
+      "sha256": "0cbbfd1606d6961b712a3ee0467f3e88c635dcbc2f1cab38cb021a9916eac984"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/module-green/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/module-green/stdout.txt",
+      "bytes": 776,
+      "sha256": "09d7a73541baa4b1ee7148c8b4a78ec8a9c21ebfa6d6a645eb00a9b7f6ba3adf"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/stdout.txt",
+      "bytes": 3656,
+      "sha256": "5ef0ab2e8055d2815e7d797e305295056a53d962250cd7ef2e7e5e010d8e18b0"
+    },
+    {
+      "kind": "raw",
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/run.json",
+      "bytes": 12019,
+      "sha256": "c1325f66beeca0796b2ed7e65719049a82f4e50c187e2dec0a191adad6972908"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-result.json",
+      "bytes": 2434,
+      "sha256": "84eab09d6b4becd2182057e82f3a06022cc8e6291a6c53210bb4ba56691423d4"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-result-manifest.json",
+      "bytes": 1127,
+      "sha256": "6733843766ba1d8986faef5c5105e4d91a99f2ae79bccf039ed1b149604b5159"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-outer.json",
+      "bytes": 666,
+      "sha256": "db7fe02ada84ed02c890e7d049dcf3dbeb3bd05ef52d63e55ac0d209fd1eb024"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-receipt.json",
+      "bytes": 945,
+      "sha256": "6448340e89a912e7f0aefb496b54658a7ee9f0d6f5758349e3fe6c4b9aade60c"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-install-inputs.json",
+      "bytes": 2221,
+      "sha256": "88011300d180356bd16146ccda4a12e28b22f95f844720e359791f4cba2fe871"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-official-metadata.json",
+      "bytes": 3716,
+      "sha256": "ed36bc66e2b2e87aff5274e3cb197d106add7afb1a7d680444dad667f0d3f103"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-amend-receipt.json",
+      "bytes": 1223,
+      "sha256": "a245090a1154362748e2904e88eaa84736583c5b62c00f2f8e79d09554e3bfb7"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-clone-safety-point.json",
+      "bytes": 2431,
+      "sha256": "cec56853b408d2bc69d57ed920ff1f7690a46e8180a7d76f46d0c66cd500745c"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-builder-checks.md",
+      "bytes": 2642,
+      "sha256": "770f0708f106b9f1c3cc1a507ed8bf9371e659173acf843b7088e5cac454edfa"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/svc06/parser-builder-interface.md",
+      "bytes": 4937,
+      "sha256": "ea2defa44fbf4540b45f940630f898175ecb63a72b6753e0bc362acf46df6129"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de"
+    },
+    {
+      "kind": "installedParser",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095"
+    },
+    {
+      "kind": "runtimeInput",
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/clonefile.h",
+      "bytes": 2490,
+      "sha256": "1efe4ef4241c360905ecc40092245334725a9f1b208be8886ce87e2538b89cbd"
+    },
+    {
+      "kind": "runtimeInput",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ]
+}

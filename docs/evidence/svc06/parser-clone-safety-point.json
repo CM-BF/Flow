@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T02:38:09.054319+00:00",
+  "reviewer": "native_center_owner",
+  "target": "457f1ba86e9f8d0c6edaef2f636953cd5520bcbf",
+  "state": "PAUSED_FOR_USER_SERVICE_RECOVERY_NO_FINAL_APPROVAL",
+  "read": [
+    "complete six fixed product files/delta versus1b41; interface draft/unique status; no old raw matrix"
+  ],
+  "bindings": [
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 5640,
+      "sha256": "7c73fbe667e25df80a55c056d99b5dad19adf100247cbab4d4aed51d69bb7402"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6619,
+      "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 8855,
+      "sha256": "a9b737286ceb297b8f5728616680a07e6a73a85c896b3c05d03085ca45918118"
+    }
+  ],
+  "confirmedFindings": [],
+  "pendingSourceQuestion": [
+    {
+      "file": "tools/personal-preview/backend-release/clone-store.py",
+      "lines": "104-115",
+      "question": "selected_copy verifies a regular source then delegates to legacy recursive copy(). If source becomes a directory between verification and copy lstat, recursive enumeration occurs before post-check; assess selected-only budget boundary and prefer file-only clone path. Not a finalized review finding yet."
+    }
+  ],
+  "remaining": [
+    "read direct pure selector/cache/projection seams and final author validation packet",
+    "finish exact source binding/controlled lock input audit",
+    "finalize or clear pending narrow source question"
+  ],
+  "executions": {
+    "tests": 0,
+    "build": 0,
+    "installation": 0,
+    "PG": 0,
+    "provider": 0,
+    "service": 0
+  },
+  "workingDraftObserved": "artifact.test.mjs dirty; new parser-builder-interface/install evidence untracked at initial read; not included as fixed source facts"
+}

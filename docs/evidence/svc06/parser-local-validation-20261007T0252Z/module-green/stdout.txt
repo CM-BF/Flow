@@ -1,0 +1,14 @@
+✔ formal YAML parser accepts lock text and rejects ambiguous or executable-looking YAML constructs (30.180667ms)
+✔ staging selects backend cache only and restores exact source bytes after a semantically unchanged frozen install (17.286583ms)
+✔ missing selected cache index fails before source projection is written (8.781708ms)
+✔ changed projected lock or workspace manifest cannot be concealed by restoring original bytes (13.70025ms)
+✔ selected clone verifies exact content and ignores unrelated cache paths without following them (246.007833ms)
+✔ selected clone rejects corrupt bytes, selected symlinks and escaping manifest paths (348.149542ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 675.161791

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 15:26 UTC；纯模块接收与旧保护片分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:58:16 UTC；本次限定独审收口，主线接收待完成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,30 +10,30 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 原基线 280289008a5a3779e4e5e6453181b96062ed9514；本片 base 91402e174022b7568aa21ce2ddfcb69932e111bd；源码 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
-| 工作树dirty状态 | 产品源码停写；仅主线接收 metadata，本次提交后核 clean/push |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
-| 实现目标 | 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
-| 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/installation-view.mjs, tools/personal-preview/backend-release/cache-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/cache-plan.test.mjs, docs/evidence/svc06/closure-observe.mjs |
-| 检查状态 | PASSED 87dc292ae2dc8c1357f074ec7bddd41de20108d8：新纯模块 7/7、语法6/6，固定锁只读选择256/683；0安装/fullbuild/PG/provider |
+| 工作基线 / HEAD | 本片base 1b41f58816341f77e69a64d1cb5cfe7650c01b49；正式parser/builder源码 b21890799fe11b8f1937e4b08382c997877f6d53 |
+| 工作树dirty状态 | 仅独审metadata归档；本次提交后全源停写供受控接收 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | integration |
+| 实现目标 | b21890799fe11b8f1937e4b08382c997877f6d53 |
+| 实现范围 | package.json, pnpm-lock.yaml, tools/personal-preview/backend-release/artifact.test.mjs, tools/personal-preview/backend-release/build.mjs, tools/personal-preview/backend-release/clone-store.py, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
+| 检查状态 | PASSED b21890799fe11b8f1937e4b08382c997877f6d53；6新模块+1直接消费者分轮7 distinct；原红保留，完整产物NOT_RUN |
 | 已集成main状态 / HEAD | 纯模块87dc经受控等价提交fcf59接收 main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c，6source与固定target及工作树逐字相同；原target并非main祖先，[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)。旧保护6d276接收cbd3保留；个人runtime/Web未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台依赖选择与安装配置校验已进入主线；完整独立运行产物尚未验证 |
-| 下一可用交付 | 本片段已交付；后继接入固定解析器，并在空间满足时验证真实离线产物 |
-| 当前阻塞 | ACTIVE: 完整构建仍需至少2.5 GiB可用空间并保留1 GiB收尾；正式解析器和builder接线待共享依赖，纯模块不受阻 |
+| 当前产出 | 后台构建已接入固定解析器和按需依赖复制，局部检查与独立审查通过。 |
+| 下一可用交付 | 接收已审改动后，准备真实固定后台产物的安装、启动及隔离性验证。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED 87dc292ae2dc8c1357f074ec7bddd41de20108d8（纯选择器限定）；旧6d276保护片批准与main接收保留 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v4，9 literal scopes；见 amend-receipt.json |
-| 架构影响 | 新增私有纯 dependency/cache plan 与 staging投影 Interface；尚未接入builder。固定架构图由 Execution Lead 在模块接收后按实际接线范围更新 |
+| Review | APPROVED_LIMITED_PARSER_BUILDER b21890799fe11b8f1937e4b08382c997877f6d53；native_center_owner独审，43绑定/7源无P1/P2，完整产物未验 |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
+| 架构影响 | build-only惰性YAML正式接入，复用原选择/投影/缓存纯规则；单文件fd clone不进入旧递归。公开host接口不变，完整artifact后继仍需集成点验证。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
-| SVC06-03 | in-progress | assignment_review | 固定 6d276；完整构建资源阻塞，seed 仅只读核算 |
-| SVC06-04 | in-progress | assignment_review / 独立reviewer | [检查与限制](../../docs/evidence/svc06/README.md)；完整 pinned journey 未验 |
+| SVC06-03 | in-progress | assignment_review | 正式parser/builder接线局部已固定；完整产物与checkout隔离未验 |
+| SVC06-04 | in-progress | assignment_review / 独立reviewer | [本轮7不同检查](../../docs/evidence/svc06/parser-builder-checks.md)通过，独审待完成；完整运行后继open |
 | SVC06-05 | pending | 独立operator | 无个人操作许可 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
@@ -61,3 +61,21 @@ Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`�
 ## 纯模块主线接收（2026-10-06 15:26 UTC）
 
 [独立核对回执](../../docs/evidence/svc06/closure-main-receipt.json)：main fb9fe5e745ee1617f889a7fea420d445a0b7c05c通过等价提交fcf59接收6source，固定87dc/main/工作树逐字相同，远端main同SHA；原feature target/metadata非main祖先，不将此误判为产品未接。仅本片delivered，不完成SVC06-03/04/05，不复跑原检查。parser/install/build与资源gate保留，产品停写、claim v4仍保留后继范围。
+
+## 正式构建接线恢复
+
+2026-10-07 02:26:54 UTC：fresh claim v4确认后原子amend为v5；新增根manifest/lock两literal。复用87dc选择器而不重跑原7例。正式parser为yaml2.9.0公开接口，build-only惰性加载；保留主线7a7c3f4b214c41fb740c610d810f2fc5963d25b2的12行plugin-runtime锁增量。当前仅源码/固定依赖准备，安装与局部检查先按单独预算调度；完整构建仍须≥2.5GiB且保1GiB收尾、固定输入独审与窗口，不由当前余量自动授权。03/04/05保持open。
+
+## 私有构建解析器可用
+
+2026-10-07 02:37:17 UTC：已审固定457f入口实际一次离线安装yaml2.9.0，外层exit0、完整EOF、owned group absent；233原包文件逐hash相同且nlink1，独立namespace实际分配2,674,688B/逻辑1,452,918B，raw2603B，缺样0。无donor写入/网络/import/PG/provider，保留自己的小安装与诊断。原entry receipt pending由[外层原始回执](../../docs/evidence/svc06/parser-install-outer.json)和[结果](../../docs/evidence/svc06/parser-install-result.json)闭合。新6模块用例和原受影响1直接消费者尚未运行，fullartifact仍NOT_RUN。
+
+## 2026-10-07 02:53:50 UTC：正式parser/builder局部可审交付
+
+私有yaml47b成功安装由本轮实际parse消费；selected_copy潜在目录递归已红复现并改fd单文件clone。6新模块与1 empty-cache直接消费者分轮通过，累计1684ms/120s，原红和初次tmp误置repo拒绝完整保留。自有tmp正常清理，完整构建未启动，原≥2.5GiB/保1GiB及后续固定一致Git目标要求保持。[manifest](../../docs/evidence/svc06/parser-builder-manifest.json) / [结果](../../docs/evidence/svc06/parser-builder-checks.md)。
+
+## 2026-10-07 02:58:16 UTC：正式parser/builder限定独审批准
+
+native_center_owner 于 `2026-10-07T02:55:46.413702+00:00`（review原件时间）独立 APPROVED_LIMITED_PARSER_BUILDER，source `b21890799fe11b8f1937e4b08382c997877f6d53`、deliverya1f2，43 fixed/current绑定与11不变直接输入均核。原selected递归疑点关闭，7 distinct/4轮/1684ms与原红/清理事实保持；reviewer0重跑。原始run首次记录时间 `2026-10-07T02:51:08.145877+00:00`，最后更新 `2026-10-07T02:52:16.551813+00:00`，两者为记录落盘时间；未另保存各轮真实startedAt/finishedAt，故为UNKNOWN，不从目录标签或elapsed推算。
+
+[唯一review](../../docs/evidence/svc06/parser-builder-independent-review.json) / [绑定](../../docs/evidence/svc06/parser-builder-review-bindings.json)。本片integration，全源码停写；下一完整artifact仍先固定一致Git target/原资源门槛与共享窗口，不启动build/PG/个人服务。

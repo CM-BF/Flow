@@ -1,0 +1,373 @@
+{
+  "at": "2026-10-07T02:51:08.145877+00:00",
+  "scope": "6 new runtime-installation cases + 1 empty-cache direct consumer; unaffected old checks excluded",
+  "cumulativeBudgetMs": 120000,
+  "commandBudgetMs": 30000,
+  "tmpThresholdBytes": 16777216,
+  "outputLimitPerCommand": 131072,
+  "measurement": "sampled tmp metadata, not atomic maximum or filesystem reservation",
+  "privateParserInstall": "47b1ff1db67ba109fb0ce737a42a01f2bff37433 / parser-install-result.json",
+  "fullArtifact": "NOT_RUN",
+  "runs": [
+    {
+      "pid": 25238,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 369,
+      "stdout": "red/stdout.txt",
+      "stderr": "red/stderr.txt",
+      "observed_bytes": 3656,
+      "retained_bytes": 3656,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "red",
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+          "bytes": 10065
+        },
+        {
+          "path": "tools/personal-preview/backend-release/clone-store.py",
+          "sha256": "94e646c4afafc1ac0f7ffc9f5069f836f9b2210e886953cb7cff94ac1c38e313",
+          "bytes": 5683
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+          "bytes": 6619
+        }
+      ],
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "--test-name-pattern=selected clone rejects",
+        "tools/personal-preview/backend-release/runtime-installation.test.mjs"
+      ],
+      "resourcePeak": {
+        "logicalBytes": 6062,
+        "allocatedBytes": 49152,
+        "minimumFreeBytes": 26582261760,
+        "samples": 16,
+        "vanishedChildren": 0
+      },
+      "resourceThresholdsMet": true,
+      "tmpRemaining": [],
+      "tmpRemoved": true
+    },
+    {
+      "pid": 53662,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 721,
+      "stdout": "module-green/stdout.txt",
+      "stderr": "module-green/stderr.txt",
+      "observed_bytes": 776,
+      "retained_bytes": 776,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "module-green",
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+          "bytes": 10065
+        },
+        {
+          "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+          "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+          "bytes": 4145
+        },
+        {
+          "path": "tools/personal-preview/backend-release/clone-store.py",
+          "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+          "bytes": 6852
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+          "bytes": 6619
+        },
+        {
+          "path": "tools/personal-preview/backend-release/build.mjs",
+          "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+          "bytes": 4891
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+          "bytes": 9549
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+          "bytes": 1327
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+          "bytes": 3445
+        }
+      ],
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "tools/personal-preview/backend-release/runtime-installation.test.mjs"
+      ],
+      "resourcePeak": {
+        "logicalBytes": 7460,
+        "allocatedBytes": 57344,
+        "minimumFreeBytes": 26579140608,
+        "samples": 29,
+        "vanishedChildren": 0
+      },
+      "resourceThresholdsMet": true,
+      "tmpRemaining": [],
+      "tmpRemoved": true
+    },
+    {
+      "pid": 54430,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 89,
+      "stdout": "empty-cache/stdout.txt",
+      "stderr": "empty-cache/stderr.txt",
+      "observed_bytes": 1097,
+      "retained_bytes": 1097,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "empty-cache",
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+          "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+          "bytes": 10065
+        },
+        {
+          "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+          "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+          "bytes": 4145
+        },
+        {
+          "path": "tools/personal-preview/backend-release/clone-store.py",
+          "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+          "bytes": 6852
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+          "bytes": 6619
+        },
+        {
+          "path": "tools/personal-preview/backend-release/build.mjs",
+          "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+          "bytes": 4891
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+          "bytes": 9549
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+          "bytes": 1327
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+          "bytes": 3445
+        }
+      ],
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "--test-name-pattern=offline missing selected cache",
+        "tools/personal-preview/backend-release/artifact.test.mjs"
+      ],
+      "resourcePeak": {
+        "logicalBytes": 224,
+        "allocatedBytes": 0,
+        "minimumFreeBytes": 26579386368,
+        "samples": 5,
+        "vanishedChildren": 0
+      },
+      "resourceThresholdsMet": true,
+      "tmpRemaining": [],
+      "tmpRemoved": true
+    },
+    {
+      "pid": 66770,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 505,
+      "stdout": "empty-cache-external/stdout.txt",
+      "stderr": "empty-cache-external/stderr.txt",
+      "observed_bytes": 237,
+      "retained_bytes": 237,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "phase": "empty-cache-external",
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+          "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+          "bytes": 4145
+        },
+        {
+          "path": "tools/personal-preview/backend-release/clone-store.py",
+          "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+          "bytes": 6852
+        },
+        {
+          "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+          "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+          "bytes": 6619
+        },
+        {
+          "path": "tools/personal-preview/backend-release/build.mjs",
+          "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+          "bytes": 4891
+        },
+        {
+          "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+          "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+          "bytes": 9549
+        },
+        {
+          "path": "tools/personal-preview/backend-release/installation-view.mjs",
+          "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+          "bytes": 1327
+        },
+        {
+          "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+          "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+          "bytes": 3445
+        }
+      ],
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "--test-isolation=none",
+        "--test-name-pattern=offline missing selected cache",
+        "tools/personal-preview/backend-release/artifact.test.mjs"
+      ],
+      "resourcePeak": {
+        "logicalBytes": 12195310,
+        "allocatedBytes": 13832192,
+        "minimumFreeBytes": 26564063232,
+        "samples": 16,
+        "vanishedChildren": 1
+      },
+      "resourceThresholdsMet": true,
+      "tmpPath": "/private/tmp/flow-svc06-local-empty-3a65sywl",
+      "tmpInitialIdentity": [
+        16777234,
+        123358162
+      ],
+      "tmpRemaining": [],
+      "tmpRemoved": true,
+      "priorFailure": "Original TMPDIR was within repository, correctly rejected by BACKEND_STAGE_LOCATION_INVALID; source unchanged; rerun only this one selected case with isolated external temp."
+    }
+  ],
+  "updatedAt": "2026-10-07T02:52:16.551813+00:00"
+}

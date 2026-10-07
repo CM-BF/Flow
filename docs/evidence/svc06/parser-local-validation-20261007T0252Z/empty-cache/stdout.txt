@@ -1,0 +1,30 @@
+✖ offline missing selected cache records pre-install failure before cleaning stage and publishes nothing (35.539833ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 47.607791
+
+✖ failing tests:
+
+test at tools/personal-preview/backend-release/artifact.test.mjs:39:1
+✖ offline missing selected cache records pre-install failure before cleaning stage and publishes nothing (35.539833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'BACKEND_STAGE_LOCATION_INVALID'
+  - 'ENOENT'
+  
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/artifact.test.mjs:48:58)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'BACKEND_STAGE_LOCATION_INVALID',
+    expected: 'ENOENT',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

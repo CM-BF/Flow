@@ -1,0 +1,53 @@
+✖ selected clone rejects corrupt bytes, selected symlinks and escaping manifest paths (315.509708ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 328.091625
+
+✖ failing tests:
+
+test at tools/personal-preview/backend-release/runtime-installation.test.mjs:125:1
+✖ selected clone rejects corrupt bytes, selected symlinks and escaping manifest paths (315.509708ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /CLONE_REGULAR_FILE_REQUIRED/. Input:
+  
+  'Error: Command failed: /usr/bin/python3 -c \n' +
+    'import os, runpy, sys\n' +
+    'module = runpy.run_path(sys.argv[1])\n' +
+    "verify = module['verify_file']\n" +
+    'def replace(path, entry):\n' +
+    '    result = verify(path, entry)\n' +
+    '    if path == sys.argv[5]:\n' +
+    '        os.unlink(path)\n' +
+    '        os.mkdir(path)\n' +
+    "        with open(os.path.join(path, 'unselected'), 'w') as stream:\n" +
+    "            stream.write('must not clone')\n" +
+    '    return result\n' +
+    "module['selected_copy'].__globals__['verify_file'] = replace\n" +
+    "module['selected_copy'](sys.argv[2], sys.argv[3], sys.argv[4])\n" +
+    ' /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/tmp/svc06-installation-9oIjEG/seed /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/tmp/svc06-installation-9oIjEG/changed-directory /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/tmp/svc06-installation-9oIjEG/selected-cache.json /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/tmp/svc06-installation-9oIjEG/seed/files/4e/95ae5c8cc9c60392530d8a8fdc18cb0608a075c251355b0aefbdebd2761911c50ffa48244192459ad25059b7535f62333f7897685fd7b28552cbdf1356dd7d\n' +
+    'Traceback (most recent call last):\n' +
+    '  File "<string>", line 14, in <module>\n' +
+    '  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py", line 112, in selected_copy\n' +
+    '    after = verify_file(destination, entry)\n' +
+    '  File "<string>", line 6, in replace\n' +
+    '  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py", line 43, in verify_file\n' +
+    "    with os.fdopen(os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK), 'rb') as stream:\n" +
+    '  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/os.py", line 1023, in fdopen\n' +
+    '    return io.open(fd, *args, **kwargs)\n' +
+    'IsADirectoryError: [Errno 21] Is a directory: 3\n'
+  
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/runtime-installation.test.mjs:148:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Error],
+    expected: /CLONE_REGULAR_FILE_REQUIRED/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

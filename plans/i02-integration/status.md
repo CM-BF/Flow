@@ -2,25 +2,25 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06T23:49:28.486955+00:00 / fixed main b178d17a |
+| 最近更新 / 最近main同步核验 | 2026-10-07T02:59:58.580Z / main18144593；本次接收SVC06固定局部片 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main b178d17a；本批只接同af51中心恢复证据与生命周期后继文档，无新产品源码 |
+| 工作基线 / HEAD | main18144593；SVC06已审parser/builder与原证据窄接收，不整合旧feature分支 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 恢复准备57绑定、操作18绑定和14项独立保留核对通过；本批精确文件同源、status/parser及文档核对，无新增产品测试/个人probe/provider。 |
-| 已集成main状态 / HEAD | 已接收 main/origin 122bdcaa790118154f8288c12ef6627da5e616b8 clean；[本次main回执](../../docs/evidence/i02/center-af51-main-receipt.json)。个人运行仍af51/v18、Web d629/v3；没有部署新产品。 |
+| 检查状态 | SVC06固定42文件/7产品源逐字相同、11直接输入保持；原7 distinct与独审复用，0新增工程检查/PG/provider。 |
+| 已集成main状态 / HEAD | main18144593已含OPS14、个人Web同版本恢复和时间规则；本次SVC06候选待fast-forward。个人仍af51/accepting v18、Web d629/v3。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人后台已按原版本恢复并通过保留核验；恢复记录和长期服务监督后继进入本批文档接收。 |
-| 下一可用交付 | 本片段已交付；已审但未验证的终端设置和完整工具正文保持分支，按实际空间继续。 |
-| 当前阻塞 | ACTIVE: 本地余量仍不足已声明验证门槛；远程文档候选等待用户原启用选择。 |
+| 当前产出 | 个人页面已恢复访问；后台发布的依赖解析与构建接线已通过局部检查和独立审查，正在接收。 |
+| 下一可用交付 | 固定后台产物的实际安装、启动和隔离验证；登录入口与任务时间展示由Web组并行实现。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -289,3 +289,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07：TUI01G产品215/交付66ac窄接12源+43自有plan/evidence，前像无漂移；[固定55文件](../../docs/evidence/i02/tui01g-controlled-intake.json)。原结果335f独审APPROVED，51不同用例分轮通过/focusedtypes；3个Ink依赖身份失败保留、仅失败补跑，0集成重测。无HTTP/PG/真实PTY/browser/provider证据，完整双端验收仍开放，个人runtime不变。
 
 2026-10-07：仅接已独审管理源689677ae的FLOW/OPS两status，逐字绑定[收口回执](../../docs/evidence/i02/validation-throughput-status-intake.json)；SVC07/TUI01G主线事实与原并行规则已写回，SVC06/OPS14后继未冒完成，个人runtime不变。0产品修改/工程重测/provider。
+
+2026-10-07T02:59:58.580Z：受控接收SVC06 b218/59c的7产品源及35本轮记录，全部固定blob相同，11直接输入不变，lock仅增加yaml且保留既有plugin-runtime；[回执](../../docs/evidence/i02/svc06-parser-builder-intake.json)。复用唯一独审和7不同局部证据，不将本片当完整后台产物或个人部署。

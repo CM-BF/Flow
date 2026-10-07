@@ -1,3 +1,7 @@
+# 当前正式parser/builder增量：APPROVED_LIMITED_PARSER_BUILDER
+
+目标 `b21890799fe11b8f1937e4b08382c997877f6d53`；base `1b41f58816341f77e69a64d1cb5cfe7650c01b49`，7产品/测试源，检查7 distinct分轮。原selected递归疑点与red保持，现单文件fd clone；[本轮manifest](../../docs/evidence/svc06/parser-builder-manifest.json)。唯一reviewer已核新增接线/共享根lock主线12行保留/实际私有parser及原始检查；未重跑原87dc7例，不扩大为完整artifact/PG/个人操作批准。
+
 # SVC06 Review
 
 当前片段状态：APPROVED（仅纯闭包选择与暂存配置）
@@ -29,3 +33,9 @@ Review target commit: `87dc292ae2dc8c1357f074ec7bddd41de20108d8`
 ## 纯模块主线接收（2026-10-06 15:26 UTC）
 
 [接收事实](../../docs/evidence/svc06/closure-main-receipt.json)：main fb9fe5e745ee1617f889a7fea420d445a0b7c05c经受控等价提交包含固定87dc全部6源，逐字相同；原target不是main祖先。本记录不改变独审target，不新增review/checks，不涵盖正式parser、安装和完整artifact。
+
+## 2026-10-07 02:58:16 UTC：唯一限定独审转录
+
+Reviewer `native_center_owner / gpt-6-astra`，原件时间 `2026-10-07T02:55:46.413702+00:00`；source `b21890799fe11b8f1937e4b08382c997877f6d53` / delivery `a1f2c658841b7965a128a8936840b6053456eb06`，APPROVED_LIMITED_PARSER_BUILDER，无P1/P2。[原回执](../../docs/evidence/svc06/parser-builder-independent-review.json) SHA1732d140828f1326371949852fae34d6bbffecd5cb2a8b3ed08770116660c0ac；43绑定与11直接输入无差。完整7源已读，目录替换不再进入递归；7不同检查/4轮及两个原失败、EOF/owned absent/tmp清理核验。reviewer0测试/build/install/PG/provider。
+
+完整成品、真实filtered安装、SQL/SDK动态import、独立产物启动与开发树隔离仍NOT_RUN。各轮startedAt/finishedAt未存为UNKNOWN；run记录时间与原elapsed各自保留，不推算。本次仅作者转录唯一批准，全源停止写入。

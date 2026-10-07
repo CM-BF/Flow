@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T02:37:17.761540+00:00",
+  "approvalId": "SVC06-YAML-PRIVATE-ONCE-0238",
+  "source": "457f1ba86e9f8d0c6edaef2f636953cd5520bcbf",
+  "status": "PRIVATE_PARSER_READY",
+  "toolExit": 0,
+  "elapsedMs": 729,
+  "ownedPid": 68235,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "observedOutputBytes": 223,
+  "rawBytes": 2603,
+  "resource": {
+    "allocatedBytes": 2674688,
+    "logicalBytes": 1452918,
+    "freeBytes": 25752358912,
+    "rootIdentity": [
+      16777234,
+      123342734
+    ],
+    "vanishedChildren": 0,
+    "atomicSnapshot": false
+  },
+  "peak": {
+    "allocatedBytes": 2674688,
+    "logicalBytes": 1452918,
+    "minimumFreeBytes": 25752375296,
+    "vanishedChildren": 0,
+    "samples": 7
+  },
+  "all233InstalledContentVerified": true,
+  "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/yaml",
+  "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml",
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095"
+    }
+  ],
+  "namespaceRetention": "exact own installation/store/cache/home retained within budget; no external cleanup",
+  "noImportOrProductTests": true,
+  "fullArtifact": "NOT_RUN"
+}

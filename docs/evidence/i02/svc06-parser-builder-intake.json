@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T02:59:58.580Z",
+  "mainBefore": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "delivery": "59c0fccb41e33076d50c5f782683c9f3fd25061e",
+  "sourceTarget": "b21890799fe11b8f1937e4b08382c997877f6d53",
+  "review": "native_center_owner APPROVED_LIMITED_PARSER_BUILDER 2026-10-07T02:55:46.413702+00:00",
+  "files": 42,
+  "sourceFiles": 7,
+  "bytes": 508934,
+  "exactTargetHashes": true,
+  "directInputs": {
+    "count": 11,
+    "allUnchanged": true
+  },
+  "preimages": "41 base matches; lock includes the already-main plugin-runtime 12-line addition from approved main7a7c. Complete current-main→target lock delta read: yaml 2.9.0 root dev importer, package and snapshot only, no removals. Target preserves plugin-runtime.",
+  "checks": "Inherited 7 distinct local checks in separate rounds and fixed independent review; no repeated tests/PG/install/provider.",
+  "fullArtifact": "NOT_RUN; complete fixed target/dependency installation/SQL and dynamic SDK/runtime isolation remain open.",
+  "sourceDigest": "7f81305922dc77208f58db7eb2acdb50900cd8557075c2ef895eec929442dbb5"
+}
