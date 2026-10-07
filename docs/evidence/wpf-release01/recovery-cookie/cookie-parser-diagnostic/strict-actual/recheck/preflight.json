@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T16:45:19.189210+00:00",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "head": "4f7606c81e3416414e76186aa635aae44a9febd3",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-recovery",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "createdAt": "2026-10-07T14:52:41.385Z",
+    "updatedAt": "2026-10-07T15:10:52.444Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "pins": 342,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "zod": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+    "bytes": 4142,
+    "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+  },
+  "config": {
+    "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/tsconfig.json",
+    "realpath": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/tsconfig.json",
+    "bytes": 1344,
+    "sha256": "bef3e32067ed28fd5c5ade0285371b94252204ca25d078e92896c2a9ce6f4d0f"
+  },
+  "caller": {
+    "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/run.py",
+    "realpath": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/run.py",
+    "bytes": 7645,
+    "sha256": "bf7bb914c54951f19ebe07900a951fbbaf7632dd308e8f0ee7b19c5454f2a05d"
+  },
+  "aliasOnly": true,
+  "productChanged": false,
+  "phasePriorChargedMs": 1125,
+  "childTotalMs": 18700,
+  "cleanupMs": 5000,
+  "phaseTotalMs": 20000,
+  "availableBytes": 20039659520,
+  "floorBytes": 18129092608,
+  "sourceAndDepsHashVerified": true
+}

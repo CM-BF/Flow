@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T16:43:56.631057+00:00",
+  "actualExit": 1,
+  "childExit": 2,
+  "chargeMs": 1125,
+  "groups": [
+    {
+      "pid": 17450,
+      "group": false,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 17450,
+      "group": true,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 17704,
+      "group": false,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 17704,
+      "group": true,
+      "state": "ABSENT"
+    }
+  ],
+  "scratchAbsent": true,
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 22856,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "outerEOF": true,
+  "state": "RETURNED_FAILED",
+  "phaseRemainingMs": 18875
+}

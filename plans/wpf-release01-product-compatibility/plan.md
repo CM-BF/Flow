@@ -88,3 +88,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 [第二actual](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)FAILED/完整RETURN，26554ms新180s CLOSED。RELEASE01-08仍未完成，reports=null/0正式报告。harness原顺序缺口已走通，新的会话GET HTTP-parser400原因未记录；只准备被动有界clientError观察+新Cookie链diagnosticOnly，不能importReports，不为诊断重跑旧3矩阵。正式4App协议保持，下一actual须独立窗口。无新增产品authority，无后台或App越权修改。
 
 2026-10-07T16:37:19.057Z 现RELEASE01-08内准备独立Cookie诊断入口，固定cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05。仅public链与被动HTTP元数据，正式四App接受合同和错误断言不变；新90s/strict20s仍proposal，见[候选](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)。
+
+## 当前诊断源码与必要局部检查已固定
+
+2026-10-07T16:50:24.040Z：RELEASE01-08内的诊断source fc291已获[root集中源码批准](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/root-source-review.json)，native边界已精确绑定；保存字节帽与真实pretty JSON完全一致。必要[strict两actual](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/README.md)首alias红保留/复验绿，2775ms/20s CLOSED。源码未变，不重跑旧绿；原正式兼容失败不改，待独立诊断捕获HTTP错误，90s仍无实际许可。诊断完成不能完成RELEASE01-08或生成四正式报告。

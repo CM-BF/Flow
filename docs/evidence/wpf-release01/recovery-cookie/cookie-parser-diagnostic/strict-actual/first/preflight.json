@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-07T16:42:51.218572+00:00",
+  "state": "READY_FOR_GRANTED_SINGLE_LOCAL",
+  "head": "4f7606c81e3416414e76186aa635aae44a9febd3",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-recovery",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "createdAt": "2026-10-07T14:52:41.385Z",
+    "updatedAt": "2026-10-07T15:10:52.444Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "pinCount": 217,
+  "omittedUnselectedTestFiles": [
+    "packages/contracts/src/assistant.test.ts",
+    "packages/contracts/src/reconciliation.test.ts",
+    "packages/contracts/src/execution-profiles.test.ts",
+    "packages/contracts/src/harnesses.test.ts",
+    "packages/contracts/src/contracts.test.ts",
+    "packages/client/src/package-fetches.test.ts",
+    "packages/client/src/native-activity-production.test.ts",
+    "packages/client/src/queue-production.test.ts",
+    "packages/client/src/goal-context-production.test.ts",
+    "packages/client/src/package-fetch-production.test.ts",
+    "packages/client/src/graph-proposal-production.test.ts",
+    "packages/client/src/active-steering.test.ts",
+    "packages/client/src/native-profile-publication.test.ts",
+    "packages/client/src/runner-maintenance.test.ts",
+    "packages/client/src/knowledge.test.ts",
+    "packages/client/src/steering-admission.test.ts",
+    "packages/client/src/goal-native-executions.test.ts",
+    "packages/client/src/native-activity.test.ts",
+    "packages/client/src/assistant-stream.test.ts",
+    "packages/client/src/goal-context.test.ts",
+    "packages/client/src/goal-graph-proposals.test.ts",
+    "packages/client/src/conversation-queue.test.ts",
+    "packages/client/src/assistant-stream-production.test.ts",
+    "packages/client/src/execution-profiles.test.ts",
+    "packages/client/src/steering-finalization.test.ts",
+    "packages/client/src/goal-tool-runs.test.ts",
+    "packages/client/src/context-production.test.ts",
+    "packages/client/src/conversation-context.test.ts",
+    "packages/client/src/conversations.test.ts",
+    "packages/client/src/client.test.ts",
+    "packages/client/src/goal-graph-runs.test.ts",
+    "packages/client/src/graph-run-production.test.ts"
+  ],
+  "config": {
+    "path": "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json",
+    "realpath": "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json",
+    "bytes": 1315,
+    "sha256": "86460b4fe225121800f43121c4900df7a4c375d417c1e40dc1dc44ccfa2ed337"
+  },
+  "caller": {
+    "path": "/private/tmp/release01-parser-types-v3l5i371/run.py",
+    "realpath": "/private/tmp/release01-parser-types-v3l5i371/run.py",
+    "bytes": 7642,
+    "sha256": "339e89f56fe8c68fc4c5b2a2b4c7d9f567beacdb0f06db2233e79bc3591facb0"
+  },
+  "binding": {
+    "path": "/private/tmp/release01-parser-types-v3l5i371/binding.json",
+    "realpath": "/private/tmp/release01-parser-types-v3l5i371/binding.json",
+    "bytes": 101005,
+    "sha256": "f3c91b2067033c227836770545e3bbe794b9b46cbcc5700a0ca651317208374e"
+  },
+  "native": {
+    "path": "/usr/bin/sandbox-exec",
+    "realpath": "/usr/bin/sandbox-exec",
+    "bytes": 102368,
+    "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+  },
+  "availableBytes": 20098768896,
+  "floorBytes": 18129092608,
+  "rawAndScratchAbsent": true
+}

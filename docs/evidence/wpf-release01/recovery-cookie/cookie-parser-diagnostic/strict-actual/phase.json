@@ -1,0 +1,74 @@
+{
+  "task": "WPF-RELEASE01",
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "phaseLimitMs": 20000,
+  "cleanupReserveEachMs": 5000,
+  "state": "CLOSED",
+  "priorCredit": 0,
+  "attempts": [
+    {
+      "name": "first",
+      "outer": {
+        "path": "/private/tmp/release01-parser-types-v3l5i371/outer-observation.json",
+        "bytes": 730,
+        "sha256": "c62869f67ec4c1f83bc7563ee50c37df471a2ef1a65d4873e08d72ff47dcf15d"
+      },
+      "return": {
+        "path": "/private/tmp/release01-parser-types-v3l5i371/return.json",
+        "bytes": 721,
+        "sha256": "b0484b5db79057f0888a348da9942b13bd0272fb3179622f89b9fa0cf055472b"
+      },
+      "result": {
+        "path": "/private/tmp/release01-parser-types-v3l5i371/result.json",
+        "bytes": 10262,
+        "sha256": "e6685dfb2168665375bf0fabd0ffb18e98e1f22020230071bb50e7c555201e35"
+      },
+      "terminal": {
+        "path": "/private/tmp/release01-parser-types-v3l5i371/terminal.json",
+        "bytes": 325,
+        "sha256": "3914ed125144faea6710a71e5e5517dbeebc9a4b9197a8325dc34e324da23718"
+      }
+    },
+    {
+      "name": "recheck",
+      "outer": {
+        "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/outer-observation.json",
+        "bytes": 730,
+        "sha256": "67a71132f3f987075dbf49a34679685f2fcf05879ff133b7ae1c9d4b666c4d3a"
+      },
+      "return": {
+        "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/return.json",
+        "bytes": 814,
+        "sha256": "85e6b361f0774025c6a990701d8b6b940d6b93b5c032847cab315e46b0e107e8"
+      },
+      "result": {
+        "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/result.json",
+        "bytes": 8125,
+        "sha256": "9c5c9cc6e1087ffd21a94adbc1f4b32fdbcbfd7545335e71c611c92e53fe0993"
+      },
+      "terminal": {
+        "path": "/private/tmp/release01-parser-types-recheck-nq3jzf4x/terminal.json",
+        "bytes": 325,
+        "sha256": "b140082bf2466648de87b56df9c4f4ff8ee79a41f3a3dfc881381d372941d612"
+      }
+    }
+  ],
+  "chargedMs": 2775,
+  "unusedMs": 17225,
+  "unusedTransferred": false,
+  "retainedBothActualNamespacesBytes": 333405,
+  "retainedCapBytes": 1048576,
+  "verdict": "NECESSARY_STRICT_PASSED_AFTER_ALIAS_ONLY_CONFIG_FIX",
+  "firstFailure": "Zod paths alias referenced absent donor root node_modules/zod; no product fix. Recheck uses actual installed packages/contracts/node_modules/zod realpath zod4.6.5.",
+  "resourceOverlap": {
+    "newInformationReceivedAfterChildReturn": true,
+    "otherActual": "Mika K01 SQL timing started2026-10-07T16:44:58.670157Z",
+    "actualOverlapStart": "2026-10-07T16:45:35.498477Z",
+    "actualOverlapEnd": "2026-10-07T16:45:37.148418Z",
+    "interpretation": "Reported to root/manager/Mika. No no-overlap or isolated performance claim; no rerun."
+  },
+  "sourceChanged": false,
+  "browserDiagnostic": "NOT_RUN_NO_GRANT",
+  "fullFourAppCompatibility": "FAILED_REPORTS_NULL",
+  "completeReturn": "2026-10-07T16:45:54.467272+00:00"
+}

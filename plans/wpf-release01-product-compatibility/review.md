@@ -1,8 +1,14 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED，固定诊断候选待独立源码/边界审。**
+**当前状态：APPROVED，仅固定诊断源码和精确native准备；诊断actual未运行，正式四App兼容仍FAILED。**
 
-Review target commit：fc2916c275efe86203d91ec33656ea9871eac42a。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。[候选与局部提案](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)仅准备。新类型检查/诊断actual NOT_RUN；正式四App仍FAILED，reports=null，不可部署。
+Review target commit：fc2916c275efe86203d91ec33656ea9871eac42a。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。
+
+[Root源码集中审](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/root-source-review.json)已关闭唯一保存字节计量P2，0blocking；[固定native边界](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/root-native-boundary.json)仅接受parent3872/worker8554。正式四App断言/import协议不变；只读有限观察不读取敏感报文，0error不证明问题消失。
+
+[必要类型实际](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/README.md)：首resolver配置FAILED原件保留；同source仅修现有zod路径后strict/noEmit exit0，两个actual共2775ms/20s CLOSED且完整归还。[Root独立实际审查](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/root-result-review.json)已接受最后strict PASS及首红保留；不冒浏览器或compatibility通过。真实K01重叠时段保留，不将本次当性能结果。
+
+90s诊断尚NO_GRANT，四App reports=null，不可据此部署。UNKNOWN原key恢复仅覆盖reload后/logout前，不证明新登录后UNKNOWN恢复。
 
 ## 历史：d032源码及第二实际失败
 

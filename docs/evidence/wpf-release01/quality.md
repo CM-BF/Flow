@@ -48,3 +48,7 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 
 ## 2026-10-07T11:55:28.219Z c3 actual 完整安全点
 沿本地find-skills/clean-code检查职责与证据边界：3旧Bearer App与独立Cookie验证分开，未注入/改写为Cookie客户端；每个report同backend/publiccontext，461a格式1不补releaseId。完整EOF/真实outer+seal/markedDB与exact身份清理后才接受检查，通过不推个人部署/lateLogout。保首c2失败、syntax独立47ms及本actual23495ms，余量不触发重测。65原件逐hash，generatedsb非metadata不隐藏；正常metadata/parser后固定供独审。
+
+## 2026-10-07T16:50:24.040Z 诊断源码审查与必要strict封存
+
+沿既有本地find-skills、clean-code/codebase-design/webapp-testing，无安装。检查单一职责/错误/重复与资源边界：被动观察保原Fastify listener和socket处理，只存有限非秘密字段；发现compact估算与pretty实际保存不一致，fc291单行对齐真实saveJson字节，原上限不增。必要strict首红来自未materialize的donor根zod路径，改用已安装contracts精确只读入口后通过，未扩大产品出口或测试别名伪补合同。两次原件/失败、实际退出、EOF与owned清理分层固定；复验与K01重叠透明保留，不回写无重叠或重测。当前400原因仍未知，诊断0errors不能解释为无缺陷；原4App失败和reports=null不漂白。此批只owner metadata/routine准备绑定，四scope完成后STOP。

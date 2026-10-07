@@ -1,0 +1,1333 @@
+{
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "head": "4f7606c81e3416414e76186aa635aae44a9febd3",
+  "branch": "codex/web-release-recovery",
+  "declaredDirty": "",
+  "claim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+  "claimVersion": 2,
+  "live": "/private/tmp/release-diagnostic-types-live-20261007.json",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+    "--project",
+    "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json"
+  ],
+  "pins": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "bytes": 267,
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "bytes": 6213092,
+      "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41001,
+      "sha256": "798d58bb61e2c30420425bd59c62f1aeccec3374fe9ce08ebba91d941403c187"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversation-queue.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/fixtures.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/fixtures.ts",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversations.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/native-activity.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/knowledge.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/projects.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-tool-runs.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/workspace.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversation-context.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/package-artifacts.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/runner-maintenance.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/native-harness.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/native-harness.ts",
+      "bytes": 1173,
+      "sha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-graph-proposals.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/assistant.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/assistant-stream.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/assistant-stream.ts",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-context.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goals.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-graph-runs.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/reconciliation.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/index.ts",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/active-steering.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-native-executions.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/protocol-task.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/harnesses.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/tasks.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/plugin-package-fetches.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/runner.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/runner.ts",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/plugins.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/plugins.ts",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/execution-profiles.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/protocol-dispatch.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/protocol-dispatch.ts",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/client/src/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.object.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.object.d.ts",
+      "bytes": 1473,
+      "sha256": "71c37f4c9543f31dfced6c7840e068c5a5aacb7b89111a4364b1d5276b852557"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "bytes": 29802,
+      "sha256": "2e80ee7a49e8ac312cc11b77f1475804bee36b3b2bc896bead8b6e1266befb43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.full.d.ts",
+      "bytes": 1074,
+      "sha256": "95f1023b824c2c511c48f1201e2d1188bcb0ca1138a309a870b956d2e92e44ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.collection.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.collection.d.ts",
+      "bytes": 3878,
+      "sha256": "e3a2a0cee0f03ffdde24d89660eba2685bfbdeae955a6c67e8c4c9fd28928eeb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "bytes": 6493,
+      "sha256": "8d697a2a929a5fcb38b7a65594020fcef05ec1630804a33748829c5ff53640d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.string.d.ts",
+      "bytes": 1528,
+      "sha256": "576711e016cf4f1804676043e6a0a5414252560eb57de9faceee34d79798c850"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.date.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.date.d.ts",
+      "bytes": 1916,
+      "sha256": "38f0219c9e23c915ef9790ab1d680440d95419ad264816fa15009a8851e79119"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.intl.d.ts",
+      "bytes": 8245,
+      "sha256": "965f36eae237dd74e6cca203a43e9ca801ce38824ead814728a2807b1910117d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.d.ts",
+      "bytes": 965,
+      "sha256": "3facaf05f0c5fc569c5649dd359892c98a85557e3e0c847964caeb67076f4d75"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "bytes": 22866,
+      "sha256": "c57796738e7f83dbc4b8e65132f11a377649c00dd3eee333f672b8f0a6bea671"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.asynciterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.asynciterable.d.ts",
+      "bytes": 1887,
+      "sha256": "d7a3c8b952931daebdfc7a2897c53c0a1c73624593fa070e46bd537e64dcd20a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.intl.d.ts",
+      "bytes": 958,
+      "sha256": "74f7fa2d027d5b33eb0471c8e82a6c87216223181ec31247c357a3e8e2fddc5b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.string.d.ts",
+      "bytes": 1155,
+      "sha256": "3287d9d085fbd618c3971944b65b4be57859f5415f495b33a6adc994edd2f004"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.d.ts",
+      "bytes": 1201,
+      "sha256": "5efce4fc3c29ea84e8928f97adec086e3dc876365e0982cc8479a07954a3efd4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.full.d.ts",
+      "bytes": 1074,
+      "sha256": "1305d1e76ca44e30fb8b2b8075fa522b83f60c0bcf5d4326a9d2cf79b53724f8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.object.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.object.d.ts",
+      "bytes": 1085,
+      "sha256": "8444af78980e3b20b49324f4a16ba35024fef3ee069a0eb67616ea6ca821c47a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.iterator.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.iterator.d.ts",
+      "bytes": 8676,
+      "sha256": "22adec94ef7047a6c9d1af3cb96be87a335908bf9ef386ae9fd50eeb37f44c47"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "bytes": 5251,
+      "sha256": "ce691fb9e5c64efb9547083e4a34091bcbe5bdb41027e310ebba8f7d96a98671"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "bytes": 2557,
+      "sha256": "515d0b7b9bea2e31ea4ec968e9edd2c39d3eebf4a2d5cbd04e88639819ae3b71"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.promise.d.ts",
+      "bytes": 1658,
+      "sha256": "60037901da1a425516449b9a20073aa03386cce92f7a1fd902d7602be3a7c2e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.d.ts",
+      "bytes": 1036,
+      "sha256": "feecb1be483ed332fad555aff858affd90a48ab19ba7272ee084704eb7167569"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.disposable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.disposable.d.ts",
+      "bytes": 6806,
+      "sha256": "51ad4c928303041605b4d7ae32e0c1ee387d43a24cd6f1ebf4a2699e1076d4fa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.number.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.number.d.ts",
+      "bytes": 1587,
+      "sha256": "368af93f74c9c932edd84c58883e736c9e3d53cec1fe24c0b0ff451f529ceab1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.d.ts",
+      "bytes": 1162,
+      "sha256": "e44bb8bbac7f10ecc786703fe0a6a4b952189f908707980ba8f3c8975a760962"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.promise.d.ts",
+      "bytes": 1353,
+      "sha256": "811ec78f7fefcabbda4bfa93b3eb67d9ae166ef95f9bff989d964061cbf81a0c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "bytes": 1542,
+      "sha256": "954296b30da6d508a104a3a0b5d96b76495c709785c1d11610908e63481ee667"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "bytes": 9451,
+      "sha256": "cd034f499c6cdca722b60c04b5b1b78e058487a7085a8e0d6fb50809947ee573"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.array.d.ts",
+      "bytes": 4676,
+      "sha256": "3925a6c820dcb1a06506c90b1577db1fdbf7705d65b62b99dce4be75c637e26b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.decorators.d.ts",
+      "bytes": 1070,
+      "sha256": "d4b1d2c51d058fc21ec2629fff7a76249dec2e36e12960ea056e3ef89174080f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.arraybuffer.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.arraybuffer.d.ts",
+      "bytes": 2637,
+      "sha256": "87dc0f382502f5bbce5129bdc0aea21e19a3abbc19259e0b43ae038a9fc4e326"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.full.d.ts",
+      "bytes": 1074,
+      "sha256": "08f6861df84fba9719c14d5adc3ba40be9f0c687639e6c4df3c05b9301b8ff94"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.intl.d.ts",
+      "bytes": 22438,
+      "sha256": "639e512c0dfc3fad96a84caad71b8834d66329a1f28dc95e3946c9b58176c73a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.collection.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.collection.d.ts",
+      "bytes": 1224,
+      "sha256": "b1cb28af0c891c8c96b2d6b7be76bd394fddcfdb4709a20ba05a7c1605eea0f9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.decorators.legacy.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.decorators.legacy.d.ts",
+      "bytes": 1326,
+      "sha256": "782dec38049b92d4e85c1585fbea5474a219c6984a35b004963b00beb1aab538"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "bytes": 3200,
+      "sha256": "0dc1e7ceda9b8b9b455c3a2d67b0412feab00bd2f66656cd8850e8831b08b537"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.intl.d.ts",
+      "bytes": 3021,
+      "sha256": "9e9fbd7030c440b33d021da145d3232984c8bb7916f277e8ffd3dc2e3eae2bdb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "bytes": 11010,
+      "sha256": "fb0f136d372979348d59b3f5020b4cdb81b5504192b1cacff5d1fbba29378aa1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.object.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.object.d.ts",
+      "bytes": 1259,
+      "sha256": "2fef54945a13095fdb9b84f705f2b5994597640c46afeb2ce78352fab4cb3279"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.promise.d.ts",
+      "bytes": 1389,
+      "sha256": "ac77cb3e8c6d3565793eb90a8373ee8033146315a3dbead3bde8db5eaf5e5ec6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.full.d.ts",
+      "bytes": 1074,
+      "sha256": "4a66df3ab5de5cfcda11538cffddd67ff6a174e003788e270914c1e0248483cf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.string.d.ts",
+      "bytes": 1194,
+      "sha256": "0a6282c8827e4b9a95f4bf4f5c205673ada31b982f50572d27103df8ceb8013c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "bytes": 18200,
+      "sha256": "0559b1f683ac7505ae451f9a96ce4c3c92bdc71411651ca6ddb0e88baaaad6a3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.regexp.d.ts",
+      "bytes": 1232,
+      "sha256": "717937616a17072082152a2ef351cb51f98802fb4b2fdabd32399843875974ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.decorators.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.decorators.d.ts",
+      "bytes": 13192,
+      "sha256": "8e7f8264d0fb4c5339605a15daadb037bf238c10b654bb3eee14208f860a32ea"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.string.d.ts",
+      "bytes": 1592,
+      "sha256": "995c005ab91a498455ea8dfb63aa9f83fa2ea793c3d8aa344be4a1678d06d399"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.asynciterable.d.ts",
+      "bytes": 2257,
+      "sha256": "0a969edff4bd52585473d24995c5ef223f6652d6ef46193309b3921d65dd4376"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es6.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es6.d.ts",
+      "bytes": 1032,
+      "sha256": "df039a67536fe2acc3affdcbfb645892f842db36fe599e8e652e2f0c640a90d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.sharedmemory.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.sharedmemory.d.ts",
+      "bytes": 1067,
+      "sha256": "c5239f5c01bcfa9cd32f37c496cf19c61d69d37e48be9de612b541aac915805b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.collection.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.collection.d.ts",
+      "bytes": 900,
+      "sha256": "436aaf437562f276ec2ddbee2f2cdedac7664c1e4c1d2c36839ddd582eeb3d0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.error.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.error.d.ts",
+      "bytes": 2379,
+      "sha256": "0a3d63ef2b853447ec4f749d3f368ce642264246e02911fcb1590d8c161b8005"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "bytes": 5204,
+      "sha256": "d15bea3d62cbbdb9797079416b8ac375ae99162a7fba5de2c6c505446486ac0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.intl.d.ts",
+      "bytes": 893,
+      "sha256": "811c71eee4aa0ac5f7adf713323a5c41b0cf6c4e17367a34fbce379e12bbf0a4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es5.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es5.d.ts",
+      "bytes": 218439,
+      "sha256": "c430d44666289dae81f30fa7b2edebf186ecc91a2d4c71266ea6ae76388792e1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.d.ts",
+      "bytes": 1282,
+      "sha256": "2ab096661c711e4a81cc464fa1e6feb929a54f5340b46b0a07ac6bbf857471f0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.intl.d.ts",
+      "bytes": 2645,
+      "sha256": "8e3c06ea092138bf9fa5e874a1fdbc9d54805d074bee1de31b99a11e2fec239d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.float16.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.float16.d.ts",
+      "bytes": 20528,
+      "sha256": "196cb558a13d4533a5163286f30b0509ce0210e4b316c56c38d4c0fd2fb38405"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.array.d.ts",
+      "bytes": 3163,
+      "sha256": "d7e7d9b7b50e5f22c915b525acc5a49a7a6584cf8f62d0569e557c5cfc4b2ac2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.d.ts",
+      "bytes": 1166,
+      "sha256": "8fd575e12870e9944c7e1d62e1f5a73fcf23dd8d3a321f2a2c74c20d022283fe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.intl.d.ts",
+      "bytes": 1484,
+      "sha256": "68d18b664c9d32a7336a70235958b8997ebc1c3b8505f4f1ae2b7e7753b87618"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.regexp.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.regexp.d.ts",
+      "bytes": 1073,
+      "sha256": "56e4ed5aab5f5920980066a9409bfaf53e6d21d3f8d020c17e4de584d29600ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.date.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.date.d.ts",
+      "bytes": 2956,
+      "sha256": "063600664504610fe3e99b717a1223f8b1900087fab0b4cad1496a114744f8df"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.asynciterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.asynciterable.d.ts",
+      "bytes": 1887,
+      "sha256": "ca417afee74054e99d5a8252b35bef26ca6e2942d67d343fce6b42fc9f432993"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.full.d.ts",
+      "bytes": 1074,
+      "sha256": "3cbad9a1ba4453443026ed38e4b8be018abb26565fa7c944376463ad9df07c41"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.full.d.ts",
+      "bytes": 1032,
+      "sha256": "1d242d5c24cf285c88bc4fb93c5ff903de8319064e282986edeb6247ba028d5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.promise.d.ts",
+      "bytes": 1803,
+      "sha256": "934019d7e3c81950f9a8426d093458b65d5aff2c7c1511233c0fd5b941e608ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.dom.d.ts",
+      "bytes": 1874901,
+      "sha256": "080941d9f9ff9307f7e27a83bcd888b7c8270716c39af943532438932ec1d0b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.array.d.ts",
+      "bytes": 40236,
+      "sha256": "df83c2a6c73228b625b0beb6669c7ee2a09c914637e2d35170723ad49c0f5cd4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.sharedmemory.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.sharedmemory.d.ts",
+      "bytes": 3077,
+      "sha256": "4ece9f17b3866cc077099c73f4983bddbcb1dc7ddb943227f1ec070f529dedd1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.symbol.wellknown.d.ts",
+      "bytes": 1606,
+      "sha256": "59fb2c069260b4ba00b5643b907ef5d5341b167e7d1dbf58dfd895658bda2867"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.iterable.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.iterable.d.ts",
+      "bytes": 22768,
+      "sha256": "d6c6331ce67c41b2ad5bfb0c8c022403980b479a377a44da8f16b61120418f66"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.bigint.d.ts",
+      "bytes": 38185,
+      "sha256": "d6d7ae4d1f1f3772e2a3cde568ed08991a8ae34a080ff1151af28b7f798e22ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.sharedmemory.d.ts",
+      "bytes": 5128,
+      "sha256": "52ada8e0b6e0482b728070b7639ee42e83a9b1c22d205992756fe020fd9f4a47"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.promise.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.promise.d.ts",
+      "bytes": 2262,
+      "sha256": "af3dd424cf267428f30ccfc376f47a2c0114546b55c44d8c0f1d57d841e28d74"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.error.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.error.d.ts",
+      "bytes": 1029,
+      "sha256": "73f78680d4c08509933daf80947902f6ff41b6230f94dd002ae372620adb0f60"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2024.full.d.ts",
+      "bytes": 1074,
+      "sha256": "b3e9cef4eed59f8a2249ed834ba4aabe9d0d4e9037d4679487fa17dad99004a3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.intl.d.ts",
+      "bytes": 7692,
+      "sha256": "8cdf8847677ac7d20486e54dd3fcf09eda95812ac8ace44b4418da1bbbab6eb8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.regexp.d.ts",
+      "bytes": 1331,
+      "sha256": "b4b67b1a91182421f5df999988c690f14d813b9850b40acd06ed44691f6727ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "bytes": 7209,
+      "sha256": "a680117f487a4d2f30ea46f1b4b7f58bef1480456e18ba53ee85c2746eeca012"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "bytes": 1449,
+      "sha256": "4de680d5bb41c17f7f68e0419412ca23c98d5749dcaaea1896172f06435891fc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.d.ts",
+      "bytes": 609557,
+      "sha256": "6d08cde2bfb6ff909efbf7cb7d6d55be412cf4b9f48fd0430185986973fa91f5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsserverlibrary.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsserverlibrary.d.ts",
+      "bytes": 865,
+      "sha256": "73b15a0b7cf5c6df9076b9408c5ce682f11813453bf54c54cb284f075b5224cf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.symbol.d.ts",
+      "bytes": 1006,
+      "sha256": "89c1b1281ba7b8a96efc676b11b264de7a8374c5ea1e6617f11880a13fc56dc6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.d.ts",
+      "bytes": 992,
+      "sha256": "a7297ff837fcdf174a9524925966429eb8e5feecc2cc55cc06574e6b092c1eaa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.d.ts",
+      "bytes": 1088,
+      "sha256": "5e1c4c362065a6b95ff952c0eab010f04dcd2c3494e813b493ecfd4fcb9fc0d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.full.d.ts",
+      "bytes": 1074,
+      "sha256": "bde31fd423cd93b0eff97197a3f66df7c93e8c0c335cbeb113b7ff1ac35c23f4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2020.string.d.ts",
+      "bytes": 2556,
+      "sha256": "3bdefe1bfd4d6dee0e26f928f93ccc128f1b64d5d501ff4a8cf3c6371200e5e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.full.d.ts",
+      "bytes": 1074,
+      "sha256": "785921608325fa246b450f05b238f4b3ed659f1099af278ce9ebbc9416a13f1d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2018.asyncgenerator.d.ts",
+      "bytes": 2692,
+      "sha256": "ac9538681b19688c8eae65811b329d3744af679e0bdfa5d842d0e32524c73e1c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2022.d.ts",
+      "bytes": 1108,
+      "sha256": "ee7bad0c15b58988daa84371e0b89d313b762ab83cb5b31b8a2d1162e8eb41c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.weakref.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2021.weakref.d.ts",
+      "bytes": 3171,
+      "sha256": "959d36cddf5e7d572a65045b876f2956c973a586da58e5d26cde519184fd9b8a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.full.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2016.full.d.ts",
+      "bytes": 1032,
+      "sha256": "807e0e0bdc67605dd28efe18f20ab5fcd75d944ef95936120702335f9379094b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "bytes": 2473,
+      "sha256": "69ab18c3b76cd9b1be3d188eaf8bba06112ebbe2f47f6c322b5105a6fbc45a2e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2023.d.ts",
+      "bytes": 999,
+      "sha256": "27bdc30a0e32783366a5abeda841bc22757c1797de8681bbe81fbc735eeb1c10"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.d.ts",
+      "bytes": 588085,
+      "sha256": "e134052a6b1ded61693b4037f615dc72f14e2881e79c1ddbff6c514c8a516b05"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "bytes": 2378,
+      "sha256": "2f11ff796926e0832f9ae148008138ad583bd181899ab7dd768a2666700b1893"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2019.d.ts",
+      "bytes": 1071,
+      "sha256": "68d73b4a11549f9c0b7d352d10e91e5dca8faa3322bfb77b661839c42b1ddec7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "bytes": 1041,
+      "sha256": "80e18897e5884b6723488d4f5652167e7bb5024f946743134ecc4aa4ee731f89"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "bytes": 1649,
+      "sha256": "4ff2a353abf8a80ee399af572debb8faab2d33ad38c4b4474cff7f26e7653b8d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.arraybuffer.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2017.arraybuffer.d.ts",
+      "bytes": 915,
+      "sha256": "eb3d66c8327153d8fa7dd03f9c58d351107fe824c79e9b56b462935176cdf12a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.esnext.array.d.ts",
+      "bytes": 1791,
+      "sha256": "1c9319a09485199c1f7b0498f2988d6d2249793ef67edda49d1e584746be9032"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "bytes": 5229,
+      "sha256": "dc2df20b1bcdc8c2d34af4926e2c3ab15ffe1160a63e58b7e09833f616efff44"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/lib.es2015.d.ts",
+      "bytes": 1241,
+      "sha256": "45b7ab580deca34ae9729e97c13cfd999df04416a79116c3bfb483804f85ded4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/path.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/path.d.ts",
+      "bytes": 8333,
+      "sha256": "04bf1aa481d1adfb16d93d76e44ce71c51c8ef68039d849926551199489637f6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/constants.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/constants.d.ts",
+      "bytes": 816,
+      "sha256": "5524481e56c48ff486f42926778c0a3cce1cc85dc46683b92b1271865bcf015a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/domain.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/domain.d.ts",
+      "bytes": 7507,
+      "sha256": "1cbdcdef62bf42688e5d825898c3a59458466c48ad8a4ef3f88d8a1cd04310d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/diagnostics_channel.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/diagnostics_channel.d.ts",
+      "bytes": 25048,
+      "sha256": "9f39e70a354d0fba29ac3cdf6eca00b7f9e96f64b2b2780c432e8ea27f133743"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/globals.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/globals.d.ts",
+      "bytes": 5907,
+      "sha256": "1b2dd1cbeb0cc6ae20795958ba5950395ebb2849b7c8326853dd15530c77ab0c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/sea.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/sea.d.ts",
+      "bytes": 6638,
+      "sha256": "5fb39858b2459864b139950a09adae4f38dad87c25bf572ce414f10e4bd7baab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/string_decoder.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/string_decoder.d.ts",
+      "bytes": 2809,
+      "sha256": "c119835edf36415081dfd9ed15fc0cd37aaa28d232be029ad073f15f3d88c323"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/tls.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/tls.d.ts",
+      "bytes": 63308,
+      "sha256": "10eb385d3120c6c5981249af7ec214a6756b0f40e8bb3d184be3d0457b67b2d9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/tty.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/tty.d.ts",
+      "bytes": 10171,
+      "sha256": "3c59c992b671e83a35dec52e894b5bfcf2dcb0104e24b3082b8c793ec3997532"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/punycode.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/punycode.d.ts",
+      "bytes": 5479,
+      "sha256": "a58a15da4c5ba3df60c910a043281256fa52d36a0fcdef9b9100c646282e88dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/readline.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/readline.d.ts",
+      "bytes": 26312,
+      "sha256": "42a350ce4f6f291198dc89833afcc4fd078248b4e1fdc9d05c846c66a670f710"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/crypto.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/crypto.d.ts",
+      "bytes": 228009,
+      "sha256": "3b909f9fa68b102e393d86d11f605ea14fe736d69374bd88a1c1e6fb6898f5d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/trace_events.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/trace_events.d.ts",
+      "bytes": 8926,
+      "sha256": "e03460fe72b259f6d25ad029f085e4bedc3f90477da4401d8fbc1efa9793230e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/events.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/events.d.ts",
+      "bytes": 44099,
+      "sha256": "1049c567c0a6244b69738cdd83edce170b8d5ca941817cf185f7f55c28b3feb0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/os.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/os.d.ts",
+      "bytes": 19518,
+      "sha256": "3e294a1b71ea288a0796d374118150455e8019dbffcf8b4124faaf9721d29a8c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/buffer.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/buffer.d.ts",
+      "bytes": 88587,
+      "sha256": "01b30c21189d840c5133bd8d250d70c9e8f389884b00e66b093579b49a7cfd4c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/querystring.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/querystring.d.ts",
+      "bytes": 7125,
+      "sha256": "b36beffbf8acdc3ebc58c8bb4b75574b31a2169869c70fc03f82895b93950a12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/worker_threads.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/worker_threads.d.ts",
+      "bytes": 41905,
+      "sha256": "0b0dfb2d3e8420ead06f6a11acfb02ddcec42257e6ce391993e895ba0af86de4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/console.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/console.d.ts",
+      "bytes": 21366,
+      "sha256": "9d8f9e63e29a3396285620908e7f14d874d066caea747dc4b2c378f0599166b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/async_hooks.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/async_hooks.d.ts",
+      "bytes": 25674,
+      "sha256": "31a2721bfdb4eaf3af1168396bdc307d14892074aa64801ac975aa9809a1727f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dns.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dns.d.ts",
+      "bytes": 37043,
+      "sha256": "cb7ac5f8e38b425e4cc4619bdb9895ceb94b364be8b462f8cf220c2e0963bd75"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/vm.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/vm.d.ts",
+      "bytes": 54184,
+      "sha256": "bcaf6a7cda69d3744d039c864a8fa59502514a9f8d2d2b8d0107001ceb9b406f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/inspector.generated.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/inspector.generated.d.ts",
+      "bytes": 228347,
+      "sha256": "4dbd12e59b970f64303e68820f395a169e512e48eecd360305591be83592b80d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/buffer.buffer.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/buffer.buffer.d.ts",
+      "bytes": 23191,
+      "sha256": "eb9de9c4763c447e2fda608854ad494c4a99e10dff9862e2ac437edbd477acab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/timers.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/timers.d.ts",
+      "bytes": 14570,
+      "sha256": "9705cd157ffbb91c5cab48bdd2de5a437a372e63f870f8a8472e72ff634d47c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/test.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/test.d.ts",
+      "bytes": 127254,
+      "sha256": "f75d37a23477e13019deb34401bac250666de0bca64de6b41698d90bfb3b3db0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/http.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/http.d.ts",
+      "bytes": 101368,
+      "sha256": "06c12e208576282dfd4aa04cc47ae3447008fdf79a360a9b0f3a6fb940960cd1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/http2.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/http2.d.ts",
+      "bytes": 135826,
+      "sha256": "f952e6977043709c36ea7d9f626219f7bcb066b0da6277257eea0d2ec76123ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream.d.ts",
+      "bytes": 87739,
+      "sha256": "d30fbda663d9683468f519de4062e4a59a1a318b8b1c9e5a8e30073d6bff4b1d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/inspector.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/inspector.d.ts",
+      "bytes": 14349,
+      "sha256": "6a4b62da0425ae60eefe00841578be0244a8888a62593a843369c9c311f15eee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/v8.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/v8.d.ts",
+      "bytes": 42262,
+      "sha256": "09c273ba5bda2a12318fbfc37433a3f45b6137a65dea55e009d1c3f7608b9965"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/perf_hooks.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/perf_hooks.d.ts",
+      "bytes": 42321,
+      "sha256": "0343687443e7684643e8349cb178f2f9bbdeed2ab53445b0f2870ccda91d274d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/url.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/url.d.ts",
+      "bytes": 48036,
+      "sha256": "85fb581c048b948a48842e6584d61512939566e0c7a4d6439f54902ce6c79bee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/cluster.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/cluster.d.ts",
+      "bytes": 27926,
+      "sha256": "51aecd2df90a3cffea1eb4696b33b2d78594ea2aa2138e6b9471ec4841c6c2ee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/https.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/https.d.ts",
+      "bytes": 26256,
+      "sha256": "0c50296ee73dae94efc3f0da4936b1146ca6ce2217acfabb44c19c9a33fa30e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/assert.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/assert.d.ts",
+      "bytes": 46664,
+      "sha256": "4ea15fd99b2e34cb25fe8346c955000bb70c8b423ae4377a972ef46bfb37f595"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/fs.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/fs.d.ts",
+      "bytes": 203522,
+      "sha256": "e6a2a1eecdb48e9a9eb36d115e212664f20710530e5ec32bbea84bf36979d2c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/repl.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/repl.d.ts",
+      "bytes": 19901,
+      "sha256": "8c81fd4a110490c43d7c578e8c6f69b3af01717189196899a6a44f93daa57a3a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dgram.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dgram.d.ts",
+      "bytes": 34298,
+      "sha256": "53880a6a8e7ca1536d25eed26f1a74bb893711d7395db74d5a329f8e074a576f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/child_process.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/child_process.d.ts",
+      "bytes": 67070,
+      "sha256": "45660ca397a0254c7ed61255fe8174ac0951452e4565207d41313b6fbf5b8431"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/zlib.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/zlib.d.ts",
+      "bytes": 28905,
+      "sha256": "f3b927f3f6054ebee0c7497a72c574081d21cca71d29d7996ca9aecf9f6ad80d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/module.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/module.d.ts",
+      "bytes": 38366,
+      "sha256": "2d25328278ab945e6ad1e73d831a9e79ba274cb994ebc0470f29c08d2550bcd2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/sqlite.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/sqlite.d.ts",
+      "bytes": 57107,
+      "sha256": "9ba17a5bdbeb17c5584000b1ae4b3552116f2151f6c04830c070ef36bf4cecec"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/globals.typedarray.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/globals.typedarray.d.ts",
+      "bytes": 2029,
+      "sha256": "378281aa35786c27d5811af7e6bcaa492eebd0c7013d48137c35bbc69a2b9751"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/process.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/process.d.ts",
+      "bytes": 108587,
+      "sha256": "614d31f77751e038f30e01641443df8591e12b337c675a44f70675fd5dbf5ae9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/util.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/util.d.ts",
+      "bytes": 93290,
+      "sha256": "37b296304f3970f50e4879c685234ba6eaf4649c4f5135c3e236b201e9f02bb1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/wasi.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/wasi.d.ts",
+      "bytes": 9120,
+      "sha256": "0d5b085f36e6dc55bc6332ecb9c733be3a534958c238fb8d8d18d4a2b6f2a15a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/index.d.ts",
+      "bytes": 4377,
+      "sha256": "d7e9ab1b0996639047c61c1e62f85c620e4382206b3abb430d9a21fb7bc23c77"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/net.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/net.d.ts",
+      "bytes": 54326,
+      "sha256": "cd541a9b163154df9713f5669c157e330f6957f44915a097c4d99e9f4df616dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/compatibility/iterators.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/compatibility/iterators.d.ts",
+      "bytes": 1303,
+      "sha256": "d153a11543fd884b596587ccd97aebbeed950b26933ee000f94009f1ab142848"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/timers/promises.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/timers/promises.d.ts",
+      "bytes": 3780,
+      "sha256": "ae86f30d5d10e4f75ce8dcb6e1bd3a12ecec3d071a21e8f462c5c85c678efb41"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/consumers.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/consumers.d.ts",
+      "bytes": 1891,
+      "sha256": "3f87014045740d3df7752b1dd6a6d8c245fb646104471dda177e7ce41b6cb296"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/web.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/web.d.ts",
+      "bytes": 28520,
+      "sha256": "6e11fd90418aae21a4b5f9f8fb79b7d920143486b2a5911c9eed377ab71fe5c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/promises.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/stream/promises.d.ts",
+      "bytes": 2971,
+      "sha256": "37ba7b45141a45ce6e80e66f2a96c8a5ab1bcef0fc2d0f56bb58df96ec67e972"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/readline/promises.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/readline/promises.d.ts",
+      "bytes": 6439,
+      "sha256": "77fbe5eecb6fac4b6242bbf6eebfc43e98ce5ccba8fa44e0ef6a95c945ff4d98"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/streams.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/streams.d.ts",
+      "bytes": 774,
+      "sha256": "d97fb21da858fb18b8ae72c314e9743fd52f73ebe2764e12af1db32fc03f853f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/crypto.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/crypto.d.ts",
+      "bytes": 1037,
+      "sha256": "387a023d363f755eb63450a66c28b14cdd7bc30a104565e2dbf0a8988bb4a56c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/events.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/events.d.ts",
+      "bytes": 2871,
+      "sha256": "f26b11d8d8e4b8028f1c7d618b22274c892e4b0ef5b3678a8ccbad85419aef43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/fetch.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/fetch.d.ts",
+      "bytes": 3112,
+      "sha256": "f724236417941ea77ec8d38c6b7021f5fb7f8521c7f8c1538e87661f2c6a0774"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/navigator.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/navigator.d.ts",
+      "bytes": 891,
+      "sha256": "1cf059eaf468efcc649f8cf6075d3cb98e9a35a0fe9c44419ec3d2f5428d7123"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/domexception.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/domexception.d.ts",
+      "bytes": 2565,
+      "sha256": "9798340ffb0d067d69b1ae5b32faa17ab31b82466a3fc00d8f2f2df0c8554aaa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/abortcontroller.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/abortcontroller.d.ts",
+      "bytes": 1145,
+      "sha256": "1db0b7dca579049ca4193d034d835f6bfe73096c73663e5ef9a0b5779939f3d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/storage.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/web-globals/storage.d.ts",
+      "bytes": 724,
+      "sha256": "e7721c4f69f93c91360c26a0a84ee885997d748237ef78ef665b153e622b36c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/assert/strict.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/assert/strict.d.ts",
+      "bytes": 3003,
+      "sha256": "7cf69dd5502c41644c9e5106210b5da7144800670cbe861f66726fa209e231c4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.7/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.7/index.d.ts",
+      "bytes": 4653,
+      "sha256": "63228283eda38338f98e629d8033bffe727d2247ba2f3a1cbd1273a6827a1ec4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/buffer.buffer.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/buffer.buffer.d.ts",
+      "bytes": 22314,
+      "sha256": "1e44bf48f21803a965cfa8917c3752c720d883a5b01ce2fa77497d270152a8e1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/globals.typedarray.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/globals.typedarray.d.ts",
+      "bytes": 1238,
+      "sha256": "6f2442c0ca5e7fcb9d51ebbd7d43079844bcbfd947bb679b9419900745f871d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/index.d.ts",
+      "bytes": 4666,
+      "sha256": "cc6a8f0089e3c787e829bd1bbfb563aadc9f60bf569326abea8220f390ec5e0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dns/promises.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/dns/promises.d.ts",
+      "bytes": 21112,
+      "sha256": "b5cc0993d6853c829184f119e49176bb43061cd0dbcb2192d296f7221b4d7b11"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/fs/promises.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/fs/promises.d.ts",
+      "bytes": 58429,
+      "sha256": "1e7e5eaeb0526d12e8bc859e537c65779e673d4beb94615da7f062a8bce2fd96"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/compatibility/float16array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.6/compatibility/float16array.d.ts",
+      "bytes": 3811,
+      "sha256": "394fda71d5d6bd00a372437dff510feab37b92f345861e592f956d6995e9c1ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.7/compatibility/float16array.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/ts5.7/compatibility/float16array.d.ts",
+      "bytes": 3872,
+      "sha256": "cebfeedf63623d54f7423d58cae1ec204c0d8d97a66d5fb17579e26a902085e1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/reporter.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/reporter.d.ts",
+      "bytes": 650,
+      "sha256": "04392f8e190f9e51301f73d17bbb34babd54858c1efc932d2193962f66dabae2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.d.ts",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+    },
+    {
+      "path": "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json",
+      "realpath": "/private/tmp/release01-parser-types-v3l5i371/tsconfig.json",
+      "bytes": 1315,
+      "sha256": "86460b4fe225121800f43121c4900df7a4c375d417c1e40dc1dc44ccfa2ed337"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "realpath": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    }
+  ],
+  "authorization": {
+    "source": "d01 strict-only20261007 current20s/5cleanup",
+    "totalMs": 20000,
+    "cleanupMs": 5000,
+    "node": 1,
+    "network": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576
+  },
+  "startFreeBytes": 18129092608,
+  "stopFreeBytes": 1207959552,
+  "implementation": "fc2916c275efe86203d91ec33656ea9871eac42a"
+}

@@ -1,0 +1,196 @@
+packages/client/src/conversation-acknowledgement.ts(78,31): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/client/src/conversation-acknowledgement.ts(79,33): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+packages/client/src/conversation-acknowledgement.ts(79,38): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/client/src/conversation-acknowledgement.ts(179,52): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/client/src/index.ts(167,48): error TS2339: Property 'streamId' does not exist on type 'AssistantStreamPatch'.
+packages/client/src/index.ts(167,88): error TS2339: Property 'source' does not exist on type 'AssistantStreamPatch'.
+packages/client/src/index.ts(167,128): error TS2339: Property 'channel' does not exist on type 'AssistantStreamPatch'.
+packages/contracts/src/active-steering.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/active-steering.ts(9,61): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/active-steering.ts(20,13): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/assistant-stream.ts(25,54): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(25,167): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(30,17): error TS7006: Parameter 'patch' implicitly has an 'any' type.
+packages/contracts/src/assistant-stream.ts(30,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/assistant.ts(7,57): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(24,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(29,17): error TS7006: Parameter 'settings' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(29,27): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/assistant.ts(35,34): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/attachments.ts(17,11): error TS7006: Parameter 'text' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(29,11): error TS7006: Parameter 'name' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(30,11): error TS7006: Parameter 'name' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(39,11): error TS7006: Parameter 'refs' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(49,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(55,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(71,45): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(90,65): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(96,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/attachments.ts(97,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/browser-session.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/claude-turn-settings.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/claude-turn-settings.ts(28,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/claude-turn-settings.ts(28,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/claude-turn-settings.ts(34,118): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/claude-turn-settings.ts(34,126): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/claude-turn-settings.ts(35,26): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/claude-turn-settings.ts(66,23): error TS7006: Parameter 'choice' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/context-observation-event.ts(23,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(23,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(24,36): error TS7006: Parameter 'item' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(26,53): error TS7006: Parameter 'item' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(26,95): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(26,100): error TS7006: Parameter 'item' implicitly has an 'any' type.
+packages/contracts/src/context-observation-event.ts(31,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-observation-history.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/context-observation-history.ts(12,13): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-observation-history.ts(19,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-observation-history.ts(19,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/context-observation-history.ts(31,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-observation-history.ts(31,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/context-transparency.ts(33,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(33,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(44,44): error TS7006: Parameter 'item' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(63,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(63,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/context-transparency.ts(84,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/conversation-context.ts(7,135): error TS7006: Parameter 'refs' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(8,25): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/contracts/src/conversation-context.ts(59,11): error TS7006: Parameter 'source' implicitly has an 'any' type.
+packages/contracts/src/conversation-queue.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/conversation-queue.ts(16,69): error TS7006: Parameter 'text' implicitly has an 'any' type.
+packages/contracts/src/conversations.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/conversations.ts(23,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/conversations.ts(23,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/conversations.ts(31,46): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/engineering-native.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/engineering-native.ts(7,63): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/engineering-profile.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/engineering.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/engineering.ts(8,67): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(22,56): error TS7006: Parameter 'path' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(23,53): error TS7006: Parameter 'part' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(27,11): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(29,80): error TS7006: Parameter 'entries' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(29,106): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(29,113): error TS7006: Parameter 'index' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(30,11): error TS7006: Parameter 'entries' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(30,38): error TS7006: Parameter 'total' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(30,45): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(36,55): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(55,30): error TS7006: Parameter 'check' implicitly has an 'any' type.
+packages/contracts/src/engineering.ts(55,37): error TS7006: Parameter 'index' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/execution-profiles.ts(32,17): error TS7006: Parameter 'profile' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(32,26): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(120,19): error TS7031: Binding element 'profile' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(120,28): error TS7031: Binding element 'conversation' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(120,44): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(139,17): error TS7006: Parameter 'page' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(139,23): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(140,33): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(151,63): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(158,19): error TS7031: Binding element 'profile' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(158,30): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(167,17): error TS7006: Parameter 'page' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(167,23): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(168,33): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(193,19): error TS7031: Binding element 'profile' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(193,28): error TS7031: Binding element 'conversation' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(193,44): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(203,17): error TS7006: Parameter 'page' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(203,23): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/execution-profiles.ts(204,33): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+packages/contracts/src/goal-context.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-context.ts(5,121): error TS7006: Parameter 'refs' implicitly has an 'any' type.
+packages/contracts/src/goal-context.ts(6,25): error TS7006: Parameter 'ref' implicitly has an 'any' type.
+packages/contracts/src/goal-delivery.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-delivery.ts(9,30): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goal-delivery.ts(10,64): error TS7006: Parameter 'ids' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-graph-proposals.ts(29,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(29,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(30,35): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(31,31): error TS7006: Parameter 'sum' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(31,36): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(33,56): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-proposals.ts(34,120): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-runs.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-graph-runs.ts(10,77): error TS7006: Parameter 'nodes' implicitly has an 'any' type.
+packages/contracts/src/goal-graph-runs.ts(10,104): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-native-executions.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-plan-confirmation.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-plan-confirmation.ts(22,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goal-plan-confirmation.ts(22,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/goal-plan-confirmation.ts(23,31): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-progression.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-progression.ts(21,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goal-progression.ts(21,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/goal-progression.ts(22,31): error TS7006: Parameter 'node' implicitly has an 'any' type.
+packages/contracts/src/goal-tool-runs.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goal-tool-runs.ts(10,60): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/goal-tool-runs.ts(11,55): error TS7006: Parameter 'values' implicitly has an 'any' type.
+packages/contracts/src/goals.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/goals.ts(6,54): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/goals.ts(8,56): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/harnesses.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/harnesses.ts(15,40): error TS2532: Object is possibly 'undefined'.
+packages/contracts/src/knowledge.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/knowledge.ts(12,88): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(13,55): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(19,116): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/knowledge.ts(20,222): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/native-activity-body.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/native-activity-body.ts(89,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/native-activity-body.ts(89,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/native-activity.ts(9,30): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(29,17): error TS7006: Parameter 'event' implicitly has an 'any' type.
+packages/contracts/src/native-activity.ts(29,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/package-artifacts.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-artifact.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-installations.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-package-fetches.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-runner-claim.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-runner-claim.ts(27,17): error TS7006: Parameter 'response' implicitly has an 'any' type.
+packages/contracts/src/plugin-runner-claim.ts(27,27): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/plugin-runner-claim.ts(42,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugin-runtime.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugin-runtime.ts(44,47): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugin-runtime.ts(46,47): error TS7006: Parameter 'rule' implicitly has an 'any' type.
+packages/contracts/src/plugin-runtime.ts(75,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugin-runtime.ts(75,24): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/plugins.ts(9,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(11,62): error TS7006: Parameter 'items' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(15,13): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(17,13): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(22,13): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(22,90): error TS7006: Parameter 'identifier' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(29,60): error TS7006: Parameter 'fields' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(29,89): error TS7006: Parameter 'field' implicitly has an 'any' type.
+packages/contracts/src/plugins.ts(34,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/projects.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/protocol-dispatch.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/protocol-task.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/reconciliation.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/runner-claim.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/runner-claim.ts(33,17): error TS7006: Parameter 'response' implicitly has an 'any' type.
+packages/contracts/src/runner-claim.ts(33,27): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/runner-claim.ts(44,11): error TS7006: Parameter 'response' implicitly has an 'any' type.
+packages/contracts/src/runner-maintenance.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/runner.ts(5,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/runner.ts(18,85): error TS7006: Parameter 'names' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(42,57): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(75,118): error TS7006: Parameter 'batch' implicitly has an 'any' type.
+packages/contracts/src/runner.ts(78,11): error TS7006: Parameter 'value' implicitly has an 'any' type.
+packages/contracts/src/tasks.ts(1,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.
+packages/contracts/src/tasks.ts(41,17): error TS7006: Parameter 'task' implicitly has an 'any' type.
+packages/contracts/src/tasks.ts(41,23): error TS7006: Parameter 'context' implicitly has an 'any' type.
+packages/contracts/src/workspace.ts(2,19): error TS2307: Cannot find module 'zod' or its corresponding type declarations.

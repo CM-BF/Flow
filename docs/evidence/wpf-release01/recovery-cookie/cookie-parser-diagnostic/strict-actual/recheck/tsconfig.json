@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@types"
+    ],
+    "baseUrl": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "paths": {
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/index.ts"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+      ],
+      "@playwright/test": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@playwright/test"
+      ]
+    }
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

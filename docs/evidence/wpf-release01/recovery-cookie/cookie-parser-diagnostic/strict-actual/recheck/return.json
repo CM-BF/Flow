@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T16:45:54.467272+00:00",
+  "actualExit": 0,
+  "childExit": 0,
+  "chargeMs": 1650,
+  "groups": [
+    {
+      "pid": 5981,
+      "group": false,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 5981,
+      "group": true,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 6181,
+      "group": false,
+      "state": "ABSENT"
+    },
+    {
+      "pid": 6181,
+      "group": true,
+      "state": "ABSENT"
+    }
+  ],
+  "scratchAbsent": true,
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "outerEOF": true,
+  "state": "RETURNED_PASSED",
+  "phasePriorMs": 1125,
+  "phaseSpentMs": 2775,
+  "phaseUnusedMs": 17225,
+  "phaseState": "CLOSED",
+  "unusedTransferred": false
+}
