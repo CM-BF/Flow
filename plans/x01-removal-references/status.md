@@ -7,32 +7,32 @@
 | co-lead | Mika |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 最近更新时间 | 2026-10-07T11:50:53.049795+00:00 |
+| 最近更新时间 | 2026-10-07T11:53:57.330787+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；本次PG未开 |
 | 分支交付时间 | 2026-10-07T11:48:51.650207+00:00 |
-| 当前产出 | 可分页查看指定插件材料的任务引用及保留原因，直接检查已通过，等待独审 |
-| 下一可用交付 | 审查固定中心入口与真实数据库验收准备；实际数据库验证另行领取窗口 |
+| 当前产出 | 材料引用查询、保留原因与有界分页已通过源码及局部独审，真实数据库验收准备就绪 |
+| 下一可用交付 | 按固定准备执行一次真实SQL/owner HTTP验收；须先取得唯一资源窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references |
 | branch | codex/plugin-removal-references |
 | 工作基线 / HEAD | 81a064cb9f65da4b82bd2df042c4e5414f451811；base a4ebb279dd8613497cf9757ac187c3df923d5b37（HOST已审后像，非main） |
 | 工作树 dirty 状态 | clean；仅独审交接metadata收口，源码/原件固定 |
-| 工作分支状态 | review |
+| 工作分支状态 | implementation |
 | claim | 04e46691-f4fd-46cc-808c-59c391dfd015 v1 ACTIVE7 |
 | 实现目标 | 81a064cb9f65da4b82bd2df042c4e5414f451811 |
 | 实现范围 | apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/removal-references.ts,apps/server/src/plugin-runtime/removal-references.test.ts,apps/server/src/plugin-runtime/removal-references-pg.test.ts,packages/contracts/src/plugin-removal.ts |
 | 检查状态 | PASSED 81a064cb9f65da4b82bd2df042c4e5414f451811：8 direct/8pass与types0；list1仅收集、PG NOT_RUN。8child累计12.9147665s，原失败保留 |
-| Review | IN_PROGRESS；chatui已followup并核running，固定packet b95c13636bed0a5ddb7ef76c9af3b1bb59743bd8，尚无批准 |
+| Review | APPROVED 2026-10-07T11:53:00Z chatui；source81a064cb/packetb95c1363，0P1/P2；限源码/local/PG准备 |
 | 已集成 main 状态 | 本片未接收；HOST/ACK/consumer已main de5475039d73caec631ba2ee64556208dbb1751d，主线I02 x01-candidates-combined-intake.json已只读核；不重置本片固定base、不冒本片main通过 |
 
 | TODO ID | 状态 | owner | 证据 |
 | --- | --- | --- | --- |
-| REMOVE-01 | in-progress | architecture_read | 源码已实现/direct8+types0，待独审；[local](../../docs/evidence/x01-removal-references/local.json) |
+| REMOVE-01 | completed | architecture_read | 源码已实现/direct8+types0，11:53独审APPROVED；[local](../../docs/evidence/x01-removal-references/local.json) |
 | REMOVE-02 | in-progress | architecture_read | PG准备/list1，实际NOT_OPEN；[窗口](../../docs/evidence/x01-removal-references/pg-window.md) |
 | REMOVE-03 | pending | architecture_read / Execution Lead | HOST前置窄接收、必要组合检查尚未执行 |
 
@@ -45,3 +45,5 @@
 local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最后11:46:48.875314Z。累计监督12.9147665s、raw3641B；两次缺依赖types2、首次support resolver collect1均原样留存。第二轮8例为cursor直接影响复核，不累计作16distinct。PGfixture仅收集1，未执行hooks/SQL/HTTP。末样本非峰值，wholeexternalwall UNKNOWN。源码post-check固定提交，不冒precommitted执行head。
 
 当前0actualPG/Chrome/provider/local/待launch。唯一local已直交db；metadata不占local。旧父routes明确STOP→v27移出，新v1领取才写。[claim](../../docs/evidence/x01-removal-references/claim-v1.json) / [交回](../../docs/evidence/x01-removal-references/routes-handback.json)。本片不证明物理卸载、宿主释放、跨登记材料可回收或完整X01。
+
+2026-10-07T11:53:00Z 独审正式批准已归档。[窄intake](../../docs/evidence/x01-removal-references/main-intake.json)仅SOURCE_APPROVED_PG_PENDING，动态SQL验收尚未执行。唯一NEXT现由WebRelease c3持有，本组无PGOPEN/预约；当前0actual/0待launch。

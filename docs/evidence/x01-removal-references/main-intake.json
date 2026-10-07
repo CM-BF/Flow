@@ -1,0 +1,70 @@
+{
+  "taskId": "X01-REMOVAL-REFERENCES01",
+  "parentTaskId": "X01",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "state": "SOURCE_APPROVED_PG_PENDING",
+  "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "reviewPacket": "b95c13636bed0a5ddb7ef76c9af3b1bb59743bd8",
+  "review": "docs/evidence/x01-removal-references/review-approval.json",
+  "rows": [
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 5824,
+      "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc",
+      "preimageCommit": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+      "preimageSha256": "01e653c45aab17c60e5894b8674b170aacf431895afb7a0ff1e39aa1e9dffd6f",
+      "preimageKind": "fixed"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/removal-references.ts",
+      "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 5437,
+      "sha256": "b47999b523c9b908aef41b60a35a367ab7664ddee371bf88b16102b774bc5c39",
+      "preimageCommit": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+      "preimageSha256": null,
+      "preimageKind": "absent"
+    },
+    {
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+      "preimageCommit": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+      "preimageSha256": null,
+      "preimageKind": "absent"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/removal-references.test.ts",
+      "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 8667,
+      "sha256": "bfdd94aa57cc1ac8ffcf9d8dee8e4fca5d858c37484b687724f46bc61aee5c06",
+      "preimageCommit": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+      "preimageSha256": null,
+      "preimageKind": "absent"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+      "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 12543,
+      "sha256": "d9ca0d41c88bf63648f7553b09057eb648fab266668704ea7bc9a4add438ebb3",
+      "preimageCommit": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+      "preimageSha256": null,
+      "preimageKind": "absent"
+    }
+  ],
+  "productionPaths": [
+    "apps/server/src/plugin-runtime/routes.ts",
+    "apps/server/src/plugin-runtime/removal-references.ts",
+    "packages/contracts/src/plugin-removal.ts"
+  ],
+  "testPaths": [
+    "apps/server/src/plugin-runtime/removal-references.test.ts",
+    "apps/server/src/plugin-runtime/removal-references-pg.test.ts"
+  ],
+  "statusPath": "plans/x01-removal-references/status.md",
+  "dependencies": "HOST a298 now main de5475039d73caec631ba2ee64556208dbb1751d; apply only this routes delta, preserve other main routes. Fresh actual preimages at intake.",
+  "validation": "8 direct pass/types0; dynamic SQL real PG not yet run. Do not claim production PG acceptance.",
+  "requiredActual": "One prepared removal-references-pg case in newly authorized independent 180s window."
+}

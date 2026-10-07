@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "implementation",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "可分页查看指定插件材料的任务引用及保留原因，直接检查已通过，等待独审",
-    "next": "审查固定中心入口与真实数据库验收准备；实际数据库验证另行领取窗口",
+    "output": "材料引用查询、保留原因与有界分页已通过源码及局部独审，真实数据库验收准备就绪",
+    "next": "按固定准备执行一次真实SQL/owner HTTP验收；须先取得唯一资源窗口",
     "blocker": {
       "state": "none",
       "text": ""
