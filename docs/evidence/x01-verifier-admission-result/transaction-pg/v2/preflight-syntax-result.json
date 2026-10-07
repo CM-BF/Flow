@@ -1,0 +1,54 @@
+{
+  "pid": 30143,
+  "ownership": "newChildSession",
+  "capture": "merged",
+  "exit_code": 0,
+  "elapsed_ms": 39,
+  "observed_bytes": 0,
+  "retained_bytes": 0,
+  "eof": {
+    "stdout": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "startedAt": "2026-10-07T23:32:31.639Z",
+  "endedAt": "2026-10-07T23:32:31.678Z",
+  "kind": "NODE_CHECK_ONLY_NO_MODULE_EXECUTION",
+  "sourceCommit": "fc1c9e32c0e0e6205ad795980a78738af78c6fc0",
+  "sourcePath": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/pg-capacity-preflight.cjs",
+  "sourceSha256": "7496ae050ecadc3a92f1873e2e35adfddb6cac4a958bea260bc111ff21333aac",
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "canonicalAt": "2026-10-07T23:30:51.753Z",
+  "canonicalSha256": "7ad9b33491fcaf028c05d4c83a8469b8f644a029d202ced793fe4abeffa60f63",
+  "floorBytes": 11701714944,
+  "freeBytes": 17899020288,
+  "cleanup": {
+    "removed": true,
+    "exactAbsent": true,
+    "identity": [
+      16777234,
+      124639390
+    ],
+    "sampleEntries": 0
+  },
+  "wholeExternalWall": "UNKNOWN",
+  "PG": 0,
+  "HTTP": 0
+}

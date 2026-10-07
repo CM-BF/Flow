@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T23:33:25.378Z",
+  "state": "PREFLIGHT_SOURCE_SYNTAX_PASSED_REVIEW_PENDING_CLOSED",
+  "sourceCommit": "fc1c9e32c0e0e6205ad795980a78738af78c6fc0",
+  "sourcePath": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/pg-capacity-preflight.cjs",
+  "sourceSha256": "7496ae050ecadc3a92f1873e2e35adfddb6cac4a958bea260bc111ff21333aac",
+  "sourceBytes": 1961,
+  "syntax": "preflight-syntax-result.json",
+  "priorFailedGrant": "VAR-TRANSACTION-PG-V2-20261007-ONCE (cancelled; never reusable)",
+  "runtimeInputs": {
+    "queuePath": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/queue-ready.json",
+    "queueSha256": "f8e607a574e8bbd1c7f700a5bf6602783468fa2838cd653c2e5686633682526c",
+    "manifestPath": "docs/evidence/x01-verifier-admission-result/transaction-pg/manifest-v2.json",
+    "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+    "unchanged295files191external16links": true,
+    "fixedCallerSha256": "53e5f1b28351ad6c566a72f59d9e9cb27e85d1cac1cbf30e11c52c7d3cf9f2d5"
+  },
+  "futureExternalProbe": {
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/v2/pg-capacity-preflight.cjs"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+    "env": {
+      "PATH": "/usr/bin:/bin",
+      "LANG": "C",
+      "LC_ALL": "C",
+      "TZ": "UTC",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "supervisor": "Existing fixed OPS14 (same 725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d); no wrapper framework",
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "policy": {
+      "workSeconds": 7,
+      "termGraceSeconds": 1,
+      "killGraceSeconds": 1,
+      "outputBytes": 8192
+    },
+    "overallExternalPreflightSeconds": 10,
+    "mustPersist": "Record before-launch UTC; returned PID/group/exit/EOF/raw and post-return UTC, exact source hash, canonical grant/free/claim. Validate elapsed<=10, no failure/signals, knownabsent and fullEOF, exact one JSON passed with pool/adminclosed and available>=33. Nonzero/unknown/parsefailure stops before runtime admission; preserve failure, no retry.",
+    "sql": "Parameterized current_setting($1), max_connections; read postgres metadata only. No project/private database/schema access.",
+    "separateClock": "Probe does not consume or extend the fixed caller180s origin; runtime requires its own current manager grant and exact caller once.",
+    "dependency": "Uses already fixed pg8.23.1 within prior191external/16links; final absolute path/realpath/hash must be checked before actual probe."
+  },
+  "noPGThisSegment": true,
+  "noActualNamespace": true,
+  "limits": "Syntax0 only, not PG capacity result or fivecase pass. Main receipt still absent; whole VAR unfinished.",
+  "quality": "Installed find-skills/codebase-design/clean-code reused: one isolated capacity responsibility, parameterized SQL removes layered quoting, first failure retained, no caller imports/retry/second scheduler, close failure cannot pass."
+}

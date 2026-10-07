@@ -55,3 +55,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## VAR v2准备差量独审批准
 
 2026-10-07T22:53:19.955Z归档b01 2026-10-07T22:50:13.904235Z PREPARATION_DELTA_REVIEW_APPROVED/0新增P1P2，target14dcc/packetbf13。10固定bindings及295输入字节成立；191external/16links本轮声明对比，未重新全读外部内容。不扩大为domain/guard重审或实际PG。见[批准原范围](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/preparation-approval.json)。Lead后到顺序决策单列在queue-ready，不伪托审者已批准main或撤销实际准入。
+
+## 容量预检固定源待审
+
+2026-10-07T23:33:25.378Z：独立CJS sourcefc1c9e32c，参数化current_setting($1)，只查postgres metadata并保firstFailure/await pool.end；外部OPS14另限≤10s，旧295及caller不改。唯一node --check0只证语法，不证PG；旧inline失败/缺失PID与时钟证据保留。请只读核该小源、syntax收据和未来接线说明，不重审五domain或全闭包。
