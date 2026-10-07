@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T07:47:03Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+  "packet": "5e8dfa9447a6d81ec7245c7d4555b7b3cb5f7f88",
+  "verdict": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Optional disclosure no longer blocks text; retained deadline yields visible error and stops automatic retry; stale/close discard unchanged.",
+  "evidence": "7 bindings/54967B; exact old-source2red -> fixed4pass/7unselected -> strict0; raw2571B/3closed children/TMPabsent. Original14 not rerun or added.",
+  "exclusions": "Real HTTP/PG/public client/Web/provider/native not validated; PG fixture separate."
+}

@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T07:44:49.362974+00:00 |
+| 最近更新 | 2026-10-07T07:55:34.749366+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
-| 独立审查时间 | UNKNOWN |
+| 独立审查时间 | 2026-10-07T07:47:03Z（core限定复审） |
 | 主线集成时间 | UNKNOWN |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | review |
-| 当前产出 | 共享读取核心已支持默认只收正文、展开后独立增量读取推理；发现并修复可选推理拖住正文刷新的问题，正等待复审；尚未接公开客户端和界面。 |
-| 下一可用交付 | 完成独立审查，再接公开客户端和真实HTTP字节验收。 |
+| 当前产出 | 共享读取核心已支持默认只收正文、展开后独立增量读取推理；可选推理不会拖住正文刷新的修复已独审通过；尚未接公开客户端和界面。 |
+| 下一可用交付 | 对固定专库入口完成审查后，验证真实HTTP默认不传推理正文及游标/身份；再接公开客户端。 |
 | 当前阻塞 | NONE（公开客户端由CHAT05P02持有，后继接线待正式交接；本片审查可独立进行） |
 | 需用户决定 | NONE |
-| Review | a402独审1P2；60db修复待chatui复审，不继承旧批准 |
+| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；新PG准备单独待审 |
 | 检查 | 原14/14+strict0保留；P2新2red→4定向pass/strict0，0PG/HTTP/browser/provider/native/install |
 | main | NOT_INTEGRATED |
 | 实现目标 | 60db06152a21c44d73bcc46be3cb785b4aa438b2 |
@@ -39,10 +39,10 @@
 | --- | --- | --- | --- |
 | LAZY01-01 | completed | status_read | 初始9ef8 setup/Interface与v1 receipt |
 | LAZY01-02 | completed | status_read | v2正式领取；本固定六core/三test |
-| LAZY01-03 | in-progress | status_read | local.json14/14+strict0，独审PENDING |
-| LAZY01-04 | pending | status_read | client/真实HTTP/消费者接线未实施未验收 |
+| LAZY01-03 | completed | status_read | 原14/14；P2修后4定向/strict0；07:47独审通过 |
+| LAZY01-04 | in-progress | status_read | PG fixture types0/collect2，实际PG NOT_OPEN；client/UI未接 |
 | LAZY01-05 | pending | status_read | NOT_INTEGRATED |
 
 唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
 
-P2修复入口 docs/evidence/mature06-lazy-reasoning/lifecycle-review-ready.md。新selection-pg.test.ts@f1fce60f仅静态准备2case，不纳core source目标；原子amend07:37:02.545Z后才创建。复用固定base现有ContinuityCenterFixture，159只读缺项700820B/31SQL已补（合计仍<4MiB），0导入/PG。fixture类型、完整runtime依赖绑定、OPS14薄调用与实际独占窗仍PENDING，不能现在运行。当前owner仅metadata，无actual holder。
+P2修复独审见lifecycle-review-receipt.json。当前PG交审入口docs/evidence/mature06-lazy-reasoning/pg-review-ready.md：复用fixedbase既有ContinuityCenterFixture/OPS14与本树公开API；2case定向types0+list2仅证明类型和收集，0hook/PG/HTTP。90s候选/14连接/2任务/256HTTP/32MiBTMP与DB-WAL128MiB预留保持未知峰值语义，实际未OPEN。244固定输入/31SQL；159只读缺项700820B及额外既有helper固定base，不覆盖当前源码。唯一本段local2child已闭合并交回X01；无actual holder。公开client与Web依赖未解除，main仍NOT_INTEGRATED。

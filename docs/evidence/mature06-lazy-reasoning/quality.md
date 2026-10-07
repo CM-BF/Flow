@@ -19,3 +19,7 @@ Pending: independent source/local review, actual HTTP zero-default-body evidence
 独审确认可选读取不应占text flight。修复保持单selection flight与现调度权威，分离代际有效性与deadline；有限超时错误停止自动重试。新增真实old-source2红与修后4绿/strict0，原10/14/strict红原件不改。3新增children已closed/TMPremoved；未把await取消声称为停止任意不合作外部read。复用同run-local有限p2 selector/单独新段record，未复制supervisor。实际本段开工07:36:26、末child时间见lifecycle-local；不以child累计冒整段。
 
 只读供给first attempt发现storage目录无package.json而未执行checkout，删除该不存在的元数据假设后按真实package exports补159files700820B/31SQL；全部exclusive missing固定base，未覆盖现有source/dirty，0install/import/PG。额外只读源获root≤2MiB许可；新可写source/metadata仍≤512KiB。本段预算4children用了3，不为余量新增无关检查。
+
+## PG准备安全点 2026-10-07T07:55:34.749366+00:00
+复用本地find-skills/codebase-design/clean-code固定版本：现有C02 fixture唯一管理专库/OID-marker/普通DROP；OPS14唯一管理child/EOF/group；薄caller只绑定本次input/deadline/证据，same-PID checkpoint后exec。未复制旧supervisor、无新权限/恢复FSM。core60db独审07:47通过。新fixturetypes0、Vitest list精确2项/0hooks；两child真实闭合/同inodeTMP删除，raw303B。此后只有Python AST解析（不import/执行caller），没有第三工程child。
+支持源159项700820B及固定base execute-pg-once.py只读helper仍总<4MiB；root批准可写512KiB内。TMP只闭合采样非峰值，DB/WAL是物理余量预留非硬quota。pre-persistence内部计时不代externaltool最终完成。尚未实际HTTP/PG，caller需独立静态审查，0provider/native。

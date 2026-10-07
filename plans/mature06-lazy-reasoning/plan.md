@@ -6,7 +6,7 @@
 
 - [x] LAZY01-01 固定base、独立树、metadata领取与小Interface。
 - [x] LAZY01-02 正式领取六core/三tests后实现选择协商与单projection生命周期。
-- [ ] LAZY01-03 必要局部行为/strict及独立review，不以mock代HTTP字节证明。
+- [x] LAZY01-03 必要局部行为/strict及独立review，不以mock代HTTP字节证明。
 - [ ] LAZY01-04 client共享接线与受控专库HTTP验收；Web owner衔接明确。
 - [ ] LAZY01-05 受控main接收与dashboard/架构事实同步。
 

@@ -1,0 +1,46 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@fastify/cors": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors"
+      ],
+      "fastify": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/index.d.ts"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/index.d.ts"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts"
+      ],
+      "pg-boss": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/index.d.ts"
+      ],
+      "tar": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+      ],
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/packages/contracts/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/packages/plugin-runtime/src/package-store.ts"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "../../../apps/server/src/assistant-stream/selection-pg.test.ts"
+  ]
+}
