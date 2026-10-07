@@ -29,3 +29,9 @@ turnPage保留conversation读取+limit+1，最大7 reads加BEGIN/COMMIT=9次调�
 2026-10-06 23:39:37 UTC：沿同一find-skills本地匹配（Node/TS/pg/Vitest）、固定clean-code和codebase-design复核。本次仅归档已完成独审，不改源码，不重新安装技能。fixture seed、协议观察、case/DB生命周期和进程调用方各守单一职责；观察器延后到Pool.query seed结束再装，避免callback-form不兼容；SQL结果不替换，原操作不提前释放，清理错误与原错误区分。未新造通用监督框架，复用固定旧supervisor纯函数；其宿主I/O/非实时TMP边界仍显式记录，OPS14后继未迁移。
 
 chatui01_owner 23:38:54UTC fixture/SQL/observer/两case APPROVED/0 P1/P2；Mika/root补审封套/身份清理/失败保留/输出预算无P1/P2。固定target5ddddd6a7991243b5c42e223b11df879f0fa9498，95输入429768B，manifest SHA df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e。Root核261相对import edges/4原始SQL/9deps/8driver/fixed supervisor与Git=WT一致。结论仅PG_PREPARATION_SOURCE_APPROVED；types/collect/PG/HTTP仍NOT_RUN，原26/26与strict-v2保持历史事实。准备包及6个实际输出absent状态冻结；留存claim等待窗口。
+
+## 局部类型与收集段质量安全点
+
+2026-10-07 02:54:01 UTC：沿本地find-skills匹配Node24/TS/pg/Vitest，应用既定clean-code/codebase-design，不安装或更新技能。固定命令注册表是唯一选择源，pg-collect只收集一个精确fixture并校验真实文件/数量，清除PG/admin/OPEN环境；复用原supervisor，不增加通用执行平台。输出独占、失败原件与进程/TMP生命周期语义保留；TMP只提供前后采样边界，wrapper时长不含解释器启动/最后持久化。没有产品改动或需要修复的本段失败。
+
+[结构化结果](local-validation-segment.json)绑定结果target `01d798cb7f4666a738375febe7eb8bb74a1594a6`中的4原件：types exit0，collect2/exit0（非测试执行），child raw共536B；2次启动、0重跑、两own组absent/EOF且TMP独核absent。原95 PG输入及d209产品逐字不变，真实PG/HTTP/main仍未验，段末独立review待完成。不将局部类型/collect作为SQL性能、事务或UTF8传输测量证据。

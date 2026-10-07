@@ -1,14 +1,14 @@
 # REQ15 独立审查
 
-状态：NOT_STARTED（本次局部工作段结束后统一审查；历史产品和PG准备批准保留）
+状态：NOT_STARTED（局部工作段已完成，待统一独审；历史产品和PG准备批准保留）
 
-Review target commit: 2deb4b865332981fc4a184c04913313b12766ce8
+Review target commit: 01d798cb7f4666a738375febe7eb8bb74a1594a6
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
 ## 本次局部工作段结束后的统一审查范围
 
-起始source为2deb4b865332981fc4a184c04913313b12766ce8，仅run-check增加pg-types/pg-collect固定选项；原95 PG输入、封套、fixture及d209产品不变。按新OPS方法，恢复HOLD归还后普通局部段连续修改/检查/修失败/定向复测，段末绑定最终source和原始结果一次独审；本节不是新增检查前批准门槛。最终核命令选择、PG/admin/OPEN env清除、实际collect file/count、原supervisor复用、输出保真和预算，保留失败原件。旧26/26、strict-v2及5dd源码审不重做；此刻新types/collect/2PG均未运行。精确段预算见[validation-ready](../../docs/evidence/req15-turn-page-batch/validation-ready.md)。实际PG仍需必要隔离/特殊窗口，不重开任何旧已消费窗口。
+起始source为2deb4b865332981fc4a184c04913313b12766ce8，仅run-check增加pg-types/pg-collect固定选项；原95 PG输入、封套、fixture及d209产品不变。按新OPS方法，恢复HOLD归还后普通局部段连续修改/检查/修失败/定向复测，段末绑定最终source和原始结果一次独审；本节不是新增检查前批准门槛。最终核命令选择、PG/admin/OPEN env清除、实际collect file/count、原supervisor复用、输出保真和预算，保留失败原件。旧26/26、strict-v2及5dd源码审不重做；本段新types exit0，collect实际2且非test pass，真实2PG仍未运行。精确段预算见[validation-ready](../../docs/evidence/req15-turn-page-batch/validation-ready.md)。实际PG仍需必要隔离/特殊窗口，不重开任何旧已消费窗口。
 
 ## Target / scope / 验收
 
@@ -69,3 +69,7 @@ Target `5ddddd6a7991243b5c42e223b11df879f0fa9498`。chatui01_owner于2026-10-06 
 Root独立复核manifest SHA `df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e`：95文件429768B逐Git=WT=bytes/hash；261相对import edges无缺失；四官方SQL002/007/009/025、9个依赖入口及8个driver文件匹配，supervisor固定SHA982c原字节不变；6个运行输出absent；apps/packages相对d209零diff。该结论不扩大旧26/26与strict-v2的验证范围，也不证明新fixture已collect或通过类型检查。
 
 Owner于23:39:37.392Z重新核原claim v1 ACTIVE、身份/10scope不变，接受无源码修复请求。当前仅归档status/review/质量；已审source/support/manifest保持原字节。最终metadata HEAD由交接消息提供，用于未来exact-head命令重绑；仍须明确窗口及fresh准入，SVC07首次HTTP优先，0新执行。
+
+## 局部工作段结果统一审查请求
+
+2026-10-07 02:54:01 UTC，target `01d798cb7f4666a738375febe7eb8bb74a1594a6`，caller source `2deb4b865332981fc4a184c04913313b12766ce8`。请只读核run-check固定选项/环境清除/collect判断与原95输入未变，及[单份记录](../../docs/evidence/req15-turn-page-batch/local-validation-segment.json)所绑定4个原件6449B。types exit0/1.353235s，collect2/exit0/0.884711s，raw合计536B、2次启动、无修复或重跑。own组absent/EOF与same-inode空TMP清理均有原始回执，后续owner独核TMP absent；没有真实PG/HTTP或旧26/strict复跑。结论PENDING；本次不是重复审核5dd的全部准备输入，也不是检查前批准链。未测SQL、RR、UTF8实际字节与HTTP/main边界保持。

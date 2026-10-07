@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:42:37 UTC；局部验收入口及连续工作段预算已固定，等待恢复归还，0新types/collect/PG |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:54:01 UTC；局部types/collect已完成并归还local，真实PG/HTTP未运行，段末待一次独审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,24 +10,24 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；PG准备5ddddd6a7991243b5c42e223b11df879f0fa9498；当前局部入口source/metadata前HEAD2deb4b865332981fc4a184c04913313b12766ce8 |
-| 工作树dirty状态 | 2deb4b86源码已固定；本次仅准备记录/status/review按OPS新方法收口，95输入不变；提交后核clean等待恢复归还，未运行新入口 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；PG准备5ddddd6a7991243b5c42e223b11df879f0fa9498；本段运行HEAD011f85d42c315d21755da6739106dbe0dbf7b52d；结果固定01d798cb7f4666a738375febe7eb8bb74a1594a6 |
+| 工作树dirty状态 | 结果01d798cb已固定；当前仅status/review/质量归档，提交后核clean/push；产品、95输入及原manifest未变 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | 2deb4b865332981fc4a184c04913313b12766ce8 |
+| 本片段交付阶段 | review |
+| 实现目标 | 01d798cb7f4666a738375febe7eb8bb74a1594a6 |
 | 产品验证基线 | d209eb7275777d50f214fd73f66d6b3c1520c459；原8产品/测试、fake26/26及strict-v2已独审；当前5dd仅增加未运行的PG验证准备，不新增产品行为 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py |
-| 检查状态 | NOT_RUN 新PG准备包types/collect/PG；HTTP未运行。历史d209局部source+fake26/26+strict-v2已独立APPROVED，PG准备source另获APPROVED；不扩大历史运行证据 |
+| 检查状态 | PASSED 01d798cb7f4666a738375febe7eb8bb74a1594a6 局部PG夹具types exit0；collect2/exit0（非测试通过）。真实2PG及HTTP NOT_RUN；历史d209 fake26/26+strict-v2批准保持且未重跑 |
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包及依赖已就绪 |
-| 下一可用交付 | 完成新PG夹具的类型与收集检查，再验证真实批量SQL和并发快照 |
-| 当前阻塞 | ACTIVE: 等待Lead现用Web恢复实际归还；本局部段预算已确认，旧空间不足已解除，真实PG仍须独立窗口 |
+| 当前产出 | 批量读取局部验收已通过，真实分页与并发快照夹具已通过类型检查并收集到两条用例 |
+| 下一可用交付 | 完成本段独审后，在专用数据库窗口验证批量读取和并发快照 |
+| 当前阻塞 | ACTIVE: 真实数据库验证等待Lead分配独立窗口；本地检查已完成并归还资源，空间及依赖不再阻塞 |
 | 需用户决定 | NONE |
-| 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN |
-| Review | [review.md](review.md)，历史d209局部source/fake/strict与5dd PG准备source批准保留；本次2deb入口及后续必要局部修复/结果在一个工作段结束后统一独审，不逐条增加检查前批准 |
-| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；10 literal见[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
+| 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；PG_PREPARATION_SOURCE_APPROVED；新types exit0/collect2，真实PG NOT_RUN |
+| Review | [review.md](review.md)，本段结果01d798cb7f4666a738375febe7eb8bb74a1594a6及run-check固定小改动待统一独审；历史d209局部source/fake/strict与5dd PG准备source批准保留 |
+| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；owner于2026-10-07T02:50:51.360Z fresh核身份/10scope全符；原[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
 | 架构影响 | conversation读取内部新增批量Interface，外部契约/事务所有者不变；实现固定后由Lead核架构基线是否需同步，当前未作main事实 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -35,7 +35,7 @@
 | REQ15-01 | completed | db_transaction_owner | 20:36:40.398Z原子take，90路径既有供给，规则/技能读取完成 |
 | REQ15-02 | completed | db_transaction_owner | 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32批量接口+单项复用已固定；首红26/17/9，green待资源 |
 | REQ15-03 | completed | db_transaction_owner / mika | 依赖已核；[源码manifest](../../docs/evidence/req15-turn-page-batch/source-manifest.json)Mika21:45UTC独立APPROVED；green26/26+strict-v2 exit0，首错保留 |
-| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest已获PG_PREPARATION_SOURCE_APPROVED；两SQL已供给，types/collect/PG均未运行；HTTP留实际集成点 |
+| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest已获PG_PREPARATION_SOURCE_APPROVED；两SQL已供给，types exit0/collect2已完成且非测试通过；2PG未运行，HTTP留实际集成点 |
 
 ## Dashboard 与交接
 
@@ -86,3 +86,5 @@
 本次source固定 `2deb4b865332981fc4a184c04913313b12766ce8`，[准备记录](../../docs/evidence/req15-turn-page-batch/validation-ready-manifest.json)绑定该有限入口与原PG manifest；仅run-check新增固定选项，原95 PG输入及d209产品未变。当前实现声明增加该精确literal，历史5dd批准不覆盖新caller；新OPS方法允许恢复归还后在一次≤5min局部段内types→必要修复/定向复测→collect，至多4次各≤30s/raw64KiB、合计256KiB、自有TMP串行采样32MiB。段末统一独审/集成，不继续增加逐条检查小审批包装。此刻仍HOLD、无actual holder或工程检查；PG两case仍保原特殊窗口。
 
 Mika已确认上述有界局部段，恢复窗口实际归还后即可采用，不逐条再报批准；当前HOLD条件尚未解除。完成后一次提交实际选例、失败原件和未运行事实供独审；不得扩scope/增加tests或替代真实PG。
+
+2026-10-07 02:54:01 UTC 局部工作段收束：C02实际清理后由chatui01_owner正式交local，owner于02:50:51.360Z fresh核原v1、cleanHEAD011f、95 inputs/9deps/8driver和固定旧supervisor全符；free26,581,078,016B满足原lightfloor。依已授权≤5min/至多4次各30s/raw256KiB/TMP采样32MiB执行两次，无修复/重跑：types exit0/1.353235s/raw0；collect exit0/0.884711s/collected2/raw536B，收集不算通过测试。原始4输出6449B及其bytes/hash固定于01d798cb7f4666a738375febe7eb8bb74a1594a6，[单份结构化记录](../../docs/evidence/req15-turn-page-batch/local-validation-segment.json) SHA5116e15ecbd6d7368cf6c12a7682f60c7d05a7753176b5fb73eeb10b728e19d4。两组PID/PGID20935、24153均监督记录absent/EOFtrue，无signals或secondary；TMP空且同inode移除，owner后续lstat独核两路径absent。所有真实PG输出仍absent，0PG/HTTP/provider/native；旧26与strict未重跑。local终态已交Mika统一协调，不给Web自行grant、不影响S01P07 heavy。结果及入口一次段末独审PENDING，claim保留；未集成main。
