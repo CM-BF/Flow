@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:17:00Z（静态结论分钟精度） |
+| 最近更新 | 2026-10-07T09:20:27Z |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T09:06:13Z（真实journey失败忠实性与selector修复）；既有client/PG/core各自保留 |
@@ -30,6 +30,7 @@
 | Review | 09:06:13对09fbd42b/47f54739/a91d5b26结果忠实性及修复APPROVED/0P1P2；原actual FAIL不改绿 |
 | 检查 | 新journey实际1pass/2skipped，wrapper1；离线selector4/4。旧client7/core14/fix4/PG2各自固定未重跑 |
 | main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
+| Dashboard同步 | 已确认权威来源实时聚合：2026-10-07T09:18:08.538Z，观察HEAD04ec0a2b/clean；本次后续metadata尚未重读，不推UI或完成状态 |
 | 实现目标 | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 |
 | 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts; docs/evidence/mature06-lazy-reasoning/execute-pg.py; docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
 | Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
@@ -82,3 +83,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T09:11:41.244159+00:00 exactTMP后续授权收尾完成：独立client-pg-tmp-cleanup.json/tool.json，09:09:37UTC、同dev16777234/ino123682682，重核已审process/DB关闭证据后4entries138B有界清单、同identity删除/ENOENT，tool0/含收据19ms，0PG/test/新TMP。原11raw/tool1/thenKEEP逐hash不变。唯一新增窄intake为client-pg-integration-ready.md/json；newjourney/fix待接收，旧core/client已maine2b。D05已正式登记来源为root通知，live聚合尚未读取PENDING_SYNC；不推测部署或整个task完成。local已直接归还X01。
 
 2026-10-07 09:17 UTC 静态资源复核：read-byte-bound-research.md绑定main9b27005f。合法text/增量页正文≤64KiB，单block≤1MiB；JSON转义正文分别可达384KiB/6MiB，均另有envelope，不能冒3MiB逻辑resident或JS heap/wire上限。建议后继提取内部bounded JSON机制并保持领域caps，需X01入口与对应leaf正式写权；本轮0源码改动/测试/网络/PG。canonical新增窄intake保持，Web接线不等待此研究；当前无actual/待launch，聚合live仍PENDING_SYNC。
+
+2026-10-07T09:20:27Z 归档Mika/root实际只读聚合观察：同一`http://127.0.0.1:4320/api/snapshot`首次8s超时未推终态；root确认node96517仍LISTEN后，第二次在20s限内HTTP200、2,927,623B，generatedAt=2026-10-07T09:18:08.538Z/193tasks。本task source.mode=live，path=/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md，modifiedAt=2026-10-07T09:17:58.929Z，syncedAt=2026-10-07T09:18:08.538Z，stale=false；git.head=04ec0a2bd050e35986838f0a37634d1fe744e552、branch=codex/lazy-reasoning-reads、dirty=false、observedAt=2026-10-07T09:18:08.638Z。据此关闭“尚未确认可聚合”的PENDING_SYNC，仅证明该历史时点正确权威源可实时聚合；不证明UI渲染、全部质量字段、部署、整个task完成或本次新提交已同步。root未留完整响应hash，本owner未补造，未重复GET/测试；原先未知记录保留。
