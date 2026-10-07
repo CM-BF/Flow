@@ -1,0 +1,131 @@
+--- /private/tmp/dperf04-node-second-l86ua318/run.py
++++ /private/tmp/dperf04-composed-node-vy5_dazj/run.py
+@@ -36,7 +36,9 @@
+ def logical_bytes(root):
+     """Count own files without traversing symlink targets."""
+     total = 0
+-    for directory, children, files in os.walk(root, followlinks=False):
++    def onerror(error):
++        if error.errno != 2: raise error
++    for directory, children, files in os.walk(root, followlinks=False, onerror=onerror):
+         children[:] = [name for name in children if not (Path(directory) / name).is_symlink()]
+         for name in files:
+             try:
+@@ -88,7 +90,7 @@
+     assert gate['sourceHead'] == binding['head']
+     assert gate['implementation'] == binding['implementation']
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 1632
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 0
+     assert binding['limits']['totalSeconds'] == (30000 - binding['previousRuntimeMs']) / 1000
+     assert binding['limits']['cleanupReserveSeconds'] == 5
+     assert gate['limits'] == binding['limits']
+@@ -109,7 +111,7 @@
+     assert git('rev-parse', 'HEAD') == binding['head']
+     assert git('branch', '--show-current') == binding['branch']
+     assert git('status', '--porcelain') == ''
+-    assert len(binding['sources']) == 7
++    assert len(binding['sources']) == 16
+     for filename, expected in {**binding['sources'], **binding['readOnlyDependencies']}.items():
+         assert digest(root / filename) == expected, filename
+     node = binding['node']
+@@ -153,6 +155,12 @@
+     except Exception as error:
+         errors.append('process cleanup: ' + str(error))
+     try:
++        final = {'freeBytes': available_bytes(BASE), 'scratchBytes': logical_bytes(SCRATCH)}
++        (BASE / 'cleanup-resource-sample.json').write_text(json.dumps(final) + '\n')
++        if final['freeBytes'] <= 1082130432 or final['scratchBytes'] > 8388608:
++            errors.append('Final resource sample exceeded bound')
++        if group_alive(process):
++            raise RuntimeError('Unknown owned group; scratch retained')
+         if SCRATCH.exists():
+             shutil.rmtree(SCRATCH)
+         if SCRATCH.exists():
+@@ -175,6 +183,9 @@
+     log_bytes = 0
+     dropped_bytes = 0
+     selector = selectors.DefaultSelector()
++    stopping = []
++    def request_stop(sig, frame): stopping.append(sig)
++    handlers = {sig: signal.signal(sig, request_stop) for sig in (signal.SIGTERM, signal.SIGINT)}
+     report = {'startedAt': utc_now(), 'implementation': binding['implementation'],
+               'sourceHead': binding['head'], 'sourceHashes': binding['sources'],
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+@@ -209,7 +220,7 @@
+                     current = time.monotonic()
+                     if current >= next_sample:
+                         free = available_bytes(binding['worktree'])
+-                        used = logical_bytes(BASE)
++                        used = logical_bytes(SCRATCH)
+                         samples.append({'seconds': round(current - started, 3), 'freeBytes': free, 'tmpBytes': used})
+                         next_sample = current + limits['pollSeconds']
+                         if free <= limits['stopFreeBytes']:
+@@ -218,6 +229,8 @@
+                             reason = 'TMP_LIMIT_STOP'
+                     if current >= work_deadline:
+                         reason = 'WORK_DEADLINE_STOP'
++                    if stopping:
++                        reason = 'SOFT_STOP'
+                     if reason:
+                         break
+                     for key, _ in selector.select(max(0, min(limits['pollSeconds'], work_deadline - time.monotonic()))):
+@@ -237,9 +250,20 @@
+         reason = 'SUPERVISION_ERROR'
+         report['error'] = type(error).__name__ + ': ' + str(error)
+     finally:
+-        selector.close()
+         cleanup_started = time.monotonic()
+         cleanup_errors = reap_owned(process, total_deadline)
++        # Drain the owned pipe to EOF after reap, including failure output.
++        until = min(total_deadline - 0.2, time.monotonic() + 0.5)
++        with LOG.open('ab') as output:
++            while selector.get_map() and time.monotonic() < until:
++                for key, _ in selector.select(0.01):
++                    chunk = os.read(key.fileobj.fileno(), 65536)
++                    if not chunk: selector.unregister(key.fileobj); continue
++                    keep = min(len(chunk), max(0, log_limit - log_bytes))
++                    output.write(chunk[:keep]); log_bytes += keep; dropped_bytes += len(chunk) - keep
++        report['stdoutEOF'] = not bool(selector.get_map())
++        if not report['stdoutEOF']: cleanup_errors.append('Owned stdout EOF not confirmed')
++        selector.close()
+         if process and process.stdout:
+             process.stdout.close()
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+@@ -259,10 +283,11 @@
+         report['tap'] = {'passed': int(passed[1]) if passed else None,
+                          'failed': int(failed[1]) if failed else None,
+                          'expectedTests': binding['expectedTestCount']}
+-        okay = (not reason and report['exitCode'] == 0 and not cleanup_errors
++        okay = (not stopping and not reason and report['exitCode'] == 0 and not cleanup_errors
+                 and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000)
+                 and report['cumulativeMs'] <= 30000 and report['tap']['passed'] == binding['expectedTestCount']
+-                and report['tap']['failed'] == 0 and dropped_bytes == 0)
++                and report['tap']['failed'] == 0 and dropped_bytes == 0
++                and re.search(r'^# skipped 0$', text, re.MULTILINE) and re.search(r'^# todo 0$', text, re.MULTILINE))
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+         report['sourceMeaning'] = 'A successful bounded fixture does not establish production4320 latency, realPG assignments or browser behavior.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+@@ -274,8 +299,20 @@
+                       'cumulativeMs': report['cumulativeMs'], 'remainingMs': report['remainingMs']}
+             encoded = (json.dumps(report, indent=2) + '\n').encode()
+         RESULT.write_bytes(encoded)
+-    print(json.dumps({'state': report['state'], 'result': str(RESULT), 'cleanup': report['cleanup']}))
+-    return 0 if report['state'] == 'PASS' else 1
++    # Completion boundary is this final seal, not an assertion about future OS exit.
++    if stopping:
++        report['state'] = 'SOFT_STOP'; report['stopSignals'] = stopping
++        RESULT.write_text(json.dumps(report, indent=2) + '\n')
++    if logical_bytes(BASE) > limits['rawBytes'] + 1024 * 1024 or time.monotonic() > total_deadline:
++        report['state'] = 'FINAL_BOUND_FAILURE'; RESULT.write_text(json.dumps(report, indent=2) + '\n')
++    declared_exit = 0 if report['state'] == 'PASS' else 1
++    terminal = {'type': 'terminal-seal', 'state': report['state'], 'result': str(RESULT),
++        'resultSha256': digest(RESULT), 'cleanup': report['cleanup'], 'stdoutEOF': report['stdoutEOF'],
++        'afterFinalWritesElapsedMs': round((time.monotonic() - started) * 1000),
++        'declaredExitCode': declared_exit, 'acceptance': 'Requires actual outer exit matching this unique terminal and result hash'}
++    for sig, handler in handlers.items(): signal.signal(sig, handler)
++    print(json.dumps(terminal), flush=True)
++    return declared_exit
+ 
+ 
+ if __name__ == '__main__':

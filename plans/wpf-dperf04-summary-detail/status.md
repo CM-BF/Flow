@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 08:18:11 UTC |
+| 最近更新时间 | 2026-10-07 08:24:22 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -10,25 +10,25 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
 | 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / cfd5a53323438709843828d74cab67502801060c（当前组合源码；metadata另核） |
-| 工作树dirty状态 | 当前源码已固定；本次metadata封存后核双端clean |
+| 工作树dirty状态 | 当前16实现输入与固定cfd5逐字；仅本次证据/状态封存，提交后核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 当前ACCESS+TIMING组合；历史abd2 Node8/3950ms保留，browser累计0/60000ms |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 当前cfd5单文件9叶+父10/10，outer exit0，保守2866ms；旧3950ms独立保留，browser NOT_RUN 0/60000ms |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | cfd5a53323438709843828d74cab67502801060c |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要与按需详情已组合现有本机连接入口、任务时间声明；等待本次检查与独审 |
-| 下一可用交付 | 核实新组合后交付可接主线的摘要/详情，浏览器与真实加载另验 |
+| 当前产出 | 轻摘要与按需详情已保留连接入口和时间语义；本次组合直接检查全部通过 |
+| 下一可用交付 | 完成组合浏览器验收后交主线接收；当前实际浏览器尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：当前组合尚未独审；旧限定结论保留为历史 |
+| Review | [review.md](review.md)，UNKNOWN：cfd5限定源码批准；组合直接结果待独立实际核验，browser未验 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
-| DPERF04-02 | in-progress | w01_owner | [第二Node8PASS](../../docs/evidence/wpf-dperf04/node-second/result.json)，首失败保留；browser未运行 |
+| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；browser未运行 |
 | DPERF04-03 | pending | w01_owner | review/main/实际部署未完成 |
 
 ## 来源与架构影响
@@ -130,3 +130,11 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 [一次相关Node方案](../../docs/evidence/wpf-dperf04/reentry-20261007/validation-proposal.json)：1文件9叶项+父项，2临时Git仓库/2任务，仅自有动态loopback，0PG/Chrome/真实registry；本段尚NOT_RUN。旧3950ms/Node8不迁移到当前源。浏览器仍0/60000ms，无性能根因结论。源码保原snapshot/current proof、ACCESS私有授权顺序及TIMING来源语义；刷新保阅读DOM和选择，等待原文按需读取。
 
 root在运行dashboard的资料入口读到当时own status原字节：[观察](../../docs/evidence/wpf-dperf04/reentry-20261007/root-status-document-observation.json)，仅此入口，不声称wholeUI或重新fresh claim。下次交接：root固定源审与有界直接检查，浏览器资源由co-lead协调；未合main、未部署。
+
+## 2026-10-07 08:24:22 UTC 当前组合唯一直接检查与local归还
+
+限定源审[root原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)接受固定 `cfd5a53323438709843828d74cab67502801060c`；本次实际metadata HEAD为 `b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679`。fresh v4/11及29pins后，2026-10-07T08:22:30.872061Z→08:22:33.737598Z执行唯一单文件：9叶项+父项10/10，fail/cancel/skip/todo=0；实际outer exit0、唯一PASS终态与result哈希相等、EOF完整且drop0。原件[index](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/index.json)、[TAP](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/node.log)、[actualexit](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/actual-exit.json)。
+
+outer55631及Node PGID55755实际signal0均ABSENT，scratch无、cleanup errors[]；HTTP由fixture after-hook关闭与owned group收尾支持，无额外socket探测。原result较早2786ms/终态2787ms不改，最大outer2865.5355向上取整计2866ms，新phase30s余27134ms；历史3950ms分列，全部Node历史+新6816ms，绝不把旧PASS迁移。临时峰61,137B，raw/metadata均在原上限内。已立即把本组local交回root供panels使用；无重跑、PG、Chrome、provider、真实registry/个人服务。浏览器仍0/60000，实际main/部署未发生。
+
+当前root源码审已完成，实际结果独审另记；[quality](../../docs/evidence/wpf-dperf04/reentry-20261007/quality.md)记录应用方法与非继承边界。剩余时间只是账本，不是后台续跑或自动浏览器授权。

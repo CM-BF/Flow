@@ -1,0 +1,24 @@
+{
+  "acceptance": "ACTUAL_EXIT_TERMINAL_RESULT_MATCH",
+  "phaseChargeMs": 2866,
+  "phaseRemainingMs": 27134,
+  "historicalPreviousNodeMs": 3950,
+  "allNodeHistoricalPlusNewMs": 6816,
+  "browserSpentMs": 0,
+  "browserBudgetMs": 60000,
+  "absent": {
+    "outer": true,
+    "nodeGroup": true
+  },
+  "scratchAbsent": true,
+  "pgid": 55755,
+  "nodeExit": 0,
+  "tap": {
+    "passed": 10,
+    "failed": 0,
+    "expectedTests": 10
+  },
+  "maxScratchBytes": 61137,
+  "minimumFreeBytes": 24082407424,
+  "ownedHTTP": "Synthetic fixture after-hook closes owned server; process group exit/absence confirmed, no separate socket probe recorded"
+}

@@ -6,7 +6,9 @@ Review target commit：cfd5a53323438709843828d74cab67502801060c
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前 2026-10-07 08:18:11 UTC ACCESS+TIMING组合为待独立审查输入（9个own源/测试+7个固定供给输入），源manifest见 [reentry](../../docs/evidence/wpf-dperf04/reentry-20261007/source-manifest.json)。本次尚未运行直接检查或浏览器，完整feature未批准。以下45f8/544c、abd2 Node均是历史固定对象结论，不能转移到本组合。
+当前组合固定 `cfd5a53323438709843828d74cab67502801060c` 的16输入已经 [root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)通过：0blocking，APPROVED_COMPOSED_SOURCE_AND_BOUNDED_DIRECT_VALIDATION_NOT_RUNTIME_OR_BROWSER_PASS。作者随后只执行一次相关直接检查，9叶+父10/10/outer exit0，[实际封存](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/index.json)。实际证据尚待独立核验；真实浏览器与全片仍未批准，因此顶层UNKNOWN。
+
+当前source manifest为检查前原固定记录，其NOT_RUN保留当时语境；最新实际结论见当前status和上述raw。原45f8/544c、abd2 Node均是历史固定对象结论，不转移到新组合。
 
 ## 历史45f8及544c限定审查
 
