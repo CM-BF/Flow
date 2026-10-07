@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:04:25.351953+00:00；Recovery本次提交丢回执外层失败已清理归还，原件保留待窄审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:07:59.811057+00:00；Recovery本次失败与清理证据已独审，Quick新键盘前提完成一次准入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 首次建聊丢回执恢复已通过定向页面回归；后续提交场景断言通过但外层监督失败，先完成窄审与必要修复。逐消息设置的新键盘前提已完成源码审查，待独立页面验证。 |
+| 下一可用交付 | 完成逐消息设置的新原生键盘前提观察，保留既有失败与验收边界；恢复验证的外层监督异常由原owner窄修，历史发送恢复通过项保持。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery本次自有专库、浏览器和临时凭据均已清理；本组无PG/Chrome占用或新gate。下一共享PG交C02 fresh准入，旧失败外层证据字节保留。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：C02已实际清理归还；Quick仅独立零PG单次浏览器准入，尚未启动。Recovery只做离线监督修复，无新PG或浏览器预约。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T07:07:59.811057+00:00",
+  "c02": {
+    "state": "ACTUAL_RETURNED",
+    "actualStart": "2026-10-07T07:05:17.959191Z",
+    "actualEnd": "2026-10-07T07:05:20.922818Z",
+    "selected": 1,
+    "passed": 1,
+    "notSelected": 5,
+    "http": 3,
+    "pid": 22298,
+    "actualExit": 0,
+    "cleanup": "Groupabsent/dualEOF/raw192complete/no signals;DB OID1245980/0connnormalDROPabsence;startup/runners/app/pool/adminclosed;TMPsameinode131B removed07:05:28 exactabsent;retainednull/errors[]",
+    "provider": 0,
+    "native": 0,
+    "pendingLaunch": false,
+    "oldR1KeepBytes": 33685504,
+    "source": "Originalowner viaMika/root actualreceipt, no managerreprobe"
+  },
+  "recovery": {
+    "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+    "lastAttempt": "overallFAILED despiteworker2PASS",
+    "actualRootReview": "recovery-created-turn-actual-review.json",
+    "newSpentMs": 47205,
+    "remainingMs": 102795,
+    "adminEnvDeleted": true,
+    "next": "Originalpanels parentlifecycle narrowfix+20slocal; noPGChrome/Queuegate; fixedlifecycle targetedrootreviewrequired"
+  },
+  "quick": {
+    "head": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+    "source": "2e71bea91c188c5f13723dace905fe429d83834b",
+    "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+    "selection": "typeahead",
+    "gate": "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/gate.json",
+    "newSpentMs": 23322,
+    "remainingMs": 66678,
+    "noRuntimePass": true
+  },
+  "rootPlusTwoWorkers": true,
+  "newClaim": false
+}

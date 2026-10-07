@@ -1,0 +1,47 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T07:06:36.189090+00:00",
+  "gate": "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/gate.json",
+  "gateSha256": "1a4154406c3c19ddfaab5985f138659691f92d1fdb9b17f2b1860c05f779b895",
+  "expiresAt": "2026-10-07T07:12:36.189090+00:00",
+  "run": "msgquick-typeahead1-20261007-070636-431059",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "head": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+  "sourceTarget": "2e71bea91c188c5f13723dace905fe429d83834b",
+  "bindingSha256": "a334a2661f90a8af7171b05d9d2688f40b4d3e756312f531ca6bf3e54886af05",
+  "manifestSha256": "3779ecfb38ac31aa567814df431d6680dbe5e41046106d41d550c262471c17d2",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-typeahead1/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/gate.json"
+  ],
+  "selection": "typeahead",
+  "singleRunMaximumMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentTotalMs": 90000,
+  "newSegmentSpentMs": 23322,
+  "oldClosedActualMs": 30625,
+  "nativeReview": {
+    "path": "/private/tmp/root-msgquick-typeahead-source-boundary-review.json",
+    "sha256": "596044f4436b438253390ea0f3effcb15bada2006bf8214637f3af39a46d531c"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-typeahead-source-boundary-review.json",
+    "sha256": "596044f4436b438253390ea0f3effcb15bada2006bf8214637f3af39a46d531c"
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "outerRequirements": "Unique owned outercapture; realexit/stdout/stderr/EOF/terminal hashes and ownedcleanup must agree. Chargeceilmax actualouter/late/parent. Do not infer diagnostic measurement is featurePASS. Report actualstart and terminal immediately; preserve FAIL/INCONCLUSIVE.",
+  "managerLaunch": false,
+  "remainingNewSegmentMs": 66678,
+  "chromeVersion": "154.0.8037.99",
+  "chromeProvenance": {
+    "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
+    "meaning": "Only two physical native input pins updated; original .98 preparation preserved; installed patch cause unknown.",
+    "sha256": "b824372e40de408f23f3b5b7766cf55a81eb2f615b3e63fee4e14fd668a2e29d"
+  },
+  "mustNotOverlap": "No otherownChrome/PG or exclusiveperformance/personalwindow. OtherteamPG maypaironlywithcombinedresourcebudget and isolated0PGfixture. CurrentC02sentinelactuallyreturned; fullallowance conservative.",
+  "ownerStatusFollowup": "Next natural owner metadata update adds a structured waiting table from observed reason/owner/release-condition/start/end. Unknown historical starts remain UNKNOWN; no present-time backfill or checks rerun.",
+  "noSecretsOrPersonalInputs": true,
+  "resourceObservation": "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/observation.json"
+}

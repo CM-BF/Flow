@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T07:04:25.351953+00:00",
-  "state": "RECOVERY_CREATED_TURN_FAILED_CLEANED_RETURNED_C02_NEXT_PG",
-  "groupWindowOwnership": "Recoverycreated-turn actual07:02:04.923806–07:02:16.032817Z outer1/FAILED despiteworker2/2PASS; allowned/markedDB/fixtureclean,exactenvdeleted07:03:25.810971Z. WebactualPG/Chrome0/no gate/reservation. C02sentinelnextPG, notyetactualRUN.",
+  "recordedAt": "2026-10-07T07:07:59.811057+00:00",
+  "state": "QUICK_TYPEAHEAD_ADMITTED_NOT_STARTED_C02_ACTUAL_RETURNED",
+  "groupWindowOwnership": "C02sentinel actualreturned07:05:20.922818Z/TMPabsent07:05:28; Recoverycreated-turn earlierreturned/credentialdeleted. WebactualPGChrome0; one Quicktypeahead gate prepared, not RUN. Panelsparentfixonly0PGChromelocal. No secondChrome.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T07:04:25.351953+00:00",
-    "kind": "RECOVERY_CREATED_TURN_ACTUAL_FAILED_CLEANED_RETURNED",
-    "source": "recovery-created-turn-admission-20261007/return.json",
-    "summary": "ParentWorkdeadline/outer1 preserved separatelyfromworker2/2PASS. Charge11109,new47205/rem102795. Exactadminenvdeletedwithoutread; sharedPGavailabletoC02ready. Noautomaticretry/Queuegate; rootparentlifecycle reviewpending."
+    "at": "2026-10-07T07:07:59.811057+00:00",
+    "kind": "C02_ACTUAL_RETURN_QUICK_TYPEAHEAD_FRESH_ADMISSION",
+    "source": "quick-typeahead-admission-20261007/incoming.json",
+    "summary": "Current63457/2e71 exactreview596; routinepointer/stateonly rebindingparent74dc/worker53d6 unchanged. Fresh464pins/839ev1six/nooverlap/cleanremote;45sincl15cleanup,new23322/rem66678. High4.053GBfloor includesC02oldKEEP/fullpotentialbudget/localreserve, no C02actualRUN inferred."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1132,6 +1132,12 @@
       "state": "RECOVERY_FIRST_CREATE_SCOPED_ACTUAL_ACCEPTED_X01_NEXT_PG",
       "currentIntake": "recovery-create-admission-20261007/current.json",
       "supersededBy": "recovery-created-turn-admission-20261007/current.json"
+    },
+    {
+      "recordedAt": "2026-10-07T07:04:25.351953+00:00",
+      "state": "RECOVERY_CREATED_TURN_FAILED_CLEANED_RETURNED_C02_NEXT_PG",
+      "currentIntake": "recovery-created-turn-admission-20261007/current.json",
+      "supersededBy": "quick-typeahead-admission-20261007/current.json"
     }
   ],
   "dperf05Pure": {
@@ -1179,7 +1185,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "WEB_RETURNED_RECOVERY_PARENT_REVIEW_QUICK_C_PREPARED",
+    "state": "QUICK_C_ONE_ADMISSION_RECOVERY_OFFLINE_PARENT_FIX",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1241,10 +1247,10 @@
       "ownerHead": "63457cab7ee5c2dae0e37735757764aba0a2f121",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-typeahead1",
-      "bindingSha256": "e83e413b164ea91bac7b2b2cfacac2a82b1f9d8aacc24209c0f42aca163bd4ae",
-      "manifestSha256": "959b4f05118839f1d983539388677485ad112238e8b775dcb378aebf9dd7d041",
-      "state": "TYPEAHEAD_C_SOURCE_BOUNDARY_ACCEPTED_PREPARED_NOT_RUN",
-      "admission": "quick-native2-return-native3-20261007/native3-gate.json",
+      "bindingSha256": "a334a2661f90a8af7171b05d9d2688f40b4d3e756312f531ca6bf3e54886af05",
+      "manifestSha256": "3779ecfb38ac31aa567814df431d6680dbe5e41046106d41d550c262471c17d2",
+      "state": "TYPEAHEAD_ADMITTED_NOT_STARTED",
+      "admission": "quick-typeahead-admission-20261007/gate.json",
       "browserSpentMs": 30625,
       "totalMs": 60000,
       "cleanupMs": 15000,
@@ -1253,9 +1259,9 @@
       "remainingMs": 29375,
       "failure": "Both plain sequences complete without selected value/input-change; modal not selected. Diagnosis remains INCONCLUSIVE, not Picker defect proof.",
       "review": "quick-native2-return-native3-20261007/root-native3-actual-review.json",
-      "next": "TypeaheadC source/preciseboundaryaccepted; ordinaryfreshadmission afterRecoveryChromeactualreturn; no gateyet.",
+      "next": "Owner one nativeC measurement; reportactualstart/terminal/cleanup; nofull6 claim or automaticnextattempt.",
       "preparationReview": "quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json",
-      "admissionPreparation": "quick-native2-return-native3-20261007/native3-handoff.json",
+      "admissionPreparation": "quick-typeahead-admission-20261007/handoff.json",
       "newSegment": {
         "totalActualMs": 90000,
         "spentMs": 23322,
@@ -1265,17 +1271,17 @@
         "oldSpentMs": 30625,
         "oldRemainingNotTransferred": true,
         "authorization": "continuous-validation-segments-20261007/quick-segment-authorization.json",
-        "state": "TYPEAHEAD_C_PREPARED_NOT_RUN",
-        "gate": null,
-        "reservation": false,
+        "state": "TYPEAHEAD_ADMITTED_NOT_STARTED",
+        "gate": "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/gate.json",
+        "reservation": true,
         "source": "2e71bea91c188c5f13723dace905fe429d83834b",
         "review": "quick-native1-recovery-review-20261007/quick-source-review.json",
-        "nativeReview": "quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json",
-        "handoff": "quick-native2-return-native3-20261007/native3-handoff.json",
+        "nativeReview": "quick-typeahead-admission-20261007/quick-source-boundary-review.json",
+        "handoff": "quick-typeahead-admission-20261007/handoff.json",
         "remainingMs": 66678,
         "actualReview": "quick-native2-return-native3-20261007/root-native3-actual-review.json",
         "singleRunMaximumMs": 45000,
-        "expiresAt": "2026-10-07T06:47:35.677679+00:00",
+        "expiresAt": "2026-10-07T07:12:36.189090+00:00",
         "actualReceipt": "quick-native2-return-native3-20261007/native3-return.json",
         "lastChargeMs": 5873
       },
@@ -1287,13 +1293,13 @@
         "handoff": "quick-native2-return-native3-20261007/native3-handoff.json"
       },
       "waitingTable": "Originalowner structuredwaitingfacts sealed; UNKNOWN historicalstart retained",
-      "typeaheadReview": "recovery-created-turn-admission-20261007/quick-typeahead-source-boundary-review.json"
+      "typeaheadReview": "quick-typeahead-admission-20261007/quick-source-boundary-review.json"
     },
     "recovery": {
       "ownerHead": "81f22ee89544fe48b2bc6fc55c2340df0350970e",
       "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
       "packet": "/private/tmp/recovery-created-turn-67f8-twqb2ugn",
-      "state": "CREATED_TURN_OVERALL_FAILED_CLEANED_RETURNED",
+      "state": "CREATED_TURN_FAILED_CLEANUP_ROOT_ACCEPTED_PARENT_FIX_PENDING",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1318,7 +1324,7 @@
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
       "runtime": "Actualouter1/dualEOF; worker2/2PASS,parentWorkdeadline failure. Ownedresourcesclosed.",
-      "next": "Roottargetedparent lifecycle review/owner same-scope sourcefix; no Queue/retrygate. C02nextPG.",
+      "next": "Parent lifecycle same-scope fix/local20s underroot narrowreview; noPG/Chrome/Queuegate. Historicalworker2PASS notoverallPASS.",
       "review": "quick-native1-recovery-review-20261007/recovery-feature-review.json",
       "admission": {
         "state": "CONSUMED_ACTUAL_FAILED_CLEANED_ENV_DELETED",
@@ -1342,7 +1348,7 @@
       "sourceReview": "quick-native2-return-native3-20261007/root-recovery-create-queue-source-review.json",
       "manifestSha256": "8b4506a1195dcb8e189a45b814a5610af1ac29ca2a4844c8ce60a6144276d89b",
       "preparationReview": "Routine unchanged67f8/parent/fixture,173pins freshmatched; acceptedsource152d; newHEAD/selection/carryonly.",
-      "actualReview": "Pendingrootindependentreview; no broadPASS",
+      "actualReview": "quick-typeahead-admission-20261007/recovery-created-turn-actual-review.json",
       "newSegment": {
         "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
         "totalActualMs": 150000,
@@ -1516,11 +1522,11 @@
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
   "currentWindowEvidence": "recovery-create-admission-20261007/return.json",
   "webActualHolder": null,
-  "webGate": null,
+  "webGate": "/private/tmp/msgquick-typeahead1-admission-p5ldo7_a/gate.json",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": true,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1846,23 +1852,21 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "state": "ACTUAL_CLOSED",
-    "owner": "Mika/X01 originalowner",
-    "actualStart": "2026-10-07T06:58:40.476848Z",
-    "actualEnd": "2026-10-07T06:58:49.193344Z",
-    "earlyEstimatedStart": "06:58:32Z estimate superseded by exactraw receipt",
-    "toolExit": 0,
-    "callerMs": 8716.56,
-    "timeSeconds": 8.89,
-    "selected": 6,
-    "passed": 6,
-    "http": 107,
-    "tasks": 12,
-    "registrations": 7,
-    "cleanup": "markedDB OID1242229 owners/pool/admin closed,0conn normalDROP+absence;listeners53800/53814closed;90063/90064absent/mergedEOF;TMPsameinodeabsent;retained[]/signals[]/errors[]",
+    "state": "ACTUAL_RETURNED",
+    "actualStart": "2026-10-07T07:05:17.959191Z",
+    "actualEnd": "2026-10-07T07:05:20.922818Z",
+    "selected": 1,
+    "passed": 1,
+    "notSelected": 5,
+    "http": 3,
+    "pid": 22298,
+    "actualExit": 0,
+    "cleanup": "Groupabsent/dualEOF/raw192complete/no signals;DB OID1245980/0connnormalDROPabsence;startup/runners/app/pool/adminclosed;TMPsameinode131B removed07:05:28 exactabsent;retainednull/errors[]",
     "provider": 0,
-    "chrome": 0,
-    "source": "Originalowner actualreceipt through root/Mika; manager didnotrerun/probe"
+    "native": 0,
+    "pendingLaunch": false,
+    "oldR1KeepBytes": 33685504,
+    "source": "Originalowner viaMika/root actualreceipt, no managerreprobe"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1872,12 +1876,12 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "C02sentinel reviewedready nextsharedPG, originalowner freshadmission; actualstart notsupplied.",
-    "QuickC2e71/63457 acceptedsource/nativeboundary, ordinaryfresh independent0PGmayfollow; currentlynogate/actualChrome.",
-    "Recoveryparent lifecycle sourceinvestigation only, no retry/Queue reservation.",
-    "C02olderouterKEEP32MiB+128KiB remains bytes, notprocess/DBholder."
+    "C02sentinel actualreturned; oldR1KEEP32MiB+128KiB remains retainedphysicalbytes.",
+    "QuickC one independent0PGChrome admitted; W01 launch onlyaftermanagerFINAL keepsroot+2workers.",
+    "Recoveryparentlifecycle sourcefix/local only; no newPG/Queue/retrygate.",
+    "Future PG needs concretefreshhandoff; not reserved by this independent0PGgate."
   ],
-  "currentIntake": "recovery-created-turn-admission-20261007/current.json",
+  "currentIntake": "quick-typeahead-admission-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

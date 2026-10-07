@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T07:06:13.728299+00:00",
+  "kind": "exact upstream tag source supplement, no runtime",
+  "version": "154.0.8037.99",
+  "pins": [
+    {
+      "name": "bridge",
+      "sourcePath": "content/app_shim_remote_cocoa/render_widget_host_ns_view_bridge.mm",
+      "url": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/content/app_shim_remote_cocoa/render_widget_host_ns_view_bridge.mm?format=TEXT",
+      "local": "/private/tmp/root-chromium-tag154-source-20261007/bridge.txt",
+      "bytes": 19335,
+      "sha256": "0254288cebdcf2852d9a0afbf25d891e465556787d171b1c5e47f043acb9bc86"
+    },
+    {
+      "name": "select",
+      "sourcePath": "third_party/blink/renderer/core/html/forms/select_type.cc",
+      "url": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/renderer/core/html/forms/select_type.cc?format=TEXT",
+      "local": "/private/tmp/root-chromium-tag154-source-20261007/select.txt",
+      "bytes": 84599,
+      "sha256": "a71377f80a013f79c9fea46a9b78018d507cf193a90487f70aaa4957fc962491"
+    },
+    {
+      "name": "element",
+      "sourcePath": "third_party/blink/renderer/core/html/forms/html_select_element.cc",
+      "url": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/renderer/core/html/forms/html_select_element.cc?format=TEXT",
+      "local": "/private/tmp/root-chromium-tag154-source-20261007/element.txt",
+      "bytes": 86429,
+      "sha256": "c7498d99eac696cb2ce8a0993080c0492ad7accbaf4b689c21cc10379908d19e"
+    }
+  ],
+  "intake": "GO supplied successful Gitiles exact-tag retrieval and two hashes; root independently fetched/decode-verified all three public files. web tool HTML fetch unavailable; direct official ?format=TEXT GET succeeded.",
+  "relationship": "Adds exact-tag evidence to prior /private/tmp/root-msgquick-native-typeahead-research-20261007.json. Earlier current-upstream-only limitation remains historical; new evidence is pinned to official exact tag, not instrumented installed binary.",
+  "observations": [
+    {
+      "file": "bridge.txt",
+      "lines": "433-440",
+      "fact": "The native popup bridge returns no selected item when the native window is headless."
+    },
+    {
+      "file": "select.txt",
+      "lines": "370-388 and 561-574",
+      "fact": "Mac arrow handling uses native popup opening and skips the ordinary arrow option-navigation fallback; Space can also open popup."
+    },
+    {
+      "file": "element.txt",
+      "lines": "1397-1401 and 1474-1497",
+      "fact": "Generic key typeahead has a separate selection path and requests native input/change delivery."
+    }
+  ],
+  "interpretation": "These exact-tag mechanisms are consistent with observed trusted Arrow/Space keys but unchanged value/index in actual headless native3 controls. They support the already-fixed isolated native m typeahead contrast. The runtime native window branch was not directly observed; do not call a product Picker defect or six-group PASS.",
+  "action": "Do not repeat identical Arrow popup trials. Preserve original six-group acceptance and prior failures; execute existing C only through its fresh approved one-use gate, then decide targeted next acceptance from actual results.",
+  "notPerformed": [
+    "No new browser/PG/provider or project test",
+    "No Chromium install/build/LaunchServices/flags change",
+    "No original test assertion relaxed",
+    "No new project edits/claim/task"
+  ],
+  "cleanCode": "Research review only: distinguish source mechanism, actual observations, and acceptance evidence; retain one existing diagnostic entry."
+}

@@ -1,0 +1,119 @@
+{
+  "at": "2026-10-07T07:03:18.435250+00:00",
+  "kind": "read-only shared-interface consumer research",
+  "sourceHead": "9f0e916d38f4615dd5f15103701d188c1f0e60ca",
+  "pins": [
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 6713,
+      "sha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 54644,
+      "sha256": "8305feef971008fe610a68ed3fe5a52c2d55ff44b2a917eb868e8a0a2b7c670e"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "bytes": 2339,
+      "sha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 6114,
+      "sha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "bytes": 5744,
+      "sha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 11315,
+      "sha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "bytes": 13765,
+      "sha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "bytes": 6328,
+      "sha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087"
+    }
+  ],
+  "request": "GO existing MATURE06/C02/REQ43: folded reasoning transfers zero reasoning-body bytes; body reply remains streaming, light metadata remains available. No new task or claim.",
+  "coordination": "Mika confirmed same static gap and asks original C02 owner for minimal interface after sentinel; CHAT05 client/contracts owner completes current handoff first. Root does not write shared implementation.",
+  "skills": {
+    "discovery": "Reuse local find-skills discovery and read codebase-design/assistant-ui/clean-code; no installation",
+    "paths": [
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ]
+  },
+  "confirmedStaticFacts": [
+    "Server patch query filters source only; patch-v2 yields both reasoning channels and text content. Metadata references omit text and fromBytes, so the lightweight public identity/status seam already exists.",
+    "StreamPort only exposes metadata and attempt-wide patches. Visible host starts up to four pages of eight patches, then schedules more. read() currently treats any missing block revision as incomplete history.",
+    "applyPatchPage requires nextCursor equal last included sequence, rejects empty hasMore, tracks replay receipts and verifies each block revision/UTF-8 offset/digest. New scan-watermark semantics cannot be introduced by silently widening this decoder.",
+    "presentation.replacements requires all metadata blocks loaded and verified, so omitting reasoning alone prevents final replacement; final text can otherwise coexist with unreplaced live text.",
+    "Server settlement explicitly retains Codex non-text blocks. Final reply replacement can therefore be separated from unread retained reasoning, while preserving complete authoritative metadata partition and identity.",
+    "Existing block GET returns a full verified prefix and its identity/revision/lastSequence; it is a candidate for a first explicit open snapshot, not permission to poll growing full blocks.",
+    "Current route ignores unknown selector parameters and current protocol admits only patch-v1/patch-v2. Merely adding client query parameters cannot guarantee no reasoning bytes against older servers."
+  ],
+  "consumerRequirements": [
+    {
+      "area": "negotiation",
+      "requirement": "Use an explicit supported read representation/selector capability and matching response identity; new Web must not optimistically enable reasoning-lazy mode on an older center that silently ignores selectors. Keep v1 byte/identity semantics and public old response behavior unchanged."
+    },
+    {
+      "area": "selection and cursors",
+      "requirement": "Default text-body stream and light metadata are independent of disclosure. Reasoning opened later must read from its own verified origin/snapshot, never continue from the reply cursor that already passed earlier reasoning sequences. Tie cursor state to immutable selection identity; reopening/adding a block cannot reuse another selection cursor."
+    },
+    {
+      "area": "progress",
+      "requirement": "Choose one precise public page contract: selected-row cursor with matching-row hasMore can reuse existing last-included invariant, or explicit scanned-watermark representation with a dedicated decoder. Do not conflate hasMore=false with attempt done. Interleaved/only-reasoning pages cannot starve later text or trigger endless empty-page retry."
+    },
+    {
+      "area": "settlement",
+      "requirement": "Validate whole metadata settlement partition and final source/digest, but only require the needed loaded replacement text blocks to match their own metadata. Unread retained reasoning must remain discoverable and must neither block final text replacement nor be fabricated as decoded/verified body."
+    },
+    {
+      "area": "lifetime",
+      "requirement": "One existing projection owns shared metadata and body state. Official Thread controlled disclosure produces scoped read leases, keyed by connection/view/turn/task/attempt/stream/channel. Close aborts that reasoning read; text keeps running. Host/session/plugin revoke invalidates all; late responses must be dropped."
+    },
+    {
+      "area": "retention",
+      "requirement": "Enforce cumulative bytes across all opened reasoning blocks and resident panes, including full snapshot plus retained patch strings. Eviction can keep lightweight references, never silently remove final text; explicit reopen revalidates identity. Report partial/truncated/interrupted states honestly."
+    }
+  ],
+  "designOptions": [
+    {
+      "option": "Selected reply patches plus existing full-block read on explicit open",
+      "advantage": "Reuses current metadata, durable block identity, and body endpoint; simpler historical snapshot UX.",
+      "cost": "If reasoning is still growing, label the verified revision and provide bounded explicit refresh or a separately defined incremental continuation; never poll whole growing blocks or imply live content."
+    },
+    {
+      "option": "Reply patches plus explicitly selected per-block incremental patches under the same projection",
+      "advantage": "Supports live expanded reasoning without downloading collapsed blocks.",
+      "cost": "Needs per-selection cursor and replay proof, close cancellation, bounded selection count and cache. A newly disclosed old block starts independently of the current reply cursor; adding IDs to a running combined selector requires a defined new identity."
+    }
+  ],
+  "boundedAcceptance": [
+    "Real owned HTTP fixture: large unique reasoning strings absent from all default response bodies before open; record response-byte counts and request selectors, not only DOM-hidden assertions. Metadata may contain exact bytes/digests/status, never snippets.",
+    "Interleave summary/reasoning/text, include empty selected pages or reasoning-only intervals according to the chosen contract, then ensure later reply text arrives and cursor never loops.",
+    "Close during read, reopen after final, cross-pane/connection with same IDs, disable plugin, and byte-cache eviction; no stale content or eager retry.",
+    "Verify final replaces only authorized text partition even with never-opened reasoning; retained history remains explicitly openable.",
+    "Legacy v1 plus older server not advertising selector support stays unchanged; no whole-suite/provider/native repeat required."
+  ],
+  "notPerformed": [
+    "No PG/Chrome/provider/runtime experiment",
+    "No source edits, additional task/claim, interface implementation approval or scheduling reservation"
+  ],
+  "cleanCodeReview": {
+    "focus": "Preserve existing deep projection ownership; separate metadata completeness from payload completeness and explicit disclosure lease.",
+    "avoid": "A second Web patch decoder/store, a body fetch for every Thread row, CSS-only lazy claims, or implicit mutable selection cursor."
+  }
+}
