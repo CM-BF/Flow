@@ -23,7 +23,7 @@ if helper.digest(helper.OPS)[1] != helper.OPS_SHA:
     raise ValueError('supervisor_changed')
 owned = load('s01_chunk_owned', helper.OPS)
 kind = sys.argv[1]
-if kind not in ('direct', 'types'):
+if kind not in ('direct', 'boundary', 'types'):
     raise ValueError('fixed_mode')
 started = time.monotonic(); end = started + 30
 path = HERE / 'pg-delivery-chunk-local.json'
@@ -66,7 +66,7 @@ run['head'] = subprocess.check_output(['/usr/bin/git', 'rev-parse', 'HEAD'], cwd
 if kind == 'types':
     argv = [helper.NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--noEmit', '-p', str(HERE / 'pg-delivery-chunk-tsconfig.json')]
 else:
-    pattern = 'chunk packing|bounded chunks|a partially accepted flush|buffered samples|capacity |finite observation delivery replay'
+    pattern = 'keeps exact-fit boundaries' if kind == 'boundary' else 'chunk packing|bounded chunks|a partially accepted flush|buffered samples|capacity |finite observation delivery replay'
     argv = [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'pg-delivery-chunk-vitest.config.mjs'), '--configLoader', 'native', '-t', pattern]
 run['argv'] = argv
 path.write_text(json.dumps(record, indent=2) + '\n')

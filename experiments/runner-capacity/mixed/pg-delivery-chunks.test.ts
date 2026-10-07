@@ -34,7 +34,7 @@ describe('chunk packing', () => {
   });
 
   it('keeps exact-fit boundaries, comma bytes and chunk ordinal digit changes', () => {
-    const boundaryEpoch = 'packing-boundary';
+    const boundaryEpoch = 'packing-boundary-fixture';
     const reference = collect(3, 65536, boundaryEpoch); reference.delivery.finish();
     const referenceChunk = reference.messages[0]!;
     if (referenceChunk.kind !== 'pg-observation-chunk') throw new Error('wrong message');
@@ -51,7 +51,7 @@ describe('chunk packing', () => {
       expect(Buffer.byteLength(JSON.stringify(message))).toBeLessThanOrEqual(512);
     });
     const mixed = (limit: number) => {
-      const value = collect(1, limit, 'two-array-boundary-'.repeat(3));
+      const value = collect(1, limit, 'two-array-boundary-'.repeat(4));
       for (const poolId of [1, 2]) value.delivery.record({ ...event(0), poolId, kind: 'sql', category: 'other' });
       expect(value.delivery.finish().known).toBe(true); return value.messages;
     };
