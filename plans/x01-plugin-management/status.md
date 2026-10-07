@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:57:06.081085+00:00 |
+| 最近更新时间 | 2026-10-07T08:01:09.501594+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,18 +15,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | source 685978f6d6f9552a789e0df10da13df7a0757505固定；有限检查/元数据封存，提交后clean |
-| 工作分支状态 | implementation |
-| 检查状态 | 新PG准备NOT_RUN；来源19/19+types0已审，不重跑 |
-| Review | 来源六源已chatui07:52:01 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；新PG准备待审/NOT_OPEN |
-| 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
-| 实现目标 | 685978f6d6f9552a789e0df10da13df7a0757505 |
-| 实现范围 | apps/runner/src/plugins/execution.ts, apps/server/src/events.ts, apps/server/src/plugin-runtime/artifact.ts, apps/server/src/plugin-runtime/artifact.test.ts, packages/contracts/src/runner.ts, packages/contracts/src/plugin-artifact.ts, docs/evidence/x01/artifact-provenance-local.py, docs/evidence/x01/artifact-provenance-tsconfig.json, docs/evidence/x01/artifact-provenance-vitest.config.mjs |
-| 本片段交付阶段 | implementation |
+| 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，元数据封存后clean |
+| 工作分支状态 | review |
+| 检查状态 | PG准备focusedtypes0/list5（0hooks/0case执行/0PG），2组与TMP全闭合；原19/9/3不重跑 |
+| Review | 来源六源已07:52:01独审APPROVED/READY；五组PG准备待独审，actual NOT_OPEN |
+| 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
+| 实现目标 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 |
+| 实现范围 | apps/server/src/plugin-runtime/artifact-pg.test.ts, docs/evidence/x01/artifact-pg-once.py, docs/evidence/x01/artifact-pg-local.py, docs/evidence/x01/artifact-pg-input.json, docs/evidence/x01/artifact-pg-tsconfig.json, docs/evidence/x01/artifact-pg-vitest.config.mjs |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 来源关联模块已审；正在准备真实事务重放与失败回滚验收 |
-| 下一可用交付 | 五组专库验收准备独审，再按实际资源窗口验证；来源模块独立READY接收 |
+| 当前产出 | 来源关联模块已审待集成，真实事务验收五组已可收集；npm材料与版本固定片已进入主线 |
+| 下一可用交付 | 完成五组专库准备独审，取得实际窗口后验证来源重放与事务回滚；不预占PG |
 | 当前阻塞 | ACTIVE: 生产runtime/client由CHAT05P02持有；当前来源事务片可独立交付 |
 | 需用户决定 | NONE |
 
@@ -295,3 +295,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:51Z：主线d556权威parseStatus只读核本status：errors[]、humanMissing[]，仅原始任务开工时间UNKNOWN（历史缺证据，未伪造）。来源source 685978f6 / result ddace03a / packet c0c95b03已push clean并交chatui01_owner固定只读独审；本段0actual/0待launch，claim v16 ACTIVE42保留review/repair。未改共享runtime/client/index或C02交回四源，未重复原checks。
 
 2026-10-07T07:57:06.081085+00:00：来源正式[独审](../../docs/evidence/x01/artifact-provenance-independent-review.json)与[六源独立intake](../../docs/evidence/x01/artifact-provenance-integration-ready.json)READY，禁止整文件覆盖当前main native-body/Codex；需主线直接组合检查。07:55:01.176Z原子amend v17后新增5组PG源码，0actualPG，无预占。
+
+2026-10-07T08:01:09.501594+00:00：主线5b0bef86 [精确回执](../../docs/evidence/x01/semver-main-receipt.json)8产品/fixture bindings零错，semver与pinning已接收不扩为provenance/main生产链。PG新准备从07:53:37累计，07:57安全停点/07:58恢复没有重置；2child types0/list5/0hooks，07:59:02.436182Z实际归还local，raw29B/两组ownedabsent/EOF/TMP同inode删除。原source/旧raw不动，0PG实际，等待固定准备独审+实际holder交接。

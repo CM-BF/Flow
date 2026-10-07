@@ -1,0 +1,170 @@
+{
+  "startedAt": "2026-10-07T07:53:37Z",
+  "startEpoch": 1791359617.0,
+  "localStartedAt": "2026-10-07T07:58:43.993202+00:00",
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T07:58:43.994291+00:00",
+      "freeBeforeBytes": 24186757120,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-pg-wawmbr11",
+        "dev": 16777234,
+        "ino": 123642452,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/artifact-pg-tsconfig.json"
+      ],
+      "process": {
+        "pid": 3673,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1931,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T07:58:45.925977+00:00",
+      "elapsedBeforeReceiptSeconds": 1.9313235000008717
+    },
+    {
+      "label": "list",
+      "startedAt": "2026-10-07T07:59:01.129861+00:00",
+      "freeBeforeBytes": 24184279040,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-pg-igtvh5p2",
+        "dev": 16777234,
+        "ino": 123643057,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 1312,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/x01/artifact-pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-pg-igtvh5p2/tests.json"
+      ],
+      "process": {
+        "pid": 15758,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1305,
+        "observed_bytes": 31,
+        "retained_bytes": 31,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "list",
+        "rawComplete": true
+      },
+      "raw": "X01_FIXED_MAIN_DATABASE_LOADED\n",
+      "rawBytes": 31,
+      "rawSha256": "4b2fec85337e3eae52831130fd074b8b942827b746ba3da2af4df6141b53f73b",
+      "tests.json": [
+        {
+          "name": "exact source is readable and same-sequence replay preserves a single artifact association",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact-pg.test.ts"
+        },
+        {
+          "name": "wrong frozen material rolls back the full batch prefix before artifact detail timeline and ACK",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact-pg.test.ts"
+        },
+        {
+          "name": "missing invocation phase rejects source and rolls back prefix without discarding prior load authorization",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact-pg.test.ts"
+        },
+        {
+          "name": "phase receipts from a different historical attempt cannot authorize the current artifact association",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact-pg.test.ts"
+        },
+        {
+          "name": "legacy artifact without source retains original storage and is not labelled verified plugin provenance",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/artifact-pg.test.ts"
+        }
+      ],
+      "finishedAt": "2026-10-07T07:59:02.436182+00:00",
+      "elapsedBeforeReceiptSeconds": 1.3056144580477849
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 900,
+    "commands": 2,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "floorBytes": 4071096320,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tar": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T07:59:02.436195+00:00"
+}

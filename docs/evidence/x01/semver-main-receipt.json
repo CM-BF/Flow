@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-10-07T07:59:15.656163+00:00",
+  "mainCommit": "5b0bef86086a611937e098c78bc542fde6ed9539",
+  "receipt": "docs/evidence/i02/x01-semver-dashboard-intake.json",
+  "receiptSha256": "8b257cb471ef9e3eb42737d7dd891104fa378df4a02c698172dc0777b4cbf2b8",
+  "bindings": [
+    {
+      "path": "apps/runner/src/plugins/semver-package.test.ts",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 7960,
+      "sha256": "17fc11603b0883705087ea5c061c04174c5c12951ad728461066008e12fb4496",
+      "preimage": "new"
+    },
+    {
+      "path": "apps/runner/src/plugins/semver-pinning.test.ts",
+      "ref": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+      "bytes": 8290,
+      "sha256": "e0b5cffc7cc5ac974f1bedde07454d361f19390776dc35b673bd93805746394e",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/adapter.mjs",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 733,
+      "sha256": "36d45257abbf96d39870491dfefe1a278faa6686471851699e6f759a75c874bd",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/flow-plugin.json",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/index.mjs",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 9749,
+      "sha256": "2ab17629625064a227043d068cbecdf184725391c606dc30b9aa9959ab3702b7",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/license.txt",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/package.json",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 98,
+      "sha256": "b84c47732858827c16694c3a6f65a005dd6519f089dee0b16c62dadda6f805f8",
+      "preimage": "new"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/provenance.json",
+      "ref": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "bytes": 2397,
+      "sha256": "ace6bddcf7ba8c1888feb928495334dc5a3fe982c386dec00188da3f6c0481cf",
+      "preimage": "new"
+    }
+  ],
+  "errors": [],
+  "mainScope": "Real semver fixture/package and wrapper pinning only. Provenance/full public runtime not included; no rerun."
+}

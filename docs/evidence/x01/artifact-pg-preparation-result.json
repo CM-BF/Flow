@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-10-07T08:01:09.501594+00:00",
+  "sourceCommit": "376954ac8a95ca29df13cc84a4e7a3828c489af9",
+  "segmentStartedAt": "2026-10-07T07:53:37Z",
+  "localEndedAt": "2026-10-07T07:59:02.436182+00:00",
+  "count": {
+    "topLevelChildren": 2,
+    "typesExit": 0,
+    "collected": 5,
+    "executed": 0,
+    "passed": null,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "rawBytes": 31,
+  "unknown": false,
+  "wholeExternalWall": null,
+  "activeTemporaryPeak": null,
+  "sourceAttribution": "Product/test fixed705176ab; types ran with the local caller whitespace/origin-only working delta subsequently fixed376954ac; list ran376954ac. No fixture/product changed between checks. Initial git staging refusal outside sparse pattern retained in conversational tool output; exact --sparse stage then committed.",
+  "cleanup": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-pg-wawmbr11",
+      "dev": 16777234,
+      "ino": 123642452,
+      "removed": true,
+      "endSample": {
+        "entries": 3,
+        "bytes": 0,
+        "wholePeakProven": false
+      },
+      "absent": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-pg-igtvh5p2",
+      "dev": 16777234,
+      "ino": 123643057,
+      "removed": true,
+      "endSample": {
+        "entries": 4,
+        "bytes": 1312,
+        "wholePeakProven": false
+      },
+      "absent": true
+    }
+  ],
+  "limits": "Original15min from07:53:37, no reset during historical-entry safety stop. Two max60s children consumed; no further checks. TMPdecl16MiB, reused end sampler stricter8MiB; actual max1312B end sample is not peak."
+}

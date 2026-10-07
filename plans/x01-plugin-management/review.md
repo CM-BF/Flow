@@ -1,3 +1,11 @@
+状态：PENDING（新增五组真实事务验收准备，0实际PG）
+
+Review target commit: 376954ac8a95ca29df13cc84a4e7a3828c489af9
+
+准备types0/list5；来源685978六源既有正式APPROVED继续有效。当前source整体包含未独审PG支持，不继承原批准。
+
+---
+
 状态：APPROVED（仅来源六源与19项有限结果；新PG准备未审）
 
 Review target commit: 685978f6d6f9552a789e0df10da13df7a0757505
