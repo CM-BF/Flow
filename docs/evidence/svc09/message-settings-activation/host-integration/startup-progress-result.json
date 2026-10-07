@@ -1,0 +1,110 @@
+{
+  "kind": "SVC09A_STARTUP_PROGRESS_LEAVES_LOCAL_RESULT",
+  "at": "2026-10-07T20:05:30.084530+00:00",
+  "source": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+  "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+  "claimVersion": 7,
+  "scope": "five leaves only; main/index not wired",
+  "implementationStartedAt": "2026-10-07T19:42:10.691Z",
+  "localStartedAt": "2026-10-07T20:01:15.982421+00:00",
+  "localReturnedAt": "2026-10-07T20:01:17.185365+00:00",
+  "selected": {
+    "vitest": 12,
+    "environment": 2,
+    "different": 14,
+    "passed": 14,
+    "focusedTypesExit": 0
+  },
+  "elapsedMs": 1193,
+  "rawBytes": 3042,
+  "cleanup": {
+    "path": "/private/tmp/flow-svc09a-startup-x3rh_zjj",
+    "dev": 16777234,
+    "ino": 124462293,
+    "remainingEntries": 0,
+    "cleanup": "removed"
+  },
+  "initialOwnedObservations": "EPERM unknown preserved; each group later twice absent, dual EOF; no signals",
+  "scratchPeakBytes": null,
+  "sourceMatchesReservation": true,
+  "scopeLimits": {
+    "pg": 0,
+    "service": 0,
+    "provider": 0,
+    "personalIO": 0,
+    "build": 0,
+    "installation": 0,
+    "native": 0
+  },
+  "notProven": [
+    "actual server entry connection",
+    "current startup root cause",
+    "new artifact",
+    "default host success",
+    "complete settings/mixed journey"
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "source": "existing locally installed baseline; no install/update"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "source": "existing locally installed baseline; no install/update"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "source": "existing locally installed baseline; no install/update"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608",
+      "source": "existing locally installed baseline; no install/update"
+    }
+  ],
+  "compatibleFixedInputs": [
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "base": "76ad2709",
+      "main": "f8853d473",
+      "artifactSource": "098b0d515",
+      "allSame": true,
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "base": "76ad2709",
+      "main": "f8853d473",
+      "artifactSource": "098b0d515",
+      "allSame": true,
+      "bytes": 5152,
+      "sha256": "8123a6b0b02e1713e5e40bdcd0f75890cdb6508daf50d2d71f5688f6cc995732"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "base": "76ad2709",
+      "main": "f8853d473",
+      "artifactSource": "098b0d515",
+      "allSame": true,
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "base": "76ad2709",
+      "main": "f8853d473",
+      "artifactSource": "098b0d515",
+      "allSame": true,
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    }
+  ]
+}

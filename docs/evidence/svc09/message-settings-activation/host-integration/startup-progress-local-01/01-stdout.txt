@@ -1,0 +1,21 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings[39m
+
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mfits all 31 fixed migrations and normal initialization inside both limits[32m 2[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mdoes no observation work when disabled or absent[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mrecords only bounded structural error fields and rethrows the original value[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mkeeps untrusted error names, codes and throwing accessors unknown[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mreserves an explicit incomplete footer at the frame limit and stops[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mreserves an explicit incomplete footer at the byte limit and stops[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mstops on write failure and backpressure without retry or a success footer[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mtreats unfinished phases and malformed event ordering as incomplete[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mmakes invalid or sub-millisecond backwards clock observations incomplete[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress.test.ts[2m > [22mbounded startup progress[2m > [22mdoes not fabricate elapsed time while the awaited operation remains pending[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress-consumer.test.ts[2m > [22mexisting startup capture retains bounded producer frames through its actual private file port[32m 55[2mms[22m[39m
+ [32m✓[39m apps/server/src/startup-progress-consumer.test.ts[2m > [22mobserver failure preserves the primary and existing host cleanup unknown independently[32m 1[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m12 passed[39m[22m[90m (12)[39m
+[2m   Start at [22m 13:01:16
+[2m   Duration [22m 243ms[2m (transform 37ms, setup 0ms, import 48ms, tests 60ms, environment 0ms)[22m
+
