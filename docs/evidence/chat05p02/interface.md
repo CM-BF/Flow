@@ -1,6 +1,6 @@
 # CHAT05P02 工具全文公开接线 Interface
 
-固定输入为已接收 main `f39a5dfea0a33ef55631cb7e29291deca6d4e0d2`；本片领域交付见 [main receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/main-receipt.json)。本文只在原 owner 的 plan/evidence 范围准备后继，不领取或修改共享源，不表示生产已开通。拟后继 CHAT05P02 属原 FLOW-001/CHAT05–06，名称、独立 worktree/base 和正式 take 由 Lead 确认；不得在原树继续产品写入。
+领域输入为已接收 main `f39a5dfea0a33ef55631cb7e29291deca6d4e0d2`；[P01 main receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/main-receipt.json) 保持冻结。本片 CHAT05P02 属原 FLOW-001/CHAT05–06，独立树 native-activity-body-wiring / 分支 codex/native-activity-body-wiring，base `9f0e916d38f4615dd5f15103701d188c1f0e60ca`。以下是已获方向批准的实施合同；实际领取、验证与共享前像见本片唯一status及receipt。
 
 ## 最小交付与顺序
 
@@ -57,7 +57,7 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 
 ## 拟精确写范围与共享依赖
 
-以下是候选 literal 清单，**尚未领取**；共 14 项。实施需 Lead 确定新的独立树/分支与 fresh base、检查当前 owner，然后 fresh take；现 v2 只保原 CHAT05P01 两项 metadata。
+下表为14项设计scope；本片f51 claim初始11项已取得，随后v2加入server/index。client/index与contracts/index仍未取得；原P01 claim仅两metadata且不授本树写权。额外共享输入只按固定已审前像供给，不作本片领域更改。
 
 | 拟 literal | 改动职责 / 依赖 |
 | --- | --- |
@@ -66,7 +66,7 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 | `packages/client/src/index.ts` | 薄 transport 接线到唯一 reader 与 runner support；Mika C02 持有，须正式移交 |
 | `packages/client/src/native-activity-body.ts` | 新 leaf：惰性 reader/唯一 codec，可先独立完成 |
 | `packages/client/src/native-activity-body.test.ts` | 新 leaf：client transport/分页/取消/完整性直接用例 |
-| `apps/server/src/index.ts` | 032 后 mount 033、既有 auth 后 mount routes/确认；X01 持有，须正式移交 |
+| `apps/server/src/index.ts` | 032 后 mount 033、既有 auth 后 mount routes/确认；X01 v12移出后本片v2领取，9816前像保留 |
 | `apps/server/src/native-activity-body/index.ts` | 窄 runner 支持确认注册，复用现迁移/读口 |
 | `apps/server/src/native-activity-body/production.test.ts` | 新 leaf：真实 factory 自动迁移/路由/auth/跨 task 拒绝，不手动 migrate/mount |
 | `apps/runner/src/runtime.ts` | 显式选项与 execute/recovery/report 的小接缝；fresh 领取前再核 writer |
@@ -80,7 +80,7 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 
 不需修改：033 SQL 内容、events.ts dispatch、spool/plan/outbox 存储、claude mapper、runner-claim/runners.ts、browser-session 权限实现、UI/附件、package/lock。它们是只读直接输入；实施若发现真实必要 delta，先精确协调 scope，不能暗扩。
 
-## 最少验证面（本次全部 NOT_RUN）
+## 最少验证面（进度以status和原raw为准）
 
 1. Client 纯/合成 HTTP：owner 与 browser 原 transport；未调用 reader 零正文请求；descriptor 身份及 limit/offset/hash 坏页；64KiB UTF8 跨界；receiving 尾部后追加；interrupted/legacy；取消期间和 decode 后不发布/不发下一页；完整 >2MiB bytes/digest。只测新增 reader 和直接调用，不重跑已绿领域28。
 2. Runner 直接消费者：原 `runtime-claim-recovery.test.ts` / `runtime-shutdown.test.ts` / `runtime-capacity.test.ts` 受改分支有选择覆盖；原 strict runnerIdentity 不变。新 host 用例证明 port 默认缺、旧中心 legacy、支持确认 identity/limits 错误拒绝、query 尚未开始时阻止、已有 body unknown 只恢复同 key/bytes、final 等 tail。无 provider/model；实际选中数在固定入口后记录，不预报已通过。
@@ -93,4 +93,6 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 
 ## CHAT05P02 实施定界
 
-Lead已批准本Interface方向；fixed base9f0e916d，原P01与raw不改。当前11literal初始领取成功，三个共享出口未领取。新增admission前确认先于claim，unknown不会落入execute普通失败分支或误报模型已执行；已开始attempt中的确认丢失沿保守lost处理。body发送/recovery前确认和admission确认分开，不改journal。reader只允许一个inflight，所有失败/取消均不提交cursor或已核材料；返回bytes独立拷贝，不能修改私有完整性状态；完整decode一次。读取端先独立完成，runtime/factory正式挂载与真实PG另按共享移交/窗口。
+Lead已批准本Interface方向；fixed base9f0e916d，原P01与raw不改。初始11literal领取成功；server出口随后正式amend，两个client/contracts出口仍待交权。新增admission前确认先于claim，unknown不会落入execute普通失败分支或误报模型已执行；已开始attempt中的确认丢失沿保守lost处理。body发送/recovery前确认和admission确认分开，不改journal。reader只允许一个inflight，所有失败/取消均不提交cursor或已核材料；返回bytes独立拷贝，不能修改私有完整性状态；完整decode一次。读取端先独立完成，runtime/factory正式挂载与真实PG另按共享移交/窗口。
+
+局部实际范围：fe8aa55e reader16/host5与focused types通过，累计2791ms；其后runtime/factory接缝继续实施，尚未验证。host opt-in初片显式拒绝maxConcurrentAttempts>1，待聚合保留/背压有证据再扩，不影响legacy并发。

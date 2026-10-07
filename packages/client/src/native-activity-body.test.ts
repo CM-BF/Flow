@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { expect, it, vi } from 'vitest';
 import { nativeActivityBodyDescriptorSchema, NATIVE_ACTIVITY_BODY_LIMITS as limits, type NativeActivityBodyDescriptor, type NativeActivityBodyPage } from '../../contracts/src/native-activity-body.js';
 import { NativeActivityBodyReader, readNativeActivityBody, readBoundedNativeBodyJson, type NativeBodyRequest } from './native-activity-body.js';
+import { FlowClient } from './index.js';
 
 const digest = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest('hex');
 function descriptor(bytes: Uint8Array, state: NativeActivityBodyDescriptor['state'] = 'complete', received = bytes.length): NativeActivityBodyDescriptor {
@@ -135,4 +136,29 @@ it('limits response bytes before JSON parse and cancels the source on overflow o
   const pending = readBoundedNativeBodyJson(never, 100, controller.signal); controller.abort();
   await expect(pending).rejects.toThrow();
   expect(await readBoundedNativeBodyJson(new Response('{"ok":"中文"}'), 100)).toEqual({ ok: '中文' });
+});
+
+it.each(['bearer', 'browser'] as const)('uses the public FlowClient %s transport without eager page reads', async mode => {
+  const bytes=Buffer.from('public'),info=descriptor(bytes),requests:{url:string;init:RequestInit}[]=[];
+  const fetcher=vi.spyOn(globalThis,'fetch').mockImplementation(async (url,init={})=>{
+    requests.push({url:String(url),init});return Response.json(String(url).includes('/chunks?')?page(bytes,info,0):info);
+  });
+  const client=mode==='bearer'?new FlowClient({baseUrl:'http://body.invalid',token:'test-token'}):new FlowClient({baseUrl:'http://body.invalid',browserSession:{csrfToken:()=>undefined}});
+  try{
+    const value=await client.nativeActivityBody(info.taskId,info.activityId),reader=client.nativeActivityBodyPages(value);
+    expect(requests).toHaveLength(1);
+    try {expect((await reader.readNext()).integrity).toBe('complete');expect(reader.completeText()).toBe('public');}
+    finally{reader.close();}
+    for(const request of requests){expect(new Headers(request.init.headers).get('authorization')).toBe(mode==='bearer'?'Bearer test-token':null);expect(request.init.credentials).toBe(mode==='browser'?'include':'omit');expect(request.init.signal).toBeInstanceOf(AbortSignal);}
+  }finally{fetcher.mockRestore();}
+});
+
+it('keeps the public client original auth errors and enforces the descriptor response bound',async()=>{
+  const fetcher=vi.spyOn(globalThis,'fetch').mockResolvedValueOnce(Response.json({error:{code:'wrong_role',message:'Runner required'}},{status:403}))
+    .mockResolvedValueOnce(new Response('x'.repeat(8193)));
+  const client=new FlowClient({baseUrl:'http://body.invalid',token:'synthetic'});
+  try{
+    await expect(client.nativeActivityBodySupport()).rejects.toMatchObject({status:403,code:'wrong_role'});
+    await expect(client.nativeActivityBody('task','a'.repeat(64))).rejects.toThrow('byte limit');
+  }finally{fetcher.mockRestore();}
 });

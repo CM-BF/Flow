@@ -12,6 +12,7 @@ import { textDigest } from './verifier.js';
 import { AttemptControl, type LeaseGrant } from './attempt-control.js';
 import { EventOutbox, EventStorageError, replayPending, reportBatch } from './outbox.js';
 import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
+import { NativeActivityBodyHost } from './native-activity-body/host.js';
 
 export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
 export interface RunnerOptions {
@@ -23,6 +24,8 @@ export interface RunnerOptions {
   adapters?: HarnessAdapter[];
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
+  /** Explicit single-attempt host opt-in; a current authenticated center must confirm support. */
+  nativeActivityBodies?: boolean;
   /** Local native attempt bound; the center independently enforces registered capacity. */
   maxConcurrentAttempts?: number;
   pollIntervalMs?: number;
@@ -40,6 +43,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
   const requests = new Set<Promise<unknown>>();
   const client = authenticatedClient(options, stop, requests);
+  const bodies = new NativeActivityBodyHost(signal => client.nativeActivityBodySupport(AbortSignal.any([signal, requestSignal(options)])));
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
@@ -55,9 +59,9 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       disconnected = true;
     }
   }
-  function start(assignment: ClaimedTask, initialLease: LeaseGrant) {
+  function start(assignment: ClaimedTask, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop)
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies)
       .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
@@ -74,7 +78,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
             waitingNotice = true; await wakeup.wait(); continue;
           }
-          await recover(stateDirectory, client, options, journal);
+          await recover(stateDirectory, client, options, journal, bodies, runnerId);
           // A confirmed outbox completion may have made a legacy journal completely clean.
           await journal.bindRunner(runnerId);
           recoveryPending = false; waitingNotice = false;
@@ -84,6 +88,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
           blockedNotice = true; await wakeup.wait(); continue;
         }
         if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wakeup.wait(); continue; }
+        // Unknown confirmation is outside execute's failed-settlement catch and before any new claim.
+        const publishBodies = await bodies.beforeAdmission(options.nativeActivityBodies === true, runnerId, requestSignal(options));
         const opportunity = journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
@@ -104,7 +110,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         queryOpportunity = false; blockedNotice = false;
         if (response.state === 'assigned') {
           await journal.acceptOpportunity(opportunity, response.identity);
-          if (!options.signal.aborted) start(response.assignment, { requestedAt, remainingLeaseMs: response.remainingLeaseMs });
+          if (!options.signal.aborted) start(response.assignment, { requestedAt, remainingLeaseMs: response.remainingLeaseMs }, publishBodies);
         } else await wakeup.wait(); // Empty observes the same durable key without a journal write.
       } catch (error) {
         failed(error); recoveryPending = true; queryOpportunity = true;
@@ -120,8 +126,9 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   if (fatal) throw fatal;
 }
 
-async function recover(directory: string, client: FlowClient, options: RunnerOptions, journal: AdmissionJournal) {
+async function recover(directory: string, client: FlowClient, options: RunnerOptions, journal: AdmissionJournal, bodies: NativeActivityBodyHost, runnerId: string) {
   await replayPending(directory, async batch => {
+    await bodies.beforeReport(batch, runnerId, requestSignal(options));
     await reportBatch(client, batch, requestSignal(options));
     if (batch.events.some(event => event.type === 'completed')) await journal.complete(batch);
   }, attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
@@ -153,6 +160,7 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   }
   client.claim = guard(client.claim.bind(client));
   client.runnerIdentity = guard(client.runnerIdentity.bind(client));
+  client.nativeActivityBodySupport = guard(client.nativeActivityBodySupport.bind(client));
   client.claimOpportunity = guard(client.claimOpportunity.bind(client));
   client.claimOpportunityStatus = guard(client.claimOpportunityStatus.bind(client));
   client.heartbeat = guard(client.heartbeat.bind(client));
@@ -171,13 +179,16 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   return client;
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void): Promise<boolean> {
+async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
   const control = new AttemptControl(assignment, client, options, initialLease);
   const outbox = new EventOutbox(directory, ownership, async batch => {
-    try { await reportBatch(client, batch, requestSignal(options)); }
+    try {
+      await bodies.beforeReport(batch, assignment.attempt.runnerId, requestSignal(options));
+      await reportBatch(client, batch, requestSignal(options));
+    }
     catch (error) { control.interrupt('lost'); throw error; }
   });
   const emit = (data: RunnerEventData) => outbox.emit(data).catch(error => {
@@ -220,6 +231,10 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   try {
     if (!adapter) throw new Error('The assigned harness is unavailable.');
     await control.assertOwnership();
+    if (publishBodies) context.activityBodies = await bodies.publisher({
+      runnerId: assignment.attempt.runnerId, signal: control.signal, assertOwnership: context.assertOwnership,
+      publish: material => outbox.publishActivityBody(material), lost: () => control.interrupt('lost'),
+    });
     if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
     if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
     if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
@@ -260,6 +275,7 @@ function requestSignal(options: RunnerOptions, signal = options.signal) {
 function validateOptions(options: RunnerOptions) {
   const limit = options.maxConcurrentAttempts === undefined ? 1 : options.maxConcurrentAttempts;
   if (!Number.isSafeInteger(limit) || limit < 1 || limit > 16) throw new Error('Runner concurrent attempts must be an integer from one through sixteen.');
+  if (options.nativeActivityBodies && limit !== 1) throw new Error('Public material publishing requires a single-attempt host until aggregate retention is qualified.');
   for (const duration of [options.pollIntervalMs ?? 500, options.heartbeatIntervalMs ?? 2000, options.requestTimeoutMs ?? 1500]) {
     if (!Number.isSafeInteger(duration) || duration < 1 || duration > 2_147_483_647) throw new Error('Runner intervals must be positive 32-bit integers.');
   }

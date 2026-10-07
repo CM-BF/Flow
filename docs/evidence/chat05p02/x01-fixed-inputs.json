@@ -1,0 +1,56 @@
+{
+  "authorization": "Lead exact six readonly input supply; no product development rights outside claim",
+  "inputs": [
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "before": null,
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 1277,
+      "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "before": {
+        "bytes": 1884,
+        "sha256": "fa0878022c378867036798187e2d3de0d40b015730c337082e279792f8629a9f"
+      },
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 2477,
+      "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "before": {
+        "bytes": 17633,
+        "sha256": "1d0b25e305afc4c21be343f3cc7d55fe107b7b7e75f2fe40723acd586e9d6a44"
+      },
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 20183,
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "before": null,
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 2773,
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "before": null,
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "before": {
+        "bytes": 3958,
+        "sha256": "15ab790ab835a17467c161e49bf7f1843a2f3604f63748559ee3bc4f5bfc89ce"
+      },
+      "fixedRef": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    }
+  ]
+}

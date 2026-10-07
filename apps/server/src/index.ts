@@ -1,6 +1,8 @@
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+import { migratePluginRuntime } from './plugin-runtime/store.js';
+import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
 import type { PluginInstallHost } from './plugin-installations/commands.js';
@@ -14,6 +16,7 @@ import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-st
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
+import { migrateNativeActivityBodies, registerNativeActivityBodyRoutes, registerNativeActivityBodySupport } from './native-activity-body/index.js';
 import { migrateGoalContext, registerGoalContextRoutes } from './goal-context/index.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
 import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
@@ -32,11 +35,11 @@ import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/i
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { Pool } from 'pg';
-import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema, runnerClaimRequestSchema } from '@flow/contracts';
+import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema } from '@flow/contracts';
 import { HttpError, migrate } from './database.js';
 import { list, snapshot, submit } from './tasks.js';
 import { startScheduler } from './scheduler.js';
-import { claim, claimOpportunity, claimOpportunityStatus, runnerIdentity, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
+import { claim, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
 import { reportEvents } from './events.js';
 import { cancel, decide } from './commands.js';
 import { detail, eventPage, integerQuery } from './queries.js';
@@ -100,9 +103,11 @@ export async function createServer(options: ServerOptions) {
     await migrateContextObservationHistory(pool);
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
+    await migratePluginRuntime(pool);
     await migrateGoalProgressions(pool);
     await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);
+    await migrateNativeActivityBodies(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
@@ -174,6 +179,8 @@ export async function createServer(options: ServerOptions) {
   if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
+  registerNativeActivityBodyRoutes(app, pool);
+  registerNativeActivityBodySupport(app);
   registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerEngineeringRoutes(app, pool);
@@ -193,17 +200,7 @@ export async function createServer(options: ServerOptions) {
     return registerRunner(pool, input.data);
   });
   app.post('/api/runner/claim', request => { requireEmptyBody(request.body); return claim(pool, request.runnerId!, leaseMs); });
-  app.get('/api/runner/identity', request => runnerIdentity(pool, request.runnerId!));
-  app.post('/api/runner/claim-opportunity', request => {
-    const input = runnerClaimRequestSchema.safeParse(request.body);
-    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
-    return claimOpportunity(pool, request.runnerId!, input.data, leaseMs);
-  });
-  app.post('/api/runner/claim-opportunity/status', request => {
-    const input = runnerClaimRequestSchema.safeParse(request.body);
-    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
-    return claimOpportunityStatus(pool, request.runnerId!, input.data);
-  });
+  registerRunnerClaimRoutes(app, pool, leaseMs);
   app.post<{ Params: { id: string } }>('/api/runners/:id/revoke', request => { requireEmptyBody(request.body); return revoke(pool, request.params.id); });
   app.post('/api/runner/heartbeat', request => {
     const input = ownershipSchema.safeParse(request.body);
