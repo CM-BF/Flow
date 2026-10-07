@@ -1,0 +1,58 @@
+{
+  "attempts": [
+    {
+      "startedAt": "2026-10-07T21:34:55.213Z",
+      "endedAt": "2026-10-07T21:34:55.403Z",
+      "elapsedBeforePersistence": 0.18936195806600153,
+      "supervision": {
+        "pid": 21027,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 181,
+        "observed_bytes": 668,
+        "retained_bytes": 668,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "dev": 16777234,
+        "ino": 124531699,
+        "endSampleEntries": 0,
+        "exactLstat": "ENOENT"
+      },
+      "raw": {
+        "path": "docs/evidence/x01/cleanup-root-guard/run-1/output.log",
+        "bytes": 668,
+        "sha256": "3d54919bb1e8d0666b4c4fac8b81f0d6feeffa49b8c12ecbe655ba586b554942"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01/cleanup-root-guard/root-guard.test.py": "a86909e896397944d5f7023c92a5b497355580eac0eafa0173c6581ceafdad22",
+        "docs/evidence/x01/cleanup-root-guard/local.py": "ddf584664f2387ecf34f90406966454dcc6add4067858a9bbf2bb6f6246a051a",
+        "docs/evidence/x01/enable-binding-pg-once.py": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
+      }
+    }
+  ]
+}
