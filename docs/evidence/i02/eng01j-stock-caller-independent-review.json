@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T06:38:34.995844+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+  "delivery": "d2efbf5e3890f3d755c9a65e74f7c9ef109499ad",
+  "verdict": "APPROVED_LIMITED_SINGLE_STOCK_HELPER_CALLER",
+  "P1": 0,
+  "P2": 0,
+  "bindings": 22,
+  "bindingMismatches": [],
+  "inputsSha256": "ae3759eecc270748df73a5724a124987c2da4344dee3aff1e96491d0953607c3",
+  "review": [
+    "Complete two new caller files and fixed reuse of exec_only/OPS14 read; no product change to approved f15.",
+    "Preparation uses takeLaunch; actual immutable request and generated -p profile hash checked before exact -f launch; no R06 initialize sent to helper.",
+    "One exclusive run namespace, 10-second alarm, same monotonic deadline with child TERM/reap/report allowance; fixed bounded pipes and readonly stdin/extra FD closure.",
+    "Own namespace identity + absent groups and dual EOF + durable checkpoint required before cleanup; primary and cleanup failures retained separately.",
+    "Read current/fixed Git bytes and installed realpath/size/SHA for all22 inputs; no reviewer imports/tests/native."
+  ],
+  "limits": {
+    "maximumStockAttempts": 1,
+    "totalSeconds": 10,
+    "rawBytes": 65536,
+    "privateBytes": 1048576,
+    "freshFreeBytes": 1107296256,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0
+  },
+  "limitations": [
+    "Private bytes are final/sample bounds, not continuous filesystem quota. Deadline interruption retains unknown; no automatic retry.",
+    "Preparation Node exits before stock launch; caller file/payload facts do not claim same host.observe closure survived.",
+    "Even success proves one standalone helper request only, not app-server delegation/model qualification/all writer revocation; writeAccess remains unknown.",
+    "Installed entry binding is not exhaustive transitive/dynamic-library attestation."
+  ],
+  "reviewerRuns": 0
+}
