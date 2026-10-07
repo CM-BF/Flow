@@ -72,7 +72,7 @@ test('AV03 center verifier assignment traverses production route, locks, source 
   let permission = true;
   f.query = async (sql, values = []) => {
     if (sql.startsWith('SELECT kind FROM flow.plugin_binding_executions')) return { rows: [{ kind: 'verifier' }], rowCount: 1 };
-    if (sql.includes('FROM flow.plugin_verification_references')) return { rows: [{ source_task_id: source.taskId, source_attempt_id: source.attemptId,
+    if (sql.startsWith('SELECT source_task_id,source_attempt_id,artifact_id,artifact_version,project_id,rule')) return { rows: [{ source_task_id: source.taskId, source_attempt_id: source.attemptId,
       artifact_id: source.artifactId, artifact_version: source.version, project_id: 'project', rule }], rowCount: 1 };
     if (sql.includes('FROM flow.project_task_bindings')) return { rows: [{ project_id: 'project', workspace_id: 'personal' }], rowCount: 1 };
     if (sql.startsWith('SELECT d.content FROM flow.artifacts')) return { rows: [{ content: source.content }], rowCount: 1 };
