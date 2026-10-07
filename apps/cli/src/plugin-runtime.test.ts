@@ -27,3 +27,17 @@ it('separates unknown ACK exit4 from request usage2 and trusted business409 exit
   for(let i=0;i<2;i++){const result=await cli(args);expect(result.code).toBe(4);expect(result.err.join('')).toContain('original --key');expect(result.out).toEqual([]);}
   expect((await cli(args)).code).toBe(3);expect(fetch).toHaveBeenCalledTimes(3);
 });
+
+it('rejects nonliteral ACK status through the actual CLI', async () => {
+  await writeFile(file, JSON.stringify(command));
+  const fetch = vi.spyOn(globalThis, 'fetch');
+  for (const invalid of [['ready'], { status: 'ready' }, true, null, 42]) {
+    const value = changed();
+    fetch.mockResolvedValueOnce(response({ ...value, snapshot: { ...value.snapshot, configurationStatus: invalid } }));
+    const result = await cli(['plugin', 'runtime-change', id, '--input', file, '--key', 'original']);
+    expect(result.code).toBe(4);
+    expect(result.err.join('')).toContain('original --key');
+    expect(result.out).toEqual([]);
+  }
+  expect(fetch).toHaveBeenCalledTimes(5);
+});

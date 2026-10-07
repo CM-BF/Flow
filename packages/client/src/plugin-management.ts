@@ -60,7 +60,7 @@ export function decodePluginRuntimeChanged(value: unknown, id: string, input: Pl
     && installation.registrationStatus === 'registered' && installation.runtimeStatus === 'unavailable'
     && installation.runtimeReason === 'package_not_verified_or_loaded'
     && validDate(installation.createdAt) && validDate(installation.updatedAt)
-    && ['ready', 'incomplete'].includes(String(snapshot.configurationStatus))
+    && (snapshot.configurationStatus === 'ready' || snapshot.configurationStatus === 'incomplete')
     && Array.isArray(snapshot.grants) && snapshot.grants.length <= 4
     && new Set(snapshot.grants).size === snapshot.grants.length
     && snapshot.grants.every(grant => parsedVersion.capabilities.includes(grant as typeof parsedVersion.capabilities[number])));

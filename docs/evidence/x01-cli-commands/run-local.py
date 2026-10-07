@@ -3,11 +3,12 @@ from pathlib import Path
 import dataclasses,datetime,hashlib,importlib.util,json,os,sys,time
 ROOT=Path(__file__).resolve().parents[3]
 E=ROOT/'docs/evidence/x01-cli-commands'
-name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix')
+name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix','ack-fix')
 node='/opt/homebrew/opt/node@24/bin/node'
 files=['packages/client/src/plugin-runtime.test.ts','apps/cli/src/plugin-runtime.test.ts']
 cmd=([node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'tsconfig.json')]
      if name.startswith('types') else [node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files])
+if name == 'ack-fix': cmd += ['-t','rejects nonliteral ACK status through the actual CLI']
 free=os.statvfs(ROOT).f_bavail*os.statvfs(ROOT).f_frsize
 floor=5334630400+676*1024*1024+19*1024*1024
 if free<floor: print(json.dumps({'state':'HOLD','free':free,'required':floor}));sys.exit(3)
