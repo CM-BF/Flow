@@ -1,0 +1,47 @@
+{
+  "implementation": "fa6f8835d95e5e59fb62e14db5561498c741a4e3",
+  "runHead": "7d9544fb041504a76988c5a53c9f1944ac5f19d9",
+  "state": "PASSED_AWAITING_INDEPENDENT_RESULT_REVIEW",
+  "scenarios": 5,
+  "passed": 5,
+  "failed": 0,
+  "actualExit": 0,
+  "testDurationMs": 3992.898125,
+  "outerWallMs": 4032.013582997024,
+  "cleanup": {
+    "ownedOuterGroupAbsent": true,
+    "bothEOF": true,
+    "droppedBytes": 0,
+    "ownedScratchEmptyThenRemoved": true,
+    "remainingOwnedFixtures": []
+  },
+  "boundary": "Node built-ins + Git in self-owned synthetic repositories. No production Flow worktrees, history cleanup, PG/CLI integration, dashboard HTTP/browser or provider execution. Product source unchanged.",
+  "sourcePins": {
+    "apps/execution-dashboard/test/coordination.test.mjs": "5b4c27e630532b641a62cedc178309a48c429bcf91cc960e5b51e718ab24d20e",
+    "apps/execution-dashboard/test/owned-worktrees.mjs": "4a5e3e0556bec05339c4fd1ec4c1934bb1de5b3852b67e351a7ec29c3155c79a",
+    "apps/execution-dashboard/test/owned-worktrees.test.mjs": "fe89bf5d55a91bf54adac869b3f219ce4b00df339f41fe275391641f59573ea6"
+  },
+  "skillQuality": {
+    "time": "2026-10-07T03:05:07.434591+00:00",
+    "method": "find-skills local existing clean-code; no install",
+    "review": "Names/exact ownership, original error retained, lifecycle tests consume real private helper. No new generic runner or implementation change needed; all five scenarios passed."
+  },
+  "rawPins": {
+    "stdout.txt": {
+      "bytes": 656,
+      "sha256": "767ccc440ff2510145c3577ab7a1a100f54ba920ae2917d706d12bec2d4e60ac"
+    },
+    "actual-exit.json": {
+      "bytes": 692,
+      "sha256": "0e83e4a121d1c9850924c7647d2982558f982c5f52739e0ac80f97ab4bdc6b10"
+    },
+    "stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "claim-observation.json": {
+      "bytes": 765,
+      "sha256": "bc52861a226c2eefe3907c7124535ef0e9c377dfe4aacd04f52f901ff021d827"
+    }
+  }
+}
