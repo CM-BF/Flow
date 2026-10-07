@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T22:41:19.049Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_WEB_SUCCESSOR_SOURCE_AND_DIRECT_RESULTS",
+  "blockingP1P2": 0,
+  "source": "ef281959728334e2b3f0f5d847e0452108d37c06",
+  "target": "d593c7eaf2084c48ea60f89f4d3767cd9627f75d",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-web-continuation.json",
+    "bytes": 6205,
+    "sha256": "b1d11c89085f3e9f2b4f63fcc1528b93588f21c636d92b4f340bdf747c49cadf",
+    "bindings": 6,
+    "boundBytes": 34849
+  },
+  "verified": [
+    "Read full caller and fixed parent/canonical deltas. Actual public artifact verification and canonical serializer retain authority; no duplicate serializer, supervisor or state machine.",
+    "Parent P2 fixed at225a71ee: root-owned canonical1777 system parent is distinct from exclusive owned0700 output; symlink/reuse still rejected. Two actual creation checks112ms293B, owned resources closed.",
+    "All six current/fixed binding bytes match. Six actual publish direct-consumer selections passed240ms665B; no skipped/cancelled/todo. Same public canonical, normalCAS/conflict/postcommitunknown/changedlaunch/legacydigest/receipt-path covered. Group absent, dualEOF, no signals; initial unknown observation preserved.",
+    "Backend e15/source880060 and Web779/sourcec231/four b422 reports fixed. No imported artifact/report replay, no center/runner restart or tab reload."
+  ],
+  "boundaries": [
+    "This source approval is not actual preparation approval. Template ready=false, fresh private pins/current owned identities/resource window absent.",
+    "The referenced continuation namespace subsequently failed before any phase at22:37:56 and has no successful final receipt. Successor must bind a newly reviewed actual successful recovery receipt; current fixed receipt path is not executable.",
+    "Parent and previous matrices retained, not rerun. Recovery/current claim/task acceptance remain separate. No personal I/O, provider calls or product checks by reviewer."
+  ],
+  "reviewerTestReruns": 0,
+  "reviewerPersonalIO": 0
+}

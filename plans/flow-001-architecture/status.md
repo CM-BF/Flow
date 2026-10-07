@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:35:03.776Z / maine8e1313a4；失败原件已独审接收，公共摘要窄修与剩余阶段获独立批准，等待新现场窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:41:45.537Z / mainae328cf28；本次续接首阶段前失败，准确RETURN22:40:21.259Z；实际入口合同修复中，未恢复服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin13c4277a0；看板211来源已部署。e15候选冷启动/四App及caller独审已接收；个人本次仅导入产物和四报告，rebind未写入，未refresh/resume/发布779。原操作仍维护23，不能称已恢复。 |
+| 已集成main状态 / HEAD | main/originae328cf28；看板211来源已部署。e15隔离冷启动/四App及上一caller独审保持；个人仅先前导入产物和四报告，尚未refresh/resume/发布779。本次续接0phase，原操作仍维护23。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 固定恢复包的调用方修复已通过检查和独立审查；个人服务仍在维护状态，已导入材料保留。 |
-| 下一可用交付 | 取得实际窗口并核对现场后，只继续目标切换、启动和恢复接单；随后单独发布已验证的新网页。 |
-| 当前阻塞 | ACTIVE: 个人服务尚未恢复；剩余步骤已审就绪，等待当前实际验证归还后的现场执行窗口。远程验证仍等待原CI启用选择。 |
+| 当前产出 | 本次恢复续接在操作阶段前被入口合同拒绝，原因已定位；个人服务仍处于维护，已导入材料保持。 |
+| 下一可用交付 | 修正真实入口的调用装配并核验后，只继续未执行的恢复步骤；实际恢复后单独发布新网页。 |
+| 当前阻塞 | ACTIVE: 个人服务尚未恢复；当前是恢复入口的窗口名称合同不匹配，正在修复和独立审查，并非仍在等待已归还窗口。远程验证仍等待原CI启用选择。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -280,3 +280,5 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 2026-10-07T22:06:22.288Z：本轮看板三来源维护21:59:16.198Z开始，22:01:36.306Z完成实际211来源换载（D05唯一回执）；TIMING02本人状态不代填完成。恢复冷启动21:59:12.729Z开始、22:00:23.226Z准确归还，native限定独审批准81fa；四App21:57:36.662404Z开始、21:58:28.977667Z归还，Web独审通过且固定原件收口中。两者仅证明固定候选，不等于个人恢复完成；最终caller仍待交审，旧FAIL/KEEP保持。详细记录分别由[冷启动owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/plans/svc06-browser-recovery/status.md)、[恢复caller owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)及[D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md)维护。
 
 2026-10-07T22:20:43.000Z：本次恢复22:17:23.713320Z实际开始、22:18:46.870374Z终止，22:20:13.131180Z完整归还。产物/四报告已导入；rebind返回identity/MAINTENANCE_TARGET_CHANGED、mutation=not-written，未到refresh/checkpoint/resume，0新服务/provider/网页发布。旧失败与KEEP保留，既有操作23不重放；仅原owner继续有界首因定位。唯一原件与后继见[恢复owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，不以本次caller失败否定既有隔离冷启动/兼容证据。
+
+2026-10-07T22:41:45.537Z：续接实际START22:37:56.465903Z、entry exit22:37:56.647208Z，outer51ms；真实executor窗口名前置不符，未到phase，未创建新私有namespace。22:40:21.259Z准确RETURN，四自有PID及预检组absent、EOF/signals[]/pending0，预检两pool.end完成而远端零连接NOT_OBSERVED。原作者修复、独立review核完整真实调用链；旧产物/报告迁入和FAIL/KEEP不变，0新模型/任务/服务动作。唯一原件见[恢复owner](../../../personal-message-settings/plans/svc09-message-settings-activation/status.md)，不把本次失败归作资源等待。

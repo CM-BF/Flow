@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T22:43:08.557Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_PREPHASE_FAILURE_FIDELITY",
+  "blockingP1P2": 0,
+  "target": "99ad558bd1f29d51474ddb1b71c33ff44001b5d9",
+  "manifest": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result-manifest.json",
+    "bytes": 3780,
+    "sha256": "9ec31e1b2a6e48a22a832a850733af73958ad6786058d7adcc5fa1f76e0675f7"
+  },
+  "verified": [
+    "Thirteen bound items58565B match fixed/current hashes; result manifest remains a reference, raw stored once at canonical owner.",
+    "Actual51ms exit1/AssertionError, zero phases, namespace absent, no service actions. Fixed source WINDOW demonstrably fails inherited executor prefix; missing original stack is not fabricated.",
+    "Exact RETURN22:40:21.259355Z: four owned PIDs and preflight group absent, dualEOF/signals[]/pending0; two pool.end completed, remote zero connections explicitly NOT_OBSERVED.",
+    "Original prior artifact/report imports, FAIL and KEEP unchanged; no replay authorized by this result review."
+  ],
+  "reviewerTests": 0,
+  "reviewerPersonalIO": 0,
+  "relatedDocsReview": {
+    "target": "9cef78005",
+    "scope": [
+      "plans/flow-001-architecture/status.md",
+      "plans/ops-001-status-review/status.md",
+      "plans/ops-001-status-review/plan.md"
+    ],
+    "decision": "APPROVED_DOCS",
+    "blockingP1P2": 0,
+    "summary": "21 additions11 deletions; exact failure/RETURN, deployed TIMING and evidence-basedQ01/DORA timing distinctions. No new runtime gate or invented historical date."
+  }
+}

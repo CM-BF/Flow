@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:35:03.776Z / maine8e1313a4；失败原件已独审接收，公共摘要窄修与剩余阶段获独立批准，等待新现场窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:41:45.537Z / mainae328cf28；本次续接首阶段前失败，准确RETURN22:40:21.259Z；实际入口合同修复中，未恢复服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin13c4277a0；看板211来源已部署。e15候选冷启动/四App及caller独审已接收；个人本次仅导入产物和四报告，rebind未写入，未refresh/resume/发布779。原操作仍维护23，不能称已恢复。 |
+| 已集成main状态 / HEAD | main/originae328cf28；看板211来源已部署。e15隔离冷启动/四App及上一caller独审保持；个人仅先前导入产物和四报告，尚未refresh/resume/发布779。本次续接0phase，原操作仍维护23。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 固定恢复包的调用方修复已通过检查和独立审查；个人服务仍在维护状态，已导入材料保留。 |
-| 下一可用交付 | 取得实际窗口并核对现场后，只继续目标切换、启动和恢复接单；随后单独发布已验证的新网页。 |
-| 当前阻塞 | ACTIVE: 个人服务尚未恢复；剩余步骤已审就绪，等待当前实际验证归还后的现场执行窗口。远程验证仍等待原CI启用选择。 |
+| 当前产出 | 本次恢复续接在操作阶段前被入口合同拒绝，原因已定位；个人服务仍处于维护，已导入材料保持。 |
+| 下一可用交付 | 修正真实入口的调用装配并核验后，只继续未执行的恢复步骤；实际恢复后单独发布新网页。 |
+| 当前阻塞 | ACTIVE: 个人服务尚未恢复；当前是恢复入口的窗口名称合同不匹配，正在修复和独立审查，并非仍在等待已归还窗口。远程验证仍等待原CI启用选择。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -414,7 +414,7 @@ X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复�
 
 2026-10-07T02:49:12.685Z：用户访问恢复为当前已完成事实，唯一源为personal-history-compatibility的web-recovery-d629-20261007/run-20261007T024419Z；原始失败、旧Web退出code1和根因unknown保持。一次CLI968ms/0provider，结果独立限定批准，无用户tab刷新。普通验证窗口已归还，两co-lead按既有fresh规则继续。
 
-| OPS-001-16 | in-progress | Execution Lead / Web co-lead展示 | 时间契约与连续局部迭代规则79da82ae已获native限定文档独审；dashboard呈现和活跃owner接入未完成，不把本次docs写成完整交付。 |
+| OPS-001-16 | in-progress | Execution Lead / Web co-lead展示 | 时间契约与连续局部迭代规则已审；TIMING01/02已实际部署并可见。活跃owner真实时间/等待采用与减少交接的效果验收仍开放，历史UNKNOWN不补造。 |
 
 2026-10-07T02:52:28.328Z：OPS-001-16规则已固定79da82ae并获native独立APPROVED_DOCS；Web已收到冻结两字段Interface，登录入口独立source-only建树也已明确委派Web唯一operator。D05停写释放index/README（v6）；根/plans规则转入本管理claim v4。当前只是规则/接口交付，看板实际显示未验；6处链接及diff检查，无产品测试。
 
@@ -591,3 +591,5 @@ OPS-001-12/16本段方法增量：SVC09A R2的真实mkdtemp字母表与入口不
 2026-10-07T22:06:22.288Z：本轮看板三来源维护21:59:16.198Z开始，22:01:36.306Z完成实际211来源换载（D05唯一回执）；TIMING02本人状态不代填完成。恢复冷启动21:59:12.729Z开始、22:00:23.226Z准确归还，native限定独审批准81fa；四App21:57:36.662404Z开始、21:58:28.977667Z归还，Web独审通过且固定原件收口中。两者仅证明固定候选，不等于个人恢复完成；最终caller仍待交审，旧FAIL/KEEP保持。详细记录分别由[冷启动owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/plans/svc06-browser-recovery/status.md)、[恢复caller owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)及[D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md)维护。
 
 2026-10-07T22:20:43.000Z：本次恢复22:17:23.713320Z实际开始、22:18:46.870374Z终止，22:20:13.131180Z完整归还。产物/四报告已导入；rebind返回identity/MAINTENANCE_TARGET_CHANGED、mutation=not-written，未到refresh/checkpoint/resume，0新服务/provider/网页发布。旧失败与KEEP保留，既有操作23不重放；仅原owner继续有界首因定位。唯一原件与后继见[恢复owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，不以本次caller失败否定既有隔离冷启动/兼容证据。
+
+2026-10-07T22:41:45.537Z：续接实际START22:37:56.465903Z、entry exit22:37:56.647208Z，outer51ms；真实executor窗口名前置不符，未到phase，未创建新私有namespace。22:40:21.259Z准确RETURN，四自有PID及预检组absent、EOF/signals[]/pending0，预检两pool.end完成而远端零连接NOT_OBSERVED。原作者修复、独立review核完整真实调用链；旧产物/报告迁入和FAIL/KEEP不变，0新模型/任务/服务动作。唯一原件见[恢复owner](../../../personal-message-settings/plans/svc09-message-settings-activation/status.md)，不把本次失败归作资源等待。

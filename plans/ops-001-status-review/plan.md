@@ -94,3 +94,9 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 GO只读VISUAL01 `types-actual/index.json` 两轮35文件共713,969逻辑B；各claim-live263条约189KB，含225 released/38 active，同序列化active约28,988B、本claim794B。此为重复传输/保存与手写冲突规则的候选，不解释九分钟壁钟，也不是token或实际回收量。原件保留于web-shared-overlays的固定证据，不复制进本计划。
 
 个人发布后由Execution Lead与D04唯一owner排一个小Interface：复用现领取权威提供本claim身份/version/scope及必要active/handoff冲突投影，完整历史审计仍可查；不能仅取本claim漏冲突。保留review角色、handoff_pending、DB失败unknown和观察时间，不改变take/amend/commit原子性，不新增第二账本。精确scope/独立树尚未领取，NOT_RUN；先由一个真实局部consumer证明输出字节减少且拒绝语义不变，再决定扩用，不先造扫描器或审批层。
+
+### OPS-001-16：慢因样本与交付计时边界（2026-10-07）
+
+沿同一status/既有原件区分任务开工至完整验收、固定产品提交至实际用户部署、用户服务受影响至实际恢复三段；隔离Arc/AV失败不当作用户服务事故，少量样本不算团队失败率或排名。个人恢复须有当前启动/接单及可用观察，候选冷启动/兼容通过不替代现场结果。依据GO已核的[DORA指标](https://dora.dev/guides/dora-metrics/)与[价值流方法](https://dora.dev/guides/value-stream-management/)，不建第二时间账本。
+
+Q01既有事件：16:23:07开工、16:31:06产品source、21:55完整交付；实际PG约2.9秒，仅最后约24分钟共享窗口等待有明确证据。其余壁钟不能都归为资源或代码执行，复盘既有fixture/调用入口准备、报告selector返工及审查交接。下一合适小片在同一有界工作段复用已审生命周期与纯结果解释接口，保留失败/隔离/真实归还，并据实际交接次数与起止比较，不由commit或检查数推效率。TIMING01/02显示已部署；当前尚未完成的是活跃记录采用和真实减等待效果。该后继不增加个人恢复前置，不重跑旧PG或重写原件。
