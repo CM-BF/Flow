@@ -1,6 +1,6 @@
 # C02-05 public stream seam — next implementation input
 
-Historical design baseline: main `451bf2ed1c0c3d7688073c8d060629f064044dc2`. Kernel `65c97315` is not this delivery; its pending-sink correction is `de0f3dc0`. Current implementation is now legally held by claim v7 / 50 literals; fixed public source `9e212e50`, whitespace-only source cleanup `6cbe91ff`; checks below are local, independent review pending.
+Historical design baseline: main `451bf2ed1c0c3d7688073c8d060629f064044dc2`. Kernel `65c97315` is not this delivery; its pending-sink correction is `de0f3dc0`. Current implementation is now legally held by claim v8 / 51 literals; fixed public source `9e212e50`, whitespace-only source cleanup `6cbe91ff`; checks below are local, independent review pending.
 
 Follow-up main `422f4b15` read confirms `packages/contracts/src/assistant.ts:38–44,52–57,65–68` already has a distinct Codex final/settings/reference union. Reuse it; the Claude literals at18/50/64 are its own branches, not a missing global Codex final contract. Actual model/effort/tier remain unknown.
 
@@ -31,3 +31,5 @@ The one runner adapter publishes native session before its first patch, reuses t
 `projectBodySegments` now carries `source` and `channel`. UI must render explicitly published reasoning separately from body text; absence is unknown, not disabled/inferred. Web owner remains workspace_panels_owner; `App.tsx` actual client and fixtures opt-in only after fixed contract acceptance. `apps/web/src/conversation-stream/messages.ts` currently maps all BodySegment to text and needs its own claimed change. Keep the shared projection, no second stream authority. See Web manager canonical `plans/web-platform/status.md` in its authority WT. No Web/TUI claim or implementation is implied.
 
 Local evidence: `public-stream-segment.json`, 89/89 actual cases across12 direct files; first strict failed only because fixed historical test baseline was absent. `public-stream-types-fix-segment.json` records input补齐后strict0. Synthetic Node JSONL32/512 and injected SQL receivers are distinguished from actual native and PG. All three checked processes/ownTMP closed; real PG, full conversation policy/catalog and UI remain pending. No public-stream source approval is claimed yet.
+
+Web消费精确补齐：shared `StreamHost.protocol` now accepts both finite versions; v2 Host enables the same projection, v1 rejects Codex metadata before patch reads, protocol change aborts in-flight projection generation and clears old data. Web `conversation-stream/host.ts` threev1 fields must move together with client opt-in, not falsely label a v2 HTTP client v1. This shared Host change is in our v8 scope; Web host/UI still original owner.

@@ -1,4 +1,4 @@
-import type { AssistantStreamPage, AssistantStreamPatchPage, ConversationTurn } from "@flow/contracts";
+import type { AssistantStreamPage, AssistantStreamPatchPage, AssistantStreamProtocol, ConversationTurn } from "@flow/contracts";
 import { applyPatchPage, emptyPatchState, readStreamMetadata, validateMetadataPartition, type PatchState } from "./patches.js";
 import { readCanonicalFinal, type CanonicalFinal } from "./presentation.js";
 
@@ -9,7 +9,7 @@ export interface StreamPort {
   readPatches(options: { attemptId: string; after: number; limit: number }, signal: AbortSignal): Promise<AssistantStreamPatchPage>;
 }
 export interface StreamHost {
-  turn: ConversationTurn; capability: boolean | undefined; protocol: "patch-v1" | undefined;
+  turn: ConversationTurn; capability: boolean | undefined; protocol: AssistantStreamProtocol | undefined;
   visible: boolean; online: boolean; finalContent?: string;
 }
 export interface StreamState {
@@ -54,14 +54,19 @@ export class ConversationStreamProjection {
     if (turn.id !== scope.turnId || turn.conversationId !== scope.conversationId || turn.task.id !== scope.taskId) throw Error("Stream host does not match its bound turn.");
     if (this.disposed) return;
     const before = this.host, wasReadable = this.readable(); this.host = host;
-    const enabled = host.capability === true && host.protocol === "patch-v1";
+    const protocolChanged = before !== null && before.protocol !== host.protocol;
+    if (protocolChanged) {
+      this.pause();
+      this.publish({ metadata: null, patches: null, final: null, hasMore: false });
+    }
+    const enabled = host.capability === true && (host.protocol === "patch-v1" || host.protocol === "patch-v2");
     this.publish({ enabled, visible: host.visible, online: host.online });
     if (!this.readable()) {
       this.pause();
       if (!enabled) this.publish({ metadata: null, patches: null, final: null, hasMore: false });
       return;
     }
-    if (!wasReadable) { void this.refresh(); return; }
+    if (!wasReadable || protocolChanged) { void this.refresh(); return; }
     if (!before || before.turn.task.updatedAt !== turn.task.updatedAt || before.turn.task.status !== turn.task.status
       || before.turn.assistant !== turn.assistant || before.finalContent !== host.finalContent) this.invalidate();
   }
@@ -109,6 +114,7 @@ export class ConversationStreamProjection {
     for (let pageNumber = 0; pageNumber < 3; pageNumber++) {
       const page = await readStreamMetadata(await waitFor(() => this.port.readMetadata({ ...(after ? { after } : {}), limit: 100 }, signal), signal), this.state.scope.taskId);
       if (signal.aborted) throw signal.reason;
+      if (this.host?.protocol === "patch-v1" && page.blocks.some(block => block.source !== "claude.sdk.stream")) throw Error("Stream source is outside the negotiated protocol.");
       if (combined) {
         if (page.attemptId !== combined.attemptId || page.finalMessageId !== combined.finalMessageId
           || JSON.stringify(page.settlement) !== JSON.stringify(combined.settlement)) throw Error("Stream metadata changed during pagination. Refresh to retry.");
