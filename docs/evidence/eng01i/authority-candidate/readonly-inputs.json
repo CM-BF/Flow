@@ -1,0 +1,130 @@
+{
+  "at": "2026-10-07T05:01:21.677903+00:00",
+  "method": "Read fixed Git/source and installed files only; no import, process launch, provider, PG, service or qualification probe.",
+  "bindings": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 6116,
+      "sha256": "dc8036e14b7395891b61d7723a8b10212fba7ac70f6579093b160c08fd3d756a"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 4176,
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 5521,
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 7328,
+      "sha256": "55558f3abc6afca51c50feca81cb39605b5b98be03fe4e405204a56fb784e7e7"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "ref": "ef3a6de8f07b44ec7aabe57502529de3794d4d2b",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "path": "docs/evidence/wpf-mature-02/native-engineering-authority-inputs.md",
+      "ref": "ff927712ae8560a26febf01279b44c2fc12a1666",
+      "bytes": 4153,
+      "sha256": "615b4d2407a1727a51027edb3a933aeac2d0a6e6eb2305387ee5bb749be3160a"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "path": "docs/evidence/wpf-mature-02/native-engineering-boundaries.md",
+      "ref": "d111cc813b8ff3814cace7a91aa77b5014973460",
+      "bytes": 7512,
+      "sha256": "de1eab3ceff6531443773e88924e4f84c694078258174e18f88d0d7fb418473c"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "path": "docs/evidence/wpf-mature-02/rootliteral/run-report.md",
+      "ref": "4757cf6f1fae05b9c6c5f3ec20ea378ff28a779e",
+      "bytes": 1789,
+      "sha256": "7ea724e4b78bc0446930b4b52e8f04a417a8adb69385b04a349fa320144e570c"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "path": "docs/evidence/wpf-mature-02/node-rootliteral/run-report.md",
+      "ref": "e7e2311b68c0a98e357499fc6990266c4ef9658d",
+      "bytes": 1442,
+      "sha256": "08be813473e1088f0ee67834e28184d9aee55435086372c915b110d845353c5c"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+      "path": "docs/evidence/wpf-mature-02/native-remote-status/run-report.md",
+      "ref": "9b9c1182d2e649d2a68f3d3c7de980bac0e71fed",
+      "bytes": 1674,
+      "sha256": "37bb4009e0365765011082c258b27ede66e9a484324844c6ca0567d6c6aa494d"
+    }
+  ],
+  "installed": [
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "realpath": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+      "mode": "0o100755"
+    },
+    {
+      "path": "/usr/share/man/man1/sandbox-exec.1",
+      "realpath": "/usr/share/man/man1/sandbox-exec.1",
+      "bytes": 1102,
+      "sha256": "0d264f72dc6a8e0db5474840f33b512542c469beb109ed146c17055da287336b",
+      "mode": "0o100644"
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sandbox.h",
+      "realpath": "/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk/usr/include/sandbox.h",
+      "bytes": 3475,
+      "sha256": "5baa98c212110d6323f7d73f4b42b0072a4c66a826a46c8bfd8fb850305f9416",
+      "mode": "0o100644"
+    }
+  ],
+  "qualification": "NOT_ESTABLISHED; file presence and old C result do not prove Node/Codex policy support.",
+  "proposalFinalizedAt": "2026-10-07T05:04:08.917Z",
+  "scopeAtFinalization": {
+    "claimId": "0497baa2-ea98-46c7-a7fd-5522aec563ab",
+    "version": 2,
+    "state": "active",
+    "scope": [
+      "docs/evidence/eng01i",
+      "plans/eng01i-native-engineering-host"
+    ],
+    "freshList": "/tmp/flow-eng01i-authority-docs-claims.json"
+  }
+}

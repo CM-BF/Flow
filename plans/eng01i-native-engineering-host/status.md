@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:57:58.016012+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:04:08.917Z |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -16,11 +16,11 @@
 | 本片段交付阶段 | delivered |
 | 实现目标 | c3d29e4a36af74380565922fbb838ebec1bf7afc |
 | 实现范围 | apps/runner/src/engineering/native-adapter.ts, apps/runner/src/engineering/native-adapter.test.ts, apps/runner/src/engineering/calculator-receipt.ts, apps/runner/src/engineering/calculator-receipt.test.ts |
-| 检查状态 | 30different分轮（原局部28＋R1 PG2）；C02直接3重叠；focused types0；R1 2/2、18未选/3829ms，DB与自有进程/tmp正常清理 |
+| 检查状态 | PASSED c3d29e4a36af74380565922fbb838ebec1bf7afc；30different分轮（原局部28＋R1 PG2）；C02直接3重叠；focused types0；R1 2/2、18未选/3829ms，DB与自有进程/tmp正常清理 |
 | 已集成main状态 / HEAD | 已集成 ef3a6de8f07b44ec7aabe57502529de3794d4d2b，四产品逐字相同 |
 | 任务开工时间 | 2026-10-06T12:57:59.124Z |
-| 任务完成时间 | 2026-10-07T04:57:58.016012+00:00 |
-| 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工 |
+| 任务完成时间 | 2026-10-07T04:57:58.016Z |
+| 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工；完成取本片主线收口记录2026-10-07T04:57:58.016Z（原记录精度至016012微秒，展示毫秒），仅此组合片，完整ENG及后继尚未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 写入、完整内容检查与公开收据的宿主组合及两个中心恢复旅程已通过独立审查，已进入主线 |
@@ -38,7 +38,7 @@
 | ENG01I-03 | completed | native_center_owner | [局部原证据](../../docs/evidence/eng01i/local/README.md)；[PG固定候选](../../docs/evidence/eng01i/pg/window-request.md) |
 | ENG01I-04 | completed | native_center_owner | 模块/入口/R1结果已审，四产品main精确接收 |
 
-模块可用不等于concrete authority/production host/native用户验收完成。实际资格归Mika唯一owner；本片0provider，缺可信authority不启动transport。父ENG已登记本片恢复，聚合展示由Lead维护。
+模块可用不等于concrete authority/production host/native用户验收完成。宿主authority后继由本组实现，Mika提供其唯一原生身份/能力证据；本片0provider，缺可信authority不启动transport。父ENG已登记本片恢复，聚合展示由Lead维护。
 
 Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下一转原MATURE06 ConnectionSession。当前只有6文档，0产品修改/安装/测试/provider；没有main实施结论。首push GitHub500已保留证据，当前metadata重试推送。
 
@@ -68,3 +68,5 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 2026-10-07T04:56:21.047231+00:00：R1唯一结果独审原样归档；产品停写，main接收待Lead。后继仅在自有证据准备真实OS authority候选，不把当前注入authority旅程扩大为资格证明。
 
 2026-10-07T04:57:58.016012+00:00：收到main ef3a6de8f07b44ec7aabe57502529de3794d4d2b回执后核四产品与c3逐字同，完成本片。组合root types0为Lead实际集成证据；caller私有Node cache收尾exit1/KEEP如实保留，非类型失败且未重跑。正式amend v2交回四产品，仅保ownrecords供原ENG后继authority方案。完整ENG/native模型、权限、生产资格仍open。
+
+2026-10-07T05:04:08.917Z：后继[真实宿主最窄候选](../../docs/evidence/eng01i/authority-candidate/interface.md)及[固定只读输入](../../docs/evidence/eng01i/authority-candidate/readonly-inputs.json)已形成：用实际Darwin机制候选约束写入者集合，先零模型核强制边界，模型/no-fallback来源另独立门禁；新产品未take、未执行probe。原I产品交付结论不扩大；仅保ownrecords claim。顶层完成时间按时间合同收敛为唯一毫秒ISO UTC字段，原微秒事实留来源；review首行与检查状态采用既有可解析token，历史独审标签/原件不改。
