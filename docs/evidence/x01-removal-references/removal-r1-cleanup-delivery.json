@@ -1,0 +1,14 @@
+{
+  "start": "2026-10-07T12:02:47.114710+00:00",
+  "end": "2026-10-07T12:02:47.282218+00:00",
+  "elapsedAfterPersistenceSeconds": 0.16751445806585252,
+  "toolExit": 0,
+  "toolReportedWaitSeconds": 0.137312125,
+  "toolWaitNotWholeWall": true,
+  "wholeExternalWall": "UNKNOWN",
+  "state": "RETURN",
+  "authorization": "Mika+d01 same new cleanup-only <=60s; not R1 retry or extension",
+  "source": "tool stdout of single cleanup-only invocation",
+  "originalRun": "UNKNOWN_KEEP remains immutable",
+  "causeBoundary": "Original finish observed one target connection without identity detail. Follow-up found zero. No attribution to a backend, exact close timing, or specific race is proven."
+}

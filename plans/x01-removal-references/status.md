@@ -9,14 +9,14 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 最近更新时间 | 2026-10-07T12:01:23.006937+00:00 |
+| 最近更新时间 | 2026-10-07T12:03:28.348008+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；本次PG未开 |
 | 分支交付时间 | 2026-10-07T11:48:51.650207+00:00 |
-| 当前产出 | 引用查询真实用例通过，但数据库收尾仍观察到连接，整次验收未通过并保留资源 |
-| 下一可用交付 | 先独立核验原收尾证据，再按明确授权确认专库与临时目录状态 |
-| 当前阻塞 | ACTIVE：专库收尾观察1连接，未DROP；原TMP保留，须受控资源核验 |
+| 当前产出 | 引用查询真实用例通过；首次清理失败记录保留，另一次受控收尾已完成，等待独审 |
+| 下一可用交付 | 核实用例结果与独立收尾证据，明确验收范围后受控接入主线 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references |
 | branch | codex/plugin-removal-references |
@@ -49,3 +49,5 @@ local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最�
 2026-10-07T11:53:00Z 独审正式批准已归档。[窄intake](../../docs/evidence/x01-removal-references/main-intake.json)仅SOURCE_APPROVED_PG_PENDING，动态SQL验收尚未执行。唯一NEXT现由WebRelease c3持有，本组无PGOPEN/预约；当前0actual/0待launch。
 
 2026-10-07T12:01:23.006937+00:00：R1新独立180s授权执行，12:00:11.203966Z checkpoint27842；12:00:14.926733Z结束。1case pass/afterAll fail，59HTTP/78054B，两supervisedgroups absent/mergedEOF。DB OID1306114/marker一致、owners/pool/admin闭合但connections1，normalDROP未尝试；listener64030closed。专库flow_x01_8c07aa72e0814fab904e7505cc7d9c59与TMP txfsxrqu(dev16777234/ino124112945)保持KEEP。已即时报Mika，未宣布完整RETURN、不查询/重跑/清理。[原件摘要](../../docs/evidence/x01-removal-references/removal-r1-summary.json)。
+
+2026-10-07T12:02:47.282218Z：Mika/d01同一独立≤60s cleanup-only授权已实际RETURN，原两组再核ESRCH，原port64030拒连；新admin同OID/owner/marker，connections[]→一次普通DROP ACK/absence/adminclosed。监督helperexit0/finalabsent/mergedEOF。原TMP同dev/ino10项3556B，原Vitest/四DB收据按字节核封存后正常同identity删除→exactENOENT。[独立receipt](../../docs/evidence/x01-removal-references/removal-r1-cleanup-only.json)与[delivery](../../docs/evidence/x01-removal-references/removal-r1-cleanup-delivery.json)。原R1 connections1/UNKNOWN/afterAll失败未改；真实1case pass与suite successfalse分开，不能据后续收尾改成首次整套通过。已即时RETURN Mika，当前0actualPG/local/待launch；无需自动重跑。

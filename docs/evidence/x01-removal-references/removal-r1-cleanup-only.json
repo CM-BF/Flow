@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-10-07T12:02:47.114710+00:00",
+  "state": "RETURN",
+  "limits": {
+    "seconds": 60,
+    "entries": 4096,
+    "temporaryBytes": 33554432,
+    "rawBytes": 16384
+  },
+  "originalResult": "UNKNOWN_KEEP unchanged",
+  "groups": [
+    {
+      "pgid": 27816,
+      "state": "absent"
+    },
+    {
+      "pgid": 27842,
+      "state": "absent"
+    }
+  ],
+  "freeBytes": 21933428736,
+  "floorBytes": 6199705600,
+  "listener": {
+    "port": 64030,
+    "state": "connection-refused"
+  },
+  "process": {
+    "pid": 22222,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 132,
+    "observed_bytes": 522,
+    "retained_bytes": 522,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "label": "cleanup-admin",
+    "rawComplete": true
+  },
+  "raw": "{\"startedAt\":\"2026-10-07T12:02:47.196Z\",\"database\":\"flow_x01_8c07aa72e0814fab904e7505cc7d9c59\",\"expected\":{\"oid\":\"1306114\",\"owner\":\"flow\",\"marker\":\"x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3\"},\"state\":\"CLOSED\",\"adminClosed\":true,\"dropRequested\":true,\"dropAcknowledged\":true,\"observed\":{\"oid\":\"1306114\",\"owner\":\"flow\",\"marker\":\"x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3\"},\"connections\":[],\"absent\":true,\"finishedAt\":\"2026-10-07T12:02:47.258Z\"}\n",
+  "rawSha256": "9409371d2897894d00cb0c1dd0e3028697f4c763f68218ba582142a6d3b41253",
+  "database": {
+    "startedAt": "2026-10-07T12:02:47.196Z",
+    "database": "flow_x01_8c07aa72e0814fab904e7505cc7d9c59",
+    "expected": {
+      "oid": "1306114",
+      "owner": "flow",
+      "marker": "x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3"
+    },
+    "state": "CLOSED",
+    "adminClosed": true,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "observed": {
+      "oid": "1306114",
+      "owner": "flow",
+      "marker": "x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3"
+    },
+    "connections": [],
+    "absent": true,
+    "finishedAt": "2026-10-07T12:02:47.258Z"
+  },
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-txfsxrqu",
+    "dev": 16777234,
+    "ino": 124112945,
+    "entries": 10,
+    "sampleBytes": 3556,
+    "peakProven": false,
+    "removed": true,
+    "absent": true
+  },
+  "rawCopiesVerified": [
+    "vitest.json",
+    "fixtures/runtime/reservation.json",
+    "fixtures/runtime/create-request.json",
+    "fixtures/runtime/created.json",
+    "fixtures/runtime/result.json"
+  ],
+  "endedBeforePersistenceAt": "2026-10-07T12:02:47.281716+00:00",
+  "elapsedBeforePersistenceSeconds": 0.1670243750559166
+}
