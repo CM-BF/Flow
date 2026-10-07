@@ -1,0 +1,203 @@
+{
+  "startedAt": "2026-10-07T15:24:50.197Z",
+  "source": "e65e148fdf0d396bcb911779e9da0777e75ac1f2",
+  "oldPid": 10591,
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "previousPublicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "oldCwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "oldConfirmedAbsent": true,
+  "newPid": 55292,
+  "log": "/tmp/flow-dashboard-207-20261007-1525.log",
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "summaryHttp": 200,
+  "summaryBytes": 562404,
+  "summaryCount": 207,
+  "generatedAt": "2026-10-07T15:24:50.640Z",
+  "selected": [
+    {
+      "id": "X01-REMOVAL-REFERENCES-CLIENT",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/plans/x01-removal-references-client/status.md",
+        "digest": "ac997f549311780815472bdb622c73f89cb5bb78b0d189d154c45bc8f112ac67",
+        "modifiedAt": "2026-10-07T13:28:41.526Z",
+        "readAt": "2026-10-07T15:24:50.640Z",
+        "declaredUpdatedAt": "2026-10-07T13:28:41.273Z",
+        "stale": false,
+        "ageHours": 1.9359352777777779,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Mika",
+          "value": "Mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "reason": "",
+          "targetId": "X01",
+          "title": "插件管理计划"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "X01-ARTIFACT-VERIFIER01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md",
+        "digest": "8de963a02b7864396ec2a6854affd4b88648ed2bcd3d2ad3c284c70417b52474",
+        "modifiedAt": "2026-10-07T14:51:19.475Z",
+        "readAt": "2026-10-07T15:24:50.640Z",
+        "declaredUpdatedAt": "2026-10-07T14:51:19.370Z",
+        "stale": false,
+        "ageHours": 0.5586861111111111,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "reason": "",
+          "targetId": "X01",
+          "title": "插件管理计划"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "X01-TRUSTED-PROCESS-HOST01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/plans/x01-trusted-process-host/status.md",
+        "digest": "b8e4e9cb355e20e551634e43e47f07381d397a092b67c004134980fc19f32c40",
+        "modifiedAt": "2026-10-07T15:15:50.945Z",
+        "readAt": "2026-10-07T15:24:50.640Z",
+        "declaredUpdatedAt": "2026-10-07T15:15:50.942Z",
+        "stale": false,
+        "ageHours": 0.1499161111111111,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Mika",
+          "value": "Mika"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "reason": "",
+          "targetId": "X01",
+          "title": "插件管理计划"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "WPF-RELEASE01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md",
+        "digest": "e87efd5f7120e7308377f2adfbc2604d84b5c3c2032cd804058cfc661f9a9e44",
+        "modifiedAt": "2026-10-07T15:11:27.317Z",
+        "readAt": "2026-10-07T15:24:50.640Z",
+        "declaredUpdatedAt": "2026-10-07T15:10:42.258Z",
+        "stale": false,
+        "ageHours": 0.23566166666666666,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web /root（执行管理 d01_owner）",
+          "value": "Web /root（执行管理 d01_owner）"
+        },
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+          "reason": "",
+          "targetId": "WPF-MATURE-01",
+          "title": "成熟双主题视觉"
+        },
+        "basis": "status-source"
+      }
+    },
+    {
+      "id": "WPF-I01",
+      "sourceCurrent": true,
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/status.md",
+        "digest": "cdfad1734b609685f51b397f444556242cff825bca4b035476af8e73f113ca68",
+        "modifiedAt": "2026-10-07T15:13:54.190Z",
+        "readAt": "2026-10-07T15:24:50.640Z",
+        "declaredUpdatedAt": "2026-10-07T15:13:54.134Z",
+        "stale": false,
+        "ageHours": 0.1823627777777778,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "links": {
+        "kind": "subtask",
+        "coLead": {
+          "state": "known",
+          "record": "Web/root；执行管理d01_owner",
+          "value": "Web/root；执行管理d01_owner"
+        },
+        "parent": {
+          "state": "unknown",
+          "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)",
+          "reason": "父任务层级未明确或声明冲突",
+          "targetId": "WPF-001",
+          "title": "Web 平台持续执行"
+        },
+        "basis": "status-source"
+      }
+    }
+  ],
+  "completedAt": "2026-10-07T15:24:50.706Z"
+}
