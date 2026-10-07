@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:25:05.401569+00:00；看板主线/摘要详情发布已接收，原owner收口后仅文档修正完成时间显示并再次释放；本组无运行 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:37:01.542662+00:00；Recovery路由修复所选2/2实际通过并完整清理归还，限定实际独审已接受 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 看板摘要与按需详情已受控进入主线并发布，旧失败与限定验收范围保留。快速设置组件已入主线；完整草稿恢复的选定旅程已有通过证据，Steer仍在修复。 |
-| 下一可用交付 | 看板已收口，规范完成时间已可由单任务摘要显示；后继按新scope领取。Steer修复旧路由回调缺口，固定源码后按新有限段验证。Release隔离兼容工具继续准备，真实验证等待最终后台产物；真实消息设置入口仍待接线。 |
+| 当前产出 | 看板摘要与按需详情已入主线并发布；快速设置组件已入主线。恢复与Steer所选旅程已有实际通过证据，旧失败保留，完整功能与真实后继接线仍分开验收。 |
+| 下一可用交付 | Recovery本次限定实际结果已独审接受并由原owner封存；后继第二中心、真实消息设置、LAZY与工具全文按各自交权排队。Release等待最终后台产物与原生运行入口；插件管理当前仅只读接口提案。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无PG/Chrome holder；外部SVC06离线构建已于10:12:40Z实际归还，后继host仅准备；O16运行已归还但DB/TMP保留未知；下一SVC06隔离host已接窗，Web重验证等其实际归还。两队隔离local合计上限30MiB（Web9+Mika21），声明不冒实际运行。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery于10:30:49.963Z完整清理并已交还Mika，本组0PG/Chrome/heavy及下一预约；SVC host10:26:05.098Z归还。下一共享PG已具体交Mika X01原owner fresh、尚未RUN；O16/C02历史KEEP仍UNKNOWN，潜在普通local32MiB及只读2MiB不冒实际holder。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

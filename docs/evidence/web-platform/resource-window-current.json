@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T10:25:05.401569+00:00",
-  "state": "DPERF_MAIN_DEPLOYED_CLAIM_RELEASED_RECOVERY_FIX_LOCAL_RETURNED",
-  "groupWindowOwnership": "X01 actual CLOSED09:27:37/independentreview09:32:01; Web DPERFreturned,0PGChrome/local/nextlaunch. Sharedwindow offered to Original SVC06fresh180work30cleanup, actualstartnotreported. No Web RecoveryPGreservation.",
+  "recordedAt": "2026-10-07T10:37:01.542662+00:00",
+  "state": "RECOVERY_SELECTED_ACCEPTED_RETURNED_X01_NEXT_FRESH_NOT_RUN",
+  "groupWindowOwnership": "Web actualPG/Chrome/heavy returned; next sharedPG explicitly handed to Mika X01 owner fresh, not actualRUN. No Web reservation; existing O16/C02 retainedunknown remains distinct.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T10:24:30.011098+00:00",
+    "at": "2026-10-07T10:37:01.542662+00:00",
     "singleWebCoordinator": "d01_owner",
-    "source": "main-deployment-route-fix-20261007/current.json",
-    "summary": "Web0heavy/local; O16 runtime return preserves unknownretained DB/TMP, Original SVC host freshwindow pendingactual. DPERF f47 canonicaltiming normalized andrecords732fv2released, productb554v5remainsreleased. Recovery new90phase onlyprepared, waits actualhostreturn."
+    "source": "recovery-route-fix-first-20261007/current.json",
+    "summary": "Recovery selected2 rootaccepted/cleanreturned15119spent74881remaining. NEXT X01 approved e6bf/902b handed to Mika for once180s ownerfresh; NOT_RUN. Web0heavy/noreservation; W01≤2MiB readonly only."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "svc06-return-steer-handoff-20261007/current.json",
+  "currentWindowReturn": "recovery-route-fix-first-20261007/current.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1191,7 +1191,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "SOURCE_FIX_AND_OWNER_METADATA_CLOSEOUT_NO_HEAVY_RESERVATION",
+    "state": "OWNER_RESULT_SEAL_AND_READONLY_PROPOSAL_NO_HEAVY_RESERVATION",
     "access": {
       "ownerHead": "cb0dca62d20a3e4b8d91699190a94a7704ffc19b",
       "state": "PRODUCT_PATHS_PARTIALLY_HANDOFF_README_AND_RECORDS_RETAINED",
@@ -1344,9 +1344,9 @@
       }
     },
     "recovery": {
-      "ownerHead": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+      "ownerHead": "8919b89bde85aa63c8a8d79978b201531370c533",
       "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
-      "state": "STEER_SECOND_FAILED_CLEANED_RETURNED_NO_THIRD_ATTEMPT",
+      "state": "ROUTE_FIX_SELECTED2_ACTUAL_PASS_CLEANED_RETURNED_ROOT_ACCEPTED",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1370,12 +1370,12 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "ThirdcompleteDraftended/cleanedreturned; no nextgate/PGChrome.",
-      "next": "Source/local root accepted; wait actual O16 return then normal owner fresh new90s phase, not third oldrun.",
+      "runtime": "10:30:07.029323→10:30:22.148717Z outer0; 10:30:49.963232Z completeownedcleanup; fullfeature false.",
+      "next": "Selected2 actual/rootreview and metadata seal complete; secondcenter/principal/reconnect/wholefeature still pending, no automatic next run/reservation.",
       "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/review.md",
-      "actualReceipt": "consumers-resource-checkpoint-20261007/current.json",
-      "sourceReview": "consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json",
-      "actualReview": "consumers-resource-checkpoint-20261007/recovery-complete-third-actual-review.json",
+      "actualReceipt": "recovery-route-fix-first-20261007/current.json",
+      "sourceReview": "main-deployment-route-fix-20261007/recovery-route-fix-local-review.json",
+      "actualReview": "recovery-route-fix-first-20261007/recovery-actual-root-review.json",
       "newSegment": {
         "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
         "totalActualMs": 150000,
@@ -1405,14 +1405,13 @@
         "fullJourneyPassed": false
       },
       "currentSelection": {
-        "journey": "complete-draft",
+        "journey": "steering-recovery",
         "required": [
           "cookieRead",
-          "completeDraft"
+          "steeringRecovery"
         ],
-        "state": "THIRD_SELECTED_2_PASS_ROOT_ACCEPTED",
-        "fullFeaturePassed": false,
-        "retry": "COMPLETED_NOT_AUTOMATICALLY_REPEATED"
+        "state": "SELECTED2_PASS_ROOT_ACCEPTED",
+        "fullFeaturePassed": false
       },
       "reviewHistory": {
         "0141": "CHANGES_REQUESTED_2P2",
@@ -1516,9 +1515,20 @@
         "envResponsibility": "Originalownercreatesandexactdeletes0600fixedtestsourceenvwithoutprintingvalue"
       },
       "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
-      "currentIntake": "main-deployment-route-fix-20261007/current.json",
-      "currentReadingRule": "Coordination pointers only. Detailed older packet/budget/run fields below retain historical observations; no runtime permission or current functional status may be derived from them. Read sole owner status and currentIntake.",
-      "ownerHeadState": "Owner actual local/tracking/remote equal clean and original21STOP, claim retained;90phase0/no gate/env/holder."
+      "currentIntake": "recovery-route-fix-first-20261007/current.json",
+      "currentReadingRule": "Read currentIntake and sole owner status for present scope and outcomes. Older budget/newSegment/preparation objects retain their named historical phases, not current grants.",
+      "ownerHeadState": "Normalpush / actualremote=local clean reported; manager branch/status/HEAD agrees. Original21 STOP, claim retained.",
+      "newRouteFixPhase": {
+        "totalMs": 90000,
+        "spentMs": 15119,
+        "remainingMs": 74881,
+        "cleanupMs": 15000,
+        "perRunMaximumMs": 60000,
+        "minimumRunMs": 30000,
+        "oldCreditTransferred": false,
+        "currentHolder": null,
+        "reservation": null
+      }
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1621,13 +1631,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "svc06-window-quick-closeout-20261007/current.json",
+  "currentWindowEvidence": "recovery-route-fix-first-20261007/current.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "Newfollowupphase20383used/24617unused CLOSED. ACCESS5+2,Timingvisual1+2,Linksvisual1+1 root accepted onlyscoped; original60s40551/19449 closed. Owner natural seal pending, no run/gate. Partial retained helper only.",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": null,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -2011,30 +2021,39 @@
     }
   },
   "externalCurrentAdmission": {
-    "task": "SVC06",
-    "state": "SPECIFIC_HOST_WINDOW_HANDED_OFF_FRESH_PENDING_ACTUAL",
-    "source": "6c0fdcda",
-    "entry": "7d1 (Original message short identifier)",
-    "workMs": 180000,
-    "cleanupMs": 30000,
-    "configuredConnections": 15,
-    "plannedBytes": 708837376,
-    "minimumBaseFreeBytes": 2684354560,
-    "additional": "Full concurrent declarations plus actual retained O16 DB/TMP, unknown preserved",
-    "Chrome": 0,
-    "provider": 0,
-    "personalOperations": 0,
-    "actualStart": null,
-    "sourceEvidence": "main-deployment-route-fix-20261007/current.json",
-    "previousO16Return": {
-      "at": "2026-10-07T10:20:24Z",
-      "state": "RUNTIME_RETURNED_RETAINED_DB_TMP_UNKNOWN",
-      "ownedGroupsAbsent": true,
-      "ownedDatabaseConnections": 0,
-      "databaseDrop": "UNKNOWN_NOT_CLAIMED",
-      "temporaryStorage": "RETAINED_UNKNOWN",
-      "rule": "Runtime handback does not mean bytes/DB deleted; next actual owner includes retained facts in fresh physical-space admission."
-    }
+    "state": "EXPLICIT_NEXT_HANDOFF_OWNER_FRESH_NOT_RUN",
+    "task": "X01 process-runner PG journey",
+    "owner": "architecture_read",
+    "coLead": "Mika",
+    "source": "e6bfab16c1b783406729b0a4deb4f3c7e720446f",
+    "packet": "902b85c43fc641f24376f2e288674227cbc3dd3e",
+    "sourcePreparationReview": "2026-10-07T10:33:54Z SOURCE_AND_PREPARATION_REVIEW_APPROVED via root/Mika",
+    "canonicalWindow": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/process-runner-window.md",
+    "manifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/process-runner-pg-manifest.json",
+    "totalMs": 180000,
+    "workMs": 110000,
+    "cleanupMs": 60000,
+    "finalMs": 10000,
+    "PG": 1,
+    "conservativeConnections": 17,
+    "centerAndRunner": "2center+2runner sequential, 1registry+1center concurrently,1tar",
+    "scratchBytes": 33554432,
+    "retainedRawBytes": 1048576,
+    "DBWALAllowanceBytes": 134217728,
+    "singleCleanupReserveBytes": 1073741824,
+    "minimumFreshAvailableBytes": 5334630400,
+    "floorRule": "max(conservative floor, current actual complete declared sum); single reserve not duplicated; fresh all inputs required",
+    "potentialLocalBytes": 35651584,
+    "potentialLocalBreakdownMiB": {
+      "Mika": 21,
+      "Web": 9,
+      "Original": 2,
+      "W01Readonly": 2
+    },
+    "ChromeProviderNativePersonalInstall": 0,
+    "actualStartedAt": null,
+    "priorUnknown": "O16/C02 earlier KEEP UNKNOWN not assumed removed or active process; physical allocation reflected in fresh bytes",
+    "coordination": "Concrete NEXT sent successfully to Mika accessible thread; no repeated idleACK requirement; actual start/cleanup will be relayed via root; no guessed RUN/end or automatic retry."
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -2044,12 +2063,11 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "O16runtime returned10:20:24Z/ownedgroupsabsent/DBconnections0, DB/TMP retainedUNKNOWN notDROP. OriginalSVC06host7d1/6c fresh next180+30s, actualstartunknown; WebRecovery waits actualreturn.",
-    "Two-team potential local30MiB: Web9MiB + Mika21MiB serial local. No two Web ordinary local segments overlap; declaration does not mean actual RUN.",
-    "Recovery route fix only; old34753/25247phase CLOSED. New90k finite phase prepared, source review and actual queue handoff pending.",
-    "DPERF78a main/deployed closed and b554v5 released; W01 resumes existing Release38b9 source/type work. READBOUND main81b/194 registered canonical linked."
+    "X01 e6bf/902b unique NEXT sharedPG handoff to Mika originalowner, fresh required; no actualstart received.",
+    "WebRecovery selected2 rootaccepted/owner8919 seal complete, no newrun reservation. Release finaltuple/nativecaller pending.",
+    "O16/C02 earlier retainedunknown preserved, no assumed deletion; potential locals34MiB counted without claiming actualholders."
   ],
-  "currentIntake": "main-deployment-route-fix-20261007/current.json",
+  "currentIntake": "recovery-route-fix-first-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

@@ -1,0 +1,23 @@
+{
+  "run": "recrtfix-20261007-102945-f71af8",
+  "startedAt": "2026-10-07T10:30:07.029323+00:00",
+  "outerPid": 23329,
+  "parentPid": 23339,
+  "parentPgid": 23339,
+  "command": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-routefix-first-wm_9mx_o/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-routefix-first-wm_9mx_o/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  }
+}

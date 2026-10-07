@@ -1,0 +1,192 @@
+{
+  "at": "2026-10-07T10:30:47.382621+00:00",
+  "state": "READ_ONLY_INTERFACE_PROPOSAL_NOT_RUN",
+  "researcher": "W01 / gpt-6-astra / ultra",
+  "fixedMain": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+  "fixedClientImplementation": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "clientOwnerObservedHead": "a85fa4cf0d1efe3ea8f7e0d28f27d067f21e5e0b",
+  "clientOwnerObservedClean": true,
+  "sourcePins": [
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 11298,
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/src/plugin-management/use-read.ts",
+      "bytes": 1061,
+      "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 4836,
+      "sha256": "b4819af5412cea6320be099a040837bfbccbfaec94f74d1f5951609a8f104e5d"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 23974,
+      "sha256": "f919352290f8086c20bfd929628ec83e9332ddd3237bb9ecfd45b144a6444414"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "packages/client/src/index.ts",
+      "bytes": 63703,
+      "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "packages/client/src/plugin-runner.ts",
+      "bytes": 2687,
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "bytes": 4390,
+      "sha256": "2e65341828f8b703194e3b8d574189f2b495636277379e15ce122f1ab3c2e96b"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "bytes": 10806,
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/plugin-runtime-configuration.ts",
+      "bytes": 1253,
+      "sha256": "e2f55e27f7864774221764fe01b1f2c618603159798c42558cc7e8649cbde748"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/main.ts",
+      "bytes": 3223,
+      "sha256": "6b7b456a2512c6ffb55e2822d534ba4033c08bb249953c067cb0706a127c7116"
+    },
+    {
+      "commit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+      "path": "apps/server/src/index.ts",
+      "bytes": 15452,
+      "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+    },
+    {
+      "commit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+    },
+    {
+      "commit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "commit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "path": "packages/client/src/plugin-runtime.test.ts",
+      "bytes": 7388,
+      "sha256": "561da6f1debd90d3d6e4870ae8a8c3002dcd9c3f6a91c8a096a6d28f4f794d34"
+    }
+  ],
+  "inputPins": [
+    {
+      "path": "/private/tmp/root-plugin-runtime-web-interface-research-20261007.json",
+      "bytes": 6739,
+      "sha256": "f2a52cc30383a81dfc764c9ed2e43431b71636bba7aacd1992ccd85dea4b369d"
+    },
+    {
+      "path": "/private/tmp/root-plugin-runtime-command-lifetime-addendum-20261007.json",
+      "bytes": 3123,
+      "sha256": "0ba2b2c74f7cff276caad08dfa74e4ca229e6ca1cd6c1d89ce89f05afb36fff2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/main-deployment-route-fix-20261007/plugin-settings-followup.json",
+      "bytes": 1356,
+      "sha256": "f84a7fb831587841d36508613284ec9d7a098c25ef034f1ef08090c69bcf8071"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands/docs/evidence/x01-cli-commands/main-intake.json",
+      "bytes": 4114,
+      "sha256": "6cdbf7c9e02a498819c25dcdc3dd19a334c424f2b6bff6dd7550897812f1d5cc"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "method": {
+    "findSkills": "Local catalog first; existing TypeScript/React interface/design skills reused. No installation/network search necessary.",
+    "codebaseDesign": "Put command identity behind one narrow session-owned Interface, reuse existing public client ACK decoder, let lazy view be presentation Adapter.",
+    "cleanCode": "Separate read errors, pre-send validation, typed rejection and ambiguous write; one owner of request identity; avoid duplicate codec, broad outbox, hidden auto-retry."
+  },
+  "limits": {
+    "sourceFilesPinned": 20,
+    "uniqueSourcePaths": 19,
+    "projectWrites": 0,
+    "claimOrCLI": 0,
+    "NodeProductImportsOrChecks": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "runtimeEvidence": "NOT_RUN"
+  },
+  "unverified": [
+    "No live center endpoint or runtime host readiness observed.",
+    "No main integration of 9f5d inferred from its owner delivery.",
+    "No first-enable runner discovery contract found in inspected public interfaces.",
+    "No browser/unit/type checks executed."
+  ]
+}

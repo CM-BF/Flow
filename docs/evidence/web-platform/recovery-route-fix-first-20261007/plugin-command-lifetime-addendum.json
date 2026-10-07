@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T10:27:07.232159+00:00",
+  "researcher": "root / gpt-6-astra / ultra, read-only",
+  "state": "FUTURE_MUTATION_LIFETIME_DESIGN_CONDITION_NOT_EXISTING_READONLY_BUG",
+  "previousResearch": {
+    "path": "/private/tmp/root-plugin-runtime-web-interface-research-20261007.json",
+    "sha256": "f2a52cc30383a81dfc764c9ed2e43431b71636bba7aacd1992ccd85dea4b369d"
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 11298,
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    }
+  ],
+  "fact": "PluginSettings renders RegistryManagement only while open && managementExpanded; closing Settings or collapsing disclosure unmounts the lazy view. PluginManagement additionally keys its session subtree by session ID and project scope. Current read-only behavior is appropriate.",
+  "futureRisk": "A new enable/disable command whose frozen request/key and uncertain outcome live only in that lazy subtree would lose its retry authority on an ordinary close/reopen. A new mount could incorrectly allow a second command while the first is still unknown.",
+  "requiredDesign": [
+    "Place the narrow command authority in an existing connection/session lifetime or use an explicit reliable protection mechanism; presentation can unmount without silently losing the original command identity.",
+    "One original request/key survives same-session disclosure close/reopen; explicit retry uses those exact bytes. Aborting transport does not establish that the server rejected the command.",
+    "On session/principal replacement, isolate late results and do not lend the new identity to an old callback. Any unresolved command handling must be explicit.",
+    "Choose the smallest actual consumer interface; do not introduce a second general outbox or duplicate public client ACK decoding.",
+    "App and AppPluginSession currently belong to Recovery original21. Future scope proposal must mark their handoff dependency; no write authority follows from this research."
+  ],
+  "candidateRegression": "Start enable, close/collapse before its ACK, reopen; show the same pending/unknown command, preserve exact key/body, ignore stale-session completion, and do not issue a second POST unless the user explicitly retries the original.",
+  "resourceUse": {
+    "projectWrites": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "runtime": 0
+  },
+  "distribution": "Sent to existing W01 read-only proposal owner and manager. Archive only at their next natural work segment; no ACK-only project commit requested."
+}

@@ -1,0 +1,45 @@
+{
+  "state": "PROPOSAL_NOT_CREATED_NOT_TAKEN",
+  "existingTask": "WPF-001-05 / X01-06",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "observedBase": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+  "sharedClientImplementation": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "sharedClientDelivery": "a85fa4cf0d1efe3ea8f7e0d28f27d067f21e5e0b",
+  "baseRequirement": "Before provision: fixed integrated base containing reviewed 9f5d client, or exact source-operator receipt. No guessed merge/checkout supplied by this research.",
+  "readOnlyComponentSlice": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-management/browser.ts",
+    "plans/wpf-plugin-runtime-management",
+    "docs/evidence/wpf-plugin-runtime-management"
+  ],
+  "commandComponentSliceInsteadOfReadOnlySlice": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-management/browser.ts",
+    "apps/web/src/plugin-management/runtime-command.ts",
+    "apps/web/test/plugin-runtime-command.test.ts",
+    "plans/wpf-plugin-runtime-management",
+    "docs/evidence/wpf-plugin-runtime-management"
+  ],
+  "realAppIntegrationAdditionalHandoff": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/test/plugin-management-integration.fixture.ts",
+    "apps/web/test/plugin-management-integration.browser.ts"
+  ],
+  "excluded": [
+    "packages/contracts/**",
+    "packages/client/**",
+    "apps/server/**",
+    "shared config/lock/deps",
+    "browser extension authority"
+  ],
+  "notes": [
+    "Records paths are candidate own records for the existing task, not a second task or present write authority.",
+    "Existing App reader contract remains compatible; optional distinct runtime read/command port keeps old caller source compiling until explicit host handoff. Without host wiring, component/fixture completion is not production Settings completion.",
+    "App.tsx and session.ts require STOP/current-version release-or-amend/new-take from Recovery; all other literals also require fresh conflictcheck. No current ownership assertion is made."
+  ]
+}

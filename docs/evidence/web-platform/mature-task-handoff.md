@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T10:25:05.401569+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T10:37:01.542662+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-[本次当前入口](main-deployment-route-fix-20261007/current.json)：DPERF已正式主线接收并由原operator发布4320摘要/按需详情，原owner78a已metadata收口并b554v5释放。Steer两次失败均已清理，旧段封账；原21scope内仅修旧路由回调捕获问题，实际因果待验证。SVC06新6c0离线构建已10:12:40Z实际归还，build通过不等host通过；后继host仅准备、无预约。Release首类型检查失败保留，窄修后的独立小段类型复验已通过并清理，root限定实际审已接受；不冒真实兼容通过。O16运行已10:20:24归还，但DB/TMP保留仍UNKNOWN；下一SVC06隔离host已接窗、本组重验证等其实际归还，Recovery尚无actual预约；最终后台tuple仍待固定。
+[本次当前入口](recovery-route-fix-first-20261007/current.json)：Recovery route-fix新段所选2/2实际通过，10:30:49.963Z完成自有DB、进程/Chrome、scratch和env清理并已向Mika归还。[限定结果独审](recovery-route-fix-first-20261007/recovery-actual-root-review.json)已接受；owner已8919正常push/remote同clean并停写，claim保留。旧失败/封闭预算保留，完整feature不冒通过。SVC host10:26:05.098Z已归还，O16历史DB/TMP仍UNKNOWN；本组0重holder/无下一预约；下一共享PG已交Mika X01原owner fresh，尚未实际RUN。DPERF已发布、收口并释放；Release待最终tuple/nativecaller；插件管理仅[只读接口与范围提案](recovery-route-fix-first-20261007/plugin-report.md)，未take。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 

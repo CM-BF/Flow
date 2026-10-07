@@ -507,3 +507,7 @@ X01-06的[固定九源接口研究](../../docs/evidence/web-platform/main-deploy
 GO实核DPERF完成时间展示缺口：作者别名字段未被现有精确三字段合同消费，原高精度+00:00值也不符合任务时间Z/至多毫秒格式。原owner仅新领取plan/evidence两metadata范围修规范字段；开工UNKNOWN不倒填，完成按真实原件以2026-10-07T10:19:14.492Z呈现，原.492580+00:00来源保留。只核known completion/unknown start及预期issue，产品scope、parser、固定审查target与旧结果均不变，修完正常停写释放。
 
 上述时间合同修正已由原owner f47完成，records-only732f先v1正式领取、后v2于10:24:18.890Z释放；[单任务解析与summary检查](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dperf-timing-parser-summary-check.json)证明完成known/sourceCurrent，开工UNKNOWN及唯一预期issue保留。首检查脚本DTO取值错误与原高精度时间均原样保存，无parser扩展或产品复测。
+
+原X01-06插件设置后继追加[命令生命周期约束](../../docs/evidence/web-platform/recovery-route-fix-first-20261007/plugin-command-lifetime-addendum.json)：关闭Settings或折叠会卸载lazy管理树，新的UNKNOWN写命令/frozen key authority不能仅放该树useState。复用session拥有的窄controller/guard或明确保留机制，close/reopen同一会话仍展示并重试原key/body，跨session隔离迟到，不把abort当服务器拒绝，不造第二通用outbox。当前只读管理行为不是产品bug，W01仅固定接口/精确scope候选，NOT_TAKEN。共享4methods source9f5d61a1/deliverya85fa4cf已审但未main/PG，仍从原CLI owner唯一Interface接输入。
+
+本轮既有X01-06的[只读接口提案](../../docs/evidence/web-platform/recovery-route-fix-first-20261007/plugin-report.md)与[候选精确范围](../../docs/evidence/web-platform/recovery-route-fix-first-20261007/plugin-scope-proposal.json)已保存：5路径只读组件或7路径启停组件为替代方案，另5条真实App接线路径需原Recovery交权。共享CLI9f5d/a85已审但未main；first-enable targetRunnerId公开来源、config/grant写ACK和Settings卸载后的session-owned命令身份仍须接口供给。此为原任务候选，未建树/未take，不新增业务进度来源。
