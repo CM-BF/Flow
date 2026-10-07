@@ -1,0 +1,125 @@
+{
+  "source": "4da7f6852a047e417a5779ae3f1d745745f9a77d",
+  "executionHead": "ec61a925c30f5f94c6611256476e2c2f7940fbc5",
+  "sourceReview": {
+    "reviewer": "architecture_read / gpt-6-astra",
+    "at": "2026-10-06 19:04:43 UTC",
+    "verdict": "SOURCE_APPROVED",
+    "p1": 0,
+    "p2": 0,
+    "closed": "Three preparation source findings only; validation was pending."
+  },
+  "validation": {
+    "fake": {
+      "selected": 9,
+      "passed": 9,
+      "failed": 0,
+      "exitCode": 0
+    },
+    "pureTypes": {
+      "exitCode": 0
+    },
+    "runtimeTypes": {
+      "exitCode": 2,
+      "diagnostic": "idle-claim.test.ts(109,18) TS2741: fixture adapter missing required version"
+    },
+    "syntax": "NOT_RUN; stopped at runtime strict failure",
+    "actual": "NOT_OPEN",
+    "provider": 0,
+    "pg": 0,
+    "rawBytes": 613,
+    "wholeWindowMs": 2360.0334159564227,
+    "ownTmpSampledPeakAllocatedBytes": 78208,
+    "retainedRoots": [],
+    "runtimeTypesFinal": {
+      "exitCode": 0,
+      "receipt": "validation/runtime-types-retry.receipt.json",
+      "earlierExitCode": 2
+    },
+    "syntaxFinal": {
+      "exitCodes": [
+        0,
+        0
+      ],
+      "receipt": "validation/syntax.receipt.json"
+    },
+    "finalDistinctFake": 9,
+    "notRepeated": [
+      "fake 9",
+      "pure strict"
+    ],
+    "targetedWindowMs": 1546.2437089299783
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.stdout.txt",
+      "bytes": 414,
+      "sha256": "9de2cee1a98fd16957c011f07da301a35f8bf19c961a7ad9c52c165767ca185c"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/fake.receipt.json",
+      "bytes": 2103,
+      "sha256": "4dd86b836e7fc3124659587d073f7cbf834d091a279d5fd6a214891e6f4c708f"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/pure-types.receipt.json",
+      "bytes": 1923,
+      "sha256": "d20193985c6eb1f4613eee2518a36715732191fcf8b01cc7c96df3076640bbea"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.stdout.txt",
+      "bytes": 199,
+      "sha256": "66d525809949007b7ba2908691539082361d1a80ed09c6bd4ebb512fafb805ff"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types.receipt.json",
+      "bytes": 1931,
+      "sha256": "5893a9678bc5f7e2324e47a4b8cdf3e0f6cf84496966faff73735c6c0a4ded88"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/runtime-types-retry.receipt.json",
+      "bytes": 2813,
+      "sha256": "541fa6272793f9de2d2723845d231ea7f06b179ae471108fc80ea2c779b176d6"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01/idle-claim-cost/validation/syntax.receipt.json",
+      "bytes": 2123,
+      "sha256": "b4055da42ab6149be157e5e1ef12fb84fb815337016463466fd4a5bf20744e24"
+    }
+  ],
+  "receiptMeaning": "Per-step receipt includes exact argv, real child exits, group/stdio closure, initial resource fact and identity-checked own-temp removal. No actual runRunner test was selected.",
+  "finalSource": "fd24a1f4d89839c867ed9184ef2c28680c5922cd",
+  "finalSourceDelta": "Only inert fixture version:1 added after TS2741. No behavior/assertion change; root authorized the fix and directed runtime strict/syntax only.",
+  "finalInputSha256": "529325d02033c8431539296aef4c5dd0b59a3e5f79dafeee7a45fa267e059639",
+  "inputHistory": "ec61/4a992 receipt-accounting manifest binds the earlier v3 input/ledger by fixed Git. fd24 updates only inert adapter source hash and adds one retry-receipt manual path; all original check raw bytes remain unchanged."
+}

@@ -581,8 +581,76 @@
       "mode": "100644",
       "bytes": 26300,
       "sha256": "51849e5da40b430cba0af58e5f16dfe0d88ddd93504013e1efc1accf131d28ee"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/source-review-v2.json",
+      "mode": "100644",
+      "bytes": 4723,
+      "sha256": "501c3a565470a1c2980281b78aafa0006de4408caa81a8711e3a362a3ba42be8"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/current-readiness.md",
+      "mode": "100644",
+      "bytes": 2289,
+      "sha256": "25f0d8c5a0148b76b3dabd7cb80f64ebbaa2d96b86356779c335d1cf7ba913e3"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/independent-review.json",
+      "mode": "100644",
+      "bytes": 1451,
+      "sha256": "9cf3ddb3246552b01874a9e7092a2bedefbc6d716323caf3c6d580911f6bede7"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md",
+      "mode": "100644",
+      "bytes": 2138,
+      "sha256": "0d5e8ad832183cd9b6862a39ad4fe707079407ce24707d5cce5e71760518bb22"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/main-acceptance.json",
+      "mode": "100644",
+      "bytes": 7351,
+      "sha256": "934795b4b31cf9c3c869f98a850b675a1b763374b7a8202914e645b733f7601c"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/review-ready.md",
+      "mode": "100644",
+      "bytes": 1199,
+      "sha256": "4541c01f4095583ca9e223fb2bb4937b68f7ba38d4b3732333353c16fe2b7e15"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/manifest.json",
+      "mode": "100644",
+      "bytes": 4452,
+      "sha256": "4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/interface.md",
+      "mode": "100644",
+      "bytes": 5978,
+      "sha256": "7303d71359891294cbc59867a4b3470b88d6888580eabd839e96dfd6818dbb30"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-preparation/operator-handoff.md",
+      "mode": "100644",
+      "bytes": 5647,
+      "sha256": "20f97ccc9ed484c1efff82b475aa4bc247a52ef1dcbcb86996e9a16ed216ce4f"
     }
   ],
   "testPGProviderRepeats": 0,
-  "ownerStatusesAreFixedPublicationCopies": true
+  "ownerStatusesAreFixedPublicationCopies": true,
+  "referenceClosure": {
+    "files": 9,
+    "bytes": 35228,
+    "scope": "Only existing fixed reference documents required by received S01 plan/review/status; no source archive or raw duplication"
+  }
 }

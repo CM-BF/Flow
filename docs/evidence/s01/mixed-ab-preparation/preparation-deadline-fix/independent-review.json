@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-06 14:12:22 UTC",
+  "reviewTarget": "d3ba03a88b8d25d134b7abade7f55f8198b182ba",
+  "manifestSha256": "4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040",
+  "verdict": "APPROVED",
+  "scope": "preparation only",
+  "p1": 0,
+  "p2": 0,
+  "independentReview": {
+    "reviewer": "architecture_read",
+    "model": "gpt-6-astra",
+    "at": "2026-10-06 14:11:28 UTC",
+    "bindingsVerified": 18,
+    "newExecution": false
+  },
+  "rootAcceptance": {
+    "reviewer": "Mika/root",
+    "model": "gpt-6-astra",
+    "at": "2026-10-06 14:12:06 UTC",
+    "bindingsVerified": 18,
+    "errors": [],
+    "newExecution": false
+  },
+  "priorReview": {
+    "target": "da93263a1f47039abcfe7d20670cc2040c457136",
+    "status": "CHANGES_REQUESTED",
+    "originalApprovalAt": "2026-10-06 14:04:38 UTC",
+    "finding": "synchronous Git timeout did not use preparation 15s remaining",
+    "findingNow": "CLOSED; original history preserved"
+  },
+  "checks": {
+    "distinctFinalCoverage": 64,
+    "priorDistinct": 61,
+    "newDistinct": 3,
+    "overlappingTargetedPass": 17,
+    "newRedFailed": 3,
+    "localStrictExit": 0,
+    "coverageWasOneBatch": false,
+    "newChecksAtCloseout": 0
+  },
+  "observedMetadataHeadBeforeCloseout": "dcc630790a9a063cb756ad4e576b0d5ab5aed8c5",
+  "resource": "RESOURCE_HOLD",
+  "resourceConditions": "PENDING",
+  "window": "NOT_OPEN",
+  "newMainIntegration": false,
+  "sourceRawAndManifestsUnchanged": true
+}
