@@ -1,0 +1,272 @@
+diff --git a/apps/runner/src/outbox.ts b/apps/runner/src/outbox.ts
+index de559124..21d7543e 100644
+--- a/apps/runner/src/outbox.ts
++++ b/apps/runner/src/outbox.ts
+@@ -5,10 +5,11 @@ import { FinalProposalJournal, type FinalizationTransport } from './active-steer
+ import { steeringFinalizationSchema } from '../../../packages/contracts/src/runner.js';
+ import type { ActiveSteeringPort, SteeringFinalizationResult } from '../../../packages/contracts/src/active-steering.js';
+ import { randomUUID } from 'node:crypto';
+-import { readFile, readdir, rename, stat, unlink, writeFile } from 'node:fs/promises';
+-import { join } from 'node:path';
++import { constants } from 'node:fs';
++import { open, readFile, readdir, rename, stat, unlink } from 'node:fs/promises';
++import { dirname, join } from 'node:path';
+ import { FlowApiError, FlowClient } from '@flow/client';
+-import { eventBatchSchema, MAX_BATCH_BYTES, runnerEventSchema, type EventBatch, type Ownership, type RunnerEvent, type RunnerEventData } from '@flow/contracts';
++import { eventBatchSchema, MAX_BATCH_BYTES, type EventBatch, type Ownership, type RunnerEvent, type RunnerEventData } from '@flow/contracts';
+ 
+ type Report = (batch: EventBatch) => Promise<void>;
+ 
+@@ -35,13 +36,22 @@ export class EventOutbox {
+     this.bodies = new ActivityBodySpool(directory);
+   }
+ 
+-  emit(data: RunnerEventData): Promise<void> {
++  emit(data: RunnerEventData): Promise<void> { return this.emitBatch([data]); }
++
++  /** Capture a bounded, fixed terminal prefix before any HTTP; the existing tail remains its only sender. */
++  emitBatch(data: readonly RunnerEventData[]): Promise<void> {
++    const captured = eventBatchSchema.parse({ ...this.ownership,
++      events: data.map(value => ({ ...value, id: randomUUID(), sequence: 1 })) }).events;
++    return this.enqueue(captured);
++  }
++
++  private enqueue(captured: readonly RunnerEvent[]): Promise<void> {
+     if (this.failure) return Promise.reject(this.failure);
+-    if (this.barrier) return this.barrier.then(() => this.emit(data));
+-    const event = runnerEventSchema.parse({ ...data, id: randomUUID(), sequence: this.sequence + 1 });
+-    const batch = eventBatchSchema.parse({ ...this.ownership, events: [...this.events, event] });
++    if (this.barrier) return this.barrier.then(() => this.enqueue(captured));
++    const events = captured.map((event, index) => ({ ...event, sequence: this.sequence + index + 1 }));
++    const batch = eventBatchSchema.parse({ ...this.ownership, events: [...this.events, ...events] });
+     this.events = batch.events;
+-    this.sequence += 1;
++    this.sequence += captured.length;
+     const next = this.tail.then(async () => {
+       if (this.events.length === 0) return;
+       const sending = { ...this.ownership, events: [...this.events] };
+@@ -111,8 +121,14 @@ export class EventOutbox {
+ 
+ async function persist(file: string, batch: EventBatch) {
+   try {
+-    await writeFile(`${file}.tmp`, JSON.stringify(batch), { mode: 0o600 });
++    const temporary = await open(`${file}.tmp`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NONBLOCK | constants.O_NOFOLLOW, 0o600);
++    try {
++      if (!(await temporary.stat()).isFile()) throw new Error('Event journal temporary must be regular.');
++      await temporary.writeFile(JSON.stringify(batch)); await temporary.sync();
++    } finally { await temporary.close(); }
+     await rename(`${file}.tmp`, file);
++    const directory = await open(dirname(file), 'r');
++    try { await directory.sync(); } finally { await directory.close(); }
+   } catch { throw new EventStorageError(); }
+ }
+ 
+diff --git a/apps/runner/src/plugins/runtime.test.ts b/apps/runner/src/plugins/runtime.test.ts
+index 414784b3..cd1d5f47 100644
+--- a/apps/runner/src/plugins/runtime.test.ts
++++ b/apps/runner/src/plugins/runtime.test.ts
+@@ -3,13 +3,21 @@ import { mkdtemp, lstat, readFile, rm, mkdir, writeFile } from 'node:fs/promises
+ import { tmpdir } from 'node:os';
+ import { join } from 'node:path';
+ import { afterAll, afterEach, beforeEach, expect, test, vi } from 'vitest';
+-import { FlowClient } from '@flow/client';
++import { FlowApiError, FlowClient } from '@flow/client';
+ import type { EventBatch } from '@flow/contracts';
+ import { PluginRunnerClient } from '../../../../packages/client/src/plugin-runner.js';
+ import type { PluginRunnerClaimRequest } from '../../../../packages/contracts/src/plugin-runner-claim.js';
+-import { AdmissionJournal } from '../admission-journal.js';
++import { AdmissionJournal, AdmissionStorageError } from '../admission-journal.js';
+ import { runRunner, type RunnerOptions } from '../runtime.js';
+ import { textDigest } from '../verifier.js';
++const disk = vi.hoisted(() => ({ failPendingUnlink: false }));
++vi.mock('node:fs/promises', async importOriginal => {
++  const fs = await importOriginal<typeof import('node:fs/promises')>();
++  return { ...fs, unlink: async (path: Parameters<typeof fs.unlink>[0]) => {
++    if (disk.failPendingUnlink && String(path).endsWith('/pending-events.json')) { disk.failPendingUnlink = false; throw new Error('Crash before unlink'); }
++    return fs.unlink(path);
++  } };
++});
+ const state = vi.hoisted(() => ({ invokes: 0, unknown: false, checkPersisted: async () => {} }));
+ vi.mock('./host.js', async importOriginal => {
+   const actual = await importOriginal<typeof import('./host.js')>();
+@@ -32,7 +40,7 @@ afterEach(async () => {
+   }
+ });
+ afterAll(async () => { if (process.env.FLOW_X01_PLUGIN_RUNTIME_FACTS) await writeFile(process.env.FLOW_X01_PLUGIN_RUNTIME_FACTS, JSON.stringify({ roots }), { flag: 'wx', mode: 0o600 }); });
+-beforeEach(() => { state.invokes = 0; state.unknown = false; });
++beforeEach(() => { state.invokes = 0; state.unknown = false; disk.failPendingUnlink = false; });
+ async function fixture() {
+   const path = await mkdtemp(join(tmpdir(), 'flow-plugin-runtime-')), metadata = await lstat(path);
+   roots.push({ path, dev: metadata.dev, ino: metadata.ino, removed: false });
+@@ -74,7 +82,7 @@ async function fixture() {
+     pluginExecution: { store: { root: join(path, 'store'), storeId: 'owned', allowedDigests: ['c'.repeat(64)] },
+       transport: () => new PluginRunnerClient(transport) }, adapters: [],
+     onNotice: notice => { if (notice.type === 'admission-blocked') abort.abort(); } };
+-  return { options, abort, directory, qualification, runnerId, identity, reports, phaseKeys, claims, oldClaim, transport,
++  return { options, abort, directory, binding, qualification, runnerId, identity, reports, phaseKeys, claims, oldClaim, transport,
+     ordinary: () => { ordinary = true; }, unknownPhase: () => { phaseUnknown = true; }, loseClaim: () => { loseClaim = true; } };
+ }
+ test('v3 claim persists before package dispatch and reports artifact verification completed through the original outbox', async () => {
+@@ -129,3 +137,57 @@ test('store-only runtime opt-in consumes the real FlowClient plugin domain and i
+   expect(seen.every(value => value === 'Bearer fixture-only')).toBe(true);
+   expect(f.reports.at(-1)!.events.at(-1)!.type).toBe('completed');
+ });
++
++function pendingPath(f: Awaited<ReturnType<typeof fixture>>) { return join(f.directory, textDigest(f.identity.attemptId), 'pending-events.json'); }
++async function restartTerminal(f: Awaited<ReturnType<typeof fixture>>, rejectOwner = false) {
++  const stop = new AbortController(); f.options.signal = stop.signal;
++  f.options.onNotice = notice => { if (notice.type === 'admission-blocked' || notice.type === 'events-retained') stop.abort(); };
++  const replayed: EventBatch[] = [];
++  vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async batch => {
++    replayed.push(batch);
++    if (rejectOwner) throw new FlowApiError(409, 'stale_owner', 'Old owner');
++    stop.abort(); return { accepted: 0, lastSequence: batch.events.at(-1)!.sequence };
++  });
++  await runRunner(f.options); return replayed;
++}
++async function loseTerminalAck(f: Awaited<ReturnType<typeof fixture>>) {
++  vi.spyOn(FlowClient.prototype, 'report').mockImplementation(async batch => {
++    expect(batch.events.map(event => event.type)).toEqual(['artifact', 'verification', 'completed']);
++    expect(JSON.parse(await readFile(pendingPath(f), 'utf8'))).toEqual(batch);
++    f.abort.abort(); throw new Error('Committed ACK lost');
++  });
++  await runRunner(f.options);
++  return await readFile(pendingPath(f), 'utf8');
++}
++test('terminal ACK loss replays the fixed complete bundle and old pin after a material upgrade without reinvoke', async () => {
++  const f = await fixture(), saved = await loseTerminalAck(f);
++  f.binding.artifact.version = '1.0.1'; f.binding.artifact.sha256 = 'd'.repeat(64);
++  f.options.pluginExecution!.store.allowedDigests = ['d'.repeat(64)];
++  const replayed = await restartTerminal(f);
++  expect(replayed).toEqual([JSON.parse(saved)]); expect(state.invokes).toBe(1);
++  expect(replayed[0]!.events[0]).toHaveProperty('pluginSource.artifactSha256', 'c'.repeat(64));
++  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
++  await expect(lstat(pendingPath(f))).rejects.toHaveProperty('code', 'ENOENT');
++});
++test('terminal ACK followed by admission persistence failure keeps the bundle until restart completes the journal', async () => {
++  const f = await fixture();
++  const complete = vi.spyOn(AdmissionJournal.prototype, 'complete').mockRejectedValueOnce(new AdmissionStorageError(new Error('Directory sync unknown')));
++  await expect(runRunner(f.options)).rejects.toBeInstanceOf(AdmissionStorageError);
++  const saved = await readFile(pendingPath(f), 'utf8');
++  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true);
++  complete.mockRestore(); expect(await restartTerminal(f)).toEqual([JSON.parse(saved)]);
++  expect(state.invokes).toBe(1); expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
++});
++test('terminal crash after admission completion before unlink replays without leaving an assignment or reinvoking', async () => {
++  const f = await fixture(); disk.failPendingUnlink = true; await runRunner(f.options);
++  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
++  const saved = await readFile(pendingPath(f), 'utf8');
++  expect(await restartTerminal(f)).toEqual([JSON.parse(saved)]); expect(state.invokes).toBe(1);
++  await expect(lstat(pendingPath(f))).rejects.toHaveProperty('code', 'ENOENT');
++});
++test('terminal owner-fenced replay retains original bytes and admission without repacking ownership or invoking', async () => {
++  const f = await fixture(), saved = await loseTerminalAck(f);
++  expect(await restartTerminal(f, true)).toEqual([JSON.parse(saved)]);
++  expect(await readFile(join(f.directory, textDigest(f.identity.attemptId), 'uncertain-events.json'), 'utf8')).toBe(saved);
++  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true); expect(state.invokes).toBe(1);
++});
+diff --git a/apps/runner/src/plugins/terminal-outbox.test.ts b/apps/runner/src/plugins/terminal-outbox.test.ts
+new file mode 100644
+index 00000000..acc46560
+--- /dev/null
++++ b/apps/runner/src/plugins/terminal-outbox.test.ts
+@@ -0,0 +1,37 @@
++import { mkdtemp, lstat, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import { afterAll, afterEach, expect, test } from 'vitest';
++import { EventOutbox, EventStorageError } from '../outbox.js';
++import type { EventBatch, RunnerEventData } from '@flow/contracts';
++const roots: { path: string; dev: number; ino: number; removed: boolean }[] = [];
++async function directory() {
++  const path = await mkdtemp(join(tmpdir(), 'flow-terminal-outbox-')), stat = await lstat(path);
++  roots.push({ path, dev: stat.dev, ino: stat.ino, removed: false }); return path;
++}
++afterEach(async () => {
++  for (const root of roots.filter(item => !item.removed)) {
++    const stat = await lstat(root.path); expect([stat.dev,stat.ino,stat.isDirectory(),stat.isSymbolicLink()]).toEqual([root.dev,root.ino,true,false]);
++    await rm(root.path,{recursive:true}); root.removed=true;
++  }
++});
++afterAll(async () => { if(process.env.FLOW_X01_TERMINAL_FACTS) await writeFile(process.env.FLOW_X01_TERMINAL_FACTS,JSON.stringify({roots}),{flag:'wx',mode:0o600}); });
++test('terminal batch validates before sequence allocation and snapshots all data before durable report', async () => {
++  const path=await directory(), reports: EventBatch[]=[];
++  const outbox=new EventOutbox(path,{attemptId:'attempt',ownerVersion:1},async batch=>{
++    expect(JSON.parse(await readFile(join(path,'pending-events.json'),'utf8'))).toEqual(batch);
++    expect((await lstat(join(path,'pending-events.json'))).mode&0o777).toBe(0o600); reports.push(batch);
++  });
++  expect(()=>outbox.emitBatch([])).toThrow();
++  expect(()=>outbox.emitBatch(Array.from({length:51},()=>({type:'message',text:'too many'})))).toThrow();
++  const values: RunnerEventData[]=[{type:'message',text:'original'},{type:'completed',outcome:'succeeded'}];
++  const sent=outbox.emitBatch(values); (values[0] as {text:string}).text='mutated'; await sent;
++  expect(reports[0]!.events.map(event=>event.sequence)).toEqual([1,2]); expect(reports[0]!.events[0]).toHaveProperty('text','original');
++});
++test('terminal persistence failure reports nothing and remains sticky without allocating another sender', async () => {
++  const path=await directory(); await mkdir(join(path,'pending-events.json.tmp')); let reports=0;
++  const outbox=new EventOutbox(path,{attemptId:'attempt',ownerVersion:1},async()=>{reports++;});
++  await expect(outbox.emitBatch([{type:'completed',outcome:'succeeded'}])).rejects.toBeInstanceOf(EventStorageError);
++  await expect(outbox.emit({type:'message',text:'later'})).rejects.toBeInstanceOf(EventStorageError);
++  expect(reports).toBe(0);
++});
+diff --git a/apps/runner/src/runtime.ts b/apps/runner/src/runtime.ts
+index 6a3f8a4e..9c0fcaf3 100644
+--- a/apps/runner/src/runtime.ts
++++ b/apps/runner/src/runtime.ts
+@@ -81,8 +81,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
+   }
+   function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
+     const attemptId = assignment.attempt.id;
+-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest)
+-      .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
++    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }))
++      .then(completed => { if (!completed) recoveryPending = true; })
+       .catch(error => { failed(error); recoveryPending = true; })
+       .finally(() => { active.delete(attemptId); });
+     active.set(attemptId, completion);
+@@ -213,7 +213,7 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
+ }
+ 
+ type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
+-async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>): Promise<boolean> {
++async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>): Promise<boolean> {
+   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
+   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
+   await prepareDirectory(directory);
+@@ -223,6 +223,8 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
+       const signal = requestSignal(options);
+       await bodies.beforeReport(batch, assignment.attempt.runnerId, signal);
+       await reportBatch(client, batch, signal);
++      // Match recovery: validated completion ACK -> durable admission clear -> outbox unlink.
++      if (batch.events.some(event => event.type === 'completed')) await completeAdmission();
+     }
+     catch (error) { control.interrupt('lost'); throw error; }
+   });
+@@ -263,6 +265,7 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
+   const adapter = adapters.find(adapter => adapter.name === assignment.task.harness);
+   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
+   let nativeSettlement: NativeExecutionSettlement = 'settled';
++  let terminalEvents: RunnerEventData[] | undefined;
+   try {
+     if (assignment.pluginToolBinding) {
+       if (!options.pluginExecution || !plugin) throw new PluginExecutionUnsettled(assignment.pluginToolBinding.bindingId, assignment.pluginToolBinding.invocationId);
+@@ -279,8 +282,7 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
+             throw new PluginAuthorizationUnknown();
+           }
+         } });
+-      await emit(result.artifact);
+-      await emit(result.verification);
++      terminalEvents = [result.artifact, result.verification];
+     } else {
+       if (!adapter) throw new Error('The assigned harness is unavailable.');
+       await control.assertOwnership();
+@@ -316,7 +318,9 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
+   // A prior cancel reason stays authoritative in AttemptControl, but is not proof
+   // that an adapter's external execution stopped. Retain its admission in that case.
+   if (nativeSettlement === 'settled' && !options.signal.aborted && control.reason !== 'lost') {
+-    await emit({ type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) });
++    const completed: RunnerEventData = { type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) };
++    if (terminalEvents) await outbox.emitBatch([...terminalEvents, completed]);
++    else await emit(completed);
+     return true;
+   }
+   return false;

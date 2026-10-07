@@ -130,3 +130,7 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 已授权同机、workspace级、显式trusted自有包方向，具体[Interface](../../docs/evidence/x01/vertical-interface.md)和[scope/依赖请求](../../docs/evidence/x01/scope-request.md)供Mika/Execution Lead冻结。共享安装材料模块只承担有界解包/静态manifest/receipt，runner host真实import/invoke，中心权威复用原revision/command/fence。产品scope/唯一DDL未分配前不写实现。原X01-02/03/04/06/07获得这个可交付子段，全部10TODO及完整版本/撤销/移除/renderer/verifier/context/隔离验收保留。
 
 2026-10-06 16:09 UTC 验收补充：静态安装与host双gate已在main e8077303，`invokeInstalledTool`仍无真实runRunner production caller；当前已交付slice保持delivered，完整X01开放。GO要求把现成npm能力复用落实到X01-04/07，详见[唯一后继准备](../../docs/evidence/x01/enable-binding-preparation.md)。现package-store拒dependencies/node_modules仅首片限制，不宣称完成通用npm复用。本轮只归档需求，不选择/安装新包或领取产品范围。
+
+## Next ready startup slice (2026-10-07)
+
+X01-04/07 continue through [the existing center/runner process entry](../../docs/evidence/x01/cli-startup-interface.md). Terminal20b report-only recovery is independently reviewed and may integrate now. Operator-owned private-file composition, default-off compatibility and current journal identity precede a separate real process PG acceptance; management CLI/three-end user experience and unknown invocation recovery remain open. No new plan authority or second runner.

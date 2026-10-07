@@ -1,8 +1,8 @@
-状态：PENDING（terminal恢复新增量；公开PG结果已独审）
+状态：APPROVED（仅terminal四源及11项局部结果；完整X01开放）
 
 Review target commit: 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86
 
-新源码已固定，11/11与types0；[review入口](../../docs/evidence/x01/terminal-review-ready.md)。公开PG resultc5dd/packetbbd 09:32:01正式APPROVED0P1P2见[回执](../../docs/evidence/x01/public-runner-pg-independent-review.json)；历史PENDING不代表当前结果状态。
+chatui01_owner/gpt-6-astra 2026-10-07T09:45:42Z，0P1/P2，[正式回执](../../docs/evidence/x01/terminal-independent-review.json)。新源码已固定，11/11与types0；[review入口](../../docs/evidence/x01/terminal-review-ready.md)。公开PG resultc5dd/packetbbd 09:32:01正式APPROVED0P1P2见[回执](../../docs/evidence/x01/public-runner-pg-independent-review.json)；历史PENDING不代表当前结果状态。
 
 ---
 

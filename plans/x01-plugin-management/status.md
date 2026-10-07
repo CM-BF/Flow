@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:44:12.254594+00:00 |
+| 最近更新时间 | 2026-10-07T09:48:38.982027+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86（terminal恢复source/checks固定；后继metadata待提交） |
-| 工作树 dirty 状态 | 仅当前review manifest/status封存；产品已固定 |
-| 工作分支状态 | implementation |
+| 工作树 dirty 状态 | 仅独审/窄intake/后继设计metadata收口；四产品固定不变 |
+| 工作分支状态 | integration |
 | 检查状态 | terminal 11选11过/7未选，focusedtypes0；2子进程/10新fixture/2TMP全清理，0PG |
-| Review | terminal本片PENDING；旧公开PG c5dd/bbd 09:32:01APPROVED0P1P2 |
+| Review | terminal20b/758于09:45:42APPROVED0P1P2；公开PG c5dd/bbd09:32:01亦已APPROVED |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance均已main；runtime9b+公共wiring2ea已main3811048522dcc8a896e7ccf09872389b14bccd63，正式I02 x01-runtime-wiring-intake；本次terminal恢复未main |
 | 实现目标 | 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86 |
 | 实现范围 | apps/runner/src/{runtime.ts,outbox.ts,plugins/runtime.test.ts,plugins/terminal-outbox.test.ts}及docs/evidence/x01/terminal-* |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 主线已有真实npm任务运行链；新增结果中断恢复通过直接检查，待独立审查 |
-| 下一可用交付 | 完整终态事件先持久化、ACK后先清admission，重启只重放原事件不重执行插件 |
-| 当前阻塞 | NONE：局部检查已09:42:05结束并交回，当前无运行/PG预约 |
+| 当前产出 | 终态报告中断后的安全恢复已审通过，等待主线接收；真实npm公开运行链已在主线 |
+| 下一可用交付 | 受信任配置接入真实中心和runner启动命令，继续补齐CLI入口；恢复四叶独立交付不等待它 |
+| 当前阻塞 | NONE：无actual/local/PG预约；下一启动片待明确小接口与正式新增范围 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -333,3 +333,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T09:40Z安全点：只读正式main38110485收据（89+125bindings/sharedPreimagesMatch，8产品，组合17/17/rootnoEmit0/factoryimport0均Lead证据）确认已审runtime/wiring入main；未运行这些组合检查。本段terminal源码不覆盖主线。client/index正式来源已直交READBOUND原owner。
 
 2026-10-07T09:44:12.254594+00:00：terminal源20b143f847ea44d3f8e22a1e5b9229f62e2e5b86固定，11/11与types0已终态；本段仅3.059s子进程内部累计（不是完整外部wall），两callerTMP/10fixture exact ENOENT。source从09:32:47连续，local等待计入工作段。正式main38110485接旧runtime9b/wiring2ea，后继恢复尚未main。
+
+2026-10-07T09:48:38.982027+00:00：terminal四源chatui独审APPROVED0P1P2已正式归档，canonical [terminal-integration-ready](../../docs/evidence/x01/terminal-integration-ready.json)为独立main接收入口；09:42:05local已交db。下个CLI启动片仅设计/范围协调，不延用本段运行预算。
