@@ -1,0 +1,317 @@
+{
+  "base": "5b0bef86086a611937e098c78bc542fde6ed9539",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy",
+  "branch": "codex/personal-release-policy",
+  "scope": [
+    "tools/personal-preview/browser-session-configuration.mjs",
+    "tools/personal-preview/browser-session-configuration.test.mjs",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/environment.test.mjs",
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/web-retention-policy.mjs",
+    "tools/personal-preview/web-retention-policy.test.mjs",
+    "tools/personal-preview/web-release.mjs",
+    "tools/personal-preview/web-release.test.mjs",
+    "tools/personal-preview/static-web.mjs",
+    "tools/personal-preview/static-web.test.mjs",
+    "plans/svc09-personal-release-policy",
+    "docs/evidence/svc09"
+  ],
+  "patterns": [
+    "tools/personal-preview",
+    ".gitignore",
+    "AGENTS.md",
+    "plans/AGENTS.md",
+    "plans/templates",
+    "docs/quality/local-validation.md",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "apps/web/package.json",
+    "apps/server/package.json",
+    "apps/runner/package.json"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "blob": "4539012d5f69622debba71391e3390f3cd6a4032",
+      "mode": "100644"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 18655,
+      "blob": "b25a22aee3d8434bb520054502f61cd82cefd66c",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "blob": "a648a3e2b13225c9a163b274b08c40348b4ebe1c",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "blob": "0f881c5686ad701051c14bc4b5cc84dae2360cfb",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "blob": "32a3d8b5336aea8346dc24851773ed1ee45a97a4",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "bytes": 22908,
+      "blob": "098f3a96dcf8996a0a7d7a505936c77c45b930e9",
+      "mode": "100644"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "blob": "f12c69735d60e664e3a87082d1571fb48a8b4958",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 17734,
+      "blob": "49642fc1d7047fdb562c88a3fc695a94b3a4343c",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/templates/plan.md",
+      "bytes": 1207,
+      "blob": "4be3c7b459910da2a470587bf185a1364c8ccc6d",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/templates/review.md",
+      "bytes": 2830,
+      "blob": "98a288d4fb3d6abec4da4cdceb3af3014bceb4aa",
+      "mode": "100644"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "bytes": 2812,
+      "blob": "ea77a77b0b90f67c0203e7d93d16157a8adfd00e",
+      "mode": "100644"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "blob": "a61b07082e212b84d961cad193a6cae6ce34450b",
+      "mode": "100644"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "blob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 19576,
+      "blob": "958b5002545b0c93e1891dcff475d71039421704",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4145,
+      "blob": "6b7c7ad7c5f24a6c1a7ddec9aa46291bc96da8ae",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build-probe.mjs",
+      "bytes": 1111,
+      "blob": "b1bb47862c26c644b94273c58db286cc84894789",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "blob": "2d427392aac04c2213d370a7eaa64e2ec5e7f2b3",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "blob": "8626dbf34b900d2cf6433913b0cd1a63ff9856de",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.test.mjs",
+      "bytes": 2790,
+      "blob": "afd8f2b8917d987b31697375329877a9fb33928f",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "blob": "f216f73d1aeb0145e84ebe77e339b9ef0ac274c2",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "blob": "b4f59849ee64e50706794be0e08dddfa000f6390",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 11836,
+      "blob": "662465f9f52d7e22f99c11b5583c6342146a7913",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "blob": "2ca691b878d3b9e7b308539c00126309791cfc10",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "blob": "9df6f2732196a73a270d786a4ba44de5d1a21a45",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "blob": "44df753be24f7b27d06125917dc5ce7689c2116d",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "blob": "b60af5872f54966a9b03d7dbe8b2b01a44b04c4e",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/integrity.test.mjs",
+      "bytes": 2700,
+      "blob": "6dde58f6e770fa6d4537bcd7410fcb8193b5c4f3",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "blob": "91be33eb888762170d758acec868627f982adcd1",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "blob": "a32f0dfbd998e6bdc9d009a93e6d4e663e843fb1",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10913,
+      "blob": "baa6cbcb94aa6c8a49ba456e586244dc3d7d9a47",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "blob": "48d03b6e37925b51dd6ce616884e0d3b5970990a",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "blob": "4e30443aeeec902ceaf2182153ae035d15df6bd1",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 2822,
+      "blob": "c97f8d121a3355d103cbcb824eae4f26e73d640b",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9335,
+      "blob": "195b5858be417938121bf0dc6a3fad9fd1f4b99f",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 11357,
+      "blob": "396273ff42ad2be818bf10abff16bf46a656d725",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 41320,
+      "blob": "9022484660e3195c49cde562bdeffdfbe5e8e250",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 51782,
+      "blob": "1327a4b020730171451ae45a0b5781502d8642ea",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "blob": "d0ffa022303a9c14217312c44a509dafd44e2c00",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/process.test.mjs",
+      "bytes": 2311,
+      "blob": "91e17d04be2e41c6a628e766e109172b5b863d3b",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/static-web-connections.test.mjs",
+      "bytes": 10423,
+      "blob": "d4135b60185c463bf0a9afbe383e2574cd02b035",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6800,
+      "blob": "7e595d0625251494616c61f6b2e946747a1ce1cb",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "blob": "be05e78c63269ff8719398ce6e04bc12df31695c",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "blob": "d1761e1ef5e7893561587cf7fd133f7c0d11e48b",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 8388,
+      "blob": "c0ba0712276e7d3ace2477957b10f4d1b1e0395b",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "blob": "51b551168c854ddbf48a0554bb5760ea59119f75",
+      "mode": "100644"
+    },
+    {
+      "path": "tools/personal-preview/web-release.test.mjs",
+      "bytes": 14192,
+      "blob": "9a53091cd2490ebe6bf2d6ce8047f90544e36cce",
+      "mode": "100644"
+    }
+  ],
+  "startedAt": "2026-10-07T08:10:18.459474+00:00",
+  "materializedAt": "2026-10-07T08:10:18.844391+00:00",
+  "logicalBytes": 647742,
+  "dependencies": "NONE copied/installed/linked"
+}
