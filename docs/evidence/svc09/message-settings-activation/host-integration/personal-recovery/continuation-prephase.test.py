@@ -77,7 +77,10 @@ class Boundary(unittest.TestCase):
             original_exec = result.loader.exec_module
             def exec_module(ops):
                 original_exec(ops)
-                ops.supervise = self.first_phase_boundary
+                def checked_boundary(launch, policy):
+                    ops._validate(launch, policy)
+                    return self.first_phase_boundary(launch, policy)
+                ops.supervise = checked_boundary
             result.loader.exec_module = exec_module
             return result
         module.importlib = SimpleNamespace(util=SimpleNamespace(spec_from_file_location=spec_with_supervise, module_from_spec=importlib.util.module_from_spec))
