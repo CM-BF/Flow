@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T16:33:43.004Z",
+  "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "priorSource": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "changedFile": "apps/web/test/plugin-management-integration.browser.ts",
+  "diff": {
+    "added": 4,
+    "removed": 0
+  },
+  "observedActual": "Second run failed after Change connection while waiting for Connect to Flow; first two groups passed. No failure DOM/screenshot was captured.",
+  "staticChain": [
+    "First group adds two references and saves complete draft; second group verifies exact original draft.",
+    "session.hasProtectedAttachments checks each attachment binding protection; ready saved inputs still produce Attachment draft.",
+    "App Change connection enters existing public dialog while protected; explicit confirmation flushes recovery then disconnects."
+  ],
+  "newPrecondition": [
+    "Exact dialog Leave attachment drafts? visible",
+    "Exact public Leave view and retain saved records click inside that dialog",
+    "Same dialog hidden before original Connect heading wait"
+  ],
+  "retained": [
+    "All four group names and assertions",
+    "Original complete draft equality and held command release timing",
+    "Existing old authority absent/zero additional writes assertions",
+    "Default 5s timeout and all cleanup/caller behavior"
+  ],
+  "limits": "Source inference consistent with actual failure, not proof of exact failure DOM; new browser NOT_RUN. No product behavior change."
+}

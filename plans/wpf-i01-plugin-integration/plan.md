@@ -22,7 +22,7 @@
 
 原30s普通检查段CLOSED：4新增direct PASS/10旧未选，affected noEmit首红与fix0保留；10834ms/未用19166不转用。首独立browser60s已实际FAILED（Files全页locator歧义），0/4完整组/0PNG，outerexit1与完整ownedRETURN见[原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。保守charge8540、未用51460封闭，无自动第二次。0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained边界保持。ee9bd已仅在原browser中收窄活跃Conversation composer的Files定位，保原四组/对话框/回焦点/timeout；actual需另一次经理交接，不沿余量自行启动。
 
-修后第二次ee9bd/d779独立60s已实际FAILED/2of4，charge13436/未用46564封闭。root3bfd接收原件与完整RETURN。现仅补公开附件保护确认前置，保原四组/完整稿与旧authority隔离；第三actual只候选，不借旧额度。
+修后第二次ee9bd/d779独立60s已实际FAILED/2of4，charge13436/未用46564封闭。root3bfd接收原件与完整RETURN。5438已补公开附件保护确认前置并独审通过，保原四组/完整稿与旧authority隔离；[第三actual独立60s候选](../../docs/evidence/wpf-i01/runtime-app/browser-protected-leave-prepared-20261007/phase.json)仅准备，不借旧额度、不重跑已绿局部检查。
 
 ## 历史材料
 

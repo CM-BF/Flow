@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:30:09.524Z；第二browser首2组PASS/整体FAIL、16:27:13.012082Z完整RETURN；正补测试公开离开附件保护确认前置 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:34:45.149Z；5438公开附件离开确认前置已独审通过；第二browser2/4整体FAIL与RETURN保留，新60s仅proposal |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app |
 | Branch | codex/web-plugin-runtime-app |
 | 工作基线 / HEAD | 3c9345df4aec85a37e8a2a155e079db260d515b1；metadata实际HEAD由Git记录 |
-| 工作树dirty状态 | 执行ee9bd/metadata d779；实际后仅own status更新，无source改动；0工程child/no retry |
+| 工作树dirty状态 | 源码5438e375已固定；本批仅own metadata seal，完成后正常push/clean；0工程child/NO_NEXT |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | FAILED ee9bd1179bb0e10828a1173beadcbd551c8be1bc；修后browser 2/4完整组；原4direct/affected types通过保留，无自动retry |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；fixed 3c9345df4aec85a37e8a2a155e079db260d515b1仅已包含runtime模块与MSG，未接本后继 |
-| 实现目标 | ee9bd1179bb0e10828a1173beadcbd551c8be1bc |
+| 实现目标 | 5438e375a92f47c1a68d81aeed172a1bfdf05962 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/test/plugin-integration.test.ts, apps/web/test/plugin-management-integration.browser.ts, apps/web/test/plugin-management-integration.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 完整草稿与UNKNOWN操作原样重试已在真实界面通过；连接切换检查漏走附件保护确认，整体失败保留 |
-| 下一可用交付 | 补上公开离开确认步骤并固定复审，再安排断开撤权与双主题验收 |
-| 当前阻塞 | NONE |
+| 当前产出 | 完整草稿与UNKNOWN操作原样重试已在真实界面通过；连接切换保护确认已补齐并通过源码审查，后两组待验证 |
+| 下一可用交付 | 一次独立浏览器验证断开撤权与双主题，候选已准备，待统一运行窗口 |
+| 当前阻塞 | ACTIVE: 剩余两组界面验收尚未完成；源码前置已修并通过审查，等待新的独立验证窗口 |
 | 需用户决定 | NONE |
-| Review | APPROVED ee9bd1179bb0e10828a1173beadcbd551c8be1bc；限定source/local/准备；首轮与第二轮FAIL+ownedRETURN已独审接受，不冒完整browser通过；新确认前置待修 |
+| Review | APPROVED 5438e375a92f47c1a68d81aeed172a1bfdf05962；限定source/local继承与4行前置差量[根审](../../docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json)；第二actual FAILED2/4/RETURN由3bfd接受，新5438 browser NOT_RUN |
 | Claim | 61abce36-a4d1-4531-9b04-dedaae86108b v1 ACTIVE exact8；COMMITTED 2026-10-07T15:12:21.486Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,7 +36,7 @@
 | WPF-I01-03 | completed | workspace_panels_owner | 原验证分层保留，新source尚未验 |
 | WPF-I01-04 | completed | workspace_panels_owner | [f4335主线收口](../../docs/evidence/wpf-i01/history/legacy-f4335/status.md) |
 | WPF-I01-05 | completed | workspace_panels_owner | [固定source/local独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)；mounted验收归06 |
-| WPF-I01-06 | in-progress | workspace_panels_owner | [四direct与affected types实际记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)；[首browser失败原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/manifest.json)，0/4完整组 |
+| WPF-I01-06 | in-progress | workspace_panels_owner | [四direct与affected types实际记录](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)；[第二browser原件](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json)，2/4完整组/整体FAIL；5438前置已修待新actual |
 | WPF-I01-07 | in-progress | workspace_panels_owner | 源码/local及准备独审APPROVED；浏览器actual与合法main接收未完成 |
 
 ## 等待记录
@@ -61,7 +61,7 @@
 
 ## 首次实际浏览器结果
 
-[固定caller准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)：0PG、真实BrowserWorkspace+受控Cookie HTTP，四组；独立60s候选含15s清理/256MiB scratch/8MiB证据。旧准备独审APPROVED；首actual FAILED/0完整组、0截图、0registry writes。ee9bd实际已消费并整体FAILED/2of4；下一仅公开确认前置源码修，暂无runtime授权。见[原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。外层/Chrome生命周期与端口观察限制均写明，不复用local剩额。
+[固定caller准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)：0PG、真实BrowserWorkspace+受控Cookie HTTP，四组；独立60s候选含15s清理/256MiB scratch/8MiB证据。旧准备独审APPROVED；首actual FAILED/0完整组、0截图、0registry writes。ee9bd实际已消费并整体FAILED/2of4；公开确认前置5438已修并源码审通过；新actual暂无runtime授权。见[原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。外层/Chrome生命周期与端口观察限制均写明，不复用local剩额。
 
 ## 本次独审与准备修复
 
@@ -69,4 +69,4 @@
 
 ## 第二次浏览器实际
 
-[原件与精确范围](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/README.md)：ee9bd/d779实际前2组通过、整体FAILED，0PNG/3runtime writes；新60s13436已计/46564未用CLOSED。root3bfd已接受actual失败与RETURN；旧失败不改。待修复为公开离开附件保护确认前置，不改产品保护或超时，当前0工程child/NO_NEXT。
+[原件与精确范围](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/README.md)：ee9bd/d779实际前2组通过、整体FAILED，0PNG/3runtime writes；新60s13436已计/46564未用CLOSED。root3bfd已接受actual失败与RETURN；旧失败不改。5438已补公开离开附件保护确认前置并获root3bcc源码批准，不改产品保护或超时；[新独立60s候选](../../docs/evidence/wpf-i01/runtime-app/browser-protected-leave-prepared-20261007/phase.json)，当前0工程child/NO_NEXT。

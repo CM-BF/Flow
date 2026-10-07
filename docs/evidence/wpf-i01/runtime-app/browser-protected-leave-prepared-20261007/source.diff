@@ -1,0 +1,15 @@
+diff --git a/apps/web/test/plugin-management-integration.browser.ts b/apps/web/test/plugin-management-integration.browser.ts
+index 8a44f888f..37146d539 100644
+--- a/apps/web/test/plugin-management-integration.browser.ts
++++ b/apps/web/test/plugin-management-integration.browser.ts
+@@ -283,6 +283,10 @@ export async function checkPluginRuntimeApp({ browser, outputDirectory, signal }
+       await expect.poll(() => fixture.runtimeWrites.length).toBe(3);
+       await expect(command()).toContainText("正在提交"); await close();
+       await page.getByRole("button", { name: "Change connection", exact: true }).click();
++      const leaving = page.getByRole("dialog", { name: "Leave attachment drafts?", exact: true });
++      await expect(leaving).toBeVisible();
++      await leaving.getByRole("button", { name: "Leave view and retain saved records", exact: true }).click();
++      await expect(leaving).not.toBeVisible();
+       await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
+       fixture.releaseRuntime();
+       await page.getByLabel("Owner token", { exact: true }).fill("flow-fixture-only");

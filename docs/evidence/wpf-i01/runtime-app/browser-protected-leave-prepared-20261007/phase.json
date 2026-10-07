@@ -1,0 +1,57 @@
+{
+  "state": "PROPOSED_NOT_AUTHORIZED_NOT_RUN",
+  "proposedTotalMs": 60000,
+  "workMs": 45000,
+  "cleanupMs": 15000,
+  "maximumAttempts": 1,
+  "spentMs": 0,
+  "priorBrowserPhases": [
+    {
+      "state": "CLOSED",
+      "run": "i01-browser-20261007-160438-84ee0c",
+      "actual": "FAILED",
+      "chargeMs": 8540,
+      "unusedMs": 51460,
+      "transferCreditMs": 0,
+      "accounting": {
+        "path": "/private/tmp/i01-browser-admission-cridfl87/accounting.json",
+        "realpath": "/private/tmp/i01-browser-admission-cridfl87/accounting.json",
+        "bytes": 2415,
+        "sha256": "1a5582945d3ce9e4a1c489fa83ba0929cfe96c3595ea7341de342db759215023"
+      },
+      "manifest": {
+        "path": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+        "realpath": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+        "bytes": 3277,
+        "sha256": "cffbd4f6b778f767c0676c46501820507b418001751903b382a9118aac905713"
+      }
+    },
+    {
+      "state": "CLOSED",
+      "run": "i01-files-20261007-162618-5fbf4e",
+      "actual": "FAILED",
+      "chargeMs": 13436,
+      "unusedMs": 46564,
+      "transferCreditMs": 0,
+      "accounting": {
+        "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/accounting.json",
+        "realpath": "/private/tmp/i01-scoped-files-admission-1mrplt7y/accounting.json",
+        "bytes": 2786,
+        "sha256": "25c92c841b80eb707f4c8b9fa237d41ea23ca187df6796cef1135ac52148c6b5"
+      },
+      "manifest": {
+        "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json",
+        "realpath": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json",
+        "bytes": 3508,
+        "sha256": "64795de8b2a9e09ba94a35737437e6c7b12c1c1d71bd5ed5d232ee1c0ac72df1"
+      }
+    }
+  ],
+  "localPhase": {
+    "state": "CLOSED",
+    "chargeMs": 10834,
+    "unusedMs": 19166,
+    "transferCreditMs": 0
+  },
+  "authorization": "Source-only preparation; explicit new manager handoff/fresh complete resource validation required. No grant/env/launch."
+}

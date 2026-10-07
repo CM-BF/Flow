@@ -1,14 +1,14 @@
 # WPF-I01 当前后继独立 review
 
-状态：APPROVED（限定源码、相关局部检查与浏览器准备；首actual browser FAILED，0/4完整组；失败/ownedRETURN与scoped locator修复已独审，第二actual FAILED/2of4；公开确认前置待修）
+状态：APPROVED（限定固定源码与相关局部证据；新公开确认前置SOURCE_ONLY通过，修后browser NOT_RUN）。
 
-Target: `ee9bd1179bb0e10828a1173beadcbd551c8be1bc`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
+Target: `5438e375a92f47c1a68d81aeed172a1bfdf05962`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
-唯一源码入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source。原49d71由root [source/local正式审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json) 接受4新增authority direct PASS/10旧未选；affected noEmit首exit2与fixture导入修复后exit0保留，0blocking。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)已独立核验，非全Web检查或mounted证明。
+当前唯一[六source manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)。49d71源码/local由[root20d2](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)批准（4PASS/10未选、affected noEmit首2/fix0）；ee9bd scoped Files由[root5b002](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)批准。5438仅增加四行真实公开附件离开确认，获[root3bcc](../../docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json)APPROVED/0finding；产品、四组、原held ACK/reconnect/完整draft及timeout不变，无新工程运行。
 
-Caller [初审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json) 的可变metadata执行pin P2，已由[复审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)关闭。初审把两个metadata均简称at49d的措辞留历史：review旧pin匹配49d，status旧pin仅准备时工作树捕获。原自然plan更新同原理把其单一pin移historical，root消息明确接受；218执行输入、42外部pin与三caller没有产品/生命周期差量。[当前准备与精确manifest](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
+实际范围：第一49d/13ddb FAILED0/4/0PNG；第二ee9bd/d779 FAILED2/4/0PNG，完整草稿及UNKNOWN原key/body重试为已过两组，第三等待Connect超时，后续断开撤权/重连/双主题未完成。[root3bfd实际审](../../docs/evidence/wpf-i01/runtime-app/root-i01-second-failure-return-review-20261007.json)接收失败与完整ownedRETURN。源码链指出缺公开保护确认；无失败DOM不冒直接观察。旧原件与closed预算不改（8540与13436计费，未用51460与46564不转）。
 
-首实际执行49d71/metadata13ddb为FAILED：Files全页locator匹配两按钮，0/4完整组、0PNG。原件见[首实际manifest](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/manifest.json)，资源完整归还，8540计费/51460未用封闭；单行scoped locator修复ee9bd已由[root集中审](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)接受。App/ConversationThread/ComposerActions归属链保证语义收窄，无first/nth；其余五source及所有四组判据未变，新actual无授权。真实BrowserWorkspace加受控Cookie HTTP不等真实中心session安全、provider、包执行或部署。要求actual outerexit与finalstdout终态、双EOF/drop0和独立exactRETURN；早期raw PASSED不足。fixture关闭与group absence不冒独立逐端口探测。原I01/MSG/runtime叶子通过仅历史。
+[第三准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)仅独立60s=45work+15cleanup候选，无grant。三caller逐字不变，218source仅browser换pin、42external同；plan/status/review仅历史provenance，未来绑定fresh clean execution HEAD。预备与原P2修复[626](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json)/[739](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)历史保留。实际验收必须outerexit与finalstdout终态/精确四组/完整ownedcleanup，早期raw不够；fixture.close与groupabsence不冒独立portprobe。真实App/受控Cookie HTTP不等真实中心安全、provider或部署。
 
 ## 原始review历史（不作当前批准）
 
@@ -65,4 +65,4 @@ Root 实际执行/核对：
 
 ## 第二实际 ee9bd / d779
 
-[root3bfd实际审](../../docs/evidence/wpf-i01/runtime-app/root-i01-second-failure-return-review-20261007.json)接收FAILED+FULLRETURN；[16原件](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json)保原。仅前两完整组通过，第三protected connection前置未完成，第四未到、0PNG。静态链显示测试遗漏附件离开确认，未存失败DOM不冒直接观察。源修待单独固定；无第三browser批准。
+[root3bfd实际审](../../docs/evidence/wpf-i01/runtime-app/root-i01-second-failure-return-review-20261007.json)接收FAILED+FULLRETURN；[16原件](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json)保原。仅前两完整组通过，第三protected connection前置未完成，第四未到、0PNG。静态链显示测试遗漏附件离开确认，未存失败DOM不冒直接观察。源修5438已单独固定并获root3bcc源码批准；无第三browser批准。

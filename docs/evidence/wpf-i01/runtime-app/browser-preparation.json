@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-07T16:30:09.524Z",
-  "state": "CONSUMED_FAILED_2_OF_4_FULL_RETURN_NO_RETRY",
-  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
-  "packet": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/manifest.json",
-  "bytes": 4238,
-  "sha256": "0211d709aa2091a2c9520ba5cd1e36606cd19f227e772a1262c04273f1340bb2",
+  "at": "2026-10-07T16:34:45.149Z",
+  "state": "PREPARED_SOURCE_APPROVED_NOT_RUN_NO_GRANT",
+  "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "packet": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/manifest.json",
+  "bytes": 4093,
+  "sha256": "de5f3f948003f1e1d3b7360cc4871540ef3fe5d488be961f40ea43c951f10ad0",
   "runtimeGranted": false,
   "budgetProposal": {
     "totalMs": 60000,
@@ -12,17 +12,17 @@
     "cleanupMs": 15000,
     "scratchBytes": 268435456,
     "rawBytes": 8388608,
-    "minimumFreeBytes": 17454858240
+    "minimumFreeBytes": 18119655424
   },
   "notes": [
-    "First browser actual FAILED0/4/0PNG/0registry writes with exact owned RETURN; charge8540/60k unused51460 CLOSED, not transferred.",
-    "Scoped Files single-line correction approved5b002; all other product/tests and four groups remain unchanged.",
-    "Three caller files byte-identical; only browser source pin, declared source and future minimum floor changed. New private namespace, no gate/env/runtime.",
-    "New independent candidate60s=45work+15cleanup awaits explicit manager handoff/current complete floor. No true center/PG/provider or individual HTTP port probe attestation.",
-    "Accept only actual outerexit plus final stdout terminal, complete groups and exact resources; early raw alone insufficient."
+    "Second actual ee9bd/d779 FAILED2/4 with full owned RETURN preserved; first49d FAILED0/4 preserved.",
+    "Third source5438 adds only public protection dialog visible/confirmation/hidden before original Connect heading; four original groups and all downstream draft/authority assertions unchanged.",
+    "Caller run.py/worker.mjs/capture.py byte-identical;218 source pins only browser changed,42external unchanged; no product/permissions/lifecycle expansion.",
+    "New separate single60s=45work+15cleanup proposal, no borrowed prior credit;0PG/2ownedHTTP/1Chrome/native sandbox;256MiB scratch+8MiB evidence.",
+    "Acceptance needs actual outerexit and finalstdout, not early raw; cleanup unknown stops. No independent HTTP port probe claimed."
   ],
-  "latestFutureMinimumFreeBytes": 17454858240,
-  "futureFloorSource": "root/manager latest complete declared floor after AV03/K01 potential; future fresh grant must use latest higher sum, frozen packet minimum remains historical.",
+  "latestFutureMinimumFreeBytes": 18119655424,
+  "futureFloorSource": "Historical latest consumed manager floor only; third proposal adds264MiB potential exactly once by manager, future grant must use latest complete higher sum/allKEEP/one reserve. No physical resource sampling in this source-only batch.",
   "sourceCount": 218,
   "externalCount": 42,
   "historicalOwnMetadataCount": 3,
@@ -42,10 +42,10 @@
     "sha256": "73918579217542b235d934f488eb4f4da739026c747747a446a4de3c5ec95fb2"
   },
   "routinePlanProvenanceApproval": "root direct message accepts third exact ownplan provenance move; no caller/product change or new source review needed.",
-  "currentPreparedArchive": "browser-scoped-files-prepared-20261007/manifest.json",
+  "currentPreparedArchive": "browser-protected-leave-prepared-20261007/manifest.json",
   "executionMetadata": {
-    "sourceFixHead": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
-    "policy": "Fresh clean metadata HEAD produced by this seal, verified local=actual remote, is execution candidate only; no gate/grant currently."
+    "sourceFixHead": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+    "policy": "Execution candidate is the final clean metadata HEAD from this seal; a future grant must fresh-check real local/remote equality. No grant/env/runtime currently."
   },
   "sourceDeltaAndFirstFailureReview": {
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json",
@@ -57,9 +57,22 @@
     "original": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json"
   },
   "phaseResult": {
-    "chargeMs": 13436,
-    "unusedMs": 46564,
-    "state": "CLOSED",
+    "state": "CLOSED_PRIOR_PHASES",
+    "firstChargeMs": 8540,
+    "firstUnusedClosedMs": 51460,
+    "secondChargeMs": 13436,
+    "secondUnusedClosedMs": 46564,
+    "transferCreditMs": 0,
     "automaticRetry": false
+  },
+  "publicProtectionPreconditionReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json",
+    "bytes": 2696,
+    "sha256": "3bccb60a207ee7b0c1773549841b6b32afc503a01fef420e9ea75598b39c2b7e"
+  },
+  "binding": {
+    "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/binding.json",
+    "bytes": 110368,
+    "sha256": "21851b8c1a17003e00e7cd0aac2e6859636ff098a2e53bb9e3719723688a0e4c"
   }
 }

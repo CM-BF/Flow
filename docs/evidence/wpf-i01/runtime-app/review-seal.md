@@ -22,3 +22,7 @@ Clean-code/已装技能方法复用：仅test定位一行，把公共Files绑定
 ## 2026-10-07T16:30:09.524Z second browser failure/clean-code checkpoint
 
 Actual ownership/cleanup/error paths rechecked from exact originals: first two complete groups remain real scoped evidence; held third command does not imply revoked/reconnected success. Fixed four-source read identifies public attachment protection confirmation as missing test precondition; no product mutation or widened timeout. Retain original result, phase charge13436/CLOSED and no independent port probe. Current status updated atSTART and immediately afterRETURN before archive. No Node/types/direct or new browser launched.
+
+## 2026-10-07T16:34:45.149Z 公开离开确认安全点
+
+复用已安装find-skills/clean-code与现Playwright方法：只在既有第三组加入命名清楚的leaving locator及公开确认，四行无新抽象/条件跳过/内部权限穿透。先核claim61abv1 exact8/overlap[]及cf13 clean；root3bcc独审通过。命名/单责/接口/错误处理检查无新增问题，未捕获异常改绿；原5s/全部下游断言和3caller不变。静态218 fixedGit/disk对应完成；不运行types/direct/Node/browser。当前真实问题仍后两组未actual，不从源码批准推PASS。新候选仅数据/sourcepin/provenance变化，两个失败阶段封闭且不转未用额度。
