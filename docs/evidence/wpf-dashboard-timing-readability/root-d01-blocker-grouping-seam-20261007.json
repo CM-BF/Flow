@@ -1,0 +1,41 @@
+{
+  "createdAt": "2026-10-07T16:58:02.254904+00:00",
+  "state": "READ_ONLY_DESIGN_INPUT_FOR_EXISTING_D01_NOT_IMPLEMENTED",
+  "request": "GO incoming message in this turn: user-first parent summary, preserve TIMING02 existing plan, add truthful blocker reading groups; no new major task or manual fact source.",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "commit": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+      "bytes": 38207,
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "matchesObservedWorktree": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "commit": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "matchesObservedWorktree": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "commit": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "matchesObservedWorktree": true
+    }
+  ],
+  "existingBoundary": "human.mjs:56 selects blockerIds from current active owner records; app.js:233–246 renders each via compactTask. task-links.mjs:59–90 already resolves declarations with source freshness, canonical links, self/cycle/depth and explicit big-parent rules.",
+  "criticalDetail": "task-links.mjs:74 assigns targetId before known state is established, for navigation to registered parent details even when relationship is unknown. Never group on targetId alone.",
+  "design": "Keep blocker membership and original per-task text unchanged. Group only subtask with links.parent.state=known and a present valid big parent. A parent without its own blocker is a navigation heading, not an inferred blocked task. Explicit current big tasks form their own groups; unknown relationships remain individually visible with reason. Use resolved relationships only; no new parser guesses or duplicate ownership map.",
+  "focusedAcceptance": [
+    "Parent and child each blocked: same group with two separate entries, both owners and original texts.",
+    "Only child blocked: parent heading is navigational; parent state remains its own.",
+    "Unknown parent relationship but targetId present: separate unknown entry, no grouping.",
+    "Stale parent, self-link, cyclic or over-depth declaration: existing resolver reason remains visible.",
+    "Identical blocker text across distinct tasks/owners: both retained; no text deduplication.",
+    "Every entry keeps task detail/source access and safe text rendering; source and review/main states remain independent."
+  ],
+  "skills": "Reused local find-skills, clean-code and codebase-design methods: one existing resolver owns relationship truth; renderer only formats; no added state system.",
+  "limits": "No implementation, tests, product import, server/PG/Chrome or project edits. Existing release and I01 delivery stay first. Any later writer needs fresh exact scope and independent worktree."
+}

@@ -1,0 +1,39 @@
+{
+  "head": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+  "claimVersion": 1,
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--input-type=module",
+    "-e",
+    "import assert from 'node:assert/strict';\nimport {readFileSync,existsSync} from 'node:fs';\nimport path from 'node:path';\nimport vm from 'node:vm';\nimport {parseStatus} from './apps/execution-dashboard/src/status.mjs';\nconst statusPath='plans/wpf-dashboard-timing-readability/status.md';\nconst status=parseStatus(readFileSync(statusPath,'utf8'),'WPF-DASHBOARD-TIMING02');\nassert.deepEqual(status.errors,[]); assert.deepEqual(status.human.missing,[]); assert.deepEqual(status.timing.issues,[]); assert.deepEqual(status.implementation.errors,[]);\nassert.equal(status.timing.completed.state,'not_completed'); assert.equal(status.taskLinks.parent.id,'D01');\nlet links=0;\nfor(const name of ['plan.md','status.md','review.md']) {\n const p=path.join('plans/wpf-dashboard-timing-readability',name);\n for(const m of readFileSync(p,'utf8').matchAll(/\\]\\(([^)]+)\\)/g)) {const link=m[1].split('#')[0];if(!link||/^https?:/.test(link))continue;assert.ok(existsSync(path.resolve(path.dirname(p),link)),link);links++;}\n}\nfor(const p of ['apps/execution-dashboard/public/app.js','apps/execution-dashboard/test/task-timing.browser.mjs'])new vm.SourceTextModule(readFileSync(p,'utf8'),{identifier:p});\nconsole.log(JSON.stringify({statusErrors:status.errors,humanMissing:status.human.missing,timingIssues:status.timing.issues,parent:status.taskLinks.parent.id,links,moduleSyntax:2,browser:'NOT_RUN'}));\n"
+  ],
+  "outerStartedAt": "2026-10-07T20:51:19.577881+00:00",
+  "startedAt": "2026-10-07T20:51:19.637977+00:00",
+  "completedAt": "2026-10-07T20:51:19.682289+00:00",
+  "pid": 28380,
+  "pgid": 28380,
+  "actualExit": 0,
+  "elapsedMs": 104.40399998333305,
+  "chargeMs": 105,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "groupAbsent": true,
+  "scratchAbsent": true,
+  "freeBytes": 19203076096,
+  "floorBytes": 18959564800,
+  "browser": "NOT_RUN",
+  "raw": {
+    "stdout.log": {
+      "bytes": 118,
+      "sha256": "400f9048b193281a1f524a0388dd0e0b21f134fd891a69a8a3fbed09b2901d2c"
+    },
+    "stderr.log": {
+      "bytes": 173,
+      "sha256": "3ac389278578c77ba8e36db3e639ce7f45da69ba5ab96b66b7a96bf1d3ffa1f3"
+    }
+  }
+}

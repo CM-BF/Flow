@@ -9,3 +9,9 @@
 - [ ] **TIMING02-03** 固定source独审、main接收与发布分列。
 
 25min/16MiB源段，pure累计60s，最多3次各20s含5scleanup，单Node；0PG/HTTP/Chrome/provider/build/install。
+
+## 已实现与模块边界
+
+status解析新增waitingTable，保完整waiting原文，等待issues独立；human派生只排序和按现resolver已验证关系归组。app复用一个本地Intl formatter并保每值GMT偏移、原UTC与来源下钻；刷新仅改变历时/等待新鲜度节点，不替换阅读中的表、依据或所选文字。现summary DTO不扩载等待表，因此首屏仅紧凑任务时间，详情展示可读等待原因。
+
+浏览器候选复用原五组与双390，并加信号归组一组；尚未执行。完整交付仍需独审、浏览器与main接收，本task NOT_COMPLETED。

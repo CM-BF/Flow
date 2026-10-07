@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "path": "local/first-failed/actual.json",
+      "bytes": 2120,
+      "sha256": "51b90fe69a1d2ff96f9be432dbfae4bdc673d89e6b79a0ebc2b56cee020ac176"
+    },
+    {
+      "path": "local/first-failed/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/first-failed/stdout.log",
+      "bytes": 9600,
+      "sha256": "c6d15401beffee4041a3f39598c1f759c6b894ccbcf9adb239df17b0a9dfecc6"
+    },
+    {
+      "path": "local/second-passed/actual.json",
+      "bytes": 2176,
+      "sha256": "8a26fa4b501e8fb589f557d909de9b2237e11409ccc818af2060c391713240e8"
+    },
+    {
+      "path": "local/second-passed/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/second-passed/stdout.log",
+      "bytes": 8656,
+      "sha256": "6848f5fd666fe46db6437c3636306de637387758c4eac40f3eeac1b55f5d9917"
+    },
+    {
+      "path": "local/third-static/actual.json",
+      "bytes": 2403,
+      "sha256": "f8e7f374140a7f5b5d5914690b20d48f26bb25024209716be7deb7d5d8c8ba57"
+    },
+    {
+      "path": "local/third-static/stderr.log",
+      "bytes": 173,
+      "sha256": "3ac389278578c77ba8e36db3e639ce7f45da69ba5ab96b66b7a96bf1d3ffa1f3"
+    },
+    {
+      "path": "local/third-static/stdout.log",
+      "bytes": 118,
+      "sha256": "400f9048b193281a1f524a0388dd0e0b21f134fd891a69a8a3fbed09b2901d2c"
+    }
+  ],
+  "originals": [
+    "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/timing02-local-m3ekzvhw",
+    "/private/tmp/timing02-local2-shj58cs4",
+    "/private/tmp/timing02-static-psrzzdtd"
+  ],
+  "firstFailurePreserved": true
+}
