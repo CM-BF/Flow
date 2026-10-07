@@ -1,0 +1,17 @@
+{
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewer": "db_transaction_owner; relayed by Mika",
+  "reviewedAt": "2026-10-07T17:03:37Z",
+  "implementation": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "packet": "81fa8160e91091d3b5125cd7ed94f251e1467b21",
+  "manifestSha256": "c786d78b2711469c7ee5306e46ba19d55e280a92b71c013eb5922ae400463477",
+  "verifiedBindings": 12,
+  "verifiedBytes": 120259,
+  "findings": {
+    "P1": 0,
+    "P2": 0,
+    "K01-PG-01": "CLOSED in source; actual first-run cause remains UNKNOWN"
+  },
+  "verification": "load/factory bounded; late factory prohibited; unresolved resources KEEP; bounded progress and primary preservation; observer/driver/e2e timing distinct; 9 pure cases and focused noEmit0; raw519B, supervisor2636ms/operator2847ms; exact scratch receipts",
+  "scope": "source and synthetic/local result only; no reviewer execution, PG/import/HTTP; original 8 FAIL + 3 recovery records unchanged; no new PG grant"
+}

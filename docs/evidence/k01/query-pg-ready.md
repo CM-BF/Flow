@@ -1,3 +1,19 @@
+# Current candidate after startup repair — NOT_OPEN
+
+Source `9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb` was independently approved at 2026-10-07T17:03:37Z for source/local results only. Canonical next input: [query-pg-startup-runtime-inputs.json](query-pg-startup-runtime-inputs.json). It binds 18 experiment files, 22 runtime/native/loader files plus 5 metadata bindings (27 rows), 17 external and 3 internal aliases, and the unchanged 245 fixed product files/33 SQL closure. No modules were imported here.
+
+The only next candidate is a fresh 120-second window (70 work / 40 cleanup / 10 receipt), max configured 18 PG connections, the unchanged 1856-chunk / 5.5MiB seed, 10 EXPLAIN / 30 timed SELECT / at most 256 HTTP calls. DB128MiB is an end sample, not a peak cap. Local8MiB includes raw2MiB: bounded progress (64 records, 96KiB each, 768KiB total) uses this same raw budget. Reserve predicates are headroom within the existing quota, never additional allocations. Driver roundtrip, guard/observer and client end-to-end are separate; EXPLAIN server fields are not a Node CPU claim. Background scheduler remains enabled.
+
+`query-pg-startup-closed-permit.json` is CLOSED and expired, with no required-free admission value. Do not run it. The unchanged operator command, only after replacement by a separately granted actual permit, is:
+
+```text
+/opt/homebrew/bin/python3.13 -I -B /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/entry.py pg --permit <new-explicit-actual-permit>
+```
+
+No namespace was created in this preparation. Private configuration remains the fixed Git fixture expression supplied only at actual admission; no value/hash recorded. Manager must assign a fresh window and full resource floor. Prior first-PG failure, original runtime inputs/permits/raw and database/scratch KEEP remain immutable; recovery confirmed momentary zero connections only. No causal attribution to W01, no new PG result. Full-module import side effects and real Fastify/PG cleanup are not proved by the 9 synthetic checks.
+
+## Historical pre-first-run candidate below (superseded; not a new grant)
+
 # K01-06 future PG candidate — NOT_OPEN
 
 2026-10-07 15:55:02–16:07:02 UTC is a metadata/runtime-input preparation segment only. The source/local-result review is approved; this candidate has no execution grant, resource reservation or created namespace. Original SVC09A remains sole NEXT and Web779/cd27 compatibility has priority afterward. The current 16,175,529,984-byte preparation floor is a manager accounting input, not a sampled free value or future PG admission threshold.

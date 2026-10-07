@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:59 UTC |
+| 最近更新 | 2026-10-07 17:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -10,29 +10,29 @@
 | co-lead | mika |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现/修复段已封存；P2窄修段16:15:34Z–16:23:34Z已封存；当前16:29:15Z起≤3分钟仅批准归档；来源clock与Mika派工 |
+| 任务时间来源 | 旧实现/失败/恢复段均保留；本次metadata段2026-10-07T17:05:35Z起，截止17:13:35Z；来源clock与Mika派工 |
 | 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 ACTIVE，15:01:40.433Z COMMITTED amend；原两metadata scope+experiments/knowledge-search |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | actual准备起点c659bc204=origin clean；新permit/准入/status提交后运行，旧源/raw/KEEP不改 |
-| 工作分支状态 | review（源码及纯结果已审；真实PG首次FAILED/HOLD，待窄审） |
+| 工作树dirty状态 | 本次起点81fa8160=origin clean；仅归档review及候选metadata，实验源码9c802db零diff；最终提交后STOP |
+| 工作分支状态 | integration（源与局部结果已独审；新实际诊断NOT_OPEN，未集成） |
 | 检查状态 | PASSED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；9纯行为/focused noEmit0；原首次PG FAILED，不含本修复真实PG验证 |
-| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
+| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。旧首次PG FAILED，修复后真实PG未运行 |
 | 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 诊断启动期限、失败阶段留存与时延口径已修复并通过局部行为检查 |
-| 下一可用交付 | 独立审查修复后，另行验证真实检索诊断 |
+| 当前产出 | 诊断启动、失败留存与计时修复已独审通过；下一次诊断输入已固定 |
+| 下一可用交付 | 在另行分配的专库窗口验证真实检索查询计划 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；本次9c802db修复待独审，历史PG失败/恢复各有独审 |
+| Review | [review.md](review.md)；9c802db已独审APPROVED，限source/local；下一实际窗口NOT_OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -136,3 +136,7 @@
 2026-10-07T16:56:56.214955+00:00: 生命周期/有限progress/计时小接缝源码已准备；旧listen3保持，新增6纯行为例（包含多个明确边界），待本段首次local检查。测试自身只创建child TMP内小文件且finally删除；0PG/HTTP。当前旧PG失败仍为事实，不把本源修未经检查写成绿。
 
 2026-10-07T16:59:48.955881+00:00: 本段源码/局部结果固定9c802db，9/9纯行为+focusednoEmit0，2child operator2847ms/raw519B，两个TMP身份/归还明确；actualRETURN16:57:35.046460Z已直交architecture_read。源码与两run逐字同一target，未测试后再改可执行代码；0PG/HTTP/provider。唯一[增量manifest](../../docs/evidence/k01/query-entry-startup-repair-20261007T165308/manifest.json)，不复制245旧输入/原raw。有限progress与import/factory期限、observer计时边界均待db一次只读审查；旧P2不自行标独审关闭。提交push后source与actual全部STOP，原K01-06/08～10仍开放。
+
+2026-10-07T17:07:18.812917+00:00：fresh claim30965 v2/3scope ACTIVE，81fa8160=origin clean；本段≤8min/new≤1MiB仅metadata。归档17:03:37独审，current candidate [query-pg-startup-runtime-inputs.json](../../docs/evidence/k01/query-pg-startup-runtime-inputs.json)绑定18实验文件/27runtime行/17外部+3内部alias/245固定产品输入及33SQL；新增diagnostic已纳入，preparation旧记录单独绑定不当当前状态。120s=70+40+10、18配置连接、DB128MiB末样本/local8MiB含raw2MiB，progress原件计入同raw额，预留不重复加额。新permit CLOSED且expired，0新namespace/工程/PG/HTTP/凭据读取；old failure/runtime原件与KEEP不改。K01-06/08～10保持开放；固定提交推送后全STOP，claim保留，经理另排候选。
+
+经理后到事实：Original R4 sole NEXT217.5s，current完整forward15,927,083,008B；本组新13MiB分类提交后预计15,915,548,672B但此处未记作已接受。K01候选没有actual授权/资源实采，未来floor必须另获经理完整值，历史gate不复用；prior KEEP/backgrowth128MiB继续计入。

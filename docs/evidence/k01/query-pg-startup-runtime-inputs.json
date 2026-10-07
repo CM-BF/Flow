@@ -1,0 +1,744 @@
+{
+  "schema": 1,
+  "kind": "runtime input candidate, no execution grant",
+  "recordedAt": "2026-10-07T17:07:18.812917+00:00",
+  "preparationSegment": {
+    "startedAt": "2026-10-07T17:05:35Z",
+    "deadline": "2026-10-07T17:13:35Z",
+    "newMetadataCapBytes": 1048576,
+    "engineeringChildren": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "models": 0,
+    "actualNamespaceCreated": false
+  },
+  "implementationTarget": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "independentReview": {
+    "path": "docs/evidence/k01/query-entry-startup-independent-review.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-entry-startup-independent-review.json",
+    "bytes": 970,
+    "sha256": "2538fa2535b2510bcef37fc1280d8ee75312401f1761b71d5d1dbcf260722b27"
+  },
+  "sourceManifest": {
+    "path": "experiments/knowledge-search/source-inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/source-inputs.json",
+    "bytes": 49602,
+    "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+  },
+  "fixedSourceVerification": {
+    "count": 245,
+    "bytes": 1112251,
+    "migrationSqlCount": 33,
+    "method": "Existing 245 materialized bytes/SHA rechecked against unchanged fixed Git manifest; no imports/SQL/credential reads. Git binding independently reviewed previously.",
+    "errors": []
+  },
+  "dependenciesManifest": {
+    "path": "experiments/knowledge-search/dependencies.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/dependencies.json",
+    "bytes": 5171,
+    "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+  },
+  "aliases": [
+    {
+      "name": "pg",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1",
+      "matched": true
+    },
+    {
+      "name": "zod",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5",
+      "matched": true
+    },
+    {
+      "name": "fastify",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/fastify",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5",
+      "matched": true
+    },
+    {
+      "name": "@fastify/cors",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@fastify/cors",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0",
+      "matched": true
+    },
+    {
+      "name": "pg-boss",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0",
+      "matched": true
+    },
+    {
+      "name": "npm-package-arg",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "version": "13.0.2",
+      "matched": true
+    },
+    {
+      "name": "pacote",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "version": "21.5.1",
+      "matched": true
+    },
+    {
+      "name": "ssri",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "version": "13.0.1",
+      "matched": true
+    },
+    {
+      "name": "tar",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "version": "7.5.22",
+      "matched": true
+    },
+    {
+      "name": "vitest",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/vitest",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "version": "4.0.18",
+      "matched": true
+    },
+    {
+      "name": "tsx",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/tsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15",
+      "matched": true
+    },
+    {
+      "name": "typescript",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/typescript",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "version": "5.9.3",
+      "matched": true
+    },
+    {
+      "name": "@types/node",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@types/node",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "version": "24.19.1",
+      "matched": true
+    },
+    {
+      "name": "@types/pg",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@types/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "version": "8.23.1",
+      "matched": true
+    },
+    {
+      "name": "@types/npm-package-arg",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@types/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "version": "6.1.4",
+      "matched": true
+    },
+    {
+      "name": "@types/pacote",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@types/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "version": "11.1.8",
+      "matched": true
+    },
+    {
+      "name": "@types/ssri",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@types/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "version": "7.1.5",
+      "matched": true
+    },
+    {
+      "name": "@flow/contracts",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/source/packages/contracts",
+      "matched": true
+    },
+    {
+      "name": "@flow/client",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/source/packages/client",
+      "matched": true
+    },
+    {
+      "name": "@flow/plugin-runtime",
+      "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/source/packages/plugin-runtime",
+      "matched": true
+    }
+  ],
+  "runtime": {
+    "NodeVersion": "24.20.0",
+    "PythonVersion": "3.13.3 (Homebrew 3.13.3_1)",
+    "versionMethod": "fixed Cellar realpath plus INSTALL_RECEIPT; no --version execution",
+    "pnpmBaseline": "9.15.4 from fixed product packageManager; pnpm not invoked",
+    "executablesAndPrimaryLibraries": [
+      {
+        "path": "/opt/homebrew/opt/node@24/bin/node",
+        "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "bytes": 50320,
+        "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+      },
+      {
+        "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+        "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+        "bytes": 67359104,
+        "sha256": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8"
+      },
+      {
+        "path": "/opt/homebrew/bin/python3.13",
+        "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+        "bytes": 52640,
+        "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+      },
+      {
+        "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/Python",
+        "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/Python",
+        "bytes": 5080256,
+        "sha256": "5e16d0e87dfb1ad82447889e3a898da80d632e6bea62901f0d715c359a71f7b0"
+      }
+    ],
+    "tsxVersion": "4.23.15",
+    "esbuildVersion": "0.28.2",
+    "loaderBindings": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+        "bytes": 332,
+        "sha256": "97a9d7b9d959f9528c46660beedcef69adc1ae29c71948b1e695860511a711d5"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+        "bytes": 834,
+        "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+        "bytes": 675,
+        "sha256": "a57842a725ba112ab029d3a0748f4ba5dc7b7a38bc9d38e7c4985af36aaa3c84"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+        "bytes": 1272,
+        "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+        "bytes": 55651,
+        "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+        "bytes": 13515,
+        "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+        "bytes": 13462,
+        "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+        "bytes": 604,
+        "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+        "bytes": 94753,
+        "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+        "bytes": 21001,
+        "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+        "bytes": 39218,
+        "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+        "bytes": 782,
+        "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+        "bytes": 1663,
+        "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+        "bytes": 3980,
+        "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+        "bytes": 97463,
+        "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+        "bytes": 382,
+        "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+        "bytes": 10590882,
+        "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+      }
+    ],
+    "loaderBindingScope": "tsx literal relative imports from actual loader and #cjs-loader, package metadata, esbuild JS/native helper. Not a claim to hash every OS dylib/transitive node_modules file. No loader imported.",
+    "ops14": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  },
+  "invocation": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search",
+    "operatorArgv": [
+      "/opt/homebrew/bin/python3.13",
+      "-I",
+      "-B",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/entry.py",
+      "pg",
+      "--permit",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-pg-startup-closed-permit.json"
+    ],
+    "childArgv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--import",
+      "tsx",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/run.ts"
+    ],
+    "state": "CLOSED_AND_EXPIRED; do not execute",
+    "candidateRecordPathCurrentlyAbsent": true,
+    "namespace": "operator creates .scratch/k01-<32hex UUID> only after actual admission; DB flow_k01_query_<32hex UUID>, marker UUID + OID/owner receipt",
+    "privateConfiguration": "Mika confirmed fixed3c9345 knowledge/fixture.ts:13 FLOW_K01_TEST_ADMIN/local test fallback may privately map to FLOW_K01_QUERY_ADMIN_URL. No value or credential hash recorded; no connect."
+  },
+  "closedPermit": {
+    "path": "docs/evidence/k01/query-pg-startup-closed-permit.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-pg-startup-closed-permit.json",
+    "bytes": 3275,
+    "sha256": "ece1a5b92b410fe508c0e11bfbdacbc914104857f2ec2c603213716cebd6aab1"
+  },
+  "candidateBudget": {
+    "totalSeconds": 120,
+    "workSeconds": 70,
+    "cleanupSeconds": 40,
+    "receiptSeconds": 10,
+    "configuredConnections": {
+      "admin": 1,
+      "auxiliary": 6,
+      "business": 8,
+      "pgBoss": 3,
+      "total": 18
+    },
+    "chunksMax": 1856,
+    "retainedRawBytesMax": 5767168,
+    "explainCount": 10,
+    "ordinaryTimedSearchSelects": 30,
+    "publicHttpMax": 256,
+    "rawPlanBytesEachMax": 65536,
+    "searchJsonBytesMax": 49152,
+    "httpAggregateBytesMax": 4194304,
+    "databaseFinalSampleBytesMax": 134217728,
+    "newLocalTmpEvidenceAggregateBytesMax": 8388608,
+    "aggregateRawBytesMax": 2097152,
+    "realizedCounts": "New candidate NOT_RUN; original consumed PG run FAILED with no final measurements; 30 SELECT sample target excludes setup/gold/background/transaction SQL",
+    "noProvider": true,
+    "progress": {
+      "maxRecords": 64,
+      "perRecordBytes": 98304,
+      "aggregateBytes": 786432,
+      "accounting": "progress.jsonl lives in new namespace and is counted once in retained runtime raw; not additional quota; any later copy into evidence also consumes aggregate quota"
+    },
+    "timing": {
+      "absoluteWallMs": 120000,
+      "workUntilMs": 70000,
+      "cleanupUntilMs": 110000,
+      "receiptUntilMs": 120000,
+      "cpuLimit": "No CPU quota or server-CPU inference; one supervised Node plus its loader child group; scheduler/background remain enabled",
+      "observerBeforeQueryMs": "synchronous budget guard, outside driver interval",
+      "clientSqlRoundTripMs": "driver await includes client/network/decoding; not PG CPU",
+      "clientEndToEndMs": "guard + driver await; later JSON sizing/progress persistence outside this interval",
+      "pgExplain": "EXPLAIN ANALYZE TIMING OFF server plan/execution fields separately; finite n3 SELECT and n1 HTTP not stable tail/SLO"
+    }
+  },
+  "resourceAdmission": {
+    "preparationOnly": true,
+    "managerCurrentForwardBytes": 15927083008,
+    "managerPendingReclassificationBytes": 15915548672,
+    "reclassificationState": "reported to manager, not yet accepted in this record",
+    "freshFreeMeasured": false,
+    "futureRuntimeFloor": "NOT_GRANTED: must receive a future manager full floor and fresh admission; never reuse historical14.893/18.129 gates",
+    "scheduling": "Original R4 is current sole NEXT217.5s; K01 candidate has no NEXT/reservation; prior KEEP/backgrowth128MiB remains charged"
+  },
+  "limits": [
+    "DB128MiB is final sample, not hard peak enforcement.",
+    "First actual FAILED/HOLD/resourceConfirmed=false remains immutable; recovery proved a momentary zero connections and known compute close only; DB/scratch KEEP untouched.",
+    "No source import/probe executed in this metadata segment. Full 245-module/thirdparty top-level absence of external effects has not been proved; startup uses existing absolute deadlines and phase facts.",
+    "No old .local/.scratch/KEEP read or cleanup. Prior runtime-input and permits remain frozen; this is the sole current future candidate."
+  ],
+  "environment": {
+    "allowlist": {
+      "PATH": "'/usr/bin:/bin'",
+      "LANG": "'C'",
+      "LC_ALL": "'C'",
+      "TZ": "'UTC'",
+      "TMPDIR": "str(tmp)",
+      "TMP": "str(tmp)",
+      "TEMP": "str(tmp)",
+      "NODE_DISABLE_COMPILE_CACHE": "'1'",
+      "TSX_DISABLE_CACHE": "'1'",
+      "PYTHONDONTWRITEBYTECODE": "'1'",
+      "TSX_TSCONFIG_PATH": "str(ROOT / 'types.tsconfig.json')",
+      "FLOW_K01_QUERY_CACHE": "str(tmp / 'cache')",
+      "FLOW_K01_QUERY_START_MS": "str(int(started * 1000))",
+      "FLOW_K01_QUERY_NAMESPACE": "str(tmp)",
+      "FLOW_K01_QUERY_WINDOW": "permit.get('window', '')",
+      "FLOW_K01_QUERY_PG_OPEN": "'NOT_OPEN'",
+      "GIT_CONFIG_NOSYSTEM": "'1'",
+      "GIT_CONFIG_GLOBAL": "'/dev/null'",
+      "GIT_TERMINAL_PROMPT": "'0'",
+      "FLOW_K01_QUERY_RECORD_DIRECTORY": "permit.get('recordDirectory', '')",
+      "FLOW_K01_QUERY_BASE_BYTES": "str(logical_bytes(ROOT))"
+    },
+    "pgOnlyAdditionalKey": "FLOW_K01_QUERY_ADMIN_URL",
+    "method": "AST literal keys / expressions only; did not import entry or inspect host env",
+    "privateSourceCandidate": {
+      "fixedCommit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+      "path": "apps/server/src/knowledge/fixture.ts",
+      "line": 13,
+      "existingOverride": "FLOW_K01_TEST_ADMIN",
+      "futureMapping": "private FLOW_K01_TEST_ADMIN -> FLOW_K01_QUERY_ADMIN_URL",
+      "fallback": "fixed local test fallback exists; no URL copied or probed",
+      "confirmedUse": "Mika confirmed at this16:02:16 segment authorization; actual value not loaded"
+    }
+  },
+  "deltaReview": {
+    "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "target": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+    "reviewedAt": "2026-10-07T17:03:37Z",
+    "receipt": "docs/evidence/k01/query-entry-startup-independent-review.json",
+    "limitations": "source/local only; no new actual window"
+  },
+  "aggregateStorageGate": {
+    "localBytes": 8388608,
+    "rawBytes": 2097152,
+    "workReserveBytes": 524288,
+    "parentReserveBytes": 196608,
+    "counting": "One new namespace plus one run record, plus fixed experiment baseline for local8MiB. All new runtime files including progress count within raw2MiB, no progress extra allocation.",
+    "pending": "exact pretty serialized result before each work request",
+    "durableWrites": "check exact encoded bytes plus parent reserve before opening wx",
+    "parent": "final retained PG scratch + raw + final ledger allowance included",
+    "failure": "stop work; cleanup retained; unavailable final result reported as bounded original-failure/cleanup fact to reserved parent capture; never PASS",
+    "validation": "Existing budget/owned traversal local evidence unchanged; latest startup9/noEmit add no actual PG or measured peak evidence.",
+    "unknownAccounting": "Owned root/descendant traversal failure records UNKNOWN/null bytes/false budget while retaining original child/raw/cleanup facts; no fallback zero.",
+    "reserveAccounting": "512KiB work reserve and 192KiB parent write reserve are sequential headroom predicates inside the same cap, not summed new quotas. Pending final result reserved by exact serialized length. Receipt must fit reserved headroom; stop new work on cap/unknown and retain failure/cleanup facts."
+  },
+  "budgetDeltaEvidence": {
+    "path": "docs/evidence/k01/query-entry-budget-20261007T160216/manifest.json",
+    "bytes": 9587,
+    "sha256": "e2d4e4eae904da65d84e114273beac8ab1d85bfc392ff94b412031017d5f9311"
+  },
+  "ownedTraversalRepairEvidence": {
+    "path": "docs/evidence/k01/query-entry-owned-repair-20261007T161534/manifest.json",
+    "bytes": 9437,
+    "sha256": "da15e47a4ff66fe0d5956ab491f350245ec9a299d3b5a242b74f1e99007b6df3"
+  },
+  "experimentFiles": [
+    {
+      "path": ".gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "README.md",
+      "bytes": 15633,
+      "sha256": "d759735bfe70418841068e71b3b2982a921905b67aa51e3769c773aebcd3edb0"
+    },
+    {
+      "path": "budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "entry.py",
+      "bytes": 18404,
+      "sha256": "3537f2d14a0a01e499363900a20c332a840cc47671f6d61b5891421f50986f99"
+    },
+    {
+      "path": "entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "measurement.ts",
+      "bytes": 14202,
+      "sha256": "7b38ca92fd61952bd207b0568fc7ee2d08608ec430003db2121af3b90ab9c56e"
+    },
+    {
+      "path": "owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "vitest.config.mjs",
+      "bytes": 209,
+      "sha256": "5441423d9317d0fa66633b5b341ee29f2cc518cf3d2cebc32c0f7238847d45b8"
+    }
+  ],
+  "runtimeBindings": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "bytes": 67359104,
+      "sha256": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/Python",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/Python",
+      "bytes": 5080256,
+      "sha256": "5e16d0e87dfb1ad82447889e3a898da80d632e6bea62901f0d715c359a71f7b0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "bytes": 332,
+      "sha256": "97a9d7b9d959f9528c46660beedcef69adc1ae29c71948b1e695860511a711d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "bytes": 675,
+      "sha256": "a57842a725ba112ab029d3a0748f4ba5dc7b7a38bc9d38e7c4985af36aaa3c84"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+      "bytes": 382,
+      "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-startup-independent-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-entry-startup-independent-review.json",
+      "bytes": 970,
+      "sha256": "2538fa2535b2510bcef37fc1280d8ee75312401f1761b71d5d1dbcf260722b27"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "docs/evidence/k01/query-pg-startup-closed-permit.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-pg-startup-closed-permit.json",
+      "bytes": 3275,
+      "sha256": "ece1a5b92b410fe508c0e11bfbdacbc914104857f2ec2c603213716cebd6aab1"
+    }
+  ],
+  "bindingVerification": {
+    "checkedAt": "2026-10-07T17:07:18.812917+00:00",
+    "experimentFiles": 18,
+    "runtimeBindingRows": 27,
+    "externalAliases": 17,
+    "internalAliases": 3,
+    "preparationJsonRole": "historical record sampled by operator sourceHashes; included as binding, never treated as current status",
+    "errors": []
+  }
+}

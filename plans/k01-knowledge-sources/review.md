@@ -1,11 +1,13 @@
 # K01-06 启动/有限进度/计时修复（当前）
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb
 
-本次限定a82→9c802db的6份实验源码/文档；固定产品3c与旧245输入不变。9/9纯行为和focused noEmit0绑定相同执行字节；原caller/corpus未重跑。请db只读核动态import+factory期限/closing与late factory防护、cleanup未settle仍KEEP、append-only阶段与首错/已完成结果保真、观察成本/driver round trip/EXPLAIN口径分离，以及两child/TMP/字节预算事实。合成Promise不代替真实PG生命周期；首次FAIL与恢复原件不改。见query-entry-startup-repair-20261007T165308/manifest.json；不得据此批准新PG窗口。
+本次限定a82→9c802db的6份实验源码/文档；固定产品3c与旧245输入不变。9/9纯行为和focused noEmit0绑定相同执行字节；原caller/corpus未重跑。db已只读核动态import+factory期限/closing与late factory防护、cleanup未settle仍KEEP、append-only阶段与首错/已完成结果保真、观察成本/driver round trip/EXPLAIN口径分离，以及两child/TMP/字节预算事实。合成Promise不代替真实PG生命周期；首次FAIL与恢复原件不改。见query-entry-startup-repair-20261007T165308/manifest.json；不得据此批准新PG窗口。
 
-# K01-06 首次PG失败结果与后继源码缺口（当前）
+2026-10-07T17:03:37Z db_transaction_owner 独立 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2，裸import期限P2 CLOSED；12 bindings/120259B与两child/9纯/noEmit及正常TMP收尾核符。批准只覆盖固定源码与合成局部结果；原真实PG失败首因仍UNKNOWN、FAIL/raw/KEEP不改。见[回执](../../docs/evidence/k01/query-entry-startup-independent-review.json)。下一候选输入单独固定，不构成PG运行授权。
+
+# K01-06 首次PG失败结果与后继源码缺口（历史）
 
 状态：CHANGES_REQUESTED
 Review target commit：a82e44be17a7a31b051bf98400d9553513600542
