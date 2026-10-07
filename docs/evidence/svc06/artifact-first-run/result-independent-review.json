@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T03:38:27.829073+00:00",
+  "decision": "APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "935df27d",
+  "evidenceRef": "55ee982c553e754602812ee1cf4122d319c26f58",
+  "entry": "4de45996435dd86c3409910dad787e99efc9cd63",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "manifestSha256": "dcc2729bf0b540d2d0d84f69a395d621041374e2e5b68b14bf989376be22b80a",
+  "bindingsVerified": 17,
+  "retainedIdentityHashesVerified": 3,
+  "findings": [],
+  "evidence": [
+    "Complete result/raw/build record/imports/analysis read; all17 current and fixed Git bindings match bytes/SHA",
+    "3 retained artifact/owner/checkpoint bindings match bytes/SHA/dev/ino; owned root0700; store contains only artifact plus complete stage receipt",
+    "Outer stdout exactly matches durable result; exit0,owned group absent,two EOF,no first/secondary failure; initial EPERM observation preserved",
+    "Real offline frozen copy install271 reused/0 downloads,7 importers; inventory/30 SQL and internal pg/tsx/Vite/SDK/delayed host module imports verified by approved entry"
+  ],
+  "reviewerProductTests": 0,
+  "reviewerProvider": 0,
+  "limits": [
+    "Imports only: no actual host/factory/runRunner/SDK query or native binary execution",
+    "No unavailable-development-checkout or service recovery journey; SVC06-03/04 remain open",
+    "Private artifact retained for successor; no personal deployment",
+    "Filesystem availability is sampled across writers,not physical peak or reserved quota",
+    "Prior cache mode mismatch and other failed evidence are preserved"
+  ],
+  "metadataNote": "Old status tail saying entry unreviewed/unrun must be corrected by owner at this closeout; not a product blocker."
+}
