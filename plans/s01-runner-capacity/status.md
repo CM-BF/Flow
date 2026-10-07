@@ -15,7 +15,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本段仅私有delivery packing、直接反例及own metadata；旧actual/source/compiled/raw不改。 |
+| 工作树dirty状态 | 源码a4ceb283b37dc5cd73ebb072bb912d110b59f78a已固定；本次metadata封存后核clean/origin。旧actual/source/compiled/raw不改。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前packing窄修；历史32796520b07d4eed9f34c7c1db757740b7e20452 actual结果已独审，不继承为本优化收益。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
@@ -278,3 +278,5 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 本段复用本地find-skills、codebase-design及固定clean-code：保持同一Module和状态所有者，每条目实编码计长一次、逗号/header精确计入，最终send仍完整编码核上限；不新增通用packer。定向反例检查编码工作量、exact边界/ordinal位数、SQL语义、oversize/unknown与finish-once。原普通上限5child/各30s/累计90s、new16MiB/raw256KiB/source-meta2MiB；15:30后共享构建drain，尚0工程child，暂停新launch不重置原截止。下一freshfloor至少14,414,970,880B或更高；actual replay/PG始终NOT_OPEN。
 
 2026-10-07T15:35:01.986Z 源码checkpoint：a4ceb283b37dc5cd73ebb072bb912d110b59f78a已push，11abf474仅finish的17增8删；[本片唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)。旧record/send/聚合/接口/actual输入原样；新直接检查已固定但0执行，Web独占构建drain优先，不把准备当通过。四新例及6个模块直接影响例、8个receiver语义例共18候选，focused strict另1child。没有运行旧64/实际replay，累计child0/raw0/TMP0；源码/新文档当前小于128KiB，不重算旧trace或退还KEEP。
+
+2026-10-07T15:35:56.672Z 安全checkpoint：本次只有owner状态形状解析（非工程测试），主线parser blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4返回errors=[]/human.missing=[]，父FLOW-001/co-lead mika正确，原任务开工UNKNOWN为唯一timing提示。未请求snapshot/声称新HEAD已聚合。工程child0/raw0/TMP0，manager drain仍阻新launch；本源片SOURCE_READY/VALIDATION_PENDING，不将此停止点当完整任务完成。
