@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 04:45:38 UTC |
+| 最近更新 | 2026-10-07 05:06:19 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 9835e7488dd9b0b44b3afbc285336defdd739e98；其他18源=8ed；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源仍固定9835；本段仅任务时间字段和C02只读接缝记录，normalpush后核clean |
+| 工作树dirty状态 | 19源仍固定9835；本批仅第四次实际失败/清理原件与own元数据封存，normalpush后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 前段真实恢复已有局部实证；页面注入脚本的真实转译与十项受控检查已通过 |
-| 下一可用交付 | 继续页面授权失效与后续恢复的实际浏览器验收，需后继独立运行安排 |
-| 当前阻塞 | ACTIVE: 注入脚本局部修复已验证，但pageOnlyAuthLoss及后续CSRF/offline/视觉焦点尚未浏览器复验，完整旅程未闭合 |
+| 当前产出 | 会话重新连接检查再次通过；完整草稿恢复仍待定位 |
+| 下一可用交付 | 定位附件提示未出现的原因后，继续原恢复旅程 |
+| 当前阻塞 | ACTIVE: 草稿恢复检查等待附件提示超时，原因尚未确定，页面授权失效等后续验收未完成 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 第三次browser page.evaluate __name未定义，actualexit1/清理完整；前段材料/CAS/同key重试PASS；9835序列化旧负例+新十项PASS，非browser复验；晚累计38364.050667ms、原50/types不变 |
+| 检查状态 | FAILED: 第四次browser仅cookieRead一组PASS，saved.txt tooltip超时，后续NOT_RUN/NOT_COMPLETED、0PNG；actualexit1/owned清理完整；原50与serialization10不变，晚累计54883.199542ms，下次最多35116含15000cleanup |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T04:41:48.929532Z本人经安全CLI窄核active/原21/owner/WT/branch/version、overlap=[]；仅时间元数据及C02只读接缝，非新运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T05:05:01.874525Z本人安全CLI核active/owner/WT/branch/原21、overlap=[]；仅封存与只读诊断，非下一运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,7 +36,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第三次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)：材料/跨tabCAS/原key重试局部PASS；pageOnlyAuthLoss异常，后续未跑；前三轮原失败与50证据保持 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第四次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-fourth-validation.md)：仅cookieRead PASS，tooltip超时/后续未跑；前三轮原件与原50实证保持 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -264,3 +264,9 @@ Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c218
 顶层任务开工UNKNOWN/完成NOT_COMPLETED，历史计划创建和领取时间不冒实际开工。按当前main `bb99223ad73690a25b0ebb251d69cd6d770a2a21` 的 [own-status-parse](/Users/citrine/Projects/AgentHarness/Flow/docs/quality/local-validation.md#own-status-parse) 只核本status；结果见[解析记录](../../docs/evidence/wpf-conversation-recovery/timing-c02-status-parse.json)。UNKNOWN时间提示须如实保留。
 
 [固定C02接缝](../../docs/evidence/wpf-conversation-recovery/c02-stream-consumer-seams.md)：三个App client仍v1；Web host.ts和共享projection也有v1门禁，不能仅改HTTP头；messages.ts需保公开source/channel并复用既有reasoning renderer。C02 source review尚待，host/messages及五个既有专测入口均需后继精确写权；本批未改产品/共享、未运行测试或浏览器。原19源、所有失败/raw、50与十项转译实证不变；晚累计38364.050667ms，余最多51635ms含15000cleanup。完整targetUNKNOWN/reviewNOT_STARTED，不等待或宣称新的ACCESS主线/部署回执。
+
+## 2026-10-07 05:06:19 UTC — 第四次实际失败与清理封存
+
+执行4c0852/9835，原11raw21906B与外层/准入/静态包/root原件见[manifest](../../docs/evidence/wpf-conversation-recovery/browser-fourth-manifest.json)。实际exit1/1组PASS，textIntentDraft tooltip未找到、0PNG/pageErrors[]，后续NOT_RUN/NOT_COMPLETED。原三次失败和第三次局部通过不改；无失败DOM，不预判产品/测试原因。root限定接受失败与reported ownedcleanup，不是featurePASS。
+
+DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；manager按身份删exactenv，未读值。没有单独outerwall/per-streamEOF/port原件，边界如实保留。晚累计54883.199542/90000，下一整数最多35116含15000清理，无自动重试。下一仅只读hover/附件UI诊断；产品19源与断言不变，完整targetUNKNOWN/reviewNOT_STARTED。

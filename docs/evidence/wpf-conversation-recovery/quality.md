@@ -197,3 +197,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 04:45:38 UTC — 时间字段与C02只读接口clean-code复核
 
 应用本地find-skills/clean-code/codebase-design/assistant-ui（本段路径及SHA见c02-stream-consumer-seams.json），未安装技能或依赖。将元数据时间来源与计划/领取事实分开；UNKNOWN保真。固定源码核三client、host的三个协议分支和共享gate，发现HTTP协议独改不足；复用原projection与ReasoningGroup，不新建store/renderer/调度器。公开source/channel/身份保留且缺失不伪造，未改任何生产/测试/共享源码。当前仅own-status权威纯解析可运行；其检查只证明状态声明，C02接通/实际reasoning与后继浏览器均未验。全部原raw、计时与限定审查保持。
+
+## 2026-10-07 05:06:19 UTC — 第四次失败原件clean-code收口
+
+复用本地find-skills/clean-code/webapp-testing：保持单一实际入口、原authority/断言；不把无tooltip和较早同源成功直接归因为产品bug或flaky。原raw与晚stdout/actualexit、独立group/scratch观察分别保存，较早budget不回填晚计时；缺outerwall/EOF/port证据明确说明。仅own metadata，19产品/专测不变，无重复50/10检查、无第五次运行。后续只读诊断提最小可观察性需求，不创建新通用监督器或放宽5s。

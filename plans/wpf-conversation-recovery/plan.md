@@ -138,3 +138,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 04:45:38 UTC — 原-03/-05/-06只读依赖更新
 
 [固定C02消费接缝](../../docs/evidence/wpf-conversation-recovery/c02-stream-consumer-seams.md)记录未来patch-v2输入、三处App client与host/shared gate一致性、公开reasoning独立呈现和精确后继路径。仍是原计划依赖研究，不新增task/实现/claim；现21之外的host.ts/messages.ts和既有stream专测须后继明确交权，C02共享源码由其owner闭合并独审。当前Recovery验收/预算不缩减或重置。任务首次实际开工缺可靠历史事件，status为UNKNOWN；未完成，不从领取/commit推算。
+
+## 2026-10-07 05:06:19 UTC — 原-05第四实际子集未闭合
+
+[第四次记录](../../docs/evidence/wpf-conversation-recovery/browser-fourth-validation.md)固定4c0852/9835，cookieRead通过、saved.txt tooltip超时、后续未跑。保存前三失败和原35,116ms下一整数余量（含15s清理），不重置90s；完整TODO保持开放。下一只读定位真实UI/两个hover断言及最低所缺证据，不删断言或盲重跑。

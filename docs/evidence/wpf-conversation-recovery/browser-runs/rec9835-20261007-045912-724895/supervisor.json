@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "errors": [
+    "expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('tooltip')\nExpected: \"saved.txt\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveText\" getByRole('tooltip') with timeout 5000ms\n  - waiting for getByRole('tooltip')\n"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_62522adcc1694021ac8d27d7c5e96de3",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4435000000012224,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.6341659999998228,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 46595,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 49362,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 25086156800,
+  "peakScratchBytes": 27507921,
+  "logBytes": 7128,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 16475.646582999998,
+      "scratchBytes": 27507921,
+      "evidenceBytes": 1264968,
+      "freeBytes": 25086156800,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 16515.181375,
+      "scratchBytes": null,
+      "evidenceBytes": 1266733,
+      "freeBytes": 25114542080,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

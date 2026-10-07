@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：2b01受控50与历史38保持原批准范围；真实browser三次均FAILED，第三次前段cookie/材料/CAS/同key重试局部PASS，pageOnlyAuthLoss的page.evaluate遇__name未定义，后续未跑。前三轮原件保真、第三次清理完整；当前types未新增。完整feature NOT_STARTED/targetUNKNOWN，尚未独审通过。
+当前作者局部检查：2b01受控50、历史38与9835 serialization10保持原批准范围；真实browser四次均FAILED。第四次4c0852/9835仅cookieRead PASS，textIntentDraft的saved.txt tooltip超时，后续未跑/0PNG；前三轮及各自局部通过事实保真。root接受第四实际失败与reported ownedcleanup，不是完整feature通过；无新types或重跑。完整feature NOT_STARTED/targetUNKNOWN。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -159,3 +159,7 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 [Root rec8ed/9835原审](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery-rec8ed-actual-and-9835-review.json)接受第三次失败/清理及9835 SOURCE_ONLY；[准备审查](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery9835-serialization-preparation-review.json)保原packet。管理者实际单次old-negative/new-positive十项PASS、actualexit0，root已给[ACCEPTED_SCOPED_LOCAL_ACTUAL_RESULTS](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json)。本owner只归档，无新测试/浏览器。
 
 该结果关闭本回调当前转译的已知__name依赖反例，但不推真实浏览器中的pageOnlyAuthLoss/后续旅程已过；原browser失败、预算、50受控范围、完整feature NOT_STARTED/targetUNKNOWN继续保持。
+
+## 2026-10-07 05:06:19 UTC — 第四次真实失败限定证据接受
+
+[root原文](../../docs/evidence/wpf-conversation-recovery/browser-fourth-root-review.json)SHA256 `2de79671c3992a61ec5986538a8f63a54f1e56a2e4fe9860a5db84711ddc61d1`，ACCEPTED_FAILED_SUBSET_ACTUAL_AND_REPORTED_OWNED_CLEANUP。核19源、11raw21906B和旧43原件保真；明确没有失败DOM/PNG、独立outerwall/每streamEOF/port观察，不补造。1组通过、后续未跑与前三历史分层；54883.199542ms晚累计控制后续最多35116含15000cleanup。下一只读诊断不先定产品bug；原feature review NOT_STARTED/targetUNKNOWN。
