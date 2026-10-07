@@ -322,6 +322,79 @@
         "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
         "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
       }
+    },
+    {
+      "name": "types-verified",
+      "startedAt": "2026-10-07T20:48:41.898Z",
+      "endedAt": "2026-10-07T20:48:43.969Z",
+      "wallBeforePersistenceSeconds": 2.071221457910724,
+      "supervision": {
+        "pid": 27413,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2038,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124476551
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-types-verified/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "7c8eee27a29bbef1b64b7c87db677a0bf4f627fcb13ad5258aa6334e28fccbf1",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/runner/src/plugins/execution.test.ts": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/runner/src/plugins/execution.ts": "2c98ac43c07d9c5079215fb8bda65774fe12627ee7862a50d8369e823ac27323",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/artifact.ts": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/commands.ts": "e7b8e6342b1f2b66a3a1f50c9426fea00707326a7194598cfac0d1decb4ce003",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/store.ts": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "85d12151401720cb927430e89efa8fa713bf17eaa00c44066ad15b65170632dc",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-routes.ts": "929ae05b3a44b58e4afbd2a9ae6a28db87fddfc55a05b763698806d2ccd1a35b",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.test.ts": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.ts": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/contracts/src/plugin-verification-admission.ts": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/contracts/src/plugin-verification-event.ts": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/contracts/src/runner.ts": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "103f985153b6da6972d4c90559810dafada661a236d9d3fe222634e8d67cf1b7",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.ts": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998"
+      }
     }
   ]
 }

@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T20:50:26.033Z",
+  "source": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+  "children": 6,
+  "supervisorMilliseconds": 10049,
+  "rawBytes": 14606,
+  "distinctTests": 15,
+  "behaviorRounds": [
+    "14 passed / 1 assertion failed (configuration is hashed, not serialized)",
+    "3 selected passed / 12 unselected; real escaped source and changed direct consumers"
+  ],
+  "types": [
+    "exit2 missing factory declaration in selected closure",
+    "exit0 after including fixed factory",
+    "exit2 test double missing result.kind",
+    "exit0 after exact test type fix"
+  ],
+  "lastBehaviorTestDelta": "kind:text addition is type-only and was compiled but not behavior-rerun",
+  "finalSourceTypesPassed": true,
+  "allOwnedAbsent": true,
+  "allMergedEOF": true,
+  "allOwnTMPRemoved": true,
+  "lastReceiptReturn": "2026-10-07T20:48:43.969Z",
+  "toolObservedReturn": "2026-10-07T20:48:50.000Z",
+  "wholeExternalWall": "UNKNOWN",
+  "peakBytes": "UNKNOWN",
+  "initialEperm": "preserved in raw supervision observations; final state separately confirmed",
+  "earlyGateCorrection": [
+    {
+      "attempt": "types",
+      "actualConsumedFloor": 16620322816,
+      "actualFreshFree": 19244560384,
+      "laterIndependentlyReadApplicableFloor": 18959564800,
+      "freeExceededApplicableFloor": true,
+      "classification": "STALE_FLOOR_USED; comparison is retrospective, does not repair admission"
+    },
+    {
+      "attempt": "types-fix",
+      "actualConsumedFloor": 16620322816,
+      "actualFreshFree": 19248934912,
+      "laterIndependentlyReadApplicableFloor": 18959564800,
+      "freeExceededApplicableFloor": true,
+      "classification": "STALE_FLOOR_USED; comparison is retrospective, does not repair admission"
+    }
+  ],
+  "actualPG": "NOT_RUN",
+  "HTTPListener": "NOT_RUN",
+  "main": "NOT_INTEGRATED",
+  "remaining": [
+    "same reportEvents transaction rollback needs real PG assertions",
+    "factory/main trusted-policy mount and existing runtime enable/view forwarding remain with assembly owner",
+    "runner v4 dispatch/process/outbox settled marker consumer pending",
+    "public client/CLI and end-to-end owner journey pending",
+    "migration036/AV center prerequisite R2 remains NOT_RUN"
+  ]
+}
