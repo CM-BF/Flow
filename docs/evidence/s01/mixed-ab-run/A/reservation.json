@@ -1,0 +1,281 @@
+{
+  "windowId": "s01-event-state-ab-once",
+  "target": "b75f1a2e250556265a24c825860e8549705b98cf",
+  "runIdentity": "event-state-A-v1",
+  "startedAt": "2026-10-07T05:59:52.231Z",
+  "databaseName": "flow_s01_mixed_13262_f67a56c90ba44b169c6cb2ec6fe23fa7",
+  "contract": {
+    "version": 3,
+    "base": "a3e670b906c1b65d586b7730ca19da83109f1dcc",
+    "tasks": 128,
+    "maximumTasks": 128,
+    "totalMs": 135000,
+    "workMs": 105000,
+    "caseMs": 6000,
+    "cancelMs": 3000,
+    "eventsPerSecond": 2,
+    "messageBytes": 256,
+    "heartbeatMs": 1000,
+    "pollMs": 500,
+    "requestMs": 3000,
+    "leaseMs": 10000,
+    "readIntervalMs": 100,
+    "maxReads": 2,
+    "observationMs": 200,
+    "softBytes": 201326592,
+    "totalBytes": 251658240,
+    "responseBytes": 262144,
+    "ipcPendingBytes": 1048576,
+    "maxRecords": 160000,
+    "settlementMs": 5000,
+    "gateMs": 45000,
+    "minimumCaseBudgetMs": 55000,
+    "cancelCount": 0,
+    "persistentSessions": true,
+    "reserveObservations": true,
+    "ownedStreams": 1024,
+    "journalFiles": 2048,
+    "memoryIntervalMs": 1000,
+    "archiveReserveBytes": 1048576,
+    "finalCliBytes": 32768,
+    "cleanup": {
+      "child": 117000,
+      "drain": 120000,
+      "observer": 121000,
+      "exists": 123000,
+      "connections": 125000,
+      "drop": 128000,
+      "absent": 130000,
+      "admin": 131000,
+      "journal": 132000,
+      "observations": 133500,
+      "result": 134500
+    },
+    "cases": [
+      {
+        "id": "eight-by-sixteen",
+        "runners": 8,
+        "slots": 16
+      }
+    ]
+  },
+  "sources": [
+    {
+      "path": "experiments/runner-capacity/mixed/README.md",
+      "bytes": 4953,
+      "sha256": "d61b4826b630b897146724b88f4a594a145e5c3cae2444df69ec2a6b7f4408c9"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.test.ts",
+      "bytes": 4608,
+      "sha256": "f5520376564e8c9cb143d7d1f57d95bb21c57072d7168a55f4396f50aef6a0a0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.ts",
+      "bytes": 4763,
+      "sha256": "71e75503ce69605ec63ca8b8e4695b0e0057b76702bba836aad2dfa4e2ea6095"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-dependencies.json",
+      "bytes": 4216,
+      "sha256": "c2840e2e4ade191a0d135850733aac8096e5d279190ab493c2310fd433f7c88e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-driver.ts",
+      "bytes": 6971,
+      "sha256": "b04f3b676cdf9b8eb6d9f02193c6564fc6032e82c630843163a6bacc0087e4f3"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.test.ts",
+      "bytes": 4220,
+      "sha256": "2a8eb050e9372f70425f856b93efa675de7e2d39bd363eb08bb6368eb7757bc6"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.ts",
+      "bytes": 8863,
+      "sha256": "a9be0175d304cbeb217ea64f567ad1670ed1cc2dd5dc2d74ce966e5ec9ddcb93"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-main.ts",
+      "bytes": 1071,
+      "sha256": "add10ccadc04ee0cc7a9f32223dcd92975e41aae351f6dc37bc29914feda3bc9"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-sequence.test.ts",
+      "bytes": 1472,
+      "sha256": "678d33a6ca02967944405ee1824aba2f615104125ea8ecba2ac9b228c8169ff1"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-sequence.ts",
+      "bytes": 1156,
+      "sha256": "fcf04d95513e91f07a470ed9bf436067032ce8b750c509a6e25ab992c2461f15"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1675,
+      "sha256": "f99b9c46fb03ab785aa45d2df1d1c1ed9dda8a29751cfbf5345249d67c135830"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 12974,
+      "sha256": "831c3c742b2888a581f218adb1e8c36e3ea7a073abd848ab5fee0854d8daaa76"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.test.ts",
+      "bytes": 1405,
+      "sha256": "ff67bea350f4232d0df3e95d165e72e930300990f29625dc9ff69ffb61cd8ff0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/contract.ts",
+      "bytes": 4545,
+      "sha256": "0011e93cc596bccaa01e2d740aa7b9b2bc719b47372d94e35063028737c8d504"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.test.ts",
+      "bytes": 1281,
+      "sha256": "ca202a4e14121cb3a3967bc61d286a5b3395e0c24fd7169a021181bcd861524e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/deadline.ts",
+      "bytes": 1098,
+      "sha256": "3431dd41074b0ae2613bfff00c38da3c3e78fdcb2b5d5a367751f9f2ca47d76a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 31801,
+      "sha256": "5ee734e3ac8275ee51035ffaa049a6de1d300e6227efccc3373a920d4defe899"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/evidence-bounds.test.ts",
+      "bytes": 2594,
+      "sha256": "e2e56f25b8e72c33958e06ec1cf3a40518bd84c5de4c7d9109c59eab8aeff371"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.test.ts",
+      "bytes": 1268,
+      "sha256": "52818a1e4534facdef00a6b465b50a9a2675c27387a75d1b9fa0d57dad34365a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-budget.ts",
+      "bytes": 4338,
+      "sha256": "3191803229539e221a3510e7818405825b3af8b552e0eb95f8c41f377d8382e6"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.test.ts",
+      "bytes": 6961,
+      "sha256": "57c7af7164a25e1c465a2b8e122975cdeafd48ca29afb5b4bd2972a17480e1b1"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-observer.ts",
+      "bytes": 7394,
+      "sha256": "d55e83abff72551924ebf3666396472abb15ed949971225936dcd4dbc371b530"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-pure-tsconfig.json",
+      "bytes": 423,
+      "sha256": "3c3155799a70e6cf9da7a13aa897820c1ca2090a020dfe43873a5efbcd84b985"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim-runtime-tsconfig.json",
+      "bytes": 725,
+      "sha256": "f1b05c8b6fcbdc92bfe6e4142eb6b00ee59bece4c679e18d6e8854a0d0799a2b"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/idle-claim.test.ts",
+      "bytes": 12263,
+      "sha256": "a26af83464892a9da39f5a76478baab084e4519b263b7d1813a8e90464f6f006"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/main.ts",
+      "bytes": 1061,
+      "sha256": "3b5b3ffec08e17c0a9a598f5623c926055d53cffe99655cbfecd1d38f2242691"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observation-archive.ts",
+      "bytes": 1045,
+      "sha256": "dde8c42d673dc04d1747d418ad9b792398e25bcb325916a0e6c6a05c13dea44d"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.test.ts",
+      "bytes": 5311,
+      "sha256": "2831b5e5eedecf3c583b7b1c97623a1264f9746de08c6d24ead0a41ce7e4c529"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+      "bytes": 5337,
+      "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/preparation-git.test.ts",
+      "bytes": 1217,
+      "sha256": "7e2ed82ab35d49ffa73d609fd502ad2d434bc6aafb9e1c2e18a2c5764d32acc7"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/process.ts",
+      "bytes": 2889,
+      "sha256": "2eaf13ee8c88d332109a31e2fa71f2230848ea22c424382e92ea08045bdb4cb0"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/profile.test.ts",
+      "bytes": 3422,
+      "sha256": "6bd21e70cd5a28403307e350a191f735da9491ca2fdab69be257d785cef2e92a"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.test.ts",
+      "bytes": 2061,
+      "sha256": "45974063cf5feb9be4ff8e8feda611d9455bea0f92008f0ae4fb7961029494f2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 12294,
+      "sha256": "40a1ca8a2a61867bd837a9cf1ffb5c9d75d56640320a58a2c62ee85154f5cdba"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/request-error.ts",
+      "bytes": 755,
+      "sha256": "5ec7a45c2c9f819e04f303f064183d813a7b3b2bc0c2d58659a2d4d287f650f2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.test.ts",
+      "bytes": 2712,
+      "sha256": "7bc02d9d47f5e32546d9ce10df521c54b312856adb7d6164434c11af345eea15"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.ts",
+      "bytes": 4940,
+      "sha256": "2ce06972d05d7d42a12d0764171b944d80796365c590a61fc6cdf7cc64b8dfbf"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.test.ts",
+      "bytes": 1789,
+      "sha256": "015221f67762c06cf484aef9bce39bed2c4a1ec285781be4278be7fe2c689122"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/stream-bytes.ts",
+      "bytes": 1830,
+      "sha256": "6b88d05a975bf91bdec9eedb42b2a4f0c47b7c2149831a9bbb0a11c118fade2b"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/sustained-proof.test.ts",
+      "bytes": 7501,
+      "sha256": "8dc9e60be5d036ead4dc584711d3dcccfadfc6c79bceefc31493d53819fd9b98"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/tsconfig.json",
+      "bytes": 258,
+      "sha256": "2f7bfc694006d11811592ae4ef4bc57d50300ce2c89c32c12a190fa305272c52"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/vitest.config.ts",
+      "bytes": 190,
+      "sha256": "06ad6c5354ad53e6b729a5d444e1c890a3481633f2b5470d8dace817c09e7801"
+    }
+  ],
+  "tasksCharged": 128,
+  "previousStageBudget": "frozen-separate"
+}

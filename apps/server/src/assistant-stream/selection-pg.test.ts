@@ -1,6 +1,7 @@
+import {ConversationStreamProjection,type StreamPort} from '../../../../packages/interaction/src/stream/projection.js';
 import {randomUUID} from 'node:crypto';
 import {afterAll,beforeAll,expect,it} from 'vitest';
-import type {AssistantStreamData,RunnerEventData} from '../../../../packages/contracts/src/index.js';
+import type {ConversationTurn,AssistantStreamData,RunnerEventData} from '../../../../packages/contracts/src/index.js';
 import type {CodexExecutionProfileConfiguration} from '../../../../packages/contracts/src/execution-profiles.js';
 import {assistantStreamIdentity} from '../../../../packages/contracts/src/assistant-stream.js';
 import {FlowClient} from '../../../../packages/client/src/index.js';
@@ -76,4 +77,47 @@ check('retains the default Claude public reader envelope and explicit text compa
  const path=`/api/tasks/${a.taskId}/assistant-stream/patches?attemptId=${a.ownership.attemptId}`;
  const legacy=await center.json(path),selected=await center.json(path+'&selection=text',{headers});
  expect(legacy.status).toBe(200);expect(legacy.value.protocol).toBeUndefined();expect(legacy.value.patches[0].text).toBe(data.text);expect(selected.value.patches).toEqual(legacy.value.patches);expect(selected.value.selection).toEqual({kind:'text'});
+});
+
+check('uses public FlowClient selection with real HTTP and the shared projection',async()=>{
+ const a=await assigned('codex'),thread=randomUUID(),stream=new CodexAssistantStream(()=>1000);
+ const client=center.readClient('patch-select-v1');
+ const reasoning='公开推理🙂',text='公开正文🧠',more='增量古';
+ await a.emit({type:'session',nativeSessionId:thread,adapterVersion:profile.adapterVersion});
+ const delta=(kind:'text'|'reasoning-text',value:string,completedText?:string)=>({kind,threadId:thread,turnId:'turn',itemId:kind==='text'?'answer':'reason',index:null,delta:value,...(completedText!==undefined?{completedText}:{})});
+ const reasonFirst=stream.accept(delta('reasoning-text',reasoning))[0]!;const reasonSequence=await a.emit(reasonFirst);
+ const defaultPages:unknown[]=[];let fullReads=0,fullBytes=0,incrementalBytes=0,defaultReasoningBodyBytes=0;
+ const cursors:{kind:'text'|'block';after:number;next:number}[]=[];
+ const port:StreamPort={
+  async readMetadata(options,signal){const page=await client.assistantStreamSelectedMetadata(a.taskId,options,signal);defaultPages.push(page);return page;},
+  async readPatches(){throw Error('Selected projection must not use legacy patches.');},
+  async readSelectedPatches(options,signal){
+   const page=await client.assistantStreamSelectedPatches(a.taskId,options,signal);cursors.push({kind:options.selection.kind,after:options.after,next:page.nextCursor});
+   if(options.selection.kind==='text'){defaultPages.push(page);defaultReasoningBodyBytes+=page.patches.filter(p=>p.channel!=='text').reduce((n,p)=>n+Buffer.byteLength(p.text),0);}else incrementalBytes+=page.patches.reduce((n,p)=>n+Buffer.byteLength(p.text),0);
+   return page;
+  },
+  async readBlock(id,signal){fullReads++;const block=await client.assistantStreamBlock(a.taskId,id,signal);fullBytes+=Buffer.byteLength(block.content);return block;},
+ };
+ const at=new Date().toISOString(),chat=randomUUID(),turnId=randomUUID();
+ const turn:ConversationTurn={id:turnId,conversationId:chat,number:1,createdAt:at,user:{role:'user',text:'Fixture'},task:{id:a.taskId,title:'Public client fixture',harness:'codex',status:'running',verificationStatus:'pending',createdAt:at,updatedAt:at},assistant:{state:'pending',reason:'execution-pending'},effective:{model:null,thinking:'unknown',tools:null,source:null},telemetry:{kind:'execution',taskId:a.taskId,title:'Fixture'}};
+ const projection=new ConversationStreamProjection({connectionId:'fixture',viewId:'public-client',conversationId:chat,turnId,taskId:a.taskId},port);
+ try{
+  projection.updateHost({turn,protocol:'patch-select-v1',capability:true,visible:true,online:true});await projection.refresh();
+  expect(projection.getSnapshot().error).toBeNull();expect(projection.getSnapshot().patches?.cursor).toBe(0);expect(fullReads).toBe(0);
+  const body=stream.accept(delta('text',text))[0]!;const textSequence=await a.emit(body);
+  await projection.refresh();expect(projection.getSnapshot().patches?.blocks[0]?.content).toBe(text);expect(projection.getSnapshot().patches?.cursor).toBe(textSequence);
+  expect(JSON.stringify(defaultPages)).not.toContain(reasoning);expect(defaultReasoningBodyBytes).toBe(0);expect(fullReads).toBe(0);
+  await projection.openReasoning(reasonFirst.streamId);expect(fullReads).toBe(1);expect(fullBytes).toBe(Buffer.byteLength(reasoning));
+  expect(projection.getSnapshot().selections?.[0]?.patches?.blocks[0]?.content).toBe(reasoning);
+  stream.accept(delta('reasoning-text',more));for(const patch of stream.accept(delta('reasoning-text','',reasoning+more)))await a.emit(patch);
+  await projection.refresh();await projection.openReasoning(reasonFirst.streamId);
+  expect(projection.getSnapshot().selections?.[0]?.error).toBeNull();expect(projection.getSnapshot().selections?.[0]?.patches?.blocks[0]?.content).toBe(reasoning+more);
+  expect(fullReads).toBe(1);expect(incrementalBytes).toBe(Buffer.byteLength(more));expect(projection.getSnapshot().patches?.cursor).toBe(textSequence);
+  expect(cursors.filter(c=>c.kind==='block').some(c=>c.after===reasonSequence)).toBe(true);
+  expect(JSON.stringify(defaultPages)).not.toContain(reasoning);
+  const old=center.readClient('patch-v2');const legacy=await old.assistantStreamPatches(a.taskId,{attemptId:a.ownership.attemptId});
+  expect(legacy.patches.some(p=>p.channel==='reasoning-text')).toBe(true);expect('selection' in legacy).toBe(false);
+  projection.closeReasoning(reasonFirst.streamId);expect(projection.getSnapshot().selections).toEqual([]);
+  center.facts.publicClientSelection={defaultReasoningBodyBytes,defaultDecodedJSONBytes:Buffer.byteLength(JSON.stringify(defaultPages)),fullReads,fullBytes,incrementalBytes,textCursor:textSequence,reasoningCursors:cursors.filter(c=>c.kind==='block'),scope:'real FlowClient HTTP through existing projection; injected native events, synthetic host turn; no UI/provider/native or TCP-byte claim'};
+ }finally{projection.dispose();}
 });

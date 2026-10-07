@@ -94,7 +94,7 @@ export class ContinuityCenterFixture {
   conversationClient() {
     return new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken, conversationProtocol: 'native-v1', assistantStreamProtocol: 'patch-v2' });
   }
-  readClient(assistantStreamProtocol: 'patch-v1' | 'patch-v2') {
+  readClient(assistantStreamProtocol: ConstructorParameters<typeof FlowClient>[0]['assistantStreamProtocol']) {
     return new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken, assistantStreamProtocol });
   }
   async json(path: string, init: RequestInit = {}) {

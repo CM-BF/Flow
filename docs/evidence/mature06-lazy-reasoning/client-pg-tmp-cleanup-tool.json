@@ -1,0 +1,17 @@
+{
+  "authorization": "Mika exact filesystem-only cleanup after failed-result review",
+  "toolBefore": "2026-10-07 09:09:37 UTC",
+  "toolAfter": "2026-10-07 09:09:37 UTC",
+  "toolEnvelopeSecondsUpper": 1,
+  "exit": 0,
+  "originalToolOutput": "{\"state\": \"removed-and-absent\", \"fault\": null, \"sample\": {\"entries\": 4, \"logicalBytes\": 138, \"activePeak\": \"unknown\"}, \"receiptWritten\": true, \"elapsedAfterReceiptSeconds\": 0.019031957956030965, \"originalResultUnchanged\": true}\n",
+  "noPG": true,
+  "noTests": true,
+  "noNewTMP": true,
+  "limits": {
+    "seconds": 15,
+    "rawBytes": 16384,
+    "metadataBytes": 32768
+  },
+  "scope": "Only flow-lazy-pg-k18wx_uj exact dev/ino; original actual 11 raw frozen"
+}

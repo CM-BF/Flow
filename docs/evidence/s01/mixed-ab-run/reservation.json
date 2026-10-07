@@ -1,0 +1,26 @@
+{
+  "windowId": "s01-event-state-ab-once",
+  "target": "b75f1a2e250556265a24c825860e8549705b98cf",
+  "startedAt": "2026-10-07T05:59:51.917Z",
+  "contract": {
+    "windowId": "s01-event-state-ab-once",
+    "totalMs": 300000,
+    "preparationMs": 15000,
+    "totalBytes": 536870912,
+    "softBytes": 402653184,
+    "commonBytes": 33554432,
+    "finalReserveBytes": 4194304,
+    "sideMs": 135000,
+    "sideBytes": 251658240,
+    "startRemainingMs": 150000,
+    "maximumTasks": 256,
+    "output": "docs/evidence/s01/mixed-ab-run",
+    "preparation": "docs/evidence/s01/mixed-ab-preparation",
+    "revisions": {
+      "A": "a3e670b906c1b65d586b7730ca19da83109f1dcc",
+      "B": "aae1eb1054d75e78273e7c91ed048aeac80195da"
+    }
+  },
+  "diskBytes": 24537018368,
+  "actualWindowAuthorization": "requires separate named OPEN; this directory consumes that single attempt"
+}

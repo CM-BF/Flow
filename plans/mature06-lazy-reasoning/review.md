@@ -22,3 +22,19 @@ PG准备07:58:24独审2P2/0P1，原fixture/current inputs及local结果忠实性
 Target 2949569bcac7d3b0257a0026f488f42eb6276222, relative fixed main2a7e; two source paths and support-only commits separated in client-review-ready.md. Actual first3/7 retained, new5 pass/2unselected+strict0, 0PG. Earlier core/PG approval does not approve this new client source. Current verdict: NOT_STARTED.
 
 Client复核 2026-10-07T08:42:02Z：chatui01_owner/gpt-6-astra，source2949569bcac7d3b0257a0026f488f42eb6276222/packet55dc7de880747a86ed4b64fe7c9ba8cf31c6017b，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2；18bindings133559B及4raw5651B核符。仅7distinct分轮+strict与注入projection兼容，不含新client真实PG/UI/main。正式回执client-review-receipt.json，当前READY见client-integration-ready.md。
+
+## Public-client HTTP preparation review — 2026-10-07T08:56:17.004523+00:00
+
+chatui01_owner/gpt-6-astra 于08:55:14UTC 对source75070719/packetfcf4f1ae作独立只读SOURCE_AND_PREPARATION_RESULT_REVIEW_APPROVED，0P1/P2。正式回执docs/evidence/mature06-lazy-reasoning/client-pg-review-receipt.json。16绑定/249inputs/31SQL/19external与types0/list1忠实，实际PG仍NOT_OPEN/NOT_RUN；旧core/client批准不扩大到UI或新HTTP通过。
+
+## Preparation correction / actual failure — 2026-10-07T09:00:55.676680+00:00
+
+08:55批准原文保留；reviewer在本次actual结束后撤回选择器批准并报告1P2，client-pg-review-correction.json。实际新case1pass/旧2skipped但wrapperexit1/TMPKEEP，不宣称整体PASS。结果与后继纯JSON修复分别封存，0自动重跑。
+
+## Result fidelity and selector closure — 2026-10-07T09:07:13.941086+00:00
+
+chatui01_owner/gpt-6-astra 09:06:13UTC限定批准09fbd42b actual+47f54739 fix/a91d5b26，0P1P2，原selectorP2关闭。正式回执client-pg-result-review-receipt.json；仅忠实性与纯分类，不将原wrapperFAIL改PASS、不解除KEEP或授权再次PG。
+
+## Authorized subsequent filesystem cleanup — 2026-10-07T09:11:41.244159+00:00
+
+Root明确授权exactk18wx_uj一次≤15s文件维护，原已审关闭证据与dev/ino核符；4entries138B后同identity删除/ENOENT。新独立receipt记录，不改原actualFAIL与thenKEEP，不是PG复验。窄intake为client-pg-integration-ready.json，旧core/clientmain与新验收待集成分列。

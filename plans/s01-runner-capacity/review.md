@@ -1,5 +1,53 @@
 # S01 独立审查
 
+状态：APPROVED（仅本次固定事件写入A/B结果忠实性；0 P1/P2，不代表main接收）
+Review target commit: `914cb63824f614223b62153c770186e9d46d586e`
+
+Execution `b75f1a2e250556265a24c825860e8549705b98cf`，source准备d3ba；A3e670/Baae1各128fixture，唯一窗口已消费并归还。入口 [report.md](../../docs/evidence/s01/mixed-ab-run/report.md) / [result-manifest.json](../../docs/evidence/s01/mixed-ab-run/result-manifest.json)，SHA0540ceeb808fcc515558aad7b6d7e3b3fe3e90824ce17123ad8216fdd3794992。18原件/分析绑定58372291B；41源码沿原overlay不变，原64检查不重跑。
+
+审者只读核raw/源绑定、任务与ACK分母、SQL分类/latency口径、cleanup、191067625B计量及4MiB reserve；尤其不从两PASS/总elapsed推导提速。time-p28.02s、entry27.710442s、工具观察40.037s包围各自保留；PG/WAL仅前置空间、end/peak未测。原始errors=[]也不当完整性能或全系统无错误证明。0provider/native。main NOT_INTEGRATED；独审发现交owner，不执行新探针或触旧unknown根。
+
+独审 db_transaction_owner / gpt-6-astra，2026-10-07T06:09:46Z，RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2；[正式回执](../../docs/evidence/s01/mixed-ab-run/result-review.json) / [READY](../../docs/evidence/s01/mixed-ab-run/READY.md)。18结果绑定、43执行绑定及977固定A/B路径已核；分布/身份/预算重算相符。审者0执行/PG/写入。
+
+唯一P3：report.md:9所述HTTP计时不包括其后Response重建；准确口径是请求预处理/fetch/body读取/JSON解析截至HTTP观测点。2026-10-07T06:15:34.862275+00:00 owner已在READY和receipt澄清，保留已审报告/raw/source/manifest原字节。该措辞修正不改变任何分布或性能结论。结果接收READY，main NOT_INTEGRATED；整体S01仍开放。
+
+## 历史idle结果独审（不覆盖本次A/B）
+
+状态：APPROVED（仅当前单 runtime 空领取结果忠实性；不表示完整 S01 完成或 main 已接收）
+Review target commit: `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`
+
+| 项目 | 固定范围 |
+| --- | --- |
+| 实现 / 执行 | fd24a1f4d89839c867ed9184ef2c28680c5922cd / 1bd2a0660b84fc4a7602e74a42682264881fb689 |
+| 产品只读输入 | 8d84d529a0756116bd0fc8bad969d61a6c26248e |
+| Scope | status页首列出的9个idle实验源/config、source-snapshot、fixed-input-v3.json、run及result-manifest.json；不包含可变管理文档 |
+| 独审 | Mika / gpt-6-astra：2026-10-06 19:15:35 UTC；architecture_read / gpt-6-astra：2026-10-06 19:16:32 UTC；0 P1/P2 |
+| 回执 / 接收入口 | [result-review.json](../../docs/evidence/s01/idle-claim-cost/result-review.json) / [result-ready.md](../../docs/evidence/s01/idle-claim-cost/result-ready.md) |
+| main | NOT_INTEGRATED；历史mixed接收不覆盖本次idle结果 |
+
+审者只读核8raw共28786B与固定Git/manifest、12HTTP200/193samples/24rename/48sync、ENOENT保留、停止后明确null排空、EMPTY与资源关闭/目录absent、内部及外部时钟、2MiB预算；0review重跑。源码准备的三P2已在4da7关闭，fd24仅补inert fixture version，9 distinct fake及两局部strict/两syntax分次通过，原runtime strict2保留，见[source/check回执](../../docs/evidence/s01/idle-claim-cost/source-review-v2.json)。
+
+限制：1runtime/capacity1/active0，无模型/PG/provider/native。计数是fs API调用，不是物理I/O；采样间峰值UNKNOWN；结果不证明100runner、功耗、SLO或空闲产品优化。原case pre-final快照、raw/manifest/overall-archive不改。
+
+可复制只读复核：先核权威WT/branch/head/dirty；对上述固定target和result-manifest核hash/bytes及source=fd24，核CLI/external-exit最终状态，不以case中间快照覆盖终态；不运行新探针、不触旧未知journal。发现交原owner，不直接改实现。旧准备过程与finding关闭记录可从Git e61ba2c3及已链接回执追溯。
+
+2026-10-07T05:46:42Z owner管理核对（不是新独审）：S01P07固定main0aa1d033的24接收bindings重新匹配，权威树dcf12c72 clean且claim已release；原85/8/4证据边界不变。idle在本次main bf8b5f1d尚无结果目录/对应I02接收回执，仍不标main。A/B d3ba准备输入当前可复用，实际NOT_RUN/NOT_OPEN，详见[当前准备核对](../../docs/evidence/s01/mixed-ab-preparation/current-readiness.md)。不重复64项或增加approval。
+
+以下为按日期保留的历史审查，不作为当前target或新运行许可；其中“实际未运行”仅指当时准备阶段。
+
+## 历史 A/B 准备批准
+
+状态：APPROVED（仅A/B准备）
+Review target commit：d3ba03a88b8d25d134b7abade7f55f8198b182ba
+
+architecture_read / gpt-6-astra于2026-10-06 14:11:28 UTC完成增量独审，Mika/root / gpt-6-astra于14:12:06 UTC独立复核并正式接收；原da932唯一P2 CLOSED，0剩余P1/P2。[审批回执](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/independent-review.json)、[准备入口](../../docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/ready.md)。18项delta绑定Git=WT/hash/bytes，manifest SHA `4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040`。每次同步Git显式受preparation绝对期限及outer期限夹紧，耗尽不执行，返回先扣实际Buffer字节再核门禁；OS超时仍不等于可靠取消。
+
+64 distinct=原61+新增3，最终覆盖分次形成；本次17项含14重叠直接消费者，不能加为78。原3red与全部失败保留，local strict0；审者0重测/导出/PG/目标。原da932的APPROVED已撤回为CHANGES_REQUESTED，历史记录保留于下文，本次修复批准不覆写旧manifest/raw。
+
+此结论只批准准备，不是实际A/B通过、main接收或OPEN。资源RESOURCE_HOLD、条件PENDING、窗口NOT_OPEN；须fresh磁盘≥1GiB+512MiB、PG/WAL条件及串行安排确认，并由Mika点名唯一窗口。源码/raw冻结，不因等待资源新增检查。
+
+## 以下为历史observer批准，不覆盖当前A/B准备
+
 状态：APPROVED
 Review target commit：c259e8e53cd53830fe1bc78ce3c8dae7b34d5540
 
@@ -127,3 +175,23 @@ Review target commit: `51541b0cad73dcad32c7374dc87d631f0b9a8432`。本准备已�
 Review target commit: `339147cb015fdd40ed1cedbc66aca26e736b3ee7`。状态APPROVED，runVerdict=PASS；固定结果已于2026-10-06 10:53:39 UTC经Mika独审，见末段回执。实现51541b0c，实际execution5ea1b26f，productionBase0cee。57项manifest=21source/21readonly/8raw/7support。审查任务：只读核固定Git/WT/SHA/bytes、32真实身份及A/B各16重叠/各12成功4取消、1027事件id/seq/digest/fence/accepted、5journal清空、资源清理和含清理总预算；保留1次无类别/attemptID的heartbeat错误、略早timer标记与实际adapter区间区别、背景/观测/phase限制。核旧FAIL/raw/journal冻结。不要重审同一source设计、重跑检查/PG/HTTP/provider或追加窗口；如有发现精确定位原证据，修复不能覆盖raw。
 
 2026-10-06 10:53:39 UTC：Mika / gpt-6-astra正式只读 **APPROVED** 结果 `339147cb015fdd40ed1cedbc66aca26e736b3ee7`，0P1/P2；57项与32真实身份、1027事件绑定、5journal、资源/预算、错误/计时/背景限制均复核。详见[回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。这是本次固定零模型负载PASS证据验收，不是整体S01/FLOW-001或>100容量完成。architecture_read未重复审，未重跑任何检查/窗口。
+
+## 2026-10-06 13:26:07 UTC main接收
+
+固定 main `aae1eb1054d75e78273e7c91ed048aeac80195da`，本owner核26源与原APPROVED目标逐字一致；来源 [main-acceptance](../../docs/evidence/s01/main-acceptance.json)。无新review target或新容量检查，旧限定保持。全部scope停写后交回，release实际回执项目外。
+
+## A/B preparation（2026-10-06 14:01:45 UTC）
+
+Review target commit: `da93263a1f47039abcfe7d20670cc2040c457136`
+
+状态PENDING；本片独审尚未发生。范围[review-ready](../../docs/evidence/s01/mixed-ab-preparation/review-ready.md)，manifest `a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7`。不沿用c259/64911历史APPROVED。61distinct/strict0是pure/fake准备，实际A/B NOT_OPEN。
+
+## da932追加P2（2026-10-06 14:07:59 UTC）
+
+architecture_read原14:04:38 APPROVED经root同步Git期限补读后更正为CHANGES_REQUESTED，1P2/0P1。`ab-input.ts frozenFiles`使用outer remaining而不是pre15 remaining；14.9秒可同步阻塞至19.9秒。旧raw/manifest不动，最小source修复由owner在原508f v1执行，0actual。
+
+## P2修复待复审（2026-10-06 14:09:19 UTC）
+
+Review target commit: `d3ba03a88b8d25d134b7abade7f55f8198b182ba`
+
+原P2对应同步Git余量显式由preparationDeadline贯穿并返回后核验；3red/17green/strict0，旧61与旧manifest冻结。增量manifest `4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040`，尚未APPROVED，0actual。

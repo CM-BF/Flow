@@ -1,0 +1,588 @@
+{
+  "at": "2026-10-07T11:08:24.990292+00:00",
+  "baseMain": "fb64770082be8e88c6c4ae58d235033636dde1b9",
+  "verdict": "RECEIVED_FIXED_ALREADY_INDEPENDENTLY_APPROVED_INPUTS",
+  "tasks": {
+    "MATURE06-LAZY01": {
+      "source": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "review": "docs/evidence/mature06-lazy-reasoning/client-pg-result-review-receipt.json",
+      "result": "actual1pass2skipped/18HTTP; wrapperFAIL retained; pure classifier4pass; later exact cleanup separate",
+      "directConsumer": "Only one reviewed fixture readClient type derivation; current fixture equals reviewed parent; no other C02 overwrite"
+    },
+    "S01": {
+      "result": "A/B each128 fixture; fewerSQL no consistent latency gain; idle1runtime12emptyclaim no provider capacity claim",
+      "review": "docs/evidence/s01/mixed-ab-run/result-review.json",
+      "idleReview": "docs/evidence/s01/idle-claim-cost/result-review.json",
+      "noExperimentImplementationChange": true
+    },
+    "WPF-DASHBOARD-ACCESS01": {
+      "target": "53723697a796a1346164c4cddc82ab99baf168ea",
+      "scope": "reviewed README ownership/signature/status correction only",
+      "review": "dashboard-local-access/docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json"
+    }
+  },
+  "bindings": [
+    {
+      "originCommit": "750707193b58dadc423bc1806a714cdec7c6a935",
+      "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+      "mode": "100644",
+      "bytes": 15115,
+      "sha256": "429b35ed1334879739e6f6a8073981b8af3515463b51dfa398f1004b8a93f9cf"
+    },
+    {
+      "originCommit": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+      "mode": "100644",
+      "bytes": 13501,
+      "sha256": "dab8de24cde4d572d64bfaa68236d195bf7aad9a0f72acc2e49651e519d776a1"
+    },
+    {
+      "originCommit": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+      "mode": "100644",
+      "bytes": 6634,
+      "sha256": "dde7632231393728f39baf47114ae4a132d616e8d598f2672a06682c43141e3a"
+    },
+    {
+      "originCommit": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "mode": "100644",
+      "bytes": 9815,
+      "sha256": "59f4af577fc2608c9cd404204de45422bfc471557d12b8e25ad5b72f717b7da2"
+    },
+    {
+      "originCommit": "bfbcdd22df1b9c5a5f5cd01ba82ba99e09230690",
+      "path": "docs/evidence/mature02c02/pg-fixture.ts",
+      "mode": "100644",
+      "bytes": 12055,
+      "sha256": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-fixture-intake.json",
+      "mode": "100644",
+      "bytes": 591,
+      "sha256": "9580de63d8f35c9df647fc37b4356eddf84dac4fee84e0004781af6089bc79f8"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-fixture-integration-receipt.json",
+      "mode": "100644",
+      "bytes": 661,
+      "sha256": "07e6c130ab8098867c7237ec362c79bbaadfeaf8c106d18718325b18aa40cdd4"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-fixture-integration-release-receipt.json",
+      "mode": "100644",
+      "bytes": 564,
+      "sha256": "b5831795ff2bd2d7a5ff72dcf54111d5207be17ae7b3e7828cdb4cf1f71ef5f5"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-fixture-review.json",
+      "mode": "100644",
+      "bytes": 809,
+      "sha256": "81ff4da686fbe9f7db76e0031338dc614273c92a61cd5cabe2cc3bfdec393764"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-input-delta.json",
+      "mode": "100644",
+      "bytes": 6022,
+      "sha256": "752702bd4186f54e2ad0307e63285990285ca0a54cd1b966cb6054d0a46fd5dc"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-integration-ready.json",
+      "mode": "100644",
+      "bytes": 2700,
+      "sha256": "dc207e741aa51d47f936a146d00fc01d857d6f2a25685ef56b2acafdd7d125da"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-integration-ready.md",
+      "mode": "100644",
+      "bytes": 1757,
+      "sha256": "23c433802050fc08456f23e5740c76e20a88f3a1e0fbfc66db80c0d12920b619"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-local.json",
+      "mode": "100644",
+      "bytes": 13154,
+      "sha256": "c95c6fa4f493d100e257dfa25e787bf824a9bd8d8f99d0c9eed17953fa9a644f"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-preparation.md",
+      "mode": "100644",
+      "bytes": 2706,
+      "sha256": "0ba7aa6573a55b8a944ca8d6c3ce41df8e90554c337dd415f194946c191ca64d"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-result-manifest.json",
+      "mode": "100644",
+      "bytes": 3128,
+      "sha256": "73c2416dbd6d53cf2bb3a7f4b93c790f520f48b9b6a489807e1d477201b66a20"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-result-review-ready.md",
+      "mode": "100644",
+      "bytes": 1879,
+      "sha256": "b6808cea8ace488b5e70ce32caa32d3bcd7ece0fe9d093a9804fcc5e0e820cee"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-result-review-receipt.json",
+      "mode": "100644",
+      "bytes": 1752,
+      "sha256": "e2a9bbd2826a671e3bd48f13c7713d1236430380cbde1f279225c123b4afddd2"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-result.md",
+      "mode": "100644",
+      "bytes": 2386,
+      "sha256": "4db83b564da14d3e94b6a13c54c655b2382f3c99ee77e7c9593bf54ec2b47572"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-review-correction.json",
+      "mode": "100644",
+      "bytes": 767,
+      "sha256": "2282ffae6009cee124c101e1202b4cbd7f0b8b2f2999c725d86aa917b7e63315"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-review-manifest.json",
+      "mode": "100644",
+      "bytes": 3396,
+      "sha256": "9bb1e0af402483ee53464ebbdff93f6dd1763e19144ddb643abfcafe565d6d90"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-review-ready.md",
+      "mode": "100644",
+      "bytes": 2145,
+      "sha256": "b785033939ba919e745ad2c0df964f3dfb8b5503c70099b7639633071f566f61"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-review-receipt.json",
+      "mode": "100644",
+      "bytes": 1588,
+      "sha256": "0c00fa118f59d13550ee3d105fe4bdbee117a7e472bfeae495a3686b5c084774"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-selector-fix-manifest.json",
+      "mode": "100644",
+      "bytes": 1811,
+      "sha256": "0757034e458182dd02abfd61559f3901a1c55264ef6ca93f252e3694dfe32457"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-tmp-cleanup-tool.json",
+      "mode": "100644",
+      "bytes": 726,
+      "sha256": "483c0583b7d8daccf10a9a131e1f19116e153d80e78bc6d9a39a4696e04237af"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/client-pg-tmp-cleanup.json",
+      "mode": "100644",
+      "bytes": 3148,
+      "sha256": "faa95e80a3defd62392727924902f182a4e6dbcd95202bb2bf71e72d00eea720"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.child.json",
+      "mode": "100644",
+      "bytes": 174,
+      "sha256": "d63711cb0cf1d98a047b6fcff4d6dc7b7b83e72970e50f7fae97ff64a97cc777"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json",
+      "mode": "100644",
+      "bytes": 1728,
+      "sha256": "2b98630cf08a3117284d625ad003a5c1ac1ae617cbcf9eafd1ca7c012ae1ea8f"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.create-request.json",
+      "mode": "100644",
+      "bytes": 150,
+      "sha256": "e8c789fc9a06446248a7c6cf1bf67299de3ab2cec7f1cc6aece8372d57735bda"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.database.json",
+      "mode": "100644",
+      "bytes": 190,
+      "sha256": "e370487d7d5f77c969cef8f47c1e68ff187f2004d5c925b1c5d3ad45722f196d"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.reservation.json",
+      "mode": "100644",
+      "bytes": 166,
+      "sha256": "1a8674b7d0448f816c55303c0d9a7bb32c70081973d093eab989487e8f7a8c57"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.reservation.json",
+      "mode": "100644",
+      "bytes": 178,
+      "sha256": "0a5b5fe26cc2d46db706c62f235cc9c71e0ade80057779836a974d62eae5d352"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.result.json",
+      "mode": "100644",
+      "bytes": 4957,
+      "sha256": "35e3d3926600114eb84f5796b34165395c11e75b308d990a68d2d330c768e514"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.root.json",
+      "mode": "100644",
+      "bytes": 145,
+      "sha256": "b134bd03eb079818c484b9f6a8e2e86cd2cba54b290a6b044fd17bafec90b205"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.stdout",
+      "mode": "100644",
+      "bytes": 187,
+      "sha256": "4dd3f849c7049910147d072c408a078658abcd537e3025692af18f196c885cca"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.tool.json",
+      "mode": "100644",
+      "bytes": 2607,
+      "sha256": "e4c901eee82c3e7a6bad34e9b18e3a8afe99ff8782bb4a625ced70b570fd2d3f"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.vitest.json",
+      "mode": "100644",
+      "bytes": 1570,
+      "sha256": "e335b0dedec47b9ecffb2e5cd6a78264b81b163617199bc1acb8cf87a83a7e9a"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-child.py",
+      "mode": "100644",
+      "bytes": 535,
+      "sha256": "9aa1c8ff9998ed97e8e5243f008d2218adfdd997b5c65eb4a1c253d9e56df2e5"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-client-input.json",
+      "mode": "100644",
+      "bytes": 54202,
+      "sha256": "c9cd5fcbfe75e0268a880e3bc546882938d044171d6569fbcdcc1bd55fa80c42"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-selector-fix.txt",
+      "mode": "100644",
+      "bytes": 602,
+      "sha256": "861a4a01a85cef1aa9c3f165a6052a5cf572e9f6bfdea10297c5a7a7d62872bd"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-selector-local.json",
+      "mode": "100644",
+      "bytes": 2757,
+      "sha256": "4ed0019f843bf09f21246fee805c79950adf75c7bd42024aed321ee76cd61860"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-tsconfig.json",
+      "mode": "100644",
+      "bytes": 2057,
+      "sha256": "3c9ade536724574a8a48240b0338aa8a902291f073f4e52311311fefa5d30273"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-vitest.config.mjs",
+      "mode": "100644",
+      "bytes": 1619,
+      "sha256": "14d61a6d1dda4794e3ad23bb6968ac99f7727e428a722356621bc0446d3f12af"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "plans/mature06-lazy-reasoning/status.md",
+      "mode": "100644",
+      "bytes": 14513,
+      "sha256": "d9167884da41952ffb55351c239d17fa36b4027d59282b0a6c907581e8b47759"
+    },
+    {
+      "originCommit": "48ed7373752781c87a87b8bddd3c9dc4846af52b",
+      "path": "plans/mature06-lazy-reasoning/review.md",
+      "mode": "100644",
+      "bytes": 4311,
+      "sha256": "bd4628f6d55741c03c15edf40abfe2481bbe6ee2f9d23beeaf964baee282c889"
+    },
+    {
+      "originCommit": "53723697a796a1346164c4cddc82ab99baf168ea",
+      "path": "apps/execution-dashboard/README.md",
+      "mode": "100644",
+      "bytes": 15592,
+      "sha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/A/journals.json",
+      "mode": "100644",
+      "bytes": 2690,
+      "sha256": "9ffc09fc440cd47d3293c6a0c02d16a50c73e2bac230077c8e6f1a1a664f7737"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/A/observations.json",
+      "mode": "100644",
+      "bytes": 28670785,
+      "sha256": "5fd89b0ac8867d3e738b69d7941c7e17720885a6ad6691cd60b0f7675edb780a"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/A/owned-resources.json",
+      "mode": "100644",
+      "bytes": 360,
+      "sha256": "f0f2dbdbaae520c18deb6bc7ba420d4eaefe4064e4e57a8482c58b6579fe3937"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/A/reservation.json",
+      "mode": "100644",
+      "bytes": 9619,
+      "sha256": "82b4376f536048e477a1b9839acc554d83c5051210b4d82658c1eca99ba32983"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/A/result.json",
+      "mode": "100644",
+      "bytes": 968415,
+      "sha256": "6e3a35ac8edfc573bf8956e7d83c08ba2f9cb1af7e58829b50cd01b02627c825"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/B/journals.json",
+      "mode": "100644",
+      "bytes": 2690,
+      "sha256": "872b6f3f1a7dadb5a08d1b5a745f9d5a68b021e4520a1a9dbfb3a87aef3640e1"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/B/observations.json",
+      "mode": "100644",
+      "bytes": 27443902,
+      "sha256": "49d88c2df64966b5b26a07291f3bb406da4b67dbaeecf6da59777d2cb28c5aa4"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/B/owned-resources.json",
+      "mode": "100644",
+      "bytes": 360,
+      "sha256": "04708f96fe25942fad70ce851a406578b54d98d173af906ef9d52593859579ff"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/B/reservation.json",
+      "mode": "100644",
+      "bytes": 9619,
+      "sha256": "aee85542a85b37ba6f0bb027754dc02b1f39a74ce1a9d8285875a2e756917083"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/B/result.json",
+      "mode": "100644",
+      "bytes": 968652,
+      "sha256": "f3f06526f82900ca29b0f811db70c42042126486f2155a807397f6fd34eb401b"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/READY.md",
+      "mode": "100644",
+      "bytes": 2862,
+      "sha256": "8bb1a4f236b719df3d47e9f2a1f7ecf02c43d4c1146e5dd18356c76bd77610df"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/analyze.py",
+      "mode": "100644",
+      "bytes": 6618,
+      "sha256": "b91b579b448e7f5969f7f0e1809803a5dcaa6953eecf7f231342eea5bdf9c2b7"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/cli-and-time.txt",
+      "mode": "100644",
+      "bytes": 2674,
+      "sha256": "0ece7a6fb87af49d1fffa9e267ec913d199b1f487bedddd9f2a22ca98614df5b"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/comparison.json",
+      "mode": "100644",
+      "bytes": 13663,
+      "sha256": "92bcd442fbf8d6356e3a54c3f08a7ad6446dd47a122a06dbb616ebe2c01850a1"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/inputs.json",
+      "mode": "100644",
+      "bytes": 256662,
+      "sha256": "cafbfbe67090da883f6e4200437cb1e6d51fb77d00d281987af1331812a90132"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json",
+      "mode": "100644",
+      "bytes": 5687,
+      "sha256": "ae4c6cdd90f9d08aa37d2df27e759d0d75eceef352812e288b95e139057b9210"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/report.md",
+      "mode": "100644",
+      "bytes": 5904,
+      "sha256": "ef1f48428f988db4d94d0bad773611cda911b67c182e0c95bd7debad3486cf94"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/reservation.json",
+      "mode": "100644",
+      "bytes": 863,
+      "sha256": "a197ff3c4de772760cac6b0cd34b02f2f88c16e90d3059aab24b258f5e6ef83e"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/result-manifest.json",
+      "mode": "100644",
+      "bytes": 4810,
+      "sha256": "0540ceeb808fcc515558aad7b6d7e3b3fe3e90824ce17123ad8216fdd3794992"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/result-review.json",
+      "mode": "100644",
+      "bytes": 2330,
+      "sha256": "36b3ee04e31dd36447bd17d341ae8f26cf535369d6537ae53caa2ef49f4dded2"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/mixed-ab-run/result.json",
+      "mode": "100644",
+      "bytes": 3128,
+      "sha256": "30c58bc342267a3f49098bddaeaec20a9ca1bee359ee26f7e62548e5f01a1a10"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/result-manifest.json",
+      "mode": "100644",
+      "bytes": 4091,
+      "sha256": "0fc5137f8a070eb7c2312c43e789ef7e5a4b8077b9033de02291a3fb54005989"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/result-ready.md",
+      "mode": "100644",
+      "bytes": 2218,
+      "sha256": "9129742ebbbecd8927dba05d67e3b613955fc1968c82c548ec37a8fb279da3ab"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/result-review.json",
+      "mode": "100644",
+      "bytes": 1207,
+      "sha256": "852fe84b077a0d64f40939eec75d11ad3d8af17f7bd83dd91a675c615e26f833"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/case-receipt.json",
+      "mode": "100644",
+      "bytes": 24879,
+      "sha256": "649963ee80738a150d57bddc2ed33e2897f28e6dc9f5e0e7934b864eb1d85fe9"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/cli.stderr.txt",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/cli.stdout.json",
+      "mode": "100644",
+      "bytes": 1350,
+      "sha256": "b7690aabec724d19b70c69872ab4ec74089b511c43beec3aa27a1f9c162fe368"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/console.log",
+      "mode": "100644",
+      "bytes": 427,
+      "sha256": "23596e446a583889752f70b1553596ac07a9b0ab8a72e839b25c99ebf7fcba8c"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/external-exit.json",
+      "mode": "100644",
+      "bytes": 627,
+      "sha256": "30e64fc66fbfdd7b4912f3998e87618410b7e2843eba5cfc572b067073f298eb"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/outer-result.json",
+      "mode": "100644",
+      "bytes": 1240,
+      "sha256": "a628406a56c2c65d0c0cffa260585ab48e1e1fb78ad1891998bd4a265d0a49ce"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/owned-root.json",
+      "mode": "100644",
+      "bytes": 112,
+      "sha256": "7e946c5bb949758c5245f590afc039e9791e3ca68e77a05ec08027122ac691a9"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "docs/evidence/s01/idle-claim-cost/run/reservation.json",
+      "mode": "100644",
+      "bytes": 151,
+      "sha256": "3442b78b6f43ff353b79a3676760161ea955ac8257addf6f73970b36e7e6e63f"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "plans/s01-runner-capacity/plan.md",
+      "mode": "100644",
+      "bytes": 19121,
+      "sha256": "9eddf0ae9184977bd3135b46b9a17cb0c25b5882a8413446e3526ead783a2caa"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "plans/s01-runner-capacity/status.md",
+      "mode": "100644",
+      "bytes": 15023,
+      "sha256": "5d8c6adf191b32a42979b8b41bfd6a65de5d24d897e17813e0bb32413c037518"
+    },
+    {
+      "originCommit": "2ba8a79712de35973a144b4aa1701616240b5c4d",
+      "path": "plans/s01-runner-capacity/review.md",
+      "mode": "100644",
+      "bytes": 26300,
+      "sha256": "51849e5da40b430cba0af58e5f16dfe0d88ddd93504013e1efc1accf131d28ee"
+    }
+  ],
+  "testPGProviderRepeats": 0,
+  "ownerStatusesAreFixedPublicationCopies": true
+}

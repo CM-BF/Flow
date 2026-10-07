@@ -1,0 +1,35 @@
+{
+  "reviewedAt": "2026-10-07T08:55:14Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "verdict": "SOURCE_AND_PREPARATION_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "750707193b58dadc423bc1806a714cdec7c6a935",
+  "packet": "fcf4f1aeb133d29fecec8801aaf3158f4f12b70f",
+  "manifestSHA": "9bb1e0af402483ee53464ebbdff93f6dd1763e19144ddb643abfcafe565d6d90",
+  "inputSHA": "c9cd5fcbfe75e0268a880e3bc546882938d044171d6569fbcdcc1bd55fa80c42",
+  "verification": {
+    "reviewBindings": 16,
+    "reviewBytes": 131711,
+    "runtimeInputs": 249,
+    "runtimeBytes": 1184419,
+    "sql": 31,
+    "external": 19,
+    "newOutputsAbsent": 10
+  },
+  "scope": "One appended public FlowClient HTTP journey and finite existing caller input/title/result selection; previous two case bodies/client294 unchanged; fixture exactbfbc. Authenticated public request, default text-only, one full GET then separate UTF8 block cursor, legacyv2 assertions. Original fixture/process/DB identity/90s/KEEP gates preserved.",
+  "local": {
+    "typesExit": 0,
+    "typesMs": 2251,
+    "collected": 1,
+    "collectExit": 0,
+    "collectMs": 1706,
+    "rawBytes": 130,
+    "processes": "2 final absent/mergedEOF/no failure-signals",
+    "tmp": "same-identity removed per fixed receipts; reviewer did not access roots",
+    "retainedLimits": "initial EPERM observations; external wholewall/peak UNKNOWN"
+  },
+  "execution": "reviewer0 import/test/PG/project-write; no old green rerun",
+  "actualPG": "NOT_OPEN/NOT_RUN",
+  "limits": "Preparation/local fidelity only; no UI/native/provider/network hard cap claim."
+}

@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:43:35.483632+00:00 |
+| 最近更新 | 2026-10-07T09:20:27Z |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
-| 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
-| 主线集成时间 | UNKNOWN |
+| 独立审查时间 | 2026-10-07T09:06:13Z（真实journey失败忠实性与selector修复）；既有client/PG/core各自保留 |
+| 主线集成时间 | 2026-10-07T08:54:21.385546+00:00（core/client已接；新journey未接） |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | setup首次UTC与local.json实际起止；本次交审固定时点，不以commit/mtime推算 |
@@ -18,29 +18,30 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads |
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
-| HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
+| HEAD | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 selector source；新增journey源75070719；当前metadata HEAD由Git读取 |
 | 工作分支状态 | ready-for-integration |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | integration |
-| 当前产出 | 公开客户端选择性读取已独审通过，可接收；已审核心与真实HTTP验收保持独立证据。 |
-| 下一可用交付 | 主线接收核心和客户端；界面owner绑定共享投影，真实客户端HTTP验收另选。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 公开客户端真实读取已验证；分类修复独审通过，精确残留目录已授权清理，待接收窄验收增量。 |
+| 下一可用交付 | 主线接收新增公开客户端验收及分类修复；后续界面消费按原owner协作。 |
+| 当前阻塞 | ACTIVE：新增验收与分类修复待主线接收；当前无资源或实现阻塞。 |
 | 需用户决定 | NONE |
-| Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
-| 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
-| main | NOT_INTEGRATED |
-| 实现目标 | 2949569bcac7d3b0257a0026f488f42eb6276222 |
-| 实现范围 | packages/client/src/index.ts; packages/client/src/assistant-stream.test.ts |
+| Review | 09:06:13对09fbd42b/47f54739/a91d5b26结果忠实性及修复APPROVED/0P1P2；原actual FAIL不改绿 |
+| 检查 | 新journey实际1pass/2skipped，wrapper1；离线selector4/4。旧client7/core14/fix4/PG2各自固定未重跑 |
+| main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
+| Dashboard同步 | 已确认权威来源实时聚合：2026-10-07T09:18:08.538Z，观察HEAD04ec0a2b/clean；本次后续metadata尚未重读，不推UI或完成状态 |
+| 实现目标 | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 |
+| 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts; docs/evidence/mature06-lazy-reasoning/execute-pg.py; docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
 | Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
-| 架构影响 | branch-only：patch-select-v1协商与单projection有限selection；原持久流/授权不变。main架构更新待Lead接收，Web跨turn累计cache尚未接线。 |
+| 架构影响 | patch-select-v1与单projection有限selection已随core/client接入maine2b；新验收/分类修复待接。Web跨turn累计cache尚未接线，架构展示同步待Lead确认。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | LAZY01-01 | completed | status_read | 初始9ef8 setup/Interface与v1 receipt |
 | LAZY01-02 | completed | status_read | v2正式领取；本固定六core/三test |
 | LAZY01-03 | completed | status_read | 原14/14；P2修后4定向/strict0；07:47独审通过 |
-| LAZY01-04 | in-progress | status_read | 原PG实际2/2；公开client本次7distinct分轮/strict0待独审，UI未接 |
+| LAZY01-04 | in-progress | status_read | 原PG2/2、client7分轮；新真实journey1pass但wrapper1，离线selector4/4已独审；UI未接 |
 | LAZY01-05 | pending | status_read | NOT_INTEGRATED |
 
 唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
@@ -66,3 +67,21 @@ R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:0
 2026-10-07T08:43:35.483632+00:00 正式client独审已归档client-review-receipt.json，唯一新intake为client-integration-ready.md/json；严格仅两client相对main2a7e语义delta，七support不交为新产品。明确STOP client/index，准备当前v8原子移出供X01；接收者take前无写权。原core intake与raw不改，main尚NOT_INTEGRATED/等待聚合器登记展示。0新工程运行。
 
 client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移出packages/client/src/index.ts，正式回执client-index-handback-receipt.json。接收者必须fresh原子领取，LAZY不再修改该文件；client test/core/evidence范围保留。
+
+2026-10-07T08:51:00Z 单条public-client HTTP准备段从08:44:00Z累计15min：claimv9/13保持，client/index已正式交X01。C02 fixture bfbcdd22一行类型接缝独审通过后，通过integration claim6f4bf925v1受控精确intake33616115，08:49:56v2正式release；未手改fixture/私有token。当前只改own selection-pg.test及既有运行器有限选择/新输入，原R1/旧types/list/raw冻结。最多2必要local children，actual PG NOT_OPEN/无预约；当前0本段child，等待X01归还local。main未见intake收据，等待聚合器登记展示。
+
+2026-10-07T08:53:16.479374+00:00 新client journey准备已完成：types0/2251ms与exactlist1/1706ms，两个child末态absent/mergedEOF、两TMP同identity清理absent，raw130B；0hooks/HTTP/PG。本段08:44:00起点不重置，actual local08:52:23已归还X01。仅新增一个case，旧两case正文逐字保留未选择。新pg-client-input249绑定/31SQL/19external，原claimv9/13、原90s/资源门禁和10新输出保持；actual NOT_OPEN/无预约。准备入口client-pg-review-ready.md，旧core/client canonical仍各自有效且主线回执尚未观察。
+
+2026-10-07T08:56:17.004523+00:00 准备独审通过：chatui08:55:14对75070719/fcf4f1ae判APPROVED/0P1P2，回执client-pg-review-receipt.json。当前claimv9/13 fresh active，原PG输入/raw不变；新inputSHA c9cd5f…0c42保持，10新outputs检查只属准备事实。唯一可执行候选仍MATURE06-LAZY01-CLIENT-PG-20261007-R1，actual NOT_OPEN/NOT_RUN，等待fresh holder/预算与明确OPEN。无本段新增工程运行，main事实仍待真实回执；Dashboard等待聚合器登记展示。
+
+2026-10-07T09:00:55.676680+00:00 CLIENT-PG-R1实际：executiond2d58f25，clock08:58:28→37/tool1，time-p3.90s；新1pass、旧2skipped、18HTTP，默认reasoning正文0B/JSON数组6335B、一次fullGET16B/增量9B独立cursor2→4且text3不动。外壳把skipped计作selected3误拒，VALIDATION_NOT_PASSED；PID26274exit0/groupabsent/mergedEOF，无signals。fixture库OID1268881/marker/CREATE确认，0conn普通DROP/absence及全部closed/errors[]。活动资源已归还；TMPk18wx_uj dev16777234 ino123682682保持KEEP，只exactlstat未扫/删。08:55原准备批准与实际后reviewer纠正均保留，原raw/input不改。root另授≤10min纯JSON分类修复1child≤30s，无新PG。main收据lazy-x01-intake@e2b16924的12个source逐hash已核；D05登记由root确认，live聚合仍PENDING_SYNC而不推部署。
+
+2026-10-07T09:03:04.863327+00:00 新纯修复：原结果09fbd42b冻结，caller纯分类函数对真实JSON离线4/4，新增失败/未知/额外执行均拒绝；1child166ms/602B/EOF/ownedabsent、新TMP删除absent，09:01:58local已归还。旧7gate/core/client/types/PG未重跑；原工具失败不改为绿。当前源改变但旧pg-client-input按R1固定不重绑，0后继运行授权。结果入口client-pg-result.md，窄修与结果一轮交chatui。
+
+2026-10-07T09:07:13.941086+00:00 正式结果/窄修复审：chatui09:06:13对09fbd42b/47f54739/a91d5b26判FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED，原selectorP2 CLOSED，0P1P2。client-pg-result-review-receipt.json为正式回执，原Vitest1pass/2skipped及wrapper1/TMPKEEP/所有raw-input字节不变。准备与结果失败纠正保留；无后继PG或cleanup授权。当前只metadata归档，13scope保留；新journey/fix主线未接，core/client已在e2b，UI/native/provider仍不在本结果范围。
+
+2026-10-07T09:11:41.244159+00:00 exactTMP后续授权收尾完成：独立client-pg-tmp-cleanup.json/tool.json，09:09:37UTC、同dev16777234/ino123682682，重核已审process/DB关闭证据后4entries138B有界清单、同identity删除/ENOENT，tool0/含收据19ms，0PG/test/新TMP。原11raw/tool1/thenKEEP逐hash不变。唯一新增窄intake为client-pg-integration-ready.md/json；newjourney/fix待接收，旧core/client已maine2b。D05已正式登记来源为root通知，live聚合尚未读取PENDING_SYNC；不推测部署或整个task完成。local已直接归还X01。
+
+2026-10-07 09:17 UTC 静态资源复核：read-byte-bound-research.md绑定main9b27005f。合法text/增量页正文≤64KiB，单block≤1MiB；JSON转义正文分别可达384KiB/6MiB，均另有envelope，不能冒3MiB逻辑resident或JS heap/wire上限。建议后继提取内部bounded JSON机制并保持领域caps，需X01入口与对应leaf正式写权；本轮0源码改动/测试/网络/PG。canonical新增窄intake保持，Web接线不等待此研究；当前无actual/待launch，聚合live仍PENDING_SYNC。
+
+2026-10-07T09:20:27Z 归档Mika/root实际只读聚合观察：同一`http://127.0.0.1:4320/api/snapshot`首次8s超时未推终态；root确认node96517仍LISTEN后，第二次在20s限内HTTP200、2,927,623B，generatedAt=2026-10-07T09:18:08.538Z/193tasks。本task source.mode=live，path=/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md，modifiedAt=2026-10-07T09:17:58.929Z，syncedAt=2026-10-07T09:18:08.538Z，stale=false；git.head=04ec0a2bd050e35986838f0a37634d1fe744e552、branch=codex/lazy-reasoning-reads、dirty=false、observedAt=2026-10-07T09:18:08.638Z。据此关闭“尚未确认可聚合”的PENDING_SYNC，仅证明该历史时点正确权威源可实时聚合；不证明UI渲染、全部质量字段、部署、整个task完成或本次新提交已同步。root未留完整响应hash，本owner未补造，未重复GET/测试；原先未知记录保留。

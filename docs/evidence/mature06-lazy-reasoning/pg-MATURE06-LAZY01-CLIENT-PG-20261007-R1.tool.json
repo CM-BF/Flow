@@ -1,0 +1,49 @@
+{
+  "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1",
+  "execution": "d2d58f252363046339acba6e7a590b3b281e0481",
+  "preflight": {
+    "at": "2026-10-07T08:58:22.093386+00:00",
+    "head": "d2d58f252363046339acba6e7a590b3b281e0481",
+    "clean": true,
+    "branch": "codex/lazy-reasoning-reads",
+    "claimVersion": 9,
+    "scopes": 13,
+    "inputSHA": "c9cd5fcbfe75e0268a880e3bc546882938d044171d6569fbcdcc1bd55fa80c42",
+    "bindings": 249,
+    "external": 19,
+    "absentOutputs": 10,
+    "freeBytes": 23947759616,
+    "combinedFloor": 4482138112,
+    "pairedReservedBytes": 18350080,
+    "peerActual": "X01 zero actual/pending launch, fixed results only; no shared writes",
+    "adminEndpoint": "approved loopback55432; credential omitted",
+    "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1"
+  },
+  "toolBefore": "2026-10-07 08:58:28 UTC",
+  "toolAfter": "2026-10-07 08:58:37 UTC",
+  "toolEnvelopeSecondsUpper": 10,
+  "toolExit": 1,
+  "timePSeconds": 3.9,
+  "firstCall": {
+    "wallTimeSeconds": 1.000879791,
+    "session": 65346
+  },
+  "finalCall": {
+    "wallTimeSeconds": 7.292e-06
+  },
+  "originalToolOutput": "{\"window\": \"MATURE06-LAZY01-CLIENT-PG-20261007-R1\", \"delivery\": {\"finalReceiptWritten\": true, \"elapsedAfterReceipt\": 3.8331066250102594, \"success\": false}, \"primary\": {\"type\": \"ValueError\", \"code\": \"VALIDATION_NOT_PASSED\", \"errno\": null}, \"secondary\": [], \"internalChecksPassed\": false, \"processClosed\": true, \"fixtureReceiptConfirmed\": false, \"tmp\": {\"path\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy-pg-k18wx_uj\", \"state\": \"KEEP\", \"dev\": 16777234, \"ino\": 123682682}, \"elapsedSeconds\": 3.8326992079382762}\nreal 3.90\nuser 1.96\nsys 0.61\n",
+  "resourceReturn": "Immediately reported to Mika and X01 after reading exact new receipts; process/DB closed; own TMP retained, no active holder. No cleanup/retry performed.",
+  "reviewCorrection": "08:55 preparation approval subsequently withdrawn by reviewer after observing actual skipped enum; 1 P2 selector error. Correction arrived after execution.",
+  "postRunReadonly": {
+    "at": "2026-10-07T09:00:05.801230+00:00",
+    "fixtureBindingConfirmed": true,
+    "databaseCleanupEvidence": "same database/reservation/CREATE ACK/marker/OID, fixture0connections/normalDROPabsence, no additional PG query",
+    "tmpExactLstat": {
+      "dev": 16777234,
+      "ino": 123682682,
+      "state": "KEEP",
+      "childrenRead": false
+    },
+    "selectorFailure": "Jest JSON assertion status skipped differs from numPendingTests; old classifier included skipped in selected"
+  }
+}

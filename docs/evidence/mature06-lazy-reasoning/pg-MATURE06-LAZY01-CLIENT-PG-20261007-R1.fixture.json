@@ -1,0 +1,90 @@
+{
+  "database": "flow_c02_01c98e71a37b48739f7f0a2735c6df61",
+  "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1",
+  "sourceHead": "d2d58f252363046339acba6e7a590b3b281e0481",
+  "nativeProcesses": 0,
+  "providerCalls": 0,
+  "configuredConnectionLimit": 14,
+  "primaryPhases": [],
+  "cleanupErrors": [],
+  "httpLimit": 256,
+  "port": "64417",
+  "migrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    34
+  ],
+  "publicClientSelection": {
+    "defaultReasoningBodyBytes": 0,
+    "defaultDecodedJSONBytes": 6335,
+    "fullReads": 1,
+    "fullBytes": 16,
+    "incrementalBytes": 9,
+    "textCursor": 3,
+    "reasoningCursors": [
+      {
+        "kind": "block",
+        "after": 2,
+        "next": 2
+      },
+      {
+        "kind": "block",
+        "after": 2,
+        "next": 4
+      }
+    ],
+    "scope": "real FlowClient HTTP through existing projection; injected native events, synthetic host turn; no UI/provider/native or TCP-byte claim"
+  },
+  "databaseLogicalBytes": 12811287,
+  "roots": [],
+  "httpRequests": 18,
+  "creationRequested": true,
+  "creationAcknowledged": true,
+  "databaseIdentity": {
+    "oid": "1268881",
+    "marker": "cca9a304-0a82-4923-8754-e6a3bfc589ca"
+  },
+  "cleanup": {
+    "startupSettled": true,
+    "runnersClosed": true,
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "databaseIdentityConfirmed": true,
+    "connections": 0,
+    "databaseAbsent": true
+  },
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T08:58:32.454Z",
+  "cleanupComplete": true
+}

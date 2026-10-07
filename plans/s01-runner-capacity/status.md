@@ -2,192 +2,102 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:00:30 UTC；只读固定main280289 runtime wait缺口登记 |
+| 最近更新 | 2026-10-07T06:15:34.862275+00:00 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原task实际开工缺可复核时间；本次管理段开始为2026-10-07T05:45:30Z工具UTC，不替代原task开工。原验收仍有开放项。 |
+| 任务层级 | 子task |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
-| 单一status owner / model | status_read / gpt-6-astra；历史 owner mika 保留于下文 |
+| 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 固定main1c输入；observer implementation c259e8e53cd53830fe1bc78ce3c8dae7b34d5540；历史128 source6de/execution70c/result64911各自冻结 |
-| 工作树dirty状态 | 新旧source/raw冻结；仅正式review/ready metadata，提交后clean |
+| 工作基线 / HEAD | 结果 914cb63824f614223b62153c770186e9d46d586e；execution b75f1a2e250556265a24c825860e8549705b98cf；A/B固定历史生产输入见结果报告；当前metadata HEAD由Git读取 |
+| 工作树dirty状态 | 本次仅唯一status/review/plan收口；实际source和原raw均固定不改 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED：observer后继4/4 fake direct+局部strict0；128历史结果APPROVED保持，不新增实际调用 |
-| 已集成main状态 / HEAD | W1/W2与后继计划metadata已集成main/origin32c371d389a913f8dd71c3bd8b98dd0697411256，c86cab三scope零diff；S01P01核心及ES2023兼容修复已独审并集成main d7e1e64e7792f4d1ad4933db042f10f266ad0cca |
-| 实现目标 | c259e8e53cd53830fe1bc78ce3c8dae7b34d5540 |
-| 实现范围 | experiments/runner-capacity, docs/evidence/s01, plans/s01-runner-capacity；旧raw/manifest不改，无产品实现写权 |
+| 检查状态 | PASS：唯一A/B各128fixture任务/attempt/session，全部清理通过；仅本次真实实验，不与旧64准备/128/idle合并 |
+| 已集成main状态 / HEAD | 本次A/B NOT_INTEGRATED / 结果独审通过、READY待受控接收；idle主线接收仍未证；历史mixed及独立S01P07 main0aa1d033不受影响 |
+| 实现目标 | 914cb63824f614223b62153c770186e9d46d586e |
+| 实现范围 | docs/evidence/s01/mixed-ab-run/A/journals.json, docs/evidence/s01/mixed-ab-run/A/observations.json, docs/evidence/s01/mixed-ab-run/A/owned-resources.json, docs/evidence/s01/mixed-ab-run/A/reservation.json, docs/evidence/s01/mixed-ab-run/A/result.json, docs/evidence/s01/mixed-ab-run/B/journals.json, docs/evidence/s01/mixed-ab-run/B/observations.json, docs/evidence/s01/mixed-ab-run/B/owned-resources.json, docs/evidence/s01/mixed-ab-run/B/reservation.json, docs/evidence/s01/mixed-ab-run/B/result.json, docs/evidence/s01/mixed-ab-run/analyze.py, docs/evidence/s01/mixed-ab-run/cli-and-time.txt, docs/evidence/s01/mixed-ab-run/comparison.json, docs/evidence/s01/mixed-ab-run/inputs.json, docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json, docs/evidence/s01/mixed-ab-run/report.md, docs/evidence/s01/mixed-ab-run/reservation.json, docs/evidence/s01/mixed-ab-run/result.json, docs/evidence/s01/mixed-ab-run/result-manifest.json |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 实验观测器共享锁查询分类修复已独审通过，128历史证据保持原样 |
-| 下一可用交付 | P05固定6336cd00待独审；S01-06长驻wait已登记，产品owner/scope待Mika协调 |
+| 当前产出 | 事件写入A/B结果已通过独审；SQL调用减少，但未显示一致延迟收益，接收证据已齐备。 |
+| 下一可用交付 | 接收已审A/B结果与计时澄清；原始证据和实验源码保持固定。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：observer c259e8e53cd53830fe1bc78ce3c8dae7b34d5540，architecture_read/Astra，2026-10-06 12:45:30 UTC，0P1/P2；Mika接收 |
+| Review | APPROVED 914cb63824f614223b62153c770186e9d46d586e；db_transaction_owner / gpt-6-astra，2026-10-07T06:09:46Z，0 P1/P2；仅固定A/B结果忠实性，见result-review.json |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE；2026-10-07T06:14:33.686805Z一次只读CLI核owner/WT/branch/all5，保留原范围 |
+| 架构影响 | 本片只增加实验观察与证据，不改产品 Interface、FSM、数据库连接或外部依赖边界；无需更新产品架构图。S01P07已main0aa1d033，新增v2领取机会/runner自身份/持久日志语义，仍单admission loop无新scheduler；其权威status已登记架构图target/Execution Lead待更新，本树不代写图 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| S01-01 | completed | mika | [research](../../docs/evidence/s01/research.md)：权威来源/head/dirty核验及差距 |
-| S01-02 | completed | mika | [合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
-| S01-03 | completed | mika | 实验入口/计量/清理已固定9da，smoke及6unit检查通过；W1结果见manifest |
-| S01-04 | in-progress | status_read / mika | 旧W1/W2冻结；mixed唯一窗口A16实测部分有效、整体FAIL/B未启动，无补跑。ACK/browser仍未执行 |
-| S01-05 | in-progress | architecture_read / Lead | W1/W2结果历史APPROVED；mixed结果6a5961a独审APPROVED仅如实失败；新窗口准备/结果另审 |
-| S01-06 | in-progress | 后继独立owner / Mika / Lead | [长驻wait登记](../../docs/evidence/s01/long-lived-wait/README.md)；[独立后继status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-attempt-pool/plans/s01-attempt-pool/status.md)：核心已独审并集成main d7e1e64，根检查通过；启动参数及真实provider另计 |
+| S01-01 | completed | mika | [权威输入研究](../../docs/evidence/s01/research.md) |
+| S01-02 | completed | mika | [实验合同](../../experiments/runner-capacity/README.md)、[参数](../../experiments/runner-capacity/contract.json) |
+| S01-03 | completed | mika | 薄实验入口和功能 smoke 已交付；历史失败与修复原件保留 |
+| S01-04 | in-progress | status_read / mika | W1/W2、停止修复后 32 tasks、128 fixture 实际执行和本次 idle 测量已分别封存；原 ACK/browser 验收仍开放，优化 A/B 已实际完成、结果独审通过待接收 |
+| S01-05 | in-progress | status_read / mika / Lead | 各固定结果已有独审，历史 mixed 已 main；当前 idle 双审通过待主线接收，完整计划尚未验收 |
+| S01-06 | in-progress | status_read / mika / 后继独立owner | [idle 单次结果](../../docs/evidence/s01/idle-claim-cost/result-ready.md)已交付测量；S01P07已独立实现、验证和main接收，见下方固定回执；完整父计划仍开放，A/B实际结果独审通过待接收 |
 
-## 历史权限、优先级与事实边界（当前接收见末节）
+## 当前片段：已审空闲领取测量
 
-claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` v1 ACTIVE，06:22:33.774Z；[回执](../../docs/evidence/s01/claim-receipt.json)。只写3个新目录，无共享生产写权。K03关键验证与独审优先，本人负责S01，不新增agent。W1与W2许可均已执行、清理并释放；没有新的运行授权。
+接收入口为 [result-ready.md](../../docs/evidence/s01/idle-claim-cost/result-ready.md)，[结果 manifest](../../docs/evidence/s01/idle-claim-cost/result-manifest.json)和[双审回执](../../docs/evidence/s01/idle-claim-cost/result-review.json)保持原字节。实现 `fd24a1f4d89839c867ed9184ef2c28680c5922cd`，执行 `1bd2a0660b84fc4a7602e74a42682264881fb689`，结果 `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`；三者不混用。
 
-W1证明本机四个独立fixture runner可同时执行该固定负载，没有SLO、模型容量或真实provider成本结论。128背景会话对象与 native session、实际在途 attempts 各自计数。生产源码可能串行是源码观察，须由实验给出有效容量，不自动派生优化收益。
+唯一窗口已消费且未重试：1 runtime / capacity1 / active0，12 次 HTTP 空领取均200；24 rename、24 file.sync、24 directory.sync，193样本，写入参数1512B，首次读取 ENOENT 如实保留。正常停止排空末次明确空响应后 journal EMPTY；runtime、listener、文件句柄、socket、子进程组及 stdio 关闭，自有目录 absent，无本次 retained。
 
-## Dashboard 同步
+外部全程6641.184ms与内部6551ms分列；预算计量1,774,593B/2MiB，已包含256KiB自动/人工预留，不重复加算raw。仅异步API调用及采样事实；采样间峰值UNKNOWN，不是物理I/O、功耗、SSD寿命、100 runner、provider吞吐或SLO证据。0PG/provider/native。原结果的 pre-final snapshot 与失败准备日志不改写。
 
-唯一手填事实源为本文件。Lead已在main a26a登记77 sources；本人06:38实读4320，本任务live、stale=false、issues=[]。不手改聚合JSON。架构无产品变化，后续若发现产品瓶颈交独立owner。
+## 未运行与后继边界
 
-06:32安全停点：K03已交完整固定target，Mika优先独审；S01没有运行smoke/负载或调用模型。合同方法反馈明确读循环single-flight及总时限含清理，草稿已用await循环并为清理留10秒，仍待运行验证。
+- **A/B：** 唯一s01-event-state-ab-once实际于05:59:51.473Z启动、06:00:31.510Z观察tool exit0；06:00:50.057Z精确资源复核后归还。A/B各128fixture PASS，0provider；[报告](../../docs/evidence/s01/mixed-ab-run/report.md) / [manifest](../../docs/evidence/s01/mixed-ab-run/result-manifest.json)，结果target 914cb63824f614223b62153c770186e9d46d586e，独审APPROVED、main NOT_INTEGRATED。SQL调用53279→48601，窗口event HTTP p50 52.831→61.405ms，不能称整体提速。旧64项只是准备分轮覆盖，不重复运行。
+- **S01P07：** 沿 S01-06 的独立产品子任务已完成并main接收，权威[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/plans/s01p07-runner-claim-recovery/status.md)现场HEAD dcf12c721141054a99d2f58e870b62cb77e67a94 clean。本段重新核固定main0aa1d033的[I02回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/s01p07-intake.json)24bindings全部匹配；其为本次main bf8b5f1d祖先。85非PG、中心8PG、capacity4PG分轮证据不合成新通过数；主线组合types0/新contracts+client两文件8/8是接收检查。claim9ec4dbc8 v3于2026-10-07T04:10:43.562Z RELEASED，外部receipt已只读核；原S01 claim独立保留。旧v1 unknown及已持久assignment仍保守，不重放旧journal，不把功能通过当优化收益测量。
+- **完整验收：** 六个稳定 TODO 保持原完成状态；真实 provider/ACK/browser、完整未知恢复等未证事项没有因局部测量通过而完成。
 
-2026-10-06 预算重分配：Goal Owner明确批准一次最多4 tasks/attempts复核；smoke总8（4已用+4待用），可选声明capacity4对照16→12，其余不变、总64。第二轮若失败停止重跑；正式窗口未授权。首轮证据 docs/evidence/s01/smoke-first/result.json 原封保留，4.33秒；3个自有进程exit0、DB remaining=[]、pendingOutbox=[]。缺少attempt.created_at列，改首次claim初始lease反推区间并标毫秒精度，不能把第一次结果改为通过。
+## 已交付历史与证据入口
 
-2026-10-06 06:43 UTC 修复复核：固定53c8713，smoke-repair整体PASS、2.821秒含清理，原smoke-first整体FAIL不变。已使用8/8功能smoke任务；不再重跑。总64额度余56，后继正式16+16+12、gate8、ACK2、browser2未运行。独立worker只读复核中，产品源码无变化。
+| 历史片段 | 固定事实与边界 |
+| --- | --- |
+| W1/W2 | [W1](../../docs/evidence/s01/w1-results.md)、[W2](../../docs/evidence/s01/w2-results.md) 已独审/历史 main 接收；原累计44 tasks、38 attempts、20.925025秒，不与后续独立预算合并 |
+| 原 mixed | [6a5961a 结果](../../docs/evidence/s01/mixed-run/report.md)为如实 FAIL：16 attempts、A部分有效、B未跑；未知 journal 保留，未读取/重放/清除 |
+| after-drain | [339147cb 结果](../../docs/evidence/s01/mixed-after-drain-run/report.md)为32真实 tasks/attempts，A/B各16；1 heartbeat 错误原因unknown保留，不推导纯锁时间或SLO |
+| 128 fixture | [64911a3c 结果](../../docs/evidence/s01/mixed-128-run/report.md)为128实际fixture tasks/attempts/持久session；非128 native agent。历史FOR SHARE查询耗时分类UNKNOWN，不回填 |
+| observer / main | c259精确分类修复独审通过；[main接收](../../docs/evidence/s01/main-acceptance.json)与[26源入口](../../docs/evidence/s01/mixed-integration/README.md)覆盖已审6de24+c2592，集成检查不算新增容量窗口 |
 
-2026-10-06 06:44 UTC 独立review完成：worker只读APPROVED target65d7a57；无P1/P2。功能片段已交付但main未集成；完整S01开放TODO不勾完。正式后继仍需实现与具体运行窗口。
+原逐段过程记录保留在 Git `e61ba2c304e64600c70126a8dd46a4d167f18323` 的本文件；各原始证据/manifest及预算历史快照不改。本次整理不重新解释历史失败、批准或 main 接收范围。
 
-2026-10-06 06:46 UTC 正式入口开工：Mika同一权威worktree/claim v1，沿用本任务find-skills与clean-code/codebase-design方法。保留smoke批准记录，新增源码不沿用批准；worker并行只读核真实字段/分页/计量界限。正式运行尚无窗口。
+## Dashboard 与管理观察
 
-2026-10-06 06:51 UTC 正式入口实质进展：新增场景/统计module、128会话分页/16预受理task/四进程共同放行、96runner/80timeline/96workspace分层校验、单循环轻读/PG观察/区间峰值。3统计测试通过、noEmit0，未启动负载。准备提交只读review；协议超领gate将作同窗口前置，仍未实现。旧smoke批准target不覆盖新源码。
+唯一手填进度源为本文件。GO 于2026-10-06 19:50 UTC已核聚合器读取本WT、HEAD e61ba2c3及508f v2，idle详情和双审正确；旧摘要/目标/范围格式不完整，由本次管理更新修正。owner此前19:16:46及19:48:16两次各自授权的5秒GET均超时，历史PENDING_SYNC事实保留。本次管理提交 `a8a5e3be7545004cd8b0cba7886410edc3a44309` 后，于2026-10-06 19:55:25 UTC仅一次GET（max-time10秒）返回curl28/10011ms/0B超时；当前 owner API核对仍为PENDING_SYNC，无重试。本次没有拿到新来源行或摘要，GO19:50的成功观察只覆盖旧e61版本；不凭分支完成推断main接收。
 
-2026-10-06 06:54 UTC：正式c32d4d1入口已交独立worker只读review；同时新增8任务protocol gate草稿，使用8个并发HTTP claim竞争capacity2，真实DB核恰好2独有attempt，再用正式completed(cancelled)/owner cancel收尾，不执行adapter或模型。gate noEmit0；未运行。新代码不能沿用smoke approval，窗口未领取。
+## 本次质量与交接
 
-2026-10-06 06:58 UTC：两项P2已修，6unit tests/noEmit0；运行入口统一总64任务/attempts及180秒预算与同scenario不重跑，缺完成receipt时failclosed。正式要求先成功gate。尚未创建新的DB/task/进程，窗口申请待固定入口复审。
+2026-10-06 19:54:21 UTC：沿既有本地 find-skills、clean-code（sickn33固定来源）、codebase-design 方法，只核状态字段、固定target/范围、六TODO一一对应和当前/历史职责；清除重复过程文字，未运行工程检查、实验、PG或截图。当前结果范围不含可变 plan/status/review 或整份证据目录。提交后继续持有原claim；接收方按现有 result-ready 接收，S01P07另行协调。
 
-2026-10-06 07:01 UTC：运行准备独审APPROVED。待协调具体窗口；Mika为解阻责任人，向GO回固定target、60秒总窗、独有DB/PID正常清理。无窗口时可做只读结果报告模板/后继方法核查，不能启动负载。历史smoke8已用，计划本窗再24 tasks，累计最多32/64；0模型。
+## 2026-10-07 当前准备与质量收口
 
-2026-10-06T07:05:09.162788+00:00 W1实质交付：gate8tasks/2attempts，formal16tasks/16attempts；结果failure=null、完整清理，实测attempt峰值4但结果待独审。累计32tasks/26attempts，余32task原分配未动；0模型。原2份smoke失败/修复证据原样保留；本窗raw已写，生产未变。
+本段05:45:30Z开始，只读核固定main/子任务回执及既有A/B输入，更新本唯一状态。A/B仍使用A3e670/Baae1且只归因events.ts；不是当前main、128真实SDK或SLO验证。解除条件由Mika协调新独占窗口、fresh资源及execution HEAD；本段NOT_OPEN，0工程测试/PG/导出/安装。固定包旧审批不被管理更新改写；idle raw、manifest、overall-archive和未知根均未访问/修改。
 
-2026-10-06 07:11 UTC W1独立结果审查APPROVED target9e10e09，无P1/P2，报告补充poll50/默认500ms、读端小样本和总时长非吞吐窗口。冻结manifest/raw未改，独审回执独立保存。本片段已审待main接收，完整S01仍开放；可选12task declared4优先建议待GO决定，0新增运行。架构影响：仅实验消费者与证据，无产品接口/DB/生命周期变更。
+应用既有本地find-skills（优先已有）、codebase-design及固定clean-code方法：区分实验/产品owner、固定输入/当前main、已审准备/真实运行；只改陈旧事实与链接，不加框架/重复测量。技能路径与固定来源版本沿既有A/B Interface，未安装更新。当前聚合以此唯一status为准；本次只调用主线parseStatus核本行形状，未发全snapshot请求，展示仍PENDING_SYNC，不沿旧超时推断同步成功。
 
-2026-10-06 07:12 UTC dashboard实读：权威S01 source live/stale=false，9cda03662783c58ce606958d68ed7526d8847179 clean，review approved、implementation unchanged、issues=[]；首窗片段integration，等待Lead主线接收。见[当前dashboard回执](../../docs/evidence/s01/w1-dashboard-receipt.json)。原子账本07:11实读claim v1仍ACTIVE，scope与唯一owner未变；本段之后继续保留后继协调权，不释放或启动新负载。
+2026-10-07T05:48:02Z 管理校验：主线现有parseStatus返回errors=[]、human.missing=[]，parent FLOW-001/co-lead mika识别正确；唯一timing issue为历史开工UNKNOWN，按时间契约保留。Git diff仅本次4份管理文档，原6TODO三完成/三开放保持；未改实验源码或已封存证据。
 
-2026-10-06 07:16 UTC W2准备启动：Goal Owner明确批准仅准备declared4/12，继续同WT/claim/base115b；root唯一writer，worker转独立CHAT06P01。按声明capacity校验且保留实际peak；修复claim未emit/未知结果的保守预算扣额。W1已限定验收并交Lead接收2784473，新源码不沿用旧批准。0新增smoke/负载/模型，纯unit与noEmit检查允许；固定源码独审后申请≤30秒窗口。S01-04继续in-progress。
+## 2026-10-07T05:56:14.683444+00:00 A/B operator准备
 
-2026-10-06 07:19 UTC 实质进展：W1获MAIN_ACCEPTED30b，owner核2784473祖先且三scope对main零diff，见w1-main-receipt.json。W2固定场景解析/真实注册容量与per-runner峰值、未知attempt保守预算已实现；新6预算用例先复现5失败，再与统计/参数共11tests通过，noEmit0（最终源码11pass/noEmit0）。未创建任何新PG或负载。新源码待固定与独审；W1 main事实不覆盖W2。
+Fresh claim508f v2/all5/owner/WT/branch相符，观察HEAD121c3022=origin clean，41 unique源绑定匹配d3ba叠加包，run根absent。精确window仍s01-event-state-ab-once；[operator handoff](../../docs/evidence/s01/mixed-ab-preparation/operator-handoff.md)列出调用与候选资源线5,663,621,120B（共享floor+512MiB实验+1GiB PG/WAL调度预留，非已测占用）。本段只读/metadata≤64KiB、NOT_OPEN、0磁盘采样/PG/runner/测试/导出。Web直发一次agent-not-found，Mika沿既有协调路径接手；不重复唤醒或等时钟推定归还。源、旧raw/manifest、原6TODO/main事实不变。唯一status继续可聚合，展示仍PENDING_SYNC；不新增全snapshot轮询。
 
-2026-10-06 07:26 UTC W2独审完成：独立worker限定APPROVED2ab，无P1/P2，源码/25hash与旧raw边界核验。Mika向GO申请≤30秒阶段，CHAT06P01尚准备时不拖S01；常驻服务刷新与测量由GO错开。当前0新负载/模型，原64/64/180秒/64MiB及实际32/26未变。
+## 2026-10-07T06:05:59.823099+00:00 唯一A/B实际交付
 
-2026-10-06 07:27 UTC dashboard实读：S01 a22329e clean、approved/unchanged/current、live且stale=false、issues=[]；人类摘要为准备已独审、协调实际测量窗口。见[W2聚合回执](../../docs/evidence/s01/w2-approved-dashboard.json)。
+结果 914cb63824f614223b62153c770186e9d46d586e，execution b75f1a2e；所有实际原件冻结。原300s/512MiB门禁通过：entry27.710442s、time-p28.02s、tool观察包围40.037s分列；累计可见191067625B含既有4MiB最终预留。两专库普通DROP/absence、四child close0、两个journal根及source-root absent，独占已即时归还；没有额外再运行、未知根访问或个人服务变更。A/B两侧各128任务/attempt/session、2304事件、1536窗内emit、30 live/fenced样本；分母和观察开销见report/comparison，不当provider/SLO/最新main或整体性能改善。
 
-2026-10-06 07:33 UTC 窗口阻塞：两次固定起点预约因最终GO未及时到达而不启动，后续07:32:30租约到期也未收到最终GO；0新tasks/attempts/PG，见w2-window-coordination.json。解除条件为明确GO且剩余静默期足够完整30秒，责任Mika协调GO；不用缩短清理或补跑绕行。独立工作为CHAT06P01源码/纯验证，worker已恢复必要检查；S01源码固定2ab不变。
+本段沿本地find-skills/codebase-design/固定clean-code方法，只核单一编排、固定输入、生命周期/错误、各时间与字节口径；离线分析无新产品行为/框架。新报告/analysis/manifest及本status/review用原4MiB reserve，已测加64KiB后继metadata留额397266B内；不重复加全部已计raw。六TODO状态不改，整体S01未完成。唯一status已同步，dashboard新展示未查询为PENDING_SYNC，不拿旧观察填本次成功。
 
-2026-10-06 07:37 UTC W2实质交付：条件GO/三队全ACK后07:36:13.218→21.191完成declared4/12一次运行并清理，已QUIET_RELEASE。注册容量4、保守attempt峰值1/1、adapter/tool峰值1，12任务全部通过；结果待独审，不能作加速比/SLO。累计44tasks/38attempts/20.925025秒stage，0模型；原raw保留，W2未集成main。下一独立工作为既有plan内的0调用有界slot方案，与CHAT08源码owner界限明确，CHAT06P01测量入口仍优先。
+## 2026-10-07T06:15:34.862275+00:00 A/B结果独审收口
 
-2026-10-06 07:44 UTC W2结果独审APPROVED0dac，无P1/P2。原raw/manifest保持hash；两项P3观察边界已补，首次PG空application_name连接归unknown，停止阶段一次claim失败与72事件ACK区分。累计44/38与20.925025秒未变，0重跑。claim v1 ACTIVE同scope已复核；后继只记录批准/交main与0调用slot方案，dashboard待本次状态聚合。
+[唯一接收入口](../../docs/evidence/s01/mixed-ab-run/READY.md)已READY；独审于2026-10-07T06:09:46Z绑定结果914cb638 / packetaa2c2112，0 P1/P2。审者核18结果58372291B、43执行绑定、A/B977路径，以及各128身份/ACK/持续采样、分布/预算和资源收尾；不继承为最新main或SDK/SLO通过。P3计时文字已在READY与review receipt澄清：HTTP计时止于观测点，不含随后ACK观测/Response重建；原报告/raw/source/manifest原字节冻结。
 
-2026-10-06 07:44 UTC dashboard确认：权威S01 source live/stale=false、0bd16d4 clean，delivery integration、review approved、implementation unchanged/current、issues=[]；W2 main仍not-contained。见[w2-result-dashboard.json](../../docs/evidence/s01/w2-result-dashboard.json)。metadata交接后不重复轮询或运行。
+本管理段只改既有证据/plan范围，0测试/PG/服务/未知根访问。开段HEAD=originaa2c2112 clean，fresh claim508f v2/all5身份不变。应用本地find-skills优先既有技能、codebase-design的单一观察Interface及固定clean-code来源（sickn33/agentic-awesome-skills bdacd76，SKILL SHA3c4115e1…6f317），复核命名、错误/未知、无重复raw与范围/时间口径，无未解决P1/P2。原6TODO三完成三开放，不标整个S01完成。原4MiB最终预留内累计清单见READY；不另加运行预算。
 
-2026-10-06 07:46 UTC S01-06只读提案已写回原plan：一个admission/recovery owner+有限attempt Map，明确注册/执行/unknown占用、session排他、outbox与FinalProposalJournal、maintenance/host与单attempt失败边界。CHAT08权威status/head/dirty及账本核验，未写其scope、未启动测试/负载。W2交接固定止于5504b16，proposal后继不混作W2结果批准；CHAT06P01已准备APPROVED，实际矩阵等SVC操作结束条件。
+Dashboard唯一来源仍为本WT/codex/runner-capacity-probe的status，当前metadata提交HEAD由Git读取；本次状态形状复用主线parseStatus只读核，实际展示PENDING_SYNC，未新增全snapshot请求或把分支通过当main。Execution Lead按本READY读取接收，不绕过既有直发限制；claim保留，后续main事实须真实回执。
 
-2026-10-06 07:48 UTC W2 MAIN_ACCEPTED：Lead明确main/origin6426已接收5504；owner核5504为祖先、三scope对main零diff，见[w2-main-receipt.json](../../docs/evidence/s01/w2-main-receipt.json)。不重跑、不把cc741只读提案混入批准。GO已认可提案总体方向但要求补claim丢失回执的真实接口缺口；完成CHAT06结果审查后补，后继实现未授权/未领取。
-
-2026-10-06 07:51 UTC GO只读review修正已落实原plan：当前claim空body/无requestId、丢失回执无可靠公开恢复接口，原“现有恢复协议核实”撤回。首片建议未知claim停admission且保留占用、已知attempt继续；真正自动恢复需事务绑定稳定requestId与原结果的窄接口，未领取产品写权/未预设新表。CHAT06实际结果已独审APPROVED160b，0新增运行；此提案修正待GO接收，不与W2结果或main事实混淆。
-
-2026-10-06 07:55 UTC proposal边界复核：worker只读fc5351未见P1/P2；非阻断补充已纳入：claim发送前持久化in-flight意图，确定响应才清除，重启遗留意图保守unknown，防止提交后/记unknown前崩溃漏记。没有中心回执身份仍不能自动恢复。此建议未实现、不覆盖CHAT08写权。CHAT06P02已由Lead正式解锁给原worker新WT/take，S01后继产品实现仍未领取。
-
-2026-10-06 07:56 UTC main聚合核验：单次snapshot显示S01权威834ffb6 clean/source live/stale=false、delivered/approved/unchanged/current、issues=[]；main当前84fdece仍ancestor包含已审2ab且scopeEqual=true，见[w2-main-dashboard.json](../../docs/evidence/s01/w2-main-dashboard.json)。后继slot提案仍独立metadata，不能冒称生产实现；不再重复聚合或运行。
-
-2026-10-06 08:11 UTC 后继已开工：GO/Lead授权S01P01保守并发核心，worker独立WT `runner-attempt-pool` / branch `codex/runner-attempt-pool`、base9c6、现场155494b clean，canonical plan/status/review已就绪。fresh账本08:10:53 available，S01原claim v1 ACTIVE、原三scope不变，S01P01独立claim599454b1 v1 ACTIVE、六scope无重叠。S01-06保持未完成并转in-progress；实际进度只读后继status，不复制其TODO。已桥接Lead登记权威聚合源及全局索引，等待新源聚合展示；本S01沿用07:56已核聚合事实。W1/W2冻结证据、累计预算及原ACK/browser未验收范围不变，0新增运行/模型。架构影响只登记后继runtime调度与持久恢复边界待Lead按实现target更新，本树仍无产品变化。
-
-2026-10-06 08:21 UTC 父计划main接收：Lead明确接收c86cab，owner独立核其为main32c371祖先且原三scope零diff，见[后继链接接收回执](../../docs/evidence/s01/successor-main-receipt.json)。Lead报告registry95已登记S01P01、部署紧随；本人没有再采同一dashboard或重测。本claim v1 ACTIVE/三scope与唯一owner未变。此main事实只覆盖父计划及原实验，不覆盖S01P01尚待固定的实现/独审。
-
-2026-10-06 08:43 UTC 后继独审与下一片段：Mika于08:30批准S01P01主体d655，Lead实际根检查发现测试采用ES2024方法；原owner保留失败、移除局部lib覆盖并改void deferred，Mika于08:39:29独审批准固定48b73544c0e9e66a7061ddb54e003a03b9234bde。末端66fdb0d8d0cecfb996707de7da7ca0a1a3d881ff clean且已push，主线接收和完整根检查仍归Lead；唯一检查/审查事实详见后继status及manifest-es2023，不复制其矩阵。原实验没有新运行，44 tasks/38 attempts/20.925025秒保持不变。
-
-Root已确认S01P02最小入口方向：省略并发参数为1，显式整数1..16；注册容量独立，A2A显式非1须明确拒绝，无效输入在网络之前拒绝。独立树/claim与主线精确基线由Lead协调，尚未领取或实施，不由方案冒称已开工。ACK2仍要求真实loopback代理的到中心前/提交后丢响应边界；browser2必须关闭独有浏览器进程。旧child的lastClaim单变量不能用于新pool并发计量，后继需稳定attempt映射；历史结果不改写。fresh账本08:43:40 available确认本claim v1 ACTIVE且三scope不变。本次仅父状态/质量metadata，等待既有聚合器展示，不重复dashboard采样或工程测试。
-
-2026-10-06 08:51 UTC 后继主线与资源交接：S01P01固定48b73544已进入main/origin d7e1e64e7792f4d1ad4933db042f10f266ad0cca，Lead完整root noEmit0；Mika只读核7source与固定target相等。原owner停写后受runtime thread limit影响无法唤醒，Root指定Mika管理接收；按Lead正式handoff v2→accept v3→status单文件amend v4完成最终metadata，1c438be2d152a7b6b3b2f5a6883852dd4b2d7a7d clean/已push，08:49:27 claim v5 RELEASED，无产品/测试/raw修改。父实验原预算不变，启动入口和个人服务部署未由核心接收推断。08:50:11 fresh账本确认main.ts/configuration.ts已由R05 claim3f2622a4 v1占用，S01P02只读候选等待跨lead范围安排，未take或开工；已发一次接口/范围协调，不抢写。父claim08:50:56复核仍v1 ACTIVE。进度以唯一status供dashboard聚合，不为普通metadata重复发消息或测试。
-
-## 2026-10-06 09:01 UTC 安全停点与后继归属
-
-S01P01独立owner管理收口已完成：唯一分支HEAD `1c438be2d152a7b6b3b2f5a6883852dd4b2d7a7d` 已push/clean；其claim于08:49:27.075Z正式release v5，原树停止写入。父S01自己的3scope仍由本owner合法保留，冻结实验与已用44 tasks/38 attempts、20.925025秒不变；没有新负载/工程测试/provider调用。
-
-GO新大task的用户目标优先：WPF-MATURE-02唯一source为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/status.md`，owner chatui01_owner；WPF-MATURE-04为 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/status.md`，owner architecture_read；co-lead均mika。两项是独立大task，S01不是其父级，不在本文件复制其TODO或进度。
-
-S01P02仍未take/实现；所需main入口由R05 owner持有，后继应通过独立配置module及其main接线合同协调，不争夺路径。ACK/browser各2的窗口和方法仍保持未执行。此停点只更新合法owner的事实与大task关联，main集成不等于个人服务或provider并发验收。
-
-## 2026-10-06 09:46 UTC 新阶段接收与准备
-
-status_read / gpt-6-astra 接收 S01 唯一 owner，co-lead mika，所属 FLOW-001、阶段 M2。writer claim `8e4660a6-625f-4ada-8558-20c19b9e23e0` accept v3 已于09:45:53.842Z COMMITTED；独立 scope=[] integration claim 已完成受控 main4391 合入并 release v2。未手工解决冲突，未纳入更新的 main253 F01。回执见[准备证据](../../docs/evidence/s01/mixed-preparation/accept.json)。
-
-新 GO 阶段独立上限40 tasks、60秒含清理、传输加证据64MiB、0provider；本方案固定32 tasks不补跑。旧44 tasks/38 attempts/20.925025秒及W1/W2源码、raw/hash冻结，不续耗旧额度。Mika已批准私有center进程透明Pool观测设计与1×16/4×4两组混合负载；只授权driver实施及纯unit/类型检查，未授权实际PG/HTTP/runner负载。实验仅在`experiments/runner-capacity/mixed/`新增；无产品pool/锁/schema/contract变化，无架构图更新需求。S01P02配置入口另有owner，本实验消费runRunner公开参数，不声称CLI已经部署。
-
-技能：本地find-skills发现并应用clean-code/codebase-design；brainstorming按现有实验的bounded后继给短设计，mika明确批准。命名区分acquisition、transaction elapsed和runner-row query elapsed；观测器独立、保持this/callback/返回值/错误透传，资源与证据有界。尚无新工程测试或真实负载。状态通过唯一status等待现有dashboard聚合。
-
-2026-10-06 10:00 UTC：新driver准备完成，固定前仅10纯unit/strict noEmit验证；最初8观测/预算/stream用例，加2项DB权属/lease/心跳/ACK门禁反例，共10不同用例，不能相加为18。初次类型检查暴露HarnessContext.task类型不声明实际运行时id，现显式guard后绑定claim map；原失败日志保留。center在dynamic import createServer前透明观测Pool，固定pg8.23.1源码hash并核pg-boss同一pg；Node流计数缺失/减少/超对象上界即UNKNOWN失败。窗口6秒与其后最多1500ms settlement分开，均在45+15秒内。
-
-旧W1/W2源/raw及所有既有experiments/runner-capacity、docs/evidence/s01路径相对接收98098354保持逐字节一致；只新增mixed与mixed-preparation。0新tasks/attempts/负载/provider。architecture_read进行固定源码独审，Mika安排后继运行；writer claim v3保留，不部署CLI/个人服务。架构影响仅实验观测，无产品Interface/schema/锁/pool配置变化。
-
-2026-10-06 10:03 UTC固定前：预审所提cleanup阶段预算与CREATE丢ACK已修，新增3个截止行为用例及1个自有流清理用例，现14个不同纯测试/strict noEmit0，旧8/10日志保留不累加。phase截止与UNKNOWN/retained语义见混合合同及quality；没有新负载，真实接线仍未验。10:02:58 fresh账本available确认本owner claim v3 ACTIVE/三scope不变。
-
-2026-10-06 10:04 UTC：mixed准备实现固定 `634926238f749fb1547a5973b521bc6dc5498574`，5文件14纯tests/strict noEmit0绑定当前source；[manifest](../../docs/evidence/s01/mixed-preparation/manifest.json)固定source/raw/readonly字节，当前待architecture_read及Mika独审。未执行真实窗口，状态来源等待现有dashboard聚合；不重复工程验证。
-
-2026-10-06T10:06:36.107948+00:00：mixed准备634获architecture_read独立APPROVED，无P1/P2；Mika独核51项hash/bytes及14/14/strict0一致。只记录metadata，不重测，writer claim v3保留。实际0新增负载/task/attempt/provider，未消费新窗口；下一步必须Mika给唯一windowId及精确execution HEAD。源634冻结，后续metadata不改变其source/raw绑定。
-
-## 2026-10-06 10:15 UTC mixed 唯一窗口结果封存
-
-Mika在准备独审后批准唯一window `mika-s01-mixed-20261006-100634`，执行HEAD在运行前明确修正为clean12154；只执行一次。实际PG/HTTP/fixture runner/outbox运行10,673.1145ms含清理，最终CLI计18,660,992B完整计量、exit1、provider0。固定32任务reservation，实际16个task/attempt；A有16个live/fenced gate与真实adapter重叠、533事件digest/ACK、12 succeeded/4 cancelled、windowComplete/settledByDeadline true，但stop后admission.inFlight保留，整体FAIL，B未启动。原14纯unit/strict0仅准备证据，不是本次实测通过数。
-
-两个自有child正常exit0，自有DB确认无连接后DROP；唯一保留FKye9L工作目录中的未知journal，未删除、未重放。最后claim只有aborted:true错误记录，无确定HTTP响应；raw没有requestId或独立send/stop时刻，不把空assignments或16个已完成DB行冒充assignment:null。根已接收清理与失败事实。无重跑、不补B、不改driver门禁、不消费预留余任务。
-
-[结果报告](../../docs/evidence/s01/mixed-run/report.md)、[最终CLI回执](../../docs/evidence/s01/mixed-run/cli-receipt.json)、[原始冻结hash](../../docs/evidence/s01/mixed-run/raw-freeze.json)、[逐attempt与A窗口分析](../../docs/evidence/s01/mixed-run/analysis.json)。只读复核A中心pool acquisition/transaction/runner-row层级与60样本中31次Lock或blocker正证据，B缺失不能比较拓扑、推纯锁时间或SLO。旧78文件/44tasks/38attempts/20.925025秒完全不变。
-
-本地clean-code结果封存检查完成，质量记录在mixed-run/quality.md。结果待architecture_read独立只读审定，main未接收mixed；唯一status供既有dashboard聚合，待新状态展示，不另写聚合JSON。Mika将另派正常停止领取并有界排空claim的S01P03独立WT/scope，尚未开工，原S01保留writer claim v3做结果收口。
-
-2026-10-06 10:15 UTC：结果target `6a5961a0d815113bba7cea149bc08ca07fdd128a` 固定并核clean；[结果manifest](../../docs/evidence/s01/mixed-run/manifest.json)绑定19source/16readonly/8raw/7support，旧78文件不变。整体FAIL、未知journal保留，交architecture_read独审。追加metadata不改变执行12154或原raw；本次归档保守重复计量上界25,625,526B，含64KiB metadata预留。没有再运行负载或工程测试。
-
-2026-10-06 10:16 UTC：architecture_read于10:15:58Z只读APPROVED结果target6a5961a，0 P1/P2，仅批准如实失败证据；runVerdict仍FAIL。19/16/8/7绑定、78legacy、实际80B journal与A层级统计均独核。见[独审回执](../../docs/evidence/s01/mixed-run/independent-review.json)。本片待Lead集成，原始raw/source不变、0重测；之前封存metadata的10:18手填时间已校正为10:15，无运行时间或raw变更。后继S01P03已由Mika明确派工，独立runner-graceful-stop WT/claim，不继承本树scope。
-
-2026-10-06T10:42:12.735Z：GO授权P03已main后的独立一次零模型混合窗口，Mika只派当前准备，未点名执行。fresh claim8e4660a6 v3 active；scope=[] integration已take/release，受控合main0cee→86297277，无冲突且原S01三scope零diff。新增[合同](../../docs/evidence/s01/mixed-after-drain-preparation/README.md)，132旧文件逐字固定；原FKye9L journal未读取/操作。原33/62等工程与14纯检查不是本次运行计数，新窗口0tasks/0PG/0HTTP/0provider。架构影响仅实验输入身份及证据目录，生产pool/锁/contract不改；共享架构图无需新产品更新。原独审结果等待Lead历史接收与本次新准备分开。
-
-2026-10-06T10:44:15.659Z：Mika批准最窄run identity适配，driver/main小diff与新identity/test完成；10不同纯检查+strict0，原14不重跑，0实际窗口。130旧文件当前仍逐字一致，仅两份driver输入源码按新target适配，旧固定634/121/6a596可重现。新manifest将绑定21实验source、新raw及固定main/client/P03输入；source/raw固定后交Mika独审，不沿用旧准备批准。
-
-2026-10-06T10:45:02.650Z：新窗口实现target `51541b0cad73dcad32c7374dc87d631f0b9a8432` 已固定，[manifest](../../docs/evidence/s01/mixed-after-drain-preparation/manifest.json)绑定21source/21readonly/8raw/9support（SHA 32965654f0e3960302ec66ed9492ec20ba00abaa2a2ffa19f27fe50ced305b11）。readonly逐字=固定main0cee，P03两源=a677；旧17实验源未改、2源输入适配+2新源，原raw/manifest冻结。源码/检查不再改动，提交后交Mika正式独审；没有已授权windowId、没有新真实调用。
-
-2026-10-06T10:51:09.061Z：Mika点名唯一新窗口mika-s01-after-drain-20261006-104557，执行前fresh claim8e4660a6 v3 active/HEAD5ea clean；仅一次已完成，CLI exit0。32真实task/attempt，两组各12成功4取消；1027事件逐项seq/digest/fence/accepted绑定，5journal全null/[]。耗时19271.849875ms含清理/最后证据写入，完整计量36092931B；两个自有child自然0、唯一新DB dropped、新workdir removed、无本次retained。保留1次A settlement heartbeat错误：无status/错误类/attemptId，原因unknown，不能写零HTTP错误。实际正常adapter重叠最小6000.02025/6000.055792ms；timer标记略早单独记录。见[报告](../../docs/evidence/s01/mixed-after-drain-run/report.md)和[归档预算](../../docs/evidence/s01/mixed-after-drain-run/archive-budget.json)。旧FAIL/raw/FKye9L不动，无重跑/补跑，C串行占用已交还Mika。结果待独审，不作>100执行/SLO或严格speedup。
-
-2026-10-06T10:51:52.971Z：固定新PASS结果target `339147cb015fdd40ed1cedbc66aca26e736b3ee7`；[result manifest](../../docs/evidence/s01/mixed-after-drain-run/manifest.json)绑定21source/21readonly/8raw/7support，SHA d2e7debddc741a69ad940315cd5b52d39d3e35b8c20078e162fad65a6baa2d2a，旧515准备/5ea执行与新339结果明确分开。源/raw已冻结，待独立只读结果review，不重跑。
-
-2026-10-06 10:54:25 UTC：Mika独立只读APPROVED固定339147cb，57项Git/WT/hash/bytes一致；实际计量与归档保守上界成立，1heartbeat未知错误及timer/actual overlap区别保留。见[独审回执](../../docs/evidence/s01/mixed-after-drain-run/independent-review.json)。本片交付delivered，原S01其他验收TODO、>100实际容量/ACK/browser/真实provider及完整未知恢复不勾完。下一产品片S01P04按FLOW-001两层在独立worktree/claim开展，不在本树改产品；本source/raw停止修改，writer v3仍保留到Lead明确交接。当前main c450c2d未作为新实验result已集成的证明。
-
-## 2026-10-06 12:08:19 UTC REQ-18 后继准备
-
-GO授权唯一128task/attempt窗口 `s01-128-after-light-reads-once`，当前仅设计/实现准备，实际调用0；须独立固定source/profile/budget/cleanup review和Mika具体运行门禁。fresh writer8e4660a6-625f-4ada-8558-20c19b9e23e0 v3 ACTIVE，三scope不变；integration bb7d2d35 v1 take后无冲突合main1c496835至07c8a0b，旧三scope零diff，并已v2 release。详见[Interface](../../docs/evidence/s01/mixed-128-preparation/interface.md)与[领取观察](../../docs/evidence/s01/mixed-128-preparation/owner-observation.json)。
-
-本地find-skills/brainstorming/clean-code/codebase-design应用于固定profile复用和资源责任，路径/hash见skills.json；不安装、0工程测试/PG负载/provider。一个runner child内8 runtime×16，独立OS进程数另报；128真实fixture session须逐项持久绑定，不代表nativeSDK/model或conversation对象。旧172 Git文件已冻结，旧unknown journal未操作；架构影响仅实验私有输入/观测，无产品API/池/锁/调度改变。后续检查证据等待固定实现，当前无新通过声明。
-
-## 2026-10-06 12:28:43 UTC 128准备固定交审
-
-实现 `6de928d8092ba8c22ac2222ac7c16af3660be48a`，生产输入固定main `1c4968354dabce1e6748f3301a2e6eecd33e77d4`（含P04与B01），当前claim8e4660a6 v3 ACTIVE、三scope未变；[manifest](../../docs/evidence/s01/mixed-128-preparation/manifest.json) SHA `30264126da6460d25fda946944062efa78779f3ac164f3aa064020fe66181f35`。绑定26source/27readonly/42raw/10support，readonly逐字=base，另6runtime与172历史Git绑定核符；旧raw/support/manifest及保留journal不变。
-
-最终9文件41/41不同纯checks（原直接24+新17）及局部strict0，初始4red/类型失败和40项中间记录保留，不重复累计；[raw](../../docs/evidence/s01/mixed-128-preparation/review-candidate.stdout)与[类型回执](../../docs/evidence/s01/mixed-128-preparation/review-types-receipt.json)。保守样本跨度用末query开始减首query结束，慢查询包络反例已测。工程检查只有fake与readonly Git，无真实PG/HTTP/center/runner/SDK/provider容量调用。
-
-新window仍NOT_OPEN；预算180秒含最终CLI/256MiB/128task与attempt硬上限不变。实际运行时外层time独立记录spawn/import到exit，超180即FAIL；不把driver内部elapsed冒充完整外层时长。源码/raw冻结等待Mika独审，不追main、不重测；dashboard只更新此唯一status，等待既有聚合。未完成原ACK/browser/真实provider/完整unknown恢复验收。
-
-2026-10-06 12:30:27 UTC：Mika正式独审APPROVED source6de928d/packetffee77ca，105绑定/6runtime/172历史及41distinct/strict0证据核符，0P1/P2，无review重测。两个预读样本证明问题已在固定源码和反例关闭。fresh claim v3 ACTIVE且新output absent；当前仅审批metadata，不代表执行OPEN。源码/raw不动，待明确executionHEAD门禁。
-
-2026-10-06 12:34:48 UTC：唯一128窗口已于12:31:13.682022Z→12:31:28.419308Z结束，CLI0/real14.64s/完整88,323,950B；全库128task/attempt/session、2304逐项ACK事件、128成功、8空journal、两个自有child自然0/DB absent/新root删除，无本次retained。实际6秒覆盖、30保守DB样本、1536窗内messageACK和独立外层时长已离线核；见[报告](../../docs/evidence/s01/mixed-128-run/report.md)。FOR SHARE实际SQL与classifier精确列不匹配，row elapsed为UNKNOWN，0分类不作无锁；不改原driver、不补测。旧raw/journal不动，结果正在固定，只做封存/独审，无第二window。
-
-2026-10-06 12:35:33 UTC：结果target `64911a3c88488dfdebaa3a678bad659211e29209` 固定，[manifest](../../docs/evidence/s01/mixed-128-run/manifest.json) SHA `3c66deb37fbcc3163093cb70857b651c6275346be5b82788d825fb90ae92328e`，26source/27readonly/9raw/6support/2preparation绑定，source=6de=70c=target=WT，27readonly=固定main1c，另6runtime/172历史Git核符。独立结果review待Mika；原运行5raw/外壳CLI/time与receipt不可改写，report明确共享锁分类缺失而不影响独立容量证明边界。完整保守归档上界118,431,893B<256MiB。
-
-2026-10-06 12:38:35 UTC：结果独审APPROVED `64911a3c88488dfdebaa3a678bad659211e29209`，Mika/Astra精确12:37:14 UTC，70绑定与128身份/1536窗内ACK/2304事件/30样本/8journal/完整cleanup及外层时间独立核符。见[审批](../../docs/evidence/s01/mixed-128-run/independent-review.json)与[接收入口](../../docs/evidence/s01/mixed-128-run/integration-ready.md)。原archive-budget是早期快照并预留尾部，独审另核118,449,471B保守总上界，不重写原snapshot。原S01其他验收保持开放；新性能候选仅只读，F01仍占events.ts，当前未claim/开工/实际运行。
-
-2026-10-06 12:41:40 UTC：128 fixed结果/raw已冻结并APPROVED；Mika明确授权原实验observer最小后继fix，fresh writer v3 ACTIVE。仅固定P04真实SELECT id,revoked分类与fake direct反例，随后局部strict；0真实负载。新源码不沿用64911批准，旧manifest按fixedGit历史绑定，当前WT将仅两observer源漂移。P05 metadata独立树已claim/请求移交，不在本树写产品。
-
-2026-10-06 12:42:31 UTC：observer后继真实反例4选3绿1红→4/4，strict0；仅精确两列FOR SHARE分类，原透传断言未删。[证据](../../docs/evidence/s01/observer-share-fix/README.md)。原64911的70fixedGit绑定仍核符，当前WT仅observe-pg.ts/.test两个新源漂移，raw/support/preparation零漂移；不再声称旧manifest源与当前WT全部相等。无新实际窗口，P05source仍未领取。
-
-2026-10-06 12:42:56 UTC：observer固定target `c259e8e53cd53830fe1bc78ce3c8dae7b34d5540`，[manifest](../../docs/evidence/s01/observer-share-fix/manifest.json) SHA `e2fe714fac89c12913ebf97689aa3bdfca87a1d53c5b9fc6d3722409eda01711`；2source/4readonly/8raw/2support共16绑定Git=WT。当前review等待Mika，只读验证无需再跑4项/strict。
-
-2026-10-06 12:46:21 UTC：observer固定c259e8e53cd53830fe1bc78ce3c8dae7b34d5540获architecture_read/Astra精确12:45:30 UTC APPROVED，0P1/P2；Mika接收。[接收入口](../../docs/evidence/s01/observer-share-fix/integration-ready.md)与独审/质量回执已封存，原4/4/strict0不重跑。批准仅实验分类修复，不等于新capacity/生产变更通过；历史64911 raw与UNKNOWN保持。
-
-2026-10-06 13:00:30 UTC：fresh本writer8e4660a6 v3 ACTIVE三scope、HEAD1ca035 clean后登记S01-06长驻wait缺口，证据见[README](../../docs/evidence/s01/long-lived-wait/README.md)与source-observation。只读fixedmain280289及官方TC39，不改本树实验source/旧raw，不改runtime；0测试/PG/容量。后继独立WT/产品scope与owner尚待Mika派工。dashboard依本唯一status聚合，不手填进度JSON。P05独立source6336cd00已9/9+strict0交审，未因此声称本S01增加新实际验证。
-
-2026-10-06 13:13:52 UTC：为Lead解阻新增[mixed完整26源接收入口](../../docs/evidence/s01/mixed-integration/README.md)：6de完整26固定源仅overlay c259两observer，Git/WT逐项核；27历史readonly在固定当前main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd 有4项漂移，接收点必须再核，不覆盖生产依赖。未复制/改raw，0测试/PG/capacity。P05正式审批metadata已固定7d97f737，main待接收。
-
-2026-10-06 13:17:06 UTC：资源安全点仅核本人P05/S01两个WT的非symlink Vitest .vite/.vite-temp缓存，结束后移除4小root、2文件共1039逻辑B/8192已分配文件B；这是删除文件分配量，不是整盘可用空间净增断言。[receipt](../../docs/evidence/s01/long-lived-wait/resource-cleanup.json)。未遍历/删除symlink目标或.pnpm、任何raw/journal（FKye9L未触）、他人WT/个人数据。longwait已向Mika只读回报fresh scope无active覆盖及最小track-once/wait/close候选、32虚拟ticks计数反例与直接消费者，未领取/修改产品或启动任何新检查。
+2026-10-07T06:16:18.564344+00:00 本次parseStatus：errors=[]、human.missing=[]，FLOW-001/mika正确；parser Git blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4。历史任务开工UNKNOWN仍为唯一timing提示，不填造开始/完成。全14个run根文件及3个完整plan文档计364156B，加末次编辑8192B=372348B，低于既有397266B上界及原4MiB预留。

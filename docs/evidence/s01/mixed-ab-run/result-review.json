@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-07T06:15:34.862275+00:00",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "reviewedAt": "2026-10-07T06:09:46Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "resultTarget": "914cb63824f614223b62153c770186e9d46d586e",
+  "reviewedPacket": "aa2c2112b91ff31105d7ed46a88c09cf4edcf054",
+  "executionTarget": "b75f1a2e250556265a24c825860e8549705b98cf",
+  "manifestSha256": "0540ceeb808fcc515558aad7b6d7e3b3fe3e90824ce17123ad8216fdd3794992",
+  "p1": 0,
+  "p2": 0,
+  "checked": {
+    "resultBindings": 18,
+    "resultBytes": 58372291,
+    "executionBindings": 43,
+    "executionBytes": 188800,
+    "fixedABPaths": 977,
+    "fixedABBytes": 6614444,
+    "distinctGitBlobs": 490,
+    "totalVisibleBytes": 191067625,
+    "sideABytes": 88044501,
+    "sideBBytes": 85081982,
+    "commonBytes": 17941142
+  },
+  "scope": "Fixed fixture A/B result fidelity: identities/events/ACKs/sampled fences, statistics, lifecycle and budget; not latest main, native/provider capacity, SLO, consistent latency gain or complete S01.",
+  "reviewActions": "Read-only Git/hash and in-memory recomputation; no project write, project analysis script, tests, PG, service or unknown-root access.",
+  "p3Clarification": {
+    "location": "report.md:9",
+    "text": "HTTP elapsed covers request preprocessing, fetch, body reading and JSON parsing through the HTTP observation point; it excludes subsequent ACK observation and Response reconstruction.",
+    "source": "experiments/runner-capacity/mixed/child.ts:86-87 records elapsed before new Response at line 102.",
+    "disposition": "Clarified in this receipt and READY; original reviewed report/raw/manifest remain byte-identical."
+  },
+  "main": "NOT_INTEGRATED",
+  "canonical": "READY.md",
+  "offlineFinalReserve": {
+    "observedAt": "2026-10-07T06:16:18.564344+00:00",
+    "basis": "All direct regular files in mixed-ab-run plus whole plan.md/status.md/review.md; excludes A/B raw subdirectories already runtime-charged. Includes prior automatic root metadata conservatively.",
+    "sampleFiles": 14,
+    "sampleBytes": 364156,
+    "finalEditAllowanceBytes": 8192,
+    "conservativeTotalBytes": 372348,
+    "withinOriginal397266RecordedUpperBound": true,
+    "reservedBytes": 4194304,
+    "remainingReserveBytesAfterConservativeTotal": 3821956,
+    "extraBudget": 0
+  }
+}

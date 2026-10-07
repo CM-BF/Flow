@@ -1,0 +1,206 @@
+{
+  "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1",
+  "head": "d2d58f252363046339acba6e7a590b3b281e0481",
+  "inputSHA": "c9cd5fcbfe75e0268a880e3bc546882938d044171d6569fbcdcc1bd55fa80c42",
+  "startedAt": "2026-10-07T08:58:28.793126+00:00",
+  "freeBefore": 23947612160,
+  "primary": {
+    "type": "ValueError",
+    "code": "VALIDATION_NOT_PASSED",
+    "errno": null
+  },
+  "secondary": [],
+  "provider": 0,
+  "native": 0,
+  "process": {
+    "pid": 26274,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 3702,
+    "observed_bytes": 187,
+    "retained_bytes": 187,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "tmp": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy-pg-k18wx_uj",
+    "state": "KEEP",
+    "dev": 16777234,
+    "ino": 123682682
+  },
+  "fixture": {
+    "facts": {
+      "database": "flow_c02_01c98e71a37b48739f7f0a2735c6df61",
+      "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1",
+      "sourceHead": "d2d58f252363046339acba6e7a590b3b281e0481",
+      "nativeProcesses": 0,
+      "providerCalls": 0,
+      "configuredConnectionLimit": 14,
+      "primaryPhases": [],
+      "cleanupErrors": [],
+      "httpLimit": 256,
+      "port": "64417",
+      "migrations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        34
+      ],
+      "publicClientSelection": {
+        "defaultReasoningBodyBytes": 0,
+        "defaultDecodedJSONBytes": 6335,
+        "fullReads": 1,
+        "fullBytes": 16,
+        "incrementalBytes": 9,
+        "textCursor": 3,
+        "reasoningCursors": [
+          {
+            "kind": "block",
+            "after": 2,
+            "next": 2
+          },
+          {
+            "kind": "block",
+            "after": 2,
+            "next": 4
+          }
+        ],
+        "scope": "real FlowClient HTTP through existing projection; injected native events, synthetic host turn; no UI/provider/native or TCP-byte claim"
+      },
+      "databaseLogicalBytes": 12811287,
+      "roots": [],
+      "httpRequests": 18,
+      "creationRequested": true,
+      "creationAcknowledged": true,
+      "databaseIdentity": {
+        "oid": "1268881",
+        "marker": "cca9a304-0a82-4923-8754-e6a3bfc589ca"
+      },
+      "cleanup": {
+        "startupSettled": true,
+        "runnersClosed": true,
+        "appClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "databaseIdentityConfirmed": true,
+        "connections": 0,
+        "databaseAbsent": true
+      },
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T08:58:32.454Z",
+      "cleanupComplete": true
+    }
+  },
+  "tests": {
+    "total": 3,
+    "passed": 1,
+    "failed": 0,
+    "pending": 2,
+    "selected": 3
+  },
+  "receiptBindings": {
+    "fixture": {
+      "bytes": 1728,
+      "sha256": "2b98630cf08a3117284d625ad003a5c1ac1ae617cbcf9eafd1ca7c012ae1ea8f",
+      "dev": 16777234,
+      "ino": 123682935
+    },
+    "child": {
+      "bytes": 174,
+      "sha256": "d63711cb0cf1d98a047b6fcff4d6dc7b7b83e72970e50f7fae97ff64a97cc777",
+      "dev": 16777234,
+      "ino": 123682684
+    },
+    "databaseReservation": {
+      "bytes": 166,
+      "sha256": "1a8674b7d0448f816c55303c0d9a7bb32c70081973d093eab989487e8f7a8c57",
+      "dev": 16777234,
+      "ino": 123682891
+    },
+    "createRequest": {
+      "bytes": 150,
+      "sha256": "e8c789fc9a06446248a7c6cf1bf67299de3ab2cec7f1cc6aece8372d57735bda",
+      "dev": 16777234,
+      "ino": 123682892
+    },
+    "database": {
+      "bytes": 190,
+      "sha256": "e370487d7d5f77c969cef8f47c1e68ff187f2004d5c925b1c5d3ad45722f196d",
+      "dev": 16777234,
+      "ino": 123682893
+    },
+    "vitest": {
+      "bytes": 1570,
+      "sha256": "e335b0dedec47b9ecffb2e5cd6a78264b81b163617199bc1acb8cf87a83a7e9a",
+      "dev": 16777234,
+      "ino": 123682940
+    }
+  },
+  "fixtureReceiptConfirmed": false,
+  "outputBytesBeforeResult": 4488,
+  "outputSizes": {
+    "reservation": 178,
+    "root": 145,
+    "child": 174,
+    "raw": 187,
+    "fixture": 1728,
+    "vitest": 1570,
+    "databaseReservation": 166,
+    "createRequest": 150,
+    "database": 190
+  },
+  "finishedAt": "2026-10-07T08:58:32.497976+00:00",
+  "elapsedSeconds": 3.8326992079382762,
+  "internalChecksPassed": false,
+  "wholeToolCompletedAt": null,
+  "finalPersistenceIncludedInElapsed": false
+}

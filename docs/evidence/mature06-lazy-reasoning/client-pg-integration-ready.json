@@ -1,0 +1,55 @@
+{
+  "preparedAt": "2026-10-07T09:11:41.244159+00:00",
+  "source": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+  "implementation": [
+    {
+      "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+      "source": "750707193b58dadc423bc1806a714cdec7c6a935",
+      "bytes": 15115,
+      "sha256": "429b35ed1334879739e6f6a8073981b8af3515463b51dfa398f1004b8a93f9cf"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+      "source": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "bytes": 13501,
+      "sha256": "dab8de24cde4d572d64bfaa68236d195bf7aad9a0f72acc2e49651e519d776a1"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+      "source": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "bytes": 6634,
+      "sha256": "dde7632231393728f39baf47114ae4a132d616e8d598f2672a06682c43141e3a"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "source": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+      "bytes": 9815,
+      "sha256": "59f4af577fc2608c9cd404204de45422bfc471557d12b8e25ad5b72f717b7da2"
+    }
+  ],
+  "requiredReadonlySupportDelta": {
+    "path": "docs/evidence/mature02c02/pg-fixture.ts",
+    "source": "bfbcdd22df1b9c5a5f5cd01ba82ba99e09230690",
+    "change": "Only readClient parameter derives public ClientOptions. Apply this reviewed one-line delta, not other C02 files.",
+    "baselineMainObserved": "9b27005f086c97c13b789020f5f8449d1552bb50",
+    "beforeSHA": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7",
+    "afterSHA": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825",
+    "parentEqual": true,
+    "review": "client-pg-fixture-review.json",
+    "controlledLocalIntake": "33616115"
+  },
+  "resultReview": "client-pg-result-review-receipt.json",
+  "resultManifest": "client-pg-result-manifest.json",
+  "fixManifest": "client-pg-selector-fix-manifest.json",
+  "cleanupReceipt": "client-pg-tmp-cleanup.json",
+  "cleanupToolReceipt": "client-pg-tmp-cleanup-tool.json",
+  "facts": {
+    "actualCase": "1passed/2skipped/18HTTP",
+    "originalOverall": "wrapperexit1/thenTMPKEEP remains immutable",
+    "offlineFix": "4pure cases passed; no newPG",
+    "subsequentMaintenance": "authorized exact filesystem cleanup09:09:37/4entries138B/removed-and-absent; original11raw unchanged",
+    "main": "core/client integratede2b; this new journey/fix not yet integrated",
+    "notClaimed": "Web/UI/native/provider/fullgoal/network hardcap"
+  },
+  "exclude": "Do not whole-merge tree or overwrite client/index/contracts/old support; originalR1 inputs/raw are historical and newcaller no longer matches them. No new launch authorization."
+}

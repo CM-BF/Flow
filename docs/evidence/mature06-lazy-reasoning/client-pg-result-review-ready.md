@@ -1,0 +1,9 @@
+# Public client R1 result + classifier correction — REVIEW_READY
+
+Frozen actualresult09fbd42bb3e4771cc4360e7ea2896db91b395f4e, executiond2d58f25, originalinputc9cd5f…0c42. ResultmanifestSHA73c2416dbd6d53cf2bb3a7f4b93c790f520f48b9b6a489807e1d477201b66a20,11raw12052B. Actualselected1PASS/old2skipped,18HTTP; originalwrapperexit1/VALIDATION_NOT_PASSED/TMPKEEP is unchanged. Source/application cleanup and exactroot identity facts: client-pg-result.md. No repeatedPG, no retainedroot contents accessed or deleted.
+
+Fixsource47f54739f5a2cf8c356dc9ac7e232f64f637e786; classifier-fixmanifestSHA0757034e458182dd02abfd61559f3901a1c55264ef6ca93f252e3694dfe32457,8bindings/39590B. Only pure result classification/its direct regression and existing runner finite mode changed; all process/DBconfirmation/deadline/KEEP gates unchanged. FouractualJSON-based counterexamples passed in onePython child166ms/602B: oldskipped3 error reproduced, new1selected/2unselected; selectedfailure, unknownstatus, unexpected extraexecution/wrongtitle refused. NewlocalTMP cleaned; old PG TMP kept. Legacy7gates/types/client/core not rerun. Offline correctness does not turn originaltool1 intoactual green or authorize anotherPG.
+
+Reviewer scope: actualresult fidelity plus narrowP2 closure. Original08:55 approval/post-runwithdrawal retained in client-pg-review-receipt.json and correction. No full oldsource review required. Existingpg-client-input remains originalR1: newwrapper does not match its binding and no newwindow isprepared. Main e2b originalcore/client intake separately verified, newjourney/fixnotmain. FullUI/provider/native and cleanupofretainedTMP remain outside this approval.
+
+Review accepted2026-10-07T09:06:13Z: client-pg-result-review-receipt.json, FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED,0P1/P2. Original actualFAIL/KEEP remain; no cleanup or rerun authorization.

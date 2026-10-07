@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 12:08:19 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；已审主线基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-07T05:46:42Z。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -28,6 +28,8 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 2026-10-06：初始合同。最小场景与实施/正式窗口分开，后继容量目标保持开放。
 
 2026-10-06 W1已独审并集成main30b；Goal Owner确定下一最小对照为1进程声明capacity4/12任务，capacity1/16暂缓，ACK/browser各2保留。只准备新入口/预算检查，独审后申请≤30秒独立窗口，仍base115b与原总预算。
+
+以下各带时间的阶段记录是当时的历史判断；当前 idle 已交付、A/B 未运行及 S01P07 已main接收的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
 
 ## S01-06 最小 slot 调度建议（2026-10-06 07:46 UTC，只读提案）
 
@@ -103,3 +105,20 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 ## S01-06 长驻wait后继登记（2026-10-06 13:00:30 UTC）
 
 固定main280289 runtime.ts:55–59每轮race订阅全部active promises；结合TC39规范推断长驻pending订阅随tick积累。详见[有界登记与验收](../../docs/evidence/s01/long-lived-wait/README.md)。现6秒128已审证据不证明小时驻留有界，无heap/RSS实测结论。S01-06继续in-progress；后继需fresh产品scope+独立WT，由Mika协调owner，少量pending/有限虚拟ticks红绿验证订阅/唤醒、及时补槽及shutdown/unknown-claim/recovery-drain不变。此轮只metadata，0测试/负载，不触旧raw。
+
+## S01-04 / S01-05 A/B准备（2026-10-06 13:43 UTC）
+
+沿既有TODO实施固定A3e/Baae、共同observerc259、单一300s/512MiB总账本，详见[Interface](../../docs/evidence/s01/mixed-ab-preparation/interface.md)。只授权准备与pure/fake验证；实际窗口NOT_OPEN。产品唯一events差异，旧raw冻结；原未验收ACK/browser/native/SLO边界不变。
+
+
+## S01-06 空闲成本测量与产品后继（2026-10-06 19:54:21 UTC）
+
+本次测量已交付、双审通过，主线接收待定；不是未运行的只读候选。唯一窗口`s01-idle-claim-cost-once`基于固定main8d84公开runRunner只执行一次，1runtime/capacity1/active0、12空领取、24原子rename/48sync，正常stop后journal EMPTY与自有资源关闭。结果target `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`，完整方法、检查、计量与限制见[接收入口](../../docs/evidence/s01/idle-claim-cost/result-ready.md)；原准备失败、raw、manifest及overall-archive历史快照不改。
+
+15秒/2MiB约束已按实际外壳时间和保守计量核验。API调用次数与异步elapsed不等于物理I/O、功耗或SSD寿命；采样间峰值UNKNOWN。100agents不等于100runner，本片没有100runner/模型/SLO结论。测量没有改poll、durability、fsync、claim intent或恢复语义。旧17:21候选及18:31准备过程保留在Git e61ba2c3，不再作为当前未运行状态。
+
+S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候选，空响应复用已durable key且不新增本地journal/中心永久empty receipt，保留500ms轮询；首次非空分配与compact receipt同事务，durable accept绑定原key和同attempt，历史receipt不当当前执行授权。v1未知请求、已持久assignment及过期/uncertain保持保守，不删journal或复活旧租约。上述为19:54时设计；现S01P07已由独立runner-claim-recovery树交付main0aa1d033，85非PG/8中心PG/4capacity分轮证据和主线组合核对见其权威status。该子任务claim已release，本树无其产品写权；不把功能验收当idle或A/B优化测量。
+
+A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗口及独审现已完成，见下方当前记录；不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。本S01架构影响仍仅实验观察；S01P07已将main0aa1d033架构target交Execution Lead更新，关联见本status。
+
+2026-10-07 A/B实际已在唯一窗口完成并归还，固定结果`914cb63824f614223b62153c770186e9d46d586e`及报告见唯一status；2026-10-07T06:09:46Z结果独审通过（0 P1/P2），[接收入口](../../docs/evidence/s01/mixed-ab-run/READY.md)已READY、main仍待真实回执；无一致延迟收益结论，原S01-04/05/06验收和未完成TODO保持，不因本局部结果改完整plan完成。

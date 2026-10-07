@@ -145,6 +145,10 @@ Owner token 是这套 Flow 安装的管理凭据，不是 Claude 或 Codex 的�
 
 用户主动加载后默认掩码；显示、复制都需点击。隐藏并清除、关闭、离开/隐藏页面清空内存与字段并撤销迟到请求。复制失败有明确提示，可选择显示后手动复制。页面无法撤销已经完成或已交给系统的剪贴板写入，也不会自行覆盖用户剪贴板。真实 token 不进 URL、聚合 JSON、日志或浏览器存储；不要在真实 token 显示时录截图、DOM、trace 或网络 body。
 
-本片专测入口（尚待运行窗口，不构成通过）：`node --test apps/execution-dashboard/test/local-access.test.mjs`。仅 synthetic config 和动态自有 HTTP；不使用真实 registry/PG/安装。`test/local-access.browser.mjs` 导出 `checkLocalAccessBrowser({ browser, expect, outputDirectory })`，由隔离运行方传入已有受控 Playwright browser 与 expect 并负责 Chrome 最终清理/预算。它使用实际 dashboard server/UI、明确空 snapshot、假 token，自己关闭 context/HTTP；0个人端口/PG/provider。测试中剪贴板成功是原 browser API，拒绝是显式注入，二者分别记录。不可把 fake fixture 成功当实际本机安装已发布。
+本片专测入口：`node --test apps/execution-dashboard/test/local-access.test.mjs`。合成配置与动态自有 HTTP 的 35 项检查已实际通过；不使用真实 registry、PG 或安装。隔离浏览器第四次运行的 5 组检查已实际通过，前三次失败证据保留；结论仅限假凭据场景。
+
+`test/local-access.browser.mjs` 导出 `checkLocalAccessBrowser({ ownedDefaultContext, expect, outputDirectory })`。调用方必须新启动自有 Chrome PID、创建独占 profile，以公开 `connectOverCDP(..., { noDefaults: true })` 连接，并核对唯一默认 context 与初始空白页后显式移交；不能传入用户或共享浏览器。函数显式设置页面 viewport，使用实际 dashboard server/UI、空 snapshot 和假 token，关闭所接收的 context 与自有 HTTP；关闭默认 context 也会关闭该自有浏览器。调用方仍负责实际 PID 退出、stdout/stderr EOF、进程组和临时目录清理及预算监督，不能仅凭 context.close 推断收尾完成。
+
+检查包含原生键盘与焦点、390 双主题、默认掩码/显隐复制、关闭后迟到响应隔离，以及实际页面 hidden 后清空 token。剪贴板成功使用原 browser API，拒绝为显式注入，二者分别记录。检查未访问个人端口、真实凭据、PG 或 provider；真实安装启用与部署仍未验证，不能把 fake fixture 通过当实际本机安装已发布。
 
 4320部署仍由原 operator 使用已审代码和明确 opt-in 绑定完成。保持原 tab/端口与页面，必要时由获授权操作方更新看板；此 feature 不增加 HTTP 重启入口，不修改产品 tab。main、看板部署、真实凭据连接分别留独立事实。

@@ -1,0 +1,89 @@
+{
+  "startedAt": "2026-10-07T09:01:58.008318+00:00",
+  "runs": [
+    {
+      "mode": "pg-selector-fix",
+      "startedAt": "2026-10-07T09:01:58.022833+00:00",
+      "freeBytes": 23478833152,
+      "inputs": [
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/execute-pg.py",
+          "bytes": 13501,
+          "sha256": "dab8de24cde4d572d64bfaa68236d195bf7aad9a0f72acc2e49651e519d776a1"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+          "bytes": 6634,
+          "sha256": "dde7632231393728f39baf47114ae4a132d616e8d598f2672a06682c43141e3a"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.vitest.json",
+          "bytes": 1570,
+          "sha256": "e335b0dedec47b9ecffb2e5cd6a78264b81b163617199bc1acb8cf87a83a7e9a"
+        }
+      ],
+      "supervisorSHA": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/bin/python3.13",
+        "-B",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/pg-gates.test.py",
+        "ResultSelection",
+        "--verbose"
+      ],
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy01-up7_w0x9",
+        "dev": 16777234,
+        "ino": 123713785,
+        "closedSampleBytes": 64,
+        "closedSampleNodes": 1,
+        "peakBytes": null,
+        "removed": true
+      },
+      "finishedAt": "2026-10-07T09:01:58.189926+00:00",
+      "process": {
+        "pid": 53493,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 166,
+        "observed_bytes": 602,
+        "retained_bytes": 602,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/mature06-lazy-reasoning/pg-selector-fix.txt",
+        "bytes": 602,
+        "sha256": "861a4a01a85cef1aa9c3f165a6052a5cf572e9f6bfdea10297c5a7a7d62872bd"
+      }
+    }
+  ],
+  "limit": {
+    "children": 1,
+    "eachSeconds": 30,
+    "rawBytes": 131072,
+    "tmpBytes": 1048576
+  },
+  "actualScope": "pure original JSON classification only; no PG/HTTP/provider/native or retained TMP access",
+  "segmentStartedAt": "2026-10-07T09:00:00Z",
+  "rawBytes": 602
+}
