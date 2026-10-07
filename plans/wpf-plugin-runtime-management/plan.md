@@ -61,3 +61,7 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## 当前首次browser实际
 
 [b1失败与清理](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)完整封存：原6组旅程到第六组read refresh自然焦点断言失败，reported0/6/0PNG，outer1；不得补签前五通过。保守12,385ms已用/47,615ms未用，不自动再跑。后继只在原scope处理focus保留并等待真实decoded read settlement，保原UNKNOWN/写次数/会话/六组断言，禁止末尾手动focus掩盖。当前原source不变，source/native接受与实际失败分层。
+
+## 当前焦点修复固定安全点
+
+[a952焦点修复与同caller后继](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)只复用现有guarded read控件模式，保实际读完成后的自然focus验收。首失败获独立接受但不算PASS；新source/后继runtime尚未通过。不动原六组其他行为，旧packet完全冻结；当前仅SOURCE/PREPARED，正常封存后STOP，待manager正式资源安排。

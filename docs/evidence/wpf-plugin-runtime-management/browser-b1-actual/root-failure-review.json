@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-07T12:42:44.924006+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "ACCEPTED_FAILED_ATTEMPT_AND_COMPLETE_RETURN",
+  "productDecision": "FAILED; no browser or visual acceptance",
+  "sourceHead": "b888930f2e5b92da21dfe984e3c1bc37313c70bb",
+  "implementation": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "runnerSha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "evidence": [
+    {
+      "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-start.json",
+      "bytes": 290,
+      "sha256": "331f8e0e71361c42122dd461b2548d3a41d7a6953dc1b31370d13b914cb10501"
+    },
+    {
+      "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-exit.json",
+      "bytes": 962,
+      "sha256": "f94801f67e1a341bb0818e5cf1afbac553837c8223fa52d47a6e2d8057554c0b"
+    },
+    {
+      "path": "/private/tmp/prm-b1-actual-d5uxxivt/return-receipt.json",
+      "bytes": 2207,
+      "sha256": "fee2d74e5cfe244e8d887c210d0b01a3c736efa00aa4041788b151cb130a71c8"
+    },
+    {
+      "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stdout.txt",
+      "bytes": 655,
+      "sha256": "88530c4bc4ed36cf4273610461e8f053bdeda3d7a8ee77649d4687156181f7f3"
+    },
+    {
+      "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/prm-b1/binding.json",
+      "bytes": 63797,
+      "sha256": "321f49c31b8e4dbc3de11c6e224d8e1c5ea04dd4a4b784205ecc0e7fbac67ab7"
+    },
+    {
+      "path": "/private/tmp/prm-b1/result.json",
+      "bytes": 72419,
+      "sha256": "62567c3b8e2e977b1dfc4c260b9f28451515a1d34d334178a59a1479d03ba966"
+    },
+    {
+      "path": "/private/tmp/prm-b1/browser-budget.json",
+      "bytes": 311,
+      "sha256": "fdd206134b0d2ca0da8e062424302c3d2f0aef563cad2a978dd47ce958eef61f"
+    }
+  ],
+  "independentlyChecked": [
+    "Unique terminal JSON declares FAILED/exit1; actual outer exit is1; all present sealed-file hashes match.",
+    "Runtime evidence manifest is explicitly null and no two-theme PNGs were produced. Missing evidence was not converted into success.",
+    "Reported six-check result remains empty because the function throws before its aggregate return; stack reaches the sixth keyboard group, not a completed six-case report.",
+    "Return receipt identifies both worker/native Chrome groups and outer group as ESRCH, all three owned ports refused, profile/scratch absent, context/fixture closed, three inner and two outer streams complete with zero dropped bytes, no cleanup errors. This is an evidence review, not a new process/port probe."
+  ],
+  "timing": {
+    "outerActualElapsedMs": 12384.425707976334,
+    "chargedMs": 12385,
+    "remainingMs": 47615,
+    "parentHistoricalMs": 12297,
+    "terminalLateMs": 12298,
+    "completeReturnAt": "2026-10-07T12:41:18.165883+00:00"
+  },
+  "finding": {
+    "severity": "P2",
+    "file": "apps/web/src/plugin-management/PluginManagement.tsx",
+    "line": 161,
+    "observed": "Browser keyboard refresh assertion at browser.ts159 remained inactive after Enter; all 14 sampled buttons were already reenabled.",
+    "sourceExplanation": "The refresh handler updates attempt, making pending immediately true; native disabled={runtime.pending} then removes normal button focusability. Reenabling does not itself restore focus. This is a concrete source-supported cause consistent with the observed failure, not uniquely proven temporal diagnosis because the trace lacks per-transition activeElement/disabled samples.",
+    "repairDirection": "Use the existing read-only aria-disabled + guarded-handler pattern to preserve natural focus and prevent duplicate reads. Keep the assertion, wait for a decoded successful read and settled state, and do not append focus() or extend timeout as a substitute. Check the same pattern in the installation refresh control within the existing file."
+  },
+  "cleanCode": {
+    "scope": "Read-only refresh control semantics and honest failure reporting",
+    "actualFinding": "A native-disabled refresh button differs from the already guarded focus-preserving registry/paging controls in the same component.",
+    "repairStatus": "Owner supplied same narrow diagnosis; no repair validated yet.",
+    "unresolved": "Fixed-source review and the remaining bounded browser attempt; no actual rerun by root."
+  },
+  "boundary": "No new runtime gate. Prior failed packet/raw/terminal retained intact; any later run needs the existing manager queue, fixed source inputs and remaining cumulative allowance."
+}

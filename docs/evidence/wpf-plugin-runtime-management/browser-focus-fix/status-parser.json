@@ -1,0 +1,122 @@
+{
+  "timing": {
+    "started": {
+      "state": "known",
+      "at": "2026-10-07T10:48:09.218Z",
+      "record": "2026-10-07T10:48:09.218Z"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "[source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；完成尚未满足"
+    },
+    "issues": [],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| PLUGIN-RUNTIME-W01 | UNKNOWN | 2026-10-07T10:46:23.929Z | 接口 | X01 两条路径等待 STOP/amend，现已移出；未知等待起点不补造 | [实际 handback](../../docs/evidence/wpf-plugin-runtime-management/x01-handback-receipt.json) |\n| PLUGIN-RUNTIME-W02 | UNKNOWN | 2026-10-07T12:07:49.693Z | 验证失败 | 原direct记录不完整，修复调用器后的新独立完整终态已通过；未知起点不推断 | [actual outer](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/outer/outer-exit.json) |\n| PLUGIN-RUNTIME-W03 | UNKNOWN | 2026-10-07T12:40:36.824Z | 资源 | manager确认个人窗口归还；实际本次已START，未知等待开始不补造 | [真实开始](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/outer/outer-start.json) |\n| PLUGIN-RUNTIME-W04 | 2026-10-07T12:40:49.209Z | OPEN | 验证失败 | 刷新后的自然焦点断言失败；保留断言，修复并实际复验后解除 | [本次真实失败](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/outer/outer-exit.json) |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web / root；external_web_d01_owner",
+      "value": "Web / root；external_web_d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 4,
+    "output": "已按现有只读控件模式修复刷新焦点，保留原键盘断言；首失败与清理证据完整保留",
+    "next": "独审焦点窄修复并在原剩余预算完成界面与窄屏验收",
+    "blocker": {
+      "state": "active",
+      "text": "焦点窄修复尚待实际复验与两张窄屏图"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+    "scopes": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "owner": "w01_owner / gpt-6-astra Ultra",
+  "branch": "codex/web-plugin-runtime-management",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-07T12:47:14.002Z",
+  "updatedRecord": "2026-10-07T12:47:14.002Z；固定 b675 输入，焦点窄修复 a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "todos": [
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-02",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "实际入口source已审；[首browser失败](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)，焦点窄修已固定，待六组完整结果"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-03",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "[新direct15通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)，[旧有限段](../../docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json)首红/启动失败/第三父失败均保留；[首browser FAILED](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-04",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "a952窄修待审；原source/首失败已独审，整体browser待验 / 未接主线"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-05",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "[后继只读引用研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)，NOT_TAKEN；待共享输入集成与精确scope，不属本次b1验收"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "b67530bb025162629895d11482b5505d4a885c91；原0bc浏览器首红保留；焦点窄修复 a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "declaredDirty": "本批两源焦点窄修复已固定，其余三源/已消费b1不变；正常推送后七范围STOP保claim",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "UNKNOWN 当前a952焦点修复未复验；b1 outer1 / reported0/6 / 0PNG；历史strict/direct15及旧父FAILED保留"
+  },
+  "reviewRecord": "[review.md](review.md)，NOT_STARTED 当前a952窄修复待独审；原0bc source批准、b1 FAILED/完整return接受分别保留",
+  "mainRecord": "NOT_INTEGRATED；b675 是共享输入，不含本模块",
+  "next": "临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，当前是 branch 实施而非已部署。",
+  "risks": "",
+  "decisions": ""
+}

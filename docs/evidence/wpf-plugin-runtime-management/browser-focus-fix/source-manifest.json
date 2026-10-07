@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T12:47:14.002Z",
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "base": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "sources": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "changed": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/browser.ts"
+  ],
+  "checks": "NOT_RETESTED",
+  "browserPacket": "/private/tmp/prm-b2",
+  "prepared": {
+    "supervisor.py": "4c599b49dd20e874d9a33d2c821638166e524d185d65e3fef2212790815dfc8b",
+    "worker.mjs": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+    "runtime-tsconfig.json": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e",
+    "aliases.json": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "priorBrowser": {
+    "files": 37,
+    "bytes": 525259,
+    "chargedMs": 12385,
+    "remainingMs": 47615,
+    "cleanupMs": 15000,
+    "workMs": 32615,
+    "originalLimitMs": 60000
+  },
+  "sourceReview": null,
+  "nativeApproval": null,
+  "noGate": true
+}
