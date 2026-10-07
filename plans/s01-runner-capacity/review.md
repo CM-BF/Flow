@@ -1,13 +1,15 @@
 # S01 独立审查
 
-状态：PENDING（本次固定事件写入A/B结果忠实性；不是复用旧准备批准）
+状态：APPROVED（仅本次固定事件写入A/B结果忠实性；0 P1/P2，不代表main接收）
 Review target commit: `914cb63824f614223b62153c770186e9d46d586e`
 
 Execution `b75f1a2e250556265a24c825860e8549705b98cf`，source准备d3ba；A3e670/Baae1各128fixture，唯一窗口已消费并归还。入口 [report.md](../../docs/evidence/s01/mixed-ab-run/report.md) / [result-manifest.json](../../docs/evidence/s01/mixed-ab-run/result-manifest.json)，SHA0540ceeb808fcc515558aad7b6d7e3b3fe3e90824ce17123ad8216fdd3794992。18原件/分析绑定58372291B；41源码沿原overlay不变，原64检查不重跑。
 
 审者只读核raw/源绑定、任务与ACK分母、SQL分类/latency口径、cleanup、191067625B计量及4MiB reserve；尤其不从两PASS/总elapsed推导提速。time-p28.02s、entry27.710442s、工具观察40.037s包围各自保留；PG/WAL仅前置空间、end/peak未测。原始errors=[]也不当完整性能或全系统无错误证明。0provider/native。main NOT_INTEGRATED；独审发现交owner，不执行新探针或触旧unknown根。
 
-Owner 2026-10-07T06:05:59.823099+00:00 clean-code收口：原raw/source固定，offline脚本集中投影统计，样本与未知明确；等待独立审者填写合法回执。本次不自审批准。
+独审 db_transaction_owner / gpt-6-astra，2026-10-07T06:09:46Z，RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2；[正式回执](../../docs/evidence/s01/mixed-ab-run/result-review.json) / [READY](../../docs/evidence/s01/mixed-ab-run/READY.md)。18结果绑定、43执行绑定及977固定A/B路径已核；分布/身份/预算重算相符。审者0执行/PG/写入。
+
+唯一P3：report.md:9所述HTTP计时不包括其后Response重建；准确口径是请求预处理/fetch/body读取/JSON解析截至HTTP观测点。2026-10-07T06:15:34.862275+00:00 owner已在READY和receipt澄清，保留已审报告/raw/source/manifest原字节。该措辞修正不改变任何分布或性能结论。结果接收READY，main NOT_INTEGRATED；整体S01仍开放。
 
 ## 历史idle结果独审（不覆盖本次A/B）
 
@@ -31,7 +33,7 @@ Review target commit: `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`
 
 2026-10-07T05:46:42Z owner管理核对（不是新独审）：S01P07固定main0aa1d033的24接收bindings重新匹配，权威树dcf12c72 clean且claim已release；原85/8/4证据边界不变。idle在本次main bf8b5f1d尚无结果目录/对应I02接收回执，仍不标main。A/B d3ba准备输入当前可复用，实际NOT_RUN/NOT_OPEN，详见[当前准备核对](../../docs/evidence/s01/mixed-ab-preparation/current-readiness.md)。不重复64项或增加approval。
 
-以下为按日期保留的历史审查，不作为当前target或新运行许可；A/B只有准备APPROVED，实际仍未运行。
+以下为按日期保留的历史审查，不作为当前target或新运行许可；其中“实际未运行”仅指当时准备阶段。
 
 ## 历史 A/B 准备批准
 
