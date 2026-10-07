@@ -1,0 +1,77 @@
+{
+  "startedAt": "2026-10-07T05:59:51.473Z",
+  "command": "set -euo pipefail\nset -a\nsource /tmp/flow-coordination.env\nset +a\nexport FLOW_S01_ADMIN_URL=\"$FLOW_COORDINATION_DATABASE_URL\"\nexport TSX_TSCONFIG_PATH=\"$PWD/experiments/runner-capacity/mixed/tsconfig.json\"\nexport NODE_DISABLE_COMPILE_CACHE=1\nexec /usr/bin/time -p /opt/homebrew/opt/node@24/bin/node --import tsx experiments/runner-capacity/mixed/ab-main.ts s01-event-state-ab-once b75f1a2e250556265a24c825860e8549705b98cf",
+  "executionHead": "b75f1a2e250556265a24c825860e8549705b98cf",
+  "toolFinalObservedAt": "2026-10-07T06:00:31.510Z",
+  "toolExit": 0,
+  "toolObservedWallMs": 40037,
+  "externalTime": {
+    "realSeconds": 28.02,
+    "userSeconds": 18.08,
+    "sysSeconds": 7.6
+  },
+  "toolObservationIsUpperEnvelope": true,
+  "toolFinalLatencyIncludesPollAndModelGaps": true,
+  "originalToolResult": {
+    "chunk_id": "246cf4",
+    "wall_time_seconds": 0.000007375,
+    "exit_code": 0,
+    "original_token_count": 669,
+    "output": "{\"windowId\":\"s01-event-state-ab-once\",\"target\":\"b75f1a2e250556265a24c825860e8549705b98cf\",\"outcomes\":[{\"side\":\"A\",\"state\":\"PASS\",\"receipt\":{\"output\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-run/A\",\"success\":true,\"errors\":[],\"resourcesClosed\":true,\"tasksSentOrUnknown\":128,\"finalElapsedMs\":13721.410249999999,\"finalMeasuredBytes\":88044501}},{\"side\":\"B\",\"state\":\"PASS\",\"receipt\":{\"output\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-run/B\",\"success\":true,\"errors\":[],\"resourcesClosed\":true,\"tasksSentOrUnknown\":128,\"finalElapsedMs\":13598.121249999998,\"finalMeasuredBytes\":85081982}}],\"errors\":[],\"cleanup\":{\"sourceRoot\":\"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-ab-input-e3809aa5-8173-4c21-9d3f-a2ff7f3e7d6e\",\"removed\":true,\"retained\":false},\"success\":true,\"tasksSentOrUnknown\":256,\"finalMeasuredBytes\":191067625,\"categories\":{\"common:final-evidence-cli-reserve\":4194304,\"common:git-preflight\":41,\"common:preparation\":249175,\"common:dependency-bindings\":4216,\"common:git-output\":6759836,\"common:exported-input\":6614444,\"common:external-manifests\":119126,\"A:preparation-evidence\":249175,\"A:final-cli-receipt-reserve\":32768,\"A:post-run-archive-reserve\":1048576,\"A:required-source-inputs\":63155,\"A:observation-evidence-reserved\":28670785,\"A:fixed-experiment-inputs\":188800,\"A:evidence\":981084,\"A:observer-sql-payload\":314142,\"A:observer-row-json\":5320109,\"A:driver-pg-node-streams\":3915563,\"A:ipc-out\":7463,\"A:ipc-in\":19161683,\"A:center-node-streams\":26535551,\"A:owner-http-request\":21498,\"A:owner-http-response\":264075,\"A:runner-http-bodies\":1270074,\"B:preparation-evidence\":249175,\"B:final-cli-receipt-reserve\":32768,\"B:post-run-archive-reserve\":1048576,\"B:required-source-inputs\":63006,\"B:observation-evidence-reserved\":27443902,\"B:fixed-experiment-inputs\":188800,\"B:evidence\":981321,\"B:observer-sql-payload\":319824,\"B:observer-row-json\":5364077,\"B:driver-pg-node-streams\":3926142,\"B:ipc-out\":7463,\"B:ipc-in\":18120851,\"B:center-node-streams\":25787833,\"B:owner-http-request\":21498,\"B:owner-http-response\":258303,\"B:runner-http-bodies\":1268443},\"finalEvidenceBytes\":260653,\"finalReserveBytes\":4194304,\"elapsedBeforeResultWriteMs\":27710.062166,\"diskBytes\":24537018368,\"preparationPhase\":\"complete\",\"byteBasis\":\"visible Git/input export + Node streams + IPC + evidence with conservative duplicate charges; not all OS I/O or PG/WAL disk growth\",\"order\":\"A then B; shared host background and observer overhead remain confounders\",\"providerCalls\":0,\"finalElapsedMs\":27710.408583,\"elapsedBeforeCliWriteMs\":27710.442}\nreal 28.02\nuser 18.08\nsys 7.60\n"
+  },
+  "preflight": {
+    "sourceBindings": 41,
+    "declaredDependencies": 15,
+    "runtimeBindings": 6,
+    "errors": [],
+    "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 2,
+    "scopeCount": 5,
+    "claimObservedAt": "2026-10-07T05:59:24.685660+00:00",
+    "hostDiskObservedAt": "2026-10-07T05:59:00.450528+00:00",
+    "hostAvailableBytes": 24539099136,
+    "floorBytes": 5663621120,
+    "pgObservedAt": "2026-10-07T05:59:24.655Z",
+    "pgVersion": "16.13",
+    "inRecovery": false,
+    "walBytes": 67108864,
+    "priorS01Connections": 0,
+    "preflightPoolClosed": true,
+    "containerId": "2c45767d4802",
+    "containerFilesystem": "/dev/vdb1",
+    "dataAndWalAvailableKiB": 20725996,
+    "pgWalHeadroomReservedBytes": 1073741824,
+    "resourceReservationNotHardQuota": true
+  },
+  "postClose": {
+    "at": "2026-10-07T06:00:50.057Z",
+    "databases": [
+      {
+        "name": "flow_s01_mixed_13262_f67a56c90ba44b169c6cb2ec6fe23fa7",
+        "exists": false,
+        "connections": 0
+      },
+      {
+        "name": "flow_s01_mixed_13262_7491ef914c8740879820f2a042636cfb",
+        "exists": false,
+        "connections": 0
+      }
+    ],
+    "confirmationPoolClosed": true,
+    "pidsObservedESRCH": [
+      13262,
+      14042,
+      16080,
+      22379,
+      22381
+    ],
+    "rootsObservedENOENT": [
+      "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-gQSpxq",
+      "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-f0EokH",
+      "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-ab-input-e3809aa5-8173-4c21-9d3f-a2ff7f3e7d6e"
+    ],
+    "pidAbsenceNotIndependentGroupSweep": true
+  },
+  "windowReturnedAt": "2026-10-07T06:00:50.057Z",
+  "scope": "actual one-shot followed by read-only exact cleanup confirmation; no performance claim"
+}

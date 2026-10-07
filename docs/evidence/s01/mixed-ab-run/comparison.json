@@ -1,0 +1,479 @@
+{
+  "basis": "Single fixed A then B; nearest-rank quantiles in milliseconds. Offline raw projection only.",
+  "sides": {
+    "A": {
+      "fixedProduction": "a3e670b906c1b65d586b7730ca19da83109f1dcc",
+      "success": true,
+      "errors": [],
+      "totals": {
+        "tasks": 128,
+        "attempts": 128,
+        "sessions": 128
+      },
+      "persistedEvents": 2304,
+      "acceptedEvents": 2304,
+      "ackRecords": 2304,
+      "windowEmits": 1536,
+      "windowEmitLatencyMs": {
+        "n": 1536,
+        "min": 14.123250000000553,
+        "p50": 65.62679200000093,
+        "p95": 112.09737500000028,
+        "p99": 139.1230829999995,
+        "max": 150.64862500000072,
+        "sum": 101677.158727
+      },
+      "logicalAdapterPeak": 128,
+      "allAdapterOverlapMs": 6356.298375,
+      "earliestAdapterEndAfterWindowStartMs": 6000.200250000001,
+      "commonAckEnvelopeMs": 5397.2342499999995,
+      "individualAckSpanMs": {
+        "n": 128,
+        "min": 5437.500166999999,
+        "p50": 5482.74525,
+        "p95": 5532.898333,
+        "p99": 5551.064458,
+        "max": 5551.492875,
+        "sum": 702092.703995
+      },
+      "validatedDbSamples": 30,
+      "conservativeDbSampleSeparationMs": 5782.394915999999,
+      "httpCountsByPath": {
+        "/api/runner/claim": 136,
+        "/api/runner/heartbeat": 1320,
+        "/api/runner/events": 2304
+      },
+      "httpStatuses": {
+        "200": 3760
+      },
+      "httpErrors": [],
+      "eventHttpAllMs": {
+        "n": 2304,
+        "min": 7.702625000000353,
+        "p50": 63.8080829999999,
+        "p95": 180.11074999999983,
+        "p99": 409.7207499999986,
+        "max": 509.6699579999986,
+        "sum": 183394.92031800002
+      },
+      "eventHttpWindowMs": {
+        "n": 1536,
+        "min": 8.135874999999942,
+        "p50": 52.83100000000013,
+        "p95": 91.81770799999958,
+        "p99": 106.41137499999968,
+        "max": 114.20904200000041,
+        "sum": 81272.80417600002
+      },
+      "centerPoolAcquireMs": {
+        "n": 7796,
+        "min": 0.0020830000012210803,
+        "p50": 14.737584000000425,
+        "p95": 87.78683400000045,
+        "p99": 144.28600000000006,
+        "max": 384.73816700000134,
+        "sum": 228326.51292800004
+      },
+      "centerTransactionMs": {
+        "n": 3994,
+        "min": 0.6017090000004828,
+        "p50": 5.6614169999993464,
+        "p95": 30.934957999999824,
+        "p99": 46.504541000000245,
+        "max": 114.47529199999985,
+        "sum": 39700.45045200003
+      },
+      "centerPoolWaitingSampleMax": 121,
+      "sqlCountsByCategory": {
+        "begin": 3994,
+        "other": 41531,
+        "commit": 3994,
+        "runner-row": 136,
+        "runner-row-share": 3624
+      },
+      "sqlOutcomes": {
+        "ok": 53279
+      },
+      "sqlRunnerShareMs": {
+        "n": 3624,
+        "min": 0.09329099999922619,
+        "p50": 0.274582999998529,
+        "p95": 0.7116669999995793,
+        "p99": 14.681707999999162,
+        "max": 39.89166600000044,
+        "sum": 2271.227531999939
+      },
+      "sqlRunnerExclusiveMs": {
+        "n": 136,
+        "min": 0.18433399999958056,
+        "p50": 1.8323749999999563,
+        "p95": 23.660625000000437,
+        "p99": 30.28033400000004,
+        "max": 35.54120899999998,
+        "sum": 988.4247899999959
+      },
+      "lightRead": {
+        "kind": "read-summary",
+        "pid": 13262,
+        "receivedMs": 13376.038292,
+        "caseId": "eight-by-sixteen",
+        "issued": 59,
+        "skipped": 0,
+        "phase": "eight-by-sixteen:settlement"
+      },
+      "lightReadLatencyMs": {
+        "n": 59,
+        "min": 1.308499999999185,
+        "p50": 2.9657079999997222,
+        "p95": 52.911708000001454,
+        "p99": 75.53262499999983,
+        "max": 75.53262499999983,
+        "sum": 528.7282949999981
+      },
+      "pgActivitySamples": 56,
+      "pgConnectionSampleMaxExcludingObserver": 12,
+      "pgSamplesWithLockOrBlocker": 9,
+      "memory": {
+        "driver": {
+          "samples": 13,
+          "pids": [
+            13262
+          ],
+          "sampledRssMaxBytes": 226689024,
+          "processReportedMaxRssKiB": 221808
+        },
+        "center": {
+          "samples": 14,
+          "pids": [
+            14042
+          ],
+          "sampledRssMaxBytes": 283000832,
+          "processReportedMaxRssKiB": 276368
+        },
+        "runner": {
+          "samples": 12,
+          "pids": [
+            16080
+          ],
+          "sampledRssMaxBytes": 315326464,
+          "processReportedMaxRssKiB": 307936
+        }
+      },
+      "observationCount": 78998,
+      "journalCount": 8,
+      "journalsAllEmpty": true,
+      "runtimeSettled": [
+        {
+          "kind": "case-runtime-settled",
+          "caseId": "eight-by-sixteen",
+          "active": 0,
+          "childMs": 11374.232166,
+          "pid": 16080,
+          "receivedMs": 13933.266208,
+          "phase": "eight-by-sixteen:settlement"
+        }
+      ],
+      "reporterClose": [
+        {
+          "kind": "child-settled",
+          "dropped": 0,
+          "childMs": 11448.575916,
+          "pid": 16080,
+          "receivedMs": 14007.456083,
+          "phase": "cleanup"
+        },
+        {
+          "kind": "center-settled",
+          "observationDropped": 0,
+          "childMs": 13317.638375,
+          "pid": 14042,
+          "receivedMs": 14022.24225,
+          "phase": "cleanup"
+        },
+        {
+          "kind": "child-settled",
+          "dropped": 0,
+          "childMs": 13317.728,
+          "pid": 14042,
+          "receivedMs": 14022.279875,
+          "phase": "cleanup"
+        }
+      ],
+      "cleanup": [
+        {
+          "pid": 16080,
+          "role": "runner",
+          "exited": true,
+          "forced": false,
+          "ipcFailed": false,
+          "exitCode": 0,
+          "signal": null
+        },
+        {
+          "pid": 14042,
+          "role": "center",
+          "exited": true,
+          "forced": false,
+          "ipcFailed": false,
+          "exitCode": 0,
+          "signal": null
+        },
+        {
+          "databaseName": "flow_s01_mixed_13262_f67a56c90ba44b169c6cb2ec6fe23fa7",
+          "dropped": true,
+          "retained": false
+        },
+        {
+          "databaseName": "flow_s01_mixed_13262_f67a56c90ba44b169c6cb2ec6fe23fa7",
+          "absentConfirmed": true
+        },
+        {
+          "workdir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-gQSpxq",
+          "removed": true
+        }
+      ],
+      "byteAccountingComplete": true
+    },
+    "B": {
+      "fixedProduction": "aae1eb1054d75e78273e7c91ed048aeac80195da",
+      "success": true,
+      "errors": [],
+      "totals": {
+        "tasks": 128,
+        "attempts": 128,
+        "sessions": 128
+      },
+      "persistedEvents": 2304,
+      "acceptedEvents": 2304,
+      "ackRecords": 2304,
+      "windowEmits": 1536,
+      "windowEmitLatencyMs": {
+        "n": 1536,
+        "min": 16.92004199999974,
+        "p50": 77.27316600000086,
+        "p95": 146.70895799999926,
+        "p99": 160.80716700000085,
+        "max": 167.2058339999985,
+        "sum": 122464.830747
+      },
+      "logicalAdapterPeak": 128,
+      "allAdapterOverlapMs": 6179.2735840000005,
+      "earliestAdapterEndAfterWindowStartMs": 6000.024709,
+      "commonAckEnvelopeMs": 5413.455667,
+      "individualAckSpanMs": {
+        "n": 128,
+        "min": 5433.124333,
+        "p50": 5497.119417,
+        "p95": 5535.877958,
+        "p99": 5546.542458999999,
+        "max": 5555.952042000001,
+        "sum": 703660.85417
+      },
+      "validatedDbSamples": 30,
+      "conservativeDbSampleSeparationMs": 5774.476500000001,
+      "httpCountsByPath": {
+        "/api/runner/claim": 143,
+        "/api/runner/heartbeat": 1309,
+        "/api/runner/events": 2304
+      },
+      "httpStatuses": {
+        "200": 3756
+      },
+      "httpErrors": [],
+      "eventHttpAllMs": {
+        "n": 2304,
+        "min": 5.676999999999907,
+        "p50": 70.90120800000022,
+        "p95": 168.719791,
+        "p99": 450.1995829999996,
+        "max": 547.0656669999989,
+        "sum": 191791.23880700002
+      },
+      "eventHttpWindowMs": {
+        "n": 1536,
+        "min": 9.593000000000757,
+        "p50": 61.405165999999554,
+        "p95": 123.64845799999966,
+        "p99": 141.66879199999948,
+        "max": 148.85416599999917,
+        "sum": 98208.618021
+      },
+      "centerPoolAcquireMs": {
+        "n": 7788,
+        "min": 0.0018750000017462298,
+        "p50": 16.074416999999812,
+        "p95": 81.886708,
+        "p99": 197.08041700000103,
+        "max": 486.8387090000015,
+        "sum": 225883.82828100002
+      },
+      "centerTransactionMs": {
+        "n": 3989,
+        "min": 0.5600420000000668,
+        "p50": 6.111458000000312,
+        "p95": 33.03541700000005,
+        "p99": 45.05525000000125,
+        "max": 124.55058299999996,
+        "sum": 41552.97563800003
+      },
+      "centerPoolWaitingSampleMax": 123,
+      "sqlCountsByCategory": {
+        "begin": 3989,
+        "other": 36867,
+        "commit": 3989,
+        "runner-row": 143,
+        "runner-row-share": 3613
+      },
+      "sqlOutcomes": {
+        "ok": 48601
+      },
+      "sqlRunnerShareMs": {
+        "n": 3613,
+        "min": 0.09237499999926513,
+        "p50": 0.3208340000001044,
+        "p95": 1.162000000000262,
+        "p99": 13.468082999999751,
+        "max": 26.690874999999778,
+        "sum": 2421.0594310000415
+      },
+      "sqlRunnerExclusiveMs": {
+        "n": 143,
+        "min": 0.1704580000000533,
+        "p50": 0.9213339999996606,
+        "p95": 22.632665999999972,
+        "p99": 37.22466700000041,
+        "max": 50.699167000000216,
+        "sum": 917.5045840000034
+      },
+      "lightRead": {
+        "kind": "read-summary",
+        "pid": 13262,
+        "receivedMs": 26953.565042,
+        "caseId": "eight-by-sixteen",
+        "issued": 58,
+        "skipped": 0,
+        "phase": "eight-by-sixteen:settlement"
+      },
+      "lightReadLatencyMs": {
+        "n": 58,
+        "min": 1.830167000000074,
+        "p50": 3.0804170000010345,
+        "p95": 77.08791599999677,
+        "p99": 116.65220899999986,
+        "max": 116.65220899999986,
+        "sum": 699.675248999989
+      },
+      "pgActivitySamples": 56,
+      "pgConnectionSampleMaxExcludingObserver": 11,
+      "pgSamplesWithLockOrBlocker": 7,
+      "memory": {
+        "driver": {
+          "samples": 13,
+          "pids": [
+            13262
+          ],
+          "sampledRssMaxBytes": 346374144,
+          "processReportedMaxRssKiB": 338592
+        },
+        "center": {
+          "samples": 14,
+          "pids": [
+            22379
+          ],
+          "sampledRssMaxBytes": 285114368,
+          "processReportedMaxRssKiB": 278432
+        },
+        "runner": {
+          "samples": 12,
+          "pids": [
+            22381
+          ],
+          "sampledRssMaxBytes": 284475392,
+          "processReportedMaxRssKiB": 277808
+        }
+      },
+      "observationCount": 74291,
+      "journalCount": 8,
+      "journalsAllEmpty": true,
+      "runtimeSettled": [
+        {
+          "kind": "case-runtime-settled",
+          "caseId": "eight-by-sixteen",
+          "active": 0,
+          "childMs": 11474.840833,
+          "pid": 22381,
+          "receivedMs": 27595.2085,
+          "phase": "eight-by-sixteen:settlement"
+        }
+      ],
+      "reporterClose": [
+        {
+          "kind": "child-settled",
+          "dropped": 0,
+          "childMs": 11542.339458,
+          "pid": 22381,
+          "receivedMs": 27662.653333,
+          "phase": "cleanup"
+        },
+        {
+          "kind": "center-settled",
+          "observationDropped": 0,
+          "childMs": 13245.870791,
+          "pid": 22379,
+          "receivedMs": 27679.157958,
+          "phase": "cleanup"
+        },
+        {
+          "kind": "child-settled",
+          "dropped": 0,
+          "childMs": 13245.95975,
+          "pid": 22379,
+          "receivedMs": 27679.338625,
+          "phase": "cleanup"
+        }
+      ],
+      "cleanup": [
+        {
+          "pid": 22381,
+          "role": "runner",
+          "exited": true,
+          "forced": false,
+          "ipcFailed": false,
+          "exitCode": 0,
+          "signal": null
+        },
+        {
+          "pid": 22379,
+          "role": "center",
+          "exited": true,
+          "forced": false,
+          "ipcFailed": false,
+          "exitCode": 0,
+          "signal": null
+        },
+        {
+          "databaseName": "flow_s01_mixed_13262_7491ef914c8740879820f2a042636cfb",
+          "dropped": true,
+          "retained": false
+        },
+        {
+          "databaseName": "flow_s01_mixed_13262_7491ef914c8740879820f2a042636cfb",
+          "absentConfirmed": true
+        },
+        {
+          "workdir": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-mixed-f0EokH",
+          "removed": true
+        }
+      ],
+      "byteAccountingComplete": true
+    }
+  },
+  "limits": [
+    "SQL other combines many statements; no exact task UPDATE counter or isolated persistEventState timing.",
+    "Pool and transaction distributions include setup/reads/heartbeat/claim/cleanup, not only event persistence.",
+    "Memory is per-process sampled RSS/high-water report; driver PID is reused and B inherits prior allocations/high-water.",
+    "No sampled RSS sums are a simultaneous total or hard peak; PG/WAL end growth and peak were not measured.",
+    "Single A-before-B pair with observer overhead and shared host background; not randomized, replicated, latestmain, SDK capacity, or SLO.",
+    "All-adapter overlap includes barrier wait; ACK envelope is not uninterrupted execution. DB proof covers sampled instants."
+  ]
+}

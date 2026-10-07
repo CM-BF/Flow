@@ -1,0 +1,126 @@
+{
+  "recordedAt": "2026-10-07T06:05:07.214610+00:00",
+  "executionTarget": "b75f1a2e250556265a24c825860e8549705b98cf",
+  "windowId": "s01-event-state-ab-once",
+  "result": "A_PASS_B_PASS",
+  "review": "PENDING",
+  "main": "NOT_INTEGRATED",
+  "runtimeSourceUnchanged": true,
+  "historicalPreparation": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/manifest.json",
+      "historicalSource": "da93263a1f47039abcfe7d20670cc2040c457136",
+      "bytes": 28756,
+      "sha256": "a06e0d3cd2d839b47b033df929f39ecb3e9a7b654bcbbab132bbd62959f732a7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/preparation-deadline-fix/manifest.json",
+      "historicalSource": "d3ba03a88b8d25d134b7abade7f55f8198b182ba",
+      "bytes": 4452,
+      "sha256": "4a555e969cb445e913c6bb5bf99a7757166eb3a73c56cabc2bd445a53ab39040"
+    }
+  ],
+  "files": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/A/journals.json",
+      "bytes": 2690,
+      "sha256": "9ffc09fc440cd47d3293c6a0c02d16a50c73e2bac230077c8e6f1a1a664f7737"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/A/observations.json",
+      "bytes": 28670785,
+      "sha256": "5fd89b0ac8867d3e738b69d7941c7e17720885a6ad6691cd60b0f7675edb780a"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/A/owned-resources.json",
+      "bytes": 360,
+      "sha256": "f0f2dbdbaae520c18deb6bc7ba420d4eaefe4064e4e57a8482c58b6579fe3937"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/A/reservation.json",
+      "bytes": 9619,
+      "sha256": "82b4376f536048e477a1b9839acc554d83c5051210b4d82658c1eca99ba32983"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/A/result.json",
+      "bytes": 968415,
+      "sha256": "6e3a35ac8edfc573bf8956e7d83c08ba2f9cb1af7e58829b50cd01b02627c825"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/B/journals.json",
+      "bytes": 2690,
+      "sha256": "872b6f3f1a7dadb5a08d1b5a745f9d5a68b021e4520a1a9dbfb3a87aef3640e1"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/B/observations.json",
+      "bytes": 27443902,
+      "sha256": "49d88c2df64966b5b26a07291f3bb406da4b67dbaeecf6da59777d2cb28c5aa4"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/B/owned-resources.json",
+      "bytes": 360,
+      "sha256": "04708f96fe25942fad70ce851a406578b54d98d173af906ef9d52593859579ff"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/B/reservation.json",
+      "bytes": 9619,
+      "sha256": "aee85542a85b37ba6f0bb027754dc02b1f39a74ce1a9d8285875a2e756917083"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/B/result.json",
+      "bytes": 968652,
+      "sha256": "f3f06526f82900ca29b0f811db70c42042126486f2155a807397f6fd34eb401b"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/analyze.py",
+      "bytes": 6618,
+      "sha256": "b91b579b448e7f5969f7f0e1809803a5dcaa6953eecf7f231342eea5bdf9c2b7"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/cli-and-time.txt",
+      "bytes": 2674,
+      "sha256": "0ece7a6fb87af49d1fffa9e267ec913d199b1f487bedddd9f2a22ca98614df5b"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/comparison.json",
+      "bytes": 13663,
+      "sha256": "92bcd442fbf8d6356e3a54c3f08a7ad6446dd47a122a06dbb616ebe2c01850a1"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/inputs.json",
+      "bytes": 256662,
+      "sha256": "cafbfbe67090da883f6e4200437cb1e6d51fb77d00d281987af1331812a90132"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json",
+      "bytes": 5687,
+      "sha256": "ae4c6cdd90f9d08aa37d2df27e759d0d75eceef352812e288b95e139057b9210"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/report.md",
+      "bytes": 5904,
+      "sha256": "ef1f48428f988db4d94d0bad773611cda911b67c182e0c95bd7debad3486cf94"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/reservation.json",
+      "bytes": 863,
+      "sha256": "a197ff3c4de772760cac6b0cd34b02f2f88c16e90d3059aab24b258f5e6ef83e"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-run/result.json",
+      "bytes": 3128,
+      "sha256": "30c58bc342267a3f49098bddaeaec20a9ca1bee359ee26f7e62548e5f01a1a10"
+    }
+  ],
+  "bindings": 18,
+  "bytes": 58372291,
+  "sharedFinalReserve": {
+    "reservedBytes": 4194304,
+    "measuredBeforeThisManifestIncludingCurrentWholeStatusAndReviewBytes": 331730,
+    "remainingManifestReviewStatusAllowanceBytes": 65536,
+    "withinReserve": true,
+    "note": "Original runtime/preparation streams already charged; do not add the entire archive again. This 64KiB is inside the original 4MiB, not additional."
+  },
+  "timeBasis": "entry27.710442s; time-p28.02s; tool observed envelope40.037s; postclose confirmation and later manual analysis separate",
+  "limit": "Fixed historical events.ts A/B; no SDK/provider/SLO/general speedup conclusion"
+}
