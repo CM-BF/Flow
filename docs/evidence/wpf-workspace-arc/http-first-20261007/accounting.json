@@ -1,0 +1,23 @@
+{
+  "actualStart": "2026-10-07T20:36:11.197384Z",
+  "returnObserved": "2026-10-07T20:36:27.433733Z",
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "executionHead": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+  "outerActualExit": 1,
+  "childActualExit": 1,
+  "phaseState": "CLOSED",
+  "chargeMs": 3408,
+  "totalMs": 30000,
+  "unusedMs": 26592,
+  "creditTransfer": false,
+  "passed": 1,
+  "failed": 1,
+  "notSelected": 11,
+  "regularFileLogs": true,
+  "dualEOF": "NOT_APPLICABLE_NOT_CLAIMED",
+  "independentPortProbe": false,
+  "cleanup": "exact PID/group ESRCH; scratch absent; no afterEach hook failure; process exited naturally",
+  "oldTopLevelSegmentState": "NOT_GRANTED preserved as original wrapper field; actual manager grant and nested attempt are authority/facts, not rewritten",
+  "failure": "line50 expected cumulative stream.reads.length2 but6, before hide; no conclusion that product withdraw failed",
+  "staticFinding": "reads counts metadata+patches; first responses delayed35ms, installed waitFor interval50ms can miss transient exact2. Also old dispose occurs after third completed, not while queued. Needs explicit response barrier and queued-dispose scenario."
+}

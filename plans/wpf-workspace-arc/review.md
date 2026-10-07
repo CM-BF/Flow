@@ -1,5 +1,5 @@
 # WPF-WORKSPACEARC01 Review
 
-当前：IN_PROGRESS `7097c4d1cc429ee87e507a2210f2e9cceac99b56`。root已对891f完整18source/local出具[限定APPROVED](../../docs/evidence/wpf-workspace-arc/root-arc-source-local-review-20261007.json)，0blocking；不把此源审冒actual。新7097仅browser原refresh-theme内reduced-motion观察与context/http明确清理收据；affected noEmit0，4,683ms/20,000 CLOSED。此最小差量与固定HTTP2/browser4调用器等待一次集中准备审。
+IN_PROGRESS `fe7f18d564baaea7ed3ec87bedf49bd805cbdf10`。原891f source/local与7097准备[1491报告](../../docs/evidence/wpf-workspace-arc/root-arc-runtime-preparation-review-20261007.json)已APPROVED，非actual通过。唯一HTTP实际7097/96d00是1PASS/1FAIL/11未选，3408ms CLOSED，regularlogs/ownedRETURN，首红[原件](../../docs/evidence/wpf-workspace-arc/http-first-20261007/manifest.json)不改。
 
-原13PASS/34NOT_SELECTED、types首红及五次精确cleanup原件保留。HTTP2/browser4/双390PNG尚未运行，main NOT_INTEGRATED；旧local与此次types未用额度均不转运行。所有固定来源和边界见[review-entry](../../docs/evidence/wpf-workspace-arc/review-entry.md)。
+当前fe7f仅修累计read采样前置和补真正queued-dispose；其余17源码/test不变。真实HTTP响应barrier保status/header/body，失败finally释放；单changed test+staticimports noEmit0/3096ms CLOSED20s。新HTTP候选未运行/未授权，固定差量待root集中审。browser4/PNG/main仍未完成；原13绿不重跑、不借任何旧余额。

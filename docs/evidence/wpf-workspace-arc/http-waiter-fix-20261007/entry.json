@@ -1,0 +1,44 @@
+{
+  "preparedAt": "2026-10-07T20:42:30.368488Z",
+  "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
+  "packet": "/private/tmp/arc-http-waiter-retry-1favc0g8",
+  "manifest": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/manifest.json",
+    "realpath": "/private/tmp/arc-http-waiter-retry-1favc0g8/manifest.json",
+    "bytes": 2326,
+    "sha256": "28e2988a79a608ac36bc7d3e1c905a3ea3f8207ffc437d675eae6222f36ab57f"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/binding.json",
+    "realpath": "/private/tmp/arc-http-waiter-retry-1favc0g8/binding.json",
+    "bytes": 145772,
+    "sha256": "0be8991d837181e194350339133a338182fa340c4099fd05298dd6d57d9ebd80"
+  },
+  "caller": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "realpath": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "changedProducts": [],
+  "changedTest": "apps/web/test/conversation-stream-integration.test.ts",
+  "sourceDelta": "41 additions/5 deletions; other17 scoped source files unchanged",
+  "localTypes": "single changed test plus staticimports exit0/3096ms, CLOSED20s",
+  "HTTP": "NOT_RUN_NOT_GRANTED",
+  "browser": "NOT_GRANTED; prior prepared packet source pins now historical after this test-only change; fresh routine binding required before future browser run",
+  "firstFailure": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-first-20261007/manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-first-20261007/manifest.json",
+    "bytes": 3767,
+    "sha256": "336e3280a995ce9b5d13ea1d2b5ae0687f231de22940dff2f252ed53ce16e663"
+  },
+  "sourceReview": "PENDING_FIXED_DELTA_REVIEW",
+  "cleanCode": {
+    "findings": [
+      "Exact2 cumulative read polling was a transient setup condition, not occupancy barrier",
+      "Previous dispose occurred after completion; changed to queued dispose while two real responses held",
+      "No extra product authority/store or generic runner introduced; body/status/header pass-through retained"
+    ],
+    "limits": "Barrier real callback semantics not yet executed; approved prior backlog PASS does not certify repaired removal case"
+  }
+}

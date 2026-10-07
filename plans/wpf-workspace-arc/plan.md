@@ -24,3 +24,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 原静态关闭确认P2已经过真实host/port纯回归：prepare/commit分别核原调用权限，确认回调不能在plugin或layout代次改变后恢复。对应TODO03；actual有效UI确认仍归TODO05。
 
 2026-10-07T20:15:52.827442Z 准备检查点：原source/local已独审批准；复用I01 absolute-deadline parent/worker/capture，HTTP2独立30s、browser4一次90s均仅proposal。原主题组内加reduce偏好+可见布局computed styles观察，非全App无动画声明。所有原组与长transcript锚点/真实prepare-await保留；0actual，候选一次集中审后经理派窗。
+
+2026-10-07T20:42:30.368488Z：仅test修复瞬态累计读取前置为两真实HTTP响应barrier，并在队列占用中dispose第三pane；保hidden后重新可见、第三新增读取0/peer前進/peak2。新HTTP候选等待独立30s实际窗口，旧30s已封。
