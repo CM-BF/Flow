@@ -282,6 +282,6 @@ test('OPEN waiting loses currency after refresh; UNKNOWN never becomes still wai
   row.ended = { state: 'known', at: '2099-01-01T00:00:00Z' };
   assert.match(presentation.waitingState(row, observation, true), /待核实/);
 });
-test('shipped dashboard and browser entry remain syntactically valid', () => {
-  new vm.Script(appSource);
+test('shipped dashboard module body has valid async syntax', () => {
+  new vm.Script(`(async () => {${appSource}\n})`);
 });
