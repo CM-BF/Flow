@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T03:14:31.754028+00:00",
+  "reviewer": "/root independent",
+  "target": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "metadataObserved": "050d21d40b50d0453d939b24efa248b663686ffd",
+  "decision": "APPROVED_SCOPED_SOURCE_AND_81_PARSER_BROWSER_PENDING",
+  "errors": [],
+  "findings": [],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 22669,
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 11861,
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 10811,
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+    }
+  ],
+  "actualChecks": {
+    "tests": 81,
+    "passed": 81,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "todo": 0,
+    "actualExit": 0,
+    "parentElapsedMs": 169,
+    "nodeDurationMs": 70.313125,
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stdoutSha256": "2161598203b10fe23da43eef06566ed6eac55e23c7bd097aa642987046f3889f"
+  },
+  "reviewed": [
+    "Whole-field ISO UTC parsing uses existing calendar validation; invalid/duplicate optional timing has isolated issues and preserves original progress/review/main semantics.",
+    "Completion UNKNOWN differs from explicit NOT_COMPLETED. Start/end provenance remains owner declaration and is labelled not independently verified.",
+    "Elapsed uses one canonical snapshot.generatedAt, includes waiting, rejects future/reversed/invalid/stale/frozen/missing observations, and does not use browser now.",
+    "Open details preserve captured snapshot and focus across refresh; a later successful snapshot or failed refresh marks old detail elapsed unknown.",
+    "Waiting table and provenance rendered using textContent, no net-work inference, no new store/endpoint/dependency or timer.",
+    "Read browser fixture source: actual parser and static UI plus synthetic observations and owned HTTP; five groups and two themes defined but not run."
+  ],
+  "cleanCode": "Small optional parser seam reuses UTC calendar core; summary/detail share one elapsed function; explicit snapshot identity handles lifecycle without extra state store. No source blocking findings.",
+  "limits": [
+    "No checks rerun by reviewer.",
+    "Native browser, screenshot layout, actual registered-source rendering, integration and4320 publication remain unverified.",
+    "Does not approve actual task-time declarations as historical facts or infer complete task acceptance."
+  ],
+  "manifestVerification": {
+    "changedPins": 4,
+    "protectedBaseEqual": 34,
+    "parserArtifacts": 3,
+    "errors": []
+  }
+}
