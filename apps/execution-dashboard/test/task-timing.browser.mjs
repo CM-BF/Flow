@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseStatus } from '../src/status.mjs';
+import { humanOverview } from '../src/human.mjs';
 
 // Isolated rendering fixture: real parser and shipped UI, synthetic owner/Git
 // observations. No registry, coordination database, provider, or default service.
@@ -50,12 +51,18 @@ export async function createTaskTimingFixture() {
       if (['/api/summary', '/api/task', '/api/assignments', '/api/snapshot'].includes(url.pathname)) {
         if (state.fail) { response.writeHead(503); response.end('fixture observation unavailable'); return; }
         const tasks = [task('T01', state.fields, state.task), task('T02', { '任务完成时间': '2026-10-07T02:30:00Z', '任务时间来源': '开工：fixture-start；完成：fixture-done' })];
-        const overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
+        let overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
+        if (state.signals) {
+          tasks[0].status = parseStatus(ownerStatus('T01', { 优先级: '8', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择' }), 'T01');
+          tasks[1].status = parseStatus(ownerStatus('T02', { 优先级: '1', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择', '单一 status owner': 'child-owner' }), 'T02');
+          tasks[1].links = { kind: 'subtask', parent: { state: state.unknownRelation ? 'unknown' : 'known', targetId: 'T01', reason: state.unknownRelation ? 'fixture 未核实关系' : '' }, coLead: { state: 'known', value: 'fixture' } };
+          overview = humanOverview(tasks);
+        }
         const digest = value => createHash('sha256').update(JSON.stringify(value.status)).digest('hex');
         const common = { version: 1, readId: String(++readId), registryFingerprint, generatedAt: state.generatedAt, startedAt: state.generatedAt, completedAt: state.generatedAt };
         let body;
         if (url.pathname === '/api/summary') body = { ...common, kind: 'summary', overview, tasks: tasks.map(value => {
-          const { waiting, ...timing } = value.status.timing;
+          const { waiting, waitingTable, ...timing } = value.status.timing;
           return { id: value.id, title: value.title, sourceKey: `fixture:${value.id}`, sourceCurrent: value.current,
             source: { ...value.source, digest: digest(value), issues: [], readAt: state.generatedAt },
             declarations: { ...value.status, timing }, progress: value.progress, links: value.links,
@@ -127,9 +134,11 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await page.goto(fixture.url);
     await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor(); checkpoint();
     assert.equal(await row('T01').count(), 1);
-    assert.match(await elapsed().innerText(), /已历时（含等待，截至本次同步）：0天 2小时 0分 0秒/);
-    assert.match(await row('T02').innerText(), /负责人声明完成.*0天 1小时 30分 0秒/);
-    assert.match(await row('T01').innerText(), /01:00:00.000 UTC.*尚未完成/);
+    assert.match(await elapsed().innerText(), /已历时（含等待，截至本次同步）：2小时/);
+    assert.match(await row('T02').innerText(), /负责人声明完成.*1小时 30分/);
+    assert.equal(await row('T01').locator('time').getAttribute('datetime'), '2026-10-07T01:00:00.000Z');
+    assert.match(await row('T01').innerText(), /本地时间.*UTC 偏移/);
+    assert.match(await row('T01').innerText(), /尚未完成/);
     fixture.setState({ fields: { 工作分支状态: 'completed' } }); await refresh();
     assert.match(await elapsed().innerText(), /截至本次同步.*2小时/);
     checks.push('Explicit task start/end and inclusive elapsed; branch completion never ends the task');
@@ -153,15 +162,28 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await details.focus(); await page.keyboard.press('Enter');
     const region = page.getByRole('region', { name: '任务时间', exact: true });
     await region.waitFor();
+    const basis = region.locator('.timing-basis');
+    await basis.locator('summary').focus(); await page.keyboard.press('Enter');
+    assert.equal(await basis.evaluate(node => node.open), true);
     assert.match(await region.innerText(), /fixture-start/);
     assert.match(await region.innerText(), /WAIT01/);
     assert.match(await region.innerText(), /未求和/);
+    assert.match(await region.locator('.waiting-state').innerText(), /^仍在等待/);
+    await region.locator('.timing-waits td').first().evaluate(node => {
+      window.timingReadingNode = node;
+      const range = document.createRange(); range.selectNodeContents(node);
+      const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      window.timingReadingText = selection.toString();
+    });
     await page.locator('#close-dialog').focus();
     fixture.setState({ fail: true });
     await page.evaluate(() => window.timingFixtureRefresh());
     await page.waitForFunction(() => document.querySelector('#sync-state').textContent === '当前同步失败'); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
-    assert.match(await region.innerText(), /01:00:00.000 UTC/);
+    assert.match(await region.innerText(), /2026-10-07T01:00:00.000Z/);
+    assert.equal(await basis.evaluate(node => node.open), true);
+    assert.equal(await page.evaluate(() => document.querySelector('.timing-waits td') === window.timingReadingNode && getSelection().toString() === window.timingReadingText), true);
+    assert.match(await region.locator('.waiting-state').innerText(), /当前是否等待未知/);
     assert.equal(await page.locator('#close-dialog').evaluate(node => node === document.activeElement), true);
     assert.equal(await page.locator('#task-dialog').evaluate(node => node.open), true);
     checks.push('Read failure marks open timing historical without replacing the dialog or stealing focus');
@@ -171,6 +193,8 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await page.waitForFunction(() => document.querySelector('#sync-state').textContent.startsWith('已同步')); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
     assert.match(await region.innerText(), /2026-10-07T03:00:00.000Z/);
+    assert.equal(await basis.evaluate(node => node.open), true);
+    assert.equal(await page.evaluate(() => document.querySelector('.timing-waits td') === window.timingReadingNode && getSelection().toString() === window.timingReadingText), true);
     await closeDialog();
     assert.match(await elapsed().innerText(), /3小时/);
     await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
@@ -197,12 +221,30 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
       await page.setViewportSize({ width: 390, height: 844 });
       await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).focus();
       await page.keyboard.press('Enter'); await region.waitFor(); checkpoint();
+      await region.locator('.timing-basis > summary').focus(); await page.keyboard.press('Enter');
+      assert.match(await region.innerText(), /fixture-start/);
+      assert.match(await region.innerText(), /WAIT01/);
       assert.ok(await page.locator('#task-dialog').evaluate(node => node.scrollWidth <= node.clientWidth + 1));
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
       const name = `task-timing-${theme}-390.png`;
       await page.screenshot({ path: path.join(outputDir, name) }); screenshots.push(name);
     }
     checks.push('Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout');
+    await closeDialog();
+    fixture.setState({ signals: true }); await refresh();
+    for (const selector of ['#blockers', '#decisions']) {
+      const signals = page.locator(selector);
+      assert.equal(await signals.locator('.signal-group').count(), 1);
+      assert.deepEqual(await signals.locator('.task-row .task-code').allTextContents(), ['T02', 'T01']);
+      assert.match(await signals.innerText(), /child-owner/);
+      assert.match(await signals.innerText(), /timing-fixture/);
+      assert.equal(await signals.locator('img').count(), 0);
+    }
+    fixture.setState({ signals: true, unknownRelation: true }); await refresh();
+    assert.equal(await page.locator('#blockers .signal-group').count(), 2);
+    assert.match(await page.locator('#blockers').innerText(), /关系未确认/);
+    assert.match(await page.locator('#blockers').innerText(), /fixture 未核实关系/);
+    checks.push('Priority signal groups retain both owners and literal text; unknown target relations remain separate');
     assert.deepEqual(errors, []); checkpoint();
     return { checks, screenshots, pageErrors: errors, observation: 'fixture-only parser/UI; no PG, registry, main proof or deployment validation' };
   } finally { page.off('pageerror', onError); }
@@ -221,6 +263,9 @@ async function timingVisualChecks({ page, f, report, output, checkpoint }) {
     await button.focus(); await page.keyboard.press('Enter');
     const region = page.getByRole('region', { name: '任务时间', exact: true });
     await region.waitFor();
+    const basis = region.locator('.timing-basis');
+    await basis.locator('summary').focus(); await page.keyboard.press('Enter');
+    assert.equal(await basis.evaluate(node => node.open), true);
     assert.match(await region.innerText(), /fixture-start/);
     assert.match(await region.innerText(), /WAIT01/);
     await region.getByRole('heading', { name: '任务时间', exact: true }).evaluate(node => node.scrollIntoView({ block: 'start' }));

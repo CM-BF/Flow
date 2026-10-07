@@ -1,0 +1,113 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "preparedAt": "2026-10-07T21:02:54.648Z",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "implementation": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "metadataHead": "Read final Git HEAD; private execution binding is routinely rebound after this metadata commit, without changing runnable/source bytes.",
+  "package": "/private/tmp/timing02-b1",
+  "command": "python3 /private/tmp/timing02-b1/supervisor.py --gate <fresh owner single-use gate>",
+  "parent": {
+    "path": "/private/tmp/timing02-b1/supervisor.py",
+    "bytes": 26959,
+    "sha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab"
+  },
+  "preparedFiles": {
+    "worker.mjs": "9744fa30095bfdf7c4c9a0969096c332e7f757e34215e2be9e0b3de67a29b533",
+    "sandbox.sb": "42ece69d7a77c1745a5a22b068159d6b9c398cf2a3647412d4cf148920d22aa5",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "diffs": [
+    {
+      "path": "/private/tmp/timing02-b1/supervisor.diff",
+      "bytes": 6726,
+      "sha256": "38b242b5e1a8333f7bb4f1eddc2c0ce334687d2b46074701ef7c44ccc2172d37"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/worker.diff",
+      "bytes": 13398,
+      "sha256": "a3c16b93d9b56bba92296793d920392d7e1a58d5741fa94d171c2135e97ddc5e"
+    }
+  ],
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+    "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+  },
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+    "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+  },
+  "runtimeGrant": null,
+  "gateCreated": false,
+  "topology": {
+    "nodeWorkerGroups": 1,
+    "nativeChromeGroups": 1,
+    "fixtureHTTP": 1,
+    "cdpDynamicListener": 1,
+    "pg": 0,
+    "provider": 0,
+    "personalEndpoints": 0
+  },
+  "inputs": {
+    "ownSourceCount": 7,
+    "readOnlySourceCount": 19,
+    "externalFileCount": 9,
+    "node": {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    "chromeVersion": "154.0.8037.99",
+    "closure": "/private/tmp/timing02-b1/closure.json",
+    "deferredPG": "read-model.mjs observeAssignments lazily imports ledger; this synthetic fixture never invokes it"
+  },
+  "proposal": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "one dynamic loopback timing DTO fixture; CDP is separate dynamic owned Chrome listener",
+    "floorBytes": 18926075904,
+    "floorMeaning": "Future complete fresh floor; no actual allocation",
+    "expectedImages": 2,
+    "newVisualImages": 2
+  },
+  "localSyntax": {
+    "path": "browser-preparation-local/actual.json",
+    "sha256": "c08c8d395428126815cd9ac4b7b7f6193635cd80ebf19681b2f54c50098a3ac2",
+    "chargeMs": 32,
+    "scope": "TMP AST/worker syntax and prepared input binding only; no product imports"
+  },
+  "sixChecks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout",
+    "Priority signal groups retain both owners and literal text; unknown target relations remain separate"
+  ],
+  "expectedScreenshots": [
+    "task-timing-light-390.png",
+    "task-timing-dark-390.png"
+  ],
+  "notValidated": [
+    "browser six groups",
+    "visual390 images",
+    "focus and selection actual",
+    "main integration",
+    "deployment"
+  ],
+  "sourcePrepSegment": {
+    "start": "2026-10-07T20:56:52Z",
+    "deadline": "2026-10-07T21:11:52Z",
+    "maximumNewBytes": 4194304,
+    "optionalLocalLimitMs": 15000,
+    "usedOptionalLocalMs": 32,
+    "runtimeNotAuthorized": true
+  },
+  "reviewAcceptedAt": "2026-10-07T21:15:35.315Z"
+}

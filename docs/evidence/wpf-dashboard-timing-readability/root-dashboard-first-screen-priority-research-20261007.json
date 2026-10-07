@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-07T20:12:35.043331+00:00",
+  "task": "Existing D01/WPF-001-37 first-screen follow-up, with TIMING02 formatting",
+  "origin": "GO actual existing-IAB observation and fixed-c29 source review; root independently read the fixed helper and existing relationship tests.",
+  "state": "BACKLOG_DESIGN_INPUT_NO_NEW_CLAIM",
+  "source": "c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/test/human-summary.test.mjs",
+      "bytes": 4598,
+      "sha256": "94f70824bc157338de7daf20063384c299ea021f968bdddd337e8e6ab125d098"
+    }
+  ],
+  "confirmedSourceIssue": "humanOverview already uses priorityOrder for active/headline selections, but blockerIds and decisionIds are direct registry-order filters. Thus registration order, rather than explicit owner priority, determines the visible blocker ordering.",
+  "factsNotToInfer": "FLOW-001 current unique owner status at20:03 explicitly says personal entry unavailable and recovery first, yet its priority field remains3. Only that owner should correct priority; renderer must not infer severity from phrases such as stopped, failed or personal.",
+  "boundedDesign": [
+    "Use the existing explicit priority with deterministic ID tie-break for blocker/decision ordering. Keep source current/stale/unknown distinction visible.",
+    "Show the highest-ranked current parent delivery and its own availability wording; preserve separately declared child blocker facts and owners without replacing parent priority or status.",
+    "Only verified direct parent relationships may group rows, following existing tests; unknown/cyclic/missing relationships remain separate and visible.",
+    "Present start/completion and elapsed time compactly using the existing TIMING02 display layer; exact UTC, milliseconds and provenance remain in an accessible detail view. Do not repeat full time/relationship boilerplate in every summary sentence.",
+    "Arc source registration is an independent D05 ownership action. Its ACTIVE take must remain visible while source registration is pending; after registration verify owner, worktree, branch, fixed HEAD, review target and current status resolve through the one authoritative worktree."
+  ],
+  "meaningfulAcceptanceCases": [
+    "Scramble registry order while keeping explicit priority and task IDs fixed: blocker ordering remains stable and highest explicit priority is first.",
+    "Change only labels and blocker wording, including alarming keywords: ordering remains unchanged unless the owner changes priority.",
+    "Priority tie and unknown/missing priority remain deterministic; every lower-ranked item stays reachable by expansion.",
+    "Parent/child blockers retain both exact texts and owners, while parent facts are never synthesized from child review or progress.",
+    "Start/completed UNKNOWN stays UNKNOWN; compact timestamps preserve exact source values in details and do not invent elapsed/start from Git mtime.",
+    "A claimed task awaiting source registration displays that fact, then switches to matched source once D05 registers it; no second manual progress object is introduced."
+  ],
+  "coordination": "One existing follow-up reference only. UI implementation requires its own worktree/branch and exact scope take after available writer slot; no current App writer is repurposed and no main/other-owner status is changed. Personal service restoration remains highest execution priority.",
+  "method": "Read-only codebase-design/clean-code review using existing find-skills discovery; GO reports web-design-guidelines1.0.0 and official Vercel guideline review. Root did not run browser/tests or modify project files."
+}

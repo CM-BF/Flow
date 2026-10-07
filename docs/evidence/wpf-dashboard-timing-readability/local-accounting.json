@@ -1,0 +1,48 @@
+{
+  "state": "CHECKS_PASSED_BROWSER_NOT_RUN",
+  "phaseLimitMs": 60000,
+  "attemptLimitMs": 20000,
+  "cleanupReserveMs": 5000,
+  "attempts": [
+    {
+      "record": "local/first-failed/actual.json",
+      "actualOuterExit": 0,
+      "childExit": 1,
+      "outerWallMs": 261.492542,
+      "conservativeChargeMs": 262,
+      "tests": 98,
+      "pass": 97,
+      "fail": 1,
+      "reason": "New vm.Script syntax check did not accept existing top-level await; original raw remains immutable."
+    },
+    {
+      "record": "local/second-passed/actual.json",
+      "actualOuterExit": 0,
+      "childExit": 0,
+      "outerWallMs": 210.995792,
+      "conservativeChargeMs": 211,
+      "tests": 98,
+      "pass": 98,
+      "fail": 0
+    },
+    {
+      "record": "local/third-static/actual.json",
+      "actualOuterExit": 0,
+      "childExit": 0,
+      "outerWallMs": 251.829083,
+      "conservativeChargeMs": 252,
+      "statusParse": "errors/human.missing/timing.issues/implementation.errors all []",
+      "links": 8,
+      "moduleSyntax": 2,
+      "productExecution": false
+    }
+  ],
+  "cumulativeMs": 725,
+  "browser": "NOT_RUN",
+  "engineeringActive": false,
+  "unusedMs": 59275,
+  "phaseState": "CLOSED",
+  "attemptsConsumed": 3,
+  "cleanup": "All exact child groups absent; both streams EOF; all owned scratch absent.",
+  "futureRunCredit": 0
+}

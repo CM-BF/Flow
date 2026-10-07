@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:34:55.011Z / main/origin 7a6dfa56e；冷启动失败已独审，固定恢复源适配已修正 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:46:04.927Z / main/origin a8bd47b5e；新固定恢复包已构建、限定结果独审通过，真实启动待验 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 7a6dfa56e；本段接收冷启动失败/资源分类与3行固定发布源修复审查，不改当前主线产品 |
-| 工作树dirty状态 | 自身状态及精简独审记录；两个原有未知__pycache__保留不纳入 |
+| 工作基线 / HEAD | main a8bd47b5e；本段接收TIMING02固定七源与原owner记录，不修改个人固定产物 |
+| 工作树dirty状态 | 受控接收已审TIMING02及自身状态；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 固定恢复源默认加载5项及实际启动入口3项局部检查通过；旧冷启动1/0失败及KEEP保留，未重复PG/构建 |
-| 已集成main状态 / HEAD | main 7a6dfa56e已含受信迁入策略接缝；新固定源880060a为独立ref，尚未生成/启动新产物 |
+| 检查状态 | TIMING02复用98纯检查/6浏览器组及独审，七源相对已审base无主线冲突；恢复R2构建结果限定通过，冷启动仍待验 |
+| 已集成main状态 / HEAD | main a8bd47b5e；TIMING02本次待受控发布。新固定source880060/e15产物不等于个人已恢复 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人入口仍停止。恢复产物在隔离启动前失败，发布适配的三个调用错误已修复并通过局部检查。 |
-| 下一可用交付 | 构建修正后的固定恢复包，验证真实启动与新旧网页兼容后，沿原维护操作恢复个人服务接单。 |
-| 当前阻塞 | ACTIVE: 个人服务尚未恢复；修正后的固定发布源仍需新产物、实际冷启动和网页兼容验证。 |
+| 当前产出 | 个人入口仍停止。修正后的恢复包已构建并通过结果审查；看板时间易读改进已审，正在接收。 |
+| 下一可用交付 | 验证修正包的真实启动与新旧网页兼容，沿原维护操作恢复个人服务；看板时间改进交原owner部署。 |
+| 当前阻塞 | ACTIVE: 个人服务尚未恢复；新固定产物仍需实际冷启动、网页兼容和当前现场身份核对。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -534,3 +534,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T21:34:55.011Z：隔离冷启动21:23:48.339Z开始→21:23:59.394Z结束，1/0 FAIL，原TypeError/缺stack、cleanup42P01及DB/private KEEP不改。独审核3组和operator absent/双EOF、pool关闭/连接空；固定控制流在启动前结束，因此clone/private为静态存量，PG背景增长另留128MiB保守值，非清理PASS。主线正确的resolver默认值和函数调用在04da发布适配中被改错，是本轮明确返工原因；3行修正后8个不同局部例通过，fixed source880060a已封，尚未实际build/cold/兼容或恢复。见 [失败接收](../../docs/evidence/i02/svc06b-cold-failure-intake.json) 与 [适配审查](../../docs/evidence/i02/svc06b-resolver-adaptation-review.json)。
 
 2026-10-07T21:40:21.118Z：新R2固定构建准备d95b（source880060）已限定独审，15绑定/26,453B和5局部原件核同；尚未开actual。held23恢复薄caller0be588也只完成源码准备审查，31绑定/80,777B，缺新产物/真实冷启动/四App报告/fresh私有输入和dispatch，明确NOT_READY。原R4的6身份全absent、pending0、DB空连接及owner停写事实支持前瞻将旧整段cap缩至PG背景128MiB；既存clone/private仍KEEP，不称物理回收或清理通过。见 [R2准备](../../docs/evidence/i02/svc06b-recovery-r2-build-review.json)、[恢复caller](../../docs/evidence/i02/svc06b-held-recovery-preparation-review.json)、[R4分类](../../docs/evidence/i02/svc09a-r4-forward-classification-review.json)。
+
+2026-10-07T21:46:04.927Z：TIMING02固定94ed七源与已审base比较无主线冲突，原owner e2c6322记录受控接收；复用98纯/6浏览器及原source、actual独审，0新工程运行。见[单份接收记录](../../docs/evidence/i02/timing02-integration-receipt.json)。部署另交Web owner；个人服务仍held23/三角色停止。R2新e15包构建33569ms返回并获native限定结果批准，不冒冷启动或兼容已通过。

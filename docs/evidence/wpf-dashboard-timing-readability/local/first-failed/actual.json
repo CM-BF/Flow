@@ -1,0 +1,58 @@
+{
+  "head": "8f3647441cfb5475d272017d6fa54cf7c43dc11b",
+  "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+  "claimVersion": 1,
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-isolation=none",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/human-summary.test.mjs"
+  ],
+  "startedAt": "2026-10-07T20:46:51.273028+00:00",
+  "completedAt": "2026-10-07T20:46:51.359397+00:00",
+  "pid": 51997,
+  "pgid": 51997,
+  "actualExit": 1,
+  "elapsedMs": 86.08874992933124,
+  "chargeMs": 87,
+  "groupAbsent": true,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "scratchAbsent": true,
+  "rawBytes": 9600,
+  "failure": null,
+  "freeBytes": 19244105728,
+  "floorBytes": 18959564800,
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "nodeSha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+  "pins": {
+    "src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+    "src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+    "src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+    "test/status-timestamps.test.mjs": "7e9820d08d5e161f4da22f00db4b715db4d3cd5c8aaf7b49b870632eba9c94ac",
+    "test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0"
+  },
+  "phaseTotalMs": 60000,
+  "attemptTotalMs": 20000,
+  "cleanupReserveMs": 5000,
+  "browser": "NOT_RUN",
+  "HTTP": false,
+  "PG": false,
+  "raw": {
+    "stdout": {
+      "bytes": 9600,
+      "sha256": "c6d15401beffee4041a3f39598c1f759c6b894ccbcf9adb239df17b0a9dfecc6"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

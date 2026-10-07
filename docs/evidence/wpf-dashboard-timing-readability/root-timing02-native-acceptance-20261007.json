@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T21:08:38.029600+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab",
+  "workerSha256": "9744fa30095bfdf7c4c9a0969096c332e7f757e34215e2be9e0b3de67a29b533",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "scope": "One synthetic TIMING02 fixture; fresh owned Chrome profile, one Node sibling, dynamic loopback HTTP/CDP; 0 PG/provider/personal endpoints. Existing user browser/profile is not involved.",
+  "limits": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576
+  },
+  "conditions": "D01 single-use fresh complete-floor grant, exact pins/claim/HEAD/no overlap, no prior run; no retry or time transfer. Independent result/PNG review and exact resource RETURN required. This accepts the native capability boundary and grants no actual scheduling window.",
+  "review": {
+    "path": "/private/tmp/root-timing02-browser-preparation-review-20261007.json",
+    "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+  }
+}

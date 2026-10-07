@@ -65,3 +65,35 @@ test('legacy names and undeclared relationships preserve prior priority ordering
   assert.deepEqual(humanOverview(tasks).activeIds, ['ENG-001', 'ENG01D', 'Q01']);
   assert.deepEqual(humanOverview(tasks).otherActiveIds, ['R01']);
 });
+
+test('signals sort by explicit owner priority, stable ID ties, and unknown last without reading severity words', () => {
+  const tasks = linked([task('Z1', { priority: 'UNKNOWN', blocker: 'ACTIVE: critical', decision: 'REQUIRED: urgent' }),
+    task('B1', { priority: 9, blocker: 'ACTIVE: minor', decision: 'REQUIRED: later' }),
+    task('A2', { priority: 1, blocker: 'ACTIVE: same', decision: 'REQUIRED: same' }),
+    task('A1', { priority: 1, blocker: 'ACTIVE: same', decision: 'REQUIRED: same' })]);
+  const before = JSON.stringify(tasks), expected = ['A1', 'A2', 'B1', 'Z1'];
+  assert.deepEqual(humanOverview(tasks).blockerIds, expected);
+  assert.deepEqual(humanOverview([...tasks].reverse()).decisionIds, expected);
+  assert.equal(JSON.stringify(tasks), before);
+});
+test('signal grouping keeps every child and original parent record without synthesizing parent signals', () => {
+  const tasks = linked([task('P1', { priority: 8 }), task('C1', { parent: 'P1', priority: 1, blocker: 'ACTIVE: same' }),
+    task('C2', { parent: 'P1', priority: 3, blocker: 'ACTIVE: same' }), task('Q1', { priority: 2, blocker: 'ACTIVE: same' })]);
+  const before = JSON.stringify(tasks), result = humanOverview(tasks);
+  assert.deepEqual(result.blockerIds, ['C1', 'Q1', 'C2']);
+  assert.deepEqual(result.blockerGroups, [{ parentId: 'P1', relation: 'known', taskIds: ['C1', 'C2'] }, { parentId: 'Q1', relation: 'known', taskIds: ['Q1'] }]);
+  assert.equal(tasks[0].status.human.blocker.state, 'none');
+  assert.equal(JSON.stringify(tasks), before);
+  tasks[0].status.human.blocker = { state: 'active', text: 'parent own blocker' };
+  assert.deepEqual(humanOverview(tasks).blockerGroups[0].taskIds, ['C1', 'C2', 'P1']);
+});
+test('unknown relation with targetId, invalid kind or stale parent never creates a signal family', () => {
+  for (const fault of ['unknown', 'kind', 'stale', 'missing']) {
+    const tasks = linked([task('P1'), task('C1', { parent: 'P1', blocker: 'ACTIVE: wait' })]);
+    if (fault === 'unknown') tasks[1].links.parent.state = 'unknown';
+    if (fault === 'kind') tasks[1].links.kind = 'unknown';
+    if (fault === 'stale') tasks[0].source.stale = true;
+    if (fault === 'missing') tasks.shift();
+    assert.deepEqual(humanOverview(tasks).blockerGroups, [{ parentId: null, relation: 'unknown', taskIds: ['C1'] }], fault);
+  }
+});

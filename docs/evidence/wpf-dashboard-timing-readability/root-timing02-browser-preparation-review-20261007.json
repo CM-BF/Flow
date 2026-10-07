@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-07T21:08:38.029600+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent of TIMING02 author",
+  "decision": "APPROVED_PREPARED_CALLER_AND_NATIVE_BOUNDARY_ONLY",
+  "blockingFindings": [],
+  "target": {
+    "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+    "metadata": "5854c3351a7e9b489cfac46d45bcbec3448f0f2a",
+    "branch": "codex/dashboard-task-timing-readability",
+    "dirty": false,
+    "remoteEqual": true,
+    "claim": {
+      "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+      "version": 1,
+      "worker": "w01_owner"
+    },
+    "bindingSha256": "54d850ea1b75dddd1c443a6df7685dcdcc163df07ce8acc1978c4857a58fa310",
+    "manifestSha256": "25d4186e7e702c963df364e7e277e47d5075fb4b651e0723614f2025cf148a34"
+  },
+  "verification": {
+    "receipt": "/private/tmp/root-timing02-browser-preparation-inputs-20261007.json",
+    "sha256": "abf9447071a992a573afe7832f70f62e88aff57ca5e9c693d349741846f8eb13",
+    "preparedManifest": 14,
+    "sources": 7,
+    "readOnly": 19,
+    "externalPlusNode": 10,
+    "mismatch": 0,
+    "exactReusedCallerDiffs": 2
+  },
+  "reuse": {
+    "parent": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+    "worker": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+    "reviewScope": "Task/entry/60s identity, pure Node launch without TSX, six direct exported scenario groups and two PNGs. Removed Picker-only observer and selector diagnostics. Cleanup/lifecycle/terminal evidence contract otherwise reused."
+  },
+  "callerFindings": [
+    "Worker imports exported createTaskTimingFixture and runTaskTimingChecks. process.argv guard prevents the legacy five-group dispatcher from running. Six exact ordered group names and two exact PNG names must match binding.",
+    "read-model.mjs defers coordination ledger import until observeAssignments. Synthetic fixture never calls it; pg is not an active dependency or connection. Eight actual public assets are pinned and served by one dynamically assigned loopback fixture.",
+    "Native Chrome retains its built-in sandbox and uses a fresh owned profile, CDP listener and separate process group. No custom outer write/egress sandbox applies to Chrome; Node alone is sandboxed to loopback and owned output/scratch. This wider native boundary is explicitly accepted only for this fixed synthetic test, not silently inherited from Node.",
+    "Parent cleans both process groups and captured streams, retains scratch if identity/group/measurement is unknown, requires fixture/context closure and failed result on scenario error. External actual OS exit and dual outer EOF, terminal hashes, complete cleanup and ceil(max outer,parent,late) charge remain required.",
+    "98 pure successes and source review bb05 remain prior evidence only. No browser result, screenshot, live registry, main integration or deployment is claimed."
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "one dynamic loopback timing DTO fixture; CDP is separate dynamic owned Chrome listener",
+    "floorBytes": 18926075904,
+    "floorMeaning": "Future complete fresh floor; no actual allocation",
+    "expectedImages": 2,
+    "newVisualImages": 2
+  },
+  "nativeAcceptanceRequired": "Attach the separately hashed fixed native acceptance record and reviewed-source state at lawful routine binding; fresh single-use manager grant remains required. Source acceptance is not a reservation.",
+  "notRun": [
+    "six browser groups",
+    "both PNGs",
+    "live owner aggregation",
+    "main integration",
+    "deployment"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T21:08:38.029600+00:00",
+    "scope": "New caller/worker delta and its fixture import/lifecycle",
+    "findings": "Clear parent cleanup ownership; simple direct exported scenario avoids duplicated dispatch. No blocking naming/responsibility/error-path issue found. Legacy direct dispatcher five-count is outside this caller and remains historical; do not claim it is validated.",
+    "tests": "Static/hash/Git review only; no engineering check repeated, no product imported, no native browser started."
+  }
+}

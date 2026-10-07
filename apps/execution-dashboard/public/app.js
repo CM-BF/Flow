@@ -121,9 +121,56 @@ function renderAssignments() {
   if (selectedTask) renderSelectedAssignments();
 }
 
+// One formatter per page, with an offset for each instant (including DST folds).
+const localClock = (() => {
+  try {
+    const formatter = new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit',
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23', timeZoneName: 'shortOffset' });
+    return { formatter, zone: formatter.resolvedOptions().timeZone };
+  } catch { return { formatter: null, zone: 'UTC' }; }
+})();
 function taskTime(value) {
-  if (value?.state === 'known') return `${value.at.replace('T', ' ').replace('Z', '')} UTC`;
-  return value?.state === 'not_completed' ? '尚未完成（负责人声明）' : '未知';
+  if (value?.state !== 'known') return value?.state === 'not_completed' ? '尚未完成（负责人声明）' : '未知';
+  if (!Number.isFinite(Date.parse(value.at))) return '未知';
+  try {
+    if (localClock.formatter) return localClock.formatter.format(new Date(value.at));
+  } catch { /* Preserve the UTC basis when local formatting is unavailable. */ }
+  return `${value.at} UTC`;
+}
+function timeLine(timing) {
+  const line = element('p', undefined, 'task-time-line');
+  for (const [index, [label, value]] of [['开工', timing?.started], ['完成', timing?.completed]].entries()) {
+    line.append(element('span', `${index ? ' · ' : ''}${label}：`));
+    const node = element(value?.state === 'known' ? 'time' : 'span', taskTime(value));
+    if (value?.state === 'known') node.dateTime = value.at;
+    line.append(node);
+  }
+  return line;
+}
+function waitingState(row, observation, current) {
+  const observed = Date.parse(observation.generatedAt);
+  if (row.issues.length || !Number.isFinite(observed)
+    || [row.started.at, row.ended.at].some(at => at && Date.parse(at) > observed)) return '时间或来源待核实';
+  if (row.ended.state === 'known') return '已结束（负责人记录）';
+  if (row.ended.state !== 'open') return '结束时间未知；不推断仍在等待';
+  return current ? '仍在等待（截至本次同步）' : '当时记录未结束；当前是否等待未知';
+}
+function waitingView(timing, observation, current) {
+  const table = element('table', undefined, 'timing-waits');
+  table.append(element('caption', '负责人等待记录，不合计时长'));
+  const head = element('thead'), header = element('tr');
+  for (const text of ['等待原因', '时间记录']) { const cell = element('th', text); cell.scope = 'col'; header.append(cell); }
+  head.append(header); table.append(head);
+  const body = element('tbody');
+  for (const [index, row] of (timing?.waitingTable?.rows ?? []).entries()) {
+    const tr = element('tr'), reason = element('td'), times = element('td');
+    reason.append(element('strong', row.category || '类别未知'), element('p', row.reason || '原因未知'));
+    const state = element('p', waitingState(row, observation, current), 'waiting-state'); state.dataset.waitingIndex = String(index);
+    times.append(state, element('p', `开始：${taskTime(row.started)}`), element('p', `结束：${row.ended.state === 'open' ? '未结束声明' : taskTime(row.ended)}`));
+    tr.append(reason, times); body.append(tr);
+  }
+  table.append(body);
+  return body.children.length ? table : element('p', '等待记录未结构化；完整原文见时间依据。', 'muted');
 }
 function elapsedText(task, observedSnapshot, current) {
   if (!task) return '历时未知（任务已不在本次快照中）';
@@ -136,14 +183,14 @@ function elapsedText(task, observedSnapshot, current) {
   const end = timing.completed.state === 'not_completed' ? observed : Date.parse(timing.completed.at);
   if (![observed, start, end].every(Number.isFinite) || new Date(observed).toISOString() !== snapshotTime || start > observed || end > observed || end < start) return '历时未知（未来时间或区间逆序）';
   const seconds = Math.floor((end - start) / 1000);
-  const duration = `${Math.floor(seconds / 86400)}天 ${Math.floor(seconds / 3600) % 24}小时 ${Math.floor(seconds / 60) % 60}分 ${seconds % 60}秒`;
+  const duration = [[Math.floor(seconds / 86400), '天'], [Math.floor(seconds / 3600) % 24, '小时'], [Math.floor(seconds / 60) % 60, '分'], [seconds % 60, '秒']].filter(([amount]) => amount).map(([amount, unit]) => `${amount}${unit}`).join(' ') || '0秒';
   const label = timing.completed.state === 'not_completed' ? '已历时（含等待，截至本次同步）' : '已历时（含等待，负责人声明完成）';
   return `${label}：${duration}`;
 }
 function summaryTiming(task) {
   const section = element('div', undefined, 'task-timing');
   section.dataset.timingTask = task.id;
-  section.append(element('p', `开工：${taskTime(task.status.timing?.started)} · 完成：${taskTime(task.status.timing?.completed)}`));
+  section.append(timeLine(task.status.timing), element('p', `本地时间 ${localClock.zone} · 每项含 UTC 偏移`, 'timing-zone'));
   timingObservations.set(section, { task, observation: snapshot, epoch: summaryEpoch, current: task.sourceCurrent });
   section.append(element('p', elapsedText(task, snapshot, snapshotCurrent && task.sourceCurrent), 'task-elapsed'));
   return section;
@@ -154,21 +201,31 @@ function timingDetails(task, observation, matched) {
   const facts = element('dl', undefined, 'detail-facts');
   const timing = task.status.timing;
   for (const [label, value] of [
-    ['任务开工时间（UTC）', taskTime(timing?.started)], ['任务完成时间（UTC）', taskTime(timing?.completed)],
+    ['任务开工时间（UTC）', timing?.started.at || timing?.started.record || 'UNKNOWN'], ['任务完成时间（UTC）', timing?.completed.at || timing?.completed.record || 'UNKNOWN'],
     ['时间来源（负责人声明，未独立核验）', timing?.source.record], ['时间声明原文', `${timing?.started.record || 'UNKNOWN'}\n${timing?.completed.record || 'UNKNOWN'}`],
     ['声明问题', timing?.issues.join('；') || '无已识别的格式问题；不构成独立验证'],
     ['本次快照（UTC）', observation.generatedAt], ['权威来源', task.source.path],
+    ['等待记录问题（独立于任务历时）', timing?.waitingTable?.issues.join('；') || '无已识别的等待表问题'],
     ['等待记录（原文，未求和）', timing?.waiting || '未记录；不推断等待或净工作时长'],
   ]) facts.append(element('dt', label), element('dd', value || '未知'));
   timingObservations.set(section, { task, observation, epoch: summaryEpoch, current: matched && task.current });
-  section.append(element('p', elapsedText(task, observation, snapshotCurrent && matched && task.current), 'task-elapsed'), facts);
+  const basis = element('details', undefined, 'timing-basis'); basis.append(element('summary', '时间依据 · UTC、来源与原文'), facts);
+  const current = snapshotCurrent && matched && task.current && task.source.mode === 'live' && !task.source.stale;
+  section.append(timeLine(timing), element('p', `本地时间 ${localClock.zone} · 每项含 UTC 偏移`, 'timing-zone'),
+    element('p', elapsedText(task, observation, current), 'task-elapsed'), waitingView(timing, observation, current), basis);
   return section;
 }
 function updateTimingFreshness() {
   for (const section of document.querySelectorAll('[data-timing-task], #task-timing-detail')) {
     const record = timingObservations.get(section);
-    if (record) section.querySelector('.task-elapsed').textContent = elapsedText(record.task, record.observation,
-      snapshotCurrent && record.current && record.epoch === summaryEpoch);
+    if (!record) continue;
+    const current = snapshotCurrent && record.current && record.epoch === summaryEpoch && record.task.source.mode === 'live' && !record.task.source.stale;
+    section.querySelector('.task-elapsed').textContent = elapsedText(record.task, record.observation, current);
+    for (const node of section.querySelectorAll('[data-waiting-index]')) {
+      const row = record.task.status.timing.waitingTable.rows[Number(node.dataset.waitingIndex)];
+      const text = waitingState(row, record.observation, current);
+      if (node.textContent !== text) node.textContent = text;
+    }
   }
 }
 
@@ -229,9 +286,26 @@ function renderWorkstreams() {
   $('#empty-filter').hidden = tasks.length > 0;
 }
 function renderSignal(selector, ids, kind, empty) {
-  const tasks = tasksFor(ids);
-  $(selector).replaceChildren(...(tasks.length ? tasks.map(task => compactTask(task, task.status.human[kind].text)) : [element('p', empty, 'empty-state')]));
+  const groups = snapshot.overview[`${kind}Groups`] ?? ids.map(id => ({ parentId: null, relation: 'unknown', taskIds: [id] }));
+  const entries = groups.map(group => {
+    const section = element('section', undefined, 'signal-group');
+    const parent = snapshot.tasks.find(task => task.id === group.parentId);
+    const heading = element('h3', parent ? '关联任务 · ' : '关系未确认 · 独立记录');
+    if (parent) heading.append(taskButton(parent, `${parent.id} ${parent.title}`));
+    section.append(heading);
+    if (parent) section.append(element('p', '按明确父关系归组；每项仍是该负责人自己的记录。', 'muted'));
+    for (const task of tasksFor(group.taskIds)) {
+      const row = compactTask(task, task.status.human[kind].text);
+      const human = task.status.human;
+      const priority = human.missing?.includes('优先级') ? '未知' : human.priority;
+      row.querySelector('.task-copy').prepend(element('p', `负责人：${task.status.owner || '未知'} · 优先级：${priority}`, 'signal-owner'));
+      section.append(row);
+    }
+    return section;
+  });
+  $(selector).replaceChildren(...(entries.length ? entries : [element('p', empty, 'empty-state')]));
 }
+
 function render() {
   const view = snapshot.overview;
   $('#page-title').textContent = view.phase ? `当前推进 ${view.phase}` : '当前阶段待补';

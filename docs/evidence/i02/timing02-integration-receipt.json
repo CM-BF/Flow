@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-07T21:46:04.927Z",
+  "kind": "CONTROLLED_APPROVED_INTAKE",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "ownerDelivery": "e2c63229908cf8d7e0dc6b3b1d8658a58c7b2d0f",
+  "priorMain": "a8bd47b5e",
+  "base": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+  "claimObservation": "2026-10-07T21:45:19.847Z",
+  "claim": "d26ac1d8-edf1-413d-ae67-68ce807e9fca v1 exact9 active; canonical all9 STOP retained",
+  "integrationClaim": "3fca55ad-6724-4c0a-af73-b0497eaf6dd5 v2",
+  "sourceBindings": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "bytes": 10053,
+      "sha256": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 5739,
+      "sha256": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 10959,
+      "sha256": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/human-summary.test.mjs",
+      "bytes": 6938,
+      "sha256": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 16450,
+      "sha256": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 21718,
+      "sha256": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+    }
+  ],
+  "comparison": "All seven source/test paths equal fixed target and owner hashes; prior main equals reviewed base for each path. No manual product merge.",
+  "reviews": {
+    "sourceLocal": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-source-local-review-20261007.json",
+      "bytes": 4926,
+      "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019"
+    },
+    "browserPreparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+      "bytes": 4274,
+      "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+    },
+    "native": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+      "bytes": 1294,
+      "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+    },
+    "actualVisual": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/browser-first/root-actual-review.json",
+      "bytes": 5865,
+      "sha256": "74b132aad2cd2523b2d2dfde60e110d6d09244b882090bd93107336e7bb64fd4"
+    }
+  },
+  "validationReused": {
+    "pure": "98/98 passed; first97/98failure preserved",
+    "browser": "exact6 passed, outer0, scoped390light/dark visual approved",
+    "localClosedMs": 725,
+    "browserClosedMs": 6404,
+    "newRunsRequiredForThisEvidence": false
+  },
+  "newEngineeringRuns": 0,
+  "ownerRecords": {
+    "files": 56,
+    "bytes": 365358
+  },
+  "result": "Approved compact timing/wait presentation and explicit parent priority grouping received. Live4320 deployment remains Web owner responsibility.",
+  "limits": [
+    "Fixture six browser groups and captured390light/dark only; not all screen sizes.",
+    "Historical UNKNOWN/first failure retained.",
+    "No PG/provider/personal service or deployed runtime changed."
+  ],
+  "cleanCode": "Reviewed scope isolates status parsing/human projection and UI rendering, preserves explicit source authority and unknown. No extra framework or duplicate state."
+}
