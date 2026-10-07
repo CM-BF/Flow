@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 固定代码与验收入口
 
-当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。独立组合结论为 **APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF**；TODO06共享合同来源与main接收继续IN_PROGRESS，非作者自签/整平台批准。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
+当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。独立组合结论为 **APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF**；Original main c130已限定接收；TODO06的lateLogout中心后继/必要集成边界继续IN_PROGRESS，非作者自签/整平台批准。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
 
-[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；随后[双中心真实浏览器selected2实际通过](two-center-first-validation.md)，[root本次actual独审](two-center-first-root-review.json)限定接受。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。[当前root组合独审](2f8-composed-feature-root-review.json)在原19输入矩阵基础上接受Web实现与原03/05验收；main/真实安装接收尚未取得新的本片完整回执。
+[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；随后[双中心真实浏览器selected2实际通过](two-center-first-validation.md)，[root本次actual独审](two-center-first-root-review.json)限定接受。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。[当前root组合独审](2f8-composed-feature-root-review.json)在原19输入矩阵基础上接受Web实现与原03/05验收；[main接收原件](main-intake/original-recovery-intake.json)已到并[逐19源核验](main-intake/verification.json)；个人安装与整中心合同不由本回执证明。
 
 ## 模块与authority
 
@@ -44,8 +44,12 @@ ConnectionSession 负责公开cookie身份及撤权代际；Journal 按API baseU
 
 ## 完整验收剩余与边界
 
-原TODO03/05按App/P01、完整稿、namespace及原工程矩阵已由[root组合独审](2f8-composed-feature-root-review.json)接受并completed。full7已真实覆盖不reload public reauth与offline→online保稿0POST，不再笼统写重连未验；[19输入逐项矩阵](acceptance05/report.md)是该结论的审前固定材料。actual lateGET只证明abort未交付，同center公开principal旋转无本片测试API、隔离仅受控证明，二者诚实列限制，不新增Web/provider运行门槛。TODO06待原plan13/interface三项中心owner合同（callerOrigin、迟到Clear-Cookie、重复Connect32slot）固定来源对齐及Original合法main/必要集成接收。两DB新phase90s实际charge13020/余76980，旧90/150/Steer60/route90全部closed，不借余额；[当前phase](two-center-phase.json)与[连接配置](two-center-connections.json)列实际与配置区别。准备文件的NOT_RUN及SHA是执行前2917历史状态，不替代本轮actualmanifest。
+原TODO03/05按App/P01、完整稿、namespace及原工程矩阵已由[root组合独审](2f8-composed-feature-root-review.json)接受并completed。full7已真实覆盖不reload public reauth与offline→online保稿0POST，不再笼统写重连未验；[19输入逐项矩阵](acceptance05/report.md)是该结论的审前固定材料。actual lateGET只证明abort未交付，同center公开principal旋转无本片测试API、隔离仅受控证明，二者诚实列限制，不新增Web/provider运行门槛。TODO06原三项中心合同已有[固定来源审](main-intake/center-alignment-web-review.json)：single-origin与fresh Connect/global32已对齐，Original main c130已接收；仅lateLogout响应顺序中心后继及必要集成边界仍open。两DB新phase90s实际charge13020/余76980，旧90/150/Steer60/route90全部closed，不借余额；[当前phase](two-center-phase.json)与[连接配置](two-center-connections.json)列实际与配置区别。准备文件的NOT_RUN及SHA是执行前2917历史状态，不替代本轮actualmanifest。
 
 真正runner/provider consumed/applied、Queue promotion、assistant流协议消费及其他owner公共认证合同保证是跨owner能力/未验依赖，不能临时新增为本Web渲染/触发/缓存片必须启动provider的前置；本片不宣称它们已证。IDB strict是UA耐久hint，不保证断电/用户清库永久保存。
 
 GO恢复目录可读性后继继续归原MATURE01/06：轻metadata标题/内容摘要/本地Intl时间、精确identity/UTC留details，不预取正文；空text不推重复、不自动合并/删稿/重发。此后继不阻已有恢复行为限定交付，也未在本次源码混入。
+
+## 当前生产/test交权
+
+[19源STOP/保留2 metadata的精确清单](main-intake/scope-handoff.json)待经理fresh原子amend，当前未自行release。main19源==2f8==owner，产品不为元数据变化重新定target。Original组合types6024ms/0输出通过；非空scratch3项1357748B KEEP_NONEMPTY_UNINSPECTED，不称删除。本批只metadata解析/链接，未重跑绿色。[lateLogout只读方案](main-intake/late-logout-readonly.md)是原后继候选，不是实施/测试PASS。

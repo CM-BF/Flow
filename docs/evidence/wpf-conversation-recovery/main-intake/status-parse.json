@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T11:34:01.724Z",
+  "taskId": "WPF-RECOVERY01",
+  "parserMainHead": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+  "parserSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+  "statusSha256": "7cb5f2061991bffa7740185e8c6264769fb33637c3d125744e9414490e92b683",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+      "id": "WPF-MATURE-06",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "limit": "Metadata shape only; no product check. UNKNOWN start lacks reliable historical event; NOT_COMPLETED retains TODO06 center follow-up."
+}

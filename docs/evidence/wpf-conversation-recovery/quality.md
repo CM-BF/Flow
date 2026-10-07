@@ -358,3 +358,9 @@ actual outer0/两EOF，11raw40748B；charge取outer15118.727791、late14518.9078
 ## 2026-10-07 11:15:35 UTC — 原05验收矩阵/组合交付clean-code
 
 复用已读本地find-skills、clean-code/codebase-design方法；本批19固定source/plan/review输入，按触发/期望/证据级别消除“重连未验”的歧义。命名/职责/错误与历史边界核查：actual、controlled、共享合同与main接收各自明确，旧报告PENDING不机械累积，单一status与plan03/05/06同步；不造新authority、任务或重复测试。root组合原审已byte/hash验收并原样归档，产品19及raw0改、0工程检查/服务/资源采样；剩余06三项合同来源和合法main明确。
+
+## 2026-10-07 11:33:37 UTC — main限定接收/源码STOP clean-code
+
+复用已读本地find-skills/clean-code；核主线19源与2f8/owner exact，c544与1e89原文不变。单一status/plan06/review/入口修正过期“待main/三合同全待”措辞，历史结论仍按时点保留。未扩大产品结论，types成功与scratch保留分列；生产/test明确19STOP、保留两metadata目录，经理负责fresh原子amend而非自行release。无产品/测试/依赖/服务修改、无新工程运行；提交前仅权威own-status解析、新链接与Git diff核对。
+
+本次[权威main parser原结果](main-intake/status-parse.json)：2026-10-07T11:34:01.724Z，执行来源main62e9a83923a3c2996b4ab32610e10e2069828c66/status.mjs SHA4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef，errors[]/humanMissing[]；仅历史开工UNKNOWN的timing issue保留，不造时间。新增本地链接12项存在、Git diff --check通过、产品/test delta0；形状检查不代主线/部署证据。主线接收固定c130是此前实际remote观测，parser执行时main已前进到62e，二者来源分列。

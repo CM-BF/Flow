@@ -1,0 +1,34 @@
+{
+  "at": "2026-10-07T11:28:01.048965+00:00",
+  "baseMain": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "sourceBase": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "metadata": "15833e947b92ae9257848c51204bde174aba9c82",
+  "mode": "exact base-to-target patch; every main path equalled base; no manual resolution",
+  "sourceCount": 19,
+  "sourcePins": "../wpf-conversation-recovery/two-center-checkpoint.json",
+  "recordFiles": 898,
+  "recordBytes": 4264434,
+  "independentReview": "../wpf-conversation-recovery/2f8-composed-feature-root-review.json",
+  "contractReview": "recovery-center-alignment-web-review.json",
+  "limit": "bounded Web original03/05 approved; TODO06 lateLogout race remains open; not installed/personal acceptance",
+  "combinationTypes": {
+    "result": "recovery-combination-types/result.json",
+    "passed": true,
+    "elapsedMs": 6024,
+    "rawBytes": 0,
+    "scratchAction": {
+      "entries": 3,
+      "regularBytes": 1357748,
+      "symlinks": 0,
+      "action": "KEEP_NONEMPTY_UNINSPECTED",
+      "reason": "Empty-only cleanup; no raw content read; owned compiler process absent and both streams EOF."
+    }
+  },
+  "newPGChromeProviderPersonal": 0,
+  "verifiedAt": "2026-10-07T11:28:41.256402+00:00",
+  "whitespaceCheck": {
+    "productAndOwnIntake": "passed",
+    "archivedRaw": "historical log EOF and diff context whitespace retained byte-for-byte; no raw normalization"
+  }
+}

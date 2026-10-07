@@ -1,0 +1,157 @@
+{
+  "at": "2026-10-07 11:33:37 UTC",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "main": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "mainRemoteObserved": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "ownerPreMetadataHead": "15833e947b92ae9257848c51204bde174aba9c82",
+  "sourceCount": 19,
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+      "sourceBlob": "2e3a37130a64af0c5f2080eb64f93a7201041c30",
+      "mainBlob": "2e3a37130a64af0c5f2080eb64f93a7201041c30"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "sourceBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "mainBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "sourceBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "mainBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "sourceBlob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "mainBlob": "6630f253d1566bec0245e1913403c2819ee39420"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "sourceBlob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "mainBlob": "087edcca3925b140ef38003e8ea63789ef2f161b"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "sourceBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "mainBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "sourceBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "mainBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "sourceBlob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "mainBlob": "09644990c3274c7b51df9740df866e93e2e7d9d3"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "sourceBlob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "mainBlob": "3b7288922c292387640fe909b98f9cc8bc69756e"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "sourceBlob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "mainBlob": "443341d0d2da42de08dd3144e75784856f4413cf"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "sourceBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "mainBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "sourceBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "mainBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "sourceBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "mainBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "sourceBlob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "mainBlob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "sourceBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "mainBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "sourceBlob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "mainBlob": "81f5315a4307dae7def466187495404ad72b15d3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 116556,
+      "sha256": "584f5168574c183f284061f078b91f47259eb4e7764df5aab8dbec17f11060a8",
+      "sourceBlob": "57833f580b6e0bdb22448704676778f2e810e81f",
+      "mainBlob": "57833f580b6e0bdb22448704676778f2e810e81f"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 48765,
+      "sha256": "5ebc9f3a6702b46a6e0f4aa5b418649c2999a6039332c5685053946cf693a6ed",
+      "sourceBlob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8",
+      "mainBlob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 73278,
+      "sha256": "a20112bd30c5736f7bfbd5ca8618aae78a8cf8b1e092c1f8b93e3b0cafb46589",
+      "sourceBlob": "ccb8980c0ccab225010cfbc07b2d66cef317a92c",
+      "mainBlob": "ccb8980c0ccab225010cfbc07b2d66cef317a92c"
+    }
+  ],
+  "sourceExactMainAndCurrent": true,
+  "intakeSha256": "d96022ac0dd07558bd10c32928c41368341e1cbc2125d624d8173383ddf6fa04",
+  "composedReviewMainEqualsOwner": true,
+  "centerReviewSha256": "1e89d65635f9232a8808647802685cdaa0d9a627bea04187d76107cd17314adf",
+  "combinationTypesFromOriginal": {
+    "passed": true,
+    "elapsedMs": 6024,
+    "rawBytes": 0,
+    "scratch": "KEEP_NONEMPTY_UNINSPECTED",
+    "entries": 3,
+    "regularBytes": 1357748,
+    "notRemovedOrInspectedByThisOwner": true
+  },
+  "newProductRuntime": 0
+}

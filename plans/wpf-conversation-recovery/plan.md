@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 11:15:35 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 11:33:37 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -10,7 +10,7 @@
 
 候选容量：command初始record+slot/index128KiB，增长32KiB全额预收；draft128KiB，最多32draft/128logicalcommands，global4MiB含namespace/manifest。每个状态精确UTF8 JSON计费，unknown不可淘汰。合法完整envelope超限需提高单条cap/接受更少条，不截身份或材料；现116451B设计样本不冒完整证明。上传旧journal的跨tabCAS/历史namespace展示不纳本片解决。
 
-固定base 84005a260dfcb668cd38b09c21564d0754a0f513。共享client/domain/factory已正式main；不改shared/server/认证DTO，不复制HTTP。callerOrigin、迟到Clear-Cookie、重复Connect32slot三语义仍由中心owner协调，最终真实browser/approval前核准。
+固定base 84005a260dfcb668cd38b09c21564d0754a0f513。共享client/domain/factory已正式main；不改shared/server/认证DTO，不复制HTTP。原三语义由中心owner协调：本次固定来源已接受single-origin调用与fresh Connect/global32；迟到Clear-Cookie仍为原中心后继。Web03/05已限定接收main c130，不冒整中心或个人部署批准。
 
 ## TODO
 
@@ -19,7 +19,7 @@
 - [x] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复；completeDraft/Steer及双真实center实际，principal-only受控边界单列。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
 - [x] WPF-RECOVERY01-05：原Web工程验收矩阵已获2f8组合独审接受：full7含同页public reauth/offline→online保稿0POST，后继CREATE两点/Queue/Steer/完整草稿/task SSE/双中心actual与principal-only受控各保来源；不重复绿色。实际lateGET仅abort，未冒公共rotation/模型应用。
-- [ ] WPF-RECOVERY01-06：固定Web实现与03/05独审已通过；待中心owner三项原合同固定来源对齐，以及Original合法main接收/必要集成检查。
+- [ ] WPF-RECOVERY01-06：固定Web03/05已受控main接收；保留lateLogout响应顺序的中心后继和必要集成边界，不重复已绿Web/provider检查。
 
 ## 验证与资源
 
@@ -292,3 +292,7 @@ Root最终固定a803源码+本次actual local独审已接受，见[原报告](..
 ## 2026-10-07 11:15:35 UTC — 原03/05组合验收收敛
 
 [19固定输入矩阵](../../docs/evidence/wpf-conversation-recovery/acceptance05/report.md)与[root组合原审](../../docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)确认原工程验收已齐。05完成不新增运行，保actual/controlled/未验界限；06继续追踪原callerOrigin、迟到Clear-Cookie、重复Connect32slot的中心owner固定来源和合法main接收，不把它们改成新的Web/provider测试。旧90/150/Steer60/route90全部closed；双中心90s spent13020/未用76980不授权新run。产品19与原raw不改。
+
+## 2026-10-07 11:33:37 UTC — 原06主线接收安全点
+
+[原main receipt](../../docs/evidence/wpf-conversation-recovery/main-intake/original-recovery-intake.json)确认19源2f8以base-to-target无手工冲突接入c130；本owner只核原件/Git，同源生产与test全STOP，待经理部分amend保两metadata目录。原32slot和single-origin来源对齐，lateLogout方案仍只读，06不勾全完成。Original组合types通过但非空scratch保留事实照录；旧实证不改，无新runtime。

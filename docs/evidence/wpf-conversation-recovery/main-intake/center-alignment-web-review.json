@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T11:23:26.546405+00:00",
+  "reviewer": "Web co-lead /root; read-only independent assessment",
+  "decision": "APPROVED_BOUNDED_WEB_INTAKE_KEEP_CENTER_RACE_AND_FINAL_INTEGRATION_OPEN",
+  "alignmentInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/recovery-shared-contract-source-alignment.json",
+    "bytes": 4088,
+    "sha256": "3110773645186d0e7f63bc6960911e70655456c1184cc2553deff99897c3c45d",
+    "stateAtReview": "uncommitted Original-owned input; content fixed by hash, not claimed main"
+  },
+  "verified": {
+    "centerFiles": 4,
+    "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+    "fixedMain": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+    "result": "All four actual Git source bytes at baseline and fixed main match current worktree bytes and the alignment declared hashes/sizes. Source functions browserOrigin/setCookie/connect/logout and session create/read were read. Baseline identifier is recorded correctly in sourceAlignment centerSources and authoritative checkpoint."
+  },
+  "originalRequirement": {
+    "plan": "web-conversation-recovery/plans/wpf-conversation-recovery/plan.md:13",
+    "interface": "web-conversation-recovery/docs/evidence/wpf-conversation-recovery/interface.md:11",
+    "meaning": "Three center semantics must be aligned before final approval. This is an existing shared-contract obligation, not a new Web test or provider requirement."
+  },
+  "acceptedContracts": [
+    "Caller source Origin must be trusted and actual request protocol/Host must match cookieOrigin; this intake covers the specified single-origin configuration, not arbitrary cross-origin/TLS proxy deployment.",
+    "Each explicit Connect creates a fresh random session; active global capacity32, expiry8h, no eviction/read renewal/idempotent Connect. Overflow409 does not authorize automatic POST retry. Original fixed domain evidence is reused without rerun."
+  ],
+  "openContract": {
+    "owner": "Original Execution Lead / original center owner",
+    "fact": "Logout revokes the presented session then responds with Max-Age=0 for a stable center/origin cookie name. A late response can clear a subsequently connected cookie. Ignoring stale JavaScript continuation does not protect browser cookie state.",
+    "requirement": "Keep this precise response-order contract and controlled fixture follow-up open under existing WPF-MATURE-06 / Recovery TODO06. Do not declare resolved/full-platform approval. Subsequent auth loss must retain drafts and unknown business receipts and require explicit reconnect."
+  },
+  "exactIntake": {
+    "target": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+    "sourceCount": 19,
+    "production": 16,
+    "tests": 3,
+    "manifest": "web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json@15833e947b92ae9257848c51204bde174aba9c82",
+    "currentEntry": "web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md@15833e947b92ae9257848c51204bde174aba9c82",
+    "composedReview": "web-conversation-recovery/docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json@15833e947b92ae9257848c51204bde174aba9c82",
+    "composedReviewSha256": "c5444993994d86bcf8523fb558c21fa6946acb005ffe5d7b6bbfd3ee336209eb",
+    "disposition": "Original may integrate the reviewed bounded Web functionality and original03/05 evidence. Apply the exact base-to-target delta to moving main; do not overwrite moving App as a full blob. Real composition conflicts belong to the original owner with legal claim. No new source scope or implementation is authorized by this review."
+  },
+  "completion": "TODO03/05 accepted. TODO06 remains open for actual legal main integration and the precise center boundary; source-alignment report alone does not close it. No repeated green Web/browser/provider matrix is requested.",
+  "newRuntime": {
+    "tests": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personalServices": 0
+  },
+  "quality": "Compared original requirements to actual source guarantees; separated accepted bounded functionality, shared dependency, and integration completion. No project modifications."
+}
