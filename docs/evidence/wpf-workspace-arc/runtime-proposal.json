@@ -115,5 +115,19 @@
     "state": "PREPARED_NOT_GRANTED",
     "finalExecutionHead": "post-seal grant-template; allowRun=false",
     "limitsUnchanged": true
+  },
+  "latestHTTPActual": {
+    "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+    "executionHead": "d6af8a89217c53c1e5b12b30bd41d11c89bc7579",
+    "selectedPassed": 2,
+    "notSelected": 11,
+    "actualExit": 0,
+    "chargeMs": 2912,
+    "state": "CLOSED",
+    "unusedMs": 27088,
+    "transfer": false,
+    "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-third-20261007/manifest.json",
+    "requestTrace": "NOT_RETAINED_BY_JSON_REPORTER",
+    "browser": "NOT_GRANTED_NOT_RUN"
   }
 }

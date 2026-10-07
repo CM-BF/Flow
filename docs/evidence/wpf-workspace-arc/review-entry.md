@@ -23,3 +23,7 @@ Current source `7097c4d1cc429ee87e507a2210f2e9cceac99b56` (one browser file delt
 2026-10-07T20:54:44.938055Z：当前source 7e911df40d8c0ff875ac96e0fab36a1a3a253940 与[batch-boundary入口](http-fifo-boundary-20261007/entry.json)待集中审；仅test改变，两个原FAIL不改写。修后type0不是HTTPPASS，第三候选无grant。
 
 2026-10-07T21:06:54.437128+00:00：7e911 root11e317限定源码与local/caller准备批准归档于browser-refresh-20261007；原browser四组选定/双图/生命周期不变，本次新包仅source/test1pin/HEAD/路径/floor数据差量。HTTP两FAIL与browserNOT_RUN保持。
+
+2026-10-07T21:22:36.031590+00:00：最新HTTP第三2PASS/11未选与精确RETURN见[http-third](http-third-20261007/manifest.json)；两旧FAIL完整保留。browser4/2PNG未运行，详细requesttrace NOT_RETAINED，root e524限定actual独审APPROVED。
+
+2026-10-07T21:23:22.849273+00:00：固定[root第三actual审](http-third-20261007/root-arc-http-third-result-review-20261007.json)5523B/e52471b4已归档，raw保持；本自然批结束无运行预约。

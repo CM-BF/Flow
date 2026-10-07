@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:06:54.437128+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:20:31.866175+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
-| 工作树dirty状态 | 本8min/2MiB刷新已完成；本次seal后全20 STOP保claim，0工程child/无HTTP或browsergrant |
+| 工作树dirty状态 | 本次actual正常seal后全20 STOP保claim，0child/无后续HTTP或browsergrant |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | FAILED fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；修后HTTP1PASS/1FAIL/11未选，2652ms；两轮分别保留，browser4 NOT_RUN |
+| 检查状态 | PASSED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；第三独立HTTP2PASS/0FAIL/11未选，2912ms；首两FAIL保留，browser4 NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
 | 实现目标 | 7e911df40d8c0ff875ac96e0fab36a1a3a253940 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 两轮HTTP整体FAIL保留；已改为真实完整batch边界下的等待者FIFO优先证据，保全部cursor/持续前进/peak/cache；types0，修后HTTP NOT_RUN |
+| 当前产出 | 第三独立HTTP FIFO/hidden queued-dispose同轮2PASS；actualexit0与exact组/scratch归还；browser4/双图未运行 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；root11e317限定FIFO source/local/caller准备；browser数据绑定更新待审、actual NOT_RUN，两HTTP FAIL保留 |
+| Review | APPROVED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；root11e317源码/准备+e524第三HTTP2actual限定通过；browser绑定a4e5批准，browser4仍NOT_RUN |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -34,8 +34,8 @@
 | WPF-WORKSPACEARC01-01 | in-progress | workspace_panels_owner | 固定设计/供给和原子take已完成；布局实现中 |
 | WPF-WORKSPACEARC01-02 | in-progress | workspace_panels_owner | 共同稳定父级源码已接入；真实prepare-await/长正文阅读锚点/六显式body读取验收源码已写，未运行 |
 | WPF-WORKSPACEARC01-03 | in-progress | workspace_panels_owner | typed context/invocation lease源码已接入，5私有AppPort+2Host纯回归已通过，真实消费者待browser |
-| WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 首轮backlog PASS/hidden前置FAIL；第二hidden queued-dispose PASS/backlog批次顺序FAIL；未同轮全绿 |
-| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types通过；root源码/准备批准；HTTP实际1PASS/1FAIL，browser NOT_RUN，保首红 |
+| WPF-WORKSPACEARC01-04 | in-progress | workspace_panels_owner | 第三独立HTTP同轮FIFO/hidden queued-dispose2PASS；旧两FAIL保留。六bodyflight/DOM/实际App仍待browser |
+| WPF-WORKSPACEARC01-05 | in-progress | workspace_panels_owner | 原13纯例/types通过；第三HTTP同轮2PASS已root e524限定独审；browser NOT_RUN，旧两FAIL不抹 |
 | WPF-WORKSPACEARC01-06 | pending | workspace_panels_owner | NOT_INTEGRATED |
 
 ## 等待记录
@@ -63,3 +63,9 @@
 2026-10-07T20:54:44.938055Z：原10min/4MiB source段固定7e911，只改test39+/20-。不是已证productbug修复；明确修正全peer锁步谓词为真实waiting FIFO优先，增加≤48公共请求trace。新changed types3362/20000 CLOSED/未用16638不转，PID/PGID82919与scratch精确归还。新独立HTTP30候选[入口](../../docs/evidence/wpf-workspace-arc/http-fifo-boundary-20261007/entry.json)，无第三actualgrant/browsergrant。
 
 2026-10-07T21:06:54.437128+00:00：正常fresh c34d v1 exact20/overlap[]、0e2f clean后刷新browser候选；207源仅原HTTP test一pin更新、43external/33resolver复用、三caller逐字不变。新包见[entry](../../docs/evidence/wpf-workspace-arc/browser-refresh-20261007/entry.json)，90=60work30cleanup、0PG/2HTTP/1Chrome、256MiBscratch/8MiBraw、原四组/双图均未运行。root11e317源码准备批准已归档，Q01持有PG且本段不占NEXT。
+
+2026-10-07T21:20:31.866175+00:00：第三独立HTTP START2026-10-07T21:19:49.284032Z，PID/PGID32681；child/tool exit0、两selected PASS/11未选、2912/30000 CLOSED/未用27088不转。exact PID/PGID ESRCH、scratchabsent；fixture afterEach无hook错误，无独立portprobe，regularlogs不冒双EOF。旧3408和2652两FAIL不改，0新NEXT/0browsergrant。
+
+2026-10-07T21:22:36.031590+00:00：[第三actual归档](../../docs/evidence/wpf-workspace-arc/http-third-20261007/manifest.json)。请求trace因JSON reporter未留存，不能独立重建本轮具体请求序列；声明只据实际测试断言，不补造。browser数据a4e5批准已归档，不作运行授权。
+
+2026-10-07T21:23:22.849273+00:00：root[e524限定actual独审](../../docs/evidence/wpf-workspace-arc/http-third-20261007/root-arc-http-third-result-review-20261007.json)已原样归档、0blocking；trace NOT_RETAINED等限制保留，browser4/双图NOT_RUN、原两FAIL不改。全20 STOP保claim，无后续runtime。

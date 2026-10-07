@@ -1,6 +1,6 @@
 # WPF-WORKSPACEARC01：Arc 会话组合工作区
 
-创建2026-10-07T18:02:31.663Z / 更新2026-10-07T19:48:23.249Z；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
+创建2026-10-07T18:02:31.663Z / 更新2026-10-07T21:22:36.031590+00:00；in-progress。所属 [WPF-MATURE-05](</Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md>)，承接原01/02/03/05，不新增父任务。
 
 用户目标：在一个工作区中组合最多三个可见真实会话 pane，独立焦点/滚动/草稿与上下文；分拆、交换、合并和比例调整不重建composer或复制业务状态；插件真实上下文动作可随时扩展且旧权限/调用不能复活。
 
@@ -17,7 +17,7 @@
 
 ## 边界与执行
 
-exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json)。固定base f885，196文件1,809,043B供给；16MiB source/delta/meta/TMP累计上界。无node_modules复制/安装/共享config修改。本轮13纯例/affected types实际通过；local18020/60000 CLOSED。HTTP2/browser4仍需单独有限grant，runtime proposal不作执行授权；不沿历史余量。MATURE05-04文件artifact内容、06导航搜索、native provider和个人部署不由此片冒完成。细化运行输入与收尾预算在代码可审后给经理，不重造监督框架。
+exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json)。固定base f885，196文件1,809,043B供给；16MiB source/delta/meta/TMP累计上界。无node_modules复制/安装/共享config修改。本轮13纯例/affected types实际通过；local18020/60000 CLOSED。第三独立HTTP2已同轮PASS，browser4仍需单独有限grant；runtime proposal不作执行授权；不沿历史余量。MATURE05-04文件artifact内容、06导航搜索、native provider和个人部署不由此片冒完成。细化运行输入与收尾预算在代码可审后给经理，不重造监督框架。
 
 技能沿已读本地find-skills/brainstorming/assistant-ui/codebase-design/clean-code；路径及SHA见references。每工作段/约30分钟安全点核单一权威、接口、错误/取消、重复与有意义消费者验收。独审只绑定fixed target；任何NOT_RUN不外推。
 
@@ -32,3 +32,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T20:54:44.938055Z：验收语义显式更正：等待者FIFO在完整batch释放点不可被reacquire插队；不要求仍inflight或刚latejoin者与全peer锁步。原旧失败保留，真实响应边界依次验C/A/B/C与持续前进，未授权第三HTTP。
 
 2026-10-07T21:06:54.437128+00:00：沿原TODO04/05，仅刷新已备browser90原四组绑定；Q01 actual未RETURN前不HTTP/Chrome，个人READY优先，无NEXT。
+
+2026-10-07T21:22:36.031590+00:00：TODO04/05的真实HTTP层第三独立2PASS已完成，原两FAIL保留；六bodyflight/真实prepare-await/长transcript锚点/双图仍NOT_RUN，不提前完成整个TODO。

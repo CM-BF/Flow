@@ -17,3 +17,5 @@
 2026-10-07T20:54:44.938055Z：clean-code实际复核：barrier只1–2peer，cursor可选过滤为原真实响应，单一releaseTask负责恢复原end/原bytes且幂等，finally清理；测试以明确occupancy界定waiting，布局/调度产品不改；避免以全局round同步制造错误职责。trace≤48 publicrows+4indices无secret/body，noEmit0/3362；旧假设仍不冒actual根因。
 
 2026-10-07T21:06:54.437128+00:00：clean-code实际检查：仅1个既有test执行pin更新、metadata provenance与运行grant分离；3caller逐字复用，不复制历史raw、不增加supervisor/无产品改动；真实全输入/容量验证留实际准入，未冒静态physical全扫描。
+
+2026-10-07T21:22:36.031590+00:00：clean-code交付检查：固定源码/原caller无更改；两required名称实际全部通过而非空checks；原top-level proposal字段和实际grant分层，errors/regularlogs/精确组观察保真。发现JSON reporter未留console trace，已主动更正先前log措辞并写明不可重建序列，未重跑/补造。元数据不复制旧失败或全量manifest，无新框架。

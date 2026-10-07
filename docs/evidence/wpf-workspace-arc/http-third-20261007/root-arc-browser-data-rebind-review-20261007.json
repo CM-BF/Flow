@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-07T21:09:16.743586+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "APPROVED_ROUTINE_BROWSER_DATA_REBIND_ONLY",
+  "blockingFindings": [],
+  "inputMismatches": [],
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "executionHead": "d6af8a89217c53c1e5b12b30bd41d11c89bc7579",
+  "branch": "codex/web-workspace-composition",
+  "remote": "d6af8a89217c53c1e5b12b30bd41d11c89bc7579",
+  "dirty": "",
+  "manifest": {
+    "path": "/private/tmp/arc-browser-7e911-xdme2rv7/manifest.json",
+    "sha256": "9f728c57e5e9c8b9b47a3a29382131bacfe00fe84d216befc723cfac6be314d3"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-browser-7e911-xdme2rv7/binding.json",
+    "sha256": "20840e2b0e3c1b2ffd22e571095e1d3d5b0412fac876bb044cea1c8f7da60210"
+  },
+  "dataDeltas": {
+    "source": {
+      "old": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+      "new": "7e911df40d8c0ff875ac96e0fab36a1a3a253940"
+    },
+    "preparedHead": {
+      "old": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+      "new": "0e2fef15fd2d10eada086614fc5a4b95d18048b3"
+    },
+    "sourcePins": [
+      207,
+      207
+    ],
+    "limits": {
+      "old": {
+        "totalMs": 90000,
+        "workMs": 60000,
+        "cleanupMs": 30000,
+        "scratchBytes": 268435456,
+        "rawBytes": 8388608,
+        "minimumFreeBytes": 18622054400
+      },
+      "new": {
+        "totalMs": 90000,
+        "workMs": 60000,
+        "cleanupMs": 30000,
+        "scratchBytes": 268435456,
+        "rawBytes": 8388608,
+        "minimumFreeBytes": 19199819776
+      }
+    }
+  },
+  "changedPinPaths": [
+    "apps/web/test/conversation-stream-integration.test.ts"
+  ],
+  "unchangedArrayCounts": {
+    "externalPins": 43,
+    "resolverLinks": 33,
+    "httpToolPins": 4
+  },
+  "verifiedPreparedManifestFiles": 9,
+  "threeCallersByteIdentical": true,
+  "reuse": [
+    "Prior source/local afb555 and caller/native preparation1491b127 are unchanged approvals.",
+    "FIFO test acceptance correction 7e911 already independently approved11e317; only that test pin/Gitblob changes among207 inputs.",
+    "206 source entries,43 external entry pins,33 resolver rows,4 HTTP-tool rows unchanged as data. This routine refresh does not claim a recursive dependency payload audit or new physical all-input pass. Actual owner must freshly verify all bound inputs before launch."
+  ],
+  "executionBinding": "preparedHead0e2f is provenance; execution-binding/grant-template use final d6af. allowRun=false, no actual gate/run.",
+  "candidate": {
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1,
+    "groups": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "PNGs": 2
+  },
+  "limitations": [
+    "Four browser groups and both images still NOT_RUN.",
+    "Two prior HTTP FAIL results remain unchanged and cannot be combined into a PASS. New HTTP30 candidate11e317 also NOT_RUN.",
+    "No scheduling grant, reservation, main integration or personal deployment. Current full resource floor must be calculated once at actual grant, no old time inheritance."
+  ],
+  "cleanCode": {
+    "scope": "Metadata delta/reuse boundary",
+    "findings": "No runnable edits; exact old source and actual execution head separated to avoid recursive metadata commits. No duplicate implementation or additional test run warranted."
+  }
+}
