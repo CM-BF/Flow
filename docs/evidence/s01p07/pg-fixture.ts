@@ -3,8 +3,8 @@ import { randomUUID } from 'node:crypto';
 import { lstat, mkdtemp, open, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { FlowClient } from '@flow/client';
-import { RUNNER_CLAIM_PROTOCOL, type RunnerClaimRequest, type TaskSubmission } from '@flow/contracts';
+import { FlowClient } from '../../../packages/client/src/index.js';
+import { RUNNER_CLAIM_PROTOCOL, type RunnerClaimRequest, type TaskSubmission } from '../../../packages/contracts/src/index.js';
 import { createServer } from '../../../apps/server/src/index.js';
 
 /** One dedicated database and listener. No existing service, database or credential is recorded or modified. */

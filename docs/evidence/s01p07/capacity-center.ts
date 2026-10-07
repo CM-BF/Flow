@@ -1,7 +1,7 @@
 import { constants } from 'node:fs';
 import { open } from 'node:fs/promises';
-import { FlowClient } from '@flow/client';
-import type { HarnessAdapter } from '@flow/contracts';
+import { FlowClient } from '../../../packages/client/src/index.js';
+import type { HarnessAdapter } from '../../../packages/contracts/src/index.js';
 import { runRunner } from '../../../apps/runner/src/runtime.js';
 import { ClaimCenterFixture } from './pg-fixture.js';
 
