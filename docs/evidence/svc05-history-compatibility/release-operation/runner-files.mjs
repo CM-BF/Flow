@@ -14,7 +14,7 @@ const fileMatches = (actual, expected) => actual.isFile() && !actual.isSymbolicL
   && actual.uid === process.getuid() && actual.dev === expected.dev && actual.ino === expected.ino
   && actual.size === expected.size && actual.mtimeMs === expected.mtimeMs && actual.ctimeMs === expected.ctimeMs;
 
-export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded }) {
+export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded }, { validateAdmission = idle } = {}) {
   // Same normalization/hash as fixed runtime.ts stateDirectory; never discover a journal by filename.
   const admissionPath = sha(baseUrl.replace(/\/$/, '')) + '/admission.json';
   const temporaryPath = admissionPath + '.tmp';
@@ -41,6 +41,7 @@ export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded 
     return value.bytes;
   };
   try {
+    if (typeof validateAdmission !== 'function') throw fail('RUNNER_ADMISSION_VALIDATOR');
     identity = await read(() => io.lstat(root));
     if (!directoryMatches(identity, identity)) throw fail('RUNNER_DIRECTORY_IDENTITY');
     for (let attempt = 0; attempt <= 2; attempt++) {
@@ -67,7 +68,7 @@ export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded 
               const bytes = await content(next, st, relative === admissionPath ? 65536 : 8 * 1024 * 1024);
               sample.files.push({ path: relative, bytes: bytes.length, sha256: sha(bytes) }); sample.totalBytes += bytes.length;
               if (relative === admissionPath) {
-                sample.admission = { idle: idle(bytes) };
+                sample.admission = { idle: validateAdmission(bytes) === true };
                 if (!sample.admission.idle) throw fail('RUNNER_ADMISSION_NOT_IDLE');
               }
             }
@@ -85,7 +86,7 @@ export async function runnerFiles(root, baseUrl, io = { lstat, readdir, bounded 
         if (sample.files.some(f => f.path === temporaryPath)) throw fail('RUNNER_ADMISSION_TEMP_PRESENT');
         const st = await read(() => io.lstat(join(root, admissionPath)));
         const bytes = await content(join(root, admissionPath), st, 65536);
-        sample.admissionFinal = { path: admissionPath, idle: idle(bytes), bytes: bytes.length, sha256: sha(bytes) };
+        sample.admissionFinal = { path: admissionPath, idle: validateAdmission(bytes) === true, bytes: bytes.length, sha256: sha(bytes) };
         if (!sample.admissionFinal.idle || sample.admissionFinal.sha256 !== sample.files.find(f => f.path === admissionPath).sha256) throw fail('RUNNER_ADMISSION_CHANGED');
         await checkDirectory(root, identity); sample.outcome = 'idle';
         return { dev: identity.dev, ino: identity.ino, uid: identity.uid, files: sample.files, totalBytes: sample.totalBytes,

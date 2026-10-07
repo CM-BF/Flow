@@ -23,3 +23,7 @@ Source `203ecae58686b889f39eaef3e1b61d8ffc0bb1cb`，只有files/index/artifact.t
 ## 当前迁入Module待审
 
 Target `7324a2a0b495eb82e64693ec6d1b8781eb12d8c5`，current-migration.mjs / current-migration.test.mjs / retention-validate.py。只核本次当前backend与已有policy适配、完整retained容量、旧原子迁入协议真实装配；[Interface](../../docs/evidence/svc06/browser-recovery/current-migration-interface.md)和[单份结果](../../docs/evidence/svc06/browser-recovery/current-migration-result.json)绑定3source、13静态closure、4继承runtime与两原raw。6distinct/7selections全部通过；244ms/1100B、两组absent/双EOF/空scratchremoved。Reviewer尚未给结论，不自审；0个人I/O/PG/clone/服务/构建/provider。正式报告/fresh实例输入及OPS14调用尚未固定，因此不是现场执行批准。
+
+## 当前迁入Module独审
+
+Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT_MODULE_AND_LOCAL_DELTA，无P1/P2，24绑定及6distinct/7selections原件核同、0重跑。原件：[唯一审查](../../docs/evidence/svc06/browser-recovery/current-migration-independent-review.json)。不批准个人实例/迁入/维护执行；后继v2读取接缝和薄调用仍待独审。
