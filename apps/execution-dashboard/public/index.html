@@ -2,13 +2,19 @@
 <html lang="zh-CN" data-theme="light">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
-  <title>Flow · 项目进度</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/architecture.css"><script src="/app.js" type="module"></script><script src="/architecture.js" type="module"></script>
+  <title>Flow · 项目进度</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/architecture.css"><link rel="stylesheet" href="/local-access.css"><script src="/app.js" type="module"></script><script src="/architecture.js" type="module"></script><script src="/local-access.js" type="module"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">跳到项目进度</a>
   <header class="topbar"><a class="brand" href="/">Flow <span>项目进度</span></a><div class="toolbar"><label for="theme">主题</label><select id="theme"><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><button id="refresh" type="button">刷新状态</button></div></header>
-  <nav class="dashboard-nav" aria-label="工程看板视图"><a id="nav-progress" href="#progress" aria-current="page">进度</a><a id="nav-architecture" href="#architecture">架构</a><a class="product-link" href="http://127.0.0.1:61228/" target="_blank" rel="noopener">真实产品 · 首次需连接</a><a href="http://127.0.0.1:49922/" target="_blank" rel="noopener">模拟预览</a></nav>
+  <nav class="dashboard-nav" aria-label="工程看板视图"><a id="nav-progress" href="#progress" aria-current="page">进度</a><a id="nav-architecture" href="#architecture">架构</a><a class="product-link" data-local-product href="http://127.0.0.1:61228/" target="_blank" rel="noopener noreferrer">打开 Flow</a><a href="http://127.0.0.1:49922/" target="_blank" rel="noopener">模拟预览</a></nav>
   <main id="main" tabindex="-1">
+  <section class="local-connection" aria-labelledby="local-connection-title">
+    <h2 id="local-connection-title">连接 Flow</h2>
+    <p>打开 <a data-local-product href="http://127.0.0.1:61228/" target="_blank" rel="noopener noreferrer">Flow · Connect to Flow</a>，在产品的 <strong>Center URL 留空</strong>，使用该 Web 配置的 <code>/api</code> 代理。</p>
+    <p class="muted small">产品地址：<span id="local-access-product-url">http://127.0.0.1:61228/</span>。连接资料常驻；看板不会自动登录或刷新产品页面。</p>
+    <div class="local-connection-actions"><button id="local-access-open" type="button" aria-haspopup="dialog">本机登录凭据</button><span id="local-access-availability" class="muted small" role="status">正在读取非敏感连接资料…</span><button id="local-access-retry" type="button" hidden>重试连接资料</button></div>
+  </section>
   <div id="progress-panel">
     <section class="overview" aria-labelledby="page-title"><div><h1 id="page-title">正在读取项目进度</h1><p id="phase-note" class="muted">读取各负责人维护的记录。</p></div><div class="sync"><span id="sync-state" role="status">读取中</span><time id="sync-time"></time></div></section>
     <div id="load-error" class="notice warning" role="alert" hidden></div>
@@ -32,5 +38,14 @@
     <details id="architecture-baseline"><summary>版本与维护依据</summary></details>
   </section>
   </main>
+  <dialog id="local-access-dialog" aria-labelledby="local-access-title" aria-describedby="local-access-help">
+    <div class="dialog-top"><h2 id="local-access-title">本机登录凭据</h2><button id="local-access-close" type="button" aria-label="关闭本机登录凭据" autofocus>关闭</button></div>
+    <p id="local-access-help">Owner token 是这套 Flow 安装的管理凭据，不是 Claude 或 Codex 的订阅凭证。仅从明确启用的本机安装读取；将它粘贴到 Flow 的 Token 输入框，Center URL 留空。不要把凭据发到消息、截图或日志中。</p>
+    <button id="local-access-load" type="button" disabled>加载 owner token</button>
+    <label class="local-access-field" for="local-access-token">Owner token<input id="local-access-token" type="password" readonly disabled autocomplete="off" spellcheck="false" aria-describedby="local-access-status"></label>
+    <div class="local-access-actions"><button id="local-access-reveal" type="button" aria-pressed="false" disabled>显示</button><button id="local-access-copy" type="button" disabled>复制</button><button id="local-access-clear" type="button" disabled>清除</button></div>
+    <p id="local-access-status" role="status" aria-live="polite">凭据尚未加载。</p>
+    <p class="muted small">关闭、隐藏或离开页面会清除页面中的凭据。已写入的系统剪贴板不受页面控制。</p>
+  </dialog>
   <dialog id="task-dialog" aria-labelledby="detail-title"><div class="dialog-top"><div><span id="detail-id" class="muted"></span><h2 id="detail-title"></h2></div><button id="close-dialog" type="button" aria-label="关闭任务详情">关闭</button></div><div id="detail-content"></div><section id="document-view" hidden><h3 id="document-title"></h3><p id="document-error" class="notice warning" hidden></p><pre id="document-text" tabindex="0"></pre><img id="document-image" alt="任务证据截图" hidden></section></dialog>
 </body></html>
