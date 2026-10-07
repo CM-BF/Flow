@@ -40,7 +40,7 @@
   </main>
   <dialog id="local-access-dialog" aria-labelledby="local-access-title" aria-describedby="local-access-help">
     <div class="dialog-top"><h2 id="local-access-title">本机登录凭据</h2><button id="local-access-close" type="button" aria-label="关闭本机登录凭据" autofocus>关闭</button></div>
-    <p id="local-access-help">仅从明确启用的本机安装读取 owner token。将它粘贴到 Flow 的 Token 输入框；Center URL 留空。不要把凭据发到消息、截图或日志中。</p>
+    <p id="local-access-help">Owner token 是这套 Flow 安装的管理凭据，不是 Claude 或 Codex 的订阅凭证。仅从明确启用的本机安装读取；将它粘贴到 Flow 的 Token 输入框，Center URL 留空。不要把凭据发到消息、截图或日志中。</p>
     <button id="local-access-load" type="button" disabled>加载 owner token</button>
     <label class="local-access-field" for="local-access-token">Owner token<input id="local-access-token" type="password" readonly disabled autocomplete="off" spellcheck="false" aria-describedby="local-access-status"></label>
     <div class="local-access-actions"><button id="local-access-reveal" type="button" aria-pressed="false" disabled>显示</button><button id="local-access-copy" type="button" disabled>复制</button><button id="local-access-clear" type="button" disabled>清除</button></div>

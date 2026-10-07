@@ -130,6 +130,8 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 
 顶部“连接 Flow”保留真实产品入口与非敏感说明。打开产品后，**Center URL 留空**表示使用产品 Web 自己的 `/api` 代理；不是向本看板发送产品请求。看板不会自动登录、刷新已有产品 tab 或重启中心/runner。
 
+Owner token 是这套 Flow 安装的管理凭据，不是 Claude 或 Codex 的订阅凭证。
+
 凭据能力默认关闭。仅本机安装负责人显式使用 `--local-installation`，并通过 `FLOW_DASHBOARD_LOCAL_INSTALLATION` 提供非敏感的 JSON 绑定：`directory`（安装目录的规范绝对路径）、`installationId`（该安装的既有 UUID）、`repository`（真实安装来源仓库的规范路径，不能填此 feature worktree 代替）、`productOrigin`（该安装的 `http://127.0.0.1:<Web端口>/`）。此变量**不含 token**，不得把整个 config.json 传入。配置绑定只在进程启动时接受，不接受浏览器 path/URL 参数。未显式启用时，即使设置此变量也不读取安装目录。
 
 ```sh
@@ -139,7 +141,7 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 
 启动仅核固定目录和绑定，不加载 token。`GET /api/local-access` 返回 enabled、产品 URL 和空 Center URL；`POST /api/local-access/owner-token` 才按动作读取唯一 `config.json`。只接受实际本机 peer、与监听端口一致的 `127.0.0.1` Host、完全相同 Origin（其他端口也拒绝）、`Sec-Fetch-Site: same-origin`、Fetch cors 模式及 `X-Flow-Local-Access: 1`，无请求体/查询参数、无 CORS/OPTIONS 授权。所有结果 no-store，异常为固定安全文案，不反射 provider 错误。反向代理/remote/enterprise 默认不能借此读取；不要转发此能力。
 
-安装目录需当前有效 uid、0700、非 symlink；配置需同 uid、0600、单链接常规文件、最多64KiB。按 no-follow descriptor 读取，校验目录身份、文件前后状态以及 format/installationId/directory/repository/Web端口，再仅投影 owner token。支持原安装身份下的原子文件轮换；目录被替换则要求负责人重新核对启动绑定。此为同一本机用户的信任边界，不是对同 uid 恶意进程的隔离或任意文件服务。
+安装目录需当前有效 uid、0700、非 symlink；配置需同 uid、0600、单链接常规文件、最多64KiB。按 no-follow descriptor 读取，校验目录身份、文件前后状态以及 format/installationId/directory/repository/Web端口，再仅投影 owner token。支持原安装身份下的原子文件轮换；目录被替换则要求负责人重新核对启动绑定。文件 uid 校验只核对服务端读取文件的身份，不认证 HTTP 调用方的 OS 用户。任何本机原生 HTTP 进程都能伪造 Origin 等请求头；本功能只是默认关闭的单人本机能力和跨站网页防护，不对本机其他进程或 OS 用户提供认证隔离，也不是任意文件服务。
 
 用户主动加载后默认掩码；显示、复制都需点击。隐藏并清除、关闭、离开/隐藏页面清空内存与字段并撤销迟到请求。复制失败有明确提示，可选择显示后手动复制。页面无法撤销已经完成或已交给系统的剪贴板写入，也不会自行覆盖用户剪贴板。真实 token 不进 URL、聚合 JSON、日志或浏览器存储；不要在真实 token 显示时录截图、DOM、trace 或网络 body。
 
