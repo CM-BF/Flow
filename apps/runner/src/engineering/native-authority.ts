@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import { lstatSync, realpathSync } from 'node:fs';
+import { lstatSync, realpathSync, type Stats } from 'node:fs';
 import { open } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createCodexTransport, type CodexTransport } from '../codex/index.js';
@@ -8,7 +8,7 @@ import { createDarwinWriteProfile } from './native-authority-darwin.js';
 
 const SANDBOX = '/usr/bin/sandbox-exec';
 const SANDBOX_SHA256 = 'abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a';
-type FileIdentity = ReturnType<typeof lstatSync>;
+type FileIdentity = Stats;
 export interface DarwinWriterHostInput {
   /** Trusted host configuration, never task JSON or model arguments. */
   readonly directory: string;

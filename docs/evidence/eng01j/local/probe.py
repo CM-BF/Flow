@@ -87,7 +87,7 @@ def child(scratch):
 
 
 def run(round_id):
-    assert round_id in ('01', '02', '03', '04')
+    assert round_id in ('01', '02', '03', '04', '05')
     out = HERE / ('round-' + round_id); out.mkdir()
     previous = list(HERE.glob('round-*/result.json'))
     used = sum(json.loads(p.read_text())['elapsed_ms'] for p in previous)
