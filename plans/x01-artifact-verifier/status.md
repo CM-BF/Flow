@@ -15,7 +15,7 @@
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
 | 工作树dirty状态 | P2修复source1ed7c221已固定；仅绑定metadata封存，push后STOP |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED ea3c4599b00505c950cc34ada8a350082fe76747：局部12 distinct分轮通过；types0绑定334，最后scope负例1/1绑定本source；SQL/PG NOT_RUN |
+| 检查状态 | NOT_RUN 4323f30268e203ec50e50e7a5a628c6cfcdf5181：当前PG准备修复仅静态；旧center局部及3local仍绑定原source，不复用为修后通过 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
 | 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验且独审通过，PG准备packet3703ee1d1待审） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 完成测试修复的增量审查后，等待独立窗口验证数据库迁移与领取资格 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:35:53.000Z；真实PG未验，既有批准各自独立 |
+| Review | PG准备两项P2已修待限定复审；初审17:14:12 CHANGES_REQUESTED保留。center16:35:53局部批准独立有效；真实PG NOT_RUN |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
 | 架构影响 | 同一claim/receipt新增显式v4；036独立正向kind与精确来源引用，旧协议LIMIT前排除verifier；新schema和动态SQL未实跑，main图更新待本片接收由Execution Lead核。 |
 
@@ -135,3 +135,5 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 ## PG准备两项P2修复
 
 独审2026-10-07T17:14:12.000Z：PREPARATION_CHANGES_REQUESTED，0P1/2P2（legacy DTO及毫秒时间下随机UUID排序）；原结论完整记录在preparation-review-initial.json。新source-only段2026-10-07T17:21:23.000Z–17:29:23.000Z；17:22:16.665 fresh a67v4 ACTIVE30。修复source 1ed7c22153bd420c661133d74eb09af357f8e9a8：assignment.task按真实响应取值；四队列项显式不同秒，真实SQL同时断言插件在前、普通任务顺序及精确时间。新增delta全部NOT_RUN，0工程child/PG，旧3local及raw不改。当前限定增量review PENDING，不能把旧types/list算修后通过；原center源冻结。
+
+静态复审补正：前置查询参数改为text[]，严格匹配实际tasks.id text；最终test source 4323f30268e203ec50e50e7a5a628c6cfcdf5181。新查询全部NOT_RUN，原中间source1ed及复审发现保留，未改表或生产SQL。

@@ -2,7 +2,7 @@
   "startedAt": "2026-10-07T17:21:23.000Z",
   "deadline": "2026-10-07T17:29:23.000Z",
   "fixedAt": "2026-10-07T17:24:43.331Z",
-  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
   "scope": [
     "apps/server/src/plugin-runtime/verification-pg.test.ts",
     "own av03-pg evidence and status"
@@ -21,5 +21,6 @@
   ],
   "validation": "NOT_RUN: source-only, 0 engineering child/types/collect/hooks/PG. Prior 3 local results remain unchanged and bound to their original sources.",
   "review": "P2_DELTA_REVIEW_PENDING",
-  "resources": "0actual/0pendinglaunch; measurement drain maintained"
+  "resources": "0actual/0pendinglaunch; measurement drain maintained",
+  "staticReviewFollowup": "Original reviewer identified text task IDs: initial new SELECT uuid[] cast was wrong. Corrected to text[] matching fixed database.ts:67; earlier1ed source preserved, no execution."
 }
