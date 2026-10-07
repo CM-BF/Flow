@@ -1,0 +1,220 @@
+{
+  "startedAt": "2026-10-07T07:28:13.980080+00:00",
+  "priorSupervisedMs": 8971,
+  "priorRawBytes": 6083,
+  "commands": [
+    {
+      "name": "deadline",
+      "startedAt": "2026-10-07T07:28:13.980555+00:00",
+      "freeBefore": 24175366144,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/chat05p02/direct.config.mjs",
+        "-t",
+        "uses the original request deadline"
+      ],
+      "supervision": {
+        "pid": 45898,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 1551,
+        "observed_bytes": 1161,
+        "retained_bytes": 1161,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 1161,
+      "finishedAt": "2026-10-07T07:28:15.531532+00:00",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123626308
+      },
+      "finalSample": {
+        "bytes": 440,
+        "files": [
+          {
+            "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+            "bytes": 440,
+            "dev": 16777234,
+            "ino": 123626468
+          }
+        ],
+        "directories": [
+          "vite",
+          "vite/vitest",
+          "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        ],
+        "free": 24175042560,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    },
+    {
+      "name": "host",
+      "startedAt": "2026-10-07T07:28:15.533078+00:00",
+      "freeBefore": 24175042560,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/chat05p02/local.config.mjs",
+        "apps/runner/src/native-activity-body/host-production.test.ts",
+        "-t",
+        "actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes"
+      ],
+      "supervision": {
+        "pid": 46994,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 1068,
+        "observed_bytes": 606,
+        "retained_bytes": 606,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 606,
+      "finishedAt": "2026-10-07T07:28:16.601627+00:00",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123626472
+      },
+      "finalSample": {
+        "bytes": 137,
+        "files": [
+          {
+            "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+            "bytes": 137,
+            "dev": 16777234,
+            "ino": 123626668
+          }
+        ],
+        "directories": [
+          "vite",
+          "vite/vitest",
+          "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+        ],
+        "free": 24174211072,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T07:28:16.602891+00:00",
+      "freeBefore": 24174211072,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/chat05p02/focused-tsconfig.json",
+        "--pretty",
+        "false"
+      ],
+      "supervision": {
+        "pid": 47810,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 2228,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 0,
+      "finishedAt": "2026-10-07T07:28:18.831222+00:00",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123626672
+      },
+      "finalSample": {
+        "bytes": 0,
+        "files": [],
+        "directories": [],
+        "free": 24173936640,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "finishedAt": "2026-10-07T07:28:18.831961+00:00",
+  "supervisedTotalMs": 4847,
+  "cumulativeSupervisedMs": 13818,
+  "cumulativeRawBytes": 7850,
+  "observationLimit": "Final metadata sample only, not instantaneous disk peak; pure cases allocate bounded in-memory buffers. OPS14 bounds actual processes and raw."
+}

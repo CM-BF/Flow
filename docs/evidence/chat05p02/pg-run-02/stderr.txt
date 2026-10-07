@@ -1,0 +1,29 @@
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m apps/server/src/native-activity-body/production.test.ts[2m > [22mmounts 033 and authenticated public reads from the actual factory without a test route fallback
+[31m[1mTypeError[22m: Invalid state: ReadableStream is locked[39m
+[36m [2m❯[22m apps/server/src/native-activity-body/production.test.ts:[2m40:34[22m[39m
+    [90m 38| [39m    const response=await fetch(fixture.baseUrl()+suffix,{headers:{cook…
+    [90m 39| [39m    try {expect(response.status).toBe(status);if(status===200)expect(a…
+    [90m 40| [39m    [35mfinally[39m{[35mawait[39m response[33m.[39mbody[33m?.[39m[34mcancel[39m()[33m;[39m}
+    [90m   | [39m                                 [31m^[39m
+    [90m 41| [39m  }
+    [90m 42| [39m  [35mconst[39m light[33m=[39m[35mawait[39m owner[33m.[39m[34mnativeActivities[39m(a[33m.[39mtaskId)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m apps/server/src/native-activity-body/production.test.ts[2m > [22muses real runRunner confirmation, outbox and FlowClient paging for over 2MiB public material
+[31m[1mFlowApiError[22m: Activity must match the recorded Claude session.[39m
+[36m [2m❯[22m assertResponse packages/client/src/index.ts:[2m709:9[22m[39m
+    [90m707| [39m  const body = await read().catch(() => ({})) as { error?: { code?: st…
+    [90m708| [39m  signal[33m?.[39m[34mthrowIfAborted[39m()[33m;[39m
+    [90m709| [39m  throw new FlowApiError(response.status, body.error?.code ?? 'http_er…
+    [90m   | [39m        [31m^[39m
+    [90m710| [39m}
+    [90m711| [39m
+[90m [2m❯[22m FlowClient.request packages/client/src/index.ts:[2m699:5[22m[39m
+[90m [2m❯[22m apps/runner/src/runtime.ts:[2m155:22[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+

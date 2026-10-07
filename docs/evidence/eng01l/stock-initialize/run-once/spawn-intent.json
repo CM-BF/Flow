@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/stock-initialize/driver.ts",
+    "/private/tmp/eng01l-initialize-3pgj9n6s",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/stock-initialize/run-once"
+  ],
+  "maximumDriverStarts": 1,
+  "maximumNativeStarts": 1,
+  "workSeconds": 5,
+  "termSeconds": 0.2,
+  "killSeconds": 0.3,
+  "outerOutputBytes": 8192,
+  "nativeStderrBytes": 8192,
+  "protocol": [
+    "initialize",
+    "initialized"
+  ]
+}

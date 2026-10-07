@@ -1,4 +1,7 @@
 import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
+import type { NativeActivityBodyDescriptor, NativeActivityBodySupport } from '@flow/contracts';
+import { NativeActivityBodyReader, readNativeActivityBody, readNativeActivityBodySupport, readBoundedNativeBodyJson, type NativeBodyRequest } from './native-activity-body.js';
+export { NativeActivityBodyReader, type VerifiedNativeActivityBodyPage } from './native-activity-body.js';
 import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
 import { runnerIdentitySchema, runnerClaimRequestSchema, decodeRunnerClaimResponse, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimResponse } from '@flow/contracts';
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
@@ -176,6 +179,16 @@ export class FlowClient {
   nativeActivity(id: string, signal?: AbortSignal): Promise<NativeActivity> {
     return this.request(`/api/native-activities/${encodeURIComponent(id)}`, { signal });
   }
+  nativeActivityBody(taskId: string, activityId: string, signal?: AbortSignal): Promise<NativeActivityBodyDescriptor> {
+    return readNativeActivityBody(this.bodyRequest, taskId, activityId, signal);
+  }
+  nativeActivityBodyPages(descriptor: NativeActivityBodyDescriptor): NativeActivityBodyReader {
+    return new NativeActivityBodyReader(this.bodyRequest, descriptor);
+  }
+  nativeActivityBodySupport(signal?: AbortSignal): Promise<NativeActivityBodySupport> {
+    return readNativeActivityBodySupport(this.bodyRequest, signal);
+  }
+  private readonly bodyRequest: NativeBodyRequest = (path, options) => this.request(path, { signal: options.signal }, undefined, options.maxBytes);
 
   runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
     return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance`, { signal });
@@ -675,18 +688,23 @@ export class FlowClient {
     return { ...init, headers, credentials: this.csrfToken ? 'include' : 'omit' };
   }
 
-  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
+  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string, maxBytes?: number): Promise<T> {
     if (this.conversationProtocol && (path === '/api/conversations' || path.startsWith('/api/conversations/') || path.startsWith('/api/conversations?'))) {
       const headers = new Headers(init.headers); headers.set(CONVERSATION_HEADER, this.conversationProtocol); init = { ...init, headers };
     }
-    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal: init.signal ?? AbortSignal.timeout(15_000) }, loginToken));
-    await assertResponse(response);
+    const signal = maxBytes === undefined ? init.signal ?? AbortSignal.timeout(15_000)
+      : init.signal ? AbortSignal.any([init.signal, AbortSignal.timeout(15_000)]) : AbortSignal.timeout(15_000);
+    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal }, loginToken));
+    const boundedJson = maxBytes === undefined ? undefined : () => readBoundedNativeBodyJson(response, maxBytes, signal);
+    await assertResponse(response, boundedJson, maxBytes === undefined ? undefined : signal);
+    if (boundedJson) return await boundedJson() as T;
     return response.json() as Promise<T>;
   }
 }
 
-async function assertResponse(response: Response): Promise<void> {
+async function assertResponse(response: Response, read = () => response.json(), signal?: AbortSignal): Promise<void> {
   if (response.ok) return;
-  const body = await response.json().catch(() => ({})) as { error?: { code?: string; message?: string } };
+  const body = await read().catch(() => ({})) as { error?: { code?: string; message?: string } };
+  signal?.throwIfAborted();
   throw new FlowApiError(response.status, body.error?.code ?? 'http_error', body.error?.message ?? `The center returned HTTP ${response.status}.`);
 }

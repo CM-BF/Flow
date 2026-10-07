@@ -1,0 +1,228 @@
+{
+  "kind": "CHAT05P02-PG-test-repair-and-new-window-preparation",
+  "at": "2026-10-07T07:52:15.457587+00:00",
+  "source": "f73534fb8f5d4af9def063863b9551a7217280dc",
+  "unchangedProductionSource": "1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46",
+  "priorFailedEvidenceRef": "a1e3dfeead605c58e4b3a9ab698f70f637e71569",
+  "inherits": {
+    "path": "docs/evidence/chat05p02/manifest.json",
+    "sha256": "9c565a3d1de6209aaacedd7aefe1d2c5817bcd297b0d3367b791698ff649ab37",
+    "fixedRef": "4142adfdbbbc1a4bce0908343674bce7f99eb9d0",
+    "currentSuperseded": [
+      "apps/server/src/native-activity-body/fixture.ts",
+      "apps/server/src/native-activity-body/production.test.ts",
+      "docs/evidence/chat05p02/pg-entry/run.py",
+      "docs/evidence/chat05p02/README.md",
+      "docs/evidence/chat05p02/clean-code-20261007.md",
+      "docs/evidence/chat05p02/local.py",
+      "plans/chat05p02-native-activity-body-wiring/review.md",
+      "plans/chat05p02-native-activity-body-wiring/status.md"
+    ],
+    "currentUnchangedCount": 344
+  },
+  "bindings": [
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 12819,
+      "sha256": "3427de2c43347f32049724197489ff199dd5b76c911fe9d3886e9bbe8a1068df",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/production.test.ts",
+      "bytes": 7523,
+      "sha256": "ecee5fa3aff33ec2dd260b3c13880db44dec65f9afc57da2c4706fa183a9df6e",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local.py",
+      "bytes": 7660,
+      "sha256": "4f019a90ec54198cf444680309212f246ba62ae610d55ec189d79c25b19f1b5b",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/run.py",
+      "bytes": 7882,
+      "sha256": "0b118f07f7d089869910460cec1ab3f278e8ab8a7c4b0163dbba5053528b7803",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/config.mjs",
+      "bytes": 200,
+      "sha256": "7ccb353376a82fb640ce0bc311ade9859ba7a1d3c4809211f5e97d5ac9e07705",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/material.test.ts",
+      "bytes": 3965,
+      "sha256": "f749c45ad051091a9ccb4b12a8dd7746f5c385e6682ff83b2dfb99c2f579a2c4",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/pg.config.mjs",
+      "bytes": 183,
+      "sha256": "2c3ac7044ec0bb02d79166392703cc07e303422df8c2e810e10d8753dea513aa",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/material-checkpoint.json",
+      "bytes": 1565,
+      "sha256": "e646e61948ae6eb0daca6134f99a0403e7cb1af23f2f400d1a0a329fc40cf091",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/material.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/material.stdout",
+      "bytes": 529,
+      "sha256": "62fa1e6d2bd9fa6ea24f9b5fa865001d62617fab8a596dfeee682e6a0ad8595a",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/reservation.json",
+      "bytes": 171,
+      "sha256": "9fdda820e23922ec61c4b47395b2996f2fae29e3e25b04cf777b59e581e25bf3",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/result.json",
+      "bytes": 3915,
+      "sha256": "280d769ff65633c63829ecfc530bd7cc57fd622e37b172518d072a5ff0ea62a9",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/types-checkpoint.json",
+      "bytes": 1297,
+      "sha256": "bb476f57712ec47c7dd0c9a2fa4191cce7d2d78d0b6351b9daf4e4e283938396",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-05/types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/reservation.json",
+      "bytes": 171,
+      "sha256": "bfe063a781e53cd0463551df5842591fc673e1a93efa747c2f256c9cc4bd83f4",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/result.json",
+      "bytes": 3975,
+      "sha256": "c435880a46013c98722a81bfee373b93454503a3ff3d403cb015b62253acc2cb",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/settlement-checkpoint.json",
+      "bytes": 1617,
+      "sha256": "781790cf85156637f0a5f45376aacb07e38ab3e77ce3f17bc5cf2aca58b3d802",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/settlement.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/settlement.stdout",
+      "bytes": 592,
+      "sha256": "fdd11d9c2e4e041349f5b2f364e401bc3b422d6424e09a79013291724dd7250a",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/types-checkpoint.json",
+      "bytes": 1297,
+      "sha256": "c63bd5568336d730ed21fe3241aa3a70665ce55353568cb984350500566e263c",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-06/types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/inputs.json",
+      "bytes": 117883,
+      "sha256": "3eb4839cdef3963513b5e4ddcfde637e6eaaca36c2da3d7abf9318f119b3faeb",
+      "role": "input-or-derived"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/README.md",
+      "bytes": 2525,
+      "sha256": "523624ffde7473c85c02802ea89b1de54eee2dfa12516c0caee53f752fa03eee",
+      "role": "input-or-derived"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg01-result-manifest.json",
+      "bytes": 2985,
+      "sha256": "685343e10ac2ae56b0d314e9fb6ddb18f33b1056d6f082623f2dbf1c4cdc20bc",
+      "role": "input-or-derived"
+    },
+    {
+      "path": "docs/evidence/chat05p02/README.md",
+      "bytes": 1740,
+      "sha256": "2fdcdaaa20e0293ec233f99b144740d9e307aac54560537a35346535d6cd5dd4",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "docs/evidence/chat05p02/clean-code-20261007.md",
+      "bytes": 1083,
+      "sha256": "9027964fc279dd61c7dd4f2bc98f2fd62ca26d61bac765bc5b6d3abeade669d3",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/review.md",
+      "bytes": 1578,
+      "sha256": "97bc04eb6ef485c58ef5fbcb1b36de6dd0e5543588fd88899669f938f9410197",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/status.md",
+      "bytes": 5612,
+      "sha256": "8e445d28a7807d32184cd1798cf530dd9e35f2641cca5150b765798eefd7a923",
+      "fixedRef": "75918396d9cf0e4c8b3ec480f1db47c8e9783170",
+      "role": "superseding-owner-metadata"
+    }
+  ],
+  "local": {
+    "distinct": 2,
+    "types": 2,
+    "allPassed": true,
+    "supervisedMs": 5606,
+    "rawBytes": 1121,
+    "groupsAbsent": 4,
+    "scratchRemoved": 4,
+    "old41Rerun": false
+  },
+  "PG02": "NOT_RUN",
+  "limits": "Source repair and pure seam proof only; original two PG failures remain. No claim that second PG01 root cause was observed."
+}

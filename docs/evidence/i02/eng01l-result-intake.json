@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T08:17:08.303337+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "verdict": "APPROVED_RESULT_WITH_PRESERVED_FAILURE",
+  "delivery": "a4a4784572302e3edc71c1915f1317117adf5a66",
+  "manifestSha256": "39584db8f7969fea579ee5a7a5560c75c0967cceb7801672bf98bd696876b516",
+  "bindings": 34,
+  "errors": [],
+  "read": [
+    "Original initialize/driver/close outcome",
+    "Durable followup checkpoint then exact removal and lsof/ownership evidence",
+    "Current source equals source already received at9f314; no product changes"
+  ],
+  "actual": "one initialize ready/close observed;647ms outer1, original cleanupUNKNOWN and1MiB excess remainFAIL",
+  "followup": "separate exact cleanup607ms outer0,113entries/2823900B,policy durable first;rootremoved",
+  "limits": [
+    "No thread/turn/provider/tools/PG/personal action",
+    "No OS write-denial/model qualification/all-writer revocation proof",
+    "Original baseline inode NOT_PERSISTED; no retroactive fabrication"
+  ],
+  "P1": 0,
+  "P2": 0,
+  "newReviewerTests": 0,
+  "metadataDelivery": "35e7c0126bd8fb3c87fe1c610718f898d963c8e5",
+  "metadataDelta": "7 own docs fully read; historical NOT_RUN/pending corrected with no raw/product changes"
+}

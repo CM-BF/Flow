@@ -1,12 +1,12 @@
 # ENG01L 默认组合初始化候选
 
-**PREPARED_NOT_RUN；实际运行需 Execution Lead 核新增caller并排本队local。** 产品source `574a2e31b8eb583a0d44a1a3eafd739784963681`，caller source `36c16c749842c726aefadfd1c22e08bc056c35a6`。唯一入口：
+**已单次运行并限定审查：ready/close成立，原outer FAIL/cleanupUNKNOWN保留；后续exact cleanup独立成功。不得重跑本入口。** 产品source `574a2e31b8eb583a0d44a1a3eafd739784963681`，caller source `36c16c749842c726aefadfd1c22e08bc056c35a6`。已消费的原入口（仅供追溯）：
 
 ```sh
 PYTHONDONTWRITEBYTECODE=1 /opt/homebrew/opt/python@3.13/bin/python3.13 docs/evidence/eng01l/stock-initialize/run.py --run
 ```
 
-运行前由本owner fresh核claim v1 / 当前固定输入 / run-once不存在与本队local归还；不另创建第二run或换policy补投。caller再核35源码+13安装入口、唯一zod别名及fresh1,107,296,256 B。已有别名只复用固定4.6.5 payload，0安装/复制。第三方为入口锚定，不称所有动态库/包字节均已证明；真实加载尚未运行。
+原运行前已由本owner fresh核claim v1 / 当前固定输入 / run-once不存在与本队local归还；不另创建第二run或换policy补投。caller再核35源码+13安装入口、唯一zod别名及fresh1,107,296,256 B。已有别名只复用固定4.6.5 payload，0安装/复制。第三方为入口锚定，不称所有动态库/包字节均已证明；真实默认入口已单次加载；不代表所有工具路线或OS权限已验。
 
 一独占私有scratch、一个OPS14新session；Node默认 `prepareTrustedToolHost`→readonly host→原R06，仅initialize/initialized。最多1stock app-server，tsx/esbuild加载子进程属于同自有group；无thread、turn、model/list、工具调用、PG、浏览器、个人HOME/认证/provider。构造recipe的model/prompt不发送，不是model资格证明。绑定是本次synthetic fixture身份，不是真实G租约/grant。
 
@@ -16,4 +16,6 @@ PYTHONDONTWRITEBYTECODE=1 /opt/homebrew/opt/python@3.13/bin/python3.13 docs/evid
 
 driver将ready、最早failure阶段/固定安全code、R06closed及stderr完整性、hostWrite drain分列；不开工具/文件更新。外层核calculator/baseline同inode、各1B且内容均为 `0`（0x30）、最终两个文件集合不变。仅groupabsent+双EOF与host drain已知、目录身份一致、files unchanged、资源合界且checkpoint耐久后正常清理。任何unknown不删、不重试；已知失败也先保存原始stderr/policy与首因，再按同条件收尾。外层0不能单独PASS，driver ready/close与file事实必须一致。nativeWriteAccess始终unknown，绝不签revoked。
 
-静态证据：策略文件修复3/3、受影响focused types0；caller类型首次闭包路径诊断已保留round05，最小修正后round06 exit0；Python AST 0，无import/driver/stock运行。原16和J失败保留。
+静态证据：策略文件修复3/3、受影响focused types0；caller类型首次闭包路径诊断已保留round05，最小修正后round06 exit0；Python AST 0；该静态准备阶段无import/driver/stock运行，后续实际记录独立。原16和J失败保留。
+
+当前结果：见[RESULT](RESULT.md)、[后续收尾](cleanup-analysis.json)与[独审转录](../result-independent-review-message.json)。原10份run原件不变，实际结果manifest固定于a4a；本README是审后状态更新，不回写历史manifest。

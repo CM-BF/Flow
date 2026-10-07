@@ -1,0 +1,71 @@
+{
+  "name": "browser-body",
+  "startedAt": "2026-10-07T08:02:21.729127+00:00",
+  "freeBefore": 24212656128,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p02/pg-repair/config.mjs",
+    "-t",
+    "releases only unread native Response bodies"
+  ],
+  "supervision": {
+    "pid": 35335,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 736,
+    "observed_bytes": 594,
+    "retained_bytes": 594,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 594,
+  "finishedAt": "2026-10-07T08:02:22.464993+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123644920
+  },
+  "finalSample": {
+    "bytes": 135,
+    "files": [
+      {
+        "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 135,
+        "dev": 16777234,
+        "ino": 123644943
+      }
+    ],
+    "directories": [
+      "vite",
+      "vite/vitest",
+      "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ],
+    "free": 24212529152,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

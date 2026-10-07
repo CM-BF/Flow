@@ -1,0 +1,247 @@
+{
+  "kind": "CHAT05P02-PG03-actual-result-fixed-bindings",
+  "at": "2026-10-07T08:14:20.582859+00:00",
+  "source": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+  "resultRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+  "verdict": "AUTHOR_REPORTED_PASSED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "bindings": [
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-activity-body/host-production.test.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 8682,
+      "sha256": "bd3a7d86dedca39e6d5f778c5d03b5138f3dd08e6477df9d8be204cd95f100b3"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-activity-body/host.test.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 4303,
+      "sha256": "2ca69c1fd8358db42c05c0fec421b981b1c65d7f14c6c0eb7b17e87b15895090"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/native-activity-body/host.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 2842,
+      "sha256": "fc8b394cfdcb5459f1ebd0e42b31cf34c56253861e1aef53dbb0e01965c05544"
+    },
+    {
+      "role": "source",
+      "path": "apps/runner/src/runtime.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 17320,
+      "sha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/index.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 12824,
+      "sha256": "d85ef108e8c76535f0aac579ac88b6587728f2f99b6f4168f5de61e753249b52"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 2712,
+      "sha256": "d407b55d468e7208cce1f2d25e9ea3a812f613f9ead1a9e95cd1fd1d72f55a57"
+    },
+    {
+      "role": "source",
+      "path": "apps/server/src/native-activity-body/production.test.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 7796,
+      "sha256": "32506da67750e49937a2f1ae13acb1045d0093b49f106f2d25820251f7fabbcd"
+    },
+    {
+      "role": "source",
+      "path": "packages/client/src/index.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 57553,
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+    },
+    {
+      "role": "source",
+      "path": "packages/client/src/native-activity-body.test.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 11836,
+      "sha256": "08382ba0cfc011ee204e2b0617867bf7fca0c2735319f5534c7feb8c0da39ab0"
+    },
+    {
+      "role": "source",
+      "path": "packages/client/src/native-activity-body.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 8416,
+      "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/index.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "role": "source",
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-repair-03/execution-preflight-03.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 1897,
+      "sha256": "a0800ab504c7a6442ca393ca0275d4feb8b558d4dcfd8b4649f5e223e4206114"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-repair-03/preparation-review-transcript.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 542,
+      "sha256": "3f4a18c45d3610f5161b9bb1cdd1baf927ae2abec2a46c90e7de49bb35cc8083"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/README.md",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 1327,
+      "sha256": "4e7bee91c2d80223f6df84ecb867450efd24907fde7d891efca39a2cb6dde49a"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/analysis.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 3295,
+      "sha256": "85f9acc779760e424a6b52841d88ac5837fd9806cf6d965debf0f648c8750f3d"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/fixture.jsonl",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 7692,
+      "sha256": "dec7fd2cb6b98a59a7b9fdb37a23369d890df5e56abc837618695d180cfef9a8"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/reservation.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 594,
+      "sha256": "3bdc7d698288f15c85a132692db4f9b91fb1d01337e38fc42cabb1fe394b2beb"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/result.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 4380,
+      "sha256": "73c701e05f0697f70119f0269406ba7ea8cf172c10975448722949b9a103dcb0"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/status-parse.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 86,
+      "sha256": "895763c7ff1554342d0e8a221d6eaf7a7d5d394a2fd2e12ec682c297b0071c98"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/stderr.txt",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/stdout.txt",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 834,
+      "sha256": "328a86f380fea409a26866fcbd51d73724d13c80b6b562cc5850f3f71816e2c6"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/tmp/cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 133,
+      "sha256": "388a73fb4e6bfb912f7fb18e282fea6e4e53d8e8fa0a08d238dcfa67c4e8e42e"
+    },
+    {
+      "role": "result",
+      "path": "docs/evidence/chat05p02/pg-run-03/vitest.json",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 1360,
+      "sha256": "b89e158a2c671793b60f2bf74f5007b274cc7b8ad0b8da4b202c50df17fe7a49"
+    },
+    {
+      "role": "result",
+      "path": "plans/chat05p02-native-activity-body-wiring/review.md",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 2493,
+      "sha256": "e7438bbf4d83547d77b0c0e934c8012445473a272db56f5fa5303f6d5fc66711"
+    },
+    {
+      "role": "result",
+      "path": "plans/chat05p02-native-activity-body-wiring/status.md",
+      "fixedRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+      "bytes": 7883,
+      "sha256": "d57c26cbe7985c1862f417d6d8f75dff1c4ddbb6cdf85f81bf2c14f0150b6a97"
+    },
+    {
+      "role": "entry",
+      "path": "docs/evidence/chat05p02/pg-entry/run.py",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 8026,
+      "sha256": "4942fd9b45d0fb5484938d93c4905c538685ac6247fa8a13b73039ea2c2513d5"
+    },
+    {
+      "role": "entry",
+      "path": "docs/evidence/chat05p02/pg-repair-03/pg.config.mjs",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "bytes": 178,
+      "sha256": "9f1e73a38049adb2f77a467e3e12b1c974697f219f916e791025342c254a2c65"
+    },
+    {
+      "role": "entry",
+      "path": "docs/evidence/chat05p02/pg-repair-03/inputs.json",
+      "fixedRef": "8b3d438cf3e148b8b5e24535908b2160744675a6",
+      "bytes": 119213,
+      "sha256": "4c215906956a647a3c629eaee521597614c3a2fc1375d03b6541889dabfaf3fb"
+    },
+    {
+      "role": "entry",
+      "path": "docs/evidence/chat05p02/pg-repair-03/delta-manifest.json",
+      "fixedRef": "8b3d438cf3e148b8b5e24535908b2160744675a6",
+      "bytes": 8292,
+      "sha256": "ed60f984c6ce3af3e17dc87808d8170640ce3669311dcdde75bc646437ebe1b2"
+    }
+  ],
+  "actual": {
+    "selected": 2,
+    "passed": 2,
+    "exit": 0,
+    "supervisedMs": 3617,
+    "callerMs": 3664,
+    "rawBytes": 834,
+    "databaseAndFixtureCleanup": "CONFIRMED",
+    "group": "3315 absent/doubleEOF",
+    "callerCacheKeepBytes": 133,
+    "provider": 0
+  },
+  "preservedPriorFailures": [
+    "docs/evidence/chat05p02/pg01-result-manifest.json",
+    "docs/evidence/chat05p02/pg02-result-manifest.json"
+  ],
+  "limits": [
+    "Prior source/local/repair reviews reused; no repeated product tests",
+    "Actual run uses explicit one-attempt opt-in and injected no-provider adapter; CLI/SDK/UI not proved",
+    "Kept initial EPERM unknown, original failures, known cache residue; no physical/WAL hard-cap claim"
+  ]
+}

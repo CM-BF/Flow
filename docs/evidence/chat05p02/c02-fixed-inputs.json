@@ -1,0 +1,42 @@
+{
+  "authorization": "Lead approved exact four fixed direct readonly inputs",
+  "inputs": [
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "fixedRef": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+      "before": {
+        "bytes": 14330,
+        "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2"
+      },
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "fixedRef": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+      "before": null,
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "fixedRef": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+      "before": {
+        "bytes": 6621,
+        "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35"
+      },
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "fixedRef": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+      "before": {
+        "bytes": 12208,
+        "sha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938"
+      },
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    }
+  ]
+}

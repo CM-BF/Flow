@@ -1,0 +1,56 @@
+{
+  "kind": "ENG01L_ACTUAL_INITIALIZE_RESULT_ANALYSIS",
+  "recordedAt": "2026-10-07T08:04:19.061Z",
+  "productSource": "574a2e31b8eb583a0d44a1a3eafd739784963681",
+  "callerSource": "36c16c749842c726aefadfd1c22e08bc056c35a6",
+  "rawRef": "3d8bcd02b6d0e2270c8dc7c8de7901621fec6ff5",
+  "conclusion": "INITIALIZE_AND_CLOSE_OBSERVED_RESOURCE_CLEANUP_UNKNOWN",
+  "overallPassed": false,
+  "outerExit": 1,
+  "driverExit": 0,
+  "elapsedMs": 647,
+  "ready": true,
+  "nativeChild": "confirmed-exited",
+  "hostWrite": "settled",
+  "nativeWriteAccess": "unknown",
+  "group": 87104,
+  "finalOwnedState": "absent",
+  "outerEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "nativeStderr": {
+    "bytes": 2414,
+    "complete": true
+  },
+  "originalFailure": {
+    "code": "CLEANUP_UNKNOWN"
+  },
+  "originalErrorType": "RuntimeError",
+  "scratch": {
+    "path": "/private/tmp/eng01l-initialize-3pgj9n6s",
+    "dev": "16777234",
+    "ino": "123644157"
+  },
+  "cleanup": "KEEP_NO_REMOVAL",
+  "readonlyLaterObservation": {
+    "at": "2026-10-07T08:02:56.470057+00:00",
+    "entries": 113,
+    "directories": 33,
+    "regularFiles": 80,
+    "regularBytes": 2823900,
+    "maxPrivateBytes": 1048576,
+    "rejectedCategoryAtObservation": "BYTE_LIMIT",
+    "allOwnUid": true,
+    "symlinksOrSpecialFiles": 0,
+    "contentReads": 0,
+    "originalExceptionCodeWasNotCaptured": true
+  },
+  "limits": [
+    "No thread/turn/catalogue/tool/provider/PG/browser/personal configuration read or service operation. Private stock SQLite initialization is not a PG run.",
+    "Native ready is not OS write-denial proof, model qualification, real tool callback, a grant, or all-writer revocation.",
+    "No second stock attempt; result.json and raw remain unchanged.",
+    "Private byte limit is a measured post-exit gate, not a hard continuous peak enforcement; actual private state exceeded it and was kept.",
+    "Read-only diagnostic pretty serialization rejected before write; bounded compact lstat repeated without following links or reading file contents."
+  ]
+}

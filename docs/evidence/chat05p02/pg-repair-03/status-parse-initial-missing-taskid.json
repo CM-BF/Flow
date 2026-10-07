@@ -1,0 +1,131 @@
+{
+  "timing": {
+    "started": {
+      "state": "known",
+      "at": "2026-10-07T07:02:57.381Z",
+      "record": "2026-10-07T07:02:57.381Z"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "本任务首轮fresh领取准备的实际ledger观察；claim07:04:02仅证明领取，不替代开工；后续完成尚未发生"
+    },
+    "issues": [],
+    "waiting": "| 等待项 | 开始时间 | 结束时间 | 时间来源 |\n| 原PG准备独审与共享窗口 | UNKNOWN | 2026-10-07T07:41:52.549090Z | Lead独审/窗口消息；结束取pg-run-01/reservation.startedAt，未知开始不以commit猜测 |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+      "id": "FLOW-001",
+      "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "两处测试接缝已修正并通过定向检查，原两轮组合失败和清理事实保留",
+    "next": "完成修复独审后，在新共享窗口复验原两项真实组合",
+    "blocker": {
+      "state": "active",
+      "text": "修复待独审及新共享数据库窗口"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+    "scopes": [
+      "packages/contracts/src/native-activity-body.ts",
+      "packages/contracts/src/index.ts",
+      "packages/client/src/native-activity-body.ts",
+      "packages/client/src/native-activity-body.test.ts",
+      "packages/client/src/index.ts",
+      "apps/server/src/native-activity-body/index.ts",
+      "apps/server/src/native-activity-body/fixture.ts",
+      "apps/server/src/native-activity-body/production.test.ts",
+      "apps/server/src/index.ts",
+      "apps/runner/src/runtime.ts",
+      "apps/runner/src/native-activity-body/host.ts",
+      "apps/runner/src/native-activity-body/host.test.ts",
+      "apps/runner/src/native-activity-body/host-production.test.ts"
+    ],
+    "errors": []
+  },
+  "owner": "assignment_review / gpt-6-astra",
+  "branch": "codex/native-activity-body-wiring",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-07T08:06:31.000Z",
+  "updatedRecord": "2026-10-07 08:06:31 UTC",
+  "todos": [
+    {
+      "id": "CHAT05P02-01",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "source-provision/claim-receipt/interface"
+    },
+    {
+      "id": "CHAT05P02-02",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "reader19/19；local-run-01/02"
+    },
+    {
+      "id": "CHAT05P02-03",
+      "state": "completed",
+      "owner": "assignment_review",
+      "evidence": "host纯5+实际runtime合成6、旧direct11分轮最终绿；local-summary"
+    },
+    {
+      "id": "CHAT05P02-04",
+      "state": "in-progress",
+      "owner": "assignment_review",
+      "evidence": "正式共享出口已接；PG01/02各0/2；pg-repair-03待审，第三段未运行"
+    },
+    {
+      "id": "CHAT05P02-05",
+      "state": "pending",
+      "owner": "assignment_review",
+      "evidence": "未独审/集成，不扩大P01结论"
+    }
+  ],
+  "errors": [
+    "状态标题与登记任务 ID 不符"
+  ],
+  "declaredHead": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0；两处测试接缝修正与第三段入口固定，证据封存后停写",
+  "declaredDirty": "仅末次自有证据/status封存；产品/入口已停写",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "44不同局部例分轮通过，6轮focused types0；PG01/02各0/2与独立CONFIRMED清理保留；PG03 NOT_RUN"
+  },
+  "reviewRecord": "原1bb和f735準备独审原件已归档；c98定向修复/PG03准备待审，未声称实际组合通过",
+  "mainRecord": "本片未集成；P01领域已在f39并包含于本base",
+  "next": "产品固定1bb025f；三共享出口按9816 server/4fe client-contracts已审前像接线，10个直接只读输入按授权物化并保持原字节。正式入口与两个生产组合用例已被focused类型检查覆盖，PG01已执行失败；不将合成HTTP/无provider adapter当真实模型或UI验收。\n四轮实际局部监督累计13818ms/raw7850B，9组最终absent/双EOF，8个scratch已正常移除；run03失败缓存499B按既有caller策略KEEP且归档。原1条deadline失败与早期EPERM/unknown观察保持；run04仅该1+受影响host5和focused类型补绿。2026-10-07T07:28:18.830后本队local已交Lead组合核查；无PG/Chrome/provider/个人服务动作。\n当前实际dashboard已189source。P02自己的source登记/状态以唯一canonical为准；架构固定更新待本产品独审及main接收，不把准备当部署。",
+  "risks": "",
+  "decisions": ""
+}

@@ -1,0 +1,210 @@
+{
+  "kind": "CHAT05P02-PG03-test-only-repair-preparation",
+  "at": "2026-10-07T08:07:07.185597+00:00",
+  "source": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+  "evidence": "f26b66fdfd1171400530131db4efed79263db05e",
+  "unchangedProductionSource": "1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46",
+  "verdict": "READY_FOR_REVIEW_NOT_RUN",
+  "inherits": {
+    "manifest": "docs/evidence/chat05p02/pg-repair/delta-manifest.json",
+    "sha256": "3a2f5aa6591c758e3a282e19cc5726fb853d662893e693af67c4c991d64dab44",
+    "fixedRef": "aea6e78515f251d16d9ef34e06b38a4834b08f84",
+    "currentUnchangedCount": 22,
+    "currentSuperseded": [
+      "apps/server/src/native-activity-body/fixture.ts",
+      "apps/server/src/native-activity-body/production.test.ts",
+      "docs/evidence/chat05p02/local.py",
+      "docs/evidence/chat05p02/pg-entry/run.py",
+      "docs/evidence/chat05p02/pg-repair/material.test.ts",
+      "docs/evidence/chat05p02/clean-code-20261007.md",
+      "plans/chat05p02-native-activity-body-wiring/review.md",
+      "plans/chat05p02-native-activity-body-wiring/status.md"
+    ]
+  },
+  "previousPG02": {
+    "manifest": "docs/evidence/chat05p02/pg02-result-manifest.json",
+    "sha256": "5ffdbb7947ab0e50a32a6d1df3105388ddee5eae8c4fc53eeea362774aa542fb",
+    "fixedRef": "dc7afa816f72e2a5584ca2a80379d5485e4cdb67",
+    "status": "FAIL_UNKNOWN_RETAIN",
+    "independentCleanup": "CONFIRMED"
+  },
+  "bindings": [
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 12824,
+      "sha256": "d85ef108e8c76535f0aac579ac88b6587728f2f99b6f4168f5de61e753249b52",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/production.test.ts",
+      "bytes": 7796,
+      "sha256": "32506da67750e49937a2f1ae13acb1045d0093b49f106f2d25820251f7fabbcd",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local.py",
+      "bytes": 7854,
+      "sha256": "2453fd05ef4bbc717483fffa0ec67fe75371e93fbb2a4c13497d9a38fc290038",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/run.py",
+      "bytes": 8026,
+      "sha256": "4942fd9b45d0fb5484938d93c4905c538685ac6247fa8a13b73039ea2c2513d5",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair-03/pg.config.mjs",
+      "bytes": 178,
+      "sha256": "9f1e73a38049adb2f77a467e3e12b1c974697f219f916e791025342c254a2c65",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/material.test.ts",
+      "bytes": 5062,
+      "sha256": "bd5e960e17d48c5ec29e3d9ff98b82066b1f1ef308537becb638a93c528957ee",
+      "fixedRef": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+      "role": "source"
+    },
+    {
+      "path": "docs/evidence/chat05p02/clean-code-20261007.md",
+      "bytes": 1502,
+      "sha256": "a1820e7fd39bffaf16c3b4d26774cdd9b481500aea48da689c99e37a77f5e7b8",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/independent-pg-repair-review.json",
+      "bytes": 1035,
+      "sha256": "66eb4a9efac869c513e0a85d28fd39dd811a826292b37c5ed090498bef4f2e4e",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/independent-source-review.json",
+      "bytes": 1907,
+      "sha256": "fc76cb1a5b003b0e4460837b2b50add21f1fcebd6ab0329e5c4e6a263f925fa9",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/browser-body-checkpoint.json",
+      "bytes": 1630,
+      "sha256": "e915a86bc49f0e1ae0791a99141afdd8a46f6651347f7c8fc70658697e65a2f7",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/browser-body.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/browser-body.stdout",
+      "bytes": 594,
+      "sha256": "0cb784d7ae88dba7bd77c7c5480743a0a85b45d5f9c72ed8d6b8deadbadbbf98",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/reservation.json",
+      "bytes": 171,
+      "sha256": "a41146bc7508e6c6e67b95e7077784e8580ba548e955e613186242e10eb21ebd",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/result.json",
+      "bytes": 3988,
+      "sha256": "dd35316acf0602a0ed93731c64fc45057a3f939a7f5fad84e5deedd6039801ba",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/types-checkpoint.json",
+      "bytes": 1297,
+      "sha256": "59403701e33181f6130ce49a5c69e09548e24f7396741667cc91f1e726095b46",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/local-run-07/types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair-03/README.md",
+      "bytes": 2311,
+      "sha256": "3108cada6763308ecd1f155e5b3f134f612a6a22de5ace3291386b2629987968",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair-03/inputs.json",
+      "bytes": 119213,
+      "sha256": "4c215906956a647a3c629eaee521597614c3a2fc1375d03b6541889dabfaf3fb",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair-03/status-parse-initial-missing-taskid.json",
+      "bytes": 5307,
+      "sha256": "bcb2f14c40a433aaa0124730a0fb4cac3586c83d6b03ae84dbc078163e08fc0c",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair-03/status-parse.json",
+      "bytes": 201,
+      "sha256": "00b756edc25977ba64c0068e9fd734cdb75a227fdc2cfa8d20edebea7be16781",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/review.md",
+      "bytes": 2122,
+      "sha256": "03806c6ac5021bdfd1373188d206058ea8d1fc4dff4bc16f7731d86a34d4a608",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    },
+    {
+      "path": "plans/chat05p02-native-activity-body-wiring/status.md",
+      "bytes": 6659,
+      "sha256": "bd3e98ef67777461307944f687425d1d28f6d2a7c45ee943b723c67ff9012fde",
+      "fixedRef": "f26b66fdfd1171400530131db4efed79263db05e",
+      "role": "evidence"
+    }
+  ],
+  "local07": {
+    "selectedNewDistinct": 1,
+    "passed": 1,
+    "focusedTypesExit": 0,
+    "supervisedMs": 2755,
+    "rawBytes": 594,
+    "ownedGroups": "2 absent/double EOF",
+    "tmp": "2 normal removals"
+  },
+  "PG03": "NOT_RUN",
+  "limitations": [
+    "Test fetch Response cleanup repaired; product reader unchanged",
+    "Injected Claude identity matches existing store; explicit no-provider adapter remains",
+    "Original two PG failures/raw/KEEP caches unchanged",
+    "Actual shared window and fresh gates required before repair-03; no automatic retry"
+  ]
+}

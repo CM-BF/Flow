@@ -1,0 +1,22 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "../../../apps/runner/src/native-activity-body/host-production.test.ts",
+    "../../../apps/runner/src/native-activity-body/host.test.ts",
+    "../../../apps/runner/src/native-activity-body/host.ts",
+    "../../../apps/runner/src/runtime.ts",
+    "../../../apps/server/src/index.ts",
+    "../../../apps/server/src/native-activity-body/fixture.ts",
+    "../../../apps/server/src/native-activity-body/index.ts",
+    "../../../apps/server/src/native-activity-body/production.test.ts",
+    "../../../packages/client/src/index.ts",
+    "../../../packages/client/src/native-activity-body.test.ts",
+    "../../../packages/client/src/native-activity-body.ts",
+    "../../../packages/contracts/src/index.ts",
+    "../../../packages/contracts/src/native-activity-body.ts"
+  ],
+  "exclude": []
+}

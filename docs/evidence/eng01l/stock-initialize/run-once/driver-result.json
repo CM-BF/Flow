@@ -1,0 +1,41 @@
+{
+  "ready": true,
+  "attempted": true,
+  "primaryFailure": null,
+  "cleanupFailure": null,
+  "cleanup": {
+    "child": "confirmed-exited",
+    "hostWrite": "settled",
+    "nativeWriteAccess": "unknown"
+  },
+  "transportClose": {
+    "reason": "ABORTED",
+    "child": "confirmed-exited",
+    "exitCode": null,
+    "signal": "SIGTERM",
+    "remoteEffects": "unknown",
+    "stderrCapture": {
+      "observedBytes": 2414,
+      "writtenBytes": 2414,
+      "truncated": false,
+      "observerFailed": false,
+      "streamEnded": true,
+      "childCloseObserved": true,
+      "incomplete": false
+    }
+  },
+  "diagnosticComplete": true,
+  "stderrBytes": 2414,
+  "targetIdentity": {
+    "path": "/private/tmp/eng01l-initialize-3pgj9n6s/workspace/calculator.mjs",
+    "device": "16777234",
+    "inode": "123644163"
+  },
+  "policySha256": "390e9b08debc0b501ac626592cfb673592ac7690ed896a2466a317d129dc594e",
+  "threadRequests": 0,
+  "turnRequests": 0,
+  "catalogueRequests": 0,
+  "hostToolCalls": 0,
+  "providerCalls": 0,
+  "nativeWriteAccess": "unknown"
+}

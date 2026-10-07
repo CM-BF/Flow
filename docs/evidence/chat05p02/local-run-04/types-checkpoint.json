@@ -1,0 +1,59 @@
+{
+  "name": "types",
+  "startedAt": "2026-10-07T07:28:16.602891+00:00",
+  "freeBefore": 24174211072,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/typescript/bin/tsc",
+    "--project",
+    "docs/evidence/chat05p02/focused-tsconfig.json",
+    "--pretty",
+    "false"
+  ],
+  "supervision": {
+    "pid": 47810,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 2228,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 0,
+  "finishedAt": "2026-10-07T07:28:18.831222+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123626672
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24173936640,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

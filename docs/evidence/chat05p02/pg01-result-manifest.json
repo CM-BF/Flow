@@ -1,0 +1,86 @@
+{
+  "kind": "CHAT05P02-PG01-frozen-failure",
+  "at": "2026-10-07T07:46:30.520455+00:00",
+  "productSource": "1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46",
+  "preparationSource": "4b0659fa79c00f24e384e64990fb91201da8569e",
+  "bindings": [
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/analysis.json",
+      "bytes": 3381,
+      "sha256": "3a5904116edd2887c720860a547e2b882701e37457c7ae78ddbd96b10857c4a3",
+      "role": "derived"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/fixture.jsonl",
+      "bytes": 4015,
+      "sha256": "31ee58713f76f57fe972637aee4a87fce1526084c82e2bec58e2e13c7655ad29",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/reservation.json",
+      "bytes": 594,
+      "sha256": "ec8c67d07adc6b388c607eae9a3d2b0e55ed94f6f3bbac26bfb0150d0aa3721a",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/result.json",
+      "bytes": 2920,
+      "sha256": "5e00b35dfc5b2e303e0e3bdc64ff9b26e5e40def59953c7cf650e18b20650d4f",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/stderr.txt",
+      "bytes": 2043,
+      "sha256": "4b0bea50e84d347a06757e0e8a870417bcd48a67b7dcaf41c0d37b429ebf2fcb",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/stdout.txt",
+      "bytes": 1011,
+      "sha256": "a4b0771c2bb08550c937ae859cdc2e8169d6e2dc5e8852e078f50bfd7c7fed02",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/tmp/cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 132,
+      "sha256": "bcabcebe14504291e31c8407275b3ea6ac7ddc8f7fc178ef870abb7f5fd78faa",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-01/vitest.json",
+      "bytes": 2831,
+      "sha256": "74ca625449cdae57f7e0465062f87d2b9a2a7cd20636d1a91d799fb599fbff1b",
+      "role": "original"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/run.py",
+      "bytes": 7622,
+      "sha256": "23934cc5d561947fb4f4cbfee5d5b3ee7a09de0021f82920e8b6d134e2ed4c46",
+      "role": "input"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/config.mjs",
+      "bytes": 412,
+      "sha256": "46ba20956f2d44cfe8ad8ba6aa0bf462765706da2daf059173bbe6a8e7a389dd",
+      "role": "input"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/inputs.json",
+      "bytes": 116962,
+      "sha256": "d7525fdd1c910b208e5b51e50b9ebc3c1cf5af4ddfd72923fc5c728ca7edf546",
+      "role": "input"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/execution-preflight-01.json",
+      "bytes": 1854,
+      "sha256": "401ea50138aac2cf953e0a49384076d6bb8d54e2b36fe5d0cfb8c3bca49972c7",
+      "role": "input"
+    },
+    {
+      "path": "docs/evidence/chat05p02/preparation-review-transcript.json",
+      "bytes": 757,
+      "sha256": "c7bf7988bb63c9ccf0fd9230550fd2edc4d4b47cb84247cdb28f86bc232c128d",
+      "role": "input"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "endedAt": "2026-10-07T07:59:48.421609+00:00",
+  "supervision": {
+    "pid": 39994,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 2897,
+    "observed_bytes": 3055,
+    "retained_bytes": 3055,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "callerElapsedMs": 2969,
+  "rawBytes": 3055,
+  "primaryFailure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "observationErrors": [
+    {
+      "type": "AssertionError"
+    }
+  ],
+  "status": "UNKNOWN_RETAIN",
+  "databaseAndFixtureCleanup": "CONFIRMED",
+  "tmpPolicy": "KEEP cache/evidence; fixture removes only its own identified directory",
+  "finalTmp": {
+    "bytes": 139,
+    "files": [
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+    ],
+    "directories": [
+      "cache",
+      "cache/vitest",
+      "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ]
+  },
+  "freeAfter": 24156913664,
+  "fixtureFinal": {
+    "database": "flow_chat05p02_9582ff53d4344a80a09088c259f2ab0f",
+    "marker": "a7a44a7b-257c-4653-8eaf-63b6831e8a88",
+    "provider": 0,
+    "runtimeProcesses": 0,
+    "allowanceBytes": 100663296,
+    "freeBeforeBytes": 24176766976,
+    "checkpoint": "docs/evidence/chat05p02/pg-run-02/fixture.jsonl",
+    "productionFactoryOnly": true,
+    "creationRequested": true,
+    "marked": true,
+    "databaseOid": 1253417,
+    "directory": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/docs/evidence/chat05p02/pg-run-02/tmp/flow-chat05p02-pg-ODWDBb",
+      "dev": 16777234,
+      "ino": 123643563
+    },
+    "httpErrors": [
+      {
+        "request": 5,
+        "route": "/api/runner/native-activity-body-support",
+        "status": 200,
+        "name": "Error",
+        "code": "wrong_role"
+      },
+      {
+        "request": 8,
+        "route": "/api/tasks/:taskId/native-activities/:activityId/body",
+        "status": 200,
+        "name": "Error",
+        "code": "wrong_role"
+      },
+      {
+        "request": 9,
+        "route": "/api/tasks/:taskId/native-activities/:activityId/body",
+        "status": 200,
+        "name": "Error",
+        "code": "activity_not_found"
+      },
+      {
+        "request": 10,
+        "route": "/api/tasks/:taskId/native-activities/:activityId/body",
+        "status": 200,
+        "name": "Error",
+        "code": "unauthorized"
+      },
+      {
+        "request": 30,
+        "route": "/api/runner/events",
+        "status": 200,
+        "name": "Error",
+        "code": "activity_session"
+      },
+      {
+        "request": 32,
+        "route": "/api/runner/events",
+        "status": 200,
+        "name": "Error",
+        "code": "activity_session"
+      }
+    ],
+    "base": "http://127.0.0.1:59019",
+    "minObservedFreeBytes": 24151339008,
+    "runnerNotices": [
+      "ownership-lost",
+      "events-retained",
+      "admission-blocked"
+    ],
+    "appClosed": true,
+    "listenerClosed": true,
+    "poolClosed": true,
+    "databaseBytes": "12909591",
+    "temporaryBytes": 2887032,
+    "connections": [
+      {
+        "rows": [],
+        "remainingMs": 2998
+      }
+    ],
+    "databaseDropped": true,
+    "remaining": [],
+    "directoryRemoved": true,
+    "adminClosed": true,
+    "requests": 32,
+    "elapsedMs": 1609.7005840000002,
+    "cleanupErrors": [],
+    "phase": "cleaned",
+    "at": "2026-10-07T07:59:48.389Z"
+  },
+  "selection": {
+    "numTotalTests": 2,
+    "numPassedTests": 0,
+    "numFailedTests": 2,
+    "numPendingTests": 0,
+    "success": false
+  }
+}

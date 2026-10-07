@@ -1,0 +1,57 @@
+{
+  "kind": "ENG01L_EXACT_CLEANUP_ONLY_CANDIDATE",
+  "state": "PREPARED_NOT_EXECUTED",
+  "recordedAt": "2026-10-07T08:05:34.944847+00:00",
+  "scratch": {
+    "path": "/private/tmp/eng01l-initialize-3pgj9n6s",
+    "dev": "16777234",
+    "ino": "123644157",
+    "parent": "/private/tmp",
+    "parentDev": "16777234",
+    "parentIno": "113131031"
+  },
+  "originalGroup": 87104,
+  "originalGroupObserved": "absent twice in fixed run, must still return ESRCH on the single fresh observation; any present/EPERM/unknown KEEP",
+  "originalResultRef": "3d8bcd02b6d0e2270c8dc7c8de7901621fec6ff5",
+  "policy": {
+    "path": "runtime/control/flow-readonly.sb",
+    "maxBytes": 24576,
+    "sha256": "390e9b08debc0b501ac626592cfb673592ac7690ed896a2466a317d129dc594e"
+  },
+  "workspace": {
+    "calculator.mjs": {
+      "bytes": 1,
+      "hex": "30",
+      "observedAtLaunchIdentity": {
+        "path": "/private/tmp/eng01l-initialize-3pgj9n6s/workspace/calculator.mjs",
+        "device": "16777234",
+        "inode": "123644163"
+      }
+    },
+    "baseline.txt": {
+      "bytes": 1,
+      "hex": "30",
+      "originalBeforeInode": "NOT_PERSISTED; only subsequent lstat identity available, do not infer original before inode"
+    }
+  },
+  "diagnosticSha256": "4202ec5100f0d0203ed908fbf038306a5d1a373e2b7bb723dd450e330d1e67cc",
+  "originalRecordSha256": "e9bb1854f3a029d854e1af6470076c05a5e2dbb32499b83a35e5d2cc9afd09cb",
+  "limits": {
+    "seconds": 5,
+    "newEvidenceBytes": 32768,
+    "maxDistinctEntries": 128,
+    "scratchLogicalBytes": 4194304
+  },
+  "steps": [
+    "Exclusive cleanup-only namespace; deadline covers all checks/persistence/deletion; no new native execution.",
+    "Match exact root and parent dev/ino/uid; enumerate at most128 entries without following links; all uid/dev match, regular nlink1, no symlink/special, total<=4MiB. Match prior lstat named identities, not merely absence of lsof hits.",
+    "Check owned original group via signal0 only; accept ESRCH only. Bounded lsof -nP -Fpcn +D exact scratch; reject any hits/errors/timeout/unknown. Absence is this snapshot, not global no-consumer proof.",
+    "Preserve original native.stderr and reports already durable; copy exact bounded policy after SHA check; only read known synthetic calculator/baseline bytes and explicitly current identities.",
+    "Durably save fresh checkpoint with inventory digest, policy/file facts, consumer snapshot and original FAIL reference before removal. Recheck root/parent and same inventory before exact disposable-root rmtree; no parent/link target deletes.",
+    "Save separate cleanup result. Any guard/record/time failure KEEP; partial deletion unknown, never automatic retry. Original run result remains FAIL/cleanupUNKNOWN and its1MiB limit remains exceeded."
+  ],
+  "stock": 0,
+  "PG": 0,
+  "provider": 0,
+  "personal": 0
+}

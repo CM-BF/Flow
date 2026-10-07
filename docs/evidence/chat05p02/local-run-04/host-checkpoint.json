@@ -1,0 +1,72 @@
+{
+  "name": "host",
+  "startedAt": "2026-10-07T07:28:15.533078+00:00",
+  "freeBefore": 24175042560,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p02/local.config.mjs",
+    "apps/runner/src/native-activity-body/host-production.test.ts",
+    "-t",
+    "actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes"
+  ],
+  "supervision": {
+    "pid": 46994,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1068,
+    "observed_bytes": 606,
+    "retained_bytes": 606,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 606,
+  "finishedAt": "2026-10-07T07:28:16.601627+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123626472
+  },
+  "finalSample": {
+    "bytes": 137,
+    "files": [
+      {
+        "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 137,
+        "dev": 16777234,
+        "ino": 123626668
+      }
+    ],
+    "directories": [
+      "vite",
+      "vite/vitest",
+      "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ],
+    "free": 24174211072,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

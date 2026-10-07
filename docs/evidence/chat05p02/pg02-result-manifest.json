@@ -1,0 +1,70 @@
+{
+  "kind": "PG02-frozen-failure-with-independent-cleanup",
+  "source": "f73534fb8f5d4af9def063863b9551a7217280dc",
+  "bindings": [
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/analysis.json",
+      "bytes": 4449,
+      "sha256": "ca3c7b00457522634e86704a406e00e76997efc7230bfb616c8cad0ae1d55a0a"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/fixture.jsonl",
+      "bytes": 6379,
+      "sha256": "896c08ede83f2ff5645f05873396eff5aa89baaf2fd9f32c976a79ef3b28cb9e"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/reservation.json",
+      "bytes": 594,
+      "sha256": "30a0fd94230afd45bcfdca0693ed48a4f84b7ad752cc15449a4f59c4ff7e0175"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/result.json",
+      "bytes": 4139,
+      "sha256": "6ef1015fbc472c6b56a86e15b19f99de8636b09bdf5da298ffcc068ce91f8575"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/stderr.txt",
+      "bytes": 2045,
+      "sha256": "0a20301f16b04773e300f736607022338e1ff2f857cda2e4407e0f2abf5783bd"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/stdout.txt",
+      "bytes": 1010,
+      "sha256": "dd8be9f7fe527ee63314ddd222795ad38b04ca2c672d468714c39d8ff1e1acb0"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/tmp/cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 139,
+      "sha256": "bff78827f2a426334e85271374d4422e2e62e6dd36341d5b27afbb52960dc415"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-run-02/vitest.json",
+      "bytes": 2435,
+      "sha256": "2c3f241a7fb5c548c430b489ca263733ce422d123620ac9f70e0b5e812e85b23"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-entry/run.py",
+      "bytes": 7882,
+      "sha256": "0b118f07f7d089869910460cec1ab3f278e8ab8a7c4b0163dbba5053528b7803",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/inputs.json",
+      "bytes": 117883,
+      "sha256": "3eb4839cdef3963513b5e4ddcfde637e6eaaca36c2da3d7abf9318f119b3faeb",
+      "fixedRef": "aea6e78515f251d16d9ef34e06b38a4834b08f84"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/pg.config.mjs",
+      "bytes": 183,
+      "sha256": "2c3ac7044ec0bb02d79166392703cc07e303422df8c2e810e10d8753dea513aa",
+      "fixedRef": "f73534fb8f5d4af9def063863b9551a7217280dc"
+    },
+    {
+      "path": "docs/evidence/chat05p02/pg-repair/execution-preflight-02.json",
+      "bytes": 1882,
+      "sha256": "de910105332e286d400033ae2f77188c624fd29fffce93d85f668da1d53d1261",
+      "fixedRef": null
+    }
+  ]
+}

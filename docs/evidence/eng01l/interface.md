@@ -14,4 +14,4 @@
 
 实际入口差量（574a2e31）：原 `-p` 的约17.6KiB参数超过R06单参数8192字符限制；改用自有control内 `flow-readonly.sb` 的 `-f`。exclusive0600创建、完整写入并fsync文件及父目录、固定dev/ino/uid/size/mode/hash，launch前NOFOLLOW重读复核；同名存在不覆盖、身份或字节变化不启动。文件在close后仍保留，删除由caller在独立收尾证据后处理，不能称文件删除撤销writer。R06全局限制不改。可选privateStderr复用已有受信sink且maxBytes≤8192，不从task输入扩权。
 
-原a372/6d1已获限定mock独审；真实参数限制是静态直接消费者发现，因此主线接收暂停。3定向例（2新+1原例受影响复测）及types0关闭该静态问题；原16不复跑。准备caller只initialize/initialized，真实stock仍NOT_RUN。
+历史a372/6d1已获限定mock独审；真实参数限制静态发现后曾暂停主线接收，574修复已审并接main9f314e89。3定向例（2新+1原例受影响复测）及types0关闭该静态问题；原16不复跑。caller随后只运行一次initialize/initialized，ready与close成立；原外层因私有状态超1MiB仍FAIL/cleanupUNKNOWN。独立后续exact cleanup成功，结果获限定独审；不证明真实工具调用、OS写拒绝或全部writer撤销。

@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-07T08:14:00.514174+00:00",
+  "source": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+  "preparationDelivery": "8b3d438cf3e148b8b5e24535908b2160744675a6",
+  "startedAt": "2026-10-07T08:12:38.421033+00:00",
+  "finishedAt": "2026-10-07T08:12:42.063226+00:00",
+  "status": "PASSED",
+  "tests": {
+    "numTotalTests": 2,
+    "numPassedTests": 2,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "supervisedMs": 3617,
+  "callerElapsedMs": 3664,
+  "rawBytes": 834,
+  "primaryFailure": null,
+  "secondaryFailures": [],
+  "observationErrors": [],
+  "cleanup": {
+    "status": "CONFIRMED",
+    "pid": 3315,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "database": "flow_chat05p02_fe8480fe82fc46d08f6434f14bf00e6a",
+    "oid": 1259234,
+    "marker": "492235a7-77da-4614-bcf9-7139d66661d6",
+    "connections": [
+      {
+        "rows": [],
+        "remainingMs": 2998
+      }
+    ],
+    "databaseDropped": true,
+    "remaining": [],
+    "directory": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/docs/evidence/chat05p02/pg-run-03/tmp/flow-chat05p02-pg-rxExj9",
+      "dev": 16777234,
+      "ino": 123650420
+    },
+    "directoryRemoved": true,
+    "listenerClosed": true,
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "cleanupErrors": [],
+    "checkpointPhase": "cleaned",
+    "checkpointAt": "2026-10-07T08:12:42.036Z",
+    "callerCacheKeep": {
+      "bytes": 133,
+      "files": [
+        "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+      ],
+      "directories": [
+        "cache",
+        "cache/vitest",
+        "cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+      ]
+    }
+  },
+  "actualCoverage": {
+    "productionFactoryOnly": true,
+    "authorization": {
+      "factoryOnly": true,
+      "roles": [
+        "owner",
+        "browser",
+        "runner",
+        "unauthenticated"
+      ],
+      "crossTask404": true,
+      "legacyUnchanged": true
+    },
+    "realHost": {
+      "harness": "claude",
+      "adapterCalls": 1,
+      "providerCalls": 0,
+      "materialBytes": 2225539,
+      "pageRequests": 9,
+      "completeBytesEqual": true,
+      "defaultEnablement": false
+    },
+    "httpRequests": 64,
+    "runnerNotices": []
+  },
+  "limits": [
+    "Actual factory/033/routes and restart, real runRunner/outbox/FlowClient with one injected no-provider Claude adapter; not SDK/provider/CLI/UI default enablement",
+    "44 different locals and six focused-types rounds are prior separate evidence, not repeated in this PG run",
+    "PG01/02 each0/2, UNKNOWN_RETAIN and separately CONFIRMED cleanup remain immutable",
+    "Initial group EPERM/unknown retained; final group absence and complete EOF observed, no signals",
+    "File/free measurements are bounded final/checkpoint samples; PG size does not bound WAL or physical allocation",
+    "Private fixture directory removed; 133B caller cache intentionally kept, not described as total temp root deletion"
+  ]
+}

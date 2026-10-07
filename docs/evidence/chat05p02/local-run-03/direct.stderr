@@ -1,0 +1,22 @@
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m apps/runner/src/runtime-shutdown.test.ts[2m > [22muses the original request deadline during normal stop and keeps its unresolved intent across restart
+[31m[1mAssertionError[22m: expected [ { milliseconds: 200, …(1) }, …(3) ] to have a length of 3 but got 4[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 3[39m
+[31m+ 4[39m
+
+[36m [2m❯[22m apps/runner/src/runtime-shutdown.test.ts:[2m144:23[22m[39m
+    [90m142| [39m  [35mtry[39m {
+    [90m143| [39m    [35mawait[39m received[33m.[39mpromise[33m;[39m [35mconst[39m before [33m=[39m [35mawait[39m api[33m.[39m[34mjournal[39m()[33m;[39m
+    [90m144| [39m    expect(deadlines).toHaveLength(3); expect(deadlines[2]!.millisecon…
+    [90m   | [39m                      [31m^[39m
+    [90m145| [39m    running[33m.[39mcontrol[33m.[39m[34mabort[39m()[33m;[39m
+    [90m146| [39m    deadlines[2]!.control.abort(new DOMException('Original deadline re…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
