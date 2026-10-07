@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:02:40.329Z / main69a71e3d9；TIMING02/S01Q01与三来源已接收，看板211实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:22:00.000Z / main13c4277a0；已接冷启动、四App与恢复caller固定独审，现个人操作在目标身份处未写入并已归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main69a71e3d9；本段仅接收D05登记与实际回执，不修改个人固定产物 |
+| 工作基线 / HEAD | main13c4277a0；本次只接收两父任务自身状态，不修改个人固定产物或冻结调用输入 |
 | 工作树dirty状态 | 仅本批明确接收与自身metadata；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | TIMING02/S01Q01既有已审检查复用，0重跑；e15真实三角色冷启动限定PASS、结果待独审，四App报告待正式接收 |
-| 已集成main状态 / HEAD | main69a71e3d9含TIMING02/S01Q01及D05三来源；4320实际211，个人固定e15尚未恢复 |
+| 检查状态 | 冷启动与四App及caller既有独审复用，0重跑；本次个人实际失败原件由原owner封存，首因核对中 |
+| 已集成main状态 / HEAD | main13c4277a0包含211登记、e15隔离就绪/兼容及caller批准；个人产物和报告导入已发生，未refresh/resume/发布779 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 看板已补齐三项任务与时间入口。个人恢复包的三角色隔离启动已通过，正在接收最终兼容和收尾证据。 |
-| 下一可用交付 | 固定最终恢复输入，沿原维护操作恢复个人服务，再交付已验证的新网页。 |
-| 当前阻塞 | ACTIVE: 个人服务仍处于维护状态；等待冷启动结果独审、四份兼容报告与最终恢复输入收口。 |
+| 当前产出 | 看板任务与时间入口已上线，固定恢复包的独立验证已接收；个人恢复在版本身份核验处停止。 |
+| 下一可用交付 | 核对并修正恢复调用的具体问题，沿原维护操作恢复接单，再发布已验证的新网页。 |
+| 当前阻塞 | ACTIVE: 个人服务仍处于维护状态；恢复身份核验被拒绝，原owner正在诊断，已完成的导入不重复。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
