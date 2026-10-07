@@ -159,3 +159,6 @@ Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-plat
 ### 原Arc身体读取测量分层（2026-10-07）
 
 [固定测量设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-flight-measurement-design.json)针对第二browser实际1/4失败：六exact GET均完成而server peak1，仅1200ms timer与顺序UI等待不能证明六个逻辑请求重叠；常驻SSE存在时等六个server到达才释放会自锁。原测试后继保六真实UI/六identity，先用有帽浏览器请求生命周期与visible loading证明六logical pending，再有界释放已到达HTTP holds，验六完成、server真实peak≤6、隐藏无新增及全部其余组。只删exact6而保宽松上界不构成验收。先原两test源修/必要类型，新的90s实际另择；旧0/4、1/4失败、parentUNKNOWN与rawclosed及ChromeEOFfalse原件保持。
+
+
+本次两test测量差量 c1db812 与准备包获[独立源准备批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-body-flight-source-preparation-review.json)，最终 ebcd746e 全18scope STOP。六logical pending/六loading、逐到达drain与六完整正文分开验收，不把HTTP1服务端并发峰值与客户端逻辑pending混淆。fa06 noEmit3494ms为限定通过；c1db补充检查在完整资源门槛前0child拒绝，保持NOT_RUN。新90s四组/双图候选仍未运行，旧首0/4与第二1/4失败不回写。App/session已合法移出至context薄接线，原Arc候选继续固定其历史输入。

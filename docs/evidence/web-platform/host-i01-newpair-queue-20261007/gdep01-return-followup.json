@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-07T22:48:09.320783+00:00",
+  "executionHead": "850d61376373eb59df8afdf6004ef7dda030bd10",
+  "outerReadOnlyObservationAt": "2026-10-07T22:47:04.910696+00:00",
+  "outerPid": 87472,
+  "outerPgid": 87472,
+  "outerPidState": "ESRCH",
+  "outerPgidState": "ESRCH",
+  "outerTerminalAt": "2026-10-07T22:45:34.364426+00:00",
+  "dbCleanupReceiptAt": "2026-10-07T22:45:34.309Z",
+  "callerReceiptExactWallTime": "UNKNOWN: result.json stores elapsedBeforeReceiptMs=1587, not a receipt wall timestamp; no inferred exact cleanup/FULLRETURN time",
+  "scratch": "REMOVED_EXACT_ENOENT per immutable caller result; not revisited",
+  "externalReceipts": {
+    "path": "/tmp/flow-gdep01-actual-62498c0a8b9d4eca89aa3328070d87a4",
+    "canonicalPath": "/private/tmp/flow-gdep01-actual-62498c0a8b9d4eca89aa3328070d87a4",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124623274
+    },
+    "state": "SEALED_PUBLIC_RECEIPTS_KEEP",
+    "noFutureWrites": true,
+    "files": [
+      {
+        "name": "outer-start.json",
+        "bytes": 481,
+        "sha256": "615d44d0568e38c6467f3685fa0134d5670bec19dbb20a19450a7c6d111e34df"
+      },
+      {
+        "name": "outer-terminal.json",
+        "bytes": 139,
+        "sha256": "22b169917537218651402404e5f308476f39995aded9cf9bd600828d891ee366"
+      },
+      {
+        "name": "outer.stderr",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "outer.stdout",
+        "bytes": 245,
+        "sha256": "177b512196dbe59784df0e5f50ae95148b85d5a6de2018985b4955b723df31d4"
+      },
+      {
+        "name": "permit-admission.json",
+        "bytes": 3878,
+        "sha256": "2bd4edd405297b519dbeddbffa199df8cbc08632ac071bfb1923ae936ca3f06d"
+      },
+      {
+        "name": "permit.json",
+        "bytes": 1097,
+        "sha256": "6415c9eabd5897dd1255a74dc9ec858e3ffb53fdc834481cf80d957ef26f45aa"
+      },
+      {
+        "name": "preflight-process.json",
+        "bytes": 492,
+        "sha256": "76e37daf062f9163223a71d6dd6398897b43e427c087b6baa9702713ece069e0"
+      },
+      {
+        "name": "preflight.json",
+        "bytes": 181,
+        "sha256": "de1e8cbafbe2170979497e2d0cbbeaf841a19996fb3a78ea76677e588b1b6ae7"
+      },
+      {
+        "name": "preflight.log",
+        "bytes": 148,
+        "sha256": "7a81c71f0d965e36eb430d69ca6b36f693c4b051a3777e36b9b7656defa32317"
+      },
+      {
+        "name": "reservation.json",
+        "bytes": 3197,
+        "sha256": "d64384322d368262a3b51ea95938312d0fa9e5788704dadb5b648ca309994803"
+      }
+    ],
+    "bytes": 9858,
+    "archive": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch"
+  },
+  "futureProcesses": 0,
+  "pg": 0,
+  "http": 0,
+  "archivalIssue": {
+    "firstAttempt": "AssertionError before any write/copy: lexical /tmp is not its canonical /private/tmp ancestor",
+    "resolution": "Same root lstat dev/ino plus canonical parent/name verified; no resource action/retry or new PG query."
+  },
+  "notes": [
+    "This timestamp is archival confirmation, not original cleanup time.",
+    "External directory retained as sealed public evidence; no scratch/DB growth owner remains.",
+    "Initial readonly EPERM observations preserved alongside final absent; no signals sent."
+  ]
+}

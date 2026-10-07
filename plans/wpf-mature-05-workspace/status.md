@@ -62,6 +62,6 @@ CACHE已root结构批准并fresh领取883321bc v1十六scope，fixed fd1322新�
 GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先于Arc/装饰。Arc18候选仅只读，既有05验收不删除，不预领ATTACHI共享App范围；[完整要求](../../docs/evidence/web-platform/connection-recovery-priority.md)。
 
 
-当前Arc实施继续沿原20scope与稳定composer父级。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
+当前Arc原owner已c34dv2 exact18，App/session两叶合法移交context；剩余输入固定且稳定composer父级不变。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
 
-当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）。首browser0/4、0PNG/12808ms CLOSED；旧876入口候选未运行，后继d034补wiring并实际1/4、0PNG/50944ms CLOSED，22:29:52精确ownedRETURN。parent closure UNKNOWN/worker result null与raw context/httpClosed true分层保留，Chrome两流EOF false不改。固定e611已封；两test新测量修正见[计划设计](plan.md)，新的实际浏览器尚未授。来源沿子task唯一status，不合成整体PASS。
+当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）。首browser0/4、0PNG/12808ms CLOSED；旧876入口候选未运行，后继d034补wiring并实际1/4、0PNG/50944ms CLOSED，22:29:52精确ownedRETURN。parent closure UNKNOWN/worker result null与raw context/httpClosed true分层保留，Chrome两流EOF false不改。历史e611已封；新两test测量c1db/最终ebcd已获源准备审并全18STOP，fa06 types3494限定PASS、c1db补充types在资源准入前0child拒绝。新90s四组/双图仍READY_NOT_GRANTED，见[计划设计](plan.md)。来源沿子task唯一status，不合成整体PASS。

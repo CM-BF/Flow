@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T22:48:08.398Z",
-  "state": "GDEP01_TERMINAL_PASS_EXACT_RETURN_PENDING",
+  "recordedAt": "2026-10-07T23:05:42.969Z",
+  "state": "PERSONAL_CONTINUATION_R2_ACTUAL_RUNNING",
   "groupWindowOwnership": "OriginalfixedR2build soleNEXT, no actual untilSTART; TIMING fullyreturned/sealed; b692 invalidC4/AV/Arcbrowser blocked.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,12 +407,13 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T22:48:08.398Z",
-    "state": "GDEP01_TERMINAL_PASS_EXACT_RETURN_PENDING",
-    "actualHolder": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
+    "at": "2026-10-07T23:05:42.969Z",
+    "state": "PERSONAL_CONTINUATION_R2_ACTUAL_RUNNING",
+    "actualHolder": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE",
     "next": null,
-    "floorBytes": 17756192768,
-    "decision": "GDEP8/8actualPASS; mainprocess/DB/scratch closure reported, exact externalpermit/toolcapturefinalRETURN pending. No retry or newheavy."
+    "floorBytes": 14007599104,
+    "decision": "PersonalR2 actualSTART23:03:29.033765 beforedeadline; sole exclusivewindow consumed16341663744. Wait terminalandexactRETURN; healthyrestoredroles are not cleanup targets.",
+    "consumedFrozenFloorBytes": 16341663744
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1371,7 +1372,7 @@
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
   "currentWindowEvidence": "release-backend-route-20261007/msg03-settings-actual.json",
-  "webActualHolder": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
+  "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": {
@@ -1380,10 +1381,7 @@
     "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
   },
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": {
-    "state": "GDEP_ACTUAL",
-    "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE"
-  },
+  "webReservation": null,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1805,7 +1803,7 @@
     "shortGaps": "Original <=60 restriction revoked; ordinary isolated work continues, each actual candidate separately selected.",
     "previousReasonHistorical": "OriginalcurrentlyallowsonlyREADY<=60sisolatedgaps during personalrepairpreparation; Q140exceeds thatcondition. NotwaitingVARSTOP/Arcdagnosis and noactualholder isbeinginvented."
   },
-  "currentIntake": "GDEP8/8actualPASS; mainprocess/DB/scratch closure reported, exact externalpermit/toolcapturefinalRETURN pending. No retry or newheavy.",
+  "currentIntake": "PersonalR2 actualSTART23:03:29.033765 beforedeadline; sole exclusivewindow consumed16341663744. Wait terminalandexactRETURN; healthyrestoredroles are not cleanup targets.",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -2053,58 +2051,87 @@
     "formalReportCount": 4,
     "personalResumed": false
   },
-  "futureCompleteFreshFloorBytes": 17756192768,
+  "futureCompleteFreshFloorBytes": 14007599104,
   "futureFloorEvidence": "Current forwardAdmission terms; historical consumed gates retained by logicalId.",
   "externalPreparedCandidate": null,
   "currentActual": {
-    "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
-    "owner": "Mika/b01",
-    "state": "TERMINAL_PASS_FULL_RETURN_PACKET_PENDING",
-    "startAt": "2026-10-07T22:45:32.728788Z",
-    "outerPID": 87472,
-    "outerPGID": 87472,
-    "namespace": "pg-run-62498c0a8b9d4eca89aa3328070d87a4",
-    "consumedFloorBytes": 17756192768,
-    "freshFreeBytes": 18019688448,
-    "preflight": {
-      "at": "2026-10-07T22:45:32.666545Z",
-      "available": 91,
-      "required": 19,
-      "adminClosed": true,
-      "ownedClosed": true,
-      "outsideMainClock": true
-    },
-    "fresh": "f244v2 exact6/HEAD850d clean/512pins20aliases/grant matched",
-    "mainSeconds": 140,
-    "configuredPG": 3,
-    "Chrome": 0,
-    "HTTP": 0,
+    "logicalId": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE",
+    "at": "2026-10-07T23:01:55.363Z",
+    "state": "ACTUAL_RUNNING",
+    "latestStart": "2026-10-07T23:05:55.363Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "source": "a93ac5338da5c52303cf4f83d0735d0a61713ee3",
+    "delivery": "e68a90f2904415e7e690f23a8494c68c28b51205",
+    "claim": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12",
+    "entry": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py --run-remaining-r2-once",
+    "namespace": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once",
+    "window": "svc06-personal-7d1-held23-e15-continuation-r2-once",
+    "preparationSha256": "7066f24463c8944108dc0c36a728e65e74006bd6a9d3ac2d52fd7842e729ec6f",
+    "inputPendingSha256": "6ec0658351a2363817cfd3bb9a49753def0b2ba3e7bedf7afe1fa2a7b69a917f",
+    "dispatchSha256": "fc65ed2f188becf944a97f6482df8cf4ef8a63adf6a8b9efb6144b60c6e8be5e",
+    "review": "Original fixedR2 preparation independent APPROVED/0P1P2; manager exactread3hashes",
+    "bindings": "18bindings95982B/135effectivepins824248B;7trueentrycases374ms/RETURN22:44:42.934503",
+    "phases": [
+      "fresh",
+      "rebind",
+      "refresh",
+      "checkpoint",
+      "resume",
+      "final"
+    ],
+    "notReplayed": [
+      "imports",
+      "bootstrap",
+      "retirement"
+    ],
+    "workSeconds": 900,
+    "termGraceSeconds": 0,
+    "reapSeconds": 2,
+    "addedBytes": 536870912,
+    "rawBytes": 2097152,
+    "liveProtectedBytes": 1073741824,
+    "minimumFreshFreeBytes": 16341663744,
+    "minimumPriorProtectedFloorBytes": 1073741824,
+    "managerObservedFreeBytes": null,
+    "configuredPGAndMargin": 42,
+    "tasks": 0,
     "provider": 0,
-    "reportedAt": "2026-10-07T22:46:27.403Z",
-    "returnAt": null,
-    "terminalAt": "2026-10-07T22:45:34.364426Z",
-    "outerExitCode": 0,
-    "selected": 8,
-    "passed": 8,
-    "innerPID": 87611,
-    "innerExitCode": 0,
-    "innerElapsedMs": 1500,
-    "innerOwnedGroupAbsent": true,
-    "innerMergedEOFBytes": 187,
-    "signals": [],
-    "database": {
-      "oid": 1362819,
-      "identityMatched": true,
-      "connections": 0,
-      "normalDropACK": true,
-      "absence": true,
-      "adminAuxClosed": true
-    },
-    "scratch": "REMOVED_EXACT_ENOENT",
-    "outerExactPIDPGIDAbsentAt": "2026-10-07T22:47:04.910696Z",
-    "firstReportedFreeBytes": 18019684352,
-    "freeCorrection": "First relay transcription differed4096B; rawgate untouched",
-    "pending": "External permit/toolcapture exact archival+final FULL_RETURN packet; do not infer finalRETURN"
+    "publish779": false,
+    "retry": false,
+    "fresh": "Samecall135pins/claimv12/noOverlap/newnamespace/6fileidentities/sameop23/old3rolesstopped/imported e15+4reports/disk>=16341663744 and intrinsic live1GiB/PGavailable>=42 with poolclosed. Allowed resource-only field adaptation; new grant does not replay imports or allocate a second logical businessattempt. Fail0childSTOP; no automaticretry.",
+    "exclusivity": "Unique personal actual; no concurrentPG/Chrome/build/service/personalwrites. Alreadycounted Context16MiB ordinarysource/pure may continue within originaldeadline. Arc/Mika wholeSTOP cap0; no new uncountedgrowth until actualSTART or explicitSTOP.",
+    "lifecycle": "Immediate actualSTART then terminal then exact ownedRETURN. Healthyrestoredroles are personalstate not cleanupabsence. Expiry only blocksnewspawn, never interrupts actual alreadySTARTed. No inference from silence.",
+    "admissionSequence": 2,
+    "priorCombinedFloorIsHistorical": true,
+    "priorCombinedFloorBytes": 18007851008,
+    "previousUnconsumedFloorBytes": 18018336768,
+    "resourceOnlyAdaptation": "Original explicit classification authorizes current fullsum, not old combined17452105728/18007851008 as permanentpriorfloor. Adapt only allowed resourcefields/resultinginputhash. Keep actual intrinsic live1GiB and single-caller bounds; do not modify executable/sourcepins. If a non-resource fixed assertion blocks, report exact blocker0child instead of editingcode.",
+    "actualStart": "2026-10-07T23:03:29.033765Z",
+    "entryPid": 88192,
+    "operatorPid": 81324,
+    "consumedFloorBytes": 16341663744,
+    "actualFresh": "Original reports samecall135pins/claimv12/6privatepins/publiccanonical/doubleinventory+4reports/held23/old3rolesstopped/PGavailable>=42andpoolclosed allpassed",
+    "exactReturn": "PENDING_OWNER_RECEIPT",
+    "phaseProgress": {
+      "observedAt": "2026-10-07T23:04:48Z",
+      "fresh": {
+        "exit": 0,
+        "elapsedMs": 19179,
+        "ownedState": "absent",
+        "streams": "dualEOF"
+      },
+      "rebind": {
+        "exit": 0,
+        "elapsedMs": 22958,
+        "ownedState": "absent",
+        "streams": "dualEOF"
+      },
+      "refresh": "RUNNING_WITHIN_ORIGINAL_WINDOW",
+      "effect": "target binding successfully changed; do not reuse firstattempt not-written wording",
+      "overallTerminal": null,
+      "fullReturn": null
+    }
   },
   "releaseCandidateCurrent": {
     "state": "MAIN_INTEGRATED_CLAIM_RELEASED_PERSONAL_DEPLOYMENT_PENDING",
@@ -2351,10 +2378,10 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "GDEP01_CONSUMED_GATE_RETAINED_CURRENT_FORWARD_ORDINARY",
-    "at": "2026-10-07T22:43:38.826Z",
+    "state": "PERSONAL_R2_ACTUAL_CONSUMED",
+    "at": "2026-10-07T23:05:23.435Z",
     "termsBytes": {
-      "residualUnknown": 13440909312,
+      "residualUnknown": 11123556352,
       "priorK01Db": 134217728,
       "secondK01Db": 134217728,
       "R4KeepPendingClassification": 134217728,
@@ -2408,27 +2435,28 @@
       "selectedTiming02Browser60": 0,
       "ArcBrowserOwnedRootRepairOrdinary": 0,
       "OriginalRecoveryBuildR2Candidate": 0,
-      "MikaStableOrdinaryEnvelope": 16777216,
+      "MikaStableOrdinaryEnvelope": 0,
       "ReleaseE15TuplePreparationOrdinary": 0,
       "selectedArcBrowser90": 0,
       "ArcFirstBrowserFailureOrdinary": 0,
       "OriginalHeldFactsReadonly30": 0,
-      "selectedRecoveryColdR2": 1244659712,
+      "selectedRecoveryColdR2": 134217728,
       "selectedReleaseE15C4": 0,
       "selectedAV03R2": 0,
       "Timing02DeploymentMetadataClose": 0,
-      "selectedHeld23E15PersonalRecovery": 538968064,
+      "selectedHeld23E15PersonalRecovery": 0,
       "ArcBrowserAcceptanceCoverageSource": 0,
       "selectedAV03R3": 0,
       "selectedArcPaneWiringBrowser90": 0,
-      "ContextHistoryWebOrdinary": 16777216,
-      "selectedHeld23E15Continuation": 2097152,
-      "ArcBodyFlightMeasurementOrdinary": 8388608,
-      "selectedGDEP01PG140": 276824064
+      "ContextHistoryWebOrdinary": 65536,
+      "selectedHeld23E15Continuation": 0,
+      "ArcBodyFlightMeasurementOrdinary": 0,
+      "selectedGDEP01PG140": 0,
+      "selectedHeld23E15ContinuationR2": 538968064
     },
-    "minimumFreshFreeBytes": 17756192768,
-    "formula": "13440909312 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 16777216 + 1244659712 + 538968064 + 16777216 + 2097152 + 8388608 + 276824064 = 17756192768",
-    "method": "Still possible or unknown growth plus explicitly pending seal bounds and one reserve. Two consumed recovery gates remain historical17128095744. Cold retained full planning remains conservative until Original no-writer classification.",
+    "minimumFreshFreeBytes": 14007599104,
+    "formula": "11123556352 + 134217728 + 134217728 + 134217728 + 35651584 + 1073741824 + 536870912 + 8519680 + 9568256 + 9568256 + 134217728 + 134217728 + 65536 + 538968064 = 14007599104",
+    "method": "Active or still-unknown futuregrowth plus one reserve. Explicit sealed no-writer stock counted by freshfree only; Original oldcold retained128MiB PGbackground. Historical combinedfloors are not permanent intrinsic protection.",
     "classificationEvents": [
       {
         "at": "2026-10-07T19:43:30.272Z",
@@ -3259,10 +3287,94 @@
         "beforeBytes": 0,
         "afterBytes": 276824064,
         "basis": "New single reviewed8case GDEP01専库140s candidate:DB128MiB+WAL128MiB+local8MiB containingraw2/TMP4/receipt256KiB; independentone<=10sadminprobe inside local8. One globalreserve only."
+      },
+      {
+        "at": "2026-10-07T22:52:57.418Z",
+        "term": "selectedGDEP01PG140",
+        "beforeBytes": 276824064,
+        "afterBytes": 0,
+        "basis": "Personally read81bd returnfollowup: all active resources returned, exactmarkedDBDROP/scratchENOENT; external10publicreceipts9858B sealedKEEP/noFutureWrites. Mika fixedpacket729093 origin cleanSTOP. No futurewriter, immutable bytes already in freshfree; originalgate17756192768 unchanged."
+      },
+      {
+        "at": "2026-10-07T22:52:57.418Z",
+        "term": "selectedHeld23E15ContinuationR2",
+        "beforeBytes": 0,
+        "afterBytes": 538968064,
+        "basis": "New independently reviewedR2 900s continuationonly512MiBadded+2MiBraw once, priorfailedcontinuation2MiBseal/oldpersonal/cold conservative bounds retained; live1GiB intrinsic notduplicate."
+      },
+      {
+        "at": "2026-10-07T22:56:37.803Z",
+        "term": "selectedHeld23E15ContinuationR2",
+        "beforeBytes": 538968064,
+        "afterBytes": 0,
+        "basis": "R2 exact0child admissionSTOP before any allocation; selection closed, original prepared candidate remains READY, not actual."
+      },
+      {
+        "at": "2026-10-07T22:56:37.803Z",
+        "term": "MikaStableOrdinaryEnvelope",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "Mika explicitly wholeordinary teamSTOP/futureallocations[]/0child; stablepool rule closes only when wholeteam STOP. Existingstatic evidence already in freshfree, no deletion."
+      },
+      {
+        "at": "2026-10-07T23:01:55.363Z",
+        "term": "selectedRecoveryColdR2",
+        "beforeBytes": 1244659712,
+        "afterBytes": 134217728,
+        "basis": "Original explicit no-writer classification: coldR2 fullRETURN22:00:23.226/8PID+3roles stopped/0task. Retain only128MiB PGbackground OID1356518; immutableclone/private/raw/records are stock reflectedfreshfree. Fixed resultmanifest11840B SHA4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601 personally matched.",
+        "rule": "Future possible growth only; no KEEP deletion, historical refund, source change, or rewrite of consumed/unconsumed oldgate."
+      },
+      {
+        "at": "2026-10-07T23:01:55.363Z",
+        "term": "selectedHeld23E15PersonalRecovery",
+        "beforeBytes": 538968064,
+        "afterBytes": 0,
+        "basis": "Original explicit434review/no-writer sealedtwo namespaces, exact22:20:13.131180 RETURN3407B/cb997701; imported e15+4reports stock. No future first-attempt allocation; existing personalDB unknowns elsewhere unchanged.",
+        "rule": "Future possible growth only; no KEEP deletion, historical refund, source change, or rewrite of consumed/unconsumed oldgate."
+      },
+      {
+        "at": "2026-10-07T23:01:55.363Z",
+        "term": "selectedHeld23E15Continuation",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Original explicit99ad fixedrawsealed/0phase/newnamespace absent/RETURN47fe6e. No remaining2MiB writer; remotezero-connection NOT_OBSERVED preserved.",
+        "rule": "Future possible growth only; no KEEP deletion, historical refund, source change, or rewrite of consumed/unconsumed oldgate."
+      },
+      {
+        "at": "2026-10-07T23:01:55.363Z",
+        "term": "ArcBodyFlightMeasurementOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Arc ebcd746e8e74881395e61f43ab444de48b62a51c actualremote clean/all18STOP; source/check/meta sealed<0.6MiB/8MiB. Root final13manifest hashverification complete; no writer/child. Newbrowser remains ungranted.",
+        "rule": "Future possible growth only; no KEEP deletion, historical refund, source change, or rewrite of consumed/unconsumed oldgate."
+      },
+      {
+        "at": "2026-10-07T23:01:55.363Z",
+        "term": "selectedHeld23E15ContinuationR2",
+        "beforeBytes": 0,
+        "afterBytes": 538968064,
+        "basis": "Reselect same unconsumed fixedR2 after explicit zerochild capacitySTOP0fbc5ee. Current512MiB+2MiB candidate once, not businessretry. Old selection/gate remain historical.",
+        "rule": "Future possible growth only; no KEEP deletion, historical refund, source change, or rewrite of consumed/unconsumed oldgate."
+      },
+      {
+        "at": "2026-10-07T23:05:23.435Z",
+        "term": "residualUnknown",
+        "beforeBytes": 13440909312,
+        "afterBytes": 11123556352,
+        "basis": "Original originalcd27owner explicitno-writer sincea6adsealed/14:30:45.534FULLRETURN;I02group45951absent/dualEOF/0PG. Manager personallyread bc3b2c6582a8b476c8a85013504ca225bf413900 and3b0494100 futureFloorEvidence:9306308608+2317352960=11623661568; laterlegacybase retainedsamebuild, priorR1R2R3deductionexcludedthese2builds. Onlycd27 firstbuild mapped;2515 andearlier9.3GB remainUNKNOWN, no duplicate21hbuilddeduction.",
+        "rule": "PostactualSTART forwardonly; personal consumed16341663744 and all oldgates/raw unchanged. No deletion or probing retainedroots."
+      },
+      {
+        "at": "2026-10-07T23:05:23.435Z",
+        "term": "ContextHistoryWebOrdinary",
+        "beforeBytes": 16777216,
+        "afterBytes": 65536,
+        "basis": "W01 fixed6e0db39031ed096e4922be7dcad2a3a4f9c2eaab remote clean/all6SOURCE_STOP; ed5 strict0+12PASS/9553ms/4childexactRETURN; only originaldeadline23:14:21 boundedreviewarchive<=64KiB remains. No code/check/browserwriter.",
+        "rule": "PostactualSTART forwardonly; personal consumed16341663744 and all oldgates/raw unchanged. No deletion or probing retainedroots."
       }
     ],
-    "currentWindowConservativeFrozenFloorBytes": 17756192768,
-    "frozenFloorExplanation": "Freeze this GDEP01 complete contract until actual START or explicit STOP; existing fully-counted isolated ordinary continues, no new uncounted growth. Older consumed personal and Arc gates unchanged."
+    "currentWindowConservativeFrozenFloorBytes": 16341663744,
+    "frozenFloorExplanation": "Current future terms14007599104 after exact originalcd27no-writer mapping and contextSOURCE_STOP; actualpersonal admission consumed16341663744 immutable."
   },
   "originalOrdinaryCurrent": {
     "asOf": "2026-10-07T21:45:04.734Z",
@@ -3425,13 +3537,11 @@
     "resolvedByLateActualReceipt": "2026-10-07T22:37:56.465903Z"
   },
   "publicationContractFreeze": {
-    "at": "2026-10-07T19:45:01.641Z",
-    "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
-    "floorBytes": 18518114304,
-    "until": "Historical consumed gate immutable; independent future budget may change",
-    "prelaunchFact": "Original reports0START/0personal effects. Old18509725696 frozenoperator stopped at launch-before assert after newQ01 changed requiredfloor. Same unconsumed operator now routine rebinds18518114304 and directly fresh launches; free about19.38GB reported, exact sample belongs actualreceipt.",
-    "rule": "No secondgrant/sourceapproval. Existing authorized ordinary/source continues. Any new not-yet-authorized growth queues until actualSTART or explicitSTOP; do not mutate this fixed resource contract again. Historical/preflightfailure kept. No globalSTOP.",
-    "state": "CONSUMED_IMMUTABLE"
+    "at": "2026-10-07T23:01:55.363Z",
+    "logicalId": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE",
+    "minimumFreshFreeBytes": 16341663744,
+    "latestStart": "2026-10-07T23:05:55.363Z",
+    "state": "CONSUMED_ACTUAL_RUNNING"
   },
   "residualReconciliationCurrent": {
     "at": "2026-10-07T21:14:01.066Z",
@@ -3506,55 +3616,84 @@
     "state": "APPLIED_AFTER_ACTUAL_START"
   },
   "activeWindows": {
-    "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE": {
-      "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
-      "owner": "Mika/b01",
-      "state": "TERMINAL_PASS_FULL_RETURN_PACKET_PENDING",
-      "startAt": "2026-10-07T22:45:32.728788Z",
-      "outerPID": 87472,
-      "outerPGID": 87472,
-      "namespace": "pg-run-62498c0a8b9d4eca89aa3328070d87a4",
-      "consumedFloorBytes": 17756192768,
-      "freshFreeBytes": 18019688448,
-      "preflight": {
-        "at": "2026-10-07T22:45:32.666545Z",
-        "available": 91,
-        "required": 19,
-        "adminClosed": true,
-        "ownedClosed": true,
-        "outsideMainClock": true
-      },
-      "fresh": "f244v2 exact6/HEAD850d clean/512pins20aliases/grant matched",
-      "mainSeconds": 140,
-      "configuredPG": 3,
-      "Chrome": 0,
-      "HTTP": 0,
+    "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE": {
+      "logicalId": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE",
+      "at": "2026-10-07T23:01:55.363Z",
+      "state": "ACTUAL_RUNNING",
+      "latestStart": "2026-10-07T23:05:55.363Z",
+      "owner": "Original/native_center_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a93ac5338da5c52303cf4f83d0735d0a61713ee3",
+      "delivery": "e68a90f2904415e7e690f23a8494c68c28b51205",
+      "claim": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12",
+      "entry": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py --run-remaining-r2-once",
+      "namespace": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once",
+      "window": "svc06-personal-7d1-held23-e15-continuation-r2-once",
+      "preparationSha256": "7066f24463c8944108dc0c36a728e65e74006bd6a9d3ac2d52fd7842e729ec6f",
+      "inputPendingSha256": "6ec0658351a2363817cfd3bb9a49753def0b2ba3e7bedf7afe1fa2a7b69a917f",
+      "dispatchSha256": "fc65ed2f188becf944a97f6482df8cf4ef8a63adf6a8b9efb6144b60c6e8be5e",
+      "review": "Original fixedR2 preparation independent APPROVED/0P1P2; manager exactread3hashes",
+      "bindings": "18bindings95982B/135effectivepins824248B;7trueentrycases374ms/RETURN22:44:42.934503",
+      "phases": [
+        "fresh",
+        "rebind",
+        "refresh",
+        "checkpoint",
+        "resume",
+        "final"
+      ],
+      "notReplayed": [
+        "imports",
+        "bootstrap",
+        "retirement"
+      ],
+      "workSeconds": 900,
+      "termGraceSeconds": 0,
+      "reapSeconds": 2,
+      "addedBytes": 536870912,
+      "rawBytes": 2097152,
+      "liveProtectedBytes": 1073741824,
+      "minimumFreshFreeBytes": 16341663744,
+      "minimumPriorProtectedFloorBytes": 1073741824,
+      "managerObservedFreeBytes": null,
+      "configuredPGAndMargin": 42,
+      "tasks": 0,
       "provider": 0,
-      "reportedAt": "2026-10-07T22:46:27.403Z",
-      "returnAt": null,
-      "terminalAt": "2026-10-07T22:45:34.364426Z",
-      "outerExitCode": 0,
-      "selected": 8,
-      "passed": 8,
-      "innerPID": 87611,
-      "innerExitCode": 0,
-      "innerElapsedMs": 1500,
-      "innerOwnedGroupAbsent": true,
-      "innerMergedEOFBytes": 187,
-      "signals": [],
-      "database": {
-        "oid": 1362819,
-        "identityMatched": true,
-        "connections": 0,
-        "normalDropACK": true,
-        "absence": true,
-        "adminAuxClosed": true
-      },
-      "scratch": "REMOVED_EXACT_ENOENT",
-      "outerExactPIDPGIDAbsentAt": "2026-10-07T22:47:04.910696Z",
-      "firstReportedFreeBytes": 18019684352,
-      "freeCorrection": "First relay transcription differed4096B; rawgate untouched",
-      "pending": "External permit/toolcapture exact archival+final FULL_RETURN packet; do not infer finalRETURN"
+      "publish779": false,
+      "retry": false,
+      "fresh": "Samecall135pins/claimv12/noOverlap/newnamespace/6fileidentities/sameop23/old3rolesstopped/imported e15+4reports/disk>=16341663744 and intrinsic live1GiB/PGavailable>=42 with poolclosed. Allowed resource-only field adaptation; new grant does not replay imports or allocate a second logical businessattempt. Fail0childSTOP; no automaticretry.",
+      "exclusivity": "Unique personal actual; no concurrentPG/Chrome/build/service/personalwrites. Alreadycounted Context16MiB ordinarysource/pure may continue within originaldeadline. Arc/Mika wholeSTOP cap0; no new uncountedgrowth until actualSTART or explicitSTOP.",
+      "lifecycle": "Immediate actualSTART then terminal then exact ownedRETURN. Healthyrestoredroles are personalstate not cleanupabsence. Expiry only blocksnewspawn, never interrupts actual alreadySTARTed. No inference from silence.",
+      "admissionSequence": 2,
+      "priorCombinedFloorIsHistorical": true,
+      "priorCombinedFloorBytes": 18007851008,
+      "previousUnconsumedFloorBytes": 18018336768,
+      "resourceOnlyAdaptation": "Original explicit classification authorizes current fullsum, not old combined17452105728/18007851008 as permanentpriorfloor. Adapt only allowed resourcefields/resultinginputhash. Keep actual intrinsic live1GiB and single-caller bounds; do not modify executable/sourcepins. If a non-resource fixed assertion blocks, report exact blocker0child instead of editingcode.",
+      "actualStart": "2026-10-07T23:03:29.033765Z",
+      "entryPid": 88192,
+      "operatorPid": 81324,
+      "consumedFloorBytes": 16341663744,
+      "actualFresh": "Original reports samecall135pins/claimv12/6privatepins/publiccanonical/doubleinventory+4reports/held23/old3rolesstopped/PGavailable>=42andpoolclosed allpassed",
+      "exactReturn": "PENDING_OWNER_RECEIPT",
+      "phaseProgress": {
+        "observedAt": "2026-10-07T23:04:48Z",
+        "fresh": {
+          "exit": 0,
+          "elapsedMs": 19179,
+          "ownedState": "absent",
+          "streams": "dualEOF"
+        },
+        "rebind": {
+          "exit": 0,
+          "elapsedMs": 22958,
+          "ownedState": "absent",
+          "streams": "dualEOF"
+        },
+        "refresh": "RUNNING_WITHIN_ORIGINAL_WINDOW",
+        "effect": "target binding successfully changed; do not reuse firstattempt not-written wording",
+        "overallTerminal": null,
+        "fullReturn": null
+      }
     }
   },
   "selectedWindows": {},
@@ -3571,5 +3710,5 @@
     "combinedFloorBytes": 17128095744,
     "source": "Original explicit allowed2isolatedPG policy androot C4nativecontract reading no globalexclusive. Manager read both fixedpreparations andseparateownednamespaces. No concurrentpersonal/thirdheavy permitted."
   },
-  "actualHolder": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE"
+  "actualHolder": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE"
 }

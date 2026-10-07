@@ -630,3 +630,10 @@ MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范�
 ### MATURE04-05 模块交付与薄接线路由（2026-10-07）
 
 原WPF-001-09引用[父MATURE04唯一计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency/plan.md)和[Web模块限定审查](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/context-history-module-review.json)。新历史模块c5f896已16pure+strict通过并限定批准；ui.layout只打开UI，App/session私有reader仍须在真实身份/当前view/task与请求返回时授权，完整CT01–09不因本片关闭。接线前仅Arc真实持有的App/session两叶STOP→partial-amend；Thread另核真实writer。两个固定基线b129与Arc e611后续由Original窄合并保双方改动，交权不等源码已集成或组合浏览器通过。领取已真实可见：[现有UI观察](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-context-take-observation.json)，不新增同ID第二status。
+
+
+### FLOW-001 REQ-01/22 / O12-05：Web 持续目标会话（待领取）
+
+- [ ] **原任务后继待领取，不新建重复大task。** 用户在同一连续对话提交目标，阅读真实解释与计划调整，原地处理决策，查看验证产物；无需逐任务跳转。沿 FLOW-001 的权威索引/status/dashboard 和两层 task/subtasks 组织，WPF-M02 十任务总览不是本项替代。排在个人入口恢复、Arc/context和成熟聊天收口之后，优先于插件新旁支；本条只登记，无新WT/claim/运行许可。
+- [ ] 复用现 @flow/interaction/goal createGoalEntry/createGoalSession、goal-session-controller、解释历史、计划/决策/产物和 graph-plan/native-execute 接缝，以及 FlowClient/recovery/assistant-ui。Web不造调度或权限权威，不把日志或固定fixture话术当模型回答；自然语言回复、材料共享合同缺口交原中心owner。GO固定main71288a457只读观察作为输入，具体代码设计与原件后续单份引用。
+- [ ] 正文优先，tool/thinking按需可达；历史/节点/并发/字节/DOM全部有界。验收真实NL plan→execute→decision→artifact→独立接受，并覆盖恢复、迟到、冲突、双主题、键盘与窄屏。零模型公开旅程可分片交付，真实native未验则保持OPEN。仅整task blocker或Done向GO汇报，不为普通记录索取新确认。

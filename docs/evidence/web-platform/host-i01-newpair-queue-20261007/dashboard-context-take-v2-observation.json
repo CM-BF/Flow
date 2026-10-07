@@ -1,0 +1,38 @@
+{
+  "reviewer": "/root",
+  "mode": "read-only existing IAB tab; one public detail refresh",
+  "observedAt": "2026-10-07 22:53:05 UTC",
+  "taskId": "MATURE04-05",
+  "url": "http://127.0.0.1:4320/",
+  "displayedClaimObservation": "2026-10-07T22:52:38Z",
+  "claim": {
+    "id": "25d7e029-9334-479e-8872-61090c406e0a",
+    "version": 2,
+    "state": "active",
+    "role": "writer",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "branch": "codex/web-context-history",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "updatedAt": "2026-10-07T22:49:45Z",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-context-history",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/context-history.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "docs/evidence/wpf-mature04-web-history"
+    ]
+  },
+  "observations": [
+    "Existing expanded version 1 remained visible with an explicit changed-version warning prohibiting takeover from the old record.",
+    "Clicked this task's public 更新此详情 button once; version 2 and six scopes became visible.",
+    "Progress source remains explicitly not registered; take visibility is not task completion or a second manual progress source.",
+    "Dashboard says takeover still requires atomic coordination. Displayed 211 plan count unchanged."
+  ],
+  "limitations": [
+    "DOM observation only; no new browser, navigation, refresh of product page, screenshot, credentials access, claim mutation, product execution, PG or model call.",
+    "Timestamp is the displayed ledger snapshot; no assertion of later freshness.",
+    "Root did not independently repeat claim CAS or integration checks."
+  ]
+}
