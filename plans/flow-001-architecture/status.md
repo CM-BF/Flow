@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:53:04.970751+00:00 / main5cd64a4d；插件启用领域与工程机制已接收，个人采用首入口失败已封存 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:08:00Z / main5cae7a25；Codex公开流已接收，SVC08迁入成功但服务替换前停止 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main5cd64a4d已接X01启用/冻结绑定领域与034、ENG01J机制及SVC08隔离结果；root/Web组合types通过。个人仍af51/accepting v18、Web d629/v3；本次个人采用在读取和副作用前停止。 |
+| 已集成main状态 / HEAD | main5cae7a25已接Codex公开流固定delta、原PG结果与27/27直接消费者及root/Web types0。个人af51/accepting v18、Web d629/v3仍由原宿主运行；SVC08 r2仅迁入固定产物，request保护断言失败后replace/post未执行。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 插件启用与冻结绑定领域已进入主线；工程受限启动层与固定网页宿主隔离结果已审。个人网页宿主采用首入口检查失败，尚未改变运行环境。 |
-| 下一可用交付 | 修正部署入口的文件身份检查后接续个人网页宿主采用；接收Codex公开流已审结果，并核真实文件辅助进程兼容性。 |
+| 当前产出 | Codex公开流与插件启用领域已进入主线。固定网页宿主产物已迁入本机存储；服务替换前的保护比较未通过，原运行环境保持。 |
+| 下一可用交付 | 修复部署事实中日期的持久表示比较后接续原固定网页宿主采用；继续工程真实工具兼容与完整正文公共接线。 |
 | 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
