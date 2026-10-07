@@ -21,14 +21,14 @@
 | Review | chatui11:08:43 source/local/preparation APPROVED + 11:22:22 result忠实性APPROVED，均0P1/P2 |
 | 检查范围 | 真实SQL/owner HTTP候选新1例；synthetic材料不冒npm执行；旧10不选 |
 | 检查目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查 |
 | 实现目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
 | 实现范围 | apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/host-candidates.ts,apps/server/src/plugin-runtime/host-candidates.test.ts,apps/server/src/plugin-runtime/runtime.test.ts,packages/contracts/src/plugin-runtime-hosts.ts |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 授权后端候选、不可选原因与当前信任重验已通过真实数据库验收和独审，等待主线接收 |
-| 下一可用交付 | 主线窄接收候选中心接口，与独立已审客户端/管理命令组合供Web选择 |
+| 当前产出 | 授权后端候选与不可选原因已通过验收并接入主线；独立引用安全观察片正在准备 |
+| 下一可用交付 | 候选片已交付；后继材料引用查询由独立REMOVAL唯一status跟踪 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -379,3 +379,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:29:23.352950+00:00：仅metadata收敛[三片固定接收索引](../../docs/evidence/x01/host-candidates-combined-intake-index.json)，引用ACK ae148唯一intake、候选中心a298/actuald05与consumerbc54/8af唯一intake；不复制子taskTODO/第二进度源。三owner现场HEAD=origin clean，mainf68 clean；18路径row的只读顺序模拟（16unique）无前像冲突，均尚未按完整source字节接收。ACK→consumer，合同59ad需先于/同批consumer，a298与767同合同而保留backend修复。建议Original按实际组合diff一次必要directcheck，具体范围仍由集成owner确定，不重跑三批全集/PG。0工程执行/PG/main/registry/他人status写入，原intake/source/raw保持。
 
 2026-10-07T11:49:18.967503+00:00：仅父范围metadata封存。routes.ts于11:37:21.075461Z STOP，v26→v27原子amend于11:37:21.188Z移出唯一literal；[正式回执](../../docs/evidence/x01/removal-routes-handback-receipt.json)。新X01-REMOVAL-REFERENCES01已在独立plugin-removal-references树由claim04e46691 v1接收，[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/plans/x01-removal-references/status.md)。原HOST固定source/actual/intake均不变，当前Original按三片索引受控接收中，本owner未据通知冒称已经main。旧树不恢复routes写权。
+
+2026-10-07T11:49:53.193598+00:00：只读正式main回执 docs/evidence/i02/x01-candidates-combined-intake.json，HOST+ACK+consumer已受控接收。原三片接收索引保原时间快照/bytes，不追写历史或重复检查。REMOVAL独立交审准备不混入原HOST产品/输入。
