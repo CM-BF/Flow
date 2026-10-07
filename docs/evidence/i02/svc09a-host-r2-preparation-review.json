@@ -1,0 +1,41 @@
+{
+  "reviewedAt": "2026-10-07T16:09:25.762Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_FIXED_R2_HOST_PREPARATION",
+  "findings": [],
+  "source": "78543b0250fcf863e81aad6cd3ec614f294de31b",
+  "delivery": "1102f341009bab1995759ce45ca7a620790458a9",
+  "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r2.json",
+  "manifestBytes": 23308,
+  "manifestSha256": "d071f4d0dcdffb4c0b175f6c55fde82cd20277b232d4f5bd8d6cfa6756a05cea",
+  "executionBindings": 17,
+  "runtimeBindings": 6,
+  "inherited": 3,
+  "rawBindings": 10,
+  "local": {
+    "distinctPassed": 5,
+    "elapsedMs": 277,
+    "rawBytes": 1103,
+    "groupsAbsentDualEOF": 2
+  },
+  "assessment": [
+    "Explicit PATH includes system port observer; private HOME/TMP/config and finite environment whitelist remain. Local evidence proves parsing/lookup, not host readiness or historical cause.",
+    "R2 arguments/outer-inner directories/preparation are bound together; consumed original default namespace still refuses reuse. All31 R1 records unchanged.",
+    "Original outer deadline217.5s and ownership/KEEP rules remain; actual needs fresh identities, full updated resource floor and available window."
+  ],
+  "resourceCorrection": {
+    "coordinatorObservation": "Previous shared planning summed private8MiB while approved source limit was32MiB. Preserve old consumed admission; add24MiB to current potential before adding R2 once.",
+    "R2NewMaximumBytes": 1243611136,
+    "components": {
+      "clone": 1073741824,
+      "private": 33554432,
+      "PG": 134217728,
+      "raw": 2097152
+    },
+    "freshFullFloor": "Use latest co-lead total; no stale numeric admission or expanded original limit."
+  },
+  "reviewerTests": 0,
+  "reviewerPG": 0,
+  "personalIO": 0,
+  "rawProvenance": "Fixed pushed owner Git target; no duplicate source/raw payload copied into this receipt."
+}
