@@ -1,4 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { createHash } from "node:crypto";
+import { createSteeringControl, type SteeringPort } from "../src/conversation-steering/control";
 import { FlowClient } from "@flow/client";
 import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
 import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
@@ -596,5 +598,67 @@ describe("connection and original authority consumers", () => {
     const controller = createContextSelection({ binding: { connectionKey: "connection", viewId: owner.viewKey, projectId: "project" }, readiness: { visible: true, online: true, authorized: true, knowledgeContext: true }, port: { search: async () => ({ hits: [], hasMore: false }), resolve } }); cleanup.push(() => controller.dispose());
     controller.restore([{ title: "Source", citation }]); expect(() => controller.freeze()).toThrow("Verify restored"); await controller.expand(citation); expect(controller.freeze()).toEqual([citation]); expect(resolve).toHaveBeenCalledTimes(1);
     controller.remove(citation); controller.restore([{ title: "Source", citation }]); await controller.expand(citation); expect(resolve).toHaveBeenCalledTimes(2); expect(controller.freeze()).toEqual([citation]);
+  });
+});
+
+
+/** Current-generation deadlines with actual control + journal; only storage completion and HTTP are controlled. */
+async function steeringDeadline(stage: "prepare" | "dispatch" | "accepted") {
+  const { journal: store } = journal(), entered = deferred<void>(), release = deferred<void>();
+  const durable = store.bind(ns, () => owner, () => true), deadline = new AbortController();
+  const port: SteeringPort = {
+    admission: vi.fn(async () => ({ taskId: "task", attemptId: "attempt", ownerVersion: 1, revision: 0, state: "ready", reason: "ready" })),
+    state: vi.fn(async () => ({ taskId: "task", attemptId: "attempt", revision: 0, sealed: false, attemptAvailable: true, commands: [], nextCursor: null })),
+    accept: vi.fn(async input => ({ replayed: false, command: {
+      id: "command", taskId: "task", attemptId: input.attemptId, ownerVersion: input.ownerVersion, nativeSessionId: "native", revision: input.expectedRevision + 1,
+      userMessageUuid: uuid(80), status: "accepted", receiptRevision: 0, input: { bytes: Buffer.byteLength(input.text), digest: createHash("sha256").update(input.text).digest("hex") },
+      createdAt: "2026-10-07T06:00:00Z", updatedAt: "2026-10-07T06:00:00Z",
+    } })),
+  };
+  const control = createSteeringControl({ connectionScope: "owned-center", taskId: "task" }, port);
+  cleanup.push(() => control.dispose());
+  let held = false;
+  const hold = async (point: typeof stage) => { if (point === stage && !held) { held = true; entered.resolve(); await release.promise; } };
+  control.configureRecovery({
+    prepare: async value => { await durable.prepare(value); await hold("prepare"); },
+    dispatch: async (key, step) => { await durable.dispatch(key, step); await hold("dispatch"); },
+    checkpoint: async (key, value) => { await durable.checkpoint(key, value); if (value.phase === "accepted") await hold("accepted"); },
+    dismiss: durable.dismiss,
+  });
+  control.updateGate({ visible: true, online: true, authorized: true }); await control.refresh();
+  const timeout = vi.spyOn(AbortSignal, "timeout").mockImplementationOnce(() => deadline.signal); cleanup.push(() => { timeout.mockRestore(); });
+  expect(await control.submit("原 steering instruction 中文🙂")).toBe(true); await entered.promise;
+  const receipt = control.getSnapshot().receipts[0]!;
+  const record = async () => (await store.list(ns)).find(value => value.kind === "command") as CommandRecord;
+  return { control, port, release, receipt, record, expire: () => deadline.abort(new DOMException("Steering deadline elapsed", "TimeoutError")) };
+}
+describe("Recovery P2 steering durable deadline", () => {
+  it.each(["prepare", "dispatch"] as const)("settles a %s deadline as not sent and explicitly retries the exact key/input", async stage => {
+    const f = await steeringDeadline(stage); f.expire(); f.release.resolve();
+    await vi.waitFor(async () => expect(await f.record()).toMatchObject({ phase: "unknown" }));
+    await vi.waitFor(() => expect(f.control.getSnapshot()).toMatchObject({ loading: false, receipts: [{ key: f.receipt.key, input: f.receipt.input, phase: "unknown", locallyBlocked: true }] }));
+    expect(f.port.accept).not.toHaveBeenCalled();
+    expect(f.control.retry(f.receipt.key)).toBe(true);
+    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]?.phase).toBe("accepted"));
+    expect(f.port.accept).toHaveBeenCalledTimes(1);
+    expect(vi.mocked(f.port.accept).mock.calls[0]!.slice(0, 2)).toEqual([f.receipt.input, f.receipt.key]);
+    expect(await f.record()).toMatchObject({ id: f.receipt.key, phase: "accepted", frozen: { key: f.receipt.key, input: f.receipt.input } });
+  });
+  it("keeps a committed accepted checkpoint after its deadline without downgrading or resending", async () => {
+    const f = await steeringDeadline("accepted"), accepted = await f.record();
+    expect(accepted.phase).toBe("accepted"); f.expire(); f.release.resolve();
+    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]).toMatchObject({ key: f.receipt.key, phase: "accepted", command: accepted.checkpoint }));
+    expect(await f.record()).toEqual(accepted); expect(f.control.retry(f.receipt.key)).toBe(false);
+    f.control.restore(accepted); expect(f.port.accept).toHaveBeenCalledTimes(1);
+  });
+  it("ignores a late accepted continuation after revocation and reconciles only on explicit same-key Restore", async () => {
+    const f = await steeringDeadline("accepted"), accepted = await f.record();
+    f.control.updateGate({ visible: true, online: true, authorized: false }); f.release.resolve();
+    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]?.phase).toBe("unknown"));
+    expect(f.control.retry(f.receipt.key)).toBe(false); expect(await f.record()).toEqual(accepted);
+    expect(f.control.getSnapshot().receipts[0]?.phase).toBe("unknown");
+    f.control.updateGate({ visible: true, online: true, authorized: true }); f.control.restore(accepted);
+    expect(f.control.getSnapshot().receipts[0]).toMatchObject({ key: f.receipt.key, phase: "accepted", command: accepted.checkpoint });
+    expect(f.port.accept).toHaveBeenCalledTimes(1);
   });
 });

@@ -262,23 +262,30 @@ class Control implements SteeringControl {
     let sent = false;
     try {
       if (await textDigest(receipt.input.text) !== receipt.digest) invalid();
-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
+      if (generation !== this.generation || !this.allowed()) return;
+      signal.throwIfAborted();
       await recovery?.prepare({ id: receipt.key, domain: "steering", slot: `steering:${this.identity.taskId}`, frozen: recoveryValue({ key: receipt.key, taskId: this.identity.taskId, input: receipt.input, bytes: receipt.bytes, digest: receipt.digest }), expectedVersion: receipt.recoveryVersion, explicitRetry });
+      if (generation !== this.generation || !this.allowed()) return;
+      signal.throwIfAborted();
       await recovery?.dispatch(receipt.key);
-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
+      if (generation !== this.generation || !this.allowed()) return;
+      signal.throwIfAborted();
       sent = true;
       const raw = object(await request(() => this.port.accept(receipt.input, receipt.key, signal), signal)); boolean(raw.replayed);
       const command = reference(raw.command, this.identity.taskId, receipt.input.attemptId);
       if (command.ownerVersion !== receipt.input.ownerVersion || command.revision !== receipt.input.expectedRevision + 1 || command.input.bytes !== receipt.bytes || command.input.digest !== receipt.digest) invalid();
       if (receipt.command && !sameCommand(receipt.command, command)) invalid();
-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
+      if (generation !== this.generation || !this.allowed()) return;
+      signal.throwIfAborted();
       const merged = mergeCommand(this.commands, command);
       await recovery?.checkpoint(receipt.key, { phase: "accepted", data: recoveryValue(merged) });
-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
+      // A deadline cannot invalidate an already decoded ACK and committed accepted checkpoint.
+      // Authority revocation still owns the stale continuation; explicit Restore can reconcile it.
+      if (generation !== this.generation || !this.allowed()) return;
       this.receipts.set(receipt.key, Object.freeze({ ...receipt, phase: "accepted", locallyBlocked: false, command: merged, error: undefined }));
     } catch (error) {
       if (generation !== this.generation) return;
-      const localBlocked = !sent && error instanceof RecoveryError;
+      const localBlocked = !sent && (error instanceof RecoveryError || signal.aborted);
       const unknown = receipt.everUnknown || localBlocked || !rejection(error);
       this.receipts.set(receipt.key, Object.freeze({ ...receipt, phase: unknown ? "unknown" : "rejected", everUnknown: receipt.everUnknown || (!localBlocked && unknown), locallyBlocked: localBlocked, error: localBlocked ? `Not sent: local recovery is blocked. Retry this original instruction after resolving storage. ${message(error)}` : message(error) }));
       if (!(error instanceof RecoveryError)) { try { await recovery?.checkpoint(receipt.key, { phase: unknown ? "unknown" : "rejected" }); } catch { /* Keep original keys and the conservative dispatching checkpoint. */ } }

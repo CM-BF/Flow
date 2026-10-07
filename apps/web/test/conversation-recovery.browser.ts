@@ -40,9 +40,11 @@ const journeyGroups = {
   "page-auth": ["cookieRead", "pageOnlyAuthLoss"],
   "csrf-offline": ["cookieRead", "csrfOffline"],
   appearance: ["cookieRead", "themes390"],
+  "connection-choice": ["cookieRead", "connectionChoice"],
 } as const;
 type Journey = keyof typeof journeyGroups;
-type Group = (typeof journeyGroups)["full"][number];
+type Group = (typeof journeyGroups)[Journey][number];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
@@ -323,11 +325,11 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN",
     createTwoStage: "PENDING: direct/source only", queueSteerRecovery: "PENDING: direct/source only",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
   };
-  for (const key of journeyGroups.full) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
+  for (const key of allGroups) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
   if (!requiredGroups.includes("textIntentDraft")) coverage.materialDraft = "NOT_SELECTED";
   if (!requiredGroups.includes("sameKeyTurn")) coverage.cookieSseHandshake = "NOT_SELECTED";
   const lifetime = new AbortController();
@@ -429,6 +431,28 @@ async function worker(init: Init) {
       await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token); await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(input()).toBeVisible();
       expect((await context.cookies()).some(cookie => cookie.name.startsWith("flow-session-") && cookie.httpOnly)).toBe(true);
       expect(fixture!.wire.some(row => row.path === "/api/browser-session" && row.cookie && !row.bearer && row.status === 200)).toBe(true);
+    });
+    await run("explicit connection selection survives background cookie reads; only an explicit successful choice returns", "connectionChoice", async () => {
+      await saveDraftThroughUi("Retained draft while choosing a center");
+      const posts = postRows().length, chooser = page.getByRole("heading", { name: "Connect to Flow", exact: true });
+      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
+      const url = page.getByLabel("Center URL", { exact: true }), token = page.getByLabel("Owner token", { exact: true });
+      const candidate = new URL("/candidate-not-contacted", fixture!.url).href;
+      await url.fill(candidate); await token.fill("local-fixture-candidate-token");
+      const observed = page.waitForResponse(response => new URL(response.url()).pathname === "/api/browser-session" && response.request().method() === "GET" && response.status() === 200);
+      await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+      await (await observed).finished();
+      // Wait for the successful session read's React paint without exposing private controller state.
+      await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+      await expect(chooser).toBeVisible(); await expect(url).toHaveValue(candidate); await expect(token).toHaveValue("local-fixture-candidate-token");
+      expect(postRows()).toHaveLength(posts);
+      await page.getByRole("button", { name: "Check existing browser session", exact: true }).click();
+      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
+      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
+      await url.fill(new URL(fixture!.url).origin); await token.fill(fixture!.token);
+      await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
+      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
+      expect(postRows()).toHaveLength(posts);
     });
     let draftId = "";
     const originalDraftRow = async (dialog: Locator) => {
