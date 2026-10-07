@@ -1,0 +1,150 @@
+{
+  "kind": "flow.o16.native-plan-candidate.v1",
+  "authorizationState": "GO_CONDITIONAL_BUDGET_SOURCE_REVIEW_PASSED_WAITING_ACTUAL_WINDOW",
+  "preparedAt": "2026-10-07T11:07:36.999256Z",
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "source": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "proposedRun": "native-plan-20261007-r3",
+  "proposedApprovalId": "O16-GO-PLANNER-R3-20261007",
+  "phase": "plan",
+  "model": "claude-sonnet-5-5",
+  "requestedLimits": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "graph": {
+    "maxProposals": 1,
+    "maxApplications": 0,
+    "maxNewNodes": 2,
+    "maxNewEdges": 1,
+    "childQueries": 0,
+    "protocol": "flow.goal-input-proposal.v1"
+  },
+  "resources": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "rawAndStageEvidenceBytes": 2097152,
+    "privateRuntimeBytes": 8388608,
+    "liveReserveBytes": 1073741824,
+    "baselineFreshBytes": 1207959552,
+    "conservativeOtherTwoLocalTeamsBytes": 62914560,
+    "PGPlanningAllowanceBytes": 134217728,
+    "candidateFreshMinimumBytes": 1405091840,
+    "freshGateMustAlsoAccountForActualOtherHolders": true,
+    "databaseConnections": {
+      "business": 8,
+      "boss": 3,
+      "admin": 1,
+      "managementMargin": 16
+    },
+    "pauseMs": 900000
+  },
+  "sdkCostBoundIs": "requested/reported SDK ceiling, not proven provider billing hard limit",
+  "oldOncePermit": "consumed; never reused",
+  "newPermitCreated": false,
+  "newReservationCreated": false,
+  "approvalMustBind": [
+    "Lead actual holder handoff/startBefore and one fresh guard",
+    "matching source/env/runtime/goal/profile/tool bytes",
+    "fresh namespace/claim/free disk and actual PG connection capacity",
+    "permit not expired; if expired stop/NOT_RUN, never rewrite a consumed attempt"
+  ],
+  "priorAuthenticationEvidence": {
+    "path": "docs/evidence/o16/native-stages/auth-status-once/result.json",
+    "limitation": "prior CLI2.1.291 public status only, not fresh SDK2.1.290 route/model qualification; no auth re-probe"
+  },
+  "authenticationPolicy": {
+    "authentication": "existing-default-keychain-normal-native-refresh",
+    "credentialCopy": false,
+    "accountChange": false,
+    "privateFiles": "owned-home-config-tmp",
+    "persistSession": false,
+    "sharedKeychainMayUpdate": true,
+    "keychainIncludedInPrivateByteBudget": false,
+    "totalSystemZeroWrites": false
+  },
+  "oldResources": "All original and latest FAIL/KEEP DB/tmp untouched; no read/cleanup/resume",
+  "samplingFailure": "Original R1 sampling cause UNKNOWN; R2 measured without measurementFailure but SDK isError and missing body remain. New diagnostics cannot backfill or guarantee future success.",
+  "passRequires": [
+    "one recorded actual SDK entry and bounded successful usage/result",
+    "one audited propose and zero apply",
+    "complete actual proposal/inputs/profile/source/audit",
+    "zero child queries",
+    "registered own runtime groups stopped, server/pools and target connections closed",
+    "durable actual-closure-bound 15min pause receipt"
+  ],
+  "failureAction": "Preserve first failure and cleanup separately; missing worker/resources remains unknown; no automatic retry, alternate environment/model, confirm/children/accept or deletion",
+  "laterChildren": "not permitted; actual proposal review and distinct new authorization required; native children hard gate unchanged",
+  "startBefore": "NOT_ASSIGNED",
+  "previousSDKEntries": 2,
+  "cumulativeSDKEntriesAfterActualNewEntry": 3,
+  "previousUsageAndCost": {
+    "R1": "UNKNOWN",
+    "R2SDKReportedCostUsd": 0,
+    "R2SDKModelUsage": {},
+    "R2ActualAccountCost": "UNKNOWN",
+    "cumulativeAccountCost": "UNKNOWN"
+  },
+  "maximumCumulativeSDKEntries": 3,
+  "fourthQuery": "NOT_AUTHORIZED",
+  "sourceReview": "APPROVED_LIMITED_PRIVATE_ERROR_DIAGNOSTICS_SOURCE_AND_LOCAL_EVIDENCE",
+  "sourceMain": "fb64770082be8e88c6c4ae58d235033636dde1b9",
+  "diagnostics": {
+    "privateErrorRecordMaxBytes": 8192,
+    "privateTextMaxUTF8Bytes": 4096,
+    "maxErrorArrayItems": 16,
+    "publicStructuredRecords": 16,
+    "bounds": "Included in existing private8MiB/raw2MiB; no additional allowance",
+    "scope": "Structured SDK enum/status declarations first; no text inference of cause; real SDK private diagnostic persistence NOT_RUN"
+  },
+  "permitTemplateNotExecutable": {
+    "kind": "flow.o16.phase-permit.v2",
+    "authorizedBy": "Goal Owner",
+    "approvalId": "O16-GO-PLANNER-R3-20261007",
+    "phase": "plan",
+    "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+    "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+    "model": "claude-sonnet-5-5",
+    "limits": {
+      "queries": 1,
+      "maxTurns": 4,
+      "maxBudgetUsd": 0.2,
+      "timeoutMs": 90000
+    },
+    "approvedAt": "NOT_ISSUED",
+    "expiresAt": "NOT_ISSUED",
+    "authorizationReference": "Root new conditional O16-GO-PLANNER-R3-20261007 relayed by Execution Lead; source49d/e413 independent diagnostics review passed. Actual runtime window/fresh admission still required; not prior R1/R2."
+  },
+  "permitIssuePolicy": "Once Lead fixes actual window, record fresh UTC approvedAt/+30min expiry, match startBefore and all inputs. No reservation before actual admission; expired/used material refuses, no rewrite.",
+  "permitPath": "docs/evidence/o16/native-plan-20261007-r3/permit.json",
+  "commandAfterWindow": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-20261007-r3",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-20261007-r3/permit.json"
+  ],
+  "operatorEnvironmentAfterWindow": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot",
+    "TSX_DISABLE_CACHE": "1",
+    "NODE_DISABLE_COMPILE_CACHE": "1"
+  },
+  "freshAdmissionRequest": [
+    "Lead actual holder return/startBefore; Web compatibility/three-App and personal release priority",
+    "Fresh exact claim/source324/39aliases/environment/installed SDK-native bytes; fixed goal/material/profile/tools/grant",
+    "New namespace and once permit/reservation absent/unconsumed, time valid",
+    "Fresh free>=1405091840B AND actual other holder budgets; live1GiB unchanged",
+    "All current PG connections/max_connections: ownbusiness8+boss3+admin1 plusmanagement16 available, readonlyobserver closed",
+    "No credentials output/export/newlogin/setup/account change/APIkeyfallback"
+  ]
+}
