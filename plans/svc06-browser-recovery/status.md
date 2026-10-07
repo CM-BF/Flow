@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:08:28.501Z；正式四App报告已齐，新Web薄迁入/发布调用已独审；实际个人实例尚未采集 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:18:55.858Z；本次调用独审已main089a6e460，等待前一宿主实际RETURN后的唯一现场窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,12 +20,12 @@
 | 实现目标 | 520d3cb7bdb352a1462d83c214e63c8a47c218f4 |
 | 实现范围 | 本次仅own evidence内current-web-transfer/actions及三直接检查、current-operator参数、template和formal输入；精确8source见web-publication-preparation.json；原已审reader/产品停写 |
 | 检查状态 | 本次Web微型fixture9/9、4argv+未知拒绝/3真实Policy边界、1受限Node导入；三轮619ms/raw1251B、三组absent/双EOF/空scratchremoved；0PG/HTTP/个人/provider。旧红绿保留不重跑 |
-| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；本次个人更新未执行 |
+| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次个人更新未执行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
 | 下一可用交付 | 按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
-| 当前阻塞 | ACTIVE: 新发布调用已审，等待现场身份与唯一执行窗口；历史任务错误分类仍未知。 |
+| 当前阻塞 | ACTIVE: 等待当前宿主验证实际归还后的独占发布窗口；调用已审，不是产品实现阻塞。历史任务错误分类仍未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
@@ -122,3 +122,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 本次封定前clean-code/codebase-design复核：迁入、公开动作与argv职责独立，复用原协议/监督；没有新FSM/通用平台。固定原始输出证明错误留存/排他改名/权限边界，实际模板仍未ready。主线parseStatus仅核本status，errors=[]、human.missing=[]、timing.issues=[]；未运行其它计划聚合或产品检查。
 
 2026-10-07T19:14:15.123Z：Lead于19:13:10.034Z给本次520d源码唯一APPROVED_LIMITED_FIXED_WEB_TRANSFER_AND_PUBLICATION_SOURCE，无blocking；原件[I02唯一审查](../../../m2-integration/docs/evidence/i02/svc06b-web-publication-source-review.json)。源码及16绑定交付96e8c2cf0c7faab32f010ec3ac20b83e93d7f100已正常push；不为本后置metadata追SHA验收。个人fresh/实际执行窗口仍未取得，当前0child/0holder/0pending launch，无个人I/O；新阶段不重放任何旧maintenance/retirement。
+
+2026-10-07T19:18:55.858Z：只读公开固定清单/预算，16绑定和9211B/58c0e086原manifest保持；source520/packet96e8无需再审或复测。Web19:04:52旧快照仍NEXT；Lead实际START19:16:09.120/supervisor36049优先，SVC09A217.5s原段正常运行，当前本人0个人I/O/0namespace/0child。个人窗口等待从本次Lead明确排队消息开始，消息精确UTC未提供，起点UNKNOWN；解除条件为原host明确RETURN及Lead唯一handoff。
+
+公开预算候选：现forward17,908,891,648B含当前host1,244,659,712B及一次1GiB reserve；其未知保留/growth未分类前保持全部旧项，再加本次512MiB迁入上限+2MiBraw+1MiB记录=18,448,908,288B。公开磁盘一次可用19,412,176,896B仅准备观察；真实准入仍fresh取latest完整floor与2.5GiB之大，不凭本值启动。新cd27逻辑367,045,616B+779含manifest1,702,220B+四report9420B=368,757,256B，未含操作记录，physicalUNKNOWN；旧KEEP不删，reserve只一次。现场清单沿原candidate/current-entry-interface：新身份六文件/三owned/marker/CAS/保留与兼容→单份0600实例→新迁入/三report→新同op维护15min及resume→后继freshWeb实例→779迁入/第4report/明确v3→v4；不回填历史v21、不重放旧op/退休、不主动任务或tab操作。
