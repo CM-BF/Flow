@@ -1,0 +1,83 @@
+{
+  "recordedAt": "2026-10-07T14:19:41.736Z",
+  "result": "bf8813327ca60d645d03e8d9f9218e30d455cd3f",
+  "review": "result-review.json",
+  "rawManifestFrozen": "a972452a062d5358ee5e366e8d91648d537c0b604ecb8d7a9f105d945e03d75f",
+  "finalReserveBytes": 4194304,
+  "automaticFinalEvidenceBytes": 179265,
+  "manualSnapshot": [
+    {
+      "path": "docs/evidence/s01/pool-wait-run/analysis.json",
+      "bytes": 10153
+    },
+    {
+      "path": "docs/evidence/s01/pool-wait-run/outer-tool-receipt.json",
+      "bytes": 6129
+    },
+    {
+      "path": "docs/evidence/s01/pool-wait-run/report.md",
+      "bytes": 6631
+    },
+    {
+      "path": "docs/evidence/s01/pool-wait-run/READY.md",
+      "bytes": 1829
+    },
+    {
+      "path": "docs/evidence/s01/pool-wait-run/result-manifest.json",
+      "bytes": 6784
+    },
+    {
+      "path": "docs/evidence/s01/pool-wait-run/result-review.json",
+      "bytes": 2216
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/CURRENT_READY.md",
+      "bytes": 2526
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/CURRENT_READY.json",
+      "bytes": 4747
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-strategy-replay-design.md",
+      "bytes": 7458
+    },
+    {
+      "path": "plans/s01-runner-capacity/plan.md",
+      "bytes": 22249
+    },
+    {
+      "path": "plans/s01-runner-capacity/status.md",
+      "bytes": 37756
+    },
+    {
+      "path": "plans/s01-runner-capacity/review.md",
+      "bytes": 32653
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-actual-reservation.json",
+      "bytes": 353
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-actual-outer.json",
+      "bytes": 3105
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-actual-stderr.raw",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-actual-spawn.json",
+      "bytes": 181
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-actual-stdout.raw",
+      "bytes": 1926
+    }
+  ],
+  "manualBytes": 146696,
+  "sealAndFinalMetadataAllowanceBytes": 16384,
+  "conservativeUseBytes": 342345,
+  "originalCountedFullReserveNotAddedAgain": true,
+  "originalActualVerdictUnchanged": "FAIL_OR_UNKNOWN"
+}

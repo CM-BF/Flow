@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-10-07T14:15:51Z",
+  "reviewer": {
+    "worker": "db_transaction_owner",
+    "model": "gpt-6-astra"
+  },
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "resultTarget": "bf8813327ca60d645d03e8d9f9218e30d455cd3f",
+  "packet": "4621323292ce58e622d28e6083679ad2f4c34c49",
+  "manifestSHA": "a972452a062d5358ee5e366e8d91648d537c0b604ecb8d7a9f105d945e03d75f",
+  "scope": "Failure fidelity and minimal cause, not experimental success",
+  "bindings": {
+    "files": 22,
+    "bytes": 44309780,
+    "gitWTBytesSHAModeMatched": true,
+    "originalInputUnchanged": true
+  },
+  "outcome": {
+    "O1": "FAIL",
+    "O2": "NOT_RUN",
+    "eligibleEmits": 731,
+    "attemptsBelow4000ms": 37,
+    "attempts": 128,
+    "fullFinalVerification": "NOT_EXECUTED_AFTER_PRIOR_ASSERTION"
+  },
+  "minimalCause": {
+    "firstEligibleAckAfterStartMs": "775–1429",
+    "lastEligibleAckBeforeEndMaxMs": 891,
+    "eligibleStartToAckP50Ms": 933,
+    "eligibleStartToAckP95Ms": 1261,
+    "interpretation": "Window clipping explains the assertion trigger; without O2/background control it does not identify pool versus IPC causation.",
+    "keep": "queueVerified not reached; finally chooses conservative legacy unresolved predicate for eight v2 journals; no cleanup authorization."
+  },
+  "resources": {
+    "activeReturned": true,
+    "originalProcessClosed": false,
+    "originalAggregate": "UNKNOWN_RETAIN",
+    "retainedRoots": 2,
+    "reviewerVisitedRoots": false,
+    "reviewerQueriedPG": false
+  },
+  "accounting": {
+    "originalMeasuredBytes": 139378995,
+    "includesFinalReserveBytes": 4194304,
+    "manualEnvelopeBytes": 348429,
+    "entrySeconds": 24.130684,
+    "outerPersistedSeconds": 24.466051,
+    "timePSeconds": 24.56,
+    "toolObservedEnvelopeSecondsAtMost": 54
+  },
+  "constraints": [
+    "No engineering runs/import/tests/PG/writes by reviewer",
+    "No O2 contrast, 128-capacity PASS, pure-queue causation or performance benefit",
+    "No lowering 4s ACK span, extending window, changing queueVerified or deleting KEEP",
+    "Buffered changes SQL aggregation/retention/flush; future same-trace replay measures strategy cost, not isolated IPC encoding cost"
+  ]
+}

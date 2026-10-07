@@ -139,3 +139,7 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 
 
 2026-10-07 后继实施checkpoint：已审f0f56交付策略设计的真实配方现固定source130c6ec855db850a817312623742cf14e8b45135，见[queue-interface](../../docs/evidence/s01/mixed-ab-preparation/queue-interface.md)。局部6 distinct分轮/strict0仅证明新私有接缝；当前等待独审、完整runtime准备与新输出scope，NOT_OPEN。原稳定TODO与完整ACK/browser/native验收不变。
+
+## S01-06：失败后的独立成本诊断（2026-10-07T14:19:41.736Z）
+
+本次queue窗口O1持续ACK跨度不足、O2按门禁未启；结果忠实性已独审通过，不是容量/优化通过。原4秒跨度、真实取消最终态和UNKNOWN/KEEP不降要求。下一小片仅[固定轨迹观察交付策略成本](../../docs/evidence/s01/mixed-ab-preparation/delivery-strategy-replay-design.md)，复用现pg-delivery/bridge/reporter/OPS14，0PG候选，尚未实施/运行。buffered改变SQL聚合和finish交付时序，因此不称纯IPC隔离；原128验收独立保留。无新大task/新性能窗口/2×2矩阵，Web发布和经理完整fresh资源优先；stable TODO状态不变。
