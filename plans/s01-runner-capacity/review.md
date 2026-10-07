@@ -282,3 +282,7 @@ db_transaction_owner / gpt-6-astra于2026-10-07T16:02:39Z对core82095227e5b86513
 ## 2026-10-07T16:26:41.893Z 同策略ABBA结果正式批准
 
 db_transaction_owner/gpt-6-astra于2026-10-07T16:18:22Z对dfb2105ba6e4f3eaa4512d13b58bb0bead7c04ec给RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，详见[正式回执](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-independent-review.json)。仅4arm固定轨迹n2、原件与资源事实；不是main接收/一般性能/原容量通过。历史pending报告保原字节，不重写已审manifest；实际窗口消费，0新运行授权。
+
+## 2026-10-07T16:49:39.801Z primary12主线接收批准
+
+main 8e5faabb2f5f4e86cf80044916857680d70912af，assignment_review批准最小private intake，P1/P2=0；固定[I02回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/s01-delivery-packing-minimal-intake.json)于16:46:58.852Z记录，owner16:48:50Z核main/origin clean及12leaf72498B逐字一致。只接primary12，optional wiring/旧contracts/package/lock和operator/raw复制排除。旧strict/pure/actual复用无重跑；不是真实center/default runner/128容量或S01整体批准。原source/result包不改。

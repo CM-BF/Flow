@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:36:06.978Z |
+| 最近更新 | 2026-10-07T16:49:39.801Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
-| 任务时间来源 | 原task实际开工缺可复核时间；本次管理段开始为2026-10-07T05:45:30Z工具UTC，不替代原task开工。原验收仍有开放项。 |
+| 主线集成时间 | 2026-10-07T16:47:09.000Z |
+| 任务时间来源 | 原task开工缺证据仍UNKNOWN；本片主线时间取Git8e5faabb提交元数据，receipt审查时间16:46:58.852Z、owner首次核main/origin观察16:48:50Z分别保留，不混用任务开始/完成。 |
 | 任务层级 | 子task |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 结果dfb2105ba6e4f3eaa4512d13b58bb0bead7c04ec=origin clean核后仅归档正式review；最终metadata HEAD由Git读取。 |
+| 工作树dirty状态 | 开段a8f2945624b43d36a873d0411c17230340745c78=origin clean；本次仅主线接收事实/status/review更新，最终metadata HEAD由Git读取。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805准备；execution1a3f8aa5edb2444f2960e7433b31ccaf8bd046af四arm actual PASS，结果独审APPROVED，0PG。 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
+| 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 已审观察打包模块、接线与局部对照已整理成精确主线接收清单；不覆盖无关主线或复制完整历史输入。 |
-| 下一可用交付 | 由Execution Lead按固定前像接收最小独立闭包，并返回真实主线收据。 |
-| 当前阻塞 | ACTIVE: 等待主线按唯一清单接收；本分支源码仍为私有实验，不表示容量验收完成。 |
+| 当前产出 | 已审离线观察打包与回放模块已进入主线；四侧局部计量保持原证据，不代表真实center接线或容量验收通过。 |
+| 下一可用交付 | 候选为显式错峰fixture与纯时钟边界；须保留同步burst原失败和原完整验收，不承诺改善。本段未启动实现。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4准备；db 2026-10-07T16:18:22Z对结果dfb2105ba6e4f3eaa4512d13b58bb0bead7c04ec RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:26:41.893Z fresh本人/WT/branch一致；本metadata提交后STOP，保留原claim。 |
-| 架构影响 | 已有parent arm只增加导出/显式workerFile，新四侧plan复用原receiver与OPS14。两worker闭包仅pg-delivery.js不同，原五JS与ESM精确不变；新parent compiled仅作共同调度，0生产pool/SQL变更。 |
+| Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4准备及dfb实际结果；assignment_review对primary12最小main接收0P1/P2，范围见I02固定回执。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:49:39.801Z fresh本人/WT/branch一致，metadata提交后STOP保留。 |
+| 架构影响 | main8e5仅私有离线packing/replay：parent arm/显式workerFile/单receiver+OPS14；primary12闭包已接。真实child/driver/queue可选接线未接，不改生产pool/SQL/default runner。工程架构聚合如需补图由Execution Lead据该固定target登记。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -318,3 +318,11 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 ## 2026-10-07T16:36:06.978Z 精确主线intake交接
 
 [唯一MAIN_INTAKE](../../docs/evidence/s01/mixed-ab-preparation/MAIN_INTAKE.md)及其JSON逐leaf核freshmain 38ec8fd80a784f8afd73a342e6f06e36931d2f5a 前像与固定已审source，primary12leaf可独立接收；可选旧driver/queue闭包单列，缺source批准者HOLD，不以actual结果审覆盖。旧raw/input/compiled不复制不改；0工程/actual/PG/import或主线写入。当前仍NOT_INTEGRATED，待正式mainreceipt。预算沿原actual8MiB剩余额度，新增metadata≤128KiB，不新增reserve。原完整容量TODO/UNKNOWN及S01Q01跨owner边界保持。
+
+## 2026-10-07T16:49:39.801Z primary12主线正式接收
+
+固定main/origin 8e5faabb2f5f4e86cf80044916857680d70912af现场clean；[I02唯一回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/s01-delivery-packing-minimal-intake.json)固定Git引用`8e5faabb2f5f4e86cf80044916857680d70912af:docs/evidence/i02/s01-delivery-packing-minimal-intake.json`，SHA75609e08847b056158d26a5309797cf422b6ab1be6bc7194ca84a584417ea410。assignment_review/0P1P2，receipt.at2026-10-07T16:46:58.852Z；main提交元数据时间2026-10-07T16:47:09.000Z，owner首次核实时点16:48:50Z分列。12leaf72498B逐Git=WT/hash/bytes，9新增+3精确前像；仅复用旧strict/pure/四arm，0重跑。
+
+接收仅private offline packing/replay；optional历史wire、shared contracts/package/lock、原operator和compiled/raw闭包均排除。原main候选清单作为历史已审包保持原字节，本唯一status纠正已接片段，不将源码接收推断为真实center观测或128能力。原O1FAIL/O2NOT_RUN/KEEP与capacity TODO/taskstartUNKNOWN/NOT_COMPLETED保持。
+
+本段≤3min metadata≤64KiB；fresh508fv3/6本人，0工程/PG/TMP/provider/import，按已读find-skills/codebase-design/clean-code核固定来源/职责/时间边界。候选仅显式staggered workload+纯时钟边界，保留同步burst原失败、6s/4s ACK/取消final原门禁，不声称必然改善，不开实现/child（K01 HOLD由原owner处理）。dashboard唯一来源已更新，本段仅字段parser、未请求snapshot/不冒显示实时确认。
