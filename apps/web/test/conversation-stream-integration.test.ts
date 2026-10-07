@@ -12,19 +12,25 @@ import { installStreamFixture } from "./conversation-stream-integration.fixture"
 const cleanups: (()=>Promise<void>)[]=[];
 afterEach(async()=>{await Promise.all(cleanups.splice(0).map(close=>close()));});
 /** Hold two real response bodies, without changing their status, headers or bytes. */
-function holdStreamResponses(fixture: ReturnType<typeof createConversationFixture>, taskIds: readonly string[]) {
- const waiting=new Set(taskIds), responses:{response:ServerResponse;end:ServerResponse["end"];args?:unknown[]}[]=[];
+function holdStreamResponses(fixture: ReturnType<typeof createConversationFixture>, taskIds: readonly string[], after?:number) {
+ if(taskIds.length<1||taskIds.length>2)throw Error("Response barrier requires one or two peers");
+ const waiting=new Set(taskIds), responses:{taskId:string;response:ServerResponse;end:ServerResponse["end"];args?:unknown[];released:boolean}[]=[];
  let released=false, held=0, resolve!:()=>void, reject!:(error:Error)=>void;
  const reached=new Promise<void>((yes,no)=>{resolve=yes;reject=no;});
+ const releaseTask=(taskId:string)=>{
+  const row=responses.find(item=>item.taskId===taskId);if(!row||row.released)return;
+  row.released=true;row.response.end=row.end;if(row.args&&!row.response.destroyed)Reflect.apply(row.end,row.response,row.args);
+ };
  const release=()=>{
   if(released)return;released=true;clearTimeout(timer);fixture.server.removeListener("request",observe);
-  for(const row of responses){row.response.end=row.end;if(row.args&&!row.response.destroyed)Reflect.apply(row.end,row.response,row.args);}
+  for(const row of responses)releaseTask(row.taskId);
  };
  const timer=setTimeout(()=>{reject(Error("Two stream response bodies did not reach the barrier"));release();},1000);
  const observe=(request:IncomingMessage,response:ServerResponse)=>{
-  const match=/^\/api\/tasks\/([^/]+)\/assistant-stream(?:\/patches)?(?:\?|$)/.exec(request.url??"");
+  const url=new URL(request.url??"/","http://fixture"), match=/^\/api\/tasks\/([^/]+)\/assistant-stream(\/patches)?$/.exec(url.pathname);
+  if(after!==undefined&&(!match?.[2]||Number(url.searchParams.get("after")??0)!==after))return;
   if(!match||!waiting.delete(decodeURIComponent(match[1]!)))return;
-  const row:{response:ServerResponse;end:ServerResponse["end"];args?:unknown[]}={response,end:response.end};responses.push(row);
+  const row:typeof responses[number]={taskId:decodeURIComponent(match[1]!),response,end:response.end,released:false};responses.push(row);
   response.end=((...args:unknown[])=>{
    row.args=args;held++;
    if(held===taskIds.length){clearTimeout(timer);resolve();}
@@ -32,7 +38,7 @@ function holdStreamResponses(fixture: ReturnType<typeof createConversationFixtur
   }) as ServerResponse["end"];
  };
  fixture.server.prependListener("request",observe);cleanups.push(async()=>release());
- return{reached,release};
+ return{reached,release,releaseTask};
 }
 async function setup(count=1){
  const fixture=createConversationFixture(), stream=installStreamFixture(fixture);fixture.setReplyDelay(600000);
@@ -53,20 +59,33 @@ describe("actual conversation stream host",()=>{
  it("Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",async()=>{
   const s=await setup(3); s.stream.setDelay(8);
   for(const task of s.tasks) for(let index=0;index<80;index++) s.stream.append(task,` ${index}`);
-  await s.session.host.activate(STREAM_OWNER); s.hosts[0]!.setVisible(true);s.hosts[1]!.setVisible(true);
-  await vi.waitFor(()=>expect(s.stream.reads.filter(row=>row.kind==="patches").length).toBeGreaterThanOrEqual(2));
-  s.hosts[2]!.setVisible(true);
-  await vi.waitFor(()=>expect(s.hosts.every(host=>host.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes(" 79")))).toBe(true));
-  const pages=s.stream.reads.filter(row=>row.kind==="patches");
-  // Each bounded batch is four eight-patch pages. No host begins its third batch
-  // before both peers have begun their second, including the late joiner.
-  for(const task of s.tasks){
-   const third=pages.findIndex(row=>row.taskId===task&&row.after===192);expect(third).toBeGreaterThan(0);
-   for(const peer of s.tasks.filter(id=>id!==task))expect(pages.slice(0,third).some(row=>row.taskId===peer&&row.after>=96)).toBe(true);
-   expect(pages.filter(row=>row.taskId===task).map(row=>row.after)).toEqual(Array.from({length:11},(_,index)=>index*24));
-  }
-  expect(s.stream.peak).toBeLessThanOrEqual(2);
-  expect(s.hosts.reduce((sum,host)=>sum+host.cached().reduce((bytes,entry)=>bytes+(entry.module.getSnapshot().patches?.totalBytes??0),0),0)).toBeLessThanOrEqual(4*1024*1024);
+  const [a,b,c]=s.tasks as [string,string,string], barriers:ReturnType<typeof holdStreamResponses>[]=[];
+  const hold=(tasks:string[],after?:number)=>{const barrier=holdStreamResponses(s.fixture,tasks,after);barriers.push(barrier);return barrier;};
+  const starts=(task:string,after:number)=>s.stream.reads.filter(row=>row.kind==="patches"&&row.taskId===task&&row.after===after).length;
+  const boundaries:{name:string;readIndex:number}[]=[];
+  const trace=()=>JSON.stringify({boundaries,reads:s.stream.reads.slice(0,48),omitted:Math.max(0,s.stream.reads.length-48)});
+  try{
+   // A and B retain their real fourth response (cursor72) and therefore both leases.
+   const first=hold([a,b],72);await s.session.host.activate(STREAM_OWNER);s.hosts[0]!.setVisible(true);s.hosts[1]!.setVisible(true);await first.reached;
+   const late=hold([c]);s.hosts[2]!.setVisible(true);await Promise.resolve();expect(s.hosts[2]!.hasQueuedWork()).toBe(true);
+   boundaries.push({name:"late-C-queued-behind-two-complete-batches",readIndex:s.stream.reads.length});
+   first.releaseTask(a);await late.reached;
+   expect(starts(a,96),trace()).toBe(0); // Older C waiter won A's released lease; A cannot reacquire.
+   const aSecond=hold([a],96);first.releaseTask(b);await aSecond.reached;
+   expect(starts(b,96),trace()).toBe(0); // Queued A won B's released lease while C remains in flight.
+   boundaries.push({name:"first-FIFO-handoffs-C-then-A",readIndex:s.stream.reads.length});
+   const bSecond=hold([b],96);late.release();await bSecond.reached;
+   expect(starts(c,96),trace()).toBe(0); // C yields its completed first batch to the waiting B.
+   const cSecond=hold([c],96);aSecond.release();await cSecond.reached;
+   expect(starts(a,192),trace()).toBe(0); // A's next completed batch yields again to queued C.
+   boundaries.push({name:"repeated-FIFO-handoffs-B-then-C",readIndex:s.stream.reads.length});
+   barriers.forEach(barrier=>barrier.release());
+   await vi.waitFor(()=>expect(s.hosts.every(host=>host.getSnapshot().messages.some(message=>JSON.stringify(message.content).includes(" 79")))).toBe(true));
+   const pages=s.stream.reads.filter(row=>row.kind==="patches");
+   for(const task of s.tasks)expect(pages.filter(row=>row.taskId===task).map(row=>row.after),trace()).toEqual(Array.from({length:11},(_,index)=>index*24));
+   expect(s.stream.peak,trace()).toBeLessThanOrEqual(2);expect(s.stream.reads.length).toBeLessThanOrEqual(48);
+   expect(s.hosts.reduce((sum,host)=>sum+host.cached().reduce((bytes,entry)=>bytes+(entry.module.getSnapshot().patches?.totalBytes??0),0),0)).toBeLessThanOrEqual(4*1024*1024);
+  }finally{barriers.forEach(barrier=>barrier.release());console.info("ARC_FIFO_TRACE",trace());}
  });
  it("Arc removes hidden or closed FIFO waiters without retaining a reserved lease",async()=>{
   const s=await setup(3);await s.session.host.activate(STREAM_OWNER);
