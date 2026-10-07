@@ -1,0 +1,118 @@
+{
+  "kind": "SVC06B_HELD23_E15_FINAL_SOURCE_INPUT_PREPARATION",
+  "at": "2026-10-07T22:10:40.419202+00:00",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "claim": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12; own two scopes only",
+  "scope": "Fixed caller/input/dispatch review candidate. No actual personal recovery grant or operation. Floor/window deliberately separate and ready=false.",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/input.pending.json",
+      "bytes": 12584,
+      "sha256": "19d2dd1654299f287ac4500c1412e693d0f97489e377b34a763dce2a8150f88f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/dispatch.json",
+      "bytes": 34606,
+      "sha256": "a53b4e3b6065faf600900c5cd8214375a6c87f367fc67a7581ba1001a5413f47"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/Interface.md",
+      "bytes": 9119,
+      "sha256": "65a13937f923a6915a40c9272d144500915842ebe8634e5ef843e044680e76ad"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9892,
+      "sha256": "45769d204bd1df546868ec42126cd44dc100c7a2aaeeab1c73f1d2d3d5ff0b18"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/caller.mjs",
+      "bytes": 13214,
+      "sha256": "f746e5cf2a0b21bf2e7a956cfc5bfdd3e0d94131b0463336dfcfb7cfe0dcac72"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py",
+      "bytes": 5478,
+      "sha256": "0fff6f8106b986beeaf03f07e240b5362d7d9ce0b5e1cee4bcd078cc9cafb0df"
+    }
+  ],
+  "bytes": 84893,
+  "inherited": [
+    {
+      "commit": "0be5884cc4937c7bf98dedcab5d072622783e7c1",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/manifest.json",
+      "sha256": "abf47ee9b63f3f517acab3d649948135e846b67bc9ceeefa17446010cb3c3962"
+    },
+    {
+      "commit": "4e527c531b118e0d96e3e95fe1b0edc2e11f488e",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/retarget-facts-manifest.json",
+      "sha256": "888e5992a8ff2c123d4a2e8118e266922d1018d5a967a3db9361a58a5186c4a2"
+    },
+    {
+      "commit": "355f4706f8bf798543c9cf6dcb98875dec1d2b81",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-r2-review.json",
+      "bytes": 3533,
+      "sha256": "6de8528a5818ce3022cfffae02cbbabba4751796305cf0b4144d06e09da60d5b"
+    }
+  ],
+  "externalInputs": {
+    "build": {
+      "commit": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+      "manifest": "recovery-build-r2-result-manifest.json",
+      "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+    },
+    "cold": {
+      "commit": "81fa3974e09baab151f562074aa1f5c3f8ce4903",
+      "manifest": "recovery-cold-r2-result-manifest.json",
+      "sha256": "4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601"
+    },
+    "fourApps": {
+      "commit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+      "intake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "bytes": 17583,
+        "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+      },
+      "independentReview": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "bytes": 13917,
+        "sha256": "2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad",
+        "decision": "APPROVED_SCOPED_ACTUAL_RESULT"
+      },
+      "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+      "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+      "actual": "PASSED_FORMAL_FOUR_APPS_COMPLETE_RETURN",
+      "scope": "Consumes the unique Web independent acceptance of four exact source880060/context81a8 reports and 16 checks; no duplicate App review or personal-deployment claim."
+    }
+  },
+  "effectiveDispatch": {
+    "bindings": 66,
+    "bytes": 553273,
+    "provenance": "Original0be dependencies/closure references plus two explicitly reviewed de779 source overlays and current000490 migration port; exact current byte check. Single flat runtime pin set needed by existing run.py, no copied source/raw bundles.",
+    "artifactRuntime": "Actual same-call oldcd27/tsx and e15 full inventory remain required; no private directory accessed here. New installed e15 checked by migration before later phases."
+  },
+  "validation": {
+    "newProductTests": 0,
+    "sourceChanged": false,
+    "reportsAndChecks": 20,
+    "sourceInputHashMatches": true,
+    "statusErrors": [],
+    "statusHumanMissing": [],
+    "historicalStart": "UNKNOWN preserved",
+    "actualOperations": 0
+  },
+  "remaining": [
+    "Independent final caller approval",
+    "Actual resource-owner SELECT/full floor/latest spawn; then metadata-only exact input/dispatch hash finalization",
+    "Same-call identities/inventories/namespaces/capacity before sole run, then original lock-bound observations"
+  ],
+  "notGranted": [
+    "Personal service mutation",
+    "New PG query/probe",
+    "Any model/provider call",
+    "Reuse of consumed windows/namespaces",
+    "Publishing new779 page"
+  ]
+}

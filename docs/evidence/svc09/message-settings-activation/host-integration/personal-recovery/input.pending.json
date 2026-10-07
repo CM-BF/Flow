@@ -215,17 +215,24 @@
       "returnAt": "2026-10-07T22:00:23.226Z"
     },
     "fourApps": {
+      "commit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
       "intake": {
         "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
-        "bytes": 16986,
-        "sha256": "daa56821386b6c806e96a26ccd7da8b76e502bb7f1bcb781e1278fc3c8a5ef15"
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "bytes": 17583,
+        "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+      },
+      "independentReview": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "bytes": 13917,
+        "sha256": "2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad",
+        "decision": "APPROVED_SCOPED_ACTUAL_RESULT"
       },
       "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
       "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
       "actual": "PASSED_FORMAL_FOUR_APPS_COMPLETE_RETURN",
-      "independentReview": "PENDING_NO_APPROVAL_INFERRED",
-      "archiveGit": "Not yet committed at read; exact path/bytes/hash pins bind candidate and must match final reviewed target",
-      "scope": "Only report/input binding checked here, not duplicate actual/App review. 4report+16checks bytes/hash/context/artifact match."
+      "scope": "Consumes the unique Web independent acceptance of four exact source880060/context81a8 reports and 16 checks; no duplicate App review or personal-deployment claim."
     }
   },
   "admission": {
@@ -234,11 +241,11 @@
     "completeForwardFloor": null,
     "sourceClaims": "Fresh check required before actual; no static flag grants authority",
     "newNamespaces": "Names selected only; existence/identity check and exclusive creation belong to actual admission",
-    "dispatch": "ABSENT",
+    "dispatch": "dispatch.json (source/input binding only; ready=false rejects execution)",
     "notReady": [
-      "Four exact880060/backend-context report independent acceptance and final sealed target",
-      "Final complete effective closure/dispatch hashes",
-      "Fresh resource floor/window and actual locked observations"
+      "Final caller/dispatch independent acceptance",
+      "Actual exclusive personal window, complete fresh floor and same-call effective runtime verification",
+      "Lock-bound revalidation of stored point facts; no new personal reads performed in preparation"
     ]
   }
 }
