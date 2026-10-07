@@ -1,0 +1,201 @@
+{
+  "startedAt": "2026-10-07T05:55:53.148728+00:00",
+  "finishedAt": "2026-10-07T05:55:53.382756+00:00",
+  "wallMs": 234,
+  "freeBefore": 24549720064,
+  "sourceBindings": [
+    {
+      "path": "caller.mjs",
+      "bytes": 16147,
+      "sha256": "64ca256eae266705ced645b557becab653701760cd4ed8e35ef066f866d03c3c"
+    },
+    {
+      "path": "file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    },
+    {
+      "path": "file-readers.test.mjs",
+      "bytes": 3123,
+      "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 6638,
+      "sha256": "b4fa4b7024268cf7d6d91cc3f9415d8dd8fe9b3d463f0eb7654c88e1df1f3257"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 24716,
+      "sha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a"
+    }
+  ],
+  "commands": [
+    [
+      "--test",
+      "--test-name-pattern",
+      "real root-owned|all 32",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs"
+    ],
+    [
+      "--check",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/caller.mjs"
+    ],
+    [
+      "--check",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs"
+    ],
+    [
+      "--check",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs"
+    ]
+  ],
+  "reports": [
+    {
+      "pid": 74036,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 126,
+      "stdout": "\u2714 real root-owned Python is accepted only with its explicit full readonly pin (2.773958ms)\n\u2714 all 32 declared runtime inputs pass the same readonly gate without importing their modules (17.614708ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 75.527667\n",
+      "stderr": "",
+      "observed_bytes": 316,
+      "retained_bytes": 316,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 74168,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 36,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 74219,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 32,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 74260,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 36,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "pythonAst": "PASS",
+  "pythonExactReader": {
+    "pinnedSystemPositive": true,
+    "wrongUidOrNlinkRejected": 2,
+    "moduleTopLevelExecuted": false
+  },
+  "remainingScratch": [],
+  "rawBytes": 316,
+  "priorWallMs": 113,
+  "personalReads": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "oldNineCasesRerun": 0
+}

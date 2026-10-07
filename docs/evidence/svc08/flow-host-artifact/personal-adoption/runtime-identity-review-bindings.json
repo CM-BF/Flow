@@ -1,0 +1,1001 @@
+{
+  "target": "d95c249dc6b48848128ca068ea93dfda3494e812",
+  "base": "b35fc741efe5ebba36be617b00850c4fe490c1df",
+  "manifestSha256": "d190998a6e1ed1680467f02f48d419900cd9392cbf34233779171eb729352f52",
+  "checked": 57,
+  "mismatches": [],
+  "checks": [
+    {
+      "kind": "changedSourceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/caller.mjs",
+      "ok": true
+    },
+    {
+      "kind": "changedSourceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/supervise.py",
+      "ok": true
+    },
+    {
+      "kind": "changedSourceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/inputs.json",
+      "ok": true
+    },
+    {
+      "kind": "changedSourceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "ok": true
+    },
+    {
+      "kind": "changedSourceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.test.mjs",
+      "ok": true
+    },
+    {
+      "kind": "unchangedDirectBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+      "ok": true,
+      "baseSame": true
+    },
+    {
+      "kind": "unchangedDirectBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.test.mjs",
+      "ok": true,
+      "baseSame": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-fix.md",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run.json",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02.json",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-03.json",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run/1.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run/1.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/1.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/1.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/2.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/2.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/3.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/3.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/4.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-02/4.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-03/1.stderr",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-fix-run-03/1.stdout",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-manifest.json",
+      "ok": true
+    },
+    {
+      "kind": "evidenceBindings",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-01/caller-manifest-original.json",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/static-web.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/web-release.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/web-artifact.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/environment.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/host.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/files.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/index.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/node-identity.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/build.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/cache-plan.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/installation-view.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/process.mjs",
+      "ok": true,
+      "fixedRefSame": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/usr/bin/python3",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "ok": true
+    },
+    {
+      "kind": "runtime",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "ok": true
+    }
+  ],
+  "inputDelta": [
+    [
+      "/executionDirectory",
+      "/private/tmp/flow-svc08-personal-adoption-20261007",
+      "/private/tmp/flow-svc08-personal-adoption-20261007-r2"
+    ],
+    [
+      "/previousExecutionDirectory",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/0/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/resolvedRootEntries/0/ino",
+      "type",
+      117115869,
+      "117115869"
+    ],
+    [
+      "/resolvedRootEntries/0/nlink",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/0/uid",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/1/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/resolvedRootEntries/1/ino",
+      "type",
+      117116014,
+      "117116014"
+    ],
+    [
+      "/resolvedRootEntries/1/nlink",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/1/uid",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/2/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/resolvedRootEntries/2/ino",
+      "type",
+      117116488,
+      "117116488"
+    ],
+    [
+      "/resolvedRootEntries/2/nlink",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/2/uid",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/3/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/resolvedRootEntries/3/ino",
+      "type",
+      117116391,
+      "117116391"
+    ],
+    [
+      "/resolvedRootEntries/3/nlink",
+      "added"
+    ],
+    [
+      "/resolvedRootEntries/3/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/0/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/0/ino",
+      "type",
+      123287084,
+      "123287084"
+    ],
+    [
+      "/reusedHelpers/0/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/0/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/1/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/1/ino",
+      "type",
+      123117637,
+      "123117637"
+    ],
+    [
+      "/reusedHelpers/1/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/1/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/2/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/2/ino",
+      "type",
+      123060511,
+      "123060511"
+    ],
+    [
+      "/reusedHelpers/2/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/2/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/3/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/3/ino",
+      "type",
+      123060517,
+      "123060517"
+    ],
+    [
+      "/reusedHelpers/3/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/3/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/4/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/4/ino",
+      "type",
+      123060515,
+      "123060515"
+    ],
+    [
+      "/reusedHelpers/4/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/4/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/5/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/5/ino",
+      "type",
+      123443799,
+      "123443799"
+    ],
+    [
+      "/reusedHelpers/5/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/5/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/6/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/6/ino",
+      "type",
+      1152921500312571562,
+      "1152921500312571562"
+    ],
+    [
+      "/reusedHelpers/6/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/6/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/7/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/7/ino",
+      "type",
+      121721423,
+      "121721423"
+    ],
+    [
+      "/reusedHelpers/7/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/7/uid",
+      "added"
+    ],
+    [
+      "/reusedHelpers/8/dev",
+      "type",
+      16777234,
+      "16777234"
+    ],
+    [
+      "/reusedHelpers/8/ino",
+      "type",
+      121721518,
+      "121721518"
+    ],
+    [
+      "/reusedHelpers/8/nlink",
+      "added"
+    ],
+    [
+      "/reusedHelpers/8/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/0/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/0/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/0/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/0/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/0/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/1/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/1/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/1/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/1/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/1/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/2/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/2/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/2/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/2/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/2/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/3/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/3/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/3/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/3/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/3/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/4/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/4/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/4/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/4/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/4/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/5/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/5/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/5/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/5/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/5/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/6/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/6/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/6/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/6/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/6/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/7/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/7/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/7/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/7/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/7/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/8/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/8/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/8/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/8/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/8/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/9/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/9/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/9/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/9/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/9/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/10/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/10/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/10/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/10/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/10/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/11/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/11/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/11/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/11/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/11/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/12/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/12/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/12/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/12/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/12/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/13/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/13/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/13/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/13/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/13/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/14/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/14/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/14/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/14/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/14/uid",
+      "added"
+    ],
+    [
+      "/rootToolClosure/15/dev",
+      "added"
+    ],
+    [
+      "/rootToolClosure/15/ino",
+      "added"
+    ],
+    [
+      "/rootToolClosure/15/nlink",
+      "added"
+    ],
+    [
+      "/rootToolClosure/15/realpath",
+      "added"
+    ],
+    [
+      "/rootToolClosure/15/uid",
+      "added"
+    ],
+    [
+      "/runtimeTools/0/dev",
+      "added"
+    ],
+    [
+      "/runtimeTools/0/ino",
+      "added"
+    ],
+    [
+      "/runtimeTools/0/nlink",
+      "added"
+    ],
+    [
+      "/runtimeTools/0/realpath",
+      "added"
+    ],
+    [
+      "/runtimeTools/0/uid",
+      "added"
+    ],
+    [
+      "/runtimeTools/1/dev",
+      "added"
+    ],
+    [
+      "/runtimeTools/1/ino",
+      "added"
+    ],
+    [
+      "/runtimeTools/1/nlink",
+      "added"
+    ],
+    [
+      "/runtimeTools/1/realpath",
+      "added"
+    ],
+    [
+      "/runtimeTools/1/uid",
+      "added"
+    ],
+    [
+      "/supervisor/dev",
+      "added"
+    ],
+    [
+      "/supervisor/ino",
+      "added"
+    ],
+    [
+      "/supervisor/nlink",
+      "added"
+    ],
+    [
+      "/supervisor/realpath",
+      "added"
+    ],
+    [
+      "/supervisor/uid",
+      "added"
+    ]
+  ],
+  "runs": [
+    {
+      "name": "runtime-fix-run.json",
+      "wallMs": 113,
+      "rawBytes": 2618,
+      "exits": [
+        1
+      ],
+      "allAbsent": true,
+      "allEOF": true,
+      "remainingScratch": []
+    },
+    {
+      "name": "runtime-fix-run-02.json",
+      "wallMs": 234,
+      "rawBytes": 316,
+      "exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "allAbsent": true,
+      "allEOF": true,
+      "remainingScratch": []
+    },
+    {
+      "name": "runtime-fix-run-03.json",
+      "wallMs": 109,
+      "rawBytes": 319,
+      "exits": [
+        0
+      ],
+      "allAbsent": true,
+      "allEOF": true,
+      "remainingScratch": []
+    }
+  ]
+}

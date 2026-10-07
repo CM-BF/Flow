@@ -1,0 +1,292 @@
+{
+  "at": "2026-10-07T06:06:08.986Z",
+  "source": "d95c249dc6b48848128ca068ea93dfda3494e812",
+  "delivery": "bfa8a0d051f0e4e2b005681cba0a7fe8d5197f39",
+  "state": "MIGRATED_REQUEST_FAIL_STOPPED",
+  "rawBindings": [
+    {
+      "path": "clone-input.json",
+      "bytes": 24794,
+      "sha256": "15846bc2c356006fb52cae6ed6d779464228f36d55b4341e0defb4e70bad3246"
+    },
+    {
+      "path": "clone-result.json",
+      "bytes": 300,
+      "sha256": "67488c894f53965b9cdaeb4163db37b4fe3bee3205dea2f51bfda98791d82ebe"
+    },
+    {
+      "path": "migrate-outer.json",
+      "bytes": 483,
+      "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3"
+    },
+    {
+      "path": "migrate-resource.json",
+      "bytes": 98,
+      "sha256": "137a14357094097dcd4a85b3e3b16294957663a75864d4c02dae8b3796f711b7"
+    },
+    {
+      "path": "migration-before.json",
+      "bytes": 28292,
+      "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441"
+    },
+    {
+      "path": "migration-checkpoint.json",
+      "bytes": 568,
+      "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81"
+    },
+    {
+      "path": "migration-intent.json",
+      "bytes": 482,
+      "sha256": "e3bafe7bf602164b3887b4c2483a4db73571b3fc02012c3fbabab6f743add2f6"
+    },
+    {
+      "path": "migration-preservation.json",
+      "bytes": 465,
+      "sha256": "50b8ec9d7bdcc5f81135c2b7a763111b67643c42c9c9f39e9c9bbe53fae2387d"
+    },
+    {
+      "path": "migration-result.json",
+      "bytes": 385,
+      "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603"
+    },
+    {
+      "path": "migration-store-intent.json",
+      "bytes": 727,
+      "sha256": "3c9a87c1a9920c362f80dfb41a3061f67591fb36ab63107082b19cc82101ee7f"
+    },
+    {
+      "path": "replacement-before.json",
+      "bytes": 28292,
+      "sha256": "6c54f2b73cee15fcac46afd53111b32d131cbe7607f0567ed04ce45fd6ab035f"
+    },
+    {
+      "path": "request-failure.json",
+      "bytes": 186,
+      "sha256": "e82d91ca87f8d3a0b7405d94fc0a23498c5aafa69552a900fe9027238296f584"
+    },
+    {
+      "path": "request-outer.json",
+      "bytes": 729,
+      "sha256": "ecaf12ee4ab0da055553e97f9f73baf1225fb5b7413f03350c9d981c1f2c3d96"
+    },
+    {
+      "path": "request-resource.json",
+      "bytes": 97,
+      "sha256": "306ce8a6856e8cae98664533dd5104f5b3f3cbe49233883d20e9108076734dd7"
+    },
+    {
+      "path": "reservation.json",
+      "bytes": 263,
+      "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c"
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/clone-input.json",
+      "bytes": 24794,
+      "sha256": "15846bc2c356006fb52cae6ed6d779464228f36d55b4341e0defb4e70bad3246",
+      "dev": 16777234,
+      "ino": 123555833,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/clone-result.json",
+      "bytes": 300,
+      "sha256": "67488c894f53965b9cdaeb4163db37b4fe3bee3205dea2f51bfda98791d82ebe",
+      "dev": 16777234,
+      "ino": 123571400,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migrate-outer.json",
+      "bytes": 483,
+      "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3",
+      "dev": 16777234,
+      "ino": 123555817,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migrate-resource.json",
+      "bytes": 98,
+      "sha256": "137a14357094097dcd4a85b3e3b16294957663a75864d4c02dae8b3796f711b7",
+      "dev": 16777234,
+      "ino": 123571470,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-before.json",
+      "bytes": 28292,
+      "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441",
+      "dev": 16777234,
+      "ino": 123555823,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-checkpoint.json",
+      "bytes": 568,
+      "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81",
+      "dev": 16777234,
+      "ino": 123571457,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-intent.json",
+      "bytes": 482,
+      "sha256": "e3bafe7bf602164b3887b4c2483a4db73571b3fc02012c3fbabab6f743add2f6",
+      "dev": 16777234,
+      "ino": 123555827,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-preservation.json",
+      "bytes": 465,
+      "sha256": "50b8ec9d7bdcc5f81135c2b7a763111b67643c42c9c9f39e9c9bbe53fae2387d",
+      "dev": 16777234,
+      "ino": 123571507,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-result.json",
+      "bytes": 385,
+      "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603",
+      "dev": 16777234,
+      "ino": 123571469,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/migration-store-intent.json",
+      "bytes": 727,
+      "sha256": "3c9a87c1a9920c362f80dfb41a3061f67591fb36ab63107082b19cc82101ee7f",
+      "dev": 16777234,
+      "ino": 123555830,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/old-web-record.json",
+      "bytes": 369,
+      "sha256": "a7363a1e49a9bf2e866e0067554fc25eccc0112ab549b969ba8f592ab0538e09",
+      "dev": 16777234,
+      "ino": 123571506,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/replacement-before.json",
+      "bytes": 28292,
+      "sha256": "6c54f2b73cee15fcac46afd53111b32d131cbe7607f0567ed04ce45fd6ab035f",
+      "dev": 16777234,
+      "ino": 123571505,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/request-failure.json",
+      "bytes": 186,
+      "sha256": "e82d91ca87f8d3a0b7405d94fc0a23498c5aafa69552a900fe9027238296f584",
+      "dev": 16777234,
+      "ino": 123571509,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/request-outer.json",
+      "bytes": 729,
+      "sha256": "ecaf12ee4ab0da055553e97f9f73baf1225fb5b7413f03350c9d981c1f2c3d96",
+      "dev": 16777234,
+      "ino": 123571502,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/request-resource.json",
+      "bytes": 97,
+      "sha256": "306ce8a6856e8cae98664533dd5104f5b3f3cbe49233883d20e9108076734dd7",
+      "dev": 16777234,
+      "ino": 123571508,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r2/reservation.json",
+      "bytes": 263,
+      "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c",
+      "dev": 16777234,
+      "ino": 123555816,
+      "mode": "0o600"
+    }
+  ],
+  "analysis": {
+    "path": "analysis.json",
+    "bytes": 2982,
+    "sha256": "494d2e2e5765d7c7ab89340ab9c60cb4cc671dbb7c338372a86d7b9da15a5847"
+  },
+  "fixedSourceBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 4687,
+      "sha256": "443a74a647c1fdaf379eeccea7564149b9839112fdd84704094417349b61552a",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "caller.mjs",
+      "bytes": 16147,
+      "sha256": "64ca256eae266705ced645b557becab653701760cd4ed8e35ef066f866d03c3c",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 6638,
+      "sha256": "b4fa4b7024268cf7d6d91cc3f9415d8dd8fe9b3d463f0eb7654c88e1df1f3257",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "procedure.test.mjs",
+      "bytes": 5664,
+      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 24716,
+      "sha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    },
+    {
+      "path": "file-readers.test.mjs",
+      "bytes": 3123,
+      "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124",
+      "ref": "d95c249dc6b48848128ca068ea93dfda3494e812"
+    }
+  ],
+  "preflightBinding": {
+    "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02-preflight.json",
+    "bytes": 1564,
+    "sha256": "df2a795c66b1d9c9414d7f2b3d893dfbc23a5626dde7cbec745133a9a7318695"
+  },
+  "diagnosticReadonlyInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "bytes": 8740,
+      "sha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-types@2.2.0/node_modules/pg-types/lib/textParsers.js",
+      "bytes": 5367,
+      "sha256": "bd811a530000508b6b90c1db462078e122f0404769d73f57ad41fe90aca159bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/postgres-date@1.0.7/node_modules/postgres-date/index.js",
+      "bytes": 2676,
+      "sha256": "9a09e3ec0775237576b1f6ff0fba0ed6171235aeded635a42c174b517e34cb1a"
+    }
+  ],
+  "diagnosticFixedSQL": {
+    "ref": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+    "path": "packages/storage/migrations/016-runner-maintenance.sql",
+    "bytes": 1796,
+    "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+    "workingTreeMaterialized": false,
+    "readMethod": "git show; direct working-tree rg first reported absent and was not a product error"
+  }
+}

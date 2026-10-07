@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-07T06:09:58.171Z",
+  "target": "472a2a2e37615838779c91a869165f4ed4967c08",
+  "base": "0f8bf516781eeabf86d42c663cbba6a55ef5786c",
+  "state": "SOURCE_AND_LOCAL_VALIDATION_PENDING_REVIEW",
+  "changedSourceBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+    },
+    {
+      "path": "caller.mjs",
+      "bytes": 16179,
+      "sha256": "97527d480c42a3c78f7e2eeec5f8a299cc4d3ba61a8a028992158d017ed39691"
+    },
+    {
+      "path": "facts.test.mjs",
+      "bytes": 3012,
+      "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
+    }
+  ],
+  "unchangedDirectBindings": [
+    {
+      "path": "inputs.json",
+      "bytes": 24716,
+      "sha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 6638,
+      "sha256": "b4fa4b7024268cf7d6d91cc3f9415d8dd8fe9b3d463f0eb7654c88e1df1f3257"
+    },
+    {
+      "path": "file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    },
+    {
+      "path": "file-readers.test.mjs",
+      "bytes": 3123,
+      "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
+    },
+    {
+      "path": "procedure.test.mjs",
+      "bytes": 5664,
+      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681"
+    }
+  ],
+  "inputBindings": [
+    {
+      "path": "attempt-02/migration-before.json",
+      "bytes": 28292,
+      "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441"
+    },
+    {
+      "path": "attempt-02/replacement-before.json",
+      "bytes": 28292,
+      "sha256": "6c54f2b73cee15fcac46afd53111b32d131cbe7607f0567ed04ce45fd6ab035f"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "facts-delta.md",
+      "bytes": 1890,
+      "sha256": "5eb3f5083ab0e58a951f2e1f381386f62d3b890f25ebd84b573c01b79e146d35"
+    },
+    {
+      "path": "facts-run.json",
+      "bytes": 3702,
+      "sha256": "f74c10de57da5f60a161025baf0a0af23e7d4f7282e3e44c76cdc0548dc3279c"
+    },
+    {
+      "path": "facts-run-cleanup.json",
+      "bytes": 225,
+      "sha256": "a585bce8b1cbb0d694b6e5a632de7a38c8f69e71c6bc1a30e61a16a2a10b544c"
+    },
+    {
+      "path": "facts-run/1.stdout",
+      "bytes": 560,
+      "sha256": "a21a54031c9af52414d9ce92afaed4b084b9cc9af23d8eecaae925d633d409ef"
+    },
+    {
+      "path": "facts-run/1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "facts-run/2.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "facts-run/2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "caller-manifest.json",
+      "bytes": 19124,
+      "sha256": "eb4bb36054469f0677e92ab30dd7ca704b32cd64a50ec32df521cea6ec4b2a5e"
+    },
+    {
+      "path": "attempt-02/caller-manifest-original.json",
+      "bytes": 20238,
+      "sha256": "5616eae7e98b456ce281ab90aa4dcefa9ee694e62ca13eeaa81b827b1734b3fa"
+    }
+  ],
+  "validation": {
+    "newSelected": 5,
+    "passed": 5,
+    "callerSyntaxExit": 0,
+    "wallMs": 139,
+    "rawBytes": 560,
+    "groupsAbsent": 2,
+    "bothEOF": true,
+    "scratchRemoved": true,
+    "old9And6Rerun": 0,
+    "personalReads": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "limits": [
+    "r2 success/failure both retained",
+    "migrate must not repeat",
+    "resume-only entry not implemented or approved by this result"
+  ]
+}

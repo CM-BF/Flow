@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T06:10:39.536376+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "sourceTarget": "472a2a2e37615838779c91a869165f4ed4967c08",
+  "delivery": "72ebf2eee8560541680fd5fb304485f5922f7900",
+  "base": "0f8bf516781eeabf86d42c663cbba6a55ef5786c",
+  "verdict": "APPROVED_LIMITED_PERSISTED_MAINTENANCE_TIME_REPAIR",
+  "findings": [],
+  "P1": 0,
+  "P2": 0,
+  "manifestSha256": "43e79301a66852287d4066822c4b47fa852c81e61464038ef8244e5d1d3df809",
+  "bindingAudit": {
+    "bindings": 19,
+    "fixedAndCurrent": true,
+    "changedSourceAtTarget": 3,
+    "unchangedDirectAtBase": 5,
+    "savedFactsAtBase": 2,
+    "evidence": 9,
+    "mismatches": [],
+    "callerSourceBindingsConsistent": true,
+    "originalR2CallerManifestPreserved": true
+  },
+  "scope": [
+    "Read complete three-file source delta and original protection/requireFresh seam. Snapshot normalizes only declared maintenance_updated_at.",
+    "Date and canonical persisted ISO map to the same UTC representation; null stays null. Missing, invalid and noncanonical values reject.",
+    "A changed timestamp still fails strict protection. Other maintenance and unknown fields remain intact; no relaxed admission, idle, maintenance or business-state gate.",
+    "The five tests consume already archived sanitized before/after observations; they do not reread private personal material or call PG."
+  ],
+  "validation": {
+    "selectedNew": 5,
+    "passed": 5,
+    "callerSyntaxExit": 0,
+    "wallMs": 139,
+    "rawBytes": 560,
+    "groupsAbsent": 2,
+    "dualEOF": true,
+    "scratchRemoved": true,
+    "old9And6Rerun": 0
+  },
+  "limitations": [
+    "Historical r2 migration success/request failure unchanged. The Date explanation remains source-supported, not a reconstruction of an unrecorded live object.",
+    "Resume-only entry and real personal request/replacement/post are outside this approval. No permission for retry or successful migration replay is granted."
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "imports": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "personalReads": 0,
+    "projectWrites": 0
+  }
+}

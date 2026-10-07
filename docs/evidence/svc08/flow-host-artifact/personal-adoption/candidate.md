@@ -47,3 +47,7 @@ fresh≥2.5GiB 且满足 578MiB 规划+1GiB余量，live≥1GiB；artifact逻辑
 原事实Module会使用只读REPEATABLE READ事务取得marker、runner身份及有界hash摘要；绝无业务DML、drain/暂停、零任务前置或额外阻用户锁。非Web身份/配置差异仍保守停止；正常用户工作的摘要变化与Web替换结果分列，不能据此覆盖、回滚或自动重试。root只冻结16工具字节和已解析依赖，不冻结其他feature实现。
 
 迁入和request额外拒绝已有webHost（已知基线为legacy selection）；post则必须恰为本operation/c7b。一次固定namespace防原运行重入，request须在60s内进入CLI，否则停且不能改参重基准。readonly prepare request 20s单独计入总观察段；并不暂停任何任务。既有facts中queue_checked_at仅影响raw摘要，保护摘要忽略该一项；其他表变化列unknown，无根因猜测。
+
+## 首次入口失败后的只读运行身份修正
+
+原attempt-01三件raw与旧manifest保持；系统`/usr/bin/python3`的固定字节正确，但uid0/nlink78被私有文件规则提前拒绝。新file-readers Module分开`privateBytes`与`runtimeBytes`：前者仍self/nlink1，后者必须有manifest显式uid/nlink/dev/ino/realpath/size/hash全套pin，二者均nofollow/nonblock/regular/有界读取且读后身份不变。没有按路径特许、没有安装/换解释器。Python外层使用同一显式pin规则。下一固定namespace为inputs中的独立r2；旧namespace不可复用，新运行仍需独审/窗口，当前未创建。

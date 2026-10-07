@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T06:03:58.120Z",
+  "source": "d95c249dc6b48848128ca068ea93dfda3494e812",
+  "delivery": "bfa8a0d051f0e4e2b005681cba0a7fe8d5197f39",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc08",
+      "plans/svc08-web-connection-lifecycle"
+    ],
+    "state": "active",
+    "branch": "codex/personal-web-connection-lifecycle",
+    "origin": "new",
+    "taskId": "SVC08",
+    "worker": "assignment_review",
+    "claimId": "ba1ff3b2-d830-4acf-b84f-be8df92c9c95",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+    "createdAt": "2026-10-07T03:29:21.929Z",
+    "updatedAt": "2026-10-07T04:42:47.430Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-07T06:03:28.553Z",
+  "sourceChecked": [
+    "procedure.mjs",
+    "caller.mjs",
+    "supervise.py",
+    "procedure.test.mjs",
+    "inputs.json",
+    "file-readers.mjs",
+    "file-readers.test.mjs"
+  ],
+  "inputSha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a",
+  "artifactManifestIdentityMatched": true,
+  "artifactManifestDigestMatched": true,
+  "newNamespaceAbsent": true,
+  "freeBytes": 24458575872,
+  "freshFloorBytes": 2684354560,
+  "sharedWindow": "Lead actual bridge after S01 cleanup 2026-10-07T06:00:50.057Z; Web no launch",
+  "runtimeIdentityAndPersonalGates": "fixed supervisor/caller run next; no preflight assumption of success",
+  "oldAttempt": "KEEP unchanged"
+}

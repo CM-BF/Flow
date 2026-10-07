@@ -1,6 +1,6 @@
 # SVC08 独立 review
 
-状态：APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING；产物构建/内部加载已审，真实Web宿主与个人部署仍未验。
+状态：APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR；产物与隔离Web宿主结果已审，个人采用首次入口失败保留，新运行仍未执行。
 
 Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
 
@@ -72,3 +72,25 @@ APPROVED_ISOLATED_WEB_HOST_RESULT；唯一reviewer astra_ultra_execution_lead，
 Execution Lead唯一独审绑定cb2205db380aa9d8bbb6ff42407ac7166d2a073a/deliverya93，5+32+12全部一致，无P1/P2。原件[caller-independent-review](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。仅准备批准，实际迁入/replace/post均未执行；保持fresh共享窗口、16工具短冻结、未知停止和Web-only语义。原9检查不重跑，最后null门仅source审。
 
 首次真实采用入口未通过：cb220原准备批准保持历史；运行在动态Module导入/个人读取前因系统Python uid/nlink检查失败，原ERR_ASSERTION/exit1/60ms/组absent与双EOF已保存。不是迁入、服务或数据保留验收通过；修复及新运行待原owner固定/独审与窗口。
+
+## 2026-10-07T05:58:32.280796+00:00 — runtime身份delta待独审
+
+原attempt-01失败保留；5源delta把private和fixed readonly runtime分开，32固定输入显式uid/nlink/devino/realpath。6不同直接case分轮红绿+Python exact reader、语法证据；原9不重跑。审查[delta manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-delta-manifest.json)，不得据此声称个人采用通过；新namespace未创建，无PG/HTTP/个人探测。
+
+## 2026-10-07T06:02:37.947Z — APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR
+
+Review target commit: d95c249dc6b48848128ca068ea93dfda3494e812；delivery f000217eeb2d397c233cf5a30b6c99c905a4e7a7。
+
+唯一reviewer native_center_owner / gpt-6-astra，2026-10-07T06:01:23.310462Z；[原样回执](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-independent-review.json)，SHA9b1315861829d8099562c07cb6e01bdef35a59afe345ea12f5e44296183340e9；[绑定原件](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-review-bindings.json)。57bindings一致，无P1/P2；6不同/10次选择分轮、原红、456ms/3253B/6组absent双EOF均核实，0reviewer重跑或个人读取。
+
+只批准身份修复与局部证据；private self/nlink1不变，runtime显式uid/nlink和精确十进制dev/ino、真实路径与字节身份拒绝不符。原attempt-01保持；本审不等于个人采用结果，新r2实际窗口仍由Lead协调。作者接受限定结论，源码停写，无新运行。
+
+## 2026-10-07T06:06:44.080Z：修复后r2实际结果待独立审查
+
+d95身份修复批准保持；本轮migrate成功、request原FAIL，不扩大准备批准。15原始副本+16私有原件身份与7固定源见[manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/manifest.json)。Date/string表示差异只读定位，不把maintenance=false解释为实际维护状态变化；新修复尚未实施/验证。Web替换与post未调用，当前不再个人读取或操作。
+
+## 2026-10-07T06:09:58.171Z：Date持久表示三源待唯一复审
+
+Review target commit: 472a2a2e37615838779c91a869165f4ed4967c08。
+
+仅事实提取与5新直接case，原保护比较不改。139ms/560B/2组清理、语法0，见[facts-delta-manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-delta-manifest.json)。原r2结果非通过；只读恢复方案不等于新运行入口批准，不再执行migrate。

@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T06:01:23.310462+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "sourceTarget": "d95c249dc6b48848128ca068ea93dfda3494e812",
+  "delivery": "f000217eeb2d397c233cf5a30b6c99c905a4e7a7",
+  "base": "b35fc741efe5ebba36be617b00850c4fe490c1df",
+  "verdict": "APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR",
+  "findings": [],
+  "P1": 0,
+  "P2": 0,
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-delta-manifest.json",
+    "sha256": "d190998a6e1ed1680467f02f48d419900cd9392cbf34233779171eb729352f52",
+    "bindings": 57,
+    "breakdown": {
+      "changed": 5,
+      "unchangedDirect": 2,
+      "runtime": 32,
+      "evidence": 18
+    },
+    "mismatches": []
+  },
+  "audit": {
+    "path": "/tmp/flow-svc08-runtime-identity-review-bindings.json",
+    "sha256": "f69896d2e5390a8a9b42dd25fa972a321f2c4372b155ed92ccec4971c1c04d72"
+  },
+  "readScope": [
+    "Complete caller/supervisor/file-readers/test delta and fixed inputs changes",
+    "Original first failed attempt preserved; no personal operation replay",
+    "All three run reports and complete red/green raw; source and raw digests verified",
+    "57 fixed/current/runtime identity-byte bindings; 16 runtime Git references also byte-equal"
+  ],
+  "conclusions": [
+    "Private material remains regular, owned by current uid, nlink=1, NOFOLLOW/NONBLOCK and bounded. Read-only runtime instead requires exact explicit uid/nlink/dev/ino/realpath/bytes/hash; no /usr/bin special-case.",
+    "Node runtime fstat uses BigInt and canonical decimal strings; Python uses exact integers, preserving the system inode beyond Number.MAX_SAFE_INTEGER. Wrong pin and symlink rejection remains fail-closed.",
+    "Shared bounded FD lifecycle checks pre/post identity, link count, size and mtime; close in finally. Runtime bytes and realpath must match before actual module loading/direct CLI launch.",
+    "Inputs only add exact runtime identities, canonicalize dev/ino, and move to a new r2 namespace while recording previous consumed namespace. Original artifact tuple/tool bytes/business policy unchanged.",
+    "Python exact reader function was tested separately from supervisor top-level per saved evidence; no personal state reads or module imports are implied by this validation."
+  ],
+  "validation": {
+    "distinctCases": 6,
+    "selectionsAcrossRounds": 10,
+    "rounds": [
+      "4 pass / 2 fail retained",
+      "2 affected positives pass",
+      "2 representation-sensitive negatives pass"
+    ],
+    "original9Rerun": 0,
+    "measuredRunWallMs": 456,
+    "rawBytes": 3253,
+    "ownedGroupsAbsent": 6,
+    "bothEOF": true,
+    "scratchRetained": [],
+    "otherChecks": "3 JS syntax entrances + Python AST and extracted exact-reader positive/wrong uid/nlink; not added to 6 case count"
+  },
+  "limits": [
+    "Approval covers caller identity repair and recorded local validation only. It is not authorization for personal retry, migration, replacement or cleanup.",
+    "Any subsequent fixed identity/bytes drift must reject and be coordinated; this review does not remove the existing source freeze and fresh runtime gates.",
+    "Same-user concurrent mutation beyond the fixed input assumptions is not a new OS isolation claim.",
+    "Historical failure and unknown kept unchanged."
+  ],
+  "reviewerActions": {
+    "engineeringTests": 0,
+    "imports": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "browser": 0,
+    "provider": 0,
+    "personalInstallationReads": 0,
+    "projectWrites": 0
+  }
+}

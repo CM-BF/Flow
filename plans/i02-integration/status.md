@@ -338,3 +338,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T05:58:47.805722+00:00：C02公开流2ab3c6ff的25文件按2b3差异接收，24文件逐字同target，client干净三方合并保留主线S01P07；新增已审PG专测与d2e8 canonical证据。原340固定source/raw核同（最终status/review后继单列），6/6/189HTTP限定注入transport，未重跑。集成16.332s、root/Web types0、27/27直接消费者、3组absent/双EOF/tmp空已删，见[codex intake](../../docs/evidence/i02/codex-public-stream-intake.json)。同批收已审OPS acd911、SVC08首入口失败b35、ENG01J三轮诊断结果4f15；不把负例/准备当部署或真实工程通过。
 
 2026-10-07T06:09:38.514193+00:00：窄接OPS父任务CI唯一入口/官方来源链接修正、实际r2窗口止点，及ENG01J启动正例收敛/负例独审记录；各scope前像逐字匹配主线，八个文档与一份接收记录，不改产品或个人运行。见[接收记录](../../docs/evidence/i02/metadata-intake-20261007-0610.json)。
+
+2026-10-07T06:11:48.051045+00:00：SVC08仅窄接原caller身份修复、r2真实结果与日期表示修复。迁入成功/request失败已独审，新的仅request续接仍待固定；不改16生产工具、不声称服务已采用。见[接收记录](../../docs/evidence/i02/svc08-attempt02-intake.json)，本批0工程复跑。

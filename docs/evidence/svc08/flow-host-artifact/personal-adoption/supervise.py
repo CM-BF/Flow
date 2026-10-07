@@ -16,14 +16,35 @@ inputs = json.loads((BASE / 'inputs.json').read_text())
 for item in json.loads((BASE / 'caller-manifest.json').read_text())['sourceBindings']:
     raw = (BASE / item['path']).read_bytes()
     assert len(raw) == item['bytes'] and hashlib.sha256(raw).hexdigest() == item['sha256']
-# Revalidate the frozen tool bytes before every phase, including the direct CLI launch.
+def runtime_bytes(item, path):
+    for key in ('uid', 'nlink', 'bytes'):
+        assert type(item.get(key)) is int and item[key] >= 0, 'RUNTIME_PIN_REQUIRED'
+    for key in ('dev', 'ino'):
+        assert isinstance(item.get(key), str) and item[key].isdecimal() and str(int(item[key])) == item[key], 'EXACT_DECIMAL_IDENTITY_REQUIRED'
+    assert item['nlink'] >= 1 and Path(item['realpath']).is_absolute()
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    try:
+        before = os.fstat(fd)
+        assert stat.S_ISREG(before.st_mode) and before.st_size == item['bytes']
+        for key in ('uid', 'nlink', 'dev', 'ino'): assert getattr(before, 'st_' + key) == int(item[key])
+        chunks, count = [], 0
+        while count <= item['bytes']:
+            chunk = os.read(fd, min(65536, item['bytes'] + 1 - count))
+            if not chunk: break
+            chunks.append(chunk); count += len(chunk)
+        after = os.fstat(fd)
+        for key in ('st_dev', 'st_ino', 'st_uid', 'st_nlink', 'st_size', 'st_mtime_ns'): assert getattr(before, key) == getattr(after, key)
+    finally: os.close(fd)
+    raw = b''.join(chunks)
+    assert len(raw) == item['bytes'] and hashlib.sha256(raw).hexdigest() == item['sha256']
+    assert str(path.resolve()) == item['realpath']
+    return raw
+# The CLI phase gets the same explicit readonly identity pins as the Node caller, without weakening private files.
 for item in inputs['rootToolClosure'] + inputs['runtimeTools'] + inputs['resolvedRootEntries'] + inputs['reusedHelpers']:
     path = Path(item['path']) if Path(item['path']).is_absolute() else Path(inputs['repository']) / item['path']
-    info = path.lstat(); assert stat.S_ISREG(info.st_mode) and info.st_size == item['bytes']
-    raw = path.read_bytes(); assert len(raw) == item['bytes'] and hashlib.sha256(raw).hexdigest() == item['sha256']
+    runtime_bytes(item, path)
 module = inputs['supervisor']
-raw = Path(module['path']).read_bytes()
-assert len(raw) == module['bytes'] and hashlib.sha256(raw).hexdigest() == module['sha256']
+runtime_bytes(module, Path(module['path']))
 spec = importlib.util.spec_from_file_location('svc08_adoption_ops14', module['path'])
 supervision = importlib.util.module_from_spec(spec); sys.modules[spec.name] = supervision; spec.loader.exec_module(supervision)
 run = Path(inputs['executionDirectory'])

@@ -1,0 +1,124 @@
+{
+  "startedAt": "2026-10-07T06:08:50.797494+00:00",
+  "finishedAt": "2026-10-07T06:08:50.937341+00:00",
+  "wallMs": 139,
+  "freeBefore": 24440561664,
+  "source": "472a2a2e37615838779c91a869165f4ed4967c08",
+  "sourceBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+    },
+    {
+      "path": "caller.mjs",
+      "bytes": 16179,
+      "sha256": "97527d480c42a3c78f7e2eeec5f8a299cc4d3ba61a8a028992158d017ed39691"
+    },
+    {
+      "path": "facts.test.mjs",
+      "bytes": 3012,
+      "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
+    }
+  ],
+  "inputBindings": [
+    {
+      "path": "attempt-02/migration-before.json",
+      "bytes": 28292,
+      "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441"
+    },
+    {
+      "path": "attempt-02/replacement-before.json",
+      "bytes": 28292,
+      "sha256": "6c54f2b73cee15fcac46afd53111b32d131cbe7607f0567ed04ce45fd6ab035f"
+    }
+  ],
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/facts.test.mjs"
+    ],
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--check",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/caller.mjs"
+    ]
+  ],
+  "reports": [
+    {
+      "pid": 29330,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 104,
+      "stdout": "\u2714 live Date and identical persisted ISO agree without changing the original facts (2.467125ms)\n\u2714 a different maintenance time still refuses preservation (0.242542ms)\n\u2714 null agrees only with null and does not alias a timestamp or missing value (0.743792ms)\n\u2714 invalid or noncanonical time representations fail closed (1.011125ms)\n\u2714 normalization preserves every other maintenance field and unknown keys for strict comparison (0.956375ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 56.673625\n",
+      "stderr": "",
+      "observed_bytes": 560,
+      "retained_bytes": 560,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 29427,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 31,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "rawBytes": 560,
+  "scratchBeforeCleanup": [],
+  "selectedNewCases": 5,
+  "oldTestsRerun": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "personalReads": 0,
+  "provider": 0
+}

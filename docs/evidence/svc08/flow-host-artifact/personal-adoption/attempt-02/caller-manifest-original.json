@@ -1,18 +1,18 @@
 {
   "generatedAt": "2026-10-07T05:58:32.280796+00:00",
-  "state": "DATE_PERSISTENCE_DELTA_PENDING_REVIEW",
-  "base": "0f8bf516781eeabf86d42c663cbba6a55ef5786c",
+  "state": "RUNTIME_IDENTITY_DELTA_PENDING_REVIEW",
+  "base": "cb2205db380aa9d8bbb6ff42407ac7166d2a073a",
   "originalManifestSha256": "a0a45ea01ab5435c63c0b37c70cf660e4f0c32774a52b0eea719eb1cef4220e4",
   "sourceBindings": [
     {
       "path": "procedure.mjs",
-      "bytes": 5437,
-      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+      "bytes": 4687,
+      "sha256": "443a74a647c1fdaf379eeccea7564149b9839112fdd84704094417349b61552a"
     },
     {
       "path": "caller.mjs",
-      "bytes": 16179,
-      "sha256": "97527d480c42a3c78f7e2eeec5f8a299cc4d3ba61a8a028992158d017ed39691"
+      "bytes": 16147,
+      "sha256": "64ca256eae266705ced645b557becab653701760cd4ed8e35ef066f866d03c3c"
     },
     {
       "path": "supervise.py",
@@ -38,11 +38,6 @@
       "path": "file-readers.test.mjs",
       "bytes": 3123,
       "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
-    },
-    {
-      "path": "facts.test.mjs",
-      "bytes": 3012,
-      "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
     }
   ],
   "runtimeBindings": [
@@ -425,43 +420,86 @@
   ],
   "evidenceBindings": [
     {
-      "path": "facts-delta.md",
-      "bytes": 1890,
-      "sha256": "5eb3f5083ab0e58a951f2e1f381386f62d3b890f25ebd84b573c01b79e146d35"
+      "path": "runtime-identity-fix.md",
+      "bytes": 3260,
+      "sha256": "0d004898bcf8f62eefaf8584a355deaac0ee236c7b595cf00656f57b6a1f0e6c"
     },
     {
-      "path": "facts-run.json",
-      "bytes": 3702,
-      "sha256": "f74c10de57da5f60a161025baf0a0af23e7d4f7282e3e44c76cdc0548dc3279c"
+      "path": "runtime-fix-run.json",
+      "bytes": 5731,
+      "sha256": "a859bb47e5e794dc43c16ec47dbc1f44830fc24b8af77807b4f5074a207d8f68"
     },
     {
-      "path": "facts-run-cleanup.json",
-      "bytes": 225,
-      "sha256": "a585bce8b1cbb0d694b6e5a632de7a38c8f69e71c6bc1a30e61a16a2a10b544c"
+      "path": "runtime-fix-run-02.json",
+      "bytes": 5194,
+      "sha256": "bc4e996149435ab270f38d56933487cccb97cb74b6176f0d490449be60d7373f"
     },
     {
-      "path": "facts-run/1.stdout",
-      "bytes": 560,
-      "sha256": "a21a54031c9af52414d9ce92afaed4b084b9cc9af23d8eecaae925d633d409ef"
+      "path": "runtime-fix-run-03.json",
+      "bytes": 2295,
+      "sha256": "1c5b51b9c013ae599cbb1806b64ef7c6d7e3f9266ce2f208c437a2ad8258f646"
     },
     {
-      "path": "facts-run/1.stderr",
+      "path": "runtime-fix-run/1.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "facts-run/2.stdout",
+      "path": "runtime-fix-run/1.stdout",
+      "bytes": 2618,
+      "sha256": "f289616accc5107331e8bc50dd8ad6d5743b98497f54fc6f5ff2d812c3c3dd58"
+    },
+    {
+      "path": "runtime-fix-run-02/1.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "facts-run/2.stderr",
+      "path": "runtime-fix-run-02/1.stdout",
+      "bytes": 316,
+      "sha256": "39f64ea374e9355ba8967baebcb50be60ef77e6434e6534240a914ff4325dff2"
+    },
+    {
+      "path": "runtime-fix-run-02/2.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-02/2.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-02/3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-02/3.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-02/4.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-02/4.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-03/1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "runtime-fix-run-03/1.stdout",
+      "bytes": 319,
+      "sha256": "de7a807dd399e2142817ed716637fa619a08b383f906a491c0424eead6cb7553"
     }
   ],
   "personalRetry": false,
-  "attempt01Kept": true,
-  "sourceTarget": "472a2a2e37615838779c91a869165f4ed4967c08",
-  "executionBoundary": "r2 consumed; migrated successful, request failed; no personal retry permitted by this source validation; resume-only entry pending"
+  "attempt01Kept": true
 }
