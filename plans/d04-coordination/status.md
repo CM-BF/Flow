@@ -11,13 +11,13 @@
 | 实现目标 | fa6f8835d95e5e59fb62e14db5561498c741a4e3 |
 | 实现范围 | 三测试文件及plans/d04-coordination、docs/evidence/d04；生产源/锁不变 |
 | 检查状态 | PASSED 5/5 pureGit / actualexit0；PG四集成与页面NOT_RUN，旧检查见历史 |
-| Review | [review.md](review.md)，APPROVED_SOURCE_ONLY；当前5项pureGit已实过、结果待独审；PG/页面未复验，不继承旧runtime通过 |
-| 工作分支状态 | in-progress；源码已固定，5项pureGit通过，待结果独审/集成 |
+| Review | [review.md](review.md)，APPROVED_SOURCE_ONLY；当前5项pureGit已实过并获root限定接收；PG/页面未复验，不继承旧runtime通过 |
+| 工作分支状态 | in-progress；源码与5项pureGit获限定接收，待主线接收 |
 | Main 集成状态 | NOT_INTEGRATED fa6f8835d95e5e59fb62e14db5561498c741a4e3；原ea8交付及03:04部署观察保留历史 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 原账本/冲突/负责人展示交付保留；已fresh领取五scope并固定三测试源码；原业务断言保留 |
-| 下一可用交付 | 当前三源限定独审与5项pureGit实际结果可接收；PG/CLI集成是否需要后继定向验证由Lead按范围判断 |
+| 下一可用交付 | 已备固定三测试源主线接收入口；PG/CLI四项未重跑，保该验收边界供Lead接收判断 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -34,10 +34,12 @@
 
 ## 当前测试生命周期后继
 
-当前base `1caac8c4856fed6de59d3f7467885563a187a758`，新实现target `fa6f8835d95e5e59fb62e14db5561498c741a4e3`；新5项pureGit通过、PG/CLI集成及页面NOT_RUN；独立review仍APPROVED_SOURCE_ONLY，实际结果待独审、未集成main。上表ea8历史检查/approval只覆盖旧交付。新claim f61d41f5-644a-4013-bd30-9ea298b9027d v1，原树五scope；未复用原已释放写权。
+当前base `1caac8c4856fed6de59d3f7467885563a187a758`，新实现target `fa6f8835d95e5e59fb62e14db5561498c741a4e3`；新5项pureGit通过、PG/CLI集成及页面NOT_RUN；独立review APPROVED_SCOPED_TEST_LIFECYCLE_SOURCE_AND_5_PUREGIT、未集成main。上表ea8历史检查/approval只覆盖旧交付。新claim f61d41f5-644a-4013-bd30-9ea298b9027d v1，原树五scope；未复用原已释放写权。
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | D04-02-LIFECYCLE | in-progress | d01_owner | [领取/范围](../../docs/evidence/d04/owned-worktree-lifecycle/take-receipt.json)，原D04-02后继，[固定源码/保护输入](../../docs/evidence/d04/owned-worktree-lifecycle/source-manifest.json)；[pureGit5实际结果](../../docs/evidence/d04/owned-worktree-lifecycle/pure-git-20261007/result.json)，本段已结束清理 |
 
 2026-10-07T03:03:10.127590Z 至 03:03:14.159509Z：原五项 pureGit 实际通过，日志/真实 exit0/EOF 与自有 TMP 清理见上方结果；没有重跑原 PG/CLI 四项或 dashboard。
+
+[正常主线接收请求](../../docs/evidence/d04/owned-worktree-lifecycle/main-intake.json)绑定原三测试源与root源码/实际结果独审；不将PG/CLI未运行改称通过，不自行合并main。
