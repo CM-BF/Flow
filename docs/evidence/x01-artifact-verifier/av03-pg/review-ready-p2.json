@@ -1,0 +1,67 @@
+{
+  "state": "P2_DELTA_REVIEW_PENDING_NOT_OPEN",
+  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+  "support": "d3db51c448d112e49d132881dd442656bba04cc8",
+  "basePacket": "3703ee1d1f7a00293e3387791a7818fa0b461b08",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest.json",
+  "manifestSha256": "ae2f5885280eb1eb54f980f0a3ed8827f72f2bbaa3fafbb2f052a80334c5881a",
+  "manifestFiles": 281,
+  "manifestBytes": 1513019,
+  "changedInputPaths": [
+    "apps/server/src/plugin-runtime/verification-pg.test.ts",
+    "docs/evidence/x01-artifact-verifier/av03-pg/closure.json",
+    "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+    "docs/evidence/x01-artifact-verifier/av03-pg/window-request.json"
+  ],
+  "unchangedInputCount": 277,
+  "externalUnchanged": 191,
+  "linksUnchanged": 16,
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+      "bytes": 20283,
+      "sha256": "bc66ee8514f3101296cdafa5433c24ddd902137270a7c58c0fe3014f13f659ab"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+      "bytes": 20283,
+      "sha256": "bc66ee8514f3101296cdafa5433c24ddd902137270a7c58c0fe3014f13f659ab"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure.json",
+      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "bytes": 91001,
+      "sha256": "724bc5fbc0c0506014d6644a5976a625863fc3a5fa49d9f76340f9aa67cd25a7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request.json",
+      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "bytes": 1892,
+      "sha256": "9edb3b3d886fc7765c30c78162f32a9b2521986df0bfc80ddf1ea2305ef9b2a7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/p2-delta.json",
+      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "bytes": 1498,
+      "sha256": "096e6b03bd7f1b080def4dedec7dd397a9e0032ca341180b9f5f0bed4d9e1fd1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/preparation-review-initial.json",
+      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "bytes": 891,
+      "sha256": "fd8a613b2ca391c9d960102f7382b63ccb1e0fbd5f7495abab377f63af9d4544"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-before-p2.json",
+      "commit": "d3db51c448d112e49d132881dd442656bba04cc8",
+      "bytes": 162390,
+      "sha256": "c3d3b3d57dd6be4ecf81e8e67ffbe9bfedbfab308e8f9969a36515c17f4d8ed8"
+    }
+  ],
+  "newDeltaExecution": "NOT_RUN",
+  "previousLocalUnchanged": "Three original attempts types2/types0/list5 retained byte for byte, not transferred to new source.",
+  "reviewRequired": "Only two test corrections and four input row bindings; original manifest archive exact c3d3b3d... unchanged.",
+  "namespaceAbsent": true
+}
