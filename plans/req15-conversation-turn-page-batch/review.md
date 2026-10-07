@@ -1,6 +1,6 @@
 # REQ15 独立审查
 
-状态：PENDING（当前HTTP准备source与局部types/collect结果待独审；旧批准保留）
+状态：APPROVED（仅e099 HTTP准备和local结果；实际HTTP未运行）
 
 Review target commit: e09978682ec573bacd3d79e7c08e915c16368d49
 
@@ -107,3 +107,9 @@ Target `bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148`，2026-10-07 03:47:30 UTC，SO
 status_read，2026-10-07T03:49:40Z，sourcebc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148/packet9df8d4f8b76e9dea9e5ed345a249d81a6e97340a：CHANGES_REQUESTED。唯一P2为execute-http-once.py:148–154在未知child生命周期仍可能rmdir空TMP；其余无P1/P2。227bindings1098267B全符，215snapshot886512B逐main7b6/0444、30SQL/16links/2@flow、4localoutputs7454B/raw271B均核；原2110字符断言正文保留、两auth新增合理；types0/collect1非pass，末态/EOF/TMP原receipt可信。0审者运行或写，外部whole-clock须actual另记，不以内部wall充当全部。
 
 Owner接受；e09978682ec573bacd3d79e7c08e915c16368d49仅修terminal known process守卫并共享该判断，unknown/缺事实保留TMPidentity；manifest3bcbdfc…08d16（227/1098695B）只重绑caller row。fixture/snapshot/原输出/旧supervisor不动，未新增运行。待status_read仅delta复审。
+
+## HTTP准备窄修最终独立结论
+
+status_read / gpt-6-astra，2026-10-07T03:53:34Z，source `e09978682ec573bacd3d79e7c08e915c16368d49` / packet `e3a2db4afacdbcba740c8985c314433485a2384e` fresh clean：**SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2**。唯一P2 CLOSED：execute-http-once.py:35–38统一exit/groupAbsent/EOF/无secondary及历史unknown；:141和:156–158复用，未知/缺process保留inode/retainedReason，:159–162保留原same-identity empty-only门禁。manifest SHA3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16，227/1098695B，仅caller row改变，Git=WT/bytes/hash，errors[]。
+
+此前fixed-main215snapshot/30SQL/16links、原2110字符case正文与401/403、types0+collect1非pass及4原件7454B/raw271B结论保持；原fixture/snapshot/supervisor未改。沿本地find-skills/clean-code/codebase-design，审者0执行/import/tests/PG/写。批准仅准备与已发生local结果，非实际HTTP/PG OPEN。Owner接受，无未解决P1/P2；只归档，不重测。

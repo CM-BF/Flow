@@ -35,3 +35,5 @@ X01 local清理后交本owner；2026-10-07T03:42:05.388211Z至03:42:16.117318Z�
 只读核固定main闭包/动态SQL、原单例断言与新增401/403、生命周期/错误优先级、预算与监督接口；核局部两输出的忠实性与未运行边界。types/collect证明可解析与收集，不能代替实际HTTP行为。独审不启动PG/import/tests；实际结果另按同一工作段收口，不增加逐条批准链。
 
 审查修复：执行封套在删除TMP前要求已得到exit、group absent、EOF且历史observations/signals无unknown、secondary为空；事实缺失或未知则保留原目录/inode。只修caller，旧supervisor/fixture与局部原件不变；http-local-segment中preparationManifest记录的是原bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148历史准备manifest，当前新manifest只重绑这一caller修复，不伪称局部checks执行了wrapper。
+
+2026-10-07 03:54:30 UTC 当前批准：status_read于2026-10-07T03:53:34Z对source e09978682ec573bacd3d79e7c08e915c16368d49给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2，唯一TMP清理P2已关闭。上述准备manifest保留生成时状态；审批事实以唯一review为准。actual HTTP仍NOT_OPEN，必须新的明确heavy窗口，命令expected-head使用最终归档后的真实cleanHEAD。
