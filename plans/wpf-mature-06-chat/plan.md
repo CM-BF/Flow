@@ -212,3 +212,7 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 原 MATURE06 恢复体验后继复用同一[草稿内容层级输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json)：安全名称不可得时用中性标签，不跨身份查名；保不自动发送、未决命令原key/body重试、删除边界和草稿/命令状态区分。仅直接消费者局部验收，个人恢复优先，不重复原完整矩阵。
 
 原 MATURE06-04 / REQ22–23 的恢复记录插件动作后继接收[固定Arc7097七源设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-plugin-action-design.json)：最小record动作context与独立权限，复用私有restore lease/CAS；lazy activation或确认期间关闭重开、disable ABA后旧回调不可复活，不将raw journal或完整draft作为插件参数。后继真实sample验证版本/namespace变化、确认撤销与草稿保护；不新增task或当前VISUAL8/Arc20写权，不倒改已通过appearance结论，个人恢复优先。
+
+- 既有 MATURE06-05 / REQ45 本机听写后继：[GO只读输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/go-local-dictation-followup.json)。先做零麦克风能力确认，实际支持且中文包可用才启本机；语言包只由用户明确下载，不自动安装或静默转远端。复用唯一 DictationAdapter 与跨窗格迟到撤销，当前质量/时延未实测，0新增运行与预算。
+
+- [本机听写 adapter 固定补充](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/local-dictation-adapter-research.json)（原 MATURE06-05 / REQ45）：installed core0.3.22 的 builtin 只检查 constructor，listen 没有 processLocally 参数；未来 on-device-only 须窄 DictationAdapter 显式设置本机模式并核语言包状态，不能 probe 后直接委托 builtin；无 mic/install/能力实测，不新增任务或预算。

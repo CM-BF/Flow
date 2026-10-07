@@ -1,13 +1,17 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T20:49:27.615Z：actual holder=NONE，NEXT=NONE。Arc第二HTTP实际1PASS/1FAIL，2652/30000ms CLOSED；20:48:31.490133Z Node/PGID7418及scratch精确归还，经理已亲读回执。隐藏/排队关闭组通过，backlog公平性组另一个前置断言失败，两轮结果分别保留，不能拼成整体PASS。当前future 18,955,370,496B（含Arc新10min/4MiB窄普通诊断，0HTTP/PG/Chrome）；已消费18,959,564,800B不改。TIMING02普通98/98通过、首红保留/两次473ms，0工程child。个人服务仍停，Original固定修复build未READY；就绪后最高优先。**
+**即时调度 2026-10-07T21:22:32.132Z：actual holder=NONE；唯一NEXT=SVC06B-B692-COLD-INITIALIZATION-20261007-ONCE，Original assignment_review执行已审4da/source32f8与manifest133b。b692/f37a默认3角色/currentnonce初始化，26PG+管理16，215s+.5TERM+2reap（217.5s），0task/provider/Chrome/个人；完整冻结floor17,889,427,456B，新峰值1,244,659,712已计一次不重复。最迟2026-10-07T21:26:32.132Z实际START或明确0child阻点，fresh pins/claim/双namespace/PG闭池后才launch；个人恢复helper不是本cold前置。Arc HTTP两例同轮PASS并完整RETURN，详细请求trace未留存保限定；C4仍准备，个人服务仍停。**
 
 **Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取并在原16MiB普通段实施，唯一source登记待原D05；不与个人恢复抢写。
 
 
+**明确候选顺序：** Q01已完整归还，Original固定构建已归还，新的准确四页兼容和个人恢复准备优先。Arc FIFO30、TIMING02浏览器60、Picker90、Arc浏览器90、AV R2 f44ac/v6均未授；个人新产物准确兼容与恢复继续最高优先。实际已启动阶段不被后来准备打断。
+
+**预算剩余来源对账（不阻构建）：** [现有算术注](host-i01-newpair-queue-20261007/resource-residual-arithmetic-note.json)确认13,440,909,312B已扣R1/R2/R3封存3,462,397,952B，不能再扣；内含两DB规划268,435,456B，其他13,172,473,856B待两lead既有回执逐来源映射。不置零/扫描/删除/重测，也不改变本次冻结build或旧Qgate。
+
 **Original 后继依赖（不取权）：** 既有X01-VERIFIER-RUNTIME01候选五leaf中runtime.ts仍由个人恢复原作者持权；请其源码/独审安全点给出后续STOP→partial amend时机，当前继续写也明确即可。未来db_transaction_owner等VAR固定接口后fresh接权，不触main.ts、不建第二调度器、不碰dirtyVAR，当前0新增长/0claim/0运行。
 
-**Original 个人恢复当前准备：** 窄修de779已main57ab；下一产物只组合固定04da、两host接缝与当前runner初始化证据，旧cd27/7d1不改，不带moving-main插件/slots/DDL或PROCESS3d6。779网页不重建，新后台tuple须补三保留网页及779的准确兼容报告。当前0build/个人launch pending，maintenance23仍停；新fixedsource build候选峰值2,317,352,960B已计一次，420s work复用原builder，尚未READY/未授权；准备不预占NEXT，真实READY后恢复最高优先。
+**Original 个人恢复当前准备：** 已审builder source8a0/deliverycb263，固定ref `codex/svc06b-recovery-runtime` / f37a3612068c7215994750574a7451ede841bcce / tree de843e0fda82600b4d7600c76614c9794c17e3af，仅04da+7已审源码，packages/SQL/晚logout/App合同不变；未生成artifact，不带movingmain插件/slots/DDL。现已21:14:03.021Z实际START；420s work+.5TERM+2reap，完整冻结floor18,933,678,080B。其后461a/caa1/d629/779四页须对新artifact新tuple正式兼容，旧C3不改签、779不重建，个人仍停机。
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -33,7 +37,7 @@
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release已验证/main/释放；VISUAL accev1/exact8源码STOP，Recovery两项双图PASS，Picker90 READY未运行。W01在独立TIMING02 d26acv1/exact9实施，局部98/98通过、首红保留，浏览器未运行。Arc c34dv1/exact20保留，两次HTTP各1PASS/1FAIL分别封闭，第二次资源已归还，现原scope窄普通诊断；浏览器4组未运行。I01已main/释放。个人服务未恢复；领取、源码工作、运行和用户可用性分别记录。
+**当前领取与工作状态：** Release与I01已main/释放；VISUAL已领取STOP，Recovery两项双图PASS，Picker90准备已审未运行。TIMING02独立exact9 SOURCE_STOP，98局部PASS，60秒浏览器候选源码/native已审但未运行；Arc独立exact20 STOP，两次HTTP各自FAIL保留，新FIFO30和四组浏览器90准备已审均未授。Q01资源已归还，真实两PG目标通过但调用器首FAIL保留，窄selector修复待独审。个人服务未恢复。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

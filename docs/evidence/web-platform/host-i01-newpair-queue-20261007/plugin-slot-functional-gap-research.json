@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T21:17:36.007188+00:00",
+  "task": "Existing REQ22/23 and MATURE06 plugin extensibility backlog; not newscope or runtime dependency",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "researcher": "workspace_panels_owner / GPT-6 Astra Ultra; fixed six-source readonly pass",
+  "rootReview": "Root independently read fixed session AppActions/dispatch, WorkspaceContributions/PluginWorkspace, and public slot/command types; confirmed the two concrete command gaps below. No host-validation or complete controller audit claimed.",
+  "pins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "blob": "91f706f92e0debadcec68cad31da6b385c8db3fd"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "526114eabd81d82e8abce7eb06a48bfd3b8f061f"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "blob": "478f8f2130cfa43bb192ca1574dd385c7eb1740c"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "blob": "0089f655fc9eb4280934333aaddaac220e8277f2"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "blob": "a98aa0643773381844494bb4c550018047b7eb18"
+    },
+    {
+      "path": "apps/web/src/plugins/sample.tsx",
+      "blob": "09620669e2faec0c2c78538b7c51bc84aa08df78"
+    }
+  ],
+  "findings": [
+    {
+      "area": "Sidebar",
+      "implemented": "Header/item/footer real slots; conversation/task item identity; existing conversation/chat open commands.",
+      "candidate": "A typed new-draft command may delegate current App newChat guards if plugin use needs it. Search/sidebar visibility may remain private host controls; add-button extensibility does not require every internal callback to become public.",
+      "source": "App1053-1082;session126-138"
+    },
+    {
+      "area": "Workspace and pane tabs",
+      "implemented": "chat.tab.actions carries workspace/pane/view identity; open/close/split/merge/swap/resize layout interfaces already exist.",
+      "candidate": "Workspace-tab create/select/close needs its own resource target if opened to plugins; do not reuse right-side task workspace context. Existing private invocation lease and prepare/commit authorization must remain.",
+      "source": "App1151-1170;types94-96;layout45-59;sample53-55,119,126"
+    },
+    {
+      "area": "Thread composer",
+      "implemented": "Actual message/composer action slots exist.",
+      "gap": "flow.composer.insertText is publicly typed and called by the sample action, but session dispatch intentionally rejects it and AppActions has no editing port. Slot presence is not functional insertion support.",
+      "candidate": "Future narrow private draft editing capability must capture target before async activation and recheck full draft ownership/CAS/connection/visibility on commit, including settings-only mutation and A-B-A changes. Never insert into whichever composer is currently focused or duplicate draft state.",
+      "source": "types102;session55-75,160-161;sample141,146"
+    },
+    {
+      "area": "Right-side extension panels",
+      "implemented": "workspace.tabs renders registered panel contributions; selected/visited state and keyboard navigation already have one owner. workspace header/actions/artifact slots mount.",
+      "gap": "flow.workspace.open only accepts taskId and builtin WorkspaceTabId; it cannot programmatically select an arbitrary registered contribution such as sample.notes.panel.",
+      "candidate": "A future typed reveal-registered-contribution command can route to the same selection owner. Resolve a current registered panel and valid plugin/context at invocation and after activation; ignore/reject stale disable/version/context transitions, preserve existing visited state and focus behavior. No second panel store, DOM callback or client exposure.",
+      "source": "session139-145;react199-233,261-266"
+    }
+  ],
+  "triage": [
+    "The four slot categories already exist; do not rebuild them or add a generic router.",
+    "Right-panel reveal is the smaller functional extension candidate. Composer insertion requires prior draft ownership/CAS interface design and behavior tests. Neither belongs in current Arc20 scope or its pending runtime gate.",
+    "Keep root Recovery-action research separate; no duplicate feature proposal. Manager may record these findings under existing plan only, then obtain lawful handoff/fresh exact claim for any implementation."
+  ],
+  "suggestedFutureAcceptance": [
+    "Registered panel revealed by contribution ID; unknown/non-panel/inactive IDs rejected; async activation revoked by disable or context replacement does not change current selection.",
+    "Keyboard and close focus target remain connected/current; panel selection does not silently change thread/task or reread hidden heavy details.",
+    "Composer insertion handles settings-only draft changes, A-B-A ownership replacement, late callback, failed authorization, and preserve-original-draft behavior."
+  ],
+  "cleanCode": "Use existing typed command dispatch, one selection/draft authority and smallest private port. Distinguish mounted slot, declared API and real command implementation.",
+  "actions": "No project files, tests, PG, HTTP, Chrome, microphone or provider operations. AgentSTOP after bounded read. New command names are proposals, not current APIs."
+}

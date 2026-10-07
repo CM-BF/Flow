@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:48:33.089Z；个人服务仍停机待恢复；组合工作区已修复首次HTTP验证前置，短验证待开始；看板时间与阻塞阅读改进正在实施。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:16:17.304Z；固定恢复产物构建完成并归还资源，正在准备新版本兼容；个人服务尚未恢复，网页尚未切换。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
 | 当前阻塞 | ACTIVE: 个人更新刷新失败后服务已停止，原执行者正在准备固定修复产物与恢复流程；尚未恢复接单，也未发布新网页。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：当前无活动重项与下一重项。组合工作区两次HTTP结果分别保留，第二次资源已归还，原作者定位剩余断言；个人恢复就绪优先。隔离源码和已授局部检查继续。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：当前无活动重项；已选择恢复产物的三角色隔离冷启动验证，尚未实际启动。组合工作区两项HTTP验证已通过并归还；个人服务仍未恢复。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

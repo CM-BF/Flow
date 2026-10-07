@@ -1,0 +1,105 @@
+{
+  "recordedAt": "2026-10-07T21:04:52.098180+00:00",
+  "logicalId": "Q01-PAUSED-QUEUE-PG-20261007-ONCE",
+  "executionHead": "46912dfdf1fcdaa17484809b21b55e216ab83b95",
+  "source": "103232eeab0f861e1ab87f496e9b9f0f1c068965",
+  "runtimeSha256": "834873779db710e402bd4a1807a4801d1118378720312dedfc2dce994b500381",
+  "actualOutcome": "CALLER_FAILED_SELECTION_INTERPRETATION; originalresult unchanged",
+  "businessEvidence": {
+    "vitestSuccess": true,
+    "passed": 2,
+    "failed": 0,
+    "skipped": 32,
+    "selected": [
+      {
+        "title": "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
+        "status": "passed",
+        "duration": 387.78629200000023
+      },
+      {
+        "title": "keeps pause CAS authoritative when a candidate scan races promotion",
+        "status": "passed",
+        "duration": 25.042167000000063
+      }
+    ]
+  },
+  "finding": {
+    "location": "entry.py selected_passed",
+    "cause": "filters only pending; fixed Vitest4 emits skipped for32 unselected assertions, thus len(tests)=34 instead of2",
+    "reproduction": "static direct comparison to preserved vitest.json; no second test or PG run",
+    "repair": "pending separate authorized source/pure validation; preserve original callerFAIL"
+  },
+  "timing": {
+    "readyWaitingStart": "2026-10-07T20:39:15Z",
+    "operatorDispatchAt": "2026-10-07T21:03:03.470293Z",
+    "entryOriginMs": 1791406983511,
+    "entryOriginUTC": "2026-10-07T21:03:03.511000+00:00",
+    "supervisorMs": 2867,
+    "elapsedBeforeReceiptMs": 2944,
+    "fullReturnConfirmedAt": "2026-10-07T21:03:18Z",
+    "limitations": "Confirmed-at is readback clock, not inferred end;2944ms samples before receipt/print. No mtime/commit inferred start/finish."
+  },
+  "resources": {
+    "childPid": 83774,
+    "finalOwnedState": "absent",
+    "capture": "merged",
+    "eof": {
+      "stdout": true
+    },
+    "rawBytes": 179,
+    "firstFailure": null,
+    "secondary": [],
+    "signals": [],
+    "resourceClosed": true,
+    "scratch": "REMOVED_EXACT_ENOENT",
+    "cleanup": {
+      "database": "flow_s01q01_60595ad67b6e4a279faded7833d160ab",
+      "identity": {
+        "oid": "1352368",
+        "owner": "flow",
+        "marker": "s01q01:870e6c1e-dc20-4343-89e7-e0af4d1e478c"
+      },
+      "requested": true,
+      "created": true,
+      "durableIdentity": true,
+      "connections": 0,
+      "absent": true,
+      "cleanupConfirmed": true,
+      "errors": [],
+      "httpCount": 76,
+      "httpBytes": 27448,
+      "databaseSamples": [
+        {
+          "phase": "created",
+          "bytes": 7602703
+        },
+        {
+          "phase": "listening",
+          "bytes": 12516375
+        },
+        {
+          "phase": "before-drop",
+          "bytes": 12770327
+        }
+      ],
+      "plannedWalReserveBytes": 134217728,
+      "verification": "NO_FAILURE_RECORDED",
+      "state": "CLOSED"
+    },
+    "logicalBytesBeforeCleanup": 12580,
+    "tmpBytesBeforeCleanup": 0,
+    "storageWithinBudget": true
+  },
+  "postBindings": {
+    "files": 284,
+    "aliases": 36,
+    "mismatches": []
+  },
+  "limits": [
+    "One authorized PG run only;32old cases not executed. No performance/capacity inference.",
+    "24configuredconnections not measured peak; admin preflight available94>=40 andclosed.",
+    "DB samples not peak;128MiB WAL reserve not measured WAL.",
+    "Business2pass does not rewrite callerexit1/testPassedfalse; no automatic retry or sourcefix.",
+    "No current task completion/main integration claimed."
+  ]
+}

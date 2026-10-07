@@ -606,3 +606,5 @@ GO 2026-10-07 20:09 对实际4320与固定c29的只读观察：human.mjs 的 blo
 上述首屏排序验收复用[固定源码与六类定向输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-first-screen-priority-research.json)：打乱registry仍按owner priority稳定、关键词不影响、tie/unknown确定、父子事实独立、精确UTC可下钻、Arc领取到来源登记转换。只纳原37/TIMING02，不新增task或当前产品写权。
 
 2026-10-07现空闲W01顺序恢复既有TIMING02，并在相同阅读层承接原WPF001-37；独立dashboard-task-timing-readability树/分支，候选exact9为status/human/app/styles、status-timestamps/human-summary/task-timing三个既有测试及唯一新TIMING02计划/证据目录。与原七范围相比仅加human和对应summary test，原因是owner priority的既有helper入口需直接验证。原scope仍须fresh全局冲突和原子take，不继承旧已releasedclaim；当前25min16MiB普通源段/必要pure累计60s，浏览器未授。用户可用性摘要由原owner供给，Original FLOW priority与D05 Arc来源仍原writer负责，UI不推断或改写源事实。
+
+- GO明确时间记录纪律沿现 TIMING02 / WPF-001-37：每个作者在唯一status记录真实开始、交审与等待起止，完整验收后才填完成；旧首次开工无原件则保UNKNOWN。段结束不等任务完成，精确UTC与来源留详情；不为补metadata打断产品或重跑已绿检查。

@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T21:12:35.391455+00:00",
+  "kind": "READ_ONLY_EXISTING_IAB_OBSERVATION",
+  "url": "http://127.0.0.1:4320/",
+  "tab": {
+    "browser": "2",
+    "id": "3",
+    "title": "Flow · 项目进度"
+  },
+  "observedPageSync": "2026/10/7 14:11:30 local; displayed owner records/claim observation",
+  "method": "Read current accessibility state of an existing user tab. No new tab/browser, navigation, refresh, credential disclosure, claim mutation or test run. Initial URL lookup was ambiguous between tabs1/3; tab3 was explicitly selected for read-only inspection.",
+  "visibleFacts": {
+    "planCount": 208,
+    "currentUnregisteredClaimIds": [
+      "WPF-WORKSPACEARC01",
+      "X01-VERIFIER-ADMISSION-RESULT01",
+      "WPF-DASHBOARD-TIMING02"
+    ],
+    "sectionTitle": "已领取，进度来源待登记",
+    "sectionExplanation": "仅显示领取事实，不推断工作进度。负责人登记唯一 status 后可查看详情。",
+    "eachCurrentClaim": "active and latest unchanged-observation note; each has an explicit details entry. Their collapsed claim details were not opened or reverified in this UI observation.",
+    "oldReadingSurface": "WPF-PLUGIN-RUNTIME01 remained expanded and focused. It explicitly said the record was no longer in the current unregistered list and that the retained old reading did not establish current occupancy or release. Its historical owner/branch/worktree/scope and old observation time remained readable.",
+    "resourceStatus": "Q01 card states original selector counted32skipped and original runFAIL; shared runtime holder is a separate management record, not inferred from this UI.",
+    "unknownTimes": "Unknown task starts/ends remain explicit; no invented progress/ETA."
+  },
+  "conclusion": "User take-visibility requirement remains represented by the existing ledger view; three real claims still await the sole D05 source mapping. Missing registration must not be interpreted as unclaimed. No new second status or registry writer is needed.",
+  "followup": "Existing three-source registration request already names D05 as sole writer; manager should verify actual sourceCurrent/matchesSource after that owner reports deployment, rather than repeatedly polling before change.",
+  "presentationConstraint": "Existing GO11:44 requirement keeps long technical owner details in drill-down and prioritizes distinct parent tasks on front page. This observation does not reopen that accepted design or invent a new owner-label feature.",
+  "limitations": [
+    "No current claim scope/identity refresh beyond previously recorded API receipt",
+    "No new screenshots or visual approval",
+    "No live-source registration success asserted",
+    "No dashboard mutation"
+  ]
+}

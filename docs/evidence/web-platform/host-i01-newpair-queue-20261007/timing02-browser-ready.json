@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T21:15:54.506894+00:00",
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "metadata": "9503272922a38f2cd7d163332a83b8139187451f",
+  "bindingSha256": "eddda09eb1d6d75cba442d6ad22c09ee53f3d1fc0d816d1ca981bec77b051cdc",
+  "manifestSha256": "11e66e7652131c954aa6efc5bcdd3c10f59a914180d09631b2492552639f12f3",
+  "parentSha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab",
+  "workerSha256": "9744fa30095bfdf7c4c9a0969096c332e7f757e34215e2be9e0b3de67a29b533",
+  "unchangedManifestItems": 13,
+  "manifestItems": 14,
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+    "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+  },
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+    "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+  },
+  "allNineScopes": "STOP; claim retained",
+  "gate": null,
+  "runtimeGrant": null,
+  "childStarted": false,
+  "priorPreserved": "/private/tmp/timing02-approved-before-20261007",
+  "segmentStart": "2026-10-07T21:15:17Z",
+  "segmentDeadline": "2026-10-07T21:18:17Z",
+  "capBytes": 65536,
+  "conservativeSegmentBytes": 51532,
+  "remoteEqual": true,
+  "dirty": false,
+  "stopAt": "2026-10-07T21:15:59Z"
+}

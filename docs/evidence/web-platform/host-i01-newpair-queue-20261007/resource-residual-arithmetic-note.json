@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T21:10:53.522290+00:00",
+  "state": "READ_ONLY_TARGETED_RESIDUAL_RECONCILIATION_NOTE_NOT_ADMISSION",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+  "sourceRecordedAt": "2026-10-07T21:05:26.628Z",
+  "sourceSha256": "1b6e64bf8800c5f45fe36cb26ae4b1d51771a2a7652de83bf38556b08aaf3809",
+  "currentResidualBytes": 13440909312,
+  "existingReconciliation": {
+    "priorResidualBytes": 16903307264,
+    "classifiedNoGrowthBytes": 3462397952,
+    "remainingResidualBytes": 13440909312,
+    "retainedR1R3DBGrowthInsideResidual": 268435456,
+    "terms": [
+      {
+        "term": "R1 sealed clone/private/raw",
+        "bytes": 1109393408,
+        "arithmetic": "1073741824+33554432+2097152",
+        "evidence": "svc09a-host-window-return.json; root relayed original owner sealed namespace/no future writes",
+        "DBRetainedPossibleGrowthBytes": 134217728
+      },
+      {
+        "term": "R2 sealed pre-IO rejected namespace",
+        "bytes": 1243611136,
+        "arithmetic": "full candidate cap: clone1073741824+private33554432+PG134217728+raw2097152",
+        "evidence": "svc09a-r2-host-window-return.json explicitly fixtureDatabaseCreated=false/setup before services; original owner no further namespace writes",
+        "DBRetainedPossibleGrowthBytes": 0
+      },
+      {
+        "term": "R3 sealed clone/private/raw",
+        "bytes": 1109393408,
+        "arithmetic": "1073741824+33554432+2097152",
+        "evidence": "svc09a-r3-host-window-return.json; fixed42c181 original result review; sealed namespace/no further writes",
+        "DBRetainedPossibleGrowthBytes": 134217728
+      }
+    ]
+  },
+  "arithmeticMatches": true,
+  "finding": "The current13,440,909,312 residual already subtracts the3,462,397,952 R1/R2/R3 no-growth classification from16,903,307,264. Do not subtract these same closures again. Top-level derivation text still starts from the earlier legacy arithmetic; follow explicit reconciliation table and identify remaining component origins before changing the residual.",
+  "next": "Resource owner can map remaining legacy inputs to sealed ordinary/unknown KEEP and still-possible DB/WAL growth using existing receipts and finite lead inputs. This review proves arithmetic only, not that every remaining component can be removed. Do not delay current ready recovery build or alter consumedQ gate.",
+  "actionsNotTaken": [
+    "no disk/DB scan",
+    "no process probe",
+    "no deletion",
+    "no tests or runtime",
+    "no project write",
+    "no budget/holder mutation"
+  ]
+}

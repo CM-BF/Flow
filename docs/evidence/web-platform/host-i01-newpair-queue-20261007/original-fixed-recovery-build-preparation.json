@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T21:07:40.572Z",
+  "state": "FIXED_BUILD_ONLY_READY_FOR_REVIEW_NO_ACTUAL_WINDOW",
+  "source": "8a0c2739ff6d141731efb7d5d685d2293ad3a434",
+  "compositionCommit": "a8f9125aeb8335a5eaf51ee19391888067585b61",
+  "artifactSource": "f37a3612068c7215994750574a7451ede841bcce",
+  "artifactSourceTree": "de843e0fda82600b4d7600c76614c9794c17e3af",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2797,
+      "sha256": "4c86e7bb1f91ac6585b61661568fb1e07b399c3520478fc77bff8db49fde5989"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4352,
+      "sha256": "af297cb6c74372fe5d45673b54f6c3b88e47d37a54444a791da5cbb6a5957263"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-supervise.py",
+      "bytes": 991,
+      "sha256": "10031a0b529a6bef64f314d00ed20d876a5836c4967f1c06dc830d4fda53cde9"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-inputs.json",
+      "bytes": 4311,
+      "sha256": "c6280171555e69db4649688c67578a7a7d19752a7c26cb9f0db1b0fe29489b5d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build.test.mjs",
+      "bytes": 1753,
+      "sha256": "0463ddaf65f5360b8deebb85735e6ec1eea51177a661811b36b9caa49e543697"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build.test.py",
+      "bytes": 3103,
+      "sha256": "fd9c4c980df7be87a267e1bd2b236ac7c045d7867e6f0ffb4053846fde327b0d"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-proposal.md",
+      "bytes": 3122,
+      "sha256": "13d81af0cabbad8685c27577e0b298cbbf17929e4933f05a06237fa2c6d81699"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-01-reservation.json",
+      "bytes": 1983,
+      "sha256": "14d4c27de06de8d2b78e53c695e5a14acb470cc9bfa59b91de7d37588d357d01"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-01-failure.json",
+      "bytes": 768,
+      "sha256": "725eced5d32522bef53bee18035fb130a126f8d5693a399560edb0c1a4e52002"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02-reservation.json",
+      "bytes": 1860,
+      "sha256": "02fba98b8b7c9fbe28ae51466e1d55b95ee00556a410f70f587e258a42adf47e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02-1-scratch.json",
+      "bytes": 101,
+      "sha256": "a8ff6633e9e926a6b5858574b90bf3c86f17236f805aa63b73717673bf17f8c2"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02-1-outer.json",
+      "bytes": 902,
+      "sha256": "fa4ccaffd88ed44b42f159ffa6363438267fcb8c92a1fd10feb93dbdb6e150a1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02-2-scratch.json",
+      "bytes": 101,
+      "sha256": "b3f88ca402a5553540fb3f6814862e6f1e298949f4a8e316938bd1d8cd8fe5c7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02-2-outer.json",
+      "bytes": 955,
+      "sha256": "a0f2e078a8fa32566a16f239b603ff30af448556a64ae5a9233413b41ce96dd0"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-02.json",
+      "bytes": 4504,
+      "sha256": "ca2883ac25755626cfcba3694a0b60da9e9cd106df8f4ff9b386e82eb1c711ba"
+    }
+  ],
+  "inherited": [
+    "docs/evidence/svc06/browser-recovery/build-inputs.json@82873e84 (input itself binds original40316B/19runtime and shared builder/proof/OPS14)",
+    "docs/evidence/svc06/browser-recovery/recovery-source.json@a8f9125aeb8335a5eaf51ee19391888067585b61",
+    "I02/docs/evidence/i02/svc06b-recovery-source-composition.json: controlled fixed7path Git tree"
+  ],
+  "actualNamespaceAbsent": true,
+  "runtimeChanges": "No installation or dependency changes. Original19 runtime inputs and caches remain inherited; fresh execution rechecks each original binding. Newinput pins exact prior/composition/sharedentry/proof/OPS14.",
+  "localResult": {
+    "nodeCases": 2,
+    "pythonCases": 2,
+    "elapsedMs": 161,
+    "rawBytes": 698,
+    "groups": "2 absent/dualEOF",
+    "tmp": "2 exactempty removed",
+    "firstCallerFailure": "Original unpersisted child reports UNKNOWN; charge maximum25s and preserve forward8MiB scratch+128KiB raw cap, no pass/cleanup claim"
+  },
+  "limits": {
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "additionalBytes": 2317352960,
+    "rawBytes": 2097152,
+    "opsCaptureBytes": 1048576,
+    "liveReserveBytes": 1073741824,
+    "originalFreshBytes": 3927965696,
+    "requiredFresh": "max(original floor, current authoritative total team floor) before actual START"
+  },
+  "review": "PENDING",
+  "actualBuild": "NOT_RUN",
+  "coldStartup": "NOT_RUN_SEPARATE_GATE",
+  "fourAppNewTuple": "NOT_RUN_SEPARATE_GATE",
+  "personal": "NO_AUTHORIZATION_CONSUMED",
+  "unresolvedFirstLocalAllocation": {
+    "scratchBytes": 8388608,
+    "rawBytes": 131072,
+    "totalBytes": 8519680,
+    "disposition": "UNKNOWN_RETAIN_FORWARD_CAP_NOT_RELEASED",
+    "evidence": "recovery-build-local-01-failure.json",
+    "rule": "Next build complete fresh floor must explicitly include this cap once. Second-round cleanup is separate; no resource scan/deletion or child closure is inferred."
+  }
+}

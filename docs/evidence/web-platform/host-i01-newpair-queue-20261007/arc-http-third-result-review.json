@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-07T21:22:40.099347+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "APPROVED_SCOPED_TWO_HTTP_TEST_RESULTS_AND_REPORTED_RESOURCE_RETURN",
+  "blockingFindings": [],
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "execution": "d6af8a89217c53c1e5b12b30bd41d11c89bc7579",
+  "callerSha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2",
+  "grantSha256": "623034380d01e6faf65ad57c4b1cb0bf79b7b9d4600e9a2efbf6eb05d47abd6c",
+  "originals": [
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/actual-grant.json",
+      "bytes": 455,
+      "sha256": "623034380d01e6faf65ad57c4b1cb0bf79b7b9d4600e9a2efbf6eb05d47abd6c"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/preflight.json",
+      "bytes": 2518,
+      "sha256": "b76797161535b817c91eee223810db8deb8ad021681229f721519588d3fca0ca"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/segment.json",
+      "bytes": 4154,
+      "sha256": "90eae26e26eb6d77bf9bcf41753086dcb26ce7c693350edcbb4658b8de28610e"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/direct-1.json",
+      "bytes": 5112,
+      "sha256": "b4b443b404b68b37cfb7758eb78828b2442a0f4ef04e9ad55b972a08aee68dab"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/direct-1.log",
+      "bytes": 87,
+      "sha256": "70e01a12a2673fd4b4015d7b773b2f1bf5a339edbcdc19f83be487d7ce69adc1"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/direct-1.outer.log",
+      "bytes": 3505,
+      "sha256": "36d6108936350ca81562d5adfa617fd7e801e7a0a918072d849c2f01e97f0cc8"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/actual-tool-exit.json",
+      "bytes": 331,
+      "sha256": "659439345a824f7c8e8fd9ca2125f4697640899ead9da8a5277cfb47d2d0db7d"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/post-cleanup.json",
+      "bytes": 395,
+      "sha256": "5dc6b33417c37ba318a88b82f992ede1e27c46e18385a616fca76d533e043b00"
+    },
+    {
+      "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/accounting.json",
+      "bytes": 814,
+      "sha256": "8cadbf877d78552b8c79a81ab9426cce6840890d78576ed9a18d58c065bae3d2"
+    }
+  ],
+  "selected": {
+    "passed": 2,
+    "failed": 0,
+    "notSelected": 11,
+    "names": [
+      "Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",
+      "Arc removes hidden or closed FIFO waiters without retaining a reserved lease"
+    ],
+    "actualChildExit": 0,
+    "actualToolExit": 0
+  },
+  "validation": "Read actual Vitest JSON and match two exact selected test titles/statuses against fixed binding;11 skipped remain unexecuted. Prior source oracle/HTTP caller approvals11e317 and peer review reused without rerunning. Actual binding+grant digests match.",
+  "lifecycle": {
+    "actualStart": "2026-10-07T21:19:49.284032+00:00",
+    "pid": 32681,
+    "pgid": 32681,
+    "parentChildChargeMs": 2912,
+    "phaseLimitMs": 30000,
+    "phase": "CLOSED",
+    "unusedMs": 27088,
+    "unusedTransferred": false,
+    "fullReturnConfirmedAt": "2026-10-07T21:20:31.866175+00:00",
+    "postReceipt": {
+      "pid": {
+        "id": 32681,
+        "state": "ESRCH"
+      },
+      "pgid": {
+        "id": 32681,
+        "state": "ESRCH"
+      },
+      "at": "2026-10-07T21:20:31.866175+00:00",
+      "scratchAbsent": true,
+      "fixtureAfterEach": "selected tests completed; no afterEach/hook error in report; exact fixture server.close in fixed source",
+      "independentPortProbe": false,
+      "regularFileLogs": true,
+      "dualEOFClaim": false
+    },
+    "regularFileLogs": true,
+    "independentOuterWallMs": "UNKNOWN_NOT_SEPARATELY_MEASURED",
+    "independentDualEOF": false,
+    "HTTPClosureProof": "Selected source fixture cleanup hooks completed without error and owned PID/group freshESRCH. No independent port probe claimed."
+  },
+  "scope": "Actual contract-compatible HTTP fixture validates complete-batch FIFO and hidden/closed waiter disposal. This is not center integration, four-browser-group acceptance, visual/keyboard/narrow-theme proof or main integration.",
+  "evidenceCorrection": {
+    "requestTrace": "NOT_RETAINED",
+    "finding": "Vitest JSON reporter did not retain the planned console.info ARC_FIFO_TRACE in direct-1.log/JSON. Log is87B report-written notice only. Author corrected its earlier claim; no trace synthesized.",
+    "impact": "Exact assertions pass against the previously reviewed held-response test design. Independent reconstruction of raw HTTP request order is unavailable. Approval is limited to actual selected test results, not an independently captured request trace. No rerun solely to recolor or augment already-passing evidence."
+  },
+  "history": "First and second HTTP FAIL remain separate immutable phases; this third independent run is the first two-selected-case PASS. Top-level segment NOT_GRANTED is the unchanged historical proposal field; explicit actual grant and attempt+accounting establish actual run/CLOSED.",
+  "cleanCode": {
+    "scope": "Result selection/accounting and proof boundaries",
+    "findings": "Skipped entries excluded explicitly; retained evidence limitations and historical proposal separated from current result. No product/caller changes or broadened checks required."
+  },
+  "actions": "Read only; no process probe, port probe, engineering test, product import, project write or repeat runtime."
+}

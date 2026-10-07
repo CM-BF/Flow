@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-07T20:55:05.965Z",
+  "source": "GO prior readonly research relayedbyroot; managerarchivesprovidedinput,noindependentbrowsermeasurement",
+  "existingTasks": [
+    "WPF-MATURE-06-05",
+    "WPF-REQ-45"
+  ],
+  "links": [
+    "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/processLocally",
+    "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/available_static",
+    "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Permissions-Policy/on-device-speech-recognition"
+  ],
+  "input": [
+    "processLocally=true and available({langs:[target],processLocally:true}) withfourstates available/downloadable/downloading/unavailable. Defaultfalse mayusebrowserremote; callableAPI isnotprooflocaloffline.",
+    "ReuseexistingcomposerDictationAdapter. EnablelocalonlyifactualsupportandChinese packavailable;unsupported/policyblocked retainseditabletext,no silentremote fallback.",
+    "Languagepackdownload onlyexplicituseraction, noautomaticinstallonload. Firstfuturestep0miccapabilityprobe; thenstopawaitfinal/cancel-drops/crosspanelateinvalid underexistinglease.",
+    "No secondrecordingentry or react0.15.23/core0.3.22 upgrade."
+  ],
+  "notMeasured": [
+    "IAB/Chrome actualsupport",
+    "Chinesequality",
+    "latency"
+  ],
+  "actual": {
+    "microphone": 0,
+    "install": 0,
+    "provider": 0,
+    "newBudget": 0,
+    "newClaim": 0
+  },
+  "priority": "Existinglowpriorityfollowup afterpersonalrecovery/currentdeliveries; notcurrentimplementationacceptance."
+}

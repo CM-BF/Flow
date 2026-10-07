@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T21:03:50.862069+00:00",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "metadata": "5854c3351a7e9b489cfac46d45bcbec3448f0f2a",
+  "branch": "codex/dashboard-task-timing-readability",
+  "claim": {
+    "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "allNineScopes": "SOURCE_STOP; retained ACTIVE; no product modifications in this preparation",
+  "packet": "/private/tmp/timing02-b1",
+  "binding": {
+    "path": "/private/tmp/timing02-b1/binding.json",
+    "sha256": "54d850ea1b75dddd1c443a6df7685dcdcc163df07ce8acc1978c4857a58fa310"
+  },
+  "manifest": {
+    "path": "/private/tmp/timing02-b1/manifest.json",
+    "sha256": "25d4186e7e702c963df364e7e277e47d5075fb4b651e0723614f2025cf148a34"
+  },
+  "parentSha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab",
+  "workerSha256": "9744fa30095bfdf7c4c9a0969096c332e7f757e34215e2be9e0b3de67a29b533",
+  "state": "SOURCE_PREPARED_NOT_RUN_PENDING_CALLER_NATIVE_REVIEW",
+  "gate": null,
+  "nativeApproval": null,
+  "runtimeMs": 0,
+  "optionalLocalSyntaxMs": 32,
+  "proposal": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "one dynamic loopback timing DTO fixture; CDP is separate dynamic owned Chrome listener",
+    "floorBytes": 18926075904,
+    "floorMeaning": "Future complete fresh floor; no actual allocation",
+    "expectedImages": 2,
+    "newVisualImages": 2
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-timing02-source-local-review-20261007.json",
+    "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019"
+  },
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/browser-preparation.json",
+  "scope": "Six existing behavior groups/two images only; source/local accepted, browser/main/deployment unverified",
+  "packetBytes": 102804,
+  "growthBoundBytes": 4194304,
+  "growthActualApproximation": "Whole current changed metadata files plus all new private packet/scripts/ledger observation/syntax logs, counted conservatively; dependencies are read only. Unchanged prior implementation/records excluded.",
+  "remote": "5854c3351a7e9b489cfac46d45bcbec3448f0f2a",
+  "remoteEqual": true,
+  "dirty": false,
+  "stoppedAt": "2026-10-07T21:04:13.236661+00:00",
+  "growthLogicalBytesConservative": 344727
+}

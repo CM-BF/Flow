@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T21:21:01.158033+00:00",
+  "scope": "Existing GO task-time/slow-work investigation; observational evidence only, no second hand-filled task state",
+  "windows": [
+    {
+      "event": "Q01 full RETURN confirmation to canonical holder release",
+      "start": "2026-10-07T21:03:18+00:00",
+      "end": "2026-10-07T21:11:17.880+00:00",
+      "basis": "Mika original full-return-confirmed relay; D01 actual minimal atomic update receipt",
+      "meaning": "Publication lag after resources were already returned; not PG test duration or remaining occupancy.",
+      "elapsedMs": 479880
+    },
+    {
+      "event": "Recovery build selection to actual START",
+      "start": "2026-10-07T21:11:17.880+00:00",
+      "end": "2026-10-07T21:14:03.021+00:00",
+      "basis": "D01 selection receipt; Original actual START receipt",
+      "meaning": "Handoff and fresh prelaunch interval; exact internal division is unobserved.",
+      "elapsedMs": 165141
+    },
+    {
+      "event": "Recovery build actual START to full RETURN confirmation",
+      "start": "2026-10-07T21:14:03.021+00:00",
+      "end": "2026-10-07T21:14:43.322+00:00",
+      "basis": "Original start and fullRETURN receipts",
+      "meaning": "Whole observed operational interval, inclusive of receipt cleanup/confirmation; reported operator32675ms is a separate metric.",
+      "elapsedMs": 40301
+    },
+    {
+      "event": "Recovery build fullRETURN to canonical top-level no-holder observation",
+      "start": "2026-10-07T21:14:43.322+00:00",
+      "end": "2026-10-07T21:17:23.345+00:00",
+      "basis": "Original fullRETURN receipt; root direct read of canonical current at this timestamp",
+      "meaning": "Top-level publication interval. A nested readyQueueDecision.actualHolder still held historicalQ ID at that observation and was separately corrected bymanager.",
+      "elapsedMs": 160023
+    }
+  ],
+  "finding": "Resource return and user-visible/current-holder publication are distinct. The observed Q publication lag was479880ms even though the selected PG child took2867ms. Failed acceptance did not mean continued resource use.",
+  "recommendedManagerDiscipline": [
+    "Consume exact RETURN first and publish a minimal current holder update immediately; review/seal/intake remain independent.",
+    "Use one current holder/next decision across first-screen/current subrecords; reject inconsistent named-current fields at the small publication boundary. Preserve historical events separately and verbatim.",
+    "Archive/hashes later in a natural batch and only verify new/changed original files; metadata does not justify product reruns.",
+    "Record start/finish and waiting intervals in existing owner status with actual evidence, keeping unknown times unknown. Avoid estimating implementation duration from claim/mtime."
+  ],
+  "causalLimits": "This record measures receipt-to-publication gaps only. It does not establish how much time was spent in hash checking, tool waits, model reasoning or communication, and does not infer service downtime started at these task timestamps.",
+  "constraints": [
+    "No consumed gate/time/cap changed",
+    "No process, DB or filesystem rescan",
+    "No test or runtime",
+    "No project write",
+    "No new task/claim/automation"
+  ]
+}

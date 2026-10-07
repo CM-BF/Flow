@@ -1,0 +1,253 @@
+{
+  "kind": "SVC06B_RECOVERY_FIXED_ARTIFACT_RESULT",
+  "at": "2026-10-07T21:15:31.319Z",
+  "preparationCommit": "cb263ba616a399f52235fe37d42add9a55a956f1",
+  "executionSource": "8a0c2739ff6d141731efb7d5d685d2293ad3a434",
+  "artifactSource": "f37a3612068c7215994750574a7451ede841bcce",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "manifestDigest": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "sourceHead": "f37a3612068c7215994750574a7451ede841bcce"
+  },
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-preparation.json",
+      "bytes": 5377,
+      "sha256": "b953432dcd23b94b11c6821ff05c6b5cd32a8a2cc8bfd18cab387f5afd39dd84"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2797,
+      "sha256": "4c86e7bb1f91ac6585b61661568fb1e07b399c3520478fc77bff8db49fde5989"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4352,
+      "sha256": "af297cb6c74372fe5d45673b54f6c3b88e47d37a54444a791da5cbb6a5957263"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-supervise.py",
+      "bytes": 991,
+      "sha256": "10031a0b529a6bef64f314d00ed20d876a5836c4967f1c06dc830d4fda53cde9"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-inputs.json",
+      "bytes": 4311,
+      "sha256": "c6280171555e69db4649688c67578a7a7d19752a7c26cb9f0db1b0fe29489b5d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build.test.mjs",
+      "bytes": 1753,
+      "sha256": "0463ddaf65f5360b8deebb85735e6ec1eea51177a661811b36b9caa49e543697"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build.test.py",
+      "bytes": 3103,
+      "sha256": "fd9c4c980df7be87a267e1bd2b236ac7c045d7867e6f0ffb4053846fde327b0d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-source.json",
+      "bytes": 4251,
+      "sha256": "ca2be71ce9a0c597e1b490b71aa35687c0305715f19c06197b97c3a4ebf77830"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-source.patch",
+      "bytes": 40096,
+      "sha256": "11c8efaffc3b766a019c6471753eb48f9ef3c7c778ccfc26d622a692e9ec6f03"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-actual-admission.json",
+      "bytes": 3664,
+      "sha256": "ac4cc3c29aac6bb9b674ecc76124f5db8dbb93d817c981a091e8901e2e0dde3a",
+      "dev": 16777234,
+      "ino": 124483630,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-return.json",
+      "bytes": 592,
+      "sha256": "850ee834952a8f9f4a2eff153a7b17ba997971ee0ef6a9790c26587f026a3595",
+      "dev": 16777234,
+      "ino": 124510505,
+      "mode": "0o644",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/build-record.json",
+      "bytes": 806,
+      "sha256": "0faa2f8ba995f0190316e7cddca08f2ab888aa1b5335e57bf24bb234f34bb54c",
+      "dev": 16777234,
+      "ino": 124510466,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/imports.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124510489,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/imports.stdout",
+      "bytes": 2409,
+      "sha256": "f90538e257c29fb29a581e5e1bab03f377f4e231616e6453ddfa64a044e23af8",
+      "dev": 16777234,
+      "ino": 124510488,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/owned-root.json",
+      "bytes": 166,
+      "sha256": "ac3480379c62da3a0e11a2c34ac980a9e78aa0a5ddf0cc7d0c557d006046cca1",
+      "dev": 16777234,
+      "ino": 124483636,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/reservation.json",
+      "bytes": 187,
+      "sha256": "e654481916283dc02e62bc6e220bc03d1323be14daa2a3c3a6b9fb7b4fd94811",
+      "dev": 16777234,
+      "ino": 124483634,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "25507b72d8385d5d279c35093ef27bc0273ad8920795369b137e51cf673b6e6e",
+      "dev": 16777234,
+      "ino": 124510474,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result.json",
+      "bytes": 5117,
+      "sha256": "63c04362be43d56c7d330ec1bbe918ac53c843270eec9163ddbb9dffea90f1c5",
+      "dev": 16777234,
+      "ino": 124510490,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/outer-report.json",
+      "bytes": 5281,
+      "sha256": "ba316e3a0dfbbd50739fc6356c9817cec49e5152f234988c58a12b22f4e59ba9",
+      "dev": 16777234,
+      "ino": 124483632,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/manifest.json",
+      "bytes": 3196787,
+      "sha256": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+      "dev": 16777234,
+      "ino": 124510452,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/owner.json",
+      "bytes": 257,
+      "sha256": "95e7fe18bc5cd28efc79c7866951b5792fcd9bad462102a37be5b10c2150b3f0",
+      "dev": 16777234,
+      "ino": 124483637,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/stage-983271e3-a25b-41d2-9909-34229e5adfcd.json",
+      "bytes": 806,
+      "sha256": "0faa2f8ba995f0190316e7cddca08f2ab888aa1b5335e57bf24bb234f34bb54c",
+      "dev": 16777234,
+      "ino": 124510465,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "rootIdentity": {
+    "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt",
+    "dev": 16777234,
+    "ino": 124483635,
+    "mode": "0o700",
+    "uid": 501
+  },
+  "result": {
+    "outerExit": 0,
+    "elapsedMs": 32675,
+    "ownedPid": 11460,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "firstFailure": null,
+    "outerEqualsDurableResult": true,
+    "stageAndLockAbsent": true,
+    "artifactDirectoryNames": [
+      "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+      "stage-983271e3-a25b-41d2-9909-34229e5adfcd.json"
+    ],
+    "sqlFilesVerified": 33,
+    "inventory": {
+      "logicalBytes": 363874679,
+      "entries": 15629,
+      "manifestBytesIncluded": 367071466,
+      "nodeImages": 20
+    },
+    "resourceSample": {
+      "initialFree": 19234680832,
+      "minimumFree": 18790518784,
+      "samples": 66,
+      "artifactFileAndManifestLimit": 1073741824,
+      "selectedSeedLogicalBytes": 354552778,
+      "sourceArchiveAllowance": 33554432,
+      "pnpmHomeCacheAllowance": 134217728,
+      "metadataAllowance": 536870912,
+      "rawBytes": 2097152,
+      "liveReserveBytes": 1073741824,
+      "additionalBudgetBytes": 2317352960,
+      "minimumFreeBytes": 3927965696,
+      "selectedSeedAllowance": 536870912,
+      "baseMinimumFreeBytes": 3391094784,
+      "coordinationAllowanceBytes": 536870912,
+      "coordinationAllowanceMeaning": "Conservative planning margin; not a claim that another task is running. At execution, add any actual concurrent allocation exceeding this margin; never lower base reserve.",
+      "physicalPeak": "NOT_MEASURED; sampled filesystem availability includes other writers",
+      "rawLimit": "1MiB outer capture plus bounded copied build-record and import bytes; original producer record can exceed observation threshold and remains preserved on refusal"
+    }
+  },
+  "rawBytes": 18497,
+  "originalStageBytes": 806,
+  "scope": "Fixed artifact build/verification/internal loading only. No cold host, new four-App compatibility or personal recovery.",
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "unresolvedFirstLocalAllocationBytes": 8519680,
+  "review": "PENDING"
+}

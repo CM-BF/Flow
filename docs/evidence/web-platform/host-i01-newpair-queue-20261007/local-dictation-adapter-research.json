@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T21:15:09.526784+00:00",
+  "kind": "READ_ONLY_OFFICIAL_DOCS_AND_FIXED_ADAPTER_RESEARCH",
+  "mappedTo": "Existing MATURE06-05 / REQ45 only; no newtask/claim/versionupgrade/runtime",
+  "skills": "Previously discovered assistant-ui and clean-code; follow existing DictationAdapter instead of another composer or microphone state store.",
+  "fixedLocalSource": {
+    "version": "@assistant-ui/core0.3.22 via @assistant-ui/react0.15.23",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/adapters/speech.ts",
+    "bytes": 9916,
+    "sha256": "9a2e9a044e283faefb5ee27fee7b89e90513d53859f0e91ffdd18850557dec76",
+    "lines": "adapter159ff; options164ff; support180ff; instance194ff; start354ff"
+  },
+  "findings": [
+    {
+      "fact": "The pinned built-in adapter only accepts language/continuous/interimResults. isSupported checks constructor presence only; listen creates its own recognition and starts it without processLocally. It cannot establish on-device-only operation from its existing options.",
+      "basis": "Read actual pinned speech.ts; no import/instantiation performed."
+    },
+    {
+      "fact": "The official supported extension point remains DictationAdapter.Session with stop/cancel and unsubscribable callbacks; final versus interim results are represented explicitly.",
+      "source": "https://www.assistant-ui.com/docs/guides/dictation"
+    },
+    {
+      "fact": "processLocally defaults false, which lets the browser choose remote or local processing. Explicit true requires local processing.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/processLocally"
+    },
+    {
+      "fact": "available with processLocally true distinguishes available, downloading, downloadable and unavailable for requested languages. Policy can reject the check, and absent language packs prevent successful local start.",
+      "source": "https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/available_static"
+    }
+  ],
+  "implementationInference": [
+    "A future local-only feature needs a narrow custom DictationAdapter owning its recognition instance; a wrapper that merely probes builtin.isSupported and delegates builtin.listen is insufficient. Do not monkey-patch global SpeechRecognition or add a second mic/runtime.",
+    "Gate on actual required API and requested-language availability, set processLocally=true before start, and retain editable text when unsupported/unavailable/policy-denied. Language installation remains explicit user action; no automatic download or cloud fallback.",
+    "Keep one leased composer/session binding through stop/cancel/disposal, revoke late callbacks when plugin or pane changes, and let assistant-ui manage interim/final composer updates. No automatic send."
+  ],
+  "acceptanceProposal": [
+    "Fake recognition verifies processLocally true before start and zero start for unsupported/missing pack/policy error.",
+    "Separate stop final result from cancel, suppress callback after dispose/pane switch/plugin revocation, unsubscribe each registered callback.",
+    "Actual browser API availability, Chinese pack/support, recognition quality and latency require future authorized user microphone action; documentation alone is no runtime proof."
+  ],
+  "notPerformed": [
+    "microphone access",
+    "language pack install",
+    "provider request",
+    "browser capability evaluation",
+    "package update",
+    "project modification",
+    "engineering test"
+  ],
+  "priority": "Low-priority existing research backlog; does not block current service restoration or Web ready candidates.",
+  "cleanCode": "Small adapter plus capability result, explicit cleanup ownership and status semantics; avoid copying the whole upstream speech module or inventing a second composer."
+}
