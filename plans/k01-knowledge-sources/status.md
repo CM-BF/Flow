@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 15:34 UTC |
+| 最近更新 | 2026-10-07 15:46 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -10,29 +10,29 @@
 | co-lead | mika |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，当前实现段开始15:01:34Z、截止15:21:34Z；来源clock与Mika派工 |
+| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现段15:01:34Z–15:21:34Z已封存；新修复段15:28:30Z–15:48:30Z；来源clock与Mika派工 |
 | 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 ACTIVE，15:01:40.433Z COMMITTED amend；原两metadata scope+experiments/knowledge-search |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 新独立修复段进行中；起点7155cbdb4=origin clean，旧raw与.local不改 |
-| 工作分支状态 | in-progress（检索诊断设计已审待主线接收；原产品/留存为历史接收，开放验收不变） |
-| 检查状态 | NOT_RUN：本段7 caller用例/noEmit未执行；旧4/4与旧caller HOLD仅历史，PG/HTTP NOT_OPEN |
-| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段检索诊断准备未集成，未运行 |
-| 实现目标 | UNKNOWN |
+| 工作树dirty状态 | 最终metadata待提交；实现已固定，旧raw与.local不改；push后全部STOP |
+| 工作分支状态 | review（本段入口/纯检查交独立审查；历史与开放验收不变） |
+| 检查状态 | PASSED e1a785387b74ddf506914cbb35afbb6ccb81b8bd；8 caller+3 synthetic listener；最终focused noEmit exit0，PG/HTTP NOT_OPEN |
+| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
+| 实现目标 | e1a785387b74ddf506914cbb35afbb6ccb81b8bd |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 正在修复检查入口的闭合判定与环境隔离，原金样本结果保留 |
-| 下一可用交付 | 完成调用方安全检查与类型检查，再交独立审查；实际数据库测量仍未开放 |
-| 当前阻塞 | NONE:本队普通检查资源条件待Mika释放；当前只做源准备 |
+| 当前产出 | 检索诊断入口已补齐检查闭合、环境隔离与监听收尾保护；纯检查通过 |
+| 下一可用交付 | 完成入口独立审查后再决定数据库测量窗口 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；新入口NOT_STARTED；c2ed仅历史设计APPROVED |
+| Review | [review.md](review.md)；新入口待独立审查；c2ed仅历史设计APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -106,3 +106,5 @@
 2026-10-07T15:28:30Z：新20分钟独立修复段开始、截止15:48:30Z（clock来源），不延长旧段。fresh7155cbdb4a33c7412d14cec8650cdee4fda918f8=origin clean，Mika fresh核30965v2三scope ACTIVE。db_transaction_owner只读核旧PID60763已exit0/finalabsent/明确MERGED EOF321B、无secondary/signals；初始只读EPERM不等于最终ownership未知，原caller全历史sticky是误用。原result=false/HOLD、旧.local KEEP不修改或清理；本段修闭合predicate、显式env allowlist及独立新scratch身份/正常清理。既有4pure不重跑；新增caller unit与focused noEmit等待Mika资源release/freshfloor，最多5串行child/30s各/累计90s、新增总逻辑16MiB。实际PG仍NOT_OPEN。
 
 2026-10-07 15:34 UTC：caller闭合判定/显式env及新scratch正常清理已实施，7个meaningful caller用例待执行；旧corpus源逐字未改，因此不计划重跑旧4项。当前source检查与类型仍NOT_RUN，Web新排他build要求继续source-only。futurePG额外准入项为listen独立settlement，不把createServer已settle当listen保证，尚未运行/批准任何PG。旧raw/.local从未改动或清理；新的逻辑字节计量排除旧KEEP子树，不把读取旧TMP当本段必要动作。
+
+2026-10-07T15:45:17.411812Z：本段4个实际child全部exit0/final absent/完整MERGED EOF，8 caller + 3 synthetic listener通过，focused noEmit两次exit0（末次绑定最终监听修复）。每个新scratch以原dev/ino/marker清理且exact lstat ENOENT；预启动Python3.9 import失败0child及自己的scratch归还原记录保留，不改失败为通过。初始只读EPERM与最终闭合事实分列，旧.local KEEP不动。普通槽已向Mika完整归还，停止新launch。唯一结果入口[manifest](../../docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json)，逐run源hash解释较早caller与末次源差异；旧corpus4未重跑。全部产品路径无修改，真实PG/HTTP/EXPLAIN NOT_OPEN；监听纯Promise行为不冒充Fastify生命周期验收。最终metadata commit/push后本段全部STOP，claim v2保留待独审，未采dashboard。

@@ -1,0 +1,291 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-10-07T15:46:27.437912+00:00",
+  "implementationTarget": "e1a785387b74ddf506914cbb35afbb6ccb81b8bd",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "segment": {
+    "startedAt": "2026-10-07T15:28:30Z",
+    "deadline": "2026-10-07T15:48:30Z",
+    "lastChildReturnedAt": "2026-10-07T15:45:17.411812+00:00",
+    "actualChildren": 4,
+    "operatorMs": 5471,
+    "prelaunchFailureChildCount": 0
+  },
+  "sourceFiles": [
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 9690,
+      "sha256": "f3747a65206a24e96577d9577019920cdb5169b1355ca0f127355abc77c6d4f2"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 14933,
+      "sha256": "64862a8ad381a89d6a0c093b23d35a2200daa2e4cb7d3af66845b09c0b48755e"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 6148,
+      "sha256": "25e0d270d5c228af0d3d693ac6772ac03e34f2cc043dfa919baf6d086b877cf8"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 1431,
+      "sha256": "dd70ffdb2026e9f4c7a38427a509bd14478e3134fd0cf623015ddbce5dd26b22"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13394,
+      "sha256": "856530a4bc25f011f87126425fc4c1aedaa7ecd8e2ca270ed5872f98d75d3002"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 10641,
+      "sha256": "64d62d40630f5164850016dae22ce4bb8d841a4a33de73718f389c9de1b505d9"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 2271,
+      "sha256": "c4895400a8a88754726bbd87e8cc88785f62a112fc41ae1b88bc7d3bc52fe48a"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 191,
+      "sha256": "5c61ebca7f6b84c4c01e4474bb6a343535a6bada34032bc18e9825af7d3777f4"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/check-02.raw",
+      "bytes": 106,
+      "sha256": "322e9bec5d6bbde47d6476008f309469c1e42048ed96320a3bae52af8811e27a"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/check-03.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/check-04.raw",
+      "bytes": 517,
+      "sha256": "a2a2706e5b97893d52db3742e575eae2a07fbd4850089d71ed30a6cae6b739d6"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/check-05.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/iterations.jsonl",
+      "bytes": 18389,
+      "sha256": "369f2d686132dfff67ec9d9ef35d2ff3be461276c3f50605c1beeb5a7793f631"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-20261007T152830/prelaunch-tool-transcript.txt",
+      "bytes": 1274,
+      "sha256": "e68023d574d734b90b4531865448e8a18559b29d7d4e76cd809f8c2451af6d33"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-repair-permit.json",
+      "bytes": 599,
+      "sha256": "b03a997b2af1a96fdf290be4166c08a08d9f5595923b93b5bc8cacd41d3856ed"
+    }
+  ],
+  "runBindings": [
+    {
+      "label": "check-01",
+      "selection": null,
+      "differencesFromFinal": [
+        "entry.py",
+        "owned-database.ts",
+        "vitest.config.mjs"
+      ]
+    },
+    {
+      "label": "check-02",
+      "selection": null,
+      "differencesFromFinal": [
+        "entry.py",
+        "owned-database.ts",
+        "vitest.config.mjs"
+      ]
+    },
+    {
+      "label": "check-03",
+      "selection": null,
+      "differencesFromFinal": [
+        "entry.py",
+        "owned-database.ts",
+        "vitest.config.mjs"
+      ]
+    },
+    {
+      "label": "check-04",
+      "selection": "listener",
+      "differencesFromFinal": []
+    },
+    {
+      "label": "check-05",
+      "selection": "caller",
+      "differencesFromFinal": []
+    }
+  ],
+  "checks": {
+    "caller": 8,
+    "syntheticListener": 3,
+    "distinctCurrentSegment": 11,
+    "focusedNoEmitRuns": 2,
+    "priorCorpusHistorical": 4,
+    "PG": "NOT_OPEN",
+    "HTTP": 0,
+    "models": 0
+  },
+  "resources": [
+    {
+      "label": "check-02",
+      "pid": 36639,
+      "exit": 0,
+      "finalState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "signals": [],
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-88ffc652f1a74b33be75fd98f8e11ecd",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124272881,
+          "marker": "1950eb37cb4640efa6ee083d079025a9",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-88ffc652f1a74b33be75fd98f8e11ecd"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "logicalBytes": 1241493
+    },
+    {
+      "label": "check-03",
+      "pid": 44754,
+      "exit": 0,
+      "finalState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "signals": [],
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-a9b7873065264943857402feda6e1a87",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124273007,
+          "marker": "e5a845cd19674eaa9f75cbb3c99c5a34",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-a9b7873065264943857402feda6e1a87"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "logicalBytes": 1245176
+    },
+    {
+      "label": "check-04",
+      "pid": 33040,
+      "exit": 0,
+      "finalState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "signals": [],
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-abd06a05d48d41579a8b3f79db6dd93d",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124274721,
+          "marker": "f80d6e535ff64f18b6033a9da81ea37a",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-abd06a05d48d41579a8b3f79db6dd93d"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "logicalBytes": 1254393
+    },
+    {
+      "label": "check-05",
+      "pid": 39316,
+      "exit": 0,
+      "finalState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "signals": [],
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-0b3fde09b210456cae2f2ca04a4106b2",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124274844,
+          "marker": "e0efb0a5c76a4101b23200c689059db1",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-0b3fde09b210456cae2f2ca04a4106b2"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "logicalBytes": 1258236
+    }
+  ],
+  "limits": [
+    "Original query-entry-local HOLD/raw and old .local KEEP unchanged; no old cleanup.",
+    "Original Python3.9 prelaunch failure retained; no supervise invocation or child. Subsequent preflight-return does not rewrite failure.",
+    "Caller tests ran before Python version/import preflight and listener selection changes; caller unit source is unchanged. Final listener/noEmit sources match target except README added result facts.",
+    "Promise-only listener tests do not establish real Fastify/PG startup and shutdown. Full entry independent review and explicit PG window remain required.",
+    "Source supply is 245 fixed files / 1112251 bytes / 33 SQL; aliases 17 external and 3 @flow fixed-source aliases checked before and after actual children.",
+    "Permit sourceHead is segment input checkpoint; per-run sourceFiles are actual execution bytes."
+  ]
+}

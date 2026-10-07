@@ -1,9 +1,9 @@
 # K01-06 诊断入口准备（当前）
 
 状态：NOT_STARTED
-Review target commit：UNKNOWN
+Review target commit：e1a785387b74ddf506914cbb35afbb6ccb81b8bd
 
-新独立段15:28:30–15:48:30正在修caller，7 caller用例/noEmit待执行，PG NOT_OPEN。前段source8c5fa与4/4 pure及原caller HOLD保留docs/evidence/k01/query-entry-local；db只读证明旧process已闭合，该后继判定不改原raw/旧TMP。c2ed是下方历史设计批准，不覆盖新entry/lifecycle/measurement。Mika后续须核固定源码、实际纯检查与类型结果、18连接及factory timeout分界、生产SQL捕获、全部动态SQL输入、marked identity/丢ACK保留/OPS14 unknown门禁；尚不能申请实际PG。
+本段仅实验入口与纯检查，8 caller+3 synthetic listener / 最终focused noEmit通过；实际PG/HTTP NOT_OPEN。唯一证据为 docs/evidence/k01/query-entry-repair-20261007T152830/manifest.json 与append-only iterations.jsonl。请独立核闭合/EOF/信号异常门禁、env allowlist、17外部及3内部alias、marked scratch exact清理与未知保留，以及listen独立settlement/abort/final close。原Python3.9预启动失败0child、原HOLD/旧.local KEEP保留；旧corpus4不重复执行。末两check源字节绑定最终代码，早期caller差异明确列出，不能称所有检查在末target重跑。原245源码/33动态SQL与18连接/真实factory超时、生产查询捕获/DB身份完整入口仍需审查；此处不自行批准PG。
 
 # K01-06 查询计划诊断准备独立review
 

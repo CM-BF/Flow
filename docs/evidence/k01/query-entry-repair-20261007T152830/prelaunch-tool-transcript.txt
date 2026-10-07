@@ -1,0 +1,14 @@
+Verbatim failure excerpt copied from the exec tool result. This is not an original redirected stderr file and has no retroactive capture/EOF claim.
+
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/entry.py", line 197, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/entry.py", line 174, in main
+    spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py", line 44, in <module>
+    class Report:
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py", line 45, in Report
+    pid: int | None = None
+TypeError: unsupported operand type(s) for |: 'type' and 'NoneType'
