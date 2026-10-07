@@ -3,7 +3,7 @@ import { open } from 'node:fs/promises';
 import { lstatSync, readdirSync, statfsSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, isAbsolute } from 'node:path';
-import { Pool } from 'pg';
+import { Pool, type QueryConfig } from 'pg';
 import { FlowClient } from '../../../../packages/client/src/index.js';
 import { createServer } from '../../../../apps/server/src/index.js';
 
@@ -100,7 +100,8 @@ export class NativeHostCenter {
       const until = Math.min(this.until, Date.now() + 3000);
       do {
         const remaining = until - Date.now(); if (remaining <= 0) throw Error('Connection observation deadline reached.');
-        const rows = (await this.admin!.query({ text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', values: [this.database], query_timeout: remaining })).rows;
+        const query: QueryConfig & { query_timeout: number } = { text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', values: [this.database], query_timeout: remaining };
+        const rows = (await this.admin!.query(query)).rows;
         connections = rows;
         if (Date.now() >= until || rows.length > 32) throw Error('Bounded connection observation is unknown.');
         if (!rows.length) break;

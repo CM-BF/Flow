@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T04:38:18.547838+00:00",
+  "reviewer": "astra_ultra_execution_lead/assignment_review",
+  "role": "independent read-only reviewer, not implementation author",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host",
+  "target": "b0581d2e6d82c31a7180a22e450d06c3fc266ac5",
+  "delivery": "dd0f23c885ce106073fc39c7606b87ff48e631b0",
+  "inputBase": "c0e0263dc01b9527293318a644f964bd048e2a86",
+  "manifest": "docs/evidence/eng01i/pg/preparation-manifest.json",
+  "manifestSha256": "ba608a9dd0d769780c0740aedc60564188b0080b5cc625d900675b3d28f58aa1",
+  "conclusion": "REQUEST_CHANGES_BEFORE_PG_OR_PRODUCT_APPROVAL",
+  "bindings": {
+    "path": "/tmp/flow-eng01i-independent-bindings.json",
+    "sha256": "b3208fbd490a11d3fbbb4589eeeae06b82b2408ca1290b0d1e7f64a38a043eef",
+    "fixedCurrentEntries": 325,
+    "source": 4,
+    "protected": 257,
+    "evidence": 64,
+    "installedEntryAndManifestPairs": 10,
+    "errors": []
+  },
+  "findings": [
+    {
+      "id": "ENG01I-REVIEW-P2-01",
+      "priority": 2,
+      "origin": "author self-discovered during review; reviewer confirmed fixed target",
+      "path": "apps/runner/src/engineering/native-adapter.ts",
+      "lines": [
+        44,
+        45
+      ],
+      "trigger": "project.acquire throws after possibly creating a lease or loses its write result",
+      "problem": "acquire is outside conservative catch. A normal Error reaches runtime ordinary failed/completed settlement instead of unknown, despite possible retained lease state.",
+      "minimumFix": "catch acquisition failures and throw NativeExecutionError unknown; preserve all prior runtime/outbox rules and single invocation identity.",
+      "status": "author reports c3d29e4a fix; not yet delta reviewed"
+    },
+    {
+      "id": "ENG01I-REVIEW-P2-02",
+      "priority": 2,
+      "origin": "independent reviewer",
+      "path": "docs/evidence/eng01i/pg/run.py",
+      "lines": [
+        27,
+        55
+      ],
+      "trigger": "preflight hashing/reservation/import preparation consumes over27.5seconds before a worst-case120+.5+2second new-session child supervision",
+      "problem": "entry-wide150second os._exit can kill the only supervisor before child cleanup/reap completes; fixed120second policy is not reduced by preparation elapsed time. Cleanup deadline is also re-based to spawn+145seconds.",
+      "minimumFix": "one monotonic150second deadline, compute remaining before spawn, reserve TERM/reap/persistence and reject without child when insufficient; map fixture deadline to the same absolute total deadline. No new supervisor framework.",
+      "status": "author acknowledged and preparing narrow delta"
+    },
+    {
+      "id": "ENG01I-REVIEW-P2-03",
+      "priority": 2,
+      "origin": "independent reviewer",
+      "path": "docs/evidence/eng01i/pg/fixture.ts",
+      "lines": [
+        100,
+        104
+      ],
+      "trigger": "a pg_stat_activity query begins near the end of the3second observation interval",
+      "problem": "Pool default query_timeout3500ms lets the query exceed the declared observation interval; return-time check correctly rejects late zero but does not bound the individual query by remaining time.",
+      "minimumFix": "each query uses the positive remaining timeout; keep late-zero/row-count/error rejection and original observations.",
+      "status": "author acknowledged and preparing narrow delta"
+    }
+  ],
+  "confirmedUnchangedBoundaries": [
+    "Full four-product delta read, with G writer authority/settlement, F full snapshot/checker and H public receipt direct consumers. No new pump/scheduler or concrete production authority.",
+    "Public receipt v1 field order retained; report recomputed rather than trusting supplied result. Qualification digest is a trusted-host reference, not OS proof.",
+    "Unknown writer/revocation/capture/ACK/release retains lease and prevents new invocation; restart fixture uses a new adapter and existing outbox/admission. Acquire exception is the explicit remaining hole.",
+    "Original27different=17adapter+10receipt passed; C02 3 selected overlap and24 unselected. Seven original child runs total15957ms, raw hashes match. No27 orC02 re-run by reviewer.",
+    "Both cache-wrapper exit1 observations and pgtypes exit2 kept; subsequent exact identity cleanup/focused types0 recorded separately. Supervisor transient EPERM/unknown remains in original observations.",
+    "PG2case fixture uses random DB marker/OID, reservations/checkpoints, actual createServer/runRunner/public HTTP and injected fixed JSONL peer; no provider or concrete native capability claim. PG NOT_RUN.",
+    "Original325bindings fixed/current all matched at initial read before author fix. Ten installed entry/metadata pairs also matched; tar package pointer is nested commonjs package.json without name/version, reported as such rather than invented."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "imports": 0,
+    "PG": 0,
+    "provider": 0,
+    "services": 0,
+    "projectWrites": 0
+  },
+  "scopeLimit": "This is source/local evidence and proposed PG-entry review. It is neither PG acceptance nor whole native-engineering or actual >=Sol writer/permission/termination approval. Review only upcoming delta after author fixes; prior findings/history must remain."
+}
