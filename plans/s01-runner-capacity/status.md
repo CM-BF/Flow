@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:31:30.933Z |
+| 最近更新 | 2026-10-07T15:35:01.986Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -19,8 +19,8 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 当前packing窄修；历史32796520b07d4eed9f34c7c1db757740b7e20452 actual结果已独审，不继承为本优化收益。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | d28166e81bcdbb9fb537b40144f7be07a2539130 |
-| 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json |
+| 实现目标 | a4ceb283b37dc5cd73ebb072bb912d110b59f78a |
+| 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
@@ -276,3 +276,5 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 实际开工15:25:09Z、截止15:45:09Z；开段32cb3f56 clean=origin，claim508fv3/exact6保持。归档db15:23:32对32cb的[正式结果独审](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-result-review.json)，0P1/P2。原2048trace实际减少JSON编码字节但耗时更长，不能据此推生产瓶颈或提速。
 
 本段复用本地find-skills、codebase-design及固定clean-code：保持同一Module和状态所有者，每条目实编码计长一次、逗号/header精确计入，最终send仍完整编码核上限；不新增通用packer。定向反例检查编码工作量、exact边界/ordinal位数、SQL语义、oversize/unknown与finish-once。原普通上限5child/各30s/累计90s、new16MiB/raw256KiB/source-meta2MiB；15:30后共享构建drain，尚0工程child，暂停新launch不重置原截止。下一freshfloor至少14,414,970,880B或更高；actual replay/PG始终NOT_OPEN。
+
+2026-10-07T15:35:01.986Z 源码checkpoint：a4ceb283b37dc5cd73ebb072bb912d110b59f78a已push，11abf474仅finish的17增8删；[本片唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)。旧record/send/聚合/接口/actual输入原样；新直接检查已固定但0执行，Web独占构建drain优先，不把准备当通过。四新例及6个模块直接影响例、8个receiver语义例共18候选，focused strict另1child。没有运行旧64/实际replay，累计child0/raw0/TMP0；源码/新文档当前小于128KiB，不重算旧trace或退还KEEP。

@@ -1,0 +1,69 @@
+{
+  "source": "a4ceb283b37dc5cd73ebb072bb912d110b59f78a",
+  "base": "32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a",
+  "bindings": [
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "bytes": 7920,
+      "sha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts",
+      "bytes": 6208,
+      "sha256": "839827b2e92ba5d00fba9fbcbc8707ae4d46ca2167e48e2cc032e91a1296a8fd"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.test.ts",
+      "bytes": 8708,
+      "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/delivery-replay.test.ts",
+      "bytes": 6433,
+      "sha256": "3ddbecb4734eaf93fc6640bfa652c0c2a32906375d26149444727e658adc825e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "bytes": 4597,
+      "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/delivery-replay.ts",
+      "bytes": 8513,
+      "sha256": "10871b0ba30b929ffdedc76bea9c605dafc8bad1dea12dd96b3a569a6ff358c5"
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1909,
+      "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py",
+      "bytes": 6147,
+      "sha256": "35374d02b4af8206f7000f69c684ceefbab4b91ab08bfb3d013b73a62eece401"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json",
+      "bytes": 440,
+      "sha256": "914408c1e1c91a1a54eea449936a43b6600ff8512cb86dfcbb80c12e33910e8b"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs",
+      "bytes": 500,
+      "sha256": "8ba9ceeb3ecdf955ab049f2188da477b0e8727a2d54f0276a4e95a3188cf2c91"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-result-review.json",
+      "bytes": 1050,
+      "sha256": "2f99d2d7df6824dea35f515fcedda92dcc83d580ff58e1bde774d62b292c1426"
+    }
+  ],
+  "bytes": 52425,
+  "validation": "NOT_RUN; manager ordinary drain before first child. Fixed source only, no actual replay.",
+  "priorInputsUnchanged": [
+    "delivery-replay-input-v2.json",
+    "delivery-replay-js-v2/manifest.json",
+    "delivery-replay-actual.json",
+    "delivery-replay-result-manifest.json"
+  ]
+}
