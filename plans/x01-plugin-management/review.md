@@ -1,3 +1,9 @@
+状态：PENDING（Stage C唯一P2修复增量；实际PG未运行）
+
+Review target commit: 002159b96e98187a050313f2995e199fd2900198
+
+chatui对e7/84发现1 P2：目录预枚举；002惰性遍历及1个反例已修，DB reserve7ea纳入本次复审。原5/strict与新1分轮通过，不宣称单轮6。
+
 状态：PENDING（本次Stage C准备；真实27 PG/HTTP NOT_RUN）
 
 Review target commit: e7f220ee72c5c9bc091846be45ddd8b199dc6f71

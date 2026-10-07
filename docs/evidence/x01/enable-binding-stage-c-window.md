@@ -30,3 +30,5 @@
 2026-10-07T04:27Z：按Mika补充仅input/caller floor与reservation分项纳入128MiB DB/WAL reserve；旧局部类型/5反例不重跑，其证据绑定e7源。本预算算术增量待同次独审，不产生OPEN。
 
 2026-10-07T04:28:39.725000+00:00：独审P2发现directory排序会在门禁前预枚举。仅改TMP采样及有限RUN会计为with scandir惰性next，每项前核截止/数量；超界UNKNOWN/KEEP，最大恰满时也保守拒绝而不探测第4097项。新增1个不建海量文件的懒迭代反例，等待Mika批准的≤5s定向检查；原5/strict结果不改。
+
+2026-10-07T04:29:39.080100+00:00：新增懒迭代反例单独1/1 exit0，内部0.140859s/raw255B，group final absent/EOF及ownTMP同inode空目录清理；见`enable-binding-pg-lazy-local.json`，source 002159b96e98187a050313f2995e199fd2900198。这是修复P2的唯一增量，不重跑原5/strict/A/B/collect，完整external wall UNKNOWN。预算128MiB与scandir源一起交原reviewer复审，PG仍NOT_OPEN。
