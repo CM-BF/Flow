@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T06:05:13.906868+00:00 |
+| 最近更新时间 | 2026-10-07T06:09:33.346802+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -18,9 +18,9 @@
 | 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
 | 工作分支状态 | in-progress |
 | 检查状态 | 中心片types0/10定向通过（SQL边界fake+真实inject，0PG）；前片11和旧27不重跑 |
-| Review | 中心source 0224e94d1133a72478fdf50380f726bd2ba5922f 待独审；c15前片APPROVED保持 |
+| Review | 中心product 0224e94d1133a72478fdf50380f726bd2ba5922f / support 436ab4b87a9847b9ef9a05ad100a62dff9cf931d 待独审；c15前片APPROVED保持 |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
-| 实现目标 | 0224e94d1133a72478fdf50380f726bd2ba5922f |
+| 实现目标 | 436ab4b87a9847b9ef9a05ad100a62dff9cf931d |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/runner-claim-routes.ts, apps/server/src/runner-claim-routes.test.ts, apps/server/src/plugin-runtime/claim.ts, apps/server/src/plugin-runtime/claim.test.ts, docs/evidence/x01/center-claim-fixture.ts, docs/evidence/x01/center-claim-local.py, docs/evidence/x01/center-claim-vitest.config.mjs, docs/evidence/x01/center-claim-tsconfig.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v9为22scope，新增5个claim/journal literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v10为30scope，新增5个claim/journal及8个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -253,3 +253,5 @@ status_read于2026-10-07T05:52:15.936782Z独立SOURCE_AND_LOCAL_RESULT_REVIEW_AP
 ## 2026-10-07T06:05:13.906868+00:00 中心真实领取入口固定交审
 
 source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10。两个实际local进程于06:03:32.085299→06:03:49.535124 UTC结束并直接归还C02；types0+10/10，0PG/网络listener。固定main database donor在真实module位置加载、原callback事务实现参与；SQL fake不能替代真实PG过滤/并发保证，下一PG反例明确NOT_RUN。S01性能等待05:59前后仅依据MikaOPEN/06:00:50.057实际归还消息，不推独立壁钟。架构影响：原center启动消耗既有034，原领取路径支持严格v3；runtime/client/phase port未接，基线图待main后Lead更新。
+
+2026-10-07T06:09:33.346802+00:00：中心产品0224冻结，最终支持436ab仅禁止Python导入写bytecode；原local两own证据cache73068B按2MiB源/metadata预算入账并精确清理，原raw不改。最终[26项交审包](../../docs/evidence/x01/center-claim-final-review-ready.json)待独审；types0/10局部通过不重跑，实际PG仍NOT_RUN；v10 ACTIVE30、无实际local/PG占用。
