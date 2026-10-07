@@ -104,14 +104,21 @@ def sample_tree(root, deadline, max_bytes, max_entries=2048):
 
 
 def remove_sampled(root, sample, deadline):
-    for path, dev, ino, directory in sorted(sample['items'], key=lambda row: len(row[0].parts), reverse=True):
+    def check_root():
         if time.monotonic() >= deadline: raise ValueError('CLEANUP_DEADLINE')
+        current = root.lstat()
+        if not stat.S_ISDIR(current.st_mode) or stat.S_ISLNK(current.st_mode) or root.resolve() != root or (current.st_dev, current.st_ino) != sample['identity']:
+            raise ValueError('NAMESPACE_CHANGED')
+    # A replaced root must be rejected before touching any sampled child.
+    check_root()
+    for path, dev, ino, directory in sorted(sample['items'], key=lambda row: len(row[0].parts), reverse=True):
+        check_root()
         current = path.lstat()
         if (current.st_dev, current.st_ino) != (dev, ino) or stat.S_ISLNK(current.st_mode): raise ValueError('NAMESPACE_CHANGED')
+        check_root()
         if directory: path.rmdir()
         else: path.unlink()
-    current = root.lstat()
-    if time.monotonic() >= deadline or (current.st_dev, current.st_ino) != sample['identity']: raise ValueError('NAMESPACE_CHANGED')
+    check_root()
     root.rmdir()
     try: root.lstat()
     except FileNotFoundError: return 'REMOVED_EXACT_ENOENT'
