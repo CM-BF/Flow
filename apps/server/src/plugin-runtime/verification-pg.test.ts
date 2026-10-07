@@ -22,7 +22,7 @@ const facts: unknown[] = [];
 const rule = { schemaVersion: 1 as const, algorithmId: 'flow.json-object.required-keys' as const, algorithmVersion: 1 as const, requiredKeys: ['id'] };
 const cap = { bindingProtocol: 'flow.plugin-verification.v1' as const, storeId: 'av03-material', hostApiMajor: 1 as const, algorithms: [{ id: rule.algorithmId, version: 1 as const }] };
 const toolCap = { bindingProtocol: 'flow.plugin-runtime.v1' as const, storeId: cap.storeId, hostApiMajor: 1 as const };
-async function request(path: string, body?: unknown, token = owner) {
+async function request(path: string, body?: unknown, token: string = owner) {
   return fixture.request(base + path, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body) });
 }
 async function openApp(prior = false) {
