@@ -1,0 +1,129 @@
+{
+  "status": "PENDING_INDEPENDENT_REVIEW",
+  "createdAt": "2026-10-07T10:03:22.062469+00:00",
+  "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+  "sourceBaseline": "3811048522dcc8a896e7ccf09872389b14bccd63",
+  "product": [
+    {
+      "path": "apps/server/src/main.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 3223,
+      "sha256": "6b7b456a2512c6ffb55e2822d534ba4033c08bb249953c067cb0706a127c7116",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 2964,
+      "preimageSha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9"
+    },
+    {
+      "path": "apps/server/src/private-json-configuration.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 198,
+      "sha256": "ab3f703819e79608c964c0aaacbae1883d021df83d633e2092e7297d02ee3989",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 1256,
+      "preimageSha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime-configuration.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 1253,
+      "sha256": "e2f55e27f7864774221764fe01b1f2c618603159798c42558cc7e8649cbde748",
+      "preimageCommit": null,
+      "preimageBytes": null,
+      "preimageSha256": null
+    },
+    {
+      "path": "apps/server/src/plugin-runtime-configuration.test.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 4427,
+      "sha256": "ef663b407c3d1169d508a175e9cac2025cc3b457bd53225367a335bbbff851b7",
+      "preimageCommit": null,
+      "preimageBytes": null,
+      "preimageSha256": null
+    },
+    {
+      "path": "packages/plugin-runtime/src/private-configuration.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 1256,
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b",
+      "preimageCommit": null,
+      "preimageBytes": null,
+      "preimageSha256": null
+    },
+    {
+      "path": "packages/plugin-runtime/src/private-configuration.test.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 2290,
+      "sha256": "233e93a23aff7166fcbe4b6b2f711b11c9f0f637d10c099863b78079490cc1d0",
+      "preimageCommit": null,
+      "preimageBytes": null,
+      "preimageSha256": null
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 7555,
+      "sha256": "f8c4c3d73ec2fec24f59b85e6b890cd900d01a8fb7b22be59abd713d8303e7fd",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 6563,
+      "preimageSha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 11398,
+      "sha256": "be0defdf1f83dd2aeb4996252c547cee37017f9708b91bbb2a7d37f27061ff7f",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 10414,
+      "preimageSha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 3710,
+      "sha256": "e64fff552e2ea225c739fb8af21db25726b5b05e5573fd6f2ec16a26c3964c60",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 3297,
+      "preimageSha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+      "bytes": 13328,
+      "sha256": "2443b353b8eb9639992c1541292cceed09b2d11384ffd0c2820d1ed16f4c94ee",
+      "preimageCommit": "3811048522dcc8a896e7ccf09872389b14bccd63",
+      "preimageBytes": 11273,
+      "preimageSha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+    }
+  ],
+  "productBytes": 48638,
+  "patch": {
+    "path": "docs/evidence/x01/cli-startup-intake.patch",
+    "bytes": 24998,
+    "sha256": "31b0c4eb439bd16f56a134bea88b8d3e7662d2d4f8e7696ab10a8e50971f7afd"
+  },
+  "reviewPacket": "182e539507ad283c727c378b1b43a0d92fb3780a",
+  "reviewManifest": {
+    "path": "docs/evidence/x01/cli-startup-review-ready.json",
+    "bytes": 116180,
+    "sha256": "9ba97ca7213a8468847b64679da41156f5660504d532cc8664ba090a1c08e2db"
+  },
+  "evidence": [
+    "docs/evidence/x01/cli-startup-local.json",
+    "docs/evidence/x01/cli-startup-close.json",
+    "docs/evidence/x01/cli-startup-quality.md",
+    "docs/evidence/x01/cli-startup-closure.json",
+    "docs/evidence/x01/cli-startup-dependency-view.json"
+  ],
+  "checks": "types2 retained -> exact declaration supplied -> types0; 15/15,55unselected. No PG/real OS startup.",
+  "requiredIntake": [
+    "Apply only ten exact product paths with preimage validation. Do not overlay mirrors or other X01 changes.",
+    "Shared reader move and server re-export must arrive together. Preserve any later server/runner main composition changes.",
+    "After independent approval, main operator performs necessary direct combination checks. No repeat of old public PG or plugin suites for unchanged behavior."
+  ],
+  "independentTerminalIntake": "docs/evidence/x01/terminal-integration-ready.json",
+  "notComplete": [
+    "Actual server/runner process entry PG journey",
+    "Management CLI commands",
+    "Unknown invocation effects and complete X01"
+  ]
+}

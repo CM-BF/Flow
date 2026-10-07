@@ -1,0 +1,329 @@
+diff --git a/apps/runner/src/configuration.test.ts b/apps/runner/src/configuration.test.ts
+index a9bde6fe..29dbe4c0 100644
+--- a/apps/runner/src/configuration.test.ts
++++ b/apps/runner/src/configuration.test.ts
+@@ -151,3 +151,15 @@ it('persistent loader returns guarded adapters and a confirmed reference without
+   expect(loaded.harnesses[1]!.descriptor.ports).toEqual({ sessionPersistence: 'host-owned' });
+   expect(createTransport).not.toHaveBeenCalled();
+ });
++
++it('plugin operator file is explicitly selected and returns only strict store policy without publishing or executing', async () => {
++  const { loadPluginExecutionConfiguration } = await import('./configuration.js');
++  expect(await loadPluginExecutionConfiguration(undefined)).toBeUndefined();
++  const store = { root: '/operator/materials', storeId: 'private-store', allowedDigests: ['a'.repeat(64)] };
++  expect(await loadPluginExecutionConfiguration(await manifest(store))).toEqual({ store });
++  for (const value of [{ ...store, token: 'SECRET_MARKER' }, { ...store, root: 'relative' }, { ...store, root: '/a/../b' },
++    { ...store, allowedDigests: ['invalid'] }, { ...store, allowedDigests: Array(513).fill('a'.repeat(64)) }, { ...store, hostApiMajor: 2 }]) {
++    await expect(loadPluginExecutionConfiguration(await manifest(value))).rejects.toThrow('invalid or unavailable');
++  }
++  await expect(loadPluginExecutionConfiguration('')).rejects.toThrow('invalid or unavailable');
++});
+diff --git a/apps/runner/src/configuration.ts b/apps/runner/src/configuration.ts
+index 15e957a0..3615844d 100644
+--- a/apps/runner/src/configuration.ts
++++ b/apps/runner/src/configuration.ts
+@@ -1,6 +1,9 @@
++import { z } from 'zod';
++import type { TrustedPackageStore } from '@flow/plugin-runtime';
++import { readPrivateJsonConfiguration } from '../../../packages/plugin-runtime/src/private-configuration.js';
+ import { open, stat } from 'node:fs/promises';
+ import { constants } from 'node:fs';
+-import { isAbsolute } from 'node:path';
++import { isAbsolute, resolve } from 'node:path';
+ import type { HarnessAdapter } from '@flow/contracts';
+ import { createFixtureAdapter } from './fixture.js';
+ import { configureClaudeHarness } from './native-harness/claude.js';
+@@ -97,3 +100,16 @@ async function readManifest(path: string, harness: 'Claude' | 'Codex'): Promise<
+     return JSON.parse(buffer.subarray(0, offset).toString('utf8'));
+   } finally { await file.close(); }
+ }
++
++const pluginStore = z.strictObject({
++  root: z.string().min(1).max(4096).refine(path => isAbsolute(path) && resolve(path) === path),
++  storeId: z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/),
++  allowedDigests: z.array(z.string().regex(/^[a-f0-9]{64}$/)).max(512),
++});
++
++/** Explicit private operator input only; actual materials remain checked by the existing package store. */
++export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore } | undefined> {
++  if (filename === undefined) return undefined;
++  try { return { store: pluginStore.parse(await readPrivateJsonConfiguration(filename)) }; }
++  catch { throw new Error('Plugin execution configuration is invalid or unavailable. Use an owned 0600 regular JSON file.'); }
++}
+diff --git a/apps/runner/src/main-concurrency.test.ts b/apps/runner/src/main-concurrency.test.ts
+index 3ff1b8fa..2fa00aa2 100644
+--- a/apps/runner/src/main-concurrency.test.ts
++++ b/apps/runner/src/main-concurrency.test.ts
+@@ -3,10 +3,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+ const dependencies = vi.hoisted(() => ({
+   codex: vi.fn(), load: vi.fn(), publish: vi.fn(), guard: vi.fn(),
+   native: vi.fn<(options: Record<string, unknown>) => Promise<void>>(),
+-  endpoints: vi.fn(), protocol: vi.fn(), engineering: vi.fn(),
++  endpoints: vi.fn(), protocol: vi.fn(), engineering: vi.fn(), plugin: vi.fn(),
+ }));
+ vi.mock('./engineering/launch.js', () => ({ loadEngineeringRunner: dependencies.engineering }));
+-vi.mock('./configuration.js', () => ({ loadRunnerConfiguration: dependencies.load, loadCodexProductionRunnerConfiguration: dependencies.codex }));
++vi.mock('./configuration.js', () => ({ loadRunnerConfiguration: dependencies.load, loadCodexProductionRunnerConfiguration: dependencies.codex, loadPluginExecutionConfiguration: dependencies.plugin }));
+ vi.mock('./execution-profiles.js', () => ({ publishExecutionProfile: dependencies.publish, guardExecutionProfile: dependencies.guard }));
+ vi.mock('./runtime.js', () => ({ runRunner: dependencies.native }));
+ vi.mock('./protocol-dispatch/index.js', () => ({ loadProtocolEndpoints: dependencies.endpoints, runProtocolRunner: dependencies.protocol }));
+@@ -18,6 +18,7 @@ beforeEach(() => {
+   vi.resetModules(); vi.resetAllMocks();
+   priorExitCode = process.exitCode; process.exitCode = undefined;
+   priorSignals = [process.listenerCount('SIGINT'), process.listenerCount('SIGTERM')];
++  vi.stubEnv('FLOW_PLUGIN_EXECUTION_CONFIG', undefined);
+   vi.stubEnv('FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS', undefined);
+   vi.stubEnv('FLOW_A2A_ENDPOINTS_FILE', undefined);
+   vi.stubEnv('FLOW_ENGINEERING_SETUP_FILE', undefined);
+@@ -29,6 +30,7 @@ beforeEach(() => {
+   vi.stubEnv('FLOW_RUNNER_WORKDIR', '/synthetic-workdir');
+   vi.spyOn(process.stderr, 'write').mockImplementation(() => true);
+   dependencies.load.mockResolvedValue({ harnesses: [{ adapter, descriptor: { publicProfile: null } }], profile: null, activeSteering: false });
++  dependencies.plugin.mockResolvedValue(undefined);
+   dependencies.native.mockResolvedValue();
+   dependencies.endpoints.mockResolvedValue(['synthetic-endpoint']);
+   dependencies.protocol.mockResolvedValue(undefined);
+@@ -166,3 +168,26 @@ describe('persistent Codex main entry', () => {
+     await start(); expect(dependencies.native).not.toHaveBeenCalled(); expect(process.exitCode).toBe(1);
+   });
+ });
++
++describe('plugin operator startup', () => {
++  it('passes one explicitly read trusted store to the same native runner without changing adapters', async () => {
++    const pluginExecution = { store: { root: '/operator/materials', storeId: 'store', allowedDigests: ['a'.repeat(64)] } };
++    vi.stubEnv('FLOW_PLUGIN_EXECUTION_CONFIG', '/private/operator.json'); dependencies.plugin.mockResolvedValue(pluginExecution);
++    await start(); expect(dependencies.plugin).toHaveBeenCalledExactlyOnceWith('/private/operator.json');
++    expect(dependencies.native).toHaveBeenCalledExactlyOnceWith(expect.objectContaining({ pluginExecution, adapters: [adapter] }));
++    expect(dependencies.protocol).not.toHaveBeenCalled();
++  });
++  it('keeps omission default-off and does not add a plugin property to legacy runRunner options', async () => {
++    await start(); expect(dependencies.plugin).toHaveBeenCalledExactlyOnceWith(undefined);
++    expect(dependencies.native.mock.calls[0]![0]).not.toHaveProperty('pluginExecution');
++  });
++  it.each(['FLOW_A2A_ENDPOINTS_FILE','FLOW_ENGINEERING_SETUP_FILE','FLOW_CODEX_PROFILE_FILE'])('rejects plugin mixed with %s before reading or publishing', async name => {
++    vi.stubEnv('FLOW_PLUGIN_EXECUTION_CONFIG','/operator.json'); vi.stubEnv(name,'/other.json'); await start(); noStartup();
++  });
++  it('never falls back from an explicitly empty or invalid private file', async () => {
++    vi.stubEnv('FLOW_PLUGIN_EXECUTION_CONFIG',''); dependencies.plugin.mockRejectedValue(new Error('private rejected path'));
++    await start(); expect(dependencies.plugin).toHaveBeenCalledExactlyOnceWith('');
++    expect(dependencies.native).not.toHaveBeenCalled(); expect(dependencies.load).not.toHaveBeenCalled();
++    expect(process.exitCode).toBe(1); expect(process.stderr.write).not.toHaveBeenCalledWith(expect.stringContaining('private rejected path'));
++  });
++});
+diff --git a/apps/runner/src/main.ts b/apps/runner/src/main.ts
+index 6cbd36f4..e9273a9f 100644
+--- a/apps/runner/src/main.ts
++++ b/apps/runner/src/main.ts
+@@ -1,5 +1,5 @@
+ import { loadEngineeringRunner } from './engineering/launch.js';
+-import { loadCodexProductionRunnerConfiguration, loadRunnerConfiguration } from './configuration.js';
++import { loadCodexProductionRunnerConfiguration, loadRunnerConfiguration, loadPluginExecutionConfiguration } from './configuration.js';
+ import { parseRunnerConcurrency } from './concurrency-configuration.js';
+ import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
+ import { runRunner } from './runtime.js';
+@@ -15,9 +15,11 @@ try {
+   const engineeringFile = process.env.FLOW_ENGINEERING_SETUP_FILE;
+   const codexManifestFile = process.env.FLOW_CODEX_PROFILE_FILE;
+   const launchManifestFile = process.env.FLOW_CODEX_LAUNCH_FILE;
++  const pluginFile = process.env.FLOW_PLUGIN_EXECUTION_CONFIG;
+   const codexSelected = codexManifestFile !== undefined || launchManifestFile !== undefined;
+   if (codexSelected && (!codexManifestFile || !launchManifestFile || endpointsFile !== undefined || engineeringFile !== undefined
+     || process.env.FLOW_CLAUDE_MATERIALS_FILE !== undefined)) throw new Error('Select one complete Codex host configuration.');
++  if (pluginFile !== undefined && (codexSelected || endpointsFile !== undefined || engineeringFile !== undefined)) throw new Error('Plugin execution requires the ordinary native host.');
+   const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');
+   const common = {
+     baseUrl: process.env.FLOW_URL ?? 'http://127.0.0.1:4310',
+@@ -36,12 +38,13 @@ try {
+   } else if (endpointsFile) {
+     await runProtocolRunner({ ...common, endpoints: await loadProtocolEndpoints(endpointsFile) });
+   } else {
++    const pluginExecution = await loadPluginExecutionConfiguration(pluginFile);
+     const loaded = await loadRunnerConfiguration(process.env.FLOW_CLAUDE_MATERIALS_FILE);
+     const profile = loaded.profile;
+     const reference = profile ? await publishExecutionProfile({ ...common, configuration: profile }) : null;
+     const adapters = loaded.harnesses.map(({ adapter, descriptor }) => descriptor.publicProfile && reference
+       ? guardExecutionProfile(adapter, reference, descriptor.publicProfile) : adapter);
+-    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering, maxConcurrentAttempts });
++    await runRunner({ ...common, adapters, activeSteering: loaded.activeSteering, maxConcurrentAttempts, ...(pluginExecution ? { pluginExecution } : {}) });
+   }
+ } catch {
+   process.stderr.write('Runner stopped: check its configuration, center authentication and local event storage.\n');
+diff --git a/apps/server/src/main.ts b/apps/server/src/main.ts
+index a5f57c83..9ecfdeca 100644
+--- a/apps/server/src/main.ts
++++ b/apps/server/src/main.ts
+@@ -1,3 +1,4 @@
++import { readPluginRuntimeConfiguration } from './plugin-runtime-configuration.js';
+ import { readPackageFetchConfiguration } from './package-fetch-configuration.js';
+ import { readPluginInstallationConfiguration } from './plugin-installation-configuration.js';
+ import { parseActiveSteeringConfiguration } from './active-steering-configuration.js';
+@@ -10,6 +11,7 @@ const port = Number(process.env.FLOW_PORT ?? 4310);
+ if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('FLOW_PORT must be a valid port.');
+ const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);
+ const pluginInstallHost = await readPluginInstallationConfiguration(process.env.FLOW_PLUGIN_INSTALL_CONFIG);
++const pluginRuntimeHostPolicy = await readPluginRuntimeConfiguration(process.env.FLOW_PLUGIN_RUNTIME_CONFIG);
+ const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);
+ // This is trusted host configuration, never a request parameter. Semantic validation lives in the auth module.
+ const rawBrowserSession = process.env.FLOW_BROWSER_SESSION_JSON;
+@@ -19,7 +21,7 @@ if (rawBrowserSession !== undefined) {
+   try { browserSession = JSON.parse(rawBrowserSession) as ServerOptions['browserSession']; }
+   catch { throw new Error('FLOW_BROWSER_SESSION_JSON must contain valid JSON.'); }
+ }
+-const app = await createServer({ databaseUrl, ownerToken, activeSteering, ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(pluginInstallHost ? { pluginInstallHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
++const app = await createServer({ databaseUrl, ownerToken, activeSteering, ...(pluginRuntimeHostPolicy ? { pluginRuntimeHostPolicy } : {}), ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(pluginInstallHost ? { pluginInstallHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) });
+ let closing = false;
+ const stop = () => {
+   if (closing) return;
+diff --git a/apps/server/src/plugin-runtime-configuration.test.ts b/apps/server/src/plugin-runtime-configuration.test.ts
+new file mode 100644
+index 00000000..bcfeeec9
+--- /dev/null
++++ b/apps/server/src/plugin-runtime-configuration.test.ts
+@@ -0,0 +1,31 @@
++import { randomUUID } from 'node:crypto';
++import { lstat,mkdtemp,rm,writeFile } from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import { afterAll,afterEach,beforeEach,expect,test,vi } from 'vitest';
++import { readPluginRuntimeConfiguration } from './plugin-runtime-configuration.js';
++const server=vi.hoisted(()=>({create:vi.fn(),listen:vi.fn(),close:vi.fn()}));
++vi.mock('./index.js',()=>({createServer:server.create}));
++const roots:{path:string;dev:number;ino:number;removed:boolean}[]=[];
++async function policyFile(value:unknown){const path=await mkdtemp(join(tmpdir(),'flow-runtime-policy-')),stat=await lstat(path);roots.push({path,dev:stat.dev,ino:stat.ino,removed:false});const file=join(path,'policy.json');await writeFile(file,JSON.stringify(value),{mode:0o600});return file;}
++beforeEach(()=>{vi.resetModules();vi.resetAllMocks();server.listen.mockResolvedValue(undefined);server.close.mockResolvedValue(undefined);server.create.mockResolvedValue({listen:server.listen,close:server.close});});
++afterEach(async()=>{vi.unstubAllEnvs();vi.restoreAllMocks();for(const root of roots.filter(x=>!x.removed)){const stat=await lstat(root.path);expect([stat.dev,stat.ino,stat.isDirectory(),stat.isSymbolicLink()]).toEqual([root.dev,root.ino,true,false]);await rm(root.path,{recursive:true});root.removed=true;}});
++afterAll(async()=>{if(process.env.FLOW_X01_HOST_POLICY_FACTS)await writeFile(process.env.FLOW_X01_HOST_POLICY_FACTS,JSON.stringify({roots}),{flag:'wx',mode:0o600});});
++const identity=()=>({runnerId:randomUUID(),storeId:'owned',hostApiMajor:1 as const,protocol:'flow.plugin-runtime.v1' as const});
++test('plugin host operator policy matches only the configured full authenticated tuple and omission stays disabled',async()=>{
++  expect(await readPluginRuntimeConfiguration(undefined)).toBeUndefined();const id=identity();const {protocol,...tuple}=id;
++  const file=await policyFile({hosts:[tuple]});const policy=(await readPluginRuntimeConfiguration(file))!;
++  expect(policy(id)).toBe(true);for(const wrong of [{...id,runnerId:randomUUID()},{...id,storeId:'other'},{...id,hostApiMajor:2}])expect(policy(wrong as typeof id)).toBe(false);
++  await writeFile(file,JSON.stringify({hosts:[]}));expect(policy(id)).toBe(true);
++  for(const value of [{hosts:[]},{hosts:[tuple,tuple]},{hosts:[{...tuple,runnerId:'*'}]},{hosts:[{...tuple,token:'SECRET'}]}])await expect(readPluginRuntimeConfiguration(await policyFile(value))).rejects.toThrow('invalid or unavailable');
++  await expect(readPluginRuntimeConfiguration('')).rejects.toThrow('invalid or unavailable');
++});
++function env(file:string|undefined){vi.stubEnv('DATABASE_URL','synthetic-only');vi.stubEnv('FLOW_TOKEN','synthetic-only');vi.stubEnv('FLOW_PORT','4310');for(const name of ['FLOW_PACKAGE_FETCH_CONFIG','FLOW_PLUGIN_INSTALL_CONFIG','FLOW_ACTIVE_STEERING','FLOW_BROWSER_SESSION_JSON','FLOW_ORIGIN'])vi.stubEnv(name,undefined);vi.stubEnv('FLOW_PLUGIN_RUNTIME_CONFIG',file);}
++async function startAndStop(file:string|undefined){env(file);const prior=[process.listenerCount('SIGINT'),process.listenerCount('SIGTERM')];const on=vi.spyOn(process,'on');try{await import('./main.js');const stop=on.mock.calls.find(([name])=>name==='SIGTERM')![1];stop();await vi.waitFor(()=>expect(server.close).toHaveBeenCalledOnce());await Promise.resolve();expect([process.listenerCount('SIGINT'),process.listenerCount('SIGTERM')]).toEqual(prior);}finally{for(const [name,listener] of on.mock.calls)if(name==='SIGINT'||name==='SIGTERM')process.off(name,listener);}}
++test('plugin host actual main forwards an explicitly loaded exact policy once and preserves ordinary close',async()=>{
++  const id=identity(),{protocol,...tuple}=id;await startAndStop(await policyFile({hosts:[tuple]}));expect(server.create).toHaveBeenCalledOnce();expect(server.create.mock.calls[0]![0].pluginRuntimeHostPolicy(id)).toBe(true);expect(server.listen).toHaveBeenCalledOnce();
++});
++test('plugin host actual main omission has no policy property and invalid explicit input starts no center',async()=>{
++  await startAndStop(undefined);expect(server.create.mock.calls[0]![0]).not.toHaveProperty('pluginRuntimeHostPolicy');
++  vi.resetModules();server.create.mockClear();server.listen.mockClear();env('');await expect(import('./main.js')).rejects.toThrow('invalid or unavailable');expect(server.create).not.toHaveBeenCalled();expect(server.listen).not.toHaveBeenCalled();
++});
+diff --git a/apps/server/src/plugin-runtime-configuration.ts b/apps/server/src/plugin-runtime-configuration.ts
+new file mode 100644
+index 00000000..9948101c
+--- /dev/null
++++ b/apps/server/src/plugin-runtime-configuration.ts
+@@ -0,0 +1,18 @@
++import { z } from 'zod';
++import { readPrivateJsonConfiguration } from './private-json-configuration.js';
++import type { TrustedPluginHostPolicy } from './plugin-runtime/store.js';
++
++const host = z.strictObject({ runnerId: z.string().uuid(), storeId: z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/), hostApiMajor: z.literal(1) });
++const policy = z.strictObject({ hosts: z.array(host).min(1).max(128)
++  .refine(hosts => new Set(hosts.map(identity => JSON.stringify(identity))).size === hosts.length, 'Duplicate host tuple') });
++const key = (identity: z.infer<typeof host>) => JSON.stringify([identity.runnerId, identity.storeId, identity.hostApiMajor]);
++
++/** Operator configuration authorizes exact authenticated identities, never a runner-supplied store alone. */
++export async function readPluginRuntimeConfiguration(filename: string | undefined): Promise<TrustedPluginHostPolicy | undefined> {
++  if (filename === undefined) return undefined;
++  try {
++    const parsed = policy.parse(await readPrivateJsonConfiguration(filename));
++    const allowed = new Set(parsed.hosts.map(key));
++    return identity => allowed.has(key(identity));
++  } catch { throw new Error('Plugin runtime configuration is invalid or unavailable. Use an owned 0600 regular JSON file.'); }
++}
+diff --git a/apps/server/src/private-json-configuration.ts b/apps/server/src/private-json-configuration.ts
+index 23fe7583..8eef5654 100644
+--- a/apps/server/src/private-json-configuration.ts
++++ b/apps/server/src/private-json-configuration.ts
+@@ -1,23 +1,2 @@
+-import { constants } from 'node:fs';
+-import { open } from 'node:fs/promises';
+-import { isAbsolute } from 'node:path';
+-
+-const maximumBytes = 65_536;
+-/** Bounded host-local input. Callers own schema validation and safe domain error messages. */
+-export async function readPrivateJsonConfiguration(filename: string): Promise<unknown> {
+-  if (!isAbsolute(filename)) throw new Error('Invalid private configuration path.');
+-  const file = await open(filename, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
+-  try {
+-    const stat = await file.stat();
+-    if (!stat.isFile() || (stat.mode & 0o777) !== 0o600 || (process.getuid && stat.uid !== process.getuid()) || stat.size > maximumBytes) throw new Error('Invalid private configuration file.');
+-    const bytes = Buffer.alloc(maximumBytes + 1);
+-    let length = 0;
+-    while (length < bytes.length) {
+-      const { bytesRead } = await file.read(bytes, length, bytes.length - length, null);
+-      if (!bytesRead) break;
+-      length += bytesRead;
+-    }
+-    if (length > maximumBytes) throw new Error('Private configuration exceeds its limit.');
+-    return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes.subarray(0, length))) as unknown;
+-  } finally { await file.close(); }
+-}
++// Compatibility entry: server and runner consume the same bounded private file reader.
++export { readPrivateJsonConfiguration } from '../../../packages/plugin-runtime/src/private-configuration.js';
+diff --git a/packages/plugin-runtime/src/private-configuration.test.ts b/packages/plugin-runtime/src/private-configuration.test.ts
+new file mode 100644
+index 00000000..fee9be8d
+--- /dev/null
++++ b/packages/plugin-runtime/src/private-configuration.test.ts
+@@ -0,0 +1,27 @@
++import { chmod, lstat, mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import { afterAll, afterEach, expect, test, vi } from 'vitest';
++import { readPrivateJsonConfiguration } from './private-configuration.js';
++const roots: { path:string;dev:number;ino:number;removed:boolean }[]=[];
++async function fixture(bytes:string|Buffer='{"store":"owned"}') {
++  const path=await mkdtemp(join(tmpdir(),'flow-plugin-private-config-')), stat=await lstat(path);
++  roots.push({path,dev:stat.dev,ino:stat.ino,removed:false}); const file=join(path,'config.json');
++  await writeFile(file,bytes,{mode:0o600}); return {path,file};
++}
++afterEach(async()=>{vi.restoreAllMocks();for(const root of roots.filter(x=>!x.removed)){
++  const stat=await lstat(root.path);expect([stat.dev,stat.ino,stat.isDirectory(),stat.isSymbolicLink()]).toEqual([root.dev,root.ino,true,false]);
++  await rm(root.path,{recursive:true});root.removed=true;
++}});
++afterAll(async()=>{if(process.env.FLOW_X01_PRIVATE_CONFIG_FACTS)await writeFile(process.env.FLOW_X01_PRIVATE_CONFIG_FACTS,JSON.stringify({roots}),{flag:'wx',mode:0o600});});
++test('private operator reader accepts bounded owned 0600 JSON and rejects aliases, nonprivate modes and nonfiles',async()=>{
++  const f=await fixture();expect(await readPrivateJsonConfiguration(f.file)).toEqual({store:'owned'});
++  const alias=join(f.path,'alias');await symlink(f.file,alias);
++  await expect(readPrivateJsonConfiguration(alias)).rejects.toThrow();await expect(readPrivateJsonConfiguration('relative')).rejects.toThrow();
++  await chmod(f.file,0o644);await expect(readPrivateJsonConfiguration(f.file)).rejects.toThrow();
++  await mkdir(join(f.path,'directory'));await expect(readPrivateJsonConfiguration(join(f.path,'directory'))).rejects.toThrow();
++});
++test('private operator reader bounds UTF8 and actual bytes and rejects another uid',async()=>{
++  for(const bytes of [Buffer.from([0xff]),'x'.repeat(65537),'{broken'])await expect(readPrivateJsonConfiguration((await fixture(bytes)).file)).rejects.toThrow();
++  const f=await fixture();if(process.getuid){const uid=process.getuid();vi.spyOn(process,'getuid').mockReturnValue(uid+1);await expect(readPrivateJsonConfiguration(f.file)).rejects.toThrow();}
++});
+diff --git a/packages/plugin-runtime/src/private-configuration.ts b/packages/plugin-runtime/src/private-configuration.ts
+new file mode 100644
+index 00000000..23fe7583
+--- /dev/null
++++ b/packages/plugin-runtime/src/private-configuration.ts
+@@ -0,0 +1,23 @@
++import { constants } from 'node:fs';
++import { open } from 'node:fs/promises';
++import { isAbsolute } from 'node:path';
++
++const maximumBytes = 65_536;
++/** Bounded host-local input. Callers own schema validation and safe domain error messages. */
++export async function readPrivateJsonConfiguration(filename: string): Promise<unknown> {
++  if (!isAbsolute(filename)) throw new Error('Invalid private configuration path.');
++  const file = await open(filename, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
++  try {
++    const stat = await file.stat();
++    if (!stat.isFile() || (stat.mode & 0o777) !== 0o600 || (process.getuid && stat.uid !== process.getuid()) || stat.size > maximumBytes) throw new Error('Invalid private configuration file.');
++    const bytes = Buffer.alloc(maximumBytes + 1);
++    let length = 0;
++    while (length < bytes.length) {
++      const { bytesRead } = await file.read(bytes, length, bytes.length - length, null);
++      if (!bytesRead) break;
++      length += bytesRead;
++    }
++    if (length > maximumBytes) throw new Error('Private configuration exceeds its limit.');
++    return JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes.subarray(0, length))) as unknown;
++  } finally { await file.close(); }
++}
