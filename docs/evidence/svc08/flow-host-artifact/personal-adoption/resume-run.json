@@ -1,0 +1,162 @@
+{
+  "startedAt": "2026-10-07T06:13:38.710871+00:00",
+  "finishedAt": "2026-10-07T06:13:38.902189+00:00",
+  "wallMs": 191,
+  "priorLocalWallMs": 139,
+  "freeBefore": 24435326976,
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "sourceBindings": [
+    {
+      "path": "caller.mjs",
+      "bytes": 17125,
+      "sha256": "12d020699010695ac8c7395f29f89559d37eec2662cbe2974db152a8eb1939a9"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 6917,
+      "sha256": "1776b3b7e2165b53d5b542c6b702aadda64d1b14df4b93bea968f44da5a8d48f"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 26023,
+      "sha256": "27b610f99db436bc8f6d1dc9e1587dbfe1dcbdba1e13b451f70fb7384cbdb753"
+    },
+    {
+      "path": "completed-migration.mjs",
+      "bytes": 2384,
+      "sha256": "f1984f2699cfda8b6339815bfa2b5f51b3456b64807fe9da7055fd2ccfe07e60"
+    },
+    {
+      "path": "completed-migration.test.mjs",
+      "bytes": 3978,
+      "sha256": "fc1b8e5121317cae49fe7dd83df5a044ac1a6b792829968b6d2044ac7cf981a6"
+    }
+  ],
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/completed-migration.test.mjs"
+    ],
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--check",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/caller.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "-B",
+      "-c",
+      "import ast; from pathlib import Path; t=ast.parse(Path('supervise.py').read_text()); a=next(x for x in t.body if isinstance(x,ast.Assign) and any(isinstance(y,ast.Name) and y.id=='resume' for y in x.targets)); b=next(x for x in t.body if isinstance(x,ast.Assert) and isinstance(x.msg,ast.Constant) and x.msg.value=='COMPLETED_MIGRATION_MUST_NOT_REPLAY'); code=compile(ast.Module(body=[a,b],type_ignores=[]),'<fixed-guard>','exec'); rejected=False\ntry: exec(code,{'inputs':{'completedMigration':{'directory':'fixed-prior'}},'phase':'migrate'})\nexcept AssertionError: rejected=True\nassert rejected; exec(code,{'inputs':{'completedMigration':{'directory':'fixed-prior'}},'phase':'request'}); print('fixed supervisor AST valid; exact guard refuses migrate and allows request; zero spawn')"
+    ]
+  ],
+  "reports": [
+    {
+      "pid": 1922,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 124,
+      "stdout": "\u2714 the exact complete checkpoint is read without changing its five original files (6.528792ms)\n\u2714 tampered bytes are refused even when the JSON remains valid (2.981542ms)\n\u2714 wrong root, wrong file identity and missing original are refused (2.800792ms)\n\u2714 a failed or incomplete prior supervisor cannot authorize request continuation (7.058416ms)\n\u2714 unknown migration, wrong artifact and wrong checkpoint phase cannot continue (6.880584ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 78.911417\n",
+      "stderr": "",
+      "observed_bytes": 558,
+      "retained_bytes": 558,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 2075,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 33,
+      "stdout": "",
+      "stderr": "",
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 2116,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 31,
+      "stdout": "fixed supervisor AST valid; exact guard refuses migrate and allows request; zero spawn\n",
+      "stderr": "",
+      "observed_bytes": 87,
+      "retained_bytes": 87,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "rawBytes": 645,
+  "scratchBeforeCleanup": [],
+  "selectedNewCases": 5,
+  "oldTestsRerun": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "personalReads": 0,
+  "provider": 0
+}

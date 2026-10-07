@@ -6,29 +6,29 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T06:09:58.171Z |
+| 更新时间 | 2026-10-07T06:14:57.995Z |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 宿主产物已迁入；维护时间表示已窄修并通过纯检查，网页替换尚未执行。 |
-| 下一可用交付 | 独立复审后，从成功迁入检查点继续生成新请求，完成网页宿主采用。 |
-| 当前阻塞 | ACTIVE: 等待时间表示修复独审和仅恢复请求的固定入口；不重复已成功迁入。 |
+| 当前产出 | 产物迁入已完成，时间表示修复已独审；仅继续请求的入口通过局部验证。 |
+| 下一可用交付 | 复审续接入口后，在协调窗口完成网页宿主替换；不重复迁入。 |
+| 当前阻塞 | ACTIVE: 等待续接入口独审与共享窗口，现未启动个人操作。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | Date持久表示修复472a2a2e37615838779c91a869165f4ed4967c08；r2结果0f8bf516781eeabf86d42c663cbba6a55ef5786c原件保留 |
+| Head | r3仅请求续接c20d21b21caba504cd472c4596110fe535980752；Date修复472a已独审、r2原结果保持 |
 | 工作树dirty状态 | d95源固定；本次仅attempt-02原件/分析/status收口，提交后核clean |
-| 工作分支状态 | in-progress；新5纯例/语法通过待独审，r2迁入成功/request FAIL，replace/post未调用 |
+| 工作分支状态 | in-progress；r3续接入口待独审，r2迁入成功/request FAIL，replace/post未调用 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
 | Review | APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR d95c249；[原样独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-independent-review.json)；原APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
-| 已集成 main 状态 | INTEGRATED 5cae7a25a7af723f9d9bae2666daeafbee004c8f；Lead确认接收原caller/独审及b35fc741首失败原件；更早隔离结果1d49保留。d95c249身份修复已独审、待集成；个人读取及采用仍未发生 |
+| 已集成 main 状态 | INTEGRATED 311e62158186177e344b49d24ed32e335268be1d；Lead确认原caller身份/Date修复与r2原结果到72eb及独审已接收；新r3续接仍待审/集成，个人Web替换未发生 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead已确认实际4320载入186权威source；本owner状态可被当前parseStatus聚合，未为本次metadata刷新页面 |
 
@@ -158,3 +158,7 @@ replace-intent/request/replace-outer/post均不存在，CLI replace=0；0后台/
 ## 2026-10-07T06:09:58.171Z：持久时间表示修复与本队local归还
 
 固定472a三源将唯一事实提取边界的maintenance_updated_at转换为严格持久ISO/null，其它字段/比较不放宽。5新pure checks和caller语法通过，实际2026-10-07T06:08:50.797494+00:00→2026-10-07T06:08:50.937341+00:00，139ms/560B/两组absent双EOF，checkpoint后exact tiny目录已清，本队local已归还。原9/6不重跑、0个人/PG/HTTP/provider。见[delta](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-delta-manifest.json)。r2成功迁入后续只准从明确检查点恢复request，当前入口仍是已消费r2，禁止直接重试；新恢复接缝尚待固定。
+
+## 2026-10-07T06:14:57.995Z：r2结果与Date独审接收，r3续接固定
+
+原样归档native唯一r2忠实性[报告](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/independent-review.json)及Date[报告](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-independent-review.json)，不把request失败改绿。r3 source c20d21只请求续接，完整五原件及已迁入store/artifact fresh核后才CAS；migrate两层拒绝，旧outer不复制冒新结果。5新tiny/语法/AST guard通过，191ms/645B/三组absent双EOF/临时目录清；累计本段330ms/1205B。见[唯一manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/resume-request-manifest.json)。0个人读取/PG/HTTP/provider；原r2所有文件/产物KEEP，新r3未创建，源码停写交Lead唯一独审。

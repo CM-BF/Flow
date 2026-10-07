@@ -1,14 +1,9 @@
 {
-  "generatedAt": "2026-10-07T05:58:32.280796+00:00",
-  "state": "RESUME_REQUEST_ONLY_PENDING_REVIEW",
+  "at": "2026-10-07T06:14:57.995Z",
+  "target": "c20d21b21caba504cd472c4596110fe535980752",
   "base": "72ebf2eee8560541680fd5fb304485f5922f7900",
-  "originalManifestSha256": "a0a45ea01ab5435c63c0b37c70cf660e4f0c32774a52b0eea719eb1cef4220e4",
-  "sourceBindings": [
-    {
-      "path": "procedure.mjs",
-      "bytes": 5437,
-      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
-    },
+  "state": "RESUME_REQUEST_ONLY_PENDING_REVIEW",
+  "changedSourceBindings": [
     {
       "path": "caller.mjs",
       "bytes": 17125,
@@ -20,14 +15,26 @@
       "sha256": "1776b3b7e2165b53d5b542c6b702aadda64d1b14df4b93bea968f44da5a8d48f"
     },
     {
-      "path": "procedure.test.mjs",
-      "bytes": 5664,
-      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681"
-    },
-    {
       "path": "inputs.json",
       "bytes": 26023,
       "sha256": "27b610f99db436bc8f6d1dc9e1587dbfe1dcbdba1e13b451f70fb7384cbdb753"
+    },
+    {
+      "path": "completed-migration.mjs",
+      "bytes": 2384,
+      "sha256": "f1984f2699cfda8b6339815bfa2b5f51b3456b64807fe9da7055fd2ccfe07e60"
+    },
+    {
+      "path": "completed-migration.test.mjs",
+      "bytes": 3978,
+      "sha256": "fc1b8e5121317cae49fe7dd83df5a044ac1a6b792829968b6d2044ac7cf981a6"
+    }
+  ],
+  "unchangedDirectBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
     },
     {
       "path": "file-readers.mjs",
@@ -40,19 +47,14 @@
       "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
     },
     {
+      "path": "procedure.test.mjs",
+      "bytes": 5664,
+      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681"
+    },
+    {
       "path": "facts.test.mjs",
       "bytes": 3012,
       "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
-    },
-    {
-      "path": "completed-migration.mjs",
-      "bytes": 2384,
-      "sha256": "f1984f2699cfda8b6339815bfa2b5f51b3456b64807fe9da7055fd2ccfe07e60"
-    },
-    {
-      "path": "completed-migration.test.mjs",
-      "bytes": 3978,
-      "sha256": "fc1b8e5121317cae49fe7dd83df5a044ac1a6b792829968b6d2044ac7cf981a6"
     }
   ],
   "runtimeBindings": [
@@ -433,6 +435,78 @@
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py"
     }
   ],
+  "completedMigration": {
+    "directory": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123555815
+    },
+    "inputSha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a",
+    "files": [
+      {
+        "name": "reservation.json",
+        "bytes": 263,
+        "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c",
+        "dev": 16777234,
+        "ino": 123555816
+      },
+      {
+        "name": "migration-result.json",
+        "bytes": 385,
+        "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603",
+        "dev": 16777234,
+        "ino": 123571469
+      },
+      {
+        "name": "migration-checkpoint.json",
+        "bytes": 568,
+        "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81",
+        "dev": 16777234,
+        "ino": 123571457
+      },
+      {
+        "name": "migration-before.json",
+        "bytes": 28292,
+        "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441",
+        "dev": 16777234,
+        "ino": 123555823
+      },
+      {
+        "name": "migrate-outer.json",
+        "bytes": 483,
+        "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3",
+        "dev": 16777234,
+        "ino": 123555817
+      }
+    ]
+  },
+  "completedMigrationArchiveBindings": [
+    {
+      "path": "attempt-02/reservation.json",
+      "bytes": 263,
+      "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c"
+    },
+    {
+      "path": "attempt-02/migration-result.json",
+      "bytes": 385,
+      "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603"
+    },
+    {
+      "path": "attempt-02/migration-checkpoint.json",
+      "bytes": 568,
+      "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81"
+    },
+    {
+      "path": "attempt-02/migration-before.json",
+      "bytes": 28292,
+      "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441"
+    },
+    {
+      "path": "attempt-02/migrate-outer.json",
+      "bytes": 483,
+      "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3"
+    }
+  ],
   "evidenceBindings": [
     {
       "path": "resume-request.md",
@@ -478,10 +552,44 @@
       "path": "resume-run/3.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "caller-manifest.json",
+      "bytes": 19727,
+      "sha256": "6dba8885ba55846e980210efc6fd092bd622acaaa68e35aeb5539503de31e244"
+    },
+    {
+      "path": "facts-caller-manifest-original.json",
+      "bytes": 19124,
+      "sha256": "eb4bb36054469f0677e92ab30dd7ca704b32cd64a50ec32df521cea6ec4b2a5e"
+    },
+    {
+      "path": "facts-independent-review.json",
+      "bytes": 2145,
+      "sha256": "0a62a6a3a6e2e7443173cd2fe664bacfa9d74bdd2b3a4c1b5cadc9942ae07f5a"
+    },
+    {
+      "path": "attempt-02/independent-review.json",
+      "bytes": 2025,
+      "sha256": "5101155427a2244731132078af22f70401c8f5ef1a8478fc637f91546f116311"
     }
   ],
-  "personalRetry": false,
-  "attempt01Kept": true,
-  "sourceTarget": "c20d21b21caba504cd472c4596110fe535980752",
-  "executionBoundary": "new r3 request\u2192replace\u2192post only; exact r2 migration five records required; no migrate replay"
+  "validation": {
+    "selected": 5,
+    "passed": 5,
+    "wallMs": 191,
+    "rawBytes": 645,
+    "groupsAbsent": 3,
+    "bothEOF": true,
+    "scratchRemoved": true,
+    "callerSyntax": 0,
+    "pythonASTAndExactGuard": "passed; no supervisor top-level execution",
+    "cumulativeWithDateMs": 330,
+    "cumulativeRawBytes": 1205,
+    "PG": 0,
+    "personalReads": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "realRun": "NOT_RUN; r3 not created; original two attempts unchanged"
 }
