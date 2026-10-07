@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:21:32.144227+00:00 |
+| 最近更新 | 2026-10-07T06:32:51.999568+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 新四源 f15dc1cc，原471为已main历史 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | f15dc1cca0e3ec9575a6b0dc0260e7de5725b383；ENG01J-05四源增量，原471已main历史保留 |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | 新四源5/5、4旧未选、focused types0；0stock/PG/provider，[本轮](../../docs/evidence/eng01j/helper-host/run.json)。原471四不同检查/原红与限制保持，不合并成一轮 |
@@ -75,3 +75,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T06:21:32.144227+00:00：ENG01J-05四源固定f15dc1cca0e3ec9575a6b0dc0260e7de5725b383，5/5新纯与文件fixture注入检查、4旧未选、focused types0；[run](../../docs/evidence/eng01j/helper-host/run.json)与两轮raw固定。1775ms监督/1820ms含caller、2037B raw，最大末采私有252B，两个owned组absent/双EOF/目录removed。读取fixed native摘要不启动binary；0stock/PG/provider/个人操作。源码停写待独审，真实helper候选[见此](../../docs/evidence/eng01j/helper-host/next-run.md)。原失败、原471批准及main事实不改。
 
 2026-10-07T06:29:51.627056+00:00：新四源f15获[限定独审](../../docs/evidence/eng01j/helper-host/independent-review.json)，105固定/14安装输入与5新/types已核，reviewer0重测。main/origin de1fe7328f65182b88fdb396e617bcf26b9f0135已精确接收f15+ca6；旧C/R06不变。当前产品四源停写，原七scope只在own evidence准备最薄stock caller，真实helper尚未执行。
+
+2026-10-07T06:32:51.999568+00:00：薄caller固定d44c1bc2c48f96145a519b64f9220baf468bdee8，原4产品f15不变；[唯一实际候选入口](../../docs/evidence/eng01j/helper-host/caller-readiness.md)与22输入已封，只静态/Python AST、不import/启动。至多1stock/总10s含收尾、64KiB raw/1MiB私有、原fresh线；等待Lead新增caller边界独审与明确实际窗口，不自动运行。

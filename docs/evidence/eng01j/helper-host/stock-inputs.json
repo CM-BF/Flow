@@ -1,0 +1,162 @@
+{
+  "task": "ENG01J-05-stock-one",
+  "state": "PREPARED_NOT_RUN",
+  "callerSource": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+  "productSource": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "productApproval": "helper-host/independent-review.json",
+  "productMain": "de1fe7328f65182b88fdb396e617bcf26b9f0135",
+  "bindings": [
+    {
+      "path": "docs/evidence/eng01j/helper-host/prepare-once.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 2527,
+      "sha256": "6233e0ba2d134523d3e7e0dc2266f3b7be24d9162f10e50d160cabd8076ed73c"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-once.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 11028,
+      "sha256": "eba2caaeb8e5fb453faba0becbca8cb036589a1b6236c4427be96e6a1bfdf60a"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/startup-input.sb",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 17393,
+      "sha256": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf"
+    },
+    {
+      "path": "docs/evidence/eng01j/stock-helper/run.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 16449,
+      "sha256": "d037b8a0c0075ae0727150344ec714ed41753d3bb6a2465e30081a6b5db23ba7"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 11725,
+      "sha256": "a05b9f5be309d85934ef3e4014a6bbe2aa6844978dfd52f2ae58ee19a5cf3224"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 4288,
+      "sha256": "6c14b5ccfecbe2b70ab6861655e78bf1f1c78a7e766772a1632073e662b8f332"
+    },
+    {
+      "path": "package.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "tsconfig.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "realpath": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+      "scope": "Exact sandbox launcher, also checked by host at preparation"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "realpath": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "bytes": 222655232,
+      "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
+      "use": "Preparation hash only, never executed"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "use": "actual interpreter selected for old exec_only; standard library not exhaustively attested"
+    }
+  ],
+  "limits": {
+    "totalSeconds": 10,
+    "maximumStockAttempts": 1,
+    "rawBytes": 65536,
+    "privateBytes": 1048576,
+    "freshMinimumBytes": 1107296256,
+    "nativeModelQueries": 0,
+    "PG": 0,
+    "browser": 0
+  },
+  "scope": [
+    "Preparation Node calls prepareDarwinStockHelper/takeLaunch once.",
+    "Python existing exec_only executes one independent stock helper; no R06 initialize.",
+    "Outcome evidence compares exact payload/file identities and bytes; the same host.observe closure is not carried across the separate preparer process.",
+    "Installed entry hashes are not exhaustive transitive payload/dynamic-library attestation.",
+    "No app-server delegation, model qualification, or all-writer revocation demonstrated."
+  ]
+}

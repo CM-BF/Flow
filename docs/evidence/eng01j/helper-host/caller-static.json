@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-07T06:32:51.998616+00:00",
+  "source": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+  "checks": {
+    "pythonAst": "parsed without import or execution",
+    "TypeScript": "manual read, not executed/typechecked in this caller slice",
+    "imports": "host module imports codex definitions; transport spawn occurs only inside createCodexTransport, not the preparer call",
+    "productSourceChanged": false
+  },
+  "actualStockRuns": 0,
+  "services": 0,
+  "provider": 0
+}
