@@ -1,9 +1,19 @@
 # K01-06 查询计划诊断准备独立review
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5
 
 本轮只审plan.md的K01-06增补与docs/evidence/k01/query-plan-diagnostic.md（固定c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5）。基线88bee460；产品只读3c9345df，无产品/PG/工程检查。请Mika核源码定位和9个Git输入hash、12原金样本、current/history计数、row/bytes/latency口径、候选语义与停止/清理边界；文档批准不得当执行窗口或性能结论。原留存与原产品批准如下，仅历史。
+
+Mika独立文档审查于2026-10-07T14:58:07Z完成：**DESIGN_REVIEW_APPROVED**，target `c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5`，0 P1/P2。只读核plan增量保留K01-06/08～10、9份固定Git输入共58979B全部hash一致、12原金样本/语义oracle、G/D16/D128合计1856chunks及5.5MiB算式，以及计量/未知保留/NOT_RUN边界。审查者0工程执行；本批准只覆盖诊断设计，不批准现fixture原样运行或任何PG窗口。
+
+未来入口审查须兑现既有设计条件：
+
+- 现knowledge fixture辅助pool `max:6`，center business pool、pg-boss与admin均纳入真实配置总量及实际连接观察；0runner不等于0后台连接。
+- 现fixture原timeout/created boolean不能替代统一绝对deadline、带标记且已确认的数据库identity与UNKNOWN保留。复用生产search路径及已审生命周期小模块，不能因fixture历史通过而跳过这些验证。
+- 固定实际seed；若使用批量SQL须明确公共写入路径未覆盖。运行前绑定完整实际动态迁移/运行依赖闭包，而非只靠本文9个重点Git输入。
+
+这些是后继入口准入条件，不改变本次已审设计target，不新增产品/运行权限或第二manifest。owner于14:59 UTC按原metadata claim归档本结论；工程/PG检查继续NOT_RUN。
 
 # K01 留存规划独立review
 

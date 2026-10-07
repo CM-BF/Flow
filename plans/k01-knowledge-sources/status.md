@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 14:57 UTC |
+| 最近更新 | 2026-10-07 14:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -11,13 +11,13 @@
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；本段实际开始2026-10-07T14:53:11Z，来源clock工具与Mika派工，见下文工作段 |
-| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v1 ACTIVE最后确认14:53:37.117Z；仅两metadata scope，最终push后STOP，保留独审期占用 |
+| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v1 ACTIVE，fresh ledger14:59:12.631Z已核；仅两metadata scope，最终push后STOP，保留后继有限实施准备占用，未release |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 诊断设计源固定；本轮仅交付metadata收口，提交后核clean并停止全部写入 |
-| 工作分支状态 | in-progress（旧产品与本次规划均已接收，后续产品TODO保持开放） |
+| 工作树dirty状态 | c2ed3bb设计源固定；本次仅批准归档metadata，提交后核clean并停止全部写入 |
+| 工作分支状态 | in-progress（检索诊断设计已审待主线接收；原产品/留存为历史接收，开放验收不变） |
 | 检查状态 | NOT_RUN：本段仅检索诊断准备，0工程测试/产品PG；旧31项仅历史 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段检索诊断准备未集成，未运行 |
 | 实现目标 | c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5 |
@@ -26,13 +26,13 @@
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | plans/k01-knowledge-sources/plan.md, docs/evidence/k01/query-plan-diagnostic.md |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已形成检索查询计划诊断方案，保留原词法命中与引用语义 |
-| 下一可用交付 | 完成本诊断方案的独立文档审查，再决定专库入口与窗口 |
+| 当前产出 | 检索查询计划诊断方案已通过独立文档审查 |
+| 下一可用交付 | 主线接收诊断方案，再准备符合资源与清理边界的有限专库入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；本段NOT_STARTED，绑定c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；留存fd02及原产品批准仅历史 |
+| Review | [review.md](review.md)；Mika DESIGN_REVIEW_APPROVED c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5，2026-10-07T14:58:07Z；0 P1/P2，仅设计 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -89,6 +89,8 @@
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| K01-QP-REVIEW | 2026-10-07T14:57:04Z | OPEN | 审查 | 查询计划诊断文档待Mika独审；真实PG仍NOT_OPEN，独审不自动授予运行 | c2ed3bb固定提交与本段派工 |
+| K01-QP-REVIEW | 2026-10-07T14:57:04Z | 2026-10-07T14:58:07Z | 审查 | Mika已批准固定诊断设计；真实PG仍NOT_OPEN | Mika独立review消息、review.md |
 
 2026-10-07T14:57:42.144976Z：本段唯一dashboard读取（generatedAt14:57:28.669Z）返回live/current、实际Git4c235e8c clean、claim v1 matchesSource、10TODO及checks not_run/review not_started；但其status内容仍是14:55启动版本（target UNKNOWN），与已提交14:57交付status不同，implementationProof为unknown。该次聚合不是最终target同步成功；原读取保存在/tmp/flow-k01-query-plan-dashboard.json，交Mika后续读取，不在本段轮询/改parser/重启服务。唯一owner文件现已声明完整c2ed3bb target；本次metadata push完成后STOP，独审与main未完成。
+
+2026-10-07T14:59:12Z：按Mika≤5分钟metadata收口授权恢复，fresh ledger确认30965 v1及两scope未变，起点a6a2ecab=origin clean。已归档14:58:07Z独立DESIGN_REVIEW_APPROVED c2ed3bb、0P1/P2；9 bindings/58979B与12金样本、1856chunks/5.5MiB已由review者核验。未来入口必须核aux pool6与center/pg-boss/admin总量、统一绝对deadline/marked DB identity/UNKNOWN保留、实际seed及完整动态迁移闭包（详见review.md）；现fixture不能原样视为运行获准。原设计源/留存/全部开放验收不变，工程/PG检查NOT_RUN、主线接收未完成。未再读取dashboard；最终commit/push后STOP，claim保留、不release。
