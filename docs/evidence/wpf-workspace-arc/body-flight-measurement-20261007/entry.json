@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-07T22:54:52.548489+00:00",
+  "source": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+  "packet": "/private/tmp/arc-browser-body-flight-final-l652q_zu",
+  "manifest": {
+    "path": "/private/tmp/arc-browser-body-flight-final-l652q_zu/manifest.json",
+    "realpath": "/private/tmp/arc-browser-body-flight-final-l652q_zu/manifest.json",
+    "bytes": 3382,
+    "sha256": "ec706edef9893667cef9f2624e1ee06698584060114a7c013bcb376e882d79f7"
+  },
+  "sourceDelta": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 21244,
+        "sha256": "df4f7b3efa76fda940464a504a9553fb8067aaffedf08305595074c1558c7342",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "d0a4e3f8a39b65d67827fcad8306f61e12593ad1"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 27888,
+        "sha256": "9075388e5250a2eb67cccb4a0111c370f510253c78dac3288687a04b36b42ae0",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "dfdb14ef11e93b8578333cc61ba82d517cb4875a"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 16524,
+        "sha256": "96c9b8cfd7647ac13c7cb1d89b7c91fd72d6015778b1aa5c7f9379dcbbb62b9f",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "9a5155ca5b90f708423bee03c693299711e28dfc"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19196,
+        "sha256": "96e06e865d36f1876c59588c24222d7a03df23021c7662bc1e9e9baa3ccbda36",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "7cb1da83dc65729f67e88d5c3e202093fefc8f7c"
+      }
+    }
+  ],
+  "claim": {
+    "id": "c34d95d1-af01-4325-bcd5-77ba9dd28379",
+    "version": 2,
+    "scopeCount": 18
+  },
+  "localManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/local-manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/local-manifest.json",
+    "bytes": 5151,
+    "sha256": "87f6826166e5230058cfeb8d9f1dca834ed24ea4e70878dde7c9bbdf0a94b4f3"
+  },
+  "runtime": "NOT_RUN_NOT_GRANTED",
+  "local": "fa06 noEmit0/3494ms; c1db second check NOT_RUN_RESOURCE_PREFLIGHT/0child; old actual unchanged",
+  "scope": "Two test leaves only. App/session handed off but fixed supply unchanged.",
+  "review": {
+    "state": "APPROVED_SCOPED_SOURCE_PREPARATION",
+    "source": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/root-arc-body-flight-source-preparation-review-20261007.json",
+    "bytes": 5659,
+    "sha256": "c83922625b571045353f76612aeee99b6d0b860eee15e77dd183fee5f3c926ca",
+    "actual": "NOT_RUN_NOT_GRANTED"
+  },
+  "secondCheck": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/second-check-not-run.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/second-check-not-run.json",
+    "bytes": 891,
+    "sha256": "0651a8af1c9025e7e48a721f378a3317c2cf545e67b2233a7e453aca131219dc"
+  },
+  "supersededUnconsumedPacket": {
+    "path": "/private/tmp/arc-browser-body-flight-n2e1upet/manifest.json",
+    "realpath": "/private/tmp/arc-browser-body-flight-n2e1upet/manifest.json",
+    "bytes": 2626,
+    "sha256": "d704c7e2bb0303c8a61610340589fe1ae8ce01f332bd1362ea32d7a2e255893a"
+  },
+  "templateBindingCorrection": {
+    "before": "81aa83cfc3120351b321d2eb888a6a3eb734e142a7101cae450e96b9b4d5917d",
+    "after": "67304d47d4d7bef42cfdf0607b006e2c60b1314df00fd4c71a60210b5eb83a37",
+    "noRuntime": true
+  },
+  "sourceStopAt": "2026-10-07T22:57:05.544888+00:00"
+}

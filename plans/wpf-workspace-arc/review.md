@@ -1,5 +1,9 @@
 # WPF-WORKSPACEARC01 review
 
+当前固定target `c1db812ca9377117af73eb692b75fd263d9ae2c3`：APPROVED，仅两test测量/断言与准备，[root c839独审](../../docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/root-arc-body-flight-source-preparation-review-20261007.json)0blocking/正文P2 CLOSED；[固定入口](../../docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/entry.json)。fa06 noEmit0/3494ms限定历史；本target全文回复一行更正已root静态核，相关第二检查容量前置拒绝0child，不冒复测PASS。新browser4/双图NOT_RUN/NOT_GRANTED。旧d034实际FAILED1/4及ChromeEOFfalse、parentUNKNOWN/rawclosed保留，失败保真独审[root162217](../../docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/root-arc-pane-wiring-failed-actual-review-20261007.json)APPROVED仅结果真实性。
+
+下文为旧固定目标的历史审查，不覆盖本target。
+
 最新actual：`d034f13da989c8f175c2664cb903a7273baf84eb` / execution1205，FAILED1/4、0PNG、50944/90000 CLOSED；仅layout-navigation通过。第2组bodyPeak断言失败，后两组未达；[manifest](../../docs/evidence/wpf-workspace-arc/browser-pane-wiring-actual-20261007/manifest.json)。actual独审待收，root7379源码批准不等运行通过。精确活资源已归还；ChromeEOF false及parent closureUNKNOWN与raw fixtureclosed明确分层，不冒日志完整。
 
 当前target `d034f13da989c8f175c2664cb903a7273baf84eb`：APPROVED，仅browser两wiring边界16+/2-及准备，未运行；[root7379](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json)0blocking。三pane focused exact2tabs排除单tab导致disabled的假阳性；Merge在原真实材料await中立即验1pane/activechat/B，保原DOM/A冻结/后续草稿断言。[本次入口](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/entry.json)。以下876批准为历史，不能覆盖新target。

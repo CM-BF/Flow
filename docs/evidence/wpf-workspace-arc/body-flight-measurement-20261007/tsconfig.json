@@ -1,0 +1,15 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "vite/client"
+    ]
+  },
+  "files": [
+    "../../../../apps/web/test/workspace-layout.browser.ts",
+    "../../../../apps/web/test/workspace-layout.fixture.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

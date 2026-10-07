@@ -42,3 +42,8 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T22:24:05.904925+00:00：原TODO01/02/05浏览器接线覆盖更正，见[root覆盖核对](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-acceptance-coverage-review-20261007.json)与[纯模型补件](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-model-coverage-addendum-20261007.json)。纯模型已有max3/merge强例，不重复运行；browser补多tab max3与Merge中间态，不扩大产品/组/超时。其他键盘/全持久化/侧栏等覆盖限制不因本两点修正而宣称全部满足。
 
 2026-10-07T22:31:45.548207+00:00：原TODO01/05本轮layout-navigation真实通过（包括max3多tab前置/关闭临时chat7恢复三chat）；整体1/4失败于bodyPeak6实际1，材料Merge与两PNG未达。TODO04六显式body并发仍未通过。只读初判是1200ms timer没有建立并发响应barrier，未证明产品bug；[诊断](../../docs/evidence/wpf-workspace-arc/browser-pane-wiring-actual-20261007/diagnosis.json)保实际/推断分层。原90s50944 CLOSED，当前仅失败归档，无重试。
+
+
+## 2026-10-07T22:55:33.351554+00:00 原03/04/05验收测量修正
+
+六真实公共UI动作与六exact GET的浏览器issued/response/finished/failed记录有帽，六visible loading证明逻辑pending；真实HTTP逐个释放已经到达的response，不等待六server同时到达。serverpeak单列≤6，最终六200/全部正文精确完成/无额外body、隐藏无新增。保材料await、滚动anchor、Merge/max3、主题四组原验收，不扩大产品/超时。claim v2移出App/session，仅两test与ownrecords本段写；root正文prompt混淆已修为完整130行pre.textContent。必要local3494ms限定fa06，新target第二check容量不足未启动，待固定审/browser新grant。

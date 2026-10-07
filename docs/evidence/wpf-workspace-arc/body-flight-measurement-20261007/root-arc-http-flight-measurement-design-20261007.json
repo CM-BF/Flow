@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T22:34:30.713065+00:00",
+  "task": "Existing WPF-WORKSPACEARC01-04/-05",
+  "kind": "read-only transport-measurement correction",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "additionalRootPins": [
+    {
+      "path": "apps/web/test/fixture-server.ts",
+      "bytes": 16029,
+      "sha256": "bd41234c42c6b763af2e6366b6dba7db2d218a73bf8d1eae5b928db7bcd959fc"
+    },
+    {
+      "path": "apps/web/test/workspace-fixture.ts",
+      "bytes": 6179,
+      "sha256": "dcfb83f305a9eeed509ffbb562729bab6c14523ac32e307c6cf41cc6ef9cf26b"
+    },
+    {
+      "path": "plans/wpf-workspace-arc/plan.md",
+      "bytes": 5320,
+      "sha256": "84c3647844d1550e69654cc31d75145ae04dff633572540a1e181b060c9022cd"
+    }
+  ],
+  "ownerPeer": "w01_owner read workspace-layout browser/fixture, direct conversation and stream fixtures plus archived actual raw; no writes or execution",
+  "provedFromSource": [
+    "The browser uses one Vite HTTP origin and proxies API to the owned center. Body peak counts server arrivals until response.close, not requests started by application code.",
+    "fixture-server.ts365–387 writes text/event-stream, registers the response in streams, and does not end it; close removes the observer. This resolves the peer missing delegated stream handler.",
+    "Assistant-stream patches are short JSON responses delayed8ms; do not call them permanent SSE.",
+    "The plan says three visible panes each allow one reply and one queue body flight (six explicit body flights), not six simultaneously executing server sockets or a target for all HTTP traffic.",
+    "Existing1200ms body delay plus sequential awaited UI actions does not establish overlap; actual records lack timestamps/socket/protocol lifecycle."
+  ],
+  "primaryReferences": [
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events",
+      "relevance": "Documents low per-browser/domain open-connection limit without HTTP/2; background SSE can consume available connections."
+    },
+    {
+      "url": "https://playwright.dev/docs/actionability",
+      "relevance": "Locator actions wait for actionability; sequential awaited UI actions are not a simultaneity proof."
+    }
+  ],
+  "inference": [
+    "A same-origin HTTP/1 six-server-arrival barrier can deadlock when persistent SSE occupies at least one of the connection slots. Fixed sources establish that this transport pattern is present; archived data does not prove exact live socket count at the failing instant or unique cause of peak1.",
+    "Do not equate browser/application pending requests with server-active responses. Distinct metrics are needed for a truthful six-flight requirement."
+  ],
+  "recommendedOwnerDesign": [
+    "Retain all six exact real UI body actions and exact response identities, all post-body scroll/focus/hidden behavior, remaining four-group assertions and original time bounds. No product/read-budget adjustment.",
+    "Replace arbitrary body timer with bounded response holds. Release must depend on a transport-feasible condition, never all six server requests having arrived.",
+    "Observe a bounded exact six-request set at the browser request lifecycle (with monotonic events and request/response/finish/failure distinction), together with visible loading states. If this lifecycle exposes issued pending reads before socket acquisition, it can establish six logical outstanding reads; owner must verify semantics in the actual check rather than label server arrivals as logical admission.",
+    "Once six actual browser-issued pending reads are established, release held server responses in a bounded drain; later exact expected arrivals can pass as sockets free. Ensure finally closes/drains/cancels all holds even when assertion fails. Keep total six identities, complete bodies, zero unexpected body requests, hidden no-new-reads, final inflight0, and an honest server peak<=6; exact logical pending6 replaces the invalid physical-socket equivalence.",
+    "If browser request instrumentation cannot observe queued issuance, use a narrowly scoped read-only client-admission observer or independent meaningful reader saturation test; do not delete exact6 and keep only a vacuous <=6 assertion.",
+    "No timeout extension, HTTP/2 conversion, extra origin/Chrome, dropped group, or broad fixture rewrite. Test-only two-file candidate can be prepared by original owner after manager ordinary scope/start; actual remains a separately scheduled bounded run."
+  ],
+  "result": "Design direction only; prior actual stays FAILED1/4/0PNG. Root fidelity approval does not approve implementation or future run.",
+  "cleanCode": {
+    "finding": "Original assertion conflated application pending work with server concurrency; guessed timer and six-arrival barrier each create scheduling assumptions.",
+    "correction": "Use explicitly named layers and bounded real-request lifecycle, retain semantic saturation plus completion and cleanup.",
+    "pending": "Owner must produce exact implementation/source review and meaningful validation; no fix has been run."
+  }
+}

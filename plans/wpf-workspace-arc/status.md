@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:30:35.932058+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:57:05.544888+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,22 +12,22 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source d034f13da989c8f175c2664cb903a7273baf84eb；metadata随后seal |
-| 工作树dirty状态 | 原20产品/source STOP；仅actual失败metadata DIRTY；0child/无新运行grant |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source c1db812ca9377117af73eb692b75fd263d9ae2c3；metadata随后seal |
+| 工作树dirty状态 | 仅own metadata待seal；两test source固定。App/session已交权STOP，0工程child/HTTP/PG/Chrome |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | validation |
-| 检查状态 | FAILED d034f13da989c8f175c2664cb903a7273baf84eb；本轮1/4、0PNG，layout-navigation通过；three-pane-reads bodyPeak6实际1超时，原失败保留 |
+| 检查状态 | NOT_RUN c1db812ca9377117af73eb692b75fd263d9ae2c3；新browser四组/两图未运行。fa06 affected noEmit0/3494ms；当前正文修正第二检查容量拒绝0child；原d034实际FAILED1/4保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | d034f13da989c8f175c2664cb903a7273baf84eb |
+| 实现目标 | c1db812ca9377117af73eb692b75fd263d9ae2c3 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新浏览器22:28:37.937413START→22:29:28.881210终态→22:29:52.181216精确资源归还；50944/90000 CLOSED |
+| 当前产出 | 两test区分六浏览器issued/UI loading逻辑pending与server物理peak；有界逐个真实HTTP释放，完整正文精确验证。候选集中source/preparation独审已通过，无运行授权 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 原第2组bodyPeak断言失败，未定位唯一根因；无新browser授权，后两组/双图未到达 |
+| 当前阻塞 | ACTIVE: 第二affected检查freshfree18,004,242,432低于current18,018,336,768，0child；browser未授权，旧两FAIL不改 |
 | 需用户决定 | NONE |
-| Review | APPROVED d034f13da989c8f175c2664cb903a7273baf84eb；root7379仅源码/准备批准，本次actual FAILED待独审，不冒wholefeature |
-| Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
+| Review | APPROVED c1db812ca9377117af73eb692b75fd263d9ae2c3；[c839限定source/preparation独审](../../docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/root-arc-body-flight-source-preparation-review-20261007.json)0blocking，正文P2 CLOSED；不等browser PASS/grant |
+| Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -95,3 +95,9 @@
 2026-10-07T22:30:35.932058+00:00：run arc-pane-wiring-20261007-222837实际FAILED1/4/0PNG；layout-navigation含新多tab max3/恢复三chat已过，three-pane-reads:91 bodyPeak预期6实际1超时，材料Merge/两图未达。actual outer/tool1，parent/outer stdout/stderr双EOF/drop0，charge50944/90000 CLOSED/未用39056不转。22:29:52.181216Z四ownedPID/两已知PGID freshESRCH、scratch/cachelinksabsent、raw scenario context/httpclosed=true/cleanupErrors[]；worker.result=null/父scenario closureUNKNOWN及Chrome stdout/stderr EOF=false原样保留，不能宣Chrome日志完整。0PG/无独立portprobe，无新run。
 
 2026-10-07T22:32:55.729968+00:00：只读诊断仍未定修法；响应hold必须先核同源HTTP/1连接容量与常驻SSE/patch，否则等六请求可死锁。现raw无时戳/连接世代，不能推唯一原因；root安排独立只读约束核，本owner只封原失败，源码/runtime全STOP。
+
+2026-10-07T22:45:07.561259+00:00：经理新20min/8MiB test-only段START22:42:37.518682Z，代码/check截止23:02:37.518682Z；fresh e611clean/c34dv1 exact20/overlap[]。仅原browser+fixture及ownrecords，0HTTP/PG/Chrome；可选affected local累计20s/最多2串各15s含5cleanup尚未启动。原两browser90s均CLOSED不转。
+
+2026-10-07T22:55:33.351554+00:00：原20min/8MiB段截止23:02:37.518682Z不延。source `c1db812ca9377117af73eb692b75fd263d9ae2c3` 仅browser/fixture133+/22-及正文一行更正；六真实UI动作、精确GET身份/六loading、逐个release、status200/fullbody/hidden零新增保留，物理serverpeak≤6与逻辑pending6分开。首fa06 noEmit3494ms PASS/精确PIDPGID31214与scratch归还；原早CLOSED原件不改，root新正文finding后经理允许第二相关复验，但fresh完整线不足而0child/0计费拒绝，不自动重试。[本段入口](../../docs/evidence/wpf-workspace-arc/body-flight-measurement-20261007/entry.json)。首run旧floor来源差异原件保真，仅事后核free高于当时完整线；未来每次直接读取经理current逐term求和。当前all18源码STOP，正常metadata尾。
+
+2026-10-07T22:57:05.544888+00:00：root c839限定APPROVED/0blocking，正文P2 CLOSED；fa06 noEmit/第二容量0child层级不改。原source/code/checksSTOP，全18保claim；审查小件已归档，仅normal seal/push/clean与非执行HEAD数据绑定，无新runtime。

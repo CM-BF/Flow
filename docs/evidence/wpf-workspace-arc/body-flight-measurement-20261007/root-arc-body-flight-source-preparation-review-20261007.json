@@ -1,0 +1,68 @@
+{
+  "reviewer": "/root — GPT-6 Astra Ultra",
+  "at": "2026-10-07 22:56:17 UTC",
+  "verdict": "APPROVED_LIMITED_ARC_BODY_FLIGHT_TEST_SOURCE_AND_PREPARATION",
+  "blockingFindings": 0,
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "branch": "codex/web-workspace-composition",
+  "base": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "source": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+  "changes": [
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "bytes": 27888,
+      "sha256": "9075388e5250a2eb67cccb4a0111c370f510253c78dac3288687a04b36b42ae0"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "bytes": 19196,
+      "sha256": "96e06e865d36f1876c59588c24222d7a03df23021c7662bc1e9e9baa3ccbda36"
+    }
+  ],
+  "closedFinding": {
+    "severity": "P2",
+    "foundIn": "fa06d259402ea19c8366e4c91a72b7d3f8a82f30",
+    "description": "Expected long reply N (user prompt) inside assistant full reply, although the fixture produces 130 repetitions of a different sentence.",
+    "fixedBy": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+    "evidence": "Reads the real per-pane pre.textContent and checks the full exact 130-line fixture response. Prompt remains only the scroll anchor. Compared against conversation.fixture.ts content builder."
+  },
+  "sourceReview": [
+    "Only two test leaves change. No product source, transport, server origin, dependency, timeout or concurrency policy changes.",
+    "Queue controls are prepared before body holds. Six real clicks produce exactly six expected browser-issued pending identities and two loading states in each of three panes.",
+    "Request-issued events are explicitly not socket admission. A count-bounded fixture releases whichever real server response arrives; it never waits for six server arrivals.",
+    "All six paths must reach server, drain and finish with HTTP 200, no client failure or duplicate/unexpected body request. Full per-pane reply and queue bodies are checked.",
+    "Server peak is an upper-bound check, supplemented by exact six logical pending and complete result assertions; it is not used alone as proof of overlap.",
+    "Client rows/events/errors and server observation/hold records are bounded; listeners removed, held responses destroyed on close, original whole-worker deadline retained.",
+    "Hidden-workspace assertions compare both browser-issued and server body reads. Four existing groups, max3-pane interaction, material-await Merge/Split checks and two 390px theme screenshots remain selected."
+  ],
+  "preparedPacket": {
+    "path": "/private/tmp/arc-browser-body-flight-final-l652q_zu",
+    "manifestBytes": 3382,
+    "manifestSha256": "ec706edef9893667cef9f2624e1ee06698584060114a7c013bcb376e882d79f7",
+    "independentlyVerified": "All eleven final manifest files byte counts/hashes; source/preparedHead=c1db; 207 source pins differ from prior binding only at two test leaves; 43 external pins and 33 resolver links unchanged; run.py/worker.mjs/capture.py byte-identical to previous reviewed caller.",
+    "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 exact18; App/session removed as writers and preserved as fixed read-only supply",
+    "allowRun": false,
+    "proposed": "Single new 90s=60work+30cleanup; 0PG,2ownedHTTP,1Chrome,256MiBscratch,8MiBraw; no grant/reservation implied.",
+    "templateCorrection": "Owner found and fixed a stale fa06 bindingSha256 before delivery. Final allowRun=false grant template hash equals actual c1db binding67304d47d4d7bef42cfdf0607b006e2c60b1314df00fd4c71a60210b5eb83a37; prior template and manifest preserved as before files and all verified."
+  },
+  "localEvidence": {
+    "testedSource": "fa06d259402ea19c8366e4c91a72b7d3f8a82f30",
+    "actual": "affected strict noEmit exit0, empty log, 3494ms charged; CLOSED, no credit transfer",
+    "returnedAt": "2026-10-07T22:49:30.360590+00:00",
+    "cleanup": "PID/PGID31214 ESRCH, scratch absent, regular logs closed; not a dual-EOF claim",
+    "verified": "Six original and six archived files matched all recorded bytes/hashes; read config, segment and post-cleanup.",
+    "historicalAdmission": "Original gate17479368704 was stale vs contemporaneous17756192768. Preflight free18020470784 and child freeBefore18020462592 were above higher line. Retrospective sampled comparison only, not retroactive gate compliance; originals unchanged.",
+    "finalCorrection": "c1db exact-text expression independently reviewed statically. Second check refused before engineering spawn: available18004242432 < full18018336768; 0child/0charge, no c1db noEmit PASS claim."
+  },
+  "cleanCode": {
+    "scope": "New passive observer and hold/release fixture plus final assertion",
+    "findings": "Closed the prompt/body identity confusion; confirmed bounded collections, explicit request semantics and cleanup, no unnecessary product hooks/dependencies.",
+    "remaining": "No additional blocking source finding in this narrow change."
+  },
+  "limitations": [
+    "Root performed read-only source/evidence checks only; no module imports, product tests, PG or new Chrome.",
+    "New browser candidate remains NOT_RUN/NOT_GRANTED; previous 0/4 and 1/4 failures remain failures.",
+    "No claim of six simultaneous HTTP sockets, proven prior bottleneck, performance speedup, screenshot success, desktop themes, whole-feature acceptance or main integration.",
+    "Manager must issue a new current-resource grant; operator must bind final execution metadata and freshly verify claim/pins, complete floor and actual resources. Historical packet minimum is not the current global admission floor."
+  ]
+}
