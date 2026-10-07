@@ -1,0 +1,101 @@
+{
+  "state": "RESULT_FIDELITY_REVIEW_PENDING",
+  "at": "2026-10-07T04:01:29.040096+00:00",
+  "window": "REQ15-HTTP-20261007-R1",
+  "executionHead": "c83526f9724c7b9a751e4fd859d9fd3d00750a2e",
+  "preparationSource": "e09978682ec573bacd3d79e7c08e915c16368d49",
+  "inputManifestSha256": "3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16",
+  "files": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-run-reservation.json",
+      "bytes": 153,
+      "sha256": "7c4d93595b492b2fb9f3acc5d87a1a2d04229b74ce3df27555fda9d5fa694926",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-database.json",
+      "bytes": 213,
+      "sha256": "0ecf8dec62cfac83e7a5fa421ba8a1d06c44af600217fbc7f5403234c84d20c6",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-server-1.json",
+      "bytes": 270,
+      "sha256": "1d05ddb3d741599d51e068e82b041c69fc25792f48fa90b50b30218831c37937",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-result.json",
+      "bytes": 896,
+      "sha256": "2067d63607f207daf35f4b6b781a1fad047d6f3d41b742975d2d7b198699097e",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-output.log",
+      "bytes": 427,
+      "sha256": "914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-exit.json",
+      "bytes": 2899,
+      "sha256": "71f58b48c85dc88ee416c1a1de680c0fb719e0f5d183caa03f6f4e972167019a",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/http-outer.json",
+      "bytes": 1887,
+      "sha256": "2a741d17c508c05b4043b70900740e2254f6e741e60d3847052ac1a7f262839e",
+      "mode": "0600"
+    }
+  ],
+  "bytes": 6745,
+  "facts": {
+    "selected": 1,
+    "passed": 1,
+    "exit": 0,
+    "httpRequests": 25,
+    "providerCalls": 0,
+    "rawBytes": 427,
+    "rawSha256": "914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009",
+    "wrapperSeconds": 3.012804083991796,
+    "externalSeconds": 3.05,
+    "processPid": 27708,
+    "processPgid": 27708,
+    "processExit": 0,
+    "groupAbsent": true,
+    "mergedPipeEof": true,
+    "signals": [],
+    "database": {
+      "name": "flow_req15_http_ad5adfcf4ba1",
+      "marker": "aaeac405-3528-4635-a895-205af68a161a",
+      "identity": {
+        "oid": "1205057",
+        "marker": "aaeac405-3528-4635-a895-205af68a161a"
+      },
+      "cleanup": {
+        "startupSettled": true,
+        "appClosed": true,
+        "fixtureClosed": true,
+        "connectionsZero": true,
+        "databaseAbsent": true,
+        "adminClosed": true,
+        "status": "CONFIRMED"
+      }
+    },
+    "listeners": [
+      {
+        "origin": "http://127.0.0.1:55163",
+        "closed": true
+      }
+    ],
+    "temporaryIdentity": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch/docs/evidence/req15-turn-page-batch/http-tmp",
+      "device": 16777234,
+      "inode": 123425645,
+      "absentAfter": true
+    },
+    "ownerExactTmpAbsent": true
+  },
+  "scope": "Only this fixed-main7b6 public HTTP single case, Unicode/owned detail/cross-owner404/paging bounds/immutable user and added page401/403. Product already in main; no deployment or complete-main-suite claim. Prior26/PG2/11 approval remains separate."
+}

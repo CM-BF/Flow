@@ -1,0 +1,30 @@
+{
+  "window": "REQ15-HTTP-20261007-R1",
+  "executionHead": "c83526f9724c7b9a751e4fd859d9fd3d00750a2e",
+  "recordedAt": "2026-10-07T04:01:29.040096+00:00",
+  "authorization": "Mika explicit OPEN after Web and Lead no-holder handoff; declared parallel local budget0",
+  "preflight": {
+    "at": "2026-10-07T04:00:19.229019+00:00",
+    "ledgerAt": "2026-10-07T04:00:19.020Z",
+    "claimVersion": 2,
+    "scopeCount": 8,
+    "clean": true,
+    "inputs": 227,
+    "inputBytes": 1098695,
+    "snapshotLinks": 16,
+    "toolLinks": 9,
+    "outputsAbsent": 7,
+    "availableBytes": 25843204096
+  },
+  "shellStartedAt": "2026-10-07T04:00:27Z",
+  "shellFinishedAt": "2026-10-07T04:00:30Z",
+  "shellTimestampResolutionSeconds": 1,
+  "timeRealSeconds": 3.05,
+  "timeUserSeconds": 1.6,
+  "timeSystemSeconds": 0.44,
+  "toolExit": 0,
+  "toolOutput": "REQ15_HTTP_OUTER_START 2026-10-07T04:00:27Z\n{\"state\": \"PASSED\", \"wallSeconds\": 3.012804083991796, \"receipt\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch/docs/evidence/req15-turn-page-batch/http-exit.json\"}\nreal 3.05\nuser 1.60\nsys 0.44\nREQ15_HTTP_OUTER_END 2026-10-07T04:00:30Z\nREQ15_HTTP_OUTER_EXIT 0\n",
+  "closure": "Fixture observed startup/app/fixture/admin close, zero connections/ordinary DROP/DB absence, listener closed; supervisor exit/group absent/merged pipe EOF/no signals or secondary; owner exact http-tmp lstat ENOENT. No post-run PG connection or process scan.",
+  "heavyReturned": "Immediate resource-terminal message sent to Mika after reading receipts and exact TMP lstat; no new launch",
+  "boundary": "External time covers interpreter through exit; internal wrapper3.012804s excludes interpreter startup/final persistence. Shell UTC is whole-second precision, not a separately measured duration. One original HTTP case plus exact page401/403; prior26/PG2/11 were not rerun."
+}

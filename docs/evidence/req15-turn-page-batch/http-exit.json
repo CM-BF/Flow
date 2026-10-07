@@ -1,0 +1,107 @@
+{
+  "state": "PASSED",
+  "startedAt": "2026-10-07T04:00:28.079554+00:00",
+  "gate": {
+    "head": "c83526f9724c7b9a751e4fd859d9fd3d00750a2e",
+    "manifestSha256": "3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16",
+    "availableBeforeBytes": 25859956736,
+    "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+    "claimVersion": 2,
+    "claimObservedAt": "2026-10-07T04:00:28.045Z"
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "docs/evidence/req15-turn-page-batch/http-consumer.test.ts",
+    "--config",
+    "docs/evidence/req15-turn-page-batch/http-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "supervisorSha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0",
+  "wholeBudgetSeconds": 60,
+  "rawBudgetBytes": 65536,
+  "tmpBudgetBytes": 8388608,
+  "elapsedBasis": "preflight through cleanup before final receipt; excludes interpreter startup and final persistence",
+  "temporary": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch/docs/evidence/req15-turn-page-batch/http-tmp",
+    "device": 16777234,
+    "inode": 123425645,
+    "absentAfter": true
+  },
+  "spawn": {
+    "pid": 27708,
+    "pgid": 27708,
+    "startedAt": "2026-10-07T04:00:28.081997+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 27708,
+      "pgid": 27708,
+      "startedAt": "2026-10-07T04:00:28.081997+00:00"
+    },
+    "pid": 27708,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 427,
+    "observedBytes": 427,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawSha256": "914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009",
+  "resultBytes": 1532,
+  "database": {
+    "name": "flow_req15_http_ad5adfcf4ba1",
+    "marker": "aaeac405-3528-4635-a895-205af68a161a",
+    "identity": {
+      "oid": "1205057",
+      "marker": "aaeac405-3528-4635-a895-205af68a161a"
+    },
+    "cleanup": {
+      "startupSettled": true,
+      "appClosed": true,
+      "fixtureClosed": true,
+      "connectionsZero": true,
+      "databaseAbsent": true,
+      "adminClosed": true,
+      "status": "CONFIRMED"
+    }
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:55163",
+      "closed": true
+    }
+  ],
+  "assertions": [
+    "original-paging-lazy-detail-case",
+    "page-401-403"
+  ],
+  "httpRequests": 25,
+  "rawBytes": 427,
+  "selected": 1,
+  "passed": 1,
+  "captureComplete": true,
+  "lifecycleKnown": true,
+  "behavior": "PASSED",
+  "endedAt": "2026-10-07T04:00:30.937976+00:00",
+  "wallSeconds": 3.012804083991796
+}
