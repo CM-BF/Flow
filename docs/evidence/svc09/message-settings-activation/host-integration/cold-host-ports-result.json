@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T21:03:59.375794+00:00",
+  "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+  "startAt": "2026-10-07T21:01:58.215048+00:00",
+  "returnAt": "2026-10-07T21:01:58.414058+00:00",
+  "checks": {
+    "node": 7,
+    "nodeNew": 5,
+    "nodeAffectedOld": 2,
+    "pythonPure": 3,
+    "actualImports": 4,
+    "invalidEntryBeforeIO": true
+  },
+  "elapsedMs": 193,
+  "rawBytes": 1349,
+  "groups": 3,
+  "ownedFinal": "absent",
+  "dualEOF": true,
+  "scratch": {
+    "path": "/private/tmp/flow-svc09a-target-wtto9r8x",
+    "dev": 16777234,
+    "ino": 124480230,
+    "remainingEntries": 0,
+    "cleanup": "removed"
+  },
+  "priorHeldTargetMs": 1226,
+  "cumulativeMs": 1419,
+  "priorHeldTargetRawBytes": 6711,
+  "cumulativeRawBytes": 8060,
+  "limits": {
+    "checksMs": 120000,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "services": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "artifact": "NOT_BUILT_BY_THIS_CHECK",
+  "actualColdStart": "NOT_RUN",
+  "mainHeldTargetReceipt": {
+    "commit": "9c2886d95bab48cd69984eb006025c2b0b374db3",
+    "path": "docs/evidence/i02/svc09a-held-target-review.json",
+    "approval": "APPROVED_LIMITED_HELD_TARGET_AND_REFRESH_CONSUMER",
+    "productScopeReturnedAt": "2026-10-07T21:00:39.748Z",
+    "claimVersion": 12
+  },
+  "statusParse": {
+    "errors": [],
+    "humanMissing": [],
+    "historicalStart": "UNKNOWN"
+  },
+  "cleanCode": {
+    "at": "2026-10-07T21:03:59.375794+00:00",
+    "scope": "existing host helper optional ports",
+    "method": "fixed trusted ports at existing module boundaries; preserve defaults; reuse OPS14/clone/cleanup rather than copy a fixture or add a supervisor",
+    "limit": "caller-specific initialization/closure assertions and exact artifact/operator bindings require independent review"
+  }
+}

@@ -6,32 +6,32 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T20:54:31.589982+00:00 |
+| 更新时间 | 2026-10-07T21:03:59.375794+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 同一维护操作现在可明确选择新后端和新 Web 宿主，旧页面与进程记录保留；局部消费者已通过，等待独立审查。 |
-| 下一可用交付 | 审查受控目标更新接口后，组合准确恢复产物并验证隔离冷启动；尚未操作个人安装。 |
+| 当前产出 | 同操作后端和 Web 目标更新接口已审并合入主线；隔离冷启动复用入口已完成局部检查，等待审查。 |
+| 下一可用交付 | 用准确恢复产物完成默认三角色冷启动，再按受控窗口推进个人恢复；当前没有启动个人服务。 |
 | 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39（维护目标源码；当前仅own审查封包） |
-| 实现目标 | ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39 |
-| 工作分支状态 | review（新维护目标接口已固定） |
-| 工作树dirty状态 | 仅own证据/三件套封包；四产品停写 |
-| 实现范围 | tools/personal-preview/maintenance-target.mjs；tools/personal-preview/maintenance-target.test.mjs；tools/personal-preview/maintenance-host.mjs；tools/personal-preview/maintenance.test.mjs；docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
-| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v11；20:48:26.545Z原子追加maintenance-host/test；四产品停写待审，own范围保留 |
-| Review | 接线 APPROVED_OPTIONAL_STARTUP_ENTRY_OBSERVATION/main86112a35e；同op后端/Web目标四源待唯一独审。局部通过不称个人恢复。 |
-| 检查状态 | 新片22不同/23选择最终通过，另真实Node/tsx导入参数检查；首轮跨VM断言14/15原红保留，仅1定向修复。累计1226ms/raw6711B，4组absent双EOF、2 exact空scratchremoved，0PG/服务/个人/provider。 |
+| Head | 4c0cbcd6ee085c3e7a02e884f9360034c772747a（冷启动helper源码；四产品已交回） |
+| 实现目标 | 4c0cbcd6ee085c3e7a02e884f9360034c772747a |
+| 工作分支状态 | review（own冷启动helper准备；产品片已交付） |
+| 工作树dirty状态 | 仅own证据/三件套封包；产品无修改 |
+| 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
+| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
+| Review | held-target APPROVED_LIMITED_HELD_TARGET_AND_REFRESH_CONSUMER/main9c2886d95；own cold helper source4c0cbcd6待审，真实恢复未验 |
+| 检查状态 | 冷启动ports7/7 Node+3 Python纯消费+真实4模块导入/参数通过，193ms/raw1349B/3组absent双EOF/exact空scratchremoved；同段含held-target累计1419ms/raw8060B。held-target首红不改，0PG/服务/个人/provider。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | 接线 source8daa已main86112a35effcd4d809b5e7b91d9759cdb19d2008，7产品逐字一致并归还；五leaf原18bf批准继承。旧2515/098b与个人未改；新目标接口未集成。 |
+| 已集成main状态 | 9c2886d95bab48cd69984eb006025c2b0b374db3已精确接held-target四产品并归还；中心接线原86112a35e保持。cold helper未集成；实际产物/个人恢复未发生。 |
 | 运行窗口 | 默认最小旅程 2026-10-07T19:16:09.120Z START；operator29,140ms/exit1；2026-10-07T19:17:35.003Z实际RETURN。仅center stopped/全部6PID与4自有组absent/连接empty/adminClosed；DB/private KEEP、禁止DROP，无重试。 |
-| 架构影响 | 新maintenance-target Module复用旧合法loader/preview锁/DB transaction/私有保存，维护refresh显式消费Web选择；selected-stopped→starting→ready绑定实际Web record，无新调度/授权。04da独立小patch不引入slots。 |
+| 架构影响 | 产品目标演进已main；本片仅给既有实验setup/consumer/cleanup/OPS14 operator增加显式受信固定输入ports，默认路径及KEEP保持，无新监督器/调度器。 |
 | 看板 | 唯一 own status 正常更新；本片待审，不声称实际默认或双槽部署成功。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -157,3 +157,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 ## 同操作目标更新局部交付
 
 2026-10-07T20:54:31.589982+00:00：source `ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39`，局部实际开始 `2026-10-07T20:52:37.764501+00:00`、RETURN `2026-10-07T20:52:55.098158+00:00`；见[唯一结果](../../docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-result.json)与[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-interface.md)。新单槽3role叶子/当前refresh/固定04da三处差量均只合成验证；旧默认、多槽hold和partial resume直接消费保留。真实个人sameop受控目标切换、新artifact与三页报告、默认冷启动均未执行。旧FAIL/KEEP与UNKNOWN不改。
+
+2026-10-07T21:03:59.375794+00:00：held-target已main 9c2886d95bab48cd69984eb006025c2b0b374db3，独审见I02唯一receipt，claim v12已归还四产品。cold helper实际START 2026-10-07T21:01:58.215048+00:00 / RETURN 2026-10-07T21:01:58.414058+00:00，见[端口Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-interface.md)与[唯一局部结果](../../docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-result.json)。SVC06B负责固定artifact/薄caller；本owner不重复build或启动真实PG/服务。旧FAIL/KEEP/unknown原样。
