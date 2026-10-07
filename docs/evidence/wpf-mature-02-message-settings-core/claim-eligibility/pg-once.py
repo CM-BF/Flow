@@ -98,7 +98,7 @@ def main():
         if not 0 <= age <= 60: raise ValueError('Admission stale')
         head, window = admission['head'], admission['window']
         if not re.fullmatch('[a-f0-9]{40}', head) or not re.fullmatch('[a-f0-9]{32}', window): raise ValueError('Invalid window/head')
-        manifest_raw = read_regular(HERE / 'pg-env-manifest.json', 524288)
+        manifest_raw = read_regular(HERE / 'pg-isolated-manifest.json', 524288)
         if digest(manifest_raw) != admission['manifestSha256']: raise ValueError('Prepared inputs changed')
         manifest = json.loads(manifest_raw)
         for row in manifest['files']:
