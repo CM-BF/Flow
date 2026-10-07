@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 09:06:43 UTC |
+| 最近更新时间 | 2026-10-07 09:25:00 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -10,25 +10,25 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
 | 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 98baf552d961ed0fa88ce2cf8bad006002d5986a（当前后继测试准备；metadata另核） |
-| 工作树dirty状态 | 当前16输入与98baf固定逐字；生产同已验52cdf，后继3测试准备NOT_RUN；提交后核clean |
+| 工作树dirty状态 | 16固定输入仍98baf；本次只实际证据/metadata，提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；原7图中6图限定视觉接受；Timing2图仅shell；窄light/时间正文补证OPEN；首FAIL保留，旧browser段40551/未用19449已关闭；Timing修后5组+2图实际PASS、首FAIL保留，ACCESS未运行 |
+| 检查状态 | 当前Node10/10、summary9、关联6、Timing5已限定审；ACCESS5/5+2PNG actual PASS待独审，时间正文/窄light视觉补证未运行；旧40551段CLOSED，新7045/37955 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | 98baf552d961ed0fa88ce2cf8bad006002d5986a |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间5组真实通过并获限定独审；剩余本机入口与真实正文/窄light补证入口已准备，待新段复审/资源交接 |
+| 当前产出 | ACCESS原5组实际PASS，公共helper retained-only三口径complete/unknown[]；本段继续两个必要视觉入口 |
 | 下一可用交付 | 完成Timing/ACCESS及窄屏light补证后交主线接收；已有summary/关联实际证据不迁移到待验项 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；52cdf Timing5组实际限定已审；98baf后继测试/计量准备尚待聚焦审，ACCESS及两视觉补证未运行 |
+| Review | [review.md](review.md)，UNKNOWN：98baf准备已限定独审；ACCESS实际待独审，时间正文/首页窄light补证仍OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
-| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6实际已审，Timing5组实际PASS，ACCESS尚未运行 |
+| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6实际已审，Timing5组与ACCESS5组实际PASS，ACCESS待独审 |
 | DPERF04-03 | pending | w01_owner | 整体验收/main/实际部署未完成 |
 | DPERF04-04 | pending | w01_owner | [窄屏light截图补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)：原图保留，原因未证，不影响9+6功能事实 |
 
@@ -193,3 +193,7 @@ outer49738/worker54431/Chrome50453各PID和PGID均ESRCH，scratch不存在；con
 固定 98baf552d961ed0fa88ce2cf8bad006002d5986a 仅3个既有test：明确独立phase45000时钟（旧40551/19449 CLOSED不作credit）、可选Timing正文视口双主题与关联首页单浅色补证；原全9/6/5检查主体保留，不无关重跑。[prepared接口](../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.md)与[精确pins](../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.json)。新TMP父只剩local-access5组/2图、timingvisual1组/2图、linksvisual1组/1图；当前0/45000、no gate/native新hash待审，不占Chrome/PG。
 
 OPS-METER固定main1e12eaf13 measure.py原字节，只迁移所有retained路径（BASE精确排除scratch+evidence）；root设备/inode pin、unknown失败并保partial/ownedgroup清理后KEEP，禁pycache。scratch原独立64MiB regular logical/allocated测量未改，显式PARTIAL_RETAINED_ADOPTION；特殊Unix socket是源码兼容可能，未实际采样，不放宽公共helper。必要caller实际验证在后继范围执行，未运行helperpytest/Node或采新空间。
+
+## 2026-10-07 09:23 UTC 后继ACCESS实际
+
+[原件](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/index.json)：98baf/actual6e92，09:23:49.185251Z→09:23:56.230020Z，outer0/唯一PASS，原5组/双390PNG；图片待root目视，不以数量冒视觉通过。outer7044.198833ms向上计7045，新45s余37955含15s清理；旧40551/未用19449 CLOSED不挪用。parent6948/late6955原样。outer32707/worker37717/Chrome33199各PID及PGIDfresh均ABSENT，三EOF/drop0、context/http与scratch清理完成。PARTIAL_RETAINED_ADOPTION：公共helper三retained口径实际complete/unknown[]，scratch原scanner与64MiB上限未变；不是两个完整caller迁移通过。下一只Timing正文与首页浅色补图，0PG/真实registry/个人服务。

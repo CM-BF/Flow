@@ -1,0 +1,75 @@
+{
+  "decision": "ACCEPTED",
+  "kind": "focused-source-and-native-boundary-review",
+  "recordedAt": "2026-10-07T09:19:55.962682+00:00",
+  "reviewer": "/root GPT-6 Astra Ultra",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+  "workerSha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+  "sourceTarget": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "metadataTarget": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
+  "branch": "codex/dashboard-summary-detail",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "claim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner"
+  },
+  "preparedPacket": {
+    "bindingSha256": "85de488812b14dd5fe2b24278e6e9c64242f6ddaf6ff29eed0592689e383a9c7",
+    "manifestSha256": "45884a01fcdf50ea4217c8eb50482e5bc1dfe8162c0b385eaaa4525adb746a3f",
+    "state": "PREPARED_NOT_RUN"
+  },
+  "verified": {
+    "fixedSourcePins": 16,
+    "samePinsAtMetadataHead": 16,
+    "readonlyPins": 122,
+    "preparedManifestFiles": 6,
+    "preparedHelperEqualsFixedMain": true,
+    "measurementRootDeviceInodeMatch": true,
+    "branchHeadClean": true,
+    "timingRegionActualId": "task-timing-detail",
+    "errors": []
+  },
+  "acceptedScope": [
+    "Original ACCESS five groups and two screenshots; owned default-context Chrome closure is expected only here, but worker PASS/exit0, exact report and complete cleanup still required.",
+    "Timing visual-only one group/two screenshots scrolls actual region heading and start into viewport; existing original five semantic groups remain unchanged.",
+    "Home light visual-only supplement one group/one separate screenshot with actual DOM/header/viewport observations; original seam image remains evidence.",
+    "Fixed public OPS helper retained-only adoption at all three callsites, with exact pinned roots and scratch exclusion, no bytecode writes, bounded observations, unknown causes failure and owned-process reaping while keeping scratch. Existing scratch scanner unchanged."
+  ],
+  "phase": {
+    "name": "remaining-consumers-20261007",
+    "totalMs": 45000,
+    "cleanupReserveMs": 15000,
+    "pg": 0,
+    "chrome": 1,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "closedPriorSpentMs": 40551,
+    "closedPriorUnusedMs": 19449,
+    "priorBudgetSha256": "d8a9254d7d0fb5f3a84a5f52c12d658adcfd7536c53082938f7a4944650e41ed",
+    "accounting": "Independent finite phase; old unused credit remains CLOSED. Charge actual outer and terminal duration; never erase failed attempts."
+  },
+  "limits": [
+    "SOURCE ACCEPTANCE ONLY; no gate/runtime/result is created by this review. Manager alone performs fresh shared-resource coordination and owner performs exact source/claim checks.",
+    "Screenshot count/nonempty checks are not visual acceptance. Root must view actual screenshots. Timing full waiting text still requires scrolling and is not claimed visible in one viewport.",
+    "Home supplement is a freshly constructed similar state; it does not establish the cause of the old compositing seam.",
+    "PARTIAL_RETAINED_ADOPTION is not complete scratch migration or two actual caller migrations. No special-file unknown relaxation.",
+    "No shared source, personal service/provider, main merge or additional runtime scope authorized by this record."
+  ],
+  "routineIteration": "Within this bounded scope owner may locate/fix related consumer failures and bind exact hashes under existing finite segment rules; preserve red evidence and actual charge. Material permission, process, cleanup, helper semantics or resource changes require a focused delta review.",
+  "cleanCode": {
+    "scope": [
+      "parent delta",
+      "three selected consumers",
+      "public helper retained calls"
+    ],
+    "findings": "No blocking finding. Native close uses actual event, original semantic assertions retained, exact role/DOM target verified. Helper and process lifecycle responsibilities remain separate.",
+    "unresolved": [
+      "Scratch helper compatibility is intentionally open; original scanner retained.",
+      "Actual ACCESS and visual followups NOT_RUN."
+    ]
+  }
+}
