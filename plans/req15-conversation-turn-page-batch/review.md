@@ -1,8 +1,8 @@
 # REQ15 独立审查
 
-状态：APPROVED（仅e099 HTTP准备和local结果；实际HTTP未运行）
+状态：PENDING（HTTP实际结果待忠实性审；准备e099批准保持）
 
-Review target commit: e09978682ec573bacd3d79e7c08e915c16368d49
+Review target commit: 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
@@ -113,3 +113,7 @@ Owner接受；e09978682ec573bacd3d79e7c08e915c16368d49仅修terminal known proce
 status_read / gpt-6-astra，2026-10-07T03:53:34Z，source `e09978682ec573bacd3d79e7c08e915c16368d49` / packet `e3a2db4afacdbcba740c8985c314433485a2384e` fresh clean：**SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2**。唯一P2 CLOSED：execute-http-once.py:35–38统一exit/groupAbsent/EOF/无secondary及历史unknown；:141和:156–158复用，未知/缺process保留inode/retainedReason，:159–162保留原same-identity empty-only门禁。manifest SHA3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16，227/1098695B，仅caller row改变，Git=WT/bytes/hash，errors[]。
 
 此前fixed-main215snapshot/30SQL/16links、原2110字符case正文与401/403、types0+collect1非pass及4原件7454B/raw271B结论保持；原fixture/snapshot/supervisor未改。沿本地find-skills/clean-code/codebase-design，审者0执行/import/tests/PG/写。批准仅准备与已发生local结果，非实际HTTP/PG OPEN。Owner接受，无未解决P1/P2；只归档，不重测。
+
+## 实际HTTP结果忠实性独审请求
+
+Target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6`，执行c83526f9724c7b9a751e4fd859d9fd3d00750a2e；source e099及227固定输入逐字保持。请status_read只读核[结果manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa与7原件6745B、1/1/exit0/raw427、25HTTP、身份与已观察资源closure。wrapper3.012804s、外部time3.05s、秒级UTC分列，原始末尾空行保留。0审者重测/import/PG/写，不新连DB或扫描进程，只可lstat精确http-tmp。批准应只覆盖本fixed-main7b6单例及已观察事实，不扩大为最新main全集或部署。源码准备已独审，不重审旧26/PG2/11。当前RESULT_REVIEW_PENDING，重窗口已归还。

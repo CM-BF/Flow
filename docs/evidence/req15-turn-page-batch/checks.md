@@ -35,3 +35,7 @@
 这是一个固定fixture、专属subject串行await的测量，正常query与ReadyForQuery对应；不是整个协议、TLS或socket传输字节，也没有旧实现同期性能基线，不声称吞吐增益。typed全文UTF8 hash仍在PG执行，legacy仍传完整body。实际writer COMMIT ACK在subject读屏障后已确认，原RR保持旧pair，新事务读新pair。清理为三池关闭ACK、精确OID/marker/owner核对、零连接普通DROP及absence；独审不会再连DB。
 
 2026-10-07T03:08:27Z chatui01_owner固定b00a181f结果独审APPROVED/0 P1/P2，限上述两例真实PG/已观察资源与测量忠实性；未重跑检查，HTTP/main仍开放。
+
+## 公开HTTP直接消费者实际结果
+
+2026-10-07 04:02:17 UTC，target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6`。一次原入口，1selected/1passed/exit0；25HTTP，原Unicode/惰性owned详情/404/分页空与超界/不可变user断言及page401/403通过。raw427B完整，PID/PGID27708 exit0/组absent/合并EOF/无signal或secondary；fixture专库与port/池收尾CONFIRMED，精确TMP absent。7原件6745B与完整hash见[http-output-manifest](http-output-manifest.json)，[外部时间记录](http-outer.json)分列wrapper3.012804s、time3.05s和秒级UTC；并发local预算0。仅fixed-main7b6组合单例，不冒称最新main全集/部署；旧26/PG2/11及local types/collect未重跑。结果独审PENDING。

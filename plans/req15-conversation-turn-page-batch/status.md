@@ -2,13 +2,13 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:59:55.762320+00:00；REQ15-HTTP-20261007-R1明确OPEN，准备source/manifest保持；尚未launch |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:02:17 UTC；固定main公开HTTP实际1/1、全部自有资源闭合，重窗口已归还，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原20:36:40.398Z领取仅证明claim；20:39:12UTC首份质量记录说明已开展，但没有首次实际开工的精确事件，故不猜时间。公开HTTP验收尚未结束，main产品已接收 |
-| 分支交付时间 | 2026-10-07T03:07:40.672129Z为本次结果manifest封存观察；固定结果b00a181f与后续metadata提交分别见HEAD，不用Git时间冒充实际交付 |
+| 分支交付时间 | 2026-10-07T04:01:29.040096Z为HTTP结果manifest封存事件；固定结果6725dd4b，完整完成仍待结果独审/接收 |
 | 独立审查时间 | 2026-10-07T03:53:34Z，status_read批准HTTP准备source e099；历史ae899/b00结果各自边界保持 |
 | 主线集成时间 / 部署时间 | 2026-10-07T03:27:47.998685Z为Lead受控接收回执事件，main7b6a196da1cc8d95da09b27fc334555a119ba4bc；部署UNKNOWN/个人runtime未改变 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -16,23 +16,23 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | base22a；归档前cleanHEAD e3a2db4afacdbcba740c8985c314433485a2384e；HTTP source e09978682ec573bacd3d79e7c08e915c16368d49，最后metadataHEAD以实际Git/交付消息为准 |
-| 工作树dirty状态 | 仅本次审查归档metadata；source/manifest与4原件冻结，commit/push后交付cleanHEAD |
+| 工作基线 / HEAD | 执行cleanHEAD c83526f9724c7b9a751e4fd859d9fd3d00750a2e；当前结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6；HTTP source e099、main组合7b6冻结 |
+| 工作树dirty状态 | 仅结果审查交接metadata；7原件/manifest已固定，commit/push后交付cleanHEAD |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | e09978682ec573bacd3d79e7c08e915c16368d49 |
+| 本片段交付阶段 | review |
+| 实现目标 | 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 |
 | 产品验证基线 | 六产品始终d209eb7275777d50f214fd73f66d6b3c1520c459；完整8source/tests当前固定9e6cc60b（仅turn-page-batch.test mock接口变化），旧26/strict按原d209证明范围保留 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py, docs/evidence/req15-turn-page-batch/main-database.ts, docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs, docs/evidence/req15-turn-page-batch/http-consumer.test.ts, docs/evidence/req15-turn-page-batch/execute-http-once.py, docs/evidence/req15-turn-page-batch/http-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.http.json |
-| 检查状态 | PASSED bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148 HTTP局部types exit0；collect1/exit0仅收集、非pass；实际HTTP NOT_RUN/NOT_OPEN。历史26/strict、PG2/2、主线mock11/11分层保留 |
+| 检查状态 | PASSED 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 公开HTTP1/1/exit0，25请求；wrapper3.012804s/外部time3.05s，7原件6745B。历史26/strict、PG2/2、mock11/11、types/collect各按原范围保留 |
 | 已集成main状态 / HEAD | 已接收7b6a196da1cc8d95da09b27fc334555a119ba4bc；65路径307043B逐Git=delivery36806867=intake bytes/hash，SVC07 database保持，HTTP验收尚未运行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 主线批量分页已接收，公开HTTP单例准备及类型检查已通过独审 |
-| 下一可用交付 | 在专用数据库窗口执行已固定的分页与惰性详情单例，完成剩余公开入口验收 |
-| 当前阻塞 | NONE；独占HTTP窗口已明确交接，启动前准入未完成则不执行 |
+| 当前产出 | 主线批量分页已接收，公开分页与惰性详情用例实际通过，自有资源已全部清理 |
+| 下一可用交付 | 完成HTTP结果独审，交主线接收最终验收记录 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
-| Review | [review.md](review.md)：status_read于2026-10-07T03:53:34Z给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2，source e099；仅准备和local证据，不是HTTP运行通过 |
+| Review | [review.md](review.md)：准备e099已批准；新HTTP结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 待status_read只读忠实性审，不重跑源码检查 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope；owner2026-10-07T03:54:02.121Z fresh核身份/路径均符，state/replies移除与停写保持 |
 | 架构影响 | conversation内部批量Interface已在main7b6接收；架构基线target产品d209/main7b6，责任mika协调架构owner；HTTP验证不新增产品结构，未声称图已同步 |
 
@@ -137,3 +137,7 @@ architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pag
 2026-10-07 03:54:30 UTC 审查收口：status_read/gpt-6-astra于03:53:34UTC对source `e09978682ec573bacd3d79e7c08e915c16368d49` / packet e3a2db4afacdbcba740c8985c314433485a2384e给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2。唯一P2 CLOSED，已知进程终态才清空TMP；manifest3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16/227输入1098695B全符，仅caller row变化，旧raw/fixture/snapshot/supervisor不动。准备和local结果批准不OPEN实际HTTP。fresh v2一致，当前只归档metadata、完全停写固定source，等新heavy窗口；0新增检查/PG/HTTP。
 
 2026-10-07T03:59:55.762320+00:00 已接Mika明确唯一窗口REQ15-HTTP-20261007-R1：Web03:59确认无PG/Chrome/local holder或预约、Lead SVC06无holder，C02未启动；声明并行local预算0。source e099及manifest3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16已审，原60s/40work/15cleanup/57监督、64KiB raw/8MiB TMP/64MiB DB/13连接/64HTTP、1task/1runner/0provider不变。先固定clean执行HEAD，再fresh完整claimv2/227输入/16links/7输出absent和floor1207959552B（扣reserve≥1GiB），不符HOLD；本段仅允许一次原入口，失败/unknown保留原件，不自动重试或换namespace。外部实际时长将另记，不用内部wall替代。此行仅授权观察，非已执行或通过。
+
+2026-10-07 04:02:17 UTC 唯一HTTP窗口实际收束：execution c83526f9724c7b9a751e4fd859d9fd3d00750a2e；wrapper fresh04:00:28.045Z确认v2/8，free25859956736B，固定manifest227输入/16snapshot links/9原toollinks与7输出absent通过。原入口执行一次，1selected1passed/exit0、25HTTP、0provider；原case+page401/403全部通过。PID/PGID27708 exit0/group absent/合并stdout+stderr pipe EOF、427 observed=retained/signals/secondary空；DB flow_req15_http_ad5adfcf4ba1/OID1205057/marker与reservation一致，startup/app/fixture/admin关闭、零连接ordinaryDROP/absence及动态port55163关闭有fixture回执；TMPdev16777234/inode123425645同身份空目录移除，owner精确lstat absent。立即通知Mika归还重窗口，不等独审；无残留/unknown/待launch。
+
+[输出manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa，7原件6745B/regular0600；raw427B/SHA914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009。wrapper3.012804s与外部time3.05s、shell04:00:27→04:00:30秒级UTC分列；非以内部wall冒充完整外部耗时。git diff --check exit2仅原raw第10行尾空行，作为Vitest原始输出保真例外，未改log。source/fixture/227inputs及历史26/PG2/11逐字保持，新target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6` 仅实际证据，待status_read直接独审。
