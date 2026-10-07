@@ -37,7 +37,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U09 产品预览与架构tab（原Goal Owner逐字转交，经root传达） | “把产品Web UI打开留着可随时看，且工程dashboard增架构tab” | 原Goal Owner最终选择已审M02的49922并已打开保留用户tab，明确HTTP fixture；原owner保留服务，55049仅I01开发验证，不另起重复服务。工程dashboard架构tab由主线已承接，我方不改其代码 |
 | U10 插件管理入计划（原Goal Owner逐字转交，经root传达） | “plugin管理写进计划里” | 主线维护独立X01全产品插件管理canonical计划；我方链接追溯并继续P01/I01前置，不重复建立X01或扩大已领生产范围 |
 | U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
-| U12 领取与跨Lead协作重申（root准确转述，压缩重申U08，非用户逐字） | take工作在dashboard标清、跨lead防overlap | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
+| U12 领取与跨Lead协作重申（用户逐字，映射U08/REQ37） | 和你在一起工作的还有其他agent leads，一定要管理好执行dashboard，你们才不会overlap工作。take 工作最好也在dashboard上标清楚 | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
 | U13 本机登录入口（GO经root准确转述，非逐字） | 4320提供打开Flow及按需掩码显示/复制登录凭据；真实本机安装验收 | [独立入口请求](../../docs/evidence/web-platform/dashboard-local-access-intake/request.json)；显式local-installation限定、可信固定来源，token不进日志/URL/聚合/Git；唯一operator恢复和发布，不代用户登录/刷新聊天 |
 | U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)已由独立Timing源码72a实施，parser与5项浏览器实际获审；main/发布另计，后继易读层级沿同U14排队 |
 
@@ -413,3 +413,7 @@ DPERF04原九范围Interface消歧（固定c837，未领取）：[固定报告](
 2026-10-06 18:40 UTC：GO实际看板暴露合法UTC小数/+00:00时间误判，沿既有D01登记[WPF-DPERF05四范围窄修SOURCE_REQUEST](../../docs/evidence/web-platform/dperf05-utc-source-request.json)，独立树/唯一owner、先Lead物化再原子take；原DPERF04不扩围，其他任务status不改。固定parser输入安全拒绝非法日期且保真实陈旧/未来边界。18:48 Lead正式物化ec5/10files79472B后，18:49:44原四范围9a876001 v1已COMMITTED并派panels source-only；当前实施在途，检查/登记/部署仍分别待真实回执。
 
 D01/D06既有后继已按GO/root明确指令在原树推进：[固定0da源码交接](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)。原owner d01_owner新原四范围adf9539d v1，数据/直接验证源5124获限定source-only审查；不重做旧aeb验收、不新增父task/图框架、不改变renderer/CSS/server。新运行与main仍待，个人部署单列；旧20:11 queued记录[原样保留](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/queued-intake-history.json)。
+
+### U14后继的具体供给与权属边界
+
+TIMING01已于03:56:00.608Z核齐完成、03:49:29Z实际4320/185发布，9a677v2已释放；不在已完成任务追加未完成验收。首屏易读性采用直接D01的独立有界 **WPF-DASHBOARD-TIMING02**，候选owner原W01、独立dashboard-task-timing-readability/codex同名；[固定source供给提案](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-source-proposal.json)38文件599953B/base2f18，未建树/未take。[原owner具体设计](../../docs/evidence/web-platform/dashboard-task-time-intake/owner-readability-design.md)收敛status/app/styles+两定向测试+新ownplan/evidence七literal；04:02:45的五共享产品/test范围无冲突仅时点观察，开工仍需fresh全七scope。新计划TODO01呈现与隔离派生等待、02直接受影响验证、03独审/接收，旧TIMING01完成和历史目标不变。ACCESS真实安装交付优先；此段只规划，0产品写入/运行/预约。

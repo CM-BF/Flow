@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 18:11 UTC |
+| 最近更新 | 2026-10-07T04:06:01.265133+00:00 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 新前端已通过真实发送、排队和回执恢复检查，相关验证已接入主线；当前预览仍是旧版本。 |
-| 下一可用交付 | 补齐旧页面与新后台的兼容记录后推进预览更新；后续收拢普通聊天的技术信息，保留错误和待办入口。 |
-| 当前阻塞 | ACTIVE: 旧页面保留版本与新后台的组合尚未验证；实际发布、完整窄屏和键盘体验仍待完成。 |
+| 当前产出 | 新前端发送、排队和回执恢复已完成受控兼容验证并接主线；个人预览已于21:27按受控流程发布af51后台与d629/v3前端，旧版本组合不再是未解依赖。完整视觉体验仍在推进。 |
+| 下一可用交付 | 优先完成本机入口真实安装操作验收及草稿恢复、快速设置剩余页面验证；继续收拢普通聊天技术信息，保留错误、待办和可展开依据。 |
+| 当前阻塞 | 预览更新及原旧版本兼容依赖已解除；完整窄屏、键盘焦点、主题扩展和真实长内容视觉验收仍未完成。各子片按唯一owner和实际窗口推进，不继承为整体通过。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -47,10 +47,12 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
-历史发布准备：[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。历史9eec原产物无format2；14:25fresh准入后正式506/d629 prepare成功，14:28两cache已释放。旧backend362缺口已由af51固定组合闭合两A实证，不等整Recovery或全SVC06。0个人操作，当前产物保持8d8/caa1/v2，来源与解除条件见中央队列。
+历史发布准备：[RELEASE03批准方案](../../docs/evidence/web-platform/release03-current-preview-proposal.json)：w01唯一验证owner、四范围已bfb209ae v1 COMMITTED，原SVCoperator发布。历史9eec原产物无format2；14:25fresh准入后正式506/d629 prepare成功，14:28两cache已释放。旧backend362缺口已由af51固定组合闭合两A实证，不等整Recovery或全SVC06。该历史时点0个人操作、产物8d8/caa1/v2；现已由下述21:27受控发布取代。
 
-[先前all两A实证审查](../../docs/evidence/web-platform/release03-all-164711-root-review.json)已接收；B只完成plainSend，Files定位器失败由原owner窄修，完整兼容未通过。12原raw不裁改，all12复用必须显式适配/独审。[Lead已确认CORE1707新窗口](../../docs/evidence/web-platform/lead-core-1707-window.json)；后继B另fresh准入，不因A通过自动启用。
+历史兼容过程：[先前all两A实证审查](../../docs/evidence/web-platform/release03-all-164711-root-review.json)已接收；B只完成plainSend，Files定位器失败由原owner窄修，完整兼容未通过。12原raw不裁改，all12复用必须显式适配/独审。[Lead已确认CORE1707新窗口](../../docs/evidence/web-platform/lead-core-1707-window.json)；后继B另fresh准入，不因A通过自动启用。
 
 历史17:11 [app-only保留证据](../../docs/evidence/web-platform/release03-app-171109-intake.json)及[root独立复核](../../docs/evidence/web-platform/release03-app-171109-root-review.json)：复用完整A证明，B回执等待失败，原因只读核定中；累计39.935秒/余140.065秒，DB/双进程清理完整，Lead已收回并将下一PG交TUI01F。无自动重试/兼容绿报告/个人发布。
 
-最新发布验证已[main收口并释放](../../docs/evidence/web-platform/release03-main-intake.json)，个人发布与[两旧产物×af51准备](../../docs/evidence/web-platform/retained-af51-minimal-plan-root.json)仍由原SVC owner接续；下方旧运行段均保历史，不代表当前仍待同一次源码或结果审查。
+历史验证交接：[发布验证已main收口并释放](../../docs/evidence/web-platform/release03-main-intake.json)，当时个人发布与[两旧产物×af51准备](../../docs/evidence/web-platform/retained-af51-minimal-plan-root.json)交原SVC owner，后续21:27已完成，不能沿该历史段继续判未发布；下方旧运行段均保历史，不代表当前仍待同一次源码或结果审查。
+
+当前发布依据：[原SVC05H final gate](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-final-gate.json)与[限定来源说明](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-intake.json)。2026-10-06T21:27:19.199Z published/受控检查通过，保留明确legacy-intent例外，不称所有native idle；个人af51/d629部署不等于全部最新main。2026-10-07T02:44同版本61228恢复另见[实际回执](../../docs/evidence/web-platform/dashboard-task-time-intake/personal-web-recovery-receipt.json)。本父整体TODO、检查NOT_RUN和review NOT_STARTED未改；本次只修过期摘要，不重验产品。

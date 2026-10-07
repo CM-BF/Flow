@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T03:52:21.927621+00:00",
-  "state": "D06_BROWSER_FAILED_CLEANED_RETURNED",
+  "recordedAt": "2026-10-07T04:06:01.265133+00:00",
+  "state": "NO_WEB_HOLDER_SVC06_ACCEPTED_PENDING_ACTUAL",
   "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,11 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T03:52:21.927621+00:00",
-    "kind": "D06_ACTUAL_FAILURE_AND_HAND_BACK",
-    "source": "d06-browser-actual-20261007/return.json",
-    "summary": "运行边界/模块图通过；数据图两条连线文字背景bbox失败，2/5组及8PNG保留。owned清理完整，窗口立即归还；无重试/renderer改动。",
-    "attribution": "d06-browser-actual-20261007/attribution.json"
+    "at": "2026-10-07T04:05:08.474427+00:00",
+    "kind": "REQ15_ACTUAL_CLEANUP_TO_SVC06_HANDOFF",
+    "source": "checkpoint-0400-20261007/incoming.json",
+    "summary": "REQ15已实际清理归还；Lead已接SVC06窗口，实际run/cleanup待回执。Web无holder/gate/预约；D06第二READY排其后。ACCESS已main，原operator正独立4320 opt-in发布，完成待回执。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1059,36 +1058,48 @@
   "nextWebReady": {
     "state": "READY_FIRST_AFTER_SOURCE_REVIEW_AND_FRESH_ADMISSION_NO_RESERVATION",
     "access": {
-      "ownerHead": "309ed1e8f0ee37c2842c956adb36762fbd0b6efe",
-      "actual": "Third failed 4/5 exit1; real hidden remained visible. Original product clear handler not reached by hidden evidence. Owned cleanup complete.",
-      "spentMs": 30839,
-      "remainingMs": 29161,
+      "ownerHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
+      "state": "MAIN_ACCEPTED_REAL_INSTALL_DEPLOYMENT_IN_PROGRESS",
+      "actual": "fourth5/5 exit0/6237.586ms; nativehidden/tokenempty;03:51:35.626Z exactcleanup",
+      "spentMs": 37077,
+      "remainingMs": 22923,
       "cleanupIncludedMs": 15000,
-      "review": "window-actuals-0341-20261007/access-third-review.json",
-      "next": "Source-supported fixture/context repair only; no fourth run or deployment."
+      "review": "checkpoint-0400-20261007/access-composition-review.json",
+      "mainIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json",
+        "fixedHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
+        "sha256": "8e1808e0b58e177ebafed15dce2319c590330c7c21dbe7824541273b33c6afca"
+      },
+      "next": "OnlyREADME537 approveddelta+ownrecords remains forLead intake; product366 alreadymain451bf. Originaloperator opt-in4320/actualinstallation completion still pending; no fifthbrowser.",
+      "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2"
     },
     "timing": {
       "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
       "actual": "5/5 browser PASS actualexit0, 6410.498ms; exact cleanup03:41:04Z; scoped root accepted.",
       "review": "window-actuals-0341-20261007/timing-browser-review.json",
-      "next": "Integrated; original operator to deploy4320/load185 separately. No actual deployment receipt yet.",
-      "ownerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed",
-      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b"
+      "next": "ExistingD01 readability followup scopeproposal only, newfreshclaim required; no oldwriter authority.",
+      "ownerHead": "4b78a1de06c2c9318ef45cd964a60e8361fcafa2",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "state": "DELIVERED_DEPLOYED185_CLAIM_RELEASED",
+      "actualDeployment": "2026-10-07T03:49:29Z source52fe PID43188/185 byLead",
+      "currentEvidence": "checkpoint-0400-20261007/timing-main-close.json"
     },
     "d06": {
-      "ownerHead": "cc1f83457f04a02147c854f0503409db1bebb355",
-      "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
-      "packet": "/private/tmp/d06-browser-512-tz5of84t",
-      "state": "EXISTING_RENDERER_GEOMETRY_FIX_SOURCE_ONLY",
-      "manifestSha256": "7d61f3370c3b9b7e6b54372b1b4d64e5668f2d1747dda383c5c4935289b7f5b1",
+      "ownerHead": "13398326cbec44c7d895f2d616f29c1c22be9e65",
+      "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+      "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
+      "state": "SECOND_PREPARATION_AND_BOUNDARY_APPROVED_NOT_RUN",
+      "manifestSha256": "f2e81079558edf3d1c2fd68b337cfa74eaca12eed34709a881a459f31f8dbf87",
       "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
-      "review": "window-actuals-0341-20261007/d06-browser-preparation-review.json",
-      "window": "D06-512-BROWSER-ONCE-20261007",
-      "authority": "Original single gate consumed; cleaned and returned. No second run granted.",
+      "review": "checkpoint-0400-20261007/d06-second-preparation-review.json",
+      "authority": "No actualsecondwindow; afterSVC06 actualcleanup and explicitroot handoff/freshadmission only",
       "actualReceipt": "d06-browser-actual-20261007/return.json",
       "conservativeSpentMs": 6733,
       "remainingMs": 83267,
-      "sourceBoundary": "Root fixed diff confirms existing renderer estimate bug; adf953v2 exact5 permits architecture.js only in addition to original4; source fix/review pending."
+      "sourceBoundary": "a28e renderer source approved; identicalscenario, firstfailure/oldraw preserved; actuallayout stillpending",
+      "bindingSha256": "a2c2bf3e850fdb89c161584ccdb70281bc6ccd869dddf17f5426c62322d4f35e",
+      "futureCombinedFloorBytes": 1368653824,
+      "combinedFloorAttribution": "Original1350565888+Mika C02 declared18087936; no fresh resource sample or currentruntime."
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1523,10 +1534,10 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": null,
-    "window": null,
-    "state": "RETURNED_NO_RESERVATION",
-    "evidence": "window-actuals-0341-20261007/mika-actual-return.json"
+    "owner": "Lead SVC06",
+    "window": "e6ff host-smoke",
+    "state": "LEAD_ACCEPTED_SVC06_WINDOW_ACTUAL_START_CLEANUP_PENDING",
+    "evidence": "checkpoint-0400-20261007/incoming.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1534,5 +1545,19 @@
     "sourceReview": "APPROVED_SOURCE_ONLY",
     "pureGit": "NOT_RUN",
     "newRuntimeGrant": false
-  }
+  },
+  "nextExternalQueue": [
+    {
+      "owner": "Lead SVC06",
+      "state": "LEAD_ACCEPTED_PENDING_ACTUAL_START_CLEANUP",
+      "limits": "120swork+30cleanup/1DB2ports3groups/0Chrome"
+    },
+    {
+      "owner": "Web D06",
+      "state": "READY_WAIT_CONCRETE_HANDOFF_NO_RESERVATION",
+      "limits": "83267total incl15000cleanup"
+    }
+  ],
+  "currentIntake": "checkpoint-0400-20261007/incoming.json",
+  "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants."
 }

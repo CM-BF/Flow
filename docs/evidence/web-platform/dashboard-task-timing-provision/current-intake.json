@@ -1,6 +1,6 @@
 {
-  "state": "SCOPED_APPROVED_MAIN_INTAKE_READY_REGISTERED_NOT_DEPLOYED",
-  "at": "2026-10-07T03:46:01.611311+00:00",
+  "state": "DELIVERED_MAIN_DEPLOYED185_CLAIM_RELEASED",
+  "at": "2026-10-07T04:02:22.033977+00:00",
   "taskId": "WPF-DASHBOARD-TIMING01",
   "parentTask": "D01",
   "owner": "w01_owner",
@@ -11,7 +11,7 @@
   "sourceBytes": 572960,
   "claim": {
     "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
-    "version": 1,
+    "version": 2,
     "scope": [
       "apps/execution-dashboard/public/app.js",
       "apps/execution-dashboard/src/status.mjs",
@@ -20,29 +20,33 @@
       "docs/evidence/wpf-dashboard-task-timing",
       "plans/wpf-dashboard-task-timing"
     ],
-    "committedAt": "2026-10-07T03:04:19.087Z"
+    "committedAt": "2026-10-07T03:04:19.087Z",
+    "state": "released",
+    "releasedAt": "2026-10-07T03:57:23.753Z"
   },
   "sourceProvision": "provision-actual.json",
   "take": "take-receipt.json",
   "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
-  "dispatch": "Owner sealed source/parser/browser approval and main intake; no runtime holder. Actual185 load still pending controlled deployment.",
+  "dispatch": "Originalowner metadata closed; oldclaimreleased, no writer/runtime. Readability followup queued, nottaken.",
   "startTime": "2026-10-07T03:07:53.024Z",
-  "registry": "Original Lead inbound: main bf7eca59 registers Timing source 185 and SVC08 source 184. Actual 185 load not observed; planned once with future ACCESS controlled deployment. Actual snapshot183 remains historical.",
-  "currentOwnerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+  "registry": "OriginalLead actual03:49:29Z4320 source52fe/185 sources loaded; previous183 snapshot is historical.",
+  "currentOwnerHead": "4b78a1de06c2c9318ef45cd964a60e8361fcafa2",
   "firstCanonical": "f23c70ce99fb3b59d0707d09d332038a3a6ec6a4",
   "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
   "dirty": false,
-  "completion": "NOT_COMPLETED",
+  "completion": "2026-10-07T03:56:00.608Z",
   "sourceReview": "../current-product-checkpoint-20261007/timing-source-parser-review.json",
-  "checks": "81 parser and5 browser actual scoped approved; main feature integration/deployment pending; registration is separate.",
+  "checks": "81parser+5browser scoped approved, unchanged; main52fe accepted; actual185 deployed byoriginaloperator. No manager rerun.",
   "registrationRequest": "owner-registration-request.json",
   "registryMain": "bf7eca59",
   "registeredSourceCount": 185,
-  "actualLoadedSourceCount": 183,
-  "actualLoadedAt": "2026-10-07T03:04:03.308Z",
+  "actualLoadedSourceCount": 185,
+  "actualLoadedAt": "2026-10-07T03:49:29Z",
   "browserReview": "../window-actuals-0341-20261007/timing-browser-review.json",
   "mainIntake": {
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/docs/evidence/wpf-dashboard-task-timing/main-intake.json",
     "sha256": "50c649534f4b314096621e5a7ebb3df5850169b5752725ad4135a4a325a1fde1"
-  }
+  },
+  "releaseReceipt": "../checkpoint-0400-20261007/timing-release.json",
+  "mainClose": "../checkpoint-0400-20261007/timing-main-close.json"
 }

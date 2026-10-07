@@ -1,0 +1,255 @@
+{
+  "at": "2026-10-07T04:03:58.464366+00:00",
+  "state": "PROPOSED_NOT_PROVISIONED_NOT_TAKEN",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "parent": "D01",
+  "base": "2f18dfe92f795e566f7779d67ebea2f556254e2a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+  "branch": "codex/dashboard-task-timing-readability",
+  "ownerCandidate": "w01_owner",
+  "scopes": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "plans/wpf-dashboard-task-timing-readability",
+    "docs/evidence/wpf-dashboard-task-timing-readability"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27",
+      "gitBlob": "4539012d5f69622debba71391e3390f3cd6a4032"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348",
+      "gitBlob": "b25a22aee3d8434bb520054502f61cd82cefd66c"
+    },
+    {
+      "path": "apps/execution-dashboard/README.md",
+      "bytes": 10657,
+      "sha256": "068205346f4e98b1cf8e73c4daa2bd21f3054282f295b76fbba6f2a1091545a3",
+      "gitBlob": "1dbf223d0aa6790fe050db682f48119f50f5a245"
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "gitBlob": "c37ec33af0f553e8003c665d8acca7cede9b4615"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 22669,
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "gitBlob": "22d9aa2981f05816a7e75cfc7390d3f54ae6a552"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 41828,
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "gitBlob": "cabc9fcc24d1c3a5318c3db9a0f2f29002798e7e"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "gitBlob": "c99c39601adbf20d4af672f16856ee7ba5a3f7c2"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "bytes": 7689,
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "gitBlob": "295380fba8c207c17f4892fa5ec1ce404e8acd39"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 6397,
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+      "gitBlob": "1196fb2074dc588e7e3468c13f0c4fd01dea7bd5"
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "bytes": 8947,
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "gitBlob": "0abd829c1a30205066449716c59ad9eecbc5b560"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "gitBlob": "d885ac1550a52db1bfabd6d92fcce5b92da402fd"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/cli.mjs",
+      "bytes": 1248,
+      "sha256": "a3fdc296e1af25050453f253776c0c80b506ae3bfee14ee5384f13bc3425ff87",
+      "gitBlob": "fbd4b9a8396a490222e3233333fbdd39346b2f1d"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "bytes": 5970,
+      "sha256": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+      "gitBlob": "6642621b21b94243373cd0a8c6939a5c0da95778"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "gitBlob": "46c71f5d2a5b9119618c655f1de7031bc0fbc0b5"
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "bytes": 2917,
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "gitBlob": "339f8a2422f6620d224e493bbf5917116f3eaed7"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "gitBlob": "4ab8b56bff835ceac6a96b39ecc001879a81f2fc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "gitBlob": "4362291c16e3e69d53e187e52e2667f9134fbe07"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "gitBlob": "500b46eb13aa749e6b195c16eed95aedc9589c14"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 25259,
+      "sha256": "434e90dae321863fda3785169409d87f084754ac79165f17f558f6c1ca5f74fd",
+      "gitBlob": "6f080163514047431ab3bc464b66c9be63ca4c07"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4034,
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "gitBlob": "e68a67a7c1214b5b3d015f45cb92585b26b1e9bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "gitBlob": "29169a47cb52aa84dcb195e08d1ca9241a3b6de4"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "gitBlob": "5d57a5d3ebf1bf16df056c357f95cd3bf6d30146"
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "gitBlob": "6000b2ce3b7e20a8b407792f0c0168c550814364"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 11861,
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "gitBlob": "eddefde389066081fe5be6a36e56a0bf48133fa9"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 13880,
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "gitBlob": "34387ac50dd925968bc216146bdfb8952aeed92a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 10811,
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "gitBlob": "f6cd0cc801ea8fdc794ea95c2d10a169c8380966"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "bytes": 17404,
+      "sha256": "932e089bd2f1cfb4e510e24e254bf4d8c06d929323ced61ee66313f4150b8e7d",
+      "gitBlob": "647523d560c0cdd4ebc3d0cc6dddca4e414bbf45"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "gitBlob": "f12c69735d60e664e3a87082d1571fb48a8b4958"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 17470,
+      "sha256": "9cbdce0d6f2cd5fc529370726fbe111bc0df416e4aad5207851879a4a26f76e8",
+      "gitBlob": "4033a5016462dc8f3dd1f2aa2b8854fb3dd776a5"
+    },
+    {
+      "path": "plans/README.md",
+      "bytes": 20319,
+      "sha256": "2c90675740bdbb63b388646a11006e481ccbe8116525ac32034cd14e983a8ab3",
+      "gitBlob": "a962bcbe7b5f24e1e0fd5778f31e51874a51c9fe"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/plan.md",
+      "bytes": 4272,
+      "sha256": "7507c21c6879a5fe6ed334d2aa1f14270079386eb6437a409673f65a07dafba9",
+      "gitBlob": "e5a762795206cc13bb4ade8524011df752c81caf"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/review.md",
+      "bytes": 4632,
+      "sha256": "23765e9c84ebefecff6dcfcf40be5dbd1d367ef06bff233eb61cb5ed9f9fdd71",
+      "gitBlob": "e08143cfb24b016dcea6360157d102b4bd0bbd92"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/status.md",
+      "bytes": 4961,
+      "sha256": "16ace0aacf77a84b7ccd82459b6320a8c3f2ba3010eb9ef991fe9637968a88e2",
+      "gitBlob": "adddd382626805adddee52ba2a0f29dbd7b46f5d"
+    },
+    {
+      "path": "plans/templates/plan.md",
+      "bytes": 1207,
+      "sha256": "8ac39aa61957fc076c25c85ad860517d878c05176d4f4cb2bb9e475015005ef4",
+      "gitBlob": "4be3c7b459910da2a470587bf185a1364c8ccc6d"
+    },
+    {
+      "path": "plans/templates/review.md",
+      "bytes": 2830,
+      "sha256": "42437867857b38237312e2f726dad590a1f09a6d1ea9d4ae4df01db7794bd3d5",
+      "gitBlob": "98a288d4fb3d6abec4da4cdceb3af3014bceb4aa"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "bytes": 2812,
+      "sha256": "57d81bae9a88c5b977bd2f39b21c23deb19f146d23560f1703c2666e510b5bfc",
+      "gitBlob": "ea77a77b0b90f67c0203e7d93d16157a8adfd00e"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "gitBlob": "a61b07082e212b84d961cad193a6cae6ce34450b"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "gitBlob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730"
+    }
+  ],
+  "fileCount": 38,
+  "logicalBytes": 599953,
+  "sourceCapBytes": 5242880,
+  "pathAndRefAbsent": true,
+  "sourceClosure": "Reuse Timing01 fixed37files plus its actualnewbrowser consumer; update all to fixedmain2f18. No dependencies/node_modules/raw/personalconfigs.",
+  "execution": "Preparation only. Future one operator bounded no-checkout exacttree sparse; sharedconfig/main/othertrees untouched. Fresh exacttake precedes implementation; no currentruntime/provision invocation."
+}

@@ -8,7 +8,7 @@
     "WPF-REQ-37",
     "D01"
   ],
-  "state": "QUEUED_NOT_TAKEN_NOT_IMPLEMENTED",
+  "state": "INDEPENDENT_TIMING02_SCOPE_AND_SOURCE_PROPOSAL_NOT_TAKEN",
   "protectedDelivery": "Timing72a is integrated at main52fe66693c370aec72dd8a36ed3fa00292e5127b. Actual4320 deployment/185 loading pending operator receipt. No rollback; ACCESS priority.",
   "firstScreen": [
     "Only started time, completed or in-progress state, elapsed including waits, and readable wait reason.",
@@ -26,5 +26,35 @@
     "path": "/Users/citrine/.agents/skills/frontend-design/SKILL.md",
     "method": "Apply clear information hierarchy, end-user words and expandable supporting detail; do not redesign the visual system or expose implementation labels as primary UI."
   },
-  "research": "root-readability-research.json"
+  "research": "root-readability-research.json",
+  "implementationPlan": {
+    "task": "WPF-DASHBOARD-TIMING02",
+    "parent": "D01",
+    "relatedDeliveredTask": "WPF-DASHBOARD-TIMING01",
+    "ownerCandidate": "w01_owner, originalTiming owner; notdispatched",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+    "branch": "codex/dashboard-task-timing-readability",
+    "baseCandidate": "2f18dfe92f795e566f7779d67ebea2f556254e2a",
+    "whyIndependentTree": "TIMING01 declaredallaccepted andcompleted03:56; addingopenTODO to its finishedtask would confuse completion. Independent bounded followup reuses interfaces and singleownerstatus, no secondtimingstore.",
+    "claim": "Original9a677v2 remainsreleased; newfresh7scope claim required beforeimplementation",
+    "candidateScopes": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/public/styles.css",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "plans/wpf-dashboard-task-timing-readability",
+      "docs/evidence/wpf-dashboard-task-timing-readability"
+    ],
+    "stableTodoProposal": [
+      "TIMING02-01: readabletime/derivedwaiting presentation and isolatedparserprojection",
+      "TIMING02-02: affectedparser+keyboard/narrow/theme waiting evidence",
+      "TIMING02-03: fixedindependentreview andnormalintake"
+    ],
+    "implementationSeam": "status existingcells/UTC kernel derives waitingTable.rows/issues while preservingraw timing.waiting; waitissues separate from timing.issues/status.errors. app shares localzone/offset projection, native disclosure andtext-only table. styles only timing scoped narrowlayout; no newhelper orparserframework.",
+    "validation": "Changedparser warrants its one targeted81baseline+new waiting cases; browser preserves originalfive truth/focus cases and adds directlyaffectedtimezone/table/disclosure scenarios. Ordinarylocal worksegment; actualChrome separatehandoff. Existingpasses do notapplytonewtarget.",
+    "priority": "ACCESS main/realinstallation priority. CurrentD06 ready followsSVC06; thisproposal holdsno runtime orwriter."
+  },
+  "ownerDesign": "owner-readability-design.md",
+  "sourceProposal": "readability-source-proposal.json"
 }

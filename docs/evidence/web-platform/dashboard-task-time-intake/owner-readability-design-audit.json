@@ -1,0 +1,111 @@
+{
+  "state": "READONLY_DESIGN_NOT_TAKEN_NOT_IMPLEMENTED_NOT_RUN",
+  "observedAt": "2026-10-07T04:01:35.865071+00:00",
+  "sourceTarget": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+  "mainObserved": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+  "ownerTreeHead": "4b78a1de06c2c9318ef45cd964a60e8361fcafa2",
+  "ownerTreeClean": true,
+  "originalClaimReleased": {
+    "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+    "version": 2,
+    "receipt": "/private/tmp/timing-main-release-20261007/receipt.json"
+  },
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "fixed": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "mainBytesEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "fixed": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "bytes": 22669,
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "mainBytesEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "fixed": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "bytes": 8947,
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "mainBytesEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "fixed": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "bytes": 11861,
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "mainBytesEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "fixed": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+      "bytes": 10811,
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "mainBytesEqual": true
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/private/tmp/root-d01-timing-readability-research.json",
+      "bytes": 4904,
+      "sha256": "5a1d4d4a711f88e882b4f9206a61f58391105ce783d1474251a3c677582471a9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/dashboard-task-time-intake/lead-time-contract.md",
+      "bytes": 2668,
+      "sha256": "1e2699038118c7023c340f348a1caf814b1419aaa3e41443b9924e9341fe699b"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/frontend-design/SKILL.md",
+      "bytes": 9390,
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "references": {
+    "status": "strictUTC24–36, tasktiming41–63, sectionrows74–107",
+    "app": "time/elapsed32–49; summary/detail51–81; refresh177–188; selectedSnapshot209–218",
+    "css": "detail-facts410–425; mobile569–579",
+    "tests": "parser waiting214–220; browser assertions95–157"
+  },
+  "proposedScopes": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "plans/wpf-dashboard-task-timing",
+    "docs/evidence/wpf-dashboard-task-timing"
+  ],
+  "noRuntime": true,
+  "reportSha256": "f71e91c565049813b9fed43b2d4e4b73187ff114300792bfda45ecd7efd504ad"
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:49:28.131569+00:00；D06实际窗口结果/清理及GO新后继输入，未采4320/个人服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:05:08.474427+00:00；原Lead实际发布/接收与owner释放回执、第二候选静态审；本组未采服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,8 +21,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，定向验证已通过，显示和主线接收待验。 |
-| 下一可用交付 | 时间展示已接入主线，待受控部署，首屏易读性另沿既有D01排队；本机入口优先完成真实隐藏与安装验收。架构图需先处理实测的连线文字背景问题。 |
-| 当前阻塞 | 本组已归还运行窗口，无预约。架构图发现既有连线文字背景估宽问题，已精确领取修复；本机入口真实隐藏前提及安装验收仍待完成，草稿恢复和快速设置仍有页面验收。 |
+| 下一可用交付 | 本机入口已接主线，待真实安装操作与发布完成；架构图修复待窗口复验。已发布的时间展示保持可用，易读性沿独立有界后继排队。 |
+| 当前阻塞 | 本组无运行占用或预约；SVC06已接窗口，待实际归还。本机入口真实安装验收、架构/草稿恢复/快速设置的剩余页面验收尚未完成。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -39,7 +39,7 @@
 | WPF-001-05 | in-progress | d01_owner | P01/I01可信host与X02 registry已审集成；X03I01消费只读管理模块，完整npm生命周期/第三方隔离与conversation/pane入口仍开放；[连接页固定2498候选](../../docs/evidence/web-platform/connection-plugin-2498-intake.json)已核十源，唯一host/既有slot/preauth可信builtin与postauth撤权未实施，待Recovery交权 |
 | WPF-001-06 | completed | d01_owner | PERF01基线3d47和PERF02窗口a87限定批准、后者main已含；d36 v2 released，未来优化另凭证据领取 |
 | WPF-001-07 | completed | d01_owner | M02 d47已审集成，原保留范围已于06:45:37由owner完成main收口并release v4；后继不沿旧权写入 |
-| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验，原始receipt保留；[已释放/从未领取的派生显示验收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)沿原D04/D01后继，不撤销原限定通过；[U14时间首屏易读后继](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-followup.json)沿D01排队，原已审Timing不回滚 |
+| WPF-001-08 | completed | d01_owner | D04 PG原子领取/实际dashboard详情已验，原始receipt保留；[已释放/从未领取的派生显示验收](../../docs/evidence/web-platform/dashboard-claim-presentation/root-review.json)沿原D04/D01后继，不撤销原限定通过；[U14/TIMING02时间首屏易读后继](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-followup.json)沿D01排队，原已审Timing不回滚 |
 | WPF-001-09 | in-progress | d01_owner | CHAT与queue已审集成；GO/Lead真实两query结果CLOSED 2/2已收到，沿固定证据不重测；tool/thinking、context、steer、voice后继仍开放；04历史GET/client/DTO已main362 ready，Web consumer待排程；附件v2材料投影最小修复4f879已main cde，Lead组合PG2已验；实际backend362仍缺该修复，不冒完整材料展示 |
 | WPF-001-10 | completed | d01_owner | X03I01实现84acdc获root限定APPROVED、final4b7e0f clean，管理scope/docs通过；main集成仍另计 |
 | WPF-001-11 | completed | d01_owner | PROFILE独立模块4f198576获rootAPPROVED、finale730clean，管理范围/6md20links/4TODO通过；App接线仍另片 |
