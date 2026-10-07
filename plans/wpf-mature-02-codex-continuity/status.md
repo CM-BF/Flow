@@ -10,11 +10,11 @@
 | 最近更新 / 最近main同步核验 | 2026-10-07 03:13:36 UTC；main集成仍未完成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 工作分支状态 | in-progress |
 | 当前产出 | 修正后六组公开接口检查全部通过：同runner会话跨两次注入transport恢复，观察者断开后后台继续；真实Codex和产品界面尚未验收。 |
-| 下一可用交付 | 固定本次结果供独立审查；下一小片接生产配置、持久存储与启动顺序，随后再接会话界面。 |
-| 当前阻塞 | ACTIVE: 公开接口首片待结果独审/集成；生产启动与会话界面未接通。R2运行已收束归还，旧R1失败目录继续KEEP。 |
+| 下一可用交付 | 本次结果已获独立审查；下一小片接生产配置、持久存储与启动顺序，随后再接会话界面。 |
+| 当前阻塞 | ACTIVE: 公开接口首片已独审待集成；生产启动与会话界面未接通。R2运行已收束归还，旧R1失败目录继续KEEP。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
@@ -24,7 +24,7 @@
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v2 ACTIVE，21 literal，amend COMMITTED 2026-10-06T21:25:31.797Z |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
-| Review | 固定源码与fixture delta均已独审0P1/P2；status_read于2026-10-07 03:07:40 UTC接受source3c05038c/packete3a722d及local结果。R1失败忠实性已独审；R2实际6/6结果待独立忠实性审，非生产/界面验收。 |
+| Review | 原source/fixture/local准备与R1失败忠实性均已独审；2026-10-07 03:16:29 UTC architecture_read接受8501d96a R2结果，RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。仅注入transport真实PG/HTTP六组，不扩生产loader/真实native/UI。 |
 | 检查 | 原失败及修后历史记录保留，不重跑旧types/unit。R1 6选5过1失败，旧TMP KEEP。cwd单例1通过/7未选及原Python/ANSI计数错误原件保留。R2单次公开PG/HTTP 6选6过、child/tool exit0，DB/服务/双EOF/组与本次TMP清理确认。0实际Codex/provider/install。 |
 | main集成 | NOT_INTEGRATED；基线 eae85567ba5dfb650ba71b473917130f87b5945c |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |

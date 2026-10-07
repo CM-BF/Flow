@@ -31,3 +31,5 @@ architecture_read固定3f432/de51只读关闭封套原三P2。Mika随后发现�
 2026-10-07 02:38:35 UTC记录：repository_map已独立接受d5e94525 R1失败忠实性，0P1/P2，仅原失败/资源事实。另对固定源码只读确认test fixture把codeHome混作attempt cwd的缺陷，并同意原factory seam最小修正；当前修正与新增1case尚NOT_RUN，待固定源码独审，原PG无新OPEN。详见cwd-regression-diagnosis.md。
 
 2026-10-07 03:00:32 UTC：为保存原R1 manifest，source3c05038c仅在原operator中允许旧/新两个固定清单名并在receipt绑定所选SHA。新pg-cwd-source-manifest绑定302项（4变298不变）及原20links/2external、原6组/预算不变；此输入名delta与固定组合尚待只读复核，ACTUAL_NOT_OPEN。无新wrapper、types/单例重跑或PG/cleanup。
+
+2026-10-07 03:16:29 UTC architecture_read：8501d96a R2 RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；6/6、34bindings、129207B、cleanup与unknown边界均符。详见R2.review.json；0审者运行，不授后继窗口。
