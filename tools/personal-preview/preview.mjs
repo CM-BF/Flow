@@ -375,11 +375,14 @@ async function syncDirectory(path) {
   const handle = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
   try { await handle.sync(); } finally { await handle.close(); }
 }
-async function webHostJournalDirectory(directory) {
+async function webHostJournalDirectory(directory, create = true) {
   const root = join(directory, 'web-host-operations');
-  try { await mkdir(root, { mode: 0o700 }); await syncDirectory(directory); }
-  catch (error) { if (error.code !== 'EEXIST') throw error; }
-  const info = await lstat(root);
+  if (create) {
+    try { await mkdir(root, { mode: 0o700 }); await syncDirectory(directory); }
+    catch (error) { if (error.code !== 'EEXIST') throw error; }
+  }
+  let info;
+  try { info = await lstat(root); } catch (error) { if (!create && error.code === 'ENOENT') return null; throw error; }
   if (!info.isDirectory() || info.isSymbolicLink() || info.uid !== process.getuid() || (info.mode & 0o777) !== 0o700) fail('WEB_HOST_JOURNAL_INVALID');
   return root;
 }
@@ -429,6 +432,14 @@ async function readWebHostJournal(path) {
   catch { fail('WEB_HOST_JOURNAL_INVALID'); }
   return value;
 }
+async function assertWebHostOperationsSettled(root, reserveNext = false) {
+  if (!root) return;
+  const names = await readdir(root);
+  if (names.length > 32 || reserveNext && names.length === 32) fail('WEB_HOST_JOURNAL_BUDGET');
+  for (const name of names) {
+    if (!/^[a-f0-9-]{36}\.json$/.test(name) || (await readWebHostJournal(join(root, name))).outcome !== 'ready') fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
+  }
+}
 /** Trusted construction seam: only the production singleton is reachable from the strict local CLI. */
 export function createWebHostReplacement({ marker = assertMarker, processes = webHostProcesses, checkpoint = checkpointWebHost, runtime = serviceRuntime } = {}) {
   return async function replace(input) {
@@ -451,11 +462,7 @@ export function createWebHostReplacement({ marker = assertMarker, processes = we
         }
         return { action: 'replace-host', operationId: request.operationId, outcome: observed, recordedOutcome: previous.outcome, replayed: true, hostSourceDigest: request.expectedHostSourceDigest };
       }
-      const names = await readdir(root);
-      if (names.length >= 32) fail('WEB_HOST_JOURNAL_BUDGET');
-      for (const name of names) {
-        if (!/^[a-f0-9-]{36}\.json$/.test(name) || (await readWebHostJournal(join(root, name))).outcome !== 'ready') fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
-      }
+      await assertWebHostOperationsSettled(root, true);
       if (state.pendingWebHost) fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
       const release = await readWebRelease(config.directory);
       if (!release || release.version !== request.expectedVersion) fail('WEB_RELEASE_VERSION_CONFLICT');
@@ -503,6 +510,7 @@ export const replacePreviewWebHost = createWebHostReplacement();
 async function settledWebMutationState(config) {
   const state = await privateJson(join(config.directory, 'state.json'));
   if (state.pendingWebHost) fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
+  await assertWebHostOperationsSettled(await webHostJournalDirectory(config.directory, false));
   await assertMarker(config);
   return state;
 }

@@ -29,7 +29,7 @@ def main():
     label = sys.argv[1]
     if label not in ('first', 'repair', 'direct'):
         raise ValueError('EXPLICIT_ROUND_REQUIRED')
-    selection = ('SVC08 host selection|SVC08 replace-host (preserves legacy af51|unknown stop|uncertain spawn|does not claim ready)', 8)
+    selection = ('SVC08 host selection|SVC08 replace-host (preserves legacy af51|unknown stop|uncertain spawn|does not claim ready)', 8) if label == 'first' else ('SVC08 host selection (final receipt unknown|pending failure)|SVC08 replace-host preserves legacy af51', 3)
     free = shutil.disk_usage(ROOT).free
     if free < 1107296256:
         raise RuntimeError('RESOURCE_NOT_ADMITTED')

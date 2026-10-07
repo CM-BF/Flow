@@ -532,3 +532,20 @@ test('SVC08 host selection forwards source qualification failure before pending 
     await assert.rejects(readFile(f.journalPath()), { code: 'ENOENT' });
   }, { webHost: true, runtimeFailure: 'BACKEND_INSTALLATION_SOURCE_MISMATCH' });
 });
+
+test('SVC08 host selection final receipt unknown blocks legacy mutation after pending was cleared', async () => {
+  await hostReplacementFixture(async f => {
+    const { bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb } = await import('./preview.mjs');
+    await f.replace(f.request);
+    const state = JSON.parse(await readFile(join(f.directory, 'state.json'), 'utf8'));
+    assert.equal(state.pendingWebHost, undefined); assert.deepEqual(state.webHost.artifact, f.hostArtifact);
+    // Stand-in for a ready state rename followed by a failed final journal sync.
+    // Keep the real saved request/digest/phase; do not rerun an external action.
+    const receipt = JSON.parse(await readFile(f.journalPath(), 'utf8'));
+    await writeFile(f.journalPath(), JSON.stringify({ ...receipt, outcome: 'unknown', failure: 'WEB_HOST_OPERATION_UNCONFIRMED' })+'\n', { mode: 0o600 });
+    for (const mutate of [bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb]) await assert.rejects(mutate(f.request), { code: 'WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED' });
+    assert.equal((await f.replace(f.request)).outcome, 'unknown');
+    await assert.rejects(f.replace({ ...f.request, operationId: f.randomUUID() }), { code: 'WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED' });
+    assert.equal(f.calls.stop, 1); assert.equal(f.calls.spawn, 1);
+  }, { webHost: true });
+});
