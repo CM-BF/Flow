@@ -12,16 +12,49 @@ export function canonical(value: unknown): string {
   return JSON.stringify(value);
 }
 export async function transaction<T>(pool: Pool, run: (client: PoolClient) => Promise<T>, readOnly = false): Promise<T> {
-  const client = await pool.connect();
+  let connectionError: Error | undefined;
+  const disconnected = (error: Error) => { connectionError ??= error; };
+  const client = await new Promise<PoolClient>((resolve, reject) => {
+    pool.connect((error, borrowed) => {
+      if (error) { reject(error); return; }
+      if (!borrowed) { reject(new Error('Pool returned no transaction client.')); return; }
+      // The pool has removed its idle listener; cover checkout before resolving.
+      borrowed.on('error', disconnected);
+      resolve(borrowed);
+    });
+  });
+  const assertConnected = () => { if (connectionError) throw connectionError; };
+  let commitAttempted = false;
+  let discard = false;
+  let failed = false;
   try {
+    assertConnected();
     await client.query(readOnly ? 'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY' : 'BEGIN');
+    assertConnected();
     const result = await run(client);
+    assertConnected();
+    commitAttempted = true;
     await client.query('COMMIT');
+    // A received COMMIT ACK stays successful even if the connection then fails.
     return result;
   } catch (error) {
-    await client.query('ROLLBACK');
-    throw error;
-  } finally { client.release(); }
+    failed = true;
+    const originalError = connectionError ?? error;
+    discard = commitAttempted || connectionError !== undefined;
+    if (!connectionError) {
+      try { await client.query('ROLLBACK'); }
+      catch { discard = true; }
+    }
+    // ROLLBACK cannot disprove an unknown COMMIT or replace the first failure.
+    throw originalError;
+  } finally {
+    try { client.release(discard || connectionError !== undefined); }
+    catch (error) { if (!failed) throw error; }
+    finally {
+      // release may synchronously hand the client to another borrower.
+      client.removeListener('error', disconnected);
+    }
+  }
 }
 export async function migrate(pool: Pool): Promise<void> {
   await transaction(pool, async client => {

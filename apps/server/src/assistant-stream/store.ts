@@ -1,6 +1,6 @@
 import type { PoolClient } from 'pg';
 import type { Reference } from '@flow/contracts';
-import { ASSISTANT_ATTEMPT_BYTES, assistantStreamDataSchema, type AssistantStreamData } from '../../../../packages/contracts/src/assistant-stream.js';
+import { ASSISTANT_ATTEMPT_BYTES, assistantStreamDataSchema, assistantStreamIdentity, type AssistantStreamData } from '../../../../packages/contracts/src/assistant-stream.js';
 import { canonical, HttpError, sha256 } from '../database.js';
 import type { TaskRecord } from '../tasks.js';
 import type { AttemptRecord } from '../runners.js';
@@ -16,10 +16,11 @@ export async function saveAssistantStream(client:PoolClient,task:TaskRecord,atte
   const parsed=assistantStreamDataSchema.safeParse(input);
   if(!parsed.success) throw new HttpError(400,'invalid_assistant_stream','Invalid assistant text patch.');
   const data=parsed.data;
-  if(task.submission.harness!=='claude'||attempt.native_session_id!==data.nativeSessionId) fail('stream_session','Text must match this Claude attempt session.');
-  const assigned=await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND runner_id=$2 AND active_task_id=$3',[data.nativeSessionId,attempt.runner_id,task.id]);
+  const harness = data.source === 'claude.sdk.stream' ? 'claude' : 'codex';
+  if(task.submission.harness!==harness||attempt.native_session_id!==data.nativeSessionId) fail('stream_session','Text must match this native attempt session and source.');
+  const assigned=await client.query('SELECT 1 FROM flow.sessions WHERE id=$1 AND runner_id=$2 AND active_task_id=$3 AND harness=$4',[data.nativeSessionId,attempt.runner_id,task.id,harness]);
   if(!assigned.rowCount) fail('stream_session','Native session is not assigned to this runner and task.');
-  if(data.streamId!==sha256(JSON.stringify([data.nativeSessionId,data.nativeMessageId,data.blockIndex]))) fail('stream_identity','Text block identity does not match its native source.');
+  if(data.streamId!==sha256(assistantStreamIdentity(data))) fail('stream_identity','Text block identity does not match its native source.');
   const payloadDigest=sha256(canonical(data));
   const prior=(await client.query<{attempt_id:string;payload_digest:string}>('SELECT attempt_id,payload_digest FROM flow.assistant_stream_patches WHERE stream_id=$1 AND revision=$2',[data.streamId,data.revision])).rows[0];
   if(prior) {

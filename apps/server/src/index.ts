@@ -1,6 +1,8 @@
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+import { migratePluginRuntime } from './plugin-runtime/store.js';
+import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
 import type { PluginInstallHost } from './plugin-installations/commands.js';
@@ -14,6 +16,7 @@ import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-st
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
+import { migrateNativeActivityBodies, registerNativeActivityBodyRoutes, registerNativeActivityBodySupport } from './native-activity-body/index.js';
 import { migrateGoalContext, registerGoalContextRoutes } from './goal-context/index.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
 import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
@@ -100,9 +103,11 @@ export async function createServer(options: ServerOptions) {
     await migrateContextObservationHistory(pool);
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
+    await migratePluginRuntime(pool);
     await migrateGoalProgressions(pool);
     await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);
+    await migrateNativeActivityBodies(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
@@ -174,6 +179,8 @@ export async function createServer(options: ServerOptions) {
   if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
+  registerNativeActivityBodyRoutes(app, pool);
+  registerNativeActivityBodySupport(app);
   registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerEngineeringRoutes(app, pool);
@@ -193,6 +200,7 @@ export async function createServer(options: ServerOptions) {
     return registerRunner(pool, input.data);
   });
   app.post('/api/runner/claim', request => { requireEmptyBody(request.body); return claim(pool, request.runnerId!, leaseMs); });
+  registerRunnerClaimRoutes(app, pool, leaseMs);
   app.post<{ Params: { id: string } }>('/api/runners/:id/revoke', request => { requireEmptyBody(request.body); return revoke(pool, request.params.id); });
   app.post('/api/runner/heartbeat', request => {
     const input = ownershipSchema.safeParse(request.body);

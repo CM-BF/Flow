@@ -1,5 +1,6 @@
 export * from './tasks.js';
 export * from './runner.js';
+export * from './runner-claim.js';
 export * from './fixtures.js';
 export * from './reconciliation.js';
 export * from './workspace.js';
@@ -39,3 +40,6 @@ export * from './plugin-installations.js';
 export * from './goal-progression.js';
 export * from './claude-turn-settings.js';
 export * from './goal-plan-confirmation.js';
+
+export * from './conversation-harness.js';
+export * from './native-activity-body.js';

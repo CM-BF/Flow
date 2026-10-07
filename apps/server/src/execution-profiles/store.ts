@@ -1,3 +1,4 @@
+import { nativeConversationCapability, nativeExecutionProfileCatalogV2EntrySchema, NATIVE_EXECUTION_PROFILE_CATALOG_V2, type NativeExecutionProfileCatalogV2Page } from '../../../../packages/contracts/src/execution-profiles.js';
 import { checkTaskMessageSettings } from '../conversations/message-settings.js';
 import { CLAUDE_TURN_SETTINGS_PROTOCOL } from '../../../../packages/contracts/src/claude-turn-settings.js';
 import { claudeMessageSettingsCatalogEntrySchema, type ClaudeMessageSettingsCatalogPage } from '../../../../packages/contracts/src/execution-profiles.js';
@@ -43,13 +44,29 @@ export async function listProfiles(pool: Pool, after: string | undefined, limit:
 }
 
 /** Native readers opt into known codecs before pagination. Corrupt recognized rows fail the whole page. */
-export async function listNativeProfiles(pool: Pool, after: string | undefined, limit: number): Promise<NativeExecutionProfileCatalogPage> {
+export function listNativeProfiles(pool: Pool, after: string | undefined, limit: number, version: 'native-v2'): Promise<NativeExecutionProfileCatalogV2Page>;
+export function listNativeProfiles(pool: Pool, after: string | undefined, limit: number, version?: 'native-v1'): Promise<NativeExecutionProfileCatalogPage>;
+export async function listNativeProfiles(pool: Pool, after: string | undefined, limit: number, version: 'native-v1' | 'native-v2' = 'native-v1'): Promise<NativeExecutionProfileCatalogPage | NativeExecutionProfileCatalogV2Page> {
   return transaction(pool, async client => {
     const rows = (await client.query<ProfileRow>(`SELECT p.* FROM flow.execution_profiles p JOIN flow.runners r ON r.id=p.runner_id
       WHERE NOT r.revoked AND NOT (p.configuration ? 'turnSettings') AND (
         (p.configuration->>'harness'='claude' AND p.configuration->>'adapterVersion'='claude-sdk-0.3.290-v2') OR
-        (p.configuration->>'harness'='codex' AND p.configuration->>'adapterVersion'='codex-app-server-0.154.0-v1'))
-      AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2`, [after ?? null, limit + 1])).rows;
+        (p.configuration->>'harness'='codex' AND p.configuration->>'adapterVersion'='codex-app-server-0.154.0-v1'
+          AND ($3::boolean OR NOT (p.configuration ? 'sessionPersistence'))))
+      AND ($1::text IS NULL OR p.id>$1) ORDER BY p.id LIMIT $2`, [after ?? null, limit + 1, version === 'native-v2'])).rows;
+    if (version === 'native-v2') {
+      const entries = rows.map(row => {
+        const parsed = nativeExecutionProfileConfigurationSchema.safeParse(row.configuration);
+        if (!parsed.success || sha256(nativeExecutionProfileConfigurationJson(parsed.data)) !== row.config_digest) throw new HttpError(409, 'execution_profile_unavailable', 'Unrecognized profile.');
+        const config = parsed.data;
+        const conversation = nativeConversationCapability(config);
+        const entry = nativeExecutionProfileCatalogV2EntrySchema.safeParse({ profile: profileView({ ...row, configuration: config }), conversation });
+        if (!entry.success) throw new HttpError(409, 'execution_profile_unavailable', 'Unrecognized profile.');
+        return entry.data;
+      });
+      const profiles = entries.slice(0, limit);
+      return { protocol: NATIVE_EXECUTION_PROFILE_CATALOG_V2, profiles, nextCursor: entries.length > limit ? profiles.at(-1)!.profile.reference.id : null };
+    }
     // Validate the sentinel too: it must not hide a corrupt next-page boundary.
     const entries = rows.map(nativeCatalogEntry);
     const profiles = entries.slice(0, limit);
@@ -120,7 +137,9 @@ export async function assertTaskExecutionProfile(client: PoolClient, task: TaskS
   const settings = checkTaskMessageSettings(task, profile);
   if (!settings.ok) throw new HttpError(409, settings.code, 'The frozen message settings cannot be admitted for this execution profile and session.');
   if (task.harness !== profile.configuration.harness) throw new HttpError(409, 'profile_harness_mismatch', 'The selected profile does not support this task harness.');
-  if (task.harness === 'codex' && task.resumeSessionId) throw new HttpError(409, 'native_resume_unsupported', 'This native harness does not support session resume.');
+  if (profile.configuration.harness === 'codex' && task.resumeSessionId && profile.configuration.sessionPersistence !== 'host-owned') {
+    throw new HttpError(409, 'native_resume_unsupported', 'This native harness does not support session resume.');
+  }
   if (task.resumeSessionId) {
     const session = (await client.query<{ runner_id: string }>('SELECT runner_id FROM flow.sessions WHERE id=$1 AND harness=$2', [task.resumeSessionId, task.harness])).rows[0];
     if (!session || session.runner_id !== profile.reference.runnerId) throw new HttpError(409, 'profile_session_mismatch', 'A resumed session must use its original configured runner.');

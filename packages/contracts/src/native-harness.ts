@@ -13,6 +13,7 @@ export interface NativeHarnessDescriptor<Profile extends NativeExecutionProfileC
     steering?: 'flow.active-steering.v1';
     goalTools?: 1;
     goalGraphTools?: 1;
+    sessionPersistence?: 'host-owned';
   };
   publicProfile: Profile;
 }

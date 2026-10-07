@@ -1,0 +1,545 @@
+{
+  "source": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "oldHead": "474bbbe64f5dd0a3ec9f1bda4fa6b6849873891b",
+  "scope": "Read-only reviewed production inputs; no domain edits. Parent fixed-base authorization.",
+  "restored": [
+    {
+      "path": "AGENTS.md",
+      "oldHeadBlob": "ac3cd0c85b8b5dce179a4abd36af052b18543243",
+      "oldWorktreeSha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "newBlob": "b25a22aee3d8434bb520054502f61cd82cefd66c",
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348",
+      "bytes": 18655
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "oldHeadBlob": "9ede38d52a764cb6135853648f1473028723d8fb",
+      "oldWorktreeSha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04",
+      "newBlob": "02119f49bae73cae2c27d10472b08edbeb8712fa",
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3",
+      "bytes": 10960
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "oldHeadBlob": "2a2c4c3900009451e91382028f116b025ba21959",
+      "oldWorktreeSha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792",
+      "newBlob": "25c54373e451c57a545a6c89fc7363463f575c61",
+      "sha256": "20c09e60f43395a61a68c3cc4a3b8460f40525fe78b233b92b391e398f9dc2fd",
+      "bytes": 9218
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "17634ff0a8b1f6c030e3497c8e1d3f98ef9f32ba",
+      "sha256": "b8f1bdcba280ac998ac65ec8d18be560686bd0c5a420fbc87d3e06e18f54eeb3",
+      "bytes": 2004
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "oldHeadBlob": "74fc535271f6a4def24db0ed405b39f29ae42d93",
+      "oldWorktreeSha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "newBlob": "99171253a2784a596bd21434b03cfa529146ac2f",
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "bytes": 24739
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/host.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "53d6569ab245dad7bfbdaee267e8ff4f4e43ef10",
+      "sha256": "fc8b394cfdcb5459f1ebd0e42b31cf34c56253861e1aef53dbb0e01965c05544",
+      "bytes": 2842
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/plan.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "11c36bb0a6523db0f5294b5cca82083e1a4c5e55",
+      "sha256": "58ab5036500464a9a634cd3de3472da64d2947585b60080a913526612c87dec9",
+      "bytes": 3961
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/spool.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "368a16814d5f811eb21cfb53e129cb503685d515",
+      "sha256": "a6c0d17b91a532e06f222a57357d7dc01c7bcfb3bd39840d6c6d5cf6b8d1e1d8",
+      "bytes": 7919
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "oldHeadBlob": "c164ff2f7e3ec23c470a36c8ce0079ee92f029a4",
+      "oldWorktreeSha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e",
+      "newBlob": "2153c7b6fe70374a370fe744fdca0f2c87e2b3d9",
+      "sha256": "db7d993cfa67d130429bc889f76e130308076af0ad3add824d67cacd5076305e",
+      "bytes": 5178
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "oldHeadBlob": "a616f87750a086ce899aba42c354f410117054a8",
+      "oldWorktreeSha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd",
+      "newBlob": "ab8629bb5e9b2991712ca2eba871871e7551615d",
+      "sha256": "f54045f6965bd3b0d2223ce5ed84ac026531f60ff6c16f22f1a8074dc5f801aa",
+      "bytes": 1213
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "oldHeadBlob": "28e7864cb1137601879ecbe0f65926100bc75721",
+      "oldWorktreeSha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652",
+      "newBlob": "de559124f314cc5d6de5fbd45fda57fc2f361467",
+      "sha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac",
+      "bytes": 8740
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldHeadBlob": "b6393a6a043233ce0bf674a3ec3b47fb463e722a",
+      "oldWorktreeSha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+      "newBlob": "4dafecf215c800d12c1106779e85e25cf5ef3507",
+      "sha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648",
+      "bytes": 17320
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "oldHeadBlob": "ca3d821430f3543e9a14f45755fd96a140a097c0",
+      "oldWorktreeSha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244",
+      "newBlob": "9df7d379c5dc8baeee55d72ff30b26d6667b8381",
+      "sha256": "1c8ea750132e6ed58cf076a5a4e0bb1e8cdee426ce3a59f10b147987f41336ff",
+      "bytes": 1937
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "oldHeadBlob": "d6283ca6833ecf04f93e368c9be71ff2a3a9f76b",
+      "oldWorktreeSha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34",
+      "newBlob": "cd2b27ae552be7da96e7d986214d9c9c212e0cdd",
+      "sha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7",
+      "bytes": 2339
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "oldHeadBlob": "2aae49d8cea9cdbe12e03efac66ca3dd19cb40ee",
+      "oldWorktreeSha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5",
+      "newBlob": "7fa7d5dbc59d571e4528636c8a8be1912dd87ca1",
+      "sha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43",
+      "bytes": 6114
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "oldHeadBlob": "4322b7e07e06caad660da3a86f60c193bc7c4bad",
+      "oldWorktreeSha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13",
+      "newBlob": "d78588eb5eb7caf851d915f876f58b8222341006",
+      "sha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8",
+      "bytes": 5744
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "oldHeadBlob": "83d9befd2ff6205bf3534d2f8eddeff50b97c339",
+      "oldWorktreeSha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498",
+      "newBlob": "4b04631fdd28f9f1ef25e6d84c4b20864731f6e0",
+      "sha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37",
+      "bytes": 5750
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "oldHeadBlob": "433833b43fdee1b963ae369f84322cd63458184d",
+      "oldWorktreeSha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3",
+      "newBlob": "d839e8b96bf10e20c9827eb9be86afeee0a38228",
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+      "bytes": 1710
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "oldHeadBlob": "da160688a2182a13e0db217c133c388c779171f2",
+      "oldWorktreeSha256": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15",
+      "newBlob": "01a320ff6e20f647eb5daab1b60c308e29947af8",
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+      "bytes": 14117
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "oldHeadBlob": "ac4da8b95e526b6ca600754064ddd3408483a2cc",
+      "oldWorktreeSha256": "a77004b33ef72ec5e036e6bddcc95947b116ded0b10d66f043502dc3c3f36f88",
+      "newBlob": "01625c1a2925935d146c9e5f7456ec74551e1f10",
+      "sha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889",
+      "bytes": 3786
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "oldHeadBlob": "e4c3c10aad02bd0612eb014611f944964c0fb9ee",
+      "oldWorktreeSha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "newBlob": "6f9eab156e7b170b5f26e6c254a4a1c5add5ea65",
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe",
+      "bytes": 5731
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "oldHeadBlob": "2801b8bb45150bd0c645001fecb91207851d1cdb",
+      "oldWorktreeSha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "newBlob": "aebc3f90207d142de0d2c8a109da6b0f318aa2f7",
+      "sha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc",
+      "bytes": 3418
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "oldHeadBlob": "cbb1e6e546336f880495b3256fd821e8ee42fb56",
+      "oldWorktreeSha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "newBlob": "58ca23dfeb3a3c8a4fe888a7573d43f918fd3982",
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "bytes": 4764
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "34a553b874fba2c61e7556c16b16a4651c39a8ca",
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df",
+      "bytes": 1594
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "oldHeadBlob": "77a518f4949a4b96dc0c005805a5f5b4095d4834",
+      "oldWorktreeSha256": "c197d278a3f662cc5d8fabe906b637fe27ef91df9492678f2fc2b36b091a37f0",
+      "newBlob": "858527f2fe26dc28f216fa51f47b116bc9a1e1c8",
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1",
+      "bytes": 3660
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "oldHeadBlob": "7fcb706cbe6794ffa0a982ee6fc7bb99a4ac46df",
+      "oldWorktreeSha256": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab",
+      "newBlob": "15f9a83eb72712951859776c91fc215440df55fc",
+      "sha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98",
+      "bytes": 11704
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "oldHeadBlob": "2e851d76dc9671e01d2397c43635a9670dc3a188",
+      "oldWorktreeSha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+      "newBlob": "819b2877bbd969ca780486031fb0f8fb336ce4c6",
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e",
+      "bytes": 3319
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "a3bf434e9f54010bd8e9d477e7bf80bfa6036b46",
+      "sha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620",
+      "bytes": 2503
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "oldHeadBlob": "67d0ec07bb7ec46ffbb8adae2a970be57555c43b",
+      "oldWorktreeSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+      "newBlob": "af89fcd73ae817ba7ce0a68fc01f77b7ed78e9ed",
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+      "bytes": 7789
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "oldHeadBlob": "4bc731ee2fbc2e9ef0b780b668dbd7264fa025c5",
+      "oldWorktreeSha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02",
+      "newBlob": "3a851812cd28e19bb4bd817dfc7151593180e6c5",
+      "sha256": "01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d",
+      "bytes": 8925
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "oldHeadBlob": "eac4b1c9d4a5f99bdd2dd0d40a1a8497e045c305",
+      "oldWorktreeSha256": "682246b4e4a52e8312cbf97cda981b596beb019c53ef6e79dd49f6d7282b0b42",
+      "newBlob": "df523b60de3ab276f51d81f130fcf00daf1820cd",
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "bytes": 3046
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "oldHeadBlob": "494d4b5dc379674f54be348ba02335d58e349f31",
+      "oldWorktreeSha256": "90acdc1b0c34b242f31db8ba4ba99a3d0998b3cf00f01a127dfb56794bb06d9d",
+      "newBlob": "a09dc7c5e2eff2a68c6581e7cb9bbd1d72890290",
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "bytes": 15414
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "oldHeadBlob": "e08e46774d964eb87fabdfab6bac7700c722f6d6",
+      "oldWorktreeSha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "newBlob": "3aa8df4e24a107c47c9dfdf8a229095bfda00451",
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a",
+      "bytes": 15083
+    },
+    {
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "b68058ec10b72d0c279038ad200c1321a11e8896",
+      "sha256": "d407b55d468e7208cce1f2d25e9ea3a812f613f9ead1a9e95cd1fd1d72f55a57",
+      "bytes": 2712
+    },
+    {
+      "path": "apps/server/src/native-activity-body/read.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "2c54de30243c9e2d6c2dbe0a7628e31bc1a3d37c",
+      "sha256": "0480c2fffda5c775c4c9fa20d9edbbfa6d13e05610f5bdbbbf458c31947ca288",
+      "bytes": 3538
+    },
+    {
+      "path": "apps/server/src/native-activity-body/store.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "a8be353f977fe5f50a119d0d27970052522269dd",
+      "sha256": "0f2b4960dbcd2b685428d5083f9fec6ce69121f51e3a5b108e52904c4068ea69",
+      "bytes": 8418
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "0d5b7405613956e9469ab5c6fbdf2136de315849",
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15",
+      "bytes": 2773
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "f87898f22d4f09ea378758524808a17ec84fc3ce",
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2",
+      "bytes": 7455
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "oldHeadBlob": "9b361158695083c5bab3059f89e58d0ce0e9d084",
+      "oldWorktreeSha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5",
+      "newBlob": "8f6dde93dfd0c243009b31ac23cf7ee6cfc3a81a",
+      "sha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a",
+      "bytes": 5748
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "oldHeadBlob": "ddd480f16019761d2fb08ddc559bf952ac6d84f3",
+      "oldWorktreeSha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd",
+      "newBlob": "71e7cb2b00ba198d0337752693f6ef8114800674",
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9",
+      "bytes": 4657
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "7d2052d6c00b362e49028921c76804b6d72832fc",
+      "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50",
+      "bytes": 2477
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "12cd004b78f7187c0a0f29a2214de646a65de551",
+      "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c",
+      "bytes": 1277
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "oldHeadBlob": "0a79d643419e9a75dbdaba5e559ce38be31e9417",
+      "oldWorktreeSha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3",
+      "newBlob": "0148eeb30ebde7f259fb559bc0dc9142216ea4d2",
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67",
+      "bytes": 20183
+    },
+    {
+      "path": "package.json",
+      "oldHeadBlob": "34091cf383f1fd79f5fc70496ea6408fdc118fa8",
+      "oldWorktreeSha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "newBlob": "f12c69735d60e664e3a87082d1571fb48a8b4958",
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "bytes": 750
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "oldHeadBlob": "ec9f90c0304fc808a1e1a1883d8cccc362a194a9",
+      "oldWorktreeSha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "newBlob": "ca395facf7a58c7d9aef1d98a3845ead8640edc7",
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "bytes": 15496
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "oldHeadBlob": "eb935392523cf4bc518ddaadb5cc665c17e1776e",
+      "oldWorktreeSha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "newBlob": "aa2e697eaec359d43a1049c0f05dacdcfd99a838",
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b",
+      "bytes": 57553
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "8af95f88b82f881eb5669da9755a3712bde0bdf2",
+      "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060",
+      "bytes": 8416
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "oldHeadBlob": "6d86bd29f6e44e79a7b928bba71569bb0b43539d",
+      "oldWorktreeSha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382",
+      "newBlob": "0de8839e7dfce34724610a1caf8d35a4cd95d6c4",
+      "sha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b",
+      "bytes": 6713
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "7aacb135ba9e3bb359acf0ad8e11763ff9ddce6c",
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "bytes": 1196
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "oldHeadBlob": "1062a9758e4d03696df4e9a8c9d2760c789528a8",
+      "oldWorktreeSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "newBlob": "d3d5b084920be2c59dec09338a386b3116b82343",
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "bytes": 7382
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "oldHeadBlob": "fbc1c910113bc65e980a094be0e5d0a20472e513",
+      "oldWorktreeSha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962",
+      "newBlob": "3b3e758ad3adc42fb4ac4167aac78a877cf9c55d",
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "bytes": 15006
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "oldHeadBlob": "f3fd735ff233ccea86d20acf113d43677cda8572",
+      "oldWorktreeSha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "newBlob": "c2285d9a3577040b7a29f9c2a446b3e18d136ace",
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+      "bytes": 1634
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "61a7adabc650317624a8e37ea86ef65f394c0a12",
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9",
+      "bytes": 6001
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "oldHeadBlob": "02b67b6e7e7273047f294f88afc1ecb476caa6ee",
+      "oldWorktreeSha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f",
+      "newBlob": "f6b3683bb6cdf15121d805acdde75545bea22f4e",
+      "sha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8",
+      "bytes": 1173
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824",
+      "bytes": 4197
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "bytes": 6201
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "oldHeadBlob": "f815c9c81fe1338ed25c9b3b06bdf6b4ec131803",
+      "oldWorktreeSha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747",
+      "newBlob": "1407925bf658811b26c8a5809f4b6d2dac12f274",
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+      "bytes": 4908
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00",
+      "bytes": 3965
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "oldHeadBlob": "a5e258d5d94a04379a8a6062e45fb82313894b29",
+      "oldWorktreeSha256": "4a2558d2bd7f3375b098f46e72fc5e3a4d169e1cbb0e3a2cb3bc73b706f4c465",
+      "newBlob": "f9f888aa355097774df3de86bc5f20f1ad88ebe2",
+      "sha256": "cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918",
+      "bytes": 7753
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "oldHeadBlob": "62bf5e58fa7ce4cb464c4025ba5100bba4e09be3",
+      "oldWorktreeSha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+      "newBlob": "2ee5f126e3f035e4428411e4c9958b17ee3660cc",
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "bytes": 6390
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "fad045557daa63c029977e312035b8044d6d5aa9",
+      "sha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e",
+      "bytes": 1398
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "6939466d1802ada95d4889c83d42374cc1b8903c",
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d",
+      "bytes": 6572
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "oldHeadBlob": null,
+      "oldWorktreeSha256": null,
+      "newBlob": "ca04c46aac42aac0b44ae947d2596e9746ceccdd",
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d",
+      "bytes": 189
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "oldHeadBlob": "5acd706bc71ff367d395677238d1d1b3da53eb1d",
+      "oldWorktreeSha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "newBlob": "49642fc1d7047fdb562c88a3fc695a94b3a4343c",
+      "sha256": "2a2c768af0a62e6cd7ef7500cbbeadc42eb435d41d29eb8e806142a0072e819e",
+      "bytes": 17734
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "oldHeadBlob": "f7d61920414fbcc0b80353c3c81bb67bdea5a4fb",
+      "oldWorktreeSha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "newBlob": "a61b07082e212b84d961cad193a6cae6ce34450b",
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "bytes": 279429
+    },
+    {
+      "path": "vitest.config.ts",
+      "oldHeadBlob": "0f5938f691bd5abe92bb808b3ef9ed6ed2b10e3a",
+      "oldWorktreeSha256": null,
+      "newBlob": "0f5938f691bd5abe92bb808b3ef9ed6ed2b10e3a",
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "bytes": 235
+    }
+  ],
+  "totalBoundFiles": 289,
+  "logicalBytes": 1600142,
+  "sourceCounts": {
+    "static": 244,
+    "sql": 33,
+    "config": 12
+  },
+  "gitConfigChanged": false,
+  "install": 0,
+  "moduleImports": 0
+}

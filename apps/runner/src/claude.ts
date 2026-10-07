@@ -12,7 +12,7 @@ import { MAX_DETAIL_BYTES, type HarnessAdapter, type HarnessContext, type Runner
 import { assistantFinalDataSchema, type AssistantSettings } from '../../../packages/contracts/src/assistant.js';
 import { textDigest, verifyText } from './verifier.js';
 import { coalesceAssistantStream } from './assistant-stream/index.js';
-import { mapNativeActivity } from './native-activity/index.js';
+import { nativeActivityObservations } from './native-activity/index.js';
 import { readClaudeSummary, type ClaudeSummaryReader } from './context-observations/claude-summary-read.js';
 import type { ContextObservationPayload } from '../../../packages/contracts/src/context-observation-event.js';
 import { NativeExecutionError } from './native-harness/settlement.js';
@@ -119,12 +119,16 @@ export function createClaudeAdapter(options: ClaudeAdapterOptions): HarnessAdapt
             effective = { model: event.model ?? null, permissionMode: event.permissionMode ?? null, tools: event.tools ?? null, thinking: 'unknown' };
             await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION, resources: resources(event) });
           }
-          const activities = mapNativeActivity(event, sessionId ?? context.task.resumeSessionId ?? ('session_id' in event ? event.session_id ?? '' : ''));
-          if (activities.length && !sessionId) {
-            sessionId = activities[0]!.nativeSessionId;
-            await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION });
+          if (context.activityBodies && context.activityBodies.protocol !== 'native-activity-body-v1') throw new Error('Unsupported native activity body port.');
+          const activities = nativeActivityObservations(event, sessionId ?? context.task.resumeSessionId ?? ('session_id' in event ? event.session_id ?? '' : ''), Boolean(context.activityBodies));
+          for (const observation of activities) {
+            if (!sessionId) {
+              sessionId = observation.activity.nativeSessionId;
+              await context.emit({ type: 'session', nativeSessionId: sessionId, adapterVersion: ADAPTER_VERSION });
+            }
+            if (observation.material && context.activityBodies) await context.activityBodies.publish(observation.material);
+            else await context.emit(observation.activity);
           }
-          for (const activity of activities) await context.emit(activity);
           if (steering) {
             const nativeSession = sessionId ?? ('session_id' in event ? event.session_id : undefined);
             if (nativeSession && !sessionId) {
