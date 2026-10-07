@@ -87,3 +87,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T07:09:03.390767+00:00：按Lead有界只读比较完成[host工具路线](../../docs/evidence/eng01j/helper-host/host-tool-comparison.md)。优先现0.154实验dynamicTools→同R06回调、native工作区只读、host唯一写gate；MCP需额外服务不选，Linux专域仅候选非当前必经。原fileChange-only语义不可冒充，现同步respond需共享owner明确异步接缝；只新增docs，0运行/安装/服务。真实stock工具回调与资格仍未验。
 
 2026-10-07T07:12:09.488862Z：记录Root经Lead转达的唯一资格待决（提问实际起点UNKNOWN，不以本次记录代替）。两个选择为固定Astra/Sol+供应商接受配置+已观测改道停止隔离，或保留实际执行身份确认门槛；用户答复前旧locked-no-fallback授写拒绝与provider0保持。解除条件是用户明确资格合同、对应实现独审与实际证据满足，不能用目录或未见改道推绝对无fallback。Lead已选择host唯一写gate作为ENG01K零provider后继，Linux仍仅备选；Root提供Docker Engine29.4/linux-aarch64/cgroupfs v2事实不等专域权限或撤销证明，本worker未复查运行。
+
+2026-10-07T07:35:40.677Z：[四产品交回ENG01L](../../docs/evidence/eng01j/product-scope-return.json)，原已审产品停写；唯一资格待决仍在本记录，旧结果不变。
