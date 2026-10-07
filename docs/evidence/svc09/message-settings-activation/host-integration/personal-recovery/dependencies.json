@@ -63,5 +63,72 @@
     "backend-browser-recovery/recovery-build-result-manifest.json at5938b9d64",
     "main9c2886d95/docs/evidence/i02/svc09a-held-target-review.json"
   ],
-  "scope": "Source-only caller preparation. Actual final dispatch must bind full inherited closures and corrected artifact after review; no arbitrary module is selected from JSON."
+  "scope": "Source-only preparation. Fixed referenced closures are reused once; two later reviewed readiness source inputs are explicit overlays. Corrected artifact and final execution dispatch remain absent.",
+  "closureReferenceBindings": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "ac6c63a71a9af332e3efb69f1e34226ba3ac6129",
+      "relativePath": "docs/evidence/svc06/browser-recovery/current-migration-result.json",
+      "bytes": 11512,
+      "sha256": "3cc146eacc53e98ad8fd3b8a2932ecfe2bface1411e0119f708ae012123c6dec"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "4001b6a984d58cfdf73accfc2157bc2a6cbd2ad7",
+      "relativePath": "docs/evidence/svc06/browser-recovery/current-entry-result.json",
+      "bytes": 10662,
+      "sha256": "12e473e82b058bd1fc44b328f2b9a7058202aa47cad3f7685c0aa3d2ea6e1ea7"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba",
+      "relativePath": "docs/evidence/svc06/browser-recovery/current-entry-readonly.json",
+      "bytes": 38417,
+      "sha256": "0c6aceff07880d361186f87dcf0f42e087f7dd22c935c4007c545551f2eb8710"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "source": "febd4281cff5521e94d817fde9ce2365fc93920d",
+      "relativePath": "docs/evidence/svc06/browser-recovery/migration-policy-manifest.json",
+      "bytes": 1892,
+      "sha256": "6dfcc9e5e00f70795e3e49b556e06e5ea5b8b71dba91dfab0a7f2256c2c36228"
+    }
+  ],
+  "closureReuse": {
+    "migrationStaticClosure": {
+      "selected": "staticClosure",
+      "matched": 13
+    },
+    "entrySources": [
+      "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "docs/evidence/svc06/browser-recovery/runner-idle.mjs",
+      "docs/evidence/svc06/browser-recovery/current-import.mjs",
+      "docs/evidence/svc06/browser-recovery/current-maintenance.mjs"
+    ],
+    "readonlyInheritedMatches": 31,
+    "readonlySupersededBy": [
+      {
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "source": "de77924faee33bf00d40c272052a762dad04ed1e",
+        "relativePath": "tools/personal-preview/environment.mjs",
+        "bytes": 2784,
+        "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+      },
+      {
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "source": "de77924faee33bf00d40c272052a762dad04ed1e",
+        "relativePath": "tools/personal-preview/process.mjs",
+        "bytes": 4296,
+        "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4"
+      }
+    ],
+    "factsPg": {
+      "aliasesCurrentIdentityMatched": 14,
+      "packageRootsIdentityAndVersionMatched": 14,
+      "packageFileHashes": "Inherited from fixed readonly record, not rehashed; final execution dispatch must revalidate effective package closure. No private artifact manifest was read."
+    },
+    "artifactRuntime": "Old cd27 loader/pg/tsx and corrected target runtime full artifact inventory are required at actual admission. Old b692 review is not transferred.",
+    "scope": "Public source bytes/aliases only, no application module execution, no personal installation reads."
+  }
 }

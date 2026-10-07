@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T21:36:55.320865+00:00",
+  "source": "42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799",
+  "state": "SOURCE_FIXED_LOCAL_COMPLETE_ACTUAL_NOT_READY",
+  "checks": {
+    "distinct": 7,
+    "finalSelected": 7,
+    "finalPassed": 7,
+    "finalElapsedMs": 119,
+    "finalRawBytes": 796,
+    "allRoundsElapsedMs": 205,
+    "allRoundsRawBytes": 1184,
+    "supervisedGroups": 4,
+    "groupResult": "absent/dual EOF",
+    "scratchRoots": 3,
+    "scratchDisposition": "exact empty removed",
+    "earlyFailures": "local-01 and local-02 each selected zero tests because extra Node permission invocation did not find the fixed test path; 43ms/194B each, original red retained. Final local-03 uses the established Node invocation, no OS filesystem permission claim.",
+    "sourceProvenance": "All six final local-03 source/recipe inputs equal fixed42a2 byte/hash; no source changed after final checks."
+  },
+  "notRun": {
+    "PG": true,
+    "service": true,
+    "provider": true,
+    "personalIO": true,
+    "build": true
+  },
+  "authority": "Source-only owner result; independent preparation review pending. No actual dispatch exists.",
+  "pending": [
+    "Corrected artifact from reviewed source880060a317cd99f3f29b41333f6dd7d7f5ab1488; replace single target policy/input/clone binding with actual descriptor",
+    "Actual successful isolated cold result for that artifact",
+    "Four real App reports against final source/context",
+    "Fresh authorized installation identity/six private pins and canonical state/operation/release facts",
+    "Full effective execution closure dispatch and shared actual window"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T21:36:55.320865+00:00",
+    "scope": "policy/caller/run and inherited public ports",
+    "outcome": "Fixed policy isolates tuple authority; phases reuse lifecycle owners; unknown outcomes stop without retries; no product or generic CLI change. Historical failure and cleanup evidence remain separate."
+  },
+  "resourceReview": "../peer-recovery-cold-review.json"
+}

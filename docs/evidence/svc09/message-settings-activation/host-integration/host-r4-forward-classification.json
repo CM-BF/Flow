@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T21:36:55.320865+00:00",
+  "owner": "native_center_owner / gpt-6-astra",
+  "purpose": "Forward allocation classification only; no new probe or deletion",
+  "fixedReceipts": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+      "relativePath": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-window-return.json",
+      "bytes": 1782,
+      "sha256": "965199d259057581d074f274f1c24f332befcf377c26f1dfae94ce49dd1809f8"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+      "relativePath": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-process-return.json",
+      "bytes": 2179,
+      "sha256": "f0e139e5097f49f4cc2bcfa500e6585d085f80b441d685d7fc43410c245191a4"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+      "relativePath": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-database-return.json",
+      "bytes": 402,
+      "sha256": "ad01d4c7540fc73f7abb39ecb1e9a9b16f90c414580467428939fcfd5dd5149e"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+      "relativePath": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-result-analysis.json",
+      "bytes": 5605,
+      "sha256": "c69e82bfe48690dc3c759f03bb65e0b3b967429f6c6c794e761194f59a3efa8c"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "source": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+      "relativePath": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r4-once/records/cleanup-result.json",
+      "bytes": 221,
+      "sha256": "2e379e9d6599df655faf8d12571889e53a28c2440e3773ac4d567c7b63977440"
+    }
+  ],
+  "original": {
+    "actualReturnAt": "2026-10-07T17:10:57.626406Z",
+    "exactObservedAt": "2026-10-07T17:10:44.590706Z",
+    "exactIdentities": 6,
+    "allAbsent": true,
+    "pendingRecords": 0,
+    "registeredGenerations": 1,
+    "registeredCenterStopped": true,
+    "DBOid": 1340622,
+    "connections": [],
+    "adminClosed": true,
+    "workComplete": false,
+    "fullGenerationsStopped": false,
+    "cleanupConfirmed": false,
+    "mayDrop": false,
+    "disposition": "KEEP"
+  },
+  "ownerContinuation": "No restart, write, delayed consumer or pending launch was authorized or performed by this owner against the R4 retained namespace after its RETURN; later attempts used distinct namespaces. Original R4 raw remain sealed and matched fixed Git above. This is owner/source evidence, not a new system-wide process probe.",
+  "forward": {
+    "clone": "static KEEP; no future clone copy allocation for the consumed attempt",
+    "private": "static KEEP; no active owner runtime writer; existing occupation already reflected by fresh disk free",
+    "database": {
+      "futureReservedBytes": 134217728,
+      "reason": "Application connections closed; shared PostgreSQL background physical growth remains unknown. No terminal DB measurement or deletion inferred."
+    },
+    "replacementForPriorFullCandidateBytes": 1243611136,
+    "remainingFutureBytes": 134217728,
+    "releasedFutureReservationBytes": 1109393408,
+    "otherUnknownAllocations": "Unchanged; do not deduct any unrelated KEEP or metadata allocation."
+  },
+  "limits": "Seven unstarted prospective generations are not live writers. False full-eight-generation cleanup/DROP guards remain unchanged. No physical reclaim, final size, root-cause or host success claim."
+}

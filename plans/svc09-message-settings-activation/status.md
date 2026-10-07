@@ -6,33 +6,33 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T21:06:40.485469+00:00 |
+| 更新时间 | 2026-10-07T21:37:48.007638+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | delivered |
-| 当前产出 | 同操作目标更新已合入主线；冷启动复用接口已通过限定独审，并交恢复入口负责人使用。 |
-| 下一可用交付 | 用准确恢复产物完成默认三角色冷启动，再按受控窗口推进个人恢复；当前没有启动个人服务。 |
-| 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 同一维护操作的恢复调用已固定并通过局部检查，正在收口独立审查；新产物尚不能用于现场恢复。 |
+| 下一可用交付 | 修正后产物、冷启动和兼容报告齐备后，固定一次恢复输入与现场检查点。 |
+| 当前阻塞 | ACTIVE: 恢复产物存在已确认的适配错误，修正源已固定；仍需新产物冷启动、四份兼容报告和现场事实，不能沿旧产物恢复。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 4c0cbcd6ee085c3e7a02e884f9360034c772747a（冷启动helper源码；四产品已交回） |
-| 实现目标 | 4c0cbcd6ee085c3e7a02e884f9360034c772747a |
-| 工作分支状态 | delivered（固定冷启动helper准备已审交付；完整宿主验收仍开放） |
-| 工作树dirty状态 | 仅本次审查回执metadata收口；所有产品已归还且无修改 |
+| Head | 42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799（同操作23恢复调用源码及原件） |
+| 实现目标 | 42a2c2bddfbcb0152c9dc5a781eec9d9b27c2799 |
+| 工作分支状态 | review（同操作23恢复调用；实际输入未齐，NOT_READY） |
+| 工作树dirty状态 | 仅own计划/manifest收口；产品范围已归还，无个人操作 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | held-target APPROVED_LIMITED_HELD_TARGET_AND_REFRESH_CONSUMER/main9c2886d95；cold helper source4c0cbcd6获APPROVED_LIMITED_FIXED_COLD_HELPER_PORTS/0blocking，2026-10-07T21:05:35.456Z；真实恢复未验 |
-| 检查状态 | 冷启动ports7/7 Node+3 Python纯消费+真实4模块导入/参数通过，193ms/raw1349B/3组absent双EOF/exact空scratchremoved；同段含held-target累计1419ms/raw8060B。held-target首红不改，0PG/服务/个人/provider。 |
+| Review | held-target与cold helpers原限定独审已main；42a2调用结构Lead只读未见新增阻断，最终packet待限定准备审查；实际执行未授权 |
+| 检查状态 | 本片7不同直接例通过，最终119ms/796B；两次入口0选中失败保留，累计205ms/1184B，4组absent双EOF/3exact空scratchremoved。0PG/服务/个人/provider。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | 9c2886d95bab48cd69984eb006025c2b0b374db3已精确接held-target四产品并归还；中心接线原86112a35e保持。cold helper固定Git来源引用保留，I02 b00b8b9b0记录唯一限定独审，不复制历史源码/raw；实际冷启动/个人恢复未发生。 |
-| 运行窗口 | 默认最小旅程 2026-10-07T19:16:09.120Z START；operator29,140ms/exit1；2026-10-07T19:17:35.003Z实际RETURN。仅center stopped/全部6PID与4自有组absent/连接empty/adminClosed；DB/private KEEP、禁止DROP，无重试。 |
-| 架构影响 | 产品目标演进已main；本片仅给既有实验setup/consumer/cleanup/OPS14 operator增加显式受信固定输入ports，默认路径及KEEP保持，无新监督器/调度器。 |
-| 看板 | 唯一own status正常更新；本helper片已审交付，整体默认/双槽/个人激活仍未通过。 |
+| 已集成main状态 | held-target四产品main9c2886d95及中心接线86112a35e保持；cold helper固定Git来源已获I02 b00b8b9b0限定独审。42a2恢复调用尚未集成/未执行，不冒个人已恢复。 |
+| 运行窗口 | 本owner普通局部于2026-10-07T21:30:37.525086Z完整RETURN，无服务/PG。Peer cold实际失败RETURN21:23:59.394704Z仅作有限保真独审，DB/private KEEP；无新个人窗口。 |
+| 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
+| 看板 | 唯一own status已正常更新；本片待限定准备审查，完整默认/双槽/个人激活仍开放。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -57,6 +57,7 @@
 | SVC09A-W10 | 2026-10-07T18:44:52.319Z | 2026-10-07T19:16:09.120Z | 资源 | 唯一新窗口与现场准入通过，等待以实际START结束；此前仅metadata/只读准备 | I02 svc09a-default-host-preparation-review.json；default-host-admission.json；default-host-start.json |
 | SVC09A-W11 | 2026-10-07T20:06:52.758952Z | 2026-10-07T20:13:35.898Z | 审查/接口 | 五 leaf 已获限定批准并main；两真实入口已原子交权，随后是实际实现/检查，不算纯等待 | I02 svc09a-startup-progress-review.json；claim v8 amend回执 |
 | SVC09A-W12 | 2026-10-07T20:34:53.035420Z | 2026-10-07T20:36:30.514Z | 审查 | 实际入口接线已获唯一限定批准；真实host未安排，不预占运行资源 | startup-entry-result.json；本次source8daa |
+| SVC09A-W13 | 2026-10-07T21:37:48.007638+00:00 | OPEN | 审查/输入 | 恢复调用源码/局部证据固定后待限定独审；新artifact/cold/四报告/现场facts/dispatch另须齐备，不预占actual窗口 | personal-recovery/result.json；source42a2；Lead新source880060消息 |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -161,3 +162,13 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T21:03:59.375794+00:00：held-target已main 9c2886d95bab48cd69984eb006025c2b0b374db3，独审见I02唯一receipt，claim v12已归还四产品。cold helper实际START 2026-10-07T21:01:58.215048+00:00 / RETURN 2026-10-07T21:01:58.414058+00:00，见[端口Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-interface.md)与[唯一局部结果](../../docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-result.json)。SVC06B负责固定artifact/薄caller；本owner不重复build或启动真实PG/服务。旧FAIL/KEEP/unknown原样。
 
 2026-10-07T21:06:40.485469+00:00：cold helper source4c0cbcd6、records9c900获Lead唯一APPROVED_LIMITED_FIXED_COLD_HELPER_PORTS，0blocking；原件I02 b00b8b9b0 `docs/evidence/i02/svc09a-cold-helper-ports-review.json`。固定manifest d47894e6a所载24绑定/95,410B，复用18输入，不重跑。准备已交assignment消费；本owner仅接其薄caller的独立只读审查，不自审本helper。源码停止，0实际cold/PG/服务/provider/个人。
+
+## 同操作23恢复编排
+
+2026-10-07T21:22:59.594276+00:00：fresh确认v12仍仅own两目录、clean43e26；开始新有界源码准备。固定b692/f37a先迁入，再导入新source三旧页报告（第四新页仅可导入、不自动发布），同op目标绑定→refresh→当前boot初始化和保持检查点→显式resume。当前backend选中cd27、Webhost7d1、state.source6c分别绑定；不重放已消费bootstrap/hold/退休。现场六文件pin/实际完整摘要及新报告尚未具备，当前不能执行。无PG/服务/provider/个人读取，历史失败与KEEP不改。
+
+## 同操作23恢复调用固定
+
+2026-10-07T21:37:48.007638+00:00：source42a2的纯策略、实际公开调用与既有continuation装配已固定；[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/Interface.md)及[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/result.json)保留7不同通过与两次0选择入口失败。源尚绑定旧b692候选且明确NOT_READY；Lead已给修正source880060，但没有新descriptor/cold/四报告/6现场pin/dispatch，不能执行。旧cd27迁入/hold/bootstrap/retire不重放，新artifact须经既有受管迁入和报告导入后才rebind。
+
+同段对peer实际cold失败给唯一[限定保真审查](../../docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-review.json)，固定34c610原件不改；控制流未到launch，clone/private静态KEEP、DB背景增长仍保守留128MiB，不能冒cleanup通过。另按Lead要求仅据已sealed R4收据作[前瞻资源分类](../../docs/evidence/svc09/message-settings-activation/host-integration/host-r4-forward-classification.json)，旧FAIL/cleanupConfirmed=false/mayDrop=false原样。无新probe/删除/个人读取。
