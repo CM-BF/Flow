@@ -156,3 +156,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:14:03.021Z：恢复构建唯一actual START；cb263/8a0与f37a固定输入、claim v8及新namespace已核；fresh 19234660352B≥18933678080B（含首local UNKNOWN8519680B一次）。原420+.5+2/0PG/provider/个人；见recovery-build-actual-admission.json，结果待实际收尾。
 
 2026-10-07T21:15:31.319Z：新恢复artifact b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d / f37a构建成功；21:14:43.322Z实际RETURN，32675ms/exit0/group11460 absent/双EOF。root KEEP供验收，原首local UNKNOWN8519680B仍保留，不重测。见[唯一结果manifest](../../docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json)；冷启动/4App新tuple/个人恢复未运行。
+
+2026-10-07T21:19:57.621Z：冷启动薄caller source32f8、实际b692参数72fb26fc6fec7c5f528ac5851bed9b22034b286f已固定交独审；5 Node+3 Python=8 distinct，231ms/raw826B，3groupabsent双EOF/3空tmpremoved。两次未launch资源前置断言原件保留，0PG/个人；当前准备齐，等唯一冷启动窗口及Web新tuple报告，非产品阻塞。build5938已获native限定结果批准，待Lead正常main接收。

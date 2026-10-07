@@ -1,0 +1,132 @@
+{
+  "at": "2026-10-07T21:19:57.621Z",
+  "source": "32f8d27cb",
+  "fixedParametersAndRecords": "72fb26fc6fec7c5f528ac5851bed9b22034b286f",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-consumer.mjs",
+      "bytes": 5752,
+      "sha256": "e005457c21f97cba8097fa05b8b9125a4b8d90f27f21dd51ca3409472e06b1d7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-entry.mjs",
+      "bytes": 1907,
+      "sha256": "0a931ef1acc4ad188c21c91134a9571e67a749a9ac1e75036f6e9ddc53cb1888"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-run.py",
+      "bytes": 2558,
+      "sha256": "d575f1a2277bc2cf386893f6338a7b9fb4425724886e3540b318ff4a9ff1e778"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold.test.mjs",
+      "bytes": 4543,
+      "sha256": "d04d08dbd70dd9789b222203d3cbfd5be1d8b3427b922460bfc42ad699eda670"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold.test.py",
+      "bytes": 1740,
+      "sha256": "cdf0fb4e974e95bf8a0fea13ee8c3b193fd6b8bacf3f8188a9a2f5443c584bb2"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-dispatch.test.py",
+      "bytes": 2351,
+      "sha256": "a7ec1edc4b8bd819dcaa95edff46df0589ac6f219dcb8ca1e8c8763025288bf7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-inputs.json",
+      "bytes": 6102,
+      "sha256": "55b3e2724a60ce40db454a1f2408584f64c6ab564c07ef2983409c250deee832"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-preparation.json",
+      "bytes": 15061,
+      "sha256": "843c2eec49903eecef0ec628852835774c36bc34de6a26e64baa295aa6b8bdae"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-dispatch.json",
+      "bytes": 2311,
+      "sha256": "4a53ee934f29c240af16043e53a73c113cd2bf1f6b487e2b115edd807cbc2bcb"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-interface.md",
+      "bytes": 3629,
+      "sha256": "73307375389ef16ee7ca3d0791f6d9c3a79fd2b1165b75992305a61ac32f7fae"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-01-outer.json",
+      "bytes": 1227,
+      "sha256": "843cbcd4f8341f019891e76c6446d9ff3fb87e889f9e1aca7d178c4127609832"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-01-reservation.json",
+      "bytes": 1087,
+      "sha256": "a5bc8dd9d3723e4d61853a6aef33236e2aa882a1a59f59bf1a583f90c8f84f59"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-01.json",
+      "bytes": 2498,
+      "sha256": "4ae6ab9ef247ff8449bf26566137b1d1ce8605d0c957d53e6763c2dcf811c4ad"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-02-outer.json",
+      "bytes": 650,
+      "sha256": "d83224bd7ef602d0a6b28fe834cd3c84795eacd5e81c55a9afa736ffd180413d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-02-reservation.json",
+      "bytes": 806,
+      "sha256": "933fe4991eb3a0f923b2fd42622f869ad1ced924ca278ac95474cd0c45d1de3f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-02.json",
+      "bytes": 1640,
+      "sha256": "ffbbcaf110de8c01e7788d39c2286e9246afdce8a541badd742cf52714a0a620"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-03-outer.json",
+      "bytes": 647,
+      "sha256": "01aae6f650096134379b80da24d7dd2be9fbb9b8ed9f252400f78c2129d10118"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-03-reservation.json",
+      "bytes": 2191,
+      "sha256": "84a340380d775f15bef063d46b1d2c21f3d3d08cb938d3e7c8295521c7356dd0"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-local-03.json",
+      "bytes": 976,
+      "sha256": "8c7886e4c0dba88c7858a0595659783f46eeb63cfd66806e60e5ff7be11c6d06"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-dispatch-preflight-failure.json",
+      "bytes": 551,
+      "sha256": "baab9a17cd2b6c60ad358b71688f3233d9573c48165ba037222bc100e2a27f63"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-cold-dispatch-preflight-second.json",
+      "bytes": 432,
+      "sha256": "5c8d5633374e5a7e9bf42964ba2cb42aa39fa01cfb8fd987694848ce4c610ca5"
+    }
+  ],
+  "effectiveExecutionPins": 15,
+  "runtimePins": 6,
+  "artifact": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+  "artifactSource": "f37a3612068c7215994750574a7451ede841bcce",
+  "helperSource": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+  "localResult": {
+    "distinct": 8,
+    "node": 5,
+    "python": 3,
+    "elapsedMs": 231,
+    "rawBytes": 826,
+    "groupsAbsentDualEOF": 3,
+    "exactEmptyScratchRemoved": 3,
+    "preflightFailures": "Two0child/0scratch stale resource-boundary assertions retained separately; no host/PG run consumed"
+  },
+  "actual": "NOT_RUN",
+  "review": "PENDING",
+  "scope": "Fixed actual-artifact cold caller/parameters and local evidence only. Original helper lifecycles and KEEP unchanged. Actual cold requires fresh assigned window."
+}
