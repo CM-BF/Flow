@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:03:04.863327+00:00 |
+| 最近更新 | 2026-10-07T09:07:13.941086+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
@@ -19,13 +19,13 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
-| 工作分支状态 | ready-for-review |
+| 工作分支状态 | ready-for-integration |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 当前产出 | 公开客户端真实读取用例通过；结果外壳误分类未选用例，整体失败原件已保留。 |
-| 下一可用交付 | 独审本次真实结果及已修分类；原PG不重跑，精确临时目录保留待合法清理。 |
-| 当前阻塞 | ACTIVE：结果分类P2修复待独审；精确TMP按失败门禁KEEP，当前无活动PG。 |
+| 下一可用交付 | 接收本次公开客户端真实验收与分类修复；精确临时目录待独立授权收束。 |
+| 当前阻塞 | ACTIVE：精确TMP按失败门禁KEEP待合法清理；分类P2已关闭，当前无活动PG。 |
 | 需用户决定 | NONE |
 | Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
@@ -76,3 +76,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T09:00:55.676680+00:00 CLIENT-PG-R1实际：executiond2d58f25，clock08:58:28→37/tool1，time-p3.90s；新1pass、旧2skipped、18HTTP，默认reasoning正文0B/JSON数组6335B、一次fullGET16B/增量9B独立cursor2→4且text3不动。外壳把skipped计作selected3误拒，VALIDATION_NOT_PASSED；PID26274exit0/groupabsent/mergedEOF，无signals。fixture库OID1268881/marker/CREATE确认，0conn普通DROP/absence及全部closed/errors[]。活动资源已归还；TMPk18wx_uj dev16777234 ino123682682保持KEEP，只exactlstat未扫/删。08:55原准备批准与实际后reviewer纠正均保留，原raw/input不改。root另授≤10min纯JSON分类修复1child≤30s，无新PG。main收据lazy-x01-intake@e2b16924的12个source逐hash已核；D05登记由root确认，live聚合仍PENDING_SYNC而不推部署。
 
 2026-10-07T09:03:04.863327+00:00 新纯修复：原结果09fbd42b冻结，caller纯分类函数对真实JSON离线4/4，新增失败/未知/额外执行均拒绝；1child166ms/602B/EOF/ownedabsent、新TMP删除absent，09:01:58local已归还。旧7gate/core/client/types/PG未重跑；原工具失败不改为绿。当前源改变但旧pg-client-input按R1固定不重绑，0后继运行授权。结果入口client-pg-result.md，窄修与结果一轮交chatui。
+
+2026-10-07T09:07:13.941086+00:00 正式结果/窄修复审：chatui09:06:13对09fbd42b/47f54739/a91d5b26判FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED，原selectorP2 CLOSED，0P1P2。client-pg-result-review-receipt.json为正式回执，原Vitest1pass/2skipped及wrapper1/TMPKEEP/所有raw-input字节不变。准备与结果失败纠正保留；无后继PG或cleanup授权。当前只metadata归档，13scope保留；新journey/fix主线未接，core/client已在e2b，UI/native/provider仍不在本结果范围。

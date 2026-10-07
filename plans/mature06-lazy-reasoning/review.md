@@ -30,3 +30,7 @@ chatui01_owner/gpt-6-astra 于08:55:14UTC 对source75070719/packetfcf4f1ae作独
 ## Preparation correction / actual failure — 2026-10-07T09:00:55.676680+00:00
 
 08:55批准原文保留；reviewer在本次actual结束后撤回选择器批准并报告1P2，client-pg-review-correction.json。实际新case1pass/旧2skipped但wrapperexit1/TMPKEEP，不宣称整体PASS。结果与后继纯JSON修复分别封存，0自动重跑。
+
+## Result fidelity and selector closure — 2026-10-07T09:07:13.941086+00:00
+
+chatui01_owner/gpt-6-astra 09:06:13UTC限定批准09fbd42b actual+47f54739 fix/a91d5b26，0P1P2，原selectorP2关闭。正式回执client-pg-result-review-receipt.json；仅忠实性与纯分类，不将原wrapperFAIL改PASS、不解除KEEP或授权再次PG。

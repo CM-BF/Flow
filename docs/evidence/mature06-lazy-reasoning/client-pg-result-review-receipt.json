@@ -1,0 +1,27 @@
+{
+  "reviewedAt": "2026-10-07T09:06:13Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "verdict": "FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "closed": "selector P2",
+  "actualResult": "09fbd42bb3e4771cc4360e7ea2896db91b395f4e",
+  "fixSource": "47f54739f5a2cf8c356dc9ac7e232f64f637e786",
+  "packet": "a91d5b26ea731c225ba044bb432fb91d4b5081a7",
+  "actualManifestSHA": "73c2416dbd6d53cf2bb3a7f4b93c790f520f48b9b6a489807e1d477201b66a20",
+  "fixManifestSHA": "0757034e458182dd02abfd61559f3901a1c55264ef6ca93f252e3694dfe32457",
+  "verified": {
+    "actualBindings": 11,
+    "actualBytes": 12052,
+    "fixBindings": 8,
+    "fixBytes": 39590,
+    "runtimeInputsExecutionToResultUnchanged": 249,
+    "actual": "Vitest1passed2skipped/18HTTP; originalwrapperexit1/selected3/fixtureReceiptConfirmedfalse/TMPKEEP preserved",
+    "resources": "PID26274exit0/groupabsent/mergedEOF/187B; reservation+ACK+OID1268881+marker/0conn/ordinaryDROPabsence/app-pool-admin closed per fixed receipts",
+    "fix": "passed/failed selected, skipped/pending unselected; unknown/failure/extra execution/wrongtitle/aggregate mismatch reject; process/DB/deadline/cleanup unchanged",
+    "pure": "4pass/602B/166ms, one closed child/newTMPsameidentityremoved; old7gates unselected"
+  },
+  "limits": "Original actual overall FAIL remains. KEEP root not accessed by reviewer; clocks/EPERM/unsampledTMP/peak unknown retained. Offline P2 closure does not authorize newPG or cleanup, nor expand to UI/native/provider/main.",
+  "reviewExecution": "0 import/project-execution/test/PG/write",
+  "priorReviewCorrection": "08:55 original approval and post-execution withdrawal retained; reviewer accepted responsibility for missed reporter skipped enum."
+}
