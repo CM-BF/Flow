@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T16:18:20.783Z",
+  "state": "STOP_EXACT_PATHS",
+  "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "version": 30,
+  "paths": [
+    "apps/server/src/index.ts",
+    "apps/server/src/plugin-runtime/claim.ts",
+    "apps/server/src/runner-claim-receipts.test.ts",
+    "apps/server/src/runner-claim-receipts.ts",
+    "apps/server/src/runner-claim-routes.test.ts",
+    "apps/server/src/runner-claim-routes.ts",
+    "packages/client/src/plugin-runner.test.ts",
+    "packages/client/src/plugin-runner.ts"
+  ],
+  "next": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+  "rule": "No parent writes to these product paths after STOP; atomic removal before child amend."
+}
