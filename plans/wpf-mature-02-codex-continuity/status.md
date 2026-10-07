@@ -22,8 +22,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 公开stream源码与直接测试正在实施，当前dirty；尚未运行本片检查。 |
-| HEAD（最近观察） | 2b3b9db8f9a2cf8cf9ebbf85eaa13aad4d3fd599；该封存后公开stream源未提交。 |
+| 工作树dirty状态 | 公开stream实现已固定9e212e50；89项直接行为检查通过；types因历史baseline缺件首失败，精确供给后待窄复核。 |
+| HEAD（最近观察） | 2b3b9db8f9a2cf8cf9ebbf85eaa13aad4d3fd599；公开stream source9e212e50已提交；检查与供给补充待本次封存。 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v7 ACTIVE，50 literal；fresh读取仍同owner/branch；[精确receipt](../../docs/evidence/mature02c02/public-stream-exports-amend-receipt.json) |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |

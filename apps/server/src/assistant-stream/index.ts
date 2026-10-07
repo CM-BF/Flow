@@ -24,5 +24,5 @@ export function registerAssistantStreamRoutes(app:FastifyInstance,pool:Pool):voi
     if(!idSchema.safeParse(request.query.attemptId).success) throw new HttpError(400,'stream_attempt','A bound attempt ID is required.');
     return assistantStreamPatches(pool,request.params.id,request.query.attemptId!,integerQuery(request.query.after,0,2147483647,0),integerQuery(request.query.limit,8,8,1),assistantStreamProtocol(request.raw.rawHeaders)??'patch-v1');
   });
-  app.get<{Params:{id:string;blockId:string}}>('/api/tasks/:id/assistant-stream/:blockId',request=>assistantStreamBlock(pool,request.params.id,request.params.blockId,assistantStreamProtocol(request.raw.rawHeaders)??'patch-v1')); 
+  app.get<{Params:{id:string;blockId:string}}>('/api/tasks/:id/assistant-stream/:blockId',request=>assistantStreamBlock(pool,request.params.id,request.params.blockId,assistantStreamProtocol(request.raw.rawHeaders)??'patch-v1'));
 }

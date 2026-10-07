@@ -32,4 +32,3 @@ export async function negotiatedAssistantStream(app: FastifyInstance, pool: Pool
     throw error;
   }
 }
-

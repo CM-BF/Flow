@@ -197,5 +197,25 @@
     "index": "No export modification required; assistant-stream already star-exported",
     "temporaryRunnerClaimSupply": "exact c0e blob removed after private update-index rejected absent base path (exit128); no runtime/check; no donor or shared index mutation",
     "retainedClaimVersion": 7
+  },
+  "directTestBaselineSupplement": {
+    "recordedAt": "2026-10-07T04:38:11.001042+00:00",
+    "items": [
+      {
+        "path": "docs/evidence/chat06p03/baseline/index.ts",
+        "source": "c0e0263dc01b9527293318a644f964bd048e2a86",
+        "bytes": 3863,
+        "sha256": "bf8f6972371438857b56c33630644ae098999629def359507aabe4c1f72d3d6b",
+        "use": "read-only direct baseline test input"
+      },
+      {
+        "path": "docs/evidence/chat06p03/baseline/accumulator.ts",
+        "source": "c0e0263dc01b9527293318a644f964bd048e2a86",
+        "bytes": 10007,
+        "sha256": "f362bab2dd7b54dcd80fa0525c5553e78c57930c1c5073736764cc95a1d5ef7f",
+        "use": "read-only direct baseline test input"
+      }
+    ],
+    "reason": "First focused types found absent CHAT06 performance baseline; fixed main blobs only, no product change or install."
   }
 }
