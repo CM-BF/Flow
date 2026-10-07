@@ -2,33 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:16:15.887Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:17:34.441Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T14:29:36.000Z |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | owner实际开始本设计，provision.json；产品验收尚未开始，不以文档交付填完成 |
+| 任务时间来源 | owner实际开始本设计，provision.json；完整产品验收尚未完成，不以文档或局部交付填完成 |
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 两处R3源码修复及实际镜像已固定，局部strict0；本次只归档metadata，push后clean STOP |
+| 工作树dirty状态 | R3 source/local/准备增量已独审通过；当前metadata收口，提交push后clean STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | FAILED 10bd0219f84c34008a0255bfed282052a91bce7c：R2真实5选0过5失败；修复ead8db7e6ac4a47e02790afb3b8551ebee9188ba严格类型0，R3真实五例NOT_RUN |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（center局部已审，真实PG R1准备数据失败；未获得真实矩阵通过） |
+| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（center局部已审，真实PG R1/R2失败；R3窄修已审，尚未获得真实矩阵通过） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 迁移表达式和测试启动前置已修复，类型检查通过，原失败证据已独立核实 |
-| 下一可用交付 | 独立审查修复及准备包后，在新窗口验证五项数据库行为 |
-| 当前阻塞 | ACTIVE: 修复后的五项真实数据库验收尚未通过，中心领取片与受理后继不能据此集成 |
+| 当前产出 | 迁移表达式和启动前置修复已通过独立审查，新数据库验收配方已封存 |
+| 下一可用交付 | 获得独立窗口后执行五项真实数据库验收 |
+| 当前阻塞 | ACTIVE: 修复后的五项真实数据库验收尚未执行，中心领取片与受理后继仍待通过 |
 | 需用户决定 | NONE |
-| Review | R2失败忠实性22:10:07 APPROVED；R3固定65394d960的source/local/准备增量待b01独审，原5FAIL保持 |
+| Review | R3 source/local/preparation于22:16:41独审APPROVED/0P1P2；R2失败忠实性22:10:07 APPROVED，原5FAIL不改 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
-| 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
+| 架构影响 | 同一claim/receipt显式v4与036来源引用；R1/R2失败均已封存；R3前置修复已审，动态SQL矩阵未通过。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -188,3 +188,5 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T22:11:17.000Z–22:23:17.000Z，新2MiB内含source/metadata/TMP/raw，来自已计16MiB稳定池；≤2 child×30s/累计45s，0PG/HTTP/provider/install。fresha67v6/25有效。036只对artifact箭头结果明确括号，同文件其余箭头无同型减法组合；首例finally保一次原计划current startup，首错不被次错覆盖，启动未知仍依原fixture保持KEEP。后继请求显式拒未ready server。旧R2原件、5FAIL及281旧manifest保固定Git，不将本片静态/类型检查冒SQL成功。
 
 2026-10-07T22:16:15.887Z：R3 sourceead8db7e/support7c76/packet65394d960固定，两个源与镜像一致；一次affected strict于22:12:53.747–22:12:56.037执行，PID96897 exit0/2280ms/raw0/finalabsent/EOF，TMP空同identity删除/ENOENT。初次git add因sparse未stage正本，实际镜像已3bf固定，正本同bytes于ead事后固定；不冒正本precommitted检查。R3manifest1b5eb0ae/281rows，7变274原样，191external/16links与旧R2原样，三literal仅新namespace/input/manifest。0新PG/assertion执行；22:15:02.513起等待b01独审，窗口仍CLOSED/未预约。root后到将同池本片cap从2MiB扩4MiB，实际新/变完整文件385332B初封样本，无另加reserve；截止22:23:17不变。
+
+2026-10-07T22:17:34.441Z：b01于22:16:41独立SOURCE_LOCAL_AND_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2，绑定ead8/d37/653，18bindings352252B。一次已审修复和strict结果不冒SQL成功；R3恢复PREPARED_READY_CLOSED_NOT_OPEN，入口[r3-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json)。人读准入清单R2字样改R3，实际argv/caller未变，无需补测。22:15:02.513–22:16:41.000审查等待关闭；此后为独立实际PG窗口等待，未获grant不launch。旧R1/R2失败及全部raw保持；0child/PG/待launch，余量不转为新工程授权。

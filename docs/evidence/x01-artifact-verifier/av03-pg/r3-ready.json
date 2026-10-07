@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T22:14:44.371Z",
-  "state": "PREPARATION_REVIEW_PENDING_NOT_OPEN",
+  "at": "2026-10-07T22:17:34.441Z",
+  "state": "PREPARED_READY_CLOSED_NOT_OPEN",
   "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
   "support": "7c76b372405cac2c741b24871e8cb39eaa5f12ec",
   "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r3.json",
@@ -13,7 +13,7 @@
   "links": 16,
   "sql": 34,
   "checks": "One affected strict0 at executed mirror3bf; canonical same bytes fixedead afterward; zero new PG/assertion execution;5realcasesNOT_RUN",
-  "review": "PENDING b01 narrow source/local/7row operator binding review",
+  "review": "SOURCE_LOCAL_AND_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2,2026-10-07T22:16:41.000Z; r3-approval.json",
   "actual": "NOT_OPEN/NOT_RUN",
   "namespaceAbsent": true,
   "invocation": "r3-invocation.json",
@@ -42,5 +42,7 @@
     "R2": "FAILED5selected0passed5failed;result5ac3/packetc08fb and22:10 independent fidelityapproved preserved"
   },
   "integration": "NOT_INTEGRATION_READY_PG_REQUIRED",
-  "scope": "Precedence fix and planned startup/error-order only; no publicproducer/runtimeverdict/worker evidence."
+  "scope": "Precedence fix and planned startup/error-order only; no publicproducer/runtimeverdict/worker evidence.",
+  "invocationSha256": "83ac99c5ec9e3bbfdf762dc81168e6f22a9f9d75a2326830f68b9074cd9a17e9",
+  "manifestReviewSnapshot": "Pinned manifest/window-request pending labels are historical pre-review snapshots; this separate approval supersedes them without altering inputbytes."
 }
