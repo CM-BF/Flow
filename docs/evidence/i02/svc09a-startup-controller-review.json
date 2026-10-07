@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T17:57:03Z",
+  "task": "SVC09A",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "state": "APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE",
+  "P1": 0,
+  "P2": 0,
+  "target": "f0e434bd04c496fbd60e8458c3f840f4d7b25e80",
+  "scope": [
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/process.mjs",
+    "tools/personal-preview/process.test.mjs"
+  ],
+  "preimages": "All four equal artifact source098b and pre-intake main abdf69692.",
+  "behavior": "One structured listener probe supplies readiness and legacy boolean. Original10s horizon/short-circuit/unknown rejection/stop contract retained. Bounded last-predicate results persist before cleanup. Only allowlisted fetch codes; no response body, credentials or arbitrary error. Fifth status port defaults to original behavior; repository identity remains checked.",
+  "checks": {
+    "selected": 12,
+    "passed": 12,
+    "new": 10,
+    "directConsumers": 2,
+    "elapsedMs": 476,
+    "rawBytes": 1750,
+    "sourceBinding": "Three exact inputs plus preview.mjs with one later comment-only change. Reversing that comment reproduces exact56590B original run pin; fixed56587B. No claim that exact f0 was executed.",
+    "rawStdoutSha256": "253bc51ea5a5a50869db7eb50aac110ae83cf80750cef5722a02f3c0cfe3b2b6",
+    "outerSha256": "617dee9ca18c9ebdea8e674c75e5d594b306c17381211bfb528724ace6dec330",
+    "reservationSha256": "f844744e5ea62641ea0ccc07b3ab7206e5d294b54921a4be005c9a7f8632e3ef"
+  },
+  "lifecycle": "Supervised group absent, dualEOF, signals[]. Callerexit1 from empty-only cleanup guard: tsx cache KEEP.23686B/3items is subsequent sample, not measured peak or full cleanup.",
+  "canonicalEvidence": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/controller-local-01",
+  "limitations": [
+    "Shadow-root assembly not approved by this review",
+    "No actual host startup PASS or R4 root cause",
+    "No reruns/PG/services/provider/private artifact reads"
+  ]
+}
