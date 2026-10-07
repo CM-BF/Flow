@@ -31,6 +31,8 @@
 
 同范围局部检查由 co-lead 在既有资源和累计预算内自主准入，不逐条向 GO 申请。共享 PG/Chrome 仍由两 lead 明确交接，fresh 准入与实际清理不可省；源码、小检查和完整构建的资源界限分别适用。记录复用唯一 owner status 与原证据，不增加每文件审批或第二账本。已通过且未受改动影响的检查不重复。
 
+精确供给与实际执行分别记准入：已有授权的少量source/ignored symlink准备，可在其独立小额预算内继续，不能把后续type/test/PG/build的余量门槛套到纯链接创建。先核唯一operator、固定request、原文件/父链与donor身份，exclusive创建；真实写失败立即停止并保留部分结果，不借此安装、导入、补宽依赖或降低后续运行线。X01本次实例为7链接/752B target文本，含必要收据逻辑≤64KiB，原Stage A的1GiB+32MiB门槛保持；首次HOLD保留，不回填成成功。
+
 ## 待实施：复用有限连接观察（2026-10-06 17:50 UTC）
 
 TUI01F与Recovery已遇到pool.end后单次查询的收尾问题；attachment-integration fixture的同类模式目前只是静态风险，不冒称已有失败。固定pg8.23.1→pg-pool3.14.0会先从本地clients移除再异步client.end，await pool.end不能当远端pg_stat_activity零连接的同步屏障；这不证明某一次unknown的根因。
