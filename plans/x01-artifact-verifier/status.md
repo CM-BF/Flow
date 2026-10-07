@@ -17,7 +17,7 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN：仅设计与只读源证据；无工程、PG、provider或个人操作 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；固定输入main6fd214eb62f269167f6af4a8390850561dc0d01c不是本功能已实现 |
-| 实现目标 | 35cbad4a90920cb10d8afdaa5d418ea4975c8028（设计target；产品NOT_IMPLEMENTED） |
+| 实现目标 | bc5b68a0e4e93e50f9258dd617262263d8db3c1f（设计增量target；产品NOT_IMPLEMENTED） |
 | 实现范围 | plans/x01-artifact-verifier,docs/evidence/x01-artifact-verifier |
 | 阶段 | M2 |
 | 优先级 | 5 |
@@ -54,3 +54,5 @@
 设计独审派发：2026-10-07T14:40:12.757Z，一次followup_task因agent thread limit reached未启动；不重试，review仍PENDING。仅归档此元数据后STOP/FINAL腾槽，完整任务未完成；见[review-dispatch.json](../../docs/evidence/x01-artifact-verifier/review-dispatch.json)。
 
 设计初审14:42:49为CHANGES_REQUESTED/1P2；本次新段14:44:00–14:52:00仅修文档，完成矩阵及两项实施前约束已修，待独立增量审，不自称已关闭。source/product/工程运行均0；旧设计包与审查历史保留。
+
+设计窄修交付 2026-10-07T14:46:20.059Z：target bc5b68a0e4e93e50f9258dd617262263d8db3c1f；入口[design-delta-review-ready.json](../../docs/evidence/x01-artifact-verifier/design-delta-review-ready.json)。metadata形状复核errors/humanMissing/timingIssues均空。push后STOP，保留doc claim；0工程/PG/provider/待launch。

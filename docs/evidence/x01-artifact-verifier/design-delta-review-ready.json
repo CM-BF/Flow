@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T14:46:20.059Z",
+  "target": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+  "priorDesign": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+  "priorPacket": "7f8fef46e21f0d99624c1a49256fe4138f61d617",
+  "state": "DESIGN_DELTA_REVIEW_PENDING",
+  "rows": [
+    {
+      "path": "docs/evidence/x01-artifact-verifier/interface.md",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 16508,
+      "sha256": "c020fd2c08434dfbaa759107c7082247d1702ce8f17ed800b2c778b6d6ea106d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/scope-and-dependencies.md",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 7167,
+      "sha256": "e1f001f5f0b931578e0f806d8666de66fbd06bc5752c5762f37c7b2da17b5585"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/plan.md",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 6208,
+      "sha256": "56df738c784275796658b640f63e2fc7dd1fd8f712477b0f834621d2fe6094be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/design-review-initial.json",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 640,
+      "sha256": "06f1bc38f9dd2c7c5f20d807faf31e08ffd2dbe6a189a127dc792ff277326f5d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/design-delta-context.json",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 537,
+      "sha256": "b352aa825c75d69f0fdda0942b87e739e9ae20b7665171afaa127b0fd460b690"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/design-delta-baseline.json",
+      "commit": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+      "bytes": 1767,
+      "sha256": "09f2d7b72939f377481009bcaa3ac1b5064105c1378f9adea6b8efe3f70c12aa"
+    }
+  ],
+  "scope": [
+    "completion matrix and AV-F/H",
+    "positive immutable kind independent of ref absence",
+    "source scope authority and fail-closed missing/conflict"
+  ],
+  "reviewRequest": "Review only this documentation delta; original CHANGES_REQUESTED remains historical. No product approval or execution.",
+  "productDelta": [],
+  "engineeringChildren": 0,
+  "PG": 0,
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "claimVersion": 1
+}
