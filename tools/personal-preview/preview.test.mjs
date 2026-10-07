@@ -661,7 +661,7 @@ test('SVC06 changed startup diagnostics cannot qualify as the selected configure
 });
 
 // Real preview control-flow with only its external effects injected. No socket/PG/native child.
-async function slotPreviewFixture(t, { settings = true, processState = 'running', start = false, failReady = false } = {}) {
+async function slotPreviewFixture(t, { settings = true, processState = 'running', start = false, failReady = false, readiness } = {}) {
   const vm = await import('node:vm');
   const { realpath, mkdir } = await import('node:fs/promises');
   const { randomUUID } = await import('node:crypto');
@@ -685,6 +685,7 @@ async function slotPreviewFixture(t, { settings = true, processState = 'running'
   if (start) state.backendArtifact = artifact;
   await json('state.json', state);
   const calls = [];
+  let milliseconds = 0;
   const ports = {
     pg: { Pool: class {
       async query(sql) {
@@ -695,18 +696,32 @@ async function slotPreviewFixture(t, { settings = true, processState = 'running'
       }
       async end() { calls.push(['pool-end']); }
     } },
-    './process.mjs': { inspectOwnedProcess: async record => record.role === 'runner-settings' ? processState : 'running', ownsListener: async () => true,
-      stopOwnedProcess: async record => { calls.push(['stop', record.role]); return record.role === 'runner-settings' && processState === 'unknown' ? 'unknown' : 'stopped'; }, spawnOwnedProcess: async input => {
+    './process.mjs': { inspectOwnedProcess: async record => readiness?.owner ?? (record.role === 'runner-settings' ? processState : 'running'), ownsListener: async () => true,
+      observeOwnedListener: async () => { calls.push(['listener']); return readiness?.listener ?? { owned: true, ownerState: 'running', phase: 'confirmed', listenerCount: 1, code: null, exitCode: null }; },
+      stopOwnedProcess: async record => {
+        calls.push(['stop', record.role]);
+        if (readiness) calls.push(['persisted-before-stop', JSON.parse(await readFile(join(directory, 'state.json')))]);
+        return readiness?.stop ?? (record.role === 'runner-settings' && processState === 'unknown' ? 'unknown' : 'stopped');
+      }, spawnOwnedProcess: async input => {
         assert.equal(start, true); const key = input.args.at(-1); const record = { role: key, nonce: randomUUID(), pid: 50000 + calls.filter(call => call[0] === 'spawn').length };
-        calls.push(['spawn', key]); await input.onSpawn(record); return record;
+        calls.push(['spawn', key, input.args[0], input.cwd]); await input.onSpawn(record); return record;
       } },
     'node:child_process': { spawn: () => { throw new Error('unexpected spawn'); }, execFile: (_command, _args, _options, callback) => callback(Object.assign(new Error('fixture'), { code: 128, stderr: 'not a git repository' })) },
     './backend-release/host.mjs': { ...(await import('./backend-release/host.mjs')), assertInstallationSource: async () => {},
       ...(start ? { backendRuntime: async () => ({ root, entry: join(root, 'tools/personal-preview/cli.mjs'), artifact }), serviceRuntime: async () => ({ root, entry: join(root, 'tools/personal-preview/cli.mjs'), artifact }) } : {}) },
     ...(start ? { './web-artifact.mjs': { prepareWebArtifact: async () => artifact, verifyWebArtifact: async () => {} } } : {}),
     './environment.mjs': { ...(await import('./environment.mjs')), baseServiceEnvironment: () => ({ PATH: '/usr/bin:/bin' }) },
+    ...(readiness ? { 'node:timers/promises': { setTimeout: async ms => { milliseconds += ms; } }, 'node:perf_hooks': { performance: { now: () => milliseconds } } } : {}),
   };
-  const context = vm.createContext({ process, Buffer, URL, AbortSignal, fetch: async (url, options) => ({ ok: true, body: { cancel: async () => {} }, json: async () => {
+  const context = vm.createContext({ process, Buffer, URL, AbortSignal,
+    ...(readiness ? { Date: class extends Date { static now() { return milliseconds; } } } : {}),
+    fetch: async (url, options) => {
+      if (url.endsWith('/api/health')) {
+        calls.push(['health']);
+        if (readiness?.healthError) throw readiness.healthError;
+      }
+      return { ok: !url.endsWith('/api/health') || !readiness?.healthStatus || readiness.healthStatus === 200,
+        status: url.endsWith('/api/health') ? readiness?.healthStatus ?? 200 : 200, body: { cancel: async () => {} }, json: async () => {
     if (url.endsWith('/__flow_preview_identity')) return artifact;
     if (url.endsWith('/maintenance')) return { runnerId: config.runner.runnerId, state: 'accepting', version: 21 };
     if (url.endsWith('/api/runners')) return { runnerId: '22222222-2222-4222-8222-222222222222', token: 'new-synthetic-token' };
@@ -721,7 +736,7 @@ async function slotPreviewFixture(t, { settings = true, processState = 'running'
         conversation: { state: 'existing-claude-contract', capabilitySource: 'conversation-response' } }], nextCursor: null };
     }
     return { profiles: [{ reference: { id: 'legacy-profile', runnerId: config.runner.runnerId }, configuration: { model: 'claude-sonnet-5-5', thinking: 'disabled', permissionMode: 'dontAsk', access: 'none', limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 } } }] };
-  } }) });
+  } }; } });
   const url = new URL('./preview.mjs', import.meta.url);
   const module = new vm.SourceTextModule(await readFile(url, 'utf8'), { context, identifier: url.href, initializeImportMeta: meta => { meta.url = url.href; } });
   await module.link(async specifier => {
@@ -803,4 +818,76 @@ test('SVC09A CLI forwards only the explicit private settings request and rejects
     assert.equal(calls.length, extra ? 0 : 2); if (!extra) { assert.equal(calls[0], '/request'); assert.equal(calls[1].directory, '/own'); assert.equal(calls[1].recipe, input); }
     assert.equal(processPort.exitCode, extra ? 1 : undefined);
   }
+});
+
+// Controller-only readiness consumers: actual control-flow, no network, PG, service, or provider.
+test('SVC09A readiness owner unknown short-circuits and is persisted before cleanup', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { owner: 'unknown' } });
+  await assert.rejects(f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact), { code: 'START_UNCONFIRMED_CHECK_STATUS' });
+  const saved = f.calls.find(call => call[0] === 'persisted-before-stop')[1];
+  assert.equal(saved.lastStartFailure.code, 'SERVICE_EXITED_DURING_START');
+  assert.equal(saved.startReadiness.center.predicates.owner.result, 'unknown');
+  assert.equal(saved.startReadiness.center.outcome, 'failed');
+  assert.equal(saved.startReadiness.center.iterations, 1);
+  assert.equal(f.calls.some(call => ['listener', 'health'].includes(call[0])), false);
+});
+
+test('SVC09A readiness listener failure retains bounded last result and the unchanged ten second deadline', async t => {
+  const listener = { owned: false, ownerState: 'running', phase: 'listener-query', listenerCount: null, code: 'ENOENT', exitCode: null };
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { listener } });
+  await assert.rejects(f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact), { code: 'START_UNCONFIRMED_CHECK_STATUS' });
+  const trace = f.state.startReadiness.center;
+  assert.equal(trace.elapsedMs, 10_000); assert.equal(trace.iterations, 200);
+  assert.equal(trace.predicates.listener.iteration, 200); assert.deepEqual(trace.predicates.listener.result, listener);
+  assert.equal('health' in trace.predicates, false); assert.equal(f.calls.some(call => call[0] === 'health'), false);
+  assert.ok(Buffer.byteLength(JSON.stringify(f.state.startReadiness)) < 2048);
+});
+
+test('SVC09A readiness non-success health status keeps the primary when stop is unknown', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { healthStatus: 503, stop: 'unknown' } });
+  await assert.rejects(f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact), { code: 'START_UNCONFIRMED_CHECK_STATUS' });
+  const state = JSON.parse(await readFile(join(f.directory, 'state.json')));
+  assert.deepEqual(state.startReadiness.center.predicates.health.result, { reachable: false, status: 503, code: null });
+  assert.equal(state.lastStartFailure.code, 'SERVICE_START_UNCONFIRMED');
+  assert.equal(state.startCleanup[0].state, 'unknown');
+  assert.equal(state.startReadiness.center.elapsedMs, 10_000);
+});
+
+test('SVC09A readiness fetch cause exposes only an allowed code and missing fields stay unknown', async t => {
+  for (const code of ['ECONNREFUSED', 'secret-nonstandard-code']) {
+    const healthError = new TypeError('sensitive-url-and-body', { cause: Object.assign(new Error('private-detail'), { code, detail: 'private-value' }) });
+    const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { healthError } });
+    await assert.rejects(f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact), { code: 'START_UNCONFIRMED_CHECK_STATUS' });
+    const result = f.state.startReadiness.center.predicates.health.result;
+    assert.equal(result.code, code === 'ECONNREFUSED' ? code : 'STARTUP_UNCONFIRMED'); assert.equal(result.status, null);
+    const saved = await readFile(join(f.directory, 'state.json'), 'utf8');
+    for (const value of ['sensitive-url-and-body', 'private-detail', 'private-value', 'secret-nonstandard-code']) assert.equal(saved.includes(value), false);
+  }
+});
+
+test('SVC09A readiness uses the explicit artifact status port after the same three default launches', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: {} });
+  let calls = 0;
+  const status = await f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact, async ({ directory }) => {
+    calls++; assert.equal(directory, f.directory); return { source: 'bound-artifact-public-status' };
+  });
+  assert.deepEqual(status, { source: 'bound-artifact-public-status' }); assert.equal(calls, 1);
+  assert.deepEqual(f.calls.filter(call => call[0] === 'spawn').map(call => call[1]), ['center', 'runner', 'web']);
+  for (const role of ['center', 'runner', 'web']) assert.equal(f.state.startReadiness[role].outcome, 'ready');
+  assert.equal(f.state.startReadiness.center.predicates.health.result.status, 200);
+  assert.equal(f.state.startReadiness.runner.predicates.profile.result, true);
+  assert.equal(f.state.startReadiness.web.predicates.webIdentity.result, true);
+});
+
+test('SVC09A readiness default status port preserves the original status contract', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: {} });
+  const status = await f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact);
+  assert.equal(status.installationId, f.config.installationId);
+  assert.equal(status.runnerSlots.slots.length, 1); assert.equal(status.provider, 'not-probed');
+  assert.equal(status.runnerSlots.slots[0].actualClaim, 'unknown');
+});
+
+test('SVC09A readiness invalid status port is rejected before any configuration or process access', async () => {
+  const { startPreviewServices } = await import('./preview.mjs');
+  await assert.rejects(startPreviewServices(null, null, null, null, {}), { code: 'START_STATUS_PORT_INVALID' });
 });
