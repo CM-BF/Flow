@@ -1,5 +1,5 @@
 {
-  "state": "P2_DELTA_REVIEW_PENDING_NOT_OPEN",
+  "state": "PREPARED_NOT_OPEN",
   "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
   "totalSeconds": 180,
   "workSeconds": 110,
@@ -32,5 +32,8 @@
   "load": "All product/fixture modules static-load before beforeAll/CREATE. Caller checkpoint precedes Node exec. No post-CREATE dynamic imports. A stalled load is outer failure, no inferred DB absence without receipts.",
   "lifecycle": "Marked reservation/create ACK; stages database/baseline start-ready-close/current start-ready/migration/work saved by fixed fixture save. factory+listen and restart close await fixture.start work deadline; afterAll settleStartup, observed actual close, bounded connection zero observation, ordinary DROP, identity absence. Promise timeout is unresolved, never proof of closure. Each case begin/end work deadline checked; statements bounded by pool limits.",
   "limits": "No actual environment/admission/window allocated. Both original14 source and all old raw frozen. Known synthetic installed/reference seeds do not prove npm or verification admission/phase/result execution.",
-  "checkScope": "Original types/list bind161c; two preparation findings fixed statically only, NOT_RUN. No new child/PG."
+  "checkScope": "Original types/list bind161c; two preparation findings fixed statically only, NOT_RUN. No new child/PG.",
+  "sourceReview": "2026-10-07T17:27:40.000Z",
+  "counting": "onRequest/onSend count actual app HTTP and response bytes; fixture.request is a subset. automaticQueueScan:false does not disable lease/dispatch sweep or pg-boss, whose configured connections remain counted.",
+  "admission": "This is a candidate only. Fresh unique manager NEXT, full current combined resource floor/claim/head/input/output checks required; no OPEN receipt exists."
 }

@@ -1,0 +1,20 @@
+{
+  "reviewedAt": "2026-10-07T17:27:40.000Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "verdict": "SOURCE_DELTA_REVIEW_APPROVED",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "P1": 0,
+  "P2": 0,
+  "closed": [
+    "PG-P2-ORDER",
+    "PG-P2-DTO"
+  ],
+  "sourceBytes": 20283,
+  "sourceSha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d",
+  "scope": "Only mixed-queue test fixes: explicit distinct timestamps with real SQL ordered identities/timestamps using text[], and actual legacy assignment.task DTO. Product code and other assertions unchanged.",
+  "priorReview": "preparation-review-initial.json",
+  "priorPacket": "2e0e89ebbdda214188cc4bff00db4eb3f2f5a065",
+  "bindingLimit": "Approval bound local fixed source; final packet requires metadata rebind after measurement freeze. No repeated source review required when source unchanged.",
+  "validation": "All new P2 changes NOT_RUN. Original3local types2/types0/list5 retained under original sources; no engineering/PG/import.",
+  "actual": "NOT_OPEN/NOT_RUN"
+}
