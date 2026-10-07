@@ -6,25 +6,25 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | completed |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 资源收尾未知会保留未结算任务，原插件失败仍可追溯；窄修已通过定向检查。 |
-| 下一可用交付 | 固定窄修交独立复审，随后形成受控主线输入；发布验证仍是后继。 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 受信插件可按私有配置逐次在独立进程执行；局部验收与独审通过，等待主线接收。 |
+| 下一可用交付 | 接收已审源码；真实发布产物与中心组合验证由后继完成。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
 | HEAD | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70（窄修source；交接metadata后继） |
-| 工作树dirty状态 | source固定后仅交接metadata，最终提交clean；当前STOP无待launch。 |
+| 工作树dirty状态 | 仅归档独审/main接收清单，最终提交clean；产品冻结，ordinary已RETURN。 |
 | 实现目标 | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 |
 | 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
 | 检查状态 | PASSED 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 定向2/2与types0；原14distinct证据继承其固定source，不重跑；PG/release NOT_RUN。 |
-| Review | 原13:17:06唯一P2已修，当前PENDING_DELTA_REVIEW；不冒批准。 |
+| Review | APPROVED 2026-10-07T13:23:25Z chatui，4dc6f7ee1613e00a82ab5d99412a06f9c799cf70；原唯一P2 CLOSED/0剩余P1P2。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
-| 最近更新时间 | 2026-10-07T13:21:27.207071+00:00 |
+| 最近更新时间 | 2026-10-07T13:24:40.778607+00:00 |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -36,7 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
-| X01TP-05 | pending | db_transaction_owner | 实现独审/main待后继 |
+| X01TP-05 | in-progress | db_transaction_owner | 产品独审已批准，受控main待接收；T7发布后继未验。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
 
@@ -46,7 +46,7 @@
 | --- | --- |
 | 实际开工 | 2026-10-07T12:38:43.000Z / owner clock |
 | 分支交付 | 2026-10-07T13:10:59.985318+00:00 / fixed首产品 af43f7e61395125aed3f0725a9e4305c9e086cdd；design旧交付12:47:14.829Z保留 |
-| 独立审查 | NOT_STARTED |
+| 独立审查 | 2026-10-07T13:23:25Z / chatui固定4dc6f7ee产品增量批准；设计历史独立保留 |
 | 主线集成 | NOT_INTEGRATED |
 | 部署 | NOT_DEPLOYED |
 | 完整完成 | NOT_COMPLETED |
@@ -70,3 +70,5 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 13:18:13Z恢复独立15min修复段，deadline13:33:13Z；freshledger原v2/14 ACTIVE，当前ordinary等待architecture RETURN。0PG/provider/personal。
 
 13:19:59Z P2段ordinary RETURN：2selected/2pass/18未选，focusedtypes0，两个组absent/EOF/完整raw、空TMP同inode移除。原14distinct与本新增1distinct分轮，不重测hang。当前仅固定/独审metadata，0PG/provider/服务。
+
+2026-10-07T13:24:40.778607+00:00 归档chatui13:23:25固定产品批准；main实读7524a7fa clean，尚未接本11源。Claim fresh v2/14身份范围不变，产品STOP，metadata在本次清单固定后STOP；不release修复期范围。架构变化已在本status登记待Original/Web D06在实际main目标上更新，未称图已更新。

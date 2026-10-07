@@ -1,6 +1,6 @@
 Review target commit: 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70
 
-状态：CHANGES_REQUESTED（首产品唯一P2；修复待复审）
+状态：APPROVED（首产品与settlement窄修；不含T7发布或PG）
 
 Design review target commit: e8700b2b3e1d717df2c5c41a3a349af31c616cd6
 
@@ -17,3 +17,11 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 2026-10-07T13:20:57.204225+00:00 Owner已固定窄修前准备：2/2真实残留+原clean denial对照，types0。只请求P2增量复审，原审其余无第二finding面继承；未把owner验证当审查通过。
 
 2026-10-07T13:21:27.207071+00:00 窄修target 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70，implementation-p2-review-ready固定14增量绑定；当前CHANGES_REQUESTED待chatui关闭P2，无新批准。
+
+## 最终产品增量复审
+
+2026-10-07T13:23:25Z，chatui01_owner / gpt-6-astra，SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED；原唯一settlement P2 CLOSED，0剩余P1/P2。绑定4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 / packet9f0a24172daecdd78e87658ff1a3871f792f753d，14bindings52639B/6bbb3d84…e9d65核符。
+
+独立sticky settlementUnknown在child/EOF/signal/response后异常exit及finish失败时优先OUTCOME_UNKNOWN，并以cause保primary；pre-spawn拒绝与clean intentional grant denial保持旧身份。真实残留反例与原clean对照2/2，types0，两child资源闭合；只有1新增distinct，原14不重跑。原13:17其余九产品/test无第二finding面继承；旧raw/首失败/EPERM保留。
+
+完整来源见implementation-review-approval.json。T7真实发布artifact、PG/center/native/provider/部署、父硬崩溃及任意后代仍未验证，无新运行授权。当前仅可以局部已审opt-in源码进入受控主线流程，不能称全X01或可部署验收完成。
