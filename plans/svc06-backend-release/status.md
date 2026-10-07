@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:15:07.139637+00:00；兼容读取接缝局部完成，原R3只读失败保留；当前无窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:18:09.116638+00:00；reader修复已独审，等待本次实际窗口；后台维护未开始 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,9 +14,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；当前caller source 4916591ba89b2999404e3d13814968180594da98，原迁入5c29/产品源不改；helper独立c51 |
-| 工作树dirty状态 | 本次仅自有准备/证据/计划封存；caller源码固定停写，副树helper c51已独立commit/push |
+| 工作树dirty状态 | 仅本次唯一独审与status转录；source491/helperc51及原运行参数全部停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | C3与R2部分结果、R3只读失败已独审；reader修复4/4+2入口检查通过，首轮2正例fixture红保留；bootstrap/refresh/resume NOT_RUN |
@@ -24,10 +24,10 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 已安装的新产物、网页宿主、兼容报告和策略保持；观察器已能区分旧报告与新配置报告，原失败保留，后台维护尚未开始。 |
-| 下一可用交付 | 完成读取接缝的差量审查，在新窗口继续尚未开始的后台维护。 |
-| 当前阻塞 | ACTIVE: 修正已完成局部检查，等待差量独审与新的实际窗口；当前无运行占用。 |
+| 下一可用交付 | 新窗口与现场门禁满足后，继续尚未开始的后台维护。 |
+| 当前阻塞 | ACTIVE: 读取修正已独审通过，等待本次实际窗口；当前无运行占用。 |
 | 需用户决定 | NONE |
-| Review | R2部分结果与R3失败忠实性已限定独审；c36原准备批准保持。当前reader/caller差量待Lead最终绑定审查，未获个人执行许可。 |
+| Review | APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR，2026-10-07T13:17:39.490305Z，source491/delivery5fe/helperc51；原R2/R3和c36批准边界保持，实际维护NOT_RUN。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -392,3 +392,7 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 2026-10-07T13:15:07.139637+00:00：兼容观察接缝修正待审
 
 Source `4916591ba89b2999404e3d13814968180594da98`，helper独立`c51bffb4f91a33eeb16d637449c0618cc99040e8`；[最小差量](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json)。局部13:10:44.126401开始，13:11:07.813455实际清理归还；112ms原红+200ms四例/两入口绿，总312ms/3554B，4组absent/双EOF、2scratch removed。只修fixture canonical路径，不放宽报告guard。0个人I/O/PG/provider；R2四阶段不重放，R3真实只读失败原件及[限定独审](../../docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json)保留。总任务start UNKNOWN/完成NOT_COMPLETED不变。
+
+## 2026-10-07T13:18:09.116638+00:00：reader修复限定独审批准
+
+Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原样回执](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json)2523B/SHA9f56985e00bf83923d71d7dfbb0c428211377459725caeb143cc75dfe82aaa4f，18绑定及helper单pin核同，reviewer0重测/个人I/O。原4/4+2入口检查、首轮alias失败与53/8继承保持。当前尚无实际窗口，未创建r4 run或读取个人；R2四阶段禁止重放，R3FAIL/KEEP不改。
