@@ -22,3 +22,5 @@ db_transaction_owner / gpt-6-astra，2026-10-07T03:12:57.210730Z，绑定 `0a753
 R2 execution `44594beb1564732c00fb66721db2fd51b60b87e9`，2026-10-07T03:21:23Z–03:21:27Z：8selected/8pass/0skip，10task/80HTTP，专库零连接/同OID-marker普通DROP absent，worker/group/EOF/自有TMP全结束，无signals/retained/errors。原件见[固定结果清单](../../docs/evidence/s01p07/pg-run-r2-manifest.json)，11项12184B。这是owner事实记录，RESULT_REVIEW_PENDING；不会把8组代替原4capacity消费者或复算成旧85重跑，也不反推R1原因。当前仅封存，无新窗口/测试。
 
 architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc04cf90244cfb0ac3ba9ee2da2ed585：RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2。11raw12184B+2inputs逐Git/WT/hash符；8/8、10task80HTTP、OID-marker/0连接DROP/workergroupEOF/两rootabsent核实；时间及sampled峰值与Web通知后置如实，0审者运行/PG/旧根访问/写。不归因R1、不替代4capacity。后继只改自有test/fixture适配与有限运行输入，真实4PG仍未跑，另独审。
+
+2026-10-07T03:34:57.772871+00:00 四capacity后继：保持原4case body逐字相同；安全fixture复用/固定main数据库同module id donor/有限第三input分支已固定待独审。局部strict首轮2、窄类型修后0；collect4不是4pass，真实PG仍NOT_RUN。新source与检查绑定见pg-capacity-prepared-manifest.json，未扩大原产品SOURCE_REVIEW或R2结果批准。

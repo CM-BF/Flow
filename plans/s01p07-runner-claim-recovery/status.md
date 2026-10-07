@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:29:14.988284+00:00 |
+| 最近更新 | 2026-10-07T03:34:57.772871+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -13,19 +13,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；已审输入0a753088f477932140b10b288e907243cb265c27；R2 execution HEAD 44594beb1564732c00fb66721db2fd51b60b87e9 |
-| 工作树dirty状态 | R2开始44594beb=origin clean；结束仅新增本轮11份原始结果/外壳记录与manifest/自有status，所有源码/输入及R1原件冻结 |
+| 工作树dirty状态 | 原8组R2源码/结果按固定Git冻结；当前仅4capacity薄适配与本轮检查证据变更，固定交审后clean。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | R2原8组PG 8/8、10task/80HTTP、exit0，另历史85 distinct non-PG分批共93行为；strict第5轮exit0、3 lifecycle fake与4诊断fake独立口径且未重跑。R1仅0条case结果，原4组capacity PG单列NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
-| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源；PG未验） |
+| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源，R2中心8组已通过；原4capacity仍NOT_RUN） |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 原8组中心事务验收及结果独审通过；原4组capacity直接消费者保留断言，已改用受控专库fixture准备验证。 |
-| 下一可用交付 | 完成4capacity适配的定向types/collect与独审，再于明确PG窗口验收，交主线接收。 |
-| 当前阻塞 | ACTIVE: 原4组capacity真实PG尚未执行；适配准备可继续局部验证。本片无heavy holder，旧R1原因UNKNOWN且旧目录KEEP。 |
+| 当前产出 | 领取恢复的原8组中心验收和独审已通过；四项原并发消费者断言保持，安全fixture适配已通过局部类型检查并收集到4项。 |
+| 下一可用交付 | 完成四项并发消费者准备独审，取得实际PG窗口后执行并交主线接收。 |
+| 当前阻塞 | ACTIVE: 原4项capacity PG尚未执行，准备包待独审及明确重窗口；当前无实际local/heavy holder。旧R1原因UNKNOWN、旧根KEEP。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：原产品/诊断/输入已独审，R2 8/8于03:23:39Z RESULT_FIDELITY_REVIEW_APPROVED；原4capacity适配未审/PG未跑，NOT_INTEGRATED |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
@@ -33,10 +33,10 @@
 | TODO ID | 状态 | Owner | 证据 / 检查 |
 | --- | --- | --- | --- |
 | S01P07-01 | completed | status_read | [接口](../../docs/evidence/s01p07/interface.md)；协议/职责与直接消费者范围已固定 |
-| S01P07-02 | in-progress | status_read | contract/client/route/中心事务源码已固定；R2原8组PG通过待结果独审 |
+| S01P07-02 | in-progress | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
 | S01P07-03 | in-progress | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
 | S01P07-04 | in-progress | status_read | [R2](../../docs/evidence/s01p07/pg-run-r2-manifest.json)原8组通过；85非PG/strict0原件保留，原4capacity PG未跑，0provider；R1失败不抹 |
-| S01P07-05 | pending | status_read | 源审0P1/P2；R2结果待审 / 4capacity直接消费者未跑 / NOT_INTEGRATED |
+| S01P07-05 | pending | status_read | 源审0P1/P2；R2结果已审 / 4capacity准备待审、真实消费者未跑 / NOT_INTEGRATED |
 
 ## 架构与登记
 
@@ -67,3 +67,5 @@ R1后[最小诊断修复](../../docs/evidence/s01p07/inventory-diagnostic-fix.md
 R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外部time3.91s、工具exit0，03:21:36读回完成。8selected/8pass/0skip，10task、80HTTP，fixture2046.118ms；专库OID1195575+marker确认、零连接后普通DROP且absent，app/pool/admin/startup闭合，errors/primaryErrors=[]。PID/PGID69706退出0、group absent、双EOF、signals[]；wrapper及fixture两个自有根再次精确lstat ENOENT，本轮无保留资源。raw2243B/TMP样本峰值3036442B低于原上限，不称全时硬峰值或PG/WAL测量；0provider。heavy已即时归还，C02/Web后继不等本metadata。[11份原件与外壳记录](../../docs/evidence/s01p07/pg-run-r2-manifest.json)共12184B；新诊断无首fault，R2成功不能反推R1。C02局部预算在spawn前已叠加；Web9MiB新通知在spawn后收到、组合线复核在R2结束后，按真实先后记录，不补写成事前准入。
 
 2026-10-07T03:29:14.988284+00:00 后继4capacity源码准备：保原4case共4633B逐字不变（SHA2c7da25290c712db3232db38ef0dc7ea7d9377b863440f76faffa73e3439d580），仅realCenter替换为现ClaimCenterFixture的薄适配，4专库串行/累计13task，每库原160HTTP门禁合计640、峰值15连接。fixture只加保旧默认30000的lease参数，capacity仍原300000；原8默认不变，历史包按Git绑定。wrapper只增固定capacity输入/config/30输出预核，不新监督器。固定main15847数据库donor在原module id加载并记录SHA，保持migration import.meta.url；原231输入共同部分仅database.ts有main差异，client相同。见pg-capacity-slot-request.json；types/collect待唯一local，4PG NOT_OPEN。
+
+2026-10-07T03:34:57.772871+00:00 capacity局部验证收束：首strict exit2/788B来自registry自递归ReturnType，收窄为实际receiptPath/processSettled结构后strict0；collect-only准确4项/0执行。原段实际2.159s后停止，诊断/修复/协调间隔保留；另授权后继段3.386s，首启动至末结束146.968s不是90s内连续段。3child末态absent/双EOF，各自空TMP同identity删除，总raw1717B，瞬时TMP峰值UNKNOWN。见[单份记录](../../docs/evidence/s01p07/checks/capacity-local.json)与[准备入口](../../docs/evidence/s01p07/pg-capacity-window-request.md)。0PG/provider/install，local已直接交回C02；原85/8/旧strict未重跑。

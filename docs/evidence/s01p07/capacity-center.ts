@@ -5,7 +5,7 @@ import type { HarnessAdapter } from '@flow/contracts';
 import { runRunner } from '../../../apps/runner/src/runtime.js';
 import { ClaimCenterFixture } from './pg-fixture.js';
 
-const centers: ReturnType<typeof createCapacityCenter>[] = [];
+const centers: Array<{ receiptPath: string; readonly processSettled: boolean }> = [];
 const caseResults: Array<{ name: string; state: string }> = [];
 let submitted = 0;
 let aggregatePath = '';

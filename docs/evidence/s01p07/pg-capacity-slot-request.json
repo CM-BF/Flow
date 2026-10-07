@@ -1,8 +1,8 @@
 {
   "state": "CAPACITY_PREPARATION_NOT_OPEN",
-  "preparedAt": "2026-10-07T03:28:30.359689+00:00",
+  "preparedAt": "2026-10-07T03:34:57.772871+00:00",
   "base": "22a0806bc2465e11096949618113833f31766b19",
-  "sourceCheckpoint": "Original four capacity case bodies unchanged; bounded fixture adapter/main database donor and finite wrapper mode await fixed source review.",
+  "sourceCheckpoint": "1fa0a47cf7f135181036d7589a4e2251f32da600 plus the narrow registry type-inference fix; final source target bound in pg-capacity-prepared-manifest.json.",
   "inputs": [
     {
       "path": "docs/evidence/s01p07/pg-fixture.ts",
@@ -51,8 +51,8 @@
     },
     {
       "path": "docs/evidence/s01p07/capacity-center.ts",
-      "bytes": 6260,
-      "sha256": "0341fdc127b6350e5d6dfd880b242cbeaa530aa5f05a3905db9893f527fb7ca0"
+      "bytes": 6283,
+      "sha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62"
     },
     {
       "path": "docs/evidence/s01p07/capacity-vitest.config.ts",
