@@ -1,10 +1,12 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-06 23:21:55 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 02:28:12 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。全部新 types/direct/browser NOT_RUN。
+- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。首次 c1 strict FAILED；direct/browser NOT_RUN，实际失败限定独审见下。
+
+## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 
 ## 独立原件与作者回应
 
@@ -43,3 +45,11 @@ R3：fixture 增加明确的 profile21 会话授权，使用现 HTTP 分页和�
 Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**。固定候选 `dc67b3410c12f321d62a1565145e184b52b0ca84`，仅 [manifest](../../docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json) 的9证据文件；产品fe6四源不变。核相对type/JS真实解析、117输入、26展开名、实际child结果/有界JSON/外层信任回执及失败清理职责。有限三语法与14alias纯表达式检查通过，不是types/direct。不得执行候选或移植本地已审结论为远程通过。
 
 [root dc67 原件](../../docs/evidence/wpf-message-settings-quick-controls/root-dc67-portable-preparation-review.json)、[peer失败路径原件](../../docs/evidence/wpf-message-settings-quick-controls/peer-dc67-portable-failure-review.md)已原样归档。独审只读核117输入/9candidate/7prepared/4fe6/26names与两本地包manifest；没有执行types/direct/browser。当前外层审查结论覆盖固定dc67；候选目录README及原manifest的NOT_STARTED保留其送审时历史字节，不改已审候选。运行仍需本机资源和独立准入，remote未启用、外层隔离与真实cleanup责任仍归未来CI owner。
+
+## 当前实际检查限定独审 2026-10-07 02:28:12 UTC
+
+[root 原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/root-actual-review.json)：ACCEPT_FAILED_C1_EVIDENCE_INPUT_PROVISIONING_BLOCKED。非产品approval。实际执行HEAD60ffa/产品fe6；外层exit1、唯一FAILED seal及四hash相符，strict exit2，direct/browser未运行；own PGID/scratch清理完成。
+
+具体输入为 fixed HEAD 已有但磁盘未物化的 `packages/contracts/src/goal-plan-confirmation.ts`（2388B、index S）。不改公共契约、不抹失败，原Lead处理provision后再安排新准入。计时采用更晚terminal1875ms/余28125ms，原result1874/28126不改；完整[原件索引](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/archive-manifest.json)。产品/portable源与本地b1准备不变，无新增运行。
+
+后续供给事实 2026-10-07 02:29:30 UTC：原Lead已仅物化固定HEAD缺件，2388B/hash匹配、347既有产品输入不变；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。本次失败不改判，direct/browser仍未运行；后继仅可准备剩余28125ms包，不自动重试。

@@ -1,0 +1,175 @@
+{
+  "at": "2026-10-07 02:28:12 UTC",
+  "executionHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "state": "FAILED",
+  "actualOuterExit": 1,
+  "terminalSealCount": 1,
+  "strict": {
+    "exitCode": 2,
+    "elapsedMs": 1649
+  },
+  "direct": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "elapsedAccounting": {
+    "serializedBudgetMs": 1874,
+    "serializedRemainingMs": 28126,
+    "terminalAfterFinalWritesElapsedMs": 1875,
+    "chargedCumulativeMs": 1875,
+    "remainingMs": 28125
+  },
+  "cleanup": {
+    "pgid": 53843,
+    "errors": [],
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "nextRunAuthorized": false,
+  "missingFixedInput": {
+    "path": "packages/contracts/src/goal-plan-confirmation.ts",
+    "indexFlag": "S",
+    "diskExistsAtRun": false,
+    "fixedBlobBytes": 2388,
+    "fixedBlobSha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+  },
+  "files": [
+    {
+      "source": "/private/tmp/msgquick-checks-c1/result.json",
+      "archive": "packet/result.json",
+      "bytes": 38339,
+      "sha256": "56bcd86dc2898e24e79da94d48584556007966ff2354eae8ce59e1f826f1e2eb"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/budget.json",
+      "archive": "packet/budget.json",
+      "bytes": 261,
+      "sha256": "6024136b3323c125265dd0d123399bc825f13f2c366c56734eb211d05aabfd00"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/step-results.json",
+      "archive": "packet/step-results.json",
+      "bytes": 102,
+      "sha256": "7b47b8f58464d060d86de4eac4439d59ca9fe31b0fe785772f1e49de84f633ab"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/node.log",
+      "archive": "packet/node.log",
+      "bytes": 397,
+      "sha256": "52664dd847e82be578499850aeba8623fce916e43b0e1f6ef583dcd768cd515a"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/binding.json",
+      "archive": "packet/binding.json",
+      "bytes": 44796,
+      "sha256": "77cc7b771f9d60bec2383b9999029165c0bd4cb2ae5b3aafa0ea9d6c1ceb091f"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/consumed-gate.json",
+      "archive": "packet/consumed-gate.json",
+      "bytes": 1205,
+      "sha256": "cc5305dad3a91b7f9ff055293207e4fea09a7a6aaf82989932918c13b118ad56"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/manifest.json",
+      "archive": "packet/manifest.json",
+      "bytes": 2533,
+      "sha256": "6494cb36d20b15a340eac0ccd57c426b5d47c01dc589a58632dcd7efd02acaa2"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/run.py",
+      "archive": "packet/run.py",
+      "bytes": 19168,
+      "sha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/sandbox.sb",
+      "archive": "packet/sandbox.sb",
+      "bytes": 303,
+      "sha256": "ac60a83ac80f180a52ae21bd3da260516413f695b917a7d72fa7ca9e9fcaee0e"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/steps.mjs",
+      "archive": "packet/steps.mjs",
+      "bytes": 1669,
+      "sha256": "ab0d4a4ca6cffd88ad08250014698f6a33591d56e069d9cfd30adbda0833fe5b"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/tsconfig.json",
+      "archive": "packet/tsconfig.json",
+      "bytes": 5943,
+      "sha256": "1956b85af755289b2d27bd4691081aaf65fab2b0b1e9703fbe9e793db90a2672"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/vitest.config.mjs",
+      "archive": "packet/vitest.config.mjs",
+      "bytes": 4021,
+      "sha256": "a48b1dcc1e3fa0f08a456352d49b4e8bc44fd5a10c590efbec63717ce9da42af"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/aliases.json",
+      "archive": "packet/aliases.json",
+      "bytes": 3341,
+      "sha256": "3e9e6762944bbdd69c853db63fa1f370a5b5cb9b64bb5171b08b57c7b8f2eabb"
+    },
+    {
+      "source": "/private/tmp/msgquick-checks-c1/expected-tests.json",
+      "archive": "packet/expected-tests.json",
+      "bytes": 2614,
+      "sha256": "9e2a4aee3a3b351fbf0cdab56f09af171ea53508d37df13bfc49377f0b2cbf80"
+    },
+    {
+      "source": "/private/tmp/quick-c1-outer.rVQ4F6/stdout.txt",
+      "archive": "outer/stdout.txt",
+      "bytes": 679,
+      "sha256": "8367e95b0cf2530f2b03ec51e66ac3b34765151c7e4239ff4c6fd1f99edf0796"
+    },
+    {
+      "source": "/private/tmp/quick-c1-outer.rVQ4F6/stderr.txt",
+      "archive": "outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/quick-c1-outer.rVQ4F6/actual-exit.txt",
+      "archive": "outer/actual-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "source": "/private/tmp/quick-c1-outer.rVQ4F6/started-at.txt",
+      "archive": "outer/started-at.txt",
+      "bytes": 21,
+      "sha256": "249df40b654137dc3865774fcdb064a47ec20a5a1b201caddc808b737260b824"
+    },
+    {
+      "source": "/private/tmp/d01-quick-c1-admission-20261007/claim-observation.json",
+      "archive": "admission/claim-observation.json",
+      "bytes": 1941,
+      "sha256": "d3f064de7fd49c870c9990efa6b9de19e28c7f36cadd3e84456b18175a4c9c01"
+    },
+    {
+      "source": "/private/tmp/d01-quick-c1-admission-20261007/gate.json",
+      "archive": "admission/gate.json",
+      "bytes": 1206,
+      "sha256": "90129bf5ff7aec9b068d4b8e05eba9ac66fb21de106e6845736725149ec4d60b"
+    },
+    {
+      "source": "/private/tmp/d01-quick-c1-admission-20261007/pins-check.json",
+      "archive": "admission/pins-check.json",
+      "bytes": 2032,
+      "sha256": "e51337700ead0e7997c332e6cf9e3bd311667ab942c76992ef7dbe37ef7711f8"
+    },
+    {
+      "source": "/private/tmp/d01-quick-c1-admission-20261007/resource-admission.json",
+      "archive": "admission/resource-admission.json",
+      "bytes": 297,
+      "sha256": "57bb2997b8dd60a638c0c69e43b205d5de9f3cabaaac758134d716b75b233c67"
+    },
+    {
+      "source": "/private/tmp/root-quick-c1-actual-review.json",
+      "archive": "root-actual-review.json",
+      "bytes": 4514,
+      "sha256": "3b3b52272c2f508cb38bf6ce7f1075ef514c070898d2ef2c0a9fb9cf35f1aa08"
+    }
+  ]
+}

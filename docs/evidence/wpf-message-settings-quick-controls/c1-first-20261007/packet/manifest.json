@@ -1,0 +1,62 @@
+{
+  "task": "WPF-MESSAGESETTINGS02",
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "observedAt": "2026-10-06T22:37:21.759040+00:00",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "head": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+  },
+  "prepared": {
+    "run.py": {
+      "sha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+      "bytes": 19168
+    },
+    "steps.mjs": {
+      "sha256": "ab0d4a4ca6cffd88ad08250014698f6a33591d56e069d9cfd30adbda0833fe5b",
+      "bytes": 1669
+    },
+    "tsconfig.json": {
+      "sha256": "1956b85af755289b2d27bd4691081aaf65fab2b0b1e9703fbe9e793db90a2672",
+      "bytes": 5943
+    },
+    "vitest.config.mjs": {
+      "sha256": "a48b1dcc1e3fa0f08a456352d49b4e8bc44fd5a10c590efbec63717ce9da42af",
+      "bytes": 4021
+    },
+    "aliases.json": {
+      "sha256": "3e9e6762944bbdd69c853db63fa1f370a5b5cb9b64bb5171b08b57c7b8f2eabb",
+      "bytes": 3341
+    },
+    "expected-tests.json": {
+      "sha256": "9e2a4aee3a3b351fbf0cdab56f09af171ea53508d37df13bfc49377f0b2cbf80",
+      "bytes": 2614
+    },
+    "sandbox.sb": {
+      "sha256": "ac60a83ac80f180a52ae21bd3da260516413f695b917a7d72fa7ca9e9fcaee0e",
+      "bytes": 303
+    },
+    "binding.json": {
+      "sha256": "77cc7b771f9d60bec2383b9999029165c0bd4cb2ae5b3aafa0ea9d6c1ceb091f",
+      "bytes": 44796
+    },
+    "report.md": {
+      "sha256": "2183360748ad711f38d32b38b244e1e3afb8fdaae234be042e1bb2871bbd1435",
+      "bytes": 5168
+    }
+  },
+  "ownReadOnlyPins": 116,
+  "externalPins": 58,
+  "expectedExpandedTests": 26,
+  "runtime": "NOT_RUN",
+  "syntaxImports": "NOT_RUN",
+  "sourceOnly": "Text construction/read/hash only; no gate/free/supervisor/Node/test import",
+  "terminalRepair": "Early cooperative completion boundary; independent actual outer exit plus matching sealed stdout/files mandatory. Original c1 preserved in before-terminal-review.",
+  "terminalDiff": {
+    "path": "terminal-contract.diff",
+    "sha256": "270c39d2ef3b6b2ea5150b0a628bc3d12c50be960d2c6da6b129fe9c31adecfc"
+  }
+}

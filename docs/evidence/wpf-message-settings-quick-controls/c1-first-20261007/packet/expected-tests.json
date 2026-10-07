@@ -1,0 +1,37 @@
+{
+  "derivation": "Fixed-source literal it + it.each expansion; not collected or executed",
+  "count": 26,
+  "names": [
+    "uses the public opt-in FlowClient method for explicit bounded pages, never a legacy fallback",
+    "keeps a stable immutable snapshot and subscriptions until an actual update",
+    "retains stale pages/selection on access failure, and only explicit refresh recovers",
+    "keeps failed append retryable, but failed head refresh fences stale append",
+    "rejects an invalid duplicate page without exposing part of it",
+    "rejects an invalid cursor page without exposing part of it",
+    "rejects an invalid backward page without exposing part of it",
+    "rejects an invalid over-limit page without exposing part of it",
+    "fences ignored aborts and isolates a disposed connection from another catalog",
+    "captures the requested model and complete tuple as a detached immutable public snapshot",
+    "keeps absence distinct from explicit not-requested and rejects unconfigured cross-products",
+    "requires exact id in both capability and submitted identity",
+    "requires exact runnerId in both capability and submitted identity",
+    "requires exact configDigest in both capability and submitted identity",
+    "rejects missing capability, unavailable pages and empty choices without clearing caller-owned values",
+    "does not route message-settings profiles through the unchanged legacy creation controls",
+    "host CAS rejects apply from lagging props even when the new draft has the identical tuple",
+    "host CAS rejects omit from lagging props even when the new draft has the identical tuple",
+    "revokes old Apply and omit after an opening closes, even without a new host token",
+    "consumes an opening before a reentrant host callback and allows exactly one synchronous write",
+    "checks live edit authority for explicit omit, and live capability/full tuple for a defined selection",
+    "never resurrects an opening after revoke/restore with the same token and same tuple",
+    "fences an externally changed controlled value, a new view and independent pane tokens",
+    "revalidates pages at commit without clearing C or losing a valid candidate on unrelated pagination",
+    "reports an ambiguous host throw after a write without claiming the draft is untouched or retrying",
+    "a retained details callback cannot navigate or revoke a later opening with the same draft token"
+  ],
+  "source": {
+    "path": "apps/web/test/message-settings.test.ts",
+    "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "bytes": 20068
+  }
+}

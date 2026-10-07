@@ -28,10 +28,16 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
-本段仅 source+metadata；types/direct/browser/HTTP/PG/Chrome/构建均 NOT_RUN，旧37/4不继承。验证预算与依赖待 fixed 后独立准入；不安装或扩大 sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
+当前源码固定；首次本机 strict 检查因既有固定输入缺失而失败，direct/browser/HTTP/PG/Chrome/构建未运行，旧37/4不继承。实际失败与1875ms累计见唯一status及原件；后续验证重新准入，不安装或扩大 sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
 
 ## MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
 在原证据范围准备专用relative配置与标准Node→TypeScript/Vitest入口，独立接收外层真实退出和cleanup回执；不新增workflow、安装器或通用supervisor。本机资源不足期间仅源码准备，不把文档启用当远程授权。候选与fe6产品分开固定；实际26direct/6browser仍未运行。
 
 2026-10-06 23:21:55 UTC：dc67可移植验证准备已由root/peer限定静态通过，0blocking；MSGQUICK-04继续开放，types/direct/browser均NOT_RUN，本机资源/准入与remote未启用边界不变。原fe6与c1/b1未改。
+
+## 首次 c1 实际检查 2026-10-07 02:28:12 UTC
+
+MSGQUICK-04 保持开放：strict exit2，direct未运行，已完成自身清理并归还窗口。缺失固定source由原provision owner处理；[失败证据](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/README.md)与实际outer exit/terminal/独审逐字保留，下一次不继承旧gate，累计1875/剩28125ms。
+
+后续供给事实 2026-10-07 02:29:30 UTC：原Lead已仅物化固定HEAD缺件，2388B/hash匹配、347既有产品输入不变；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。本次失败不改判，direct/browser仍未运行；后继仅可准备剩余28125ms包，不自动重试。

@@ -1,0 +1,33 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "mode": "types-and-direct",
+  "issuedAt": "2026-10-07T02:24:28.157330+00:00",
+  "expiresAt": "2026-10-07T02:26:58.157330+00:00",
+  "bindingSha256": "77cc7b771f9d60bec2383b9999029165c0bd4cb2ae5b3aafa0ea9d6c1ceb091f",
+  "runnerSha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+  "sandboxSha256": "ac60a83ac80f180a52ae21bd3da260516413f695b917a7d72fa7ca9e9fcaee0e",
+  "sourceHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "claim": {
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "scopeCount": 6,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "previousRuntimeMs": 0,
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "windowAuthority": "Root relay of Mika actual X01 cleanup and explicit Quick c1 handback; one local validation only, no b1/PG/Chrome"
+}
