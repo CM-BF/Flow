@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-10-07T09:32:12.235700+00:00",
+  "method": "Single bounded read-only canonical status document, no summary/snapshot/PG/UI refresh",
+  "head": "c79f8a45698eaeaeaaedab6e25c03c4cc6a99b89",
+  "branch": "codex/web-platform-management",
+  "dirty": "",
+  "document": {
+    "task": "WPF-001",
+    "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+    "http": 200,
+    "contentType": "text/plain; charset=utf-8",
+    "bytes": 32929,
+    "sha256": "6c96204ce6659e240bd8f8ec1cab50303f269a76d2baa2cc2f52f215282d5cb9",
+    "sourceStable": true,
+    "exactOwnerBytes": true
+  },
+  "handoffPointers": {
+    "currentDperfVersion4Scope11": true,
+    "currentAccessVersion2Scope3": true,
+    "oldActionSummaryIsHistorical": true,
+    "historicalHeader": "### 历史动作摘要：native3及早期DPERF准备时点"
+  },
+  "limits": "Document mapping and manager navigation only. Actual claims were fresh-checked by manager; this is not an independent ledger, UI aggregation/freshness or performance check.",
+  "methodNote": "Initial narrow text-window heuristic did not include its section heading; direct section inspection confirmed explicit historical label and prohibition on dispatching from old text. No new endpoint request."
+}

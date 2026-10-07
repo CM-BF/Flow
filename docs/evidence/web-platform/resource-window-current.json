@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T09:29:52.761054+00:00",
-  "state": "DPERF_PHASE_CLOSED_ROOT_ACCEPTED_X01_ACTUAL_RETURNED",
-  "groupWindowOwnership": "Web entireDPERF phase closed20383/unused24617, scopedactual/visualrootaccepted; Mika explicitX01selected1cleanupreturned09:27:37 and0PGChrome/local/pendinglaunch. No next Web runtime/gate/reservation.",
+  "recordedAt": "2026-10-07T09:43:09.438611+00:00",
+  "state": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
+  "groupWindowOwnership": "X01 actual CLOSED09:27:37/independentreview09:32:01; Web DPERFreturned,0PGChrome/local/nextlaunch. Sharedwindow offered to Original SVC06fresh180work30cleanup, actualstartnotreported. No Web RecoveryPGreservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,11 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T09:29:52.761054+00:00",
-    "kind": "DPERF_PHASE_CLOSED_ROOT_ACCEPTED_X01_ACTUAL_RETURNED",
-    "source": "main-intake-handoff-checkpoint-20261007/current.json",
+    "at": "2026-10-07T09:43:09.438611+00:00",
+    "kind": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
+    "source": "svc06-window-quick-closeout-20261007/current.json",
     "singleWebCoordinator": "d01_owner",
-    "summary": "Fresh owner table corrected; Quick component main637 accepted and metadatacloseout queued; all current actual resources returned, original failures retained."
+    "summary": "SVC06 specific offer awaits actual receipt; DPERF final bc612 approved/9f54 stopped and main handoff sent via Mika; Quick metadata closeout in progress; Steer noEmit returned, no PG/browser admission."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -551,7 +551,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "consumers-resource-checkpoint-20261007/current.json",
+  "currentWindowReturn": "svc06-window-quick-closeout-20261007/current.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1278,7 +1278,7 @@
       "packet": "/private/tmp/msgquick-typeahead2",
       "bindingSha256": "c3356bde4ddf9903d2afafcc535d3d2746faf26d2ff5909fb93f18600530354f",
       "manifestSha256": "e2a4e2b1f9119033043831521f24687420b08dfae86bd7a3784315226bffb534",
-      "state": "SCOPED_COMPONENT_FULL_SIX_APPROVED_MAIN_AND_HOST_PENDING",
+      "state": "COMPONENT_MAIN_ACCEPTED_ORIGINAL_OWNER_METADATA_CLOSEOUT_IN_PROGRESS",
       "admission": null,
       "browserSpentMs": 30625,
       "totalMs": 60000,
@@ -1288,7 +1288,7 @@
       "remainingMs": 29375,
       "failure": null,
       "review": "queue-full6-closeout-20261007/quick-full-six-actual-review.json",
-      "next": "OriginalLead controlled intake of fixed four-source main-intake; MSGQUICK04 completed/phaseintegration,05pending/NOT_COMPLETED, realhost unbound.",
+      "next": "Original W01 dispatched metadata-only main637 closeout/release in original Quick tree after DPERF final. Fresh839v1 exact6/clean verified by owner. No product rerun. Release receipt not yet received.",
       "preparationReview": "quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json",
       "admissionPreparation": "recovery-quick-paired-admission-20261007/quick-handoff.json",
       "newSegment": {
@@ -1323,7 +1323,7 @@
       "waitingTable": "Originalowner structuredwaitingfacts sealed; UNKNOWN historicalstart retained",
       "typeaheadReview": "quick-typeahead-admission-20261007/quick-source-boundary-review.json",
       "actualReview": "queue-full6-closeout-20261007/quick-full-six-actual-review.json",
-      "ownerHeadState": "Root relayed final normalpush/remoteequal/clean; originalclaim839ev1 remains active pending main",
+      "ownerHeadState": "Latest received pre-closeout7e9; original owner currently editing metadata under fresh839v1. No release receipt yet.",
       "runtime": "6/6 plus2PNG actualPASS; productionApp/Send/Queue unbound.",
       "currentFunctionalChecks": {
         "selected": 6,
@@ -1331,12 +1331,16 @@
         "png": 2,
         "wholeFeature": false
       },
-      "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json"
+      "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json",
+      "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+      "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
+      "currentReadingRule": "Coordination pointers only. Detailed older packet/budget/run fields below retain historical observations; no runtime permission or current functional status may be derived from them. Read sole owner status and currentIntake.",
+      "main": "63768046daa048e955670e74c0ce2491f8ba9873"
     },
     "recovery": {
-      "ownerHead": "27f2515df4d58eafcf960bb1dbdfb248bba4fdb0",
-      "source": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
-      "state": "COMPLETE_DRAFT_THIRD_SELECTED_PASS_ROOT_ACCEPTED",
+      "ownerHead": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
+      "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+      "state": "STEER_SOURCE_ACCEPTED_LOCAL_PASS_BROWSER_NOT_RUN",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1361,7 +1365,7 @@
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
       "runtime": "ThirdcompleteDraftended/cleanedreturned; no nextgate/PGChrome.",
-      "next": "OnlyreadonlySteer/secondcenterdependencyproposal; nofuturePGChromeholder/gate/reservation.",
+      "next": "Steer source/local READY, browser0. No new gate/env/reservation; SVC current shared offer first.",
       "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/review.md",
       "actualReceipt": "consumers-resource-checkpoint-20261007/current.json",
       "sourceReview": "consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json",
@@ -1450,7 +1454,7 @@
         "nextNoDuplicateManifest": true,
         "observationMeaning": "Historical measured startup bytes from SSE preparation, not current retained size; fresh size belongs next owner admission."
       },
-      "sourceCandidateState": "2e7203eidentitytestfixonly; noactualretry yet.",
+      "sourceCandidateState": "Steer54952 focused source accepted; related noEmit actual0, browser not run. Prior completeDraft2e7203 actual third2/2 accepted, old150phaseCLOSED.",
       "historicalCreatedTurnPreparation": {
         "packet": "/private/tmp/recovery-created-turn-344f-di09jc0_",
         "manifestSha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793",
@@ -1504,7 +1508,10 @@
         "cleanupMs": 15000,
         "priorMs": 114654,
         "envResponsibility": "Originalownercreatesandexactdeletes0600fixedtestsourceenvwithoutprintingvalue"
-      }
+      },
+      "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+      "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
+      "currentReadingRule": "Coordination pointers only. Detailed older packet/budget/run fields below retain historical observations; no runtime permission or current functional status may be derived from them. Read sole owner status and currentIntake."
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1607,7 +1614,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "main-intake-handoff-checkpoint-20261007/current.json",
+  "currentWindowEvidence": "svc06-window-quick-closeout-20261007/current.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1961,26 +1968,30 @@
       "observedAt": null,
       "needsVerification": false
     },
-    "freshReceipt": "consumers-resource-checkpoint-20261007/selected-claims.json",
+    "freshReceipt": "svc06-window-quick-closeout-20261007/selected-claims.json",
     "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
-    "ownerHead": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
-    "next": "Only prepared /private/tmp/dperf-f1 for ACCESS and open visual checks with retained-only OPS helper; no gate/native acceptance/runtime.",
+    "ownerHead": "9f54e32bf3740122e30d6bdcb6e3754504585341",
+    "next": "Original Lead controlled main intake; both finite browser phases CLOSED, no new run/gate/reservation.",
     "readOnlySupply": "composed-consumer-checkpoint-20261007/dperf-source-supply-review.json",
-    "ownerTreeState": "Owner reported remote equal / clean at final receipt; claim v4 remains active, not released."
+    "ownerTreeState": "Owner reported remote equal / clean at final receipt; claim v4 remains active, not released.",
+    "reviewTarget": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "observedAt": "2026-10-07T09:43:09.438611+00:00",
+    "observationBasis": "Owner actual final receipt and root fixed composite approval, not new ledger sample",
+    "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+    "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json"
   },
   "externalCurrentAdmission": {
-    "state": "X01_ACTUAL_RETURNED_MIKA_EXPLICIT_NO_HOLDER",
-    "source": "main-intake-handoff-checkpoint-20261007/current.json",
-    "actualStart": "2026-10-07T09:27:32.875133Z",
-    "actualEndReported": "2026-10-07T09:27:37Z",
-    "actualGateFloorBytes": 1319108608,
-    "availableBytes": 23439216640,
-    "cleanup": "CONFIRMED/no unknown; ownedgroups/EOF/tar/DB/ports/exactTMP closed",
-    "actualPG": 0,
-    "actualChrome": 0,
-    "pendingLaunch": false,
-    "retainedC02OldKeepBytes": 33685504,
-    "historicalGateUnchanged": true
+    "state": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
+    "source": "svc06-window-quick-closeout-20261007/current.json",
+    "operator": "Original SVC06",
+    "workMs": 180000,
+    "cleanupMs": 30000,
+    "plannedBytes": 708837376,
+    "reportedFreshFloorBytes": 2684354560,
+    "Chrome": 0,
+    "actualStartedAt": null,
+    "originalDeliveryConfirmed": false,
+    "coordination": "Sent to Mika successfully; Original direct unsupported, canonical is available for its read/fresh admission."
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1990,11 +2001,11 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Web has no PG/Chrome reservation; next actual shared window requires current cross-lead handoff.",
-    "Recovery completeDraft source/local continues in original21; DPERF browser remains unrun.",
-    "REQ19 SVC09 and CHAT05 body consumer follow existing dependency owners, no extra take or personal action."
+    "SVC06 original unique operator has next explicit shared offer; fresh180work+30cleanup/676MiB/2.5GiBfloor/0Chrome. Actual start not reported.",
+    "Web no PG/Chrome/local holder; Steer focused source and affected noEmit accepted, browserNOT_RUN/no reservation. If SVC accepts first, wait its actual return before Steer.",
+    "DPERF fixedbc612/final9f54 READY_FOR_LEAD_MAIN_INTAKE; original W01 Quick metadata closeout/release in progress, then original Release readonly preparation; exact functional progress remains in each canonical owner status."
   ],
-  "currentIntake": "main-intake-handoff-checkpoint-20261007/current.json",
+  "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

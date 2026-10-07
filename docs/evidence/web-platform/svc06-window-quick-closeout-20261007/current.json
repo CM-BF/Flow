@@ -1,0 +1,119 @@
+{
+  "recordedAt": "2026-10-07T09:43:09.438611+00:00",
+  "authority": "d01_owner single Web resource coordinator; OriginalLead request and latest Mika explicit facts forwarded by root",
+  "state": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
+  "web": {
+    "PG": 0,
+    "Chrome": 0,
+    "local": 0,
+    "pendingLaunch": false,
+    "reservation": false,
+    "lastBrowserReturn": "2026-10-07T09:27:27.329009Z",
+    "dperfFinal": "9f54e32bf3740122e30d6bdcb6e3754504585341",
+    "dperfFinalBasis": "Owner actual final normal push/remote equal/clean/all11 stopped; fixed composite bc612 approved, main not integrated; claim v4 remains active."
+  },
+  "mika": {
+    "PG": 0,
+    "Chrome": 0,
+    "pendingLaunch": false,
+    "nextLocalBytes": 19398656,
+    "nextLocalMeaning": "Serial local only, not retained X01 shared window"
+  },
+  "x01Returned": {
+    "actualClosedReported": "2026-10-07T09:27:37Z",
+    "rootReceivedIndependentReviewAt": "2026-10-07T09:32:01Z",
+    "reviewDecision": "APPROVED0P1P2",
+    "selected": "1/1/tool0; not whole feature",
+    "cleanup": "69023/69054 groups absent/EOF,tar70915close0,markedDBOID1272635 zeroConn normalDROP absence,ports50430/50438closed,exactTMPdevino removedENOENT,CONFIRMED/unknownfalse",
+    "oldGateUnchanged": true
+  },
+  "svc06Offer": {
+    "owner": "Original SVC06 unique operator; no new Web owner",
+    "backend": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+    "artifact": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "workMs": 180000,
+    "cleanupMs": 30000,
+    "plannedBytes": 708837376,
+    "reportedFreshFloorBytes": 2684354560,
+    "Chrome": 0,
+    "actualStartedAt": null,
+    "actualState": "Not reported; offered for original owner fresh inputs/resources and actual gate, no claim that run started.",
+    "combination": "Original owner retains declared floor, all still-valid concurrent local/retained items and one shared cleanup reserve; manager does not mint or retroactively edit its gate.",
+    "webRecovery": "Steer source only; no PG reservation or launch before actual SVC return if it accepts first."
+  },
+  "delivery": {
+    "mikaThread": "01a10f3f-4ef0-7ca2-8e66-f1947fa4b295",
+    "mikaSend": "Tool confirmed success",
+    "originalDirect": "Known direct app-server v2 restriction; not retried, not an approval rejection",
+    "originalDeliveryConfirmed": false,
+    "canonicalFallback": "Original Lead can read resource-window-current.json and sole Web status. Do not wait indefinitely for blocked private acknowledgment."
+  },
+  "quick": {
+    "owner": "w01_owner",
+    "main": "63768046daa048e955670e74c0ce2491f8ba9873",
+    "next": "Original W01 dispatched metadata-only main637 closeout/release in original Quick tree after DPERF final. Fresh839v1 exact6/clean verified by owner. No product rerun. Release receipt not yet received.",
+    "readOnlyIntake": "../main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json",
+    "state": "ORIGINAL_OWNER_METADATA_CLOSEOUT_IN_PROGRESS_NOT_RELEASED"
+  },
+  "recovery": {
+    "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+    "metadata": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
+    "ownerReportedRemoteEqualClean": true,
+    "claim": "6ffv4 original21",
+    "packet": "/private/tmp/recovery-steering-source-a9a_3bcn/packet.json",
+    "packetSha256": "f0c9e3ed32895a0273caeb051c4be48a2af97447b7f315ace69784554a09f0b9",
+    "state": "FOCUSED_SOURCE_ACCEPTED_LOCAL_PASS_BROWSER_NOT_RUN",
+    "closedPreviousSpentMs": 126447,
+    "closedPreviousUnusedMs": 23553,
+    "newPreparedPhaseMs": 60000,
+    "cleanupMs": 15000,
+    "phaseSpentMs": 0,
+    "scope": "Original two tests and own records;19source/17unchanged/11prior selectors independently verified by root; no new claim.",
+    "resources": "Prepared1DB1Chrome64MiB scratch9MiB retained/new60000ms includes15000cleanup. Browser spent0; no gate/env/reservation. Wait SVC actual return if it accepts first.",
+    "sourceReview": "recovery-steering-source-review.json",
+    "localActual": "recovery-steering-local-manifest.json",
+    "localBudget": {
+      "totalMs": 20000,
+      "spentMs": 7682,
+      "remainingMs": 12318,
+      "startedAt": "2026-10-07T09:39:09.002395Z",
+      "endedAt": "2026-10-07T09:39:16.684497Z",
+      "exitCode": 0,
+      "cleanup": "Runner93663 ESRCH; Node93729 process/groupESRCH; archived own TMP removed; outer dualEOF, tsc regular file closed0B not pipeEOF.",
+      "sourceUnchanged": true
+    },
+    "ownerStopped": true,
+    "bindingDelta": "/private/tmp/recovery-steering-typed-35_vapn9/binding-delta.json",
+    "bindingDeltaSha256": "16a377bf68e3defff3e331fcf041875c583540f75a68f90dbe3995d8afedd6fe"
+  },
+  "errors": [],
+  "dperfComposite": {
+    "target": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "decision": "APPROVED_SCOPED_COMPOSITE_NOT_MAIN_OR_DEPLOYED",
+    "review": "dperf-final-composite-review.json",
+    "implementationClosure": {
+      "productSources": 16,
+      "explicitArchivedNonmetadataPaths": 14,
+      "totalExactPaths": 30,
+      "archiveIndexItems": 78,
+      "actualOriginalItems": 75,
+      "historicalParentBudgetSnapshots": 3
+    },
+    "claimScopeMeaning": "Active b554v4 remains 11 declared scopes; exact30 nonmetadata closure is not a new30-literal write claim.",
+    "ownerNext": "Final metadata sealed and source stopped; only Original Lead controlled main intake remains. No further product/runtime retest merely for md/json SHA.",
+    "metadataFinal": "9f54e32bf3740122e30d6bdcb6e3754504585341",
+    "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json",
+    "route": {
+      "mikaSend": "Tool confirmed success this batch",
+      "originalDeliveryConfirmed": false,
+      "directRouteRetried": false
+    }
+  },
+  "dashboardCheck": "dashboard-management-current-check.json",
+  "releaseNext": {
+    "owner": "Original w01_owner, original RELEASE01 identity confirmed from canonical; no new writer",
+    "state": "QUEUED_READ_ONLY_AFTER_QUICK_CLOSEOUT",
+    "inputs": "../main-intake-handoff-checkpoint-20261007/current.json",
+    "restriction": "Old release claim grants no new write authority. Only immutable three-App descriptors/assets and b2b/c2c fixed-context method preparation; no build/PG/Chrome/proxy/personal service."
+  }
+}

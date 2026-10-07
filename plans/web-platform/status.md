@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:29:52.761054+00:00；Quick组件main已接收，DPERF后继组合与视觉限定独审已闭合、资源全归还 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:43:09.438611+00:00；看板最终接收入口已交Mika，Quick原owner收口中；Steer相关类型检查已归还，SVC06尚无实际开始回执 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 快速消息设置组件已入主线，真实消息入口尚未接线。完整草稿的选定恢复旅程已有通过证据；看板组合、时间正文与窄屏补证已获限定独审，旧失败保留。 |
-| 下一可用交付 | 原owner收口看板本轮证据并完成Quick主线记录与释放；真实App接线与三份保留页面的固定产物兼容继续按原后继准备。恢复功能先明确Steer与第二中心边界。 |
+| 下一可用交付 | 看板固定成果待原Lead接主线；Quick原owner收口主线记录并释放。Steer先等共享窗口实际交回，再验选定恢复行为；三份保留页面兼容由原Release owner准备。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：DPERF整个浏览器段及外部X01选定运行均已明确清理归还，本组无PG/Chrome/local或预约；Mika最新也明确无holder。后续启动仍需fresh实际边界。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：X01、DPERF及Steer局部检查均已归还，本组无PG/Chrome/local或预约。下一共享窗口交原SVC06自行fresh准入，未报实际开始；Steer没有PG/browser准入。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
