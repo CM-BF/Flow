@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:14:27 UTC；原失败残留已按独审入口单次正常收尾，收尾限定接受，真实host仍open |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:25:09 UTC；局部隔离接缝已审；新root真实host入口待审/未执行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
-| 工作树dirty状态 | e6ff入口及产物保持固定；本次仅实际结果与状态metadata |
+| 工作树dirty状态 | 原e6ff与e5产物固定；本轮仅own evidence后继入口/状态，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
@@ -20,11 +20,11 @@
 | 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物已构建；首次宿主验证的残留中心与专库已正常收尾，原失败完整保留。 |
-| 下一可用交付 | 修正验证入口的身份监督位置，再完成真实三角色宿主与开发目录不可读验收。 |
-| 当前阻塞 | ACTIVE: 原宿主验证未通过，需最小入口修正；本次残留收尾已完成并获限定接受；真实host后继待最小入口修正。 |
+| 当前产出 | 固定产物已构建，首宿主失败资源已收尾；验证入口已分离可信身份监督和受限服务，并通过局部检查。 |
+| 下一可用交付 | 在独立自有安装根验证三个真实宿主，确认服务运行不依赖开发目录。 |
+| 当前阻塞 | ACTIVE: 新真实宿主入口待独立审查和共享运行窗口；本次未执行复制或PG，原失败保持。 |
 | 需用户决定 | NONE |
-| Review | 原构建/入口准备批准保持；cleanup f46a经Lead全文审并授权一次，实际收尾结果已获Lead限定接受并归还窗口，不扩大为宿主通过 |
+| Review | a32c局部接缝获APPROVED_LOCAL_EXPERIMENT_SEAM；原收尾已接受，新root真实entry待审，三角色未验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -141,3 +141,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:20:48 UTC：隔离接缝局部完成待审
 
 [新3例/原件](../../docs/evidence/svc06/artifact-host-followup/local-manifest.json)一次3/3、374ms、0PG；可信原身份监督与真实拒读子孙分离，有限私有诊断。原host失败和清理结果保持；本轮源码待独审，后继新root/真实三角色仍NOT_RUN。local段已清理归还。
+
+## 2026-10-07 04:25:09 UTC：新独立根真实宿主入口准备
+
+[入口/边界](../../docs/evidence/svc06/artifact-host-followup/README.md)，局部接缝已[独审](../../docs/evidence/svc06/artifact-host-followup/local-independent-review.json)。新root+新DB，精确e5同卷CoW并逐manifest验；原root/config/state/raw全保留。work120s+cleanup30s、fresh2.5GiB/live1GiB、私有64MiB/raw2MiB不降，新增物理规划578MiB不假定clone免费；现复制/PG/三角色NOT_RUN，准备固定供独审。

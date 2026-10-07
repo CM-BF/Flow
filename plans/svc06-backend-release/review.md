@@ -1,3 +1,7 @@
+## 2026-10-07 04:25:09 UTC 局部实验接缝限定批准
+
+Execution Lead 唯一独审 APPROVED_LOCAL_EXPERIMENT_SEAM，target a32c8cb84c70473a3ea8f044d817ab5a5859b5e2；5源/3raw/4运行输入、3/3/374ms与原helper/三目录清理核实，0重跑。[原样回执](../../docs/evidence/svc06/artifact-host-followup/local-independent-review.json)。新root真实entry仅source准备待审，不能当默认部署或三role已验。
+
 ## 2026-10-07 04:14:53 UTC 原失败残留收尾限定接受
 
 Execution Lead 已直接核 outer/private result 通过并归还 PG 窗口；[固定结果绑定](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result-manifest.json)。仅原残留正常清理，原 host FAIL 与后继未验边界保持，无新probe。
