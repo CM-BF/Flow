@@ -1,0 +1,180 @@
+{
+  "kind": "SVC09A_FIXED_ARTIFACT_RESULT_MANIFEST",
+  "at": "2026-10-07T15:16:20.405400Z",
+  "preparationTarget": "b3eece742fd8413ace05e5bc8dce4176da5cc025",
+  "resultTarget": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+  "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "manifestDigest": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f"
+  },
+  "inheritedInputReferences": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/preparation.json",
+      "fixedRef": "b3eece742fd8413ace05e5bc8dce4176da5cc025",
+      "bytes": 6750,
+      "sha256": "610653704a8e3c36d01b85a282f94285b3287d80d5886720c1ed3ae5766c79e1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/inputs.json",
+      "fixedRef": "b3eece742fd8413ace05e5bc8dce4176da5cc025",
+      "bytes": 3898,
+      "sha256": "cf79be5795f3f8c7905e8bb45719a7fc704899017cd346876907535fe5f08623"
+    }
+  ],
+  "inheritance": "Preparation and its runtime/source/SQL pins are reused without copying their unchanged payload. actual-admission fresh checks plus original producer verification record exact inputs. No current moving-main substitution.",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 1486,
+      "sha256": "af2a361027598330c73fa4151bb00f3de812b2c4e54757dbe258444e63162c6f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-admission.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 12353,
+      "sha256": "34173cc66280459012bb363c345ea8ca1cf3bd49d00bd2a090bdc1a62ad6fcb2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/build-record.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 806,
+      "sha256": "e53d18d74fb42f5ef7b42be32c8edd8fc616907ecbdd1f1aa24f799119488254"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/imports.stderr",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/imports.stdout",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 2355,
+      "sha256": "565ee118ab799548507689bcedb580eeb38e87551a2cd5e98f0c942b9dad9b69"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/owned-root.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 157,
+      "sha256": "f4a37c91a8a7295f0af6f9807c04e0142f12672469775cd0ef0a51501bb47f12"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/reservation.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 187,
+      "sha256": "b33b9989c481643818d076571d3d33eb83765428225c53aeb4a64d42233080a9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/result-descriptor.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 275,
+      "sha256": "854bb00886113f65c0ae07567411f5f8b8ab491a33018ed1b99cce4ceb8db2f5"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/actual-first/result.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 5069,
+      "sha256": "a3eab034aab062f5590484634601e8a4d592f6bc95efc42517a5332f508d310c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/outer-report.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 5233,
+      "sha256": "281007c47efb1534cc1641e669749c556a4ed14a9fefece4fc6092834e66dd38"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/outer-tool-receipt.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 646,
+      "sha256": "8e7377fdce6672189f524786af00ec4fc09b88b20f2e191922127f503809632f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/result-analysis.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 3490,
+      "sha256": "19f2c676a4094c1009e419b5d8c6d5df696e008a4273a30edcae4b41a016f5e9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/result-status-parse.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 581,
+      "sha256": "4a2155caeef2cc4e1116be3374c0a140949577f896685bc7f9882829f64922fc"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/build/window-return.json",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 681,
+      "sha256": "c7bbe5c1c8eaec83465ac1058973d4a064b9c009e273a0fcee7cd2db273abf85"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/review.md",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 2920,
+      "sha256": "b09a3b863a9c92d27ccbe58b2f77f758a436561335a0ba28ee6c355fa262effe"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/status.md",
+      "fixedRef": "b5f967240286eed405e9ab6ce3700748e5f1150e",
+      "bytes": 7997,
+      "sha256": "fcfec0b766361a881c0d3e1181438ade01ad4b8459f72e7915eb6d530bc97402"
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/manifest.json",
+      "bytes": 3196958,
+      "sha256": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+      "dev": 16777234,
+      "ino": 124267425,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/owner.json",
+      "bytes": 272,
+      "sha256": "a4d18620a39442aceded22c2d39c25ae42f6d16e90e202e8114761f8550c1592",
+      "dev": 16777234,
+      "ino": 124240701,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/stage-07351e68-1510-4eea-9b9c-01b36ce1a398.json",
+      "bytes": 806,
+      "sha256": "e53d18d74fb42f5ef7b42be32c8edd8fc616907ecbdd1f1aa24f799119488254",
+      "dev": 16777234,
+      "ino": 124267440,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "rootIdentity": {
+    "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw",
+    "dev": 16777234,
+    "ino": 124240699,
+    "uid": 501,
+    "mode": "0o700"
+  },
+  "raw": {
+    "files": 8,
+    "archiveBytes": 14082,
+    "includingOriginalStageBytes": 14888,
+    "outerCapturedBytes": 4587,
+    "producerBeforeFinalResultBytes": 4586
+  },
+  "scope": "Full fixed artifact verification, exact81source/33SQL, artifact-internal imports and read-only selection only",
+  "retention": "KEEP artifact/root and original stage; no deletion requested or attempted",
+  "review": "PENDING_UNIQUE_RESULT_REVIEW",
+  "untrackedNextPreparation": "host-integration/host-fixture.mjs is excluded from fixed result and review",
+  "host": "NOT_RUN",
+  "PG": 0,
+  "provider": 0,
+  "personal": 0
+}
