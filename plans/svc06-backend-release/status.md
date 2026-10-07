@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:53:26 UTC；main657105接收r2限定结果，原个人更新候选已对齐固定7d1/6c |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:59:21 UTC；main657105接收r2限定结果，候选补固定产物首次维护入口资格限制 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,7 +13,7 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2结果92a207/a011已审并main657105；本段仅既有个人候选/status文档对齐 |
+| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2结果92a207/a011已审并main657105；文档基线a160，仅既有candidate/status补入口身份核对 |
 | 工作树dirty状态 | 产品/入口/raw停写；仅既有candidate与唯一status，封定后候App接口材料 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | planning |
@@ -297,3 +297,7 @@ Lead于10:49:17.625668Z完成[原件review](../../docs/evidence/svc06/diagnostic
 ## 2026-10-07 10:53:26 UTC — 个人受控更新候选对齐（仅文档）
 
 本准备段实际编辑起点`2026-10-07T10:53:26.485603+00:00`，来源本owner工具执行记录；不替代任务总开工UNKNOWN。main657105回执已确认r2结果接收。[既有候选](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)现固定7d1/source6c，明确历史af51/v18+d629v3/c7b参照、三真实App format2新context为执行前缺件、原迁入/锁/legacy先新host、同op bootstrap/drain→hold→refresh三role→不变量checkpoint→显式resume、第四App独立CAS。首次实际maintenanceRuntime与Webhost资格均在停服务前核；不把新CLI或synthetic报告当组合已验。0个人读写/PG/Chrome/build/provider/query；仅链接/固定源码语义核对，无新wrapper或manifest全集。等待App起点仍10:44:35.378972Z，责任Webowner/Lead接口；缺fresh个人基线不宣称ready。
+
+## 2026-10-07 10:59:21 UTC — 首次维护入口只读资格核对
+
+固定6c的maintainPreview可从7d1产物载入，但在读取bootstrap backendId之前，load/InstallationSource要求该模块根已是实际后台或维护operation选择；仅迁入或Web-only采用不满足。r2自有journey初始化就选7d1后台，故其通过不能证明个人首次bootstrap可跳过root入口。进一步核现root clean70644：30静态相对模块+5SQL/解析输入共35项214145B与6c逐字同，pg/tsx/zod的7入口/metadata同已封7d1库存；候选优先直接调用root公开maintainPreview bootstrap，避免CLI旧runtime转派，不因全main SHA不同切checkout。首次消费者仍未运行、完整运行依赖须fresh绑定；合法operation持久7d1后refresh/resume可走固定产物且不查开发Git。不改state/config凑资格。源码与原raw未变，无import/测试/PG/个人读取/新wrapper；本次仅2文档待窄审，App等待与任务总开工UNKNOWN保持。

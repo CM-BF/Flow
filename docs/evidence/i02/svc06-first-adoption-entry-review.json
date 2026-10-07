@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T11:04:28.261877+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "target": "3b68f31aef36481620ff1d43d37d9d95d2d7714d",
+  "base": "a160e307994405918eefbad41edb111a6682e8db",
+  "verdict": "APPROVED_DOCS_ONLY",
+  "findings": [],
+  "bindings": [
+    {
+      "originCommit": "3b68f31aef36481620ff1d43d37d9d95d2d7714d",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "bytes": 14984,
+      "sha256": "f24c3e7c1479b4e17a7d392e58751f42a8a00d9cc1c1b5487474a30db9a961b7"
+    },
+    {
+      "originCommit": "3b68f31aef36481620ff1d43d37d9d95d2d7714d",
+      "path": "plans/svc06-backend-release/status.md",
+      "bytes": 40609,
+      "sha256": "f8b74d9871752e4517b503f3f45e71aa9e3367f59b659547e6a45de1054988f6"
+    }
+  ],
+  "checks": [
+    "Complete 2-file delta read; no source/raw changes.",
+    "Fixed maintainPreview/load/assertInstallationSource/bootstrap/refresh/resume ordering and r2 preselected backend checked.",
+    "35 static relative source/SQL/config inputs: 214145 bytes; fixed6c,current main Git and root working files all identical.",
+    "Only first-entry qualification; public root function retains installation ownership and original locks/FSM. No runtime import or personal operation performed."
+  ],
+  "limitations": [
+    "First legacy-to-artifact bootstrap direct consumer remains NOT_RUN.",
+    "Full transitive runtime/Node fresh binding and three actual App compatibility reports remain required.",
+    "No build/PG/provider repeats; no rewrite of previous failures."
+  ]
+}
