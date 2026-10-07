@@ -13,11 +13,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 产品已固定，结果与review输入封存后clean |
+| 工作树dirty状态 | 准备packet3703ee1d1已固定push；当前仅派发事实metadata，提交后STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED ea3c4599b00505c950cc34ada8a350082fe76747：局部12 distinct分轮通过；types0绑定334，最后scope负例1/1绑定本source；SQL/PG NOT_RUN |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验且独审通过，待真实PG） |
+| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验且独审通过，PG准备packet3703ee1d1待审） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
@@ -129,3 +129,5 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 ## AV03 PG准备封存
 
 2026-10-07T16:53:29.000Z–17:08:29.000Z新段；source411478b（测试五例、自己的fixture），14个既审产品源未改。局部types首2→0、collect精确5（0hooks/PG），共3child5908ms/raw2416B，全ownedabsent/mergedEOF/TMP同identity删除。检查绑定161c66470；后续count-query清理保证和case期限门禁只静态核，未冒重新验证。ordinary已RETURN并交S01；现在0actual/0待launch。固定manifest/准备审查入口见[av03-pg/review-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/review-ready.json)。PG仍NOT_OPEN/NOT_RUN；准备未获独审批准，不称INTEGRATION_READY。
+
+准备分支交付 2026-10-07T17:07:22.400Z：packet3703ee1d1f7a00293e3387791a7818fa0b461b08，manifestc3d3b3d57dd6be4ecf81e8e67ffbe9bfedbfab308e8f9969a36515c17f4d8ed8。281固定输入/1511284B，191external/16links/34SQL；执行闭包259mirror/1219582B。一次db followup被threadlimit拒绝，独审PENDING，不重试；co-lead已接入口。当前STOP/保留a67v4，0ordinary/PG/待launch；未创建actual admission或RUN。
