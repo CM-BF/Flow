@@ -70,7 +70,10 @@ else:
     argv = [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'pg-delivery-chunk-vitest.config.mjs'), '--configLoader', 'native', '-t', pattern]
 run['argv'] = argv
 path.write_text(json.dumps(record, indent=2) + '\n')
-report = owned.supervise(owned.Launch(tuple(argv), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(24, .5, 1, 32768))
+work = min(24, end - time.monotonic() - 5, 90 - sum(r.get('elapsedMs', 0) for r in record['runs']) / 1000 - 5)
+if work <= 0:
+    raise TimeoutError('no_work_margin_keep_tmp')
+report = owned.supervise(owned.Launch(tuple(argv), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(work, .5, 1, 32768))
 run['process'] = {k: v for k, v in dataclasses.asdict(report).items() if k not in ('stdout', 'stderr')}
 fd = os.open(raw_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
 with os.fdopen(fd, 'wb') as handle:
