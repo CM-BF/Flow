@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T22:38:30Z",
+  "reviewer": "db_transaction_owner",
+  "relay": "Mika/root; direct reviewer send hit thread limit once",
+  "decision": "SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "packet": "98f3ed267102c25d98bb735a46a58306ee70ed64",
+  "manifest": "pg-review-ready.json",
+  "manifestSha256": "510a697124cb152e1dc25c575cb587c63587d2cd28b3bccb1428187e7e2f7ebc",
+  "verified": {
+    "bindings": 18,
+    "bindingBytes": 266230,
+    "sourceFiles": 13,
+    "runtimeInputs": 512,
+    "runtimeBytes": 3605431,
+    "aliases": 20,
+    "localTypesExit": 0,
+    "collected": 8,
+    "executed": 0,
+    "supervisedMilliseconds": 2328,
+    "rawBytes": 1817,
+    "scratchBytes": 81,
+    "fullReturn": "2026-10-07T22:25:42.918271Z"
+  },
+  "scope": "Independent old SQL oracle; 199 single SELECT/EXPLAIN; zero/duplicate; 48000 plus crossing whole 1MiB; UTF16/four tuple/first error; rollback and two borrowers FOR UPDATE; reduced marked fixture admin1+aux2; external permit/identity cleanup; source and local evidence only",
+  "conditions": [
+    "PG CLOSED/NOT_RUN; new independent heavy grant required",
+    "fresh exact claim/head/clean/full resource sum/free/bindings/window",
+    "one bounded external admin headroom snapshot >=19 with pool closed before actual",
+    "DB sample128MiB plus WAL planning128MiB are separate reserves; neither proves peak",
+    "Known external entries/package bindings are not complete transitive JS/dylib attestation",
+    "No actual SQL/EXPLAIN/lock time/end-to-end execution/performance acceptance"
+  ],
+  "reviewerExecution": "0 engineering/import/PG/HTTP/TMP/KEEP access or writes"
+}

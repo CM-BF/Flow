@@ -41,3 +41,7 @@
 沿已读本地find-skills/codebase-design/clean-code与固定bdacd76；复用Q01已审生命周期，不复制server/HTTP/boss或新资源框架。把seed、旧顺序oracle、借用client查询观察、fixture所有权分开；生产source不改。readonly query proxy只包装本helper实际Promise query，非Pool.connect适配器；真实transaction callback/release仍原实现。合法1MiB正文界与损坏DB界分开，EXPLAIN不是速度收益。新增PG八例尚未执行。
 
 22:27封存前复核：关闭/首错分离逻辑保留，移除无真实owner的boss/server/HTTP；池由fixture单独拥有，caller只监督自有进程和TMP。零依赖/duplicate/Unicode/误绑定/首错/锁等待均明确测试断言，旧oracle源与产品SQL不相同。旧16pure不重复；新types0/collect8只作局部准备证据。原三run结构不可变核符。
+
+## 22:40 metadata安全点
+
+沿已读find-skills/codebase-design/固定sickn33 bdacd76 clean-code。归档真正独审，明确候选Interface的3连接+16管理余量与DB128/WAL128分别规划，避免把样本当峰值或把外部package绑定当完整执行闭包。复用唯一runtime-inputs、closed许可、原raw，不复制新manifest或运行任何工程check。本段只有metadata，原程序字节不改；main/PG验收仍开放。
