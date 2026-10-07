@@ -100,6 +100,14 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
   const checks = [], screenshots = [], errors = [];
   const onError = error => errors.push(error.message);
   page.on('pageerror', onError);
+  const closeDialog = async () => {
+    await page.evaluate(() => {
+      window.fixtureTimingClose = false;
+      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureTimingClose = true; }, { once: true });
+    });
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => window.fixtureTimingClose === true);
+  };
   const row = id => page.locator('#active-work > .task-row').filter({ has: page.locator('.task-code', { hasText: new RegExp(`^${id}$`) }) });
   const elapsed = () => row('T01').locator('.task-elapsed');
   const refresh = async () => {
@@ -163,7 +171,7 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await page.waitForFunction(() => document.querySelector('#sync-state').textContent.startsWith('已同步')); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
     assert.match(await region.innerText(), /2026-10-07T03:00:00.000Z/);
-    await page.keyboard.press('Escape');
+    await closeDialog();
     assert.match(await elapsed().innerText(), /3小时/);
     await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
     await region.waitFor();
@@ -171,7 +179,7 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     checks.push('New snapshot updates cards; an open detail retains its original observation until explicitly reopened');
 
     for (const theme of ['light', 'dark']) {
-      await page.keyboard.press('Escape');
+      await closeDialog();
       await page.locator('#theme').selectOption(theme);
       await page.setViewportSize({ width: 390, height: 844 });
       await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).focus();
