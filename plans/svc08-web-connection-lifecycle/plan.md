@@ -12,7 +12,7 @@
 
 一个本队局部段：单轮≤10s/raw64KiB/tmp1MiB/≤6请求；如有因果修复可累计≤30s/raw192KiB/tmp3MiB/≤18请求。fresh≥1GiB+4MiB，保现有合计资源门槛。只自有loopback/组，0PG/Chrome/provider/安装/build。复用OPS14，不复制监督状态机；失败与cleanup分别保存，unknown KEEP。
 
-- [ ] SVC08-05 固定Web-only宿主替换候选及retained3明确退役/回退设计；仅新docs claim。
-- [ ] SVC08-06 后继经精确产品交权/独审后实现受管替换，并另按个人运行边界验收；本次未实施/未授权执行。
+- [x] SVC08-05 固定Web-only宿主替换候选及retained3明确退役/回退设计；仅新docs claim。
+- [ ] SVC08-06 在已交回四产品路径实现受管替换并做自有局部故障验证；实际个人部署须另固定操作边界，本次不执行。
 
 后继准备于2026-10-07T03:29:12.051Z实际开始；新claim只含本plan目录与自有evidence，原产品claim已released。SVC06仍持preview/CLI范围，不双写。

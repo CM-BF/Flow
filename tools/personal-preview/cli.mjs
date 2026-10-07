@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { baseServiceEnvironment } from './environment.mjs';
-import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration } from './preview.mjs';
+import { startPreview, statusPreview, stopPreview, runService, bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb, preparePreviewRelease, importPreviewCompatibility, readPreviewJson, preparePreviewBackend, loadPreviewConfiguration, replacePreviewWebHost } from './preview.mjs';
 import { maintenanceRuntime } from './backend-release/host.mjs';
 import { join } from 'node:path';
 try {
@@ -23,7 +23,12 @@ try {
     let result;
     if (subcommand === 'prepare' && Object.keys(options).sort().join() === '--directory,--release-id,--target') result = await preparePreviewRelease({ directory: privateDirectory, target: options['--target'], releaseId: options['--release-id'] });
     else if (subcommand === 'import-compatibility' && Object.keys(options).sort().join() === '--directory,--report-directory') result = await importPreviewCompatibility({ directory: privateDirectory, reportDirectory: options['--report-directory'] });
-    else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
+    else if (subcommand === 'replace-host' && Object.keys(options).sort().join() === '--directory,--request') {
+      const input = await readPreviewJson(options['--request']);
+      if (Object.hasOwn(input, 'directory')) throw new Error('USAGE');
+      result = await replacePreviewWebHost({ ...input, directory: privateDirectory });
+      if (result.outcome !== 'ready') process.exitCode = 1;
+    } else if (['bootstrap', 'publish', 'rollback'].includes(subcommand) && Object.keys(options).sort().join() === '--directory,--request') {
       const input = await readPreviewJson(options['--request']);
       const allowed = ['expectedVersion', 'expectedBackendHead', 'compatibilityId', ...(subcommand === 'bootstrap' ? [] : ['artifact'])];
       if (Object.keys(input).sort().join() !== allowed.sort().join()) throw new Error('USAGE');

@@ -12,9 +12,9 @@
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 连接释放修复已交付主线；Web 单独替换与旧页面资源退役的文档候选已备妥，个人服务保持原运行版本。 |
-| 下一可用交付 | 独立核对部署候选；之后协调受管入口的原负责人，当前不执行切换或退役。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 部署候选已获限定审查，正在实现只替换 Web 宿主的受管入口；个人服务仍保持原运行版本。 |
+| 下一可用交付 | 完成持久操作记录、失败不重复启动与旧后台兼容的局部验证，交一次固定审查。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
@@ -22,10 +22,10 @@
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本次docs续接2f6ea9c8117c8b705548bcd1a216a5cf640fac44 |
 | Head | ad77c8aa21d88540a890b22562e8bbb2ce56e541；当前docs候选，其后只固定审查metadata |
 | 工作树dirty状态 | 仅自身候选与metadata；本次固定交付后核clean |
-| 工作分支状态 | review；部署候选文档待独审，已审产品停写 |
+| 工作分支状态 | in-progress；文档候选已审，受管replace-host小片实施 |
 | 实现目标 | ad77c8aa21d88540a890b22562e8bbb2ce56e541 |
 | 实现范围 | docs/evidence/svc08/deployment-candidate/candidate.md, docs/evidence/svc08/deployment-candidate/retained-three.md, docs/evidence/svc08/deployment-candidate/inputs.json |
-| Claim | 原产品f578d8b1-4be5-4d89-9889-9fbd17fe0cc4 v2 released；新文档ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v1 active，仅plans/svc08-web-connection-lifecycle与docs/evidence/svc08 |
+| Claim | 原产品f578d8b1-4be5-4d89-9889-9fbd17fe0cc4 v2 released；新ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v2 active；原docs加preview.mjs/preview.test.mjs/cli.mjs/README.md四literal |
 | Review | NOT_STARTED 当前部署文档候选；原086产品APPROVED_LIMITED_PROXY_TERMINATION及main事实保持，[原样回执](../../docs/evidence/svc08/independent-review.json) |
 | 检查状态 | NOT_RUN 当前部署/退役候选仅静态核对；原086产品1不同test分轮0/1→1/1、8请求/1449ms/双组absent已交付，未重跑；本次0PG/Chrome/provider/服务动作 |
 | 已集成 main 状态 | INTEGRATED 15847da4b4aa00d42bd3e25b9bf88ea046bb19a8；26本片路径逐字一致，[main回执](../../docs/evidence/svc08/main-receipt.json) |
@@ -38,8 +38,8 @@
 | SVC08-02 | completed | native_center_owner | [分轮运行](../../docs/evidence/svc08/run.json)原失败/收尾保持 |
 | SVC08-03 | completed | native_center_owner | 086ba13d；修后1/1，[原证据及边界](../../docs/evidence/svc08/README.md) |
 | SVC08-04 | completed | native_center_owner | 独立批准+固定main接收；原测试未重跑 |
-| SVC08-05 | in-progress | native_center_owner | [部署候选](../../docs/evidence/svc08/deployment-candidate/candidate.md) / [retained3](../../docs/evidence/svc08/deployment-candidate/retained-three.md)，已固定待审，0执行 |
-| SVC08-06 | pending | native_center_owner | 受管Web替换接缝/实际部署仍需独立scope与固定候选后运行边界；当前不实施 |
+| SVC08-05 | completed | native_center_owner | [部署候选](../../docs/evidence/svc08/deployment-candidate/candidate.md) / [retained3](../../docs/evidence/svc08/deployment-candidate/retained-three.md)，已固定待审，0执行 |
+| SVC08-06 | in-progress | native_center_owner | 受管Web替换接缝/实际部署仍需独立scope与固定候选后运行边界；当前不实施 |
 
 ## 等待记录
 
@@ -54,3 +54,5 @@
 ## 后继准备范围
 
 本次只在新docs claim准备，开始03:29:12.051Z；历史修复片段实际完成03:17:28.292Z与main158保持。当前部署文档等待独审，运行和退役均NOT_RUN；没有操作个人端口或读取私密配置。部署source组合尚NOT_CREATED，不能把文档target当可执行release。
+
+2026-10-07T03:40:29.530Z：原SVC06已停写移出四路径，fresh amend v2成功后实施；两只读依赖受控输入26d1be6c，无领域编辑。当前局部0PG验证准备，实际个人部署仍NOT_RUN。

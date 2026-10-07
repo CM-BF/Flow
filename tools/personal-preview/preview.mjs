@@ -1,4 +1,5 @@
-import { mkdir, lstat, realpath, readFile, writeFile, rename, rm } from 'node:fs/promises';
+import { mkdir, lstat, realpath, readFile, writeFile, rename, rm, open, readdir } from 'node:fs/promises';
+import { constants } from 'node:fs';
 import { isAbsolute, join, resolve, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes, randomUUID, createHash } from 'node:crypto';
@@ -321,18 +322,175 @@ async function assertReleaseCompatibility(backendHead, artifacts, directory) {
     await findWebCompatibility({ directory, artifact, backendHead });
   }
 }
-async function assertWebBackend(config, state, expectedBackendHead) {
+async function assertWebBackend(config, state, expectedBackendHead, processes = webHostProcesses) {
   if (!/^[a-f0-9]{40}$/.test(expectedBackendHead ?? '') || state.source?.dirty !== false || state.source.head !== expectedBackendHead) fail('WEB_BACKEND_SOURCE_MISMATCH');
-  for (const role of ['center', 'runner']) if (await inspectOwnedProcess(state.processes[role]) !== 'running') fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
-  if (!await ownsListener(state.processes.center, config.centerPort)) fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
+  for (const role of ['center', 'runner']) if (await processes.inspect(state.processes[role]) !== 'running') fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
+  if (!await processes.ownsListener(state.processes.center, config.centerPort)) fail('WEB_BACKEND_IDENTITY_UNCONFIRMED');
 }
-async function launchWeb(config, state, artifact) {
+async function launchWeb(config, state, artifact, processes = webHostProcesses, saveState = save) {
   const runtime = await backendRuntime(config, state.backendArtifact);
-  const record = await spawnOwnedProcess({ args: [runtime.entry, 'internal-service', config.directory, 'web'], cwd: runtime.root, env: baseServiceEnvironment('web'),
-    onSpawn: async pending => { state.processes.web = pending; await save(join(config.directory, 'state.json'), state); } });
-  state.processes.web = record; await save(join(config.directory, 'state.json'), state);
-  await waitReady(config, 'web', record, artifact);
+  const record = await processes.spawn({ args: [runtime.entry, 'internal-service', config.directory, 'web'], cwd: runtime.root, env: baseServiceEnvironment('web'),
+    onSpawn: async pending => { state.processes.web = pending; await saveState(join(config.directory, 'state.json'), state); } });
+  state.processes.web = record; await saveState(join(config.directory, 'state.json'), state);
+  await processes.ready(config, 'web', record, artifact);
 }
+const webHostProcesses = Object.freeze({ inspect: inspectOwnedProcess, ownsListener, stop: stopOwnedProcess, spawn: spawnOwnedProcess, ready: waitReady });
+const webHostFiles = Object.freeze(['cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'environment.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
+const sha256 = value => createHash('sha256').update(value).digest('hex');
+async function boundedHostBytes(path, maximum = 65_536) {
+  const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
+  try {
+    const before = await file.stat();
+    if (!before.isFile() || before.size > maximum) fail('WEB_HOST_FILE_INVALID');
+    const bytes = Buffer.alloc(maximum + 1); let length = 0;
+    while (length < bytes.length) {
+      const read = await file.read(bytes, length, bytes.length - length, null);
+      if (!read.bytesRead) break;
+      length += read.bytesRead;
+    }
+    const after = await file.stat();
+    if (length > maximum || length !== before.size || before.ino !== after.ino || before.dev !== after.dev
+      || before.size !== after.size || before.mtimeMs !== after.mtimeMs) fail('WEB_HOST_FILE_CHANGED');
+    return bytes.subarray(0, length);
+  } finally { await file.close(); }
+}
+async function hostSource(config, state) {
+  const runtime = await backendRuntime(config, state.backendArtifact);
+  const files = [];
+  for (const path of webHostFiles) {
+    const bytes = await boundedHostBytes(join(runtime.root, 'tools/personal-preview', path));
+    files.push({ path, bytes: bytes.length, sha256: sha256(bytes) });
+  }
+  const location = { kind: runtime.artifact ? 'backend-artifact' : 'legacy-repository', artifactId: runtime.artifact?.artifactId ?? null };
+  return { policy: 'flow.web-host-source.v1', location, digest: sha256(JSON.stringify({ location, files })), files };
+}
+/** Local read only: no DB, process probe, or state creation. This is host-source identity, not artifact identity. */
+export async function inspectPreviewWebHostSource({ directory }) {
+  const config = await load(directory);
+  return hostSource(config, await privateJson(join(directory, 'state.json')));
+}
+async function syncDirectory(path) {
+  const handle = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+  try { await handle.sync(); } finally { await handle.close(); }
+}
+async function webHostJournalDirectory(directory) {
+  const root = join(directory, 'web-host-operations');
+  try { await mkdir(root, { mode: 0o700 }); await syncDirectory(directory); }
+  catch (error) { if (error.code !== 'EEXIST') throw error; }
+  const info = await lstat(root);
+  if (!info.isDirectory() || info.isSymbolicLink() || info.uid !== process.getuid() || (info.mode & 0o777) !== 0o700) fail('WEB_HOST_JOURNAL_INVALID');
+  return root;
+}
+async function checkpointWebHost(path, record, initial = false, maximum = 16_384) {
+  const bytes = Buffer.from(`${JSON.stringify(record)}\n`);
+  if (bytes.length > maximum) fail('WEB_HOST_JOURNAL_BUDGET');
+  const destination = initial ? path : `${path}.${randomUUID()}.tmp`;
+  const file = await open(destination, 'wx', 0o600);
+  try { await file.writeFile(bytes); await file.sync(); } finally { await file.close(); }
+  if (!initial) await rename(destination, path);
+  await syncDirectory(dirname(path)); // A failed write/sync is retained, never treated as permission to stop/start.
+}
+function webHostRequest(input) {
+  const keys = ['directory', 'operationId', 'expectedVersion', 'expectedBackendHead', 'compatibilityId', 'expectedWebRecordSha256', 'expectedPointerSha256', 'expectedHostSourceDigest', 'allowConnectionInterruption'];
+  if (!input || Object.keys(input).sort().join() !== keys.sort().join()
+    || !/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/.test(input.operationId ?? '')
+    || !Number.isSafeInteger(input.expectedVersion) || input.expectedVersion < 1
+    || !/^[a-f0-9]{40}$/.test(input.expectedBackendHead ?? '') || input.allowConnectionInterruption !== true
+    || ['compatibilityId', 'expectedWebRecordSha256', 'expectedPointerSha256', 'expectedHostSourceDigest'].some(key => !/^[a-f0-9]{64}$/.test(input[key] ?? ''))) fail('WEB_HOST_REQUEST_INVALID');
+  return Object.fromEntries(keys.filter(key => key !== 'directory').map(key => [key, input[key]]));
+}
+async function protectedWebHostFiles(directory) {
+  const result = {};
+  for (const name of ['config.json', 'claude.json', 'maintenance.json', 'web-release.json']) {
+    try { result[name] = sha256(await boundedHostBytes(join(directory, name))); }
+    catch (error) { if (error.code !== 'ENOENT' || ['config.json', 'web-release.json'].includes(name)) throw error; result[name] = null; }
+  }
+  return result;
+}
+function protectedWebHostState(state) {
+  const { webHost, processes, ...rest } = state;
+  const { web, ...background } = processes;
+  return JSON.stringify({ ...rest, processes: background });
+}
+async function saveWebHostState(path, state) { await checkpointWebHost(path, state, false, 65_536); }
+async function readWebHostJournal(path) {
+  const info = await lstat(path);
+  if (info.size > 16_384) fail('WEB_HOST_JOURNAL_INVALID');
+  const value = await privateJson(path);
+  if (value.format !== 1 || value.policy !== 'flow.web-host-operation.v1'
+    || !['pending', 'ready', 'unknown'].includes(value.outcome) || typeof value.request !== 'object'
+    || value.requestDigest !== sha256(JSON.stringify(value.request)) || !['reserved', 'stopped', 'ready'].includes(value.phase)
+    || basename(path) !== `${value.request.operationId}.json`
+    || value.outcome === 'ready' && (value.phase !== 'ready' || !/^[a-f0-9]{64}$/.test(value.newWebRecordSha256 ?? ''))) fail('WEB_HOST_JOURNAL_INVALID');
+  try { if (JSON.stringify(webHostRequest({ ...value.request, directory: dirname(path) })) !== JSON.stringify(value.request)) fail('WEB_HOST_JOURNAL_INVALID'); }
+  catch { fail('WEB_HOST_JOURNAL_INVALID'); }
+  return value;
+}
+/** Trusted construction seam: only the production singleton is reachable from the strict local CLI. */
+export function createWebHostReplacement({ marker = assertMarker, processes = webHostProcesses, checkpoint = checkpointWebHost } = {}) {
+  return async function replace(input) {
+    const request = webHostRequest(input); const requestDigest = sha256(JSON.stringify(request));
+    const config = await load(input.directory);
+    return locked(config, async () => {
+      await marker(config);
+      const statePath = join(config.directory, 'state.json'); const state = await privateJson(statePath);
+      await assertWebBackend(config, state, request.expectedBackendHead, processes);
+      const root = await webHostJournalDirectory(config.directory); const path = join(root, `${request.operationId}.json`);
+      let previous;
+      try { previous = await readWebHostJournal(path); } catch (error) { if (error.code !== 'ENOENT') throw error; }
+      if (previous) {
+        if (previous.requestDigest !== requestDigest) fail('WEB_HOST_OPERATION_CONFLICT');
+        let observed = 'unknown';
+        if (previous.outcome === 'ready' && previous.newWebRecordSha256 === sha256(JSON.stringify(state.processes.web))
+          && state.webHost?.operationId === request.operationId && state.webHost.source.digest === request.expectedHostSourceDigest
+          && sha256(await boundedHostBytes(join(config.directory, 'web-release.json'))) === request.expectedPointerSha256) {
+          try { await processes.ready(config, 'web', state.processes.web, currentWebArtifact(await readWebRelease(config.directory))); observed = 'ready'; } catch { /* Observation cannot restart or erase an earlier outcome. */ }
+        }
+        return { action: 'replace-host', operationId: request.operationId, outcome: observed, recordedOutcome: previous.outcome, replayed: true, hostSourceDigest: request.expectedHostSourceDigest };
+      }
+      const names = await readdir(root);
+      if (names.length >= 32) fail('WEB_HOST_JOURNAL_BUDGET');
+      for (const name of names) {
+        if (!/^[a-f0-9-]{36}\.json$/.test(name) || (await readWebHostJournal(join(root, name))).outcome !== 'ready') fail('WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED');
+      }
+      const release = await readWebRelease(config.directory);
+      if (!release || release.version !== request.expectedVersion) fail('WEB_RELEASE_VERSION_CONFLICT');
+      const artifact = currentWebArtifact(release);
+      const protectedFiles = await protectedWebHostFiles(config.directory);
+      if (protectedFiles['web-release.json'] !== request.expectedPointerSha256) fail('WEB_HOST_POINTER_CHANGED');
+      if (sha256(JSON.stringify(state.processes.web)) !== request.expectedWebRecordSha256) fail('WEB_HOST_RECORD_CHANGED');
+      await assertReleaseCompatibility(request.expectedBackendHead, release.artifacts, config.directory);
+      if (await findWebCompatibility({ directory: config.directory, artifact, backendHead: request.expectedBackendHead }) !== request.compatibilityId) fail('WEB_COMPATIBILITY_INVALID');
+      const source = await hostSource(config, state);
+      if (source.digest !== request.expectedHostSourceDigest) fail('WEB_HOST_SOURCE_CHANGED');
+      const processState = await processes.inspect(state.processes.web);
+      if (!['running', 'stopped'].includes(processState)) fail('WEB_PROCESS_IDENTITY_UNCONFIRMED');
+      const protectedState = protectedWebHostState(state);
+      const record = { format: 1, policy: 'flow.web-host-operation.v1', request, requestDigest, outcome: 'pending', phase: 'reserved', at: new Date().toISOString() };
+      await checkpoint(path, record, true); // Durable operation identity precedes the first signal, including failed/unknown requests.
+      try {
+        if (processState === 'running' && await processes.stop(state.processes.web) !== 'stopped') fail('WEB_STOP_UNCONFIRMED');
+        record.phase = 'stopped'; await checkpoint(path, record);
+        await launchWeb(config, state, artifact, processes, saveWebHostState);
+        await assertWebBackend(config, state, request.expectedBackendHead, processes);
+        if ((await hostSource(config, state)).digest !== source.digest) fail('WEB_HOST_SOURCE_CHANGED');
+        if (JSON.stringify(await protectedWebHostFiles(config.directory)) !== JSON.stringify(protectedFiles)
+          || protectedWebHostState(await privateJson(statePath)) !== protectedState) fail('WEB_HOST_PROTECTED_STATE_CHANGED');
+        state.webHost = { operationId: request.operationId, source, recordSha256: sha256(JSON.stringify(state.processes.web)) };
+        await saveWebHostState(statePath, state);
+        record.newWebRecordSha256 = state.webHost.recordSha256; record.outcome = 'ready'; record.phase = 'ready';
+        await checkpoint(path, record);
+        return { action: 'replace-host', operationId: request.operationId, outcome: 'ready', replayed: false, hostSourceDigest: source.digest };
+      } catch (error) {
+        record.outcome = 'unknown'; record.failure = /^WEB_[A-Z_]+$/.test(error.code ?? '') ? error.code : 'WEB_HOST_OPERATION_UNCONFIRMED';
+        try { await checkpoint(path, record); } catch { /* Keep the last durable stage and pending process record; no cleanup or retry. */ }
+        fail('WEB_HOST_REPLACEMENT_UNCONFIRMED');
+      }
+    });
+  };
+}
+export const replacePreviewWebHost = createWebHostReplacement();
+
 /** One-time Web-only host replacement. Backend roles and their running work are never stopped. */
 export async function bootstrapPreviewWeb({ directory, expectedVersion, expectedBackendHead, compatibilityId }) {
   const config = await load(directory);
