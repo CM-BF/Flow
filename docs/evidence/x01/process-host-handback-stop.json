@@ -1,0 +1,88 @@
+{
+  "state": "STOPPED_EXACT_SEVEN",
+  "stoppedAt": "2026-10-07T12:57:23.478328+00:00",
+  "owner": "architecture_read",
+  "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+  "versionBefore": 27,
+  "requestedBy": "db_transaction_owner under Mika approved process-host first slice",
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3",
+      "mainBytes": 4841,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "cc2bacc965a1aa341d744c993230b5fd3bcf4b027cc03602f0da6ed5cf363db9",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "cc2bacc965a1aa341d744c993230b5fd3bcf4b027cc03602f0da6ed5cf363db9",
+      "mainBytes": 10110,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8",
+      "mainBytes": 21786,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18",
+      "mainBytes": 15424,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "f8c4c3d73ec2fec24f59b85e6b890cd900d01a8fb7b22be59abd713d8303e7fd",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "f8c4c3d73ec2fec24f59b85e6b890cd900d01a8fb7b22be59abd713d8303e7fd",
+      "mainBytes": 7555,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "be0defdf1f83dd2aeb4996252c547cee37017f9708b91bbb2a7d37f27061ff7f",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "be0defdf1f83dd2aeb4996252c547cee37017f9708b91bbb2a7d37f27061ff7f",
+      "mainBytes": 11398,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "ownerHead": "727bb65fdf249f4c21a435db1f13e2bd996fdede",
+      "ownerSha256": "2443b353b8eb9639992c1541292cceed09b2d11384ffd0c2820d1ed16f4c94ee",
+      "mainHead": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "mainSha256": "2443b353b8eb9639992c1541292cceed09b2d11384ffd0c2820d1ed16f4c94ee",
+      "mainBytes": 13328,
+      "sameBytes": true,
+      "pendingOwnerDelta": false
+    }
+  ],
+  "basis": "Original X01 execution/runtime/startup already main; current owner product WT clean. Different main bytes are later integrated work, not pending X01 changes; new owner must preserve current fixed main.",
+  "notTransferred": [
+    "apps/runner/src/main.ts",
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/plugins/host.ts"
+  ],
+  "stateAfterAmend": "do not resume writes to these paths regardless of later recipient take conflict"
+}
