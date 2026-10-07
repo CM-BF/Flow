@@ -1,0 +1,22 @@
+{
+  "result": "INSTALLED_PENDING_OUTER_CONFIRMATION",
+  "finalUsage": {
+    "allocatedBytes": 2674688,
+    "logicalBytes": 1452918,
+    "freeBytes": 25752358912,
+    "rootIdentity": [
+      16777234,
+      123342734
+    ],
+    "vanishedChildren": 0,
+    "atomicSnapshot": false
+  },
+  "availabilityRequires": "outer exit0/noFailure/owned absent/all EOF complete; otherwise namespace and alias remain unknown and must not be used",
+  "alias": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/yaml",
+  "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml",
+  "package": "yaml@2.9.0",
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env",
+  "retainedDiagnostics": true,
+  "noGlobalStoreWrites": true,
+  "noImportOrArtifactBuild": true
+}

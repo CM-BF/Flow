@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:26:54 UTC；本轮正式parser/builder接线，历史接收不变 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:37:17 UTC；本轮正式parser/builder接线，历史接收不变 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,12 +11,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原基线 280289008a5a3779e4e5e6453181b96062ed9514；本片 base 91402e174022b7568aa21ce2ddfcb69932e111bd；源码 87dc292ae2dc8c1357f074ec7bddd41de20108d8 |
-| 工作树dirty状态 | 原1b41f588 clean起步；本轮限定parser/builder与自身记录实施中 |
+| 工作树dirty状态 | 当前固定源码457f1ba8；本轮parser私有安装结果与直接消费者断言收口中 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | UNKNOWN |
 | 实现范围 | package.json, pnpm-lock.yaml, tools/personal-preview/backend-release |
-| 检查状态 | NOT_RUN；新parser/builder尚未运行。历史87dc纯选择器7/7与语法6/6单列保留，不扩大批准 |
+| 检查状态 | NOT_RUN 新模块检查；私有parser安装exit0/729ms已完成，不等于产物构建；历史87dc纯选择器7/7不扩大批准 |
 | 已集成main状态 / HEAD | 纯模块87dc经受控等价提交fcf59接收 main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c，6source与固定target及工作树逐字相同；原target并非main祖先，[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)。旧保护6d276接收cbd3保留；个人runtime/Web未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -65,3 +65,7 @@ Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`�
 ## 正式构建接线恢复
 
 2026-10-07 02:26:54 UTC：fresh claim v4确认后原子amend为v5；新增根manifest/lock两literal。复用87dc选择器而不重跑原7例。正式parser为yaml2.9.0公开接口，build-only惰性加载；保留主线7a7c3f4b214c41fb740c610d810f2fc5963d25b2的12行plugin-runtime锁增量。当前仅源码/固定依赖准备，安装与局部检查先按单独预算调度；完整构建仍须≥2.5GiB且保1GiB收尾、固定输入独审与窗口，不由当前余量自动授权。03/04/05保持open。
+
+## 私有构建解析器可用
+
+2026-10-07 02:37:17 UTC：已审固定457f入口实际一次离线安装yaml2.9.0，外层exit0、完整EOF、owned group absent；233原包文件逐hash相同且nlink1，独立namespace实际分配2,674,688B/逻辑1,452,918B，raw2603B，缺样0。无donor写入/网络/import/PG/provider，保留自己的小安装与诊断。原entry receipt pending由[外层原始回执](../../docs/evidence/svc06/parser-install-outer.json)和[结果](../../docs/evidence/svc06/parser-install-result.json)闭合。新6模块用例和原受影响1直接消费者尚未运行，fullartifact仍NOT_RUN。
