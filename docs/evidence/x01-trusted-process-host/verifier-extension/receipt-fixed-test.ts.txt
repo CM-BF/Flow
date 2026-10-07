@@ -96,11 +96,11 @@ const markerModule = (root: string) => `import {writeFileSync} from 'node:fs';wr
  export const hostApiMajor=1;export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))},'yes');return 'never'}`;
 
 test('trusted verifier worker preserves typed result text, exact pin and fresh module state', async () => {
-  await withMaterial('verifier', () => `import {createHash} from 'node:crypto';let count=0;export const hostApiMajor=1;export function invoke({input}){if(++count!==1)throw new Error('shared module');return JSON.stringify({schemaVersion:1,algorithmId:'flow.json-object.required-keys',algorithmVersion:1,inputDigest:createHash('sha256').update(input).digest('hex'),verdict:{result:'passed',reason:'passed',missingKeys:[]}})}`,
+  await withMaterial('verifier', () => `let count=0;export const hostApiMajor=1;export function invoke({input}){return JSON.stringify({protocol:'flow.plugin-verification.v1',result:'passed',input,count:++count})}`,
     async (input, host, facts) => {
       const phases: string[] = []; input.authorize = async (_, phase) => { phases.push(phase); };
       const first = await host.invokeVerifier(input);
-      expect(first.content).toBe(JSON.stringify({ schemaVersion: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1, inputDigest: createHash('sha256').update(input.input).digest('hex'), verdict: { result: 'passed', reason: 'passed', missingKeys: [] } }));
+      expect(first.content).toBe(JSON.stringify({ protocol: 'flow.plugin-verification.v1', result: 'passed', input: input.input, count: 1 }));
       expect(first.provenance).toMatchObject({ bindingId: input.binding.bindingId, invocationId: input.binding.invocationId,
         artifactSha256: input.binding.material.artifact.sha256, treeDigest: input.binding.material.treeDigest });
       const second = await host.invokeVerifier({ ...input, binding: { ...input.binding, invocationId: randomUUID() } });

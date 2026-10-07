@@ -1,0 +1,46 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host
+
+ ❯ docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts (10 tests | 1 failed) 2534ms
+   ✓ trusted framing rejects length before body, truncation, bad UTF8 and wrong sequence 3ms
+   ✓ trusted resource count is reusable and full capacity never prevents owned cleanup  825ms
+   ✓ trusted resources reject linked receipts and unknown remainder without probing old PIDs 21ms
+   ✓ trusted verifier worker preserves typed result text, exact pin and fresh module state  447ms
+   ✓ trusted worker rejects tool material through the opposite method before import or authorization 258ms
+   ✓ trusted worker rejects verifier material through the opposite method before import or authorization 239ms
+   ✓ trusted verifier cancellation after load authorization is unknown and does not invoke 229ms
+   × trusted verifier scratch failure retains unknown settlement and blocks another spawn 237ms
+   ✓ trusted explicit tool method keeps its original real worker behavior 270ms
+   ✓ trusted init requires exactly one known execution kind and rejects the old protocol 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts > trusted verifier scratch failure retains unknown settlement and blocks another spawn
+AssertionError: expected [ 'owner.json', 'slot-00.json' ] to deeply equal [ 'slot-00.json' ]
+
+- Expected
++ Received
+
+  [
++   "owner.json",
+    "slot-00.json",
+  ]
+
+ ❯ docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts:133:64
+    131|       const failure = await host.invokeVerifier(input).catch(error => …
+    132|       expect(failure).toBeInstanceOf(PluginToolError); expect(failure)…
+    133|       expect(await fs.readdir(join(root, 'process/receipts'))).toEqual…
+       |                                                                ^
+    134|       await expect(host.invokeVerifier(input)).rejects.toThrow('PROCES…
+    135|       await expect(host.close()).rejects.toThrow('PROCESS_RESOURCE_UNK…
+ ❯ withMaterial docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts:75:5
+ ❯ docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts:129:3
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 9 passed (10)
+   Start at  12:33:09
+   Duration  2.80s (transform 69ms, setup 0ms, import 166ms, tests 2.53s, environment 0ms)
+

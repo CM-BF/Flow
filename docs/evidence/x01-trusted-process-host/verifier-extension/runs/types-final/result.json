@@ -1,0 +1,65 @@
+{
+  "startedAt": "2026-10-07T19:35:26.173Z",
+  "finishedAt": "2026-10-07T19:35:26.901Z",
+  "wallBeforePersistenceSeconds": 0.7274131249869242,
+  "supervision": {
+    "pid": 82355,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 716,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "removed": true,
+    "retained": null,
+    "sampleBytes": 0,
+    "exactAbsenceAt": "2026-10-07T19:35:26.901Z"
+  },
+  "raw": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-trusted-process-host/verifier-extension/run-local.py": "786304440c2cf4e154a4f18e3470ebcc47f7f0f0a9e96da50dbaea6fc475b29a",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/tsconfig.json": "0bfa9d59adf48d0e3ae03a3017d7e9f5f31042970b61d48aeea357db5b332b4e",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/vitest.config.mjs": "21bad515de7d3524de798c409e23d960e1313de924849c4117f232dea379264c",
+    "apps/runner/src/plugins/process-host.ts": "7588e4ac0b4e7bdec2a5a3d8e0fb605880f8040c03fac5bcbf8d6dce7041e01f",
+    "apps/runner/src/plugins/process-worker.ts": "a7bd2aa3cf677a8c74ffa9d30718f5aa33c0e59bac04da33ec68cb830b5dd8b6",
+    "apps/runner/src/plugins/process-protocol.ts": "2c764a58ee4499df5958359bf9adc2173e1883332df297ce3b7317002031c365",
+    "apps/runner/src/plugins/process-resources.ts": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "apps/runner/src/plugins/process-host.test.ts": "4c674c07198de5fd702669a335c01ac35626f44fa41ad3c6799f33d7c42d637d",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/host.ts": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts": "4c674c07198de5fd702669a335c01ac35626f44fa41ad3c6799f33d7c42d637d",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.ts": "7588e4ac0b4e7bdec2a5a3d8e0fb605880f8040c03fac5bcbf8d6dce7041e01f",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-protocol.ts": "2c764a58ee4499df5958359bf9adc2173e1883332df297ce3b7317002031c365",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-resources.ts": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-worker.ts": "a7bd2aa3cf677a8c74ffa9d30718f5aa33c0e59bac04da33ec68cb830b5dd8b6",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/package.json": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/packages/plugin-runtime/package.json": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+    "docs/evidence/x01-trusted-process-host/verifier-extension/view/packages/plugin-runtime/src/package-store.ts": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa"
+  }
+}

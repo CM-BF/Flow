@@ -1,0 +1,37 @@
+{
+  "baseMain": "c15cdffcbc8b0bd41c09b983b6379474c169474d",
+  "donor": "donor-inputs.json",
+  "currentProductMirror": [
+    {
+      "source": "apps/runner/src/plugins/process-host.ts",
+      "mirror": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.ts",
+      "bytes": 9901,
+      "sha256": "7588e4ac0b4e7bdec2a5a3d8e0fb605880f8040c03fac5bcbf8d6dce7041e01f"
+    },
+    {
+      "source": "apps/runner/src/plugins/process-worker.ts",
+      "mirror": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-worker.ts",
+      "bytes": 2939,
+      "sha256": "a7bd2aa3cf677a8c74ffa9d30718f5aa33c0e59bac04da33ec68cb830b5dd8b6"
+    },
+    {
+      "source": "apps/runner/src/plugins/process-protocol.ts",
+      "mirror": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-protocol.ts",
+      "bytes": 4278,
+      "sha256": "2c764a58ee4499df5958359bf9adc2173e1883332df297ce3b7317002031c365"
+    },
+    {
+      "source": "apps/runner/src/plugins/process-resources.ts",
+      "mirror": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-resources.ts",
+      "bytes": 7933,
+      "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614"
+    },
+    {
+      "source": "apps/runner/src/plugins/process-host.test.ts",
+      "mirror": "docs/evidence/x01-trusted-process-host/verifier-extension/view/apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 12898,
+      "sha256": "4c674c07198de5fd702669a335c01ac35626f44fa41ad3c6799f33d7c42d637d"
+    }
+  ],
+  "scope": "owned process files exact bytes + main host/package-store; root unclaimed host/execution untouched; no production overlay supplied outside own evidence"
+}

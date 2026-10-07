@@ -6,25 +6,25 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | completed |
+| 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | delivered |
-| 当前产出 | 受信插件独立进程执行源码已进入远端主线；两条执行入口已正式交回，真实发布产物仍未验。 |
-| 下一可用交付 | 本片段源码已交付；T7真实发布产物验证由发布负责人后继完成。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 原受信工具进程源码已入主线；现补受信验证器的显式独立进程调用，保留同一取消与未知结果边界。 |
+| 下一可用交付 | 固定验证器 worker 小接口与真实子进程局部证据，交独立审查。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | 90289185f6e67a3ff5ecf8fb4aee105058c11aef（本次metadata前已核clean；后继仅接收与交权记录） |
-| 工作树dirty状态 | 本段仅接收/status/两leaf交回metadata，提交推送后全写STOP；无运行holder。 |
+| HEAD | 6c881b21f0bc8838248bba7a1e2bb3c1b9f8c6ad（本段起点） |
+| 工作树dirty状态 | 本段4个自有产品/test及自身证据修改中；ordinary等待S01归还。 |
 | 实现目标 | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 |
 | 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
-| 检查状态 | PASSED 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 定向2/2与types0；原14distinct证据继承其固定source，不重跑；PG/release NOT_RUN。 |
-| Review | APPROVED 2026-10-07T13:23:25Z chatui，4dc6f7ee1613e00a82ab5d99412a06f9c799cf70；原唯一P2 CLOSED/0剩余P1P2。 |
+| 检查状态 | NOT_RUN 本新扩展；旧4dc已验事实保留于历史，不作为新kind通过。 |
+| Review | NOT_STARTED 本扩展；旧4dc独审批准不变。 |
 | 已集成main状态 / HEAD | INTEGRATED 96b424777cd2c66e603157649e5a859ca1b914f6（包含13d本地接收且已远端同步）；NOT_DEPLOYED。 |
-| 最近更新时间 | 2026-10-07T15:26:41.451Z |
+| 最近更新时间 | 2026-10-07T19:26:50.000Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -36,6 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
+| X01TP-06 | in-progress | db_transaction_owner | 显式 verifier worker，真实材料/kind/取消/UNKNOWN/旧工具直接验证待运行。 |
 | X01TP-05 | in-progress | db_transaction_owner | 源码已入远端main96b42477；T7真实发布后继未验，完整TODO保持开放。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
@@ -84,3 +85,7 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 15:26:02.190Z永久STOP `apps/runner/src/plugins/execution.ts` 与 `apps/runner/src/plugins/execution.test.ts`；15:26:07.328Z原子amend COMMITTED v2/14→v3/12，原始[回执](../../docs/evidence/x01-trusted-process-host/execution-handback-receipt.json)与[STOP事实](../../docs/evidence/x01-trusted-process-host/execution-handback-stop.json)固定。只交两leaf，未release整claim；AV02接收者需fresh取得写权。本次0产品改动/工程重测/PG/个人服务。clean-code复核区分历史推送失败、远端源码接收、未部署/T7和路径写权，未改旧raw/manifest。
 
 独立dashboard接收观察：Original回执 `dashboard-architecture/docs/evidence/d05/release-plugin-207-live.json`，completedAt2026-10-07T15:24:50.706Z、207sources；本task sourceCurrent/live/nonstale且issues[]，读取的是15:15:50状态。历史NOT_RELOADED仍按原观察保留；本段不启动/重载dashboard。
+
+## Verifier 扩展段
+
+2026-10-07T19:21:26.000Z 新25分钟段开始，截止19:46:26Z；旧18:37暂停段零实现，不追溯恢复。fresh ledger19:21:57.846Z原8c2f v3 ACTIVE12，本段只4个process叶与自身metadata；resources仅必要。预算6串行child各40s/累计150s，raw2MiB及TMP/源码/证据共16MiB；freshfloor至少17950834688B并取最新组合较高。0PG/HTTP/provider/安装。main c15cdff 只读host/package-store供给在自身证据，不覆盖unclaimed叶。T7仍NOT_RUN，runtime/public producer/verdict完成链未接。

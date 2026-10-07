@@ -96,11 +96,11 @@ const markerModule = (root: string) => `import {writeFileSync} from 'node:fs';wr
  export const hostApiMajor=1;export function invoke(){writeFileSync(${JSON.stringify(join(root, 'invoked'))},'yes');return 'never'}`;
 
 test('trusted verifier worker preserves typed result text, exact pin and fresh module state', async () => {
-  await withMaterial('verifier', () => `import {createHash} from 'node:crypto';let count=0;export const hostApiMajor=1;export function invoke({input}){if(++count!==1)throw new Error('shared module');return JSON.stringify({schemaVersion:1,algorithmId:'flow.json-object.required-keys',algorithmVersion:1,inputDigest:createHash('sha256').update(input).digest('hex'),verdict:{result:'passed',reason:'passed',missingKeys:[]}})}`,
+  await withMaterial('verifier', () => `let count=0;export const hostApiMajor=1;export function invoke({input}){return JSON.stringify({protocol:'flow.plugin-verification.v1',result:'passed',input,count:++count})}`,
     async (input, host, facts) => {
       const phases: string[] = []; input.authorize = async (_, phase) => { phases.push(phase); };
       const first = await host.invokeVerifier(input);
-      expect(first.content).toBe(JSON.stringify({ schemaVersion: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1, inputDigest: createHash('sha256').update(input.input).digest('hex'), verdict: { result: 'passed', reason: 'passed', missingKeys: [] } }));
+      expect(first.content).toBe(JSON.stringify({ protocol: 'flow.plugin-verification.v1', result: 'passed', input: input.input, count: 1 }));
       expect(first.provenance).toMatchObject({ bindingId: input.binding.bindingId, invocationId: input.binding.invocationId,
         artifactSha256: input.binding.material.artifact.sha256, treeDigest: input.binding.material.treeDigest });
       const second = await host.invokeVerifier({ ...input, binding: { ...input.binding, invocationId: randomUUID() } });
@@ -130,7 +130,7 @@ test('trusted verifier scratch failure retains unknown settlement and blocks ano
     async (input, host, facts, root) => {
       const failure = await host.invokeVerifier(input).catch(error => error);
       expect(failure).toBeInstanceOf(PluginToolError); expect(failure).toMatchObject({ code: 'OUTCOME_UNKNOWN', cause: { code: 'PACKAGE_FAILED' } });
-      expect(await fs.readdir(join(root, 'process/receipts'))).toEqual(['owner.json', 'slot-00.json']);
+      expect(await fs.readdir(join(root, 'process/receipts'))).toEqual(['slot-00.json']);
       await expect(host.invokeVerifier(input)).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN'); expect(facts).toHaveLength(1);
       await expect(host.close()).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
     });

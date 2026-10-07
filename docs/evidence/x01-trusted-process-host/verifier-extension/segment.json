@@ -1,0 +1,67 @@
+{
+  "startedAt": "2026-10-07T19:21:26.000Z",
+  "deadline": "2026-10-07T19:46:26.000Z",
+  "base": "6c881b21f0bc8838248bba7a1e2bb3c1b9f8c6ad",
+  "donorMain": "c15cdffcbc8b0bd41c09b983b6379474c169474d",
+  "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "claimVersion": 3,
+  "ledgerObservedAt": "2026-10-07T19:21:57.846Z",
+  "budget": {
+    "totalBytes": 16777216,
+    "rawBytes": 2097152,
+    "children": 6,
+    "eachSeconds": 40,
+    "cumulativeSeconds": 150
+  },
+  "actual": "FULLRETURN",
+  "scope": "four process leaves and own metadata only",
+  "returnAt": "2026-10-07T19:35:26.901Z",
+  "runs": [
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T19:33:09.297Z",
+      "finishedAt": "2026-10-07T19:33:12.407Z",
+      "exit": 1,
+      "elapsedMs": 3098,
+      "rawBytes": 2772
+    },
+    {
+      "name": "behavior-fix",
+      "startedAt": "2026-10-07T19:33:45.373Z",
+      "finishedAt": "2026-10-07T19:33:46.157Z",
+      "exit": 0,
+      "elapsedMs": 755,
+      "rawBytes": 418
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T19:33:51.982Z",
+      "finishedAt": "2026-10-07T19:33:52.848Z",
+      "exit": 0,
+      "elapsedMs": 828,
+      "rawBytes": 0
+    },
+    {
+      "name": "direct",
+      "startedAt": "2026-10-07T19:35:16.070Z",
+      "finishedAt": "2026-10-07T19:35:17.116Z",
+      "exit": 0,
+      "elapsedMs": 1010,
+      "rawBytes": 518
+    },
+    {
+      "name": "types-final",
+      "startedAt": "2026-10-07T19:35:26.173Z",
+      "finishedAt": "2026-10-07T19:35:26.901Z",
+      "exit": 0,
+      "elapsedMs": 716,
+      "rawBytes": 0
+    }
+  ],
+  "supervisionTotalMs": 6407,
+  "rawTotalBytes": 3708,
+  "selected": "first 10=9pass1fixtureFail; receipt fix 1pass9unselected; final typed output 1pass9unselected; 10 distinct, not one final whole-suite run",
+  "checks": "two focused types exit0",
+  "fullWall": "UNKNOWN; supervision sum and caller before-persistence are separate",
+  "peak": "UNKNOWN; owned finite fixture end samples are not all-time heap/disk peak"
+}
