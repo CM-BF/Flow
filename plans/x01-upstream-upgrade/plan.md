@@ -6,7 +6,7 @@
 
 - [x] X01UP-01 固定官方 metadata/tar/SRI/git/license 与安全提取及 bundle 闭包。
 - [x] X01UP-02 相同输入 false→true→false、不同上游身份及原 pin 不变。
-- [ ] X01UP-03 局部 types/实际宿主行为及独立 review。
+- [x] X01UP-03 局部 types/实际宿主行为及独立 review。
 - [ ] X01UP-04 固定窄 main intake，主线接收；真实中心上游切换另窗后继。
 
 模块：range adapter 只解析 ≤4096 UTF-8 JSON、bounded version/range/boolean 并返回布尔文本；材料/store/授权由现有生产模块拥有，不复制。官方 tar 每份≤256KiB/10s，SRI先验，拒绝逃逸/链接/超额条目。ESBuild0.28.2仅打两个包，禁止安装/脚本。

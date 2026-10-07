@@ -1,0 +1,178 @@
+{
+  "window": "66fb86c6f958416ab09a98aa7ec431bd",
+  "sourceHead": "90e131b4a789d526ee3cb2ffac501f26d47e8953",
+  "suite": "runtime",
+  "database": "flow_x01_d680bddd19fa419e878d806967178263",
+  "facts": [
+    {
+      "kind": "tar",
+      "version": "7.8.4",
+      "pid": 85594,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "kind": "tar",
+      "version": "7.8.5",
+      "pid": 85615,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "kind": "a-load-ack",
+      "request": {
+        "attemptId": "9343716e-7fb5-4206-a7d2-9bbbd8152dfd",
+        "ownerVersion": 1,
+        "bindingId": "c010f635-5c2a-488a-ae7b-f2d1c1ea30dd",
+        "invocationId": "6678df92-ee8d-4a56-b98d-8612369ebc32",
+        "phase": "load"
+      },
+      "receipt": {
+        "attemptId": "9343716e-7fb5-4206-a7d2-9bbbd8152dfd",
+        "ownerVersion": 1,
+        "bindingId": "c010f635-5c2a-488a-ae7b-f2d1c1ea30dd",
+        "invocationId": "6678df92-ee8d-4a56-b98d-8612369ebc32",
+        "phase": "load",
+        "protocol": "flow.plugin-runtime.v1",
+        "taskId": "7a64717c-b7ba-45bb-abf8-c1aa0c1486e7",
+        "runnerId": "0df95004-7fe4-4c6e-a838-de8ea9fdd5b4",
+        "authorizedRevision": 4,
+        "replayed": false
+      }
+    },
+    {
+      "kind": "completed",
+      "taskId": "4aa8ff69-eb69-4263-a4ce-11154f7f905f",
+      "version": "7.8.5",
+      "bindingId": "2806fb28-f86c-4db2-9551-68ad56c9dbf2",
+      "materialId": "042821f962172928ecb42fdbf43d37bc876b1fb41b150f6fd04232da08ddee2c",
+      "treeDigest": "4efd9594234e9d1f32640f4abb49d67c9b91d71c0dcd47bdbb9f70db2a5bda27",
+      "artifactSha256": "735ab695227c0ef9895ebe1b26588f179e7d303c6af95f065f8523ec8b75410c",
+      "provenance": {
+        "protocol": "flow.plugin-artifact.v1",
+        "bindingId": "2806fb28-f86c-4db2-9551-68ad56c9dbf2",
+        "invocationId": "fe2c7dcb-a878-4df0-813b-5b566bdbcc50",
+        "taskId": "4aa8ff69-eb69-4263-a4ce-11154f7f905f",
+        "attemptId": "9d757733-781c-4ad2-bab3-71648c313a68",
+        "ownerVersion": 1,
+        "installationId": "042821f962172928ecb42fdbf43d37bc876b1fb41b150f6fd04232da08ddee2c",
+        "artifactId": "60a78fea-258e-419a-b4d9-75a5a4865a1a",
+        "artifactSha256": "735ab695227c0ef9895ebe1b26588f179e7d303c6af95f065f8523ec8b75410c",
+        "treeDigest": "4efd9594234e9d1f32640f4abb49d67c9b91d71c0dcd47bdbb9f70db2a5bda27",
+        "hostApiMajor": 1
+      }
+    },
+    {
+      "kind": "completed",
+      "taskId": "7a64717c-b7ba-45bb-abf8-c1aa0c1486e7",
+      "version": "7.8.4",
+      "bindingId": "c010f635-5c2a-488a-ae7b-f2d1c1ea30dd",
+      "materialId": "50e428b2054b7462f59af70540c32cdcb5d9a8af65acb212d43389f2d2613f9e",
+      "treeDigest": "e816d36fc33318bb1a15e2bc39253677fbd69d0a8f2fa87f65c41c5c8b243ba0",
+      "artifactSha256": "f2df65522b53503852c6605d02658591fa7210e554ada13c479622af003aa0e2",
+      "provenance": {
+        "protocol": "flow.plugin-artifact.v1",
+        "bindingId": "c010f635-5c2a-488a-ae7b-f2d1c1ea30dd",
+        "invocationId": "6678df92-ee8d-4a56-b98d-8612369ebc32",
+        "taskId": "7a64717c-b7ba-45bb-abf8-c1aa0c1486e7",
+        "attemptId": "9343716e-7fb5-4206-a7d2-9bbbd8152dfd",
+        "ownerVersion": 1,
+        "installationId": "50e428b2054b7462f59af70540c32cdcb5d9a8af65acb212d43389f2d2613f9e",
+        "artifactId": "c8321398-d340-4a00-bb6a-0337d21f741f",
+        "artifactSha256": "f2df65522b53503852c6605d02658591fa7210e554ada13c479622af003aa0e2",
+        "treeDigest": "e816d36fc33318bb1a15e2bc39253677fbd69d0a8f2fa87f65c41c5c8b243ba0",
+        "hostApiMajor": 1
+      }
+    },
+    {
+      "kind": "completed",
+      "taskId": "8c596ec5-7387-4a5d-aab8-6984803c9fb9",
+      "version": "7.8.4",
+      "bindingId": "488a0e65-6dd4-4ec7-baf6-6b7a4766eac8",
+      "materialId": "50e428b2054b7462f59af70540c32cdcb5d9a8af65acb212d43389f2d2613f9e",
+      "treeDigest": "e816d36fc33318bb1a15e2bc39253677fbd69d0a8f2fa87f65c41c5c8b243ba0",
+      "artifactSha256": "f2df65522b53503852c6605d02658591fa7210e554ada13c479622af003aa0e2",
+      "provenance": {
+        "protocol": "flow.plugin-artifact.v1",
+        "bindingId": "488a0e65-6dd4-4ec7-baf6-6b7a4766eac8",
+        "invocationId": "7962d12a-5ee6-4c09-85fe-a4d891b5d04d",
+        "taskId": "8c596ec5-7387-4a5d-aab8-6984803c9fb9",
+        "attemptId": "aadf74e2-7d65-416a-a337-6edcbe678ebc",
+        "ownerVersion": 1,
+        "installationId": "50e428b2054b7462f59af70540c32cdcb5d9a8af65acb212d43389f2d2613f9e",
+        "artifactId": "c8321398-d340-4a00-bb6a-0337d21f741f",
+        "artifactSha256": "f2df65522b53503852c6605d02658591fa7210e554ada13c479622af003aa0e2",
+        "treeDigest": "e816d36fc33318bb1a15e2bc39253677fbd69d0a8f2fa87f65c41c5c8b243ba0",
+        "hostApiMajor": 1
+      }
+    },
+    {
+      "kind": "scope",
+      "upstream": [
+        "semver@7.8.4",
+        "semver@7.8.5",
+        "semver@7.8.4"
+      ],
+      "wrappers": [
+        "7.8.4",
+        "7.8.5",
+        "7.8.4"
+      ],
+      "aGate": "running attempt; load ACK persisted; before module load/invoke",
+      "originalEventCount": 0,
+      "finalRevision": 14
+    },
+    {
+      "kind": "public-traffic",
+      "httpRequests": 99,
+      "responseBytes": 62757,
+      "registryRequests": 4,
+      "tarDownloads": 2,
+      "runnerSettled": true,
+      "runnerFailure": null
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "registry": true,
+      "runner": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1308185",
+      "owner": "flow",
+      "marker": "x01:66fb86c6f958416ab09a98aa7ec431bd:runtime:213e496d-cae1-4d7d-9f24-fcc4f93b9a7d"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:64905",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:64914",
+      "closed": true
+    }
+  ],
+  "httpRequests": 36,
+  "responseBytes": 37118,
+  "workUntil": 1791375085208,
+  "cleanupUntil": 1791375145208,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T12:09:40.549Z"
+}
