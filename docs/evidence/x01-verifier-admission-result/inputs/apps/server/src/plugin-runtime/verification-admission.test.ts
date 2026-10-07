@@ -51,8 +51,8 @@ test('VAR admission creates exactly one task and project binding on the receipt 
 });
 
 test.each(['tool', 'verifier'] as const)('VAR repair %s phase preserves its public permission error without writing a receipt', async kind => {
-  const client = { query: vi.fn(async (_sql: string) => ({ rows: [{ live: true }] })), release: vi.fn() };
-  const pool = { connect: async () => client };
+  const client = { query: vi.fn(async (_sql: string) => ({ rows: [{ live: true }] })), release: vi.fn(), on: vi.fn(), removeListener: vi.fn() };
+  const pool = { connect: (callback: (error: null, borrowed: typeof client) => void) => callback(null, client) };
   state.owned.mockResolvedValue({ task: { id: 'task', status: 'running', submission: { prompt: '{}' } }, attempt: { id: 'attempt', owner_version: 1, completed_at: null, lease_expires_at: '2099-01-01' } });
   state.readBinding.mockResolvedValue({ bindingId: 'binding', invocationId: 'invocation', targetRunnerId: 'runner', inputDigest: sha256('{}'), registrationId: 'registration' });
   state.executionKind.mockResolvedValue(kind); state.snapshot.mockResolvedValue({ grants: [] });
