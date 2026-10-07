@@ -1,6 +1,10 @@
 # S01 独立审查
 
-## 当前：queue recipe + 历史身份P2修复
+## 当前：完整legacy回复来源窄修
+
+状态PENDING。Review target commit: `f722e28678e9e9af0e631af7539e1c6f70adf7c9`。入口[queue-chat-fix-ready](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-ready.md)；仅3源增量/2child原件，3pass14未选与strict0，不重审45原绑定。固定4fdd真实完整DTO与source/contentRef/message/bodyhash闭合；当前新P2 owner修复待原chatui确认。13:22:36原审对130c/456为SOURCE_CHANGES_REQUESTED/1新P2，旧unavailable历史P2已CLOSED；原6distinct/strict/资源忠实结论保持，正式原件[queue-independent-review](../../docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json)。
+
+## 历史：queue recipe + 历史身份P2修复
 
 状态PENDING。Review target commit: `130c6ec855db850a817312623742cf14e8b45135`。[交审入口](../../docs/evidence/s01/mixed-ab-preparation/queue-interface.md)、[45bindings](../../docs/evidence/s01/mixed-ab-preparation/queue-review.json)。本片6 distinct分轮、strict2→0与最终0，0PG/runtime/provider；源/单轮绑定及早期EPERM/首失败保留。请复审history/live-key、public chat/取消时钟、129×2总账、v2journal与新资源门禁；不得将源码局部检查当性能READY/OPEN。
 

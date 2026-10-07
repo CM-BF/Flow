@@ -1,0 +1,23 @@
+{
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "at": "2026-10-07T13:22:36Z",
+  "source": "130c6ec855db850a817312623742cf14e8b45135",
+  "packet": "4560188a575fbd8045683171ab65a9ff6c67e028",
+  "verdict": "SOURCE_CHANGES_REQUESTED",
+  "findings": [
+    {
+      "severity": "P2",
+      "path": "experiments/runner-capacity/mixed/queue-chat.ts",
+      "line": 58,
+      "issue": "Three-field source deepEqual rejects complete legacyReply DTO in fixed production replies.ts; handwritten test omits real fields."
+    }
+  ],
+  "priorUnavailableHistoryP2": "CLOSED",
+  "resultFidelity": "6 distinct split rounds / strict2 then0 then0 / five raw1635B / supervisor6823ms / five closures confirmed; earlyEPERM and failure preserved",
+  "bindings": {
+    "count": 45,
+    "bytes": 230496,
+    "gitEqualsWorkingTree": true
+  },
+  "limits": "Read-only review; not PG/performance/source-ready/OPEN"
+}
