@@ -1,3 +1,5 @@
+import { pluginRemovalQuerySchema } from '../../../../packages/contracts/src/plugin-removal.js';
+import { readPluginRemovalReferences } from './removal-references.js';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -53,6 +55,12 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
     const input = pluginHostCandidatesQuerySchema.safeParse(request.query);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_host_query', 'Select an installed material and a valid candidate cursor.');
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readPluginHostCandidates(client, id(request.params.id), input.data, trustedHostPolicy), true)));
+  });
+  app.get<{ Params: { id: string }; Querystring: Record<string, unknown> }>('/api/plugins/:id/removal-references', async (request, reply) => {
+    const input = pluginRemovalQuerySchema.safeParse(request.query);
+    if (!input.success) throw new HttpError(400, 'invalid_plugin_removal_query', 'Invalid removal reference query.');
+    return reply.header('cache-control', 'no-store').send(await transaction(pool,
+      client => readPluginRemovalReferences(client, id(request.params.id), input.data), true));
   });
   app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime', async (request, reply) => {
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id), trustedHostPolicy), true)));

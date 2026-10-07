@@ -1,3 +1,4 @@
+import { pluginRemovalPageSchema, type PluginRemovalQuery, type PluginRemovalPage } from '../../contracts/src/plugin-removal.js';
 import { pluginRuntimeViewSchema, pluginToolBindingSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolBinding, type PluginToolTaskRequest } from '../../contracts/src/plugin-runtime.js';
 import { pluginConfigurationSchema, pluginRevisionSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
 import type { AcceptedTask } from '../../contracts/src/tasks.js';
@@ -52,6 +53,16 @@ export function decodePluginHostCandidates(value: unknown, id: string, input: Pl
     requireAck(candidate.runnerId > previous);
     previous = candidate.runnerId;
   }
+  return page;
+}
+
+/** Keep the server order: the opaque cursor can retain precision absent from createdAt. */
+export function decodePluginRemovalReferences(value: unknown, id: string, input: PluginRemovalQuery): PluginRemovalPage {
+  const page = pluginRemovalPageSchema.parse(value);
+  requireAck(page.registrationId === id && page.materialInstallOperationId === input.materialInstallOperationId
+    && (page.nextCursor === null || page.nextCursor !== input.cursor));
+  requireAck(new Set(page.references.map(reference => reference.bindingId)).size === page.references.length);
+  // A different install operation can refer to the same physical material in this registration.
   return page;
 }
 

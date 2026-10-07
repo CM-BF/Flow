@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/@types"
+    ],
+    "baseUrl": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+    "paths": {
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/client/src/index.ts"
+      ]
+    }
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/server/src/plugin-runtime/routes.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/server/src/plugin-runtime/removal-references.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/src/plugin-removal.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/server/src/plugin-runtime/removal-references.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/client/src/index.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/client/src/plugin-management.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/client/src/plugin-removal-references.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/cli/src/index.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/cli/src/plugin-removal-references.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/x01-removal-references-client/fixtures.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/src/plugin-management/PluginManagement.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/src/plugin-management/runtime-command.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/test/plugin-management/browser.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/test/plugin-management/fixture/main.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/test/plugin-runtime-command.test.ts"
+  ]
+}

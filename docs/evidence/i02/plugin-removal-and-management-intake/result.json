@@ -1,0 +1,38 @@
+{
+  "pid": 20376,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 2932,
+  "observed_bytes": 0,
+  "retained_bytes": 0,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-i02-plugin-combined-b57mn9jq",
+    "dev": 16777234,
+    "ino": 124151127,
+    "entries": 1,
+    "cleanup": "KEEP"
+  }
+}

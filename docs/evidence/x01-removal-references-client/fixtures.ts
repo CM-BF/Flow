@@ -1,0 +1,5 @@
+export const uuid = (n: number) => `00000000-0000-4000-8000-${n.toString(16).padStart(12, '0')}`;
+export const id = uuid(1), material = uuid(2), query = { materialInstallOperationId: material };
+export const reference = (n = 10) => ({ bindingId: uuid(n), taskId: uuid(n + 100), materialInstallOperationId: uuid(3), createdAt: '2026-10-07T00:00:00.123Z', taskState: 'running', attemptId: uuid(n + 200), classification: 'active', reason: 'task-active' });
+export const page = () => ({ protocol: 'flow.plugin-removal-references.v1', registrationId: id, currentRevision: 4, materialInstallOperationId: material, versionId: uuid(4), storeId: 'store-a', materialId: 'a'.repeat(64), purpose: 'reference-observation', coverage: 'registration-tool-task-bindings', consistency: 'independent-page-snapshots', hostRelease: 'unknown', physicalRemoval: 'not-authorized', references: [reference()], nextCursor: null as string | null });
+export const response = (value: unknown, status = 200) => new Response(JSON.stringify(value), { status, headers: { 'content-type': 'application/json' } });

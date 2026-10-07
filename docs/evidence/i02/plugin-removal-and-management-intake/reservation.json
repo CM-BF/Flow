@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-07T12:57:50.746200+00:00",
+  "files": 17,
+  "action": "Focused noEmit of exact reviewed backend/client/CLI/Web module and direct tests; no PG/browser/provider or installation",
+  "bounds": {
+    "workSeconds": 30,
+    "termSeconds": 2,
+    "reapSeconds": 3,
+    "scratchBytes": 8388608,
+    "rawBytes": 1048576
+  },
+  "freeBytes": 21775761408,
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/bin/tsc",
+    "--project",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/plugin-removal-and-management-intake/tsconfig.json",
+    "--pretty",
+    "false"
+  ]
+}

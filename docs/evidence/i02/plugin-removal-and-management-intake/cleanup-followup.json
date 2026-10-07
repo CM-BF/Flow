@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T12:58:24.622651+00:00",
+  "originalResult": "result.json preserves initial KEEP",
+  "identity": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-i02-plugin-combined-b57mn9jq",
+    "dev": 16777234,
+    "ino": 124151127,
+    "uid": 501
+  },
+  "ownedGroup": "fresh ESRCH",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "rows": [
+    {
+      "path": "node-compile-cache",
+      "bytes": 96,
+      "directory": true
+    },
+    {
+      "path": "node-compile-cache/v24.20.0-arm64-964aae3f-501",
+      "bytes": 96,
+      "directory": true
+    },
+    {
+      "path": "node-compile-cache/v24.20.0-arm64-964aae3f-501/b16c272a",
+      "bytes": 1357820,
+      "directory": false
+    }
+  ],
+  "fileBytes": 1357820,
+  "reason": "Only this typecheck child created cache under exclusive initially-empty TMPDIR; no shared dependency or source touched",
+  "cleanup": "REMOVED_EXACT_OWNED_GENERATED_NODE_CACHE_NAMESPACE"
+}

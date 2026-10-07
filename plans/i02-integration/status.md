@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:51:34.332685+00:00 / main7524固定；已接R2部分实际证据，剩余维护入口c36f4a81独审通过，等待fresh独占窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:03:53.129463+00:00 / main7524固定；SVC剩余入口获审并预约个人窗口，三插件片段组合已接收至本分支 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,10 +12,10 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main7524a7fa；本分支ef0b9be5已接迁入准备/R1与R2限定实际证据，个人窗口闭合前不改变root |
+| 工作基线 / HEAD | main7524a7fa固定；本分支包含R2部分实际证据、c36剩余入口独审与三插件已审片段；个人窗口闭合前不改变root |
 | 工作树dirty状态 | 仅已审固定输入与本次接收记录；两个既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | X01原local3/3及真实中心1/1分层获审；当前两新test noEmit0/2363ms，0PG/Chrome/provider重跑。三旧App原兼容独审保持。 |
+| 检查状态 | 三插件片段18个固定源逐字一致；组合strict noEmit exit0/2932ms，0PG/Chrome/provider重跑。各原独审与实际局部证据保留唯一canonical。 |
 | 已集成main状态 / HEAD | main7524已接三旧App兼容、插件版本与202来源；本分支最新接收尚未发布。个人迁入/网页宿主/报告/策略已完成，后台仍af51/v18。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
@@ -23,7 +23,7 @@
 | 优先级 | 2 |
 | 当前产出 | 已保存个人更新的实际完成步骤和原始失败；新产物与网页宿主已安装，后台仍保持原版。 |
 | 下一可用交付 | 在独占更新窗口内仅接续剩余后台维护，保留原有页面与任务。 |
-| 当前阻塞 | ACTIVE: 剩余维护准备已通过独审，正在与两组核对独占更新窗口；不重放已完成现场步骤。 |
+| 当前阻塞 | ACTIVE: 个人后台更新占用当前独占窗口，主线保持固定；其余已审片段已在隔离分支接收，待窗口归还发布。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
