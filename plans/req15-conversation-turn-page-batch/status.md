@@ -32,7 +32,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
-| Review | [review.md](review.md)：准备e099已批准；新HTTP结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 待status_read只读忠实性审，不重跑源码检查 |
+| Review | [review.md](review.md)：准备e099已批准；新HTTP结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 待architecture_read只读忠实性审，不重跑源码检查 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope；owner2026-10-07T03:54:02.121Z fresh核身份/路径均符，state/replies移除与停写保持 |
 | 架构影响 | conversation内部批量Interface已在main7b6接收；架构基线target产品d209/main7b6，责任mika协调架构owner；HTTP验证不新增产品结构，未声称图已同步 |
 
@@ -140,4 +140,6 @@ architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pag
 
 2026-10-07 04:02:17 UTC 唯一HTTP窗口实际收束：execution c83526f9724c7b9a751e4fd859d9fd3d00750a2e；wrapper fresh04:00:28.045Z确认v2/8，free25859956736B，固定manifest227输入/16snapshot links/9原toollinks与7输出absent通过。原入口执行一次，1selected1passed/exit0、25HTTP、0provider；原case+page401/403全部通过。PID/PGID27708 exit0/group absent/合并stdout+stderr pipe EOF、427 observed=retained/signals/secondary空；DB flow_req15_http_ad5adfcf4ba1/OID1205057/marker与reservation一致，startup/app/fixture/admin关闭、零连接ordinaryDROP/absence及动态port55163关闭有fixture回执；TMPdev16777234/inode123425645同身份空目录移除，owner精确lstat absent。立即通知Mika归还重窗口，不等独审；无残留/unknown/待launch。
 
-[输出manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa，7原件6745B/regular0600；raw427B/SHA914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009。wrapper3.012804s与外部time3.05s、shell04:00:27→04:00:30秒级UTC分列；非以内部wall冒充完整外部耗时。git diff --check exit2仅原raw第10行尾空行，作为Vitest原始输出保真例外，未改log。source/fixture/227inputs及历史26/PG2/11逐字保持，新target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6` 仅实际证据，待status_read直接独审。
+[输出manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa，7原件6745B/regular0600；raw427B/SHA914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009。wrapper3.012804s与外部time3.05s、shell04:00:27→04:00:30秒级UTC分列；非以内部wall冒充完整外部耗时。git diff --check exit2仅原raw第10行尾空行，作为Vitest原始输出保真例外，未改log。source/fixture/227inputs及历史26/PG2/11逐字保持，新target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6` 仅实际证据，待architecture_read直接独审。
+
+Mika本次槽位安排：实际HTTP结果独审接收者改为architecture_read；原status_read准备approval保持。owner固定结果后安全停止本段全部写入/运行并归还agent槽，claimv2保留；root在owner terminal后恢复reviewer，不同时恢复两位或重跑检查。
