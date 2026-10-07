@@ -27,3 +27,9 @@ Findings/结论：等待审者；空结论不是通过。
 db_transaction_owner / gpt-6-astra：SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED，唯一P2 CLOSED，0剩余P1/P2。source53d/result4f241/packet2128；18bindings212857B逐Git/WT/哈希一致。tool error保持原helper，verifier独立；3直接case实际transaction callback/rollback/release/0INSERT。首fake timeout、全部旧raw与错误floor保留。完整字段：[approval](../../docs/evidence/x01-verifier-admission-result/repair/approval.json)。
 
 继承原87fb其它已审内容；AV实际PG、center SQL rollback、factory/main挂载与policy转发、runtime v4/settled/outbox、publicHTTP/完整旅程仍NOT_RUN/NOT_INTEGRATED，不授OPEN。
+
+## VAR-04 准备审查，独立于已审核心
+
+672ce38：db 21:30:22 SOURCE_CHANGES_REQUESTED（1P2/0P1），末尾409可能早拒绝假通过；57b188f5两相同test只增加project_limit，21:31:21 SOURCE_DELTA_REVIEW_APPROVED（case/fixture0P1P2），增量NOT_RUN。原types/list结果不重绑最终行为。
+
+b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承remove_sample根身份检查太晚，可能换根symlink先删原子项。尚未修复，整体PARTIAL/NOT_READY，不授PG；详见transaction-pg/reviews.json。新manifest仅固定准备输入，不将输入哈希一致当资源行为安全批准。

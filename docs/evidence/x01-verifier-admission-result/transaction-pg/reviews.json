@@ -1,0 +1,38 @@
+{
+  "source": {
+    "at": "2026-10-07T21:30:22.000Z",
+    "reviewer": "db_transaction_owner",
+    "model": "gpt-6-astra",
+    "target": "672ce38dfd28eec663443bbfd4226f5f22448434",
+    "state": "SOURCE_CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "200-node branch accepted any HTTP409, allowing early rejection to masquerade as late acceptTask/wake rollback. Require exact project_limit.",
+    "localFidelity": "ACCEPTED",
+    "scope": "5case and fixture; excludes operator and complete manifest"
+  },
+  "caseDelta": {
+    "at": "2026-10-07T21:31:21.000Z",
+    "reviewer": "db_transaction_owner",
+    "model": "gpt-6-astra",
+    "target": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+    "state": "SOURCE_DELTA_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "change": "Two identical test paths only add code:project_limit to final rejection assertion. Creation and source equality unchanged.",
+    "executed": false,
+    "scope": "case/fixture delta only; operator remains blocked"
+  },
+  "operator": {
+    "reviewer": "b01_bounded_reads",
+    "model": "gpt-6-astra",
+    "target": "672ce38dfd28eec663443bbfd4226f5f22448434",
+    "state": "SOURCE_CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "remove_sample removes children before checking sampled root identity; rename root and replace with symlink may delete original children before root mismatch.",
+    "fixRequired": "Before first and each deletion verify sampled root is same canonical non-symlink directory/dev/inode, and final absence uses lstat ENOENT. Pure FS root-swap preservation plus normal cleanup control required.",
+    "scope": "thin caller/resource boundary only; no final manifest certification",
+    "inheritedHelperSha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+  }
+}

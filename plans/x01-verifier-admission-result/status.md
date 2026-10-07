@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:21:34.260Z |
+| 最近更新时间 | 2026-10-07T21:32:52.281Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,19 +14,19 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v1 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
-| 工作树 dirty 状态 | 修复source STOP；仅封存metadata，提交后clean |
+| 工作树 dirty 状态 | 本准备源码和检查STOP；metadata封包后clean |
 | 工作分支状态 | in-progress（核心已审，真实事务准备） |
 | 实现目标 | 53d50dddcefb5b1e060f45b5a7addd429aa6ec81 |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：修复3/3公共调用反例和affected strict0；旧15distinct不重跑/旧错误保留，PG NOT_RUN |
 | Review | APPROVED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：db 2026-10-07T21:12:11.000Z；P2 CLOSED/0P1P2，原CHANGES_REQUESTED保留 |
 | 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV036/center14前置尚待真实PG及受控接收 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 验证任务受理和中心复算核心已通过源码独审及局部回归，尚未公开启用 |
-| 下一可用交付 | 完成真实事务验收，再与可信启动及运行链接入同批交付 |
-| 当前阻塞 | NONE |
+| 当前产出 | 真实事务验收用例已完成类型检查和收集，清理安全问题待修复 |
+| 下一可用交付 | 修复清理根目录身份门禁，再完成真实事务验收 |
+| 当前阻塞 | ACTIVE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | 新5case真实事务准备；types/list未运行，PG NOT_OPEN |
+| VAR-04 | in-progress | architecture_read | types2→0/list精确5（0执行）；case断言P2已静态关闭，operator换根P2待修，PARTIAL/NOT_READY |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -58,3 +58,13 @@
 2026-10-07T21:13:37.406Z：在原已开修复段预留64KiB尾额归档批准，0新工程/PG。source53d、packet2128固定；源码STOP/claim保留。真实PG窗口未申请/未开，不为未发生等待编造起点。原任务首次开工20:31:27不重置，完整完成仍NOT_COMPLETED。
 
 VAR-04 新准备段：2026-10-07T21:18:50.000Z–21:43:50.000Z，8MiB含全部新增供给/TMP/raw。首次写入2026-10-07T21:21:34.260Z；Arc短hold期间仅只读，未新增growth。只新增事务测试与own evidence，已审53d产品冻结；新5case未运行，真实PG NOT_OPEN。
+
+VAR-04准备封存：2026-10-07T21:32:52.281Z。测试source57b188f5ee9fce6589160bb61b75891a800bfb6b；类型/收集实际只绑定039fffe0及原逐轮sourceHashes，最后project_limit文字增量NOT_RUN。3child监督5969ms、stdout821B+listJSON1843B，全部ownedabsent/MERGED EOF/3TMP同identity空目录删除，0PG/HTTP/provider。最后caller终点21:26:14.170Z、工具观察21:26:31Z；wholeexternalwall/peak UNKNOWN。原--json输出覆盖正本的事实、归档及从039fffe0恢复均保留，不将list当5pass。
+
+阻塞说明：b01对672ce的operator独审发现继承helper先删子项后核根身份，换根风险须修复并用纯FS反例验证；无实际PG开放。本准备仅PARTIAL/NOT_READY，详见[候选](../../docs/evidence/x01-verifier-admission-result/transaction-pg/candidate.json)。db21:30:22 caseP2在21:31:21对57b188f5静态关闭，原审结保留；不代替operator或完整准备批准。
+
+| 等待ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| VAR-W03 | UNKNOWN | 2026-10-07T21:31:21.000Z | 审查 | 五case唯一断言P2静态关闭；operator另有清理P2 | transaction-pg/reviews.json；21:28仅dispatch分钟粒度记录 |
+
+本准备实际未申请/消费PG；AV R2前置亦受同helper风险影响，不能因旧READY启动。源检查已STOP，保留claim；完整VAR/父X01均未完成，main/部署事实不变。

@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-07T21:32:16.925Z",
+  "executionScope": "Focused strict TypeScript and exact Vitest list only; zero test cases, hooks, HTTP, PG or worker execution",
+  "attempts": [
+    {
+      "name": "types",
+      "start": "2026-10-07T21:25:12.201Z",
+      "endBeforePersistence": "2026-10-07T21:25:14.460Z",
+      "pid": 42423,
+      "exitCode": 2,
+      "supervisorMs": 2203,
+      "finalOwned": "absent",
+      "mergedEOF": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/local-types/output.log",
+        "bytes": 821,
+        "sha256": "c2b3aeee9cc2de73d2e46b7627175f3572b643c7016a8bc3e7e835e570e52dea"
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124529208
+      }
+    },
+    {
+      "name": "types-fix",
+      "start": "2026-10-07T21:25:47.272Z",
+      "endBeforePersistence": "2026-10-07T21:25:49.331Z",
+      "pid": 64945,
+      "exitCode": 0,
+      "supervisorMs": 2027,
+      "finalOwned": "absent",
+      "mergedEOF": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/local-types-fix/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124529335
+      }
+    },
+    {
+      "name": "behavior",
+      "start": "2026-10-07T21:26:12.399Z",
+      "endBeforePersistence": "2026-10-07T21:26:14.170Z",
+      "pid": 80745,
+      "exitCode": 0,
+      "supervisorMs": 1739,
+      "finalOwned": "absent",
+      "mergedEOF": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/local-behavior/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124529407
+      }
+    }
+  ],
+  "supervisorTotalMs": 5969,
+  "stdoutBytes": 821,
+  "listJSONBytes": 1843,
+  "collectedCases": 5,
+  "casePasses": 0,
+  "caseExecution": 0,
+  "initialFailuresRetained": true,
+  "historicalEPERMRetained": true,
+  "wholeExternalWall": "UNKNOWN",
+  "peak": "UNKNOWN",
+  "postCheckDelta": {
+    "target": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+    "change": "only project_limit assertion",
+    "state": "NOT_RUN"
+  },
+  "remainingEngineeringChildren": 0
+}
