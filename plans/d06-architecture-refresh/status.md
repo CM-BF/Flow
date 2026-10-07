@@ -5,8 +5,8 @@
 | 最近更新时间 UTC | 2026-10-07T04:35:12.794806+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | 2026-10-07T04:35:12.794806+00:00 |
-| 任务时间来源 | 开工UNKNOWN：原首次开工缺可信记录，不从commit/mtime/claim倒推。完成2026-10-07T04:35:12.794806+00:00：本owner核齐Lead主线02c880与04:32:08静态资产发布回执、exact8一致后记录的实际收口时点；不冒原用户tab刷新。领取释放另以D04账本为准。 |
+| 任务完成时间 | 2026-10-07T04:35:12.794Z |
+| 任务时间来源 | 开工UNKNOWN：原首次开工缺可信记录，不从commit/mtime/claim倒推。完成2026-10-07T04:35:12.794Z（同一clock观察按合同截至毫秒，原微秒见main-readproof）：本owner核齐Lead主线02c880与04:32:08静态资产发布回执、exact8一致后记录的实际收口时点；不冒原用户tab刷新。领取释放另以D04账本为准。 |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root |
 | 单一status owner / model | d01_owner / gpt-6-astra ultra |

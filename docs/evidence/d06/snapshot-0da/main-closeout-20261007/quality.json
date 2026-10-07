@@ -13,9 +13,11 @@
   ],
   "findings": [
     "Removed current pending-main claims after actual intake.",
-    "Preserved historical start UNKNOWN and narrow-reading acceptance limit."
+    "Preserved historical start UNKNOWN and narrow-reading acceptance limit.",
+    "Metadata parser rejected +00:00 and >3 fractional digits; same observed UTC converted to contract milliseconds Z, original microsecond and failed parse preserved."
   ],
   "newProductRuns": 0,
   "newHTTPRequests": 0,
-  "exactSourceChanges": 0
+  "exactSourceChanges": 0,
+  "push": "First normal push of5450 remote commit_refs failed; remote stayedbabd. No force/rebase; next normal push includes this necessary UTC formatting fix."
 }
