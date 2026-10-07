@@ -7,27 +7,27 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:52:12.648667+00:00；main5cae7a25沿固定receipt。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:00:17.883925+00:00；main5cae7a25沿原receipt，v13/71与05162934 fresh核clean。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次实际开工缺独立明确时点，不用claim/commit/mtime推断；各分段实际时点见证据。 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 工作分支状态 | in-progress |
-| 当前产出 | 会话PG首次5/6失败已封存；损坏profile夹具已改为新建记录，保留读取拒绝断言，单项后继类型与收集通过，待独审。 |
-| 下一可用交付 | 独审本次失败事实及夹具小增量后，只为最后一项协调新的专库窗口；前五项不重跑。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 首次会话PG失败事实及单项夹具修复已独审通过；修复后的末项已准备，等待共享PG实际交接。 |
+| 下一可用交付 | 在真实资源交接后只执行末项专库检查，再交结果独审；前五项原通过证据保留。 |
+| 当前阻塞 | ACTIVE: X01已实际清理归还，正在直接与Web确认下一PG持有者；未确认前不启动。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
 | 工作树dirty状态 | 当前仅本次结果/回执/status；最终提交后核clean，产品与原输入不改。 |
-| HEAD（最近观察） | 30d540e6178336f4659d6ab1f95d5416b9594f61（窄修源码；本次metadata packet随后固定） |
+| HEAD（最近观察） | 051629348993973d77f7ad0a9d3e00fdb001801a（06:59:49 UTC核origin同clean；本次仅批准归档/status） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v13 ACTIVE71；运行历史仍v12/72。adapter.ts已STOP并于06:45:25.779Z移除：[正式回执](../../docs/evidence/mature02c02/adapter-handback-receipt.json)，S01须自己fresh领取。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
-| Review | 原准备P2已关闭；失败630e及新bfae/30d夹具、单项输入待一次独审，PG仍NOT_OPEN。 |
+| Review | db_transaction_owner06:55:16Z批准失败630e忠实性及bfae/30d单项准备，0P1/P2；新actual NOT_RUN，见conversation-pg-sentinel-review.json。 |
 | 检查 | 会话PG R1：6选5过1失败/exit1/122HTTP；PID97064 group absent/双EOF，DB与服务正常关闭，外TMP KEEP。旧类型、原失败及unknown不重写。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |

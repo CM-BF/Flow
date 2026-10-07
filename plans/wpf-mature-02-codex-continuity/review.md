@@ -29,3 +29,7 @@ db_transaction_owner06:40:56Z DELTA_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED, sou
 ## 2026-10-07T06:52:12.648667+00:00 — immutable sentinel fixture correction, NOT_OPEN
 
 R1 result fixed630e selected6/passed5/failed1, no automatic retry. Sourcebfaee0cd creates a corrupt fixture atINSERT instead of forbiddenUPDATE; valid first/bad sentinel order is asserted and originalGET rejection unchanged. Support30d540e6 chooses this independent case with fixed -t and1pass/5unselected gate; original six-case paths unchanged. Types0/list1 only. One combined failure-fidelity and delta review pending via conversation-pg-sentinel-review-ready.json.
+
+## 2026-10-07T07:00:17.883925+00:00 — failure fidelity and sentinel preparation accepted
+
+Independent db_transaction_owner06:55:16Z APPROVED/0P1P2, packet05162934, failure630e+sourcebfae/30d. Old317 and new318 bindings,86831Barchive,types0/list1-only and10absent accepted. R1 remains5/6 FAIL/RESULT_UNKNOWN/TMP KEEP, runtime668a/v12. Newactual remainsNOT_RUN pending realholder handoff; no checks repeated. Full bounded verdict: conversation-pg-sentinel-review.json.
