@@ -1,0 +1,12 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host
+
+ ✓ apps/runner/src/engineering/native-adapter.test.ts (20 tests | 18 skipped) 3266ms
+     ✓ accepts the stopped writer and complete checked snapshot through real runtime/outbox/public readback  785ms
+     ✓ retains the original committed artifact after lost ACK and restarts without another writer or claim  696ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed | 18 skipped (20)
+   Start at  21:50:43
+   Duration  3.55s (transform 521ms, setup 0ms, import 193ms, tests 3.27s, environment 0ms)
+

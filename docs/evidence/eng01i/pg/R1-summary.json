@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T04:51:48.734975+00:00",
+  "window": "ENG01I-PG-20261007-R1",
+  "selected": 2,
+  "passed": 2,
+  "unselected": 18,
+  "outerExitCode": 0,
+  "childExitCode": 0,
+  "supervisedWorkMs": 3829,
+  "rawStdoutStderrBytes": 594,
+  "reservationAt": "2026-10-07T04:50:43.251487+00:00",
+  "cleanupAt": "2026-10-07T04:50:47.092199+00:00",
+  "runtimeMaximumCheckpointBytes": 3434429,
+  "runtimeBeforeCleanupBytes": 631,
+  "runtimeRemoved": true,
+  "minObservedFreeBytes": 25645150208,
+  "database": "flow_eng01i_3ab330a3e48c40b48a360fc28a8d2f00",
+  "databaseIdentity": {
+    "oid": "1214681",
+    "marker": "2915f78c-0d23-4416-9dbc-396d3b37eeb0"
+  },
+  "databaseBytesBeforeDrop": 12516375,
+  "connectionsBeforeDrop": [],
+  "databaseAbsent": true,
+  "ownedGroup": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "samples": [
+    {
+      "kind": "success",
+      "taskId": "8cd931a6-781a-49c3-8358-5d5866d6797a",
+      "status": "succeeded",
+      "verification": "passed",
+      "counts": {
+        "opens": 1,
+        "closes": 1,
+        "snapshots": 2,
+        "releases": 1
+      },
+      "bytes": 3111
+    },
+    {
+      "kind": "lost-ack-restart",
+      "taskId": "53d3fdf5-1802-45fe-9cfa-8b34004f09bd",
+      "counts": {
+        "opens": 1,
+        "closes": 1,
+        "snapshots": 2,
+        "releases": 0
+      },
+      "identicalBatches": 2,
+      "attempts": 1,
+      "committedEvents": 1,
+      "verification": "pending"
+    }
+  ],
+  "providerCalls": 0,
+  "bounds": "Sizes/free are finite checkpoints, not continuous OS quota or WAL peak. Original pre-reap EPERM observation remains unknown; final owned state absent. Injected authority/JSONL peer only, no concrete production authority or real-model qualification."
+}

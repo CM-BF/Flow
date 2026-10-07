@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:50:04.101523+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:51:48.734975+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -12,22 +12,22 @@
 | Branch | codex/engineering-native-host |
 | 工作基线 / HEAD | 原280289；受控main422→c0e0263dc01b9527293318a644f964bd048e2a86 / mergeea585db4d198df33b62453d5502f74772bbc3c25 |
 | 工作树dirty状态 | 本metadata提交后clean |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 工作分支状态 | review |
+| 本片段交付阶段 | review |
 | 实现目标 | c3d29e4a36af74380565922fbb838ebec1bf7afc |
 | 实现范围 | apps/runner/src/engineering/native-adapter.ts, apps/runner/src/engineering/native-adapter.test.ts, apps/runner/src/engineering/calculator-receipt.ts, apps/runner/src/engineering/calculator-receipt.test.ts |
-| 检查状态 | 28different分轮局部通过；C02直接3重叠通过；focused types最终0；factory/runtime仅import成功；PG2例NOT_RUN，见local/README |
+| 检查状态 | 30different分轮（原局部28＋R1 PG2）；C02直接3重叠；focused types0；R1 2/2、18未选/3829ms，DB与自有进程/tmp正常清理 |
 | 已集成main状态 / HEAD | 本片未集成；固定base 280289008a5a3779e4e5e6453181b96062ed9514 |
 | 任务开工时间 | 2026-10-06T12:57:59.124Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 写入、完整内容检查与公开收据的宿主组合已通过局部检查，已通过模块与运行入口独审，开始单次中心恢复验收准入 |
-| 下一可用交付 | 验证成功收据读回和确认丢失后的重启保护，再交独立审查 |
+| 当前产出 | 写入、完整内容检查与公开收据的宿主组合及两个中心恢复旅程已通过，结果待独立复核 |
+| 下一可用交付 | 独立复核成功收据与丢失确认后的重启证据，再接收本片 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED_MODULE_LOCAL_AND_PG_PREPARATION；实际PG结果待执行/独审 |
+| Review | [review.md](review.md)，APPROVED_MODULE_LOCAL_AND_PG_PREPARATION；R1实际2/2结果待独审 |
 | Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v1 active，6 literal；2026-10-07T04:18:16.925Z新take成功；原73bbb9e0 v2已released |
 | 架构影响 | 新native编排consumer，F消费公开wire；无启动入口/新loop，交Lead同步固定架构 |
 
@@ -35,8 +35,8 @@
 | --- | --- | --- | --- |
 | ENG01I-01 | completed | native_center_owner | claim与Interface |
 | ENG01I-02 | completed | native_center_owner | [恢复Interface](../../docs/evidence/eng01i/resume/interface.md) |
-| ENG01I-03 | in-progress | native_center_owner | [局部原证据](../../docs/evidence/eng01i/local/README.md)；[PG固定候选](../../docs/evidence/eng01i/pg/window-request.md) |
-| ENG01I-04 | pending | native_center_owner | 未审/未main |
+| ENG01I-03 | completed | native_center_owner | [局部原证据](../../docs/evidence/eng01i/local/README.md)；[PG固定候选](../../docs/evidence/eng01i/pg/window-request.md) |
+| ENG01I-04 | in-progress | native_center_owner | 模块/入口已审；R1结果待独审、未main |
 
 模块可用不等于concrete authority/production host/native用户验收完成。实际资格归Mika唯一owner；本片0provider，缺可信authority不启动transport。父ENG已登记本片恢复，聚合展示由Lead维护。
 
@@ -62,3 +62,5 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 2026-10-07T04:47:29.839386+00:00：仅修正继承清单统计，README固定f855字节新增绑定；334继承项+12delta项全部fixed/current一致，原raw/原准备manifest及4产品未动，0新检查。独审最后语义/类型raw已核无阻断，等待最终固定回执与共享PG准入。
 
 2026-10-07T04:50:04.101523+00:00：最终唯一独审已原样归档，R1许可只限固定2PG例一次，额外为独立浏览器与三队local保512MiB，fresh总线1744830464B；原live/cleanup上限不变。尚未开始PG，先核claim/固定输入/归属与独占run。
+
+2026-10-07T04:51:48.734975+00:00：R1实际2/2于04:50:47.092199Z正常清理/归还窗口；单专库OID1214681、marker一致、连接[]后normalDROP且absent，自有组absent/双EOF/目录removed。原局部28+本轮2共30different分轮，0provider。见[实际摘要](../../docs/evidence/eng01i/pg/R1-README.md)；源码不变，结果封包待独审，未宣称真实模型/权限/生产资格。
