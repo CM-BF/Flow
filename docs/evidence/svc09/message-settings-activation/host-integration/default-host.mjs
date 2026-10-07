@@ -45,10 +45,11 @@ export async function defaultSequence({ input, preview, controller, pool, checkp
       input.webArtifact, input.artifact, preview.statusPreview));
   } catch (error) { primary = error; }
   try {
-    const observed = await preview.readPreviewJson(join(input.directory, 'state.json'));
-    await checkpoint('default-start-observation', { purpose: PURPOSE, processes: observed.processes,
-      readiness: observed.startReadiness ?? null, failure: observed.lastStartFailure ?? null,
-      startCleanup: observed.startCleanup ?? null, evidenceErrors: observed.startEvidenceErrors ?? null });
+    // This exact object is mutated by the controller before each onSpawn save. Re-reading an
+    // older state file could omit an identity when that save failed; never use it as this witness.
+    await checkpoint('default-start-observation', { purpose: PURPOSE, origin: 'controller-call-state', processes: state.processes,
+      readiness: state.startReadiness ?? null, failure: state.lastStartFailure ?? null,
+      startCleanup: state.startCleanup ?? null, evidenceErrors: state.startEvidenceErrors ?? null });
   } catch (error) {
     // Persistence is secondary to the exact startup failure. No retry and no raw exception content.
     if (!primary) primary = error;
@@ -86,9 +87,18 @@ export async function runDefaultConsumer({ input, checkpoint, pool }) {
   return defaultSequence({ input, preview, controller, pool, checkpoint });
 }
 
-export function defaultClosure({ outer, recordsKnown, stateKnown, registered, processes, connections, failures, adminClosed }) {
+export function launchAccountingKnown(records, state) {
+  const observation = records.find(value => value.phase === 'default-start-observation')?.fact;
+  // A readable old state alone cannot rule out an unpersisted onSpawn identity.
+  return observation?.purpose === PURPOSE && observation.origin === 'controller-call-state'
+    && Array.isArray(observation.evidenceErrors) && observation.evidenceErrors.length === 0
+    && Array.isArray(observation.startCleanup) && observation.readiness !== null && typeof observation.readiness === 'object'
+    && Array.isArray(state?.startEvidenceErrors) && state.startEvidenceErrors.length === 0;
+}
+
+export function defaultClosure({ outer, recordsKnown, stateKnown, launchAccounted, registered, processes, connections, failures, adminClosed }) {
   return outer.owned_state === 'absent' && outer.eof?.stdout === true && outer.eof?.stderr === true
-    && recordsKnown && stateKnown && registered.length <= 3 && processes.length === registered.length
+    && recordsKnown && stateKnown && launchAccounted === true && registered.length <= 3 && processes.length === registered.length
     && processes.every(value => value.state === 'stopped') && connections?.state === 'empty'
     && failures.length === 0 && adminClosed === true;
 }
@@ -101,6 +111,7 @@ export async function cleanupDefault(input) {
   let records = [], state, recordsKnown = false, stateKnown = false;
   try { records = await savedWork(input); recordsKnown = true; } catch (error) { result.failures.push(failure(error, 'records-read')); }
   try { state = await privateJson(join(input.directory, 'state.json')); stateKnown = true; } catch (error) { result.failures.push(failure(error, 'state-read')); }
+  result.launchAccounted = launchAccountingKnown(records, state);
   const registered = ownedRecords(records, state, input.directory, ['default-start-observation', 'default-legacy']);
   assert.ok(registered.length <= 3 && registered.every(value => roles.includes(value.role)), 'DEFAULT_ROLE_SCOPE_MISMATCH');
   const load = loadFrom(root), { stopOwnedProcess } = await load('tools/personal-preview/process.mjs');

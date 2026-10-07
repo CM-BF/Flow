@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { PURPOSE, requirePurpose, defaultArguments, defaultSequence, defaultClosure, emptyTasks } from './default-host.mjs';
+import { PURPOSE, requirePurpose, defaultArguments, defaultSequence, defaultClosure, launchAccountingKnown, emptyTasks } from './default-host.mjs';
 import { ownedRecords } from './host-cleanup.mjs';
 import { failure } from './host-records.mjs';
 const input = { format: 1, purpose: PURPOSE, directory: '/private/tmp/flow-svc09a-host-unit_1', providerCalls: 0,
@@ -20,6 +20,7 @@ function fixture() {
     assert.deepEqual(initial.processes, {}); assert.equal(web, input.webArtifact); assert.equal(artifact, input.artifact);
     assert.equal(status, preview.statusPreview); calls.push('start');
     state.processes = { center: { pid: 11 }, runner: { pid: 12 }, web: { pid: 13 } }; state.startReadiness = { center: { outcome: 'ready' } };
+    Object.assign(initial, structuredClone(state));
     return status({ directory: config.directory });
   } };
   const pool = { query: async sql => { assert.match(sql, /flow\.tasks/); calls.push('empty'); return { rows: [{ tasks: 0, attempts: 0 }] }; } };
@@ -53,13 +54,34 @@ test('nonempty queue or unknown stop cannot become default work complete', async
 });
 test('actual recorded subset closure permits KEEP without inventing unstarted roles', () => {
   const facts = { outer: { owned_state: 'absent', eof: { stdout: true, stderr: true }, exit_code: 1 }, recordsKnown: true,
-    stateKnown: true, registered: [{ role: 'center' }], processes: [{ role: 'center', state: 'stopped' }],
+    stateKnown: true, launchAccounted: true, registered: [{ role: 'center' }], processes: [{ role: 'center', state: 'stopped' }],
     connections: { state: 'empty' }, failures: [], adminClosed: true };
   assert.equal(defaultClosure(facts), true);
-  for (const change of [{ stateKnown: false }, { recordsKnown: false }, { connections: { state: 'unknown' } },
+  for (const change of [{ stateKnown: false }, { recordsKnown: false }, { launchAccounted: false }, { connections: { state: 'unknown' } },
     { adminClosed: false }, { processes: [{ state: 'unknown' }] }, { registered: [{}, {}] }, { failures: [{}] }]) {
     assert.equal(defaultClosure({ ...facts, ...change }), false);
   }
+});
+test('unpersisted launch cannot be inferred closed from readable empty state', () => {
+  assert.equal(launchAccountingKnown([], { processes: {} }), false);
+  const records = [{ phase: 'default-start-observation', fact: { purpose: PURPOSE, origin: 'controller-call-state', evidenceErrors: [], startCleanup: [], readiness: {} } }];
+  assert.equal(launchAccountingKnown(records, { startEvidenceErrors: [] }), true);
+  assert.equal(launchAccountingKnown(records, {}), false);
+  assert.equal(launchAccountingKnown(records, { startEvidenceErrors: ['EIO'] }), false);
+  records[0].fact.evidenceErrors.push('ENOSPC');
+  assert.equal(launchAccountingKnown(records, { startEvidenceErrors: [] }), false);
+});
+test('pending launch identity comes from actual call state despite stale persisted state', async () => {
+  const f = fixture(), primary = new Error('startup failed');
+  f.controller.startPreviewServices = async (_config, actual) => {
+    actual.processes = { center: { pid: 111, command: null, nonce: 'pending' } };
+    actual.startEvidenceErrors = ['EIO']; actual.startCleanup = []; actual.startReadiness = {};
+    throw primary;
+  };
+  await assert.rejects(defaultSequence(f), error => error === primary);
+  const observed = f.records.find(value => value.phase === 'default-start-observation').fact;
+  assert.equal(observed.processes.center.pid, 111); assert.deepEqual(f.state.processes, {});
+  assert.equal(launchAccountingKnown(f.records, { startEvidenceErrors: [] }), false);
 });
 test('failed start checkpoint contributes all exact generations and rejects identity change', () => {
   const record = { pid: 11, group: 11, nonce: 'unit', command: input.directory + ' --flow-preview=unit', startedAt: 'fixed' };
