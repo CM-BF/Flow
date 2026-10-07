@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-07T17:01:14.121Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "target": "29093a34db2ac99fed895e2df40a4381ca354530",
+  "base": "a30c7e8d3c3d1ffb318010a6db5bed7e55e9a6a0",
+  "conclusion": "APPROVED_SOURCE_REGISTRATION",
+  "P1": 0,
+  "P2": 0,
+  "scope": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "plans/d05-architecture-view/status.md",
+    "docs/evidence/d05/visual-queue-208-registry.json"
+  ],
+  "facts": [
+    "Registry preimage equals main c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+    "208 unique IDs; new/switch source has exact owner, formal claim, plan/status/review and evidence directory",
+    "Existing source NOT_RUN/review facts retained; old visual review not inherited",
+    "Actual 207 vs candidate 208 and historical UNKNOWN remain distinct"
+  ],
+  "checks": "Independent read-only diff/source review; zero engineering tests, PG, services, personal reads",
+  "delivery": "Two source-branch push attempts returned GitHub Internal Server Error at 17:00:11Z and 17:00:34Z; fixed local target remains available, remote still a30c7e8d."
+}
