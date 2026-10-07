@@ -1,0 +1,112 @@
+{
+  "recordedAt": "2026-10-07T05:15:00.880472+00:00",
+  "fixedMain": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "source": "practical-files-interface-research.json",
+  "mapping": [
+    "WPF-MATURE-03-02",
+    "WPF-MATURE-03-07"
+  ],
+  "state": "CANDIDATE_ONLY_NO_TAKE_NO_WRITER",
+  "groups": [
+    {
+      "interface": "Attachment capability/context/private runner assignment",
+      "candidateExistingPaths": [
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/tasks.ts"
+      ],
+      "decision": "Preserve text-v1/public prompt compatibility; choose private execution-input representation and validate all actual consumers before enlarging limits. Public export/receipt/client paths and exact affected tests still require literalization."
+    },
+    {
+      "interface": "Storage and freeze",
+      "candidateExistingPaths": [
+        "apps/server/src/attachments/index.ts",
+        "apps/server/src/attachments/storage.ts",
+        "apps/server/src/conversation-context/store.ts",
+        "apps/server/src/runners.ts"
+      ],
+      "readOnlyAppliedMigrationInputs": [
+        "packages/storage/migrations/018-conversation-context.sql",
+        "packages/storage/migrations/026-attachment-resources.sql"
+      ],
+      "newMigration": "Additive new path/number must be allocated by original Lead; never edit old applied018/026. No blanket migration directory take."
+    },
+    {
+      "interface": "Actual runner consumers and authorized file snapshots",
+      "candidateExistingPaths": [
+        "apps/runner/src/claude.ts",
+        "apps/runner/src/native-harness/codex/adapter.ts"
+      ],
+      "decision": "Freeze private execution-input compatibility and existing host-granted snapshot source; present upload catalog is not workspace authority."
+    },
+    {
+      "interface": "Web capability/selection and later host integration",
+      "candidateExistingPaths": [
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx"
+      ],
+      "decision": "Actual input work against fixed typed contract; Recovery-owned controller/Thread cannot be written without handoff. App/session and new tests need separately proven exact scope, not implicit blanket rights."
+    }
+  ],
+  "freshKnownIntersections": [
+    {
+      "claimId": "b447f2ce-a4b3-49b0-bcbe-034ff60b73be",
+      "version": 1,
+      "worker": "assignment_review",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body",
+      "branch": "codex/native-activity-body",
+      "state": "active",
+      "matches": [
+        {
+          "candidate": "apps/runner/src/claude.ts",
+          "claimed": "apps/runner/src/claude.ts"
+        }
+      ]
+    },
+    {
+      "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+      "version": 8,
+      "worker": "chatui01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
+      "branch": "codex/codex-conversation-continuity",
+      "state": "active",
+      "matches": [
+        {
+          "candidate": "packages/contracts/src/tasks.ts",
+          "claimed": "packages/contracts/src/tasks.ts"
+        },
+        {
+          "candidate": "apps/runner/src/native-harness/codex/adapter.ts",
+          "claimed": "apps/runner/src/native-harness/codex/adapter.ts"
+        }
+      ]
+    },
+    {
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 4,
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "branch": "codex/web-conversation-recovery",
+      "state": "active",
+      "matches": [
+        {
+          "candidate": "apps/web/src/attachments/controller.ts",
+          "claimed": "apps/web/src/attachments/controller.ts"
+        },
+        {
+          "candidate": "apps/web/src/conversations/ConversationThread.tsx",
+          "claimed": "apps/web/src/conversations/ConversationThread.tsx"
+        }
+      ]
+    }
+  ],
+  "claimObservation": {
+    "path": "manager-and-shared-candidate-claims.json",
+    "at": "2026-10-07T05:13:35.583463+00:00"
+  },
+  "coordination": "Original Lead/shared owners must agree exact consumer/export/migration scopes before future fresh take. Listed paths without an observed claim are not authorized or reserved.",
+  "authorization": "Only read-only Interface preparation/management metadata. No scope take/amend, provision, migration, upload, provider, tests or product edit."
+}

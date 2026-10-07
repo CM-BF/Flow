@@ -39,6 +39,12 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 
 未来已知验收材料是一份本项目>8KiB Markdown和一份源文件；保原按钮/drag/键盘、跨pane草稿隔离、unknown重试、Recovery与provider unsupported验收。当前只登记计划并准备只读接口，未授provider或个人文件读取/上传。Recovery/Quick本次实际终态先封存；此实用能力后继优先于附件装饰或插件菜单coverage，共享backend范围与原Lead按实际claim协调，不等全部Web完成。原子片已完成历史与本大task未完成状态均不改变。
 
+### 实用文件的共享消费边界与未领取候选
+
+固定main ee98e65 的[root只读17源研究](../../docs/evidence/web-platform/quick-b3-admission-20261007/practical-files-interface-research.json)独立核验了GO两份项目文件字节；没有上传/执行provider。除附件与DB raw/content的8192B约束外，context compile同时限制16000 UTF16 code units与49152 UTF8B，runner claim仍用prompt≤16000且whole JSON≤131072B。只改附件常量会让实际私有assignment不兼容；须明确公有用户prompt与授权私有执行输入的兼容策略，并分别定义上传、保留和模型context预算。字节不冒模型token容量。
+
+[共享Interface/claim候选清单](../../docs/evidence/web-platform/quick-b3-admission-20261007/practical-files-shared-candidates.json)仅作原Lead与相关owner协调：contracts/context/runner-claim→storage冻结→runners私有assignment→Claude/Codex实际adapter→Web选择/后继host。018/026是已应用的只读输入，未来只能分配新additive migration；公共exports/receipt/client与新增测试精确路径尚待消费者证明，不以整个目录抢权。fresh观察明确tasks.ts/Codex adapter由C02持有、Claude由native-activity-body持有、controller/Thread由Recovery持有；没有冲突观察的路径也未领取。现Files只是taskrefs，真实workspace授权snapshot不是把上传目录换个名称。保原选后freeze、unknown身份、惰性正文与provider unsupported边界。
+
 ## 验证与交付规则
 
 每个实际子task直接链接本大task稳定ID及co-lead；进度只维护其唯一status。仅完整TODO验收通过、证据环境/固定源码明确并完成受控主线集成后才可将本大taskDone；当前所有大task验收仍开放。普通片段ready/review/merge/claim不向GO发送，内部worker通信保留，需GO解决的整任务独立blocker仅一次。新scope依D04查重/原子领取，本计划不授权重启个人服务、刷新用户tab或新增provider调用。验证按影响范围，不为文档重复产品测试。

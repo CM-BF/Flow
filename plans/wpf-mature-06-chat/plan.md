@@ -25,7 +25,7 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 - [ ] **WPF-MATURE-06-01** 盘点通过项与真实缺口：逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。
 - [ ] **WPF-MATURE-06-02** 完成STEER独立控制与接线：admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。
 - [ ] **WPF-MATURE-06-03** 验证正文与活动显示：真实增量、settlement retain/replace、typed-final完成状态、provider实际thinking才显示、tool unknown不伪造；Markdown/复制/懒详情。默认正文+简短自然状态，工程ID/计数/原因Details按需；成功回复的Activity succeeded/Open task controls/More actions/Task output/空0 waiting Center queue入口收敛，error/unknown/decision始终直接可见；普通hi、正常stream/tool、queue等待、断线unknown四旅程及390/双pane验收，error/unknown/恢复不能隐藏，系统通知不冒模型回复。 验证呈现区分正文规则、工程检查、独立审查/用户接受；缺source或artifact版本绑定为限定范围/unknown，A失败/B通过不能回写A。GO固定f181源码观察与ENG-001依赖见[研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)，不是新browser复现。 长时活动读取的累计缓存验收见[本条补充](#活动读取累计缓存验收)。
-- [ ] **WPF-MATURE-06-04** 完成连接/刷新/未决发送恢复完整旅程（附件与已审dashboard安全停点后的下一优先，先于Arc/装饰）：有效登录期刷新/重开回同中心和会话，草稿与原未决identity保留；离线、认证过期、明确拒绝各有可行动提示。HTTP与流一致认证，跨tab/切中心/过期撤销/重启/丢ACK实际验证；重新认证不自动重投或换key，退出会话不cancel任务，取消操作另行明确。两公开客户端沿中心权威，认证与发送恢复为独立Module/Interface；键盘/IME/下一草稿、queue/steer/cancel原验收继续。invalid Bearer不回退owner、cookie不隔离端口、Origin/CSRF边界沿既有研究；0provider且不动个人登录/61227/61228。详细[原指令与调度](../../docs/evidence/web-platform/connection-recovery-priority.md)。
+- [ ] **WPF-MATURE-06-04** 完成连接/刷新/未决发送恢复完整旅程（附件与已审dashboard安全停点后的下一优先，先于Arc/装饰）：有效登录期刷新/重开回同中心和会话，草稿与原未决identity保留；离线、认证过期、明确拒绝各有可行动提示。HTTP与流一致认证，跨tab/切中心/过期撤销/重启/丢ACK实际验证；重新认证不自动重投或换key，退出会话不cancel任务，取消操作另行明确。两公开客户端沿中心权威，认证与发送恢复为独立Module/Interface；键盘/IME/下一草稿、queue/steer/cancel原验收继续。invalid Bearer不回退owner、cookie不隔离端口、Origin/CSRF边界沿既有研究；0provider且不动个人登录/61227/61228。详细[原指令与调度](../../docs/evidence/web-platform/connection-recovery-priority.md)。验收执行需按[真实依赖拆分约束](#恢复验证的真实依赖与精确选择)减少无关场景串行阻塞，保完整恢复链及最终E2E。
 - [ ] **WPF-MATURE-06-05** 控制滚动与语音退路：后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿，无自动模型调用。
 - [ ] **WPF-MATURE-06-06** 完成可靠真实聊天旅程：实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。
 
@@ -36,6 +36,12 @@ CHAT06I01固定9da已main，官方runtime权威repository避免伪branch；Activ
 ### 既有正文性能验收的测量接口
 
 [GO REQ17/CHAT06固定接口与验收](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)补充原06-03、CHAT06-06/07客户端与WPF-PERF01-02，不新增子任务。相同最终UTF-8原文/hash，对照短段、长代码、长表格的patch分区/频率；首轮仅一有界pair。实际digest字节、parser调用/输入（含中断尝试）、Profiler提交及真实composer输入延迟分别记录；projection页/调度、smooth/defer与显示追平不可合成单个计数。缺样不当零延迟，128/4096前缀算术不当实测；完整原文/复制/表格语义、SHA/replay/identity/unknown必须保持。仅接口已研究，指标全部NOT_RUN；实际插桩/构建先由原shared/renderer owner审查，不扩Recovery21或Quick6、不迁移parser/hash包。
+
+### 恢复验证的真实依赖与精确选择
+
+[GO经root转述的新验收要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)沿原06-04/06-06，不新建大task。原9835旅程任一失败即throw，附件/tooltip前置失败使认证失效、CSRF/offline和themes390全部未跑；这表示覆盖被阻断，不证明这些产品行为失败。原owner先列实际前置和共享可变状态，真正独立的case采用隔离context与自有服务端数据、复用已证前置并精确选择。
+
+不得catch后在污染状态继续，不删tooltip/材料/count/order/ref/noPOST断言。真实共享恢复链与最终完整E2E继续保留；独立局部PASS不转为全旅程PASS。四次原FAIL、晚累计54883.199542ms、后次整数最多35116ms含15s清理及owned收尾均保留，不自动第五次、不新增provider。当前只有focus关闭/自然回焦前置源码修正和只读依赖/最小选择提案，已由root授权原RECOVERY01-05单browser最小有限journey选择实现（full/recovery-chain/page-auth/csrf-offline/appearance），完整链/全7组及所有原断言保留；各attempt独立DB/fixture/context，NOT_SELECTED与required通过分开；仅自有local30s/8MiB纯检查，未授第五次browser或浏览器运行，也不新建测试框架。
 
 ## 验证与交付规则
 

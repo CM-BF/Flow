@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T05:16:10.498646+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-quick-controls",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "worker": "w01_owner",
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "createdAt": "2026-10-06T22:00:19.358Z",
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "head": "f9fa995516b8c169edf17fbe1a28e044b6c619b4",
+  "remote": "f9fa995516b8c169edf17fbe1a28e044b6c619b4",
+  "branch": "codex/web-message-settings-quick-controls",
+  "clean": true,
+  "pinReads": 286,
+  "uniquePins": 278,
+  "allMatched": true,
+  "absentOutputs": [
+    "browser-budget.json",
+    "result.json",
+    "consumed-gate.json",
+    "scratch",
+    "raw",
+    "worker.log",
+    "runtime-evidence-manifest.json"
+  ],
+  "bindingSha256": "fb5d6a6f5ea9590f134f9b3c7a47a4b5de7b2aec0af9f6d04d28dce8ab401a2f",
+  "manifestSha256": "1ebf0b03a1ec1b18eac2e269144d5b79f9539028daf75173157c7215c9f9cb3f",
+  "priorFiles": 86,
+  "priorBytes": 1014126,
+  "space": {
+    "availableBytes": 25118478336,
+    "components": {
+      "sharedReserveBytes": 1073741824,
+      "svc08PlannedBytes": 606076928,
+      "quickTmpBytes": 67108864,
+      "quickTotalRetainedBytes": 8388608,
+      "quickOuterIncludedInRetainedBytes": 2113536,
+      "mikaConservativeLocalBytes": 18087936,
+      "recoveryLocalBytes": 8388608
+    },
+    "summedOneReserveBytes": 1781792768,
+    "originalQuickFloorBytes": 1207959552,
+    "originalSvc08FloorBytes": 2684354560,
+    "admittedConservativeStartBytes": 4053008384,
+    "admittedStopBytes": 1781792768
+  },
+  "coordination": "X01R3 actual handback complete05:10:46.060203Z; SVC08 next-ready, actualRUN not reported. Independent0PG Quick may coexist with SVC08 PG under bb992 rule. Recovery only ownlocal8MiB source/check segment, no browser/PG. No Web browser or shared endpoint/installation/writable profile in use.",
+  "isolation": "Fixed Quick ownlocalhost mockHTTP fixture and ownnativeChrome profile/outputcache only; no actual PG/center/personal service/user tabs. Source/deps read-only; never share writable TMP with panels.",
+  "allowanceAttribution": "SVC08 declared578MiB; Mika potential local18,087,936B retained conservatively with no assertion it is active; Recovery local8MiB newly declared. Outer2,113,536B is included in Quick8MiB, not double counted."
+}

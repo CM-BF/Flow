@@ -1,0 +1,192 @@
+{
+  "at": "2026-10-07T05:11:46.720302+00:00",
+  "task": "WPF-MATURE-03",
+  "todo": [
+    "WPF-MATURE-03-02",
+    "WPF-MATURE-03-07"
+  ],
+  "state": "READ_ONLY_INTERFACE_RESEARCH_NOT_TAKEN_NOT_IMPLEMENTED",
+  "fixedMain": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "observations": [
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "bytes": 3958,
+      "sha256": "15ab790ab835a17467c161e49bf7f1843a2f3604f63748559ee3bc4f5bfc89ce",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/attachments/storage.ts",
+      "bytes": 11534,
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 17633,
+      "sha256": "1d0b25e305afc4c21be343f3cc7d55fe107b7b7e75f2fe40723acd586e9d6a44",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 22497,
+      "sha256": "0c6eb70bd3ce9bff108e67c3a0bdf3e7142dcdab1b16371654f6e78e89f20576",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/components/workspace/panels.tsx",
+      "bytes": 6966,
+      "sha256": "5f97e8ba1f41eabf2b79e21957fd59f2d6567f7cc271d4d4431bb3f0c5c6f9b8",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2738,
+      "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348",
+      "workingCopyEqualsFixed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c",
+      "workingCopyEqualsFixed": true
+    }
+  ],
+  "facts": [
+    {
+      "source": "packages/contracts/src/attachments.ts + server attachments + Web adapter/controller",
+      "finding": "Protocol text-v1 accepts only .txt text/plain; schema literal file cap8192 and combined4refs/8192UTF8B. Frontend accept and validation repeat these fixed facts; configurable capability cannot be implemented only by changing UI."
+    },
+    {
+      "source": "018 and026 migrations",
+      "finding": "Stored attachment content and conversation raw_bytes both constrained to8192. Frozen execution_prompt storage cap49152 bytes; immutable records/bindings already implemented. Future upgrade requires an additive migration, not editing old applied SQL."
+    },
+    {
+      "source": "conversation-context.ts/store.ts",
+      "finding": "Input compile enforces16000 UTF16 code units and49152 UTF8B, serializes full selected source/attachment bodies, hashes and freezes context/execution input. Metadata receipt has no body; details load full body on demand. Current references have upload/knowledge origins only in this pipeline."
+    },
+    {
+      "source": "runner-claim.ts + tasks.ts + client/runtime consumption",
+      "finding": "Claim response uses taskSubmissionSchema with prompt max16000 and whole canonical JSON<=131072B. Enlarging only raw-byte/context limit produces incompatible assignments; distinguish public user prompt from authorized private execution input in the chosen migration design. Existing identity/unknown ACK invariants must remain."
+    },
+    {
+      "source": "runners.ts assignmentForTask + runner Claude/Codex adapters",
+      "finding": "Center private execution input replaces assignment task.prompt; actual adapters pass context.task.prompt. This is the real reusable fixed-material path, not timeline paths. Static inspection is not new execution proof."
+    },
+    {
+      "source": "workspace/panels.tsx",
+      "finding": "AI Elements FileTree currently displays task artifacts/references and explicitly reports workspace browsing not connected. It is not an authorized workspace file catalog."
+    },
+    {
+      "source": "claude.ts snapshotMaterials/toolGate + execution profile",
+      "finding": "Separate host-configured material files are snapshotted and Read-gated. They are not the Web upload catalog or a current project-authorized @file protocol. Do not expose arbitrary local paths as this capability."
+    },
+    {
+      "source": "fixed project files",
+      "finding": "Verified AGENTS.md18655B and conversations/ConversationThread.tsx22770B match GO examples. No upload or model invocation performed."
+    }
+  ],
+  "proposedInterfaceDecisions": [
+    "Preserve old text-v1 behavior/receipts; explicitly version new capability and context representation if schema shape or authority changes. Old clients/centers fail clearly for unsupported attachments while original plain text remains usable.",
+    "One canonical policy declares accepted text extensions/media types, strict round-trip UTF8, per-file upload limit, project retained/count limit, combined context refs/raw/code-unit/encoded budgets; validate config server-side once, publish actual limits to UI, enforce at upload, freeze and claim decode. Bytes are not model tokens; actual model/token capacity must remain unknown unless provided by the selected execution profile.",
+    "Keep stored upload size and actual context selection separate. Larger stored files may require explicit bounded excerpt selection; full selected material cannot be silently truncated. Preview/body reads stay lazy, bounded and cancellable. Do not duplicate upload/storage systems.",
+    "Origin must distinguish uploaded resource, existing knowledge citation, and authorized workspace/runner snapshot. Workspace support requires existing owner-provided project/runner/root grant plus opaque identity/version/digest and controlled snapshot/read; browser display paths alone grant no read. Selected immutable snapshot must survive Send/Queue/retry/recovery, and in-use content cannot be recycled.",
+    "Keep button/drop/keyboard and pane/view/project/connection identity through installed assistant-ui adapter and registry. Preserve unknown same-key retry and frozen ACK checks; actual provider unsupported cannot silently drop material.",
+    "Freeze shared contract/storage/context/claim consumer shape before backend implementation, then allow separate Web input work against fixed typed fixtures; actual App integration waits for Recovery scope handoff. Check shared ownership and reserve new migration number through existing Lead, no implicit take."
+  ],
+  "acceptancePlan": [
+    "Use one fixed project Markdown>8KiB plus a source file, including multi-byte/JSON escaping case, validating upload and independently selected context budget boundaries. These are proposed fixtures, not permission to upload now.",
+    "Real dedicated HTTP/PG Send and Queue receipts must preserve ordered immutable refs and exact original selected bytes in the actual runner assignment/adapter capture, including restart/retry and version drift. A path in timeline or UI chip is not proof.",
+    "Exercise malformed/unsupported text, capacity limits, expired/revoked origins, provider unsupported, connection/pane draft isolation and unknown acknowledgement. Retain old v1 receipt/template compatibility.",
+    "Real provider invocation is separate authorization/budget and remains NOT_RUN. Current work is only local project read and this research report."
+  ],
+  "coordinationCandidates": [
+    "contracts attachments/conversation-context/runner-claim and public exports",
+    "server attachments/conversation-context + runners assignment",
+    "new additive storage migration number",
+    "shared receipt decoder/client direct consumers",
+    "Web attachment input + later Recovery-owned App/Thread/session integration",
+    "authorized runner workspace-file Interface owner"
+  ],
+  "openDecisions": [
+    "Concrete configured default limits and model-context representation after direct consumers are fixed; no arbitrary constant-only change.",
+    "Workspace catalog/snapshot permission publisher and actual runner integration—no existing upload endpoint can be relabeled as filesystem.",
+    "Private execution-input compatibility strategy with runner claim v2 and goal-context input consumers."
+  ],
+  "skills": {
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md"
+    ],
+    "applied": "Local existing skills; trace real two-sided consumers and freeze small shared Interface, preserve immutable identity/error semantics, no duplicate generic platform or reinstall."
+  },
+  "limits": {
+    "projectWrites": false,
+    "runtimeTests": false,
+    "uploads": false,
+    "provider": false,
+    "personalFiles": false,
+    "claimTaken": false
+  }
+}

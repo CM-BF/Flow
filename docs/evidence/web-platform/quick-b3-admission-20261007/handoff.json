@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T05:16:10.498646+00:00",
+  "state": "ADMITTED_NOT_STARTED",
+  "packet": "/private/tmp/msgquick-b3",
+  "gate": "/private/tmp/msgquick-b3-admission-okeh9ium/gate.json",
+  "gateSha256": "20aef80df26760df6261417bceca4becd3721dd8edcfbbe334006bf9cef04d63",
+  "expiresAt": "2026-10-07T05:22:10.498646+00:00",
+  "bindingSha256": "fb5d6a6f5ea9590f134f9b3c7a47a4b5de7b2aec0af9f6d04d28dce8ab401a2f",
+  "manifestSha256": "1ebf0b03a1ec1b18eac2e269144d5b79f9539028daf75173157c7215c9f9cb3f",
+  "run": "msgquick-b3-20261007-051610",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-b3/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-b3-admission-okeh9ium/gate.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "sourceHead": "f9fa995516b8c169edf17fbe1a28e044b6c619b4",
+  "previousRuntimeMs": 18468,
+  "totalMs": 41532,
+  "cleanupMs": 15000,
+  "outer": "Originalowner captures actualouter exit/stdout/stderr, complete matching terminal seal, source/result hashes, allownedgroups/Chrome/fixture/HTTP/scratch cleanup. Reuse prior trusted capture method; no new wrapper required. Outer allowance included in8MiB.",
+  "executionOwner": "w01_owner, after manager FINAL and root wake respecting cap3; manager has not launched.",
+  "expiry": "If expired or any identity/resource handoff changes, do not reuse; fresh original admission again, not retry after consumption.",
+  "postTerminal": "Report actual cleanup immediately for browser return; preserve failure and conservative max outer/terminal/budget charge; no automatic fourth attempt.",
+  "observation": "/private/tmp/msgquick-b3-admission-okeh9ium/observation.json"
+}

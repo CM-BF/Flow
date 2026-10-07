@@ -33,7 +33,7 @@
 | WPF-MATURE-03-04 | in-progress | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
 | WPF-MATURE-03-05 | in-progress | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，实际App/HTTP有限矩阵已9eec独审，真实provider/跨reload恢复仍开放；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主有限fixture已审，个人部署另计。 |
 | WPF-MATURE-03-06 | in-progress | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |
-| WPF-MATURE-03-07 | pending | Web co-lead | 03-02实用文件能力后继：[GO来源](../../docs/evidence/web-platform/recovery-fourth-return-20261007/attachment-practical-files-requirement.json)。>8KiB项目Markdown及源文件、可配置上传/context预算、授权@file与固定版本到runner；仅计划/只读接口准备，无实现claim/上传/provider。 |
+| WPF-MATURE-03-07 | pending | Web co-lead | 03-02实用文件能力后继：[GO来源](../../docs/evidence/web-platform/recovery-fourth-return-20261007/attachment-practical-files-requirement.json)。>8KiB项目Markdown及源文件、可配置上传/context预算、授权@file与固定版本到runner；[17源研究与共享候选](../../docs/evidence/web-platform/quick-b3-admission-20261007/practical-files-shared-candidates.json)已明确private runner输入兼容约束，未take/实现/上传/provider。 |
 
 ## 依赖与领取
 

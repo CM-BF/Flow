@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T05:09:59.947258+00:00",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5",
+  "workerSha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461",
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "head": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+  "preparedBindingSha256": "f365e6d706db0fd019bc5c636fb12189119c7efed1b771b9c68e2097651a69b8",
+  "preparedManifestSha256": "92eb04fd0042011fb3df5cc2a68097e4152cf928749a31b9033b4e27de3c3e91",
+  "reviewScope": "Exact b3 retained-count delta, immutable two-failure carry and same b2 native boundary. Browser NOT_RUN.",
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-b3-accounting-source-review.json",
+    "sha256": "1020cbbb4657771329b4c54cb89748c2d0146397dd3162545af78f7bb5776328"
+  },
+  "unchangedNativeReview": {
+    "path": "/private/tmp/root-msgquick-b2-native-preparation-review.json",
+    "sha256": "334720e043485d92c9b63ffbce6f0be3dbbd5b244eaa37e82f3eadd32d9e9529"
+  },
+  "actualSynthetic": {
+    "path": "/private/tmp/msgquick-b3-local-a9p2n5bu/actual.json",
+    "sha256": "c4330c7afa90dd22d6f20d6bb5648ef3e199443cc23acf400f1e0e2f700f2509",
+    "actualExit": 0,
+    "wallMs": 47.22208308521658,
+    "checks": 5,
+    "ownedTemporaryAbsent": true,
+    "absenceBasis": "Actual helper check finally-rmtree assertion plus matching namespace before/after observation; no unrelated temporary paths touched."
+  },
+  "budget": {
+    "previousRuntimeMs": 18468,
+    "remainingMs": 41532,
+    "workMs": 26532,
+    "cleanupMs": 15000,
+    "originalTotalMs": 60000,
+    "retainedBytes": 8388608,
+    "temporaryBytes": 67108864,
+    "previousEvidenceBytes": 1014126,
+    "outerCaptureReserveBytes": 2113536
+  },
+  "reviewed": [
+    "The actual retained helper passes five bounded synthetic checks; independent scratch/pruned retained counting removes mutable subtree subtraction. Limits and business assertions unchanged.",
+    "Worker f099 passive bounded observer and six checks/two PNG remain exact. Failed b1/b2 preserved, no proven native-select cause, no fabricated b2 trace.",
+    "Native Chrome remains separately owned session/profile in native sandbox without custom outer write/egress containment; this exact localhost fixture authority is accepted. Node worker sandbox unchanged, no personal tabs/profiles/services.",
+    "One-use fresh gate, original exact group/scratch cleanup, dualEOF and terminal seals plus actual outer exit remain required. Polling not hard quota."
+  ],
+  "requirementsBeforeRun": [
+    "Preserve prepared binding/manifest and add this exact native approval pointer/state plus only factual owner metadata HEAD after normal source-unchanged commit. No parent/worker/scenario changes.",
+    "Manager fresh exact claim839e466f-1a3f-4e92-94e1-ece390c32fbf v1/six scopes, branch/source/inputs and prerequisite pins, clean tree, absent prior output, actual cross-lead resources and shared-volume combined budget.",
+    "This review reserves no runtime. Current actualPG delegated X01; independent0PG browser may overlap only when packet/rules and resource isolation explicitly confirmed, otherwise wait for its actual handback.",
+    "One attempt at most; actual outer exit/stdout/stderr plus conservative elapsed charge. No retry or budget reset."
+  ],
+  "limitations": [
+    "Synthetic result covers helper counts, not full monitor thresholds/live race or browser.",
+    "No Chrome/network/PG/provider invoked by reviewer; no feature PASS.",
+    "Entry pins do not exhaustively hash native/transitive bytes; native background suppression is not OS network containment."
+  ],
+  "runtime": "NOT_RUN",
+  "cleanCode": "Existing local skills applied to ownership, direct helper reuse, preserved errors and minimal delta; no new generic supervisor."
+}

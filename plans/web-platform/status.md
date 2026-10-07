@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:57.276219+00:00；草稿恢复第四次实际失败、owned清理和私有输入删除已记录；未复采服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:19:32.149050+00:00；Quick独立浏览器已准入未启动，SVC08共享PG已交原Lead；实际开始分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 本机入口已发布，剩说明文档增量待接收；快速设置正修验证工具以继续定位键盘选择问题。草稿恢复页面检查停在附件提示未出现，原owner保留失败等待诊断。窄屏图文与时间展示易读性作为后继保留。 |
+| 下一可用交付 | 本机入口已发布，剩说明文档增量待接收；快速设置将继续观察真实键盘选择。草稿恢复已补焦点前置，并分清独立验收与完整恢复链；常用Markdown和源码附件能力已纳入既有后继，尚未实现。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：草稿恢复第四次检查已结束并清理，私有输入已精确删除；本组无PG/Chrome/local holder、gate或预约，无自动重试。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无实际PG/Chrome占用；Quick独立浏览器一次准入已交接、尚未启动。SVC08共享PG交原Lead自行fresh准入，未收到实际启动；Recovery仅源码及有界局部检查，无新浏览器许可。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
