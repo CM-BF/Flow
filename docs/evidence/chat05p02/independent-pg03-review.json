@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T08:17:08.303337+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "verdict": "APPROVED_SOURCE_AND_PG03_RESULT",
+  "delivery": "184ccf8dd8335f333fc57f6d0e14d6483e3a1c3d",
+  "source": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+  "resultRef": "168b9fbd920516f3047b2f35d611fe73871d4765",
+  "manifestSha256": "7ccda1d1a60b6c8c1d8b325c5c8fe2b1fa767d41eb3ef06b8dc69654fe35afcc",
+  "read": [
+    "Original13 product/test sources and prior focused reviews reused",
+    "Repair03 two test-only deltas and caller namespace read;23delta+22inherit+286runtime/21aliases verified",
+    "PG03 complete raw result,fixture checkpoints,selection and cleanup read;31fixed/current bindings matched"
+  ],
+  "actual": {
+    "selected": 2,
+    "passed": 2,
+    "exit": 0,
+    "supervisedMs": 3617,
+    "callerMs": 3664,
+    "rawBytes": 834,
+    "databaseAndFixtureCleanup": "CONFIRMED",
+    "group": "3315 absent/doubleEOF",
+    "callerCacheKeepBytes": 133,
+    "provider": 0
+  },
+  "scope": [
+    "2,225,539B roundtrip through actual factory/runRunner/outbox and9 authorized pages;64HTTP requests",
+    "Injected adapter1/provider0, defaultoff and single-attempt optin; not realSDK/CLI/UI rollout",
+    "PG01/PG02 original failures, initial EPERM and133B cacheKEEP preserved"
+  ],
+  "combination": [
+    "Three sharedexports already carry current reviewed C02/X01 hunks; copying fixed13 sources preserves those exact changes",
+    "Eleven main dependency deltas inspected: conversation/nativecatalog additive and pluginjournal optionalqualification; new focused combination types recorded separately"
+  ],
+  "P1": 0,
+  "P2": 0,
+  "newReviewerTests": 0,
+  "combinationTypes": {
+    "file": "chat05p02-combination-types.json",
+    "exit": 0,
+    "elapsedMs": 2165,
+    "group": "absent",
+    "EOF": true
+  }
+}
