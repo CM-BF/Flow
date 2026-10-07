@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:29:55.752575+00:00 / main650d230d；按原owner已审入口追加X01终端命令唯一来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:32:09.285492+00:00 / main b67530bb；195来源实际载入完成 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T08:20:31.727602+00:00，见svc09-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | main/origin650d230d已含194来源与实际轻摘要部署；本次X01终端来源候选为第195项，尚待本批发布。 |
+| 已集成 main 状态 | main/origin b67530bb已含X01终端命令及第195个唯一来源；4320实际195源、首页/轻摘要/本机登录元数据200，未操作个人产品。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已提供轻摘要、登录凭据和任务时间；新增插件终端命令的唯一进度入口已准备。 |
-| 下一可用交付 | 发布插件终端命令来源，继续读取原owner真实状态。 |
+| 当前产出 | 看板已提供轻摘要、登录凭据、任务时间及插件终端命令的唯一进度入口。 |
+| 下一可用交付 | 本片段已交付；后续状态继续读取各任务唯一owner。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -248,3 +248,5 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 2026-10-07T08:57:27.513010+00:00：新增OPS-METER01与MATURE06-LAZY01唯一canonical登记候选193源。fresh三件套/registry形状与任务ID唯一核对，见[lazy-meter-registration](../../docs/evidence/d05/lazy-meter-registration.json)；LAZY当前阻塞字段缺ACTIVE已交原owner，解析不猜测，不阻来源登记。现实际4320仍191源，待本批部署观察；未改产品/个人服务。
 
 2026-10-07T09:03:39.634234+00:00：193源实际加载回执[lazy-meter-live](../../docs/evidence/d05/lazy-meter-live.json)，两个新source均live/非stale；自有dashboard80476正常退出，96517接续。只受控更新4320，不读token、不操作个人服务或刷新用户tab；初始LAZY人读缺项由其owner已更新，原观察不改。
+
+2026-10-07T10:32:08.840473Z—10:32:09.285492Z：按固定main b67530bb正常替换已核自有4320进程，195源实际加载；详细原始回执单份位于 [I02实际发布](../../../m2-integration/docs/evidence/i02/dashboard-cli-source-deployment.json)。X01-CLI当时有TODO状态不可识别提示，已交原owner收口；不由看板猜测，也不将本次登记核对称为产品或视觉复测。个人服务、凭据内容和用户标签未操作。
