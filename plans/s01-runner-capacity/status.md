@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T17:02:46.250Z |
+| 最近更新 | 2026-10-07T17:07:07.000Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -22,7 +22,7 @@
 | 实现目标 | 839a1614bb8429922716fb86e8a9ebe6b2972967 |
 | 实现范围 | experiments/runner-capacity/mixed/queue-buffered-main.ts, experiments/runner-capacity/mixed/queue-buffered.test.ts, experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/run-identity.ts, experiments/runner-capacity/mixed/ab-driver.ts, experiments/runner-capacity/mixed/ab-sequence.ts, experiments/runner-capacity/mixed/driver.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 显式 buffered 单臂选择已实现并通过局部行为与类型检查；同步负载和原完整验收保持，准备独立审查。 |
 | 下一可用交付 | 独审单臂入口与局部证据；随后固定有限外层caller和完整实际输入，PG仍未开放。 |
@@ -340,3 +340,7 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 新入口只选择buffered、只一次A预算slot，使用新身份/同production4fdd及原burst6s/ACK4s/128/final/cancel门禁；A标签不代表旧O1。原O1 per-query失败/O2未跑与旧compiled/raw不改。本片不是packing因果或完整容量证明。旧caller固定两outcomes，尚不能启动此单臂；后继有限选择/input/资源与OPEN均未获。本地codebase-design/固定clean-code复核：选择Module保小Interface、共享生命周期不复制、未知不变PASS/删除；pure反例覆盖错误选择、二次side、失败/资源未知/账目漂移与原proof短ACK/缺最终持久状态。Dashboard沿唯一status，当前只parser核字段，不冒新增snapshot同步。
 
 本次metadata parser首调用误用了不存在的parse.mjs，工具ERR_MODULE_NOT_FOUND原输出保留；第二次定位status.mjs但漏taskId，返回标题不符；第三次按实际parseStatus(markdown, S01)字段解析errors=[]/human.missing=[]/implementation.errors=[]。不是工程测试失败或追加工程child，不改历史开工UNKNOWN，不新GET。
+
+## 2026-10-07T17:07:07.000Z 独立单臂caller准备
+
+Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，正式回执queue-buffered-independent-review.json。新8分钟至17:15:07Z，新增4MiB含TMP2MiB/raw256KiB，最多3串行child各30s/累计45s；fresh claim508fv3/6本人匹配。仅复用旧OPS14/固定queue operator helpers的新有限variant，冻结旧caller/raw/input不改，0PG/HTTP/Chrome/provider/install/build。经理紧前floor至少15,927,083,008B或更高；actual300s/512MiB与PG/WAL预留仅候选，绝无OPEN。

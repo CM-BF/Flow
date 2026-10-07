@@ -23,15 +23,19 @@ if helper.digest(helper.OPS)[1] != helper.OPS_SHA:
     raise ValueError('supervisor_changed')
 owned = load('s01_chunk_owned', helper.OPS)
 kind = sys.argv[1]
+caller = kind == 'buffered-caller'
 buffered = kind in ('buffered-tests', 'buffered-types')
 packing = kind in ('packing-compile', 'packing-tests')
-if kind not in ('direct', 'boundary', 'types', 'packing-compile', 'packing-tests', 'buffered-tests', 'buffered-types'):
+if kind not in ('direct', 'boundary', 'types', 'packing-compile', 'packing-tests', 'buffered-tests', 'buffered-types', 'buffered-caller'):
     raise ValueError('fixed_mode')
 started = time.monotonic(); end = started + 30
-stem = 'queue-buffered' if buffered else 'delivery-packing' if packing else 'pg-delivery-chunk'
+stem = 'queue-buffered-caller' if caller else 'queue-buffered' if buffered else 'delivery-packing' if packing else 'pg-delivery-chunk'
 path = HERE / (stem + '-local.json')
 record = json.loads(path.read_text()) if path.exists() else {'startedAt': '2026-10-07T15:25:09.000Z', 'deadline': '2026-10-07T15:45:09.000Z', 'runs': [],
     'limits': {'children': 5, 'wholeEachSeconds': 30, 'cumulativeSeconds': 90, 'rawBytes': 262144, 'tmpBytes': 8388608, 'newBytes': 16777216}, 'wholeExternalWall': None}
+if caller and not path.exists():
+    record.update({'startedAt':'2026-10-07T17:07:07.000Z','deadline':'2026-10-07T17:15:07.000Z'})
+    record['limits'].update({'children':3,'cumulativeSeconds':45,'rawBytes':262144,'tmpBytes':2097152,'newBytes':4194304})
 if buffered and not path.exists():
     record.update({'startedAt':'2026-10-07T16:57:00.000Z','deadline':'2026-10-07T17:12:00.000Z'})
     record['limits'].update({'children':3,'cumulativeSeconds':60,'rawBytes':524288,'tmpBytes':4194304,'newBytes':8388608})
@@ -48,7 +52,7 @@ number = len(record['runs']) + 1
 raw_path = HERE / f'{stem}-{number}.raw'
 if not helper.absent(raw_path):
     raise ValueError('raw_exists')
-run = {'kind': kind, 'number': number, 'startedAt': helper.utc(), 'floorBytes': 14950858752 if buffered else 15927017472 if packing else 14414970880, 'source': {}}
+run = {'kind': kind, 'number': number, 'startedAt': helper.utc(), 'floorBytes': 15927083008 if caller else 14950858752 if buffered else 15927017472 if packing else 14414970880, 'source': {}}
 for relative in ('experiments/runner-capacity/mixed/pg-delivery.ts', 'experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts',
     'experiments/runner-capacity/mixed/pg-delivery.test.ts', 'experiments/runner-capacity/mixed/delivery-replay.test.ts',
     'experiments/runner-capacity/mixed/pg-delivery-bridge.ts', 'experiments/runner-capacity/mixed/delivery-replay.ts',
@@ -62,6 +66,9 @@ if packing:
 if buffered:
     for relative in ('experiments/runner-capacity/mixed/queue-buffered-main.ts','experiments/runner-capacity/mixed/queue-buffered.test.ts','experiments/runner-capacity/mixed/ab-driver.ts','experiments/runner-capacity/mixed/ab-sequence.ts','experiments/runner-capacity/mixed/ab-sequence.test.ts','experiments/runner-capacity/mixed/queue-probe.ts','experiments/runner-capacity/mixed/driver.ts','experiments/runner-capacity/mixed/run-identity.ts','experiments/runner-capacity/mixed/proof.ts','docs/evidence/s01/mixed-ab-preparation/queue-buffered-tsconfig.json','docs/evidence/s01/mixed-ab-preparation/queue-buffered-vitest.config.mjs'):
         size,sha=helper.digest(ROOT / relative); run['source'][relative]={'bytes':size,'sha256':sha}
+if caller:
+    for relative in ('docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py','docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.test.py','docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json','docs/evidence/s01/mixed-ab-preparation/queue-operator.py'):
+        size,sha=helper.digest(ROOT / relative);run['source'][relative]={'bytes':size,'sha256':sha}
 run['dependencies'] = []
 for item in json.loads((HERE / 'delivery-replay-input-v2.json').read_text())['files']:
     if not (item['path'].startswith('node_modules/') or item['path'].startswith('/')):
@@ -73,12 +80,14 @@ for item in json.loads((HERE / 'delivery-replay-input-v2.json').read_text())['fi
 vfs = os.statvfs(ROOT); run['freeBytes'] = vfs.f_bavail * vfs.f_frsize
 if run['freeBytes'] < run['floorBytes']:
     raise ValueError('free_space')
-tmp = Path(tempfile.mkdtemp(prefix='flow-s01-buffered-local-' if buffered else 'flow-s01-packing-local-' if packing else 'flow-s01-chunk-local-', dir='/tmp')); identity = tmp.lstat()
+tmp = Path(tempfile.mkdtemp(prefix='flow-s01-buffered-caller-' if caller else 'flow-s01-buffered-local-' if buffered else 'flow-s01-packing-local-' if packing else 'flow-s01-chunk-local-', dir='/tmp')); identity = tmp.lstat()
 run['tmp'] = {'path': str(tmp), 'dev': identity.st_dev, 'ino': identity.st_ino, 'removed': False}
 record['runs'].append(run); path.write_text(json.dumps(record, indent=2) + '\n')
 env = helper.environment(tmp); env['FLOW_S01_DELIVERY_TMP'] = str(tmp / 'cache')
 run['head'] = subprocess.check_output(['/usr/bin/git', 'rev-parse', 'HEAD'], cwd=ROOT, env=env).decode().strip()
-if buffered:
+if caller:
+    argv=[helper.PYTHON,'-I','-B',str(HERE/'queue-buffered-operator.test.py')]
+elif buffered:
     argv = [helper.NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--noEmit', '-p', str(HERE / 'queue-buffered-tsconfig.json')] if kind == 'buffered-types' else [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'queue-buffered-vitest.config.mjs'), '--configLoader', 'native']
 elif kind == 'packing-compile':
     argv = [helper.NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '-p', str(HERE / 'delivery-packing-tsconfig.json'), '--outDir', str(tmp / 'emit')]

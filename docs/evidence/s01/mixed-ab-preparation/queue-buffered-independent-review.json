@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T17:06:05Z",
+  "reviewer": "root / gpt-6-astra",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "839a1614bb8429922716fb86e8a9ebe6b2972967",
+  "packet": "17cb88c5957d2bfa4ff86df88bfe639b7e2793fd",
+  "manifestSha256": "2df31a5590d9d11ba14b3ce798521f445b026a279cf9ee5add512a0fc83e2037",
+  "bindings": 31,
+  "bytes": 216423,
+  "sourceInstalledDistinct": 85,
+  "local": {
+    "newPass": 8,
+    "directPass": 5,
+    "typesExit": 0,
+    "children": 2,
+    "rawBytes": 659
+  },
+  "limitations": [
+    "No actual PG/HTTP",
+    "outer caller not yet prepared",
+    "old O1 FAIL/O2 NOT_RUN unchanged"
+  ]
+}
