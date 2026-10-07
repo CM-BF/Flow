@@ -6,29 +6,29 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T06:19:44.403Z |
+| 更新时间 | 2026-10-07T06:27:01.517715+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 网页已采用固定独立宿主，后台和现有发布内容保持；后置保护与静态资源核验通过。 |
-| 下一可用交付 | 独立核验本次采用原件并收主线；长期连接稳定性和旧页面交互仍保留未验。 |
-| 当前阻塞 | ACTIVE: 本次实际采用结果待独立审查与接收；无继续服务操作。 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 个人 Web 已采用固定产物宿主，原后台、任务历史和三个保留页面保持；该次结果已独审并进入主线 |
+| 下一可用交付 | 本片段已交付；长期连接与旧页面交替验收仍为后继 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | r3仅请求续接c20d21b21caba504cd472c4596110fe535980752；Date修复472a已独审、r2原结果保持 |
-| 工作树dirty状态 | c20源码固定；本次仅实际原件与status/review/plan收口，提交后核clean |
-| 工作分支状态 | in-progress；r3 request/replace/post成功待结果独审；原r1/r2失败保留，完整长期验收未完成 |
+| Head | c38218268f9beb70e8b3b9322bbeee1da612eb8f 已接 main；本次只收独审与主线回执，c20源及原raw未改 |
+| 工作树dirty状态 | 本次仅metadata收口，commit/push后核clean |
+| 工作分支状态 | in-progress；本次实际采用已交付，完整长期验收仍未完成 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
-| Review | APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR d95c249；[原样独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-independent-review.json)；原APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
+| Review | APPROVED_LIMITED_ACTUAL_WEB_HOST_ADOPTION_RESULT c382；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/independent-review.json)；先前source/局部/隔离独审仍按原限定范围保留 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
-| 已集成 main 状态 | INTEGRATED 311e62158186177e344b49d24ed32e335268be1d；Lead确认原caller身份/Date修复与r2原结果到72eb及独审已接收；新r3续接仍待审/集成，个人Web替换未发生 |
+| 已集成 main 状态 | INTEGRATED de1fe7328f65182b88fdb396e617bcf26b9f0135；c382 own records与c20续接/r3实际采用均已受控接收，16工具原字节不变 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead已确认实际4320载入186权威source；本owner状态可被当前parseStatus聚合，未为本次metadata刷新页面 |
 
@@ -41,7 +41,7 @@
 | SVC08-05 | completed | native_center_owner | [部署候选](../../docs/evidence/svc08/deployment-candidate/candidate.md) / [retained3](../../docs/evidence/svc08/deployment-candidate/retained-three.md)，文档已独审，0个人执行 |
 | SVC08-06 | completed | native_center_owner | 52d3独立限定批准、main2f18逐字接收，10不同分轮原证据保持 |
 | SVC08-07 | completed | native_center_owner | bad019限定独审+main422逐字接收；原9不同分轮不重跑 |
-| SVC08-08 | in-progress | assignment_review | 合法Flow来源真实宿主artifact、个人部署/后续观察未完成；retained3仍设计后继 |
+| SVC08-08 | in-progress | assignment_review | 合法Flow产物、隔离与实际个人Web采用已交付；旧页面交替及长期连接验收仍open |
 
 ## 等待记录
 
@@ -170,3 +170,7 @@ Lead唯一APPROVED_LIMITED_COMPLETED_MIGRATION_CONTINUATION，60固定/current/r
 ## 2026-10-07T06:19:44.403Z：r3 Web-only实际采用完成并归还窗口
 
 原request→replace→post监督9450/14905/737ms、均exit0/双EOF/owner absent；post06:17:15.974Z ready-preserved。原r2迁入只核检查点与fresh产物，不再copy/migrate；旧Web27112停止且matching nonce exit1保持，新Web22704 owned running。11保护true、64表count/raw/protected摘要全同；5HTTP200/30,790B。后台af51/v18、d629/v3/retained3/config/token/用户tab保持，0provider/业务DML/drain/后台重启。Lead06:17:44实际归还窗口，之后无新probe；见[唯一结果](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/RESULT.md)。本次结果待独审，完整任务NOT_COMPLETED；旧失败/UNKNOWN和原产物全保留。
+
+## 2026-10-07T06:27:01.517715+00:00：实际采用独审与主线收口
+
+Lead唯一独审于06:23:32.310670Z限定批准c382原结果，全部绑定无差；原样归档，主线de1fe732受控接收。未新增个人probe/HTTP/PG/测试/服务动作；旧exit1、UNKNOWN与r1/r2失败均保留。完整SVC08-08与任务NOT_COMPLETED不因本片交付而勾完。
