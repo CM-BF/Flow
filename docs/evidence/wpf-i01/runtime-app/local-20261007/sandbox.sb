@@ -1,0 +1,5 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/i01-runtime-app-local-f8672ie0") (literal "/dev/null"))

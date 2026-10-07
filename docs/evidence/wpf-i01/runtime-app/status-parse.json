@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T15:47:29.899Z",
+  "taskId": "WPF-I01",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)",
+      "id": "WPF-001",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web/root；执行管理d01_owner",
+      "value": "Web/root；执行管理d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+    "record": "PASSED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；4新增authority direct，10旧未选；六source/static-import affected noEmit0，首exit2保留；browser NOT_RUN"
+  },
+  "reviewRecord": "NOT_STARTED 49d71ef87a7af824c90f0e8c662b4677bbbef8a5；原I01/MSG批准仅固定历史，不继承当前后继",
+  "mainRecord": "NOT_INTEGRATED；fixed 3c9345df4aec85a37e8a2a155e079db260d515b1仅已包含runtime模块与MSG，未接本后继",
+  "parser": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+    "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+  },
+  "scope": "own status only; historical original task start stays UNKNOWN"
+}

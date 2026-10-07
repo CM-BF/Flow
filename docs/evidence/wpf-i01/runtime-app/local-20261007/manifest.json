@@ -1,0 +1,87 @@
+{
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "archiveAt": "2026-10-07T15:42:55.594Z",
+  "files": [
+    {
+      "name": "run.py",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/run.py",
+      "bytes": 5472,
+      "sha256": "bba5ba0a8f8f39ed9186ac3c0877c3f494420795e3b83487d33398219f9af040"
+    },
+    {
+      "name": "sandbox.sb",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/sandbox.sb",
+      "bytes": 161,
+      "sha256": "e7f07d0ff6d69df73e37125d401c122f23ad177cd528ccb72bdc057440e2ed71"
+    },
+    {
+      "name": "segment.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/segment.json",
+      "bytes": 7309,
+      "sha256": "fcfabe69187c1883160191f40923e9969226b18c56317b95615ca0f03c23fb90"
+    },
+    {
+      "name": "preflight.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/preflight.json",
+      "bytes": 15306,
+      "sha256": "1e2ebd31be36b74a225cc7d9a07a2bbd08d1fff53918ca997d7e719ee5ff5cdd"
+    },
+    {
+      "name": "reuse.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/reuse.json",
+      "bytes": 505,
+      "sha256": "7d53c2bcf575033a73851bfa758e8350f17816d1bba3bfc7dfb11bd1d700a17a"
+    },
+    {
+      "name": "resolver-static.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/resolver-static.json",
+      "bytes": 10944,
+      "sha256": "b1d385cf60048c6708b02c24ef829ecdc08ee7f05e59342c041e526d3421afbe"
+    },
+    {
+      "name": "direct-1.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/direct-1.json",
+      "bytes": 5622,
+      "sha256": "c3370d870bec2616ccdcc76023331cc14ab0e6877a7725e15d56448c8d26ac7b"
+    },
+    {
+      "name": "direct-1.log",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/direct-1.log",
+      "bytes": 81,
+      "sha256": "35739a109821b8e5f678ac0cec2bd09e2bb15f6486aa2decb80a378d2d26aaa0"
+    },
+    {
+      "name": "types-1.log",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/types-1.log",
+      "bytes": 338,
+      "sha256": "714bc8c4099576a47073397bc384ae88f0cf480de298193567558faf60c32db1"
+    },
+    {
+      "name": "types-2.log",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/types-2.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "exact-cleanup.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/exact-cleanup.json",
+      "bytes": 382,
+      "sha256": "ec47092a880921186f06498c4d9f6d72b260bb163ae984be0dbd7f351b6f37d1"
+    },
+    {
+      "name": "exact-cleanup-supplement.json",
+      "original": "/private/tmp/i01-runtime-app-local-f8672ie0/exact-cleanup-supplement.json",
+      "bytes": 740,
+      "sha256": "27f3721b9852e512b282a9f48a52fc70a735298c9c891b27f4bacad3007311e4"
+    }
+  ],
+  "selectedPassed": 4,
+  "notSelected": 10,
+  "typesFirst": 2,
+  "typesFixed": 0,
+  "spentMs": 10834,
+  "remainingMs": 19166,
+  "phaseTotalMs": 30000,
+  "browser": "NOT_RUN",
+  "cleanupObservation": "numeric IDs in exact-cleanup-supplement.json; prior key-shape defect retained"
+}

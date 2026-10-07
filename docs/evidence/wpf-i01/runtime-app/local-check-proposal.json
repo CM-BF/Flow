@@ -1,5 +1,5 @@
 {
-  "kind": "SOURCE_ONLY_PENDING_MANAGER_LOCAL_HANDOFF",
+  "kind": "LOCAL_ACTUAL_COMPLETE_BROWSER_NOT_GRANTED",
   "source": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
   "totalMsProposed": 30000,
   "perChildMsProposed": 15000,
@@ -35,5 +35,10 @@
   ],
   "resolver": "/private/tmp/plugin-app-msg03-delta-f96svnbb/resolver-reuse.json",
   "resolverPreparation": "Need own ignored node_modules bounded symlinks to pinned installed third-party package roots; @flow/{client,contracts,interaction} only this fixed WT. No install/copy/otherWT writes. Fresh manifests/entry bytes before execution.",
-  "runtimeGranted": false
+  "runtimeGranted": true,
+  "launchAllowedNow": false,
+  "spentMs": 10834,
+  "futureFreeFloor": 14414970880,
+  "preparedRunner": "/private/tmp/i01-runtime-app-local-f8672ie0/run.py",
+  "remainingMs": 19166
 }

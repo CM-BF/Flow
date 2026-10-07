@@ -2,9 +2,11 @@
 
 状态：NOT_STARTED
 
-Target: `dfa244744ead31cc4cd8a012284c48ccb6dfe38d`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
+Target: `49d71ef87a7af824c90f0e8c662b4677bbbef8a5`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
-唯一入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source；[implementation checkpoint](../../docs/evidence/wpf-i01/runtime-app/implementation-checkpoint.md)。当前4新增受控direct/六source affected noEmit均NOT_RUN；新0PG Cookie协议浏览器NOT_RUN。原I01/X03/MSG通过仅历史，不外推本App接线。
+唯一入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source；[implementation checkpoint](../../docs/evidence/wpf-i01/runtime-app/implementation-checkpoint.md)。当前4新增受控direct PASS/10旧未选；六source affected noEmit首exit2与fixture导入窄修后exit0均归档；新0PG Cookie协议浏览器NOT_RUN。原I01/X03/MSG通过仅历史，不外推本App接线。
+
+初步源码笔记：[root dfa源码观察](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-notes-20261007.json)，不作最终source/local批准。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)待独审。
 
 审查重点：唯一session controller、live namespace/principal/generation/committedactive撤权、懒界面关闭保unknown原key/body、local/center分离、现MSG C/ordered attachment/current/held及focus不受新接线破坏。
 

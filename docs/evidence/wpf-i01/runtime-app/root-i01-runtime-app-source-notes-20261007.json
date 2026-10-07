@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-07T15:31:21.742415+00:00",
+  "state": "READ_ONLY_SOURCE_NOTES_AWAITING_OWNER_LOCAL_RESULTS",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "target": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+  "sourcePins": [
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+    },
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "bytes": 17691,
+      "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631"
+    },
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "bytes": 25749,
+      "sha256": "f8fdfe52263264355911397d4fb5120dd7bff87b64809776deb450e312e37589"
+    },
+    {
+      "commit": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "bytes": 19721,
+      "sha256": "8a5530f77b0a8d718e5e3f95e8826218ad8aa0f914ab01ff07b7ed61c22eb5b6"
+    }
+  ],
+  "observations": [
+    "App supplies existing FlowClient reader/writer privately to AppPluginSession. Plugin definitions do not gain public client/token access.",
+    "Stable useMemo port carries retained namespace and live ConnectionSession generation. active flag is updated in layout effect before session updateActions; each command/read checks current authority, not only render-time authorized.",
+    "Session owns one runtime command controller outside lazy Settings. Normal unchanged authority and observer unmount do not recreate it; changed authority revokes current controller and creates a fresh generation.",
+    "Settings is a subscriber; close/collapse/local browser extension changes do not own controller lifetime. Center desired-enabled does not deactivate local host, dispose drafts or cancel center jobs.",
+    "Read wrappers reject late results across authority change; runtime controller existing isCurrent/revoke guard handles late writes and original idempotency key/body retention.",
+    "Existing Module/Interface and stable external-store subscription functions reused; no new transport, command FSM or cache system.",
+    "The production patch leaves official Thread, single Composer ownership, attachment membership selector, message settings draft adapter and recovery source unchanged.",
+    "Browser check explicitly uses ?recovery to choose actual BrowserWorkspace despite VITE_FLOW_FIXTURE:true; synthetic Cookie/CSRF HTTP adapter forwards internally to a legacy fixture. It does not establish real center auth/runner execution.",
+    "Proposed four browser groups cover current complete draft with settings/ordered references, unknown retry across lazy disclosure, active workspace loss/late completion and 390px two-theme focus. Runtime behavior remains unexecuted at this note."
+  ],
+  "noBlockingSourceFindingAtThisStage": true,
+  "mustNotClaim": [
+    "This note is not independent approval of final local/browser evidence.",
+    "No browser/PG/product imports/tests or source edits performed by root.",
+    "Source checks cannot establish full cross-center mounted matrix, real authentication security, runtime package loading, all keyboard interactions or performance gain."
+  ],
+  "cleanCode": {
+    "scope": "App composition, private session-owned authority, Settings observer lifetime, six-file direct consumer delta",
+    "finding": "No duplicated runtime authority or new transport found; source avoids per-render port churn and preserves ownership boundaries. Final owner result review still required."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T15:43:35.362195+00:00",
+  "processes": [
+    {
+      "numericPid": 60940,
+      "numericPgid": 60940,
+      "label": "direct-1",
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "numericPid": 75571,
+      "numericPgid": 75571,
+      "label": "types-1",
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "numericPid": 1759,
+      "numericPgid": 1759,
+      "label": "types-2",
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "correctsObservationShape": "Earlier exact-cleanup.json reused pid key for state and omitted numeric ID. It is preserved; this independent fresh observation binds exact IDs from unchanged segment."
+}
