@@ -1,0 +1,198 @@
+{
+  "kind": "svc09a-fixed-cold-helper-ports-v1",
+  "at": "2026-10-07T21:05:56.865047+00:00",
+  "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+  "recordsCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 12,
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ]
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-import.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 500,
+      "sha256": "35702af202acb70ec7d0a6ee128a4df813e6565e94ff248a744aa1ea922e2c4d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local.py",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 4846,
+      "sha256": "565cb9b6af0c7abbd3c6a0ac08f0cbec365b0b74bc43db64859e45f1922d1685"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports.test.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 3407,
+      "sha256": "c84c2b7d603c3df66239e1fc00902973b4c7d0d0c7d01f15444f1b2f93458f40"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports.test.py",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 2181,
+      "sha256": "da66ce7fe3d7d5b4ae3ae6450c5255730ea829ff8733f5c3bc60b43acad5680b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 12604,
+      "sha256": "edc1698a846f85dc247c2a3bcc645157b77264ed15415d826bcb7dcd4c570fcf"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host.test.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 10148,
+      "sha256": "05295c4c356ae94716ff86fc336a85707cf7c6b24f46c0cf80376ebbf87be365"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 10104,
+      "sha256": "86ad82c284a2d337f90e2c22769b5836587650cd8d848e3fe3735b427a5d0596"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 4282,
+      "sha256": "1b5bd3ebc1020320a76d0c8023f14f4a95a61b56c6670bdd1d57e3f66c9463c7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-fixture.mjs",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 8957,
+      "sha256": "1a2e47db1761a3a91ca176eab330000d6393952f03e84ad42fca811bdc881f0a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 12751,
+      "sha256": "5338c0f5dd47da6f7a8e01523ed8ca2026d1cd102239fd91bcefb6078717cdf7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "sourceCommit": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+      "bytes": 6023,
+      "sha256": "ff270b6a6897290a967f16f4ae89170fc7b277fe6768aace8a40dd63ad825053"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-interface.md",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 4412,
+      "sha256": "cd3b55c53ae9193d5ec481912dc80941d1a8d6c13a0318b5e55511b78903464b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-result.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 1799,
+      "sha256": "426d7c6641c6735299761d22822e7f253a3521f7bb5c730bfcd0d7f9f473946f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/01-outer.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 517,
+      "sha256": "c414c372c693a02e8db7a16f41a6379170224a11d5d895a218740e3f219ac55f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/01-stderr.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/01-stdout.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 1022,
+      "sha256": "5be4285189b750e4685ee91774ac56f99b5b6482389168b99542af7b9f62a5f8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/02-outer.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 514,
+      "sha256": "88c99a45dd8488162d327b82f40543c7cedaddf87ea656d909552a33d2d43585"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/02-stderr.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/02-stdout.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 234,
+      "sha256": "3c0ce60f229aca1cd9ec8ecd6a5c7b6e3ba9d980819edb263e0401748582050a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/03-outer.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 512,
+      "sha256": "d4a0f80844ae9919199dd6cb7767d51582be14b1e912818cf684bc873a5806d0"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/03-stderr.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/03-stdout.txt",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 93,
+      "sha256": "55d9b8cc08884a3b391beee67c5d7868e84b50200c29add6fa49988df52272f9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/reservation.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 9626,
+      "sha256": "a9f01ede84d75573350993c51fb698405a81f740444fa3c9804ab9b32ba1da7a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/result.json",
+      "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+      "bytes": 878,
+      "sha256": "bbbf6dcc89a57c17b20e1eea7d5568eae338960fc193fd2de08f943213b5472c"
+    }
+  ],
+  "bindingCount": 24,
+  "bindingBytes": 95410,
+  "directInputReference": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/reservation.json",
+    "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+    "inputCount": 18,
+    "currentHashAndRealpathMatch": true
+  },
+  "inherited": {
+    "heldTargetReviewMain": "9c2886d95bab48cd69984eb006025c2b0b374db3",
+    "reviewPath": "docs/evidence/i02/svc09a-held-target-review.json",
+    "previousDelivery": "be5f2f0cf832a41e1c76179d935228656cd52e57",
+    "handbackPath": "docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-handback-receipt.json",
+    "handbackCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b"
+  },
+  "validation": {
+    "nodeSelected": 7,
+    "nodeNew": 5,
+    "nodeAffectedOld": 2,
+    "pythonPureSelected": 3,
+    "actualModuleImports": 4,
+    "invalidEntryBeforeIO": true,
+    "elapsedMs": 193,
+    "rawBytes": 1349,
+    "groupsAbsentWithDualEOF": 3,
+    "exactEmptyScratchRemoved": true,
+    "statusErrors": [],
+    "statusHumanMissing": [],
+    "statusTimingIssues": [
+      "任务开工时间未记录"
+    ]
+  },
+  "limitations": [
+    "Only fixed helper ports and bounded zero-PG local evidence; caller-specific policy and exact artifact/operator binding need review.",
+    "No artifact build or cold start; no PG, service, provider, personal I/O.",
+    "All previous failure and KEEP records are unchanged; DB and private scratch for future actual cold purpose remain KEEP.",
+    "Returned production paths are not modified by this delta."
+  ]
+}
