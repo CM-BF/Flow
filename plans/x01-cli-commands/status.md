@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:36:15.274361+00:00 |
+| 最近更新时间 | 2026-10-07T10:58:16.712Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | 5f33ae20-b204-435a-86cc-8125fce871b7 v2 ACTIVE/5literal；index/helper已移出 |
+| Claim | 5f33ae20-b204-435a-86cc-8125fce871b7 v3 ACTIVE/4literal；index/helper已移出 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -57,3 +57,5 @@
 主线接收见main-accepted.json；原I02 dashboard-cli-source-deployment.json记录TODO done不识别，本次仅将真实完成项改为completed，保原部署错误观察。main已195登记/部署事实由I02来源提供，本片不重跑产品。新ACK片已独立claim接收index/helper，本树永不恢复其写入。
 
 本轮parseStatus首核errors空、human缺优先级；旧CLI另完成时间需ISO毫秒Z。按模板补默认优先级5并规范同一实际UTC表示；不改变原证据时间或部署错误历史。
+
+2026-10-07T10:58:16.712Z 明确STOP并原子amend交回后继候选consumer所需产品路径，见host-consumer-stop.json与host-consumer-amend.json；旧固定产品/原件/intake不变。本树不再修改已移出路径，保留本task元数据与测试scope处理原主线接收，实际占用以当前ledger为准。
