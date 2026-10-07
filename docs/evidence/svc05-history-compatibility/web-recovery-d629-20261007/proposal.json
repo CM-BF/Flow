@@ -64,5 +64,25 @@
     "provider",
     "userTab"
   ],
-  "authorization": "readonly preparation and scope take only; new one-shot execution/source window still required"
+  "authorization": "readonly preparation and scope take only; new one-shot execution/source window still required",
+  "requestFile": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/request.json",
+    "mode": "0600",
+    "uid": 501,
+    "sha256": "e27d305939a6a1da4578432b3a6ecc10c90d3078487f14aaa682c4162ad750ed",
+    "reason": "fixed CLI readPreviewJson requires owned private regular file; Git preserves bytes but not this permission distinction"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "python": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "ownership": "childPidOnly",
+    "policy": {
+      "workSeconds": 28,
+      "termGraceSeconds": 0,
+      "killGraceSeconds": 2,
+      "outputBytes": 65536
+    },
+    "successRequires": "exit0, firstFailure null, all EOF true, operator ownedState absent; service readiness from exact CLI result then single post facts",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  }
 }
