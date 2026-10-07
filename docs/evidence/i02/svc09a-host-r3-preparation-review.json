@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T16:29:31.933Z",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "state": "APPROVED_FIXED_R3_HOST_PREPARATION",
+  "P1": 0,
+  "P2": 0,
+  "source": "c6b9b084c350a631e8abeb910492fb2a858eee5a",
+  "rawPacket": "2d293ef0fae13b600c4efd618e9394e8fc521dda",
+  "delivery": "40e92ec7160bf2f4e9c950f288cf3fa4b601a7b1",
+  "manifest": {
+    "canonical": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r3.json",
+    "bytes": 31178,
+    "sha256": "d17e168f280f7cb2f18ba57347fcdb16895336063b774b9191ea7545607e7b8c"
+  },
+  "bindings": {
+    "executionCount": 19,
+    "executionBytes": 410017,
+    "runtimeCount": 6,
+    "runtimeBytes": 3324721,
+    "inheritedCount": 2,
+    "inheritedBytes": 28159,
+    "newEvidenceCount": 17,
+    "newEvidenceBytes": 32794
+  },
+  "review": "All9 source deltas read. Unified path accepts actualmkdtemp characters; realpath/uid/mode/devino/symlink/fullintegrity gates preserved. Literal R3 outer/inner absent; oldnamespace reuse rejects. Fixed/current bytes and31R1+14R2 bindings unchanged.",
+  "localResult": {
+    "distinctFinalPassed": 6,
+    "selections": 7,
+    "firstFixtureFailureRetained": true,
+    "totalMs": 355,
+    "rawBytes": 2361,
+    "closedGroups": 3,
+    "dualEOF": true,
+    "exactScratchRemoved": 2
+  },
+  "limits": "217.5s outer and all prior limits unchanged. Planningfloor19203883008 is not an actual reservation; use latest complete higher floor and PG availability42 at real START.",
+  "reviewerActions": "0tests/PG/provider/private raw content reads",
+  "boundary": "Candidate preparation only; no R3 hostrun/readiness/dispatch or personaldeployment. Raw retained once on pushed fixed owner Git source, no copied closure."
+}
