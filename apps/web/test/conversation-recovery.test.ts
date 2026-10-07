@@ -439,7 +439,7 @@ describe("MSG03 recovery material membership", () => {
       subscribe: listener => { listeners.add(listener); return () => { listeners.delete(listener); }; },
       addAttachment: async value => { if (!("content" in value) || !value.id) throw Error("Complete metadata required"); files = [...files, { ...value, id: value.id, type: value.type ?? "file", status: { type: "complete" } }]; emit(); },
     };
-    const unbind = binding.bindComposer(composer); cleanup.push(unbind);
+    let unbind = binding.bindComposer(composer); cleanup.push(() => unbind());
     await binding.syncComposerDraft(composer);
     const held = binding.captureDraft(composer, { submissionId: uuid(74), intent: "send", text: "A" }, null)!;
     const capturedFiles = files; files = []; emit(); binding.failed(held, Error("Cancelled before dispatch"));
@@ -458,7 +458,13 @@ describe("MSG03 recovery material membership", () => {
     // A current core return/partial explicit restore wins over its held identity.
     await composer.addAttachment(createExistingAttachment(binding.input!, held.ids[0]!));
     expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    unbind();
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    unbind = binding.bindComposer(composer);
     await composer.addAttachment(createExistingAttachment(binding.input!, held.ids[1]!));
+    unbind();
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual(held.ids);
+    unbind = binding.bindComposer(composer);
     binding.discardFailedSubmission(); session.recovery.changed(owner.viewKey); await session.recovery.flush();
     const restored = (await store.list(ns)).find(record => record.kind === "draft")!;
     expect(readRecoveryDraft(restored.data).attachments.map(item => item.id)).toEqual(held.ids);

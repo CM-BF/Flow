@@ -165,16 +165,16 @@ export class ConversationAttachments {
   close() { this.update({ open: false }); } // Closing a Dialog is not hiding the composer.
   /** Input owns selection order. Old captures/inTransit have a separate handoff,
    * unless the user has explicitly restored those files into this composer. */
-  private draftItems(state: Pick<ReturnType<ComposerRuntime["getState"]>, "attachments" | "inTransit">) {
-    const current = new Set(state.attachments.map(item => item.id));
+  private draftItems(state?: Pick<ReturnType<ComposerRuntime["getState"]>, "attachments" | "inTransit">) {
+    const current = new Set(state ? state.attachments.map(item => item.id) : this.restoredDraftIds);
     const held = new Set(this.state.submission?.value.ids ?? []);
-    const transit = new Set(state.inTransit?.flatMap(message => message.attachments.map(item => item.id)) ?? []);
+    const transit = new Set(state?.inTransit?.flatMap(message => message.attachments.map(item => item.id)) ?? []);
     return this.input?.getSnapshot().items.filter(item => current.has(item.id) || (!held.has(item.id) && !transit.has(item.id))) ?? [];
   }
   /** Recovery uses the same selection as Send, not the input's held inventory.
    * Keep unverified selections and current returned/restored IDs in input order. */
   recoveryDraft(): readonly AttachmentItem[] {
-    return this.draftItems(this.draftSource?.composer.getState() ?? { attachments: [], inTransit: [] });
+    return this.draftItems(this.draftSource?.composer.getState());
   }
   /** Every new Send/Queue crosses this check, even when the composer has zero chips. */
   captureDraft(composer: Pick<ComposerRuntime, "getState">,
