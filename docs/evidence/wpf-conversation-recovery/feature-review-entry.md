@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，见[晚开路由修复checkpoint](stale-route-checkpoint.json)。App current committed callbacks源修+same-document/exact durable outbox回归与direct barrier已固定，[root dce限定source接受](stale-route-fix-root-review.json)；新增direct1与Web noEmit已实际通过，首前置红保留；真实同页browser仍NOT_RUN。第二Steer真实FAIL/有效观察/清理原件保留，静态缺陷已修而动态因果尚待复验。新route-fix90s是独立有限段，旧90/150/60 closed不挪余额；完整feature IN_PROGRESS，第二中心/真实runner应用仍开放。
+当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，见[晚开路由修复checkpoint](stale-route-checkpoint.json)。App current committed callbacks源修+same-document/exact durable outbox回归与direct barrier已固定，[root dce限定source接受](stale-route-fix-root-review.json)；新增direct1与Web noEmit已实际通过，首前置红保留；本轮same-document+durable原turn/Steer完整恢复已actual selected2 PASS，见[证据](stale-route-first-validation.md)及[root actual独审](stale-route-first-root-review.json)，限定selected2与owned清理已接受。第二Steer真实FAIL/有效观察/清理原件保留，静态缺陷修复后原真实链已通过，旧两FAIL与观察原样保留。新route-fix90s是独立有限段，旧90/150/60 closed不挪余额；完整feature IN_PROGRESS，第二中心/真实runner应用仍开放。
 
 ## 55b已审基线与原证据（历史固定）
 
@@ -38,7 +38,7 @@
 
 ## 残留验收/风险
 
-CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/SteerHTTP、完整profile+knowledge+steering材料、二中心与变principal仍未验；任务详情SSE本次已见实际delivery，conversation/assistant流与全部重连仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
+CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/nativeSteer应用、二中心与变principal仍未验；profile/project/knowledge/双文件完整草稿和Steer草稿各有独立实际证据；任务详情SSE本次已见实际delivery，conversation/assistant流与全部重连仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
 
 GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标题/摘要/本地Intl时间，UUID/精确UTC留details，不预取正文；空text不判重复/自动删稿，保unknown/key/材料语义。仅后继记录，不阻当前固定代码审查或把这轮图片改成新产品FAIL。
 

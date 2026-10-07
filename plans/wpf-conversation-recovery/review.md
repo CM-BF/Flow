@@ -1,12 +1,18 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`（dce产品修复+5dd防御常量+1952注释+a803测试前置纠正）。[root固定源审](../../docs/evidence/wpf-conversation-recovery/stale-route-fix-root-review.json)接受current-committed callbacks及有意义的same-document/durable barrier回归准备；原source报告当时未运行；随后local实际见stale-route-local-index，不代表Steer浏览器通过。5dd一行390000仅容纳manager新90s独立阶段，不转旧信用；root已明确此边界，差量pin由其独审。
+状态：IN_PROGRESS。当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`（dce产品修复+5dd防御常量+1952注释+a803测试前置纠正）。[root固定源审](../../docs/evidence/wpf-conversation-recovery/stale-route-fix-root-review.json)接受current-committed callbacks及有意义的same-document/durable barrier回归准备；原source报告当时未运行；随后local实际见stale-route-local-index，当时不代表Steer浏览器通过；本轮actual独立范围另列。5dd一行390000仅容纳manager新90s独立阶段，不转旧信用；root已明确此边界，差量pin由其独审。
 
 [root最终组合/actual local独审](../../docs/evidence/wpf-conversation-recovery/stale-route-local-root-review.json)接受a803和本次实际结果，0blocking，非Steer浏览器或整feature通过。
 
-[checkpoint](../../docs/evidence/wpf-conversation-recovery/stale-route-checkpoint.json)绑定19源、3变/16不变、base84005和原21。当前新增direct修后1 PASS/54未选、Web noEmit0，首测试前置红保留；真实browser NOT_RUN；两次SteerFAIL/原诊断/owned清理独审保留。动态唯一因果仍待修复后原场景验证。
+[checkpoint](../../docs/evidence/wpf-conversation-recovery/stale-route-checkpoint.json)绑定19源、3变/16不变、base84005和原21。当前新增direct修后1 PASS/54未选、Web noEmit0，首测试前置红保留；本轮真实cookieRead+Steer2/2实际通过，已获root限定实际独审接受；两次SteerFAIL/原诊断/owned清理独审保留。原场景修复后已通过same-document+durable原turn及Steer完整链；不回写旧FAIL，也不宣称一切保存故障的唯一根因。
 
 [完整feature审查入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)保持固定范围/历史实证与未验项；作者不自行APPROVED整feature，main未接。
+
+## 2026-10-07 10:36:27 UTC — actual selected2独立限定接受
+
+[作者原件/清理](../../docs/evidence/wpf-conversation-recovery/stale-route-first-manifest.json)绑定执行d06/sourcea803，11raw40748B/188旧raw不变；selected2/outer0/真实同页导航与outbox及Steer恢复均过。新90charge15119，旧失败不改、原SDK/native/第二center仍未验。完整feature IN_PROGRESS，作者不自签整体验收。
+
+[root原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)固定a803/执行d06，确认11raw与10outer归档原件、19源码、原turn与两次同key/body/command Steer、全部owned清理，结论APPROVED_SELECTED2_PASS_NOT_WHOLE_FEATURE。它审核的是原manifest SHA57a998ac…的审前快照；该manifest保持原样，当前接受事实由本记录与phase引用，不反写原件状态。下一runtime无预约，第二center/principal/reconnect仍待验证。
 
 ## 阶段源码预检（不是最终feature审查）
 

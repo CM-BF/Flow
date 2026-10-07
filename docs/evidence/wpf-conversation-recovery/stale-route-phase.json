@@ -1,7 +1,7 @@
 {
   "id": "RECOVERY-ROUTE-FIX-20261007",
-  "at": "2026-10-07 10:20:38 UTC",
-  "state": "SOURCE_AND_LOCAL_READY_BROWSER_NOT_RUN",
+  "at": "2026-10-07 10:36:27 UTC",
+  "state": "ACCEPTED_SELECTED2_PASS_STOPPED",
   "sourceTarget": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
   "authorization": {
     "by": "root + d01_owner",
@@ -34,9 +34,30 @@
     "providerCalls": 0,
     "leaseMs": 60000
   },
-  "runtimeSpentMs": 0,
-  "runtimeRemainingMs": 90000,
-  "attempts": [],
+  "runtimeSpentMs": 15119,
+  "runtimeRemainingMs": 74881,
+  "attempts": [
+    {
+      "run": "recrtfix-20261007-102945-f71af8",
+      "phaseId": "RECOVERY-ROUTE-FIX-20261007",
+      "actualOuterMs": 15118.727791006677,
+      "lateParentMs": 14518.907833,
+      "serializedParentMs": 14503.140875,
+      "chargeMs": 15119,
+      "previousPhaseSpentMs": 0,
+      "phaseSpentMs": 15119,
+      "phaseRemainingMs": 74881,
+      "closedOldPhasesUnchanged": true,
+      "outcome": "SELECTED2_PASS_NOT_WHOLE_FEATURE",
+      "executionHead": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+      "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "cleanupConfirmed": true,
+      "manifest": {
+        "path": "stale-route-first-manifest.json",
+        "sha256": "57a998ac6b2c3b91fc2d367a8d312fccddfe92a4c2db3e360fd676e725679a4b"
+      }
+    }
+  ],
   "closedPriorPhases": {
     "original90": {
       "budgetMs": 90000,
@@ -79,8 +100,7 @@
   "adminEnv": null,
   "holder": "NONE",
   "remainingPrerequisites": [
-    "Actual SVC06 shared resource handback and explicit unique PG+Chrome handoff",
-    "Fresh original claim/source/runtime/combined resource and own unique input/env/cleanup"
+    "No repeat of this passed selection; further runtime needs a concrete original acceptance gap and resource handoff"
   ],
   "proofLimits": [
     "Prebuilt pinned conversation, not new-chat profile discovery",
@@ -97,5 +117,11 @@
     "path": "stale-route-local-root-review.json",
     "bytes": 20013,
     "sha256": "12cc44fbb18a7dae8cd5edadd7617ec334d9c0587b6b40b4e18f8a9a7a939440"
+  },
+  "actualReview": {
+    "path": "stale-route-first-root-review.json",
+    "bytes": 18127,
+    "sha256": "e6c904e0fe1dd932902b682e43809680ee0791a160f85f37b67ab12192d6e752",
+    "outcome": "APPROVED_SELECTED2_PASS_NOT_WHOLE_FEATURE"
   }
 }

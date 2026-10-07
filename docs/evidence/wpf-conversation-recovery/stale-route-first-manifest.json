@@ -1,0 +1,365 @@
+{
+  "at": "2026-10-07T10:31:47.437603+00:00",
+  "run": "recrtfix-20261007-102945-f71af8",
+  "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "executionHead": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+  "state": "ACTUAL_SELECTED2_PASS_PENDING_INDEPENDENT_REVIEW",
+  "selected": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "fullFeaturePassed": false,
+  "sourceCheckpoint": {
+    "path": "stale-route-checkpoint.json",
+    "sha256": "740754e292d6d02ad19783299341b4ab5b2ee98b77d7c337c704f5e64717965f"
+  },
+  "rawFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/browser.json",
+      "bytes": 27157,
+      "sha256": "7b2ab20938f615fddc365e1044c002b8eb1a1ca29db9cb9f524ffde0c8fc4212"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/budget.json",
+      "bytes": 242,
+      "sha256": "c0132a695600b318915a7ab215377647961b5d7324f8b3f0fb3710b758ce0a9c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "f9bd4f7c72ed17d829fca1c53c7fac26b309f71290132636a953f1ea9bf3e26d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/database-owner.json",
+      "bytes": 164,
+      "sha256": "d1bc434fc181bda042e07e39071c03a44328233b9e2d99dd5fe9af4faa4c2a92"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/fixture-cleanup.json",
+      "bytes": 314,
+      "sha256": "4c661bd16ddb28a7bb292d541ae1736fa3b21661824d97ff7f468a01daadea6b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/launch-config.json",
+      "bytes": 1215,
+      "sha256": "ebe1af0ede5782b059eec86779aacd39e9515eb08a808854308fe2fe52cde632"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/process-owner.json",
+      "bytes": 29,
+      "sha256": "fb390933c5d7dbc170755904c32754b82aa8fe65403157df08561397da01e0f9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/process.log",
+      "bytes": 6063,
+      "sha256": "69a45abed83e92c7cff0bc627c669d933aeb5626fec201d9d3e746ad4d10c404"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "76cbb724f527cb026c37f8d9ddd0ac8aed95b6f8e459b7e33d59e29ccfdf2736"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/sources.json",
+      "bytes": 2438,
+      "sha256": "266d077c49bea0460ad4a589f5cb49e89cd635bd65dc72abb018e9ee2157e428"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8/supervisor.json",
+      "bytes": 2497,
+      "sha256": "f9a7df6192812f0d01349b2b920822782de2dd8d3cc6ef6cc2f8a5cb0fdfa399"
+    }
+  ],
+  "rawCount": 11,
+  "rawBytes": 40748,
+  "outerFiles": [
+    {
+      "path": "stale-route-first-parent/admission.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/admission.json",
+      "bytes": 5513,
+      "sha256": "ff63cae2864932ef0c405e8ae2397cb53ce9e7d59044c97734640add11110b6d"
+    },
+    {
+      "path": "stale-route-first-parent/gate.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/gate.json",
+      "bytes": 4329,
+      "sha256": "60b30f5aee04ef0cba3ac79a7394ffd367a650cabf8f80b224eda6e925e59ec7"
+    },
+    {
+      "path": "stale-route-first-parent/start.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/start.json",
+      "bytes": 725,
+      "sha256": "c4a86cb9d4b59c1aa9fde7c08b28b3032d0cf36bb54228200b4952a61ac9693a"
+    },
+    {
+      "path": "stale-route-first-parent/parent.stdout.jsonl",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/parent.stdout.jsonl",
+      "bytes": 617,
+      "sha256": "a6b2d59c6adec39d23b29452ad2bb277b070b40874f4b4eb1d39fa08a80e0992"
+    },
+    {
+      "path": "stale-route-first-parent/parent.stderr.log",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "stale-route-first-parent/actual-exit.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/actual-exit.json",
+      "bytes": 504,
+      "sha256": "8101eec625d1d926b96a29535425e766ed5ba7a7274618eecc55766095d2cd6f"
+    },
+    {
+      "path": "stale-route-first-parent/post-cleanup-observation.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/post-cleanup-observation.json",
+      "bytes": 702,
+      "sha256": "1aabc2b6b9d3bafd1076933f6baed782251fbc2c33a1e4a0225933913765d243"
+    },
+    {
+      "path": "stale-route-first-parent/admin-env-deletion-receipt.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/admin-env-deletion-receipt.json",
+      "bytes": 303,
+      "sha256": "2ae0f31afb105acc0c3144154efcee537e34b3c693a155349870b5eaf322d602"
+    },
+    {
+      "path": "stale-route-first-parent/accounting.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/accounting.json",
+      "bytes": 389,
+      "sha256": "da9b65bf53795ae73401b1dd3856c49b77ed816417a89cc0d144805de2babaae"
+    },
+    {
+      "path": "stale-route-first-parent/raw-index.json",
+      "source": "/private/tmp/recovery-routefix-first-wm_9mx_o/raw-index.json",
+      "bytes": 3544,
+      "sha256": "a0ee825705d3817ac3ba58b67dbbecfe0a90b0f9545caf1bb3c8df16e049c1da"
+    }
+  ],
+  "actualExit": {
+    "run": "recrtfix-20261007-102945-f71af8",
+    "startedAt": "2026-10-07T10:30:07.029323+00:00",
+    "endedAt": "2026-10-07T10:30:22.148717+00:00",
+    "outerPid": 23329,
+    "parentPid": 23339,
+    "actualExit": 0,
+    "actualOuterMs": 15118.727791006677,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "stdoutBytes": 617,
+    "stderrBytes": 0,
+    "stdoutSha256": "a6b2d59c6adec39d23b29452ad2bb277b070b40874f4b4eb1d39fa08a80e0992",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "lateTerminal": {
+    "kind": "recovery-final-accounting",
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recrtfix-20261007-102945-f71af8",
+    "journey": "steering-recovery",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "completedGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "postWrite": {
+      "phase": "after-final-report-and-budget",
+      "elapsedMs": 14518.907833,
+      "scratchBytes": null,
+      "evidenceBytes": 3840218,
+      "freeBytes": 22700883968,
+      "errors": []
+    },
+    "interruptionRequested": false,
+    "errors": [],
+    "cleanupErrors": [],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true
+  },
+  "accounting": {
+    "run": "recrtfix-20261007-102945-f71af8",
+    "phaseId": "RECOVERY-ROUTE-FIX-20261007",
+    "actualOuterMs": 15118.727791006677,
+    "lateParentMs": 14518.907833,
+    "serializedParentMs": 14503.140875,
+    "chargeMs": 15119,
+    "previousPhaseSpentMs": 0,
+    "phaseSpentMs": 15119,
+    "phaseRemainingMs": 74881,
+    "closedOldPhasesUnchanged": true,
+    "outcome": "SELECTED2_PASS_NOT_WHOLE_FEATURE"
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_a0054dc882694a53adc2cca279efe30c",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.6244580000002316,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.620999999999185,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 19,
+      "wireBytes": 16530,
+      "providerQueries": 0,
+      "steeringActor": {
+        "registered": true,
+        "claimRequests": 4,
+        "claimed": true,
+        "sessionEventRequests": 1,
+        "heartbeatRequests": 0,
+        "runnerReceiptRequests": 0,
+        "providerQueries": 0
+      }
+    },
+    "postObservation": {
+      "at": "2026-10-07T10:30:49.963232+00:00",
+      "run": "recrtfix-20261007-102945-f71af8",
+      "observations": [
+        {
+          "pid": 23329,
+          "process": "ESRCH",
+          "group": "ESRCH"
+        },
+        {
+          "pid": 23339,
+          "process": "ESRCH",
+          "group": "ESRCH"
+        },
+        {
+          "pid": 23351,
+          "process": "ESRCH",
+          "group": "ESRCH"
+        },
+        {
+          "pid": 24441,
+          "process": "ESRCH",
+          "group": "ESRCH"
+        }
+      ],
+      "scratch": "/private/tmp/flow-recovery-browser-FotWwt",
+      "scratchAbsent": true,
+      "adminEnvAbsent": true,
+      "databaseReceipt": "database-cleanup.json",
+      "fixtureReceipt": "fixture-cleanup.json",
+      "providerQueries": 0,
+      "independentPortsSampled": false
+    },
+    "adminEnvDeletion": {
+      "at": "2026-10-07T10:30:49.963232+00:00",
+      "path": "/private/tmp/recovery-routefix-first-wm_9mx_o/admin.env",
+      "identity": {
+        "dev": 16777234,
+        "inode": 124036000,
+        "uid": 501,
+        "mode": "0o600"
+      },
+      "matched": true,
+      "valueRead": false,
+      "deleted": true,
+      "postLstat": "ENOENT"
+    }
+  },
+  "actualSteering": {
+    "profile": {
+      "id": "99c79807-3323-45fe-9273-bd6ed3f357fc",
+      "runnerId": "e7b53c38-8d83-4001-b660-32a09087ea9d",
+      "configDigest": "4fbf48ae94f85985e4cd75b1490fedc78e9f487da3b09e78613786b5cfeacc68"
+    },
+    "conversationId": "42290660-2145-4d6d-9556-591a82d71a15",
+    "turnId": "3f69b8fc-a39c-4744-b323-f35dcfcdd3e2",
+    "sameDocumentNavigation": true,
+    "originalTurnReceiptId": "c392e604-5f4d-4ab5-b0c2-b4de74f0388c",
+    "actor": {
+      "attemptId": "71321074-4ff0-4064-bce0-ec0ee412b20e",
+      "ownerVersion": 1,
+      "nativeSessionId": "75fa08a3-84c1-4803-9673-50325bafe4a3",
+      "admission": {
+        "taskId": "d88bd964-5eab-430a-8ff8-2d4451c8d111",
+        "attemptId": "71321074-4ff0-4064-bce0-ec0ee412b20e",
+        "ownerVersion": 1,
+        "revision": 0,
+        "state": "ready",
+        "reason": "ready"
+      },
+      "remainingLeaseMs": 59988.602875,
+      "leaseMs": 60000,
+      "protocolActor": "synthetic-session-event",
+      "observations": {
+        "registered": true,
+        "claimRequests": 4,
+        "claimed": true,
+        "sessionEventRequests": 1,
+        "heartbeatRequests": 0,
+        "runnerReceiptRequests": 0,
+        "providerQueries": 0
+      }
+    },
+    "draftId": "draft:fe883bf8-e9ef-4e47-8949-8aaf9a5f8d56",
+    "receiptId": "ab7116c6-d8e4-415b-acf7-53a9510d1729",
+    "commandId": "8da99fdc-13c9-4d17-8701-6953551513ee",
+    "browserPostCounts": [
+      1,
+      1,
+      2,
+      3
+    ],
+    "draftFailureObservation": null
+  },
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8403.469459,
+    "elapsedMs": 8403.469459
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8403.564625,
+      "endedOffsetMs": 9696.633125,
+      "elapsedMs": 1293.0684999999994,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "steeringRecovery",
+      "startedOffsetMs": 9696.654292000001,
+      "endedOffsetMs": 13832.711209000001,
+      "elapsedMs": 4136.056917,
+      "outcome": "PASSED"
+    }
+  ],
+  "oldRaw": {
+    "count": 188,
+    "bytes": 570754,
+    "inventorySha256": "901cccb0d85c34fe396de6e7a497a1a39e76f7bee256a9a09810b39020385869",
+    "verifiedAgainstGitHead": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+    "allUnchanged": true
+  },
+  "limits": [
+    "No native runner/SDK/provider consumed or applied proof; only public synthetic protocol session and actual center accepted/replayed.",
+    "Same-document late view, durable turn and original draft/command/next draft assertions executed; no new screenshot selected.",
+    "Independent second-center/principal still not covered; selected2 is not whole-feature approval.",
+    "Serialized parent priorMs is older accounting; independent phase charges conservative outer/late/parent max, old evidence not changed."
+  ]
+}

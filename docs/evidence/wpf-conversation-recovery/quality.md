@@ -330,3 +330,11 @@ Root发现的command data缺失遮蔽观察在a8e已修并源码独审通过；1
 clean-code复核：保持authority/错误原文，前置契约断言强化原稿保存而不掩盖真正commit失败；source回调只layout commit更新，旧effect资源生命周期不变，无新抽象/共享scope。三oldphase封账，新90仅浏览器账不扣local也不复用旧余。当前完整feature IN_PROGRESS，动态same-document/Steer因果未验。
 
 Root最终固定a803源码+本次actual local独审已接受，见[原报告](stale-route-local-root-review.json)，0blocking；仅source/direct1/noEmit，不冒真实Steer或完整feature通过。下一原选2实际仍按新90phase和共享窗口，旧local不重跑。
+
+## 2026-10-07 10:33:29 UTC — route-fix selected2实际交付clean-code
+
+本地find-skills/clean-code/codebase-design/webapp-testing复用；无新安装/源码变化。a80319pin与188旧raw先fresh核，再原singlefile执行；源修保持current committed callbacks与client清理authority，新增真实same-document/原turn durable断言执行通过，后续原Guide/原key/nextdraft不删不放宽。SDK/provider/consumed-applied绝不由synthetic session冒认。
+
+actual outer0/两EOF，11raw40748B；charge取outer15118.727791、late14518.907833、parent14503.140875之最大ceil15119，旧三phase不转信用。收尾先确认DB marker/0conn正常DROP/fixture，再fresh exact4PID+groups、scratch/env身份删除；没有不明归属kill/个人服务操作或独立port采样声明。共享窗已即时归还不等metadata。此batch只存11新raw+10outer，不复制188旧原件；TODO02按原authority范围有证据完成，其余namespace/完整独审未夸大。
+
+2026-10-07 10:36:27 UTC：root本轮独审已核11raw+10outer/19source/同key回放与owned清理，限定selected2接受。封存前再次按原scope核源码零改、错误/预算原件不回写、manifest保持受审原字节；只从phase/current文档引用原样review，无循环hash或重复raw。无新工程检查/服务启动。

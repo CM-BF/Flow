@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:16:16 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:33:29 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -15,10 +15,10 @@
 ## TODO
 
 - [x] WPF-RECOVERY01-01：固定输入、合法scope和唯一canonical；实现有界ConnectionSession/Journal。
-- [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
+- [x] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；旧Steer独立60s段已34753/余25247封闭（小于入口30s，不再开）；新route-fix独立90s段spent0/NOT_RUN，按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；旧Steer独立60s段已34753/余25247封闭（小于入口30s，不再开）；新route-fix独立90s段spent15119/余74881（Steer selected2实际通过，无自动续跑），按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
@@ -262,3 +262,11 @@ Root接受固定27f后的bounded设计：仅该selected selector允许一个synt
 本段固定组合 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，源审及最小验证入口见[proposal](../../docs/evidence/wpf-conversation-recovery/stale-route-validation-proposal.md)。管理新90s阶段只覆盖原Steer/same-document回归，旧额度不转；parent390000是外部防御顶而非余额。局部与actual均未运行，等待管理有限local/真实共享窗口。
 
 Root最终固定a803源码+本次actual local独审已接受，见[原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-local-root-review.json)，0blocking；仅source/direct1/noEmit，不冒真实Steer或完整feature通过。下一原选2实际仍按新90phase和共享窗口，旧local不重跑。
+
+## 2026-10-07 10:33:29 UTC — 原02限定恢复链完成，其余验收保持
+
+见[actual范围](../../docs/evidence/wpf-conversation-recovery/stale-route-first-validation.md)。原Outbox/Queue/Steer authorities、两阶段CREATE、strict事务/错误/CAS与同key恢复已有受控和对应真实选组，02完成；不把center accepted当native应用或Queue promotion。03完整草稿各维度实际已过但二center/principal未验；05保历史多selected分层，06完整独审/main尚未完成。当前19源码不变，所有旧FAIL保留，新90只有本次15119，后继无需重跑此绿组。
+
+## 2026-10-07 10:36:27 UTC — route-fix actual独审封存
+
+[root实际原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)限定接受cookieRead/steeringRecovery 2/2及owned清理。原19源码a803不变，执行d06/新90段charge15119、余74881；旧FAIL与三旧phase封账保持。第二center/principal/reconnect与完整feature/main仍未完成，无新gate/env/holder/运行预约。本批只归档并正常推送，不重复任何检查。
