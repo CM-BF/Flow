@@ -12,7 +12,7 @@
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 当前产出 | 固定网页宿主及隔离运行结果已交付；仅替换网页宿主的个人采用步骤已实现，并完成局部故障检查。 |
 | 下一可用交付 | 独立审查迁入与替换调用层，然后在受管窗口采用固定网页宿主。 |
 | 当前阻塞 | NONE |
@@ -20,8 +20,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | 隔离结果aa71a7a3855f27b80d7045ec64c0ca644d87156d / delivery604ce630b6703063c882d950f0b8fa4ca10fa6e1；个人候选随后固定 |
-| 工作树dirty状态 | 仅own plan/evidence封存本轮原始结果；提交后核clean |
+| Head | 个人采用caller cb2205db380aa9d8bbb6ff42407ac7166d2a073a；当前仅metadata收口，产品仍bad019 |
+| 工作树dirty状态 | caller/source/raw已固定；仅own status元数据，提交后核clean |
 | 工作分支状态 | in-progress；隔离宿主结果已接收，个人采用源码待审 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
@@ -118,3 +118,5 @@
 ## 2026-10-07T05:40:53.000811+00:00：个人采用调用层局部检查
 
 原claim v6 fresh05:32:55.336Z确认后仅own docs实现。沿已接受候选复用原两锁、verify/clone、RENAME_EXCL和OPS14；Web-only无drain/hold/业务DML或任务归零。9个pure/tiny checks、3JS语法入口及Python AST通过，实际05:39:24.469522Z→05:39:24.782849Z/313ms/raw973B；4组absent/双EOF/自有scratch已清。最后仅caller补legacy webHost必须null的保守前置，未重跑无影响9项；该一行源审，不称个人运行。局部已交还native。见[固定候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)、[局部记录](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/local-run.json)。迁入/个人读取/HTTP/PG/服务全部NOT_RUN，root工具尚未冻结。
+
+本轮caller固定提交：cb2205db380aa9d8bbb6ff42407ac7166d2a073a；独立审查待接，个人迁入/替换仍NOT_RUN。status标准解析errors/human/timing均[]，初次错误metadata模块路径原样保留status-parse.json。
