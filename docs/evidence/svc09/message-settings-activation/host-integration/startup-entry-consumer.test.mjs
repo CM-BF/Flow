@@ -131,3 +131,20 @@ test('actual configuration rejection has no migration or service side effects an
   assert.ok(observed.frames.some(frame => frame.p === 'configuration' && frame.e === 'error'));
   assert.equal(observed.frames.at(-1).outcome, 'failed');
 });
+
+// Fastify/Avvio exposes a thenable for registration. Keep its value inside the original await.
+test('actual Fastify registration completes through the void observation callback without listening', async () => {
+  const fastify = require('/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js');
+  const source = ts.transpileModule(current['startup-progress'], { compilerOptions: { target: ts.ScriptTarget.ES2023, module: ts.ModuleKind.ESNext } }).outputText;
+  const module = new SourceTextModule(source, { context: createContext({ Buffer, performance }) });
+  await module.link(() => { throw Error('Unexpected dependency'); }); await module.evaluate();
+  const frames = [];
+  const progress = module.namespace.createStartupProgress({ enabled: true, write: frame => { frames.push(frame); } });
+  const app = fastify(); let registrations = 0;
+  try {
+    const value = await module.namespace.withStartupPhase(progress.observe, 'cors', async () => { await app.register(async () => { registrations++; }); });
+    assert.equal(value, undefined); assert.equal(registrations, 1); assert.equal(app.server.listening, false);
+    assert.equal(progress.finish('listening').state, 'complete');
+    assert.deepEqual(frames.map(line => JSON.parse(line.slice(14)).e), ['enter', 'settled', 'complete']);
+  } finally { await app.close(); }
+});

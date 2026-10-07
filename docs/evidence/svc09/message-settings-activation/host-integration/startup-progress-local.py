@@ -10,7 +10,7 @@ SUPERVISOR = ROOT / 'tools/owned-process-supervision/supervise.py'
 assert hashlib.sha256(SUPERVISOR.read_bytes()).hexdigest() == '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
 spec = importlib.util.spec_from_file_location('startup_ops14', SUPERVISOR)
 ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.loader.exec_module(ops)
-assert len(sys.argv) == 2 and sys.argv[1] in ('01', '02', '03')
+assert len(sys.argv) == 2 and sys.argv[1] in ('01', '02', '03', '04')
 run = HERE / ('startup-progress-local-' + sys.argv[1]); run.mkdir()
 def save(name, value):
     data = value if isinstance(value, bytes) else (json.dumps(value, indent=2) + '\n').encode()
@@ -33,6 +33,8 @@ commands = [(str(NODE), str(vitest), 'run', '--config', str(HERE / 'startup-prog
 if sys.argv[1] != '01':
     commands = [(str(NODE), '--experimental-vm-modules', '--test', '--test-reporter=spec', str(HERE / 'startup-entry-consumer.test.mjs')),
       (str(NODE), str(tsc), '-p', str(HERE / 'startup-entry-tsconfig.json'))]
+if sys.argv[1] == '04':
+    commands[0] = (str(NODE), '--experimental-vm-modules', '--test', '--test-reporter=spec', '--test-name-pattern=actual Fastify registration', str(HERE / 'startup-entry-consumer.test.mjs'))
 if sys.argv[1] == '03':
     commands = commands[1:]  # Only affected types; the nine entry cases already passed.
 paths = [ROOT / ('apps/server/src/' + p) for p in ('startup-progress.ts', 'startup-progress.test.ts', 'startup-progress-consumer.test.ts')]
@@ -41,6 +43,7 @@ paths += [Path(__file__), HERE / 'startup-progress-vitest.config.mjs', HERE / 's
 if sys.argv[1] != '01':
     paths += [ROOT / 'apps/server/src/main.ts', ROOT / 'apps/server/src/index.ts', HERE / 'startup-entry-consumer.test.mjs', HERE / 'startup-entry-tsconfig.json', HERE / 'startup-progress-entry-inputs.json', HERE / 'startup-progress-entry-links.json', tsc.parent.parent / 'lib/typescript.js']
     paths += [Path('/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg/index.d.ts')]
+    if sys.argv[1] == '04': paths += [Path('/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify') / p for p in ('fastify.js', 'package.json')]
     paths += [Path('/Users/citrine/Projects/AgentHarness/Flow') / p for p in ('apps/server/src/main.ts', 'apps/server/src/index.ts')]
 save('reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'inputs': [pin(p) for p in paths], 'commands': commands,
  'cumulativeSecondsCap': 120, 'priorMs': used_ms, 'rawBytesCap': 131072, 'priorRawBytes': used_raw, 'scratchBytesCap': 8388608,

@@ -122,7 +122,7 @@ export async function createServer(options: ServerOptions) {
     }
     authentication = await withStartupPhase(options.startupObserver, 'authentication', () => createBrowserSessionAuthentication(pool, options));
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
-    if (corsOptions) await withStartupPhase(options.startupObserver, 'cors', () => app.register(cors, corsOptions));
+    if (corsOptions) await withStartupPhase(options.startupObserver, 'cors', async () => { await app.register(cors, corsOptions); });
     if (options.packageFetchHost) packageWorker = await withStartupPhase(options.startupObserver, 'package-worker', () => startPackageFetchWorker(pool, options.packageFetchHost!));
   } catch (error) { await pool.end(); throw error; }
   const boss = await withStartupPhase(options.startupObserver, 'scheduler', () => startScheduler(options.databaseUrl, pool)).catch(async error => {
