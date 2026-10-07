@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T00:29:34.869649+00:00",
+  "task": "OPS-001 plan-index navigation maintenance",
+  "inputMain": "da6db8db94d321b9c2af7b56d577eb2f86839a63",
+  "scope": "plans/README.md only; existing OPS status/quality records",
+  "freshLedgerObservedAt": "2026-10-07T00:27:49.318Z",
+  "claims": {
+    "stoppedOriginalScope": "plans/README.md at dashboard-architecture; clean before handoff",
+    "remove": {
+      "requestId": "410f0c3c-d80c-479a-aafb-4f98f3ddc7b1",
+      "action": "amend",
+      "committedAt": "2026-10-07T00:28:21.249Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "AGENTS.md",
+          "apps/execution-dashboard/README.md",
+          "apps/execution-dashboard/public/index.html",
+          "apps/execution-dashboard/src/registry.mjs",
+          "docs/evidence/d05",
+          "plans/AGENTS.md",
+          "plans/d05-architecture-view"
+        ],
+        "state": "active",
+        "branch": "codex/dashboard-architecture",
+        "origin": "new",
+        "taskId": "D05",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+        "createdAt": "2026-10-06T03:13:58.720Z",
+        "updatedAt": "2026-10-07T00:28:21.249Z",
+        "observedAt": null
+      }
+    },
+    "receive": {
+      "requestId": "cb730269-088c-4309-94f0-e164c745012b",
+      "action": "amend",
+      "committedAt": "2026-10-07T00:28:25.518Z",
+      "claim": {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/quality",
+          "plans/README.md",
+          "plans/flow-001-architecture",
+          "plans/flow-002-provider-harness",
+          "plans/flow-003-m1-execution",
+          "plans/ops-001-status-review"
+        ],
+        "state": "active",
+        "branch": "codex/plan-status-review",
+        "origin": "migration",
+        "taskId": "FLOW-001",
+        "worker": "astra_ultra_execution_lead",
+        "claimId": "3cb8bc46-0bfb-4635-aaf3-069d822e1e58",
+        "version": 3,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review",
+        "createdAt": "2026-10-06T02:48:43.544Z",
+        "updatedAt": "2026-10-07T00:28:25.518Z",
+        "observedAt": "2026-10-06T02:48:42.000Z"
+      }
+    }
+  },
+  "checks": {
+    "originalMarkdownLinks": 93,
+    "newMarkdownLinks": 101,
+    "droppedDestinations": [],
+    "brokenDestinationsAtPublishedBase": [],
+    "canonicalSiblingRepairs": 3
+  },
+  "preserved": [
+    "FLOW-001/002 complete baseline",
+    "long-term authorization",
+    "all prior plan/matrix/template/status/review destinations",
+    "M1 historical evidence and unfinished acceptance",
+    "existing global resource blocker and CI question"
+  ],
+  "concurrency": "This heartbeat user ceiling 10 plus actual runtime cap; index keeps no live worker count. Historical ceilings are not current actual counts.",
+  "engineeringTests": 0,
+  "runtimeProbes": 0,
+  "install": false,
+  "cleanup": false,
+  "automationChanges": false,
+  "skills": "Reuse already-read local find-skills method; clean-code single responsibility applied: index navigates, owner status owns progress. No additional skill/install or product tests."
+}

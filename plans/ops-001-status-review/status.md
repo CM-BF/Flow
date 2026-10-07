@@ -373,3 +373,5 @@ Mika协调读取失败后，Lead独立确认OrbStack Stopped、Docker socket缺�
 2026-10-06 23:59 UTC：X01首次供给被Stage A运行线提前HOLD（未创建）；保留原HOLD，已向唯一operator明确区分精确链接准备与strict/Vitest/tar执行：本次仅7链接/752B target文本与至多3父目录、含收据逻辑≤64KiB，沿既有低空间源码例外继续，写失败即停；1,107,296,256B实际运行线未降，工程检查仍NOT_RUN。
 
 2026-10-07 00:14 UTC：现有共享执行阻塞已作一次有界收口，[恢复顺序与解除条件](../../docs/quality/execution-recovery-order-2026-10-07.md)。native_center_owner确认无未完成检查后结束本段；X01七链接既有回执PROVISIONED，未重复供给。各候选原失败/NOT_RUN/限定独审不变，Mika原REQ10/K01规划保持独立。本次无资源或服务探针、测试、清理、CI或新功能。
+
+2026-10-07 00:29 UTC：计划索引小维护沿本OPS范围：fresh协调账本后，原D05 v3→v4移出plans/README.md，OPS v2→v3接收精确路径。索引只导航到权威status，旧批次明确历史；保留全部计划/验收/模板链接、FLOW完整目标与长期授权，不复制新实时状态。本次heartbeat并发上限10且受实际cap约束，未声明实际人数。仅文档/link核对，[记录](../../docs/quality/plan-index-navigation-2026-10-07.json)，原资源与CI阻塞不变。
