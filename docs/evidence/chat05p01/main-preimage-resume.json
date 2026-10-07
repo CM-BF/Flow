@@ -1,0 +1,194 @@
+{
+  "at": "2026-10-07T05:11:26.331760+00:00",
+  "source": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "main": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "base": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a",
+  "ownSources": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "sourceFixed": true,
+      "baseBlob": "74fc535271f6a4def24db0ed405b39f29ae42d93",
+      "mainBlob": "74fc535271f6a4def24db0ed405b39f29ae42d93"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/adapter.test.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/body.test.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/plan.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/spool.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "sourceFixed": true,
+      "baseBlob": "c164ff2f7e3ec23c470a36c8ce0079ee92f029a4",
+      "mainBlob": "c164ff2f7e3ec23c470a36c8ce0079ee92f029a4"
+    },
+    {
+      "path": "apps/runner/src/native-activity/mapper.test.ts",
+      "sourceFixed": true,
+      "baseBlob": "b1603a3e45e3c8d5531489b2c9b0d49d250275d5",
+      "mainBlob": "b1603a3e45e3c8d5531489b2c9b0d49d250275d5"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "sourceFixed": true,
+      "baseBlob": "28e7864cb1137601879ecbe0f65926100bc75721",
+      "mainBlob": "28e7864cb1137601879ecbe0f65926100bc75721"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sourceFixed": true,
+      "baseBlob": "4bc731ee2fbc2e9ef0b780b668dbd7264fa025c5",
+      "mainBlob": "4bc731ee2fbc2e9ef0b780b668dbd7264fa025c5"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/body.test.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/server/src/native-activity-body/codec.test.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/server/src/native-activity-body/read.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "apps/server/src/native-activity-body/store.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sourceFixed": true,
+      "baseBlob": "a5e258d5d94a04379a8a6062e45fb82313894b29",
+      "mainBlob": "a5e258d5d94a04379a8a6062e45fb82313894b29"
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "sourceFixed": true,
+      "baseBlob": null,
+      "mainBlob": null
+    }
+  ],
+  "protectedInputsChanged": [
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "baseBlob": "433833b43fdee1b963ae369f84322cd63458184d",
+      "mainBlob": "d839e8b96bf10e20c9827eb9be86afeee0a38228"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "baseBlob": "da160688a2182a13e0db217c133c388c779171f2",
+      "mainBlob": "01a320ff6e20f647eb5daab1b60c308e29947af8"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "baseBlob": "77a518f4949a4b96dc0c005805a5f5b4095d4834",
+      "mainBlob": "f2f0efe4d454401953a5f24ffc672c69af20293f"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "baseBlob": "7fcb706cbe6794ffa0a982ee6fc7bb99a4ac46df",
+      "mainBlob": "962a3b420ff95185333e9f3081273b66d8af3729"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "baseBlob": "2e851d76dc9671e01d2397c43635a9670dc3a188",
+      "mainBlob": "affa2fe8f426e1d393b4196b6fb2f2c25e9b5c2d"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "baseBlob": "67d0ec07bb7ec46ffbb8adae2a970be57555c43b",
+      "mainBlob": "af89fcd73ae817ba7ce0a68fc01f77b7ed78e9ed"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "baseBlob": "494d4b5dc379674f54be348ba02335d58e349f31",
+      "mainBlob": "3c1495592dfeef0219d673b592d5f9558eabb7f0"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "baseBlob": "e08e46774d964eb87fabdfab6bac7700c722f6d6",
+      "mainBlob": "206c0caff3801dacf1925fdecb3cfee24f0a1469"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "baseBlob": "0a79d643419e9a75dbdaba5e559ce38be31e9417",
+      "mainBlob": "a5c0a25f269d24f42d11cf60864ada578567a6a5"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "baseBlob": "eb935392523cf4bc518ddaadb5cc665c17e1776e",
+      "mainBlob": "7a6e996170fc4961ead72f612da3a0c13fcb01b3"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "baseBlob": "fbc1c910113bc65e980a094be0e5d0a20472e513",
+      "mainBlob": "d47d27229cf4df6bca3152a0fdc87dbd7c11a029"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "baseBlob": "f3fd735ff233ccea86d20acf113d43677cda8572",
+      "mainBlob": "e13486f7baa2e6838c9be10b4c8e0799db2ad351"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "baseBlob": "62bf5e58fa7ce4cb464c4025ba5100bba4e09be3",
+      "mainBlob": "2ee5f126e3f035e4428411e4c9958b17ee3660cc"
+    },
+    {
+      "path": "package.json",
+      "baseBlob": "34091cf383f1fd79f5fc70496ea6408fdc118fa8",
+      "mainBlob": "f12c69735d60e664e3a87082d1571fb48a8b4958"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "baseBlob": "f7d61920414fbcc0b80353c3c81bb67bdea5a4fb",
+      "mainBlob": "a61b07082e212b84d961cad193a6cae6ce34450b"
+    }
+  ],
+  "limits": "Read-only fixed Git preimage comparison. No source rebasing or copying. Local validation uses original fixed tree; production integration must preserve changed main inputs."
+}

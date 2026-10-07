@@ -13,3 +13,7 @@ Base：fc3246b307f5436ccecb97f38ccaba10c7a72a5a。唯一reviewer为 native_cente
 原纯检查22不同项分轮：先21/22失败，再仅大材料项1/1、8未选；原timeout/exit1保留。当前新增10项直接消费者、已修focused types复验及3个PG候选仍NOT_RUN；资源门禁记录保留，不能据源审冒最终领域APPROVED。生产runtime/factory/client/exports/UI未包含。
 
 作者回应：无产品finding；源保持固定。只更正status的资源阻塞字段格式并归档。待实际原门槛满足时补剩余检查；PG另需独占窗口。下一独审仅核新增证据或受影响增量，不重复原22或无关矩阵。
+
+## 2026-10-07T05:14:02.132Z 新增运行证据待核
+
+源仍40af/no delta；原源审覆盖保持。本次补原10direct（6新+4受影响旧）、focused types复验，10/10与exit0；原22/红/NOT_RUN保持，PG3仍未跑。仅新增证据待唯一独审，不回写原源审为最终领域APPROVED。

@@ -22,3 +22,7 @@ PG源码候选为`apps/server/src/native-activity-body/{fixture,body.test}.ts`�
 `pg-static-resource-closure.json`只读核209本地源、31个实际URL资源（含033、012/013、017/019动态数组）、3个workspace公开导出manifest，missing=[]；最初observer误假设plugin-runtime index，按真实package export纠正。第三方manifest/link见两轮dependency proposals/receipts；此存在性核不等运行导入或PG通过。
 
 恢复准入轮：`types-run-05`与`pure-run-03`同次fresh1076162560B均未达各自原门槛，0child/NOT_RUN，不算测试选择或通过。source仍40af，唯一独立源审由native_center_owner进行。
+
+## 2026-10-07剩余局部验证
+
+原10direct与focused types已实际补齐，见local-resumed-20261007/summary.json。10/10、types0、3762ms，两组absent/双EOF；总28不同跨轮（原22+6新，4outbox受影响旧重复），不是重复旧22。产品40af无改，PG3/生产挂载仍NOT_RUN。原独审继续SOURCE_APPROVED_PENDING_VALIDATION，本次新增运行结果独立待核。主线ee98的18产品路径前像无漂移，15只读输入变化列于main-preimage-resume，集成须保主线增量，不能覆盖旧整blob。

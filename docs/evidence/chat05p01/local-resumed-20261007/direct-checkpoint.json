@@ -1,0 +1,79 @@
+{
+  "name": "direct",
+  "startedAt": "2026-10-07T05:12:31.372374+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p01/pure-check.config.mjs",
+    "apps/runner/src/native-activity-body/body.test.ts",
+    "apps/runner/src/native-activity-body/adapter.test.ts",
+    "apps/runner/src/outbox.test.ts",
+    "apps/server/src/native-activity-body/codec.test.ts",
+    "-t",
+    "makes a steering final|never overtakes|enforces body|refuses a corrupted|uses only the optional|flushes the durable prefix|a definitive conflict|a lost response|absence after timeout"
+  ],
+  "budgetSeconds": 60,
+  "incrementBytes": 16777216,
+  "rawLimit": 1048576,
+  "freeBefore": 25132929024,
+  "requiredFree": 1090519040,
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123510639
+  },
+  "supervision": {
+    "pid": 43734,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1395,
+    "observed_bytes": 984,
+    "retained_bytes": 984,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T05:12:32.767767+00:00",
+  "rawBytes": 984,
+  "resourceObservation": {
+    "samples": 15,
+    "errors": [],
+    "minFree": 25132105728,
+    "maxTmpBytes": 1179150,
+    "sampledNotPhysicalPeak": true
+  },
+  "tmpAfter": {
+    "bytes": 403,
+    "files": [
+      {
+        "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 403
+      }
+    ],
+    "missedTransientChildren": 0,
+    "atomic": false
+  },
+  "tmpRemoved": false,
+  "status": "PASSED"
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T05:14:02.132Z",
+  "source": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "selected": 10,
+  "passed": 10,
+  "unselected": 11,
+  "newDistinct": 6,
+  "oldDirectRepeatedBecauseAffected": 4,
+  "distinctAcrossHistoricalRounds": 28,
+  "types": {
+    "exitCode": 0,
+    "scope": "focused-tsconfig only, not root"
+  },
+  "supervisedTotalMs": 3762,
+  "rawBytes": 984,
+  "groups": "both absent / both EOF",
+  "fixtureDirectoriesAfter": [],
+  "retainedCacheBytes": 403,
+  "typesTmpRemoved": true,
+  "runtimeRecordLabelCorrection": "result.json newTestsSelected=10 means actual selected in this new run; only six are new distinct, four original outbox direct consumers were rerun as planned. Original record preserved.",
+  "PG3": "NOT_RUN",
+  "productDelta": false,
+  "review": "SOURCE_APPROVED_PENDING_VALIDATION retained; this result awaits independent evidence review",
+  "resourceLimits": "100ms metadata observations/final sample, not exclusive physical peak or hard allocation reservation."
+}
