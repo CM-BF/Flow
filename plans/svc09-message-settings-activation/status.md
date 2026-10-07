@@ -6,15 +6,15 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T19:37:53.575Z |
+| 更新时间 | 2026-10-07T19:42:10.691Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 默认启动已实际验证并保留失败：中心未确认监听归属；本次进程和数据库连接已收束，原始诊断已保存。 |
-| 下一可用交付 | 固定 server 初始化阶段的最小取证方案；共享源码归属与新产物路径由 Lead 协调，尚未实施。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 默认启动失败已独审归档；正在实现实际 server 初始化阶段的有界记录接口，旧产物与失败原件保持。 |
+| 下一可用交付 | 可选启动观察接口、中心限定开关及合成直接消费者；真实入口接线待共享路径交权。 |
 | 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
@@ -22,10 +22,10 @@
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | 四源f0已main；loader c1e/745已审；默认闭环source62373492cf2db5c0fe62731a5138c7d40482be5c / delivery42f0d8668，旧R4原件不变。 |
 | 实现目标 | 62373492cf2db5c0fe62731a5138c7d40482be5c |
-| 工作分支状态 | in-progress（默认启动实际结果已封存待独审；固定产品与入口停止写入） |
-| 工作树dirty状态 | 仅本次own原始结果与状态封存；产品、入口、准备包未改变 |
-| 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation（仅own准备；四产品已归还） |
-| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v6；18:00:38.649Z归还四产品，仅own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-product-return-receipt.json) |
+| 工作分支状态 | in-progress（五 leaf 有界实施；未启动服务或改变旧产物） |
+| 工作树dirty状态 | 仅已领取五 leaf 与 own plan/evidence |
+| 实现范围 | apps/server/src/startup-progress.ts；apps/server/src/startup-progress.test.ts；apps/server/src/startup-progress-consumer.test.ts；tools/personal-preview/environment.mjs；tools/personal-preview/environment.test.mjs；docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
+| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v7；19:42:10.691Z 原子追加五 leaf；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-amend-receipt.json) |
 | Review | 四源APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE，17:57:03Z；唯一main496b的docs/evidence/i02/svc09a-startup-controller-review.json。装配APPROVED_LIMITED_FIXED_CONTROLLER_LOADER_AND_IMPORT（I02 svc09a-controller-loader-review.json）；默认准备APPROVED_LIMITED_DEFAULT_HOST_PREPARATION（I02 svc09a-default-host-preparation-review.json，2026-10-07T18:44:52.319Z），0blocking，仅准备。R4限定结果批准/main abdf69692保留。 |
 | 检查状态 | 新10+受影响2=12/12，476ms/raw1750B；注释前像与KEEP如实。另actual Node import/参数1场景100ms/raw4786B，组absent/双EOF，新shadow和scratch移除；累计865ms；默认caller12不同/15选择全绿，289ms/raw1953B、三组absent/双EOF/exact scratch移除。旧33不重跑。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | 四次实际失败保真已独审；诊断四源已main，固定加载和默认准备均获限定独审；[待窗口输入](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-awaiting-window.json)。默认3role一次实际失败且资源已RETURN；[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)待独审，完整双槽/SQL/个人仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | 四次实际失败保真已独审；诊断四源已main，固定加载和默认准备均获限定独审；[待窗口输入](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-awaiting-window.json)。默认3role一次实际失败且资源已RETURN；[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)已获限定保真独审/main4aba9a705，完整双槽/SQL/个人仍开放 |
 
 ## 等待记录
 
@@ -137,3 +137,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T19:25:58.083Z：只读后继定位见[有限诊断](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json)。已有同nonce producer最终child-exit/SIGTERM、stderr0B，确定实际server命令已派生；没有server-main进入/监听前阶段记录，不能断言模块加载完成或回填底层根因。最小候选是在原ready失败持久化/停止前读取一次现有受限producer阶段，精确四产品scope需Lead另协调，当前未take/未改产品、未新运行。真正分解producer耗时需实际runtime新证据，不把旁路推断当已证。
 
 2026-10-07T19:37:53.575Z：默认实际结果已获唯一APPROVED/0blocking并main4aba9a705，引用 docs/evidence/i02/svc09a-default-host-result-review.json；仅保真，默认闭环仍FAIL、根因UNKNOWN，原outer UNKNOWN与后置RETURN不改。19:30:22Z开始的有界源码定位已收敛至原[诊断说明](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json)：固定server在监听前串行31个migration、auth/cors、scheduler及Fastify onReady两次扫描；fixture只建owner marker，不能认为已完成server初始化。只加最终producer快照不足，候选改为server实际await边界有界结构事件，复用现私有stderr。main.ts与index.ts分别仍由X01及X01-ARTIFACT-VERIFIER01持有，需合法交接；预计7个exact leaf，未take。真正producer需要后继固定runtime产物，不能绕2515 inventory或覆盖他源；本段0新进程/PG/模型/测试，停止追加探测。
+
+## 实际 server 启动记录五 leaf
+
+2026-10-07T19:41:05Z 开始本段只读/设计恢复；19:42:10.691Z 原子 amend v7 后开始五 leaf 实施。采用已确认 76ad actual-server producer 设计；main/index 仍由其他 owner 持有，不写、不宣称接通。局部检查预算累计120s、scratch8MiB/raw128KiB、0PG/服务/provider/个人；尚未运行检查。旧2515与全部FAIL/KEEP不变。find-skills 采用现有本地 brainstorming/codebase-design/clean-code，无安装；小 Interface 隐藏有界流与安全字段，观察失败不接管应用 primary/cleanup。

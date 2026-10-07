@@ -1,0 +1,18 @@
+{
+  "requestId": "svc09a-startup-producer-leaves-20261007",
+  "actor": {
+    "lead": "astra_ultra_execution_lead",
+    "worker": "native_center_owner"
+  },
+  "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+  "version": 6,
+  "scope": [
+    "docs/evidence/svc09/message-settings-activation",
+    "plans/svc09-message-settings-activation",
+    "apps/server/src/startup-progress.ts",
+    "apps/server/src/startup-progress.test.ts",
+    "apps/server/src/startup-progress-consumer.test.ts",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/environment.test.mjs"
+  ]
+}

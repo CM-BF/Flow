@@ -4,6 +4,28 @@ import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 
+test('startup progress exact opt-in survives both center environment boundaries only', async () => {
+  const inherited = { PATH: '/usr/bin', FLOW_STARTUP_DIAGNOSTICS: 'v1', PRIVATE_MARKER: 'secret' };
+  const config = { directory: '/synthetic', databaseUrl: 'synthetic-db', ownerToken: 'synthetic-owner', runner: { token: 'synthetic-runner' }, centerPort: 1, webPort: 2 };
+  const wrapper = baseServiceEnvironment('center', inherited);
+  assert.equal(wrapper.FLOW_STARTUP_DIAGNOSTICS, 'v1');
+  assert.equal(serviceEnvironment('center', config, wrapper).FLOW_STARTUP_DIAGNOSTICS, 'v1');
+  assert.equal(wrapper.PRIVATE_MARKER, undefined);
+  for (const role of ['runner', 'web']) {
+    assert.equal(baseServiceEnvironment(role, inherited).FLOW_STARTUP_DIAGNOSTICS, undefined);
+    assert.equal(serviceEnvironment(role, config, inherited).FLOW_STARTUP_DIAGNOSTICS, undefined);
+  }
+  const { buildEnvironment } = await import('./environment.mjs');
+  assert.equal(buildEnvironment(inherited).FLOW_STARTUP_DIAGNOSTICS, undefined);
+});
+
+test('startup progress absent and unrecognized opt-ins preserve default center environment', () => {
+  const baseline = baseServiceEnvironment('center', { PATH: '/usr/bin' });
+  for (const value of [undefined, '', 'true', 'v2', 'v1\n', 'secret']) {
+    assert.deepEqual(baseServiceEnvironment('center', { PATH: '/usr/bin', FLOW_STARTUP_DIAGNOSTICS: value }), baseline);
+  }
+});
+
 const execute = promisify(execFile);
 test('actual child environments isolate management and role credentials using synthetic markers', async () => {
   const inherited = { PATH: '/usr/bin:/bin', HOME: '/synthetic-home', LANG: 'C',

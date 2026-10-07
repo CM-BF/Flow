@@ -1,0 +1,8 @@
+{
+  "extends": "../../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "typeRoots": ["/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"]
+  },
+  "include": ["../../../../../apps/server/src/startup-progress*.ts"]
+}
