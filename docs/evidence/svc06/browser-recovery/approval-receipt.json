@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T14:28:01.673Z",
+  "reviewSource": {
+    "ref": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+    "path": "docs/evidence/i02/svc06b-preparation-review.json",
+    "bytes": 2943,
+    "sha256": "b4ffbb530bddc4f2f993a14c09881b9cab5d558acf2f8d8bc83456d7e27f98ef"
+  },
+  "conclusion": "APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION",
+  "claimObservedAt": "2026-10-07T14:26:40.767Z",
+  "claim": {
+    "id": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 2,
+    "state": "active",
+    "scopes": [
+      "apps/server/src/browser-session/fixture.ts",
+      "apps/server/src/browser-session/index.ts",
+      "apps/server/src/browser-session/session.test.ts",
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+      "plans/svc06-browser-recovery"
+    ]
+  },
+  "checks": {
+    "preparationBindings": 10,
+    "runtimeBindings": 17,
+    "sourceBindings": 75,
+    "additionalMethods": 2,
+    "allMatch": true,
+    "namespaceAbsent": [
+      "outer-report.json",
+      "actual-first"
+    ]
+  },
+  "actualBuild": "NOT_RUN",
+  "window": "WAITING_ACTUAL_RETURN_AND_LEAD_HANDOFF",
+  "nextFresh": "Repeat actual ownership/namespace/resource and fixed bytes at execution; this receipt is not a window."
+}
