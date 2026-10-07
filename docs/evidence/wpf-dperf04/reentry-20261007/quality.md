@@ -21,3 +21,5 @@
 复用既有find-skills、clean-code、webapp-testing方法；没有新依赖/运行。保原功能9+6和三次失败/耗时事实，修正“browser尚未运行”等过时当前文字。root独立接受6/7视觉图，明确窄light补证且原因未定。消费者默认context与HTTP清理责任由原审查接受，未复制算法/新runner；全部16源不改。
 
 Timing first failure: preserve result/real light file even zero returned references; exact event settlement reused instead of timeout, sleep or weaker assertion. Product modules unchanged. Three own process groups/HTTP/context/scratch absence and complete EOF verified before metadata. No repeated direct tests.
+
+Queued-close distinct product condition: no longer attribute all Timing failure to harness timing. Guard only a currently reopened native dialog; regress via actual close() queued event and real registered button handler, preserve original five behavior groups and all expectations. No synthetic close dispatch, no timer extension or source-wide rework. Target 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 awaits actual bounded retest.

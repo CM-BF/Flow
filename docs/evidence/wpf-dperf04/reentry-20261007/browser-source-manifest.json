@@ -1,6 +1,6 @@
 {
   "state": "SOURCE_READY_NOT_RUN",
-  "implementationTarget": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+  "implementationTarget": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
   "oldSummaryTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
   "accessTimingInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
   "sourceSupplyCommit": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
@@ -56,8 +56,8 @@
     },
     {
       "path": "apps/execution-dashboard/public/app.js",
-      "bytes": 38088,
-      "sha256": "39fb148d39270d48e5174661894334146a9270c4fdbbe8d0791dabe73eafaf29",
+      "bytes": 38207,
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
       "role": "owned-source"
     },
     {
@@ -80,8 +80,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
-      "bytes": 14244,
-      "sha256": "dc8906a874c416e29156ddc182081f3e336033f7516172e959cb665eb44d2fdd",
+      "bytes": 15062,
+      "sha256": "9a0ab360a56f337c988607d948a71b3a4cec723a3795298af8e7badb3eb84493",
       "role": "owned-source"
     },
     {
@@ -134,8 +134,8 @@
     }
   ],
   "oldNodeRuntimeMs": 3950,
-  "browserRuntimeMs": 0,
+  "browserRuntimeMs": 33617,
   "browserBudgetMs": 60000,
-  "runtimeState": "Prior summary9PASS and task-links6PASS; new Timing/ACCESS adapter NOT_RUN",
-  "previousTarget": "c989257251713b699d682c77f949db5bf21f29ac"
+  "runtimeState": "Prior scoped summary9 and task-links6 accepted; Timing first FAILED; queued-close guard and native-event regression not rerun; ACCESS and narrow-light followup pending",
+  "previousTarget": "08e9ee7e23157268d44bd2fdd460929a4ca5e626"
 }

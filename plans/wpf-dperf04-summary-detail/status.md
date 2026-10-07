@@ -9,13 +9,13 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / a56a3af7ad927559f9f36a6d596094162e1aea0d（当前固定测试适配；metadata另核） |
-| 工作树dirty状态 | 当前16输入与a56a固定逐字；仅自然metadata封存，提交后核clean；四生产模块仍同cfd5 |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0（当前固定测试适配；metadata另核） |
+| 工作树dirty状态 | 当前16输入与52cdf固定逐字；app新增2行queued-close保护，其余三生产模块仍同cfd5；提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；7图中6图限定视觉接受，窄屏light补证OPEN；首FAIL保留，browser累计33617/余26383ms；Timing首轮FAIL，ACCESS未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | a56a3af7ad927559f9f36a6d596094162e1aea0d |
+| 实现目标 | 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -172,4 +172,8 @@ clean-code复核：把真实fixture/context差异作为小调用参数，保一�
 
 [原件索引](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-timing-first/index.json)：actual50a51/source08e9，09:00:52.185750Z至09:01:01.338856Z，outer exit1/FAILED，9152.92075ms保守计9153。累计33617/余26383含15秒清理；parent较早33547原封。报告checks0/截图refs0；实际lightPNG已保留，不虚构组数。错误在第二theme重新开详情等待region，三个groups/PID均ESRCH，HTTP/context/scratch清理完成、全部EOF/drop0。
 
-固定 a56a3af7ad927559f9f36a6d596094162e1aea0d 只在Timing测试两处Escape复用同型被动close事件等待；旧close listener在app483会使新请求失效，测试须先结算close再重新focus/open。只是静态合理窄修，不把根因先定为产品缺陷；保原五组、全部断言/timeout、双390截图。后继fresh可用原有限余量复验，不重跑Node；ACCESS及窄light补证不能因余额不足冒通过。
+固定 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 只在Timing测试两处Escape复用同型被动close事件等待；旧close listener在app483会使新请求失效，测试须先结算close再重新focus/open。只是静态合理窄修，不把根因先定为产品缺陷；保原五组、全部断言/timeout、双390截图。后继fresh可用原有限余量复验，不重跑Node；ACCESS及窄light补证不能因余额不足冒通过。
+
+## 原生close延迟送达的产品保护
+
+Root指出app原close listener无条件invalidate；HTML真实close事件异步送达时，同一任务close后立即重新打开的新selection/load可能被旧事件撤销。固定 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0：dialog仍open时忽略旧close；其余close清理/焦点返回不变。Timing新增真实dialog.close()与同任务精确按钮click重开，等真实close已送达再核新详情/3小时/open；不手动dispatch伪close。普通串行Escape仍被动等close，原五组/两图/错误断言不删。当前是source修复，尚未复验，首轮失败不能据此回改根因。
