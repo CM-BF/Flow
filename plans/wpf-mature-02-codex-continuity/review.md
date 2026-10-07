@@ -5,3 +5,7 @@
 已审产品边界：public25源5219/4ec原仅静默buffer P2；source2ab3c6ff/packet69de由status_read05:06:55独立关闭P2/0剩余，15/15与strict0、资源事实忠实。真实公开PG/HTTP和UI不据此通过。
 
 其他固定独审沿[status证据索引](status.md)：连续性R2 architecture_read03:16:29；loader519f status_read03:30:12；main afe3/e836 architecture_read03:45:14；private kernel de0/07aa status_read04:20:47（原pending sink P2关闭，取消副作用unknown）。旧失败与完整review时间线在Git77e7dc8c本文件逐字保留，不回写原manifest/raw。当前归档整理不产生工程检查或新的产品批准。
+
+## C02-05 conversation source/local review — NOT_STARTED
+
+Target `0ecd917c634d5765ff585693a58bd470e3b76f5b`, base `d2e8c567`; [bindings](../../docs/evidence/mature02c02/conversation-review-ready.json), [Interface](../../docs/evidence/mature02c02/conversation-interface.md), [single local record](../../docs/evidence/mature02c02/conversation-local.json). Review finite codec/whole route-family opt-in, immutable profile+session runner fencing, typed source/settings identity, old Claude/v1 pagination, exact main REQ15 batch intake and035 migration. 36 distinct in17+19; strict2→0; all4child/TMP closed. PG/migration execution and full native/UI remain NOT_RUN. No old PG/stream tests repeated.

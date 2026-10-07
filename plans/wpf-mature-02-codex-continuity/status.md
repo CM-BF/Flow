@@ -22,12 +22,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 本段conversation源码/证据待提交；旧公开流和PG原件未改。 |
-| HEAD（最近观察） | d2e8c567eea8eee40a68dd921557a1dbd9e18b27（本段提交前） |
+| 工作树dirty状态 | 源码0ecd917c与本段真实local已固定；本次仅review-ready/status。 |
+| HEAD（最近观察） | 0ecd917c634d5765ff585693a58bd470e3b76f5b（已push source，当前仅review-ready metadata） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v11 ACTIVE，71 literal；[精确receipt](../../docs/evidence/mature02c02/conversation-batch-amend-receipt.json)。035只追加，不改007。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 有限harness policy、conversation routes/admission/queue、typed reply与客户端codec、native-v2目录、035增量CHECK；main5cd的REQ15六模块明确intake，不恢复N+1。 |
-| Review | 当前会话片NOT_STARTED；旧公开流/PG独审保持APPROVED，主线5cae7a25已接收。 |
+| Review | 当前会话片独审ready：[固定入口](../../docs/evidence/mature02c02/conversation-review-ready.json)，NOT_STARTED；旧公开流/PG独审保持APPROVED，主线5cae7a25已接收。 |
 | 检查 | 新局部分17+19共36 distinct通过；strict首2修后0，4child终态/EOF/TMP闭合，原失败保留。新PG/迁移0执行；旧6PG不重跑。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
