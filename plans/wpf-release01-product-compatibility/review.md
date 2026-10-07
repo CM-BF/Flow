@@ -2,9 +2,9 @@
 
 **状态：NOT_STARTED**
 
-Review target commit：41276e2ecd154087f66958339d9abfce4d44964c（新后继源码尚未固定；不是待批准的旧实现）
+Review target commit：edabba515cc320daebddc7fab95adabb3f246ee2
 
-范围：本次固定 public origin / 三 retained App successor 两harness。设计限定接受见[原件](../../docs/evidence/wpf-release01/fixed-origin/design-review.json)；不等于源码或实际兼容通过。后继最终backend为空，所有本次工程检查 NOT_RUN。
+范围：本次固定 public origin / 三 retained App successor 两harness。设计限定接受见[原件](../../docs/evidence/wpf-release01/fixed-origin/design-review.json)；不等于源码或实际兼容通过。后继最终backend为空，所有本次工程检查 NOT_RUN。固定入口/缺件见[implementation](../../docs/evidence/wpf-release01/fixed-origin/implementation.md)，两源hash见[source manifest](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)。
 
 必须核：真实Chrome页面请求和Node APIRequestContext分离；exact proxy/Host与无fallback；原Bearer+独立Cookie补证；SSE与真实ACK prefix；原四观察与最终backend/context；owned cleanup、报告与未知失败。
 

@@ -25,3 +25,5 @@
 ## 2026-10-07T10:09:48.291343+00:00 source-only 实现安全点
 
 作用域仅两原harness+own records；复用已批bounded设计（brainstorming本地方法，仅复核既有设计，不增加确认流程）。clean-code检查单一输入/生命周期/错误处理/职责：移除checkout/install/Vite/旧默认PG；公共报告/策略/真实runner verifier继续单一现有实现。修正自行阅读发现的event shape：真实runnerEventSchema+verifyText+completed，未运行。网络只真实Chrome，cookie秘密不落raw；SSE取消保留原事实；双端upstream清理等待事件。文本git diff --check已通过，types/runtime未执行，最终backend缺件列表已记。
+
+Source self-review followup: Cookie独立probe先于App选择，浏览器默认favicon会被未选择断言拒绝；edabba精确404分支修复，原验收不减。只文本/diff，未Chrome重现或产品check。

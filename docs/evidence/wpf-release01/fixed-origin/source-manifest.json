@@ -5,8 +5,8 @@
   "sourceFiles": [
     {
       "path": "apps/web/test/web-release-compatibility.fixture.ts",
-      "bytes": 31749,
-      "sha256": "647a986ce617d8068e7de560fb3381ab5a621c1532dc7c03dbb2afba9ff4c2d9"
+      "bytes": 31865,
+      "sha256": "79d8a73b3df33ea6d94b25fe23ed37b296af589d2cfcf40997f0f975fc7c55c3"
     },
     {
       "path": "apps/web/test/web-release-compatibility.browser.ts",
@@ -19,5 +19,7 @@
   "runtimeEntry": "runReleaseCompatibility(admission, explicitAdminUrl, lifetime) export; importing has no top-level launch",
   "lifetimeOwner": "Existing admitted parent/worker must supply checkpoint+signal+owned Chrome launcher/receipt/close; no new supervisor",
   "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
-  "claimVersion": 1
+  "claimVersion": 1,
+  "implementationCommit": "edabba515cc320daebddc7fab95adabb3f246ee2",
+  "deltaAfterFirstFixed": "One exact GET favicon 404 before App selection; cookie probe can request it while no App selected."
 }

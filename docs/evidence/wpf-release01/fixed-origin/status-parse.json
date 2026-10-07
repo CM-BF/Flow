@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T10:10:52.648Z",
+  "scope": "own metadata parser only; no product checks",
+  "errors": [],
+  "todos": [
+    {
+      "id": "RELEASE01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json)"
+    },
+    {
+      "id": "RELEASE01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史两App真实兼容](../../docs/evidence/wpf-release01/README.md)"
+    },
+    {
+      "id": "RELEASE01-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json)"
+    },
+    {
+      "id": "RELEASE01-04",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，源码独审尚未完成"
+    },
+    {
+      "id": "RELEASE01-05",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "最终tuple、限定源码审与必要局部检查/三App真实四项兼容待完成；当前0actual"
+    },
+    {
+      "id": "RELEASE01-06",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "后继独审/主线接收；个人发布仍由原发布operator执行"
+    }
+  ],
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED**",
+    "target": "b816cccd5bacb0fb177b273eb2ff2b8029414739"
+  }
+}

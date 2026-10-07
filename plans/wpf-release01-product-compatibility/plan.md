@@ -9,7 +9,7 @@
 - [x] RELEASE01-01 历史固定双版本构建与隔离center/runner。
 - [x] RELEASE01-02 历史两App四类兼容证据。
 - [x] RELEASE01-03 历史独审/main接收。
-- [ ] RELEASE01-04 实现显式最终输入、严格代理、真实浏览器请求、流式SSE/ACK故障和有界清理。
+- [x] RELEASE01-04 实现显式最终输入、严格代理、真实浏览器请求、流式SSE/ACK故障和有界清理。
 - [ ] RELEASE01-05 完成必要源码/局部检查；最终tuple及合法资源段到达后真实三App四项compat与独立Cookie补证。
 - [ ] RELEASE01-06 后继独审与主线接收，原operator另执行个人发布。
 
