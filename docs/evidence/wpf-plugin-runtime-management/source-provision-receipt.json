@@ -1,0 +1,29 @@
+{
+  "state": "PROVISIONED_FIXED_SOURCE_ONLY_STOPPED_PENDING_CLAIM",
+  "startedAt": "2026-10-07T10:48:09.218071+00:00",
+  "completedAt": "2026-10-07T10:48:09.843698+00:00",
+  "role": "delegated sole source operator",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "head": "b67530bb025162629895d11482b5505d4a885c91",
+  "statusPorcelain": "",
+  "manifestPath": "/private/tmp/w01-plugin-runtime-provision-htajjlao/source-manifest.json",
+  "manifestSha256": "d6d4405a15b534c9f6339b4f59b71da1606514a6ee2bd1cc939a8bd59d46dbb1",
+  "fileCount": 422,
+  "logicalBytes": 2592970,
+  "logicalCap": 4194304,
+  "allFixedFileHashesMatch": true,
+  "regularFilesOnly": true,
+  "productOrPlanAuthored": false,
+  "claimTaken": false,
+  "blockingHandoff": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/browser.ts"
+  ],
+  "indexProvision": "full fixed index; skip-worktree all absent paths, exact selected paths materialized; no git config command",
+  "noDependenciesInstalled": true,
+  "runtime": "NOT_RUN",
+  "createOutput": "Preparing worktree (new branch 'codex/web-plugin-runtime-management')\n",
+  "errors": []
+}

@@ -1,0 +1,22 @@
+{
+  "action": "take",
+  "requestId": "6faa5f52-83f0-487d-9eaa-94110a6879f7",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "role": "writer",
+  "scope": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-management/browser.ts",
+    "apps/web/src/plugin-management/runtime-command.ts",
+    "apps/web/test/plugin-runtime-command.test.ts",
+    "plans/wpf-plugin-runtime-management",
+    "docs/evidence/wpf-plugin-runtime-management"
+  ],
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "origin": "new"
+}
