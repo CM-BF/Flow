@@ -18,9 +18,25 @@ export function errorFact(error: unknown) {
   const e = error as { name?: string; code?: string };
   return { type: e?.name ?? 'UnknownError', code: e?.code ?? (error instanceof Error && /^[A-Z_]+$/.test(error.message) ? error.message : 'EXPERIMENT_FAILED') };
 }
+/** Tracks the one owned listen promise independently of factory startup. No sockets are created here. */
+export class ListenLifecycle {
+  readonly controller = new AbortController();
+  attempted = false;
+  settled = true;
+  pending?: Promise<string>;
+  start(action: (signal: AbortSignal) => Promise<string>): Promise<string> {
+    if (this.attempted) throw new Error('LISTEN_ALREADY_ATTEMPTED');
+    this.attempted = true; this.settled = false;
+    this.pending = Promise.resolve().then(() => action(this.controller.signal)).then(
+      value => { this.settled = true; return value; }, error => { this.settled = true; throw error; });
+    return this.pending;
+  }
+  cancel() { this.controller.abort(); }
+}
 export class OwnedDatabase {
   readonly database = 'flow_k01_query_' + randomUUID().replaceAll('-', '');
   readonly marker = randomUUID();
+  readonly listener = new ListenLifecycle();
   readonly admin: Pool;
   auxiliary?: Pool;
   app?: FastifyInstance;
@@ -77,22 +93,29 @@ export class OwnedDatabase {
     this.requireWork(); this.startupAttempted = true; this.startupSettled = false;
     const startup = this.startup = createServer({ databaseUrl: url.href, ownerToken: this.marker, automaticQueueScan: false, leaseMs: 300000 }).then(app => { this.app = app; this.startupSettled = true; return app; }, error => { this.startupSettled = true; throw error; });
     await this.bounded(() => startup, this.workUntil);
-    return this.bounded(() => this.app!.listen({ host: '127.0.0.1', port: 0 }), this.workUntil);
+    return this.bounded(() => this.listener.start(signal => this.app!.listen({ host: '127.0.0.1', port: 0, signal })), this.workUntil);
   }
   async close() {
     const errors: unknown[] = [];
+    this.listener.cancel();
     let appClosed = !this.startupAttempted, auxiliaryClosed = !this.auxiliary, absent = !this.creationAttempted;
     if (this.startup && !this.startupSettled) {
       try { await this.bounded(() => this.startup!, this.cleanupUntil); } catch (error) { errors.push(errorFact(error)); }
     }
+    if (this.listener.pending && !this.listener.settled) {
+      try { await this.bounded(() => this.listener.pending!, this.cleanupUntil); } catch (error) { errors.push(errorFact(error)); }
+    }
     try {
-      if (this.app) { await this.bounded(() => this.app!.close(), this.cleanupUntil); appClosed = true; }
+      if (!this.listener.settled) throw new Error('LISTEN_SETTLEMENT_UNKNOWN');
+      if (this.app) { await this.bounded(() => this.app!.close(), this.cleanupUntil);
+        if (this.app.server.listening) throw new Error('LISTENER_STILL_OPEN');
+        appClosed = true; }
     } catch (error) { errors.push(errorFact(error)); }
     try { if (this.auxiliary) { await this.bounded(() => this.auxiliary!.end(), this.cleanupUntil); auxiliaryClosed = true; } }
     catch (error) { errors.push(errorFact(error)); }
     try {
       if (this.creationAttempted) {
-        if (!this.startupSettled || !appClosed || !auxiliaryClosed || !this.healthy || !this.creationAcknowledged || !this.creationReceiptSaved || !this.identity) throw new Error('DATABASE_KEEP_UNKNOWN');
+        if (!this.startupSettled || !this.listener.settled || !appClosed || !auxiliaryClosed || !this.healthy || !this.creationAcknowledged || !this.creationReceiptSaved || !this.identity) throw new Error('DATABASE_KEEP_UNKNOWN');
         remainingMs(this.cleanupUntil, Date.now(), 1500);
         const actual = (await this.admin.query<DatabaseIdentity>('SELECT oid::text AS oid,pg_get_userbyid(datdba) AS owner,shobj_description(oid,\'pg_database\') AS marker FROM pg_database WHERE datname=$1', [this.database])).rows[0];
         if (!acceptableIdentity(this.creationAcknowledged, this.identity, actual)) throw new Error('DATABASE_KEEP_IDENTITY');
@@ -117,6 +140,7 @@ export class OwnedDatabase {
     let adminClosed = false;
     try { await this.bounded(() => this.admin.end(), this.cleanupUntil); adminClosed = true; } catch (error) { errors.push(errorFact(error)); }
     return { database: this.database, identity: this.identity ?? null, creationAcknowledged: this.creationAcknowledged, creationReceiptSaved: this.creationReceiptSaved, startupAttempted: this.startupAttempted, startupSettled: this.startupSettled,
+      listenAttempted: this.listener.attempted, listenSettled: this.listener.settled, serverListening: this.app?.server.listening ?? null,
       appClosed, auxiliaryClosed, adminClosed, absent, errors, retainedDatabase: absent ? null : this.database };
   }
 }

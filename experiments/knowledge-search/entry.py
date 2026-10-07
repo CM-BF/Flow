@@ -138,17 +138,21 @@ def open_record(permit):
     ledger=folder/'iterations.jsonl';events=[json.loads(line) for line in ledger.read_text().splitlines()]
     if not events or events[0]['permitSha256']!=permit['_sha']:raise ValueError('unknown prior namespace')
     started=[e for e in events if e['event']=='started'];finished=[e for e in events if e['event']=='finished']
-    if len(started)!=len(finished) or any(not e['resourceConfirmed'] or not e['scratch']['absent'] or not e['withinTimeBudget'] for e in finished):raise ValueError('prior result unknown; HOLD')
-    return folder,ledger,finished
+    preflight=[e for e in events if e['event']=='preflight-return']
+    returned=finished+preflight
+    if {e['label'] for e in started}!={e['label'] for e in returned} or len(started)!=len(returned) or any(not e['resourceConfirmed'] or not e['scratch']['absent'] for e in returned) or any(not e['withinTimeBudget'] for e in finished):raise ValueError('prior result unknown; HOLD')
+    return folder,ledger,finished,len(started)+1
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path)
-    args=parser.parse_args();started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
+    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener'],default='caller')
+    args=parser.parse_args()
+    if sys.version_info<(3,10):raise ValueError('OPS14 requires Python >=3.10 before any reservation')
+    started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
     now=datetime.datetime.now(datetime.timezone.utc);deadline=datetime.datetime.fromisoformat(permit['expiresAt'].replace('Z','+00:00'))
     if args.mode not in permit.get('modes',[]) or permit.get('state')!='OPEN' or now>=deadline or not permit.get('authority'):raise ValueError('not OPEN')
     maximum=120 if args.mode=='pg' else 30
     if (deadline-now).total_seconds()<maximum:raise ValueError('insufficient absolute permit time')
-    manifest=verify_inputs();folder,ledger,finished=open_record(permit)
+    manifest=verify_inputs();folder,ledger,finished,sequence=open_record(permit)
     if args.mode!='pg' and (len(finished)>=5 or sum(r['operatorElapsedMs'] for r in finished)+30000>90000):raise ValueError('local iteration budget')
     if logical_bytes(ROOT)+logical_bytes(folder)>MAX_NEW:raise ValueError('new logical budget')
     free=os.statvfs(ROOT);free_bytes=free.f_bavail*free.f_frsize
@@ -160,18 +164,19 @@ def main():
         for row in expected:
             p=ROOT/row['path']
             if p.parent!=ROOT or p.stat().st_size!=row['bytes'] or sha(p)!=row['sha256']:raise ValueError('PG binding mismatch')
+    sys.dont_write_bytecode=True
+    spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     source_files=[{'path':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(ROOT.iterdir()) if p.is_file() and p.suffix in ('.py','.ts','.mjs','.json')]
     scratch_name='k01-'+uuid.uuid4().hex
-    if args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
+    if args.mode=='caller' and args.case=='listener':argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run','listen.test.ts','--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    elif args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
     elif args.mode=='pg':argv=[str(NODE),'--import','tsx',str(ROOT/'run.ts')]
     else:
         argv=[str(NODE),str(ROOT/'node_modules'/('vitest/vitest.mjs' if args.mode=='pure' else 'typescript/bin/tsc'))]
         argv+=['run','--config',str(ROOT/'vitest.config.mjs'),'--no-cache'] if args.mode=='pure' else ['--noEmit','--project',str(ROOT/'types.tsconfig.json')]
-    label=f'check-{len(finished)+1:02d}';append_record(ledger,{'event':'started','label':label,'mode':args.mode,'startedAt':now.isoformat(),'sourceHead':permit['sourceHead'],'argv':argv,'freeBytes':free_bytes,'sourceFiles':source_files,'scratchPlanned':str(ROOT/'.scratch'/scratch_name)})
+    label=f'check-{sequence:02d}';append_record(ledger,{'event':'started','label':label,'mode':args.mode,'selection':args.case,'startedAt':now.isoformat(),'sourceHead':permit['sourceHead'],'argv':argv,'freeBytes':free_bytes,'sourceFiles':source_files,'scratchPlanned':str(ROOT/'.scratch'/scratch_name)})
     tmp,identity=create_scratch(ROOT/'.scratch',scratch_name)
     append_record(ledger,{'event':'namespace-created','label':label,'identity':identity})
-    sys.dont_write_bytecode=True
-    spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     env=environment(tmp,started,permit,os.environ.get('FLOW_K01_QUERY_ADMIN_URL') if args.mode=='pg' else None)
     work=(110 if args.mode=='pg' else 20)-(time.monotonic()-started_mono)
     if work<=0:raise ValueError('preflight consumed work budget')
@@ -180,7 +185,7 @@ def main():
     with (folder/(label+'.raw')).open('xb') as f:f.write(raw);f.flush();os.fsync(f.fileno())
     saved=(folder/(label+'.raw')).read_bytes();closed=process_closed(report,saved)
     value=dataclasses.asdict(report);value.pop('stdout');value.pop('stderr')
-    value.update(event='finished',label=label,mode=args.mode,resourceConfirmed=closed,outputSha256=hashlib.sha256(saved).hexdigest(),
+    value.update(event='finished',label=label,mode=args.mode,selection=args.case,resourceConfirmed=closed,outputSha256=hashlib.sha256(saved).hexdigest(),
       sourceChanged=[r['path'] for r in source_files if not (ROOT/r['path']).is_file() or sha(ROOT/r['path'])!=r['sha256']])
     try:verify_inputs();value['fixedInputsAfter']='matched'
     except Exception:value['fixedInputsAfter']='UNKNOWN'
