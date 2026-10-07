@@ -128,3 +128,5 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 沿原六TODO推进[最小方法设计](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)：先在固定main4fdd同负载下对照逐query IPC与中心有界累积，保留pool/SQL/同步节奏；真实conversation轻读与四cancel取用户结果。原数据只证明观察到排队，不将不同分母quantile相减归因。设计列出当前v2领取观测适配缺口、独立生命周期/预算与后继直接验证。两侧128活动fixture加各1合成聊天setup，总258task，是新的未开放预算；旧A/B256/原raw不改。当前DESIGN_READY/NOT_OPEN，不运行实验、不安装、不改产品。ACK/browser/native和完整S01仍开放。
 
 2026-10-07T12:28:56.483Z 方法设计已由chatui01_owner对固定f0f56e80bc4450b4b12f2a1218fefff4ef6e1208独审通过（0 P1/P2），见review；只可进入合法准备，真实运行NOT_OPEN，原六TODO完成状态未变。
+
+2026-10-07T12:37:38.684Z 首片仅新增私有pg-delivery/test，11/11与修后strict0，见[接口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)。已固定待独审；当前driver未接，v2/chat轻读/取消与新namespace另按原设计继续准备，不把Module通过当实验完成。

@@ -1,5 +1,10 @@
 # S01 独立审查
 
+## 当前：私有observer delivery首片
+
+状态：PENDING。Review target commit: `0316465419025204d7feffc558c2c80bc9374689`。入口[pg-delivery-interface.md](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)与[固定源/局部结果binding](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-review.json)；仅新实验Module/直接tests、11/11+types2→0及3child资源证据，0PG/性能。原driver/默认A/B/产品不变；独审不继承下述方法批准。
+
+
 ## 当前：连接等待方法设计
 
 状态：DESIGN_REVIEW_APPROVED / 0 P1/P2。Review target commit: `f0f56e80bc4450b4b12f2a1218fefff4ef6e1208`，独立reviewer chatui01_owner / gpt-6-astra，2026-10-07T12:28:07Z。范围为 [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)（14506B，SHA d9bd156226b4182ec7f1ac40e55b28339e1a3c862f0e1a4a507c27281bc97e26）。只读核两次窄修后固定字节：IPC单变量、准确acquisition/transaction口径、真实conversation轻读、活动取消与各时钟、有限预算/UNKNOWN/KEEP和当前v2观测缺口；旧资源线不作为新OPEN。
