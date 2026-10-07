@@ -74,10 +74,18 @@ function summarizeDeclarations(status) {
   const human = status.human ? { ...status.human,
     output: text('human.output', status.human.output, 240), next: text('human.next', status.human.next, 240),
   } : undefined;
+  // Timing declarations travel with the status digest; the potentially large
+  // waiting record remains in the selected detail, never the first-screen DTO.
+  const timing = status.timing ? {
+    started: { ...status.timing.started, record: text('timing.started.record', status.timing.started.record) },
+    completed: { ...status.timing.completed, record: text('timing.completed.record', status.timing.completed.record) },
+    source: { ...status.timing.source, record: text('timing.source.record', status.timing.source.record) },
+    issues: status.timing.issues,
+  } : undefined;
   return { owner: text('owner', status.owner), branch: text('branch', status.branch), branchState: text('branchState', status.branchState),
     declaredHead: text('declaredHead', status.declaredHead), declaredDirty: text('declaredDirty', status.declaredDirty), updatedRecord: text('updatedRecord', status.updatedRecord),
     checks: { ...status.checks, record: text('checks.record', status.checks.record) },
-    reviewRecord: text('reviewRecord', status.reviewRecord), mainRecord: text('mainRecord', status.mainRecord), human, truncatedFields };
+    reviewRecord: text('reviewRecord', status.reviewRecord), mainRecord: text('mainRecord', status.mainRecord), human, timing, truncatedFields };
 }
 
 /** Status declarations, not a smaller full/proven snapshot. */
@@ -93,7 +101,7 @@ export async function readSummary(registry, now = Date.now(), context = createGi
   for (const task of projections) task.links = links.get(task.id);
   const tasks = records.map(({ task, source, status, issues, stale, ageHours, progress, sourceCurrent }) => ({
     id: task.id, title: task.title, role: task.role, sourceKey: sourceKey(task), sourceCurrent,
-    source: { mode: source.mode, digest: statusDigest(source), modifiedAt: source.modifiedAt, readAt: startedAt,
+    source: { mode: source.mode, path: `${task.worktree}/${task.planDir}/status.md`, digest: statusDigest(source), modifiedAt: source.modifiedAt, readAt: startedAt,
       declaredUpdatedAt: status.updatedAt ?? null, stale, ageHours, issues, error: source.error ?? null, frozenCommit: source.frozenCommit ?? null },
     declarations: summarizeDeclarations(status),
     progress, links: { ...links.get(task.id), basis: 'status-source' },
@@ -101,7 +109,7 @@ export async function readSummary(registry, now = Date.now(), context = createGi
   }));
   const milestone = records.find(record => record.task.id === 'FLOW-003');
   return {
-    kind: 'summary', version: 1, readId: randomUUID(), registryFingerprint: registryFingerprint(registry), startedAt, completedAt: timestamp(Date.now()), staleAfterHours: registry.staleAfterHours,
+    kind: 'summary', version: 1, generatedAt: startedAt, readId: randomUUID(), registryFingerprint: registryFingerprint(registry), startedAt, completedAt: timestamp(Date.now()), staleAfterHours: registry.staleAfterHours,
     tasks, overview: { ...humanOverview(projections, registry.phaseSourceId), basis: 'status-source' },
     milestones: { basis: 'status-source', taskId: milestone?.task.id ?? null, sourceCurrent: milestone?.sourceCurrent ?? false,
       todos: milestone?.status.todos.map(({ id, state, owner }) => ({ id, state, owner })) ?? [] },

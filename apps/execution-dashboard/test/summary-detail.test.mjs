@@ -24,10 +24,13 @@ function traced() {
 
 // One fixture / two tiny repositories for the whole direct suite, never the real registry.
 test('summary/detail reads preserve declared vs observed boundaries', { timeout: 25000 }, async t => {
-  let assignmentCalls = 0, releaseAssignments;
+  let assignmentCalls = 0, releaseAssignments, credentialReads = 0;
+  const fakeToken = 'synthetic_summary_token_not_a_credential_12345';
+  const localAccess = { metadata: { enabled: true, productUrl: 'http://127.0.0.1:61228/', privateField: fakeToken },
+    readOwnerToken: async () => { credentialReads++; return fakeToken; } };
   const waitingAssignments = new Promise(resolve => { releaseAssignments = resolve; });
   const contexts = [];
-  const f = await summaryFixture(t, { assignmentObserver: async now => { assignmentCalls++; return waitingAssignments; }, gitContext: () => { const trace = traced(); contexts.push(trace); return trace.context; } });
+  const f = await summaryFixture(t, { localAccess, assignmentObserver: async now => { assignmentCalls++; return waitingAssignments; }, gitContext: () => { const trace = traced(); contexts.push(trace); return trace.context; } });
   const [child, parent] = f.tasks, statusFile = task => path.join(task.worktree, task.planDir, 'status.md');
   const original = await readFile(statusFile(child), 'utf8');
   await t.test('live summary is all declarations with zero Git, proof, documents or ledger work', async () => {
@@ -40,6 +43,30 @@ test('summary/detail reads preserve declared vs observed boundaries', { timeout:
     assert.equal(task.links.basis, 'status-source'); assert.equal(task.links.parent.state, 'known');
     assert.deepEqual(summary.overview.activeIds, [parent.id]); assert.deepEqual(summary.overview.otherActiveIds, [child.id]);
     assert.deepEqual(summary.overview.blockerIds, [child.id]); assert.deepEqual(summary.overview.decisionIds, [child.id]);
+  });
+  await t.test('timing declarations share the summary observation without loading waiting/proof or poisoning existing progress', async () => {
+    const marker = 'WAIT_ONLY_IN_SELECTED_DETAIL';
+    const withWaiting = `${original}\n## 等待记录\n${marker}\n`;
+    try {
+      await writeFile(statusFile(child), withWaiting);
+      const now = Date.parse(f.updated), trace = traced();
+      const summary = await readSummary(f.registry, now, trace.context);
+      const value = summary.tasks[0];
+      assert.deepEqual(trace.calls, []); assert.equal(credentialReads, 0);
+      assert.equal(summary.generatedAt, new Date(now).toISOString()); assert.equal(summary.generatedAt, summary.startedAt);
+      assert.equal(value.declarations.timing.completed.state, 'not_completed');
+      assert.equal(value.declarations.timing.source.state, 'declared'); assert.equal(value.declarations.timing.waiting, undefined);
+      assert.equal(value.source.path, statusFile(child)); assert.equal(JSON.stringify(summary).includes(marker), false);
+      const detail = await readTaskDetail(f.registry, child.id, now + 1000);
+      assert.equal(detail.generatedAt, new Date(now + 1000).toISOString());
+      assert.notEqual(detail.generatedAt, summary.generatedAt); assert.equal(detail.statusDigestBefore, value.source.digest);
+      assert.match(detail.task.status.timing.waiting, /WAIT_ONLY_IN_SELECTED_DETAIL/);
+      const invalid = withWaiting.replace(/(\| 任务开工时间 \| )[^|]+/, (_, prefix) => `${prefix}2026-02-30T12:00:00Z `);
+      assert.notEqual(invalid, withWaiting); await writeFile(statusFile(child), invalid);
+      const badTime = (await readSummary(f.registry, now)).tasks[0];
+      assert.ok(badTime.declarations.timing.issues.length); assert.equal(badTime.sourceCurrent, true);
+      assert.deepEqual(badTime.progress, value.progress); assert.deepEqual(badTime.declarations.checks, value.declarations.checks);
+    } finally { await writeFile(statusFile(child), original); }
   });
   await t.test('source errors, bounded declarations and frozen fallback remain explicit', async () => {
     const now = Date.parse(f.updated); assert.ok(Number.isFinite(now));
@@ -144,6 +171,24 @@ test('summary/detail reads preserve declared vs observed boundaries', { timeout:
     await writeFile(path.join(f.root, 'outside.md'), 'secret'); assert.equal((await fetch(url(`${child.planDir}/plan.md`))).status, 404);
     await rm(plan); await writeFile(plan, '# 计划\n');
     assert.ok((await (await fetch(`${f.url}/api/snapshot`)).json()).tasks[0].implementationProof);
+  });
+  await t.test('ACCESS private handler precedes read-only routing and never leaks into dashboard observations', async () => {
+    const metadata = await (await fetch(`${f.url}/api/local-access`)).text();
+    assert.equal(JSON.parse(metadata).enabled, true); assert.equal(metadata.includes(fakeToken), false); assert.equal(credentialReads, 0);
+    for (const endpoint of ['/api/summary', '/api/assignments', '/api/task?task=T01', '/api/snapshot']) {
+      const response = await fetch(`${f.url}${endpoint}`);
+      assert.equal(response.status, 200); assert.equal((await response.text()).includes(fakeToken), false, endpoint);
+    }
+    assert.equal(credentialReads, 0);
+    const endpoint = `${f.url}/api/local-access/owner-token`;
+    assert.equal((await fetch(endpoint)).status, 405);
+    assert.equal((await fetch(endpoint, { method: 'POST' })).status, 403);
+    const response = await fetch(endpoint, { method: 'POST', headers: {
+      Origin: f.url, 'Sec-Fetch-Site': 'same-origin', 'Sec-Fetch-Mode': 'cors', 'X-Flow-Local-Access': '1',
+    } });
+    assert.equal(response.status, 200); assert.equal(response.headers.get('cache-control'), 'no-store');
+    assert.deepEqual(await response.json(), { ownerToken: fakeToken }); assert.equal(credentialReads, 1);
+    assert.equal((await fetch(`${f.url}/api/summary`, { method: 'POST' })).status, 405);
   });
   t.diagnostic(JSON.stringify({ repositories: 2, tasks: 2, pg: 0, registry: 'synthetic only' }));
 });

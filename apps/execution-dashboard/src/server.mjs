@@ -6,16 +6,18 @@ import { aggregate, readTaskDetail } from './aggregate.mjs';
 import { readSummary, readAssignments, observeAssignments } from './read-model.mjs';
 import { loadRegistry } from './registry.mjs';
 import { readDocument } from './documents.mjs';
+import { createLocalAccessHandler, localInstallationFromOptions } from './local-access.mjs';
 
 const publicFiles = new Map([['/', ['index.html', 'text/html; charset=utf-8']], ['/app.js', ['app.js', 'text/javascript; charset=utf-8']], ['/styles.css', ['styles.css', 'text/css; charset=utf-8']]]);
-for (const [name, type] of [['architecture.js', 'text/javascript'], ['architecture-data.js', 'text/javascript'], ['architecture.css', 'text/css']]) publicFiles.set(`/${name}`, [name, `${type}; charset=utf-8`]);
+for (const [name, type] of [['local-access.js', 'text/javascript'], ['local-access.css', 'text/css'], ['architecture.js', 'text/javascript'], ['architecture-data.js', 'text/javascript'], ['architecture.css', 'text/css']]) publicFiles.set(`/${name}`, [name, `${type}; charset=utf-8`]);
 const imageTypes = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp' };
 const headers = {
   'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'no-referrer',
   'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
 };
 
-export function createDashboardServer(registry, { assignmentObserver = observeAssignments, gitContext } = {}) {
+export function createDashboardServer(registry, { assignmentObserver = observeAssignments, gitContext, localAccess } = {}) {
+  const handleLocalAccess = createLocalAccessHandler(localAccess);
   let pendingSnapshot, pendingSummary, pendingAssignments;
   const pendingDetails = new Map();
   // Only in-flight work is shared. No completed proof survives another request.
@@ -34,6 +36,7 @@ export function createDashboardServer(registry, { assignmentObserver = observeAs
       response.end(body);
     };
     try {
+      if (await handleLocalAccess(request, response)) return;
       if (!/^(?:127\.0\.0\.1|localhost|\[::1\])(?::\d+)?$/.test(request.headers.host ?? '')) return send(403, JSON.stringify({ error: '仅允许 loopback Host' }));
       if (request.method !== 'GET') return send(405, JSON.stringify({ error: '只读接口仅接受 GET' }));
       const url = new URL(request.url, 'http://127.0.0.1');
@@ -70,7 +73,8 @@ async function main() {
   if (args.includes('--json')) { process.stdout.write(`${JSON.stringify(await aggregate(registry), null, 2)}\n`); return; }
   const port = Number(process.env.PORT ?? 4320);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT 必须为 1–65535');
-  const server = createDashboardServer(registry);
+  const localAccess = await localInstallationFromOptions(args, process.env);
+  const server = createDashboardServer(registry, { localAccess });
   server.listen(port, '127.0.0.1', () => console.log(`Flow 工程进度 http://127.0.0.1:${port}`));
   server.on('error', error => { console.error(error.message); process.exitCode = 1; });
 }

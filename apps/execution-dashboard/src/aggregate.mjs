@@ -80,7 +80,7 @@ export async function readTaskDetail(registry, id, now = Date.now(), context = c
   const consistency = before.mode !== 'live' || after.mode !== 'live' || task.source.mode !== 'live' ? 'unknown'
     : statusDigestBefore === statusDigestAfter && observedDigest === statusDigestBefore ? 'matched' : 'changed';
   delete task.source.digest;
-  return { kind: 'task-detail', version: 1, taskId: id, sourceKey: sourceKey(registered), registryFingerprint: registryFingerprint(registry),
+  return { kind: 'task-detail', version: 1, generatedAt: startedAt, taskId: id, sourceKey: sourceKey(registered), registryFingerprint: registryFingerprint(registry),
     startedAt, completedAt: new Date().toISOString(), statusDigestBefore, statusDigestAfter, consistency, task,
     mainObservation: { ...main, worktree: registry.mainWorktree } };
 }

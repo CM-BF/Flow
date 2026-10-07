@@ -25,6 +25,9 @@ function mainBadge(task) {
 let snapshot, assignmentObservation, assignmentFailure, summaryFailure, assignmentLoading = false;
 let selectedTask, returnFocus;
 let detailSource;
+let snapshotCurrent = false;
+// Per-surface observation identity preserves an open detail across later summaries.
+const timingObservations = new WeakMap();
 let documentRequest, detailRequest, assignmentRequest, summaryFlight;
 let summaryEpoch = 0, assignmentEpoch = 0, selectionEpoch = 0, documentEpoch = 0, detailEpoch = 0;
 
@@ -118,6 +121,57 @@ function renderAssignments() {
   if (selectedTask) renderSelectedAssignments();
 }
 
+function taskTime(value) {
+  if (value?.state === 'known') return `${value.at.replace('T', ' ').replace('Z', '')} UTC`;
+  return value?.state === 'not_completed' ? '尚未完成（负责人声明）' : '未知';
+}
+function elapsedText(task, observedSnapshot, current) {
+  if (!task) return '历时未知（任务已不在本次快照中）';
+  const timing = task.status.timing;
+  if (!current || task.source.mode !== 'live' || task.source.stale) return '历时未知（来源待同步；保留时间声明）';
+  if (!timing || timing.issues.length || timing.source.state !== 'declared') return '历时未知（时间或来源待核实）';
+  const snapshotTime = observedSnapshot.generatedAt;
+  const observed = Date.parse(snapshotTime);
+  const start = Date.parse(timing.started.at);
+  const end = timing.completed.state === 'not_completed' ? observed : Date.parse(timing.completed.at);
+  if (![observed, start, end].every(Number.isFinite) || new Date(observed).toISOString() !== snapshotTime || start > observed || end > observed || end < start) return '历时未知（未来时间或区间逆序）';
+  const seconds = Math.floor((end - start) / 1000);
+  const duration = `${Math.floor(seconds / 86400)}天 ${Math.floor(seconds / 3600) % 24}小时 ${Math.floor(seconds / 60) % 60}分 ${seconds % 60}秒`;
+  const label = timing.completed.state === 'not_completed' ? '已历时（含等待，截至本次同步）' : '已历时（含等待，负责人声明完成）';
+  return `${label}：${duration}`;
+}
+function summaryTiming(task) {
+  const section = element('div', undefined, 'task-timing');
+  section.dataset.timingTask = task.id;
+  section.append(element('p', `开工：${taskTime(task.status.timing?.started)} · 完成：${taskTime(task.status.timing?.completed)}`));
+  timingObservations.set(section, { task, observation: snapshot, epoch: summaryEpoch, current: task.sourceCurrent });
+  section.append(element('p', elapsedText(task, snapshot, snapshotCurrent && task.sourceCurrent), 'task-elapsed'));
+  return section;
+}
+function timingDetails(task, observation, matched) {
+  const section = element('section'); section.id = 'task-timing-detail'; section.setAttribute('aria-label', '任务时间');
+  section.append(element('h3', '任务时间'), element('p', '唯一负责人声明；含等待的壁钟历时，不代表实际工作或 CPU 用时。', 'muted'));
+  const facts = element('dl', undefined, 'detail-facts');
+  const timing = task.status.timing;
+  for (const [label, value] of [
+    ['任务开工时间（UTC）', taskTime(timing?.started)], ['任务完成时间（UTC）', taskTime(timing?.completed)],
+    ['时间来源（负责人声明，未独立核验）', timing?.source.record], ['时间声明原文', `${timing?.started.record || 'UNKNOWN'}\n${timing?.completed.record || 'UNKNOWN'}`],
+    ['声明问题', timing?.issues.join('；') || '无已识别的格式问题；不构成独立验证'],
+    ['本次快照（UTC）', observation.generatedAt], ['权威来源', task.source.path],
+    ['等待记录（原文，未求和）', timing?.waiting || '未记录；不推断等待或净工作时长'],
+  ]) facts.append(element('dt', label), element('dd', value || '未知'));
+  timingObservations.set(section, { task, observation, epoch: summaryEpoch, current: matched && task.current });
+  section.append(element('p', elapsedText(task, observation, snapshotCurrent && matched && task.current), 'task-elapsed'), facts);
+  return section;
+}
+function updateTimingFreshness() {
+  for (const section of document.querySelectorAll('[data-timing-task], #task-timing-detail')) {
+    const record = timingObservations.get(section);
+    if (record) section.querySelector('.task-elapsed').textContent = elapsedText(record.task, record.observation,
+      snapshotCurrent && record.current && record.epoch === summaryEpoch);
+  }
+}
+
 function taskLinks(task, { summary = false } = {}) {
   const section = element('div', undefined, 'task-links');
   const links = task.links;
@@ -156,7 +210,7 @@ function compactTask(task, subtitle, { summary = true } = {}) {
   const allocation = element('p', undefined, 'allocation');
   allocation.dataset.allocation = task.id; allocation.dataset.compact = String(summary);
   allocation.textContent = allocationText(task, summary);
-  text.append(taskLinks(task, { summary }), allocation);
+  text.append(summaryTiming(task), taskLinks(task, { summary }), allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -258,6 +312,7 @@ async function refreshAssignments() {
 function refresh() {
   if (summaryFlight) return summaryFlight;
   const epoch = ++summaryEpoch;
+  snapshotCurrent = false; updateTimingFreshness();
   if (selectedTask) retainDetail('摘要正在刷新；保留阅读内容，旧现场核验不代表本次同步。');
   $('#refresh').disabled = true;
   // Assignment latency never holds the summary request or its refresh control.
@@ -270,7 +325,7 @@ function refresh() {
       if (epoch !== summaryEpoch) return;
       if (value.kind !== 'summary' || value.version !== 1) throw new Error('摘要格式不受支持');
       snapshot = { ...value, tasks: value.tasks.map(task => ({ ...task, status: task.declarations })) };
-      summaryFailure = null; applyAssignments(); render(); $('#load-error').hidden = true;
+      summaryFailure = null; snapshotCurrent = true; applyAssignments(); render(); $('#load-error').hidden = true;
       syncSelectedSource();
     } catch (error) {
       if (epoch !== summaryEpoch) return;
@@ -382,7 +437,7 @@ function renderTaskProof(observation, matched) {
     ['登记分支', task.branch], ['现场 Git', `${task.git.branch ?? '未知'}\n${task.git.head ?? 'HEAD 未知'}\n${task.git.dirty === null ? 'dirty 未知' : task.git.dirty ? `dirty；${task.git.changedFiles} 项变化` : 'clean'}`],
     ['owner 声明 HEAD', task.status.declaredHead], ['owner 声明 dirty', task.status.declaredDirty],
   ]) addFact(facts, label, value);
-  content.append(facts, element('h3', '计划、状态与证据'));
+  content.append(timingDetails(task, observation, matched), facts, element('h3', '计划、状态与证据'));
   const documents = element('div', undefined, 'documents');
   const source = detailSource;
   for (const doc of task.documents) { const button = element('button', doc.title); button.type = 'button'; button.addEventListener('click', () => openDocument(task, doc, source)); documents.append(button); }

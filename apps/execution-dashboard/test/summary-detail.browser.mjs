@@ -10,7 +10,7 @@ import { createDashboardServer } from '../src/server.mjs';
 import { validateRegistry } from '../src/registry.mjs';
 import { status } from './fixture.mjs';
 
-export const sourceFiles = ['src/read-model.mjs', 'src/aggregate.mjs', 'src/server.mjs', 'public/app.js', 'test/summary-detail.test.mjs', 'test/summary-detail.browser.mjs', 'test/task-links.browser.mjs'].map(file => `apps/execution-dashboard/${file}`);
+export const sourceFiles = ['src/read-model.mjs', 'src/aggregate.mjs', 'src/server.mjs', 'public/app.js', 'test/summary-detail.test.mjs', 'test/summary-detail.browser.mjs', 'test/task-links.browser.mjs', 'test/task-timing.browser.mjs', 'test/local-access.browser.mjs', 'src/status.mjs', 'src/local-access.mjs', 'public/index.html', 'public/local-access.js', 'public/local-access.css', 'test/local-access.test.mjs', 'test/status-timestamps.test.mjs'].map(file => `apps/execution-dashboard/${file}`);
 const git = (directory, ...args) => execFileSync('git', ['-C', directory, ...args], { timeout: 3000, encoding: 'utf8', env: { ...process.env, GIT_CONFIG_GLOBAL: '/dev/null', GIT_CONFIG_SYSTEM: '/dev/null', GIT_OPTIONAL_LOCKS: '0' } }).trim();
 const commit = directory => { git(directory, 'add', '.'); git(directory, '-c', 'user.name=Summary fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-qm', 'fixture'); return git(directory, 'rev-parse', 'HEAD'); };
 const hash = value => createHash('sha256').update(value).digest('hex');
@@ -26,7 +26,8 @@ export async function summaryFixture(context, options = {}) {
   }
   const tasks = ['T01', 'T02'].map(id => ({ id, title: `任务 ${id}`, role: '工作线', worktree, branch: 'codex/summary-fixture', planDir: `plans/${id.toLowerCase()}`, evidenceDir: `docs/evidence/${id.toLowerCase()}` }));
   const updated = new Date().toISOString().slice(0, 19).replace('T', ' ') + ' UTC';
-  const baseHuman = { 本片段交付阶段: 'implementation', 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE', 'co-lead': 'Web /root' };
+  const timingStart = new Date(Date.now() - 3600000).toISOString();
+  const baseHuman = { 任务开工时间: timingStart, 任务完成时间: 'NOT_COMPLETED', 任务时间来源: 'fixture explicit event / not independently verified', 本片段交付阶段: 'implementation', 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE', 'co-lead': 'Web /root' };
   const human = task => task.id === 'T02' ? { ...baseHuman, 任务层级: '大task', '大task ID': '[T02](plan.md)' }
     : { ...baseHuman, 所属大task: `[T02](${worktree}/plans/t02/plan.md)`, 当前阻塞: 'ACTIVE: 子任务阻塞独立保留', 需用户决定: 'REQUIRED: 子任务决定独立保留' };
   for (const task of tasks) {
@@ -326,23 +327,26 @@ async function summaryChecks({ page, f, report, output }) {
   await writeFile(path.join(parent.worktree, parent.planDir, 'plan.md'), planText);
   await open('T02').click(); await page.locator('#selected-proof .documents').waitFor();
   await page.getByRole('button', { name: 'plan.md', exact: true }).click();
+  assert.match(await page.locator('#task-timing-detail .task-elapsed').innerText(), /已历时（含等待，截至本次同步）/);
   await page.waitForFunction(text => document.querySelector('#document-text').textContent === text, planText);
   await page.evaluate(() => {
     const node = document.querySelector('#document-text'); node.focus();
     document.querySelector('#task-dialog').scrollTop += 80;
     const range = document.createRange(); range.setStart(node.firstChild, 2); range.setEnd(node.firstChild, 9);
     const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
-    window.fixtureReading = { node, text: node.textContent, selection: selection.toString(), top: node.getBoundingClientRect().top };
+    const timing = document.querySelector('#task-timing-detail');
+    window.fixtureReading = { node, text: node.textContent, selection: selection.toString(), top: node.getBoundingClientRect().top, timing, timingFacts: timing.querySelector('dl').textContent };
   });
   const readsBefore = requests.filter(url => ['/api/task', '/api/document'].includes(url)).length;
   const assertReading = async () => {
     const state = await page.evaluate(() => {
-      const { node, text, selection, top } = window.fixtureReading;
+      const { node, text, selection, top, timing, timingFacts } = window.fixtureReading;
       return { sameNode: node === document.querySelector('#document-text'), visible: !document.querySelector('#document-view').hidden,
         focus: document.activeElement === node, sameText: node.textContent === text, selection: getSelection().toString() === selection,
+        timingSame: timing === document.querySelector('#task-timing-detail') && timing.querySelector('dl').textContent === timingFacts, timingUnknown: timing.querySelector('.task-elapsed').textContent.includes('历时未知'),
         scrollDelta: Math.abs(node.getBoundingClientRect().top - top), freshness: document.querySelector('#selected-proof').dataset.freshness };
     });
-    assert.deepEqual({ ...state, scrollDelta: undefined }, { sameNode: true, visible: true, focus: true, sameText: true, selection: true, scrollDelta: undefined, freshness: 'prior-observation' });
+    assert.deepEqual({ ...state, scrollDelta: undefined }, { sameNode: true, visible: true, focus: true, sameText: true, selection: true, timingSame: true, timingUnknown: true, scrollDelta: undefined, freshness: 'prior-observation' });
     assert.ok(state.scrollDelta <= 1, `Reading anchor moved ${state.scrollDelta}px`);
     assert.equal(requests.filter(url => ['/api/task', '/api/document'].includes(url)).length, readsBefore);
   };
