@@ -436,6 +436,8 @@ async function worker(init: Init) {
       await picker.getByRole("button", { name: "Browse files", exact: true }).click();
       await expect(picker.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: "saved.txt" })).toContainText("ready");
       await page.keyboard.press("Escape");
+      await expect(picker).not.toBeVisible();
+      await expect(files).toBeFocused();
       // No Use/reselection/remount: original A,B order must reach actual chips.
       await expect(composerFiles).toHaveCount(2);
       await composerFiles.nth(0).getByRole("button", { name: "File attachment", exact: true }).focus();
