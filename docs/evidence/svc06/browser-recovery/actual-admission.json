@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-10-07T14:30:01.227Z",
+  "state": "ADMITTED_START",
+  "entry": "build-supervise.py --execute-fixed-build",
+  "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "assemblySource": "6bebf75f24a80b38d821efd3aaf8db24a0d62e2e",
+  "ownerHead": "0ff5a23a4776bd42edfbd5908eb07ddf1d40577e",
+  "claimObservedAt": "2026-10-07T14:29:19.651Z",
+  "claim": {
+    "id": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 2,
+    "scope": [
+      "apps/server/src/browser-session/fixture.ts",
+      "apps/server/src/browser-session/index.ts",
+      "apps/server/src/browser-session/session.test.ts",
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+      "plans/svc06-browser-recovery"
+    ]
+  },
+  "bindings": {
+    "preparation": 10,
+    "runtime": 17,
+    "source": 75,
+    "methods": 2,
+    "allSame": true
+  },
+  "namespaceAbsent": [
+    "outer-report.json",
+    "actual-first"
+  ],
+  "resource": {
+    "minimumFreeBytes": 11623661568,
+    "includesOwnAdditionalBudget": true,
+    "additionalBudgetBytes": 2317352960,
+    "actualFreeBytes": 21366022144,
+    "temporaryFreeBytes": 21366022144,
+    "liveReserveBytes": 1073741824,
+    "rawBytes": 2097152
+  },
+  "window": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+    "sha256": "bdbf8801d35e14eafe969885149893f1cbbede8fb68e7a3db74868e0a613c64b",
+    "recordedAt": "2026-10-07T14:28:51.921Z",
+    "state": "MSG_BOTH_RETURNED_ORIGINAL_SVC06B_ARTIFACT_SOLE_NEXT",
+    "priorActualReturn": "2026-10-07T14:27:31.462508Z"
+  },
+  "providerCalls": 0,
+  "pg": 0,
+  "chrome": 0,
+  "personalOperations": 0
+}

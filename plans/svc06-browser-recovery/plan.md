@@ -21,7 +21,7 @@
 
 - [x] **SVC06B-01** 独立树/claim、精确前后像和来源组合固定，唯一status登记。
 - [x] **SVC06B-02** 固定可执行build proposal、实际依赖/资源边界及必要零副作用入口检查，独立review。
-- [ ] **SVC06B-03** 取得真实共享窗口后一次新artifact构建/校验/内部加载，保存独立结果与unknown，禁止自动重放。
+- [x] **SVC06B-03** 取得真实共享窗口后一次新artifact构建/校验/内部加载，保存独立结果与unknown，禁止自动重放。
 - [ ] **SVC06B-04** 将准确descriptor/source交Web原owner完成三retained与新网页组合证据，受控接收；个人发布须后续单独固定门禁与窗口。
 
 普通local累计≤120s、scratch16MiB/raw2MiB、同时≤4自有child；当前0PG/Chrome/provider/个人服务。完整构建未开窗，原420+.5+2与fresh>=2.5GiB及所有并发/保留总预算中更严格者、live1GiB、raw2MiB保持。无资源holder不等于自动许可构建。
