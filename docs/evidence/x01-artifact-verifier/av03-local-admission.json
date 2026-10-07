@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T16:01:32.200Z",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/admission-journal.ts",
+      "apps/runner/src/admission-verifier-claim.test.ts",
+      "apps/runner/src/plugins/execution.test.ts",
+      "apps/runner/src/plugins/execution.ts",
+      "apps/runner/src/plugins/host.ts",
+      "apps/runner/src/plugins/verifier.test.ts",
+      "docs/evidence/x01-artifact-verifier",
+      "packages/contracts/src/plugin-verification.test.ts",
+      "packages/contracts/src/plugin-verification.ts",
+      "packages/contracts/src/verifier-runner-claim.test.ts",
+      "packages/contracts/src/verifier-runner-claim.ts",
+      "packages/plugin-runtime/src/json-object-verifier.test.ts",
+      "packages/plugin-runtime/src/json-object-verifier.ts",
+      "packages/plugin-runtime/src/package-store.test.ts",
+      "packages/plugin-runtime/src/package-store.ts",
+      "plans/x01-artifact-verifier"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-artifact-verifier",
+    "origin": "new",
+    "taskId": "X01-ARTIFACT-VERIFIER01",
+    "worker": "architecture_read",
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+    "createdAt": "2026-10-07T14:30:38.019Z",
+    "updatedAt": "2026-10-07T15:57:01.967Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "floor": 16175529984,
+  "free": 20214849536,
+  "resources": "root segment lane open; S01 actual closed; K01 source only; Original SVC09A isolated personal NEXT included; all existing KEEP retained and one cleanup reserve",
+  "budget": {
+    "children": 5,
+    "secondsEach": 30,
+    "cumulativeSeconds": 90,
+    "tmp": 4194304,
+    "raw": 262144,
+    "newLogical": 16777216
+  }
+}
