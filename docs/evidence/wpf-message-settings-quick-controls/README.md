@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 当前证据
 
-最新[native-control第三轮](native-control-third-20261007/README.md)为FAILED/INCONCLUSIVE：两独立plain页已完成真实键盘与快照观察，A10/B14事件均无input/change或选值，actual modal未启动，0/6组/0PNG。root接受实际/owned清理，未认定产品缺陷。新段累计23322/余66678；旧30625闭合。源a9ec保持，不自动第四次，完整feature UNKNOWN。
+最新[C第二次实际诊断](native-typeahead-second-20261007/README.md)为DIAGNOSTIC_COMPLETE/actualexit0：plain与真实modal各一次m、可信keypress/input/change和全部保稿断言通过。root限定接受观测与cleanup；原六组0/PNG0，不是feature PASS。新段累计37627/余52373，旧30625闭合，历史FAIL不改；完整feature UNKNOWN、无自动续跑。
 
 产品固定fe6ece131c489c79cf531a184e4cf51209f9c4a0，四源限定源码已审。当前[c2实际strict/26direct](c2-actual-20261007/README.md)已由root限定接受：两个子退出0、outer actualexit0+唯一PASS seal/四hash/双EOF0drop，owned groups/scratch清理。累计5119ms/余24881ms。
 
@@ -19,3 +19,5 @@
 - 2026-10-07 06:55:52 UTC [native typeahead C 源准备](native-typeahead-preparation/README.md)：独立m对照/可信事件前置；NOT_RUN，原六组/旧raw不改。
 
 - 2026-10-07 07:13:13 UTC [C实际FAILED/选值与清理](native-typeahead-first-20261007/README.md)；[d755DOM文本基线窄修](native-typeahead-text-preparation/README.md)，SOURCE_ONLY/NOT_RUN，累计35077/余54923。
+
+- 2026-10-07 07:27:05 UTC [d755 C定向实际原件及独审](native-typeahead-second-20261007/README.md)，限定diagnostic complete；原六组/主线仍开放。

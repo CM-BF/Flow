@@ -119,3 +119,9 @@ find-skills优先复用已装本地技能，无安装/联网：find-skills、web
 ## 2026-10-07 07:13:13 UTC · C actual / DOM文本窄修
 
 沿已读find-skills/webapp-testing/clean-code核实际DOM与PW1.63 matcher源码。发现闭合details innerText与默认toHaveText DOM文本不一致；仅统一5个采样为非空textContent，后断言不变，不强开详情、不赋值、不改产品。首失败原raw与较早计时保持；保守11755/35077。仅文本/hash核验、无noEmit/direct/Chrome/free，未解决为固定修正尚未runtime复验。
+
+## 2026-10-07 07:27:05 UTC · C第二次实际与自然封存
+
+find-skills优先复用本地clean-code/webapp-testing（本段只读复核，无安装），沿已审fixture/parent/worker执行一次，不另造runner。命名和证据区分：DIAGNOSTIC_COMPLETE仅C，不写feature PASS；actualouter/seal/原始较早budget分列，保守2550计账；原306prior逐hash保持。
+
+固定d755对5个闭合details输出用一致DOM文本读法，实际后断言已完成；没有改被测值、Apply、原六组或中文输入策略。错误历史/未知起点保留；waiting表W05按真实outer完成解除，W06起点UNKNOWN。清理先归还，再档案/hash/链接/允许路径核对；所有fresh观察只精确owned3groups，未扫其他进程/容量/服务。完整功能仍未验；本段无第二browser/26/noEmit/PG/个人操作。

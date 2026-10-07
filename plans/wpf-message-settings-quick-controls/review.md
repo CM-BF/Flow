@@ -1,10 +1,10 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 06:45:03 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 07:27:05 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2/b3实际browser FAILED，0完成组/0PNG；b3原生选框诊断已完整捕获，完整行为未通过。
+- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2/b3实际browser FAILED，0完成组/0PNG；b3原生选框诊断已完整捕获；d755后继C定向已完成并获root限定实际接收，原六组仍未通过。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 
@@ -121,3 +121,9 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 ## C实际失败接收及DOM文本窄修 · 2026-10-07 07:13:13 UTC
 
 实际source2e71/run63457保持FAILED/INCONCLUSIVE，plain+modal真实m选值成立但后保稿基线断言失败；原六组0/PNG0。root已接受actual/cleanup和d755 `d7556b616e018ac985519b08a2954b1810029e05` SOURCE_ONLY；[原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json)。后继五值textContent+非空只统一观测语义，所有状态断言保留。新段35077/余54923；完整feature仍UNKNOWN，no重复types/direct或实际续跑。
+
+## d755 C定向实际独立接收 · 2026-10-07 07:27:05 UTC
+
+[root原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/root-actual-review.json)限定接受DIAGNOSTIC_COMPLETE与owned cleanup。Target d7556b616e018ac985519b08a2954b1810029e05 / actualHEAD2c458fb97c4e77ed43ab18a2af628419a717d87d；唯一outerexit0/seal/6hash/5runtime/两native臂与4源核符，保稿后断言完成。actual2550ms conservative，新37627/52373；旧失败/原预算不改。
+
+这不改变顶层UNKNOWN：0原六组、0PNG，MATURE02/真实App/主线未交付。此前d755SOURCE_ONLY已获得此次窄观测，无需将其推为完整产品批准。当前无新候选或自动续跑，等待原六组输入语义的有界后继。

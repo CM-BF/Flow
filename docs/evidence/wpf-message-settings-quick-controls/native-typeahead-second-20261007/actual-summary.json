@@ -1,0 +1,188 @@
+{
+  "recordedAt": "2026-10-07T07:26:04.800549+00:00",
+  "task": "WPF-MESSAGESETTINGS02",
+  "run": "msgquick-typeahead2-20261007-071813-2f26da",
+  "sourceTarget": "d7556b616e018ac985519b08a2954b1810029e05",
+  "runHead": "2c458fb97c4e77ed43ab18a2af628419a717d87d",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "actualOuter": {
+    "startedAt": "2026-10-07T07:24:00.207591+00:00",
+    "finishedAt": "2026-10-07T07:24:02.757575+00:00",
+    "pid": 89866,
+    "pgid": 89866,
+    "exitCode": 0,
+    "elapsedMs": 2549.7872499981895,
+    "stdoutBytes": 1003,
+    "stderrBytes": 0,
+    "stdoutSha256": "784030e6a7cd150cf3b8bef58d6a74fde0245b7b6a8bb2ec696644c05eb0df47",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "terminal": {
+    "type": "terminal-seal",
+    "terminalContract": "msgquick-browser-v1-external-exit-required",
+    "state": "DIAGNOSTIC_COMPLETE",
+    "declaredExitCode": 0,
+    "sealedFiles": {
+      "binding.json": "c3356bde4ddf9903d2afafcc535d3d2746faf26d2ff5909fb93f18600530354f",
+      "result.json": "dbd20e07c7d85f989d39e680029a2dbc26ffa9a0bf2276139a1c1ef7c4bf7bfb",
+      "browser-budget.json": "69026159a6c14aa59f893a6ccdea6096aa4bd2a6d1902706e5011bb80db717eb",
+      "runtime-evidence-manifest.json": "a09c5a603ea5dfb39dbed9bc3b9073112f7ac820af953af282bc7d0d01038e89",
+      "raw/msgquick-typeahead2-20261007-071813-2f26da/native-control.json": "8913b76e8665b760d8579f5eda415aa83c2407d1a46df7b133e0189ac8ffb551",
+      "raw/msgquick-typeahead2-20261007-071813-2f26da/select-diagnostics.json": "a6db43e97129ddc9bed7ad25fa5c34daa806593f862a47e30b8fe3018e6a1819"
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 2507
+  },
+  "state": "DIAGNOSTIC_COMPLETE",
+  "featurePass": false,
+  "originalSixGroupsPassed": 0,
+  "screenshots": 0,
+  "diagnosticConclusion": "SAME_NATIVE_SEQUENCE_SELECTS_IN_CONTROL_AND_MODAL",
+  "arms": [
+    {
+      "name": "plain-C-Typeahead-m",
+      "selectedWithNativeEvents": true,
+      "events": 12,
+      "trustedInputChange": [
+        "keypress",
+        "input",
+        "change"
+      ],
+      "after": {
+        "value": "model-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "selectedIndex": 1,
+        "focused": true,
+        "connected": true,
+        "disabled": false,
+        "open": false,
+        "options": [
+          {
+            "value": "",
+            "selected": false,
+            "disabled": false
+          },
+          {
+            "value": "model-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "selected": true,
+            "disabled": false
+          },
+          {
+            "value": "fast-model",
+            "selected": false,
+            "disabled": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual-C-Typeahead-m",
+      "selectedWithNativeEvents": true,
+      "events": 12,
+      "trustedInputChange": [
+        "keypress",
+        "input",
+        "change"
+      ],
+      "after": {
+        "value": "model-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "selectedIndex": 1,
+        "focused": true,
+        "connected": true,
+        "disabled": false,
+        "open": false,
+        "options": [
+          {
+            "value": "",
+            "selected": false,
+            "disabled": false
+          },
+          {
+            "value": "model-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "selected": true,
+            "disabled": false
+          },
+          {
+            "value": "fast-model",
+            "selected": false,
+            "disabled": false
+          }
+        ]
+      }
+    }
+  ],
+  "postconditions": "Original five snapshot comparisons, draft text, zero commits and single catalog request completed in unchanged C entry; no Apply/omit or original six-group coverage claimed.",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 3865,
+      "keptBytes": 3865,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 65,
+      "keptBytes": 65,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "postrun": {
+    "observedAt": "2026-10-07T07:24:35.081140+00:00",
+    "groups": {
+      "89866": "ABSENT_ESRCH",
+      "90396": "ABSENT_ESRCH",
+      "90194": "ABSENT_ESRCH"
+    },
+    "scratchAbsent": true,
+    "actualOuterElapsedMs": 2549.7872499981895,
+    "lateTerminalMs": 2507,
+    "parentBudgetMs": 2507,
+    "chargedMs": 2550,
+    "newSegmentCumulativeMs": 37627,
+    "newSegmentRemainingMs": 52373,
+    "oldClosedMs": 30625,
+    "scope": "DIAGNOSTIC_COMPLETE only; original 6 checks/2PNG NOT_RUN"
+  },
+  "parentElapsedMs": 2507,
+  "lateTerminalMs": 2507,
+  "chargedMs": 2550,
+  "segmentPreviousMs": 35077,
+  "segmentCumulativeMs": 37627,
+  "segmentRemainingMs": 52373,
+  "oldClosedMs": 30625,
+  "oldUnusedMsNotCredited": 29375,
+  "priorFileCount": 306,
+  "priorBytes": 3510314,
+  "priorAllMatch": true,
+  "noRetry": true,
+  "limitations": [
+    "C only; no full six-group approval, no PNG, no main or real App integration.",
+    "ASCII m success does not prove Chinese printable-key support or establish sole cause of earlier popup sequences.",
+    "Earlier FAILED results remain unchanged; parent/terminal early budget remains raw, conservative accounting uses outer maximum."
+  ]
+}

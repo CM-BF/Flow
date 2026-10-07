@@ -1,0 +1,66 @@
+--- typeahead1/supervisor.py
++++ typeahead2/supervisor.py
+@@ -67,14 +67,14 @@
+     assert gate['entry'] == 'message-settings-quick' and re.fullmatch('[a-zA-Z0-9-]{1,80}', gate['run'])
+     assert gate['sourceHead'] == binding['head'] and gate['sourceHashes'] == binding['sources']
+     assert gate['previousRuntimeMs'] == binding['previousRuntimeMs']
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 53947
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 65702
+     assert gate['selection'] == binding['selection'] and gate['selection'] in ('diagnostic','typeahead','full')
+     assert CLEANUP_MS < gate['totalMs'] <= SINGLE_RUN_MS
+     segment = load(binding['segmentUsage']['path'])
+     assert sha(binding['segmentUsage']['path']) == binding['segmentUsage']['sha256'] == gate['segmentUsageSha256']
+     assert segment['id'] == 'MSGQUICK-NATIVE-CONTROL-CLOSEOUT-20261007'
+     assert segment['historyConservativeMs'] == 30625 and segment['newSegmentLimitMs'] == SEGMENT_MS
+-    assert segment['actualConservativeSpentMs'] == gate['previousSegmentRuntimeMs'] == 23322 and len(segment['runs']) == 3
++    assert segment['actualConservativeSpentMs'] == gate['previousSegmentRuntimeMs'] == 35077 and len(segment['runs']) == 4
+     assert gate['previousSegmentRuntimeMs']+gate['totalMs'] <= SEGMENT_MS
+     assert gate['previousRuntimeMs']+gate['totalMs'] <= TOTAL_MS
+     authorization=binding['segmentAuthorization']
+@@ -90,7 +90,8 @@
+         '/private/tmp/msgquick-b3', '/private/tmp/msgquick-b3-outer-na_54sb4', '/private/tmp/msgquick-b3-admission-okeh9ium',
+         '/private/tmp/msgquick-native1','/private/tmp/msgquick-native1-outer-mnw15emr','/private/tmp/msgquick-native1-admission-uvmtggp4',
+         '/private/tmp/msgquick-native2','/private/tmp/msgquick-native2-outer-qwf16841','/private/tmp/msgquick-native2-admission-9ez8egf8',
+-        '/private/tmp/msgquick-native3','/private/tmp/msgquick-native3-outer-1gejsqrh','/private/tmp/msgquick-native3-admission-d5v71cvf']
++        '/private/tmp/msgquick-native3','/private/tmp/msgquick-native3-outer-1gejsqrh','/private/tmp/msgquick-native3-admission-d5v71cvf',
++        '/private/tmp/msgquick-typeahead1','/private/tmp/msgquick-typeahead1-outer-itcy9z26','/private/tmp/msgquick-typeahead1-admission-p5ldo7_a']
+     assert prior['accountedRuntimeMs'] == 30625 and prior['remainingMs'] == 29375  # Closed historical envelope; not new credit.
+     assert len(prior['files']) == prior['fileCount'] and len({item['path'] for item in prior['files']}) == prior['fileCount']
+     assert prior['bytes'] == sum(item['bytes'] for item in prior['files']) == binding['previousEvidenceBytes']
+@@ -132,12 +133,13 @@
+         old_review=load(review['path'])
+         assert old_review['decision']==decision and old_review['source']==binding['implementation'] and old_review['terminal']==old_terminal
+     assert sum(entry['accountedMs'] for entry in prior['runs'].values())==30625
+-    # Three failed diagnostics keep immutable actual outer/seal/cleanup evidence and conservative charges.
+-    assert set(prior['nativeRuns'])=={'native1','native2','native3'}
++    # Four failed diagnostics keep immutable actual outer/seal/cleanup evidence and conservative charges.
++    assert set(prior['nativeRuns'])=={'native1','native2','native3','typeahead1'}
+     for index,(name,previous,elapsed,late,charge,run_name,outer_path) in enumerate((
+         ('native1',0,11178,11182,11222,'msgquick-native1-20261007-060926-18698b','/private/tmp/msgquick-native1-outer-mnw15emr'),
+         ('native2',11222,6188,6189,6227,'msgquick-native2-20261007-062946-51fcb2','/private/tmp/msgquick-native2-outer-qwf16841'),
+-        ('native3',17449,5830,5831,5873,'msgquick-native3-20261007-064135-4132ba','/private/tmp/msgquick-native3-outer-1gejsqrh'))):
++        ('native3',17449,5830,5831,5873,'msgquick-native3-20261007-064135-4132ba','/private/tmp/msgquick-native3-outer-1gejsqrh'),
++        ('typeahead1',23322,11709,11712,11755,'msgquick-typeahead1-20261007-070636-431059','/private/tmp/msgquick-typeahead1-outer-itcy9z26'))):
+         entry=prior['nativeRuns'][name]; old_root=Path(entry['packet']); old_outer=Path(entry['outer'])
+         assert str(old_root)=='/private/tmp/msgquick-'+name and str(old_outer)==outer_path
+         old_result=load(old_root/'result.json'); old_budget=load(old_root/'browser-budget.json'); old_exit=load(old_outer/'actual-exit.json')
+@@ -146,14 +148,17 @@
+         assert old_exit['bothEOF'] is True and old_exit['groupAbsent'] is True and old_exit['droppedBytes']==0
+         assert old_exit['stdoutSha256']==sha(old_outer/'stdout.txt') and old_exit['stderrSha256']==sha(old_outer/'stderr.txt')
+         assert old_terminal['cleanup']==old_result['cleanup']=={'errors':[],'groupAbsent':True,'workerGroupAbsent':True,'chromeGroupAbsent':True,'scratchAbsent':True}
+-        assert old_result['selection']=='diagnostic' and old_result['previousRuntimeMs']==30625+previous and old_result['previousSegmentRuntimeMs']==previous
++        assert old_result['selection']==('typeahead' if name=='typeahead1' else 'diagnostic') and old_result['previousRuntimeMs']==30625+previous and old_result['previousSegmentRuntimeMs']==previous
+         assert old_result['elapsedMs']==elapsed and old_budget['segmentSpentMs']==previous+elapsed and old_terminal['afterFinalWritesElapsedMs']==late
+         assert charge-1 < max(old_exit['wallMs'],late,elapsed) <= charge
+         expected_keys={'binding.json','result.json','browser-budget.json','runtime-evidence-manifest.json',
+             'raw/'+run_name+'/native-control.json','raw/'+run_name+'/select-diagnostics.json'}
+         assert set(old_terminal['sealedFiles'])==expected_keys and all(digest is not None and sha(old_root/path)==digest for path,digest in old_terminal['sealedFiles'].items())
+         review=entry['rootReview']; assert sha(review['path'])==review['sha256']; actual=load(review['path'])
+-        if name=='native3':
++        if name=='typeahead1':
++            assert actual['decision']=='ACCEPTED_FAILED_INCONCLUSIVE_TYPEAHEAD_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS'
++            reviewed_charge=actual['accounting']['chargeMs']
++        elif name=='native3':
+             assert actual['decision']=='ACCEPTED_FAILED_INCONCLUSIVE_NATIVE_CONTROL_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS'
+             reviewed_charge=actual['accounting']['chargeMs']
+         else:

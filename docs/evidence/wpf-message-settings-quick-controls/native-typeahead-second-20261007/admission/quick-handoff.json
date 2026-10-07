@@ -1,0 +1,85 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T07:18:13.945931+00:00",
+  "gate": "/private/tmp/web-paired-validation-admission-57hzfdhg/quick-gate.json",
+  "gateSha256": "424c4d1de67ca3c52ff589fb16bb266b375b0812afdbdefb3a1280fcf1e9e267",
+  "expiresAt": "2026-10-07T07:25:13.945931+00:00",
+  "run": "msgquick-typeahead2-20261007-071813-2f26da",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "head": "2c458fb97c4e77ed43ab18a2af628419a717d87d",
+  "sourceTarget": "d7556b616e018ac985519b08a2954b1810029e05",
+  "bindingSha256": "c3356bde4ddf9903d2afafcc535d3d2746faf26d2ff5909fb93f18600530354f",
+  "manifestSha256": "e2a4e2b1f9119033043831521f24687420b08dfae86bd7a3784315226bffb534",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-typeahead2/supervisor.py",
+    "--gate",
+    "/private/tmp/web-paired-validation-admission-57hzfdhg/quick-gate.json"
+  ],
+  "selection": "typeahead",
+  "singleRunMaximumMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentTotalMs": 90000,
+  "newSegmentSpentMs": 35077,
+  "oldClosedActualMs": 30625,
+  "nativeReview": {
+    "path": "/private/tmp/web-paired-validation-admission-57hzfdhg/quick-routine-binding-review.json",
+    "sha256": "6fd89bf1a4ad39bd62aa2396c1f9c8fce770602defe13c907bc37bb066690526"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-typeahead1-actual-and-fix-review.json",
+    "sha256": "eb5572ce2be5b6325097c8f06ca06a4ab3f6466c762cde65b4e860dd4686443d",
+    "scope": "sourceCorrectionReviewed ACCEPTED_SOURCE_ONLY_NOT_RUNTIME; original actual remains FAILED"
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "outerRequirements": "Unique owned outercapture; realexit/stdout/stderr/EOF/terminal hashes and ownedcleanup must agree. Chargeceilmax actualouter/late/parent. Do not infer diagnostic measurement is featurePASS. Report actualstart and terminal immediately; preserve FAIL/INCONCLUSIVE.",
+  "managerLaunch": false,
+  "remainingNewSegmentMs": 54923,
+  "chromeVersion": "154.0.8037.99",
+  "chromeProvenance": {
+    "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
+    "meaning": "Only two physical native input pins updated; original .98 preparation preserved; installed patch cause unknown.",
+    "sha256": "b824372e40de408f23f3b5b7766cf55a81eb2f615b3e63fee4e14fd668a2e29d"
+  },
+  "mustNotOverlap": "No thirdChrome/secondsharedPG or exclusivepersonal/performancewindow. Explicitpair permits RecoveryownPG+Chrome withthis whollyindependent0PGChrome; separateprofile/scratch/HTTP/outputsource.",
+  "ownerStatusFollowup": "Next natural owner metadata update adds a structured waiting table from observed reason/owner/release-condition/start/end. Unknown historical starts remain UNKNOWN; no present-time backfill or checks rerun.",
+  "noSecretsOrPersonalInputs": true,
+  "resourceObservation": "/private/tmp/web-paired-validation-admission-57hzfdhg/observation.json",
+  "pairedBudget": {
+    "authority": "Rootexplicit paired max1sharedPGheavyRecovery+1fullyindependent0PGQuickChrome; C02sentinelactuallyreturned and nowREADYwaitingmain/noPG, X01main9816source-local/noPG. BothoriginalownersFINAL; rootwakesonlyaftermanagerFINAL forroot+2workers.",
+    "selectedStartFloorBytes": 4053008384,
+    "availableBytes": 24222310400,
+    "singleCleanupReserveBytes": 1073741824,
+    "recovery": {
+      "sharedPG": 1,
+      "chromeProfiles": 1,
+      "tmpBytes": 67108864,
+      "rawBytes": 8388608,
+      "dbWalConservativeBytes": 134217728,
+      "singleMs": 60000,
+      "cleanupMs": 15000
+    },
+    "quick": {
+      "pg": 0,
+      "chromeProfiles": 1,
+      "tmpBytes": 67108864,
+      "rawBytesIncludingOuter": 8388608,
+      "outerReserveWithinRawBytes": 2113536,
+      "singleMs": 45000,
+      "cleanupMs": 15000
+    },
+    "c02OldKeepBytes": 33685504,
+    "conservativeOtherLocalsBytes": [
+      17825792,
+      18087936
+    ],
+    "declaredSumBytes": 1428553728,
+    "retainedWithinOwnRawCaps": {
+      "quickPriorBytes": 3510314,
+      "recoveryEvidenceBytes": 2810787
+    },
+    "floorsNotAddedTwice": true,
+    "isolation": "DistinctWT/ownChromeprofile/scratch/dynamicHTTPfixtures/outputroots. QuicknoPG/realcenter/auth/privateinstallation. RecoveryonlyownmarkedDB. No sharedwritecache/source or provider.",
+    "notActualRUN": true
+  }
+}

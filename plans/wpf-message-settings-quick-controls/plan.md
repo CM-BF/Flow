@@ -95,3 +95,11 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 ## C实际失败接收及DOM文本窄修 · 2026-10-07 07:13:13 UTC
 
 实际source2e71/run63457保持FAILED/INCONCLUSIVE，plain+modal真实m选值成立但后保稿基线断言失败；原六组0/PNG0。root已接受actual/cleanup和d755 `d7556b616e018ac985519b08a2954b1810029e05` SOURCE_ONLY；[原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json)。后继五值textContent+非空只统一观测语义，所有状态断言保留。新段35077/余54923；完整feature仍UNKNOWN，no重复types/direct或实际续跑。
+
+## MSGQUICK-04 C定向诊断完成 · 2026-10-07 07:27:05 UTC
+
+[完整原件及root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/README.md)：固定d755/run2c458，唯一actualexit0+DIAGNOSTIC_COMPLETE seal、6封存hash一致。Chrome154.0.8037.99中plain C与真实modal C各一次m，均目标longmodel/index1、trusted keypress/input/change各12事件。五份保留DOM文本、左右草稿、零提交和单catalog请求全部断言完成；原六组未执行/0PNG，未Apply，不推广为中文按键或popup根因证据。
+
+07:24:00.207591Z→07:24:02.757575Z，outer2549.7872499981895ms/parent与late2507ms原件保持；ceil max计2550，新段累计37627/余52373，旧30625/未用29375封闭。fixture/context已关闭、所有日志EOF/0drop；父89866/worker90396/Chrome90194 signal0均ESRCH，scratch/profile清理，资源已先归还。root限定接受diagnostic complete与cleanup，不批准完整feature。
+
+本次metadata-only，产品三源与原六组函数不改、旧306prior哈希全同，无第二次浏览器/26/noEmit/PG或个人服务操作。W05的未知起点保留，实际解除时点见outer；新W06不虚构开始时间。Main/部署/真实宿主仍未完成，任务完成NOT_COMPLETED。

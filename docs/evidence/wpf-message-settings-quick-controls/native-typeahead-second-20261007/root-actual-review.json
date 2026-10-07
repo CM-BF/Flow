@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-07T07:25:27.027566+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_NATIVE_TYPEAHEAD_C_DIAGNOSTIC_ACTUAL_AND_CLEANUP_NOT_ORIGINAL_SIX_OR_FEATURE_PASS",
+  "source": "d7556b616e018ac985519b08a2954b1810029e05",
+  "executionHead": "2c458fb97c4e77ed43ab18a2af628419a717d87d",
+  "run": "msgquick-typeahead2-20261007-071813-2f26da",
+  "actual": {
+    "startedAt": "2026-10-07T07:24:00.207591+00:00",
+    "finishedAt": "2026-10-07T07:24:02.757575+00:00",
+    "pid": 89866,
+    "pgid": 89866,
+    "exitCode": 0,
+    "elapsedMs": 2549.7872499981895,
+    "stdoutBytes": 1003,
+    "stderrBytes": 0,
+    "stdoutSha256": "784030e6a7cd150cf3b8bef58d6a74fde0245b7b6a8bb2ec696644c05eb0df47",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "terminal": {
+    "type": "terminal-seal",
+    "terminalContract": "msgquick-browser-v1-external-exit-required",
+    "state": "DIAGNOSTIC_COMPLETE",
+    "declaredExitCode": 0,
+    "sealedFiles": {
+      "binding.json": "c3356bde4ddf9903d2afafcc535d3d2746faf26d2ff5909fb93f18600530354f",
+      "result.json": "dbd20e07c7d85f989d39e680029a2dbc26ffa9a0bf2276139a1c1ef7c4bf7bfb",
+      "browser-budget.json": "69026159a6c14aa59f893a6ccdea6096aa4bd2a6d1902706e5011bb80db717eb",
+      "runtime-evidence-manifest.json": "a09c5a603ea5dfb39dbed9bc3b9073112f7ac820af953af282bc7d0d01038e89",
+      "raw/msgquick-typeahead2-20261007-071813-2f26da/native-control.json": "8913b76e8665b760d8579f5eda415aa83c2407d1a46df7b133e0189ac8ffb551",
+      "raw/msgquick-typeahead2-20261007-071813-2f26da/select-diagnostics.json": "a6db43e97129ddc9bed7ad25fa5c34daa806593f862a47e30b8fe3018e6a1819"
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 2507
+  },
+  "accounting": {
+    "priorMs": 35077,
+    "outerMs": 2549.7872499981895,
+    "lateMs": 2507,
+    "serializedParentMs": 2507,
+    "chargeMs": 2550,
+    "spentMs": 37627,
+    "remainingMs": 52373,
+    "oldClosedMs": 30625
+  },
+  "evidence": {
+    "sealedFilesVerified": 6,
+    "runtimeFilesVerified": 5,
+    "fixedGitSourcesVerified": 4,
+    "arms": [
+      {
+        "name": "plain-C-Typeahead-m",
+        "initialValue": "",
+        "finalSelectedIndex": 1,
+        "fullModelMatches": true,
+        "events": 12,
+        "trustedKeypressInputChange": true
+      },
+      {
+        "name": "actual-C-Typeahead-m",
+        "initialValue": "",
+        "finalSelectedIndex": 1,
+        "fullModelMatches": true,
+        "events": 12,
+        "trustedKeypressInputChange": true
+      }
+    ],
+    "diagnosticComplete": true,
+    "preservationAssertions": "Source d755 unchanged five DOM text baselines, draft text, zero commits and one catalog request completed before DIAGNOSTIC_COMPLETE; no separate all-six assertion.",
+    "originalChecks": 0,
+    "png": 0,
+    "retainedBytesObserved": 5934466
+  },
+  "cleanup": {
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "parentWorkerChromeFresh": [
+      {
+        "pid": 89866,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 90396,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 90194,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    ],
+    "scratchAndProfileAbsent": true,
+    "streams": {
+      "chrome.stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "chrome.stderr": {
+        "receivedBytes": 3865,
+        "keptBytes": 3865,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "worker": {
+        "receivedBytes": 65,
+        "keptBytes": 65,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      }
+    },
+    "chromeSignals": [
+      {
+        "signal": "SIGTERM",
+        "at": "2026-10-07T07:24:02.705569+00:00",
+        "target": "owned-chrome-pgid"
+      }
+    ],
+    "errors": [],
+    "pg": 0
+  },
+  "limitations": [
+    "Original six acceptance groups remain unexecuted, original failures immutable.",
+    "ASCII m typeahead proven in plain control and real React modal; no OS native popup Arrow success or Chinese native input inferred.",
+    "All feature keyboard/narrow/theme evidence still requires its separately reviewed acceptance path; no new browser gate issued by this receipt."
+  ]
+}
