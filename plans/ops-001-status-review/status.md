@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:21:18.665591+00:00 / main f5a13cbe；源码接收与个人部署分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:47:12.759951+00:00 / main b2b5612b；目标旅程与发布规则已接收，个人部署仍另行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin f5a13cbe 已接工具全文13源及2/2公开HTTP/PG结果、工程宿主初始化与后续清理证据；个人仍 backend af51/v18、Web d629/v3/c7b宿主，未随main升级。 |
+| 已集成main状态 / HEAD | main/origin b2b5612b 已含O16完整零模型旅程和SVC09发布策略；个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 看板已提供登录入口与任务时间；各组独立的小检查可并行进行，失败记录与资源清理结果分别保留。 |
-| 下一可用交付 | 新版登录恢复的发布接线与当前版本完整目标旅程并行推进；现有个人页面和历史继续保留。 |
+| 下一可用交付 | 准备新后台与网页的固定兼容组合；复用浏览器验收的有界目录计量，减少同类准备返工。 |
 | 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
 | 需用户决定 | NONE |
 
@@ -43,7 +43,7 @@
 
 ## 阻塞 / 风险 / 未验证
 
-- 4/4/4、总12为历史授权，不是当前实际人数；本次heartbeat用户上限10，实际仍服从工具cap与ready工作。工程agent槽与产品runner容量分别计量。
+- 当前用户授权每Lead 1+3、三队4/4/4总12；旧heartbeat的10仅为历史，实际人数仍服从threadlimit与ready工作，不为凑上限启动agents。工程agent槽与产品runner容量分别计量。
 - M1真实Web旅程、原生approve/cancel与双主题证据已具备；main已完成最终工程review并集成。后续协议/插件/容量和完整跨任务体验未完成。
 
 ## 下一步与handoff
@@ -487,3 +487,5 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T08:36:00Z：原O16当前主线准备已独立审查，owner按原排他120+30秒段实际启动，旧FAIL/KEEP不动。新两专库有限并行规则已落[唯一局部方法](../../docs/quality/local-validation.md#ready-validation)：最多2个普通零模型PG段，核全center/pg-boss/admin连接及集群余量、独立写资源和合计字节；浏览器总1、安装/完整构建/性能/个人服务与unknown仍排他。当前段不追溯扩权，后继ready组合由co-leads自治；未运行新负载或改变资源门槛。
 
 2026-10-07T08:35:27.281Z：O16本次当前主线零模型公开旅程1/1通过，9839ms；两个依赖child产物在机械验证后仍未接受，再由独立合成actor作准确版本CAS接受并读取统一结果。自有专库marker/连接[]/normalDROP remaining[]、3组与watchdogabsent、exact临时目录removed，实际窗口已归还Web ready Recovery；原首次FAIL/KEEP不动。原始结果待独审，不能作为真实模型规划/工程资格或恢复continuity证明。
+
+2026-10-07T08:47:12.759951+00:00：沿用户后到的明确规则恢复每Lead 1+3、三队上限12；旧10保留为历史，实际threadlimit/ready限制、2PG/总1浏览器/三队local及unknown边界均不变。O16已独审接main并归还范围，SVC09源码已审接main；真实固定artifact/兼容/个人更新尚待。资源计量由原native_center_owner进入OPS-METER01独立准备，Web当前冻结运行不改；无新增模型或为凑agent数启动空任务。
