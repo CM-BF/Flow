@@ -67,6 +67,8 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 
 已停止临时预览不直接解除真实依赖保护。下一有界候选先核 web-workspace-cache：现存 package/生成布局与平台版本能否从本机固定来源逐项恢复，以及当前、冻结执行输入、跨树链接和 donor 消费者；锁文件存在或“可重新安装”不足以证明。只读核对不安装、不删除。若证明成立，再形成精确单树的可回收/恢复方法并独审；若未知则保留并记录缺项。唯一根/.git、plan/status/review 与自有原始证据保持可读，不删除 worktree 或分支，不引新归档平台。此候选不继承既有仅 `.vite` 缓存清理许可。
 
+2026-10-07 的[三树收尾清单与交付退役条件](../../docs/quality/worktree-retirement-candidates-2026-10-07.md)继续归 OPS-001-11：Connection 尚缺消费者/完整恢复证明，TUI 的 COST donor 尚未解除，R05 文档 claim 仍有效；本轮全部 KEEP、没有回收操作。今后交付同时记录写权、实际消费者/临时预览、唯一状态与完整原始证据去向、精确恢复依据和重新运行条件；authority 迁移必须先保存核验再单次切换 registry，不能删除原树后补证，也不自动继承旧清理权限。已准备工程验证优先。
+
 - [ ] **OPS-001-15** 将既有docs/ci候选收敛成可审核的远程零模型验证片（唯一子任务OPS-CI01）：一个临时Linux job、固定版本、只选2 contracts+1真实PG/Fastify.inject公共handler检查、有界退出/清理。独审后普通docs提交/push，用户最终启用`.github/workflows`后才能运行；不自动扩OAuth权限，不把Linux证据替代本机native/UI/PTY。原本地资源线保持，最多三旧preview收尾后不再新增同类依赖回收批次。
 
 ### 2026-10-07 共享执行阻塞收口（原 OPS-001-11/12/15）
