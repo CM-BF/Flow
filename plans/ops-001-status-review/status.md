@@ -443,3 +443,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 本次解析实际结果：使用mainc0e0263d的parseStatus，OPS-001与FLOW-001均errors=[]、human.missing=[]、taskLinks.kind=big/coLead明确；两者timing.issues仅“任务开工时间未记录”，与历史UNKNOWN一致。只读解析及本次新增链接/差异核对，无工程测试/PG/服务操作。
 
 2026-10-07T04:35:02.009743+00:00：SVC06固定d379新root实际04:31:30.466启动，work37293ms/cleanup449ms；三原helper组stopped、OID1208860及marker核对、连接[]、正常DROP remaining[]，0task/provider，未动个人服务。4开发路径EPERM负控制与真实3roles/网页身份/代理通过，首失败不改；独立结果封存仍待原owner交固定包。唯一PG窗口已明确归还给Web/Mika，ENG01I仍只准备不预占。原件沿[唯一SVC06状态](../../../backend-release/plans/svc06-backend-release/status.md)与main I02接收记录，不复制私有日志。D06已审exact8组合02c88028/main，04:32两静态文件HTTP200/hash同源，不重启/刷新用户tab。
+
+2026-10-07T04:39:23.151516+00:00：按[局部验证方法](../../docs/quality/local-validation.md#ready-validation)解除实际PG与完全独立0PG浏览器的类别级互斥；各保唯一holder、原预算/清理/unknown，性能测量仍排他。原owner固定包若禁并跑先最小修订，未增加agent、模型或个人操作。当前SVC06限定结果已main a040a364；ENG01I仍修正PG总截止后再独审，不预占窗口。
