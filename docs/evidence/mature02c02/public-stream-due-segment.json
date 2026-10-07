@@ -1,0 +1,180 @@
+{
+  "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529",
+  "startedAt": "2026-10-07T04:59:38.218939+00:00",
+  "budget": {
+    "totalSeconds": 300,
+    "commands": 2,
+    "childSeconds": 45,
+    "TMPBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "combinedFloorBytes": 4053008384
+  },
+  "runs": [
+    {
+      "name": "tests",
+      "startedAt": "2026-10-07T04:59:38.262229+00:00",
+      "freeBefore": 25170223104,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/public-stream-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/runner/src/native-harness/codex/stream.test.ts",
+        "apps/runner/src/native-harness/codex/exchange.test.ts",
+        "apps/runner/src/engineering/native-writer.test.ts",
+        "-t",
+        "scheduled flush|keeps source|enforces total|publishes session|coalesces receive|keeps the extracted ordinary|does not await a pending stream|maps a native settled failure",
+        "--reporter=json",
+        "--outputFile=/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-due-oadbxdxy/vitest.json"
+      ],
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-due-oadbxdxy",
+        "dev": 16777234,
+        "ino": 123504247,
+        "removed": true,
+        "sampleEntries": 8,
+        "sampleLogicalBytes": 12449
+      },
+      "supervisorReturnedAt": "2026-10-07T04:59:40.097827+00:00",
+      "pid": 95067,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1835,
+      "observed_bytes": 114,
+      "retained_bytes": 114,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-due-tests.stdout",
+          "bytes": 114,
+          "sha256": "06ea68b315b1523928b7516a6b10b47f9f5c1451554e30e7ff0e82c6530bc6db"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-due-tests.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-due-tests.vitest.json",
+          "bytes": 11517,
+          "sha256": "681577a73c3df6d87fd465f3d145c04c206e2337903641b4d4c0fd7e03c12591"
+        }
+      ],
+      "selection": {
+        "numTotalTests": 39,
+        "numPassedTests": 15,
+        "numFailedTests": 0,
+        "numPendingTests": 24,
+        "success": true
+      },
+      "failedAssertions": [],
+      "resourceComplete": true
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T04:59:40.100306+00:00",
+      "freeBefore": 25169084416,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/public-stream-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-due-l01zjqos",
+        "dev": 16777234,
+        "ino": 123504311,
+        "removed": true,
+        "sampleEntries": 4,
+        "sampleLogicalBytes": 352
+      },
+      "supervisorReturnedAt": "2026-10-07T04:59:41.924620+00:00",
+      "pid": 97135,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1824,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/public-stream-due-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/public-stream-due-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true
+    }
+  ],
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "rawArtifactBytes": 11631,
+  "runtimeStatus": "CLOSED",
+  "elapsedBeforePersistence": 3.722340583917685,
+  "updatedAt": "2026-10-07T04:59:41.925943+00:00",
+  "endedBeforePersistenceAt": "2026-10-07T04:59:41.925939+00:00",
+  "activeTMPPeak": "UNKNOWN",
+  "toolCompletion": {
+    "exitCode": 0,
+    "waitSeconds": 1.0542e-05,
+    "observedAt": "2026-10-07T05:01:07.548017+00:00",
+    "wholeExternalWall": "UNKNOWN; wait duration is not the full tool invocation"
+  }
+}
