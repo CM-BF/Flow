@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T04:32:08.460355+00:00",
+  "method": "GET two static dashboard assets, no snapshot/browser/user-tab reload",
+  "observations": [
+    {
+      "path": "architecture-data.js",
+      "http": 200,
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+      "sameAsMainSource": true
+    },
+    {
+      "path": "architecture.js",
+      "http": 200,
+      "bytes": 8424,
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60",
+      "sameAsMainSource": true
+    }
+  ]
+}
