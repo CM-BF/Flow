@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T13:24:09.729278+00:00",
+  "decision": "PENDING_INDEPENDENT_READONLY_DIAGNOSIS_REVIEW",
+  "observationAt": {
+    "start": "2026-10-07T13:22:52.222Z",
+    "end": "2026-10-07T13:22:52.291Z"
+  },
+  "facts": {
+    "version": 1,
+    "keys": [
+      "assignments",
+      "inFlight",
+      "version"
+    ],
+    "assignmentsLength": 0,
+    "inFlight": {
+      "isNull": false,
+      "isUuid": true,
+      "type": "string",
+      "sha256": "d52b4dadbb2811c4f5a75105294d75d3cafa56f8fac0210bba57883feebd07ae"
+    },
+    "bytes": 80,
+    "sameOperationBeforeAndAfter": true,
+    "maintenance": {
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "version": 19,
+      "state": "draining",
+      "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+      "activeAttempts": 0,
+      "uncertainAttempts": 0,
+      "stopPermitted": false
+    }
+  },
+  "firstCause": "Strict idle correctly rejected a nonnull UUID intent; no schema mismatch or nonempty assignments observed. Original R4 did not retain this detail; this is a new separately authorized read-only observation.",
+  "fixedSource": [
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    }
+  ],
+  "limits": [
+    "Admission UUID/body and credentials/config contents are not copied; only requested shape/digest/identity retained.",
+    "A nonnull intent marks uncertainty before a definite claim response. Center active0/uncertain0 does not manufacture that missing response.",
+    "Public same-operation owner-http resume can return center to accepting but leaves journal unresolved, so not proof of actual admission recovery. No resume sent.",
+    "Original host maintainPreview resume requires ready-paused; cannot use it directly from current draining operation.",
+    "No new retirement authorization: previous operation/intent-specific authorization does not cover this current hash. Continuing update needs separate adjudication of this exact intent and its protected records, confirmed runner stop and one same-operation maintenance fence.",
+    "Original drain900s ends2026-10-07T13:34:53.793Z; this read does not reset that boundary."
+  ],
+  "execution": {
+    "pid": 77877,
+    "exit_code": 0,
+    "elapsed_ms": 426,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "first_failure": null
+  },
+  "providerQueries": 0,
+  "journalWrites": 0,
+  "serviceActions": 0,
+  "recordMutationBoundary": "Only original public read-only status transient preview lock lifecycle; no maintenance state change or private persistent record edit."
+}

@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T13:24:09.729278+00:00",
+  "files": [
+    {
+      "path": "RESULT.md",
+      "bytes": 1410,
+      "sha256": "5d948f550fd1ebe62db69ebd3f69ece727e49594a50b5373c50d33f81d5f7849",
+      "dev": "16777234",
+      "ino": "124160441",
+      "mode": "0o644"
+    },
+    {
+      "path": "conclusion.json",
+      "bytes": 3218,
+      "sha256": "805428ad55216e687248bda63d86d31e2c92e2e60a13c17947076eb0707e3912",
+      "dev": "16777234",
+      "ino": "124160440",
+      "mode": "0o644"
+    },
+    {
+      "path": "invocation.json",
+      "bytes": 684,
+      "sha256": "047d993652d8708c5655aa6ed94943c555b1f1696fdc849e0cc5318d075deb80",
+      "dev": "16777234",
+      "ino": "124160213",
+      "mode": "0o600"
+    },
+    {
+      "path": "observation.json",
+      "bytes": 1595,
+      "sha256": "0bc3b427a054804cd21a0651866baac5c7c77ac3167d466274a8076775417781",
+      "dev": "16777234",
+      "ino": "124160217",
+      "mode": "0o600"
+    },
+    {
+      "path": "outer.json",
+      "bytes": 1348,
+      "sha256": "0a2b8d954ad88051fcd5af5b674a47a8aef8f0c16ca9308776da7fabeb90511c",
+      "dev": "16777234",
+      "ino": "124160218",
+      "mode": "0o600"
+    },
+    {
+      "path": "read.mjs",
+      "bytes": 4100,
+      "sha256": "2fb341d1235e2b275c12cdf4e006f11d1915b737602042247ae9a5568563a6ea",
+      "dev": "16777234",
+      "ino": "124160210",
+      "mode": "0o644"
+    }
+  ],
+  "bytes": 12355,
+  "source": [
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "commit": "af51c621696230fbced12227670f014ca73bd8a1",
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    }
+  ],
+  "scope": "Read-only diagnosis, not execution approval; private plaintext not archived",
+  "R4ResultTarget": "9f004c6a",
+  "noFurtherPersonalProbe": true
+}

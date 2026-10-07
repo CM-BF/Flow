@@ -1,0 +1,33 @@
+{
+  "pid": 77877,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 426,
+  "stdout": "{\"outcome\":\"same-operation-readonly-observed\",\"admission\":{\"bytes\":80,\"keys\":[\"assignments\",\"inFlight\",\"version\"],\"version\":1,\"assignmentsLength\":0,\"inFlight\":{\"isNull\":false,\"isUuid\":true,\"type\":\"string\",\"sha256\":\"d52b4dadbb2811c4f5a75105294d75d3cafa56f8fac0210bba57883feebd07ae\"},\"strictIdle\":false},\"before\":{\"runnerId\":\"d22f4df2-8242-49f4-a1b4-77f8f08611ef\",\"version\":19,\"state\":\"draining\",\"operationId\":\"e6550b3c-1f67-4c2c-869d-e84d5e838113\",\"activeAttempts\":0,\"uncertainAttempts\":0,\"stopPermitted\":false},\"after\":{\"runnerId\":\"d22f4df2-8242-49f4-a1b4-77f8f08611ef\",\"version\":19,\"state\":\"draining\",\"operationId\":\"e6550b3c-1f67-4c2c-869d-e84d5e838113\",\"activeAttempts\":0,\"uncertainAttempts\":0,\"stopPermitted\":false}}\n",
+  "stderr": "",
+  "observed_bytes": 720,
+  "retained_bytes": 720,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

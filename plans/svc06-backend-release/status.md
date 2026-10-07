@@ -20,12 +20,12 @@
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | R4事实/预检/旧列摘要/bootstrap完成；operation RUNNER_ADMISSION_NOT_IDLE，refresh/checkpoint/resume未运行；旧失败保持 |
-| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；剩余维护尚未运行。 |
+| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；R4 bootstrap已进入draining，refresh/resume未运行；实际结果待独审。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 后台已停止接收新任务；本地空闲门未通过，刷新尚未开始。已保留所有记录并归还运行窗口。 |
 | 下一可用交付 | 核清本地空闲门拒绝的依据，沿现有维护操作完成安全续接。 |
-| 当前阻塞 | ACTIVE: 本地admission未满足严格空闲条件，原因细项尚无持久证据；不得刷新或重放bootstrap。 |
+| 当前阻塞 | ACTIVE: 已确认本地存在未决claim intent；中心已drain，尚无本次退役或恢复接单执行依据，不得重放bootstrap。 |
 | 需用户决定 | NONE |
 | Review | reader修复491/c51已独审；R4实际部分结果待Lead唯一独审，原R2/R3批准与FAIL/KEEP保持。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
@@ -406,3 +406,7 @@ Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原
 ## 2026-10-07T13:21:45.905888+00:00：R4实际停止与归还
 
 [唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/RESULT.md)：operator21477ms/exit1，facts/preflight/history/bootstrap已完成；真实draining19/op e6550b3c-1f67-4c2c-869d-e84d5e838113，active0/uncertain0。本地strict admission门在operation报RUNNER_ADMISSION_NOT_IDLE，原因细项未持久，不猜成格式变化或实际有工作。refresh/hold/resume均0；当前后台尚未更新，不能重放已消费bootstrap。六直属PID absent/双EOF，无pending invocation；窗口已报Lead归还。没有追加个人probe，未取消任务或清journal；新结果待独立审查。
+
+## 2026-10-07T13:24:09.729278+00:00：一次只读诊断确认未决intent
+
+[原件与边界](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/RESULT.md)：2026-10-07T13:22:52.222Z→2026-10-07T13:22:52.291Z，426ms/exit0/owned组absent/双EOF。admission80B/version1/assignments空/inFlight非null UUID（仅digest）；前后同op/draining19/active0uncertain0。不是schema错误；公开resume也不自动清本地未决intent，因此不冒实际接单恢复。没有journal写入/服务动作/模型调用。原900s截止13:34:53.793Z不变；当前仅等待此精确intent处置语义，已归还运行窗口。

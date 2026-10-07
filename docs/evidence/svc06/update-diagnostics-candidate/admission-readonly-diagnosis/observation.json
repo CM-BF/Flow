@@ -1,0 +1,54 @@
+{
+  "startedAt": "2026-10-07T13:22:52.222Z",
+  "outcome": "same-operation-readonly-observed",
+  "scope": "One exact admission file, two original read-only public status calls; no journal mutation or tasks",
+  "before": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 19,
+    "state": "draining",
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "stopPermitted": false
+  },
+  "admission": {
+    "path": "/Users/citrine/.flow-personal/runner/89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+    "identity": {
+      "dev": "16777234",
+      "ino": "123285855",
+      "uid": 501,
+      "mode": 384,
+      "nlink": 1,
+      "bytes": 80,
+      "mtimeMs": 1791329485261.6858,
+      "ctimeMs": 1791329485281.3052
+    },
+    "bytes": 80,
+    "sha256": "cad3b336e5c36bf584eadc516625cb0c24be6ff1bda71680975ed896f6b23c31",
+    "keys": [
+      "assignments",
+      "inFlight",
+      "version"
+    ],
+    "version": 1,
+    "assignmentsIsArray": true,
+    "assignmentsLength": 0,
+    "inFlight": {
+      "isNull": false,
+      "isUuid": true,
+      "type": "string",
+      "sha256": "d52b4dadbb2811c4f5a75105294d75d3cafa56f8fac0210bba57883feebd07ae"
+    },
+    "strictIdle": false
+  },
+  "after": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 19,
+    "state": "draining",
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "stopPermitted": false
+  },
+  "endedAt": "2026-10-07T13:22:52.291Z"
+}
