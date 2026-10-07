@@ -1,0 +1,12 @@
+{
+  "target": "de6af442b03533d48e5cdca7b9d6e2bde4229f2f",
+  "packet": "289ce92d30a18c38c5c7a30f99080e5b0a9a80bb",
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "at": "2026-10-07T13:46:41Z",
+  "verdict": "SOURCE_PREPARATION_CHANGES_REQUESTED",
+  "p1": 0,
+  "p2": 1,
+  "finding": "Whole ambient environment inherited by git/Python/Node; require explicit env and Python isolation.",
+  "scope": "New caller/input/outputscope, not old approved modules or actual PG.",
+  "testsRunByReviewer": false
+}

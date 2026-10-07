@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:43:41.265Z |
+| 最近更新 | 2026-10-07T13:47:34Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -22,9 +22,9 @@
 | 实现目标 | de6af442b03533d48e5cdca7b9d6e2bde4229f2f |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, experiments/runner-capacity/mixed/process.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 已补齐固定实验输入、迁移文件与外层调用，下一次运行的输出范围已领取；准备包待窄审。 |
+| 当前产出 | 运行输入已固定；正在修复独审发现的外层环境隔离问题，并补输出截止时间反例。 |
 | 下一可用交付 | 完成外层门禁的独立审查和必要纯反例后，提交一次真实对照实验的运行条件。 |
 | 当前阻塞 | ACTIVE：新增外层调用尚未验证；真实性能窗口与最新完整资源合计未授权。 |
 | 需用户决定 | NONE |
@@ -198,3 +198,7 @@ chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPR
 固定source/meta新增不足2MiB；clean-code复核单一监督/资源所有者、首次错误与UNKNOWN保留，未来source导出/运行须新许可。原raw/已审45包保持；taskstartUNKNOWN、六TODO及历史main不变。dashboard仅更新本唯一status，不新GET；11:57旧来源观察不冒本次同步。
 
 2026-10-07T13:43:53Z 状态校验：现有parseStatus errors=[]/human.missing=[]/implementation.errors=[]；timing仅原任务开工UNKNOWN提示，不补造。新增caller若已请求launch后异常保持FAIL_OR_UNKNOWN，不把可能spawn记NOT_RUN。此静态修订未执行入口；本段0工程测试/PG/HTTP/服务。
+
+## 2026-10-07T13:47:34Z 外层环境窄修段
+
+新12min源码段，自fresh289ce clean与claim508f v3/6全部身份核验后开工。db13:46:41对原de6/289ce指出唯一P2：整环境继承；旧包/675输入/33SQL/raw不改。本段只explicit环境+固定Git/Python隔离及CLI输出后绝对deadline判定，准备合成env/纯clock反例；ordinary尚未授权、0工程执行/PG/HTTP。复用本地find-skills、codebase-design与固定clean-code；不读取/输出其它真实环境或凭据。
