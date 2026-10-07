@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:59:16.198Z / main49a9c5feb；211来源登记候选，实际仍208待发布 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:02:07.575Z / main/origin69a71e3d9；211来源已实际载入 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | 本次新增三来源尚未集成；历史208来源已部署，TIMING02功能已main2c96618a1但本次看板换载未验。 |
+| 已集成 main 状态 | 本次三来源登记已main69a71e3d9；2026-10-07T22:01:36.229Z实际4320读取211来源。TIMING02源码同时换载，原ACCESS公开配置保持。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 已补齐任务时间阅读、会话工作区和插件验证的唯一进度入口，待审查发布。 |
-| 下一可用交付 | 看板显示这三项真实负责人、当前进展及有据的时间。 |
+| 当前产出 | 看板已显示任务时间阅读、会话工作区和插件验证三项的真实进度与已有时间。 |
+| 下一可用交付 | 本次来源更新已交付；后续产品验收与完成时间由各原负责人维护。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -282,3 +282,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T21:59:16.198Z：按原D05 v6精确范围补三项唯一来源；仅登记和链接核对，不改原owner status、不推断历史时间，0工程测试/个人操作。候选审查与实际部署另记。
 
 2026-10-07T22:01:03.629Z：native_center_owner对固定d931003d8登记差异独立APPROVED/0P1P2，旧208逐字保持，211候选待main与实际换载；见[限定登记审查](../../docs/evidence/d05/three-canonical-211-review.json)。
+
+2026-10-07T22:02:07.575Z：三项登记独审后受控接收main69a71e3d9，22:01:36.229Z实际4320为211来源、三项current/无source issues，时间按owner原字段；只替换已核自有50158→57950，ACCESS公开配置保持、0token/浏览器/个人操作。[实际回执](../../docs/evidence/d05/three-canonical-211-live.json)。本次阶段结束22:01:36.306Z，不填补D05历史首次开工。
