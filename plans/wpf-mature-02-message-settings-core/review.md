@@ -78,3 +78,6 @@ PENDING。当前source-only准备，0工程检查/PG；历史ea276批准不继�
 
 
 本轮固定source aa74137d84cd7acc45ec23c2ff22128ce944a410，review-ready.json绑定13个源码/支持项与240静态闭包。types2/2/0、collect1与post-alias NOT_RERUN分列；仅source/有限结果交Mika，0PG，不预写APPROVED。
+
+
+2026-10-07T13:22:23.694329+00:00 final collect addendum：types0+list5、0hooks/PG，前四raw不变；只caller门槛按449的显式第5次允许4→5。fixedsource aa741不变，source review仍PENDING_MIKA。

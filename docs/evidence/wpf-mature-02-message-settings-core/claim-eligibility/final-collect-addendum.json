@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T13:22:23.694329+00:00",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "originalPacket": "8d150e0ba2637267b962075314f417f6dcce3cfd",
+  "callerBudgetOnlyCommit": "4490474a",
+  "callerDelta": "local.py gate 4\u21925, explicit Mika final collect; original wall/cumulative/raw/TMP unchanged",
+  "originalFourAttemptsEqual": true,
+  "finalTypesExit": 0,
+  "finalCollectExit": 0,
+  "collectedTitles": [
+    "v1 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity",
+    "v2 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity",
+    "v3 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity",
+    "keeps a resumed legacy session on its original runner while the opt-in runner claims later work",
+    "does not impose Claude message settings on an ordinary fixture task"
+  ],
+  "hooksRun": 0,
+  "behaviorCasesRun": 0,
+  "PG": 0,
+  "provider": 0,
+  "attempts": 5,
+  "rawBytes": 79244,
+  "receiptElapsedSum": 7.967196375015192,
+  "allTemporaryRemoved": true,
+  "allOwnedAbsent": true,
+  "record": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/local.json",
+    "bytes": 90244,
+    "sha256": "8ad6661a74968dca3e3589f5be34bd22cc74b2d713aa67f0c1c18bbf8ca5b385"
+  },
+  "review": "PENDING_MIKA",
+  "actualPGReadiness": "NOT_OPEN; full actual caller/closure/admission still pending",
+  "ordinary": "RETURNED_NO_PENDING_LAUNCH",
+  "STOP": "all source/test/config frozen; only final metadata commit pending"
+}

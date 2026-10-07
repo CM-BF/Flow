@@ -270,6 +270,71 @@
       "rawSha256": "5fa71c4009faeb798c9fccbf86c5c6dad8b30f8f6a932a1664420e3915dfc22c",
       "finishedAt": "2026-10-07T13:18:30.192258+00:00",
       "elapsedBeforeReceiptSeconds": 0.9925580830313265
+    },
+    {
+      "label": "collect",
+      "startedAt": "2026-10-07T13:21:27.509663+00:00",
+      "freeBeforeBytes": 21677985792,
+      "floorBeforeBytes": 7492599808,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-m02-claim-ezhka1ii",
+        "dev": 16777234,
+        "ino": 124159564,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json"
+      ],
+      "process": {
+        "pid": 24607,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1509,
+        "observed_bytes": 1426,
+        "retained_bytes": 1426,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "collect",
+        "rawComplete": true
+      },
+      "raw": "[\n  {\n    \"name\": \"v1 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/apps/server/src/execution-profiles/message-settings-claim-pg.test.ts\"\n  },\n  {\n    \"name\": \"v2 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/apps/server/src/execution-profiles/message-settings-claim-pg.test.ts\"\n  },\n  {\n    \"name\": \"v3 filters old unpinned and missing-snapshot work before LIMIT and preserves opportunity identity\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/apps/server/src/execution-profiles/message-settings-claim-pg.test.ts\"\n  },\n  {\n    \"name\": \"keeps a resumed legacy session on its original runner while the opt-in runner claims later work\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/apps/server/src/execution-profiles/message-settings-claim-pg.test.ts\"\n  },\n  {\n    \"name\": \"does not impose Claude message settings on an ordinary fixture task\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/apps/server/src/execution-profiles/message-settings-claim-pg.test.ts\"\n  }\n]\n",
+      "rawBytes": 1426,
+      "rawSha256": "8204ef8706854cbc8a96434b4abe06786703f1a42b302babba3a926d5090485d",
+      "finishedAt": "2026-10-07T13:21:29.019923+00:00",
+      "elapsedBeforeReceiptSeconds": 1.509415667038411
     }
   ],
   "unknown": false,
@@ -287,5 +352,5 @@
   "native": 0,
   "tarPlanned": 0,
   "wholeExternalWall": null,
-  "updatedAt": "2026-10-07T13:18:30.192271+00:00"
+  "updatedAt": "2026-10-07T13:21:29.019935+00:00"
 }

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:19:54 UTC / fixed main 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 13:22:23 UTC / fixed main7524（本轮产品未集成） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | source固定；源码/检查原件已固定推送8d150e0b；最终metadata提交后fresh核clean |
+| 工作树dirty状态 | 固定产品aa741、追加collect原件完成；最终commit/push后fresh核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
-| 检查状态 | FAILED aa74137d84cd7acc45ec23c2ff22128ce944a410：修后focused types0；collect1后alias修正未重跑；5case源码/0case执行；原types2/2保留 |
+| 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：focused types0+精确list5；0hooks/PG/行为执行，原types2/2与collect1保留 |
 | 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
 | 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+prepared tests，SOURCE_REVIEW_PENDING / PG_NOT_OPEN |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新旧执行后端的领取资格已实现，修后类型通过；专库用例收集还待修正映射后的确认 |
-| 下一可用交付 | 源与现有检查证据交独审；补一次精确收集后再固定真实专库入口 |
+| 当前产出 | 新旧执行后端共存的领取资格改动已备齐，类型检查与五个专库用例的收集通过 |
+| 下一可用交付 | 完成独立源码审查并固定真实专库执行入口；实际SQL资格验证尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | PENDING — Mika承担本轮固定source/有限结果只读审；历史批准不扩大 |
@@ -133,3 +133,6 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 | 主线集成 | NOT_INTEGRATED | 仅本轮差量 |
 | 部署 | NOT_DEPLOYED | 未操作个人服务 |
 | 完整任务完成 | NOT_COMPLETED | 旧6项历史完成保留，新资格验证/接收开放 |
+
+
+2026-10-07T13:22:23.694329+00:00：Mika在原截止/累计120s不变下追加最后一次exact list；第五child exit0收集恰5case，0hooks/行为/PG/provider。原四attempt逐JSON对象与8d150完全相同，raw全部保留；全5child receipt前累计7.967196375015192s/raw79244B，非wholewall/峰值。最后TMP dev16777234 ino124159564同identity删除absent。已向Mika/db明确ordinary RETURN，0待launch；[最终追加证据](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/final-collect-addendum.json)。原review-ready 13bindings中只有local.py预算4→5按449单行替换，产品/测试/Vitest config始终aa741。此时停止本段全部工程写入，保claim等待Mika独立source审及后续实际入口准备。
