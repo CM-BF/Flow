@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T00:30:53.540445+00:00",
+  "kind": "PLAN_INDEX_STABLE_NAVIGATION_INTAKE",
+  "base": "da6db8db94d321b9c2af7b56d577eb2f86839a63",
+  "target": "9cf988c42e3ab13fcbb91e5a8391be01926011a7",
+  "files": [
+    {
+      "path": "plans/README.md",
+      "bytes": 20319,
+      "sha256": "2c90675740bdbb63b388646a11006e481ccbe8116525ac32034cd14e983a8ab3"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 69392,
+      "sha256": "b6c8bdff058a126413cb4aeb241873a3313ae33374890f9bb181d85ad42aba73"
+    },
+    {
+      "path": "docs/quality/plan-index-navigation-2026-10-07.json",
+      "bytes": 3427,
+      "sha256": "0bbd434a8260508a0ae04126a1397da56e139598fb6f27e380a4625a76ac7d22"
+    }
+  ],
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "result": "APPROVED_DOCS",
+    "findings": [],
+    "scope": [
+      "plans/README.md",
+      "plans/ops-001-status-review/status.md",
+      "docs/quality/plan-index-navigation-2026-10-07.json"
+    ],
+    "checks": "93 prior links retained; 3 canonical repairs; 101 targets exist; single status authority; long-term baseline and open acceptance preserved; claim transfer correct"
+  },
+  "runtimeChanges": false,
+  "engineeringTests": 0,
+  "resourceSamples": 0,
+  "cleanup": false,
+  "ciOrAutomationChanges": false,
+  "resourceBlocker": "Unchanged; original CI user question not repeated"
+}
