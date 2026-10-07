@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T23:26:32.896Z：actual空，唯一NEXT `VAR-TRANSACTION-PG-V2-20261007-ONCE`，Mika/architecture_read，fixed8c5584edd/claimcb699v2 exact24。冻结完整floor 11,869,552,640B，latestStart 2026-10-07T23:30:32.896Z；原180s=110work+60cleanup+10final，17PG+16headroom（available≥33），1HTTP/0Chrome/provider。按queue-ready f8e607a/manifest f0c77f/caller53e5f固定输入同调用fresh一次；未START不冒占用，失败0childSTOP不重试。新增168,820,736B运行规划+2MiB结果封存各一次，1GiBreserve不重加。Arc23:20:56完整RETURN/1of4失败已封存，新4MiB仅分类源码修正；779仍NOT_READY，真正就绪后紧邻本窗RETURN优先。健康个人accepting24三role保持。**
+**即时调度 2026-10-07T23:33:16.629Z：actual空，唯一NEXT `SVC06B-E15-WEB779-PUBLICATION-20261007-ONCE` 给Original/assignment_review原operator。fixed6491/dd6dd、锁修包83dcde0b（20517B/21bindings）已独审；冻结完整floor 12,240,683,008B，latest初次START 2026-10-07T23:37:16.629Z。按原recipe7392bb先transfer779，仅确认成功才CAS d629/v3→779/v4；两OPS14各30s+0.5TERM+2reap/只读PG≤1/0Chrome/provider/task/reload/服务stop，512MiB+2MiB新增一次，live1GiB/固有2.5GiB不降。e15/880060健康三role保持，旧04FAIL/EOF未知与4MiB仍保。只填既有许可资源/ready/inputhash字段，同调用fresh一次；未知停不重试。ContextREADY排其RETURN后，Arc/VAR仅已计普通源段。**
 
 **Original 同ID防重派提醒：** FLOW-001 `T04-DEPENDENCY-READ-01` 在main7cbcf04仍pending/未领取的旧文案应在唯一父metadata安全点改为 GDEP4511/b01已审SOURCE_STOP待main；沿 `GDEP01MainIntake` 四叶接收与原status路径，不新派任务或复跑PG。
 **个人准入来源：** 最终548490/00dcd已独审通过，准备基线16,913,137,664B加本次512MiB+2MiB共538,968,064B，形成已消费17,452,105,728B；live1GiB保护不另重复计。22:15:59.699选择、22:17:23.713320实际启动，历史准备/gate不改。
@@ -13,11 +13,11 @@
 
 **普通源边界：** Arc c34dv2 exact18，第三浏览器失败已972a封存，新的10min/4MiB只修测试URL分类。Context25d7v3 exact8已3655源码STOP，原23:29:09截止内仅≤64KiB审查归档；不因准备包产生actual许可。Mika client79ea已审封存、新4MiB及旧16MiB池均已归零；VAR新实际与2MiB结果seal另列。App/session双基线未组合验收。
 
-**候选顺序：** 唯一NEXT是页首VAR五项事务验证，尚未START；779锁修NOT_READY，真正READY后紧邻当前已消费窗口归还优先。Arc仅新4MiB分类源码修正；Context候选SOURCE_STOP等待独审；K01排VAR/当前Web验收之后，不自动授窗。
+**候选顺序：** 唯一NEXT是页首779两阶段发布，尚未START。Context挂载0c8b准备独审齐，排此RETURN后；Arc4MiB分类源码正在实施，VAR3MiB预检修正已syntax通过待独审/封存，两者无实际许可；K01在已有Web/VAR实际后继排队。
 
-**未来增长对账：** cd27与2515旧构建各2,317,352,960B已按原owner无后继writer证明及固定继承映射前向移除，residual仍8,806,203,392 UNKNOWN且原DB未知保留；未重复扣R1/R2/R3或21时后继构建。当前VAR选择冻结完整11,869,552,640B，含168,820,736运行规划+2MiB结果封存、原4MiB锁修UNKNOWN、Arc4MiB新分类段与Context64KiB尾。健康个人R2旧538MiB未来项和两旧ordinary9,568,256各仍待原owner精确分类。所有历史已消费gate不改、KEEP不删除。
+**未来增长对账：** 已证旧cd27/2515构建各2,317,352,960B去future后，residual仍8,806,203,392 UNKNOWN并保原DB未知。当前779选择冻结完整12,240,683,008B；新增512MiB+2MiB只计一次，固有2.5GiB/live1GiB不降。Context尾与Mika AV client已STOP去future；Arc新4MiB、VAR新3MiB和Original锁修旧4MiB未知仍列。健康个人R2旧538MiB及两旧ordinary9,568,256各尚待原owner精确分类。历史gate/失败/KEEP不改。
 
-**Original 单叶写权交接请求（不阻779）：** Mika23:03 fresh仍见 assignment_review 的95f47f5c v8持有 `apps/runner/src/runtime.ts`；d813 clean与个人固定产物不代表已交权。请原owner若不再需写，STOP→原version原子amend只移除此literal并给receipt；若仍需写，回具体改动与解除条件。此source交接不等个人结果独审、不需PG。Mika X01-VERIFIER-RUNTIME01据真实receipt才新封套/独立WT/fresh take，现pool0未开工，不造临时模块或重复权限。
+**Original 单叶写权交接请求（不阻779）：** Mika23:32:53 main84c25bd fresh仍只有REQUEST；X01-RUNTIME后继仅需runtime/config/tests，已审client/execution不再重做。请原95fv8 assignment owner对 `apps/runner/src/runtime.ts` 立即给具体remaining-write/解除条件，或STOP→原version原子amend只移除此literal并回receipt；后继凭真实receipt再新WT/freshclaim。此写权交接独立于779资料/部署，不阻当前已选发布；闲worker不能自行受控main接收，须Original明确唯一integration权责。
 
 **个人恢复事实：** e15/880060构建、cold三角色初始化、C4四报告均通过；首次个人操作已导入e15+四报告，但rebind身份拒绝且未写选择，未refresh/resume/发布779，活动22:20:13归还，held23与旧三role停止保持。后继修正 continuation 已独审 READY 并选择，最新启动回执边界见页首；不能重放旧900s或已消费导入。
 

@@ -108,3 +108,5 @@ GO已明确原共享浮层片进入下一执行位，设计研究停止扩展：
 沿原 MATURE01-03 接收[本次恢复弹窗选定结果](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-actual-review.json)：cookieRead/themes390与双390图通过，fullJourney=false，Picker未运行。GO目视认可该限定结果；[草稿内容层级后继](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json)要求先看到草稿/会话/保存时间，Restore主、Refresh次，技术ID和精确时间留现有详情。仅在个人恢复后合法独立scope实施，不扩大现VISUAL exact8、不倒改本次PASS。
 
 既有 RELEASE / MATURE01 / REQ19 的[779接续材料核对](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-779-post-recovery-intake.json)确认artifact、四report/16checks与C4实际审已齐。个人首次恢复partialFAIL不触发重建779或重验C4；后续只由原SVC06B依成功恢复实际backend/policy/version形成fresh发布输入，显式激活并核served779身份。尚无成功恢复receipt，不能猜expectedVersion，也不能把fixture或个人报告导入当网页已发布。
+
+Arc桌面阶段图与失败后保留规则复用[工作区既有验收补充](../wpf-mature-05-workspace/plan.md#既有arc阶段视觉证据2026-10-07-go补充)，早图独立观察不代最终窄屏双主题或四组完整通过；不增779前置。
