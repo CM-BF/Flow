@@ -11,6 +11,7 @@ const sourceDigest = 'a'.repeat(64), binding = { slot: 'planner', assignment: { 
 function input() { return { prompt: 'Synthetic bounded diagnostic', options: { model: 'synthetic-no-query', maxTurns: 4, maxBudgetUsd: .2,
   abortController: new AbortController(), permissionMode: 'dontAsk', strictMcpConfig: true, tools: [], allowedTools: [...GRAPH_TOOLS],
   disallowedTools: ['Bash', 'Write', 'Edit', 'WebSearch', 'WebFetch', 'Agent', 'Task', 'Skill'], settingSources: [], plugins: [], skills: [],
+  hooks: { PreToolUse: [{ hooks: [async () => ({ hookSpecificOutput: { permissionDecision: 'deny' } })] }] },
   thinking: { type: 'disabled' }, canUseTool: async () => ({ behavior: 'deny' }), mcpServers: { 'flow-graph': { type: 'sdk', name: 'flow-graph' } },
   settings: { enabledPlugins: {}, autoMemoryEnabled: false, syncClaudeAiPlugins: false, syncClaudeAiSkills: false,
     disableBundledSkills: true, disableSkillShellExecution: true, claudeMdExcludes: ['**'] } } }; }
