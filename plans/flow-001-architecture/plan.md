@@ -621,3 +621,7 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 沿既有REQ-04/P01与TUI001-08，GO只读固定main7272151b补充：反向A2A bridge更新仍从cursor0重新映射并先读所有reference正文后筛artifact；包装取消未传入支持signal的detail，events仍无signal，底层默认15秒，不称无限泄漏。普通detail是新UUID持久记录、native完整材料在另一表，不能据此泛化为所有投影永不变化。复用上段公开Interface有界测请求/字节/取消，保留[GetTask完整产物](https://a2a-protocol.org/v1.0.0/specification/#313-get-task)与[订阅初始Task及有序更新](https://a2a-protocol.org/v1.0.0/specification/#316-subscribe-to-task)、授权和unknown；原P03去history不重复，未测前不预设缓存或新框架。
 
 同一TUI001-08后继保留非聊天界面的观察生命周期：controller离开conversation已停止TurnObservation，但schedule仍只核connected/closed/selected，help/settings/profiles可能继续刷新原会话/turns/已开启queue。此为未测源码候选，合并原有headless有界投影验收：非聊天界面无无用读取、返回恢复观察，后台任务继续、未知发送不改变。由原TUI owner后续fresh范围与局部fixture测量，不扩大当前发布或消息设置writer。两项均NOT_RUN，无新task、测试、模型或运行预算。
+
+### O16 认证环境的单因素候选（2026-10-07，仅研究）
+
+[Hermes仓库问题29015](https://github.com/NousResearch/hermes-agent/issues/29015)报告macOS Claude2.1.145在私有HOME下出现false/none/firstParty，普通HOME有登录；这是旧版本用户复现，不能作为本机2.1.290根因。本次已实际打开来源，未运行。现O16“公开接口不区分下层存储结果”仍有效，但不意味着所有环境因素已穷尽。原owner在发布收口后可设计同一固定binary、其余配置与Keychain服务命名不变、仅HOME因素对照的零模型公开四字段观察；先明确正常身份读取和可能初始化写入边界，再在合法范围决定是否执行。不得Keychain/config symlink、读取或复制凭据、换账户、登录、第四次SDK query；不把参考workaround当本项目授权。原R1/R2/R3失败、累计3、未知费用和KEEP全部保留；此候选NOT_RUN、不新建auth任务。
