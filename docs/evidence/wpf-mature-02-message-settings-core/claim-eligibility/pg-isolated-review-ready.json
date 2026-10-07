@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T13:42:23.488Z",
+  "source": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+  "testSource": "816e72e1b749fd446d42e163ebe9ac21a97e2b9d",
+  "product": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "priorPacket": "3f029c45a11654d4a718495d0a6955ec40ca7d80",
+  "bindings": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-once.py",
+      "commit": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+      "bytes": 17805,
+      "sha256": "c91d6b775bb0bfc9e93faac1e7dacc7e8f91031fccd3bfee1f9a58b2b8284734"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment.test.py",
+      "commit": "816e72e1b749fd446d42e163ebe9ac21a97e2b9d",
+      "bytes": 2901,
+      "sha256": "59edba5ea98cd81144d8dbbbcbf86e675c5d855c279f330f8de591b4434af023"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-python-isolation-delta.json",
+      "commit": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+      "bytes": 738,
+      "sha256": "a641ebbaffdce64c488767e22fdd2f09e9d4cecd57968cc44a830078aaeb2fcf"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-isolated-window.md",
+      "commit": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+      "bytes": 785,
+      "sha256": "b7865ac9ed90c62fce48e283c3762f6ac39caf0658a2e4fd13ac37a9bbed64ab"
+    }
+  ],
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-isolated-manifest.json",
+    "bytes": 149215,
+    "sha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b"
+  },
+  "summary": {
+    "files": 256,
+    "fileBytes": 1158502,
+    "sqlFiles": 33,
+    "external": 191,
+    "externalBytes": 31940161,
+    "links": 16
+  },
+  "delta": "Inner Python adds-I; AST assertion checks-I/-B; latest manifest name explicit. Original env constructor bytes unchanged.",
+  "originalPureResult": {
+    "source": "f471c30c7939eac89158d3e68130b1b971a28eac",
+    "result": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+    "passed": 1,
+    "rawBytes": 97,
+    "scope": "Actual env functions and original AST checks, excludes newly added flag assertion"
+  },
+  "newFlagAssertion": "NOT_RUN; Mika explicitly chooses fixed-argv static review, no secondordinary",
+  "unchangedPriorInputRows": 252,
+  "unchangedExternalRows": 191,
+  "actual": "NOT_OPEN_NOT_RUN",
+  "runAbsent": true,
+  "ordinary": "RETURNED_NO_PENDING_LAUNCH",
+  "review": "PENDING_CHATUI"
+}
