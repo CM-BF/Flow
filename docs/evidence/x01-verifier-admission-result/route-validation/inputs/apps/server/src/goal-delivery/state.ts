@@ -1,0 +1,1 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/goal-delivery/state.ts

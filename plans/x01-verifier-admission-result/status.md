@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result |
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
-| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v1 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
+| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
 | 工作树 dirty 状态 | 所有源和工程检查STOP；封包push后clean，claim保留 |
 | 工作分支状态 | in-progress（核心已审，真实事务准备） |
 | 实现目标 | 53d50dddcefb5b1e060f45b5a7addd429aa6ec81 |
@@ -72,3 +72,9 @@ VAR-04准备封存：2026-10-07T21:32:52.281Z。测试source57b188f5ee9fce658916
 2026-10-07T21:43:37.054Z：清理guard parent1d85/result0b9a 4/4纯FS已获独审；本树227/51cc/405d精确副本、2row和invocation于21:41:41通过b01窄审。合并db case/fixture及owner完整输入核验后封PREPARED_CLOSED_WAIT_AV_R2，不把分项review伪称某位审者整包批准。当前0child/PG/待launch；本段未追加VAR types/list或真实5case。新helper与原manifest/raw各有固定历史，详见transaction-pg/candidate.json。任务20:31:27首次开工及NOT_COMPLETED不变；main/公开挂载/runtime worker仍未验。
 
 2026-10-07T21:44:35.747Z：db对a2630f3c完成PREPARATION_REVIEW_COVERAGE_CONFIRMED（21:44:05，0新增P1/P2），状态准确为“固定准备分项已审、依赖未满足”。无新增源码缺口；等AV R2真实通过/前置接收及未来唯一NEXT，不补造已挂载producer/worker/HTTP能力。此后本树STOP/保claim，原raw及manifestb54不再写。
+
+## 公开路由输入校验修复段
+
+2026-10-07T22:35:47.945Z起连续20分钟，截止22:55:47.945Z。前序AV批准metadata已STOP；本树22:36:47.114Z原子amend v2/24精确增加verification-routes.test.ts。仅三处safeParse→HttpError400，保owner/runner鉴权、cookieOrigin/CSRF、no-store、201/200重放、413。新inject测试复用真实认证钩子与领域mock，0监听/PG；当前源码未验证。新8MiB含Git index临时/TMP/raw，≤3child各20s累计50s/raw128KiB。旧候选/原raw不覆盖。
+
+D05已确认22:01:36.229Z live211/sourceCurrenttrue/issues[]/stalefalse（dashboard-architecture/docs/evidence/d05/three-canonical-211-live.json），本owner不重复探针。AV R3实际5/5且22:29:10结果独审通过，等待AV R3主线窄接收与本VAR真实PG新窗口；历史“等待R2”保留为当时快照，由本段当前事实取代。
