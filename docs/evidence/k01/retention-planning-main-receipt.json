@@ -1,0 +1,84 @@
+{
+  "recordedAt": "2026-10-07T00:23:33.960515+00:00",
+  "kind": "K01_RETENTION_PLANNING_MAIN_RECEIPT",
+  "scope": "Planning intake only; no new product capability or whole K01/REQ-10 completion claim.",
+  "receivedMain": "cd6938fdd50f297cdb4d652d3b38464d1de0b311",
+  "mainHeadAtRead": "cd6938fdd50f297cdb4d652d3b38464d1de0b311",
+  "originMainAtRead": "cd6938fdd50f297cdb4d652d3b38464d1de0b311",
+  "mainDirtyAtRead": false,
+  "sourceHeadReceived": "67e9c37190ad598cc24df846cb0f6bcded6cc297",
+  "ownerHeadBeforeReceipt": "67e9c37190ad598cc24df846cb0f6bcded6cc297",
+  "ownerCleanBeforeReceipt": true,
+  "designReviewTarget": "fd02eb63d0e01d51c390dc5dcf5df8078a6f0063",
+  "centralReceipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/k01-retention-planning-intake.json",
+    "sha256": "85c47acbe5e6c90b8da944a361dc0666a4ef4b1a806ec3c4624ef5d550eca704"
+  },
+  "originalManifest": {
+    "path": "docs/evidence/k01/retention-planning-manifest.json",
+    "sha256": "bb8a9ae09a45f8f2f1f95f932a3c6661f31453c84f3a6deea48a972efbe0e61d"
+  },
+  "files": [
+    {
+      "path": "plans/k01-knowledge-sources/plan.md",
+      "sha256": "d0a734276523780ea94349c962906320f4930ee4715efcfc2cab7eeeac0556ad",
+      "bytes": 6714,
+      "designTargetMatches": true,
+      "receivedMainMatches": true,
+      "ownerWorktreeMatches": true,
+      "originalManifestMatches": true,
+      "centralIntakeMatches": true
+    },
+    {
+      "path": "docs/evidence/k01/retention-design.md",
+      "sha256": "912d76bbd2b4984e10c4bc2e8e9764daed59cca965a1f46a5f7570fbee5a6040",
+      "bytes": 13543,
+      "designTargetMatches": true,
+      "receivedMainMatches": true,
+      "ownerWorktreeMatches": true,
+      "originalManifestMatches": true,
+      "centralIntakeMatches": true
+    },
+    {
+      "path": "docs/evidence/k01/retention-planning-inputs.json",
+      "sha256": "67aff87a631986449ab4f44638f579d3ddd7cfce22e6d6d17b2de6fbcd90f166",
+      "bytes": 5856,
+      "designTargetMatches": true,
+      "receivedMainMatches": true,
+      "ownerWorktreeMatches": true,
+      "originalManifestMatches": true,
+      "centralIntakeMatches": true
+    }
+  ],
+  "productDelta": {
+    "mainIntakeBase": "02c7794448d21b3a25492411cdb0aa13778bebdf",
+    "mainPaths": [],
+    "ownerSincePlanningBasePaths": []
+  },
+  "engineeringChecksAdded": 0,
+  "productPgOperations": 0,
+  "modelCalls": 0,
+  "dashboardSamplingAdded": 0,
+  "remaining": {
+    "K01-06": "Original REQ-10 hybrid/vector and remaining acceptance open.",
+    "K01-08": "pending: product implementation / legal scopes required",
+    "K01-09": "pending: protocol and direct-consumer integration",
+    "K01-10": "pending: behavior, concurrency, compatibility and main product acceptance",
+    "K01-R01..R12": "NOT_RUN",
+    "flow.commands lifecycle": "Implementation prerequisite; no whole-database boundedness claim."
+  },
+  "claimLastObserved": {
+    "claimId": "4be228e2-64f8-46e6-94a8-aa7eb867d730",
+    "version": 1,
+    "state": "ACTIVE",
+    "observedAt": "2026-10-07T00:22:16.673Z",
+    "source": "Mika fresh-ledger observation",
+    "scope": [
+      "docs/evidence/k01",
+      "plans/k01-knowledge-sources"
+    ]
+  },
+  "stopAfterCommitPush": true,
+  "pendingWritableWork": false,
+  "release": "Pending root atomic release after clean pushed handoff; not yet claimed released."
+}
