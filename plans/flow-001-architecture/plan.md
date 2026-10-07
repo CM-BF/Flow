@@ -670,3 +670,9 @@ GO已查一手文档：[Anthropic tool search](https://platform.claude.com/docs/
 - 固定main53f50e的runtime.ts:314–327丢弃原异常并统一输出笼统文本；runner事件合同只有可选error字符串，现轻投影不暴露结构化类别。16:32个人只读观察确认旧任务failed但公开摘要原因UNKNOWN；历史原文缺失不能恢复/补造原因。NativeExecutionError的settlement只表达停止边界，不是认证、超时等原因分类。
 - 小Interface保留来源与有限分类、阶段和UNKNOWN，轻摘要不带原始异常/正文/凭据，详情仍按需授权；取消及副作用未知保持既有语义，分类或可选动作不授权自动重试。旧客户端兼容、同attempt归属与迟到/旧attempt拒绝须验证；只做零模型定向失败注入、直接消费者及实际涉及的前进迁移，不另造观测平台或复制MATURE02已有泛化要求。
 - 仅借鉴[OpenTelemetry错误语义](https://opentelemetry.io/docs/specs/semconv/general/recording-errors/)中类别与说明分开、结合操作语境、避免重复记录的原则，不引入OTel依赖。原运行诊断包和私有材料继续各自授权，当前0新query/个人读取。实施时沿唯一status记录真实工作段与等待。
+
+### Web/TUI 队列回执一致性（REQ-15 / TUI001-06/08 / WPF-MATURE-06）
+
+- [ ] **FLOW-001-T03-QUEUE-ACK-01** 两端对同一矛盾队列回执都保持原key/body与unknown；正常历史replay仍可刷新当前观察。Execution Lead与Web co-lead协调，产品owner和精确scope尚未领取，排在个人新版发布、默认宿主诊断之后，不新建大task。
+- GO只读固定 `035a4dfce9cbf00691ecd432f560967abfef0044`：interaction的dispatchQueueIntent校验resume无promoted时currentTurn.taskId等于冻结expectedTaskId，并校验promoted task/turn/item绑定；Web queue/commands.ts:74–81仅核shape/revision/promoted.state，:164–167会保存accepted checkpoint，FlowClient未补同等语义。TUI controller已有无promotion却换task的UNKNOWN例；Web矛盾接受尚属源码推导、NOT_RUN，不能写成线上事故。
+- 先由原端owner用直接消费者复现差异，再提取浏览器安全的小型纯回执规则供Web和TUI共用；不让TUI引用Web私有projection、不合并两端持久化/展示FSM，也不复制两套if。覆盖无promotion换task、promoted身份矛盾、合法replay与当前观察分离、原请求恢复。0provider，本模块及两个直接消费者足够；实现前核fresh claim/接口边界，当前不新增运行预算。
