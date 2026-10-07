@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:11 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 22:27 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -14,27 +14,27 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | STOP；本次最终metadata提交后clean，交接HEAD由Git核验 |
+| 工作树dirty状态 | 本段源码与局部检查已完成，封存后STOP；原packet b5ab59f clean起点 |
 | 工作分支状态 | review |
-| 检查状态 | PASSED: 16纯行为与局部noEmit；真实PG/SQL/EXPLAIN NOT_RUN |
+| 检查状态 | PASSED: 原16pure；本段新PG类型0/精确8收集0执行；真实PG/SQL/EXPLAIN NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
 | 实现目标 | e1b02772853d08cf1069bc16a8b47b7ca717f633 |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 多个短依赖已改为一次有界批读，内容与首错顺序的局部行为已验证 |
-| 下一可用交付 | 独立审查后安排真实数据库语义及读取量验证 |
+| 当前产出 | 多个短依赖的一次有界批读已通过局部审查，八项数据库验证已准备并完成类型与静态收集 |
+| 下一可用交付 | 审查专库验证入口后，安排真实SQL与事务边界验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
-| Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v1 ACTIVE；22:04:52.230Z COMMITTED，exact5 |
+| Review | [review.md](review.md)，原source/local已批准；PG准备待审 |
+| Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v2 ACTIVE；22:17:28.747Z AMEND COMMITTED，exact6（新增dependency-content.pg.test.ts） |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | GDEP01-01 | completed | b01_bounded_reads | 单一内部读取Interface与原commands接线已实现 |
 | GDEP01-02 | completed | b01_bounded_reads | results.md：红1/1→16/16、局部noEmit0；3child完整归还 |
-| GDEP01-03 | pending | b01_bounded_reads | source review与真实PG/EXPLAIN/竞争NOT_RUN |
+| GDEP01-03 | pending | b01_bounded_reads | source review已批准；真实PG/EXPLAIN/竞争NOT_RUN |
 | GDEP01-04 | pending | b01_bounded_reads | main未集成 |
 
 ## 当前权限与时间
@@ -56,3 +56,11 @@
 ## 最终封存
 
 source e1b02772853d08cf1069bc16a8b47b7ca717f633，manifest.json绑定6实现/检查输入与7原始日志/运行记录。3工程child2361ms；另两次仅状态parser，用于修正sub-task应为子task的声明；不计作产品通过用例。最终0待launch、全部工程TMP exactENOENT，claim保留待独审/PG后继。D05登记与实际聚合仍待Lead；无HTTP探针。
+
+## PG准备段
+
+实际开始22:17:21Z，截止22:37:21Z；独立新4MiB包括所有source/metadata/raw/TMP/Git index transient，已有供给不复制。最多3串行child/各20s/累计45s/raw128KiB；0PG/HTTP/listener/Chrome/provider/install/build。原任务22:03:42起点保留。前段已STOP，原review结论归档source-review.json。
+
+## 本段交付事实
+
+22:25:42.918271Z普通FULLRETURN（pg-local-results.md），0待launch。原source审查22:13:34Z已归档；PG准备新源待独审，实际运行CLOSED。原task22:03:42起点/NOT_COMPLETED不变，main未集成。512文件/20alias runtime绑定复用已有供给不复制；外部package入口绑定不冒完整所有第三方执行文件闭包。新直接局部types覆盖实际consumer，真实execute/native/progression组合后继开放。

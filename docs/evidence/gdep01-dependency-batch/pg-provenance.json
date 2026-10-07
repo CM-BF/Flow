@@ -1,0 +1,20 @@
+{
+  "donor": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+    "commit": "d78ffd7c691682c1e78d7a2b7d2617521527e9ca",
+    "entrySha256": "6223228a526c9275bdd1196d359f1c57e26ac0ec0f9bbf22fab12dc2cdab50ee",
+    "fixtureSha256": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106"
+  },
+  "adaptation": [
+    "entry identity/paths/eight exact titles/len(TEST_NAMES), isolated Node cache",
+    "fixture admin1+aux2 only; remove unused HTTP/server/boss owners; preserve marked ownership, deadlines, pending settlement, background first failure and normal DROP gates",
+    "new PG behavior uses actual dependencyContent and old sequential SQL oracle; controlled DB seed not public writes"
+  ],
+  "actual": "NOT_OPEN",
+  "localNewBytesBudget": 4194304,
+  "dynamicSQL": [
+    "packages/storage/migrations/002-reconciliation.sql",
+    "packages/storage/migrations/004-projects.sql"
+  ],
+  "noMigrationsAdded": true
+}

@@ -15,3 +15,7 @@
 新内部module只负责有序依赖正文读取与既有验证；调用方拥有事务/锁/授权。无缓存、并发Promise.all、pool或新生命周期。使用同一SELECT快照，不在中间CTE物化所有正文；正文读取至第一次UTF8累计越48000行（含该行），JS按原序先exists/hash再length。合法正文满足UTF8<=3×UTF16，因此越界后必已有大小错误；全量正文最多48000+1048576B仅适用于既有合法artifact输入，DB无长度CHECK，非法超大存储不在该硬界。未改变错误码/message及最终prompt.length16000。
 
 本段25min自22:03:42至22:28:42，8MiB包含483固定供给3280152B、index2285069B、源码/meta/raw/TMP。<=5串行child/各30s/累计90s，raw512KiB；0PG/HTTP/Chrome/provider/install/build。SQL与PG工作量/性能收益未测，不由纯计数声称加速。
+
+## 22:17:21–22:37:21 PG准备新段
+
+原source/local获db22:13:34独审批准；新增dependency-content.pg.test.ts已原子amend至v2/exact6。新4MiB包括所有新增与index临时；不复制原供给。八例、仅admin1+aux2、140秒未来CLOSED候选见pg-preparation.md。仅新test局部types/collect允许，0PG/HTTP。真实SQL及最终execute/native/progression组合仍开放，不关闭GDEP01-03。

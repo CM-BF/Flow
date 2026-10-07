@@ -1,0 +1,12 @@
+{
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "at": "2026-10-07T22:13:34Z",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "e1b02772853d08cf1069bc16a8b47b7ca717f633",
+  "packet": "b5ab59fc098a3fc628e6c973c34af1798f0c1ab2",
+  "scope": "6source+7raw, red1fail/green16pass/ES2023types0; SQL/error-order/interface read only",
+  "limits": "Real SQL/EXPLAIN/competition/project-lock timing/end-to-end JSON/performance NOT_RUN; no PG permission"
+}

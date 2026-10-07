@@ -35,3 +35,9 @@
 复核小Interface仅dependencyContent(client,bindings)；读取/验证职责集中，commands只替换import和删除旧helper，原事务/锁/权限/状态/JSON大小判断逐字保留。SQL以ordinal保原序，resolved仅materialize身份/长度，正文同SELECT后取；错误按原hash-before-size顺序。无新pool/缓存/框架/并发查询。16纯绿与ES2023局部types0，真实SQL待PG，不把fake当数据库证明。未解决产品finding：独审尚未开始；DB非法超大行不受合法输入界已说明。
 
 元数据复核：首own-status parser errors/human/timing为空，但英文sub-task未匹配中文子task枚举；按权威task-links.mjs改声明，首输出保留status-parse.json，不修改parser。产品source/16pure/types不变，无新产品检查。
+
+## PG准备安全点
+
+沿已读本地find-skills/codebase-design/clean-code与固定bdacd76；复用Q01已审生命周期，不复制server/HTTP/boss或新资源框架。把seed、旧顺序oracle、借用client查询观察、fixture所有权分开；生产source不改。readonly query proxy只包装本helper实际Promise query，非Pool.connect适配器；真实transaction callback/release仍原实现。合法1MiB正文界与损坏DB界分开，EXPLAIN不是速度收益。新增PG八例尚未执行。
+
+22:27封存前复核：关闭/首错分离逻辑保留，移除无真实owner的boss/server/HTTP；池由fixture单独拥有，caller只监督自有进程和TMP。零依赖/duplicate/Unicode/误绑定/首错/锁等待均明确测试断言，旧oracle源与产品SQL不相同。旧16pure不重复；新types0/collect8只作局部准备证据。原三run结构不可变核符。
