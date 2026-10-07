@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-07T06:40:24.234000+00:00",
+  "sourceCommit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+  "basePacket": "f9d1f13ecb32ed7b6ce9b638d085552e2924b217",
+  "reviewInput": {
+    "reviewer": "db_transaction_owner",
+    "forwardedBy": "mika",
+    "reviewedAt": "2026-10-07T06:37:52Z",
+    "state": "CHANGES_REQUESTED",
+    "P2": "ROLLBACK cleanup assertion could replace original barrier assertion/DB failure"
+  },
+  "change": "Explicit primaryFailed boolean; bare rethrow retains original identity even for falsy thrown values. Rollback and release errors saved as bounded secondary names. Only absence of a primary allows the first cleanup error to throw. Release still destroys on rollback failure; pending request settles. Business assertions unchanged.",
+  "bindingBefore": {
+    "path": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+    "commit": "e3914d3ea53092ea7f0c0a9d3057260ec526d9a4",
+    "blob": "f9c5256e4f621da898ba2b017823eb1873a1b7ae",
+    "bytes": 22459,
+    "sha256": "024cb23fe284e921a8aaf9f6913351ebd68fb70da162cad873a98304adea6a18"
+  },
+  "bindingAfter": {
+    "path": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+    "commit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+    "blob": "dd7198c968b96069584325c4e8a5d7c245141a3a",
+    "bytes": 22990,
+    "sha256": "b73b10f0aff5c9f36c404a43c0fd5896024fccab5097a697ed7d0f103de1a98e"
+  },
+  "manifestSha256": "8ff85ec0a07ffa5c8c624714320bd07f728a7fa1ede74991954631602bfa1dc1",
+  "staticCases": [
+    "Primary failure plus successful cleanup retains original",
+    "Primary failure plus rollback/release failure retains original and records secondary",
+    "No primary plus cleanup failure rejects with original cleanup error"
+  ],
+  "validation": {
+    "newChildCount": 0,
+    "newTypes": "NOT_RUN_STATIC_ONLY",
+    "newTests": "NOT_RUN",
+    "oldTypes0List6Pure2": "Preserved prior evidence only; not rerun or claimed as new-source execution",
+    "actualPG": "NOT_OPEN_NOT_RUN"
+  },
+  "quality": "Existing find-skills/codebase-design/clean-code baseline; no reusable error framework, no assertion removal, one test error-lifecycle seam. Sole owner fresh v11 observed06:38:56.992Z; no local slot consumed."
+}

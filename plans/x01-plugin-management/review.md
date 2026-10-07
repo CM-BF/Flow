@@ -1,3 +1,11 @@
+状态：PENDING（PG锁屏障主失败保留窄修，等待原reviewer增量复审）
+
+Review target commit: 967803365239cacdfc15b16bf6f4b2b3d7d92eed
+
+原f9d1f13准备独审06:37:52报告唯一P2：cleanup覆盖主失败。当前只改一test的catch/finally；[固定增量](../../docs/evidence/x01/center-claim-pg-cleanup-fix.json)。其余六组/252绑定语义及旧检查无需重跑；本增量0工程检查/PG。
+
+---
+
 状态：PENDING（新六组真实PG准备；旧中心源码/local批准保持）
 
 Review target commit: 24c66822e09a90754604d70a877b89aa1f4febef

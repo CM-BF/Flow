@@ -1,3 +1,5 @@
+> 当前源码窄修 `967803365239cacdfc15b16bf6f4b2b3d7d92eed`：仅锁屏障finally主/次失败保留。manifest SHA `8ff85ec0a07ffa5c8c624714320bd07f728a7fa1ede74991954631602bfa1dc1`；其余251项保持，当前总量1269888B。原准备唯一P2待增量复审，0新工程运行/PG；[增量回执](center-claim-pg-cleanup-fix.json)。下文74e187/24c668及局部检查是保留历史。
+
 # Center plugin claim: six real PG consumers, preparation only
 
 Product `0224e94d1133a72478fdf50380f726bd2ba5922f` and its source/local approval remain unchanged. New test source `74e1872714372a8da4af2833d163db1cd8e57e4f`, single-suite support `24c66822e09a90754604d70a877b89aa1f4febef`, local results `e3914d3ea53092ea7f0c0a9d3057260ec526d9a4`. [Manifest](center-claim-pg-manifest.json) fixes252 files/1,269,357 bytes including31 official SQL,27 external metadata/tool files and21 existing links. This is a source preparation record; PG has not run and is NOT_OPEN.

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T06:33:04.254059+00:00 |
+| 最近更新时间 | 2026-10-07T06:40:24.234000+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -18,16 +18,16 @@
 | 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新PG准备types0/collect6（0hooks/PG）及配方2纯例通过；原10/11/27未重跑 |
-| Review | 新74e187/24c668六组PG准备待独审；旧product0224/support436 source/local APPROVED保持，实际PG_PENDING；[新入口](../../docs/evidence/x01/center-claim-pg-ready.md) |
+| Review | 新PG准备唯一P2已窄修967803，等待增量复审；[固定增量](../../docs/evidence/x01/center-claim-pg-cleanup-fix.json)。旧product0224/support436批准保持 |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
-| 实现目标 | 24c66822e09a90754604d70a877b89aa1f4febef |
+| 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
 | 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心领取的六组真实数据库验收入口已实现并完成类型与收集检查，正在独审 |
+| 当前产出 | 中心领取的六组验收入口已完成准备检查；已修复独审指出的清理错误覆盖问题，等待窄复审 |
 | 下一可用交付 | 独审后运行一次真实领取、恢复与锁等待专库验收，再接runner执行与现成npm能力 |
-| 当前阻塞 | NONE: 六组真实PG测试与单suite入口已固定，types0/collect6/纯资格2过；待新增资源接线独审，PG未OPEN |
+| 当前阻塞 | NONE: 唯一P2窄修已固定，待原reviewer复审；实际PG未OPEN |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -263,3 +263,5 @@ source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10�
 2026-10-07T06:30:10Z：真实claim-PG准备source74e187/support24c668；06:29:15.856至06:29:41.936三local子进程全部closed/TMP同inode清理，raw387B，types0/collect6（未执行hooks）/纯资格2过，whole外部时长UNKNOWN。实际PG仍NOT_OPEN。中心片真实PG/独审/main receipt后，server/index.ts出口明确停写并amend交回CHAT05P01，不以fullruntime/semver未完成长期占出口。C02两共享出口仍待其本片main后交回。
 
 2026-10-07T06:33:04.254059+00:00：交审准备manifest252项/1,269,357B、31SQL/27external/21links逐实际Git/WT核符；三个普通local进程已归还，无待launch/PGholder。source74e187/support24c668固定，输入/原件及新namespace保持，等待唯一peer准备审。完整X01继续开放。
+
+2026-10-07T06:40:24.234000+00:00：原review唯一P2窄修source967803，primaryFailed布尔与原异常直传，ROLLBACK/release失败只作为secondary，原27/6行为断言未删。仅静态核控制流/类型组合，0新types/test/PG/资源持有；原types0/list6/pure2保原件不当本增量运行。manifest仅替换test一row，其余251与27external/21links原样。

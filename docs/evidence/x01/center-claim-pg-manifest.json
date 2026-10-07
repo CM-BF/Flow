@@ -1,7 +1,7 @@
 {
-  "sourceCommit": "74e1872714372a8da4af2833d163db1cd8e57e4f",
+  "sourceCommit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
   "supportCommit": "24c66822e09a90754604d70a877b89aa1f4febef",
-  "preparedAt": "2026-10-07T06:31:37.951629+00:00",
+  "preparedAt": "2026-10-07T06:40:24.234000+00:00",
   "scope": "Single real center claim suite preparation only; independent review and actual OPEN required. Prior 27 tests are bound history/direct source inputs, NOT_SELECTED.",
   "files": [
     {
@@ -762,10 +762,10 @@
     },
     {
       "path": "apps/server/src/plugin-runtime/claim-pg.test.ts",
-      "commit": "e3914d3ea53092ea7f0c0a9d3057260ec526d9a4",
-      "blob": "f9c5256e4f621da898ba2b017823eb1873a1b7ae",
-      "bytes": 22459,
-      "sha256": "024cb23fe284e921a8aaf9f6913351ebd68fb70da162cad873a98304adea6a18"
+      "commit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+      "blob": "dd7198c968b96069584325c4e8a5d7c245141a3a",
+      "bytes": 22990,
+      "sha256": "b73b10f0aff5c9f36c404a43c0fd5896024fccab5097a697ed7d0f103de1a98e"
     },
     {
       "path": "apps/server/src/plugin-runtime/claim.ts",
@@ -2021,9 +2021,10 @@
   ],
   "summary": {
     "files": 252,
-    "bytes": 1269357,
+    "bytes": 1269888,
     "officialSql": 31,
     "external": 27,
     "links": 21
-  }
+  },
+  "deltaScope": "One test finally: preserve primary failure and record rollback/release errors as secondary. All other251 bindings and external/links unchanged."
 }
