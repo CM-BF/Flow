@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T16:03:55.376Z",
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "executionHead": "64c90eeba",
+  "state": "LOCAL_PASSED_REVIEW_PENDING",
+  "typesExit": 0,
+  "selection": {
+    "selected": 10,
+    "passed": 10,
+    "unselected": 4,
+    "titles": [
+      "persists the complete v3 request and reuses it without empty-poll writes across restart",
+      "v2 callers still accept and complete a durable assignment with their original API",
+      "AV03 clean v1 selects v4 once with detached capability and no empty-poll writes",
+      "AV03 existing v2 v3 and uncertain or retained v1 never upgrade or lose identity",
+      "AV03 acceptance persists assignment and next key together before reopening, with queued inputs detached",
+      "AV03 changed capability and wrong acknowledgement preserve the original unknown key",
+      "AV03 rejected persistence retains the same request and does not accept an assignment",
+      "AV03 corrupt v4 qualification fails closed and legacy writes cannot reinterpret v4",
+      "AV03 v4 codec is detached, bounded and never implicitly enables tool capability",
+      "AV03 replay identity includes key, runner, protocol and every explicit qualification"
+    ]
+  },
+  "resources": {
+    "children": 2,
+    "supervisionMilliseconds": 2479,
+    "rawBytes": 5175,
+    "TMPsRemoved": 2,
+    "fixtureRootsRemoved": 11,
+    "wholeExternalWall": "UNKNOWN",
+    "peak": "UNKNOWN",
+    "initialEPERM": "Preserved; final absent separately recorded",
+    "returnedAt": "2026-10-07T16:02:02.838Z",
+    "PG": 0,
+    "provider": 0,
+    "laterFloorNotice": 16177627136,
+    "historicalLaunchFloor": 16175529984,
+    "floorBoundary": "New2MiB declaration arrived after both checks; do not rewrite old admission"
+  },
+  "scope": "request codec + actual AdmissionJournal consumer. Public server/client/runtime v4 dispatch, SQL kind/project authorization remain unimplemented. No v4 HTTP ACK decoder is claimed."
+}

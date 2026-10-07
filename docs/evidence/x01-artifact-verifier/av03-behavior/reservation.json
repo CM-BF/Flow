@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T16:02:01.654Z",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-vitest.config.mjs",
+    "--no-cache",
+    "packages/contracts/src/verifier-runner-claim.test.ts",
+    "apps/runner/src/admission-verifier-claim.test.ts",
+    "apps/runner/src/admission-plugin-claim.test.ts",
+    "-t",
+    "AV03|persists the complete v3 request|v2 callers still accept",
+    "--reporter=json"
+  ],
+  "floor": 16175529984,
+  "free": 20213710848,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-behavior/tmp",
+    "dev": 16777234,
+    "ino": 124296351
+  },
+  "maxSeconds": 30,
+  "cumulativeMaxSeconds": 90,
+  "rawMaxBytes": 262144,
+  "tmpMaxBytes": 4194304
+}

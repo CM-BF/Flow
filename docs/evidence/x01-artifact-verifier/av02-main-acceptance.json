@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-07T16:03:55.376Z",
+  "main": "e271fb2116ee1838b63a064b5e28f58a8724d27e",
+  "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-artifact-verifier-av02-intake.json",
+  "receiptBytes": 1739,
+  "receiptSHA256": "8f6886f5933ddc98e684b68287eedb3702e194b03e5936b557b3a8f0e881514e",
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 9275,
+      "sha256": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6687,
+      "sha256": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36"
+    },
+    {
+      "path": "apps/runner/src/plugins/verifier.test.ts",
+      "bytes": 7639,
+      "sha256": "42da423afdfa5b0c27da6789f6e9929f6a538371f4efb66dcf8a3b45497bf1b4"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.test.ts",
+      "bytes": 1769,
+      "sha256": "2270400eabc54281c5cc0832bd96e8aedf08a8d79c73c7380edbdf770b3c0e3f"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.ts",
+      "bytes": 3044,
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc"
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.test.ts",
+      "bytes": 1355,
+      "sha256": "e7de43b74d9f0ff5782d2b47d2378ffdb4a5c559e6eb8ccf8ad6ce4a2a09a6c9"
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.ts",
+      "bytes": 1293,
+      "sha256": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.test.ts",
+      "bytes": 17710,
+      "sha256": "3d5c6f73710f936203aae4670f45f08c6ed79abfdabf8f7a25b9ae7ea3ae4a60"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "bytes": 17609,
+      "sha256": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa"
+    }
+  ],
+  "newEngineeringChecks": 0,
+  "meaning": "AV02 source989 nine leaves accepted; no AV03 delta; no personal deployment proof"
+}

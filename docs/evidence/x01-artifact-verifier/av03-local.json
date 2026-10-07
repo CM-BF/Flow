@@ -1,0 +1,120 @@
+{
+  "attempts": [
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T16:01:32.359Z",
+      "endedAt": "2026-10-07T16:01:33.674Z",
+      "wallBeforePersistenceSeconds": 1.314512165961787,
+      "supervision": {
+        "pid": 76508,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1305,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124296245
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-types/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/av03-local.py": "9f567c355ef3d7a4868c9f2ba99290ef054044a62ce3823211ca5f22bc507eac",
+        "packages/contracts/src/verifier-runner-claim.test.ts": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524",
+        "apps/runner/src/admission-verifier-claim.test.ts": "677d997da31d282cddc5997e99863ba59098c18fa621977754a5a22a65bdc568",
+        "apps/runner/src/admission-plugin-claim.test.ts": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545",
+        "apps/runner/src/admission-journal.ts": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a",
+        "packages/contracts/src/verifier-runner-claim.ts": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+      }
+    },
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T16:02:01.654Z",
+      "endedAt": "2026-10-07T16:02:02.838Z",
+      "wallBeforePersistenceSeconds": 1.1845736249815673,
+      "supervision": {
+        "pid": 98480,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1174,
+        "observed_bytes": 5175,
+        "retained_bytes": 5175,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 2,
+        "endSampleBytes": 2432,
+        "dev": 16777234,
+        "ino": 124296351
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-behavior/output.log",
+        "bytes": 5175,
+        "sha256": "98174a6fc628eecf4729e831986224dab9b73d3978848b254066ba17d98a3431"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/av03-local.py": "9f567c355ef3d7a4868c9f2ba99290ef054044a62ce3823211ca5f22bc507eac",
+        "packages/contracts/src/verifier-runner-claim.test.ts": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524",
+        "apps/runner/src/admission-verifier-claim.test.ts": "677d997da31d282cddc5997e99863ba59098c18fa621977754a5a22a65bdc568",
+        "apps/runner/src/admission-plugin-claim.test.ts": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545",
+        "apps/runner/src/admission-journal.ts": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a",
+        "packages/contracts/src/verifier-runner-claim.ts": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+      }
+    }
+  ]
+}

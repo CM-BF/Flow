@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:44:21.123Z / fixed96b依赖已受控merge6915df6d |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:03:55.376Z / AV02 main e271fb21九叶逐hash核符 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -12,28 +12,28 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
-| 工作基线 / HEAD | fixedmain96b424777cd2c66e603157649e5a859ca1b914f6，依赖merge6915df6d08b392df8e206bac3f9141230b7b3e50；source 9895181dfd90f18014d80589799f76169e6bd5b2 |
-| 工作树dirty状态 | 产品9895181与结果e662/packet5b516已固定；本次dispatch metadata提交后clean |
+| 工作基线 / HEAD | 依赖固定main96b/merge6915；AV02 source989已main e271fb21；当前AV03 source e746029f6daa5751f59813f5c18012b782824d54 |
+| 工作树dirty状态 | AV03四源已固定；本次结果metadata提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 9895181dfd90f18014d80589799f76169e6bd5b2：10selected10pass/69未选、focused types0；0PG/provider/个人操作 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；AV02依赖为固定main96b424777cd2c66e603157649e5a859ca1b914f6，经merge6915df6d接收，不代表本片main能力 |
-| 实现目标 | 9895181dfd90f18014d80589799f76169e6bd5b2（AV02局部已验，待独审） |
-| 实现范围 | packages/contracts/src/plugin-verification.ts,packages/contracts/src/plugin-verification.test.ts,packages/plugin-runtime/src/json-object-verifier.ts,packages/plugin-runtime/src/json-object-verifier.test.ts,packages/plugin-runtime/src/package-store.ts,packages/plugin-runtime/src/package-store.test.ts,apps/runner/src/plugins/host.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/verifier.test.ts |
+| 检查状态 | PASSED e746029f6daa5751f59813f5c18012b782824d54：AV03 10selected10pass/4未选、focused types0；0PG/provider |
+| 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；当前AV03 NOT_INTEGRATED；不代表个人部署 |
+| 实现目标 | e746029f6daa5751f59813f5c18012b782824d54（AV03 journal接缝局部已验，待独审） |
+| 实现范围 | packages/contracts/src/verifier-runner-claim.ts,packages/contracts/src/verifier-runner-claim.test.ts,apps/runner/src/admission-journal.ts,apps/runner/src/admission-verifier-claim.test.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 已接入真实材料的有限 JSON 验证能力，规则或材料变化产生不同身份，伪造通过结果被拒绝；局部验证通过且已独审；正在补显式验证器资格的持久恢复接缝 |
-| 下一可用交付 | 已审AV02可独立接收；下一交付是v4完整资格的journal接缝，中心领取与验证任务仍待实现 |
+| 本片段交付阶段 | review |
+| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已局部验证，等待独审 |
+| 下一可用交付 | 接收v4资格journal接缝；中心验证任务、来源授权与完整运行链仍待实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV02 source/local于15:49:31 APPROVED0P1P2；AV03 source/local尚未运行/审查 |
+| Review | AV02 source/local APPROVED0P1P2且已main；AV03 SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v3 ACTIVE16，15:57:01.967Z原子追加AV03四leaf；原AV02九改源冻结 |
-| 架构影响 | AV02 branch d6e0248：共享安装/host增加显式verifier kind和有限JSON算法消费者；显式领取协议、中心不可变引用与重算仍PLANNED，main图不改 |
+| 架构影响 | AV03 branch仅扩同一journal快照协议和显式资格API；无第二状态权威，center/SQL/runtime/v4 HTTP未接。main图更新target交Execution Lead |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
-| AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02 main待接收，完整父功能未完成 |
+| AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
 | AV-03 | in-progress | architecture_read，a67v3 | 本段仅四leaf资格+journal接缝；center/runner纵向与PG仍未实现/未运行 |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
@@ -93,3 +93,9 @@ AV02分支交付 2026-10-07T15:45:36.515Z：source9895181dfd90f18014d80589799f76
 ## AV03 本轮工作段
 
 实际开始2026-10-07T15:54:44.000Z，截止16:19:44.000Z。AV02独审与窄main输入独立冻结于[av02-main-intake.json](../../docs/evidence/x01-artifact-verifier/av02-main-intake.json)，后继不得覆盖九叶/原raw。父journal已明确STOP并v30移出；本任务v3于15:57:01.967Z成功领取新合同/新测试/真实AdmissionJournal四leaf。仅显式v4资格持久化接缝，不改变v2/v3默认，不写migration/SQL/runtime/claim route。普通段≤5serial×30s/累计90s、TMP4MiB/raw256KiB/newlogical16MiB、freshfloor≥16,175,529,984B或更高完整sum，0PG/Chrome/provider/install/fullbuild。当前0child，先source。
+
+## AV03 结果封存
+
+2026-10-07T16:03:55.376Z：source e746029f6daa5751f59813f5c18012b782824d54，实际types0、10选10过/4未选（8新+2直接旧v3/v2）。两child76508/98480累计监督2479ms/raw5175B，finalabsent/MERGED EOF/no secondary-signals，初始EPERM观测保留；两ownTMP同identity删除、11fixture精确ENOENT。16:02:02.838Z实际RETURN，已交b01；后到floor16,177,627,136B不倒改启动前16,175,529,984B记录。wholeexternalwall/峰值UNKNOWN，0PG/provider/新HTTP/待launch。原AV02九叶和raw/manifest未改。
+
+AV02正式main接收e271fb21，九叶main/source/WT逐hash核符，I02 x01-artifact-verifier-av02-intake.json；原10/10与types0未重跑。当前只待AV03独审，AV03/04与完整X01未完成。
