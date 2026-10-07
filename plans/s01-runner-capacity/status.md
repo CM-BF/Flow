@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:46:42Z |
+| 最近更新 | 2026-10-07T05:56:14.683444+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原task实际开工缺可复核时间；本次管理段开始为2026-10-07T05:45:30Z工具UTC，不替代原task开工。原验收仍有开放项。 |
@@ -13,8 +13,8 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
-| 工作基线 / HEAD | 本次更新前 HEAD 7d537fab43e7a0c4295eb23028be7be9ece8ba02；idle 只读产品基线 8d84d529a0756116bd0fc8bad969d61a6c26248e；提交后实际 HEAD 由 Git/聚合器读取 |
-| 工作树dirty状态 | 开始时 clean；本次仅 plan/status/review 与 A/B 当前只读准备记录，实验源码和封存结果不变 |
+| 工作基线 / HEAD | 本次更新前 HEAD 121c3022f55f6b4cff5711f00f7038bff8740d80；idle 只读产品基线 8d84d529a0756116bd0fc8bad969d61a6c26248e；提交后实际 HEAD 由 Git/聚合器读取 |
+| 工作树dirty状态 | 开始时 clean；本次仅唯一status与A/B operator handoff，实验源码和封存结果不变 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a；一次实际空领取观察及清理/预算通过；准备 9 distinct fake、pure/runtime strict0、2 syntax0 分次通过，原 runtime strict2 保留 |
 | 已集成main状态 / HEAD | idle 结果主线接收未证：固定main bf8b5f1d5f554b3195b04b150821d8262a4daef1 无该结果目录/对应I02回执；历史mixed已接收。独立S01P07已main0aa1d033，不能代替idle或A/B接收 |
@@ -24,11 +24,11 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 4 |
 | 当前产出 | 单个闲置执行器的空领取成本已测清并双审；据此推进的领取恢复改动已由独立子任务交付主线。 |
-| 下一可用交付 | 复用已审 A/B 对照验证事件写入优化；空领取报告仍保留待主线接收，不重做旧测量。 |
-| 当前阻塞 | ACTIVE: A/B尚无新的独占执行窗口与当次PG/WAL资源准入；源码准备可复用。 |
+| 下一可用交付 | 在独占窗口执行已审事件写入A/B对照，交付两侧真实结果及完整清理；尚未运行，不重做旧测量。 |
+| 当前阻塞 | ACTIVE: A/B已备妥固定调用，等待Recovery实际收尾、跨队普通运行安全停点和Mika唯一独占OPEN；当次磁盘/PG-WAL准入仍待fresh确认。 |
 | 需用户决定 | NONE |
 | Review | APPROVED e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a；Mika 2026-10-06 19:15:35 UTC、architecture_read 2026-10-06 19:16:32 UTC，0 P1/P2；只批准本次结果忠实性 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE；2026-10-07本段05:45:30Z后一次CLI list核对 owner/WT/branch/5 scopes 一致，保留原范围 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE；2026-10-07本次operator准备一次CLI list核对 owner/WT/branch/5 scopes 一致，保留原范围 |
 | 架构影响 | 本片只增加实验观察与证据，不改产品 Interface、FSM、数据库连接或外部依赖边界；无需更新产品架构图。S01P07已main0aa1d033，新增v2领取机会/runner自身份/持久日志语义，仍单admission loop无新scheduler；其权威status已登记架构图target/Execution Lead待更新，本树不代写图 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -81,3 +81,7 @@
 应用既有本地find-skills（优先已有）、codebase-design及固定clean-code方法：区分实验/产品owner、固定输入/当前main、已审准备/真实运行；只改陈旧事实与链接，不加框架/重复测量。技能路径与固定来源版本沿既有A/B Interface，未安装更新。当前聚合以此唯一status为准；本次只调用主线parseStatus核本行形状，未发全snapshot请求，展示仍PENDING_SYNC，不沿旧超时推断同步成功。
 
 2026-10-07T05:48:02Z 管理校验：主线现有parseStatus返回errors=[]、human.missing=[]，parent FLOW-001/co-lead mika识别正确；唯一timing issue为历史开工UNKNOWN，按时间契约保留。Git diff仅本次4份管理文档，原6TODO三完成/三开放保持；未改实验源码或已封存证据。
+
+## 2026-10-07T05:56:14.683444+00:00 A/B operator准备
+
+Fresh claim508f v2/all5/owner/WT/branch相符，观察HEAD121c3022=origin clean，41 unique源绑定匹配d3ba叠加包，run根absent。精确window仍s01-event-state-ab-once；[operator handoff](../../docs/evidence/s01/mixed-ab-preparation/operator-handoff.md)列出调用与候选资源线5,663,621,120B（共享floor+512MiB实验+1GiB PG/WAL调度预留，非已测占用）。本段只读/metadata≤64KiB、NOT_OPEN、0磁盘采样/PG/runner/测试/导出。Web直发一次agent-not-found，Mika沿既有协调路径接手；不重复唤醒或等时钟推定归还。源、旧raw/manifest、原6TODO/main事实不变。唯一status继续可聚合，展示仍PENDING_SYNC；不新增全snapshot轮询。
