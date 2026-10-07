@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:34:52 UTC；一次真实三宿主验证及独立收尾完成，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:40:09 UTC；零任务真实三宿主结果获限定独审批准，待接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,18 +16,18 @@
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 工作树dirty状态 | 固定d379入口及e5产物不变；本次只封实际结果/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
-| 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验及独立清理通过，结果待审；原e6ff FAILED保持 |
-| 已集成main状态 / HEAD | 构建及原结果已main/origin56672e7effec85792366beeacd724976646c50c8；d379准备独审随main5ecd26b6发布（Lead回执）。本次真实结果尚未审/尚未main |
+| 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验与独立清理已获限定独审；原e6ff FAILED保持 |
+| 已集成main状态 / HEAD | 构建及原结果已main/origin56672e7effec85792366beeacd724976646c50c8；本次真实结果已审，待受控接收；不追逐无关metadata主线 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定产物已在独立目录启动中心、执行器和网页；服务无法读取开发目录，验证资源已正常收尾。 |
-| 下一可用交付 | 完成本次结果独立审查；随后准备新版网页宿主的固定产物候选。 |
+| 当前产出 | 固定产物的独立目录运行与开发目录隔离已通过验证和独立审查，所有验证进程与数据库已正常收尾。 |
+| 下一可用交付 | 接收本次零任务宿主证据；新版网页宿主产物由原后继继续准备。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | d379入口已获APPROVED_FIXED_ZERO_TASK_HOST_FOLLOWUP；本次实际结果PENDING，原失败与限定边界保留 |
+| Review | APPROVED_FIXED_ZERO_TASK_HOST_RESULT；结果target c59c29e797a8d07081a1f84d9f922bcc8163d4dc，30fixed/17private/10原件，无blocking；默认部署/个人验收不扩大 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -162,3 +162,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:34:52 UTC：一次真实三宿主结果待审
 
 [结果及原件](../../docs/evidence/svc06/artifact-host-followup/RESULT.md)：调用04:31:30.466Z，独立清理04:32:08.205Z完成；work37,293ms+cleanup449ms、外层0/双EOF/监督组absent；三角色stopped，DB checkpoint→零连接→正常DROP/remaining=[]。Web诊断exit1按显式stop收尾观察保留，原失败/两产物根与私有诊断全保留。0task/provider/Chrome/个人操作；共享窗口已归还。批准仅准备，实际结果待唯一独审；03/04/05未整体完成。
+
+## 2026-10-07 04:40:09 UTC：真实结果限定批准
+
+[唯一独审原件](../../docs/evidence/svc06/artifact-host-followup/result-independent-review.json)：Execution Lead于2026-10-07T04:38:50.337581+00:00核30fixed/current、17private身份/hash和10原件复制，APPROVED_FIXED_ZERO_TASK_HOST_RESULT，无blocking/0重跑。本次integration，不含默认部署、refresh/resume、旧数据/App或个人更新；Web显式stop诊断exit1与旧失败保持。03/04/05不因本限定结果整体勾完。
