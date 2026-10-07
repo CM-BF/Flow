@@ -136,3 +136,6 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 ## 2026-10-07T12:55:31.777835+00:00 方法实施首个消费者片
 
 [已固定接线Interface](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-interface.md)以原child/driver/reporter贯穿有界交付、同epoch本地phase、当前公开v2 DTO与重放观察。这里只交可独立核验接线，完整recipe仍缺新输出领取/当前production source调用与chat/cancel尾段；原六TODO/性能验收不降低，当前0PG/NOT_OPEN。
+
+
+2026-10-07 后继实施checkpoint：已审f0f56交付策略设计的真实配方现固定source130c6ec855db850a817312623742cf14e8b45135，见[queue-interface](../../docs/evidence/s01/mixed-ab-preparation/queue-interface.md)。局部6 distinct分轮/strict0仅证明新私有接缝；当前等待独审、完整runtime准备与新输出scope，NOT_OPEN。原稳定TODO与完整ACK/browser/native验收不变。

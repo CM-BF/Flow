@@ -1,8 +1,12 @@
 # S01 独立审查
 
-## 当前：真实消费者接线片
+## 当前：queue recipe + 历史身份P2修复
 
-状态PENDING。Review target commit: `b846778835f3cb6dbb60fa4e8b04f87c504f0813`。范围[pg-wiring-interface](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-interface.md)及[固定binding](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-review.json)；9 distinct分轮/最终strict0，9raw3436B，0PG/性能/新recipe。请核完整信封/epoch本地phase/summary/pending与v2公开decoder及身份replay；旧11/A-B不重审或重跑。
+状态PENDING。Review target commit: `130c6ec855db850a817312623742cf14e8b45135`。[交审入口](../../docs/evidence/s01/mixed-ab-preparation/queue-interface.md)、[45bindings](../../docs/evidence/s01/mixed-ab-preparation/queue-review.json)。本片6 distinct分轮、strict2→0与最终0，0PG/runtime/provider；源/单轮绑定及早期EPERM/首失败保留。请复审history/live-key、public chat/取消时钟、129×2总账、v2journal与新资源门禁；不得将源码局部检查当性能READY/OPEN。
+
+## 历史：真实消费者接线片审查
+
+chatui01_owner / gpt-6-astra，2026-10-07T13:03:04Z，source `b846778835f3cb6dbb60fa4e8b04f87c504f0813` / packet41ca946：SOURCE_CHANGES_REQUESTED，1 P2 /0 P1，首次unavailable历史identity未留存；[原结论及修复指向](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-independent-review.json)。其它变化面无新增P1/P2，9 distinct/strict与3436B原件忠实。owner已修并新增直接反例通过，正式关闭仍待本次独审。
 
 ## 历史：私有observer delivery首片
 

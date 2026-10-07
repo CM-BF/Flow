@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T12:56:39.320Z |
+| 最近更新 | 2026-10-07T13:15:19.753452+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本段源码与局部结果已固定；当前只做本任务metadata交审收口，提交后Git另核。 |
+| 工作树dirty状态 | 新recipe源码130c6ec855db850a817312623742cf14e8b45135已固定；当前只归档结果/交审metadata，提交后Git核clean。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 接线9 distinct分轮；首8选7pass1fail→1pass，v2两例与实际child两例定向通过；strict首2→修后0，最终source b846778835f3cb6dbb60fa4e8b04f87c504f0813；9raw3436B。 |
+| 检查状态 | 本片6 distinct分轮（5pass/9未选；1pass/14未选），strict首2→0→最终0；5raw1635B。旧接线9 distinct及module11独立，不重跑或相加。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | b846778835f3cb6dbb60fa4e8b04f87c504f0813 |
-| 实现范围 | experiments/runner-capacity/mixed/ab-input.ts, experiments/runner-capacity/mixed/channel.ts, experiments/runner-capacity/mixed/child.ts, experiments/runner-capacity/mixed/claim-observation.ts, experiments/runner-capacity/mixed/driver.ts, experiments/runner-capacity/mixed/pg-delivery-bridge.ts, experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts, experiments/runner-capacity/mixed/process.ts |
+| 实现目标 | 130c6ec855db850a817312623742cf14e8b45135 |
+| 实现范围 | experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/queue-chat.ts, experiments/runner-capacity/mixed/queue-proof.ts, experiments/runner-capacity/mixed/queue-journal.ts, experiments/runner-capacity/mixed/queue-main.ts, experiments/runner-capacity/mixed/queue-probe.test.ts, experiments/runner-capacity/mixed/claim-observation.ts, experiments/runner-capacity/mixed/driver.ts, experiments/runner-capacity/mixed/child.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 观察交付已接入实验子进程与接收侧，当前领取身份和重放可被准确观察；局部检查已完成，待独立审查。 |
-| 下一可用交付 | 接真实聊天轻读与取消配方，补固定生产闭包和预算；尚无新性能运行入口或许可。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 聊天轻读与四取消的对照配方已接入同一实验运行器，历史领取身份修复及新直接反例通过，正在独立审查。 |
+| 下一可用交付 | 独审修复收束后固定完整生产输入与资源门禁，再申请真实专库性能窗口；当前尚未运行。 |
+| 当前阻塞 | ACTIVE：等待配方独审；新输出范围、完整运行输入与独占性能窗口尚未领取，个人后台优先。 |
 | 需用户决定 | NONE |
-| Review | PENDING：本次接线见pg-wiring-review.json；原私有模块03164654审批只覆盖原片，不自动延伸。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:42:29Z CLI再次核self/WT/branch/all5。 |
-| 架构影响 | 私有实验增加有界观察交付Module；本段接既有child/reporter/driver，使epoch与本地phase、字节和UNKNOWN语义贯穿消费者。生产池/SQL/协议实现不改，不另建监督器；新性能recipe仍未就绪。 |
+| Review | PENDING：queue-interface / queue-review；前片b846于13:03:04有1P2，owner已修且反例通过，正式关闭待原审者。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:59:40Z CLI核self/WT/branch/all5；pool-wait-run未领取未创建。 |
+| 架构影响 | 私有配方复用同outer/driver/child/监督；增加public合成聊天、有限交付策略身份与同钟取消证明。生产pool/SQL/协议不变，未增加新运行平台；当前源码未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -160,3 +160,15 @@ find-skills/codebase-design/clean-code质量结果见入口，私有实验模块
 2026-10-07T12:56:39.320Z 封存观察（实际Python UTC；此前parser单独完成UTC未另采）：errors=[]、human.missing=[]、implementation.errors=[]，target完整40SHA；原task开工UNKNOWN仍唯一timing提示。38binding/167826B hash核对errors=[]；本次未重新获取dashboard，历史同步来源不冒新快照。
 
 该时点已观察packet a1c3f5d7af348ab522f2bfc57bee7624f130082a = origin且clean；本次仅修正管理观察时间来源，不变source/raw/38binding。交审后无待运行child；claim v2保留review修复期。
+
+## 2026-10-07T12:59:40Z 后半配方source-only段
+
+工具UTC开工，截止13:19:40Z；fresh HEAD=origin41ca946a3ce80f055b3abf3691407a680b18a4e8 clean，CLI核508f v2/self/all5。按已审f0f56设计复用同driver/child做当前main4fdd sourceDirectory、public合成聊天1/side、6s测量与≤5s尾段/四取消及258任务总账。前片b846原始源码/结果通过Git冻结，chatui仅审该固定target；后继改动不偷渡为原批准。0工程child/PG/Chrome/provider/服务/安装；不创建未领取pool-wait-run，source+meta≤2MiB。完整资源floor至少6914834432B仅后继准入参考，本段未采样/未OPEN。
+
+2026-10-07T13:11:27.291241Z（首child原receipt startedAt）：root已交还ordinary；将运行仅新recipe/pinned-history的focused strict与定向pure，0PG/runtime。新完整floor6934233088B，每child60s/累计120s；本段截止仍13:19:40Z。
+
+## 2026-10-07T13:15:19.753452+00:00 配方实现与局部结果收束
+
+[canonical queue-interface](../../docs/evidence/s01/mixed-ab-preparation/queue-interface.md) / [45binding](../../docs/evidence/s01/mixed-ab-preparation/queue-review.json) / [单记录](../../docs/evidence/s01/mixed-ab-preparation/queue-local.json)。Source130c6ec855db850a817312623742cf14e8b45135，root交回ordinary后实际5child，13:12:46工具确认全closed/TMPremoved，累计6823ms不是wholewall；6 distinct分轮，types首2保留后0。0PG/provider/HTTPlistener/性能。前片P2按原审查保留，当前history/live-key修复待独审关闭。
+
+本段沿12:59:40原起点，不重置13:19:40截止。已停止产品/实验源码写，剩本metadata封存/push与交审。原六TODO、整体NOT_COMPLETED与历史A/B/idle main事实不变；不把新source当main/PG READY。当前未另GET dashboard，继续唯一owner/status源及历史同步观察。新输出须以后合法amend，旧未知资源不访问。

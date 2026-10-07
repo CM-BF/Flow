@@ -1,0 +1,19 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T13:03:04Z",
+  "source": "b846778835f3cb6dbb60fa4e8b04f87c504f0813",
+  "packet": "41ca946a3ce80f055b3abf3691407a680b18a4e8",
+  "verdict": "SOURCE_CHANGES_REQUESTED",
+  "P1": 0,
+  "P2": 1,
+  "finding": "claim-observation.ts first unavailable allocation identity was not retained; later same-key empty/identity drift accepted.",
+  "resultFidelity": "9 distinct split rounds; final strict0; 9raw3436B; groups and TMP closed; no PG",
+  "ownerFix": {
+    "source": "130c6ec855db850a817312623742cf14e8b45135",
+    "behavior": "history receipt detached and retained; live key tracked separately; first same-tuple assigned is not replay; changed tuple or empty regression fails",
+    "newTest": "first unavailable pins history without claiming live execution or allowing empty regression",
+    "actual": "selected within 5-pass round; independent closure pending"
+  },
+  "unchangedHistoricalArtifacts": true
+}

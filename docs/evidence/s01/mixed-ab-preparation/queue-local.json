@@ -1,0 +1,316 @@
+{
+  "source": "130c6ec855db850a817312623742cf14e8b45135",
+  "segmentStartedAt": "2026-10-07T12:59:40Z",
+  "segmentDeadline": "2026-10-07T13:19:40Z",
+  "sealedAt": "2026-10-07T13:13:57.662728+00:00",
+  "actualStart": "2026-10-07T13:11:27.291241+00:00",
+  "actualEnd": "2026-10-07T13:12:26.477481+00:00",
+  "toolCompletionObservedAt": "2026-10-07T13:12:46Z",
+  "runs": [
+    {
+      "receipt": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-1.json",
+        "bytes": 6825,
+        "sha256": "f12a7ac087d34e1fbc8e9f061325922df56dedac5510f94debb00dc894532fdf"
+      },
+      "kind": "queue-types",
+      "startedAt": "2026-10-07T13:11:27.291241+00:00",
+      "endedAt": "2026-10-07T13:11:29.201788+00:00",
+      "process": {
+        "pid": 40860,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1902,
+        "observed_bytes": 742,
+        "retained_bytes": 742,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-w6yc5iy3",
+        "dev": 16777234,
+        "ino": 124156201,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "freeBytes": 21677129728,
+      "floorBytes": 6934233088,
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-1.raw",
+        "bytes": 742,
+        "sha256": "9d0eae24b53b0dc66ae0eadbabccd0d2c5338014e3f1252baafaab6c643e3723"
+      }
+    },
+    {
+      "receipt": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-2.json",
+        "bytes": 6662,
+        "sha256": "42d5a2a51959241ecbaf2c93c7d898c866c875c8685146ca8d97de5ceb159ff1"
+      },
+      "kind": "queue-types",
+      "startedAt": "2026-10-07T13:11:43.397162+00:00",
+      "endedAt": "2026-10-07T13:11:45.301426+00:00",
+      "process": {
+        "pid": 53560,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1897,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-0wzr4qz6",
+        "dev": 16777234,
+        "ino": 124156249,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "freeBytes": 21658959872,
+      "floorBytes": 6934233088,
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-2.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "receipt": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-tests-1.json",
+        "bytes": 6823,
+        "sha256": "0a00a84a7c866cbb3db59454efa17f9ba413abfe91f8330f3ddb72b6eade2aaf"
+      },
+      "kind": "queue-tests",
+      "startedAt": "2026-10-07T13:11:47.878128+00:00",
+      "endedAt": "2026-10-07T13:11:48.417191+00:00",
+      "process": {
+        "pid": 53598,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 531,
+        "observed_bytes": 436,
+        "retained_bytes": 436,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-go2jqel7",
+        "dev": 16777234,
+        "ino": 124156276,
+        "removed": true,
+        "lastSampleBytes": 249,
+        "entries": 4
+      },
+      "freeBytes": 21659058176,
+      "floorBytes": 6934233088,
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-tests-1.raw",
+        "bytes": 436,
+        "sha256": "a53d714b32b3d228c908fb17c40acdeed45a6adf22886592cd83fdf6ae1aef81"
+      }
+    },
+    {
+      "receipt": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-tests-2.json",
+        "bytes": 6741,
+        "sha256": "5b3113a32a7b3e55ee97202ac7129c43eab3ee1bfdab3c7649b510bc73763659"
+      },
+      "kind": "queue-tests",
+      "startedAt": "2026-10-07T13:12:19.232114+00:00",
+      "endedAt": "2026-10-07T13:12:19.838266+00:00",
+      "process": {
+        "pid": 75941,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 599,
+        "observed_bytes": 457,
+        "retained_bytes": 457,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-8wfwv_qs",
+        "dev": 16777234,
+        "ino": 124156356,
+        "removed": true,
+        "lastSampleBytes": 233,
+        "entries": 4
+      },
+      "freeBytes": 21659672576,
+      "floorBytes": 6934233088,
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-tests-2.raw",
+        "bytes": 457,
+        "sha256": "353e4c5bbd8bd8ccf1400c0562564d5e3fb4facf1cf189e2b80431de177161bb"
+      }
+    },
+    {
+      "receipt": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-3.json",
+        "bytes": 6662,
+        "sha256": "577d28306cdaa58e9992d0857a07f7aef99aa43a18cc8f0b5bd503ba5b39c921"
+      },
+      "kind": "queue-types",
+      "startedAt": "2026-10-07T13:12:24.580467+00:00",
+      "endedAt": "2026-10-07T13:12:26.477481+00:00",
+      "process": {
+        "pid": 78818,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1894,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-wtzfpjc2",
+        "dev": 16777234,
+        "ino": 124156451,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "freeBytes": 21659639808,
+      "floorBytes": 6934233088,
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-queue-types-3.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "rawBytes": 1635,
+  "supervisorElapsedSumMs": 6823,
+  "wholeExternalWall": null,
+  "actualPG": false,
+  "actualProvider": false,
+  "tests": {
+    "distinct": 6,
+    "rounds": [
+      "5 pass / 9 unselected",
+      "1 pass / 14 unselected"
+    ],
+    "notAnAllSixFinalRun": true
+  },
+  "types": {
+    "firstExit": 2,
+    "diagnosticBytes": 742,
+    "fixedExits": [
+      0,
+      0
+    ]
+  },
+  "ordinaryReturned": true,
+  "activeTmpPeak": null,
+  "scope": "new queue recipe pure seams and unavailable-history regression; no runtime or database execution"
+}

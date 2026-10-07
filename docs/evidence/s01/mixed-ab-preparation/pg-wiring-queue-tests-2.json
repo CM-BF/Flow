@@ -1,0 +1,187 @@
+{
+  "kind": "queue-tests",
+  "startedAt": "2026-10-07T13:12:19.232114+00:00",
+  "source": {
+    "experiments/runner-capacity/mixed/pg-delivery.ts": {
+      "bytes": 7601,
+      "sha256": "e9c12b28f405bb07d5346f13a624355bbe7108af1ee8031af5b066baa6e9845f"
+    },
+    "experiments/runner-capacity/mixed/pg-delivery-bridge.ts": {
+      "bytes": 4597,
+      "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e"
+    },
+    "experiments/runner-capacity/mixed/claim-observation.ts": {
+      "bytes": 4532,
+      "sha256": "4fd2c9bc04946773080de18cea3d02ac44ae03e384b30e4d41dddb21b78dafc5"
+    },
+    "experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts": {
+      "bytes": 10412,
+      "sha256": "6c653713accf2aa6ec4d0e2dd8d80452473265524dc0b7bda0b920e50b5fc62b"
+    },
+    "experiments/runner-capacity/mixed/child.ts": {
+      "bytes": 15831,
+      "sha256": "a85b170dd6e06bc20e87e2867de74b7db0d6e796252c311cc6b39ead222b60c4"
+    },
+    "experiments/runner-capacity/mixed/driver.ts": {
+      "bytes": 42320,
+      "sha256": "98dfc4179879f28591778b9b2806b53fe827ae9d42127f85fa56abe36f096008"
+    },
+    "experiments/runner-capacity/mixed/process.ts": {
+      "bytes": 3113,
+      "sha256": "ee65a3cb9e28fd316d85a743ae2cff65c90ec410b1b46cb59f5aaf7fc85dbe91"
+    },
+    "experiments/runner-capacity/mixed/ab-input.ts": {
+      "bytes": 9916,
+      "sha256": "91a39c3bfa61e221c7e1e73ac90fa2a7dd7ffd2cf64435c5228b39925880d427"
+    },
+    "experiments/runner-capacity/mixed/observe-pg.ts": {
+      "bytes": 6097,
+      "sha256": "88a4a2f0d2a09be795b7a8e6e5ad9ca3450d7a7902e37a0524cf769da91391b6"
+    },
+    "experiments/runner-capacity/mixed/channel.ts": {
+      "bytes": 1909,
+      "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c"
+    },
+    "experiments/runner-capacity/mixed/contract.ts": {
+      "bytes": 4691,
+      "sha256": "a838aef1863c9491868ff68a28d3af12474f75aa36112f1628f58db5a8bdc280"
+    },
+    "tsconfig.json": {
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/pg-wiring-vitest.config.mjs": {
+      "bytes": 285,
+      "sha256": "9bf1db83027f63906ced7bb69078a46a40e7c9c43c83870cfe4e6c2a680605cb"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tsconfig.json": {
+      "bytes": 391,
+      "sha256": "ed472aeea3ce891dc58e46762f54882a40cfc975e6d9533703378e46fa6d6639"
+    },
+    "experiments/runner-capacity/mixed/ab-budget.ts": {
+      "bytes": 5081,
+      "sha256": "d4b380d4eed81bb0ea87bfecd45cbdda24c942bb1e4b4e4aecad3dbd43420e7e"
+    },
+    "experiments/runner-capacity/mixed/ab-driver.ts": {
+      "bytes": 7768,
+      "sha256": "f5c5ae2d31903224717ab17efac509ad41023e458c18d6b6d4e861c7d6aad05b"
+    },
+    "experiments/runner-capacity/mixed/ab-sequence.ts": {
+      "bytes": 1156,
+      "sha256": "fcf04d95513e91f07a470ed9bf436067032ce8b750c509a6e25ab992c2461f15"
+    },
+    "experiments/runner-capacity/mixed/run-identity.ts": {
+      "bytes": 5486,
+      "sha256": "7b69cd6e7cfae26747e5dc13e0dfea570f78b3559fcf18ce4367209f18e46775"
+    },
+    "experiments/runner-capacity/mixed/proof.ts": {
+      "bytes": 12378,
+      "sha256": "7659b1146c7da6995862ed76968b9f717eb869e798541c39ec7b7e809256a0f4"
+    },
+    "experiments/runner-capacity/mixed/queue-main.ts": {
+      "bytes": 1032,
+      "sha256": "5e07f10fcbf5761b022d2a761d790e18e0a5893be3317b65efb87e427fba76bc"
+    },
+    "experiments/runner-capacity/mixed/queue-probe.ts": {
+      "bytes": 903,
+      "sha256": "79c23dcd1d7d3a2051f6f994d70108b2c236a77c77d432a51f8c5f31d63138e1"
+    },
+    "experiments/runner-capacity/mixed/queue-probe.test.ts": {
+      "bytes": 6319,
+      "sha256": "40a0354fc8fcd28ebfbeadcba95057a1c3b33aba99cb5c3418f4006992824135"
+    },
+    "experiments/runner-capacity/mixed/queue-chat.ts": {
+      "bytes": 4987,
+      "sha256": "b3f0d44630310965964f325d5614a216fa7a695a7db0826fae926acf96ee80c9"
+    },
+    "experiments/runner-capacity/mixed/queue-proof.ts": {
+      "bytes": 4466,
+      "sha256": "0b8bfaed9ca7e07b5e3af7ac961d369d2bf55609e8c9680929875e8d5362da1d"
+    },
+    "experiments/runner-capacity/mixed/queue-journal.ts": {
+      "bytes": 737,
+      "sha256": "47431b07d212f199699a822a34692ea19cede8d126963bd40034de651c87665a"
+    },
+    "experiments/runner-capacity/mixed/queue-dependencies.json": {
+      "bytes": 4477,
+      "sha256": "151de5db2b13d407a73b015df4aaf212041105556793d2c3b1e3f26ba90d9914"
+    },
+    "experiments/runner-capacity/mixed/queue-source-bindings.ts": {
+      "bytes": 988,
+      "sha256": "e148d1beff5861701e87714c2e738a7fe69f6d5b30655cacef93a11ffd11eb4c"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/queue-tsconfig.json": {
+      "bytes": 361,
+      "sha256": "354001551bc2c6e0a072391a67a5894973e47840bea4c6e3f953a0ca6bf99ce8"
+    },
+    "docs/evidence/s01/mixed-ab-preparation/queue-vitest.config.mjs": {
+      "bytes": 342,
+      "sha256": "b289d53d8e549a24920d0ac9559c6bf6fd3b6cf2511878eb31f38c8aece0f958"
+    }
+  },
+  "supervisorSha": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "floorBytes": 6934233088,
+  "limits": {
+    "workSeconds": 55,
+    "rawBytes": 524288,
+    "tmpBytes": 16777216
+  },
+  "wholeExternalWall": null,
+  "freeBytes": 21659672576,
+  "tmp": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-8wfwv_qs",
+    "dev": 16777234,
+    "ino": 124156356,
+    "removed": true,
+    "lastSampleBytes": 233,
+    "entries": 4
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "-t",
+    "^queue boundary"
+  ],
+  "process": {
+    "pid": 75941,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 599,
+    "observed_bytes": 457,
+    "retained_bytes": 457,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "raw": {
+    "path": "pg-wiring-queue-tests-2.raw",
+    "bytes": 457,
+    "sha256": "353e4c5bbd8bd8ccf1400c0562564d5e3fb4facf1cf189e2b80431de177161bb"
+  },
+  "endedAt": "2026-10-07T13:12:19.838266+00:00",
+  "elapsedBeforePersistenceMs": 607.6596250059083
+}
