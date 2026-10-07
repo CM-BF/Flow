@@ -1,0 +1,150 @@
+{
+  "preparedAt": "2026-10-07T04:13:52.494868+00:00",
+  "state": "PROPOSAL_NOT_RUN",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "target": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "sourceTree": "bebc96ffa87519a8c3a4f94198a2d79cfe36739a",
+  "sourceArchive": {
+    "entries": 920,
+    "logicalBytes": 7125401,
+    "unsupportedModes": []
+  },
+  "bindings": [
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "sameAsSvc06Input3230": false
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 41320,
+      "sha256": "6d85a9890d15dc619b22cce71bf88701fb70826ab646395c45dc803b9329efc0",
+      "sameAsSvc06Input3230": false
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6800,
+      "sha256": "ca632440092ae3d403a65fffe8c5321232f83036aaf6558e6132c6cfad299206",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01",
+      "sameAsSvc06Input3230": false
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "sameAsSvc06Input3230": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "sameAsSvc06Input3230": true
+    }
+  ],
+  "priorBuildInput": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "priorArtifact": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+  "priorArtifactRepository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+  "dependencies": {
+    "offlineStore": "/Users/citrine/Library/pnpm/store/v3",
+    "pnpmCli": "/opt/homebrew/lib/node_modules/pnpm/bin/pnpm.cjs",
+    "node": "/opt/homebrew/opt/node@24/bin/node",
+    "nodeVersion": "v24.20.0",
+    "pnpmVersion": "9.15.4",
+    "freshRuntimeAndCacheValidation": "NOT_RUN; fixed metadata reused only"
+  },
+  "proposedBuildBudget": {
+    "workSeconds": 420,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "rawBytes": 2097152,
+    "minimumFreeBytes": 3391094784,
+    "additionalBudgetBytes": 2317352960,
+    "liveReserveBytes": 1073741824,
+    "status": "CANDIDATE; team resource sum and fixed entry required before execution"
+  },
+  "execution": {
+    "build": 0,
+    "import": 0,
+    "PG": 0,
+    "personalOperations": 0,
+    "provider": 0
+  }
+}

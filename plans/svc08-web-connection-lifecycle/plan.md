@@ -1,7 +1,7 @@
 # SVC08 — 个人 Web 连接生命周期
 
 所属大task：[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)；原 REQ19；co-lead：Execution Lead。
-状态：in-progress（原SVC08限定proxy终结片已于2026-10-07T03:17:28.292Z完成；现接续已审设计的同锁替换实现，实际部署/根因/长期稳定性未完成）。只修有因果证据的连接生命周期，不调整64容量或定时重启，不操作个人服务。
+状态：in-progress（原SVC08限定proxy终结片已于2026-10-07T03:17:28.292Z完成；同锁替换与Web独立来源选择均已main，后继合法Flow产物候选已准备，实际部署/根因/长期稳定性未完成）。只修有因果证据的连接生命周期，不调整64容量或定时重启，不操作个人服务。
 
 - [x] SVC08-01 固定来源、独立树、claim及最小连接实验Interface。
 - [x] SVC08-02 正常/首帧后上游FIN/RST的有界真实loopback对照与完整清理。
@@ -17,5 +17,5 @@
 
 后继准备于2026-10-07T03:29:12.051Z实际开始；原产品claim已released。SVC06于03:39:40.263Z移出四产品路径；本owner03:40:29.530Z amend v2后合法实施。本片局部段≤60s/16MiB，0PG/Chrome/provider/个人动作，复用OPS14。
 
-- [ ] SVC08-07 Web-only固定host选择、角色授权与同journal恢复边界；五新+四直接用例完成，待独审/main。
+- [x] SVC08-07 Web-only固定host选择、角色授权与同journal恢复边界；五新+四直接用例分轮完成，限定独审与main422接收。
 - [ ] SVC08-08 合法Flow来源真实host artifact、内部子进程/依赖/旧后台动态读取证明与受管个人部署观察；retained3退役仍后继，不自动执行。
