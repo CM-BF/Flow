@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:49 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 22:51 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -14,27 +14,27 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | 产品/运行源STOP；仅本次actual结果/metadata封存，提交后clean |
-| 工作分支状态 | review |
+| 工作树dirty状态 | 产品/运行源STOP；本次actual结果及独审已封存，最终提交push后clean |
+| 工作分支状态 | integration |
 | 检查状态 | PASSED: 原16pure/types0；本次真实PG精确8/8，SQL/EXPLAIN/回滚与项目锁竞争通过 |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
 | 实现目标 | bcbce5cca9dbe4b8d504e0b06deed40f0039f765（PG准备；原product e1b0277字节未改） |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 多个短依赖已在真实数据库中验证为一次有界读取，正文及错误顺序保持一致 |
-| 下一可用交付 | 完成真实结果独立审查并接入主线 |
-| 当前阻塞 | NONE: 本次真实结果待独立审查；主线尚未接收 |
+| 下一可用交付 | 将已验证的依赖批读接入主线 |
+| 当前阻塞 | NONE: 已审待主线接收 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，源/局部/准备APPROVED；本次actual结果待审 |
+| Review | [review.md](review.md)，源/局部/准备及ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，2026-10-07T22:50:25Z |
 | Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v2 ACTIVE；22:17:28.747Z AMEND COMMITTED，exact6（新增dependency-content.pg.test.ts） |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | GDEP01-01 | completed | b01_bounded_reads | 单一内部读取Interface与原commands接线已实现 |
 | GDEP01-02 | completed | b01_bounded_reads | results.md：红1/1→16/16、局部noEmit0；3child完整归还 |
-| GDEP01-03 | completed | b01_bounded_reads | 源/准备独审通过；pg-actual-review-ready.json：真实8/8、SQL/字节/EXPLAIN/事务与项目锁竞争已验，结果独审待审 |
+| GDEP01-03 | completed | b01_bounded_reads | 源/准备独审通过；pg-actual-review-ready.json：真实8/8、SQL/字节/EXPLAIN/事务与项目锁竞争已验，结果独审已批准 |
 | GDEP01-04 | pending | b01_bounded_reads | main未集成 |
 
 ## 当前权限与时间
@@ -82,3 +82,9 @@ READY_CLOSED封存22:41:02Z→manager选择22:43:38.826Z→actual START22:45:32.
 完整原件绑定pg-actual-review-ready.json，runtime512/20alias及13审查源未变。outer terminal22:45:34.364426Z，DB cleanup receipt22:45:34.309Z；精确TMP删除/caller回执wall未知；后续outer PID/PGID ESRCH22:47:04.910696Z。实际scratch REMOVED_EXACT_ENOENT；外置公开许可10件9858B SEALED_PUBLIC_RECEIPTS_KEEP无未来写入、同字节已归档。0当前child/PG/listener/待launch；旧closed许可与历史原件不改。
 
 本次结果待只读独审，主线集成仍开放。DB样本不是峰值，WAL仅规划，EXPLAIN不证明加速；真实公开execute/native/progression最终组合未执行，交Lead按实际集成影响决定。
+
+## 22:50:25 actual结果独审 / 最终STOP
+
+chatui01_owner只读批准729093d8c09f512cb3e6152708614baf68bea57b，ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，0 P1/P2；见pg-actual-review.json。13源/36证据34389B/512runtime20alias核符，8/8真实PG与资源事实通过。该结论替代上方本次待审描述，旧原件/manifest不回写。main未集成，完整task finish仍NOT_COMPLETED，GDEP01-04开放；真实public execute/native/progression组合后继由Lead按集成影响处理。
+
+运行资源FULLRETURN已知观察22:48:09.320783Z（精确原caller回执wall未知）；0待launch/0活动PG或工程child，外置9858B公开证据sealedKEEP无未来写入。最终metadata提交pushclean后所有本task写入STOP、claimv2保留待main/review后续，特殊窗口已消费不重跑。
