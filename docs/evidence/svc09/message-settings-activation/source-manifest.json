@@ -581,12 +581,6 @@
       "sha256": "35b7d520477787c9671a06dbb29ea1ac79e5a5260d5ef8f6221fa2baf5666b89"
     },
     {
-      "path": "docs/evidence/svc09/message-settings-activation/validation-summary.json",
-      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
-      "bytes": 9392,
-      "sha256": "294b2247a9027074906e137bff106b45cd704cfd02b9a47db639db550aeb4805"
-    },
-    {
       "path": "plans/svc09-message-settings-activation/plan.md",
       "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
       "bytes": 1092,
@@ -599,10 +593,22 @@
       "sha256": "f18565fc76b37462735482ab9914bc76a4a84900c9ee7612c1578e30e45c55c6"
     },
     {
+      "path": "docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json",
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 658,
+      "sha256": "5d45e3a32fe6d35b2b08d2a6ec18fd1243d3fb5f3acc405345efdb40805ea87a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/validation-summary.json",
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 9789,
+      "sha256": "807b9d980911a3645fd1df9217f2fbbd983182826207fa926bf7cb1cddc23389"
+    },
+    {
       "path": "plans/svc09-message-settings-activation/status.md",
-      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
-      "bytes": 3599,
-      "sha256": "432c6ed30a79ff5d41c9b3fa24d1f611602468099c8dbb8ee93d549a16d839d3"
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 3912,
+      "sha256": "3685ee0af23a14f451d8af5836b6ede8d6b13a68d9b24c5928625664c387cc82"
     }
   ],
   "installedEntryPins": [
@@ -696,5 +702,14 @@
     "catalog/profile/PID do not prove account/provider eligibility or actual claim",
     "round02–05 product edits were not independently captured as complete fixed product snapshots; reservation/raw fidelity limitation explicit in summary",
     "temporary peak NOT_SAMPLED; no atomic snapshot/reclaimable-byte claim"
-  ]
+  ],
+  "recordAmendment": {
+    "ref": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+    "paths": [
+      "docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json",
+      "docs/evidence/svc09/message-settings-activation/validation-summary.json",
+      "plans/svc09-message-settings-activation/status.md"
+    ],
+    "reason": "Final scope status identified own importlib cache; exact cleanup separate from original fixture receipts. No source/test/raw rerun."
+  }
 }
