@@ -18,9 +18,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/claim-receipt.json",
-      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
-      "bytes": 1932,
-      "sha256": "caf76057afaa4f3186d01c9afe8d198ddd2687b40cf5019f616f99b33499bb9a"
+      "commit": "a76710d0bbefa0fe31c43a3164442a6a502a52a4",
+      "bytes": 1923,
+      "sha256": "7b5f78e0ba087d5cb91ece99967ad8a122b81ef2eea66757313464f932d6daab"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r2.json",
@@ -2905,8 +2905,17 @@
       "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
     }
   ],
-  "bytes": 1514002,
+  "bytes": 1513993,
   "sqlCount": 34,
-  "previousManifestSha256": "76ea6c70a4dd59544ff2e12b152413abcd1cc1e267bd5ecf765eabd6f47a052f",
-  "previousManifest": "pg-isolated-manifest.json"
+  "previousManifestSha256": "14a6aaaf8c9c62e98d1f87a77059f88917daaee9b6fc0ce537b8713bb09e5ba1",
+  "previousManifest": "pre-startup-handback-pg-isolated-manifest-r2.json",
+  "claimRebinding": {
+    "at": "2026-10-07T19:50:14.582Z",
+    "previousVersion": 4,
+    "version": 5,
+    "removedWritePath": "apps/server/src/index.ts",
+    "changedMetadataRows": 1,
+    "unchangedRows": 280,
+    "sourceAndCallerUnchanged": true
+  }
 }

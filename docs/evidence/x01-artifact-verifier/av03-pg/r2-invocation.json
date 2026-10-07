@@ -23,11 +23,11 @@
     "lead": "mika",
     "stage": "AV03_VERIFIER_CLAIM_PG",
     "state": "OPEN only after future unique manager NEXT",
-    "claim": "fresh exact a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30 matching fixed receipt",
+    "claim": "fresh exact a67ba659-d859-40d6-82c6-2b7333087639 v5 ACTIVE29 matching fixed receipt",
     "ledgerObservedAt": "fresh <=60s at original caller start; prepare invocation before reading ledger",
     "head": "exact future clean execution HEAD=origin;record before new admission",
     "window": "fresh32hex generated for future unique actual;no current allocation",
-    "manifestSha256": "14a6aaaf8c9c62e98d1f87a77059f88917daaee9b6fc0ce537b8713bb09e5ba1",
+    "manifestSha256": "3b4058caa161fea07eca1bc7973335f76f046a56d88a308245430b9b21220988",
     "pairedBytes": "future complete floor minus fixed base1242562560;current metadata sample is not admission",
     "resourceFloor": "future complete manager floor incl all actual/potential/KEEP and one cleanupreserve;latest value not guessed"
   },
@@ -43,5 +43,6 @@
   "outerEvidence": "Record actual outer PID/PGID/start/end/exit and raw stdout/stderr with monotonic wall;caller independently records before-save/post-save delivery. Archive only after actual return;no wrapper-changing supervision.",
   "onFailure": "Preserve raw/result/receipt;no automatic second actual or forced DROP. Confirm resource state before RETURN;unknown KEEP.",
   "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/av03-verifier-claim-pg-run-r2",
-  "current": "0actual/0admission/0newnamespace"
+  "current": "0actual/0admission/0newnamespace",
+  "claimRebinding": "Only receipt metadata changed; original argv/caller/environment/deadlines unchanged; pre-handback invocation preserved."
 }

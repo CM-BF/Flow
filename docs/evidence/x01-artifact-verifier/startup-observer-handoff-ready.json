@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-07T19:52:32.792Z",
+  "state": "EXACT_LEAVES_STOPPED_AND_REMOVED_READY_FOR_NEW_OWNER_TAKE",
+  "receiver": "native_center_owner",
+  "receiverTake": "NOT_OBSERVED; receiver must fresh atomic take before editing",
+  "mainFixed": "c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4",
+  "parent": {
+    "head": "32e9153f1e4b9dbd950f36f61ebbb80f30770cae",
+    "claim": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 32,
+    "remainingScopes": 42,
+    "leaf": "apps/server/src/main.ts",
+    "receipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/startup-observer-handback-receipt.json",
+      "bytes": 2441,
+      "sha256": "af39ab83a188f832af1090c277d6224bfb515e857e418f5501176cd03072b1e0"
+    },
+    "sourceEqualsMainPreimage": true
+  },
+  "verifier": {
+    "claim": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 5,
+    "remainingScopes": 29,
+    "leaf": "apps/server/src/index.ts",
+    "receipt": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handback-receipt.json",
+      "bytes": 1923,
+      "sha256": "7b5f78e0ba087d5cb91ece99967ad8a122b81ef2eea66757313464f932d6daab"
+    },
+    "pendingDelta": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-av-index.patch",
+      "bytes": 958,
+      "sha256": "4d8e613b342d2be9b2413e07f47a9eac775b146338e158130914fdcfa43cd692"
+    },
+    "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+    "mainIndexEqualsReviewedBaselineB791": true,
+    "integrationState": "NOT_INTEGRATED; no positive real PG; Original/native_center_owner combines exact reviewed AV delta with observer after AV gate; never whole-blob overlay"
+  },
+  "R2": {
+    "ready": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json",
+      "bytes": 2746,
+      "sha256": "7db111d3bf4a70d399545622791bd0e8eae42350a08fff27293d0b1570edb35e"
+    },
+    "invocation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/r2-invocation.json",
+      "bytes": 2803,
+      "sha256": "25500175f2f9a29768f0901fd707acee88f1d91ee7a7872884e16c9f06ad223a"
+    },
+    "manifest": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r2.json",
+      "bytes": 162825,
+      "sha256": "3b4058caa161fea07eca1bc7973335f76f046a56d88a308245430b9b21220988"
+    },
+    "changedRows": 1,
+    "change": "claim receipt metadata only",
+    "unchangedRows": 280,
+    "productFixtureCallerUnchanged": true,
+    "oldMetadata": "pre-startup-handback-* literal copies plus original fixedGit",
+    "state": "READY_CLOSED_NOT_OPEN_NOT_RUN"
+  },
+  "validation": {
+    "metadataParserErrors": [],
+    "humanMissing": [],
+    "avTimingIssues": [],
+    "parentTimingIssues": [
+      "\u4efb\u52a1\u5f00\u5de5\u65f6\u95f4\u672a\u8bb0\u5f55"
+    ],
+    "historicalUnknownPreserved": true,
+    "engineeringChecks": "NOT_RUN",
+    "sourceChanged": false,
+    "newPGorHTTP": false,
+    "privateFilesRead": false
+  },
+  "budget": {
+    "started": "2026-10-07T19:43:31.000Z",
+    "deadline": "2026-10-07T19:55:31.000Z",
+    "newLogicalCapBytes": 2097152,
+    "method": "metadata/ledger only; old inputs reused, old 281 bytes except claim metadata retained; no TMP created"
+  },
+  "quality": "Reused installed local find-skills matching and clean-code naming/scope/history/error consistency. No installation/new abstraction."
+}

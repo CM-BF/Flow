@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | R2已审source10bd及固定1959准备输入冻结；本轮metadata提交push后clean STOP |
+| 工作树dirty状态 | R2已审source10bd与所有源码冻结；仅claim receipt metadata重绑v5，提交push后clean STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN 10bd0219f84c34008a0255bfed282052a91bce7c：R2仅静态批准，0新types/collect/PG；R1 FAILED/0selected5skipped及原raw保持 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
@@ -167,3 +167,5 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 原R1保持FAILED/0selected5skipped，其root18:30忠实性批准与资源FULL_RETURN分列。center仍NOT_INTEGRATION_READY_PG_REQUIRED；AV03/04完整目标、公有producer与PROCESS T7不由本片完成。提交push后STOP保claim；当前无actual/待launch。
 
 2026-10-07T19:48:21.740Z：startup observer依赖交接metadata段（19:43:31开始，≤12min/2MiB）。19:46:26.235Z明确STOP apps/server/src/index.ts；19:46:46.413Z原子amend a67v4/30→v5/29，仅移除该leaf。新owner须fresh take后写，ea3c两行migration import/call仍NOT_INTEGRATED且缺真实PG成功，后续由Original/native_center_owner结合新observer窄合并，不允许wholeblob覆盖。可继续只读固定index用于R2；产品/fixture/caller/原raw均不改。原R2 receipt/manifest/ready/invocation已逐字存pre-startup-handback副本并保固定Git，当前只更新claim metadata pin；R2仍NOT_OPEN/NOT_RUN。root19:15:54对原R2准备metadata批准已归档，与本次重绑分开。
+
+2026-10-07T19:50:14.582Z：R2新claim绑定闭合。281输入中仅claim-receipt.json metadata更新至a67v5/29，其余280行逐字hash一致，191external/16links不变；旧manifest/receipt/invocation/ready逐字历史保留。新manifest SHA 3b4058caa161fea07eca1bc7973335f76f046a56d88a308245430b9b21220988，入口仍[r2-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json)。无需改caller，原180s/17PG/5case不变；没有admission/namespace或新checks。server/index.ts已永久移出本writer范围，未来AV实际可只读冻结输入，集成须新owner协调窄delta。
