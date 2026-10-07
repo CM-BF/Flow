@@ -48,7 +48,7 @@
 | context | `{format:1, publicOrigin:"http://127.0.0.1:61228", policySha256:"81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"}` |
 | retained artifact A | `461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90` |
 | retained artifact B | `caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe` |
-| current retained artifact C | `d629631d21eedd2afa308c562b31e57fc8597703a57a4af4fefd5e88` |
+| current retained artifact C | `d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88` |
 | 新网页 artifact D | 原 Web owner 待交的精确 descriptor/source/manifest；当前 UNKNOWN |
 
 每个 report 及 read/send/recover/negotiation 四原件必须同 backend/context/artifact，完整 hash 与实际 App/cookie 证据绑定，原 owner 独审后使用。旧 C3 的 backend6c 报告不能替代；配置文件 SHA 和 normalized policy digest 也不能混写。新页面的晚到 Logout/连接 cookie 场景须由原 Web owner 明确覆盖，本构建内部加载不证明它。
