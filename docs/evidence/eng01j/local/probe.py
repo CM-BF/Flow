@@ -30,7 +30,7 @@ def save(path, value):
 def child(scratch):
     binary = scratch / 'canary'
     env = {'PATH': '/usr/bin:/bin', 'TMPDIR': str(scratch), 'HOME': str(scratch), 'NODE_DISABLE_COMPILE_CACHE': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
-    compile_result = subprocess.run([CLANG, '-std=c11', '-Wall', '-Wextra', '-Werror', '-Os', '-fno-modules', str(C_SOURCE), '-o', str(binary)], env=env, capture_output=True, timeout=5)
+    compile_result = subprocess.run([CLANG, '-isysroot', '/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk', '-std=c11', '-Wall', '-Wextra', '-Werror', '-Os', '-fno-modules', str(C_SOURCE), '-o', str(binary)], env=env, capture_output=True, timeout=5)
     print(json.dumps({'stage': 'compile', 'exit': compile_result.returncode, 'stdout': compile_result.stdout.decode(errors='replace'), 'stderr': compile_result.stderr.decode(errors='replace')}), flush=True)
     if compile_result.returncode: return 1
     policy = scratch / 'policy.sb'
