@@ -1,0 +1,58 @@
+{
+  "base": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "missing": [
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12208,
+      "sha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    }
+  ],
+  "external": [
+    "zod"
+  ]
+}
