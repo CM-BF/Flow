@@ -10,13 +10,13 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
+| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 工作树dirty状态 | 原e6ff与e5产物固定；本轮仅own evidence后继入口/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
-| 实现范围 | docs/evidence/svc06/artifact-host-smoke/entry.mjs, docs/evidence/svc06/artifact-host-smoke/supervise.py, docs/evidence/svc06/artifact-host-smoke/inputs.json |
-| 检查状态 | FAILED e6ff0f1f2e7743496f1f17144343a28716c03b38；work/cleanup均exit1；四路径拒读成立，三角色host未通过，center/DB未知保留 |
+| 本片段交付阶段 | review |
+| 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
+| 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
+| 检查状态 | NOT_RUN d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；新root真实旅程尚未执行；a32c局部3/3已审，原e6ff FAILED历史保持 |
 | 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
