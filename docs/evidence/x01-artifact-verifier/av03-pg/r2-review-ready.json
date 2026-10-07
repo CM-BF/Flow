@@ -1,0 +1,175 @@
+{
+  "at": "2026-10-07T18:37:53.590Z",
+  "state": "SOURCE_DELTA_REVIEW_PENDING_NOT_OPEN",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "support": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r2.json",
+  "manifestSha256": "14a6aaaf8c9c62e98d1f87a77059f88917daaee9b6fc0ce537b8713bb09e5ba1",
+  "manifestBytes": 162547,
+  "files": 281,
+  "inputBytes": 1514002,
+  "external": 191,
+  "links": 16,
+  "sql": 34,
+  "changedRows": [
+    {
+      "previous": {
+        "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+        "bytes": 20283,
+        "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
+      },
+      "current": {
+        "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+        "bytes": 20583,
+        "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+      }
+    },
+    {
+      "previous": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure.json",
+        "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+        "bytes": 91001,
+        "sha256": "03a39f4bdfb662a3c2701aeb3b023446f5aa505b0076a8c38ebf79e1e745327b"
+      },
+      "current": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r2.json",
+        "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+        "bytes": 91001,
+        "sha256": "1a8d25dbd5f5c9fda1d59a5b11d10bb6f8f072cde415c598ce219ee9947ebd52"
+      }
+    },
+    {
+      "previous": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "commit": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+        "bytes": 20283,
+        "sha256": "09911148f3bccf2644e39b9323655fc060dcd1b3c6fe655b59ab5f3a631d357d"
+      },
+      "current": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+        "bytes": 20583,
+        "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+      }
+    },
+    {
+      "previous": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input.json",
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 2423,
+        "sha256": "cf0b549271a94e4ba7adafed2aad6fee371542572f648cfebf27ca439ec2a600"
+      },
+      "current": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input-r2.json",
+        "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+        "bytes": 2423,
+        "sha256": "4158b2e8d556331e08707bbbc8c55711c9264a68769132b9d0168d5d223862eb"
+      }
+    },
+    {
+      "previous": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-once.py",
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 18379,
+        "sha256": "24046cd392174cc875e526a648cfd964b626a34e9f5efcf1f585a064fab9c8b8"
+      },
+      "current": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+        "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+        "bytes": 18385,
+        "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+      }
+    },
+    {
+      "previous": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request.json",
+        "commit": "1ab5056e6992625cdf3785864c1561db5d6a45e4",
+        "bytes": 2321,
+        "sha256": "6152a8080fd9989aee9650c182fd45c8a5b226358c12be476034d3c291b7a5d7"
+      },
+      "current": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request-r2.json",
+        "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+        "bytes": 2269,
+        "sha256": "e8e318abac1a438b2bd4b8983442ae0699aec2e2ac7bf159061c8d4534d16e16"
+      }
+    }
+  ],
+  "unchangedRows": 275,
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 18385,
+      "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 2423,
+      "sha256": "4158b2e8d556331e08707bbbc8c55711c9264a68769132b9d0168d5d223862eb"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 91001,
+      "sha256": "1a8d25dbd5f5c9fda1d59a5b11d10bb6f8f072cde415c598ce219ee9947ebd52"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 2269,
+      "sha256": "e8e318abac1a438b2bd4b8983442ae0699aec2e2ac7bf159061c8d4534d16e16"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-source-delta.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 1061,
+      "sha256": "8e02f5b4cfd3d436f99aacebcd15b3b1de7dd7eccd2c325f218c9fe65ced426c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-synthetic-audit.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 1107,
+      "sha256": "6de49207343e66b4857ed7985ea3c14382db8def3a7b8bbb708b10e5b23b175a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-quality.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 757,
+      "sha256": "61385587a91d04c8f623445629a8a6dcf49caf33dd560753bfb1a4bc4542c20f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-source-start.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 2488,
+      "sha256": "3cf33bf9e275d0d9cc00cdd93261cdeb0957f1c9b91b15cc77e7231d6a3eb24f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/result-approval-r1.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 596,
+      "sha256": "3ec6bda7ed4b6dbe367cd1dc047cee99d56c9518f99a0d5365a35a49ada5e161"
+    }
+  ],
+  "newChecks": "NOT_RUN;0engineeringchild/PG. Await necessary focusedstrict ordinary grant.",
+  "namespace": "av03-verifier-claim-pg-run-r2",
+  "namespaceAbsent": true,
+  "R1": "result2f32/packet77d/raw/manifest76ea immutable;FAILED fidelity approved18:30:02",
+  "bounds": "Original180s110/60/10 candidate;1DB17conn160HTTP5cases;32MiBTMP/1MiBraw/128MiBDBWAL+1GiBreserve;new unique grant/freshfloor required",
+  "noNewProduct": "Only claimed PG test + exact mirror + own evidence; no DDL/helper/product changes"
+}
