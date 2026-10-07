@@ -1,0 +1,213 @@
+diff --git a/packages/client/src/index.ts b/packages/client/src/index.ts
+index b4d983d3..78410622 100644
+--- a/packages/client/src/index.ts
++++ b/packages/client/src/index.ts
+@@ -1,3 +1,4 @@
++import { PluginRunnerClient } from './plugin-runner.js';
+ import { ASSISTANT_SELECTION_PROTOCOL, assistantStreamSelectionSchema, assistantStreamDataSchema, type AssistantStreamProtocol, type AssistantStreamSelection, type AssistantStreamSelectedPage, type AssistantStreamSelectedPatchPage } from '../../contracts/src/assistant-stream.js';
+ import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
+ import type { NativeActivityBodyDescriptor, NativeActivityBodySupport } from '@flow/contracts';
+@@ -62,6 +63,8 @@ export type ClientOptions = ClientConnectionOptions & (
+ );
+ 
+ export class FlowClient {
++  /** All plugin requests share this client's existing authentication, cancellation and error handling. */
++  readonly pluginRunner = new PluginRunnerClient((path, init, maximumBytes) => this.request(path, init, undefined, maximumBytes));
+   private readonly baseUrl: string;
+   private readonly token: string | undefined;
+   private readonly csrfToken: (() => string | undefined) | undefined;
+diff --git a/apps/runner/src/runtime.ts b/apps/runner/src/runtime.ts
+index 8f5ba3b7..6a3f8a4e 100644
+--- a/apps/runner/src/runtime.ts
++++ b/apps/runner/src/runtime.ts
+@@ -29,7 +29,7 @@ export interface RunnerOptions {
+   /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
+   pluginExecution?: {
+     store: TrustedPackageStore;
+-    transport(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
++    transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+   };
+   /** Explicit host opt-in; public conversation capabilities remain disabled. */
+   activeSteering?: boolean;
+@@ -56,7 +56,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
+   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
+   const requests = new Set<Promise<unknown>>();
+   const client = authenticatedClient(options, stop, requests);
+-  const plugin = pluginExecution?.transport(client);
++  const plugin = pluginExecution ? (pluginExecution.transport?.(client) ?? client.pluginRunner) : undefined;
+   const pluginRequest = async <T>(run: () => Promise<T>): Promise<T> => {
+     const pending = (async () => { try { return await run(); } catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; } })();
+     requests.add(pending);
+diff --git a/apps/server/src/index.ts b/apps/server/src/index.ts
+index 3aa8df4e..4c703bbb 100644
+--- a/apps/server/src/index.ts
++++ b/apps/server/src/index.ts
+@@ -1,7 +1,8 @@
+ import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
+ import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
+ import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+-import { migratePluginRuntime } from './plugin-runtime/store.js';
++import { migratePluginRuntime, type TrustedPluginHostPolicy } from './plugin-runtime/store.js';
++import { registerPluginRuntimeRoutes } from './plugin-runtime/routes.js';
+ import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
+ import { migratePluginInstallations } from './plugin-installations/migration.js';
+ import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
+@@ -60,6 +61,8 @@ export interface ServerOptions {
+   automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
+   /** Explicit host policy for static material installation; absent keeps these routes disabled. */
+   pluginInstallHost?: PluginInstallHost;
++  /** Explicit operator trust. Absence leaves plugin admission and phase routes unmounted. */
++  pluginRuntimeHostPolicy?: TrustedPluginHostPolicy;
+   /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
+   browserSession?: BrowserSessionOptions;
+   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
+@@ -177,6 +180,7 @@ export async function createServer(options: ServerOptions) {
+   registerPluginRoutes(app, pool);
+   if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
+   if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
++  if (options.pluginRuntimeHostPolicy) registerPluginRuntimeRoutes(app, pool, boss, options.pluginRuntimeHostPolicy);
+   registerAssistantRoutes(app, pool);
+   registerNativeActivityRoutes(app, pool);
+   registerNativeActivityBodyRoutes(app, pool);
+diff --git a/apps/server/src/reconciliation.ts b/apps/server/src/reconciliation.ts
+index 5467c8cc..f75d1be6 100644
+--- a/apps/server/src/reconciliation.ts
++++ b/apps/server/src/reconciliation.ts
+@@ -110,6 +110,11 @@ export async function resolveUncertain(pool: Pool, taskId: string, input: Reconc
+ export async function retryReconciled(pool: Pool, boss: PgBoss, taskId: string, input: ReconciliationRetry, key: string): Promise<ReconciliationRetryResult> {
+   const result = await command(pool, `reconciliation:retry:${taskId}`, key, input, async client => {
+     const { task, attempt } = await lockExpectedAttempt(client, taskId, input);
++    // Generic recovery cannot discard frozen package identity or authorize another invocation.
++    if ((await client.query('SELECT 1 FROM flow.plugin_tool_bindings WHERE task_id=$1', [taskId])).rowCount) {
++      throw new HttpError(409, 'plugin_recovery_requires_binding', "Generic retry cannot preserve this plugin task's package and configuration. The original task is retained; automatic re-execution is blocked.");
++    }
++
+     const resolution = (await client.query<AuditRow>(
+       "SELECT * FROM flow.reconciliation_audit WHERE id=$1 AND task_id=$2 AND attempt_id=$3 AND action='resolution'", [input.resolutionId, taskId, attempt.id],
+     )).rows[0];
+diff --git a/packages/client/src/plugin-runner.test.ts b/packages/client/src/plugin-runner.test.ts
+index efa2a999..850d041a 100644
+--- a/packages/client/src/plugin-runner.test.ts
++++ b/packages/client/src/plugin-runner.test.ts
+@@ -1,5 +1,6 @@
++import { FlowClient, FlowApiError } from './index.js';
+ import { randomUUID } from 'node:crypto';
+-import { expect, test, vi } from 'vitest';
++import { afterEach, expect, test, vi } from 'vitest';
+ import { PluginRunnerClient, type PluginJsonRequest } from './plugin-runner.js';
+ import type { PluginRunnerClaimRequest } from '../../contracts/src/plugin-runner-claim.js';
+ const request = (): PluginRunnerClaimRequest => ({ protocol: 'flow.runner-claim.v3', runnerId: randomUUID(), requestId: randomUUID(),
+@@ -30,3 +31,39 @@ test('phase request preserves stable key and rejects a changed ownership ACK', a
+   await expect(new PluginRunnerClient(transport).authorize(input, 'a'.repeat(64))).rejects.toThrow();
+   expect(transport.mock.calls[0]![1].headers).toEqual({ 'Idempotency-Key': 'a'.repeat(64) }); expect(transport).toHaveBeenCalledTimes(1);
+ });
++
++afterEach(() => { vi.unstubAllGlobals(); });
++test('FlowClient domain uses the same bearer transport and bounded decoder', async () => {
++  const input = request(); const calls: RequestInit[] = [];
++  vi.stubGlobal('fetch', vi.fn(async (_url: string | URL | Request, init?: RequestInit) => {
++    calls.push(init!); return new Response(JSON.stringify({ ...input, state: 'empty' }), { status: 200, headers: { 'content-type': 'application/json' } });
++  }));
++  const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'owned-token' });
++  expect(await client.pluginRunner.claim(input)).toMatchObject({ state: 'empty' });
++  expect(new Headers(calls[0]!.headers).get('authorization')).toBe('Bearer owned-token');
++  expect(calls[0]!.credentials).toBe('omit'); expect(client.pluginRunner).toBe(client.pluginRunner);
++});
++test('FlowClient domain reads current browser CSRF and preserves its one error class', async () => {
++  let csrf = 'a'.repeat(64); const seen: Headers[] = [];
++  vi.stubGlobal('fetch', vi.fn(async (_url: unknown, init?: RequestInit) => {
++    seen.push(new Headers(init!.headers)); return new Response(JSON.stringify({ published: true }), { status: 200 });
++  }));
++  const client = new FlowClient({ baseUrl: 'http://fixture.invalid', browserSession: { csrfToken: () => csrf } });
++  const input = { protocol: 'flow.plugin-runtime.v1' as const, storeId: 'owned', hostApiMajor: 1 as const };
++  await client.pluginRunner.publishHost(input); csrf = 'b'.repeat(64); await client.pluginRunner.publishHost(input);
++  expect([...seen[0]!.values()]).toContain('a'.repeat(64)); expect([...seen[1]!.values()]).toContain('b'.repeat(64));
++  vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify({ code: 'runner_required', message: 'Denied' }), { status: 401 })));
++  await expect(client.pluginRunner.publishHost(input)).rejects.toBeInstanceOf(FlowApiError);
++});
++test('shared request preserves cancellation and rejects an oversized plugin response', async () => {
++  const abort = new AbortController(); const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'owned-token' });
++  const fetch = vi.fn((_url: unknown, init?: RequestInit) => new Promise<Response>((_resolve, reject) => {
++    init!.signal!.addEventListener('abort', () => reject(new Error('cancelled by original signal')), { once: true });
++  })); vi.stubGlobal('fetch', fetch);
++  const input = { protocol: 'flow.plugin-runtime.v1' as const, storeId: 'owned', hostApiMajor: 1 as const };
++  const pending = client.pluginRunner.publishHost(input, abort.signal); abort.abort();
++  await expect(pending).rejects.toThrow('cancelled by original signal'); expect(fetch).toHaveBeenCalledTimes(1);
++  const oversized = vi.fn(async () => new Response('x'.repeat(1025), { status: 200, headers: { 'content-length': '1025' } }));
++  vi.stubGlobal('fetch', oversized); await expect(client.pluginRunner.publishHost(input)).rejects.toThrow();
++  expect(oversized).toHaveBeenCalledTimes(1);
++});
+diff --git a/apps/runner/src/plugins/runtime.test.ts b/apps/runner/src/plugins/runtime.test.ts
+index f260dfd9..414784b3 100644
+--- a/apps/runner/src/plugins/runtime.test.ts
++++ b/apps/runner/src/plugins/runtime.test.ts
+@@ -25,7 +25,7 @@ vi.mock('./host.js', async importOriginal => {
+ });
+ const roots: { path: string; dev: number; ino: number; removed: boolean }[] = [];
+ afterEach(async () => {
+-  vi.restoreAllMocks();
++  vi.restoreAllMocks(); vi.unstubAllGlobals();
+   for (const root of roots.filter(value => !value.removed)) {
+     const now = await lstat(root.path); expect([now.dev, now.ino, now.isDirectory(), now.isSymbolicLink()]).toEqual([root.dev, root.ino, true, false]);
+     await rm(root.path, { recursive: true }); root.removed = true;
+@@ -116,3 +116,16 @@ test('legacy no-port polling uses only the unchanged v2 transport', async () =>
+   f.oldClaim.mockImplementation(async request => { f.abort.abort(); return { ...request, state: 'empty' }; });
+   await runRunner(f.options); expect(f.oldClaim).toHaveBeenCalledTimes(1); expect(f.transport).not.toHaveBeenCalled(); expect(state.invokes).toBe(0);
+ });
++
++test('store-only runtime opt-in consumes the real FlowClient plugin domain and its bearer request', async () => {
++  const f = await fixture(); delete f.options.pluginExecution!.transport;
++  const seen: string[] = [];
++  vi.stubGlobal('fetch', vi.fn(async (url: string | URL | Request, init?: RequestInit) => {
++    seen.push(new Headers(init!.headers).get('authorization')!);
++    const result = await f.transport(new URL(String(url)).pathname, init!);
++    return new Response(JSON.stringify(result), { status: 200, headers: { 'content-type': 'application/json' } });
++  }));
++  await runRunner(f.options); expect(state.invokes).toBe(1); expect(seen.length).toBeGreaterThanOrEqual(5);
++  expect(seen.every(value => value === 'Bearer fixture-only')).toBe(true);
++  expect(f.reports.at(-1)!.events.at(-1)!.type).toBe('completed');
++});
+diff --git a/apps/server/src/plugin-runtime/recovery.test.ts b/apps/server/src/plugin-runtime/recovery.test.ts
+new file mode 100644
+index 00000000..dce4e4f2
+--- /dev/null
++++ b/apps/server/src/plugin-runtime/recovery.test.ts
+@@ -0,0 +1,38 @@
++import { randomUUID } from 'node:crypto';
++import type { Pool, PoolClient } from 'pg';
++import type { PgBoss } from 'pg-boss';
++import { beforeEach, expect, test, vi } from 'vitest';
++import type { ReconciliationRetry } from '@flow/contracts';
++import { retryReconciled } from '../reconciliation.js';
++const fixture = vi.hoisted(() => ({ bound: true, queries: [] as string[], taskId: '', attemptId: '', runnerId: '', wakes: 0 }));
++vi.mock('../tasks.js', () => ({
++  command: async (_pool: unknown, _operation: string, _key: string, _input: unknown, run: (client: PoolClient) => Promise<unknown>) => {
++    const client = { query: async (sql: string) => {
++      fixture.queries.push(sql);
++      if (sql.includes('FROM flow.attempts')) return { rowCount: 1, rows: [{ id: fixture.attemptId, task_id: fixture.taskId, runner_id: fixture.runnerId, owner_version: 1, completed_at: new Date() }] };
++      if (sql.includes('FROM flow.runners')) return { rowCount: 1, rows: [{ id: fixture.runnerId }] };
++      if (sql.includes('FROM flow.plugin_tool_bindings')) return { rowCount: fixture.bound ? 1 : 0, rows: fixture.bound ? [{}] : [] };
++      if (sql.includes('FROM flow.reconciliation_audit')) return { rowCount: 0, rows: [] };
++      throw new Error('Unexpected query: '+sql);
++    } } as unknown as PoolClient;
++    try { return { value: await run(client), replayed: false }; }
++    catch (error) { fixture.queries.push('ROLLBACK'); throw error; }
++  },
++  loadTask: async () => ({ id: fixture.taskId, current_attempt_id: fixture.attemptId, owner_version: 1, status: 'failed', submission: { title: 'Tool', prompt: 'same frozen input', harness: 'fixture' } }),
++  summary: vi.fn(), wake: () => { fixture.wakes++; },
++}));
++beforeEach(() => { fixture.bound = true; fixture.queries = []; fixture.wakes = 0; fixture.taskId = randomUUID(); fixture.attemptId = randomUUID(); fixture.runnerId = randomUUID(); });
++function retry() {
++  const input: ReconciliationRetry = { attemptId: fixture.attemptId, ownerVersion: 1, resolutionId: randomUUID(),
++    safety: { strategy: 'no-side-effects', evidence: { explanation: 'Operator confirmed no side effects', references: [] } } };
++  return retryReconciled({} as Pool, {} as PgBoss, fixture.taskId, input, 'owned-key');
++}
++test('generic retry cannot discard a frozen plugin binding or create a fixture replacement', async () => {
++  await expect(retry()).rejects.toMatchObject({ status: 409, code: 'plugin_recovery_requires_binding', message: expect.stringContaining('automatic re-execution is blocked') });
++  const sql = fixture.queries; expect(sql.findIndex(value => value.includes('plugin_tool_bindings'))).toBeGreaterThan(sql.findIndex(value => value.includes('flow.attempts') && value.includes('FOR UPDATE')));
++  expect(sql.some(value => value.startsWith('INSERT') || value.startsWith('UPDATE'))).toBe(false); expect(fixture.wakes).toBe(0); expect(sql.at(-1)).toBe('ROLLBACK');
++});
++test('unbound legacy retry still reaches the existing audited resolution fence', async () => {
++  fixture.bound = false; await expect(retry()).rejects.toMatchObject({ status: 409, code: 'resolution_required' });
++  expect(fixture.queries.some(sql => sql.includes('reconciliation_audit'))).toBe(true); expect(fixture.wakes).toBe(0);
++});

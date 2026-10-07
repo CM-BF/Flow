@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:56:07.189458+00:00 |
+| 最近更新时间 | 2026-10-07T09:00:56.457504+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 新段起点7fe6fc02；固定main b768+LAZY294；当前source2ea5adfe，旧runtime9b已独审 |
-| 工作树 dirty 状态 | 7产品源已固定；4child实际闭合，98源输入与结果本次固定交审 |
-| 工作分支状态 | review |
+| 工作树 dirty 状态 | source2ea5adfe/result3ae09ac1/packet2c219bca已push clean；本次仅正式独审与intake metadata |
+| 工作分支状态 | integration |
 | 检查状态 | 首strict2原件保留→修后0；6/6新直接行为，最终错误文案只复测2/2（共6distinct）；4child/2109Braw/5exact根absent；server factory仅静态，0PG |
-| Review | 旧runtime9b/c178于08:43:58独审APPROVED；新7源2ea5adfe与有限local结果PENDING |
+| Review | chatui01_owner 2026-10-07T08:59:36Z SOURCE_AND_LIMITED_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，target2ea5adfe |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
 | 实现目标 | 2ea5adfedfe0187a49cde13c769823be753a1496 |
 | 实现范围 | packages/client/src/index.ts, apps/runner/src/runtime.ts, apps/server/src/index.ts, apps/server/src/reconciliation.ts, packages/client/src/plugin-runner.test.ts, apps/runner/src/plugins/runtime.test.ts, apps/server/src/plugin-runtime/recovery.test.ts |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 客户端与可信中心入口已接好，定向检查通过；普通重试明确保护插件的固定版本与配置 |
-| 下一可用交付 | 独审本片接线后验证真实公开运行链；完整插件恢复与CLI受信配置仍开放 |
-| 当前阻塞 | NONE：本片等待独立审查，真实HTTP与完整恢复尚待后继验收 |
+| 当前产出 | 插件客户端、运行时和可信中心接线已通过独立审查，待主线组合检查与接收 |
+| 下一可用交付 | 受控接收后验证真实公开运行链；完整插件恢复与CLI受信配置仍开放 |
+| 当前阻塞 | NONE：本片已审待集成；真实HTTP与完整恢复是后继验收，不将当前局部检查当完成 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -317,3 +317,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:51:05.934001+00:00：旧runtime/domain固定独审08:43:58 APPROVED已录[runtime独审](../../docs/evidence/x01/runtime-public-independent-review.json)。新的20min段从08:44:47开始，不延长旧段；LAZY STOP/amend后本v19于08:45:17.758领取index，v20于08:47:45.538追加retry保护。此时实际3child已终态，新6/6和strict0，0PG/HTTP监听/tar/provider。后继guard是防降级保护，不是已实现透明恢复；旧版本pin/副作用未知仍保持，原六源intake仍独立。
 
 2026-10-07T08:56:07.189458+00:00：新source2ea5adfe固定；[Interface](../../docs/evidence/x01/runtime-wiring-interface.md)和[有限结果](../../docs/evidence/x01/runtime-wiring-result.json)记录实际边界。四child于08:51:32.386169Z全部闭合/本队local归还，6distinct通过+2定向重复，0PG/HTTP监听/tar/provider；首types失败保留。完整factory挂载仅静态、实际公共链和pin恢复未验；旧runtime正式批准与来源六源READY不被本片覆盖。架构新增同FlowClient领域消费与可信factory opt-in，main基线待Lead受控更新。v20ACTIVE51保留review/repair。
+
+2026-10-07T09:00:56.457504+00:00：chatui于08:59:36固定2c219bca/2ea5adfe独审APPROVED/0P1P2；[正式回执](../../docs/evidence/x01/runtime-wiring-independent-review.json)及[七源分层窄intake](../../docs/evidence/x01/runtime-wiring-integration-ready.json)已归档。main尚未接收；原9b runtime/domain、LAZY294和来源685是明确前置，不能整文件overlay。fresh09:00:09.267Z v20ACTIVE51未变，当前0工程child/PG/待launch；本20min段至此收尾，保留claim供review/repair。

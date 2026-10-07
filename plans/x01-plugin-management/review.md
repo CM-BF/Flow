@@ -1,3 +1,11 @@
+状态：APPROVED（七源生产接线与有限局部结果；真实公共链未验）
+
+Review target commit: 2ea5adfedfe0187a49cde13c769823be753a1496
+
+chatui01_owner/gpt-6-astra 2026-10-07T08:59:36Z，SOURCE_AND_LIMITED_LOCAL_RESULT_REVIEW_APPROVED/0P1P2。[正式回执](../../docs/evidence/x01/runtime-wiring-independent-review.json)，[窄接收入口](../../docs/evidence/x01/runtime-wiring-integration-ready.json)。六distinct行为与两定向重复不当八项；server factory完整closure/HTTP/CLI/真实npm/完整恢复仍待。
+
+---
+
 状态：PENDING（七源公开接线与有限直接结果，0真实PG）
 
 Review target commit: 2ea5adfedfe0187a49cde13c769823be753a1496
