@@ -1,6 +1,6 @@
 # TUI01G：Claude 逐消息设置
 
-状态：in-progress。所属大task：[TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，co-lead Execution Lead。
+状态：本片段已交付。所属大task：[TUI-001](../../../tui-client/plans/tui01-terminal-client/plan.md)，co-lead Execution Lead。
 
 使终端与 headless typed commands 可发现当前公开配置、选择完整允许组合，并把下一条消息的请求设置可靠保存。遵循[根模块规则](../../AGENTS.md#modular-design)。不新增后端、权限、Codex 会话支持或 provider 请求。旧无能力普通聊天保持。
 
@@ -13,7 +13,7 @@
 - [x] TUI01G-01：精确范围交接、唯一计划及 Interface 固定。
 - [x] TUI01G-02：有限目录选择、冻结发送和 requested/observed/unknown 展示。
 - [x] TUI01G-03：定向合同/controller 与终端直接消费者检查；原资源 NOT_RUN 与首次依赖失败保留，51 个不同用例分轮通过、focused types 通过。
-- [ ] TUI01G-04：独立审查及受控 main 接收。
+- [x] TUI01G-04：独立审查及受控 main8631 接收（完整双端/真实 PTY 仍由父任务开放）。
 
 ## 验收与限制
 

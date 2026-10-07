@@ -1,0 +1,91 @@
+{
+  "at": "2026-10-07T02:22:18.201551+00:00",
+  "reviewer": "assignment_review / gpt-6-astra (independent from native_center_owner)",
+  "decision": "APPROVED_LIMITED_VALIDATION",
+  "sourceTarget": "215063fb4667fc394a07417d608b075fa1188d92",
+  "delivery": "335f402a63d56236b733bcf4068dcbef06dfc49b",
+  "manifest": "docs/evidence/tui01g/validation-manifest.json",
+  "manifestSha256": "2b090ae535727b2fd2fef14d1f1bbf360c519f677474bc9c457f33a692de14f2",
+  "findings": [],
+  "bindingAudit": {
+    "sources": 12,
+    "protected": 200,
+    "evidence": 41,
+    "readOnlyRuntime": 7,
+    "total": 260,
+    "mismatches": [],
+    "method": "Repository entries checked against declared fixedRef, delivery and current bytes; seven external runtime entries checked against declared bytes/SHA. Original SOURCE_APPROVED review reused; no semantic source review rerun."
+  },
+  "rounds": [
+    {
+      "id": "new-01",
+      "selected": 12,
+      "passed": 11,
+      "failed": 1,
+      "exit": 1
+    },
+    {
+      "id": "direct-01",
+      "selected": 39,
+      "passed": 37,
+      "failed": 2,
+      "exit": 1
+    },
+    {
+      "id": "ink-02",
+      "selected": 3,
+      "passed": 3,
+      "unselected": 2,
+      "exit": 0
+    },
+    {
+      "id": "types-01",
+      "focused": true,
+      "exit": 0
+    }
+  ],
+  "distinct": 51,
+  "repair": {
+    "productChanges": 0,
+    "exactIgnoredLink": "node_modules/ink-testing-library",
+    "version": "4.0.0",
+    "oldAndNewPayloadEqual": true,
+    "files": 6,
+    "bytes": 10991,
+    "13CurrentLinksMatchApprovedInputs": true,
+    "staticAncestorResolution": "Original donor resolves Ink/React from Flow; repaired donor and own tree resolve both from the same I02 payload paths. No imports were executed during review."
+  },
+  "resources": {
+    "ownedGroupsAbsent": 4,
+    "bothStreamsEOF": true,
+    "maxElapsedMs": 3356,
+    "observedRawPlusCachePeakBytes": 10380,
+    "checkpointBeforeCacheCleanup": true,
+    "removedCacheBytes": 738,
+    "historicalExit1Preserved": true
+  },
+  "intake": {
+    "mainChecked": "6b531d4632b60e1a70a8183c68a98dc561e5f79c",
+    "base": "93a92c918b29126b6761b02258cef523906eca94",
+    "preimageChangesWithin12": [],
+    "productFiles": 12,
+    "productBytes": 90458,
+    "evidenceFiles": 39,
+    "evidenceBytes": 426059,
+    "canonicalFiles": 3,
+    "canonicalBytes": 7000,
+    "totalFiles": 54,
+    "totalBytes": 523517
+  },
+  "limits": [
+    "Pure contracts/controller and controlled-port actual Ink plus focused TypeScript only.",
+    "No socket HTTP, PG, real PTY, Chrome, provider, F04, whole-repository typecheck or full TUI-Web journey approval.",
+    "51 different cases passed across rounds, not one 51-case green run."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "projectWrites": 0
+  }
+}
