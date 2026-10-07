@@ -24,6 +24,8 @@ export const context = Object.freeze({ format: 1, publicOrigin: 'http://127.0.0.
 const roles = ['center', 'runner', 'web'], files = ['browser-session.json', 'claude.json', 'config.json', 'maintenance.json', 'state.json', 'web-release.json'];
 const oldIds = Object.keys(reports).slice(0, 3), runnerId = 'd22f4df2-8242-49f4-a1b4-77f8f08611ef', operationId = '35d5a7ff-5ef7-4938-9584-adb27f5357ff';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+const fingerprint = value => sha(JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
+  ? Object.fromEntries(Object.keys(current).sort().map(key => [key, current[key]])) : current));
 const identity = value => { assert.deepEqual(Object.keys(value).sort(), ['dev', 'ino']); for (const part of Object.values(value)) assert.match(part, /^\d+$/); };
 const hash = value => assert.match(value, /^[a-f0-9]{64}$/);
 
@@ -81,6 +83,8 @@ async function observe(input, mod) {
   await observeCurrentInstallation(mod, input);
   const state = await mod.preview.readPreviewJson(join(input.installationDirectory, 'state.json'));
   const op = await mod.preview.readPreviewJson(join(input.installationDirectory, 'maintenance.json'));
+  assert.equal(fingerprint(state), mod.recovery.stateDigest, 'RECOVERED_LAUNCH_CHANGED');
+  assert.equal(fingerprint(op), mod.recovery.operationDigest, 'RECOVERED_OPERATION_CHANGED');
   assert.equal(op.operationId, operationId); assert.equal(op.phase, 'resumed'); assert.deepEqual(op.backendArtifact, backend);
   const view = await mod.maintenance.maintainPreview({ directory: input.installationDirectory, action: 'status' });
   assert.equal(view.state, 'accepting'); assert.equal(view.version, 24); assert.equal(view.operationId, null); assert.equal(view.runnerId, runnerId);
@@ -117,12 +121,12 @@ export async function runWebOnly(input, action) {
   validateInput(input); assert.ok(['transfer', 'publish'].includes(action));
   const receipt = await privateBytes(input.finalReceipt.path, input.finalReceipt.bytes);
   assert.equal(receipt.bytes.length, input.finalReceipt.bytes); assert.equal(sha(receipt.bytes), input.finalReceipt.sha256);
-  assertRecoveryReceipt(JSON.parse(receipt.bytes));
+  const recovery = JSON.parse(receipt.bytes); assertRecoveryReceipt(recovery);
   const output = action === 'transfer' ? input.runDirectory : input.publicationDirectory;
   await directory(dirname(output)); await mkdir(output, { mode: 0o700 }); const runIdentity = await directory(output);
   await record(join(output, 'web-only-intent.json'), { at: new Date().toISOString(), action, artifact, backend });
   try {
-    const mod = await modules(input); mod.observe = () => observe(input, mod);
+    const mod = await modules(input); mod.recovery = recovery; mod.observe = () => observe(input, mod);
     const result = action === 'transfer' ? await transferWebArtifact({ ...input, runIdentity }, mod) : await publish(input, mod);
     await record(join(output, 'web-only-result.json'), result); return result;
   } catch (error) {

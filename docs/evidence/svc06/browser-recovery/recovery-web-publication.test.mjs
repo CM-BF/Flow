@@ -7,6 +7,8 @@ import { createHash } from 'node:crypto';
 import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly } from './recovery-web-publication.mjs';
 
 const sha = value => createHash('sha256').update(value).digest('hex');
+const fingerprint = value => sha(JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
+  ? Object.fromEntries(Object.keys(current).sort().map(key => [key, current[key]])) : current));
 const ids = Object.keys(reports).slice(0, 3), roles = ['center', 'runner', 'web'];
 const retainedArtifacts = ids.map(artifactId => ({ artifactId, manifestDigest: artifactId, sourceHead: 'a'.repeat(40) }));
 const release = { version: 3, current: ids[2], artifacts: retainedArtifacts };
@@ -72,7 +74,8 @@ async function fixture(behavior, body) {
     value.processDigests = Object.fromEntries(roles.map(role => [role, sha(JSON.stringify(processes[role]))]));
     await writeFile(join(value.runDirectory, 'complete.json'), JSON.stringify({ outcome: 'web-artifact-imported-pointer-unchanged', artifact }), { mode: 0o600 });
     const checked = [];
-    const mod = { preview: { readPreviewJson: async path => structuredClone(path.endsWith('state.json') ? state : operation),
+    const mod = { recovery: { ...receipt(), stateDigest: fingerprint(state), operationDigest: fingerprint(operation) },
+      preview: { readPreviewJson: async path => structuredClone(path.endsWith('state.json') ? state : operation),
       publishPreviewWeb: async request => { called++; assert.deepEqual(request, { directory: root, artifact, expectedVersion: 3, expectedBackendHead: backend.sourceHead, compatibilityId: reports[artifact.artifactId] });
         if (behavior === 'conflict') throw Object.assign(Error('fixture'), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
         state = { ...state, webReleaseOperation: { phase: 'committed' } };
@@ -92,4 +95,8 @@ test('public conflict stops without replay or pointer replacement', async () => 
 });
 test('post-commit unknown stays primary and never triggers rollback or retry', async () => {
   await fixture('unknown', async (value, mod, facts) => { await assert.rejects(publish(value, mod), { code: 'WEB_RELEASE_COMMITTED_UNCONFIRMED' }); assert.equal(facts().called, 1); assert.equal(facts().state.webReleaseOperation.phase, 'committed'); });
+});
+test('a different launch since the recovery receipt is refused before public CAS', async () => {
+  await fixture('success', async (value, mod, facts) => { mod.recovery.stateDigest = 'a'.repeat(64);
+    await assert.rejects(publish(value, mod), /RECOVERED_LAUNCH_CHANGED/); assert.equal(facts().called, 0); });
 });
