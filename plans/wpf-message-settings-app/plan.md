@@ -60,3 +60,7 @@ MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式�
 ## MSGAPP-05 修后独立页面工作段
 
 新120s仅覆盖原material-return与message-settings-app，二者同账/每attempt最多60s、至少45s且含30s清理；旧90/局部各phase封闭。新父入口明确独立ID/旧账hash/新run目录，原断言不变。准备不占资源；没有本批actual，经理统一安排。
+
+## 修后材料selected实际
+
+[material原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json) selected2 PASS，scope仅cookieRead+messageSettingsMaterialReturn；原四FAIL不回写。新120phase charge13353/rem106647，完整ownedRETURN，0PNG；第二message-settings-app尚未执行。fcf5预算绑定已获rootf05批准，actual根独审待；不重跑通过材料。

@@ -1,9 +1,9 @@
 {
-  "state": "PREPARED_NOT_OPEN",
+  "state": "BETWEEN_ATTEMPTS_FULL_RETURN",
   "id": "MSG03-MEMBERSHIP-FIX-20261007",
   "budgetMs": 120000,
-  "spentMs": 0,
-  "remainingMs": 120000,
+  "spentMs": 13353,
+  "remainingMs": 106647,
   "perAttemptMaxMs": 60000,
   "perAttemptMinMs": 45000,
   "cleanupMs": 30000,
@@ -25,7 +25,15 @@
       ]
     }
   ],
-  "attempts": [],
+  "attempts": [
+    {
+      "run": "msg03-material-20261007-142356-510653",
+      "journey": "message-settings-material-return",
+      "state": "PASS_SELECTED_2_FULL_RETURN",
+      "chargeMs": 13353,
+      "manifest": "browser-attempts/membership-material/manifest.json"
+    }
+  ],
   "closedNoTransfer": [
     {
       "phase": {

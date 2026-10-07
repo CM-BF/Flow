@@ -20,7 +20,7 @@ App每view唯一C/opaque ownership、P01动作/context、同步CAS；材料await
 
 ## 未完成的真实验收
 
-material-return：取消后B完整refs/ids保持、late adapter settle不派旧A、明确清空/omit B再恢复A、下一不同材料可准备、成功/导航边界仍待修复后实际。
+material-return：修后上述取消/late settle/完整恢复/后续准备/成功/导航已实际selected2PASS；旧四次FAIL不改。
 message-settings-app：首mount P01/ApplyCancel焦点、reload/reauth/显式恢复0自动POST、A丢ACK原key/body重试、Queue frozen B相对live C、历史requested、真实双主题390/180字符同前缀/每PNG≤512KiB，仍NOT_RUN。
 
 旧两个selector唯一90s phase已CLOSED（spent51110/rem38890<45000），无新gate/env/holder。1DB/1Chrome/14配置连接位、64MiBscratch9MiBretained边界仅历史运行来源，不授权下一launch。
@@ -34,3 +34,7 @@ message-settings-app：首mount P01/ApplyCancel焦点、reload/reauth/显式恢�
 ## 新mounted阶段准备
 
 [membership准备](membership-browser-preparation.json)与[新120s单账](browser-membership-phase.json)：0spent，两个既有selector共享，每attempt45–60s含30s cleanup。fcf5仅预算ID/常量/closed旧账pin/run目录；新collector只两个phase guard，原0eb3生命周期未变。此差量尚待focused复核，无gate/env/actual。
+
+## 修后材料actual
+
+[11 native+outer原件](browser-attempts/membership-material/manifest.json)实际2/2PASS、ownedRETURN；执行dcdca6/sourcefcf5。charge13353，新120phase13353/106647；无PNG/未运行message-settings-app。原四FAIL永久保留，当前root实际独审待。[phase准备窄审](source-research/root-msg03-membership-phase-preparation-review-20261007.json)f05已批准；未来entry说明worker应写`--worker`，实际参数从未改。

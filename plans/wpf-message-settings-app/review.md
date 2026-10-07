@@ -47,3 +47,7 @@
 ## 新120s阶段父入口绑定待审
 
 fcf5相对b924仅browser7+/5-，collector相对0eb3两行phase守卫；原断言与worker/DB/Chrome/EOF生命周期不变。产品批准仍固定b924。本次0检查/0runtime，需集中审准确新旧账与run路径隔离，不借历史实际。完整入口见[membership准备](../../docs/evidence/wpf-message-settings-app/membership-browser-preparation.json)。
+
+## 修后材料selected实际
+
+[material原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json) selected2 PASS，scope仅cookieRead+messageSettingsMaterialReturn；原四FAIL不回写。新120phase charge13353/rem106647，完整ownedRETURN，0PNG；第二message-settings-app尚未执行。fcf5预算绑定已获rootf05批准，actual根独审待；不重跑通过材料。

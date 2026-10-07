@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:21:04.209634+00:00；固定base c130，未追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:26:23.390536+00:00；fixed c130，不追moving main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
 | 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git） |
-| 工作树dirty状态 | 产品b924已固定批准；fcf5仅新phase父入口常量/路径差量，本批own metadata准备，normal push后clean/STOP |
+| 工作树dirty状态 | 仅本次actual原件/own metadata封存；18源码fcf5不变，normal push后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | 本次真实 Session→Journal 定向1 PASS/68未选及 affected noEmit0；mounted四FAIL保留，修复尚无新browser |
+| 检查状态 | 修后material-return selected2/2 actual PASS；failure/cancel late settlement/恢复A/success/nav已执行；message-settings-app仍NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
 | 实现目标 | fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/recovery/binding.tsx, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已修复并独审草稿附件隔离；两条页面旅程的新有限执行包已准备，尚未运行 |
-| 下一可用交付 | 完成新执行包预算绑定复核，取得实际窗口后验证材料恢复与消息设置页面 |
-| 当前阻塞 | ACTIVE: 两条真实页面验收尚未完成，等待执行包复核与实际资源交接 |
+| 当前产出 | 材料准备失败或取消后，新稿内容、设置和附件不被旧稿污染，用户可以显式恢复旧稿并继续准备 |
+| 下一可用交付 | 在同一有限阶段验证消息设置页面、回执与双主题窄屏显示 |
+| 当前阻塞 | ACTIVE: 消息设置页面和视觉验收尚未完成 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS；b924 source/local批准，fcf5仅新phase绑定待集中复核，浏览器FAIL历史保留 |
+| Review | [review.md](review.md)，IN_PROGRESS；产品b924/source-local及fcf5phase批准；修后材料actual已提供root独审，消息设置仍未验 |
 | Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE；exact20；14:05:11.080Z COMMITTED，14:13:18 fresh身份核同 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -105,3 +105,9 @@
 经理续派原MSG03两条selector共享新120000ms，spent0/rem120000；每attempt45000–60000，含30000cleanup。旧90s51110/38890与新local20s14680/5320全部CLOSED，不转额度。产品b924与原测试断言不变，fcf5只绑定phase ID/120k、旧账精确hash、新owned run目录；总evidence9MiB仍覆盖旧新所有原件。
 
 [阶段](../../docs/evidence/wpf-message-settings-app/browser-membership-phase.json)、[准备入口](../../docs/evidence/wpf-message-settings-app/membership-browser-preparation.json)指向具体parent/collector/pins。1markedDB/14配置位/1Chrome、64MiBscratch9MiBretained/start4/run5，futurefloor至少9306308608或最新完整sum；没有gate/env/PG/Chrome/预约，本次不运行绿local。下一实际须经理唯一handoff。
+
+## 修后材料真实验收
+
+[实际原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json)：14:24:13.838978Z→14:24:27.191771Z，outer/parent0、worker/Chrome0、双EOF/drop0；cookieRead+messageSettingsMaterialReturn两组选定PASS。真实File/official adapter的failure与cancel保护B完整身份，取消后旧adapter实际settled仍无A dispatch；明确清空/omit后恢复完整A，清hold后不同材料可再准备；success/导航已过。0PNG属此selector，不冒第二消息设置/wholefeature。
+
+14:25:14.591164Z exact4 PID/PGID ESRCH、scratch/envabsent，markedDB0conn normalDROP/remaining[]、fixturecomplete/provider0；没有独立端口探针不伪造。ceil最大actual=13353ms，新120phase spent13353/rem106647，旧各phase仍closed；当前无holder，经理已授权同阶段串行第二旅程但须fresh输入/资源/新无冲突。原四FAIL/第三UNKNOWN全保。

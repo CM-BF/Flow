@@ -49,3 +49,7 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:21:04.209634+00:00 新phase准备安全点
 
 原parent/capture硬码旧90s，故以最小固定新phase/120k与独立run路径承接经理新预算，不把旧余额当credit。旧账hash硬校验、总retained仍计整个own evidence；未改任何清理/断言/权限。collector仅两guard字面量改变，无新supervisor。0runtime，不重跑b924局部绿。待focused复核，全部旧raw原样。
+
+## 2026-10-07T14:26:23.390536+00:00 修后材料actual安全点
+
+沿原单selector/真实public输入/精确身份断言完整执行；失败历史不删，B有序refs/ids不以count代替。source无变化，局部绿不重跑。actual/cleanup与计费分开保真，未独立测端口不冒全端口探针；token仅parent env且exact删除。新ledger13353/120000，下一仅原message-settings-app。
