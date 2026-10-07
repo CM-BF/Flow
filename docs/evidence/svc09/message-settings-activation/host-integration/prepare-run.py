@@ -10,13 +10,14 @@ MODULE = ROOT / 'tools/owned-process-supervision/supervise.py'
 assert hashlib.sha256(MODULE.read_bytes()).hexdigest() == '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
 spec = importlib.util.spec_from_file_location('svc09a_prepare_ops14', MODULE)
 ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.loader.exec_module(ops)
-assert sys.argv[1:] in ([], ['--host-guard'], ['--review-fixes'], ['--work-environment'], ['--retry-arguments'], ['--path-contract'])
+assert sys.argv[1:] in ([], ['--host-guard'], ['--review-fixes'], ['--work-environment'], ['--retry-arguments'], ['--path-contract'], ['--path-contract-recheck'])
 host_guard = sys.argv[1:] == ['--host-guard']
 review_fixes = sys.argv[1:] == ['--review-fixes']
 work_environment = sys.argv[1:] == ['--work-environment']
 retry_arguments = sys.argv[1:] == ['--retry-arguments']
-path_contract = sys.argv[1:] == ['--path-contract']
-run = HERE / ('prepare-local-06' if path_contract else 'prepare-local-05' if retry_arguments else 'prepare-local-04' if work_environment else 'prepare-local-03' if review_fixes else 'prepare-local-02' if host_guard else 'prepare-local-01'); run.mkdir()
+path_recheck = sys.argv[1:] == ['--path-contract-recheck']
+path_contract = sys.argv[1:] == ['--path-contract'] or path_recheck
+run = HERE / ('prepare-local-07' if path_recheck else 'prepare-local-06' if path_contract else 'prepare-local-05' if retry_arguments else 'prepare-local-04' if work_environment else 'prepare-local-03' if review_fixes else 'prepare-local-02' if host_guard else 'prepare-local-01'); run.mkdir()
 
 def save(name, value):
     data = value if isinstance(value, bytes) else (json.dumps(value, indent=2) + '\n').encode()
@@ -50,7 +51,8 @@ if work_environment or retry_arguments or path_contract:
     commands = [(sys.executable, str(HERE/'host-supervise.test.py'), *selected)]
 if path_contract:
     inputs += ['host-paths.mjs', 'host-paths.test.mjs', 'host-consumer.mjs', 'host-entry.mjs', 'host-cleanup.mjs', 'host-records.mjs', 'host-fixture.mjs']
-    commands.insert(0, (NODE, '--test', '--test-reporter=spec', str(HERE/'host-paths.test.mjs')))
+    selection = ('--test-name-pattern=actual Python mkdtemp root',) if path_recheck else ()
+    commands.insert(0, (NODE, '--test', '--test-reporter=spec', *selection, str(HERE/'host-paths.test.mjs')))
 output_cap = 131072 if path_contract else 262144
 save('reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':argv if not (review_fixes or work_environment or retry_arguments or path_contract) else None,'commands':commands,'freeBytes':free,
   'runtimeBudgetSeconds':20 if path_contract else 10,'rawBytesCap':output_cap,'scratchBytesCap':2097152,'scratch':str(scratch),'dev':before.st_dev,'ino':before.st_ino,

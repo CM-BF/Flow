@@ -10,7 +10,7 @@ import { rootIdentity, privateJson } from './host-records.mjs';
 import { exclusive } from './host-fixture.mjs';
 
 const input = directory => ({ format: 1, directory, sourceHead: 'a'.repeat(40), repository: '/fixed/source',
-  artifact: { artifactId: 'b'.repeat(64), manifestDigest: 'b'.repeat(64) }, choices: [{}, {}] });
+  artifact: { artifactId: 'b'.repeat(64), manifestDigest: 'b'.repeat(64), sourceHead: 'a'.repeat(40) }, choices: [{}, {}] });
 
 test('actual Python mkdtemp root and the preserved underscore name cross all three input consumers', async () => {
   const actual = process.env.FLOW_SVC09A_PREPARE_SCRATCH;
