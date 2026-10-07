@@ -466,6 +466,15 @@ describe("MSG03 recovery material membership", () => {
     transit = [{ id: uuid(75), role: "user", text: "A", quote: undefined, attachments: capturedFiles }]; files = [];
     expect(session.recoveryMaterials(owner.viewKey).attachments).toEqual([]);
     files = [capturedFiles[0]!]; expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    let attached = true;
+    const replacement = binding.bindComposer({ ...composer, getState: () => {
+      if (!attached) throw Error("An unmounted composer must not be read");
+      return { ...composer.getState(), attachments: [capturedFiles[1]!] };
+    } });
+    unbind(); // A late cleanup from the old port must not remove the replacement.
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[1]]);
+    replacement(); attached = false;
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual(held.ids);
     expect(forbidden).not.toHaveBeenCalled();
   });
 });
