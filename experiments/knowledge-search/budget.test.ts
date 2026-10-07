@@ -30,6 +30,9 @@ test('storage exhaustion halts work while reserved small cleanup receipt remains
 });
 test('canonical local admin accepts exact loopback postgres and rejects override or fragment', () => {
   for (const host of ['127.0.0.1', 'localhost', '[::1]']) expect(localAdminUrl(`postgresql://example@${host}:5432/postgres`).pathname).toBe('/postgres');
-  for (const tail of ['?host=remote','?hostaddr=remote','?service=x','?options=x','#x','?application_name=x']) expect(() => localAdminUrl('postgresql://localhost/postgres'+tail)).toThrow('LOCAL_ADMIN_REQUIRED');
+  for (const tail of ['?host=remote','?hostaddr=remote','?service=x','?options=x','#x','#','?application_name=x']) expect(() => localAdminUrl('postgresql://localhost/postgres'+tail)).toThrow('LOCAL_ADMIN_REQUIRED');
+  try { localAdminUrl('private-not-a-url'); throw new Error('expected validation error'); } catch (error) {
+    expect((error as Error).message).toBe('LOCAL_ADMIN_REQUIRED'); expect(JSON.stringify(error)).not.toContain('private-not-a-url'); expect('input' in (error as object)).toBe(false);
+  }
   for (const value of ['postgresql://example.com/postgres','postgresql://localhost/other','https://localhost/postgres']) expect(() => localAdminUrl(value)).toThrow('LOCAL_ADMIN_REQUIRED');
 });

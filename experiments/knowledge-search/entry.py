@@ -20,8 +20,12 @@ def write_new(path,value):
     with path.open('xb') as f:f.write(data);f.flush();os.fsync(f.fileno())
     sync_directory(path.parent)
 def logical_bytes(directory,owned=False):
+    def traversal_error(error):raise error
+    if owned:
+        before=directory.lstat()
+        if not stat.S_ISDIR(before.st_mode) or directory.is_symlink() or directory.resolve(strict=True)!=directory:raise ValueError('owned storage root identity')
     total=0
-    for root,dirs,files in os.walk(directory,followlinks=False):
+    for root,dirs,files in os.walk(directory,followlinks=False,onerror=traversal_error if owned else None):
         if owned:
             if any((Path(root)/name).is_symlink() for name in dirs+files):raise ValueError('owned storage identity')
         else:dirs[:]=[name for name in dirs if name not in ('node_modules','.local','.scratch') and not (Path(root)/name).is_symlink()]
@@ -29,7 +33,27 @@ def logical_bytes(directory,owned=False):
             path=Path(root)/name
             if owned and not stat.S_ISREG(path.lstat().st_mode):raise ValueError('owned storage identity')
             if not path.is_symlink():total+=path.stat().st_size
+    if owned:
+        after=directory.lstat()
+        if not stat.S_ISDIR(after.st_mode) or (before.st_dev,before.st_ino)!=(after.st_dev,after.st_ino):raise ValueError('owned storage root changed')
     return total
+
+def storage_facts(root,folder,tmp,pg,closed,scratch):
+    # Measurement failure is secondary to the preserved child/raw/cleanup facts. No deletion occurs here.
+    try:
+        if pg:
+            if not closed:raise ValueError('owned child not confirmed closed')
+            identity=scratch['identity'];info=tmp.lstat()
+            if (info.st_dev,info.st_ino)!=(identity['dev'],identity['ino']) or read_marker(tmp/'.owner.json')!=identity:raise ValueError('owned storage identity')
+            retained=logical_bytes(folder,owned=True)+logical_bytes(tmp,owned=True)
+            total=logical_bytes(root)+retained
+            return {'logicalBytes':total,'aggregateRawBytes':retained,'storageMeasurement':'CONFIRMED','storageWithinBudget':total<=8*1024*1024 and retained<=2*1024*1024}
+        total=logical_bytes(root)+logical_bytes(folder,owned=True)+scratch.get('logicalBytes',0)
+        return {'logicalBytes':total,'storageMeasurement':'CONFIRMED','storageWithinBudget':total<=MAX_NEW and sum(p.stat().st_size for p in folder.glob('*.raw'))<=262144}
+    except (OSError,ValueError,KeyError,json.JSONDecodeError) as error:
+        return {'logicalBytes':None,'aggregateRawBytes':None,'storageMeasurement':'UNKNOWN','storageWithinBudget':False,
+          'storageFailure':{'type':type(error).__name__,'errno':getattr(error,'errno',None)}}
+
 def verify_aliases(root,dependencies):
     for row in dependencies:
         alias=root/'node_modules'/row['name'];target=Path(row['target'])
@@ -148,16 +172,17 @@ def open_record(permit):
     return folder,ledger,finished,len(started)+1
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget'],default='caller')
+    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget','owned-budget','url'],default='caller')
     args=parser.parse_args()
     if sys.version_info<(3,10):raise ValueError('OPS14 requires Python >=3.10 before any reservation')
     started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
     now=datetime.datetime.now(datetime.timezone.utc);deadline=datetime.datetime.fromisoformat(permit['expiresAt'].replace('Z','+00:00'))
     if args.mode not in permit.get('modes',[]) or permit.get('state')!='OPEN' or now>=deadline or not permit.get('authority'):raise ValueError('not OPEN')
-    maximum=120 if args.mode=='pg' else 30
+    maximum=120 if args.mode=='pg' else min(30,permit.get('maxChildSeconds',30))
+    if not isinstance(maximum,int) or maximum<12:raise ValueError('child time budget')
     if (deadline-now).total_seconds()<maximum:raise ValueError('insufficient absolute permit time')
     manifest=verify_inputs();folder,ledger,finished,sequence=open_record(permit)
-    if args.mode!='pg' and (len(finished)>=min(5,permit.get('maxChildren',5)) or sum(r['operatorElapsedMs'] for r in finished)+30000>min(90000,permit.get('cumulativeChildMs',90000))):raise ValueError('local iteration budget')
+    if args.mode!='pg' and (len(finished)>=min(5,permit.get('maxChildren',5)) or sum(r['operatorElapsedMs'] for r in finished)+maximum*1000>min(90000,permit.get('cumulativeChildMs',90000))):raise ValueError('local iteration budget')
     if logical_bytes(ROOT)+logical_bytes(folder)>(8*1024*1024-512*1024 if args.mode=='pg' else MAX_NEW):raise ValueError('new logical budget')
     if args.mode=='pg' and logical_bytes(folder)>2*1024*1024-512*1024:raise ValueError('aggregate raw budget')
     free=os.statvfs(ROOT);free_bytes=free.f_bavail*free.f_frsize
@@ -173,17 +198,19 @@ def main():
     spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     source_files=[{'path':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(ROOT.iterdir()) if p.is_file() and p.suffix in ('.py','.ts','.mjs','.json')]
     scratch_name='k01-'+uuid.uuid4().hex
-    if args.mode=='caller' and args.case in ('listener','budget'):argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run',('listen.test.ts' if args.case=='listener' else 'budget.test.ts'),'--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    if args.mode=='caller' and args.case in ('listener','budget','url'):argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run',('listen.test.ts' if args.case=='listener' else 'budget.test.ts'),'--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    elif args.mode=='caller' and args.case=='owned-budget':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py'),'EntryTests.test_owned_budget_counts_nested_names_and_rejects_symlinks','EntryTests.test_owned_root_and_scandir_fail_closed','EntryTests.test_measurement_failure_preserves_child_and_cleanup_facts']
     elif args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
     elif args.mode=='pg':argv=[str(NODE),'--import','tsx',str(ROOT/'run.ts')]
     else:
         argv=[str(NODE),str(ROOT/'node_modules'/('vitest/vitest.mjs' if args.mode=='pure' else 'typescript/bin/tsc'))]
         argv+=['run','--config',str(ROOT/'vitest.config.mjs'),'--no-cache'] if args.mode=='pure' else ['--noEmit','--project',str(ROOT/'types.tsconfig.json')]
+    if args.mode=='caller' and args.case=='url':argv+=['-t','canonical local admin']
     label=f'check-{sequence:02d}';append_record(ledger,{'event':'started','label':label,'mode':args.mode,'selection':args.case,'startedAt':now.isoformat(),'sourceHead':permit['sourceHead'],'argv':argv,'freeBytes':free_bytes,'sourceFiles':source_files,'scratchPlanned':str(ROOT/'.scratch'/scratch_name)})
     tmp,identity=create_scratch(ROOT/'.scratch',scratch_name)
     append_record(ledger,{'event':'namespace-created','label':label,'identity':identity})
     env=environment(tmp,started,permit,os.environ.get('FLOW_K01_QUERY_ADMIN_URL') if args.mode=='pg' else None)
-    work=(110 if args.mode=='pg' else 20)-(time.monotonic()-started_mono)
+    work=(110 if args.mode=='pg' else maximum-10)-(time.monotonic()-started_mono)
     if work<=0:raise ValueError('preflight consumed work budget')
     report=module.supervise(module.Launch(tuple(argv),str(ROOT),env,module.Ownership.NEW_CHILD_SESSION,module.Capture.MERGED),module.Policy(work,3 if args.mode=='pg' else 2,7 if args.mode=='pg' else 5,49152))
     raw=report.stdout+report.stderr
@@ -195,16 +222,12 @@ def main():
     try:verify_inputs();value['fixedInputsAfter']='matched'
     except Exception:value['fixedInputsAfter']='UNKNOWN'
     # Future PG receipts are retained regardless of process closure; no DB outcome is inferred here.
-    value['scratch']=cleanup_scratch(tmp,identity,closed,started_mono+29) if args.mode!='pg' else {'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}
-    value['logicalBytes']=logical_bytes(ROOT)+logical_bytes(folder)+(logical_bytes(tmp,owned=True) if args.mode=='pg' and closed else value['scratch'].get('logicalBytes',0))
-    if args.mode=='pg' and closed:
-        value['aggregateRawBytes']=logical_bytes(folder,owned=True)+logical_bytes(tmp,owned=True)
-    value['storageWithinBudget']=value['logicalBytes']<=(8*1024*1024 if args.mode=='pg' else MAX_NEW) and sum(p.stat().st_size for p in folder.glob('*.raw'))<=262144
-    if args.mode=='pg':value['storageWithinBudget']=value['storageWithinBudget'] and closed and value.get('aggregateRawBytes',2*1024*1024+1)<=2*1024*1024
+    value['scratch']=cleanup_scratch(tmp,identity,closed,started_mono+maximum-1) if args.mode!='pg' else {'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}
+    value.update(storage_facts(ROOT,folder,tmp,args.mode=='pg',closed,value['scratch']))
     value['operatorElapsedMs']=round((time.monotonic()-started_mono)*1000)
     value['withinTimeBudget']=value['operatorElapsedMs']<=maximum*1000
     value['endedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
-    if args.mode=='pg' and closed:
+    if args.mode=='pg' and closed and value['storageWithinBudget']:
         # Reserve more than the maximum 128KiB single ledger plus 48KiB captured raw in child writes; account the exact final line here.
         extra=len((json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n').encode())+128
         value['storageWithinBudget']=value['storageWithinBudget'] and value['logicalBytes']+extra<=8*1024*1024 and value['aggregateRawBytes']+extra<=2*1024*1024

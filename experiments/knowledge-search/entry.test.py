@@ -76,4 +76,29 @@ class EntryTests(unittest.TestCase):
             self.assertEqual(module.logical_bytes(root,owned=True),4)
             (root/'link').symlink_to(root/'.local')
             with self.assertRaises(ValueError):module.logical_bytes(root,owned=True)
+    def test_owned_root_and_scandir_fail_closed(self):
+        with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
+            root=Path(base);missing=root/'missing';regular=root/'file';regular.write_text('file')
+            directory=root/'directory';directory.mkdir();link=root/'link';link.symlink_to(directory)
+            for invalid in (missing,regular,link):
+                with self.subTest(path=invalid.name):
+                    with self.assertRaises((OSError,ValueError)):module.logical_bytes(invalid,owned=True)
+            (directory/'child').mkdir();(directory/'visible').write_bytes(b'visible')
+            original=os.scandir
+            def denied(path):
+                if Path(path)==directory/'child':raise PermissionError(13,'synthetic traversal failure')
+                return original(path)
+            with patch.object(module.os,'scandir',side_effect=denied):
+                with self.assertRaises(PermissionError):module.logical_bytes(directory,owned=True)
+    def test_measurement_failure_preserves_child_and_cleanup_facts(self):
+        with tempfile.TemporaryDirectory(dir=os.environ['TMPDIR']) as base:
+            root=Path(base);record=root/'record';record.mkdir();tmp,identity=module.create_scratch(root)
+            value={'first_failure':{'code':'CHILD_EXIT_NONZERO'},'outputSha256':'fixed-raw-digest',
+              'scratch':{'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}}
+            with patch.object(module,'logical_bytes',side_effect=PermissionError(13,'synthetic')):
+                value.update(module.storage_facts(root,record,tmp,True,True,value['scratch']))
+            self.assertFalse(value['storageWithinBudget']);self.assertIsNone(value['logicalBytes'])
+            self.assertEqual(value['storageMeasurement'],'UNKNOWN');self.assertEqual(value['storageFailure']['errno'],13)
+            self.assertEqual(value['first_failure'],{'code':'CHILD_EXIT_NONZERO'});self.assertEqual(value['outputSha256'],'fixed-raw-digest')
+            self.assertEqual(value['scratch']['state'],'KEEP_PG_RECEIPTS');self.assertTrue(tmp.is_dir())
 if __name__=='__main__':unittest.main()
