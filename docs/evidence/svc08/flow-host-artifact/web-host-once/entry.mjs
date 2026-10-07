@@ -98,7 +98,7 @@ async function copyArtifact() {
   const { verifyBackendArtifact } = await import(pathToFileURL(join(sourceRoot, 'tools/personal-preview/backend-release/index.mjs')).href);
   await verifyBackendArtifact({ directory: input.sourceDirectory, artifact: input.artifact });
   await mkdir(join(input.directory, 'backend-artifacts'), { mode: 0o700 });
-  const copy = await execute('/usr/bin/python3', ['-B', input.cloneDriver.path, join(run, 'inputs.json')], {
+  const copy = await execute(input.python, ['-B', input.cloneDriver.path, join(run, 'inputs.json')], {
     cwd: run, env: { PATH: '/usr/bin:/bin', PYTHONDONTWRITEBYTECODE: '1' }, timeout: 60000, maxBuffer: 16384,
   });
   assert.equal(copy.stderr, ''); const result = JSON.parse(copy.stdout);
