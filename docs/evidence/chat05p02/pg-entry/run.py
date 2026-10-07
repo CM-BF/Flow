@@ -12,10 +12,11 @@ sys.dont_write_bytecode = True
 START = time.monotonic()
 ROOT = Path(__file__).resolve().parents[4]
 BASE = ROOT / 'docs/evidence/chat05p02/pg-entry'
-assert sys.argv[1:] in ([], ['repair-02']), 'Only the fixed original or repair-02 entry is supported'
-REPAIR = sys.argv[1:] == ['repair-02']
-INPUT_BASE = BASE.parent / 'pg-repair' if REPAIR else BASE
-RUN = BASE.parent / ('pg-run-02' if REPAIR else 'pg-run-01')
+assert sys.argv[1:] in ([], ['repair-02'], ['repair-03']), 'Only the fixed original, repair-02, or repair-03 entry is supported'
+REPAIR = bool(sys.argv[1:])
+REPAIR_THREE = sys.argv[1:] == ['repair-03']
+INPUT_BASE = BASE.parent / 'pg-repair-03' if REPAIR_THREE else BASE.parent / 'pg-repair' if REPAIR else BASE
+RUN = BASE.parent / ('pg-run-03' if REPAIR_THREE else 'pg-run-02' if REPAIR else 'pg-run-01')
 INPUT = json.loads((INPUT_BASE / 'inputs.json').read_text())
 
 

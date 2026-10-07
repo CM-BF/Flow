@@ -21,6 +21,11 @@ function material(content: Buffer, sessionId: string): NativeActivityBodyInput {
     body:{content:prefix,originalBytes:content.length,sha256,truncated:content.length>Buffer.byteLength(prefix),mediaType:'text/plain'}}};
 }
 
+async function browserResponse(response: Response, status: number) {
+  try {expect(response.status).toBe(status);if(status===200)expect(await response.json()).toMatchObject({state:'legacy'});}
+  finally {if(!response.bodyUsed)await response.body?.cancel();}
+}
+
 it('mounts 033 and authenticated public reads from the actual factory without a test route fallback',async()=>{
   expect((await fixture.pool.query('SELECT version FROM flow.migrations WHERE version=33')).rows).toEqual([{version:33}]);
   const a=await fixture.prepareAttempt(),owner=fixture.owner(),runner=fixture.runner(a.token),input=material(Buffer.from('public legacy prefix'),a.sessionId);
@@ -36,8 +41,7 @@ it('mounts 033 and authenticated public reads from the actual factory without a 
   const cookie=await fixture.browserCookie();
   for(const [suffix,status] of [[path,200],[path.replace(a.taskId,'other-task'),404],['/api/runner/native-activity-body-support',403]] as const) {
     const response=await fetch(fixture.baseUrl()+suffix,{headers:{cookie,origin:fixture.baseUrl()},signal:AbortSignal.timeout(3000)});
-    try {expect(response.status).toBe(status);if(status===200)expect(await response.json()).toMatchObject({state:'legacy'});}
-    finally{await response.body?.cancel();}
+    await browserResponse(response,status);
   }
   const light=await owner.nativeActivities(a.taskId);
   expect(JSON.stringify(light)).not.toContain('public legacy prefix');
@@ -49,8 +53,10 @@ it('mounts 033 and authenticated public reads from the actual factory without a 
 });
 
 it('uses real runRunner confirmation, outbox and FlowClient paging for over 2MiB public material',async()=>{
-  const owner=fixture.owner(),registration=await owner.registerRunner({name:'CHAT05P02 no-provider',harnesses:['fixture'],capacity:1});
-  const accepted=await owner.submit(taskSubmissionSchema.parse({title:'Full public material',prompt:'No provider',harness:'fixture'}),randomUUID());
+  // Native activities require Claude task/session identity; this explicit adapter never invokes a provider.
+  const harness='claude' as const;
+  const owner=fixture.owner(),registration=await owner.registerRunner({name:'CHAT05P02 no-provider',harnesses:[harness],capacity:1});
+  const accepted=await owner.submit(taskSubmissionSchema.parse({title:'Full public material',prompt:'No provider',harness}),randomUUID());
   await fixture.pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1',[accepted.task.id]);
   const content=Buffer.from('x'.repeat(65535)+'🌱'+'公开材料'.repeat(180000)),input=material(content,randomUUID());
   // This direct material is SDK-public UTF8, not the provider HTTP stream or hidden reasoning.
@@ -59,7 +65,7 @@ it('uses real runRunner confirmation, outbox and FlowClient paging for over 2MiB
   const stop=new AbortController();let calls=0,adapterFailure:unknown,runnerFailure:unknown;
   const notices:string[]=[];fixture.facts.runnerNotices=notices;
   const running=runRunner({baseUrl:fixture.baseUrl(),token:registration.token,workingDirectory:fixture.directory,signal:stop.signal,
-    nativeActivityBodies:true,pollIntervalMs:20,requestTimeoutMs:5000,onNotice(notice){if(notices.length<16)notices.push(notice.type);},adapters:[{name:'fixture',version:'public-material',async run(context){
+    nativeActivityBodies:true,pollIntervalMs:20,requestTimeoutMs:5000,onNotice(notice){if(notices.length<16)notices.push(notice.type);},adapters:[{name:harness,version:'public-material',async run(context){
       calls++;expect(context.activityBodies).toBeDefined();await context.emit({type:'session',nativeSessionId:input.activity.nativeSessionId,adapterVersion:'fixture'});
       try {await context.activityBodies!.publish(input);}
       catch(error){adapterFailure=error;throw error;}
@@ -88,5 +94,5 @@ it('uses real runRunner confirmation, outbox and FlowClient paging for over 2MiB
   }finally{reader.close();}
   expect((await fixture.pool.query('SELECT complete,bytes FROM flow.native_activity_bodies WHERE activity_id=$1',[input.activity.activityId])).rows).toEqual([{complete:true,bytes:content.length}]);
   const light=JSON.stringify(await owner.nativeActivities(accepted.task.id));expect(light).not.toContain('公开材料');expect(light).not.toContain('base64');
-  fixture.facts.realHost={adapterCalls:calls,providerCalls:0,materialBytes:content.length,pageRequests:requests,completeBytesEqual:true,defaultEnablement:false};
+  fixture.facts.realHost={harness,adapterCalls:calls,providerCalls:0,materialBytes:content.length,pageRequests:requests,completeBytesEqual:true,defaultEnablement:false};
 });

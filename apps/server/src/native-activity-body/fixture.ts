@@ -77,7 +77,7 @@ export async function bodyFixture(options?: { mode: 'production'; evidencePath: 
       const errors:unknown[]=Array.isArray(facts.httpErrors)?facts.httpErrors:[];facts.httpErrors=errors;
       app.addHook('onError',async(request,reply,error)=>{
         // Metadata only: keep the first bounded route errors, never request bodies or credentials.
-        if(errors.length<16)errors.push({request:requests,route:request.routeOptions.url??null,status:error.statusCode??reply.statusCode,name:error.name,code:error.code??null});
+        if(errors.length<16)errors.push({request:requests,route:request.routeOptions.url??null,replyStatusBeforeErrorHandler:reply.statusCode,name:error.name,code:error.code??null});
       });
     }
     app.addHook('onRequest',async()=>{if(production)assert(++requests<=256&&performance.now()-started<90_000,'Production HTTP work bound.');await reserve();});

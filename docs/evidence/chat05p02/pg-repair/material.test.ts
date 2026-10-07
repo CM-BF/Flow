@@ -48,3 +48,20 @@ it('preserves the primary work error when runner cleanup also rejects', async ()
   await expect(result).rejects.toBe(primary);
   expect(fixture.facts).toEqual({ runnerCleanupError: { name: 'Error', code: 'CLEANUP_TEST' } });
 });
+
+it('releases only unread native Response bodies without hiding the browser assertions', async () => {
+  const helper = ast.statements.find(node => ts.isFunctionDeclaration(node) && node.name?.text === 'browserResponse');
+  if (!helper) throw new Error('Missing production browser wrapper.');
+  const code = ts.transpileModule(helper.getText(ast), { compilerOptions: { target: ts.ScriptTarget.ES2022 } }).outputText;
+  const check: (response: Response, status: number) => Promise<void> = runInNewContext(code + '\nbrowserResponse;', { expect }, { timeout: 1000 });
+  const legacy = Response.json({ state: 'legacy' });
+  await expect(check(legacy, 200)).resolves.toBeUndefined();
+  expect(legacy.bodyUsed).toBe(true);
+  const unread = new Response('forbidden', { status: 403 });
+  await check(unread, 403);
+  expect(unread.bodyUsed).toBe(true);
+  const wrongStatus = new Response('error', { status: 500 });
+  await expect(check(wrongStatus, 200)).rejects.toThrow();
+  expect(wrongStatus.bodyUsed).toBe(true);
+  await expect(check(Response.json({ state: 'receiving' }), 200)).rejects.toThrow();
+});
