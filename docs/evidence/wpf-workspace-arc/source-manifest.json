@@ -1,0 +1,134 @@
+{
+  "base": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/test/conversation-stream-integration.test.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.test.ts"
+  ],
+  "pins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc",
+      "blob": "91f706f92e0debadcec68cad31da6b385c8db3fd"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "bytes": 15735,
+      "sha256": "ac5b4d12308b87eb8ebe4e2773a672fb1f13cbcebccd1dd52191d59cfed87288",
+      "blob": "d0c311c2c06686bf772cf439153b4f0199998418"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationList.tsx",
+      "bytes": 1575,
+      "sha256": "c8d939f872a3187d0b62bd1952010ecbb52543cf3c3134108e4fdeb67bf22988",
+      "blob": "787971be1303a7d194c098d9e629a87d02649652"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "bytes": 4039,
+      "sha256": "f5d234224b7fcd32e9a55a91ac4196bb2e8b30b66d501ae0cec811a44695dc1c",
+      "blob": "0089f655fc9eb4280934333aaddaac220e8277f2"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 29877,
+      "sha256": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295",
+      "blob": "526114eabd81d82e8abce7eb06a48bfd3b8f061f"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 23812,
+      "sha256": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470",
+      "blob": "60e009f856bc49ab88ff93489e6f5b383d1991c8"
+    },
+    {
+      "path": "apps/web/src/plugins/sample.tsx",
+      "bytes": 6697,
+      "sha256": "8656acc7a47a08d6474512f438ccb793126ce8375e324ca7e091b4fbb8193190",
+      "blob": "09620669e2faec0c2c78538b7c51bc84aa08df78"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 7594,
+      "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89",
+      "blob": "a98aa0643773381844494bb4c550018047b7eb18"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 9254,
+      "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4",
+      "blob": "64038e50561b9e6f4c5d75a9c1b7170a18d527a4"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 3280,
+      "sha256": "7cc73e7134012504adedf69ba79ba2640961612487c3b768164f8c5e47c1e79a",
+      "blob": "7d85ed64d242685e474a5c6bafe726eb14690e59"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "bytes": 2011,
+      "sha256": "81ab0360f6e3c234bab4e697af97600b50f1ffeb0505b42029cffb6ef48d40f8",
+      "blob": "ed00a01119ea3714ec72b52f171d5c969a708870"
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "bytes": 8309,
+      "sha256": "e22667e137b7ff08a178063a92f906f0767aceab000ca40ccf6bfb0fc43b54ea",
+      "blob": "464f30ff9f0d30c749562e9a7956a0f90054bbd6"
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.test.ts",
+      "bytes": 15237,
+      "sha256": "c408119608d89475ef98acf1ac37d27d4eec646cc24dfc4a756145e89efc8df2",
+      "blob": "07b58d3d07df22c7c2761421fc13b41733756490"
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "bytes": 24651,
+      "sha256": "ffcfac5d42aad176554ec8ae316856057ce45550cf4a6ac2a61f399272278b4c",
+      "blob": "f1a903b00788e384fdb537deaac7dddb731a9cdf"
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "bytes": 24018,
+      "sha256": "e5d8ccc23f9c636dab325702703da1c5b29b430c20d6cf749385dc3f75771d70",
+      "blob": "9b671a499e7c3bf81139617f9cd5d15a1f1eea2a"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "bytes": 18642,
+      "sha256": "c4dd1a7bf35e066da8bbfb95744dd210f960d2f15848dbb7bf63602b934cb681",
+      "blob": "ed9425fc79aa27174352dac226a65585e3095677"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "bytes": 16524,
+      "sha256": "96c9b8cfd7647ac13c7cb1d89b7c91fd72d6015778b1aa5c7f9379dcbbb62b9f",
+      "blob": "9a5155ca5b90f708423bee03c693299711e28dfc"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.test.ts",
+      "bytes": 4672,
+      "sha256": "5d200cc1b470ddd0bbddb24c3c5af4db7bc2b495dfbe8a4b14f64860b44662cd",
+      "blob": "92289fefef4a0640a9cc0acd7594c0b9a974d4f4"
+    }
+  ]
+}

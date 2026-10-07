@@ -1,0 +1,3365 @@
+{
+  "observedAt": "2026-10-07T17:26:47.070+00:00",
+  "fixedBase": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "candidateTask": "WPF-WORKSPACEARC01",
+  "parentTodos": [
+    "WPF-MATURE-05-01",
+    "WPF-MATURE-05-02",
+    "WPF-MATURE-05-03",
+    "WPF-MATURE-05-05"
+  ],
+  "scopeCandidate": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/workspace-layout.test.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "plans/wpf-workspace-arc",
+    "docs/evidence/wpf-workspace-arc",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts"
+  ],
+  "sourceFileCount": 196,
+  "sourceBytes": 1809043,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "blob": "cb4010edbb8e6e0a9ca0e765a6f198bfb8bd0894",
+      "mode": "100644",
+      "bytes": 18705,
+      "sha256": "4d515c46e644bbea8ed37570e340217231b462aa599f68756224df72e30e35f6",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/index.html",
+        "apps/web/package.json",
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/assistant-ui.css",
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/attachments/attachments.css",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/src/components/assistant-ui/elements/file.tsx",
+        "apps/web/src/components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/image.tsx",
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+        "apps/web/src/components/assistant-ui/elements/media-player.tsx",
+        "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+        "apps/web/src/components/assistant-ui/elements/surfaces.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+        "apps/web/src/components/assistant-ui/utils/href.ts",
+        "apps/web/src/components/ui/button.tsx",
+        "apps/web/src/components/ui/collapsible.tsx",
+        "apps/web/src/components/ui/dialog.tsx",
+        "apps/web/src/components/ui/skeleton.tsx",
+        "apps/web/src/components/ui/textarea.tsx",
+        "apps/web/src/components/ui/tooltip.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/components/workspace/types.ts",
+        "apps/web/src/components/workspace/workspace.css",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/context-picker.css",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-steering/steering.css",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/data-renderers/react.tsx",
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/hooks/use-copy-to-clipboard.ts",
+        "apps/web/src/lib/utils.ts",
+        "apps/web/src/main.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/integration.css",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/management.css",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/src/plugin-management/use-read.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/builtins/theme.tsx",
+        "apps/web/src/plugins/builtins/workspace.tsx",
+        "apps/web/src/plugins/host.ts",
+        "apps/web/src/plugins/react.css",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/src/plugins/sample.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/src/projection.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/recovery/journal.ts",
+        "apps/web/src/styles.css",
+        "apps/web/src/themes.ts",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/src/workspace-feed/workspace-feed.css",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/src/workspace-state.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/fixture-server.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/tsconfig.json",
+        "apps/web/vite.config.ts",
+        "explicit Arc source/config or readonly existing fixture reference",
+        "package.json",
+        "packages/client/package.json",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/native-activity-body.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/client/src/plugin-runner.ts",
+        "packages/client/src/response-json.ts",
+        "packages/contracts/package.json",
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/browser-session.ts",
+        "packages/contracts/src/claude-turn-settings.ts",
+        "packages/contracts/src/context-observation-event.ts",
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/engineering-profile.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/fixtures.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/knowledge.ts",
+        "packages/contracts/src/native-activity-body.ts",
+        "packages/contracts/src/native-activity.ts",
+        "packages/contracts/src/package-artifacts.ts",
+        "packages/contracts/src/plugin-artifact.ts",
+        "packages/contracts/src/plugin-installations.ts",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/contracts/src/plugin-removal.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts",
+        "packages/contracts/src/plugin-runtime.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/projects.ts",
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/protocol-task.ts",
+        "packages/contracts/src/reconciliation.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/contracts/src/usage-readout.ts",
+        "packages/contracts/src/workspace.ts",
+        "packages/interaction/package.json",
+        "packages/interaction/src/activity/index.ts",
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/patches.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts",
+        "plans/AGENTS.md",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "tsconfig.json",
+        "vitest.config.ts"
+      ]
+    },
+    {
+      "path": "apps/web/index.html",
+      "blob": "8b160d54395d423a5b73a3417f90747665d3bf71",
+      "mode": "100644",
+      "bytes": 356,
+      "sha256": "2efb6658b16f35568bc8971c0af3f62e30dc5afe07c7718a9f3a9c53d5abe5b4",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/package.json",
+      "blob": "32a3d8b5336aea8346dc24851773ed1ee45a97a4",
+      "mode": "100644",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/index.html",
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/assistant-ui.css",
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/attachments/attachments.css",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/src/components/assistant-ui/elements/file.tsx",
+        "apps/web/src/components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/image.tsx",
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+        "apps/web/src/components/assistant-ui/elements/media-player.tsx",
+        "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+        "apps/web/src/components/assistant-ui/elements/surfaces.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+        "apps/web/src/components/assistant-ui/utils/href.ts",
+        "apps/web/src/components/ui/button.tsx",
+        "apps/web/src/components/ui/collapsible.tsx",
+        "apps/web/src/components/ui/dialog.tsx",
+        "apps/web/src/components/ui/skeleton.tsx",
+        "apps/web/src/components/ui/textarea.tsx",
+        "apps/web/src/components/ui/tooltip.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/components/workspace/types.ts",
+        "apps/web/src/components/workspace/workspace.css",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/context-picker.css",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-steering/steering.css",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/data-renderers/react.tsx",
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/hooks/use-copy-to-clipboard.ts",
+        "apps/web/src/lib/utils.ts",
+        "apps/web/src/main.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/integration.css",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/management.css",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/src/plugin-management/use-read.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/builtins/theme.tsx",
+        "apps/web/src/plugins/builtins/workspace.tsx",
+        "apps/web/src/plugins/host.ts",
+        "apps/web/src/plugins/react.css",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/src/plugins/sample.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/src/projection.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/recovery/journal.ts",
+        "apps/web/src/styles.css",
+        "apps/web/src/themes.ts",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/src/workspace-feed/workspace-feed.css",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/src/workspace-state.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/fixture-server.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/tsconfig.json",
+        "apps/web/vite.config.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+      "mode": "100644",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/main.tsx",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/TaskThread.tsx",
+      "blob": "508180b66c1060005c53bdd26f04c382727d7e10",
+      "mode": "100644",
+      "bytes": 10543,
+      "sha256": "62c5643735b0546d5d99b4340f8a0f4b8ddeec6f6b3421f24bfc6670d36f0a01",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "blob": "1554f08332bd3897a085a0672a7d2255117a53b9",
+      "mode": "100644",
+      "bytes": 6661,
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/main.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "blob": "38196c63f2317dd28e3ea7772b8de0ed4c49384e",
+      "mode": "100644",
+      "bytes": 7475,
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "blob": "91a9a1f0526c30dc938bc511497896fb95542bfe",
+      "mode": "100644",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/attachments.css",
+      "blob": "209deb65b54867f042a1d196489f3196bf9fe5e0",
+      "mode": "100644",
+      "bytes": 2682,
+      "sha256": "2616938a6f79caccec1a997b62b2e31be227e3ac1579c2abc259f63d35ab259f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/AttachmentPicker.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "blob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "mode": "100644",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/attachments/recovery.ts",
+      "blob": "aadb85bfaae025b85a3b3b4160cd13b481efceda",
+      "mode": "100644",
+      "bytes": 7342,
+      "sha256": "932e2376cea18464b9283b7ed162df2de0ba60a64e988eb74201fdf88b938c0f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/file.tsx",
+      "blob": "3530e0fba5c2c076062a63c2d5b726463392176a",
+      "mode": "100644",
+      "bytes": 10101,
+      "sha256": "25f9a00685e9552175a4a34eb498384a05523c730461659ae89fc41724365c93",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
+      "blob": "38689e74f97e2481631ec7c4c00ce4af9138162e",
+      "mode": "100644",
+      "bytes": 3163,
+      "sha256": "f0db1e9cfc5f648adeb57c8ac61fbeca4ebbb4d55267a9c107709af01b73abb4",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/image.tsx",
+      "blob": "1ce3a8708eed7121747364a9bc716f912b0880f0",
+      "mode": "100644",
+      "bytes": 18076,
+      "sha256": "2d5993bb290a111d6a2292fd8cb575dde84b8036a67e94ab63e1580edeef91d6",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+      "blob": "c4a94af920c6c5c3e61f62d5289d0fcceccabf08",
+      "mode": "100644",
+      "bytes": 7301,
+      "sha256": "b041132faa98790395e4161329249eb1a38642ce7a5603042a67e7ab7ff72808",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/media-player.tsx",
+      "blob": "9f7c6e55b830a998794808cd6221b1c1db16475e",
+      "mode": "100644",
+      "bytes": 8116,
+      "sha256": "ea7006322eb54ca921872ef45162f25d6a06528da6fbbcc28b007509c2982b35",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/file.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+      "blob": "b8528b4c821bffb6010e9e38971aae2798657589",
+      "mode": "100644",
+      "bytes": 10086,
+      "sha256": "6e629d6cab9204b903120f7195b3d3126ed48d5ecd7191dbb0174ad9ccf8dfb0",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/surfaces.tsx",
+      "blob": "ff6372db41a0f529709ed54f26c5ed5f5280189c",
+      "mode": "100644",
+      "bytes": 4326,
+      "sha256": "fcc704686fc4bf3a15dc40f2600da759ba46a796d6d8a9c97eb37b2d21907885",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/media-player.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "blob": "35757c68f80c87be239eb7a1d95fd2d4a645275d",
+      "mode": "100644",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+      "blob": "43d5f3f5908f2f4972570677bb00ff46cd17404d",
+      "mode": "100644",
+      "bytes": 26522,
+      "sha256": "e22c55485613936018a831773d6b4495d636d48148a02ac5345fa63e1d32ccf8",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+      "blob": "e7936f045f8ac389790cfa0ae66fee0bf598b55f",
+      "mode": "100644",
+      "bytes": 1298,
+      "sha256": "5d4583d60636c5cb7fa88ce65339555b4963fcfa8e5b092b855ca04663aadac7",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/utils/href.ts",
+      "blob": "84a16837aa43c8610c50e702741d07335312286e",
+      "mode": "100644",
+      "bytes": 1398,
+      "sha256": "3a8038d038b1918ae3f58a61dcd30933633131dda341eb5bea5b6a650b31a912",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/image.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/button.tsx",
+      "blob": "dcfee0c44dc62ce5e67073463f18c02cbeaa5a0c",
+      "mode": "100644",
+      "bytes": 1906,
+      "sha256": "225183a39c85425b5a807b082983b21ba8cb337ad76782abd83d65c0a38e698f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/collapsible.tsx",
+      "blob": "9fa48946afd1eb56bd932377fd888e3986304676",
+      "mode": "100644",
+      "bytes": 329,
+      "sha256": "f4cdd104de29928bfcd40b865c7d08eed9157a537fbb8b5e6d0921f02b63cc04",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/tool.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "blob": "a5c812d7f7e5fdae9a5bcb7166544f8956d94664",
+      "mode": "100644",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/skeleton.tsx",
+      "blob": "12e7d29e9af69f2321ff40e78632f29ef1b373bb",
+      "mode": "100644",
+      "bytes": 270,
+      "sha256": "7fa93a0db2d3a13b13bd2231e3a087832fdab9fe3db193fff235703b4dbcd342",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/textarea.tsx",
+      "blob": "b866d0b7d3832df6806123ebeb08c2b0a255c3cf",
+      "mode": "100644",
+      "bytes": 653,
+      "sha256": "69eedd66b75788b29c4bd50f6904c3674db79169394594b5847501aa96b8b4b4",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/ui/tooltip.tsx",
+      "blob": "9ff8407c1f5deba254c9ba1dc7c8737b1cda0e06",
+      "mode": "100644",
+      "bytes": 1271,
+      "sha256": "3600484df5c2bec03d57289e49b30a182a2ce22d8e9bef50cd21819d9f2e725c",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "blob": "d6f9ffd8322d7b47b4f88da58a89b8119b59b1bb",
+      "mode": "100644",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugins/builtins/workspace.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+      "blob": "18bcb184577cad4c81fc86ac52f174eb98209564",
+      "mode": "100644",
+      "bytes": 10452,
+      "sha256": "c0a0ee5299f2710500fc3bd8c29372565db20953d12fcbf11d30977fccb3e313",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/workspace/panels.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/workspace/panels.tsx",
+      "blob": "8e2174a2af5814e918028951e8c20a66753d7154",
+      "mode": "100644",
+      "bytes": 6966,
+      "sha256": "5f97e8ba1f41eabf2b79e21957fd59f2d6567f7cc271d4d4431bb3f0c5c6f9b8",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/workspace/WorkspacePanels.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/workspace/types.ts",
+      "blob": "5b24f57cde173f3948f1a009f60c77216a576e83",
+      "mode": "100644",
+      "bytes": 609,
+      "sha256": "2d154e26cde9b2d21a02df35ba558fb097c76d4a77e287d71457254b92a1db85",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/panels.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/components/workspace/workspace.css",
+      "blob": "a7cc50a2106d47c8da38f3480dc26fb94a8098b8",
+      "mode": "100644",
+      "bytes": 4589,
+      "sha256": "d80feabd1adb22a093ce7deade50a3667e44987ab6ab55e8805959a703774fa4",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/workspace/WorkspacePanels.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "blob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "mode": "100644",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/ConversationActivity.tsx",
+      "blob": "8fea1ade389c1da5ebe2eb163f7c633077471b4b",
+      "mode": "100644",
+      "bytes": 6044,
+      "sha256": "bf98db02a5b3a26725780ee8bc182351d242d2530e604834fc58b6fcad405d9d",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/activity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/activity.css",
+      "blob": "f6f8faf513d65546e4630debfc81ddcabdc0171a",
+      "mode": "100644",
+      "bytes": 1880,
+      "sha256": "ac472493c80d162a1da4ac93517c8c292f3dd680c52d5ce8f8963e88079e217b",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/ConversationActivity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "blob": "9698a7cb91637337c27e5585b73aba9590400b14",
+      "mode": "100644",
+      "bytes": 5777,
+      "sha256": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/activity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "blob": "685600fd7d393b7ec564095eec8b5ed925808d18",
+      "mode": "100644",
+      "bytes": 8153,
+      "sha256": "383539ceb5735626f2738576e30869eccf820d99d9133ed3076aa838f2b08231",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/plugin-integration/activity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/tool.tsx",
+      "blob": "dee498ed79ac575d10d133d61f5829de1cdf0d17",
+      "mode": "100644",
+      "bytes": 1929,
+      "sha256": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-activity/projection.ts",
+      "blob": "345620bfddb2441375ef9c6e0780498b7c043dbb",
+      "mode": "100644",
+      "bytes": 11679,
+      "sha256": "2bb1a11acb8ba01ea7b982076d2efcc6416664ea29bd646cf176d1190ec6556b",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/plugin-integration/activity.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "blob": "def58e4eb01798212fad4140c435b97de2b8759e",
+      "mode": "100644",
+      "bytes": 6065,
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/knowledge.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/context-picker.css",
+      "blob": "b82dd3e0aeec44886a48b02b9ec4af0b55ec914e",
+      "mode": "100644",
+      "bytes": 2905,
+      "sha256": "c81b7b60b5434d491b0a8ac3cad283682050ca56c27ba72055154d8df237bedf",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-context/ContextPicker.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "blob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "mode": "100644",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/projects.ts",
+      "blob": "ecbd7fe3064df64450a77efac4b2ddb2b0f531b2",
+      "mode": "100644",
+      "bytes": 3384,
+      "sha256": "04b47c9b45cd1365b35b858ae93010d83fef2bd6edf1fa1768be560a13f93fa0",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/knowledge.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "blob": "d0f9a27344a05bfdbcddb90f671f7f4b1e205129",
+      "mode": "100644",
+      "bytes": 2761,
+      "sha256": "b0cafed2fd93f4e34e5e87eeb7f4e5436a44db509d60730fa7eccc7c416c1229",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-context/selection.ts",
+      "blob": "8a9c587a4f3364b3f519716a54c98d7fd293ba34",
+      "mode": "100644",
+      "bytes": 1739,
+      "sha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/recovery/binding.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "blob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "mode": "100644",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/steering.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "blob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "mode": "100644",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/plugin-integration/steering.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-steering/steering.css",
+      "blob": "2d9c91858ef004235e6b66a88e58254d122ee74c",
+      "mode": "100644",
+      "bytes": 1506,
+      "sha256": "1ff9acd487e6d53681e32301d8c098df8a46d6669e095b7330ab41111045e154",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-steering/SteeringControl.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "blob": "c040dfcccc0dd69e8af31201670647bc9df553e5",
+      "mode": "100644",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "blob": "ffdd3d5a2b732977cef3965ef6170e04b0599e28",
+      "mode": "100644",
+      "bytes": 1934,
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-stream/host.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "blob": "11484d1f5a601ee032f9acc5f488c83363a238e7",
+      "mode": "100644",
+      "bytes": 207,
+      "sha256": "c8ac83d12411021949d12dedb342669555b33987b162734d3ff51c55fa37119a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-stream/host.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationList.tsx",
+      "blob": "8c376b9ac0ab90af375fb3c9ec9d03167a74b4bf",
+      "mode": "100644",
+      "bytes": 1475,
+      "sha256": "0f2ea12125b11f867cc342d84be4f930bbacf2d6f3f248aa980ec78c9299ae68",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/App.tsx",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+      "mode": "100644",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/conversations.css",
+      "blob": "80516ad9db64be6c6fd6a3b37c10c9c5eecb00df",
+      "mode": "100644",
+      "bytes": 3554,
+      "sha256": "2e91126603ffdd214ea0cff925818f416deef64fdd8e870e25a10b989bf897d3",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/messages.ts",
+      "blob": "aa59d06f97bb3800f63de4f9d6cd0b3b3a3839fb",
+      "mode": "100644",
+      "bytes": 1920,
+      "sha256": "49d07c4eb6b8dd9293749cc7d71fa869579e7db977ead51c00256adf6e046350",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-stream-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "blob": "0971cd933ac662d2735e11e15cc82a5cab3333dc",
+      "mode": "100644",
+      "bytes": 8902,
+      "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "blob": "9323ea44044224bd30447eeff4da39b721d96bb8",
+      "mode": "100644",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "blob": "a5892a63125039aab6e2321f8b8b7b4856ece6bb",
+      "mode": "100644",
+      "bytes": 9267,
+      "sha256": "8b8f9ba36bc41cd4bac84347de76722a41d1f8e0438a8ba09f5d3b1f9b589ef5",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "blob": "26010ea9ae6250a5a04635f4dd5d54c1efdf3195",
+      "mode": "100644",
+      "bytes": 17132,
+      "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "blob": "268eadae2744d11a85ac073f1196b148d2339029",
+      "mode": "100644",
+      "bytes": 13208,
+      "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/queue/queue-elements.tsx",
+      "blob": "b414ce6506fcd62dd1e9aab7cf72e52aa1724c3d",
+      "mode": "100644",
+      "bytes": 4899,
+      "sha256": "31df655f4836511653fc991d5ece7fdb33ec21a2e6ccce586d80440718d875fa",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/queue/ConversationQueue.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/conversations/read-cache.ts",
+      "blob": "ccef8af0ddaca8ccf3aec8109883042002a7a676",
+      "mode": "100644",
+      "bytes": 1998,
+      "sha256": "18aa9bea835ef742605c639f4e07db1b3ae58e223e1fe982034e921ab2e80a7d",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/projection.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/data-renderers/flow-reply-detail.tsx",
+      "blob": "6fb0c518ccb0529067fca962e61afa33ea6c24ed",
+      "mode": "100644",
+      "bytes": 6292,
+      "sha256": "a7b10258ec07a3c61a1ff170ea74be95cb872e5b919826c3f9b13ddbf2754fbd",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/data-renderers/react.tsx",
+      "blob": "d8fb5e3e34772d778f081094d4fba82024914dc3",
+      "mode": "100644",
+      "bytes": 3856,
+      "sha256": "b460e901cd5f2904b1402a17792edf95138004c9e8748c077620dd1797c0c807",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/data-renderers/registry.ts",
+      "blob": "9cab034f5f62e7d224c29136ccb85bf6eacbf93f",
+      "mode": "100644",
+      "bytes": 5522,
+      "sha256": "cdd1f19e355a9023e677cff7a9c1a1e28ee0ced49c7818002ebb60fffcc31e53",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/data-renderers/react.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "blob": "cac888ff5efd7da63749ee8358cbf8aba88fab37",
+      "mode": "100644",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "blob": "07c30504f9ec00ebe5cfec2d511a7f08463ea115",
+      "mode": "100644",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/plugin-integration/message-settings.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "blob": "341d8b9a28dff1b6d02714920fed372879495b58",
+      "mode": "100644",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "blob": "34ca8385986a41e91ecdccb30adbe022ca6198a0",
+      "mode": "100644",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/execution-profile-integration.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/hooks/use-copy-to-clipboard.ts",
+      "blob": "d607b48359ce70e0d7033b417e421f797cbfb042",
+      "mode": "100644",
+      "bytes": 1407,
+      "sha256": "1f3b8a1bab79cef961f62eb25d6b58a0d16c957d63ba1faf086ad09c99712c0a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/lib/utils.ts",
+      "blob": "607e30cfe631f626de32fcdbae74f8f46b23ebee",
+      "mode": "100644",
+      "bytes": 166,
+      "sha256": "64fc84c1be627f0d586fb4ba64d824a1604f44282381f5bae68cdf86e10bb6ec",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/components/assistant-ui/elements/file.tsx",
+        "apps/web/src/components/assistant-ui/elements/image.tsx",
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+        "apps/web/src/components/assistant-ui/elements/media-player.tsx",
+        "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+        "apps/web/src/components/assistant-ui/elements/surfaces.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+        "apps/web/src/components/ui/button.tsx",
+        "apps/web/src/components/ui/dialog.tsx",
+        "apps/web/src/components/ui/skeleton.tsx",
+        "apps/web/src/components/ui/textarea.tsx",
+        "apps/web/src/components/ui/tooltip.tsx",
+        "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversations/queue/queue-elements.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/main.tsx",
+      "blob": "d378c0544b8cdf756e789d0c09354f58793196fb",
+      "mode": "100644",
+      "bytes": 267,
+      "sha256": "b122f9aa7736d8b4ef15f4749b9eb43beb89cf5b3d2ec631375adf37f5c9a5f0",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "blob": "c1aaa1210e6293892a1d222d909d620b6eec916a",
+      "mode": "100644",
+      "bytes": 9512,
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+      "mode": "100644",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/plugin-host.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/data-renderers.ts",
+      "blob": "9a611c5ad53442ea0cae2f7d81dc5c99ec69fbf7",
+      "mode": "100644",
+      "bytes": 3507,
+      "sha256": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/integration.css",
+      "blob": "61ed6d2d717126a7d3e95e6d4bd26229fdda0e04",
+      "mode": "100644",
+      "bytes": 5111,
+      "sha256": "569507ed71913438912ba318af4536df543e945d05f0f0e38a59e757f593e0cd",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "blob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "mode": "100644",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "blob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+      "mode": "100644",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "blob": "478f8f2130cfa43bb192ca1574dd385c7eb1740c",
+      "mode": "100644",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+      "mode": "100644",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "blob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "mode": "100644",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-integration/task-actions.ts",
+      "blob": "283215a28680016d304fa22fb48a0214c610252a",
+      "mode": "100644",
+      "bytes": 1866,
+      "sha256": "fa4f0ba2247868c86bcaff1c43b37aad9555eacbd6827697cc7b7c269224c75c",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "blob": "99ac2cd9f08cbca5ac269cdf3766eaf9c3e3581e",
+      "mode": "100644",
+      "bytes": 21512,
+      "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-management/management.css",
+      "blob": "fe4d51ed1457a739a66ed948fe53d8e2f9bd79c4",
+      "mode": "100644",
+      "bytes": 3183,
+      "sha256": "c1aadb7d3dc944b98c41f2b7ba48aa66fbee8442af6da31771bd807f2a0ab51c",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-management/PluginManagement.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "blob": "19cb2929daee913cb69b6138d9902ee6b9853cc4",
+      "mode": "100644",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugin-management/use-read.ts",
+      "blob": "fb195ddc086b607025d53b043a64c0a0bdd94642",
+      "mode": "100644",
+      "bytes": 1061,
+      "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-management/PluginManagement.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/builtins.ts",
+      "blob": "cabcd92ed2e4fd52de133e0d4ad81bf71775c845",
+      "mode": "100644",
+      "bytes": 2770,
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/session.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/theme.tsx",
+      "blob": "0ba04a431c9e1f340955db23341529a364e59bcc",
+      "mode": "100644",
+      "bytes": 1299,
+      "sha256": "794daac2131811e1ea94909dbfb36fb0457b1a7e387533c52f9d1ba0bcc4b069",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugins/builtins.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "blob": "3078f871417bfd279b15a356dff5cbfc0cbb6187",
+      "mode": "100644",
+      "bytes": 4020,
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugins/builtins.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "blob": "d97812469d813db74c202825d8bec267ca4fbad8",
+      "mode": "100644",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/test/plugin-host.test.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/react.css",
+      "blob": "f2cd07532c16741ee7585b6984075c754716a701",
+      "mode": "100644",
+      "bytes": 399,
+      "sha256": "3a7eb30450e9912f2a274366fbf2677922058c80dc7b58fe91b994004ecc1d9f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugins/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "blob": "2af7f577118bb3cba07a4bfb6dcdee165172cb44",
+      "mode": "100644",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/sample.tsx",
+      "blob": "3fd0fd760f8d31e6352fe96420fada5fa322cd35",
+      "mode": "100644",
+      "bytes": 4783,
+      "sha256": "9acab2770538e936b26f74c8b7a3cda308a359b7bca1c1eb46271c3866d0e43b",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/plugin-integration/session.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "blob": "2fedfc97799938c182d33777ff7672b98252abef",
+      "mode": "100644",
+      "bytes": 6794,
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/builtins/theme.tsx",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/src/plugins/sample.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/plugin-integration.test.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "blob": "e97a20522a4f4621af64b252ec76b5cc28c5e8be",
+      "mode": "100644",
+      "bytes": 8788,
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+      "writeCandidate": true,
+      "via": [
+        "apps/web/src/plugins/builtins/workspace.tsx",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/test/plugin-host.test.ts",
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/src/projection.ts",
+      "blob": "b2b457bb2bda2e63c60007b0df30f3ea74c0455a",
+      "mode": "100644",
+      "bytes": 11004,
+      "sha256": "5d515fc8318f6eae0401c7e37ebd4ce34b8edecc65ef3f091d4e9133af1eceb7",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/plugin-integration/react.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "blob": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+      "mode": "100644",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "blob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "mode": "100644",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "blob": "4b1233a0fa96741e293b3806852d738b2da318dd",
+      "mode": "100644",
+      "bytes": 13124,
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/main.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "blob": "20938b48f84b5af5acdc03022e3dc444833e5f52",
+      "mode": "100644",
+      "bytes": 1822,
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/main.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/builtins/theme.tsx",
+        "apps/web/src/plugins/host.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/ActivityWindow.tsx",
+      "blob": "afc1f8ec3e549c95ea2c7f516eb1c2e72e90220a",
+      "mode": "100644",
+      "bytes": 11260,
+      "sha256": "6eb2d790b9f4844fc5d3bfcebf2a394628c1e9f048a22718a51d4c554d5819b1",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/Attention.tsx",
+      "blob": "b5a2cfe7a95e73dc440255b421cc80d168db1222",
+      "mode": "100644",
+      "bytes": 3880,
+      "sha256": "de1095addaba04bf635e4bdae8728d885b625317f20b7769d73256f552016d24",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/TaskIndex.tsx",
+      "blob": "d9e352c53c1e3741dfd1eff5eb82de550f3f8943",
+      "mode": "100644",
+      "bytes": 3236,
+      "sha256": "256af10ed781841a24bcb355e22f4f9b0ece585adf56a13954a9a75c9b74bc9f",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+      "blob": "c2f97a95a9ad7c40f34952769542cb4967c226b3",
+      "mode": "100644",
+      "bytes": 5468,
+      "sha256": "65560dabe66248abe3e283289e05a65bb72f3a7f1509f1173724718410667015",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/projection.ts",
+      "blob": "c05d2dd40bf82e06f0bdcddb67de9bf65bb25df1",
+      "mode": "100644",
+      "bytes": 10141,
+      "sha256": "62020be9929c65dca97ecfcb1ede00eb65b79b5753cea3b3625764535cdf4390",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/task-index.ts"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/task-index.ts",
+      "blob": "1472dcaa0ff86676d28a9f7f7c06f95f27d9871e",
+      "mode": "100644",
+      "bytes": 2505,
+      "sha256": "309a4e242755a64c11d506f1fbb72cb6eea9597ef816c873d9f57058666c0969",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-feed/workspace-feed.css",
+      "blob": "7c467417641cfb620f161ff8c77520c39586d540",
+      "mode": "100644",
+      "bytes": 5000,
+      "sha256": "e72e923d0ef436ef3e1b86e563bdc7f74f54cd64e1b449d777ab7d93aa122ff8",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-retention.ts",
+      "blob": "d8f4fb69eb635eab4f682b9d8501395e9014df08",
+      "mode": "100644",
+      "bytes": 885,
+      "sha256": "c6df07b4d238fe449459d25d1596ad43eabadb596c92087ca45034c80ffe41c7",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx"
+      ]
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "blob": "12faa5fcd571d9d8bb53a866de318b2485d56965",
+      "mode": "100644",
+      "bytes": 1784,
+      "sha256": "0ed02e547395893672a4b5f4f16fc4eac759d9841366e62805b030b7cf68a66b",
+      "writeCandidate": true,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-context-integration.fixture.ts",
+      "blob": "30862f9ca64681aa63d106b1fa2d044e2d6576de",
+      "mode": "100644",
+      "bytes": 5370,
+      "sha256": "11693e5df7949e81575266ee2d4eec95cbeff50e78bf803b9f64bd96c6b0fd04",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/workspace-retention.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "blob": "7518092a055e20503b32be5e922b2bdfbf4d1aae",
+      "mode": "100644",
+      "bytes": 8642,
+      "sha256": "71bfb113f66743993a0d1c8924927e6c36116c848c972b2d33036f68160cb2ec",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation-stream-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-queue.fixture.ts",
+      "blob": "a2755fc6ba47974ede20d1f9834776138c64962e",
+      "mode": "100644",
+      "bytes": 10053,
+      "sha256": "dbc40701633abbb7a493d8be1c12dc6d33f113e89cb80cc9b6cd354c2006e908",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation-stream-integration.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.fixture.ts",
+      "blob": "891056656f1d6e64b73ced2e5de6dc4b51863e22",
+      "mode": "100644",
+      "bytes": 9524,
+      "sha256": "550c29f29cfdacb57bcfe49c61e0bc9ff6f8fe07f67888f356a6a48bcd9936df",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-stream-integration.test.ts",
+      "blob": "6735728302da3766532d1a974dc1dc09ab12ddeb",
+      "mode": "100644",
+      "bytes": 12612,
+      "sha256": "d7646add985ef3d288c46aed0ca0e6f7553ce0508a5bc8bb8df2b24f192f96cc",
+      "writeCandidate": true,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation.fixture.ts",
+      "blob": "8e383dd3fdaa557d3154a8fb9b24bfd83891b945",
+      "mode": "100644",
+      "bytes": 11048,
+      "sha256": "c5639b75d81d884ca122b53533f0b6dec6a816b37d3f12f22ed93e55099fe3a6",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/execution-profile-integration.fixture.ts",
+      "blob": "f24e76502554cf78144b15fcbaf6aa0757035cbf",
+      "mode": "100644",
+      "bytes": 6361,
+      "sha256": "939e2c9a88a2a25caa47169d2cae32a0c0a31a34699a31b216d4a2f59f8fd792",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation-queue.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/fixture-server.ts",
+      "blob": "4e399d00397f1ad964593c7714d96d1b713738ec",
+      "mode": "100644",
+      "bytes": 16029,
+      "sha256": "bd41234c42c6b763af2e6366b6dba7db2d218a73bf8d1eae5b928db7bcd959fc",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/workspace-fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "blob": "e38b372aa6a4f2907cc5ee85d6f6b85207154d8f",
+      "mode": "100644",
+      "bytes": 22382,
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd",
+      "writeCandidate": true,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "blob": "d9afe2b8853600544724091f158c1bbdfe3f27cc",
+      "mode": "100644",
+      "bytes": 17691,
+      "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631",
+      "writeCandidate": true,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "blob": "34408d434242fb3e6263740678e519c26ab00008",
+      "mode": "100644",
+      "bytes": 19746,
+      "sha256": "6578782e1a787f769d92f18bf53cf46d5b5f5e35b128962344880202dfaf137d",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/test/workspace-fixture.ts",
+      "blob": "1995604e7784af59914b96bf719aa84e9d65ca51",
+      "mode": "100644",
+      "bytes": 6179,
+      "sha256": "dcfb83f305a9eeed509ffbb562729bab6c14523ac32e307c6cf41cc6ef9cf26b",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/test/conversation.fixture.ts"
+      ]
+    },
+    {
+      "path": "apps/web/test/workspace-retention.fixture.ts",
+      "blob": "7bb1efc270939786714e0024e917bbc150bf2920",
+      "mode": "100644",
+      "bytes": 2135,
+      "sha256": "d46715af2f97e2441c66ceeee1726bde88438e26211d6de1ad533e273d5a8f1c",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "blob": "2d38f7388329fd9d9829b9dd39ef950779154120",
+      "mode": "100644",
+      "bytes": 136,
+      "sha256": "af4bdc0413d25d7cc3ce81a6f2bd2d5488719e8434d155c4abd2427a24273b59",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "blob": "c34ba2b917ea6b0744f351ad5ba3976e489a8ef1",
+      "mode": "100644",
+      "bytes": 648,
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "package.json",
+      "blob": "f12c69735d60e664e3a87082d1571fb48a8b4958",
+      "mode": "100644",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "writeCandidate": false,
+      "via": [
+        "AGENTS.md",
+        "apps/web/index.html",
+        "apps/web/package.json",
+        "apps/web/src/App.tsx",
+        "apps/web/src/TaskThread.tsx",
+        "apps/web/src/assistant-ui.css",
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/attachments/adapter.ts",
+        "apps/web/src/attachments/attachments.css",
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/src/components/assistant-ui/elements/file.tsx",
+        "apps/web/src/components/assistant-ui/elements/follow-up-suggestions.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/image.tsx",
+        "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+        "apps/web/src/components/assistant-ui/elements/media-player.tsx",
+        "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+        "apps/web/src/components/assistant-ui/elements/surfaces.tsx",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tool-fallback.aui.tsx",
+        "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+        "apps/web/src/components/assistant-ui/utils/href.ts",
+        "apps/web/src/components/ui/button.tsx",
+        "apps/web/src/components/ui/collapsible.tsx",
+        "apps/web/src/components/ui/dialog.tsx",
+        "apps/web/src/components/ui/skeleton.tsx",
+        "apps/web/src/components/ui/textarea.tsx",
+        "apps/web/src/components/ui/tooltip.tsx",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/components/workspace/types.ts",
+        "apps/web/src/components/workspace/workspace.css",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-activity/ConversationActivity.tsx",
+        "apps/web/src/conversation-activity/activity.css",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-context/ContextPicker.tsx",
+        "apps/web/src/conversation-context/context-picker.css",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-steering/steering.css",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "apps/web/src/conversations/ConversationList.tsx",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/conversations.css",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/conversations/queue/queue-elements.tsx",
+        "apps/web/src/conversations/read-cache.ts",
+        "apps/web/src/data-renderers/flow-reply-detail.tsx",
+        "apps/web/src/data-renderers/react.tsx",
+        "apps/web/src/data-renderers/registry.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/hooks/use-copy-to-clipboard.ts",
+        "apps/web/src/lib/utils.ts",
+        "apps/web/src/main.tsx",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/data-renderers.ts",
+        "apps/web/src/plugin-integration/integration.css",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-integration/task-actions.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/management.css",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/src/plugin-management/use-read.ts",
+        "apps/web/src/plugins/builtins.ts",
+        "apps/web/src/plugins/builtins/theme.tsx",
+        "apps/web/src/plugins/builtins/workspace.tsx",
+        "apps/web/src/plugins/host.ts",
+        "apps/web/src/plugins/react.css",
+        "apps/web/src/plugins/react.tsx",
+        "apps/web/src/plugins/sample.tsx",
+        "apps/web/src/plugins/types.ts",
+        "apps/web/src/plugins/validation.ts",
+        "apps/web/src/projection.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/recovery/journal.ts",
+        "apps/web/src/styles.css",
+        "apps/web/src/themes.ts",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/TaskIndex.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/src/workspace-feed/workspace-feed.css",
+        "apps/web/src/workspace-retention.ts",
+        "apps/web/src/workspace-state.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "apps/web/test/execution-profile-integration.fixture.ts",
+        "apps/web/test/fixture-server.ts",
+        "apps/web/test/plugin-host.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "apps/web/test/workspace-retention.fixture.ts",
+        "apps/web/tsconfig.json",
+        "apps/web/vite.config.ts",
+        "explicit Arc source/config or readonly existing fixture reference",
+        "packages/client/package.json",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/native-activity-body.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/client/src/plugin-runner.ts",
+        "packages/client/src/response-json.ts",
+        "packages/contracts/package.json",
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/browser-session.ts",
+        "packages/contracts/src/claude-turn-settings.ts",
+        "packages/contracts/src/context-observation-event.ts",
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/engineering-profile.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/fixtures.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/knowledge.ts",
+        "packages/contracts/src/native-activity-body.ts",
+        "packages/contracts/src/native-activity.ts",
+        "packages/contracts/src/package-artifacts.ts",
+        "packages/contracts/src/plugin-artifact.ts",
+        "packages/contracts/src/plugin-installations.ts",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/contracts/src/plugin-removal.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts",
+        "packages/contracts/src/plugin-runtime.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/projects.ts",
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/protocol-task.ts",
+        "packages/contracts/src/reconciliation.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/contracts/src/usage-readout.ts",
+        "packages/contracts/src/workspace.ts",
+        "packages/interaction/package.json",
+        "packages/interaction/src/activity/index.ts",
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/patches.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts",
+        "plans/AGENTS.md",
+        "pnpm-lock.yaml",
+        "pnpm-workspace.yaml",
+        "tsconfig.json",
+        "vitest.config.ts"
+      ]
+    },
+    {
+      "path": "packages/client/package.json",
+      "blob": "455a10f5c656c35fae7c0e1ab17558fd3855d21f",
+      "mode": "100644",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/src/projection.ts",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/native-activity-body.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/client/src/plugin-runner.ts",
+        "packages/client/src/response-json.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "blob": "ca395facf7a58c7d9aef1d98a3845ead8640edc7",
+      "mode": "100644",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "blob": "045ef7a9f5fadc0587db63aa2bed6a30a6799b4e",
+      "mode": "100644",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/execution-profiles/selection.ts",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/src/projection.ts",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/conversation-stream-integration.test.ts",
+        "apps/web/test/plugin-integration.test.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "blob": "7fcf7938ad3402a9b3755d7cee974169c2c028dd",
+      "mode": "100644",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "blob": "63e845baaa45ed9752437e9313b2cb0dde1f53e3",
+      "mode": "100644",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "blob": "7fdcb2eb1b0282ff8fc97d9c5b5e12a9c1b4827c",
+      "mode": "100644",
+      "bytes": 2687,
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "blob": "7a9859ae92aa7f7130a8444315902b23f6fa33a9",
+      "mode": "100644",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts",
+        "packages/client/src/native-activity-body.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "blob": "0c6554f9fc20f3bc4f42329b88afce92dbd3eb77",
+      "mode": "100644",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/components/workspace/types.ts",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "packages/client/src/index.ts",
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/browser-session.ts",
+        "packages/contracts/src/claude-turn-settings.ts",
+        "packages/contracts/src/context-observation-event.ts",
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/engineering-profile.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/fixtures.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/harnesses.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/knowledge.ts",
+        "packages/contracts/src/native-activity-body.ts",
+        "packages/contracts/src/native-activity.ts",
+        "packages/contracts/src/package-artifacts.ts",
+        "packages/contracts/src/plugin-artifact.ts",
+        "packages/contracts/src/plugin-installations.ts",
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/contracts/src/plugin-removal.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts",
+        "packages/contracts/src/plugin-runtime.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/projects.ts",
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/protocol-task.ts",
+        "packages/contracts/src/reconciliation.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/contracts/src/usage-readout.ts",
+        "packages/contracts/src/workspace.ts",
+        "packages/interaction/src/activity/index.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "blob": "299a9307ac00d06a85acb2e0df63e002aa92c685",
+      "mode": "100644",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "blob": "9ac57ec59f15d24480c59727f27042e85feeb3a0",
+      "mode": "100644",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/interaction/src/stream/patches.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "blob": "5e0faf800c7dd9e5fed8504f87396337bcf9c588",
+      "mode": "100644",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "blob": "cae354221f04dc372ef094be2138eb84e4913c65",
+      "mode": "100644",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/AttachmentPicker.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "blob": "e2d11f94c428ebc673de5a6a5337440c906f3854",
+      "mode": "100644",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "blob": "563c2362dac7bcdcb7b02b484eb0b6621661042e",
+      "mode": "100644",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "blob": "42af17668ed62b48e2f6cb41af2d74dd8f5b5ba9",
+      "mode": "100644",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "blob": "1b9ca9d3955875bc40bec8ed1db21e75c2d21082",
+      "mode": "100644",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "blob": "cf0ac9325c3907e2b3da8fb3f8b67b3ebeb16c2e",
+      "mode": "100644",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "blob": "355302afcf5fa8d82ed77fde10856645e0023e4a",
+      "mode": "100644",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "blob": "7aacb135ba9e3bb359acf0ad8e11763ff9ddce6c",
+      "mode": "100644",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "blob": "d626d66b47fdff4f698315d8d2cfa959e65d02e3",
+      "mode": "100644",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "blob": "d3d5b084920be2c59dec09338a386b3116b82343",
+      "mode": "100644",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "blob": "6e091c649a3e4f5d59a9e9922d00f3b7d4d4b125",
+      "mode": "100644",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "blob": "9aea65c9bff28bd372ed7e2bc0ae616914ccee15",
+      "mode": "100644",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "blob": "3dc13d6eb7ef7909683fb92cf095240814afb234",
+      "mode": "100644",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "blob": "3b3e758ad3adc42fb4ac4167aac78a877cf9c55d",
+      "mode": "100644",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/engineering-native.ts",
+        "packages/contracts/src/engineering-profile.ts",
+        "packages/contracts/src/engineering.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/fixtures.ts",
+      "blob": "76ca3b1a1bea7cd36511552ef30d4bd1ad7155b6",
+      "mode": "100644",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "blob": "783c2dea5b809f385c29f88fb3ed35db6a2552dc",
+      "mode": "100644",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "blob": "0b60d6f63f95d309cfe1ace93e3cdf5b32eadca9",
+      "mode": "100644",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "blob": "717422cf85436dea74869bcc312f4ac90146e8c6",
+      "mode": "100644",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "blob": "fff78c080cac6e4dee24ef2df92538d6715ecc7f",
+      "mode": "100644",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "blob": "33515185e33c8b6fc637a27afb434cab0f9296c3",
+      "mode": "100644",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "blob": "e096c033e021166e9fd9c8801bdea033370ac50d",
+      "mode": "100644",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "blob": "57f92dd1828bf4d7801b4f6c72a4322e2b474137",
+      "mode": "100644",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "blob": "183fb544b08cc5f1e00584f5f7f5266ec1417c49",
+      "mode": "100644",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "blob": "90a7918a9cfa773e38d3977047b79d0ddd731967",
+      "mode": "100644",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "blob": "83708ad13b2abd40ecee1e5998206663cb20786d",
+      "mode": "100644",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "blob": "c2285d9a3577040b7a29f9c2a446b3e18d136ace",
+      "mode": "100644",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/attachments/controller.ts",
+        "apps/web/src/attachments/recovery.ts",
+        "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "apps/web/src/components/workspace/panels.tsx",
+        "apps/web/src/components/workspace/types.ts",
+        "apps/web/src/connection/session.ts",
+        "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-activity/native/tool.tsx",
+        "apps/web/src/conversation-activity/projection.ts",
+        "apps/web/src/conversation-context/controller.ts",
+        "apps/web/src/conversation-context/projects.ts",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversation-context/selection.ts",
+        "apps/web/src/conversation-steering/control.ts",
+        "apps/web/src/conversation-stream/host.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/messages.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/catalog.ts",
+        "apps/web/src/plugin-integration/activity.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/knowledge.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/steering.tsx",
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/src/workspace-feed/ActivityWindow.tsx",
+        "apps/web/src/workspace-feed/Attention.tsx",
+        "apps/web/src/workspace-feed/WorkspaceOverview.tsx",
+        "apps/web/src/workspace-feed/projection.ts",
+        "apps/web/src/workspace-feed/task-index.ts",
+        "apps/web/test/conversation-context-integration.fixture.ts",
+        "apps/web/test/conversation-message-reuse.probe.ts",
+        "apps/web/test/conversation-queue.fixture.ts",
+        "apps/web/test/conversation-stream-integration.fixture.ts",
+        "apps/web/test/conversation.fixture.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "apps/web/test/workspace-fixture.ts",
+        "packages/client/src/index.ts",
+        "packages/interaction/src/activity/index.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "blob": "a4f902410a08491368227d39ec6db85d745e970f",
+      "mode": "100644",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/goal-context.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "blob": "61a7adabc650317624a8e37ea86ef65f394c0a12",
+      "mode": "100644",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "blob": "58904770e95d809a732db4f47eb2d3d8afb448eb",
+      "mode": "100644",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/native-activity-body.ts",
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "blob": "3465dd26fabc1eadbf1362f4b703c6ad26135a2c",
+      "mode": "100644",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/plugin-package-fetches.ts",
+        "packages/contracts/src/plugin-runtime.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "blob": "abdd262b2dde01f20594b9dbab205a0d58a8660b",
+      "mode": "100644",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "blob": "80fde773e0889f70d70371a73f7938d29158d43f",
+      "mode": "100644",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "blob": "4b10a60a51804e24292d293784e80d95e72e792e",
+      "mode": "100644",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "blob": "e8cdbb5fcf0d899ef18103b73f85a37899036236",
+      "mode": "100644",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts",
+        "packages/client/src/plugin-management.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "blob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "mode": "100644",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/plugin-runner.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "blob": "6955292888b9961b866895030841c502faabefd6",
+      "mode": "100644",
+      "bytes": 1708,
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts",
+        "packages/client/src/plugin-management.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "mode": "100644",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/plugin-management/PluginManagement.tsx",
+        "apps/web/src/plugin-management/runtime-command.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "packages/client/src/index.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/client/src/plugin-runner.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "blob": "1407925bf658811b26c8a5809f4b6d2dac12f274",
+      "mode": "100644",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/index.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/plugin-removal.ts",
+        "packages/contracts/src/plugin-runtime-hosts.ts",
+        "packages/contracts/src/plugin-runtime.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "blob": "c790190291edd2307aa9347e34de5e83f99a3ce4",
+      "mode": "100644",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-plan-confirmation.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/protocol-dispatch.ts",
+      "blob": "3cedd65a6b1a84cce3d50f1d8b09ea07d47a61cc",
+      "mode": "100644",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "blob": "6f8f63be7ed8ecca7b6957e039b36adf177c345d",
+      "mode": "100644",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/tasks.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "blob": "cc9dbadb0613d62aa3ff32f428667ef2eb51011b",
+      "mode": "100644",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "blob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "mode": "100644",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/plugin-runner-claim.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "blob": "7a85bfc2d16fc3a15ec337ef191c08646009c34c",
+      "mode": "100644",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "blob": "40dbecb9e936260917df6c3d997a8c91c090d82e",
+      "mode": "100644",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/protocol-dispatch.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "blob": "2ee5f126e3f035e4428411e4c9958b17ee3660cc",
+      "mode": "100644",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "writeCandidate": false,
+      "via": [
+        "packages/client/src/plugin-management.ts",
+        "packages/contracts/src/active-steering.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/attachments.ts",
+        "packages/contracts/src/context-observation-history.ts",
+        "packages/contracts/src/context-transparency.ts",
+        "packages/contracts/src/conversation-context.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/fixtures.ts",
+        "packages/contracts/src/goal-delivery.ts",
+        "packages/contracts/src/goal-graph-proposals.ts",
+        "packages/contracts/src/goal-graph-runs.ts",
+        "packages/contracts/src/goal-native-executions.ts",
+        "packages/contracts/src/goal-progression.ts",
+        "packages/contracts/src/goal-tool-runs.ts",
+        "packages/contracts/src/goals.ts",
+        "packages/contracts/src/index.ts",
+        "packages/contracts/src/knowledge.ts",
+        "packages/contracts/src/native-activity-body.ts",
+        "packages/contracts/src/native-activity.ts",
+        "packages/contracts/src/plugin-runner-claim.ts",
+        "packages/contracts/src/plugin-runtime.ts",
+        "packages/contracts/src/plugins.ts",
+        "packages/contracts/src/projects.ts",
+        "packages/contracts/src/protocol-dispatch.ts",
+        "packages/contracts/src/reconciliation.ts",
+        "packages/contracts/src/runner-claim.ts",
+        "packages/contracts/src/runner-maintenance.ts",
+        "packages/contracts/src/runner.ts",
+        "packages/contracts/src/usage-readout.ts",
+        "packages/contracts/src/workspace.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "blob": "8ee937eebec911f9d2ce9da6fbcbdf31ca86a303",
+      "mode": "100644",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/contracts/src/workspace.ts",
+      "blob": "86f13be197ca3ea491d8c7e3db369c84ef918a7e",
+      "mode": "100644",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+      "writeCandidate": false,
+      "via": [
+        "packages/contracts/src/index.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "blob": "759a2eb7e35c6e2e6eea0614e03307bb7313f51b",
+      "mode": "100644",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/projection.ts",
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/projection.ts",
+        "packages/interaction/src/activity/index.ts",
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/patches.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/src/activity/index.ts",
+      "blob": "ac47f9220839b08feb4a19de07109d587e171dc9",
+      "mode": "100644",
+      "bytes": 3329,
+      "sha256": "897947a0ba807539002b07b84c67dfb01a8091e8f6e780de3d1f10350519e8f9",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-activity/native/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "blob": "7438c512f108d8498d975ff58e241e3dbc3f7138",
+      "mode": "100644",
+      "bytes": 98,
+      "sha256": "a361f4a3953bd6abd4aecee7c05de7d4ec1320238e986157db273a7ed58c2f79",
+      "writeCandidate": false,
+      "via": [
+        "apps/web/src/conversation-stream/messages.ts",
+        "apps/web/src/conversation-stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "blob": "68f6bb3aa053ca8e46e0cffb492d54196a2003de",
+      "mode": "100644",
+      "bytes": 16646,
+      "sha256": "4b2dd931035cbbc18f202b5d6a551bdee4101a3c25458385aeec427d459e3d6a",
+      "writeCandidate": false,
+      "via": [
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "blob": "2452f92a8d1223807c0e291515c6e1a57e2a6e60",
+      "mode": "100644",
+      "bytes": 6756,
+      "sha256": "a545a75c1215d1a49753d5e295ceea4bcd7381bd49e18a0a92b62bc01b2433de",
+      "writeCandidate": false,
+      "via": [
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/projection.ts"
+      ]
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "blob": "fea59a0521efc6dd5653e397f2dbbc7eee0d8d37",
+      "mode": "100644",
+      "bytes": 19907,
+      "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed",
+      "writeCandidate": false,
+      "via": [
+        "packages/interaction/src/stream/index.ts",
+        "packages/interaction/src/stream/presentation.ts"
+      ]
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "blob": "3adf9356ec1c437e4c6e49c9c6698e33518beea8",
+      "mode": "100644",
+      "bytes": 17746,
+      "sha256": "88ef69af6b42de2b1f950d6786e4ffe95737f1f22401399c101ee678a6b1b756",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "blob": "a61b07082e212b84d961cad193a6cae6ce34450b",
+      "mode": "100644",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "blob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "mode": "100644",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "tsconfig.json",
+      "blob": "835349029f0f4a864538ec6bc3917d911e9a9713",
+      "mode": "100644",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    },
+    {
+      "path": "vitest.config.ts",
+      "blob": "0f5938f691bd5abe92bb808b3ef9ed6ed2b10e3a",
+      "mode": "100644",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+      "writeCandidate": false,
+      "via": [
+        "explicit Arc source/config or readonly existing fixture reference"
+      ]
+    }
+  ],
+  "externalImports": [
+    "@assistant-ui/react",
+    "@assistant-ui/react-markdown",
+    "@radix-ui/react-collapsible",
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-slot",
+    "@radix-ui/react-tooltip",
+    "@tailwindcss/vite",
+    "@vitejs/plugin-react",
+    "class-variance-authority",
+    "clsx",
+    "lucide-react",
+    "radix-ui",
+    "react",
+    "react-dom",
+    "remark-gfm",
+    "tailwind-merge",
+    "tailwindcss",
+    "tw-animate-css",
+    "typescript",
+    "vite",
+    "vitest",
+    "zod"
+  ],
+  "unresolved": [],
+  "nonliteralImports": [
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "line": 64,
+      "classification": "Installed @assistant-ui/core/internal selected through createRequire rooted at @assistant-ui/react; helper asserts 0.3.22. Fixed external resolver/entry identity required before checks; no third-party source materialization.",
+      "invocation": "coreFixture called by selected integration tests; no import executed during preparation"
+    },
+    {
+      "path": "apps/web/test/conversation-message-reuse.probe.ts",
+      "line": 107,
+      "classification": "Historical messages transpile/data-URL import inside main(), guarded by direct-entry comparison at line115; importing this helper does not invoke it. No baseline Git source needed for selected helper path.",
+      "invocation": "Historical benchmark main only; NOT_SELECTED for proposed Arc checks; static proof only"
+    }
+  ],
+  "runtimeURLCandidates": [
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "url": "..",
+      "classification": "directory anchor/runtime path; no recursive supply or runtime approval"
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "url": "..",
+      "classification": "directory anchor/runtime path; no recursive supply or runtime approval"
+    },
+    {
+      "path": "apps/web/test/conversation.fixture.ts",
+      "url": "..",
+      "classification": "directory anchor/runtime path; no recursive supply or runtime approval"
+    },
+    {
+      "path": "apps/web/test/conversation-queue.fixture.ts",
+      "url": "..",
+      "classification": "directory anchor/runtime path; no recursive supply or runtime approval"
+    },
+    {
+      "path": "apps/web/test/execution-profile-integration.fixture.ts",
+      "url": "..",
+      "classification": "directory anchor/runtime path; no recursive supply or runtime approval"
+    }
+  ],
+  "newSourceLiterals": [
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/test/workspace-layout.test.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.browser.ts"
+  ],
+  "boundedPreparationBytes": 16777216,
+  "sourceCopied": false,
+  "notes": [
+    "Pruned I01 metadata/tests/probes not on current roots. Existing fixture files are readonly controlled-HTTP references, not execution approval.",
+    "TypeScript .js specifiers resolve to fixed .ts/.tsx source; no Node import used. First preliminary unresolved list retained; no source copied.",
+    "No source from moving main or other WT; future @flow aliases bind this fixed base in new WT. Third-party transitive runtime behavior remains unverified."
+  ],
+  "roots": [
+    "AGENTS.md",
+    "apps/web/index.html",
+    "apps/web/package.json",
+    "apps/web/tsconfig.json",
+    "apps/web/vite.config.ts",
+    "package.json",
+    "plans/AGENTS.md",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "tsconfig.json",
+    "vitest.config.ts",
+    "apps/web/src/App.tsx",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts",
+    "apps/web/src/main.tsx",
+    "apps/web/test/plugin-management-integration.fixture.ts",
+    "apps/web/test/workspace-retention.fixture.ts"
+  ],
+  "classificationFinalizedAt": "2026-10-07T17:51:33.836290+00:00",
+  "priorManifest": {
+    "path": "/private/tmp/arc-composition-f885-0lr2z4dj/supply-manifest.unclassified.json",
+    "bytes": 133753,
+    "sha256": "6634b216f68456d6e3721bffc9bd6b1df6604a26e65a942c646fc4c08a6bedd3"
+  },
+  "externalBinding": {
+    "status": "PROVENANCE_ONLY_NOT_FRESH_RUNTIME_VERIFICATION",
+    "candidateResolver": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/local-20261007/resolver-static.json",
+    "mustRefresh": [
+      "Physical dependency roots, manifests, executable/loader identity for eventual selected checks",
+      "Dynamic @assistant-ui/core/internal entry and version0.3.22",
+      "Native browser/tool pins only if later separately dispatched"
+    ],
+    "copyOrInstall": false
+  }
+}

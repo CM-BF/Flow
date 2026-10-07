@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-07T19:44:31.817845+00:00",
+  "identities": [
+    {
+      "pid": 54527,
+      "processAbsent": true,
+      "groupAbsent": true
+    },
+    {
+      "pid": 92068,
+      "processAbsent": true,
+      "groupAbsent": true
+    },
+    {
+      "pid": 66202,
+      "processAbsent": true,
+      "groupAbsent": true
+    },
+    {
+      "pid": 88252,
+      "processAbsent": true,
+      "groupAbsent": true
+    },
+    {
+      "pid": 95910,
+      "processAbsent": true,
+      "groupAbsent": true
+    }
+  ],
+  "scratchAbsent": true,
+  "logs": "regular files closed by parent, not pipe dualEOF",
+  "toolExits": {
+    "direct-1": 1,
+    "types-1": 1,
+    "direct-2": 0,
+    "types-2": 0,
+    "types-3": 0
+  },
+  "actualChildExits": {
+    "direct-1": 1,
+    "types-1": 2,
+    "direct-2": 0,
+    "types-2": 0,
+    "types-3": 0
+  },
+  "spentMs": 18020,
+  "remainingMs": 41980
+}

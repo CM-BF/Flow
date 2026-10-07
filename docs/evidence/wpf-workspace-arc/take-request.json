@@ -1,0 +1,34 @@
+{
+  "requestId": "arc-take-555b99da-1389-481f-b3d5-64623ceb6fa4",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "taskId": "WPF-WORKSPACEARC01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "branch": "codex/web-workspace-composition",
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/workspace-layout.test.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "plans/wpf-workspace-arc",
+    "docs/evidence/wpf-workspace-arc",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts"
+  ],
+  "role": "writer",
+  "origin": "new"
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "kind": "interim-static-source-finding",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "observedAt": "2026-10-07T19:25:16.924751+00:00",
+  "task": "WPF-WORKSPACEARC01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "branch": "codex/web-workspace-composition",
+  "base": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "status": "DIRTY_IMPLEMENTATION_NOT_FINAL_REVIEW",
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "c1aafcc695ad538844e2f7669e80659aee0c390ab8cab83e9ce8ec92429ab27b",
+    "apps/web/src/plugin-integration/layout.ts": "7d78505dcd96ac034d679d1ae8c8251d52d5c6cf31fb75875fd7d2dbcf06c153",
+    "apps/web/src/plugins/host.ts": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470",
+    "apps/web/src/plugin-integration/session.ts": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295"
+  },
+  "findings": [
+    {
+      "priority": "P2",
+      "title": "Carry original layout/plugin authority through delayed close confirmation",
+      "location": "App.tsx closeView -> close -> leaving dialog confirm; AppLayoutPort.commit",
+      "evidence": [
+        "PluginHost captures LayoutInvocation before lazy activation and carries it into the bridge.",
+        "AppLayoutPort.commit validates, aborts its current lifetime, and then calls the native operation.",
+        "App layout closeView calls close(id). A steering-risk close only stores leaving={kind:view,id,key}; the actual layout mutation happens later in the dialog confirmation.",
+        "Confirmation checks only views.get(destination.id)?.key === destination.key before closeNow(destination.id,true). It does not retain or validate the originating plugin signal or layout invocation. These exact source forms were still present at the observation."
+      ],
+      "implication": "An original plugin close can leave a confirmation pending; disabling that plugin or changing layout away and back does not by itself change the saved view key. The later confirmation can still execute the old close, contrary to the accepted requirement to revalidate invocation lifetime after confirmation. This is source-level evidence, not a browser reproduction.",
+      "requestedFix": "Keep private close authorization alive until the real mutation or explicitly transfer to a guarded confirmation transaction, with clear prepare/commit lifetime. Recheck original invocation/plugin and current view membership after confirmation. Do not use the already-consumed abort signal as a guard that rejects every legitimate close. Preserve draft C and accepted-send identities.",
+      "verification": "Within the already planned integration/App journey, cover opening confirmation then plugin disable/re-enable or layout A-to-B-to-A before confirming; the old confirmation must not mutate layout. Ordinary immediate close and native user confirmation should remain usable. No extra scope or separate new test stage requested."
+    }
+  ],
+  "otherObservations": [
+    "The new stream budget reserves freed leases for existing FIFO waiters before wakeup, while completed bounded batches preserve hasMore work as dirty. This static reading found no additional confirmed issue, but real repeated three-pane progress and late/hide/reconnect cases remain required."
+  ],
+  "limits": [
+    "No product code changed and no product test or browser was run by root.",
+    "The owner continues working; hashes identify an interim observation, not a frozen implementation delivery.",
+    "Final review must target the owner's complete commit and appropriate actual test evidence."
+  ],
+  "cleanCode": {
+    "applied": "Reviewed lifecycle handoff between small host interfaces and native deferred mutation, rather than relying only on initial guard checks. Avoided proposing a second layout or draft store.",
+    "unresolved": "P2 confirmation lifetime and final behavioral evidence."
+  }
+}

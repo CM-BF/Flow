@@ -1,0 +1,57 @@
+{
+  "state": "PROPOSAL_NOT_AUTHORIZED",
+  "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+  "localPhase": {
+    "state": "CLOSED",
+    "actualMs": 18020,
+    "unusedMs": 41980,
+    "noCreditTransfer": true
+  },
+  "HTTPSelected": {
+    "entry": "apps/web/test/conversation-stream-integration.test.ts",
+    "selection": "Arc FIFO|Arc removes",
+    "count": 2,
+    "budgetProposalMs": 30000,
+    "cleanupReserveMs": 10000,
+    "PG": 0,
+    "Chrome": 0,
+    "sequentialOwnedHTTP": 1,
+    "fixture": "existing actual StreamHost + shared projection, not a reducer mirror",
+    "noAutomaticRetry": true
+  },
+  "browser": {
+    "entry": "apps/web/test/workspace-layout.browser.ts#checkWorkspaceLayout",
+    "selectors": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "totalProposalMs": 90000,
+    "workMs": 60000,
+    "cleanupReserveMs": 30000,
+    "singleAttempt": true,
+    "PG": 0,
+    "ownedDynamicHTTP": 2,
+    "ownedChrome": 1,
+    "provider": 0,
+    "runner": 0,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "singlePngBytes": 524288,
+    "originalUserServices": "untouched",
+    "parent": "reuse previously reviewed owned I01 browser capture/Chrome supervisor; future exact binding required, no new framework",
+    "boundary": "real BrowserWorkspace with synthetic Cookie/CSRF HTTP, real material adapter after validation held by fixture-only Vite wrapper, not center-session security/native/provider evidence"
+  },
+  "requiredBeforeRuntime": [
+    "independent fixedsource/fixture review",
+    "complete reviewed caller and all runtime/native pins",
+    "manager unique resource handoff and latest fullsum",
+    "fresh exact20/cleanhead/namespace absence and cleanup resources"
+  ],
+  "currentChild": 0,
+  "gate": null,
+  "env": null,
+  "reservation": null
+}

@@ -1,0 +1,49 @@
+{
+  "kind": "HISTORICAL_READ_ONLY_PREPARATION_NOT_CURRENT_TAKE",
+  "ledger": {
+    "state": "available",
+    "observedAt": "2026-10-07T17:18:21.411Z",
+    "totalClaims": 262,
+    "activeWriterClaims": 36
+  },
+  "scopeCandidate": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/workspace-state.ts",
+    "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+    "apps/web/src/workspace-layout/layout.css",
+    "apps/web/src/conversations/ConversationList.tsx",
+    "apps/web/src/plugin-integration/layout.ts",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugins/types.ts",
+    "apps/web/src/plugins/validation.ts",
+    "apps/web/src/plugins/host.ts",
+    "apps/web/src/plugins/sample.tsx",
+    "apps/web/test/workspace-layout.test.ts",
+    "apps/web/test/workspace-layout.fixture.ts",
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/plugin-host.test.ts",
+    "apps/web/test/plugin-integration.test.ts",
+    "plans/wpf-workspace-arc",
+    "docs/evidence/wpf-workspace-arc",
+    "apps/web/src/conversation-stream/host.ts",
+    "apps/web/test/conversation-stream-integration.test.ts"
+  ],
+  "conflicts": [],
+  "previousChecks": {
+    "fixedBase": "f8853d4731eb6229337279079c24617c97d4f56b",
+    "mainContainedI01": "5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3",
+    "mainClean": true,
+    "targetWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+    "targetBranch": "codex/web-workspace-composition",
+    "targetPathExists": false,
+    "targetSymlinkExists": false,
+    "targetBranchExists": false,
+    "targetWorktreeRegistered": false,
+    "exactCheckTime": "NOT_SEPARATELY_RECORDED; observed by owner during pre-K01 preparation"
+  },
+  "limits": [
+    "No coordination CLI rerun after measurement interruption.",
+    "Not a take or authority grant. Manager must dispatch; fresh ledger/branch/path/HEAD required then.",
+    "No source copy, project write, worktree creation, dependency materialization, runtime import or engineering check."
+  ]
+}

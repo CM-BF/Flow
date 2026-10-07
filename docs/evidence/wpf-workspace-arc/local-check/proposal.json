@@ -1,0 +1,22 @@
+{
+  "id": "ARC-COMPOSITION-LOCAL-20261007-ONCE",
+  "preparedDirectory": "/private/tmp/arc-composition-local-6eil_3le",
+  "totalMs": 60000,
+  "perChildMs": 20000,
+  "cleanupReserveMs": 5000,
+  "selected": {
+    "layout": 6,
+    "pluginHost": 2,
+    "appPort": 5
+  },
+  "HTTPTestsExcluded": 2,
+  "browserGroupsNotRun": 4,
+  "scratchBytes": 16777216,
+  "retainedBytes": 2097152,
+  "network": "denied",
+  "checks": [
+    "Arc13 pure Vitest",
+    "affected 17 TS/TSX source and static imports noEmit; not whole Web"
+  ],
+  "futureChrome": "not authorized"
+}

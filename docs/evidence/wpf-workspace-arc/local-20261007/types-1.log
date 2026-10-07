@@ -1,0 +1,7 @@
+apps/web/src/components/assistant-ui/elements/thread.aui.tsx(7,8): error TS2307: Cannot find module './attachment.aui' or its corresponding type declarations.
+apps/web/src/components/assistant-ui/elements/thread.aui.tsx(18,8): error TS2307: Cannot find module './reasoning.aui' or its corresponding type declarations.
+apps/web/src/components/assistant-ui/elements/thread.aui.tsx(24,8): error TS2307: Cannot find module './tool-group.aui' or its corresponding type declarations.
+apps/web/src/components/workspace/panels.tsx(5,40): error TS2307: Cannot find module './ai-elements/terminal' or its corresponding type declarations.
+apps/web/src/components/workspace/panels.tsx(78,22): error TS7006: Parameter 'event' implicitly has an 'any' type.
+apps/web/test/plugin-host.test.ts(132,109): error TS2353: Object literal may only specify known properties, and 'taskId' does not exist in type '{ readonly kind: "pane"; readonly workspaceId: string; readonly paneId: string; readonly viewKey: string; }'.
+apps/web/test/workspace-layout.browser.ts(120,56): error TS2307: Cannot find module '/@id/__x00__virtual:arc-material-probe' or its corresponding type declarations.

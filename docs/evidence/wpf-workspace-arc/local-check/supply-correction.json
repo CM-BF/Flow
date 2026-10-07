@@ -1,0 +1,46 @@
+{
+  "fixed": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "reason": "supply relative resolution must append extension after .aui, not replace dot suffix",
+  "added": [
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "bytes": 9213,
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de",
+      "blob": "4e357311054bbcccc76f711d7e1c83f9607b983c"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/reasoning.aui.tsx",
+      "bytes": 3217,
+      "sha256": "d695ed0a776b664cb8c620c94598ad10b0c93181079a7abec054884503c53443",
+      "blob": "b42fc8d5dc9bea0d6d54071b9e7604a4ce87b34e"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/tool-group.aui.tsx",
+      "bytes": 7388,
+      "sha256": "50e5d21a865de8bead130bd9bcfa968ab1a330c4b0082374bf3d1a84951a9b08",
+      "blob": "9e5cf907fc9f97d1553cbc583ffbc784afd001e2"
+    },
+    {
+      "path": "apps/web/src/components/workspace/ai-elements/terminal.tsx",
+      "bytes": 6961,
+      "sha256": "07c7b2b13e43a518cfd756e3da322c68e71c30737a10e2498357bf4ab931b727",
+      "blob": "b2828f7b960f7a97e2702e92ba7ea7c385717e42"
+    },
+    {
+      "path": "apps/web/src/components/ui/avatar.tsx",
+      "bytes": 1423,
+      "sha256": "58e54a3bae17a49a8d2736f8904d716d2426dd78bb95523a01b5ce079847055f",
+      "blob": "9122baa7e4c48b48652bf810dfed9e186281a84f"
+    },
+    {
+      "path": "apps/web/src/hooks/use-attachment-src.ts",
+      "bytes": 1355,
+      "sha256": "dfb621f1a18f4013994aa29815beddb436020105164526ab7c86b0b0a32040a1",
+      "blob": "82b64ec34cfae7c29ae667671eb3b42454c4ff56"
+    }
+  ],
+  "readClosureFiles": 15,
+  "unresolved": [],
+  "bytes": 29557,
+  "original196ManifestUnchanged": true
+}
