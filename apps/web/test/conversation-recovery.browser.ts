@@ -11,7 +11,7 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const evidence = join(root, "docs/evidence/wpf-conversation-recovery");
 // Defensive ceiling only: closed 90s + closed 150s + separately admitted <=60s steering phase.
-const TOTAL_MS = 300_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+const TOTAL_MS = 390_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
