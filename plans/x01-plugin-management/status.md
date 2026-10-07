@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T12:51:05.007678+00:00 |
+| 最近更新时间 | 2026-10-07T13:35:44.258Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v29 ACTIVE52scope](../../docs/evidence/x01/process-host-handback-receipt.json)；7条runner路径已STOP交回供process-host新owner领取；routes.ts及两Web路径保持STOP |
+| Claim | [v29 ACTIVE52scope](../../docs/evidence/x01/settings-claim-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；本次仅parent metadata |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -21,25 +21,25 @@
 | Review | chatui11:08:43 source/local/preparation APPROVED + 11:22:22 result忠实性APPROVED，均0P1/P2 |
 | 检查范围 | 真实SQL/owner HTTP候选新1例；synthetic材料不冒npm执行；旧10不选 |
 | 检查目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查 |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；候选七源a298/d05 + ACKae148 + consumerbc54已main de5475039d73caec631ba2ee64556208dbb1751d，I02 x01-candidates-combined-intake.json实核，不冒latest main全集检查；REMOVAL81a后端5项+helper1424/input共7、CLIENT676六项、Weba952五项已main9f0fe5b2c096a49195ff8060d97584de235785d2，I02 plugin-removal-and-management-intake/receipt.json固定18行逐hash核符；原receipt staged label与实际main Git分开，不冒个人部署。 |
 | 实现目标 | d05b33a552168aadf07ec1ecabe43c29ff3e0faf |
 | 实现范围 | apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/host-candidates.ts,apps/server/src/plugin-runtime/host-candidates.test.ts,apps/server/src/plugin-runtime/runtime.test.ts,packages/contracts/src/plugin-runtime-hosts.ts |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 授权后端候选与真实上游升级已接入主线；材料引用后端和公共客户端均已独审，待受控接收 |
-| 下一可用交付 | 材料引用查询按后端合同先或同批接收公共客户端；具体交付以两子片唯一入口为准 |
+| 当前产出 | 材料引用后端、公共客户端与独立Web管理模块已接收主线；个人安装部署及完整生命周期仍待验收 |
+| 下一可用交付 | 已独审的受信插件进程宿主等待受控接收；发布产物与真实进程验收随后单独验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
 | --- | --- | --- | --- |
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
-| X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；可信工具公开合同及管理CLI已main；完整移除/扩展类型/生命周期投影仍未完 |
+| X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；可信工具公开合同及管理CLI已main；有界材料引用投影及客户端已main，完整移除/扩展类型/生命周期仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
 | X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游7.8.4→7.8.5→回选7.8.4已真实验收并main；真正invoke函数进行中跨版本/物理卸载仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
-| X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
+| X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；Weba952独立管理模块已main9f0，不冒本次生产App挂载或个人部署；完整Web/TUI/CLI生命周期未完 |
 | X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；上游升级已验；renderer/verifier/真正invoke-inflight/完整三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
@@ -394,3 +394,11 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 
 
 2026-10-07T13:07:54.544Z：已明确STOP apps/server/src/runners.ts，13:07:40.252Z X01当前version原子amend移出（v28/53→v29/52）；随后同CORE task新writer take651c4eb4 v1/4已提交。源逐字等fixed main7524、无未交delta，不恢复该叶写权。正式[handback receipt](../../docs/evidence/x01/settings-claim-handback-receipt.json)；CORE后继唯一[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)。原X01其它范围/完整验收不变。
+
+## 材料引用三组件主线收口与受信进程后继
+
+2026-10-07T13:35:44.258Z：fresh本树15617a3c clean、parent6ddedc73 v29 ACTIVE52/self已核。canonical [I02三组件收据](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/plugin-removal-and-management-intake/receipt.json)SHA e40dc870123fafc7a614b8f5095397f211fce043d714ac1f3e1e834bef0683f7；结合actual main9f0fe5b2逐18行Git/hash/bytes核符：REMOVAL7、CLIENT6、独立Web5。复用各自独审与Lead组合strict0/2932ms，0工程重测/PG。原REMOVAL R1失败UNKNOWN与独立cleanup、R2通过分别保留；本体仅引用可见，不授权物理删除、不证明host释放或跨registration无引用。个人部署仍未验。
+
+下一接收候选仅引用[PROCESS唯一intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/main-intake.json)及[其status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/plans/x01-trusted-process-host/status.md)：fresh packet672cca6fe2c4ccb7136f281b1fc277ef9dfc20cb clean，source4dc6f7ee1613e00a82ab5d99412a06f9c799cf70已获chatui2026-10-07T13:23:25Z独审APPROVED/0P1P2，当前NOT_INTEGRATED，T7发布后继未验。受信独立process不等第三方sandbox；不复制子task TODO，不将父10项机械完成。
+
+本次只parent status事实更新，时间均毫秒Z；提交/push后STOP本metadata段，保留parent claim，CORE920a固定operator仍待审、PG NOT_OPEN。
