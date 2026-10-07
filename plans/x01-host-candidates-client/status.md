@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T12:12:46.202Z |
+| 最近更新时间 | 2026-10-07T12:33:16.547Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | 3f0e3404-8415-4cc6-8b8f-88b8f7317dc9 v1 ACTIVE/7literal |
+| Claim | 3f0e3404-8415-4cc6-8b8f-88b8f7317dc9 v2 ACTIVE/4literal，2026-10-07T12:32:47.841Z观察；本次固定后STOP并释放，最终以ledger为准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -63,3 +63,7 @@
 2026-10-07T11:12:31.223Z 按Mika检查绑定收口：实现目标bc54/scope六产品与必需fixture，与检查状态及main-intake一致；caller/config/snapshot仍是原已审证据链接，不计为产品实现范围。前文c5da声明为当时历史，当前此表为准，无新检查或源变化。server修后a298的合同已由chatui核与原767固定bytes一致，intake要求合同字节而非停留旧backend commit。fresh账本11:12:13.319Z claim3f0e v1/7 ACTIVE保持；产品继续冻结。
 
 2026-10-07T11:52:41.728Z 本次只读核 main de5475039d73caec631ba2ee64556208dbb1751d 与canonical I02接收：产品按ACK→HOST→CONSUMER顺序组合，当前最终consumer bytes逐SHA相符；ACK两叶后续受审扩展不误报回退。root noEmit0 +3selected3pass/33未选的原主线检查范围继承，未重跑本分支旧组或PG。原历史尚未main/登记文字仅当时记录；当前本片原plan验收已满足。部署/registry页面暂无新证据，仍不声称最新实际UI刷新；架构后继由Mika协调D06。
+
+2026-10-07T12:33:16.547Z 最终ownership收口：本task原验收/独审/main de547接收均完成；本次重新核原canonical SHA及6产品最终行，保原完成时间11:52:41.728Z。fresh ledger v2/4剩余仅两test及本plan/evidence，归属/分支/WT均符。无实现修复/验证待办，本次metadata clean push后全部scope含metadata明确STOP并原子release；回执只存外部，释放后不回填status。无local/PG/资源holder，0工程检查，原source/raw不动。详见ownership-close.json。
+
+三共享leaf已于2026-10-07T12:17:22.841Z从HOST v2移出，CLIENT claim79284ebe于12:17:32.883Z成功领取；本HOST绝不恢复这三leaf写权。上文v1/7为历史领取观察，此表v2/4为最后核验。

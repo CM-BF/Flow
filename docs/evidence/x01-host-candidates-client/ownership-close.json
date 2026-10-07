@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-07T12:33:16.547Z",
+  "ledgerObservedAt": "2026-10-07T12:32:47.841Z",
+  "claimId": "3f0e3404-8415-4cc6-8b8f-88b8f7317dc9",
+  "version": 2,
+  "state": "active",
+  "remainingScope": [
+    "apps/cli/src/plugin-host-candidates.test.ts",
+    "docs/evidence/x01-host-candidates-client",
+    "packages/client/src/plugin-host-candidates.test.ts",
+    "plans/x01-host-candidates-client"
+  ],
+  "owner": "db_transaction_owner",
+  "lead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates",
+  "main": "de5475039d73caec631ba2ee64556208dbb1751d",
+  "canonical": "docs/evidence/i02/x01-candidates-combined-intake.json",
+  "canonicalSha256": "517da57a94a206828650e54952fd18e3d695526b1809ed2f46a2d5ba4dc3c8bb",
+  "productRowsChecked": 6,
+  "originalCompletionAt": "2026-10-07T11:52:41.728Z",
+  "allPlanTodosAlreadyCompleted": true,
+  "remainingWork": "Only this ownership metadata commit/push; then all-write STOP and atomic release. No product, tests, raw or old evidence changes.",
+  "releaseReceiptLocation": "External /tmp; no write after release",
+  "modelSkills": "gpt-6-astra; reuse local find-skills/codebase-design/clean-code fixed baseline; status consistency and single ownership only",
+  "sharedLeavesHandoff": {
+    "stoppedAtSource": "/tmp/x01-host-client-stop-shared-20261007-1217.json",
+    "amendedAt": "2026-10-07T12:17:22.841Z",
+    "receiptSha256": "c0f6003dde4b2f24ee6ad317df554f72725d4e92a5ce8e05f0e8d454ba7f6b8a",
+    "removed": [
+      "apps/cli/src/index.ts",
+      "packages/client/src/index.ts",
+      "packages/client/src/plugin-management.ts"
+    ],
+    "receiverClaim": "79284ebe-b7dc-4340-a9bb-ed939cb15ade",
+    "receiverTakeCommittedAt": "2026-10-07T12:17:32.883Z",
+    "receiverTask": "X01-REMOVAL-REFERENCES-CLIENT",
+    "fact": "Transferred literals no longer writable in this old HOST worktree; receiver claim unchanged by this closeout"
+  }
+}
