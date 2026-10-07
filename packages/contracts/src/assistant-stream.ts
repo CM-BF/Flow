@@ -45,13 +45,13 @@ export function assistantStreamIdentity(value: Pick<AssistantStreamData, 'source
     ? [value.nativeSessionId, value.nativeMessageId, value.blockIndex]
     : [value.source, value.nativeSessionId, value.nativeTurnId, value.nativeMessageId, value.channel, value.blockIndex]);
 }
-export type AssistantStreamProtocol = 'patch-v1' | 'patch-v2';
+export type AssistantStreamProtocol = 'patch-v1' | 'patch-v2' | 'patch-select-v1';
 /** Finite protocol negotiation: duplicates and unknown names never opt in. */
 export function assistantStreamProtocol(rawHeaders: readonly string[]): AssistantStreamProtocol | null {
   const values: string[] = [];
   for (let index = 0; index < rawHeaders.length; index += 2)
     if (rawHeaders[index]?.toLowerCase() === 'x-flow-assistant-stream') values.push(rawHeaders[index + 1] ?? '');
-  return values.length === 1 && (values[0] === 'patch-v1' || values[0] === 'patch-v2') ? values[0] : null;
+  return values.length === 1 && (values[0] === 'patch-v1' || values[0] === 'patch-v2' || values[0] === 'patch-select-v1') ? values[0] : null;
 }
 export interface AssistantStreamReference extends Omit<AssistantStreamData, 'type' | 'text' | 'fromBytes'> {
   id: string;
@@ -118,4 +118,25 @@ export interface AssistantStreamSettlement {
   /** Complete disjoint partition of this attempt's durable blocks. No history is deleted. */
   replaceStreamIds: string[];
   retainStreamIds: string[];
+}
+
+/** Selection reads are explicitly acknowledged; old servers may ignore query fields. */
+export const ASSISTANT_SELECTION_PROTOCOL = 'patch-select-v1' as const;
+export const assistantStreamSelectionSchema = z.discriminatedUnion('kind', [
+  z.strictObject({ kind: z.literal('text') }),
+  z.strictObject({ kind: z.literal('block'), streamId: digest }),
+]);
+export type AssistantStreamSelection = z.infer<typeof assistantStreamSelectionSchema>;
+export interface AssistantStreamSelectedPage extends AssistantStreamPage { protocol: typeof ASSISTANT_SELECTION_PROTOCOL }
+export interface AssistantStreamSelectedPatchPage extends AssistantStreamPatchPage {
+  protocol: typeof ASSISTANT_SELECTION_PROTOCOL;
+  selection: AssistantStreamSelection;
+}
+export function assistantStreamSelectionQuery(selection: unknown, streamId: unknown): AssistantStreamSelection {
+  if (selection === undefined || selection === 'text') {
+    if (streamId !== undefined) throw Error('Text selection cannot carry a block identity.');
+    return Object.freeze({ kind: 'text' });
+  }
+  if (selection !== 'block') throw Error('Unknown stream selection.');
+  return Object.freeze(assistantStreamSelectionSchema.parse({ kind: 'block', streamId }));
 }

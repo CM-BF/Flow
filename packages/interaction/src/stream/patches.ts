@@ -1,3 +1,4 @@
+import { assistantStreamSelectionSchema, type AssistantStreamSelection } from '../../../contracts/src/assistant-stream.js';
 import {
   ASSISTANT_ATTEMPT_BYTES, assistantStreamDataSchema, assistantStreamIdentity, idSchema,
   type AssistantStreamData, type AssistantStreamPage, type AssistantStreamPatch,
@@ -164,4 +165,25 @@ export async function applyPatchPage(state: PatchState, input: unknown, after: n
   if (nextCursor !== last) throw Error("Patch cursor does not match the last included sequence.");
   return { state: Object.freeze({ taskId: state.taskId, attemptId: state.attemptId, cursor: Math.max(state.cursor, nextCursor), totalBytes,
     blocks: Object.freeze([...blocks.values()].sort((a, b) => a.firstSequence - b.firstSequence)), receipts: Object.freeze(receipts) }), hasMore };
+}
+
+export function matchesStreamSelection(reference: Pick<AssistantStreamData,'source'|'channel'|'streamId'>, selection: AssistantStreamSelection): boolean {
+  return selection.kind === 'block' ? reference.streamId === selection.streamId : reference.source === 'claude.sdk.stream' || reference.channel === 'text';
+}
+export async function applySelectedPatchPage(state: PatchState, input: unknown, after: number, references: readonly AssistantStreamReference[], selection: AssistantStreamSelection) {
+  const page=object(input), actual=assistantStreamSelectionSchema.parse(page.selection);
+  if(page.protocol!=='patch-select-v1' || actual.kind!==selection.kind || (actual.kind==='block' && selection.kind==='block' && actual.streamId!==selection.streamId)) throw Error('Selected response identity was not acknowledged.');
+  if(!Array.isArray(page.patches) || page.patches.some(raw=>!matchesStreamSelection(dataOf(object(raw),object(raw).text,object(raw).fromBytes),selection))) throw Error('Patch is outside its immutable selection.');
+  return applyPatchPage(state,input,after,references.filter(ref=>matchesStreamSelection(ref,selection)));
+}
+/** A verified initial snapshot supplies this block's own cursor, never the text cursor. */
+export async function seedSelectedBlock(input: unknown, reference: AssistantStreamReference): Promise<PatchState> {
+  const value=object(input), block=await referenceOf(value,reference.taskId,reference.attemptId);
+  if(block.id!==reference.id || assistantStreamIdentity(block)!==assistantStreamIdentity(reference) || block.revision<reference.revision || block.lastSequence<reference.lastSequence) throw Error('Block snapshot identity or revision is stale.');
+  if(block.revision===reference.revision && (block.bytes!==reference.bytes || block.prefixDigest!==reference.prefixDigest || block.lastSequence!==reference.lastSequence || block.phase!==reference.phase || block.reason!==reference.reason || block.truncated!==reference.truncated)) throw Error('Block snapshot disagrees at the same revision.');
+  if(reference.phase!=='streaming' && block.phase==='streaming')throw Error('Closed block cannot reopen.');
+  const content=value.content;
+  if(typeof content!=='string' || utf8Bytes(content)!==block.bytes || await textDigest(content)!==block.prefixDigest || new TextDecoder().decode(encoder.encode(content))!==content || content.includes('\0')) throw Error('Block snapshot failed byte/digest verification.');
+  const draft:DraftBlock={...block,type:'assistant-stream',text:'',fromBytes:block.bytes,content,streamId:block.id};
+  return Object.freeze({taskId:block.taskId,attemptId:block.attemptId,cursor:block.lastSequence,totalBytes:block.bytes,blocks:Object.freeze([Object.freeze(draft)]),receipts:Object.freeze({})});
 }
