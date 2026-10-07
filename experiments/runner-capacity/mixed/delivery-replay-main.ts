@@ -67,12 +67,12 @@ function workerEnvironment() {
   const tmp = process.env.TMPDIR;
   assert(tmp && tmp.startsWith('/') && !tmp.includes('\0'), 'owned_tmp_required');
   return { PATH: '/usr/bin:/bin', LANG: 'C', LC_ALL: 'C', TZ: 'UTC', TMPDIR: tmp, TMP: tmp, TEMP: tmp,
-    NODE_DISABLE_COMPILE_CACHE: '1', TSX_DISABLE_CACHE: '1', TSX_TSCONFIG_PATH: fileURLToPath(new URL('./tsconfig.json', import.meta.url)) };
+    NODE_DISABLE_COMPILE_CACHE: '1' };
 }
 
 async function arm(mode: DeliveryInput['mode'], path: string, hash: string, trace: ReplayTrace) {
   const started = performance.now(); const receipt = replayReceiver(trace, mode);
-  const child = fork(FILE, ['--worker', mode, path, hash], { execPath: process.execPath, execArgv: ['--import', 'tsx'],
+  const child = fork(FILE, ['--worker', mode, path, hash], { execPath: process.execPath, execArgv: [],
     env: workerEnvironment(), stdio: ['ignore', 'pipe', 'pipe', 'ipc'] });
   let failure: string | null = null; let readySeen = false; let result: RecordValue | null = null;
   let firstMessageMs: number | null = null; let summaryMs: number | null = null; let resultMs: number | null = null;
@@ -149,6 +149,7 @@ async function arm(mode: DeliveryInput['mode'], path: string, hash: string, trac
 }
 
 async function coordinator(path: string, hash: string) {
+  assert(FILE.endsWith('.js'), 'precompiled_js_required');
   assert.equal(process.env.FLOW_S01_REPLAY_OPEN, 's01-observer-delivery-replay-once', 'explicit_future_open_required');
   const started = performance.now(); const trace = loadTrace(path, hash); const arms = [];
   arms.push(await arm('per-query', path, hash, trace));

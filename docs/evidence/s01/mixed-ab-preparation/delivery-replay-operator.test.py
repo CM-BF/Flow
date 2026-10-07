@@ -21,11 +21,31 @@ class ReplayCallerTests(unittest.TestCase):
         self.assertEqual(value['TSX_DISABLE_CACHE'], '1')
 
     def test_unknown_process_or_eof_cannot_authorize_tmp_cleanup(self):
-        base = dict(exit_code=0, owned_state='absent', eof={'merged': True}, secondary_failures=[])
-        self.assertTrue(module.process_closed(SimpleNamespace(**base)))
+        raw = b'four'
+        base = dict(exit_code=0, owned_state='absent', capture='merged', eof={'stdout': True}, secondary_failures=[],
+                    first_failure=None, signals=[], stdout=raw, stderr=b'', observed_bytes=4, retained_bytes=4,
+                    observations=[{'state': 'unknown', 'errno': 1}, {'state': 'absent', 'errno': None}])
+        self.assertTrue(module.process_closed(SimpleNamespace(**base), raw))
         for update in ({'exit_code': None}, {'owned_state': 'unknown'}, {'eof': {}},
-                       {'eof': {'merged': False}}, {'secondary_failures': [{'operation': 'observe', 'errno': 1}]}):
-            self.assertFalse(module.process_closed(SimpleNamespace(**(base | update))))
+                       {'eof': {'stdout': False}}, {'capture': 'separate'}, {'eof': {'stdout': True, 'stderr': True}},
+                       {'observed_bytes': 5}, {'retained_bytes': 3}, {'stdout': b'fake'}, {'stderr': b'extra'},
+                       {'signals': [{'state': 'unknown'}]}, {'signals': [{}]},
+                       {'secondary_failures': [{'operation': 'observe', 'errno': 1}]}):
+            self.assertFalse(module.process_closed(SimpleNamespace(**(base | update)), raw))
+        for code in ('SIGNAL_UNKNOWN', 'CAPTURE_CLOSE_FAILED', 'OUTPUT_LIMIT_EXCEEDED', 'STOP_UNKNOWN', 'DEADLINE_EXCEEDED'):
+            self.assertFalse(module.process_closed(SimpleNamespace(**(base | {'first_failure': {'code': code}})), raw))
+        nonzero = base | {'exit_code': 1, 'first_failure': {'code': 'CHILD_EXIT_NONZERO'}}
+        self.assertTrue(module.process_closed(SimpleNamespace(**nonzero), raw))
+        self.assertNotEqual(nonzero['exit_code'], 0)  # Resource closure does not turn business failure green.
+
+    def test_only_exact_prior_untracked_outputs_are_permitted(self):
+        known = {'docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.raw'}
+        path = next(iter(known))
+        self.assertTrue(module.allowed_dirty('?? ' + path + '\0', known))
+        self.assertTrue(module.allowed_dirty('', known))
+        for status in (' M ' + path + '\0', '?? ' + path + '.other\0', '?? unknown.raw\0',
+                       '?? docs/evidence/s01/mixed-ab-preparation/\0', 'R  ' + path + '\0elsewhere\0'):
+            self.assertFalse(module.allowed_dirty(status, known))
 
     def test_cli_delivery_time_cannot_reuse_preprint_success(self):
         value = dict(mode='replay', successBeforePersistence=True, faults=[])

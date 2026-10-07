@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T14:46:37.420Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "source": "bee336a01505e42bbba0e9154f8ade75eee2f244",
+  "packet": "fd7f438bccd5a946eaa0ffcb6b19210ceee0783e",
+  "verdict": "SOURCE_CHANGES_REQUESTED",
+  "p1": 0,
+  "p2": 1,
+  "finding": "process_closed ignored first failure, unknown signals and capture completeness and could delete unknown TMP",
+  "otherStaticConclusions": "No second P1/P2. Six runtime leaves can be emitted by fixed tsc then directly run by Node. Strict whole-tree clean gate needs exact prior-output admission.",
+  "newFixStatus": "SOURCE_ONLY_AWAITING_DELTA_REVIEW",
+  "newChecksExecuted": 0,
+  "oldPreparationBindingBytes": 589733,
+  "oldInputActualBytes": 18410816
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "./delivery-replay-tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "noEmitOnError": true,
+    "rootDir": "../../../../experiments/runner-capacity/mixed",
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": false,
+    "incremental": false
+  }
+}
