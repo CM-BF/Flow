@@ -14,7 +14,7 @@ function Reading({ name, reading }: { name: string; reading: ContextMeasurement 
 function Sample({ sample }: { sample: ContextHistorySample }) {
   const { observation, materials } = sample, { identity } = observation;
   return <>
-    <p className="text-sm font-medium">Last observed · estimate</p>
+    <p className="text-sm font-medium">{observation.used.kind !== "unknown" || observation.compactionWindow.kind !== "unknown" ? "Last observed · estimate" : "Last observation · values unknown"}</p>
     <p className="text-sm">Observed model: {identity.resolvedModel ?? "unknown"} · <time dateTime={observation.observedAt}>{new Date(observation.observedAt).toLocaleString()}</time></p>
     <dl className="grid gap-4 text-sm sm:grid-cols-2">
       <Reading name="Last observed use" reading={observation.used} />
