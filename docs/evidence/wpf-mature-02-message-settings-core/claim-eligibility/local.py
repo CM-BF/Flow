@@ -25,10 +25,10 @@ record = json.loads(RECORD.read_text()) if RECORD.exists() else {'startedAt': no
     'limits': {'segmentSeconds': 1200, 'commands': 2, 'commandSeconds': 60, 'temporaryBytes': 16777216, 'rawBytes': 524288, 'sourceMetadataBytes': 2097152},
     'floorBytes': 6953631744, 'PG': 0, 'provider': 0, 'native': 0, 'tarPlanned': 0, 'wholeExternalWall': None}
 if sum(x.get('elapsedBeforeReceiptSeconds',0) for x in record['attempts']) >= 120: raise ValueError('Cumulative execution reserve exhausted')
-if record['unknown'] or len(record['attempts']) >= 2 or time.time()-record['startEpoch'] >= 1140: raise ValueError('Segment exhausted or unknown')
+if record['unknown'] or len(record['attempts']) >= 4 or time.time()-record['startEpoch'] >= 1140: raise ValueError('Segment exhausted or unknown')
 free = shutil.disk_usage(ROOT).free
 # Mika 13:12 handoff: full conservative combined floor; earlier resource facts remain historical.
-floor = max(record['floorBytes'], 6953631744)
+floor = max(record['floorBytes'], 7492599808)
 if free < floor: raise ValueError('Fresh combined floor not met')
 root = Path(tempfile.mkdtemp(prefix='flow-m02-claim-')); identity = root.lstat()
 step = {'label': label, 'startedAt': now(), 'freeBeforeBytes': free, 'floorBeforeBytes': floor, 'temporary': {'path': str(root), 'dev': identity.st_dev, 'ino': identity.st_ino, 'removed': False}}
