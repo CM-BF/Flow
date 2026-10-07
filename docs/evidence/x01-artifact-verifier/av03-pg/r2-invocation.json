@@ -1,5 +1,5 @@
 {
-  "state": "CLOSED_CANDIDATE_NOT_OPEN",
+  "state": "CLOSED_REVIEW_PENDING_NOT_OPEN",
   "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
   "argv": [
     "/usr/bin/env",
@@ -17,8 +17,8 @@
     "--sha256",
     "<SHA256_OF_EXACT_ADMISSION_BYTES>"
   ],
-  "callerCommit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
-  "callerSha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be",
+  "callerCommit": "b0231f79168f869b9f81af29476f3677c5b931d0",
+  "callerSha256": "8e974996b896d4d19757daea51fd8f5da31ca7c2df9f21f8a1060d2d54087cfc",
   "admissionInterface": {
     "lead": "mika",
     "stage": "AV03_VERIFIER_CLAIM_PG",
@@ -27,7 +27,7 @@
     "ledgerObservedAt": "fresh <=60s at original caller start; prepare invocation before reading ledger",
     "head": "exact future clean execution HEAD=origin;record before new admission",
     "window": "fresh32hex generated for future unique actual;no current allocation",
-    "manifestSha256": "a7d990b0a1bd8c26bc1fa26ecdffade1126ee139288a776eae9b96ccd0703bc7",
+    "manifestSha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2",
     "pairedBytes": "future complete floor minus fixed base1242562560;current metadata sample is not admission",
     "resourceFloor": "future complete manager floor incl all actual/potential/KEEP and one cleanupreserve;latest value not guessed"
   },

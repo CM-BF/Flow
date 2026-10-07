@@ -1,22 +1,22 @@
 {
-  "at": "2026-10-07T20:33:33.989Z",
-  "state": "READY_CLOSED_CANDIDATE_NOT_OPEN",
+  "at": "2026-10-07T21:36:30.468Z",
+  "state": "NOT_READY_CLEANUP_DELTA_REVIEW_PENDING",
   "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
-  "support": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+  "support": "b0231f79168f869b9f81af29476f3677c5b931d0",
   "preparedPacket": "1959af0a256f7d259add1593ecec1f29abc0a07e",
   "sourceApproval": "r2-source-approval.json:2026-10-07T18:37:13.000Z SOURCE_DELTA_APPROVED/0P1P2;root19:15:54 prepared metadata approval applies prior fixed target",
   "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r2.json",
-  "manifestSha256": "a7d990b0a1bd8c26bc1fa26ecdffade1126ee139288a776eae9b96ccd0703bc7",
-  "manifestBytes": 163029,
+  "manifestSha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2",
+  "manifestBytes": 163255,
   "inputFiles": 281,
-  "inputBytes": 1514094,
+  "inputBytes": 1514678,
   "external": 191,
   "links": 16,
   "sql": 34,
   "deltaRows": 7,
   "unchangedRows": 274,
   "deltaBindingValidation": "Relative to prior v5 R2 only claim receipt metadata changed; 280 rows unchanged; all product/test/fixture/caller bytes frozen; actual NOT_OPEN/NOT_RUN.",
-  "callerValidation": "Only independent RUN/input/manifest literal replacement of approved R1 caller;unchanged environment/deadlines/cleanup;static not executed",
+  "callerValidation": "Only resource helper fixed hash changed; cleanup behavior reviewed independently before future actual. No new PG.",
   "futureBudget": {
     "totalSeconds": 180,
     "work": 110,
@@ -59,5 +59,11 @@
     "unchangedRows": 280,
     "validation": "280 prior rows unchanged; only claim metadata row rebound. All product/test/fixture/caller bytes unchanged. No new checks/actual."
   },
-  "priorReady": "pre-admission-result-handback-r2-ready.json"
+  "priorReady": "pre-admission-result-handback-r2-ready.json",
+  "rootGuardBinding": {
+    "changedRows": 2,
+    "unchangedRows": 279,
+    "caseSourceUnchanged": true,
+    "review": "PENDING"
+  }
 }

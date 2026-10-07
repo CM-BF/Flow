@@ -1,8 +1,8 @@
 {
   "schema": "flow.av03.pg-prepared.v1",
-  "state": "R2_CANDIDATE_NOT_OPEN",
+  "state": "CLEANUP_DELTA_REVIEW_PENDING_NOT_OPEN",
   "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
-  "support": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+  "support": "b0231f79168f869b9f81af29476f3677c5b931d0",
   "files": [
     {
       "path": ".gitignore",
@@ -36,9 +36,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-pg-once.py",
-      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
-      "bytes": 20706,
-      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+      "commit": "b0231f79168f869b9f81af29476f3677c5b931d0",
+      "bytes": 21290,
+      "sha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/external-preflight.json",
@@ -1638,9 +1638,9 @@
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
-      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "commit": "b0231f79168f869b9f81af29476f3677c5b931d0",
       "bytes": 18385,
-      "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+      "sha256": "8e974996b896d4d19757daea51fd8f5da31ca7c2df9f21f8a1060d2d54087cfc"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/preparation-result.json",
@@ -2905,10 +2905,10 @@
       "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
     }
   ],
-  "bytes": 1514094,
+  "bytes": 1514678,
   "sqlCount": 34,
-  "previousManifestSha256": "3b4058caa161fea07eca1bc7973335f76f046a56d88a308245430b9b21220988",
-  "previousManifest": "pre-admission-result-handback-pg-isolated-manifest-r2.json",
+  "previousManifestSha256": "a7d990b0a1bd8c26bc1fa26ecdffade1126ee139288a776eae9b96ccd0703bc7",
+  "previousManifest": "pre-root-guard-pg-isolated-manifest-r2.json",
   "claimRebinding": {
     "at": "2026-10-07T20:33:33.988Z",
     "previousVersion": 5,
@@ -2922,5 +2922,13 @@
     "changedMetadataRows": 1,
     "unchangedRows": 280,
     "sourceAndCallerUnchanged": true
+  },
+  "rootGuard": {
+    "sourceParent": "1d85f3d3e",
+    "resultParent": "0b9a444832f76e7a03fc0b1d8bd995a9bdc568a4",
+    "changedRows": 2,
+    "unchangedRows": 279,
+    "review": "PENDING",
+    "actual": "NOT_OPEN_NOT_RUN"
   }
 }

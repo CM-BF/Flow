@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T21:36:30.468Z",
+  "state": "REVIEW_PENDING",
+  "target": "b0231f79168f869b9f81af29476f3677c5b931d0",
+  "parentSource": "1d85f3d3e",
+  "helperSHA256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5",
+  "changedRows": [
+    {
+      "before": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-pg-once.py",
+        "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+        "bytes": 20706,
+        "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+      },
+      "after": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-pg-once.py",
+        "commit": "b0231f79168f869b9f81af29476f3677c5b931d0",
+        "bytes": 21290,
+        "sha256": "64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5"
+      }
+    },
+    {
+      "before": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+        "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+        "bytes": 18385,
+        "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+      },
+      "after": {
+        "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+        "commit": "b0231f79168f869b9f81af29476f3677c5b931d0",
+        "bytes": 18385,
+        "sha256": "8e974996b896d4d19757daea51fd8f5da31ca7c2df9f21f8a1060d2d54087cfc"
+      }
+    }
+  ],
+  "unchangedRows": 279,
+  "externalUnchanged": 191,
+  "linksUnchanged": 16,
+  "priorManifestSha256": "a7d990b0a1bd8c26bc1fa26ecdffade1126ee139288a776eae9b96ccd0703bc7",
+  "manifestSha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2",
+  "historicalArchives": "four pre-root-guard-* files byte-identical to f44ac5ba; original raw/actual sources untouched",
+  "actual": "NOT_OPEN_NOT_RUN"
+}

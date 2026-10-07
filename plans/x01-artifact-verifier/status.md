@@ -173,4 +173,4 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 
 2026-10-07T20:32:43.202Z：明确永久STOP本次4个精确leaf，原子amend a67ba659-d859-40d6-82c6-2b7333087639 v5→v6 / 25scope；[回执](../../docs/evidence/x01-artifact-verifier/admission-result-handback-receipt.json)。移至独立X01-VERIFIER-ADMISSION-RESULT01，接收方须take成功后写；原固定源码/PG输入保持只读，未授新PG。
 
-2026-10-07T21:35:40.000Z cleanup guard修复中：当前R2暂NOT_READY/NOT_OPEN，继承helper root-swap P2由parent canonical修复，4纯FS通过待独审；本树仅精确副本和caller SHA更新，原R1/历史manifest/raw不改。旧READY归档pre-root-guard文件，待独审和新binding闭合才恢复CLOSED候选。
+2026-10-07T21:36:30.468Z cleanup guard修复中：当前R2暂NOT_READY/NOT_OPEN，继承helper root-swap P2由parent canonical修复，4纯FS通过待独审；本树仅精确副本和caller SHA更新，原R1/历史manifest/raw不改。旧READY归档pre-root-guard文件，待独审和新binding闭合才恢复CLOSED候选。
