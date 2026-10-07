@@ -49,6 +49,16 @@ describe('chunk packing', () => {
       expect(message).toMatchObject({ kind: 'pg-observation-chunk', ordinal: index });
       expect(Buffer.byteLength(JSON.stringify(message))).toBeLessThanOrEqual(512);
     });
+    const mixed = (limit: number) => {
+      const value = collect(1, limit, 'two-array-boundary-'.repeat(3));
+      for (const poolId of [1, 2]) value.delivery.record({ ...event(0), poolId, kind: 'sql', category: 'other' });
+      expect(value.delivery.finish().known).toBe(true); return value.messages;
+    };
+    const full = mixed(65536)[0]!;
+    if (full.kind !== 'pg-observation-chunk') throw new Error('wrong message');
+    const mixedExactBytes = Buffer.byteLength(JSON.stringify({ ...full, sql: full.sql.slice(0, 1) }));
+    expect(mixedExactBytes).toBeGreaterThanOrEqual(512);
+    expect(mixed(mixedExactBytes).map(message => message.kind === 'pg-observation-chunk' && [message.samples.length, message.sql.length])).toEqual([[1, 1], [0, 1]]);
   });
 
   it('rejects an oversized item and does not admit private Unicode or escaped input fields', () => {

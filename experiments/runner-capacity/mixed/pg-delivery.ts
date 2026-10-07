@@ -93,22 +93,31 @@ export function createPgDelivery(options: DeliveryOptions) {
     if (mode === 'buffered' && !failure) {
       let ordinal = 0;
       let chunk: Extract<DeliveryMessage, { kind: 'pg-observation-chunk' }> = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
+      let chunkBytes = jsonBytes(chunk);
       const flush = () => {
         if (!chunk.samples.length && !chunk.sql.length) return true;
         if (!send(chunk)) return false;
-        chunk = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] }; return true;
+        chunk = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
+        chunkBytes = jsonBytes(chunk); return true;
+      };
+      const reserveEntry = (array: 'samples' | 'sql', bytes: number) => {
+        // Arrays add only their encoded entries and commas to the encoded empty envelope.
+        let added = bytes + (chunk[array].length ? 1 : 0);
+        if (chunkBytes + added > limits.chunk) {
+          if (!flush()) return false;
+          added = bytes + (chunk[array].length ? 1 : 0);
+        }
+        if (chunkBytes + added > limits.chunk) { invalidate('chunk_limit'); return false; }
+        chunkBytes += added; return true;
       };
       for (const sample of samples) {
-        const next = { ...chunk, samples: [...chunk.samples, sample] };
-        if (jsonBytes(next) > limits.chunk && !flush()) break;
+        if (!reserveEntry('samples', jsonBytes(sample))) break;
         chunk.samples.push(sample);
-        if (jsonBytes(chunk) > limits.chunk) { invalidate('chunk_limit'); break; }
       }
       if (!failure) for (const total of totals.values()) {
-        const next = { ...chunk, sql: [...chunk.sql, { ...total }] };
-        if (jsonBytes(next) > limits.chunk && !flush()) break;
-        chunk.sql.push({ ...total });
-        if (jsonBytes(chunk) > limits.chunk) { invalidate('chunk_limit'); break; }
+        const entry = { ...total };
+        if (!reserveEntry('sql', jsonBytes(entry))) break;
+        chunk.sql.push(entry);
       }
       if (!failure) flush();
     }
