@@ -26,7 +26,7 @@ report = None
 result = {}
 try:
     report = supervision.supervise(
-        supervision.Launch((node, '--import', str(root / 'node_modules/tsx/dist/loader.mjs'), str(BASE / 'cleanup-followup.mjs')), str(root), env, supervision.Ownership.NEW_CHILD_SESSION),
+        supervision.Launch((node, '--import', str(root / 'node_modules/tsx/dist/loader.mjs'), str(BASE / 'cleanup-followup.mjs')), str(root), env, supervision.Ownership.CHILD_PID_ONLY),
         supervision.Policy(27, .5, 2, inputs['policy']['captureBytes']))
     result = dict(vars(report))
     for key in ('stdout', 'stderr'):
