@@ -1,0 +1,57 @@
+--- prepared
++++ reviewed
+@@ -1,5 +1,5 @@
+ {
+-  "state": "PREPARED_SOURCE_CHANGE_NOT_RUN",
++  "state": "REVIEWED_SOURCE_BOUND",
+   "task": "WPF-RELEASE01",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+   "branch": "codex/web-release-recovery",
+@@ -52,7 +52,12 @@
+     "bytes": 902,
+     "sha256": "7bfb9880f23c98c3edb51cead72fdc2fc8fbb8530aceb81972424bacbc69e57b"
+   },
+-  "sourceReview": null,
++  "sourceReview": {
++    "path": "/private/tmp/root-release01-c2-focused-source-preparation-review-20261007.json",
++    "realpath": "/private/tmp/root-release01-c2-focused-source-preparation-review-20261007.json",
++    "bytes": 3760,
++    "sha256": "ff547650f78df5b4817b683b9918663e8d256e5d7fb95f897fec620a21404a09"
++  },
+   "reviewInputs": {
+     "existingLifecycleAcceptance": {
+       "path": "/private/tmp/root-release-c3-native-boundary-acceptance-20261007.json",
+@@ -108,7 +113,7 @@
+     "retainedBytes": 8388608,
+     "metadataBytes": 1048576,
+     "databaseWalEstimateBytes": 134217728,
+-    "startFreeBytes": 17454858240,
++    "startFreeBytes": 17960271872,
+     "stopFreeBytes": 1207959552,
+     "pgCount": 1,
+     "chromeCount": 1,
+@@ -561,7 +566,7 @@
+     }
+   ],
+   "runtime": "NOT_RUN",
+-  "budget": "PROPOSAL_NEW180000_INCLUDING30000_CLEANUP_NO_GRANT_NO_CARRY",
++  "budget": "ADMITTED_ONE_NEW180000_INCLUDING30000_NO_CARRY",
+   "expected": {
+     "apps": 4,
+     "retainedBearerApps": 3,
+@@ -703,12 +708,12 @@
+       "retainedIncludingOuter": 8,
+       "metadata": 1
+     },
+-    "proposedCompleteFloorBytes": 17454858240,
++    "proposedCompleteFloorBytes": 17960271872,
+     "baselineBuild256MiBRetainedConservatively": true,
+     "reserveAddedAgain": false,
+-    "actualGrant": false,
++    "actualGrant": true,
+     "higherActualCompleteSumWins": true,
+-    "latestStatementAtPreparation": "manager supplied 17454858240 including corrected previous24MiB and new SVC09A R2; current actual grant absent"
++    "latestStatementAtPreparation": "d01 unique NEXT after Original R2 FULLRETURN16:16:36.884252Z; minimum17960271872, one new180000 incl30000; prior56504 closed."
+   },
+   "metadataBindingOnly": {
+     "sourceTarget": "d032a53a62017cc41a3ddf19b316ad1047398fa6",

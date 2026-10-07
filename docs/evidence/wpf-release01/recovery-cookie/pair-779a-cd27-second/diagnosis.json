@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-07T16:28:17.459853+00:00",
+  "source": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "state": "FAILED_LIMITED_DIAGNOSIS_NO_RUNTIME_RETRY",
+  "facts": [
+    "Browser phase asset-observation/recovery-779a reached; previous durable-retry/late-logout/explicit-retry/legacy-read phases completed.",
+    "pageErrors empty. Console has one expected original turn ACK truncation and one browser-session400; fixed browser289 every() rejects the latter.",
+    "All25 observed asset loads match five exact manifest asset paths/hashes. This offline comparison does not retroactively pass the acceptance assertion.",
+    "The single GET400 appears in ordered owned proxy records after held old logout + old read200 and before reconnectPOST200/new-cookie reads200.",
+    "65-byte session error response SHA equals exact Fastify defaultClientErrorHandler generic400 body. App route errors and known negative probes are different responses."
+  ],
+  "httpClientError": {
+    "bodyBytes": 65,
+    "bodySha256": "cd2bab07811f4fcc733f084efab87b04c8932e1de80a3c9390d3181a2ea13535",
+    "producer": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+    "lines": [
+      963,
+      1003
+    ],
+    "branch": "defaultClientErrorHandler generic400; timeout is408/headeroverflow431/reset-destroyed sends nothing",
+    "actualErrorCode": "NOT_CAPTURED",
+    "rawPacket": "NOT_CAPTURED"
+  },
+  "unknown": [
+    "No backend clientError err.code/bytesParsed/socket correlation was captured. The generic HTTP-parser error family is identified, not the exact malformed request cause.",
+    "No evidence warrants allowlisting400, relaxing console assertions or blaming user-facing App/backend session policy.",
+    "UNKNOWN retry after a newly established post-logout session remains unverified."
+  ],
+  "next": "Only passive bounded existing-server clientError metadata and a diagnostic-only newCookie chain; preserve all default listeners and socket handling. Never store rawPacket/header/body/token. No old3 rerun or report import for diagnosis; formal4 acceptance remains separately required.",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 35397,
+      "sha256": "3e9e776b8926d1ab6b96e9df1c97132465430842f737a0f98bdd2707d673b1a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "bytes": 34573,
+      "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/browser-session/index.ts",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/recovery-779a-page.json",
+      "bytes": 5243,
+      "sha256": "639d490c7f4a1cf05d8b56553ef4668066df9d7b16658cec59969b1775ff0aac"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/raw/release-recovery-20261007-162201-90ab93/fixture/recovery-779a-wire.json",
+      "bytes": 163190,
+      "sha256": "9c26ab34e9fe04ce9fe8bec2cc016ce1b73235459b5516dec64d38a74b14b80c"
+    }
+  ],
+  "badRequestRecordIndex": 34,
+  "badRequestRecord": {
+    "method": "GET",
+    "path": "/api/browser-session",
+    "status": 400,
+    "bearer": false,
+    "cookie": true,
+    "csrf": false,
+    "receivedBytes": 65,
+    "complete": true,
+    "responseSha256": "cd2bab07811f4fcc733f084efab87b04c8932e1de80a3c9390d3181a2ea13535"
+  },
+  "assetObservationCount": 25,
+  "uniqueAssets": 5,
+  "runtimePerformedByDiagnosis": false
+}

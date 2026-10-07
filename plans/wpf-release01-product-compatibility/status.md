@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T16:13:46.213Z |
+| 最近更新时间 | 2026-10-07T16:28:17.464Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本批browser场景窄修d032已固定；仅own records收口，两已交回产品持续STOP |
+| 工作树dirty状态 | 本批只own records封存；两harness保持固定d032输入，两已交回产品STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | FAILED 2f6792ca3f19fcd1d54563531c302937f607c892 新pair首次兼容，reports=null/0正式报告；原源码/旧consumer/固定artifact通过仍限历史范围 |
+| 检查状态 | FAILED d032a53a62017cc41a3ddf19b316ad1047398fa6 c2 actual exit1 / asset-observation，reports=null；首c1 FAILED56504保持，types/oldconsumer/artifact仅历史范围 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线 |
 | 实现目标 | d032a53a62017cc41a3ddf19b316ad1047398fa6 |
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已保留首次兼容失败证据，未知回执恢复后再检查登出的测试顺序已修正 |
-| 下一可用交付 | 完成本次场景差量审查，按新独立窗口验证固定新网页与后台组合 |
-| 当前阻塞 | ACTIVE: 修正后的兼容场景尚未实际验证，四份正式报告仍未生成 |
+| 当前产出 | 第二次兼容已完整归还；已定位为新网页会话读取的HTTP解析错误，具体原因待诊断 |
+| 下一可用交付 | 固定失败证据与仅新Cookie链的受控诊断准备，保留正式四App验收 |
+| 当前阻塞 | ACTIVE: 新网页一次会话GET返回HTTP clientError400，精确原因未捕获；四正式报告为null |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED d032a53a62017cc41a3ddf19b316ad1047398fa6 场景窄修独审；首actual FAILED及完整RETURN已独立接受 |
+| Review | [review.md](review.md)：APPROVED d032a53a62017cc41a3ddf19b316ad1047398fa6 仅源码/准备；c2 FAILED/完整RETURN独立接受，不是兼容批准 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -47,7 +47,8 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
-| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | OPEN | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |
+| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |
+| RELEASE01-W05 | 2026-10-07T16:22:48.759Z | OPEN | 验证失败 | 会话GET返回HTTP clientError400，精确请求解析原因待受控诊断；不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |
 | RELEASE01-W02 | UNKNOWN | 2026-10-07T14:54:01.259Z | 产物供给 | 外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作 | [接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json) |
 | RELEASE01-W03 | UNKNOWN | 2026-10-07T14:47:33.469Z | 后台供给 | 本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知 | [后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md) |
 
@@ -156,3 +157,11 @@ Root准备源/native批准与失败实际/清理独审已原样归档。newApp�
 ## 当前窄修固定 / 未运行
 
 2026-10-07T16:13:46.213Z：[c2 source准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)固定d032a53a62017cc41a3ddf19b316ad1047398fa6，UNKNOWN实际reload后显式原key恢复先于Cookie SSE与迟到logout。未删旧三App/Cookie/草稿/原key/stream关闭断言，未改backend/App/已交回产品。未运行types或browser；新180s仅提案，原56504账关闭不借。源码集中审待完成；全部prepared5文件逐字沿c1。
+
+## c2 唯一实际：FAILED / 完整RETURN
+
+2026-10-07T16:22:22.281Z outer PID/PGID92775，Node worker92779于16:22:22.485Z启动。固定source d032a53a62017cc41a3ddf19b316ad1047398fa6 / execution HEAD16e56cf6b40d3213c5fc334f84689eb0473f5766；原7d60 v2 exact4、74pins/5prepared/40assets/12677backend files与fresh roots核同。新独立180000ms含30000cleanup，单1DB/12配置连接/1Chrome；首c1 FAILED56504 CLOSED与unused123496不转。当前RUNNING，不依据磁盘候选宣布PASS/归还。唯一原件 `/private/tmp/rel01-recovery-c2-actual-afw20vb4`，受控包 `/private/tmp/rel01-recovery-c2`。UNKNOWN retry覆盖reload后、logout前，不外推重新登录后的UNKNOWN重试。
+
+终态：outer exit1于2026-10-07T16:22:48.834Z，保守charge26554ms，新180000段CLOSED/未用153446不转；完整RETURN 2026-10-07T16:23:57.272423+00:00，三个精确PID/PGID均ESRCH、四inner与双outer EOF/drop0、owned scratch/profile与admin输入已精确清除、marked DB正常删除、center/proxy正常关闭。原parent fixtureCleanup UNKNOWN保留，真实raw cleanup独立true。failedAt asset-observation/recovery-779a；原业务阶段完成不填四正式reports，当前reports=null。
+
+[第二实际与独审](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)已封存；asset-observation实际FAIL，精确HTTP-parser error code仍UNKNOWN。原W04前置缺口已在本次走过durable-retry/lateLogout解除，新W05只记录新的实际失败。前文RUNNING为启动时事实，当前本轮CLOSED/完整RETURN。

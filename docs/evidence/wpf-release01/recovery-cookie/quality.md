@@ -46,3 +46,7 @@
 ## 2026-10-07T16:13:46.213Z c2顺序窄修 clean-code
 
 只改browser单一场景顺序，沿公开Recovery动作建立accepted前置；提取原样restoreSavedDraft避免两处重复。12个literal substep只保存非秘密状态，错误仍保失败；固定tuple、authority、清理与旧三App路径不改。git diff --check与静态控制流/字段核验完成；未运行产品/Node类型/浏览器。错误定位不再把首OPERATION_FAILED猜成实际deadline原件；所有已有失败/greens限原target。
+
+## 2026-10-07T16:28:17.464Z c2实际与只读定位
+
+应用既有find-skills/clean-code/codebase-design：保原异常/FAIL，区分HTTP解析层、浏览器console验收与产品会话业务；匹配固定Fastify正文hash而不以阶段名称猜根因。只归档原raw/相同hash并统一当前status/review，未放宽console/asset断言、未新跑。下一设计只附加有界非秘密observer，不替换Fastify默认clientError处理，不引通用平台。未使用新局部检查预算；所有历史账保持。

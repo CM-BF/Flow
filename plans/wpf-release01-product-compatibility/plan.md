@@ -82,3 +82,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 - [ ] RELEASE01-10 当前组合收口后，分离稳定compat executor与可信管理方固定版本输入；合法新pair不再改通用harness，仍校验hash/角色/来源/browser-session policy、同pair actual、错误tuple/旧报告拒绝。后继验收两个合法pair同executor及错pair拒绝，分别记录准备/审查/actual耗时；复用OPS-001-14/16，不造新平台。
 
 [c2顺序修复](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)已固定d032a53a62017cc41a3ddf19b316ad1047398fa6，仅修场景前置，RELEASE01-08仍pending/四正式报告未生成。首红不改，后继需一次新有目的的完整验收，不把历史partial导入正式报告。
+
+## 当前c2实际与诊断边界
+
+[第二actual](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)FAILED/完整RETURN，26554ms新180s CLOSED。RELEASE01-08仍未完成，reports=null/0正式报告。harness原顺序缺口已走通，新的会话GET HTTP-parser400原因未记录；只准备被动有界clientError观察+新Cookie链diagnosticOnly，不能importReports，不为诊断重跑旧3矩阵。正式4App协议保持，下一actual须独立窗口。无新增产品authority，无后台或App越权修改。

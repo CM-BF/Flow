@@ -1,8 +1,10 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED（仅本次场景窄修；没有新增actual）。**
+**当前状态：APPROVED，仅固定源码/准备。实际兼容仍FAILED；完整RETURN已独立接受。**
 
-Review target commit：d032a53a62017cc41a3ddf19b316ad1047398fa6。范围：apps/web/test/web-release-compatibility.browser.ts。[c2准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)把UNKNOWN真实reload/显式恢复放在accepted流与迟到logout之前，其他真实行为/报告/清理合同不减。两harness、五prepared与fixedpair pins见[source-preparation](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/source-preparation.json)。待一次窄diff独审，后继actual另独立有界安排。
+Review target commit：d032a53a62017cc41a3ddf19b316ad1047398fa6。范围：apps/web/test/web-release-compatibility.browser.ts。[Root源码集中审](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/root-source-review.json)0blocking；[第二实际/失败归还审](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)接受真实outer1/26554ms CLOSED、完整清理，不接受compatibility。reports=null/不可部署。
+
+[限定诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/diagnosis.json)：新App已到达原key/body显式恢复与迟到登出后续；console断言遇到唯一GET browser-session400，响应hash匹配Fastify HTTP clientError通用正文。具体parser code/连接事实未采，不能笼统allow400或声明后台业务回归。UNKNOWN retry覆盖reload后/logout前，新登录后的UNKNOWN重试未验证。
 
 ## 已审历史：pair准备与首实际失败
 

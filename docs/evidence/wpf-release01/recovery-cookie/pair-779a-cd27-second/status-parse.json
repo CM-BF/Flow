@@ -1,0 +1,29 @@
+{
+  "scope": "own metadata parser only",
+  "errors": [],
+  "checks": {
+    "state": "failed",
+    "target": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+    "record": "FAILED d032a53a62017cc41a3ddf19b316ad1047398fa6 c2 actual exit1 / asset-observation，reports=null；首c1 FAILED56504保持，types/oldconsumer/artifact仅历史范围"
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |\n| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |\n| RELEASE01-W05 | 2026-10-07T16:22:48.759Z | OPEN | 验证失败 | 会话GET返回HTTP clientError400，精确请求解析原因待受控诊断；不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |\n| RELEASE01-W02 | UNKNOWN | 2026-10-07T14:54:01.259Z | 产物供给 | 外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作 | [接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json) |\n| RELEASE01-W03 | UNKNOWN | 2026-10-07T14:47:33.469Z | 后台供给 | 本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知 | [后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md) |"
+  }
+}

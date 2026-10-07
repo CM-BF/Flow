@@ -1,0 +1,29 @@
+{
+  "state": "FAILED",
+  "workerPid": 92779,
+  "startedAt": "2026-10-07T16:22:22.557Z",
+  "sourceHead": "16e56cf6b40d3213c5fc334f84689eb0473f5766",
+  "implementation": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "sourceHashes": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 35397,
+      "sha256": "3e9e776b8926d1ab6b96e9df1c97132465430842f737a0f98bdd2707d673b1a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d"
+    }
+  ],
+  "errors": [
+    "AssertionError:ERR_ASSERTION"
+  ],
+  "chromeRequested": true,
+  "chromeClosed": true,
+  "compatibility": null,
+  "finishedAt": "2026-10-07T16:22:48.760Z",
+  "elapsedMs": 26397
+}
