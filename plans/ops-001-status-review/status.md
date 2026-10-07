@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:51:44.749917+00:00 / main52fe6669；计时实际4320部署52fe，与个人服务版本分开 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:13.319076+00:00 / main451bf2ed；4320 ACCESS与计时实际部署，个人仍af51/accepting v18、d629/v3 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/originc0217f46已接SVC06根pg、REQ15批量读取、SVC08最小连接释放和185来源登记。个人仍af51/accepting v18、d629/v3；CI用户选择保持PENDING。 |
+| 已集成main状态 / HEAD | main/origin451bf2ed已接SVC08同锁入口、S01P07领取恢复、ACCESS与原计时；个人未随主线自动升级。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 看板已实际显示任务开工、完成声明和含等待历时；固定后台产物的真实离线安装与内部加载已通过独审，实际宿主运行正在准备。 |
-| 下一可用交付 | 登录入口完成独立浏览器验证；固定后台产物继续独立启动与脱离开发目录验收；网页连接释放修复通过受管宿主入口送到个人预览。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。本地旧磁盘HOLD已解除；按实际共享资源排队，普通局部段三队各一段，后继允许隔离离线构建与0PG浏览器按合计预算并行。 |
+| 当前产出 | 看板登录入口与任务计时已实际可见，按需加载、复制和关闭清除已有真实页面观察；领取恢复已进主线。固定后台产物安装/加载通过，首宿主运行失败事实已保留。 |
+| 下一可用交付 | 先收束固定后台首轮自有资源并修正身份观察边界，再验证独立宿主；网页固定宿主选择完成独审后进入受管发布。其他队伍已ready局部检查继续。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。SVC06首host运行因拒读profile也拒绝/bin/ps而无法确认center身份，精确自有中心/DB暂KEEP、正在有界收尾；不是旧空间HOLD，也未证明产物加载失败。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -433,3 +433,5 @@ X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复�
 ## 2026-10-07T03:51:44.749917+00:00 已审计时实际可见
 
 main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；185源与真实IAB开工UTC/含等待历时/详情来源已核。记录：[D05实际回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/task-timing-185-live.json)。未重跑原81 parser/5浏览器组，未刷新原用户tab或改个人af51/d629；ACCESS后继不再阻塞本片上线。
+
+2026-10-07T04:09:13.319076+00:00：ACCESS实际部署见D05唯一[回执](../../../dashboard-architecture/docs/evidence/d05/local-access-185-live.json)，main451bf2；S01P07 main0aa组合noEmit0及8直接检查通过，原失败保留。SVC06独立artifact首host运行0task/provider，04:04:40.248开始、work6255ms/cleanup81ms；工作/清理监督组absent，但detached center及专库仍KEEP。只读诊断确认原sandbox禁止/bin/ps，原stderr丢失不能补造根因；按原owner精确身份与先行持久记录收尾，未重跑构建或个人服务。
