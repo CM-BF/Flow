@@ -52,10 +52,16 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await chooseChat(2); await chooseChat(3);
       await tab(1).focus(); await tab(1).press("ArrowRight"); await expect(tab(2)).toBeFocused(); await expect(tab(3)).toHaveAttribute("aria-selected", "true");
       await tab(2).press("Enter"); await expect(tab(2)).toHaveAttribute("aria-selected", "true");
+      await chooseChat(7); // Retain a second tab in the focused pane at the three-pane limit.
       await tab(3).click(); await page.getByRole("button", { name: "Split chat", exact: true }).click();
       await tab(2).click(); await page.getByRole("button", { name: "Split chat", exact: true }).click();
-      await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(3);
+      await tab(1).click();
+      const focusedTabs = page.locator(".flow-pane-header.focused").getByRole("tab");
+      await expect(focusedTabs).toHaveCount(2);
+      await expect(tab(1)).toHaveAttribute("aria-selected", "true"); await expect(tab(7)).toHaveAttribute("aria-selected", "false");
       await expect(page.getByRole("button", { name: "Split chat", exact: true })).toBeDisabled();
+      await expect(page.locator(".flow-pane-header")).toHaveCount(3);
+      await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(3); await expect(pane(7)).toBeHidden();
       for (const number of [1, 2, 3]) await input(number).fill(`Independent draft ${number}`);
       const handles = await Promise.all([1, 2, 3].map(number => input(number).elementHandle()));
       await page.getByRole("button", { name: "Move pane 3 left", exact: true }).click();
@@ -139,7 +145,12 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const writes = fixture!.fixture.requests.filter(row => row.method === "POST" && row.path === "/api/conversations/chat-4/turns").length;
       await page.getByRole("button", { name: "Move pane 1 right", exact: true }).click();
       await page.getByRole("slider", { name: "Resize panes 1 and 2", exact: true }).fill("65");
-      await tab(4).click(); await page.getByRole("button", { name: "Merge tabs", exact: true }).click(); await page.getByRole("button", { name: "Split chat", exact: true }).click();
+      await tab(4).click(); await page.getByRole("button", { name: "Merge tabs", exact: true }).click();
+      await expect(page.locator(".flow-pane-header")).toHaveCount(1);
+      await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(1);
+      await expect(page.locator('.flow-pane-header [role="tab"][aria-selected="true"]')).toHaveAttribute("id", "tab-conversation:chat-4");
+      await expect(input(4)).toBeVisible(); await expect(input(4)).toHaveValue("Independent B while A prepares");
+      await page.getByRole("button", { name: "Split chat", exact: true }).click();
       expect(await input(4).evaluate((node, original) => node === original, originalInput!)).toBe(true);
       expect((await probe("snapshot")).rows[0]).toMatchObject({ validated: true, aborted: false, returned: false });
       await expect(input(4)).toHaveValue("Independent B while A prepares");
