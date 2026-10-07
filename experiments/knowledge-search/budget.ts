@@ -37,6 +37,6 @@ export class StorageBudget {
 export function localAdminUrl(value: string): URL {
   const url = new URL(value);
   if (!['postgres:', 'postgresql:'].includes(url.protocol) || !['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname)
-    || url.pathname !== '/postgres' || url.search !== '' || url.hash !== '') throw new Error('LOCAL_ADMIN_REQUIRED');
+    || url.pathname !== '/postgres' || url.search !== '' || value.includes('#')) throw new Error('LOCAL_ADMIN_REQUIRED');
   return url;
 }
