@@ -26,7 +26,7 @@
 | apps/runner/src/plugins/process-host.test.ts | 新真实child行为与codec边界；不造另一fake执行器。 |
 | apps/runner/src/plugins/execution.ts | 真实consumer内部选择；现 architecture_read / X01 v27持有。 |
 | apps/runner/src/plugins/execution.test.ts | consumer错误/provenance/outbox交界；同owner。 |
-| apps/runner/src/runtime.ts | 受信mode选择与资源上下文，保token/key；同owner。 |
+| apps/runner/src/runtime.ts | 原首片受信mode消费者；2026-10-07T20:28:34.055Z已永久STOP并移出本claim，assignment_review需fresh take；不得由本owner回写。 |
 | apps/runner/src/plugins/runtime.test.ts | ownership/shutdown/unsettled直接consumer；同owner。 |
 | apps/runner/src/configuration.ts | 私有可选mode与unsupported拒绝；同owner。 |
 | apps/runner/src/configuration.test.ts | 原配置兼容与显式mode；同owner。 |

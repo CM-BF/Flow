@@ -26,6 +26,8 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 
 完整来源见implementation-review-approval.json。T7真实发布artifact、PG/center/native/provider/部署、父硬崩溃及任意后代仍未验证，无新运行授权。当前仅可以局部已审opt-in源码进入受控主线流程，不能称全X01或可部署验收完成。
 
-## Verifier extension fixed review pending
+## Verifier extension existing review archived
 
-Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status NOT_STARTED. Canonical [review-ready](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json). Scope four process source/test leaves and this limited local result; original 4dc approval does not grant the new kind. No PG/T7/runtime/center claim.
+Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status APPROVED at 2026-10-07T19:42:43.000Z by chatui01_owner / gpt-6-astra; packet 3fcdf665a1110907418b277726a86415adf0fcfe, 0 P1/P2. Canonical [review-ready](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json). Scope four process source/test leaves and this limited local result; original 4dc approval does not grant the new kind. No PG/T7/runtime/center claim.
+
+2026-10-07T20:29:18.831Z: Owner transcribed the existing review forwarded by Mika; this is not a new independent review. Canonical [transcript](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-approval-transcript.json) binds 46 inputs/211580B and manifest253d88fa…57f80. Seven new plus three old direct cases are ten distinct across rounds; two types passes, five children6407ms/raw3708B, RETURN19:35:26.901Z. Original fixture failure/EPERM and unknown whole-tool wall/peak remain. Approval covers four leaves/local fidelity only, not runtime dispatch, center verdict, T7 release, this extension main or deployment.

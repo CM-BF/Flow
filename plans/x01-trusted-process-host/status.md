@@ -9,26 +9,26 @@
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 受信验证器已能在独立worker执行，保留精确材料与取消/未知结果；本片局部检查结束，等待独立审查。 |
-| 下一可用交付 | 本次4叶增量及固定真实worker结果独审；随后受控集成。 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 受信验证器独立worker扩展已通过源码与局部结果独审，等待受控集成。 |
+| 下一可用交付 | 已审4叶扩展进入主线；runner启动与验证器完整接线由后继owner处理。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | abc0736dfbfe4c3dcbdd11d73e9386573ef565db（扩展source；后继仅review packet/status） |
-| 工作树dirty状态 | 仅审查manifest/status收口；五child已RETURN，0待launch。 |
+| HEAD | 3fcdf665a1110907418b277726a86415adf0fcfe（已审packet；本次仅批准转录与partial handback metadata） |
+| 工作树dirty状态 | 本段仅metadata；提交后确认clean并STOP，0工程child/待launch。 |
 | 实现目标 | abc0736dfbfe4c3dcbdd11d73e9386573ef565db |
 | 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-host.test.ts |
 | 检查状态 | PASSED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 10distinct分轮：9pass+1fixture失败→定向1pass；typed原文定向1pass；两focusedtypes0。首次失败保留。 |
-| Review | NOT_STARTED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 本扩展已固定待独审；原4dc批准历史不变。 |
+| Review | APPROVED abc0736dfbfe4c3dcbdd11d73e9386573ef565db chatui01_owner 2026-10-07T19:42:43.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；0P1/P2。见verifier-extension/review-approval-transcript.json（原结论转录，非新审）。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 本verifier扩展；原4dc工具进程已在main96b424777cd2c66e603157649e5a859ca1b914f6接收，T7/部署仍NOT_RUN。 |
-| 最近更新时间 | 2026-10-07T19:39:48.274Z |
+| 最近更新时间 | 2026-10-07T20:29:18.831Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
-| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v3 ACTIVE/12（2026-10-07T15:26:07.328Z原子amend仅移除execution.ts/execution.test.ts；其余保留） |
+| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v4 ACTIVE/11；2026-10-07T20:28:34.055Z原子amend仅移除runtime.ts，其余保留。旧execution两叶永久交回事实不变。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
-| X01TP-06 | in-progress | db_transaction_owner | 固定abc0736dfbfe4c3dcbdd11d73e9386573ef565db；真实worker局部证据已封，待独立审查/集成。 |
+| X01TP-06 | in-progress | db_transaction_owner | 固定abc0736dfbfe4c3dcbdd11d73e9386573ef565db已独审批准；待主线集成，T7/runtime/center另界。 |
 | X01TP-05 | in-progress | db_transaction_owner | 源码已入远端main96b42477；T7真实发布后继未验，完整TODO保持开放。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
@@ -47,14 +47,14 @@
 | --- | --- |
 | 实际开工 | 2026-10-07T12:38:43.000Z / owner clock |
 | 分支交付 | 2026-10-07T13:10:59.985318+00:00 / fixed首产品 af43f7e61395125aed3f0725a9e4305c9e086cdd；design旧交付12:47:14.829Z保留 |
-| 独立审查 | 2026-10-07T13:23:25Z / chatui固定4dc6f7ee产品增量批准；设计历史独立保留 |
+| 独立审查 | 2026-10-07T19:42:43.000Z / chatui固定abc0736扩展批准；原4dc于13:23:25Z批准及设计历史独立保留 |
 | 主线集成 | 2026-10-07T15:10:04.671Z / 中央接收receipt；远端同步15:22:52.000Z见后继接收记录 |
 | 部署 | NOT_DEPLOYED |
 | 完整完成 | NOT_COMPLETED |
 
 ## 下一步
 
-当前仅 verifier 扩展待独立审查；普通资源19:35:26.901Z已归还。两执行入口仍永久交回，不写AV scope。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
+当前 verifier 扩展已审待受控集成；普通资源19:35:26.901Z已归还。原两execution叶与本次runtime.ts均永久交回，不写后继scope；assignment_review须fresh take后才可改runtime。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
 
 ## 计划复审修复段
 
@@ -91,3 +91,11 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 2026-10-07T19:21:26.000Z 新25分钟段开始，截止19:46:26Z；旧18:37暂停段零实现，不追溯恢复。fresh ledger19:21:57.846Z原8c2f v3 ACTIVE12，本段只4个process叶与自身metadata；resources仅必要。预算6串行child各40s/累计150s，raw2MiB及TMP/源码/证据共16MiB；freshfloor至少17950834688B并取最新组合较高。0PG/HTTP/provider/安装。main c15cdff 只读host/package-store供给在自身证据，不覆盖unclaimed叶。T7仍NOT_RUN，runtime/public producer/verdict完成链未接。
 
 2026-10-07T19:39:48.274Z 扩展source abc0736dfbfe4c3dcbdd11d73e9386573ef565db固定；普通5child累计6407ms/raw3708B，10distinct分轮与两个types0。行为首错仅fixture漏owner.json；typed字段收紧后单例重验。view五源逐字等自有source，main只读host/store3输入固定c15cdff，无unclaimed源码覆盖。真实3EOF/资源unknown原规则沿4dc，所有新测试ownedroot清理；wholewall/峰值未知。新增逻辑约200KiB远低16MiB，精确交付量见review manifest。当前源码STOP，metadata封packet后全写STOP；claim不变。
+
+## 已有扩展批准转录与 runtime 部分交回
+
+2026-10-07T20:29:18.831Z：本段实际20:26:13Z开始，≤8min/256KiB metadata，计入Original已声明封套；0工程测试/产品修改/个人动作。chatui原19:42:43批准已转录到[唯一原结论归档](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-approval-transcript.json)，没有新审查或新测试。46bindings211580B/10distinct分轮、两types0、五child6407ms/raw3708B及首失败、EPERM、wholewall/peak UNKNOWN原样保留。
+
+20:28:33.852Z永久STOP `apps/runner/src/runtime.ts`；20:28:34.055Z COMMITTED v3/12→v4/11，仅移除该leaf。当前main18bf17ea26cacb4a12cd89f962b455f6688f729d与旧WT runtime均22367B/SHA24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d，未改源/覆盖旧blob。回执及前像见[handoff](../../docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json)。新owner必须fresh take；本owner不恢复该leaf写权，其余11scope保持。扩展仍NOT_INTEGRATED、runtime分派/center门禁/T7/部署未验。
+
+clean-code metadata复核：现阶段与历史分开、原审结论注明转录、身份/错误/时间证据不合并，沿本地find-skills/codebase-design/clean-code方法；未改旧raw/manifest，无新框架。提交push并核clean后全部STOP。

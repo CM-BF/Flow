@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-07T20:28:33.852Z",
+  "stoppedAt": "2026-10-07T20:28:33.852Z",
+  "actor": {
+    "lead": "mika",
+    "worker": "db_transaction_owner"
+  },
+  "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "observedVersion": 3,
+  "ledgerObservedAt": "2026-10-07T20:26:50.166Z",
+  "permanentStop": [
+    "apps/runner/src/runtime.ts"
+  ],
+  "receiver": "assignment_review; must fresh take successfully before writing",
+  "scopeAfter": [
+    "apps/runner/src/configuration.test.ts",
+    "apps/runner/src/configuration.ts",
+    "apps/runner/src/main-concurrency.test.ts",
+    "apps/runner/src/plugins/process-host.test.ts",
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-resources.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/runtime.test.ts",
+    "docs/evidence/x01-trusted-process-host",
+    "plans/x01-trusted-process-host"
+  ],
+  "worktreeHead": "3fcdf665a1110907418b277726a86415adf0fcfe",
+  "currentMain": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "preimage": {
+    "path": "apps/runner/src/runtime.ts",
+    "bytes": 22367,
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "mainBlob": "39daff5299d5112aa6f4c4a785a69c83902dd287",
+    "ownerBlob": "39daff5299d5112aa6f4c4a785a69c83902dd287",
+    "sameBytes": true
+  },
+  "pendingWiring": "main and this owner runtime are byte-identical; verifier process extension only adds invokeVerifier to Host. runRunner verifier dispatch/center verdict/launch-ready integration is not implemented by this four-leaf extension. Receiver must preserve current main, never replace it with an old owner snapshot."
+}

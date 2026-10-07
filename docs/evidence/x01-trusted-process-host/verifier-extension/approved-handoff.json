@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-07T20:29:18.831Z",
+  "source": "abc0736dfbfe4c3dcbdd11d73e9386573ef565db",
+  "reviewedPacket": "3fcdf665a1110907418b277726a86415adf0fcfe",
+  "status": "REVIEW_APPROVED_PENDING_MAIN",
+  "review": {
+    "path": "docs/evidence/x01-trusted-process-host/verifier-extension/review-approval-transcript.json",
+    "bytes": 1890,
+    "sha256": "f284ecdbe7f8feb82d821f1f41bf501de1331fee2e557144d005b763f4dbce7a"
+  },
+  "fixedManifest": {
+    "path": "docs/evidence/x01-trusted-process-host/verifier-extension/review-manifest.json",
+    "bytes": 13083,
+    "sha256": "253d88faba3c6c06cd5eaff8ade46d1d13a33f3a13ae09c9c87ab471ef857f80"
+  },
+  "runtimeStop": {
+    "path": "docs/evidence/x01-trusted-process-host/runtime-handback-stop.json",
+    "bytes": 1728,
+    "sha256": "b50540ac63cfa623668df6093425dcc7075d1198a61d7879ddcbcc91796a2801"
+  },
+  "amendReceipt": {
+    "path": "docs/evidence/x01-trusted-process-host/runtime-handback-receipt.json",
+    "bytes": 1036,
+    "sha256": "b6484b0fe70b05f42adb9334a174a5d78370087a8c576a2c6b2f14ac0fb1163f"
+  },
+  "remainingClaim": {
+    "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 4,
+    "state": "active",
+    "scopeCount": 11
+  },
+  "mainObserved": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "sourceMayBeAppliedOnly": [
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-host.test.ts"
+  ],
+  "runtimeReceiver": "assignment_review; new take required",
+  "unvalidated": [
+    "runtime verifier dispatch",
+    "center verdict/completion",
+    "T7 artifact",
+    "extension main integration",
+    "deployment"
+  ],
+  "quality": {
+    "at": "2026-10-07T20:29:18.831Z",
+    "method": "Existing local find-skills/codebase-design/clean-code; metadata responsibilities, time provenance, current/historical facts and literal scope reviewed.",
+    "engineeringRuns": 0,
+    "productEdits": 0,
+    "oldRawAndManifestEdits": 0
+  }
+}
