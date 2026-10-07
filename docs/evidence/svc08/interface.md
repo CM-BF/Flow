@@ -11,3 +11,9 @@
 单轮≤10s，OPS14 NEW_CHILD_SESSION 7s工作+.5sTERM+1s回收，记录≤64KiB、私有tmp≤1MiB，事件≤256。共用一个run记录，各轮原stdout/stderr保留；累计≤30s/192KiB/3MiB/18请求。fresh1GiB+4MiB与同队合计预算保持。checkpoint早于清理，unknown资源KEEP；不操作历史PID/个人目录。监督复用sharedModule，不新建FSM。
 
 产品改动仅由反例证据触发：修异常流生命周期时保留原proxy匹配/认证透传、ws:false、正常SSE、静态并发和64cap。无反例则原产品保持。
+
+## 实际交付接缝
+
+本次有限反例成立。`startStaticWeb`通过Vite现有`proxy.configure`接收proxy，注册`proxyRes`回调；upstream拥有自己的异常事件，对应downstream由此模块销毁。正常end不进入新分支；没有第二代理/调度器/连接计数权威。调用方签名、关闭接口和依赖方向不变。新事件监听与单个响应同生命周期；不保留全局响应列表，不推断未知结果为成功正文。
+
+修复源086ba13d和原1红→1绿见README。原测试观察包装只用于测试，未进入产品；测试前后恢复http.createServer。个人部署与根因仍开放，不能因为这条路径修复就标整REQ19完成。架构影响是既有static-web内部proxy-response终结责任闭合，公开Interface/中心/runner均无变化。

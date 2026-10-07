@@ -1,0 +1,42 @@
+{
+  "pid": 25766,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 457,
+  "observed_bytes": 207,
+  "retained_bytes": 207,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "bytes": 207,
+    "sha256": "9c8a7e033b5ecea9aa08127a513329a52eb23a3a34bacb8f081efd2e7c1125b6"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "at": "2026-10-07T03:11:26.520536+00:00",
+  "freeAfterBytes": 26544033792,
+  "complete": true
+}
