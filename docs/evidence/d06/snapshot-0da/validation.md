@@ -17,3 +17,9 @@
 ## 首次页面实测
 
 [原件与逐hash索引](browser-first-20261007/index.json)：runtime/modules两组均完成1280/390与双主题；data/light1280的“回复引用”“本地只读”文字超edge背景（canvas仍内），停止后续并保留8PNG。actualexit1，晚父6674.343333ms、外层6732.224458ms，保守spent6733/余83267；两值原件不改。worker/Chrome、HTTP/context、scratch及EOF收尾完整；没有自动重跑、真实聚合/PG/provider/个人服务访问。独立结果审查和归因待办，不能把前两图通过外推五图。
+
+## a28e 第二次页面实证
+
+[固定实际原件](browser-second-actual-20261007/index.json)：5组/20观察/20PNG、实际外层exit0，原全部SVG bbox/背景/canvas、固定source下钻、键盘和宽窄屏主题断言通过。自有HTTP/context/Chrome/组/临时目录清理完整，04:19:53.053937Z即归窗。总预算累计15613/余74387ms不构成重跑许可；原22direct未重跑、首轮失败原件不改。独立结果审与main/真实4320部署仍分别记录。
+
+[root实际独审](browser-second-actual-20261007/root-actual-review.json)已核20观察/200条edge均fit、无页面overflow，并目视覆盖五图/双theme宽度的六张图，0blocking；主线组合target与部署仍独立。

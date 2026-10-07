@@ -1,0 +1,1750 @@
+{
+  "state": "PASSED",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "checks": [
+    "runtime: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "modules: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "data: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "states: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "dependencies: fixed labels/edges, 1280+390, light+dark, keyboard+source"
+  ],
+  "observations": [
+    {
+      "view": "runtime",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "nodes": 11,
+      "outside": [],
+      "edges": [
+        {
+          "label": "FlowClient",
+          "length": 140,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 265,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 390,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP claim / heartbeat / events",
+          "length": 245,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "快照 / feed",
+          "length": 45,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "产物 / 验证",
+          "length": 295,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SQL / wake",
+          "length": 648,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SDK",
+          "length": 712,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "注入 transport",
+          "length": 473,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP A2A",
+          "length": 290,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 793
+    },
+    {
+      "view": "runtime",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "nodes": 11,
+      "outside": [],
+      "edges": [
+        {
+          "label": "FlowClient",
+          "length": 140,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 265,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 390,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP claim / heartbeat / events",
+          "length": 245,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "快照 / feed",
+          "length": 45,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "产物 / 验证",
+          "length": 295,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SQL / wake",
+          "length": 648,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SDK",
+          "length": 712,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "注入 transport",
+          "length": 473,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP A2A",
+          "length": 290,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 793
+    },
+    {
+      "view": "runtime",
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "nodes": 11,
+      "outside": [],
+      "edges": [
+        {
+          "label": "FlowClient",
+          "length": 140,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 265,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 390,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP claim / heartbeat / events",
+          "length": 245,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "快照 / feed",
+          "length": 45,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "产物 / 验证",
+          "length": 295,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SQL / wake",
+          "length": 648,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SDK",
+          "length": 712,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "注入 transport",
+          "length": 473,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP A2A",
+          "length": 290,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    },
+    {
+      "view": "runtime",
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "nodes": 11,
+      "outside": [],
+      "edges": [
+        {
+          "label": "FlowClient",
+          "length": 140,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 265,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "FlowClient",
+          "length": 390,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP claim / heartbeat / events",
+          "length": 245,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "快照 / feed",
+          "length": 45,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "产物 / 验证",
+          "length": 295,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SQL / wake",
+          "length": 648,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "SDK",
+          "length": 712,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "注入 transport",
+          "length": 473,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "HTTP A2A",
+          "length": 290,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    },
+    {
+      "view": "modules",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "nodes": 34,
+      "outside": [],
+      "edges": [
+        {
+          "label": "import",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 980,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "descriptor",
+          "length": 107.26388549804688,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 70,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 107.26372528076172,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "加载 SQL",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 798,
+      "localClientWidth": 798,
+      "canvasWidth": 778
+    },
+    {
+      "view": "modules",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "nodes": 34,
+      "outside": [],
+      "edges": [
+        {
+          "label": "import",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 980,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "descriptor",
+          "length": 107.26388549804688,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 70,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 107.26372528076172,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "加载 SQL",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 798,
+      "localClientWidth": 798,
+      "canvasWidth": 778
+    },
+    {
+      "view": "modules",
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "nodes": 34,
+      "outside": [],
+      "edges": [
+        {
+          "label": "import",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 980,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "descriptor",
+          "length": 107.26388549804688,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 70,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 107.26372528076172,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "加载 SQL",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 322,
+      "canvasWidth": 470
+    },
+    {
+      "view": "modules",
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "nodes": 34,
+      "outside": [],
+      "edges": [
+        {
+          "label": "import",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 980,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "descriptor",
+          "length": 107.26388549804688,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 70,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 600,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 107.26372528076172,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "加载 SQL",
+          "length": 335,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 322,
+      "canvasWidth": 470
+    },
+    {
+      "view": "data",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "nodes": 19,
+      "outside": [],
+      "edges": [
+        {
+          "label": "读 / 写",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "事务",
+          "length": 522,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "唤醒",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引用",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回复引用",
+          "length": 439,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "关联",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "本地只读",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "独立 PG",
+          "length": 474,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 798,
+      "localClientWidth": 798,
+      "canvasWidth": 778
+    },
+    {
+      "view": "data",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "nodes": 19,
+      "outside": [],
+      "edges": [
+        {
+          "label": "读 / 写",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "事务",
+          "length": 522,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "唤醒",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引用",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回复引用",
+          "length": 439,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "关联",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "本地只读",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "独立 PG",
+          "length": 474,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 798,
+      "localClientWidth": 798,
+      "canvasWidth": 778
+    },
+    {
+      "view": "data",
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "nodes": 19,
+      "outside": [],
+      "edges": [
+        {
+          "label": "读 / 写",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "事务",
+          "length": 522,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "唤醒",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引用",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回复引用",
+          "length": 439,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "关联",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "本地只读",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "独立 PG",
+          "length": 474,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 322,
+      "canvasWidth": 470
+    },
+    {
+      "view": "data",
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "nodes": 19,
+      "outside": [],
+      "edges": [
+        {
+          "label": "读 / 写",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "事务",
+          "length": 522,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "唤醒",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引用",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回复引用",
+          "length": 439,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "关联",
+          "length": 133,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "本地只读",
+          "length": 107,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "独立 PG",
+          "length": 474,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 322,
+      "canvasWidth": 470
+    },
+    {
+      "view": "states",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "nodes": 12,
+      "outside": [],
+      "edges": [
+        {
+          "label": "claim",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "decision",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回答",
+          "length": 107.26374816894531,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 576,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 185,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 317,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 445,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "succeeded",
+          "length": 155,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "failed / cancelled",
+          "length": 428,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "领取前取消",
+          "length": 447,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 940,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 430,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "失联 / revoke",
+          "length": 150,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "C02 审计终结",
+          "length": 838,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "仅 C02 安全 retry · 另建",
+          "length": 867,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "通过",
+          "length": 110,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "未通过",
+          "length": 714,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 778
+    },
+    {
+      "view": "states",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "nodes": 12,
+      "outside": [],
+      "edges": [
+        {
+          "label": "claim",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "decision",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回答",
+          "length": 107.26374816894531,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 576,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 185,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 317,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 445,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "succeeded",
+          "length": 155,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "failed / cancelled",
+          "length": 428,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "领取前取消",
+          "length": 447,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 940,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 430,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "失联 / revoke",
+          "length": 150,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "C02 审计终结",
+          "length": 838,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "仅 C02 安全 retry · 另建",
+          "length": 867,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "通过",
+          "length": 110,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "未通过",
+          "length": 714,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 778
+    },
+    {
+      "view": "states",
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "nodes": 12,
+      "outside": [],
+      "edges": [
+        {
+          "label": "claim",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "decision",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回答",
+          "length": 107.26374816894531,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 576,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 185,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 317,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 445,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "succeeded",
+          "length": 155,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "failed / cancelled",
+          "length": 428,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "领取前取消",
+          "length": 447,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 940,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 430,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "失联 / revoke",
+          "length": 150,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "C02 审计终结",
+          "length": 838,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "仅 C02 安全 retry · 另建",
+          "length": 867,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "通过",
+          "length": 110,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "未通过",
+          "length": 714,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    },
+    {
+      "view": "states",
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "nodes": 12,
+      "outside": [],
+      "edges": [
+        {
+          "label": "claim",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "decision",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "回答",
+          "length": 107.26374816894531,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 40,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "取消请求",
+          "length": 576,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 185,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 317,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "completed",
+          "length": 445,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "succeeded",
+          "length": 155,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "failed / cancelled",
+          "length": 428,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "领取前取消",
+          "length": 447,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 940,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "lease / revoke",
+          "length": 430,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "失联 / revoke",
+          "length": 150,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "C02 审计终结",
+          "length": 838,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "仅 C02 安全 retry · 另建",
+          "length": 867,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "通过",
+          "length": 110,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "未通过",
+          "length": 714,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    },
+    {
+      "view": "dependencies",
+      "width": 1280,
+      "height": 900,
+      "theme": "light",
+      "nodes": 7,
+      "outside": [],
+      "edges": [
+        {
+          "label": "复用",
+          "length": 160,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "adapter",
+          "length": 894,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 350,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引入源码",
+          "length": 206,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 793
+    },
+    {
+      "view": "dependencies",
+      "width": 1280,
+      "height": 900,
+      "theme": "dark",
+      "nodes": 7,
+      "outside": [],
+      "edges": [
+        {
+          "label": "复用",
+          "length": 160,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "adapter",
+          "length": 894,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 350,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引入源码",
+          "length": 206,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 813,
+      "localClientWidth": 813,
+      "canvasWidth": 793
+    },
+    {
+      "view": "dependencies",
+      "width": 390,
+      "height": 844,
+      "theme": "light",
+      "nodes": 7,
+      "outside": [],
+      "edges": [
+        {
+          "label": "复用",
+          "length": 160,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "adapter",
+          "length": 894,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 350,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引入源码",
+          "length": 206,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    },
+    {
+      "view": "dependencies",
+      "width": 390,
+      "height": 844,
+      "theme": "dark",
+      "nodes": 7,
+      "outside": [],
+      "edges": [
+        {
+          "label": "复用",
+          "length": 160,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "adapter",
+          "length": 894,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "import",
+          "length": 350,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        },
+        {
+          "label": "引入源码",
+          "length": 206,
+          "marker": "url(#architecture-arrow)",
+          "textFitsBackground": true,
+          "fitsCanvas": true
+        }
+      ],
+      "pageOverflow": false,
+      "localScrollWidth": 490,
+      "localClientWidth": 337,
+      "canvasWidth": 470
+    }
+  ],
+  "screenshots": [
+    "runtime-1280-light.png",
+    "runtime-1280-dark.png",
+    "runtime-390-light.png",
+    "runtime-390-dark.png",
+    "modules-1280-light.png",
+    "modules-1280-dark.png",
+    "modules-390-light.png",
+    "modules-390-dark.png",
+    "data-1280-light.png",
+    "data-1280-dark.png",
+    "data-390-light.png",
+    "data-390-dark.png",
+    "states-1280-light.png",
+    "states-1280-dark.png",
+    "states-390-light.png",
+    "states-390-dark.png",
+    "dependencies-1280-light.png",
+    "dependencies-1280-dark.png",
+    "dependencies-390-light.png",
+    "dependencies-390-dark.png"
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/"
+    },
+    {
+      "method": "GET",
+      "path": "/styles.css"
+    },
+    {
+      "method": "GET",
+      "path": "/architecture.css"
+    },
+    {
+      "method": "GET",
+      "path": "/app.js"
+    },
+    {
+      "method": "GET",
+      "path": "/architecture.js"
+    },
+    {
+      "method": "GET",
+      "path": "/api/snapshot"
+    },
+    {
+      "method": "GET",
+      "path": "/architecture-data.js"
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "contextClosed": true,
+  "httpClosed": true
+}

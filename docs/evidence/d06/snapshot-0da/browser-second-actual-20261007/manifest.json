@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T04:16:46.158375+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "metadataHead": "72167e26510388d28d9306225a9e30f9819b03ac",
+  "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "binding": {
+    "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.json",
+    "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.json",
+    "bytes": 20787,
+    "sha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565"
+  },
+  "prepared": [
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py",
+      "bytes": 8136,
+      "sha256": "455ac1cc20ae5c8f072da2059377a7a3bc171e6bb33112541c46988d15fd8cca"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs",
+      "bytes": 4553,
+      "sha256": "44da36b228f197407a63d2a21238066cec1cc9e91374bf57b393862da4455ad9"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/scenario.mjs",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/scenario.mjs",
+      "bytes": 10488,
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/README.md",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/README.md",
+      "bytes": 3482,
+      "sha256": "c94c8cea1fd422be57ee39e625373a27a744e03ee46d4a0e4a8ccad0dddc9dfd"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py.diff",
+      "bytes": 7583,
+      "sha256": "47626ef2024ad8b27895e9f9b5619b257f7403cf37b8bc0fef5779f44d7f0bfb"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs.diff",
+      "bytes": 863,
+      "sha256": "21072b229b4ab93f2e7f9b6afb90a782d8f4ecfd2bd8a75e59214ec8750fca52"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.diff",
+      "bytes": 1687,
+      "sha256": "71afa7ad84ea951c05fdec24be68b69f8f22dd8e51fd12cf681b8ab8331adf1e"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/admission-contract.json",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/admission-contract.json",
+      "bytes": 3558,
+      "sha256": "06d461948fe7f9559c94b8518e0f336b78f038a4645e4ad4fbdb0d4fb0cdb3b7"
+    }
+  ],
+  "firstPacketManifest": {
+    "path": "/private/tmp/d06-browser-512-tz5of84t/manifest.json",
+    "realpath": "/private/tmp/d06-browser-512-tz5of84t/manifest.json",
+    "bytes": 3472,
+    "sha256": "7d61f3370c3b9b7e6b54372b1b4d64e5668f2d1747dda383c5c4935289b7f5b1"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-d06-a28e-renderer-source-review.json",
+    "realpath": "/private/tmp/root-d06-a28e-renderer-source-review.json",
+    "bytes": 3768,
+    "sha256": "1e8f5d38461b979792d53407da78e9dedd93e5861b289ddf2a6e5b9363300055"
+  },
+  "priorActualReview": {
+    "path": "/private/tmp/root-d06-first-browser-actual-review.json",
+    "realpath": "/private/tmp/root-d06-first-browser-actual-review.json",
+    "bytes": 6293,
+    "sha256": "b216dc6f373d131fc943fee5d24092036f34c5e0e65f3f4095d23e4c5bdd91ab"
+  },
+  "checks": "All38 binding pins exist/realpath/bytes/SHA match; scenario unchanged; PythonAST only; no Node/import/runtime/free; actual owner local=remote clean",
+  "limits": {
+    "totalMs": 83267,
+    "workMs": 68267,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "startFloorBytes": 1350565888,
+    "stopFloorBytes": 1073741824
+  },
+  "priorSpentMs": 6733,
+  "priorRawBytes": 1386844,
+  "scope": "Same unconsumed second packet; previous d528 exact preparation/native boundary accepted. Only final owner HEAD, outer admission contract and explanation revised; new revision pending root review. No gate or runtime.",
+  "currentAdmissionRevision": {
+    "contractSha256": "06d461948fe7f9559c94b8518e0f336b78f038a4645e4ad4fbdb0d4fb0cdb3b7",
+    "startupCombinedFloorBytes": 4053008384,
+    "rootReview": "PENDING",
+    "priorD528Retained": true,
+    "sourceParentWorkerScenarioUnchanged": true,
+    "gateCreated": false,
+    "retainedSVC06IsHistorical": true
+  }
+}
