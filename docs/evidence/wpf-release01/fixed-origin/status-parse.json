@@ -1,7 +1,82 @@
 {
-  "at": "2026-10-07T10:10:52.648Z",
-  "scope": "own metadata parser only; no product checks",
-  "errors": [],
+  "at": "2026-10-07T10:18:03.120Z",
+  "scope": "metadata only",
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": ""
+    },
+    "completed": {
+      "state": "unknown",
+      "at": null,
+      "record": ""
+    },
+    "source": {
+      "state": "unknown",
+      "record": ""
+    },
+    "issues": [
+      "任务开工时间未记录",
+      "任务完成时间未记录",
+      "任务时间来源未知"
+    ],
+    "waiting": ""
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "固定地址验证入口已完成限定源码审查；已修正局部类型声明，等待相关复验",
+    "next": "完成必要类型复验；最终后台交付和受控调用器就绪后安排真实兼容验证",
+    "blocker": {
+      "state": "active",
+      "text": "最终后台产物与公开会话策略配置尚待原发布负责人提供；不阻塞本段源码实施"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "scopes": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-RELEASE01",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-release-compatibility",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-07T10:18:03.068Z",
+  "updatedRecord": "2026-10-07T10:18:03.068392+00:00",
   "todos": [
     {
       "id": "RELEASE01-01",
@@ -25,24 +100,32 @@
       "id": "RELEASE01-04",
       "state": "completed",
       "owner": "w01_owner",
-      "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，源码独审尚未完成"
+      "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审0blocking，9658类型delta待核"
     },
     {
       "id": "RELEASE01-05",
       "state": "pending",
       "owner": "w01_owner",
-      "evidence": "最终tuple、限定源码审与必要局部检查/三App真实四项兼容待完成；当前0actual"
+      "evidence": "最终tuple、限定源码审与必要局部检查/三App真实四项兼容待完成；当前真实compat0actual，已有strict首红"
     },
     {
       "id": "RELEASE01-06",
       "state": "pending",
       "owner": "w01_owner",
-      "evidence": "后继独审/主线接收；个人发布仍由原发布operator执行"
+      "evidence": "后继最终delta独审/主线接收；个人发布仍由原发布operator执行"
     }
   ],
-  "review": {
-    "state": "not_started",
-    "record": "NOT_STARTED**",
-    "target": "b816cccd5bacb0fb177b273eb2ff2b8029414739"
-  }
+  "errors": [],
+  "declaredHead": "固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase",
+  "declaredDirty": "源码9658a6b763de69038778de1b0c16de64ff824c75已固定；本次metadata正常封存，提交后clean/remote回执另证",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "FAILED：f3d唯一strict exit2；9658 type-only修正NOT_RETESTED。browser/PG/真实compat NOT_RUN；历史7805不继承"
+  },
+  "reviewRecord": "[review.md](review.md)，f3d限定源码已审0blocking；9658类型修正NOT_RETESTED/待delta复审",
+  "mainRecord": "NOT_INTEGRATED 当前后继；历史7805于c450c2da7e6185b88db9f46e0299ee504ee6f3e8接收",
+  "next": "",
+  "risks": "",
+  "decisions": ""
 }

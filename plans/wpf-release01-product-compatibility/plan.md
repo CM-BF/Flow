@@ -20,3 +20,5 @@
 ## 历史已交付计划（原件保留）
 
 见[7805计划原件](../../docs/evidence/wpf-release01/fixed-origin/previous-plan.md)。其中build方法不再作为后继入口。
+
+2026-10-07：f3d限定源审0blocking；唯一strict检查发现adapterVersion声明过宽，9658仅type-only公共接口修正，NOT_RETESTED。首失败/1170ms/完整清理保留；暂停本四scope写入并保claim，管理顺序先DPERF收口，后独立10s必要复验。
