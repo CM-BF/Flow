@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership
+
+stdout | apps/runner/src/native-stream-ownership.test.ts > counts actual adapter/control heartbeat calls for 32 injected fragments
+{"kind":"ownership-count","fragments":32,"patches":5,"events":9,"ownershipChecks":15,"heartbeats":15,"clockMs":0,"realHTTP":0,"nativeProcesses":0}
+
+stdout | apps/runner/src/native-stream-ownership.test.ts > counts actual adapter/control heartbeat calls for 512 injected fragments
+{"kind":"ownership-count","fragments":512,"patches":5,"events":9,"ownershipChecks":15,"heartbeats":15,"clockMs":0,"realHTTP":0,"nativeProcesses":0}
+
+ ✓ apps/runner/src/native-stream-ownership.test.ts (7 tests) 24ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  23:40:22
+   Duration  420ms (transform 204ms, setup 0ms, import 311ms, tests 24ms, environment 0ms)
+

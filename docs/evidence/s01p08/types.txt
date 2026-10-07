@@ -1,0 +1,12 @@
+apps/runner/src/native-stream-ownership.test.ts(13,69): error TS2345: Argument of type '{ action: "continue"; remainingLeaseMs: number; }' is not assignable to parameter of type 'HeartbeatResponse'.
+  Type '{ action: "continue"; remainingLeaseMs: number; }' is missing the following properties from type 'HeartbeatResponse': leaseExpiresAt, decision
+apps/runner/src/native-stream-ownership.test.ts(53,113): error TS2345: Argument of type '{ action: "cancel" | "stop"; }' is not assignable to parameter of type 'HeartbeatResponse'.
+  Type '{ action: "cancel" | "stop"; }' is missing the following properties from type 'HeartbeatResponse': leaseExpiresAt, remainingLeaseMs, decision
+apps/runner/src/native-stream-ownership.test.ts(61,62): error TS2322: Type '(value: HeartbeatResponse | PromiseLike<HeartbeatResponse>) => void' is not assignable to type '(value: { action: "continue"; remainingLeaseMs: number; }) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type '{ action: "continue"; remainingLeaseMs: number; }' is not assignable to type 'HeartbeatResponse | PromiseLike<HeartbeatResponse>'.
+      Type '{ action: "continue"; remainingLeaseMs: number; }' is missing the following properties from type 'HeartbeatResponse': leaseExpiresAt, decision
+apps/runner/src/native-stream-ownership.test.ts(67,62): error TS2322: Type '(value: HeartbeatResponse | PromiseLike<HeartbeatResponse>) => void' is not assignable to type '(value: { action: "continue"; remainingLeaseMs: number; }) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type '{ action: "continue"; remainingLeaseMs: number; }' is not assignable to type 'HeartbeatResponse | PromiseLike<HeartbeatResponse>'.
+      Type '{ action: "continue"; remainingLeaseMs: number; }' is missing the following properties from type 'HeartbeatResponse': leaseExpiresAt, decision
