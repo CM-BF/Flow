@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T12:47:47.786378+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "runnerSha256": "4c599b49dd20e874d9a33d2c821638166e524d185d65e3fef2212790815dfc8b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "preparedBinding": {
+    "path": "/private/tmp/prm-b2/binding.json",
+    "bytes": 73440,
+    "sha256": "b6ffe06e34aa06019871f05b2763f3ecf4c108544a61c4c9a03494e5e5f18544"
+  },
+  "preparedManifest": {
+    "path": "/private/tmp/prm-b2/manifest.json",
+    "bytes": 2347,
+    "sha256": "282e1b0d61805d0b8c6f9474d9fe899d31a93ac8ca84f2a97e8bc68f49bc2e0a"
+  },
+  "inputAudit": {
+    "path": "/private/tmp/root-plugin-browser-b2-input-audit-20261007.json",
+    "bytes": 1107,
+    "sha256": "abeffa86cc2b34ce56bedaa3408a9b90568863b98575b704f8fa7f47705ec7a6"
+  },
+  "priorFailureReview": {
+    "path": "/private/tmp/root-plugin-browser-b1-failure-review-20261007.json",
+    "bytes": 4673,
+    "sha256": "10c3076961302622e4b757871b073b22c448345f5f1e3c57d2bd297e3bc5d246"
+  },
+  "actualExecution": "NOT_RUN",
+  "findings": [],
+  "decision": "APPROVED_SOURCE_PREPARATION",
+  "reviewScope": "Fixed two-file focus repair and narrow cumulative-budget caller delta; same six-check standalone HTTP fixture and exact unchanged worker.",
+  "checked": [
+    "Both runtime and material refresh replace native disabled with aria-disabled and a guarded handler, matching existing registry/paging controls. Focus is retained naturally while redundant reads are blocked.",
+    "Keyboard test retains original focus assertion and adds enabled, decoded-read count+1 and settled-state waits. No post-activation focus(), arbitrary delay or removed assertion.",
+    "Supervisor delta only introduces exact prior browser evidence validation and conservative cumulative charge. Prior actual outer exit1, unique FAILED terminal, all present hashes, cleanup/EOF and complete-return evidence are required.",
+    "37 prior files/525259B remain pinned and are charged in retained-byte accounting. Spent12385ms is ceil(max outer actual/terminal late/parent measured values), leaving47615ms of original60000 with15000 cleanup.",
+    "All5own/75readonly/5prepared/105external/Node inputs,37prior files,2prior local reviews and12manifest entries independently hash-match. Python AST only. Worker/aliases/tsconfig/measurement helper are unchanged.",
+    "Prior component strict coverage is no longer inherited after the component repair; only unchanged controller/direct source evidence is retained."
+  ],
+  "scopeLimits": [
+    "Browser and visual acceptance remain unverified until actual rerun and independent screenshots review.",
+    "Synthetic controlled DTO centers do not prove real-center/principal isolation or App/session integration.",
+    "The sampled disk/resource and native Chrome boundary limitations in the b1 reviews remain unchanged."
+  ],
+  "routineCompletion": "Only owner metadata is currently dirty. Normal metadata seal and review-pointer/HEAD binding is required before existing fresh manager admission; no recursive review when runnable/source/dependency bytes stay identical. No runtime gate issued by this report.",
+  "cleanCode": {
+    "scope": "Focus-preserving refresh handlers and lifecycle reuse",
+    "findingAndFix": "Removed inconsistent native-disabled read-refresh behavior; reuse guarded existing pattern without a second focus state or effect. Kept original assertion and measured completion.",
+    "remaining": "Actual focus/two-theme/cleanup verification."
+  }
+}

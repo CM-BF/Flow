@@ -24,10 +24,10 @@
 | 阶段 | M2 |
 | 优先级 | 4 |
 | 当前产出 | 已按现有只读控件模式修复刷新焦点，保留原键盘断言；首失败与清理证据完整保留 |
-| 下一可用交付 | 独审焦点窄修复并在原剩余预算完成界面与窄屏验收 |
+| 下一可用交付 | 在原剩余预算复验焦点与六组界面、窄屏效果 |
 | 当前阻塞 | ACTIVE: 焦点窄修复尚待实际复验与两张窄屏图 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED 当前a952窄修复待独审；原0bc source批准、b1 FAILED/完整return接受分别保留 |
+| Review | [review.md](review.md)，APPROVED_SOURCE_PREPARATION 当前a952/b2已独审，actual待复验；原b1 FAILED/完整return接受保留 |
 | 领取 | 0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1；[COMMITTED 原件](../../docs/evidence/wpf-plugin-runtime-management/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -35,7 +35,7 @@
 | WPF-PLUGIN-RUNTIME01-01 | completed | w01_owner | [固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md) |
 | WPF-PLUGIN-RUNTIME01-02 | in-progress | w01_owner | 实际入口source已审；[首browser失败](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)，焦点窄修已固定，待六组完整结果 |
 | WPF-PLUGIN-RUNTIME01-03 | in-progress | w01_owner | [新direct15通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)，[旧有限段](../../docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json)首红/启动失败/第三父失败均保留；[首browser FAILED](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md) |
-| WPF-PLUGIN-RUNTIME01-04 | pending | w01_owner | a952窄修待审；原source/首失败已独审，整体browser待验 / 未接主线 |
+| WPF-PLUGIN-RUNTIME01-04 | pending | w01_owner | a952/b2源码与native已审，整体browser待复验 / 未接主线 |
 | WPF-PLUGIN-RUNTIME01-05 | pending | w01_owner | [后继只读引用研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)，NOT_TAKEN；待共享输入集成与精确scope，不属本次b1验收 |
 
 ## 等待记录
@@ -84,3 +84,5 @@ Root 于2026-10-07T11:39:58Z已观察4320两API，模块source live/current、�
 ## 当前焦点窄修复与同段后继准备
 
 [a952源码与最小caller carry](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)已固定：两个read按钮沿用aria-disabled/pending guard；保原自然焦点并等待decoded read settled。NOT_RETESTED，未重types/direct/Chrome。[root首失败审](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json)已接受FAILED/完整return。后继原60秒剩47,615ms含15秒cleanup，37prior525,259B全部KEEP计入原8MiB；无gate/无第二run。整体功能、visual、main仍未通过；七范围STOP保claim。
+
+本安全点已接[root a952/b2源码审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)与[同native边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json)，0finding；只绑定reviewed状态和最终metadata HEAD，不重跑/不造gate。剩额与原失败不变。

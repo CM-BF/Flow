@@ -1,12 +1,14 @@
 # 当前焦点窄修复审查入口
 
-状态：NOT_STARTED（当前a952窄修复；未复验）
+状态：APPROVED（限定a952/b2源码准备；未复验）
 
 Review target commit：a952ae81fefd3a82c9dfe42067048bcf2702d1c3
 
 Scope：原五产品literal；实际只组件与browser两源8+/3-，其余三源未变。[固定manifest与接口边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)。pending期间以aria-disabled+guard替原生disabled，避免自动失焦且不重复读；真实decoded read+settlement后保原toBeFocused，不末尾focus/延长timeout/删除断言。
 
-旧0bc的[source/native限定接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)和本次[失败/完整return接受](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json)各保固定目标，不迁移为a952实际通过。后继b2只最小priorcarry，worker未改，parent待同boundary精确绑定。
+旧0bc的[source/native限定接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)和本次[失败/完整return接受](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json)各保固定目标，不迁移为a952实际通过。后继b2只最小priorcarry，worker未改，parent已获同boundary精确接受。
+
+[a952/b2源码独审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)为APPROVED_SOURCE_PREPARATION/0finding；[native边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json)接受精确parent4c599/worker2b4b，不能冒browser/visual通过。
 
 ## 历史：首次 browser actual（失败/归还已独审）
 

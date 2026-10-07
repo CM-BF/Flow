@@ -45,7 +45,7 @@
     "phase": "M2",
     "priority": 4,
     "output": "已按现有只读控件模式修复刷新焦点，保留原键盘断言；首失败与清理证据完整保留",
-    "next": "独审焦点窄修复并在原剩余预算完成界面与窄屏验收",
+    "next": "在原剩余预算复验焦点与六组界面、窄屏效果",
     "blocker": {
       "state": "active",
       "text": "焦点窄修复尚待实际复验与两张窄屏图"
@@ -97,7 +97,7 @@
       "id": "WPF-PLUGIN-RUNTIME01-04",
       "state": "pending",
       "owner": "w01_owner",
-      "evidence": "a952窄修待审；原source/首失败已独审，整体browser待验 / 未接主线"
+      "evidence": "a952/b2源码与native已审，整体browser待复验 / 未接主线"
     },
     {
       "id": "WPF-PLUGIN-RUNTIME01-05",
@@ -114,7 +114,7 @@
     "target": null,
     "record": "UNKNOWN 当前a952焦点修复未复验；b1 outer1 / reported0/6 / 0PNG；历史strict/direct15及旧父FAILED保留"
   },
-  "reviewRecord": "[review.md](review.md)，NOT_STARTED 当前a952窄修复待独审；原0bc source批准、b1 FAILED/完整return接受分别保留",
+  "reviewRecord": "[review.md](review.md)，APPROVED_SOURCE_PREPARATION 当前a952/b2已独审，actual待复验；原b1 FAILED/完整return接受保留",
   "mainRecord": "NOT_INTEGRATED；b675 是共享输入，不含本模块",
   "next": "临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，当前是 branch 实施而非已部署。",
   "risks": "",

@@ -6,4 +6,6 @@
 
 后继 `/private/tmp/prm-b2` 是同caller的新revision，parent仅加精确prior失败/terminal/outerexit/cleanup/EOF/保守账校验；worker逐字不变，权限/cleanup/计量cap与六组均不变。原60,000ms已用12,385ms，剩47,615ms包含15,000mscleanup，不另给新60s、不借direct信用。完整旧包与outer共37文件525,259B计入8MiB；新packet+raw+256KiBouter reserve也计入。
 
-差量仅留自有TMP：[parent diff](/private/tmp/prm-b2/parent.diff)、[source diff](/private/tmp/prm-b2/source.diff)、[manifest](/private/tmp/prm-b2/manifest.json)。未授下一Chrome，source/native delta等root一次聚焦审；无gate/free/import/tests或第二运行。最终clean metadata HEAD常规回绑TMP，不递归metadata提交。
+差量仅留自有TMP：[parent diff](/private/tmp/prm-b2/parent.diff)、[source diff](/private/tmp/prm-b2/source.diff)、[manifest](/private/tmp/prm-b2/manifest.json)。未授下一Chrome，source/native delta已获root一次聚焦接受；无gate/free/import/tests或第二运行。最终clean metadata HEAD常规回绑TMP，不递归metadata提交。
+
+当前[源码接受](root-source-review.json)、[native接受](root-native-boundary.json)、[root输入核验](root-input-audit.json)原样归档。前述source-manifest的null审核字段是审前固定准备快照；当前结论由本README/唯一status及两真实报告提供。无actual通过声明。

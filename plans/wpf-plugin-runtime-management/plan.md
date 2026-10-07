@@ -65,3 +65,5 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## 当前焦点修复固定安全点
 
 [a952焦点修复与同caller后继](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)只复用现有guarded read控件模式，保实际读完成后的自然focus验收。首失败获独立接受但不算PASS；新source/后继runtime尚未通过。不动原六组其他行为，旧packet完全冻结；当前仅SOURCE/PREPARED，正常封存后STOP，待manager正式资源安排。
+
+本自然封存已收到[a952/b2限定独审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)：0finding、同native边界接受，实际仍未复验。正常metadata HEAD重绑不触发递归source review；下一运行继续manager唯一资源协调。

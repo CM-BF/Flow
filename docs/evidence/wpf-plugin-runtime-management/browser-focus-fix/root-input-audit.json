@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T12:47:24.398194+00:00",
+  "counts": {
+    "sources": 5,
+    "readonly": 75,
+    "prepared": 5,
+    "external": 105,
+    "node": 1,
+    "priorBrowser": 37,
+    "priorLocal": 2,
+    "manifest": 12
+  },
+  "logicalReadBytes": {
+    "sources": 85229,
+    "readonly": 683803,
+    "prepared": 49984,
+    "external": 635000858,
+    "node": 50320,
+    "priorBrowser": 525259,
+    "priorLocal": 31980,
+    "manifest": 153008
+  },
+  "mismatches": [],
+  "pythonAst": "parsed only; no imports/execution",
+  "baseIdentityMatches": true,
+  "head": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "dirty": " M plans/wpf-plugin-runtime-management/plan.md\n M plans/wpf-plugin-runtime-management/review.md\n M plans/wpf-plugin-runtime-management/status.md\n?? docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json\n?? docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/\n",
+  "runtimeMarkers": [],
+  "auditNote": "First read script used a cwd-relative prepared filename and stopped before output; corrected to packet-relative. No runtime or project effects."
+}
