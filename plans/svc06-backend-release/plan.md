@@ -1,12 +1,14 @@
 # SVC06 固定后台发布产物
 
-创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v7，仅own plan/evidence；共享产品已停写交回；真实固定产物构建/import已审并main，后继零任务真实三宿主/checkout不可读实验已限定批准并main；默认部署链、refresh/resume与个人服务验收仍open。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v9，仅own plan/evidence；共享产品已停写交回。固定产物构建、真实三宿主/checkout不可读实验及自有refresh/resume、旧数据/策略检查已独审并main；2026-10-07个人后台7d1/source6c已实际更新并获结果独审，当前仅该批main接收与完整实际领取链的限定剩余，不能再将个人部署记为未验。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
 ## 当前事实与边界
 
-SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两Web产物/指针/凭据；0operator query。该批准不证明本片实现。preview.mjs runService目前以config.repository为cwd执行TS，维护target核该checkout；本次detached362与server zod链接缺失体现交付耦合，未观测混版事故。主线恢复aeb后已加载进程维持362；现node_modules保持，不在本片准备中重启/安装个人环境。
+2026-10-07T13:49:09.195637Z实际窗口已归还：个人后台固定7d1/source6c，三角色运行，中心accepting21；暂停checkpoint已核旧三组停止、64表旧列/身份/配置/Webd629-v3与三保留版本保持。恢复后原排队任务自然running，operator未提交任务或query。唯一结果审查已批准；完整requestId/中心receipt/本地assignment链未采，actualClaimRecovery仍UNKNOWN，不将此未知写成部署未发生。
+
+以下为创建时历史基线，不表示当前运行版本：SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两Web产物/指针/凭据；0operator query。该批准不证明本片实现。preview.mjs runService目前以config.repository为cwd执行TS，维护target核该checkout；本次detached362与server zod链接缺失体现交付耦合，未观测混版事故。主线恢复aeb后已加载进程维持362；现node_modules保持，不在本片准备中重启/安装个人环境。
 
 ## 小模块与Interface候选
 
@@ -23,15 +25,15 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 
 零provider自有环境：固定真实server/runner入口与锁依赖产物成功运行；开发checkout/source及其node_modules改变后，既有release入口/延迟依赖读取身份不变。缺件、损坏、外链在停服务前拒绝并旧服务继续；staging失败/发布ACK未知按既有恢复语义处理。真实PG升级/旧数据、runner身份、维护审计和Web独立指针保持。保留/清理有界、运行与unknown不能误删；相同descriptor重放不能另启服务。必要直接消费者覆盖现personal-preview/maintenance与Web兼容导入，不重复无关业务全集。
 
-真实个人切换不在本片当前授权内；固定实现/组合证据独审后另以既有窗口执行，不能自动重启用户服务/刷新tab/提交模型。TUI与工程并行，后端发布不新增客户端串行门禁。
+个人切换已依既有授权及固定窗口实际完成；该已消费窗口不授权继续重启、探针、刷新用户tab或提交模型。后继操作仍须其实际范围与资源交接。TUI与工程并行，后端发布不新增客户端串行门禁。
 
 ## TODO
 
 - [x] **SVC06-01** 记录唯一用户结果、现证据与模块边界，独立plan/evidence领取。
 - [x] **SVC06-02** 在可用worker安全点固定最小实现scope/依赖产物策略与直接消费者后take。
-- [ ] **SVC06-03** 实现产物准备、校验及现host启动接线，证明开发checkout独立性。
-- [ ] **SVC06-04** 自有环境局部兼容/失败/保留检查与独立review，受控main接收。
-- [ ] **SVC06-05** 后续明确窗口下真实个人发布及固定身份/数据/网页保留验收。
+- [x] **SVC06-03** 实现产物准备、校验及现host启动接线，证明开发checkout独立性；限定实验前提与来源见下方验收收口。
+- [x] **SVC06-04** 自有环境局部兼容/失败/保留检查与独立review，受控main接收；包含已审refresh/resume、旧数据与配置检查，历史失败保留。
+- [ ] **SVC06-05** 真实个人发布及固定身份/数据/网页保留已实际通过并独审；本批结果待main接收，完整实际领取链仍UNKNOWN，后继验收不由accepting/profile替代。
 
 ## 已收到的固定工具研究（GO只读输入）
 
@@ -96,3 +98,11 @@ SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388，复用其受信policy/�
 ## 2026-10-07 10:07:16 UTC — 诊断版本后继
 
 [当前候选](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)固定6c0fdcda（b2b仅四个已审诊断文件差异）。原b2b/c2c成功构建与r1宿主FAIL分开保留；下一新namespace构建沿原已审builder与预算，host根据有界私有阶段/stderr证据定位，不盲重放已消费run。03/04/05仍open，实际三retained新tuple兼容与个人顺序不省略。
+
+## 2026-10-07 当前验收收口
+
+- **03完成**：真实固定产物准备/验证/内部解析及三个真实host已有独审和main接收；[checkout拒读实验](../../docs/evidence/svc06/artifact-host-followup/RESULT.md)只证明其明确实验边界，个人实际发布另外验证默认生产入口。
+- **04完成**：[固定7d1的自有旅程独审](../../docs/evidence/svc06/diagnostics-host-bootstrap/result-independent-review.json)覆盖真实三角色refresh/resume、27→35迁移、旧列保留、默认off/非法策略停前拒绝、cookie/CSRF/logout与正常收尾，已main6571056455be3e4289f162041746420246ac2db4。既有原红、Web显式stop exit1、旧runner首因UNKNOWN不改。
+- **05已实证部分**：[实际结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md)完成个人固定更新和保留，唯一[结果独审](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)固定I02 `84d43d931bf1dc3498f562b93e00915d760e6ba4`、target `acbdc40358a858256967a7322109331a28f4a2fb`。剩余仅本批受控main接收和实际领取链的证据限制；不追加模型/任务或现场探针凑验收，不将父FLOW完整验收提前完成。
+
+以下各历史时间段的当时open/NOT_RUN陈述保留为过程证据，以本节和唯一status为当前事实。
