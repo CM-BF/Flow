@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:02:37.739545Z / main 9f314e89；已合入与个人部署分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:21:18.665591+00:00 / main f5a13cbe；源码接收与个人部署分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin 9f314e89 已含 Codex 公共会话、ENG01L 只读宿主组合及 X01 固定插件测试证据。个人仍 backend af51/v18、Web d629/v3/c7b宿主；新恢复、逐消息设置和完整工具正文未部署。 |
+| 已集成main状态 / HEAD | main/origin f5a13cbe 已接工具全文13源及2/2公开HTTP/PG结果、工程宿主初始化与后续清理证据；个人仍 backend af51/v18、Web d629/v3/c7b宿主，未随main升级。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 看板已提供登录入口与任务时间；各组独立的小检查可并行进行，失败记录与资源清理结果分别保留。 |
-| 下一可用交付 | 让已审聊天功能进入实际可用更新，并及时接收工具全文和工程宿主的定向验证结果。 |
+| 下一可用交付 | 新版登录恢复的发布接线与当前版本完整目标旅程并行推进；现有个人页面和历史继续保留。 |
 | 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
 | 需用户决定 | NONE |
 
@@ -481,3 +481,5 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T08:02:37.739545Z：主线9f314e89已接收ENG01L受审源码与X01包固定/版本固定证据，实际4320为190来源。ENG01L隔离原生initialize已READY、关闭已确认，但目录测量返回unknown，原件与scratch KEEP；不称完整工程资格或全writer撤销。P02 PG02于07:59:48.421609Z终止：0/2失败原件保留，专库/组/端口/exact tmp确认清理归还；原owner只修测试wrapper的已消费body cancel与注入adapter的harness身份，生产store不放宽，未预占下一PG。
 
 当前普通local与独立PG按既有隔离方法连续修复，准备不预占共享窗口。P02原两次失败不是额度终身耗尽；新的有界段由co-lead按fresh实际归属协调。SVC09已有明确owner/候选，等待原片安全交付，不重复创建另一发布器。
+
+2026-10-07T08:21:18.665591+00:00：CHAT05P02原两次失败和PG03成功分别封存，真实factory/runRunner注入材料2,225,539B/9页完整一致，0provider；当前主线focused组合types0。ENG01L一次initialize/close已有记录，但原超限outerFAIL不改，后续exact清理独立成功。P02/ENG01L原owner已正式停写归还范围；SVC09由assignment_review实施，O16由原native_center_owner按f5a固定组合准备新旅程，旧FAIL/KEEP不动。证据分别在各唯一status与I02固定接收记录；共享PG于08:12:42归还Mika，本队当前无holder。
