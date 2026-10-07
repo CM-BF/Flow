@@ -41,7 +41,7 @@ function projectSession(record: SessionRecord): SessionEvidence {
       adapterVersion = parsed.data.adapterVersion;
       knownAdapter = (conversationHarness(record.harness)?.adapters as readonly string[] | undefined)?.includes(adapterVersion) ?? false;
       const models = (parsed.data.resources ?? []).filter(value => value.startsWith('model:')).map(value => value.slice(6));
-      if (adapterVersion === legacyAdapterVersion) effective = { model: models.length === 1 && models[0]!.length > 0 && models[0]!.length <= 180 ? models[0]! : null,
+      if (knownAdapter && record.harness === 'claude' && adapterVersion === legacyAdapterVersion) effective = { model: models.length === 1 && models[0]!.length > 0 && models[0]!.length <= 180 ? models[0]! : null,
         thinking: 'disabled', tools: 'configured-readonly', source: { kind: 'recorded-adapter-session', adapterVersion, taskId: record.task_id, attemptId: record.attempt_id, detailId: details[0]!.id } };
     }
   }

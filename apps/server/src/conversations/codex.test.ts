@@ -86,6 +86,32 @@ it('routes only the exact new directory codec to the native-v2 SQL choice',async
 });
 
 import { turnViews } from './turn-read.js';
+it.each(['codex', 'claude'] as const)('projects legacy session settings only for its matching harness: %s', async harness => {
+  const adapterVersion = 'claude-sdk-0.3.290-v1';
+  const task = { id: 't', current_attempt_id: 'a', owner_version: 2, status: 'succeeded', verification_status: 'passed', submission: { harness } } as TaskRecord;
+  const query = vi.fn(async (sql: string) => {
+    if (sql.includes('flow.artifacts')) {
+      expect(harness).toBe('claude');
+      return { rows: [] };
+    }
+    return { rows: [{ harness, task_id: 't', attempt_id: 'a', native_session_id: 'thread', runner_id: pin.runnerId, active_task_id: null,
+      details: [{ id: 'session-detail', content: JSON.stringify({ id: 'session-event', sequence: 1, type: 'session', nativeSessionId: 'thread', adapterVersion, resources: ['model:recorded-model'] }) }] }] };
+  });
+  const previews = vi.mocked(readAssistantFinalPreviews).mockReset();
+  previews.mockResolvedValue(harness === 'claude' ? [{ preview: null }] : []);
+  const client = { query } as unknown as PoolClient;
+  const [projection] = await assistantProjections(client, [task]);
+  if (harness === 'codex') {
+    expect(projection).toEqual({ assistant: { state: 'unavailable', reason: 'unknown-adapter' }, effective: { model: null, thinking: 'unknown', tools: 'unknown', source: null } });
+    expect(previews).toHaveBeenCalledWith(client, []);
+    expect(query).toHaveBeenCalledTimes(1);
+  } else {
+    expect(projection).toEqual({ assistant: { state: 'unavailable', reason: 'missing-result' }, effective: { model: 'recorded-model', thinking: 'disabled', tools: 'configured-readonly', source: { kind: 'recorded-adapter-session', adapterVersion, taskId: 't', attemptId: 'a', detailId: 'session-detail' } } });
+    expect(previews).toHaveBeenCalledWith(client, [{ taskId: 't', attemptId: 'a' }]);
+    expect(query).toHaveBeenCalledTimes(2);
+  }
+});
+
 it('rejects a foreign-harness task before any batch detail/context reads',async()=>{
  const query=vi.fn(async()=>({rows:[{id:'task',submission:{harness:'claude'}}]}));
  await expect(turnViews({query} as unknown as PoolClient,[{id:'turn',task_id:'task',conversation_id:'conversation',number:1,user_text:'text',created_at:new Date()}],'codex')).rejects.toMatchObject({code:'conversation_task_mismatch'});
