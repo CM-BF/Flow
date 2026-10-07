@@ -49,7 +49,8 @@
   "postcheckMetadata": {
     "field": "continuation-input.pending.admission.dispatch",
     "before": "dispatch.json (source/input binding only; ready=false rejects execution)",
-    "after": "dispatch.json (source/input binding only; ready=false rejects execution)",
-    "boundary": "Descriptive entry reference corrected after local02; input bytes and dispatch input pin updated. No runtime source/phase/tuple/authority change; no rerun."
+    "after": "continuation-dispatch.json (source/input binding only; ready=false rejects execution)",
+    "boundary": "Descriptive entry reference corrected after local02; input bytes and dispatch input pin updated. No runtime source/phase/tuple/authority change; no rerun.",
+    "ineffectiveFirstReplacement": "a89 metadata string kept old descriptive prefix; corrected in this metadata-only delta."
   }
 }
