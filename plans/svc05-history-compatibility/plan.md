@@ -49,3 +49,7 @@
 ## SVC05H01-07 同版本中心恢复
 
 - [x] **SVC05H01-07** 共享PG恢复后，已按新单次许可恢复af51/v18中心；runner/Web/数据/配置保持，OPS14 PID-only监督2095ms、8保留检查通过。Execution Lead独立14项结果核验通过，64表raw无变，窗口23:46关闭；记录已精确接收main 122bdcaa，原失败与许可不重用。见[独审原件](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)。
+
+## SVC05H01-08：恢复当前已发布网页的访问
+
+- [ ] **SVC05H01-08**：按原FLOW-001/REQ19范围，固定af51后台/d629网页v3，以既有web bootstrap仅替换Web；保center/runner/令牌/DB/任务/pointer和三个retained。新独立review、一次操作/source-window、前后保护事实与main收口分别留证。当前仅只读准备，不复用历史许可、不新增provider或刷新用户tab。方案：[本次唯一proposal](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json)。

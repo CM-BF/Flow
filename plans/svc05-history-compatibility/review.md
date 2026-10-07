@@ -159,3 +159,7 @@ Execution Lead 已独立 APPROVED 实现d8349bdec815b53f29ddae54d6b5b1ce49d78bd5
 ## 2026-10-06 23:51:26 UTC：main 接收 / 停写
 
 固定main `122bdcaa790118154f8288c12ef6627da5e616b8` 已精确包含delivery `8ac8588de9b0361492569d20dc2d57c4a41c80e8` 的恢复目录及plan/status/review，逐文件同blob共35项；[接收回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/main-receipt.json)。原实现/原始证据不变，无新probe/tests/服务操作。本片delivered，提交后fresh原子release，CHAT05的验证准入仍独立。
+
+## 当前d629/v3网页同版本恢复（待审）
+
+本次仅新web-recovery-d629-20261007记录；旧发布与中心恢复批准不扩大。已固定一次只读facts、原af51 bootstrap入口、当前准确请求tuple与38来源绑定。新操作NOT_RUN，作者不自批，待native_center_owner独立方案审查。

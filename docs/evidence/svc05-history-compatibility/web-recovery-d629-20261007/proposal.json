@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T02:40:17.013940+00:00",
+  "state": "PREPARED_NOT_EXECUTED",
+  "scope": "same-version Web-only recovery of current d629/v3; no backend/runner/DB/pointer mutation",
+  "target": "af51c621696230fbced12227670f014ca73bd8a1",
+  "claimId": "967126c0-bbcf-4107-a91c-2d5564417cd7",
+  "claimVersion": 1,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+    "web",
+    "bootstrap",
+    "--directory",
+    "/Users/citrine/.flow-personal",
+    "--request",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/request.json"
+  ],
+  "request": {
+    "expectedVersion": 3,
+    "expectedBackendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+  },
+  "currentArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "factsAt": "2026-10-07T02:38:44.763Z",
+  "rootCheckout": "Lead only must freeze exact clean af51; never run this from moving main or owner evidence WT",
+  "sourceWindow": "Lead restores main only after result/checkpoint and permitted before/after differences are saved",
+  "existingOperation": "af51 bootstrapPreviewWeb validates marker, current backend owned center/runner and listener, v3, all 3 retained artifacts and their af51 reports before Web stop; previous release branch does not commit or change pointer",
+  "sequence": [
+    "New exclusive durable authorization/reservation in this new evidence directory. No old approval or invocation reused.",
+    "Validate frozen runtime/source and original config/source/center/runner/pointer identities; changed or unknown gate stops before command.",
+    "Run exact existing CLI once under fixed OPS14 childPidOnly supervision: 28s work, 0 TERM, 2s reap; only operator PID may be stopped, never detached service groups.",
+    "CLI owns original Web TERM-only<=5s and new Web readiness<=10s; no FORCE, no second command, no alternate arguments.",
+    "Persist original stdout/stderr/report/checkpoint before any post-observation decision; unknown is preserved without retry.",
+    "One bounded post snapshot checks same fixed installation/config/profile/maintenance/source/pointer/retained, unchanged center/runner, new Web owned/identity readiness. No user tab refresh."
+  ],
+  "allowedDiffs": [
+    "state.processes.web",
+    "state.webReleaseOperation(action bootstrap/version3/outcome/at)",
+    "old owned web-exit.json nonce/code/signal",
+    "own operation evidence"
+  ],
+  "mustPreserve": [
+    "config.json",
+    "claude.json",
+    "maintenance.json",
+    "web-release.json and current d629/version3/all 3 retained",
+    "state.source af51/dirtyfalse",
+    "center/runner process records and identity",
+    "installation/DB marker/runner v18; user task data and ongoing work"
+  ],
+  "failureBoundary": [
+    "any preflight mismatch: no CLI",
+    "unknown old Web stop: no force, no second stop/spawn",
+    "new start/readiness unknown: preserve pending state, no retry/rollback/publish",
+    "operator timeout: child PID only; detached services remain for read-only ownership resolution"
+  ],
+  "diagnosis": "Web owned running with64 CLOSED and identity socket closure is consistent with maxConnections64, not proof of personal leak root cause; isolated prior churn did not reproduce residual sockets.",
+  "logs": "fixed spawnOwnedProcess and runService use stdio ignore; no service stderr file was available from this launcher. Prior exit files have nonmatching nonces and are historical, not current exits.",
+  "noActionsPerformed": [
+    "restart",
+    "stop",
+    "publish",
+    "maintain",
+    "provider",
+    "userTab"
+  ],
+  "authorization": "readonly preparation and scope take only; new one-shot execution/source window still required"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:51:26 UTC |
+| 最近更新时间 | 2026-10-07 02:40:50 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 3a263677db28e92f28622917eef70edb0f260f85 / 新恢复 d8349bdec815b53f29ddae54d6b5b1ce49d78bd5；运行目标af51，metadata以本文件提交为准 |
-| 工作树dirty状态 | 全源码停写；本次仅独审/窗口关闭metadata，clean以最终交付回执为准 |
-| 工作分支状态 | completed |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 单次center ready/2095ms/8保留检查；无产品测试。 |
+| 工作树dirty状态 | 本次仅新d629同版本Web恢复准备；旧source/raw全停写 |
+| 工作分支状态 | in-progress |
+| 本片段交付阶段 | review |
+| 检查状态 | NOT_RUN；新恢复只读准入已记录，尚未执行bootstrap；原恢复批准保持历史范围 |
 | 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)；本次af51恢复记录已精确接收 main 122bdcaa790118154f8288c12ef6627da5e616b8，[接收回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/main-receipt.json) |
-| 实现目标 | d8349bdec815b53f29ddae54d6b5b1ce49d78bd5 |
-| 实现范围 | docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/operator.mjs, docs/evidence/svc05-history-compatibility/center-recovery-af51/supervise.py |
+| 实现目标 | UNKNOWN |
+| 实现范围 | docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 个人中心已恢复并通过独立核验；原 runner、网页、配置和用户数据保持，运行窗口已关闭。 |
-| 下一可用交付 | 本片段已交付；没有后续个人服务操作。 |
+| 当前产出 | 后台和runner仍正常，网页身份请求断开；已固定只替换网页进程的同版本恢复方案。 |
+| 下一可用交付 | 独立审查后，在固定版本窗口恢复网页访问并核对原数据与页面版本。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 实际恢复a498b0153ef9512ba6c79fefd9483f20b68b64ca；14项独立核对全true，准备d834批准及历史原件保留。 |
-| Claim | 22000abe-192a-489a-bdee-6cbc3cd2ea4a v1已fresh核 active；全停写，本提交后原子release。旧cd2d已release，OPS14旧wrapper不在本范围。 |
+| Review | 新d629同版本Web恢复准备待独立review；旧af51中心恢复与发布批准不扩展到本次 |
+| Claim | 967126c0-bbcf-4107-a91c-2d5564417cd7 v1 active，仅own plan与新web-recovery-d629-20261007；旧22000abe v2已release |
 | 架构影响 | 既有host维护与独立Web CAS完成实际发布；限定旧intent退役有私有原件/审计，普通idle/API不变。运行af51与Web5069586/d629独立于moving main。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,6 +36,7 @@
 | SVC05H01-05 | completed | assignment_review / Execution Lead独审 | 实际af51/v18+d629/v3；[唯一结果APPROVED](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，24命令/25检查/64表保护/27迁移/三retained；原失败与unknown保留 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 | SVC05H01-07 | completed | assignment_review | [实际恢复独立批准](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)，一次center ready、64表原摘要相同；窗口CLOSED，记录已main接收。 |
+| SVC05H01-08 | in-progress | assignment_review | [d629同版本Web恢复准备](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json)；一次只读观察，操作NOT_RUN |
 
 ## Dashboard
 
@@ -124,3 +125,7 @@ GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行�
 ### 2026-10-06 21:54 UTC 最终main接收与停写
 
 本片段已交付。最终cef5两完整范围与已接收main及固定后继零差；原24命令/25检查、全部失败和unknown记录保持。所有个人操作已结束，当前只补接收记录并释放占用；未来OPS14接入须由新owner领取准确文件，不能改写既往运行来源。[正式接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)。
+
+## 2026-10-07 d629同版本网页恢复准备
+
+2026-10-07 02:40:50 UTC：新claim仅两scope，不重用已消费许可。02:38:44一次只读现场确认af51/v18与d629/v3，center/runner/Web均owned running，网页64 CLOSED且identity请求UND_ERR_SOCKET；全库4 succeeded、0 unfinished/uncertain，queue仅1 promoted、operation.lock absent。中心/runner不重启，current pointer及三个retained不变。原exit文件nonce均为历史，stdio ignore没有可追溯当前stderr；不把关联当根因。新bootstrap尚未调用，等待独立方案核验和Lead唯一source-window，0provider/用户tab。
