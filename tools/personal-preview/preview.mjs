@@ -10,6 +10,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
+import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
 import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
@@ -216,7 +217,7 @@ export async function statusPreview({ directory }) {
     }
   } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
   return { installationId: config.installationId, webArtifact, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
-    center: { url: centerUrl, reachable: processes.center === 'running' && await ownsListener(state.processes.center, config.centerPort) && await reachable(`${centerUrl}/api/health`) }, webUrl: `http://127.0.0.1:${config.webPort}`, database: databaseState, work, lastError: state.lastError,
+    center: { url: centerUrl, reachable: processes.center === 'running' && await ownsListener(state.processes.center, config.centerPort) && await reachable(`${centerUrl}/api/health`) }, webUrl: `http://127.0.0.1:${config.webPort}`, database: databaseState, work, lastError: state.lastError, startFailure: publicStartupFailure(state.lastStartFailure),
     profile, lastProcessExits, credentialsFile: join(config.directory, 'config.json'), limits: { maxTurns: 2, maxBudgetUsd: 0.20, timeoutMs: 60_000, scope: 'per-query-not-project-total' } };
 }
 export async function stopPreview({ directory }) {
@@ -244,32 +245,45 @@ export async function runService(directory, role) {
     if (!owned) await sleep(20);
   } while (!owned && Date.now() < deadline);
   if (!owned) fail('SERVICE_NOT_OWNED');
-  await assertMarker(config);
-  if (role === 'runner' && JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
-  const browser = await readBrowserSessionLaunch(config);
-  const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
-  const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);
-  let args; let cwd = runtime.root;
-  if (role === 'center') {
-    args = ['--import', 'tsx', 'apps/server/src/main.ts'];
-  } else if (role === 'runner') {
-    args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
-  } else {
-    const state = await privateJson(join(config.directory, 'state.json'));
-    const release = await readWebRelease(config.directory);
-    const artifact = release ? currentWebArtifact(release) : state.webArtifact;
-    await verifyWebArtifact({ directory: config.directory, artifact });
-    cwd = config.directory;
-    args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, runtime.root,
-      String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
-  }
-  const child = spawn(process.execPath, args, { cwd, env, stdio: 'ignore' });
-  let stopping = false;
-  const stop = () => { if (!stopping) { stopping = true; child.kill('SIGTERM'); } };
-  process.on('SIGTERM', stop); process.on('SIGINT', stop);
-  const result = await new Promise(resolve => { child.once('error', () => resolve({ code: null, signal: 'start-error' })); child.once('exit', (code, signal) => resolve({ code, signal })); });
-  await save(join(config.directory, `${role}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
-  process.off('SIGTERM', stop); process.off('SIGINT', stop); process.exitCode = result.code ?? (stopping ? 0 : 1);
+  let diagnostic, phase = 'configuration-ready', child, stopping = false;
+  const stop = () => { if (!stopping) { stopping = true; child?.kill('SIGTERM'); } };
+  const stage = async next => { phase = next; await diagnostic.stage(next); };
+  try {
+    diagnostic = await openStartupDiagnostics({ directory: config.directory, role, nonce, pid: process.pid });
+    await stage('marker'); await assertMarker(config);
+    if (role === 'runner' && JSON.stringify(await privateJson(join(config.directory, 'claude.json'))) !== JSON.stringify(NATIVE_CONFIGURATION)) fail('NATIVE_CONFIGURATION_CHANGED');
+    await stage('policy');
+    const browser = await readBrowserSessionLaunch(config);
+    const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
+    await stage('runtime');
+    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);
+    let args; let cwd = runtime.root;
+    if (role === 'center') args = ['--import', 'tsx', 'apps/server/src/main.ts'];
+    else if (role === 'runner') args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
+    else {
+      const state = await privateJson(join(config.directory, 'state.json'));
+      const release = await readWebRelease(config.directory);
+      const artifact = release ? currentWebArtifact(release) : state.webArtifact;
+      await verifyWebArtifact({ directory: config.directory, artifact });
+      cwd = config.directory;
+      args = [fileURLToPath(new URL('./static-web.mjs', import.meta.url)), config.directory, runtime.root,
+        String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
+    }
+    await stage('child-spawn');
+    child = spawn(process.execPath, args, { cwd, env, stdio: ['ignore', 'ignore', 'pipe'] });
+    process.on('SIGTERM', stop); process.on('SIGINT', stop);
+    const result = await observeStartupChild(child, diagnostic);
+    diagnostic = null;
+    await save(join(config.directory, `${role}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
+    process.exitCode = result.code ?? (stopping ? 0 : 1);
+  } catch (error) {
+    // This path is before child spawn, or after its observed exit. Never abandon a running child for a logging failure.
+    let diagnosticError;
+    if (diagnostic) { try { await diagnostic.finish(null, error); } catch (secondary) { diagnosticError = startupErrorCode(secondary); } }
+    try { await save(join(config.directory, `${role}-startup-failure.json`), { nonce, ...startupFailure(error, role, phase), ...(diagnosticError ? { diagnosticError } : {}) }); } catch { /* The primary error remains authoritative when evidence cannot be saved. */ }
+    throw error;
+  } finally { process.off('SIGTERM', stop); process.off('SIGINT', stop); }
+
 }
 
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
@@ -307,9 +321,11 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
   await verifyWebArtifact({ directory: config.directory, artifact });
   state.webArtifact = artifact;
   if (selectedBackend) state.backendArtifact = selectedBackend;
-  state.processes = {}; state.lastError = null;
+  state.processes = {}; state.lastError = null; state.lastStartFailure = null; state.startCleanup = []; state.startEvidenceErrors = [];
+  let startingRole = null, startingPhase = 'spawn';
   try {
     for (const role of roles) {
+      startingRole = role; startingPhase = 'spawn';
       if (role === 'runner') {
         if (!config.runner) { config.runner = await api(config, '/api/runners', { name: 'Personal preview', harnesses: ['claude'], capacity: 1 }); await save(join(config.directory, 'config.json'), config); }
         await database(config, async pool => {
@@ -321,8 +337,10 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
       const record = await spawnOwnedProcess({ args: [roleRuntime.entry, 'internal-service', config.directory, role], cwd: roleRuntime.root, env: await launchEnvironment(role, config, backendHead),
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
+      startingPhase = 'ready';
       await waitReady(config, role, record, artifact, backendHead);
     }
+    startingPhase = 'final-verification';
     if (selectedBackend) await backendRuntime(config, selectedBackend);
     else {
     const revision = await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 });
@@ -332,10 +350,9 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
     state.source = { head: backendHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
     return statusPreview({ directory: config.directory });
-  } catch {
-    state.lastError = 'START_UNCONFIRMED';
-    for (const record of Object.values(state.processes).reverse()) await stopOwnedProcess(record);
-    await save(join(config.directory, 'state.json'), state);
+  } catch (error) {
+    await preserveStartupFailure({ state, error, role: startingRole, phase: startingPhase, stop: stopOwnedProcess,
+      save: value => save(join(config.directory, 'state.json'), value) });
     fail('START_UNCONFIRMED_CHECK_STATUS');
   }
 }
@@ -368,7 +385,7 @@ async function launchWeb(config, state, artifact, processes = webHostProcesses, 
   await processes.ready(config, 'web', record, artifact, state.source?.head);
 }
 const webHostProcesses = Object.freeze({ inspect: inspectOwnedProcess, ownsListener, stop: stopOwnedProcess, spawn: spawnOwnedProcess, ready: waitReady });
-const webHostFiles = Object.freeze(['cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'environment.mjs', 'browser-session-configuration.mjs', 'web-retention-policy.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
+const webHostFiles = Object.freeze(['cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'startup-diagnostics.mjs', 'environment.mjs', 'browser-session-configuration.mjs', 'web-retention-policy.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
 const maintenanceHostFiles = Object.freeze([...webHostFiles, 'maintenance-host.mjs']);
 const sha256 = value => createHash('sha256').update(value).digest('hex');
 async function boundedHostBytes(path, maximum = 65_536) {
