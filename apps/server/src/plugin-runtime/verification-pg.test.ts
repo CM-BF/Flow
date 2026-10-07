@@ -15,7 +15,8 @@ import type { PluginToolBinding } from '../../../../packages/contracts/src/plugi
 import type { VerifierRunnerClaimRequest } from '../../../../packages/contracts/src/verifier-runner-claim.js';
 
 const fixture = new PluginDatabaseFixture('runtime', 4), pool = fixture.pool;
-const owner = randomUUID(), project = randomUUID();
+const owner = randomUUID();
+let project: string;
 let app: Awaited<ReturnType<typeof createServer>> | undefined, base = '', startup = true;
 let http = 0, bytes = 0;
 const facts: unknown[] = [];
@@ -99,7 +100,12 @@ afterEach(() => fixture.checkWork());
 let old: Material, historical: PluginToolBinding;
 beforeAll(async () => {
   await fixture.create(); await fixture.stage('database-created'); await openApp(true);
-  await pool.query("INSERT INTO flow.projects(id,workspace_id,title,revision) VALUES($1,'personal','Verifier scope',1)", [project]);
+  const created = await request('/api/projects', { workspaceId: 'personal', title: 'Verifier scope' });
+  expect(created.status).toBe(201);
+  expect(created.body.snapshot.project).toMatchObject({ workspaceId: 'personal', title: 'Verifier scope', revision: 1 });
+  expect(created.body.snapshot.graph).toMatchObject({ revision: 1, nodes: [] });
+  project = created.body.snapshot.project.id;
+  expect(project).toEqual(expect.any(String));
   old = await material('tool', await runner()); historical = (await makeBinding(old)).b;
   await fixture.start(closeApp); await fixture.stage('baseline-closed');
 }, 30000);
