@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:11:49.742540+00:00；main集成仍未完成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:19:26.622671+00:00；main集成另由Lead接收 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -17,7 +17,7 @@
 | 工作分支状态 | in-progress |
 | 当前产出 | 流式内核已支持相同正文的32/512分片，保持身份、队列与终态校验；真实Codex、公开流读取和界面尚未验收。 |
 | 下一可用交付 | 流式内核源码与直接消费者局部证据待独审；已审首片、loader和main接线可受控集成，随后继续公开Codex流与会话界面。 |
-| 当前阻塞 | ACTIVE: 当前流式片待独审；公开流与会话界面尚未接通。局部运行已结束，旧R1目录继续KEEP。 |
+| 当前阻塞 | ACTIVE: 流式片独审要求修复pending sink取消；源码已修，2定向与strict通过，待独立复审；公开流与会话界面尚未接通。局部运行已结束，旧R1目录继续KEEP。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
@@ -62,4 +62,8 @@ C02-04 main 本地段已归还 architecture_read：4定向进程/31.38s内部段
 
 已审首片/loader/main分别绑定[main-intake](../../docs/evidence/mature02c02/main-intake.json)，等待受控main接收，不等于全部C02完成。当前stream普通段预算≤15min/最多6child各45s/TMP16MiB/raw256KiB/source+metadata1MiB，附加预算18087936B已告Mika；SVC06失败保留其自有资源期间，Mika明确准隔离local；fresh组合floor2702442496B通过。新段真实开始由stream-segment登记，不重置task开工。
 
-Stream唯一[段记录](../../docs/evidence/mature02c02/stream-segment.json)：4进程；首次104选103过1失败，完整turn fixture修正后1过103未选，104 distinct分轮；types2→0。全部final-owned absent/双EOF/ownTMP同身份清理，0待启动/PG/native/provider。接口与限制见[stream Interface](../../docs/evidence/mature02c02/stream-interface.md)，当前待固定源码独审。
+Stream唯一[段记录](../../docs/evidence/mature02c02/stream-segment.json)：4进程；首次104选103过1失败，完整turn fixture修正后1过103未选，104 distinct分轮；types2→0。全部final-owned absent/双EOF/ownTMP同身份清理，0待启动/PG/native/provider。接口与限制见[stream Interface](../../docs/evidence/mature02c02/stream-interface.md)，65c97315独审结果忠实性接受；source有1P2，de0f3dc0修后2定向通过/104未选及strict0，待独立复审。
+
+C02-05下一ready接线：[public-stream-next](../../docs/evidence/mature02c02/public-stream-next.md)。保持既有编号；公开Codex source/channel、中心锁/patch读、shared projection与Web/TUI是完整用户终点。现known共享owner已逐literal登记，未擅取写权。
+
+取消P2修复源de0f3dc0：接收器获得合并signal，取消停止等待且结果unknown，不声明任意sink副作用完成。原段6进程已用尽并归还X01，新增2例/strict0；单记录保原始4进程与后2进程，不称一次106/106。

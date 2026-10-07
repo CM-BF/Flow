@@ -45,3 +45,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-07T03:39:35.997460+00:00：按已安装find-skills/clean-code/codebase-design/brainstorming复核C02-04主入口：公开profile与host recipe分离，recipe是唯一R06 factory的私有closure，复用publication/storage/guard而非新身份/进程FSM。固定512MiB二进制hash上界与私有目录metadata，不声称OS隔离/auth或活动峰值。首次strict为lstatSync重载ReturnType可能undefined，NonNullable窄修；五fixture因macOS /var alias未规范化而失败，仅test realpath修后5定向过，未放松production规则。41 distinct分轮，全部4child/ownTMP收束；旧raw不改。官方Events和已核evidence lifetime256后继保持独立scope/用户可见stream，不以optOut取代修复。
 
 2026-10-07T04:11:49.742540+00:00：stream安全点复用本地find-skills/brainstorming既有授权设计、codebase-design、clean-code。把长期帧计数改为已有累计字节+有限待消费队列，单接收pump按32帧让出I/O；严格固定0.154通知shape，不放开未知工具/身份/终态。私有delta与最终投影责任分开；尚未冒称public stream。103+1分轮及types2→0，首次fake不完整turn receipt和TS union诊断真实保留；产品不靠放宽超时通过。OPS14复用一段记录，无新supervisor/大闭包。
+
+2026-10-07T04:19:26.622671+00:00：独审P2修复：pending sink必须收到合并signal，abort-aware等待不等于证明sink已停止；Promise.race保留原失败unknown，不新增监督器。只2新增取消反例+strict0，原104不重跑，6process/15min原段已闭合。独立import-only92d01931获status_read04:14:09批准，旧main接线可独立应用，不混stream。
