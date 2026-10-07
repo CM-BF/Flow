@@ -1,0 +1,46 @@
+{
+  "protocol": "flow.x01.version-lifecycle-pg.v1",
+  "productCommit": "cca4ab7c968598844ca5680140ee7c06ec1dd2f4",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/version-rollback-pg.test.ts",
+      "name": "active load-authorized A keeps its pin across B and rollback C with explicit current grants"
+    }
+  ],
+  "tasksMax": 3,
+  "registrationsMax": 1,
+  "attemptsMax": 0,
+  "scope": "One new owner candidate test only; synthetic installed material reuses original fixture, no npm/invoke/provider. Ten old runtime cases remain unselected.",
+  "runnersMax": 1,
+  "runnerCapacity": 2,
+  "wrapperVersions": [
+    "1.0.0",
+    "1.0.1"
+  ],
+  "upstream": "semver@7.8.5"
+}

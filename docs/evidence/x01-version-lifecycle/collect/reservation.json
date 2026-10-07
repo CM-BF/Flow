@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T11:19:46.512451+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/node_modules/vitest/vitest.mjs",
+    "list",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/docs/evidence/x01-version-lifecycle/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "apps/server/src/plugin-runtime/version-rollback-pg.test.ts"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
+  "free": 22091497472,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/docs/evidence/x01-version-lifecycle/collect/tmp",
+    "dev": 16777234,
+    "ino": 124076823
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}
