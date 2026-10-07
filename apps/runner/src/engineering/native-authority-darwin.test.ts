@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import test from 'node:test';
+import { test } from 'vitest';
 import { createDarwinWriteProfile } from './native-authority-darwin.js';
 
 test('policy input rejects noncanonical and executable write aliases', () => {

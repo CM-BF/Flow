@@ -2,21 +2,24 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { copyFileSync, fstatSync, mkdtempSync, readFileSync, writeFileSync, writeSync } from 'node:fs';
 import { join } from 'node:path';
-import test from 'node:test';
+import { test } from 'vitest';
 import { prepareDarwinWriterHost } from './native-authority.js';
 
 const root = process.env.FLOW_ENG01J_SCRATCH;
 const binary = process.env.FLOW_ENG01J_CANARY;
 const inherited = Number(process.env.FLOW_ENG01J_INHERITED_FD);
-assert.ok(root && binary && Number.isSafeInteger(inherited));
+// Ordinary collection must neither require a canary nor spawn a native process.
+const canRun = process.platform === 'darwin' && process.env.FLOW_ENG01J_DARWIN_CANARY === '1'
+  && Boolean(root && binary) && Number.isSafeInteger(inherited) && inherited >= 3;
 function fixture() {
+  assert.ok(root && binary);
   const directory = mkdtempSync(join(root!, 'writer-'));
   const executable = join(directory, 'canary'); copyFileSync(binary!, executable);
   writeFileSync(join(directory, 'calculator.mjs'), '0'); writeFileSync(join(directory, 'baseline.txt'), '0');
   return { directory, executable, executableSha256: createHash('sha256').update(readFileSync(executable)).digest('hex'), arguments: ['app-server', String(inherited)] };
 }
 
-test('real R06 factory closes the inherited regular FD and holds the sandboxed writer handle', async () => {
+test.skipIf(!canRun)('real R06 factory closes the inherited regular FD and holds the sandboxed writer handle', async () => {
   assert.ok(fstatSync(inherited).isFile());
   assert.equal(writeSync(inherited, 'P'), 1); // This FD really is writable in the Node host, before R06 spawn.
   const input = fixture(), host = await prepareDarwinWriterHost(input);
@@ -40,7 +43,7 @@ test('real R06 factory closes the inherited regular FD and holds the sandboxed w
   }
 });
 
-test('changed target identity rejects before transport; wrong executable digest is rejected', async () => {
+test.skipIf(!canRun)('changed target identity rejects before transport; wrong executable digest is rejected', async () => {
   const input = fixture();
   await assert.rejects(prepareDarwinWriterHost({ ...input, executableSha256: '0'.repeat(64) }));
   const host = await prepareDarwinWriterHost(input);
@@ -49,7 +52,7 @@ test('changed target identity rejects before transport; wrong executable digest 
   assert.equal((await host.close()).writeAccess, 'unknown');
 });
 
-test('closing an unused host permanently prevents launch', async () => {
+test.skipIf(!canRun)('closing an unused host permanently prevents launch', async () => {
   const input = fixture(), host = await prepareDarwinWriterHost(input);
   assert.equal((await host.close()).child, 'not-started');
   assert.throws(() => host.createTransport({ signal: new AbortController().signal, workingDirectory: input.directory }));

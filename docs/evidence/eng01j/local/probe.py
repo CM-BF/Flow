@@ -30,14 +30,20 @@ def save(path, value):
 def child(scratch):
     binary = scratch / 'canary'
     env = {'PATH': '/usr/bin:/bin', 'TMPDIR': str(scratch), 'HOME': str(scratch), 'NODE_DISABLE_COMPILE_CACHE': '1', 'PYTHONDONTWRITEBYTECODE': '1'}
-    if os.environ.get('FLOW_ENG01J_DIRECT') == 'types':
+    mode = os.environ.get('FLOW_ENG01J_DIRECT')
+    vitest = [NODE, '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs', 'run', '--config', str(HERE/'vitest.config.mjs'), '--reporter=verbose']
+    if mode == 'vitest-default':
+        result = subprocess.run(vitest, env={**env, 'FLOW_ENG01J_CACHE': str(scratch/'cache')}, stdin=subprocess.DEVNULL, capture_output=True, timeout=5)
+        print(json.dumps({'stage':'vitest-default', 'exit':result.returncode, 'stdout':result.stdout.decode(errors='replace'), 'stderr':result.stderr.decode(errors='replace')}),flush=True)
+        return result.returncode
+    if mode == 'types':
         result = subprocess.run([NODE, '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js', '-p', str(HERE/'tsconfig.json')], env=env, capture_output=True, timeout=5)
         print(json.dumps({'stage':'focused-types','exit':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace')}),flush=True)
         return result.returncode
     compile_result = subprocess.run([CLANG, '-isysroot', '/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk', '-std=c11', '-Wall', '-Wextra', '-Werror', '-Os', '-fno-modules', str(C_SOURCE), '-o', str(binary)], env=env, capture_output=True, timeout=5)
     print(json.dumps({'stage': 'compile', 'exit': compile_result.returncode, 'stdout': compile_result.stdout.decode(errors='replace'), 'stderr': compile_result.stderr.decode(errors='replace')}), flush=True)
     if compile_result.returncode: return 1
-    if os.environ.get('FLOW_ENG01J_DIRECT') == '1':
+    if mode in ('1', 'vitest-active'):
         inherited = scratch / 'r06-inherited.txt'; inherited.write_text('0')
         fd = os.open(inherited, os.O_WRONLY)
         try:
@@ -45,7 +51,11 @@ def child(scratch):
             test_source = ROOT/'apps/runner/src/engineering/native-authority.test.ts'
             policy_test = ROOT/'apps/runner/src/engineering/native-authority-darwin.test.ts'
             js = 'await import(' + json.dumps(test_source.as_uri()) + '); await import(' + json.dumps(policy_test.as_uri()) + ');'
-            result = subprocess.run([NODE, '--import', '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs', '--input-type=module', '-e', js], env=direct_env, stdin=subprocess.DEVNULL, capture_output=True, timeout=5, pass_fds=(fd,))
+            command = [NODE, '--import', '/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs', '--input-type=module', '-e', js]
+            if mode == 'vitest-active':
+                command = vitest
+                direct_env.update({'FLOW_ENG01J_DARWIN_CANARY':'1','FLOW_ENG01J_CACHE':str(scratch/'cache')})
+            result = subprocess.run(command, env=direct_env, stdin=subprocess.DEVNULL, capture_output=True, timeout=5, pass_fds=(fd,))
             print(json.dumps({'stage':'r06-direct', 'exit':result.returncode,'stdout':result.stdout.decode(errors='replace'),'stderr':result.stderr.decode(errors='replace'),'inheritedContent':inherited.read_text()}), flush=True)
             return result.returncode
         finally: os.close(fd)
@@ -87,7 +97,7 @@ def child(scratch):
 
 
 def run(round_id):
-    assert round_id in ('01', '02', '03', '04', '05')
+    assert round_id in ('01', '02', '03', '04', '05', '06', '07', '08')
     out = HERE / ('round-' + round_id); out.mkdir()
     previous = list(HERE.glob('round-*/result.json'))
     used = sum(json.loads(p.read_text())['elapsed_ms'] for p in previous)
