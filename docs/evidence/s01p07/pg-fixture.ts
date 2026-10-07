@@ -9,6 +9,7 @@ import { createServer } from '../../../apps/server/src/index.js';
 
 /** One dedicated database and listener. No existing service, database or credential is recorded or modified. */
 export class ClaimCenterFixture {
+  constructor(private readonly leaseMs = 30000) {}
   readonly databaseName = `flow_s01p07_${randomUUID().replaceAll('-', '')}`;
   readonly errors: string[] = [];
   readonly primaryErrors: Array<{ phase: string; code: string }> = [];
@@ -94,7 +95,7 @@ export class ClaimCenterFixture {
     await this.openServer();
   }
   private async openServer() {
-    this.app = await createServer({ databaseUrl: this.databaseUrl, ownerToken: this.ownerToken, leaseMs: 30000, automaticQueueScan: false });
+    this.app = await createServer({ databaseUrl: this.databaseUrl, ownerToken: this.ownerToken, leaseMs: this.leaseMs, automaticQueueScan: false });
     this.app.addHook('onRequest', async () => { if (++this.http > 160 || performance.now() > this.workDeadline) throw new Error('Private HTTP budget exhausted.'); });
     this.baseUrl = await this.app.listen({ host: '127.0.0.1', port: 0 });
     this.owner = new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken });

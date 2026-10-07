@@ -3,19 +3,19 @@ import { mkdtemp, mkdir, readdir, readFile, writeFile, rm } from 'node:fs/promis
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { setTimeout as sleep } from 'node:timers/promises';
-import { afterEach, expect, it } from 'vitest';
+import { afterAll, afterEach, expect, it } from 'vitest';
 import { RUNNER_CLAIM_PROTOCOL, type ClaimedTask, type EventBatch, type HarnessAdapter, type HarnessContext, type RunnerEventData } from '@flow/contracts';
 import { FlowClient } from '@flow/client';
 import { randomUUID } from 'node:crypto';
-import { Pool } from 'pg';
-import { createServer as createFlowServer } from '../../server/src/index.js';
 import { commandRunnerMaintenance } from '../../server/src/runner-maintenance/store.js';
 import { runRunner, type RunnerOptions, type RunnerNotice } from './runtime.js';
 import { textDigest, verifyText } from './verifier.js';
 import { EventStorageError } from './outbox.js';
+import { createCapacityCenter, finishCapacityCenters, recordCapacityCase } from '../../../docs/evidence/s01p07/capacity-center.js';
 
 const cleanup: (() => Promise<unknown>)[] = [];
-afterEach(async () => { const results = await Promise.allSettled(cleanup.splice(0).reverse().map(stop => stop())); for (const result of results) if (result.status === 'rejected') throw result.reason; });
+afterAll(finishCapacityCenters, 80000);
+afterEach(async ({ task }) => { recordCapacityCase(task.name, task.result?.state ?? 'unknown'); const results = await Promise.allSettled(cleanup.splice(0).reverse().map(stop => stop())); for (const result of results) if (result.status === 'rejected') throw result.reason; });
 async function eventually(condition: () => boolean | Promise<boolean>) {
   const until = Date.now() + 4000;
   while (!await condition()) { if (Date.now() > until) throw new Error('Expected bounded runner behavior did not occur.'); await sleep(5); }
@@ -198,53 +198,10 @@ it.each([0, 17, 1.5, NaN, null, '4'])('rejects an invalid local slot limit %s be
 });
 
 async function realCenter(capacity: number) {
-  const name = `flow_s01p01_${randomUUID().replaceAll('-', '')}`;
-  const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
-  const database = new URL(adminUrl); database.pathname = `/${name}`;
-  const admin = new Pool({ connectionString: adminUrl, max: 1 });
-  const pool = new Pool({ connectionString: database.href, max: 2, statement_timeout: 5000 });
-  let created = false, app: Awaited<ReturnType<typeof createFlowServer>> | undefined;
-  const workingDirectory = await mkdtemp(join(tmpdir(), 'flow-real-pool-'));
-  const processes: { shutdown: AbortController; promise: Promise<void> }[] = [];
-  cleanup.push(async () => {
-    for (const process of processes) process.shutdown.abort();
-    await Promise.allSettled(processes.map(process => process.promise));
-    try { app?.server.closeIdleConnections(); await app?.close(); }
-    finally {
-      try { await pool.end(); }
-      finally {
-        try {
-          if (created) {
-            await eventually(async () => (await admin.query('SELECT 1 FROM pg_stat_activity WHERE datname=$1', [name])).rowCount === 0);
-            await admin.query(`DROP DATABASE ${name}`);
-            const remaining = (await admin.query('SELECT datname FROM pg_database WHERE datname=$1', [name])).rows;
-            console.log(JSON.stringify({ cleanup: 's01p01-own-database', name, remaining })); expect(remaining).toEqual([]);
-          }
-        } finally { await admin.end(); await rm(workingDirectory, { recursive: true, force: true }); }
-      }
-    }
-  });
-  if ((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [name])).rowCount) throw new Error('Refusing existing test database.');
-  await admin.query(`CREATE DATABASE ${name}`); created = true;
-  app = await createFlowServer({ databaseUrl: database.href, ownerToken: 'test-owner', leaseMs: 300000, automaticQueueScan: false });
-  const baseUrl = await app.listen({ host: '127.0.0.1', port: 0 });
-  const owner = new FlowClient({ baseUrl, token: 'test-owner' });
-  const identity = await owner.registerRunner({ name: 'bounded functional runner', harnesses: ['fixture'], capacity });
-  const runner = new FlowClient({ baseUrl, token: identity.token });
-  return {
-    owner, runner, pool, identity,
-    async submit(prompt: string, resumeSessionId?: string) {
-      const result = await owner.submit({ title: prompt, prompt, harness: 'fixture', ...(resumeSessionId ? { resumeSessionId } : {}) }, randomUUID());
-      await pool.query('UPDATE flow.tasks SET dispatch_ready=true WHERE id=$1', [result.task.id]);
-      return result.task.id;
-    },
-    start(implementation: HarnessAdapter, maxConcurrentAttempts = 4) {
-      const shutdown = new AbortController();
-      const promise = runRunner({ baseUrl, token: identity.token, workingDirectory, signal: shutdown.signal, adapters: [implementation], maxConcurrentAttempts,
-        pollIntervalMs: 10, heartbeatIntervalMs: 40, requestTimeoutMs: 1500 });
-      void promise.catch(() => undefined); const process = { shutdown, promise }; processes.push(process); return process;
-    },
-  };
+  const center = createCapacityCenter(capacity);
+  cleanup.push(() => center.close());
+  await center.startCenter();
+  return center;
 }
 
 it.each([1, 4])('real PG/HTTP enforces registered capacity %s with a local four-slot pool', async capacity => {

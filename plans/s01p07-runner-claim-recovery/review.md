@@ -1,6 +1,6 @@
 # S01P07 独立审查
 
-**原产品 SOURCE_REVIEW APPROVED。R2原8组PG 8/8结果待独立忠实性审，原4capacity PG仍NOT_RUN；NOT_INTEGRATED。R1失败与旧未知资源保持。**
+**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity适配待审/真实PG仍NOT_RUN，NOT_INTEGRATED。R1失败与旧未知资源保持。**
 
 - Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
@@ -20,3 +20,5 @@ chatui01_owner / gpt-6-astra 于2026-10-07T03:07:01Z对 `e3b9a3d5b354b75baaabac9
 db_transaction_owner / gpt-6-astra，2026-10-07T03:12:57.210730Z，绑定 `0a753088f477932140b10b288e907243cb265c27`：SOURCE_INPUT_BINDING_REVIEW_APPROVED / 0 P1/P2。Mika在本次R2派工中转达原结论：63旧绑定、30SQL、24依赖、有限两名selector/实际inputSHA及原预算均符；关闭输入增量待审，不重审、不当PG通过。原manifest原字节不变。
 
 R2 execution `44594beb1564732c00fb66721db2fd51b60b87e9`，2026-10-07T03:21:23Z–03:21:27Z：8selected/8pass/0skip，10task/80HTTP，专库零连接/同OID-marker普通DROP absent，worker/group/EOF/自有TMP全结束，无signals/retained/errors。原件见[固定结果清单](../../docs/evidence/s01p07/pg-run-r2-manifest.json)，11项12184B。这是owner事实记录，RESULT_REVIEW_PENDING；不会把8组代替原4capacity消费者或复算成旧85重跑，也不反推R1原因。当前仅封存，无新窗口/测试。
+
+architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc04cf90244cfb0ac3ba9ee2da2ed585：RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2。11raw12184B+2inputs逐Git/WT/hash符；8/8、10task80HTTP、OID-marker/0连接DROP/workergroupEOF/两rootabsent核实；时间及sampled峰值与Web通知后置如实，0审者运行/PG/旧根访问/写。不归因R1、不替代4capacity。后继只改自有test/fixture适配与有限运行输入，真实4PG仍未跑，另独审。

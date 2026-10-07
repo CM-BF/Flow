@@ -125,9 +125,16 @@ def main():
         raise SystemExit("NOT_OPEN")
     if not os.environ.get("FLOW_S01P07_ADMIN_URL"):
         raise SystemExit("AUTHORIZED_ADMIN_CONFIGURATION_MISSING")
+    input_name = os.environ.get("FLOW_S01P07_PG_INPUT", "pg-slot-request.json")
+    if input_name not in {"pg-slot-request.json", "pg-diagnostic-slot-request.json", "pg-capacity-slot-request.json"}:
+        raise SystemExit("INPUT_NOT_REVIEWED")
+    capacity_cases = input_name == "pg-capacity-slot-request.json"
     target = EVIDENCE / "checks" / window
     suffixes = [".json", ".stdout", ".stderr", ".fixture.json", ".reservation.json", ".child.json"]
     suffixes += [".fixture.json" + part for part in [".reservation.json", ".root.json", ".create-request.json", ".database.json"]]
+    if capacity_cases:
+        suffixes += [f".fixture.json.case-{index}" + part for index in range(1, 5)
+                     for part in ["", ".reservation.json", ".root.json", ".create-request.json", ".database.json"]]
     for suffix in suffixes:
         try: Path(str(target) + suffix).lstat()
         except FileNotFoundError: continue
@@ -137,9 +144,6 @@ def main():
         raise SystemExit("SOURCE_HEAD_MISMATCH")
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=WT, timeout=3):
         raise SystemExit("SOURCE_DIRTY")
-    input_name = os.environ.get("FLOW_S01P07_PG_INPUT", "pg-slot-request.json")
-    if input_name not in {"pg-slot-request.json", "pg-diagnostic-slot-request.json"}:
-        raise SystemExit("INPUT_NOT_REVIEWED")
     input_bytes = (EVIDENCE / input_name).read_bytes()
     for row in json.loads(input_bytes)["inputs"]:
         value = (WT / row["path"]).read_bytes()
@@ -204,8 +208,9 @@ def main():
                 "FLOW_S01P07_PG_WORK_UNTIL": str(epoch + 120000),
                 "FLOW_S01P07_PG_CLEANUP_UNTIL": str(epoch + 190000)})
     command = ["/opt/homebrew/opt/node@24/bin/node", "node_modules/vitest/vitest.mjs", "run",
-               "--config", "docs/evidence/s01p07/pg-vitest.config.ts", "--configLoader", "native",
-               "apps/server/src/runner-claim-receipts.test.ts"]
+               "--config", "docs/evidence/s01p07/capacity-vitest.config.ts" if capacity_cases else "docs/evidence/s01p07/pg-vitest.config.ts",
+               "--configLoader", "native", "apps/runner/src/runtime-capacity.test.ts" if capacity_cases
+               else "apps/server/src/runner-claim-receipts.test.ts"]
     faults = []
     observed = 0
     saved = 0

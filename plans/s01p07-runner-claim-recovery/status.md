@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:21:36Z |
+| 最近更新 | 2026-10-07T03:29:14.988284+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 原8组中心事务验收全部通过：空领取不留回执、同key仅分配一次、重启查回与实时租约门禁均有专库行为证据，资源已收尾。 |
-| 下一可用交付 | 独审本轮真实结果，再完成原4组capacity直接消费者，交主线接收。 |
-| 当前阻塞 | ACTIVE: R2结果待独审，原4组capacity PG尚未执行；本轮heavy已归还、无本轮保留资源。旧R1原因UNKNOWN且旧目录KEEP。 |
+| 当前产出 | 原8组中心事务验收及结果独审通过；原4组capacity直接消费者保留断言，已改用受控专库fixture准备验证。 |
+| 下一可用交付 | 完成4capacity适配的定向types/collect与独审，再于明确PG窗口验收，交主线接收。 |
+| 当前阻塞 | ACTIVE: 原4组capacity真实PG尚未执行；适配准备可继续局部验证。本片无heavy holder，旧R1原因UNKNOWN且旧目录KEEP。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原产品/诊断/输入已独审，R2 8/8结果待忠实性审；原4capacity PG仍待验证，NOT_INTEGRATED |
+| Review | [review.md](review.md)：原产品/诊断/输入已独审，R2 8/8于03:23:39Z RESULT_FIDELITY_REVIEW_APPROVED；原4capacity适配未审/PG未跑，NOT_INTEGRATED |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -65,3 +65,5 @@ R1后[最小诊断修复](../../docs/evidence/s01p07/inventory-diagnostic-fix.md
 2026-10-07T03:20:18Z fresh：HEAD=origin `0a753088f477932140b10b288e907243cb265c27` clean，账本available、原claim v2/18 ACTIVE身份一致。Mika转述db_transaction_owner于2026-10-07T03:12:57.210730Z的SOURCE_INPUT_BINDING_REVIEW_APPROVED / 0 P1/P2（63旧绑定/30SQL/24依赖与两literal/inputSHA/预算）。仅归档metadata后固定新clean execution HEAD；R2仍一次原8组/200s/原资源，无新检查或产品修改。X01是否实际local由其owner确认，若活跃完整35,135,488B另叠加floor并确认隔离；不得默认配对。旧manifest/R1原件与qsnu目录不触。
 
 R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外部time3.91s、工具exit0，03:21:36读回完成。8selected/8pass/0skip，10task、80HTTP，fixture2046.118ms；专库OID1195575+marker确认、零连接后普通DROP且absent，app/pool/admin/startup闭合，errors/primaryErrors=[]。PID/PGID69706退出0、group absent、双EOF、signals[]；wrapper及fixture两个自有根再次精确lstat ENOENT，本轮无保留资源。raw2243B/TMP样本峰值3036442B低于原上限，不称全时硬峰值或PG/WAL测量；0provider。heavy已即时归还，C02/Web后继不等本metadata。[11份原件与外壳记录](../../docs/evidence/s01p07/pg-run-r2-manifest.json)共12184B；新诊断无首fault，R2成功不能反推R1。C02局部预算在spawn前已叠加；Web9MiB新通知在spawn后收到、组合线复核在R2结束后，按真实先后记录，不补写成事前准入。
+
+2026-10-07T03:29:14.988284+00:00 后继4capacity源码准备：保原4case共4633B逐字不变（SHA2c7da25290c712db3232db38ef0dc7ea7d9377b863440f76faffa73e3439d580），仅realCenter替换为现ClaimCenterFixture的薄适配，4专库串行/累计13task，每库原160HTTP门禁合计640、峰值15连接。fixture只加保旧默认30000的lease参数，capacity仍原300000；原8默认不变，历史包按Git绑定。wrapper只增固定capacity输入/config/30输出预核，不新监督器。固定main15847数据库donor在原module id加载并记录SHA，保持migration import.meta.url；原231输入共同部分仅database.ts有main差异，client相同。见pg-capacity-slot-request.json；types/collect待唯一local，4PG NOT_OPEN。
