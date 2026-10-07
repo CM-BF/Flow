@@ -210,3 +210,5 @@ chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPR
 [唯一交审入口](../../docs/evidence/s01/mixed-ab-preparation/queue-operator-env-result-ready.md)。已审source375e，5/5新纯例/787Braw，PID15216末态absent/MERGED EOF、无signals-secondary，初始EPERM保留；sameinode新TMP空样本0B清理absent。监督135ms/持久化后250.935ms/tool0.362040833s分开，whole准备+metadata不冒执行wall。13:52:24.441Z实际RETURN，0PG/HTTP/性能。原新5scopecaller输出及pool-wait-run根尚未创建，claimv3/6保留。
 
 本段自13:47:34Z连续，未重置12min；只源码env/CLI deadline与必要单purechild，未用第2额度，原675/223/33SQL和raw冻结。status唯一事实源，原taskstartUNKNOWN/NOT_COMPLETED、历史main/6TODO保持；本轮无dashboard GET，不把旧同步当新观察。
+
+2026-10-07T13:54:00Z future窗口解释边界（Mika本段回传）：Original恢复后的3个个人服务常驻，已知旧queued用户任务曾自然running，不停止/不读取个人任务数据。正式heavy前由manager确认当时该已知负载仍在或UNKNOWN；未回传不等结束。共享机器负载不是两arm受控常量，结果只限当次观察，不冒SLO或稳定提速。可等负载自然结束争取更干净测量，但不禁止个人任务，也不改变原300s/512MiB合同。
