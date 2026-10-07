@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T13:45:03.124947+00:00",
+  "head": "97ed4204deb34d6b49609969e2935d470abd9c64",
+  "remote": "97ed4204deb34d6b49609969e2935d470abd9c64",
+  "dirty": false,
+  "implementation": "6a258a3886f0491b8487738c19c09dc631b98f2c",
+  "scopeState": "exact19 STOP; claim retained; NO_NEXT; no new runtime/gate/env",
+  "phase": {
+    "spentMs": 33766,
+    "remainingMs": 56234
+  },
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/source-manifest.json",
+      "bytes": 5338,
+      "sha256": "5bd3ddae0b82d417149616de535bd535428a3068efb2647724c0e8082241c959"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-phase.json",
+      "bytes": 2618,
+      "sha256": "165ca3492970ff770f47453ba7dae501c72dcfedfa5fbef7d9ebc2f98b82fe50"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-attempts/material-third/manifest.json",
+      "bytes": 8013,
+      "sha256": "1ef643245c54358e30be97a761f627f581b61e7ea603ec86cbcb29d833d46cdc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/feature-review-entry.md",
+      "bytes": 8444,
+      "sha256": "0c34b0bb0124440e0278a2e0f43aecb078c3efc81e156bd3dc65417eec1d326f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/source-research/root-msg03-6a258-chooser-error-review-20261007.json",
+      "bytes": 3301,
+      "sha256": "f3d883bc6bfe7c89285b217585f6741cc06c0e014b7752e51f3cab9042bef449"
+    }
+  ],
+  "metadataValidation": "parse errors/humanMissing/timingIssues empty;46 links exist;66 historical raw and17source verified;no product tests",
+  "push": "initial remote commit_refs failure; observed remote unchanged5ab314; normal retry successful/no force"
+}

@@ -1,0 +1,277 @@
+{
+  "kind": "REQ19_BOUNDED_READONLY_NEW_WEB_WITH_CURRENT6C_DECISION",
+  "at": "2026-10-07T14:00:12.890794+00:00",
+  "owner": "w01 / GPT-6 Astra Ultra",
+  "decision": "REUSE_FIXED7272_COMMON_SOURCE_REQUEST; NO_NEW_RECOVERY_APP_COMPATIBLE_WITH6C_ALREADY_APPROVED_IN_SUPPLIED_INPUTS",
+  "answer": "保持唯一7272共源新Web+修正backend候选。当前6c/7d1并非没有Cookie接口，但缺迟到logout响应不得删除新Cookie的必要行为；不能减弱现有验收把新Recovery网页宣称安全交付。未发现已供给并已审的新Recovery immutable App可直接配6c；三个既有已审App均为旧Bearer，不是新网页候选。不等MSG材料、完整Plugin或provider资格。",
+  "fixed": {
+    "mainObserved": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "releaseWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+    "branch": "codex/web-release-compatibility",
+    "head": "230cbce38420965a8aecb73a7c0d2fd2ea0f85d1",
+    "dirty": [],
+    "claim": "27c36b97-162d-45e0-9150-25269d3d3f34 v1 exact4 remains STOP; ledger not queried or mutated in this readonly task",
+    "harnessSource": "8964dc1185f62ed8934c15416e9798929359ab89"
+  },
+  "inboundPersonalFact": {
+    "source": "Root relays Original actual independent PASS; not re-probed by this review",
+    "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "acceptingRevision": 21,
+    "web": "d629 / v3 remains user-visible"
+  },
+  "minimumCandidate": {
+    "webSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "backendSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "webIntegratedAt": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+    "webReviewedImplementation": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "newWebDescriptor": null,
+    "newBackendDescriptor": null,
+    "evidence": "Owner final230cb supply-request and source-manifest both retain null descriptors. This is absence in the bounded supplied canonical inputs, not a global filesystem inventory.",
+    "minimality": "git diff c130..7272 is empty for apps/web, packages/client, packages/contracts, package.json and pnpm-lock.yaml. Thus7272 retains already integrated Recovery Web while adding the accepted backend logout correction; it is an existing fixed main commit, not a new branch/backport/rollback.",
+    "newHarness": "8964 explicit runRecoveryReleaseCompatibility already source+strict approved; it requires both descriptors at7272 before side effects and keeps original retained-three-App entry separate.",
+    "artifactVsSource": "Source readiness is not an immutable descriptor, emitted bytes, host admission, browser combination proof or visible rollout."
+  },
+  "exactServerDependency": {
+    "path": "apps/server/src/browser-session/index.ts",
+    "lines": "109–114",
+    "sixC": "After authenticating Origin/CSRF/current session, revokes that token then setCookie(reply,''), emitting deleting Set-Cookie for the stable center/origin cookie name.",
+    "fixed7272": "Keeps exact old-session revoke, returns unauthenticated, emits no deleting Set-Cookie. New Connect still sets HttpOnly cookie at101–107. Old revoked cookie may remain inert until replacement/expiry.",
+    "reason": "Browser processes actual response Set-Cookie independently of ConnectionSession generation checks (session.ts102–118). Holding an old logout response, completing a newer connect, then delivering old headers can erase the new cookie with6c even if Web ignores stale JS completion. Common connect/read can work on6c; the known late-response invariant does not.",
+    "notNewCodec": "flow.browser-session.v1, empty connect/logout command bodies, ready/unauthenticated/unsupported DTO and X-Flow-CSRF stay unchanged. browser-session/store.ts and contracts/src/browser-session.ts are byte-identical6c/7272/current ae850. No new public contract or authority store is pending.",
+    "minimalProductionDelta": "Only within apps/server/src/browser-session/index.ts, the6c→7272 diff removes deleting Set-Cookie and renames unused reply; this module also equals currentmain ae850. This does NOT describe the full backend delta (17 paths; see backendDeltaScope). c130→7272 is the narrow laterCookie production change plus fixture/tests. Do not patch7d1 in place or invent a third partial-backport artifact; use the existing approved7272 common-source request.",
+    "approvedProof": "7272 late-logout intake:4selected/4,19notselected,2focusedtypes,7304ms; actual held-response/newconnect/oldsession+SSE revoke/task preserved. This is Node HTTP+PG proof, not immutable newWeb real-browser cookie combination."
+  },
+  "existingImmutableApps": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9"
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a"
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+    }
+  ],
+  "reuseBoundary": [
+    "Three retained original App identities and c3 read/send/same-key-body-turn/negotiation reports remain valid only for fixed6c/7d1+policy81a8. Their independent Cookie/CSRF probe does not make those Apps Cookie clients or cover new Recovery/logout browser race.",
+    "Recovery c130/2f8 scoped source+mounted fixture evidence and7272 limited server proof remain usable provenance; no unrelated full green matrix rerun is needed solely to build new bytes.",
+    "8964 two-harness strict1125ms and root20dcc source acceptance remain valid; immutable four-App compatibility is still NOT_RUN. An artifact build/held personal PASS is not that missing Web/backend combination.",
+    "New backend changes report target/context binding; all retained-three four-check reports must be newly bound under existing release verifier, plus one actual newCookie App branch. Do not relabel6c report IDs."
+  ],
+  "nextOriginalSupply": [
+    "Use existing Original artifact/release path to provide new Web format2 descriptor at7272: artifactId, sourceHead, manifestDigest, releaseId, immutable root/dist identity and manifest/actual bytes. Do not derive descriptor from source HEAD or overwrite old assets.",
+    "Provide new backend descriptor at7272 containing the exact fixed module, artifact/root/sourceTree/Node and verifier-checked runtime closure plus applicable host/migration acceptance. Reuse existing SVC process; no new publishing platform or silent6c fallback.",
+    "Keep exact publicly supplied browser settings if unchanged: cookieOrigin61228, trustedOrigins only61228, authEpoch svc09-b2b-20261007; normalized policy81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638. A real policy change requires new context/report binding.",
+    "Bind supplied descriptors into existing8964 harness/caller with finite resource+cleanup inputs; directly verify immutable newApp connect→Cookie reload→explicit no-send draft restore, strict-prefix unknown ACK→same original retry, and delayed real logout headers after newConnect. Preserve oldsession/SSE invalidation and running task; retain old three nativeBearer observations on same newbackend.",
+    "Only after exact immutable compatibility and full RETURN, Original publishes through existing version-CAS/retention flow and records actual newWeb visible identity. No runtime or publication was initiated by this report."
+  ],
+  "pins": [
+    {
+      "ref": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "docs/evidence/i02/late-logout-review-intake.json",
+      "bytes": 1991,
+      "sha256": "47e56bab52022eb19ee933e750735dc1e57bc91ad9468c8a97841d89dce3ad7d"
+    },
+    {
+      "ref": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+      "path": "docs/evidence/i02/recovery-intake.json",
+      "bytes": 1465,
+      "sha256": "d96022ac0dd07558bd10c32928c41368341e1cbc2125d624d8173383ddf6fa04"
+    }
+  ],
+  "evidencePins": [
+    {
+      "path": "/private/tmp/w01-next-visible-web-release-readonly-20261007.json",
+      "bytes": 14755,
+      "sha256": "41c70d1ec1e5062dce5b21e2e803c1785e0cbab787e16f45f9eb9a0a28492d1d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json",
+      "bytes": 1557,
+      "sha256": "39c1d6ef1e4a9e05f457ef5ae8041dc344223cf566243d2eb5d579ae6b1c4173"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/source-manifest.json",
+      "bytes": 1495,
+      "sha256": "7c9689aa82b4afa5a441e307b525bce8e72b6e743b8c3fbc94c70c15b00346ae"
+    },
+    {
+      "path": "/private/tmp/root-release01-8964-source-local-review-20261007.json",
+      "bytes": 5554,
+      "sha256": "20dccd8d8ff126be623fa13e97a12d9317ec53156a33f2b4299f3296740e7acd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/main-close/independent-actual-review.json",
+      "bytes": 10867,
+      "sha256": "69e9f80966f076d1a198e3ef1f7393bb6b2ed7b981a102d7610c06f666674fc8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/retained-app-7d1-intake/receipt.json",
+      "bytes": 3243,
+      "sha256": "c0781c22275ba4bac048de4b0e60f2552a5f2fb7d1155cddca63600d3e7b5c78"
+    }
+  ],
+  "skills": {
+    "applied": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Reuse existing local methods and prior bounded research. Separate source/contract/artifact/deployment and known HTTP header behavior; no repeated skill install or invented alternate release authority."
+  },
+  "limits": {
+    "projectWrites": 0,
+    "claimMutations": 0,
+    "artifactBuilds": 0,
+    "runtime": 0,
+    "tests": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "privateEnvReads": 0,
+    "personalServiceReads": 0,
+    "scope": "Existing named evidence and fixed Git objects only; no global absence promise."
+  },
+  "backendDeltaScope": {
+    "qualification": "7272 is the minimum ALREADY REVIEWED EXISTING common-source combination selected for this release, not a claim that6c→7272 entire backend is only a logout patch. c130→7272 contains the narrow production logout correction plus its fixture/test;6c→7272 apps/server/src has17 paths below. Their complete new artifact/current migration/real four-App combination has not been run in this readonly review. No third6c+cherry-picked combination is proposed or approved.",
+    "sixCTo7272": [
+      {
+        "status": "M",
+        "path": "apps/server/src/assistant-stream/index.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/assistant-stream/queries.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/assistant-stream/selection-pg.test.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/assistant-stream/selection.test.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/fixture.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/index.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/session.test.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/events.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/index.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/main.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/plugin-runtime-configuration.test.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/plugin-runtime-configuration.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/plugin-runtime/artifact.test.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/plugin-runtime/artifact.ts"
+      },
+      {
+        "status": "A",
+        "path": "apps/server/src/plugin-runtime/recovery.test.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/private-json-configuration.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/reconciliation.ts"
+      }
+    ],
+    "c130To7272": [
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/fixture.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/index.ts"
+      },
+      {
+        "status": "M",
+        "path": "apps/server/src/browser-session/session.test.ts"
+      }
+    ],
+    "implementationLimit": "This task inspected the necessary browser-session behavior, shared DTO/store equality and prior accepted evidence. It did not re-review or execute every other backend delta."
+  }
+}

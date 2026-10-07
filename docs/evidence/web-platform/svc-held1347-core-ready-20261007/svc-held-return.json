@@ -1,0 +1,198 @@
+{
+  "at": "2026-10-07T13:50:15.166538+00:00",
+  "state": "RETURNED_UPDATED_ACCEPTING_ACTUAL_CLAIM_ACK_UNKNOWN",
+  "window": "svc06-personal-7d1-held-20261007-1347",
+  "operator": "assignment_review",
+  "coLead": "astra_ultra_execution_lead",
+  "source": "ec9c775462de61487836665973e792b4b15d616d",
+  "delivery": "e7d50fe3c7fcbdc65760d3c82e463c47fda9f048",
+  "coreSource": "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0",
+  "review": {
+    "reviewer": "native_center_owner (independent of author)",
+    "decision": "APPROVED_FIXED_HELD_CONTINUATION_PREPARATION",
+    "remainingFindings": 0,
+    "manifest": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json",
+    "manifestSha256": "5373429039d5d87ddaf5e7c652be7cb6d97fdde3eb22fdaecfcac12384add0c7",
+    "bindings": 23,
+    "runtimePins": 71,
+    "baselineBindings": 4,
+    "reviewerRuntimeChecks": 0
+  },
+  "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "retainedWeb": "461a/caa1/d629; current d629/version3 unchanged",
+  "installation": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+  "mainAtReservation": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+  "scope": "Same op e6550b3c-1f67-4c2c-869d-e84d5e838113 draining19: fresh -> hold20/stop exact old runner -> explicit preserved-queued confirmation/one exact intent retirement -> fixed7d1/6c refresh -> old center/all old groups absent and paused preservation checkpoint -> explicit resume -> final; never bootstrap or replay R2.",
+  "bounds": {
+    "wholeOperatorSeconds": 900,
+    "reapSeconds": 2,
+    "newBytes": 536870912,
+    "rawBytes": 2097152,
+    "privateRetirementAuditBytes": 1048576,
+    "minimumFreeBytes": 2684354560,
+    "liveReserveBytes": 1073741824,
+    "minimumComposedFreeBytes": 7515275264,
+    "configuredConnectionsUpperBound": 15,
+    "providerQueries": 0
+  },
+  "resourceBasis": "Web unique resource record at13:43:47: actual holder NONE after13:37:25 physical return; graceful fixture close still UNKNOWN/retained, no active process/DB. Mika fake local returned13:38:19.507, no current heavy or local. Exact reservation notified both leads13:45:39; operator fresh-checks actual newer holder/claims/resources before launch.",
+  "sourceFreeze": "Main ae850 and all71 fixed runtime inputs freeze through actual RETURN; no new PG/Chrome/artifact/shared service/performance. Independent no-shared-endpoint local/source continues.",
+  "preserve": [
+    "DB/user data/tasks/sessions",
+    "ports61227/61228",
+    "config/token/profile/runner identity",
+    "current Web pointer3 and all retained assets/tabs",
+    "all previous FAIL/KEEP/unknown",
+    "Original queued task and promoted queue exact baseline",
+    "Original UUID claim result UNKNOWN, no ACK or replay"
+  ],
+  "authority": "GO explicit same-intent repair authorization plus queued-baseline clarification; independent package approval; new segment begins at actual launch, never extends consumed R4 deadline.",
+  "stops": "Any mismatch/new unclarified work/identity/SQL/write/cleanup unknown stops dependent effects, retains private backup/audit/evidence; no retry/cancel/rollback/unknown deletion.",
+  "readiness": "New source/process startup, accepting, and actual claim recovery are separate. No natural matching center receipt+durable assignment means actualClaimRecovery UNKNOWN; do not manufacture a task/query.",
+  "previousSegments": [
+    {
+      "window": "svc06-personal-7d1-20261007-1224",
+      "outcome": "RETURNED_PRECONDITION_CALLER_FAILURE_BEFORE_PERSONAL_ACCESS",
+      "source": "35e22b6bd5176304f991b8275ee5f170c20b8c06",
+      "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/result-manifest.json",
+      "elapsedMs": 51,
+      "exitCode": 1,
+      "code": "OUTPUT_REQUIRED",
+      "personalReads": 0,
+      "personalMutation": 0,
+      "migrationLaunches": 0,
+      "review": "native_center_owner APPROVED_PRECONDITION_FAILURE_FIDELITY; no P1/P2",
+      "scope": "childPidOnly helper absent/dualEOF, not a general process-group proof"
+    },
+    {
+      "window": "svc06-personal-7d1-20261007-1230",
+      "returnedAt": "2026-10-07T12:35:37.013013Z",
+      "outcome": "RETURNED_PARTIAL_COMPLETE_BEFORE_MAINTENANCE",
+      "actual": {
+        "completed": [
+          "artifact migration7d1",
+          "Web host replacement only",
+          "3compatibility imports",
+          "205B browser policy"
+        ],
+        "migrationMs": 23649,
+        "webReplacementMs": 16689,
+        "reportsPolicyMs": 4289,
+        "stopped": "Supplemental history digest reader static CommonJS named-export linking failure,62ms/exit1 before evaluation/SQL",
+        "bootstrap": 0,
+        "refresh": 0,
+        "resume": 0,
+        "operatorProviderQueries": 0,
+        "noReplay": "Completed import/replace/report/policy stages may not be replayed; maintenance has not begun. Original FAIL/KEEP preserved.",
+        "ownerEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json"
+      },
+      "review": "I02 partial-actual-review.json APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE"
+    },
+    {
+      "window": "svc06-personal-7d1-20261007-1306",
+      "returnedAt": "2026-10-07T13:05:06.750720Z",
+      "source": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+      "actual": {
+        "firstStage": "facts-before",
+        "code": "WEB_COMPATIBILITY_INVALID",
+        "factsMs": 418,
+        "operatorMs": 494,
+        "completed": [],
+        "bootstrap": 0,
+        "refresh": 0,
+        "resume": 0,
+        "operatorProviderQueries": 0,
+        "helperTermination": "operator97737 andfacts97738 childPidOnly absent/dualEOF/no signals",
+        "scope": "No replay of R2; root remains frozen while fixed reader schema mismatch diagnosis is completed",
+        "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+      }
+    },
+    {
+      "window": "svc06-personal-7d1-20261007-1320",
+      "returnedAt": "2026-10-07T13:19:54.167135Z",
+      "source": "4916591ba89b2999404e3d13814968180594da98",
+      "actual": {
+        "completed": [
+          "facts-before",
+          "preflight",
+          "history-before",
+          "bootstrap"
+        ],
+        "operatorMs": 21477,
+        "code": "RUNNER_ADMISSION_NOT_IDLE",
+        "phase": "operation",
+        "operationMs": 348,
+        "runnerState": "draining",
+        "runnerVersion": 19,
+        "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+        "activeAttempts": 0,
+        "uncertainAttempts": 0,
+        "hold": 0,
+        "refresh": 0,
+        "resume": 0,
+        "final": 0,
+        "operatorProviderQueries": 0,
+        "termination": "operator51100 + all5 started phase PIDs absent/dualEOF; no signals/pending invocations",
+        "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
+        "notKnown": "Post-idle status not reached; strict idle error did not retain classification; no inference of empty journal or current accepting."
+      },
+      "review": "I02/r4-actual-review.json APPROVED_LIMITED_R4_ACTUAL_FIDELITY_NOT_UPDATE_COMPLETE"
+    }
+  ],
+  "noReplay": [
+    "artifact migration7d1",
+    "Web host replacement",
+    "three C3 report imports",
+    "browserpolicy creation",
+    "R4 bootstrap/drain"
+  ],
+  "continuationPlanSha256": "4f2f287976681c3b967f059ad4b6ad6df8e4096784733983694c24148c4ec1a1",
+  "actual": {
+    "startedAt": "2026-10-07T13:47:33.200098Z",
+    "deadline": "2026-10-07T14:02:33.200098Z",
+    "wrapperPid": 24253,
+    "freeBeforeBytes": 21645111296,
+    "freshPins": 71,
+    "baselines": 4,
+    "claims": "SVC06 v9 / helper037f v2",
+    "root": "ae8500dd534a8ba18673a078c8563f4e3c13034e clean",
+    "freshNamespaceAbsent": true,
+    "result": "RESUMED_AND_OBSERVED",
+    "operatorMs": 75906,
+    "operatorExit": 0,
+    "termination": "Outer24324 and seven phase direct PIDs absent/dualEOF/no signals; detached new personal services preserved",
+    "completed": [
+      "fresh",
+      "hold-stop",
+      "retire",
+      "refresh",
+      "paused",
+      "resume",
+      "final"
+    ],
+    "runnerState": "accepting",
+    "runnerVersion": 21,
+    "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "oldGroupsAbsent": [
+      78240,
+      99312,
+      89438
+    ],
+    "newServicePids": {
+      "center": 46474,
+      "runner": 55337,
+      "web": 55432
+    },
+    "naturalUserWork": "Original queued task c8a0e95d-d84a-4e96-aef7-3384fbbe5291 now running; new attempt7525db4b-a383-413a-be8f-c3c512048ccf for original runner. No operator task/claim/query.",
+    "actualClaimRecovery": "UNKNOWN: complete requestId/center receipt/local assignment correlation not collected",
+    "originalIntentOutcome": "UNKNOWN; retirement is not an ACK",
+    "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1",
+    "review": "Raw sealing; independent actual fidelity review pending"
+  },
+  "returnedAt": "2026-10-07T13:48:49.163Z",
+  "sourceFreezeRelease": {
+    "at": "2026-10-07T13:50:15.166241+00:00",
+    "reason": "Actual maintenance returned with all operator/phase direct PIDs absent. New backend runs fixed artifact6c; no developer checkout pin required for service. Preserve new active user work."
+  }
+}

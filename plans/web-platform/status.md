@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:43:47.053Z；MSG03 chooser观察差量6a258获限定批准、仍无NEXT；Arc×MSG03六约束与八验收已归原MATURE05，未新增实现或运行。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:03:28.118Z；MSG材料取消FAIL并完整归还/原段封闭，S01唯一性能NEXT待fresh尚未START。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 插件模块五源已主线接收并完成原owner收口；真实聊天设置已进入实际材料恢复验证，当前修复测试代理的配置标识透传。个人R4已归还但仍draining，未冒恢复成功。 |
+| 当前产出 | 插件模块已合主线；个人后台已恢复接受任务，网页仍旧版本。逐消息设置的材料取消场景发现新旧附件混入，需要修复后再验证。 |
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG03第三轮13:37:25.274760Z已物理归还，fixture正常关闭证据缺失保UNKNOWN；原90s累计33766/余56234。无Web运行/NEXT，Original原intent恢复ready后用户优先；未来fresh至少7515275264B，不追改旧gate。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG第四次完整归还，余38890低于最低限封账；当前无本组实际holder。S01已获唯一性能NEXT待fresh，300s/O1闭合后才可O2，futurefloor至少9296871424B；个人服务/自然用户任务保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

@@ -84,3 +84,9 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 本批环境边界修复仍区分层级：9c46/8488仅源与局部，c4bee假sentinel证明固定worker不继承env-file，未运行真实浏览器；最终caller/native集中接受待原件。1306[reader路径确认](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json)未读取个人报告/配置，不绕compat校验；Original具体修复以其固定包为准。
 
 [MSG03实际准入与归还、Plugin主线释放自然批](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json)：固定c4bee准备475e与Release8964源/types20dc分别限定接受；MSG03首3432ms初始化红和第二15530ms选项红完整归还，产品材料/visual仍未通过。Pluginmain9f0/409b30与0a9v2释放不外推App部署。管理仅检查本批事实/来源/六scope，不新增产品审查层。
+
+[1347实际归还与CORE运行交接](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/current.json)仅管理事实：实读固定实际START/947B CORE READY/2088B MSGseal及五小entry hashes，fresh六相关claim。未重测源码、未批准或启动个人/PG/Chrome；预约、实际、claim释放和D05来源映射分列。
+
+本批按真实事件收敛：[Original held1347实际归还](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/svc-held-return.json)与[CORE实际START](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/core-actual-event.json)分列，不按计划释放。新增[MSG公开Files前置研究](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/msg03-files-prerequisite-peer.json)仅固定静态证据，第三actual无DOM的唯一根因仍UNKNOWN；原owner已同scope准备小修，未授运行。[Plugin真实App接缝研究](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/plugin-app-seam-peer.md)只归原后继设计，不把模块完成扩为App验收。
+
+[REQ19当前6c对照答复](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json)只接受既有7272共源候选与依赖边界：Cookie API存在不等迟到Logout安全，6c到7272有17 backend差异，两个immutable descriptors仍缺。此处不把source HEAD当产物、报告不替新tuple实际兼容或个人发布。

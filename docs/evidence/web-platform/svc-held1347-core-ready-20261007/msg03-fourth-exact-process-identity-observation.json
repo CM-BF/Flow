@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T14:01:00.037466+00:00",
+  "source": "outer actual-exit outer/parent identities + supervisor.processIds worker/Chrome",
+  "processes": [
+    {
+      "processId": 10474,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 10544,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 10862,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 13878,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    }
+  ],
+  "correction": "post-cleanup.json first receipt reused pid key for state, losing numeric identity; this fresh observation supplies exact identities without changing original receipt."
+}

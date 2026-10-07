@@ -1,0 +1,117 @@
+{
+  "kind": "readonly-source-review",
+  "createdAt": "2026-10-07T13:49:29.104951+00:00",
+  "target": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+  "requirement": "U08/U12/WPF-REQ-37: multi-lead unique take visible in dashboard",
+  "decision": "EXISTING_SOURCE_SATISFIES_ALLOCATION_EXCLUSION_AND_HONEST_OBSERVATION; THREE_REGISTRY_UPDATES_STILL_PENDING_ORIGINAL",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "equalsWorkingTree": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "bytes": 5970,
+      "sha256": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+      "equalsWorkingTree": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 9470,
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+      "equalsWorkingTree": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 38207,
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "equalsWorkingTree": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 16447,
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+      "equalsWorkingTree": true
+    }
+  ],
+  "observations": [
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "lines": [
+        20,
+        26,
+        57,
+        73,
+        76,
+        80,
+        81
+      ],
+      "fact": "All mutation commands use one PostgreSQL transaction-scoped advisory lock; writer conflict includes same task, current/pending destination worktree and equal/ancestor/descendant literal paths; receipt/audit are committed atomically."
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "lines": [
+        17,
+        18,
+        33,
+        40,
+        89,
+        98
+      ],
+      "fact": "Version and current actor are checked; handoff_pending prevents original writer actions; released claims cannot mutate. Staleness is a needsVerification observation, not release or permission to steal. Failed observer is unknown."
+    },
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "lines": [
+        129,
+        132,
+        133,
+        140
+      ],
+      "fact": "A registered task still receives active claims if registry branch/worktree differs, with matchesSource=false. Unregistered active claims remain separately visible. The registry is the sole source of progress paths; claim paths are not dynamically trusted as new status sources."
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "lines": [
+        34,
+        36,
+        42,
+        47,
+        48,
+        50,
+        56,
+        58,
+        284,
+        299,
+        307
+      ],
+      "fact": "UI only combines assignment observations matching the summary registry fingerprint; it exposes exact actor, branch/worktree, scope, version, state, stale-but-held and mismatch. Source change aborts pending old detail/document reads while retaining prior content explicitly as previous observation."
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "lines": [
+        135,
+        138,
+        140,
+        142,
+        143
+      ],
+      "fact": "Existing test source covers stale handoff owner, mismatched source, unregistered claim, released exclusion and unknown read failure. This review did not execute it."
+    }
+  ],
+  "limits": [
+    "Source-only review: no import, product execution, database access, browser or test launched.",
+    "Does not prove absence of semantic duplicate work with disjoint scopes; manager must still coordinate requirement and task identity.",
+    "D05 unique registry writer must add REMOVAL CLIENT and PROCESS sources and switch same CORE task to its successor worktree; no second registry writer or manually maintained status.",
+    "Assignment active is ownership, not proof of currently running implementation. Heavy resource reservation/actual START/RETURN remain the manager canonical record.",
+    "Released history display followup already exists in U08/U12/D04-03/D01-02/03; this review does not create a duplicate plan item."
+  ],
+  "quality": {
+    "method": "Previously read local find-skills / clean-code / codebase-design applied to transaction boundary, single state authority, error handling and observer authority separation.",
+    "findings": [],
+    "fixes": "None; root is read-only.",
+    "runtime": "NOT_RUN"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T13:43:54.817Z",
+  "state": "READY_FOR_UNIQUE_MANAGER_NEXT_NOT_OPEN",
+  "taskId": "WPF-MATURE-02-CORE",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "caller": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+  "packet": "da7eb9fbdf37f3ff6bd93a4dd48eb53fe3eb77f9",
+  "review": "pg-operator-independent-reviews.json",
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-isolated-manifest.json",
+    "sha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b",
+    "files": 256,
+    "external": 191,
+    "links": 16,
+    "SQL": 33
+  },
+  "recipe": "pg-isolated-window.md",
+  "input": "pg-input.json",
+  "runName": "message-settings-claim-pg-run-r1",
+  "actualPG": "NOT_RUN_NOT_OPEN",
+  "admission": "ABSENT",
+  "claim": "651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE4",
+  "allPreparationWriting": "STOP after final metadata commit/push; claim retained"
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/App.tsx",
+    "bytes": 71948,
+    "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+    "blob": "2e3a37130a64af0c5f2080eb64f93a7201041c30"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-integration/session.ts",
+    "bytes": 24603,
+    "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+    "blob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-integration/attachments.tsx",
+    "bytes": 22929,
+    "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+    "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-integration/react.tsx",
+    "bytes": 23725,
+    "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+    "blob": "f94b75d126125885bda0fc62f405c9dc59d0f293"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+    "bytes": 21512,
+    "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "blob": "99ac2cd9f08cbca5ac269cdf3766eaf9c3e3581e"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-management/runtime-command.ts",
+    "bytes": 6251,
+    "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "blob": "19cb2929daee913cb69b6138d9902ee6b9853cc4"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugin-management/use-read.ts",
+    "bytes": 1061,
+    "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba",
+    "blob": "fb195ddc086b607025d53b043a64c0a0bdd94642"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugins/host.ts",
+    "bytes": 21387,
+    "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "blob": "d97812469d813db74c202825d8bec267ca4fbad8"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugins/react.tsx",
+    "bytes": 12209,
+    "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+    "blob": "2af7f577118bb3cba07a4bfb6dcdee165172cb44"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/plugins/types.ts",
+    "bytes": 6794,
+    "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "blob": "2fedfc97799938c182d33777ff7672b98252abef"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/conversations/ConversationThread.tsx",
+    "bytes": 24416,
+    "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "blob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-management-integration.browser.ts",
+    "bytes": 14073,
+    "sha256": "cd4e067ae9238c39348c0ae262e65e54df40637b18d51aa478cb166de86f9c98",
+    "blob": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-management-integration.fixture.ts",
+    "bytes": 6161,
+    "sha256": "9fa4706fb26e639aed55413ff07d5ff0dbd05dee6a30d14221f2b909b313c692",
+    "blob": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-runtime-command.test.ts",
+    "bytes": 11066,
+    "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab",
+    "blob": "4d2cdb86f55558cb6b7ac44c28f1f67e25ac0b39"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/attachments/controller.ts",
+    "bytes": 24682,
+    "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+    "blob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/src/connection/session.ts",
+    "bytes": 8274,
+    "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "blob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5"
+  },
+  {
+    "tree": "web-platform-management",
+    "commit": "9df592b3a253819e78857cac4330cd1fb908fcdb",
+    "path": "plans/web-platform/plugin-integration/plan.md",
+    "bytes": 1109,
+    "sha256": "ddaee5df0706f56b71c01693376446934672015c54ddf6a9659498165ac227fb"
+  },
+  {
+    "tree": "web-platform-management",
+    "commit": "9df592b3a253819e78857cac4330cd1fb908fcdb",
+    "path": "plans/web-platform/plugin-system/plan.md",
+    "bytes": 953,
+    "sha256": "0aad3e398d08daeb752455f9104eb303f4e81d52a4bca62d122fd5f7792ebcdf"
+  },
+  {
+    "tree": "web-platform-management",
+    "commit": "9df592b3a253819e78857cac4330cd1fb908fcdb",
+    "path": "docs/evidence/web-platform/main-deployment-route-fix-20261007/plugin-runtime-web-interface-research.json",
+    "bytes": 6739,
+    "sha256": "f2a52cc30383a81dfc764c9ed2e43431b71636bba7aacd1992ccd85dea4b369d"
+  },
+  {
+    "tree": "web-platform-management",
+    "commit": "9df592b3a253819e78857cac4330cd1fb908fcdb",
+    "path": "docs/evidence/web-platform/main-deployment-route-fix-20261007/plugin-settings-followup.json",
+    "bytes": 1356,
+    "sha256": "f84a7fb831587841d36508613284ec9d7a098c25ef034f1ef08090c69bcf8071"
+  },
+  {
+    "tree": "web-plugin-integration",
+    "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+    "path": "plans/wpf-i01-plugin-integration/plan.md",
+    "bytes": 5862,
+    "sha256": "d1934ca49db039fad533c143593908954f5e34fc4e8b52b59c0f6d2883ba3f5d"
+  },
+  {
+    "tree": "web-plugin-integration",
+    "commit": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+    "path": "plans/wpf-i01-plugin-integration/status.md",
+    "bytes": 7065,
+    "sha256": "a55bdbb447d4d8df259646833845023cb2da5a2fd9b6f9dbd8f4b04c3eb1c73a"
+  },
+  {
+    "tree": "web-plugin-host",
+    "commit": "28b70c35dbda1603411bfa87402b3182eacc3a9a",
+    "path": "plans/wpf-p01-plugin-host/plan.md",
+    "bytes": 4344,
+    "sha256": "c4d329292de09b64757bd1ee0243c46c9e1d7f0eaf08e7ffd76195179430698b"
+  },
+  {
+    "tree": "web-plugin-runtime-management",
+    "commit": "409b30b968532f4c0d775d14a83c23b3a5e857c2",
+    "path": "plans/wpf-plugin-runtime-management/status.md",
+    "bytes": 13724,
+    "sha256": "7585def7ee3401d7b4b4f30eebaa773af48def3f878d54aece565926e591b062"
+  },
+  {
+    "tree": "web-plugin-runtime-management",
+    "commit": "409b30b968532f4c0d775d14a83c23b3a5e857c2",
+    "path": "plans/wpf-plugin-runtime-management/plan.md",
+    "bytes": 10153,
+    "sha256": "3d7377d8cdc2069495667b93fcea9ebfb0507cf2ffdaff1438752b9ec6d45c09"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-integration.test.ts",
+    "bytes": 10072,
+    "sha256": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9",
+    "blob": "809444943268cb37cd9c17b45427d88892ca4304"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-management/browser.ts",
+    "bytes": 39142,
+    "sha256": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+    "blob": "c76edd2b1eaa45240d8e644625fd6ebe207f55a9"
+  },
+  {
+    "commit": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+    "path": "apps/web/test/plugin-management/fixture/main.tsx",
+    "bytes": 7258,
+    "sha256": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "blob": "7340b476c1a996c72ea75a439a21b5a7324ffc0c"
+  }
+]
