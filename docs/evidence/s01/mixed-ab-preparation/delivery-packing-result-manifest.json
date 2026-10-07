@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T16:12:32.604Z",
+  "executionHead": "1a3f8aa5edb2444f2960e7433b31ccaf8bd046af",
+  "sourceCore": "82095227e5b865139093cc325484c9885f69e805",
+  "sourceCaller": "8a933df2e71e03aa3e9525649877794777ebdec4",
+  "inputSha256": "e32e425287fd8da0924d4a0c50d8eb443751285191bf733419a09eeaa0496807",
+  "inputBindingsUnchanged": 93,
+  "inputBytes": 18421447,
+  "compiledSha256": "55dc3c42dd4534366a1da9f4ec66aa1701adf0fd9339852d784c6edd5ae85dbc",
+  "bindings": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-r1-reservation.json",
+      "bytes": 336,
+      "sha256": "995961592ab284bc43ffaa80ba1300c66ef813e8989a32384d0096be28031fe1",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-r1-spawn.json",
+      "bytes": 100,
+      "sha256": "abb887c4f0ce90c4f4b239dddd60a606ee2a8e13bb45072c14d2892ef73e88ac",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-r1-root.json",
+      "bytes": 95,
+      "sha256": "01e13f0b7729d546b6293997d1301755806fbdf78a7dc583843f616359fe4731",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-r1.raw",
+      "bytes": 5266,
+      "sha256": "21b2b617cf4ad9bd2a15b022100365b64078c2ce5e0aa483592a2b6a10dbb602",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-r1.json",
+      "bytes": 6315,
+      "sha256": "634973d97082078cbeb9f5df288732f6b04def1c607bb9b6f94b1b6ad73d9c79",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-actual-outer.json",
+      "bytes": 3557,
+      "sha256": "84cd797f4e613d7967742b26f2c95e0319e0049501cb705617d333ec19e6912e",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-analysis.json",
+      "bytes": 5672,
+      "sha256": "7c16532584992fca244d31c32d019384b03ada3cdbb58afd67f52e82ae9d7d42",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-report.md",
+      "bytes": 4594,
+      "sha256": "dc55045d5827560fdd8f628810f0f5d8e7e64a6aef4d489faf3d70f240f7755d",
+      "mode": "0o644"
+    }
+  ],
+  "bindingBytes": 25935,
+  "fiveOriginalBytes": 12112,
+  "logicalCharge": {
+    "newRetainedBytes": 25935,
+    "tmpReservationBytes": 2097152,
+    "rawReservationBytes": 131072,
+    "finalMetadataReserveBytes": 65536,
+    "conservativeTotalBytes": 2319695,
+    "capBytes": 8388608,
+    "note": "Raw double-counted conservatively; no physical peak claim, no second global cleanup reserve."
+  },
+  "reviewStatus": "PENDING",
+  "actualVerdict": "PASS",
+  "remainingAuthorization": "NONE; one window consumed"
+}

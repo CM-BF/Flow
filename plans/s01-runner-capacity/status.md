@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:04:49.236Z |
+| 最近更新 | 2026-10-07T16:13:27.914Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,20 +15,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 已审packet ca4846244573d5ec2ea879b27abc1b8bfe3c333d，当前仅正式review/状态收口；最终HEAD由Git读取，提交后核clean/origin。 |
+| 工作树dirty状态 | execution1a3f8aa5edb2444f2960e7433b31ccaf8bd046af固定；仅本次实际原件与结果metadata封存，source/input/compiled93项未变。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805：strict emit0、新finite plan5/5；后继8a933薄caller四项只读纯核0。仅准备，actual NOT_RUN_NOT_OPEN。 |
+| 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805准备；本次execution1a3f8aa5edb2444f2960e7433b31ccaf8bd046af四arm actual PASS，result review PENDING，0PG。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 同策略旧新打包对照的准备和局部检查已通过独立审查；尚无四侧实际测量结果。 |
-| 下一可用交付 | 在另行协调的独占窗口完成同轨迹四侧测量，报告开销与完整资源收尾。 |
-| 当前阻塞 | ACTIVE: 实际性能窗口尚未开放；等待现有共享资源排程归还。 |
+| 当前产出 | 同轨迹四侧打包对照已完成并归还资源；新版两次打包耗时均更低，结论限本次小样本，待结果独审。 |
+| 下一可用交付 | 独立复核四侧计量与语义/资源证据后，交付观察开销的局部对照；不替代原容量与取消验收。 |
+| 当前阻塞 | ACTIVE: 实际结果待独立忠实性审查；本次窗口已消费，没有后续运行授权。 |
 | 需用户决定 | NONE |
-| Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4；db 2026-10-07T16:02:39Z对ca484624准备/局部结果独审0P1/P2，actual NOT_OPEN。 |
+| Review | PENDING 8a933df2e71e03aa3e9525649877794777ebdec4 实际ABBA结果；source/preparation于16:02:39Z已APPROVED，两者范围分开。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:04:49.236Z fresh本人/WT/branch/范围一致，STOP写入并保留review/运行期claim。 |
 | 架构影响 | 已有parent arm只增加导出/显式workerFile，新四侧plan复用原receiver与OPS14。两worker闭包仅pg-delivery.js不同，原五JS与ESM精确不变；新parent compiled仅作共同调度，0生产pool/SQL变更。 |
 
@@ -298,3 +298,11 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 db 16:02:39Z批准固定ca484624/core82095227/caller8a933df2，0P1/P2；[canonical READY](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)与[独审回执](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json)承载限定结论。14bindings145009B、93inputs18421447B、15compiled82709B；strict0/5of5/callerpure0，3进程closed/raw620B，计时口径不合并。旧输入/raw/compiled及性能失败保持。
 
 本段仅metadata、0工程child/PG/actual/重编译；fresh原claimv3/6且ca484624=origin clean后写。原16MiB累计保守计量9034230B，含已变文件全长317942B、TMP8MiB/raw256KiB和本收尾64KiB，未重复新增reserve。应用原本地find-skills/codebase-design/clean-code：核固定来源/批准边界/职责和错误，未新增模块。唯一status继续聚合源，本段未GET、不冒当前HEAD已同步；任务startUNKNOWN/NOT_COMPLETED及开放TODO保持。Paused queue扫描成本只留Mika协调的后继候选链接，不新实现或扩scope。
+
+## 2026-10-07T16:13:27.914Z 同策略ABBA实际封存
+
+唯一window s01-buffered-packing-abba-once：checkpoint16:10:12.408Z/PID-PGID15395，caller16:10:13.150Z已终态；tool最终exit0/owner精确TMP absence于16:10:32.815Z确认，已即时向Mika归还以通知manager/Web。4worker old/new/new/old全close0/双EOF/known receipt/pending-drop0，supervisor783ms/完整5266B/no faults；早期EPERM保留。TMP同identity空末样本后删除，不冒峰值。外time1.17s、callerprepersist950.969ms与保守22s延后工具观察包围分列，wholeexternal精确值UNKNOWN。0PG/HTTP/Chrome/provider/安装，未探或停止个人任务。
+
+[唯一结果入口](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-ready.md)绑定execution1a3f8aa5、原inpute32e和compiled55dc；93pins18421447B未变，5原件12112B保持。四arm同2048→506samples/4SQLgroups/4deliverymessages；old/new的n2描述均值finish63.352875/1.423813ms、CPU74.0535/12.2875ms、fork-close202.542375/140.753459ms。固定顺序/未知背景/应用JSON非wire/CPU区间限制明确，不称general提速、pool根因或128能力。旧O1FAIL/O2NOT_RUN/KEEP与最终取消验收缺口保持。
+
+Fresh508fv3/6本人及clean1a3f=origin，输出五项absent；预核free20165656576≥17454858240B，caller另保现场free。Original/Web ordinary全drain消息来源另存outer；不把声明背景当受控相等。actual8MiB逻辑cap内保守计量2319695B含TMP2MiB/raw128KiB及64KiB最后metadata；原预备源/trace不重复计。本段16:09:47Z起，仅一次actual后metadata，0额外工程检查/重新编译或重试，claim保留而STOP新写。clean-code/codebase-design复核单一现有arm/receiver与口径，不新增平台。唯一status仍dashboard权威源，未新GET，当前快照同步未知；原M2/startUNKNOWN/NOT_COMPLETED及开放TODO保持。

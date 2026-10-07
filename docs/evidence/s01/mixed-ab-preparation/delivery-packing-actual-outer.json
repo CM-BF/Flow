@@ -1,0 +1,97 @@
+{
+  "kind": "S01_BUFFERED_PACKING_ABBA_ACTUAL_OUTER",
+  "executionHead": "1a3f8aa5edb2444f2960e7433b31ccaf8bd046af",
+  "sourceCore": "82095227e5b865139093cc325484c9885f69e805",
+  "sourceCaller": "8a933df2e71e03aa3e9525649877794777ebdec4",
+  "window": "s01-buffered-packing-abba-once",
+  "actualGrantedBy": "root relay of sole manager NEXT; I01 RETURN16:07:09.871423Z",
+  "claim": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/s01/idle-claim-cost",
+        "docs/evidence/s01/mixed-ab-preparation",
+        "docs/evidence/s01/mixed-ab-run",
+        "docs/evidence/s01/pool-wait-run",
+        "experiments/runner-capacity/mixed",
+        "plans/s01-runner-capacity"
+      ],
+      "state": "active",
+      "branch": "codex/runner-capacity-probe",
+      "origin": "new",
+      "taskId": "S01",
+      "worker": "status_read",
+      "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+      "createdAt": "2026-10-06T13:42:24.119Z",
+      "updatedAt": "2026-10-07T13:34:26.938Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "preflight": {
+    "at": "2026-10-07T16:10:04.445+00:00",
+    "inputSHA": "e32e425287fd8da0924d4a0c50d8eb443751285191bf733419a09eeaa0496807",
+    "inputs": 93,
+    "bytes": 18421447,
+    "fiveOutputsAbsent": true,
+    "freeBytes": 20165656576,
+    "floorBytes": 17454858240,
+    "holderSource": "root explicit sole NEXT after I01 FULLRETURN16:07:09.871423Z; all ordinary drained; no independent user task probing",
+    "backgroundUserLoad": "UNKNOWN"
+  },
+  "tool": {
+    "before": {
+      "current_time": "2026-10-07 16:10:11 UTC"
+    },
+    "first": {
+      "chunk_id": "da0540",
+      "wall_time_seconds": 1.001583125,
+      "session_id": 65159,
+      "original_token_count": 0,
+      "output": ""
+    },
+    "firstObservedAt": {
+      "current_time": "2026-10-07 16:10:13 UTC"
+    },
+    "final": {
+      "chunk_id": "e3b2b5",
+      "wall_time_seconds": 0.000006834,
+      "exit_code": 0,
+      "original_token_count": 25,
+      "output": "{\"mode\": \"packing\", \"successBeforePersistence\": true, \"faults\": []}\nreal 1.17\nuser 0.51\nsys 0.23\n"
+    },
+    "finalObservedAt": {
+      "current_time": "2026-10-07 16:10:32 UTC"
+    }
+  },
+  "postClose": {
+    "observedAt": "2026-10-07T16:10:32.815Z",
+    "tmp": "/tmp/flow-s01-packing-actual-fubdsza_",
+    "dev": 16777234,
+    "ino": 124304580,
+    "exactLstat": "ENOENT",
+    "scope": "exact current owned TMP only; no old KEEP access, no PG/process scan"
+  },
+  "timeMeaning": {
+    "timePSeconds": 1.17,
+    "callerBeforePersistenceMs": 950.9686250239611,
+    "supervisorMs": 783,
+    "toolClockUpperEnvelopeSeconds": 22,
+    "toolEnvelopeReason": "second-granular before16:10:11 to delayed final observation16:10:32; +1s conservative. Not active runtime.",
+    "preciseWholeExternalWall": null,
+    "toolChunksNotAdditive": true
+  },
+  "background": "Personal services/user task state UNKNOWN; no probing or stopping. Root reported other teams ordinary drained; metadata may continue.",
+  "limits": {
+    "wholeSeconds": 60,
+    "newActualBytes": 8388608,
+    "tmpBytes": 2097152,
+    "rawBytes": 131072,
+    "actualFloorBytes": 17454858240
+  },
+  "resultBoundary": "Only same buffered policy/fixed2048trace/ABBA, 2 observations per variant. No PG/HTTP/provider/native/SLO/general performance or original pool/128 capacity attribution. Window consumed; no retry."
+}

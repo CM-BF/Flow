@@ -1,0 +1,161 @@
+{
+  "calculatedAt": "2026-10-07T16:12:32.604Z",
+  "rawSource": "delivery-packing-actual-r1.json",
+  "window": "s01-buffered-packing-abba-once",
+  "executionHead": "1a3f8aa5edb2444f2960e7433b31ccaf8bd046af",
+  "order": [
+    "old",
+    "new",
+    "new",
+    "old"
+  ],
+  "inputRows": 2048,
+  "parentPlanToClosedMs": 687.1318329999999,
+  "arms": [
+    {
+      "order": 1,
+      "variant": "old",
+      "pid": 15496,
+      "parentForkToClosedMs": 204.778541,
+      "parentStartCommandToClosedMs": 156.69579099999999,
+      "recordPhaseWallMs": 86.199042,
+      "synchronousRecordMs": 1.9855969999998777,
+      "observedWaitMs": 83.68200400000006,
+      "finishSynchronousMs": 63.413708000000014,
+      "finishToCallbacksDrainedMs": 1.4238749999999811,
+      "workerStartToFirstDrainMs": 151.329375,
+      "cpuUserUs": 72461,
+      "cpuSystemUs": 1837,
+      "cpuTotalUs": 74298,
+      "allJsonEnvelopeBytes": 129390,
+      "deliveryReceiptJsonBytes": 128657,
+      "messages": 4,
+      "samples": 506,
+      "sqlGroups": 4,
+      "inputRows": 2048,
+      "complete": true
+    },
+    {
+      "order": 2,
+      "variant": "new",
+      "pid": 15711,
+      "parentForkToClosedMs": 141.894792,
+      "parentStartCommandToClosedMs": 94.96891699999998,
+      "recordPhaseWallMs": 87.797292,
+      "synchronousRecordMs": 1.9940549999998893,
+      "observedWaitMs": 85.30708199999987,
+      "finishSynchronousMs": 1.414584000000005,
+      "finishToCallbacksDrainedMs": 1.3587500000000006,
+      "workerStartToFirstDrainMs": 90.836084,
+      "cpuUserUs": 11236,
+      "cpuSystemUs": 1018,
+      "cpuTotalUs": 12254,
+      "allJsonEnvelopeBytes": 129385,
+      "deliveryReceiptJsonBytes": 128654,
+      "messages": 4,
+      "samples": 506,
+      "sqlGroups": 4,
+      "inputRows": 2048,
+      "complete": true
+    },
+    {
+      "order": 3,
+      "variant": "new",
+      "pid": 15848,
+      "parentForkToClosedMs": 139.612125,
+      "parentStartCommandToClosedMs": 93.40604200000001,
+      "recordPhaseWallMs": 85.809166,
+      "synchronousRecordMs": 2.006594999999699,
+      "observedWaitMs": 83.27036900000003,
+      "finishSynchronousMs": 1.4330420000000004,
+      "finishToCallbacksDrainedMs": 1.3792079999999913,
+      "workerStartToFirstDrainMs": 88.871,
+      "cpuUserUs": 11367,
+      "cpuSystemUs": 954,
+      "cpuTotalUs": 12321,
+      "allJsonEnvelopeBytes": 129384,
+      "deliveryReceiptJsonBytes": 128657,
+      "messages": 4,
+      "samples": 506,
+      "sqlGroups": 4,
+      "inputRows": 2048,
+      "complete": true
+    },
+    {
+      "order": 4,
+      "variant": "old",
+      "pid": 15985,
+      "parentForkToClosedMs": 200.30620800000008,
+      "parentStartCommandToClosedMs": 153.81391600000006,
+      "recordPhaseWallMs": 84.154458,
+      "synchronousRecordMs": 1.9952029999998544,
+      "observedWaitMs": 81.70316799999998,
+      "finishSynchronousMs": 63.29204100000001,
+      "finishToCallbacksDrainedMs": 1.4644169999999974,
+      "workerStartToFirstDrainMs": 149.150833,
+      "cpuUserUs": 72145,
+      "cpuSystemUs": 1664,
+      "cpuTotalUs": 73809,
+      "allJsonEnvelopeBytes": 129381,
+      "deliveryReceiptJsonBytes": 128654,
+      "messages": 4,
+      "samples": 506,
+      "sqlGroups": 4,
+      "inputRows": 2048,
+      "complete": true
+    }
+  ],
+  "descriptiveArithmeticMeans": {
+    "old": {
+      "n": 2,
+      "parentForkToClosedMs": 202.54237450000005,
+      "parentStartCommandToClosedMs": 155.25485350000002,
+      "finishSynchronousMs": 63.35287450000001,
+      "cpuTotalUs": 74053.5,
+      "allJsonEnvelopeBytes": 129385.5
+    },
+    "new": {
+      "n": 2,
+      "parentForkToClosedMs": 140.7534585,
+      "parentStartCommandToClosedMs": 94.1874795,
+      "finishSynchronousMs": 1.4238130000000027,
+      "cpuTotalUs": 12287.5,
+      "allJsonEnvelopeBytes": 129384.5
+    }
+  },
+  "descriptiveDifferences": {
+    "parentForkToClosedMs": {
+      "newMinusOld": -61.78891600000006,
+      "relativePercent": -30.50666121226896
+    },
+    "parentStartCommandToClosedMs": {
+      "newMinusOld": -61.06737400000003,
+      "relativePercent": -39.33363281296711
+    },
+    "finishSynchronousMs": {
+      "newMinusOld": -61.92906150000001,
+      "relativePercent": -97.75256764395118
+    },
+    "cpuTotalUs": {
+      "newMinusOld": -61766.0,
+      "relativePercent": -83.40726636823378
+    },
+    "allJsonEnvelopeBytes": {
+      "newMinusOld": -1.0,
+      "relativePercent": -0.00077288413307519
+    }
+  },
+  "sampleLimits": "2 observations per variant, fixed ABBA order; no randomization, confidence interval, independent workload replication or controlled background. Descriptive values only.",
+  "semantics": "Each arm receiver validates exact nonSQL fields/ordinal mapping and SQL grouping keys/count/elapsed totals, known single summary/no extra, same input2048/samples506/groups4/messages4. SQL retains aggregation policy, not each original SQL record.",
+  "bytesMeaning": "UTF8 JSON.stringify application envelopes, not OS wire. Includes dynamic childMs/PID and measured metric representations; equal policy does not require bit-identical serialized timing fields.",
+  "cpuMeaning": "process.cpuUsage delta before createPgDelivery through first callback drain, excludes worker startup and subsequent result-send/drain/close.",
+  "closure": "Each worker close0/null with stdout/stderr EOF and zero stdio; parent control and reporter pending/drop0. Outer OPS14 reaped exit0/finalownedabsent/merged EOF, initial EPERM preserved, ownedTMP sameidentity removed.",
+  "noClaims": [
+    "general performance",
+    "production latency/SLO",
+    "original pool cause",
+    "128 capacity",
+    "same machine background",
+    "physical wire/heap peak"
+  ]
+}
