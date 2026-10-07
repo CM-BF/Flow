@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T13:25:53.154837+00:00",
+  "decision": "PROPOSAL_ONLY_PENDING_NEW_INTENT_SEMANTICS",
+  "observation": {
+    "path": "observation.json",
+    "sha256": "0bc3b427a054804cd21a0651866baac5c7c77ac3167d466274a8076775417781",
+    "journalSha256": "cad3b336e5c36bf584eadc516625cb0c24be6ff1bda71680975ed896f6b23c31",
+    "identity": {
+      "dev": "16777234",
+      "ino": "123285855",
+      "uid": 501,
+      "mode": 384,
+      "nlink": 1,
+      "bytes": 80,
+      "mtimeMs": 1791329485261.6858,
+      "ctimeMs": 1791329485281.3052
+    },
+    "sameOperation": {
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "version": 19,
+      "state": "draining",
+      "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+      "activeAttempts": 0,
+      "uncertainAttempts": 0,
+      "stopPermitted": false
+    }
+  },
+  "existingMethods": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "bytes": 9493,
+      "sha256": "268e240e8b9194b776cd195ea11513a3ab8fe7916daedbd0a15eda6c7d0bdaa5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "bytes": 8017,
+      "sha256": "e656dc1fcdde3bd0a3a2b183f2d85e375b9b40b339b134fe0fb91b279ed9f32a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/hold-stop.mjs",
+      "bytes": 4528,
+      "sha256": "20f3d2c8f8b8105ca69ddb0e1ca8254334035eba1c6e50d0734a3b33c2403eb8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/operator.mjs",
+      "bytes": 1804,
+      "sha256": "47bdadbe77cc794a01db2fc04f6c6419742edd91a9b578d06e4dacd0b7b8f0d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/independent-review.json",
+      "bytes": 3295,
+      "sha256": "6b999006a79d62aaf3757e48ca62ee70282549e45f4e44884ecb522888d94257"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json",
+      "bytes": 2011,
+      "sha256": "233543b5b1df69a0735a42ca9cdac81998f4cdeaea087c0fc7470f9ef6d768ae"
+    }
+  ],
+  "staticCallableConclusion": "retireIntent export exists; original operator and default confirmation contract cannot directly apply to root7524 + preserved queued task. No import/service action performed.",
+  "noNewAuthority": true
+}

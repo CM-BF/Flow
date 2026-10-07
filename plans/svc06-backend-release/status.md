@@ -410,3 +410,7 @@ Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原
 ## 2026-10-07T13:24:09.729278+00:00：一次只读诊断确认未决intent
 
 [原件与边界](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/RESULT.md)：2026-10-07T13:22:52.222Z→2026-10-07T13:22:52.291Z，426ms/exit0/owned组absent/双EOF。admission80B/version1/assignments空/inFlight非null UUID（仅digest）；前后同op/draining19/active0uncertain0。不是schema错误；公开resume也不自动清本地未决intent，因此不冒实际接单恢复。没有journal写入/服务动作/模型调用。原900s截止13:34:53.793Z不变；当前仅等待此精确intent处置语义，已归还运行窗口。
+
+## 2026-10-07T13:25:53.154837+00:00：本次单intent处置提案
+
+[最小提案](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/retirement-proposal.md)固定新cad3/d52摘要、同op/CAS19和真实来源；旧退役zero-pending条件与本次保留queued任务冲突，不能原样套用或伪造计数。旧rootaf51入口与现7524也需受审适配。当前仅提案/静态核读，0新增个人读取/操作；待新语义裁决，不延长原13:34:53.793Z截止。R4结果独审原件按既有记录归档，原FAIL与raw不改。
