@@ -1,5 +1,8 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
+状态：APPROVED（仅精确18源受控接收及已列selected实际）
+Review target commit: fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56
+
 **APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18**，固定组合 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56** / base **c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50**，15产品+3test。[root最终组合审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-final-scoped-intake-review-20261007.json)核七审查输入、36 base/target Git对象和当时main6fd214e BASE_MATCH，0blocking。
 
 两条既有selector各2/2 PASS，源/local和业务/生命周期/双图分工审均已接受；具体范围和限制见[唯一入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。材料failure未独验durable空B全快照；设置恢复是主动过期后公开reauth；selectOption不代表完整native四facet键盘。旧四FAIL、第三fixture UNKNOWN保留。新120s累计26368/余93632 CLOSED，当前0holder/NO_NEXT。

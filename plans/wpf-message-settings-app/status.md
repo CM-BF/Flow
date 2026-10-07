@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:35:03.236Z；root实核main6fd214eb62f269167f6af4a8390850561dc0d01c的18源BASE_MATCH，仅当时观察 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:38:13.994Z；main接收仍NOT_INTEGRATED；仅检查/Review标准声明格式更正 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,10 +13,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
 | 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git） |
-| 工作树dirty状态 | 本自然批只封存actual/独审/metadata；18源码fcf5不变；normal push clean后全20scope STOP |
+| 工作树dirty状态 | 仅ownmetadata标准检查/Review声明格式与解析核对；18源码不变，normal push clean后全20scope STOP |
 | 工作分支状态 | reviewed |
 | 本片段交付阶段 | integration |
-| 检查状态 | 两条真实App selector各2/2 PASS；源/local、两业务和生命周期/双图独审接受；旧四FAIL保留 |
+| 检查状态 | PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
 | 实现目标 | fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/recovery/binding.tsx, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 交主线按精确变更接收；个人可选目录仍由共享owner发布 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18，固定fcf5；main/个人部署未验 |
+| Review | APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)及root最终精确18源接收审；main/个人部署未验 |
 | Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE；exact20；14:32:23.789Z fresh身份及全局无overlap |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |

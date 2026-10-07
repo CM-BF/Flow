@@ -1,0 +1,103 @@
+{
+  "observedAt": "2026-10-07T14:38:25.809577+00:00",
+  "endpoint": "http://127.0.0.1:4320/api/summary",
+  "task": {
+    "id": "WPF-MESSAGESETTINGS03",
+    "title": "聊天消息设置实际接入",
+    "role": "工作线",
+    "sourceKey": "77cfe0529a6d1ed04bc8ad8bf8e7f544bcadd6ce7f5eb5a800c07def05fbce82",
+    "sourceCurrent": true,
+    "source": {
+      "mode": "live",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+      "digest": "d5b36a8839a8f6ca9405a9834829f2d1e70f3cc7657bbfcae459438fb5842b97",
+      "modifiedAt": "2026-10-07T14:38:13.995Z",
+      "readAt": "2026-10-07T14:38:25.752Z",
+      "declaredUpdatedAt": "2026-10-07T14:38:13.994Z",
+      "stale": false,
+      "ageHours": 0.003266111111111111,
+      "issues": [],
+      "error": null,
+      "frozenCommit": null
+    },
+    "declarations": {
+      "owner": "workspace_panels_owner / gpt-6-astra",
+      "branch": "codex/web-message-settings-app",
+      "branchState": "reviewed",
+      "declaredHead": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git）",
+      "declaredDirty": "仅ownmetadata标准检查/Review声明格式与解析核对；18源码不变，normal push clean后全20scope STOP",
+      "updatedRecord": "2026-10-07T14:38:13.994Z；main接收仍NOT_INTEGRATED；仅检查/Review标准声明格式更正",
+      "checks": {
+        "state": "passed",
+        "target": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+        "record": "PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录"
+      },
+      "reviewRecord": "APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)及root最终精确18源接收审；main/个人部署未验",
+      "mainRecord": "NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线",
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "消息设置随发送、排队和恢复保留快照，材料失败与取消保护新稿；限定实际验收及独立审查通过",
+        "next": "交主线按精确变更接收；个人可选目录仍由共享owner发布",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T12:11:30.621Z",
+          "record": "2026-10-07T12:11:30.621Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "owner实际开始本登记实施子片的独立源码供给，见provision.startedAt；不把take自动当开工，未完成"
+        },
+        "issues": []
+      },
+      "truncatedFields": []
+    },
+    "progress": {
+      "completed": 5,
+      "total": 6
+    },
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "reason": "",
+        "targetId": "WPF-MATURE-02",
+        "title": "Claude与Codex执行选项"
+      },
+      "basis": "status-source"
+    },
+    "verification": {
+      "state": "not_loaded"
+    },
+    "assignment": {
+      "state": "pending"
+    }
+  }
+}

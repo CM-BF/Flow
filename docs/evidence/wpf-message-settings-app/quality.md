@@ -61,3 +61,7 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:33:50.017982+00:00 当前入口一致性与metadata安全点
 
 复读本地find-skills/clean-code，复用已固定来源、不安装。发现多轮append的旧“当前/NOT_RUN”容易和新实际混淆：集中当前review矩阵、明确旧安全点为历史，源与实际绑定不改。保failure设置空稿界面与cancel完整持久B身份差异，不把主题子检查冒独立themes390。fresh claim v3/exact20且overlap[]，产品18源码不动；仅记录/链接核，不重复绿测试。
+
+## 2026-10-07T14:38:13.994Z 看板声明格式更正
+
+经理实际summary发现自然语言PASS未被parseChecks识别；唯一status改为标准PASSED+固定fullSHA，review同APPROVED/Review target commit，不改parser或结果。原限定范围、main未接、个人目录和未选旅程保持；只有ownparse/只读目标summary，不重跑产品。
