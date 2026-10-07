@@ -2,7 +2,7 @@
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
   "implementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
-  "state": "SOURCE_FIXED_OWNED_DEFAULT_CONTEXT_NOT_RUN",
+  "state": "SOURCE_FIXED_BROWSER_FIVE_GROUPS_PASSED_AWAITING_RUNTIME_REVIEW",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -54,8 +54,8 @@
   ],
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
-  "browserEntry": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller transfers only its fresh owned Chrome default context attached with documented noDefaults:true. Fixture sets page viewport explicitly and closes transferred context (which closes that owned browser); caller continues PID/EOF/process cleanup. Five groups unchanged; no new run.",
-  "runtime": "35direct passed at08ec unchanged dependencies. Original08ec browser runs1/2 FAILED4/5; ccd885 run3 FAILED4/5, actual visibility remained visible after focus disable/owned window minimize. No fourth run.",
+  "browserEntry": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller transfers only its fresh owned Chrome default context attached with documented noDefaults:true. Fixture sets page viewport explicitly and closes transferred context (which closes that owned browser); caller continues PID/EOF/process cleanup. Five groups unchanged; one actual fourth run passed at execution metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26.",
+  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent runtime review pending.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
   "deployment4320": "NOT_DEPLOYED",

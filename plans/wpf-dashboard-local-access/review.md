@@ -45,3 +45,9 @@ Root已对ccd885前提及第三caller给限定源码批准，原件归档于本e
 ## 2026-10-07 03:46:17 UTC — 默认context唯一接缝候选
 
 Source `3c0dda7b7a8887ac763d8a1651231374b0f3356d` 仅fixture入口/显式viewport/删除旧focusoverride。Root第三次FAILED实证研究已原样归档，当前修正待源码独审，0运行。公共noDefaults只作用于defaultContext；caller未来明示freshPID/profile/唯一context及blank初始页的准入，fixture只关闭该已移交context，原监督继续实际退出/EOF收尾。全部五组断言保留，产品08ec+direct35不变；完整feature NOT_STARTED，旧三失败不改。
+
+## 2026-10-07 03:51:57 UTC — 第四次实证待独立审查
+
+Root `root-access3c0-default-context-review.json` 已批准3c0d与caller准备，0blocking但当时NOT_RUN。此后明确handoff的一次实际browser已5/5、exit0，visible→hidden/tokenempty真实成立；两层双EOF、context/HTTP/Chrome/组/scratch清理完整。详 `browser-fourth/archive.json` 与原26文件，源码仍3c0d/执行metadata仍d0f6，封存head不冒运行head。
+
+原三次FAILED保留；预算保守累计37077/余22923含15000清理，无自动第五次。作者实际查看双主题390图片，未见窄屏横向溢出或凭据泄露；这不是独立review结论。第四次实证已交root，完整feature保持NOT_STARTED直至独立结论；main/真实安装/部署仍未验。

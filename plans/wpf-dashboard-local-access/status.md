@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:46:17 UTC |
+| 最近更新 | 2026-10-07 03:51:57 UTC |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成 |
@@ -11,30 +11,30 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | Flow 入口、显式凭据加载与前四组浏览器交互已验证；页面隐藏后的清除仍待验证 |
-| 下一可用交付 | 完成页面隐藏验收后，交付可由原服务发布者启用的本机入口 |
-| 当前阻塞 | 测试改用明确移交的自有默认context，等待源码审查与后继独立浏览器窗口；三轮失败保留 |
+| 本片段交付阶段 | review |
+| 当前产出 | Flow入口、凭据显隐复制、键盘与页面隐藏清除已在隔离浏览器验证 |
+| 下一可用交付 | 完成独立实证审查后，交付给原发布者集成与启用本机入口 |
+| 当前阻塞 | NONE；第四次五组通过，待独立实证审查与受控集成发布 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
-| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；产品08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7；测试前提3c0dda7b7a8887ac763d8a1651231374b0f3356d；metadata随后封存 |
-| 工作树dirty状态 | 产品源码与35direct已固定；本次仅metadata封存，提交后核clean |
-| 工作分支状态 | in-progress / browser-partial / visibility-pending |
+| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；产品08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7；测试前提3c0dda7b7a8887ac763d8a1651231374b0f3356d；执行metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26；本次仅实证metadata封存 |
+| 工作树dirty状态 | 七源固定不变；本次仅metadata/实证封存，提交后核clean |
+| 工作分支状态 | in-progress / checks-passed / awaiting-review |
 | 实现目标 | 3c0dda7b7a8887ac763d8a1651231374b0f3356d（仅browser前提；产品08ec不变） |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs |
-| 检查状态 | FAILED 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7：三次browser均4/5组完成；第三次关闭focus模拟/自有窗口最小化后仍visible超时；35direct已过；真实安装/部署 NOT_RUN |
-| Review | source+35direct 独立限定APPROVED；完整feature NOT_STARTED，browser失败保留 |
+| 检查状态 | PASSED 3c0dda7b7a8887ac763d8a1651231374b0f3356d：第四次browser实际5/5、exit0、原生hidden后token清空、owned清理完整；08ec之35direct保留不重跑；前三次FAILED保留；真实安装/部署 NOT_RUN |
+| Review | source+35direct与3c0d/caller源码已独立限定APPROVED；第四次实际browser等待独立审查；完整feature NOT_STARTED，前三次失败保留 |
 | 已集成main状态 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；本功能未集成 |
 | Dashboard 同步 | 首a6fb已由manager核并转READY_FOR_LEAD_INTAKE；实际登记/聚合待回执 |
 | Claim | 57735ff7-d631-4538-9faf-d7ac090837a2 v1；原10literal |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| ACCESS01-01 | in-progress | workspace_panels_owner | provider/HTTP已实现，35direct通过且限定独审接受 |
-| ACCESS01-02 | in-progress | workspace_panels_owner | 实际入口/UI前四组三次均过；第三次第五组仍未达hidden前提 |
-| ACCESS01-03 | in-progress | workspace_panels_owner | 35/35 direct通过；browser三次失败4/5；原60s保守余29161ms含15s清理 |
-| ACCESS01-04 | pending | workspace_panels_owner | 源+35direct限定独审通过；完整feature/main/部署未验 |
+| ACCESS01-01 | completed | workspace_panels_owner | provider/HTTP已实现，35direct通过且限定独审接受 |
+| ACCESS01-02 | completed | workspace_panels_owner | browser第四次5/5，原生hidden→token空/显隐复制/键盘焦点/双主题390均实际通过；等待整片独审 |
+| ACCESS01-03 | completed | workspace_panels_owner | 35direct通过；第四次browser5/5；原三失败/早晚计时保留；60s保守累计37077/余22923ms含15s清理，无第五次许可 |
+| ACCESS01-04 | in-progress | workspace_panels_owner | 源+35direct与3c0d准备限定独审通过；新实证待独审/main/部署未验 |
 
 ## 已完成与检查
 
@@ -42,11 +42,11 @@
 
 ## 阻塞 / 风险 / 未验证
 
-本队已有序列结束后获得普通有界direct段；实际35/35通过并清理。三个授权隔离browser窗口均实际使用并归还；未授权第四次。个人61228已恢复为来源事实，不当本片验收；不自动登录/刷新用户tab。真实secret未读。
+35/35direct已通过。第四个具体授权隔离窗口已于03:51:35完成精确资源核对并即时归还；5/5实证等待独立审查，前三次失败保留，未授权第五次。个人61228已恢复为来源事实，不当本片验收；不自动登录/刷新用户tab。真实secret未读。
 
 ## 下一步与 handoff
 
-固定源码已交root独立审查；运行者修正已经复审并在第二次实际运行中完成双EOF/日志/清理；第五组原生前提已获限定源审，但第三次实际仍visible；已按公开noDefaults/defaultContext修正唯一接缝，待源审/新caller准备；未获得第四次heavy，不重复direct。main与4320部署由原operator受控；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
+3c0d源码和第四caller已获root限定审查；第四次使用自有默认context/noDefaults实际5/5通过并完整归还资源。现只封存原件，等待root实证结论；不运行第五次/不重复direct。main与4320部署由原operator受控，未执行；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
 
 ## 等待记录
 
@@ -89,3 +89,11 @@
 固定 `3c0dda7b7a8887ac763d8a1651231374b0f3356d` 仅test一源，其他6源逐字等08ec。新Interface显式接受caller移交的ownedDefaultContext，caller未来只为fresh PID/profile连接noDefaults:true；fixture不再newContext，初始page viewport显式1000×800，窄屏390原断言保留。删除不能证明解除PW原session capture的另session focus设置，保原五组和真实hidden→token空。
 
 已装1.63源证实默认context.close会关闭browser，因此仅移交这一明确自有context；原caller仍负责精确PID/双EOF/组和scratch清理。[源接缝记录](../../docs/evidence/wpf-dashboard-local-access/default-context-source.json)、[第三轮root实证研究](../../docs/evidence/wpf-dashboard-local-access/root-access-third-actual-research.json)与freshclaim原件已归档。只源码，尚未运行/未独审，三次FAIL和累计30839/余29161含15cleanup原样。现sharedheavy为Mika S01，我组无holder，准备不是预约/运行。
+
+## 2026-10-07 03:51:57 UTC — 第四次浏览器实际5/5
+
+[第四次全部原件/预算](../../docs/evidence/wpf-dashboard-local-access/browser-fourth/archive.json)绑定执行head `d0f6a62f1c4b9dc940f211b32cce4242628e1d26`、source `3c0dda7b7a8887ac763d8a1651231374b0f3356d`。03:51:22.328243开始、03:51:28.565907结束；actualexit0，外层6237.586374976672ms，parent早6202.551040914841/晚6203.291374957189ms各保原件。5组全过，实际visible→自有tab切换hidden后token空；默认contextCount1、about:blank初页1/noDefaults:true的自有准入有原记录。没有伪造visibility、事件或降低断言。
+
+context/HTTP closed；Chromeexit0、两层双EOF、errors/cleanupErrors/interrupts均空，终态Chrome日志168B/截断0。03:51:35.626356精确worker670/Chrome673/PGID670均absent、CDP54379拒绝61、scratch不存在。逻辑采样峰scratch12,853,931B/raw151,903B，parent写后raw153,169B；不称物理峰或OS配额。两张390截图已实看，字段为空且浅深主题无横向溢出。
+
+本次保守计6238ms，60秒原预算累计37077/余22923ms含15秒清理；四次实际outer和37074.97741701081ms单列，前三次失败与75原件保持逐字。heavy已即时归还。35direct不重跑，实际安装/主线/发布仍未验，完整feature不由作者自行APPROVED。限定[3c0d源与caller审查](../../docs/evidence/wpf-dashboard-local-access/root-access3c0-default-context-review.json)原样归档，新实际证据已交root。

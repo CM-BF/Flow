@@ -17,3 +17,5 @@
 2026-10-07 03:39:46 UTC 第三次终态clean-code/证据安全点：原生hidden前提没有达到，保留true命令完成与visible观测的差异，不能把CDP调用成功当DOM状态成功。原断言未弱化，资源与产品结果分列；parent与Chrome日志均终态EOF，0截断、0cleanup错误，exact组/端口/scratch复核后归还窗口。仅metadata归档，本段不改源码/不第四次运行。原两轮失败和根源候选推断保持历史，等待具体前提定位。
 
 2026-10-07 03:46:17 UTC clean-code安全点：复用已读find-skills/webapp-testing/clean-code，纠正context创建职责而非增加visibility假状态或privatePW接缝；删除无效新session focus特判，保公开noDefaults与显式移交所有权。已核defaultcontext关闭browser的实际源码及Browser.close的targetclosed处理，caller需明确只own freshChrome准入；fixture不探测个人浏览器。仅test一源6增/11删，0runtime，其他6源等08ec。第四运行包只在own/tmp按剩29161/工作14161/清理15000重绑，不扩监督。
+
+2026-10-07 03:51:57 UTC 第四次实际检查/clean-code安全点：复用已读find-skills/webapp-testing/clean-code，当前仅证据metadata无产品改动。由caller明确拥有freshChrome/defaultcontext，fixture不再猜上下文或叠加focus特判；真实hidden与清除先后断言都通过。保源码结论、实际行为、资源采样口径及部署范围分离。所有失败/早晚时间原件保留；原七源hash与3c0d一致，不跑无变化35direct。截图为fake-only/空token，日志完整168B/截断0；终态5组与exit0、EOF/清理交root独审，不自行扩大到个人安装或全feature批准。
