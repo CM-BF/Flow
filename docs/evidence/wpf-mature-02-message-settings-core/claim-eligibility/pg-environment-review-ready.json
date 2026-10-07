@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T13:39:56.471Z",
+  "source": "f471c30c7939eac89158d3e68130b1b971a28eac",
+  "result": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+  "product": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "originalPacket": "920a966a4d0acdd8464ae7af8c46c9e41a662bac",
+  "scope": "Only inherited environment P2: explicit fixed env at both Launch paths + one pure artificial-poison test; original product/fixture/raw/donor helpers unchanged",
+  "bindings": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-once.py",
+      "commit": "f471c30c7939eac89158d3e68130b1b971a28eac",
+      "bytes": 17794,
+      "sha256": "fa9478b153ca01cc417aec61477df826bda2d2487d3730e1268fe2a9a92bdfc7"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment.test.py",
+      "commit": "f471c30c7939eac89158d3e68130b1b971a28eac",
+      "bytes": 2761,
+      "sha256": "31746049997b057a63ac6c505d5fc46fece3ab8e3b757d5b79e5d48cdbad57e4"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment-change.json",
+      "commit": "f471c30c7939eac89158d3e68130b1b971a28eac",
+      "bytes": 850,
+      "sha256": "c34064a8a0067168f394c1d259e5e089622c18e867ae45ff8fdacb54d127f22f"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment-window.md",
+      "commit": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+      "bytes": 1681,
+      "sha256": "ce1908cee9a5a388e49c488c75681ab57bbfa4af05e7ea33befd86b3b9a629ba"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment-local-start.json",
+      "commit": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+      "bytes": 1111,
+      "sha256": "e521d25777ef08588d83d8b23271ad5925e481c541098d00afba9ae858842678"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment-local.json",
+      "commit": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+      "bytes": 2188,
+      "sha256": "ea0ee0ecf6688cd4a224db393257897bfd3fca5c3e0628804dbe81154dee0312"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-environment-closed.json",
+      "commit": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+      "bytes": 979,
+      "sha256": "81b5e2b5ca84442c583c5f971936e45ad5f70d6d4a8045fd87621b2bf8eb54fd"
+    }
+  ],
+  "manifest": {
+    "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-env-manifest.json",
+    "bytes": 148623,
+    "sha256": "2c61ab2f140d0da92c0f75ebd7ee475cfbc30dbb73a0e821892e75647bfc69fb"
+  },
+  "summary": {
+    "files": 254,
+    "fileBytes": 1156828,
+    "sqlFiles": 33,
+    "external": 191,
+    "externalBytes": 31940161,
+    "links": 16
+  },
+  "oldManifestUnchanged": true,
+  "unchangedOldInputRows": 250,
+  "unchangedExternalRows": 190,
+  "newExternal": "/usr/bin/env fixed env-isolating launcher",
+  "actual": "NOT_OPEN_NOT_RUN",
+  "ordinary": "CLOSED_NO_PENDING_LAUNCH",
+  "review": "PENDING_CHATUI",
+  "selection": "one pure1/1; originaltypes/list unchanged; fivePGcases NOT_RUN",
+  "runAbsent": true
+}
