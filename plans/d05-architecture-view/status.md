@@ -199,3 +199,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-07T03:01:58.439Z：仅新增WPF-DASHBOARD-ACCESS01唯一来源dashboard-local-access/plans/wpf-dashboard-local-access，固定首canonical a6fb3ef、fresh claim57735 v1真实实施。未复制owner状态或读凭据；[登记回执](../../docs/evidence/d05/local-access-registry-intake.json)。index/README已交Web，D05当前仅registry/自身记录写权。
 
 2026-10-07T03:04:03.308Z：实际4320 snapshot为183源，ACCESS来源live/current且路径正确；[实际读取](../../docs/evidence/d05/local-access-loaded.json)。只重载自有工程看板从73717adb读取registry，不改个人服务/用户tab，也未读取或暴露token。登录功能与时间UI尚在owner实施，不能由登记可見冒已发布。
+
+2026-10-07T03:10:35.358722+00:00：登记SVC08唯一来源，184项；仅registry/source事实，真实检查与修复以原owner为准。见[登记](../../docs/evidence/d05/svc08-registry-intake.json)。本次没有产品检查/个人服务操作，actual载入待下个看板发布安全点。
