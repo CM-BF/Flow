@@ -12,3 +12,7 @@
 状态类别：仅一次真实stock helper独立初始exec兼容事实。即使通过也不证明app-server派生helper路径、网络/provider、模型资格、整个writer停止或NativeWriteAuthority grant。
 
 方法：复用本片已安装find-skills/codebase-design/clean-code；监督与持久化职责分开，无新loop/transport/生产policy。此次静态复核修正了stdin必须单行JSON及exec-only的精确参数数目，均在首次运行前修正，无运行失败被覆盖。
+
+## 实际首轮（2026-10-07T05:43:52.515343+00:00）
+
+固定入口ccf977a5b78b2acef67f1196db715d74fdb12317，outer exit1，263ms。策略渲染完成，shim因未确认FD上界在exec之前退出；stock helper实际0次，第二项未执行，语义用例0完成。两组absent/双EOF，raw1539B，末采scratch1175B，checkpoint后确切dev/ino目录正常删除。原失败不修改，无自动重试；不得将此脚手架拒绝称为native工具失败。详见[result-analysis](result-analysis.json)、[原result](run-once/result.json)、[原工具回执](run-once/outer-tool.json)。

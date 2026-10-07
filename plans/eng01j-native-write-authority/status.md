@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:41:51.405470+00:00 |
+| 最近更新 | 2026-10-07T05:43:52.515343+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -23,9 +23,9 @@
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受限写入启动片段已进入主线；正在准备真实文件辅助进程的隔离检查 |
-| 下一可用交付 | 验证原生文件辅助进程的允许写入和拒绝写入行为，保留失败事实 |
-| 当前阻塞 | NONE |
+| 当前产出 | 受限启动层已进入主线；真实文件辅助进程检查被入口前置保护拒绝，资源已收尾 |
+| 下一可用交付 | 修正检查入口的文件描述符识别后，取得真实文件辅助进程兼容事实 |
+| 当前阻塞 | ACTIVE: 辅助检查入口尚未通过；真实原生文件操作未发生，原产品限定批准不变 |
 | 需用户决定 | NONE |
 | Review | APPROVED [review.md](review.md)；限定Darwin启动/R06机制，真实native工具兼容另验 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
@@ -59,3 +59,5 @@ R1修复封包 2026-10-07T05:32:19.996Z：[增量检查](../../docs/evidence/eng
 主线接收于Lead明确回执后在 2026-10-07T05:36:47.428Z 记录：main/origin bf8b5f1d5f554b3195b04b150821d8262a4daef1，70文件/5源及79保护输入一致，0重测。以上是限定模块交付；task完整helper/authority后继未完成，顶层完成保持NOT_COMPLETED。
 
 stock helper 后继实施开始 2026-10-07T05:41:51.405470+00:00；Lead已授权最多2串行helper/总10秒/64KiB raw/1MiB私有目录。assignment本队local已于2026-10-07T05:39:24.783Z实际归还。当前只准备入口，尚未执行；原5产品不变。
+
+helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组absent，原raw与checkpoint见[结果](../../docs/evidence/eng01j/stock-helper/result-analysis.json)。首失败发生在shim，native helper0次；不复投，不据此推断native兼容。全部私有资源正常收尾。本次封包时间2026-10-07T05:43:52.515343+00:00。

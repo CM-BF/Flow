@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/docs/evidence/eng01j/stock-helper/run.py", line 202, in <module>
+    exec_only(Path(sys.argv[2]), Path(sys.argv[3]))
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/docs/evidence/eng01j/stock-helper/run.py", line 74, in exec_only
+    raise RuntimeError('SHIM_FD_LIMIT_UNKNOWN')
+RuntimeError: SHIM_FD_LIMIT_UNKNOWN

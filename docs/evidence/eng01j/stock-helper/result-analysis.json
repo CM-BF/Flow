@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-07T05:43:52.515343+00:00",
+  "source": "ccf977a5b78b2acef67f1196db715d74fdb12317",
+  "outcome": "PRE_EXEC_SHIM_REJECTED",
+  "nativeHelperCalls": 0,
+  "attemptedCases": 1,
+  "completedSemanticCases": 0,
+  "secondCase": "NOT_RUN_AFTER_FIRST_FAILURE",
+  "outerExit": 1,
+  "earliestFailure": "SHIM_FD_LIMIT_UNKNOWN before sandbox-exec/native exec",
+  "diagnosticLimit": "The guard rejected RLIMIT_NOFILE outside [3,65536]; this run did not record its actual numeric value. No claim about the stock helper route follows.",
+  "processFacts": {
+    "state": "complete",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 13725,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 13816,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 1175,
+    "removed": true
+  },
+  "elapsedMs": 263,
+  "rawBytes": 1539,
+  "finalContentsHex": {
+    "calculator.mjs": "30",
+    "baseline.txt": "30"
+  },
+  "nextCandidate": "Replace an arbitrary RLIMIT ceiling with bounded observation of actual open FDs in this single-threaded shim; fail closed on unknown. No rerun authorized by this record.",
+  "forbidden": "No production policy/native sandbox changes, provider, app-server, credentials, or old process operations."
+}

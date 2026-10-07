@@ -1,0 +1,52 @@
+{
+  "startedAt": "2026-10-07T05:42:51.245286+00:00",
+  "providerCalls": 0,
+  "PG": 0,
+  "cases": [],
+  "primaryFailure": {
+    "code": "ALLOWED_PROCESS_NOT_CLEAN",
+    "type": "RuntimeError"
+  },
+  "cleanup": {
+    "state": "complete",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 13725,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 13816,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 1175,
+    "removed": true
+  },
+  "limits": {
+    "totalSeconds": 10,
+    "rawBytes": 65536,
+    "scratchBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01j-helper-qvdsk3z0",
+    "dev": 16777234,
+    "ino": 123538570
+  },
+  "finalContentsHex": {
+    "calculator.mjs": "30",
+    "baseline.txt": "30"
+  },
+  "rawBytes": 1539,
+  "elapsedMs": 263,
+  "finishedAt": "2026-10-07T05:42:51.508674+00:00",
+  "passed": false
+}
