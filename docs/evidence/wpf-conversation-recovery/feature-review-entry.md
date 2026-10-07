@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；[精确源码delta/18源引用](complete-draft-receipt-checkpoint.json)。[complete-draft第三轮actual](continuous-tenth-validation.md)cookieRead+completeDraft2/2/清理完成，原完整恢复/metadata验证/首turn精确原refs和accepted身份/锁定profile/独立下一稿全部断言通过；[root实际独审](continuous-tenth-root-review.json)已限定接受。前两FAIL及此前full7/choice/CREATE两故障点/Queue/taskSSE全部保持原绑定。完整feature IN_PROGRESS，Steer/第二中心等剩余开放。
+当前组合target `54952b1011f03f8823db3744c4d1ac27e0407bc7`；[19源码/两专测delta](steering-source-checkpoint.json)，[新Steer真实接口与限定断言](steering-source.md)等待actor/lifecycle聚焦源码审，NOT_RUN。原2e7203完整草稿第三轮selected2/2 actual及前两FAIL不变；此前full7/choice/CREATE两故障点/Queue/taskSSE均保原绑定。完整feature IN_PROGRESS，Steer实际/第二中心/真实runner应用仍开放。
 
 ## 55b已审基线与原证据（历史固定）
 

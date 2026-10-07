@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；complete-draft第三轮真实selected2/2通过，完整草稿/材料/首turn/独立下一稿断言完成并清理，[root实际独审](../../docs/evidence/wpf-conversation-recovery/continuous-tenth-root-review.json)已限定接受；前两红原样保留。原source与局部noEmit独审保持原绑定，不冒整体feature通过。
+状态：IN_PROGRESS。当前target`54952b1011f03f8823db3744c4d1ac27e0407bc7`；两专测新增Steer草稿/未知ACK独立选组，actor/lease/lifecycle delta待root一次聚焦审查，types/browser未运行。旧target2e7203完整草稿selected2/2 actual和两红保持原范围与原件；不以新源码准备冒整体feature通过。
 
-Review target commit：`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；本轮0源码变化。
+Review target commit：`54952b1011f03f8823db3744c4d1ac27e0407bc7`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；本轮对27f仅2专测变化，其他17源逐字相同。见[固定源码包](../../docs/evidence/wpf-conversation-recovery/steering-source-checkpoint.json)与[边界/验收](../../docs/evidence/wpf-conversation-recovery/steering-source.md)。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 

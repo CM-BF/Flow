@@ -228,3 +228,11 @@ RECOVERY01-03/05实际已到Prepare/材料恢复后首turn202，测试查Journal
 ### 2026-10-07 09:12:05 UTC — 完整草稿选组实际完成
 
 RECOVERY01-03/05的prepared profile/project/knowledge+有序双文件恢复、显式验证后首turn/下一稿，第三轮选定2组actualPASS/owned清理完成。两测试前提错误红已保留；[实证](../../docs/evidence/wpf-conversation-recovery/continuous-tenth-manifest.json)绑定2e7203/执行7fb。Steer/第二中心等原完整验收仍开放，TODO不因一个选组全部关闭。当前150s段126447/余23553小于parent最小30s，原封套/历史不回改，不自动扩时或再run。
+
+## 2026-10-07 09:21:32 UTC — 原02/03/05 Steer草稿与未知ACK后继
+
+Root接受固定27f后的bounded设计：仅该selected selector允许一个synthetic runner-protocol actor，经公开注册/配置/claim真实attempt和单次session事件；实际App Send/Guide/恢复与显式同key重试，保下一稿。0runRunner/SDK/provider，不造consumed/applied；预建pinned conversation不冒新聊天目录发现。原两test+ownrecords内实施，先source/lifecycle集中审；当前0runtime。旧150s已126447/余23553封闭保留，准备新独立≤60000ms含≥15000cleanup、1DB/1Chrome/64MiB/9MiB，实际尚未授窗。第二中心另保原TODO，绝不增加第二DB。本段执行开始时点为本次工具开始09:20UTC附近，非整任务开工时间。
+
+## 2026-10-07 09:31:59 UTC — Steer源码固定（原02/03/05）
+
+`54952b1011f03f8823db3744c4d1ac27e0407bc7` 两专测新增cookieRead+steeringRecovery，17其他源/旧11selector不变，见[单一源码验收入口](../../docs/evidence/wpf-conversation-recovery/steering-source.md)。原150s phase封存126447/23553，不挪未用余额；新独立<=60s/15s清理phase仅准备，等待新actor/lifecycle source review与真实资源交接。当前0运行，原TODO02/03/05/06不提前完成。

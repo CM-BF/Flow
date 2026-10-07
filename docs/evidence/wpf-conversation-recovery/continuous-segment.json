@@ -255,5 +255,14 @@
     "startThresholdBytes": 4194304,
     "combinedFreshFloorBytes": 4054056960
   },
-  "sseLocalEvidence": "sse-local/manifest.json"
+  "sseLocalEvidence": "sse-local/manifest.json",
+  "closedForNewLaunch": true,
+  "unusedCreditTransferred": false,
+  "closure": {
+    "at": "2026-10-07 09:31:59 UTC",
+    "spentMs": 126447,
+    "unusedMsSealed": 23553,
+    "nextIndependentPhase": "steering-phase.json",
+    "reason": "Root explicitly closed old 150s phase; new <=60s is separate, no unused credit transfer"
+  }
 }

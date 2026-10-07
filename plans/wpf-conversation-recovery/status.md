@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 09:12:05 UTC |
+| 最近更新 | 2026-10-07 09:31:59 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,22 +12,22 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前source2e7203ea01eb069a9d5e6f24e8ce9e1640c83112；本轮执行metadata7fb3947d30764ae9da1de9b512ff36c51734ba2a，后置metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源码保持固定；本批仅own实际证据/状态封存，最终clean以Git回执为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前source54952b1011f03f8823db3744c4d1ac27e0407bc7；source执行0次，后置metadata HEAD以Git回执为准 |
+| 工作树dirty状态 | 两专测源码已固定；本批own source/phase记录封存，最终clean以Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 完整草稿的配置、项目、知识和有序文件已实际恢复并显式验证发送；下一稿保持独立 |
-| 下一可用交付 | 安排Steer和身份隔离剩余验收，并推进已验片段集成 |
+| 当前产出 | Steer草稿与未知ACK同key恢复源码已固定，合成协议身份与真实App路径待验 |
+| 下一可用交付 | 完成Steer新actor/lifecycle聚焦源码审；再按独立60s阶段协调真实选2验证，第二中心仍待补验 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | complete-draft第三轮cookieRead+completeDraft实际2/2 PASS/outer0/双EOF/全部owned清理并独审接受，前两红原样保留；新browser段126447/150000、余23553，低于当前parent最小30s不自动续跑；无重复旧绿types/observer/direct |
-| 实现目标 | 2e7203ea01eb069a9d5e6f24e8ce9e1640c83112 |
+| 检查状态 | 仅git diff --check与固定17未变源/旧11选择映射静态核对；新Steer types/Node/browser均NOT_RUN。旧完整草稿selected2通过及两红保留；旧150s spent126447/unused23553封存不转移，新独立<=60s阶段spent0 |
+| 实现目标 | 54952b1011f03f8823db3744c4d1ac27e0407bc7 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS；full7、choice、两个CREATE故障点及Queue入队实际与清理分别限定接受；完整feature未批准；complete-draft第三轮actual限定接受 |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；09:09:34.552Z本人normal CLI核active/WTbranch/精确scope/overlap[]，原件continuous-tenth-parent/admission.json |
+| Review | [review.md](review.md)，IN_PROGRESS；既有各actual限定接受；新Steer source actor/lifecycle等待集中审查，完整feature未批准 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本次normal CLI 2026-10-07T09:20:51.888Z核active/WTbranch/精确scope/overlap[]，见steer-start-claim.json |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -378,3 +378,7 @@ Root [344f本轮actual审](../../docs/evidence/wpf-conversation-recovery/continu
 ## 2026-10-07 09:12:05 UTC — complete-draft第三轮完整选组通过
 
 [第十run](../../docs/evidence/wpf-conversation-recovery/continuous-tenth-validation.md)实际cookieRead+completeDraft2/2，包含Prepare配置/项目、完整持久草稿恢复、B→A→knowledge显式验证、首turn精确refs与durable accepted checkpoint/锁定profile/独立下一稿。执行7fb/source2e7203，原两红与所有历史不改；不是全feature或真实runner执行验收。charge11793→段126447/余23553，全部DB/组/EOF/scratch/env清理后09:10:28.080735Z已归还资源。无自动后继；当前parent min30s不以剩额23553勉强开跑。
+
+## 2026-10-07 09:31:59 UTC — Steer独立源码安全点
+
+固定 `54952b1011f03f8823db3744c4d1ac27e0407bc7`，仅原fixture/browser；[源码与边界](../../docs/evidence/wpf-conversation-recovery/steering-source.md)、[19pins](../../docs/evidence/wpf-conversation-recovery/steering-source-checkpoint.json)、[独立阶段](../../docs/evidence/wpf-conversation-recovery/steering-phase.json)。真实App草稿→unknown ACK→下一稿保护→同key/body重放已写断言，全部NOT_RUN。旧150s余23553明确封存不用，新<=60000含15000cleanup只准备/无gate/env/holder。0新产品、共享接口或第二DB；无源码外扩。

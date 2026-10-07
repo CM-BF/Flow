@@ -1,0 +1,84 @@
+{
+  "id": "RECOVERY-STEERING-20261007",
+  "state": "SOURCE_PREPARED_NOT_RUN",
+  "sourceTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "authorization": "Root NEW_TASK: independent <=60s steering phase, source implementation/static preparation only; one focused actor/lifecycle review before runtime coordination",
+  "selection": {
+    "journey": "steering-recovery",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "fullJourney": false
+  },
+  "limits": {
+    "phaseRuntimeMs": 60000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "databases": 1,
+    "chrome": 1,
+    "syntheticProtocolActors": 1,
+    "runnerProcesses": 0,
+    "providerCalls": 0,
+    "leaseMs": 60000
+  },
+  "runtimeSpentMs": 0,
+  "closedPriorPhases": {
+    "original90": {
+      "budgetMs": 90000,
+      "actualMs": 64134.08675,
+      "unusedCreditTransferred": false
+    },
+    "continuous150": {
+      "budgetMs": 150000,
+      "actualChargeMs": 126447,
+      "unusedMsSealed": 23553,
+      "unusedCreditTransferred": false,
+      "sourceRecord": "continuous-segment.json",
+      "sourceRecordSha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+    }
+  },
+  "defensiveParentTotalMs": 300000,
+  "defensiveParentCeilingIsNotPhaseCredit": true,
+  "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); preserve all original timings",
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "actual": "NOT_RUN",
+  "remainingPrerequisites": [
+    "Focused source review of new actor/session/lease/fault and selected browser assertions",
+    "Fresh original claim/HEAD/clean/source+read-only runtime pins",
+    "Explicit unique shared PG+Chrome handoff and current combined resource observation",
+    "Unique bound internal run inputs and private 0600 adminenv from already-authorized test source, exact deletion on terminal",
+    "One selected attempt only; no leftover credit from closed phases"
+  ],
+  "limitsOfProof": [
+    "Prebuilt pinned conversation, not new-chat profile discovery",
+    "Synthetic protocol session is not a native SDK session or evidence that a model consumes/applies guidance",
+    "Center accepted/replay and browser restoration only; no received/observed-consumed/applied fabricated",
+    "Second center/principal and real runner/native application remain unverified"
+  ],
+  "runtimeRemainingMs": 60000,
+  "attempts": [],
+  "nextAttemptDerivation": {
+    "phaseId": "RECOVERY-STEERING-20261007",
+    "phaseBudgetMs": 60000,
+    "currentPhaseSpentMs": 0,
+    "currentPhaseRemainingMs": 60000,
+    "maximumAdmissibleTotalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "equation": "remaining = max(0, 60000 - sum(ceil(max(actualOuterMs, lateTerminalMs, parentMs))) for this phase only); next total <= min(60000, remaining)",
+    "noTransferFromClosedPhases": true,
+    "parentMinimumAttemptMs": 30000,
+    "belowMinimum": "No attempt; do not enlarge phase or use historical unused credit",
+    "onAmbiguousAccountingOrCleanup": "FAIL_CLOSED; no subsequent attempt until exact reconciliation",
+    "actualGateState": "NOT_CREATED"
+  }
+}

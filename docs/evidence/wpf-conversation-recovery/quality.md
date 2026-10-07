@@ -285,3 +285,9 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 ### 2026-10-07 09:12:05 UTC — completeDraft第三actual clean-code收口
 
 复用已读find-skills/clean-code/codebase-design/webapp-testing，沿原权限/一个syntheticpublisher、真实Prepare/公开目录、同App/journal/controller authority。第三轮actual2/2证实修正两处测试Interface后整组选定断言通过；0源码变化、不重跑旧绿检查。错误处理与预算按最大outer/late/parentceil11793，保两红与原参数不变；19固定源码/155旧raw逐字核同。清理先于封存；当前remaining23553不足原parent最小30s，不改防线凑运行。完整feature仍有Steer/namespace跨身份边界，未伪称全部验收。
+
+### 2026-10-07 09:27:25 UTC — Steer source-only 安全点
+
+复用已读 find-skills/clean-code/codebase-design/webapp-testing，bounded design已获root明确接受；0安装。本段09:20:51 fresh原21/nooverlap后，仅两test实现synthetic protocol actor与独立steering-recovery。复核职责：fixture封装token、一次seed/claim/session，browser只走真实App/公开恢复与原strict-prefix fault；无第二网络系统、私有state/SQL注入或伪native ACK。以独立closure保actor令牌不进入wire/WorkerResult；60s lease覆盖≤45s工作且无heartbeat循环，claim等待独立5s/最多50请求及原whole-worker取消。原17source逐字相同、旧selection映射全保；git diff --check0。
+
+实际改进：明确steering command ACK身份分支，选定原receipt id而非任意accepted；草稿按task/turn筛选唯一行，原message identity及下一稿原样比对；真实center accepted/replayed不升级为consumed/applied。防御TOTAL 300000只对应旧90+旧150+新≤60phase上限，不复活旧余23553；新selector每次硬≤60s/15s清理。当前只静态读/字节比较，类型、真实HTTP/PG/Chrome均NOT_RUN，需集中actor/lifecycle源码审与后继实际有限段。未发现需生产源码修复的已证实缺陷。

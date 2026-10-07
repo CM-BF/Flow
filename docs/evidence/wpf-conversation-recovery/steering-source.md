@@ -1,0 +1,30 @@
+# Steer draft and unknown ACK — fixed source, not runtime evidence
+
+Target `54952b1011f03f8823db3744c4d1ac27e0407bc7`, parent `27f2515df4d58eafcf960bb1dbdfb248bba4fdb0`; branch `codex/web-conversation-recovery`. Original RECOVERY01-02/03/05, claim 6ff988b2 v4/exact21. Only `conversation-recovery.fixture.ts` and `conversation-recovery.browser.ts` changed; all other 17 source bytes and the previous 11 selector mappings remain unchanged. [Exact fixed pins](steering-source-checkpoint.json). Review IN_PROGRESS; this actor/lifecycle delta awaits focused independent review. No typecheck, Node/product import, HTTP, PG, Chrome, provider, or capacity sampling was performed in this source segment.
+
+## Proposed user result and real authorities
+
+`steering-recovery` requires exactly `cookieRead` and `steeringRecovery`; all other groups are NOT_SELECTED. The existing parent/Init/worker/result selection agreement, group timings, cleanup and fail-closed results remain authoritative. Default full retains the original seven groups.
+
+One public `registerRunner` creates a synthetic protocol identity. Its returned token exists only in the fixture closure, never browser wire or evidence. `publishExecutionProfile` declares `flow.active-steering.v1`; a real public CREATE pins that profile/project. Real App Send creates the only turn. Public `claim` uses at most 5s/50 readiness requests, with exactly one successful claim of the real dispatchable task, then asserts exact task/profile, actual attempt/ownerVersion and a 60s lease sufficient for all remaining <=45s work. One public `report` session event binds a synthetic nativeSessionId; real `steeringAdmission` must be ready for that owner. There is no runRunner, SDK, heartbeat loop, runner receipt/finalize or provider call. Counter fields describe fixture call sites, not external/kernel observation.
+
+Only the selected fixture enables `activeSteering:true` and the finite lease. A whole-worker checkpoint/deadline fences the public registration method that lacks a signal. The existing server, streams, worker, Chrome, marked DB and parent cleanup are retained; the synthetic actor has no extra process or separate resource to keep alive.
+
+## Preserved assertions
+
+1. Real Guide UI edits an original instruction; real IDB records contain the task/turn/message identity and text. Reload/re-auth and explicit draft Restore preserve it and add zero browser business POSTs.
+2. The existing real complete-upstream ACK fault recognizes `/api/tasks/<id>/steering`, validates the genuine command identity, then sends the same bounded strict real-body prefix/full Content-Length/Connection-close loss. Same Request headers-to-failure evidence and exactly one pre-retry POST are required.
+3. The unknown command record is unique in domain `steering` and exactly matches its HTTP key. Its frozen task/key/request/bytes/digest and actual accepted command attempt/owner/session/revision identities are checked.
+4. A different next Steer draft checkpoints under the same stable owner; reload/re-auth restores this draft first and the unknown receipt separately without posting or overwriting it. Explicit Retry uses the original key and exact body, receives the same command with replayed=true, records the accepted checkpoint and retains the complete next draft. Original turn count stays one; no runner delivery receipt is fabricated.
+
+This proves center acceptance and explicit browser recovery only if actually run. It does not establish native consumption/application, profile discovery for new chat, promotion, second center/principal isolation, or whole-feature completion. Complete profile/knowledge/files has prior independent evidence and is not silently claimed by this text-only Steer group.
+
+## Independent phase and launch seam
+
+[Single phase record](steering-phase.json): old 90s and 150s envelopes are closed, all FAIL/PASS raw retained; old 150s charge126447 and unused23553 remain historical. New phase <=60000ms including >=15000ms cleanup; one DB/Chrome, 64MiB scratch, 9MiB retained (4MiB startup +5MiB run reserve), 1MiB logs. Parent TOTAL changes240000→300000 only as a defensive aggregate ceiling; the new selector additionally rejects a >60000ms gate. This is not permission to use old unused credit.
+
+Reuse the existing built-ins-only parent entry `apps/web/test/conversation-recovery.browser.ts`, Node24 `--import tsx`, with `FLOW_RECOVERY_BROWSER=1`, a future bound `FLOW_RECOVERY_GATE`, and a newly supplied private `--env-file` input. No executable gate/adminenv or runtime holder is created by this source packet. The next actual binding must use final metadata HEAD plus these 19 source pins and the phase id/current spent/remaining from `steering-phase.json`. Its total is at most min(60000, new-phase remaining); every subsequent attempt charges ceil(max(actual outer, late terminal, parent)) against this new phase only. Closed90 actual64134.08675 and closed150 charge126447/unused23553 are provenance, never launch credit. If accounting/cleanup is ambiguous, or phase remaining is below the existing parent30000 minimum, no further attempt is derived. routine dependency/native version observations stay fresh at launch. Exact old incomplete-run reconciliation remains unchanged. Outer actual exit, both EOFs, late terminal accounting and DB/owned groups/scratch/env removal must all remain explicit.
+
+## Clean-code and remaining work
+
+Applied installed find-skills/clean-code/codebase-design methods: reused original command fault and public authority, one once-only actor helper, explicit finite claim readiness and lease assertion, original error/deadline/cleanup paths, no generic runner abstraction or extra store. `git diff --check` and Python read-only fixed-byte/selector comparisons passed; these are not syntax/type or behavior checks. Actor source review and later affected validation remain pending. Actual product defects found by a future run must be recorded and repaired truthfully within the original claim.
