@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:22:23 UTC / fixed main7524（本轮产品未集成） |
+| 最近更新 / 最近main同步核验 | 2026-10-07 13:33 UTC / fixed main7524（本轮产品未集成） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | 固定产品aa741、追加collect原件完成；最终commit/push后fresh核clean |
+| 工作树dirty状态 | 产品aa741冻结；独立operator准备已固定，最终HEAD/clean以交付fresh Git为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
@@ -22,8 +22,8 @@
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新旧执行后端共存的领取资格改动已备齐，类型检查与五个专库用例的收集通过 |
-| 下一可用交付 | 固定真实专库执行入口供独立准备审查；实际SQL资格验证尚未运行 |
+| 当前产出 | 新旧后端领取资格改动已通过源码审查；五用例专库入口已备齐，等待执行准备审查 |
+| 下一可用交付 | 独立准备审查后申请唯一专库窗口，验证混合队列与旧会话继续执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED 2026-10-07T13:23:26Z — Mika/root，source aa741 / packet7ecbc，0P1/P2；仅source/local |
@@ -140,3 +140,5 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 ## 本轮专库入口准备
 
 2026-10-07T13:24:55Z 开始独立15min source-only段，截止13:39:55Z；0工程child/PG/服务/provider。Mika13:23:26正式源码及有限local批准已归档，[receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/source-independent-review.json)。仅复用REMOVAL R2已审监督/资源与固定fixture，准备新namespace/绑定；未生成admission或占用heavy。当前ordinary留给S01；不重复types/list。
+
+2026-10-07T13:29:35.810150+00:00：专库准备包固定[pg-review-ready](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-review-ready.json)，251文件/33SQL/190外部固定入口与metadata/16精确链接，实际0PG、0新工程child，未生成admission/actual目录。新入口待Mika静态审；[同CORE权威owner登记输入](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/owner-switch-intake.json)供Original登记，不是第二状态源。
