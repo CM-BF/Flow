@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:41:52.772958+00:00 |
+| 最近更新 | 2026-10-07T03:42:50.732592+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -25,7 +25,7 @@
 | 任务层级 | 子task |
 | 当前产出 | 原8组领取恢复验收已通过；四项原并发消费者的安全fixture适配、类型与收集检查已通过独立准备审查。 |
 | 下一可用交付 | 取得唯一PG执行窗口后验证四项原并发消费者，再完成产品交付与主线接收。 |
-| 当前阻塞 | ACTIVE: 四项capacity真实PG等待Web Timing窗口归还及唯一OPEN；源码/准备独审已通过，当前不占local/heavy。旧R1原因UNKNOWN、旧根KEEP。 |
+| 当前阻塞 | ACTIVE: 已获唯一四项PG窗口，待本次fresh准入与实际结果；尚未验证前不标完成。旧R1原因UNKNOWN、旧根KEEP。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：R2结果已审；4capacity source68815/packet1de742于03:36:55Z SOURCE_AND_PREPARATION_REVIEW_APPROVED，0P1/P2；真实4PG NOT_RUN，NOT_INTEGRATED |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
@@ -71,3 +71,5 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:34:57.772871+00:00 capacity局部验证收束：首strict exit2/788B来自registry自递归ReturnType，收窄为实际receiptPath/processSettled结构后strict0；collect-only准确4项/0执行。原段实际2.159s后停止，诊断/修复/协调间隔保留；另授权后继段3.386s，首启动至末结束146.968s不是90s内连续段。3child末态absent/双EOF，各自空TMP同identity删除，总raw1717B，瞬时TMP峰值UNKNOWN。见[单份记录](../../docs/evidence/s01p07/checks/capacity-local.json)与[准备入口](../../docs/evidence/s01p07/pg-capacity-window-request.md)。0PG/provider/install，local已直接交回C02；原85/8/旧strict未重跑。
 
 2026-10-07T03:41:52.772958+00:00 恢复/独审接收：fresh协调账本available，原claim9ec4dbc8 v2/18 ACTIVE且WT/branch/owner一致。Mika转达architecture_read于2026-10-07T03:36:55Z对source68815dce87cc0a9498802de89448693215d028d6 / packet1de74274791d55d9808056456379b038b430aa5f的SOURCE_AND_PREPARATION_REVIEW_APPROVED、0P1/P2：22bindings113299B、原case正文/main15847 donor、4库清理/aggregate/30outputs/有限selector及strict2→0/collect4已核。只批准准备，4PG仍NOT_RUN；原200s/13task/640HTTP/15理论连接、32MiBTMP/raw1MiB/floor1207959552B不变。实际配对local须按开启时完整预算另加；Mika声明当前X01 local预算9568256B仅为协调输入，不作为我fresh准入或OPEN。无新测试/PG/旧根访问；本次只写status/review，等待下一唯一namespace。
+
+2026-10-07T03:42:50.732592+00:00 Mika授唯一heavy OPEN `S01P07-CAPACITY-20261007-R1`：Web Timing已03:41:04.044Z确认worker/Chrome/group/fixture/双EOF/目录清理归还。本次仅原4组/4serialDB/13task/640HTTP/15理论峰连接，200s/120work/70fixturecleanup、32MiBTMP/raw1MiB不变；保守配对本组单local9568256B+Web9437184B，fresh floor1226964992B。仅metadata固定clean执行HEAD后核原claim/source/22bindings/30SQL/24deps/30输出与组合空间，一次执行，未知不重试/不触旧根；actual结束即归还，不等封存。
