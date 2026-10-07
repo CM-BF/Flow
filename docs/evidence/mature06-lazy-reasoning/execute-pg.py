@@ -47,7 +47,10 @@ def main():
  started=time.monotonic();utc=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
  expected=os.environ.get('FLOW_LAZY_EXECUTION_HEAD');window=os.environ.get('FLOW_LAZY_WINDOW')
  if os.environ.get('FLOW_LAZY_PG_OPEN')!='1':raise SystemExit('NOT_OPEN')
- source=(E/'pg-input-v2.json').read_bytes();input=json.loads(source)
+ input_name=os.environ.get('FLOW_LAZY_PG_INPUT','pg-input-v2.json')
+ if input_name not in ('pg-input-v2.json','pg-client-input.json'):raise SystemExit('INPUT_NAME_INVALID')
+ client_journey=input_name=='pg-client-input.json'
+ source=(E/input_name).read_bytes();input=json.loads(source)
  if hashlib.sha256(source).hexdigest()!=os.environ.get('FLOW_LAZY_INPUT_SHA')or window!=input['window']:raise SystemExit('INPUT_NOT_FIXED')
  head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True,timeout=2).strip()
  if head!=expected or subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,timeout=2):raise SystemExit('HEAD_NOT_CLEAN')
@@ -82,6 +85,7 @@ def main():
   now=time.time();env={**os.environ,'NODE_DISABLE_COMPILE_CACHE':'1','TMPDIR':str(root),'TMP':str(root),'TEMP':str(root),'VITE_CACHE_DIR':str(root/'vite'),'XDG_CACHE_HOME':str(root/'cache'),'FLOW_C02_PG_WINDOW':'reviewed','FLOW_C02_WINDOW':window,'FLOW_C02_EXECUTION_HEAD':head,'FLOW_C02_PG_RECEIPT':str(paths['fixture']),'FLOW_C02_PG_WORK_UNTIL':str(int((now+40)*1000)),'FLOW_C02_PG_CLEANUP_UNTIL':str(int((now+78)*1000)),'FLOW_LAZY_CHILD_RECEIPT':str(paths['child'])}
   deps=json.loads((E/'dependencies.json').read_text())
   argv=(PYTHON,'-B',str(E/'pg-child.py'),NODE,deps['vitest']+'/vitest.mjs','run','--config',str(E/'pg-vitest.config.mjs'),'--configLoader','native','apps/server/src/assistant-stream/selection-pg.test.ts','--reporter=json','--outputFile='+str(paths['vitest']))
+  if client_journey:argv+=('-t','^uses public FlowClient selection with real HTTP and the shared projection$')
   remaining=90-(time.monotonic()-started)-5
   if remaining<79:raise ValueError('SPAWN_DEADLINE')
   report=ops.supervise(ops.Launch(argv,str(ROOT),env,ops.Ownership.NEW_CHILD_SESSION,ops.Capture.MERGED),ops.Policy(min(80,remaining-1),.5,.5,524288))
@@ -98,8 +102,11 @@ def main():
   confirm_fixture(fixture,child,reservation,requested,owned,window,head,report.pid)
   results=read_receipt('vitest',262144)
   assertions=[case for suite in results['testResults']for case in suite['assertionResults']]
-  record['tests']={'total':results.get('numTotalTests'),'passed':results.get('numPassedTests'),'failed':results.get('numFailedTests'),'pending':results.get('numPendingTests'),'selected':len(assertions)}
-  if report.exit_code!=0 or report.first_failure or results.get('success')is not True or results.get('numTotalTests')!=2 or results.get('numPassedTests')!=2 or len(assertions)!=2 or any(case.get('status')!='passed'for case in assertions):raise ValueError('VALIDATION_NOT_PASSED')
+  selected=[case for case in assertions if case.get('status')!='pending']
+  record['tests']={'total':results.get('numTotalTests'),'passed':results.get('numPassedTests'),'failed':results.get('numFailedTests'),'pending':results.get('numPendingTests'),'selected':len(selected)}
+  expected_total,expected_passed,expected_pending=(3,1,2)if client_journey else(2,2,0)
+  if report.exit_code!=0 or report.first_failure or results.get('success')is not True or results.get('numTotalTests')!=expected_total or results.get('numPassedTests')!=expected_passed or results.get('numFailedTests')!=0 or results.get('numPendingTests')!=expected_pending or len(assertions)!=expected_total or len(selected)!=expected_passed or any(case.get('status')!='passed'for case in selected):raise ValueError('VALIDATION_NOT_PASSED')
+  if client_journey and selected[0].get('title')!='uses public FlowClient selection with real HTTP and the shared projection':raise ValueError('TEST_SELECTION_MISMATCH')
   fixture_confirmed=True
  except BaseException as error:record['primary']={'type':type(error).__name__,'code':str(error)if isinstance(error,ValueError)else'EXECUTION_OR_PERSISTENCE_UNKNOWN','errno':getattr(error,'errno',None)}
  finally:

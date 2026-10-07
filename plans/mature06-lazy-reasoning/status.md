@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:43:35.483632+00:00 |
+| 最近更新 | 2026-10-07T08:53:16.479374+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
@@ -19,13 +19,13 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
-| 工作分支状态 | ready-for-integration |
+| 工作分支状态 | ready-for-review |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 公开客户端选择性读取已独审通过，可接收；已审核心与真实HTTP验收保持独立证据。 |
-| 下一可用交付 | 主线接收核心和客户端；界面owner绑定共享投影，真实客户端HTTP验收另选。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | review |
+| 当前产出 | 新增真实公开客户端选择性读取验收已准备，类型通过且精确选中一例，正在独审。 |
+| 下一可用交付 | 独审后在单独授权的专库窗口运行这一条公开客户端验收。 |
+| 当前阻塞 | 等待本次准备独审与后续PG窗口；核心/客户端主线接收回执待核。 |
 | 需用户决定 | NONE |
 | Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
@@ -40,7 +40,7 @@
 | LAZY01-01 | completed | status_read | 初始9ef8 setup/Interface与v1 receipt |
 | LAZY01-02 | completed | status_read | v2正式领取；本固定六core/三test |
 | LAZY01-03 | completed | status_read | 原14/14；P2修后4定向/strict0；07:47独审通过 |
-| LAZY01-04 | in-progress | status_read | 原PG实际2/2；公开client本次7distinct分轮/strict0待独审，UI未接 |
+| LAZY01-04 | in-progress | status_read | 原PG实际2/2；公开client本次7distinct分轮/strict0已独审；单条真实client HTTP准备，UI未接 |
 | LAZY01-05 | pending | status_read | NOT_INTEGRATED |
 
 唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
@@ -66,3 +66,7 @@ R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:0
 2026-10-07T08:43:35.483632+00:00 正式client独审已归档client-review-receipt.json，唯一新intake为client-integration-ready.md/json；严格仅两client相对main2a7e语义delta，七support不交为新产品。明确STOP client/index，准备当前v8原子移出供X01；接收者take前无写权。原core intake与raw不改，main尚NOT_INTEGRATED/等待聚合器登记展示。0新工程运行。
 
 client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移出packages/client/src/index.ts，正式回执client-index-handback-receipt.json。接收者必须fresh原子领取，LAZY不再修改该文件；client test/core/evidence范围保留。
+
+2026-10-07T08:51:00Z 单条public-client HTTP准备段从08:44:00Z累计15min：claimv9/13保持，client/index已正式交X01。C02 fixture bfbcdd22一行类型接缝独审通过后，通过integration claim6f4bf925v1受控精确intake33616115，08:49:56v2正式release；未手改fixture/私有token。当前只改own selection-pg.test及既有运行器有限选择/新输入，原R1/旧types/list/raw冻结。最多2必要local children，actual PG NOT_OPEN/无预约；当前0本段child，等待X01归还local。main未见intake收据，等待聚合器登记展示。
+
+2026-10-07T08:53:16.479374+00:00 新client journey准备已完成：types0/2251ms与exactlist1/1706ms，两个child末态absent/mergedEOF、两TMP同identity清理absent，raw130B；0hooks/HTTP/PG。本段08:44:00起点不重置，actual local08:52:23已归还X01。仅新增一个case，旧两case正文逐字保留未选择。新pg-client-input249绑定/31SQL/19external，原claimv9/13、原90s/资源门禁和10新输出保持；actual NOT_OPEN/无预约。准备入口client-pg-review-ready.md，旧core/client canonical仍各自有效且主线回执尚未观察。

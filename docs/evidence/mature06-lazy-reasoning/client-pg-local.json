@@ -1,0 +1,353 @@
+{
+  "startedAt": "2026-10-07T08:52:07.350747+00:00",
+  "runs": [
+    {
+      "mode": "journey-types",
+      "startedAt": "2026-10-07T08:52:07.383555+00:00",
+      "freeBytes": 23993729024,
+      "inputs": [
+        {
+          "path": "packages/contracts/src/assistant-stream-selection.test.ts",
+          "bytes": 1218,
+          "sha256": "cfcbedb567c44875aaeff3c7d49af35f477f97b7871e439b1c13f4c717481369"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/selection.test.ts",
+          "bytes": 3859,
+          "sha256": "22322f43eca5f25e6d8c7e901729f73c9248391571bb39a29e129bdaac13ac14"
+        },
+        {
+          "path": "packages/interaction/src/stream/selection.test.ts",
+          "bytes": 14538,
+          "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7"
+        },
+        {
+          "path": "packages/contracts/src/assistant-stream.ts",
+          "bytes": 7985,
+          "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/index.ts",
+          "bytes": 2917,
+          "sha256": "8771a580393c624b3415ceb69a5d156d90499ac1d329ffadaa9eb42f3af97939"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/queries.ts",
+          "bytes": 6742,
+          "sha256": "d5b031448f4797fbedf236bd756692ff8d9736bf4078ed4c61c65390f4e8edd8"
+        },
+        {
+          "path": "packages/interaction/src/stream/projection.ts",
+          "bytes": 19907,
+          "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+        },
+        {
+          "path": "packages/interaction/src/stream/patches.ts",
+          "bytes": 16646,
+          "sha256": "4b2dd931035cbbc18f202b5d6a551bdee4101a3c25458385aeec427d459e3d6a"
+        },
+        {
+          "path": "packages/interaction/src/stream/presentation.ts",
+          "bytes": 6756,
+          "sha256": "a545a75c1215d1a49753d5e295ceea4bcd7381bd49e18a0a92b62bc01b2433de"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/vitest.config.mjs",
+          "bytes": 784,
+          "sha256": "688ad849345f1e099bb9c322ef9dcabfc26cf3cf761bb5bbfc563f459dd7ac59"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/tsconfig.json",
+          "bytes": 1373,
+          "sha256": "7f8e0e4a791fad38999921451f969401a125178678658415b019885e9b5facb3"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+          "bytes": 15115,
+          "sha256": "429b35ed1334879739e6f6a8073981b8af3515463b51dfa398f1004b8a93f9cf"
+        },
+        {
+          "path": "docs/evidence/mature02c02/pg-fixture.ts",
+          "bytes": 12055,
+          "sha256": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-tsconfig.json",
+          "bytes": 2057,
+          "sha256": "3c9ade536724574a8a48240b0338aa8a902291f073f4e52311311fefa5d30273"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-vitest.config.mjs",
+          "bytes": 1619,
+          "sha256": "14d61a6d1dda4794e3ad23bb6968ac99f7727e428a722356621bc0446d3f12af"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-dependencies.json",
+          "bytes": 4134,
+          "sha256": "8f0425565a60a08aed6fecedf988cbeae3c7c62ef45362bfddac479d18d2b40d"
+        },
+        {
+          "path": "packages/client/src/index.ts",
+          "bytes": 62574,
+          "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733"
+        },
+        {
+          "path": "packages/client/src/native-activity-body.ts",
+          "bytes": 8416,
+          "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+        },
+        {
+          "path": "packages/client/src/conversation-acknowledgement.ts",
+          "bytes": 15496,
+          "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+        },
+        {
+          "path": "packages/contracts/src/conversation-harness.ts",
+          "bytes": 1196,
+          "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+        },
+        {
+          "path": "packages/contracts/src/conversations.ts",
+          "bytes": 7382,
+          "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+        }
+      ],
+      "supervisorSHA": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/pg-tsconfig.json"
+      ],
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy01-czmz0grv",
+        "dev": 16777234,
+        "ino": 123677412,
+        "closedSampleBytes": 64,
+        "closedSampleNodes": 1,
+        "peakBytes": null,
+        "removed": true
+      },
+      "finishedAt": "2026-10-07T08:52:09.636587+00:00",
+      "process": {
+        "pid": 96750,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2251,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/mature06-lazy-reasoning/journey-types.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "mode": "journey-collect",
+      "startedAt": "2026-10-07T08:52:20.045073+00:00",
+      "freeBytes": 23976517632,
+      "inputs": [
+        {
+          "path": "packages/contracts/src/assistant-stream-selection.test.ts",
+          "bytes": 1218,
+          "sha256": "cfcbedb567c44875aaeff3c7d49af35f477f97b7871e439b1c13f4c717481369"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/selection.test.ts",
+          "bytes": 3859,
+          "sha256": "22322f43eca5f25e6d8c7e901729f73c9248391571bb39a29e129bdaac13ac14"
+        },
+        {
+          "path": "packages/interaction/src/stream/selection.test.ts",
+          "bytes": 14538,
+          "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7"
+        },
+        {
+          "path": "packages/contracts/src/assistant-stream.ts",
+          "bytes": 7985,
+          "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/index.ts",
+          "bytes": 2917,
+          "sha256": "8771a580393c624b3415ceb69a5d156d90499ac1d329ffadaa9eb42f3af97939"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/queries.ts",
+          "bytes": 6742,
+          "sha256": "d5b031448f4797fbedf236bd756692ff8d9736bf4078ed4c61c65390f4e8edd8"
+        },
+        {
+          "path": "packages/interaction/src/stream/projection.ts",
+          "bytes": 19907,
+          "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+        },
+        {
+          "path": "packages/interaction/src/stream/patches.ts",
+          "bytes": 16646,
+          "sha256": "4b2dd931035cbbc18f202b5d6a551bdee4101a3c25458385aeec427d459e3d6a"
+        },
+        {
+          "path": "packages/interaction/src/stream/presentation.ts",
+          "bytes": 6756,
+          "sha256": "a545a75c1215d1a49753d5e295ceea4bcd7381bd49e18a0a92b62bc01b2433de"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/vitest.config.mjs",
+          "bytes": 784,
+          "sha256": "688ad849345f1e099bb9c322ef9dcabfc26cf3cf761bb5bbfc563f459dd7ac59"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/tsconfig.json",
+          "bytes": 1373,
+          "sha256": "7f8e0e4a791fad38999921451f969401a125178678658415b019885e9b5facb3"
+        },
+        {
+          "path": "apps/server/src/assistant-stream/selection-pg.test.ts",
+          "bytes": 15115,
+          "sha256": "429b35ed1334879739e6f6a8073981b8af3515463b51dfa398f1004b8a93f9cf"
+        },
+        {
+          "path": "docs/evidence/mature02c02/pg-fixture.ts",
+          "bytes": 12055,
+          "sha256": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-tsconfig.json",
+          "bytes": 2057,
+          "sha256": "3c9ade536724574a8a48240b0338aa8a902291f073f4e52311311fefa5d30273"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-vitest.config.mjs",
+          "bytes": 1619,
+          "sha256": "14d61a6d1dda4794e3ad23bb6968ac99f7727e428a722356621bc0446d3f12af"
+        },
+        {
+          "path": "docs/evidence/mature06-lazy-reasoning/pg-dependencies.json",
+          "bytes": 4134,
+          "sha256": "8f0425565a60a08aed6fecedf988cbeae3c7c62ef45362bfddac479d18d2b40d"
+        },
+        {
+          "path": "packages/client/src/index.ts",
+          "bytes": 62574,
+          "sha256": "d59322f6e77b6bce173506a9580bd35ac9fb0c8280d30ec2e72992b163aa4733"
+        },
+        {
+          "path": "packages/client/src/native-activity-body.ts",
+          "bytes": 8416,
+          "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+        },
+        {
+          "path": "packages/client/src/conversation-acknowledgement.ts",
+          "bytes": 15496,
+          "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+        },
+        {
+          "path": "packages/contracts/src/conversation-harness.ts",
+          "bytes": 1196,
+          "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+        },
+        {
+          "path": "packages/contracts/src/conversations.ts",
+          "bytes": 7382,
+          "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+        }
+      ],
+      "supervisorSHA": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/server/src/assistant-stream/selection-pg.test.ts",
+        "-t",
+        "^uses public FlowClient selection with real HTTP and the shared projection$"
+      ],
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy01-fqcfj9_4",
+        "dev": 16777234,
+        "ino": 123677446,
+        "closedSampleBytes": 64,
+        "closedSampleNodes": 1,
+        "peakBytes": null,
+        "removed": true
+      },
+      "finishedAt": "2026-10-07T08:52:21.752040+00:00",
+      "process": {
+        "pid": 7610,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1706,
+        "observed_bytes": 130,
+        "retained_bytes": 130,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/mature06-lazy-reasoning/journey-collect.txt",
+        "bytes": 130,
+        "sha256": "6d43ac6ba88b5a1c675bab4ec98888f63dfe5a3726874930416f2f20bcc45390"
+      }
+    }
+  ],
+  "limit": {
+    "children": 2,
+    "eachSeconds": 60,
+    "cumulativeChildSeconds": 120,
+    "rawBytes": 262144,
+    "tmpBytes": 8388608
+  },
+  "actualScope": "focused types and exact list only; no hooks/PG/HTTP/provider/native",
+  "segmentStartedAt": "2026-10-07T08:44:00Z",
+  "rawBytes": 130,
+  "toolCompletionObservedAt": "2026-10-07T08:53:16.479374+00:00",
+  "externalWholeToolWall": null,
+  "notes": "Types0 and exact list1 only; no hooks/HTTP/PG. Run elapsed_ms does not include final manual metadata/tool wall. Initial EPERM probes retained in process records; exact TMP end sample is not peak."
+}

@@ -1,16 +1,17 @@
 import sys,os,json,time,datetime,tempfile,pathlib,hashlib,importlib.util,dataclasses,shutil,stat
 root=pathlib.Path(__file__).resolve().parents[3];e=root/'docs/evidence/mature06-lazy-reasoning';mode=sys.argv[1]
-assert mode in ('types','tests','types-fix','tests-fix','p2-red','p2-green','p2-types','pg-types','pg-collect','pg-fix-gates','client-tests','client-types','client-tests-fix','client-types-fix')
-client_mode=mode.startswith('client-');gate_mode=mode=='pg-fix-gates';fix_mode=mode.startswith('p2-');pg_mode=mode.startswith('pg-')and not gate_mode
+assert mode in ('types','tests','types-fix','tests-fix','p2-red','p2-green','p2-types','pg-types','pg-collect','pg-fix-gates','client-tests','client-types','client-tests-fix','client-types-fix','journey-types','journey-collect')
+journey_mode=mode.startswith('journey-');client_mode=mode.startswith('client-');gate_mode=mode=='pg-fix-gates';fix_mode=mode.startswith('p2-');pg_mode=mode.startswith('pg-')and not gate_mode
 d=json.loads((e/'dependencies.json').read_text());node=d['node'];entries=['packages/contracts/src/assistant-stream-selection.test.ts','apps/server/src/assistant-stream/selection.test.ts','packages/interaction/src/stream/selection.test.ts']
 argv=[node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'tsconfig.json')] if 'types' in mode else [node,d['vitest']+'/vitest.mjs','run','--config',str(e/'vitest.config.mjs'),'--configLoader','native',*entries]
 if fix_mode and mode!='p2-types':argv=argv[:-3]+['packages/interaction/src/stream/selection.test.ts','-t',('keeps text advancing|marks a retained disclosure' if mode=='p2-red' else 'keeps text advancing|marks a retained disclosure|aborts a close flight|rejects delayed disclosure')]
 if pg_mode:argv=([node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'pg-tsconfig.json')] if mode=='pg-types' else [node,d['vitest']+'/vitest.mjs','list','--config',str(e/'pg-vitest.config.mjs'),'--configLoader','native','apps/server/src/assistant-stream/selection-pg.test.ts'])
+if journey_mode:argv=([node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'pg-tsconfig.json')] if mode=='journey-types' else [node,d['vitest']+'/vitest.mjs','list','--config',str(e/'pg-vitest.config.mjs'),'--configLoader','native','apps/server/src/assistant-stream/selection-pg.test.ts','-t','^uses public FlowClient selection with real HTTP and the shared projection$'])
 if client_mode:argv=([node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'client-tsconfig.json')] if 'types' in mode else [node,d['vitest']+'/vitest.mjs','run','--config',str(e/'client-vitest.config.mjs'),'--configLoader','native','packages/client/src/assistant-stream.test.ts'])
 if mode=='client-tests-fix':argv+=['-t','^(reads text by default|requires a matching|rejects wrong selection|keeps empty selected|binds the public methods)']
 if gate_mode:argv=['/opt/homebrew/bin/python3.13','-B',str(e/'pg-gates.test.py'),'--verbose']
-p=e/('client-local.json' if client_mode else 'pg-fix-local.json' if gate_mode else 'pg-local.json' if pg_mode else 'lifecycle-local.json' if fix_mode else 'local.json');now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat();record=json.loads(p.read_text()) if p.exists() else {'startedAt':now(),'runs':[],'limit':{'children':4,'eachSeconds':60,'rawBytes':262144,'tmpBytes':8388608},'actualScope':('client transport loopback/injected only; no PG/provider/native' if client_mode else 'pure/injected only; no HTTP/PG/provider/native'),'segmentStartedAt':('2026-10-07T08:23:54Z' if client_mode else '2026-10-07T07:59:19Z' if gate_mode else '2026-10-07T07:46:59Z' if pg_mode else '2026-10-07T07:36:26Z' if fix_mode else '2026-10-07T07:23:01.133Z')}
-assert len(record['runs'])<(2 if gate_mode or pg_mode else 4) and not (e/(mode+'.txt')).exists();assert (datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(record['segmentStartedAt'].replace('Z','+00:00'))).total_seconds()<(600 if gate_mode else 720 if fix_mode or pg_mode else 1200)
+p=e/('client-pg-local.json' if journey_mode else 'client-local.json' if client_mode else 'pg-fix-local.json' if gate_mode else 'pg-local.json' if pg_mode else 'lifecycle-local.json' if fix_mode else 'local.json');now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat();record=json.loads(p.read_text()) if p.exists() else {'startedAt':now(),'runs':[],'limit':{'children':4,'eachSeconds':60,'rawBytes':262144,'tmpBytes':8388608},'actualScope':('client transport loopback/injected only; no PG/provider/native' if client_mode else 'pure/injected only; no HTTP/PG/provider/native'),'segmentStartedAt':('2026-10-07T08:44:00Z' if journey_mode else '2026-10-07T08:23:54Z' if client_mode else '2026-10-07T07:59:19Z' if gate_mode else '2026-10-07T07:46:59Z' if pg_mode else '2026-10-07T07:36:26Z' if fix_mode else '2026-10-07T07:23:01.133Z')}
+assert len(record['runs'])<(2 if gate_mode or pg_mode or journey_mode else 4) and not (e/(mode+'.txt')).exists();assert (datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(record['segmentStartedAt'].replace('Z','+00:00'))).total_seconds()<(900 if journey_mode else 600 if gate_mode else 720 if fix_mode or pg_mode else 1200)
 free=shutil.disk_usage(root).free;assert free>=(4070963200 if client_mode else 1107296256)
 module=pathlib.Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py');spec=importlib.util.spec_from_file_location('ops14',module);ops=importlib.util.module_from_spec(spec);sys.modules['ops14']=ops;spec.loader.exec_module(ops)
 tmp=pathlib.Path(tempfile.mkdtemp(prefix='flow-lazy01-'));identity=tmp.lstat()
@@ -23,8 +24,13 @@ if client_mode:
   b=q.read_bytes();inputs.append({'path':str(q.relative_to(root)),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
  assert sum(v.get('process',{}).get('elapsed_ms',0) for v in record['runs'])<180000
  record['limit']={'children':4,'eachSeconds':60,'cumulativeChildSeconds':180,'rawBytes':524288,'tmpBytes':16777216}
-if pg_mode:
+if pg_mode or journey_mode:
  for q in [root/'apps/server/src/assistant-stream/selection-pg.test.ts',root/'docs/evidence/mature02c02/pg-fixture.ts',e/'pg-tsconfig.json',e/'pg-vitest.config.mjs',e/'pg-dependencies.json']:
+  b=q.read_bytes();inputs.append({'path':str(q.relative_to(root)),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
+if journey_mode:
+ record['limit']={'children':2,'eachSeconds':60,'cumulativeChildSeconds':120,'rawBytes':262144,'tmpBytes':8388608}
+ record['actualScope']='focused types and exact list only; no hooks/PG/HTTP/provider/native'
+ for q in [root/'packages/client/src/index.ts',root/'packages/client/src/native-activity-body.ts',root/'packages/client/src/conversation-acknowledgement.ts',root/'packages/contracts/src/conversation-harness.ts',root/'packages/contracts/src/conversations.ts']:
   b=q.read_bytes();inputs.append({'path':str(q.relative_to(root)),'bytes':len(b),'sha256':hashlib.sha256(b).hexdigest()})
 if gate_mode:
  for q in [e/'execute-pg.py',e/'pg-gates.test.py']:
