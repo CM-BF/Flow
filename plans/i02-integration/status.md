@@ -283,3 +283,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07 00:21 UTC：窄接K01规划fd02/metadata67e9，三设计文件逐hash同获审target，后续文档delta独审无blocking；[12文件接收清单](../../docs/evidence/i02/k01-retention-planning-intake.json)。旧K01/K02/K03产品源码保持，留存实现08/09/10与12实际验收仍开放/NOT_RUN，无工程测试、PG、模型或实际留存改变。
 
 2026-10-07：仅窄接OPS三树收尾准备与资源恢复状态，固定来源76ffcef3、独审a60614fe APPROVED_DOCS；[5文件绑定](../../docs/evidence/i02/worktree-retirement-planning-intake.json)核前像与新字节一致。三树全部KEEP、authority不迁移、无清理/安装/产品检查/PG/provider/个人服务变更。既有运行门槛和CI唯一PENDING保留，已ready验证按原owner窗口推进。
+
+2026-10-07：受控接收SVC07产品e28/delivery4a85569b，2产品+67自有plan/evidence逐字绑定，[接收清单](../../docs/evidence/i02/svc07-controlled-intake.json)。前像及直接消费者无冲突；复用Mika分层独审15fake/types、2真实PG、1HTTP与正常清理，未重跑或合称同轮18项。旧HOLD/监督unknown和原始日志空行保留；不操作个人runtime，架构发布另由D06 owner处理。

@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-06T20:56:58.270869+00:00",
+  "endedAt": "2026-10-06T20:57:00.206892+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--project",
+    "docs/evidence/svc07/tsconfig.http.json",
+    "--pretty",
+    "false"
+  ],
+  "exit": 0,
+  "wallSeconds": 1.935556124895811,
+  "availableBeforeBytes": 1152307200,
+  "rawBytes": 0,
+  "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "fixtureSha256": "22cfb664f588ca141dd3ebd9734ffbe3212bbec74ee66803775432d231917832",
+  "wrapperSha256": "e663f63b1cce344afcff295104366bbbdf038fc7a1927b3ba78aa5d745268f4b",
+  "pythonSyntax": "AST parse only",
+  "pg": 0,
+  "http": 0,
+  "projectRuntimeImports": 0,
+  "cacheDisabled": true
+}

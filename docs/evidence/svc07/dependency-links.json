@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-06T20:04:35.194263+00:00",
+  "task": "SVC07",
+  "actions": "five missing ignored dependency links to exact existing store entries; no install/copy/import/test",
+  "entries": [
+    {
+      "package": "pg",
+      "version": "8.23.1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "packageJsonSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/node_modules/pg"
+    },
+    {
+      "package": "vitest",
+      "version": "4.0.18",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "packageJsonSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/node_modules/vitest"
+    },
+    {
+      "package": "typescript",
+      "version": "5.9.3",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "packageJsonSha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/node_modules/typescript"
+    },
+    {
+      "package": "@types/node",
+      "version": "24.19.1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "packageJsonSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/node_modules/@types/node"
+    },
+    {
+      "package": "@types/pg",
+      "version": "8.23.1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "packageJsonSha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/node_modules/@types/pg"
+    }
+  ],
+  "gitStatus": "",
+  "preserves": "No tracked source or existing dependency entry changed. Version/hash binds observation, not immutable storage enforcement."
+}

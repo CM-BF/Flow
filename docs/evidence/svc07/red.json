@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/server/src/database-transaction.test.ts",
+    "--config",
+    "docs/evidence/svc07/vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "startedAt": "2026-10-06T20:06:49.749761+00:00",
+  "endedAt": "2026-10-06T20:06:50.176188+00:00",
+  "availableBeforeBytes": 1370009600,
+  "exit": 1,
+  "wallSeconds": 0.425884791999124,
+  "timedOut": false,
+  "rawBytes": 12903,
+  "rawSha256": "77998b5ddd8f1ab523c3a3ed0ec74e3b67e4a2ee89f9396cf253d69fabd3c0cf",
+  "sourceSha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8",
+  "testSha256": "637a66bb880013be2aec0b7056974846f5b81fa10c93fd9d2d541dc32cda36df",
+  "pg": 0,
+  "browser": 0,
+  "native": 0
+}

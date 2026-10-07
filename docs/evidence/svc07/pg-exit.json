@@ -1,0 +1,79 @@
+{
+  "state": "PASSED",
+  "startedAt": "2026-10-06T20:43:05.483720+00:00",
+  "gate": {
+    "head": "93dacd96dcbab935a4e9bde75de0ffdc5a550d09",
+    "manifestSha256": "89a8ae8de72f1af0239e364cec6243b422accb0585a4203932c9232eee6f383b",
+    "availableBeforeBytes": 1258450944,
+    "claimId": "3bbb8293-c36d-40c8-a133-723463801943",
+    "claimVersion": 1,
+    "claimObservedAt": "2026-10-06T20:43:05.466Z"
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "docs/evidence/svc07/pg-transaction.test.ts",
+    "--config",
+    "docs/evidence/svc07/pg-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "temporary": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/pg-tmp",
+    "device": 16777234,
+    "inode": 123185829,
+    "absentAfter": true
+  },
+  "spawn": {
+    "pid": 31256,
+    "pgid": 31256,
+    "startedAt": "2026-10-06T20:43:05.486340+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 31256,
+      "pgid": 31256,
+      "startedAt": "2026-10-06T20:43:05.486340+00:00"
+    },
+    "pid": 31256,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 537,
+    "observedBytes": 537,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawSha256": "67ff4bbb3a6dbce4d244dafc3d8862ddf19edf1a6d9c5d6c616cfd6a7ff93652",
+  "resultBytes": 1852,
+  "database": {
+    "name": "flow_svc07_72770249ea6c",
+    "marker": "cbd4e630-5588-415e-a789-2e628bc6e38c",
+    "cleanup": {
+      "status": "CONFIRMED",
+      "poolEndAcknowledged": true,
+      "connectionsZero": true,
+      "databaseAbsent": true,
+      "adminEndAcknowledged": true
+    }
+  },
+  "endedAt": "2026-10-06T20:43:06.094669+00:00",
+  "wallSeconds": 0.77369391603861
+}

@@ -1,0 +1,73 @@
+{
+  "state": "COLLECTED_NOT_EXECUTED",
+  "at": "2026-10-06T21:00:04.687731+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "list",
+    "docs/evidence/svc07/http-consumer.test.ts",
+    "--config",
+    "docs/evidence/svc07/http-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--json",
+    "--no-color"
+  ],
+  "availableBeforeBytes": 1218965504,
+  "claimObservedAt": "2026-10-06T21:00:04.667Z",
+  "pg": 0,
+  "http": 0,
+  "testPasses": null,
+  "inputs": {
+    "http-consumer.test.ts": "22cfb664f588ca141dd3ebd9734ffbe3212bbec74ee66803775432d231917832",
+    "http-vitest.config.mjs": "21723b2d1dfc481a1c2e84e1acbacf1ea3d837e174bd4b85888ff0302e6d7d61",
+    "vitest.config.mjs": "5a8fe998f55084ef70c6aafea57c1f1f2a195de1f3d1f6ae81c3fc3c3030ded3",
+    "http-input.json": "297c3a833ab190b59db42511f026d2850ee49aec5c54cb1d241f480243e48815",
+    "execute-pg-once.py": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0"
+  },
+  "spawn": {
+    "pid": 88367,
+    "pgid": 88367,
+    "startedAt": "2026-10-06T21:00:04.690809+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 88367,
+      "pgid": 88367,
+      "startedAt": "2026-10-06T21:00:04.690809+00:00"
+    },
+    "pid": 88367,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 257,
+    "observedBytes": 257,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "rawBytes": 257,
+  "rawSha256": "cd7d8bc7968b80f1324f1e12b94204fcec4b6835f267dd0cf1c539cb7510d624",
+  "wallSeconds": 1.5496703329263255,
+  "endedAt": "2026-10-06T21:00:06.238676+00:00",
+  "collected": 1,
+  "collection": [
+    {
+      "name": "retains concurrent claim, command replay, restart and cancellation semantics over real HTTP",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/http-consumer.test.ts"
+    }
+  ],
+  "temporaryAbsent": true
+}

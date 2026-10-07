@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect
+
+ ✓ docs/evidence/svc07/pg-transaction.test.ts > handles a real idle borrowed disconnect and a later transaction on the same pool 24ms
+ ✓ docs/evidence/svc07/pg-transaction.test.ts > handles a real query borrowed disconnect and a later transaction on the same pool 10ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  13:43:05
+   Duration  313ms (transform 21ms, setup 0ms, import 40ms, tests 179ms, environment 0ms)
+

@@ -1,0 +1,123 @@
+{
+  "at": "2026-10-06T20:31:02.789523+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "productTarget": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "files": [
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "vitest.config.ts",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "path": "docs/evidence/svc07/vitest.config.mjs",
+      "bytes": 251,
+      "sha256": "5a8fe998f55084ef70c6aafea57c1f1f2a195de1f3d1f6ae81c3fc3c3030ded3"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-vitest.config.mjs",
+      "bytes": 217,
+      "sha256": "cccc5bd95a96bf755fea3cbfdd911163fd6a219b45b95fab2d6c3479452edf07"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-transaction.test.ts",
+      "bytes": 11574,
+      "sha256": "74873ae17c412b8ff7d5c5ef9ce69de1e6269490e716995af84994e4a33bca6f"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-input.json",
+      "bytes": 591,
+      "sha256": "dc37dd5246dd96915c84c77af9b0ec62d25ea65d5ec37fa5f7fac9036a8a8b8f"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-window.md",
+      "bytes": 8011,
+      "sha256": "01fdb0ea00bddc63990fa3871760194e451f83b556f092e249da65537903d6f6"
+    },
+    {
+      "path": "docs/evidence/svc07/dependency-links.json",
+      "bytes": 2460,
+      "sha256": "1036d780fa05bc5b39dc240d4fb621283be64604a1b17360e707691f56f79934"
+    },
+    {
+      "path": "docs/evidence/svc07/tsconfig.pg.json",
+      "bytes": 156,
+      "sha256": "d87e3574e3b632a93c7f565c504aadac4e2809f005d38264d70a33f831ef4c74"
+    },
+    {
+      "path": "docs/evidence/svc07/execute-pg-once.py",
+      "bytes": 13345,
+      "sha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0"
+    },
+    {
+      "path": "docs/evidence/svc07/execute-pg-once.test.py",
+      "bytes": 3871,
+      "sha256": "7d5f27e1be58030a2a1eda1fff95641a499a6e8fb9e0198748761ecc983f8756"
+    },
+    {
+      "path": "docs/evidence/svc07/supervisor-tests-v3.json",
+      "bytes": 735,
+      "sha256": "f2bc1b0b0de6631c8846f05f5c1c3bf3c7d6a42cd59f1517822c7d31b0da7b33"
+    },
+    {
+      "path": "docs/evidence/svc07/supervisor-tests-v3.log",
+      "bytes": 3834,
+      "sha256": "7e99d56f7aca3eadd8ebae332d55c325629883f79e0bf389ddfd3f77fc6f690c"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-types-v2.json",
+      "bytes": 730,
+      "sha256": "48f4fe943f5c7e8f5473ec8b09b9e633a1d0677d80d19bb5d606480c19ab107a"
+    },
+    {
+      "path": "docs/evidence/svc07/pg-types-v2.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "outputsAbsentAtPreparation": [
+    "pg-run-reservation.json",
+    "pg-result.json",
+    "pg-output.log",
+    "pg-exit.json",
+    "pg-tmp"
+  ],
+  "runtime": {
+    "pg": 0,
+    "browser": 0,
+    "native": 0,
+    "provider": 0
+  },
+  "actualExecutionEnvelope": "PREPARED_NOT_RUN: execute-pg-once.py fixed command, fresh source/claim/dependencies/disk and absent-output gates, immediate spawn receipt, 27-second child cutoff within 30-second overall observation, 64KiB raw cap, three-state signal/group observations; unknown never means exited",
+  "typesReceipt": "pg-types-v2.json",
+  "supervisorChecks": "supervisor-tests-v3.json: selected 6, passed 6, exit 0; real descendant group 391 remains UNKNOWN/EPERM, no further signals or inferred exit",
+  "python": {
+    "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "version": "3.13.3",
+    "dependencies": "standard library only"
+  }
+}
