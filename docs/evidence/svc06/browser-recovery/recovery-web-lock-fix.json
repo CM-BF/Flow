@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-07T23:22:12.469Z",
+  "at": "2026-10-07T23:28:58.393Z",
   "source": "6491c4815cd6daf8f640648d5e8a25a599d8cd92",
   "parent": "99c0f0864",
   "scope": "Same Web-only caller, non-reentrant preview-lock status reader repair; actual publication NOT_RUN",
@@ -147,6 +147,76 @@
       "nlink": 1,
       "bytes": 252,
       "sha256": "786a1d8bc5b775419121642889b3b96b8b78895de6cff4e9d0ecbe033abc2981"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-reservation.json",
+      "dev": "16777234",
+      "ino": "124637369",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3181,
+      "sha256": "956413607d1af40e2f6e320e55e814be5720765b58d92f0c8efcdeaa0402a294"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-outer.json",
+      "dev": "16777234",
+      "ino": "124637375",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 133992,
+      "sha256": "1d99cc30fe6b40fe2aea635e74c3f7813fc9168ff1d85097c2edf828f37b2d6a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-result.json",
+      "dev": "16777234",
+      "ino": "124637376",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 258,
+      "sha256": "37b36398d48c73dcee4e9bf94ddccf33bdbcb5a3d719749127b8cc12531b2448"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-reservation.json",
+      "dev": "16777234",
+      "ino": "124637553",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3337,
+      "sha256": "a3722d63904dd3b2a7f7e29eef02b424315d172058284a42579aaa7056970910"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-outer.json",
+      "dev": "16777234",
+      "ino": "124637566",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 782,
+      "sha256": "00d49c14399c2cc5e4861bb1f44febe24698522717d662a7b4b478d7debf0405"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-05-result.json",
+      "dev": "16777234",
+      "ino": "124637567",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 252,
+      "sha256": "ede25d630c5f2b4e6786f2bc488c6a284319ecf60cb8d5db3a29fd4add5a94c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-process-observation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-lock-local-04-process-observation.json",
+      "dev": "16777234",
+      "ino": "124638641",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 608,
+      "sha256": "1249236aa8afbe51e5da644d25865fb4c0f065efdbe4fcbe36a2ae0a380a0211"
     }
   ],
   "effectiveSourceOverlay": [
@@ -175,8 +245,8 @@
     ]
   },
   "checks": {
-    "distinct": 6,
-    "selections": 12,
+    "distinct": 7,
+    "selections": "13 known intended selections across02/03/05; round01 no selection;04 default discovery is UNKNOWN scope, excluded from intended-selection count",
     "firstRun": "module-discovery failure before selected case (sparse preview pg resolution); retained",
     "secondRun": "6 fixture EEXIST failures before lock/guard; retained",
     "lastRun": "6/6 passed actual immutable lock and public read-only store with only external DB connection/query injected; actual microartifact transfer/fsync/exclusive rename ran only under exact own scratch",
@@ -186,22 +256,114 @@
       "true pre-existing lock retained/refuses",
       "revoked identity refuses/no CAS/Pool ends",
       "identity mismatch refuses/no CAS/Pool ends",
-      "status unknown refuses/no CAS/Pool ends"
+      "status unknown refuses/no CAS/Pool ends",
+      "existing normal actual publication consumer with new readonly reader makes one exact public CAS"
     ],
-    "elapsedMs": 1079,
-    "rawBytes": 11630,
-    "returnedAt": "2026-10-07T23:20:28.763455+00:00",
-    "groupsAbsent": 3,
-    "dualEOF": true,
-    "exactEmptyScratchRemoved": 3,
+    "elapsedMs": 3044,
+    "rawBytes": 146861,
+    "returnedAt": "2026-10-07T23:23:13.763487+00:00",
+    "groupsAbsent": 5,
+    "dualEOF": false,
+    "exactEmptyScratchRemoved": 5,
     "initialUnknownObservations": "All raw include preliminary EPERM/unknown observation before final absent; retained, not discarded",
-    "pg": 0,
-    "personalIO": 0,
-    "provider": 0
+    "pg": "Intended selected consumers0;04 uncaptured effects UNKNOWN, not inferred from absent env",
+    "personalIO": "Intended selected consumers0;04 uncaptured effects UNKNOWN",
+    "provider": "Intended selected consumers0;04 uncaptured effects UNKNOWN",
+    "fourthRun": "Missing explicit file/two patterns accidentally triggered default discovery; FAIL/capture truncation and unknown uncaptured effects retained. Not a passing check.",
+    "fifthRun": "One exact existing actual publish consumer selected with explicit absolute file, anchored pattern and concurrency1; 1/1 passed; source6491 unchanged. Completed before receipt of Lead STOP; no later test launched.",
+    "validPassingEvidence": [
+      "local03:6/6 real transfer/guard/read-only-store cases",
+      "local05:1/1 real publication observation and exact public CAS consumer"
+    ],
+    "retainedRawBytes": 142928,
+    "dualEOFByRound": {
+      "1": {
+        "stdout": true,
+        "stderr": true
+      },
+      "2": {
+        "stdout": true,
+        "stderr": true
+      },
+      "3": {
+        "stdout": true,
+        "stderr": true
+      },
+      "4": {
+        "stdout": false,
+        "stderr": false
+      },
+      "5": {
+        "stdout": true,
+        "stderr": true
+      }
+    }
   },
   "quality": {
-    "at": "2026-10-07T23:22:12.469Z",
+    "at": "2026-10-07T23:28:58.393Z",
     "method": "Existing clean-code/codebase-design/find-skills methods: state ownership/lock stays in original module; reuse public read-only store; one small status method, bounded Pool lifetime and exact identity predicate; no new supervisor/FSM.",
-    "pending": "Independent delta review; latest unique window and immediate identity/resource gates before actual."
+    "pending": "Final limited delta review plus new explicit publication window/fresh gates; ready=false. Explicit file/pattern construction improvement is OPS16 follow-up, not implemented here."
+  },
+  "priorFixedPartialPacket": {
+    "commit": "5360efff1164a3ea8bbdc110806419f35f493d14",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json",
+    "sha256": "039bf636c9c7c50c03bfac0ee476b2a86bf77f9e6304f05a84e5274a8c6a3e23",
+    "scope": "Rounds01–03 only, retained in Git; this update appends04/05 and bounded association observation without rewriting raw."
+  },
+  "local04BoundedClassification": {
+    "actualLaunch": {
+      "provenance": "argv in original reservation; cwd/env/policy from original actual OPS14 Launch tool invocation, not retrospectively claimed as reservation fields",
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "env": {
+        "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+        "TMPDIR": "/private/tmp/svc06b-web-lock-u3mhdywm",
+        "TSX_DISABLE_CACHE": "1"
+      },
+      "workSeconds": 15,
+      "termGraceSeconds": 0.5,
+      "reapSeconds": 2,
+      "captureBytes": 131072
+    },
+    "capture": {
+      "uniqueTestTsPaths": 88,
+      "testTsFailureTerminalLines": 87,
+      "otherFailureTerminalPaths": [
+        "apps/runner/src/goal-graph-tools/test-peer.ts",
+        "apps/runner/src/goal-tool-bridge/test-peer.ts",
+        "apps/runner/src/goal-tools-mcp/test-peer.ts",
+        "apps/runner/src/protocol-dispatch/test-process.ts"
+      ],
+      "moduleNotFoundOccurrences": 276,
+      "capturedPassedLines": 0,
+      "observedBytes": 135005,
+      "retainedBytes": 131072,
+      "observedUnretainedBytes": 3933,
+      "eof": {
+        "stdout": false,
+        "stderr": false
+      },
+      "afterCaptureBoundary": "UNKNOWN"
+    },
+    "helperStage": "Three test-peer entries failed resolving @modelcontextprotocol/sdk. test-process failed static import of @a2a-js/sdk through protocol-dispatch/index.ts, before its top-level runProtocolRunner. These captured failures do not classify unobserved paths.",
+    "processScope": {
+      "officialVersion": "v24.20.0",
+      "runnerSource": "https://raw.githubusercontent.com/nodejs/node/v24.20.0/lib/internal/test_runner/runner.js",
+      "runnerLines": "145–161 default discovery;469–502 per-file spawn without detached",
+      "spawnSource": "https://raw.githubusercontent.com/nodejs/node/v24.20.0/lib/child_process.js",
+      "spawnLines": "707–714 defaults detached false",
+      "interpretation": "Default Node file children inherit supervised PGID35560; OPS14 ended that group. Imported code could create detached descendants; none individually accounted by this report. Absent group is not proof all escaped descendants ended."
+    },
+    "resources": {
+      "registeredGroup": 35560,
+      "registeredGroupFinal": "absent",
+      "signal": "SIGTERM sent",
+      "scratch": "Original result records exact empty same-identity removal",
+      "specificContinuingWriterEvidence": "NONE IN RETAINED OUTPUT",
+      "uncapturedActionsOrEscapedDescendants": "UNKNOWN",
+      "pendingLaunches": 0,
+      "correlationObservation": "recovery-web-lock-local-04-process-observation.json: one74ms snapshot, no matching association predicates. Does not prove all escaped descendants absent.",
+      "futureBudget": "Unknown remains for resource owner classification; no automatic zero/reclaim."
+    },
+    "fidelity": "Original04 reservation personal/pg0 described intended narrow work and is not accepted as actual whole-discovery proof. All raw preserved.05 success cannot erase04 failure. No new tests after STOP; one metadata observation explicitly authorized."
   }
 }

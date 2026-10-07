@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-07T23:23:13.347604+00:00",
+  "floor": 11983781888,
+  "free": 17955823616,
+  "queueAt": "2026-10-07T23:18:36.376Z",
+  "scratch": {
+    "path": "/private/tmp/svc06b-web-lock-gwdtnzar",
+    "dev": 16777234,
+    "ino": 124637552
+  },
+  "limits": {
+    "seconds": 60,
+    "tmpBytes": 2097152,
+    "rawBytes": 2097152
+  },
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "--test",
+    "--test-reporter=spec",
+    "--test-concurrency=1",
+    "--test-name-pattern=^actual publish consumer observes six owned files/four reports and makes one exact public CAS$",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 14999,
+      "sha256": "9603d719df6fef634d4f1301a76232c2cb0540dd7e23eb8c1885d52ca44e6f0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 19586,
+      "sha256": "57ed7df43f43af7056d341495aca138d73f3e6956e1e783616fe37d52666199c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "bytes": 12331,
+      "sha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/preview.mjs",
+      "bytes": 48676,
+      "sha256": "ab59c6be5be67b00eda33bb0c8e1769feac98e1c32dc80a4a96de9de0baee2b2"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/runner-maintenance/index.ts",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    }
+  ],
+  "producerMatch": "public lock function and runner-maintenance index/store/database exactly880060; actual functions imported, only external DB connection/query injected",
+  "personal": 0,
+  "pg": 0,
+  "correction": "Exact standalone argv, explicit test file and one anchored name; prior04 erroneous autodiscovery/capture failure retained without green/zero-side-effect claim."
+}
