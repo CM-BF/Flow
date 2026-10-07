@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T11:43:18.197342+00:00",
+  "reviewer": "assignment_review / gpt-6-astra; independent read-only",
+  "decision": "APPROVED_SOURCE_AND_LIMITED_DIRECT_VALIDATION",
+  "source": "66caee46341c91db71a3590bfcd288396b30567a",
+  "production": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+  "delivery": "92e568656ff0072eab4e49ef8a512b954113a080",
+  "base": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "manifest": {
+    "path": "docs/evidence/wpf-connection-session/late-logout/manifest.json",
+    "bytes": 12298,
+    "sha256": "ebe33e35f1d64509fc18450847de043bd588a62f6040198b62568fcd6e16bae5"
+  },
+  "review": {
+    "fixedCurrentCount": 43,
+    "fixedCurrentBytes": 96733,
+    "explicitSources": 12,
+    "installedPins": 14,
+    "observer": "Exact fixed main62e9 original bytes",
+    "findings": [],
+    "newTests": 0,
+    "newPG": 0,
+    "newProvider": 0
+  },
+  "sourceDelta": "Exact three-file delta; all44 product/own metadata/evidence preimages match fixed239 baseline in currentmain62ac. No hand resolution or unapproved source.",
+  "behavior": "Exact tokenHash/origin/epoch revoke unchanged; logout emits no deleting Set-Cookie. Held old response, new Connect, released old response; new reads/writes valid, old session and SSE invalid, running task preserved.",
+  "validation": {
+    "selectedPassed": 4,
+    "notSelected": 19,
+    "newCases": 1,
+    "oldDirectOverlap": 3,
+    "focusedTypesExit": [
+      0,
+      0
+    ],
+    "totalMs": 7304,
+    "rawBytes": 597
+  },
+  "cleanup": "3 groups absent/dualEOF/no signals;3 exact empty scratch removed. Marker/OID1302307, bounded observation empty, normalDROP/removed. Original pre-reap EPERM retained.",
+  "limits": [
+    "Fixture uses SQL1..28 old baseline, not allcurrent35 or browser matrix.",
+    "Currentmain preimages exact; no new direct-consumer change requiring repeat domain/PG test.",
+    "Already frozen7d1/source6c personal candidate does not contain this fix; no silent artifact rebinding or deployment."
+  ]
+}
