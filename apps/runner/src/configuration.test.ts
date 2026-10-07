@@ -1,23 +1,34 @@
 import { mkdtemp, writeFile, rm } from 'node:fs/promises';
 import * as filesystem from 'node:fs/promises';
-import { constants } from 'node:fs';
+import { constants, lstatSync, writeFileSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { afterEach, expect, it, vi } from 'vitest';
-import { loadCodexRunnerConfiguration, loadRunnerAdapters, loadSelectedRunnerConfiguration } from './configuration.js';
+import { afterAll, afterEach, expect, it, vi } from 'vitest';
+import { loadCodexRunnerConfiguration, loadPublishedCodexRunnerConfiguration, loadRunnerAdapters, loadSelectedRunnerConfiguration } from './configuration.js';
 
 vi.mock('node:fs/promises', async importOriginal => {
   const actual = await importOriginal<typeof import('node:fs/promises')>();
   return { ...actual, stat: vi.fn(actual.stat), open: vi.fn(actual.open) };
 });
 
-const directories: string[] = [];
-afterEach(async () => { for (const directory of directories.splice(0)) await rm(directory, { recursive: true, force: true }); });
+const directories: { path: string; dev: number; ino: number }[] = [];
+const cleanup: { path: string; dev: number; ino: number; absent: boolean }[] = [];
+afterEach(async () => {
+  vi.unstubAllGlobals();
+  for (const directory of directories.splice(0)) {
+    const current = lstatSync(directory.path); expect([current.dev, current.ino]).toEqual([directory.dev, directory.ino]);
+    await rm(directory.path, { recursive: true }); expect(() => lstatSync(directory.path)).toThrow();
+    cleanup.push({ ...directory, absent: true });
+  }
+});
+afterAll(() => {
+  if (process.env.FLOW_C02_CONFIGURATION_REPORT) writeFileSync(process.env.FLOW_C02_CONFIGURATION_REPORT, JSON.stringify(cleanup), { flag: 'wx', mode: 0o600 });
+});
 async function manifest(value: unknown) {
   const directory = await mkdtemp(join(tmpdir(), 'flow-runner-config-'));
-  directories.push(directory);
+  const { dev, ino } = lstatSync(directory); directories.push({ path: directory, dev, ino });
   const path = join(directory, 'claude.json');
   await writeFile(path, JSON.stringify(value), { mode: 0o600 });
   return path;
@@ -112,4 +123,31 @@ it('refuses a file replaced with a FIFO after inspection without blocking and cl
   });
   await expect(loadCodexRunnerConfiguration(file)).rejects.toThrow('manifest exceeds its size limit');
   expect(close).toHaveBeenCalledExactlyOnceWith();
+});
+
+
+it('persistent loader rejects mixed selection and invalid public JSON before publication', async () => {
+  const fetch = vi.fn(); vi.stubGlobal('fetch', fetch);
+  const options = { baseUrl: 'http://fixture.invalid', token: 'synthetic-token', codeHome: '/missing-private-storage',
+    createTransport: vi.fn(() => { throw new Error('Unexpected factory'); }), codexManifestFile: '/missing-manifest', claudeManifestFile: '/other-manifest' };
+  await expect(loadPublishedCodexRunnerConfiguration(options)).rejects.toThrow('Select only one native manifest.');
+  await expect(loadPublishedCodexRunnerConfiguration({ ...options, claudeManifestFile: undefined,
+    codexManifestFile: await manifest({ ...codexProfile, sessionPersistence: 'host-owned', env: {} }) })).rejects.toThrow();
+  expect(fetch).not.toHaveBeenCalled(); expect(options.createTransport).not.toHaveBeenCalled();
+});
+
+it('persistent loader returns guarded adapters and a confirmed reference without starting a process', async () => {
+  const { nativeExecutionProfileConfigurationJson, codexExecutionProfileConfigurationSchema } = await import('../../../packages/contracts/src/execution-profiles.js');
+  const { textDigest } = await import('./verifier.js');
+  const profile = codexExecutionProfileConfigurationSchema.parse({ ...codexProfile, sessionPersistence: 'host-owned' });
+  const file = await manifest(profile); const codeHome = directories.at(-1)!.path;
+  const reference = { id: '6a287c9c-e6c0-4b78-a63a-9fcc7a45d62f', runnerId: '5668918f-58a1-4703-89dc-705e92a8b4c4',
+    configDigest: textDigest(nativeExecutionProfileConfigurationJson(profile)) };
+  vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify({ profile: { reference, configuration: profile }, replayed: false }), { status: 200 })));
+  const createTransport = vi.fn(() => { throw new Error('Unexpected factory'); });
+  const loaded = await loadPublishedCodexRunnerConfiguration({ codexManifestFile: file, baseUrl: 'http://fixture.invalid', token: 'synthetic-token', codeHome, createTransport });
+  expect(loaded.reference).toEqual(reference); expect(loaded.adapters.map(adapter => adapter.name)).toEqual(['fixture', 'codex']);
+  expect(loaded.profile).toEqual(profile); expect(loaded.activeSteering).toBe(false);
+  expect(loaded.harnesses[1]!.descriptor.ports).toEqual({ sessionPersistence: 'host-owned' });
+  expect(createTransport).not.toHaveBeenCalled();
 });

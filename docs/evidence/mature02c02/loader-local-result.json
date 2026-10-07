@@ -1,0 +1,386 @@
+{
+  "schema": "flow.c02.loader-local.v1",
+  "startedAt": "2026-10-07T03:23:52.598757+00:00",
+  "headBefore": "f100b07c5b6dd7dbb870a37fe2827a74a47de2f0",
+  "claimVersion": 3,
+  "freeBefore": 26533789696,
+  "requiredFloor": 1226047488,
+  "limits": {
+    "segmentSeconds": 180,
+    "maxProcesses": 4,
+    "perProcessSeconds": 30,
+    "rawBytes": 262144,
+    "ownTmpBytes": 16777216,
+    "newSourceAndMetadataBytes": 1048576
+  },
+  "inputs": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 5430,
+      "sha256": "55e168520c2a99857847862e99a233336618d3fb6ca37982f1cc0d9cc8a909fa"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 2374,
+      "sha256": "2cce96dda39ae77476e5e23edf641d54fcfcc17131202c0faae7f106251648ec"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 10992,
+      "sha256": "dfce9b8e574739f5c839e3f4fbd69fb802dd6bc7d85d7302519afa3100a8ff29"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-vitest.config.mjs",
+      "bytes": 408,
+      "sha256": "e8ebdb095791ad4b60d367a67e0641a61c0dcd63cca2d412e68738346b19d7c7"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-tsconfig.json",
+      "bytes": 251,
+      "sha256": "40185239e8ba6ab45a3e309dcfe3f96dce17ce7f7bb17377cfef26b1c42de37b"
+    }
+  ],
+  "runs": [
+    {
+      "pid": 59070,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1528,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types-first",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/loader-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T03:23:52.737098+00:00",
+      "supervisorReturnedAt": "2026-10-07T03:23:54.265205+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-qqvit8v6",
+        "dev": 16777234,
+        "ino": 123372262
+      },
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/loader-types-first.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-types-first.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 256,
+        "activePeak": "unknown"
+      },
+      "tmpRemoved": true
+    },
+    {
+      "pid": 60599,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 1037,
+      "observed_bytes": 109,
+      "retained_bytes": 109,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "behavior-first",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/runner/src/configuration.test.ts",
+        "apps/runner/src/native-harness/codex/launch.test.ts",
+        "--config",
+        "docs/evidence/mature02c02/loader-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-m9di55u5/vitest.json"
+      ],
+      "startedAt": "2026-10-07T03:23:54.266793+00:00",
+      "supervisorReturnedAt": "2026-10-07T03:23:55.303643+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-m9di55u5",
+        "dev": 16777234,
+        "ino": 123372270
+      },
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-first.stdout",
+          "bytes": 109,
+          "sha256": "01da63d0b8e07e999d28871014bf964c69921143838b910c65dc0af18efae360"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-first.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-first.vitest.json",
+          "bytes": 13708,
+          "sha256": "48c9b74299e5f7bb3de30d395e3fdc5f7f54b615b6dc221475b66c26551db3c4"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-first.launch-cleanup.json",
+          "bytes": 613,
+          "sha256": "ab53abd15c617e2962fd895597bc661a4d85ffa9c7d26fa1320c97eb88b1100c"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-first.configuration-cleanup.json",
+          "bytes": 3901,
+          "sha256": "dd9ef48e1d40d799effe2413b32561b4b88da1dfe3ad3063500dbebf28bf676d"
+        }
+      ],
+      "tests": {
+        "numTotalTests": 42,
+        "numPassedTests": 41,
+        "numFailedTests": 1,
+        "numPendingTests": 0,
+        "success": false
+      },
+      "launch-cleanup.json": {
+        "count": 4,
+        "allRecordedAbsent": true,
+        "allExactAbsent": true
+      },
+      "configuration-cleanup.json": {
+        "count": 25,
+        "allRecordedAbsent": true,
+        "allExactAbsent": true
+      },
+      "tmpSample": {
+        "entries": 0,
+        "logicalBytes": 0,
+        "activePeak": "unknown"
+      },
+      "tmpRemoved": false
+    },
+    {
+      "pid": 93340,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 841,
+      "observed_bytes": 109,
+      "retained_bytes": 109,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "behavior-endpoint-delta",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/runner/src/native-harness/codex/launch.test.ts",
+        "--config",
+        "docs/evidence/mature02c02/loader-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-9d2yb42c/vitest.json",
+        "-t",
+        "persistent startup supplies the same storage"
+      ],
+      "startedAt": "2026-10-07T03:24:52.701933+00:00",
+      "supervisorReturnedAt": "2026-10-07T03:24:53.542668+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-9d2yb42c",
+        "dev": 16777234,
+        "ino": 123372736
+      },
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.stdout",
+          "bytes": 109,
+          "sha256": "b13f4de7162a07b2736999f1b367f76f2b5d177ce55454783d34b557307de919"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.vitest.json",
+          "bytes": 6018,
+          "sha256": "13cffda5fe82100564d22abee73bb55556132a7d16e1e36623cd1d7dad4ad1b3"
+        },
+        {
+          "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.launch-cleanup.json",
+          "bytes": 154,
+          "sha256": "ed96aed65fda2c11658525fbdbcaeaf37746f3ddbb8f15b5a72ef3aa246863f8"
+        }
+      ],
+      "tests": {
+        "numTotalTests": 20,
+        "numPassedTests": 1,
+        "numFailedTests": 0,
+        "numPendingTests": 19,
+        "success": true
+      },
+      "launch-cleanup.json": {
+        "count": 1,
+        "allRecordedAbsent": true,
+        "allExactAbsent": true
+      },
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 8,
+        "logicalBytes": 6851,
+        "activePeak": "unknown"
+      }
+    }
+  ],
+  "PG": 0,
+  "actualCodex": 0,
+  "provider": 0,
+  "donorWrites": 0,
+  "elapsedBeforePersistenceSeconds": 2.7061514580855146,
+  "rawArtifactBytes": 24612,
+  "completedAt": "2026-10-07T03:24:53.544860+00:00",
+  "elapsedBeforeFinalPersistenceSeconds": 60.946107,
+  "complete": true,
+  "correction": {
+    "reason": "Test expected a nonexistent native-specific endpoint; unchanged public client publishes both through /api/runner/execution-profile. Only assertion literal corrected.",
+    "sourcePath": "apps/runner/src/native-harness/codex/launch.test.ts",
+    "sha256": "f6c40729970d405e48c0c663ce66a0cfe9855f7f58e6f06f85981246be314408",
+    "priorRawPreserved": true
+  },
+  "failedAttemptTmpCloseout": {
+    "at": "2026-10-07T03:24:52.691929+00:00",
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-loader-m9di55u5",
+    "dev": 16777234,
+    "ino": 123372270,
+    "basis": "Final owned state absent, exit1 was test assertion; complete streams and no signal/secondary failure. Original observed failure retained.",
+    "sample": {
+      "entries": 9,
+      "logicalBytes": 19022,
+      "activePeak": "unknown"
+    },
+    "absent": true
+  },
+  "conclusion": {
+    "typesExitCode": 0,
+    "distinctTests": 42,
+    "first": {
+      "selected": 42,
+      "passed": 41,
+      "failed": 1
+    },
+    "narrowRetest": {
+      "numTotalTests": 20,
+      "numPassedTests": 1,
+      "numFailedTests": 0,
+      "numPendingTests": 19,
+      "success": true
+    },
+    "productChangedAfterTypes": false,
+    "scope": "Loader/launch with real injected transport and in-memory publication ACK, no actual native/PG/provider"
+  },
+  "toolCompletion": {
+    "firstCommand": {
+      "sessionId": 9226,
+      "initialChunk": "15b702",
+      "finalChunk": "e2cc24",
+      "exitCode": 0,
+      "waitSecondsOnly": [
+        1.003115,
+        1.3958e-05
+      ]
+    },
+    "narrowRetestCommand": {
+      "chunk": "536990",
+      "exitCode": 0,
+      "waitSecondsOnly": 0.821175667
+    },
+    "wholeToolWall": "unknown; local segment clock is recorded separately; tool wait is not whole elapsed"
+  },
+  "handoff": {
+    "to": "architecture_read/X01 StageB",
+    "returned": true,
+    "pendingLaunches": 0
+  }
+}

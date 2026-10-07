@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-07T03:19:53.962060+00:00",
+  "operator": "chatui01_owner (Mika delegated sole source operation)",
+  "claimVersion": 3,
+  "head": "f100b07c5b6dd7dbb870a37fe2827a74a47de2f0",
+  "fixedRef": "8501d96a289ab3f30b30e8a0c62103bff7eda6a7",
+  "materialized": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "currentlyAbsent": true
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190",
+      "currentlyAbsent": true
+    }
+  ],
+  "materializedBytes": 11879,
+  "allFourVerified": true,
+  "existingDirtyPreserved": true,
+  "sharedGitConfigUnchanged": true,
+  "privateSparse": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/codex-conversation-continuity/info/sparse-checkout",
+  "priorSparseSha256": "44c5372a4729781a8a73fe488b18de076f29b3aa3c7e463ecce73b6c94c21603",
+  "currentSparseSha256": "dd28686b33a2d01ef3f4f2e9a5cb26b645218f0e02c95ed142dc36b1971fadf7",
+  "priorAttempt": "Stopped before mutation: whole-object claim equality rejected list-only needsVerification=false; all receipt fields match; explicit needsVerification=false now required.",
+  "imports": 0,
+  "tests": 0,
+  "dependenciesChanged": 0
+}
