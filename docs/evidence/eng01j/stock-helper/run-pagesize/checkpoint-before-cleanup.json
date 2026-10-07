@@ -1,0 +1,83 @@
+{
+  "startedAt": "2026-10-07T05:53:45.468385+00:00",
+  "providerCalls": 0,
+  "PG": 0,
+  "cases": [],
+  "primaryFailure": {
+    "code": "PAGE_SIZE_HYPOTHESIS_NOT_SUPPORTED",
+    "type": "RuntimeError"
+  },
+  "cleanup": {
+    "state": "ready",
+    "identityMatched": true,
+    "groups": [
+      {
+        "pid": 97751,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97757,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97758,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "pid": 97759,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "privateBytesAtEnd": 35382,
+    "removed": false
+  },
+  "limits": {
+    "totalSeconds": 15,
+    "rawBytes": 65536,
+    "scratchBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01j-helper-d16yhlmq",
+    "dev": 16777234,
+    "ino": 123544202
+  },
+  "pageSizeControl": {
+    "supported": false,
+    "values": {
+      "pagesize-base": {
+        "sysconf": -1,
+        "sysconfErrno": 1,
+        "getpagesize": -1,
+        "getpagesizeErrno": 1
+      },
+      "pagesize-read": {
+        "sysconf": -1,
+        "sysconfErrno": 1,
+        "getpagesize": -1,
+        "getpagesizeErrno": 1
+      }
+    },
+    "onlyPermissionAdded": "(allow sysctl-read (sysctl-name \"hw.pagesize\"))"
+  },
+  "finalContentsHex": {
+    "calculator.mjs": "30",
+    "baseline.txt": "30"
+  },
+  "rawBytes": 2110
+}

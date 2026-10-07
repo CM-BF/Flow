@@ -1,0 +1,45 @@
+{
+  "startedAt": "2026-10-07T05:53:45.468385+00:00",
+  "providerCalls": 0,
+  "PG": 0,
+  "cases": [],
+  "primaryFailure": null,
+  "cleanup": {
+    "state": "unknown",
+    "removed": false
+  },
+  "limits": {
+    "totalSeconds": 15,
+    "rawBytes": 65536,
+    "scratchBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01j-helper-d16yhlmq",
+    "dev": 16777234,
+    "ino": 123544202
+  },
+  "freeBytes": 24552722432,
+  "inputs": {
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/tools/owned-process-supervision/supervise.py": {
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/apps/runner/src/engineering/native-authority-darwin.ts": {
+      "bytes": 1660,
+      "sha256": "26c5585d2b256cab1c53d83b28c1ac494aead830fe4dc3f12a4552ff0a4da16c"
+    },
+    "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex": {
+      "bytes": 222655232,
+      "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc"
+    },
+    "/usr/bin/sandbox-exec": {
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a"
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/docs/evidence/eng01j/stock-helper/page-size.c": {
+      "bytes": 465,
+      "sha256": "0ee36c8cbaee67cfd66f8df94440aaf386642a96e5f5f6c2b59b9138e5174c0d"
+    }
+  },
+  "entrySha256": "d037b8a0c0075ae0727150344ec714ed41753d3bb6a2465e30081a6b5db23ba7"
+}

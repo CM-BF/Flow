@@ -1,0 +1,18 @@
+{
+  "supported": false,
+  "values": {
+    "pagesize-base": {
+      "sysconf": -1,
+      "sysconfErrno": 1,
+      "getpagesize": -1,
+      "getpagesizeErrno": 1
+    },
+    "pagesize-read": {
+      "sysconf": -1,
+      "sysconfErrno": 1,
+      "getpagesize": -1,
+      "getpagesizeErrno": 1
+    }
+  },
+  "onlyPermissionAdded": "(allow sysctl-read (sysctl-name \"hw.pagesize\"))"
+}

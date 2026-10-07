@@ -32,3 +32,7 @@ source 24ef5be77fcc0bfb4ee32fa98c53d653c2920427，outer1、467ms，FD对照PASS�
 Lead已授权`--run-pagesize`：exclusive run-pagesize目录，总15秒（所有准备/编译/渲染/子进程/收尾共用同截止），原64KiB raw/1MiB scratch/fresh门槛不变。原run-once/run-fd-fix未改。只改本evidence入口，生产policy零变；新增policy唯一行为许可为`sysctl-read`精确`hw.pagesize`。禁网络/派生/其它exec及写入范围全部保留。
 
 实际执行顺序：一次tiny C编译≤2秒，一次Node渲染C/native两份基础policy≤1.5秒；C在原策略/单许可策略各≤1秒输出sysconf/getpagesize+errno。只有双查询由EPERM/EACCES下-1恢复为相同正2次幂页大小，才进入最多2个stock helper（每项≤3秒，首失败即停）。末2秒给证据/清理，每次另扣.5秒TERM/reap；未启动部分不补跑。各原始输出预算4+8+1+1+20+20=54KiB；总raw64KiB，私有目录末采如实，不冒硬配额。
+
+## 页大小对照实际结果（2026-10-07T05:54:45.592407+00:00）
+
+固定source 2a1224af8d86979a3ebd08ce7b69d028a7572ca0，2个C观察完成（各进程exit0），但原policy/单hw.pagesize许可后的sysconf和getpagesize均为-1/EPERM；机制前提不成立，整段outer1、native helper0，允许/拒绝文件语义均未执行。1043ms/raw2110B/私有末采35382B。4组absent/双EOF，先checkpoint再exact删除。本段没有继续加hw.pagesize_compat或任何其他规则，不将单名称对照失败扩大为所有sysctl许可无效。原前三轮原件保持。[分析](pagesize-analysis.json)/[原结果](run-pagesize/result.json)。
