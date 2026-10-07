@@ -11,6 +11,7 @@ import { createServer } from '../index.js';
 import { sha256 } from '../database.js';
 import { createBrowserSessionAuthentication, migrateBrowserSessions } from './index.js';
 import { createBrowserSessionFixture } from './fixture.js';
+import { observeConnections } from '../../../../docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.js';
 
 const ownerToken = 'connection01-synthetic-owner';
 const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1, connectionTimeoutMillis: 1000, statement_timeout: 5000, query_timeout: 6000 });
@@ -51,9 +52,9 @@ afterAll(async () => {
     for (const d of databases) {
       expect((await d.pool.query('SELECT marker FROM public.connection_test_owner')).rows).toEqual([{ marker: d.marker }]);
       await d.pool.end();
-      const connections = (await admin.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [d.name])).rows;
+      const connections = await observeConnections(async () => (await admin.query('SELECT pid,state FROM pg_stat_activity WHERE datname=$1 LIMIT 33', [d.name])).rows);
       await ownershipEvidence(d.name + '-before-drop', { name: d.name, markerVerified: true, connections });
-      expect(connections).toEqual([]);
+      expect(connections.state).toBe('empty');
       await admin.query(`DROP DATABASE ${d.name}`);
       d.removed = !(await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [d.name])).rowCount; expect(d.removed).toBe(true);
       await ownershipEvidence(d.name + '-removed', { name: d.name, removed: d.removed });
