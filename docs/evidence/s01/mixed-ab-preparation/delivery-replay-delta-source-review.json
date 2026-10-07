@@ -1,0 +1,19 @@
+{
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T14:54:00Z",
+  "timePrecision": "minute; reviewer message stated 14:54 UTC",
+  "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+  "verdict": "SOURCE_DELTA_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Historical SIGNAL_UNKNOWN/capture/STOP cannot authorize TMP removal",
+  "scope": [
+    "process_closed + four pure sources",
+    "six JS publish/build binding + exact prior output gate"
+  ],
+  "limitations": [
+    "No reviewer engineering run/import/write/KEEP access",
+    "Generated JS and real local result require separate fidelity review",
+    "Pre-persistence snapshot is not actual outer exit; owner must observe each outer exit0 before next mode"
+  ]
+}

@@ -248,3 +248,7 @@ db_transaction_owner于13:54:42Z固定result3fdb488064a3414d4ad9903667253e06aa23
 ## 2026-10-07T14:51:05.201Z replay窄修交审
 
 旧bee/fd7的process_closed P2按首错/信号/捕获完整性修正；source d28166e81bcdbb9fb537b40144f7be07a2539130 改为固定编译JS入口及精确已知输出准入。原review为CHANGES_REQUESTED，不覆盖。新manifest6binding与input-v2，0工程执行；等待db独立delta审。当前准备不表示compile/replay通过或许可。
+
+## 2026-10-07 delivery replay窄修与局部结果
+
+固定source d28166e81bcdbb9fb537b40144f7be07a2539130：db14:54 UTC SOURCE_DELTA_REVIEW_APPROVED/原P2 CLOSED，详见delivery-replay-delta-source-review.json。execution9365f91a8aba12aea17dd19710343edb382dc5c8实际caller4/4、tsc strict/emit0、TS8/8/3组全部闭合，原历史CHANGES_REQUESTED不覆盖。局部结果独审待fixed packet；无PG/HTTP/实际replay，不能以局部绿宣称128容量/性能收益。clean-code复核聚焦一个资源闭合谓词、编译产物Interface、精确prioroutput身份；不复制监督loop、不加入第三方runtime。

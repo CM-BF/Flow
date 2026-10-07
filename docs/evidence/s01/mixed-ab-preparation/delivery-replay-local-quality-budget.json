@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T14:57:50.507Z",
+  "skills": {
+    "find-skills": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "codebase-design": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "clean-code": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "sourcePolicy": "existing fixed local baseline, no install/update"
+  },
+  "application": [
+    "same predicate handles resource closure, business result stays separate",
+    "single existing OPS14 supervisor; no process tracking framework",
+    "six runtime modules + explicit ESM, fixed compiler manifest",
+    "exact prior output identity/capture/hash, unrelated dirty rejected",
+    "original input/source/raw/KEEP remain frozen"
+  ],
+  "qualityFindings": {
+    "closedP2": "SIGNAL_UNKNOWN/capture/stop no longer permits TMP deletion",
+    "remaining": "Independent final result review pending; real replay NOT_RUN_NOT_OPEN"
+  },
+  "bytes": {
+    "allChangedNonTraceFilesSinceDesignBeforeThisReceipt": 290395,
+    "sourceMetadataCeiling": 524288,
+    "traceBytes": 491756,
+    "traceCeiling": 2097152,
+    "newLocalBudget": 16777216,
+    "raw": 633,
+    "retainedSixJsAndPackage": 39381,
+    "lastTmpSamplesNotPeak": 51826,
+    "thisReceiptBytes": 2242,
+    "allChangedNonTraceIncludingThisReceipt": 292637
+  },
+  "actual": {
+    "engineeringChildren": 3,
+    "supervisorMsSum": 1327,
+    "callerPass": 4,
+    "typescriptStrictEmitExit": 0,
+    "directTsPass": 8,
+    "allGroupsAbsent": true,
+    "allMergedEof": true,
+    "allExactOwnTmpAbsent": true,
+    "pg": 0,
+    "http": 0,
+    "replay": 0
+  },
+  "limitations": [
+    "source/meta full logical count is conservative, not disk blocks or RSS",
+    "sampling is not active peak; JSON transient heap UNKNOWN",
+    "whole external segment wall UNKNOWN; per-tool and time-p preserved",
+    "historical input minimum floor is not future approval"
+  ],
+  "metadataParser": {
+    "errors": [],
+    "timingIssues": [
+      "\u4efb\u52a1\u5f00\u5de5\u65f6\u95f4\u672a\u8bb0\u5f55"
+    ],
+    "reason": "original task actual start UNKNOWN retained; no invented backfill",
+    "checksState": "passed",
+    "checksTarget": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+    "noNetworkAggregationPerformed": true
+  }
+}

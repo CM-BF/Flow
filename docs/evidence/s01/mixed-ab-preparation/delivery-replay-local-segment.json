@@ -1,0 +1,620 @@
+{
+  "schema": "s01-delivery-replay-local-segment-v1",
+  "segmentStartedAt": "2026-10-07T14:52:51.000Z",
+  "segmentDeadline": "2026-10-07T15:07:51.000Z",
+  "actualReturnObservedAt": "2026-10-07T14:55:01.000Z",
+  "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+  "executionHead": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+  "inputSha": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+  "compiledManifestSha": "cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb",
+  "claim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 3,
+    "scopeCount": 6
+  },
+  "limits": {
+    "maximumChildren": 8,
+    "childWholeSeconds": 40,
+    "totalChildSeconds": 180,
+    "incrementalBytes": 16777216,
+    "tmpAndEmitBytes": 8388608,
+    "rawBytes": 262144,
+    "metadataBytes": 1048576,
+    "floorBytes": 11677138944
+  },
+  "toolRuns": [
+    {
+      "mode": "caller",
+      "before": {
+        "current_time": "2026-10-07 14:54:34 UTC"
+      },
+      "after": {
+        "current_time": "2026-10-07 14:54:34 UTC"
+      },
+      "tool": {
+        "chunk_id": "5cc372",
+        "wall_time_seconds": 0.444123959,
+        "exit_code": 0,
+        "original_token_count": 24,
+        "output": "{\"mode\": \"caller\", \"successBeforePersistence\": true, \"faults\": []}\nreal 0.54\nuser 0.17\nsys 0.18\n"
+      }
+    },
+    {
+      "mode": "compile",
+      "before": {
+        "current_time": "2026-10-07 14:54:46 UTC"
+      },
+      "after": {
+        "current_time": "2026-10-07 14:54:47 UTC"
+      },
+      "tool": {
+        "chunk_id": "0e7a30",
+        "wall_time_seconds": 0.836917583,
+        "exit_code": 0,
+        "original_token_count": 25,
+        "output": "{\"mode\": \"compile\", \"successBeforePersistence\": true, \"faults\": []}\nreal 0.96\nuser 1.23\nsys 0.28\n"
+      }
+    },
+    {
+      "mode": "tests",
+      "before": {
+        "current_time": "2026-10-07 14:54:52 UTC"
+      },
+      "after": {
+        "current_time": "2026-10-07 14:54:53 UTC"
+      },
+      "tool": {
+        "chunk_id": "898c02",
+        "wall_time_seconds": 0.747186584,
+        "exit_code": 0,
+        "original_token_count": 24,
+        "output": "{\"mode\": \"tests\", \"successBeforePersistence\": true, \"faults\": []}\nreal 0.86\nuser 0.49\nsys 0.25\n"
+      }
+    }
+  ],
+  "checks": {
+    "caller": {
+      "selected": 4,
+      "passed": 4
+    },
+    "compile": {
+      "strictExitCode": 0,
+      "emittedRuntimeModules": 6
+    },
+    "tests": {
+      "selected": 8,
+      "passed": 8
+    }
+  },
+  "actualReplay": "NOT_RUN_NOT_OPEN",
+  "fullSegmentExternalWall": null,
+  "activePeakBytes": null,
+  "notes": [
+    "Each command outer tool exit0 was observed before next mode; pre-persistence snapshot alone is not completion proof.",
+    "Only exact known prior output literals were accepted; all other dirty refused.",
+    "No PG/HTTP/provider/Chrome or actual performance replay; no KEEP access.",
+    "clock tool UTC is second precision; time-p/tool durations/internal clocks are preserved separately."
+  ],
+  "runs": [
+    {
+      "mode": "caller",
+      "bindings": [
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-reservation.json",
+          "bytes": 379,
+          "sha256": "a57a60426503a73e7e7b439b8627e6d0857aa01687b400421beb90c417c95e13",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-spawn.json",
+          "bytes": 74,
+          "sha256": "a26c7dea31fbf32a46d7fd4c28db75b332822062889dd8472b0d67966964dc84",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-root.json",
+          "bytes": 96,
+          "sha256": "7b84e0591f64204359db1360044d0bc829966f60690e6686d4d4a1f731450015",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.raw",
+          "bytes": 102,
+          "sha256": "e6ec182765cd965f2837d8eeaef5a64af48a104f245cd1a0b7281559194c57c1",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.json",
+          "bytes": 1091,
+          "sha256": "f8e5ee581fab847b54239bcfc5cdcdce75bd5e1e0351d34495b6006cad66252e",
+          "mode": "0o600"
+        }
+      ],
+      "receipt": {
+        "window": "s01-observer-delivery-replay-once",
+        "mode": "caller",
+        "head": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+        "inputSha": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+        "startedAt": "2026-10-07T14:54:34.376Z",
+        "wholeLimitSeconds": 40,
+        "faults": [],
+        "wholeExternalWall": null,
+        "activePeakBytes": null,
+        "priorOutputs": {},
+        "freeBytes": 20895240192,
+        "floorBytes": 11677138944,
+        "tmp": {
+          "path": "/tmp/flow-s01-delivery-replay-wwox5cge",
+          "dev": 16777234,
+          "ino": 124232065,
+          "removed": true,
+          "lastSample": {
+            "entries": 0,
+            "logicalBytes": 0,
+            "sampleOnlyNotPeak": true
+          }
+        },
+        "process": {
+          "pid": 91136,
+          "ownership": "newChildSession",
+          "capture": "merged",
+          "exit_code": 0,
+          "elapsed_ms": 181,
+          "observed_bytes": 102,
+          "retained_bytes": 102,
+          "eof": {
+            "stdout": true
+          },
+          "first_failure": null,
+          "secondary_failures": [],
+          "signals": [],
+          "owned_state": "absent",
+          "observations": [
+            {
+              "state": "unknown",
+              "errno": 1
+            },
+            {
+              "state": "absent",
+              "errno": null
+            },
+            {
+              "state": "absent",
+              "errno": null
+            }
+          ]
+        },
+        "raw": {
+          "bytes": 102,
+          "sha256": "e6ec182765cd965f2837d8eeaef5a64af48a104f245cd1a0b7281559194c57c1"
+        },
+        "closed": true,
+        "beforePersistenceMs": 326.770041952841,
+        "successBeforePersistence": true
+      },
+      "freshExactRootAbsent": true
+    },
+    {
+      "mode": "compile",
+      "bindings": [
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-reservation.json",
+          "bytes": 1225,
+          "sha256": "393d066c4587c714741f26f7599d6cd8091290264d146be16240e736ee9fa24c",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-spawn.json",
+          "bytes": 75,
+          "sha256": "f276b005e796fd82705e772f4c462e7ee2b67867f95239c1548214fc081924d6",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-root.json",
+          "bytes": 96,
+          "sha256": "966470b844a470caeb5aa54e518c4d0b4ff5644b78935f49927780be802610b6",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1.raw",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1.json",
+          "bytes": 2041,
+          "sha256": "312e7d997f65bd345159c7337c4a2c08d1ebbd6740bd2daed3f281d999fbf575",
+          "mode": "0o600"
+        }
+      ],
+      "receipt": {
+        "window": "s01-observer-delivery-replay-once",
+        "mode": "compile",
+        "head": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+        "inputSha": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+        "startedAt": "2026-10-07T14:54:47.044Z",
+        "wholeLimitSeconds": 40,
+        "faults": [],
+        "wholeExternalWall": null,
+        "activePeakBytes": null,
+        "priorOutputs": {
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-reservation.json": {
+            "bytes": 379,
+            "sha256": "a57a60426503a73e7e7b439b8627e6d0857aa01687b400421beb90c417c95e13"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-spawn.json": {
+            "bytes": 74,
+            "sha256": "a26c7dea31fbf32a46d7fd4c28db75b332822062889dd8472b0d67966964dc84"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-root.json": {
+            "bytes": 96,
+            "sha256": "7b84e0591f64204359db1360044d0bc829966f60690e6686d4d4a1f731450015"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.raw": {
+            "bytes": 102,
+            "sha256": "e6ec182765cd965f2837d8eeaef5a64af48a104f245cd1a0b7281559194c57c1"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.json": {
+            "bytes": 1091,
+            "sha256": "f8e5ee581fab847b54239bcfc5cdcdce75bd5e1e0351d34495b6006cad66252e"
+          }
+        },
+        "freeBytes": 20893425664,
+        "floorBytes": 11677138944,
+        "tmp": {
+          "path": "/tmp/flow-s01-delivery-replay-fbelk4a3",
+          "dev": 16777234,
+          "ino": 124232089,
+          "removed": true,
+          "lastSample": {
+            "entries": 9,
+            "logicalBytes": 51685,
+            "sampleOnlyNotPeak": true
+          }
+        },
+        "process": {
+          "pid": 98295,
+          "ownership": "newChildSession",
+          "capture": "merged",
+          "exit_code": 0,
+          "elapsed_ms": 672,
+          "observed_bytes": 0,
+          "retained_bytes": 0,
+          "eof": {
+            "stdout": true
+          },
+          "first_failure": null,
+          "secondary_failures": [],
+          "signals": [],
+          "owned_state": "absent",
+          "observations": [
+            {
+              "state": "unknown",
+              "errno": 1
+            },
+            {
+              "state": "absent",
+              "errno": null
+            },
+            {
+              "state": "absent",
+              "errno": null
+            }
+          ]
+        },
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "closed": true,
+        "build": {
+          "manifestSha": "cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb",
+          "bytes": 39381
+        },
+        "beforePersistenceMs": 828.6073749186471,
+        "successBeforePersistence": true
+      },
+      "freshExactRootAbsent": true
+    },
+    {
+      "mode": "tests",
+      "bindings": [
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-tests-r1-reservation.json",
+          "bytes": 3434,
+          "sha256": "749a33fa048e5ff98130af2c4d5c17d6831f11345451ef02b3c5601aebe7c4d3",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-tests-r1-spawn.json",
+          "bytes": 71,
+          "sha256": "e7c24a358c0a74f1c11c3911cdfc4fc8caaeff95e73d64b5f2e07a7bfcf07c41",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-tests-r1-root.json",
+          "bytes": 96,
+          "sha256": "0c6f4e231c21574781a08b0154ccffc70b62bde02ea132b821ed004dbb88cfc5",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-tests-r1.raw",
+          "bytes": 531,
+          "sha256": "911b818e5108b35f1f71ccd5e63e0697294d8f8ce858f55ebe7f276be63f527a",
+          "mode": "0o600"
+        },
+        {
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-tests-r1.json",
+          "bytes": 4148,
+          "sha256": "87699f25387294dea220d26008e4022c2c752c895d344079989bf1b367c14aa7",
+          "mode": "0o600"
+        }
+      ],
+      "receipt": {
+        "window": "s01-observer-delivery-replay-once",
+        "mode": "tests",
+        "head": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+        "inputSha": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+        "startedAt": "2026-10-07T14:54:52.993Z",
+        "wholeLimitSeconds": 40,
+        "faults": [],
+        "wholeExternalWall": null,
+        "activePeakBytes": null,
+        "priorOutputs": {
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-reservation.json": {
+            "bytes": 379,
+            "sha256": "a57a60426503a73e7e7b439b8627e6d0857aa01687b400421beb90c417c95e13"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-spawn.json": {
+            "bytes": 74,
+            "sha256": "a26c7dea31fbf32a46d7fd4c28db75b332822062889dd8472b0d67966964dc84"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1-root.json": {
+            "bytes": 96,
+            "sha256": "7b84e0591f64204359db1360044d0bc829966f60690e6686d4d4a1f731450015"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.raw": {
+            "bytes": 102,
+            "sha256": "e6ec182765cd965f2837d8eeaef5a64af48a104f245cd1a0b7281559194c57c1"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-caller-r1.json": {
+            "bytes": 1091,
+            "sha256": "f8e5ee581fab847b54239bcfc5cdcdce75bd5e1e0351d34495b6006cad66252e"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-reservation.json": {
+            "bytes": 1225,
+            "sha256": "393d066c4587c714741f26f7599d6cd8091290264d146be16240e736ee9fa24c"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-spawn.json": {
+            "bytes": 75,
+            "sha256": "f276b005e796fd82705e772f4c462e7ee2b67867f95239c1548214fc081924d6"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1-root.json": {
+            "bytes": 96,
+            "sha256": "966470b844a470caeb5aa54e518c4d0b4ff5644b78935f49927780be802610b6"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1.raw": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-compile-r1.json": {
+            "bytes": 2041,
+            "sha256": "312e7d997f65bd345159c7337c4a2c08d1ebbd6740bd2daed3f281d999fbf575"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/delivery-replay-main.js": {
+            "bytes": 13079,
+            "sha256": "ee63a0a46567fb6b85ace6430bf7e7559d3d303a5fde31b6467f9929076283e6"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/delivery-replay.js": {
+            "bytes": 8362,
+            "sha256": "eaaedb2dfa6859b0ee1bfc6062e97ed8e7391c61a21a46fa0aa30fc326ecfef2"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/pg-delivery-bridge.js": {
+            "bytes": 4782,
+            "sha256": "7f664aa61c39c5713602454bd2349ea0e0bf7524df6db50c0957c5e269c219bd"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/pg-delivery.js": {
+            "bytes": 7684,
+            "sha256": "cf7964a5aed0a2a6c09a73a1c5a1e5a3ca147ba1356e33d618e3b9e85f2278b7"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/channel.js": {
+            "bytes": 1970,
+            "sha256": "2cacee1f60cef3d43992e5592420fba7cc7bc1be2f3aae8dcfe07ecd8af2acec"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/contract.js": {
+            "bytes": 3486,
+            "sha256": "be960096f3dae2eed8ec19bac9251f716958548bb0e3b4d32a0927c14e231412"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/package.json": {
+            "bytes": 18,
+            "sha256": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+          },
+          "docs/evidence/s01/mixed-ab-preparation/delivery-replay-js-v2/manifest.json": {
+            "bytes": 3809,
+            "sha256": "cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb"
+          }
+        },
+        "freeBytes": 20892815360,
+        "floorBytes": 11677138944,
+        "tmp": {
+          "path": "/tmp/flow-s01-delivery-replay-h82qptri",
+          "dev": 16777234,
+          "ino": 124232133,
+          "removed": true,
+          "lastSample": {
+            "entries": 4,
+            "logicalBytes": 141,
+            "sampleOnlyNotPeak": true
+          }
+        },
+        "process": {
+          "pid": 3046,
+          "ownership": "newChildSession",
+          "capture": "merged",
+          "exit_code": 0,
+          "elapsed_ms": 474,
+          "observed_bytes": 531,
+          "retained_bytes": 531,
+          "eof": {
+            "stdout": true
+          },
+          "first_failure": null,
+          "secondary_failures": [],
+          "signals": [],
+          "owned_state": "absent",
+          "observations": [
+            {
+              "state": "unknown",
+              "errno": 1
+            },
+            {
+              "state": "absent",
+              "errno": null
+            },
+            {
+              "state": "absent",
+              "errno": null
+            }
+          ]
+        },
+        "raw": {
+          "bytes": 531,
+          "sha256": "911b818e5108b35f1f71ccd5e63e0697294d8f8ce858f55ebe7f276be63f527a"
+        },
+        "closed": true,
+        "beforePersistenceMs": 641.3693749345839,
+        "successBeforePersistence": true
+      },
+      "freshExactRootAbsent": true
+    }
+  ],
+  "generated": {
+    "manifest": {
+      "inputSha": "bf9127870db0d9d14087d679fea1eba4c5e217f440650665f6d376c9af1b0615",
+      "compilerExecutionHead": "9365f91a8aba12aea17dd19710343edb382dc5c8",
+      "compilerArgv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/typescript/bin/tsc",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json",
+        "--outDir",
+        "/tmp/flow-s01-delivery-replay-fbelk4a3/emit"
+      ],
+      "runtimeFiles": [
+        "delivery-replay-main.js",
+        "delivery-replay.js",
+        "pg-delivery-bridge.js",
+        "pg-delivery.js",
+        "channel.js",
+        "contract.js"
+      ],
+      "sourceBindings": [
+        {
+          "path": "experiments/runner-capacity/mixed/delivery-replay.ts",
+          "bytes": 8513,
+          "sha256": "10871b0ba30b929ffdedc76bea9c605dafc8bad1dea12dd96b3a569a6ff358c5"
+        },
+        {
+          "path": "experiments/runner-capacity/mixed/delivery-replay-main.ts",
+          "bytes": 12539,
+          "sha256": "f1f5c1d1971b2427ef098e6d35ef7b33fadf177c19e53aa80e02ec0b1e784cf9"
+        },
+        {
+          "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+          "bytes": 7601,
+          "sha256": "e9c12b28f405bb07d5346f13a624355bbe7108af1ee8031af5b066baa6e9845f"
+        },
+        {
+          "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+          "bytes": 4597,
+          "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e"
+        },
+        {
+          "path": "experiments/runner-capacity/mixed/channel.ts",
+          "bytes": 1909,
+          "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c"
+        },
+        {
+          "path": "experiments/runner-capacity/mixed/contract.ts",
+          "bytes": 4691,
+          "sha256": "a838aef1863c9491868ff68a28d3af12474f75aa36112f1628f58db5a8bdc280"
+        }
+      ],
+      "compilerBindings": [
+        {
+          "path": "node_modules/typescript/package.json",
+          "bytes": 3620,
+          "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+          "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json"
+        },
+        {
+          "path": "node_modules/typescript/bin/tsc",
+          "bytes": 45,
+          "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0",
+          "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc"
+        },
+        {
+          "path": "node_modules/typescript/lib/_tsc.js",
+          "bytes": 6213092,
+          "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419",
+          "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js"
+        },
+        {
+          "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "bytes": 50320,
+          "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+          "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node"
+        },
+        {
+          "path": "/opt/homebrew/opt/node@24/bin/node",
+          "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+          "bytes": 50320,
+          "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+        }
+      ],
+      "files": {
+        "delivery-replay-main.js": {
+          "bytes": 13079,
+          "sha256": "ee63a0a46567fb6b85ace6430bf7e7559d3d303a5fde31b6467f9929076283e6"
+        },
+        "delivery-replay.js": {
+          "bytes": 8362,
+          "sha256": "eaaedb2dfa6859b0ee1bfc6062e97ed8e7391c61a21a46fa0aa30fc326ecfef2"
+        },
+        "pg-delivery-bridge.js": {
+          "bytes": 4782,
+          "sha256": "7f664aa61c39c5713602454bd2349ea0e0bf7524df6db50c0957c5e269c219bd"
+        },
+        "pg-delivery.js": {
+          "bytes": 7684,
+          "sha256": "cf7964a5aed0a2a6c09a73a1c5a1e5a3ca147ba1356e33d618e3b9e85f2278b7"
+        },
+        "channel.js": {
+          "bytes": 1970,
+          "sha256": "2cacee1f60cef3d43992e5592420fba7cc7bc1be2f3aae8dcfe07ecd8af2acec"
+        },
+        "contract.js": {
+          "bytes": 3486,
+          "sha256": "be960096f3dae2eed8ec19bac9251f716958548bb0e3b4d32a0927c14e231412"
+        },
+        "package.json": {
+          "bytes": 18,
+          "sha256": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae"
+        }
+      },
+      "at": "2026-10-07T14:54:47.872Z",
+      "method": "fixed tsc strict/noEmitOnError; only six runtime leaves retained; test/type-only JS discarded with owned TMP"
+    },
+    "manifestSha": "cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb",
+    "bytes": 39381,
+    "manifestBytes": 3809
+  },
+  "totals": {
+    "topLevelChildren": 3,
+    "rawBytes": 633,
+    "supervisorElapsedMsSum": 1327,
+    "lastTmpSampleBytesSumNotPeak": 51826
+  },
+  "completedAt": "2026-10-07T14:55:40.628Z"
+}
