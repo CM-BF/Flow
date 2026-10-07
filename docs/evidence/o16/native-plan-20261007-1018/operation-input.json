@@ -1,0 +1,56 @@
+{
+  "preparedAt": "2026-10-07T10:18:33.342309Z",
+  "run": "native-plan-20261007-1018",
+  "startBefore": "2026-10-07T10:28:00Z",
+  "authorization": "Execution Lead exact ONE_SHOT_GO 10:18 UTC; actual execution remains conditional on single fresh preflight",
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "source": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+  "delivery": "664121f9bd83ce057c786246a53c63dfbb7cfdba",
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "reviewSha256": "24b1110ca9d0ee6d567cb3d5b0bb6b6c4584d1f603cdf0441472ee7fe4646c03",
+  "inputManifestSha256": "78b8e4359a3d44019eba90a9cf49bd8c9a3b8ce836a69001fb17be46f3152755",
+  "permitSha256": "611cb72be1560853dc6bee29853d8d77613d75a655282215a03465509a6c94ec",
+  "budget": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "boundaries": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "totalMs": 150000,
+    "rawBytes": 2097152,
+    "privateBytes": 8388608,
+    "liveReserveBytes": 1073741824,
+    "baselineFreshBytes": 1207959552,
+    "otherTwoLocalTeamsBytes": 62914560,
+    "PGPlanningAllowanceBytes": 134217728,
+    "freshMinimumBytes": 1405091840,
+    "databaseConnections": 12,
+    "additionalConnectionMargin": 16,
+    "pauseMs": 900000,
+    "proposals": 1,
+    "apply": 0,
+    "children": 0
+  },
+  "authenticationSideEffects": "Only normal existing same-account same-scope default Keychain refresh may update shared authentication; not in private8MiB, no total-system-zero-write claim. No credentials read/copied/exported; missing source fails without fallback.",
+  "oldResources": "Old FAIL/KEEP resources untouched; no read or cleanup",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-20261007-1018",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-20261007-1018/permit.json"
+  ],
+  "environment": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot",
+    "TSX_DISABLE_CACHE": "1",
+    "NODE_DISABLE_COMPILE_CACHE": "1"
+  },
+  "queryConsumption": "Not yet reserved or executed"
+}

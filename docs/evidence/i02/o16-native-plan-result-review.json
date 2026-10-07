@@ -1,0 +1,34 @@
+{
+  "reviewedAt": "2026-10-07T10:25:42.238001+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_FAILED_RESULT_ACCOUNTING",
+  "findings": [],
+  "target": "89a172a956b1ff2bf8e4e006508cfa312a1484e4",
+  "delivery": "d5e5817018bdd26ee13af2ec239c4f1f1d6a837d",
+  "manifest": {
+    "path": "docs/evidence/o16/native-plan-20261007-1018/result-manifest.json",
+    "bytes": 9002,
+    "sha256": "d4d22cf812f2b8a322ce9fe8957e1039d0aea3a31fd4a6108de9fa2b40ab6253"
+  },
+  "checked": {
+    "fixedAndCurrentBindings": 28,
+    "rawFilesRead": 14,
+    "rawBytes": 14338,
+    "testsRerun": 0,
+    "providerQueriesByReviewer": 0
+  },
+  "actual": {
+    "sdkQueryCalls": 1,
+    "initFrames": 1,
+    "resultReceived": false,
+    "usageAndCost": "UNKNOWN_NOT_ZERO",
+    "topLevelCallsZero": "Preserved original unsettled counter; worker entry plus durable reservation establish one SDK invocation",
+    "outcome": "FAILED_RETAINED_NO_RETRY",
+    "primary": "observation-rejected; private init lacks two old baseline metadata names. Exact source explains rejection but no full wire frame/original error message retained.",
+    "independentOperator": "resource-observation-or-bound-unconfirmed; exact sampler cause unknown",
+    "closure": "Two registered groups and watchdog later absent; target connections empty; original adminClosed not persisted",
+    "resources": "Exact DB/OID/marker/tmp identity KEEP, no removal",
+    "pause": "No complete plan/pause receipt; no child confirmation or child budget"
+  },
+  "limits": "Approves truthful failure accounting and raw preservation only; not planner success, zero cost, authentication failure, complete external writer revocation, or retrospective cleanup. Native one-shot is consumed; no new provider authority."
+}

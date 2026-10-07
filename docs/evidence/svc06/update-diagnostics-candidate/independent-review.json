@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T10:09:24.294138+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "source": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+  "delivery": "04736306a278bf2ec684113d6d59832c2592b6c6",
+  "runtimeSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "verdict": "APPROVED_PREPARATION_ONLY",
+  "P1": 0,
+  "P2": 0,
+  "manifest": {
+    "bytes": 31876,
+    "sha256": "6629cc239e113a402d6477359ec64152a65d16f0c2cc1bf1a5f5f989f71c1c0e"
+  },
+  "bindingsVerified": {
+    "source": 72,
+    "runtime": 19,
+    "record": 15,
+    "reusedMethod": 3
+  },
+  "delta": [
+    "Entry only changes private random namespace",
+    "Supervisor only changes private Python module alias; unchanged OPS14 hash",
+    "Artifact internal import adds diagnostics exports/64KiB constant; no file creation or child/service calls",
+    "Only four approved blobs overb2b; declaration14/SQL33/selected271 cache indexes unchanged"
+  ],
+  "execution": {
+    "state": "ADMITTED_AFTER_OWNER_FRESH_GATE",
+    "workSeconds": 420,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshMinimumBytes": 3927965696,
+    "liveReserveBytes": 1073741824,
+    "additionalBudgetBytes": 2317352960,
+    "rawMaxBytes": 2097152,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0
+  },
+  "actualHolderBasis": [
+    "Web canonical10:03 secondSteer closed/cleanup returned; current source fixes",
+    "Mika latest10:08 report noPG/Chrome/heavy holder; localonly",
+    "Group native local returned10:08:13; no other own work"
+  ],
+  "notProven": [
+    "Artifact result not yet run",
+    "No host readiness/root cause proof",
+    "No permission to repeat oldc2c/r1 or operate personal services"
+  ]
+}

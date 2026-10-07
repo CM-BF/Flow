@@ -1,0 +1,111 @@
+{
+  "recordedAt": "2026-10-07T10:14:09.093319+00:00",
+  "verdict": "AUTHOR_REPORTED_PASS_PENDING_INDEPENDENT_REVIEW",
+  "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "checks": {
+    "durableEqualsOuterStdout": true,
+    "completedPhase": true,
+    "noFailures": true,
+    "outerExit0": true,
+    "outerOwnedAbsent": true,
+    "dualEOF": true,
+    "noSignals": true,
+    "outerPrimaryNull": true,
+    "importsExit0": true,
+    "startupDiagnosticsLoaded": true,
+    "noDiagnosticFilesOrServices": true,
+    "artifactManifestExact": true,
+    "stageRecordExact": true,
+    "noPrepareLockOrStageDirectory": true,
+    "rawWithinBudget": true
+  },
+  "startedAt": "2026-10-07T10:12:06.871Z",
+  "finishedAt": "2026-10-07T10:12:40.145Z",
+  "entryElapsedMs": 33273,
+  "outerElapsedMs": 33332,
+  "ownedPid": 62953,
+  "outerObservationsPreserved": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "rawBytesIncludingOriginalProducerRecord": 15077,
+  "rawPaths": [
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/outer-report.json",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/build-record.json",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stderr",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stdout",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/owned-root.json",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/reservation.json",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result-descriptor.json",
+    "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result.json"
+  ],
+  "initialFreeBytes": 23205695488,
+  "minimumSampledFreeBytes": 22758543360,
+  "sampledAvailabilityDecreaseBytes": 447152128,
+  "samples": 67,
+  "physicalPeak": "NOT_MEASURED; volume availability includes concurrent writers, no exclusive physical allocation claim",
+  "retainedPrivateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/owner.json",
+      "bytes": 251,
+      "sha256": "efb344345f97198c661ae915ff9763dd119b2a3ef641b8f6b017aeda8990742a",
+      "dev": 16777234,
+      "ino": 123986129,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "dev": 16777234,
+      "ino": 124012856,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/stage-05e66fab-db33-410f-9056-64bf8cd20d32.json",
+      "bytes": 806,
+      "sha256": "af9e6045cdd07e1b68eb1a6bc7a51a78978c7cdf23b6369704958a7940f0ca84",
+      "dev": 16777234,
+      "ino": 124012873,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+    "dev": 16777234,
+    "ino": 123986127,
+    "uid": 501,
+    "mode": "0o700",
+    "isDirectory": true
+  },
+  "notProven": [
+    "Actual diagnostic host readiness/root cause",
+    "PG/maintenance/configuration migration",
+    "Real retained App compatibility",
+    "Personal adoption",
+    "Development checkout isolation"
+  ],
+  "sourceUnchanged": true
+}

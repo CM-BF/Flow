@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:10:59.813650Z |
+| 最近更新 | 2026-10-07T10:23:06.485898Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,11 +11,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | source0cf7e1ba；本次环境/原始证据准备交唯一独审 |
+| HEAD | source0cf7e1ba；环境已审；首段实际失败/资源KEEP，结果待独审 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本次15 different（12新+3受影响旧）分5轮通过，原3失败保留；child8730ms/raw7207B，5组absent/双EOF/scratch removed。0PG/auth/SDK进程/provider，旧16/26未重跑。 |
-| Review | 本次环境实现待唯一独审；原5a45/78df分阶段批准/main d022与零模型b768批准不扩大 |
+| 检查状态 | 首段实际1selected/0pass、SDK1/init1，费用UNKNOWN，原失败KEEP；本次15 different（12新+3受影响旧）分5轮通过，原3失败保留；child8730ms/raw7207B，5组absent/双EOF/scratch removed。0PG/auth/SDK进程/provider，旧16/26未重跑。 |
+| Review | APPROVED_SOURCE_AND_LOCAL_RESULTS（10:16:07Z，原样报告已归档）；真实规划结果另审，旧批准不扩大 |
 | 实现目标 | 0cf7e1ba3016b2439c2b383437daa3dff1483299 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | d022c8003fc4bd8ba560f1a039411ed098186659 main/origin受控接收216 own路径，与78df逐字同；原产品f5a不变，0重测；b768零模型公开旅程批准独立保留 |
@@ -25,9 +25,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已完成私有环境与单次规划入口的局部验证，保留原始失败；真实原生规划尚未运行。 |
-| 下一可用交付 | 审查固定环境与首段规划入口后，绑定一次运行材料并生成实际提案供确认。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 首次规划已启动一次，但初始化声明不匹配，未得到提案；自有进程和连接已关闭，原失败与资源保留。 |
+| 下一可用交付 | 核对本次失败证据，修正声明基线与记录缺口；新的真实请求须另行绑定授权。 |
+| 当前阻塞 | ACTIVE: 初始化声明与历史基线不符，真实提案尚未产生；旧许可已消费，不能自动重试。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 分阶段已main d022；[环境实现与首段候选](../../docs/evidence/o16/native-environment-implementation/Interface.md)固定0cf7待独审。首段新预算框架已授，exact source/env/once材料和PG窗口未开启；children另授权，旧O08/O10封存 |
+| O16-06 | in-progress | native_center_owner | 分阶段已main d022；[环境实现与首段候选](../../docs/evidence/o16/native-environment-implementation/Interface.md)固定0cf7已获限定独审。首段10:18窗口已消费1次SDK，init拒绝/outer失败，无成功pause；资源KEEP；children另授权，旧O08/O10封存 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -56,6 +56,8 @@
 | O16-W03 | 2026-10-07T08:26:45.367Z | 2026-10-07T08:33:40.006Z | 独立审查 | 固定输入与加载证据审查；非纯资源等待 | I02 882f0ada/current-main-preparation-independent-review |
 | O16-W04 | 2026-10-07T08:33:40.006Z | 2026-10-07T08:35:17.433Z | 窗口与启动核对 | 新窗口许可后fresh身份/资源及操作输入耐久，旧窗口不复用 | current-main-pg-r1/operation-input与operator reservation |
 | O16-W05 | 2026-10-07T09:23:10.054477Z | 2026-10-07T09:27:34.488514Z | 独立审查 | 固定分阶段实现与原始局部证据已通过限定独审 | native-stages/independent-review.json |
+| O16-W06 | 2026-10-07T10:10:59.813650Z | 2026-10-07T10:16:07.879Z | 独立审查 | 环境delta审查，非资源等待 | native-environment-implementation/independent-review.json |
+| O16-W07 | 2026-10-07T10:18:33.342Z | 2026-10-07T10:19:10.652Z | 启动核对 | 新许可/固定输入/连接余量预检，非query耗时 | native-plan-20261007-1018/operation-input.json与operator reservation |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -83,3 +85,7 @@
 2026-10-07T09:58:33Z：环境接缝实际实施中（前次09:45候选后至本条源码已开始，精确首次编辑UTC未留不猜）；fresh原55c4v1三scope，普通adapter不变。GO已明确允许同账户同scope正常认证及必要默认钥匙串刷新；它不计入私有8MiB，不能承诺系统零写。planner具体候选1query、claude-sonnet-5-5、4turn、$0.20、90s；新source/env匹配材料尚未签发，0真实query/auth/PG。children不能继承首段预算。局部检查待固定入口，180s/16MiB/2MiB仅注入与自有文件；原证据不重跑。
 
 2026-10-07T10:10:59.813650Z：环境实现source0cf7e1ba封包待独审；[验证](../../docs/evidence/o16/native-environment-implementation/validation.json)15不同分轮（12新+3旧），原3红/8个空文件wrapper计数排除均保留。真实adapter取消首错已修；metadata-driver TMP与实际8MiB runtime分离的0PG分配例已过。5组全部收尾，本队local10:08:13.265Z归还。fixed sourceDigest1862e7ea/env4111341d，[下一planner](../../docs/evidence/o16/native-environment-implementation/next-run.md)模型与1proposal/0apply/0child明确，尚无真实query/once材料/PG。普通adapter、旧FAIL/KEEP不动。
+
+2026-10-07T10:18:33.342309Z：环境唯一独审原样归档，source/env不变。按Lead10:18明确新窗口准备native-plan-20261007-1018，最迟10:28开始；v2 permit仅本次1planner/claude-sonnet-5-5/4turn/$0.20/90s，0apply/child，15分钟暂停；当前进行fresh身份/资源/连接余量核对，尚未query。
+
+2026-10-07T10:23:06.485898Z：首段原始结果已封存：[RESULT](../../docs/evidence/o16/native-plan-20261007-1018/RESULT.md)。实际SDK1/初始化1，原top-level0矛盾保留，usage/cost未知。10:20:24.318Z目标连接[]/两组absent后归还窗口；10:21:45.810Zwatchdog亦absent。原adminClosed未持久、测量原因未知，DB/tmp KEEP，不DROP/重投。无proposal/成功pause/children；后继仅声明/记录候选，源保持0cf7。

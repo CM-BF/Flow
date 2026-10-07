@@ -1,0 +1,483 @@
+{
+  "at": "2026-10-07T10:26:13.433687+00:00",
+  "mainBefore": "dea9f1006d16732c06984a677ccf702fa305348e",
+  "scope": "Approved fixed experimental preparation/result records only. No product changes or repeated engineering checks. Current actual host run is not incorporated or called passed.",
+  "batches": [
+    {
+      "name": "svc06-fixed-artifact-result",
+      "ref": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+      "review": "docs/evidence/svc06/update-diagnostics-candidate/result-independent-review.json",
+      "files": [
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/RESULT.md",
+          "previousSha256": null,
+          "sha256": "9eba5cf0bb28209955c079bdefa7677b14ef053f18306a5e36c112a949d2b492",
+          "bytes": 2212
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/README.md",
+          "previousSha256": null,
+          "sha256": "978c1826dfe54099413a43d0bd08642845dd4e96012eff8dbc0c31339d2c9b06",
+          "bytes": 1544
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/build-record.json",
+          "previousSha256": null,
+          "sha256": "af9e6045cdd07e1b68eb1a6bc7a51a78978c7cdf23b6369704958a7940f0ca84",
+          "bytes": 806
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stderr",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stdout",
+          "previousSha256": null,
+          "sha256": "bb1e90035e079b13c3b42a871cab83518450b1d8e72ba8ebe30bb55ab29d2810",
+          "bytes": 2421
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/owned-root.json",
+          "previousSha256": null,
+          "sha256": "13a00d52578d5b59f3f788a7e289d7577c38b1bb1da1ab527088af796780588b",
+          "bytes": 168
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/reservation.json",
+          "previousSha256": null,
+          "sha256": "96f174545e9164d02b9b05606221f25e69f0953f14f4c22a962abca778ab36eb",
+          "bytes": 187
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result-descriptor.json",
+          "previousSha256": null,
+          "sha256": "2276b0d397f056fff7ee61a67f0f5f6d31f3ae6adb9fb27c31f6dac1ab596ed8",
+          "bytes": 275
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result.json",
+          "previousSha256": null,
+          "sha256": "5f3ce17a9e37a0c96f6b864e1faad690eee94c28f5b1ababea6e44aac9fa3894",
+          "bytes": 5125
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+          "previousSha256": null,
+          "sha256": "696b208bbdea749c8f87b85983f9d8a0e622831dbc0d133646c7a9456de68461",
+          "bytes": 10424
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+          "previousSha256": null,
+          "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+          "bytes": 40316
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/outer-report.json",
+          "previousSha256": null,
+          "sha256": "61f87d4e4317ff5a68a9ae782ed47029f1bfdf3da3f0b6aeaf559a84d4e3eb00",
+          "bytes": 5289
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+          "previousSha256": null,
+          "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352",
+          "bytes": 5080
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+          "previousSha256": null,
+          "sha256": "a866af5906dba4c4fafed0d8dc9a1e1e0534575de40fcafbc2fc5d8489093fd5",
+          "bytes": 2134
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/cache-index-refresh.json",
+          "previousSha256": null,
+          "sha256": "a30d1b0a2d348076b03b10419ad8266413946300dd31ac3db75f97d150c359de",
+          "bytes": 89433
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+          "previousSha256": null,
+          "sha256": "99f7e4690062618ad2c1e7a77fd27ed524df5ef8a609cfaa71eb4b978c973858",
+          "bytes": 3097
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/claim-observation.json",
+          "previousSha256": null,
+          "sha256": "d8a4a47bc925591d18f54e41e1536ca8cb4e57976b663812be956786cf7f1a1b",
+          "bytes": 1007
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/execution-claim.json",
+          "previousSha256": null,
+          "sha256": "0d11c7899f787dab53ecdb9ecab404b5a4200d81ccc19b5d2eba60963b33ef72",
+          "bytes": 1007
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/execution-preflight.json",
+          "previousSha256": null,
+          "sha256": "65d6f8415ee7fe7ee0c3527578bc9841f29c8c9050fb294ad56fa82761bf83c2",
+          "bytes": 19930
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/independent-review.json",
+          "previousSha256": null,
+          "sha256": "9189ecfdc2e69cf5466b8dac38b2c5397f7f1d48374e2605c36d72afd2c03da6",
+          "bytes": 1697
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/manifest.json",
+          "previousSha256": null,
+          "sha256": "6629cc239e113a402d6477359ec64152a65d16f0c2cc1bf1a5f5f989f71c1c0e",
+          "bytes": 31876
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/preparation-checks.json",
+          "previousSha256": null,
+          "sha256": "f6a06a1e355e7a8d5b786120451a25a67ba0cabd8542a77b177ff5fa93dd9910",
+          "bytes": 539
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/result-analysis.json",
+          "previousSha256": null,
+          "sha256": "a15eb3ffdafa6e96f744731969fe5707b9a68ab3cc708e61ff64a886f1ae7519",
+          "bytes": 3953
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/result-manifest.json",
+          "previousSha256": null,
+          "sha256": "39543ab2150514d9e5647c7da1e766222ed4ae084444aee29276330fc764a670",
+          "bytes": 8608
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/result-status-check.json",
+          "previousSha256": null,
+          "sha256": "5c742edf1535c2825ac7162b24f80de32a51e0b739e6017cdc7af5938b714bbe",
+          "bytes": 389
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/source-delta.json",
+          "previousSha256": null,
+          "sha256": "1a1b84cc91882df899ce3c3c753d9904ffc713a8ea4dcc9cd01e9c919a40706a",
+          "bytes": 7482
+        },
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/status-check.json",
+          "previousSha256": null,
+          "sha256": "43f89d9f153c4af045626f40467e9f60c85e3a74a3f50957d1c29cde6d05d65f",
+          "bytes": 267
+        }
+      ],
+      "bytes": 245266
+    },
+    {
+      "name": "svc06-artifact-independent-review",
+      "ref": "4a6fd46c721c37a019dd0b77bfd4fbcf0ebac146",
+      "review": "Reviewer-native; source/result bytes independently verified",
+      "files": [
+        {
+          "path": "docs/evidence/svc06/update-diagnostics-candidate/result-independent-review.json",
+          "previousSha256": null,
+          "sha256": "11d6b5f43df9e950f0134f143e16429a581a2f26905ad8370275d6f4a0b0c0c2",
+          "bytes": 3399
+        }
+      ],
+      "bytes": 3399
+    },
+    {
+      "name": "svc06-host-preparation",
+      "ref": "4a6fd46c721c37a019dd0b77bfd4fbcf0ebac146",
+      "review": "docs/evidence/i02/svc06-diagnostics-host-preparation-review.json",
+      "files": [
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/Interface.md",
+          "previousSha256": null,
+          "sha256": "647c4fd4cec2e218b91a6cacfbae31af71a12e3e8e806bfdfbe6cb7beab59087",
+          "bytes": 3072
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/README.md",
+          "previousSha256": null,
+          "sha256": "3be8178cbb1d65d18662005e4fc9ed371d6bbaa2dcb0e7192ece6599898b34ca",
+          "bytes": 2441
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/entry-manifest.json",
+          "previousSha256": null,
+          "sha256": "eb0f8c7c5dd94850d32d60f40d459d71460110733a02e2a2f632cb2ac73b8e9b",
+          "bytes": 8171
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/entry-syntax.stderr",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/entry-syntax.stdout",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/entry.mjs",
+          "previousSha256": null,
+          "sha256": "cca31be9413aa6b7ecb73b4ef8f62aae493872822de1091d4d54bad1254039c5",
+          "bytes": 17827
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/inputs.json",
+          "previousSha256": null,
+          "sha256": "3b96e3f59e7e728515a7d4f04448207f0dd73f1cbd23f6bd10f4fd6a6399043d",
+          "bytes": 142632
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/local-checks.py",
+          "previousSha256": null,
+          "sha256": "386eb773aac9a58a058377226b6bae2fe6c75922f38856e9087d224e7e12a36a",
+          "bytes": 3593
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/local-result.json",
+          "previousSha256": null,
+          "sha256": "d8408a89c2c4d19af4cd63d15af4fe12f60f8985af2162f6d29eee4a58ec5a82",
+          "bytes": 2356
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/method-delta.json",
+          "previousSha256": null,
+          "sha256": "96b8444edfc0f302fb77bf9b3d600f6d8f4beeac8bfca8e0901073e52a24fb09",
+          "bytes": 1442
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/observer-3.stderr",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/observer-3.stdout",
+          "previousSha256": null,
+          "sha256": "60539783db14cdf1d0cbd5e6672628efbed03a8d63444da049d3edf9eedc9aec",
+          "bytes": 413
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/preparation-observation.json",
+          "previousSha256": null,
+          "sha256": "05e1b51bb05fa25747734bfef4ee01f8bd585974434e697a54afe82ed701aba4",
+          "bytes": 70349
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/startup-observer.mjs",
+          "previousSha256": null,
+          "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c",
+          "bytes": 6449
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/startup-observer.test.mjs",
+          "previousSha256": null,
+          "sha256": "9fb788201d2cc451b098f31e0daaeae255d0d7f3b795b1e280671cb26ee15f1c",
+          "bytes": 4209
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/status-check.json",
+          "previousSha256": null,
+          "sha256": "a5f6dcc1cb732537cbd00020b0376a822ea1f20175602febd5fd9ebc13dffc65",
+          "bytes": 267
+        },
+        {
+          "path": "docs/evidence/svc06/diagnostics-host-policy/supervise.py",
+          "previousSha256": null,
+          "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875",
+          "bytes": 4568
+        }
+      ],
+      "bytes": 267789
+    },
+    {
+      "name": "o16-consumed-first-plan-failed-retained",
+      "ref": "d5e5817018bdd26ee13af2ec239c4f1f1d6a837d",
+      "review": "docs/evidence/i02/o16-native-plan-result-review.json",
+      "files": [
+        {
+          "path": "docs/evidence/o16/attempts/o16-o16-plan-native-20261007-1018-plan-planner.json",
+          "previousSha256": null,
+          "sha256": "781f1ac82201efa92d312def5e49bbae9e89a8fcb3f0886c8b5fd175e011fbae",
+          "bytes": 402
+        },
+        {
+          "path": "docs/evidence/o16/attempts/o16-o16-plan-native-20261007-1018-plan-task-e999ee5cf406851c43cf243dc7a334ff3a9e6dc89d43003159d42d14eb0af6b0.json",
+          "previousSha256": null,
+          "sha256": "781f1ac82201efa92d312def5e49bbae9e89a8fcb3f0886c8b5fd175e011fbae",
+          "bytes": 402
+        },
+        {
+          "path": "docs/evidence/o16/attempts/o16-o16-plan-native-20261007-1018-plan.json",
+          "previousSha256": null,
+          "sha256": "49482948944846df39fc7c66fb7ef4d2a2e85e1b9d0733308781e1c716bf4d0e",
+          "bytes": 999
+        },
+        {
+          "path": "docs/evidence/o16/native-environment-implementation/independent-review.json",
+          "previousSha256": null,
+          "sha256": "24b1110ca9d0ee6d567cb3d5b0bb6b6c4584d1f603cdf0441472ee7fe4646c03",
+          "bytes": 2290
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/RESULT.md",
+          "previousSha256": null,
+          "sha256": "11a8c8a81115cb904e7cb3520a9ee81a37a482b54e1c5ac9121fe0158ad8707c",
+          "bytes": 1854
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/declaration-candidate.md",
+          "previousSha256": null,
+          "sha256": "c5c4df0c8daede76b46c683778c44eae7a5a0d91a7c278de0f837b48ee21b967",
+          "bytes": 2605
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/observed-init.json",
+          "previousSha256": null,
+          "sha256": "b3c05568821712feff5bb55a69df105d9b930999eb74c82c2a7e44427a975649",
+          "bytes": 1000
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/operation-input.json",
+          "previousSha256": null,
+          "sha256": "8feabb3e69d40022eab5a1c4d63f73e0aa2f787ee2033686dc654b3cd4ef49c1",
+          "bytes": 2358
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/outer-tool-receipt.json",
+          "previousSha256": null,
+          "sha256": "a1e883c5b3980348fcdfc5d9fc1dd7af8caa47ec7e54dfcfd84ee2908a9298f7",
+          "bytes": 536
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/permit.json",
+          "previousSha256": null,
+          "sha256": "611cb72be1560853dc6bee29853d8d77613d75a655282215a03465509a6c94ec",
+          "bytes": 1004
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/preflight.json",
+          "previousSha256": null,
+          "sha256": "c865bbfca81cc76a3ff57cb7ebed80a7432ebd3e573ef1777f00d4e9d63de5ad",
+          "bytes": 3549
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/result-analysis.json",
+          "previousSha256": null,
+          "sha256": "7a2234e8959800639050638f3c4192c0953c2d93a6008b0ec61f5dc1dc963606",
+          "bytes": 4258
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/status-check.json",
+          "previousSha256": null,
+          "sha256": "fa0c68d56c59defe461b612f5097c0ef088496638bdbefb4d5592a9f738296c7",
+          "bytes": 539
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/watchdog-closure.json",
+          "previousSha256": null,
+          "sha256": "c6017a27b9fee7af306d28c945ce43200193f28ecee8f356b0fa270ca5dee933",
+          "bytes": 218
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/window-return.json",
+          "previousSha256": null,
+          "sha256": "66e800988b21bd04bc0958696f43df178b2db3a3186507e76cd15d5777fac022",
+          "bytes": 1081
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/STOP.json",
+          "previousSha256": null,
+          "sha256": "78c2fd299dfdff86ff584c120b84cbf2e1f610a2b365d9f2ad114d5c1604a9a9",
+          "bytes": 123
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/driver-environment.json",
+          "previousSha256": null,
+          "sha256": "f60628845ab06237fae0fa6db95a5753cfa9f2888150de8c6d171d7ee8b01174",
+          "bytes": 2056
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/driver.json",
+          "previousSha256": null,
+          "sha256": "d14dc3add7f1a5dc9c4b988cd5a7ffe67412d9134b6f6d0e0f3d4d4decf2cf06",
+          "bytes": 58
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/reservation.json",
+          "previousSha256": null,
+          "sha256": "6eed3553de196637f9d6467d7164a41024f666066dd1c034593f6fe98a68172d",
+          "bytes": 515
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/result.json",
+          "previousSha256": null,
+          "sha256": "24006b455e572a15aca5b778eb8042050854ca559eeb1972a5dcfabdcd0af5b3",
+          "bytes": 993
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/stderr.txt",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/stdout.txt",
+          "previousSha256": null,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/supervision.json",
+          "previousSha256": null,
+          "sha256": "a5392f279b2e4f7eaf69b9c27eb18e3c91f5f583809db0eca1cd7da9a40300b3",
+          "bytes": 516
+        },
+        {
+          "path": "docs/evidence/o16/operators/native-plan-20261007-1018/plan/watchdog.json",
+          "previousSha256": null,
+          "sha256": "f2dc38575b97be4dbdd86c81536293165e278db67a40371008f86be767e14b6d",
+          "bytes": 68
+        },
+        {
+          "path": "docs/evidence/o16/runs/native-plan-20261007-1018/plan.json",
+          "previousSha256": null,
+          "sha256": "af4766e3a2c30255cc21c0c4ed9885abf005ee3839e6afb4e815a38e2fe7d65e",
+          "bytes": 7355
+        },
+        {
+          "path": "docs/evidence/o16/runs/native-plan-20261007-1018/resources.json",
+          "previousSha256": null,
+          "sha256": "8d328c543f067a30d5a6978983a748e73ed11caa913458e04257cd2f0218382d",
+          "bytes": 851
+        },
+        {
+          "path": "plans/o16-continuous-goal-acceptance/review.md",
+          "previousSha256": "e7c605c8f3b8dfb34f53e991e640a4de18abbde71f3f4af9fd300468ff9f87e9",
+          "sha256": "d70c54a2c6dda9abdba6f677385d9a36301ff5bf9c8cb463a64a3205a08a27fa",
+          "bytes": 8112
+        },
+        {
+          "path": "plans/o16-continuous-goal-acceptance/status.md",
+          "previousSha256": "f202bc3a0f05ae2f8f5177bd04a65f5fd2331259d7a68fa870185742609c3924",
+          "sha256": "141fe0b1dd78758a6683d4f9167067b29631901703974d077d6cf7bc26e154d0",
+          "bytes": 13462
+        },
+        {
+          "path": "docs/evidence/o16/native-plan-20261007-1018/result-manifest.json",
+          "previousSha256": null,
+          "sha256": "d4d22cf812f2b8a322ce9fe8957e1039d0aea3a31fd4a6108de9fa2b40ab6253",
+          "bytes": 9002
+        }
+      ],
+      "bytes": 66206
+    }
+  ]
+}

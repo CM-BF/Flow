@@ -77,7 +77,7 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 
 采用[固定恢复队列](../../docs/quality/execution-recovery-order-2026-10-07.md)：先 SVC07 必要直接检查与关键用户路径，其他候选维持已有准备/证据。外部条件未改变时停止重复等待/采样，不预占运行窗口；原资源门槛和 CI 唯一用户选择保留。新功能、清理或扩大供给不由本次管理收口授权。
 
-- [ ] **OPS-001-16** 用户任务时间与局部迭代：沿[plans时间契约](../AGENTS.md#task-timing)在当前活跃/后续新status记录可追溯开工、各交付阶段及等待，dashboard实际显示进行中壁钟耗时；历史未知不猜。普通本地修复按[有界连续迭代](../../docs/quality/local-validation.md#bounded-local-iteration)收敛记录/审批开销。规则、Web展示与实际活跃任务接入分别验收，已发布计时不冒充全历史已补齐；续接按[当前事实优先读取](../../docs/quality/local-validation.md#focused-status-reading)，复用原件链接、只追加实质事件。
+- [ ] **OPS-001-16** 用户任务时间与局部迭代：沿[plans时间契约](../AGENTS.md#task-timing)在当前活跃/后续新status记录可追溯开工、各交付阶段及等待，dashboard实际显示进行中壁钟耗时；历史未知不猜。普通本地修复按[有界连续迭代](../../docs/quality/local-validation.md#bounded-local-iteration)收敛记录/审批开销。规则、Web展示与实际活跃任务接入分别验收，已发布计时不冒充全历史已补齐；续接按[当前事实优先读取](../../docs/quality/local-validation.md#focused-status-reading)，复用原件链接、只追加实质事件。 后续交付采用[单份必要来源记录](../../docs/quality/local-validation.md#fixed-input-provenance)，由一个合适小片验证同等独审与接收并记录实际避免重复的文件/字节；当前冻结原件保持，采用效果待验。
 
 本组新树的纯源码准备采用[常规co-lead自助职责](../../docs/quality/local-validation.md#source-operator)，沿OPS-001-12复用模块闭包；main/共享配置和跨owner范围交接保持原归属，不再以逐片供给许可阻塞ready实现。
 

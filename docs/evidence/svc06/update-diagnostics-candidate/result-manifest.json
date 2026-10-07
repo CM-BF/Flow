@@ -1,0 +1,198 @@
+{
+  "kind": "svc06-diagnostics-artifact-result",
+  "recordedAt": "2026-10-07T10:14:29.512589+00:00",
+  "sourceTarget": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+  "resultTarget": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+  "artifactSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "verdict": "AUTHOR_REPORTED_PASS_PENDING_INDEPENDENT_REVIEW",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "fixedRef": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+      "bytes": 10424,
+      "sha256": "696b208bbdea749c8f87b85983f9d8a0e622831dbc0d133646c7a9456de68461"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+      "fixedRef": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+      "bytes": 2134,
+      "sha256": "a866af5906dba4c4fafed0d8dc9a1e1e0534575de40fcafbc2fc5d8489093fd5"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "fixedRef": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+      "bytes": 5080,
+      "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "fixedRef": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+      "bytes": 40316,
+      "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/build-record.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 806,
+      "sha256": "af9e6045cdd07e1b68eb1a6bc7a51a78978c7cdf23b6369704958a7940f0ca84"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stderr",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/imports.stdout",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 2421,
+      "sha256": "bb1e90035e079b13c3b42a871cab83518450b1d8e72ba8ebe30bb55ab29d2810"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/owned-root.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 168,
+      "sha256": "13a00d52578d5b59f3f788a7e289d7577c38b1bb1da1ab527088af796780588b"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/reservation.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 187,
+      "sha256": "96f174545e9164d02b9b05606221f25e69f0953f14f4c22a962abca778ab36eb"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result-descriptor.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 275,
+      "sha256": "2276b0d397f056fff7ee61a67f0f5f6d31f3ae6adb9fb27c31f6dac1ab596ed8"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 5125,
+      "sha256": "5f3ce17a9e37a0c96f6b864e1faad690eee94c28f5b1ababea6e44aac9fa3894"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/outer-report.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 5289,
+      "sha256": "61f87d4e4317ff5a68a9ae782ed47029f1bfdf3da3f0b6aeaf559a84d4e3eb00"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/RESULT.md",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 2212,
+      "sha256": "9eba5cf0bb28209955c079bdefa7677b14ef053f18306a5e36c112a949d2b492"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/execution-claim.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 1007,
+      "sha256": "0d11c7899f787dab53ecdb9ecab404b5a4200d81ccc19b5d2eba60963b33ef72"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/execution-preflight.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 19930,
+      "sha256": "65d6f8415ee7fe7ee0c3527578bc9841f29c8c9050fb294ad56fa82761bf83c2"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/independent-review.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 1697,
+      "sha256": "9189ecfdc2e69cf5466b8dac38b2c5397f7f1d48374e2605c36d72afd2c03da6"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/result-analysis.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 3953,
+      "sha256": "a15eb3ffdafa6e96f744731969fe5707b9a68ab3cc708e61ff64a886f1ae7519"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/result-status-check.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 389,
+      "sha256": "5c742edf1535c2825ac7162b24f80de32a51e0b739e6017cdc7af5938b714bbe"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/manifest.json",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 31876,
+      "sha256": "6629cc239e113a402d6477359ec64152a65d16f0c2cc1bf1a5f5f989f71c1c0e"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 33557,
+      "sha256": "c997ebcce026efecffaf00df5f264f27d0685de3b4b1b3ac8aa0489eaf986e8a"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "fixedRef": "32d441cc7ad801447ca0f7d74dd286fb4b9794fd",
+      "bytes": 16833,
+      "sha256": "5bb69cd4aef17533437f55228f80791d8525311f0036d968dc3c4ca66377f59a"
+    }
+  ],
+  "bindingCount": 21,
+  "retainedPrivateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/owner.json",
+      "bytes": 251,
+      "sha256": "efb344345f97198c661ae915ff9763dd119b2a3ef641b8f6b017aeda8990742a",
+      "dev": 16777234,
+      "ino": 123986129,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "dev": 16777234,
+      "ino": 124012856,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/stage-05e66fab-db33-410f-9056-64bf8cd20d32.json",
+      "bytes": 806,
+      "sha256": "af9e6045cdd07e1b68eb1a6bc7a51a78978c7cdf23b6369704958a7940f0ca84",
+      "dev": 16777234,
+      "ino": 124012873,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+    "dev": 16777234,
+    "ino": 123986127,
+    "uid": 501,
+    "mode": "0o700",
+    "isDirectory": true
+  },
+  "preparationInheritance": {
+    "manifestPath": "docs/evidence/svc06/update-diagnostics-candidate/manifest.json",
+    "sha256": "6629cc239e113a402d6477359ec64152a65d16f0c2cc1bf1a5f5f989f71c1c0e",
+    "executionFreshVerified": "72source+19runtime+15then-current records+3prior methods; status/review intentionally superseded after all preparation comparisons; historical fixed blobs preserved"
+  },
+  "runSourceUnchanged": true,
+  "workload": "One real offline build and internal import/read-only selection; no factory/runRunner/native binary/provider/PG/host/personal operations",
+  "runtimeWindowReturned": "Immediately after reading persisted result10:12:40.145Z / outer33332ms, group62953 absent and both EOF; Lead received release",
+  "notProven": [
+    "Actual diagnostic host readiness/root cause",
+    "PG/maintenance/configuration migration",
+    "Real retained App compatibility",
+    "Personal adoption",
+    "Development checkout isolation"
+  ]
+}

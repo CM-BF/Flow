@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-07T10:23:06.485898Z",
+  "outcome": "FAILED_RETAINED_NO_RETRY",
+  "run": "native-plan-20261007-1018",
+  "source": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "operatorExit": 1,
+  "selected": 1,
+  "passed": 0,
+  "operatorStartedAt": "2026-10-07T10:19:10.652Z",
+  "operatorSupervisionElapsedMs": 28354,
+  "nativeEntryConsumedAt": "2026-10-07T10:19:15.732Z",
+  "windowReturnedAt": "2026-10-07T10:20:24.318Z",
+  "queryAccounting": {
+    "actualSDKQueryCalls": 1,
+    "source": "persisted worker.nativeQueryCalls and one planner slot reservation",
+    "conflictingUnsettledTopLevelCalls": 0,
+    "conflictingOperatorSummaryCalls": 0,
+    "originalFieldsPreserved": true,
+    "providerRequestCount": "UNKNOWN",
+    "receivedFrames": 1,
+    "resultReceived": false,
+    "usage": "UNKNOWN_NOT_REPORTED",
+    "costUsd": "UNKNOWN_NOT_REPORTED_NOT_ZERO",
+    "actualExecutionModelQualification": "NOT_PROVEN_BY_INIT_DECLARATION"
+  },
+  "observations": {
+    "primarySavedFailure": {
+      "state": "unconfirmed",
+      "name": "Error",
+      "code": null
+    },
+    "queryFailure": "query-or-observation-unconfirmed",
+    "observationFailure": "observation-rejected",
+    "fixedGuardInference": "query-policy observeInit exact plugins/skills comparison rejects this projection; model, runtime, permission, executable tool names and SDK MCP tuple match. Original error message was not persisted; do not claim it was captured.",
+    "baselinePlugins": [
+      "cc-plugin-agents-md",
+      "cc-plugin-telemetry",
+      "cc-plugin-plugin-authoring"
+    ],
+    "observedPlugins": [
+      "cc-plugin-agents-md",
+      "cc-plugin-plugin-authoring"
+    ],
+    "baselineSkills": [
+      "design",
+      "doctor",
+      "plugin-authoring"
+    ],
+    "observedSkills": [
+      "doctor",
+      "plugin-authoring"
+    ],
+    "hostToolDecisionsObserved": 0,
+    "proposal": "NOT_PERSISTED_OR_INDEPENDENTLY_AUDITED",
+    "apply": "NO_OBSERVED_HOST_CALL; center audit not collected in interrupted failure path",
+    "children": "NOT_STARTED; native children remain prohibited"
+  },
+  "independentOperatorStop": {
+    "reason": "resource-observation-or-bound-unconfirmed",
+    "STOPAt": "2026-10-07T10:19:39.009Z",
+    "signalCode": "SIGTERM",
+    "resourceFailureExactCause": "UNKNOWN; sampler collapsed deadline/I/O/bound to this single reason; do not infer a limit crossing or atomic-write race",
+    "lastSuccessfulSample": {
+      "freeBytes": 22748872704,
+      "rawBytes": 11026,
+      "runtimeBytes": 16449,
+      "runtimeEntries": 23
+    },
+    "finalSummaryRuntimeZero": "NOT a measurement of retained runtime. final report.resources missing caused no directory to be supplied; original 0 retained, not claimed empty."
+  },
+  "closure": {
+    "workerCloseRecorded": true,
+    "originalResourcePhase": "server-closed",
+    "originalAdminClosed": "NOT_PERSISTED",
+    "postChecks": "window-return.json plus watchdog-closure.json",
+    "registeredGroupsAbsent": [
+      21058,
+      24619
+    ],
+    "watchdogPidAndGroupAbsent": 21022,
+    "targetConnections": [],
+    "readonlyObserverPoolClosed": true,
+    "database": "flow_o16_06b4351f17e94b26b82fb54ca70af793",
+    "marker": "58ab33b3-7cfe-40e3-8b7d-5e216482ee6c",
+    "oid": "1280256",
+    "postObservedDatabaseBytes": 12771855,
+    "directory": {
+      "path": "/private/tmp/flow-o16-LiXMUn",
+      "dev": 16777234,
+      "ino": 124015966
+    },
+    "databaseAndDirectory": "KEEP; no deletion",
+    "pauseReceipt": "NOT_CREATED; not eligible for confirm/children or a new fifteen-minute successful pause",
+    "escapedWriters": "NOT_PROVEN"
+  },
+  "sourceChanged": false,
+  "noRetry": true,
+  "oldFAILKEEP": "Untouched",
+  "limitations": [
+    "Only one SDK invocation and init declaration, not successful planning/model usage/zero cost",
+    "Fresh process/connection absence does not retroactively fill original adminClosed or cleanup completion",
+    "No proposal/audit/usage result to submit for independent semantic acceptance",
+    "No second query, model/environment fallback or cleanup authorization inherited"
+  ]
+}

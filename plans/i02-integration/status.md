@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:13:24 UTC / main3b6db156；X01启动配置十源无冲突接收、组合4项及根类型检查通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:27:15.047170+00:00 / main dea9f100；固定后台构建结果与规划首段失败记录已独审，受控归档 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main3b6db156；X01十源全部前像与38110485相同，受控接收固定c8ba6bcb |
-| 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
+| 工作基线 / HEAD | main dea9f100；本次仅已审固定准备/结果证据和管理方法，不改产品源码 |
+| 工作树dirty状态 | 本次已审证据与管理状态归档；未知既有__pycache__不纳入提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | X01已有独审15项复用；本次当前组合4项旧配置直接消费者通过、根noEmit exit0，10.363秒，两个自有组absent/EOF。无PG/provider或个人操作。 |
-| 已集成main状态 / HEAD | main/origin3b6db156已含看板轻摘要/详情与后台启动诊断；本批X01启动配置待fast-forward。个人backend af51/v18、Web d629/v3/c7b保持。 |
+| 检查状态 | 沿固定源复用SVC06构建独审、host准备3项和O16失败原件独审；本次0工程复测/PG/provider。两父status纯解析通过，历史开始UNKNOWN保留。 |
+| 已集成main状态 / HEAD | main/origin dea9f100已含插件启动配置与规划私有环境；本批受控发布其实际结果与必要方法。个人backend af51/v18、Web d629/v3/c7b保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 看板摘要、按需详情、登录入口和计时已可用；插件启动配置已完成主线组合检查，新固定后台产物已构建成功。 |
-| 下一可用交付 | 验证新固定后台能独立启动并兼容保留页面，继续接收已审插件管理入口。 |
-| 当前阻塞 | ACTIVE: 新后台的独立宿主启动仍待验证；新产物已构建，正在固定隔离验证输入。个人运行版本未变更。 |
+| 当前产出 | 看板轻摘要、登录和计时已可用；固定后台产物已构建并通过限定独审。规划首段失败已保留，实际一次调用、费用未知。 |
+| 下一可用交付 | 收口固定后台启动后的网页发布前置，继续验证保留页面兼容；规划先完成零模型修正。 |
+| 当前阻塞 | ACTIVE: 新后台尚未完成整段宿主与网页兼容验收；规划首段未取得计划，当前无第二次调用许可。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -392,3 +392,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07 10:07:53 UTC：看板已按[实际部署回执](../../docs/evidence/i02/dashboard-summary-deployment.json)切到1a6f82a1，194来源；CUA临时tab核作者摘要/时间/按需详情后关闭，原用户tab与个人服务未动。首次启动缺少既有非秘密installation env而在listen前拒绝；恢复原binding后启动成功，原失败保留。已审原浏览器矩阵未重跑。
 
 2026-10-07T10:13:24Z：X01启动配置十源固定接收，314绑定核对及当前4项直接消费者/root类型检查通过，见[受控接收](../../docs/evidence/i02/x01-startup-intake.json)。新SVC06构建于10:12:40Z归还窗口，构建成功不代表host已通过；旧r1失败保留。
+
+2026-10-07T10:27:15.047170+00:00：本批[固定记录接收](../../docs/evidence/i02/svc06-o16-fixed-records-intake.json)：SVC06 7d1/6c构建限定APPROVED，O16真实首段FAILED_RETAINED由Lead核14raw/28绑定；SDK entry1而顶层旧0矛盾保留，费用未知、DB/tmp KEEP，未重跑或消耗第二许可。新host入口只准备批准；其随后实际返回由原owner固定/独审另收，不能把记录接收当个人部署。OPS单份固定来源方法已独审，效果仍待新小片采用。
