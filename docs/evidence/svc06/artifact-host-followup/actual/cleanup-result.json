@@ -1,0 +1,81 @@
+{
+  "startedAt": "2026-10-07T04:32:07.889Z",
+  "processes": {
+    "web": "stopped",
+    "runner": "stopped",
+    "center": "stopped"
+  },
+  "database": "removed",
+  "failures": [],
+  "artifactRetained": true,
+  "privateRunRetained": true,
+  "diagnostics": {
+    "center": {
+      "limitPerStream": 65536,
+      "stdout": {
+        "observed": 0,
+        "retained": 0
+      },
+      "stderr": {
+        "observed": 0,
+        "retained": 0
+      },
+      "errors": [],
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    "runner": {
+      "limitPerStream": 65536,
+      "stdout": {
+        "observed": 0,
+        "retained": 0
+      },
+      "stderr": {
+        "observed": 0,
+        "retained": 0
+      },
+      "errors": [],
+      "exit": {
+        "code": 0,
+        "signal": null
+      }
+    },
+    "web": {
+      "limitPerStream": 65536,
+      "stdout": {
+        "observed": 0,
+        "retained": 0
+      },
+      "stderr": {
+        "observed": 0,
+        "retained": 0
+      },
+      "errors": [],
+      "exit": {
+        "code": 1,
+        "signal": null
+      }
+    }
+  },
+  "databaseOid": 1208860,
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 2.018374999999992,
+        "rows": []
+      }
+    ]
+  },
+  "freeBeforeDrop": 25617063936,
+  "privateBeforeDrop": {
+    "bytes": 3230892,
+    "attempts": 1,
+    "entriesAcrossAttempts": 312,
+    "atomicSnapshot": false
+  },
+  "remaining": [],
+  "finishedAt": "2026-10-07T04:32:08.205Z"
+}

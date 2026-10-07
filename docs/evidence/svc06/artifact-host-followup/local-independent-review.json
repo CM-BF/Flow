@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T04:21:57.446696+00:00",
+  "source": "a32c8cb84c70473a3ea8f044d817ab5a5859b5e2",
+  "delivery": "5fb595b5",
+  "verdict": "APPROVED_LOCAL_EXPERIMENT_SEAM",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "bindingsVerified": {
+    "sourceBindings": 5,
+    "rawBindings": 3,
+    "runtimeBindings": 4
+  },
+  "scope": "Full5-file delta, exact one-spawn test-only transform, original helper identity+normal stop, three local process observations; no default production deployment approval",
+  "findings": [],
+  "tests": {
+    "different": 3,
+    "rounds": 1,
+    "passed": 3,
+    "elapsedMs": 374,
+    "reviewerReruns": 0
+  },
+  "limits": [
+    "actual center/runner/Web host NOT_RUN",
+    "newroot CoW + actual host entry separate fixed review/window",
+    "trusted test wrapper outside profile; real service subprocess and descendants denied dev paths",
+    "old artifact and first FAIL/UNKNOWN retained",
+    "no PG/provider/browser/personal operation"
+  ]
+}

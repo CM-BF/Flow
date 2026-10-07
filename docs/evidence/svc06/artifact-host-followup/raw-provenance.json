@@ -1,0 +1,103 @@
+{
+  "recordedAt": "2026-10-07T04:34:52.669086+00:00",
+  "copiedUnchanged": [
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/reservation.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/reservation.json",
+      "bytes": 565,
+      "sha256": "3f3ad88bf6f8c7426f467283ef2e9f088a3cd64ad141c022869a29332af02608",
+      "dev": 16777234,
+      "ino": 123449281,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/clone-result.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/clone-result.json",
+      "bytes": 419,
+      "sha256": "59b20880822a9084ea342e43b6a7c7b989d98f9e6bf08bbbc5e959aa38a28cfc",
+      "dev": 16777234,
+      "ino": 123464849,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/clone-verified.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/clone-verified.json",
+      "bytes": 387,
+      "sha256": "7c3d0f6fb3649d791b58e4dec9829d5c7f607039a6bf94796789d9225fecb6a9",
+      "dev": 16777234,
+      "ino": 123464856,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/work-checkpoint.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/work-checkpoint.json",
+      "bytes": 7897,
+      "sha256": "f4e6751d1a0b0720aed6f6d1372a79c1976bbfdd2e1e2bda591eea0a5e49ce90",
+      "dev": 16777234,
+      "ino": 123465482,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/work-result.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/work-result.json",
+      "bytes": 11786,
+      "sha256": "95ca3f277108af0f95f42db6ff317a3284ae0a0f0a0cd4c5f87cc3666cc95bf7",
+      "dev": 16777234,
+      "ino": 123465709,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/cleanup-checkpoint.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/cleanup-checkpoint.json",
+      "bytes": 1461,
+      "sha256": "05574ecadca82c55fb208702247217fc022608ce078059d657d1d639e0eacf47",
+      "dev": 16777234,
+      "ino": 123465716,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/cleanup-result.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/cleanup-result.json",
+      "bytes": 1516,
+      "sha256": "0c7fd5daabf6f677b0cffe79a1f130b0b134e5e2d04b89fdda604eabad9d57c8",
+      "dev": 16777234,
+      "ino": 123465717,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/diagnostic-center/capture.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/center-capture.json",
+      "bytes": 143,
+      "sha256": "4d2bcb765f1624925bac792bd86d3e981de4afed1355300d0c9d22d3291af572",
+      "dev": 16777234,
+      "ino": 123465714,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/diagnostic-runner/capture.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/runner-capture.json",
+      "bytes": 143,
+      "sha256": "4d2bcb765f1624925bac792bd86d3e981de4afed1355300d0c9d22d3291af572",
+      "dev": 16777234,
+      "ino": 123465712,
+      "mode": "0o600"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-host-followup-20261007/host-smoke-followup-once/diagnostic-web/capture.json",
+      "archive": "docs/evidence/svc06/artifact-host-followup/actual/web-capture.json",
+      "bytes": 143,
+      "sha256": "fb59d223420f5cea927c1e543ef464c1c9f634df074c0cf294193e384419a0dd",
+      "dev": 16777234,
+      "ino": 123465711,
+      "mode": "0o600"
+    }
+  ],
+  "privateNotPublished": [
+    "config.json",
+    "state.json",
+    "claude.json",
+    "database credentials/tokens",
+    "raw role stderr/stdout"
+  ],
+  "noNewRuntimeProbe": true
+}

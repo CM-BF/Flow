@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T04:38:50.337581+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "entrySource": "d37981b06ec70b9f9e6254b66e0a1b69d7555dc1",
+  "resultTarget": "c59c29e797a8d07081a1f84d9f922bcc8163d4dc",
+  "delivery": "b3d064ecf7c2a63bf081470a6567dcf1a94c50f4",
+  "manifestSha256": "118ba38e3b6bf8f615f653bf26c01db226e5b3317e9863b0091185512ff2815d",
+  "conclusion": "APPROVED_FIXED_ZERO_TASK_HOST_RESULT",
+  "blockingFindings": [],
+  "verified": {
+    "fixedAndCurrentBindings": 30,
+    "privateHashIdentityModeBindings": 17,
+    "exactOriginalCopies": 10,
+    "testsRerun": 0,
+    "provider": 0
+  },
+  "observations": [
+    "Read actual work, cleanup checkpoint/result, clone, supervisor output and bounded result analysis. Three real roles ran under the reviewed exact spawn test envelope, with four denied developer-path controls.",
+    "Work 37293ms and cleanup 449ms; both supervisors exit0/full EOF/final owned absent. Initial EPERM observations remain intact.",
+    "Original helper stopped all three role groups; marker/OID and empty connections precede persisted checkpoint and normal DROP; remaining databases empty.",
+    "Web diagnostic exit1 during explicit stop is retained separately from center/runner exit0. No claim of all-role exit0.",
+    "Original failed experiment and its cleanup remain unchanged. Both artifacts and private diagnostics retained."
+  ],
+  "limitations": [
+    "Only fixed zero-task host experiment; test-only exact spawn transform is an explicit premise.",
+    "No default production deployment, refresh/resume, existing-user-data compatibility, actual App browser, task/model or personal-release approval.",
+    "Resource samples are not atomic peaks or exclusive physical attribution. Exact outer finish timestamp remains unknown."
+  ]
+}

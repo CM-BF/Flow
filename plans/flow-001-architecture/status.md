@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:20:37.000Z / mainc0e0263d固定接收；个人af51/accepting v18、d629/v3未变 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:35:02.009743+00:00 / maine29e5d82；固定后台后继已实际完成清理，个人af51/accepting v18、d629/v3未变 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin451bf2ed已接SVC08同锁入口、S01P07领取恢复、ACCESS与原计时；个人未随主线自动升级。 |
+| 已集成main状态 / HEAD | maine29e5d82已接Codex公共接线与D06固定架构组合；4320两份图资产实采同源。个人部署与源码分开。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 看板登录与任务计时已实际可用；Codex会话公共接线已受控接收。固定后台产物安装/加载已通过，首宿主失败的自有中心与专库已正常收尾，原失败证据保留。 |
-| 下一可用交付 | 继续固定后台独立宿主验证，以及工程原生写入、检查和公开收据的零模型组合。网页修复的固定Flow来源产物另行准备，聊天验证按ready顺序推进。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING。固定后台首宿主完整验收仍待隔离与身份观察接缝修正；原残留已收尾，当前不是磁盘HOLD或未知资源占窗。 |
+| 当前产出 | 看板登录与任务计时已实际可用，固定架构更新已提供；Codex会话公共接线进入主线。固定后台在新私有目录完成真实中心、runner和网页启动，正常收尾，原首轮失败保留。 |
+| 下一可用交付 | 收口固定后台本次结果，并准备把网页连接修复送入Flow来源产物；工程宿主两项公开收据与恢复旅程、聊天设置及插件验证按ready顺序接续。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING；真实模型工程资格与界面完整旅程仍开放。固定后台后继结果待限定独审，不再等待旧隔离修正、磁盘或残留资源。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -192,3 +192,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T04:09:13.319076+00:00：ACCESS实际部署见D05唯一[回执](../../../dashboard-architecture/docs/evidence/d05/local-access-185-live.json)，main451bf2；S01P07 main0aa组合noEmit0及8直接检查通过，原失败保留。SVC06独立artifact首host运行0task/provider，04:04:40.248开始、work6255ms/cleanup81ms；工作/清理监督组absent，但detached center及专库仍KEEP。只读诊断确认原sandbox禁止/bin/ps，原stderr丢失不能补造根因；按原owner精确身份与先行持久记录收尾，未重跑构建或个人服务。
 
 2026-10-07T04:20:37.000Z：SVC06原自有中心/专库于04:13:43.435–04:13:44.010Z正常收尾，原helper一次TERM、group stopped、marker/OID相同、连接空后一次normal DROP；14固定结果绑定已核，e5与失败原件保留。共享PG窗口已归还，首host仍FAIL，后继观察器只在实验端修正，不重建已绿artifact。见[原owner结果](../../../backend-release/docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)。SVC08选择已main422、合法Flow422产物候选NOT_RUN；ENG01I原owner0497新claim正式恢复0provider组合，真实模型资格与独立接受仍开放。
+
+2026-10-07T04:35:02.009743+00:00：SVC06固定d379新root实际04:31:30.466启动，work37293ms/cleanup449ms；三原helper组stopped、OID1208860及marker核对、连接[]、正常DROP remaining[]，0task/provider，未动个人服务。4开发路径EPERM负控制与真实3roles/网页身份/代理通过，首失败不改；独立结果封存仍待原owner交固定包。唯一PG窗口已明确归还给Web/Mika，ENG01I仍只准备不预占。原件沿[唯一SVC06状态](../../../backend-release/plans/svc06-backend-release/status.md)与main I02接收记录，不复制私有日志。D06已审exact8组合02c88028/main，04:32两静态文件HTTP200/hash同源，不重启/刷新用户tab。

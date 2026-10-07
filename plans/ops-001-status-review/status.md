@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:20:37.000Z / mainc0e0263d固定接收；个人af51/accepting v18、d629/v3未变 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:35:02.009743+00:00 / maine29e5d82；固定后台后继已实际完成清理，个人af51/accepting v18、d629/v3未变 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | mainc0e0263d已接S01P07、Codex会话接线、ACCESS/计时及SVC08选择；个人部署与源码分开，未随main升级。 |
+| 已集成main状态 / HEAD | maine29e5d82已接Codex公共接线与D06固定架构组合；4320两份图资产实采同源。个人部署与源码分开。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 看板登录与任务计时已实际可用；Codex会话公共接线已受控接收。固定后台产物安装/加载已通过，首宿主失败的自有中心与专库已正常收尾，原失败证据保留。 |
-| 下一可用交付 | 继续固定后台独立宿主验证，以及工程原生写入、检查和公开收据的零模型组合。网页修复的固定Flow来源产物另行准备，聊天验证按ready顺序推进。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING。固定后台首宿主完整验收仍待隔离与身份观察接缝修正；原残留已收尾，当前不是磁盘HOLD或未知资源占窗。 |
+| 当前产出 | 看板登录与任务计时已实际可用，固定架构更新已提供；Codex会话公共接线进入主线。固定后台在新私有目录完成真实中心、runner和网页启动，正常收尾，原首轮失败保留。 |
+| 下一可用交付 | 收口固定后台本次结果，并准备把网页连接修复送入Flow来源产物；工程宿主两项公开收据与恢复旅程、聊天设置及插件验证按ready顺序接续。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING；真实模型工程资格与界面完整旅程仍开放。固定后台后继结果待限定独审，不再等待旧隔离修正、磁盘或残留资源。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -441,3 +441,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 本次状态使用[权威只读解析方法](../../docs/quality/local-validation.md#own-status-parse)，只核本owner的OPS/FLOW状态；实际开工来源缺失继续UNKNOWN，未用最近提交替代。登录实际产品观察由GO独立报告并已归D05，部署/安装回执与UI观察分别保留。
 
 本次解析实际结果：使用mainc0e0263d的parseStatus，OPS-001与FLOW-001均errors=[]、human.missing=[]、taskLinks.kind=big/coLead明确；两者timing.issues仅“任务开工时间未记录”，与历史UNKNOWN一致。只读解析及本次新增链接/差异核对，无工程测试/PG/服务操作。
+
+2026-10-07T04:35:02.009743+00:00：SVC06固定d379新root实际04:31:30.466启动，work37293ms/cleanup449ms；三原helper组stopped、OID1208860及marker核对、连接[]、正常DROP remaining[]，0task/provider，未动个人服务。4开发路径EPERM负控制与真实3roles/网页身份/代理通过，首失败不改；独立结果封存仍待原owner交固定包。唯一PG窗口已明确归还给Web/Mika，ENG01I仍只准备不预占。原件沿[唯一SVC06状态](../../../backend-release/plans/svc06-backend-release/status.md)与main I02接收记录，不复制私有日志。D06已审exact8组合02c88028/main，04:32两静态文件HTTP200/hash同源，不重启/刷新用户tab。

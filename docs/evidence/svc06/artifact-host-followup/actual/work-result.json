@@ -1,0 +1,542 @@
+{
+  "startedAt": "2026-10-07T04:31:41.750Z",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "manifestDigest": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "sourceHead": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "providerCalls": 0,
+  "tasksCreated": 0,
+  "checks": {
+    "deniedReads": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json",
+        "result": "EPERM"
+      }
+    ],
+    "roles": {
+      "center": {
+        "pid": 13260,
+        "group": 13260,
+        "state": "running",
+        "trustedBootstrapCommand": true
+      },
+      "runner": {
+        "pid": 23298,
+        "group": 23298,
+        "state": "running",
+        "trustedBootstrapCommand": true
+      },
+      "web": {
+        "pid": 23857,
+        "group": 23857,
+        "state": "running",
+        "trustedBootstrapCommand": true
+      }
+    },
+    "realWebIdentityStaticAndProxy": true,
+    "delayedRuntimeImport": "REUSED_ORIGINAL_BUILD_EVIDENCE_NOT_RERUN",
+    "tasks": 0,
+    "migrations": 32,
+    "serviceEnvelope": "same fixed profile; exact runtime spawn mapping, original PID/nonce/runService and stop"
+  },
+  "phase": "host-smoke-passed",
+  "freeBefore": 25636732928,
+  "resourceSamples": [
+    {
+      "free": 25636675584,
+      "private": {
+        "bytes": 41048,
+        "attempts": 1,
+        "entriesAcrossAttempts": 12,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25636462592,
+      "private": {
+        "bytes": 41048,
+        "attempts": 1,
+        "entriesAcrossAttempts": 12,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25636212736,
+      "private": {
+        "bytes": 41048,
+        "attempts": 1,
+        "entriesAcrossAttempts": 12,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25636020224,
+      "private": {
+        "bytes": 41048,
+        "attempts": 1,
+        "entriesAcrossAttempts": 12,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25635938304,
+      "private": {
+        "bytes": 41048,
+        "attempts": 1,
+        "entriesAcrossAttempts": 12,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634562048,
+      "private": {
+        "bytes": 1634093,
+        "attempts": 1,
+        "entriesAcrossAttempts": 32,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25632444416,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25632092160,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25632014336,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25631952896,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25631911936,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634443264,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634185216,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25633992704,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634422784,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634246656,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634365440,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634287616,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634226176,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634185216,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25633742848,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634193408,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 40,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634111488,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 42,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25634086912,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 53,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25633964032,
+      "private": {
+        "bytes": 1639335,
+        "attempts": 1,
+        "entriesAcrossAttempts": 229,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25622343680,
+      "private": {
+        "bytes": 2789773,
+        "attempts": 1,
+        "entriesAcrossAttempts": 229,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25615126528,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25615093760,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25615020032,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25614954496,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25613365248,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25611341824,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25609801728,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25609474048,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608859648,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 232,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25609138176,
+      "private": {
+        "bytes": 2795005,
+        "attempts": 1,
+        "entriesAcrossAttempts": 246,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608314880,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608253440,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608216576,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608249344,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608208384,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608138752,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25608028160,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25607979008,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25607991296,
+      "private": {
+        "bytes": 3218399,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25607766016,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25607716864,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25607331840,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25624072192,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25623023616,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 303,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25617182720,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 305,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25617190912,
+      "private": {
+        "bytes": 3218365,
+        "attempts": 1,
+        "entriesAcrossAttempts": 305,
+        "atomicSnapshot": false
+      }
+    }
+  ],
+  "databaseName": "flow_preview_e53e0df663f17b95360d79bc",
+  "ports": [
+    57863,
+    57864
+  ],
+  "installationId": "5accb230-ed6e-4dff-bc62-5da213d00087",
+  "freeAfter": 25617190912,
+  "privateAfter": {
+    "bytes": 3218365,
+    "attempts": 1,
+    "entriesAcrossAttempts": 305,
+    "atomicSnapshot": false
+  },
+  "finishedAt": "2026-10-07T04:32:07.796Z"
+}

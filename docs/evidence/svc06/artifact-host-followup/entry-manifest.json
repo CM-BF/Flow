@@ -1,0 +1,154 @@
+{
+  "at": "2026-10-07T04:25:43.130669+00:00",
+  "source": "d37981b06ec70b9f9e6254b66e0a1b69d7555dc1",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "approval": "PENDING_PREPARATION_REVIEW",
+  "execution": "NOT_RUN",
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 25064,
+      "sha256": "2abb23d9d80c8ba9a22f4115d289ba0506729c0745f32380d569ef79c73e24d1"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 3506,
+      "sha256": "39ac8f6c1e348529733daa493656cbda69d1b7f7580186f6992ad1f5f1a567b3"
+    },
+    {
+      "path": "clone-artifact.py",
+      "bytes": 3281,
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 5159,
+      "sha256": "860de6b43c79bc0b8c61c6e157e292929dcde632cc29e2332df828ff27c6745f"
+    },
+    {
+      "path": "service-boundary.mjs",
+      "bytes": 4214,
+      "sha256": "286f80e3d08c926c16ca8c29a4a6566fcb4c6bb97393d9bdf80d0ed0b670e3a9"
+    },
+    {
+      "path": "role-bootstrap.mjs",
+      "bytes": 1511,
+      "sha256": "73a0fb62ca8fb802b281672b77e7e8fbf9618658b169fbd934551eee867bf369"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2994,
+      "sha256": "3910ccd194505051222f3a8e659aa944eaa3137565ef55dbb69b93a43422337b"
+    },
+    {
+      "path": "local-independent-review.json",
+      "bytes": 986,
+      "sha256": "70fce0fe03cd660318e148b8207259dd58a5600e8576760bd05a8ea533d31f79"
+    }
+  ],
+  "fixedInputs": [
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/manifest.json",
+      "bytes": 3179420,
+      "sha256": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/manifest.json",
+      "bytes": 1651,
+      "sha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/PluginManagement-A83k3W8t.js",
+      "bytes": 9854,
+      "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/PluginManagement-Dok11XwQ.css",
+      "bytes": 2843,
+      "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/assistant-ui-C7NurJFc.js",
+      "bytes": 667364,
+      "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/assistant-ui-CcdakA0V.css",
+      "bytes": 966,
+      "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/index-CZaGITme.js",
+      "bytes": 790684,
+      "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/index-DzESKX8S.css",
+      "bytes": 112165,
+      "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/rolldown-runtime-qXqUbbKo.js",
+      "bytes": 773,
+      "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/theme-eZTSIgw9.js",
+      "bytes": 806,
+      "sha256": "926448efd702b51400e86ec9d45316a15f97ebe66832c40241a13832c56c2a45"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/assets/workspace-OoYt4DTj.js",
+      "bytes": 1906,
+      "sha256": "83c03eceb9611c1beebeb62ef81d667f1baf114fc06f39a442d36bb8581e1aba"
+    },
+    {
+      "path": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88/dist/index.html",
+      "bytes": 950,
+      "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3"
+    }
+  ],
+  "localEvidence": {
+    "source": "a32c8cb84c70473a3ea8f044d817ab5a5859b5e2",
+    "manifestSha256": "58046b808c53c5d588d21456adb66f23398f9a4030322f1b63b92325d83b4d1a",
+    "selected": 3,
+    "passed": 3,
+    "workMs": 374,
+    "rerunsForThisEntry": 0
+  },
+  "originalFailure": {
+    "entry": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+    "manifestSha256": "989fcba03ca807764f9edffaee46eb7cf07cdffb3a5010935556f83e13b0783c",
+    "unchanged": true
+  },
+  "cleanupFollowup": {
+    "entry": "f46a29ae26ebeb616343f95de68f8f967c8c8674",
+    "manifestSha256": "d1b2818603f81bd76cc49f5df70c139f6c9df834ee582efe77c1ee6d6bf730cc",
+    "result": "ACCEPTED cleanup only"
+  }
+}
