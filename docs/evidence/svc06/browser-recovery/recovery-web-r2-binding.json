@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T22:49:07.760Z",
+  "source": "f0f4538c06ab003d7883a25a27a2766d3e216dfb",
+  "inheritedSourceReview": {
+    "source": "ef281959728334e2b3f0f5d847e0452108d37c06",
+    "mainReceipt": "4bab97a8e",
+    "path": "docs/evidence/i02/svc06b-e15-web779-successor-review.json"
+  },
+  "recoveryPreparation": {
+    "target": "e68a90f2904415e7e690f23a8494c68c28b51205",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-preparation.json",
+    "bytes": 6535,
+    "sha256": "7066f24463c8944108dc0c36a728e65e74006bd6a9d3ac2d52fd7842e729ec6f"
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 13689,
+      "sha256": "3d772c4161e901536f5bf33364b348f0b42bf38299a1e5f8e98118d930818558"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 12149,
+      "sha256": "ee86627e10f61fd7332779ad2dc2435a34acc3b3cc2858ce8599df9925a38871"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-input.template.json",
+      "bytes": 3872,
+      "sha256": "887a2f7940f5df66b5b43108a34947e56bf4fa9f017cf6e40d87db5e9765d35f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-05-reservation.json",
+      "bytes": 3514,
+      "sha256": "b2dd7afe9466c19da8f6074f34b093a1b146d06f7d072438ce4cb0afaa8ed252"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-05-outer.json",
+      "bytes": 789,
+      "sha256": "6d681222e2b4584730d981b7bb1b952f328569148e0c7c46de2522637422f9e9"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-05-result.json",
+      "bytes": 409,
+      "sha256": "120dca07d8523a134d23f703b0ec6ba05a1d7d0b5fb4de49cbf710fee7e72610"
+    }
+  ],
+  "delta": "Only exact final receipt path changed to continuation-r2; rejects both historical failed namespaces. Actual public canonical/parent contract/transfer/publish unchanged.",
+  "finalReceipt": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json",
+  "ready": false,
+  "missing": [
+    "Successful resumed-confirmed final receipt and independent actual result acceptance",
+    "Fresh six private identities/three owned roles/release CAS and one authorized Web window"
+  ],
+  "checks": {
+    "selected": 1,
+    "passed": 1,
+    "elapsedMs": 211,
+    "rawBytes": 207,
+    "returnAt": "2026-10-07T22:48:29.525340Z",
+    "segmentCumulativeMs": 451,
+    "segmentCumulativeRawBytes": 872,
+    "ownedGroup": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "scratch": "exact empty removed"
+  },
+  "quality": {
+    "at": "2026-10-07T22:49:07.760Z",
+    "method": "Existing find-skills/codebase-design/clean-code baseline; one exact predecessor binding, no new abstraction or serializer, unchanged error/unknown semantics.",
+    "unresolved": "Actual recovery and Web publication not established by this preparation."
+  },
+  "personalIO": 0,
+  "pg": 0,
+  "provider": 0
+}

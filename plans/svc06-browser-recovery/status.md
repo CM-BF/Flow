@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:37:18.739Z；恢复剩余六阶段已审，实际结果另待；Web-only公共算法与新回执已绑定，局部通过待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:49:07.760Z；恢复R2真实入口准备已独审；Web exact新成功回执绑定已修/局部通过待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,19 +13,19 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base6c；固定runtime880060/e15；Web-only后继sourceef281959728334e2b3f0f5d847e0452108d37c06，原父目录P2已独审，本delta待审/未合main |
+| 工作基线 / HEAD | base6c；固定runtime880060/e15；Web公共canonical源ef281已独审/main4bab97a8e，本次exact r2路径sourcef0f4538c06ab003d7883a25a27a2766d3e216dfb待独审 |
 | 工作树dirty状态 | 当前source停写；仅本次结果/status收口，恢复135pins无重叠 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 恢复成功后用新e15身份受管迁入779并单次公开CAS发布；本片仅source draft，个人输入未采 |
 | 实现范围 | 新recovery-web-publication.mjs/直接专测/template；复用旧transfer算法和source880公开publish，不修改恢复66pins |
-| 检查状态 | 本段6个受影响消费者通过，240ms/665B，组absent/双EOF/无signals、exact空scratchremoved。原父目录2/2及所有历史原件保持；个人发布NOT_RUN |
+| 检查状态 | 本次1个路径直接消费者通过，211ms/207B，组absent/双EOF/空scratch同身份removed；本普通段累计451ms/872B，原6项不重跑；个人发布NOT_RUN |
 | 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 恢复续接的修复已通过独立审查。新版网页的独立发布调用已修正摘要算法和恢复回执绑定，并通过局部检查；网页尚未发布。 |
-| 下一可用交付 | 等恢复真正完成后，核对当前服务身份和发布版本，再受管发布新版网页。网页调用本次修正待独立审查，尚无现场输入。 |
-| 当前阻塞 | ACTIVE: 网页发布仍依赖成功恢复回执与紧前现场核对；责任为恢复owner/Lead及本服务owner。上次失败和已导入内容保留，不能重放。 |
+| 当前产出 | 新版网页的发布调用已通过源码审查；恢复续接再次在个人阶段前停止后，发布调用已绑定新的恢复回执路径，并拒绝旧失败回执。网页尚未发布。 |
+| 下一可用交付 | 完成这处路径同步的独立审查；恢复真正成功后核对当前服务身份和发布版本，再受管发布新版网页。 |
+| 当前阻塞 | ACTIVE: 网页发布仍缺成功恢复回执与紧前现场核对；恢复owner/Lead负责剩余维护，本服务owner负责随后Web发布。上次失败与已导入内容保留，不重放。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
@@ -194,3 +194,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T22:35:19.223Z：原22:14:24→22:34:24普通段按界限结束；父目录225a修复获Lead限定APPROVED/0P1P2，新段依据Lead授权至22:50Z，仅本Web leaf公共canonical与新continuation final路径重绑，直接检查≤30s/tmp8MiB，0PG/HTTP/个人/provider。新段实际开始22:34:24Z（clock观察），claim v8 fresh仍同scope。复用installed clean-code/codebase-design：由已完整verify的e15 artifact提供其公共database canonical，不复制序列化器；合成直接消费者读同880060公开源码/hash。个人恢复接缝e871/0b599已独审，实际选择与执行由Lead和native负责，本源不改其135pins。
 
 2026-10-07T22:37:18.739Z：Web后继source ef281959728334e2b3f0f5d847e0452108d37c06 固定；[单份重绑结果](../../docs/evidence/svc06/browser-recovery/recovery-web-continuation.json)只列3源/3原件及既有Git引用。公共canonical来自完整verify后的固定e15 root；directtest用同880060字节源码，6/6（4受影响+2新）、240ms/665B，22:36:07.207564Z RETURN，组absent/双EOF/无signals、exact空scratchremoved。恢复135pins零改，旧20dc/父目录结果原件零改；没有实际个人读取、PG/HTTP/provider。source待独审，成功continuation final与fresh实例尚待，ready=false；不会据旧失败或初始化推定网页已发布/实际接单成功。
+
+2026-10-07T22:49:07.760Z：复用Lead已main4bab97a8e的ef281源码批准；恢复e68a90f2904415e7e690f23a8494c68c28b51205/18bindings95982B/135effective pins及7直接入口检查已独立只读核准，仅准备范围。原续接51ms/0phase失败及22:40RETURN保持。Web source f0f4538c06ab003d7883a25a27a2766d3e216dfb 只将最终回执绑定到新的continuation-r2 namespace，1/1实际validateInput路径例于22:48:29.525340Z RETURN；旧两失败路径拒绝。见[单份路径增量](../../docs/evidence/svc06/browser-recovery/recovery-web-r2-binding.json)。本段未读取个人材料/未运行服务或PG，ready=false，当前0child/0pending。

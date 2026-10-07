@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T22:48:29.308294+00:00",
+  "source": "f0f4538c06ab003d7883a25a27a2766d3e216dfb",
+  "queueAt": "2026-10-07T22:48:08.398Z",
+  "queueSha256": "f51d2bd3d9847478b7c383a4e54fc22eecdd684d9beed1d59d4ff9e5570b6f6c",
+  "floor": 17756192768,
+  "free": 18022395904,
+  "limits": {
+    "seconds": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "scratch": {
+    "path": "/private/tmp/svc06b-web-r2-q46rw2q5",
+    "dev": 16777234,
+    "ino": 124624207
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "--test",
+    "--test-reporter=spec",
+    "--test-name-pattern=continuation receipt",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 13689,
+      "sha256": "3d772c4161e901536f5bf33364b348f0b42bf38299a1e5f8e98118d930818558"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 12149,
+      "sha256": "ee86627e10f61fd7332779ad2dc2435a34acc3b3cc2858ce8599df9925a38871"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-input.template.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-input.template.json",
+      "bytes": 3872,
+      "sha256": "887a2f7940f5df66b5b43108a34947e56bf4fa9f017cf6e40d87db5e9765d35f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-runtime.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-runtime.json",
+      "bytes": 29337,
+      "sha256": "85d560eebe4b751734f02e47d14a8b62ad24735ce4fa0714a94af67d13c4cebd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/apps/server/src/database.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/apps/server/src/database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    }
+  ],
+  "pg": 0,
+  "personal": 0,
+  "provider": 0
+}

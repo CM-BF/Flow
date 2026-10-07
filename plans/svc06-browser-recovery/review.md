@@ -71,3 +71,7 @@ Target20dc149c78dd4c7d172c609360051e2cec852aae。NOT_STARTED independent review;
 ## Web-only公共canonical与continuation回执重绑待审
 
 2026-10-07T22:37:18.739Z：固定source ef281959728334e2b3f0f5d847e0452108d37c06；父目录225a已获Lead限定APPROVED，原P2及原件保留。本次6/6直接消费者及原始监督见[重绑结果](../../docs/evidence/svc06/browser-recovery/recovery-web-continuation.json)，仅3新leaf和自己的记录，恢复135pins不变。独审PENDING，未来个人ready=false；不得从源批准推定现场恢复或网页发布完成。
+
+## Web-only exact R2回执同步待审
+
+2026-10-07T22:49:07.760Z：ef281公共canonical/父目录/发布源已由Lead限定批准并main4bab97a8e，原[I02审查](../../../m2-integration/docs/evidence/i02/svc06b-e15-web779-successor-review.json)不包含实际个人发布。新source f0f4538c06ab003d7883a25a27a2766d3e216dfb 仅同步成功前置回执的exact r2路径，1/1及211ms/raw207B见[增量](../../docs/evidence/svc06/browser-recovery/recovery-web-r2-binding.json)；本delta独审PENDING。原失败和准备记录不改，ready=false。
