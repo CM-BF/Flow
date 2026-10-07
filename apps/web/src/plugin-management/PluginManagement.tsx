@@ -2,7 +2,7 @@ import { useCallback, useId, useState, useSyncExternalStore } from 'react';
 import type { FlowClient } from '@flow/client';
 import type { PluginMaterialInstall, PluginRuntimeView, PluginScope, PluginSnapshot, PluginVersion } from '@flow/contracts';
 import type { PluginHost } from '../plugins/host';
-import type { PluginRuntimeReader, RuntimeCommandController } from './runtime-command';
+import { readRuntimeForView, selectRuntimeForView, type PluginRuntimeReader, type RuntimeCommandController } from './runtime-command';
 import { useRead } from './use-read';
 import './management.css';
 
@@ -138,11 +138,11 @@ function RuntimeControls({ access, snapshot, registrationCurrent }: { access: Ce
   const [selected, setSelected] = useState(original?.change.kind === 'enable' ? original.change.materialInstallOperationId : '');
   const [reason, setReason] = useState(original?.reason ?? '');
   const [after, setAfter] = useState<string>();
-  const loadRuntime = useCallback((signal: AbortSignal) => access.reader.pluginRuntime(registrationId, signal), [access.reader, registrationId]);
+  const loadRuntime = useCallback((signal: AbortSignal) => readRuntimeForView(access.reader, access.commands, registrationId, signal), [access.reader, access.commands, registrationId]);
   const loadMaterials = useCallback((signal: AbortSignal) => access.reader.pluginMaterialInstalls(registrationId, { after, limit: PAGE_SIZE }, signal), [access.reader, registrationId, after]);
   const runtime = useRead(loadRuntime); const materials = useRead(loadMaterials);
   const acknowledged = state.acknowledgement?.snapshot.installation.id === registrationId ? state.acknowledgement : undefined;
-  const value = acknowledged && (!runtime.data || acknowledged.runtime.currentRevision >= runtime.data.currentRevision) ? acknowledged.runtime : runtime.data;
+  const value = selectRuntimeForView(registrationId, acknowledged, runtime.data);
   const currentSnapshot = acknowledged && acknowledged.snapshot.revision >= snapshot.revision ? acknowledged.snapshot : snapshot;
   const pending = state.phase === 'sending' || state.phase === 'unknown' || state.phase === 'revoked';
   const readCurrent = registrationCurrent && !runtime.failed && !runtime.pending && Boolean(value);

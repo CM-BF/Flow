@@ -32,7 +32,7 @@ export async function createPluginRuntimeManagementFixture() {
   const writes: { center: string; key: string; body: string }[] = [];
   const received = new Map<string, { body: string; acknowledgement: ReturnType<typeof runtimeAck> }>();
   let mode: 'ack' | 'reject' | 'unknown' | 'reject-retry' = 'ack';
-  let revision = 1, enabled = false;
+  let revision = 1, enabled = false, bindingAvailable = true;
   let web = '';
   const api = createHttpServer(async (request, response) => {
     response.setHeader('access-control-allow-origin', web);
@@ -48,7 +48,10 @@ export async function createPluginRuntimeManagementFixture() {
       if (request.method === 'GET') {
         if (path === '/api/plugins') { send({ installations: [snapshot.installation], nextCursor: null }); return; }
         if (path === `/api/plugins/${runtimeRegistration}`) { send(snapshot); return; }
-        if (path === `/api/plugins/${runtimeRegistration}/runtime`) { send(runtimeProjection(observedRevision, center === 'A' && enabled)); return; }
+        if (path === `/api/plugins/${runtimeRegistration}/runtime`) {
+          const projection = runtimeProjection(observedRevision, center === 'A' && enabled);
+          send(projection.desiredEnabled && !bindingAvailable ? { ...projection, bindingAllowed: false, reason: 'host-unavailable' } : projection); return;
+        }
         if (path === `/api/plugins/${runtimeRegistration}/material-installs`) {
           send({ operations: [{ schemaVersion: 1, id: installedOperation, registrationId: runtimeRegistration, versionId: fixtureUuid(7), admittedRevision: 1, fetchOperationId: fixtureUuid(5), fetchAttemptId: fixtureUuid(6), artifactId: fixtureUuid(8), storeId: 'fixture-store', status: 'installed', materialId: 'a'.repeat(64), treeDigest: 'b'.repeat(64), hostApiMajor: 1, error: null, createdAt: fixtureTime, updatedAt: fixtureTime }], nextCursor: null }); return;
         }
@@ -79,7 +82,7 @@ export async function createPluginRuntimeManagementFixture() {
     await new Promise<void>((resolve, reject) => { api.once('error', reject); api.listen(0, '127.0.0.1', resolve); });
     const apiAddress = api.address(); if (!apiAddress || typeof apiAddress === 'string') throw new Error('Missing owned API port');
     return { url: `${web}/test/plugin-management/fixture/index.html`, input: { centers: [`http://127.0.0.1:${apiAddress.port}/A`, `http://127.0.0.1:${apiAddress.port}/B`], token: 'fixture-only', projectId: fixtureUuid(10), emptyProjectId: fixtureUuid(11), runtimeManagement: true },
-      writes, setMode(value: typeof mode) { mode = value; }, close };
+      writes, setMode(value: typeof mode) { mode = value; }, setBindingAvailable(value: boolean) { bindingAvailable = value; }, close };
   } catch (error) { try { await close(); } catch (cleanup) { throw new AggregateError([error, cleanup], 'Fixture start and cleanup failed'); } throw error; }
 }
 
@@ -116,6 +119,12 @@ export async function runPluginRuntimeManagementChecks(page: Page, fixture: Awai
   checks.push('UNKNOWN survives lazy close/collapse, successful read and rejected original retry');
   fixture.setMode('ack'); await notice.getByRole('button', { name: '重试原启停命令', exact: true }).click();
   await expect(notice).toContainText('中心已确认'); expect(fixture.writes[3]).toEqual(original);
+  fixture.setBindingAvailable(false);
+  await panel.getByRole('button', { name: '刷新启停状态（只读）', exact: true }).click();
+  await expect(panel.getByText('执行后端当前不可用', { exact: true })).toBeVisible();
+  await expect(panel.locator('dt').filter({ hasText: /^可创建绑定$/ }).locator('xpath=following-sibling::dd[1]')).toHaveText('否');
+  expect(fixture.writes).toHaveLength(4);
+  checks.push('later same-revision HTTP observation overrides historical ready ACK without another write');
   await page.getByLabel('变更原因', { exact: true }).fill('Fixture explicit disable');
   await panel.getByRole('button', { name: '确认停用', exact: true }).click();
   await expect(panel.getByRole('button', { name: '确认停用', exact: true })).toBeDisabled();

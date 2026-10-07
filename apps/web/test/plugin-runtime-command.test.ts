@@ -1,7 +1,7 @@
 import { afterEach, expect, it, vi } from 'vitest';
 import { FlowClient } from '@flow/client';
 import type { PluginRuntimeCommand } from '@flow/contracts';
-import { createRuntimeCommandController } from '../src/plugin-management/runtime-command';
+import { createRuntimeCommandController, readRuntimeForView, selectRuntimeForView } from '../src/plugin-management/runtime-command';
 
 const uuid = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
 const id = uuid(1), now = '2026-10-07T10:00:00.000Z';
@@ -31,7 +31,32 @@ afterEach(() => vi.restoreAllMocks());
 it('validates before HTTP and does not create an unknown command for invalid input', async () => {
   const fetch = vi.spyOn(globalThis, 'fetch'); const { controller } = setup();
   await controller.submit(id, { ...command(), reason: '' });
-  expect(controller.getSnapshot()).toEqual({ phase: 'idle', notice: 'invalid-input' }); expect(fetch).not.toHaveBeenCalled();
+  expect(controller.getSnapshot()).toMatchObject({ phase: 'idle', notice: 'invalid-input' }); expect(fetch).not.toHaveBeenCalled();
+});
+it.each(['', 'x'.repeat(201)])('rejects an invalid generated key before HTTP (%#)', async key => {
+  const fetch = vi.spyOn(globalThis, 'fetch'); const client = new FlowClient({ baseUrl: 'http://127.0.0.1:1', token: 'fixture-only' });
+  const controller = createRuntimeCommandController(client, { sessionId: 'key-test', isCurrent: () => true }, () => key);
+  await controller.submit(id, command()); expect(controller.getSnapshot().notice).toBe('invalid-input'); expect(fetch).not.toHaveBeenCalled();
+});
+it('uses a later same-revision GET but prevents a pre-ACK delayed GET from overwriting that ACK', async () => {
+  let finishOldRead!: (value: Response) => void;
+  const changed = acknowledgement(command()); const unavailable = { ...changed.runtime, bindingAllowed: false, reason: 'host-unavailable' };
+  vi.spyOn(globalThis, 'fetch').mockImplementationOnce(() => new Promise(resolve => { finishOldRead = resolve; }))
+    .mockResolvedValueOnce(response(changed)).mockResolvedValueOnce(response(unavailable));
+  const { client, controller } = setup();
+  const pendingRead = readRuntimeForView(client, controller, id, new AbortController().signal);
+  await controller.submit(id, command()); const ack = controller.getSnapshot().acknowledgement!;
+  finishOldRead(response(unavailable)); const oldRead = await pendingRead;
+  expect(selectRuntimeForView(id, ack, oldRead)).toBe(ack.runtime);
+  const freshRead = await readRuntimeForView(client, controller, id, new AbortController().signal);
+  expect(selectRuntimeForView(id, ack, freshRead)).toMatchObject({ currentRevision: 2, bindingAllowed: false, reason: 'host-unavailable' });
+  expect(controller.getSnapshot()).toMatchObject({ phase: 'accepted' });
+});
+it('does not regress a higher acknowledged revision to a lower read revision', async () => {
+  vi.spyOn(globalThis, 'fetch').mockResolvedValue(response(acknowledgement(command())));
+  const { controller } = setup(); await controller.submit(id, command()); const ack = controller.getSnapshot().acknowledgement!;
+  const oldValue = { ...ack.runtime, currentRevision: 1, enabledRevision: 1 };
+  expect(selectRuntimeForView(id, ack, { value: oldValue, acknowledgementAtStart: ack })).toBe(ack.runtime);
 });
 it('accepts real public enable and disable ACK codecs without claiming loaded or callable', async () => {
   const enable = command(), disable: PluginRuntimeCommand = { expectedRevision: 2, reason: 'Stop new bindings', change: { kind: 'disable' } };
