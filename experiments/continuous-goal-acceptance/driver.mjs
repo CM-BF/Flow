@@ -15,6 +15,7 @@ import { privateCenter, settleDecision } from './resources.mjs';
 import { runPhase, experimentStop } from './phase-host.mjs';
 import { confirmationDraft, validateConfirmation, expectedChildren } from './proposal.mjs';
 import { acceptObservedArtifact } from './decision.mjs';
+import { assertNativeReady, settleStage } from './stage-policy.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
@@ -22,6 +23,7 @@ function output(run) { assert(/^[a-z0-9][a-z0-9-]{3,63}$/.test(run)); return joi
 function session(center, state) { return createGoalSession({ client: center.client, goalId: state.goalId,
   connectionId: state.connectionId, intents: goalJournal(join(center.root, 'intents')) }); }
 async function permitFor(mode, path, source, phase, confirmation) {
+  assertNativeReady(mode);
   if (mode === 'rehearsal') { assert(!path); return undefined; }
   assert(mode === 'native' && path, 'No real phase without a new explicit permit.');
   const permit = validatePermit(await readPermitFile(path), { identity: source, phase, confirmation });
@@ -44,11 +46,12 @@ async function ensureCompleted(task) {
 /** Plan permission is distinct from later actual-proposal confirmation and child permission. */
 export async function plan(run, mode, permitPath) {
   experimentStop.signal.throwIfAborted();
+  assertNativeReady(mode);
   const source = await sourceIdentity(), permit = await permitFor(mode, permitPath, source, 'plan');
   const directory = output(run); await mkdir(RUNS, { recursive: true, mode: 0o700 }); await mkdir(directory, { mode: 0o700 });
   const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 0, workerStopped: true };
   await writeRecord(join(directory, 'plan.json'), report, { exclusive: true });
-  const center = await privateCenter(directory, source); let controller;
+  const center = await privateCenter(directory, source); let controller, primaryError;
   try {
     await center.start(false);
     const project = (await center.client.createProject({ title: 'O16 合成连续目标验收', workspaceId: 'personal' }, randomUUID(), signal())).snapshot.project;
@@ -82,11 +85,11 @@ export async function plan(run, mode, permitPath) {
     Object.assign(report, { outcome: 'actual-proposal-awaiting-owner', goalId: state.goalId, projectId: state.projectId, proposal, audit, planning,
       nativeQueryCalls: report.worker.nativeQueryCalls, semanticAcceptance: 'not-evaluated', childQueries: 0 });
     await writeRecord(join(directory, 'confirmation-draft.json'), draft, { exclusive: true });
-  } catch { report.failure = 'plan-or-observation-unconfirmed'; throw new Error('Plan failed or is unknown; do not create a replacement run.'); }
+  } catch (error) { primaryError = error; report.failure = 'plan-or-observation-unconfirmed'; }
   finally {
-    await controller?.dispose();
-    try { report.resources = await center.finish({ destroy: false, workersStopped: report.workerStopped }); }
-    finally { await writeRecord(join(directory, 'plan.json'), report); }
+    await settleStage(report, { primaryError, dispose: () => controller?.dispose(),
+      persist: value => writeRecord(join(directory, 'plan.json'), value), finish: options => center.finish(options),
+      pause: value => center.pause('plan', value) });
   }
   return report;
 }
@@ -94,8 +97,8 @@ export async function plan(run, mode, permitPath) {
 /** Explicit owner action; no runner starts here and production automatic scanning remains off. */
 export async function confirm(run, body) {
   experimentStop.signal.throwIfAborted();
-  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true });
-  const report = { stage: 'confirm', outcome: 'unknown', nativeQueryCalls: 0 };
+  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true, stage: 'confirm' });
+  const report = { stage: 'confirm', outcome: 'unknown', nativeQueryCalls: 0 }; let primaryError;
   try {
     const state = await stateOf(center); assert(['planned', 'confirmation-unknown', 'confirmed'].includes(state.stage));
     const parsed = validateConfirmation(body, state.proposal, state);
@@ -113,9 +116,10 @@ export async function confirm(run, body) {
     Object.assign(report, { outcome: 'confirmed-awaiting-separate-children-permit', mode: state.mode, actualConfirmation: accepted.confirmation,
       confirmationBinding: state.confirmationBinding, originalKey: state.confirmationIntent.key, replayed: accepted.replayed, admissions: 0,
       semanticAcceptance: 'not-evaluated' });
-  } finally {
-    try { report.resources = await center.finish({ destroy: false, workersStopped: true }); }
-    finally { await writeRecord(join(directory, 'confirmation.json'), report); }
+  } catch (error) { primaryError = error; }
+  finally {
+    await settleStage(report, { primaryError, persist: value => writeRecord(join(directory, 'confirmation.json'), value),
+      finish: options => center.finish(options), pause: value => center.pause('confirm', value) });
   }
   return report;
 }
@@ -125,8 +129,8 @@ export async function children(run, permitPath) {
   const source = await sourceIdentity(), directory = output(run), confirmation = await readRecord(join(directory, 'confirmation.json'));
   assert.equal(confirmation.outcome, 'confirmed-awaiting-separate-children-permit');
   const permit = await permitFor(confirmation.mode, permitPath, source, 'children', confirmation.confirmationBinding);
-  const center = await privateCenter(directory, source, { resume: true }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 0 };
-  let controller;
+  const center = await privateCenter(directory, source, { resume: true, stage: 'children' }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 0 };
+  let controller, primaryError;
   try {
     const state = await stateOf(center); assert.equal(state.stage, 'confirmed');
     assert.deepEqual(state.confirmationBinding, confirmation.confirmationBinding);
@@ -152,10 +156,11 @@ export async function children(run, permitPath) {
     state.artifacts = artifacts; state.stage = 'awaiting-independent-review'; await saveState(center, state);
     Object.assign(report, { outcome: 'artifacts-awaiting-independent-review', mode: state.mode, goalId: state.goalId,
       nativeQueryCalls: report.worker.nativeQueryCalls, artifacts, current, history, semanticAcceptance: 'not-evaluated', clientExitDidNotCancel: true });
-  } finally {
-    await controller?.dispose();
-    try { report.resources = await center.finish({ destroy: false, workersStopped: report.workerStopped }); }
-    finally { await writeRecord(join(directory, 'children.json'), report); }
+  } catch (error) { primaryError = error; }
+  finally {
+    await settleStage(report, { primaryError, dispose: () => controller?.dispose(),
+      persist: value => writeRecord(join(directory, 'children.json'), value), finish: options => center.finish(options),
+      pause: value => center.pause('children', value) });
   }
   return report;
 }
@@ -163,8 +168,8 @@ export async function children(run, permitPath) {
 /** The independent actor names exact observed artifact digests. Mechanical verification cannot supply this decision. */
 export async function decide(run, decision) {
   experimentStop.signal.throwIfAborted();
-  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true });
-  const report = { stage: 'independent-decision', outcome: 'unknown', nativeQueryCalls: 0 }; let controller, destroy = false;
+  const source = await sourceIdentity(), directory = output(run), center = await privateCenter(directory, source, { resume: true, stage: 'decide' });
+  const report = { stage: 'independent-decision', outcome: 'unknown', nativeQueryCalls: 0 }; let controller, primaryError, destroy = false;
   try {
     const state = await stateOf(center); assert.equal(state.stage, 'awaiting-independent-review');
     assert(decision && Object.keys(decision).sort().join() === 'actor,artifacts,decision,reason' && ['accept', 'reject'].includes(decision.decision)
@@ -191,10 +196,10 @@ export async function decide(run, decision) {
       mode: state.mode, nativeStageConclusion: state.mode === 'native' ? 'bounded-observed-journey-only' : 'not-run' });
     state.stage = 'reviewed'; await saveState(center, state); destroy = true;
   } catch (error) {
-    report.decisionFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null }; throw error;
+    primaryError = error; report.decisionFailure = { state: 'unconfirmed', name: error.name, code: error.code ?? null };
   } finally {
-    try { await controller?.dispose(); }
-    finally { await settleDecision(center, report, value => writeRecord(join(directory, 'decision.json'), value), destroy); }
+    await settleDecision(center, report, value => writeRecord(join(directory, 'decision.json'), value), destroy, primaryError,
+      () => controller?.dispose());
   }
   return report;
 }

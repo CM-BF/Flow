@@ -12,10 +12,12 @@ import { sourceIdentity, RESERVATIONS } from './identity.mjs';
 import { validatePermit, openReservedPhase } from './permit.mjs';
 import { createObservedQuery } from './query-run.mjs';
 import { bindPlannerAssignment, bindChildAssignment } from './assignment.mjs';
+import { assertNativeReady } from './stage-policy.mjs';
 
 const config = await readRecord(process.argv[2]), identity = await sourceIdentity();
 assert.equal(config.sourceDigest, identity.digest); assert(['plan', 'children'].includes(config.phase));
 assert(['native', 'rehearsal'].includes(config.mode)); assert(process.send);
+assertNativeReady(config.mode); // Direct worker entry cannot bypass the operator's unresolved login/write guard.
 const report = { phase: config.phase, mode: config.mode, pid: process.pid, sourceDigest: identity.digest,
   nativeQueryCalls: 0, queries: [], notices: [], outcome: 'unknown' };
 const stop = new AbortController();

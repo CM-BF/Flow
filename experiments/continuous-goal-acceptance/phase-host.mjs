@@ -8,11 +8,13 @@ import { stopWorker } from '../native-graph-acceptance/driver.mjs';
 import { readRecord, writeRecord } from './records.mjs';
 import { bindChildAssignment } from './assignment.mjs';
 import { PHASE_LIMITS } from './permit.mjs';
+import { assertNativeReady, failureFact } from './stage-policy.mjs';
 export const experimentStop = new AbortController();
 import { GRAPH_TOOLS } from './config.mjs';
 
 /** One owned runtime per phase, no command dispatch loop; polling only observes public center facts. */
 export async function runPhase(center, state, phase, { source, permit, report, done }) {
+  assertNativeReady(state.mode); // No process.env fallback while login/write inputs remain unresolved.
   const directory = join(center.root, phase), configFile = join(directory, 'worker.json'), reportFile = join(directory, 'report.json');
   await mkdir(directory, { mode: 0o700 });
   const runner = state.runners[phase];
@@ -21,7 +23,7 @@ export async function runPhase(center, state, phase, { source, permit, report, d
     materialFile: state.materialFile, citation: state.citation, admitted: state.admitted, expected: state.expected,
     confirmation: state.confirmationBinding, ...(permit ? { permit } : {}) }, { exclusive: true });
   const home = join(directory, 'home'); await mkdir(home, { mode: 0o700 });
-  const env = state.mode === 'native' ? process.env : { PATH: process.env.PATH, HOME: home, TMPDIR: directory, LANG: 'C.UTF-8' };
+  const env = { PATH: process.env.PATH, HOME: home, TMPDIR: directory, LANG: 'C.UTF-8' };
   await center.beforeWorker();
   const child = spawn(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./worker.mjs', import.meta.url)), configFile],
     { detached: true, stdio: ['ignore', 'ignore', 'ignore', 'ipc'], env: { ...env, TMPDIR: directory, TSX_DISABLE_CACHE: '1' } });
@@ -42,6 +44,7 @@ export async function runPhase(center, state, phase, { source, permit, report, d
     pending.add(work); void work.finally(() => pending.delete(work));
   });
   const deadline = performance.now() + (state.mode === 'native' ? PHASE_LIMITS[phase].timeoutMs * PHASE_LIMITS[phase].queries + 10000 : 24000);
+  let primaryError;
   try {
     await center.trackWorker(child.pid); let sampledAt = -Infinity;
     for (;;) {
@@ -58,13 +61,16 @@ export async function runPhase(center, state, phase, { source, permit, report, d
       const value = await done(); if (value) { report.publicCompletion = value; break; }
       await delay(40);
     }
-  } finally {
+  } catch (error) { primaryError = error; report.primaryFailure = failureFact(error); }
+  finally {
     try { await stopWorker(child, report); report.workerStopped = true; }
+    catch (error) { report.cleanupFailure = failureFact(error); primaryError ??= error; }
     finally {
       await Promise.allSettled(pending);
       try { report.worker = await readRecord(reportFile, 262_144); } catch { report.workerReport = 'missing-or-invalid'; }
     }
   }
+  if (primaryError) throw primaryError;
   assert(report.worker?.outcome === 'runtime-returned' && !report.worker.failure);
   assert.equal(report.worker.nativeQueryCalls, state.mode === 'native' ? PHASE_LIMITS[phase].queries : 0);
   assert.equal(report.worker.queries.length, PHASE_LIMITS[phase].queries);
