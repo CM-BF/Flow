@@ -61,3 +61,7 @@ MSGQUICK-04继续开放：[b3实际helper五项检查](../../docs/evidence/wpf-m
 ## b3实际浏览器后续 2026-10-07 05:26:24 UTC
 
 MSGQUICK-04仍开放：[第三次实际失败及完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，actualexit1/0组/0PNG。仅保真实证据、正常关闭/owned清理和30625/29375保守账；不改原断言或重试，根因待只读核实。
+
+## MSGQUICK-04 新有限定位段 2026-10-07 05:47:03 UTC
+
+[明确新授权及诊断接口](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。旧三轮60s封套原样闭合；新增≤90s实际、每次≤45s含15s清理，原retained8MiB与scratch64MiB不变。先独审最小诊断delta，保持原六组与产品不动；按plain B实际native选值决定是否进入modal B。当前只source准备，未运行。后续同边界定位→修复→相关验证可在段内连续进行，未知cleanup/授权范围变化停止针对审查；不新增泛化runner或任务。

@@ -1,0 +1,23 @@
+{
+  "kind": "DIAGNOSTIC_SOURCE_NOT_RUN",
+  "target": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "at": "2026-10-07 05:47:03 UTC",
+  "scope": [
+    "apps/web/test/message-settings.browser.ts"
+  ],
+  "sources": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "3460c012fb690b0eb0cdb0de76f2631cdd8800c01823e200baefb08fccbc00bc"
+  },
+  "unchanged": [
+    "Picker",
+    "direct-test",
+    "React fixture",
+    "original checkMessageSettingsPicker function body"
+  ],
+  "acceptanceBodySha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+  "previousApprovalNotInheritedForNewEntry": true
+}

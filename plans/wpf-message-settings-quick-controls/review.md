@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:26:24 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:47:03 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
@@ -83,3 +83,7 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 ## b3第三次浏览器真实失败 2026-10-07 05:26:24 UTC
 
 [实际原件与保守账](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)：outerexit1/唯一FAILEDseal、trace hash成立；模型选择未提交，0/6、0PNG。owned三组/scratch absent，fixture/context正常close已捕获，EOF0drop。累计30625/余29375，历史预算不改；[root本次实际独审](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json)已接受FAILED/trace/cleanup事实，不是feature PASS，不把native源准备批准当行为通过。
+
+## 新诊断准备候选（NOT_STARTED / NOT_RUN）
+
+Target `bdf444f13f2963235ab3f1659546d19fc8f5c203` 的browser单文件追加及 `/private/tmp/msgquick-native1` parent/worker最小delta待root独审，原fe6源码批准不能自动覆盖新增诊断。三业务文件与原六组函数字节不变；strict/26实际证据保留其原范围，新entry无执行证据。详见[准备接口/新旧预算](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。当前无gate/native接受，完整feature UNKNOWN。

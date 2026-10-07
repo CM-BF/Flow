@@ -1,0 +1,176 @@
+{
+  "at": "2026-10-07T05:39:44.129612+00:00",
+  "kind": "READ_ONLY_DESIGN_NOT_RUN",
+  "head": "e42bb0299990ebedf2b49a02634575c25bbfeb6b",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "branch": "codex/web-message-settings-quick-controls",
+  "clean": true,
+  "source4": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "fixedSha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    },
+    "apps/web/test/message-settings.test.ts": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.test.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.test.ts",
+      "bytes": 20068,
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "fixedSha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a"
+    },
+    "apps/web/test/message-settings.fixture.tsx": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.fixture.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.fixture.tsx",
+      "bytes": 9510,
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "fixedSha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd"
+    },
+    "apps/web/test/message-settings.browser.ts": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+      "bytes": 23499,
+      "sha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e",
+      "fixedSha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+    }
+  },
+  "supportingSources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/src/components/ui/dialog.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "lines": "32-52"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+      "lines": "21388-21415; 35649; 35771-35829; 37273"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-select@2.3.8_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_oeno24kyhchy6zqkgbxlievyam/node_modules/@radix-ui/react-select/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-select@2.3.8_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_oeno24kyhchy6zqkgbxlievyam/node_modules/@radix-ui/react-select/dist/index.mjs",
+      "bytes": 53929,
+      "sha256": "0c9d7b63e95cdc7548e99e250678f7ad4a70854954b52c65f1dfbada69e5e1f9",
+      "lines": "40-41; 227-235; 507-524; 838; 906-918"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/package.json",
+      "bytes": 4408,
+      "sha256": "3d57ced22eace53290e0fc7bda9c0beb131819e15fdd8f0b9e983075cb4976b5",
+      "lines": "74"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui/dist/index.mjs",
+      "bytes": 2520,
+      "sha256": "769be43d16c4b1d4419ea3df034975b8bf7ab35eedfc2d744e56a2f2b8796273",
+      "lines": "25; 59"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "bytes": 14132,
+      "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7",
+      "lines": "172; 184-186; 238-252"
+    },
+    {
+      "path": "/private/tmp/msgquick-b3/supervisor.py",
+      "realpath": "/private/tmp/msgquick-b3/supervisor.py",
+      "bytes": 31412,
+      "sha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5",
+      "lines": "229-244"
+    },
+    {
+      "path": "/private/tmp/msgquick-b3/worker.mjs",
+      "realpath": "/private/tmp/msgquick-b3/worker.mjs",
+      "bytes": 12556,
+      "sha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461",
+      "lines": "90-102; 117-130"
+    }
+  ],
+  "actualEvidence": [
+    {
+      "path": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/select-diagnostics.json",
+      "realpath": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/select-diagnostics.json",
+      "bytes": 9529,
+      "sha256": "c75dd24b3f1751d170ff738db31e0e26dabb4b485df1e6c7bf494d7ee5d8e1fc"
+    },
+    {
+      "path": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/owned-chrome.json",
+      "realpath": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/owned-chrome.json",
+      "bytes": 2274,
+      "sha256": "8cb91ca9a39432fca5cf3645da97ca239ab4c522d3b658f69cdfaea2211bc98a"
+    },
+    {
+      "path": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/browser-results.json",
+      "realpath": "/private/tmp/msgquick-b3/raw/msgquick-b3-20261007-051610/browser-results.json",
+      "bytes": 3117,
+      "sha256": "cb80d5b49c9ab541717ecd83bc7e621afa1a53a62c498a38734a1fd0d81b6b20"
+    },
+    {
+      "path": "/private/tmp/root-msgquick-b3-failed-actual-review.json",
+      "realpath": "/private/tmp/root-msgquick-b3-failed-actual-review.json",
+      "bytes": 4893,
+      "sha256": "c65f5d09022e77703fde40d8166de9e66b8244af6ea4448171726bda08b259c2"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "bytes": 3913,
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "notRun": [
+    "subject import",
+    "Node checks",
+    "Chrome",
+    "HTTP",
+    "PG",
+    "filesystem capacity/process sampling",
+    "new b4 or gate"
+  ],
+  "unchangedBudget": {
+    "spentMs": 30625,
+    "remainingMs": 29375,
+    "cleanupReserveMs": 15000
+  },
+  "scope": "Readonly source/evidence and report creation only; no project/packet/raw mutations.",
+  "reportSha256": "9160c58ef069e443d9b700f2599af36156495c12bf4260adbd225718e6628fc6"
+}
