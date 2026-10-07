@@ -5,6 +5,12 @@ export const RUNTIME_CLOSURE_POLICY = 'flow.backend-runtime-closure.v1';
 const maximumBytes = 4 * 1024 ** 2;
 const maximumEntries = 4096;
 const roots = ['apps/server', 'apps/runner'];
+// These are executable host requirements, not permission to install their whole workspace.
+const hostToolSources = [
+  { name: 'tsx', importer: '.', packageName: 'flow', dependencyKind: 'devDependencies' },
+  { name: 'pg', importer: '.', packageName: 'flow', dependencyKind: 'devDependencies' },
+  { name: 'vite', importer: 'apps/web', packageName: '@flow/web', dependencyKind: 'devDependencies' },
+];
 const has = (record, key) => Object.hasOwn(record, key);
 function record(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value) || ![Object.prototype, null].includes(Object.getPrototypeOf(value))) fail('BACKEND_LOCK_SHAPE');
@@ -72,6 +78,17 @@ function validateDependencies(importer, manifest, kind) {
   return locked;
 }
 
+function selectHostTools(lock, manifests) {
+  return hostToolSources.map(({ name, importer, packageName, dependencyKind }) => {
+    if (!has(manifests, importer) || !has(lock.importers, importer) || record(manifests[importer]).name !== packageName) fail('BACKEND_HOST_TOOL_SOURCE_MISMATCH');
+    const declared = map(manifests[importer][dependencyKind])[name];
+    const locked = map(record(lock.importers[importer])[dependencyKind])[name];
+    if (!locked || typeof declared !== 'string' || record(locked).specifier !== declared) fail('BACKEND_MANIFEST_LOCK_MISMATCH');
+    if (importer !== '.' && (has(map(manifests['.'].devDependencies), name) || has(map(lock.importers['.'].devDependencies), name))) fail('BACKEND_ROOT_RUNTIME_AMBIGUOUS');
+    return { name, importer, dependencyKind, specifier: declared, version: locked.version };
+  });
+}
+
 /** Pure, bounded build plan. Full peer-qualified keys are identities; pnpm remains the installer. */
 export function runtimeDependencyPlan(raw) {
   const { lock, manifests, host } = validatedInput(raw);
@@ -102,9 +119,8 @@ export function runtimeDependencyPlan(raw) {
   const sourceManifest = record(manifests['.']), sourceRoot = record(lock.importers['.']);
   // Root is a build-tool importer, not permission to install every development tool.
   if (sourceManifest.name !== 'flow' || Object.keys(map(sourceManifest.dependencies)).length || Object.keys(map(sourceManifest.optionalDependencies)).length || Object.keys(map(sourceRoot.dependencies)).length || Object.keys(map(sourceRoot.optionalDependencies)).length) fail('BACKEND_ROOT_RUNTIME_AMBIGUOUS');
-  const tsx = map(sourceRoot.devDependencies).tsx;
-  if (!tsx || record(tsx).specifier !== map(sourceManifest.devDependencies).tsx) fail('BACKEND_MANIFEST_LOCK_MISMATCH');
-  enqueue('tsx', tsx.version, true);
+  const hostTools = selectHostTools(lock, manifests);
+  for (const tool of hostTools) enqueue(tool.name, tool.version, true);
   for (const root of roots) visitWorkspace(root, `@flow/${posix.basename(root)}`);
   for (let cursor = 0; cursor < queue.length; cursor++) {
     const { key, required } = queue[cursor];
@@ -120,14 +136,20 @@ export function runtimeDependencyPlan(raw) {
     for (const [name, version] of Object.entries(map(snapshot.optionalDependencies))) enqueue(name, version, false);
   }
   const installationLock = structuredClone(lock), installationManifest = structuredClone(sourceManifest);
-  delete installationLock.importers['.'].devDependencies.tsx;
-  installationLock.importers['.'].dependencies = { tsx: structuredClone(tsx) };
-  delete installationManifest.devDependencies.tsx;
-  installationManifest.dependencies = { tsx: sourceManifest.devDependencies.tsx };
+  installationLock.importers['.'].dependencies = {};
+  installationManifest.dependencies = {};
+  for (const tool of hostTools) {
+    if (tool.importer === '.') {
+      delete installationLock.importers['.'][tool.dependencyKind][tool.name];
+      delete installationManifest[tool.dependencyKind][tool.name];
+    }
+    installationLock.importers['.'].dependencies[tool.name] = structuredClone(lock.importers[tool.importer][tool.dependencyKind][tool.name]);
+    installationManifest.dependencies[tool.name] = tool.specifier;
+  }
   const snapshots = [...selected.keys()].sort();
   const packages = [...new Map(snapshots.map(key => { const value = packageIdentity(lock, key); return [value.base, { key: value.base, integrity: value.integrity, cacheIndex: value.cacheIndex }]; })).values()].sort((a, b) => a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
   return {
-    policy: RUNTIME_CLOSURE_POLICY, pnpmVersion: '9.15.4', host: { ...host }, importers: [...importers].sort(), snapshots, packages,
+    policy: RUNTIME_CLOSURE_POLICY, pnpmVersion: '9.15.4', host: { ...host }, hostTools, importers: [...importers].sort(), snapshots, packages,
     skippedOptionalSnapshots: [...skipped].sort(), sourceSemanticDigest: semanticDigest({ lock, manifest: sourceManifest }),
     installationSemanticDigest: semanticDigest({ lock: installationLock, manifest: installationManifest }),
     installationManifest, installationLock,
