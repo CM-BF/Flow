@@ -1,3 +1,15 @@
+# 当前浏览器准备审查入口
+
+状态：UNKNOWN（当前浏览器源码/调用器 PREPARED，尚无新实际）
+
+Review target commit：0bc393de593fd9d057efa08cd6d4ff261f99b24f
+
+Scope：原五产品 literal；其中 PluginManagement.tsx/runtime-command.ts/direct test 逐字等于旧6544，只有 browser.ts 与 fixture/main.tsx 两源准备改变。精确[五源与caller pins](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/source-manifest.json)、[两生命周期diff](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)可供独审。
+
+旧strict与r4 direct15 actual限定批准保留，不迁移成两新fixture/六browser通过。当前source/native approval为空，个人排他窗口不运行。源码复核重点：私有真实JS/CSS映射、decoded read后UNKNOWN、真实组件/controller生命周期不变、native外层隔离差异、scratch identity KEEP、OPS unknown保真与actual外层退出联合终态。
+
+## 历史已审模块与direct（原文保留）
+
 # WPF-PLUGIN-RUNTIME01 独立审查
 
 **状态：UNKNOWN**

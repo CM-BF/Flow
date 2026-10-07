@@ -1,0 +1,50 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "files": {
+    "supervisor.py": {
+      "bytes": 27052,
+      "sha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b"
+    },
+    "worker.mjs": {
+      "bytes": 7615,
+      "sha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1608,
+      "sha256": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e"
+    },
+    "aliases.json": {
+      "bytes": 2318,
+      "sha256": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50"
+    },
+    "measure.py": {
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    "binding.json": {
+      "bytes": 63408,
+      "sha256": "a638f641f7a687fb59e36a547944d8e079683495b092156c50786e9ac710d8d5"
+    },
+    "resolver-audit.json": {
+      "bytes": 7963,
+      "sha256": "4f2ae1b56e541cdc84f33b14c04ea207d918148b58ad493c8ee95d078223f7b2"
+    },
+    "parent.diff": {
+      "bytes": 14630,
+      "sha256": "3aa7009cd8923a0ce7c4725f89da0686e3e3980e8e1f685db2ac65addc7df8f1"
+    },
+    "worker.diff": {
+      "bytes": 4393,
+      "sha256": "0152fa9dbb49f69f16717f0d8236a625433bec0b92342dfa13db94cb629dcc5b"
+    }
+  },
+  "expectedChecks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ]
+}

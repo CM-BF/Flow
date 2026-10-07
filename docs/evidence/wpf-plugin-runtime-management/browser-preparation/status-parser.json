@@ -1,0 +1,116 @@
+{
+  "timing": {
+    "started": {
+      "state": "known",
+      "at": "2026-10-07T10:48:09.218Z",
+      "record": "2026-10-07T10:48:09.218Z"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "[source provision receipt](../../docs/evidence/wpf-plugin-runtime-management/source-provision-receipt.json) startedAt：本模块实际固定源码供给开工；完成尚未满足"
+    },
+    "issues": [],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| PLUGIN-RUNTIME-W01 | UNKNOWN | 2026-10-07T10:46:23.929Z | 接口 | X01 两条路径等待 STOP/amend，现已移出；未知等待起点不补造 | [实际 handback](../../docs/evidence/wpf-plugin-runtime-management/x01-handback-receipt.json) |\n| PLUGIN-RUNTIME-W02 | UNKNOWN | 2026-10-07T12:07:49.693Z | 验证失败 | 原direct记录不完整，修复调用器后的新独立完整终态已通过；未知起点不推断 | [actual outer](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/outer/outer-exit.json) |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web / root；external_web_d01_owner",
+      "value": "Web / root；external_web_d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 4,
+    "output": "启停模块的直接回归已通过；独立浏览器入口已隔离站点配置并保留真实组件与请求，准备交互验收",
+    "next": "独立审查并运行六组管理界面场景与两张窄屏图",
+    "blocker": {
+      "state": "active",
+      "text": "新浏览器调用器尚待独立审查与合法实际资源段"
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+    "scopes": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "owner": "w01_owner / gpt-6-astra Ultra",
+  "branch": "codex/web-plugin-runtime-management",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-07T12:26:15.877Z",
+  "updatedRecord": "2026-10-07T12:26:15.877Z；固定 b675 输入，浏览器准备源 0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "todos": [
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定控制器与组件源](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)，strict已验；[direct15完整通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-02",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "实际模块/fixture/六组浏览器入口已固定，NOT_RUN"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-03",
+      "state": "in-progress",
+      "owner": "w01_owner",
+      "evidence": "[新direct15通过](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)，[旧有限段](../../docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json)首红/启动失败/第三父失败均保留；browser未跑"
+    },
+    {
+      "id": "WPF-PLUGIN-RUNTIME01-04",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "源码分段已审；整体 UNKNOWN / 未接主线"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "b67530bb025162629895d11482b5505d4a885c91；组件/控制器6544字节未变；浏览器准备 0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "declaredDirty": "本批仅两browser fixture源码与own records；正常提交推送后七范围STOP保claim",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "UNKNOWN 当前浏览器准备尚未运行；6544限定strict与r4 direct15原通过保留，三未变组件/控制器/direct源不重测；旧父FAILED保留"
+  },
+  "reviewRecord": "[review.md](review.md)，UNKNOWN；旧6544/direct15已独审，当前两fixture与native准备未获新实际结论",
+  "mainRecord": "NOT_INTEGRATED；b675 是共享输入，不含本模块",
+  "next": "临时高级入口手输 exact runner UUID；最终日用可读授权候选合同后继由 X01 固定，不自动探测或注册。config/grants 只读。App/session 尚未接线，Browser extensions 权限不变。新 module interface 的架构登记由管理在固定交付后合批，当前是 branch 实施而非已部署。",
+  "risks": "",
+  "decisions": ""
+}

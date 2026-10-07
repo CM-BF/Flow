@@ -1,0 +1,58 @@
+--- reviewed-msgquick-b1/worker.mjs
++++ prm-b1/worker.mjs
+@@ -8,12 +8,12 @@
+ 
+ const base = dirname(fileURLToPath(import.meta.url));
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+-const gatePath = process.env.MSGQUICK_BROWSER_GATE;
++const gatePath = process.env.PLUGIN_RUNTIME_BROWSER_GATE;
+ assert.equal(gatePath, join(base, 'child-gate.json'));
+ const gateStat = await lstat(gatePath);
+ assert(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size < 65536);
+ const gate = JSON.parse(await readFile(gatePath, 'utf8'));
+-assert.equal(gate.mode, 'message-settings-quick-browser');
++assert.equal(gate.mode, 'plugin-runtime-browser');
+ assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
+ assert(Date.parse(gate.expiresAt) > Date.now());
+ const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
+@@ -37,7 +37,7 @@
+ const binding = JSON.parse(await readFile(join(base, 'binding.json'), 'utf8'));
+ assert.equal(hash(await readFile(join(base, 'binding.json'))), gate.bindingSha256);
+ assert.equal(binding.head, gate.sourceHead);
+-assert.equal(binding.task, 'WPF-MESSAGESETTINGS02');
++assert.equal(binding.task, 'WPF-PLUGIN-RUNTIME01');
+ assert.deepEqual(binding.sources, gate.sourceHashes);
+ const report = { sourceHead: gate.sourceHead, sourceHashes: gate.sourceHashes, implementation: binding.implementation,
+   startedAt: new Date(startedAtMs).toISOString(), workerPid: process.pid, parentPid, chromePid,
+@@ -64,20 +64,24 @@
+ try {
+   checkpoint();
+   // Load actual own fixture and its public source dependencies through the pinned TSX mapping.
+-  const aliases = JSON.parse(await readFile(join(base, 'aliases.json'), 'utf8')).map(({ specifier, replacement }) => ({
+-    find: new RegExp(`^${specifier.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`), replacement,
+-  }));
++  const aliases = JSON.parse(await readFile(join(base, 'aliases.json'), 'utf8')).map(({ pattern, replacement }) => ({ find: new RegExp(pattern), replacement }));
+   const scenario = await import(pathToFileURL(binding.fixtureModule).href); checkpoint();
+-  fixture = await scenario.startMessageSettingsFixture({ cacheDir: join(scratch, 'vite'), aliases }); checkpoint();
++  fixture = await scenario.createPluginRuntimeManagementFixture({ cacheDir: join(scratch, 'vite'), aliases }); checkpoint();
++  report.ownedHttp = { web: fixture.url, apiCenters: fixture.input.centers, closeOwner: 'fixture.close closes both API and Vite listeners' };
+   const { chromium } = await import(pathToFileURL(binding.playwrightModule).href); checkpoint();
+   browser = await chromium.connectOverCDP(chromeEndpoint, { timeout: Math.min(3000, Math.max(1, workDeadlineMs - Date.now())) }); checkpoint();
+   report.cdpConnectedAt = new Date().toISOString();
+   context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' }); checkpoint();
+   const page = await context.newPage(); checkpoint();
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+-  const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
+-  report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
+-  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []); assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 6);
++  const screenshots = [];
++  const result = await scenario.runPluginRuntimeManagementChecks(page, fixture, async (name, bytes) => {
++    checkpoint(); assert(binding.expectedScreenshots.includes(name) && !screenshots.includes(name));
++    assert(Buffer.isBuffer(bytes) && bytes.length > 0 && bytes.length <= 2*1024*1024);
++    await writeFile(join(output, name), bytes, { flag: 'wx' }); screenshots.push(name);
++  }); checkpoint();
++  report.checks = result.checks; report.writes = result.writes; report.boundary = result.boundary;
++  report.screenshots = screenshots; assert.deepEqual(screenshots, binding.expectedScreenshots); assert.deepEqual(report.pageErrors, []); assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 6);
+   report.outcome = 'passed';
+ } catch (error) { report.failure = String(error.stack ?? error).slice(0, 16384); report.outcome = 'failed'; }
+ finally {

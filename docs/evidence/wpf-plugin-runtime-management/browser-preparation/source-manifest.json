@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-07T12:26:15.877Z",
+  "state": "PREPARED_NOT_RUN",
+  "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "sources": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "014091c728be1e5f2650e5bc000f218bb6d885b8f2c21d0e867e3c1105a3b0d9",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "readonlyCount": 75,
+  "externalCount": 105,
+  "packet": "/private/tmp/prm-b1",
+  "prepared": {
+    "supervisor.py": {
+      "path": "/private/tmp/prm-b1/supervisor.py",
+      "sha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+      "bytes": 27052
+    },
+    "worker.mjs": {
+      "path": "/private/tmp/prm-b1/worker.mjs",
+      "sha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+      "bytes": 7615
+    },
+    "runtime-tsconfig.json": {
+      "path": "/private/tmp/prm-b1/runtime-tsconfig.json",
+      "sha256": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e",
+      "bytes": 1608
+    },
+    "aliases.json": {
+      "path": "/private/tmp/prm-b1/aliases.json",
+      "sha256": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50",
+      "bytes": 2318
+    },
+    "measure.py": {
+      "path": "/private/tmp/prm-b1/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "bytes": 8979
+    }
+  },
+  "proposal": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": 2,
+    "floorBytes": 6199705600,
+    "floorMeaning": "Historical conservative floor only; future complete fresh combination may be higher. Personal service exclusive reservation currently blocks runtime. No grant."
+  },
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "expectedChecks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "expectedScreenshots": [
+    "plugin-runtime-light-390.png",
+    "plugin-runtime-dark-390.png"
+  ],
+  "sourceReview": null,
+  "nativeBoundaryApproval": null,
+  "sourceDeltaBase": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "runtimeExecuted": false,
+  "dependencyMissing": [],
+  "closureLimit": "Resolved static source/entry exports and existing package homes only; not a runtime import proof. No production App session dependency."
+}

@@ -44,3 +44,7 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## 当前 direct-only 实际结果
 
 复用源6544，独立r4真实父/子exit0及15例完整结果通过，882/20000ms新段关闭，全部owned清理和原件见[actual](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)。原30秒失败未改；既有strict不重跑。本次直接回归与完整归还已获root独立接受；下一步是管理组件浏览器交互，生产App接线及HOST新合同消费仍分别后继。全部七scope在本次封存后STOP，claim保留。
+
+## 模块浏览器准备（当前 source-only）
+
+[固定入口与验收提案](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)沿原六组/两390图，不调用legacy双PG、不引入production App session或新HOST DTO。当前只准备，旧strict/direct15不能当浏览器通过。后继日用候选资料以root固定de547公共接口研究为输入：绑定snapshot revision/version，空页可next/cursor409显式重启，同名按exact runner/store/API消歧；读取失败不造writeUNKNOWN、候选刷新不改冻结key/body。尚未在本slice实现。
