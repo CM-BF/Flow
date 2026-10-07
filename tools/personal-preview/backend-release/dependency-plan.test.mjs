@@ -10,7 +10,7 @@ function fixture() {
     'apps/server': { name: '@flow/server', dependencies: { '@flow/contracts': 'workspace:*', server: '1.0.0' } },
     'apps/runner': { name: '@flow/runner', dependencies: { '@flow/contracts': 'workspace:*', sdk: '1.0.0' } },
     'packages/contracts': { name: '@flow/contracts', dependencies: { shared: '1.0.0' } },
-    'apps/web': { name: '@flow/web', dependencies: { browser: '1.0.0' } },
+    'apps/web': { name: '@flow/web', dependencies: { browser: '1.0.0' }, devDependencies: { vite: '8.3.2' } },
   };
   const link = { specifier: 'workspace:*', version: 'link:../../packages/contracts' };
   const lock = { lockfileVersion: '9.0', settings: { autoInstallPeers: true, excludeLinksFromLockfile: false }, importers: {
@@ -18,22 +18,28 @@ function fixture() {
     'apps/server': { dependencies: { '@flow/contracts': link, server: entry('1.0.0') } },
     'apps/runner': { dependencies: { '@flow/contracts': link, sdk: entry('1.0.0') } },
     'packages/contracts': { dependencies: { shared: entry('1.0.0') } },
-    'apps/web': { dependencies: { browser: entry('1.0.0') } },
+    'apps/web': { dependencies: { browser: entry('1.0.0') }, devDependencies: { vite: entry('8.3.2') } },
   }, packages: {}, snapshots: {} };
-  for (const key of ['tsx@4.23.15', 'test@1.0.0', 'server@1.0.0', 'sdk@1.0.0', 'shared@1.0.0', 'browser@1.0.0']) {
+  for (const key of ['tsx@4.23.15', 'vite@8.3.2', 'test@1.0.0', 'server@1.0.0', 'sdk@1.0.0', 'shared@1.0.0', 'browser@1.0.0']) {
     lock.packages[key] = { resolution: { integrity } }; lock.snapshots[key] = {};
   }
   return { lock, manifests, host: { os: 'darwin', cpu: 'arm64', libc: null }, pnpmVersion: '9.15.4' };
 }
 
-test('selects only backend production workspace dependencies and explicit root tsx without mutating source', () => {
+test('selects backend production workspaces and explicit host tools without selecting the Web workspace', () => {
   const input = fixture(), before = JSON.stringify(input);
   const plan = runtimeDependencyPlan(input);
   assert.deepEqual(plan.importers, ['.', 'apps/runner', 'apps/server', 'packages/contracts']);
-  assert.deepEqual(plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'shared@1.0.0', 'tsx@4.23.15']);
+  assert.deepEqual(plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'shared@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
   assert.equal(plan.installationLock.importers['.'].devDependencies.tsx, undefined);
   assert.deepEqual(plan.installationLock.importers['.'].dependencies.tsx, entry('4.23.15'));
   assert.equal(plan.installationManifest.dependencies.tsx, '4.23.15');
+  assert.deepEqual(plan.installationLock.importers['.'].dependencies.vite, entry('8.3.2'));
+  assert.equal(plan.installationManifest.dependencies.vite, '8.3.2');
+  assert.deepEqual(plan.hostTools, [
+    { name: 'tsx', importer: '.', dependencyKind: 'devDependencies', specifier: '4.23.15', version: '4.23.15' },
+    { name: 'vite', importer: 'apps/web', dependencyKind: 'devDependencies', specifier: '8.3.2', version: '8.3.2' },
+  ]);
   assert.equal(plan.installationManifest.devDependencies.test, '1.0.0');
   assert.deepEqual(plan.installationLock.importers['apps/web'], input.lock.importers['apps/web']);
   assert.deepEqual(plan.installationLock.packages, input.lock.packages);
@@ -43,6 +49,34 @@ test('selects only backend production workspace dependencies and explicit root t
   assert.ok(plan.installArguments.includes('--filter-prod=@flow/server...'));
   assert.ok(plan.installArguments.includes('--filter-prod=@flow/runner...'));
   assert.ok(plan.installArguments.includes('--filter=flow'));
+});
+
+test('host tool selection keeps Vite peer context and platform optional closure without UI packages', () => {
+  const input = fixture(), { lock } = input, beforeWeb = structuredClone(lock.importers['apps/web']);
+  lock.importers['apps/web'].devDependencies.vite.version = '8.3.2(peer@2.0.0)';
+  lock.snapshots['vite@8.3.2(peer@2.0.0)'] = { dependencies: { peer: '2.0.0' }, optionalDependencies: { native: '1.0.0', foreign: '1.0.0' } };
+  for (const key of ['peer@2.0.0', 'native@1.0.0', 'foreign@1.0.0']) { lock.packages[key] = { resolution: { integrity } }; lock.snapshots[key] = {}; }
+  lock.packages['native@1.0.0'].os = ['darwin']; lock.packages['foreign@1.0.0'].os = ['linux'];
+  const plan = runtimeDependencyPlan(input);
+  assert.equal(plan.installationLock.importers['.'].dependencies.vite.version, '8.3.2(peer@2.0.0)');
+  assert.ok(plan.snapshots.includes('vite@8.3.2(peer@2.0.0)'));
+  assert.ok(plan.snapshots.includes('peer@2.0.0')); assert.ok(plan.snapshots.includes('native@1.0.0'));
+  assert.deepEqual(plan.skippedOptionalSnapshots, ['foreign@1.0.0']);
+  assert.ok(!plan.snapshots.includes('browser@1.0.0')); assert.ok(!plan.importers.includes('apps/web'));
+  assert.deepEqual(plan.installationLock.importers['apps/web'].dependencies, beforeWeb.dependencies);
+  assert.deepEqual(plan.installationLock.importers['apps/web'], lock.importers['apps/web']);
+});
+
+test('host tool selection rejects missing, mismatched, aliased or ambiguous fixed tool sources', () => {
+  const cases = [
+    [value => { delete value.manifests['apps/web']; }, 'BACKEND_HOST_TOOL_SOURCE_MISMATCH'],
+    [value => { value.manifests['apps/web'].name = '@flow/unrelated'; }, 'BACKEND_HOST_TOOL_SOURCE_MISMATCH'],
+    [value => { delete value.lock.importers['apps/web'].devDependencies.vite; }, 'BACKEND_MANIFEST_LOCK_MISMATCH'],
+    [value => { value.manifests['apps/web'].devDependencies.vite = '9.0.0'; }, 'BACKEND_MANIFEST_LOCK_MISMATCH'],
+    [value => { value.lock.importers['apps/web'].devDependencies.vite.version = 'link:../../other'; }, 'BACKEND_DEPENDENCY_UNSUPPORTED'],
+    [value => { value.manifests['.'].devDependencies.vite = '9.0.0'; }, 'BACKEND_ROOT_RUNTIME_AMBIGUOUS'],
+  ];
+  for (const [mutate, code] of cases) { const input = fixture(); mutate(input); assert.throws(() => runtimeDependencyPlan(input), { code }); }
 });
 
 test('retains distinct resolved peer contexts and only omits incompatible optional packages', () => {
@@ -86,7 +120,7 @@ test('handles a dependency cycle without looping and rejects oversized input bef
   const input = fixture();
   input.lock.snapshots['sdk@1.0.0'].dependencies = { server: '1.0.0' };
   input.lock.snapshots['server@1.0.0'].dependencies = { sdk: '1.0.0' };
-  assert.equal(runtimeDependencyPlan(input).snapshots.length, 4);
+  assert.equal(runtimeDependencyPlan(input).snapshots.length, 5);
   input.manifests['.'].description = 'x'.repeat(4 * 1024 ** 2);
   assert.throws(() => runtimeDependencyPlan(input), { code: 'BACKEND_LOCK_BUDGET' });
 });
