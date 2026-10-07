@@ -1,0 +1,35 @@
+{
+  "reviewedAt": "2026-10-07T23:34:41.000Z",
+  "archivedAt": "2026-10-07T23:35:42.175Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "decision": "SOURCE_AND_SYNTAX_PREPARATION_DELTA_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "fc1c9e32c0e0e6205ad795980a78738af78c6fc0",
+  "result": "8258609ad29382e693acab225b80c334990eb1af",
+  "packet": "08cac802f174384187e9c6f5908d276d1f5b5322",
+  "bindings": {
+    "count": 8,
+    "bytes": 13232,
+    "fixedGitPacketWTMatched": true
+  },
+  "sourceFinding": "Parameter current_setting($1) avoids nested Python/JS/SQL escaping. One max1 Pool;3s connect/statement,3.5s query; integer/range checks; query/idle/end errors preserve first failure and prevent passed. Closed only after await pool.end.",
+  "capacityMeaning": "available=max_connections-current includes this probe admin in current and does not subtract reserved connection slots. This is an instantaneous total-free-slots observation, not reservation/exclusive access.33 means planned17 configured+16 external headroom only if the new manager grant explicitly accepts this meaning/threshold and binds this source. Different threshold requires coordination, never self-authorization.",
+  "outerBoundary": "CJS alone has no hard10s guarantee; require/end hang must be closed by existing OPS14 work7+term1+kill1 and independently checked total<=10s. Future minimal env/newChildSession/completeMERGED EOF/one valid JSON/no signals or failures/exit0/knownabsent/pool-adminclosed checks all required.",
+  "syntax": {
+    "PID": 30143,
+    "exitCode": 0,
+    "supervisorMs": 39,
+    "rawBytes": 0,
+    "finalOwned": "absent",
+    "eof": "MERGED",
+    "temporary": "sameidentity empty rmdir and ENOENT by owner receipt",
+    "PG": 0,
+    "moduleExecution": false,
+    "firstEPERM": "preserved",
+    "wholeExternalWall": "UNKNOWN"
+  },
+  "history": "Old inlineprobe spawned/exit1/reaped;exactPID/group/clock/dualEOF unknown.0Pool/query/actualcaller/admission;oldgrantcancelled. Tool0.390537459s is not exactprobe wall. Original failure transcript/295manifest/queue remain unchanged.",
+  "limits": "Syntax does not prove pg require, PG capacity, fivecases, main or deployment. No actualOPEN/oldgrantreuse. Reviewer0execution/import/PG/TMPaccess/write."
+}

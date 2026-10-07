@@ -59,3 +59,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## 容量预检固定源待审
 
 2026-10-07T23:33:25.378Z：独立CJS sourcefc1c9e32c，参数化current_setting($1)，只查postgres metadata并保firstFailure/await pool.end；外部OPS14另限≤10s，旧295及caller不改。唯一node --check0只证语法，不证PG；旧inline失败/缺失PID与时钟证据保留。请只读核该小源、syntax收据和未来接线说明，不重审五domain或全闭包。
+
+## 容量preflight源与语法独审批准
+
+2026-10-07T23:35:42.175Z归档chatui 2026-10-07T23:34:41.000Z，SOURCE_AND_SYNTAX_PREPARATION_DELTA_REVIEW_APPROVED/0P1P2。fc1c/8258/08cac，8bindings13232B；只node --check0和源码，未执行require/PG。available瞬时总空位不扣reserved slots的边界需新grant接受；旧grant取消且缺PID/group/时钟证据保UNKNOWN。见v2/preflight-approval.json。

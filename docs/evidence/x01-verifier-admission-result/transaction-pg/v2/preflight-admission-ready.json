@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-10-07T23:35:42.175Z",
+  "state": "PREPARED_REVIEWED_CLOSED_WAIT_NEW_RESOURCE_GRANT",
+  "runtime": "NOT_RUN_NOT_OPEN",
+  "main": "NOT_INTEGRATED",
+  "queue": "queue-ready.json",
+  "queueSha256": "f8e607a574e8bbd1c7f700a5bf6602783468fa2838cd653c2e5686633682526c",
+  "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+  "preflight": "preflight-ready.json",
+  "preflightSha256": "4249e8581aeac7ba1cb2a8b96365fc50ff004331e4edfecd9d47e46aae7bf8f7",
+  "preflightSource": "fc1c9e32c0e0e6205ad795980a78738af78c6fc0",
+  "sourceSha256": "7496ae050ecadc3a92f1873e2e35adfddb6cac4a958bea260bc111ff21333aac",
+  "approval": "preflight-approval.json",
+  "approvalSha256": "6adb5492a08019669e7db18333d159d7c187068a8f055a7477d16478ff0a3352",
+  "approvalPacket": "08cac802f174384187e9c6f5908d276d1f5b5322",
+  "claim": "cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24",
+  "futureExecutionHead": "Fresh clean final delivery HEAD=origin from this owner; never assume old8c558 head after metadata commits",
+  "priorGrant": "VAR-TRANSACTION-PG-V2-20261007-ONCE cancelled; no reuse",
+  "mustNewGrantAccept": "available=max_connections-current includes this probe admin in current and does not subtract reserved connection slots. This is an instantaneous total-free-slots observation, not reservation/exclusive access.33 means planned17 configured+16 external headroom only if the new manager grant explicitly accepts this meaning/threshold and binds this source. Different threshold requires coordination, never self-authorization.",
+  "unchangedRuntime": "295files/191external/16links and fixedcaller53e5f; fixed180s110/60/10 and exact5cases preserved. Runtime executes once only after newgrant, observed<=60s claim, cleanhead, allpins/newnamespace/free and acceptedbounded capacity preflight;no retry.",
+  "futureProbeEvidence": "Persist beforelaunchclock and fixedsource hash; OPS14 exactPID/group/EOF/exit/firstfailure/retainedbytes and post-return clock; bound10s. No bare inlineNode-e probe.",
+  "noNewGrowthAuthorization": true
+}

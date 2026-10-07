@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T23:36:03.863Z",
+  "state": "SOURCE_SYNTAX_PREPARATION_REVIEW_APPROVED_STOP",
+  "source": "fc1c9e32c0e0e6205ad795980a78738af78c6fc0",
+  "result": "8258609ad29382e693acab225b80c334990eb1af",
+  "reviewPacket": "08cac802f174384187e9c6f5908d276d1f5b5322",
+  "approval": "preflight-approval.json",
+  "ready": "preflight-admission-ready.json",
+  "claim": "cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24",
+  "segmentStart": "2026-10-07T23:31:30.000Z",
+  "deadline": "2026-10-07T23:41:30.000Z",
+  "syntaxFullReturn": "2026-10-07T23:32:31.678Z",
+  "children": 1,
+  "PG": 0,
+  "HTTP": 0,
+  "temporaryRetained": [],
+  "pendingLaunch": false,
+  "futureWriteBalance": 0,
+  "growth": {
+    "newChangedFullFileBytes": 42721,
+    "indexAtomicCopyBytes": 2418882,
+    "finalReceiptAndIndexMargin": 32768,
+    "conservativeChargedBytes": 2494371,
+    "capBytes": 3145728,
+    "peak": "UNKNOWN"
+  },
+  "unchangedReviewBindings": 8,
+  "metadataShape": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "waitingIssues": []
+  },
+  "boundary": "Push/clean observation follows this receipt. No new actual permission; old failed grant remains cancelled. Returning future cap is not physical disk reclamation."
+}
