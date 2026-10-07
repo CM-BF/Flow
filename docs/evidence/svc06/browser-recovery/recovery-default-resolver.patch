@@ -1,0 +1,11 @@
+--- a/tools/personal-preview/preview.mjs
++++ b/tools/personal-preview/preview.mjs
+@@ -52,7 +52,7 @@
+   await outsideGit(actual);
+   return actual;
+ }
+-async function load(directory, serviceRole = null, launchRuntime = null) {
++async function load(directory, serviceRole = null, launchRuntime = backendRuntime) {
+   const path = await directoryPath(directory);
+   const config = await privateJson(join(path, 'config.json'));
+   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'

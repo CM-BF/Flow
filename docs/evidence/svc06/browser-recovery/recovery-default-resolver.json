@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T21:28:59.686Z",
+  "base": "f37a3612068c7215994750574a7451ede841bcce",
+  "path": "tools/personal-preview/preview.mjs",
+  "before": {
+    "bytes": 48650,
+    "sha256": "dfd8c6e2e85aa38e112c340389d8f00e02bd82610c2515ce49a30ea806b6d158"
+  },
+  "after": {
+    "bytes": 48660,
+    "sha256": "06f31de56d4fe4ca8ca0f03943843ef90547c161450759b2e5414aff83f51e14"
+  },
+  "replacement": {
+    "before": "async function load(directory, serviceRole = null, launchRuntime = null) {",
+    "after": "async function load(directory, serviceRole = null, launchRuntime = backendRuntime) {"
+  },
+  "patch": {
+    "path": "recovery-default-resolver.patch",
+    "bytes": 521,
+    "sha256": "0fa91ba2e00438f5fb2c7363efe0e5b1b913ff3565dc85f8cbf5d5b1027c0877"
+  },
+  "mainProduct": "already correct; untouched",
+  "oldArtifact": "b692 immutable; untouched",
+  "actualCold": "original TypeError/code:null and cleanup42P01 remain unchanged"
+}
