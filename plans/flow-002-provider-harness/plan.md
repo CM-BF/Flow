@@ -203,7 +203,7 @@ GO于本日完成官方只读研究并交付的候选输入：[Agents API archit
 
 ## 2026-10-07 T09 / 登录后继：Sign in with ChatGPT 候选
 
-本段归档GO本轮已打开的一手研究输入：[开源/自托管token sharing](https://developers.openai.com/siwc/token-sharing-open-source)、[sign-in](https://developers.openai.com/siwc/sign-in)、[app-server](https://developers.openai.com/siwc/codex-app-server)、[preview limitations](https://developers.openai.com/siwc/preview-limitations)。这是后继正式登录adapter候选；本段未独立复跑认证或验证固定0.154兼容，不能据文档推断Flow现账号可用。
+本段归档GO本轮已打开的一手研究输入：[开源/自托管token sharing](https://developers.openai.com/siwc/token-sharing-open-source)、[sign-in](https://developers.openai.com/siwc/token-sharing-open-source/sign-in)、[app-server](https://developers.openai.com/siwc/token-sharing-open-source/codex-app-server)、[preview limitations](https://developers.openai.com/siwc/token-sharing-open-source/preview-limitations)。这是后继正式登录adapter候选；本段未独立复跑认证或验证固定0.154兼容，不能据文档推断Flow现账号可用。
 
 该候选区分同用户/workspace的client registration与各host稳定opaque ID，不授ChatGPT历史。应用需自己的用户consent和授权持久化；初次dynamic_agent_client、callback返回issued client_id，PKCE/state/nonce及127.0.0.1 loopback均属登录Interface。不得复制其他应用OAuth client或凭据。app-server的Responses provider由应用负责refresh→restart→resume；model/list可能是bundled catalog，只有该请求成功推理才支持实际访问结论。预览约束含store:false、stream:true、本地history/resume与有限模型/API/hosted工具；voice/transcription不在此路线。
 
