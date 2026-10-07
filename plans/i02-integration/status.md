@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:25:44.147Z / main/origine65e148fd；207来源15:24:50.706Z实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:53:20.015Z / main/origin72f5758bc；207来源既有15:24:50.706Z实际载入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 本批已审 PROCESS、后台迁入模块和205来源登记已进入local main13d4327b1；原始审批与精确输入见本段接收记录 |
+| 工作基线 / HEAD | 本批已审更新入口与显式reader ports已接main72f5758bc；隔离双槽宿主准备已接24c824035，实际运行另验 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批固定输入与原raw/私有产物身份核验相符，构建结果独审批准；0重复测试/PG/浏览器/provider。 |
-| 已集成main状态 / HEAD | main/origine65e148fd；已审PROCESS、迁入模块、来源迁移均已同步。固定cd27/098b产物与当前个人运行分别记录，未混入PROCESS。 |
+| 检查状态 | 固定输入/原raw零差收录，0重复产品测试/PG/浏览器/provider；SVC06B原status末尾多一空行作为格式提示保留受审字节，owner后续正常metadata收口。 |
+| 已集成main状态 / HEAD | main/origin72f5758bc；仅受审准备/证据范围，固定cd27/04da、2515/098b与当前个人运行不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件独立进程源码与当前迁入模块已进入主线；看板已实际显示当前发布与插件工作来源。 |
-| 下一可用交付 | 完成固定新旧网页与新后台的兼容验证，再沿受管流程发布可体验页面；消息设置双槽另做真实宿主验证。 |
+| 当前产出 | 网页更新所需的受管入口已审并进入主线；新网页产物已建成，正式兼容验证待收口。 |
+| 下一可用交付 | 完成新网页与固定后台的实际兼容验证，再受管更新个人页面；另验证消息设置后台独立启动、接单和收尾。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -446,3 +446,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T15:20:05.813Z：SVC09A固定产物构建及内部加载结果独审通过，见 [限定审查](../../docs/evidence/i02/svc09a-fixed-build-result-review.json)。实际15:14:01.726Z→15:14:34.219Z，15:14:38.558644Z完整归还；宿主/个人部署仍未验。PROCESS和当前迁入模块已local main13d，远端HTTP500单列，不重跑已审检查。
 
 2026-10-07T15:25:44.147Z：远端500已解除，main/origine65e已接本批；D05207来源实际换载15:24:50.706Z，导航限定审查与原live回执已保存。未重跑工程检查、未更新个人服务。
+
+### 2026-10-07T15:53:20.015Z 已审准备接收
+
+[SVC06B当前入口审查](../../docs/evidence/i02/svc06b-current-entry-review.json)绑定6c417/4001，33个受审路径零差进入main72f5758bc；模板仍ready=false，正式报告与完整现场实例未齐，不是个人操作许可。[SVC09A宿主准备delta审查](../../docs/evidence/i02/svc09a-host-preparation-delta-review.json)已闭原P2且main24c824035；固定产物首次真实宿主旅程由原owner按已协调短窗口fresh准入，actual结果另存，不重复构建。两项均未触用户服务。
