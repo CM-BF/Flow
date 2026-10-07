@@ -1,0 +1,112 @@
+{
+  "state": "PROPOSAL_NOT_OPEN",
+  "recordedAt": "2026-10-07T08:10:02.824262+00:00",
+  "segmentStartedAt": "2026-10-07T08:03:35Z",
+  "scope": "metadata only; independent LAZY/X01 reviews interrupted preparation; no engineering child/PG/native/provider",
+  "claim": {
+    "id": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 16,
+    "state": "ACTIVE",
+    "scopeCount": 57,
+    "freshObservedAt": "2026-10-07T08:08:56Z"
+  },
+  "mainSnapshot": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 3297,
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 6563,
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 6077,
+      "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 3899,
+      "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 8686,
+      "sha256": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 3197,
+      "sha256": "5647f245725d51c8951b6851c4217a90ab3167a9ad3f14e6f6f970fc7d5f4daa"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 2382,
+      "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 1594,
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 5731,
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe"
+    },
+    {
+      "path": "apps/server/src/sessions.ts",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "path": "docs/evidence/i02/codex-conversation-intake.json",
+      "git": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+      "bytes": 19836,
+      "sha256": "883736bc02721bd42e5b6a6f6cdbb8210ba95db4814d566aeac6f0ba91c7b1b3"
+    }
+  ],
+  "historicalNative": {
+    "sourceGit": "07341d4672fb3c83090e685847818b47c34f2559",
+    "resultGit": "9b9c1182d2e649d2a68f3d3c7de980bac0e71fed",
+    "sealGit": "6dfbb213405013dea8b039670e93c6a4d8d283a3",
+    "version": "0.154.0 (historical evidence, not rerun)",
+    "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+    "bytes": 222655232,
+    "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
+    "observed": "initialize + model/list: 6 entries, 5203 bytes; 0 turns",
+    "catalogSha256": "ac40136588e0f5675716ec453aee74ae500aff693721a03cbb0972b7335130ee",
+    "currentBinaryIdentity": "UNKNOWN; must fresh verify before future execution"
+  },
+  "unverified": {
+    "account": "UNKNOWN",
+    "requestedModel": "UNKNOWN",
+    "actualModel": "UNKNOWN",
+    "noFallback": "UNKNOWN",
+    "costCeiling": "UNKNOWN",
+    "authRecipe": "UNKNOWN",
+    "exactExecutionCommand": "NOT_FIXED",
+    "executionBudget": "NOT_GRANTED"
+  },
+  "noOldWindowReuse": true,
+  "metadataLimitBytes": 262144
+}

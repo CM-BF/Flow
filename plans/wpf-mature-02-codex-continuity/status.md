@@ -7,26 +7,26 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:35:19.344267+00:00；四runner入口与main d5567801逐字一致；领取v16/57。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:10:02.824262+00:00；只读固定main9f314e89与历史父07341d46；v16/57 fresh ACTIVE。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次实际开工缺独立明确时点，不用claim/commit/mtime推断；各分段实际时点见证据。 |
 | 优先级 | 2 |
-| 本片段交付阶段 | delivered |
-| 工作分支状态 | delivered |
+| 本片段交付阶段 | planning |
+| 工作分支状态 | ready |
 | 当前产出 | Codex会话创建、连续两轮、队列与目录的共享API已集成主线；交付证据为真实PG/HTTP与注入transport，未扩大到真实模型或完整界面。 |
-| 下一可用交付 | 本片段已交付；四个已集成runner入口已正式停写交回，供插件生产接线领取；真实native及Web/TUI验收仍开放。 |
-| 当前阻塞 | NONE |
+| 下一可用交付 | 真实两轮验证提案已形成；先固定受信启动输入、模型与费用额度，再安排独立验证。已交付公开会话API不受影响。 |
+| 当前阻塞 | ACTIVE: 真实模型验证尚无新执行/费用额度，账号与实际模型证据未知；当前准备可独立完成。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 本段仅runner入口移交metadata；提交后核clean，旧封存账/产品不改。 |
-| HEAD（最近观察） | 1208dbaca9560c422f3ea525202d849da7aade8c（本段起点origin同clean；本段提交见Git） |
+| 工作树dirty状态 | 本段仅真实两轮准备与status/quality metadata；产品及旧sealed原件不变，提交后核clean。 |
+| HEAD（最近观察） | b38ecf3fca24b63d788f608557ac21b7f4a0fae1（本段起点origin同clean；本段提交见Git） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v16 ACTIVE57。07:34:40.663Z从v15原子移出configuration.ts/.test.ts和main.ts/main-concurrency.test.ts，见[正式回执](../../docs/evidence/mature02c02/runner-launch-handback-receipt.json)；X01须自身fresh amend后写。先前两index/六stream core/exchange/adapter均不重领；sentinel执行v13不改。 |
-| 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
-| 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
+| 实现目标 | C02-04真实两轮固定输入/验收准备；本轮不实施或运行native。 |
+| 实现范围 | 仅原计划/证据metadata；复用已main R06/loader，未领取或修改已交回的runner/client路径。 |
 | Review | db_transaction_owner07:11:38Z对69fa结果与8ee最小intake APPROVED/0P1P2，见[正式记录](../../docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json)；source0ecd+7070及bfae/30d原批准继承。 |
 | 检查 | 原conversation R1：6选5过1失败；本次sentinel：1选1过5未选/exit0/3HTTP，PID22298双EOF/group absent，专库与当前TMP完整收尾。旧FAIL/KEEP不回填。 |
 | main集成 | conversation已INTEGRATED@4fe33178b17925d558b5608f1b3c4ae69b3d06d5，25绑定/两个index三方保留；[main收口](../../docs/evidence/mature02c02/conversation-main-closeout.json)。此前首片/loader/main@c0e0263d、private stream@8c7f81b3、public stream@5cae7a25。 |
@@ -81,3 +81,5 @@
 2026-10-07T07:21:56.779955+00:00 Main closeout complete. First owner-confirmed main integration observation: 2026-10-07T07:20:24.759399+00:00; exact pushUTC UNKNOWN (receipt initialization07:16:41 and finalcheck07:17:07 are not push time). Branch delivery/independent review timestamps stay in their fixed receipts. Deployment/full-completion remainUNKNOWN/NOT_COMPLETED. v15 removal committed07:20:24.899Z. No new product edits/checks/PG/provider.
 
 2026-10-07T07:35:19.344267+00:00 四runner入口移交READY：STOP07:34:33.779954Z，atomic amend07:34:40.663Z/v16；四源owner HEAD=main d5567801，无未交付修改。X01依自身领取再接线，不授权发布/启用插件。仅metadata核验/状态解析，0工程checks/PG/provider。完整native/UI验收仍open。
+
+2026-10-07T08:10:02.824262+00:00 真实两轮准备：[提案](../../docs/evidence/mature02c02/native-two-turn-preparation.md) / [固定来源](../../docs/evidence/mature02c02/native-two-turn-input-facts.json)。ACTUAL_NOT_OPEN，无新模型额度；旧6目录项不证明模型资格，真实native/UI未完成。跨任务独审仅只读，不产生本片检查通过数。
