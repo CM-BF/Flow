@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T04:22:45.080022+00:00",
+  "args": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host/docs/evidence/eng01i/local/tsconfig.json"
+  ],
+  "freeBytes": 25657470976,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-eng01i-check-kae07rqy",
+  "dev": 16777234,
+  "ino": 123443419,
+  "cumulativePriorMs": 5314,
+  "bindings": [
+    {
+      "path": "apps/runner/src/engineering/native-adapter.ts",
+      "sha256": "ff107037ed4a6c55fffd568779d99dd01612654ba14c61ce7643727484322439"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.test.ts",
+      "sha256": "6a73e74c140bb5cabb4f03c4e9b560dc1df31f97379f0dfca3e1622c3bae3513"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "sha256": "95d2a5c4c0130684d36dcc5329fb0e53629412da04281a80678016f23d701e03"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "sha256": "eaa5656eb571c8ec658ff9636b35e018e025b53b2c4d704646313884c98d20b2"
+    }
+  ],
+  "PG": 0,
+  "provider": 0
+}

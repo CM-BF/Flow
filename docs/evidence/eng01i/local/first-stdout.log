@@ -1,0 +1,18 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host
+
+ ✓ apps/runner/src/engineering/native-adapter.test.ts (17 tests) 4608ms
+   ✓ publishes the exact shared native receipt only after writer revocation and a full stable capture  464ms
+   ✓ records a failed check for wrong content after confirmed writer stop  436ms
+   ✓ records a failed check for extra content after confirmed writer stop  495ms
+   ✓ retains the lease and original event on a lost artifact ACK  441ms
+   ✓ retains the lease and original event on a lost verification ACK  453ms
+   ✓ retains an unstable full capture without publishing  444ms
+   ✓ does not turn an unknown release into success after publication  443ms
+ ✓ apps/runner/src/engineering/calculator-receipt.test.ts (10 tests) 13ms
+
+ Test Files  2 passed (2)
+      Tests  27 passed (27)
+   Start at  21:22:34
+   Duration  5.02s (transform 114ms, setup 0ms, import 236ms, tests 4.62s, environment 0ms)
+
