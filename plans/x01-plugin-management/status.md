@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:11:30Z |
+| 最近更新时间 | 2026-10-07T08:15:50Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -16,17 +16,17 @@
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
 | 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，输入闭包与准备结果已封存，当前提交后clean |
-| 工作分支状态 | review |
+| 工作分支状态 | implementation |
 | 检查状态 | PG准备focusedtypes0/list5（0hooks/0case执行/0PG），2组与TMP全闭合；原19/9/3不重跑 |
-| Review | 来源六源已07:52:01独审APPROVED/READY；final deadline P2已修待窄复审；[五组PG准备](../../docs/evidence/x01/artifact-pg-review-ready.md)待独审，actual NOT_OPEN |
+| Review | 来源六源已07:52:01独审APPROVED/READY；final deadline P2已08:12:25独审关闭；[五组PG准备](../../docs/evidence/x01/artifact-pg-review-ready.md)已批准；Mika授一次R1，仍需fresh准入，尚未实际启动 |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
 | 实现目标 | f3f48929085a07a545b7cfd154d133ca99dcb8a2 |
 | 实现范围 | apps/server/src/plugin-runtime/artifact-pg.test.ts, docs/evidence/x01/artifact-pg-once.py, docs/evidence/x01/artifact-pg-local.py, docs/evidence/x01/artifact-pg-input.json, docs/evidence/x01/artifact-pg-tsconfig.json, docs/evidence/x01/artifact-pg-vitest.config.mjs, docs/evidence/x01/artifact-pg-deadline.test.py |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 来源关联模块已审待集成，真实事务验收五组已可收集；npm材料与版本固定片已进入主线 |
-| 下一可用交付 | 完成五组专库准备独审，取得实际窗口后验证来源重放与事务回滚；不预占PG |
+| 下一可用交付 | 按已授权唯一R1窗口验证来源重放与事务回滚，并据实际清理结果归还资源 |
 | 当前阻塞 | ACTIVE: 生产runtime/client由CHAT05P02持有；当前来源事务片可独立交付 |
 | 需用户决定 | NONE |
 
@@ -301,3 +301,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:04:20Z：五组来源事务准备固定source376954ac/result581cb9c1；[唯一交审入口](../../docs/evidence/x01/artifact-pg-review-ready.md)绑定264文件/1326129B、31SQL、27external/21links。两次准备检查已消费，types0/list5不等case通过；实际PG未开，run不存在，无窗口预占。原07:53:37段不重置；formal provenance六源READY保持；semver/pinning主线5b0bef收据已核，不重跑9/3。当前本组local由LAZY归还但本owner不新增检查。
 
 2026-10-07T08:11:30Z：原07:53:37准备段已结束，7aa独审唯一final-deadline P2保留；Mika08:09新授独立≤5min窄修，sourcef3f48929085a07a545b7cfd154d133ca99dcb8a2，result39594de44062a73f792d7fb8fb5f8eecebc73654。同origin final reserve/pre-save gate/post-save独立delivery修正，1纯时钟反例通过，98Braw/0TMP/0PG，实际08:10:47闭合并归还local；旧两准备检查不重跑、不追溯扩预算。当前仅待原reviewer窄复审，PG仍NOT_OPEN/无reservation；完整生产runtime/semver公开链未交付。
+
+2026-10-07T08:15:50Z：chatui08:12:25准备增量APPROVED/0P1P2归档，Mika授artifact PG-R1唯一180s；P02已08:12:42实际closed。本owner将在fresh完整claim/cleanHEAD/266inputs/absent/资源门槛通过后排他创建一次准入；此行不是实际RUN，实际结果另留原件。旧7aa/96f证据不改。
