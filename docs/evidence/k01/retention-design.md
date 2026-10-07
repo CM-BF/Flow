@@ -17,7 +17,7 @@
 选择一个knowledge留存模块，使用显式的managed-retention协商。拒绝仅抬身份上限而不界定容量；也不另建无限冷库来绕过64MiB。不造通用GC服务、后台扫描器或第二命令存储。
 
 1. **身份与容量分离。** `version/currentVersion/currentVersionAtFreeze/expectedVersion`保留JSON number与PostgreSQL int32，合法范围1..2,147,483,647；create expectedVersion仍0。source.current_version是已提交发布的单调高水位，新成功版本=head+1，绝不重排、复用、按digest合并；到int32末值显式拒绝。实际保留版本数仍建议每source16、project原文64MiB、source128、单正文256KiB。空正文也占一个保留槽。count与byte容量由同事务检查，不能由身份编号推导。
-2. **永久保护与可释放固定引用分开。** 当前head、legacy/unknown引用状态和内部历史永久保护标记均不可回收。K02/K03已不可删除的历史首次引用某版本时，在原冻结事务中设置该版本永久保护标记，不为每次冻结新增无限holder行。外部固定引用通过owner命令取得有界holder/pin；建议每保留版本至多64个活动holder，释放只能移除该holder，不能解除legacy/内部保护。引用正文/locator/digest校验和pin必须先于“固定引用成立”，且与调用命令提交原子一致；错误/锁超时/未知结果不能跳过pin继续。
+2. **永久保护与可释放固定引用分开。** 当前head、legacy/unknown引用状态和内部历史永久保护标记均不可回收。K02/K03已不可删除的历史首次引用某版本时，在原冻结事务中设置该版本永久保护标记，不为每次冻结新增无限holder行。外部固定引用通过owner命令取得有界holder/pin；每次pin有不可复用的实例ID，release绑定该ID及project/source/version，不按可复用owner/name寻址，再次pin同citation也必须新ID，旧release/迟到请求不能作用于新实例。建议每保留版本至多64个活动holder，释放只能移除该holder，不能解除legacy/内部保护。引用正文/locator/digest校验和pin必须先于“固定引用成立”，且与调用命令提交原子一致；错误/锁超时/未知结果不能跳过pin继续。
 3. **preview不是固定引用。** managed来源新发布receipt/search/read可返回明确的临时身份/preview；永久引用必须取得pin，或者在Send/Queue/goal定义的同事务中永久保护。KnowledgeCitation字段和canonical字节不改；保护状态放在独立协议/envelope，不把pin ID塞进既有citation/digest。临时preview与原文缓存不保证以后仍可固定：回收先发生时pin明确version_gone，不能偷偷换head。
 4. **legacy保守兼容。** 前进迁移保留全部既有号/正文/digest/ACK并标记legacy保护，不据018/021反查为空而解除。未协商managed能力的旧客户端不能在managed可回收版本上静默取得被它当永久引用的结果：首片推荐明确upgrade-required错误、无部分结果；选择保守保护后兼容暴露是另一可行策略，但不得混用成隐式保护。新客户端到旧中心仅使用原保留语义，不发送未知字段或自动改协议。send/queue的协议选择必须与body/key一起冻结，未知ACK只重试原请求；不能同key切协议，也不能在ACK未知时换新key再发。协议变化须先明确解决原未知结果，再建立新的逻辑命令。既有legacy来源继续原兼容行为；是否新建/发布managed版本须明确选择，不能批量切换旧来源。端点/协商字段由后续合法owner固定，本次不抢共享接口。
 5. **归档与回收不同。** 归档只表示退出当前检索/按需读取；保留的完整正文继续计入16/64MiB。可删除旧chunks来减少投影，但这不释放原文容量，也不是完整版本已回收。回收只删除已知managed、无内部/legacy保护且无外部holder的完整旧版本及衍生chunks。source/head不删除；冻结详情仍需它报告currentVersion。旧序号≤高水位且不在保留集合，可明确gone；未来号not-found，不为每个回收号永久增加tombstone。
@@ -68,6 +68,6 @@ Root与chatui01只读输入已合入同一记录，不另造下游事实源。�
 | K01-R09 | citation1+currentVersionAtFreeze17和citation17穿过server/client/Web/context history；旧中心/旧client/不协商managed明确兼容或拒绝，绝不假报head16 |
 | K01-R10 | 前进迁移重启，旧015/018/021 bytes与receipt完整；直接UPDATE/DELETE/TRUNCATE保护不能绕过，current source不可删；已回收号gone/未来号not-found |
 | K01-R11 | search仍只当前source、excerpt≤512B/JSON≤48KiB，resolve≤4KiB，context详情≤8KiB/JSON≤64KiB；projection删减不改变原文authority |
-| K01-R12 | 满额只拒新增占用，已存在holder仍可release并恢复发布容量；release掉ACK同key/body/协议回原receipt，重启/未知结果不改引用身份、不换key，存储故障回滚/恢复后可继续；future receipt生命周期必须通过此恢复门槛 |
+| K01-R12 | 满额只拒新增占用，已存在holder仍可release并恢复发布容量；release掉ACK同key/body/协议回原receipt，重启/未知结果不改引用身份、不换key，存储故障回滚/恢复后可继续；release→重新pin→旧release重放/迟到仅涉及旧实例；future receipt生命周期必须通过此恢复门槛 |
 
 只在未来获产品scope后做唯一专库/动态端口/0模型功能验证及直接消费者检查；本次未运行它们。保留纯metadata审查与产品实现/验证/集成的区别。

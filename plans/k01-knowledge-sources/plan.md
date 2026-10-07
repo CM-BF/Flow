@@ -31,7 +31,7 @@
 
 **本次推荐，未实施：** 身份用JSON number/PG int32正整数，currentVersion作已提交单调高水位；16是实际保留版本数而非编号上限，64MiB/128 sources/256KiB保持有界。原版本全部legacy保守保护；新managed协议区分临时preview/receipt与已持久固定引用。当前head、legacy/unknown、K02/K03内部历史永久保护及外部有界holder不可回收；归档原文仍计容量。只回收经同version锁/FK证明可回收的版本；发布拟定newhead后，确无引用保护的oldhead可成为候选，所有失败保留原head/bytes/receipt。16个durable/legacy/unknown全保护则拒绝，不能承诺旧满源或有限容量下无限发布。
 
-内部保护拟用每version永久标记，外部可释放holder建议每version≤64，不额外积累无限tombstone。配额限制新增占用不能阻断安全释放既有holder；满额仍可release，掉ACK保持原key/body/协议重放，未知不假称已释放，存储恢复后可继续。本次有界证明只覆盖保留原文/版本/投影/pin元数据；flow.commands原ACK/重放规则不改，其生命周期是实施前需审定的跨模块依赖，不声称整个DB永久有界，也不把4096等终身命令上限作为替代方案。具体schema、协商字段/endpoint、计数索引及前进migration只由后续合法owner落实，当前无产品权限。source identity不删除，历史详情仍读其head；旧citation/digest/冻结正文/执行prompt不重写。
+内部保护拟用每version永久标记，外部可释放holder建议每version≤64，不额外积累无限tombstone。配额限制新增占用不能阻断安全释放既有holder；holder使用不可复用pin实例ID，旧release不得影响重新pin的新实例；满额仍可release，掉ACK保持原key/body/协议重放，未知不假称已释放，存储恢复后可继续。本次有界证明只覆盖保留原文/版本/投影/pin元数据；flow.commands原ACK/重放规则不改，其生命周期是实施前需审定的跨模块依赖，不声称整个DB永久有界，也不把4096等终身命令上限作为替代方案。具体schema、协商字段/endpoint、计数索引及前进migration只由后续合法owner落实，当前无产品权限。source identity不删除，历史详情仍读其head；旧citation/digest/冻结正文/执行prompt不重写。
 
 状态所有权保持：knowledge负责原文/身份/保护；K02/K03负责冻结输入与自己的锁，pin在caller事务内向下锁有序version，不能反向再拿project/source；publish/reclaim沿project→source向下。该锁序建议必须用真实竞争测试证明，不能把只读推导当已验。无缺省pin降级、无TTL推定旧引用失效，无通用GC/新broker。
 
