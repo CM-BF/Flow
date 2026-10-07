@@ -134,5 +134,16 @@
   },
   "actualScope": "pure/injected only; no HTTP/PG/provider/native",
   "segmentStartedAt": "2026-10-07T07:59:19Z",
-  "rawBytes": 1104
+  "rawBytes": 1104,
+  "limitClarification": {
+    "inheritedDescriptorChildren": 4,
+    "authorizedMaximumChildren": 2,
+    "actualCodeEnforcedMaximumChildren": 2,
+    "actualChildren": 1,
+    "reason": "Original limit descriptor is inherited from old runner; assert gate used2 for gate_mode. No additional child authorized or run."
+  },
+  "postRunDelta": {
+    "path": "execute-pg.py",
+    "change": "CLI prints independently confirmed boolean rather than consulting untrusted loaded fixture shape. Tested gate functions unchanged; no rerun needed."
+  }
 }

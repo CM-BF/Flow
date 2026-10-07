@@ -126,7 +126,7 @@ def main():
    require_phase(started,'FINAL_RECEIPT',1);helper.save(paths['result'],record);written=True
   except BaseException as error:record['secondary'].append({'phase':'result','type':type(error).__name__,'code':str(error)if isinstance(error,ValueError)else'FINAL_RECEIPT_UNKNOWN'})
   delivery={'finalReceiptWritten':written,'elapsedAfterReceipt':time.monotonic()-started};delivery['success']=record['internalChecksPassed']and written and not record['secondary']and delivery['elapsedAfterReceipt']<90
-  print(json.dumps({'window':window,'delivery':delivery,'primary':record['primary'],'secondary':record['secondary'],'internalChecksPassed':record['internalChecksPassed'],'processClosed':closed,'fixtureCleanup':(record.get('fixture')or{}).get('facts',{}).get('cleanupComplete'),'tmp':record['tmp'],'elapsedSeconds':record['elapsedSeconds']}))
+  print(json.dumps({'window':window,'delivery':delivery,'primary':record['primary'],'secondary':record['secondary'],'internalChecksPassed':record['internalChecksPassed'],'processClosed':closed,'fixtureReceiptConfirmed':fixture_confirmed,'tmp':record['tmp'],'elapsedSeconds':record['elapsedSeconds']}))
  return 0 if delivery['success']else 1
 
 if __name__=='__main__':raise SystemExit(main())
