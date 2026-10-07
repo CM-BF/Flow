@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07T06:52:12.648667+00:00",
+  "status": "READY_FOR_FAILURE_FIDELITY_AND_SENTINEL_DELTA_REVIEW_NOT_OPEN",
+  "failedResultTarget": "630e351f7fd917db8d96b7be81bf899f2f674276",
+  "failedResultManifest": {
+    "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.manifest.json",
+    "bytes": 10951,
+    "sha256": "bf868e3630e912ddf28bee603d334e337f26f0d2583d0f23041a3feefa50faf4"
+  },
+  "fixtureSource": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+  "supportSource": "30d540e6178336f4659d6ab1f95d5416b9594f61",
+  "base": "630e351f7fd917db8d96b7be81bf899f2f674276",
+  "manifest": {
+    "path": "docs/evidence/mature02c02/pg-conversation-sentinel-source-manifest.json",
+    "bytes": 8417,
+    "sha256": "1f29a080396ad7e49bd544870f5d30e5ad0f87a943e8028024f4ad54a034ff65"
+  },
+  "expandedInputs": {
+    "count": 318,
+    "bytes": 1816095,
+    "delta": 28,
+    "GitWTerrors": []
+  },
+  "bindings": [
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "bytes": 15057,
+      "sha256": "3ead98e121d06118cbc5e311173281c2292a1dbb0583b8720a702927063631d0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/execute-pg-once.py",
+      "bytes": 21211,
+      "sha256": "bcc6ea62408982f8ba4a86bffd61d52ec5d9f7e9a0c16d5a1f3a6e1fd484f719"
+    },
+    {
+      "path": "docs/evidence/mature02c02/adapter-handback-receipt.json",
+      "bytes": 3920,
+      "sha256": "27aaa5590a9583d84ccdf5e2f1e62338db4031f9398e2f745d4e6de701ccb873"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-local.json",
+      "bytes": 5661,
+      "sha256": "1ccdf6ed5f01b242790821236342d9ec2305d3a05df40837e007c873900050f6"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stdout",
+      "bytes": 125,
+      "sha256": "bc203d5171a35cb9851704aba750af69a9a76bd843144465e9daf1f31140d864"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "reviewScope": [
+    "fixed R1 actual result fidelity only;5/6 remains FAIL and outerTMP KEEP",
+    "fixture INSERT override and unchanged GET rejection/immutable trigger",
+    "finite exact one-case selection/current claim receipt; original six-case modes/lifecycle unchanged",
+    "focusedtypes0/list1 only; no PG cases executed"
+  ],
+  "actualPG": 0,
+  "native": 0,
+  "provider": 0,
+  "oldRootAccess": false,
+  "budgetObservation": {
+    "startedAt": "2026-10-07T06:47:28Z",
+    "beforeFinalPersistenceAt": "2026-10-07T06:52:37.352212+00:00",
+    "sourceMetadataBytesBeforeThisField": 74264,
+    "sourceMetadataLimit": 262144,
+    "engineeringChildren": 2,
+    "rawBytes": 125,
+    "localActualClosed": true,
+    "PG": 0
+  }
+}

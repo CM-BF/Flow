@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:46:36.856151+00:00；main5cae7a25沿原固定receipt。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:52:12.648667+00:00；main5cae7a25沿固定receipt。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,19 +15,19 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | 真实公开会话验收已单次运行：两轮会话、目录分页和队列等5项通过；最后一项夹具修改被数据库不可变规则拒绝，整组失败待独审。 |
-| 下一可用交付 | 固定本次失败及清理事实供独审；随后仅修损坏sentinel夹具的直接问题，后续PG需新窗口。 |
-| 当前阻塞 | ACTIVE: 最后一项损坏profile夹具在读取断言前被不可变触发器拒绝；本次5/6不能作为完整会话验收。 |
+| 当前产出 | 会话PG首次5/6失败已封存；损坏profile夹具已改为新建记录，保留读取拒绝断言，单项后继类型与收集通过，待独审。 |
+| 下一可用交付 | 独审本次失败事实及夹具小增量后，只为最后一项协调新的专库窗口；前五项不重跑。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
 | 工作树dirty状态 | 当前仅本次结果/回执/status；最终提交后核clean，产品与原输入不改。 |
-| HEAD（最近观察） | 668a0683a94202b2f53ade7f258308f84bd8fbe0（实际执行；本次结果metadata随后固定） |
+| HEAD（最近观察） | 30d540e6178336f4659d6ab1f95d5416b9594f61（窄修源码；本次metadata packet随后固定） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v13 ACTIVE71；运行历史仍v12/72。adapter.ts已STOP并于06:45:25.779Z移除：[正式回执](../../docs/evidence/mature02c02/adapter-handback-receipt.json)，S01须自己fresh领取。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
-| Review | 准备与分页P2于06:40:56Z独审通过；本次6选5过1失败结果忠实性待独审。 |
+| Review | 原准备P2已关闭；失败630e及新bfae/30d夹具、单项输入待一次独审，PG仍NOT_OPEN。 |
 | 检查 | 会话PG R1：6选5过1失败/exit1/122HTTP；PID97064 group absent/双EOF，DB与服务正常关闭，外TMP KEEP。旧类型、原失败及unknown不重写。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -67,3 +67,5 @@
 2026-10-07T06:44:33.627214+00:00 Current admission: OPEN for MATURE02C02-CONVERSATION-20261007-R1, holder=mika/chatui01_owner. Fresh v12/72,317inputs,2external,20links,10outputs absent; floor4053008384B. Source review APPROVED 06:40:56Z. Target not yet started; original operator records actual start. See conversation-pg-r1-admission.json. No automatic retry.
 
 2026-10-07T06:46:36.856151+00:00 Actual CONSUMED/CLOSED; PG holder returned. [Result](../../docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.report.md). No remaining launch. Runtime v12 remains frozen; current v13 adapter handback is separate.
+
+2026-10-07T06:52:12.648667+00:00 Next fixed entry: [sentinel review](../../docs/evidence/mature02c02/conversation-pg-sentinel-review-ready.json). Original R1 remains5/6 FAIL/outerTMP KEEP at630e. New source only inserts the bad record at creation; trigger unchanged, exactGET assertion unchanged. Types0/list1 only; no new PG. Current v13 adapter handed back; client/contracts remain held until conversation acceptance/main.

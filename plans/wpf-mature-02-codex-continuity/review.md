@@ -25,3 +25,7 @@ db_transaction_owner 06:34:28Z对88487552的317绑定/准备结果复核，CHANG
 ## 2026-10-07T06:46:36.856151+00:00 — preparation accepted, actual failed
 
 db_transaction_owner06:40:56Z DELTA_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED, sourcee7a/packetb3f, paginationP2 CLOSED/0remaining. One actual668a selected6/passed5/failed1, immutable profile fixture UPDATE rejected before sentinel GET; resources closed except exact outerTMP KEEP under original strict gate. Result fidelity review pending, no retry or source change.
+
+## 2026-10-07T06:52:12.648667+00:00 — immutable sentinel fixture correction, NOT_OPEN
+
+R1 result fixed630e selected6/passed5/failed1, no automatic retry. Sourcebfaee0cd creates a corrupt fixture atINSERT instead of forbiddenUPDATE; valid first/bad sentinel order is asserted and originalGET rejection unchanged. Support30d540e6 chooses this independent case with fixed -t and1pass/5unselected gate; original six-case paths unchanged. Types0/list1 only. One combined failure-fidelity and delta review pending via conversation-pg-sentinel-review-ready.json.

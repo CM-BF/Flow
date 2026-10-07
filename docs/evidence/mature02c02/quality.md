@@ -15,3 +15,5 @@
 2026-10-07T06:38:52.354024+00:00 clean-code安全点：沿已读find-skills/codebase-design/clean-code@bdacd76；只在原case用确定fixture数据表达分页职责，无产品seam/随机概率/新框架。SQL预置顺序显式断言，HTTP逐页读保持，旧创建/重放与route拒绝不删；六case稳定。新类型0，0PG/旧根访问；首准备P2历史保留。
 
 2026-10-07T06:46:36.856151+00:00 Actual closeout: preserved6/5/1 and trigger failure at fixture setup; no relaxing immutable policy or replacing failed assertion. Runtime result frozen; lifecycle facts separated from test outcome and retained TMP. Adapter scope formally returned after runtime close, not inferred free. One result/accounting record; no new framework or tests.
+
+2026-10-07T06:52:12.648667+00:00 New bounded fix clean-code review: reused seedProfile with explicit test-only digest input; no production immutability bypass. Case owns its rows and needs no earliercase. Reused samefixture/operator and exactVitest filter, retaining normal lifecycle. One newtypes + onecollect only,2child closed/TMPsameinode removed,125B raw. R1 failures and KEEP untouched; PG notopened.
