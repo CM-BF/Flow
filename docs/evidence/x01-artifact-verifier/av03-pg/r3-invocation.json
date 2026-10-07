@@ -1,0 +1,50 @@
+{
+  "state": "PREPARATION_REVIEW_PENDING_NOT_OPEN",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+  "argv": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C",
+    "LC_ALL=C",
+    "TZ=UTC",
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-I",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/pg-r3-once.py",
+    "--admission",
+    "<FRESH_ABSOLUTE_ADMISSION_PATH>",
+    "--sha256",
+    "<SHA256_OF_EXACT_ADMISSION_BYTES>"
+  ],
+  "callerCommit": "7c76b372405cac2c741b24871e8cb39eaa5f12ec",
+  "callerSha256": "172d4523ab21224aaade97ed323e759deb987e5106ccef1c667ac46e89e4f281",
+  "admissionInterface": {
+    "lead": "mika",
+    "stage": "AV03_VERIFIER_CLAIM_PG",
+    "state": "OPEN only after future unique manager NEXT",
+    "claim": "fresh exact a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25 matching fixed receipt",
+    "ledgerObservedAt": "fresh <=60s at original caller start; prepare invocation before reading ledger",
+    "head": "exact future clean execution HEAD=origin;record before new admission",
+    "window": "fresh32hex generated for future unique actual;no current allocation",
+    "manifestSha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf",
+    "pairedBytes": "future complete floor minus fixed base1242562560;current metadata sample is not admission",
+    "resourceFloor": "future complete manager floor incl all actual/potential/KEEP and one cleanupreserve;latest value not guessed"
+  },
+  "checksBeforeLaunch": [
+    "root/ownedevidence identity",
+    "exactclaim and fullledger",
+    "clean executionHEAD/origin",
+    "281fixed inputbytes/191external/16links/34SQL",
+    "exact R2 namespace absent",
+    "fresh whole budget/free"
+  ],
+  "execution": "Same reviewed operator; invoke immediately after fresh admission in one submitted call. Do not wait for chat/metadata after creating admission. The operator may create namespace only during actual grant.",
+  "outerEvidence": "Record actual outer PID/PGID/start/end/exit and raw stdout/stderr with monotonic wall;caller independently records before-save/post-save delivery. Archive only after actual return;no wrapper-changing supervision.",
+  "onFailure": "Preserve raw/result/receipt;no automatic second actual or forced DROP. Confirm resource state before RETURN;unknown KEEP.",
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/av03-verifier-claim-pg-run-r3",
+  "current": "0actual/0admission/0newnamespace",
+  "claimRebinding": "Only receipt metadata changed; original argv/caller/environment/deadlines unchanged; pre-handback invocation preserved.",
+  "rootGuardReview": "root-guard-approval.json; independently approved helper/caller binding, actual still requires future NEXT and fresh gates",
+  "callerRepair": "Only original caller RUN/input/manifest literals name R3; lifecycle/selector/180s unchanged; no extra supervisor."
+}
