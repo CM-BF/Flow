@@ -16,3 +16,9 @@
 ## 实际首轮（2026-10-07T05:43:52.515343+00:00）
 
 固定入口ccf977a5b78b2acef67f1196db715d74fdb12317，outer exit1，263ms。策略渲染完成，shim因未确认FD上界在exec之前退出；stock helper实际0次，第二项未执行，语义用例0完成。两组absent/双EOF，raw1539B，末采scratch1175B，checkpoint后确切dev/ino目录正常删除。原失败不修改，无自动重试；不得将此脚手架拒绝称为native工具失败。详见[result-analysis](result-analysis.json)、[原result](run-once/result.json)、[原工具回执](run-once/outer-tool.json)。
+
+## 同scope新有限段：FD实际集合修正
+
+新入口`--run-fd-fix`用exclusive run-fd-fix目录，原run-once不变。移除RLIMIT任意上界假设；单线程exec-only在dup/close请求后只枚举一次`/dev/fd`（≤256合法数字项），关闭>2；仅容忍listdir自身瞬态FD的EBADF，其他错误拒绝。随后只做fcntl/fstat，不再打开文件，确认stdin只读regular、stdout/stderr为监督pipes后exec。OPS14原Popen默认close_fds=True不改。
+
+同一个≤10秒段先加1个≤.8秒dummy exec，parent故意把自己打开的一个写FD标inheritable；在实际OPS14→shim→exec的child核该FD不存在、stdin只读且字节确切、1/2为pipes、host文件未变。之后原Node策略渲染和最多2个stock helper。四个子进程串行；总raw上限仍64KiB（dummy2KiB+policy4KiB+helper各20KiB=46KiB），同一截止与cleanup不放宽。不是重新运行已通过生产/syscall或模型检查。原失败保留，新段来源为Lead在原263ms清理后明确授权局部修正与新有限段；assignment/X01本队local均已归还。

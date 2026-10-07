@@ -6,7 +6,8 @@ import hashlib
 import importlib.util
 import json
 import os
-import resource
+import errno
+import fcntl
 import shutil
 import signal
 import stat
@@ -57,7 +58,7 @@ def file_identity(path):
     return [value.st_dev, value.st_ino, value.st_size, value.st_mtime_ns, value.st_ctime_ns]
 
 
-def exec_only(scratch, request):
+def exec_only(scratch, request, dummy_fd=None):
     """Popen closes inherited FDs; only this readonly FD replaces DEVNULL stdin."""
     if scratch.resolve() != scratch or request.parent != scratch:
         raise RuntimeError('SHIM_PATH_INVALID')
@@ -69,14 +70,34 @@ def exec_only(scratch, request):
         os.dup2(fd, 0, inheritable=True)
     finally:
         os.close(fd)
-    maximum = resource.getrlimit(resource.RLIMIT_NOFILE)[0]
-    if not 3 <= maximum <= 65536:
-        raise RuntimeError('SHIM_FD_LIMIT_UNKNOWN')
-    os.closerange(3, maximum)
+    # This shim is single threaded. listdir may show its own transient directory
+    # FD, which has already closed before it returns; only EBADF is tolerated.
+    descriptors = os.listdir('/dev/fd')
+    if len(descriptors) > 256 or any(not name.isascii() or not name.isdecimal() or int(name) > 2147483647 for name in descriptors):
+        raise RuntimeError('SHIM_FD_SET_UNKNOWN')
+    for number in sorted(int(name) for name in descriptors if int(name) > 2):
+        try:
+            os.close(number)
+        except OSError as error:
+            if error.errno != errno.EBADF:
+                raise
+    if fcntl.fcntl(0, fcntl.F_GETFL) & os.O_ACCMODE != os.O_RDONLY:
+        raise RuntimeError('SHIM_STDIN_NOT_READONLY')
+    if not all(stat.S_ISFIFO(os.fstat(number).st_mode) for number in (1, 2)):
+        raise RuntimeError('SHIM_OUTPUT_NOT_PIPE')
+    # No new file open after closure. The same supervised PID execs the sandbox.
+    if dummy_fd is not None:
+        program = '''import os,sys,json,fcntl,stat
+number=int(sys.argv[1])
+try: os.fstat(number); absent=False
+except OSError as error: absent=error.errno==9
+print(json.dumps({'extraFdAbsent':absent,'stdinReadonly':fcntl.fcntl(0,fcntl.F_GETFL)&os.O_ACCMODE==os.O_RDONLY,'outputsArePipes':all(stat.S_ISFIFO(os.fstat(n).st_mode) for n in (1,2)),'request':sys.stdin.read()}))
+'''
+        os.execve(sys.executable, (sys.executable, '-B', '-c', program, str(dummy_fd)), dict(os.environ))
     os.execve('/usr/bin/sandbox-exec', ('/usr/bin/sandbox-exec', '-f', str(scratch/'policy.sb'), str(BINARY), '--codex-run-as-fs-helper'), dict(os.environ))
 
 
-def run():
+def run(fixed_fd=False):
     started = time.monotonic()
     # No persistence in the deadline handler. OPS14 receives the remaining work
     # budget; this guard bounds parent preparation/reporting too. Unknown keeps.
@@ -84,7 +105,7 @@ def run():
         os._exit(124)
     signal.signal(signal.SIGALRM, deadline)
     signal.setitimer(signal.ITIMER_REAL, 10)
-    out = HERE / 'run-once'
+    out = HERE / ('run-fd-fix' if fixed_fd else 'run-once')
     out.mkdir()  # exclusive; never replays this invocation
     summary = {'startedAt': utc(), 'providerCalls': 0, 'PG': 0, 'cases': [], 'primaryFailure': None,
                'cleanup': {'state': 'unknown', 'removed': False}, 'limits': {'totalSeconds':10,'rawBytes':65536,'scratchBytes':1048576}}
@@ -134,6 +155,24 @@ def run():
             if report.first_failure or report.exit_code != 0 or report.owned_state != 'absent' or not all(report.eof.values()):
                 raise RuntimeError(label.upper()+'_PROCESS_NOT_CLEAN')
             return report.stdout
+
+        if fixed_fd:
+            request = scratch/'dummy.request.json'
+            persist(request, b'{"fixture":"readonly"}\n')
+            host_file = scratch/'host-only.txt'
+            persist(host_file, b'0')
+            descriptor = os.open(host_file, os.O_WRONLY | os.O_NOFOLLOW)
+            try:
+                os.set_inheritable(descriptor, True)
+                output = invoke('fd-control', (sys.executable,'-B',str(Path(__file__).resolve()),'exec-dummy',str(scratch),str(request),str(descriptor)), 2048, .8)
+            finally:
+                os.close(descriptor)
+            facts = json.loads(output)
+            expected = {'extraFdAbsent':True,'stdinReadonly':True,'outputsArePipes':True,'request':'{"fixture":"readonly"}\n'}
+            summary['fdControl'] = {'passed':facts == expected and host_file.read_bytes() == b'0', 'facts':facts}
+            persist(out/'fd-control.facts.json', summary['fdControl'])
+            if not summary['fdControl']['passed']:
+                raise RuntimeError('FD_CONTROL_FAILED')
 
         render = "import {createDarwinWriteProfile} from " + json.dumps(POLICY.as_uri()) + "; process.stdout.write(createDarwinWriteProfile({root:process.argv[1],executable:process.argv[2],writableFile:process.argv[1]+'/calculator.mjs'}));"
         policy = invoke('policy', (NODE, '--input-type=module', '-e', render, str(scratch), str(BINARY)), 4096, 1.5)
@@ -196,8 +235,10 @@ def finish(out, summary, started):
 
 
 if __name__ == '__main__':
-    if sys.argv[1:] == ['--run']:
-        raise SystemExit(run())
+    if sys.argv[1:] in (['--run'], ['--run-fd-fix']):
+        raise SystemExit(run(sys.argv[1] == '--run-fd-fix'))
+    if len(sys.argv) == 5 and sys.argv[1] == 'exec-dummy':
+        exec_only(Path(sys.argv[2]), Path(sys.argv[3]), int(sys.argv[4]))
     if len(sys.argv) == 4 and sys.argv[1] == 'exec-only':
         exec_only(Path(sys.argv[2]), Path(sys.argv[3]))
     raise SystemExit(64)
