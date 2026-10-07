@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "manifest": "docs/evidence/x01-cli-commands/review-fix-manifest.json",
+  "manifestSha256": "5464a0d85ece80da58fa02cf14cf961e7ccf7b999faca57fb44466fe02e14b28",
+  "bindings": 99,
+  "bytes": 512426,
+  "priorReview": "chatui01_owner 2026-10-07T10:19:54Z SOURCE_CHANGES_REQUESTED oneP2",
+  "delta": "strict configurationStatus + realCLI 1new case/five malformed kinds",
+  "checks": "1selected1passed18unselected;focusedtypes0",
+  "realPG": "NOT_RUN",
+  "sourceScope": [
+    "packages/client/src/plugin-management.ts",
+    "apps/cli/src/plugin-runtime.test.ts",
+    "docs/evidence/x01-cli-commands/run-local.py"
+  ]
+}

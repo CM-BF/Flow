@@ -18,3 +18,11 @@ Task/stack: X01 owner management, Node24/TypeScript/Fetch/CLI parseArgs. Local f
 Four children total supervision4018ms/raw7805B, each reaped/final owned absent/MERGED EOF/observed=retained, no signal or secondary failure. Historical Darwin EPERM observations remain raw audit, do not override later owned-absent facts. Business nonzero remains FAIL. Four TMPs were same reserved dev/inode, non-symlink and empty before ordinary rmdir; recorded absent. Empty end samples are not peak memory claims. Wrapper wall is pre-final-persistence, not whole external tool clock. Caller reuses OPS14 supervise; no new lifecycle framework.
 
 The red source texts and base client/CLI preimages are retained under red; green failing client test text is retained under green. Success assertion was not deleted: CSRF fixture corrected from invalid string to existing64hex contract. Earlier READBOUND and X01 PG/type evidence were not rerun or repackaged as these tests. `diff --check` product and markdown clean; Vitest raw leading/trailing blank lines intentionally preserved.
+
+## Independent review correction
+
+chatui01_owner 2026-10-07T10:19:54Z reviewed sourcec8a62ed0/packet19c56436: one P2, `String(configurationStatus)` could accept JSON array['ready']. No other P1/P2. Original93 bindings504669B/6deps and four local outcomes were accepted as faithful; not source approval.
+
+Fixed source9f5d61a10504536f43adca28096878eb71d7fa52: strict ready/incomplete literal identity, no other product delta. New real runCli→FlowClient test rejects array/object/boolean/null/number status, exit4/no success output/no automatic retry. ack-fix actual10:19:55.210221→10:19:56.184385,1selected1passed18unselected/exit0/961ms/raw421B; types-fix10:19:56.292719→10:19:57.556176 exit0/1254ms/raw0B. Both finalownedabsent/MERGEDEOF, completebytes, no signals/secondary; bothsameinodeemptyTMP ordinaryrmdir. Shared local handed back architecture_read10:19:57. Original18 not repeated. Full original segment sixchildren6233ms/raw8226B; still below120s/512KiB. Historical failed/raw unchanged.
+
+Clean-code safety point2026-10-07T10:20:42.513419+00:00: exact enum check, public counterexample rather than matching private implementation, no extra ACK codec/transport/claim path. Pending narrow independent re-review.
