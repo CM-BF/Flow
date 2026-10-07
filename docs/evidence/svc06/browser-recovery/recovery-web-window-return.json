@@ -1,0 +1,37 @@
+{
+  "startedAt": "2026-10-07T23:35:35.341Z",
+  "returnedAt": "2026-10-07T23:36:06.257Z",
+  "outcome": "TRANSFER_AND_PUBLICATION_CONFIRMED",
+  "actions": [
+    {
+      "action": "transfer",
+      "at": "2026-10-07T23:35:52.337Z",
+      "pid": 51407,
+      "exitCode": 0,
+      "elapsedMs": 16994,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null
+    },
+    {
+      "action": "publish",
+      "at": "2026-10-07T23:36:06.256Z",
+      "pid": 61509,
+      "exitCode": 0,
+      "elapsedMs": 13918,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null
+    }
+  ],
+  "persistentRoles": "KEEP_RUNNING",
+  "actualClaim": "NOT_OBSERVED",
+  "operatorTasks": 0,
+  "provider": 0
+}

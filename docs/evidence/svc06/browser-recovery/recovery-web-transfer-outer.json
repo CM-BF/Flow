@@ -1,0 +1,33 @@
+{
+  "pid": 51407,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 16994,
+  "stdout": "{\"outcome\":\"web-artifact-imported-pointer-unchanged\",\"artifact\":{\"artifactId\":\"779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4\",\"sourceHead\":\"c2311b6bd44a2a8e73e3b066be5f12bc8b153b37\",\"manifestDigest\":\"779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4\"}}\n",
+  "stderr": "",
+  "observed_bytes": 287,
+  "retained_bytes": 287,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:33:03.684Z；Web调用窄修已独审通过，等待唯一实际发布窗口；04未知原样保留 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:37:30.373Z；779网页已受管发布为v4，执行窗口已归还，结果待独立审查 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,18 +14,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
 | 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；本次Web修复source6491c4815cd6daf8f640648d5e8a25a599d8cd92，旧f0及fresh包99c0保留 |
-| 工作树dirty状态 | source6491两文件停写；仅局部04/05原件、一次关联观察及overlay/status封存；恢复135pins无修改 |
+| 工作树dirty状态 | source6491保持；本次仅实际输入、公开结果原件/manifest与status封存；无运行child或pending |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布尚未启动 |
 | 实现范围 | 仅own Web caller及直接测试：外preview锁内复用公开只读维护store和固定Pool，不改运行产物 |
-| 检查状态 | 正确6新+1受影响通过；误选04默认发现/输出限额FAIL与双EOFfalse保留，未捕获范围UNKNOWN；五轮3044ms/观察146861B，所有登记组最终absent；一次74ms关联观察无匹配，不证明全部逃逸后代不存在 |
+| 检查状态 | 实际transfer16994ms与publish13918ms均exit0/双EOF/各组absent；紧前只读8606ms通过，总raw2289B；原局部6+1有效且04失败未知保持 |
 | 已集成main状态 / HEAD | runner初始化source77b489已main770bd2c05；Web后继f0f/d813由Lead限定批准，I02 review已main71288a457；个人R2 e15实际恢复结果146654独审通过；Web779尚未发布 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 现有服务已恢复运行。网页发布前的重复加锁问题已修复并通过针对性验证；一次误选检查的失败与未完整捕获范围已保留，新网页尚未发布。 |
-| 下一可用交付 | 在新的独占窗口内核验既有身份和资源，然后受管迁入并发布新版网页。 |
-| 当前阻塞 | ACTIVE: 已审发布调用只待新的唯一现场窗口；owner Execution Lead/Web资源owner。保持0child/0pending，三个现有服务不操作。 |
+| 当前产出 | 新版网页已发布，原三版网页与三个正在运行的服务均保留。新实例初始化和开放接收状态已核；尚未验证新的真实用户任务领取。 |
+| 下一可用交付 | 独立核对本次发布结果并收录主线，保留所有历史失败与未知边界。 |
+| 当前阻塞 | ACTIVE: 本次真实发布结果待独立审查/主线收录；owner Execution Lead。执行窗口23:36:06.257Z已归还，不占运行资源。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；I02 svc06b-web779-lock-fix-review.json 2026-10-07T23:32:32.438Z APPROVED_LIMITED_WEB_ONLY_CALLER_AND_RESULT_FIDELITY，0 P1/P2；04截断/逃逸UNKNOWN保留。 |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
@@ -36,7 +36,7 @@
 | SVC06B-01 | completed | assignment_review | source.json精确provision/take/三前像/四后像与原独审 |
 | SVC06B-02 | completed | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，Lead限定独审已通过 |
 | SVC06B-03 | completed | assignment_review / Execution Lead | 实际artifact cd27/04da及内部加载通过，独审批准并main b37e404d |
-| SVC06B-04 | pending | 原Web owner / assignment_review | 新组合4报告及独审已接收；固定双阶段装配/现场门禁待收口，不重用旧C3 |
+| SVC06B-04 | pending | assignment_review / Execution Lead | e15真实cold/四App已审，个人恢复及779/v4发布已实际完成；本次结果待独审/主线收录，完整任务不提前关闭 |
 | SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，3产品scope已释放；不改cd27 |
 
 ## 等待与实际时间
@@ -208,3 +208,9 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T23:28:58.393Z：source6491保持。local04实际23:22:26.935661Z因误argv缺文件触发默认发现，1583ms/exit1、OUTPUT_LIMIT_EXCEEDED/双EOFfalse，原件与未知不改；local05在收到STOP前已完成明确文件/锚定pattern的1/1正常publish消费者，382ms/226B，不能抵消04。23:28:09.135425Z–23:28:09.209736Z按Lead唯一授权一次进程元数据关联观察74ms无匹配，仅说明所列关联条件无匹配；逃逸后代/未捕获效果UNKNOWN。现0child/0pending，不再测试、不操作个人服务。全部见[单一修复overlay](../../docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json)，ready=false，动态窗口与紧前核验未消费。
 
 2026-10-07T23:33:03.684Z：引用唯一[I02独审](../../../m2-integration/docs/evidence/i02/svc06b-web779-lock-fix-review.json)（2541B/SHA30184090e53a8344343a823c2c356ed8645ab1947a67488aebb90c630a88bda5），绑定source6491/targetdd6；正确6+1有效、04未知不清零，资源owner已接4MiB保守未知。当前仅按既有fixed recipe准备，未使用23:14旧资源快照作许可，actual input/两个namespace未创建；实际迁入与发布仍待新grant。
+
+2026-10-07T23:35:35.341Z：Web779 actual START，fresh完整inventory/六pin/三role/currentinit/accepting24/四报告符合；原两个一次namespace将由固定入口创建，先transfer后仅confirmed才publish。
+
+2026-10-07T23:37:30.373Z：实际START23:35:35.341Z→transfer确认23:35:52.337Z→publish确认23:36:06.256Z→RETURN23:36:06.257Z；公开CAS把d629/v3切779/v4，保三旧页、原config/profile/token/maintenance和三role记录。仅自有短进程退出，三个持久角色保持运行。见[唯一实际结果](../../docs/evidence/svc06/browser-recovery/recovery-web-result.json)及result-manifest；0operator任务/provider/浏览器刷新，actualClaim NOT_OBSERVED；不把发布CAS当新聊天通过。未新增现场探针，04失败未知继续保留。
+
+2026-10-07T23:39:00.060Z：发布后独立只读收尾23:38:23.988Z–23:38:24.007Z，19ms/3GET：公开identity确认779/v4与880060/context81a8；新779及保留d629各一个versioned PluginManagement JS均200，size/hash与原已核manifest相同。仅20,287B响应body，不含Cookie/凭据，不启动浏览器/不刷新tab；不将两个资产读回冒全部lazy界面或新聊天通过。见recovery-web-http-readback.jsonl；原实际窗口已23:36:06.257Z归还。

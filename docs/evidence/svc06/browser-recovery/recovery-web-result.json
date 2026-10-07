@@ -1,0 +1,253 @@
+{
+  "recordedAt": "2026-10-07T23:37:30.373Z",
+  "outcome": "WEB779_PUBLICATION_CONFIRMED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "source": "6491c4815cd6daf8f640648d5e8a25a599d8cd92",
+  "preparedTarget": "dd6ddc3ff8a1e89a507367deada36bdb3d51b1a7",
+  "logicalId": "SVC06B-E15-WEB779-PUBLICATION-20261007-ONCE",
+  "startedAt": "2026-10-07T23:35:35.341Z",
+  "returnedAt": "2026-10-07T23:36:06.257Z",
+  "releaseWrittenAt": "2026-10-07T23:36:06.056Z",
+  "actions": [
+    {
+      "action": "transfer",
+      "at": "2026-10-07T23:35:52.337Z",
+      "pid": 51407,
+      "exitCode": 0,
+      "elapsedMs": 16994,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null
+    },
+    {
+      "action": "publish",
+      "at": "2026-10-07T23:36:06.256Z",
+      "pid": 61509,
+      "exitCode": 0,
+      "elapsedMs": 13918,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null
+    }
+  ],
+  "publication": {
+    "outcome": "web-published-confirmed",
+    "release": {
+      "format": 1,
+      "policy": "flow-web-release-v1",
+      "version": 4,
+      "backendHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityIds": {
+        "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+        "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+        "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+        "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+      },
+      "current": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "artifacts": [
+        {
+          "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+        },
+        {
+          "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+          "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        },
+        {
+          "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+          "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+          "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+        },
+        {
+          "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+          "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+          "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37"
+        }
+      ],
+      "updatedAt": "2026-10-07T23:36:06.056Z"
+    },
+    "processRecordsPreserved": true,
+    "actualClaim": "NOT_OBSERVED"
+  },
+  "fresh": {
+    "completeInstalledInventory": true,
+    "sixPrivatePinsUnchanged": true,
+    "roles": 3,
+    "currentInitialization": true,
+    "maintenanceAcceptingVersion": 24,
+    "oldReleaseVersion": 3,
+    "exactReports": 4,
+    "finalReceiptSha256": "7ad28f5216ebc456c184c836b6560f51980b65720d71cc51d9525c64239e8546",
+    "inputSha256": "da0a8994061b51cafb99a3de43b463729474e209bf1b87c1f54f78331b1b32df",
+    "floor": 12240683008,
+    "availableBytes": 17882730496
+  },
+  "bounds": {
+    "perActionWorkSeconds": 30,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "addedBytes": 536870912,
+    "rawLimitBytes": 2097152,
+    "liveBytes": 1073741824,
+    "readonlyPoolMax": 1,
+    "actionElapsedMs": 30912,
+    "preflightElapsedMs": 8606,
+    "totalObservedRawBytes": 2289
+  },
+  "resources": {
+    "transientGroupsAbsent": [
+      45014,
+      51407,
+      61509
+    ],
+    "dualEOF": true,
+    "signals": [],
+    "initialUnknownObservations": "Each raw retains EPERM/unknown before final absent; not erased",
+    "persistentRoles": "Three existing owned roles remain running; exact process records preserved by actual publication consumer",
+    "privateNamespaces": [
+      {
+        "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once",
+        "dev": "16777234",
+        "ino": "124639948",
+        "uid": 501,
+        "mode": "0o700",
+        "disposition": "KEEP completed immutable operator evidence; no pending owner writes"
+      },
+      {
+        "path": "/private/tmp/flow-svc06b-e15-web779-publish-once",
+        "dev": "16777234",
+        "ino": "124640042",
+        "uid": 501,
+        "mode": "0o700",
+        "disposition": "KEEP completed immutable operator evidence; no pending owner writes"
+      }
+    ],
+    "db": "Read-only bounded status Pool ends in finally; no new database or persistent pool; existing service DB connections not sampled here"
+  },
+  "preservation": {
+    "retainedWebArtifacts": 3,
+    "totalWebArtifacts": 4,
+    "stateOnlyAllowedChange": "webReleaseOperation; stable remainder deeply equal before/after",
+    "browserPolicyProfileConfigMaintenance": "Exact original bytes/dev/ino checked after publication",
+    "tasks": "No operator task, claim, retry, cancel or model request",
+    "tabs": "No browser, reload or tab manipulation",
+    "actualClaim": "NOT_OBSERVED"
+  },
+  "limitations": [
+    "No browser/UI/user conversation journey after CAS. Fixed four-App compatibility, internal full retained-asset load and this three-GET readback each keep their stated scope.",
+    "No post-publication full task/history scan; not inferred from service survival.",
+    "local04 failed default-discovery run and uncaptured/escaped UNKNOWN remain separate; no zeroing by this publication success.",
+    "All old failed operations, consumed imports and namespaces remain unchanged; no retry or rollback."
+  ],
+  "privateEvidence": [
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/intent.json",
+      "bytes": 638,
+      "sha256": "db0875909a1b512cea802bf5bc97b231052535ca968e735538087d80fe3961f0",
+      "dev": "16777234",
+      "ino": "124639998",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-intent.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/checkpoint.json",
+      "bytes": 455,
+      "sha256": "7613769022bade37efae982ce830c76ce1cb0ee8e2968cb65acdcf29ba6010c5",
+      "dev": "16777234",
+      "ino": "124640028",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-checkpoint.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/result.json",
+      "bytes": 313,
+      "sha256": "be5f6b8ab79575332fd706e196579177c9e73d8f758601179cbd3f72d4222136",
+      "dev": "16777234",
+      "ino": "124640029",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-result.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/complete.json",
+      "bytes": 317,
+      "sha256": "f899a36a13adcab372e687e6cd3c10ac9c89aafd8bb81630b212cfb8c99a7b69",
+      "dev": "16777234",
+      "ino": "124640039",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-complete.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/web-only-intent.json",
+      "bytes": 620,
+      "sha256": "8fe4d7db9f2794a7be46d3d0c7612a3fe9473641782d8398968f4f99c6bf29f8",
+      "dev": "16777234",
+      "ino": "124639949",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-web-only-intent.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-transfer-once/web-only-result.json",
+      "bytes": 317,
+      "sha256": "f899a36a13adcab372e687e6cd3c10ac9c89aafd8bb81630b212cfb8c99a7b69",
+      "dev": "16777234",
+      "ino": "124640040",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/transfer-web-only-result.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-publish-once/web-only-intent.json",
+      "bytes": 619,
+      "sha256": "6bfdfe26388181db58a8de05967320deb10f8f975c39eb3b4989b15aeea92870",
+      "dev": "16777234",
+      "ino": "124640043",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/publish-web-only-intent.json"
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-e15-web779-publish-once/web-only-result.json",
+      "bytes": 2082,
+      "sha256": "33ea7359f8789f6a3f48c6ad96e9293e79b7956bae276e77b103ef9ecce7ac2b",
+      "dev": "16777234",
+      "ino": "124640123",
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1,
+      "publicExactCopy": "docs/evidence/svc06/browser-recovery/recovery-web-actual-safe/publish-web-only-result.json"
+    }
+  ],
+  "postPublicationReadback": {
+    "record": "docs/evidence/svc06/browser-recovery/recovery-web-http-readback.jsonl",
+    "startedAt": "2026-10-07T23:38:23.988Z",
+    "returnedAt": "2026-10-07T23:38:24.007Z",
+    "elapsedMs": 19,
+    "outcome": "IDENTITY_AND_TWO_VERSIONED_ASSETS_CONFIRMED",
+    "requests": 3,
+    "responseBodyBytes": 20287,
+    "responseIncludingHeadersUpperAccounting": 20977,
+    "requestHeaders": "Only fixed Accept/Accept-Encoding/Connection/Host; no cookies/auth; conservatively below2KiB across3requests",
+    "storedBytes": 2941,
+    "scope": "Public identity779/v4+880060/runtime context; one new and one retained exact versioned asset verified size/hash; no browser/tab or model request"
+  },
+  "internalPublicationProof": "Fixed880060 publishPreviewWeb performs complete loadReleaseAssets on retained set and webIdentity confirms current779/v4 plus runtime tuple before returning web:ready. This is asset-loader/HTTP identity proof, not all browser lazy paths."
+}
