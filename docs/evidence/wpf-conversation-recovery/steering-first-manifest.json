@@ -1,0 +1,174 @@
+{
+  "at": "2026-10-07 09:56:42 UTC",
+  "run": "recsteer-20261007-094616-1ab0a4",
+  "outcome": "FAIL",
+  "executionHead": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
+  "sourceTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "journey": "steering-recovery",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "passedGroups": [
+    "cookieRead"
+  ],
+  "failedGroup": "steeringRecovery",
+  "raw": [
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/browser.json",
+      "bytes": 12382,
+      "sha256": "80c07ff89193ffdadd4cba5f7d8421df965146dde408d87dd530c50cdb6c24b4"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/budget.json",
+      "bytes": 242,
+      "sha256": "3baf69c4b8c5fb1cab0f16aa8572f1a2fc1bf89d73dc58b6122d18c1f6b74710"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "e0a67713dea6677a209a08ee0d9332587bc5a446dea0670ff7e7479bafd0ccaa"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/database-owner.json",
+      "bytes": 164,
+      "sha256": "e9cf0588060d08ae7f69af0b5583a6bcfe6a1292c7b6a02ead4c33192ec7feee"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/fixture-cleanup.json",
+      "bytes": 313,
+      "sha256": "6e8bc765096c1ead1a172728744b7486a9da7b6a45e178ea3d9e46a833c6e8ac"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/launch-config.json",
+      "bytes": 1215,
+      "sha256": "ca84cbfa803a8cfb77eada19b5cff9f3d43b5db06620031342dfd4ffd6574785"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/process-owner.json",
+      "bytes": 29,
+      "sha256": "1beb3ebadf1ac01f307c779541d1c70ed700a31de976340f8b0d640b574d42a2"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/process.log",
+      "bytes": 5779,
+      "sha256": "5d433e254b4843f0686ae7843d2e387e382f5cc937c76619fc7bbed98798cbd0"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "94343ed3157b665bc32c1d20b7442e260ced70639efd2cf5716120b0d9eb0e44"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/sources.json",
+      "bytes": 2438,
+      "sha256": "1181d226a5c9858c13391aecffc90e31c910216d1eeab765c26e9105994dc194"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-094616-1ab0a4/supervisor.json",
+      "bytes": 2668,
+      "sha256": "31936a5d6b10281eb347eeac76d8af18eec44436024474cda0bf1d171f7d6140"
+    }
+  ],
+  "outerOriginalPairs": [
+    {
+      "path": "steering-first-parent/admission.json",
+      "bytes": 4390,
+      "sha256": "eeeee875cfbfb376fffea8cb8e6a37dae52b65600c99a7aa60e9577ea95d82f0",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/admission.json"
+    },
+    {
+      "path": "steering-first-parent/gate.json",
+      "bytes": 3370,
+      "sha256": "faadbad968040abf6132ea8b777222cd381970ab8600c7b4d63b373cc7ddce8b",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/gate.json"
+    },
+    {
+      "path": "steering-first-parent/start.json",
+      "bytes": 727,
+      "sha256": "bacb8a56effe37fe3027ed9e32e0bc736bae067caa41fb028e1f08706d1f44d5",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/start.json"
+    },
+    {
+      "path": "steering-first-parent/parent.stdout.jsonl",
+      "bytes": 784,
+      "sha256": "dd91d2546e55c610f09a24361ca4d4fbbc5a27e67005b71e156c0cc433087d11",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/parent.stdout.jsonl"
+    },
+    {
+      "path": "steering-first-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/parent.stderr.log"
+    },
+    {
+      "path": "steering-first-parent/actual-exit.json",
+      "bytes": 355,
+      "sha256": "69fc0fb2f730645917f5370ac1876e33cfc14c7e7bd3b426f0a57c78538157be",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/actual-exit.json"
+    },
+    {
+      "path": "steering-first-parent/post-cleanup-observation.json",
+      "bytes": 1656,
+      "sha256": "41d5d85efb0e1575c4f38881f03737fe47709af7f30e19995e38bb7efafecdb7",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/post-cleanup-observation.json"
+    },
+    {
+      "path": "steering-first-parent/admin-env-deletion-receipt.json",
+      "bytes": 320,
+      "sha256": "5ccadec14d3200e70d9df9664165c0043f0bd68dd276316d16299ded726ebc42",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/admin-env-deletion-receipt.json"
+    },
+    {
+      "path": "steering-first-parent/accounting.json",
+      "bytes": 527,
+      "sha256": "083f98ef437521d451d569c1e87949f6097ab083336a64ab835d074752014bae",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/accounting.json"
+    },
+    {
+      "path": "steering-first-parent/raw-index.json",
+      "bytes": 1900,
+      "sha256": "c505a64b14a87a33503e293346ecb263174d2072271e5b0d12b01e6436bb244e",
+      "original": "/private/tmp/recovery-steering-actual-8t56ekdk/raw-index.json"
+    }
+  ],
+  "accounting": {
+    "phase": "RECOVERY-STEERING-20261007",
+    "phaseTotalMs": 60000,
+    "previousSpentMs": 0,
+    "actualOuterMs": 17331.63762500044,
+    "lateParentMs": 16716.629125,
+    "serializedParentMs": 16703.720042,
+    "chargeMs": 17332,
+    "spentMs": 17332,
+    "remainingMs": 42668,
+    "old90ActualMs": 64134.08675,
+    "old150SpentMs": 126447,
+    "old150Unused23553Closed": true,
+    "oldCreditTransferred": false,
+    "outcome": "FAIL",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ]
+  },
+  "cleanup": {
+    "path": "steering-first-parent/post-cleanup-observation.json",
+    "bytes": 1656,
+    "sha256": "41d5d85efb0e1575c4f38881f03737fe47709af7f30e19995e38bb7efafecdb7"
+  },
+  "independentReview": {
+    "path": "steering-first-root-review.json",
+    "bytes": 14854,
+    "sha256": "1e6cb7674aeb90734da03a8aa2a294846e546816dd3b004ca166839c5f23422f"
+  },
+  "limits": [
+    "No Steer POST, body-loss fault, restore or replay reached.",
+    "Draft predicate returned undefined; this is not evidence of a unique product or locator root cause.",
+    "No screenshot. Actual one successful public claim and one session event are not native consumption/application.",
+    "Existing historical raw and closed budgets are unchanged."
+  ]
+}

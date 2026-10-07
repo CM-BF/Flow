@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-07 08:05:48 UTC",
+  "state": "ACCEPTED_SELECTED_TASK_SSE_ACTUAL_AND_OWNED_CLEANUP_NOT_ASSISTANT_STREAM_OR_FULL_FEATURE_PASS",
+  "run": "recsse-20261007-080319-408f68",
+  "executionHead": "1357d2faad03ac21cdd373c7791c6e1d4de91331",
+  "sourceTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "sourceCheckpoint": {
+    "path": "sse-delivery-checkpoint.json",
+    "sha256": "cd02f85f73fdc6d743044b4296eb05237b1b4832d177eb558b045edc7e158423",
+    "verifiedGitAndCurrent": 19
+  },
+  "originals": [
+    {
+      "path": "continuous-seventh-parent/admission.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/admission.json",
+      "bytes": 3855,
+      "sha256": "857fbf1fc1189c09150a2466988cfae08837c8a22324c249a33d236ec6730eb5"
+    },
+    {
+      "path": "continuous-seventh-parent/gate.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/gate.json",
+      "bytes": 2907,
+      "sha256": "3f30aa851bb39e7384f96141dbadb6616b50470d0e5f5e24973e2d3a008a7660"
+    },
+    {
+      "path": "continuous-seventh-parent/start.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/start.json",
+      "bytes": 722,
+      "sha256": "97be48a1268ea1a2b90754aea2b94ebc5ecd2270f09e73ea51f9975c12a82ae0"
+    },
+    {
+      "path": "continuous-seventh-parent/parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/parent.stdout.jsonl",
+      "bytes": 600,
+      "sha256": "4e428ccb5d2c81ecf6cbf93abe0d5a10bbc83175e60bd8b45d1a0c2c3597dc30"
+    },
+    {
+      "path": "continuous-seventh-parent/parent.stderr.log",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "continuous-seventh-parent/actual-exit.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/actual-exit.json",
+      "bytes": 430,
+      "sha256": "1d38141f4d5c87b8daa62736b738113d5e6d08203b931230bde91caeabd4a2c1"
+    },
+    {
+      "path": "continuous-seventh-parent/post-cleanup-observation.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/post-cleanup-observation.json",
+      "bytes": 610,
+      "sha256": "452e595f4f8494a06e6e1dc548414ada616f1ffd961a9c7b54fc32d00e3b34d4"
+    },
+    {
+      "path": "continuous-seventh-parent/accounting.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/accounting.json",
+      "bytes": 287,
+      "sha256": "ebaf18d791286c36ff136891d21c802ee07b6ee08e340783399f58de4feb4998"
+    },
+    {
+      "path": "continuous-seventh-parent/raw-manifest.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/raw-manifest.json",
+      "bytes": 3504,
+      "sha256": "3722adf39da4fb21328aeff8d8a17eec84cb973735d5b7c4217e2c98069447c9"
+    },
+    {
+      "path": "continuous-seventh-parent/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/recovery-sse-owner-segment-4n_rdivu/admin-env-deletion-receipt.json",
+      "bytes": 306,
+      "sha256": "581d7da3919c86c68e79840b4c480ea7730e14279ceebfa2936ebc68d5ab9910"
+    },
+    {
+      "path": "sse-local-root-review.json",
+      "original": "/private/tmp/root-recovery-sse-local-actual-review.json",
+      "bytes": 2734,
+      "sha256": "998382263c8b43146e0fc50d41d701831f4b163bb9852818d3a21e9e450a6840"
+    }
+  ],
+  "rawManifest": "continuous-seventh-parent/raw-manifest.json",
+  "rawFiles": 11,
+  "rawBytes": 16450,
+  "previousRaw": {
+    "uniqueGitPaths": 122,
+    "bytes": 416104,
+    "unchangedFrom": "1357d2faad03ac21cdd373c7791c6e1d4de91331"
+  },
+  "actual": "continuous-seventh-parent/actual-exit.json",
+  "selection": {
+    "journey": "sse-delivery",
+    "requiredGroups": [
+      "cookieRead",
+      "sseDelivery"
+    ],
+    "selectedPassed": true,
+    "fullJourneyPassed": false,
+    "fullFeaturePassed": false
+  },
+  "accounting": {
+    "priorMs": 70158,
+    "chargeMs": 10844,
+    "spentMs": 81002,
+    "remainingMs": 68998,
+    "outerMs": 10843.4401670238,
+    "lateParentMs": 10229.626375,
+    "serializedParentMs": 10219.564792,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "cleanup": "continuous-seventh-parent/post-cleanup-observation.json",
+  "adminEnvDeletion": "continuous-seventh-parent/admin-env-deletion-receipt.json",
+  "causalEvidence": {
+    "taskId": "abe056e4-dbb8-42cd-99c5-a5169fea4549",
+    "baselineCursor": 0,
+    "deliveredCursor": 1,
+    "frames": 2,
+    "streamBytes": 1031,
+    "connections": 1,
+    "onlyInitialTaskRead": [
+      "GET /api/tasks/abe056e4-dbb8-42cd-99c5-a5169fea4549"
+    ],
+    "appTimelineAssertionPassed": true,
+    "noObservingPageBusinessPOST": true,
+    "noTaskSnapshotOrEventsRestRefill": true
+  },
+  "limits": [
+    "Task details TaskProjection stream, not conversation assistant patch stream",
+    "Second public consumer cancellation; not observing-page Cancel button",
+    "No runner/provider; no reconnect/replay-stream comprehensive acceptance",
+    "No new screenshot required or produced by this selected journey"
+  ],
+  "independentReview": {
+    "path": "continuous-seventh-root-review.json",
+    "sha256": "34af0b6839702af81be2bddc0ba460e026b216a3f8d97b5aeb56cb179a159427",
+    "decision": "ACCEPTED_SELECTED_TASK_SSE_ACTUAL_AND_OWNED_CLEANUP_NOT_ASSISTANT_STREAM_OR_FULL_FEATURE_PASS"
+  },
+  "reviewArchivedAt": "2026-10-07 08:30:29 UTC"
+}

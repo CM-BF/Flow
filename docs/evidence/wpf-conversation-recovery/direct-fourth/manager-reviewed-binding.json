@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-06T20:20:04.402776+00:00",
+  "state": "REVIEWED_READY_NOT_RUN_NO_GATE",
+  "candidate": "/private/tmp/recovery50-once-en2_sud5",
+  "head": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "bindingBeforeSha256": "5416a23b3eb4efed84b1b650713c8cbfff1fbd440a28905e62d4eb527a82e72b",
+  "bindingSha256": "d8d9695334341730d2bccbc09757c9f509e184ee3c59e83bdd73249569fd05f0",
+  "runnerSha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7",
+  "sandboxSha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046",
+  "reviewSha256": "67894b13247d2bcb61fcbb5b82f3e36761c5e809c163ad6d7bdf51c954d23dd3",
+  "identityChecks": {
+    "source": 19,
+    "readonly": 98,
+    "external": 9,
+    "candidate": 9,
+    "gitClean": true
+  },
+  "changedOnly": "binding state and review annotations; no script or source changes",
+  "budget": {
+    "previousMs": 6868,
+    "remainingMs": 23132,
+    "workMs": 18132,
+    "cleanupMs": 5000
+  },
+  "runtime": false,
+  "freeSampling": false,
+  "gate": false,
+  "settlement": "Require original result + terminal stdout postWrite + actual exit. Late signal may appear only in terminal FAIL/exit; earlier result alone cannot PASS.",
+  "next": "Await new Lead-coordinated execution opportunity; then fresh original6ffv4/21 claim/source/deps/free, one short-lived gate. Prior Settings window already returned."
+}

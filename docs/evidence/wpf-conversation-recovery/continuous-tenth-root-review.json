@@ -1,0 +1,192 @@
+{
+  "decision": "COMPLETE_DRAFT_SELECTED_TWO_ACTUAL_ACCEPTED",
+  "at": "2026-10-07T09:11:36.717131+00:00",
+  "reviewer": "root / gpt-6-astra ultra / independent read-only",
+  "source": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+  "executionHead": "7fb3947d30764ae9da1de9b512ff36c51734ba2a",
+  "rawIndex": {
+    "path": "/private/tmp/recovery-complete-third-owner-238vw4d4/raw-index.json",
+    "bytes": 5908,
+    "sha256": "c0e9e66f113f10379a7c092066b5038b7e2be2da4b34148648e6422188aaa666",
+    "rawVerified": 20,
+    "fixedSourcePinsVerified": 19
+  },
+  "actual": {
+    "run": "reccomplete-20261007-090937-c16c64",
+    "startedAt": "2026-10-07T09:10:00.584069+00:00",
+    "endedAt": "2026-10-07T09:10:12.377068+00:00",
+    "actualExit": 0,
+    "outerElapsedMs": 11792.84358303994,
+    "parentPid": 37753,
+    "outerPid": 37624,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "streamBytes": {
+      "stdout": {
+        "eof": true,
+        "bytes": 611
+      },
+      "stderr": {
+        "eof": true,
+        "bytes": 0
+      }
+    },
+    "outerErrors": []
+  },
+  "accounting": {
+    "run": "reccomplete-20261007-090937-c16c64",
+    "previousSpentMs": 114654,
+    "chargeMs": 11793,
+    "spentMs": 126447,
+    "remainingMs": 23553,
+    "outerMs": 11792.84358303994,
+    "lateParentMs": 11181.214666,
+    "serializedParentMs": 11168.190875,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "prepared profile/project and complete draft survive re-auth/restore; explicit verification preserves first-turn material identity"
+  ],
+  "completeDraft": {
+    "profile": {
+      "id": "7dad758d-3d33-46f1-8f59-c181922b4f24",
+      "runnerId": "97fc0f7c-b9c0-4c0b-b29e-50ac40099c9a",
+      "configDigest": "3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45"
+    },
+    "knowledge": {
+      "projectId": "17d395ad-4b7b-44b5-b90e-62d5e9907396",
+      "sourceId": "3b9963b8-3325-40fb-90fe-56942184f3ec",
+      "version": 1,
+      "contentDigest": "4bafae7a1e90814c2f15c6f5e57e6c0a1f6c75d8d14a86142aed8fe555118e80",
+      "locator": {
+        "kind": "utf8-bytes",
+        "start": 0,
+        "end": 37
+      }
+    },
+    "savedRecordId": "draft:745317ec-7945-47a6-ab9c-215b64a10dc6",
+    "conversationId": "9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+    "preparedPostCount": 1,
+    "restoredPostCount": 1,
+    "verificationOrder": [
+      "later.txt",
+      "saved.txt",
+      "knowledge"
+    ],
+    "turnId": "06e4eeab-dc72-43dd-b0d6-ed89f7f169c3",
+    "taskId": "ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829"
+  },
+  "wireVerified": {
+    "businessPostCount": 2,
+    "prepareStatus": 201,
+    "turnStatus": 202,
+    "orderedAttachmentsMatchAck": true,
+    "knowledgeMatches": true,
+    "profileMatches": true,
+    "ackTurnTaskMatchRecorded": true,
+    "replayed": false
+  },
+  "sourceAssertionsCovered": "Executed fixed2e7203 test verifies persisted complete draft/profile/project/queue intent, restore adds zero business POST and body prefetch, restored materials unverified then B→A→knowledge explicit verification without reselection, full original ordered first-turn request, exact unique command/outbox frozen.turnKey receipt accepted and ACK checkpoint, original profile identifiers, independent next draft no inherited materials.",
+  "cleanup": {
+    "freshProcesses": [
+      {
+        "id": 37753,
+        "kind": "pid",
+        "state": "ESRCH"
+      },
+      {
+        "id": 37753,
+        "kind": "group",
+        "state": "ESRCH"
+      },
+      {
+        "id": 37624,
+        "kind": "pid",
+        "state": "ESRCH"
+      },
+      {
+        "id": 37624,
+        "kind": "group",
+        "state": "ESRCH"
+      },
+      {
+        "id": 38285,
+        "kind": "pid",
+        "state": "ESRCH"
+      },
+      {
+        "id": 38285,
+        "kind": "group",
+        "state": "ESRCH"
+      },
+      {
+        "id": 38307,
+        "kind": "pid",
+        "state": "ESRCH"
+      },
+      {
+        "id": 38307,
+        "kind": "group",
+        "state": "ESRCH"
+      }
+    ],
+    "scratchAbsent": true,
+    "adminEnvAbsent": true,
+    "db": {
+      "database": "flow_recovery_cec7f19a409c4e03845e38cd2d910ec5",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.5119589999994787,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 2.576708000000508,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 19,
+      "wireBytes": 11810,
+      "providerQueries": 0
+    },
+    "outerEOFComplete": true,
+    "errors": []
+  },
+  "limits": [
+    "Selected cookieRead+completeDraft only; feature IN_PROGRESS.",
+    "No new screenshot in this selected journey; original full-seven themes remain historical evidence, not regenerated here.",
+    "No Steer/draft steering/queue promotion/second-center/full-feature or real-provider verification.",
+    "This synthetic publisher registers one public profile identity, not a runner process or model call.",
+    "No new main integration/personal deployment or latest b2b/SVC/selected-stream-backend compatibility claim."
+  ],
+  "history": "Both earlier completeDraft failures and their charges remain original. Exact earlier charges15676 and17976; latest11793 added to prior114654 giving126447/23553 remaining in150000 phase. No old failure overwritten.",
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Verified exact domain receipt identity and frozen request/checkpoint instead of weak first-accepted lookup; raw partial failures, current selected pass and full-feature limitations remain separate."
+  }
+}

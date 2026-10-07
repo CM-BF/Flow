@@ -1,0 +1,131 @@
+{
+  "at": "2026-10-07T05:04:10.688856+00:00",
+  "decision": "ACCEPTED_FAILED_SUBSET_ACTUAL_AND_REPORTED_OWNED_CLEANUP",
+  "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "executionHead": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+  "run": "rec9835-20261007-045912-724895",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895",
+  "outerDirectory": "/private/tmp/recovery-rec9835-fourth-parent",
+  "verified": {
+    "newRawCount": 11,
+    "newRawBytes": 21906,
+    "previousRawHashesUnchanged": 43,
+    "sourcePinsUnchanged": 19,
+    "runSourceBinding": true,
+    "errors": []
+  },
+  "actual": {
+    "exitCode": 1,
+    "checks": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+    ],
+    "coverage": {
+      "cookieRead": "PASSED",
+      "cookieSseHandshake": "NOT_RUN",
+      "cookieSseDelivery": "PENDING: only handshake is asserted",
+      "textIntentDraft": "FAILED",
+      "materialDraft": "NOT_COMPLETED",
+      "sameKeyTurn": "NOT_RUN",
+      "crossTabCas": "NOT_RUN",
+      "pageOnlyAuthLoss": "NOT_RUN",
+      "csrfOffline": "NOT_RUN",
+      "themes390": "NOT_RUN",
+      "createTwoStage": "PENDING: direct/source only",
+      "queueSteerRecovery": "PENDING: direct/source only",
+      "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+      "secondCenter": "PENDING: one-center fixture"
+    },
+    "failure": "expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('tooltip')\nExpected: \"saved.txt\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveText\" getByRole('tooltip') with timeout 5000ms\n  - waiting for getByRole('tooltip')\n",
+    "pageErrors": [],
+    "screenshots": 0,
+    "childProcesses": [
+      {
+        "pid": 46595,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 49362,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true,
+    "databaseCleanup": {
+      "database": "flow_recovery_62522adcc1694021ac8d27d7c5e96de3",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.4435000000012224,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.6341659999998228,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "cleanupErrors": [],
+    "finalAccounting": {
+      "kind": "recovery-final-accounting",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895",
+      "postWrite": {
+        "phase": "after-final-report-and-budget",
+        "elapsedMs": 16519.148875,
+        "scratchBytes": null,
+        "evidenceBytes": 1266933,
+        "freeBytes": 25114542080,
+        "errors": []
+      },
+      "interruptionRequested": false,
+      "errors": [
+        "expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('tooltip')\nExpected: \"saved.txt\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveText\" getByRole('tooltip') with timeout 5000ms\n  - waiting for getByRole('tooltip')\n"
+      ],
+      "cleanupErrors": [],
+      "allOwnedGroupsAbsent": true,
+      "scratchRemoved": true
+    }
+  },
+  "budget": {
+    "priorAuthoritativeLateMs": 38364.050667,
+    "thisLateMs": 16519.148875,
+    "cumulativeLateMs": 54883.199542,
+    "remainingMs": 35116.800458,
+    "nextMaximumIntegerMsIncluding15000Cleanup": 35116,
+    "originalBudgetFilesUnchanged": true,
+    "automaticRetry": false
+  },
+  "extraCleanup": {
+    "ownerExactGroupObservation": {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/post-cleanup-observation.json",
+      "sha256": "0471816a3f5cbd7810fee502524f19964c131dc4decbd4cc8a224bb6e4bba460"
+    },
+    "managerExactAdminEnvDeletion": {
+      "path": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin-env-deletion-receipt.json",
+      "sha256": "ffb0ec1a33f7e96fd24fba1aacccf24ffec08d255eafc3e187abde29914c70d1"
+    },
+    "envNowAbsent": true,
+    "envValueReadByRoot": false
+  },
+  "limitations": [
+    "Failure occurs earlier than prior run; prior3 runs and their results remain unchanged. This does not establish that the9835 serialization fix regressed recovery or explain why a tooltip was absent.",
+    "No screenshot/DOM snapshot at failed hover, no explicit independent per-streamEOF or port absence artifact; retain exact original outerexit/parent final/fixture cleanup and separate group/scratch observations rather than fabricating them.",
+    "Original timing begins after parent preflight. Late terminal observation controls remaining90s; outer elapsed walltime was not separately captured by this original wrapper.",
+    "Only one same-origin subset group passed this attempt. SSEdelivery, CREATE/Queue/Steer and other whole-feature gaps remain unverified; full targetUNKNOWN/reviewNOT_STARTED."
+  ],
+  "next": "Owner archive immutable failure and status, then inspect actual tooltip/attachment flow source and minimum missing observation before proposing a justified change. No blind rerun or assertion deletion.",
+  "cleanCode": "Preserve failure distinctions, actual coverage, source identity and ownership; shared controls and tooltip behavior remain to diagnose."
+}

@@ -1,0 +1,87 @@
+{
+  "reviewer": "root / GPT-6 Astra Ultra, independent read-only review",
+  "at": "2026-10-07T06:40:27.174337+00:00",
+  "decision": "ACCEPTED_SCOPED_BROWSER_SOURCE_AND_LOCAL_SELECTION_CHECKS_NOT_RUNTIME_OR_WHOLE_FEATURE",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "deltaFrom": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "metadataObserved": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+  "observedClean": true,
+  "findings": [],
+  "scope": {
+    "read": "Complete 157-addition/9-deletion browser increment, existing ACK-loss observer and worker setup, public outbox/queue receipt and CREATE checkpoint behavior, fixture public CREATE/attachments/automaticQueueScan:false, local selection driver/raw logs",
+    "sourcePinsChecked": 19,
+    "sourcePins": "create-queue-checkpoint.json sources: all Git source blobs equal current files and recorded SHA/bytes; 18 match previous source; only browser differs",
+    "supervisorFunctionByteIdentical": true,
+    "productChange": false
+  },
+  "assessments": [
+    "Each new journey selects cookieRead plus one exact new group. Existing full7 and connection-choice maps stay identical. New groups cannot inflate full7 pass status.",
+    "CREATE body-loss and created-turn body-loss use the actual public endpoint/real response truncation observer, exact frozen two keys/bodies and decoded original/replay IDs. The CREATE-title observer matches the short first-line text used by production creation.",
+    "Reload/session expiry and explicit reauthentication compare all business POST identities before and after; only explicit original-record retry may resume. No automatic resend or checkpoint manipulation is used.",
+    "CREATE-loss expects CREATE replay then original first turn; turn-loss expects no second CREATE and same turn replay. Next draft is separately persisted and explicitly restored with no business POST.",
+    "Queue setup uses original project two public attachment resources in UI order and legal queue capability. Same expected revision, key, body, item identity, waiting state, context and ordered references are checked. This does not exercise queue promotion or native execution.",
+    "Exact recovery-record UUID locator and one-command expectation are valid for each isolated fresh journey. Read-only journal observation is used as evidence, not an injection mechanism.",
+    "Named shared helpers reuse existing fault proof. No permissions, parent lifecycle, cleanup, browser launch, provider allowance or acceptance criteria were weakened."
+  ],
+  "localEvidence": {
+    "index": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-local-index.json",
+    "indexSha256": "db7dc54cc4f98ae17c65b0c3d5fdd3cb1922426acdeae5ef1e750a679a6d008c",
+    "noEmitExit": 0,
+    "newSelectionAssertions": 33,
+    "selectionExit": 0,
+    "actualCumulativeMs": 5828.643000102602,
+    "conservativeChargeMs": 5829,
+    "limitMs": 30000,
+    "rootPostReviewGroupObservation": [
+      {
+        "pid": 32275,
+        "group": "ABSENT"
+      },
+      {
+        "pid": 33757,
+        "group": "ABSENT"
+      }
+    ],
+    "raw": [
+      {
+        "path": "docs/evidence/wpf-conversation-recovery/create-queue-local/sandbox.sb",
+        "bytes": 167,
+        "sha256": "300495ac808bda7e2c3842d82086eebba32dde516957c87bc1e59985d8584647"
+      },
+      {
+        "path": "docs/evidence/wpf-conversation-recovery/create-queue-local/segment.json",
+        "bytes": 968,
+        "sha256": "545cd8133d56c3ab291b608fd55c32aea1edb8d9e6cbe0dbb96496d8ea7e6897"
+      },
+      {
+        "path": "docs/evidence/wpf-conversation-recovery/create-queue-local/selection.cjs",
+        "bytes": 2543,
+        "sha256": "91d1479e72de67598a9ffe9776469e13fbc0ef89df4279803c5974a5f382294e"
+      },
+      {
+        "path": "docs/evidence/wpf-conversation-recovery/create-queue-local/selection.log",
+        "bytes": 260,
+        "sha256": "a9e4995f232e277f4c4f3256ff6f4f99a7037770cd1db30af3f843cdf4959d15"
+      },
+      {
+        "path": "docs/evidence/wpf-conversation-recovery/create-queue-local/types.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "limits": "Historical owner local exits/measurements inspected; root did not rerun checks. Selection checks execute extracted production selection functions only; no browser, HTTP or product behavior claim."
+  },
+  "next": "Same existing finite Recovery browser segment. First create-ack-loss may enter normal fresh manager admission after actual cross-lead PG availability; then remaining distinct selections use fresh gates and cumulative accounting. Source review is not a gate or resource reservation.",
+  "notValidated": [
+    "All three new real-browser journeys NOT_RUN at this review",
+    "Steer HTTP recovery, SSE delivery, profile/knowledge draft and second-center/principal cases remain separate",
+    "No full-feature approval, main integration, new screenshots or performance claim"
+  ],
+  "cleanCode": {
+    "time": "2026-10-07T06:40:27.174542+00:00",
+    "scope": "read-only new browser helper boundaries, exact identities, failure propagation, reuse and selection honesty",
+    "findings": "No blocking source finding. Keep each selected journey separate because its isolation/assertions assume one saved command and zero earlier business POSTs."
+  }
+}

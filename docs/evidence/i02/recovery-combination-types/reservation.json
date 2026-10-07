@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T11:28:20.167577+00:00",
+  "baseMain": "f68dbb71",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--incremental",
+    "false",
+    "-p",
+    "apps/web/tsconfig.json"
+  ],
+  "limits": {
+    "workSeconds": 30,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "freeBefore": 22076452864,
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-recovery-intake-types-3hnjclkl",
+    "dev": 16777234,
+    "ino": 124096146
+  },
+  "newPGChromeProvider": 0
+}

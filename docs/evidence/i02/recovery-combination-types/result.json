@@ -1,0 +1,72 @@
+{
+  "startedAt": "2026-10-07T11:28:20.167577+00:00",
+  "baseMain": "f68dbb71",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--incremental",
+    "false",
+    "-p",
+    "apps/web/tsconfig.json"
+  ],
+  "limits": {
+    "workSeconds": 30,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "freeBefore": 22076452864,
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-recovery-intake-types-3hnjclkl",
+    "dev": 16777234,
+    "ino": 124096146
+  },
+  "newPGChromeProvider": 0,
+  "supervision": {
+    "pid": 61112,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 6023,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "passed": true,
+  "finishedAt": "2026-10-07T11:28:26.191239+00:00",
+  "elapsedMs": 6024,
+  "rawBytes": 0,
+  "scratchEntries": 1,
+  "scratchRemoved": false,
+  "scratchMeasurement": {
+    "entries": 3,
+    "regularBytes": 1357748,
+    "symlinks": 0,
+    "action": "KEEP_NONEMPTY_UNINSPECTED",
+    "reason": "Empty-only cleanup; no raw content read; owned compiler process absent and both streams EOF."
+  }
+}

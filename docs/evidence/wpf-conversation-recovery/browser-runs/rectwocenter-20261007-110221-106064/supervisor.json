@@ -1,0 +1,172 @@
+{
+  "passed": true,
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "journey": "second-center-cycle",
+  "requiredGroups": [
+    "cookieRead",
+    "secondCenterCycle"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "secondCenterCycle"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8723.231833,
+    "elapsedMs": 8723.231833
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8723.311958,
+      "endedOffsetMs": 9759.232250000001,
+      "elapsedMs": 1035.9202920000007,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "secondCenterCycle",
+      "startedOffsetMs": 9759.247708,
+      "endedOffsetMs": 11394.004292,
+      "elapsedMs": 1634.7565839999988,
+      "outcome": "PASSED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_c65e2e041f4f46818e2630d7ddea43b3",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 3.129124999999476,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.945332999999664,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "databaseCleanups": [
+    {
+      "target": "A",
+      "result": {
+        "database": "flow_recovery_c65e2e041f4f46818e2630d7ddea43b3",
+        "attempted": true,
+        "confirmed": true,
+        "markerWritten": true,
+        "remaining": [],
+        "connections": 0,
+        "removed": true,
+        "errors": [],
+        "observations": [
+          {
+            "phase": "before-marker",
+            "attempt": 1,
+            "elapsedMs": 3.129124999999476,
+            "total": 0,
+            "sessions": []
+          },
+          {
+            "phase": "after-marker",
+            "attempt": 1,
+            "elapsedMs": 0.945332999999664,
+            "total": 0,
+            "sessions": []
+          }
+        ]
+      },
+      "error": null
+    },
+    {
+      "target": "B",
+      "result": {
+        "database": "flow_recovery_650a711072fa4e8b9fdde4d23d21a9af",
+        "attempted": true,
+        "confirmed": true,
+        "markerWritten": true,
+        "remaining": [],
+        "connections": 0,
+        "removed": true,
+        "errors": [],
+        "observations": [
+          {
+            "phase": "before-marker",
+            "attempt": 1,
+            "elapsedMs": 1.7111249999998108,
+            "total": 0,
+            "sessions": []
+          },
+          {
+            "phase": "after-marker",
+            "attempt": 1,
+            "elapsedMs": 1.77020900000025,
+            "total": 0,
+            "sessions": []
+          }
+        ]
+      },
+      "error": null
+    }
+  ],
+  "twoCenterPhase": {
+    "id": "RECOVERY-TWO-CENTER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 0,
+    "cleanupMs": 30000,
+    "databases": 2
+  },
+  "processIds": [
+    {
+      "pid": 24443,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 26853,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 22261366784,
+  "peakScratchBytes": 27502789,
+  "logBytes": 6328,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 12377.304667,
+      "scratchBytes": 27502789,
+      "evidenceBytes": 4032843,
+      "freeBytes": 22283616256,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 12444.494792,
+      "scratchBytes": null,
+      "evidenceBytes": 4036825,
+      "freeBytes": 22311936000,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

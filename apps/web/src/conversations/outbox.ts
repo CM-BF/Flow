@@ -4,6 +4,7 @@ import {
   type ConversationCreation,
   type ConversationTurnAdmission, type AttachmentReference,
 } from "@flow/contracts";
+import { recoveryValue, type CommandRecord } from "../recovery/journal";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
 import type { FrozenCitation } from "../conversation-context/selection";
 
@@ -24,6 +25,8 @@ interface ReceiptBase {
   readonly state: "sending" | "unknown" | "rejected";
   readonly error: string | null;
   readonly everUnknown: boolean;
+  readonly locallyBlocked?: boolean;
+  readonly recoveryVersion?: number;
 }
 
 export type TurnReceipt = ReceiptBase & { readonly kind: "turn"; readonly request: Readonly<ConversationTurnAdmission> };
@@ -34,6 +37,29 @@ function freezeCreation(input: ConversationCreation) {
   const value = conversationCreationSchema.parse(input);
   return Object.freeze({ ...value, requested: Object.freeze({ ...value.requested }),
     ...(value.executionProfile ? { executionProfile: Object.freeze({ ...value.executionProfile }) } : {}) });
+}
+
+export function frozenOutbox(entry: OutboxEntry) {
+  return recoveryValue({ kind: entry.kind, id: entry.id, conversationId: entry.creation ? null : entry.conversationId,
+    creationKey: entry.creationKey, turnKey: entry.turnKey, creation: entry.creation, request: entry.request });
+}
+function storedObject(value: unknown): Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw Error("Invalid saved conversation receipt.");
+  return value as Record<string, unknown>;
+}
+export function restoreOutbox(record: CommandRecord, terminalReconciliation = false): OutboxEntry {
+  if (record.domain !== "outbox") throw Error("This is not a conversation receipt.");
+  if (record.phase === "accepted" && !terminalReconciliation) throw Error("This receipt is already accepted. Open its bound conversation without resending.");
+  const value = storedObject(record.frozen), checkpoint = record.checkpoint === null ? {} : storedObject(record.checkpoint);
+  if (value.id !== record.id || typeof value.id !== "string" || typeof value.creationKey !== "string" || !value.creationKey || value.creationKey.length > 128
+    || typeof value.turnKey !== "string" || !value.turnKey || value.turnKey.length > 128 || !["turn", "creation"].includes(String(value.kind))) throw Error("Invalid original receipt keys.");
+  const creation = value.creation === null ? null : freezeCreation(conversationCreationSchema.parse(value.creation));
+  const conversationId = checkpoint.conversationId ?? value.conversationId;
+  if (conversationId !== null && (typeof conversationId !== "string" || !conversationId || conversationId.length > 128)) throw Error("Invalid restored conversation identity.");
+  const base = { id: value.id, conversationId: conversationId as string | null, creationKey: value.creationKey, turnKey: value.turnKey, creation,
+    recoveryVersion: record.version, state: record.phase === "rejected" ? "rejected" as const : "unknown" as const, error: record.phase === "prepared" ? "This original request was saved before sending. Retry explicitly to send it." : "Original receipt restored. Check or retry using the same keys.", everUnknown: record.phase === "dispatching" || record.phase === "unknown" };
+  if (value.kind === "creation") { if (!creation || value.request !== null) throw Error("Invalid saved creation."); return Object.freeze({ ...base, kind: "creation", creation, request: null }); }
+  return Object.freeze({ ...base, kind: "turn", request: freezeMaterialRequest(conversationTurnSchema.parse(value.request), creation?.projectId) });
 }
 
 /** A receipt owns its frozen input. It never owns or restores the next draft. */
@@ -86,9 +112,20 @@ export class ConversationOutbox {
     return entry;
   }
 
+  restore(record: CommandRecord) {
+    const restored = this.matchSaved(record);
+    this.publish(record.phase === "accepted" ? null : restored);
+  }
+  matchSaved(record: CommandRecord) {
+    if (this.closed) throw Error("This conversation connection is closed.");
+    const restored = restoreOutbox(record, true);
+    if (this.entry && (this.entry.state === "sending" || JSON.stringify(frozenOutbox(this.entry)) !== JSON.stringify(frozenOutbox(restored)))) throw Error("The saved receipt does not match the idle original request in this view.");
+    return restored;
+  }
+
   retry(id: string): OutboxEntry | null {
     if (!this.matches(id) || this.entry!.state !== "unknown") return null;
-    this.publish({ ...this.entry!, state: "sending", error: null });
+    this.publish({ ...this.entry!, state: "sending", error: null, locallyBlocked: false });
     return this.entry;
   }
 
@@ -100,10 +137,10 @@ export class ConversationOutbox {
       this.publish({ ...this.entry!, conversationId });
   }
 
-  fail(id: string, error: string, definitelyRejected: boolean) {
+  fail(id: string, error: string, definitelyRejected: boolean, locallyBlocked = false) {
     if (!this.matches(id)) return;
     const unknown = this.entry!.everUnknown || !definitelyRejected;
-    this.publish({ ...this.entry!, state: unknown ? "unknown" : "rejected", error, everUnknown: unknown });
+    this.publish({ ...this.entry!, state: unknown ? "unknown" : "rejected", error, locallyBlocked, everUnknown: this.entry!.everUnknown || (!locallyBlocked && unknown) });
   }
 
   accept(id: string) { if (this.matches(id)) this.publish(null); }

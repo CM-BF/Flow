@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T07:55:46.007145+00:00",
+  "reviewer": "/root independent, GPT-6 Astra Ultra",
+  "decision": "APPROVED_FOCUSED_SSE_WITNESS_SOURCE_AND_LOCAL_CHECK_PLAN_NOT_RUNTIME_PASS",
+  "base": "d321240c486f24a0944a0472cb6f3cebd571fc39",
+  "target": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "sourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 75979,
+      "sha256": "6fdee86a625315c5f7a1d9e7aa5e29e484a0e6a7915c5ea76a5e4af768f994f3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 34613,
+      "sha256": "55b18f469f248ac019b4208bb61a0b288b955bfb16be25fc775514f189e3a899"
+    }
+  ],
+  "blockingFindings": [],
+  "scope": "Only two existing Recovery fixture/browser files; no production changes and no shared contract changes. Original seven groups and all prior selected groups retained.",
+  "reviewed": {
+    "causalAcceptance": "Second public consumer submit/cancel on fixture-owned queued task; observing browser has one original cookie-only stream, expected new cursor and cancellation timeline; exact single initial task GET, no later task snapshot/events REST refill, no observing-page POST. This does not validate the cancel button or conversation assistant stream.",
+    "witness": "Passive listener on the exact source already piped to the browser. No independent network stream, event injection or transport writes. One connection, fatal streaming UTF-8 decoder, CR/LF handling including splitCRLF; input and retained state bounded64KiB, max4 complete frames, exacttask and monotonic cursor, bounded projected entries. Incomplete JSON/frame/UTF8 and caps fail closed.",
+    "lifecycle": "Witness removes only its data/end/close/error/abort listeners. Existing transport owns pipe/backpressure/error/destruction. Explicit stop before fixture shutdown, error retained; reconnect/second attach is failure rather than a replacement witness. Browser listener is removed in finally and worker stopObservers.",
+    "identity": "Owned fixture task created by real public FlowClient.submit with fixture harness, no runner/adapter/provider. Cancel uses the same private fixture owner client, public cancel method and fresh idempotency key; values returned to report exclude owner credentials.",
+    "resources": "One accepted retained adjustment8→9MiB with fixed5MiB run reserve gives4MiB startup ceiling; scratch64MiB/1DB1Chrome/0provider/0runnerprocess unchanged. Remaining segment79842ms preserved and fresh combined floor+1MiB.",
+    "errorHandling": "Witness errors may additionally mark fixture cleanup result failed but do not skip actual teardown, database normal DROP or owned process cleanup. Prior failures remain immutable."
+  },
+  "targetedLocalPlan": {
+    "actualObserverCheck": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/sse-observer.check.ts",
+    "sha256": "611f265c5c8a0afacd6466a8bbf30398aaeda0decf0d18a126a21ba3c8cc66ed",
+    "expectedChecks": 12,
+    "cases": [
+      "split everyUTF8/CRLF byte",
+      "actual piped bytes and backpressure",
+      "comments/CR/LF limits",
+      "invalidUTF8",
+      "incompleteUTF8",
+      "incompleteframe",
+      "invalidJSON",
+      "wrongtask",
+      "fifthframe",
+      "inputbound",
+      "abort/secondconnection",
+      "naturalpartialclose"
+    ],
+    "affectedNoEmit": "The two changed test files using existing installed declarations and owned config; no package installation or production rerun.",
+    "execution": "Owner may autonomously run within one finite20s local segment incl5s cleanup, bounded1MiB raw/8MiB scratch,0PG/Chrome/provider; routine same-boundary repairs/relevant retest do not require repeated root gates. Report real names/exits/EOF and clean owned resources.",
+    "status": "NOT_RUN at this independent review"
+  },
+  "runtimeSegment": "Existing150s segment remaining79842ms. After local checks, originalowner prepares fresh exact input/env/claim/resources and confirms unique actual sharedPG holder once ready with otherleads; not reserved by this source review. Same-boundary locate/fix/retest autonomous; final review once segment ends.",
+  "limits": [
+    "No actual SSE/browser/PG check run by root.",
+    "SSE selection proves task timeline delivery only if actual cause assertions pass; does not close other Recovery profile/knowledge/Steer/two-center acceptance.",
+    "No production App fix, main integration, deployment or provider/native execution follows."
+  ],
+  "cleanCode": "Bounded witness responsibility isolated from proxy authority; observed-frame projection and listener lifecycle remain local. Existing public commands reused. Review targets the new causal acceptance and resource delta instead of repeating prior unchanged tests."
+}

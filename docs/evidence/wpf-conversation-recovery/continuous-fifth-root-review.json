@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-07T07:25:26.955457+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_CREATED_TURN_ACK_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_FULL_FEATURE_PASS",
+  "run": "recturn344-20261007-071813-d529ee",
+  "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "executionHead": "7c7ee77d42e9af484237d62d30f9bfda4e613d73",
+  "actual": {
+    "run": "recturn344-20261007-071813-d529ee",
+    "startedAt": "2026-10-07T07:23:49.541055+00:00",
+    "endedAt": "2026-10-07T07:24:01.286190+00:00",
+    "parentPid": 80617,
+    "actualExitCode": 0,
+    "outerElapsedMs": 11745.105624897406,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "streams": {
+      "stderr": {
+        "eof": true,
+        "bytes": 0
+      },
+      "stdout": {
+        "eof": true,
+        "bytes": 626
+      }
+    }
+  },
+  "accounting": {
+    "priorMs": 47205,
+    "chargeMs": 11746,
+    "spentMs": 58951,
+    "remainingMs": 91049,
+    "outerMs": 11745.105624897406,
+    "lateMs": 11230.26425,
+    "serializedParentMs": 11217.659582999999,
+    "oldClosedEnvelopeMs": 64134.08675
+  },
+  "sourcePinsVerified": 19,
+  "rawFilesVerified": 11,
+  "rawBytes": 26379,
+  "rawManifestSha256": "c256fec103bc2e7b099ff0b733202aebd01221b7ae88eefb10cff7300110c92d",
+  "acceptance": {
+    "selected": [
+      "cookieRead",
+      "createdTurnAckLoss"
+    ],
+    "selectedPassed": true,
+    "fullJourneyPassed": false,
+    "png": 0,
+    "parentComplete": true,
+    "workerErrors": [],
+    "priorSameCaseFailedAttemptUnchanged": true
+  },
+  "wireVerification": {
+    "createCount": 1,
+    "turnCount": 2,
+    "firstAckLost": true,
+    "explicitRetrySamePathKeyBody": true,
+    "replayed": true,
+    "sameConversationTurnTask": true,
+    "conversationId": "9ba2b01e-61cd-4c03-af57-076dae0fd302",
+    "turnId": "64cd0422-902f-4eaf-b476-bba6108e030e",
+    "taskId": "917293c6-01d0-4b2d-89d3-29c764be1b13",
+    "key": "2645063d-704c-4b75-9ac6-caa08cf5c5e8:turn",
+    "bodySha256": "104919620611ccf0c8caac9e568fb7d80f51094ad0a88159ebaf5cd8c0b7109c",
+    "browserFailure": "net::ERR_CONTENT_LENGTH_MISMATCH"
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_8706234e46f84e3997f663371d6383ea",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.8429159999996045,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.7860000000000582,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 28,
+      "wireBytes": 8344,
+      "providerQueries": 0
+    },
+    "freshOwnedProcessObservations": [
+      {
+        "pid": 80617,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 81010,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 83421,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-1YIFG3",
+    "scratchAbsent": true,
+    "adminEnvironment": "Awaiting manager exact identity deletion; value never read by root."
+  },
+  "remaining": [
+    "queue-ack-loss independent NOT_RUN",
+    "full feature independent review IN_PROGRESS",
+    "provider/native/second-center and real service acceptance not inferred"
+  ],
+  "findings": []
+}

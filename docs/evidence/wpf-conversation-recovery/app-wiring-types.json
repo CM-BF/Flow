@@ -1,0 +1,40 @@
+{
+  "startedAt": "2026-10-06T14:19:03.605169+00:00",
+  "sourceCommit": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "dirty": true,
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "aa413d2d299d2e5d7e133dc3ec44da8929b2bc5c9936db9ebb8609bd463a0f1e",
+    "apps/web/src/attachments/controller.ts": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+    "apps/web/src/connection/session.ts": "fbfc62f07993d710ebc9b70ff092836bdba46eee51ebc9abc8f6cb35ced46dce",
+    "apps/web/src/conversation-context/controller.ts": "4f4f94a4b631b56a39e9da07ba508e1f419a0afe7e45e3fb0264a60085729856",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "4d465f9ca703992a013c5d8d3b31737f24133d214b449aa76bd8c06d4f5194a3",
+    "apps/web/src/conversations/ConversationThread.tsx": "2bf97acb1b6a65333eeb1b7c13b55a7ad5b9ededa8c616e80c74fa43d31c234b",
+    "apps/web/src/conversations/outbox.ts": "704d1f34d8d3667e0b16064cea3fc4eac0744c6999479cc494bcf776defad5f8",
+    "apps/web/src/conversations/projection.ts": "3f676bc1c9af2b4814cafc80dc6e7a7ccd91406990b2138c7c1415851b709138",
+    "apps/web/src/conversations/queue/commands.ts": "3311d75c8e51346d80fe0b47a69fb1588101cfc5a04f89dba7e090c79289e8e1",
+    "apps/web/src/plugin-integration/attachments.tsx": "a77d6f72eb4f6adb2a4fbc78e5c402bf21700673fa52163cdee9aea473414c08",
+    "apps/web/src/plugin-integration/session.ts": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+    "apps/web/src/plugin-integration/steering.tsx": "e6e54ab855a4896bba9df6ac38a0796bc46fdcc90b646be77ff57248c72c0b63",
+    "apps/web/src/recovery/binding.tsx": "da813ce9f39cbbf1f5d32f8c7b463c41e2500aea187734c31906e1b47554988c",
+    "apps/web/src/recovery/journal.ts": "c538d221f06d7926fdee0f459d5c84eff2c1f98917019c4c766938ba84770faf"
+  },
+  "command": [
+    "node24",
+    "tsc",
+    "--noEmit",
+    "-p",
+    "apps/web/tsconfig.json"
+  ],
+  "timeoutSeconds": 15,
+  "exitCode": 2,
+  "timedOut": false,
+  "elapsedSeconds": 6.191,
+  "rawBytes": 862,
+  "logTruncated": false,
+  "cleanup": {
+    "noServicesOrCachesCreated": true,
+    "fulfilled": true
+  },
+  "limits": "One explicitly approved read-only type check. No dependency writes, cache, emit, Vitest, install, build, HTTP, PG or browser."
+}

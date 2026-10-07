@@ -1,0 +1,201 @@
+{
+  "at": "2026-10-07T06:50:46.400590+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra, independent read-only actual review",
+  "decision": "ACCEPTED_SCOPED_CREATE_ACK_LOSS_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE",
+  "run": "reccreate-20261007-064810-01f20b",
+  "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "executionHead": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+  "actual": {
+    "exitCode": 0,
+    "outerElapsedMs": 11506.23241707217,
+    "endedAt": "2026-10-07T06:49:18.895676+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 616,
+    "stderrBytes": 0,
+    "parentPid": 49914,
+    "run": "reccreate-20261007-064810-01f20b"
+  },
+  "accounting": {
+    "state": "SELECTED_PASS_NOT_WHOLE_FEATURE",
+    "newSegmentPriorMs": 24589,
+    "outerElapsedMs": 11506.23241707217,
+    "lateParentMs": 10902.810749999999,
+    "serializedParentMs": 10893.408625,
+    "chargeMs": 11507,
+    "newSegmentSpentMs": 36096,
+    "newSegmentRemainingMs": 113904,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noRetry": true
+  },
+  "sourcePinsVerified": 19,
+  "rawFilesVerified": 11,
+  "rawBytes": 23183,
+  "rawManifestSha256": "2f836eae9817bb6408d647db13b4829fa77280a4bd2b7460e18a6fa12cb60463",
+  "acceptance": {
+    "journey": "create-ack-loss",
+    "required": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "completed": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "selectedPassed": true,
+    "fullJourneyPassed": false,
+    "failure": null,
+    "pageErrors": [],
+    "screenshots": 0,
+    "checks": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+      "lost CREATE ACK resumes the original two-key/two-body command only after explicit retry"
+    ],
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 8317.634709,
+        "endedOffsetMs": 9361.680209,
+        "elapsedMs": 1044.0455000000002,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "createAckLoss",
+        "startedOffsetMs": 9361.698542,
+        "endedOffsetMs": 10323.692875,
+        "elapsedMs": 961.9943330000006,
+        "outcome": "PASSED"
+      }
+    ],
+    "initialization": {
+      "outcome": "PASSED",
+      "startedOffsetMs": 0,
+      "endedOffsetMs": 8317.53375,
+      "elapsedMs": 8317.53375
+    },
+    "interpretation": "Timing is this fixture run, not a navigation performance benchmark. Prior full7 and choice results remain bound to their own sources/runs."
+  },
+  "wireVerification": {
+    "businessPosts": 3,
+    "order": [
+      "CREATE with actual truncated ACK body",
+      "same key/body CREATE replay after explicit action",
+      "first original-key turn after restored CREATE binding"
+    ],
+    "sameCreationKeyAndBody": true,
+    "sameConversationId": "ea406d41-8038-4394-8d51-408f61dd9e54",
+    "originalCreateReplayed": false,
+    "repeatCreateReplayed": true,
+    "originalTurnReplayed": false,
+    "turnId": "26165902-a864-42ba-8ef6-64458b9b5f35",
+    "taskId": "01b0839e-ff33-4c09-b062-f409e970c860",
+    "bodyLoss": {
+      "path": "/api/conversations",
+      "key": "d2fe6e86-9f1a-4f66-b2c8-26a0ceaa0fa5:create",
+      "bodySha256": "2bbf09bb6ca0ca2b2b91491194117bb32a21686ef175bbd7d795cedeb14e9f75",
+      "status": 201,
+      "headers": {
+        "content-length": "527",
+        "content-type": "application/json; charset=utf-8",
+        "connection": "close",
+        "cache-control": "no-store"
+      },
+      "events": [
+        "request",
+        "response-headers",
+        "requestfailed"
+      ],
+      "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+      "finished": false
+    },
+    "faultPrefixBytes": 1,
+    "sourceAssertionsCovered": "Reviewed 67f8 journey additionally asserts persisted original two keys/bodies, no turn at CREATE-loss checkpoint, next draft preserved across expired session/reload/explicit cookie authentication with no business POST, explicit retry only, accepted checkpoint identity, explicit next-draft restoration without sending. These passed in selected execution."
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_426538b36b664e819ed76f21eeb453d9",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.3591670000005251,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.6546670000006998,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 28,
+      "wireBytes": 6958,
+      "providerQueries": 0
+    },
+    "processExits": [
+      {
+        "pid": 49929,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 51348,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "parentFinal": {
+      "errors": [],
+      "cleanupErrors": [],
+      "allOwnedGroupsAbsent": true,
+      "scratchRemoved": true
+    },
+    "outerEof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "rootFreshGroupObservation": [
+      {
+        "pgid": 49914,
+        "state": "ABSENT"
+      },
+      {
+        "pgid": 49929,
+        "state": "ABSENT"
+      },
+      {
+        "pgid": 51348,
+        "state": "ABSENT"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-FoUXvL",
+    "scratchAbsent": true,
+    "adminEnvironment": "Manager owns exact identity deletion after actual completion; its deletion receipt is separate, not claimed by this review."
+  },
+  "resourceObservations": {
+    "peakObservedScratchBytes": 27037815,
+    "minimumObservedFreeBytes": 24335147008,
+    "lastParentRetainedBytes": 2327013,
+    "meaning": "Observed samples only, not hard quotas."
+  },
+  "remaining": [
+    "created-turn-ack-loss and queue-ack-loss not selected; use their distinct fresh gates",
+    "Steer HTTP, SSE delivery, profile/knowledge draft, second-center/principal cases remain separate",
+    "No whole-feature approval, main integration, or new theme screenshots"
+  ],
+  "next": "Within same finite segment, unchanged source selected created-turn-ack-loss is routine next readiness after minimal actual carry/fresh claim/resources/gate; no new product authorization needed. Cross-lead actual ready queue still applies.",
+  "findings": []
+}

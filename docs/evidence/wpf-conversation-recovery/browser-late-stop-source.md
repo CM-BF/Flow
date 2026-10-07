@@ -1,0 +1,9 @@
+# Late browser supervisor stop — source-only repair
+
+Fixed `4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb` against2b01/parent7ca. Root input [P2](browser-late-stop-root-review.json), original21 fresh claim20:34:02.072Z [observation](browser-late-stop-claim.json). [Manifest](browser-late-stop-checkpoint.json) binds19 sources; onlyparent changes, worker/fixture/other18/old10raw untouched. No execution, imports, types, free/HTTP/PG/Chrome.
+
+`stopped` remains the work/cleanup lifecycle flag. A separate first `stopReason` records even after normalcleanup sets stopped=true. `interruptionRequested` records the external signal independently, including when another failure already stopped work. Signal handlers remain registered with `on` until original finalization removes them; repeatedsignals return without interrupting cleanup or re-signalling childgroups. `stop` sends TERM only at the first work→stopped transition; cleanup still owns its existing boundedTERM/KILL/reap/DB/scratch sequence and hard deadline.
+
+`supervisor.passed` explicitly requires no stopReason/interruption. The post-write conditional checks bothfacts, so a signal during async report writes takes the existing single failure-correction branch. Terminalstdout carries bothfacts; actualexit is nonzero for any handledlate stop. Earlier serialized fields remain historical if predating the signal; no success may be inferred from them alone. No guarantee is made for SIGKILL, processcrash or a signal not handled before final listener removal. This is classification/lifecycle source reasoning, not a signal injection test or observed leak.
+
+Originalbrowser elapsed14846.267375ms; remaining75153.732625ms includes15000ms cleanup, integer proposal75153ms. No budget reset or newjourney. Prior actual50 remains accepted at994ce/2b01, separate from thisparent. Fullfeature NOT_STARTED/targetUNKNOWN. Old readiness directory remains untouched; no newgate/adminenv was created.

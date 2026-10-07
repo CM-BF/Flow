@@ -1,0 +1,215 @@
+{
+  "at": "2026-10-06 17:38:18 UTC",
+  "reviewer": "w01_owner / gpt-6-astra / ultra",
+  "target": "7686139952becf530bcf57966425bd9d7b88b697",
+  "metadata": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+  "result": "NO_ADDITIONAL_BLOCKING_FOUND; known root P2 task identity assertion confirmed; full target not approved",
+  "runtime": "NOT_RUN: no import/types/test/HTTP/PG/Chrome/free/build/install; project writes0",
+  "sources": [
+    {
+      "commit": "7686139952becf530bcf57966425bd9d7b88b697",
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 23578,
+      "sha256": "07ea7818a90f6d659c87ba5c770474df902918b1234f2708d5777ede3a210922"
+    },
+    {
+      "commit": "7686139952becf530bcf57966425bd9d7b88b697",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 41563,
+      "sha256": "8b256425593670d1793e8851ddd1f402f8a985732af44b047dd7dad905aae70b"
+    },
+    {
+      "commit": "7686139952becf530bcf57966425bd9d7b88b697",
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "commit": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+      "path": "docs/evidence/wpf-conversation-recovery/bodyloss-source.md",
+      "bytes": 2944,
+      "sha256": "a1ae25aa1f12a51fbc1d3913a4d460633bc5dbe69c03afafefd4b5a945c2574c"
+    },
+    {
+      "commit": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+      "path": "docs/evidence/wpf-conversation-recovery/bodyloss-checkpoint.json",
+      "bytes": 5135,
+      "sha256": "68f5f68c6e08eb2412506f057b1a72ec0b6c47fea93747104cc13b5adb983459"
+    },
+    {
+      "commit": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+      "path": "docs/evidence/wpf-conversation-recovery/bodyloss-readonly-inputs.json",
+      "bytes": 3626,
+      "sha256": "9252ae66295dfb98bedf8f7dd404b90da24cc90b44a55201d0006b05353d04c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "packageSourceOnly": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/client.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js",
+      "bytes": 25715,
+      "sha256": "ad6aa93c26b0bf26db1f2ebe74216212790a04c41af5585c63760f9fa8322a32",
+      "packageSourceOnly": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg-pool/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "bytes": 1083,
+      "sha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134",
+      "packageSourceOnly": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg-pool/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058",
+      "packageSourceOnly": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@types/pg/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts",
+      "bytes": 11428,
+      "sha256": "67f3d03f61a43f045851624e52ec438803ecf5d2247660f208bd9bcadb6ff298",
+      "packageSourceOnly": true
+    }
+  ],
+  "sourceManifestBindings": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "8b256425593670d1793e8851ddd1f402f8a985732af44b047dd7dad905aae70b",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "07ea7818a90f6d659c87ba5c770474df902918b1234f2708d5777ede3a210922",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9",
+      "fixedEqualsMetadata": true,
+      "unchangedFromEc91": true
+    }
+  ],
+  "knownFinding": {
+    "origin": "root, communicated by d01; not a second independent new finding",
+    "priority": "P2",
+    "path": "apps/web/test/conversation-recovery.browser.ts",
+    "line": 393,
+    "problem": "turn.taskId is not the public nested task.id; undefined equals undefined is a false-positive task-identity assertion",
+    "contractPath": "packages/contracts/src/conversations.ts",
+    "contractLines": "121-131",
+    "minimalFix": "Require nonempty originalAck.turn.task.id and retryAck.turn.task.id, compare both alongside nonempty turn.id. Preserve exact request/key/body and replayed assertions."
+  },
+  "additionalBlockingFindings": [],
+  "limits": [
+    "Static source review only; local flush/end is not evidence Chromium received headers/prefix",
+    "pg pool.end completion is not proof backend has disappeared; new exact-database before/after-marker observations correctly avoid relying on it",
+    "1s observation phase deadline is not a hard promise settlement bound: pg Pool acquisition can still use 1500ms connectionTimeoutMillis, while query_timeout starts in client.query. No false zero is returned after deadline; parent hard stop remains fallback. Describe as a bounded attempt policy with parent cleanup hard deadline, not guaranteed <=1s physical query lifecycle.",
+    "CREATE/Queue/Steer real recovery journeys, delivered SSE contents, multi-center semantics remain pending; helper support is not scenario evidence",
+    "No actual supervisor/budget/DB/network/Chrome success inferred; historical27 unchanged direct tests do not validate new harness"
+  ]
+}

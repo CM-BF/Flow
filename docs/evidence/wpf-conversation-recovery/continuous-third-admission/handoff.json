@@ -1,0 +1,76 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T06:48:10.709711+00:00",
+  "gate": "/private/tmp/recovery-create-admission-65z5d8xx/gate.json",
+  "gateSha256": "72cb284400cafa7b0065cd1b18eec8603b1a2391eeb0712de0115025671cd88d",
+  "expiresAt": "2026-10-07T06:54:10.709711+00:00",
+  "run": "reccreate-20261007-064810-01f20b",
+  "expectedRunDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b",
+  "head": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+  "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21
+  },
+  "selection": {
+    "journey": "create-ack-loss",
+    "requiredGroups": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "originalFullSevenUnchanged": true,
+    "notSelected": [
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390",
+      "connectionChoice",
+      "createdTurnAckLoss",
+      "queueAckLoss"
+    ],
+    "selectedPassIsNotFullJourneyPass": true,
+    "fullFeatureReview": "IN_PROGRESS",
+    "singleAttemptOnly": true,
+    "otherNewJourneys": "created-turn-ack-loss and queue-ack-loss require later distinct selected gate/actual attempt; not scheduled here"
+  },
+  "totalMs": 60000,
+  "workMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentSpentMs": 24589,
+  "newSegmentRemainingMs": 125411,
+  "oldClosedEnvelopeMs": 64134.08675,
+  "adminEnv": "/private/tmp/recovery-create-admission-65z5d8xx/admin.env",
+  "adminEnvIdentity": {
+    "device": 16777234,
+    "inode": 123595219,
+    "mode": "0600",
+    "uid": 501
+  },
+  "adminValueRecorded": false,
+  "adminSource": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts:185",
+  "cleanupResponsibility": "d01_owner exactenv deletion after actual terminal/cleanup, lstat+no-follow fstat match; never readvalue; preservegate/receipts. Expired/unlaunched admission not reusable.",
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-create-admission-65z5d8xx/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-create-admission-65z5d8xx/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "outerCapture": "Reuse prior original single-file parent and the full7 outer stdout/stderr/actual-exit capture; preserve dual EOF and exact PGID/scratch/DB cleanup; no new supervisor",
+  "accounting": "ceil(max actualouter,late,parent)) charge new150s, no old90credit; originalraw unchanged",
+  "scope": "cookieRead+createAckLoss only; full7 notrerun and selectedpass notwholefeature",
+  "managerLaunch": false,
+  "continuousSegment": "Routine sameboundary fix/retest underexisting authorization, uniquegate andfresh actualresource/input perattempt; no blind retry or permission/cleanup/acceptance change without targeted review."
+}

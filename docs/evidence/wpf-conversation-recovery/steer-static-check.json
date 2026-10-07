@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-07 09:27:25 UTC",
+  "method": "read-only Python text/mapping and fixed Git byte comparison; not TypeScript/AST/runtime validation",
+  "base": "27f2515df4d58eafcf960bb1dbdfb248bba4fdb0",
+  "oldSelectionsUnchanged": {
+    "full": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "recovery-chain": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn"
+    ],
+    "page-auth": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "csrf-offline": [
+      "cookieRead",
+      "csrfOffline"
+    ],
+    "appearance": [
+      "cookieRead",
+      "themes390"
+    ],
+    "connection-choice": [
+      "cookieRead",
+      "connectionChoice"
+    ],
+    "create-ack-loss": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "created-turn-ack-loss": [
+      "cookieRead",
+      "createdTurnAckLoss"
+    ],
+    "queue-ack-loss": [
+      "cookieRead",
+      "queueAckLoss"
+    ],
+    "sse-delivery": [
+      "cookieRead",
+      "sseDelivery"
+    ],
+    "complete-draft": [
+      "cookieRead",
+      "completeDraft"
+    ]
+  },
+  "newSelection": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "other17SourceUnchanged": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/conversation-steering/SteeringControl.tsx",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/steering.tsx",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/recovery/journal.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "diffCheckExit": 0,
+  "types": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "nodeProductChecks": "NOT_RUN",
+  "fixedSourceTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "sourceScope": "two fixed test blobs only; 17 other source blobs unchanged",
+  "followup": "assert.ok ready-state narrows public admission union; source-only, not typechecked"
+}

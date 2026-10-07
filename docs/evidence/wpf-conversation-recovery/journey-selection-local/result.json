@@ -1,0 +1,55 @@
+{
+  "startedAt": "2026-10-07T05:17:53.318772+00:00",
+  "head": "263b0ed6bb0e1b186d7a8172f9f679d48c108657",
+  "sourceSha256": "c19304a5412db295440b566fc41d2572ca449a0f05a0c36bb79b34a25f23d360",
+  "sourceDirty": true,
+  "budgetMs": 30000,
+  "cleanupReserveMs": 5000,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-journey-local-697ukvp0/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "apps/web/tsconfig.json"
+      ],
+      "pid": 38100,
+      "exit": 0,
+      "timedOut": false,
+      "elapsedMs": 6065.444582956843,
+      "stdoutBytes": 0,
+      "stderrBytes": 0,
+      "bothEOF": true,
+      "ownedGroupAbsent": true
+    },
+    {
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-journey-local-697ukvp0/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/private/tmp/recovery-journey-local-697ukvp0/selection-check.cjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts"
+      ],
+      "pid": 43708,
+      "exit": 0,
+      "timedOut": false,
+      "elapsedMs": 197.4368339870125,
+      "stdoutBytes": 337,
+      "stderrBytes": 0,
+      "bothEOF": true,
+      "ownedGroupAbsent": true
+    }
+  ],
+  "network": "deny",
+  "projectWrites": "deny",
+  "productImport": false,
+  "elapsedMs": 6279.676374979317,
+  "tmpBytes": 3604,
+  "state": "PASS"
+}

@@ -1,0 +1,218 @@
+{
+  "journey": "sse-delivery",
+  "requiredGroups": [
+    "cookieRead",
+    "sseDelivery"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "sseDelivery"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "a second public consumer cancels a queued task; the observing App receives its new timeline through the original SSE only"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7862.610625,
+    "elapsedMs": 7862.610625
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7862.7025,
+      "endedOffsetMs": 8954.748,
+      "elapsedMs": 1092.0454999999993,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "sseDelivery",
+      "startedOffsetMs": 8954.7615,
+      "endedOffsetMs": 9436.568916,
+      "elapsedMs": 481.80741599999965,
+      "outcome": "PASSED"
+    }
+  ],
+  "pageErrors": [],
+  "failure": null,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/b6eaf2e9-6e6f-4ff1-9e25-80976f94218d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/b6eaf2e9-6e6f-4ff1-9e25-80976f94218d/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/b6eaf2e9-6e6f-4ff1-9e25-80976f94218d/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/abe056e4-dbb8-42cd-99c5-a5169fea4549",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/abe056e4-dbb8-42cd-99c5-a5169fea4549/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "PASSED",
+    "cookieSseDelivery": "PASSED: original task stream frame and new App timeline; no REST refill",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "PASSED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": 0,
+    "deliveredCursor": 1,
+    "cancelledTaskId": "abe056e4-dbb8-42cd-99c5-a5169fea4549",
+    "externalCancel": {
+      "taskId": "abe056e4-dbb8-42cd-99c5-a5169fea4549",
+      "key": "bd7c4b04-b7a2-4354-905e-5bcbc81ab1db",
+      "status": "cancelled"
+    },
+    "readRequests": [
+      "GET /api/tasks/abe056e4-dbb8-42cd-99c5-a5169fea4549"
+    ],
+    "trace": {
+      "taskId": "abe056e4-dbb8-42cd-99c5-a5169fea4549",
+      "connections": 1,
+      "bytes": 1031,
+      "completeFrames": 2,
+      "pendingBytesUpperBound": 0,
+      "inputSha256": "a0fe4b761e65de53a8f08f769a3b8a86f70e9c3ea501f17e9ee17976dda05aa7",
+      "detached": true,
+      "stoppedBy": "explicit",
+      "error": null,
+      "frames": [
+        {
+          "nextCursor": 0,
+          "status": "queued",
+          "dataSha256": "de5d0e6ac06e949cbbfffa533ab4d314b3621d50409803dec5f805a0e3565695",
+          "entries": []
+        },
+        {
+          "nextCursor": 1,
+          "status": "cancelled",
+          "dataSha256": "50868e1ed1c04c522a90b15e2bd43d26635857a2a20852abce0c4f90ebcc9ecc",
+          "entries": [
+            {
+              "id": "87af3e4c-2753-4dbc-af3a-fac9342fab9e",
+              "cursor": 1,
+              "text": "Cancelled before execution."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

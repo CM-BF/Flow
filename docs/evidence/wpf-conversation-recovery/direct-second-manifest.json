@@ -1,0 +1,85 @@
+{
+  "generatedAt": "2026-10-06 16:23 UTC",
+  "executionHead": "0eef4cda8813afe336df8dc88256da28e206c0d4",
+  "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+  "check": "controlled IDB/public-client mock-fetch direct only",
+  "testFile": "apps/web/test/conversation-recovery.test.ts",
+  "selected": 27,
+  "passed": 27,
+  "failed": 0,
+  "exitCode": 0,
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+    "apps/web/src/attachments/controller.ts": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+    "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+    "apps/web/src/plugin-integration/knowledge.tsx": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+    "apps/web/src/plugin-integration/session.ts": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+    "apps/web/src/plugin-integration/steering.tsx": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+    "apps/web/src/recovery/binding.tsx": "3be8d4ddc82c78bc514e35b3dbe09038f421426d147c73d7444411fb4c5a641e",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5",
+    "apps/web/test/conversation-recovery.fixture.ts": "041eda9cb24bd7bcee8156f8784b6c8abf3f253dfff2b111dab7d19eb46c42c0",
+    "apps/web/test/conversation-recovery.test.ts": "d58903f9ad64054bf233cea28f18574d19bb85af19bcae18a6415e6b7bf3f9b9"
+  },
+  "artifacts": {
+    "direct-second-admission.json": {
+      "sha256": "8692d3b05e3b44045bb1a4cf6a0752c6db07114376c0422759890ad985c57a08",
+      "bytes": 5365
+    },
+    "direct-second-preflight.json": {
+      "sha256": "3730a15aa54cf74ee279781ba04d58ae7b68edc1c9d67580541b2baa9a96b082",
+      "bytes": 4053
+    },
+    "direct-second-config.txt": {
+      "sha256": "99ace33ee34ad2facfac48bd37db54b05878529a97e0e79a9a950c9ee0d028db",
+      "bytes": 416
+    },
+    "direct-second-sandbox.txt": {
+      "sha256": "4661d473c9d430af6c9e78ae78134f27edc3559020d9e1b228fc15d6492d1bd4",
+      "bytes": 166
+    },
+    "direct-second-runner.txt": {
+      "sha256": "492c58100c455882b644d25d530c10b2cf2408ef6c048a49e71f23b65b19a9b7",
+      "bytes": 5113
+    },
+    "direct-second.log": {
+      "sha256": "ebc6e2fcf746a5cbc4e139b8dc9d8e10b515b21393f1c34d6df01e039672179a",
+      "bytes": 330
+    },
+    "direct-second.json": {
+      "sha256": "cbde98891d2b3b71a6a12ae51f956298777bf1a1fe5abb9e118ede26dfe9af6b",
+      "bytes": 4412
+    }
+  },
+  "elapsedSeconds": 2.034,
+  "cumulativeSeconds": 4.574,
+  "remainingOriginalBudgetSeconds": 25.426,
+  "maxSampledTmpBytes": 2766490,
+  "minSampledFreeBytes": 1130868736,
+  "cleanup": {
+    "state": "fulfilled",
+    "seconds": 0.001,
+    "errors": [],
+    "reservedSeconds": 5,
+    "onlyOwnPgid": true,
+    "onlyOwnTmpCache": true
+  },
+  "skillSources": {
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+  },
+  "limits": [
+    "mock IDB event port; not actual browser IndexedDB durability",
+    "no real HTTP/PG/Chrome/CSRF/SSE/provider validation",
+    "current types NOT_RUN; whole feature target UNKNOWN/review NOT_STARTED",
+    "no new run authorized by remaining budget"
+  ]
+}

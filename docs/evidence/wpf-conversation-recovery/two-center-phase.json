@@ -1,0 +1,125 @@
+{
+  "id": "RECOVERY-TWO-CENTER-20261007",
+  "at": "2026-10-07 11:07:00 UTC",
+  "state": "ACCEPTED_SCOPED_TWO_CENTER_ACTUAL_NO_NEXT_RUN_SELECTED",
+  "sourceTarget": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "authorization": "Original RECOVERY01/03/05 root design+source review and d01 source dispatch; actual 2DB resource/window handoff still required.",
+  "selection": {
+    "journey": "second-center-cycle",
+    "requiredGroups": [
+      "cookieRead",
+      "secondCenterCycle"
+    ],
+    "fullJourney": false
+  },
+  "limits": {
+    "phaseRuntimeMs": 90000,
+    "maximumWorkMs": 60000,
+    "cleanupReserveMs": 30000,
+    "minimumAttemptMs": 60000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 13631488,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 9437184,
+    "logBytes": 1048576,
+    "databases": 2,
+    "chrome": 1,
+    "runnerProcesses": 0,
+    "syntheticRunnerActors": 0,
+    "providerCalls": 0,
+    "resourceIncrementBytes": 139460608,
+    "incrementBreakdown": {
+      "secondDatabaseAndWal": 134217728,
+      "newRetainedEvidence": 4194304,
+      "metadata": 1048576
+    }
+  },
+  "runtimeSpentMs": 13020,
+  "runtimeRemainingMs": 76980,
+  "attempts": [
+    {
+      "run": "rectwocenter-20261007-110221-106064",
+      "executionHead": "291736984036d3a3d406561ace9b123fb6b5bcb7",
+      "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+      "outcome": "APPROVED_SCOPED_TWO_CENTER_ACTUAL",
+      "actualOuterMs": 13019.487707992084,
+      "lateParentMs": 12459.486875,
+      "serializedParentMs": 12444.499792,
+      "chargeMs": 13020,
+      "cleanupConfirmed": true,
+      "manifest": {
+        "path": "two-center-first-manifest.json",
+        "bytes": 12723,
+        "sha256": "c31770b196b5b3397ce6beee91dcede962a589d2e9af4b4624b78a731b300fe9"
+      }
+    }
+  ],
+  "closedPriorPhases": [
+    {
+      "id": "original90",
+      "spentMs": 64134.08675,
+      "unusedCreditTransferred": false
+    },
+    {
+      "id": "continuous150",
+      "spentMs": 126447,
+      "unusedMsSealed": 23553,
+      "record": {
+        "path": "continuous-segment.json",
+        "bytes": 10237,
+        "sha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+      },
+      "unusedCreditTransferred": false
+    },
+    {
+      "id": "steering60",
+      "spentMs": 34753,
+      "unusedMsSealed": 25247,
+      "record": {
+        "path": "steering-phase.json",
+        "bytes": 5773,
+        "sha256": "b70cf9acbaae72dad6deac3ccfc49c43883d57a1717513f07598d696eab31c8e"
+      },
+      "unusedCreditTransferred": false
+    },
+    {
+      "id": "routeFix90",
+      "spentMs": 15119,
+      "unusedMsSealed": 74881,
+      "record": {
+        "path": "stale-route-phase.json",
+        "bytes": 4460,
+        "sha256": "0ca4e1c948e006c30d8ba44588a50d3866ff27612dc005b49b001a6f0eb23212"
+      },
+      "unusedCreditTransferred": false
+    }
+  ],
+  "defensiveParentTotalMs": 480000,
+  "defensiveCeilingIsNotPhaseCredit": true,
+  "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); only new phase actual is deducted; no missing/incomplete cleanup can reopen.",
+  "nextAttemptDerivation": "total<=90000-spent and total>=60000, cleanup30000, work=total-30000; remaining<60000 stops. Initial intended single attempt90000.",
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "localEvidence": {
+    "path": "two-center-local/cleanup-receipt.json",
+    "bytes": 2384,
+    "sha256": "aaf543aea25901f98f1d5bec6fa221023ec2f42f4137c8e13a3e6ad194438353"
+  },
+  "sourceLocalReview": {
+    "path": "two-center-source-local-root-review.json",
+    "bytes": 12096,
+    "sha256": "3232a5e0284b9c3944341b899874042162575c31aae2b5b0edbf4a5d85116c13"
+  },
+  "connections": {
+    "path": "two-center-connections.json",
+    "bytes": 6748,
+    "sha256": "95cbdc41ee837a4d536f565aa74f73e87b3df42907ed9ba70e3897d61003fc0e"
+  },
+  "noFurtherRuntimeSelected": true,
+  "actualReview": {
+    "path": "two-center-first-root-review.json",
+    "bytes": 18070,
+    "sha256": "a8c14b7b4c5d93c36f57881da295d701ff063a5e88d1b4467ef18d40e32919f4"
+  }
+}

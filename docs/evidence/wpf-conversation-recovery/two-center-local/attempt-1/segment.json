@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-10-07T10:51:36.730512+00:00",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "budgetMs": 20000,
+  "cleanupReserveMs": 5000,
+  "steps": [
+    {
+      "label": "direct",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-two-center-local-ezx49nve/attempt-1/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/private/tmp/recovery-two-center-local-ezx49nve/attempt-1/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--no-cache",
+        "--testNamePattern",
+        "second-center controlled principal and generation boundaries",
+        "--reporter=json",
+        "--outputFile",
+        "/private/tmp/recovery-two-center-local-ezx49nve/attempt-1/vitest-results.json"
+      ],
+      "pid": 7792,
+      "exitCode": 0,
+      "selection": {
+        "passed": 2,
+        "failed": 0,
+        "notSelected": 55,
+        "selectedTitles": [
+          "second-center controlled principal and generation boundaries isolates a changed principal with the same center and address through the real session, journal and recovery boundary",
+          "second-center controlled principal and generation boundaries rejects ready completions that ignore abort across A to B and B back to A without replacing current authority"
+        ]
+      },
+      "groupAbsent": true,
+      "elapsedMs": 1836.540290969424,
+      "logBytes": 101,
+      "logSha256": "f8315e6285bdedf109ffe07d6253ca0f75068b13ad490fd0803480e9e0acd188"
+    },
+    {
+      "label": "types",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-two-center-local-ezx49nve/attempt-1/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "apps/web/tsconfig.json"
+      ],
+      "pid": 9615,
+      "exitCode": 0,
+      "groupAbsent": true,
+      "elapsedMs": 5577.114708954468,
+      "logBytes": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "errors": [],
+  "PG": false,
+  "Chrome": false,
+  "HTTP": false,
+  "network": "sandbox denied",
+  "projectWrites": "sandbox denied",
+  "previousLocalChargedMs": 0,
+  "observerRerun": false,
+  "startFreeBytes": 22700007424,
+  "tmpBytes": 28634,
+  "endFreeBytes": 22700318720,
+  "elapsedMs": 7414.36579101719,
+  "state": "PASS"
+}

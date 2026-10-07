@@ -1,0 +1,25 @@
+# Recovery fourth attempt: attachment focus/tooltip diagnosis
+
+Fixed source: `9835e7488dd9b0b44b3afbc285336defdd739e98`; sealed evidence HEAD: `a816573c872f80a934d9f1a7f73a5527215c058e`. This is a bounded source/raw read, no runtime or project edits. Full paths, SHA256 and exact previous/current equality are in `audit.json`.
+
+## Actual evidence
+
+`conversation-recovery.browser.ts:438–444` presses Escape, checks composer attachment count=2, calls the first File attachment button's **focus()**, then expects the global tooltip to contain `saved.txt`; the second focus/name check was not reached. Fourth raw reports no matching tooltip after 5000ms, one completed group, no page errors and no failed DOM/screenshot. Count=2 and focus call completion do not prove which node retained focus or whether a tooltip briefly opened. This is neither a hover action nor proof of a product defect.
+
+Third run `rec8ed-20261007-021525-9c6687` records text/intent/material recovery, cross-tab CAS and same-key turn as passed, then fails in the separate page-only auth-loss injection with `__name`. The relevant seven production/UI blobs are byte-identical between 8ed and 9835. The only browser source delta is two self-contained callback method definitions at 488–500, after the tooltip section. These observations rule out a changed tooltip test in that delta, but do not prove flakiness or a unique environmental cause.
+
+## Fixed source facts and reachable hypothesis
+
+1. `plugin-integration/react.tsx:287–289` renders the controlled Project text files Dialog. Its explicit `onCloseAutoFocus` prevents default and focuses the matching composer Files button. Closing is not draft disposal (`plugin-integration/attachments.tsx:163–164,288–295`). `components/ui/dialog.tsx:41` retains exit animation classes. Pinned Radix Dialog 1.2.0 `dist/index.mjs:154,163–176,254–255` connects Presence/modal hideOthers and passes the close handler to FocusScope; FocusScope 1.2.0 `dist/index.mjs:105–116` dispatches the unmount autofocus callback in `setTimeout(0)`.
+2. `attachment.aui.tsx:153–174,186,212–213` uses a real Radix Tooltip trigger wrapping the keyboard-focusable file tile; the name comes from official AttachmentPrimitive.Name. Pinned Tooltip 1.3.0 `dist/index.mjs:111–116,202–212` opens immediately on focus unless pointer-down is active and closes on blur/click. It also closes on ancestor scroll (`316–326`). It is therefore incorrect to explain this failure solely with the pointer-hover delay.
+3. Browser `438–442` has no post-Escape check that the picker closed and its documented Files focus return completed before chip focus. A reachable ordering is: Escape initiates close → test focuses chip/tooltip opens → delayed Dialog close callback focuses Files → chip blurs/tooltip closes. The same close phase may still carry modal accessibility hiding until unmount. Neither ordering was recorded in this run, so they remain hypotheses. A concurrent attachment synchronization/remount or focus-triggered ancestor scroll is another unproven candidate (`ConversationThread.tsx:149–160`, Tooltip source above), not an additional reported product finding.
+
+## Minimum next observation and proposed scope
+
+The smallest reasonable harness precondition is to wait for the **existing** Project text files picker to close and for the **existing exact Files locator** to receive its natural return focus, before the unchanged count2 / first focus+saved.txt / second focus+later.txt assertions. No synthetic refocus of Files, hover substitution, fixed sleep, longer timeout, model/key/material rewrite, or production Tooltip change. This makes the intended close→keyboard-use boundary explicit; it does not retroactively diagnose the fourth failure.
+
+If that bounded attempt still fails, retain a small failure observation of picker visibility/count, Files/each chip connected+focused status, trigger data-state/aria-describedby, and tooltip count/text in this known fake-data fixture. Distinguish absence from a tooltip excluded by accessibility hiding. Preserve existing exact record identity, item order, body-GET and mutation-count checks. Capture only these known fields rather than introducing a general DOM/event tracing framework. A production fix is not justified by current evidence; production renderer/host wrapper paths are outside the original21 claim and would require explicit scope if later evidence points there.
+
+## Method and limits
+
+Applied existing local find-skills, clean-code and webapp-testing methods: identify the real public primitive and its focus lifecycle, keep setup preconditions separate from behavior assertions, retain failure evidence, and prefer focused reconnaissance over unbounded retry. No new installation, product import, test, browser, PG, HTTP, process or resource sampling; only Git blobs/local pinned package source and preserved JSON read. No fifth-run permission is implied. Fourth remains FAILED; full feature target UNKNOWN/review NOT_STARTED; authoritative cumulative browser use54883.199542ms, next integer maximum35116ms including15000ms cleanup.

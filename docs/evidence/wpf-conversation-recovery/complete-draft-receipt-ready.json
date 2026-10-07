@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07 08:57:10 UTC",
+  "state": "RECEIPT_LOOKUP_FIXED_READY_AWAIT_SHARED_HANDBACK",
+  "source": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+  "parentWorkerEntry": "apps/web/test/conversation-recovery.browser.ts",
+  "fixture": "apps/web/test/conversation-recovery.fixture.ts",
+  "journey": "complete-draft",
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "executionMetadataHead": "Final seal HEAD supplied by actual Git receipt; this preparation does not create a gate",
+  "actorBoundary": "One public synthetic profile publisher in original markedDB; zero runner processes/claims/heartbeats/native/provider",
+  "budget": {
+    "segmentTotalMs": 150000,
+    "spentMs": 114654,
+    "remainingMs": 35346,
+    "perAttemptMaxMs": 35346,
+    "cleanupReserveMs": 15000,
+    "scratchMaxBytes": 67108864,
+    "retainedMaxBytes": 9437184,
+    "startRetainedMaxBytes": 4194304,
+    "perRunReserveBytes": 5242880,
+    "existingCombinedFreshFloorBytes": 4054056960
+  },
+  "requiresActualBeforeLaunch": [
+    "Explicit unique shared-PG and Chrome handback; fresh compatible concurrent budgets",
+    "Current exact21 claim, branch/HEAD/clean and source/dependency pins",
+    "Fresh disk resource observation, new unique run input, 0600 admin env from approved fixed test endpoint; never output its value",
+    "Original parent/outer collector, owned group/DB/scratch/env cleanup and conservative max elapsed charge"
+  ],
+  "currentRuntimeHolder": "Recovery returned 08:54:22 UTC; root handed next PG to Mika LAZY when ready; source-only until explicit handback",
+  "existingPassedChecksNotRepeated": [
+    "full7",
+    "choice",
+    "CREATE two fault points",
+    "queue enqueue",
+    "task SSE delivery",
+    "50 controlled",
+    "12 observer"
+  ],
+  "sourceCheckpoint": "complete-draft-receipt-checkpoint.json",
+  "failedAttempt": "continuous-ninth-manifest.json"
+}

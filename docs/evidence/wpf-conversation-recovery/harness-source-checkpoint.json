@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T15:18:28.639060+00:00",
+  "inputCheckpoint": "249894321f22763ec4801af8bd9c2ef0e0e3c36b",
+  "scope": "Two prepared harness sources only; no execution/type checks",
+  "sourceHashes": {
+    "apps/web/test/conversation-recovery.fixture.ts": "e69d8170427f19b7c183aae6e78fd21de0d11677dfdfeb1f1247667fb06edab8",
+    "apps/web/test/conversation-recovery.browser.ts": "f84280696572d4c7ad4e075f35b152f3f3283ad9cf398a33588a6b76d8d9d1e7"
+  },
+  "unchanged": "16 production sources and direct test byte-identical to2498",
+  "validation": {
+    "gitDiffCheck": "PASS",
+    "newTypes": "NOT_RUN",
+    "newDirect22": "NOT_RUN",
+    "pgHttpBrowser": "NOT_RUN"
+  },
+  "budgetsUnchanged": {
+    "noEmitRemainingSeconds": 7.186,
+    "directRemainingSeconds": 27.46
+  },
+  "fixedHarnessTarget": "724424237962ed8563db08f5ea8597ee6e7eb11d"
+}

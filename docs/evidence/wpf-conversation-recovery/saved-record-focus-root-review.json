@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-06T21:03:52.632123+00:00",
+  "verdict": "ACCEPTED_P2_SOURCE_GAP_NOT_RUNTIME_REPRODUCED",
+  "finding": "RECOVERY-RETURN-FOCUS",
+  "target": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+  "report": {
+    "path": "/private/tmp/recovery-4d330-remaining-browser-review/report.md",
+    "sha256": "924bef1f32a0457d330ad69ff8b14a9c89437738b6005e4a1685ed1cd4a15959"
+  },
+  "audit": {
+    "path": "/private/tmp/recovery-4d330-remaining-browser-review/audit.json",
+    "sha256": "d3c193dcb94225e5ed6a3544c79c3d2e5a34e52cc75f55aad80d4e0e3be76d67"
+  },
+  "independentValidation": "Root verified all12 fixed source hashes and two installedRadix1.2.0 files; inspected plain P01 button and modal default preventDefault/triggerRef focus handler. No imports or browser execution.",
+  "reason": "Recovery is controlled from an external plugin button with neither DialogTrigger nor onCloseAutoFocus. Default modal handler prevents FocusScope fallback then focuses null triggerRef. Original Enter/Escape focus assertion has no implemented invoker return path.",
+  "boundedRepair": "Fold into same already-assigned binding.tsx render repair, after manager refreshes source-only dispatch; no new writer/task/publicslot/pluginhost or contracts. Capture actual external invoker before modal autofocus and restore on explicit normal close only when still connected, visible and permitted. Do not autofocus a revoked/hidden old workspace or removed button. Keep bookkeeping with the owning Recovery surface/controller and clear it on teardown.",
+  "preserve": [
+    "Original browser themes390 Enter/Escape/toBeFocused assertion unchanged; never call focus in test before asserting.",
+    "No changes to focus trap, plugin authorization or current recovery version/namespace/generation/CAS controls.",
+    "No new runtime gate. Source repair alone is not focus behavior PASS."
+  ],
+  "scope": "Only apps/web/src/recovery/binding.tsx and existing own metadata; browser.ts already assigned for exact record rows but focus assertion stays unchanged. Other17source/oldraw preserved.",
+  "cleanCode": "Use existing modal lifecycle callback and owned invoker; avoid global DOM query by text, timeout focus retries, generic registry or duplicate focus management.",
+  "runtime": "NOT_RUN",
+  "projectWrites": false
+}

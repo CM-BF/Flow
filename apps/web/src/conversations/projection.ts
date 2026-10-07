@@ -2,6 +2,7 @@ import { decodeConversationCreated, decodeConversationTurnAccepted, FlowApiError
 import {
   TERMINAL_STATUSES,
   conversationCreationSchema,
+  conversationContextResponseSchema,
   type ConversationCreation,
   type ConversationSnapshot,
   type ConversationSummary,
@@ -10,8 +11,9 @@ import {
   type AttachmentReference,
 } from "@flow/contracts";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
+import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../recovery/journal";
 import { ReadCache, bodyBytes } from "./read-cache";
-import { ConversationOutbox, type OutboxEntry } from "./outbox";
+import { ConversationOutbox, frozenOutbox, type OutboxEntry } from "./outbox";
 import { freezeContextSelection, type FrozenCitation } from "../conversation-context/selection";
 import { assertCreationReceiptMatches } from "../execution-profiles/selection";
 import { queuePort } from "./queue/commands";
@@ -98,6 +100,27 @@ export class ConversationProjection {
   private readSequence = 0;
   private snapshotSequence = 0;
   private creation: ConversationCreation | null = null;
+  private recovery?: CommandRecovery;
+  configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; this.queue.commands?.configureRecovery(recovery); }
+  restoreReceipt(record: CommandRecord) {
+    if (record.phase === "accepted") throw Error("An accepted receipt needs explicit terminal reconciliation.");
+    this.outbox.restore(record); const entry = this.outbox.getSnapshot()!;
+    if (this.id && entry.conversationId && this.id !== entry.conversationId) { this.outbox.accept(entry.id); throw Error("The receipt belongs to another conversation."); }
+    if (entry.conversationId) this.id = entry.conversationId;
+    this.creation = entry.creation;
+  }
+  async reconcileReceipt(record: CommandRecord) {
+    const entry = this.outbox.matchSaved(record);
+    if (record.phase !== "accepted" || !entry.conversationId || (this.id && this.id !== entry.conversationId)) throw Error("Invalid accepted conversation binding.");
+    const value = record.checkpoint;
+    if (!value || typeof value !== "object" || Array.isArray(value) || !("revision" in value) || !Number.isSafeInteger(value.revision) || Number(value.revision) < 0) throw Error("Invalid saved acknowledgement.");
+    if (entry.kind === "turn" && (!("turnId" in value) || typeof value.turnId !== "string" || !value.turnId || value.turnId.length > 128 || !("taskId" in value) || typeof value.taskId !== "string" || !value.taskId || value.taskId.length > 128 || !("turnNumber" in value) || value.turnNumber !== entry.request.expectedRevision + 1)) throw Error("Invalid saved turn acknowledgement identity.");
+    this.id = entry.conversationId; this.creation = entry.creation;
+    await this.refresh();
+    if (this.state.error || this.state.snapshot?.conversation.id !== entry.conversationId || (this.state.snapshot.conversation.projectId ?? null) !== (record.owner.projectId ?? null)) throw Error("The center did not confirm this receipt's conversation and project.");
+    this.outbox.restore(record); // Matching terminal checkpoint only; no POST or next-draft mutation.
+    return entry.conversationId;
+  }
 
   constructor(private readonly client: ConversationPort, private id: string | null = null, private readonly pollMs = 2000) {
     this.queue = new ConversationQueueProjection(queuePort(client), pollMs);
@@ -113,6 +136,7 @@ export class ConversationProjection {
     this.queue.configureAttachments(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.attachmentContext === true);
     this.queue.configureKnowledge(this.state.snapshot?.conversation.projectId ?? null, this.state.snapshot?.capabilities.knowledgeContext === true);
     this.queue.configure(this.id, this.state.snapshot?.capabilities.queue === true);
+    if (this.recovery) this.queue.commands?.configureRecovery(this.recovery);
     this.listeners.forEach(listener => listener());
   }
   private validateCreation(summary: ConversationSummary) {
@@ -284,20 +308,27 @@ export class ConversationProjection {
   }
   async retry(): Promise<string | undefined> {
     const entry = this.state.outbox && this.online ? this.outbox.retry(this.state.outbox.id) : null;
-    return entry ? this.dispatch(entry) : undefined;
+    return entry ? this.dispatch(entry, true) : undefined;
   }
 
-  private async dispatch(entry: OutboxEntry): Promise<string | undefined> {
+  private async dispatch(entry: OutboxEntry, explicitRetry = false): Promise<string | undefined> {
     const signal = requestSignal(this.lifetime.signal);
+    const recovery = this.recovery;
+    let sent = false;
     try {
+      await recovery?.prepare({ id: entry.id, domain: "outbox", slot: entry.conversationId ? `turn:${entry.conversationId}` : `create:${entry.id}`, frozen: frozenOutbox(entry), stage: entry.conversationId ? "submit" : "create", expectedVersion: entry.recoveryVersion, explicitRetry });
+      signal.throwIfAborted();
       let id = entry.conversationId;
       if (!id) {
+        await recovery?.dispatch(entry.id, "create"); signal.throwIfAborted(); sent = true;
         const raw = await this.client.createConversation(entry.creation!, entry.creationKey, signal);
         if (this.lifetime.signal.aborted) return;
         const created = decodeConversationCreated(raw, entry.creation!);
         const capabilities = readCapabilities(created);
         this.creation = entry.creation!;
         id = created.conversation.id;
+        await recovery?.checkpoint(entry.id, { phase: entry.kind === "creation" ? "accepted" : "prepared", stage: "submit", slot: `turn:${id}`, data: { conversationId: id, revision: created.conversation.revision } });
+        signal.throwIfAborted();
         this.id = id; this.outbox.bindConversation(entry.id, id);
         this.update({ snapshot: { conversation: created.conversation, capabilities, nativeSession: null, lastTurn: null } });
       }
@@ -306,6 +337,7 @@ export class ConversationProjection {
         this.update({ loading: false, error: null }); this.schedule();
         return id;
       }
+      await recovery?.dispatch(entry.id, "submit"); signal.throwIfAborted(); sent = true;
       const raw = await this.client.submitConversationTurn(id, entry.request, entry.turnKey, signal);
       if (this.lifetime.signal.aborted) return;
       const accepted = decodeConversationTurnAccepted(raw, id, entry.request);
@@ -314,6 +346,8 @@ export class ConversationProjection {
       const known = this.state.turns.find(turn => turn.number === accepted.turn.number);
       if (known && (known.id !== accepted.turn.id || known.task.id !== accepted.turn.task.id))
         throw Error("The saved receipt conflicts with this conversation's known turn identity.");
+      await recovery?.checkpoint(entry.id, { phase: "accepted", data: recoveryValue({ conversationId: id, revision: accepted.conversation.revision, turnId: accepted.turn.id, turnNumber: accepted.turn.number, taskId: accepted.turn.task.id, context: accepted.turn.context === undefined ? undefined : conversationContextResponseSchema.parse(accepted.turn.context) }) });
+      signal.throwIfAborted();
       // A receipt may be an old admission replay. It confirms delivery, never current execution state.
       const turns = known ? this.state.turns : this.mergeTurns([accepted.turn], 0);
       const snapshot = { ...current,
@@ -326,7 +360,11 @@ export class ConversationProjection {
     } catch (error) {
       if (this.lifetime.signal.aborted) return;
       const rejected = error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
-      this.outbox.fail(entry.id, errorMessage(error), rejected);
+      this.outbox.fail(entry.id, !sent && error instanceof RecoveryError ? `Not sent: local recovery is blocked. Retry this original receipt after resolving storage. ${errorMessage(error)}` : errorMessage(error), rejected, !sent && error instanceof RecoveryError);
+      if (!(error instanceof RecoveryError)) {
+        try { await recovery?.checkpoint(entry.id, { phase: this.outbox.getSnapshot()?.everUnknown ? "unknown" : "rejected" }); }
+        catch { /* Keep the original dispatching record: it must recover as unknown. */ }
+      }
       if (error instanceof FlowApiError && error.status === 409) await this.refresh();
       return undefined;
     }

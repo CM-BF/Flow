@@ -3,19 +3,21 @@ import { Button } from "../components/ui/button";
 import type { SteeringControl as SteeringController, LocalSteeringReceipt } from "./control";
 import "./steering.css";
 
-export interface SteeringControlProps { control: SteeringController }
+export interface SteeringControlProps { control: SteeringController; draft?: string; onDraftChange?: (text: string) => void; durableRecovery?: boolean }
 const phase = { accepted: "Accepted by center", received: "Received by runner", "observed-consumed": "Consumption observed", rejected: "Rejected by runner", unknown: "Delivery unknown" };
 function Receipt({ receipt, control, disabled }: { receipt: LocalSteeringReceipt; control: SteeringController; disabled: boolean }) {
   return <li className="steer-receipt" aria-label="Steering receipt">
-    <p role="status"><strong>{receipt.phase === "unknown" ? "Acceptance unknown" : receipt.phase === "sending" ? "Sending to center…" : receipt.phase === "rejected" ? "Submission rejected" : phase[receipt.command!.status]}</strong></p>
+    <p role="status"><strong>{receipt.locallyBlocked ? "Not sent · local storage blocked" : receipt.phase === "unknown" ? "Acceptance unknown" : receipt.phase === "sending" ? "Sending to center…" : receipt.phase === "rejected" ? "Submission rejected" : phase[receipt.command!.status]}</strong></p>
     {receipt.error && <p role="alert">{receipt.error}</p>}
     <details><summary>Submitted text</summary><pre>{receipt.input.text}</pre><p>{receipt.bytes} UTF-8 bytes · attempt {receipt.input.attemptId}</p></details>
     {receipt.phase === "unknown" && <Button variant="outline" disabled={disabled} onClick={() => control.retry(receipt.key)}>Retry original command</Button>}
   </li>;
 }
-export function SteeringControl({ control }: SteeringControlProps) {
+export function SteeringControl({ control, draft: controlledDraft, onDraftChange, durableRecovery = false }: SteeringControlProps) {
   const state = useSyncExternalStore(control.subscribe, control.getSnapshot, control.getSnapshot);
-  const [draft, setDraft] = useState(""), revision = useRef(0), label = useId();
+  const [localDraft, setLocalDraft] = useState(""), revision = useRef(0), label = useId();
+  const draft = controlledDraft ?? localDraft;
+  const setDraft = (text: string) => { if (onDraftChange) onDraftChange(text); else setLocalDraft(text); };
   const [localError, setLocalError] = useState<string>();
   const submit = (event: FormEvent) => {
     event.preventDefault(); const version = revision.current; setLocalError(undefined);
@@ -46,6 +48,6 @@ export function SteeringControl({ control }: SteeringControlProps) {
       <Button variant="outline" disabled={pending} onClick={control.clearResolved}>Clear resolved local history</Button>
       {state.loadedAt && <p className="steer-muted">Last refreshed {new Date(state.loadedAt).toLocaleTimeString()}</p>}
     </details>
-    <details><summary>What these receipts mean</summary><p>Accepted means the center saved the command. Received and consumption observed are authenticated runner observations; neither proves that a model followed the instruction.</p><p>Unconfirmed keys and submitted text live only in this page. Keep it open to retry the original command. Reloading or replacing the connection loses that local recovery record. Hidden or disconnected views do not cancel center work.</p></details>
+    <details><summary>What these receipts mean</summary><p>Accepted means the center saved the command. Received and consumption observed are authenticated runner observations; neither proves that a model followed the instruction.</p><p>{durableRecovery ? "Original keys are saved before sending. Storage failure keeps the original receipt in this page; use Saved drafts and receipts for explicit recovery." : "Unconfirmed keys and submitted text live only in this page."} {!durableRecovery && "Keep it open to retry the original command; reloading loses this local receipt."} Hidden or disconnected views do not cancel center work.</p></details>
   </section>;
 }

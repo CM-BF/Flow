@@ -1,0 +1,45 @@
+# Recovery browser harness — prepared, NOT_RUN
+
+The browser/fixture source is a future entry, not execution permission. No PG, browser, HTTP, Vite import, new types or dependency writes were run for RB1–RB4. Overall feature review remains NOT_STARTED. The existing 20/20 controlled-IDB baseline belongs only to 4ba; the subsequent fixed1b8 controlled-IDB/mock-composer/mock-fetch target passed27 cases (see direct-second evidence). That does not execute this browser entry or validate the later native HTTP fixture delta.
+
+## Ownership and budget Interface
+
+- Parent entry uses built-ins before validating a fresh `FLOW_RECOVERY_GATE`, exact HEAD/19 hashes and cumulative budget. `FLOW_RECOVERY_BROWSER=1` alone is insufficient. `FLOW_RECOVERY_TEST_ADMIN` must be the explicitly authorized isolated PG endpoint; no default, credential discovery or personal service.
+- Gate fields: `allowRun`, unique `run`, `sourceCommit`, `sourceHashes`, `expiresAt`, `totalMs` (30,000..90,000 and cumulative <=90,000), `minimumFreeBytes` (at least 1GiB+128MiB), `scratchParent` resolving to `/private/tmp`, `maxScratchBytes` (explicit, at most64MiB). These are source-prepared requirements, not a newly approved run window. At least15s is reserved for cleanup. Fresh manager/user-authorized window and actual resources remain separate prerequisites.
+- A parent timer uses monotonic elapsed time and owns worker/Chrome detached groups before startup awaits. Work stop sends TERM; cleanup escalates only owned groups to KILL and verifies their disappearance. A hard deadline writes incomplete ownership facts and exits nonzero, preventing automatic rerun.
+- Parent DB lease persists exact random name/marker and attempted/confirmed/markerWritten. Unknown CREATE acknowledgement is an error even if later observation is empty. DROP requires confirmation, matching marker and zero connections; no FORCE or termination of unrelated sessions. Nonempty or unobserved remaining state cannot be green. A missing-marker/unknown database is retained with facts for explicit operator review.
+- Whole evidence recursively <=8MiB. Admission reserves5MiB: logs<=1MiB, final worker report<=2MiB, two PNGs<=512KiB each, bounded ownership/budget records. No prior raw deletion. Vite/native-loader and Chrome profile live only in the unique scratch tree, never ignored dependency dirs/evidence cache. Scratch uses a separately admitted cap; peak logical bytes/free-space samples do not prove a physical peak bound. 250ms monitoring stops on threshold/measurement error; it is not a hard quota.
+- Output is `docs/evidence/wpf-conversation-recovery/browser-runs/<run>/`: sources, budget, process/database/scratch ownership, worker report, cleanup, supervisor outcome and images. `budget.complete` is accounting; `cleanupComplete` is separate. Missing/incomplete prior budget or cleanup blocks a new attempt. Worker App cleanup can be forcibly terminated by its owner; final process/DB/scratch observations determine cleanup, never a promise timeout alone.
+
+## Explicit coverage matrix
+
+| Requirement | Prepared observation | Current evidence |
+| --- | --- | --- |
+| Actual browser cookie-only refresh / CSRF / SSE handshake | HttpOnly cookie, public session GET, cookie/no-bearer stream HTTP 200 and missing-CSRF rejection | NOT_RUN; SSE event delivery/reconnect remains PENDING |
+| Text + delivery intent + file material | Files UI selects two seeded resources A,B; original references/order in IDB; reload explicit Restore; unverified and B-only verified Send/Queue must create no command/POST and preserve draft; then A verification adds two actual composer chips in A,B order without reselect/remount; zero content reads before explicit submit | NOT_RUN |
+| Original material turn with lost ACK | Real center commit, dropped response; subsequent retry body and key exactly match, attachment ref unchanged | NOT_RUN |
+| Two browser tabs CAS | Actual shared IndexedDB; B cannot replace A's restored draft version | NOT_RUN |
+| Auth loss with unsaved page-only text | Force transaction abort through browser IDB method, expire isolated session, real public read via focus; no reload, reconnect retains mounted text, zero command POST | NOT_RUN; failure injection is identified, not spontaneous quota exhaustion |
+| 390 light/dark keyboard | Stable viewport, focus the real trigger then Enter opens / Escape returns focus; bounded PNG; not a full Tab traversal audit | NOT_RUN |
+| Complete knowledge/profile/steering draft | Direct/source preparation only | PENDING browser |
+| CREATE + first-turn / Queue / Steer recovery | Original authority direct/source cases | PENDING browser |
+| Second-center/principal isolation | Source/direct only; fixture is one real center | PENDING browser |
+| Center caller Origin / delayed cookie clearing / repeated connect slot semantics | Independently frozen central inputs and final integration gate | PENDING central decision/evidence |
+
+No matrix item is marked passed from this preparation. A successful bounded subset will not stand in for remaining full feature acceptance. No budget expansion or automatic rerun is implied.
+
+## 7244 worker review follow-up — source only
+
+The binding now owns a small `syncComposerDraft` operation. React triggers it on Input publish but keeps the existing preparation watcher bound only to its real lifetime. Synchronization checks current capability/readiness/lease, immutable item membership, held submission, current composer IDs and in-transit IDs after each completed add. The pinned core appends complete metadata synchronously; no file/network preparation is started. Two controlled-composer direct cases are prepared for verified restoration/deduplication/removal and paused add settlement/revocation/held-next-draft isolation; NOT_RUN. The browser case checks real official composer DOM and filename after Browse, retaining the exact first-request attachment-reference assertion. Original 7244 evidence is unchanged.
+
+02d follow-up: the single-file chip journey is retained historically; current candidate prepares A,B verification in reverse arrival order, with the original ordered pair checked on the first actual turn POST and unknown retry body. This is NOT_RUN and does not extend the 90s/15s-cleanup budget.
+
+## Native HTTP proxy correction — source only
+
+The fixture now uses node:http.request to its owned center socket while forwarding the browser public Host and the existing allowlist of raw caller headers, including duplicates. It does not manufacture Origin or Forwarded headers. Request bytes are forwarded unchanged with an explicit body length. Response Set-Cookie arrays remain separate; ordinary and SSE responses pipe with backpressure. Browser close, lifecycle abort and transport errors destroy the owned upstream request/response; late errors remain handled. Deliberate lost ACK drains the committed response and then destroys the browser response.
+
+This replaces the Node fetch Host-normalization seam; it does not change center authentication, permissions or cookie protocol. The new fixed source and all19 hashes are in native-proxy-checkpoint.json. No HTTP/type/browser execution was performed. Future admission must bind the new actual metadata HEAD/hashes and still satisfy90s including15s cleanup, resource prerequisites, and the unresolved central semantics. Historical1b8 direct27 evidence is unchanged.
+
+## 2026-10-06T17:35:32.287102+00:00 — body-loss与DB零连接观察（未运行）
+
+最新两harness固定 `7686139952becf530bcf57966425bd9d7b88b697`，见[19源manifest](bodyloss-checkpoint.json)及[边界](bodyloss-source.md)。运行gate必须重新绑定当前实际HEAD与19hash；旧ec91/1b8 gate不适用。现有lost-turn更强前提不会覆盖未写的CREATE/Queue/Steer实际旅程。parent90s/15s cleanup及证据8MiB不变；PG观察使用parent绝对deadline，不因两轮观察延长。原真实browser仍0运行。

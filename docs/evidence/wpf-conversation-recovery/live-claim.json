@@ -1,0 +1,52 @@
+{
+  "observedAt": "2026-10-06T13:49:01.688Z",
+  "state": "available",
+  "source": "Owner read existing D04 CLI through administrator-provided env wrapper; no env contents printed",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 1,
+    "taskId": "WPF-RECOVERY01",
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "branch": "codex/web-conversation-recovery",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-06T13:46:08.213Z",
+    "createdAt": "2026-10-06T13:46:08.213Z"
+  },
+  "verified": {
+    "active": true,
+    "version": 1,
+    "worker": "workspace_panels_owner",
+    "scopeCount": 21,
+    "needsVerification": false
+  },
+  "initialReadNote": "Default psql database unavailable; subsequent authorized wrapper succeeded. First wrapper output parser included stderr warning; second subprocess separated stdout/stderr."
+}

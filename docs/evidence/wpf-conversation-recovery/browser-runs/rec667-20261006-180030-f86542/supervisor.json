@@ -1,0 +1,51 @@
+{
+  "passed": false,
+  "errors": [
+    "Timeout 5000ms exceeded while waiting on the predicate"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_9d9301dc8c5740ae80a38d4b9e2145cf",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 3.0371670000004087,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 3.2024580000015703,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 25550,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 25768,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "minimumFreeBytes": 1694044160,
+  "peakScratchBytes": 27540779,
+  "logBytes": 8025,
+  "scratchRemoved": true,
+  "attribution": "250ms shared-volume observations are not hard quotas or exclusively attributable physical allocation",
+  "providerQueries": 0
+}

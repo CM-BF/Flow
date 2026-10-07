@@ -1,0 +1,70 @@
+{
+  "observedAt": "2026-10-06T17:34:22.433773+00:00",
+  "method": "read filesystem/static source only; no import/require/Node/PG/HTTP/free sampling",
+  "resolvedVersions": {
+    "pg": "8.23.1",
+    "pg-pool": "3.14.0"
+  },
+  "facts": [
+    "pg-pool _remove removes client from _clients before asynchronous client.end callback",
+    "_pulseQueue resolves pool.end when _clients.length is zero",
+    "pg client query config honors query_timeout; QueryConfig declaration omits it, structurally assigned config retains runtime option",
+    "This source reasoning is not a reproduction or a TUI failure attribution"
+  ],
+  "inputs": [
+    {
+      "requestedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "requestedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/client.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js",
+      "bytes": 25715,
+      "sha256": "ad6aa93c26b0bf26db1f2ebe74216212790a04c41af5585c63760f9fa8322a32"
+    },
+    {
+      "requestedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg-pool/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "bytes": 1083,
+      "sha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134"
+    },
+    {
+      "requestedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg-pool/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+    },
+    {
+      "requestedPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@types/pg/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts",
+      "bytes": 11428,
+      "sha256": "67f3d03f61a43f045851624e52ec438803ecf5d2247660f208bd9bcadb6ff298"
+    },
+    {
+      "method": true,
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "method": true,
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "method": true,
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "method": true,
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "bytes": 3913,
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    }
+  ]
+}

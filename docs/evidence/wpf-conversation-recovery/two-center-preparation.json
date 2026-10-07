@@ -1,0 +1,120 @@
+{
+  "at": "2026-10-07 10:56:47 UTC",
+  "state": "PREPARED_NOT_RUN_NO_GATE",
+  "sourceTarget": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "metadataHeadBinding": "Final clean metadata HEAD is supplied separately after this natural seal; never replace historical execution HEAD.",
+  "entry": "apps/web/test/conversation-recovery.browser.ts",
+  "worker": "Same single file --worker; worker-only imported fixture remains apps/web/test/conversation-recovery.fixture.ts.",
+  "reuse": "Existing parent lifecycle and outer stdout/stderr/actual-exit collector; no new wrapper.",
+  "sourceCheckpoint": {
+    "path": "two-center-checkpoint.json",
+    "bytes": 8377,
+    "sha256": "5ee7416d970d1f9f5ad4d52873d181c3f6b8cd9bb0a701f731de300d3aba1bd8"
+  },
+  "phase": {
+    "path": "two-center-phase.json",
+    "bytes": 3254,
+    "sha256": "e9bb1877493e9653ffdf5e72d3c1e359b98d66edeff0e16027d702ca68970032"
+  },
+  "connections": {
+    "path": "two-center-connections.json",
+    "bytes": 6748,
+    "sha256": "95cbdc41ee837a4d536f565aa74f73e87b3df42907ed9ba70e3897d61003fc0e"
+  },
+  "priorRuntimeClosure": {
+    "path": "/private/tmp/recovery-created-turn-344f-di09jc0_/manifest.json",
+    "sha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793"
+  },
+  "latestActualAdmission": {
+    "path": "stale-route-first-parent/admission.json",
+    "bytes": 5513,
+    "sha256": "ff63cae2864932ef0c405e8ae2397cb53ce9e7d59044c97734640add11110b6d"
+  },
+  "latestActualManifest": {
+    "path": "stale-route-first-manifest.json",
+    "bytes": 13607,
+    "sha256": "57a998ac6b2c3b91fc2d367a8d312fccddfe92a4c2db3e360fd676e725679a4b"
+  },
+  "dependencyPolicy": "Reuse only explicit package/runtime/public entries from pinned prior manifest; rehash at actual launch. Old source and budget fields are superseded by current checkpoint/phase; old pins and raw remain immutable. Add the installed pg-boss accounting anchors from connections record.",
+  "changedPins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "blob": "57833f580b6e0bdb22448704676778f2e810e81f",
+      "bytes": 116556,
+      "sha256": "584f5168574c183f284061f078b91f47259eb4e7764df5aab8dbec17f11060a8",
+      "changedFromA803": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "blob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8",
+      "bytes": 48765,
+      "sha256": "5ebc9f3a6702b46a6e0f4aa5b418649c2999a6039332c5685053946cf693a6ed",
+      "changedFromA803": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "blob": "ccb8980c0ccab225010cfbc07b2d66cef317a92c",
+      "bytes": 73278,
+      "sha256": "a20112bd30c5736f7bfbd5ca8618aae78a8cf8b1e092c1f8b93e3b0cafb46589",
+      "changedFromA803": true
+    }
+  ],
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "<new unique internally admitted gate>",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=<new controlled0600 exact-owned admin env>",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "gateRequirements": {
+    "journey": "second-center-cycle",
+    "sourceCommit": "<final clean metadata HEAD from handoff>",
+    "sourceHashesFrom": "two-center-checkpoint.json.sourcePaths",
+    "totalMs": 90000,
+    "twoCenterPhase": {
+      "id": "RECOVERY-TWO-CENTER-20261007",
+      "budgetMs": 90000,
+      "spentMs": 0,
+      "cleanupMs": 30000,
+      "databases": 2
+    },
+    "minimumFreeBytesAtLeast": 4219731968,
+    "maxScratchBytes": 67108864,
+    "scratchParent": "/private/tmp",
+    "requiredAdditionalFacts": [
+      "Fresh exact21 claim/branch/HEAD/clean +19 source pins and prior public/runtime/native inputs",
+      "Latest unique sharedPG+Chrome handoff; account current compatible holders and retained UNKNOWN without deleting",
+      "Fresh physical space and evidence<4MiB; no old/expired/consumed gate or env reuse",
+      "New run directory absent; parent generated db-a/db-b independent marker receipts",
+      "Exact historical incomplete-failure reconciliation from accepted prior gate/review preserved",
+      "Fresh private0600 env from already approved fixed ef458 test source only; no value in report; exact identity deletion after terminal"
+    ]
+  },
+  "resourceCalculation": {
+    "previousConservativeCombinedFloorBytes": 4080271360,
+    "newIncrementBytes": 139460608,
+    "proposedCombinedFloorBytes": 4219731968,
+    "parentMinimumStartBytes": 1347420160,
+    "parentLiveStopBytes": 1280311296,
+    "singleReserveBytes": 1073741824,
+    "notes": "Combined floor carries prior declared Mika21MiB + Original2MiB + W01 readonly2MiB and C02 retained33685504B; actual declarations must be refreshed. Do not double-count 1GiB reserve; unknown O16 retained remains KEEP and reflected only in actual available bytes."
+  },
+  "gateCreated": false,
+  "adminEnvCreated": false,
+  "windowReserved": false,
+  "browserChecksExecuted": 0,
+  "proofLimits": [
+    "Actual selected2 may establish same-origin two real-center/principal namespaces; it is not same-center public principal rotation.",
+    "Late old HTTP may abort without delivery; only actual native outcome can classify it. Controlled ignore-abort coverage stays separate.",
+    "No whole-feature approval, no provider/native apply/Queue promotion or all reconnect scenarios."
+  ]
+}

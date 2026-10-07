@@ -1,0 +1,300 @@
+{
+  "state": "SELECTED_2_OF_2_ACTUAL_AND_OWNED_CLEANUP_INDEPENDENTLY_ACCEPTED_NOT_WHOLE_FEATURE",
+  "executionHead": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+  "implementation": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "run": "reccreate-20261007-064810-01f20b",
+  "journey": "create-ack-loss",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "targetBlob": "d14d2550f622775e234118b155b941007030ff74",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "targetBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "targetBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "targetBlob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "targetBlob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "targetBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "targetBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "targetBlob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "targetBlob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "targetBlob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "targetBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "targetBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "targetBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "targetBlob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "targetBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "targetBlob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 68127,
+      "sha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "targetBlob": "7c43ae41c4aba89f6d31da97ecea8feb09718854",
+      "unchangedFrom55b": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "targetBlob": "ef320154539f174a1de7ae301d0ff3dde762ca66",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 65658,
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
+      "targetBlob": "0ae5746825a1607b579c4f74d8b1ae8850bdd999",
+      "unchangedFrom55b": true
+    }
+  ],
+  "originals": [
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/browser.json",
+      "bytes": 11412,
+      "sha256": "ac1c2d47925d6d28039c919218e583023510d7565ea3c35a5e876da5e6ca77e7"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/budget.json",
+      "bytes": 234,
+      "sha256": "d9009cb08ba587232acc3f7b6c6de2606009ca0bbc52f1f9ba14ca524557904f"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "a4804a4d318078fcb9015af2f6e2bc6b36772084a655b647f1135c8f0effad6f"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/database-owner.json",
+      "bytes": 164,
+      "sha256": "44526740e482748a62437c7940fdeebf0209cc237716b1954e1d03b599e3f434"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "90d07b8f19f7dcc744b9701f703592f731798dc2683f08394aeaf7a1df1a5a2a"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/launch-config.json",
+      "bytes": 1215,
+      "sha256": "c3286fadc19709bb1c01c553fcca958c1aa9a17059087d728622b4926a17f2e6"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/process-owner.json",
+      "bytes": 29,
+      "sha256": "73ba3b5203e7f1f73203fdfefdbea35e49d5b6869173fa6e6c2faad4bb23d538"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/process.log",
+      "bytes": 4485,
+      "sha256": "9a3cc89dbd4cfb246f6d3725a0de57386e64f337c0424a99c2489bfba615cdaf"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "8c9602f21d1ada392ab4f2f045571180a95a4840a2766139e81de30638d54dca"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/sources.json",
+      "bytes": 2433,
+      "sha256": "b5c66c6e03d4f2668b3dcf580dd043c2d8de058fe7f65cc73e720c62a02fc27d"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b/supervisor.json",
+      "bytes": 2479,
+      "sha256": "baa1f9f0c81e566b0ce758488fa9997b3276d47273f2a9255a3dca8f48523562"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/accounting.json",
+      "bytes": 337,
+      "sha256": "e1c72ebad9c92b1f8a9668a9d03561a5857ddab5f39de6f4e9a5e1ad073ebffa"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/actual-exit.json",
+      "bytes": 259,
+      "sha256": "9e07d265a53ff60e9815abc3cc0d1223115d831d7dcf46d1c0a9474bd5092c2a"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/parent.stdout.jsonl",
+      "bytes": 616,
+      "sha256": "d1a668cc985aa27f98e815106f81d8536483720544110cc65d178310a7eafaad"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/post-cleanup-observation.json",
+      "bytes": 556,
+      "sha256": "a6bcd3717d31b64037a4b45c093d410d60bb0d5598aa24d6bdc79842bd3209a3"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/raw-manifest.json",
+      "bytes": 3541,
+      "sha256": "2f836eae9817bb6408d647db13b4829fa77280a4bd2b7460e18a6fa12cb60463"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-parent/start.json",
+      "bytes": 506,
+      "sha256": "988169b454a0574210903601bd24247768a18eae948fd9a043814622a4e278b4"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-admission/admin-env-deletion-receipt.json",
+      "bytes": 1683,
+      "sha256": "3c63dff9549df01c8155f32cb3d62da65362c5a6e9d3884c659c66ca1e74f9b1"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-admission/gate.json",
+      "bytes": 4991,
+      "sha256": "72cb284400cafa7b0065cd1b18eec8603b1a2391eeb0712de0115025671cd88d"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-admission/handoff.json",
+      "bytes": 3330,
+      "sha256": "cdc0b4b8203edf6083e8943700c6e895dffc8c41841cd0338daf31412ce25a6c"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-admission/observation.json",
+      "bytes": 45408,
+      "sha256": "15d83b3ce5e222ebee1767c3a6a338c7f3025afe7685b53e32919b57a9936a14"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-preparation/manifest.json",
+      "bytes": 80621,
+      "sha256": "9b41db1e06f32616186cb0cd2fdce52fea170d2e5a10a8fe86c275817feb0e91"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-preparation/packet-files.json",
+      "bytes": 1009,
+      "sha256": "0658d407681a7c592bec34b9fb62207d97f1e38a593802bdeba09153a6e3d255"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-preparation/report.md",
+      "bytes": 2238,
+      "sha256": "ea2de88bf398f37cb33965c0c86293e9a4762707f557fd64ee6e0b2d6a6a8398"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-third-preparation/source-minimal.diff",
+      "bytes": 19382,
+      "sha256": "102f1922c73e323a5821f4c94ae5237d27f82a4acb4d2b8f59b9d81e290196fa"
+    }
+  ],
+  "fileCount": 26,
+  "bytes": 187660,
+  "priorRawPreserved": {
+    "count": 89,
+    "bytes": 326000,
+    "manifest": "continuous-third-preparation/manifest.json"
+  },
+  "accounting": {
+    "state": "SELECTED_PASS_NOT_WHOLE_FEATURE",
+    "newSegmentPriorMs": 24589,
+    "outerElapsedMs": 11506.23241707217,
+    "lateParentMs": 10902.810749999999,
+    "serializedParentMs": 10893.408625,
+    "chargeMs": 11507,
+    "newSegmentSpentMs": 36096,
+    "newSegmentRemainingMs": 113904,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noRetry": true
+  },
+  "scope": "cookieRead/createAckLoss only. Created-turn/queue/full7 not selected. No screenshot; no provider/personal.",
+  "runtimeLimitations": "Public fake-owner fixture with real owned PG/HTTP/Chrome and native IDB. No wholefeature approval/main. Parent budget prior sums earlier serialized values; conservative current segment uses ceilmax outer/late/parent, original budgets untouched.",
+  "independentReview": {
+    "path": "continuous-third-root-review.json",
+    "sha256": "d4f6e43b3859c56c41cf7f54d963329f3ceed24d36bc9c7d2e317e0c943b84cc",
+    "sourceReview": "67f8-create-queue-source-root-review.json"
+  }
+}

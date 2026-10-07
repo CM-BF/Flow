@@ -1,0 +1,117 @@
+{
+  "executionHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+  "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+    "apps/web/src/attachments/controller.ts": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+    "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "664d61c88a923ed8f3ee14558c6aa17bf6531fec409195ea1cc16c8ca1ead6dd",
+    "apps/web/src/plugin-integration/knowledge.tsx": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+    "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+    "apps/web/src/plugin-integration/steering.tsx": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+    "apps/web/src/recovery/binding.tsx": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "e855cea0267552129caa1bc9caa5111a2f388e36aae702017b926ff22b569d3e",
+    "apps/web/test/conversation-recovery.fixture.ts": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+    "apps/web/test/conversation-recovery.test.ts": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198"
+  },
+  "rawSource": "/private/tmp/recovery38-once-lsab03fv",
+  "files": {
+    "admission.json": {
+      "bytes": 2406,
+      "sha256": "73cdc1ae4d824f688a6e612e58f55b2d4d9a5155e0ae98e94a170c6485f3adb1"
+    },
+    "binding.json": {
+      "bytes": 19387,
+      "sha256": "93e788298fb4cb434e8106e4ca08fc52458c1fd7beb30a92f8b12b0f422943f3"
+    },
+    "consumed-gate.json": {
+      "bytes": 1121,
+      "sha256": "68aab68213656878905207a798eb49c937c48e8f428b84d148b0c5a8c63de688"
+    },
+    "gate.json": {
+      "bytes": 1121,
+      "sha256": "68aab68213656878905207a798eb49c937c48e8f428b84d148b0c5a8c63de688"
+    },
+    "node.log": {
+      "bytes": 89,
+      "sha256": "4cc2754c3123fff2a9e13bfd6ba41ee1767f21e4a439ac7af6e7708697354467"
+    },
+    "preparation.json": {
+      "bytes": 1764,
+      "sha256": "b66d6603ca4959c8e9059580dc4c500b994ab9f2518613e53fd6c0c5d4b78094"
+    },
+    "result.json": {
+      "bytes": 5392,
+      "sha256": "43ff5a261e607cc093696fadc3f72bd69dbb41596d32e7acc53df9a257946d6d"
+    },
+    "run.py": {
+      "bytes": 17419,
+      "sha256": "22b8eb121b1fe81877a70884a53777a31c1d2c5c46ca61ae8cc4d593b7db810d"
+    },
+    "sandbox.sb": {
+      "bytes": 155,
+      "sha256": "bbcdbc593100578638a2dee1840411dd7845c3bcf7b1159b0d99f7a66675a560"
+    },
+    "settings-to-recovery.diff": {
+      "bytes": 5777,
+      "sha256": "3a1f3a254c2a762f883c475c6489fd7f2f9b4c19f54c60043fdb2f5de0b6621f"
+    },
+    "step-results.json": {
+      "bytes": 95,
+      "sha256": "1710c8c8a85a5a50162fadebccde830eafe0edbffc67980646b99e9bfd03b175"
+    },
+    "steps.mjs": {
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    "vitest-results.json": {
+      "bytes": 16861,
+      "sha256": "447df0bfeb8a50f936fb838b62480b9cdc1dba97d949936b1d0d538cdf8c3ea8"
+    },
+    "vitest.config.mjs": {
+      "bytes": 413,
+      "sha256": "81bed649c1d92f3235bc7de112f0a209c3ddec7bca76bbc21a64c4c1a404b26a"
+    }
+  },
+  "totalRawBytes": 73191,
+  "sourceReview": {
+    "file": "7cc-root-source-review.json",
+    "sha256": "399f5016a9fe12355fa408ded5d323387646d5ff993f166254bb57a303157d0f"
+  },
+  "historicalEvidenceUnchanged": {
+    "docs/evidence/wpf-conversation-recovery/direct-first-admission.json": "23990e6772ecd13d196dbed51eb15ec6eb3a6e1e9dd1b157a2792bb354780b0b",
+    "docs/evidence/wpf-conversation-recovery/direct-first.json": "e3bfda2f34b09ea8ea4e8856bd9ffafe7d228c103b3bcb5cfbdf5d7f65691cd8",
+    "docs/evidence/wpf-conversation-recovery/direct-first.log": "262d62191ab022f2868929d10caef4056cb96082a127345fc4f25ac550032402",
+    "docs/evidence/wpf-conversation-recovery/direct-second-admission.json": "8692d3b05e3b44045bb1a4cf6a0752c6db07114376c0422759890ad985c57a08",
+    "docs/evidence/wpf-conversation-recovery/direct-second-config.txt": "99ace33ee34ad2facfac48bd37db54b05878529a97e0e79a9a950c9ee0d028db",
+    "docs/evidence/wpf-conversation-recovery/direct-second-manifest.json": "7405219d5a7c0104d62a0e9b18b6cda618bc8f9c5b36e7d4a6b5b4f28ea2650c",
+    "docs/evidence/wpf-conversation-recovery/direct-second-preflight.json": "3730a15aa54cf74ee279781ba04d58ae7b68edc1c9d67580541b2baa9a96b082",
+    "docs/evidence/wpf-conversation-recovery/direct-second-root-review.json": "00834002e5f12d2ada15bbb1eccd286ad86af8e40730f090d8695400a35537a1",
+    "docs/evidence/wpf-conversation-recovery/direct-second-runner.txt": "492c58100c455882b644d25d530c10b2cf2408ef6c048a49e71f23b65b19a9b7",
+    "docs/evidence/wpf-conversation-recovery/direct-second-sandbox.txt": "4661d473c9d430af6c9e78ae78134f27edc3559020d9e1b228fc15d6492d1bd4",
+    "docs/evidence/wpf-conversation-recovery/direct-second.json": "cbde98891d2b3b71a6a12ae51f956298777bf1a1fe5abb9e118ede26dfe9af6b",
+    "docs/evidence/wpf-conversation-recovery/direct-second.log": "ebc6e2fcf746a5cbc4e139b8dc9d8e10b515b21393f1c34d6df01e039672179a",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json": "27fd79333a16fbe561b1ca03adfaf0a760c4945c43a2d44888b429337539e4dd",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json": "65a738b948ab6d1d6598a2a818ca79a3b6fa66e4d402394b19f9581288daddfb",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json": "ca4340e3302e0101e6974924034c025b39b234c544433aa1bbc336714d39ab58",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json": "8cbf52a4559e016b6834e4a70c8695ca75e4d1d3a0aa05f486616cbe4b884267",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json": "aec8957c849f814626d76e11b54aeb75651e38e2dc78d227cd865320552a65c7",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json": "770f13396492446bd6fe288b25e484b45ae6ca6087cefee59b2892928c289b6f",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log": "90fedf5a8a30f4646aa765ce69031f1efc6443afd27bebc068313daaf7a662f8",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json": "28ef9b819d445d26730a88fb2543e5c1a306eb1e7868225ce96d5296d28f0104",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json": "4aca82ddb644b694f1310556d9d57307ef1fe1f2ac4813b03f51efae48af512e",
+    "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json": "b591ecacaa2af2df1e4cd0f9a2cbb6fc87729aed686430d719d2aad79100dc29"
+  },
+  "runtimeMs": 2294,
+  "cumulativeMs": 6868,
+  "remainingMsArithmeticOnly": 23132,
+  "scope": "controlled IDB/observer/composer and public client mock fetch; not native browser IDB or App journey"
+}

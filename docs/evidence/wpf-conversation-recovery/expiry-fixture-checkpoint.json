@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07 05:43:10 UTC",
+  "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "compareTo": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "changeScope": "Only expired fixture timestamp pair and defensive total runtime ceiling; no product/assertion/lifecycle change.",
+  "changedSources": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "beforeSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+      "bytes": 52099,
+      "sha256": "25f6efb1c70112ea5a611cc8c920bf9eb808d636cdc7e9c16b864df4874a6a58",
+      "gitBlob": "feb0f0b4e3d79144ffe466c4b05da9c4703ae418"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "beforeSha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "gitBlob": "ef320154539f174a1de7ae301d0ff3dde762ca66"
+    }
+  ],
+  "unchanged17": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/attachments/controller.ts",
+    "apps/web/src/connection/session.ts",
+    "apps/web/src/conversation-context/controller.ts",
+    "apps/web/src/conversation-steering/SteeringControl.tsx",
+    "apps/web/src/conversation-steering/control.ts",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/knowledge.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/steering.tsx",
+    "apps/web/src/recovery/binding.tsx",
+    "apps/web/src/recovery/journal.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "sourceDiff": "diff --git a/apps/web/test/conversation-recovery.browser.ts b/apps/web/test/conversation-recovery.browser.ts\nindex c7621e15..feb0f0b4 100644\n--- a/apps/web/test/conversation-recovery.browser.ts\n+++ b/apps/web/test/conversation-recovery.browser.ts\n@@ -10,7 +10,8 @@ import type { RecoveryDatabaseLease, RecoveryWire, startRecoveryFixture } from \"\n // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.\n const root = fileURLToPath(new URL(\"../../../\", import.meta.url));\n const evidence = join(root, \"docs/evidence/wpf-conversation-recovery\");\n-const TOTAL_MS = 90_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 8 * 1024 ** 2, LOG_BYTES = 1024 ** 2;\n+// Defensive ceiling: immutable original 90s envelope + separately accounted authorized 150s segment.\n+const TOTAL_MS = 240_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 8 * 1024 ** 2, LOG_BYTES = 1024 ** 2;\n const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.\n const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;\n const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));\ndiff --git a/apps/web/test/conversation-recovery.fixture.ts b/apps/web/test/conversation-recovery.fixture.ts\nindex 77a222c6..ef320154 100644\n--- a/apps/web/test/conversation-recovery.fixture.ts\n+++ b/apps/web/test/conversation-recovery.fixture.ts\n@@ -358,7 +358,8 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign\n     await checkpoint();\n     return { url: url + \"/?recovery=1\", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,\n       dropNext(kind: typeof lost) { lost = kind; },\n-      expireSessions: () => pool!.query(\"UPDATE flow.browser_sessions SET expires_at=clock_timestamp()-interval '1 second'\"),\n+      // Keep the expired row legal under 028's created/expires constraint, even immediately after login.\n+      expireSessions: () => pool!.query(\"UPDATE flow.browser_sessions SET created_at=statement_timestamp()-interval '2 seconds', expires_at=statement_timestamp()-interval '1 second'\"),\n       revokeSessions: () => pool!.query(\"DELETE FROM flow.browser_sessions\"),\n     };\n   } catch (error) { await close(); throw error; }\n",
+  "constraints": {
+    "migration": "packages/storage/migrations/028-browser-sessions.sql:14",
+    "expiresAfterCreated": true,
+    "expiresWithin8h": true,
+    "statementStableClock": true,
+    "queryBoundToOwnedFixtureDatabase": true
+  },
+  "runtime": "NOT_RUN_FOR_THIS_FIX",
+  "noRepeat50Types119Serialization": true,
+  "segmentRecord": "continuous-segment.json",
+  "completeFeatureReview": "NOT_STARTED"
+}

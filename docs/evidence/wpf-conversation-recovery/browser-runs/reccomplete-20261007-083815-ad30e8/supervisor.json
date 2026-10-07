@@ -1,0 +1,105 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "complete-draft",
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8275.589209,
+    "elapsedMs": 8275.589209
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8275.667125,
+      "endedOffsetMs": 9548.07475,
+      "elapsedMs": 1272.4076249999998,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "completeDraft",
+      "startedOffsetMs": 9548.095874999999,
+      "endedOffsetMs": 14153.014834,
+      "elapsedMs": 4604.9189590000005,
+      "outcome": "FAILED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "locator.click: Timeout 4500ms exceeded.\nCall log:\n  - waiting for locator('[data-composer-view]').visible().getByRole('button', { name: 'Execution profile: Runner default', exact: true })\n",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_684d5b109abb4700a20772cb8524eb09",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4868750000005093,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.8172500000000582,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 27897,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 27909,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 24017264640,
+  "peakScratchBytes": 27540397,
+  "logBytes": 7133,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 15029.97075,
+      "scratchBytes": 27540397,
+      "evidenceBytes": 3279144,
+      "freeBytes": 24025014272,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 15105.32375,
+      "scratchBytes": null,
+      "evidenceBytes": 3281702,
+      "freeBytes": 24053428224,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

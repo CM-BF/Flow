@@ -2,8 +2,8 @@ import { createContext, useContext, useSyncExternalStore } from "react";
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { attachmentAcceptedSchema, attachmentUploadSchema, attachmentUploadKeySchema, attachmentReferenceKey, type AttachmentAccepted, type AttachmentUpload } from "@flow/contracts";
 import type { ComposerRuntime } from "@assistant-ui/react";
-import { createAttachmentInput, type AttachmentInput, type AttachmentCapture, type AttachmentReadiness } from "../attachments/controller";
-import { bindAttachmentComposer, createAttachmentAdapter } from "../attachments/adapter";
+import { createAttachmentInput, type AttachmentInput, type AttachmentCapture, type AttachmentReadiness, type AttachmentItem } from "../attachments/controller";
+import { bindAttachmentComposer, createAttachmentAdapter, createExistingAttachment } from "../attachments/adapter";
 import { createRecoveryJournal, type RecoveryStorage } from "../attachments/recovery";
 import { AttachmentPicker } from "../attachments/AttachmentPicker";
 import type { TurnReceipt } from "../conversations/outbox";
@@ -162,6 +162,42 @@ export class ConversationAttachments {
   }
   open() { this.assertAllowed(); this.update({ open: true }); }
   close() { this.update({ open: false }); } // Closing a Dialog is not hiding the composer.
+  /** Input owns selection order. Old captures/inTransit have a separate handoff,
+   * unless the user has explicitly restored those files into this composer. */
+  private draftItems(state: Pick<ReturnType<ComposerRuntime["getState"]>, "attachments" | "inTransit">) {
+    const current = new Set(state.attachments.map(item => item.id));
+    const held = new Set(this.state.submission?.value.ids ?? []);
+    const transit = new Set(state.inTransit?.flatMap(message => message.attachments.map(item => item.id)) ?? []);
+    return this.input?.getSnapshot().items.filter(item => current.has(item.id) || (!held.has(item.id) && !transit.has(item.id))) ?? [];
+  }
+  /** Every new Send/Queue crosses this check, even when the composer has zero chips. */
+  captureDraft(composer: Pick<ComposerRuntime, "getState">,
+    input: Omit<Parameters<ConversationAttachments["capture"]>[0], "ids">, previous: LocalReceipt | null): AttachmentSubmission | undefined {
+    const state = composer.getState(), selected = this.draftItems(state);
+    if (selected.some(item => item.state !== "ready" || !item.metadata))
+      throw Error("Verify every selected file in Files, or explicitly remove it, before sending. Your draft is kept.");
+    if (state.attachments.length !== selected.length || state.attachments.some((item, index) => item.id !== selected[index]?.id))
+      throw Error("Selected files are not synchronized in their original order. Keep the draft and check Files before sending.");
+    if (!selected.length) return undefined;
+    return this.capture({ ...input, ids: selected.map(item => item.id) }, previous);
+  }
+  async syncComposerDraft(composer: Pick<ComposerRuntime, "getState" | "addAttachment">): Promise<void> {
+    const input = this.input, lease = this.lease;
+    if (!input) return;
+    // At most the current selection (four items). Do not skip an unverified
+    // predecessor: B becoming ready before A must never append B ahead of A.
+    for (const item of this.draftItems(composer.getState())) {
+      if (lease !== this.lease || lease.signal.aborted) return;
+      const ready = this.readiness(), state = composer.getState(), selected = this.draftItems(state);
+      if (!ready.visible || !ready.online || !ready.canRead || input.getSnapshot().capable !== true || state.submission) return;
+      if (!selected.includes(item) || state.attachments.some((file, index) => file.id !== selected[index]?.id)) return;
+      if (state.attachments.some(file => file.id === item.id)) continue;
+      if (item.state !== "ready") return;
+      // Installed core's complete-attachment branch publishes synchronously.
+      // Repeated sync sees that ID; any later await rechecks lease and selection.
+      await composer.addAttachment(createExistingAttachment(input, item.id));
+    }
+  }
   bindComposer(composer: Pick<ComposerRuntime, "getState" | "subscribe">, onPreparationFailed?: (value: AttachmentSubmission, error: Error) => void): () => void {
     if (!this.reconciliationInput) return () => {};
     const stop = bindAttachmentComposer(this.reconciliationInput, composer);
@@ -191,6 +227,12 @@ export class ConversationAttachments {
     };
     this.unbind.add(release); return release;
   }
+  prepareRestoreDraft(items: readonly AttachmentItem[]) {
+    if (!this.input || this.state.submission) throw Error("This view cannot replace its current material handoff.");
+    const commit = this.input.prepareRestore(items);
+    return () => { commit(); this.sync(); };
+  }
+  restoreDraft(items: readonly AttachmentItem[]) { this.prepareRestoreDraft(items)(); }
   capture(input: Omit<Parameters<AttachmentInput["capture"]>[0], "conversationProjectId" | "attachmentContext">, previous: LocalReceipt | null): AttachmentSubmission {
     if (!this.input) throw Error(this.state.error ?? "Attachment input is unavailable.");
     if (this.state.submission?.state === "preparing") throw Error("A material submission is already preparing.");

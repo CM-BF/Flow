@@ -1,0 +1,1174 @@
+{
+  "state": "PREPARED_NOT_RUN_SOURCE_DELTA_REVIEW_PENDING",
+  "preparedAt": "2026-10-07T06:37:42.499935+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "head": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+  "implementation": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "clean": true,
+  "claimObservation": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-claim-observation.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-claim-observation.json",
+    "bytes": 1855,
+    "sha256": "eabd48d70401dbf4862ca093eae2d396441ee3fba9e2b9bbe77a110aafa42513"
+  },
+  "claimFreshRequiredAtLaunch": true,
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "targetBlob": "d14d2550f622775e234118b155b941007030ff74",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "targetBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "targetBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "targetBlob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "targetBlob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "targetBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "targetBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "targetBlob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "targetBlob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "targetBlob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "targetBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "targetBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "targetBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "targetBlob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "targetBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "targetBlob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 68127,
+      "sha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "targetBlob": "7c43ae41c4aba89f6d31da97ecea8feb09718854",
+      "unchangedFrom55b": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "targetBlob": "ef320154539f174a1de7ae301d0ff3dde762ca66",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 65658,
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
+      "targetBlob": "0ae5746825a1607b579c4f74d8b1ae8850bdd999",
+      "unchangedFrom55b": true
+    }
+  ],
+  "fixedPublicInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/index.ts",
+      "bytes": 13155,
+      "sha256": "b88b5fbd6f898a78570c6d2cc0d57822df21b0016df3dd180703c7880e6ad798"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/store.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/src/browser-session.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/src/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/src/index.ts",
+      "bytes": 47838,
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/vite.config.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/vite.config.ts",
+      "bytes": 648,
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/pnpm-lock.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    }
+  ],
+  "readonlyPackages": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+        "bytes": 1663,
+        "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+        "bytes": 1668,
+        "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "version": "1.63.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+        "bytes": 754,
+        "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/fastify",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+        "bytes": 6973,
+        "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+        "bytes": 4103,
+        "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@fastify/cors",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+        "bytes": 1759,
+        "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/zod",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+        "bytes": 4142,
+        "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "version": "8.3.2",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+        "bytes": 5081,
+        "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client",
+      "version": "0.1.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/package.json",
+        "bytes": 183,
+        "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "version": "0.1.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/package.json",
+        "bytes": 168,
+        "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+      },
+      "matchesPrevious": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "version": "0.1.0",
+      "packageJson": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/package.json",
+        "bytes": 168,
+        "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+      },
+      "matchesPrevious": true
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/dist/node/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "bytes": 1083,
+      "sha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "bytes": 704,
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+    }
+  ],
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "chrome": {
+    "plist": {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+    },
+    "version": "154.0.8037.99",
+    "noLaunch": true
+  },
+  "entry": {
+    "script": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 68127,
+      "sha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3"
+    },
+    "parentPrefixSha256": "2931a8886de3476041f5ba46b19117db411f57bfa7b73b0b31f41c142400b6f9",
+    "workerSuffixSha256": "fe549888d9ce480609b414587e5dc34709bc66f183039352abfb26e6563343db",
+    "supervisorFunctionEqual0141": true,
+    "workerSameFile": true,
+    "fixture": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f"
+    },
+    "supervisorFunctionEqual55b": true
+  },
+  "selection": {
+    "journey": "create-ack-loss",
+    "requiredGroups": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "originalFullSevenUnchanged": true,
+    "notSelected": [
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390",
+      "connectionChoice",
+      "createdTurnAckLoss",
+      "queueAckLoss"
+    ],
+    "selectedPassIsNotFullJourneyPass": true,
+    "fullFeatureReview": "IN_PROGRESS",
+    "singleAttemptOnly": true,
+    "otherNewJourneys": "created-turn-ack-loss and queue-ack-loss require later distinct selected gate/actual attempt; not scheduled here"
+  },
+  "segment": {
+    "record": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+      "bytes": 2743,
+      "sha256": "501c55392c1594de055a47ed140d4021bb9d39e1adaf6bcdacc965ffa8ba6bc0"
+    },
+    "totalRuntimeMs": 150000,
+    "spentMs": 24589,
+    "remainingMs": 125411,
+    "proposedSingleMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "workMaximumMs": 45000,
+    "charge": "ceil(max(actual outer elapsed, late parent elapsed, serialized parent elapsed))",
+    "oldEnvelopeClosed": true,
+    "oldEnvelopeSpentMs": 64134.08675,
+    "oldCreditTransferred": false
+  },
+  "limits": {
+    "scratchBytes": 67108864,
+    "retainedEvidenceBytes": 8388608,
+    "processLogBytes": 1048576,
+    "parentStartFreeBytes": 1207959552,
+    "parentStopFreeBytes": 1140850688,
+    "freshCombinedResourcesRequired": true
+  },
+  "priorRaw": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "bytes": 6478,
+      "sha256": "773aed3f87ca06498f21acae382b7ba61aabf174f1115f2b646728f47da4ddf5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "bytes": 208,
+      "sha256": "3ccde9b4d3aa2d7b6cf730484130bf7c83f9a52a2c26e9c08c6e091fa7f02e21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "3f43628d4aabad32cf830e465a3f997adf86c4940002e770e6720095ab3188c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "bytes": 164,
+      "sha256": "270754048b7a35ea3f6abfc5fec6b6c3c668f622e85c19651e3ee30ea613b965"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "ca723aaa1755d4ff77d084aff83bbbf1df234c33da01a4aaa80a24c47b9d825b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "bytes": 1215,
+      "sha256": "5c3d57ea0335007a6108b2fbaa42ff20afdc1748475139c3c9904f645acb4a0c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "bytes": 29,
+      "sha256": "6e50f59e6235e00069418a739df0dfcb276366b334b8f80eafccf9ac8926ca20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "bytes": 3759,
+      "sha256": "1bf8321b20cafb793d8e6ae8e4f7dc9e4f8076a5760060db11f81e9f2faf3acc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "87cc7e35520dfc183f4f55ed5fed7a104394b31124b104e1b0bc07f93fb37062"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "bytes": 2336,
+      "sha256": "b4865069327936ee02fbd4283b235d7272d5f744cf3617020ebc7da7a3e72daf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "bytes": 3349,
+      "sha256": "48beefa957591efb7aab40e4b431c779fa0303bcedb21f83c9c4a006b1a4c431"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "bytes": 4787,
+      "sha256": "27fd79333a16fbe561b1ca03adfaf0a760c4945c43a2d44888b429337539e4dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "bytes": 191,
+      "sha256": "65a738b948ab6d1d6598a2a818ca79a3b6fa66e4d402394b19f9581288daddfb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "ca4340e3302e0101e6974924034c025b39b234c544433aa1bbc336714d39ab58"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "bytes": 164,
+      "sha256": "8cbf52a4559e016b6834e4a70c8695ca75e4d1d3a0aa05f486616cbe4b884267"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "aec8957c849f814626d76e11b54aeb75651e38e2dc78d227cd865320552a65c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "bytes": 29,
+      "sha256": "770f13396492446bd6fe288b25e484b45ae6ca6087cefee59b2892928c289b6f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "bytes": 8025,
+      "sha256": "90fedf5a8a30f4646aa765ce69031f1efc6443afd27bebc068313daaf7a662f8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "28ef9b819d445d26730a88fb2543e5c1a306eb1e7868225ce96d5296d28f0104"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "bytes": 2336,
+      "sha256": "4aca82ddb644b694f1310556d9d57307ef1fe1f2ac4813b03f51efae48af512e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "bytes": 1151,
+      "sha256": "b591ecacaa2af2df1e4cd0f9a2cbb6fc87729aed686430d719d2aad79100dc29"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "bytes": 21295,
+      "sha256": "adea971c8e74c2452a954a42f296f74a5d6fb8fcbd594f9540f9e933e1ec85e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "bytes": 208,
+      "sha256": "ac5a35768b1b49e8394b6e85d48e0a89fdfeb16bbd7852964ab0918fc6bc722b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "7c53372765be07b46141ed8d1df9a5930de1ac31c6c90293184e5a738b9db117"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "bytes": 164,
+      "sha256": "243851f840c01adcb5b2297cbcdbe304c272b8d1a90b4a3b2adc70fc803a79c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "d7b980c9bad00d5760255171018cc64e2862b12478d8fa5da01166bb9385744a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "bytes": 1215,
+      "sha256": "f9cf88b109c19042355075f91e293eb4c47677ee2493837df8e630e112caa8e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "bytes": 29,
+      "sha256": "4ea4edf0037b4347385a0b382438206dbb1a6923ca79f0eea02e6a0beb0bcbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "bytes": 6915,
+      "sha256": "f1bc4c9a0c1979049365aa9abe66bc3fd47318e0e316e47629a44f1c86e3f50d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "5f13e02a594801c265d20b28602fd9e4cbd66bdacd7022da68aae20b593c0565"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "bytes": 2336,
+      "sha256": "44db03af662a0f724f691aeadae684c605d029a8c798490cb101545c2525a2a8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "bytes": 1870,
+      "sha256": "00823f170d45e557971f75cc1a54d77ae7c172529243b4e8a4396db4659f938d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "bytes": 8168,
+      "sha256": "386a8ff54f7f01f46d7eef540d147b32d9bb9adbf07f11205a5ad9ac4f51bfe4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "bytes": 208,
+      "sha256": "139a823e02f36c47db87ece3eca6b0b1c26d37d29d49e1adb94021eb10f24677"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "008d687ccd9b8eddf8654e8adebfc1bd7a76a2b626ea232b81952a413f919d2f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-owner.json",
+      "bytes": 164,
+      "sha256": "ca70ff3b6a7702307c17cb7acf59627c844d705c20b07bd736db09d98a356366"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "dda77418d5cf73b9938b4aacfb132205c56864b5481efd7f063eed3d12c3d7b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/launch-config.json",
+      "bytes": 1215,
+      "sha256": "30c356185d81d0e70d5fb012061d18bbb7ba0d87c491834f79bc97266175ee9d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process-owner.json",
+      "bytes": 29,
+      "sha256": "1bebb16dcf406c74a059a46db45a7747ecb76234bf4d973e7e56f9aab1490cb9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process.log",
+      "bytes": 7128,
+      "sha256": "4582d16907e8cae129a4ae79af10c8f67b3569b47c1c5cc4652a051f76dd5e7d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "b574e30af735b91fa8e100438423373f713a97f8db6114791e0d67d52e7760fd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/sources.json",
+      "bytes": 2336,
+      "sha256": "f94ec919fb728691510ccb466cd5922a96bdb6ccfe422113a5749a72565bfe12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "bytes": 1926,
+      "sha256": "3e212d6e35d4c36e7ae4af84e6223c95b6dd8fd9fe2a0fda0d65d8256abded2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/browser.json",
+      "bytes": 5792,
+      "sha256": "ffa588cd3e4d331b18371522e0318ca60bb4d26b66db8112f37f1367cc2ae94f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/budget.json",
+      "bytes": 233,
+      "sha256": "a5e77c847f8b0766f8adc14132367ec267814863a5a45034d11c6f80373c4e50"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "09d627b64ee661d1c076a610f2d6373d9f2548659ee39766f3d76a6743d382c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-owner.json",
+      "bytes": 164,
+      "sha256": "6421ac85e5a91129c054e2bd7e6f5cd2af0ff0858ed24e865d12433bcde9ec48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "35f722570ffc2c36e47e528f15cf137cf4bead4cbd77dd509dec688dba60094f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/launch-config.json",
+      "bytes": 1215,
+      "sha256": "624ec9883909e73a154d08666ab64b7d1743277992825401b78c8d2413a3e62d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/process-owner.json",
+      "bytes": 29,
+      "sha256": "cc1a5f05443c222b0f603b4f7b0597791604f76b656d05939eddd5f1cb4665ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/process.log",
+      "bytes": 3788,
+      "sha256": "f23af2a2532970edd194a7a646443f8ce1b637106001cd405f8ea62c3487faa5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "35761b9f3a79201cee84d3f532bef5b068d0a8fd08d5ebebaef2e9842e271c13"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/sources.json",
+      "bytes": 2438,
+      "sha256": "51d7fea3f6e7a7ef2e050220f9f2c91005d9a2540cb64e91d854a3132f9d4167"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/supervisor.json",
+      "bytes": 2475,
+      "sha256": "5839866224bda262d961e41087c98cae22ef35de623c6d1637ad42a63ffd2999"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/browser.json",
+      "bytes": 26500,
+      "sha256": "dc6f5843552ad77f140e4328fb2824008a19d68bc027b5e8fc1b4543e72852d3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/budget.json",
+      "bytes": 223,
+      "sha256": "b1ba27f9f1e077c3f0cbf6ab21a1d03f09fddbfea90a7de42dd2818efb96b581"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/dark-390.png",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/dark-390.png",
+      "bytes": 73954,
+      "sha256": "e41edcd67e0d04e47baadc2109cd6c984bfb94c67fe0cd006ac0bb94e75957d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "54f1b62d2abdfa09e20414e0e8e1db52026a05e4faf024f190a04e3915cff2c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/database-owner.json",
+      "bytes": 164,
+      "sha256": "3c9042d7f6c1b1fa3297b56df2d1079140b26e366c6771a9bf9804ba224db350"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "5c6022009cb8bc8518f67da76bc511ad8a7395f81bfbb819ee1bfed174c85a95"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/launch-config.json",
+      "bytes": 1215,
+      "sha256": "c86ed016b824f46f39c95eb2f10bf5aaa3c77142b444cac88a798c24357cddff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/light-390.png",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/light-390.png",
+      "bytes": 73263,
+      "sha256": "48ff00c5306aac20e2a8e1bfdbd2d06c45a381bc608b61678d98e69f7edf4034"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/process-owner.json",
+      "bytes": 29,
+      "sha256": "de7b38d81beadefa844091ae64c87a11ca6db523642595666349da4c9fc5d578"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/process.log",
+      "bytes": 6915,
+      "sha256": "f234ec45dedf0a60a44fcd459d8fcd1d2815f892427201d9694fd2dc62af36af"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "93cc146c00126c0d8c4c2776cfbc02a0e6a049b901edb7769246408c0f3d5e72"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/sources.json",
+      "bytes": 2522,
+      "sha256": "3274d3f7db47e6248bd196cb7d59508f80483815c494b0f0dee4c4ccf6b9cacd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b/supervisor.json",
+      "bytes": 3599,
+      "sha256": "1d5f7c6d205884811eb27d493281c98e06d374aa52536ddfbf47ab00ee236f7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/browser.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/browser.json",
+      "bytes": 3558,
+      "sha256": "5c48f88ebd48d0752f3303f471f11efd7949bf970d325f07d5171ba608a2facb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/budget.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/budget.json",
+      "bytes": 227,
+      "sha256": "9a36499bbdea736f9ee46f00d380556ed7ca8238832fa553d09ee7d5e3fc0b66"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-cleanup.json",
+      "bytes": 514,
+      "sha256": "2754b28b469cc45773ecacff3b67699bb348b85be9de8cdcb564375f558c449d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-owner.json",
+      "bytes": 164,
+      "sha256": "5b9c9d89dd28dbabb3bcdcb7eeba1243aabff8cfea1e6ae007b81ee22bb37f1f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/fixture-cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "369aac6ac1b038df8352eacdba36c5572238c69cbc064b901bcf5bd59b8725aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/launch-config.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/launch-config.json",
+      "bytes": 1215,
+      "sha256": "e1de219d10ce90f6ebb1cd99e8203c3c9af9f63bcba4bbc0cf140fbc5ac6db2b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process-owner.json",
+      "bytes": 29,
+      "sha256": "e70cf5c44c95fc832ba4cb1674e10b0758e1ac8c11356e6afb79d2433db85acb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process.log",
+      "bytes": 3788,
+      "sha256": "5d8282face1dcd3bbdcb2106af5968bb3e71bc741299f02f5308bdf80b40f548"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/scratch-owner.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "a90039652f104a47df34d178b6d3d0eab50b5c26ec0f81ffa283df5e7905df54"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/sources.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/sources.json",
+      "bytes": 2430,
+      "sha256": "327a0c17880a6635c7befbef9b6d7a19dc20d7f531a08a8cd2eee332ed938c1b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/supervisor.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/supervisor.json",
+      "bytes": 2633,
+      "sha256": "aad62ffb39db5ee7487a5aa0496dbebb6749e07bd8fa1e46fbbfa8fdc1d28138"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/actual-exit.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/actual-exit.json",
+      "bytes": 323,
+      "sha256": "1e9b8eb85d661e5f0f9f536607e5a30aa1d0691e010073654a8592f9368469c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/gate.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/gate.json",
+      "bytes": 2550,
+      "sha256": "c439b13c8d42152949782d74ebe29a94b7a976b21308b9c1af0975b90531e5bc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stderr.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stdout.jsonl",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stdout.jsonl",
+      "bytes": 2177,
+      "sha256": "cf20deeebf6f19176c7021e602f79b841fcd3dc8ee5178aad2e4d17fc4374032"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/actual-exit.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/actual-exit.json",
+      "bytes": 17,
+      "sha256": "3a3121e2c03118bab6dea88a1661628092b50955fa779d024e70174b497d57a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/admission.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/admission.json",
+      "bytes": 1188,
+      "sha256": "e3c3b3c5c3f7dd7a6345b91b8a62ef472080bdff5bc7b7d922a6ba140786fe05"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/claim-observation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/claim-observation.json",
+      "bytes": 2786,
+      "sha256": "b9245519cc2f9798f254cd975f7800940c7ed49a8e1ad57db56322e914018d3d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/gate.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/gate.json",
+      "bytes": 2551,
+      "sha256": "9f5ddda9022fabe6826bf435c7dc019cb27409e830a1916f0c2b98b35c106d50"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stderr.log",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "bytes": 702,
+      "sha256": "35bb848bcc153388c57f574f6221f4d37622bc62df0f671bb7c5b59f09336eb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/pins-check.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/pins-check.json",
+      "bytes": 595,
+      "sha256": "ee3df04839f317136a19082ab705aa2d96006c84b24d04c2a244f69326a06fde"
+    }
+  ],
+  "priorRawCount": 89,
+  "priorRawBytes": 326000,
+  "proof": {
+    "sourceDelta": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-checkpoint.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-checkpoint.json",
+      "bytes": 7054,
+      "sha256": "3d62bb23741916d87bc8df4f5f2a0987b3e3b0ad6b86014968d55d8e879d4dda"
+    },
+    "local33AndTypes": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-local-index.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/create-queue-local-index.json",
+      "bytes": 2480,
+      "sha256": "db7dc54cc4f98ae17c65b0c3d5fdd3cb1922426acdeae5ef1e750a679a6d008c"
+    },
+    "lastSelectedActual": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-second-manifest.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-second-manifest.json",
+      "bytes": 48947,
+      "sha256": "0170167d0554b5c794a1fa3b0e5e0e33150026578a3035ccc023f64504a7966a"
+    },
+    "lastSelectedRootReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json",
+      "bytes": 7306,
+      "sha256": "106e4a61e8ccbe2b0426a474fe3996a3a67fe9cba8a1c0c6df526fdcb0d26f01"
+    },
+    "full7RootReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json",
+      "bytes": 7449,
+      "sha256": "7ef31369949ad5b45465f418bad189aa7d06c5961a1d1d730331e5aed9be3b28"
+    },
+    "sourceDeltaReviewPending": true
+  },
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "<NEW_SINGLE_USE_GATE>",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=<NEW_MANAGER_CONTROLLED_ADMIN_ENV>",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "gateRequirements": {
+    "sourceCommit": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
+    "sourceHashes": {
+      "apps/web/src/App.tsx": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "apps/web/src/attachments/controller.ts": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "apps/web/src/conversation-context/controller.ts": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "apps/web/src/conversation-steering/control.ts": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "apps/web/src/plugin-integration/attachments.tsx": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "apps/web/src/plugin-integration/knowledge.tsx": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "apps/web/src/plugin-integration/steering.tsx": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "apps/web/src/recovery/binding.tsx": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "apps/web/test/conversation-recovery.browser.ts": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "apps/web/test/conversation-recovery.fixture.ts": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "apps/web/test/conversation-recovery.test.ts": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b"
+    },
+    "journey": "create-ack-loss",
+    "totalMs": 60000,
+    "minimumFreeBytes": 1207959552,
+    "scratchParent": "/private/tmp",
+    "maxScratchBytes": 67108864,
+    "uniqueRunIdAndUnconsumedFreshExpiryRequired": true
+  },
+  "adminInput": {
+    "present": false,
+    "sourceGit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "sourcePath": "apps/web/test/web-current-preview.browser.ts",
+    "sourceLine": 185,
+    "noSecretRead": true,
+    "owner": "manager creates new private env and deletes exact identity after terminal; no old env reuse"
+  },
+  "launchCategories": [
+    "owned isolated PG",
+    "owned HTTP fixture",
+    "owned Chrome"
+  ],
+  "outerCapture": "Reuse prior original single-file parent and the full7 outer stdout/stderr/actual-exit capture; preserve dual EOF and exact PGID/scratch/DB cleanup; no new supervisor",
+  "runtimeChecks": 0,
+  "resourceSample": false,
+  "gateCreated": false,
+  "windowReserved": false,
+  "projectChanges": false,
+  "issues": [],
+  "dependencyBoundary": "Same explicit original runtime/public/package pins, no claim of complete transitive closure; no install, dependency restore, product import or probe",
+  "runtimeRevision": {
+    "kind": "carried unchanged installed154.0.8037.99 from prior choice preparation",
+    "provenance": {
+      "path": "/private/tmp/recovery-connection-choice-55b-it_8ry_i/chrome-patch-provenance.json",
+      "realpath": "/private/tmp/recovery-connection-choice-55b-it_8ry_i/chrome-patch-provenance.json",
+      "bytes": 1938,
+      "sha256": "bac7c4e1b96d10f902838448ff77ee9990fd5102a6c248e9d851883efc179fdd"
+    },
+    "oldRunsNotRebound": true
+  },
+  "predecessor": {
+    "path": "/private/tmp/recovery-connection-choice-55b-it_8ry_i/manifest.json",
+    "sha256": "e91b0852f78cdd725b393249fd1a8a407ba55ac070011e43f8b734c2f28813e2",
+    "preserved": true
+  },
+  "supplementaryReadOnlySourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3242,
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversation-queue/commands.ts"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversation-queue/index.ts",
+      "bytes": 3433,
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversation-queue/index.ts"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversations/state.ts",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/conversations/state.ts"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/src/conversation-queue.ts",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/src/conversation-queue.ts"
+    }
+  ],
+  "retainedEvidenceLogicalBytes": 2303830,
+  "priorRawBoundary": "Union of all earlier pinned78 (including11 legacy outer artifacts) plus latest choice11; no prior pins dropped."
+}

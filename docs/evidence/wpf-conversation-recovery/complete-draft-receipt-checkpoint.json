@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07 08:57:10 UTC",
+  "target": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+  "base": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "changed": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 89358,
+      "sha256": "c02b547dc50e1d19890b9aec8794b44438b341dfd58066a630c1883ded9060a8",
+      "blob": "e2282cec3482180c4b4b19484e01a7f71b8c815a"
+    }
+  ],
+  "unchangedSources": {
+    "count": 18,
+    "reference": "complete-draft-locator-checkpoint.json",
+    "sha256": "b43c4aaf3388313bf665cca45727b917705b4c89de4ad1c3ffb69352c7a1a961",
+    "target": "bc3e06315bc80542547c11fa69adabda3fe62b79"
+  },
+  "change": "Exact kind/domain/frozen.turnKey match, unique record, original accepted requirement; frozen receipt id/kind/conversation/key/request and ACK checkpoint identities asserted",
+  "runtime": "NOT_RETESTED",
+  "checks": "git diff --check; no repeated noEmit/observer/direct",
+  "failedAttempt": "continuous-ninth-manifest.json",
+  "budget": {
+    "spentMs": 114654,
+    "remainingMs": 35346,
+    "nextMaximumMs": 35346,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startBytes": 4194304
+  }
+}

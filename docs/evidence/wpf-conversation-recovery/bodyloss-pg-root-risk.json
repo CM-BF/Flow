@@ -1,0 +1,50 @@
+{
+  "result": "SOURCE_RISK_CONFIRMED_NOT_RUNTIME_REPRODUCTION",
+  "scope": "Recovery own fixture DB cleanup only, new source dispatch still manager-owned",
+  "actualInstalled": [
+    {
+      "name": "pg",
+      "version": "8.23.1",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "packageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "name": "pg-pool",
+      "version": "3.14.0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool",
+      "packageSha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134"
+    }
+  ],
+  "poolSource": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+    "bytes": 14460,
+    "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+  },
+  "sourceFacts": [
+    "pg-pool3.14.0 _remove172–188 removes client from_clients before asynchronous client.end callback",
+    "Ending _pulseQueue133–143 invokes_remove on idle clients then_endCallback once_clients length is zero",
+    "end488–501 setsending,_endCallback then_pulseQueue; Promise resolution therefore does not guarantee remote pg_stat_activity has already lost the backend",
+    "Recovery fixture close currently performs one pg_stat_activity count before marker connection, await check.end, then one count after it; either count may briefly see owned closing connections"
+  ],
+  "requiredFixShape": [
+    "Observe only exact random owned database via existing admin connection; retain marker verification and ordinary DROP/no FORCE/no unrelated termination",
+    "Use short bounded zero-connection observation at both existing pre-marker and post-marker points; share actual parent cleanup deadline/reserve rather than add unconstrained waits",
+    "Each observation serial and bounded by query/statement timeout and remaining cleanup allowance; no orphan timeout race that abandons running queries",
+    "Record observation phase/times, count and a capped list of pid/state only; safe error class/code, no SQL text, connection URI, credentials or arbitrary error metadata",
+    "Persistent nonzero, observer/query error, insufficient deadline or ownership mismatch remains failed/incomplete and blocks automatic repeat",
+    "After DROP retain actual database absence observation and close admin; parent hard-stop/raw ownership remain ultimate fallback"
+  ],
+  "attribution": "Same actual installed versions/hash as GO input, so static mechanism applies here. No Recovery HTTP/PG/browser or TUI root-cause reproduction performed.",
+  "runtime": "0 imports/tests/HTTP/PG/Chrome/space; no budget spent",
+  "sourceRefs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "da356017311ea318b57aae582c1b2a51177fdc6a157ea9cbe04dbec60b713160"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "883c1195584e23ec6bfe1a69b5b8aa50929204826ef26ff8a814b479fe5c6ac5"
+    }
+  ],
+  "cleanCode": "Keep one owned cleanup observer with clear phase facts/deadline and explicit failure. No general database lifecycle framework or shared-contract expansion."
+}

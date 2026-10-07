@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:19:16.492Z / main a9436d72；本批接已审SVC首次采用直接消费者和管理收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:29:11.850286+00:00 / main f68dbb71；本批接收独审Recovery Web原03/05范围 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main a9436d72；仅已审固定输入与自身集成记录 |
-| 工作树dirty状态 | 本批已审固定片接收；未知既有__pycache__不纳入提交 |
+| 工作基线 / HEAD | main f68dbb71；Recovery2f8的19源与当前main基线逐字一致后应用精确delta |
+| 工作树dirty状态 | 本批已审固定Web与原始证据接收；未知既有__pycache__不纳入提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | SVC首次采用准备独审通过，7源/10记录及依赖固定；3新guard通过，真实PG待排。S01/Lazy原批准已受控接收；0重复工程检查/模型。 |
-| 已集成main状态 / HEAD | main a9436d72已接规划诊断和R3候选、S01/Lazy固定成果；本批SVC首次采用待本次fast-forward。个人backend af51/v18、Web d629/v3/c7b仍是既有部署事实。 |
+| 检查状态 | Recovery既有Web组合独审通过；main直接消费者Web noEmit 6.024s/exit0，0PG/Chrome/provider；原failed/bounded实际证据不重跑。 |
+| 已集成main状态 / HEAD | main f68dbb71已接SVC首次采用准备与O16 R3实际失败；本批Recovery待fast-forward。个人backend af51/v18与Web d629/v3仍是旧部署事实。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 已审容量与按需读取成果已进入主线；后台首次采用的准备和局部验证已通过独审，规划第三次失败原件已完成独立核读。 |
-| 下一可用交付 | 接收恢复界面的已审组合，完成旧页面兼容与后台首次采用验证，推进可体验更新。 |
-| 当前阻塞 | ACTIVE: 个人新版仍待真实页面兼容和首次采用验证；规划认证失败，累计三次后转零模型定位，不自动重试。 |
+| 当前产出 | 会话恢复的已审界面与原验收已完成主线组合检查；后台首次采用的实际验证已收尾，正在核读固定结果。 |
+| 下一可用交付 | 发布本批恢复界面源码，完成旧页面兼容与后台更新准备，让新能力进入个人预览。 |
+| 当前阻塞 | ACTIVE: 个人新版仍待真实页面兼容；退出响应与重新登录的竞态另由原中心owner修复。规划登录环境未识别认证，保留三次调用后只做零模型定位。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -400,3 +400,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T11:19:16.492Z：SVC首次采用消费者独审见[本次限定审查](../../docs/evidence/i02/svc06-first-adoption-consumer-review.json)，未预填backend identity、无真实服务refresh重复，PG待既有ready队列。O16 R3原owner已报告认证结构错误和11:14:22Z窗口归还，独立结果审查已限定通过，本批接收原件；认证具体原因仍由零模型诊断核实。S01/Lazy既有成果接收见[固定回执](../../docs/evidence/i02/approved-backlog-receipt-20261007-1109.json)，没有产品/模型验收重跑。
 
 本批O16 R3结果唯一独审为[限定失败忠实性批准](../../docs/evidence/i02/o16-native-r3-result-review.json)，28固定输入74187B及原candidate引用核对；私有正文不复制。累计3、无第四次、DB/tmp KEEP和未知费用均保留，不升级为目标旅程通过。
+
+## Recovery受控接收 2026-10-07T11:29:11.850286+00:00
+
+[唯一接收记录](../../docs/evidence/i02/recovery-intake.json)绑定2f8十九源、15833原证据及Web独立组合审。所有主线输入等于84005基线，精确delta无手工冲突；仅Web noEmit复核组合，0新行为/浏览器/PG/模型。原03/05通过，06的lateLogout中心边界继续开放，不把主线接收写成个人部署或整平台Done。类型检查自有组已absent/EOF，非空1.36MB临时目录按原empty-only条件KEEP，未读取内容或扩删除。

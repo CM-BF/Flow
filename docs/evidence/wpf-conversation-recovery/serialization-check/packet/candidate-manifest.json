@@ -1,0 +1,76 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "actualHead": "79fe564f009d5b78be0878b669a77068089c77ba",
+  "dirty": false,
+  "sourceCheckpoint": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "sourcePins": 19,
+  "externalPins": 14,
+  "files": [
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/README.md",
+      "bytes": 7596,
+      "sha256": "690522be14e78afad69fec13845921dc89a70c22e497d8974d9f408ecfe6f7f3"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/binding.json",
+      "bytes": 17170,
+      "sha256": "c621fb17f782a85c6769af9c1100c58690340acf62ee69e43fcea08dfc79b0f3"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/extraction.json",
+      "bytes": 823,
+      "sha256": "e25f834ef532f0b886491bdb4613bb1d4763f19dd027c594b528ab8ee4750830"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/new-callback.ts",
+      "bytes": 797,
+      "sha256": "6cf6d3c9405d3693621461b83b08f6cfeffcac0e65683c2edc11752681a09215"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/old-callback.ts",
+      "bytes": 747,
+      "sha256": "54c49e2b2d799ce8aa74eaed9bfc0f430629fddb1c6c515ffec29dffb32ade20"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/preparation.json",
+      "bytes": 2988,
+      "sha256": "d20ca6bcec9879a299c11eaee1c19e609cd7dae01341b79b553b4d2253c6dd55"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/run-before-stdout-accounting.py.txt",
+      "bytes": 12653,
+      "sha256": "cbbddb7a6a2d2bc705400ef27b67006050f6d1a6ba186e55efdea3aaafd8afe5"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/run.py",
+      "bytes": 13401,
+      "sha256": "da4ff263f30b6d0fdb15992b3b6aaec8293c573762f9a6ab92bba3270eae88a1"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/sandbox.sb",
+      "bytes": 281,
+      "sha256": "2a45a93844eeff09932fcf952ce68d88f065e74951abeee8a3f7611c13597bef"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/supervisor-adaptation.diff",
+      "bytes": 33018,
+      "sha256": "93542ece400df8ec2690e3c8c5914bca02a2c220d15f857716710ec8cc55fd6f"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/terminal-accounting.diff",
+      "bytes": 2317,
+      "sha256": "59214abbb8a78d4e6b858b3e9b7bd76be9b9d5b52bb27b6e5f4dd00d66adff0a"
+    },
+    {
+      "path": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs",
+      "bytes": 7559,
+      "sha256": "e961419c2d37f22bb81ae5b20d9c3c7b805d28cfe50f5dc749b8f7da419d62a6"
+    }
+  ],
+  "totalPreparationBytes": 99116,
+  "gatePresent": false,
+  "runtimeExecuted": false,
+  "nodeImported": false,
+  "projectModified": false,
+  "next": "Root source review, manager reviewed binding and fresh single-use admission; no automatic execution."
+}

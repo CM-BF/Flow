@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07 07:56:05 UTC",
+  "target": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "base": "d321240c486f24a0944a0472cb6f3cebd571fc39",
+  "changed": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 75979,
+      "sha256": "6fdee86a625315c5f7a1d9e7aa5e29e484a0e6a7915c5ea76a5e4af768f994f3",
+      "blob": "8c75252f749f9f15e35edef97ec6574c9a535ccb"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 34613,
+      "sha256": "55b18f469f248ac019b4208bb61a0b288b955bfb16be25fc775514f189e3a899",
+      "blob": "b917a3e7a545b5d1b8136ecdd7499fb04e885229"
+    }
+  ],
+  "unchangedSources": {
+    "count": 17,
+    "reference": "monitor-retirement-checkpoint.json",
+    "sha256": "cf23604afc6d6e155ab8eccac2b29b5e605857a5e66aebcad094042766397802",
+    "target": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5"
+  },
+  "localCheck": {
+    "path": "sse-observer.check.ts",
+    "sha256": "611f265c5c8a0afacd6466a8bbf30398aaeda0decf0d18a126a21ba3c8cc66ed",
+    "staticExpandedCases": 12,
+    "state": "PASS",
+    "command": "TSX_DISABLE_CACHE=1 NODE_DISABLE_COMPILE_CACHE=1 node --import tsx --test docs/evidence/wpf-conversation-recovery/sse-observer.check.ts",
+    "actualCases": 12,
+    "passed": 12,
+    "skipped": 0,
+    "result": "sse-local/manifest.json"
+  },
+  "browser": "NOT_RUN",
+  "types": "PASS exit0, actual Web noEmit, sse-local/types.log",
+  "selection": {
+    "journey": "sse-delivery",
+    "required": [
+      "cookieRead",
+      "sseDelivery"
+    ],
+    "originalFullUnchanged": true
+  },
+  "retainedBoundary": {
+    "previousBytes": 8388608,
+    "nowBytes": 9437184,
+    "perRunReserveBytes": 5242880,
+    "startupMaximumBytes": 4194304,
+    "combinedFreshFloorBytes": 4054056960,
+    "authority": "root accepted once in this segment; no runtime/holder granted"
+  },
+  "runtimeSpentMs": 70158,
+  "runtimeRemainingMs": 79842,
+  "focusedSourceReview": "sse-delivery-root-review.json"
+}

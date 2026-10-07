@@ -1,0 +1,83 @@
+--- corrected-settings/run.py
++++ recovery38/run.py
+@@ -1,4 +1,4 @@
+-"""Single-use MessageSettings sequential noEmit/direct check. Never runnable without separately pinned gate."""
++"""Single-use Recovery38 controlled direct check. Never runnable without separately pinned gate."""
+ import datetime
+ import hashlib
+ import json
+@@ -79,8 +79,8 @@
+     if binding['state'] != 'REVIEWED_SOURCE_BOUND_NOT_RUN':
+         raise ValueError('SOURCE_BINDING_PENDING')
+     gate = read_json(sys.argv[2])
+-    assert gate.get('allowRun') is True and gate.get('mode') == 'types-and-direct'
+-    assert gate['taskId'] == 'WPF-MESSAGESETTINGS01' and gate['singleUse'] is True
++    assert gate.get('allowRun') is True and gate.get('mode') == 'recovery-direct'
++    assert gate['taskId'] == 'WPF-RECOVERY01' and gate['singleUse'] is True
+     assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z', '+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+     assert gate['bindingSha256'] == digest(BINDING)
+     assert gate['runnerSha256'] == digest(__file__)
+@@ -88,7 +88,7 @@
+     assert gate['sourceHead'] == binding['head']
+     assert gate['implementation'] == binding['implementation']
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+-    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 0
++    assert gate['previousRuntimeMs'] == binding['previousRuntimeMs'] == 4574
+     assert binding['limits']['totalSeconds'] == (30000 - binding['previousRuntimeMs']) / 1000
+     assert binding['limits']['cleanupReserveSeconds'] == 5
+     assert gate['limits'] == binding['limits']
+@@ -109,7 +109,7 @@
+     assert git('rev-parse', 'HEAD') == binding['head']
+     assert git('branch', '--show-current') == binding['branch']
+     assert git('status', '--porcelain') == ''
+-    assert len(binding['sources']) == 6
++    assert len(binding['sources']) == 19
+     for filename, expected in {**binding['sources'], **binding['readOnlyDependencies']}.items():
+         assert digest(root / filename) == expected, filename
+     node = binding['node']
+@@ -126,7 +126,8 @@
+ def child_environment():
+     # Preserve HOME/home/CODEX_HOME. Redirect only this command's scratch/cache.
+     env = {key: value for key, value in os.environ.items()
+-           if not key.startswith(('FLOW_', 'PG', 'POSTGRES_', 'MESSAGESETTINGS_'))
++           if not key.startswith(('FLOW_', 'PG', 'POSTGRES_', 'RECOVERY_'
++))
+            and key not in ('DATABASE_URL', 'NODE_OPTIONS', 'HTTP_PROXY', 'HTTPS_PROXY',
+                            'ALL_PROXY', 'http_proxy', 'https_proxy', 'all_proxy')}
+     for name in ('TMPDIR', 'TMP', 'TEMP', 'XDG_CACHE_HOME', 'NODE_COMPILE_CACHE'):
+@@ -194,7 +195,7 @@
+               'sourceHead': binding['head'], 'sourceHashes': binding['sources'],
+               'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__),
+               'sandboxSha256': digest(PROFILE), 'limits': limits,
+-              'kind': 'one strict noEmit then two direct files/one fork; own loopback HTTP fixtures; no PG/browser/external network',
++              'kind': 'one controlled IDB/mock-fetch direct file/one fork; no HTTP/PG/browser/network',
+               'samples': samples, 'previousRuntimeMs': binding['previousRuntimeMs']}
+     # Atomic consumption prevents retries even when a later admission/source check fails.
+     with (BASE / 'consumed-gate.json').open('x') as target:
+@@ -301,7 +302,7 @@
+         report['cleanup'] = {'state': 'fulfilled' if not cleanup_errors else 'failed',
+                              'errors': cleanup_errors, 'seconds': round(time.monotonic() - cleanup_started, 3),
+                              'groupAbsent': not group_alive(process), 'scratchAbsent': not SCRATCH.exists(),
+-                             'serverClosureBasis': 'Both sequential commands and their fork/own HTTP fixture remain in the inherited worker group; no external service used'}
++                             'serverClosureBasis': 'Single direct command and fork remain in the inherited worker group; no external service used'}
+         report['exitCode'] = process.returncode if process else None
+         report['logBytes'] = log_bytes
+         report['droppedObservedLogBytes'] = dropped_bytes
+@@ -310,7 +311,7 @@
+         report['remainingMs'] = max(0, 30000 - report['cumulativeMs'])
+         report['finishedAt'] = utc_now()
+         expected_steps = report.get('steps') or []
+-        steps_passed = (len(expected_steps) == 2 and [s.get('name') for s in expected_steps] == ['strict-noEmit', 'direct']
++        steps_passed = (len(expected_steps) == 1 and [s.get('name') for s in expected_steps] == ['direct']
+                         and all(s.get('exitCode') == 0 and not s.get('signal') and not s.get('error') for s in expected_steps))
+         direct_passed = (direct.get('success') is True and direct.get('numTotalTests') == binding['expectedTestCount']
+                          and direct.get('numPassedTests') == binding['expectedTestCount'] and direct.get('numFailedTests') == 0
+@@ -319,7 +320,7 @@
+                 and report['elapsedMs'] <= round(limits['totalSeconds'] * 1000) and report['cumulativeMs'] <= 30000
+                 and steps_passed and direct_passed and dropped_bytes == 0)
+         report['state'] = 'PASS' if okay else reason or 'FAIL'
+-        report['sourceMeaning'] = 'Focused noEmit/direct cover these frozen leaf/legacy modules only, not rendered picker, App/Recovery mounting or provider behavior.'
++        report['sourceMeaning'] = 'Controlled IDB/mock-fetch test covers the frozen38 cases only; not actual browser IDB/schema or App authentication journey.'
+         encoded = (json.dumps(report, indent=2) + '\n').encode()
+         try:
+             retained_bytes = logical_bytes(BASE)

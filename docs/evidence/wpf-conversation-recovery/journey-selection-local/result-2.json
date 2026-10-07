@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-07T05:19:32.714500+00:00",
+  "sourceSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+  "sourceDirty": true,
+  "previousMs": 6279.676374979317,
+  "budgetMs": 30000,
+  "cleanupReserveMs": 5000,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-journey-local-697ukvp0/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "apps/web/tsconfig.json"
+      ],
+      "pid": 95037,
+      "exit": 0,
+      "timedOut": false,
+      "elapsedMs": 5985.8151249354705,
+      "stdoutBytes": 0,
+      "stderrBytes": 0,
+      "bothEOF": true,
+      "ownedGroupAbsent": true
+    },
+    {
+      "argv": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-journey-local-697ukvp0/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/private/tmp/recovery-journey-local-697ukvp0/selection-timing-check.cjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts"
+      ],
+      "pid": 801,
+      "exit": 0,
+      "timedOut": false,
+      "elapsedMs": 196.0547500057146,
+      "stdoutBytes": 473,
+      "stderrBytes": 0,
+      "bothEOF": true,
+      "ownedGroupAbsent": true
+    }
+  ],
+  "network": "deny",
+  "projectWrites": "deny",
+  "productImport": false,
+  "elapsedMs": 6182.800624985248,
+  "cumulativeMs": 12462.476999964565,
+  "tmpBytesBeforeResult": 10772,
+  "state": "PASS"
+}

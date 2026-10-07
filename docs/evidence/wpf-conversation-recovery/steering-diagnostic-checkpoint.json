@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07 09:56:42 UTC",
+  "state": "SOURCE_ACCEPTED_NOT_RUN",
+  "target": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
+  "previousTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "baselineManifest": {
+    "path": "steering-source-checkpoint.json",
+    "bytes": 8330,
+    "sha256": "21f915ffcc0aa4e679a66fdaa5e9785108652904cb9420dcfb38cca1dd25ad07"
+  },
+  "changedSourcePins": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "blob": "75f0cac6b3a1005c23a5a507a8a0b6bffa10564c",
+      "bytes": 101545,
+      "sha256": "d94f1d71a842df27dd31a5be8e5a7ff7e762142b89388a6e9f2bceb3c530fb55",
+      "previousSha256": "507d6fbbb0d1af52ac843591bb7940f20ca778814d7e17fed8ad9de95ee56fff"
+    }
+  ],
+  "unchangedSourceCount": 18,
+  "diffSha256": "555979aad77cdfb0d6cca4f7ba09e6e3ff73d83e240f464782d1a5f8569fc29e",
+  "claimObservation": {
+    "path": "steering-diagnostic-claim.json",
+    "bytes": 1909,
+    "sha256": "f72ba4443155af2b5428453d7206e67da2caa845e121721c108b4680c9656b49"
+  },
+  "review": {
+    "path": "steering-diagnostic-root-review.json",
+    "bytes": 6544,
+    "sha256": "be4aa94d2cd79573314630c7e68bdd27da48eeadddcae98aacf712ee1585f734"
+  },
+  "semantics": [
+    "Same original5s draft predicate and original error rethrow.",
+    "Actual DOM value assertion precedes polling; failure-only read observations are independent.",
+    "Only draft records parse data. Owner narrowed to viewKey/routeId/projectId; max8records and8steering identity/length/match entries.",
+    "At most8alerts capped512characters and three separately labelled diagnostic errors capped512; no complete instruction/token/IDB write.",
+    "Actor, lease, parent lifecycle and all other18source pins unchanged."
+  ],
+  "checks": {
+    "gitDiffCheck": "PASS_STATIC",
+    "runtime": "NOT_RUN",
+    "types": "NOT_RUN_FOR_DIAGNOSTIC; earlier54952 noEmit retained"
+  }
+}

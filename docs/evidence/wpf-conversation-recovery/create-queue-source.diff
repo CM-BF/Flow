@@ -1,0 +1,220 @@
+diff --git a/apps/web/test/conversation-recovery.browser.ts b/apps/web/test/conversation-recovery.browser.ts
+index 75891289..7c43ae41 100644
+--- a/apps/web/test/conversation-recovery.browser.ts
++++ b/apps/web/test/conversation-recovery.browser.ts
+@@ -41,10 +41,13 @@ const journeyGroups = {
+   "csrf-offline": ["cookieRead", "csrfOffline"],
+   appearance: ["cookieRead", "themes390"],
+   "connection-choice": ["cookieRead", "connectionChoice"],
++  "create-ack-loss": ["cookieRead", "createAckLoss"],
++  "created-turn-ack-loss": ["cookieRead", "createdTurnAckLoss"],
++  "queue-ack-loss": ["cookieRead", "queueAckLoss"],
+ } as const;
+ type Journey = keyof typeof journeyGroups;
+ type Group = (typeof journeyGroups)[Journey][number];
+-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice"];
++const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss"];
+ function selectedGroups(journey: unknown): readonly Group[] {
+   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
+   return journeyGroups[journey as Journey];
+@@ -311,8 +314,10 @@ async function worker(init: Init) {
+     const result = await page.evaluate(observeRecoveryRecords, { name: "flow.conversation-recovery.v1", version: 1, timeoutMs: 1000 });
+     return result.records; // Missing/pending remains empty for the existing strict draft poll; malformed rejects.
+   };
+-  const { decodeConversationTurnAccepted } = await import("@flow/client");
+-  const { conversationTurnSchema } = await import("@flow/contracts");
++  const { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationContextMatches } = await import("@flow/client");
++  const { conversationCreationSchema, conversationTurnSchema, conversationQueueEnqueueSchema } = await import("@flow/contracts");
++  const { parseRecoveryRecord } = await import("../src/recovery/journal");
++  const { assertQueueItem } = await import("../src/conversations/queue/commands");
+   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
+   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
+   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
+@@ -325,8 +330,8 @@ async function worker(init: Init) {
+   };
+   const coverage: Record<string, string> = {
+     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
+-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN",
+-    createTwoStage: "PENDING: direct/source only", queueSteerRecovery: "PENDING: direct/source only",
++    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN",
++    createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
+     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
+   };
+   for (const key of allGroups) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
+@@ -351,14 +356,15 @@ async function worker(init: Init) {
+       groupTimings.push({ group: key, startedOffsetMs: began - workerBegan, endedOffsetMs: ended - workerBegan, elapsedMs: ended - began, outcome });
+     }
+   };
+-  const observeTurnBodyLoss = (page: Page, requestedText: string) => {
++  const observeAckBodyLoss = (page: Page, path: string | RegExp, field: "text" | "title", requestedText: string) => {
+     const observation: BodyLossObservation = { path: null, key: null, bodySha256: null, status: null, headers: {}, events: [], failure: null, finished: false };
+     bodyLoss.push(observation);
+     let selected: Request | undefined;
+     const onRequest = (request: Request) => {
+-      if (selected || request.method() !== "POST" || new URL(request.url()).pathname !== `/api/conversations/${fixture!.conversationId}/turns`) return;
++      const pathname = new URL(request.url()).pathname;
++      if (selected || request.method() !== "POST" || !(typeof path === "string" ? pathname === path : path.test(pathname))) return;
+       const body = request.postData(); if (!body) return;
+-      try { if (JSON.parse(body).text !== requestedText) return; } catch { return; }
++      try { if (JSON.parse(body)[field] !== requestedText) return; } catch { return; }
+       selected = request; observation.path = new URL(request.url()).pathname;
+       observation.key = request.headers()["idempotency-key"] ?? null; observation.bodySha256 = digest(body); observation.events.push("request");
+     };
+@@ -454,6 +460,148 @@ async function worker(init: Init) {
+       await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
+       expect(postRows()).toHaveLength(posts);
+     });
++    const object = (value: unknown): Record<string, unknown> => {
++      requireThat(value !== null && typeof value === "object" && !Array.isArray(value), "Expected a saved command object");
++      return value as Record<string, unknown>;
++    };
++    const savedCommand = async (domain: "outbox" | "queue") => {
++      const commands = (await records(page)).filter(record => record.kind === "command");
++      expect(commands).toHaveLength(1);
++      const record = parseRecoveryRecord(commands[0]);
++      requireThat(record.kind === "command" && record.domain === domain, "Expected the original command authority");
++      return record;
++    };
++    const waitCommandPhase = async (phase: string) => {
++      await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe(phase);
++    };
++    const preserveNextDraft = async (value: string) => {
++      await saveDraftThroughUi(value);
++      const matches = (await records(page)).filter(record => record.kind === "draft" && record.data?.text === value);
++      expect(matches).toHaveLength(1); return matches[0]!.id;
++    };
++    const reloadAndReauthenticate = async () => {
++      const before = postRows().map(row => ({ path: row.path, key: row.key, body: row.body }));
++      await fixture!.expireSessions(); await page.reload();
++      await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
++      expect(postRows().map(row => ({ path: row.path, key: row.key, body: row.body }))).toEqual(before);
++      await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token);
++      await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(input()).toBeVisible();
++      expect(postRows().map(row => ({ path: row.path, key: row.key, body: row.body }))).toEqual(before);
++    };
++    const exactRecordRow = async (dialog: Locator, id: string) => {
++      expect(id).toMatch(/^(?:draft:)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
++      const row = dialog.locator(`[data-recovery-record-id="${id}"]`);
++      await expect(row).toHaveCount(1); await expect(row.locator("code")).toHaveText(id); return row;
++    };
++    const retrySavedCommand = async (id: string, domain: "outbox" | "queue") => {
++      const dialog = await openRecovery(), row = await exactRecordRow(dialog, id);
++      await expect(row).toContainText(`${domain} receipt · unknown`);
++      await row.getByRole("button", { name: "Retry original request", exact: true }).click();
++      await waitCommandPhase("accepted"); await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
++    };
++    const restoreNextDraft = async (id: string, value: string) => {
++      expect((await records(page)).find(record => record.id === id)?.data?.text).toBe(value);
++      const before = postRows().length, dialog = await openRecovery();
++      const row = await exactRecordRow(dialog, id);
++      await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
++      await expect(dialog).not.toBeVisible(); await expect(input()).toHaveValue(value); expect(postRows()).toHaveLength(before);
++    };
++    const createThenRecover = async (lost: "create" | "turn") => {
++      const original = `Recovery two-stage ${lost} ACK loss`, next = `Next draft after ${lost} ACK loss`;
++      const newChat = page.locator(".flow-workspace-bar").getByRole("button", { name: "New chat", exact: true });
++      await expect(newChat).toHaveCount(1); await newChat.click(); await saveDraftThroughUi(original);
++      const creations = () => postRows().filter(row => row.path === "/api/conversations");
++      const turns = () => postRows().filter(row => /\/turns$/.test(row.path));
++      expect(postRows()).toHaveLength(0);
++      const verifyBodyLoss = observeAckBodyLoss(page, lost === "create" ? "/api/conversations" : /\/api\/conversations\/[^/]+\/turns$/, lost === "create" ? "title" : "text", original);
++      fixture!.dropNext(lost); await input().press("Enter");
++      await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
++      await waitCommandPhase("unknown"); expect(creations()).toHaveLength(1); expect(turns()).toHaveLength(lost === "create" ? 0 : 1);
++      const firstCreate = creations()[0]!, creation = conversationCreationSchema.parse(JSON.parse(firstCreate.body));
++      requireThat(firstCreate.responseBody, "Original real CREATE ACK required");
++      const created = decodeConversationCreated(JSON.parse(firstCreate.responseBody), creation);
++      expect(created.replayed).toBe(false); expect(created.conversation.id).not.toBe(fixture!.conversationId);
++      const saved = await savedCommand("outbox"), frozen = object(saved.frozen);
++      const originalTurn = conversationTurnSchema.parse(frozen.request);
++      expect(frozen).toMatchObject({ kind: "turn", id: saved.id, conversationId: null, creationKey: `${saved.id}:create`, turnKey: `${saved.id}:turn` });
++      expect(conversationCreationSchema.parse(frozen.creation)).toEqual(creation);
++      expect(originalTurn.text).toBe(original); expect(firstCreate.key).toBe(frozen.creationKey);
++      if (lost === "create") { expect(saved.stage).toBe("create"); expect(object(saved.checkpoint ?? {}).conversationId).toBeUndefined(); }
++      else {
++        expect(saved.stage).toBe("submit"); expect(object(saved.checkpoint).conversationId).toBe(created.conversation.id);
++        expect(turns()[0]!.path).toBe(`/api/conversations/${created.conversation.id}/turns`);
++        expect(turns()[0]!.key).toBe(frozen.turnKey); expect(JSON.parse(turns()[0]!.body)).toEqual(originalTurn);
++      }
++      const firstLost = lost === "create" ? firstCreate : turns()[0]!; await verifyBodyLoss(firstLost);
++      expect(postRows()).toHaveLength(lost === "create" ? 1 : 2);
++      const nextId = await preserveNextDraft(next); await reloadAndReauthenticate();
++      const restored = await savedCommand("outbox"); expect(restored.frozen).toEqual(saved.frozen); expect(restored.checkpoint).toEqual(saved.checkpoint);
++      expect(creations()).toHaveLength(1); expect(turns()).toHaveLength(lost === "create" ? 0 : 1);
++      await retrySavedCommand(saved.id, "outbox");
++      expect(creations()).toHaveLength(lost === "create" ? 2 : 1); expect(turns()).toHaveLength(lost === "create" ? 1 : 2); expect(postRows()).toHaveLength(3);
++      if (lost === "create") {
++        const repeated = creations()[1]!; expect({ key: repeated.key, body: repeated.body }).toEqual({ key: firstCreate.key, body: firstCreate.body });
++        requireThat(repeated.responseBody, "Replayed CREATE ACK required");
++        const replay = decodeConversationCreated(JSON.parse(repeated.responseBody), creation);
++        expect(replay.replayed).toBe(true); expect(replay.conversation.id).toBe(created.conversation.id);
++      }
++      const firstTurn = turns()[0]!;
++      expect(firstTurn.path).toBe(`/api/conversations/${created.conversation.id}/turns`); expect(firstTurn.key).toBe(frozen.turnKey); expect(JSON.parse(firstTurn.body)).toEqual(originalTurn);
++      requireThat(firstTurn.responseBody, "Original real turn ACK required");
++      const accepted = decodeConversationTurnAccepted(JSON.parse(firstTurn.responseBody), created.conversation.id, originalTurn);
++      expect(accepted.turn.id.length).toBeGreaterThan(0); expect(accepted.turn.task.id.length).toBeGreaterThan(0);
++      if (lost === "turn") {
++        const repeated = turns()[1]!; expect({ key: repeated.key, body: repeated.body }).toEqual({ key: firstTurn.key, body: firstTurn.body });
++        requireThat(repeated.responseBody, "Replayed turn ACK required");
++        const replay = decodeConversationTurnAccepted(JSON.parse(repeated.responseBody), created.conversation.id, originalTurn);
++        expect(replay.replayed).toBe(true); expect({ turn: replay.turn.id, task: replay.turn.task.id }).toEqual({ turn: accepted.turn.id, task: accepted.turn.task.id });
++      }
++      const final = await savedCommand("outbox"); expect(final.frozen).toEqual(saved.frozen);
++      expect(final.checkpoint).toMatchObject({ conversationId: created.conversation.id, turnId: accepted.turn.id, taskId: accepted.turn.task.id });
++      await restoreNextDraft(nextId, next);
++    };
++    await run("lost CREATE ACK resumes the original two-key/two-body command only after explicit retry", "createAckLoss", () => createThenRecover("create"));
++    await run("persisted CREATE binding survives lost turn ACK; explicit retry never repeats CREATE", "createdTurnAckLoss", () => createThenRecover("turn"));
++    await run("lost queue enqueue ACK preserves revision/key/body/ordered files and the independent next draft", "queueAckLoss", async () => {
++      const queuedText = "Queue recovery with two ordered files", next = "Next draft after queue ACK loss";
++      const queueRows = () => postRows().filter(row => row.path === `/api/conversations/${fixture!.conversationId}/queue`);
++      const files = page.locator("[data-composer-view]").getByRole("button", { name: "Files", exact: true }).filter({ visible: true });
++      await files.click(); const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
++      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
++      await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click(); await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
++      await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
++      await expect(input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root")).toHaveCount(2);
++      await page.getByRole("radio", { name: "Queue next", exact: true }).check(); await saveDraftThroughUi(queuedText);
++      await expect(page.getByRole("button", { name: "Add to queue", exact: true })).toBeEnabled();
++      expect(postRows()).toHaveLength(0);
++      const verifyBodyLoss = observeAckBodyLoss(page, `/api/conversations/${fixture!.conversationId}/queue`, "text", queuedText);
++      fixture!.dropNext("queue"); await input().press("Enter");
++      await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown"); await waitCommandPhase("unknown");
++      expect(queueRows()).toHaveLength(1); const first = queueRows()[0]!; await verifyBodyLoss(first);
++      const request = conversationQueueEnqueueSchema.parse(JSON.parse(first.body)); expect(request.text).toBe(queuedText);
++      expect(request.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
++      const saved = await savedCommand("queue"), command = object(object(saved.frozen).command);
++      expect(command).toMatchObject({ kind: "enqueue", conversationId: fixture!.conversationId }); expect(command.input).toEqual(request); expect(saved.id).toBe(first.key);
++      const nextId = await preserveNextDraft(next); await reloadAndReauthenticate();
++      expect((await savedCommand("queue")).frozen).toEqual(saved.frozen); expect(queueRows()).toHaveLength(1);
++      await retrySavedCommand(saved.id, "queue"); expect(queueRows()).toHaveLength(2); expect(postRows()).toHaveLength(2);
++      const replay = queueRows()[1]!; expect({ key: replay.key, body: replay.body }).toEqual({ key: first.key, body: first.body });
++      const decodeQueueAck = (row: RecoveryWire) => {
++        requireThat(row.responseBody, "Complete real queue ACK required");
++        const ack = object(JSON.parse(row.responseBody));
++        expect(ack.conversationId).toBe(fixture!.conversationId); expect(ack.queueRevision).toBe(request.expectedQueueRevision + 1);
++        const item = ack.item as import("@flow/contracts").ConversationQueueItem; assertQueueItem(item, fixture!.conversationId);
++        expect(item.state).toBe("waiting"); expect(item.sequence).toBe(ack.queueRevision); expect(item.preview).toBe(queuedText);
++        assertConversationContextMatches(request.knowledge, item.context, { projectId: fixture!.projectId, attachments: request.attachments! });
++        return { ack, item };
++      };
++      const original = decodeQueueAck(first), retried = decodeQueueAck(replay);
++      expect(original.ack.replayed).toBe(false); expect(retried.ack.replayed).toBe(true);
++      expect({ id: retried.item.id, sequence: retried.item.sequence }).toEqual({ id: original.item.id, sequence: original.item.sequence });
++      const final = await savedCommand("queue"); expect(final.frozen).toEqual(saved.frozen);
++      expect(final.checkpoint).toMatchObject({ conversationId: fixture!.conversationId, queueRevision: request.expectedQueueRevision + 1, item: { id: original.item.id, sequence: original.item.sequence, state: "waiting" } });
++      await restoreNextDraft(nextId, next);
++    });
+     let draftId = "";
+     const originalDraftRow = async (dialog: Locator) => {
+       expect(draftId).toMatch(/^draft:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+@@ -538,7 +686,7 @@ async function worker(init: Init) {
+       await page.getByRole("radio", { name: "Send now", exact: true }).check();
+       const turnRows = () => postRows().filter(row => row.path === `/api/conversations/${fixture!.conversationId}/turns`);
+       expect(turnRows()).toHaveLength(0);
+-      const verifyBodyLoss = observeTurnBodyLoss(page, await input().inputValue()); fixture!.dropNext("turn"); await input().press("Enter");
++      const verifyBodyLoss = observeAckBodyLoss(page, `/api/conversations/${fixture!.conversationId}/turns`, "text", await input().inputValue()); fixture!.dropNext("turn"); await input().press("Enter");
+       await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+       expect(turnRows()).toHaveLength(1); const first = turnRows()[0]!; await verifyBodyLoss(first);
+       const requested = conversationTurnSchema.parse(JSON.parse(first.body));

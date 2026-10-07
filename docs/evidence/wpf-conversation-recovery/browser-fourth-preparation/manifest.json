@@ -1,0 +1,1250 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "preparedAt": "2026-10-07T04:48:56.426225+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "head": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+  "implementation": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "clean": true,
+  "claimObservation": {
+    "path": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0/claim-observation.json",
+    "realpath": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0/claim-observation.json",
+    "bytes": 1868,
+    "sha256": "17f71fed800581f30f0cf6c75cff18b841519545093196b7830060ca85fc31aa"
+  },
+  "sourceReviewState": "9835 source and serialization10 accepted scoped; full feature NOT_STARTED/targetUNKNOWN",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 70874,
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24040,
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 46993,
+      "sha256": "3646f92d261f46dfbf6a03107deec4775d962f74fd01d55abde1f26817c5daba"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 60306,
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157"
+    }
+  ],
+  "fixedPublicInputs": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 13155,
+      "sha256": "b88b5fbd6f898a78570c6d2cc0d57822df21b0016df3dd180703c7880e6ad798"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 47838,
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "bytes": 648,
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    }
+  ],
+  "readonlyPackages": [
+    {
+      "path": "node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15",
+      "packageSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "observedVersion": "4.23.15",
+      "observedPackageSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "matches": true
+    },
+    {
+      "path": "node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1",
+      "packageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "observedVersion": "8.23.1",
+      "observedPackageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "matches": true
+    },
+    {
+      "path": "node_modules/@playwright/test",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "version": "1.63.0",
+      "packageSha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "observedVersion": "1.63.0",
+      "observedPackageSha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "matches": true
+    },
+    {
+      "path": "node_modules/fastify",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5",
+      "packageSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "observedVersion": "5.12.5",
+      "observedPackageSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "matches": true
+    },
+    {
+      "path": "node_modules/pg-boss",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0",
+      "packageSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "observedVersion": "12.37.0",
+      "observedPackageSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "matches": true
+    },
+    {
+      "path": "node_modules/@fastify/cors",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0",
+      "packageSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "observedVersion": "11.3.0",
+      "observedPackageSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "matches": true
+    },
+    {
+      "path": "node_modules/zod",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5",
+      "packageSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "observedVersion": "4.6.5",
+      "observedPackageSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "matches": true
+    },
+    {
+      "path": "apps/web/node_modules/vite",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "version": "8.3.2",
+      "packageSha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "observedVersion": "8.3.2",
+      "observedPackageSha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "matches": true
+    },
+    {
+      "path": "apps/web/node_modules/@flow/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client",
+      "version": "0.1.0",
+      "packageSha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client",
+      "observedVersion": "0.1.0",
+      "observedPackageSha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "matches": true
+    },
+    {
+      "path": "packages/client/node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "version": "0.1.0",
+      "packageSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "observedVersion": "0.1.0",
+      "observedPackageSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "matches": true
+    },
+    {
+      "path": "node_modules/@flow/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "version": "0.1.0",
+      "packageSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "observedRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts",
+      "observedVersion": "0.1.0",
+      "observedPackageSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "matches": true
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "label": "tsx runtime loader",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx/dist/loader.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+        "bytes": 604,
+        "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+      },
+      "matches": true
+    },
+    {
+      "label": "Playwright test entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test/index.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+        "bytes": 679,
+        "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+      },
+      "matches": true
+    },
+    {
+      "label": "pg entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      },
+      "matches": true
+    },
+    {
+      "label": "Vite node entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/dist/node/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/dist/node/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+        "bytes": 2670,
+        "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+      },
+      "matches": true
+    },
+    {
+      "label": "pg-pool package",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "bytes": 1083,
+      "sha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+        "bytes": 1083,
+        "sha256": "0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134"
+      },
+      "matches": true
+    },
+    {
+      "label": "pg-pool implementation",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+        "bytes": 14460,
+        "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058"
+      },
+      "matches": true
+    },
+    {
+      "label": "playwright package",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+        "bytes": 1359,
+        "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+      },
+      "matches": true
+    },
+    {
+      "label": "playwright entry",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "bytes": 704,
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+        "bytes": 704,
+        "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f"
+      },
+      "matches": true
+    },
+    {
+      "label": "playwright-core package",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b",
+      "observed": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+        "bytes": 876,
+        "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+      },
+      "matches": true
+    },
+    {
+      "label": "Chrome executable",
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954",
+      "observed": {
+        "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "bytes": 367696,
+        "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
+      },
+      "matches": true
+    },
+    {
+      "label": "Chrome Info.plist",
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69",
+      "observed": {
+        "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+        "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+        "bytes": 18856,
+        "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
+      },
+      "matches": true
+    }
+  ],
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "chrome": {
+    "version": "154.0.8037.98",
+    "bundleVersion": "8037.98",
+    "readOnly": true,
+    "noLaunch": true,
+    "plistPath": "/Applications/Google Chrome.app/Contents/Info.plist",
+    "plistSha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
+  },
+  "previousPreparation": {
+    "path": "/private/tmp/recovery-browser-next8ed-0v6ddc46/manifest.json",
+    "realpath": "/private/tmp/recovery-browser-next8ed-0v6ddc46/manifest.json",
+    "bytes": 26129,
+    "sha256": "4db938e316990f45c90561fd0357035ed3de8e25d13f6450973f1a0b3afa7546"
+  },
+  "entry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+    "parentSha256": "b14a8681c69fa625ef458671fc3add53b499ab4974ace48bc904a5b32acc2619",
+    "parentEquals8ed": true,
+    "workerSameFile": true,
+    "workerDispatch": "--worker only under parent IPC",
+    "workerSha256": "78eca8a5ead79dbf1df1fbb237e4f2f58d2ed5645e0a8fcf2e85f34ad4173eeb",
+    "fixture": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27003,
+      "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3"
+    },
+    "sourceDelta": {
+      "path": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0/source-minimal.diff",
+      "realpath": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0/source-minimal.diff",
+      "bytes": 1439,
+      "sha256": "1e2f91f5abf2a96a4c2cd2c17d745504928b6e5ac5e50b66d4c4d90f3088d6fb"
+    }
+  },
+  "priorRaw": [
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "bytes": 4787,
+      "sha256": "27fd79333a16fbe561b1ca03adfaf0a760c4945c43a2d44888b429337539e4dd"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "bytes": 191,
+      "sha256": "65a738b948ab6d1d6598a2a818ca79a3b6fa66e4d402394b19f9581288daddfb"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "ca4340e3302e0101e6974924034c025b39b234c544433aa1bbc336714d39ab58"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "bytes": 164,
+      "sha256": "8cbf52a4559e016b6834e4a70c8695ca75e4d1d3a0aa05f486616cbe4b884267"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "aec8957c849f814626d76e11b54aeb75651e38e2dc78d227cd865320552a65c7"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "bytes": 29,
+      "sha256": "770f13396492446bd6fe288b25e484b45ae6ca6087cefee59b2892928c289b6f"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/process.log",
+      "bytes": 8025,
+      "sha256": "90fedf5a8a30f4646aa765ce69031f1efc6443afd27bebc068313daaf7a662f8"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "28ef9b819d445d26730a88fb2543e5c1a306eb1e7868225ce96d5296d28f0104"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "bytes": 2336,
+      "sha256": "4aca82ddb644b694f1310556d9d57307ef1fe1f2ac4813b03f51efae48af512e"
+    },
+    {
+      "path": "browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "bytes": 1151,
+      "sha256": "b591ecacaa2af2df1e4cd0f9a2cbb6fc87729aed686430d719d2aad79100dc29"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "bytes": 6478,
+      "sha256": "773aed3f87ca06498f21acae382b7ba61aabf174f1115f2b646728f47da4ddf5"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "bytes": 208,
+      "sha256": "3ccde9b4d3aa2d7b6cf730484130bf7c83f9a52a2c26e9c08c6e091fa7f02e21"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "3f43628d4aabad32cf830e465a3f997adf86c4940002e770e6720095ab3188c6"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "bytes": 164,
+      "sha256": "270754048b7a35ea3f6abfc5fec6b6c3c668f622e85c19651e3ee30ea613b965"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "ca723aaa1755d4ff77d084aff83bbbf1df234c33da01a4aaa80a24c47b9d825b"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "bytes": 1215,
+      "sha256": "5c3d57ea0335007a6108b2fbaa42ff20afdc1748475139c3c9904f645acb4a0c"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "bytes": 29,
+      "sha256": "6e50f59e6235e00069418a739df0dfcb276366b334b8f80eafccf9ac8926ca20"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "bytes": 3759,
+      "sha256": "1bf8321b20cafb793d8e6ae8e4f7dc9e4f8076a5760060db11f81e9f2faf3acc"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "87cc7e35520dfc183f4f55ed5fed7a104394b31124b104e1b0bc07f93fb37062"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "bytes": 2336,
+      "sha256": "b4865069327936ee02fbd4283b235d7272d5f744cf3617020ebc7da7a3e72daf"
+    },
+    {
+      "path": "browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "bytes": 3349,
+      "sha256": "48beefa957591efb7aab40e4b431c779fa0303bcedb21f83c9c4a006b1a4c431"
+    },
+    {
+      "path": "browser-second-parent/actual-exit.json",
+      "bytes": 323,
+      "sha256": "1e9b8eb85d661e5f0f9f536607e5a30aa1d0691e010073654a8592f9368469c8"
+    },
+    {
+      "path": "browser-second-parent/gate.json",
+      "bytes": 2550,
+      "sha256": "c439b13c8d42152949782d74ebe29a94b7a976b21308b9c1af0975b90531e5bc"
+    },
+    {
+      "path": "browser-second-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "browser-second-parent/parent.stdout.jsonl",
+      "bytes": 2177,
+      "sha256": "cf20deeebf6f19176c7021e602f79b841fcd3dc8ee5178aad2e4d17fc4374032"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "bytes": 21295,
+      "sha256": "adea971c8e74c2452a954a42f296f74a5d6fb8fcbd594f9540f9e933e1ec85e8"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "bytes": 208,
+      "sha256": "ac5a35768b1b49e8394b6e85d48e0a89fdfeb16bbd7852964ab0918fc6bc722b"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "7c53372765be07b46141ed8d1df9a5930de1ac31c6c90293184e5a738b9db117"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "bytes": 164,
+      "sha256": "243851f840c01adcb5b2297cbcdbe304c272b8d1a90b4a3b2adc70fc803a79c7"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "d7b980c9bad00d5760255171018cc64e2862b12478d8fa5da01166bb9385744a"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "bytes": 1215,
+      "sha256": "f9cf88b109c19042355075f91e293eb4c47677ee2493837df8e630e112caa8e5"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "bytes": 29,
+      "sha256": "4ea4edf0037b4347385a0b382438206dbb1a6923ca79f0eea02e6a0beb0bcbf2"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "bytes": 6915,
+      "sha256": "f1bc4c9a0c1979049365aa9abe66bc3fd47318e0e316e47629a44f1c86e3f50d"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "5f13e02a594801c265d20b28602fd9e4cbd66bdacd7022da68aae20b593c0565"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "bytes": 2336,
+      "sha256": "44db03af662a0f724f691aeadae684c605d029a8c798490cb101545c2525a2a8"
+    },
+    {
+      "path": "browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "bytes": 1870,
+      "sha256": "00823f170d45e557971f75cc1a54d77ae7c172529243b4e8a4396db4659f938d"
+    },
+    {
+      "path": "browser-third-parent/actual-exit.json",
+      "bytes": 17,
+      "sha256": "3a3121e2c03118bab6dea88a1661628092b50955fa779d024e70174b497d57a6"
+    },
+    {
+      "path": "browser-third-parent/admission.json",
+      "bytes": 1188,
+      "sha256": "e3c3b3c5c3f7dd7a6345b91b8a62ef472080bdff5bc7b7d922a6ba140786fe05"
+    },
+    {
+      "path": "browser-third-parent/claim-observation.json",
+      "bytes": 2786,
+      "sha256": "b9245519cc2f9798f254cd975f7800940c7ed49a8e1ad57db56322e914018d3d"
+    },
+    {
+      "path": "browser-third-parent/gate.json",
+      "bytes": 2551,
+      "sha256": "9f5ddda9022fabe6826bf435c7dc019cb27409e830a1916f0c2b98b35c106d50"
+    },
+    {
+      "path": "browser-third-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "browser-third-parent/parent.stdout.jsonl",
+      "bytes": 702,
+      "sha256": "35bb848bcc153388c57f574f6221f4d37622bc62df0f671bb7c5b59f09336eb2"
+    },
+    {
+      "path": "browser-third-parent/pins-check.json",
+      "bytes": 595,
+      "sha256": "ee3df04839f317136a19082ab705aa2d96006c84b24d04c2a244f69326a06fde"
+    }
+  ],
+  "priorBudgets": [
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "sha256": "3ccde9b4d3aa2d7b6cf730484130bf7c83f9a52a2c26e9c08c6e091fa7f02e21",
+      "elapsedMs": 10671.133875000001,
+      "complete": true,
+      "cleanupComplete": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "sha256": "65a738b948ab6d1d6598a2a818ca79a3b6fa66e4d402394b19f9581288daddfb",
+      "elapsedMs": 14846.267375,
+      "complete": true,
+      "cleanupComplete": true
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "sha256": "ac5a35768b1b49e8394b6e85d48e0a89fdfeb16bbd7852964ab0918fc6bc722b",
+      "elapsedMs": 12838.849084,
+      "complete": true,
+      "cleanupComplete": true
+    }
+  ],
+  "priorRawCount": 43,
+  "priorRawBytes": 83339,
+  "priorTerminal": {
+    "source": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "bytes": 702,
+      "sha256": "35bb848bcc153388c57f574f6221f4d37622bc62df0f671bb7c5b59f09336eb2"
+    },
+    "manifest": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-manifest.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-manifest.json",
+      "bytes": 8942,
+      "sha256": "f90b004a3ad6e30c98e694fcd5cb15e3116bce98b5821f80e0784ff96f06143e"
+    },
+    "lateCumulativeMs": 38364.050667,
+    "remainingMs": 51635.949333,
+    "failuresPreserved": 3,
+    "lastCleanup": {
+      "ownedGroupsAbsent": true,
+      "scratchRemoved": true,
+      "databaseRemoved": true,
+      "connections": 0,
+      "remaining": [],
+      "errors": [],
+      "fixtureComplete": true
+    }
+  },
+  "budget": {
+    "totalOriginalMs": 90000,
+    "serializedPriorMs": 38356.250334,
+    "authoritativeLateSpentMs": 38364.050667,
+    "nextMaxIntegerTotalMs": 51635,
+    "cleanupReserveMs": 15000,
+    "nextMaxWorkMs": 36635,
+    "scratchBytes": 67108864,
+    "evidenceBytes": 8388608,
+    "perRunRetainReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "retainedLogicalEvidenceBytes": 1245027,
+    "headroomBeforeRunReserveBytes": 1900701,
+    "resourceSample": false
+  },
+  "reviewsAndPassedChecks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery-rec8ed-actual-and-9835-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery-rec8ed-actual-and-9835-review.json",
+      "bytes": 4573,
+      "sha256": "1a0cddf0d77a3cee2122277011d0cdf3902fbd55d6b5db6f460db9b54e51ff05"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery9835-serialization-preparation-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery9835-serialization-preparation-review.json",
+      "bytes": 3800,
+      "sha256": "c77704015d9b29fb7b0942fa704e708c8f4e6c38225dbd59e07f21036ebb5a12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json",
+      "bytes": 1742,
+      "sha256": "b6c0938fb58cb114b3292fc96133c465728fe434428abadc198d173ec2365dd9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-manifest.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-manifest.json",
+      "bytes": 12271,
+      "sha256": "bc6cb3a5d647dace8f1c729ad9c9b0f4e57c534d8cf0f14d8b9957bdc0e0961c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md",
+      "bytes": 2000,
+      "sha256": "d45b879f865627b0d50858465a7c3f592ba808c92add73a7ead3f118a51f9309"
+    }
+  ],
+  "launchCategories": [
+    "actual dedicated PG",
+    "owned HTTP service",
+    "owned native Chrome"
+  ],
+  "canRunAlongsideENG01IPg": false,
+  "canRunAlongsideQuickBrowser": false,
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "<NEW_SINGLE_USE_GATE>",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=<NEW_CONTROLLED_OWNER_ONLY_ADMIN_ENV>",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "gateRequirements": {
+    "created": false,
+    "sourceCommit": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+    "sourceHashes": {
+      "apps/web/src/App.tsx": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "apps/web/src/attachments/controller.ts": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "apps/web/src/conversation-context/controller.ts": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "apps/web/src/plugin-integration/attachments.tsx": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "apps/web/src/plugin-integration/knowledge.tsx": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "apps/web/src/plugin-integration/steering.tsx": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "apps/web/src/recovery/binding.tsx": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "apps/web/test/conversation-recovery.browser.ts": "3646f92d261f46dfbf6a03107deec4775d962f74fd01d55abde1f26817c5daba",
+      "apps/web/test/conversation-recovery.fixture.ts": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3",
+      "apps/web/test/conversation-recovery.test.ts": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157"
+    },
+    "run": "future unique new run id; never reopen earlier directories",
+    "expiresAt": "future fresh admission only",
+    "totalMsMaximum": 51635,
+    "minimumFreeBytes": 1207959552,
+    "scratchParent": "/private/tmp",
+    "maxScratchBytes": 67108864
+  },
+  "adminInput": {
+    "present": false,
+    "oldDeletedEnvironmentMustNotBeReused": true,
+    "approvedSourceGit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "approvedSourcePath": "apps/web/test/web-current-preview.browser.ts",
+    "controlledProvider": "manager/originaloperator; no personal configuration, credential contents, new DB probe or value in this packet"
+  },
+  "checks": [
+    {
+      "label": "source:apps/web/src/App.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/attachments/controller.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/connection/session.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversation-context/controller.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversation-steering/SteeringControl.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversation-steering/control.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversations/ConversationThread.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversations/outbox.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversations/projection.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/conversations/queue/commands.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/plugin-integration/attachments.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/plugin-integration/knowledge.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/plugin-integration/session.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/plugin-integration/steering.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/recovery/binding.tsx",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/src/recovery/journal.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/test/conversation-recovery.browser.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/test/conversation-recovery.fixture.ts",
+      "matches": true
+    },
+    {
+      "label": "source:apps/web/test/conversation-recovery.test.ts",
+      "matches": true
+    },
+    {
+      "label": "public:apps/server/src/index.ts",
+      "matches": true
+    },
+    {
+      "label": "public:apps/server/src/browser-session/index.ts",
+      "matches": true
+    },
+    {
+      "label": "public:apps/server/src/browser-session/store.ts",
+      "matches": true
+    },
+    {
+      "label": "public:packages/contracts/src/browser-session.ts",
+      "matches": true
+    },
+    {
+      "label": "public:packages/client/src/index.ts",
+      "matches": true
+    },
+    {
+      "label": "public:apps/web/vite.config.ts",
+      "matches": true
+    },
+    {
+      "label": "public:apps/web/package.json",
+      "matches": true
+    },
+    {
+      "label": "public:package.json",
+      "matches": true
+    },
+    {
+      "label": "public:pnpm-lock.yaml",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/tsx",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/pg",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/@playwright/test",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/fastify",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/pg-boss",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/@fastify/cors",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/zod",
+      "matches": true
+    },
+    {
+      "label": "package:apps/web/node_modules/vite",
+      "matches": true
+    },
+    {
+      "label": "package:apps/web/node_modules/@flow/client",
+      "matches": true
+    },
+    {
+      "label": "package:packages/client/node_modules/@flow/contracts",
+      "matches": true
+    },
+    {
+      "label": "package:node_modules/@flow/contracts",
+      "matches": true
+    },
+    {
+      "label": "runtime:tsx runtime loader",
+      "matches": true
+    },
+    {
+      "label": "runtime:Playwright test entry",
+      "matches": true
+    },
+    {
+      "label": "runtime:pg entry",
+      "matches": true
+    },
+    {
+      "label": "runtime:Vite node entry",
+      "matches": true
+    },
+    {
+      "label": "runtime:pg-pool package",
+      "matches": true
+    },
+    {
+      "label": "runtime:pg-pool implementation",
+      "matches": true
+    },
+    {
+      "label": "runtime:playwright package",
+      "matches": true
+    },
+    {
+      "label": "runtime:playwright entry",
+      "matches": true
+    },
+    {
+      "label": "runtime:playwright-core package",
+      "matches": true
+    },
+    {
+      "label": "runtime:Chrome executable",
+      "matches": true
+    },
+    {
+      "label": "runtime:Chrome Info.plist",
+      "matches": true
+    },
+    {
+      "label": "Node24 binary",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/process.log",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-second-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-second-parent/gate.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-second-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-second-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/admission.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/claim-observation.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/gate.json",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "label": "prior:browser-third-parent/pins-check.json",
+      "matches": true
+    },
+    {
+      "label": "settled:rec4d-20261006-205056-a30d13",
+      "matches": true
+    },
+    {
+      "label": "settled:rec667-20261006-180030-f86542",
+      "matches": true
+    },
+    {
+      "label": "settled:rec8ed-20261007-021525-9c6687",
+      "matches": true
+    },
+    {
+      "label": "Parent unchanged from consumed8ed",
+      "matches": true
+    },
+    {
+      "label": "Owned evidence headroom",
+      "matches": true
+    }
+  ],
+  "issues": [],
+  "noProductImport": true,
+  "noGateCreated": true,
+  "noWindowReserved": true,
+  "noProjectChanges": true,
+  "runtimeDependencyLimit": "Exact existing entry/package/public pins re-read; not a claimed complete transitive import closure. No dependency restore/install or runtime availability probe."
+}

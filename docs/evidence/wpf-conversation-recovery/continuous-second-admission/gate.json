@@ -1,0 +1,83 @@
+{
+  "sourceCommit": "0a661aa558840453ed3e0646db30b1073b5398ca",
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+    "apps/web/src/attachments/controller.ts": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+    "apps/web/src/conversations/ConversationThread.tsx": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+    "apps/web/src/plugin-integration/knowledge.tsx": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+    "apps/web/src/plugin-integration/session.ts": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+    "apps/web/src/plugin-integration/steering.tsx": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+    "apps/web/src/recovery/binding.tsx": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "809ba44244fe545cc2ded96536820a58b5b6a2a05d51488a37db75ffa5caf66b",
+    "apps/web/test/conversation-recovery.fixture.ts": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+    "apps/web/test/conversation-recovery.test.ts": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b"
+  },
+  "journey": "connection-choice",
+  "totalMs": 60000,
+  "minimumFreeBytes": 4053008384,
+  "scratchParent": "/private/tmp",
+  "maxScratchBytes": 67108864,
+  "uniqueRunIdAndUnconsumedFreshExpiryRequired": true,
+  "allowRun": true,
+  "run": "recchoice-20261007-062152-1a98e5",
+  "expiresAt": "2026-10-07T06:27:52.014038+00:00",
+  "admission": {
+    "recordedAt": "2026-10-07T06:21:52.014038+00:00",
+    "resourceAuthority": "SVC08explicitactualreturn06:17:15.974Z; root/Mika nextRecovery1PG+1Chrome; Quicknative2waiting nootherWebChrome",
+    "selection": {
+      "journey": "connection-choice",
+      "requiredGroups": [
+        "cookieRead",
+        "connectionChoice"
+      ],
+      "originalFullSevenUnchanged": true,
+      "notSelected": [
+        "textIntentDraft",
+        "crossTabCas",
+        "sameKeyTurn",
+        "pageOnlyAuthLoss",
+        "csrfOffline",
+        "themes390"
+      ],
+      "selectedPassIsNotFullJourneyPass": true,
+      "fullFeatureReview": "IN_PROGRESS"
+    },
+    "manifest": "/private/tmp/recovery-connection-choice-55b-it_8ry_i/manifest.json",
+    "manifestSha256": "e91b0852f78cdd725b393249fd1a8a407ba55ac070011e43f8b734c2f28813e2",
+    "packetFilesSha256": "d685412687e6281b6fd23d0d94016d1563a8940955589a8aa355fe6cb16890bb",
+    "observationSha256": "2c1d09bcf433ae633417dc3daa7d64213a0c86b44ebe7f5355ea5f6616b18fbc",
+    "availableBytes": 24419069952,
+    "sourceReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json",
+      "bytes": 6188,
+      "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7"
+    },
+    "newSegment": {
+      "totalRuntimeMs": 150000,
+      "spentMs": 13134,
+      "remainingMs": 136866,
+      "thisRunMaximumMs": 60000,
+      "cleanupMs": 15000,
+      "charge": "ceil(max actualouter,late,parent))",
+      "record": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+        "bytes": 2032,
+        "sha256": "6ebc1a700d540bb2da98e1e0e452552ec8945df515a2399d5e881bc23638bc49"
+      }
+    },
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noUnusedOldCredit": true,
+    "noAutomaticRerun": true
+  }
+}

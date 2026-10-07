@@ -1,0 +1,44 @@
+{
+  "reviewer": "root read-only independent review",
+  "at": "2026-10-06T17:41:17.250837+00:00",
+  "verdict": "REQUEST_CHANGES_SOURCE_SCOPED",
+  "target": "7686139952becf530bcf57966425bd9d7b88b697",
+  "metadataObserved": "a3c81dd9a4fb4a5027b48181416fd7be70833263",
+  "sourceAudit": "/tmp/root-recovery-768-hashes.json",
+  "sourceCount": 19,
+  "allSourceHashesMatch": true,
+  "unchangedProductionAndDirectSources": 17,
+  "findings": [
+    {
+      "id": "RECOVERY-768-P2-TASK-IDENTITY",
+      "priority": 2,
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "line": 393,
+      "title": "Compare the actual nested task identity, not two absent properties",
+      "evidence": "Public ConversationTurn has task: TaskSummary; no turn.taskId. JSON.parse returns any, so retryAck.turn.taskId and originalAck.turn.taskId can both be undefined and the equality passes even if genuine task.id differs.",
+      "required": "Validate genuine acknowledgement shape/nonempty identities, retain same turn.id and compare turn.task.id. Prefer existing public decodeConversationTurnAccepted for both actual ACKs and public turn input codec; load runtime dependencies only in worker after existing admission. No casts to hide the shape mismatch."
+    }
+  ],
+  "reviewed": [
+    "Actual successful upstream command ACK bounded 128KiB, complete framing/UTF8/JSON; only command responses captured, ordinary SSE remains streaming.",
+    "Strict one-byte prefix with genuine full Content-Length, status/type, headers/write callback/FIN evidence, owned 1s close watchdog and cleanup join; actual delivery still requires browser evidence.",
+    "One exact Request, request->headers->requestfailed, no requestfinished, wire/header/key/body digest match; unknown UI and exactly one POST across reload before explicit Retry, exactly two after.",
+    "Marker authority and both serial zero-connection observations; actual installed pg-pool removes clients before asynchronous end. Query/observation errors prevent ordinary DROP, no FORCE or unrelated termination.",
+    "19 source hashes match source and observed clean worktree;17 product/direct sources unchanged from ec91. Delta names contain no historical raw run evidence."
+  ],
+  "limits": [
+    "No imports/types/tests/HTTP/PG/Chrome or disk-free sampling; not runtime approval.",
+    "Pool acquisition may outlast 1s observation policy because its connection timeout is 1500ms; post-await deadline rejects late zero and parent hard stop preserves unknown cleanup. Do not describe phase1s as hard settlement guarantee.",
+    "CREATE two-stage, Queue, Steer, actual cross-tab/IDB/auth/SSE content and center three semantics remain pending; source helper support does not close these.",
+    "Full feature target remains UNKNOWN / review NOT_STARTED; historical direct27 stays bound to1b8."
+  ],
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "method": "Local skill reuse; audit public Interface shape, owned async failure/lifecycle, finite payloads and single cleanup budget authority. Correct semantic assertion, avoid new framework.",
+    "finding": "One concrete assertion-shape defect; no additional blocking source finding."
+  }
+}

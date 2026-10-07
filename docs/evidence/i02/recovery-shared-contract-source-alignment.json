@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T11:22:10.355023+00:00",
+  "owner": "Execution Lead / center integration authority",
+  "kind": "fixed existing center contract source alignment, not behavior change or new runtime evidence",
+  "centerSources": [
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "originCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "mode": "100644",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "unchangedAt": "f68dbb71"
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "originCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "mode": "100644",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "unchangedAt": "f68dbb71"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "originCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "mode": "100644",
+      "bytes": 26902,
+      "sha256": "c6085f7179e8af66d41ab041f09d26cd9003080b864aec493a290b5c7067cbd6",
+      "unchangedAt": "f68dbb71"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "originCommit": "84005a260dfcb668cd38b09c21564d0754a0f513",
+      "mode": "100644",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "unchangedAt": "f68dbb71"
+    }
+  ],
+  "webTarget": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "webIndependentReview": "web-conversation-recovery/docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json",
+  "contracts": {
+    "callerOrigin": {
+      "source": "index.ts browserOrigin/settingsSchema/corsOptions",
+      "acceptedScope": "Personal candidate uses exactly one cookieOrigin/trustedOrigin. Destination is actual request protocol+Host; source Origin must be trusted. Safe reads may use Sec-Fetch-Site same-origin only when the cookieOrigin itself is trusted. Bearer and cookie/CSRF policies stay distinct.",
+      "notEstablished": "Arbitrary multi-origin recovery or TLS proxy deployment; no fabricated callerOrigin field in identity."
+    },
+    "connectCapacity": {
+      "source": "store.ts create and contracts constants; session.test.ts capacity case",
+      "behavior": "Each explicit Connect creates a fresh random session, serialized global active limit32, expiry8h. Overflow409, no live eviction or Connect idempotency key. Read never renews.",
+      "consumer": "Web connect performs one POST then cookie-only GET to reconcile lost ACK; it does not automatically repeat POST. Four real UI connects do not replace the original32-capacity domain proof.",
+      "evidence": "docs/evidence/wpf-connection-session/{independent-review.json,fixed-manifest.json}; original approved22-case domain evidence, no rerun"
+    },
+    "lateLogoutCookie": {
+      "source": "index.ts cookieName/setCookie/logout",
+      "confirmedSourceBehavior": "Logout revokes the presented token, then sends Max-Age=0 for a stable center/origin cookie name. The response is not conditional on the browser current cookie token.",
+      "openBoundary": "A late logout response racing a new Connect is not guaranteed to preserve the new browser cookie. Ignoring a stale JS continuation does not establish browser cookie safety; no such guarantee is claimed.",
+      "safeExistingBehavior": "Center checks current cookie and CSRF; subsequent authentication loss must preserve drafts/unknown receipts and require explicit reconnect, never retry business mutation.",
+      "followup": "Original WPF-MATURE-06 center owner retains a targeted response-order contract/fixture follow-up; no new scheduler/auth authority, no reopening green Web matrix."
+    }
+  },
+  "intakeDisposition": "Receive independently approved Web implementation and original03/05 evidence as bounded functionality. Keep TODO06 and full platform/deployment acceptance open until exact integration and this explicit center boundary are resolved or accepted for release.",
+  "newTestsPGProviderPersonal": 0
+}

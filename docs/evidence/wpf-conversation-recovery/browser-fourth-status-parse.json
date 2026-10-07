@@ -1,0 +1,59 @@
+{
+  "kind": "own-status-parse metadata only",
+  "at": "2026-10-07T05:06:33.995307+00:00",
+  "parserFixedMain": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "sourcePins": [
+    {
+      "path": "docs/quality/local-validation.md",
+      "sha256": "c9e4afb3a36ec175f4539180fe3c395cfcda8da0bcf9f3bcef305015b0aa1558"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    }
+  ],
+  "statusSha256": "c586169dfce80696dd61879749f314251b26815167421f4636cf773d3e1b3dbe",
+  "exitCode": 0,
+  "elapsedMs": 48.20129193831235,
+  "result": {
+    "taskId": "WPF-RECOVERY01",
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ],
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+        "id": "WPF-MATURE-06",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    }
+  },
+  "boundary": "UNKNOWN start is explained; no product/browser test, aggregate or deployment check"
+}

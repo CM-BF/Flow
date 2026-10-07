@@ -1,0 +1,139 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-07T06:00:42.910143+00:00",
+  "task": "WPF-RECOVERY01",
+  "reviewTarget": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "observedMetadata": "2b123f4c58456d422a408d04d3034b0609093375",
+  "decision": "CHANGES_REQUESTED",
+  "scope": "Independent fixed complete19-source review:16 product +3 dedicated validation sources. Earlier scoped reviews and actual50/types/119/full7 evidence read with their original attribution.",
+  "findings": [
+    {
+      "id": "RECOVERY-FINAL-P2-SELECTING",
+      "priority": 2,
+      "file": "apps/web/src/App.tsx",
+      "start": 1252,
+      "end": 1256,
+      "title": "Preserve an explicit center-selection form across background session reads",
+      "trigger": "In an authenticated workspace, choose Change connection, enter a different address/token, then return focus to the page or receive a same-address BroadcastChannel session notification.",
+      "evidence": "The wake handler at1232/1237 and bus1239 invoke read. ConnectionSession.ready publishes a new identity object for a successful unchanged session. This effect depends on state.identity and unconditionally calls setSelecting(false), so ready becomes true and Connection unmounts even though no user connect/check-existing action occurred.",
+      "impact": "The center chooser closes and entered values are lost on an ordinary background observation; switching centers can be interrupted while editing.",
+      "requestedChange": "Keep explicit selection intent independent from successful background reads. Only an explicit successful connect/check-existing choice or another intentional navigation should close the chooser; preserve automatic initial/same-owner recovery and stale-generation guards.",
+      "validation": "Use actual mounted App with one authorized center: open chooser, enter candidate input, trigger successful background read, verify form and input remain. Then explicit Connect/Check existing must finish the intended flow without automatic business POST.",
+      "basis": "Source-proven state transition; no new browser reproduction during S01 exclusive window."
+    },
+    {
+      "id": "RECOVERY-FINAL-P2-STEERING-TIMEOUT",
+      "priority": 2,
+      "file": "apps/web/src/conversation-steering/control.ts",
+      "start": 264,
+      "end": 278,
+      "title": "Settle the steering receipt when the deadline expires during durable storage",
+      "trigger": "Current-generation steering remains authorized while recovery.prepare/dispatch or accepted checkpoint resolves after its timeout signal has fired.",
+      "evidence": "The added awaited storage barriers are followed by signal.aborted return paths. dispatch.finally clears this.sending, but the receipt remains phase:sending. retry only accepts unknown; restore rejects an existing sending receipt. updateGate cannot help because generation/authorization did not change.",
+      "impact": "The original-page receipt stays Sending with no legal retry or terminal reconciliation until reload, despite a settled durable record; this undermines the recovery path for slow storage.",
+      "requestedChange": "Handle current-generation deadline expiry as a settled recoverable outcome while retaining the exact key/input and distinguishing pre-HTTP from accepted durable checkpoints. Keep stale-generation callbacks unable to publish; do not auto-retry or downgrade an accepted journal record.",
+      "validation": "Deferred recovery prepare/dispatch across a controlled timeout must produce a retryable same-key receipt with0HTTP; a delayed accepted checkpoint must allow terminal reconciliation without a duplicate request. Verify auth-generation revocation still preserves unknown and ignores stale completion.",
+      "basis": "Source-proven current-generation timeout branch; no runtime or fake-timer execution by reviewer."
+    }
+  ],
+  "blockingCount": 2,
+  "passedEvidenceUnchanged": {
+    "full7Review": "7ef31369949ad5b45465f418bad189aa7d06c5961a1d1d730331e5aed9be3b28",
+    "meaning": "Original full7 actual remains accepted. These two uncovered source branches do not rewrite historic PASS/FAIL."
+  },
+  "positiveChecks": [
+    "Journal strict-commit/CAS/slot/capacity remains ahead of HTTP; complete frozen command and draft transfer retained.",
+    "Same-key durable retry, namespace and authorization generation, same-namespace in-memory preservation, material order/verification and per-owner restore preflight are explicit.",
+    "No shared/server/contract/dependency changes; current19 files equal fixed target."
+  ],
+  "reviewEntry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+    "sha256": "dfc11a1fb79fd754c3526c1f1afe0b197703f15205434c8146b7affbca27e711"
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "25f6efb1c70112ea5a611cc8c920bf9eb808d636cdc7e9c16b864df4874a6a58"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157"
+    }
+  ],
+  "remainingCoverage": [
+    "SSE delivery; CREATE two-stage actuallostACK; Queue/Steer actual recovery; full profile/knowledge/steering draft; second center/principal. These stay pending, not covered by7groups.",
+    "Observed recovery-list readability is an accepted separate follow-up; it is not a blocker to the scoped7group evidence."
+  ],
+  "cleanCode": "Reviewed responsibilities, async ownership, error settlement, idempotent identities and changes versus tests. Findings focus on user-intent state and missing current-generation error handling; no broad rewrite requested.",
+  "runtimeByReviewer": 0,
+  "resourceState": "S01 exclusive performance window; reviewer only source reads/Git/tmp report, no ordinary checks/PG/Chrome."
+}

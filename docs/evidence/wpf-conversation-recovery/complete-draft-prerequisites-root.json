@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-07T07:50:32.541513+00:00",
+  "scope": "Read-only preparation for original RECOVERY01-03/05 complete draft acceptance, after SSE; no new task and no execution authorization.",
+  "fixedProductionSource": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "pins": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    }
+  ],
+  "findings": [
+    {
+      "publicPrerequisite": "Knowledge source",
+      "evidence": "client181-205 + contracts/knowledge.ts + server context-transparency/attachment-history.test.ts56-79",
+      "conclusion": "The existing public createKnowledgeSource(projectId,{expectedVersion:0,title,text},key) supplies real immutable version/digest. Browser searchKnowledge returns actual citation/UTF-8 range, and ContextPicker uses real checkbox selection. Tiny Chinese/emoji sample can exercise byte identity without provider or prewritten IDB."
+    },
+    {
+      "publicPrerequisite": "Configured execution profile",
+      "evidence": "client520/registerRunner +353/publishExecutionProfile; publication.ts24-43; store.ts31-38",
+      "conclusion": "Owner registerRunner(harnesses:[claude],capacity:1) then the returned synthetic runner token publishes one ordinary Claude configuration over the public client. Catalog admission requires non-revoked matching profile identity, not a running runner loop or heartbeat. This is a synthetic registered publisher; it must not be labelled a real native/model execution."
+    },
+    {
+      "publicPrerequisite": "Restored reference verification",
+      "evidence": "context/controller.ts174-214 and recovery/binding.ts38-82",
+      "conclusion": "Restored knowledge is intentionally unverified; explicit metadata search or body read is needed before a new message. Restore itself must preserve title/version/digest/range without content prefetch. Combined knowledge+attachment count is at most4; two existing ordered attachments plus one knowledge citation stays within it."
+    }
+  ],
+  "smallNextJourney": [
+    "Seed tiny knowledge version through public client. If profile included, seed one synthetic registration/publication (no claim/runRunner/provider), state new fixture actor/authority and clean it with the owned database. Do not reuse the old execution-profile-integration simulated HTTP responses as real-center proof.",
+    "Use a genuinely new draft because existing conversation creation profile is locked. Select project, exact configured profile, one actual knowledge search citation and existing A/B file refs via real App controls; enter text and select Queue/Send intent as permitted. Observe the journal read-only, never manufacture saved records.",
+    "Reload or expire/re-authenticate using the existing legitimate session fault. Explicit Restore without sending must restore text/intent/profile reference+digest/project/citation/A-B order; no CREATE/turn/queue/steer command and no body resolve/content prefetch solely due to restoration.",
+    "Keep restored material unverified until explicit public search/metadata verification. Verify knowledge reference and files in a different order, without reselection; then an explicit Send should freeze the exact complete profile/knowledge/ordered files on CREATE and turn receipt while the next draft remains separate.",
+    "Optional deterministic knowledge v2 can prove restored v1 stays v1. Do not expand this first focused journey to all revocation or two-center scenarios; record those separately if needed."
+  ],
+  "resourceMeaning": "One existing database/center/browser can host these small public records. Registering a publisher introduces a new test identity even with0runner processes; confirm source/lifecycle/permission delta before execution. Future owner computes costs/fresh claim/window within finite segment; root did not run any request.",
+  "skills": [
+    "find-skills local domain discovery",
+    "codebase-design: use public client seam and existing controller authority",
+    "clean-code: no copied admission or direct database seeding; retain explicit uncertainty and evidence scope"
+  ],
+  "limits": [
+    "Static source inference only; not public runtime evidence.",
+    "No changes to project or another owner records.",
+    "No new PG/Chrome/provider/browser/runner operation.",
+    "Steer and two-center isolation remain separate missing acceptance."
+  ]
+}

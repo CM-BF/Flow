@@ -1,0 +1,142 @@
+{
+  "state": "ADMITTED_OWNER_ROUTE_FIX_FINITE_SEGMENT",
+  "at": "2026-10-07T10:29:45.435364+00:00",
+  "head": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+  "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-07T10:29:42.017Z",
+  "overlap": [],
+  "run": "recrtfix-20261007-102945-f71af8",
+  "gate": "/private/tmp/recovery-routefix-first-wm_9mx_o/gate.json",
+  "gateSha256": "60b30f5aee04ef0cba3ac79a7394ffd367a650cabf8f80b224eda6e925e59ec7",
+  "adminEnv": "/private/tmp/recovery-routefix-first-wm_9mx_o/admin.env",
+  "adminIdentity": {
+    "dev": 16777234,
+    "inode": 124036000,
+    "uid": 501,
+    "mode": "0o600"
+  },
+  "secretValueRecorded": false,
+  "fixedAdminSource": {
+    "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-current-preview.browser.ts",
+    "line": 185
+  },
+  "previousManifest": {
+    "path": "/private/tmp/recovery-created-turn-344f-di09jc0_/manifest.json",
+    "sha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793"
+  },
+  "sourcePinsVerified": 19,
+  "publicAnchorsVerified": 10,
+  "unchangedRuntimePinsVerified": 33,
+  "priorManifestRawPinsVerified": 111,
+  "allPriorRawCount": 188,
+  "allPriorRawBytes": 570754,
+  "allPriorRawInventorySha256": "901cccb0d85c34fe396de6e7a497a1a39e76f7bee256a9a09810b39020385869",
+  "retainedEvidenceBytes": 3799470,
+  "availableBytes": 22706720768,
+  "combinedFloorBytes": 4080271360,
+  "mikaPotentialLocalBytes": 22020096,
+  "originalOrdinaryLocalBytes": 2097152,
+  "w01ReadonlyTmpBytes": 2097152,
+  "keptC02Bytes": 33685504,
+  "O16PriorDbTmp": "RETAINED_UNKNOWN; no deletion or inferred DROP; fresh physical available reflects retained bytes",
+  "phase": {
+    "id": "RECOVERY-ROUTE-FIX-20261007",
+    "recordSha256": "72eb1c139f4beb469fa1e5708810abcb08c5987f13db86f2b433d38838b93263",
+    "budgetMs": 90000,
+    "spentMs": 0,
+    "remainingMs": 90000,
+    "admittedTotalMs": 60000,
+    "cleanupMs": 15000,
+    "minimumAttemptMs": 30000,
+    "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); preserve all original timings",
+    "closedOldPhases": {
+      "original90": {
+        "budgetMs": 90000,
+        "actualMs": 64134.08675,
+        "unusedCreditTransferred": false
+      },
+      "continuous150": {
+        "budgetMs": 150000,
+        "actualChargeMs": 126447,
+        "unusedMsSealed": 23553,
+        "unusedCreditTransferred": false,
+        "sourceRecord": "continuous-segment.json",
+        "sourceRecordSha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+      },
+      "steering60": {
+        "budgetMs": 60000,
+        "actualChargeMs": 34753,
+        "unusedMsSealed": 25247,
+        "state": "CLOSED",
+        "unusedCreditTransferred": false,
+        "record": {
+          "path": "steering-phase.json",
+          "bytes": 5773,
+          "sha256": "b70cf9acbaae72dad6deac3ccfc49c43883d57a1717513f07598d696eab31c8e"
+        }
+      }
+    },
+    "oldUnusedCreditTransferred": false,
+    "defensiveParentCeilingMs": 390000,
+    "ceilingIsNotPhaseCredit": true
+  },
+  "holderSource": "d01 explicit SVC06 actual10:26:05.098 return; no latest other heavy/earlier reservation; own unique1PG+1Chrome; later conflict stops",
+  "command": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-routefix-first-wm_9mx_o/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-routefix-first-wm_9mx_o/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "chromeVersion": "154.0.8037.99"
+}

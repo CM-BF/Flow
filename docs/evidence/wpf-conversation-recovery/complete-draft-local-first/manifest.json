@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T08:27:03.992895+00:00",
+  "source": "fea37b408f6bf9d9fcde38afa760b903f38e5cf9",
+  "state": "FAIL_TYPES_NOT_RUNTIME",
+  "parentExit": 1,
+  "noEmitExit": 2,
+  "actualElapsedMs": 5818.782832939178,
+  "chargedMs": 5819,
+  "previousLocalChargedMs": 6284,
+  "cumulativeLocalChargedMs": 12103,
+  "remainingMs": 7897,
+  "observations": [
+    {
+      "kind": "pid",
+      "id": 97540,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "group",
+      "id": 97540,
+      "state": "ESRCH"
+    }
+  ],
+  "tmpAbsent": true,
+  "files": [
+    {
+      "path": "parent.stderr.log",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/parent.stdout.jsonl",
+      "bytes": 988,
+      "sha256": "74d865484264c11156314d37687522b73eea82faa98975cb34416dd15996db62"
+    },
+    {
+      "path": "run.py",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/run.py",
+      "bytes": 3593,
+      "sha256": "95545421c4778d721ef2072b3d37af4ae539ffffba5276ac978014e9b44742e4"
+    },
+    {
+      "path": "sandbox.sb",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/sandbox.sb",
+      "bytes": 169,
+      "sha256": "97219768605b2f923de24b7bb5938f687a3ba1e570a89e1c6e822939d2056c8b"
+    },
+    {
+      "path": "segment.json",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/segment.json",
+      "bytes": 1168,
+      "sha256": "a70ae2d711a0244d500d8fcc66fa0542be6d728a42847a7d0ef2d868926f63de"
+    },
+    {
+      "path": "types.log",
+      "original": "/private/tmp/recovery-complete-draft-local-yhrmn6nw/types.log",
+      "bytes": 428,
+      "sha256": "8de79e63cbb52d1071c43a902c9a9af725ea0df50ff7bcae3e255487f4855075"
+    }
+  ],
+  "logTransport": "file redirect, no dual-pipe EOF claim",
+  "observerRerun": false
+}

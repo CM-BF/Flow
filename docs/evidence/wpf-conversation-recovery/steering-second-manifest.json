@@ -1,0 +1,186 @@
+{
+  "at": "2026-10-07 10:04:43 UTC",
+  "run": "recsteer-20261007-100004-46e3cb",
+  "outcome": "FAIL",
+  "executionHead": "f0a97719f470e7536c705cc3fac2453b634c5978",
+  "sourceTarget": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
+  "journey": "steering-recovery",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "passedGroups": [
+    "cookieRead"
+  ],
+  "failedGroup": "steeringRecovery",
+  "raw": [
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/browser.json",
+      "bytes": 13308,
+      "sha256": "22041624ed8dcd59a2a2455a2666bb2a9017962e8b3cd206d2251bd218b26af6"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/budget.json",
+      "bytes": 241,
+      "sha256": "aae314b6c6e9d4d92ef638ad064961cb055de3e765c3dec3463a214fbd7eedaa"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "f1845ccfcacca7860e256477c9982c8fa435883b6b62ede1b0eb430673c7ea56"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/database-owner.json",
+      "bytes": 164,
+      "sha256": "f01b98143f7ea6a607afb33c810baab1ffabb2335105fe418b09c3234d5d84ec"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/fixture-cleanup.json",
+      "bytes": 313,
+      "sha256": "2e24a889d055825c55ccb39c61fefed627b53c3afa707ca792b3bd7721e6a753"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/launch-config.json",
+      "bytes": 1215,
+      "sha256": "a7a34e62922d74b8970d1df8182d6db969d7d56c8ab82064f66a08607fad4794"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/process-owner.json",
+      "bytes": 29,
+      "sha256": "15147d41dae9e75e1137cdd01585d0caefeb98f3e6dd85985bce3dcd9e97a58a"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/process.log",
+      "bytes": 6712,
+      "sha256": "70bf6a31399b60007994e84efffaa0d8a55d9c66d15947517c602e69f9a305c7"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "21fbc01a5b54d80ec8e5917f2a67dd6a517ace237948ca9a5b74c18575938eae"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/sources.json",
+      "bytes": 2438,
+      "sha256": "16fa165e575f9316084a4629fec6154909ec4dab4cce05bb20c9ac942d4619ed"
+    },
+    {
+      "path": "browser-runs/recsteer-20261007-100004-46e3cb/supervisor.json",
+      "bytes": 2653,
+      "sha256": "611fb2fa7c863a3c6ab6e82cda2b4765dfd90991593c050fe92e4b0f5614e8a3"
+    }
+  ],
+  "outerOriginalPairs": [
+    {
+      "path": "steering-second-parent/admission.json",
+      "bytes": 4407,
+      "sha256": "b315c14d5c8cde0e91fb5c9e10814b3ac92ea9601d0237d07818bc7b04f8fc12",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/admission.json"
+    },
+    {
+      "path": "steering-second-parent/gate.json",
+      "bytes": 3374,
+      "sha256": "860f90d8f905ed9536c8c1471ff447cec8f75c6f2e3b7491c39475e5e4525c42",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/gate.json"
+    },
+    {
+      "path": "steering-second-parent/start.json",
+      "bytes": 727,
+      "sha256": "a2554d8b2dad65f3977bba8ac54e8ca116009eb3b7d65cfefae9ceecc297d135",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/start.json"
+    },
+    {
+      "path": "steering-second-parent/parent.stdout.jsonl",
+      "bytes": 784,
+      "sha256": "f61e42c9df9b3ac0b1072ac112a70c19cb42838e484827d62f12f0e0a328bba3",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/parent.stdout.jsonl"
+    },
+    {
+      "path": "steering-second-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/parent.stderr.log"
+    },
+    {
+      "path": "steering-second-parent/actual-exit.json",
+      "bytes": 355,
+      "sha256": "3cc79023c91bfd17a303e5fce9939878ab2d72a424c87dfaf49b1bdeae8e94dd",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/actual-exit.json"
+    },
+    {
+      "path": "steering-second-parent/post-cleanup-observation.json",
+      "bytes": 1656,
+      "sha256": "3c6cf7371920244026b9adabe48a3efcb30ad8e892416a51883f4c33adfb0402",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/post-cleanup-observation.json"
+    },
+    {
+      "path": "steering-second-parent/admin-env-deletion-receipt.json",
+      "bytes": 320,
+      "sha256": "31be45d8685b7aecc472f6207bca1d49eae9351c7b82d1f815fad8b6cc4bff23",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/admin-env-deletion-receipt.json"
+    },
+    {
+      "path": "steering-second-parent/accounting.json",
+      "bytes": 565,
+      "sha256": "7e685da7923603b9dc18b35b765f82345d644cecd901f238f5817aa539908340",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/accounting.json"
+    },
+    {
+      "path": "steering-second-parent/raw-index.json",
+      "bytes": 1900,
+      "sha256": "f59271710eeae55c2fa502b32f136a0a8a809314190d0e54cfa92237e0db2be0",
+      "original": "/private/tmp/recovery-steering-second-v_wuvfhp/raw-index.json"
+    }
+  ],
+  "accounting": {
+    "phase": "RECOVERY-STEERING-20261007",
+    "phaseTotalMs": 60000,
+    "previousSpentMs": 17332,
+    "actualOuterMs": 17420.67970801145,
+    "lateParentMs": 16866.963875,
+    "serializedParentMs": 16853.57675,
+    "chargeMs": 17421,
+    "spentMs": 34753,
+    "remainingMs": 25247,
+    "old90ActualMs": 64134.08675,
+    "old150SpentMs": 126447,
+    "old150Unused23553Closed": true,
+    "oldCreditTransferred": false,
+    "outcome": "FAIL",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "belowParentMinimum30000": true
+  },
+  "cleanup": {
+    "path": "steering-second-parent/post-cleanup-observation.json",
+    "bytes": 1656,
+    "sha256": "3c6cf7371920244026b9adabe48a3efcb30ad8e892416a51883f4c33adfb0402"
+  },
+  "independentReview": {
+    "path": "steering-second-root-review.json",
+    "bytes": 14966,
+    "sha256": "5b4ec7913cbe5677b3cb11d1a1294e89119929de7f7a82c06fff4623350427c1"
+  },
+  "observedFailure": {
+    "inputMatches": true,
+    "draftCount": 2,
+    "sameConversationDraftVersion": 4,
+    "sameConversationSteering": [],
+    "alertsAtObservation": [],
+    "observationErrors": [],
+    "steeringPosts": 0,
+    "bodyLossReached": false,
+    "restoreReached": false
+  },
+  "limits": [
+    "Actual raw observer reads getAll unfiltered records.",
+    "Alerts were empty only at the sampled failure point, not evidence that the whole run had no error.",
+    "No third run: remaining25247 is below parent minimum30000.",
+    "No unique product root cause dynamically proved; current-lifecycle source hypothesis is documented separately."
+  ]
+}

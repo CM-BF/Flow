@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-10-07T05:02:08.082350+00:00",
+  "actualExit": 1,
+  "ownedGroups": [
+    {
+      "pgid": 46595,
+      "state": "ABSENT_ESRCH",
+      "reportedExitCode": 0
+    },
+    {
+      "pgid": 49362,
+      "state": "ABSENT_ESRCH",
+      "reportedExitCode": 0
+    }
+  ],
+  "scratchPath": "/private/tmp/flow-recovery-browser-Yrqs6k",
+  "scratchExists": false,
+  "pngCount": 0,
+  "raw": [
+    {
+      "path": "browser.json",
+      "bytes": 8168,
+      "sha256": "386a8ff54f7f01f46d7eef540d147b32d9bb9adbf07f11205a5ad9ac4f51bfe4"
+    },
+    {
+      "path": "budget.json",
+      "bytes": 208,
+      "sha256": "139a823e02f36c47db87ece3eca6b0b1c26d37d29d49e1adb94021eb10f24677"
+    },
+    {
+      "path": "database-cleanup.json",
+      "bytes": 516,
+      "sha256": "008d687ccd9b8eddf8654e8adebfc1bd7a76a2b626ea232b81952a413f919d2f"
+    },
+    {
+      "path": "database-owner.json",
+      "bytes": 164,
+      "sha256": "ca70ff3b6a7702307c17cb7acf59627c844d705c20b07bd736db09d98a356366"
+    },
+    {
+      "path": "fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "dda77418d5cf73b9938b4aacfb132205c56864b5481efd7f063eed3d12c3d7b2"
+    },
+    {
+      "path": "launch-config.json",
+      "bytes": 1215,
+      "sha256": "30c356185d81d0e70d5fb012061d18bbb7ba0d87c491834f79bc97266175ee9d"
+    },
+    {
+      "path": "process-owner.json",
+      "bytes": 29,
+      "sha256": "1bebb16dcf406c74a059a46db45a7747ecb76234bf4d973e7e56f9aab1490cb9"
+    },
+    {
+      "path": "process.log",
+      "bytes": 7128,
+      "sha256": "4582d16907e8cae129a4ae79af10c8f67b3569b47c1c5cc4652a051f76dd5e7d"
+    },
+    {
+      "path": "scratch-owner.json",
+      "bytes": 114,
+      "sha256": "b574e30af735b91fa8e100438423373f713a97f8db6114791e0d67d52e7760fd"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2336,
+      "sha256": "f94ec919fb728691510ccb466cd5922a96bdb6ccfe422113a5749a72565bfe12"
+    },
+    {
+      "path": "supervisor.json",
+      "bytes": 1926,
+      "sha256": "3e212d6e35d4c36e7ae4af84e6223c95b6dd8fd9fe2a0fda0d65d8256abded2c"
+    }
+  ],
+  "note": "Exact owned group ESRCH and scratch existence only; no new PG/query/free/port/consumer scan. DB/HTTP cleanup attributed to original fixture and supervisor reports; no new port absence probe or explicit per-stream EOF artifact."
+}

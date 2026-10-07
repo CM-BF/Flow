@@ -1,0 +1,137 @@
+// Local serialization probe only: tools are imported; no Flow product module is imported.
+import assert from 'node:assert/strict';
+import { readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { createContext, Script } from 'node:vm';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { join, dirname } from 'node:path';
+
+const base = dirname(fileURLToPath(import.meta.url));
+const binding = JSON.parse(await readFile(join(base, 'binding.json'), 'utf8'));
+const raw = join(base, 'raw');
+const sha = value => createHash('sha256').update(value).digest('hex');
+const outcomes = [];
+let transform;
+let esbuild;
+const pageSetup = `
+  globalThis.window = globalThis;
+  globalThis.pendingMicrotasks = [];
+  globalThis.queueMicrotask = callback => pendingMicrotasks.push(callback);
+  globalThis.calls = [];
+  globalThis.originalError = new Error('original transaction failure');
+  globalThis.IDBDatabase = class {
+    constructor(name) { this.name = name; }
+    transaction(...args) {
+      if (this.throwOriginal) throw originalError;
+      const transaction = { abortCount: 0, abort() { this.abortCount += 1; } };
+      calls.push({ receiver: this, args, transaction });
+      return transaction;
+    }
+  };
+  globalThis.original = IDBDatabase.prototype.transaction;
+`;
+function evaluate(context, code, name) {
+  return new Script(code, { filename: name }).runInContext(context, { timeout: 500 });
+}
+async function serializedCallback(label) {
+  const input = await readFile(join(base, `${label}-callback.ts`), 'utf8');
+  const extraction = binding.extractions.find(item => item.label === label);
+  assert.equal(sha(input), extraction.callbackSha256);
+  // Only this outer assignment is synthetic. The exact callback text is unchanged.
+  const source = `globalThis.__capturedCallback = (${input});\n`;
+  const result = await transform(source, join(base, `${label}-callback.ts`), { tsconfigRaw: binding.tsconfigRaw });
+  assert.equal(typeof result.code, 'string');
+  const producer = createContext({});
+  evaluate(producer, result.code, `${label}-producer.js`);
+  const callback = producer.__capturedCallback;
+  assert.equal(typeof callback, 'function');
+  const serialized = Function.prototype.toString.call(callback);
+  await writeFile(join(raw, `${label}-transformed.js`), result.code, { flag: 'wx' });
+  await writeFile(join(raw, `${label}-serialized.js`), serialized, { flag: 'wx' });
+  return { serialized, transformedSha256: sha(result.code), serializedSha256: sha(serialized) };
+}
+async function oldNegative() {
+  const code = await serializedCallback('old');
+  const page = createContext({});
+  evaluate(page, pageSetup, 'old-page-setup.js');
+  assert.equal(evaluate(page, 'typeof __name', 'old-no-helper.js'), 'undefined');
+  let failure;
+  try {
+    evaluate(page, `(${code.serialized})()`, 'old-page-callback.js');
+  } catch (error) {
+    failure = { name: error.name, message: error.message, stack: error.stack };
+  }
+  assert.equal(failure?.name, 'ReferenceError');
+  assert.match(failure.message, /__name/);
+  assert.equal(evaluate(page, 'IDBDatabase.prototype.transaction === original', 'old-unchanged.js'), true);
+  assert.equal(evaluate(page, 'Object.hasOwn(window, "recoveryFixtureRestoreIdb")', 'old-no-restore.js'), false);
+  outcomes.push({ name: 'old-negative', state: 'PASS', expectedFailure: failure, ...code, serialized: undefined });
+}
+async function newPositive() {
+  const code = await serializedCallback('new');
+  const page = createContext({});
+  evaluate(page, pageSetup, 'new-page-setup.js');
+  assert.equal(evaluate(page, 'typeof __name', 'new-no-helper.js'), 'undefined');
+  evaluate(page, `(${code.serialized})()`, 'new-page-callback.js');
+  try {
+    const checks = evaluate(page, `(() => {
+      const target = new IDBDatabase('flow.conversation-recovery.v1');
+      const other = new IDBDatabase('other-database');
+      const names = ['records']; const options = { durability: 'strict' };
+      const targetWrite = target.transaction(names, 'readwrite', options);
+      const targetRead = target.transaction('records', 'readonly');
+      const otherWrite = other.transaction('records', 'readwrite');
+      const pendingBeforeDrain = pendingMicrotasks.length;
+      const before = targetWrite.abortCount;
+      target.throwOriginal = true;
+      let thrownOriginal = false;
+      try { target.transaction('records', 'readwrite'); } catch (error) { thrownOriginal = error === originalError; }
+      delete target.throwOriginal;
+      while (pendingMicrotasks.length) pendingMicrotasks.shift()();
+      const results = {
+        wrapperInstalled: IDBDatabase.prototype.transaction !== original,
+        receiverPreserved: calls[0].receiver === target,
+        argumentsPreserved: calls[0].args.length === 3 && calls[0].args[0] === names && calls[0].args[1] === 'readwrite' && calls[0].args[2] === options,
+        returnPreserved: targetWrite === calls[0].transaction && targetRead === calls[1].transaction && otherWrite === calls[2].transaction,
+        onlyTargetReadwriteAborts: targetWrite.abortCount === 1 && targetRead.abortCount === 0 && otherWrite.abortCount === 0,
+        abortDeferred: before === 0 && pendingBeforeDrain === 1,
+        originalErrorPreserved: thrownOriginal && calls.length === 3,
+        noGlobalNameHelper: typeof __name === 'undefined'
+      };
+      window.recoveryFixtureRestoreIdb();
+      const afterRestore = target.transaction('records', 'readwrite');
+      results.restored = IDBDatabase.prototype.transaction === original && !Object.hasOwn(window, 'recoveryFixtureRestoreIdb');
+      results.restoredReadwriteUntouched = afterRestore.abortCount === 0 && pendingMicrotasks.length === 0;
+      return results;
+    })()`, 'new-page-behavior.js');
+    assert.equal(Object.keys(checks).length, 10);
+    for (const [name, value] of Object.entries(checks)) assert.equal(value, true, name);
+    outcomes.push({ name: 'new-positive', state: 'PASS', checks, ...code, serialized: undefined });
+  } finally {
+    evaluate(page, `if (Object.hasOwn(window, 'recoveryFixtureRestoreIdb')) window.recoveryFixtureRestoreIdb();`, 'new-page-finally-restore.js');
+    assert.equal(evaluate(page, 'IDBDatabase.prototype.transaction === original', 'new-final-prototype.js'), true);
+  }
+}
+let failure;
+try {
+  assert.equal(process.env.TSX_DISABLE_CACHE, '1');
+  assert.equal(process.env.NODE_DISABLE_COMPILE_CACHE, '1');
+  ({ t: transform } = await import(pathToFileURL(binding.tools.tsxTransform).href));
+  esbuild = await import(pathToFileURL(binding.tools.esbuildMain).href);
+  await oldNegative();
+  await newPositive();
+  assert.equal(outcomes.length, 2);
+} catch (error) {
+  failure = { name: error.name, message: error.message, stack: error.stack };
+} finally {
+  try { if (esbuild) await esbuild.stop(); }
+  catch (error) { failure ??= { name: error.name, message: `esbuild stop: ${error.message}` }; }
+  const result = {
+    state: failure ? 'FAIL' : 'PASS', outcomes, failure, nodeVersion: process.version,
+    transform: 'Installed TSX t() ESM, its default keepNames/minifyWhitespace/target, explicit fixed root tsconfigRaw',
+    boundary: 'Actual installed TSX/esbuild transformation and isolated VM callbacks with modeled IDB; not native IDB, Playwright, HTTP, or browser journey.'
+  };
+  await writeFile(join(raw, 'worker-result.json'), JSON.stringify(result, null, 2) + '\n', { flag: 'wx' });
+  console.log(JSON.stringify({ state: result.state, scenarios: outcomes.map(item => item.name), failure }));
+  process.exitCode = failure ? 1 : 0;
+}

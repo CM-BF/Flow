@@ -1,0 +1,124 @@
+{
+  "at": "2026-10-07 07:42:47 UTC",
+  "state": "ACCEPTED_QUEUE_SELECTED_ACTUAL_NOT_FULL_FEATURE",
+  "run": "recqueue-20261007-073438-dbae9f",
+  "executionHead": "fafc3334b8e99b3a80ccac82e472c8bf3fa61bd7",
+  "sourceTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "sourceCheckpoint": {
+    "path": "monitor-retirement-checkpoint.json",
+    "sha256": "cf23604afc6d6e155ab8eccac2b29b5e605857a5e66aebcad094042766397802",
+    "verifiedGitAndCurrent": 19
+  },
+  "originals": [
+    {
+      "path": "continuous-sixth-parent/admission.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/admission.json",
+      "bytes": 4392,
+      "sha256": "cdd797a093b54f887abe0fa1a5133bdf102808ce63d955d4b46aaba6ab2f4322"
+    },
+    {
+      "path": "continuous-sixth-parent/gate.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/gate.json",
+      "bytes": 2911,
+      "sha256": "660c820afd08ac7cb75eeb64bd05b5844c3fe03afb240d3f3c38c1fd272cf37d"
+    },
+    {
+      "path": "continuous-sixth-parent/start.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/start.json",
+      "bytes": 230,
+      "sha256": "f842989a64da55ac9cd8a413afed28bfa03c80b31a6807410fe2764b55bcfbc8"
+    },
+    {
+      "path": "continuous-sixth-parent/parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/parent.stdout.jsonl",
+      "bytes": 606,
+      "sha256": "f8ec5485b948011d48584c733caa7beaa29ee1c560d072bd3591c328488f4e06"
+    },
+    {
+      "path": "continuous-sixth-parent/parent.stderr.log",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "continuous-sixth-parent/actual-exit.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/actual-exit.json",
+      "bytes": 413,
+      "sha256": "c5785b003b5bc63a78d73cdbf353bc78f30f2e183dea330a770953e295fd49ab"
+    },
+    {
+      "path": "continuous-sixth-parent/post-cleanup-observation.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/post-cleanup-observation.json",
+      "bytes": 487,
+      "sha256": "9a9d71002d75921101aedfb9a33282157e270670685822a2a2324e3e96d73c40"
+    },
+    {
+      "path": "continuous-sixth-parent/accounting.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/accounting.json",
+      "bytes": 295,
+      "sha256": "69650d0a642674351cffef05bf2483586156e0e50e3669788d83ce6822b80234"
+    },
+    {
+      "path": "continuous-sixth-parent/raw-manifest.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/raw-manifest.json",
+      "bytes": 3529,
+      "sha256": "0e408c31b65d76827df26319af008b782f0948aa0bfaa4c7595c9761d7c091b0"
+    },
+    {
+      "path": "continuous-sixth-parent/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/recovery-queue-owner-segment-klkcna10/admin-env-deletion-receipt.json",
+      "bytes": 329,
+      "sha256": "8a5740800e7bfe80a2944b1ff0f0d8502369681c7fb4bcff5691a566e4162e4d"
+    },
+    {
+      "path": "continuous-sixth-root-review.json",
+      "original": "/private/tmp/root-recovery-queue-actual-review.json",
+      "bytes": 4999,
+      "sha256": "f17436939b9b1ffb1611d569320b65b732478c9c98550bc0f2081f788d2a6150"
+    },
+    {
+      "path": "continuous-fifth-admission/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-admin-env-deletion-receipt.json",
+      "bytes": 957,
+      "sha256": "38c1f932da6c23412bcefad6126c7d9ae4e34b538be4dae0af3502c994956fd1"
+    }
+  ],
+  "rawManifest": "continuous-sixth-parent/raw-manifest.json",
+  "rawFiles": 11,
+  "rawBytes": 26087,
+  "previousRaw": {
+    "uniqueGitPaths": 111,
+    "bytes": 390017,
+    "unchangedFrom": "fafc3334b8e99b3a80ccac82e472c8bf3fa61bd7",
+    "includingCurrentQueueFiles": 122,
+    "includingCurrentQueueBytes": 416104,
+    "countCorrection": "Original admission priorRawPinsVerified=122/priorRawBytes=402906 are retained as reported; current unique Git census is111/390017, not the original reported count."
+  },
+  "actual": "continuous-sixth-parent/actual-exit.json",
+  "selection": {
+    "journey": "queue-ack-loss",
+    "requiredGroups": [
+      "cookieRead",
+      "queueAckLoss"
+    ],
+    "selectedPassed": true,
+    "fullJourneyPassed": false,
+    "fullFeaturePassed": false
+  },
+  "accounting": {
+    "priorMs": 58951,
+    "chargeMs": 11207,
+    "spentMs": 70158,
+    "remainingMs": 79842,
+    "outerMs": 11206.429125042632,
+    "lateParentMs": 10469.796625,
+    "serializedParentMs": 10461.797292000001,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "cleanup": "continuous-sixth-parent/post-cleanup-observation.json",
+  "adminEnvDeletion": "continuous-sixth-parent/admin-env-deletion-receipt.json",
+  "rootReview": "continuous-sixth-root-review.json",
+  "remainingProposal": "remaining-validation-after-queue.md",
+  "noRuntimeInMetadataSeal": true
+}

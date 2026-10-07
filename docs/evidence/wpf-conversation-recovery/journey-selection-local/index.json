@@ -1,0 +1,115 @@
+{
+  "recordedAt": "2026-10-07 05:21:31 UTC",
+  "executedHead": "263b0ed6bb0e1b186d7a8172f9f679d48c108657",
+  "executionDirty": true,
+  "finalSourceCommit": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "finalSourceSha256": "7a20a80a7c58f77fc1d43a709c2313a8e097283fff1fde82519d74ca0f28fcc3",
+  "operator": "workspace_panels_owner",
+  "scope": "actual TypeScript noEmit and extracted selection/run functions; not fixture/browser startup",
+  "raw": [
+    {
+      "file": "0.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "0.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "1.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "1.stdout.log",
+      "bytes": 337,
+      "sha256": "ef60e52555d14ba79a84314a154cddca14d0b7ca2dcff85309a05f2997a90dbb"
+    },
+    {
+      "file": "2.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "2.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "3.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "3.stdout.log",
+      "bytes": 473,
+      "sha256": "2e19d4548d2053c68aed2b1abeaf179e3f16750a2718792a85ceac551cade942"
+    },
+    {
+      "file": "result-2.json",
+      "bytes": 1878,
+      "sha256": "8b89267aff34512b208ea8d522ba59eb18c16015724619b47b6169e44021cb54"
+    },
+    {
+      "file": "result.json",
+      "bytes": 1840,
+      "sha256": "01678d6effc96bc696dd9264e9fadefc594faa732927255fc8984966f6abfe17"
+    },
+    {
+      "file": "sandbox.sb",
+      "bytes": 162,
+      "sha256": "06c20ec87019805b0edf65e5de27b923b1a62a282c11a3b59fa101b544f7ad56"
+    },
+    {
+      "file": "selection-check.cjs",
+      "bytes": 3105,
+      "sha256": "ddadefba04c8d149fa8730ed33c28e81d8dc6034ab1f75490a5a69aada4c9612"
+    },
+    {
+      "file": "selection-timing-check.cjs",
+      "bytes": 4855,
+      "sha256": "82f2d08103f5831c73164fa88557dbeb61f93680ae381d36d8d197b03f66cb40"
+    }
+  ],
+  "rawBytes": 12650,
+  "tools": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/tsconfig.json",
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/tsconfig.json",
+      "sha256": "af4bdc0413d25d7cc3ce81a6f2bd2d5488719e8434d155c4abd2427a24273b59"
+    }
+  ],
+  "firstMs": 6279.676374979317,
+  "secondMs": 6182.800624985248,
+  "cumulativeMs": 12462.476999964565,
+  "limitMs": 30000,
+  "finalAssertions": 119,
+  "network": "denied by sandbox",
+  "cleanup": "four finite Node processes reaped; both streams EOF and each owned PGID absent; no runtime cache/service/temp products created; small test inputs/raw retained as evidence",
+  "limitations": [
+    "timing port uses deterministic monotonic stub; no actual browser timing sample",
+    "first source c19304 precedes timing fields; final source7a20 exactly matches dd6645",
+    "initialization failure before worker result can only be reported as unavailable by parent; not zero"
+  ]
+}

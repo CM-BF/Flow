@@ -1,0 +1,40 @@
+{
+  "startedAt": "2026-10-06T14:51:24.954009+00:00",
+  "sourceCommit": "f13de5c13e3983b94e16ae857ddc7b01cbba7a26",
+  "dirty": true,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "apps/web/tsconfig.json"
+  ],
+  "sourceHashes": {
+    "apps/web/src/App.tsx": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+    "apps/web/src/attachments/controller.ts": "7bbb19b8110cd4fec85a2708a474ded607159f3510bed2c4a9884ed77687483c",
+    "apps/web/src/connection/session.ts": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+    "apps/web/src/conversation-context/controller.ts": "01216d648c226549c9a8b79410c597669dfec5f0c42c38cde43233f6b774c0c1",
+    "apps/web/src/conversation-steering/SteeringControl.tsx": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+    "apps/web/src/conversation-steering/control.ts": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+    "apps/web/src/conversations/ConversationThread.tsx": "c726beabcc01bef7f67cacb427e8a966bd2673c212f56094ff83ccfd18586ac4",
+    "apps/web/src/conversations/outbox.ts": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+    "apps/web/src/conversations/projection.ts": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+    "apps/web/src/conversations/queue/commands.ts": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+    "apps/web/src/plugin-integration/attachments.tsx": "a77d6f72eb4f6adb2a4fbc78e5c402bf21700673fa52163cdee9aea473414c08",
+    "apps/web/src/plugin-integration/knowledge.tsx": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+    "apps/web/src/plugin-integration/session.ts": "22adeb1f431e23f4e95cfd53804e301159c1e409df9a2f853a24636f6845852c",
+    "apps/web/src/plugin-integration/steering.tsx": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+    "apps/web/src/recovery/binding.tsx": "433fb024d9012a1e64a170a638310978eb7aeee743d667f4005b3821b8f58e24",
+    "apps/web/src/recovery/journal.ts": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+    "apps/web/test/conversation-recovery.browser.ts": "f63e18666f204aed961fff5d7df989602ad65d83f394fb6b0ce2be5babe47773",
+    "apps/web/test/conversation-recovery.fixture.ts": "f963b0d7428d676ed8e5f19978554aa768cc7a4808193260f7eb1645b4e0f194",
+    "apps/web/test/conversation-recovery.test.ts": "9d8c58b51fe2d5ce5e0e010f126b63e9688b34cf0440bc2f42faaaa69b3c2009"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 6.058,
+  "rawBytes": 0,
+  "truncated": false,
+  "cleanup": "fulfilled; no emit/dependency/cache/services",
+  "cumulativeTypesSeconds": 40.603,
+  "remaining60Seconds": 19.397
+}

@@ -1,0 +1,288 @@
+"""One gated TSX callback serialization probe; derived from the reviewed Recovery50 lifecycle."""
+import time
+START = time.monotonic()
+import datetime
+import errno
+import hashlib
+import json
+import os
+from pathlib import Path
+import selectors
+import shutil
+import signal
+import stat
+import subprocess
+import sys
+
+BASE = Path(__file__).resolve().parent
+SCRATCH = BASE / 'scratch'
+RAW = BASE / 'raw'
+BINDING = BASE / 'binding.json'
+PROFILE = BASE / 'sandbox.sb'
+STOP = {'signal': None, 'cleanupComplete': False}
+
+
+def emit(value):
+    data = (json.dumps(value, separators=(',', ':')) + '\n').encode()
+    if len(data) > 8192:
+        data = b'{"state":"FAIL","reason":"terminal stdout limit"}\n'
+    os.write(1, data)
+
+
+def soft_stop(signum, _frame):
+    STOP['signal'] = STOP['signal'] or signum
+    if STOP['cleanupComplete']:
+        # A handled late signal overrides an earlier result, including after stdout.
+        terminal = {'state': 'FAIL', 'reason': 'LATE_SOFT_STOP', 'signal': signum,
+                    'elapsedMs': (time.monotonic() - START) * 1000}
+        try:
+            (RAW / 'late-stop.json').write_text(json.dumps(terminal) + '\n')
+        except BaseException:
+            pass
+        try:
+            emit(terminal)
+        finally:
+            os._exit(1)
+
+
+for SIGNUM in (signal.SIGTERM, signal.SIGINT):
+    signal.signal(SIGNUM, soft_stop)
+
+
+def digest(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def read_json(path):
+    return json.loads(Path(path).read_text())
+
+
+def logical_bytes(root):
+    def reject(error):
+        if error.errno != errno.ENOENT:
+            raise error
+    total = 0
+    for directory, children, files in os.walk(root, followlinks=False, onerror=reject):
+        children[:] = [name for name in children if not (Path(directory) / name).is_symlink()]
+        for name in files:
+            try:
+                value = (Path(directory) / name).lstat()
+            except FileNotFoundError:
+                continue
+            if stat.S_ISREG(value.st_mode):
+                total += value.st_size
+    return total
+
+
+def group_alive(process):
+    if process is None:
+        return False
+    try:
+        os.killpg(process.pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+
+
+def signal_owned(process, sig):
+    if process is not None:
+        try:
+            os.killpg(process.pid, sig)
+        except ProcessLookupError:
+            pass
+
+
+def require_gate():
+    if len(sys.argv) != 3 or sys.argv[1] != '--gate':
+        raise ValueError('A separately approved --gate is required')
+    binding = read_json(BINDING)
+    gate = read_json(sys.argv[2])
+    if binding['state'] != 'REVIEWED_SOURCE_BOUND_NOT_RUN':
+        raise ValueError('Packet is not independently approved')
+    assert gate.get('allowRun') is True and gate.get('singleUse') is True
+    assert gate['mode'] == 'recovery-page-evaluate-serialization'
+    assert gate['taskId'] == 'WPF-RECOVERY01'
+    assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z', '+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+    assert gate['bindingSha256'] == digest(BINDING)
+    assert gate['runnerSha256'] == digest(__file__)
+    assert gate['sandboxSha256'] == digest(PROFILE)
+    for key in ('head', 'implementation', 'claim', 'limits'):
+        assert gate[key] == binding[key], key
+    assert gate['overlaps'] == []
+    assert binding['limits'] == {'totalMs': 10000, 'workMs': 7000, 'cleanupReserveMs': 3000,
+                                 'tmpBytes': 8388608, 'rawBytes': 262144, 'pollMs': 50}
+    assert not any(path.exists() for path in (SCRATCH, RAW, BASE / 'consumed-gate.json'))
+    return binding, gate
+
+
+def verify_pins(binding, deadline):
+    def git(*args):
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise TimeoutError('Pin checks exceeded work deadline')
+        return subprocess.check_output(['git', *args], cwd=binding['worktree'], text=True,
+            timeout=min(1, remaining), env={**os.environ, 'GIT_OPTIONAL_LOCKS': '0'}).strip()
+    assert git('rev-parse', 'HEAD') == binding['head']
+    assert git('branch', '--show-current') == binding['branch']
+    assert git('status', '--porcelain') == ''
+    assert len(binding['sources']) == 19
+    for entry in binding['sources'] + binding['externalPins']:
+        path = Path(entry['path'])
+        if 'realpath' in entry:
+            assert str(path.resolve()) == entry['realpath'], str(path)
+        assert digest(path) == entry['sha256'], str(path)
+    for name, expected in binding['preparedFiles'].items():
+        assert digest(BASE / name) == expected, name
+    assert time.monotonic() < deadline
+
+
+def child_environment(binding):
+    # No tokens, DB settings, NODE_OPTIONS, or arbitrary loader/binary overrides inherited.
+    env = {key: os.environ[key] for key in ('PATH', 'HOME', 'USER', 'LOGNAME', 'LANG', 'LC_ALL') if key in os.environ}
+    for key in ('TMPDIR', 'TMP', 'TEMP', 'XDG_CACHE_HOME'):
+        env[key] = str(SCRATCH)
+    env.update({'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1',
+                'ESBUILD_BINARY_PATH': binding['tools']['esbuildBinary'], 'NO_COLOR': '1'})
+    return env
+
+
+def reap_owned(process, deadline, errors):
+    try:
+        signal_owned(process, signal.SIGTERM)
+        until = min(deadline - 1.0, time.monotonic() + 0.75)
+        while group_alive(process) and time.monotonic() < until:
+            if process:
+                process.poll()
+            time.sleep(0.01)
+        if group_alive(process):
+            signal_owned(process, signal.SIGKILL)
+        if process:
+            process.wait(timeout=max(0.01, min(0.5, deadline - time.monotonic())))
+        until = min(deadline - 0.4, time.monotonic() + 0.4)
+        while group_alive(process) and time.monotonic() < until:
+            time.sleep(0.01)
+        absent = not group_alive(process)
+        if not absent:
+            errors.append('Owned process group remains')
+        return absent
+    except BaseException as error:
+        errors.append('Owned process group cleanup: ' + type(error).__name__ + ': ' + str(error))
+        return False
+
+
+def run(binding, gate):
+    limits = binding['limits']
+    work_deadline = START + limits['workMs'] / 1000
+    total_deadline = START + limits['totalMs'] / 1000
+    process = None
+    reason = None
+    errors = []
+    samples = []
+    selector = selectors.DefaultSelector()
+    worker_exit = None
+    log_bytes = 0
+    report = {'head': binding['head'], 'implementation': binding['implementation'],
+              'bindingSha256': digest(BINDING), 'runnerSha256': digest(__file__), 'limits': limits,
+              'samples': samples, 'boundary': 'Tool transform plus modeled IDB in isolated VMs; no browser or Flow imports.'}
+    with (BASE / 'consumed-gate.json').open('x') as target:
+        target.write(json.dumps(gate, indent=2) + '\n')
+    RAW.mkdir(mode=0o700)
+    try:
+        verify_pins(binding, work_deadline)
+        if STOP['signal']:
+            raise InterruptedError('Stopped before child spawn')
+        SCRATCH.mkdir(mode=0o700)
+        command = ['/usr/bin/sandbox-exec', '-f', str(PROFILE), binding['node'], str(BASE / 'worker.mjs')]
+        report['command'] = command
+        with (RAW / 'node.log').open('xb') as log:
+            process = subprocess.Popen(command, cwd=BASE, env=child_environment(binding),
+                stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, start_new_session=True)
+            report['ownedPgid'] = process.pid
+            os.set_blocking(process.stdout.fileno(), False)
+            selector.register(process.stdout, selectors.EVENT_READ)
+            while True:
+                tmp_size, raw_size = logical_bytes(BASE), logical_bytes(RAW)
+                samples.append({'elapsedMs': (time.monotonic() - START) * 1000, 'tmpBytes': tmp_size, 'rawBytes': raw_size})
+                if STOP['signal']:
+                    reason = 'SOFT_STOP'
+                elif time.monotonic() >= work_deadline:
+                    reason = 'WORK_DEADLINE'
+                elif tmp_size > limits['tmpBytes'] or raw_size > limits['rawBytes'] - 32768:
+                    reason = 'BYTE_LIMIT'
+                if reason:
+                    break
+                for key, _ in selector.select(min(limits['pollMs'] / 1000, max(0, work_deadline - time.monotonic()))):
+                    chunk = os.read(key.fileobj.fileno(), 8192)
+                    if not chunk:
+                        selector.unregister(key.fileobj)
+                    elif log_bytes + len(chunk) > 65536:
+                        reason = 'LOG_LIMIT'
+                        break
+                    else:
+                        log.write(chunk); log.flush(); log_bytes += len(chunk)
+                if reason or (process.poll() is not None and not selector.get_map()):
+                    break
+            worker_exit = process.poll()
+    except BaseException as error:
+        reason = reason or 'SUPERVISION_ERROR'
+        errors.append(type(error).__name__ + ': ' + str(error))
+    finally:
+        selector.close()
+        absent = reap_owned(process, total_deadline, errors)
+        if process and process.stdout:
+            try:
+                process.stdout.close()
+            except BaseException as error:
+                errors.append('stdout close: ' + type(error).__name__ + ': ' + str(error))
+        # Stable accounting only after absence. Unknown/remaining group retains scratch.
+        if absent:
+            try:
+                report['postReapBeforeDelete'] = {'tmpBytes': logical_bytes(BASE), 'rawBytes': logical_bytes(RAW)}
+                if report['postReapBeforeDelete']['tmpBytes'] > limits['tmpBytes'] or report['postReapBeforeDelete']['rawBytes'] > limits['rawBytes'] - 16384:
+                    errors.append('Post-reap byte limit')
+            except BaseException as error:
+                errors.append('Post-reap accounting: ' + type(error).__name__ + ': ' + str(error))
+            try:
+                if SCRATCH.exists():
+                    shutil.rmtree(SCRATCH)
+            except BaseException as error:
+                errors.append('Scratch removal: ' + type(error).__name__ + ': ' + str(error))
+        else:
+            errors.append('Group not proven absent; scratch retained')
+        report['cleanup'] = {'groupAbsent': absent, 'scratchAbsent': not SCRATCH.exists(), 'errors': errors}
+        STOP['cleanupComplete'] = True
+    try:
+        worker = read_json(RAW / 'worker-result.json')
+        names = [item.get('name') for item in worker.get('outcomes', [])]
+        valid_worker = worker.get('state') == 'PASS' and names == ['old-negative', 'new-positive'] and all(item.get('state') == 'PASS' for item in worker['outcomes'])
+        checks = worker['outcomes'][1].get('checks', {}) if len(worker.get('outcomes', [])) == 2 else {}
+        valid_worker = valid_worker and len(checks) == 10 and all(value is True for value in checks.values())
+    except BaseException as error:
+        valid_worker = False
+        errors.append('Worker result: ' + type(error).__name__ + ': ' + str(error))
+    report.update({'workerExit': worker_exit, 'reason': reason, 'softStopSignal': STOP['signal'],
+                   'workerChecksPassed': valid_worker, 'elapsedMs': (time.monotonic() - START) * 1000})
+    report['state'] = 'PASS' if not reason and not errors and not STOP['signal'] and worker_exit == 0 and valid_worker and report['elapsedMs'] <= limits['totalMs'] else 'FAIL'
+    result = RAW / 'result.json'
+    result.write_text(json.dumps(report, indent=2) + '\n')
+    final = {'state': report['state'], 'result': str(result), 'cleanup': report['cleanup'],
+             'tmpBytes': logical_bytes(BASE), 'rawBytes': logical_bytes(RAW),
+             'elapsedMs': (time.monotonic() - START) * 1000, 'softStopSignal': STOP['signal']}
+    if final['tmpBytes'] > limits['tmpBytes'] or final['rawBytes'] > limits['rawBytes'] or final['elapsedMs'] > limits['totalMs']:
+        final['state'] = 'FAIL'
+        final['reason'] = 'POST_WRITE_LIMIT'
+    emit(final)
+    os._exit(0 if final['state'] == 'PASS' else 1)
+
+
+try:
+    actual_binding, actual_gate = require_gate()
+except BaseException as error:
+    emit({'state': 'NOT_RUN_PREFLIGHT', 'reason': type(error).__name__ + ': ' + str(error)})
+    os._exit(2)
+try:
+    run(actual_binding, actual_gate)
+except BaseException as error:
+    emit({'state': 'FAIL', 'reason': 'FINAL_REPORT_ERROR', 'error': type(error).__name__ + ': ' + str(error),
+          'elapsedMs': (time.monotonic() - START) * 1000, 'softStopSignal': STOP['signal']})
+    os._exit(1)

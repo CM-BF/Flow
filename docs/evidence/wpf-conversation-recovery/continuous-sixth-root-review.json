@@ -1,0 +1,164 @@
+{
+  "at": "2026-10-07T07:36:19.792820+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_QUEUE_ACK_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_FULL_FEATURE_PASS",
+  "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "executionHead": "fafc3334b8e99b3a80ccac82e472c8bf3fa61bd7",
+  "run": "recqueue-20261007-073438-dbae9f",
+  "actual": {
+    "run": "recqueue-20261007-073438-dbae9f",
+    "startedAt": "2026-10-07T07:34:54.524910+00:00",
+    "endedAt": "2026-10-07T07:35:05.731349+00:00",
+    "parentPid": 83949,
+    "actualExitCode": 0,
+    "outerElapsedMs": 11206.429125042632,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "streams": {
+      "stderr": {
+        "eof": true,
+        "bytes": 0
+      },
+      "stdout": {
+        "eof": true,
+        "bytes": 606
+      }
+    }
+  },
+  "accounting": {
+    "priorMs": 58951,
+    "chargeMs": 11207,
+    "spentMs": 70158,
+    "remainingMs": 79842,
+    "outerMs": 11206.429125042632,
+    "lateMs": 10469.796625,
+    "serializedParentMs": 10461.797292000001,
+    "oldClosedMs": 64134.08675
+  },
+  "evidence": {
+    "sourcePinsVerified": 19,
+    "rawFilesVerified": 11,
+    "rawBytes": 26087,
+    "manifestSha256": "0e408c31b65d76827df26319af008b782f0948aa0bfaa4c7595c9761d7c091b0",
+    "selectedGroups": [
+      "cookieRead",
+      "queueAckLoss"
+    ],
+    "fullJourneyPassed": false,
+    "png": 0
+  },
+  "wireVerification": {
+    "enqueueRequests": 2,
+    "samePathKeyBody": true,
+    "sameQueueRevisionAndFullItem": true,
+    "replayed": true,
+    "originalExpectedRevision": 0,
+    "ackRevision": 1,
+    "queueItemId": "4da114d4-46cc-40f4-895c-85596ebd2e8d",
+    "conversationId": "8daaedea-eb54-4abf-bee1-08217d3b9eb3",
+    "requestKey": "9f6eabdb-cd3a-4948-894a-b2a84b07661c",
+    "bodySha256": "1ca7502bc57f56ca1f0a11dd83947f319612e33420678e8b15e64426275a9094",
+    "orderedAttachmentNames": [
+      "saved.txt",
+      "later.txt"
+    ],
+    "exactOrderedAttachmentReferencesPreserved": true,
+    "lostAck": {
+      "path": "/api/conversations/8daaedea-eb54-4abf-bee1-08217d3b9eb3/queue",
+      "key": "9f6eabdb-cd3a-4948-894a-b2a84b07661c",
+      "bodySha256": "1ca7502bc57f56ca1f0a11dd83947f319612e33420678e8b15e64426275a9094",
+      "status": 202,
+      "headers": {
+        "content-length": "1347",
+        "content-type": "application/json; charset=utf-8",
+        "connection": "close",
+        "cache-control": "no-store"
+      },
+      "events": [
+        "request",
+        "response-headers",
+        "requestfailed"
+      ],
+      "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+      "finished": false
+    },
+    "nextDraft": "Pinned source independent next draft restore assertions completed in selected browser group; no provider/native inference."
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_542c51e3ea2943bf9ac8fe8d42b189a6",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.2700409999997646,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.3789579999993293,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 24,
+      "wireBytes": 9090,
+      "providerQueries": 0
+    },
+    "freshOwnedProcessObservations": [
+      {
+        "pid": 83949,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 84258,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 86558,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-QHNWot",
+    "scratchAbsent": true,
+    "envDeletion": {
+      "at": "2026-10-07T07:35:05.731826+00:00",
+      "path": "/private/tmp/recovery-queue-owner-segment-klkcna10/admin.env",
+      "expectedIdentity": {
+        "device": 16777234,
+        "inode": 123629616,
+        "uid": 501,
+        "mode": "0600"
+      },
+      "valueReadDuringDeletion": false,
+      "deleted": true,
+      "errors": [],
+      "postLstat": "ENOENT"
+    },
+    "envDeletionReceiptSha256": "8a5740800e7bfe80a2944b1ff0f0d8502369681c7fb4bcff5691a566e4162e4d",
+    "rootFreshEnvAbsent": true
+  },
+  "remaining": [
+    "Queue promotion and actual Steer not covered by enqueue recovery.",
+    "SSE actual event delivery, full profile/knowledge/steering draft combination, second center/principal remain unverified.",
+    "Current original feature review IN_PROGRESS; no main/deployment or personal service acceptance."
+  ],
+  "workflow": "One owner finite-segment internal input and actual result; root independent review at completed selection, no manager per-run approval or transcription loop.",
+  "findings": []
+}

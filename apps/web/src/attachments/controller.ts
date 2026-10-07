@@ -1,5 +1,5 @@
 import {
-  ATTACHMENT_LIMITS, attachmentAcceptedSchema, attachmentCapabilitiesSchema, attachmentContentSchema,
+  ATTACHMENT_LIMITS, attachmentNameSchema, attachmentAcceptedSchema, attachmentCapabilitiesSchema, attachmentContentSchema,
   attachmentListQuerySchema, attachmentListSchema, attachmentReferenceKey, attachmentSelectionSchema,
   attachmentUploadSchema, assertAttachmentTextDigest, decodeAttachmentText,
   type AttachmentAccepted, type AttachmentCapabilities, type AttachmentContent, type AttachmentList,
@@ -42,6 +42,8 @@ export interface AttachmentInput {
   browse(query?: string, after?: string): Promise<void>;
   upload(file: File, id?: string, retry?: RecoveryIdentity): Promise<AttachmentItem>;
   select(resource: AttachmentMetadata): string; remove(id: string): void;
+  prepareRestore(values: readonly AttachmentItem[]): () => void;
+  restore(values: readonly AttachmentItem[]): void;
   preview(reference: AttachmentReference): Promise<void>;
   recover(key: string): Promise<void>; forgetRecovery(key: string): void;
   capture(input: { ids: readonly string[]; submissionId: string; intent: 'send' | 'queue'; text: string;
@@ -153,6 +155,10 @@ export function createAttachmentInput(options: {
         if (!current(generation, controller.signal)) return;
         const resources = page.resources.map(sameProject);
         if (new Set(resources.map(resource => attachmentReferenceKey(resource.reference))).size !== resources.length) throw Error('Duplicate attachment directory identity.');
+        for (const [id, item] of items) if (item.metadata && item.state === 'error') {
+          const exact = resources.find(resource => attachmentReferenceKey(resource.reference) === attachmentReferenceKey(item.metadata!.reference) && resource.name === item.metadata!.name && resource.mediaType === item.metadata!.mediaType && resource.byteLength === item.metadata!.byteLength);
+          if (exact) { try { items.set(id, immutableItem({ ...item, state: 'ready', metadata: readyResource(exact), error: undefined })); } catch { /* Expired or released versions remain visibly unavailable. */ } }
+        }
         publish({ page: Object.freeze(resources), nextCursor: page.nextCursor, loading: false });
       } catch (error) { if (!closed && epoch === generation && flights.get('list') === controller) publish({ loading: false, error: message(error) }); }
       finally { if (flights.get('list') === controller) flights.delete('list'); }
@@ -188,6 +194,18 @@ export function createAttachmentInput(options: {
       } finally { if (flights.get('upload') === controller) flights.delete('upload'); }
       return items.get(id) ?? immutableItem({ id, name: file.name, state: 'error', error: 'Attachment was removed or the view closed.' });
     },
+    prepareRestore(values) {
+      if (closed || items.size || values.length > 4) throw Error('Keep the current attachment draft before restoring another.');
+      const restored = values.map(item => {
+        if (!item || !idSchema.safeParse(item.id).success || !attachmentNameSchema.safeParse(item.name).success) throw Error('Invalid saved attachment identity.');
+        if (item.uploadKey !== undefined && (typeof item.uploadKey !== 'string' || !item.uploadKey || item.uploadKey.length > 128)) throw Error('Invalid saved upload key.');
+        const metadata = item.metadata ? sameProject(item.metadata) : undefined;
+        return immutableItem({ id: item.id, name: item.name, state: item.state === 'unknown' || item.state === 'uploading' ? 'unknown' as const : 'error' as const, ...(metadata ? { metadata } : {}), ...(item.uploadKey ? { uploadKey: item.uploadKey } : {}), error: metadata ? 'Restored file is unverified. Refresh the authorized directory to confirm this exact version before a new message.' : 'The original local file is not stored. Explicitly recover the upload or reselect the original file; nothing was uploaded automatically.' });
+      });
+      if (new Set(restored.map(item => item.id)).size !== restored.length) throw Error('Duplicate saved attachment item.');
+      return () => { restored.forEach(item => items.set(item.id, item)); publish(); };
+    },
+    restore(values) { this.prepareRestore(values)(); },
     select(resource) {
       requireRead(); if (!capabilities) throw Error('Read this project directory before selecting an attachment.');
       const knownResource = known(resource.reference);

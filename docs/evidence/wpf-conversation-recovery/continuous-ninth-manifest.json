@@ -1,0 +1,212 @@
+{
+  "at": "2026-10-07 08:57:10 UTC",
+  "run": "reccomplete-20261007-085326-1e2645",
+  "state": "FAILED_TEST_RECEIPT_IDENTITY_LOOKUP_WITH_OWNED_CLEANUP",
+  "executionHead": "ad4a91380d045efdcc68506a041c052382a4d03c",
+  "sourceTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "rawFiles": [
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/browser.json",
+      "bytes": 19482,
+      "sha256": "327fd00dd6c3c585990ad1ae6b65aeaabe486bda8137b60209fb505da553697f"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/budget.json",
+      "bytes": 234,
+      "sha256": "4940887022248e1e56de418cd37f217ae2acf98ed1bb54ea5222cbeb326ce7ea"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "31aa8a3d0b9146011a84487a39316c3446a3c9f96f4b65f66a4570eefbb80a0f"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/database-owner.json",
+      "bytes": 164,
+      "sha256": "9479cf3d0b875432e44c7d972429a08067c9976c9d108fdeb176c4289a07c9f6"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "76278471c34867108e264f2e540873e5d204ca2a0b7f42e598abe4abd432594a"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/launch-config.json",
+      "bytes": 1215,
+      "sha256": "9b758ae5b64cb9011831798352dd3782d33a5abaae8c931a71d7ea39c9113d8d"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/process-owner.json",
+      "bytes": 29,
+      "sha256": "d2029ab1c9a290807fd9233bbc9e8f17e0efdf71ac9894da9281ba58ebb5060c"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/process.log",
+      "bytes": 6063,
+      "sha256": "502947082bf9e19fdac49c497ab4acd462e39aa5a4a8c7e8f134a4e82e9e1ab0"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "1aa974ee6c21c113f0065d4c171c3c49ca9317bce7755ae8583120a930c06b50"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/sources.json",
+      "bytes": 2432,
+      "sha256": "2b59e68ef1b3a9c5b169ca9a6b31461da2b3223eccb72c7a8c996bc2cbc19ad7"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-085326-1e2645/supervisor.json",
+      "bytes": 2699,
+      "sha256": "62ad3f7ee0ccc073ac3d6dcd6a17b790889a0daefad8360852cdafbcf0852fe2"
+    }
+  ],
+  "originals": [
+    {
+      "path": "continuous-ninth-parent/admission.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/admission.json",
+      "bytes": 4082,
+      "sha256": "d7ca8f2999f0df322fbfa6500988964cc102d8cc3d11abf26c97ef749f6f627c"
+    },
+    {
+      "path": "continuous-ninth-parent/gate.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/gate.json",
+      "bytes": 2914,
+      "sha256": "c27810c426e620807318f127396e117ca0482ca318b06c719a70407f48d10cb7"
+    },
+    {
+      "path": "continuous-ninth-parent/start.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/start.json",
+      "bytes": 717,
+      "sha256": "895caa9b4163d003384c95c49143c6cef73f45b58f678bad8c4168c3ceb32972"
+    },
+    {
+      "path": "continuous-ninth-parent/parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/parent.stdout.jsonl",
+      "bytes": 829,
+      "sha256": "9dddab8f12c846deab4a76760f98eb1df9cf206ddce9f4b542f4e7fc35cd2a50"
+    },
+    {
+      "path": "continuous-ninth-parent/parent.stderr.log",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "continuous-ninth-parent/actual-exit.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/actual-exit.json",
+      "bytes": 458,
+      "sha256": "62f8a3a41b2ef07d82e1bd1580c44dc0a522a88d0e4b51fdff804cb64afcc542"
+    },
+    {
+      "path": "continuous-ninth-parent/post-cleanup-observation.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/post-cleanup-observation.json",
+      "bytes": 499,
+      "sha256": "3b7db5203588e5bd746766e7ed7752daecfc7464dc7977b7ff6f880e45df434f"
+    },
+    {
+      "path": "continuous-ninth-parent/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/admin-env-deletion-receipt.json",
+      "bytes": 293,
+      "sha256": "af25971175c902cfc5422a166a9293df4fe2675de9cc732545d0122c65a0d7cf"
+    },
+    {
+      "path": "continuous-ninth-parent/accounting.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/accounting.json",
+      "bytes": 307,
+      "sha256": "a6f10c4387fcff34c01814c968fc550eb6477a18403f5bac87cb17e80a2a17e7"
+    },
+    {
+      "path": "continuous-ninth-parent/raw-index.json",
+      "original": "/private/tmp/recovery-complete-retry-owner-6tv8427e/raw-index.json",
+      "bytes": 6008,
+      "sha256": "3bf26a5cc9ffc45b2093e893188c70376d43004f0e3ed43884482590f6021f47"
+    }
+  ],
+  "previousRaw": {
+    "count": 144,
+    "unchangedFrom": "ad4a91380d045efdcc68506a041c052382a4d03c"
+  },
+  "selection": {
+    "journey": "complete-draft",
+    "required": [
+      "cookieRead",
+      "completeDraft"
+    ],
+    "completed": [
+      "cookieRead"
+    ],
+    "selectedPassed": false,
+    "fullJourneyPassed": false,
+    "fullFeaturePassed": false
+  },
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8550.147792,
+    "elapsedMs": 8550.147792
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8550.214667,
+      "endedOffsetMs": 9568.415084,
+      "elapsedMs": 1018.200417,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "completeDraft",
+      "startedOffsetMs": 9568.433792,
+      "endedOffsetMs": 16596.245791999998,
+      "elapsedMs": 7027.811999999998,
+      "outcome": "FAILED"
+    }
+  ],
+  "accounting": {
+    "run": "reccomplete-20261007-085326-1e2645",
+    "previousSpentMs": 96678,
+    "chargeMs": 17976,
+    "spentMs": 114654,
+    "remainingMs": 35346,
+    "outerMs": 17975.395667017438,
+    "lateParentMs": 17390.568917,
+    "serializedParentMs": 17377.452042,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "actual": "continuous-ninth-parent/actual-exit.json",
+  "cleanup": "continuous-ninth-parent/post-cleanup-observation.json",
+  "envDeletion": "continuous-ninth-parent/admin-env-deletion-receipt.json",
+  "progressBeforeFailure": {
+    "preparedPostCount": 1,
+    "restoredPostCount": 1,
+    "savedRecordId": "draft:4b64e03f-10b8-40fc-9af2-c074a3be5046",
+    "verificationOrder": [
+      "later.txt",
+      "saved.txt",
+      "knowledge"
+    ],
+    "turnResponseStatus": 202,
+    "turnWireKey": "83d2f93a-1036-47c4-b783-b372e60f32f5:turn",
+    "conversationId": "4c5d97e3-90b9-4e6b-9b74-1e4fddf21a30",
+    "turnId": "1e786b1d-d82d-4cc6-86e9-ff505efaac92",
+    "taskId": "451a301a-fcb9-4618-a659-fff1573ba539",
+    "knowledgeCount": 1,
+    "attachmentCount": 2
+  },
+  "failure": {
+    "message": "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"accepted\"\nReceived: undefined\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+    "staticCause": "test compared journal record.id (receipt UUID) with HTTP frozen turnKey (UUID:turn)",
+    "fixTarget": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+    "scope": "Test lookup only; exactly one outbox by frozen.turnKey, then accepted/frozen request/checkpoint assertions"
+  },
+  "independentReview": {
+    "path": "continuous-ninth-root-review.json",
+    "sha256": "c72060afb1541f4336d1d1275bb57b8adae4f715ea80a5d21b22eba669ff5578",
+    "decision": "FAILED_ACTUAL_CLEANUP_VERIFIED_ROUTINE_TEST_FIX_REVIEWED"
+  },
+  "limits": [
+    "202 wire is actual evidence, but subsequent accepted-journal/profile/next-draft assertions did not run to completion",
+    "No screenshot or failed-page DOM capture in this selected fixture",
+    "Not a product failure or whole selected/feature PASS"
+  ]
+}

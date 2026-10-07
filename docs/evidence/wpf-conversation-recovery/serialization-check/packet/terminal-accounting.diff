@@ -1,0 +1,46 @@
+--- run-before-stdout-accounting.py.txt
++++ run.py
+@@ -19,19 +19,28 @@
+ RAW = BASE / 'raw'
+ BINDING = BASE / 'binding.json'
+ PROFILE = BASE / 'sandbox.sb'
+-STOP = {'signal': None, 'cleanupComplete': False}
++STOP = {'signal': None, 'cleanupComplete': False, 'lateReporting': False}
++STDOUT_BYTES = 0
++TERMINAL_CAPTURE_RESERVE = 16384  # At most one normal and one handled-late terminal line.
+ 
+ 
+ def emit(value):
++    global STDOUT_BYTES
+     data = (json.dumps(value, separators=(',', ':')) + '\n').encode()
+     if len(data) > 8192:
+         data = b'{"state":"FAIL","reason":"terminal stdout limit"}\n'
+-    os.write(1, data)
++    written = os.write(1, data)
++    STDOUT_BYTES += written
++    if written != len(data):
++        raise OSError('Incomplete terminal stdout write')
+ 
+ 
+ def soft_stop(signum, _frame):
+     STOP['signal'] = STOP['signal'] or signum
+     if STOP['cleanupComplete']:
++        if STOP['lateReporting']:
++            return
++        STOP['lateReporting'] = True
+         # A handled late signal overrides an earlier result, including after stdout.
+         terminal = {'state': 'FAIL', 'reason': 'LATE_SOFT_STOP', 'signal': signum,
+                     'elapsedMs': (time.monotonic() - START) * 1000}
+@@ -267,8 +276,11 @@
+     result.write_text(json.dumps(report, indent=2) + '\n')
+     final = {'state': report['state'], 'result': str(result), 'cleanup': report['cleanup'],
+              'tmpBytes': logical_bytes(BASE), 'rawBytes': logical_bytes(RAW),
++             'stdoutBytesAlreadyWritten': STDOUT_BYTES, 'terminalCaptureReserveBytes': TERMINAL_CAPTURE_RESERVE,
+              'elapsedMs': (time.monotonic() - START) * 1000, 'softStopSignal': STOP['signal']}
+-    if final['tmpBytes'] > limits['tmpBytes'] or final['rawBytes'] > limits['rawBytes'] or final['elapsedMs'] > limits['totalMs']:
++    final['rawBytesIncludingTerminalReserve'] = final['rawBytes'] + STDOUT_BYTES + TERMINAL_CAPTURE_RESERVE
++    final['tmpBytesIncludingTerminalReserve'] = final['tmpBytes'] + STDOUT_BYTES + TERMINAL_CAPTURE_RESERVE
++    if final['tmpBytesIncludingTerminalReserve'] > limits['tmpBytes'] or final['rawBytesIncludingTerminalReserve'] > limits['rawBytes'] or final['elapsedMs'] > limits['totalMs']:
+         final['state'] = 'FAIL'
+         final['reason'] = 'POST_WRITE_LIMIT'
+     emit(final)

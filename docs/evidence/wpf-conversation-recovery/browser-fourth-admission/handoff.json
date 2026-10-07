@@ -1,0 +1,39 @@
+{
+  "createdAt": "2026-10-07T04:59:12.543262+00:00",
+  "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+  "gateSha256": "01ed9074f83fe9c127695d9ae5a13821adb9659eedfd810f6c23ee1a6711f7ea",
+  "expiresAt": "2026-10-07T05:05:12.543262+00:00",
+  "run": "rec9835-20261007-045912-724895",
+  "expectedRunDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895",
+  "adminEnv": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
+  "adminEnvIdentity": {
+    "device": 16777234,
+    "inode": 123504210,
+    "mode": "0o600",
+    "uid": 501
+  },
+  "directoryMode": "0700",
+  "secretValuesRecorded": false,
+  "inputSource": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts line185; approved isolated test admin endpoint",
+  "cleanupResponsibility": "d01_owner after actual terminal removes only this exact env with dev/inode/mode check; retain gate/observation/evidence. If not launched/expired, report and remove env, never reuse.",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "admissionObservation": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admission-observation.json",
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "noManagerProductLaunch": true
+}

@@ -1,0 +1,34 @@
+{
+  "allowRun": true,
+  "mode": "recovery-direct",
+  "taskId": "WPF-RECOVERY01",
+  "singleUse": true,
+  "run": "recovery50-20261006-202206-1188c7",
+  "expiresAt": "2026-10-06T20:25:06.444427+00:00",
+  "bindingSha256": "d8d9695334341730d2bccbc09757c9f509e184ee3c59e83bdd73249569fd05f0",
+  "runnerSha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7",
+  "sandboxSha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046",
+  "sourceHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21,
+    "worker": "workspace_panels_owner"
+  },
+  "overlaps": [],
+  "previousRuntimeMs": 6868,
+  "limits": {
+    "totalSeconds": 23.132,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "admissionFreeBytes": 1307049984,
+  "claimObservedAt": "2026-10-06T20:21:32.662Z"
+}

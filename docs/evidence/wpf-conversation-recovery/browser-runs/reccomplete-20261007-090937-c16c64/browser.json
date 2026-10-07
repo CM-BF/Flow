@@ -1,0 +1,536 @@
+{
+  "journey": "complete-draft",
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "prepared profile/project and complete draft survive re-auth/restore; explicit verification preserves first-turn material identity"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7231.094292000001,
+    "elapsedMs": 7231.094292000001
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7231.164417,
+      "endedOffsetMs": 8220.269792,
+      "elapsedMs": 989.1053750000001,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "completeDraft",
+      "startedOffsetMs": 8220.289042,
+      "endedOffsetMs": 10481.753499999999,
+      "elapsedMs": 2261.4644579999986,
+      "outcome": "PASSED"
+    }
+  ],
+  "pageErrors": [],
+  "failure": null,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fb4b577a-5383-48b7-98d8-0b98f82ef522/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fb4b577a-5383-48b7-98d8-0b98f82ef522",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/fb4b577a-5383-48b7-98d8-0b98f82ef522/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "24b8b475-0746-4f76-a1da-04f03f063699:create",
+      "body": "{\"title\":\"Complete recovery draft 中文🙂\",\"harness\":\"claude\",\"executionProfile\":{\"id\":\"7dad758d-3d33-46f1-8f59-c181922b4f24\",\"runnerId\":\"97fc0f7c-b9c0-4c0b-b29e-50ac40099c9a\",\"configDigest\":\"3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45\"},\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"requested\":{\"model\":\"recovery-complete-draft\",\"thinking\":\"disabled\",\"tools\":\"none\"}}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"id\":\"9e02969c-c0ac-4a67-b6cc-bc6608426d1d\",\"title\":\"Complete recovery draft 中文🙂\",\"harness\":\"claude\",\"requested\":{\"model\":\"recovery-complete-draft\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"executionProfile\":{\"id\":\"7dad758d-3d33-46f1-8f59-c181922b4f24\",\"runnerId\":\"97fc0f7c-b9c0-4c0b-b29e-50ac40099c9a\",\"configDigest\":\"3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45\"},\"revision\":0,\"createdAt\":\"2026-10-07T09:10:09.964Z\",\"updatedAt\":\"2026-10-07T09:10:09.964Z\"},\"capabilities\":{\"attachmentContext\":false,\"knowledgeContext\":true,\"followUp\":true,\"queue\":true,\"steer\":false,\"liveAssistantText\":false,\"perTurnModel\":false,\"perTurnThinking\":false,\"perTurnTools\":false},\"replayed\":false}",
+      "responseSha256": "363880ec7d2ea084cf5f817cf7a1d5fa067de5df45bbec7f8b79627d8dbf99e1"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/knowledge/search?q=recoverycomplete&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": true,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/attachments?limit=20&q=later.txt",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/attachments?limit=20&q=saved.txt",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/17d395ad-4b7b-44b5-b90e-62d5e9907396/knowledge/search?q=recoverycomplete&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/9e02969c-c0ac-4a67-b6cc-bc6608426d1d/turns",
+      "key": "542063e8-0ecd-4a70-9415-6870e549e333:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Complete recovery draft 中文🙂\",\"mode\":\"follow-up\",\"knowledge\":[{\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"sourceId\":\"3b9963b8-3325-40fb-90fe-56942184f3ec\",\"version\":1,\"contentDigest\":\"4bafae7a1e90814c2f15c6f5e57e6c0a1f6c75d8d14a86142aed8fe555118e80\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":37}}],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"resourceId\":\"40a60e78-89b8-493a-a932-87e2c947191d\",\"version\":1,\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},{\"kind\":\"upload\",\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"resourceId\":\"bdd0b37e-8b8f-43db-971d-3eebd6b5a651\",\"version\":1,\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"}]}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"id\":\"9e02969c-c0ac-4a67-b6cc-bc6608426d1d\",\"title\":\"Complete recovery draft 中文🙂\",\"harness\":\"claude\",\"requested\":{\"model\":\"recovery-complete-draft\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"executionProfile\":{\"id\":\"7dad758d-3d33-46f1-8f59-c181922b4f24\",\"runnerId\":\"97fc0f7c-b9c0-4c0b-b29e-50ac40099c9a\",\"configDigest\":\"3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45\"},\"revision\":1,\"createdAt\":\"2026-10-07T09:10:09.964Z\",\"updatedAt\":\"2026-10-07T09:10:11.534Z\"},\"turn\":{\"id\":\"06e4eeab-dc72-43dd-b0d6-ed89f7f169c3\",\"conversationId\":\"9e02969c-c0ac-4a67-b6cc-bc6608426d1d\",\"number\":1,\"createdAt\":\"2026-10-07T09:10:11.534Z\",\"context\":{\"id\":\"ea8cd999-a5f1-471c-896e-6b0e95fdb17a\",\"contextDigest\":\"d2b23eef05cac6da3a337e85afc2a5288e296aebee4818ef35d8b22f94db1502\",\"executionInputId\":\"8c1da85a-5865-45bc-a9a6-611d78dcf976\",\"executionInputDigest\":\"23781f051eb826a32329cda863f36435a9a90bd72c63878994276e42767ed1cf\",\"templateVersion\":2,\"order\":\"knowledge-then-attachments\",\"sources\":[{\"citation\":{\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"sourceId\":\"3b9963b8-3325-40fb-90fe-56942184f3ec\",\"version\":1,\"contentDigest\":\"4bafae7a1e90814c2f15c6f5e57e6c0a1f6c75d8d14a86142aed8fe555118e80\",\"locator\":{\"kind\":\"utf8-bytes\",\"start\":0,\"end\":37}},\"byteLength\":37,\"currentVersionAtFreeze\":1,\"isCurrentAtFreeze\":true}],\"attachments\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"resourceId\":\"40a60e78-89b8-493a-a932-87e2c947191d\",\"version\":1,\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},\"name\":\"saved.txt\",\"mediaType\":\"text/plain\",\"byteLength\":25},{\"reference\":{\"kind\":\"upload\",\"projectId\":\"17d395ad-4b7b-44b5-b90e-62d5e9907396\",\"resourceId\":\"bdd0b37e-8b8f-43db-971d-3eebd6b5a651\",\"version\":1,\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"},\"name\":\"later.txt\",\"mediaType\":\"text/plain\",\"byteLength\":23}]},\"user\":{\"role\":\"user\",\"text\":\"Complete recovery draft 中文🙂\"},\"task\":{\"id\":\"ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829\",\"title\":\"Complete recovery draft 中文🙂\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-07T09:10:11.528Z\",\"updatedAt\":\"2026-10-07T09:10:11.528Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "responseSha256": "7b9ec65749278cb5a925cb2a48932789fa6b343de63b760cbb535160e4dd4a00"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "PASSED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PARTIAL: prepared profile/project, knowledge and two files; steering draft is not covered",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": {
+      "id": "7dad758d-3d33-46f1-8f59-c181922b4f24",
+      "runnerId": "97fc0f7c-b9c0-4c0b-b29e-50ac40099c9a",
+      "configDigest": "3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45"
+    },
+    "knowledge": {
+      "projectId": "17d395ad-4b7b-44b5-b90e-62d5e9907396",
+      "sourceId": "3b9963b8-3325-40fb-90fe-56942184f3ec",
+      "version": 1,
+      "contentDigest": "4bafae7a1e90814c2f15c6f5e57e6c0a1f6c75d8d14a86142aed8fe555118e80",
+      "locator": {
+        "kind": "utf8-bytes",
+        "start": 0,
+        "end": 37
+      }
+    },
+    "savedRecordId": "draft:745317ec-7945-47a6-ab9c-215b64a10dc6",
+    "conversationId": "9e02969c-c0ac-4a67-b6cc-bc6608426d1d",
+    "preparedPostCount": 1,
+    "restoredPostCount": 1,
+    "verificationOrder": [
+      "later.txt",
+      "saved.txt",
+      "knowledge"
+    ],
+    "turnId": "06e4eeab-dc72-43dd-b0d6-ed89f7f169c3",
+    "taskId": "ccf5e79f-c3aa-4c94-a9ca-e0acf8a2e829"
+  }
+}

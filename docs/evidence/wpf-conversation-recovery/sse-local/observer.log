@@ -1,0 +1,20 @@
+✔ UTF-8 and CRLF may split at every byte; original frame identity remains intact (1.785917ms)
+✔ passive listener preserves piped bytes and backpressure without consuming another stream (3.305125ms)
+✔ comments and LF/CR/mixed line endings remain bounded complete frames (0.239916ms)
+✔ invalid UTF-8 fails closed and removes only observer listeners (0.120625ms)
+✔ incomplete UTF-8 fails closed and removes only observer listeners (0.097375ms)
+✔ incomplete frame fails closed and removes only observer listeners (0.080292ms)
+✔ invalid JSON fails closed and removes only observer listeners (0.112917ms)
+✔ wrong task fails closed and removes only observer listeners (4.826125ms)
+✔ fifth frame fails closed and removes only observer listeners (0.53375ms)
+✔ input bound fails closed and removes only observer listeners (0.165458ms)
+✔ abort and a second connection cannot turn the original observation into success (0.665833ms)
+✔ natural close of a partial frame is not treated as a complete witness (0.380334ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 217.107542

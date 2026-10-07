@@ -1,0 +1,59 @@
+import os,sys,json,time,signal,subprocess,pathlib,shutil,hashlib,datetime
+base=pathlib.Path(__file__).resolve().parent
+p=json.loads((base/'preflight.json').read_text());root=pathlib.Path(p['worktree']); evidence=root/'docs/evidence/wpf-conversation-recovery';limits=p['limits'];run=base/'run-1';run.mkdir(exist_ok=False)
+def free():
+ v=os.statvfs(root);return v.f_bavail*v.f_frsize
+def size():return sum(f.stat().st_size for f in base.rglob('*') if f.is_file() and not f.is_symlink())
+report={'fixed':p['fixed'],'sourceHashes':p['sourceHashes'],'command':p['command'],'configSha256':p['configSha256'],'sandboxSha256':p['sandboxSha256'],'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'kind':'controlled IDB event port and public-client mock fetch; no browser/PG/HTTP','limits':limits,'cleanup':None,'samples':[]}
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=root,text=True).strip()==p['fixed']
+assert hashlib.sha256((base/'config.mjs').read_bytes()).hexdigest()==p['configSha256']
+assert hashlib.sha256((base/'sandbox.sb').read_bytes()).hexdigest()==p['sandboxSha256']
+for name,digest in p['sourceHashes'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
+available=free();report['initialFreeBytes']=available
+if available<limits['startFreeBytes']:
+ report.update(state='NOT_STARTED_RESOURCE',elapsedSeconds=0);(base/'result.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'state':report['state'],'free':available}));sys.exit(2)
+env={k:v for k,v in os.environ.items() if not k.startswith(('FLOW_','PG','POSTGRES_')) and k not in ('DATABASE_URL','NODE_OPTIONS')}
+for k in ('TMPDIR','XDG_CACHE_HOME','VITEST_CACHE_DIR'):env[k]=str(run)
+env.update({'NODE_DISABLE_COMPILE_CACHE':'1','TSX_DISABLE_CACHE':'1','NO_COLOR':'1'})
+start=time.monotonic();reason=None;process=None;cleanup_errors=[]
+try:
+ with (base/'direct.log').open('wb') as log:
+  process=subprocess.Popen(p['command'],cwd=root,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+  report['pgid']=process.pid
+  while process.poll() is None:
+   elapsed=time.monotonic()-start
+   try:
+    available=free();used=size();report['samples'].append({'seconds':round(elapsed,3),'freeBytes':available,'tmpBytes':used})
+    if available<=limits['stopFreeBytes']:reason='FREE_SPACE_STOP'
+    if used>limits['maxTmpBytes'] or (base/'direct.log').stat().st_size>limits['maxLogBytes']:reason='OUTPUT_LIMIT_STOP'
+   except Exception as error:reason='MONITOR_ERROR';report['monitorError']=str(error)
+   if elapsed>=limits['maxWorkSeconds']:reason='TIME_LIMIT_STOP'
+   if reason:break
+   time.sleep(0.5)
+except Exception as error:reason='START_ERROR';report['error']=str(error)
+finally:
+ cleanup_start=time.monotonic()
+ if process:
+  try:os.killpg(process.pid,signal.SIGTERM)
+  except ProcessLookupError:pass
+  try:process.wait(timeout=2)
+  except subprocess.TimeoutExpired:
+   try:os.killpg(process.pid,signal.SIGKILL)
+   except ProcessLookupError:pass
+   try:process.wait(timeout=2)
+   except Exception as error:cleanup_errors.append(str(error))
+  try:os.killpg(process.pid,signal.SIGKILL)
+  except ProcessLookupError:pass
+  report['exitCode']=process.returncode
+ report['tmpBytesBeforeCleanup']=size()
+ for directory in (run,base/'cache'):
+  try:shutil.rmtree(directory)
+  except FileNotFoundError:pass
+  except Exception as error:cleanup_errors.append(str(error))
+ report['cleanup']={'state':'fulfilled' if not cleanup_errors else 'failed','seconds':round(time.monotonic()-cleanup_start,3),'errors':cleanup_errors,'reservedSeconds':5,'onlyOwnPgid':True,'onlyOwnTmpCache':True}
+ report['elapsedSeconds']=round(time.monotonic()-start,3);report['state']=reason or ('PASS' if process and process.returncode==0 and not cleanup_errors else 'FAIL');report['finalFreeBytes']=free();report['finishedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();report['rawBytes']=(base/'direct.log').stat().st_size if (base/'direct.log').exists() else 0
+ (base/'result.json').write_text(json.dumps(report,indent=2)+'\n')
+ for source,name in [('preflight.json','direct-preflight.json'),('config.mjs','direct-config.txt'),('sandbox.sb','direct-sandbox.txt'),('run.py','direct-runner.txt'),('direct.log','direct-first.log'),('result.json','direct-first.json')]:
+  if (base/source).exists():shutil.copyfile(base/source,evidence/name)
+print(json.dumps({key:report.get(key) for key in ('fixed','state','exitCode','elapsedSeconds','tmpBytesBeforeCleanup','initialFreeBytes','finalFreeBytes','cleanup')}))
+if (base/'direct.log').exists():print((base/'direct.log').read_text()[-12000:])

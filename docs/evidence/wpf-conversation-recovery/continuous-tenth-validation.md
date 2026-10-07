@@ -1,0 +1,11 @@
+# Complete draft selected2 — actual PASS, whole feature open
+
+Execution `7fb3947d30764ae9da1de9b512ff36c51734ba2a` / source `2e7203ea01eb069a9d5e6f24e8ce9e1640c83112` / run `reccomplete-20261007-090937-c16c64`. [Raw/hash manifest](continuous-tenth-manifest.json), [terminal](continuous-tenth-parent/actual-exit.json), [exact cleanup](continuous-tenth-parent/post-cleanup-observation.json).
+
+Both cookieRead and completeDraft completed. Actual public profile/project selection and Prepare CREATE preceded knowledge/file input. Real persisted draft restored the original text, queue intent, configured profile identity, project, citation and two ordered files after session expiry/re-auth. Restore produced no extra business POST (baseline1) or body prefetch. Revalidating files B→A preserved frozen A/B order; unverified knowledge blocked Send without a POST. Explicit knowledge search then the first turn carried exact original citation/files, and the unique frozen.turnKey receipt reached accepted with matching request and conversation/turn/task checkpoint. Locked profile identifiers and material-free independent next draft passed. Two earlier completeDraft FAILs remain unchanged.
+
+Outerexit0/dualEOF/outererrors[]; outer11792.84358303994ms, late11181.214666ms, serialized11168.190875ms. Charge11793→new150s spent126447/rem23553. Initialization7231.094292000001ms; groups have independent monotonic timings in manifest. No timing improvement claim across failed stages.
+
+MarkedDB0conn normalDROP/remaining[]; fixturecomplete/0provider; exact parent37753/worker38285/Chrome38307 PID+PGID ESRCH; scratch and adminenv exactidentity removal confirmed09:10:28.080735Z. Resources were immediately returned to manager/root before metadata. One synthetic profile publisher exists only in the owned temporary DB; no runner process/claim/heartbeat/native/provider.
+
+No screenshot is produced by this selected journey; old full7 dual390 pictures remain original evidence. Steer/steering draft, second center/principal isolation and assistant patch streams are not covered. Complete feature remains IN_PROGRESS. Remaining23553ms is below unchanged parent minimum30000ms: no new launch or budget increase implied. [Root independent actual review](continuous-tenth-root-review.json) accepted the selected two groups and owned cleanup; no whole-feature approval.

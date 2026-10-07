@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07 08:44:43 UTC",
+  "state": "LOCATOR_FIXED_READY_AWAIT_BROWSER_HANDBACK",
+  "source": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "parentWorkerEntry": "apps/web/test/conversation-recovery.browser.ts",
+  "fixture": "apps/web/test/conversation-recovery.fixture.ts",
+  "journey": "complete-draft",
+  "requiredGroups": [
+    "cookieRead",
+    "completeDraft"
+  ],
+  "executionMetadataHead": "Final seal HEAD supplied by actual Git receipt; this preparation does not create a gate",
+  "actorBoundary": "One public synthetic profile publisher in original markedDB; zero runner processes/claims/heartbeats/native/provider",
+  "budget": {
+    "segmentTotalMs": 150000,
+    "spentMs": 96678,
+    "remainingMs": 53322,
+    "perAttemptMaxMs": 53322,
+    "cleanupReserveMs": 15000,
+    "scratchMaxBytes": 67108864,
+    "retainedMaxBytes": 9437184,
+    "startRetainedMaxBytes": 4194304,
+    "perRunReserveBytes": 5242880,
+    "existingCombinedFreshFloorBytes": 4054056960
+  },
+  "requiresActualBeforeLaunch": [
+    "Explicit unique shared-PG and Chrome handback; fresh compatible concurrent budgets",
+    "Current exact21 claim, branch/HEAD/clean and source/dependency pins",
+    "Fresh disk resource observation, new unique run input, 0600 admin env from approved fixed test endpoint; never output its value",
+    "Original parent/outer collector, owned group/DB/scratch/env cleanup and conservative max elapsed charge"
+  ],
+  "currentRuntimeHolder": "DPERF owns browser by root 08:41:34 actual start; Recovery source-only until actual handback",
+  "existingPassedChecksNotRepeated": [
+    "full7",
+    "choice",
+    "CREATE two fault points",
+    "queue enqueue",
+    "task SSE delivery",
+    "50 controlled",
+    "12 observer"
+  ],
+  "sourceCheckpoint": "complete-draft-locator-checkpoint.json",
+  "failedAttempt": "continuous-eighth-manifest.json"
+}

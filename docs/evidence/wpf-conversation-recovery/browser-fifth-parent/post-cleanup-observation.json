@@ -1,0 +1,207 @@
+{
+  "observedAt": "2026-10-07T05:35:11.312269+00:00",
+  "actualExit": {
+    "exitCode": 1,
+    "outerElapsedMs": 9881.697250064462,
+    "endedAt": "2026-10-07T05:34:54.743600+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 749,
+    "stderrBytes": 0,
+    "parentPid": 30276,
+    "run": "recpageauth-20261007-053300-ca1a91"
+  },
+  "groups": [
+    {
+      "pgid": 30289,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "pgid": 30305,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "scratchPath": "/private/tmp/flow-recovery-browser-gMWFFQ",
+  "scratchExists": false,
+  "parentReported": {
+    "passed": false,
+    "selectedPassed": false,
+    "fullJourneyPassed": false,
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "owned": null,
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true,
+    "errors": [
+      "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+      "The selected journey did not complete every required group"
+    ],
+    "cleanupErrors": []
+  },
+  "browser": {
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "checks": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+    ],
+    "failure": "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+    "pageErrors": [],
+    "cleanupErrors": [],
+    "coverage": {
+      "cookieRead": "PASSED",
+      "cookieSseHandshake": "NOT_SELECTED",
+      "cookieSseDelivery": "PENDING: only handshake is asserted",
+      "textIntentDraft": "NOT_SELECTED",
+      "materialDraft": "NOT_SELECTED",
+      "sameKeyTurn": "NOT_SELECTED",
+      "crossTabCas": "NOT_SELECTED",
+      "pageOnlyAuthLoss": "FAILED",
+      "csrfOffline": "NOT_SELECTED",
+      "themes390": "NOT_SELECTED",
+      "createTwoStage": "PENDING: direct/source only",
+      "queueSteerRecovery": "PENDING: direct/source only",
+      "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+      "secondCenter": "PENDING: one-center fixture"
+    },
+    "initialization": {
+      "outcome": "PASSED",
+      "startedOffsetMs": 0,
+      "endedOffsetMs": 7608.943791,
+      "elapsedMs": 7608.943791
+    },
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 7609.007291,
+        "endedOffsetMs": 8638.868665999998,
+        "elapsedMs": 1029.8613749999995,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "pageOnlyAuthLoss",
+        "startedOffsetMs": 8638.884166,
+        "endedOffsetMs": 8784.291333000001,
+        "elapsedMs": 145.4071669999994,
+        "outcome": "FAILED"
+      }
+    ]
+  },
+  "databaseCleanup": {
+    "database": "flow_recovery_3624c0f3ac1040f99cf0c6071bb83d02",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.62354200000118,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.7894580000011047,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 19,
+    "wireBytes": 1271,
+    "providerQueries": 0
+  },
+  "budgetEarlier": {
+    "complete": true,
+    "cleanupComplete": true,
+    "journey": "page-auth",
+    "startedAt": "2026-10-07T05:34:45.076Z",
+    "priorMs": 54871.435167,
+    "permittedMs": 35116,
+    "cleanupReserveMs": 15000,
+    "elapsedMs": 9245.085125
+  },
+  "lateThisMs": 9250.887208,
+  "authoritativePriorMs": 54883.199542,
+  "lateCumulativeMs": 64134.08675,
+  "remainingLateMs": 25865.913249999998,
+  "raw": [
+    {
+      "path": "browser.json",
+      "bytes": 3558,
+      "sha256": "5c48f88ebd48d0752f3303f471f11efd7949bf970d325f07d5171ba608a2facb"
+    },
+    {
+      "path": "budget.json",
+      "bytes": 227,
+      "sha256": "9a36499bbdea736f9ee46f00d380556ed7ca8238832fa553d09ee7d5e3fc0b66"
+    },
+    {
+      "path": "database-cleanup.json",
+      "bytes": 514,
+      "sha256": "2754b28b469cc45773ecacff3b67699bb348b85be9de8cdcb564375f558c449d"
+    },
+    {
+      "path": "database-owner.json",
+      "bytes": 164,
+      "sha256": "5b9c9d89dd28dbabb3bcdcb7eeba1243aabff8cfea1e6ae007b81ee22bb37f1f"
+    },
+    {
+      "path": "fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "369aac6ac1b038df8352eacdba36c5572238c69cbc064b901bcf5bd59b8725aa"
+    },
+    {
+      "path": "launch-config.json",
+      "bytes": 1215,
+      "sha256": "e1de219d10ce90f6ebb1cd99e8203c3c9af9f63bcba4bbc0cf140fbc5ac6db2b"
+    },
+    {
+      "path": "process-owner.json",
+      "bytes": 29,
+      "sha256": "e70cf5c44c95fc832ba4cb1674e10b0758e1ac8c11356e6afb79d2433db85acb"
+    },
+    {
+      "path": "process.log",
+      "bytes": 3788,
+      "sha256": "5d8282face1dcd3bbdcb2106af5968bb3e71bc741299f02f5308bdf80b40f548"
+    },
+    {
+      "path": "scratch-owner.json",
+      "bytes": 114,
+      "sha256": "a90039652f104a47df34d178b6d3d0eab50b5c26ec0f81ffa283df5e7905df54"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2430,
+      "sha256": "327a0c17880a6635c7befbef9b6d7a19dc20d7f531a08a8cd2eee332ed938c1b"
+    },
+    {
+      "path": "supervisor.json",
+      "bytes": 2633,
+      "sha256": "aad62ffb39db5ee7487a5aa0496dbebb6749e07bd8fa1e46fbbfa8fdc1d28138"
+    }
+  ],
+  "pngCount": 0,
+  "limits": "Group ESRCH and scratch existence observed only for own IDs. Port teardown attributed to fixture.close receipt; no new HTTP/PG/port probe."
+}

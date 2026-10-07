@@ -1,0 +1,49 @@
+--- old/manifest.json
++++ current/manifest.json
+@@ -378,13 +378,13 @@
+       "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+       "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+       "bytes": 367696,
+-      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
++      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+     },
+     {
+       "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+       "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+       "bytes": 18856,
+-      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
++      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+     }
+   ],
+   "node": {
+@@ -398,9 +398,9 @@
+       "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+       "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+       "bytes": 18856,
+-      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
+-    },
+-    "version": "154.0.8037.98",
++      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
++    },
++    "version": "154.0.8037.99",
+     "noLaunch": true
+   },
+   "entry": {
+@@ -1041,5 +1041,16 @@
+   "windowReserved": false,
+   "projectChanges": false,
+   "issues": [],
+-  "dependencyBoundary": "Same explicit original runtime/public/package pins, no claim of complete transitive closure; no install, dependency restore, product import or probe"
++  "dependencyBoundary": "Same explicit original runtime/public/package pins, no claim of complete transitive closure; no install, dependency restore, product import or probe",
++  "runtimeRevision": {
++    "kind": "ROUTINE_SAME_INSTALLED_CHROME_PATCH",
++    "oldManifestSha256": "f5cd59ab7aa25d2154c9206c614cb619a8eb0c4c1c55fa0a742153bb4e9b4882",
++    "originalManifest": "before-chrome-154-99/manifest.json",
++    "oldVersion": "154.0.8037.98",
++    "newVersion": "154.0.8037.99",
++    "sourceAndParentUnchanged": true,
++    "provenance": "chrome-patch-provenance.json",
++    "rootAuthority": "Explicit sameboundary routineprovenance message; no newpermission/lifecycle/acceptance",
++    "cause": "UNKNOWN"
++  }
+ }

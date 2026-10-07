@@ -1,0 +1,58 @@
+{
+  "startedAt": "2026-10-07T07:58:54.711741+00:00",
+  "source": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "budgetMs": 20000,
+  "cleanupReserveMs": 5000,
+  "steps": [
+    {
+      "label": "observer",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-sse-local-8osx3_jp/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "--test",
+        "docs/evidence/wpf-conversation-recovery/sse-observer.check.ts"
+      ],
+      "pid": 9724,
+      "exitCode": 0,
+      "groupAbsent": true,
+      "elapsedMs": 327.30495801661164,
+      "logBytes": 1146,
+      "logSha256": "914609a8dbad67c2844259a20bfbff32fef10926f347823790bfd334b6626b4a"
+    },
+    {
+      "label": "types",
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/recovery-sse-local-8osx3_jp/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "apps/web/tsconfig.json"
+      ],
+      "pid": 9887,
+      "exitCode": 0,
+      "groupAbsent": true,
+      "elapsedMs": 5955.371750053018,
+      "logBytes": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "errors": [],
+  "PG": false,
+  "Chrome": false,
+  "HTTP": false,
+  "network": "sandbox denied",
+  "projectWrites": "sandbox denied",
+  "expectedObserverChecks": 12,
+  "startFreeBytes": 24184188928,
+  "tmpBytes": 4976,
+  "endFreeBytes": 24184397824,
+  "elapsedMs": 6283.637208980508,
+  "state": "PASS"
+}

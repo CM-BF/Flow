@@ -1,3 +1,5 @@
+import type { CommandRecord } from "../recovery/journal";
+import type { CompleteDraft } from "../recovery/binding";
 import { createContext, useContext, useLayoutEffect, useRef, useState, useSyncExternalStore, type ReactNode } from "react";
 import { steeringCommandSchema, type SteeringAdmission, type SteeringCommandInput, type SteeringCommandResult, type SteeringState } from "@flow/contracts";
 import { createSteeringControl, type SteeringControl as Control, type SteeringSnapshot } from "../conversation-steering/control";
@@ -26,7 +28,7 @@ export interface SteeringPorts {
 interface ViewBinding { viewId: string; projection: ConversationProjection; visible: boolean; unsubscribe: () => void }
 export interface SteeringEntry {
   readonly id: string; readonly identity: Readonly<SteeringIdentity>; control: Control;
-  open: boolean; visible: boolean; returnFocus?: HTMLElement;
+  open: boolean; visible: boolean; draft: string; returnFocus?: HTMLElement;
 }
 interface OwnedEntry extends SteeringEntry { raw: Control; unsubscribe: () => void; writable: boolean; current: boolean }
 interface PendingWrite { entry: OwnedEntry; input: SteeringCommandInput; key: string; signal: AbortSignal; error?: unknown }
@@ -104,13 +106,54 @@ export class SteeringWorkspace {
     entry.open = true; entry.returnFocus = returnFocus; this.sync(); this.publish();
     void entry.raw.refresh();
   }
+  hasRecovery() { return this.session.recovery.configured(); }
+  drafts(viewKey: string): CompleteDraft["steering"] { return [...this.entries.values()].filter(entry => entry.identity.viewKey === viewKey && entry.draft).map(entry => ({ taskId: entry.identity.taskId, turnId: entry.identity.turnId, messageId: entry.identity.messageId, text: entry.draft })); }
+  setDraft(id: string, text: string) { const entry = this.entries.get(id); if (!entry || entry.draft === text) return; entry.draft = text; this.publish(); this.session.recovery.changed(entry.identity.viewKey); }
+  configureRecovery() { if (this.session.recovery.configured()) for (const entry of this.entries.values()) entry.raw.configureRecovery(this.session.recovery.commandPort(entry.identity.viewKey)); }
+  private restoredIdentity(viewKey: string, taskId: string, turnId?: string, messageId?: string) {
+    const state = this.views.get(viewKey)?.projection.getSnapshot(), turn = state?.turns.find(item => item.task.id === taskId);
+    if (!turn || (turnId && turn.id !== turnId) || (messageId && userMessageId(turn) !== messageId)) throw Error("Load the original turn before restoring its steering material.");
+    const identity = this.identity(viewKey, userMessageId(turn)); if (!identity || !this.session.steeringAllowed(identity, "read")) throw Error("This turn is not authorized for recovery.");
+    return identity;
+  }
+  private restoredEntry(viewKey: string, taskId: string, turnId?: string, messageId?: string) {
+    const identity = this.restoredIdentity(viewKey, taskId, turnId, messageId);
+    const id = JSON.stringify(identity); let entry = this.entries.get(id);
+    if (!entry) { if (this.entries.size >= MAX_STEERING_BINDINGS) throw Error("Resolve an existing steering view before restoring another."); entry = this.createEntry(id, identity); this.entries.set(id, entry); }
+    return entry;
+  }
+  prepareRestoreDrafts(viewKey: string, drafts: CompleteDraft["steering"]) {
+    const values = drafts.map(draft => {
+      const identity = this.restoredIdentity(viewKey, draft.taskId, draft.turnId, draft.messageId), id = JSON.stringify(identity);
+      return { draft, identity, id, entry: this.entries.get(id) };
+    });
+    if (new Set(values.map(value => value.id)).size !== values.length) throw Error("Duplicate saved steering draft.");
+    if (values.some(({ entry }) => entry?.draft)) throw Error("Keep the current steering draft before restoring another.");
+    if (this.entries.size + values.filter(value => !value.entry).length > MAX_STEERING_BINDINGS) throw Error("Resolve an existing steering view before restoring another.");
+    return () => {
+      for (const value of values) {
+        const entry = value.entry ?? this.createEntry(value.id, value.identity);
+        this.entries.set(value.id, entry); entry.draft = value.draft.text;
+      }
+      this.publish();
+    };
+  }
+  restoreDrafts(viewKey: string, drafts: CompleteDraft["steering"]) { this.prepareRestoreDrafts(viewKey, drafts)(); }
+  restoreReceipt(viewKey: string, record: CommandRecord) {
+    const value = record.frozen; if (!value || typeof value !== "object" || Array.isArray(value) || !("taskId" in value) || typeof value.taskId !== "string") throw Error("Invalid steering target.");
+    const entry = this.restoredEntry(viewKey, value.taskId);
+    entry.raw.restore(record);
+    entry.open = true; this.sync(); this.publish();
+  }
+  retryReceipt(viewKey: string, id: string) { const entry = [...this.entries.values()].find(value => value.identity.viewKey === viewKey && value.raw.getSnapshot().receipts.some(receipt => receipt.key === id)); if (!entry || !entry.control.retry(id)) throw Error("Open the authorized original steering receipt before retrying."); }
   private createEntry(id: string, identity: Readonly<SteeringIdentity>): OwnedEntry {
-    const entry = { id, identity, open: false, visible: false, writable: false, current: false } as OwnedEntry;
+    const entry = { id, identity, draft: "", open: false, visible: false, writable: false, current: false } as OwnedEntry;
     entry.raw = createSteeringControl({ connectionScope: identity.connectionScope, taskId: identity.taskId }, {
       admission: (options, signal) => this.read(entry, signal, bound => this.session.steeringAdmission(identity, options, bound)),
       state: (options, signal) => this.read(entry, signal, bound => this.session.steeringState(identity, options, bound)),
       accept: (input, key, signal) => this.dispatch(entry, input, key, signal),
     });
+    if (this.session.recovery.configured()) entry.raw.configureRecovery(this.session.recovery.commandPort(identity.viewKey));
     let previous: SteeringSnapshot | undefined, cached: SteeringSnapshot | undefined, reason: string | undefined;
     entry.control = {
       getSnapshot: () => {
@@ -120,7 +163,14 @@ export class SteeringWorkspace {
         return cached!;
       },
       subscribe: entry.raw.subscribe,
-      submit: text => this.permission(entry, "write") && this.isCurrent(identity) ? entry.raw.submit(text) : Promise.resolve(false),
+      configureRecovery: recovery => entry.raw.configureRecovery(recovery), restore: record => entry.raw.restore(record),
+      submit: async text => {
+        if (!this.permission(entry, "write") || !this.isCurrent(identity)) return false;
+        if (this.session.recovery.configured()) this.session.recovery.beginHandoff(identity.viewKey, "steering", identity.taskId);
+        const handedOff = await entry.raw.submit(text);
+        if (!handedOff && this.session.recovery.configured()) this.session.recovery.cancelHandoff(identity.viewKey);
+        return handedOff;
+      },
       retry: key => this.permission(entry, "write") && entry.raw.retry(key),
       updateGate: gate => entry.raw.updateGate(gate),
       refresh: entry.raw.refresh, loadMore: entry.raw.loadMore, clearResolved: entry.raw.clearResolved, dispose: entry.raw.dispose,
@@ -203,7 +253,7 @@ function SteeringSurface({ entry, workspace }: { entry: SteeringEntry; workspace
   return <section hidden={!entry.visible} aria-label="Running task steering" className="fixed bottom-4 right-4 z-40 max-h-[85dvh] w-[calc(100%-2rem)] max-w-lg overflow-auto rounded-lg border bg-background p-3 shadow-xl" data-steering-task={entry.identity.taskId}>
     <div className="mb-2 flex items-center justify-between gap-2"><h2 ref={heading} tabIndex={-1} className="font-medium">Running task instruction</h2><Button variant="ghost" size="sm" onClick={() => workspace.closeSurface(entry.id)}>Hide steering</Button></div>
     <p className="mb-2 text-xs text-muted-foreground">Task {entry.identity.taskId} · Separate from Send now and Queue next.</p>
-    <SteeringControl control={entry.control} />
+    <SteeringControl control={entry.control} draft={entry.draft} onDraftChange={text => workspace.setDraft(entry.id, text)} durableRecovery={workspace.hasRecovery()} />
   </section>;
 }
 /** Stable outside movable chat groups. Hidden controls remain mounted to retain their own draft. */

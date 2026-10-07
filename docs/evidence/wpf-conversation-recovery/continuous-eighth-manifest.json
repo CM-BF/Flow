@@ -1,0 +1,186 @@
+{
+  "at": "2026-10-07 08:44:43 UTC",
+  "state": "FAILED_COMPLETE_DRAFT_LOCATOR_WITH_CLEANUP_CONFIRMED",
+  "run": "reccomplete-20261007-083815-ad30e8",
+  "executionHead": "2910b0e3ed8fe4f28ecae069f8e25579323c3cef",
+  "sourceTarget": "4a60980b6dc756d46a720a9cbcb157a549555010",
+  "rawFiles": [
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/browser.json",
+      "bytes": 5329,
+      "sha256": "9341237986214dc282df7d3e938880e8acde27d7add35ad2129e09f91fb3687d"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/budget.json",
+      "bytes": 234,
+      "sha256": "b8b5b05dafb0163d8904f5563ff195ce306102b3288589f1ebaad184309cb49d"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "2848fc4b9dc447fdfc45fe29976d24a0a2e2adff7a9a925eb5c3ef927d59f760"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/database-owner.json",
+      "bytes": 164,
+      "sha256": "f3ea38a65882b881ecba240eaae0514552c79639989066a7089267e0612d86c9"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "74d3ad58febfb88ce1a196bf732404c7544dede563e0e3cba03906959187a459"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/launch-config.json",
+      "bytes": 1215,
+      "sha256": "0f332685d7ecefc4383de1d01f323231ba3bff1f912cf8c5a9a4062cde5c6989"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/process-owner.json",
+      "bytes": 29,
+      "sha256": "ac47557de9e7ddc89d6dba2d9790b79d0849022cbb243d2063f18619bc53c559"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/process.log",
+      "bytes": 7133,
+      "sha256": "80d926cd3b6a0e0f419bc17d75282d317243324c6cdb1110f120214d87758318"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "904f543fa95dad81d870d9a062b18c78980181b16c6bc13af46c4e0975fabebc"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/sources.json",
+      "bytes": 2432,
+      "sha256": "7e6c07427ff01298bd1e2aa73a7cd80d4f8b076f67a642788a5f0ca9e2b39885"
+    },
+    {
+      "path": "browser-runs/reccomplete-20261007-083815-ad30e8/supervisor.json",
+      "bytes": 2720,
+      "sha256": "230aff9358a051e055a65357bedfc19aa09df9bfb6ecb70f378a53fcfc2e6ec2"
+    }
+  ],
+  "originals": [
+    {
+      "path": "continuous-eighth-parent/admission.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/admission.json",
+      "bytes": 4049,
+      "sha256": "ecb7284bc6e8f750a36ca7afaad1e8ff7268ee7727588fc09fdf4a3558aba025"
+    },
+    {
+      "path": "continuous-eighth-parent/gate.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/gate.json",
+      "bytes": 2914,
+      "sha256": "d35111fe78b3eb832d56f4c97d49686f9631cb9545e2cdbce5fdcaeff10304f2"
+    },
+    {
+      "path": "continuous-eighth-parent/start.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/start.json",
+      "bytes": 737,
+      "sha256": "0a32d9b9a9f79b43041f2c71d78b1e2262ec22e702d8c7eaa83ad0dac4d9ceef"
+    },
+    {
+      "path": "continuous-eighth-parent/parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/parent.stdout.jsonl",
+      "bytes": 849,
+      "sha256": "931dc09bc4cc625471d60dc4ae688a32791dc2b001409100e434382e3711f349"
+    },
+    {
+      "path": "continuous-eighth-parent/parent.stderr.log",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "continuous-eighth-parent/actual-exit.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/actual-exit.json",
+      "bytes": 458,
+      "sha256": "3bd8d3db2cbb3b24a431f4cf1b9daffe93342b9c67ee9f8d16047200978857bd"
+    },
+    {
+      "path": "continuous-eighth-parent/post-cleanup-observation.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/post-cleanup-observation.json",
+      "bytes": 499,
+      "sha256": "e0668c760610326db64c165cdb34d47f75700c9589f942534ca5a56aeb8d428a"
+    },
+    {
+      "path": "continuous-eighth-parent/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/admin-env-deletion-receipt.json",
+      "bytes": 295,
+      "sha256": "9f34bcc49dd9d0b8facaf33d815a14820e8a8752127f92bf1f4fa3e1a4b084cd"
+    },
+    {
+      "path": "continuous-eighth-parent/accounting.json",
+      "original": "/private/tmp/recovery-complete-owner-segment-vui0ba7f/accounting.json",
+      "bytes": 306,
+      "sha256": "93cd0987cd58d73085eac840f941febc4bca4d8987cb64dc11469aa7828ad695"
+    }
+  ],
+  "previousRaw": {
+    "count": 133,
+    "unchangedFrom": "2910b0e3ed8fe4f28ecae069f8e25579323c3cef"
+  },
+  "selection": {
+    "journey": "complete-draft",
+    "required": [
+      "cookieRead",
+      "completeDraft"
+    ],
+    "completed": [
+      "cookieRead"
+    ],
+    "selectedPassed": false,
+    "fullJourneyPassed": false,
+    "fullFeaturePassed": false
+  },
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8275.589209,
+    "elapsedMs": 8275.589209
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8275.667125,
+      "endedOffsetMs": 9548.07475,
+      "elapsedMs": 1272.4076249999998,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "completeDraft",
+      "startedOffsetMs": 9548.095874999999,
+      "endedOffsetMs": 14153.014834,
+      "elapsedMs": 4604.9189590000005,
+      "outcome": "FAILED"
+    }
+  ],
+  "accounting": {
+    "run": "reccomplete-20261007-083815-ad30e8",
+    "previousSpentMs": 81002,
+    "chargeMs": 15676,
+    "spentMs": 96678,
+    "remainingMs": 53322,
+    "outerMs": 15675.927916076034,
+    "lateParentMs": 15117.757791,
+    "serializedParentMs": 15105.328625,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "cleanup": {
+    "raw": "browser-runs/reccomplete-20261007-083815-ad30e8/supervisor.json",
+    "exactObservation": "continuous-eighth-parent/post-cleanup-observation.json",
+    "envReceipt": "continuous-eighth-parent/admin-env-deletion-receipt.json"
+  },
+  "independentReview": {
+    "path": "continuous-eighth-root-review.json",
+    "sha256": "dbd74350edead746227fe91a2d49ae5a941b2b1bb38bd2dc2708262cea30507f",
+    "decision": "CONFIRMED_FAILED_COMPLETE_DRAFT_BROWSER_ATTEMPT_WITH_OWNED_CLEANUP_NOT_FEATURE_PASS"
+  },
+  "limits": [
+    "No failed-page DOM or screenshot captured",
+    "Cookie connection only passed; no CREATE or turn request in browser wire",
+    "Synthetic profile and knowledge seed succeeded, but no material restore or Send reached",
+    "Root raw field browserBusinessPostsObserved=1 counts browser-session/connect; it is not a CREATE/turn business command"
+  ]
+}

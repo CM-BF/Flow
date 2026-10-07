@@ -1,0 +1,277 @@
+{
+  "observedAt": "2026-10-07T05:52:44.260675+00:00",
+  "actualExit": {
+    "exitCode": 0,
+    "outerElapsedMs": 13133.751874906011,
+    "endedAt": "2026-10-07T05:52:24.761068+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 747,
+    "stderrBytes": 0,
+    "parentPid": 42366,
+    "run": "recfull-20261007-055138-6c925b"
+  },
+  "groups": [
+    {
+      "pgid": 42838,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "pgid": 45492,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "scratchPath": "/private/tmp/flow-recovery-browser-lrMbmU",
+  "scratchExists": false,
+  "parentReported": {
+    "passed": true,
+    "selectedPassed": true,
+    "fullJourneyPassed": true,
+    "journey": "full",
+    "requiredGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "completedGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true,
+    "errors": [],
+    "cleanupErrors": []
+  },
+  "browser": {
+    "journey": "full",
+    "requiredGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "completedGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "checks": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+      "text, intent and exact file reference survive reload and explicit restore without mutation",
+      "two actual tabs cannot overwrite the same restored draft version",
+      "lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays",
+      "auth loss without reload retains an unsaved page-only draft; reconnect sends no command",
+      "cookie mutation requires CSRF; offline observation never cancels or submits",
+      "recovery dialog opens with Enter and returns focus after Escape at 390 in both themes"
+    ],
+    "failure": null,
+    "pageErrors": [],
+    "cleanupErrors": [],
+    "coverage": {
+      "cookieRead": "PASSED",
+      "cookieSseHandshake": "PASSED",
+      "cookieSseDelivery": "PENDING: only handshake is asserted",
+      "textIntentDraft": "PASSED",
+      "materialDraft": "PASSED",
+      "sameKeyTurn": "PASSED",
+      "crossTabCas": "PASSED",
+      "pageOnlyAuthLoss": "PASSED",
+      "csrfOffline": "PASSED",
+      "themes390": "PASSED",
+      "createTwoStage": "PENDING: direct/source only",
+      "queueSteerRecovery": "PENDING: direct/source only",
+      "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+      "secondCenter": "PENDING: one-center fixture"
+    },
+    "initialization": {
+      "outcome": "PASSED",
+      "startedOffsetMs": 0,
+      "endedOffsetMs": 8147.450374999999,
+      "elapsedMs": 8147.450374999999
+    },
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 8147.519166000001,
+        "endedOffsetMs": 9142.222791,
+        "elapsedMs": 994.7036250000001,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "textIntentDraft",
+        "startedOffsetMs": 9142.237583,
+        "endedOffsetMs": 10405.107833,
+        "elapsedMs": 1262.87025,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "crossTabCas",
+        "startedOffsetMs": 10405.1145,
+        "endedOffsetMs": 10956.092208,
+        "elapsedMs": 550.9777080000003,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "sameKeyTurn",
+        "startedOffsetMs": 10956.110541,
+        "endedOffsetMs": 11532.553833,
+        "elapsedMs": 576.4432919999999,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "pageOnlyAuthLoss",
+        "startedOffsetMs": 11532.561,
+        "endedOffsetMs": 11642.437957999999,
+        "elapsedMs": 109.87695799999892,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "csrfOffline",
+        "startedOffsetMs": 11642.44675,
+        "endedOffsetMs": 11685.391333,
+        "elapsedMs": 42.94458300000042,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "themes390",
+        "startedOffsetMs": 11685.397707999999,
+        "endedOffsetMs": 11971.733708,
+        "elapsedMs": 286.33600000000115,
+        "outcome": "PASSED"
+      }
+    ]
+  },
+  "databaseCleanup": {
+    "database": "flow_recovery_e33f017541fc4b32b9fe1024556e3656",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.308208000000377,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4887499999986176,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 19,
+    "wireBytes": 17238,
+    "providerQueries": 0
+  },
+  "budgetEarlier": {
+    "complete": true,
+    "cleanupComplete": true,
+    "journey": "full",
+    "startedAt": "2026-10-07T05:52:11.862Z",
+    "priorMs": 64116.520292,
+    "permittedMs": 60000,
+    "cleanupReserveMs": 15000,
+    "elapsedMs": 12495.784625
+  },
+  "segmentId": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
+  "segmentPriorMs": 0,
+  "segmentLateSpentMs": 12501.139416,
+  "segmentRemainingMs": 137498.860584,
+  "closedOldEnvelopeActualMs": 64134.08675,
+  "raw": [
+    {
+      "path": "browser.json",
+      "bytes": 26500,
+      "sha256": "dc6f5843552ad77f140e4328fb2824008a19d68bc027b5e8fc1b4543e72852d3"
+    },
+    {
+      "path": "budget.json",
+      "bytes": 223,
+      "sha256": "b1ba27f9f1e077c3f0cbf6ab21a1d03f09fddbfea90a7de42dd2818efb96b581"
+    },
+    {
+      "path": "dark-390.png",
+      "bytes": 73954,
+      "sha256": "e41edcd67e0d04e47baadc2109cd6c984bfb94c67fe0cd006ac0bb94e75957d1"
+    },
+    {
+      "path": "database-cleanup.json",
+      "bytes": 515,
+      "sha256": "54f1b62d2abdfa09e20414e0e8e1db52026a05e4faf024f190a04e3915cff2c1"
+    },
+    {
+      "path": "database-owner.json",
+      "bytes": 164,
+      "sha256": "3c9042d7f6c1b1fa3297b56df2d1079140b26e366c6771a9bf9804ba224db350"
+    },
+    {
+      "path": "fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "5c6022009cb8bc8518f67da76bc511ad8a7395f81bfbb819ee1bfed174c85a95"
+    },
+    {
+      "path": "launch-config.json",
+      "bytes": 1215,
+      "sha256": "c86ed016b824f46f39c95eb2f10bf5aaa3c77142b444cac88a798c24357cddff"
+    },
+    {
+      "path": "light-390.png",
+      "bytes": 73263,
+      "sha256": "48ff00c5306aac20e2a8e1bfdbd2d06c45a381bc608b61678d98e69f7edf4034"
+    },
+    {
+      "path": "process-owner.json",
+      "bytes": 29,
+      "sha256": "de7b38d81beadefa844091ae64c87a11ca6db523642595666349da4c9fc5d578"
+    },
+    {
+      "path": "process.log",
+      "bytes": 6915,
+      "sha256": "f234ec45dedf0a60a44fcd459d8fcd1d2815f892427201d9694fd2dc62af36af"
+    },
+    {
+      "path": "scratch-owner.json",
+      "bytes": 114,
+      "sha256": "93cc146c00126c0d8c4c2776cfbc02a0e6a049b901edb7769246408c0f3d5e72"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2522,
+      "sha256": "3274d3f7db47e6248bd196cb7d59508f80483815c494b0f0dee4c4ccf6b9cacd"
+    },
+    {
+      "path": "supervisor.json",
+      "bytes": 3599,
+      "sha256": "1d5f7c6d205884811eb27d493281c98e06d374aa52536ddfbf47ab00ee236f7e"
+    }
+  ],
+  "pngCount": 2,
+  "limits": "Exact owned group ESRCH/scratch only; HTTP ports attributed to original fixture close, no additional endpoint probe. Full7 remains original subset, not full feature."
+}

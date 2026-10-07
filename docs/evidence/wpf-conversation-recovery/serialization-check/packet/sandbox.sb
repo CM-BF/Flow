@@ -1,0 +1,7 @@
+(version 1)
+(allow default)
+(deny network*)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/scratch"))
+(allow file-write* (subpath "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/raw"))
+(allow file-write* (literal "/dev/null"))

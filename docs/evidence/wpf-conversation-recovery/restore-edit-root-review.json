@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-06T19:44:43.741060+00:00",
+  "verdict": "CHANGES_REQUESTED_SCOPED_RESTORE_INTERLEAVING_SOURCE_REVIEW",
+  "implementationProductSource": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+  "currentMetadata": "0ac929040ff6b0347157aa7a0cb28d9966673e1b",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": false,
+  "scope": "New product restore interleaving finding; prior activation/observer fixes and actual38 controlled checks remain valid at their original scope. Not a rerun or completefeature review.",
+  "findings": [
+    {
+      "id": "RECOVERY-RESTORE-EDIT",
+      "priority": "P1",
+      "file": "apps/web/src/App.tsx",
+      "line": 693,
+      "title": "Do not overwrite edits made while an asynchronous restore is pending",
+      "trigger": [
+        "An existing empty conversation view has a retained saved draft. Select Restore without sending; RecoveryWorkspace validates the saved record then marks the view restoring.",
+        "App checks existing text/knowledge/files before awaiting projection.refresh. Delay that read; close the recovery dialog and enter new composer text or change intent/profile. Closing the dialog does not cancel the pending restore, and the Thread/controls have no restore lease gating edits.",
+        "Composer subscription writes the new text into drafts; RecoveryWorkspace.changed returns immediately while restoring, so that new value is not saved or marked pending.",
+        "When projection.refresh resolves, App current() checks authorization/generation only. It then writes saved.text and saved.profile, sets saved.intent/restoredVersion, causing the official composer effect to replace the new local text. No post-await material revision check preserves that edit."
+      ],
+      "evidence": [
+        "apps/web/src/recovery/binding.tsx:171 changed returns for restoring; :282\u2013292 restore marks the whole awaited host.restore as restoring; close only publishes open:false.",
+        "apps/web/src/App.tsx:680 current-material guard precedes projection.refresh at693; :707\u2013710 overwrite full draft fields with no local-material revalidation.",
+        "apps/web/src/conversations/ConversationThread.tsx:182\u2013188 subscribes composer changes into drafts; restoredVersion effect writes drafts back into official composer.",
+        "RecoverySurface close and restore buttons provide no per-view busy/ownership token; sendReason checks authorization/plugin only."
+      ],
+      "impact": "New unsaved text can be silently replaced by the older record; ignored changed notifications mean it need not exist in durable storage. This is source-demonstrated interleaving, not an executed browser failure.",
+      "requestedFix": "Use the existing per-view Recovery/App ownership seam to prevent an in-flight restore from replacing material that changed after capture. Revalidate full local draft revision/identity after awaited work and before synchronous application, or enforce a complete per-view restoring lease consistently across all mutating controls and actions. Preserve and checkpoint new material on conflict/abort; do not simply add a text-only check or new global state store. Keep explicit restore and original receipt rules, no automatic command dispatch.",
+      "acceptance": [
+        "Deferred restore + edit text during wait: newer text survives and is checkpointable; stale saved record stays intact, clear conflict or cancellation is reported, zero command POST.",
+        "Same pattern for intent/profile-only changes; complete draft guard covers all saved fields.",
+        "Unchanged target succeeds and normal initialization notifications do not falsely conflict; auth/generation changes still reject.",
+        "Concurrent restore actions for same view cannot both apply under stale checks."
+      ],
+      "existingTestGap": "The controlled workspace helper supplies a mocked host.restore; existing38 cases cover defaultactivation,storage/material barriers and receipts, but do not execute this real App deferred refresh\u2192composer overwrite sequence."
+    }
+  ],
+  "relatedObservation": "Existing App restore guard also checks only text/knowledge/attachments, omitting profile/intent-only changes; address full material identity in the same fix, not a separatetask. Steering restore rejects nonempty targets but runs after other fields are already applied, so preflight affected material before committing application.",
+  "pins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 69114,
+      "sha256": "4c6f95e709ec81494ff7d34a87d11845306641cfeea65c24efb9f782926f96ca",
+      "equal7cc": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 25017,
+      "sha256": "2c7c1e5b5f90832562be04da3feac2b46133a2ec7276fce45f90a9c497747877",
+      "equal7cc": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "equal7cc": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 22175,
+      "sha256": "07f26356643439cc5a08d3a9eb7c938f6d01bdc1b98d5818340cf40310fde6d4",
+      "equal7cc": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 13875,
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "equal7cc": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 49951,
+      "sha256": "042134d0cf9d53ec43f02a628d10cfc805c94c7ce79aaab2bf5e18ab1a71d198",
+      "equal7cc": true
+    }
+  ],
+  "validation": {
+    "runtime": "NOT_RUN",
+    "projectWrites": false,
+    "spaceOrServiceSampling": false,
+    "nodeTestsRepeated": false
+  },
+  "dispatch": "Manager may assign original Recovery owner after its current read-only bounded research, using fresh original6ffv4/21 scopes. No sharedcontract/newtask needed. Browser/PG resources remain with Lead center restoration, no runtime grant.",
+  "cleanCode": "Reviewed asynchronous ownership, complete draft integrity, and error paths using existing find-skills/codebase-design/clean-code methods; one concrete source race, no speculative broad refactor."
+}

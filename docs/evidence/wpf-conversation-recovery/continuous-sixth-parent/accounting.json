@@ -1,0 +1,11 @@
+{
+  "priorMs": 58951,
+  "chargeMs": 11207,
+  "spentMs": 70158,
+  "remainingMs": 79842,
+  "outerMs": 11206.429125042632,
+  "lateParentMs": 10469.796625,
+  "serializedParentMs": 10461.797292000001,
+  "oldClosedEnvelopeMs": 64134.08675,
+  "rule": "ceil(max outer,late,parent)); oldraw immutable"
+}

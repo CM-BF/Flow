@@ -1,0 +1,104 @@
+{
+  "state": "FRESH_OWNER_INTERNAL_INPUT_READY",
+  "at": "2026-10-07T08:53:26.344638+00:00",
+  "head": "ad4a91380d045efdcc68506a041c052382a4d03c",
+  "source": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "run": "reccomplete-20261007-085326-1e2645",
+  "gate": "/private/tmp/recovery-complete-retry-owner-6tv8427e/gate.json",
+  "gateSha256": "c27810c426e620807318f127396e117ca0482ca318b06c719a70407f48d10cb7",
+  "adminEnv": "/private/tmp/recovery-complete-retry-owner-6tv8427e/admin.env",
+  "adminIdentity": {
+    "device": 16777234,
+    "inode": 123677917,
+    "uid": 501,
+    "mode": "0o600"
+  },
+  "secretValueRecorded": false,
+  "fixedAdminSource": {
+    "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-current-preview.browser.ts",
+    "line": 185
+  },
+  "previousManifest": {
+    "path": "/private/tmp/recovery-created-turn-344f-di09jc0_/manifest.json",
+    "sha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793"
+  },
+  "sourcePinsVerified": 19,
+  "unchangedRuntimePinsVerified": 33,
+  "priorManifestRawPinsVerified": 111,
+  "allPriorRawCount": 144,
+  "allPriorRawBytes": 452542,
+  "allPriorRawInventorySha256": "90451db18f2f02f915f7fc4ec5362fd0a32e53e13fb64c26ca3c8fb2a867b503",
+  "retainedEvidenceBytes": 3315365,
+  "availableBytes": 23984922624,
+  "combinedFloorBytes": 4072407040,
+  "concurrentAdditionalBytes": 18350080,
+  "segment": {
+    "totalActualMs": 150000,
+    "spentMs": 96678,
+    "remainingMs": 53322,
+    "perAttemptMaximumMs": 53322,
+    "cleanupIncludedMs": 15000,
+    "retainedBytes": 9437184,
+    "scratchBytes": 67108864
+  },
+  "holderSource": "Root explicit DPERF actual 08:48:21.257631 cleanup handback; Recovery unique sharedPG/Chrome; W01 source-only; Mika local16MiB+512KiB+1MiB reserved",
+  "command": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-complete-retry-owner-6tv8427e/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-complete-retry-owner-6tv8427e/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "claimObservedAt": "2026-10-07T08:53:23.259Z"
+}

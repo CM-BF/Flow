@@ -1,0 +1,152 @@
+{
+  "id": "RECOVERY-STEERING-20261007",
+  "state": "TWO_FAILED_ATTEMPTS_STOPPED_BELOW_MINIMUM",
+  "sourceTarget": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
+  "authorization": "Original RECOVERY01 continuation within existing6ffv4/exact21, not a new task or claim. Root authorized an independent <=60s steering phase after focused actor/lifecycle source review; actual shared resources remain manager-coordinated.",
+  "selection": {
+    "journey": "steering-recovery",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "fullJourney": false
+  },
+  "limits": {
+    "phaseRuntimeMs": 60000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "databases": 1,
+    "chrome": 1,
+    "syntheticProtocolActors": 1,
+    "runnerProcesses": 0,
+    "providerCalls": 0,
+    "leaseMs": 60000
+  },
+  "runtimeSpentMs": 34753,
+  "closedPriorPhases": {
+    "original90": {
+      "budgetMs": 90000,
+      "actualMs": 64134.08675,
+      "unusedCreditTransferred": false
+    },
+    "continuous150": {
+      "budgetMs": 150000,
+      "actualChargeMs": 126447,
+      "unusedMsSealed": 23553,
+      "unusedCreditTransferred": false,
+      "sourceRecord": "continuous-segment.json",
+      "sourceRecordSha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+    }
+  },
+  "defensiveParentTotalMs": 300000,
+  "defensiveParentCeilingIsNotPhaseCredit": true,
+  "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); preserve all original timings",
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "actual": "SECOND_ATTEMPT_FAIL_WITH_VALID_FAILURE_OBSERVATIONS",
+  "remainingPrerequisites": [
+    "Fresh original claim/HEAD/clean/source+read-only runtime pins",
+    "Explicit unique shared PG+Chrome handoff and current combined resource observation",
+    "Unique bound internal run inputs and private 0600 adminenv from already-authorized test source, exact deletion on terminal",
+    "One selected attempt only; no leftover credit from closed phases"
+  ],
+  "limitsOfProof": [
+    "Prebuilt pinned conversation, not new-chat profile discovery",
+    "Synthetic protocol session is not a native SDK session or evidence that a model consumes/applies guidance",
+    "Center accepted/replay and browser restoration only; no received/observed-consumed/applied fabricated",
+    "Second center/principal and real runner/native application remain unverified"
+  ],
+  "runtimeRemainingMs": 25247,
+  "attempts": [
+    {
+      "run": "recsteer-20261007-094616-1ab0a4",
+      "outcome": "FAIL",
+      "passedGroups": [
+        "cookieRead"
+      ],
+      "failedGroup": "steeringRecovery",
+      "actualOuterMs": 17331.63762500044,
+      "lateParentMs": 16716.629125,
+      "serializedParentMs": 16703.720042,
+      "chargeMs": 17332,
+      "cleanupComplete": true,
+      "manifest": {
+        "path": "steering-first-manifest.json",
+        "bytes": 6531,
+        "sha256": "110beb807facc01012e87546cb06832641f2229594888513d5d2903ecc44b8ea"
+      },
+      "review": {
+        "path": "steering-first-root-review.json",
+        "bytes": 14854,
+        "sha256": "1e6cb7674aeb90734da03a8aa2a294846e546816dd3b004ca166839c5f23422f"
+      }
+    },
+    {
+      "run": "recsteer-20261007-100004-46e3cb",
+      "outcome": "FAIL",
+      "passedGroups": [
+        "cookieRead"
+      ],
+      "failedGroup": "steeringRecovery",
+      "actualOuterMs": 17420.67970801145,
+      "lateParentMs": 16866.963875,
+      "serializedParentMs": 16853.57675,
+      "chargeMs": 17421,
+      "cleanupComplete": true,
+      "manifest": {
+        "path": "steering-second-manifest.json",
+        "bytes": 6868,
+        "sha256": "0a422a281752fe0680f77d473ef19bafdc9f2fea9f85e59635fef81b6b477759"
+      },
+      "review": {
+        "path": "steering-second-root-review.json",
+        "bytes": 14966,
+        "sha256": "5b4ec7913cbe5677b3cb11d1a1294e89119929de7f7a82c06fff4623350427c1"
+      }
+    }
+  ],
+  "nextAttemptDerivation": {
+    "phaseId": "RECOVERY-STEERING-20261007",
+    "phaseBudgetMs": 60000,
+    "currentPhaseSpentMs": 34753,
+    "currentPhaseRemainingMs": 25247,
+    "maximumAdmissibleTotalMs": 25247,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 10247,
+    "equation": "remaining = max(0, 60000 - sum(ceil(max(actualOuterMs, lateTerminalMs, parentMs))) for this phase only); next total <= min(60000, remaining)",
+    "noTransferFromClosedPhases": true,
+    "parentMinimumAttemptMs": 30000,
+    "belowMinimum": "No attempt; do not enlarge phase or use historical unused credit",
+    "onAmbiguousAccountingOrCleanup": "FAIL_CLOSED; no subsequent attempt until exact reconciliation",
+    "actualGateState": "NO_FURTHER_RUN_BELOW_MINIMUM",
+    "eligible": false
+  },
+  "focusedSourceReview": {
+    "path": "steering-root-source-review.json",
+    "sha256": "dd02c29a0304e769820fadf9c71c2a242aba5484a37b0e8fd059c4b921a64260",
+    "scope": "source54952/metadata0f4b; actor/lease/fault/identity-nextdraft source approval only"
+  },
+  "localValidation": {
+    "path": "steering-local/manifest.json",
+    "sha256": "9d2b32763e42da9c57d82bf0b3e573ba505c0e0c8ddcb4cb6630c2b7ef142949",
+    "state": "PASS_WEB_NOEMIT",
+    "budgetMs": 20000,
+    "spentMs": 7682,
+    "remainingMs": 12318,
+    "browserPhaseDeductionMs": 0,
+    "sourceTarget": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+    "diagnosticSourceTypes": "NOT_RUN"
+  },
+  "diagnosticSourceReview": {
+    "path": "steering-diagnostic-root-review.json",
+    "bytes": 6544,
+    "sha256": "be4aa94d2cd79573314630c7e68bdd27da48eeadddcae98aacf712ee1585f734"
+  }
+}

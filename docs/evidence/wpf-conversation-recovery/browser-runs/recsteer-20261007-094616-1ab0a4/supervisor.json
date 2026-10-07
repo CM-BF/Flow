@@ -1,0 +1,105 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "steering-recovery",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7827.144417,
+    "elapsedMs": 7827.144417
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7827.2101250000005,
+      "endedOffsetMs": 8823.544333,
+      "elapsedMs": 996.3342080000002,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "steeringRecovery",
+      "startedOffsetMs": 8823.562291999999,
+      "endedOffsetMs": 16045.360417,
+      "elapsedMs": 7221.798125000001,
+      "outcome": "FAILED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "expect(received).toBeTruthy()\n\nReceived: undefined\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_f71cb73afbb34951b5e3a42b9dc33114",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.455459000000701,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.7985829999997804,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 76355,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 76374,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 23234813952,
+  "peakScratchBytes": 27540445,
+  "logBytes": 5779,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 16647.905292,
+      "scratchBytes": 27540445,
+      "evidenceBytes": 3525089,
+      "freeBytes": 23234813952,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 16703.715667,
+      "scratchBytes": null,
+      "evidenceBytes": 3527600,
+      "freeBytes": 23263223808,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

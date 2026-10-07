@@ -1,0 +1,96 @@
+{
+  "at": "2026-10-06T20:19:06.210677+00:00",
+  "verdict": "APPROVED_SCOPED_DIRECT50_SUPERVISOR_SOURCE_NOT_RUN",
+  "candidate": "/private/tmp/recovery50-once-en2_sud5",
+  "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+  "metadata": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+  "dirty": false,
+  "runnerSha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7",
+  "bindingSha256": "5416a23b3eb4efed84b1b650713c8cbfff1fbd440a28905e62d4eb527a82e72b",
+  "blocking": 0,
+  "addressed": [
+    {
+      "id": "RECOVERY50-SCAN-ERROR",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": "logical_bytes provides onerror rejecting every non-ENOENT scan failure; initial byte scan was moved inside the supervision try so ordinary scan errors still reach owned cleanup/report."
+    },
+    {
+      "id": "RECOVERY50-SOFT-STOP",
+      "state": "SOURCE_ADDRESSED",
+      "evidence": "SIGTERM/SIGINT handlers are installed before require_gate/run and only record the first signal. Setup and work loop observe it; normal reap/absence/scratch path runs. Signal during cleanup forces failure; post-write and terminal stdout/return observe late signals. Prior handlers restore in outer finally after run."
+    }
+  ],
+  "verified": {
+    "candidateFiles": 9,
+    "beforeRepairFilesPreserved": 7,
+    "bindingStepsConfigSandboxUnchanged": true,
+    "productSources": 19,
+    "readOnlyDependencies": 98,
+    "metadataClean": true,
+    "AST": "parse only",
+    "noGate": true
+  },
+  "carriedBudget": {
+    "previousMs": 6868,
+    "remainingMs": 23132,
+    "workMs": 18132,
+    "cleanupReserveMs": 5000,
+    "expectedTests": 50
+  },
+  "scope": "Exactly one controlled IDB/mockfetch direct file, one Vitest fork, denied network and only own candidate writes. Source/P1 approval remains2b01; no current50 runtime evidence.",
+  "admission": "Manager may promote only binding state/review annotations and bind resulting exact bytes. Require fresh original6ffv4/21 claim/currentclean994ce and fixed pins, actual resource admission and Lead-coordinated execution opportunity; no gate or execution issued by root. Preserve historical38 and original browser failure. Capture final stdout postWrite settlement separately and require its withinLimits, no softStop/error, actual exit0,50pass0fail/skip/todo and complete group/scratch cleanup; do not infer PASS from an earlier result file alone.",
+  "limitations": [
+    "No independent run, types, product import, browser, HTTP/PG, resource sampling or project writes.",
+    "SIGKILL/parent crash and children intentionally escaping the inherited group remain outside this method; no hard physical allocation quota.",
+    "A signal arriving after bounded result serialization is reflected by terminal stdout/exit, not necessarily a rewritten earlier result file. Final settlement therefore consumes all three facts.",
+    "50 controlled helper cases do not mount Workspace/Thread/full material preparation and do not replace real browser/IDB recovery acceptance."
+  ],
+  "files": [
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/run.py",
+      "bytes": 21925,
+      "sha256": "6141801352f7274abb3b01fa6081aed2d86c7d8e416fa802a3fdd863460862e7"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/binding.json",
+      "bytes": 19896,
+      "sha256": "5416a23b3eb4efed84b1b650713c8cbfff1fbd440a28905e62d4eb527a82e72b"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/steps.mjs",
+      "bytes": 1191,
+      "sha256": "bb43c0c12aa87f3fdca1f71a1979486c31d9f21ed5dfcd3b08ab630abb781a82"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/vitest.config.mjs",
+      "bytes": 413,
+      "sha256": "3585695f44ae16797f0788803fdc60241e31b1ed9390eb39838325b95f5a4a8d"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/sandbox.sb",
+      "bytes": 155,
+      "sha256": "d0b18e9347463ee8e30bedd661b6bec2c54778a9e3c3662d0872d56b8f540046"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/runner.diff",
+      "bytes": 13694,
+      "sha256": "39fceb5b7de2a65fc8bad140b975580225882e21aecbf6e6e93a812af1e91b81"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/binding.diff",
+      "bytes": 6626,
+      "sha256": "d21dc0712045a6c3183b75f39a17f9f70bc2b2b9323f03c8f77e69ac034c042a"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/source-repair.diff",
+      "bytes": 7480,
+      "sha256": "4e15bc8f94de0dc8dff08ee49000e7da49f2f06db9d59d616175d44480684543"
+    },
+    {
+      "path": "/private/tmp/recovery50-once-en2_sud5/source-review-input.json",
+      "bytes": 4802,
+      "sha256": "66504ab70ea3c2477c94427818499974036f89b768db3a9dfa76d04577e290e9"
+    }
+  ],
+  "cleanCode": "Reused local find-skills/clean-code/webapp-testing; narrowly verified scan error propagation, signal lifetime, owned cleanup, unchanged authority and output limits. No additional blocking defect identified."
+}

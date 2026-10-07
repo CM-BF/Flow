@@ -1,0 +1,86 @@
+{
+  "target": "82d78a9d77f4f51a27dc76fdc413a63dcd88ea72",
+  "reviewer": "/root/w01_owner",
+  "observedAt": "2026-10-06T14:14:05.182841+00:00",
+  "method": "Read fixed Git objects only. No runtime imports, tests, build, cache writes, browser, PG, service or provider calls. Only this /tmp report directory written.",
+  "files": [
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "gitBlob": "bef1e84a00b82bd5d543e80d95da37a444e1f2ce",
+      "sha256": "1c49c0c9a60b02add563b5484041420b2f57bb86e77eacbb254633d9d230f867",
+      "bytes": 7881
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "gitBlob": "ac2d2bf9fb81f6bef3c1648c922ceec6af73cc17",
+      "sha256": "b431f3148144f6dea6ad2b5ec7bfb426377ed63ede4ca52ea5ae40dca2033afb",
+      "bytes": 26703
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "gitBlob": "10bf044a37183a8b467a8ee945f2d711f483c6f3",
+      "sha256": "e4371f2ec55ac5e96fad0b44f06d9071c493dcbe5f080dc812350ce111c73666",
+      "bytes": 14813
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "gitBlob": "31c2a7aa77feee566479667623da066d44d5f74c",
+      "sha256": "c792e0c5ed589d6c1cb7be7022f484fabf25bd4220c9ea0d7e7cc3b2f0db88db",
+      "bytes": 22644
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "gitBlob": "d771e4c5a6364a82d2df5a3162ed5df07561f5d4",
+      "sha256": "271a0d70d0c3e95586ab2ae7c499d5bb03218186663c84e812b4dc14e715c115",
+      "bytes": 16721
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "gitBlob": "cb376b2a6c83c13adbab2743e9d9be27c2b8acb7",
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+      "bytes": 2254
+    },
+    {
+      "path": "apps/web/src/conversation-context/selection.ts",
+      "gitBlob": "8a9c587a4f3364b3f519716a54c98d7fd293ba34",
+      "sha256": "6baaf6a13ab95360b628afc70986b7b48599fddc7dd3419c97dfe80c82870543",
+      "bytes": 1739
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "gitBlob": "0a63eae8ea2ee88c813d8d40c98aa090512f693c",
+      "sha256": "853d9ab96dee6d0476aa1df23c20efe2c06da0799f6af13842c6d22537222444",
+      "bytes": 24560
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "gitBlob": "485ecfb242cd4412f0c42b6bfe3d6a3755de3a1c",
+      "sha256": "0b99088e7e8d8a49910c667d854e48e1a78a1cc0ccd220895d1732d715d8eb51",
+      "bytes": 13875
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "gitBlob": "fae6b6bb52c6005bb7d9a14e920bf1a6d9a934a4",
+      "sha256": "833b0ba2f81e3d5190b5d71c9fc06f8c985d112e3cb442d785be84c4b9dfdf25",
+      "bytes": 18542
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "gitBlob": "74ea2a75a9784c03a8af6a9faf203aaf817a3133",
+      "sha256": "35d437eb7afcb3a7ffcf48295eac7fe8e288c1f4842bde218600beae374774e4",
+      "bytes": 11558
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "gitBlob": "cae354221f04dc372ef094be2138eb84e4913c65",
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "bytes": 8422
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/interface.md",
+      "gitBlob": "89170ecb9320fbf3062a758e40263d853680b473",
+      "sha256": "e1a2c134ff18f6973df5bc5394c6a46a921d76b928d5c639ff084967709535c8",
+      "bytes": 1756
+    }
+  ]
+}

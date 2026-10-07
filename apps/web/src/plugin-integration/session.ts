@@ -1,3 +1,4 @@
+import { RecoveryWorkspace, createRecoveryPlugin, type RecoveryHost } from "../recovery/binding";
 import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
 import type { RecoveryStorage } from "../attachments/recovery";
 import { SteeringWorkspace, createSteeringPlugin, type SteeringIdentity, type SteeringPorts } from "./steering";
@@ -37,6 +38,7 @@ export interface AppActions {
   knowsTask(id: string): boolean;
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
+  recovery?: RecoveryHost;
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
@@ -62,10 +64,16 @@ export class AppPluginSession {
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
   readonly host: PluginHost;
   readonly steering: SteeringWorkspace;
+  readonly recovery: RecoveryWorkspace;
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly attachmentBindings = new Map<string, { binding: ConversationAttachments; stop(): void }>();
   private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
+  private readonly recoverySubscriptions = new Map<string, () => void>();
+  recoveryMaterials(viewKey: string) {
+    const knowledge = this.knowledgeBindings.get(viewKey)?.getSnapshot();
+    return { projectId: knowledge?.projectId ?? null, projectTitle: knowledge?.projectTitle ?? null, knowledge: knowledge?.controller?.getSnapshot().selected ?? [], attachments: this.attachmentBindings.get(viewKey)?.binding.input?.getSnapshot().items ?? [] };
+  }
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
   private closed = false;
@@ -116,6 +124,8 @@ export class AppPluginSession {
     };
     this.host = new PluginHost(port);
     this.steering = new SteeringWorkspace(this);
+    this.recovery = new RecoveryWorkspace(this, () => this.actions.recovery);
+    this.host.register(createRecoveryPlugin(this.recovery));
     this.host.register(createSteeringPlugin(this.steering));
     this.dataRenderers = createDataRendererRegistry([flowReplyDeclaration], this.host);
     this.host.register(createReplyRendererPlugin(this.dataRenderers));
@@ -130,9 +140,10 @@ export class AppPluginSession {
       if (!binding) throw Error("Knowledge is not available in this composer.");
       binding.open();
     }));
+    this.recovery.sync();
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -180,7 +191,8 @@ export class AppPluginSession {
       },
     });
     const stopProjection = projection.subscribe(() => binding.sync()), stopKnowledge = knowledge.subscribe(() => binding.sync());
-    this.attachmentBindings.set(viewKey, { binding, stop: () => { stopProjection(); stopKnowledge(); binding.dispose(); } });
+    const stopRecovery = binding.subscribe(() => this.recovery.changed(viewKey));
+    this.attachmentBindings.set(viewKey, { binding, stop: () => { stopProjection(); stopKnowledge(); stopRecovery(); binding.dispose(); } });
     return binding;
   }
   steeringAllowed(identity: SteeringIdentity, mode: "read" | "write") { return !this.closed && identity.connectionScope === this.id && this.actions.steering?.allowed(identity, mode) === true; }
@@ -189,7 +201,17 @@ export class AppPluginSession {
   steeringAccept(identity: SteeringIdentity, input: Parameters<SteeringPorts["accept"]>[1], key: string, signal: AbortSignal) { if (!this.steeringAllowed(identity, "write")) throw Error("Steering write denied."); return this.actions.steering!.accept(identity, input, key, signal); }
   knowledgeBinding(viewKey: string, projection: ConversationProjection) {
     let binding = this.knowledgeBindings.get(viewKey);
-    if (!binding) { binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding); }
+    if (!binding) {
+      binding = new ConversationKnowledge(viewKey, projection, this); this.knowledgeBindings.set(viewKey, binding);
+      let observed = binding.getSnapshot().controller, stopSelection = observed?.subscribe(() => this.recovery.changed(viewKey));
+      const current = binding;
+      const stopBinding = binding.subscribe(() => {
+        const controller = current.getSnapshot().controller;
+        if (controller !== observed) { stopSelection?.(); observed = controller; stopSelection = controller?.subscribe(() => this.recovery.changed(viewKey)); }
+        this.recovery.changed(viewKey);
+      });
+      this.recoverySubscriptions.set(viewKey, () => { stopBinding(); stopSelection?.(); });
+    }
     return binding;
   }
   hasProtectedAttachments() { return [...this.attachmentBindings.values()].some(({ binding }) => binding.protection().length > 0); }
@@ -198,6 +220,7 @@ export class AppPluginSession {
     if (this.closed) return ["Connection state unavailable"];
     const binding = this.knowledgeBindings.get(viewKey), state = binding?.getSnapshot();
     return [
+      ...this.recovery.protection(viewKey),
       ...(this.attachmentBindings.get(viewKey)?.binding.protection() ?? []),
       ...(state?.controller?.getSnapshot().selected.length ? ["Selected knowledge"] : []),
       ...(state?.projectId && !binding?.locked() ? ["Project selection"] : []),
@@ -208,9 +231,11 @@ export class AppPluginSession {
   releaseView(viewKey: string) {
     if (this.getViewProtection(viewKey).length) throw Error("This view still owns local material.");
     const binding = this.knowledgeBindings.get(viewKey);
+    this.recoverySubscriptions.get(viewKey)?.(); this.recoverySubscriptions.delete(viewKey);
     this.knowledgeBindings.delete(viewKey); binding?.dispose();
     this.attachmentBindings.get(viewKey)?.stop(); this.attachmentBindings.delete(viewKey);
     this.steering.closeView(viewKey);
+    this.recovery.release(viewKey);
   }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
     const binding = this.knowledgeBindings.get(identity.viewKey);
@@ -305,6 +330,8 @@ export class AppPluginSession {
     this.closed = true;
     this.lifetime.abort();
     this.steering.dispose();
+    this.recovery.dispose();
+    this.recoverySubscriptions.forEach(stop => stop()); this.recoverySubscriptions.clear();
     this.attachmentBindings.forEach(value => value.stop()); this.attachmentBindings.clear();
     this.knowledgeBindings.forEach(binding => binding.dispose()); this.knowledgeBindings.clear();
     this.dataRenderers.dispose();

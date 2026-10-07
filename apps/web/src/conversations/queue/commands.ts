@@ -1,5 +1,6 @@
+import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../../recovery/journal";
 import { FlowApiError, type FlowClient } from "@flow/client";
-import { conversationQueueEnqueueSchema, conversationQueuePauseSchema, conversationQueueResumeSchema, conversationQueueCancelSchema,
+import { conversationContextResponseSchema, conversationQueueEnqueueSchema, conversationQueuePauseSchema, conversationQueueResumeSchema, conversationQueueCancelSchema,
   type AttachmentReference, type ConversationQueueItem, type ConversationQueueCurrentTurn, type ConversationQueueEnqueue } from "@flow/contracts";
 
 import { assertContextReceiptMatches, freezeMaterialRequest } from "../../conversation-context/receipts";
@@ -27,6 +28,7 @@ export interface QueueReceipt {
   readonly state: "sending" | "unknown" | "rejected" | "accepted";
   readonly everUnknown: boolean;
   readonly message: string;
+  readonly recoveryVersion?: number;
 }
 const taskStatuses = ["queued", "running", "waiting", "cancel_requested", "succeeded", "failed", "cancelled", "uncertain"];
 export const validRevision = (value: unknown): value is number => Number.isInteger(value) && Number(value) >= 0 && Number(value) <= 2_147_483_647;
@@ -76,11 +78,21 @@ function receiptMessage(command: QueueCommand, value: unknown): string {
   if (result.promoted !== null) { assertQueueItem(result.promoted as ConversationQueueItem, command.conversationId); if ((result.promoted as ConversationQueueItem).state !== "promoted") throw Error("Continue promotion is not confirmed."); }
   return "Continue accepted. Current execution comes from the refreshed queue.";
 }
+function receiptCheckpoint(command: QueueCommand, value: Record<string, unknown>) {
+  if (command.kind === "cancel-task") return recoveryValue({ taskId: command.taskId, status: value.status });
+  const current = value.currentTurn as ConversationQueueCurrentTurn | null | undefined;
+  const item = value.item as ConversationQueueItem | undefined, promoted = value.promoted as ConversationQueueItem | null | undefined;
+  const promotion = (entry: ConversationQueueItem) => entry.promoted && ({ taskId: entry.promoted.taskId, turnId: entry.promoted.turnId, turnNumber: entry.promoted.turnNumber });
+  return recoveryValue({ conversationId: command.conversationId, queueRevision: value.queueRevision, outcome: value.outcome, paused: value.paused,
+    currentTurn: current ? { taskId: current.taskId, turnId: current.turnId, turnNumber: current.turnNumber, taskStatus: current.taskStatus, queueItemId: current.queueItemId } : current,
+    promoted: promoted ? { id: promoted.id, promoted: promotion(promoted) } : promoted,
+    item: item ? { id: item.id, sequence: item.sequence, state: item.state, promoted: promotion(item), context: item.context === undefined ? undefined : conversationContextResponseSchema.parse(item.context) } : undefined });
+}
 function awaitSignal<T>(operation: Promise<T>, signal: AbortSignal): Promise<T> {
   return new Promise((resolve, reject) => {
     const aborted = () => { cleanup(); reject(signal.reason); };
     const cleanup = () => signal.removeEventListener("abort", aborted);
-    if (signal.aborted) { aborted(); return; }
+    if (signal.aborted) { operation.catch(() => undefined); aborted(); return; }
     signal.addEventListener("abort", aborted, { once: true });
     operation.then(value => { cleanup(); resolve(value); }, error => { cleanup(); reject(error); });
   });
@@ -89,6 +101,25 @@ function awaitSignal<T>(operation: Promise<T>, signal: AbortSignal): Promise<T> 
 /** Immutable local receipts. Observation stops never cancel or rewrite sent commands. */
 export class QueueCommands {
   private state: readonly QueueReceipt[] = [];
+  private recovery?: CommandRecovery;
+  configureRecovery(recovery: CommandRecovery) { this.recovery = recovery; }
+  restore(record: CommandRecord) {
+    if (record.domain !== "queue" || !record.frozen || typeof record.frozen !== "object" || Array.isArray(record.frozen)) throw Error("Invalid saved queue receipt.");
+    const value = record.frozen as Record<string, unknown>;
+    if (value.key !== record.id || typeof value.key !== "string" || !value.command || typeof value.command !== "object") throw Error("Invalid original queue identity.");
+    const raw = value.command as Record<string, unknown>;
+    if (typeof raw.conversationId !== "string" || !raw.conversationId || raw.conversationId.length > 128 || !["enqueue", "pause", "resume", "cancel-item", "cancel-task"].includes(String(raw.kind))) throw Error("Invalid saved queue target.");
+    if (raw.kind === "cancel-item" && (typeof raw.itemId !== "string" || !raw.itemId || raw.itemId.length > 128)) throw Error("Invalid saved queue item.");
+    if (raw.kind === "cancel-task" && (typeof raw.taskId !== "string" || !raw.taskId || raw.taskId.length > 128)) throw Error("Invalid saved cancellation target.");
+    const command = freezeCommand(raw as unknown as QueueCommand), key = slot(command);
+    const previous = this.state.find(receipt => receipt.slot === key);
+    if (previous && (previous.key !== record.id || previous.state === "sending" || JSON.stringify(previous.command) !== JSON.stringify(command))) throw Error("Resolve this queue slot before restoring another receipt.");
+    if (record.phase === "accepted") {
+      const ack = record.checkpoint;
+      if (!ack || typeof ack !== "object" || Array.isArray(ack) || (command.kind === "cancel-task" ? !("taskId" in ack) || ack.taskId !== command.taskId || !("status" in ack) || !taskStatuses.includes(String(ack.status)) : !("conversationId" in ack) || ack.conversationId !== command.conversationId || !("queueRevision" in ack) || !validRevision(ack.queueRevision))) throw Error("Invalid saved queue acknowledgement identity.");
+    }
+    this.publish({ slot: key, key: value.key, command, recoveryVersion: record.version, state: record.phase === "accepted" ? "accepted" : record.phase === "rejected" ? "rejected" : "unknown", everUnknown: record.phase === "unknown" || record.phase === "dispatching", message: record.phase === "accepted" ? "Previously accepted by the center; this checkpoint is historical, not current queue state." : record.phase === "rejected" ? "Previously rejected request; no retry was issued." : record.phase === "prepared" ? "Saved before sending. Retry this original request explicitly." : "Original queue receipt restored; no command was resent." });
+  }
   private readonly lifetime = new AbortController();
   private readonly listeners = new Set<() => void>();
   constructor(private readonly port: QueuePort, private readonly settled: () => Promise<void>, private readonly timeoutMs = 15_000) {}
@@ -103,16 +134,20 @@ export class QueueCommands {
   }
   async retry(key: string) {
     const previous = this.state.find(entry => entry.key === key && entry.state === "unknown"); if (!previous || this.lifetime.signal.aborted) return;
-    const entry = { ...previous, state: "sending" as const }; this.publish(entry); await this.dispatch(entry);
+    const entry = { ...previous, state: "sending" as const }; this.publish(entry); await this.dispatch(entry, true);
   }
   dismiss(key: string) { this.state = this.state.filter(entry => entry.key !== key || ["unknown", "sending"].includes(entry.state)); this.emit(); }
   dispose() { this.lifetime.abort(); this.state = []; this.listeners.clear(); }
   private publish(entry: QueueReceipt) { if (!this.lifetime.signal.aborted) { this.state = [...this.state.filter(previous => previous.slot !== entry.slot), Object.freeze(entry)]; this.emit(); } }
   private emit() { this.listeners.forEach(listener => listener()); }
-  private async dispatch(entry: QueueReceipt) {
+  private async dispatch(entry: QueueReceipt, explicitRetry = false) {
     const { command, key } = entry;
     const signal = AbortSignal.any([this.lifetime.signal, AbortSignal.timeout(this.timeoutMs)]);
+    const recovery = this.recovery;
+    let sent = false;
     try {
+      await recovery?.prepare({ id: key, domain: "queue", slot: `queue:${command.conversationId}:${entry.slot}`, frozen: recoveryValue({ key, command }), expectedVersion: entry.recoveryVersion, explicitRetry });
+      await recovery?.dispatch(key); signal.throwIfAborted(); sent = true;
       let operation: Promise<unknown>;
       switch (command.kind) {
         case "enqueue": operation = this.port.enqueueConversationTurn(command.conversationId, command.input, key, signal); break;
@@ -122,12 +157,16 @@ export class QueueCommands {
         case "cancel-task": operation = this.port.cancel(command.taskId, key); break;
       }
       const result = await awaitSignal(operation, signal); if (this.lifetime.signal.aborted) return;
-      this.publish({ ...entry, state: "accepted", message: receiptMessage(command, result) });
+      const message = receiptMessage(command, result);
+      await recovery?.checkpoint(key, { phase: "accepted", data: receiptCheckpoint(command, result as Record<string, unknown>) });
+      signal.throwIfAborted();
+      this.publish({ ...entry, state: "accepted", message });
     } catch (error) {
       if (this.lifetime.signal.aborted) return;
       const rejected = error instanceof FlowApiError && error.status >= 400 && error.status < 500 && error.status !== 408 && !error.code.includes("idempotency");
       const unknown = entry.everUnknown || !rejected;
-      this.publish({ ...entry, state: unknown ? "unknown" : "rejected", everUnknown: unknown, message: queueError(error) });
+      this.publish({ ...entry, state: unknown ? "unknown" : "rejected", everUnknown: entry.everUnknown || (sent && unknown), message: !sent && error instanceof RecoveryError ? `Not sent: local recovery is blocked. Retry this original key after resolving storage. ${queueError(error)}` : queueError(error) });
+      if (!(error instanceof RecoveryError)) { try { await recovery?.checkpoint(key, { phase: unknown ? "unknown" : "rejected" }); } catch { /* Original dispatching checkpoint remains recoverable. */ } }
     }
     if (!this.lifetime.signal.aborted) await this.settled();
   }

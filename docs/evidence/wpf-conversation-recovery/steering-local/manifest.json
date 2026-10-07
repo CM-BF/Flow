@@ -1,0 +1,92 @@
+{
+  "state": "PASS_AFFECTED_WEB_NOEMIT_NOT_BROWSER",
+  "at": "2026-10-07T09:39:49.342563+00:00",
+  "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "executionHead": "0f4bbcc3578dffaef74a24732129d54d8c282ba0",
+  "phaseBudgetMs": 20000,
+  "previousSpentMs": 0,
+  "actualOuterMs": 7681.562665966339,
+  "parentMs": 7594.828624976799,
+  "chargedMs": 7682,
+  "remainingMs": 12318,
+  "attempts": 1,
+  "noRepeatedObserverOr119": true,
+  "oldTypesBudgetModified": false,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "typeLogTransport": "regular file, closed before sampling; not claimed pipe EOF",
+  "files": [
+    {
+      "file": "preflight.json",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/preflight.json",
+      "bytes": 4794,
+      "sha256": "14ff15a98ba27a6221d94db628a0d07522741129030d55858a9afde2ff3e6037"
+    },
+    {
+      "file": "start.json",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/start.json",
+      "bytes": 189,
+      "sha256": "70a92651e674670bd21405613dfa0b0f2eb69ca997fe34803b4cc1c013956c9f"
+    },
+    {
+      "file": "actual-exit.json",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/actual-exit.json",
+      "bytes": 354,
+      "sha256": "ffa56c7f442de1d08adabb2d0742b4463f6dd622f36765dccd920fa6b520bb5d"
+    },
+    {
+      "file": "parent.stderr.log",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "parent.stdout.jsonl",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/parent.stdout.jsonl",
+      "bytes": 973,
+      "sha256": "683a78f6a1ed73c98f6c4811aa68a135986b7c8a220f7c11e5229ac7c00cce40"
+    },
+    {
+      "file": "run.py",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/run.py",
+      "bytes": 3591,
+      "sha256": "41794c06b79a022ce69d91fb661f36f3d726f2f25a87ae892bfd4e87a0dae444"
+    },
+    {
+      "file": "sandbox.sb",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/sandbox.sb",
+      "bytes": 173,
+      "sha256": "64410e004d2e212534791056111034d420bcb132be26849a58f0fdf7b2a68850"
+    },
+    {
+      "file": "segment.json",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/segment.json",
+      "bytes": 1145,
+      "sha256": "8a38b072f138315a26560f38a1643f873d16369be12ba92ceb7a9d572e90d75d"
+    },
+    {
+      "file": "types.log",
+      "original": "/private/tmp/recovery-steering-local-g65ogpen/attempt-1/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "ownedProcessObservations": [
+    {
+      "pid": 93663,
+      "process": "ESRCH"
+    },
+    {
+      "pid": 93729,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    }
+  ],
+  "scratch": "/private/tmp/recovery-steering-local-g65ogpen",
+  "scratchRemoved": true,
+  "newBrowserPhaseSpentMs": 0,
+  "PG": false,
+  "Chrome": false,
+  "HTTP": false,
+  "provider": false
+}

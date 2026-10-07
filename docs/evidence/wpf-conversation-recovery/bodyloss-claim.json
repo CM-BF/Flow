@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-06T17:28:01.348Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "head": "02398a665b2815b7b663b3ae30551db0bac0581b",
+  "branch": "codex/web-conversation-recovery",
+  "dirty": "",
+  "sourceEquals": "ec91d1113898e70f380f9bb503f3b5ceff9467b2",
+  "authorized": [
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "plans/wpf-conversation-recovery",
+    "docs/evidence/wpf-conversation-recovery"
+  ],
+  "instruction": "GO via root: deterministic realACK bodyloss and bounded owned PGzero-connection cleanup;source-only0runtime/free/import/types/sharedwrites",
+  "budgetUnchanged": {
+    "directUsedMs": 4574,
+    "directRemainingMs": 25426,
+    "typesRemainingMs": 7186,
+    "browserTotalMs": 90000,
+    "browserCleanupReserveMs": 15000
+  }
+}

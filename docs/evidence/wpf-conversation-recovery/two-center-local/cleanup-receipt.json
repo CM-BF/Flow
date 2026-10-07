@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-07T10:52:19.384364+00:00",
+  "scratch": "/private/tmp/recovery-two-center-local-ezx49nve",
+  "scratchAbsent": true,
+  "archivedFiles": [
+    {
+      "path": "actual-exit.json",
+      "bytes": 216,
+      "sha256": "89633742dbf22016c37fb5431c8b8619ca7536f31ddef45d2fb5e4352efb6551"
+    },
+    {
+      "path": "attempt-1/direct.log",
+      "bytes": 101,
+      "sha256": "f8315e6285bdedf109ffe07d6253ca0f75068b13ad490fd0803480e9e0acd188"
+    },
+    {
+      "path": "attempt-1/run.py",
+      "bytes": 4825,
+      "sha256": "272880815153591bc21f0efc8e3078730ad41fd3c42ce0fce2bbf5fc2f28a2db"
+    },
+    {
+      "path": "attempt-1/sandbox.sb",
+      "bytes": 175,
+      "sha256": "110c1e644b6a92eae1e55c4382a9e3f3397ece3a5b1164f7a694cac0362a47b6"
+    },
+    {
+      "path": "attempt-1/segment.json",
+      "bytes": 2659,
+      "sha256": "b95e8a38c4701ebd5a5b24aa8e9874c595d221c04e8a6bf6968f431365ec5c53"
+    },
+    {
+      "path": "attempt-1/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "attempt-1/vitest-results.json",
+      "bytes": 23108,
+      "sha256": "bfd1048e8b30fbe994b20a41e4f4e4cae74515dfe0f831d9f854e33bb2d8f12e"
+    },
+    {
+      "path": "attempt-1/vitest.config.mjs",
+      "bytes": 425,
+      "sha256": "d4ea8b6efef7ad7a4e2dcbc9382d1d02b0d02a4b57331ea435b778bb34c01219"
+    },
+    {
+      "path": "parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "parent.stdout.jsonl",
+      "bytes": 2217,
+      "sha256": "2415cbc51eef330cc419587ba7c250f0011840a34e90cbdd0a33213c48eb828b"
+    },
+    {
+      "path": "post-check-observation.json",
+      "bytes": 314,
+      "sha256": "59a71a9b24d590cb78230596d696709d0ea3a07890472f6e1cfed31b06591749"
+    },
+    {
+      "path": "preflight.json",
+      "bytes": 6116,
+      "sha256": "fcc0bbf96547cbc7707146183320e1f7fce4dfd55db795ac03f515f9e88db64e"
+    },
+    {
+      "path": "start.json",
+      "bytes": 133,
+      "sha256": "1f5df3fbb5e8b42b56c755fd32683a9cce242b273085979c19a1cd1574bc69d1"
+    }
+  ],
+  "allOriginalBytesRetained": true,
+  "chargeMs": 7481,
+  "budgetMs": 20000,
+  "remainingMs": 12519,
+  "pipeEvidence": "Outer stdout/stderr EOF; Node outputs are regular log files, not child pipes",
+  "newPGChrome": false
+}

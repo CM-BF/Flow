@@ -1,0 +1,129 @@
+{
+  "id": "RECOVERY-ROUTE-FIX-20261007",
+  "at": "2026-10-07 10:36:27 UTC",
+  "state": "CLOSED",
+  "sourceTarget": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "authorization": {
+    "by": "root + d01_owner",
+    "task": "Continuation of RECOVERY01/exact21; no new task or claim",
+    "budgetMs": 90000,
+    "runtimeStartAuthorized": false
+  },
+  "selection": {
+    "journey": "steering-recovery",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "fullJourney": false
+  },
+  "limits": {
+    "phaseRuntimeMs": 90000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupRetainedLimitBytes": 4194304,
+    "perRunRetainedReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "databases": 1,
+    "chrome": 1,
+    "syntheticProtocolActors": 1,
+    "runnerProcesses": 0,
+    "providerCalls": 0,
+    "leaseMs": 60000
+  },
+  "runtimeSpentMs": 15119,
+  "runtimeRemainingMs": 74881,
+  "attempts": [
+    {
+      "run": "recrtfix-20261007-102945-f71af8",
+      "phaseId": "RECOVERY-ROUTE-FIX-20261007",
+      "actualOuterMs": 15118.727791006677,
+      "lateParentMs": 14518.907833,
+      "serializedParentMs": 14503.140875,
+      "chargeMs": 15119,
+      "previousPhaseSpentMs": 0,
+      "phaseSpentMs": 15119,
+      "phaseRemainingMs": 74881,
+      "closedOldPhasesUnchanged": true,
+      "outcome": "SELECTED2_PASS_NOT_WHOLE_FEATURE",
+      "executionHead": "d06baf3c70cddcb1614088ac2349a1d416d61851",
+      "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "cleanupConfirmed": true,
+      "manifest": {
+        "path": "stale-route-first-manifest.json",
+        "sha256": "57a998ac6b2c3b91fc2d367a8d312fccddfe92a4c2db3e360fd676e725679a4b"
+      }
+    }
+  ],
+  "closedPriorPhases": {
+    "original90": {
+      "budgetMs": 90000,
+      "actualMs": 64134.08675,
+      "unusedCreditTransferred": false
+    },
+    "continuous150": {
+      "budgetMs": 150000,
+      "actualChargeMs": 126447,
+      "unusedMsSealed": 23553,
+      "unusedCreditTransferred": false,
+      "sourceRecord": "continuous-segment.json",
+      "sourceRecordSha256": "c8322684587f9c34604a3ac9c6eb3e08f167a4e5ec3f96db4cfdcb83af7d314d"
+    },
+    "steering60": {
+      "budgetMs": 60000,
+      "actualChargeMs": 34753,
+      "unusedMsSealed": 25247,
+      "state": "CLOSED",
+      "unusedCreditTransferred": false,
+      "record": {
+        "path": "steering-phase.json",
+        "bytes": 5773,
+        "sha256": "b70cf9acbaae72dad6deac3ccfc49c43883d57a1717513f07598d696eab31c8e"
+      }
+    }
+  },
+  "defensiveParentTotalMs": 390000,
+  "defensiveParentCeilingIsNotPhaseCredit": true,
+  "chargeRule": "ceil(max(actual outer wall, late parent terminal, serialized parent elapsed)); preserve all original timings",
+  "nextAttemptDerivation": {
+    "maximumTotalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "maximumWorkMs": 45000,
+    "minimumAttemptMs": 30000,
+    "equation": "remaining=90000-sum(ceil(max(actualOuterMs,lateParentMs,serializedParentMs))) for this phase only; total<=min(60000,remaining); remaining<30000 stops",
+    "unknownAccountingOrCleanup": "FAIL_CLOSED"
+  },
+  "gate": null,
+  "adminEnv": null,
+  "holder": "NONE",
+  "remainingPrerequisites": [
+    "No repeat of this passed selection; further runtime needs a concrete original acceptance gap and resource handoff"
+  ],
+  "proofLimits": [
+    "Prebuilt pinned conversation, not new-chat profile discovery",
+    "Synthetic protocol session is not a native SDK session or evidence that a model consumes/applies guidance",
+    "Center accepted/replay and browser restoration only; no received/observed-consumed/applied fabricated",
+    "Second center/principal and real runner/native application remain unverified"
+  ],
+  "localEvidence": {
+    "path": "stale-route-local-index.json",
+    "bytes": 15440,
+    "sha256": "5d8938686c9d95f95ecd743949cd02262536f3ca48292ffff72c2382f67ab168"
+  },
+  "finalSourceAndLocalReview": {
+    "path": "stale-route-local-root-review.json",
+    "bytes": 20013,
+    "sha256": "12cc44fbb18a7dae8cd5edadd7617ec334d9c0587b6b40b4e18f8a9a7a939440"
+  },
+  "actualReview": {
+    "path": "stale-route-first-root-review.json",
+    "bytes": 18127,
+    "sha256": "e6c904e0fe1dd932902b682e43809680ee0791a160f85f37b67ab12192d6e752",
+    "outcome": "APPROVED_SELECTED2_PASS_NOT_WHOLE_FEATURE"
+  },
+  "unusedMsSealed": 74881,
+  "unusedCreditTransferred": false
+}

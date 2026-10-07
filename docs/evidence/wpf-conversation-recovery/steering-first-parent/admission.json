@@ -1,0 +1,111 @@
+{
+  "state": "ADMITTED_OWNER_FINITE_SEGMENT",
+  "at": "2026-10-07T09:46:16.003489+00:00",
+  "head": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
+  "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-conversation-recovery",
+      "plans/wpf-conversation-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/web-conversation-recovery",
+    "origin": "new",
+    "taskId": "WPF-RECOVERY01",
+    "worker": "workspace_panels_owner",
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "createdAt": "2026-10-06T13:46:08.213Z",
+    "updatedAt": "2026-10-06T14:05:53.395Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-07T09:45:01.850Z",
+  "overlap": [],
+  "run": "recsteer-20261007-094616-1ab0a4",
+  "gate": "/private/tmp/recovery-steering-actual-8t56ekdk/gate.json",
+  "gateSha256": "faadbad968040abf6132ea8b777222cd381970ab8600c7b4d63b373cc7ddce8b",
+  "adminEnv": "/private/tmp/recovery-steering-actual-8t56ekdk/admin.env",
+  "adminIdentity": {
+    "dev": 16777234,
+    "inode": 123970919,
+    "uid": 501,
+    "mode": "0o600"
+  },
+  "secretValueRecorded": false,
+  "fixedAdminSource": {
+    "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-current-preview.browser.ts",
+    "line": 185
+  },
+  "previousManifest": {
+    "path": "/private/tmp/recovery-created-turn-344f-di09jc0_/manifest.json",
+    "sha256": "7244c284191709c5ca09d41f128fbf433c07b7c2e6db589930d1f6861bf92793"
+  },
+  "sourcePinsVerified": 19,
+  "publicAnchorsVerified": 10,
+  "unchangedRuntimePinsVerified": 33,
+  "priorManifestRawPinsVerified": 111,
+  "allPriorRawCount": 166,
+  "allPriorRawBytes": 517193,
+  "allPriorRawInventorySha256": "cd66a01474fff7b1049ae4324e8f0461ba2f23fd60ae90531d1dfe5f5a766c95",
+  "retainedEvidenceBytes": 3501941,
+  "availableBytes": 23298203648,
+  "combinedFloorBytes": 4073455616,
+  "concurrentAdditionalBytes": 19398656,
+  "keptC02Bytes": 33685504,
+  "phase": {
+    "id": "RECOVERY-STEERING-20261007",
+    "recordSha256": "e50b64b7ca0e1dd57836eb1b3e422d8b777c0296eb26bdb0f3e9ef8f6ad2004e",
+    "budgetMs": 60000,
+    "spentMs": 0,
+    "remainingMs": 60000,
+    "totalDerivation": "min(60000, phaseRemaining60000)",
+    "cleanupMs": 15000,
+    "closedOld90ActualMs": 64134.08675,
+    "closedOld150SpentMs": 126447,
+    "closedOld150UnusedMs": 23553,
+    "oldUnusedCreditTransferred": false
+  },
+  "holderSource": "d01 explicit next unique1PG1Chrome after SVC06 actual09:38:00.412 cleanup; Quick metadata0runtime/DPERFstopped; Mika one serialized local18.5MiB; later conflict stops",
+  "command": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-steering-actual-8t56ekdk/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-steering-actual-8t56ekdk/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "chromeVersion": "154.0.8037.99"
+}
