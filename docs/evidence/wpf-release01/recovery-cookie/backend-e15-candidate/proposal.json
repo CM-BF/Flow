@@ -1,5 +1,5 @@
 {
-  "state": "SOURCE_PREPARED_FOR_REVIEW_NO_ACTUAL_GRANT",
+  "state": "REVIEWED_SOURCE_BOUND_NO_ACTUAL_GRANT",
   "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
   "packet": "/private/tmp/rel01-e15-c1",
   "entry": [
@@ -42,5 +42,17 @@
     "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-r2-build-review.json",
     "bytes": 2334,
     "sha256": "f705b9bd83357c19500095663df65631747f33f1a09fb05baa05dbbec6fc7c4c"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-release-e15-preparation-review-20261007.json",
+    "realpath": "/private/tmp/root-release-e15-preparation-review-20261007.json",
+    "bytes": 6635,
+    "sha256": "cc65d6498b4d3fd532e58d1504dcff013c2323c26cd43a82a24a763dfc7b47a3"
+  },
+  "nativeBoundaryApproval": {
+    "path": "/private/tmp/root-release-e15-native-acceptance-20261007.json",
+    "realpath": "/private/tmp/root-release-e15-native-acceptance-20261007.json",
+    "bytes": 1257,
+    "sha256": "f8626844f3d77871e658c126892044c8050d2f5a8273763a074aaf19c4fb3e70"
   }
 }

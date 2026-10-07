@@ -1,10 +1,12 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED，新e15/880固定输入差量待审；实际NOT_RUN。**
+**当前状态：APPROVED，新e15/880固定输入差量/native准备已独审通过；实际NOT_RUN，0blocking。**
 
 Review target commit：cb3ca8ec7ed4611097a3ab7414f9591526ccd896。原两harness范围，fixture仅三个可信backend身份值，browser原字节。
 
 [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/README.md)：复用四App/native生命周期，R2产物限定独审00dcd1/f705已固定并核齐；不推运行许可。b692已因后台默认null resolver被阻塞，未运行；旧cd27四App通过仍保历史限定。
+
+[Root集中源审](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json)及[native接受](../../docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json)已原样归档。固定cb3两harness/三literal，仅当前candidate批准；不追metadataSHA、不改旧C3 reports、不授实际。
 
 ## 历史：b692 source/native限定批准（未实际）
 

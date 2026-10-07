@@ -1,7 +1,7 @@
 {
   "task": "WPF-RELEASE01 / REQ19",
-  "state": "E15_R2_FIXED_SOURCE_PREPARED_NOT_RUN",
-  "updatedAt": "2026-10-07T21:50:39.489Z",
+  "state": "E15_R2_REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "updatedAt": "2026-10-07T21:53:44.115Z",
   "owner": "w01_owner; d01 runtime coordination; Original personal publication",
   "consumerSource": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
   "claim": {
@@ -94,7 +94,7 @@
   "runtime": "NOT_RUN",
   "runtimeGrant": null,
   "formalReports": null,
-  "nextAction": "Focused three-literal/input review then manager separately granted fresh180s formal fourApp window. No old reports relabelled.",
+  "nextAction": "Manager separately granted fresh180s formal fourApp window; current no grant, no old report relabelling.",
   "priorPair": {
     "backend": "cd27/04da",
     "fourAppActual": "PASSED_SCOPE_779_AND_THREE_RETAINED",
@@ -108,8 +108,18 @@
     "Four new formal reports must bind identical e15/880/backend and policy81a8 context and verify after complete owned cleanup.",
     "New publication is owned by Original; preparation/source acceptance is not user recovery or deployment proof."
   ],
-  "sourceReview": null,
-  "nativeAcceptance": "same exact unchanged runner/worker historical native boundary; new candidate source/input approval pending",
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-source-preparation-review.json",
+    "bytes": 6635,
+    "sha256": "cc65d6498b4d3fd532e58d1504dcff013c2323c26cd43a82a24a763dfc7b47a3"
+  },
+  "nativeAcceptance": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-candidate/root-native-acceptance.json",
+    "bytes": 1257,
+    "sha256": "f8626844f3d77871e658c126892044c8050d2f5a8273763a074aaf19c4fb3e70"
+  },
   "priorPreparedCandidate": {
     "artifact": "b692/f37",
     "source": "203ccc2f38d45ee043838383d3ba3056e7e4a435",

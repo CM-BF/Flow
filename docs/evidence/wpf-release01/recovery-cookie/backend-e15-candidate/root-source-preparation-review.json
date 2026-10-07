@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-07T21:52:06.371397+00:00",
+  "decision": "APPROVED_FIXED_E15_FOUR_APP_SOURCE_AND_PREPARATION_ONLY",
+  "blockingFindings": [],
+  "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+  "reviewedMetadataHead": "2aaed3ee701ca22ec39d33051948b70d853b518f",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "backend": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "sourceTree": "27cf190b00b3244026952ab85b0d922368676715",
+  "sourceDelta": "git diff203ccc..cb3 within exact fixture/browser paths changes only three backend tuple literals. Browser assertions and control flow unchanged.",
+  "inputDelta": "Only finalBackend changes; context/browserSettings/apps/output/recoveryApp are byte-value identical to b692 inputs. Output remains assigned only by reviewed worker. Eight public backend input hashes are identical after root normalization; this does not prove all backend files unchanged.",
+  "checked": {
+    "pinsTotal": 74,
+    "changedPinsActuallyReadAndVerified": 20,
+    "unchangedPinRecordsReusedFromPriorFixedReview": 54,
+    "preparedFilesActuallyVerified": 5,
+    "preparedManifestFilesVerified": 16,
+    "mismatches": [],
+    "fullPayloadScan": false,
+    "runtimeImports": false
+  },
+  "preparedFiles": [
+    {
+      "path": "/private/tmp/rel01-e15-c1/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/inputs.json",
+      "bytes": 7938,
+      "sha256": "1a3ca860947e9e9218ee6731c9c1a148398357cbf01baad66d20518ad8b0bc6e"
+    }
+  ],
+  "reviewedBinding": {
+    "path": "/private/tmp/rel01-e15-c1/binding.json",
+    "sha256": "876ba946e4a4ce5813494040b679fd75c60ae4e6744e50ad9d83389ecbc2bc55"
+  },
+  "reviewedManifest": {
+    "path": "/private/tmp/rel01-e15-c1/manifest.json",
+    "sha256": "2a4ff9cd6a75f2d3769a80d719dc1f24db739b54c851f7e35f26617b2a09cfc7"
+  },
+  "producerIndependentReview": {
+    "fixedCommit": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-r2-build-review.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-r2-build-review.json",
+    "bytes": 2334,
+    "sha256": "f705b9bd83357c19500095663df65631747f33f1a09fb05baa05dbbec6fc7c4c",
+    "decision": "APPROVED_LIMITED_FIXED_RECOVERY_R2_ARTIFACT_BUILD_RESULT",
+    "target": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+    "limitation": "Artifact build result only, not cold startup, four-App actual compatibility or personal restore."
+  },
+  "priorSourceReview": {
+    "path": "/private/tmp/root-release-b692-preparation-review-20261007.json",
+    "sha256": "f32d264d5642e0cb67917197fef3c2548f409ac41bd4fb7e89323f3447b08a06"
+  },
+  "apps": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    },
+    {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    }
+  ],
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "actualBoundary": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "configuredPgCeiling": 12,
+    "databases": 1,
+    "chrome": 1,
+    "nodeGroup": 1,
+    "scratchBytes": 67108864,
+    "rawBytes": 8388608,
+    "metadataBytes": 1048576,
+    "plannedDbWalBytes": 134217728,
+    "runtimeAddedBytesOnceSelected": 210763776,
+    "publicOrigin": "fixed owned HTTP proxy simulation, not access to personal service",
+    "freshManagerGrantRequired": true
+  },
+  "acceptance": [
+    "Four new exact e15 tuples must each produce read/send/samekeyrecover/negotiation reports after actual verification.",
+    "New779 Cookie app additionally preserves reload recovery, original pending key/body retry and late-old-logout/new-cookie assertions.",
+    "Require actual external OSexit0, unique hash-sealed terminal, worker0, both groups absent/EOF/drop0, normal markedDB DROP and pool/admin/proxy/profile/scratch cleanup.",
+    "Current preparation is NOT_RUN. cd27 formal PASS and b692 NOT_RUN/failed cold remain unchanged.",
+    "Final native/sourceReview references, executionHEAD and composed floor may be routine metadata-bound without source re-review or green-test replay; physical safeguards and limits remain."
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T21:52:06.371397+00:00",
+    "scope": "Narrow data retarget, stable executor/interface, explicit source/result identity and error/cleanup semantics",
+    "findings": "No new blocking source/preparation issue; no framework or shared contract modification."
+  },
+  "executionByReviewer": {
+    "tests": 0,
+    "browser": 0,
+    "PG": 0,
+    "provider": 0,
+    "personal": 0
+  }
+}

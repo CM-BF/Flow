@@ -6,4 +6,6 @@
 
 四个Web461a/caa1/d629/779与context81a8原样，779/c231不重建。461a仍format1/releaseIdnull。原真实Bearer三App和Cookie新App、UNKNOWN同key/body、reload、accepted/SSE、迟到logout/newCookie、console400拒绝以及cleanup后才导入四正式报告全部保留。旧b692未运行/被依赖阻塞，旧cd27四报告仍仅旧pair有效；不改签、不回填。
 
-当前PREPARED/NOT_RUN/NO_GRANT，无gate/env/raw或实际进程。下一180s含30cleanup/1markedDB12conn/1Nodegroup+1Chrome/64MiBscratch+128MiBDBWAL规划+8MiBraw含256KiBouter+1MiBmetadata=201MiB仍proposal。当前source8MiB从21:45:43至22:05:43，0工程/PGHTTPChrome/build/provider；actual需固定产物独审与manager独立fresh完整组合。
+当前REVIEWED_SOURCE_BOUND/NOT_RUN/NO_GRANT，无gate/env/raw或实际进程。下一180s含30cleanup/1markedDB12conn/1Nodegroup+1Chrome/64MiBscratch+128MiBDBWAL规划+8MiBraw含256KiBouter+1MiBmetadata=201MiB仍proposal。当前source8MiB从21:45:43至22:05:43，0工程/PGHTTPChrome/build/provider；actual需固定产物独审与manager独立fresh完整组合。
+
+[Root集中源审](root-source-preparation-review.json)与[精确native边界](root-native-acceptance.json)已APPROVED/0blocking，target固定cb3；正式产物限定审并不替代新四App实际。仅routine metadata HEAD绑定，无新执行字节。全4scope本批封存STOP。
