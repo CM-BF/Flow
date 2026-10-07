@@ -13,7 +13,7 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 7afa5d718781e54ae956d613e955554d221ca74e；本轮仅原candidate/status与一份只读准备记录；产品/已消费入口不改 |
+| 工作基线 / HEAD | 7afa5d718781e54ae956d613e955554d221ca74e；e4cd为本轮基线；迁入装配 source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc，本次 only own evidence/plan；产品/已消费入口不改 |
 | 工作树dirty状态 | 本次准备metadata正常提交后clean；无产品、个人安装或运行源修改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
@@ -23,11 +23,11 @@
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，正补齐个人更新清单的迁入调用。 |
+| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，迁入调用已补齐并通过定向检查，待独立审查。 |
 | 下一可用交付 | 审定一次后台与网页宿主更新清单，在明确运行窗口按原维护流程执行。 |
-| 当前阻塞 | ACTIVE: 迁入调用接线正做定向检查，完成独审后由Lead交真实运行窗口。 |
+| 当前阻塞 | ACTIVE: 迁入调用修复待独立审查与真实运行窗口；未操作个人服务。 |
 | 需用户决定 | NONE |
-| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；本段薄adapter修复中，未操作个人服务。 |
+| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；修复source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 待独立增量审；未操作个人服务。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -155,7 +155,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |
 | SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |
-| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | ONGOING | 审查与资源 | 单份个人更新清单已固定待独审；仍等原cleanup-only真实归还，不预占 | update-diagnostics-candidate/personal-readonly-preparation.json documentChecks及Lead窗口消息 |
+| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | ONGOING | 审查与资源 | 迁入装配修复待独审/本次窗口；原UPSTREAM已12:13:34.420归还但不预占 | update-diagnostics-candidate/personal-readonly-preparation.json documentChecks及Lead窗口消息 |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -343,4 +343,8 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 
 ## 2026-10-07：迁入调用装配窄修（个人未执行）
 
-实际实施起点 2026-10-07T12:17:57.080177+00:00；fresh ledger 2026-10-07T12:12:36.796Z 确认 v9 原双scope。e4cd REQUEST_CHANGES P2：旧private migrate不接受已存在c7b、procedure仅ports，不作为可执行入口。新增本次固定adapter复用原procedure、clone-driver/no-replace和双锁，c7b/af51/null backend、5私有文件与实际owned身份必须fresh保持。C3已审资料已main e0295747200d7f0616779a712fdfd06691c3708f；本段没有个人读取/写入、PG/HTTP/SDK/provider或build/App重跑。局部定向预算累计≤30s、tmp≤8MiB、raw≤128KiB，9纯用例+语法待运行；实际迁入120+.5+2使用单一NEW_CHILD_SESSION，copy/rename同组，现仍NOT_RUN。
+实际实施起点 2026-10-07T12:17:57.080177+00:00；fresh ledger 2026-10-07T12:12:36.796Z 确认 v9 原双scope。e4cd REQUEST_CHANGES P2：旧private migrate不接受已存在c7b、procedure仅ports，不作为可执行入口。新增本次固定adapter复用原procedure、clone-driver/no-replace和双锁，c7b/af51/null backend、5私有文件与实际owned身份必须fresh保持。C3已审资料已main e0295747200d7f0616779a712fdfd06691c3708f；本段没有个人读取/写入、PG/HTTP/SDK/provider或build/App重跑。局部定向预算累计≤30s、tmp≤8MiB、raw≤128KiB，9/9纯用例+Python AST已通过/103ms，owned组absent/双EOF、空exact scratch removed；实际迁入120+.5+2使用单一NEW_CHILD_SESSION，copy/rename同组，现仍NOT_RUN。
+
+本段封定：2026-10-07T12:19:49.916445+00:00；[migration-manifest](../../docs/evidence/svc06/update-diagnostics-candidate/migration-manifest.json) 保留 e4cd P2 与 source 30ce7eac3405e654007abdf7a7a2ff05854200d6、53runtime/原44闭包、9项纯检查。C3资料已main e0295747200d7f0616779a712fdfd06691c3708f，个人迁入/维护未执行；实际启动和窗口待定，不能用准备时间冒部署时间。
+
+2026-10-07T12:21:09.313131+00:00：独审静态P2（30ce只读SQL无schema）已限定修为flow.runners，source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc；1项受影响Pool port纯例1/1/103ms，原9不重跑，总10different/206ms、两组absent/双EOF/两empty scratchremoved；无个人/PG/HTTP。原raw01/02与旧P2均保留，准备修复待native最终增量审。status parser errors/human missing=[]，历史任务开工UNKNOWN不补猜。

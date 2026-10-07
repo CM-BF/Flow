@@ -75,3 +75,20 @@ r2确实直接载入该函数，但[固定journey](../diagnostics-host-bootstrap
 本次只读核的固定源码均为6c：`tools/personal-preview/{cli.mjs,maintenance-host.mjs,preview.mjs,browser-session-configuration.mjs,web-release.mjs,backend-release/host.mjs}`；同一具体维护实现已由r2真实消费。SVC08 caller旧请求/namespace已消费，仅复用方法，必须另固定7d1实际输入；不原样重放c7b request，也不新造部署/监督框架。原个人完整更新授权与执行窗口/独立审查仍分开：目前缺三真实报告、fresh个人基线及新一次操作身份，**0个人读写/PG/Chrome/provider/query**。此文不启动任何阶段。
 
 本段clean-code/文档复核：只复用原迁入/工具/维护/锁，状态所有者仍为原private state和中心维护行；没有新增第二FSM、runner逻辑或执行包装器。9个引用均可解析，git diff格式检查通过；status人读字段未变，沿用上一文档段已记录的parse errors/human missing为空结果，不声称本次重新运行parser。历史开工UNKNOWN保留。0工程检查。
+
+
+### e4cd P2 窄修：本次可调用迁入装配（个人仍未执行）
+
+原 e4cd 审查 `REQUEST_CHANGES/P2` 永久保留：旧 `caller.mjs:migrate()` 是私有函数并要求 `webHost===null`；`procedure.mjs:migrateOnce` 仅有 ports，不能将这两个引用当成当前 c7b 安装的可执行入口。现仅新增 [migration-adapter.mjs](migration-adapter.mjs) 将真实生产 `withPreviewLock → withStoreLock`、原 `migrateOnce`、固定 `clone-artifact.py`、`import-d629.mjs:renameExclusive`、完整 source/stage/destination verifier 和 fsync 装配起来。无生产文件改变、无第二 FSM。
+
+唯一命令入口是本目录 `migration-supervise.py --execute-fixed-import`，由固定 Python3.13 运行；[migration-inputs.json](migration-inputs.json) 固定新 namespace `/private/tmp/flow-svc06-personal-update-20261007-r1` 和独占外层文件。当前 **NOT_RUN**。外层只调用现 OPS14 `NEW_CHILD_SESSION(120,.5,2,128KiB)`；复制与 rename 的子进程同组，无嵌套 detached copy，无现服务 stop。组停止/EOF 判断完成后才持久外层 report；deadline/partial result/forced exit/rename unknown 不得继续下一 phase，保留锁、stage 或已发布产物的实际状态，不假称强杀也会执行 finally。正常路径原双锁 finally 正常释放。
+
+53 只读 runtime pins = 原44入口 + 原3运行工具 + procedure、file-readers、clone-driver、rename-module、其实际 `/usr/bin/python3` + artifact 内 file-only clone primitive。每项含 exact realpath/dev/ino/uid/nlink/bytes/SHA；原44的 Git 前像仍6c，未把后来的 main 全树作为源。15包/978文件/6,609,996逻辑B及4alias继续引用已审首次采用输入和7d1原 manifest，执行时按有限库存 hash 核，不复制一套大manifest。Node标准库/系统libc按原系统运行时边界；不是任意系统依赖的全盘证明。3模块新绑定、运行输入与9例原raw见[唯一迁入 manifest](migration-manifest.json)。
+
+实际守卫明确要求五私有文件仍self/0600/nlink1/相同dev-ino/hash、原root身份、af51 source/null backend、精确已settled c7b host/null pending、三个owned记录/运行身份/两监听，以及生产marker与只读runner accepting/v18/op-null。策略文件仍缺失。已有c7b完整验证、store仅c7b和候选7d1；严格原2artifact/2GiB保留、每artifact1GiB。新副本367,041,727逻辑B，无外部symlink/复制回退；512MiB新增预算包含2MiB原始记录，≥2.5GiB fresh/live1GiB不降，实际并发仍在开窗前叠加。clone的regular allocated统计只是已分配块口径，非APFS物理独占或可回收保证；目录元数据/采样间峰值不冒零成本，空间余量不是硬预留。
+
+迁入 intent/store intent/checkpoint/result 独占0600/fsync。已存在精确7d1仅verify并记录，不clone；不一致即停止。阶段前后五文件、原source/host/owned身份保持；只读runner校验无业务DML、不要求零任务、不drain，用户业务并发不能用回滚凑一致。迁入成功后仍必须 fresh request/CAS 才能换Web host，不能由此入口自动执行后续动作。个人真实执行必须经 Lead 的实际窗口和修复独审，不复用SVC08旧namespace。
+
+局部原9个纯接口用例 9/9，103ms；增量独审发现只读 Pool 未设search_path，已限定 `flow.runners` 并补真实Pool port直接用例1/1、103ms（原9不重跑）。合计10different/206ms，两owned组 absent/双EOF，两空exact scratch已removed；Python supervisor仅AST语法检查。测试覆盖精确c7b/拒绝错误身份、第二槽保留、双锁与真实procedure排序、已存在不重复制、copy/rename unknown停止、前后保护拒绝、primary/secondary以及marker失败不打开store。未实际复制7d1、未触个人/PG/HTTP/build/App/provider。C3真实三App已审证据现由 main `e0295747200d7f0616779a712fdfd06691c3708f` 接收；原两层失败、旧unknown及真实个人未部署的界限不变。
+
+原30ce只读查询P2作为静态finding保留；没有真实PG失败或个人动作。最终source `5c29e13a5d251e4fb6b99d7d1277ace85dee24dc`，新直接例覆盖SQL/参数、max1和connect/statement/query超时、成功/行不匹配/query失败/关闭也失败时primary保留；仅本实际I/O port新增可测试接缝，不改原流程顺序。

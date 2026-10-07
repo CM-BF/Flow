@@ -1,0 +1,223 @@
+{
+  "recordedAt": "2026-10-07T12:19:49.916445+00:00",
+  "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "priorReview": {
+    "target": "e4cd0bf2da3a52d7bb0facab6cfc70c671b605d4",
+    "disposition": "REQUEST_CHANGES",
+    "finding": "P2: prior procedure was only injected ports; private old caller cannot migrate when webHost is c7b; missing actual assembly and reused module pins"
+  },
+  "sourceBindings": [
+    {
+      "path": "migration-adapter.mjs",
+      "bytes": 14990,
+      "sha256": "82b048813aeedfc2f8f4a9fd83a7cb73dc28083707a38b84e37f73a21d3d4d2a"
+    },
+    {
+      "path": "migration-adapter.test.mjs",
+      "bytes": 7314,
+      "sha256": "139974b22b77c17ef884172d65ab38eabacc29aee35195e4d2e18b076991f0ef"
+    },
+    {
+      "path": "migration-supervise.py",
+      "bytes": 2907,
+      "sha256": "207b1960399786c6274493cef874a35dd1dcde2c94f134f381265d6ece770176"
+    },
+    {
+      "path": "migration-inputs.json",
+      "bytes": 31712,
+      "sha256": "f077d544b7eefc313761208f4b7c7d53c9850c8e35671666a9680190f6a607bd"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "migration-local-plan.json",
+      "bytes": 390,
+      "sha256": "36af1b333c11ab2e41212623b2d0fe1ad251b5eba99571ae03780c33d77adb3a"
+    },
+    {
+      "path": "migration-local-01.json",
+      "bytes": 2034,
+      "sha256": "a28572845b09f49497d9727d09f186bb75f73d5cf7688298af87dc7fb8901326"
+    },
+    {
+      "path": "migration-local-02.json",
+      "bytes": 1301,
+      "sha256": "8c518bf1b5f5ad0255b2f474bc83c6c9ed416d6a651adc6a48007c590ebca16f"
+    }
+  ],
+  "inheritance": {
+    "rootSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "prior44Count": 44,
+    "prior44Input": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/legacy-first-bootstrap/inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/legacy-first-bootstrap/inputs.json",
+      "dev": "16777234",
+      "ino": "124073242",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 30574,
+      "sha256": "a47f51cb38be0576a3aef2b1f336e517314bbcce3f84dd688793c648ad450f3c"
+    },
+    "previousReadonlyBaseline": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-readonly-preparation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-readonly-preparation.json",
+      "dev": "16777234",
+      "ino": "124113019",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 69871,
+      "sha256": "70389b49ce37047a686cece187973a39bdb5d02b337c34501aae7ca5593d7631"
+    },
+    "rootPackageInventory": "the fixed artifact manifest plus inherited.rootPackages: 15 packages, 978 exact regular files, 6609996 logical bytes; verifier reuses this finite list, no second payload inventory",
+    "rootAliases": 4,
+    "runtimePins": 53,
+    "newMethodBindings": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+        "dev": "16777234",
+        "ino": "123536648",
+        "uid": 501,
+        "nlink": 1,
+        "bytes": 5437,
+        "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+        "dev": "16777234",
+        "ino": "123543883",
+        "uid": 501,
+        "nlink": 1,
+        "bytes": 2456,
+        "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+        "dev": "16777234",
+        "ino": "123443799",
+        "uid": 501,
+        "nlink": 1,
+        "bytes": 3281,
+        "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+        "dev": "16777234",
+        "ino": "123117637",
+        "uid": 501,
+        "nlink": 1,
+        "bytes": 9772,
+        "sha256": "6e89a87292c8c360ea3ee3bcd1563a1d7492e1e8c51b4bbecdc63f3a4581619d"
+      },
+      {
+        "path": "/usr/bin/python3",
+        "realpath": "/usr/bin/python3",
+        "dev": "16777234",
+        "ino": "1152921500312571562",
+        "uid": 0,
+        "nlink": 78,
+        "bytes": 118640,
+        "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+      },
+      {
+        "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/backend-release/clone-store.py",
+        "realpath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/backend-release/clone-store.py",
+        "dev": "16777234",
+        "ino": "123987231",
+        "uid": 501,
+        "nlink": 1,
+        "bytes": 6852,
+        "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+      }
+    ]
+  },
+  "validation": {
+    "distinct": 10,
+    "selected": null,
+    "passed": null,
+    "failed": 0,
+    "supervisorPythonSyntax": "PASS (ast.parse; no execution)",
+    "elapsedMs": 206,
+    "rawOutputBytes": 1208,
+    "owned": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "scratch": [
+      {
+        "path": "/private/tmp/flow-svc06-migration-local-20261007-r1",
+        "dev": 16777234,
+        "ino": 124119501,
+        "bytes": 0,
+        "cleanup": "removed-empty"
+      },
+      {
+        "path": "/private/tmp/flow-svc06-migration-local-20261007-r2",
+        "dev": 16777234,
+        "ino": 124120126,
+        "bytes": 0,
+        "cleanup": "removed-empty"
+      }
+    ],
+    "limits": {
+      "processSeconds": 30,
+      "temporaryBytes": 8388608,
+      "rawBytes": 131072
+    },
+    "selectedAcrossRounds": 10,
+    "passedAcrossRounds": 10,
+    "rounds": [
+      {
+        "path": "migration-local-01.json",
+        "source": "30ce7eac3405e654007abdf7a7a2ff05854200d6",
+        "selected": 9,
+        "passed": 9
+      },
+      {
+        "path": "migration-local-02.json",
+        "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+        "selected": 1,
+        "passed": 1,
+        "unchangedPrior9NotSelected": true
+      }
+    ]
+  },
+  "boundaries": {
+    "personalReadOrWrite": false,
+    "databaseOrHttp": false,
+    "buildOrAppRetest": false,
+    "provider": false,
+    "migrationActual": "NOT_RUN",
+    "remaining": "Independent delta review plus a fresh shared personal execution window. C3 actual compatibility is already independently approved; it is not a deployment result."
+  },
+  "supervision": {
+    "entry": "migration-supervise.py --execute-fixed-import",
+    "ownership": "newChildSession",
+    "workSeconds": 120,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "captureBytes": 131072,
+    "why": "clone and rename subprocesses inherit the only new owned session; no existing service group is signalled. Existing preview/store finally releases normally; forced exit or ambiguous rename keeps all resources and original evidence."
+  },
+  "quality": {
+    "at": "2026-10-07T12:19:49.916445+00:00",
+    "skills": [
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "application": "Bounded already-approved design; existing migrateOnce retains lifecycle order. New module only supplies actual IO and fixed current c7b guards. No product change/new FSM/build/provider. Checked primary versus record error, retention/no-replace, normal lock release, readonly runtime versus private identity."
+  },
+  "staticReviewRepair": {
+    "finding": "P2 new read-only Pool used unqualified runners; no search_path was set",
+    "originalSource": "30ce7eac3405e654007abdf7a7a2ff05854200d6",
+    "repairSource": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+    "change": "flow.runners qualified; actual Pool port now directly exercised using only a fake Pool, SQL/parameters/max/timeouts/end checked; primary error preserved if end also fails",
+    "reviewStatus": "PENDING_DELTA_REVIEW",
+    "realPG": false
+  }
+}
