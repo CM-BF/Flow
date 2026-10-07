@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-07T12:01:23.006937+00:00",
+  "executionHead": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+  "window": "a90e0b892a444422abd7e842867b8858",
+  "state": "UNKNOWN_KEEP",
+  "caseResult": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "success": false,
+    "afterAll": "FAILED cleanupConfirmed expectation; not a whole-suite pass"
+  },
+  "resources": {
+    "groups": "27816/27842 final absent, merged EOF complete",
+    "database": "flow_x01_8c07aa72e0814fab904e7505cc7d9c59",
+    "cleanup": {
+      "owners": {
+        "startup": true,
+        "server": true,
+        "boss": true
+      },
+      "ownersClosed": true,
+      "poolClosed": true,
+      "adminClosed": true,
+      "createRequested": true,
+      "createAcknowledged": true,
+      "creationReceiptSaved": true,
+      "identity": {
+        "oid": "1306114",
+        "owner": "flow",
+        "marker": "x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3"
+      },
+      "identityConfirmed": true,
+      "connections": 1,
+      "dropRequested": false,
+      "dropAcknowledged": false,
+      "databaseAbsent": null
+    },
+    "listener": [
+      {
+        "origin": "http://127.0.0.1:64030",
+        "closed": true
+      }
+    ],
+    "temporary": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-txfsxrqu",
+      "dev": 16777234,
+      "ino": 124112945,
+      "removed": false
+    },
+    "actionsAfterExit": "No PG query/cleanup/retry. Exact root lstat+regular vitest.json copy only."
+  },
+  "httpRequests": 59,
+  "responseBytes": 78054,
+  "timing": {
+    "beforeFinalPersistenceSeconds": 3.969022624893114,
+    "postSaveDeliverySeconds": 3.9692628328921273,
+    "timeRealSeconds": 4.15,
+    "shellStartUTC": "2026-10-07T12:00:10Z",
+    "shellEndUTC": "2026-10-07T12:00:14Z",
+    "shellSecondsPrecisionUpperBound": 5,
+    "toolWaitNotWholeWall": true
+  },
+  "rawPaths": [
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/admission.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/launch.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/output.log",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/preflight.stdout",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/reservation.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/result.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/runtime-create-request.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/runtime-created.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/runtime-reservation.json",
+    "docs/evidence/x01-removal-references/removal-references-pg-run-r1/runtime-result.json",
+    "docs/evidence/x01-removal-references/removal-r1-vitest-retained-copy.json",
+    "docs/evidence/x01-removal-references/removal-r1-tool.log",
+    "docs/evidence/x01-removal-references/removal-r1-retained-read.json"
+  ],
+  "knownUnknowns": [
+    "Observed one DB connection at fixture finish; no DROP attempted",
+    "TMP total inventory/peak unknown; preserved exact identity",
+    "case pass does not override teardown failure or caller unknown"
+  ],
+  "review": "PENDING; resource release requires separate evidence/coordination"
+}

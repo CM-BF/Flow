@@ -1,0 +1,205 @@
+{
+  "startedAt": "2026-10-07T12:00:10.957789+00:00",
+  "state": "UNKNOWN",
+  "unknown": true,
+  "limits": {
+    "protocol": "flow.x01.removal-references-pg.v1",
+    "productCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 1,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "removal-references-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+        "name": "removal references preserve bounded material aliases uncertain pins and immutable history"
+      }
+    ],
+    "tasksMax": 43,
+    "registrationsMax": 1,
+    "attemptsMax": 1,
+    "scope": "One new bounded reference query SQL/owner HTTP case. Synthetic installed rows, no package load/physical deletion.",
+    "runnersMax": 1,
+    "materialInstallsMax": 2
+  },
+  "processes": [
+    {
+      "pid": 27816,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 27,
+      "observed_bytes": 343,
+      "retained_bytes": 343,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 27842,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 3757,
+      "observed_bytes": 113,
+      "retained_bytes": 113,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "a90e0b892a444422abd7e842867b8858",
+      "sourceHead": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+      "suite": "runtime",
+      "database": "flow_x01_8c07aa72e0814fab904e7505cc7d9c59",
+      "facts": [],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1306114",
+          "owner": "flow",
+          "marker": "x01:a90e0b892a444422abd7e842867b8858:runtime:73119866-10a8-4a65-9fd9-f75a579a2df3"
+        },
+        "identityConfirmed": true,
+        "connections": 1,
+        "dropRequested": false,
+        "dropAcknowledged": false,
+        "databaseAbsent": null
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:64030",
+          "closed": true
+        }
+      ],
+      "httpRequests": 59,
+      "responseBytes": 78054,
+      "workUntil": 1791374520957,
+      "cleanupUntil": 1791374580957,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": false,
+      "retainedDatabase": "flow_x01_8c07aa72e0814fab904e7505cc7d9c59",
+      "finishedAt": "2026-10-07T12:00:14.880Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-txfsxrqu",
+      "dev": 16777234,
+      "ino": 124112945,
+      "removed": false
+    }
+  ],
+  "temporaryPeak": "UNKNOWN",
+  "window": "a90e0b892a444422abd7e842867b8858",
+  "executionHead": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+  "manifestSha256": "70df6363b860d39b1e08bc945b11c2931271c32d6249224c0d82c8acde05d2ef",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-txfsxrqu",
+    "dev": 16777234,
+    "ino": 124112945,
+    "removed": false
+  },
+  "failure": {
+    "type": "ValueError"
+  },
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "runtime-reservation.json": 450,
+    "runtime-create-request.json": 353,
+    "output.log": 113,
+    "runtime-result.json": 1178,
+    "reservation.json": 283,
+    "launch.json": 188,
+    "preflight.stdout": 343,
+    "admission.json": 2007
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 5317,
+  "completeAccounting": false,
+  "rawBytesBeforeReceipt": 5317,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T12:00:14.926472+00:00",
+  "elapsedBeforePersistence": 3.969022624893114
+}
