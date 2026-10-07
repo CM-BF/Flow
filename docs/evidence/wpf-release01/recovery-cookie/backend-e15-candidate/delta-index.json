@@ -1,0 +1,408 @@
+{
+  "state": "STATIC_PREPARATION_ONLY",
+  "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+  "claim": {
+    "claimId": "b4d7d7fd-f215-4882-b7f3-2afc133a0365",
+    "version": 1,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "producerResultCommit": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+  "descriptor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once/actual-first/result-descriptor.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once/actual-first/result-descriptor.json",
+    "bytes": 275,
+    "sha256": "26349779972db34080f542199a17d01efbef13ee29e14681210aad2814957953"
+  },
+  "producerResultManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+    "bytes": 8915,
+    "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+  },
+  "independentArtifactReview": null,
+  "backendRuntimeEntries": [
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "oldSha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/backend-release/index.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/backend-release/index.mjs",
+        "bytes": 6289,
+        "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "oldSha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/browser-session-configuration.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/browser-session-configuration.mjs",
+        "bytes": 7335,
+        "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "oldSha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/web-release.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/web-release.mjs",
+        "bytes": 15567,
+        "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "oldSha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/index.ts",
+        "bytes": 15083,
+        "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "oldSha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/client/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/client/src/index.ts",
+        "bytes": 57553,
+        "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "oldSha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/contracts/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/contracts/src/index.ts",
+        "bytes": 1634,
+        "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "oldSha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      },
+      "sameBytes": true
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "oldSha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "newPin": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/runner/src/verifier.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/runner/src/verifier.ts",
+        "bytes": 1069,
+        "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+      },
+      "sameBytes": true
+    }
+  ],
+  "replacedPins": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result-descriptor.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result-descriptor.json",
+        "bytes": 275,
+        "sha256": "25507b72d8385d5d279c35093ef27bc0273ad8920795369b137e51cf673b6e6e"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once/actual-first/result-descriptor.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once/actual-first/result-descriptor.json",
+        "bytes": 275,
+        "sha256": "26349779972db34080f542199a17d01efbef13ee29e14681210aad2814957953"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json",
+        "bytes": 8892,
+        "sha256": "97bc6b32e26446d5d9293118a8542210bb2895c26c6768aedf35915709a52293"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+        "bytes": 8915,
+        "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+        "bytes": 41015,
+        "sha256": "5e87176d3364dfa99ee12d0b8358aa0f8683fe00e1513791de52d00bd176ad76"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+        "bytes": 41015,
+        "sha256": "fb6988b710431fc94283cb346c6d89138f503eb79bf082af5326751e4af2fcd6"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/manifest.json",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/manifest.json",
+        "bytes": 3196787,
+        "sha256": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/manifest.json",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/manifest.json",
+        "bytes": 3196787,
+        "sha256": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/runner/src/verifier.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/runner/src/verifier.ts",
+        "bytes": 1069,
+        "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/runner/src/verifier.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/runner/src/verifier.ts",
+        "bytes": 1069,
+        "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/server/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/server/src/index.ts",
+        "bytes": 15083,
+        "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/index.ts",
+        "bytes": 15083,
+        "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/server/src/scheduler.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/apps/server/src/scheduler.ts",
+        "bytes": 957,
+        "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/scheduler.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/scheduler.ts",
+        "bytes": 957,
+        "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+        "bytes": 43134,
+        "sha256": "1eb0ad087375bf296e1b7bf9ecf0628fd9aeae54c071aa684c80012964def7bd"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+        "bytes": 43134,
+        "sha256": "1eb0ad087375bf296e1b7bf9ecf0628fd9aeae54c071aa684c80012964def7bd"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+        "bytes": 16198,
+        "sha256": "3391762eef4a93bc9a03acee585f6a2c4b11a5e59519f633e17bf7df085b5102"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+        "bytes": 16198,
+        "sha256": "3391762eef4a93bc9a03acee585f6a2c4b11a5e59519f633e17bf7df085b5102"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/packages/client/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/packages/client/src/index.ts",
+        "bytes": 57553,
+        "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/client/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/client/src/index.ts",
+        "bytes": 57553,
+        "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/packages/contracts/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/packages/contracts/src/index.ts",
+        "bytes": 1634,
+        "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/contracts/src/index.ts",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/packages/contracts/src/index.ts",
+        "bytes": 1634,
+        "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/backend-release/index.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/backend-release/index.mjs",
+        "bytes": 6289,
+        "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/backend-release/index.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/backend-release/index.mjs",
+        "bytes": 6289,
+        "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/browser-session-configuration.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/browser-session-configuration.mjs",
+        "bytes": 7335,
+        "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/browser-session-configuration.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/browser-session-configuration.mjs",
+        "bytes": 7335,
+        "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/web-release.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-artifact-6SJcHt/backend-artifacts/b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d/root/tools/personal-preview/web-release.mjs",
+        "bytes": 15567,
+        "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+      },
+      "after": {
+        "path": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/web-release.mjs",
+        "realpath": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/web-release.mjs",
+        "bytes": 15567,
+        "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/rel01-b692-c1/inputs.json",
+        "realpath": "/private/tmp/rel01-b692-c1/inputs.json",
+        "bytes": 7908,
+        "sha256": "d0ed07614c79fa9329de66074e06a51d2082638923cdccc8de28da4fd385bd3e"
+      },
+      "after": {
+        "path": "/private/tmp/rel01-e15-c1/inputs.json",
+        "realpath": "/private/tmp/rel01-e15-c1/inputs.json",
+        "bytes": 7938,
+        "sha256": "1a3ca860947e9e9218ee6731c9c1a148398357cbf01baad66d20518ad8b0bc6e"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/rel01-b692-c1/measure.py",
+        "realpath": "/private/tmp/rel01-b692-c1/measure.py",
+        "bytes": 8979,
+        "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+      },
+      "after": {
+        "path": "/private/tmp/rel01-e15-c1/measure.py",
+        "realpath": "/private/tmp/rel01-e15-c1/measure.py",
+        "bytes": 8979,
+        "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/rel01-b692-c1/supervisor.py",
+        "realpath": "/private/tmp/rel01-b692-c1/supervisor.py",
+        "bytes": 18590,
+        "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+      },
+      "after": {
+        "path": "/private/tmp/rel01-e15-c1/supervisor.py",
+        "realpath": "/private/tmp/rel01-e15-c1/supervisor.py",
+        "bytes": 18590,
+        "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/rel01-b692-c1/tsconfig.json",
+        "realpath": "/private/tmp/rel01-b692-c1/tsconfig.json",
+        "bytes": 433,
+        "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+      },
+      "after": {
+        "path": "/private/tmp/rel01-e15-c1/tsconfig.json",
+        "realpath": "/private/tmp/rel01-e15-c1/tsconfig.json",
+        "bytes": 433,
+        "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+      }
+    },
+    {
+      "before": {
+        "path": "/private/tmp/rel01-b692-c1/worker.mjs",
+        "realpath": "/private/tmp/rel01-b692-c1/worker.mjs",
+        "bytes": 5427,
+        "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+      },
+      "after": {
+        "path": "/private/tmp/rel01-e15-c1/worker.mjs",
+        "realpath": "/private/tmp/rel01-e15-c1/worker.mjs",
+        "bytes": 5427,
+        "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+      }
+    }
+  ],
+  "reusedPinCountNotRescanned": 54,
+  "allNonBackendInputsByteIdentical": true,
+  "callerDiffBytes": 0,
+  "sourceDelta": "three fixed trusted identity literals only",
+  "fullArtifactPayloadRehashed": false,
+  "engineeringCheckCount": 0,
+  "runtime": "NOT_RUN"
+}

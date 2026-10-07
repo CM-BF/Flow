@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T21:50:39.489Z",
+  "scope": "three trusted tuple literals and private data binding",
+  "skills": {
+    "find-skills": {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    "clean-code": {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  },
+  "application": "Reuse prior installed skill methods: explicit identity guard, same public interface/errors/cleanup, no new runner or broad abstractions; do not duplicate authority or relabel old reports.",
+  "findings": [],
+  "engineeringChecks": 0,
+  "notVerified": [
+    "R2 fourApp actual compatibility",
+    "Cold/public personal recovery"
+  ],
+  "sourceStop": "2026-10-07T21:50:39.489Z"
+}

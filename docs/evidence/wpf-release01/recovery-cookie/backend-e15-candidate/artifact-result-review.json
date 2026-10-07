@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T21:45:21.715656+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_RECOVERY_R2_ARTIFACT_BUILD_RESULT",
+  "blocking": [],
+  "target": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+  "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+  "manifest": {
+    "bytes": 8915,
+    "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+  },
+  "bindings": {
+    "source": 9,
+    "raw": 10,
+    "rawBytes": 19717,
+    "privateMetadata": 3,
+    "rootIdentity": true,
+    "fixedCurrentHashes": "all equal",
+    "changedSourceActualFiles": [
+      "apps/runner/src/main.ts",
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/maintenance-host.mjs",
+      "tools/personal-preview/maintenance-target.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/startup-diagnostics.mjs"
+    ],
+    "sourceSqlAgainstInventory": 33,
+    "fullInventoryRehash": false
+  },
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "sourceTree": "27cf190b00b3244026952ab85b0d922368676715",
+  "actual": {
+    "operatorMs": 33569,
+    "producerMs": 33509,
+    "exit": 0,
+    "pid": 85438,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": [],
+    "firstFailure": null,
+    "earlierObservation": "EPERM/unknown preserved",
+    "actualReturn": "2026-10-07T21:42:22.040Z",
+    "inventory": {
+      "logicalBytes": 363874705,
+      "entries": 15629,
+      "manifestBytesIncluded": 367071492,
+      "nodeImages": 20
+    },
+    "internalImports": 0,
+    "runtimeNoFactoryRunnerProvider": true
+  },
+  "scope": "Only fixed artifact build and saved internal import results. No new imports/build/PG/private user material accessed by reviewer; only own artifact metadata and seven fixed source files read. No cold/4App/personal approval. Old b692/failed cold and first local8,519,680B UNKNOWN allocation remain preserved."
+}
