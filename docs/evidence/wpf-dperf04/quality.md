@@ -60,3 +60,8 @@ wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodie
 
 ## 2026-10-07T10:19:14.492580+00:00 主线收口
 复用已安装find-skills/clean-code；仅metadata，对照固定receipt/root审逐字核16源码，保bc612 exact30，未重跑。修正当前main未集成和TODO03旧声明；历史证据保留。时间只记本次核齐完成，未知开工不推算；发布摘要观察与未验详情/性能分开。范围全11STOP后正常CASrelease，回执在TMP由管理归档，释放后不补写。
+
+## 2026-10-07T10:23:41.431805+00:00 时间记录合同修复
+复用已读find-skills/clean-code；发现owner字段名偏离main时间合同且微秒+offset不被严格ISO parser接受。仅三字段名称与毫秒Z规范化，源证据原字节保留，UNKNOWN开始不伪造。复用现有parseStatus和单任务纯summary来源链核known完成，无全aggregate/PG/HTTP/产品测试；bc612/exact30及历史raw不动。records-only领取/STOP/释放单独留证。
+
+本次metadata检查首个脚本误读summary.status（实际DTO为declarations），保留原TypeError/exit1并纠正只读断言；随后相同parseStatus和单task readSummary均确认completed=known/2026-10-07T10:19:14.492Z/sourceCurrent=true，仅started未记录issue保留。非产品失败，无产品或parser修改。

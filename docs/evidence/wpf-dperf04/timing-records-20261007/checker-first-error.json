@@ -1,0 +1,8 @@
+{
+  "kind": "metadata consumer check construction error",
+  "toolChunk": "3f9207",
+  "actualExitCode": 1,
+  "error": "TypeError: Cannot read properties of undefined (reading timing)",
+  "cause": "Verifier accessed summary.tasks[0].status; actual readSummary DTO uses declarations. parseStatus assertions had passed before this verifier failure. No product parser/source changed.",
+  "correction": "Read exact DTO declarations.timing on the same one-task metadata check; preserve this first error."
+}

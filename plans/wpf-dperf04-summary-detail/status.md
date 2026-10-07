@@ -25,9 +25,9 @@
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED：target bc6126278c13e8c355d704dd3c371417331026b2 / exact30，0blocking；main已接收；operator已发布并观察摘要，未冒全UI/性能 |
 
-| 开工 UTC | UNKNOWN |
-| 完成 UTC | 2026-10-07T10:19:14.492580+00:00 |
-| 时间来源 | [本次实际核齐结束](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)；历史创建时间不当开工 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | 2026-10-07T10:19:14.492Z |
+| 任务时间来源 | [本次实际核齐结束](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)；历史创建时间不当开工 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -226,3 +226,7 @@ OPS-METER固定main1e12eaf13 measure.py原字节，只迁移所有retained路径
 检查PASSED、独审APPROVED、main NOT_INTEGRATED分开陈述；当前阻塞NONE，正常主线待收写下一可用交付。本次只ownrecords，不重跑产品/Chrome/PG；受影响canonical parser/link/proof做一次有界核对后normalpush停写。已固定目标不会追随后续metadata SHA重复独审。
 
 [受影响canonical核对](../../docs/evidence/wpf-dperf04/reentry-20261007/composite-canonical-check.json)：2026-10-07T09:37:20.155675Z actualexit0/123.231125ms，status/implementation errors[]，30scope，checks=passed/review=approved，proof=unchanged/outsideChanges[]；4TODO、106links全部可下钻。仅既有parser/Git proof读取，无工程suite/浏览器/PG/真实registry。最终metadata提交后目标固定bc612不追SHA。
+
+## 时间字段规范化记录
+
+本次仅依main时间契约修三字段名称及完成时间毫秒表示；原始2026-10-07T10:19:14.492580+00:00原件不改。规范值2026-10-07T10:19:14.492Z不是新的完成时刻，开工UNKNOWN保持，不推算历时。仅records-only新claim732f82cc v1，不恢复旧11产品写权；本记录完成后两scope停止，实际释放见D04回执。
