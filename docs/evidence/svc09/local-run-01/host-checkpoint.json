@@ -1,0 +1,63 @@
+{
+  "name": "host",
+  "startedAt": "2026-10-07T08:27:54.337551+00:00",
+  "freeBefore": 24064221184,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=SVC09|SVC08",
+    "tools/personal-preview/preview.test.mjs"
+  ],
+  "supervision": {
+    "pid": 51487,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 753,
+    "observed_bytes": 35779,
+    "retained_bytes": 35779,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 35779,
+  "finishedAt": "2026-10-07T08:27:55.090930+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123655852
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24063967232,
+    "sampleOnly": true
+  },
+  "status": "FAILED_OR_UNKNOWN"
+}

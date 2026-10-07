@@ -58,3 +58,13 @@ test('serves fixed bytes with no HMR, preserves same-origin authorization and st
     await assert.rejects(startStaticWeb({ directory, repository, webPort, centerPort, artifact }), /already in use/);
   } finally { await staticWeb?.close(); await close(center); await rm(parent, { recursive: true, force: true }); }
 });
+
+test('SVC09 configured snapshot requires published retained material and a fixed trusted context', async () => {
+  const { createWebReleaseSnapshot } = await import('./static-web.mjs');
+  const context = { format: 1, publicOrigin: 'https://public.example', policySha256: 'd'.repeat(64) };
+  const legacy = createWebReleaseSnapshot('/unused', { read: async () => null });
+  assert.equal(await legacy(), null);
+  const configured = createWebReleaseSnapshot('/unused', { read: async () => null, expectedContext: context, expectedBackendHead: 'e'.repeat(40) });
+  await assert.rejects(configured(), { code: 'WEB_RELEASE_METADATA_MISSING' });
+  assert.throws(() => createWebReleaseSnapshot('/unused', { expectedContext: { ...context, publicOrigin: 'https://public.example/' } }), { code: 'WEB_COMPATIBILITY_CONTEXT_INVALID' });
+});

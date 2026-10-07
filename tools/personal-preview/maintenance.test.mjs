@@ -8,6 +8,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
+import * as vm from 'node:vm';
 import { startPreview, statusPreview, stopPreview } from './preview.mjs';
 const execute = promisify(execFile);
 const cli = fileURLToPath(new URL('./cli.mjs', import.meta.url));
@@ -158,4 +159,112 @@ test('an unverified backend descriptor fails before drain and preserves all old 
     try { assert.equal((await pool.query('SELECT maintenance_state FROM flow.runners WHERE id=$1', [config.runner.runnerId])).rows[0].maintenance_state, 'accepting'); }
     finally { await pool.end(); }
   });
+});
+
+// Link the complete, unchanged maintenance module to explicit in-memory ports. No PG
+// module, migration, CLI, signal or service is executed by these order/argument checks.
+async function maintenancePorts({ configured = true, prepareFailure = false, selected = null, action = 'bootstrap' } = {}) {
+  const calls = [];
+  const config = { directory: '/synthetic-preview', runner: { runnerId: 'runner', token: 'fixture-only' } };
+  const state = { backendArtifact: { artifactId: 'old' }, webHost: { artifact: { artifactId: 'independent-old-web' } }, processes: { center: 'center', runner: 'runner', web: 'web' } };
+  const operation = { operationId: 'operation', phase: 'drain-requested', backendArtifact: selected };
+  const view = { state: action === 'bootstrap' ? 'accepting' : 'maintenance', version: 7, activeAttempts: 0, operationId: operation.operationId };
+  const ports = {
+    pg: { Pool: class { async query() { calls.push(['identity']); return { rowCount: 1 }; } async end() { calls.push(['end']); } } },
+    './preview.mjs': {
+      loadPreviewConfiguration: async () => config,
+      readPreviewJson: async path => path.endsWith('/state.json') ? state : operation,
+      savePreviewJson: async (path, value) => { calls.push(['save', path, structuredClone(value)]); },
+      withPreviewLock: async (_config, callback) => callback(),
+      assertPreviewMarker: async () => { calls.push(['marker']); },
+      preparePreviewWeb: async (...args) => { calls.push(['prepare', ...args]); if (prepareFailure) throw Object.assign(new Error('WEB_HOST_POLICY_UNSUPPORTED'), { code: 'WEB_HOST_POLICY_UNSUPPORTED' }); return 'prepared-web'; },
+      startPreviewServices: async (...args) => { calls.push(['start', ...args]); },
+    },
+    './process.mjs': {
+      inspectOwnedProcess: async record => { calls.push(['inspect', record]); return 'running'; },
+      stopOwnedProcess: async record => { calls.push(['stop', record]); return 'stopped'; },
+    },
+    '../../apps/server/src/runner-maintenance/index.ts': {
+      migrateRunnerMaintenance: async () => { calls.push(['migrate']); },
+      readRunnerMaintenance: async () => view,
+      commandRunnerMaintenance: async (...args) => { calls.push(['command', ...args]); },
+    },
+    './web-release.mjs': { readWebRelease: async () => ({}) },
+    './backend-release/host.mjs': { backendById: async () => selected, backendRuntime: async (...args) => { calls.push(['runtime', ...args]); } },
+    './browser-session-configuration.mjs': { pinnedBrowserSessionConfiguration: async () => ({ context: configured ? {} : null }) },
+  };
+  const context = vm.createContext({ process: { argv: ['node', '/not-the-module'] } });
+  const url = new URL('./maintenance-host.mjs', import.meta.url);
+  const module = new vm.SourceTextModule(await readFile(url, 'utf8'), { context, identifier: url.href, initializeImportMeta: meta => { meta.url = url.href; } });
+  await module.link(async specifier => {
+    const values = specifier.startsWith('node:') ? await import(specifier) : ports[specifier];
+    assert.ok(values, `undeclared maintenance dependency ${specifier}`);
+    return new vm.SyntheticModule(Object.keys(values), function () { for (const [name, value] of Object.entries(values)) this.setExport(name, value); }, { context });
+  });
+  await module.evaluate();
+  return { calls, state, config, run: () => module.namespace.maintainPreview({ directory: config.directory, action, target: selected?.sourceHead ?? '', backendId: action === 'bootstrap' && selected ? selected.artifactId : undefined }) };
+}
+
+test('SVC09 maintenance bootstrap qualifies the selected backend and independent Web before drain', async () => {
+  const selected = { artifactId: 'new', sourceHead: 'e'.repeat(40) };
+  for (const configured of [false, true]) {
+    const f = await maintenancePorts({ selected, configured, prepareFailure: true });
+    await assert.rejects(f.run(), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+    const prepare = f.calls.find(call => call[0] === 'prepare');
+    assert.equal(prepare[2], selected.sourceHead); assert.equal(prepare[3], selected);
+    assert.equal(f.state.webHost.artifact.artifactId, 'independent-old-web');
+    assert.ok(!f.calls.some(call => ['inspect', 'migrate', 'save', 'command', 'stop', 'start'].includes(call[0])));
+    assert.equal(f.calls.at(-1)[0], 'end');
+  }
+  const legacy = await maintenancePorts({ prepareFailure: true }); legacy.state.backendArtifact = null;
+  await assert.rejects(legacy.run(), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+  assert.equal(legacy.calls.find(call => call[0] === 'prepare')[2], undefined);
+  assert.equal(legacy.calls.find(call => call[0] === 'prepare')[3], null);
+  assert.ok(!legacy.calls.some(call => ['migrate', 'command', 'stop', 'start'].includes(call[0])));
+  const success = await maintenancePorts({ selected }); await success.run();
+  assert.ok(success.calls.findIndex(call => call[0] === 'prepare') < success.calls.findIndex(call => call[0] === 'migrate'));
+  assert.equal(success.calls.filter(call => call[0] === 'command').length, 1);
+  assert.equal(success.calls.find(call => call[0] === 'command')[3], 'drain');
+});
+
+test('SVC09 maintenance refresh passes the same descriptor through prepare and startup before stopping', async () => {
+  const selected = { artifactId: 'new', sourceHead: 'e'.repeat(40) };
+  const failed = await maintenancePorts({ action: 'refresh', selected, prepareFailure: true });
+  await assert.rejects(failed.run(), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+  assert.equal(failed.calls.find(call => call[0] === 'prepare')[3], selected);
+  assert.ok(!failed.calls.some(call => ['save', 'stop', 'start'].includes(call[0])));
+  const success = await maintenancePorts({ action: 'refresh', selected }); await success.run();
+  assert.deepEqual(success.calls.filter(call => call[0] === 'stop').map(call => call[1]), ['web', 'runner', 'center']);
+  assert.equal(success.calls.find(call => call[0] === 'start')[4], selected);
+  assert.ok(success.calls.findIndex(call => call[0] === 'prepare') < success.calls.findIndex(call => call[0] === 'stop'));
+});
+
+test('SVC09 CLI qualifies the actual selected maintenance runtime before any child spawn', async () => {
+  const preview = await import('./preview.mjs');
+  const { EventEmitter } = await import('node:events');
+  for (const rejected of [true, false]) {
+    const calls = []; let stderr = '';
+    const runtime = { root: '/selected-artifact', entry: '/selected-artifact/tools/personal-preview/cli.mjs' };
+    const state = { argv: ['node', cli, 'maintenance', 'bootstrap', '--directory', '/synthetic'], execPath: process.execPath, stderr: { write: value => { stderr += value; } }, stdout: { write: () => {} } };
+    const ports = {
+      './preview.mjs': { ...preview, loadPreviewConfiguration: async () => ({ directory: '/synthetic' }), assertPreviewMaintenanceRuntime: async (_config, selected) => {
+        calls.push('qualify'); assert.equal(selected, runtime);
+        if (rejected) throw Object.assign(new Error('MAINTENANCE_HOST_POLICY_UNSUPPORTED'), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+      } },
+      './backend-release/host.mjs': { maintenanceRuntime: async () => runtime },
+      './environment.mjs': { baseServiceEnvironment: () => ({}) },
+      'node:child_process': { spawn: (_program, args, options) => { calls.push('spawn'); assert.equal(args[2], '/selected-artifact/tools/personal-preview/maintenance-host.mjs'); assert.equal(options.cwd, runtime.root); const child = new EventEmitter(); queueMicrotask(() => child.emit('exit', 0)); return child; } },
+    };
+    const context = vm.createContext({ process: state });
+    const module = new vm.SourceTextModule(await readFile(cli, 'utf8'), { context, identifier: cli });
+    await module.link(async specifier => {
+      const values = ports[specifier] ?? (specifier.startsWith('node:') ? await import(specifier) : null);
+      assert.ok(values, `undeclared CLI dependency ${specifier}`);
+      return new vm.SyntheticModule(Object.keys(values), function () { for (const [name, value] of Object.entries(values)) this.setExport(name, value); }, { context });
+    });
+    await module.evaluate();
+    assert.deepEqual(calls, rejected ? ['qualify'] : ['qualify', 'spawn']);
+    assert.equal(state.exitCode, rejected ? 1 : 0);
+    assert.equal(stderr ? JSON.parse(stderr).error : null, rejected ? 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' : null);
+  }
 });

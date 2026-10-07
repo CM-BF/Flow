@@ -1,0 +1,324 @@
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-8cwID7","dev":16777234,"ino":123655853,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation (36.836458ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-J2R4UK","dev":16777234,"ino":123655891,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host rejects stale CAS, source, identity, compatibility and missing interruption consent before stop (28.8765ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-N1awv1","dev":16777234,"ino":123655930,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host checkpoint failure sends no signal or start (31.248833ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-syOKBx","dev":16777234,"ino":123655968,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host unknown stop cannot repeat or be bypassed by a new operation id (22.212666ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-QUinlX","dev":16777234,"ino":123656006,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host uncertain spawn preserves pending new record and never starts a duplicate (58.519833ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-PXukTg","dev":16777234,"ino":123656044,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host concurrent command keeps one operation lock and one start (29.591959ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-pATxEK","dev":16777234,"ino":123656082,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host does not claim ready after protected data changed during launch (30.8585ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-JAPpfb","dev":16777234,"ino":123656120,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host validates noncurrent retained files before touching Web (47.520792ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-EJWktI","dev":16777234,"ino":123656158,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host validates exact retained report and backend bindings before touching Web (28.851417ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-HZ6kPA","dev":16777234,"ino":123656196,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host CLI rejects extra request authority before any real marker or process port (26.942542ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-7X3eZj","dev":16777234,"ino":123656234,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 host selection persists only Web artifact and authorizes only its Web service root (32.718917ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-qNaJW0","dev":16777234,"ino":123656272,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles (25.827792ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-GY8Od3","dev":16777234,"ino":123656310,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 host selection rejects noncanonical descriptors before marker or stop (39.16625ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-488X6R","dev":16777234,"ino":123656348,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 host selection forwards source qualification failure before pending or signal (27.379792ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-heeS1k","dev":16777234,"ino":123656386,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 host selection final receipt unknown blocks legacy mutation after pending was cleared (35.638042ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-3no71k","dev":16777234,"ino":123656424,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC09 invalid browser policy and missing configured reports stop before any marker or service action (26.166625ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-P0eYvu","dev":16777234,"ino":123656462,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC09 prepare rechecks the same policy pin before a changed file can trigger a build or stop (41.177541ms)
+SVC08_HOST_FIXTURE {"directory":"/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/docs/evidence/svc09/local-run-01/host-tmp/flow-svc08-host-8Vcgxo","dev":16777234,"ino":123656500,"cleaned":true,"bytes":0,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC09 configured host uses actual backend tuple with all new reports while retaining the old pointer (29.202458ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 0
+ℹ fail 18
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 709.845667
+
+✖ failing tests:
+
+test at tools/personal-preview/preview.test.mjs:386:1
+✖ SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation (36.836458ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:387:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:400:1
+✖ SVC08 replace-host rejects stale CAS, source, identity, compatibility and missing interruption consent before stop (28.8765ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:401:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:407:1
+✖ SVC08 replace-host checkpoint failure sends no signal or start (31.248833ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:408:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:411:1
+✖ SVC08 replace-host unknown stop cannot repeat or be bypassed by a new operation id (22.212666ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:412:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:421:1
+✖ SVC08 replace-host uncertain spawn preserves pending new record and never starts a duplicate (58.519833ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:422:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:430:1
+✖ SVC08 replace-host concurrent command keeps one operation lock and one start (29.591959ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:432:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:438:1
+✖ SVC08 replace-host does not claim ready after protected data changed during launch (30.8585ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:439:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:446:1
+✖ SVC08 replace-host validates noncurrent retained files before touching Web (47.520792ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:447:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:453:1
+✖ SVC08 replace-host validates exact retained report and backend bindings before touching Web (28.851417ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:454:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:468:1
+✖ SVC08 replace-host CLI rejects extra request authority before any real marker or process port (26.942542ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:469:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:479:1
+✖ SVC08 host selection persists only Web artifact and authorizes only its Web service root (32.718917ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:480:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:501:1
+✖ SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles (25.827792ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:502:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:519:1
+✖ SVC08 host selection rejects noncanonical descriptors before marker or stop (39.16625ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:520:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:528:1
+✖ SVC08 host selection forwards source qualification failure before pending or signal (27.379792ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:529:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:537:1
+✖ SVC08 host selection final receipt unknown blocks legacy mutation after pending was cleared (35.638042ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:538:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:555:1
+✖ SVC09 invalid browser policy and missing configured reports stop before any marker or service action (26.166625ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:556:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:565:1
+✖ SVC09 prepare rechecks the same policy pin before a changed file can trigger a build or stop (41.177541ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:567:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }
+
+test at tools/personal-preview/preview.test.mjs:574:1
+✖ SVC09 configured host uses actual backend tuple with all new reports while retaining the old pointer (29.202458ms)
+  Error: STATE_MUST_BE_OUTSIDE_SOURCE
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:25:37)
+      at outsideGit (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:32:3)
+      at async directoryPath (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:50:3)
+      at async load (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:54:16)
+      at async inspectPreviewWebHostSource (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.mjs:395:18)
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:326:18)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/tools/personal-preview/preview.test.mjs:578:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'STATE_MUST_BE_OUTSIDE_SOURCE'
+  }

@@ -1,0 +1,17 @@
+✔ release CAS retains precise old namespaces, rollback changes only current, and full retention refuses publication (212.162833ms)
+✔ legacy collisions, namespace reuse, unsafe paths and corrupt metadata fail before replacing the old release (138.567042ms)
+✔ changed file bytes, backend mismatch, invalid compatibility and metadata limits are rejected (35.397333ms)
+✔ hot publish and rollback preserve an open SSE stream, old chunks and same-origin credentials (297.210666ms)
+✔ serialized release observations preserve valid in-flight reads and reject actual metadata rollback (77.867083ms)
+✔ SVC09 v2 reports bind all four checks and legacy v1 cannot stand in for configured evidence (65.05325ms)
+✔ SVC09 old pointer serves only with a complete new running tuple and never changes historical bytes (182.123458ms)
+✔ SVC09 report count bounds existing reads and imports without deleting any committed history (34.734ms)
+✔ SVC09 fixed historical count3 host rejects a four-artifact pointer (165.384125ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1267.261167

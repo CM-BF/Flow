@@ -1,0 +1,58 @@
+{
+  "name": "policy",
+  "startedAt": "2026-10-07T08:27:52.729280+00:00",
+  "freeBefore": 24064172032,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "tools/personal-preview/browser-session-configuration.test.mjs",
+    "tools/personal-preview/web-retention-policy.test.mjs",
+    "tools/personal-preview/environment.test.mjs"
+  ],
+  "supervision": {
+    "pid": 49714,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 300,
+    "observed_bytes": 1143,
+    "retained_bytes": 1143,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 1143,
+  "finishedAt": "2026-10-07T08:27:53.029828+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123655320
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24064159744,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

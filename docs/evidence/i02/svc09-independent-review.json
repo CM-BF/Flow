@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T08:45:52.079720+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "verdict": "APPROVED_SOURCE_AND_BOUNDED_LOCAL_EVIDENCE",
+  "target": "859e2a2b138e9d8c5121b29f651c8081325f6e5f",
+  "delivery": "427e5c05eded1366457d46f770b700b508cfbaf8",
+  "base": "5b0bef86086a611937e098c78bc542fde6ed9539",
+  "manifest": {
+    "path": "docs/evidence/svc09/manifest.json",
+    "bytes": 35078,
+    "sha256": "ed6728f1788dd9b800c8fb7c29db3502dd2471178a9f36bc12ff7099430a0b47"
+  },
+  "verification": {
+    "source": 17,
+    "unchangedInputs": 33,
+    "evidence": 59,
+    "runtimeAnchors": 7,
+    "aliases": 2,
+    "allFixedCurrentHashBytesMatch": true,
+    "protectedMainDelta": "Only docs/quality/local-validation.md; reviewed admission-policy metadata, no imported runtime change."
+  },
+  "reviewed": [
+    "Read complete 17-file production/test delta including private nofollow/identity/config pin, role environment allowlist and owned wrapper recheck. Absence remains legacy; malformed or changed policy fails closed.",
+    "Reviewed v2 compatibility context and actual backend versus historical release pointer. Every retained artifact needs exact new tuple evidence; old v1 only authorizes legacy operation.",
+    "Central count4/192MiB/32 reports policy is shared by preparation and publication. Fourth tiny build-port test and fifth rejection preserve old bytes; no unknown version retirement.",
+    "Selected independent Web host and maintenance runtime are qualified against exact reviewed tool bytes before stop/drain/spawn; descriptor passes bootstrap/prepare/refresh/start and empty bootstrap target normalizes to undefined.",
+    "Read actual 10 run summaries, stdout/stderr, cleanup, first failed TMPDIR case, incremental fixed sources and final empty-target regression. History is not rebound to final source.",
+    "Clean-code: single configuration/retention responsibility; existing operation/CAS/runtime authority retained, no duplicate scheduler or privilege inference."
+  ],
+  "observedEvidence": {
+    "distinctPassed": 44,
+    "selectedAcrossRounds": 72,
+    "originalFailedSelected": 18,
+    "supervisedMs": 7056,
+    "rawBytes": 51959,
+    "ownedGroupsAbsent": 10,
+    "bothEOF": 10,
+    "exactScratchRemoved": 9,
+    "originalEmptyKeep": 1,
+    "pg": 0,
+    "provider": 0,
+    "artifactBuild": 0,
+    "personalServiceOperations": 0
+  },
+  "blockingFindings": [],
+  "reviewerTests": 0,
+  "limitations": [
+    "VM module ports prove argument/order boundaries, not actual PG locks, migrations or service operations.",
+    "Injected tiny build verifies fourth slot path, not production Vite output.",
+    "Actual fixed backend/Web artifacts, all retained real App compatibility reports, policy activation and personal deployment remain open.",
+    "Existing af51/v18 backend, d629/v3 Web and c7b host unchanged; old connections root cause is not proved."
+  ]
+}

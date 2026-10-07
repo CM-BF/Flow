@@ -1,0 +1,58 @@
+{
+  "name": "artifact-slot",
+  "startedAt": "2026-10-07T08:32:07.109920+00:00",
+  "freeBefore": 24062791680,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=SVC09",
+    "tools/personal-preview/web-artifact.test.mjs"
+  ],
+  "supervision": {
+    "pid": 387,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 730,
+    "observed_bytes": 226,
+    "retained_bytes": 226,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 226,
+  "finishedAt": "2026-10-07T08:32:07.840792+00:00",
+  "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-artifact-slot-t_q3fo61",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123658967
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24062713856,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

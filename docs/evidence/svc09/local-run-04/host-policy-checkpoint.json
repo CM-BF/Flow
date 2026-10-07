@@ -1,0 +1,58 @@
+{
+  "name": "host-policy",
+  "startedAt": "2026-10-07T08:39:56.234327+00:00",
+  "freeBefore": 24054525952,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=SVC09",
+    "tools/personal-preview/preview.test.mjs"
+  ],
+  "supervision": {
+    "pid": 58013,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 839,
+    "observed_bytes": 2619,
+    "retained_bytes": 2619,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 2619,
+  "finishedAt": "2026-10-07T08:39:57.074118+00:00",
+  "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-ccfb_a0j",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123664583
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24055259136,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

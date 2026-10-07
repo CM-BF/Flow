@@ -551,3 +551,98 @@ test('SVC08 host selection final receipt unknown blocks legacy mutation after pe
     assert.equal(f.calls.stop, 1); assert.equal(f.calls.spawn, 1);
   }, { webHost: true });
 });
+
+test('SVC09 invalid browser policy and missing configured reports stop before any marker or service action', async () => {
+  await hostReplacementFixture(async f => {
+    await f.json('browser-session.json', { format: 1, installationId: f.config.installationId, browserSession: { cookieOrigin: 'https://public.example', trustedOrigins: ['https://public.example'], authEpoch: 'one', unknown: true } });
+    await assert.rejects(f.replace(f.request), { code: 'BROWSER_CONFIGURATION_INVALID' });
+    assert.equal(f.calls.marker, 0); assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    await f.json('browser-session.json', { format: 1, installationId: f.config.installationId, browserSession: { cookieOrigin: 'https://public.example', trustedOrigins: ['https://public.example'], authEpoch: 'one' } });
+    await assert.rejects(f.replace(f.request), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  });
+});
+test('SVC09 prepare rechecks the same policy pin before a changed file can trigger a build or stop', async () => {
+  const { loadPreviewConfiguration, preparePreviewWeb } = await import('./preview.mjs');
+  await hostReplacementFixture(async f => {
+    const config = await loadPreviewConfiguration(f.directory);
+    await f.json('browser-session.json', { format: 1, installationId: f.config.installationId, browserSession: { cookieOrigin: 'https://public.example', trustedOrigins: ['https://public.example'], authEpoch: 'one' } });
+    await assert.rejects(preparePreviewWeb(config, f.original.source.head), { code: 'BROWSER_CONFIGURATION_CHANGED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  });
+});
+test('SVC09 configured host uses actual backend tuple with all new reports while retaining the old pointer', async () => {
+  await hostReplacementFixture(async f => {
+    const { backendHead } = await configuredHostProofs(f);
+    const spawn = f.processes.spawn; f.processes.spawn = async input => {
+      assert.equal(input.env.FLOW_PREVIEW_WEB_BACKEND_HEAD, backendHead);
+      assert.equal(input.env.FLOW_BROWSER_SESSION_JSON, undefined);
+      assert.notEqual(input.env.FLOW_PREVIEW_WEB_BACKEND_HEAD, f.hostArtifact.sourceHead);
+      assert.equal(JSON.parse(input.env.FLOW_PREVIEW_BROWSER_POLICY_IDENTITY).directory, f.directory);
+      return spawn(input);
+    };
+    const result = await f.replace({ ...f.request, expectedBackendHead: backendHead });
+    assert.equal(result.outcome, 'ready'); assert.equal(f.calls.stop, 1); assert.equal(f.calls.spawn, 1);
+    assert.equal(await readFile(join(f.directory, 'web-release.json'), 'utf8'), f.protectedBytes['web-release.json']);
+    const state = JSON.parse(await readFile(join(f.directory, 'state.json')));
+    assert.deepEqual(state.processes.center, f.original.processes.center); assert.deepEqual(state.processes.runner, f.original.processes.runner);
+  }, { webHost: true });
+});
+
+async function configuredHostProofs(f) {
+  const { browserCompatibilityContext } = await import('./browser-session-configuration.mjs');
+  const { importWebCompatibility } = await import('./web-release.mjs');
+  const { mkdir } = await import('node:fs/promises');
+    const settings = { cookieOrigin: 'https://public.example', trustedOrigins: ['https://public.example'], authEpoch: 'one' };
+    const context = browserCompatibilityContext(settings); const backendHead = 'e'.repeat(40);
+    await f.json('browser-session.json', { format: 1, installationId: f.config.installationId, browserSession: settings });
+    await f.json('state.json', { ...f.original, source: { head: backendHead, dirty: false } });
+    const source = join(f.directory, 'report-fixture'); await mkdir(source);
+    for (const artifact of f.release.artifacts) {
+      const old = JSON.parse(await readFile(join(f.directory, 'web-compatibility', f.release.compatibilityIds[artifact.artifactId], 'report.json')));
+      const hashes = {};
+      for (const name of Object.keys(old.checks)) {
+        const prior = JSON.parse(await readFile(join(f.directory, 'web-compatibility', f.release.compatibilityIds[artifact.artifactId], name + '.json')));
+        const raw = JSON.stringify({ ...prior, format: 2, backendHead, context }); hashes[name] = f.hash(raw);
+        await writeFile(join(source, name + '.json'), raw, { mode: 0o600 });
+      }
+      await writeFile(join(source, 'report.json'), JSON.stringify({ ...old, format: 2, policy: 'flow-web-api-v2', backendHead, context, checks: hashes }), { mode: 0o600 });
+      await importWebCompatibility({ directory: f.directory, reportDirectory: source });
+    }
+  return { backendHead, context };
+}
+
+test('SVC09 old independently selected Web implementation is refused before stopping any role', async () => {
+  await hostReplacementFixture(async f => {
+    const { backendHead } = await configuredHostProofs(f);
+    // The stand-in still has every filename: file presence alone is not a capability proof.
+    const path = join(f.hostRoot, 'tools/personal-preview/static-web.mjs');
+    await writeFile(path, (await readFile(path, 'utf8')).replace('runtimeCompatibility:', 'historicalCompatibility:'));
+    await assert.rejects(f.replace({ ...f.request, expectedBackendHead: backendHead }), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    assert.equal(await readFile(join(f.directory, 'web-release.json'), 'utf8'), f.protectedBytes['web-release.json']);
+  }, { webHost: true });
+});
+
+test('SVC09 maintenance qualification rejects old tools for configured policy or four retained items', async () => {
+  const { assertPreviewMaintenanceRuntime } = await import('./preview.mjs');
+  await hostReplacementFixture(async f => {
+    const runtime = { root: f.hostRoot };
+    // Legacy three-item installations retain their existing dispatch path.
+    await assertPreviewMaintenanceRuntime({ ...f.config }, runtime);
+    await configuredHostProofs(f);
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, runtime), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    await writeFile(join(f.hostRoot, 'tools/personal-preview/maintenance-host.mjs'), await readFile(join(f.root, 'tools/personal-preview/maintenance-host.mjs')));
+    await assertPreviewMaintenanceRuntime({ ...f.config }, runtime);
+    const path = join(f.hostRoot, 'tools/personal-preview/maintenance-host.mjs');
+    await writeFile(path, (await readFile(path, 'utf8')).replace('await preparePreviewWeb(config,', 'await oldPreparePreviewWeb(config,'));
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, runtime), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  }, { webHost: true });
+  await hostReplacementFixture(async f => {
+    const fourth = { artifactId: '9'.repeat(64), manifestDigest: '9'.repeat(64), sourceHead: '9'.repeat(40) };
+    await f.json('web-release.json', { ...f.release, artifacts: [...f.release.artifacts, fourth], compatibilityIds: { ...f.release.compatibilityIds, [fourth.artifactId]: '9'.repeat(64) } });
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, { root: f.hostRoot }), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  }, { webHost: true });
+});

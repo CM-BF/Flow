@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { fileURLToPath } from 'node:url';
-import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
+import { prepareWebArtifact, verifyWebArtifact, createWebArtifactPreparer } from './web-artifact.mjs';
 const execute = promisify(execFile);
 const installedWeb = fileURLToPath(new URL('../../apps/web/node_modules', import.meta.url));
 async function fixture(callback) {
@@ -99,7 +99,8 @@ test('release namespace is fixed before build while manifest identity follows bu
     assert.notEqual(other.artifactId, artifact.artifactId);
     assert.equal(other.sourceHead, artifact.sourceHead);
     await prepareWebArtifact({ ...options, releaseId: 'c3'.repeat(16) });
-    await assert.rejects(prepareWebArtifact({ ...options, releaseId: 'd4'.repeat(16) }), { code: 'WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED' });
+    await prepareWebArtifact({ ...options, releaseId: 'd4'.repeat(16) });
+    await assert.rejects(prepareWebArtifact({ ...options, releaseId: 'e5'.repeat(16) }), { code: 'WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED' });
   });
 });
 
@@ -110,5 +111,25 @@ test('rejects oversized asset metadata before reading its bytes', async () => {
     const huge = await open(join(verified.dist, 'large.bin'), 'wx');
     try { await huge.truncate(32 * 1024 * 1024 + 1); } finally { await huge.close(); }
     await assert.rejects(verifyWebArtifact({ directory: options.directory, artifact }), { code: 'WEB_ARTIFACT_TOO_LARGE' });
+  });
+});
+
+
+test('SVC09 preparation allows the fourth slot and refuses a fifth before invoking its build port', async () => {
+  await fixture(async options => {
+    let builds = 0;
+    const prepare = createWebArtifactPreparer({ build: async (_repository, outDir, releaseId) => {
+      builds++; await mkdir(outDir); await writeFile(join(outDir, 'index.html'), `<html>${releaseId}</html>`);
+    } });
+    const first = [];
+    for (let n = 1; n <= 3; n++) first.push(await prepare({ ...options, releaseId: String(n).repeat(32) }));
+    const original = await Promise.all(first.map(artifact => readFile(join(options.directory, 'web-artifacts', artifact.artifactId, 'manifest.json'))));
+    const fourth = await prepare({ ...options, releaseId: '4'.repeat(32) }); assert.equal(builds, 4);
+    assert.deepEqual(await prepare({ ...options, releaseId: '4'.repeat(32) }), fourth); assert.equal(builds, 4);
+    await assert.rejects(prepare({ ...options, releaseId: '5'.repeat(32) }), { code: 'WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED' });
+    assert.equal(builds, 4); assert.equal((await readdir(join(options.directory, 'web-artifacts'))).length, 4);
+    for (let n = 0; n < 3; n++) assert.deepEqual(await readFile(join(options.directory, 'web-artifacts', first[n].artifactId, 'manifest.json')), original[n]);
+    await assert.rejects(prepare({ ...options, directory: options.repository, releaseId: '5'.repeat(32) }), { code: 'PRIVATE_ARTIFACT_DIRECTORY_REQUIRED' });
+    assert.equal(builds, 4);
   });
 });
