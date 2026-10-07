@@ -22,3 +22,7 @@
 ## 2026-10-07T14:16:15.530Z 供给政策 metadata 校准
 
 复用本地find-skills/clean-code。核原claim exact4/owner/branch/clean/无overlap后，仅校准供给决策与当前状态：接受Original正式审定04da/6c候选，保8964旧guard事实与两个空descriptor。发现并修正旧共源硬绑定描述；候选授权/源码批准/产物/实际严格分层。无产品改写、types/browser/PG/Chrome/HTTP/容量采样；纯文本、相对链接与Git diff核对结果见supply-calibration-checks.json。
+
+## 2026-10-07T14:24:19.223Z 最小移植只读/TMP准备
+
+复用find-skills/clean-code：固定c848 Git补丁来源，静态TMP应用旧7272两个blob，结果hash比对；session只替换一处projection调用，避免复制MSG authority。Current优先与无port restored fallback沿已审单一selector。区分MSG局部批准和旧base尚未验证，不改生产，不run/import。生产范围仍MSG v3；两descriptors=NULL、旧8964guard真实保留。必要权属与后继affected checks在报告；本批仅metadata链接/Git/hash核对。

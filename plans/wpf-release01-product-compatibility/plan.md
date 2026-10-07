@@ -56,4 +56,6 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 当前后继源/strict独审见[原件](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)。RELEASE01-08仍未完成；[明确供应字段](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)由Original提供，后续实际再独立验收，不视为发布完成。
 
-当前供给决策校准：Original 已授权独立 SVC06B / 6c-base `04da80692e79e2b7c3f6341c7fa76515a3f719a3`，仍待正式源审与artifact。RELEASE01-08以已审lateLogout合同和真实固定pair为准，不再要求7272共源；必要共享draft保护小修待审，不捆绑整个MSG03/Plugin。两个descriptor=NULL，8964现有guard不在本metadata批改写。
+当前供给决策校准：Original 已授权独立 SVC06B / 6c-base `04da80692e79e2b7c3f6341c7fa76515a3f719a3`，仍待正式源审与artifact。RELEASE01-08以已审lateLogout合同和真实固定pair为准，不再要求7272共源；必要共享draft保护小修现已获MSG源码/局部批准，旧base移植与真实artifact/compat仍待，不捆绑整个MSG03/Plugin。两个descriptor=NULL，8964现有guard不在本metadata批改写。
+
+[两file旧base最小移植准备](../../docs/evidence/wpf-release01/recovery-cookie/held-transplant-preparation/report.md)只在TMP核固定patch/result；RELEASE01-08仍pending。生产两literal仍MSG持有，需原owner移交或Original受控集成，不由Release原4scope擅写。

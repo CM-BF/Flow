@@ -38,4 +38,8 @@
 
 ## 供给校准记录
 
-见[supply-request](supply-request.json)、[原请求历史](supply-request-before-04da.json)及[校准与质量记录](supply-calibration.json)。04da候选包含3个server产品/测试文件62增6删，另78行fixture-cleanup支持档案；授权候选不等正式源审或artifact。新Web只纳必需且获批的完整草稿保护delta；b924目前待root审，不能先记批准。两个descriptor均NULL，无gate或运行。
+见[supply-request](supply-request.json)、[原请求历史](supply-request-before-04da.json)及[校准与质量记录](supply-calibration.json)。04da候选包含3个server产品/测试文件62增6删，另78行fixture-cleanup支持档案；授权候选不等正式源审或artifact。新Web只纳必需且获批的完整草稿保护delta；b924现已获MSG限定source/local批准，旧base移植/真实artifact/compat不能据此记通过。两个descriptor均NULL，无gate或运行。
+
+## 最小Web移植准备（非产品运行）
+
+[报告](held-transplant-preparation/report.md)和[manifest](held-transplant-preparation/manifest.json)固定7272的两file TMP结果；MSG source/local原审单独归档。Release生产两harness不变，最终pair仍未知；待精确源/descriptor到齐才拆分共源guard，既有安全/生命周期/四check不放宽。
