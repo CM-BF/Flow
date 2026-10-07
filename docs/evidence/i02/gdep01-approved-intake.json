@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-07T23:47:33.071Z",
+  "decision": "ACCEPT_EXISTING_APPROVED_EXACT_SOURCE",
+  "operator": "astra_ultra_execution_lead / gpt-6-astra",
+  "base": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+  "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+  "canonicalHead": "4511bb8939169dbf90591b330de0238319ac60f6",
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "rows": [
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 13111,
+      "sha256": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": true,
+        "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 2658,
+      "sha256": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.test.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 6988,
+      "sha256": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.pg.test.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 10967,
+      "sha256": "7e3facdf9b70aaccd418b53514b67fa65a0cd49569d96171e52b22eb07343995",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-fixture.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "preimage": {
+        "exists": false,
+        "sha256": null
+      },
+      "bytes": 11166,
+      "sha256": "ef9664ce14762e9cf29199d3f85e265af5dabc57310c328e99a1ba453117f4a9"
+    }
+  ],
+  "reviewReferences": [
+    {
+      "commit": "4511bb8939169dbf90591b330de0238319ac60f6",
+      "path": "docs/evidence/gdep01-dependency-batch/source-review.json",
+      "bytes": 507,
+      "sha256": "a902729124dd9896d6e682de14aae42f7d08b8d0f266eadcc5e8a5e70b6d6b56"
+    },
+    {
+      "commit": "4511bb8939169dbf90591b330de0238319ac60f6",
+      "path": "docs/evidence/gdep01-dependency-batch/pg-preparation-review.json",
+      "bytes": 1722,
+      "sha256": "3fa8e0d33ac2c47ab7a3b1087a67be49ccc10852e0ddd217825cd3b9ed3952cf"
+    },
+    {
+      "commit": "4511bb8939169dbf90591b330de0238319ac60f6",
+      "path": "docs/evidence/gdep01-dependency-batch/pg-actual-review.json",
+      "bytes": 1839,
+      "sha256": "7b8cdf6c1a6ce8d890aa510dad7baa90ac2f09f14eee17703dba82bc7e1b4632"
+    },
+    {
+      "commit": "4511bb8939169dbf90591b330de0238319ac60f6",
+      "path": "docs/evidence/gdep01-dependency-batch/main-intake.md",
+      "bytes": 4657,
+      "sha256": "4848cda3d52a0101d48679345dafbd877e35d31f09c69e5779f27a0e862ee2ca"
+    }
+  ],
+  "independentReviews": [
+    "db_transaction_owner SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED 2026-10-07T22:13:34Z",
+    "db_transaction_owner PG_PREPARATION_REVIEW_APPROVED 2026-10-07T22:38:30Z",
+    "chatui01_owner ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED 2026-10-07T22:50:25Z"
+  ],
+  "integrationCheck": "Four product preimages match current main exactly; test-only fixture is required by new PG test and matches approved preparation. commands only replaces inline helper with same-signature import, preserving all call sites and transaction/authorization boundaries.",
+  "validationReuse": "16 pure checks, commands transitive types, 8 real PG checks and result review reused; 0 new engineering tests/PG/provider/service actions.",
+  "limits": [
+    "No public execute/native/progression end-to-end or performance claim.",
+    "PG fixture remains explicitly gated; ordinary full-suite invocation not claimed working.",
+    "Original raw/failures remain once in canonical fixed Git; no copy of 512 runtime inputs.",
+    "No automatic personal deployment."
+  ]
+}

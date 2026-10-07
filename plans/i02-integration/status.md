@@ -548,3 +548,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T23:40:41.160Z：已审固定Web779于23:35:35.341Z开始、23:36:06.257Z实际RETURN；两action确认、旧三版及3持久服务保留。23:38:23.988Z–23:38:24.007Z限定三GET核identity与新旧各一个版本JS的size/hash，未做浏览器聊天或任务领取。22固定绑定118188B与8安全副本核同，原04失败/截断UNKNOWN不回绿；见[唯一结果审查](../../docs/evidence/i02/svc06b-web779-actual-result-review.json)。当前转接已审AV center/client积压，不混入已部署固定产物。
 
 2026-10-07T23:42:19.673Z：已审AV center/client按15精确路径接收，ea3/ead8/90c复用原source、局部与5项PG独审，startup组合2fec三行由Lead限定静态审。13旧前像及56直接外部输入同main；旧journal4已main跳过，不整体合分支、不复跑原测试。完整verifier生产链与实际个人部署未完成；见[唯一接收回执](../../docs/evidence/i02/x01-verifier-center-client-intake.json)。
+
+2026-10-07T23:47:33.071Z：GDEP01已审四产品叶及必要PG fixture按固定前像精确接收，见[唯一接收](../../docs/evidence/i02/gdep01-approved-intake.json)。16pure/8真实PG与独审原件复用，0工程重测。原commands调用/权限/事务不改；不把局部SQL证据称完整目标端到端或加速。个人版本不随main前进。

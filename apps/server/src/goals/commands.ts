@@ -7,7 +7,8 @@ import type { PgBoss } from 'pg-boss';
 import type { GoalArtifactBinding, GoalCommand, GoalCommandResult, GoalCreation, GoalExplanation } from '../../../../packages/contracts/src/goals.js';
 import type { ExecutionProfileReference } from '../../../../packages/contracts/src/execution-profiles.js';
 import { taskSubmissionSchema } from '../../../../packages/contracts/src/tasks.js';
-import { canonical, HttpError, sha256 } from '../database.js';
+import { canonical, HttpError } from '../database.js';
+import { dependencyContent } from './dependency-content.js';
 import { loadProject } from '../projects/storage.js';
 import { acceptTask, command, loadTask } from '../tasks.js';
 import { currentDeliveries, equalBindings, executionRows, explanationView, loadState, requireNode, sortBindings, type GoalState } from './state.js';
@@ -93,19 +94,7 @@ async function requirePreviousStopped(client: PoolClient, state: GoalState, inpu
   const task = await loadTask(client, execution.task_id, true);
   if (!['succeeded', 'failed', 'cancelled'].includes(task.status)) throw new HttpError(409, 'execution_unsettled', 'The previous execution is active or uncertain; reconcile it before authorizing another.');
 }
-async function dependencyContent(client: PoolClient, bindings: GoalArtifactBinding[]) {
-  const context: (GoalArtifactBinding & { content: string })[] = [];
-  let size = 0;
-  for (const binding of bindings) {
-    const artifact = (await client.query<{ content: string }>(`SELECT d.content FROM flow.artifacts a JOIN flow.details d ON d.id=a.detail_id
-      WHERE a.task_id=$1 AND a.artifact_id=$2 AND a.version=$3 AND a.detail_id=$4`, [binding.taskId, binding.artifactId, binding.artifactVersion, binding.detailId])).rows[0];
-    if (!artifact || sha256(artifact.content) !== binding.artifactVersion) throw new HttpError(409, 'dependency_artifact', 'The exact dependency artifact is unavailable.');
-    size += artifact.content.length;
-    if (size > 16_000) throw new HttpError(409, 'input_too_large', 'Dependency content exceeds the bounded execution context.');
-    context.push({ ...binding, content: artifact.content });
-  }
-  return context;
-}
+
 async function acceptDelivery(client: PoolClient, state: GoalState, input: Extract<GoalCommand, { kind: 'accept-delivery' }>): Promise<Result> {
   const current = state.nodes.get(input.nodeId)?.accepted_binding ?? null;
   if ((current?.executionId ?? null) !== input.expectedCurrentExecutionId) throw new HttpError(409, 'delivery_version', 'Refresh the current accepted delivery before replacing it.');
