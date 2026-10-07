@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T16:19:27.331Z",
+  "task": "SVC09A / R2 actual host result",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "state": "APPROVED_LIMITED_R2_FAILURE_FIDELITY",
+  "P1": 0,
+  "P2": 0,
+  "fixedOwnerCommit": "14f9baed0f7eca7fa9b0084402fb825cecd7ebd1",
+  "canonicalManifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-result-manifest.json",
+  "manifestBytes": 4851,
+  "manifestSha256": "c8200d4894fac3a220e7d7243e17d34b4852648cd95a4cfcb06c611925dd795b",
+  "bindings": {
+    "count": 14,
+    "bytes": 17402,
+    "inherited": 2
+  },
+  "conclusions": [
+    "Actual journey0/1. Work/cleanup first path guards reject the actual underscore-containing mkdtemp name. Third similar guard is a static finding and did not execute.",
+    "Mechanical clone exit0; downstream backendRuntime full validation NOT_RUN. Clone stdout cannot substitute for execution. Setup was never reached, no fixtureDB/service was created.",
+    "OuterPID and all3childgroups exited/absent and dualEOF; runtimeRETURN2026-10-07T16:16:36.884252Z. New clone/privateKEEP, FAIL andcleanup exit1 retained; R1 unchanged."
+  ],
+  "actions": "Read fixed sources and saved results only; no private original content read, no tests/PG/services/provider. Raw/source retained once in pushed fixed owner commit; no duplicate payload tree.",
+  "notProven": [
+    "Host readiness or correct settings dispatch",
+    "Product regression or original personal-process root cause",
+    "Permission to retry same run or reclaim KEEP resources"
+  ]
+}

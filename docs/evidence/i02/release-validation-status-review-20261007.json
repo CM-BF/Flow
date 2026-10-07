@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T16:20:18.232Z",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "state": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "target": "807de2beaa71f158db2c54caf55a6a31a99006ab",
+  "base": "fcda6df076184ca897656b1fec6969268b6e49dc",
+  "paths": [
+    "plans/flow-001-architecture/status.md",
+    "plans/ops-001-status-review/status.md"
+  ],
+  "delta": "+18/-8",
+  "findings": "Mainb791 acceptance, R2 failed+returned, KEEP and no personaldeployment consistent; newlinks accessible, originalUNKNOWN retained. No extra source or behavior change.",
+  "reviewerActions": "0writes/tests/PG/personal operations",
+  "ownStatusParse": "errors[] human.missing[]; historical task-start UNKNOWN remains declared"
+}

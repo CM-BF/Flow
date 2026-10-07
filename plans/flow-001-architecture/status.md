@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:55:26.554Z / main/origin7aa9a6b08；固定受管入口已审接收，新Web产物已核收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:18:41.264Z / main/originb79121e19；AV03四leaf已审接收，网页兼容和宿主失败均独立留存 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin7aa9a6b08已收SVC06B当前入口/显式reader ports与SVC09A隔离宿主准备；二者只是准备。新Web779/c231构建结果独审通过，四网页对cd27/04da的兼容报告未齐。最后已审个人7d1/source6c、accepting21、Webd629/v3保持，本段未新采个人事实或操作。 |
+| 已集成main状态 / HEAD | main/originb79121e19已含AV02/AV03有限接缝与SVC06B受管入口。新Web779/c231构建已审，四份cd27/04da兼容报告尚未齐。SVC09A第二轮仅clone成功，入口拒绝后未创建DB/服务，宿主未通过。最后已审个人7d1/source6c、accepting21、Webd629/v3保持；本段未新采个人事实或操作。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新网页及配套后台产物已完成固定构建；更新入口已审，正在收口网页兼容与后台独立启动验收。 |
-| 下一可用交付 | 取得旧页面和新页面的正式兼容依据，再受管发布可体验页面；逐消息设置后台独立启动和接单另外验收。 |
+| 当前产出 | 新页面和配套后台已固定；实际验证发现测试入口问题，失败已保留并由原作者修复。已审验证器接缝已及时进入主线。 |
+| 下一可用交付 | 修正网页兼容和宿主验证入口，取得完整证据后受管发布新页面；当前个人页面保持原版本。 |
 | 当前阻塞 | ACTIVE: 工程写入资格仍待既有用户选择；个人更新阻塞已解除，其余聊天验证继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -250,3 +250,7 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 
 [SVC06B当前入口独审](../../../m2-integration/docs/evidence/i02/svc06b-current-entry-review.json)与[SVC09A宿主准备增量审查](../../../m2-integration/docs/evidence/i02/svc09a-host-preparation-delta-review.json)均已main；未重复构建或已绿局部检查。新Web779/c231已有正式构建批准，但四页面对cd27/04da的真实兼容仍待收口；具体缺项只引用[唯一owner输入](../../../backend-browser-recovery/docs/evidence/svc06/browser-recovery/managed-update-inputs.json)，不复制第二清单。现有用户服务保持，准备批准不当实际部署/接单证明。
 新增依赖批量读取仅为REQ-18/S01后继静态验收登记，与SCAN-01/POOL-01分责；不启动实验、无新增模型或运行预算。
+
+### 2026-10-07T16:18:41.264Z 新页面发布当前差距
+
+新网页构建和更新入口已审，不等于实际页面已发布。当前兼容旅程在测试前置条件失败，消息设置后台旅程在临时目录入口校验失败；原owners分别修复，尚无完整兼容/宿主通过结论。运行已归还，失败与需保留资源不改写；下一次独立固定输入按ready-first验证。个人服务本段未操作，原13:48已审部署边界保持。工程与自然语言完整验收继续开放，详见各子任务唯一状态；本段不扩provider授权。
