@@ -1,3 +1,4 @@
+import { pluginRuntimeCommandSchema, pluginToolTaskRequestSchema, PLUGIN_RUNTIME_LIMITS } from '../../../packages/contracts/src/plugin-runtime.js';
 import { goalProgressionAuthorizationSchema, goalProgressionRevocationSchema, GOAL_PROGRESSION_MAX_BYTES } from '@flow/contracts';
 import { goalPlanConfirmationSchema, GOAL_PLAN_CONFIRMATION_MAX_BYTES } from '@flow/contracts';
 import { packageFetchRequestSchema, packageFetchCommandSchema, PACKAGE_FETCH_LIMITS } from '@flow/contracts';
@@ -6,7 +7,7 @@ import { knowledgeCreateSchema, knowledgePublishSchema, knowledgeResolveSchema, 
 import { parseArgs } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { JsonInputError, readJsonInput } from './json-input.js';
-import { FlowClient, FlowApiError, UnknownConversationAcknowledgementError } from '@flow/client';
+import { FlowClient, FlowApiError, UnknownConversationAcknowledgementError, UnknownPluginAcknowledgementError } from '@flow/client';
 import { conversationTurnSchema, conversationQueueEnqueueSchema } from '@flow/contracts';
 import { watchTask, taskLine } from './watch.js';
 import { taskSubmissionSchema, decisionSchema, registerRunnerSchema, reconciliationObservationSchema, reconciliationResolutionSchema, reconciliationRetrySchema, projectCreationSchema, projectCommandSchema, goalCreationSchema, goalCommandSchema, goalNativeExecutionSchema, type TaskSubmission } from '@flow/contracts';
@@ -35,6 +36,12 @@ export async function runCli(args: string[], io: CliIO = defaultIO, env: NodeJS.
     const client = new FlowClient({ baseUrl: values.url ?? env.FLOW_URL ?? 'http://127.0.0.1:4310', token: env.FLOW_TOKEN });
     return await executeCommand({ client, values, positionals, io, signal });
   } catch (error) {
+    if (error instanceof UnknownPluginAcknowledgementError) {
+      io.err(error.request.key === undefined
+        ? 'The plugin response could not be verified. No state was inferred from it.'
+        : 'Plugin command outcome is unknown. Keep the original --key and unchanged input file; recover explicitly with that same request.');
+      return 4;
+    }
     if (error instanceof UnknownConversationAcknowledgementError) {
       io.err('Conversation acceptance is unknown. Keep the original --key and unchanged input file; recover explicitly with that same request.');
       return 4;
@@ -172,6 +179,19 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
   const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
   let result: unknown;
   switch (action) {
+    case 'runtime': result = await client.pluginRuntime(required(positionals[2], 'plugin ID'), signal); break;
+    case 'binding': result = await client.pluginToolBinding(required(positionals[2], 'task ID'), signal); break;
+    case 'runtime-change':
+    case 'tool-task': {
+      const key = required(values.key, '--key (stable command identifier)');
+      if (!key.trim() || key.length > 200) throw new UsageError('--key must contain 1–200 characters.');
+      const input = await readJsonInput(required(values.input, '--input JSON-file'), PLUGIN_RUNTIME_LIMITS.bodyBytes);
+      const id = required(positionals[2], 'plugin ID');
+      result = action === 'runtime-change'
+        ? await client.commandPluginRuntime(id, pluginRuntimeCommandSchema.parse(input), key, signal)
+        : await client.admitPluginToolTask(id, pluginToolTaskRequestSchema.parse(input), key, signal);
+      break;
+    }
     case 'installs': result = await client.pluginMaterialInstalls(required(positionals[2], 'plugin ID'), page, signal); break;
     case 'install-show': result = await client.pluginMaterialInstall(required(positionals[2], 'material installation ID'), signal); break;
     case 'install-history': result = await client.pluginMaterialInstallHistory(required(positionals[2], 'material installation ID'), page, signal); break;
@@ -210,7 +230,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
         : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use plugin register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
+    default: throw new UsageError('Use plugin runtime|runtime-change|tool-task|binding|register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -339,7 +359,10 @@ function submission(values: Flags, words: string[]): TaskSubmission {
   });
 }
 
-const HELP = `Static material: plugin install PLUGIN VERSION --input FILE --key KEY; plugin installs PLUGIN; plugin install-show OP; plugin install-history OP; plugin install-change OP --input FILE --key KEY.
+const HELP = `Runtime state: plugin runtime PLUGIN; plugin binding TASK.
+Runtime command: plugin runtime-change PLUGIN --input FILE --key KEY; plugin tool-task PLUGIN --input FILE --key KEY.
+Runtime input files are bounded to 32 KiB encoded JSON. Enable does not prove loaded/callable; an unknown ACK requires the original route/key/input, never a new key.
+Static material: plugin install PLUGIN VERSION --input FILE --key KEY; plugin installs PLUGIN; plugin install-show OP; plugin install-history OP; plugin install-change OP --input FILE --key KEY.
 Package fetch: plugin fetch PLUGIN VERSION --input FILE --key KEY; plugin fetches PLUGIN; plugin fetch-show OP; plugin fetch-history OP; plugin fetch-change OP --input FILE --key KEY.
 Flow — durable work, from your terminal
 
