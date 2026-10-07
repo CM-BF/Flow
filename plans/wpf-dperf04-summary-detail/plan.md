@@ -21,11 +21,11 @@
 
 组合source及Node9叶+父10/10已限定独审接受；浏览器summary9、关联6、Timing5（含queued-close真实事件回归）、ACCESS5与所需视觉补证均获root限定实际/目视接受，原两个失败及异常图不改。旧phase40551/未用19449 CLOSED；后继phase20383/未用24617 CLOSED，实际累计60934ms。0PG/真实registry/provider/个人服务；没有生产首屏时延基准。
 
-所有实际父exit/唯一terminal/原预算/EOF/ownedcleanup与视觉范围见[phase记录](../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json)。公共helper仅PARTIAL_RETAINED_ADOPTION：单实际caller、全部retained三入口；scratch原scanner未迁移。最终档案包含真实运行器.py/.sb/.diff，非metadata闭包交root确认，不改proof分类。原8MiB retained/64MiB scratch边界未提升。
+所有实际父exit/唯一terminal/原预算/EOF/ownedcleanup与视觉范围见[phase记录](../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json)。公共helper仅PARTIAL_RETAINED_ADOPTION：单实际caller、全部retained三入口；scratch原scanner未迁移。最终档案包含真实运行器.py/.sb/.diff，已由root对bc612/exact30闭包独立APPROVED，不改proof分类。原8MiB retained/64MiB scratch边界未提升。
 
 ## 完成条件
 
 直接消费者语义、异步代际/未知、原snapshot兼容及单task freshproof有证据；固定commit独审，main与真实服务部署分开记录。无测试时保持NOT_RUN；不能从源结构推生产延迟。唯一进度见[status](status.md)，独审见[review](review.md)。
 
 
-当前交接：source/actual均已限定独审；最终seal的非metadata档案闭包待root一次确认，main/部署未发生，claim保持但全11scope停写。
+当前交接：bc612精确30路径源码/actual/非metadata档案闭包独立APPROVED，main NOT_INTEGRATED/部署未发生；正常待主线接收不作为blocker，claim v4原11保持、收口后停写。

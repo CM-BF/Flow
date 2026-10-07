@@ -1,12 +1,16 @@
 # WPF-DPERF04 独立审查
 
-**状态：UNKNOWN（各限定source/actual已批准；最终composite非metadata档案闭包待独立确认，main/部署未发生）**
+**状态：APPROVED（固定composite源码、既有实际验收与精确档案闭包；main/部署另列未完成）**
 
-Review target commit：98baf552d961ed0fa88ce2cf8bad006002d5986a
+Review target commit：bc6126278c13e8c355d704dd3c371417331026b2
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前16产品/保护输入逐字固定98baf，生产同52cdf（原组合cfd5加真实queued-close保护）。[固定manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-source-manifest.json)；[最终档案精确scope](../../docs/evidence/wpf-dperf04/reentry-20261007/final-composite-source-closure.json)。本次实际操作.py/.sb/.diff归档按原字节保留，现proof会视为非metadata；作者不隐藏、不改parser、不自行批准最终compositeSHA。Root随后针对最终seal一次闭包核验，当前UNKNOWN是该边界，不否定已完成实际验收。
+Scope：apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py
+
+[root最终独审原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json)由独立reviewer对固定bc612明确APPROVED、0blocking。16产品/保护输入逐字98baf，生产保持52cdf；14归档.py/.sb/.diff原件精确纳入scope，其余85个变化被原proof规则识别为metadata。78index条目核同；3个parent-budget保持当时快照，不能因共享路径随后合法推进误判篡改。既有8份source/actual独审链完整核同，没有新产品测试或补写旧结果。
+
+检查PASSED与审查APPROVED均限定此精确30范围；当前main NOT_INTEGRATED，实际部署、真实registry性能、公共helper scratch/第二caller未验。Claim仍v4原11，不因审查scope30扩大writer权限。后续正常metadata归档不改变固定review target。原manifest保留当时待审语境，当前结论以本页及最终原件为准。
 
 ## 当前已完成独立审查
 

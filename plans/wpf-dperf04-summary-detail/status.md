@@ -2,34 +2,34 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 09:31:56 UTC |
+| 最近更新时间 | 2026-10-07 09:36:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 98baf552d961ed0fa88ce2cf8bad006002d5986a（当前16固定输入；最终composite metadata另核） |
-| 工作树dirty状态 | 16固定输入仍98baf；本次只actual证据/metadata，最终seal核clean；非metadata档案闭包独审待root |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / bc6126278c13e8c355d704dd3c371417331026b2（最终composite已审；后续仅metadata） |
+| 工作树dirty状态 | 16输入及14非metadata档案均固定bc612；本次仅2个own records范围归档/校准，提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | integration |
-| 检查状态 | PASSED 98baf552d961ed0fa88ce2cf8bad006002d5986a：本组合browser summary9、关联6、Timing5、ACCESS5；Node10/10仍归固定cfd5未重跑；必要视觉1+1与五新PNG均root限定接受；原两红保留；新段20383/24617 CLOSED，旧40551/19449 CLOSED |
+| 检查状态 | PASSED bc6126278c13e8c355d704dd3c371417331026b2：既有组合Node10/10归cfd5；summary9、关联6、Timing5、ACCESS5及视觉1+1/五新PNG由root精确闭包核验接受，未重跑；旧红保留，两个browser phase CLOSED |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 98baf552d961ed0fa88ce2cf8bad006002d5986a |
-| 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
+| 实现目标 | bc6126278c13e8c355d704dd3c371417331026b2 |
+| 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要/按需详情与ACCESS/TIMING组合功能和必要视觉已限定独审接受；主线未接，最终档案闭包待独立确认 |
-| 下一可用交付 | root确认最终composite与精确档案scope后，由原Lead主线接收；不重复已通过检查 |
-| 当前阻塞 | 最终composite proof闭包确认及主线接收（非产品检查失败） |
+| 当前产出 | 轻摘要/按需详情与ACCESS/TIMING组合源码、实际功能/视觉及精确30路径档案闭包已独立APPROVED；main未集成 |
+| 下一可用交付 | 原Execution Lead基于固定bc612与精确接收包完成当前main接收；部署与真实registry性能另记 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：各固定source/actual已限定APPROVED；最终非metadata档案闭包待root独审，main/部署未发生 |
+| Review | [review.md](review.md)，APPROVED：target bc6126278c13e8c355d704dd3c371417331026b2 / exact30，0blocking；main NOT_INTEGRATED，部署未发生 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
 | DPERF04-02 | completed | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6、Timing5、ACCESS5及必要视觉均限定独审接受 |
-| DPERF04-03 | pending | w01_owner | 整体验收/main/实际部署未完成 |
+| DPERF04-03 | pending | w01_owner | 固定composite独审APPROVED；待主线接收与必要部署观察 |
 | DPERF04-04 | completed | w01_owner | [窄屏light截图补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)：原图/未知原因保留；新light首页与真实时间视口双图已独立接受，见后继phase记录 |
 
 ## 来源与架构影响
@@ -209,3 +209,11 @@ OPS-METER固定main1e12eaf13 measure.py原字节，只迁移所有retained路径
 [root ACCESS](../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json)、[root时间正文](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json)、[root浅色补图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json)。新首页图单topbar且可读，只证明新固定fixture状态，旧异常图和未知成因保留；关系全文/等待全文不冒首屏全部可见。公共helper仅单一实际caller的retained三callsite迁移，三轮complete/unknown[]；scratch仍原独立scanner/cap，不称两个完整caller采用。
 
 当前16source固定98baf，生产固定52cdf，所有原红/原raw不改。新归档.py/.sb/.diff不被现proof当metadata，作者不改parser/重命名隐藏；[精确闭包](../../docs/evidence/wpf-dperf04/reentry-20261007/final-composite-source-closure.json)交root核最终seal commit。各来源已独审事实与最终composite范围分开；主线接收/实际部署/真实185聚合性能仍NOT_RUN，本任务未宣称完整完成。
+
+## 最终composite独审与主线待收
+
+[root原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json)对 `bc6126278c13e8c355d704dd3c371417331026b2` 明确APPROVED/0blocking：16source逐字98baf，14归档非metadata精确覆盖98→bc差异，其余85路径属既定metadata；78index条目核同，3个parent-budget是合法历史快照。实现与检查范围按原件exact30记录，不改变原v4/11 writer claim，也不授7只读供给源新写权。原失败、预算、图片及原独审全部保留。
+
+检查PASSED、独审APPROVED、main NOT_INTEGRATED分开陈述；当前阻塞NONE，正常主线待收写下一可用交付。本次只ownrecords，不重跑产品/Chrome/PG；受影响canonical parser/link/proof做一次有界核对后normalpush停写。已固定目标不会追随后续metadata SHA重复独审。
+
+[受影响canonical核对](../../docs/evidence/wpf-dperf04/reentry-20261007/composite-canonical-check.json)：2026-10-07T09:37:20.155675Z actualexit0/123.231125ms，status/implementation errors[]，30scope，checks=passed/review=approved，proof=unchanged/outsideChanges[]；4TODO、106links全部可下钻。仅既有parser/Git proof读取，无工程suite/浏览器/PG/真实registry。最终metadata提交后目标固定bc612不追SHA。

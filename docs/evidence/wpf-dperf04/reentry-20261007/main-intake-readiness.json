@@ -1,5 +1,5 @@
 {
-  "state": "READY_FOR_FINAL_COMPOSITE_REVIEW_THEN_LEAD_MAIN_INTAKE",
+  "state": "READY_FOR_LEAD_MAIN_INTAKE",
   "implementationSource": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
   "productionSource": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
   "compositionMainInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
@@ -105,7 +105,8 @@
     "root-followup-source-review.json",
     "root-access-actual-review.json",
     "root-timing-visual-actual-review.json",
-    "root-links-visual-actual-review.json"
+    "root-links-visual-actual-review.json",
+    "root-final-composite-review.json"
   ],
   "checks": {
     "node": {
@@ -138,12 +139,45 @@
   },
   "publicHelper": "PARTIAL_RETAINED_ADOPTION; retained only, one caller, three successful actual entries; scratch old scanner unchanged",
   "notClaimed": [
-    "Final composite review until root fixed final commit confirmation",
     "main integration/deployment",
     "Real registry185 or4320 performance",
     "Personal endpoints or PG",
     "Full public helper adoption in scratch/second caller",
     "Unique cause of old screenshot anomaly"
   ],
-  "integrationInstruction": "Execution Lead alone performs current-main merge. Retain ACCESS handler privacy/order and current TIMING contract; do not overwrite newer main with old entire server/app. The seven supplied dependencies were fixed main copies, not extra writer authority."
+  "integrationInstruction": "Execution Lead alone performs current-main merge. Retain ACCESS handler privacy/order and current TIMING contract; do not overwrite newer main with old entire server/app. The seven supplied dependencies were fixed main copies, not extra writer authority.",
+  "reviewTarget": "bc6126278c13e8c355d704dd3c371417331026b2",
+  "reviewScopes": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py"
+  ],
+  "finalCompositeReview": "root-final-composite-review.json"
 }
