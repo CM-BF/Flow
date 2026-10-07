@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T21:52:31.793Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_RECOVERY_R2_COLD_PREPARATION",
+  "source": "ccb8daceef31cc444f89e678b65b2710f25dc8f3",
+  "delivery": "1c9711d7fe1a1e3504bc5cdbfce6064b64e975e9",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json",
+    "bytes": 7232,
+    "sha256": "655f16c677c0436724efb810c5893326ec6ce90624ba98e8865bc2464480e4bd"
+  },
+  "readback": {
+    "bindings": 25,
+    "bytes": 49250,
+    "fixedCurrentHashes": "equal"
+  },
+  "local": {
+    "distinct": 4,
+    "passed": 4,
+    "milliseconds": 279,
+    "rawBytes": 616,
+    "ownedGroupsAbsentDualEOF": 3,
+    "exactEmptyScratchRemoved": 3
+  },
+  "findingClosed": {
+    "priority": "P2",
+    "introduced": "aedb2e582f55ede91522305652f138e06dd4033b",
+    "description": "R2 top tuple used e15 but sixth manifest runtime binding still pointed to old b692.",
+    "fix": "ccb8daceef31cc444f89e678b65b2710f25dc8f3",
+    "evidence": "Actual generated input alignment case checks source root/artifact/digest/bytes plus both dependent hashes. Only this new case rerun; original3 preserved."
+  },
+  "review": [
+    "Trusted successor entry selects fixedinput/source and new namespaces; JSON does not select implementations.",
+    "Original dispatcher/lifecycle/cleanup ports reused,17 executable and6 runtime bindings retained with explicit newartifact manifest.",
+    "Old cold once cannot be replayed; invalid argv/source rejected before work/private input.",
+    "Actual artifact startup diagnostics and original primary/cleanup handling remain; no private stderr published."
+  ],
+  "blocking": [],
+  "actual": "NOT_RUN_NEW_NAMESPACE",
+  "limits": {
+    "envelopeSeconds": 217.5,
+    "pgConnections": 26,
+    "pgManagementMargin": 16,
+    "chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "tasks": 0
+  },
+  "remaining": "Resource owner actual selection, same-call fresh fixed source/claim/pins/newnamespace/PG capacity/full floor. This is not cold success or personal recovery approval."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:46:04.927Z / main/origin a8bd47b5e；新固定恢复包已构建、限定结果独审通过，真实启动待验 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:52:31.793Z / main/origin62b76a0ef；TIMING02/S01Q01已接收，新固定恢复包实际启动准备已审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,12 +16,12 @@
 | 工作树dirty状态 | 受控接收已审TIMING02及自身状态；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | TIMING02复用98纯检查/6浏览器组及独审，七源相对已审base无主线冲突；恢复R2构建结果限定通过，冷启动仍待验 |
-| 已集成main状态 / HEAD | main a8bd47b5e；TIMING02本次待受控发布。新固定source880060/e15产物不等于个人已恢复 |
+| 已集成main状态 / HEAD | main62b76a0ef含TIMING02与S01Q01；个人固定source880060/e15仍独立，尚未恢复 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 个人入口仍停止。修正后的恢复包已构建并通过结果审查；看板时间易读改进已审，正在接收。 |
+| 当前产出 | 个人入口仍停止。修正后的恢复包已构建；真实启动准备与只读现场核对已审，可按当前资源安排执行。时间展示与队列修复已进入主线。 |
 | 下一可用交付 | 验证修正包的真实启动与新旧网页兼容，沿原维护操作恢复个人服务；看板时间改进交原owner部署。 |
 | 当前阻塞 | ACTIVE: 个人服务尚未恢复；新固定产物仍需实际冷启动、网页兼容和当前现场身份核对。 |
 | 需用户决定 | NONE |
@@ -538,3 +538,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T21:46:04.927Z：TIMING02固定94ed七源与已审base比较无主线冲突，原owner e2c6322记录受控接收；复用98纯/6浏览器及原source、actual独审，0新工程运行。见[单份接收记录](../../docs/evidence/i02/timing02-integration-receipt.json)。部署另交Web owner；个人服务仍held23/三角色停止。R2新e15包构建33569ms返回并获native限定结果批准，不冒冷启动或兼容已通过。
 
 2026-10-07T21:47:25.413Z：S01Q01已审d78两产品路径对base无主线冲突，canonical59a原件受控接收。两条真实PG通过、原caller FAIL及32未选忠实保留，复用19纯selector修复和独审，0重复检查。见[接收回执](../../docs/evidence/i02/s01q01-integration-receipt.json)。TIMING02现已main/origin2c96618a1，交Web独立部署；不改变个人固定恢复目标。
+
+2026-10-07T21:52:31.793Z：新固定恢复包e15的构建结果已由native独立限定批准；[结果接收](../../docs/evidence/i02/svc06b-recovery-r2-result-intake.json)。Lead完成[只读现场准备审查](../../docs/evidence/i02/svc06b-held-facts-preparation-review.json)及[新冷启动准备审查](../../docs/evidence/i02/svc06b-recovery-r2-cold-preparation-review.json)，后者发现的旧manifest绑定P2以定向1例修正，原失败不改。实际窗口由原resource owner分配，审批记录不冒已执行；个人仍同op23、三角色停止。

@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T21:49:22.957Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_READONLY_FRESH_FACTS_PREPARATION",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "sources": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.mjs",
+      "bytes": 7982,
+      "sha256": "41ffa8a5adaeb2f9b126ba0c5294e5a34e557f41b650e815d779f215dc5c1e7a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.test.mjs",
+      "bytes": 4152,
+      "sha256": "eb278bd35f02a9b5f725db2875712c0678dda16c948f512030f7dbf4607e9e32"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9892,
+      "sha256": "45769d204bd1df546868ec42126cd44dc100c7a2aaeeab1c73f1d2d3d5ff0b18"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts-invocation.json",
+      "bytes": 5144,
+      "sha256": "29bc724e84aa95b8e423a776a4e7063e9a7469c41c8a495d4679a3de0bdd05ad"
+    }
+  ],
+  "checks": {
+    "distinctPure": 4,
+    "passed": 4,
+    "elapsedMs": 63,
+    "rawBytes": 561,
+    "returnAt": "2026-10-07T21:43:49.343032Z",
+    "ownedGroup": "absent/dualEOF",
+    "exactEmptyScratch": "removed"
+  },
+  "review": [
+    "Same operation23 policy and canonical6file identity/hash double-read. Authentication/policy payloads hashed only; no credentials/body output.",
+    "Old artifact verified loader retains configuration authority; role processes must be stopped before read-only runner max1 pool.",
+    "Existing confirmMigrationRunner preserves first and pool-end failure; end is not claimed as remote connection zero barrier.",
+    "Always ready:false; marker/actual claim NOT_OBSERVED, source read cannot authorize mutation.",
+    "Original OPS14 newChildSession supervises only readonly child,30s total and64KiB output; bounded private output8MiB. No service actions."
+  ],
+  "blocking": [],
+  "actual": "NOT_RUN",
+  "requiredBeforeActual": [
+    "Resource owner real selection and fresh complete floor",
+    "Current source/claim/full effective static and old installed cd27 tsx/runtime identities checked before module load",
+    "Exact new0700 output parent/namespace; no old run reuse",
+    "Original operator saves bounded primary/cleanup observations with no retry"
+  ],
+  "doesNotAuthorize": [
+    "personal rebind/refresh/resume",
+    "new provider query",
+    "access to user text or credential export"
+  ],
+  "cleanCode": "Thin collector reuses existing file/policy/runner/OPS ports; facts, operation authority and cleanup remain separate."
+}
