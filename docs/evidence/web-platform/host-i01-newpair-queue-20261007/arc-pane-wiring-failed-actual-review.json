@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-07T22:33:00.156943+00:00",
+  "reviewer": "root GPT-6 Astra Ultra independent read-only",
+  "decision": "APPROVED_LIMITED_FAILED_ACTUAL_RESULT_FIDELITY",
+  "blockingFindings": 0,
+  "productAcceptance": "FAILED / incomplete; not approved feature delivery",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "executionHead": "1205f352b578757c6c3154332885e3bd10fa00fa",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-pane-wiring-actual-20261007/manifest.json",
+    "bytes": 10811,
+    "sha256": "e39d7745b4dd1459bda21b824b6e4faa04b888f3c0bdfc8f0b70e5133f5c772c"
+  },
+  "verified": {
+    "rawFiles": 17,
+    "originalBytes": 60075,
+    "copiesChecked": 34,
+    "allByteHashesMatch": true
+  },
+  "actual": {
+    "run": "arc-pane-wiring-20261007-222837",
+    "startedAt": "2026-10-07T22:28:37.937413Z",
+    "terminalAt": "2026-10-07T22:29:28.881210Z",
+    "exactReturnAt": "2026-10-07T22:29:52.181216Z",
+    "exit": 1,
+    "selected": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "passed": [
+      "layout-navigation"
+    ],
+    "screenshots": 0,
+    "failure": "three-pane-reads browser line91: expected bodyPeak6, observed1 after5000ms. Later material-merge and theme groups not reached.",
+    "bodyReads": {
+      "count": 6,
+      "eachEnded": true,
+      "paths": "chat1/2/3 each exact reply detail and queue item",
+      "inFlightFinal": 0,
+      "peak": 1,
+      "bytes": 23568,
+      "fixtureErrors": []
+    },
+    "chargeMs": 50944,
+    "windowMs": 90000,
+    "outerPostWriteElapsedMs": 50943.57704196591,
+    "closed": true,
+    "unusedMs": 39056,
+    "unusedCreditTransfer": false
+  },
+  "cleanup": {
+    "basis": "Archived fresh exact PID/PGID absence and fixture receipts; root did not perform a new process/port scan.",
+    "pids": [
+      21254,
+      22024,
+      22121,
+      23047
+    ],
+    "pgids": [
+      22024,
+      22121
+    ],
+    "allReportedESRCH": true,
+    "scratchAndTwoCacheLinksAbsent": true,
+    "rawFixtureContextClosed": true,
+    "rawFixtureHTTPClosed": true,
+    "rawCleanupErrors": [],
+    "parentAndOuterStdoutStderrEOF": true,
+    "parentAndOuterDroppedOutputBytes": 0,
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "chromeStdoutEOF": false,
+    "chromeStderrEOF": false,
+    "workerReturnedResult": null,
+    "parentScenarioClosure": "UNKNOWN retained; separate raw close receipts do not rewrite it",
+    "independentPortProbe": false,
+    "PG": false
+  },
+  "rootCauseBoundary": [
+    "Static d034 delays each body by1200ms and sequentially awaits UI clicks; there is no six-outstanding-request barrier.",
+    "Saved records do not include request/action timestamps, so they do not isolate timer/UI scheduling, browser connection limits, or a product concurrency defect.",
+    "A proposed six-response hold must account for same-origin HTTP/1 connection scheduling and active SSE/patch traffic. It is not yet an approved fix; do not deadlock or weaken assertion by guessing.",
+    "Root delegated bounded read-only scheduling peer review, no new run/timeout modification/product change."
+  ],
+  "stillOpen": [
+    "three-pane read behavior and subsequent scroll/focus/hidden checks",
+    "material preparation Merge/Split pending-state and exact captured input checks",
+    "refresh/theme/reduced motion and both narrow screenshots",
+    "broader compact sidebar/all keyboard/layout reload/desktop-theme requirements beyond the four groups"
+  ],
+  "limitations": [
+    "Root reviewed saved actual evidence, not a new live run.",
+    "Complete Chrome stream log not established; retained observed bytes are not a completeness guarantee.",
+    "Source pin inventory freshness was performed at actual admission by owner; root this review verified raw pair hashes and relevant fixed test/fixture source, not an extra full source inventory run."
+  ],
+  "cleanCode": {
+    "scope": "Read-only evidence and validation-design review",
+    "finding": "Keep failed fidelity acceptance separate from product acceptance; do not infer unknown closure or sole root cause.",
+    "fix": "This review preserves distinct result layers, explicit unexecuted coverage, and requires bounded scheduling design before next candidate."
+  }
+}

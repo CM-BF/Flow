@@ -19,7 +19,7 @@
 | 优先级 | 2 |
 | 当前产出 | 最多三窗格的拆分组合、草稿保护与流读取实现已通过局部回归及源码审查；第三轮真实HTTP两项同轮通过。首浏览器0/4、0图，修后四组尚待新独立验证。 |
 | 下一可用交付 | 验证修后真实连接入口，再验三窗格布局、刷新恢复、双主题与减少动画偏好；保草稿身份和两条流读取上限，个人恢复优先。 |
-| 当前阻塞 | ACTIVE: 第三轮HTTP两项已通过；首浏览器在Owner token前置超时，未进入四组。公开?recovery=1入口与Connect heading已修并获审，既有模型边界已通过，正补三pane上限与Merge中间可见态两处browser wiring断言，固定候选后独立90s验证。 |
+| 当前阻塞 | ACTIVE: 第三轮HTTP两项已通过；首浏览器在Owner token前置超时，未进入四组。公开?recovery=1入口与Connect heading已修并获审，既有模型边界已通过；d034补齐三pane上限与Merge中间可见态两处browser wiring断言并获独审，1205干净停写，新90s候选待实际结果。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |
@@ -64,4 +64,4 @@ GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先�
 
 当前Arc实施继续沿原20scope与稳定composer父级。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
 
-当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）；首browser0/4、0PNG/12808ms CLOSED且完整资源归还；source876731f公开入口窄修已独审；原panels在f6ec53基础窄补两项browser wiring，旧候选不改，新browser四组NOT_RUN。来源为Arc唯一status和root第三HTTP/首browser审查，不替子task合成整体PASS。
+当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）；首browser0/4、0PNG/12808ms CLOSED且完整资源归还；source876731f公开入口窄修已独审；d034/1205两项browser wiring增强已获root7379批准，旧876候选不改，新browser四组NOT_RUN。来源为Arc唯一status和root第三HTTP/首browser审查，不替子task合成整体PASS。

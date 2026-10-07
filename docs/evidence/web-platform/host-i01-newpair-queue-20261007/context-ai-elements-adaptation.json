@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T22:31:48.630458+00:00",
+  "task": "Existing WPF-MATURE-04 / MATURE04-05",
+  "supplements": "root-context-history-ui-design-20261007.json",
+  "designSha256": "d2925d91dbce92f27992da408c6da7e614ca84cd22e5f54970517f8e2eecdd11",
+  "fixedGit": "b1291faae260be8d86ada12ff63341d44efc2709",
+  "reviewer": "w01_owner bounded read-only / root synthesis",
+  "localInputs": [
+    {
+      "path": "/Users/citrine/.agents/skills/ai-elements/references/context.md",
+      "bytes": 5747,
+      "sha256": "edacdb850ee629f7f83109dbe2ad1d25bb0d925d8a840a6be92ca75a47ae7367"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/ai-elements/scripts/context.tsx",
+      "bytes": 1005,
+      "sha256": "c6e8c87e38a44c5d794f31c60e3a52381f215018fb85b80e55a45dd10502ad1f"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    }
+  ],
+  "primaryDocs": "https://elements.ai-sdk.dev/components/context",
+  "facts": [
+    "Local skill has Context docs and sample, not its implementation. Fixed project has no Context implementation.",
+    "Current official docs list optional numeric props; local documentation describes numeric types without an unknown/history domain. Neither proves exact installed TypeScript/runtime semantics.",
+    "Custom children can supply textual semantic content, but keyboard/touch/focus must be tested against the chosen actual implementation.",
+    "ModelId activates pricing behavior in docs; omitting a prop does not prove tokenlens package is absent from the imported module.",
+    "Fixed package has no direct ai/tokenlens dependency; transitive dependencies were not inspected."
+  ],
+  "decision": [
+    "Keep real history semantics and reuse existing accessible Dialog/host plugin slots for the first consumer. No fabricated zero/max values to satisfy a numeric widget, no history ratio, no requested model alias passed as cost model.",
+    "AI Elements terminal and file-tree remain existing genuine integrations. Do not claim the new panel is the AI Elements Context component unless actual upstream source is adopted and verified.",
+    "Adopting Context later requires actual source/dependency review and provenance within the owner scope; no blind latest install/root lock change. This is not required to deliver an honest historical observation panel."
+  ],
+  "implementationPerformed": false,
+  "testsOrModelCalls": 0
+}

@@ -618,3 +618,11 @@ WPF-001-37 / TIMING02 后继补[旧已加载页面版本差异研究](../../docs
 WPF-001-37 / TIMING02 已完成的紧凑时间/关联事项阅读片已main并在211部署；版本提示仍是同一TODO的后继。[固定界面版本设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-interface-revision-design.json)以每服务实例捕获的同一8资产字节派生revision，分开数据新鲜与已加载界面版本，不每poll扫描Git、不自动reload。旧无notifier客户端须一次普通reload，不能宣称能追溯提醒；126100B是固定源码量而非性能测量。未经新合法scope与验证不实施。
 
 既有 RELEASE / MATURE01 / REQ19 的[779接续材料核对](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/web-779-post-recovery-intake.json)确认artifact、四report/16checks与C4实际审已齐。个人首次恢复partialFAIL不触发重建779或重验C4；后续只由原SVC06B依成功恢复实际backend/policy/version形成fresh发布输入，显式激活并核served779身份。尚无成功恢复receipt，不能猜expectedVersion，也不能把fixture或个人报告导入当网页已发布。
+
+### WPF-001-09 / MATURE04-05 下一可用Web实施优先级
+
+按GO本轮明确排序，个人入口恢复与Arc当前验收先收口；下一合法Web scope/worker优先原context length透明UI，高于继续插件管理旁支，不另建plan。既有FlowClient.contextHistory/server持久读由root核合同，Web输入准备与完整体验分开：选定与实际model、来源时点、hardlimit与压缩策略窗口、used/remaining可比性、材料或模型切换失效、历史估算与当前窗口均需明确；session累计usage不冒当前窗口，unknown/unsupported如实，惰性详情且0额外模型token API。实际合同0模型浏览器验收另排，未完整采集不关闭父task。WPF-MATURE-04不在当前管理exact6写域，本处仅更新原总TODO09与队列，待原合法owner维护其status。
+
+P01诊断正确性设计留原TODO05/REQ22–23，不在本次context前新take。W01限时只读证实精确taskId WPF-P01（非协议P01），现唯一web-plugin-host/plans/wpf-p01-plugin-host三件套、旧28b70记录；主线plugin-system仅入口。旧6ce3/basec890、15模块/12browser/PH-R1..R4和maina26a历史保留；原精确start/finish UNKNOWN，不能用旧take/main观察时间补造。未来若迁web-plugin-diagnostics，应同taskId替换D05权威WT/同planDir，先合法scope交权与claim，不保两个status或复制Arc整blob。当前不迁、不写旧树。
+
+MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范围，fixedb129/独立web-context-history、263源1826585B。原子take沿已有子项名，不新建同义task；父status仍context-transparency唯一，Web阶段own evidence由本TODO09索引。实现先做历史reader/controller/真实Dialog，App/session/Thread与capability等尚未交权不写，全部当前窗口能力继续OPEN。

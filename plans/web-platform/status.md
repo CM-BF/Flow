@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:22:53.990Z；个人恢复部分失败但活动已归还，服务仍停止；AV R3已选待真实启动。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:36:26.479Z；个人修正调用器已审并选中，等真实启动；Arc第二次浏览器失败已归还，context历史消费已合法开工。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,9 +24,9 @@
 | 优先级 | 1 |
 | 当前产出 | 四版本兼容与三角色冷启动已通过，e15及四报告已导入个人环境；身份检查拒绝后续恢复，服务尚未恢复。看板211已部署紧凑时间和事项归组。 |
 | 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
-| 当前阻塞 | ACTIVE: 个人rebind身份不匹配，未refresh/resume/切换779；原owner诊断中。Arc需补两项页面断言并完成浏览器验证。 |
+| 当前阻塞 | ACTIVE: 个人首操作身份拒绝，修正调用器独占窗口已选尚未恢复；Arc三窗读取并发观测失败，下一测试修正未运行。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：个人活动22:20:13.131180完整归还，AV R3独立窗口已选，未收到START前不记运行；原失败/导入事实/历史gate保持。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：原个人/AV/Arc活动均精确归还；continuation独占SELECT，未START前不冒RUNNING，0其他重窗；两个已计普通源封套继续隔离。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
