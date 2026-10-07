@@ -2,14 +2,14 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:32:09.285492+00:00 / main b67530bb；195来源实际载入完成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:33:58.616512+00:00 / main62e9a839；第196个唯一来源准备 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T08:20:31.727602+00:00，见svc09-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已提供轻摘要、登录凭据、任务时间及插件终端命令的唯一进度入口。 |
-| 下一可用交付 | 本片段已交付；后续状态继续读取各任务唯一owner。 |
+| 当前产出 | 看板现有轻摘要、登录资料及任务时间已可用；插件启停的唯一进度来源已准备登记。 |
+| 下一可用交付 | 发布新增来源，让用户可见插件启停功能当前的真实验证进度。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
