@@ -1,0 +1,46 @@
+{
+  "reviewer": "astra_ultra_execution_lead",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T10:16:07.879378+00:00",
+  "verdict": "APPROVED_SOURCE_AND_LOCAL_RESULTS",
+  "P1": 0,
+  "P2": 0,
+  "source": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+  "delivery": "664121f9bd83ce057c786246a53c63dfbb7cfdba",
+  "manifest": {
+    "path": "docs/evidence/o16/native-environment-implementation/manifest.json",
+    "bytes": 37627,
+    "sha256": "78b8e4359a3d44019eba90a9cf49bd8c9a3b8ce836a69001fb17be46f3152755"
+  },
+  "readScope": "All 15 changed experiment/readme files, environment tests and old direct consumers; inherited operator/resource/pause/query observation authority inspected. No production adapter delta.",
+  "verified": {
+    "fixedAndCurrentBindings": 60,
+    "unchangedExperiment": 19,
+    "protectedProductInputs": 289,
+    "runtimePins": 8,
+    "inheritedManifests": 4,
+    "rawBytesRead": 7207
+  },
+  "behavior": "Private environment and exact executable; fixed source/env v2 permit before reserve/query; v1/children rejected; normal existing-keychain refresh explicit outside private byte budget; cancellation keeps consumed slot and first cause; runtime and import namespaces separate. Original host/grant/iterator/center remains authority.",
+  "localResults": {
+    "distinct": 15,
+    "new": 12,
+    "directExisting": 3,
+    "rounds": 5,
+    "preservedFailures": 3,
+    "childTotalMs": 8730,
+    "emptyFileNodeWrapperPassesExcluded": true,
+    "groupsAbsent": 5,
+    "dualEOF": true,
+    "scratchClosed": true
+  },
+  "limitations": [
+    "Preparation/local behavior approval only; no actual SDK authentication/query/PG result yet.",
+    "SDK init plugin/skill baseline remains an explicit abort condition; private environment acceptance is not proved.",
+    "Query close and recorded group closure do not prove all escaped writers; no OS sandbox claim.",
+    "Only planner 1 proposal/0 apply/0 child; actual source-bound once permit and fresh shared-resource scheduling still required.",
+    "No credential read/export/setup/auth probes by reviewer; no rerun of old 16/26 or new tests."
+  ],
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659"
+}

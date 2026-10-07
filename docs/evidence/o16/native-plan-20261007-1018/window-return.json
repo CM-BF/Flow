@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T10:20:24.278Z",
+  "run": "native-plan-20261007-1018",
+  "outerTool": {
+    "exitCode": 1,
+    "sessionId": 25166,
+    "chunkId": "357df5"
+  },
+  "groups": [
+    {
+      "pgid": 21058,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "pgid": 24619,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "database": "flow_o16_06b4351f17e94b26b82fb54ca70af793",
+  "marker": "58ab33b3-7cfe-40e3-8b7d-5e216482ee6c",
+  "directory": {
+    "path": "/private/tmp/flow-o16-LiXMUn",
+    "dev": 16777234,
+    "ino": 124015966
+  },
+  "retention": "KEEP; no DROP or directory deletion authorized or performed",
+  "originalAdminClosed": "NOT_PERSISTED",
+  "checks": {
+    "targetConnectionsAbsent": true,
+    "ownedGroupsAbsent": true
+  },
+  "directoryMatches": true,
+  "databaseObservation": [
+    {
+      "oid": "1280256",
+      "marker": "58ab33b3-7cfe-40e3-8b7d-5e216482ee6c",
+      "bytes": "12771855"
+    }
+  ],
+  "connections": [],
+  "readonlyObserverPoolClosed": true,
+  "endedAt": "2026-10-07T10:20:24.318Z",
+  "windowRuntimeSettled": true
+}

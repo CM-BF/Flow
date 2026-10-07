@@ -1,0 +1,33 @@
+{
+  "source": "Normalized effective projection persisted by createQueryObservation in original plan.json; original SDK wire frame was not separately retained and is not reconstructed",
+  "sourcePath": "docs/evidence/o16/runs/native-plan-20261007-1018/plan.json",
+  "sourceSha256": "af4766e3a2c30255cc21c0c4ed9885abf005ee3839e6afb4e815a38e2fe7d65e",
+  "effective": {
+    "model": "claude-sonnet-5-5",
+    "permissionMode": "dontAsk",
+    "tools": [
+      "mcp__flow-graph__graph_command",
+      "mcp__flow-graph__graph_read"
+    ],
+    "plugins": [
+      "cc-plugin-agents-md",
+      "cc-plugin-plugin-authoring"
+    ],
+    "skills": [
+      "doctor",
+      "plugin-authoring"
+    ],
+    "mcpServers": [
+      {
+        "name": "flow-graph",
+        "source": "sdk",
+        "status": "connected"
+      }
+    ],
+    "runtimeVersion": "2.1.290",
+    "nativeSessionId": "e7d7ef0c-5ef0-4276-b7a4-8b0aff9ece37",
+    "kind": "sdk-init-declaration"
+  },
+  "frames": 1,
+  "failure": "observation-rejected"
+}

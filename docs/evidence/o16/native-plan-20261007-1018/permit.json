@@ -1,0 +1,19 @@
+{
+  "kind": "flow.o16.phase-permit.v2",
+  "authorizedBy": "Goal Owner",
+  "approvalId": "o16-plan-native-20261007-1018",
+  "phase": "plan",
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "model": "claude-sonnet-5-5",
+  "limits": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "approvedAt": "2026-10-07T10:18:33.342309Z",
+  "expiresAt": "2026-10-07T10:48:33.342309Z",
+  "authorizationReference": "GO current O16-06 new planner authorization relayed by Execution Lead; Lead 2026-10-07T10:18Z ONE_SHOT_GO exact source/environment binding. Existing same-account same-scope normal native authentication and necessary default Keychain refresh; no login/setup/newtoken/credential export/API-key fallback. Not old O08/O10/R02."
+}

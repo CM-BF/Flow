@@ -1,6 +1,6 @@
 # O16 独立审查
 
-状态：当前环境实现0cf7待独立审查；历史APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE（5a45/78df）已main d022；原APPROVED_ZERO_MODEL_PUBLIC_JOURNEY/b768独立保持。真实native/分阶段PG验收未覆盖。
+状态：当前环境实现0cf7已获APPROVED_SOURCE_AND_LOCAL_RESULTS；历史APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE（5a45/78df）已main d022；原APPROVED_ZERO_MODEL_PUBLIC_JOURNEY/b768独立保持。真实native/分阶段PG验收未覆盖。
 
 当前 Review target commit：0cf7e1ba3016b2439c2b383437daa3dff1483299；5a45为已main历史，下列4ae/e931等为历史。
 
@@ -37,3 +37,11 @@ Execution Lead 于2026-10-07T09:27:34.488514Z独审`5a45c891`/delivery`78df3980`
 ## 2026-10-07T10:10:59.813650Z 环境接缝交审
 
 15实验源/README（含3新mjs）固定0cf7；[Interface](../../docs/evidence/o16/native-environment-implementation/Interface.md)、[固定输入](../../docs/evidence/o16/native-environment-implementation/fixed-inputs.json)、[分轮raw](../../docs/evidence/o16/native-environment-implementation/validation.json)待Lead唯一只读审。15不同局部检查分5轮、3原失败，未重跑旧16/26；不把实际MCP/adapter构造当SDK进程或provider执行。重点source/environment v2、同账户默认namespace与私有写入口径、取消首因、input/resume拒绝、plan-only新预算和pause保留。实际native/PG尚未运行，作者不自批。
+
+## 2026-10-07T10:18:33.342309Z 环境实现唯一限定批准
+
+Lead10:16:07Z完成独审，无P1/P2；[原样报告](../../docs/evidence/o16/native-environment-implementation/independent-review.json)。60 fixed/current+19unchanged+289protected+8runtime+4继承全部核同；15 different分轮、3原失败/7207B及5组收尾保留。只批准源码与注入局部行为，不冒实际SDK认证/规划/PG；当前真实首段另由10:18窗口绑定，结果另审。
+
+## 2026-10-07T10:23:06Z 首段结果待独审
+
+[实际结果](../../docs/evidence/o16/native-plan-20261007-1018/RESULT.md)绑定source0cf7与本次一次材料。SDK1/init1而原top-level0矛盾保留；名单拒绝与独立测量unknown/TERM分开，费用/usage未知，原DB/tmp KEEP，后续只读两组/监督器absent/连接[]不能回填原adminClosed。作者未自批，不继承源码批准为真实planner通过；[候选](../../docs/evidence/o16/native-plan-20261007-1018/declaration-candidate.md)仅原scope零模型设计，无第二query许可。
