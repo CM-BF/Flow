@@ -1,11 +1,11 @@
 import { mkdtemp, lstat, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { expect, it } from 'vitest';
+import { expect, it, vi } from 'vitest';
 import { createHash } from 'node:crypto';
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
 import { createCodexTransport } from '../../codex/index.js';
-import type { CodexTransport } from '../../codex/types.js';
+import type { CodexTransport, Inbound, Json } from '../../codex/types.js';
 import { fileURLToPath } from 'node:url';
 import { createCodexAdapter } from './adapter.js';
 import { CodexAssistantStream } from './stream.js';
@@ -70,4 +70,69 @@ it('coalesces receive bursts by byte/time while retaining first text and complet
   now=249; expect(timed.accept({...delta,delta:'b'})).toEqual([]);
   now=250; expect(timed.accept({...delta,delta:'c'})).toMatchObject([{text:'bc',fromBytes:1}]);
   now=251; expect(timed.accept({...delta,delta:'x'.repeat(8192)})).toMatchObject([{text:'x'.repeat(8192),fromBytes:3}]);
+});
+
+it.each(['silent', 'abort-before-due', 'ownership-loss', 'emit-failure', 'pending-abort', 'pending-deadline'])('scheduled flush preserves silence/cancellation lifecycle: %s', async mode => {
+  vi.useFakeTimers({ toFake: ['setTimeout', 'clearTimeout', 'performance'] });
+  const controller = new AbortController(), events: RunnerEventData[] = [];
+  let waiter: ((value: Inbound | null) => void) | undefined, closed = false, receiving = 0, peakReceiving = 0;
+  let receives = 0, patchCalls = 0, ownershipLost = false;
+  const queue: Inbound[] = [];
+  const close = { reason: 'CLOSED' as const, child: 'confirmed-exited' as const, exitCode: 0, signal: null, remoteEffects: 'unknown' as const };
+  const port: CodexTransport = {
+    ready: Promise.resolve({ userAgent: 'in-memory', platformFamily: 'fixture', platformOs: 'fixture' }), closed: Promise.resolve(close),
+    async request(method): Promise<Json> {
+      if (method === 'thread/start') return { thread: { id: 'thread' }, model: 'synthetic-model', modelProvider: 'fixture', serviceTier: null,
+        reasoningEffort: null, approvalPolicy: 'never', sandbox: { type: 'readOnly', networkAccess: false } };
+      for (const text of ['a', 'b']) {
+        const message: Inbound = { kind: 'notification', method: 'item/agentMessage/delta', params: { threadId: 'thread', turnId: 'turn', itemId: 'item', delta: text } };
+        if (waiter) { const deliver = waiter; waiter = undefined; deliver(message); } else queue.push(message);
+      }
+      return { turn: { id: 'turn', status: 'inProgress', itemsView: 'full', items: [], error: null } };
+    },
+    async receive() {
+      receives++; receiving++; peakReceiving = Math.max(peakReceiving, receiving);
+      try { return queue.length ? queue.shift()! : closed ? null : await new Promise<Inbound | null>(resolve => { waiter = resolve; }); }
+      finally { receiving--; }
+    },
+    async respond() { throw Error('No requests'); },
+    async close() { closed = true; waiter?.(null); waiter = undefined; return close; }, snapshot() { throw Error('Unused'); },
+  };
+  const profile = { harness: 'codex' as const, adapterVersion: 'codex-app-server-0.154.0-v1' as const, model: 'synthetic-model', reasoningEffort: null,
+    serviceTier: null, serviceTierForTurn: 'default' as const, access: 'none' as const, approvalPolicy: 'never' as const, sandboxMode: 'read-only' as const,
+    hostLimits: { wallTimeMs: 1000, maxOutputBytes: 16384 } };
+  const run = createCodexAdapter(profile, () => port).run({ task: { title: 'Silent stream', prompt: 'Synthetic', harness: 'codex',
+    executionProfile: { id: 'profile', runnerId: 'runner', configDigest: 'a'.repeat(64) } }, workingDirectory: '/synthetic', signal: controller.signal,
+    async assertOwnership() { if (ownershipLost) throw Error('Lost owner'); },
+    async emit(event) {
+      if (event.type === 'assistant-stream' && ++patchCalls === 2) {
+        if (mode === 'emit-failure') throw Error('Delivery failed');
+        if (mode.startsWith('pending-')) await new Promise<void>(() => {});
+      }
+      events.push(event);
+    }, async waitForDecision() { throw Error('Unused'); },
+  } as HarnessContext).catch(error => error);
+  try {
+    await vi.advanceTimersByTimeAsync(0);
+    expect(events.filter(event => event.type === 'assistant-stream').map(event => event.text)).toEqual(['a']);
+    expect(receives).toBe(3); expect(receiving).toBe(1);
+    await vi.advanceTimersByTimeAsync(249);
+    expect(patchCalls).toBe(1);
+    if (mode === 'abort-before-due') controller.abort();
+    if (mode === 'ownership-loss') ownershipLost = true;
+    await vi.advanceTimersByTimeAsync(1);
+    if (mode === 'silent') {
+      expect(events.filter(event => event.type === 'assistant-stream').map(event => [event.text, event.phase])).toEqual([['a', 'streaming'], ['b', 'streaming']]);
+      // With no buffered output only the wall deadline remains; no polling timer or new receive.
+      expect(vi.getTimerCount()).toBe(1); expect(receives).toBe(3);
+    }
+    if (mode === 'pending-deadline') await vi.advanceTimersByTimeAsync(750);
+    else controller.abort();
+    expect(await run).toMatchObject({ settlement: 'unknown' });
+    expect(closed).toBe(true); expect(receiving).toBe(0); expect(peakReceiving).toBe(1);
+    expect(events.some(event => event.type === 'assistant-final')).toBe(false);
+    if (mode !== 'silent') expect(events.filter(event => event.type === 'assistant-stream').map(event => event.text)).toEqual(['a']);
+    expect(vi.getTimerCount()).toBe(0);
+    const count = patchCalls; await vi.advanceTimersByTimeAsync(2000); expect(patchCalls).toBe(count);
+  } finally { controller.abort(); await port.close(); vi.useRealTimers(); }
 });

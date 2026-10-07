@@ -1,4 +1,4 @@
-import type { HarnessAdapter, RunnerEventData } from '@flow/contracts';
+import type { AssistantStreamData, HarnessAdapter, RunnerEventData } from '@flow/contracts';
 import { codexExecutionProfileConfigurationSchema, type CodexExecutionProfileConfiguration } from '../../../../../packages/contracts/src/execution-profiles.js';
 import { textDigest, verifyText } from '../../verifier.js';
 import { NativeExecutionError } from '../settlement.js';
@@ -22,19 +22,20 @@ export function createCodexAdapter(configuration: CodexExecutionProfileConfigura
     await context.assertOwnership(); context.signal.throwIfAborted();
     const factory = profile.sessionPersistence ? sessionTransport(sessionStorage!, profile, context) : createTransport!;
     const stream = new CodexAssistantStream(); let publishedSession: string | undefined;
-    const publishStream = async (delta: CodexStreamDelta, signal: AbortSignal) => {
-      const patches = stream.accept(delta);
+    const publishPatches = async (patches: AssistantStreamData[], signal: AbortSignal) => {
       if (!patches.length) return;
       await context.assertOwnership(); signal.throwIfAborted();
       if (publishedSession === undefined) {
-        await context.emit({ type: 'session', nativeSessionId: delta.threadId, adapterVersion: profile.adapterVersion });
-        publishedSession = delta.threadId;
+        await context.emit({ type: 'session', nativeSessionId: patches[0]!.nativeSessionId, adapterVersion: profile.adapterVersion });
+        publishedSession = patches[0]!.nativeSessionId;
       }
-      if (publishedSession !== delta.threadId) throw new NativeExecutionError('unknown');
+      if (patches.some(patch => publishedSession !== patch.nativeSessionId)) throw new NativeExecutionError('unknown');
       for (const patch of patches) { await context.assertOwnership(); signal.throwIfAborted(); await context.emit(patch); }
     };
+    const publishStream = (delta: CodexStreamDelta, signal: AbortSignal) => publishPatches(stream.accept(delta), signal);
     const final = await runOrdinaryCodexTurn(profile, factory, {
       onStream: publishStream, onStreamComplete: publishStream,
+      streamFlush: { delayMs: () => stream.flushDelayMs(), flush: signal => publishPatches(stream.flushDue(), signal) },
       prompt: context.task.prompt, workingDirectory: context.workingDirectory, signal: context.signal, assertOwnership: () => context.assertOwnership(),
       ...(context.task.resumeSessionId !== undefined ? { resumeSessionId: context.task.resumeSessionId } : {}),
     });

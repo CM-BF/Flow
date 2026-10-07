@@ -11,6 +11,11 @@ export interface CodexExchangeInput {
   readonly signal: AbortSignal;
   assertOwnership(): Promise<void>;
 }
+/** Only buffered stream output arms a wakeup; the exchange owns and clears its one timer. */
+export interface CodexStreamFlush {
+  delayMs(): number | null;
+  flush(signal: AbortSignal): Promise<void>;
+}
 /** Private composition seam for the ordinary and file-writer consumers, never task JSON. */
 export interface CodexExchangeRecipe<Thread extends { threadId: string } = { threadId: string }> {
   readonly evidence: CodexTurnEvidence;
@@ -18,6 +23,7 @@ export interface CodexExchangeRecipe<Thread extends { threadId: string } = { thr
   /** Trusted sink observes cancellation; interrupted delivery has unknown effects, never terminal proof. */
   onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>;
   onStreamComplete?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>;
+  readonly streamFlush?: CodexStreamFlush;
   readonly threadMethod?: 'thread/start' | 'thread/resume';
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
@@ -35,6 +41,7 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
   let wake!: () => void;
   const terminal = new Promise<void>(resolve => { wake = resolve; });
   let streamDelivery = Promise.resolve();
+  let wakeStream: (() => void) | undefined;
   async function flushStream() {
     const deltas = evidence.takeStreamUpdates();
     // Binding and receive can both release evidence; serialize the one downstream sink.
@@ -42,13 +49,16 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
       for (const delta of deltas) {
         signal.throwIfAborted();
         const sink = delta.completedText === undefined ? recipe.onStream : recipe.onStreamComplete;
-        if (sink) await deliverStream(delta, sink);
+        if (sink) await deliverStream(() => sink(delta, signal));
       }
     });
     await streamDelivery;
+    // Binding may have released a buffered delta while the pump was already waiting for input.
+    wakeStream?.();
   }
-  async function deliverStream(delta: CodexStreamDelta, sink: NonNullable<CodexExchangeRecipe['onStream']>) {
-    const delivery = sink(delta, signal);
+  async function deliverStream(sink: () => Promise<void>) {
+    signal.throwIfAborted();
+    const delivery = sink();
     let abort!: () => void;
     const interrupted = new Promise<never>((_, reject) => {
       abort = () => reject(signal.reason ?? new Error('Native stream interrupted.'));
@@ -59,6 +69,19 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
     try { await Promise.race([delivery, interrupted]); }
     finally { signal.removeEventListener('abort', abort); }
   }
+  async function receiveOrFlush(pending: ReturnType<CodexTransport['receive']>) {
+    let flushTimer: ReturnType<typeof setTimeout> | undefined;
+    const due = evidence.observation.state === 'pending' ? recipe.streamFlush?.delayMs() ?? null : null;
+    const flush = new Promise<null>(resolve => {
+      wakeStream = () => resolve(null);
+      if (due !== null) flushTimer = setTimeout(wakeStream, Math.max(0, due));
+    });
+    const abort = () => wakeStream?.();
+    signal.addEventListener('abort', abort, { once: true });
+    if (signal.aborted) abort();
+    try { return await Promise.race([pending.then(message => ({ message })), flush]); }
+    finally { clearTimeout(flushTimer); wakeStream = undefined; signal.removeEventListener('abort', abort); }
+  }
   function checkTerminal() { if (evidence.observation.state !== 'pending') wake(); }
   try {
     transport = createTransport({ signal, workingDirectory: input.workingDirectory });
@@ -68,8 +91,19 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
     pump = (async () => {
       try {
         let observed = 0;
-        for (let message = await connected.receive(); message !== null; message = await connected.receive()) {
+        let pending = connected.receive();
+        for (;;) {
+          const received = await receiveOrFlush(pending);
           signal.throwIfAborted();
+          if (received === null) {
+            streamDelivery = streamDelivery.then(async () => {
+              if (evidence.observation.state === 'pending' && recipe.streamFlush) await deliverStream(() => recipe.streamFlush!.flush(signal));
+            });
+            await streamDelivery;
+            continue; // Keep exactly the same pending receive across timer/dispatch wakeups.
+          }
+          const message = received.message;
+          if (message === null) break;
           if (++observed % 32 === 0) await yieldToIO(undefined, { signal });
           if (message.kind === 'server-request') {
             const answer = recipe.respond(message.method, message.params);
@@ -77,6 +111,7 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
             await connected.respond(message.id, answer.reply);
             if (violated) wake();
           } else { evidence.accept(message); await flushStream(); checkTerminal(); }
+          pending = connected.receive();
         }
       } catch { pumpFailed = true; } // Discard AssertionError actual/expected and every raw native payload.
       finally { wake(); }

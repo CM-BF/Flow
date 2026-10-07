@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:49:43.969912+00:00；固定main c0e0263d接收首片/loader/main；main8c7f81b3接收六源private stream，均据固定receipt，不含本次public片。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:58:57.070209+00:00；旧main接收事实不变。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,19 +15,19 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | 公开正文与明确发布的推理频道已接入现有runner、中心读取和共享投影；旧客户端隔离及切换协议清理已实现并局部验证。真实数据库与界面验收仍待。 |
-| 下一可用交付 | 固定公开流小片交独立审查，随后专用数据库验证动态查询；Web原owner按固定v2接口接入。 |
-| 当前阻塞 | ACTIVE: 等待独立审查运行槽；源码与局部验证已固定，当前无实际运行。 |
+| 当前产出 | 公开流25源正在独审；已确认静默期缓冲未按时输出，当前修复单pump到期唤醒并准备定向验证。 |
+| 下一可用交付 | 定时flush修复与取消/权限/清理直接证据交原reviewer增量复核，随后公开SQL专用验证。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 产品源已固定5219ec25；本次仅归档局部结果与审查入口，提交后以Git状态确认clean。 |
+| 工作树dirty状态 | 4ecfea09已push；当前到期flush五源及直接配置修改，尚未运行。 |
 | HEAD（最近观察） | 5219ec25d6c52b54f7e46eac16766095c693c337；本次metadata封存commit另由Git给出，产品字节绑定该source。 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v8 ACTIVE，51 literal；fresh读取仍同owner/branch；[精确receipt](../../docs/evidence/mature02c02/public-stream-host-amend-confirmed.json) |
 | 实现目标 | 5219ec25d6c52b54f7e46eac16766095c693c337（当前公开流）；历史连续性首片413420a1等按各自intake保留。 |
-| 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
-| Review | 原source/fixture/local准备与R1失败忠实性均已独审；2026-10-07 03:16:29 UTC architecture_read接受8501d96a R2结果，RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。仅注入transport真实PG/HTTP六组，不扩生产loader/真实native/UI。 status_read 03:30:12Z对519f loader四源与局部结果APPROVED/0P1P2；architecture_read 03:45:14Z对afe3/e836 main SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2；[本段结果](../../docs/evidence/mature02c02/main-local-result.json)保留strict首失败与fixture路径首失败。 |
+| 实现范围 | 公开流25路径逐项见public-stream-review-ready.json；本次修复仅codex/{adapter,exchange,stream,turn}.ts、stream.test.ts和own验证配置，不扩51literal。 |
+| Review | status_read已审5219/4ec，1 P2：小delta后静默没有到期flush。其余25源无新增P1/P2，93 distinct/原件忠实；当前修复尚待定向检查与独审。 |
 | 检查 | 原失败及修后历史记录保留，不重跑旧types/unit。R1 6选5过1失败，旧TMP KEEP。cwd单例1通过/7未选及原Python/ANSI计数错误原件保留。R2单次公开PG/HTTP 6选6过、child/tool exit0，DB/服务/双EOF/组与本次TMP清理确认。0实际Codex/provider/install。 loader focused types0；两直接文件42选41过1失败，端点断言窄修后1过/19未选，共42 distinct；原失败保留。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；新public stream尚NOT_INTEGRATED。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -79,3 +79,5 @@ Stream独审status_read 2026-10-07T04:20:47Z APPROVED/0P1P2，原pending-sink P2
 共享Host协议补齐固定5219ec25：v1/v2启用、protocol变化中断旧flight/清空投影，v1拒Codex元数据；Host直接6/6（3新）及strict0。合并delta1160/3921为49/49（1新）及types0；合计93 distinct分轮，不称单轮93。受控clock32/512各2patch、相同UTF8/hash；真实合成transport<=16patch断言通过但精确console计数未留，实际HTTP未测。
 
 2026-10-07T04:49:43.969912+00:00 当前唯一审查入口：[public-stream-review-ready](../../docs/evidence/mature02c02/public-stream-review-ready.json)，25源绑定、7个必要检查进程/四段（含首strict2与修后0），93 distinct。最后actual于04:46:58.696557Z闭合，local已归还X01；0待launch、0PG/native/provider，旧R1 KEEP未访问。独审尚未开始/未批准，公开片NOT_INTEGRATED；保留claim v8直至后续实施或正式交回。
+
+2026-10-07T04:58:57.070209+00:00 静默flush修复：same pending receive与单一次性timer race；binding释放delta会唤醒重算，不另开provider循环。到期仍串行await、merged abort与每次emit ownership fence；只flush streaming prefix，不造completed。新6例覆盖静默250ms、到期前取消、失权、emit失败、pending sink取消/期限；配受影响mapper、单receive、原sink取消与engineering直接消费者。普通local≤300s/2top命令各45s/TMP16MiB/raw256KiB/source-meta1MiB；保守组合floor4053008384B含artifact512MiB，fresh不足不启动。旧93/原PG不重跑，无PG/native/provider/install。
