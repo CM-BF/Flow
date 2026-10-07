@@ -75,3 +75,9 @@ Target20dc149c78dd4c7d172c609360051e2cec852aae。NOT_STARTED independent review;
 ## Web-only exact R2回执同步待审
 
 2026-10-07T22:49:07.760Z：ef281公共canonical/父目录/发布源已由Lead限定批准并main4bab97a8e，原[I02审查](../../../m2-integration/docs/evidence/i02/svc06b-e15-web779-successor-review.json)不包含实际个人发布。新source f0f4538c06ab003d7883a25a27a2766d3e216dfb 仅同步成功前置回执的exact r2路径，1/1及211ms/raw207B见[增量](../../docs/evidence/svc06/browser-recovery/recovery-web-r2-binding.json)；本delta独审PENDING。原失败和准备记录不改，ready=false。
+
+## Web当前参数已绑定，真实锁接缝待窄修
+
+2026-10-07T23:16:58.021Z：Lead已限定批准f0f/d813 exact R2路径，原ef canonical/父目录批准保持。个人R2实际结果146654的6phase/当前初始化/accepting24已由本worker独立只读核准，具体正式记录由Lead写I02；不复制私有历史或原raw。本任务本次只读参数与既有OPS14 recipe见[单份准备](../../docs/evidence/svc06/browser-recovery/recovery-web-actual-preparation.json)。
+
+最后实际调用闭包发现新准备P2：transfer外层preview锁与observe内maintenance status锁冲突。原f0批准及fixture原件保持，未称真实迁入通过；新source未修改，待同scope修复及真实锁消费者独审。发布仍NOT_RUN，当前个人三服务保留运行。

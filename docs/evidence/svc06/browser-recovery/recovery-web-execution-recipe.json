@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-07T23:15:18.462Z",
+  "ready": false,
+  "inputPending": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+    "dev": "16777234",
+    "ino": "124631032",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 6729,
+    "sha256": "407d40bb531ceafc0878aa65c00f58668fe25be41a642d8ce76d74258b502e08"
+  },
+  "actualInputPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.actual.json",
+  "actualInputHash": "FILL_ONCE_FROM_EXACT_ACTUAL_BYTES_AT_GRANT",
+  "actions": [
+    {
+      "action": "transfer",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+        "transfer",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.actual.json",
+        "FILL_ONCE_FROM_EXACT_ACTUAL_BYTES_AT_GRANT"
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root",
+      "env": {
+        "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+        "TSX_DISABLE_CACHE": "1"
+      },
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "policy": {
+        "work_seconds": 30,
+        "term_grace_seconds": 0.5,
+        "kill_grace_seconds": 2,
+        "output_bytes": 65536
+      },
+      "outerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-transfer-outer.json"
+    },
+    {
+      "action": "publish",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+        "publish",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.actual.json",
+        "FILL_ONCE_FROM_EXACT_ACTUAL_BYTES_AT_GRANT"
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root",
+      "env": {
+        "PATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+        "TSX_DISABLE_CACHE": "1"
+      },
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "policy": {
+        "work_seconds": 30,
+        "term_grace_seconds": 0.5,
+        "kill_grace_seconds": 2,
+        "output_bytes": 65536
+      },
+      "outerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publish-outer.json"
+    }
+  ],
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "dev": "16777234",
+    "ino": "123234533",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "selection": null,
+  "tightAdmission": [
+    "unique current Web grant/logicalId/latestNewSpawnAt; complete floor >= latest authoritative forward and intrinsic 2.5GiB; live1GiB",
+    "verify source/runtime pins and complete installed e15 immutable inventory before installed loader is executed; no moving main",
+    "re-read exact six pins/3 owned listeners/current initialization/accepting24/report tuple and hash-bound R2 final; no task/provider",
+    "same source/installation identities; both exact private namespaces and outer/actual-input paths absent",
+    "replace only ready:true/missing:[]/budget.freshBytes + exact admission fields at same-call freeze; wx0600 actual input and outer; persist START",
+    "one transfer then only confirmed complete receipt allows one publish; any unknown stop, no retry/rollback/namespace replacement"
+  ],
+  "limits": {
+    "perPhaseSeconds": 30,
+    "totalRawBytes": 2097152,
+    "addedBytes": 536870912,
+    "liveBytes": 1073741824,
+    "ordinaryOrPersonalServiceStops": 0
+  },
+  "preservation": "No new backend operation/report import/tasks/query/tab reload; existing center/runner/Web stay running; d629/v3 retained until public CASv3→v4 for779."
+}

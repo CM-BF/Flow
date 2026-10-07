@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T23:14:04.406Z",
+  "finishedAt": "2026-10-07T23:14:11.066Z",
+  "outcome": "READONLY_WEB_INSTANCE_BOUND_NOT_AUTHORIZED_TO_PUBLISH",
+  "ready": false,
+  "source": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "backendArtifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+  "webHostArtifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+  "releaseVersion": 3,
+  "releaseCurrent": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+  "reportIds": {
+    "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+    "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+    "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+    "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+  },
+  "currentInitialization": true,
+  "view": {
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "version": 24,
+    "state": "accepting",
+    "operationId": null,
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-07T23:06:09.113Z",
+    "stopPermitted": false,
+    "provider": "not-probed",
+    "display": "恢复接收"
+  },
+  "processes": {
+    "center": {
+      "pid": 55424,
+      "nonce": "dc5002b1-bf33-435a-b07c-0b2fd6dc253f",
+      "recordDigest": "d0c5bbc1fc472a4b2bdd818a211e16f9872368d43569bfa74e5815139a31a496",
+      "owned": "running"
+    },
+    "runner": {
+      "pid": 55832,
+      "nonce": "6f9ffea6-6899-478c-bf0a-8ac36c358a2e",
+      "recordDigest": "a784736ed46e374bf3b8f3ff8934aec7bbdeabbf9f96c079d6b82118c6757c10",
+      "owned": "running"
+    },
+    "web": {
+      "pid": 58412,
+      "nonce": "784e6b08-7095-4c75-95e5-e8b7bbc223eb",
+      "recordDigest": "78df4e595deef40f3aee763e62a33e49b48d7a63c9d6632c3654b11dc11e1d71",
+      "owned": "running"
+    }
+  },
+  "privateFiles": {
+    "browser-session.json": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "bytes": 205,
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    },
+    "claude.json": {
+      "dev": "16777234",
+      "ino": "117819909",
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+    },
+    "config.json": {
+      "dev": "16777234",
+      "ino": "117819925",
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "maintenance.json": {
+      "dev": "16777234",
+      "ino": "124629698",
+      "bytes": 6235,
+      "sha256": "bfd1ad10adb4c21c5c5eb924dbf49e7883574bf6a8278e3695cd4a5f363e29a0"
+    },
+    "state.json": {
+      "dev": "16777234",
+      "ino": "124629441",
+      "bytes": 4186,
+      "sha256": "fe764f2c3f36269d5ed7de390c8ca230783613fb825390b10eaf969a1c9c185f"
+    },
+    "web-release.json": {
+      "dev": "16777234",
+      "ino": "123210668",
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "finalReceipt": {
+    "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json",
+    "bytes": 1656,
+    "sha256": "7ad28f5216ebc456c184c836b6560f51980b65720d71cc51d9525c64239e8546"
+  },
+  "fullInstalledInventoryVerified": true,
+  "availableBytes": 17964724224,
+  "floorBytes": 11702763520,
+  "namespaceAbsent": true,
+  "operatorQueries": 0,
+  "operatorNewTasks": 0,
+  "personalMutation": false,
+  "actualClaim": "NOT_OBSERVED",
+  "boundary": "Read-only status uses existing public maintenance reader and closes its pool; no transfer/publish/start/stop/import."
+}

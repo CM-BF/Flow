@@ -1,0 +1,34 @@
+{
+  "pid": 9392,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 6727,
+  "stdout": "{\"outcome\":\"READONLY_WEB_INSTANCE_BOUND_NOT_AUTHORIZED_TO_PUBLISH\",\"at\":\"2026-10-07T23:14:04.406Z\",\"finishedAt\":\"2026-10-07T23:14:11.066Z\",\"ready\":false,\"roles\":3,\"version\":24,\"releaseVersion\":3,\"availableBytes\":17964724224}\n",
+  "stderr": "",
+  "observed_bytes": 225,
+  "retained_bytes": 225,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "returnedAt": "2026-10-07T23:14:11.080588+00:00"
+}

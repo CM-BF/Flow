@@ -1,0 +1,402 @@
+{
+  "at": "2026-10-07T23:15:18.462Z",
+  "scope": "Post-recovery exact Web779 input binding only, not execution authorization",
+  "ready": false,
+  "source": "f0f4538c06ab003d7883a25a27a2766d3e216dfb",
+  "delivery": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+  "sourceReview": "m2-integration/docs/evidence/i02/svc06b-e15-web779-successor-review.json plus Lead f0f/d813 delta APPROVED",
+  "recoveryResult": {
+    "commit": "146654ac5c839db601142b499442d7db1644c99e",
+    "manifest": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-actual-result-manifest.json",
+    "bytes": 9581,
+    "sha256": "8935161bb274a83a994316aeb57f59d4faf9149edd294efd6b22b9dd5f254bcf",
+    "decision": "APPROVED_LIMITED_PERSONAL_CONTINUATION_R2_RESULT_FIDELITY",
+    "afterResumeFullHistory": "NOT_OBSERVED",
+    "actualClaim": "NOT_OBSERVED"
+  },
+  "sourceClosure": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-import.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-import.mjs",
+      "dev": "16777234",
+      "ino": "124269823",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 4439,
+      "sha256": "01639e990e094361d65511393189e969799fccf452aee5049b93ff41c82ab959",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "docs/evidence/svc06/browser-recovery/current-import.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "dev": "16777234",
+      "ino": "124232293",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "dev": "16777234",
+      "ino": "124407825",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12331,
+      "sha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "docs/evidence/svc06/browser-recovery/current-web-transfer.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "dev": "16777234",
+      "ino": "124594455",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 13689,
+      "sha256": "3d772c4161e901536f5bf33364b348f0b42bf38299a1e5f8e98118d930818558",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/build.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/build.mjs",
+      "dev": "16777234",
+      "ino": "124185160",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/build.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/cache-plan.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/cache-plan.mjs",
+      "dev": "16777234",
+      "ino": "124185161",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/cache-plan.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "dev": "16777234",
+      "ino": "124185164",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/dependency-plan.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/files.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/files.mjs",
+      "dev": "16777234",
+      "ino": "124185166",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/files.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/index.mjs",
+      "dev": "16777234",
+      "ino": "124185168",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/index.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/installation-view.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/installation-view.mjs",
+      "dev": "16777234",
+      "ino": "124185169",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/installation-view.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/node-identity.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/node-identity.mjs",
+      "dev": "16777234",
+      "ino": "124185171",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/node-identity.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "dev": "16777234",
+      "ino": "124185172",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+        "commit": "d8131592e46021a92cc92709d2cd02b3d81994fc",
+        "path": "tools/personal-preview/backend-release/runtime-installation.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "dev": "16777234",
+      "ino": "124118210",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 14990,
+      "sha256": "82b048813aeedfc2f8f4a9fd83a7cb73dc28083707a38b84e37f73a21d3d4d2a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+        "commit": "2c6badbc4ae969ff1d527faddea296fad80745b3",
+        "path": "docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "dev": "16777234",
+      "ino": "123117637",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 9772,
+      "sha256": "6e89a87292c8c360ea3ee3bcd1563a1d7492e1e8c51b4bbecdc63f3a4581619d",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+        "commit": "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0",
+        "path": "docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "dev": "16777234",
+      "ino": "123543883",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+        "commit": "5c93bc354989418bddfbf777052e3b2becd10b19",
+        "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs"
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+      "dev": "16777234",
+      "ino": "123536648",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b",
+      "git": {
+        "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+        "commit": "5c93bc354989418bddfbf777052e3b2becd10b19",
+        "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs"
+      }
+    }
+  ],
+  "runtime": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": "16777234",
+      "ino": "110837507",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": "16777234",
+      "ino": "63570890",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "dev": "16777234",
+      "ino": "123234533",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/usr/sbin/lsof",
+      "realpath": "/usr/sbin/lsof",
+      "dev": "16777234",
+      "ino": "1152921500312576097",
+      "uid": 0,
+      "nlink": 1,
+      "bytes": 306768,
+      "sha256": "b1b9151bbc56f4749890dbe4e533af9a4f8700240ad431a6c9ddf70fe137c165"
+    },
+    {
+      "path": "/bin/ps",
+      "realpath": "/bin/ps",
+      "dev": "16777234",
+      "ino": "1152921500312571399",
+      "uid": 0,
+      "nlink": 1,
+      "bytes": 170432,
+      "sha256": "3bbba882e30d91fc4ff6e6844ca7c59fef4351b9a3fea35dca55708d6d487d1c"
+    },
+    {
+      "path": "/usr/bin/git",
+      "realpath": "/usr/bin/git",
+      "dev": "16777234",
+      "ino": "1152921500312571562",
+      "uid": 0,
+      "nlink": 78,
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    }
+  ],
+  "installedArtifactManifest": {
+    "path": "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/manifest.json",
+    "realpath": "/Users/citrine/.flow-personal/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/manifest.json",
+    "dev": "16777234",
+    "ino": "124610571",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 3196787,
+    "sha256": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd"
+  },
+  "fresh": {
+    "start": "2026-10-07T23:14:04.406Z",
+    "finish": "2026-10-07T23:14:11.066Z",
+    "readOnly": true,
+    "personalMutation": false,
+    "availableBytes": 17964724224,
+    "queueFloorAtObservation": 11702763520,
+    "currentInitialization": true,
+    "maintenance": "accepting24",
+    "webRelease": "d629/v3",
+    "reports": 4,
+    "privateBodiesCopied": false
+  },
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh-recipe.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh-recipe.json",
+      "dev": "16777234",
+      "ino": "124631003",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 7983,
+      "sha256": "3645e4d6a25c907ec9c43ab9a667a2f2d6c9edbe84d7088e74809f59d3fa9106"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh-outer.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh-outer.json",
+      "dev": "16777234",
+      "ino": "124631020",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 847,
+      "sha256": "e8ce54bc81592e4c528cd1fdb9ba53a610dd413a188f2d9196cb9bff5d304733"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-fresh.json",
+      "dev": "16777234",
+      "ino": "124631033",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3852,
+      "sha256": "f174c77f04a184ac6a51bfc86a6cca4c806b66cd6c66901a14e8c56152156756"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-instance.pending.json",
+      "dev": "16777234",
+      "ino": "124631032",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 6729,
+      "sha256": "407d40bb531ceafc0878aa65c00f58668fe25be41a642d8ce76d74258b502e08"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-execution-recipe.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-execution-recipe.json",
+      "dev": "16777234",
+      "ino": "124631217",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 5211,
+      "sha256": "7392bb3bfe19e944616f9a2d844e454b53759f66251cea6e98e7ab79c5a9e7c4"
+    }
+  ],
+  "dynamicBoundary": "This has no actual grant. At SELECT freeze only resource/admission fields and ready flag, bind actual bytes, then immediate fixed recipe. Identity mismatch stops; no automatic refresh of personal pins. No new source/test/build/compatibility run.",
+  "quality": {
+    "at": "2026-10-07T23:15:18.462Z",
+    "methods": "Previously read find-skills, clean-code and codebase-design; reuse transfer/public CAS, one instance and OPS14; bounded read-only evidence, no duplicated supervisor or serializer.",
+    "limitations": "Actual task claim unobserved; actual Web publication not run."
+  }
+}

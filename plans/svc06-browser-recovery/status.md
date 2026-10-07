@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:49:07.760Z；恢复R2真实入口准备已独审；Web exact新成功回执绑定已修/局部通过待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:16:58.021Z；恢复R2已独审，Web现场只读参数已绑定；迁入嵌套锁准备P2未运行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base6c；固定runtime880060/e15；Web公共canonical源ef281已独审/main4bab97a8e，本次exact r2路径sourcef0f4538c06ab003d7883a25a27a2766d3e216dfb待独审 |
-| 工作树dirty状态 | 当前source停写；仅本次结果/status收口，恢复135pins无重叠 |
+| 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；Web sourcef0f4538c/deliveryd813三leaf已独审且停写，本次仅fresh参数/recipe/记录 |
+| 工作树dirty状态 | 本次仅own fresh输入/recipe/状态记录；产品及恢复135pins无改动 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 实现目标 | 恢复成功后用新e15身份受管迁入779并单次公开CAS发布；本片仅source draft，个人输入未采 |
-| 实现范围 | 新recovery-web-publication.mjs/直接专测/template；复用旧transfer算法和source880公开publish，不修改恢复66pins |
-| 检查状态 | 本次1个路径直接消费者通过，211ms/207B，组absent/双EOF/空scratch同身份removed；本普通段累计451ms/872B，原6项不重跑；个人发布NOT_RUN |
-| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
+| 本片段交付阶段 | implementation |
+| 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布尚未启动 |
+| 实现范围 | 已审Web新leaf复用原transfer/CAS；当前只读绑定后识别非重入锁冲突，待最小同scope修复 |
+| 检查状态 | 23:14:04.406Z–23:14:11.066Z授权只读核对通过，6727ms/225B/组absent与双EOF；没有新工程测试；transfer/publish NOT_RUN |
+| 已集成main状态 / HEAD | runner初始化source77b489已main770bd2c05；Web后继f0f/d813由Lead限定批准，I02 review已main71288a457；个人R2 e15实际恢复结果146654独审通过；Web779尚未发布 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版网页的发布调用已通过源码审查；恢复续接再次在个人阶段前停止后，发布调用已绑定新的恢复回执路径，并拒绝旧失败回执。网页尚未发布。 |
-| 下一可用交付 | 完成这处路径同步的独立审查；恢复真正成功后核对当前服务身份和发布版本，再受管发布新版网页。 |
-| 当前阻塞 | ACTIVE: 网页发布仍缺成功恢复回执与紧前现场核对；恢复owner/Lead负责剩余维护，本服务owner负责随后Web发布。上次失败与已导入内容保留，不重放。 |
+| 当前产出 | 现有服务已恢复运行并重新开放接收，新实例初始化已确认；新版网页的当前身份与发布版本已核对。实际任务领取尚未观察到，网页仍为旧版。 |
+| 下一可用交付 | 修复迁入期间状态读取重复申请操作锁的问题，完成该调用的直接验证后受管发布新版网页。 |
+| 当前阻塞 | ACTIVE: 发布前静态发现非重入操作锁嵌套，当前迁入会被拒绝；owner assignment_review，解除条件为同scope最小读取接缝修复和独审。实际服务保持运行，发布命名空间未创建。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
+| Review | [review.md](review.md)；R2实际结果146654已限定独审通过；Web父目录/canonical/R2路径均已独审。新增迁入嵌套锁P2不由既有注入例覆盖。 |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
 | 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850已main72f5758bc，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
 
@@ -196,3 +196,9 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T22:37:18.739Z：Web后继source ef281959728334e2b3f0f5d847e0452108d37c06 固定；[单份重绑结果](../../docs/evidence/svc06/browser-recovery/recovery-web-continuation.json)只列3源/3原件及既有Git引用。公共canonical来自完整verify后的固定e15 root；directtest用同880060字节源码，6/6（4受影响+2新）、240ms/665B，22:36:07.207564Z RETURN，组absent/双EOF/无signals、exact空scratchremoved。恢复135pins零改，旧20dc/父目录结果原件零改；没有实际个人读取、PG/HTTP/provider。source待独审，成功continuation final与fresh实例尚待，ready=false；不会据旧失败或初始化推定网页已发布/实际接单成功。
 
 2026-10-07T22:49:07.760Z：复用Lead已main4bab97a8e的ef281源码批准；恢复e68a90f2904415e7e690f23a8494c68c28b51205/18bindings95982B/135effective pins及7直接入口检查已独立只读核准，仅准备范围。原续接51ms/0phase失败及22:40RETURN保持。Web source f0f4538c06ab003d7883a25a27a2766d3e216dfb 只将最终回执绑定到新的continuation-r2 namespace，1/1实际validateInput路径例于22:48:29.525340Z RETURN；旧两失败路径拒绝。见[单份路径增量](../../docs/evidence/svc06/browser-recovery/recovery-web-r2-binding.json)。本段未读取个人材料/未运行服务或PG，ready=false，当前0child/0pending。
+
+2026-10-07T23:16:58.021Z：恢复owner R2实际23:03:29.033765Z START→23:06:25.528080Z terminal→23:07:45.970561Z RETURN，固定146654ac5/manifest893516已由本worker独立只读核32绑定和全部6phase；三新role及当前初始化/accepting24已核，11 transient PID+2group归还，持久DB3 idle与服务KEEP保留。77表历史只在checkpoint及紧前resume按定义投影保持，after-resume fullhistory及actualClaim NOT_OBSERVED；0operator新task/query，d629/v3未变。没有重放旧import或失败。
+
+2026-10-07T23:16:58.021Z：Web发布准备段fresh claim v8于23:12:11.751Z核同；原三leaf f0f停写。授权只读23:14:04.406Z→23:14:11.066Z复用完整artifact验证/现有reader，六文件只保存身份/hash、三owned与listener/currentinit、accepting24、d629/v3和四报告均通过。监督实际RETURN23:14:11.080588Z，原initial unknown(errno1)观察及最后absent保留，未停止服务。单份[现场参数准备](../../docs/evidence/svc06/browser-recovery/recovery-web-actual-preparation.json)与recipe保持ready=false；观察floor11702763520B/free17964724224B只属此时，未来SELECT取latest更严。
+
+2026-10-07T23:16:58.021Z：最后静态实际调用闭包核发现P2：transferWebArtifact持preview锁，其guard调用新leaf observe→maintenance status再取同一非重入锁（固定880060 preview171–174/maintenance-host123）。未运行transfer/publish，两个实际目录未创建；现有只读成功发生在外锁之外，不当该路径通过。已直接交Lead协调仅own leaf读取接缝及真实持锁消费者窄修；不改个人状态、已审产物和旧原件，不等资源掩盖代码阻点。
