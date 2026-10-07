@@ -1,0 +1,101 @@
+{
+  "startedAt": "2026-10-07T08:01:03.648179+00:00",
+  "driverStarts": 1,
+  "primaryFailure": {
+    "code": "CLEANUP_UNKNOWN"
+  },
+  "cleanup": {
+    "state": "unknown",
+    "removed": false,
+    "errorType": "RuntimeError"
+  },
+  "nativeWriteAccess": "unknown",
+  "providerCalls": 0,
+  "PG": 0,
+  "browser": 0,
+  "limits": {
+    "totalSeconds": 10,
+    "totalRecordBytes": 65536,
+    "privateBytes": 1048576
+  },
+  "scratch": {
+    "path": "/private/tmp/eng01l-initialize-3pgj9n6s",
+    "dev": "16777234",
+    "ino": "123644157"
+  },
+  "supervision": {
+    "pid": 87104,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 507,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "driver": {
+    "ready": true,
+    "attempted": true,
+    "primaryFailure": null,
+    "cleanupFailure": null,
+    "cleanup": {
+      "child": "confirmed-exited",
+      "hostWrite": "settled",
+      "nativeWriteAccess": "unknown"
+    },
+    "transportClose": {
+      "reason": "ABORTED",
+      "child": "confirmed-exited",
+      "exitCode": null,
+      "signal": "SIGTERM",
+      "remoteEffects": "unknown",
+      "stderrCapture": {
+        "observedBytes": 2414,
+        "writtenBytes": 2414,
+        "truncated": false,
+        "observerFailed": false,
+        "streamEnded": true,
+        "childCloseObserved": true,
+        "incomplete": false
+      }
+    },
+    "diagnosticComplete": true,
+    "stderrBytes": 2414,
+    "targetIdentity": {
+      "path": "/private/tmp/eng01l-initialize-3pgj9n6s/workspace/calculator.mjs",
+      "device": "16777234",
+      "inode": "123644163"
+    },
+    "policySha256": "390e9b08debc0b501ac626592cfb673592ac7690ed896a2466a317d129dc594e",
+    "threadRequests": 0,
+    "turnRequests": 0,
+    "catalogueRequests": 0,
+    "hostToolCalls": 0,
+    "providerCalls": 0,
+    "nativeWriteAccess": "unknown"
+  },
+  "finishedAt": "2026-10-07T08:01:04.295170+00:00",
+  "elapsedMs": 647,
+  "passed": false
+}
