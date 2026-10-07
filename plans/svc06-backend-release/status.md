@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:35:07 UTC；r1失败限定独审归档，r2初始化修正及定向例已封定待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:46:57 UTC；r2实际旅程通过/独立cleanup确认，窗口已归还，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/runtime6c固定；r1结果77cf/fe46已限定独审；r2 source ea6bd5852c2754f4179bb6da467caf8d6d67a368，records封定中 |
-| 工作树dirty状态 | 产品与r2源码停写；仅本次局部raw/review/status/manifest封定 |
+| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2 ea6bd/94e12已实际一次，结果records封定中 |
+| 工作树dirty状态 | 全部产品/入口停写；仅本次实际结果/唯一status封定 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | r1三角色ready/27→35后BOOTSTRAP_REQUIRED，cleanup确认；r2一个真实loader/CAS直接例原红→1/1，syntax0，379ms/2456B/三组absent，实际host NOT_RUN |
-| 已集成main状态 / HEAD | Lead回执main650d230d已受控接收d911诊断产物结果/4a6准备及独审；后mainb675为插件CLI。r1 fe46结果待本批，r2最小修正待审/实际运行；不追moving main改变固定6c。 |
+| 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
+| 已集成main状态 / HEAD | Lead回执main/origin2f32f6b27fc79151cd1e9d26e7fb5af70a791505已接r1+review/r2准备；当前实际r2不冒主线已验证。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 首次发布的隔离测试步骤已修正，定向检查通过；上一轮失败与正常清理已完成独立核验。 |
-| 下一可用交付 | 审查这次最小修正后，在新的隔离环境继续验证策略刷新与保留数据。 |
-| 当前阻塞 | ACTIVE: 最小修正待独立审查及新的共享运行窗口；个人更新尚未验收。 |
+| 当前产出 | 隔离环境已完成升级、三项服务刷新恢复和浏览器会话策略检查；历史数据与发布指针保持，资源正常清理。 |
+| 下一可用交付 | 独立核验本次结果；再结合真实 App 兼容证据准备个人更新。 |
+| 当前阻塞 | ACTIVE: 本次结果等待独立审查；真实 App 兼容与个人发布仍未验收。 |
 | 需用户决定 | NONE |
-| Review | r1结果APPROVED_LIMITED_FAILED_HOST_RESULT_ACCOUNTING；r2 source ea6bd准备待独审，不扩大为真实host通过 |
+| Review | r2准备APPROVED_LIMITED_PREPARATION；实际隔离旅程通过，结果待独立审查，原两个失败保持 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2修正待实际验证，三App配置兼容/个人仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过待结果独审，三App配置兼容/个人仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -150,6 +150,10 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [入口/边界](../../docs/evidence/svc06/artifact-host-followup/README.md)，局部接缝已[独审](../../docs/evidence/svc06/artifact-host-followup/local-independent-review.json)。新root+新DB，精确e5同卷CoW并逐manifest验；原root/config/state/raw全保留。work120s+cleanup30s、fresh2.5GiB/live1GiB、私有64MiB/raw2MiB不降，新增物理规划578MiB不假定clone免费；现复制/PG/三角色NOT_RUN，准备固定供独审。
 
 ## 等待记录
+
+| 等待ID | 开始 | 结束 | 类别 | 说明 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -276,3 +280,11 @@ source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领
 ## 2026-10-07 10:35:07 UTC — r1限定结果批准与r2准备
 
 [原件独审](../../docs/evidence/svc06/diagnostics-host-policy/result-independent-review.json)核28fixed/current+31private+11副本，保FAIL/normalDROP及35迁移/三roles边界；旧runner首因unknown。r2仅首次bootstrap及新namespace，514中513原输入不变；[最小准备](../../docs/evidence/svc06/diagnostics-host-bootstrap/README.md)记录1行为原红→绿、syntax0、379ms、2456B与完整局部清理。10:31:20.006201Z实际local归还，未启动r2 PG/host；等待起点此封定前无单独时间原件，UNKNOWN，不以commit推算。原03/04/05仍open。
+
+## 2026-10-07T10:41:59.689858+00:00 — r2实际窗口
+
+原ea6bd/94e12入口准备已独审；fresh24+514/4aliases/3runtime全同，claimv8有效，namespace未用。free22,659,051,520B≥2.5GiB+60MiB保守并发，cluster93可用≥15最大配置连接，只读pool已关闭。Mika10:38:50已实际归还，当前本owner唯一执行180+30段；0provider/个人/Chrome，原r1不重放。详见diagnostics-host-bootstrap/actual-invocation.json。
+
+## 2026-10-07 10:46:57 UTC — r2实际通过并归还窗口
+
+[唯一结果](../../docs/evidence/svc06/diagnostics-host-bootstrap/RESULT.md)：10:41:59.689858Z开工，10:44:35.378972Z外层0；work155073ms/cleanup540ms、两owned组absent双EOF，六nonce组stopped、专库normalDROP remaining[]。27→35、defaultoff/两pre-drain拒绝/三role刷新恢复、历史与pointer/config/profile、cookie/CSRF/logout通过；Web两代显式stop exit1保留，非全部service exit0。50private绑定/15原件副本、raw53622B，0provider/个人/Chrome；旧失败和unknown不改。r2实际shared窗口已归还，结果待独审；03/04/05整体仍open。

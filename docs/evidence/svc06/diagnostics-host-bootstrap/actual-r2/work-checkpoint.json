@@ -1,0 +1,155 @@
+{
+  "checks": {
+    "defaultOff": true,
+    "invalid-policy-rejected-before-drain": {
+      "name": "Error",
+      "code": "BROWSER_CONFIGURATION_INVALID"
+    },
+    "missing-v2-rejected-before-drain": {
+      "name": "Error",
+      "code": "WEB_COMPATIBILITY_COMBINATION_UNKNOWN"
+    }
+  },
+  "providerCalls": 0,
+  "tasksCreated": 1,
+  "phase": "browser-cookie-http",
+  "reportScope": "SYNTHETIC_LOADER_CONTRACT_ONLY_NOT_APP_COMPATIBILITY",
+  "databaseName": "flow_preview_b2f3b9136a1dae1dc1ed5752",
+  "installationId": "1b48a589-76f5-4400-9a73-abf68903faf9",
+  "ports": [
+    56774,
+    56775
+  ],
+  "databaseOid": 1288209,
+  "fixtureIds": {
+    "conversationId": "e5a6e11b-2bf4-40df-9e30-5cdcbb595e0b",
+    "turnId": "1025fde5-22ed-4dfb-a141-8239d9d5c16c",
+    "taskId": "cd6e3adb-4a3b-4041-92d9-1db8640204dc"
+  },
+  "oldMigrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "oldFactoryClosed": true,
+  "databaseSizeSamples": [
+    11967511,
+    12794903,
+    12885015
+  ],
+  "historyDigest": "00ffba9ad634c57f3a9f83017f24fa15273a5f47ebe36b1333d52e7c783802c9",
+  "newMigrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:56775",
+    "policySha256": "81c3a3eabb09b5a50190957f2d23f28b5c6b78c48e4bcfd848a90b7dca2d8a04"
+  },
+  "loaderFixtureCompatibilityId": "930ec4af67a5ac73d0eb380d6a7a4b7e10f92f6d6f88fd7d22e60e8023e070c3",
+  "oldExitRecords": {
+    "web": {
+      "at": "2026-10-07T10:43:47.928Z",
+      "nonce": "5d6582ec-1766-48ee-af7d-4b30f55ac19e",
+      "code": 1,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "runner": {
+      "at": "2026-10-07T10:43:47.963Z",
+      "nonce": "86f6d3cd-066b-4628-9dfa-00797eeb4819",
+      "code": 0,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "center": {
+      "at": "2026-10-07T10:43:48.041Z",
+      "nonce": "59bad1e8-d3dd-4629-923a-576f320bb096",
+      "code": 0,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    }
+  },
+  "maintenance": {
+    "initial": 0,
+    "drained": 1,
+    "paused": 2,
+    "resumed": 3
+  }
+}

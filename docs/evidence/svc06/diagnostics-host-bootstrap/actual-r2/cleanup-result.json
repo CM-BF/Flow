@@ -1,0 +1,277 @@
+{
+  "startedAt": "2026-10-07T10:44:34.916Z",
+  "processes": {
+    "0f259b77-b68b-4b4a-8d95-eb43098bba48": {
+      "role": "web",
+      "pid": 29203,
+      "group": 29203,
+      "state": "stopped"
+    },
+    "2c95039c-f7de-4981-8ae4-0c752d8046ea": {
+      "role": "runner",
+      "pid": 29183,
+      "group": 29183,
+      "state": "stopped"
+    },
+    "b58838bd-06c6-4323-9c27-a76566153f60": {
+      "role": "center",
+      "pid": 28497,
+      "group": 28497,
+      "state": "stopped"
+    },
+    "5d6582ec-1766-48ee-af7d-4b30f55ac19e": {
+      "role": "web",
+      "pid": 71342,
+      "group": 71342,
+      "state": "stopped"
+    },
+    "86f6d3cd-066b-4628-9dfa-00797eeb4819": {
+      "role": "runner",
+      "pid": 63660,
+      "group": 63660,
+      "state": "stopped"
+    },
+    "59bad1e8-d3dd-4629-923a-576f320bb096": {
+      "role": "center",
+      "pid": 62981,
+      "group": 62981,
+      "state": "stopped"
+    }
+  },
+  "database": "removed",
+  "failures": [],
+  "artifactRetained": true,
+  "privateRunRetained": true,
+  "startupObservation": {
+    "state": "observed",
+    "at": "2026-10-07T10:44:35.117Z",
+    "primary": null,
+    "roles": [
+      {
+        "role": "center",
+        "nonce": "b58838bd-06c6-4323-9c27-a76566153f60",
+        "pid": 28497,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124059182",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:44:35.085Z"
+      },
+      {
+        "role": "runner",
+        "nonce": "2c95039c-f7de-4981-8ae4-0c752d8046ea",
+        "pid": 29183,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124059261",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:44:35.002Z"
+      },
+      {
+        "role": "web",
+        "nonce": "0f259b77-b68b-4b4a-8d95-eb43098bba48",
+        "pid": 29203,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 1,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124059260",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:44:34.938Z"
+      },
+      {
+        "role": "center",
+        "nonce": "59bad1e8-d3dd-4629-923a-576f320bb096",
+        "pid": 62981,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124058391",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:43:48.031Z"
+      },
+      {
+        "role": "runner",
+        "nonce": "86f6d3cd-066b-4628-9dfa-00797eeb4819",
+        "pid": 63660,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 0,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124058615",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:43:47.953Z"
+      },
+      {
+        "role": "web",
+        "nonce": "5d6582ec-1766-48ee-af7d-4b30f55ac19e",
+        "pid": 71342,
+        "phase": "child-exit",
+        "errorCode": null,
+        "exit": {
+          "code": 1,
+          "signal": null
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "identity": {
+            "dev": "16777234",
+            "ino": "124058806",
+            "uid": "501",
+            "nlink": "1",
+            "mode": 384
+          },
+          "complete": true,
+          "truncated": false,
+          "declaredMatchesObserved": true,
+          "observedBytes": 0
+        },
+        "at": "2026-10-07T10:43:47.918Z"
+      }
+    ],
+    "observations": [],
+    "stderrPolicy": "Private original retained; public metadata only; at most 64KiB per nonce"
+  },
+  "exitRecords": {
+    "web": {
+      "at": "2026-10-07T10:44:34.949Z",
+      "nonce": "0f259b77-b68b-4b4a-8d95-eb43098bba48",
+      "code": 1,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "runner": {
+      "at": "2026-10-07T10:44:35.013Z",
+      "nonce": "2c95039c-f7de-4981-8ae4-0c752d8046ea",
+      "code": 0,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "center": {
+      "at": "2026-10-07T10:44:35.094Z",
+      "nonce": "b58838bd-06c6-4323-9c27-a76566153f60",
+      "code": 0,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    }
+  },
+  "workWriterAbsent": true,
+  "databaseOid": 1288209,
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 1.8810000000000286,
+        "rows": []
+      }
+    ]
+  },
+  "freeBeforeDrop": 22692401152,
+  "privateBeforeDrop": {
+    "bytes": 3628141,
+    "attempts": 1,
+    "entriesAcrossAttempts": 366,
+    "atomicSnapshot": false
+  },
+  "remaining": [],
+  "finishedAt": "2026-10-07T10:44:35.358Z"
+}
