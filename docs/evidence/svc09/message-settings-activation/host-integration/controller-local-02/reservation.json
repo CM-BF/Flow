@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T17:58:45.821961+00:00",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/controller-import-check.mjs",
+      "--load-controller-only"
+    ]
+  ],
+  "cumulativeSecondsCap": 120,
+  "rawBytesCap": 2097152,
+  "scratchBytesCap": 33554432,
+  "maxConcurrentChildren": 3,
+  "freeBytes": 19478081536,
+  "scratch": "/private/tmp/flow-svc09a-controller-yj9ykfq2",
+  "dev": 16777234,
+  "ino": 124398538,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56587,
+      "sha256": "2e87992510852541c35c7ef5def60e25534a5ae9e2492c391b51cf92b5377767"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 80285,
+      "sha256": "c21b595156ac820cbee941095689b6a7256e203c43f68f2433eaffdf1116871d"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 4296,
+      "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4"
+    },
+    {
+      "path": "tools/personal-preview/process.test.mjs",
+      "bytes": 5948,
+      "sha256": "25778ab1abca2a1c731b41a993af8898a08667645247f35b5f5e540714b3951c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/controller-loader.mjs",
+      "bytes": 3775,
+      "sha256": "f679c281c8acc94ed36c963ea0c42be4badf410bec59743810d8bfad73844801"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/controller-import-check.mjs",
+      "bytes": 2585,
+      "sha256": "df7acf708e96f84fdd395d88040d6fe5127410dee03d28cf1eddefe6f3e4a471"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/controller-driver-inputs.json",
+      "bytes": 6468,
+      "sha256": "a8c45743a0ff170cb908f3bd6191286a8199c416cc889ee011f621927881ba7e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/controller-local.py",
+      "bytes": 3892,
+      "sha256": "7107dbf6b22dd21a79e451c8bf3739d4a81ad531d1a01100d5dd0ed121f2822f"
+    }
+  ],
+  "provider": 0,
+  "pg": 0
+}

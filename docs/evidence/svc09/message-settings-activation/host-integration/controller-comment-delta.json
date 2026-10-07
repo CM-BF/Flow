@@ -1,0 +1,16 @@
+{
+  "path": "tools/personal-preview/preview.mjs",
+  "before": {
+    "bytes": 56590,
+    "sha256": "12d4726b85ca3d41fcb2c88d0aa16c797d01ccce0bf1d56f290d5cb9890e3341",
+    "comment": "At most the four declared roles, with only each predicate's last result. Missing means not observed."
+  },
+  "after": {
+    "source": "f0e434bd04c496fbd60e8458c3f840f4d7b25e80",
+    "bytes": 56587,
+    "sha256": "2e87992510852541c35c7ef5def60e25534a5ae9e2492c391b51cf92b5377767",
+    "comment": "Four declared roles at most; last predicate results only. Missing is not proof of an observation."
+  },
+  "behaviorChange": false,
+  "verification": "Exact reversible one-comment substitution reconstructs the originally tested file hash; other three files match their reservation. No test rerun."
+}

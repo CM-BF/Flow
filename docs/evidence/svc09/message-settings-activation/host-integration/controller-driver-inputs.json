@@ -1,0 +1,163 @@
+{
+  "format": 1,
+  "controllerSource": "f0e434bd04c496fbd60e8458c3f840f4d7b25e80",
+  "controllerRepository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+  "controller": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56587,
+      "sha256": "2e87992510852541c35c7ef5def60e25534a5ae9e2492c391b51cf92b5377767"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 4296,
+      "sha256": "489dba411bdbf86115ad5f45b2de597c0075c5d527d6d3d608b451e5267342f4"
+    }
+  ],
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "manifestDigest": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f"
+  },
+  "artifactRoot": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/root",
+  "artifactRootIdentity": {
+    "dev": "16777234",
+    "ino": "124240706"
+  },
+  "manifest": {
+    "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/manifest.json",
+    "bytes": 3196958,
+    "sha256": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4"
+  },
+  "relativeClosure": [
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 9035,
+      "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594"
+    }
+  ],
+  "barePg": {
+    "link": "node_modules/pg",
+    "realpath": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+    "version": "8.23.1",
+    "pins": [
+      {
+        "relativeToArtifact": "node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+        "bytes": 1668,
+        "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+      },
+      {
+        "relativeToArtifact": "node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+        "bytes": 1810,
+        "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+      },
+      {
+        "relativeToArtifact": "node_modules/.pnpm/pg@8.23.1/node_modules/pg/esm/index.mjs",
+        "bytes": 579,
+        "sha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc"
+      }
+    ]
+  },
+  "directLinks": [
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/startup-diagnostics.mjs",
+    "tools/personal-preview/runner-slots.mjs",
+    "tools/personal-preview/web-retention-policy.mjs",
+    "tools/personal-preview/browser-session-configuration.mjs",
+    "tools/personal-preview/web-artifact.mjs",
+    "tools/personal-preview/backend-release/host.mjs",
+    "tools/personal-preview/backend-release/index.mjs",
+    "tools/personal-preview/web-release.mjs"
+  ],
+  "dynamicNotSelected": [
+    "runner-slots codecs/tsx/contracts only for settings",
+    "Vite build",
+    "runtime installation yaml/build"
+  ],
+  "worktreeDifferencesFromArtifactOutsideController": [
+    "tools/personal-preview/backend-release/files.mjs",
+    "tools/personal-preview/backend-release/index.mjs"
+  ],
+  "rules": [
+    "Do not use moving worktree relative dependencies.",
+    "Only two controller files copied; remaining module links resolve inside the fixed artifact.",
+    "Load, lock, status and stop are the original artifact exports. No configuration.repository change.",
+    "No service/PG/provider in this import check; future default-host run requires separate fixed admission."
+  ]
+}
