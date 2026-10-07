@@ -16,3 +16,7 @@ PG准备07:58:24独审2P2/0P1，原fixture/current inputs及local结果忠实性
 2026-10-07T08:11:42.367020+00:00：实际R1两例通过/资源闭合；pg-result-manifest.json固定结果等待同reviewer一次忠实性复核。准备批准不代结果批准；原raw完整保留。
 
 2026-10-07T08:16:04.533131+00:00封存正式结果独审：chatui01_owner于08:13:23对9ee27/4ce0 RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。限定真实两case/清理/计量，11raw11151B与244execution输入吻合。core integration READY；main/publicclient/UI未完成，精确路径见integration-ready.json。
+
+## Public client slice — pending independent review
+
+Target 2949569bcac7d3b0257a0026f488f42eb6276222, relative fixed main2a7e; two source paths and support-only commits separated in client-review-ready.md. Actual first3/7 retained, new5 pass/2unselected+strict0, 0PG. Earlier core/PG approval does not approve this new client source. Current verdict: NOT_STARTED.

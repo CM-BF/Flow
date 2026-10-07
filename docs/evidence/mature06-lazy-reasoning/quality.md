@@ -33,3 +33,5 @@ Pending: independent source/local review, actual HTTP zero-default-body evidence
 
 ## Integration safe point 2026-10-07T08:16:04.533131+00:00
 只读核当前mainc5dbdb712e4fae078ddd4bbdbc51c653d77a3192=origin clean，六leaf base未漂移；fresh claimv3/12有效。九final core leaf、独立newPGfixture、必要证据分别列清，拒绝整树/helper覆盖。clean-code/codebase-design复核职责不变：metadata/正文就绪分开，selection/read生命周期独立，sharedtransport和Webhost留唯一owner；未知移交不写。0工程child/PG，本段只metadata。实际独审08:13:23归档，主线/部署/完整task依真实receipt不猜。
+
+2026-10-07T08:38:58.667099+00:00: public FlowClient segment, fixed skills reused. One transport / one projector state owner; selected ACK and cursor only at wire boundary. Removed mistaken reuse of domain-limited material JSON reader after real failure; kept all assertions and P02 implementation. Remaining: independent review, actual public-client HTTP/UI mounting and main acceptance; no hard network/instant-memory claim.
