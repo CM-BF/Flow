@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T16:35:53.000Z",
+  "archivedAt": "2026-10-07T16:37:14.753Z",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "result": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+  "packet": "34f434f9d7e77b11b93a81a652f072db38425f0d",
+  "reviewReadySha256": "b363ba0ddd3b283ee5fc036720a14f92d76d338a89b7827927475b73074899e1",
+  "evidence": {
+    "bindings": 44,
+    "bytes": 333247,
+    "inputs": 223,
+    "inputBytes": 1097985,
+    "external": 10,
+    "addedLinks": 11,
+    "children": 6,
+    "rawBytes": 115319,
+    "supervisionMs": 10418,
+    "distinctPassed": 12
+  },
+  "finding": "Positive exact installed receipt kind and legacy trigger compatibility; immutable kind/ref plus exact source attempt FK; before-LIMIT capability/current grant; locked current scope and source project/content/rule checks; one receipt identity across v2/v3/v4 and one bounded FlowClient transport. No P1/P2 in this slice.",
+  "localLimits": "types2/0/0; final types bind334, later ea scope checked by targeted case; SQL not executed. Initial fake404 failure and EPERM preserved. Groups finalabsent/mergedEOF, six TMP sameidentity removed; final return16:32:23.773. Wholewall/peak unknown.",
+  "scope": "Fixed source and limited mockSQL/Fastify inject/FlowClient fidelity only; no actual migration/PG/concurrency/fence/producer/runtime verifier phase/result/fullAV03.",
+  "pg": "NOT_PREPARED/NOT_RUN/NOT_OPEN; candidate remains NOT_INTEGRATION_READY_PG_REQUIRED",
+  "reviewResources": "0engineering/import/tests/PG/write/old root access",
+  "currentTreeAtReview": "integration-candidate then untracked; reviewer did not approve draft or call whole WT clean"
+}

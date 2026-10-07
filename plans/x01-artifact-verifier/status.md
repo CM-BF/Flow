@@ -17,16 +17,16 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED ea3c4599b00505c950cc34ada8a350082fe76747：局部12 distinct分轮通过；types0绑定334，最后scope负例1/1绑定本source；SQL/PG NOT_RUN |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验，待独审及真实PG） |
+| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验且独审通过，待真实PG） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已主线接收；正在连接中心领取和客户端确认 |
 | 下一可用交付 | 中心领取、来源资格和客户端确认接缝；真实数据库验证与验证任务生产链仍待完成 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING；既有journal与AV02独审批准保持原范围 |
+| Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:35:53.000Z；真实PG未验，既有批准各自独立 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
 | 架构影响 | 同一claim/receipt新增显式v4；036独立正向kind与精确来源引用，旧协议LIMIT前排除verifier；新schema和动态SQL未实跑，main图更新待本片接收由Execution Lead核。 |
 
@@ -34,7 +34,7 @@
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
 | AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
-| AV-03 | in-progress | architecture_read，a67v4 | journal四叶已main；center/v4局部已验待审，真实SQL与完整生产链仍OPEN |
+| AV-03 | in-progress | architecture_read，a67v4 | journal四叶已main；center/v4局部已验且独审通过，真实SQL与完整生产链仍OPEN |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -117,3 +117,7 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 固定输入 [av03-center-result-summary.json](../../docs/evidence/x01-artifact-verifier/av03-center-result-summary.json)；[接口](../../docs/evidence/x01-artifact-verifier/av03-center-interface.md)、[真实PG剩余矩阵](../../docs/evidence/x01-artifact-verifier/av03-center-pg-matrix.md)。PG测试literal已claim但尚未写，NOT_PREPARED/NOT_RUN/NOT_OPEN。无公开verification-task写入口，runtime/phase/verdict completion尚未闭合，完整AV03/X01不完成。当前仅metadata封存和只读独审，0actual/待launch。
 
 本次后继接收候选仅为 [av03-center-integration-candidate.json](../../docs/evidence/x01-artifact-verifier/av03-center-integration-candidate.json)：14产品对fixedmain b791与16:35 observedmain38ec前像均无漂移，但NOT_INTEGRATION_READY_PG_REQUIRED。下一最小产出是既有claim中的verification-pg.test.ts与own证据完整闭包/有界caller准备，不新增runtime或未分配路径；当前无PG窗口。结束newlogical样本1,462,433B（269文件，含镜像/raw，非峰值）；TMP均已删除。
+
+## AV03 center 固定独审收口
+
+2026-10-07T16:37:14.753Z：db_transaction_owner于16:35:53独审APPROVED/0P1P2，绑定ea3/e978/34f，见[av03-center-independent-approval.json](../../docs/evidence/x01-artifact-verifier/av03-center-independent-approval.json)。批准限源码与局部结果；NOT_INTEGRATION_READY_PG_REQUIRED保持。当前source和结果已冻结，所有写入在本次metadata提交后STOP，a67v4/30保留。0ordinary/PG/Chrome/provider/待launch。下一有价值片是合法owned verification-pg.test与现有fixture的最小真实SQL资格/迁移/回放矩阵准备，不新增第二调度或公开半套producer；本段不自动开下一source/actual窗口。
