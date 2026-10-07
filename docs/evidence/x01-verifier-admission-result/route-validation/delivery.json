@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T22:42:38.624Z",
+  "state": "SOURCE_LOCAL_APPROVED_STOP",
+  "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "review": "approval.json",
+  "productDelta": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "bytes": 8919,
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef"
+    }
+  ],
+  "futurePG": "CLOSED_REBIND_REQUIRED; AV R3 realpassed/reviewapproved, mainreceipt pending",
+  "rawImmutable": true,
+  "claim": "cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24 retained",
+  "actualReturn": "2026-10-07T22:38:50.378Z",
+  "sourceStop": "2026-10-07T22:42:38.624Z",
+  "ordinaryNewLaunches": false,
+  "fullTask": "NOT_COMPLETED; main mount/runtime/real transactions remain open"
+}

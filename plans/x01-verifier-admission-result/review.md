@@ -43,3 +43,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## 公开输入schema400增量待审
 
 2026-10-07T22:40:07.917Z：source 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd，仅verification-routes safeParse/HttpError和新直接consumer test。11/11 inject+strict0；旧核心/五domain/原raw未改，0PG/listener。请核错误映射/鉴权顺序/真实hook与fake边界及固定source/local绑定。
+
+## 公开schema400增量批准
+
+2026-10-07T22:42:38.624Z：chatui于22:41:46批准source8eb/result44dc/packetbf4，0P1P2；旧ZodError500缺口已关闭。固定21bindings233883B、11/11注入+types0和资源收据成立；未重跑旧15/5domain或任何PG。限定原件见route-validation/approval.json。

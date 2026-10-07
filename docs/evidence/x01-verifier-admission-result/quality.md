@@ -5,3 +5,7 @@
 2026-10-07T20:50:26.033Z clean-code安全点：受理/重算/私有信任/共享序列化职责分离，原事件TX和phase权威复用；无第二FSM。识别并修完整JSON转义边界，错误测试和types原件保留。序列化重用保持原identity字节，PROCESS seam明确无fallback。未解决：真实PG事务/当前factory与runtime消费者。没有为封包重复旧绿套件。
 
 2026-10-07T21:10:37.049Z 窄修clean-code：复用既有tool permission函数以保持公开错误合同；verifier显式领域分支，无新抽象/调度。直接调用保ROLLBACK/无INSERT断言。原fake误用Promise连接使两例未进入生命周期，已按实际callback/.on/removeListener修复；不删原错，不跑旧15或PG。
+
+## 2026-10-07 route validation checkpoint
+
+2026-10-07T22:42:38.624Z：沿已安装find-skills→codebase-design/clean-code基线，不安装。保持route职责为输入验证与协议映射，使用既有HttpError，不修改全局错误handler/领域事务；无新公共抽象。真实认证hook作直接consumer，fake只围绕存储与领域副作用。11inject+affectedstrict，已审后停止无关复测。旧PG固定原件与claims历史保留，版本2准入重新绑定显式待办。错误/取消/UNKNOWN语义与数据库事务不变。

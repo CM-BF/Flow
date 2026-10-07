@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T22:42:38.624Z",
+  "reviewAt": "2026-10-07T22:41:46.000Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "conclusion": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Schema ZodError500 public boundary",
+  "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "result": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+  "packet": "bf4f1a05111c962b1b7a335591ae35c0ddd20cee",
+  "bindings": 21,
+  "boundBytes": 233883,
+  "closure": {
+    "fixedExistingLinks": 280,
+    "regularMirrors": 2,
+    "logicalInputBytes": 1337632,
+    "runtimePins": 5
+  },
+  "checked": "11selected11passed/types0,2child2299ms/raw3664B,absent/EOF/sameidentityTMPENOENT;initialEPERMpreserved",
+  "semantics": "Three safeParse\u2192HttpError400, valid.data normalization, auth/CSRF/keys/status/no-store/413 unchanged",
+  "limitations": "inject no listener, domain/browserstore/runnerpoolmock. No actualPG/fullfactory/worker; oldtransaction-pg zero diff. Futureclaimv2/route rebind and uniqueactual grant still needed.",
+  "reviewActions": "Read-only Git/hash/source/result;0import/tests/PG/TMP/write"
+}
