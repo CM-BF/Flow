@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v10 ACTIVE30scope](../../docs/evidence/x01/center-claim-amend-v10.json)；新增8中心literal，c15五源与旧15已main源停止写入 |
+| Claim | [v11 ACTIVE31scope](../../docs/evidence/x01/center-claim-pg-amend-v11.json)；新增8中心literal，c15五源与旧15已main源停止写入 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -27,7 +27,7 @@
 | 优先级 | 1 |
 | 当前产出 | 中心插件领取的源码与局部行为已通过独审，正在补真实数据库与认证入口验证 |
 | 下一可用交付 | 完成独立专库的新领取/恢复/锁等待用例，再接真实runner执行与现成npm能力 |
-| 当前阻塞 | NONE: 专库最小输入已固定，测试与单suite执行接线尚未实现；没有PG运行或预占 |
+| 当前阻塞 | NONE: 新六组真实PG测试及单suite入口实施中；本段0实际PG，没有PG预占 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -257,3 +257,5 @@ source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10�
 2026-10-07T06:09:33.346802+00:00：中心产品0224冻结，最终支持436ab仅禁止Python导入写bytecode；原local两own证据cache73068B按2MiB源/metadata预算入账并精确清理，原raw不改。最终[26项交审包](../../docs/evidence/x01/center-claim-final-review-ready.json)待独审；types0/10局部通过不重跑，实际PG仍NOT_RUN；v10 ACTIVE30、无实际local/PG占用。
 
 2026-10-07T06:22:16.726246+00:00：fresh v10 ACTIVE30/04cee clean后接收中心源码及local独审0P1/P2，固定[下一PG输入](../../docs/evidence/x01/center-claim-pg-preparation.json)与[六组验收](../../docs/evidence/x01/center-claim-pg-plan.md)：1专库/现有17连接上界/真实认证claim、不重跑旧27。旧236输入234不变、2已审中心源变化、31SQL缺项0；本段0工程检查/import/PG/供给。新PG test/窄recipe尚未写，NOT_EXECUTABLE/NOT_OPEN，source及原raw冻结。C02 P2增量7070/d2ae已只读批准，未知TMP与全部启动尝试口径保留；client/index与contracts/index仍C02 ACTIVE，未交回不写。
+
+2026-10-07T06:24:42.608Z：v10→v11原子amend新增唯一claim-pg.test.ts；六组已批设计开始实施，复用原fixture/31SQL/OPS14；本段≤20min、最多4普通child各60s、TMP8MiB/raw256KiB/source-meta1MiB，实际PG未开。
