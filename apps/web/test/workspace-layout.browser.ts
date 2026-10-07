@@ -117,7 +117,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
         await expect(dialog).not.toBeVisible(); await expect(action).toBeFocused();
       };
       const probe = (operation: "arm" | "snapshot" | "settle") => page.evaluate(async operation => {
-        const module = await import(/* @vite-ignore */ "/@id/__x00__virtual:arc-material-probe");
+        const path = "/@id/__x00__virtual:arc-material-probe";
+        const module = await import(/* @vite-ignore */ path);
         if (operation !== "snapshot") module[operation](); return module.snapshot();
       }, operation);
       const upload = async (name: string) => {

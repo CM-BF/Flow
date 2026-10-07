@@ -129,7 +129,8 @@ describe("trusted PluginHost lifecycle and authority", () => {
   it("validates real Arc slot contexts and refuses a bridge redirected away from its original pane", async () => {
     expect(() => validateSlot("chat.tab.actions", { kind: "pane", workspaceId: "workspace", paneId: "pane", viewKey: "view" })).not.toThrow();
     expect(() => validateSlot("chat.tab.actions", { kind: "task", taskId: "A" })).toThrow();
-    expect(() => validateContext({ kind: "pane", workspaceId: "workspace", paneId: "pane", viewKey: "view", taskId: "A" })).toThrow();
+    const malformed = { kind: "pane" as const, workspaceId: "workspace", paneId: "pane", viewKey: "view", taskId: "A" };
+    expect(() => validateContext(malformed)).toThrow();
     const s = setup(); s.port.captureLayoutInvocation = () => ({ signal: new AbortController().signal, check() {} });
     s.host.register(definition(context => context.command("test.plugin.open", { parse: args => args,
       run: (_, command) => command.execute("flow.layout.change", { paneId: "other", change: { kind: "resize", share: .5 } }),
