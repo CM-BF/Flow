@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T23:06:04.623851Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "decision": "APPROVED_DOCS",
+  "blockingP1P2": 0,
+  "managementCommit": "127a64f16",
+  "base": "71288a4579d6f2a7625619642b67461b14a362af",
+  "bindings": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 46809,
+      "sha256": "902230dfe2d85d316f86084786fa3bd02268a231e917cace8eb92fbc8e2d6f90"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 116483,
+      "sha256": "f8cf78e0fd27ec006b281a2249665b85dc3fb499aaae36038cc29bc6647460c8"
+    },
+    {
+      "path": "plans/i02-integration/status.md",
+      "bytes": 89405,
+      "sha256": "d48c04606f3a1d91cb2e7f651b22e6a73276cef123e3c482e9568f4ced3e7bef"
+    }
+  ],
+  "verified": [
+    "Old unconsumed admission stop, new selection, actual start and successful fresh/rebind are distinct; complete personal recovery remains unproven.",
+    "Sealed stock removes only documented future growth; no deletion or physical-recovery claim; residual unknowns and historical gates remain."
+  ],
+  "runtimeBoundary": "No test, PG, private installation I/O or new execution by reviewer. Current operator has sole actual personal window."
+}
