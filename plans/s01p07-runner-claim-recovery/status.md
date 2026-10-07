@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:09:49Z |
+| 最近更新 | 2026-10-07T03:20:18Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 首次失败证据与有限首错诊断均已独审通过；原中心事务验收已备新输入，停止和保留规则不变。 |
-| 下一可用交付 | 完成输入选择的小增量复审，在明确新窗口执行原8组中心事务验收。 |
-| 当前阻塞 | ACTIVE: R1未得用例结果，原因仍UNKNOWN；新输入selector待只读复审，PG NOT_OPEN。无本片holder，旧未知目录继续KEEP。 |
+| 当前产出 | 首次失败证据、有限首错诊断和新输入绑定均已独审通过；原8组中心事务验收获得一次新窗口。 |
+| 下一可用交付 | 在R2实际窗口核对输入和资源后执行原8组，交付真实结果与清理事实。 |
+| 当前阻塞 | NONE: R2已由Mika明确OPEN，实际spawn仍需fresh门槛；R1原因UNKNOWN且旧目录KEEP，不影响原片继续受控验证。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原产品SOURCE_REVIEW APPROVED，R1 RESULT_FIDELITY_APPROVED；e3b9诊断SOURCE/DIAGNOSTIC_RESULT_REVIEW_APPROVED；有限selector增量待审，整体VALIDATION_PENDING |
+| Review | [review.md](review.md)：原产品SOURCE_REVIEW APPROVED，R1 RESULT_FIDELITY_APPROVED；e3b9诊断与0a753输入绑定均已独审通过，整体VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -60,4 +60,6 @@ R1后[最小诊断修复](../../docs/evidence/s01p07/inventory-diagnostic-fix.md
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| S01P07-W01 | 2026-10-07T02:53:12.952049Z | OPEN | 验证失败 | R1结束后未有PG用例结果；诊断独审与定向验证已完成，待新输入增量复审和窗口 | checks/S01P07-PG-20261007-R1.json finishedAt；pg-diagnostic-window-request.md |
+| S01P07-W01 | 2026-10-07T02:53:12.952049Z | 2026-10-07T03:20:18Z | 验证失败 | R1未有PG结果；诊断与输入独审完成，收到唯一R2 OPEN后继续实际验证 | R1 finishedAt；本时点fresh接收Mika的S01P07-PG-20261007-R2 OPEN及db_transaction_owner审查转述 |
+
+2026-10-07T03:20:18Z fresh：HEAD=origin `0a753088f477932140b10b288e907243cb265c27` clean，账本available、原claim v2/18 ACTIVE身份一致。Mika转述db_transaction_owner于2026-10-07T03:12:57.210730Z的SOURCE_INPUT_BINDING_REVIEW_APPROVED / 0 P1/P2（63旧绑定/30SQL/24依赖与两literal/inputSHA/预算）。仅归档metadata后固定新clean execution HEAD；R2仍一次原8组/200s/原资源，无新检查或产品修改。X01是否实际local由其owner确认，若活跃完整35,135,488B另叠加floor并确认隔离；不得默认配对。旧manifest/R1原件与qsnu目录不触。
