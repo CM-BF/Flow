@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:20:00.884175+00:00；两处验收前提窄修已审，Recovery与Quick各完成一次隔离准入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:31:54.135822+00:00；提交丢回执回归与原生输入诊断已结束并归还资源 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 核实修正后的提交丢回执监督结果，以及逐消息设置的原生键盘与保稿观察。既有失败原件和已通过恢复项均保留，尚未声称完整功能通过。 |
+| 下一可用交付 | 原owner继续补齐排队丢回执验收；逐消息设置将已确认的原生输入方式应用到原功能检查。使用有限工作段连续处理相关修复，完整功能仍待验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：一条自有专库恢复旅程与一条完全独立零PG设置诊断已配对准入，均待原owner启动；各自浏览器、输出和预算隔离，禁止额外PG或第三浏览器。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：两条验证已完成清理，临时凭据已删除；本组无PG或浏览器占用、无新gate或预约。后续按实际资源交接进入原owner有限工作段。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -165,3 +165,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 [原D01架构图窄屏阅读后继](../../docs/evidence/web-platform/d06-second-actual-20261007/narrow-reading-followup.json)pending/未take：现五图通过限定几何、键盘与来源下钻，不等于42%默认缩放的文字已经可读；不阻本组合主线接收。
 
 本次正常协调：[created-turn一次准入与当前准备](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/current.json)仅索引原owner状态/实际领取，不建第二业务进度。原REQ43的[工具大正文消费研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)与REQ10/12的[文件树重入研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/filetree-reentry-research.json)只补原后继验收，未take/实现/运行。
+
+本次[实际归还与限定结果](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/return.json)保留全部旧FAIL：Recovery建聊后提交丢回执2/2通过，Quick仅C原生输入诊断完成、原六功能组仍未通过。下一[Queue原owner有限工作段](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)采用同runner/单记录，不逐轮短期许可；证据仅引用原件，不复制大清单。

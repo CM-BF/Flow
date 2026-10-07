@@ -1,8 +1,20 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T07:02:45.205309+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T07:31:54.135822+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
+
+**两条验证已清理归还，本组无PG/Chrome占用、无新gate或预约。** [本次实际记录](paired-return-owner-segment-20261007/return.json)与两份原样独审分别接受Recovery所选两项恢复检查通过、Quick原生C输入诊断完成；Quick原六功能组仍未验收。Recovery原owner已封fafc，Quick已封23c035，源与claim不变，停写/FINAL不等release。Recovery临时凭据于07:27:11.260490Z按exact身份[删除](paired-return-owner-segment-20261007/admin-env-deletion-receipt.json)，未读值。
+
+下一[Queue有限工作段](paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)由原owner在已有150s累计余额内自治定位、修复与相关复测，单runner/单结构化记录，结束一次独审；不再每轮短到期gate或转录批准。当前58951已耗/91049余，每轮最多60s含15s清理，旧90k封套不动。仍每次fresh身份/输入/组合资源及实际共享holder，完整清理后即还；本批不创建env/gate；后续原owner在这一次段授权内即时生成内部run输入，并沿固定fixture来源创建0600临时env、按exact身份在段终态删除，不再等待manager逐轮准备。现原owner证据3070345B，距3MiB启动线仅75383B，引用原件不复制大清单，不改8MiB预算或删除历史。
+
+MATURE06-LAZY01由Mika/status_read独占共享实现，父[plan](../../../plans/wpf-mature-06-chat/plan.md)只关联其唯一canonical，不复制进度或take；无PG/Chrome需求。C02接口已main4fe33178，后继Web消费仍沿原scope协调。
+
+个人发布依赖：[原Lead明确边界](paired-return-owner-segment-20261007/publication-dependency.json)保backend af51/v18与Web d629/v3；旧backend缺028/032相关能力，不能将Recovery/Quick源码集成冒Web-only可用。原Lead沿SVC06-05准备backend4fe331兼容接收；Recovery当前App仍patch-v1，Quick fe6组件尚未真实App接线，C02 native/LAZY另属后继。
+
+### 已结束的配对准入及更早历史
+
+以下为此前时点的准备与实际链；其中“当前”“下一”仅指记录当时，不能覆盖页首资源状态。
 
 **Recovery首次建聊丢回执回归已通过所选两项，资源与凭据均已清理归还。** [实际回执](recovery-create-admission-20261007/return.json)保06:49:07.389289–06:49:18.895676Z outerexit0/双EOF，cookieRead+createAckLoss2/2；无PNG、其余旅程NOT_SELECTED，不代表完整feature通过。markedDB两次零连接正常DROP/absence，三个owned组与scratch于06:49:42.424455Z确认absent；[adminenv按exact身份删除](recovery-create-admission-20261007/admin-env-deletion-receipt.json)于06:50:28.462836Z完成，未读值。保守charge11507，新150s已耗36096/余113904，旧90封套不变。原[handoff](recovery-create-admission-20261007/handoff.json)已消费，不继承新窗口；[root独立actual审查](recovery-create-admission-20261007/root-create-ack-actual-review.json)已接受selected2/2与清理，非完整feature。
 
@@ -10,7 +22,7 @@ X01精确06:58:40.476848–06:58:49.193344Z完成6/6并清理；原估计时刻�
 
 本组当前0PG/Chrome、无新gate/预约，下一共享PG给C02 sentinel原owner fresh准入，未报actualRUN；C02旧outerKEEP仍留32MiB+128KiB，不冒字节已删。Recovery仅等待parent生命周期窄审/原owner同scope源修，不创建Queue或重跑gate；firstCREATE/full7/choice历史限定PASS不回滚。本次结果与功能进度仍以原owner唯一status为准。
 
-**当前两条一次准入均尚未运行。** Recovery source344f/head7c7ee的parent退休与exact失败计费已[root独审](recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json)，32受控检查/noEmit通过仅局部证据；[created-turn retry](recovery-quick-paired-admission-20261007/recovery-handoff.json)仍原两组，60s含15s清理，新段47205/余102795。Gate明确携带原b475预算false与513034失败清理审查；旧整体FAIL不改，不拿早预算回增，不串Queue。
+**历史配对准入时两条均尚未运行，现已消费并归还。** Recovery source344f/head7c7ee的parent退休与exact失败计费已[root独审](recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json)，32受控检查/noEmit通过仅局部证据；[created-turn retry](recovery-quick-paired-admission-20261007/recovery-handoff.json)仍原两组，60s含15s清理，新段47205/余102795。Gate明确携带原b475预算false与513034失败清理审查；旧整体FAIL不改，不拿早预算回增，不串Queue。
 
 Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不一致超时，整体仍[FAILED/0功能组](recovery-quick-paired-admission-20261007/quick-typeahead1-actual-fix-review.json)，11755计费后新35077/余54923。source d755同textContent基线窄修已审，head2c458双端clean；[下一一次45s诊断](recovery-quick-paired-admission-20261007/quick-handoff.json)含15s清理，parent8afcee仅fixed失败carry，经[manager exact routine审查](recovery-quick-paired-admission-20261007/quick-routine-binding-review.json)接受，worker53d6未变。仅诊断，不能冒原六组通过。
 
@@ -20,7 +32,7 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 
 **已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。该运行的holder/gate已消费；S01后续亦实际归还，此段仅保历史通过范围，当前调度见页首。
 
-[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，初始准备时未运行；native1随后实际失败并清理，当前native2状态以页首为准；既有新90s授权不等具体窗口。
+[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源与完整cleanup不省；当前规则不再逐轮manager短gate批准。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，初始准备时未运行；native1随后实际失败并清理，当前native2状态以页首为准；既有新90s授权不等具体窗口。
 
 ### 已结束的前一运行段
 

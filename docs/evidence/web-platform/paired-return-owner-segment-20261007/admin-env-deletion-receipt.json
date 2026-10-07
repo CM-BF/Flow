@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T07:27:11.260490+00:00",
+  "state": "EXACT_ADMIN_ENV_DELETED",
+  "path": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-admin.env",
+  "expectedIdentity": {
+    "device": 16777234,
+    "inode": 123617443,
+    "uid": 501,
+    "mode": "0600"
+  },
+  "matchedLstatAndNoFollowFstat": true,
+  "contentsRead": false,
+  "valueRecorded": false,
+  "postLstat": "ENOENT",
+  "terminal": "/private/tmp/recovery-created-turn-retry-parent-pbl1i4ei/actual-exit.json",
+  "postCleanup": "/private/tmp/recovery-created-turn-retry-parent-pbl1i4ei/post-cleanup-observation.json",
+  "rootReview": {
+    "path": "/private/tmp/root-recovery-created-turn-344-actual-review.json",
+    "sha256": "3a8d39d0996ce4f950017e671bd83bdbfaecfa6009d39af69a32688b2157e427"
+  },
+  "otherFilesRemoved": [],
+  "metadataReadCorrection": "OriginalouterusesactualExitCode; firstboundedreadkeymismatchbeforeunlink, correctedtoactualschema; no runtime repeated."
+}

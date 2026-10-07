@@ -151,7 +151,7 @@ D01既有U14/REQ16/27/37的[时间信息层级后继](../../docs/evidence/web-pl
 
 当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。普通无共享端点/安装/全构建/PG/Chrome/个人服务的局部检查按最新明确规则每队最多1段、全队最多3段自主运行；项目10/本工具cap保持。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
 
-最新GO/Lead规则已固定于[普通专库/浏览器有限工作段](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)：已授权0provider、完全自有PG/Chrome且不触个人服务的普通验证可由co-lead分配新有限段。旧90秒/60秒是已封历史段，不是feature终身上限；保所有失败/原预算，不追溯加时或转移未用旧额。合法scope内连续定位→修复→相关复测，通过后一次独审；只有身份/权限/资源所有权/停止清理/验收语义变化才按风险复审，不逐命令造同一审批链。每次实际PG/shared仍唯一holder，独立0PGbrowser依现并行合同，fresh输入/资源组合/唯一gate与实际cleanup不可省。复用原runner及owner单份结构化segment记录，不增第二调度状态。
+最新GO/Lead规则已固定于[普通专库/浏览器有限工作段](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)：已授权0provider、完全自有PG/Chrome且不触个人服务的普通验证可由co-lead分配新有限段。旧90秒/60秒是已封历史段，不是feature终身上限；保所有失败/原预算，不追溯加时或转移未用旧额。合法scope内连续定位→修复→相关复测，通过后一次独审；只有身份/权限/资源所有权/停止清理/验收语义变化才按风险复审，不逐命令造同一审批链。每次实际PG/shared仍唯一holder，独立0PGbrowser依现并行合同，fresh输入/资源组合及实际cleanup不可省；既有runner gate仅作当轮输入校验，不再要求manager逐轮发短到期许可或转录结果批准。复用原runner及owner单份结构化segment记录，不增第二调度状态。
 
 原MATURE06 Recovery新段150000ms actual累计，每run最多60000含15000cleanup；历史5FAIL/64134.08675和旧90000封套不改，parent防御240000只是旧90k+新150k，不能把旧余量加给新段。MATURE02 Quick新段90000ms actual累计，每run最多45000含15000cleanup；原3FAIL/30625及旧60k保持，初始diagnostic/full语义delta仍需一次独审。两项source/权限/原资源界限及完整验收保持；当前初始执行与实时holder看[唯一current](../../docs/evidence/web-platform/resource-window-current.json)。
 
@@ -436,3 +436,7 @@ GO指出390默认42%使标题/说明/连线有效字号仅约7.56/5.46/5.88px（
 已有CHAT06/C02消费后继：[公开stream v2接缝](../../docs/evidence/web-platform/quick-b1-actual-20261007/c02-public-stream-consumer-handoff.json)明确先固定公共合同与入口，再协调原Recovery21之外messages映射的精确新scope；不把Provider当renderer或把reasoning混作正文，不造第二store。当前source/claim均未扩大。
 
 D06本片已[主线与资产发布收口并释放](../../docs/evidence/web-platform/d06-main-closeout-20261007/current.json)；默认阅读模式研究只挂既有REQ39，尚未take/实施。Quick原b1失败保留，b2仅TMP有界观察准备；C02 v2消费接缝需固定合同及精确scope交权，不派未授权UI写入。
+
+本次GO效率纠偏准确转述已[落实为原owner有限工作段](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)：同身份、权限、资源所有权、清理及验收条件内连续定位→修复→相关复测，结束一次独审；以[当前main正式规则](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/formal-rule-source.json)为来源。旧预算/失败保持，原owner唯一结构化运行记录；新增输出超过现有限额才一次说明真实预算变化，不通过复制准备包消耗留存空间。
+
+个人发布须沿[原Lead依赖核对](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/publication-dependency.json)：backend af51/v18缺新browser-session/message-settings/028/032，Web仍d629/v3。原SVC06-05准备backend4fe331与保留artifact兼容后，才评估新的Recovery实际App；Quick fe6未App接线、C02 native/LAZY未被当前Recovery消费各自分列，不用main事实替代部署可用性。

@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-07T07:31:54.135822+00:00",
+  "state": "OWNER_FINITE_SEGMENT_HANDOFF_NOT_RUNTIME_RESERVATION",
+  "task": "WPF-RECOVERY01",
+  "parentTodo": "WPF-MATURE-06-04/06",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "checkpoint": "fafc3334b8e99b3a80ccac82e472c8bf3fa61bd7",
+  "claim": {
+    "id": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21,
+    "newTake": false
+  },
+  "nextSelection": "queue-ack-loss",
+  "required": [
+    "cookieRead",
+    "queueAckLoss"
+  ],
+  "authority": "Existing authorized150s finite segment, original root assignment and current main bounded-local-iteration; GO correction relayed by root. Same acceptance/safety, no new feature or permit cycle.",
+  "budget": {
+    "totalActualMs": 150000,
+    "spentMs": 58951,
+    "remainingMs": 91049,
+    "perAttemptMaximumMs": 60000,
+    "cleanupIncludedMs": 15000,
+    "charge": "ceil(max actual outer, late, serialized parent))",
+    "old90kSpentMs": 64134.08675,
+    "oldEnvelopeClosed": true,
+    "oldCreditTransferred": false,
+    "parentDefensiveTotalMs": 240000,
+    "tmpBytes": 67108864,
+    "retainedBytes": 8388608,
+    "singleReserveBytes": 1073741824,
+    "combinedFloorBytes": 4053008384,
+    "oldC02KeepBytes": 33685504
+  },
+  "evidence": {
+    "existingBytes": 3070345,
+    "startupCeilingBytes": 3145728,
+    "startupHeadroomBytes": 75383,
+    "perRunRetainReserveBytes": 5242880,
+    "policy": "Reference immutable prior originals and existing manifests; one owner structured segment record. Do not duplicate large manifests/raw or delete old failures. No threshold increase in this handoff. If further iteration cannot meet current startup headroom, stop for one explicit justified output-budget boundary adjustment, not repeated ordinary-command approval."
+  },
+  "executionMethod": [
+    "Original owner may continuously locate, fix within exact scope, and run related checks under unchanged identity/permissions/resources/cleanup/acceptance; one independent review at completion.",
+    "Reuse existing runner and one structured owner segment record; immutable per-attempt outputs may be referenced without duplicating inventories. No manager-issued short expiry permits or result transcription approval each round.",
+    "At each actual start confirm current own claim/head/input/runtime identities, unique actual PG/shared holder and combined resource floor. Do not treat source readiness or time elapsed as holder handback.",
+    "Owner generates unique per-attempt internal gate/input records within this single finite-segment authorization, verifies current source/identity/resources and reuses original runner guards. No manager short permit, env preparation or result-transcription approval each round; no new gate/runtime generated in this management handoff.",
+    "Explicit cleanup-responsibility handoff: execution owner creates ephemeral adminenv from the already-authorized fixed ef458 fixture test-source only, with unique namespace/owner-only0600/exactdev-inode-uid-mode, never logs or persists content; execution owner deletes exactenv at segment terminal and records receipt. No personal-service/config access. Consumed pairedenv/gates cannot be reused.",
+    "Each termination records selected/pass/fail, actual exit/elapsed/cumulative, primary failure, owned DB/process/ports/scratch cleanup and raw pointers. Return actual holder immediately after confirmed cleanup.",
+    "Stop for unknown cleanup, exhausted budget, changed scope/permissions/lifecycle/acceptance or new shared-holder conflict; targeted review only for substantive boundary changes. No provider/personal-service/install/fullbuild."
+  ],
+  "singleOwnerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
+  "sourceReview": "../recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json",
+  "latestActual": "return.json",
+  "rule": "formal-rule-source.json",
+  "gate": null,
+  "adminEnv": null,
+  "runtimeReservation": false,
+  "credentialResponsibility": {
+    "from": "d01_owner",
+    "to": "workspace_panels_owner",
+    "authority": "Root explicit one-time segment responsibility handoff in current management task",
+    "scope": "Only fixed approved fixture admin source, unique ephemeral owner-only input and exact cleanup; no permission/lifecycle/acceptance changes to runner",
+    "pastCredential": "Already exact-deleted; old gate/env never reused"
+  }
+}

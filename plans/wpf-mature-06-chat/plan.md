@@ -127,7 +127,7 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 
 ### 已授权普通验证的有限连续工作段
 
-原06-04/06沿[正式规则](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)和[root有限段授权](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-segment-authorization.json)继续；不是扩功能或放宽断言。历史90k五FAIL/late64134.08675原件永久保留并关闭新增消费，新150k只按该段真实运行累计、每次最多60k含15kcleanup，未用旧余量不转入。首次建议full原7组；相同安全/验收边界下由原owner连续修复与相关复测，pass后一次独审，不重复旧50/types/119等未受影响绿检查。每次真实专库/Chrome仍需明确holder、fresh输入/资源与唯一gate、完整owned清理；unknown/预算/越scope须停止，不自动无限重试，不触provider或个人服务。
+原06-04/06沿[正式规则](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)和[root有限段授权](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-segment-authorization.json)继续；不是扩功能或放宽断言。历史90k五FAIL/late64134.08675原件永久保留并关闭新增消费，新150k只按该段真实运行累计、每次最多60k含15kcleanup，未用旧余量不转入。首次建议full原7组；相同安全/验收边界下由原owner连续修复与相关复测，pass后一次独审，不重复旧50/types/119等未受影响绿检查。每次真实专库/Chrome仍需明确holder、fresh输入/资源与完整owned清理；原runner gate只是输入校验，不逐轮索manager短期许可或转录批准；unknown/预算/越scope须停止，不自动无限重试，不触provider或个人服务。
 
 [0141最小源码审查](../../docs/evidence/web-platform/continuous-validation-segments-20261007/recovery-source-review.json)仅修自有fixture的合法过期时间对及授权防御总额；生产auth/schema未改，原7组及生命周期不变。是否通过仍以实际结果为准。
 
@@ -142,4 +142,8 @@ GO经root新转述的同REQ43/C02后继要求（非用户逐字、未实施）�
 
 同REQ43/C02惰性reasoning补[固定接口研究](../../docs/evidence/web-platform/quick-typeahead-admission-20261007/lazy-reasoning-research.json)：默认折叠并不等网络正文零字节；展开前只授权metadata与普通text，展开才读body，保final/cursor与历史晚展开、v1兼容和累计cache界限。正文解码/协议协商沿原共享owner与官方Thread，root研究为只读设计输入，未take/实现/运行；不把当前公开v2已集成误写为惰性消费完成。
 
-Lazy reasoning派工边界（本次root/Mika准确转述）：当前只有WPF-MATURE-06-03/REQ43后继，没有本组writer/claim或独立子task；父三件套仍manager唯一维护。共享惰性读取子片由Mika指定唯一ID/owner并fresh独立树与exact共享+测试范围，先协调CHAT05P02出口；收到固定canonical后本父只引用。C02树6c836的`docs/evidence/mature02c02/lazy-reasoning-interface-candidate.md`仅候选、无实现/运行/claim。旧CHAT06I01已main且旧写权关闭，Recovery原21仍panels；未来Web Thread disclosure须共享输入固定及相关Recovery交权后另fresh take，不新大task/重复store。
+Lazy reasoning共享子片现由[MATURE06-LAZY01唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md)承接（Mika/status_read，codex/lazy-reasoning-reads），接口见[canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/interface.md)。根转Mika首canonical9ef8e36f与8436ad9e v2/11scope已明确，协议patch-select-v1；六core/三tests/两metadata不取任何Web或两index。Execution Lead负责实际dashboard登记，父计划只关联不复制TODO/进度，也不声称已登记加载。本组没有该共享片writer；Recovery原21仍panels，未来Web Thread消费在固定接口与scope交权后另fresh take，旧CHAT06I01写权不复开。
+
+原06-04/06下一[Queue有限段交接](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)已采用GO纠偏：150s段实际58951/余91049，原owner同边界连续修复相关复测、单runner/单结构化记录、结束一次独审。当前无运行/预约，普通每轮不再短gate批准。留存启动余量75383B，只引用旧原件；超过既有预算须一次解释真实变化，旧raw不删。
+
+上述有限段已一次明确移交内部run输入与临时adminenv责任给原owner：固定ef458测试来源、唯一namespace、0600与exact身份，执行owner段终态精确删除并保存回执，值不输出；不再等manager逐轮发gate/准备env/转录结果。输入、权限、清理或验收实质变化仍窄审，已消费旧gate/env不得复用。

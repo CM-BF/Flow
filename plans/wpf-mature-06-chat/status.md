@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:08:31.455385+00:00；原七组通过保持，完整源码审查两项待修，由原owner修复验证 |
+| 最近更新 | 2026-10-07T07:31:54.135822+00:00；中心选择与两处提交丢回执回归已限定通过，后续补排队 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +14,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 原七组真实恢复旅程通过且清理完成；完整源码审查另发现中心选择表单被后台读关闭、慢存储超时后Steer卡在发送两处缺口，修复源码与定向局部检查已获接受，新增浏览器回归待验，完整功能尚未通过。 |
-| 下一可用交付 | 收口两处定向修复与必要回归，再核完整恢复剩余覆盖；列表标题、时间与空正文区分另归原视觉后继，不回滚原七组通过。 |
+| 当前产出 | 原七组真实恢复旅程、中心选择表单回归与两处提交丢回执检查已限定通过；Steer慢存储修复有定向受控证据。旧失败保留，完整恢复功能尚未通过。 |
+| 下一可用交付 | 原owner在既有有限工作段补齐排队丢回执验收；同边界连续定位、修复及相关复测后一次独审，列表可读性另归原视觉后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -30,7 +30,7 @@
 | WPF-MATURE-06-01 | in-progress | Web co-lead | 逐条引用stream/activity/queue/readability固定证据与限制，模块/fixture/真实provider分开，不重复勾整体Done。 |
 | WPF-MATURE-06-02 | in-progress | Web co-lead | admission仅快照非许可，POST重验、原key unknown、receiptRevision更新、received不冒模型遵从；模块和App接线分别验收。 |
 | WPF-MATURE-06-03 | in-progress | Web co-lead | 成功回复默认入口收敛，error/unknown/decision常显；390须区分侧栏开/关场景，自然状态/Details按需绑定普通hi、stream/tool、queue等待、断线unknown四旅程；ACTIVITYREAD仅展开活动区，queue/stream/react与全组合仍开放；正文规则不冒工程Verified，产物版本/source未绑定须限定或unknown，关联ENG-001后继；[细目](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。新增[累计活动缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)仅文档限定批准/产品未实施未测量。  U18恢复列表可读性按[既有计划](plan.md)待后继；不改原full7范围。 |
-| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels RECOVERY01已新21scope COMMITTED并正式派工；个人服务不动/0provider，完整验收见plan。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E，未第五跑。 |
+| WPF-MATURE-06-04 | in-progress | Web co-lead | 下一完整旅程优先：有效期刷新/重开同中心会话、草稿及未决原identity；离线/认证过期/拒绝可行动提示，重认证不自动重投，logout≠cancel；真实HTTP+流、多tab/中心/撤销/重启/lostACK，auth与发送恢复独立Module。中心native_center_owner035119fd v1九scope已COMMITTED；panels RECOVERY01已新21scope COMMITTED并正式派工；个人服务不动/0provider，完整验收见plan。 新增[真实依赖/精确选择要求](../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json)，局部通过不代替完整E2E；该准备时点尚未第五跑为历史，后续实际以owner唯一status为准。 |
 | WPF-MATURE-06-05 | pending | Web co-lead | 后台更新不抢用户历史滚动；voice能力显式，不可用/失败可回文本并保草稿；[GO官方adapter候选](../../docs/evidence/web-platform/voice-official-adapter-go-research.json)与[root stop/cancel研究](../../docs/evidence/web-platform/voice-stop-cancel-core0322-root.json)仅只读后继，明确停止等待final/取消丢弃/Flow lease；无mic/自动模型调用。 |
 | WPF-MATURE-06-06 | pending | Web co-lead | 实际App fixture覆盖失败/恢复/双pane；明确预算后单次真实provider观察，至少两次正文增长才称增量，没有partial如实记录不补query。 |
 
@@ -68,3 +68,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
 
 2026-10-07T04:13:44.010Z：SVC06实际专库与服务组清理已归还，解除此前共享PG等待；本任务仍须自身fresh准入完成剩余真实浏览器验收，不继承D06窗口。来源见[中央实际回执](../../docs/evidence/web-platform/checkpoint-0413-20261007/incoming.json)。
+
+共享惰性reasoning实现仅关联[MATURE06-LAZY01唯一source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md)，Mika/status_read原11scope；本父不复制其TODO或运行进度，登记/加载由Execution Lead确认。

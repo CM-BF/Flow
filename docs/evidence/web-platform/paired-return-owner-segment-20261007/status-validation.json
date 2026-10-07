@@ -1,0 +1,52 @@
+[
+  {
+    "path": "plans/web-platform/status.md",
+    "errors": [],
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。",
+      "next": "原owner继续补齐排队丢回执验收；逐消息设置将已确认的原生输入方式应用到原功能检查。使用有限工作段连续处理相关修复，完整功能仍待验收。",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "todos": 36
+  },
+  {
+    "path": "plans/wpf-mature-06-chat/status.md",
+    "errors": [],
+    "human": {
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "原七组真实恢复旅程、中心选择表单回归与两处提交丢回执检查已限定通过；Steer慢存储修复有定向受控证据。旧失败保留，完整恢复功能尚未通过。",
+      "next": "原owner在既有有限工作段补齐排队丢回执验收；同边界连续定位、修复及相关复测后一次独审，列表可读性另归原视觉后继。",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "todos": 6
+  }
+]
