@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:40:15.916715Z |
+| 最近更新 | 2026-10-07T10:44:07.666894Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -18,7 +18,7 @@
 | Review | APPROVED_LIMITED_ZERO_MODEL_DELTA（10:37:40Z）；真实首段仅结果忠实性批准，非规划成功 |
 | 实现目标 | ff266d1ddc3adf3f89012095b4ff446367c3fb7e |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | main650d230d已接d5e首段失败证据与限定结果独审；环境与289产品来源仍按固定记录。ff266零模型修复已审待Lead窄接，不将候选当实际运行。 |
+| 已集成main状态 | main/origin2f32f6b27fc79151cd1e9d26e7fb5af70a791505已受控接ff266/2841零模型修复及I02独审；650d已接d5e真实失败证据。289产品仍f5a，未执行新候选。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
@@ -28,7 +28,7 @@
 | 当前产出 | 私有声明与失败记录修复已通过独立审查；下一首段已绑定新源码与相同资源边界。 |
 | 下一可用交付 | 提交固定首段候选与一次材料，待实际窗口及fresh准入后运行。 |
 | 当前阻塞 | ACTIVE: 新增一次规划预算已授，等待实际资源窗口；原采样首因仍未知，未启动第二次请求。 |
-| 需用户决定 | NONE（新预算已明确；实际窗口由Execution Lead协调） |
+| 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -100,3 +100,5 @@
 
 
 2026-10-07T10:41:31.796604Z：GO新授权 `O16-GO-PLANNER-R2-20261007` 已由Lead明确转达，新增仅1planner/同模型4turn/SDK$.20/query90s；[一次材料](../../docs/evidence/o16/native-plan-20261007-r2/authorization-preparation.json)已耐久，尚无operator reservation/SDK入口/PG分配。当前仅等Mika X01→SVC r2后Lead实际准入，个人/Web/X01优先；旧SDK1费用UNKNOWN与资源KEEP不变。
+
+2026-10-07T10:44:07.666894Z：Lead确认ff266/2841修复已main2f32，未重测。候选中文经纯config导出与JSON.parse逐值相等（原为合法ASCII转义）；仅改UTF-8可读表示，source/env/permit字节不变。新预算已授，实际SVC r2窗口仍运行，O16未预占/启动。
