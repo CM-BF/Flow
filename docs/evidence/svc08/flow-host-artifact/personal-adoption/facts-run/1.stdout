@@ -1,0 +1,13 @@
+✔ live Date and identical persisted ISO agree without changing the original facts (2.467125ms)
+✔ a different maintenance time still refuses preservation (0.242542ms)
+✔ null agrees only with null and does not alias a timestamp or missing value (0.743792ms)
+✔ invalid or noncanonical time representations fail closed (1.011125ms)
+✔ normalization preserves every other maintenance field and unknown keys for strict comparison (0.956375ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.673625

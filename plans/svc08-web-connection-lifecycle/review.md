@@ -88,3 +88,9 @@ Review target commit: d95c249dc6b48848128ca068ea93dfda3494e812；delivery f00021
 ## 2026-10-07T06:06:44.080Z：修复后r2实际结果待独立审查
 
 d95身份修复批准保持；本轮migrate成功、request原FAIL，不扩大准备批准。15原始副本+16私有原件身份与7固定源见[manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/manifest.json)。Date/string表示差异只读定位，不把maintenance=false解释为实际维护状态变化；新修复尚未实施/验证。Web替换与post未调用，当前不再个人读取或操作。
+
+## 2026-10-07T06:09:58.171Z：Date持久表示三源待唯一复审
+
+Review target commit: 472a2a2e37615838779c91a869165f4ed4967c08。
+
+仅事实提取与5新直接case，原保护比较不改。139ms/560B/2组清理、语法0，见[facts-delta-manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-delta-manifest.json)。原r2结果非通过；只读恢复方案不等于新运行入口批准，不再执行migrate。

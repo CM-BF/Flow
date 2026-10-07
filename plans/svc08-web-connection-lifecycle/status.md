@@ -6,23 +6,23 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T06:06:44.080Z |
+| 更新时间 | 2026-10-07T06:09:58.171Z |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 固定宿主产物已精确迁入；后续保留检查停止了替换，网页及后台服务未被本次操作重启。 |
-| 下一可用交付 | 修正已定位的维护时间表示比较，验证后用新窗口完成网页宿主替换。 |
-| 当前阻塞 | ACTIVE: 请求生成因维护时间的保存表示与内存表示不一致而停止；原值相同，待窄修及复审。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 宿主产物已迁入；维护时间表示已窄修并通过纯检查，网页替换尚未执行。 |
+| 下一可用交付 | 独立复审后，从成功迁入检查点继续生成新请求，完成网页宿主采用。 |
+| 当前阻塞 | ACTIVE: 等待时间表示修复独审和仅恢复请求的固定入口；不重复已成功迁入。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | runtime身份修复 d95c249dc6b48848128ca068ea93dfda3494e812，clean交付f000217eeb2d397c233cf5a30b6c99c905a4e7a7；本次只归档独审，四产品仍bad019 |
+| Head | Date持久表示修复472a2a2e37615838779c91a869165f4ed4967c08；r2结果0f8bf516781eeabf86d42c663cbba6a55ef5786c原件保留 |
 | 工作树dirty状态 | d95源固定；本次仅attempt-02原件/分析/status收口，提交后核clean |
-| 工作分支状态 | in-progress；r2迁入成功、request FAIL保留，replace/post未调用；诊断只用已存原件与固定源码 |
+| 工作分支状态 | in-progress；新5纯例/语法通过待独审，r2迁入成功/request FAIL，replace/post未调用 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
@@ -154,3 +154,7 @@ Lead已明确S01于06:00:50.057Z最后连接关闭并归还，当前本SVC08唯�
 migrate于06:04:16.548Z正常完成，18,379ms/exit0/absent双EOF；request于06:04:26.133Z ERR_ASSERTION，624ms/exit1/absent双EOF。监督段和19,003ms不是整体壁钟。只有maintenance比较false，其余10保护true，已存业务摘要UNCHANGED；两份持久runner JSON完全相同。固定facts直接返回pg timestamptz Date，已存before为string，当前isDeepStrictEqual把表示差异拒绝。说明基于固定源码/原件，未新增运行复现。
 
 replace-intent/request/replace-outer/post均不存在，CLI replace=0；0后台/网页停止、0业务DML/provider/tab。migration checkpoint先行，c7b迁入保留；原private r2全部16文件86,530B、stage及原产物KEEP，原失败attempt-01保持。06:06:08.986Z只stat原两lock均absent，无新PG/HTTP/进程采样；实际共享窗已报告归还。见[原件与诊断](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/analysis.json)，后继不复用r2、不自动重试/回滚。
+
+## 2026-10-07T06:09:58.171Z：持久时间表示修复与本队local归还
+
+固定472a三源将唯一事实提取边界的maintenance_updated_at转换为严格持久ISO/null，其它字段/比较不放宽。5新pure checks和caller语法通过，实际2026-10-07T06:08:50.797494+00:00→2026-10-07T06:08:50.937341+00:00，139ms/560B/两组absent双EOF，checkpoint后exact tiny目录已清，本队local已归还。原9/6不重跑、0个人/PG/HTTP/provider。见[delta](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-delta-manifest.json)。r2成功迁入后续只准从明确检查点恢复request，当前入口仍是已消费r2，禁止直接重试；新恢复接缝尚待固定。
