@@ -1,6 +1,8 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T12:51:47.573Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+**交Original唯一主线接收：Plugin模块已审ready。** [精确接收请求](plugin-module-main-ready-20261007/request.json)指向原owner最终 `8b31599feb392fc0013c754023058f807860caec`、实现 `a952ae81fefd3a82c9dfe42067048bcf2702d1c3` 与[五literal清单](plugin-module-main-ready-20261007/owner-main-intake.json)。六组浏览器和双390折叠B图已获限定独审；7scope STOP保留，main尚未接收，不重跑。只接这五文件与必要证据，不用旧base覆盖moving main其它文件；真实App/session、可读runner候选及config/grants写仍各自后继。
+
+更新：2026-10-07T12:58:05.292Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 **MSG03 已领取、登记并实施：** 原MATURE02/TODO11沿[常规source operator规则](message-settings-app-self-provision-20261007/rule-intake.json)，panels在固定c130新独立树完成369源物化及[7e3f v1 exact18原子领取](message-settings-app-self-provision-20261007/msg03-receipt.json)。材料失败恢复所需的单一adapter接缝已于12:32:04.114Z[合法amend v2 exact19](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)，只追加 `plugin-integration/react.tsx`，原18保留；[D05正式live回执](release-main-registry-close-20261007/msg03-live-receipt.json)与root12:18:58观察确认唯一sourceCurrent、parent MATURE02及claim匹配；旧登记等待已解除。[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)是唯一进度源。局部结果及固定源码审见[本批索引](svc1230-return-plugin-removal-pair-20261007/current.json)；原失败保留，按已授有限段继续，不再申请逐片供给。
 
@@ -12,9 +14,13 @@
 
 **原MATURE02 TODO08/11个人实际交付：** [现配置leaf/权属与激活依赖](svc1230-return-plugin-removal-pair-20261007/personal-turn-settings-next.json)明确：MSG03和新backend不等于个人有可用model/thinking/fast目录。parent唯一owner为Mika/chatui01_owner，Web consumer仍panels；preview配置与原Claude CORE leaf当前无active writer，需沿原profile/manifest/发布体系fresh领取。新opt-in profile/runner保旧session/history，当前SVC固定维护不扩配置；Claude先0模型目录验证，provider后验独立有限预算。
 
+**原配置激活的具体owner边界：** [两runner槽与资格供给](plugin-module-main-ready-20261007/activation-owner-boundary.json)要求保旧identity/session，新增opt-in槽按精确protocol/runner/digest/choices就绪。`apps/server/src/runners.ts` 当前由X01/Mika/architecture_read claim6ddedc73 v28持有，资格LIMIT前差量应沿原writer；preview/environment/maintenance-host/cli新写需Original正常领取，不沿历史released权。当前SVC剩余固定维护不扩。下次fresh保守完整线6,914,834,432B，保留旧KEEP与一份reserve，当前无新PG/Chrome准入。
+
+**外组普通段与接收来源：** [最新唯一交接](plugin-module-main-ready-20261007/external-next-ordinary.json)记录S01实际九组/九TMP归还，Mika普通段交process-host而尚无actualSTART；不以本组空闲推断全项目空闲。REMOVAL请Original读最终5f78的完整main-intake（含helper1424/JSON依赖），与CLIENT f86按既有合同组合，旧五行不是完整support闭包；没有新PG请求。
+
 ## 当前窗口与用户交付
 
-**当前唯一资源交接：** [本批实际与归还](svc1230-return-plugin-removal-pair-20261007/current.json)记录SVC1230部分完成后归还、REMOVAL R2完整归还、Plugin首红及b2六组通过/两PNG完整归还。当前无PG/Chrome/local holder或NEXT；限定实际/视觉独审已接受，不占运行窗。[唯一资源当前源](resource-window-current.json)按事件时序更新，原KEEP保留，未用额度不转新信用。MSG03 9fc源码/局部已审，真实App仍待准备与实际；各owner唯一状态是功能进度源。
+**当前唯一资源交接：** [本批实际与归还](svc1230-return-plugin-removal-pair-20261007/current.json)记录SVC1230部分完成后归还、REMOVAL R2完整归还、Plugin首红及b2六组通过/两PNG完整归还。当前本组无PG/Chrome/local holder或NEXT；限定实际/视觉独审已接受，不占运行窗。[唯一资源当前源](resource-window-current.json)按事件时序更新，原KEEP保留，未用额度不转新信用。MSG03 9fc源码/局部已审，真实App仍待准备与实际；各owner唯一状态是功能进度源。
 
 **历史交接链（不用于当前派工）：** [当时入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；随后X01 VERSION LIFECYCLE已实际11:34:20.882389启动、11:34:41.853508 exact归还；[实际原件](x01-version-return-20261007/current.json)区分delivery与收尾复核，彼时无新NEXT，当前以本节actual行和resource-current为准。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01 c2修复及3场景局部实际已获[集中接受](x01-version-return-20261007/release-c2-delta-review.json)，native固定边界已接受；最终1e5f/c2绑定后已执行一次，[实际失败/清理](x01-version-return-20261007/release-c2-failed-cleanup-accounting.json)在Node前被sandbox语法拒绝，0Chrome/fixture未入、410ms封账并11:44:37.704120归还，不自动重跑。插件direct-only新r4调用器已固定61a7并获[源码审](release-c3-actual-admission-20261007/root-plugin-direct-r4-source-review.json)，[20s/5cleanup普通local](release-c3-actual-admission-20261007/plugin-r4-local-segment.json)已实际outer0/15exactPASS并12:08:23.129744Z[完整归还](release-c3-actual-admission-20261007/plugin-r4-cleanup-accounting.json)，882ms封账、[独立结果审已通过](message-settings-app-self-provision-20261007/plugin-r4-actual-review.json)；旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
 

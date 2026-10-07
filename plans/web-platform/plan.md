@@ -558,3 +558,6 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 
 
 原MATURE02 TODO08/11新增明确个人可用交付依赖见[当前leaf与owner核对](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/personal-turn-settings-next.json)：MSG03真实接线和backend部署不等于可信turnSettings目录已发布。Mika协调原CORE/preview配置/发布leaf与唯一parent chatui01_owner，panels只写MSG03自身下一交付；本管理六scope不含parent，不代写。新opt-in身份保旧session/history，当前SVC06维护不扩；Claude先0模型配置→目录→Web/TUI，provider后验独立小段，不借R02/O16，不新增大task或第二发布体系。
+
+
+[Plugin模块精确main交接](../../docs/evidence/web-platform/plugin-module-main-ready-20261007/request.json)沿原X01-06，原owner8b315/a952仅五产品/test范围、模块六组和双折叠B图已审，main未接不释放七scope；既有实际App与可读host候选仍另接，不重跑模块。原MATURE02个人目录激活的[两槽与leaf权属](../../docs/evidence/web-platform/plugin-module-main-ready-20261007/activation-owner-boundary.json)已路由Mika：保旧身份/会话，opt-in受信choices；runners.ts v28原writer处理LIMIT前资格，preview家族正常新take，当前SVC维护不扩。

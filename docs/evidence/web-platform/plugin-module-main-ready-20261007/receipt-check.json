@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-10-07T12:58:05.292Z",
+  "head": "8b31599feb392fc0013c754023058f807860caec",
+  "dirty": false,
+  "ownerMainIntake": {
+    "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/main-intake.json",
+    "bytes": 4199,
+    "sha256": "d8c0c5a4135f34e12b8c3e5a773eeb3eb56aec62bf0e64928667f5d11c7bd7dc"
+  },
+  "checks": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21512,
+      "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+      "match": true
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "match": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 39142,
+      "sha256": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+      "match": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 7258,
+      "sha256": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+      "match": true
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab",
+      "match": true
+    }
+  ],
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "review": "../svc1230-return-plugin-removal-pair-20261007/plugin-b2-actual-visual-root-review.json",
+  "boundary": "Only exact final main-intake and five current byte hashes verified; no rerun or new product review"
+}

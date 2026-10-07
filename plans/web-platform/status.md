@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:54:19.409Z；Plugin六组与限定双图已获实际独审、完整归还；MSG03源码/local已封存，真实App与个人可用目录仍下一交付 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:58:05.292Z；Plugin最终8b315五源a952已核main-intake，主线接收待Original；MSG03原19scope继续mounted材料故障准备，无新运行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 插件模块浏览器六组复验通过，两390px折叠B截图已获限定目视接受；真实聊天设置的完整恢复闭环和主题验收源码已修复，11项定向及受影响类型检查获独审接受。 |
-| 下一可用交付 | Plugin原owner归档限定实际/视觉审并封存；MSG03已078797封存9fc源码/局部，准备真实App验收。个人可用目录另需原MATURE02可信turnSettings配置/发布，不能以接线和backend部署代替。 |
+| 当前产出 | 插件运行时模块已完成限定浏览器与双图验收，精确五文件主线清单已交接。真实聊天设置正在补齐mounted材料等待、失败和取消的验收入口。 |
+| 下一可用交付 | Original受控接收Plugin精确五文件，随后原owner收口释放；MSG03固定mounted差量/生命周期后集中审与有限实际窗口。个人可用设置目录仍由原MATURE02配置/发布owner推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC1230、REMOVAL R2、Plugin b2均按实际归还，当前无PG/Chrome/local holder或NEXT。Plugin两轮累计19951/60000ms封存，旧FAIL保留；MSG03局部36212/60000ms已归还。完整fresh线至少6895435776B及旧KEEP、一份reserve保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC1230、REMOVAL R2、Plugin b2均按实际归还，当前本组无PG/Chrome/local holder或NEXT。Plugin两轮累计19951/60000ms封存，旧FAIL保留；MSG03局部36212/60000ms已归还。下次完整fresh线至少6914834432B及旧KEEP、一份reserve保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

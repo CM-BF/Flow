@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T13:00:29.042303+00:00",
+  "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
+  "paths": [
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/activation-owner-boundary.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/archive-index.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/external-next-ordinary.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/fresh-claims.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/owner-main-intake.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/quality.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/receipt-check.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/request.json",
+    "docs/evidence/web-platform/plugin-module-main-ready-20261007/status-validation.json",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/plan.md",
+    "plans/web-platform/review.md",
+    "plans/web-platform/status.md"
+  ],
+  "links": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "plugin-module-main-ready-20261007/request.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "plugin-module-main-ready-20261007/owner-main-intake.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "plugin-module-main-ready-20261007/activation-owner-boundary.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "plugin-module-main-ready-20261007/external-next-ordinary.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "svc1230-return-plugin-removal-pair-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "resource-window-current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/plan.md",
+      "target": "../../docs/evidence/web-platform/plugin-module-main-ready-20261007/request.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/plan.md",
+      "target": "../../docs/evidence/web-platform/plugin-module-main-ready-20261007/activation-owner-boundary.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/plugin-module-main-ready-20261007/receipt-check.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/plugin-module-main-ready-20261007/activation-owner-boundary.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/status.md",
+      "target": "../../docs/evidence/web-platform/resource-window-current.json",
+      "exists": true
+    }
+  ],
+  "archiveHashes": [
+    {
+      "file": "owner-main-intake.json",
+      "match": true
+    }
+  ],
+  "errors": []
+}
