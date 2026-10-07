@@ -1,0 +1,69 @@
+{
+  "kind": "existing metadata parser/proof only; no engineering tests",
+  "observedAt": "2026-10-07T03:56:21.547Z",
+  "statusErrors": [],
+  "todoCount": 5,
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "080e1f0e45966016b24c6cd97b742e6e024977ed"
+  },
+  "implementation": {
+    "target": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+    "head": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+    "scopes": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff"
+    ],
+    "observedAt": "2026-10-07T03:56:21.272Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-dashboard-task-timing/README.md",
+      "docs/evidence/wpf-dashboard-task-timing/quality.md",
+      "docs/evidence/wpf-dashboard-task-timing/registration-request.json",
+      "plans/wpf-dashboard-task-timing/plan.md",
+      "plans/wpf-dashboard-task-timing/review.md",
+      "plans/wpf-dashboard-task-timing/status.md",
+      "docs/evidence/wpf-dashboard-task-timing/main-close-claim.json",
+      "docs/evidence/wpf-dashboard-task-timing/main-close-observation.json",
+      "docs/evidence/wpf-dashboard-task-timing/main-receipt-52fe.json",
+      "docs/evidence/wpf-dashboard-task-timing/root-080e-composite-review.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "main": {
+    "available": true,
+    "head": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "branch": "main",
+    "observedAt": "2026-10-07T03:56:21.365Z"
+  },
+  "integration": {
+    "record": "已接收 52fe66693c370aec72dd8a36ed3fa00292e5127b；七范围逐字相等；[Lead原receipt](../../docs/evidence/wpf-dashboard-task-timing/main-receipt-52fe.json)",
+    "recordedHead": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "target": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+    "mainHead": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "scopes": [
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs",
+      "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff"
+    ],
+    "observedAt": "2026-10-07T03:56:21.365Z",
+    "current": true,
+    "historicalIntegrated": false,
+    "method": "scope-tree",
+    "scopeEqual": true,
+    "dirtyScopePaths": [],
+    "reason": "目标与 main 的声明范围 Git 树相同；范围以外不作保证"
+  }
+}

@@ -1,6 +1,6 @@
 # WPF-DASHBOARD-TIMING01 任务时间展示
 
-状态：in-progress。创建 2026-10-07。直接父 [D01](../d01-execution-dashboard/plan.md)，co-lead Web /root，唯一 owner w01_owner / Astra Ultra。
+状态：completed / delivered。创建 2026-10-07。直接父 [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root，唯一 owner w01_owner / Astra Ultra。
 
 在现有任务摘要与详情展示唯一 owner 声明的开工、完成、时间来源，以及包含等待的壁钟历时。沿 [固定时间合同](../AGENTS.md#task-timing)，不根据提交、mtime、领取或分支交付猜全任务完成。缺失/非法时间只影响该项；旧进度与 proof 判定保持。仅同一可信快照的 generatedAt 可用于未完成历时，不增加计时器。
 
@@ -16,10 +16,14 @@ status Module 解析顶层三字段，返回 timing（声明、规范 UTC、独�
 - [x] TIMING01-02：摘要/详情显示时间与同快照历时、失败旧快照降为历史。
 - [x] TIMING01-03：有界 parser 行为检查，原始失败保留；browser 源码准备。
 - [x] TIMING01-04：隔离 browser 验收（另实际窗口），固定独审。
-- [ ] TIMING01-05：Lead 主线接收，本片交付；部署单独记录。
+- [x] TIMING01-05：Lead 主线接收，本片交付；部署单独记录。
 
 ## 验证与边界
 
 普通 parser 工作段总≤5min、每命令≤30s、必要修复复测最多3次；TMP≤8MiB/raw≤1MiB，仅 Node 内置，无 PG/Chrome/安装/私人服务。2026-10-07 已在独立窗口执行一次隔离 browser：五组与双主题390截图通过、完整清理，实际证据已root限定独审通过；不运行旧 task-links.browser 或真实 registry。原81parser未重跑，不继承旧 DPERF05 结果。后继main/部署另记。
 
 实际状态与证据以 [status](status.md) 为唯一来源；独审入口 [review](review.md)。复用本地 find-skills/codebase-design/clean-code，方法及发现记录在 own evidence。
+
+## 交付结论
+
+本登记任务的五项TODO已完成：原81parser与5组browser事实保留，080e组合七范围独审批准，main52fe接收，Lead于2026-10-07T03:49:29Z报告4320/source52fe/185sources实际加载与临时IAB观察。四产品仍等于72a；新增三证据脚本原样纳入proof范围。后继“易读时间详情”独立派工，不改本目标。权威事实见[status](status.md)与[main-close](../../docs/evidence/wpf-dashboard-task-timing/main-close-observation.json)。

@@ -1,6 +1,6 @@
 # WPF-DASHBOARD-TIMING01 证据
 
-当前：固定72a源码/parser81限定独审0blocking；本次隔离browser五组+双390截图已root独立实际证据批准。主线/部署未发生，不继承旧DPERF或Settings结果。
+当前：080e精确七范围组合独审APPROVED；四产品仍等72a，原81parser/5browser实证保留。main52fe已接收，Lead03:49:29Z报告实际4320/185加载。本登记片已交付，不继承旧DPERF或Settings结果。
 
 - source-intake.json / start.json：权属、固定输入与真实开工。
 - registration-request.json：唯一source-ready输入，非页面已加载事实。
@@ -16,4 +16,6 @@ root-72a-source-parser-review.json 为源码/parser限定独审原件，root-bro
 - outer实际6410.498ms，parent terminal6373.962ms；保守计6411/余53589，0自动重试许可。
 - fixture为实际parser/UI与synthetic owner/观察，非真实registry/main/部署；原node81不重跑。
 
-root-72a-browser-actual-review.json 是本次实际审查原件；main-intake.json 是给Lead直接消费的固定四源接收包，当前待main，不是部署回执。
+root-72a-browser-actual-review.json 是本次实际审查原件；main-intake.json 是给Lead直接消费的固定四源接收包，为接收前历史原件，当前main/deploy由main-receipt-52fe.json、root-080e-composite-review.json和main-close-observation.json更新，不反写历史原件。
+
+当前七范围/hash在root-080e-composite-review.json；四产品原source-manifest.json保历史。main-close-observation.json保存fixed/current/main逐字一致、权威父和完成来源；仅既有metadata parser/proof核验，无工程重跑。

@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T03:51:41.726376+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_FIXED_PRODUCT_AND_BROWSER_CALLER_COMPOSITION",
+  "target": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+  "scope": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+    "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs",
+    "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff"
+  ],
+  "productApprovalTarget": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "bytes": 22669
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "bytes": 10811
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+      "sha256": "e5b131153db6ee92cc92c17ca7a4a6200d0d367bf8d3703bc6138dc0944f868f",
+      "bytes": 6219
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs",
+      "sha256": "b88dbb5d0b3650ed83d2852b1cfb245371b373df0fe842f7a879851c047f45c4",
+      "bytes": 5396
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff",
+      "sha256": "9b9c6cba8a0e8da460ca11541d25c3f3e799c63db4597025a5b3355b26dcd3bc",
+      "bytes": 10919
+    }
+  ],
+  "independentInputs": [
+    "root-timing72-source-parser-review.json (81 actual parser, source)",
+    "root-timing-browser-preparation-review.json (original caller)",
+    "root-timing72-browser-actual-review.json (five actual groups, two actual screenshots, exit and cleanup)"
+  ],
+  "reason": "Canonical evidence run.py,worker.mjs,caller-adapter.diff are executable/nonmetadata source added after72a. Existing proof correctly marks them outside old4scope. All3 are byte-identical to independently reviewed and actually executed temporary preparations; four products remain exact72a. Bind current declaration/review to080e sevenpathcomposition, preserve original72a approval without changing proof parser or rerunning tests.",
+  "mainReceipt": {
+    "source": "OriginalLead actual receipt, root read exactscopeGitblobs",
+    "head": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "path": "docs/evidence/i02/dashboard-timing-intake.json",
+    "sevenScopeEqual": true
+  },
+  "deploymentReceipt": {
+    "source": "OriginalLead inbound actual UI observation",
+    "at": "2026-10-07T03:49:29Z",
+    "sourceHead": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+    "pid": 43188,
+    "sourceCount": 185,
+    "observation": "Temporary IAB observed SVC08 start/inclusiveelapsed/detailsource/snapshot/waitraw; original tabs and personal ports unchanged. No root service/browser sampling."
+  },
+  "metadataCorrections": [
+    "Parent declaration must point to /Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md rather than ../d01 within Timing worktree.",
+    "Status implementation target and review top fixed080e with exactsevenpaths; product72a approval and all prior actual/evidence originals retained.",
+    "Only declaration/ownrecords correction; tests/runtime not repeated. Owner may verify existing parser/proof with bounded metadata checks."
+  ],
+  "blockingFindings": [],
+  "limits": [
+    "This approval combines previously inspected and executed exactbytes; no new product behavior claim.",
+    "Readable time-detail redesign is a separate plannedfollow-up; currentapprovedtarget notchanged.",
+    "Owner must finish truthfulstatus/main+deploymentreceipt, cleanpush and stopwriting beforeclaimrelease."
+  ]
+}

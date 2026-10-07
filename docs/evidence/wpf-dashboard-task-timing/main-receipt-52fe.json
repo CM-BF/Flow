@@ -1,0 +1,255 @@
+{
+  "observedAt": "2026-10-07T03:48:53.590963+00:00",
+  "mainBefore": "56672e7effec85792366beeacd724976646c50c8",
+  "delivery": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+  "implementation": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "method": "Exact four reviewed product files and own records; main preimages equal fixed base; no hand-edited product conflict",
+  "independentReview": "docs/evidence/wpf-dashboard-task-timing/root-72a-browser-actual-review.json",
+  "archiveBindingsVerified": 22,
+  "parserBindingsVerified": 3,
+  "files": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 22669,
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 11861,
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 10811,
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/README.md",
+      "bytes": 1878,
+      "sha256": "e5bc7010e643781bf72692ab7fb72378e8a8fced6380eecf7cd2729e3d68763e"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first-status-parser.json",
+      "bytes": 212,
+      "sha256": "2557969442999f93c354d9305e08182f16463d38d6e66fd958b7c6cb3267bc09"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/README.md",
+      "bytes": 3656,
+      "sha256": "df7bb4d7f9198f31272192abdf5ef1d162989f77d87656ca25dd17b62f9b7ca5"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/actual-exit.json",
+      "bytes": 233,
+      "sha256": "cc8f3e5c3e39ec356042f7651eeb5b7fe93e2a1386b5adc35ae2ce37e1b2efa1"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/actual-summary.json",
+      "bytes": 5146,
+      "sha256": "96c778103c7c51df363463dce18bffb7eb359e948bfaa75b181bb783041aac5f"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/admission-preflight.json",
+      "bytes": 1226,
+      "sha256": "4c93107892227ae725645ad3563481f878e80aee5d34b1d45fbf4f5e5e4a1f18"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/archive.json",
+      "bytes": 3816,
+      "sha256": "235e224b170b3410b491056885fd7ee8afdc4015cecd9bbc2c8911ccce44c241"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/browser-results.json",
+      "bytes": 712,
+      "sha256": "8d5233137ff14e0f836db6c1262409166859b2f6d369fe0d1164751761c15488"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff",
+      "bytes": 10919,
+      "sha256": "9b9c6cba8a0e8da460ca11541d25c3f3e799c63db4597025a5b3355b26dcd3bc"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/chrome.log",
+      "bytes": 168,
+      "sha256": "f8ee4591410f37086257b70a960695977f9072285e58e9ee372ec49602d9d414"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/execution-start.json",
+      "bytes": 105,
+      "sha256": "938c9564a5cb480ab3f61fd2ddc837b9e50ef36c734f8760b045f00c8f99e33b"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/manifest.json",
+      "bytes": 1552,
+      "sha256": "afc893ca22db01f39f7569652512944fe6b710e2aff8eb855aa4a831012523ff"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/outer-stdout.json",
+      "bytes": 1371,
+      "sha256": "166dc92249d51b5849b5d2014378cc4bdcf8b96e8b1f5d8c27b524c9f2eb8600"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/owned.json",
+      "bytes": 602,
+      "sha256": "2662afb355aaf88bc25ebe492450dd538250011818406ee9c0498f2423489773"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/parent-stdout.log",
+      "bytes": 1051,
+      "sha256": "345b675584afae01b0e8ad10676a94897f4b16941819afd793adb22b3b3941e7"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/post-cleanup.json",
+      "bytes": 239,
+      "sha256": "76edded85ce4067673d6966cba9aab71eade4e74c31b6b5ebb670250f4dcdaf9"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/preparation.json",
+      "bytes": 13994,
+      "sha256": "12828bf4408cb761b0b672b0eb44c3f5478ad535761b417d7bb56544588546cd"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/result.json",
+      "bytes": 1297,
+      "sha256": "861f002c0fdd29d7d8a2d5d5a5dd677a5c6ea7926b6eeaafa4355cea1edf575a"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/run.py",
+      "bytes": 6219,
+      "sha256": "e5b131153db6ee92cc92c17ca7a4a6200d0d367bf8d3703bc6138dc0944f868f"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/task-timing-dark-390.png",
+      "bytes": 85025,
+      "sha256": "e20e7f5dc623d20cf61c825c32067f99f9f3541f843e8c1a070148cb4d3ef26b"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/task-timing-light-390.png",
+      "bytes": 86923,
+      "sha256": "26b86bb43ddd6881970c308a2fa2f4f89f0d38782b765b15dbfb3afbb2222284"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/worker-result.json",
+      "bytes": 1249,
+      "sha256": "e8c04f0bfcb5ae5d0dcac0597e5f33bdb5e486ae27473c070d250b7d62d001f7"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs",
+      "bytes": 5396,
+      "sha256": "b88dbb5d0b3650ed83d2852b1cfb245371b373df0fe842f7a879851c047f45c4"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-readiness/inputs.json",
+      "bytes": 3797,
+      "sha256": "07f67fd65e26879cffd94b7a84bb5eecbb01d8b43a2a6d277f9d221b4a95aa57"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/browser-readiness/report.md",
+      "bytes": 2739,
+      "sha256": "36cc03d27fcb0230f9c6dbad37f258a5f75396243930e2cc1c00324a3386aa32"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/main-intake.json",
+      "bytes": 3369,
+      "sha256": "50c649534f4b314096621e5a7ebb3df5850169b5752725ad4135a4a325a1fde1"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/result.json",
+      "bytes": 857,
+      "sha256": "56fb74e3d99cc810ad70c53aae4be13704e8a13955d4a4153bc755a2c17bd7dc"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/stdout.log",
+      "bytes": 7070,
+      "sha256": "2161598203b10fe23da43eef06566ed6eac55e23c7bd097aa642987046f3889f"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/quality.md",
+      "bytes": 2418,
+      "sha256": "0613c896b192e151d9d2081a299f91568552e941180d966eb47c1e80527a4a44"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/registration-request.json",
+      "bytes": 587,
+      "sha256": "e2446c8a4e3a4723262fa8e280a77744edbbf18e6068fae7945645a7869553de"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/root-72a-browser-actual-review.json",
+      "bytes": 3090,
+      "sha256": "006e6137230becc7f78f149616d7369b05f1316e7dfd55561d8e3bc50b38e96f"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/root-72a-source-parser-review.json",
+      "bytes": 3055,
+      "sha256": "10ffbce58e66e0d1a8df5495c96ef432a00fe1034608e43061e44e1453f499a0"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/root-browser-preparation-review.json",
+      "bytes": 2089,
+      "sha256": "47676a1e1f73aeac1a02770863887898b134eaaa65d1f040c657df27abd0b615"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/source-input-manifest.json",
+      "bytes": 10115,
+      "sha256": "bd4baedc532557464542a1657b2e3f0bbb7031a9674d5d89955ad6878f2e4e1d"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/source-intake.json",
+      "bytes": 1633,
+      "sha256": "c0f2d3e38dba66be3dfb705e4eff3d2f7f8413df60e20a2d6f09bc5ad9682345"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/source-manifest.json",
+      "bytes": 6757,
+      "sha256": "ccfd52f08d977577aebc0010ca5786e4328eb9e33dab98a7ccf9beb1e4f7fbe0"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/start.json",
+      "bytes": 414,
+      "sha256": "60165ec96b812a0acac377d3d3636b107632d2ef37288d9ec7ccfd45e57cec0b"
+    },
+    {
+      "path": "plans/wpf-dashboard-task-timing/plan.md",
+      "bytes": 2338,
+      "sha256": "4e26c78c4cb449a8f528ae74361b75f8f785ecf4045bb8fbc26a132244582192"
+    },
+    {
+      "path": "plans/wpf-dashboard-task-timing/review.md",
+      "bytes": 2233,
+      "sha256": "9eb975744c218c20d454e9d5e72cc5c2907f82e4d92eab29e2100bc8a22ff1ee"
+    },
+    {
+      "path": "plans/wpf-dashboard-task-timing/status.md",
+      "bytes": 5599,
+      "sha256": "539b2734e21d16c432dd7f3c159c47063648bca7a06bdaff851bc88403185330"
+    }
+  ],
+  "newEngineeringChecks": 0,
+  "providerCalls": 0,
+  "limits": [
+    "81 parser and 5 real browser fixture groups reused, not rerun",
+    "Actual 4320 deployment separately pending",
+    "Personal runtime unchanged"
+  ]
+}

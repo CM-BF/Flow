@@ -1,17 +1,15 @@
 # WPF-DASHBOARD-TIMING01 独立审查
 
 状态：APPROVED
-Review target commit：72a9407e2e733479631b9409c36113e8f450b6f1
+Review target commit：080e1f0e45966016b24c6cd97b742e6e024977ed
 Base：18144593a0f210e8d5b9b2c08f4ff62259c07cf5
 
-范围：status.mjs、app.js、status-timestamps.test.mjs、task-timing.browser.mjs。四源与34只读供给保护文件的hash在[source manifest](../../docs/evidence/wpf-dashboard-task-timing/source-manifest.json)。
+精确当前范围：apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/status-timestamps.test.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, docs/evidence/wpf-dashboard-task-timing/browser-first/run.py, docs/evidence/wpf-dashboard-task-timing/browser-first/worker.mjs, docs/evidence/wpf-dashboard-task-timing/browser-first/caller-adapter.diff。
 
-实际作者检查：原parser81/81、0skip/fail证据保留，本轮未重跑；[原记录](../../docs/evidence/wpf-dashboard-task-timing/parser-first/result.json)。本次隔离browser五组与两张390主题截图通过，outer actualexit0/6410.498ms，唯一terminal PASSED，worker exit0，所有owned清理完成；[完整原件](../../docs/evidence/wpf-dashboard-task-timing/browser-first/archive.json)。root固定源码/81parser证据独审0blocking；本次实际browser证据已root独立核验通过，真实registry/main/部署未验。
+[root组合原件](../../docs/evidence/wpf-dashboard-task-timing/root-080e-composite-review.json)：APPROVED_FIXED_PRODUCT_AND_BROWSER_CALLER_COMPOSITION，2026-10-07T03:51:41.726376Z，0blocking。四产品仍为72a9407e2e733479631b9409c36113e8f450b6f1；三归档caller逐字等已审、已实际执行临时原件。七范围等main52fe，未改proof/parser，未把可执行证据伪装metadata。权威父为[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)。
 
-审查者核固定HEAD与manifest，检查唯一owner三声明、严格UTC与原update兼容、可选重复/无效不进入globalerrors、同snapshot含等待历时、未知/陈旧/失败旧快照、不借分支完成、原阶段proof不变、浏览器源与5组行为/两主题PNG的实际边界。新fixture是实际parser/UI与synthetic观测，不核真实PG/registry，不创建独立状态源。
+原产品批准保留：[源码+81parser](../../docs/evidence/wpf-dashboard-task-timing/root-72a-source-parser-review.json)、[caller准备](../../docs/evidence/wpf-dashboard-task-timing/root-browser-preparation-review.json)、[5组实际browser/双390截图](../../docs/evidence/wpf-dashboard-task-timing/root-72a-browser-actual-review.json)。原81/5实际检查与完整exit/EOF/cleanup证据不改、不重跑；组合审批不新增行为声称。
 
-作者clean-code安全点：复用日期内核；等待/来源以textContent原文保留；dialog打开时快照独立标旧，不强关/抢焦点；不新增store/计时器/配置。服务端aggregate/server和CSS均未改。
+[Lead主线原receipt](../../docs/evidence/wpf-dashboard-task-timing/main-receipt-52fe.json)与[本次主线/部署核验](../../docs/evidence/wpf-dashboard-task-timing/main-close-observation.json)分开记录。Lead报告03:49:29Z实际4320/source52fe/PID43188/185sources及临时IAB时间/来源/等待原文观察；本owner不重复采样。历史receipt中的部署pending是当时状态，原件保留。此结论覆盖本登记时间展示片，不覆盖独立后继易读时间详情或完整父D01。
 
-当前findings：root固定72a限定独审无阻塞。
-
-[root原件](../../docs/evidence/wpf-dashboard-task-timing/root-72a-source-parser-review.json)，结论 APPROVED_SCOPED_SOURCE_AND_81_PARSER_BROWSER_PENDING；4源、81实际counts/exit/cleanup、34保护文件和三raw已核。review者未重跑。该原报告的browser NOT_RUN为历史边界。本次另附[root实际审查](../../docs/evidence/wpf-dashboard-task-timing/root-72a-browser-actual-review.json)：APPROVED_SCOPED，原13raw、实际外层退出/唯一终态/清理与4源逐字核验通过，独立目视两390截图。原报告不反写，真实registry/main/实际185部署仍未验。
+clean-code复核：单一status权威、严格UTC与未知隔离、原snapshot观察约束、历史proof状态与当前目标分别保持；本段仅修父链接和声明范围，不增框架/数据源/产品行为。
