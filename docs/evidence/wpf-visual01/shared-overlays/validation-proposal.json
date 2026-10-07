@@ -1,0 +1,37 @@
+{
+  "state": "PROPOSED_NOT_RUN",
+  "source": "5f8984d69e22f6c3a105f9adbaf9ba671cab96d3",
+  "local": {
+    "intent": "Affected TSX and two browser modules noEmit with existing fixed readonly donor; no whole business suite",
+    "budgetProposalMs": 30000,
+    "cleanupIncludedMs": 5000,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "configuration": "Exact resolver/source dependency pins to be prepared when a local segment is assigned; no installs or root links"
+  },
+  "browser": {
+    "picker": {
+      "module": "apps/web/test/message-settings.browser.ts",
+      "entry": "checkMessageSettingsOverlays",
+      "fixture": "startMessageSettingsFixture + message-settings.fixture.tsx",
+      "groups": 2,
+      "pngs": 5,
+      "independentFreshFixture": true,
+      "existingBehaviorEntry": "checkMessageSettingsPicker retains six behavior groups; affected native disclosure/keyboard/omit paths require validation, no inherited PASS"
+    },
+    "recovery": {
+      "module": "apps/web/test/conversation-recovery.browser.ts",
+      "journey": "appearance",
+      "selected": [
+        "cookieRead",
+        "themes390"
+      ],
+      "pngs": 2,
+      "actualApp": true,
+      "ownPG": "Existing owned Recovery fixture requires separate admitted marked DB; no browser/PG allocation granted here"
+    },
+    "bounds": "Propose separate supervised Picker 0PG and Recovery appearance actual budgets after fixed caller review; never run base legacy full group implicitly",
+    "scrollbarModes": "Record actual measured gutter and mode; alternate unavailable OS mode NOT_RUN. No OS preferences changed."
+  },
+  "prohibited": "No real center/personal page/provider; no App/session/attachments writes; no new authority"
+}

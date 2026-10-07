@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T15:59:08.970774+00:00",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "authoritySpanUnchanged": {
+    "file": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "from": "MessageSettingsDraftOwnership through filter()",
+    "sha256": "ac663cb77d7cb82a36db420fbbbdcadb291ff8eb52e6523efea20a1b46f5a214"
+  },
+  "changedPaths": [
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/components/ui/dialog.tsx",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/message-settings.browser.ts"
+  ],
+  "engineeringChecks": "NOT_RUN",
+  "oldSixChecks": "Retained business assertions; native facet Tab path and omit label updated to presentation; new representative function separate."
+}

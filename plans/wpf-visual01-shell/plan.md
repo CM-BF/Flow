@@ -22,7 +22,7 @@
 - [x] **WPF-VISUAL01-02** 原四主题、共享 builtin、轻质 shell 已交付。
 - [x] **WPF-VISUAL01-03** 原 a8b2b22 检查已完成，不作为新浮层证据。
 - [x] **WPF-VISUAL01-04** 原 a8b2b22 已 main4391 接收/旧 claim 已释放。
-- [ ] **WPF-VISUAL01-05** 新独立树/领取/共享 Dialog 与渐进消息设置源码；保全部行为边界。
+- [x] **WPF-VISUAL01-05** 新独立树/领取/共享 Dialog 与渐进消息设置源码；保全部行为边界。
 - [ ] **WPF-VISUAL01-06** 受影响局部检查与真实代表消费者桌面/390/主题/焦点/滚动模式证据。
 - [ ] **WPF-VISUAL01-07** 固定源码独审与主线接收；实际发布另列。
 
@@ -31,3 +31,5 @@
 本段 source-only，工程检查、PG、Chrome、构建均 NOT_RUN。固定实现后提交一个有界局部检查方案，不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
+
+本次固定源码 5f8984d69e22f6c3a105f9adbaf9ba671cab96d3；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。尚无工程/浏览器实际许可，当前全部8scope停写保留待审。
