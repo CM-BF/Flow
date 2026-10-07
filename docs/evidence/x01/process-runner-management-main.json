@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-07T10:44:09.592577+00:00",
+  "main": "2f32f6b27fc79151cd1e9d26e7fb5af70a791505",
+  "intake": "b67530bb",
+  "receipt": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-cli-intake.json",
+  "receiptBytes": 3132,
+  "receiptSha256": "388f921e5ff818e6e258ebb3879c4d4229bef350acd0519571505f834e76573b",
+  "source": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "products": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 28398,
+      "sha256": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+    }
+  ],
+  "originalExecutionMirrorUnchanged": true
+}

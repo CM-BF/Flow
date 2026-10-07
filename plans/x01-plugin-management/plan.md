@@ -2,19 +2,19 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | X01 / in-progress；计划已交付，registry/只读视图片段已入main，完整生命周期未完成 |
-| 创建 / 最近更新 | 2026-10-06 / 2026-10-06 |
+| 计划编号 / 状态 | X01 / in-progress；计划已交付，可信工具公共链、真实启动与管理CLI已交付main，完整生命周期未完成 |
+| 创建 / 最近更新 | 2026-10-06 / 2026-10-07 |
 | 父计划 / 追溯 | [FLOW-001 §10](../flow-001-architecture/plan.md)、[完整矩阵 REQ-11/12/13](../flow-001-architecture/full-plan-matrix.md)；同时消费 REQ-08/09/20 |
 | 唯一计划/status owner | architecture_read / gpt-6-astra；co-lead mika（原runner_owner已释放） |
 | 后续实施协调 | Execution Lead；各实现 writer 须另行领取独立 worktree/精确 scope，不由本计划虚构已派发 |
-| Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan / codex/plugin-management-plan |
+| Worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding / codex/plugin-enable-binding |
 | Base | 原计划3773db5；本轮设计受控main7cbda706合入c837853829f0344634df78ed7195ee7255f6b832 |
 
 ## 目标与当前事实
 
 用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。
 
-这是一份完整 X01 的实施计划，**不是已实现的插件管理系统**。静态安装公开入口与 trusted host 双阶段授权接口已入 main；中心实时授权、冻结任务绑定和真实 runner 插件调用仍待接入，第三方隔离未完成。当前沿原计划准备完整纵向片与现成 npm 能力复用验收；本轮只写原计划/证据，不选择或安装新包、不改产品或全局索引。
+本计划跟踪完整X01，而非以单片通过结束目标。中心安装/授权/冻结binding、v3领取、真实runRunner/semver、来源产物、终态报告恢复、可信私有启动配置与管理CLI均已有main回执。2026-10-07真实两server/两runner进程及管理HTTP单旅程1/1独审通过，验证正常ACK后重启与旧pin不变。第三方隔离、完整升级/回滚/移除、Web/TUI生命周期和上下文扩展仍开放；逐项事实与边界见[验收差距](../../docs/evidence/x01/acceptance-gap-20261007.md)，原验收要求不降低。
 
 已只读核对 [WPF-P01 权威计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host/plans/wpf-p01-plugin-host/plan.md)：trusted Web host target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已有独立批准，范围是可信贡献与 fixture；[WPF-I01 权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) 与后继WPF-X03I01已交付主App挂载；当前事实见[owner接收](../../docs/evidence/x01/owner-acceptance.md)。这两项只是本计划 Web 前置，不能替代全 X01 验收，也不要求它们等待中心完整生命周期完成。观察时间/HEAD/dirty 见 [事实记录](../../docs/evidence/x01/README.md)，后续以各 owner 状态为准。
 
@@ -30,7 +30,7 @@
 | Web Host / Renderer | 消费经过验证的声明和窄上下文，发公共 commands，处理贡献/错误/清理/安全 fallback；不持有服务端凭据、任意 FlowClient 或任意服务端包入口 |
 | CLI / 公共 client | 与 Web 相同命令语义、鉴权、错误、幂等与 operation 查询；不用直写 DB 绕过中心 |
 
-中心最小持久模型（**待共享合同冻结，不是现有表/API**）：
+完整目标的概念模型（registry、install、034 runtime子集已实现；以下仍包含未完成的完整生命周期要求，不把概念名当全部现有DTO）：
 
 - `PluginInstallation`：稳定 ID、所属 workspace/project、revision、期望启用状态、当前可用版本、安装/错误状态。
 - 不可变 `PluginVersion`：精确包版本+内容 digest、来源/许可、host API major、声明能力、贡献类型、支持的宿主/恢复模式。配置 schema 与版本绑定。
@@ -44,7 +44,7 @@
 
 ## 公共命令与状态语义
 
-拟用 `plugin.list/inspect` 及下表命令，最终 DTO/路径由 Lead 单写公共 contracts/client 后冻结。Web 与 CLI 消费同一受理结果/operationId 与进度，无前端私有安装后门。
+当前公共registry/install/runtime与管理CLI已冻结入main；下表保留完整生命周期目标，升级/移除等不能仅凭已有命令子集判完成。Web 与 CLI 消费同一受理结果/operationId 与进度，无前端私有安装后门。
 
 | 命令 | 最小可观察行为与拒绝条件 |
 | --- | --- |
@@ -131,6 +131,8 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 
 2026-10-06 16:09 UTC 验收补充：静态安装与host双gate已在main e8077303，`invokeInstalledTool`仍无真实runRunner production caller；当前已交付slice保持delivered，完整X01开放。GO要求把现成npm能力复用落实到X01-04/07，详见[唯一后继准备](../../docs/evidence/x01/enable-binding-preparation.md)。现package-store拒dependencies/node_modules仅首片限制，不宣称完成通用npm复用。本轮只归档需求，不选择/安装新包或领取产品范围。
 
-## Next ready startup slice (2026-10-07)
+## 历史 startup 交付设计（2026-10-07，已main6aa并通过实际进程旅程）
 
 X01-04/07 continue through [the existing center/runner process entry](../../docs/evidence/x01/cli-startup-interface.md). Terminal20b report-only recovery is independently reviewed and may integrate now. Operator-owned private-file composition, default-off compatibility and current journal identity precede a separate real process PG acceptance; management CLI/three-end user experience and unknown invocation recovery remain open. No new plan authority or second runner.
+
+2026-10-07T10:46:30Z 当前验收更新：startup与management不再是缺失入口；后继小片以[差距核对](../../docs/evidence/x01/acceptance-gap-20261007.md)为准。02～10原checkbox保持开放。Web两旧literal已正式STOP/amend交回，后续由Web独立owner fresh take；本更新不领取新scope或批准新PG。
