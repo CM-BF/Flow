@@ -17,13 +17,13 @@
 | 工作基线 / HEAD | base ab5a；source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；固定七源与local/PG准备；交审packet82cca2124bd7c234f21088cca53adc46f50751f6已push |
 | 工作树 dirty 状态 | 交审packet82cca212核HEAD=origin且clean；本次仅停点字段收口，提交后复核 |
 | 工作分支状态 | review |
-| 检查状态 | PASSED |
+| 检查状态 | PASSED a2981b71b47d254356152c505ddfff29edd76446：10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN |
 | Review | 初审11:05:20唯一P2已窄修，等待chatui固定增量与准备复审 |
 | 检查范围 | 10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN；非完整X01通过 |
 | 检查目标 | a2981b71b47d254356152c505ddfff29edd76446 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
 | 实现目标 | a2981b71b47d254356152c505ddfff29edd76446 |
-| 实现范围 | apps/server/src/plugin-runtime/commands.ts；apps/server/src/plugin-runtime/store.ts；apps/server/src/plugin-runtime/routes.ts；apps/server/src/plugin-runtime/host-candidates.ts；apps/server/src/plugin-runtime/host-candidates.test.ts；apps/server/src/plugin-runtime/runtime.test.ts；packages/contracts/src/plugin-runtime-hosts.ts；docs/evidence/x01/host-candidates-local.py；docs/evidence/x01/host-candidates-pg-once.py；其余固定支持精确字面见376项manifest（含配置及镜像） |
+| 实现范围 | apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/host-candidates.ts,apps/server/src/plugin-runtime/host-candidates.test.ts,apps/server/src/plugin-runtime/runtime.test.ts,packages/contracts/src/plugin-runtime-hosts.ts |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
