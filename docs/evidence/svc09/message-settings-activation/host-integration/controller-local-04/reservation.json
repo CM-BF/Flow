@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T18:31:49.985236+00:00",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "--test-reporter=spec",
+      "--test-name-pattern=default real ports|startup primary|actual recorded subset|unpersisted launch|pending launch",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host.test.mjs"
+    ]
+  ],
+  "cumulativeSecondsCap": 120,
+  "rawBytesCap": 2097152,
+  "scratchBytesCap": 33554432,
+  "maxConcurrentChildren": 3,
+  "freeBytes": 19502387200,
+  "scratch": "/private/tmp/flow-svc09a-controller-15_f0wb9",
+  "dev": 16777234,
+  "ino": 124407485,
+  "inputs": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host.mjs",
+      "bytes": 12065,
+      "sha256": "f561c875683b4b4cd0f1d3ce5bc39f02aa2c90771ea187c4fd6676084e19a07a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host.test.mjs",
+      "bytes": 8031,
+      "sha256": "3a8d0abcca5ab429959ab6790dc9f3ae623706181c64db86da73e637533a6af7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host.test.py",
+      "bytes": 4114,
+      "sha256": "1004f6ebb962760188bbca5ceecc968deb301ebf9145dc166c81f9dcdc5da619"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
+      "bytes": 4227,
+      "sha256": "fd14e85b63e6bf0a4fa682e025f46d450d6a80a04a1978a1d0a7e3269ddb8a92"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-cleanup.mjs",
+      "bytes": 8341,
+      "sha256": "828718311e58638b05c93c3bece4fa07970068c75fe4a591b80e2c8c989e0241"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-records.mjs",
+      "bytes": 3570,
+      "sha256": "eb8ec3279458d6d4d5a6ce8cfbab4dfc0045d1086ee7d280655c8a5cf93076ac"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+      "bytes": 11426,
+      "sha256": "1cf8e42328451d9d4c01d0b8829fdbbfb0f149e2c6813673d98ecc2cbc6199c6"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "bytes": 4722,
+      "sha256": "a6b6d43f8d1a8ddb87901b16bedbccb9141fc08c72e4aa2ff99a613ce69d9a75"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/controller-local.py",
+      "bytes": 4782,
+      "sha256": "ccf90f75ea0a430069acde01f7e75eedea3f315e7c2c91e1b7cbb7b67f0ff0a4"
+    }
+  ],
+  "provider": 0,
+  "pg": 0
+}
