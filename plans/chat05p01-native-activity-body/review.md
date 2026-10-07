@@ -21,3 +21,7 @@ Base：fc3246b307f5436ccecb97f38ccaba10c7a72a5a。唯一reviewer为 native_cente
 ## 2026-10-07T05:29:25.847866+00:00：原定局部结果独审
 
 APPROVED_INCREMENTAL_LOCAL_EVIDENCE；唯一reviewer astra_ultra_execution_lead，target40af6d9071c621707971fd983a85dd9145f065fd / deliveryf507fe6bc76b7351a72acd45dff8ed23a039b452；[原样回执](../../docs/evidence/chat05p01/local-evidence-review.json)。18source+12new evidence同字节，无P1/P2，reviewer0运行。10selected/10passed/focused0，28different跨轮，保原首unknown/失败；PG3、生产挂载/client/界面均未验，不扩大原source批准。
+
+## 2026-10-07T06:29:49.902906+00:00：三PG入口待独立源审
+
+原40af产品与3用例断言不变。本增量仅fixture证据/OID/资源观察及own pg-entry输入/config/OPS14 caller，见[入口](../../docs/evidence/chat05p01/pg-entry/README.md)。REQUEST_REVIEW，实际3PG、新fixture types NOT_RUN；原28局部/类型证据不扩批准。

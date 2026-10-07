@@ -2,31 +2,31 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-07T05:29:25.847866+00:00 |
+| 更新时间 | 2026-10-07T06:29:49.902906+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原首合同/领取及技能段时间有记录，但本次不把它们猜作最初开工；当前局部实际05:12:31.371451Z至05:12:35.136974Z，见local-resumed原reservation/result。 |
+| 任务时间来源 | 最初任务开工无可靠记录，保持UNKNOWN；旧局部05:12原reservation/result；本段PG准备只读核/领取见pg-entry/claim-observation与preparation，不替代最初时间 |
 | Owner / model | assignment_review / gpt-6-astra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
-| 当前产出 | 完整工具材料的原定局部检查与类型复验已获独立批准，数据库场景的固定源码、SQL和已列依赖仍齐备；生产开通尚未完成 |
-| 下一可用交付 | 固定三个数据库场景的受控运行入口，完成领域真实读写验收后进入主线接线 |
-| 当前阻塞 | ACTIVE: 三个数据库场景尚待固定监督入口和共享窗口；生产接线及整体容量后继未完成 |
+| 当前产出 | 完整工具正文的三项数据库场景已有固定运行入口；原局部检查已通过，新入口尚待独审和实际运行 |
+| 下一可用交付 | 独审固定入口并在共享窗口完成三项数据库读写验收 |
+| 当前阻塞 | ACTIVE: 三项数据库检查仍待入口独审及共享运行窗口；生产接线和整体容量后继未完成 |
 | 需用户决定 | NONE |
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | f507fe6bc76b7351a72acd45dff8ed23a039b452；产品40af未变，本轮仅独审归档和静态准备 |
-| dirty | 产品40af持续冻结；本轮仅恢复验证与metadata |
+| HEAD | 9edbd709d9d52d4a6b1313d34ca97806313df310；本轮PG入口/fixture-only delta封定中，生产40af未变 |
+| dirty | 仅原fixture及own PG入口/plan evidence；提交后核clean |
 | 工作分支状态 | in-progress |
 | 实现目标 | 40af6d9071c621707971fd983a85dd9145f065fd |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | PASSED 40af6d9071c621707971fd983a85dd9145f065fd；本次10/10+focused types0，28不同分轮（原22+6新、4受影响旧）；PG/provider/生产挂载NOT_RUN |
-| 独立review | SOURCE_APPROVED_PENDING_VALIDATION 40af6d9071c621707971fd983a85dd9145f065fd；新增localevidence获APPROVED_INCREMENTAL_LOCAL_EVIDENCE f507fe6bc76b7351a72acd45dff8ed23a039b452；不是最终PG领域批准 |
+| 检查状态 | 原固定40af PASSED：10/10+focused types0，28不同分轮；本次fixture/PG入口仅静态读取与Python AST，3PG及新fixture类型NOT_RUN |
+| 独立review | 原40af SOURCE_APPROVED_PENDING_VALIDATION及f507局部证据批准保持；本次test-only fixture/固定PG入口待独立审查 |
 | main集成 | 未集成 |
 | Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
 | 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
@@ -63,3 +63,7 @@
 原样归档[唯一增量独审](../../docs/evidence/chat05p01/local-evidence-review.json)，Lead05:16:51.059050Z批准30绑定与原10/10+focused0、3762ms事实；保28不同分轮、原unknown/失败，不重跑。fresh账本05:28:01.748Z确认v1仍本owner。
 
 [PG静态复核](../../docs/evidence/chat05p01/pg-static-resume.json)：原209本地源、31URL/SQL资源（含033）与20个已列dependency manifest/alias均匹配，3个case定义准确；0import/测试/PG/provider。原pure配置明确不选PG文件，下一需固定单入口/外层监督再排共享窗口，90s/96MiB+1GiB原界不变。最初只读路径拼写错误保留在报告，不影响产品。主线15只读输入漂移仍按main-preimage独立处理，不覆盖。
+
+## 2026-10-07T06:29:49.902906+00:00：原三场景PG入口封定准备
+
+[单一入口](../../docs/evidence/chat05p01/pg-entry/README.md)复用OPS14，不复制监督器；209源/31SQL/21现有alias及实际解析入口绑定，唯一源delta为test-only fixture证据路径/OID/资源检查。原三个行为断言未变、生产40af未改、没有import/测试/types/PG/provider。原90s含正常afterAll+0.5sTERM/2sreap、96MiB PG allowance/1GiB live保持；新增tmp16MiB/raw2MiB计入fresh1,193,279,488B。未知资源保留、没有后续自动DROP或重试。窗口未持有。

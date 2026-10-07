@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
-import { lstat, mkdtemp, open, rm, statfs } from 'node:fs/promises';
+import { lstat, mkdtemp, open, readdir, rm, statfs } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { setTimeout as delay } from 'node:timers/promises';
@@ -18,25 +18,46 @@ export async function bodyFixture() {
   assert(Number.isSafeInteger(allowance)&&allowance>=96*1024**2,'Explicit PG/WAL allowance required.');
   const space=await statfs('.');assert(space.bavail*space.bsize>=1024**3+allowance,'Reserve gate before DB creation.');
   const name=`flow_chat05p01_${randomUUID().replaceAll('-','')}`,marker=randomUUID(),token=randomUUID();
-  const evidencePath=`docs/evidence/chat05p01/${name}-facts.jsonl`;
+  const evidencePath='docs/evidence/chat05p01/pg-run-01/fixture.jsonl';
   const evidence=await open(evidencePath,'wx',0o600);
   const bounds={connectionTimeoutMillis:2000,statement_timeout:5000,query_timeout:6000};
   const admin=new Pool({...bounds,connectionString:'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres',max:1});
   const databaseUrl=`postgresql://flow:flow-local-only@127.0.0.1:55432/${name}`;
   const pool=new Pool({...bounds,connectionString:databaseUrl,max:2});
   let app:Awaited<ReturnType<typeof createServer>>|undefined,base='',directory='',created=false,dropReply=false,requests=0;
-  let directoryIdentity:{dev:number;ino:number}|undefined;
+  let directoryIdentity:{dev:number;ino:number}|undefined, databaseOid:number|undefined, evidenceBytes=0;
   const started=performance.now();
   const facts:Record<string,unknown>={database:name,marker,provider:0,runtimeProcesses:0,allowanceBytes:allowance,freeBeforeBytes:space.bavail*space.bsize,checkpoint:evidencePath};
   async function checkpoint(phase:string) {
-    const bytes=Buffer.from(JSON.stringify({...facts,phase})+'\n');assert(bytes.length<=65536);
+    const bytes=Buffer.from(JSON.stringify({...facts,phase,at:new Date().toISOString()})+'\n');
+    evidenceBytes+=bytes.length;assert(bytes.length<=65536&&evidenceBytes<=256*1024,'Evidence bound.');
     // Append-only checkpoints: a failed later write cannot erase the pre-DROP record.
     await evidence.writeFile(bytes);await evidence.sync();
+  }
+  async function reserve() {
+    const current=await statfs('.');const free=current.bavail*current.bsize;
+    facts.minObservedFreeBytes=Math.min(Number(facts.minObservedFreeBytes??free),free);
+    assert(free>=1024**3,'Live reserve gate.');
+  }
+  async function stableDirectoryBytes(path:string):Promise<number> {
+    // Used only after all body work and HTTP/pool close; never follows a link.
+    let bytes=0,entries=0;const deadline=performance.now()+500;
+    async function visit(folder:string):Promise<void> {
+      const before=await lstat(folder);assert(before.isDirectory()&&!before.isSymbolicLink());
+      for(const name of await readdir(folder)) {
+        assert(++entries<=1024&&performance.now()<deadline,'Temporary observation bound.');
+        const child=join(folder,name),item=await lstat(child);assert(!item.isSymbolicLink());
+        if(item.isDirectory())await visit(child);else {assert(item.isFile()&&item.nlink===1);bytes+=item.size;}
+      }
+      const after=await lstat(folder);assert(after.isDirectory()&&before.dev===after.dev&&before.ino===after.ino);
+    }
+    await visit(path);return bytes;
   }
   async function start() {
     app=await createServer({databaseUrl,ownerToken:token,automaticQueueScan:false,leaseMs:300_000});
     await migrateNativeActivityBodies(pool);
     if(!app.hasRoute({method:'GET',url:'/api/tasks/:taskId/native-activities/:activityId/body'})) registerNativeActivityBodyRoutes(app,pool);
+    app.addHook('onRequest',async()=>{await reserve();});
     app.addHook('onSend',async(request,reply)=>{
       if(dropReply&&request.url==='/api/runner/events'&&reply.statusCode===200) {dropReply=false;facts.droppedAcceptedAck=true;reply.raw.destroy();}
     });
@@ -45,17 +66,21 @@ export async function bodyFixture() {
   async function close() {
     const errors:string[]=[];
     try {
-      await app?.close();facts.appClosed=true;await pool.end();facts.poolClosed=true;
+      await app?.close();facts.appClosed=true;facts.listenerClosed=app?app.server.listening===false:true;assert(facts.listenerClosed);await pool.end();facts.poolClosed=true;
       if(created) {
-        assert.equal((await admin.query("SELECT shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1",[name])).rows[0]?.marker,marker);
+        const identity=(await admin.query("SELECT oid,shobj_description(oid,'pg_database') AS marker FROM pg_database WHERE datname=$1",[name])).rows[0];
+        assert(identity&&identity.oid===databaseOid&&identity.marker===marker,'Database identity unknown.');
         facts.databaseBytes=(await admin.query('SELECT pg_database_size($1) AS bytes',[name])).rows[0].bytes;
+        assert(Number(facts.databaseBytes)<=allowance,'Database allowance exceeded; retain.');
+        await reserve();
+        if(directory) {facts.temporaryBytes=await stableDirectoryBytes(directory);assert(Number(facts.temporaryBytes)<=16*1024**2,'Temporary allowance exceeded; retain.');}
         const deadline=performance.now()+3000,observations:unknown[]=[];facts.connections=observations;
         for(;;) {
           const remaining=deadline-performance.now();assert(remaining>0,'Connection observation timed out.');
           const query={text:'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33',values:[name],query_timeout:Math.min(500,Math.ceil(remaining))};
           let rows:unknown[];
           try {rows=(await admin.query(query)).rows;observations.push({rows,remainingMs:Math.max(0,Math.floor(deadline-performance.now()))});}
-          catch(error) {observations.push({errorType:error instanceof Error?error.name:'unknown'});throw new Error('Connection state unknown.');}
+          catch(error) {observations.push({errorType:error instanceof Error?error.name:'unknown',code:error&&typeof error==='object'&&'code'in error?String(error.code):null});throw new Error('Connection state unknown.');}
           assert(rows.length<=32&&performance.now()<=deadline,'Connection observation unconfirmed.');
           if(rows.length===0) break;await delay(Math.min(100,Math.max(0,deadline-performance.now())));
         }
@@ -77,6 +102,7 @@ export async function bodyFixture() {
     assert.equal((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1',[name])).rowCount,0);
     facts.creationRequested=true;await checkpoint('before-create');await admin.query(`CREATE DATABASE "${name}"`);created=true;
     await admin.query(`COMMENT ON DATABASE "${name}" IS '${marker}'`);facts.marked=true;
+    databaseOid=(await admin.query('SELECT oid FROM pg_database WHERE datname=$1',[name])).rows[0]?.oid;assert(Number.isInteger(databaseOid));facts.databaseOid=databaseOid;
     directory=await mkdtemp(join(tmpdir(),'flow-chat05p01-pg-'));const info=await lstat(directory);directoryIdentity={dev:info.dev,ino:info.ino};facts.directory={path:directory,...directoryIdentity};
     await checkpoint('owned-resources');await start();
   } catch(error) {facts.startError=error instanceof Error?error.name:'unknown';try{await close();}catch{}throw error;}
