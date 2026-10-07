@@ -1,0 +1,17 @@
+diff --git a/apps/web/test/conversation-recovery.browser.ts b/apps/web/test/conversation-recovery.browser.ts
+index 5fcd857b..0b918692 100644
+--- a/apps/web/test/conversation-recovery.browser.ts
++++ b/apps/web/test/conversation-recovery.browser.ts
+@@ -1158,8 +1158,10 @@ async function worker(init: Init) {
+       const business = () => postRows().filter(row => row.path === path + "/turns" || row.path === path + "/queue");
+       const composer = () => page.locator(".aui-composer-root").filter({ visible: true });
+       const upload = async (name: string) => {
+-        const choosing = page.waitForEvent("filechooser"); await composer().getByRole("button", { name: "Add Attachment", exact: true }).click();
+-        await (await choosing).setFiles({ name, mimeType: "text/plain", buffer: Buffer.from(`Fixture file ${name}`) });
++        const add = composer().getByRole("button", { name: "Add Attachment", exact: true });
++        await expect(add).toBeEnabled();
++        const [chooser] = await Promise.all([page.waitForEvent("filechooser"), add.click()]);
++        await chooser.setFiles({ name, mimeType: "text/plain", buffer: Buffer.from(`Fixture file ${name}`) });
+         await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(name === "held-b.txt" ? 1 : name === "held-2.txt" ? 2 : 1);
+         const ready = (await probe("snapshot")).ready.filter((item: { name: string }) => item.name === name).at(-1);
+         requireThat(ready?.id && ready.reference, "Real adapter upload identity required"); return ready;

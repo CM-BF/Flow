@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T13:12:22.793544+00:00。
+状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T13:43:37.782Z。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -20,14 +20,14 @@
 
 ## 验证与边界
 
-本段local累计60,000ms，每次≤20,000ms含≥5,000ms cleanup；1Node顺序，TMP16MiB/raw2MiB，0network/PG/Chrome/provider/install/build。当前futurefresh组合门槛≥6,953,631,744B或最新完整组合更高值；旧执行门槛保历史。只明确files noEmit与新增/直接受影响选组，不以稀疏include冒wholeWeb。不自动运行旧Recovery browser或旧全绿。
+本段local累计60,000ms，每次≤20,000ms含≥5,000ms cleanup；1Node顺序，TMP16MiB/raw2MiB，0network/PG/Chrome/provider/install/build。当前futurefresh组合门槛≥7,515,275,264B或最新完整组合更高值；旧执行门槛保历史。只明确files noEmit与新增/直接受影响选组，不以稀疏include冒wholeWeb。不自动运行旧Recovery browser或旧全绿。
 真实Browser/HTTP/PG后续另按实际资源交接，不读取个人凭据。原Recovery记录只读不改、新输出归本evidence。具体scope见[request](../../docs/evidence/wpf-message-settings-app/request.json)。常规source operator旧等待已由e029现规则与d01授权解除；不新增审批链。
 
 ## 本段固定实现与未验边界
 
-MSGAPP-02/03/04 勾选指源码实现，绑定 c4bee7707a273e98ba7b07dc061ec13e78094c2f，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
+MSGAPP-02/03/04 勾选指源码实现，当前组合绑定 6a258a3886f0491b8487738c19c09dc631b98f2c，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
 
-历史11定向通过/57未选保留；新probe2六PASS/affected types8通过全部当前17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。首次PG初始化已实际FAIL并清理，真实页面两场景仍NOT_RUN，MSGAPP-06合法main仍pending。
+历史11定向通过/57未选保留；新probe2六PASS/affected types8通过当时9c46的17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。首次PG初始化已实际FAIL并清理，材料旅程随后两次FAIL，消息设置旅程仍NOT_RUN，MSGAPP-06合法main仍pending。
 
 ## MSGAPP-05 当前 mounted 后继
 
@@ -41,4 +41,8 @@ MSGAPP-02/03/04 勾选指源码实现，绑定 c4bee7707a273e98ba7b07dc061ec13e7
 
 当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-first/manifest.json)，[SQL供给](../../docs/evidence/wpf-message-settings-app/runtime-sql-supply.json)。
 
-MSGAPP-05当前：两次actual保红，第二cookieRead通过/材料选项失败；仅fixture公开目录header透传修复，target 424c6466bd28a838b91cc490a7b52021202b4d17。新90s phase18962/余71038，相关复验待fresh窗口，未扩大场景或预算。
+MSGAPP-05历史第二次安全点：两次actual保红，第二cookieRead通过/材料选项失败；仅fixture公开目录header透传修复，target 424c6466bd28a838b91cc490a7b52021202b4d17。新90s phase18962/余71038，相关复验待fresh窗口，未扩大场景或预算。
+
+MSGAPP-05第三actual：worker未处理filechooser超时提前exit1，缺场景/fixture回执；父资源回收有证但不冒优雅close。源target 6a258a3886f0491b8487738c19c09dc631b98f2c 只修错误观察；本phase33766/56234，禁止自动重试，原两selector未完成。
+
+当前6a错误观察差量已独审APPROVED；不代表修复chooser交互根因或actual通过。原phase33766/56234、第三缺fixture回执保持，当前无NEXT、不运行。

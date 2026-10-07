@@ -1,0 +1,89 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [],
+  "initialization": null,
+  "groupTimings": null,
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "Worker did not return a complete result",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_3f485a88771644208ed3d531d6e7a2d5",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4853750000002037,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.6496669999996811,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "messageSettingsPhase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 18962,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 98076,
+      "exitCode": 1,
+      "signalCode": null
+    },
+    {
+      "pid": 98080,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 21562261504,
+  "peakScratchBytes": 27507919,
+  "logBytes": 6909,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 14159.218041,
+      "scratchBytes": 27507919,
+      "evidenceBytes": 585362,
+      "freeBytes": 21562261504,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 14228.222666,
+      "scratchBytes": null,
+      "evidenceBytes": 587433,
+      "freeBytes": 21590425600,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}
