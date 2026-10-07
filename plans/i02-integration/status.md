@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:49:44.594127+00:00 / main3ee3c048；CHAT05领域与ENG单helper结果已审，本批组合类型通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:54:38.345442+00:00 / mainf39a5dfe；CHAT05领域与ENG单helper限定结果已接收，管理事实随本批发布 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,11 +12,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main3ee3c0486023feabcc9053a53b2d5c2808aebf59；CHAT05十八源前像同base，ENG本批仅own记录 |
+| 工作基线 / HEAD | mainf39a5dfea0a33ef55631cb7e29291deca6d4e0d2；本批仅两个已审父status与I02收口记录 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | CHAT05原3PG/3过/3461ms、18绑定及清理独审；类型依赖P2已窄修关闭，组合root noEmit exit0/9991ms。ENG单stock成功/574ms仅机制范围；不重跑PG或旧矩阵。 |
-| 已集成main状态 / HEAD | main3ee3c048已含SVC08实际采用收口与ENG四源；CHAT05领域及ENG新实验记录候选待类型修正后受控接收。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
+| 已集成main状态 / HEAD | main/origin f39a5dfea0a33ef55631cb7e29291deca6d4e0d2已接CHAT05十八源及ENG新实验记录，组合类型通过；公共body挂载/运行时仍待后继。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
@@ -342,3 +342,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T06:11:48.051045+00:00：SVC08仅窄接原caller身份修复、r2真实结果与日期表示修复。迁入成功/request失败已独审，新的仅request续接仍待固定；不改16生产工具、不声称服务已采用。见[接收记录](../../docs/evidence/i02/svc08-attempt02-intake.json)，本批0工程复跑。
 
 2026-10-07T06:25:25.202799+00:00：受控接收SVC08 c382实际结果、ENG f15四源/ca6封包和OPS3a4限定摘要；[唯一接收](../../docs/evidence/i02/svc08-eng01j-intake-20261007-0628.json)。个人旧Web exit1原样保留，c7b宿主采用不等于旧故障根因或完整SVC06；ENG真实helper未运行且writeAccess仍unknown。
+
+2026-10-07T06:54:38.345442+00:00：主线f39完成受控接收；本批父状态5f70两文件获assignment独立文档APPROVED，逐字接收，0产品重测。CHAT05已把范围交回准备公共接线；ENG单helper不升级为完整native authority。

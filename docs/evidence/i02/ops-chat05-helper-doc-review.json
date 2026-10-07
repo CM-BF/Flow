@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T06:54:38.345442+00:00",
+  "target": "5f70b7a4192bab06ef591e8eeb8002159366294b",
+  "base": "3a4f0ce3bfe1723aeb5c92e436732878dd9818a6",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "verdict": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "scope": [
+    "plans/flow-001-architecture/status.md",
+    "plans/ops-001-status-review/status.md"
+  ],
+  "checked": "Independent full two-file diff and fixed I02 result reviews: CHAT05 3 PG cases, root type-only fix/noEmit; ENG one stock helper/writeAccess unknown; actual deployed versions remain separate; historical UNKNOWN and sole CI PENDING retained.",
+  "reviewerRuns": 0,
+  "files": [
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 30412,
+      "sha256": "1d11addca29b74fa9f370042fa7718f9d2eefd6c850a67f8d0b2d80c01d2e006"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 88632,
+      "sha256": "b42d267cfd808eb1b4ae90a2c93a7c852561d4f3fba47309f1e3546f81efd606"
+    }
+  ]
+}
