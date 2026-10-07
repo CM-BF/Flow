@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T21:13:17.959Z",
+  "decision": "APPROVED_LIMITED_FIXED_RECOVERY_BUILD_PREPARATION",
+  "reviewer": "native_center_owner / independent peer",
+  "source": "8a0c2739ff6d141731efb7d5d685d2293ad3a434",
+  "delivery": "cb263ba616a399f52235fe37d42add9a55a956f1",
+  "preparation": {
+    "canonicalWorktree": "backend-browser-recovery",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-build-preparation.json",
+    "bytes": 5377,
+    "sha256": "b953432dcd23b94b11c6821ff05c6b5cd32a8a2cc8bfd18cab387f5afd39dd84"
+  },
+  "bindings": {
+    "fixedPaths": 15,
+    "fixedBytes": 31603,
+    "runtimePins": 22,
+    "runtimeBytes": 8991077,
+    "composition": "f37a3612068c7215994750574a7451ede841bcce",
+    "compositionTree": "de843e0fda82600b4d7600c76614c9794c17e3af"
+  },
+  "checks": {
+    "secondRound": {
+      "node": 2,
+      "python": 2,
+      "elapsedMs": 161,
+      "rawBytes": 698,
+      "groups": "2 absent / dual EOF",
+      "scratch": "2 exact empty removed"
+    },
+    "firstRound": "Caller KeyError after children; missing child closure/raw/scratch evidence remains UNKNOWN. No pass or RETURN inferred. Original failure preserved.",
+    "unresolvedFutureAllocationBytes": 8519680
+  },
+  "review": [
+    "Frozen exact seven-path composition retains dependency/SQL closure; trusted in-process build ports preserve original CLI and consumed namespaces.",
+    "New parent directory 0700, outer and actual-first exclusive writes 0600; same fixed builder/proof/OPS14 consumer.",
+    "420s work + 0.5s TERM + 2s reap; added peak 2317352960B, raw2MiB/OPS capture1MiB; unknown first local allocation counted once.",
+    "Original actual build and all cold/personal actions remain unexecuted at source review. Fresh binding, namespace and current complete resource floor remain execution conditions."
+  ],
+  "blockingFindings": [],
+  "testsByReviewer": "NOT_RUN_EXISTING_LOCAL_EVIDENCE_REUSED",
+  "limits": [
+    "Preparation and existing local evidence only; no build success or personal service recovery claimed.",
+    "No duplicate source snapshots; fixed Git and canonical original evidence remain authoritative."
+  ]
+}
