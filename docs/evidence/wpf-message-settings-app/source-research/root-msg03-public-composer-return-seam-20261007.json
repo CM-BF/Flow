@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T12:36:08.353623+00:00",
+  "kind": "SOURCE_RESEARCH_ADDENDUM",
+  "priorReport": "/private/tmp/root-msg03-material-return-settings-research-20261007.json",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/api/composer-runtime.ts",
+      "bytes": 17394,
+      "sha256": "a5c007fc5cefaefdfb3293927abb6d087ff128699f4e62ac373e9682a5b7c35e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/interfaces/composer-runtime-core.ts",
+      "bytes": 4337,
+      "sha256": "a405c68078886f680fc7faf3ef29c4b94011800a3400233149e2732b9562a00a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719"
+    }
+  ],
+  "finding": "Installed ComposerRuntime and ThreadComposerRuntime expose subscribe/getState and individual composer operations, but no before-return interception or public restoreDraft/retractDraft. The latter are public methods of an internal core implementation, not methods on the exported runtime API. unstable_on only exposes send/attachmentAdd/attachmentAddError, no prepare-return event.",
+  "method": "Keep the existing official Thread/runtime. Observe state transitions and use public composer operations plus App-owned settings authority; do not patch or reach into third-party private state. Existing held material recovery should retain frozen A settings with its submission identity/lifetime. Explicit restore must protect complete draft B, including settings-only and changed-then-restored ownership.",
+  "scopeResolution": "d01 independently checked a fresh zero-overlap exact file claim and legally amended MSG03 v2 to19 paths before writing the AttachmentComposer optional typed restore/discard callback seam. This is a narrow integration seam; no additional mutable settings store, shared contract or third-party core change.",
+  "verificationStillRequired": [
+    "Real official-core prepare rejection and cancellation with B settings-only.",
+    "Equal text A/B with different settings and changed-then-equal ownership.",
+    "Explicit restore/discard of retained A; async restoration must not overwrite a newly edited B.",
+    "Core synchronous handleSend exception / MessageNotSentError uses related return behavior; preserve generic transition reasoning without claiming unexecuted tests."
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T12:36:08.357856+00:00",
+    "scope": "Message settings return/failure ownership and attachment recovery interface",
+    "findings": "The onNew-only guard misses the third-party material-return branch. Existing text/files-only restore checks cannot represent complete draft ownership.",
+    "fixState": "Owner implementing with single App C authority and narrow callback seam; source/core behavior inspected, new actual regression not yet verified.",
+    "unresolved": "Await fixed owner source and real-core boundary tests; no runtime claim."
+  },
+  "runtime": "Read-only source audit; no imports, tests, PG, Chrome or services."
+}

@@ -1,8 +1,7 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
-状态：NOT_STARTED；无feature approval。
-Base：c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；target尚未实现固定。scope见[plan](plan.md)及[status](status.md)，仅claim18 literal。
+状态：**IN_PROGRESS**。源码与局部范围 **APPROVED_SOURCE_AND_SCOPED_LOCAL**（[root原件](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9fc0-source-local-review-20261007.json)，0 findings）；完整feature状态仍IN_PROGRESS。当前组合 target **9fc0fb8a48cb15ae35b4529013f25362d11a1efc** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50，17源码/test+2metadata。原固定37166 [独审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-37166-source-review-20261007.json)为 CHANGES_REQUESTED，两P2保留原件。
 
-验收：sole App ownership与P01授权/失效、官方composer detach前freeze、A材料await/B同正文异settings、原key/body重试、Recovery完整草稿、历史与Queue frozen requested、窄屏键盘/labels/ApplyCancel。现有受控组件与历史Recovery证据不能替代新App接线。
+9fc0修复恢复永久门槛、真实主题/同长前缀模型验收源码：root已独立确认两P2 CLOSED；source与11定向/affected类型范围批准，非完整页面批准。当前11定向/57未选、affected noEmit0均绑定该17源；原首红保留。唯一[feature-review-entry](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)为当前组合入口。
 
-独立review任务：先核本WT/branch/base/head/dirty与AGENTS、plan/status，读固定diff及真实选组原件；重点同步CAS与material await，错误/取消/旧opening恢复写入，缺省与非法settings分离。默认只读，问题交owner；source/local/browser/main分别给限定结论。当前所有新检查未执行，findings未评估。
+mounted App/browser/主线/部署未验；真实installed-core/生产guard与restore helper检查不冒整个ConversationThread挂载。作者未授新PG/Chrome或旧Recoverycredit。

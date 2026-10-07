@@ -1,0 +1,20 @@
+{
+  "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types"
+    ],
+    "baseUrl": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app"
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/src/App.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/test/conversation-recovery.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/test/conversation-recovery.browser.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/vite/client.d.ts"
+  ],
+  "include": [],
+  "exclude": []
+}
