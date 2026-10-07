@@ -41,7 +41,7 @@ fixture.pool.on('error', recordFailure);
 function checkWork() { fixture.checkWork(); if (firstFailure) throw firstFailure; }
 let sourceBefore: unknown, firstAdmission: Awaited<ReturnType<typeof admitPluginVerification>>;
 
-async function request(path: string, body?: unknown, token = owner) {
+async function request(path: string, body?: unknown, token: string = owner) {
   checkWork();
   return fixture.request(base + path, { method: body === undefined ? 'GET' : 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json', 'idempotency-key': randomUUID() }, body: body === undefined ? undefined : JSON.stringify(body) });
 }
