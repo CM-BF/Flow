@@ -1,0 +1,42 @@
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m apps/server/src/conversations/codex.test.ts[2m > [22mprojects legacy session settings only for its matching harness: codex
+[31m[1mAssertionError[22m: expected { assistant: { …(2) }, …(1) } to deeply equal { assistant: { …(2) }, …(1) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -2,11 +2,17 @@[39m
+[2m    "assistant": {[22m
+[2m      "reason": "unknown-adapter",[22m
+[2m      "state": "unavailable",[22m
+[2m    },[22m
+[2m    "effective": {[22m
+[32m-     "model": null,[39m
+[32m-     "source": null,[39m
+[32m-     "thinking": "unknown",[39m
+[32m-     "tools": "unknown",[39m
+[31m+     "model": "recorded-model",[39m
+[31m+     "source": {[39m
+[31m+       "adapterVersion": "claude-sdk-0.3.290-v1",[39m
+[31m+       "attemptId": "a",[39m
+[31m+       "detailId": "session-detail",[39m
+[31m+       "kind": "recorded-adapter-session",[39m
+[31m+       "taskId": "t",[39m
+[31m+     },[39m
+[31m+     "thinking": "disabled",[39m
+[31m+     "tools": "configured-readonly",[39m
+[2m    },[22m
+[2m  }[22m
+
+[36m [2m❯[22m apps/server/src/conversations/codex.test.ts:[2m105:24[22m[39m
+    [90m103| [39m  [35mconst[39m [projection] [33m=[39m [35mawait[39m [34massistantProjections[39m(client[33m,[39m [task])[33m;[39m
+    [90m104| [39m  [35mif[39m (harness [33m===[39m [32m'codex'[39m) {
+    [90m105| [39m    expect(projection).toEqual({ assistant: { state: 'unavailable', re…
+    [90m   | [39m                       [31m^[39m
+    [90m106| [39m    [34mexpect[39m(previews)[33m.[39m[34mtoHaveBeenCalledWith[39m(client[33m,[39m [])[33m;[39m
+    [90m107| [39m    [34mexpect[39m(query)[33m.[39m[34mtoHaveBeenCalledTimes[39m([34m1[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+

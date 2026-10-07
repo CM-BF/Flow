@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:03:28.848717+00:00；main5cae7a25公开流receipt已核。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:17:38.481795+00:00；main5cae7a25公开流receipt沿原记录。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,20 +15,20 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | Codex 会话创建、持续会话profile目录、原session后续提交与typed reply已接入现有模块，36个分轮局部用例及类型检查通过；待独审和真实会话数据库验收。 |
-| 下一可用交付 | 会话片源码独审后准备专库验证迁移、两轮HTTP/队列与旧目录兼容；Web/TUI由原owner消费既定接口。 |
+| 当前产出 | Codex会话片已修正错adapter误报Claude设置，反例先红后绿；两项新回归和五项直接相关用例、类型检查通过，待独立增量复审。 |
+| 下一可用交付 | 复审后准备真实专库两轮会话、目录/队列及迁移验收；当前不运行PG。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 源码0ecd917c与本段真实local已固定；本次仅review-ready/status。 |
-| HEAD（最近观察） | 0ecd917c634d5765ff585693a58bd470e3b76f5b（已push source，当前仅review-ready metadata） |
+| 工作树dirty状态 | 源码 7070b8ad 已固定；本次仅结果与review-ready/status封存。 |
+| HEAD（最近观察） | 7070b8ad1f76b154083eb4d43d00ace544cd0d02（source已提交，后续metadata包另固定） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v11 ACTIVE，71 literal；[精确receipt](../../docs/evidence/mature02c02/conversation-batch-amend-receipt.json)。035只追加，不改007。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 有限harness policy、conversation routes/admission/queue、typed reply与客户端codec、native-v2目录、035增量CHECK；main5cd的REQ15六模块明确intake，不恢复N+1。 |
-| Review | 当前会话片独审ready：[固定入口](../../docs/evidence/mature02c02/conversation-review-ready.json)，NOT_STARTED；旧公开流/PG独审保持APPROVED，主线5cae7a25已接收。 |
-| 检查 | 新局部分17+19共36 distinct通过；strict首2修后0，4child终态/EOF/TMP闭合，原失败保留。新PG/迁移0执行；旧6PG不重跑。 |
+| Review | architecture_read 对0ecd/5b981 CHANGES_REQUESTED 1 P2；本次固定窄修待复审：[入口](../../docs/evidence/mature02c02/conversation-adapter-fix-review-ready.json)。旧public已审/main事实不变。 |
+| 检查 | 本次red2=1过1预期失败 → green7/7（2新+5直接）、16未选；types0。3检查child/EOF/登记TMP关闭。两次caller启动前失败保留，首次未登记空root KEEP_UNKNOWN，不声称完整TMP计量。旧36分轮原样保留。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
 | 架构影响 | 复用现command/CAS/queue/session与同client50项批量投影；新增精确会话协商和native-v2目录，dashboard待固定branch→main后由原owner更新。 |

@@ -9,3 +9,7 @@
 ## C02-05 conversation source/local review — NOT_STARTED
 
 Target `0ecd917c634d5765ff585693a58bd470e3b76f5b`, base `d2e8c567`; [bindings](../../docs/evidence/mature02c02/conversation-review-ready.json), [Interface](../../docs/evidence/mature02c02/conversation-interface.md), [single local record](../../docs/evidence/mature02c02/conversation-local.json). Review finite codec/whole route-family opt-in, immutable profile+session runner fencing, typed source/settings identity, old Claude/v1 pagination, exact main REQ15 batch intake and035 migration. 36 distinct in17+19; strict2→0; all4child/TMP closed. PG/migration execution and full native/UI remain NOT_RUN. No old PG/stream tests repeated.
+
+## 2026-10-07T06:17:38.481795+00:00 — conversation adapter P2 fix
+
+原source0ecd/packet5b981独审CHANGES_REQUESTED，1P2：Codex+Claude旧adapter虽unknown-adapter仍暴露Claude effective。固定窄修 `7070b8ad1f76b154083eb4d43d00ace544cd0d02` 将legacy effective限定已识别Claude。新公开投影反例先1红/1绿，修后2新+5直接全绿，strict0；保留所有失败。当前增量复审NOT_STARTED，入口conversation-adapter-fix-review-ready.json。首次caller未登记空TMP KEEP_UNKNOWN，完整TMP accounting不通过；其余三个实际child与登记根已关闭。PG/迁移/native仍NOT_RUN。
