@@ -1,0 +1,18 @@
+{
+  "requestId": "release01-b692-018905e2-4d06-4244-abc9-dad9d2eb9ce7",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-RELEASE01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "scope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ],
+  "origin": "new"
+}

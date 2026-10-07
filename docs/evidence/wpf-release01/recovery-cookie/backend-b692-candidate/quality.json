@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T21:23:11.442Z",
+  "scope": "three fixed trusted artifact identity literals and private input rebinding only",
+  "skills": {
+    "find-skills": {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    "clean-code": {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  },
+  "discovery": "Reuse installed local skills for TypeScript fixture + fixed artifact preparation; no install/network search needed. Existing baseline provenance retained; hashes record actual local instructions.",
+  "application": [
+    "Keep trusted identity check explicit rather than add a generic codec/executor.",
+    "Same interface, error handling, exact runtime cleanup and original behavior assertions; only fixed data changes.",
+    "No duplicate runner or changed product authority; no schema/typing change requiring repeated green strict.",
+    "Old source/result evidence retained; new runtime NOT_RUN and no inferred acceptance."
+  ],
+  "findings": [],
+  "unverified": [
+    "New backend runtime transitive behavior and all four actual compatibility reports.",
+    "Fresh full74pin/native/resource/claim admission deferred to actual grant."
+  ],
+  "engineeringCheckCount": 0
+}

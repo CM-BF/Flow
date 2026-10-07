@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T18:33:46.469Z |
+| 最近更新时间 | 2026-10-07T21:24:19.908Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,26 +10,26 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本批仅主线收口metadata；normal push clean后exact4全部STOP，实际释放以账本/管理回执为准 |
-| 工作分支状态 | completed |
-| 本片段交付阶段 | delivered |
-| 检查状态 | PASSED d882c9439ee0111268e18766bf13ed02d6fb86e5 c3 actual outer0 / formal4 reports / 完整RETURN；旧c1 FAILED56504、c2 FAILED26554不改 |
+| 工作树dirty状态 | SOURCE_STOP；本批仅ownmetadata封存，正常commit/push后全四scope STOP |
+| 工作分支状态 | waiting |
+| 本片段交付阶段 | implementation |
+| 检查状态 | NOT_RUN 203ccc2f38d45ee043838383d3ba3056e7e4a435 新backend b692/f37兼容尚未运行；旧779/cd27四报告仅历史有效 |
 | 诊断实际 | DIAGNOSTIC_COMPLETE fc2916c275efe86203d91ec33656ea9871eac42a；outer0，17:02:28.596973Z START，17:03:55.066182Z完整RETURN；14881/90000ms CLOSED，1条clientError/关联UNKNOWN，passed=false/reports=null |
 | 必要局部检查 | PASSED fc2916c275efe86203d91ec33656ea9871eac42a strict/noEmit复验exit0；首resolver FAIL1125ms保留，复验1650ms，独立20s累计2775ms CLOSED；不替代四App兼容 |
-| 已集成main状态 / HEAD | INTEGRATED d669f3acb466f6f11bd6d81c1bffb7ffeedb5010；两harness逐字d882，四App现有证据接收；两产品窄修已随MSG进入main729d；非个人部署 |
-| 实现目标 | d882c9439ee0111268e18766bf13ed02d6fb86e5 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED 新target；历史两harness接收 d669f3acb466f6f11bd6d81c1bffb7ffeedb5010；两harness逐字d882，四App现有证据接收；两产品窄修已随MSG进入main729d；非个人部署 |
+| 实现目标 | 203ccc2f38d45ee043838383d3ba3056e7e4a435 |
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 恢复登录新网页的固定四App兼容已通过独审并完成主线接收，发布材料已交Original SVC06B |
-| 下一可用交付 | 本片段已交付；个人发布由Original SVC06B执行，稳定兼容executor为独立后继 |
+| 当前产出 | 新后台与四个现有网页的固定兼容检查候选已准备，等待集中审查与独立实际窗口 |
+| 下一可用交付 | 集中审查后进行新后台的四网页兼容验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：APPROVED d882c9439ee0111268e18766bf13ed02d6fb86e5；固定两harness及四App实际/完整RETURN，main已接收；非个人部署 |
+| Review | [review.md](review.md)：NOT_STARTED 203ccc2f38d45ee043838383d3ba3056e7e4a435 新backend组合；旧d882/779-cd27独审保持历史限定 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；本固定pair工程片段核齐交付 2026-10-07T18:33:46.469Z，见[主线收口](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/verification.json)；RELEASE01-10后继未实施，整体完成仍NOT_COMPLETED，不用提交/领取时间推定 |
-| 领取 | 7d60cb91-7537-4052-8ba7-0c0aac8eb722 v2 exact4；本批完成后全STOP并fresh CAS释放，实际claim状态以账本/管理回执为准 |
+| 领取 | b4d7d7fd-f215-4882-b7f3-2afc133a0365 v1 ACTIVE exact4；旧7d60 v3 released，不沿旧权写 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -42,12 +42,14 @@
 | RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
 | RELEASE01-08 | completed | w01_owner | [固定新Web+四App实际+main接收](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md)；材料交Original发布，个人操作未由本轮执行 |
 | RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，[集中独审已批准](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)；非mounted/compat通过 |
+| RELEASE01-11 | in-progress | w01_owner | [b692恢复后台固定输入准备](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md)，新四App兼容NOT_RUN；不改签旧C3 |
 | RELEASE01-10 | pending | w01_owner | 本组合收口后的稳定executor/可信输入分责后继，尚未实施；见[plan.md](plan.md) |
 
 ## 等待记录
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
+| RELEASE01-W06 | 2026-10-07T21:24:19.908Z | OPEN | 审查与实际准入 | root审固定b692输入差量，随后d01提供独立四App实际窗口；当前0运行，不将准备视为actual | [新候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md) |
 | RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
 | RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |
 | RELEASE01-W05 | 2026-10-07T16:22:48.759Z | 2026-10-07T18:01:09.576Z | 验证失败 | 本固定pair的c3四App严格断言已通过并确认完整RETURN；历史HPE唯一根因仍UNKNOWN，不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |
@@ -207,3 +209,11 @@ Root准备源/native批准与失败实际/清理独审已原样归档。newApp�
 ## 本固定pair当前主线交付
 
 [唯一收据与固定两源验证](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md)已完成。四正式报告、26788ms/180s CLOSED与完整RETURN不变；原失败不改。全四scope在本批正常pushclean后STOP，释放回执留TMP交中央，释放后不写。RELEASE01-10仍未完成，个人部署没有由本owner执行；两者不冒本兼容片段失败。
+
+## 当前：恢复后台新组合准备
+
+2026-10-07T21:17:56.295Z 重新合法接权exact4后开始本20min/8MiB准备段，截止2026-10-07T21:37:11Z。固定后台f37a3612068c7215994750574a7451ede841bcce / b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d，保461a/caa1/d629/779原网页与既有完整断言。无PG/HTTP/Chrome/build/install运行许可，旧C3报告不会改签新backend；整体开工UNKNOWN/完成NOT_COMPLETED保留。
+
+## b692 source安全停点
+
+2026-10-07T21:24:19.908Z SOURCE_STOP：固定203ccc2f38d45ee043838383d3ba3056e7e4a435仅三可信后台身份字面值；候选 /private/tmp/rel01-b692-c1 保原parent/worker/measure/tsconfig，74pins/5prepared，四App与publiccontext原字节。本段0工程检查/PG/HTTP/Chrome/构建，未建gate/admin输入。所有旧FAIL、diagnostic、cd27四正式报告和预算保持历史。当前仅等待一次集中source/input复核及经理独立actual窗口，未申请重测旧绿；本批metadata正常封存后exact4全部STOP，claim保留。

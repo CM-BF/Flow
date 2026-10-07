@@ -1,5 +1,13 @@
 # WPF-RELEASE01 review
 
+**当前状态：NOT_STARTED，固定新后台输入与原四App调用器差量待独立审查；实际兼容 NOT_RUN。**
+
+Review target commit：203ccc2f38d45ee043838383d3ba3056e7e4a435。范围仅原两harness；fixture三字面值差量，browser原字节。
+
+[新b692固定候选](../../docs/evidence/wpf-release01/recovery-cookie/backend-b692-candidate/README.md)与原779/cd27通过分列。新descriptor/producer结果已收到，但不替代四App实际；未运行检查/PG/Chrome，不转旧预算。旧原件和通过保持如下历史范围。
+
+## 历史：d882 / 779-cd27四App限定交付
+
 **当前状态：APPROVED，固定连接策略源码、c3四App正式兼容与完整RETURN均已独审通过；两harness与既有实际证据已被main接收；个人部署独立未执行。**
 
 Review target commit：d882c9439ee0111268e18766bf13ed02d6fb86e5。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。

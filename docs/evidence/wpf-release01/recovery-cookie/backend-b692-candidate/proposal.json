@@ -1,0 +1,41 @@
+{
+  "state": "SOURCE_PREPARED_NEEDS_FOCUSED_REVIEW_NO_ACTUAL_GRANT",
+  "source": "203ccc2f38d45ee043838383d3ba3056e7e4a435",
+  "packet": "/private/tmp/rel01-b692-c1",
+  "entry": [
+    "python3",
+    "/private/tmp/rel01-b692-c1/supervisor.py",
+    "--gate",
+    "<fresh unique gate after grant>"
+  ],
+  "selection": "FORMAL_FOUR_APPS",
+  "totalMs": 180000,
+  "cleanupMs": 30000,
+  "workerNodeGroups": 1,
+  "chromeGroups": 1,
+  "databases": 1,
+  "configuredConnections": 12,
+  "scratchBytes": 67108864,
+  "databaseWALPlanningBytes": 134217728,
+  "retainedBytesIncluding256KiBOuter": 8388608,
+  "metadataBytes": 1048576,
+  "phaseBudgetCreditFromHistory": 0,
+  "exactPair": "retained461a/caa1/d629 + web779/c231 + backendb692/f37 + policy81a8",
+  "assets": "3 retained immutable original Bearer Apps plus new immutable Cookie App; same backend/context, four reports only after complete cleanup/import verification",
+  "preserved": "Original UNKNOWN reload then explicit original key/body, accepted turn/task, Cookie SSE, held old logout headers/new cookie assertions; no blanket400 exception, no protocol/ACK change",
+  "network": "Chrome only exact public origin through own restricted dynamic proxy; Node only owned dynamic backend, deny personal61228, no page.request/context.request/route.fetch; no provider/install/build/personal service",
+  "native": "Parent/worker unchanged and existing exact native acceptance retained; source candidate and fresh actual remain not authorized by that historical acceptance",
+  "closure": "Reuse immutable four App inputs and prior native/dependency pins; replace backend descriptor/root/manifest and exact8 runtime +3 pool entry pointers. Full backend verifier remains mandatory at actual; no full payload rehash during preparation.",
+  "typecheck": "NOT_RUN: only three artifact identity string literals; no changed type/control-flow or executable caller; no repeat of historical green.",
+  "startFreeBytes": 16625762304,
+  "actualGrant": false,
+  "preparationBudget": {
+    "startedAt": "2026-10-07T21:17:11Z",
+    "deadline": "2026-10-07T21:37:11Z",
+    "bytes": 8388608,
+    "tmpBytes": 4194304,
+    "rawBytes": 524288,
+    "checksUsed": 0
+  },
+  "completeFloorNote": "16625762304 is the manager preparation forward snapshot. Proposed201MiB actual phase must be selected/accounted exactly once by manager; actual gate must use the fresh complete sum, never just this historical snapshot."
+}
