@@ -1,0 +1,146 @@
+{
+  "kind": "CHAT05P01-limited-domain-main-closeout",
+  "observedAt": "2026-10-07T06:57:05.027Z",
+  "main": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+  "authorDelivery": "fb467b251d92dc159cd9183395e9f49272087884",
+  "implementationTarget": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+  "productBindings": [
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24739,
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/adapter.test.ts",
+      "bytes": 3033,
+      "sha256": "dd4b581313bb0c71f4dd783a3f36b75bcc09569a78f6c5f09c50394c39521fbe",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/body.test.ts",
+      "bytes": 10666,
+      "sha256": "5d16d3be0d119ed987f2d118a38d62b405fe58d5c49821934bb0380293516ad2",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/plan.ts",
+      "bytes": 3961,
+      "sha256": "58ab5036500464a9a634cd3de3472da64d2947585b60080a913526612c87dec9",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/spool.ts",
+      "bytes": 7919,
+      "sha256": "a6c0d17b91a532e06f222a57357d7dc01c7bcfb3bd39840d6c6d5cf6b8d1e1d8",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "bytes": 5178,
+      "sha256": "db7d993cfa67d130429bc889f76e130308076af0ad3add824d67cacd5076305e",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/native-activity/mapper.test.ts",
+      "bytes": 5661,
+      "sha256": "741f428656377d3660094a2fbd4312cabbf31f5747e0efb41ff64100a39fbfb9",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "bytes": 8740,
+      "sha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8925,
+      "sha256": "01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/body.test.ts",
+      "bytes": 8574,
+      "sha256": "c3f5ba6337a94c66fd370b0a3394b52f6496935f1917fe73481e929b969874ac",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/codec.test.ts",
+      "bytes": 2228,
+      "sha256": "1e344f3f1b3ab2d3dd2812b274346e4d5f888b64e8c82c2d769bdb70c7accfff",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 10428,
+      "sha256": "29a65ba40e63c5ff686c804876a4cd84e3411632b3679cdadda95c5b6b6d0820",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "bytes": 1914,
+      "sha256": "df6162150507f7754777bd0ce74862ec0cef20207b5f70e204a3c60ee61bd859",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/read.ts",
+      "bytes": 3538,
+      "sha256": "0480c2fffda5c775c4c9fa20d9edbbfa6d13e05610f5bdbbbf458c31947ca288",
+      "matchesMain": true
+    },
+    {
+      "path": "apps/server/src/native-activity-body/store.ts",
+      "bytes": 8418,
+      "sha256": "0f2b4960dbcd2b685428d5083f9fec6ce69121f51e3a5b108e52904c4068ea69",
+      "matchesMain": true
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 3091,
+      "sha256": "bc0545b5ddd1f1972a0370c556a627555ef78530b2e0dd08da3f5febf7894e4e",
+      "matchesMain": true
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7753,
+      "sha256": "cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918",
+      "matchesMain": true
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "bytes": 1398,
+      "sha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e",
+      "matchesMain": true
+    }
+  ],
+  "productDiffCount": 0,
+  "reviewArchives": [
+    {
+      "source": "docs/evidence/i02/chat05p01-integration-type-finding.json",
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "archive": "integration-type-review.json",
+      "bytes": 1527,
+      "sha256": "0c10870e43e30e7876921ca7ec616b7055926b86a05b11a44242cbef9405a1c6"
+    },
+    {
+      "source": "docs/evidence/i02/chat05p01-integration-types-fixed/result.json",
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "archive": "integration-types-fixed-result.json",
+      "bytes": 582,
+      "sha256": "9b66ec7da61a3b8bf9ec4944c8464b2e94d6384b0033f8dbccba0b99126e6fe1"
+    }
+  ],
+  "rootNoEmit": {
+    "exitCode": 0,
+    "elapsedMs": 9991,
+    "finishedAt": "2026-10-07T06:49:22.602309+00:00",
+    "source": "integration-types-fixed-result.json",
+    "P2": "CLOSED",
+    "rerunByThisWorker": false
+  },
+  "domainReview": "pg-run-01/independent-review.json",
+  "claim": "delivered-scope-amend-receipt.json",
+  "scopeLimit": "Domain and existing three PG cases accepted; production mount/host opt-in/public client/UI/provider and host aggregate capacity remain open. No product re-run or service operation in this closeout.",
+  "integrationTime": "Exact main push time UNKNOWN; observed acceptance at observedAt based on Lead main receipt and 18 fixed Git/current byte comparisons."
+}

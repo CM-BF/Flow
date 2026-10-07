@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-07T06:48:28.308106+00:00 |
+| 更新时间 | 2026-10-07T06:59:57.746Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初任务开工无可靠记录，保持UNKNOWN；旧局部05:12原reservation/result；本段PG准备只读核/领取见pg-entry/claim-observation与preparation，不替代最初时间 |
@@ -11,25 +11,25 @@
 | co-lead | Execution Lead |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
-| 当前产出 | 工具正文领域及三项真实数据库结果已获独审；主线组合发现的单处测试类型依赖已窄修，运行行为和原结果保持 |
-| 下一可用交付 | 主线应用单文件类型修正并复验组合类型，通过后受控接收；正式开通仍为后继 |
-| 当前阻塞 | ACTIVE: 等待主线一次类型复验与受控接收；生产挂载、整体容量和界面后继仍未完成 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 工具正文保存、分页追回与中断恢复领域已进入主线；三项真实数据库验证及组合类型检查通过，原失败保留 |
+| 下一可用交付 | 本领域片段已交付；后继将接入公开读口与显式宿主开通，当前只准备接口，界面和真实模型验收仍开放 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | fc685e15dfd150df81ad9b13aef7abeb3ae270c2；单测试类型修正已固定，本次仅独审归档metadata |
-| dirty | 仅own domain-review/status/type-delta记录，提交后核clean |
-| 工作分支状态 | in-progress |
+| HEAD | fb467b251d92dc159cd9183395e9f49272087884；本次在其上仅 main receipt / 公开接线提案 metadata，最终提交后核 clean |
+| 工作树dirty状态 | 本次仅原 own plan/evidence；无产品写入，最终提交后核 clean |
+| 工作分支状态 | completed；已交付领域片段，原计划后继05/06仍开放 |
 | 实现目标 | fc685e15dfd150df81ad9b13aef7abeb3ae270c2 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
-| claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | 原3PG/3过/0未选、exit0/3461ms，旧28局部与40af focused0保留；本次只类型别名静态差异核，root复验由Lead执行，未重跑PG/局部/types |
-| 独立review | APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE 8059b7b2/788bda85；单测试类型delta待Lead组合复验，原生产挂载仍未批准 |
-| main集成 | 未集成 |
-| Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
-| 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
+| claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v2 ACTIVE，仅 docs/evidence/chat05p01 与 plans/chat05p01-native-activity-body；06:54:38.814Z 原子移出全部产品范围 |
+| 检查状态 | PASSED fc685e15dfd150df81ad9b13aef7abeb3ae270c2，限定领域/直接消费者；原3PG/3过、exit0/3461ms，28不同局部分轮与focused0保留；Lead主线root noEmit修后exit0/9991ms，类型P2 CLOSED；本收口0重跑 |
+| Review | APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE；fc685类型别名delta获Lead独核/组合类型复验；生产公开开通和后继提案尚未批准 |
+| 已集成main状态 / HEAD | f39a5dfea0a33ef55631cb7e29291deca6d4e0d2 已由Lead窄接/push；2026-10-07T06:57:05.027Z 本owner核18源126164B与固定 main 逐字相等；精确push时间UNKNOWN，不用commit时间替代 |
+| Dashboard | registry180来源保留；本次用main parseStatus只核本status，errors/human missing=[]，见 delivered-status-parse.json；最初开工UNKNOWN保留，不冒称重新加载页面 |
+| 架构影响 | 正文spool/immutable chunk读口领域已main；公开factory/client/runtime接线尚未实现，见public-wiring-interface.md。架构基线更新owner为Execution Lead，target f39，是否更新UNKNOWN |
 
 ## TODO
 
@@ -37,12 +37,12 @@
 | --- | --- | --- | --- |
 | CHAT05P01-01 | completed | assignment_review | 首合同7d075与claim已固定 |
 | CHAT05P01-02 | completed | assignment_review | 28局部及本3PG：原批次持久恢复通过；正式开通另在05 |
-| CHAT05P01-03 | completed | assignment_review | 原3PG实际读写/授权/fence/033幂等通过，结果待独审 |
-| CHAT05P01-04 | completed | assignment_review | 原28局部分轮+本3PG，旧类型0；新fixture noEmit NOT_RUN边界明确，原红保持 |
-| CHAT05P01-05 | pending | assignment_review | 独审及共享集成未完成 |
+| CHAT05P01-03 | completed | assignment_review | 原3PG实际读写/授权/fence/033幂等通过，领域结果独审与main接收完成 |
+| CHAT05P01-04 | completed | assignment_review | 原28局部分轮+3PG；新fixture包含在Lead主线root noEmit修后exit0证据，原NOT_RUN/红保持 |
+| CHAT05P01-05 | pending | assignment_review | 领域独审/main已完成；公共factory/client/runtime接线与正式开通仍待后继独立树 |
 | CHAT05P01-06 | pending | assignment_review | UI/provider完整验收后继 |
 
-共享运行时开通、公共client/factory挂载由Lead协调；没有host port始终旧prefix，不能凭新runner或route存在自动启用。PG窗口尚未授予。领取和设计来源见[证据](../../docs/evidence/chat05p01/README.md)。
+共享运行时开通、公共client/factory挂载由Lead协调；没有host port始终旧prefix，不能凭新runner或route存在自动启用。原三PG已结束并归还窗口；不持有新运行窗口。领取和设计来源见[证据](../../docs/evidence/chat05p01/README.md)。
 
 历史低空间HOLD（2026-10-06，非当前事实）：当时fresh可用1,080,119,296B低于focused types的1GiB+8MiB门槛；当时Lead协调资源，现已解除旧低空间阻塞。无个人服务/PG/provider动作。源码已稳定，209源/31 SQL资源静态存在性齐全，PG3case仍NOT_RUN；不因等待容量扩实现。
 
@@ -85,10 +85,17 @@ Web/Mika已由Lead明确交接，当前CHAT05P01持有唯一PG段。fresh原v1/s
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | CHAT05P01-W-PG01 | UNKNOWN | 2026-10-07T06:37:51.807947Z | 资源 | 原三项PG等待共享窗口；最早等待起点缺证据。已由Lead明确holder交接并fresh准入，现已解除。 | 06:31:32入口独审、06:32:28 approved-preflight、06:37:51 execution-preflight-01 |
-| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | 2026-10-07T06:43:28.502402+00:00 | 审查 | 本次3PG结果封定交唯一独审；后续共享接线与主线接收另按实际事实记录。 | pg-run-01/result-manifest.json、当前owner固定交付 |
+| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | 2026-10-07T06:43:28.502402+00:00 | 审查 | 本次3PG结果封定交唯一独审，已解除；后续共享接线另记。 | pg-run-01/result-manifest.json、pg-run-01/independent-review.json |
+| CHAT05P01-W-MAIN01 | UNKNOWN | 2026-10-07T06:57:05.027Z | 审查 | 领域主线接收/类型修正已解除；此结束为收到main回执后实际字节核验时刻，准确push时刻UNKNOWN。 | main-receipt.json、integration-type-review.json、integration-types-fixed-result.json |
 
 实际执行与等待分开：06:37:51.861095Z reservation至06:37:55.362725Z caller结果；fixture在06:37:55.330Z已持久cleaned，窗口随后实际告Lead归还。不把claim/独审/commit时间当首次任务开工；本次最早资源等待起点UNKNOWN保持。
 
 ## 2026-10-07T06:48:28.308106+00:00：领域结果独审接收与组合类型窄修
 
 唯一Lead于2026-10-07T06:43:28.502402+00:00批准原8059结果，18绑定及3PG原件一致，[独审原件](../../docs/evidence/chat05p01/pg-run-01/independent-review.json)已归档。主线组合仅一条server测试直接SDK类型TS2307；本owner在原v1 scope将其改为mapper输入Parameters类型，两个原断言同类型替换，所有JS语句/3PG断言不变。见[固定delta](../../docs/evidence/chat05p01/integration-type-delta.json)。未改依赖/包/lock/alias，原entry/PG manifest不改、不重新消费；0检查运行。Lead应用固定单文件后做一次root noEmit复验，主线尚未宣称接收。
+
+## 2026-10-07T06:59:57.746Z：领域片段已交付与产品写权归还
+
+[main receipt](../../docs/evidence/chat05p01/main-receipt.json)绑定 main f39 与作者 fb467 的全部18产品源，126164B逐字相等；原组合 TS2307 P2经 fc685 类型别名修正关闭，[Lead复验](../../docs/evidence/chat05p01/integration-types-fixed-result.json) exit0/9991ms，结束06:49:22.602309Z。原3PG、局部与所有红/unknown不改，不补跑。原领域独审保持限定，公开挂载/默认生产开通/UI/provider不在批准范围。
+
+[原子amend回执](../../docs/evidence/chat05p01/delivered-scope-amend-receipt.json)在06:54:38.814Z将原v1改v2，全部产品停写，仅保两own metadata范围。[公开接线Interface](../../docs/evidence/chat05p01/public-wiring-interface.md)提出14个后继候选literal与共享owner依赖；本次仅文档，未take后继/新建树/实施/运行。读口可独立先交；严格旧中心fallback、真实中心支持确认、共享client codec及Web消费限制已列明。新生产实施须Lead协调独立树与fresh take。任务最初开工仍UNKNOWN、整体完成仍NOT_COMPLETED；不将本领域已交付扩成05/06全完成。

@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T06:59:57.746Z",
+  "task": "CHAT05P01 domain metadata closeout / proposed public wiring",
+  "stack": "Node24 TypeScript/Fastify/PostgreSQL/client transport; design-only",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "application": "Reused installed matching local skills; no unrelated lookup/install.",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "application": "Bounded design: compare extending strict identity vs dedicated authenticated confirmation; proposed the latter. Existing authorized doc-only task; no product implementation.",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "application": "Small reader Interface hides cursor/codec; one host seam reuses existing outbox/control.",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "application": "Reviewed names, single responsibility, unknown preservation, cancellation, no duplicate state authority/codec; no unresolved code finding in this document-only scope.",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "versionSource": "Existing installed skill bytes; no update/install this segment.",
+  "checks": "Content/links and only own status parser; 0 product tests/PG/runtime imports/provider/services.",
+  "limits": "Proposal is not independent implementation approval. Historical source/raw untouched.",
+  "localLinks": {
+    "files": [
+      "plans/chat05p01-native-activity-body/plan.md",
+      "plans/chat05p01-native-activity-body/status.md",
+      "plans/chat05p01-native-activity-body/review.md",
+      "docs/evidence/chat05p01/public-wiring-interface.md"
+    ],
+    "missing": []
+  }
+}

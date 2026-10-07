@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-07T06:54:13.155Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/claude.ts",
+      "apps/runner/src/native-activity-body",
+      "apps/runner/src/native-activity/index.ts",
+      "apps/runner/src/native-activity/mapper.test.ts",
+      "apps/runner/src/outbox.ts",
+      "apps/server/src/events.ts",
+      "apps/server/src/native-activity-body",
+      "docs/evidence/chat05p01",
+      "packages/contracts/src/native-activity-body.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/storage/migrations/033-native-activity-bodies.sql",
+      "plans/chat05p01-native-activity-body"
+    ],
+    "state": "active",
+    "branch": "codex/native-activity-body",
+    "origin": "new",
+    "taskId": "CHAT05P01",
+    "worker": "assignment_review",
+    "claimId": "b447f2ce-a4b3-49b0-bcbe-034ff60b73be",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body",
+    "createdAt": "2026-10-06T22:17:47.363Z",
+    "updatedAt": "2026-10-06T22:17:47.363Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "stoppedProductWriting": true,
+  "reason": "18 delivered product paths are already accepted unchanged at f39a5d; retain own metadata for proposed public wiring only."
+}

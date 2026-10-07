@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T07:01:02.098Z",
+  "source": "plans/chat05p01-native-activity-body/status.md",
+  "sourceSha256": "f9d89b3e38e469f11eb5925ee3ad6409c7eb269a6789de5ea4798eb9bf7343a0",
+  "parser": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/execution-dashboard/src/status.mjs",
+  "parserSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+  "errors": [],
+  "humanMissing": [],
+  "delivery": {
+    "state": "delivered",
+    "source": "explicit"
+  },
+  "implementation": {
+    "target": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+    "scopes": [
+      "apps/runner/src/claude.ts",
+      "apps/runner/src/native-activity-body",
+      "apps/runner/src/native-activity/index.ts",
+      "apps/runner/src/native-activity/mapper.test.ts",
+      "apps/runner/src/outbox.ts",
+      "apps/server/src/events.ts",
+      "apps/server/src/native-activity-body",
+      "packages/contracts/src/native-activity-body.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/storage/migrations/033-native-activity-bodies.sql"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+    "record": "PASSED fc685e15dfd150df81ad9b13aef7abeb3ae270c2，限定领域/直接消费者；原3PG/3过、exit0/3461ms，28不同局部分轮与focused0保留；Lead主线root noEmit修后exit0/9991ms，类型P2 CLOSED；本收口0重跑"
+  },
+  "reviewPresent": true,
+  "mainPresent": true,
+  "dirtyPresent": true,
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "最初任务开工无可靠记录，保持UNKNOWN；旧局部05:12原reservation/result；本段PG准备只读核/领取见pg-entry/claim-observation与preparation，不替代最初时间"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| CHAT05P01-W-PG01 | UNKNOWN | 2026-10-07T06:37:51.807947Z | 资源 | 原三项PG等待共享窗口；最早等待起点缺证据。已由Lead明确holder交接并fresh准入，现已解除。 | 06:31:32入口独审、06:32:28 approved-preflight、06:37:51 execution-preflight-01 |\n| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | 2026-10-07T06:43:28.502402+00:00 | 审查 | 本次3PG结果封定交唯一独审，已解除；后续共享接线另记。 | pg-run-01/result-manifest.json、pg-run-01/independent-review.json |\n| CHAT05P01-W-MAIN01 | UNKNOWN | 2026-10-07T06:57:05.027Z | 审查 | 领域主线接收/类型修正已解除；此结束为收到main回执后实际字节核验时刻，准确push时刻UNKNOWN。 | main-receipt.json、integration-type-review.json、integration-types-fixed-result.json |\n实际执行与等待分开：06:37:51.861095Z reservation至06:37:55.362725Z caller结果；fixture在06:37:55.330Z已持久cleaned，窗口随后实际告Lead归还。不把claim/独审/commit时间当首次任务开工；本次最早资源等待起点UNKNOWN保持。"
+  },
+  "productRuns": 0
+}

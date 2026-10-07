@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T06:46:41.427974+00:00",
+  "status": "CLOSED",
+  "severity": "P2",
+  "file": "apps/server/src/native-activity-body/body.test.ts",
+  "line": 5,
+  "source": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+  "finding": "Server fixture imports SDKMessage directly from runner-only dependency. Candidate main root noEmit fails TS2307; existing private donor resolution does not make that dependency portable.",
+  "evidence": "chat05p01-integration-types/result.json",
+  "repair": "Use existing nativeActivityObservations parameter type (or same existing exported input seam) in fixture; no new server SDK dependency or resolution alias. Preserve runtime JS and all three passing PG assertions.",
+  "next": "Original owner narrow source change; reviewer reads erased-type-only delta; one root noEmit rerun, no PG or unrelated checks.",
+  "ownership": "Original CHAT05 v1 writer; integration writer will not edit this claimed source.",
+  "fixTarget": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+  "delivery": "fb467b251d92dc159cd9183395e9f49272087884",
+  "review": "Complete erased-type-only delta read; derives Parameters from actual imported mapper, no package/alias/runtime or assertion change.",
+  "fixedFileSha256": "c3f5ba6337a94c66fd370b0a3394b52f6496935f1917fe73481e929b969874ac",
+  "verification": {
+    "source": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+    "rootNoEmitExit": 0,
+    "elapsedMs": 9991,
+    "evidence": "chat05p01-integration-types-fixed/result.json",
+    "PGorBehaviorRerun": false
+  }
+}

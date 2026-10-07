@@ -1,8 +1,10 @@
 # CHAT05P01 独立审查
 
-状态：SOURCE_APPROVED_PENDING_VALIDATION
+状态：APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE；主线类型P2 CLOSED。以下旧源审及各轮原事实按历史保留。
 
-Review target commit：40af6d9071c621707971fd983a85dd9145f065fd
+Review target commit：fc685e15dfd150df81ad9b13aef7abeb3ae270c2（原领域/fixture分段独审及类型修正增量的合成范围）；main接收f39a5dfea0a33ef55631cb7e29291deca6d4e0d2。
+
+历史初次 source review target：40af6d9071c621707971fd983a85dd9145f065fd
 
 Base：fc3246b307f5436ccecb97f38ccaba10c7a72a5a。唯一reviewer为 native_center_owner / gpt-6-astra，与作者独立；2026-10-06 22:50 UTC完成只读源审，未运行检查或修改产品。
 
@@ -37,3 +39,9 @@ APPROVED_INCREMENTAL_LOCAL_EVIDENCE；唯一reviewer astra_ultra_execution_lead�
 ## 2026-10-07T06:48:28.308106+00:00：领域与实际3PG独审 APPROVED，类型修正待组合
 
 原样收[APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE](../../docs/evidence/chat05p01/pg-run-01/independent-review.json)，target8059b7b23a2d98d4c9f3fdfe960142a943314d5f / delivery788bda85；0P1/P2，reviewer0运行。新单文件source fc685e15dfd150df81ad9b13aef7abeb3ae270c2 仅从mapper派生输入类型替代server直接SDK类型import，不改变运行语句与3PG断言；Lead做一次root组合类型复验，不扩大旧类型证据或重跑PG。生产默认开通仍未批准。
+
+## 2026-10-07T06:59:57.746Z：限定领域结果 main 收口
+
+[类型P2关闭记录](../../docs/evidence/chat05p01/integration-type-review.json)与[组合noEmit原结果](../../docs/evidence/chat05p01/integration-types-fixed-result.json)由I02固定main逐字归档；fc685仅类型alias、主线exit0/9991ms，原3PG未重跑。独审仍由原native/Lead分段负责，本owner不自授产品批准。全部18产品源已与main f39逐字核同，见[main receipt](../../docs/evidence/chat05p01/main-receipt.json)。所有产品写权已原子移出，只保计划/证据。
+
+后继[公开接线提案](../../docs/evidence/chat05p01/public-wiring-interface.md)是SOURCE_DESIGN_ONLY，尚无新产品写权、实现或运行；不得把本领域approval扩大到生产mount/host默认开通/UI/provider/宿主聚合容量。

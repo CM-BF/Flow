@@ -18,3 +18,9 @@
 生命周期、错误、背压与验证方法统一引用[模块规则](../../AGENTS.md#modular-design)。不记录隐藏/redacted thinking或整个SDK帧；JSON/UTF8可公开表示不等于原HTTP网络编码。产品未挂载/未测试时不称可用。
 
 后继聚合容量（CHAT05P01-06 / S01）：16MiB/attempt乘并发16的256MiB仅原文，不含JSON/base64/Buffer/manifest和未ACK历史。高并发正式开通前须验证runner聚合字节/历史扫描/空间不足停止新admission而保恢复心跳，以及确认后的受控保留回收；未知不能超时丢弃。本片缺port仍旧协议，不扩scope实现全宿主容量政策。
+
+## 领域交付与后继接线
+
+2026-10-07 领域18源及原3PG证据已独审并进入main f39，主线类型修正P2 CLOSED；见[main receipt](../../docs/evidence/chat05p01/main-receipt.json)。01–04已交付；05中的领域独审/main已完成，但共享接线/正式开通以及06 UI/provider仍开放，不改稳定TODO编号。全部产品写权已经交回，原v2只保own plan/evidence。
+
+下一最小[公开接线Interface](../../docs/evidence/chat05p01/public-wiring-interface.md)基于固定f39，复用reader/routes/spool/outbox，先公开读口，再显式host port；正文协议只由真实已迁移/挂载中心受runner鉴权确认。14个候选literal未领取，需新独立树/fresh take；C02 client/exports与X01 factory路径须正式协调。Web固定消费者仅作为合同输入，0新运行或UI源码修改。
