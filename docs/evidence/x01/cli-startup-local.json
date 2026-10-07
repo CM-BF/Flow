@@ -1,0 +1,1059 @@
+{
+  "startedAt": "2026-10-07T09:55:59.003753+00:00",
+  "startEpoch": 1791366637.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T09:55:59.004834+00:00",
+      "freeBeforeBytes": 23290830848,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-rsgoxjef",
+        "dev": 16777234,
+        "ino": 123975624,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/cli-startup-tsconfig.json"
+      ],
+      "process": {
+        "pid": 11808,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 3041,
+        "observed_bytes": 367,
+        "retained_bytes": 367,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "docs/evidence/x01/cli-startup-inputs/apps/runner/src/native-harness/codex/evidence.ts(3,78): error TS7016: Could not find a declaration file for module './projection.mjs'. '/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/cli-startup-inputs/apps/runner/src/native-harness/codex/projection.mjs' implicitly has an 'any' type.\n",
+      "rawBytes": 367,
+      "rawSha256": "cd916215a82c8f04ab4a9d5c82b90a9b484fb323f7017bf92ad483c74964ca9e",
+      "finishedAt": "2026-10-07T09:56:02.047204+00:00",
+      "elapsedBeforeReceiptSeconds": 3.0419882079586387
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T09:56:22.645438+00:00",
+      "freeBeforeBytes": 23268257792,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-salpd3pw",
+        "dev": 16777234,
+        "ino": 123976770,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/cli-startup-tsconfig.json"
+      ],
+      "process": {
+        "pid": 27357,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2673,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T09:56:25.319998+00:00",
+      "elapsedBeforeReceiptSeconds": 2.6739823749521747
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T09:56:36.749740+00:00",
+      "freeBeforeBytes": 23264432128,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l",
+        "dev": 16777234,
+        "ino": 123976815,
+        "removed": true,
+        "endSample": {
+          "entries": 7,
+          "bytes": 25167,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/cli-startup-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tests.json"
+      ],
+      "process": {
+        "pid": 34452,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1311,
+        "observed_bytes": 113,
+        "retained_bytes": 113,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tests.json\n",
+      "rawBytes": 113,
+      "rawSha256": "e3e9b823fe34a9093b251ed8dfe57dc4bbdb22f8c51803d2962cc128d6ba6939",
+      "tests.json": {
+        "numTotalTestSuites": 8,
+        "numPassedTestSuites": 8,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 70,
+        "numPassedTests": 15,
+        "numFailedTests": 0,
+        "numPendingTests": 55,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791366996981,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "plugin host operator policy matches only the configured full authenticated tuple and omission stays disabled",
+                "status": "passed",
+                "title": "plugin host operator policy matches only the configured full authenticated tuple and omission stays disabled",
+                "duration": 9.3065,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "plugin host actual main forwards an explicitly loaded exact policy once and preserves ordinary close",
+                "status": "passed",
+                "title": "plugin host actual main forwards an explicitly loaded exact policy once and preserves ordinary close",
+                "duration": 26.6845,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "plugin host actual main omission has no policy property and invalid explicit input starts no center",
+                "status": "passed",
+                "title": "plugin host actual main omission has no policy property and invalid explicit input starts no center",
+                "duration": 2.0645419999999888,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366997887,
+            "endTime": 1791366997925.0645,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/cli-startup-inputs/apps/server/src/plugin-runtime-configuration.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "defaults the ordinary runner entry point to fixture only",
+                "status": "skipped",
+                "title": "defaults the ordinary runner entry point to fixture only",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "enables Claude from an explicit material manifest without starting a query",
+                "status": "skipped",
+                "title": "enables Claude from an explicit material manifest without starting a query",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[\"relative.txt\"]}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[\"relative.txt\"]}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"tools\":[\"Bash\"]}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"tools\":[\"Bash\"]}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"query\":\"injected\"}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"query\":\"injected\"}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"maxBudgetUsd\":5}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"maxBudgetUsd\":5}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"requireReadApproval\":\"false\"}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"requireReadApproval\":\"false\"}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"maxTurns\":5}",
+                "status": "skipped",
+                "title": "rejects an invalid or policy-widening manifest {\"materialFiles\":[],\"maxTurns\":5}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "binds explicit active steering to one immutable profile while preserving legacy canonical bytes",
+                "status": "skipped",
+                "title": "binds explicit active steering to one immutable profile while preserving legacy canonical bytes",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects a non-boolean steering manifest without starting a query: \"true\"",
+                "status": "skipped",
+                "title": "rejects a non-boolean steering manifest without starting a query: \"true\"",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects a non-boolean steering manifest without starting a query: null",
+                "status": "skipped",
+                "title": "rejects a non-boolean steering manifest without starting a query: null",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "rejects a non-boolean steering manifest without starting a query: {\"protocol\":\"flow.active-steering.v1\"}",
+                "status": "skipped",
+                "title": "rejects a non-boolean steering manifest without starting a query: {\"protocol\":\"flow.active-steering.v1\"}",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "refuses steering configuration for a planner tool profile",
+                "status": "skipped",
+                "title": "refuses steering configuration for a planner tool profile",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "refuses to silently drop steering configuration through the legacy adapter-only loader",
+                "status": "skipped",
+                "title": "refuses to silently drop steering configuration through the legacy adapter-only loader",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "loads a strict Codex profile through the shared descriptor without starting a process",
+                "status": "skipped",
+                "title": "loads a strict Codex profile through the shared descriptor without starting a process",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "fails without a trusted factory and refuses relative or oversized Codex files",
+                "status": "skipped",
+                "title": "fails without a trusted factory and refuses relative or oversized Codex files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "uses explicit mutually exclusive native selection while preserving fixture and Claude defaults",
+                "status": "skipped",
+                "title": "uses explicit mutually exclusive native selection while preserving fixture and Claude defaults",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "does not accept launch permissions inside an otherwise valid Codex file",
+                "status": "skipped",
+                "title": "does not accept launch permissions inside an otherwise valid Codex file",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "refuses a file replaced with a FIFO after inspection without blocking and closes its handle",
+                "status": "skipped",
+                "title": "refuses a file replaced with a FIFO after inspection without blocking and closes its handle",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persistent loader rejects mixed selection and invalid public JSON before publication",
+                "status": "skipped",
+                "title": "persistent loader rejects mixed selection and invalid public JSON before publication",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "persistent loader returns guarded adapters and a confirmed reference without starting a process",
+                "status": "skipped",
+                "title": "persistent loader returns guarded adapters and a confirmed reference without starting a process",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "plugin operator file is explicitly selected and returns only strict store policy without publishing or executing",
+                "status": "passed",
+                "title": "plugin operator file is explicitly selected and returns only strict store policy without publishing or executing",
+                "duration": 11.519167000000039,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366997754,
+            "endTime": 1791366997765.5193,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/cli-startup-inputs/apps/runner/src/configuration.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry passes the default local limit without changing configured adapters",
+                "status": "passed",
+                "title": "passes the default local limit without changing configured adapters",
+                "duration": 43.91475,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry passes an explicit native limit while preserving profile publication and guards",
+                "status": "skipped",
+                "title": "passes an explicit native limit while preserving profile publication and guards",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"0\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"0\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"-1\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"-1\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"1.5\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"1.5\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"1e0\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"1e0\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \" 2 \" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \" 2 \" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"17\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"17\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"01\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"01\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects invalid native input \"1\\n\" before configuration or external startup",
+                "status": "skipped",
+                "title": "rejects invalid native input \"1\\n\" before configuration or external startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry keeps A2A startup supported for undefined",
+                "status": "skipped",
+                "title": "keeps A2A startup supported for undefined",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry keeps A2A startup supported for \"1\"",
+                "status": "skipped",
+                "title": "keeps A2A startup supported for \"1\"",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects unsupported A2A input \"2\" before reading endpoint files",
+                "status": "skipped",
+                "title": "rejects unsupported A2A input \"2\" before reading endpoint files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects unsupported A2A input \"16\" before reading endpoint files",
+                "status": "skipped",
+                "title": "rejects unsupported A2A input \"16\" before reading endpoint files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects unsupported A2A input \"\" before reading endpoint files",
+                "status": "skipped",
+                "title": "rejects unsupported A2A input \"\" before reading endpoint files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects unsupported A2A input \"1.0\" before reading endpoint files",
+                "status": "skipped",
+                "title": "rejects unsupported A2A input \"1.0\" before reading endpoint files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry rejects unsupported A2A input \" 1\" before reading endpoint files",
+                "status": "skipped",
+                "title": "rejects unsupported A2A input \" 1\" before reading endpoint files",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry keeps SIGINT cancellation and removes both signal handlers after completion",
+                "status": "passed",
+                "title": "keeps SIGINT cancellation and removes both signal handlers after completion",
+                "duration": 1.0342500000000143,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry keeps SIGTERM cancellation and removes both signal handlers after completion",
+                "status": "passed",
+                "title": "keeps SIGTERM cancellation and removes both signal handlers after completion",
+                "duration": 0.4345830000000035,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry retains the fixed startup error without echoing rejected input",
+                "status": "skipped",
+                "title": "retains the fixed startup error without echoing rejected input",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "runner main concurrency entry"
+                ],
+                "fullName": "runner main concurrency entry sanitizes dependency failures and still releases the signal handlers",
+                "status": "skipped",
+                "title": "sanitizes dependency failures and still releases the signal handlers",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "dedicated engineering main entry"
+                ],
+                "fullName": "dedicated engineering main entry composes only the pinned engineering adapter with the existing single-slot host",
+                "status": "skipped",
+                "title": "composes only the pinned engineering adapter with the existing single-slot host",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "dedicated engineering main entry"
+                ],
+                "fullName": "dedicated engineering main entry refuses engineering plus FLOW_CLAUDE_MATERIALS_FILE before storage or publication",
+                "status": "skipped",
+                "title": "refuses engineering plus FLOW_CLAUDE_MATERIALS_FILE before storage or publication",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "dedicated engineering main entry"
+                ],
+                "fullName": "dedicated engineering main entry refuses engineering plus FLOW_A2A_ENDPOINTS_FILE before storage or publication",
+                "status": "skipped",
+                "title": "refuses engineering plus FLOW_A2A_ENDPOINTS_FILE before storage or publication",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "dedicated engineering main entry"
+                ],
+                "fullName": "dedicated engineering main entry refuses parallel claims against one engineering project before startup",
+                "status": "skipped",
+                "title": "refuses parallel claims against one engineering project before startup",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "dedicated engineering main entry"
+                ],
+                "fullName": "dedicated engineering main entry does not enter the host after rejected setup and keeps startup errors private",
+                "status": "skipped",
+                "title": "does not enter the host after rejected setup and keeps startup errors private",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry awaits the guarded publication loader once before running the selected adapters",
+                "status": "skipped",
+                "title": "awaits the guarded publication loader once before running the selected adapters",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry rejects mixed FLOW_CLAUDE_MATERIALS_FILE before any loader or process",
+                "status": "skipped",
+                "title": "rejects mixed FLOW_CLAUDE_MATERIALS_FILE before any loader or process",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry rejects mixed FLOW_A2A_ENDPOINTS_FILE before any loader or process",
+                "status": "skipped",
+                "title": "rejects mixed FLOW_A2A_ENDPOINTS_FILE before any loader or process",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry rejects mixed FLOW_ENGINEERING_SETUP_FILE before any loader or process",
+                "status": "skipped",
+                "title": "rejects mixed FLOW_ENGINEERING_SETUP_FILE before any loader or process",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry requires both explicit files, including empty FLOW_CODEX_PROFILE_FILE",
+                "status": "skipped",
+                "title": "requires both explicit files, including empty FLOW_CODEX_PROFILE_FILE",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry requires both explicit files, including empty FLOW_CODEX_LAUNCH_FILE",
+                "status": "skipped",
+                "title": "requires both explicit files, including empty FLOW_CODEX_LAUNCH_FILE",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry keeps unknown publication private and never starts the runner",
+                "status": "skipped",
+                "title": "keeps unknown publication private and never starts the runner",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry passes SIGINT to Codex startup and runner without leaving signal handlers",
+                "status": "skipped",
+                "title": "passes SIGINT to Codex startup and runner without leaving signal handlers",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "persistent Codex main entry"
+                ],
+                "fullName": "persistent Codex main entry passes SIGTERM to Codex startup and runner without leaving signal handlers",
+                "status": "skipped",
+                "title": "passes SIGTERM to Codex startup and runner without leaving signal handlers",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup passes one explicitly read trusted store to the same native runner without changing adapters",
+                "status": "passed",
+                "title": "passes one explicitly read trusted store to the same native runner without changing adapters",
+                "duration": 0.5891660000000059,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup keeps omission default-off and does not add a plugin property to legacy runRunner options",
+                "status": "passed",
+                "title": "keeps omission default-off and does not add a plugin property to legacy runRunner options",
+                "duration": 0.5632920000000183,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup rejects plugin mixed with FLOW_A2A_ENDPOINTS_FILE before reading or publishing",
+                "status": "passed",
+                "title": "rejects plugin mixed with FLOW_A2A_ENDPOINTS_FILE before reading or publishing",
+                "duration": 0.3628750000000025,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup rejects plugin mixed with FLOW_ENGINEERING_SETUP_FILE before reading or publishing",
+                "status": "passed",
+                "title": "rejects plugin mixed with FLOW_ENGINEERING_SETUP_FILE before reading or publishing",
+                "duration": 0.30533300000001873,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup rejects plugin mixed with FLOW_CODEX_PROFILE_FILE before reading or publishing",
+                "status": "passed",
+                "title": "rejects plugin mixed with FLOW_CODEX_PROFILE_FILE before reading or publishing",
+                "duration": 0.29487499999999045,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [
+                  "plugin operator startup"
+                ],
+                "fullName": "plugin operator startup never falls back from an explicitly empty or invalid private file",
+                "status": "passed",
+                "title": "never falls back from an explicitly empty or invalid private file",
+                "duration": 0.404042000000004,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366997154,
+            "endTime": 1791366997202.404,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/cli-startup-inputs/apps/runner/src/main-concurrency.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "private operator reader accepts bounded owned 0600 JSON and rejects aliases, nonprivate modes and nonfiles",
+                "status": "passed",
+                "title": "private operator reader accepts bounded owned 0600 JSON and rejects aliases, nonprivate modes and nonfiles",
+                "duration": 3.8795420000000007,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "private operator reader bounds UTF8 and actual bytes and rejects another uid",
+                "status": "passed",
+                "title": "private operator reader bounds UTF8 and actual bytes and rejects another uid",
+                "duration": 4.537374999999997,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791366998011,
+            "endTime": 1791366998019.5374,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/cli-startup-inputs/packages/plugin-runtime/src/private-configuration.test.ts"
+          }
+        ]
+      },
+      "runner-config.json": [
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-89whnv",
+          "dev": 16777234,
+          "ino": 123976923,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-tWYmJd",
+          "dev": 16777234,
+          "ino": 123976925,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-HB9g8w",
+          "dev": 16777234,
+          "ino": 123976927,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-lMlGWf",
+          "dev": 16777234,
+          "ino": 123976929,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-sBD1Wl",
+          "dev": 16777234,
+          "ino": 123976931,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-iRI5hB",
+          "dev": 16777234,
+          "ino": 123976933,
+          "absent": true
+        },
+        {
+          "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runner-config-oZudzp",
+          "dev": 16777234,
+          "ino": 123976935,
+          "absent": true
+        }
+      ],
+      "host-policy.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-QZjhbI",
+            "dev": 16777234,
+            "ino": 123976941,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-CARVs6",
+            "dev": 16777234,
+            "ino": 123976943,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-xAfrkU",
+            "dev": 16777234,
+            "ino": 123976945,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-j4p6x4",
+            "dev": 16777234,
+            "ino": 123976947,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-fbspqB",
+            "dev": 16777234,
+            "ino": 123976949,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-runtime-policy-hWCLQh",
+            "dev": 16777234,
+            "ino": 123976951,
+            "removed": true
+          }
+        ]
+      },
+      "private-reader.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-plugin-private-config-lPd1dj",
+            "dev": 16777234,
+            "ino": 123976960,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-plugin-private-config-XwD38s",
+            "dev": 16777234,
+            "ino": 123976964,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-plugin-private-config-S0Asll",
+            "dev": 16777234,
+            "ino": 123976966,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-plugin-private-config-h3ZN2y",
+            "dev": 16777234,
+            "ino": 123976968,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-cli-startup-xh0tg16l/tmp/flow-plugin-private-config-5xH4Sf",
+            "dev": 16777234,
+            "ino": 123976970,
+            "removed": true
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T09:56:38.063517+00:00",
+      "elapsedBeforeReceiptSeconds": 1.3123519589425996
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 6100000000,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T09:56:38.063534+00:00"
+}

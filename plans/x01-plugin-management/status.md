@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:48:38.982027+00:00 |
+| 最近更新时间 | 2026-10-07T09:57:52.806468+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v22 ACTIVE53scope](../../docs/evidence/x01/terminal-outbox-amend-v22.json)；新增outbox及直接test，client/index已STOP/amend交回READBOUND01 |
+| Claim | [v23 ACTIVE59scope](../../docs/evidence/x01/cli-startup-amend-v23.json)；新增startup6literal，runner4原持有；client/index已交回 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86（terminal恢复source/checks固定；后继metadata待提交） |
-| 工作树 dirty 状态 | 仅独审/窄intake/后继设计metadata收口；四产品固定不变 |
-| 工作分支状态 | integration |
-| 检查状态 | terminal 11选11过/7未选，focusedtypes0；2子进程/10新fixture/2TMP全清理，0PG |
-| Review | terminal20b/758于09:45:42APPROVED0P1P2；公开PG c5dd/bbd09:32:01亦已APPROVED |
+| 工作基线 / HEAD | CLI startup新20min段09:50:37Z，基线main38110485；旧terminal20b独立READY |
+| 工作树 dirty 状态 | CLI startup新源/metadata实施中；已审terminal四源冻结 |
+| 工作分支状态 | implementation |
+| 检查状态 | startup15选15过/55未选；首types2缺声明补齐后0，3进程/自有roots实际闭合，0PG |
+| Review | terminal20b/758已APPROVED；startup仅设计核验、实现未审 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance均已main；runtime9b+公共wiring2ea已main3811048522dcc8a896e7ccf09872389b14bccd63，正式I02 x01-runtime-wiring-intake；本次terminal恢复未main |
 | 实现目标 | 20b143f847ea44d3f8e22a1e5b9229f62e2e5b86 |
 | 实现范围 | apps/runner/src/{runtime.ts,outbox.ts,plugins/runtime.test.ts,plugins/terminal-outbox.test.ts}及docs/evidence/x01/terminal-* |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 终态报告中断后的安全恢复已审通过，等待主线接收；真实npm公开运行链已在主线 |
-| 下一可用交付 | 受信任配置接入真实中心和runner启动命令，继续补齐CLI入口；恢复四叶独立交付不等待它 |
-| 当前阻塞 | NONE：无actual/local/PG预约；下一启动片待明确小接口与正式新增范围 |
+| 当前产出 | 真实启动入口已接显式私有配置并通过局部检查，准备独立源码审查；终态恢复四叶仍独立READY |
+| 下一可用交付 | 普通runner和center通过私有配置显式启用既有公共插件执行链 |
+| 当前阻塞 | NONE：本队local09:56:41已归还；真实CLI进程PG尚未准备/未OPEN |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -335,3 +335,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T09:44:12.254594+00:00：terminal源20b143f847ea44d3f8e22a1e5b9229f62e2e5b86固定，11/11与types0已终态；本段仅3.059s子进程内部累计（不是完整外部wall），两callerTMP/10fixture exact ENOENT。source从09:32:47连续，local等待计入工作段。正式main38110485接旧runtime9b/wiring2ea，后继恢复尚未main。
 
 2026-10-07T09:48:38.982027+00:00：terminal四源chatui独审APPROVED0P1P2已正式归档，canonical [terminal-integration-ready](../../docs/evidence/x01/terminal-integration-ready.json)为独立main接收入口；09:42:05local已交db。下个CLI启动片仅设计/范围协调，不延用本段运行预算。
+
+2026-10-07T09:50:37Z新startup20min段：09:50:37.355原子v22→v23/59，chatui已核最小设计。此段0PG，独立terminal20b窄接收继续READY，不用新预算重跑旧11/1。
+
+2026-10-07T09:56:41Z：startup3children实际closed，types首缺声明原件保留→精确补fixedmain declaration→types0、15/15。真实local内部累计7.028s、wholeexternalwall未知。恢复20b四源未变，不为本startup重跑11/1。
