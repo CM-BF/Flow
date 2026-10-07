@@ -1,6 +1,6 @@
 # ENG01I 独立review
 
-状态：IN_PROGRESS
+状态：APPROVED_MODULE_LOCAL_AND_PG_PREPARATION
 
 Review target commit: c3d29e4a36af74380565922fbb838ebec1bf7afc（局部/PG准备候选，PG未运行）
 
@@ -13,3 +13,5 @@ Base: 280289008a5a3779e4e5e6453181b96062ed9514。Scope见status四产品literal�
 2026-10-07T04:38:15.843894Z：原PG准备独审由assignment_review进行，两个P2（总期限与连接query remaining）已在dead2c4f窄修待复核；作者另修acquire unknown并新增1直接例/类型0，原raw保留。无PG执行、无最终领域批准。
 
 2026-10-07T04:43:21.318457+00:00：原[REQUEST_CHANGES](../../docs/evidence/eng01i/pg/original-independent-review.json)与[绑定](../../docs/evidence/eng01i/pg/original-independent-bindings.json)已逐字归档。reviewer确认acquire/总deadline/query remaining三项语义关闭，补充类型不兼容已在aadedee7d8df06713768b143c6901d36a6d81897修正并focused0。最终[窄delta清单](../../docs/evidence/eng01i/pg/query-type-delta-manifest.json)交同一reviewer，作者不自批。
+
+2026-10-07T04:50:04.101523+00:00：assignment_review唯一最终[独审](../../docs/evidence/eng01i/pg/final-independent-review.json)批准模块/局部证据与固定2例PG入口准备，无未解P1/P2；原REQUEST_CHANGES/README漏列事实保留。此批准不代表PG已运行；获得R1单次窗口，实际结果仍待运行后独立核对。

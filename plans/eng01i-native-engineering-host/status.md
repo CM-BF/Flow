@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:47:29.839386+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:50:04.101523+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -23,11 +23,11 @@
 | 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 写入、完整内容检查与公开收据的宿主组合已通过局部检查，已完成独审指出的窄修，等待中心恢复验收 |
+| 当前产出 | 写入、完整内容检查与公开收据的宿主组合已通过局部检查，已通过模块与运行入口独审，开始单次中心恢复验收准入 |
 | 下一可用交付 | 验证成功收据读回和确认丢失后的重启保护，再交独立审查 |
-| 当前阻塞 | ACTIVE: 两个真实中心旅程等待共享数据库验证窗口；本地组合检查已完成 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，原REQUEST_CHANGES已归档，修复及最后类型证据待独立复核；尚无最终批准 |
+| Review | [review.md](review.md)，APPROVED_MODULE_LOCAL_AND_PG_PREPARATION；实际PG结果待执行/独审 |
 | Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v1 active，6 literal；2026-10-07T04:18:16.925Z新take成功；原73bbb9e0 v2已released |
 | 架构影响 | 新native编排consumer，F消费公开wire；无启动入口/新loop，交Lead同步固定架构 |
 
@@ -50,7 +50,8 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | ENG01I-W01 | 2026-10-06T12:59:48.559Z | 2026-10-07T04:18:16.925Z | 其他 | 用户收益优先级转Connection；原六范围重新领取并明确恢复实施后结束 | [原释放](../../docs/evidence/eng01i/pause-receipt.json)、父计划13:03暂停说明、[恢复take](../../docs/evidence/eng01i/resume/take-receipt.json) |
-| ENG01I-W02 | 2026-10-07T04:33:52.806000Z | OPEN | 资源 | 局部完成；真实PG两例待明确共享窗口 | [候选](../../docs/evidence/eng01i/pg/window-request.md) |
+| ENG01I-W02 | 2026-10-07T04:33:52.806000Z | 2026-10-07T04:48:10.330086Z | 其他 | 源码独审、作者修复/局部验证与PG准入等待交错；不是纯资源等待，净等待时长UNKNOWN | 原REQUEST_CHANGES、局部run、最终独审；不将该区间全计等待或工作 |
+| ENG01I-W03 | 2026-10-07T04:48:10.330086Z | 2026-10-07T04:50:04.101523+00:00 | 资源 | 最终准备审查后等待单次共享窗口；结束为本owner登记R1许可并开始fresh准入 | [本次许可](../../docs/evidence/eng01i/pg/window-R1-authorization.json) |
 
 等待区间是实际排程事实，不等于工作耗时。固定C02 main c0e0263d受控输入已核G默认thread/start，局部直接3例绿；本产品仍未独审/main。原两次wrapper缓存收尾exit1、一次测试类型红保持；所有自有进程/目录已确认收尾，真实PG尚未创建。
 
@@ -59,3 +60,5 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 2026-10-07T04:43:21.318457+00:00：独立原REQUEST_CHANGES与绑定原样归档；acquire和两个期限finding由reviewer静态确认已关闭。其最后类型补充仅改PG fixture的显式QueryConfig扩展，aadedee7d8df06713768b143c6901d36a6d81897，focused0/2204ms；原337绑定中334项逐字一致；fixture/preflight及新增类型记录的local/README三项另列替换绑定。累计28different、十轮21191ms，PG2仍NOT_RUN；未增产品范围，当前固定待复核。
 
 2026-10-07T04:47:29.839386+00:00：仅修正继承清单统计，README固定f855字节新增绑定；334继承项+12delta项全部fixed/current一致，原raw/原准备manifest及4产品未动，0新检查。独审最后语义/类型raw已核无阻断，等待最终固定回执与共享PG准入。
+
+2026-10-07T04:50:04.101523+00:00：最终唯一独审已原样归档，R1许可只限固定2PG例一次，额外为独立浏览器与三队local保512MiB，fresh总线1744830464B；原live/cleanup上限不变。尚未开始PG，先核claim/固定输入/归属与独占run。

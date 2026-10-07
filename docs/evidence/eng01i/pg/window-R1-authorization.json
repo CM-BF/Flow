@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-10-07T04:50:04.101523+00:00",
+  "windowId": "ENG01I-PG-20261007-R1",
+  "source": "Execution Lead current turn explicit single shared PG window; X01 returned, no other PG holder reported",
+  "delivery": "53851a85fcac9bd098ca4dfc35ce0e42102d6497",
+  "productSource": "c3d29e4a36af74380565922fbb838ebec1bf7afc",
+  "entryDeadlineSource": "dead2c4f6cdf2a7708e5f3977aaa103e6dfcede4",
+  "fixtureTypeSource": "aadedee7d8df06713768b143c6901d36a6d81897",
+  "selected": 2,
+  "unselected": 18,
+  "providerCalls": 0,
+  "budgets": {
+    "freshBytes": 1744830464,
+    "baseFreshBytes": 1207959552,
+    "extraIndependentBrowserAndLocalsBytes": 536870912,
+    "liveReserveBytes": 1073741824,
+    "workSeconds": 120,
+    "totalSeconds": 150,
+    "privateRuntimeBytes": 8388608,
+    "evidenceBytes": 2097152
+  },
+  "entry": "python3 docs/evidence/eng01i/pg/run.py ENG01I-PG-20261007-R1",
+  "oneShot": true,
+  "unknown": "KEEP; no automatic replay or FORCE; no personal services"
+}
