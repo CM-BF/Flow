@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:47:30 UTC；main7b6已接收，HTTP准备source固定、types通过/collect1，实际HTTP未开放 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:50:21 UTC；HTTP准备独审唯一清理P2已修，待delta复审；0新运行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
@@ -16,11 +16,11 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | base22a；当前source/交付target bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148；HTTP只读组合固定main7b6a196da1cc8d95da09b27fc334555a119ba4bc，产品冻结 |
+| 工作基线 / HEAD | base22a；当前HTTP source e09978682ec573bacd3d79e7c08e915c16368d49；只读组合仍main7b6，六产品未改 |
 | 工作树dirty状态 | 本次仅README/status/review/plan归档；固定HTTP source与原始输出不再变化，最终cleanHEAD由交接回执记录 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148 |
+| 实现目标 | e09978682ec573bacd3d79e7c08e915c16368d49 |
 | 产品验证基线 | 六产品始终d209eb7275777d50f214fd73f66d6b3c1520c459；完整8source/tests当前固定9e6cc60b（仅turn-page-batch.test mock接口变化），旧26/strict按原d209证明范围保留 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py, docs/evidence/req15-turn-page-batch/main-database.ts, docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs, docs/evidence/req15-turn-page-batch/http-consumer.test.ts, docs/evidence/req15-turn-page-batch/execute-http-once.py, docs/evidence/req15-turn-page-batch/http-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.http.json |
 | 检查状态 | PASSED bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148 HTTP局部types exit0；collect1/exit0仅收集、非pass；实际HTTP NOT_RUN/NOT_OPEN。历史26/strict、PG2/2、主线mock11/11分层保留 |
@@ -32,7 +32,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
-| Review | [review.md](review.md)：当前HTTP准备source bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148 待status_read独审；旧产品/PG/mock批准仅各自范围 |
+| Review | [review.md](review.md)：status_read对bc4唯一P2已修于e09978682ec573bacd3d79e7c08e915c16368d49，待窄复审；旧局部结果和产品批准保留 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope；2026-10-07T03:37:38.014Z原子amend移除state.ts/replies.ts，已停写并将receipt直接交C02 owner，待对方fresh领取；其它scope保留 |
 | 架构影响 | conversation内部批量Interface已在main7b6接收；架构基线target产品d209/main7b6，责任mika协调架构owner；HTTP验证不新增产品结构，未声称图已同步 |
 
@@ -131,3 +131,5 @@ architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pag
 实际局部段03:42:05.388211Z至03:42:16.117318Z：2children/0修复重跑，types0/2.113625s、collect1/exit0/1.402533s（testPasses=null），raw271B，进程组absent/EOF与same-inode空TMP清除全部有回执，owner独核两TMP absent；local已交回architecture_read。单份[结构化段记录](../../docs/evidence/req15-turn-page-batch/http-local-segment.json)绑定4原件7454B。0 PG/HTTP/provider，旧26/PG2/11不重复。实际HTTP拟60s/40work+15cleanup、13连接/64HTTP/raw64KiB/64MiB DBreserve，7输出absent；需要独审与新heavy OPEN，不使用旧窗口。
 
 本次local source/结果统一交status_read独审；原plan REQ15-04仍开放，真实HTTP与全部验收完成时间未产生。claimv2仅8scope保留，state/replies已停止写且移除；后续C02是否完成自己的领取以其账本为准。
+
+2026-10-07 03:50:21 UTC review修复：status_read于03:49:40Z对bc4/9df提出唯一P2，未知进程状态时空TMP不可删除。source e09978682ec573bacd3d79e7c08e915c16368d49仅在caller加入process_closed共同判断（exit/groupAbsent/EOF/无secondary及历史unknown），finally未确认则保留目录/inode；manifest只更新该row，当前SHA3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16（227/1098695B）。旧local段与raw逐字不动，原类型和收集不覆盖未运行wrapper，不重复checks；实际HTTP仍NOT_OPEN。

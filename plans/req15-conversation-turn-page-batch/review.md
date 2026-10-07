@@ -2,7 +2,7 @@
 
 状态：PENDING（当前HTTP准备source与局部types/collect结果待独审；旧批准保留）
 
-Review target commit: bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148
+Review target commit: e09978682ec573bacd3d79e7c08e915c16368d49
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
@@ -101,3 +101,9 @@ architecture_read / gpt-6-astra，2026-10-07T03:18:33Z，source `9e6cc60bcd1cbde
 ## 公开HTTP直接消费者准备与局部段统一审查
 
 Target `bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148`，2026-10-07 03:47:30 UTC，SOURCE_REVIEW_PENDING。入口[http-window](../../docs/evidence/req15-turn-page-batch/http-window.md)；227输入1098267B/manifest SHA5616e4c61111a87e6586cf513ad41fd16dc77aa7626531ff24725a5f46789a5e。请status_read只读核固定main7b6 snapshot的实际source/30SQL、原单例断言与page401/403、专库/port0/池关闭和OID-marker普通DROP/unknown保留、旧supervisor公共接口和有限资源；再核两个local child实际types0/collect1（非pass）、4原件7454B/raw271B及资源闭合。0 reviewer import/type/test/PG/browser/write。产品原6源及旧26/PG2/11原件不变，旧批准不重发；main已接收，但本次实际HTTP仍NOT_OPEN。
+
+## HTTP准备首次独审与窄修
+
+status_read，2026-10-07T03:49:40Z，sourcebc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148/packet9df8d4f8b76e9dea9e5ed345a249d81a6e97340a：CHANGES_REQUESTED。唯一P2为execute-http-once.py:148–154在未知child生命周期仍可能rmdir空TMP；其余无P1/P2。227bindings1098267B全符，215snapshot886512B逐main7b6/0444、30SQL/16links/2@flow、4localoutputs7454B/raw271B均核；原2110字符断言正文保留、两auth新增合理；types0/collect1非pass，末态/EOF/TMP原receipt可信。0审者运行或写，外部whole-clock须actual另记，不以内部wall充当全部。
+
+Owner接受；e09978682ec573bacd3d79e7c08e915c16368d49仅修terminal known process守卫并共享该判断，unknown/缺事实保留TMPidentity；manifest3bcbdfc…08d16（227/1098695B）只重绑caller row。fixture/snapshot/原输出/旧supervisor不动，未新增运行。待status_read仅delta复审。
