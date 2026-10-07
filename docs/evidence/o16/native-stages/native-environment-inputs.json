@@ -1,0 +1,117 @@
+{
+  "at": "2026-10-07T09:42:38.029938+00:00",
+  "scope": "public installed code and metadata only; not SDK runtime/auth proof",
+  "bindings": [
+    {
+      "path": "/Users/citrine/.local/share/claude/versions/2.1.291",
+      "bytes": 233211568,
+      "sha256": "9a1d2ed6bb4421e8fc80c892c0413f293be3ee50ae3d7dda1a7622197a056690",
+      "dev": 16777234,
+      "ino": 117628286,
+      "mode": "0o755"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "dev": 16777234,
+      "ino": 63570890,
+      "mode": "0o755"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "dev": 16777234,
+      "ino": 116955756,
+      "mode": "0o644"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2",
+      "dev": 16777234,
+      "ino": 116955906,
+      "mode": "0o644"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+      "bytes": 530284,
+      "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+      "dev": 16777234,
+      "ino": 116956029,
+      "mode": "0o644"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "bytes": 274,
+      "sha256": "d2cbb0243a4f5fdfe5b11363f704d857579fd86717ea1e6a70cd10065e262261",
+      "dev": 16777234,
+      "ino": 116957811,
+      "mode": "0o644"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+      "dev": 16777234,
+      "ino": 116957779,
+      "mode": "0o755"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/src/claude.ts",
+      "bytes": 24739,
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "dev": 16777234,
+      "ino": 123121097,
+      "mode": "0o644"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-stages/auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1",
+      "dev": 16777234,
+      "ino": 123965108,
+      "mode": "0o644"
+    }
+  ],
+  "nativeSecurestorageSnippets": [
+    {
+      "binary": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "offset": 183947341,
+      "excerpt": " as o,userInfo as l}from\"os\";import{join as u}from\"path\";var Hhe=\"-credentials\";function Jb(){let e=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR;if(e!==void 0)return(e||u(o(),\".claude\")).normalize(\"NFC\");return we()}function VN(e=\"\"){let n=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR,t=n!==void 0?!n:!process.env.CLAUDE_CONFIG_DIR,r=n!==void 0?n.normalize(\"NFC\"):we(),c=t?\"\":`-${i(\"sha256\").update(r).digest(\"hex\").substring(0,8)}`;return`Claude Code${pn().OAUTH_FILE_SUFFIX}${e}${c}`}var s=/^[a-zA-Z0-9._-]+$/;function iT(){let e;try{e=process.env.USER||l().username}catch{e=\"claude-code-user\"}if(!s.test(e))return\"claude-code-user\";return e}var WAt=30000;class a{cache={data:null,cachedAt:0};generation=0;readInFlight=n"
+    },
+    {
+      "binary": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "offset": 183947480,
+      "excerpt": "_DIR;if(e!==void 0)return(e||u(o(),\".claude\")).normalize(\"NFC\");return we()}function VN(e=\"\"){let n=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR,t=n!==void 0?!n:!process.env.CLAUDE_CONFIG_DIR,r=n!==void 0?n.normalize(\"NFC\"):we(),c=t?\"\":`-${i(\"sha256\").update(r).digest(\"hex\").substring(0,8)}`;return`Claude Code${pn().OAUTH_FILE_SUFFIX}${e}${c}`}var s=/^[a-zA-Z0-9._-]+$/;function iT(){let e;try{e=process.env.USER||l().username}catch{e=\"claude-code-user\"}if(!s.test(e))return\"claude-code-user\";return e}var WAt=30000;class a{cache={data:null,cachedAt:0};generation=0;readInFlight=null;lastReadFailure=null;keychainHoldsItem=!1;lastKnown=null;legacyApiKeyPrefetch=null}var d=new z(()=>new a);function Eq(){return d.of(F()"
+    },
+    {
+      "binary": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "offset": 215686395,
+      "excerpt": "oe){if(n.has(w))continue;let c=process.env[w];if(c!==void 0&&c!==\"\")e.push(`${w}=${Kr([c])}`)}let r=process.env.CLAUDE_SECURESTORAGE_CONFIG_DIR;if(r!==void 0)e.push(`CLAUDE_SECURESTORAGE_CONFIG_DIR=${Kr([r])}`);let s=a.CLAUDE_CODE_AUTO_MODE_TIER;if(s!==void 0)e.push(`CLAUDE_CODE_AUTO_MODE_TIER=${Kr([s])}`);return e.join(\" \")}function R(e,n){return rY(n)?`${e} ${Kr([n])}`:`${e}=${Kr([n])}`}function B(e){return e??rt()}function re(e,n){if(a.CLAUDE_CODE_SUBAGENT_MODEL_FORCE)e=void 0;if(e===\"inherit\")return B(n);if(e!==void 0){if(!zr(e))return Z(e,n);if(n!==null&&Tzn(e,n))return n;return e}let r=Fde();if(r!==\"inherit\"){let s=xt(r);if(zr(s))return s;return Z(r,n)}return B(n)}function Z(e,n){let r=LE(e);return me(e,r"
+    }
+  ],
+  "cliVersionSource": "immutable native installation path and embedded Version:2.1.291; no version command",
+  "sdkNativeVersion": "package0.3.290; embedded Version:2.1.290",
+  "authStatusDocumentation": "https://code.claude.com/docs/en/cli-reference",
+  "authStatusPublicRoute": "auth status --json; embedded export authStatus only reads current status and renders JSON; no login/logout/query branch selected",
+  "knownReadonlyLimit": "Does not establish all native initialization filesystem writes are absent; raw output is memory-only.",
+  "nativeCredentialStorageCode": [
+    {
+      "needle": "find-generic-password",
+      "offset": 183953963,
+      "excerpt": "read(){let e=Eq(),r=e.cache;if(Date.now()-r.cachedAt<WAt)return r.data;let a=e.lastReadFailure;if(a!==null&&Date.now()-a<pco)return r.data;try{let s=VN(Hhe),n=iT(),o=Nke(`security find-generic-password -a \"${n}\" -w -s \"${s}\"`,{timeout:f});if(o){e.keychainHoldsItem=!0;let i=X(o);return e.cache={data:i,cachedAt:Date.now()},i}}catch(s){}if(r.data!==null)return t(\"[keychain] read failed; serving stale cache\",{level:\"warn\"}),e.cache={data:r.data,cachedAt:Date.now()},r.data;return e.cache={data:null,cachedAt:Date.now()},null},async readAsync(){let e=Eq(),r=e.cache;if(Date.now()-r.cachedAt<WAt)return r.data;if(e.readInFlight)return e.readInFlight;let a=e.lastReadFailure;if(a!==null&&Date.now()-a<pco)return null;let s=e.generation,n=v(e).then((o)=>{if(s!==e.generation)return o===ua?null:o;if(e.readInFlight=null,o===ua){if(t(\"["
+    },
+    {
+      "needle": "add-generic-password",
+      "offset": 183955227,
+      "excerpt": "Failure=null;return n},invalidateCache(){LO()},mutate(e){return d(b,e)},async update(e){let r=Eq();LO();try{let a=VN(Hhe),s=iT(),n=S(e),o=Buffer.from(n,\"utf-8\").toString(\"hex\"),i=`add-generic-password -U -a \"${s}\" -s \"${a}\" -X \"${o}\"\n`,c;if(i.length<=ee)c=await og(\"security\",[\"-i\"],{input:i,stdio:[\"pipe\",\"pipe\",\"pipe\"],reject:!1,timeout:f});else t(`Keychain payload (${n.length}B JSON) exceeds security -i stdin limit; using argv`,{level:\"warn\"}),c=await og(\"security\",[\"add-generic-password\",\"-U\",\"-a\",s,\"-s\",a,\"-X\",o],{stdio:[\"ignore\",\"pipe\",\"pipe\"],reject:!1,timeout:f});if(c.exitCode!==0){if(c.exitCode===B&&r.keychainHoldsItem)return{success:!1,transient:!0,keychainLocked:!0};return{success:!1,transient:c.timedOut,exitCode:c.exitCode}}return r.keychainHoldsItem=!0,r.cache={data:e,cachedAt:Date.now()},r.generation++,r.re"
+    },
+    {
+      "needle": "delete-generic-password",
+      "offset": 183956023,
+      "excerpt": "At:Date.now()},r.generation++,r.readInFlight=null,{success:!0}}catch(a){return{success:!1}}},async delete(){let e=Eq();LO();try{let r=VN(Hhe),a=iT(),{code:s}=await Ze(\"security\",[\"delete-generic-password\",\"-a\",a,\"-s\",r],{timeout:f,useCwd:!1}),n=s===0||s===P;if(n)e.keychainHoldsItem=!1;return e.generation++,e.readInFlight=null,n}catch(r){return!1}}};async function v(e,r){let a=e.generation;try{let s=VN(Hhe),n=iT(),{stdout:o,code:i}=await Ze(\"security\",[\"find-generic-password\",\"-a\",n,\"-w\",\"-s\",s],{useCwd:!1,preserveOutputOnError:!1,timeout:f});if(i===0&&o)return fYt(e,!0,a),X(o.trim());if(i===P)return fYt(e,!1,a),null;if(i===0)return null;if(i===B)switch(r?.inaccessibleAs??\"absent\"){case\"absent\":return null;case\"failure\":return ua;case\"failureIfTransient\":return e.keychainHoldsItem?ua:null}return ua}catch(s){return r?.un"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 # O16 独立审查
 
-状态：APPROVED_ZERO_MODEL_PUBLIC_JOURNEY；当前零模型公开旅程1/1独立读核并受控main b768。历史准备/CAS/失败保留；真实native验收未覆盖。
+状态：APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE（5a45/78df）已main d022；原APPROVED_ZERO_MODEL_PUBLIC_JOURNEY/b768独立保持。真实native/分阶段PG验收未覆盖。
 
-Review target commit：4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa
+当前 Review target commit：5a45c8919f1c0c5cecf0111609ec111d784553c1；下列4ae/e931等为历史。
 
 作者 native_center_owner / gpt-6-astra，独立reviewer astra_ultra_execution_lead / gpt-6-astra。范围仅三literal中的实验实现与证据；当前Interface不是产品/模型批准。
 
@@ -26,6 +26,10 @@ Review target commit：4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa
 
 2026-10-07T08:45:28.873Z：唯一结果独审APPROVED_ZERO_MODEL_PUBLIC_JOURNEY，target3fe343ef/delivery697e2b27/source343；354 fixed/current绑定和实际1/1、精确清理已核，无P1/P2，reviewer0重跑。原件[current-main-pg-r1/independent-review.json](../../docs/evidence/o16/current-main-pg-r1/independent-review.json)。本次42路径精确接main b768，不能用feature/main祖先关系替代内容比较；模型/工程资格/真实用户语义/恢复连续性均未证明。
 
-## O16-06 分阶段实现 — 等待独审
+## O16-06 分阶段实现 — 历史交审输入（已由下条批准）
 
-Target `5a45c891`，base产品仍f5a；9个.mjs行为/测试文件与实验README，全部在原experiments目录，plan/证据在本claim。Reviewer NOT_STARTED；旧旅程approval不扩大。复核[native-stages/README](../../docs/evidence/o16/native-stages/README.md)、最终manifest及raw：13新+3受影响旧=16 different分轮、原fixture首红保留，0PG/SDK/provider。重点暂停证据绑定/过期与一次性恢复、native前置拒绝、SDK只改变实验persistSession、首错/cleanup未知独立。未验分阶段PG与真实native，禁止因纯例通过打开认证/模型入口。
+Target `5a45c891`，base产品仍f5a；9个.mjs行为/测试文件与实验README，全部在原experiments目录，plan/证据在本claim。交审时 Reviewer NOT_STARTED；旧旅程approval不扩大，本次结论见下条。复核[native-stages/README](../../docs/evidence/o16/native-stages/README.md)、最终manifest及raw：13新+3受影响旧=16 different分轮、原fixture首红保留，0PG/SDK/provider。重点暂停证据绑定/过期与一次性恢复、native前置拒绝、SDK只改变实验persistSession、首错/cleanup未知独立。未验分阶段PG与真实native，禁止因纯例通过打开认证/模型入口。
+
+## 2026-10-07T09:35:36.989312+00:00：唯一限定批准与main接收
+
+Execution Lead 于2026-10-07T09:27:34.488514Z独审`5a45c891`/delivery`78df3980`，APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE，无P1/P2；[原样报告](../../docs/evidence/o16/native-stages/independent-review.json)。52 delta/289产品/21原实验/39alias/3runtime/128轮前绑定及13精确variant全部核对；16不同局部检查跨轮次、首红与空文件计数修正保持，reviewer0运行。main`d022c800`受控216路径，[回执](../../docs/evidence/o16/native-stages/main-receipt.json)。只批准实验分阶段与局部证据；未批准原生登录/其余SDK写入、新费用预算或分阶段PG，旧FAIL/KEEP不处理。已审实验源停写，后继先在own records固定实际环境输入。

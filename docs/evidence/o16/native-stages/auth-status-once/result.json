@@ -1,0 +1,43 @@
+{
+  "pid": 38670,
+  "ownership": "newChildSession",
+  "exit_code": 0,
+  "elapsed_ms": 191,
+  "observed_bytes": 380,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "publicStatus": {
+    "loggedIn": true,
+    "authMethod": "claude.ai",
+    "apiProvider": "firstParty",
+    "subscriptionType": "pro"
+  },
+  "parseFailure": null,
+  "rawStdoutArchived": false,
+  "rawStderrArchived": false,
+  "queryCalls": 0,
+  "interactiveAuthCalls": 0,
+  "credentialFilesReadByCaller": 0,
+  "SDKAuthRouteProven": false,
+  "cleanup": "KEEP_UNTIL_SAFE_CHECKPOINT"
+}

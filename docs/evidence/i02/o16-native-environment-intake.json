@@ -1,0 +1,109 @@
+{
+  "kind": "flow.i02.reviewed-metadata-intake.v1",
+  "at": "2026-10-07T09:52:56.343950+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "source": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+  "mainBefore": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+  "verdict": "APPROVED_PUBLIC_STATUS_EVIDENCE_AND_ENVIRONMENT_PREPARATION",
+  "scope": "14 own evidence/plan/review/status files; no product or experiment implementation change",
+  "review": {
+    "fullChangedDocumentationAndCallerRead": true,
+    "fixedEvidenceBindings": 10,
+    "installedInputBindings": 9,
+    "nativeCodeExcerptsConfirmed": 6,
+    "manifestSha256": "e022b1b16e13f8ce5c19f600408fd93af5da91caea948e9f2e6c0afeeecdc3a0",
+    "P1": 0,
+    "P2": 0,
+    "testsRun": 0,
+    "authCallsRunByReviewer": 0,
+    "providerCalls": 0
+  },
+  "facts": {
+    "authStatusCalls": 1,
+    "publicLoggedIn": true,
+    "CLI": "2.1.291",
+    "SDK": "0.3.290/native 2.1.290",
+    "authMs": 359,
+    "process": "absent/dual EOF/no signals",
+    "scratch": "empty exact own root removed after public checkpoint",
+    "preflightPythonFailure": "preserved before any child",
+    "sensitiveRaw": "not archived"
+  },
+  "limitations": [
+    "CLI status does not prove SDK authentication route, model qualification or available quota",
+    "Shared keychain automatic refresh and private filesystem write scope are explicit future candidate boundaries, not proven read-only",
+    "No new native/PG/provider authorization; ordinary adapter and previous frozen results unchanged"
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-once/cleanup.json",
+      "bytes": 114,
+      "sha256": "df1f58b3f05c27d89274f1ae67bb37f46729b9acce751d11647bc2d8176b4eeb"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-once/reservation.json",
+      "bytes": 845,
+      "sha256": "c4bc3bb29ef880f150697c8ad7d532656ed0aaa9d613b81b27a02a171735db10"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-once/result.json",
+      "bytes": 848,
+      "sha256": "848cafc9adeaf6d6a8e1103e46ca9f7c5a18c3d46ce6c7f346d28f94935e1131"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-preflight-failure.json",
+      "bytes": 532,
+      "sha256": "1c38666b408fe7ce45d586baafea49db277d3fcc49ed4cb174726857e1ecf55c"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/independent-review.json",
+      "bytes": 2690,
+      "sha256": "3a5f656a605336fac98d60d2873ecda0dea18733c216ecdf04670ed376569c1a"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/main-receipt.json",
+      "bytes": 947,
+      "sha256": "ff748ef2decf25a020927ae55cd7a41382758fe497df95cf75e9c1152ed228bb"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/native-environment-inputs.json",
+      "bytes": 10184,
+      "sha256": "dcb4030bc755ab8b3490d48535e52ee075224a0dcacdb5a0ba55e8039dca3cc6"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/native-environment-manifest.json",
+      "bytes": 2492,
+      "sha256": "e022b1b16e13f8ce5c19f600408fd93af5da91caea948e9f2e6c0afeeecdc3a0"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/native-environment-readonly.md",
+      "bytes": 7208,
+      "sha256": "ea74f24fc32a6640d6b9194ce52e6a6a400510dd832346d776e932a19ef4dab5"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/native-environment-status-check.json",
+      "bytes": 233,
+      "sha256": "293b84348ca251f1f91f89a58b514230fd3864d78e2db7356a616825138b9a16"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/plan.md",
+      "bytes": 3731,
+      "sha256": "3ec03367f6092fbe52443917d7d2e41682d4b33ee19fecdc39e2573e0fa5ce5d"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "bytes": 6276,
+      "sha256": "10914449b9c3a91aa37d1082e74000a0700e7833b2c5fbbabece797042212bb9"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "bytes": 10917,
+      "sha256": "4a4b4de160f0b846d78f402e202a76c2b4a607374b41b34cf4a0cbf568e856a2"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:46:27 UTC / main 38110485；接收SVC06失败事实/清理及管理摘要 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:52:56 UTC / main 8c2ae379；接收O16已核环境准备 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,11 +12,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 38110485；本批仅SVC06已审准备和真实失败原件、三份管理文档，无新产品源 |
+| 工作基线 / HEAD | main 8c2ae379；本批仅O16环境准备与既有登录公开状态证据，无产品源 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | SVC06准备/真实结果分别由native独审；本批0重跑、0PG、0provider。失败和确认清理分开，未把保存结果当宿主通过。 |
-| 已集成main状态 / HEAD | main/origin 38110485已接X01八产品与当前组合17/17；SVC06新后台runner就绪未证明，本批归档r1失败与正常清理证据。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
+| 检查状态 | 本批O16环境材料限定独审、10证据/9输入/6代码片段核同；0重跑、0PG、0provider。SVC06原失败与确认清理分别已接收。 |
+| 已集成main状态 / HEAD | main/origin 8c2ae379已接X01八产品及SVC06 r1失败/清理。O16本批只归档准备证据；个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |

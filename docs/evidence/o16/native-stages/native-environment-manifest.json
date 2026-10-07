@@ -1,0 +1,73 @@
+{
+  "kind": "O16_PUBLIC_AUTH_STATUS_AND_NATIVE_ENVIRONMENT_PREPARATION",
+  "at": "2026-10-07T09:46:21.311332+00:00",
+  "scope": "own evidence only; frozen experiment/product implementation unchanged",
+  "fixedExperimentSource": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+  "mainReceipt": "d022c8003fc4bd8ba560f1a039411ed098186659",
+  "bindings": [
+    {
+      "path": "auth-status-once.py",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1"
+    },
+    {
+      "path": "auth-status-preflight-failure.json",
+      "bytes": 532,
+      "sha256": "1c38666b408fe7ce45d586baafea49db277d3fcc49ed4cb174726857e1ecf55c"
+    },
+    {
+      "path": "auth-status-once/reservation.json",
+      "bytes": 845,
+      "sha256": "c4bc3bb29ef880f150697c8ad7d532656ed0aaa9d613b81b27a02a171735db10"
+    },
+    {
+      "path": "auth-status-once/result.json",
+      "bytes": 848,
+      "sha256": "848cafc9adeaf6d6a8e1103e46ca9f7c5a18c3d46ce6c7f346d28f94935e1131"
+    },
+    {
+      "path": "auth-status-once/cleanup.json",
+      "bytes": 114,
+      "sha256": "df1f58b3f05c27d89274f1ae67bb37f46729b9acce751d11647bc2d8176b4eeb"
+    },
+    {
+      "path": "native-environment-inputs.json",
+      "bytes": 10184,
+      "sha256": "dcb4030bc755ab8b3490d48535e52ee075224a0dcacdb5a0ba55e8039dca3cc6"
+    },
+    {
+      "path": "native-environment-readonly.md",
+      "bytes": 7208,
+      "sha256": "ea74f24fc32a6640d6b9194ce52e6a6a400510dd832346d776e932a19ef4dab5"
+    },
+    {
+      "path": "native-environment-status-check.json",
+      "bytes": 233,
+      "sha256": "293b84348ca251f1f91f89a58b514230fd3864d78e2db7356a616825138b9a16"
+    },
+    {
+      "path": "independent-review.json",
+      "bytes": 2690,
+      "sha256": "3a5f656a605336fac98d60d2873ecda0dea18733c216ecdf04670ed376569c1a"
+    },
+    {
+      "path": "main-receipt.json",
+      "bytes": 947,
+      "sha256": "ff748ef2decf25a020927ae55cd7a41382758fe497df95cf75e9c1152ed228bb"
+    }
+  ],
+  "actual": {
+    "authStatusCalls": 1,
+    "queryCalls": 0,
+    "SDKQueryCalls": 0,
+    "interactiveLogin": 0,
+    "PG": 0,
+    "personalServices": 0,
+    "preflightFailuresBeforeChild": 1,
+    "actualPython": "/opt/homebrew/bin/python3.13",
+    "totalAuthSegmentMs": 359,
+    "rawPrivateOutputArchived": false,
+    "cleanup": "removed after public result checkpoint"
+  },
+  "limits": "CLI public status is not SDK route/model qualification; keychain readonly vs refresh remains unresolved; native stays denied"
+}
