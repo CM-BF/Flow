@@ -110,6 +110,11 @@ export async function resolveUncertain(pool: Pool, taskId: string, input: Reconc
 export async function retryReconciled(pool: Pool, boss: PgBoss, taskId: string, input: ReconciliationRetry, key: string): Promise<ReconciliationRetryResult> {
   const result = await command(pool, `reconciliation:retry:${taskId}`, key, input, async client => {
     const { task, attempt } = await lockExpectedAttempt(client, taskId, input);
+    // Generic recovery cannot discard frozen package identity or authorize another invocation.
+    if ((await client.query('SELECT 1 FROM flow.plugin_tool_bindings WHERE task_id=$1', [taskId])).rowCount) {
+      throw new HttpError(409, 'plugin_recovery_requires_binding', 'Plugin recovery requires an explicitly preserved binding and side-effect decision.');
+    }
+
     const resolution = (await client.query<AuditRow>(
       "SELECT * FROM flow.reconciliation_audit WHERE id=$1 AND task_id=$2 AND attempt_id=$3 AND action='resolution'", [input.resolutionId, taskId, attempt.id],
     )).rows[0];

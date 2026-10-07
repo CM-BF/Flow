@@ -25,7 +25,7 @@ vi.mock('./host.js', async importOriginal => {
 });
 const roots: { path: string; dev: number; ino: number; removed: boolean }[] = [];
 afterEach(async () => {
-  vi.restoreAllMocks();
+  vi.restoreAllMocks(); vi.unstubAllGlobals();
   for (const root of roots.filter(value => !value.removed)) {
     const now = await lstat(root.path); expect([now.dev, now.ino, now.isDirectory(), now.isSymbolicLink()]).toEqual([root.dev, root.ino, true, false]);
     await rm(root.path, { recursive: true }); root.removed = true;
@@ -115,4 +115,17 @@ test('legacy no-port polling uses only the unchanged v2 transport', async () => 
   vi.spyOn(FlowClient.prototype, 'claimOpportunityStatus').mockImplementation(async request => ({ ...request, state: 'missing' }));
   f.oldClaim.mockImplementation(async request => { f.abort.abort(); return { ...request, state: 'empty' }; });
   await runRunner(f.options); expect(f.oldClaim).toHaveBeenCalledTimes(1); expect(f.transport).not.toHaveBeenCalled(); expect(state.invokes).toBe(0);
+});
+
+test('store-only runtime opt-in consumes the real FlowClient plugin domain and its bearer request', async () => {
+  const f = await fixture(); delete f.options.pluginExecution!.transport;
+  const seen: string[] = [];
+  vi.stubGlobal('fetch', vi.fn(async (url: string | URL | Request, init?: RequestInit) => {
+    seen.push(new Headers(init!.headers).get('authorization')!);
+    const result = await f.transport(new URL(String(url)).pathname, init!);
+    return new Response(JSON.stringify(result), { status: 200, headers: { 'content-type': 'application/json' } });
+  }));
+  await runRunner(f.options); expect(state.invokes).toBe(1); expect(seen.length).toBeGreaterThanOrEqual(5);
+  expect(seen.every(value => value === 'Bearer fixture-only')).toBe(true);
+  expect(f.reports.at(-1)!.events.at(-1)!.type).toBe('completed');
 });

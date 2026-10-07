@@ -1,3 +1,4 @@
+import { PluginRunnerClient } from './plugin-runner.js';
 import { ASSISTANT_SELECTION_PROTOCOL, assistantStreamSelectionSchema, assistantStreamDataSchema, type AssistantStreamProtocol, type AssistantStreamSelection, type AssistantStreamSelectedPage, type AssistantStreamSelectedPatchPage } from '../../contracts/src/assistant-stream.js';
 import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
 import type { NativeActivityBodyDescriptor, NativeActivityBodySupport } from '@flow/contracts';
@@ -62,6 +63,8 @@ export type ClientOptions = ClientConnectionOptions & (
 );
 
 export class FlowClient {
+  /** All plugin requests share this client's existing authentication, cancellation and error handling. */
+  readonly pluginRunner = new PluginRunnerClient((path, init, maximumBytes) => this.request(path, init, undefined, maximumBytes));
   private readonly baseUrl: string;
   private readonly token: string | undefined;
   private readonly csrfToken: (() => string | undefined) | undefined;

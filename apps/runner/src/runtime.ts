@@ -29,7 +29,7 @@ export interface RunnerOptions {
   /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
   pluginExecution?: {
     store: TrustedPackageStore;
-    transport(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+    transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
   };
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
@@ -56,7 +56,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
   const requests = new Set<Promise<unknown>>();
   const client = authenticatedClient(options, stop, requests);
-  const plugin = pluginExecution?.transport(client);
+  const plugin = pluginExecution ? (pluginExecution.transport?.(client) ?? client.pluginRunner) : undefined;
   const pluginRequest = async <T>(run: () => Promise<T>): Promise<T> => {
     const pending = (async () => { try { return await run(); } catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; } })();
     requests.add(pending);

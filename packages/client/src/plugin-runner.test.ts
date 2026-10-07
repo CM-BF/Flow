@@ -1,5 +1,6 @@
+import { FlowClient, FlowApiError } from './index.js';
 import { randomUUID } from 'node:crypto';
-import { expect, test, vi } from 'vitest';
+import { afterEach, expect, test, vi } from 'vitest';
 import { PluginRunnerClient, type PluginJsonRequest } from './plugin-runner.js';
 import type { PluginRunnerClaimRequest } from '../../contracts/src/plugin-runner-claim.js';
 const request = (): PluginRunnerClaimRequest => ({ protocol: 'flow.runner-claim.v3', runnerId: randomUUID(), requestId: randomUUID(),
@@ -29,4 +30,40 @@ test('phase request preserves stable key and rejects a changed ownership ACK', a
   const transport = vi.fn<PluginJsonRequest>(async () => ({ ...input, protocol: 'flow.plugin-runtime.v1', taskId: randomUUID(), runnerId: randomUUID(), authorizedRevision: 1, replayed: false, ownerVersion: 2 }));
   await expect(new PluginRunnerClient(transport).authorize(input, 'a'.repeat(64))).rejects.toThrow();
   expect(transport.mock.calls[0]![1].headers).toEqual({ 'Idempotency-Key': 'a'.repeat(64) }); expect(transport).toHaveBeenCalledTimes(1);
+});
+
+afterEach(() => { vi.unstubAllGlobals(); });
+test('FlowClient domain uses the same bearer transport and bounded decoder', async () => {
+  const input = request(); const calls: RequestInit[] = [];
+  vi.stubGlobal('fetch', vi.fn(async (_url: string | URL | Request, init?: RequestInit) => {
+    calls.push(init!); return new Response(JSON.stringify({ ...input, state: 'empty' }), { status: 200, headers: { 'content-type': 'application/json' } });
+  }));
+  const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'owned-token' });
+  expect(await client.pluginRunner.claim(input)).toMatchObject({ state: 'empty' });
+  expect(new Headers(calls[0]!.headers).get('authorization')).toBe('Bearer owned-token');
+  expect(calls[0]!.credentials).toBe('omit'); expect(client.pluginRunner).toBe(client.pluginRunner);
+});
+test('FlowClient domain reads current browser CSRF and preserves its one error class', async () => {
+  let csrf = 'a'.repeat(64); const seen: Headers[] = [];
+  vi.stubGlobal('fetch', vi.fn(async (_url: unknown, init?: RequestInit) => {
+    seen.push(new Headers(init!.headers)); return new Response(JSON.stringify({ published: true }), { status: 200 });
+  }));
+  const client = new FlowClient({ baseUrl: 'http://fixture.invalid', browserSession: { csrfToken: () => csrf } });
+  const input = { protocol: 'flow.plugin-runtime.v1' as const, storeId: 'owned', hostApiMajor: 1 as const };
+  await client.pluginRunner.publishHost(input); csrf = 'b'.repeat(64); await client.pluginRunner.publishHost(input);
+  expect([...seen[0]!.values()]).toContain('a'.repeat(64)); expect([...seen[1]!.values()]).toContain('b'.repeat(64));
+  vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify({ code: 'runner_required', message: 'Denied' }), { status: 401 })));
+  await expect(client.pluginRunner.publishHost(input)).rejects.toBeInstanceOf(FlowApiError);
+});
+test('shared request preserves cancellation and rejects an oversized plugin response', async () => {
+  const abort = new AbortController(); const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'owned-token' });
+  const fetch = vi.fn((_url: unknown, init?: RequestInit) => new Promise<Response>((_resolve, reject) => {
+    init!.signal!.addEventListener('abort', () => reject(new Error('cancelled by original signal')), { once: true });
+  })); vi.stubGlobal('fetch', fetch);
+  const input = { protocol: 'flow.plugin-runtime.v1' as const, storeId: 'owned', hostApiMajor: 1 as const };
+  const pending = client.pluginRunner.publishHost(input, abort.signal); abort.abort();
+  await expect(pending).rejects.toThrow('cancelled by original signal'); expect(fetch).toHaveBeenCalledTimes(1);
+  const oversized = vi.fn(async () => new Response('x'.repeat(1025), { status: 200, headers: { 'content-length': '1025' } }));
+  vi.stubGlobal('fetch', oversized); await expect(client.pluginRunner.publishHost(input)).rejects.toThrow();
+  expect(oversized).toHaveBeenCalledTimes(1);
 });
