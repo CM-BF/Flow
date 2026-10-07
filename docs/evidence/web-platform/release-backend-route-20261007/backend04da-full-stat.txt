@@ -1,0 +1,13 @@
+commit 04da80692e79e2b7c3f6341c7fa76515a3f719a3
+Author:     Citrine Gui <35030752+CM-BF@users.noreply.github.com>
+AuthorDate: Wed Oct 7 07:08:35 2026 -0700
+Commit:     Citrine Gui <35030752+CM-BF@users.noreply.github.com>
+CommitDate: Wed Oct 7 07:08:35 2026 -0700
+
+    fix(server): retain reviewed late logout cookie contract on fixed backend
+
+ apps/server/src/browser-session/fixture.ts         |  5 ++
+ apps/server/src/browser-session/index.ts           |  5 +-
+ apps/server/src/browser-session/session.test.ts    | 58 ++++++++++++++--
+ .../late-logout/readonly/fixture-cleanup.ts        | 78 ++++++++++++++++++++++
+ 4 files changed, 140 insertions(+), 6 deletions(-)

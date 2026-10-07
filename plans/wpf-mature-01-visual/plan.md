@@ -89,3 +89,9 @@ U19真实host的[具体接线候选](../../docs/evidence/web-platform/access-sse
 U19/原MATURE02 TODO11补[T3 Code固定参考](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/t3-compact-reference.json)：GO给定cfa4f765，原ComposerControl统一sm/xs、focus/disabled及coarse-pointer命中；ComposerSurface的连续表面/theme变量/backdrop fallback仅作为评估输入。复用Flow tokens与主要Apply/Cancel可达，不直接搬复杂clip或theme覆写；实际依赖与MIT归属使用前核，未采用/未新增stack或task。composerSubmission仅validation/dispatch，不能替代Flow持久ACK、Queue、冻结与恢复。正常真实名与压力长名的真实host截图验收保留，原六组通过不撤。
 
 原REQ19/01-05 retained真实App兼容后继仍由[RELEASE01唯一owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)承担。新38b9v1于10:00:08.645Z合法领取原两harness与own plan/evidence四范围，旧20a released不复用；[已审设计与新take](../../docs/evidence/web-platform/steering-diagnostic-release-preparation-20261007/current.json)允许独立源码实现，不依赖finaltuple先到。最终backendtuple未定时不能实际运行/回落旧b2b/c2c；Chrome专属proxy不能误作Node APIRequestContext代理，禁止Node访问个人61228，旧三AppBearer与独立Cookie补证分开。历史7805通过不冒后继已验。
+
+
+2026-10-07 MSG03修后真实App双390×844主题图已由[root限定目视](../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json)：容器无横向溢出、Apply/Cancel可见、极长同前缀model的C后缀可辨。非阻断P3：滚动条thumb贴近Speed选择器右侧affordance，后续原02/04视觉优化核留白/触达；尚未证明交互失败，不为此重跑本已绿旅程，不把这两图当整个视觉大task完成。
+
+
+GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json)已接收：窄屏浮窗直角硬边、遮罩偏重，四筛选加完整列表显得表单化，省略/不附加设置请求等实现语义文案过多。下一视觉片结合共享浮层、主题和信息层级统一处理，与上述滚动条P3归原02/04；使用本地frontend-design及既有Arc参考，保语义、键盘/焦点、reduced-motion和性能，不在picker堆局部补丁。极长模型名是刻意fixture，完整验收另含正常目录/defaultcollapsed/桌面与窄屏全页。当前优先可用网页，不挡MSG功能收口/最小发布，不新抢App或新增任务。

@@ -1,0 +1,110 @@
+{
+  "state": "APPROVED_SCOPED_MATERIAL_BUSINESS_AND_LIFECYCLE_FULL_RETURN",
+  "actualStart": "2026-10-07T14:24:13.838978Z",
+  "run": "msg03-material-20261007-142356-510653",
+  "outerPid": 20226,
+  "parentPid": 20572,
+  "toolSession": 26492,
+  "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "executionHead": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+  "freshClaimAt": "2026-10-07T14:23:56Z",
+  "claim": "7e3fbcf1 v3 exact20 nooverlap",
+  "sourcePins": 989,
+  "priorRawPins": 151,
+  "sqlFiles": 33,
+  "freeBeforeBytes": 21393555456,
+  "gateFloorBytes": 9306308608,
+  "retainedBeforeBytes": 849280,
+  "phaseMs": 120000,
+  "phasePriorSpentMs": 0,
+  "attemptMs": 60000,
+  "cleanupMinimumMs": 30000,
+  "markedDB": 1,
+  "configuredConnections": 14,
+  "chrome": 1,
+  "outerDirectory": "/private/tmp/msg03-membership-first-0yh7hk4h",
+  "gateShaPrefix": "d5e124b7",
+  "env": "Parent-only0600 exactidentity recorded by owner, values not printed",
+  "sourceOfFact": "Original owner actualSTART message; terminal/cleanup still pending",
+  "actualEnd": "2026-10-07T14:24:27.191771Z",
+  "actualReturn": "2026-10-07T14:25:14.591164Z",
+  "actualExit": 0,
+  "selected": 2,
+  "passed": 2,
+  "PNG": 0,
+  "wholeFeaturePass": false,
+  "chargeMs": 13353,
+  "phaseSpentMs": 13353,
+  "phaseRemainingMs": 106647,
+  "cleanup": {
+    "observedAt": "2026-10-07T14:25:14.591164+00:00",
+    "run": "msg03-material-20261007-142356-510653",
+    "ownedProcesses": [
+      {
+        "processId": 20226,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 20572,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 21056,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 23376,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-hgkfcJ",
+    "scratchAbsent": true,
+    "envAbsent": true,
+    "database": {
+      "database": "flow_recovery_b1914060e7854a82b3d3ca3764c99f05",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.4067919999997684,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.7127500000005966,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 17,
+      "wireBytes": 12085,
+      "providerQueries": 0
+    },
+    "actualOuterExit": 0,
+    "dualEOF": true,
+    "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
+  },
+  "accounting": "material-accounting.json",
+  "outerExit": "material-outer-exit.json",
+  "envDeletion": "material-env-deletion.json",
+  "lifecycleReview": "material-lifecycle-root-review.json",
+  "businessReview": "material-business-peer-review.json",
+  "evidenceLimit": "Failurearm settings-onlyB UI/0chip, not independentdurableemptyB; cancelarm exactBfullref pluslatewholeSavedBequality; botharmsexactAexplicitrestore. NoPNG orwholeMSGclaim."
+}

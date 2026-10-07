@@ -95,4 +95,12 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 [MSG第四实际失败与完整归还独审](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-fourth-failure-root-review.json)接受24raw与固定源/流/DB/四PID补观及17344ms计费，非材料组通过；cancel B持久A+B为P2，首pid键覆盖与第三fixtureUNKNOWN均保留。旧phase封闭，合法20scope后的最小消费者修复另核，不继承为浏览器已通过。
 
-[S01首次实际与活动资源归还](../../docs/evidence/web-platform/s01-first-actual-return-20261007/current.json)保O1 FAIL/O2 NOT_RUN、原UNKNOWN_RETAIN和两目录KEEP；运行组/专库归还不等全部文件删除或性能成功。MSG d576局部1selected/types通过只记录其范围，恢复held A后unmount源码P2未闭，不批准发布采用；原20s剩余与旧90s封账分别记录。
+[S01首次实际与活动资源归还](../../docs/evidence/web-platform/s01-first-actual-return-20261007/current.json)保O1 FAIL/O2 NOT_RUN、原UNKNOWN_RETAIN和两目录KEEP；运行组/专库归还不等全部文件删除或性能成功。MSG d576局部通过是历史范围，当时unmountP2未闭；后续b924集中源/局部审关闭此P2，仍不自动批准旧Web移植或实际发布。
+
+[新发布路线](../../docs/evidence/web-platform/release-backend-route-20261007/current.json)仅接收Original明确授权和实际Git完整stat，不构成04da产品/support源审。旧7272只读报告保原范围，后到04da/6c路线可经原正式审定进入pair；b924局部通过与最终source审分别记录，没有新兼容运行。
+
+
+[共享成员投影b924源码/局部审](../../docs/evidence/web-platform/release-backend-route-20261007/msg03-b924-root-review.json)与[新120s相位/路径窄审](../../docs/evidence/web-platform/release-backend-route-20261007/msg03-new-phase-root-review.json)均0blocking；后者只准备接受，不冒mountedPASS或个人发布。当前具体NEXT由manager资源交接另记；原四FAIL/局部首红/全部closed余额保持。
+
+
+修后材料[生命周期审](../../docs/evidence/web-platform/release-backend-route-20261007/material-lifecycle-root-review.json)+[业务证据审](../../docs/evidence/web-platform/release-backend-route-20261007/material-business-peer-review.json)限定接受2selected与归还；第二旅程[生命周期/双主题视觉审](../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json)已通过，第二业务审待收，不扩大为完整功能/main/发布。新段共26368/120k已停止，余93632不新授权。

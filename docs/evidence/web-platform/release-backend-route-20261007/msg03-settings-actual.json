@@ -1,0 +1,113 @@
+{
+  "state": "APPROVED_LIFECYCLE_AND_SCOPED_VISUAL_BUSINESS_REVIEW_PENDING",
+  "actualStart": "2026-10-07T14:26:55.840024Z",
+  "run": "msg03-settings-20261007-142648-6237f8",
+  "outerPid": 25093,
+  "parentPid": 25247,
+  "toolSession": 39172,
+  "selectors": [
+    "cookieRead",
+    "messageSettingsApp"
+  ],
+  "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "executionHead": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+  "freshClaimAt": "2026-10-07T14:26:48.449Z",
+  "claim": "7e3fbcf1v3exact20/nooverlap",
+  "pins": 1011,
+  "priorRawPins": 173,
+  "sqlFiles": 33,
+  "freeBeforeBytes": 21376729088,
+  "gateFloorBytes": 11623661568,
+  "phaseMs": 120000,
+  "priorSpentMs": 13353,
+  "remainingBeforeMs": 106647,
+  "attemptMs": 60000,
+  "cleanupMinimumMs": 30000,
+  "DB": 1,
+  "configuredConnections": 14,
+  "Chrome": 1,
+  "gateShaPrefix": "0adf2862",
+  "raw": "/private/tmp/msg03-membership-second-3hdd04tu",
+  "terminal": "PENDING_OWNER_RECEIPT",
+  "actualEnd": "2026-10-07T14:27:08.853985Z",
+  "actualReturn": "2026-10-07T14:27:31.462508Z",
+  "actualExit": 0,
+  "selected": 2,
+  "passed": 2,
+  "pngBytes": [
+    60312,
+    61805
+  ],
+  "visualReview": "settings-lifecycle-visual-root-review.json",
+  "chargeMs": 13015,
+  "spentMs": 26368,
+  "remainingMs": 93632,
+  "cleanup": {
+    "observedAt": "2026-10-07T14:27:31.462508+00:00",
+    "run": "msg03-settings-20261007-142648-6237f8",
+    "ownedProcesses": [
+      {
+        "processId": 25093,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 25247,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 25573,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 28591,
+        "processState": "ESRCH",
+        "groupState": "ESRCH"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-p2TceN",
+    "scratchAbsent": true,
+    "envAbsent": true,
+    "database": {
+      "database": "flow_recovery_14b33f91a8da458abe28df0a10f1a8b3",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.2786660000001575,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.3814999999995052,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 19,
+      "wireBytes": 19607,
+      "providerQueries": 0
+    },
+    "actualOuterExit": 0,
+    "dualEOF": true,
+    "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
+  },
+  "wholeFeaturePass": false,
+  "businessReview": "W01 fixedactual businessreview inprogress only, no runtime",
+  "visualBoundary": "Both390x844themes fit, Apply/Cancel visible, longmodelC suffix discernible; nonblockingP3 scrollthumb nearSpeed affordance, no provedinteractionfailure/no rerun"
+}

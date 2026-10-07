@@ -1,0 +1,30 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-07T14:28:08.804Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/browser-session/fixture.ts",
+      "apps/server/src/browser-session/index.ts",
+      "apps/server/src/browser-session/session.test.ts",
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+      "plans/svc06-browser-recovery"
+    ],
+    "state": "active",
+    "branch": "codex/backend-browser-recovery",
+    "origin": "new",
+    "taskId": "SVC06B",
+    "worker": "assignment_review",
+    "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "createdAt": "2026-10-07T14:08:10.726Z",
+    "updatedAt": "2026-10-07T14:13:44.031Z",
+    "observedAt": null,
+    "needsVerification": false
+  }
+}

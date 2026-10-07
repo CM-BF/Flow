@@ -1,0 +1,118 @@
+{
+  "kind": "STATIC_TWO_FILE_TRANSPLANT_PREPARATION_NOT_PRODUCT_EXECUTION",
+  "at": "2026-10-07T14:22:56.096595+00:00",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "patchProvenance": {
+    "commit": "c848024a20ac59182360d31c7e0087828bca018d",
+    "path": "docs/evidence/wpf-message-settings-app/held-draft-release-minimal.patch",
+    "bytes": 3945,
+    "sha256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8"
+  },
+  "upstreamReview": {
+    "source": "b92470377349dea17a12d0abc244f0fed7992e33",
+    "sha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad",
+    "decision": "APPROVED_SHARED_DRAFT_MEMBERSHIP_SOURCE_AND_CONTROLLED_LOCAL_CHECK_NOT_MOUNTED_OR_RELEASE_PASS",
+    "doesNotCoverOldBaseActual": true
+  },
+  "apply": {
+    "location": "/private/tmp/release01-held-transplant-re0ej6l6/result",
+    "checkExit": 0,
+    "applyExit": 0,
+    "stdout": "",
+    "stderr": "",
+    "meaning": "Static patch application in private TMP only; not types/consumer behavior/browser"
+  },
+  "files": [
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "before": {
+        "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+        "bytes": 22929,
+        "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+        "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53"
+      },
+      "after": {
+        "path": "/private/tmp/release01-held-transplant-re0ej6l6/result/apps/web/src/plugin-integration/attachments.tsx",
+        "bytes": 23456,
+        "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+        "matchesSuppliedResult": true,
+        "exactReviewedB924Attachment": true
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "before": {
+        "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+        "bytes": 24603,
+        "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+        "blob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a"
+      },
+      "after": {
+        "path": "/private/tmp/release01-held-transplant-re0ej6l6/result/apps/web/src/plugin-integration/session.ts",
+        "bytes": 24592,
+        "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+        "matchesSuppliedResult": true,
+        "exactOneConsumerReplacementOnly": true,
+        "notCopiedMSGSession": true
+      }
+    }
+  ],
+  "unchangedOldConsumerPins": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890"
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+    }
+  ],
+  "releaseHarnessPins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 35844,
+      "sha256": "e9599dfee054001ea9348ab7182bdd0bf57ecbe9a3621d1f7cd483f369dd9a52",
+      "fixedSource": "8964dc1185f62ed8934c15416e9798929359ab89"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 33646,
+      "sha256": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08",
+      "fixedSource": "8964dc1185f62ed8934c15416e9798929359ab89"
+    }
+  ],
+  "descriptors": {
+    "newWeb": null,
+    "backend": null
+  },
+  "runtime": false,
+  "projectProductEdits": false
+}

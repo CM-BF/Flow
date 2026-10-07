@@ -1,0 +1,439 @@
+{
+  "observedAt": "2026-10-07T14:22:44.505663+00:00",
+  "readOnlyEndpoints": [
+    "/api/summary",
+    "/api/assignments"
+  ],
+  "taskCount": 204,
+  "summaryRegistryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+  "assignmentRegistryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+  "assignmentObservedAt": "2026-10-07T14:23:03.706Z",
+  "assignmentState": "available",
+  "tasks": [
+    {
+      "id": "WPF-MESSAGESETTINGS03",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+        "digest": "6aaf3e49d06553f9ebe6548110f9c0ad434beea108a036d677748249dab09c8a",
+        "modifiedAt": "2026-10-07T14:21:04.211Z",
+        "readAt": "2026-10-07T14:22:44.461Z",
+        "declaredUpdatedAt": "2026-10-07T14:21:04.209Z",
+        "stale": false,
+        "ageHours": 0.027847777777777777,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "progress": {
+        "completed": 3,
+        "total": 6
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T12:11:30.621Z",
+          "record": "2026-10-07T12:11:30.621Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "owner实际开始本登记实施子片的独立源码供给，见provision.startedAt；不把take自动当开工，未完成"
+        },
+        "issues": []
+      },
+      "output": "已修复并独审草稿附件隔离；两条页面旅程的新有限执行包已准备，尚未运行",
+      "next": "完成新执行包预算绑定复核，取得实际窗口后验证材料恢复与消息设置页面",
+      "blocker": {
+        "state": "active",
+        "text": "两条真实页面验收尚未完成，等待执行包复核与实际资源交接"
+      },
+      "main": "NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线"
+    },
+    {
+      "id": "WPF-DASHBOARD-ACCESS01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md",
+        "digest": "95777a686f1f0ae846d6d49321e092e2e52ff5a64eab3509eff1e4491369836b",
+        "modifiedAt": "2026-10-07T11:19:00.288Z",
+        "readAt": "2026-10-07T14:22:44.461Z",
+        "declaredUpdatedAt": "2026-10-07T11:19:00.000Z",
+        "stale": false,
+        "ageHours": 3.0623502777777776,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T02:53:01.000Z",
+          "record": "2026-10-07T02:53:01Z"
+        },
+        "completed": {
+          "state": "unknown",
+          "at": null,
+          "record": "2026-10-07 11:19:00 UTC"
+        },
+        "source": {
+          "state": "declared",
+          "record": "开工：owner实际开始时clock.curr_time返回UTC，不由take推算。完成：owner于本字段所记UTC核对Original固定main收据及README三方字节，确认原01–04交付证据齐；此为本片收口时点，不冒实际部署时点。"
+        },
+        "issues": [
+          "任务完成时间不是唯一有效的 ISO UTC 时间"
+        ]
+      },
+      "output": "本机Flow入口、按需连接资料及当前使用说明均已交付并进入主线",
+      "next": "本片段已交付",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "main": "原产品451bf2ed1c0c3d7688073c8d060629f064044dc2；README537于fixed main f2ccb6738e37da87ae0f642652f8cf9bb596f4c2 接收，三方字节同/无重测，见readme-main-receipt.json"
+    },
+    {
+      "id": "WPF-MATURE-02-CORE",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md",
+        "digest": "c713bfa45857c77856a3c0fb55000f80ce9b390aaaad351bfaeeb4c79b3950af",
+        "modifiedAt": "2026-10-07T14:19:16.648Z",
+        "readAt": "2026-10-07T14:22:44.461Z",
+        "declaredUpdatedAt": "2026-10-07T14:19:16.645Z",
+        "stale": false,
+        "ageHours": 0.05772666666666667,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "progress": {
+        "completed": 10,
+        "total": 10
+      },
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "known",
+          "at": "2026-10-07T14:19:16.645Z",
+          "record": "2026-10-07T14:19:16.645Z"
+        },
+        "source": {
+          "state": "declared",
+          "record": "原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史；完成时间为本owner核完正式main接收与验收的clock实际时刻，见main-acceptance.json；父MATURE02未完成"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ]
+      },
+      "output": "新旧后端混合队列的正确领取与旧会话归属已验收并进入主线",
+      "next": "本片段已交付；个人两槽激活与用户端可用性继续由父任务及SVC09A验收",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "main": "历史CORE ea276已main8d84；本轮五项已main677a93e96f228ab76edbdde9e22beb800a320156，owner独核5/5同source/WT/hash"
+    },
+    {
+      "id": "WPF-RELEASE01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
+        "digest": "7150734a21db607e6e2e073f382cfe8b4ad040734cde5b561858fe05cc1a8f4d",
+        "modifiedAt": "2026-10-07T14:16:15.534Z",
+        "readAt": "2026-10-07T14:22:44.461Z",
+        "declaredUpdatedAt": "2026-10-07T14:16:15.530Z",
+        "stale": false,
+        "ageHours": 0.10803638888888889,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "progress": {
+        "completed": 7,
+        "total": 8
+      },
+      "timing": {
+        "started": {
+          "state": "unknown",
+          "at": null,
+          "record": "UNKNOWN"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工"
+        },
+        "issues": [
+          "任务开工时间未记录"
+        ]
+      },
+      "output": "新版会话网页验收源码与必要类型检查已独立批准；真实新产物兼容尚待执行",
+      "next": "原发布负责人审定修正后台与必要新网页，供齐两份不可变产物后形成兼容输入",
+      "blocker": {
+        "state": "active",
+        "text": "已授权最小后台组合尚待正式源审与产物，新网页必要草稿保护仍待审；两份不可变产物均未供给"
+      },
+      "main": "NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f"
+    }
+  ],
+  "claims": [
+    {
+      "taskId": "WPF-DASHBOARD-ACCESS01",
+      "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+      "version": 3,
+      "state": "released",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "branch": "codex/dashboard-local-access",
+      "scope": [
+        "apps/execution-dashboard/README.md",
+        "docs/evidence/wpf-dashboard-local-access",
+        "plans/wpf-dashboard-local-access"
+      ],
+      "updatedAt": "2026-10-07T11:21:01.754Z"
+    },
+    {
+      "taskId": "WPF-MATURE-02-CORE",
+      "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+      "version": 4,
+      "state": "released",
+      "lead": "mika",
+      "worker": "status_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+      "branch": "codex/claude-message-settings-core",
+      "scope": [
+        "apps/runner/src/claude-message-settings.test.ts",
+        "apps/runner/src/claude-message-settings.ts",
+        "apps/runner/src/claude.ts",
+        "apps/runner/src/execution-profiles.ts",
+        "apps/runner/src/native-harness/claude.ts",
+        "apps/server/src/assistant/store.ts",
+        "apps/server/src/context-transparency/store.ts",
+        "apps/server/src/conversation-queue/commands.ts",
+        "apps/server/src/conversation-queue/controls.ts",
+        "apps/server/src/conversation-queue/gate.ts",
+        "apps/server/src/conversation-queue/promotion.ts",
+        "apps/server/src/conversation-queue/queries.ts",
+        "apps/server/src/conversation-queue/store.ts",
+        "apps/server/src/conversations/admission.ts",
+        "apps/server/src/conversations/commands.ts",
+        "apps/server/src/conversations/message-settings-fixture.ts",
+        "apps/server/src/conversations/message-settings-migration.ts",
+        "apps/server/src/conversations/message-settings.test.ts",
+        "apps/server/src/conversations/message-settings.ts",
+        "apps/server/src/conversations/queries.ts",
+        "apps/server/src/conversations/replies.ts",
+        "apps/server/src/conversations/state.ts",
+        "apps/server/src/execution-profiles/index.ts",
+        "apps/server/src/execution-profiles/native-catalog.test.ts",
+        "apps/server/src/execution-profiles/store.ts",
+        "apps/server/src/reconciliation.ts",
+        "docs/evidence/wpf-mature-02-message-settings-core",
+        "packages/contracts/src/assistant.test.ts",
+        "packages/contracts/src/assistant.ts",
+        "packages/contracts/src/claude-message-settings.test.ts",
+        "packages/contracts/src/claude-turn-settings.test.ts",
+        "packages/contracts/src/claude-turn-settings.ts",
+        "packages/contracts/src/conversation-queue.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/contracts/src/execution-profiles.test.ts",
+        "packages/contracts/src/execution-profiles.ts",
+        "packages/contracts/src/tasks.ts",
+        "packages/storage/migrations/032-claude-message-settings.sql",
+        "plans/wpf-mature-02-message-settings-core"
+      ],
+      "updatedAt": "2026-10-06T17:59:12.649Z"
+    },
+    {
+      "taskId": "WPF-MATURE-02-CORE",
+      "claimId": "651c4eb4-ca60-41c3-9702-872c242e12d0",
+      "version": 2,
+      "state": "released",
+      "lead": "mika",
+      "worker": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
+      "branch": "codex/claude-settings-claim-eligibility",
+      "scope": [
+        "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+        "apps/server/src/runners.ts",
+        "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility",
+        "plans/wpf-mature-02-message-settings-core"
+      ],
+      "updatedAt": "2026-10-07T14:19:53.455Z"
+    },
+    {
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+      "version": 3,
+      "state": "active",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "branch": "codex/web-message-settings-app",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/conversation-recovery.browser.ts",
+        "apps/web/test/conversation-recovery.fixture.ts",
+        "apps/web/test/conversation-recovery.test.ts",
+        "docs/evidence/wpf-message-settings-app",
+        "plans/wpf-message-settings-app"
+      ],
+      "updatedAt": "2026-10-07T14:05:11.080Z"
+    },
+    {
+      "taskId": "WPF-RELEASE01",
+      "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+      "version": 2,
+      "state": "released",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "branch": "codex/web-release-compatibility",
+      "scope": [
+        "apps/web/test/web-release-compatibility.browser.ts",
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "docs/evidence/wpf-release01",
+        "plans/wpf-release01-product-compatibility"
+      ],
+      "updatedAt": "2026-10-07T12:18:30.761Z"
+    },
+    {
+      "taskId": "WPF-RELEASE01",
+      "claimId": "20a6529a-1b34-4d1c-9d26-cab0bda82b37",
+      "version": 2,
+      "state": "released",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "branch": "codex/web-release-compatibility",
+      "scope": [
+        "apps/web/test/web-release-compatibility.browser.ts",
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "docs/evidence/wpf-release01",
+        "plans/wpf-release01-product-compatibility"
+      ],
+      "updatedAt": "2026-10-06T10:59:06.085Z"
+    },
+    {
+      "taskId": "WPF-RELEASE01",
+      "claimId": "27c36b97-162d-45e0-9150-25269d3d3f34",
+      "version": 1,
+      "state": "active",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "branch": "codex/web-release-compatibility",
+      "scope": [
+        "apps/web/test/web-release-compatibility.browser.ts",
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "docs/evidence/wpf-release01",
+        "plans/wpf-release01-product-compatibility"
+      ],
+      "updatedAt": "2026-10-07T13:09:33.224Z"
+    },
+    {
+      "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+      "claimId": "79284ebe-b7dc-4340-a9bb-ed939cb15ade",
+      "version": 2,
+      "state": "released",
+      "lead": "mika",
+      "worker": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+      "branch": "codex/plugin-removal-references-client",
+      "scope": [
+        "apps/cli/src/index.ts",
+        "apps/cli/src/plugin-removal-references.test.ts",
+        "docs/evidence/x01-removal-references-client",
+        "packages/client/src/index.ts",
+        "packages/client/src/plugin-management.ts",
+        "packages/client/src/plugin-removal-references.test.ts",
+        "plans/x01-removal-references-client"
+      ],
+      "updatedAt": "2026-10-07T13:28:54.369Z"
+    },
+    {
+      "taskId": "X01-TRUSTED-PROCESS-HOST01",
+      "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+      "version": 2,
+      "state": "active",
+      "lead": "mika",
+      "worker": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+      "branch": "codex/plugin-trusted-process-host",
+      "scope": [
+        "apps/runner/src/configuration.test.ts",
+        "apps/runner/src/configuration.ts",
+        "apps/runner/src/main-concurrency.test.ts",
+        "apps/runner/src/plugins/execution.test.ts",
+        "apps/runner/src/plugins/execution.ts",
+        "apps/runner/src/plugins/process-host.test.ts",
+        "apps/runner/src/plugins/process-host.ts",
+        "apps/runner/src/plugins/process-protocol.ts",
+        "apps/runner/src/plugins/process-resources.ts",
+        "apps/runner/src/plugins/process-worker.ts",
+        "apps/runner/src/plugins/runtime.test.ts",
+        "apps/runner/src/runtime.ts",
+        "docs/evidence/x01-trusted-process-host",
+        "plans/x01-trusted-process-host"
+      ],
+      "updatedAt": "2026-10-07T12:58:06.882Z"
+    }
+  ],
+  "unregistered": [
+    {
+      "taskId": "X01-TRUSTED-PROCESS-HOST01",
+      "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+      "version": 2,
+      "state": "active",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host"
+    }
+  ],
+  "conclusions": [
+    "CORE source is now claude-settings-claim-eligibility,10/10 andmain677a recorded,completion known; historical startUNKNOWN preserved.",
+    "MSG03 and Release source paths are unique current owner sources, unstale/issues[]. Their pending latest review records can update in normal owner batches.",
+    "PROCESS activev2 remains unregistered but visible in unregisteredAssignments; no duplicate owner should treat it free.",
+    "CLIENT task absent from selected summary; absence of active unregistered claim alone is not source registration proof.",
+    "ACCESS completion has existing ISO parsing issue, queued to originalowner; no newwriter or artificial timestamp."
+  ],
+  "limitations": [
+    "API observation only, no fresh whole-page UI review or actual per-task Git verification.",
+    "Summary verification.not_loaded/assignment.pending are lazy states; claims read independently.",
+    "No credential read/reveal, private product refresh, takeover, registry writes or server restart."
+  ]
+}

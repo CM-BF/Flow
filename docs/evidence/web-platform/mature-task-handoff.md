@@ -1,14 +1,14 @@
 # Web 当前交接与唯一来源
 
-**下一新网页的具体交付：共享草稿保护小修 → 固定新Web产物。** [影响判定与最小路径](s01-first-actual-return-20261007/release-minimal-fix-decision.json)：MSG实际持久A+B已证；7272真实adapter无同型网络/file等待，未证自然旧路径复现，不能写旧actualFAIL或material-safe。沿既有draftItems/guarded composer修当前/held归属，覆盖部分恢复后unmount；d576当前P2未获批。通过精确消费者与源审后，Original只纳这份小Web保护delta重固定candidate/descriptor，不等全部MSG/Plugin；backend7272 lateLogout仍必需、两个descriptor仍缺，不临拼未审6c组合。
+**下一新网页：必要共享草稿小修已审，后端允许 Original 的最小 Logout 修复组合。** [当前固定输入](release-backend-route-20261007/current.json)记录 b924 源码/定向局部已获 root b92e4c 批准，W01 已固定并获root限定静态移植审的 c848 提供的[两文件最小移植](release-backend-route-20261007/held-draft-release-minimal.patch)与旧 Web consumer/guard；不能整拷 MSG session，也不把这份批准当移植后兼容通过。Original 04da/6c 已获正式完整源/构建准备审，仍需新 artifact（三 server 路径62+/6-，另78行 support，共4路径140+/6-）。两个 descriptor 仍 NULL，不等完整 MSG/Plugin，不重做已部署7d1。
 
-**当前资源：无PG/Chrome/性能运行holder，MSG局部已归还、源码修复待复审。** S01实际O1失败、O2未运行，14:08:08.536Z进程/端口/目标DB归还；两目录KEEP、原processClosed=false/UNKNOWN_RETAIN保留，不重试或称优化通过。MSG第四FAIL原90s段封闭，新20s消费者首7340ms已归还/余12660，d576源审还有恢复后unmount P2，不能交Release采用；个人服务/自然用户任务不动。[唯一资源来源](resource-window-current.json)。
+**当前资源：MSG两个旅程已通过所选检查并完整归还；Original SVC06B构建现为唯一NEXT，尚未实际启动。** [固定交接](release-backend-route-20261007/svc06b-build-next.json)绑定已批准82873/04da、420s工作+0.5s TERM+2s reap、0PG/Chrome/provider/个人，operator必须fresh当前claim/完整输入/新目录与组合空间至少11,623,661,568B；单reserve、全部KEEP及个人服务不动。MSG新120s共26368ms、余93632不再授权运行，业务/截图审与封存不占窗。
 
 **Arc后继只读输入已归原计划：** [固定12源报告与六约束/八验收](arc-msg03-ownership-intake-20261007/intake.json)已纳MATURE05-01/02/03/05；保持唯一composer父级、view/draft身份与材料准备状态，可见性统一撤销旧CAS/opening，布局不复制权限。仅未实现设计，不新增task/take或公共接口、不占MSG03十九scope。MSG03最新6a258错误观察差量已[限定批准](arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json)，原第三缺证及余额不变，仍无NEXT。
 
 **1306只读诊断供原operator：** [确切reader路径](msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json)确认本次facts默认使用旧personal-history WT的format1 reader；当前存在findCompatibility注入，固定main7524 reader支持v1/v2/context。请沿原wrapper绑定正确fixedreader；可能原owner已处理同点，不绕验、不推断私人报告损坏、不重放已完成阶段。当前原窗口已RETURN，不因该诊断占NEXT。
 
-**下一用户可见发布交原产物/发布owner：** [已核只读候选](mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)固定共同source `7272151bb1e3e59e08937dca44949dcdeb42f009`，还需新的immutable Web与含lateLogout修复的backend descriptors；当前6c/7d1旧报告不能改标。原REQ19/Release沿既有发布链优先推进，不等完整Plugin/Codex资格或MSG03。W01已于13:09:33.224Z[重新原子take27c36b97 v1 exact4](mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json)，在原Release独立树准备最窄新App Cookie分支，旧38b9权保持已释放；新App Cookie/刷新恢复/原key ACK/真实迟到logout与旧三App/Bearer新tuple报告分开，8964源及必要strict已限定通过，browser/compat仍未运行。原owner230cb的[具体供给请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json)直接交Original原产物链。
+**此前共同源候选研究（当前最小04da路线及补丁以页首为准）：** [已核只读候选](mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)固定共同source `7272151bb1e3e59e08937dca44949dcdeb42f009`，还需新的immutable Web与含lateLogout修复的backend descriptors；当前6c/7d1旧报告不能改标。原REQ19/Release沿既有发布链优先推进，不等完整Plugin/Codex资格或MSG03。W01已于13:09:33.224Z[重新原子take27c36b97 v1 exact4](mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json)，在原Release独立树准备最窄新App Cookie分支，旧38b9权保持已释放；新App Cookie/刷新恢复/原key ACK/真实迟到logout与旧三App/Bearer新tuple报告分开，8964源及必要strict已限定通过，browser/compat仍未运行。原owner230cb的[具体供给请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json)直接交Original原产物链。
 
 **Original 13:57最小新网页请求：** 原REQ19历史最小共源候选为7272151bb1e3e59e08937dca44949dcdeb42f009；现按页首已收敛的共享保护小修路径，不等待其余MSG或完整Plugin。当前6c有Cookie API，但logout仍清cookie头，迟到响应可清新cookie；Web generation guard不能阻止浏览器存储。6c→7272 backend/src有17差异路径，不能临拼未审第三组合；两个新immutable descriptors仍缺，旧三App对6c的Bearer报告不能当新恢复网页通过。[原W01固定答复](svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json)已由root核关键差异；沿已审8964四App同新backend/context检查后才由原version CAS发布。无新artifact预约、不触用户tab。
 
@@ -20,13 +20,13 @@
 
 **CORE原任务主线接收：** 原owner最终ae6a2f2ce7505d0eccb6b0d8ee29654013127545 STOP/651cv1保留，已审5/5与完整归还后的[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)可由Original受控接收；不重复PG、不搬mirror，不冒main/个人激活。D05同task唯一source切换仍须实际确认。
 
-**D05三项来源映射优先交现合法writer：** [当前精确请求及真实UI边界](msg03-mounted-browser-admission-20261007/d05-three-source-request.json)在原D05 3a624v6范围补两新增CLIENT/PROCESS source、切原CORE同task到新WT。root13:22:27 API仍读CORE旧6/6；两个新claim已在实际UI待登记区显示，不能误认未领取或页面丢失。CORE正式[920a同task owner-switch入口](msg03-mounted-browser-admission-20261007/core-formal-owner-switch-intake.json)已收齐。Original正常改registry并交固定receipt，经理/W01不重叠take、不改生成JSON/不重启4320。
+**D05 唯一来源映射：** [root14:22:44实际观察](release-backend-route-20261007/dashboard-owner-observation.json)已确认 CORE 切新 WT、10/10/main677a 与释放；PROCESS 仍为 unregistered，CLIENT summary 缺席且已release，不能用无active行推已登记。剩余两项交 Original 原D05 writer 正常登记；经理/W01不另take或重启4320。
 
 **原CORE后继已实际交权领取：** [13:11:33.942Z fresh ledger](msg03-mounted-browser-admission-20261007/fresh-claims.json)确认X01于13:07:40.252Z STOP→v29移出runners.ts，architecture在claude-settings-claim-eligibility于13:07:54.544Z正式take651c4eb4 v1 exact4。原CORE task保持同ID，D05由Original切唯一source到新WT，旧树保历史；不是新的activation大task。SVC09两槽仍Original原owner后继，原parent08/11已落b4c。
 
 **Plugin 模块已main并完成原owner释放。** [固定接收及边界](msg03-mounted-browser-admission-20261007/plugin-main-close-intake.json)记录main/origin `9f0fe5b2c096a49195ff8060d97584de235785d2`五源a952；最终409b30双端clean，七scope STOP后于13:33:10.631Z[0a9v2正式释放](msg03-mounted-browser-admission-20261007/plugin-release-receipt.json)。旧待FF原receipt、失败与SB归档边界保持，不重跑，不冒实际App或个人部署；Release27cv1未释放。
 
-更新：2026-10-07T14:11:57.087Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T14:15:45.689Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 **MSG03 已领取、登记并实施：** 原MATURE02/TODO11沿[常规source operator规则](message-settings-app-self-provision-20261007/rule-intake.json)，panels在固定c130新独立树完成369源物化及[7e3f v1 exact18原子领取](message-settings-app-self-provision-20261007/msg03-receipt.json)。材料失败恢复所需的单一adapter接缝已于12:32:04.114Z[合法amend v2 exact19](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)，只追加 `plugin-integration/react.tsx`，原18保留；[D05正式live回执](release-main-registry-close-20261007/msg03-live-receipt.json)与root12:18:58观察确认唯一sourceCurrent、parent MATURE02及claim匹配；旧登记等待已解除。[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)是唯一进度源。局部结果及固定源码审见[本批索引](svc1230-return-plugin-removal-pair-20261007/current.json)；原失败保留，按已授有限段继续，不再申请逐片供给。
 
@@ -44,7 +44,7 @@
 
 ## 当前窗口与用户交付
 
-**当前唯一资源交接：** [S01实际终态与归还](s01-first-actual-return-20261007/current.json)按原事件时间保存：reportedSTART早于reservation落盘，顺序不修饰；原129tasks/O1FAIL/O2NOT_RUN，精确KEEP不删除。无新heavy/NEXT，futurefloor至少9296871424B及更高完整sum，旧potential/KEEP/单reserve不退款。
+**当前唯一资源交接见页首及 current JSON。** [S01原始失败归还](s01-first-actual-return-20261007/current.json)仅保该事件reportedSTART早于reservation、O1FAIL/O2NOT_RUN及精确KEEP；不再作为当前NEXT字段。
 
 **历史交接链（不用于当前派工）：** [当时入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；随后X01 VERSION LIFECYCLE已实际11:34:20.882389启动、11:34:41.853508 exact归还；[实际原件](x01-version-return-20261007/current.json)区分delivery与收尾复核，彼时无新NEXT，当前以本节actual行和resource-current为准。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01 c2修复及3场景局部实际已获[集中接受](x01-version-return-20261007/release-c2-delta-review.json)，native固定边界已接受；最终1e5f/c2绑定后已执行一次，[实际失败/清理](x01-version-return-20261007/release-c2-failed-cleanup-accounting.json)在Node前被sandbox语法拒绝，0Chrome/fixture未入、410ms封账并11:44:37.704120归还，不自动重跑。插件direct-only新r4调用器已固定61a7并获[源码审](release-c3-actual-admission-20261007/root-plugin-direct-r4-source-review.json)，[20s/5cleanup普通local](release-c3-actual-admission-20261007/plugin-r4-local-segment.json)已实际outer0/15exactPASS并12:08:23.129744Z[完整归还](release-c3-actual-admission-20261007/plugin-r4-cleanup-accounting.json)，882ms封账、[独立结果审已通过](message-settings-app-self-provision-20261007/plugin-r4-actual-review.json)；旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
 
@@ -141,13 +141,13 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 
 [历史21:01:31 D04 观察](web-source-dispatch-take-observation-2101.json)当时核对四个原 claim active、无 overlap；当前 Settings 已按下表释放。
 [21:05:22 同范围补派观察](web-p2-source-dispatch-take-observation-2105.json)保持原 owner 与范围，无 overlap。
-以下只维护权威来源与已收到的原子领取/交权回执，不复制功能TODO或检查状态。历史选定账本不能用于新派工；Plugin0a9v2已释放、Release新27cv1与MSG7e3fv2仍active，写入或运行前仍须fresh核验。
+以下只维护权威来源与已收到的原子领取/交权回执，不复制功能TODO或检查状态。历史选定账本不能用于新派工；Plugin0a9v2已释放、Release新27cv1与MSG7e3fv3仍active，写入或运行前仍须fresh核验。
 
 | 工作 | 唯一 owner / worktree / branch | 原 claim 与唯一 status |
 | --- | --- | --- |
 | Web 管理 | d01_owner；web-platform-management；codex/web-platform-management | 632a7149 v3 / 6 scopes；[status](../../../plans/web-platform/status.md) |
 | 插件运行时模块 | w01_owner；web-plugin-runtime-management；codex/web-plugin-runtime-management | 0a9a9b2c v2 RELEASED / 原7 literal scopes，见[正式释放](msg03-mounted-browser-admission-20261007/plugin-release-receipt.json)；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md) · [take](recovery-second-center-preparation-20261007/plugin-take-receipt.json) · [历史登记请求（已登记）](recovery-second-center-preparation-20261007/plugin-registration-request.json) |
-| 真实App逐消息设置 | workspace_panels_owner；web-message-settings-app；codex/web-message-settings-app | 7e3fbcf1 v2 ACTIVE / 19 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md) · [单接缝amend](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json) |
+| 真实App逐消息设置 | workspace_panels_owner；web-message-settings-app；codex/web-message-settings-app | 7e3fbcf1 v3 ACTIVE / 20 scopes（仅追加附件成员投影文件；见当前selected-claims）；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md) · [单接缝amend](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json) |
 | 草稿恢复 | workspace_panels_owner；web-conversation-recovery；codex/web-conversation-recovery | 6ff988b2 v6 RELEASED / 原两metadata已[释放](release-c3-actual-admission-20261007/recovery-final-release-receipt.json)；19源码此前已移出，新writer须fresh take；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
 | 逐消息设置控件 | w01_owner；web-message-settings；codex/web-message-settings | a5b0c231 v2 RELEASED / 原8 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
 | 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v2 RELEASED / 原6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [释放receipt](svc06-return-steer-handoff-20261007/quick-release-receipt.json) |
@@ -254,4 +254,16 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 
 [Recovery原03/05组合独审](recovery-two-center-actual-20261007/recovery-composed-feature-review.json)已接受固定Web实现与原工程矩阵；06由Original/中心owner交既有callerOrigin/迟到Clear-Cookie/重复Connect32slot合同来源及合法main/intake。原全7重新认证/离线保稿已绿，不新增笼统重连重跑或provider前置。
 
-[原owner时间字段收口](s01-first-actual-return-20261007/external-timing-update.json)：READBOUND317b仅格式正规化并releasev4，未重测/不冒live刷新；ACCESS01仍排原panels完成MSG安全停点后的两metadata正常新take。S01P07由Mika原owner另取records权，未完成、不借现性能scope。
+[原owner时间字段收口](s01-first-actual-return-20261007/external-timing-update.json)：READBOUND317b仅格式正规化并releasev4，未重测/不冒live刷新；ACCESS01仍排原panels完成MSG安全停点后的两metadata正常新take。S01P07已由独立records领取完成ISO修正并释放，见[新收口](release-backend-route-20261007/external-current.json)，不借性能scope。
+
+
+[外组当前接收](release-backend-route-20261007/external-current.json)：CORE main677a/原owner a47收口及651cv2release已核；PROCESS672唯一main-intake交Original现有接收owner，T7随自然所需新backend artifact，不堵源码或Web发布。MATURE02父fc11仅metadata，不代表个人settings已激活。
+
+
+[Release最小移植限定审](release-backend-route-20261007/release-minimal-transplant-root-review.json)接受固定7272两blob应用patch77bc后的准确结果；[原owner报告](release-backend-route-20261007/release-transplant-report.md)区分staticapply与尚未运行的旧consumer/类型/产物/四App兼容。Original可沿受控集成供新固定Web，不需迁走正在MSG实证的产品写权。
+
+
+MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-review.json)及[业务证据](release-backend-route-20261007/material-business-peer-review.json)限定通过；failure臂B仅settings-only UI，cancel臂才有完整durable B精确断言。第二设置旅程[生命周期与双390图](release-backend-route-20261007/settings-lifecycle-visual-root-review.json)限定通过，第二业务审尚在只读收口，不冒完整MSG/main/个人能力。Speed选择器右侧滚动条贴近是非阻断视觉后继，原MATURE01记录，不加新runtime。
+
+
+[GO窄屏视觉反馈](release-backend-route-20261007/mature01-visual-feedback.json)已纳原MATURE01，与scrollbarP3同片统一处理；不挡当前功能审或最小网页发布，不新抢App。ACCESS01时间ISO仍排panels正常MSG seal后的原两metadata新take，仅格式/来源/ownparser，无产品复测。

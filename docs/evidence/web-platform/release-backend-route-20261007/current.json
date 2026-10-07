@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-07T14:26:57.829Z",
+  "state": "ORIGINAL_AUTHORIZED_MINIMAL_6C_BACKEND_ROUTE_PENDING_FIXED_REVIEW_AND_ARTIFACT",
+  "task": "Existing REQ19/Release",
+  "authority": "Original explicit route relayed by root; supersedes old research ban on creating a6c-derived third composite",
+  "backendRequiredContract": "Reviewed lateLogout contract: preserve original token/origin revocation and omit cookie-clearing response header",
+  "newOriginalCandidate": {
+    "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "basePrefix": "6c0fdcda",
+    "operator": "assignment_review in independent SVC06B",
+    "actualFiles": [
+      {
+        "path": "apps/server/src/browser-session/fixture.ts",
+        "added": 5,
+        "removed": 0,
+        "kind": "server product/test"
+      },
+      {
+        "path": "apps/server/src/browser-session/index.ts",
+        "added": 3,
+        "removed": 2,
+        "kind": "server product/test"
+      },
+      {
+        "path": "apps/server/src/browser-session/session.test.ts",
+        "added": 54,
+        "removed": 4,
+        "kind": "server product/test"
+      },
+      {
+        "path": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+        "added": 78,
+        "removed": 0,
+        "kind": "evidence support"
+      }
+    ],
+    "sourceReview": "APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION via OriginalLead fixed82873; actualbuild/hostcompat NOT_RUN",
+    "artifact": null,
+    "actualValidation": "NOT_RECEIVED",
+    "boundary": "Manager read exact Git fullstat only; no source approval or ownership violation inferred for support",
+    "sourceReviewRecord": "svc06b-preparation-lead-review.json"
+  },
+  "previousCandidate": {
+    "source": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "status": "Prior reviewed contract/source option; no longer mandatory same-source backend lock",
+    "reports": "Prior readonly diff17 conclusion retained historically; new explicit Original route overrides previous restriction"
+  },
+  "web": {
+    "requirement": "Only necessary shared full draft-membership protection delta, not wholeMSG/Plugin",
+    "sourceCandidate": "b92470377349dea17a12d0abc244f0fed7992e33",
+    "local": "Newdirect selected1/68 notselected and affectednoEmit passed; fourattempttotal14680/20k; historicald576P2/local retained",
+    "sourceReview": "APPROVED_SCOPED_SOURCE_AND_LOCAL_NOT_MOUNTED; root b92e4c, d576 unmount finding resolved in b924",
+    "descriptor": null,
+    "sourceReviewRecord": "msg03-b924-root-review.json",
+    "ownerSeal": "c848024a20ac59182360d31c7e0087828bca018d",
+    "minimalPatch": "held-draft-release-minimal.patch",
+    "minimalPatchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+    "transplant": "Exact7272 twofile TMPstaticcomposition approved root754608; not oldbase consumer behavior/actualartifact/compatibility",
+    "transplantReview": "release-minimal-transplant-root-review.json"
+  },
+  "releaseOwner": {
+    "claim": "27c36b97 v1 exact4",
+    "calibrationHead": "4b8a11c6cdd7849dfe75ba920be952b7b802f274",
+    "state": "Ownerremoteequalclean/4STOP; statictransplantfixed androotapproved; no2productscopewrite",
+    "task": "W01 prepares exact twofile transplant consumer and guard proposal within TMP/ownrecords; descriptors remain null, runtime not granted"
+  },
+  "runtime": "MSGbothactualRETURN; OriginalSVC06BbuildsoleNEXT/fresh-notSTARTED",
+  "priorDecision": "../s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+  "msgNewPhase": {
+    "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+    "ownerHead": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+    "rootReview": "msg03-new-phase-root-review.json",
+    "prepared": "msg03-new-phase-manifest.json",
+    "handoff": "msg03-membership-handoff.json",
+    "state": "BOTH_SELECTED_JOURNEYS_PASS_FULL_RETURN_ACTUAL_REVIEW_PENDING",
+    "budgetMs": 120000,
+    "spentMs": 26368,
+    "perAttempt": "45–60 seconds including30seconds cleanup",
+    "scope": "Originalmaterial-return and messageSettingsApp selectors, oneDB14configured/oneChrome; old90/local20CLOSED no transfer",
+    "actual": "msg03-membership-actual.json",
+    "remainingMs": 93632,
+    "runtimeContinuation": false,
+    "settingsActual": "msg03-settings-actual.json",
+    "reviews": {
+      "material": "Scopedlifecycle+businessAPPROVED",
+      "settings": "Scopedlifecycle+visualAPPROVED, W01businesspending"
+    }
+  }
+}

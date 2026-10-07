@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:10:32.939Z；S01实际O1FAIL/O2未运行、运行资源归还/目录KEEP；MSG20scope普通局部检查，发布影响HOLD保留。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:24:50.216Z；b924共享小修源/局部获审，材料旅程已通过并清理归还，设置旅程仍原阶段NEXT；COREmain及释放确认。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 插件模块已合主线；个人后台已恢复接受任务，网页仍旧版本。逐消息设置的材料取消场景发现新旧附件混入，需要修复后再验证。 |
+| 当前产出 | 逐消息设置修后的材料与设置旅程均通过所选检查并清理归还，证据与截图审查在收口。个人后台已恢复接受任务，网页仍旧版本。 |
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
-| 当前阻塞 | ACTIVE: 共享附件恢复投影的小修仍有部分恢复后卸载遗漏，需要精确消费者验证与源审；之后只纳这份必要小修重新固定新网页产物，不等待全部逐消息设置或插件功能。 |
+| 当前阻塞 | ACTIVE: 新网页等待必要小修在旧Web消费组合的移植核验，以及正式审定的Logout后端和两个固定产物；不等待完整逐消息设置或插件功能。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：S01运行资源14:08:08.536Z归还，两目录KEEP、原UNKNOWN_RETAIN保留；无PG/Chrome/性能NEXT。MSG只有新20s普通局部段，旧90s封闭；futurefloor至少9296871424B，个人服务/自然用户任务不动。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG两旅程已RETURN/26368ms，余量不再授权；Original已审04da构建为唯一NEXT待fresh，未来完整floor至少11623661568B，旧KEEP/单reserve/个人自然任务保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

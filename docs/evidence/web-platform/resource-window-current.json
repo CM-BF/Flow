@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T14:11:57.087Z",
-  "state": "S01_ACTIVE_RETURN_KEEP_MSG_LOCAL_RETURNED_SOURCE_REVIEW_P2",
-  "groupWindowOwnership": "No active PG/Chrome/performance/ordinary holder reported. S01 processes/targetDB returned, two directories KEEP and original automatic UNKNOWN retained. MSG current20s local attempts returned7340ms, source d576 has P2 in restored-held draft unmount projection; samephase12660ms may fund necessary scoped followup only. Oldbrowser90s closed, no new heavy NEXT. Personal services/task untouched.",
+  "recordedAt": "2026-10-07T14:28:51.921Z",
+  "state": "MSG_BOTH_RETURNED_ORIGINAL_SVC06B_ARTIFACT_SOLE_NEXT",
+  "groupWindowOwnership": "No currentWebPG/Chrome/local holder; bothMSGselectedjourneys FULLRETURN last14:27:31.462508Z. OriginalSVC06B offline04da build is soleNEXT/fresh-notSTARTED; no parallelheavy. Personalpersistentservices/naturaltask andoldKEEP unchanged.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T14:11:57.087Z",
-    "record": "s01-first-actual-return-20261007/release-minimal-fix-decision.json",
-    "event": "Old7272 reachability uncertainty resolved to concrete minimalfix path; no indefinite general hold or material safety claim"
+    "at": "2026-10-07T14:28:51.921Z",
+    "record": "release-backend-route-20261007/svc06b-build-next.json",
+    "event": "BothMSGfullRETURN exactoriginalschecked; formal828preparation+fresh95fv2 binds soleartifactNEXT",
+    "reviews": "Materiallifecycle+business approved; settingslifecycle+visualapproved, businesspending; no additionalruntime"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1188,9 +1189,9 @@
   },
   "currentLedgerAvailability": {
     "state": "available",
-    "observedAt": "2026-10-07T13:46:45.125Z",
-    "source": "svc-held1347-core-ready-20261007/selected-claims.json",
-    "boundary": "Six relevantclaims fresh; no runtime/sourcemapping inferred"
+    "observedAt": "2026-10-07T14:22:05.614Z",
+    "source": "release-backend-route-20261007/selected-claims.json",
+    "boundary": "4selectedclaims; MSGno literaloverlap; not runtimegrant by ledger alone"
   },
   "nativeChromeBoundaryDecision": {
     "state": "ACCEPTED_EXPLICIT_GO",
@@ -1199,8 +1200,11 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "NOT_READY_SOURCE_FIX_REQUIRED",
-    "reason": "Real cancel B refs failure; source fix/regression plan due, prior phase closed"
+    "state": "NONE_REVIEW_AND_METADATA_ONLY",
+    "phaseMs": 120000,
+    "spentMs": 26368,
+    "unusedMs": 93632,
+    "unusedPermission": false
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1302,12 +1306,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "svc1230-return-plugin-removal-pair-20261007/removal-r2-events.json",
+  "currentWindowEvidence": "release-backend-route-20261007/msg03-settings-actual.json",
   "webActualHolder": {
-    "state": "NONE_FULL_RETURN"
+    "state": "NONE_FULL_RETURN_CONFIRMED",
+    "at": "2026-10-07T14:27:31.462508Z"
   },
   "webGate": {
-    "state": "CONSUMED_CLOSED"
+    "state": "BOTH_CONSUMED_CLOSED"
   },
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": {
@@ -1711,48 +1716,63 @@
     }
   },
   "externalCurrentAdmission": {
-    "state": "O1_FAILED_O2_NOT_RUN_ACTIVE_RESOURCES_RETURNED_FILES_KEEP",
-    "window": "s01-pool-wait-delivery-once",
-    "head": "67d0c84d3e8a629d78335b8866173e04d7249e36",
-    "operatorWrapperStartedAt": "2026-10-07T14:05:05.565618Z",
-    "reportedChildStart": "2026-10-07T14:05:05.778649Z",
-    "reservationRecordedAt": "2026-10-07T14:05:06.007Z",
-    "clockOrdering": "Reservation recorded later than reported child start; retain original order, not retroactive prelaunch authorization evidence",
-    "actualEnd": "2026-10-07T14:05:30.030995Z",
-    "activeResourcesReturnedAt": "2026-10-07T14:08:08.536Z",
-    "actualExit": 1,
-    "toolTimeRealSeconds": 24.56,
-    "supervisorElapsedMs": 24289,
-    "beforeFinalPersistenceMs": 24465.793249895796,
-    "sourceResultElapsedMs": 24130.683624999998,
-    "reportedFreeBytes": 21529260032,
-    "outerFreshFreeBytes": 21529296896,
-    "gateFloorBytes": 9296871424,
-    "o1": "FAIL: insufficient_window_ack_span / admission_or_outbox_retained",
-    "o2": "NOT_RUN",
-    "tasksSentOrUnknown": 129,
-    "operatorAutomatic": "FAIL_OR_UNKNOWN / UNKNOWN_RETAIN / processClosed=false remains unchanged",
-    "activeCleanup": "Original100/center108/runner173 normalclose/groupabsent/dualEOF/no signals-secondary;14:07:56.949 exactPID ESRCH/port59253 connectEx61;14:08:08.536 target pg_database rows0/connections0/postcheck poolclosed; original normalDROP evidence retained",
-    "retainedDirectories": [
-      {
-        "path": "/tmp/flow-s01-mixed-Zwn2dy",
-        "dev": 16777234,
-        "ino": 124181018,
-        "action": "KEEP; children not accessed or deleted"
-      },
-      {
-        "path": "/tmp/flow-s01-ab-input-9145b45f-55c9-40a7-be03-74f58dd8c739",
-        "dev": 16777234,
-        "ino": 124180211,
-        "action": "KEEP; children not accessed or deleted"
-      }
-    ],
-    "runtimeHolder": false,
-    "nextGranted": false,
-    "retry": false,
-    "verdictBoundary": "No optimization PASS, complete file deletion, equal background or SLO inference",
-    "review": "Original result fidelity review not yet received",
-    "raw": "s01-outer-tool-receipt.json"
+    "at": "2026-10-07T14:28:51.921Z",
+    "state": "SOLE_NEXT_FRESH_NOT_STARTED",
+    "task": "SVC06B",
+    "owner": "Original / assignment_review",
+    "claim": {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/browser-session/fixture.ts",
+        "apps/server/src/browser-session/index.ts",
+        "apps/server/src/browser-session/session.test.ts",
+        "docs/evidence/svc06/browser-recovery",
+        "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+        "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+        "plans/svc06-browser-recovery"
+      ],
+      "state": "active",
+      "branch": "codex/backend-browser-recovery",
+      "origin": "new",
+      "taskId": "SVC06B",
+      "worker": "assignment_review",
+      "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "createdAt": "2026-10-07T14:08:10.726Z",
+      "updatedAt": "2026-10-07T14:13:44.031Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "freshLedgerAt": "2026-10-07T14:28:08.804Z",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "branch": "codex/backend-browser-recovery",
+    "preparedTarget": "82873e845fc7b1a8bcab5e55713a94c94f1dadce",
+    "artifactSource": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "assemblySource": "6bebf75f24a80b38d821efd3aaf8db24a0d62e2e",
+    "canonical": "docs/evidence/svc06/browser-recovery/build-preparation.json",
+    "canonicalSha256": "4cb1af1f1af57ff91697e199ef3f8e393b8e775479de93f5179cf61ab104cd81",
+    "review": "svc06b-preparation-lead-review.json",
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "additionalBudgetBytes": 2317352960,
+    "freshMinimumBytes": 11623661568,
+    "liveReserveBytes": 1073741824,
+    "reserveCount": 1,
+    "rawBytes": 2097152,
+    "pg": 0,
+    "chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "sharedServices": 0,
+    "exclusiveBuild": true,
+    "priorWebActualReturn": "2026-10-07T14:27:31.462508Z",
+    "condition": "Original operator immediatefresh ownclaim/HEAD/source/fullprepared pins/rootidentity/newnamespace/actualnootherholder/completebudget/free>=latesthigherfloor. Keep all old KEEP/potential and personalservices; report actualSTART and exact completeRETURN. No new PG/Chrome/performance/artifact parallel.",
+    "route": "Canonical handoff for Original actively reading; direct app-server delivery is blocked and was not retried or claimed",
+    "limits": "Build preparation approved, actualartifact/compat/personalpublication stillNOT_RUN; norepeat deployed7d1 or MSGchecks"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1762,10 +1782,10 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "NONE",
-    "s01": "Consumed once, O1 failed/O2 not run, no retry"
+    "state": "SVC06B_SOLE_NEXT_FRESH_NOT_STARTED",
+    "record": "release-backend-route-20261007/svc06b-build-next.json"
   },
-  "currentIntake": "svc-held1347-core-ready-20261007/current.json",
+  "currentIntake": "release-backend-route-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -1782,9 +1802,9 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "ACTUAL_RETURNED_SOURCE_REVIEW_P2_FOLLOWUP_PENDING",
+    "state": "CLOSED_APPROVED_B924_LOCAL_RETURNED",
     "task": "MSG03 projection consumer",
-    "sourcePrefix": "d5760087",
+    "sourcePrefix": "b9247037",
     "claim": "7e3fbcf1 v3 exact20",
     "freshClaimAt": "2026-10-07T14:09:16.790Z",
     "direct": {
@@ -1812,11 +1832,14 @@
     "freeBeforeBytes": 21395673088,
     "gateFloorBytes": 9296871424,
     "rawRoot": "/private/tmp/msg03-held-projection-local-go1nlwgu",
-    "spentMs": 7340,
-    "remainingMs": 12660,
+    "spentMs": 14680,
+    "remainingMs": 5320,
     "currentLocal": 0,
-    "sourceReview": "CHANGES_REQUESTED P2: restored held A membership must survive unmount; original direct test discarded held before unmount, not covering combination",
-    "nextCandidate": "Same20s remaining12660 necessary changedconsumer check/types after fixed delta; no old credit/no newChrome"
+    "sourceReview": "Rootb92e4c APPROVED_SCOPED_SOURCE_AND_LOCAL; closed20s14680/5320unused no transfer",
+    "nextCandidate": null,
+    "source": "b92470377349dea17a12d0abc244f0fed7992e33",
+    "actualResult": "direct2 selected1PASS/68notselected/1741ms andtypes2exit0/5599ms; allgroups/scratchabsent/errors[]; regularfilelogs notdualEOF",
+    "reviewRecord": "release-backend-route-20261007/msg03-b924-root-review.json"
   },
   "externalPreviousReturn": {
     "task": "SVC06 exactheld continuation",
@@ -1916,68 +1939,138 @@
     "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
   },
   "lastWebActual": {
-    "state": "FAILED_FULL_RETURN",
-    "actualStart": "2026-10-07T14:00:09.820892Z",
-    "run": "msg03-material-20261007-140004-04f4e0",
-    "outerPid": 10474,
-    "parentPid": 10544,
-    "toolSession": 9448,
-    "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
-    "executionHeadPrefix": "35dcec",
-    "headState": "Owner reports local=remote/clean",
-    "freshClaimAt": "2026-10-07T14:00:04.099Z",
-    "claim": "7e3fbcf1 v2 exact19/nooverlap",
-    "pins": 943,
-    "sqlPins": 33,
-    "priorPins": 113,
-    "freeBeforeBytes": 21595295744,
-    "gateFloorBytes": 7686258688,
-    "retainedBytes": 662770,
-    "selector": "messageSettingsMaterialReturn",
-    "phaseBudgetMs": 90000,
-    "spentBeforeMs": 33766,
-    "attemptMs": 56234,
-    "cleanupMs": 30000,
-    "db": 1,
-    "configuredConnections": 14,
-    "chrome": 1,
-    "rawRoot": "/private/tmp/msg03-material-fourth-xsvnlpm1",
-    "gatePrefix": "55a429",
-    "capturePrefix": "0eb3",
-    "admin": "Owner0600 env path only, exact deletion due at terminal; value not read",
-    "actualReturn": "2026-10-07T14:01:00.037466Z",
-    "provenance": "Owner START receipt; no independent actual conclusion yet",
-    "actualEnd": "2026-10-07T14:00:27.163441Z",
-    "actualExit": 1,
-    "parentExit": 1,
-    "workerPid": 10862,
-    "chromePid": 13878,
-    "chargeMs": 17344,
-    "phaseSpentMs": 51110,
-    "phaseRemainingMs": 38890,
-    "phaseState": "CLOSED_REMAINING_BELOW_MINIMUM",
-    "completedGroups": [
-      "cookieRead"
+    "state": "SELECTED_TWO_PASS_FULL_RETURN_REVIEW_PENDING",
+    "actualStart": "2026-10-07T14:26:55.840024Z",
+    "run": "msg03-settings-20261007-142648-6237f8",
+    "outerPid": 25093,
+    "parentPid": 25247,
+    "toolSession": 39172,
+    "selectors": [
+      "cookieRead",
+      "messageSettingsApp"
     ],
-    "materialGroup": "FAILED: failure branch restore reached; cancel complete B refs assertion received A two files plus B",
-    "screenshots": [],
-    "cleanup": "DB confirmed marker/0conn normalDROP remaining[]; fixture complete/errors[]/provider0; scratch/exactadmin absent; four exact PID/PGID ESRCH; dualEOF/drop0/no signals",
-    "originalReceiptLimitation": "First post-cleanup pid key overwrote numeric IDs; independent exact identity observation retained separately, original unchanged",
-    "record": "svc-held1347-core-ready-20261007/msg03-fourth-post-cleanup.json"
+    "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+    "executionHead": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+    "freshClaimAt": "2026-10-07T14:26:48.449Z",
+    "claim": "7e3fbcf1v3exact20/nooverlap",
+    "pins": 1011,
+    "priorRawPins": 173,
+    "sqlFiles": 33,
+    "freeBeforeBytes": 21376729088,
+    "gateFloorBytes": 11623661568,
+    "phaseMs": 120000,
+    "priorSpentMs": 13353,
+    "remainingBeforeMs": 106647,
+    "attemptMs": 60000,
+    "cleanupMinimumMs": 30000,
+    "DB": 1,
+    "configuredConnections": 14,
+    "Chrome": 1,
+    "gateShaPrefix": "0adf2862",
+    "raw": "/private/tmp/msg03-membership-second-3hdd04tu",
+    "terminal": "PENDING_OWNER_RECEIPT",
+    "actualEnd": "2026-10-07T14:27:08.853985Z",
+    "actualReturn": "2026-10-07T14:27:31.462508Z",
+    "actualExit": 0,
+    "selected": 2,
+    "passed": 2,
+    "pngBytes": [
+      60312,
+      61805
+    ],
+    "visualReview": "release-backend-route-20261007/settings-lifecycle-visual-root-review.json",
+    "chargeMs": 13015,
+    "spentMs": 26368,
+    "remainingMs": 93632,
+    "cleanup": {
+      "observedAt": "2026-10-07T14:27:31.462508+00:00",
+      "run": "msg03-settings-20261007-142648-6237f8",
+      "ownedProcesses": [
+        {
+          "processId": 25093,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 25247,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 25573,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 28591,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        }
+      ],
+      "scratch": "/private/tmp/flow-recovery-browser-p2TceN",
+      "scratchAbsent": true,
+      "envAbsent": true,
+      "database": {
+        "database": "flow_recovery_14b33f91a8da458abe28df0a10f1a8b3",
+        "attempted": true,
+        "confirmed": true,
+        "markerWritten": true,
+        "remaining": [],
+        "connections": 0,
+        "removed": true,
+        "errors": [],
+        "observations": [
+          {
+            "phase": "before-marker",
+            "attempt": 1,
+            "elapsedMs": 1.2786660000001575,
+            "total": 0,
+            "sessions": []
+          },
+          {
+            "phase": "after-marker",
+            "attempt": 1,
+            "elapsedMs": 1.3814999999995052,
+            "total": 0,
+            "sessions": []
+          }
+        ]
+      },
+      "fixture": {
+        "complete": true,
+        "errors": [],
+        "elapsedMs": 19,
+        "wireBytes": 19607,
+        "providerQueries": 0
+      },
+      "actualOuterExit": 0,
+      "dualEOF": true,
+      "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
+    },
+    "wholeFeaturePass": false,
+    "businessReview": "PendingW01readonlyreview"
   },
-  "futureCompleteFreshFloorBytes": 9296871424,
+  "futureCompleteFreshFloorBytes": 11623661568,
   "futureFloorEvidence": {
-    "previous": 7686258688,
-    "additionalPotentialBytes": 1610612736,
-    "minimumBytes": 9296871424,
-    "source": "S01 performance candidate512MiB logical+1GiB WAL planning, if not already included",
+    "previous": 9306308608,
+    "additionalPotentialBytes": 2317352960,
+    "minimumBytes": 11623661568,
+    "source": "Original newofflineartifactpotential declaration appended once; not actual holder or allocation",
     "notMeasured": true,
     "allKEEPPreserved": true,
     "reserveOnce": true,
-    "consumedMSGGateUnchanged": 7686258688
+    "consumedHistoricalGatesUnchanged": true
   },
   "externalOrdinaryCurrent": {
-    "state": "NONE_REPORTED_BY_MIKA"
+    "state": "SVC09A_ACTUAL_RETURNED",
+    "elapsedMs": 3444,
+    "groups": 7,
+    "EOF": "DualEOF",
+    "scratch": "Emptyandclosed",
+    "pg": 0,
+    "provider": 0,
+    "personal": 0,
+    "source": "OriginalviaRoot receipt reported, no newordinarySTART"
   },
   "externalPreparedCandidate": {
     "record": "core-pg-current-ready.json",
@@ -1985,9 +2078,9 @@
     "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
     "caller": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
     "manifestSha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b",
-    "claim": "651c4eb4v1 ACTIVE4 STOP retained",
-    "state": "CORE_R1_FULL_RETURNED",
-    "nextGranted": true,
+    "claim": "651c4eb4v2 RELEASED exact4",
+    "state": "CORE_MAIN_INTEGRATED_CLAIM_RELEASED",
+    "nextGranted": false,
     "admission": "FRESH_CONSUMED",
     "run": "4345a9e2d10447d3ac5236ba09929d95",
     "budgetMs": 180000,
@@ -2000,80 +2093,200 @@
     "cases": 5,
     "chrome": 0,
     "provider": 0,
-    "additionalPotentialBytes": 168820736
+    "additionalPotentialBytes": 168820736,
+    "main": "677a93e96f228ab76edbdde9e22beb800a320156",
+    "ownerFinal": "a47d5f07f12d0d302296f766e1510eb06fe8dab7",
+    "receipt": "release-backend-route-20261007/core-main-release-receipt.json"
   },
   "currentActual": {
-    "state": "FAILED_FULL_RETURN",
-    "actualStart": "2026-10-07T14:00:09.820892Z",
-    "run": "msg03-material-20261007-140004-04f4e0",
-    "outerPid": 10474,
-    "parentPid": 10544,
-    "toolSession": 9448,
-    "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
-    "executionHeadPrefix": "35dcec",
-    "headState": "Owner reports local=remote/clean",
-    "freshClaimAt": "2026-10-07T14:00:04.099Z",
-    "claim": "7e3fbcf1 v2 exact19/nooverlap",
-    "pins": 943,
-    "sqlPins": 33,
-    "priorPins": 113,
-    "freeBeforeBytes": 21595295744,
-    "gateFloorBytes": 7686258688,
-    "retainedBytes": 662770,
-    "selector": "messageSettingsMaterialReturn",
-    "phaseBudgetMs": 90000,
-    "spentBeforeMs": 33766,
-    "attemptMs": 56234,
-    "cleanupMs": 30000,
-    "db": 1,
-    "configuredConnections": 14,
-    "chrome": 1,
-    "rawRoot": "/private/tmp/msg03-material-fourth-xsvnlpm1",
-    "gatePrefix": "55a429",
-    "capturePrefix": "0eb3",
-    "admin": "Owner0600 env path only, exact deletion due at terminal; value not read",
-    "actualReturn": "2026-10-07T14:01:00.037466Z",
-    "provenance": "Owner START receipt; no independent actual conclusion yet",
-    "actualEnd": "2026-10-07T14:00:27.163441Z",
-    "actualExit": 1,
-    "parentExit": 1,
-    "workerPid": 10862,
-    "chromePid": 13878,
-    "chargeMs": 17344,
-    "phaseSpentMs": 51110,
-    "phaseRemainingMs": 38890,
-    "phaseState": "CLOSED_REMAINING_BELOW_MINIMUM",
-    "completedGroups": [
-      "cookieRead"
+    "state": "SELECTED_TWO_PASS_FULL_RETURN_REVIEW_PENDING",
+    "actualStart": "2026-10-07T14:26:55.840024Z",
+    "run": "msg03-settings-20261007-142648-6237f8",
+    "outerPid": 25093,
+    "parentPid": 25247,
+    "toolSession": 39172,
+    "selectors": [
+      "cookieRead",
+      "messageSettingsApp"
     ],
-    "materialGroup": "FAILED: failure branch restore reached; cancel complete B refs assertion received A two files plus B",
-    "screenshots": [],
-    "cleanup": "DB confirmed marker/0conn normalDROP remaining[]; fixture complete/errors[]/provider0; scratch/exactadmin absent; four exact PID/PGID ESRCH; dualEOF/drop0/no signals",
-    "originalReceiptLimitation": "First post-cleanup pid key overwrote numeric IDs; independent exact identity observation retained separately, original unchanged",
-    "record": "svc-held1347-core-ready-20261007/msg03-fourth-post-cleanup.json"
+    "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+    "executionHead": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+    "freshClaimAt": "2026-10-07T14:26:48.449Z",
+    "claim": "7e3fbcf1v3exact20/nooverlap",
+    "pins": 1011,
+    "priorRawPins": 173,
+    "sqlFiles": 33,
+    "freeBeforeBytes": 21376729088,
+    "gateFloorBytes": 11623661568,
+    "phaseMs": 120000,
+    "priorSpentMs": 13353,
+    "remainingBeforeMs": 106647,
+    "attemptMs": 60000,
+    "cleanupMinimumMs": 30000,
+    "DB": 1,
+    "configuredConnections": 14,
+    "Chrome": 1,
+    "gateShaPrefix": "0adf2862",
+    "raw": "/private/tmp/msg03-membership-second-3hdd04tu",
+    "terminal": "PENDING_OWNER_RECEIPT",
+    "actualEnd": "2026-10-07T14:27:08.853985Z",
+    "actualReturn": "2026-10-07T14:27:31.462508Z",
+    "actualExit": 0,
+    "selected": 2,
+    "passed": 2,
+    "pngBytes": [
+      60312,
+      61805
+    ],
+    "visualReview": "release-backend-route-20261007/settings-lifecycle-visual-root-review.json",
+    "chargeMs": 13015,
+    "spentMs": 26368,
+    "remainingMs": 93632,
+    "cleanup": {
+      "observedAt": "2026-10-07T14:27:31.462508+00:00",
+      "run": "msg03-settings-20261007-142648-6237f8",
+      "ownedProcesses": [
+        {
+          "processId": 25093,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 25247,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 25573,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "processId": 28591,
+          "processState": "ESRCH",
+          "groupState": "ESRCH"
+        }
+      ],
+      "scratch": "/private/tmp/flow-recovery-browser-p2TceN",
+      "scratchAbsent": true,
+      "envAbsent": true,
+      "database": {
+        "database": "flow_recovery_14b33f91a8da458abe28df0a10f1a8b3",
+        "attempted": true,
+        "confirmed": true,
+        "markerWritten": true,
+        "remaining": [],
+        "connections": 0,
+        "removed": true,
+        "errors": [],
+        "observations": [
+          {
+            "phase": "before-marker",
+            "attempt": 1,
+            "elapsedMs": 1.2786660000001575,
+            "total": 0,
+            "sessions": []
+          },
+          {
+            "phase": "after-marker",
+            "attempt": 1,
+            "elapsedMs": 1.3814999999995052,
+            "total": 0,
+            "sessions": []
+          }
+        ]
+      },
+      "fixture": {
+        "complete": true,
+        "errors": [],
+        "elapsedMs": 19,
+        "wireBytes": 19607,
+        "providerQueries": 0
+      },
+      "actualOuterExit": 0,
+      "dualEOF": true,
+      "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
+    },
+    "wholeFeaturePass": false,
+    "businessReview": "PendingW01readonlyreview"
   },
   "releaseCandidateCurrent": {
-    "at": "2026-10-07T14:11:57.087Z",
-    "state": "MINIMAL_SHARED_DRAFT_FIX_THEN_REFIX_WEB_CANDIDATE",
-    "existingTask": "REQ19 / Release; no new task or completeMSG/Plugin gate",
-    "oldWebSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
-    "backendSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
-    "finding": "MSG actual B-only UI versus Recovery A+B persistence is a product all-items projection defect. Simple exclude-all-held is wrong for explicit/partial restored current drafts.",
-    "old7272Boundary": "Same attachments blob/allitems exists, but real adapter.send has no network/file await, validation precedes capture and receipt/consume precedeHTTP await. Equivalent natural old B coexistence is not established. No old actualFAIL or material-safe assertion.",
-    "concreteNext": [
-      "MSG original20scope owner completes smallest shared draftItems/guarded composer membership fix with partial-restore/unmount consumer regression; no copied session/App filter",
-      "Root reviews fixed minimal delta and scoped results; d576 prior P2 remains pending and cannot be adopted",
-      "Original existing release/artifact chain incorporates only accepted small Web protection delta into7272-based Web candidate and fixes actual new source/descriptor; do not require whole MSG functionality",
-      "Keep backend7272 lateLogout requirement and supply its immutable descriptor; exactsources/closures declared, no unreviewed6c backport composite",
-      "Original Release8964 harness actual newtuple fourApp compatibility then normal versionCAS release through existing operator"
-    ],
-    "notGranted": [
-      "No new build/artifact/personal/window approval here",
-      "No MSG browser retry from closedphase",
-      "No deployment or currentuser task operation"
-    ],
-    "descriptorState": "Both new descriptors still absent; backend source/interface preparation can proceed within existing authority",
-    "sourceReport": "msg03-fourth-membership-and-7272-peer.json",
-    "rootAcceptance": "Root independently checked key raw/source chain; research accepted, not d576source approval"
+    "at": "2026-10-07T14:24:50.216Z",
+    "state": "ORIGINAL_AUTHORIZED_MINIMAL_6C_BACKEND_ROUTE_PENDING_FIXED_REVIEW_AND_ARTIFACT",
+    "task": "Existing REQ19/Release",
+    "authority": "Original explicit route relayed by root; supersedes old research ban on creating a6c-derived third composite",
+    "backendRequiredContract": "Reviewed lateLogout contract: preserve original token/origin revocation and omit cookie-clearing response header",
+    "newOriginalCandidate": {
+      "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "basePrefix": "6c0fdcda",
+      "operator": "assignment_review in independent SVC06B",
+      "actualFiles": [
+        {
+          "path": "apps/server/src/browser-session/fixture.ts",
+          "added": 5,
+          "removed": 0,
+          "kind": "server product/test"
+        },
+        {
+          "path": "apps/server/src/browser-session/index.ts",
+          "added": 3,
+          "removed": 2,
+          "kind": "server product/test"
+        },
+        {
+          "path": "apps/server/src/browser-session/session.test.ts",
+          "added": 54,
+          "removed": 4,
+          "kind": "server product/test"
+        },
+        {
+          "path": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+          "added": 78,
+          "removed": 0,
+          "kind": "evidence support"
+        }
+      ],
+      "sourceReview": "Formal complete source/support review not yet received",
+      "artifact": null,
+      "actualValidation": "NOT_RECEIVED",
+      "boundary": "Manager read exact Git fullstat only; no source approval or ownership violation inferred for support"
+    },
+    "previousCandidate": {
+      "source": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "status": "Prior reviewed contract/source option; no longer mandatory same-source backend lock",
+      "reports": "Prior readonly diff17 conclusion retained historically; new explicit Original route overrides previous restriction"
+    },
+    "web": {
+      "requirement": "Only necessary shared full draft-membership protection delta, not wholeMSG/Plugin",
+      "sourceCandidate": "b92470377349dea17a12d0abc244f0fed7992e33",
+      "local": "Newdirect selected1/68 notselected and affectednoEmit passed; fourattempttotal14680/20k; historicald576P2/local retained",
+      "sourceReview": "APPROVED_SCOPED_SOURCE_AND_LOCAL_NOT_MOUNTED; root b92e4c, d576 unmount finding resolved in b924",
+      "descriptor": null,
+      "sourceReviewRecord": "msg03-b924-root-review.json",
+      "ownerSeal": "c848024a20ac59182360d31c7e0087828bca018d",
+      "minimalPatch": "held-draft-release-minimal.patch",
+      "minimalPatchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+      "transplant": "W01 preparing fixed old-Web consumer composition/guard in TMP and existing Release evidence only; no production attachments/session scope transfer or actual compatibility"
+    },
+    "releaseOwner": {
+      "claim": "27c36b97 v1 exact4",
+      "calibrationHead": "1b284dd7da630d701cb6a6a0a04aed62e1789551",
+      "state": "Owner reported remoteequal/clean STOP; original twoharness source8964 unchanged",
+      "task": "W01 prepares exact twofile transplant consumer and guard proposal within TMP/ownrecords; descriptors remain null, runtime not granted"
+    },
+    "runtime": "Only MSG03 newscopedphase NEXT fresh-notSTARTED; Releasepair/artefact/personal not granted, olddeployed7d1 not repeated",
+    "priorDecision": "../s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+    "msgNewPhase": {
+      "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+      "ownerHead": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+      "rootReview": "msg03-new-phase-root-review.json",
+      "prepared": "msg03-new-phase-manifest.json",
+      "handoff": "msg03-membership-handoff.json",
+      "state": "NEXT_FRESH_NOT_STARTED",
+      "budgetMs": 120000,
+      "spentMs": 0,
+      "perAttempt": "45–60 seconds including30seconds cleanup",
+      "scope": "Originalmaterial-return and messageSettingsApp selectors, oneDB14configured/oneChrome; old90/local20CLOSED no transfer"
+    }
   }
 }

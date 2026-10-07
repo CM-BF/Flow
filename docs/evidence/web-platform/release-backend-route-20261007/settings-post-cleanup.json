@@ -1,0 +1,65 @@
+{
+  "observedAt": "2026-10-07T14:27:31.462508+00:00",
+  "run": "msg03-settings-20261007-142648-6237f8",
+  "ownedProcesses": [
+    {
+      "processId": 25093,
+      "processState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 25247,
+      "processState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 25573,
+      "processState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "processId": 28591,
+      "processState": "ESRCH",
+      "groupState": "ESRCH"
+    }
+  ],
+  "scratch": "/private/tmp/flow-recovery-browser-p2TceN",
+  "scratchAbsent": true,
+  "envAbsent": true,
+  "database": {
+    "database": "flow_recovery_14b33f91a8da458abe28df0a10f1a8b3",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.2786660000001575,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3814999999995052,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixture": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 19,
+    "wireBytes": 19607,
+    "providerQueries": 0
+  },
+  "actualOuterExit": 0,
+  "dualEOF": true,
+  "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
+}

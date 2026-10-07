@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-10-07T14:22:03.901142+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_NARROW_NEW_PHASE_AND_OUTPUT_PATH_PREPARATION_NOT_RUNTIME_OR_FEATURE_PASS",
+  "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "productSource": "b92470377349dea17a12d0abc244f0fed7992e33",
+  "executionHead": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+  "packet": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/manifest.json",
+    "bytes": 9993,
+    "sha256": "7301a07f3e4c753501b3a41820834161cb528774c76fcdb1dca333aeed356da0"
+  },
+  "capture": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/capture.py",
+    "bytes": 8900,
+    "sha256": "fb33176755019d513bcecda03ff5dc2351a6a16e06cfd394093c972ebfa9bcfc"
+  },
+  "parentDiff": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/parent.diff",
+    "bytes": 4405,
+    "sha256": "000cb95ec97e0720b1142f91ebe9ac4df1c24740a6688ce74e1fd4b6b13c5fed"
+  },
+  "phase": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/phase.json",
+    "bytes": 2156,
+    "sha256": "688c4790fdd220fdfe6818c3179e30a2fd767283c92223cadc02bcf80ad83d80"
+  },
+  "findings": [],
+  "independentChecks": {
+    "referencedFiles": 24,
+    "sourceRows": {
+      "parentBound26": 26,
+      "readonlyAnchors": 17,
+      "implementation18": 18
+    },
+    "mismatches": [],
+    "workingTreeClean": true,
+    "captureExactlyTwoPhaseGuardSubstitutions": true,
+    "captureAstParseOnly": true,
+    "parentPatchMatchesGitExactly": true,
+    "newRunsAbsent": true,
+    "legacyFlatBudgets": []
+  },
+  "review": [
+    "Parent changes only independent120000ms phase identity/type/ceiling, immutable old-phase digest assertion and new runs directory. All browser actions/assertions, worker flags, deadlines, cleanup and resource monitoring remain unchanged.",
+    "Parent verifies exact closed old ledger bd32b2d5808ece143ea2d33c2c4c5ba86957e35b2ce790414b86c3ced2051310; historical90000ms spent51110/unused38890 remains CLOSED. Local20000ms spent14680/unused5320 remains CLOSED; no transfers.",
+    "New run budgets are settled/reconciled only under browser-membership-runs. Existing spentMs cannot undercharge prior same-phase attempts. Legacy flat-budget guard remains failclosed and none currently exist.",
+    "The9MiB retained-evidence measurement still covers the entire existing evidence tree, including historical failures. Start requires<4MiB and reserves5MiB for an attempt. No old evidence deletion or exception was added.",
+    "Capture changes exactly two guard lines; outer timer, both EOF drains, drop counters, termination and parent ownership unchanged. Capture does not itself hardcode the old runs directory.",
+    "One marked DB/14 configured connection positions, one owned Chrome,64MiB scratch,9MiB evidence, per-attempt45–60s including30s cleanup remain. Configuration maximum is not measured peak.",
+    "Earlier b924 source/local approval reused, no repeat product evaluation or green test. Existing dependency/SQL closure relies on referenced reviewed manifests and still requires fresh owner verification before actual."
+  ],
+  "runtimeDisposition": "No launch authorization from this source review. Unique manager may dispatch existing owner only after exact current resource handoff, fresh actual claim/inputs and complete combined free-space floor. minimum9306308608B or higher current complete sum; preserve all KEEP and count one reserve. Original ordinary intent is not actual holder.",
+  "actualAcceptance": "Both original selected journeys remain outstanding. Require actual exit, both EOF/drop0, unchanged complete business assertions, owned process/group/port/profile/env cleanup and markedDB receipt. Account ceil(max outer including terminal, late parent, serialized parent)). Stop uncertain cleanup or remaining<45000; preserve all first failures.",
+  "documentationNit": {
+    "severity": "nonblocking",
+    "path": "entry.json:worker",
+    "note": "Description says internal --recovery-worker while fixed parent correctly uses --worker. Correct only this prose in the next natural record update; fixed runnable command is correct. No additional runtime or retest needed."
+  },
+  "limits": [
+    "No product imports, types, tests, PG, Chrome or private admin reads performed by root.",
+    "No new mounted result, screenshots, actual Release compatibility or personal activation established.",
+    "No exhaustive repeat audit of943 historical source/runtime closure pins;24 referenced files and61 current source/anchor rows verified,44 Git-bound rows verified."
+  ],
+  "cleanCode": "Narrow phase/output ownership review; existing sole supervisor, unchanged assertions and error paths, no duplicate resource controller. No implementation changes requested."
+}

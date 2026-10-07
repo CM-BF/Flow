@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T14:11:57.087Z；发布依赖已收敛为共享附件保护小修及新产物，旧自然路径未证同型失败。 |
+| 最近更新 | 2026-10-07T14:24:50.216Z；共享草稿最小修复已获源码/局部审，W01准备旧Web移植；固定前后端产物待供。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以计划创建或本次更新时间回填；整体视觉体验验收尚未完成。 |
@@ -19,7 +19,7 @@
 | 优先级 | 1 |
 | 当前产出 | 已审前端与恢复入口已合主线；Original held续接已使固定7d1/6c后台accepting v21，个人三服务继续。现网页资产仍d629/v3，新恢复网页未实际发布，不能把后台更新当全部视觉体验完成。 |
 | 下一可用交付 | 沿原发布链优先将包含已审恢复入口的新网页应用到个人预览；先固定相容前后端及真实Cookie恢复证据，不等待全部插件或快速设置验收。MSG03继续真实聊天与窄屏键盘验收。 |
-| 当前阻塞 | ACTIVE: 新网页需纳已审的共享草稿附件保护小修并重新固定产物；当前小修的部分恢复/卸载P2待闭合，后台7272 Logout修复与两个新descriptor仍必需。 |
+| 当前阻塞 | ACTIVE: 必要草稿修复在旧Web消费组合及新产物尚待核验；后端可采用Original正式审定的04da/6c最小Logout修复组合，两个新descriptor尚未到。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -63,3 +63,9 @@ RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查�
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
 
 当前发布优先级见[固定候选与边界](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/visible-web-release-priority.json)：GO只读既有页面仍d629/v3；source7272候选尚缺新immutable前后端产物。6c/7d1旧绿不含lateLogout，不能改标。上文21:27 af51/d629和历史发布准备保原时点，不作为最新main或新网页已应用证明。
+
+
+最新MSG03两390图的[限定实际目视](../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json)已接受原页面范围；scrollthumb贴近Speed右侧作为原02/04非阻断P3，不冒交互失败/不触发新检查。个人新Web发布仍待固定pair/artifact与真实兼容。
+
+
+GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json)已接收：窄屏浮窗直角硬边、遮罩偏重，四筛选加完整列表显得表单化，省略/不附加设置请求等实现语义文案过多。下一视觉片结合共享浮层、主题和信息层级统一处理，与上述滚动条P3归原02/04；使用本地frontend-design及既有Arc参考，保语义、键盘/焦点、reduced-motion和性能，不在picker堆局部补丁。极长模型名是刻意fixture，完整验收另含正常目录/defaultcollapsed/桌面与窄屏全页。当前优先可用网页，不挡MSG功能收口/最小发布，不新抢App或新增任务。

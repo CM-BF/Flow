@@ -578,4 +578,9 @@ U08/U12/REQ37同一要求的[固定ae850原子take源码核对](../../docs/evide
 
 REQ19/原MATURE01下一可见网页的[具体候选修正](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json)：7272共享附件恢复allitems投影，现text/receipt旅程不能排除fail/cancel串稿；先核旧候选可达性，若影响则最小共享membership修复进入candidate后重新固定。复用原附件draftItems投影，不在App/session复制过滤、不删除held A、不等待所有MSG/Plugin，也不以快速发布跳过已知数据污染。MSG原owner已正常amend20；独立研究/源修/必要消费者检查分别保结论，个人服务不重演。
 
-REQ19附件影响核验已有[具体最小发布路径](../../docs/evidence/web-platform/s01-first-actual-return-20261007/release-minimal-fix-decision.json)：旧7272自然发送无MSG人工材料await同型证据，不写旧actualFAIL/安全保证；采用完整共享draft membership保护小修与精确consumer后，原发布链重固定7272基线的新Web source/descriptor，backend7272 lateLogout独立保留。只等这份必要delta，不等全MSG/Plugin；当前d576部分恢复后unmount P2未过，不提前采用。
+REQ19附件影响核验已有[具体最小发布路径](../../docs/evidence/web-platform/s01-first-actual-return-20261007/release-minimal-fix-decision.json)：旧7272自然发送无MSG人工材料await同型证据，不写旧actualFAIL/安全保证；采用完整共享draft membership保护小修与精确consumer后，原发布链重固定7272基线的新Web source/descriptor，backend7272 lateLogout独立保留。只等这份必要delta，不等全MSG/Plugin；当时d576部分恢复后unmount P2未过；后续b924已由root b92e4c源/局部批准，旧Web移植与产物兼容仍另验。
+
+Original后到明确授权的[04da/6c最小后端路线](../../docs/evidence/web-platform/release-backend-route-20261007/current.json)覆盖早先只读研究的“不可从6c另拼组合”限制：由其独立SVC06B正式审定并供artifact，必须保lateLogout已审合同，不再硬绑7272共源；新Web只纳已审共享draft小修。04da当前三server产品/test与一evidence helper分列，未因路线接受而冒源审/actual通过。原Release27c校准供给与固定pair兼容，无新框架或个人维护重演。
+
+
+同一REQ19/MSG03后继现由[当前固定包](../../docs/evidence/web-platform/release-backend-route-20261007/current.json)收敛：b924两产品保护小修只通过其源码/消费者局部，W01准备准确旧Web移植，Original04da最小backend正式审定/descriptor尚待。MSG新独立120s mounted阶段复用原两旅程，每次45–60含30cleanup；旧90s/20s均closed不借余量。COREmain/release与D05切源已实际确认；剩余PROCESS/CLIENT登记由Original原D05处理，不新增任务或writer。
