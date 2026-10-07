@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:24:36.769323+00:00 / main dea9f100；规划首段已消费1次并停止，后台隔离启动入口已审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:41:34.439390+00:00 / main2f32f6b2；固定宿主首轮结果及最小修正、规划零模型修正已审接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin dea9f100：X01启动配置十源和O16受限原生规划准备已审接收；4320轻摘要/详情实际1a6f82a1，194来源。个人backend af51/v18、Web d629/v3/c7b保持；新6c/7d1后台产物构建通过，host待验。 |
+| 已集成main状态 / HEAD | main/origin2f32f6b2已含插件终端管理与两个实验最小修正；4320实际b67530bb/195来源，保留登录及计时。个人backend af51/v18、Web d629/v3/c7b保持；新6c/7d1产物三个角色已ready，首轮在bootstrap夹具前置失败并正常清理，整段host尚未通过。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 看板先显示进度摘要，打开任务再读取核验详情；登录与计时保留。插件启动配置已合入，新固定后台产物已构建成功。 |
-| 下一可用交付 | 验证固定后台启动及保留页面兼容；规划首段未取得计划，先依据已保存声明差异完成零模型修正。 |
-| 当前阻塞 | ACTIVE: 新后台的独立启动与保留页面兼容仍待验证；规划首段在运行声明核验停止，尚无计划结果；远程验证和工程授写资格保持原待决。 |
+| 当前产出 | 看板、登录和任务时间持续可用，插件终端管理已进入主线。新后台已能独立启动，首次发布验证步骤的修正已审。 |
+| 下一可用交付 | 完成固定后台整段更新和保留页面兼容验证；规划按新批准的一次首段额度继续，仍先停下交用户确认。 |
+| 当前阻塞 | ACTIVE: 新后台完整更新及页面组合尚未验收；规划尚无可确认的真实计划。远程验证启用和工程授写资格仍各自等待原用户决定。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -217,3 +217,5 @@ REQ19下一片由assignment_review承担SVC09（尚在原P02安全收口前的�
 2026-10-07T08:21:18.665591+00:00：CHAT05P02原两次失败和PG03成功分别封存，真实factory/runRunner注入材料2,225,539B/9页完整一致，0provider；当前主线focused组合types0。ENG01L一次initialize/close已有记录，但原超限outerFAIL不改，后续exact清理独立成功。P02/ENG01L原owner已正式停写归还范围；SVC09由assignment_review实施，O16由原native_center_owner按f5a固定组合准备新旅程，旧FAIL/KEEP不动。证据分别在各唯一status与I02固定接收记录；共享PG于08:12:42归还Mika，本队当前无holder。
 
 2026-10-07T09:43:40.202069+00:00：REQ-04/P01/P03补出站artifact重复读取的源码研究输入，见[原P01成本后继](plan.md#p01增量协议读取成本2026-10-06-1601-utcgo只读输入)。与反向bridge重扫分开；0新writer/实验，NOT_RUN，不阻SVC06与O16。
+
+2026-10-07T10:41:34.439390+00:00 管理收口：固定接收与实际看板部署见[I02](../../../m2-integration/docs/evidence/i02/svc06-bootstrap-o16-observation-intake.json)。SVC r1原失败/cleanup保留，r2只改首次bootstrap；Mika联合验收10:38:50资源归还后由原operator fresh接续。O16原调用1次、费用unknown、旧DB/tmp KEEP不变；零模型7新例获限定独审，新决定O16-GO-PLANNER-R2-20261007仅增加1次planner候选，未运行不计已消费，0apply/0child及确认后单独预算保持。CI决定仍只在OPS-CI01，工程资格仍只在原ENG；不复制待决问题。
