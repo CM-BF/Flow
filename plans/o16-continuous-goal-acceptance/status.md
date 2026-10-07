@@ -67,3 +67,5 @@
 2026-10-07T08:45:28.873Z：零模型片段正式收口，[main回执](../../docs/evidence/o16/current-main-receipt.json)42路径逐字核同、[独审原件](../../docs/evidence/o16/current-main-pg-r1/independent-review.json)如实归档。全实验/记录停止写入，commit/push后提交原claim release；未把O16-06、长期resume/compaction或旧KEEP处置勾成完成。顶层任务完成NOT_COMPLETED保持，因为原完整验收仍开放。
 
 2026-10-07T09:00:26.182Z：原owner新fresh claim后恢复O16-06，先完成源码/Interface差异梳理。operator只rehearse+整旅程DROP、阶段保留无expiry、native继承env及持久会话写入边界是具体实施缺口；不把它们都归为预算等待。旧已main旅程/raw/FAIL/KEEP不改，本次0PG/auth/query/个人读取。详见[native-stages候选](../../docs/evidence/o16/native-stages/candidate.md)。
+
+2026-10-07T09:03:00Z：结合Lead/GO固定SDK输入，核0.3.290 persistSession:false与官方storage文档；提出只在本实验query装饰口关闭一次性transcript并拒resume/store，普通adapter不改。其余SDK写入/登录来源仍未知，不借此声明无磁盘副作用。只读及候选文档，0query/auth/PG。

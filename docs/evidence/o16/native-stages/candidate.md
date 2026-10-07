@@ -33,3 +33,11 @@
 ## 当前交付与未开放边界
 
 下一可交付是上述原scope小delta和0query直接故障/暂停检查，随后独立review；不是再交“等预算”空状态。真实PG、SDK/auth、模型费用与实际材料语义依次独立安排。旧O08/O10预算sealed；旧O16FAIL/KEEP不读改删；resume/compaction情景、实际native工程写权/ENG资格不在本候选。只复用既有监督、SDK与公共产品，不新造scheduler/执行器/认证平台。
+
+## 固定SDK一次性会话接缝补充（同次只读取舍）
+
+固定0.3.290 `sdk.d.ts:1810–1847`已核bytes/hash：`persistSession:false`可关闭可恢复的会话持久化；与SessionStore互斥。当前[官方Session storage说明](https://code.claude.com/docs/en/agent-sdk/session-storage)也说明store先依赖本地写再镜像，不能用它解决本次只读验收的目录写入问题。这里不引入SessionStore、跨runner恢复、复制transcript或新loop。
+
+更窄可行接缝是**只在本实验的query-run.mjs原nativeQuery装饰口**构造一次性options：保同prompt/abort/hook/MCP及原adapter唯一iterator，只设persistSession=false，并拒resume/continue/sessionStore。先固定实际传入options再消费原slot，报告request明确false；不修改普通 `apps/runner/src/claude.ts` 的persistSession:true，也不声称后续能resume本次native会话。有限直接检查应证明nativeQuery实际收到false、原input不被修改、任一恢复/store选项拒绝且0入口；仍不发真实query。
+
+这减少一个已知持久transcript写入面，**不证明**SDK缓存/日志/认证刷新/managed组件不写其他位置，也不提供OS硬隔离。登录来源选择和剩余可观测写入位置仍需只读事实固定；不会通过复制私人登录文件或更换API key来强行满足候选。普通会话恢复及FLOW002 SessionStore后继保持原范围。

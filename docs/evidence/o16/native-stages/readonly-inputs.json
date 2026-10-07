@@ -134,5 +134,20 @@
   "query": 0,
   "authCalls": 0,
   "privateConfigRead": false,
-  "PG": 0
+  "PG": 0,
+  "installedDeclarations": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+    "bytes": 530284,
+    "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+    "readLines": [
+      "1810-1847"
+    ],
+    "meaning": "persistSession false disables persisted/resumable session transcript; SessionStore mirrors local writes and conflicts with false; not a promise of no other SDK writes."
+  },
+  "publicDocumentation": {
+    "url": "https://code.claude.com/docs/en/agent-sdk/session-storage",
+    "title": "Persist sessions to external storage",
+    "readAt": "2026-10-07T09:04:33.203133+00:00",
+    "notes": "Official current documentation agrees with fixed declarations: store mirrors local transcript; it is not a replacement for local writing. Read only; no sample execution."
+  }
 }
