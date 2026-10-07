@@ -22,7 +22,7 @@ def bindings():
         item = PLAN[key]
         assert hashlib.sha256(Path(item['path']).read_bytes()).hexdigest() == item['sha256']
     inputs = json.loads(Path(PLAN['inputs']['path']).read_bytes())
-    for item in [*inputs['runtimePins'], *PLAN['observerPins']]:
+    for item in [*inputs['runtimePins'], *PLAN['observerPins'], PLAN['factsReaderPin']]:
         path = Path(item['path']); info = path.lstat()
         assert stat.S_ISREG(info.st_mode) and not path.is_symlink() and str(path.resolve()) == item['realpath']
         assert (str(info.st_dev), str(info.st_ino), info.st_uid, info.st_nlink, info.st_size) == (item['dev'], item['ino'], item['uid'], item['nlink'], item['bytes'])
@@ -42,7 +42,7 @@ def invocations():
             tail = ['bootstrap', PLAN['directory'], '', PLAN['artifact']['artifactId']] if step['name'] == 'bootstrap' else [step['name'], PLAN['directory'], PLAN['artifact']['sourceHead'] if step['name'] == 'refresh' else '', '']
             assert step['argv'] == [PLAN['node'], '--import', root + '/node_modules/tsx/dist/loader.mjs', root + '/tools/personal-preview/maintenance-host.mjs', *tail]
         if step['name'].startswith('facts-'):
-            assert step['argv'] == [PLAN['node'], PLAN['factsModule'], PLAN['runDirectory'] + '/' + step['name'] + '.json']
+            assert step['argv'] == [PLAN['node'], PLAN['factsCaller'], '--snapshot', PLAN['runDirectory'] + '/' + step['name'] + '.json']
 
 
 def phase_budget(step, deadline):

@@ -14,7 +14,7 @@
   "rootMaintenanceModule": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
   "sourceArtifactMaintenanceModule": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
   "factsModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
-  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3",
+  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
   "initialVersion": 18,
   "context": {
     "format": 1,
@@ -70,8 +70,9 @@
       "name": "facts-before",
       "argv": [
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-before.json"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before.json"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -83,7 +84,7 @@
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
         "preflight",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 30,
@@ -95,7 +96,7 @@
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
         "--snapshot",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/history-before.json"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -125,7 +126,7 @@
         "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
         "operation",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -151,8 +152,9 @@
       "name": "facts-paused",
       "argv": [
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-paused.json"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-paused.json"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -164,9 +166,9 @@
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
         "--snapshot",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/history-paused.json",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-paused.json",
         "--columns-from",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/history-before.json"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -178,7 +180,7 @@
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
         "checkpoint",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 30,
@@ -204,8 +206,9 @@
       "name": "facts-final",
       "argv": [
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-final.json"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-final.json"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 15,
@@ -217,7 +220,7 @@
         "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
         "final",
-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
       ],
       "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
       "maximumWorkSeconds": 30,
@@ -244,13 +247,18 @@
     },
     {
       "path": "maintenance-continuation.py",
-      "bytes": 7268,
-      "sha256": "a4a2516d3e38615ff15b6c34667a93b307200e57a41dd2f7c566ef9feefe958a"
+      "bytes": 7306,
+      "sha256": "ef3da33ab5998056c54d3f14921704d90492431cbc0360e0117fab68cbc1a0d5"
     },
     {
       "path": "maintenance-supervise.py",
       "bytes": 2684,
       "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "continuation-facts.mjs",
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
     }
   ],
   "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
@@ -391,8 +399,22 @@
     ],
     "outerOwnership": "childPidOnly",
     "outerOutcomeScope": "Operator only. Inner phase sessions and detached service identities remain separate; missing phase receipt is UNKNOWN/KEEP, no automatic retry.",
-    "rawFile": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3-outer.json",
+    "rawFile": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4-outer.json",
     "rawFileMode": "exclusive 0600, redirect original stdout before launch; no output file overwrite",
     "deadline": "900 seconds from outer child launch covers binding/fsync; inner work ends at least 5 seconds earlier including reap. No bootstrap/reset."
+  },
+  "factsCaller": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+  "factsReaderPin": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "dev": "16777234",
+    "ino": "123287084",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 9070,
+    "sha256": "e1838ec9cfa2c9b20804d5b2436d3576b5f69a58bb32f971444b2f3deca8f038",
+    "sourceCommit": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+    "previousSha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca",
+    "meaning": "Explicit new continuation pin; original 53 migration pins and R2 inputs unchanged."
   }
 }
