@@ -15,7 +15,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 受影响类型与窄修已独审；Picker源准备已f3b8批准，Recovery入口/38只读链接/614本树输入与installed闭包已固定待审；两者browser NOT_RUN |
+| 当前产出 | 受影响类型与窄修已独审；Picker源准备已f3b8批准，Recovery入口/38链接与dependencies闭包已固定；末检另发现1个runtime peer及3个types peer未纳文件快照，准备HOLD；两者browser NOT_RUN |
 | 下一可用交付 | Recovery集中source/native审，Picker待native绑定与经理实际窗口；两个consumer独立排程 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -59,3 +59,5 @@
 **Recovery：SOURCE_PREPARED / source-native集中审待完成 / browser NOT_RUN。** [当前报告](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/report.json)、[入口/边界](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。38链接已物化、33SQL全在；614own输入与HEAD blob相符，28直接源，406installed roots/17868文件全字节绑定，required unresolved[]。既有可信visual preset仍只appearance/cookieRead/themes390；capture窄适配纠正visualAppearancePhase字段并限制私有outer输出，原父/worker/产品不改。
 
 Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2owned HTTP，64MiBscratch+128MiB DB/WAL+10MiB retained（parent9与outer/terminal1）+1MiBmetadata=203MiB。没有gate/admin/actual许可；latest完整floor由经理fresh组合，不能因静态包自行启动。准备链接KEEP不等于运行resourceholder；真实cleanup/actual退出/两图目视待实际。滚动条仅报告观测模式，不能冒两个OS模式均通过。
+
+末次静态peer对照发现：406包dependencies/optional闭包未覆盖已安装`@opentelemetry/api`及3个`@types` peer root；不声称完整runtime闭包READY。缺项精确见[peer gap](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/peer-closure-gap.json)。本段到安全STOP，后继只需补这4个固定installed root的metadata pins，不安装/改源码/运行。
