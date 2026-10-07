@@ -1,0 +1,259 @@
+{
+  "schema": "flow.c02.pg-result.v1",
+  "at": "2026-10-07T05:43:57.164762+00:00",
+  "window": "MATURE02C02-PUBLIC-STREAM-20261007-R1",
+  "result": "PASS_RESULT_REVIEW_PENDING",
+  "executionHead": "562d807558046e9cb798e42a17bb08fe010895d5",
+  "preparedSource": "4520a06e42ae7945ba6a2485ab1dabcb3a9113cb",
+  "inputSnapshot": "2a125afa10530753e7b2dc69f4ba93c2eab91bbc",
+  "inputManifest": {
+    "name": "pg-public-stream-source-manifest.json",
+    "sha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704"
+  },
+  "sourceVerification": {
+    "count": 308,
+    "bytes": 1705071,
+    "GitAtExecutionEqualsWorktree": true,
+    "errors": []
+  },
+  "selection": {
+    "selected": 6,
+    "passed": 6
+  },
+  "realHTTPRequests": 189,
+  "fragmentSamples": [
+    {
+      "fragments": 32,
+      "durablePatches": 7,
+      "actualReportRequests": 12,
+      "utf8Bytes": 5120,
+      "digest": "250054ad1a4af1a5ff7a8a37b4987e92c376dd228446dff2d9871a00c32f974f",
+      "observerDisconnected": true
+    },
+    {
+      "fragments": 512,
+      "durablePatches": 7,
+      "actualReportRequests": 12,
+      "utf8Bytes": 5120,
+      "digest": "250054ad1a4af1a5ff7a8a37b4987e92c376dd228446dff2d9871a00c32f974f",
+      "observerDisconnected": true
+    }
+  ],
+  "resourceSummary": {
+    "pid": 66117,
+    "exitCode": 0,
+    "group": {
+      "state": "absent",
+      "signals": [],
+      "observations": [
+        "absent"
+      ]
+    },
+    "stdioEof": [
+      "stderr",
+      "stdout"
+    ],
+    "retainedTempRoot": null,
+    "retainedDatabase": null,
+    "databaseIdentity": {
+      "oid": "1227881",
+      "marker": "2df2643f-d796-475c-ad3a-61f1f62b5f2c"
+    },
+    "databaseLogicalEndSampleBytes": 12762135,
+    "cleanup": {
+      "startupSettled": true,
+      "runnersClosed": true,
+      "appClosed": true,
+      "poolClosed": true,
+      "adminClosed": true,
+      "databaseIdentityConfirmed": true,
+      "connections": 0,
+      "databaseAbsent": true
+    },
+    "activePeaks": "UNKNOWN",
+    "connections": "14 is configured ceiling, not measured peak"
+  },
+  "originals": {
+    "count": 11,
+    "bytes": 10949
+  },
+  "archiveRows": [
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.child.json",
+      "bytes": 80,
+      "sha256": "4e19f372f04285ca9d7eefca08ba9ae8edd0402bdee9e80e0632925c4d643b74"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.fixture.json",
+      "bytes": 2724,
+      "sha256": "f7bf6a9e9cd4a2cf99e1e8035f4370bb514f22d8e380172eb078f5891512f2ba"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.fixture.json.create-request.json",
+      "bytes": 150,
+      "sha256": "7182c01627ff3d70b3307355ddc74b3f0d8383bc131b77adea15983e37cee910"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.fixture.json.database.json",
+      "bytes": 190,
+      "sha256": "b0c847b61c2ea95550770fd2cc47d277801db05976b3a79b4fc65a6394bace16"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.fixture.json.reservation.json",
+      "bytes": 166,
+      "sha256": "80ec756e9449b0f61d01ed0fcd0b663d62061d9bbc4b30e27c69a78dbb55f146"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.post-run.json",
+      "bytes": 919,
+      "sha256": "422dea23984e137a934fb9f7de30ce53d8b96407eabf8e2ba04f8dcb33862518"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.report.md",
+      "bytes": 3483,
+      "sha256": "3e9e72cc965881d618a66c934633beafe3397b7fa470b73cc9afd60576dfc1dc"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.reservation.json",
+      "bytes": 556,
+      "sha256": "f5381307ec5129122db0c1d759ab19827d6e806743fe476b93b613a78dd2a09f"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.result.json",
+      "bytes": 2222,
+      "sha256": "b41479e9a52bc570f05abb384de4ee56a301b107589736f383a6c2a471a877b8"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.stdout",
+      "bytes": 184,
+      "sha256": "57e76dd7460491179ac60df4198d0c5cbff5a806abdfc9485c267be9f533153b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.tool.json",
+      "bytes": 1281,
+      "sha256": "1732321493bea3f16acf2326dfcc744e0f26e374384d7a901a662b651fbe154c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.tool.stdout",
+      "bytes": 2021,
+      "sha256": "2d3712fee71f15a2f4a9e011ce56e9dec90a5f5b06e426f3281f6faec327e8c1"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-PUBLIC-STREAM-20261007-R1.vitest.json",
+      "bytes": 2656,
+      "sha256": "ec7df8922f78de45a99657597c567450f3b5b00ccf5b6394785920d0b2c79a96"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-public-stream-source-manifest.json",
+      "bytes": 65254,
+      "sha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-due-independent-review.json",
+      "bytes": 828,
+      "sha256": "2b57a79bffb4275d5c7243f2542019221ed28a277dd0c88773f494fe0768b77b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-preparation-review.json",
+      "bytes": 2531,
+      "sha256": "1a1bc4aff0c7822b235a55c0277e81366cbfb809ca4e0ea4b1dfab0c29dc7b48"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-preparation-review.json.gz",
+      "bytes": 5248,
+      "sha256": "85ba58be261c3a7598ca77d18a27b579ee87b99be93fd9fa9ae5be10444c9199"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-collect.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-collect.stdout",
+      "bytes": 1663,
+      "sha256": "908c32e5373cbba540c9795005f14ac25ba2fdbd0fbaf118cff5f47f351d1143"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-fix-local.json",
+      "bytes": 5255,
+      "sha256": "7022938148871dcb3ffad7f94acfa13b252a50cb48fa1912b2be91b9e7c9f8a8"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-local-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-local-types.stdout",
+      "bytes": 1277,
+      "sha256": "c5f6b01a3d958272dd3ff8d5397a836391d95d0c1b08cf4537d18adff72b393e"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-local.json",
+      "bytes": 2829,
+      "sha256": "e5031b616a888d551722efc75f7267b8597ccc1c7dcf81dca94f1de689ac7a72"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-prepare-types-closeout.json",
+      "bytes": 639,
+      "sha256": "dea19c3c35982a1b87354d0bf44e60d6e14786d21ec9da72bff40aee4c920a81"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-tsconfig.json",
+      "bytes": 225,
+      "sha256": "9721eb6a099532915c7da64ccb606c01a40daf2082e66cea5135bf50858012b8"
+    },
+    {
+      "path": "docs/evidence/mature02c02/public-stream-pg-window.md",
+      "bytes": 4875,
+      "sha256": "4c649c1f2cda48399dd6906678aa153cd2d8606336380ea96b5fd442dad02985"
+    },
+    {
+      "path": "docs/evidence/mature02c02/quality.md",
+      "bytes": 2254,
+      "sha256": "7f674e6b29ae78b60508192803159fe2a71ca5077b755f24c837903877eea1b9"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/review.md",
+      "bytes": 1402,
+      "sha256": "a5f21245c2d28b1b39e507c0c30baf580ad3172e89e2103f7c3f411920be8df5"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/status.md",
+      "bytes": 8477,
+      "sha256": "daa310f9cbdc6353887fbb8ad411853a88d71b16a954929cb028b1e7d309f7ef"
+    }
+  ],
+  "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
+  "orderedSha256": "01c4cd64a5cd4529545d76d95dde56715344a17be350cdb5f64fae9bf8e95894",
+  "accounting": {
+    "archiveRowsBytes": 119389,
+    "selfBytes": 9677,
+    "totalBytes": 129066,
+    "limitBytes": 131072,
+    "remainingBytes": 2006,
+    "disjointFromRuntimeInputs": true,
+    "compressedReview": "gzip stores full original40491B report in5248B; original SHA/decompression fidelity bound by receipt, no original content omitted"
+  },
+  "limits": [
+    "One real PG/HTTP run with injected native port, no native/provider/SDK execution.",
+    "Old continuity R1/R2 and KEEP remain unchanged; no automatic retries.",
+    "Whole tool conservative<=6s from independent UTC samples; operator4.621433 before persistence/delivery4.621743 are different boundaries.",
+    "Public product main integration/UI/conversation/actual model/entitlement/whole native side effects remain unverified."
+  ]
+}
