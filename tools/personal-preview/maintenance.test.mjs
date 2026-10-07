@@ -202,7 +202,7 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
     return new vm.SyntheticModule(Object.keys(values), function () { for (const [name, value] of Object.entries(values)) this.setExport(name, value); }, { context });
   });
   await module.evaluate();
-  return { calls, state, config, run: () => module.namespace.maintainPreview({ directory: config.directory, action, target: selected?.sourceHead, backendId: action === 'bootstrap' && selected ? selected.artifactId : undefined }) };
+  return { calls, state, config, run: () => module.namespace.maintainPreview({ directory: config.directory, action, target: selected?.sourceHead ?? '', backendId: action === 'bootstrap' && selected ? selected.artifactId : undefined }) };
 }
 
 test('SVC09 maintenance bootstrap qualifies the selected backend and independent Web before drain', async () => {
@@ -218,6 +218,7 @@ test('SVC09 maintenance bootstrap qualifies the selected backend and independent
   }
   const legacy = await maintenancePorts({ prepareFailure: true }); legacy.state.backendArtifact = null;
   await assert.rejects(legacy.run(), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+  assert.equal(legacy.calls.find(call => call[0] === 'prepare')[2], undefined);
   assert.equal(legacy.calls.find(call => call[0] === 'prepare')[3], null);
   assert.ok(!legacy.calls.some(call => ['migrate', 'command', 'stop', 'start'].includes(call[0])));
   const success = await maintenancePorts({ selected }); await success.run();

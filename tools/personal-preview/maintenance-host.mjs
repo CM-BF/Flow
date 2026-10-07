@@ -49,7 +49,7 @@ async function bootstrap(config, pool, state, target, backendId) {
   }
   // Qualification uses the actual selected Web host, including a separately installed host.
   // Invalid configuration or missing tuple evidence must not first be discovered after drain.
-  if (backendArtifact || browser.context !== null) await preparePreviewWeb(config, backendArtifact?.sourceHead ?? target, backendArtifact);
+  if (backendArtifact || browser.context !== null) await preparePreviewWeb(config, backendArtifact?.sourceHead ?? (target || undefined), backendArtifact);
   const facts = await processFacts(state);
   if (Object.values(facts).some(value => value !== 'running')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   await migrateRunnerMaintenance(pool);
