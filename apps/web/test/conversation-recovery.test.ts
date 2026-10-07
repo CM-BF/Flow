@@ -540,7 +540,9 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
       createConversation: post, submitConversationTurn: post, conversationDetail: post };
     const projection = new ConversationProjection(client, "chat"); cleanup.push(() => projection.dispose());
     projection.configureRecovery(binding.commandPort(owner.viewKey)); await projection.refresh();
-    binding.beginHandoff(owner.viewKey); await binding.flush();
+    binding.beginHandoff(owner.viewKey);
+    await expect(binding.flush()).rejects.toThrow("Some drafts are still only in this page");
+    expect(await store.list(ns)).toMatchObject([{ kind: "draft", data: draft("original") }]);
     setDraft(draft("")); binding.changed(owner.viewKey);
     port.holdNextCommit = true; port.failNextCommit = true;
     const sending = projection.send("original");
