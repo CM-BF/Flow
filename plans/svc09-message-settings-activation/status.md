@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:03:25.400473Z |
+| 更新时间 | 2026-10-07T16:06:55.481113Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -14,7 +14,7 @@
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
 | 当前产出 | 首次隔离宿主失败记录已获独审并合入主线；入口工具路径已修复并通过直接检查，待窄审。 |
-| 下一可用交付 | 入口修复独审后固定新的单次旅程候选，再按实际窗口验证双槽；个人安装保持不变。 |
+| 下一可用交付 | 新的独立单次旅程候选已固定，待差量独审与实际窗口；个人安装保持不变。 |
 | 当前阻塞 | ACTIVE: 入口修复待独审；原宿主旅程未通过，已消费目录不能重投，专用DB/私有目录仍保留。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
@@ -86,3 +86,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T16:00:31.689821Z：R1原件封存见[失败结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-RESULT.md)。公共系统工具`/usr/sbin/lsof`不在fixture工作PATH是已核入口缺项；原ready循环未保存单次exec错误，不能倒造原运行首因。依原授权只修own caller与直接例，不改产物/个人/产品；新实际旅程需独审及另协调窗口。
 
 2026-10-07T16:03:25.400473Z：R1唯一结果独审已main e271fb211，范围仅原FAIL/RETURN/KEEP保真。PATH修复见[差量结果](../../docs/evidence/svc09/message-settings-activation/host-integration/host-path-fix-result.json)，2新直接例通过；原6/5/33及host未重跑。旧host-preparation与raw不改；尚未创建新actual namespace、未绑定新actual许可。
+
+2026-10-07T16:06:55.481113Z：同次delta补固定R2入口/两个新namespace及新source绑定，旧默认入口仍拒重用。3个参数/拒重复直接例通过129ms/637B，16:05:24.231267Z组absent/双EOF/empty exact scratch removed。本次合计5新例277ms/1103B；[R2候选](../../docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r2.json)未实际运行，旧R1所有原件不改。

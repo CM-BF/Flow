@@ -35,3 +35,5 @@
 ### 2026-10-07T16:03:25.400473Z R1结果收录与PATH差量待审
 
 R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main e271fb211 `docs/evidence/i02/svc09a-host-first-result-review.json`；原FAIL/KEEP不改，不是host通过。后继c8912fc0e仅own caller工作PATH补`/usr/sbin`并保原环境隔离，2新直接例/4AST通过；148ms/466B，组absent/双EOF/exact空目录移除。等待assignment唯一差量审查，不重跑旧矩阵，不授权新host。
+
+2026-10-07T16:06:55.481113Z：按Lead同次窄审要求，source78543b025固定R2受限参数与独立once目录，原默认目录保持已消费。追加3纯参数/拒重用例129ms/637B，合计5不同/277ms/1103B；新prep17执行pin=16source+只读lsof，6runtime沿用。此为同次候选审查，不复制监督器、不启动host。
