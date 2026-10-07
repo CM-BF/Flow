@@ -1,0 +1,15 @@
+# AV02 local installed verifier slice
+
+Source starts at d6e0248242ff550ea0268d796371b73e1e8d86b0; test-only escaped-envelope refinement 9895181df. Fixed dependency baseline is main96b via merge6915; no center/v4/runtime dispatch changes are included.
+
+The strict contract admits a finite JSON-object rule: parsing must succeed, the value must be a non-null non-array object, and all required keys must be own keys. Values and extra keys are unrestricted. This is not JSON Schema. Rule A requires `id`; rule B requires `id` and `email`. Both use algorithm version1; changing the required-key rule changes the full input digest, not the trusted algorithm version.
+
+`verifyJsonObject(content, rule)` owns deterministic computation without package loading or I/O. `executePluginVerifier` consumes a detached source identity/content and frozen invocation/material/configuration, plus an operator-owned exact artifact SHA/tree/API→algorithm association. It validates source version, serializes a bounded fixed envelope, invokes the existing installed host, strictly decodes the returned digest/verdict, and independently compares that local verdict to the trusted algorithm. The returned value is a local result and provenance, not a center-approved RunnerEvent. Center independently rereading its authoritative artifact and recomputing the algorithm remains AV03.
+
+The installed manifest positively records `kind: verifier`; omitted/unknown kinds fail. One package-store implementation prepares and rereads both kinds. The same host implementation checks the expected kind before load authorization, then uses the existing load/invoke grants, ownership assertions, stable ESM URL and abort behavior. The existing tool API remains tool-only. PROCESS `invokeTool` remains unchanged and is not a verifier worker capability.
+
+Source is at most8192 UTF8 bytes, at most32 unique required keys of64 UTF8 bytes, and the serialized invocation at most16384 UTF8 bytes/16000 code units. Output remains bounded by the existing16KiB host limit. These are checked data bounds, not hard process-memory isolation. The operator mapping is bounded to1024 entries. No cache or automatic retry is added.
+
+Known validation/kind/source/trust failures occur before plugin authorization. Unknown phase acknowledgement and in-flight host outcome propagate `PluginExecutionUnsettled` with the original binding/invocation. Pre-aborted calls fail without importing. No completed event, journal mutation, new permission, claim protocol or recovery loop is produced by this local consumer. Repeating an invocation is not authorized by a prior local result; production admission/phase ownership remains a later explicit integration requirement.
+
+Validation selects eight new cases and two existing direct tool/material consumers. New package archives use the existing in-process tar library and execute real local ESM files; one selected old tool test starts `/usr/bin/tar` and records close/exit. They are Flow-owned fixture packages, not upstream npm provenance or an installed personal package. Original PROCESS hang/worker cases are unselected; no PG/provider/browser/services run.
