@@ -33,12 +33,36 @@ async function treeBytes(directory: string, scratch = false): Promise<number> {
 }
 async function freeBytes() { const value = await statfs(root); return value.bavail * value.bsize; }
 const sourcePaths = ["apps/web/src/App.tsx", "apps/web/src/connection/session.ts", "apps/web/src/recovery/journal.ts", "apps/web/src/recovery/binding.tsx", "apps/web/src/conversations/ConversationThread.tsx", "apps/web/src/conversations/outbox.ts", "apps/web/src/conversations/projection.ts", "apps/web/src/conversations/queue/commands.ts", "apps/web/src/conversation-steering/control.ts", "apps/web/src/conversation-steering/SteeringControl.tsx", "apps/web/src/conversation-context/controller.ts", "apps/web/src/attachments/controller.ts", "apps/web/src/plugin-integration/attachments.tsx", "apps/web/src/plugin-integration/knowledge.tsx", "apps/web/src/plugin-integration/session.ts", "apps/web/src/plugin-integration/steering.tsx", "apps/web/test/conversation-recovery.test.ts", "apps/web/test/conversation-recovery.fixture.ts", "apps/web/test/conversation-recovery.browser.ts"];
-type Gate = { allowRun: true; run: string; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
+const journeyGroups = {
+  full: ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn", "pageOnlyAuthLoss", "csrfOffline", "themes390"],
+  "recovery-chain": ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn"],
+  "page-auth": ["cookieRead", "pageOnlyAuthLoss"],
+  "csrf-offline": ["cookieRead", "csrfOffline"],
+  appearance: ["cookieRead", "themes390"],
+} as const;
+type Journey = keyof typeof journeyGroups;
+type Group = (typeof journeyGroups)["full"][number];
+function selectedGroups(journey: unknown): readonly Group[] {
+  requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
+  return journeyGroups[journey as Journey];
+}
+type Gate = { allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number };
-type Init = { kind: "start"; directory: string; scratch: string; databaseUrl: string; workDeadline: number };
+type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; workDeadline: number };
 type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
   headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
-type WorkerResult = { checks: string[]; pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[] };
+type InitializationTiming = { outcome: "RUNNING" | "PASSED" | "FAILED"; startedOffsetMs: 0; endedOffsetMs: number | null; elapsedMs: number | null };
+type GroupTiming = { group: Group; startedOffsetMs: number; endedOffsetMs: number; elapsedMs: number; outcome: "PASSED" | "FAILED" };
+type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
+  initialization: InitializationTiming; groupTimings: GroupTiming[];
+  pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[] };
+function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
+  const required = selectedGroups(journey);
+  return !!result && result.journey === journey && result.failure === null
+    && Array.isArray(result.pageErrors) && result.pageErrors.length === 0 && Array.isArray(result.cleanupErrors) && result.cleanupErrors.length === 0
+    && JSON.stringify(result.requiredGroups) === JSON.stringify(required) && JSON.stringify(result.completedGroups) === JSON.stringify(required)
+    && Array.isArray(result.checks) && result.checks.length === required.length && required.every(key => result.coverage?.[key] === "PASSED");
+}
 type TailObservation = { phase: string; elapsedMs: number; scratchBytes: number | null; evidenceBytes: number | null; freeBytes: number | null; errors: string[] };
 
 async function supervisor() {
@@ -46,6 +70,7 @@ async function supervisor() {
   const gatePath = process.env.FLOW_RECOVERY_GATE, adminUrl = process.env.FLOW_RECOVERY_TEST_ADMIN;
   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
+  const requiredGroups = selectedGroups(gate.journey);
   requireThat(gate.allowRun === true && /^[a-z0-9-]{1,48}$/.test(gate.run), "Invalid one-run gate");
   requireThat(Date.parse(gate.expiresAt) > Date.now(), "Admission expired");
   requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 30_000 && gate.totalMs <= TOTAL_MS, "Invalid admitted time budget");
@@ -76,7 +101,7 @@ async function supervisor() {
   const directory = join(runs, gate.run); await mkdir(directory, { mode: 0o700 }); // Exclusive: never overwrite a run.
   const began = performance.now(), workDeadline = Date.now() + gate.totalMs - CLEANUP_MS;
   const hardAt = began + gate.totalMs;
-  const budget = { complete: false, cleanupComplete: false, startedAt: new Date().toISOString(), priorMs, permittedMs: gate.totalMs, cleanupReserveMs: CLEANUP_MS, elapsedMs: 0 };
+  const budget = { complete: false, cleanupComplete: false, journey: gate.journey, startedAt: new Date().toISOString(), priorMs, permittedMs: gate.totalMs, cleanupReserveMs: CLEANUP_MS, elapsedMs: 0 };
   writeFileSync(join(directory, "budget.json"), JSON.stringify(budget), { mode: 0o600 });
   const children: ChildProcess[] = [], closed = new Map<ChildProcess, Promise<void>>();
   const errors: string[] = [], cleanupErrors: string[] = [];
@@ -131,7 +156,7 @@ async function supervisor() {
   };
   let databaseCleanup: Awaited<ReturnType<RecoveryDatabaseLease["close"]>> | undefined;
   try {
-    await json(join(directory, "sources.json"), { sourceCommit, dirty, sourceHashes });
+    await json(join(directory, "sources.json"), { sourceCommit, dirty, sourceHashes, journey: gate.journey, requiredGroups });
     monitor = setInterval(() => { if (!monitoring) monitoring = checkpoint().catch(() => {}).finally(() => { monitoring = undefined; }); }, 250);
     await checkpoint(); // Before any Vite/PG/Playwright/business import or CREATE.
     const { RecoveryDatabaseLease } = await import("./conversation-recovery.fixture");
@@ -177,7 +202,7 @@ async function supervisor() {
         })().catch(error => stop("Chrome startup: " + text(error)));
       }
     });
-    working(); worker.send({ kind: "start", directory, scratch, databaseUrl: lease.url, workDeadline } satisfies Init);
+    working(); worker.send({ kind: "start", journey: gate.journey, directory, scratch, databaseUrl: lease.url, workDeadline } satisfies Init);
     while (worker.exitCode === null && worker.signalCode === null && !stopped) { await sleep(30); working(); }
     if (!result) errors.push("Worker did not return a complete result");
   } catch (error) { errors.push(text(error)); }
@@ -238,10 +263,15 @@ async function supervisor() {
     await logs;
     if (result?.cleanupErrors.length) cleanupErrors.push(...result.cleanupErrors);
     if (result?.failure) errors.push(result.failure);
+    if (!selectionPassed(gate.journey, result)) errors.push("The selected journey did not complete every required group");
     const persistReports = async (complete: boolean) => {
       const elapsedMs = performance.now() - began;
       Object.assign(budget, { complete, cleanupComplete: allOwnedGroupsAbsent && scratchRemoved && cleanupErrors.length === 0, elapsedMs });
-      await json(join(directory, "supervisor.json"), { passed: complete && stopReason === undefined && !interruptionRequested && allOwnedGroupsAbsent && scratchRemoved && !!result && !errors.length && !cleanupErrors.length && elapsedMs <= gate.totalMs && priorMs + elapsedMs <= TOTAL_MS,
+      const passed = complete && stopReason === undefined && !interruptionRequested && allOwnedGroupsAbsent && scratchRemoved && selectionPassed(gate.journey, result) && !errors.length && !cleanupErrors.length && elapsedMs <= gate.totalMs && priorMs + elapsedMs <= TOTAL_MS;
+      await json(join(directory, "supervisor.json"), { passed, selectedPassed: passed, fullJourneyPassed: passed && gate.journey === "full",
+        journey: gate.journey, requiredGroups, completedGroups: result?.completedGroups ?? [],
+        initialization: result?.initialization ?? null, groupTimings: result?.groupTimings ?? null,
+        acceptanceScope: gate.journey === "full" ? "original seven-group subset; not full feature approval" : "selected journey only; full journey remains unverified",
         errors, cleanupErrors, databaseCleanup, processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
         stopReason, interruptionRequested, allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
         attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
@@ -262,7 +292,7 @@ async function supervisor() {
       errors.push("Final report accounting: " + text(error));
       try { await persistReports(false); } catch (failure) { errors.push("Failure report write: " + text(failure)); }
     } finally {
-      console.log(JSON.stringify({ kind: "recovery-final-accounting", directory, postWrite, stopReason, interruptionRequested, errors, cleanupErrors, allOwnedGroupsAbsent, scratchRemoved }));
+      console.log(JSON.stringify({ kind: "recovery-final-accounting", directory, journey: gate.journey, requiredGroups, completedGroups: result?.completedGroups ?? [], postWrite, stopReason, interruptionRequested, errors, cleanupErrors, allOwnedGroupsAbsent, scratchRemoved }));
       clearTimeout(hardStop); process.off("SIGINT", interrupted); process.off("SIGTERM", interrupted);
     }
     if (stopReason !== undefined || interruptionRequested || !result || errors.length || cleanupErrors.length || !allOwnedGroupsAbsent || !scratchRemoved || performance.now() > hardAt || priorMs + performance.now() - began > TOTAL_MS) process.exitCode = 1;
@@ -270,6 +300,8 @@ async function supervisor() {
 }
 
 async function worker(init: Init) {
+  const workerBegan = performance.now();
+  const requiredGroups = selectedGroups(init.journey), completedGroups: Group[] = [];
   const { chromium, expect } = await import("@playwright/test");
   const { startRecoveryFixture, observeRecoveryRecords } = await import("./conversation-recovery.fixture");
   const records = async (page: Page) => {
@@ -280,6 +312,8 @@ async function worker(init: Init) {
   const { conversationTurnSchema } = await import("@flow/contracts");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
+  const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
+  const groupTimings: GroupTiming[] = [];
   let errorBytes = 0;
   const pageError = (error: Error) => {
     errorBytes += Buffer.byteLength(error.message);
@@ -292,6 +326,9 @@ async function worker(init: Init) {
     createTwoStage: "PENDING: direct/source only", queueSteerRecovery: "PENDING: direct/source only",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
   };
+  for (const key of journeyGroups.full) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
+  if (!requiredGroups.includes("textIntentDraft")) coverage.materialDraft = "NOT_SELECTED";
+  if (!requiredGroups.includes("sameKeyTurn")) coverage.cookieSseHandshake = "NOT_SELECTED";
   const lifetime = new AbortController();
   const abort = () => lifetime.abort(Error("Supervisor stopped work"));
   process.once("SIGTERM", abort); process.once("SIGINT", abort);
@@ -299,8 +336,17 @@ async function worker(init: Init) {
   const checkpoint = async () => { lifetime.signal.throwIfAborted(); requireThat(Date.now() < init.workDeadline, "Worker work deadline"); };
   let fixture: Awaited<ReturnType<typeof startRecoveryFixture>> | undefined, browser: Browser | undefined, failure: string | null = null;
   const postRows = () => fixture!.wire.filter(row => row.method === "POST" && !row.path.includes("browser-session"));
-  const run = async (name: string, key: string, operation: () => Promise<void>) => {
-    await checkpoint(); coverage[key] = "RUNNING"; try { await operation(); await checkpoint(); checks.push(name); coverage[key] = "PASSED"; } catch (error) { coverage[key] = "FAILED"; throw error; }
+  const run = async (name: string, key: Group, operation: () => Promise<void>) => {
+    if (!requiredGroups.includes(key)) return;
+    requireThat(groupTimings.length < journeyGroups.full.length, "Group timing bound exceeded");
+    await checkpoint(); coverage[key] = "RUNNING";
+    const began = performance.now(); let outcome: GroupTiming["outcome"] = "FAILED";
+    try { await operation(); await checkpoint(); completedGroups.push(key); checks.push(name); coverage[key] = "PASSED"; outcome = "PASSED"; }
+    catch (error) { coverage[key] = "FAILED"; throw error; }
+    finally {
+      const ended = performance.now();
+      groupTimings.push({ group: key, startedOffsetMs: began - workerBegan, endedOffsetMs: ended - workerBegan, elapsedMs: ended - began, outcome });
+    }
   };
   const observeTurnBodyLoss = (page: Page, requestedText: string) => {
     const observation: BodyLossObservation = { path: null, key: null, bodySha256: null, status: null, headers: {}, events: [], failure: null, finished: false };
@@ -363,7 +409,13 @@ async function worker(init: Init) {
     await checkpoint(); browser = await chromium.connectOverCDP(endpoint, { timeout: 5000 }); await checkpoint();
     const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: "reduce" });
     const page = await context.newPage(); page.setDefaultTimeout(4500); page.on("pageerror", pageError);
+    const initializedMs = performance.now() - workerBegan;
+    Object.assign(initialization, { outcome: "PASSED", endedOffsetMs: initializedMs, elapsedMs: initializedMs });
     const input = (target = page) => target.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
+    const saveDraftThroughUi = async (value: string) => {
+      await input().fill(value);
+      await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.data?.text === value)).toBe(true);
+    };
     const openRecovery = async (target = page, keyboard = false) => {
       const trigger = target.getByRole("button", { name: "Saved drafts and receipts", exact: true });
       if (!await trigger.isVisible()) await target.getByRole("button", { name: "Chats", exact: true }).click();
@@ -485,6 +537,7 @@ async function worker(init: Init) {
       expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSseHandshake = "PASSED";
     });
     await run("auth loss without reload retains an unsaved page-only draft; reconnect sends no command", "pageOnlyAuthLoss", async () => {
+      if (init.journey === "page-auth") await saveDraftThroughUi("Durable draft before page-only auth loss");
       const posts = postRows().length, pageOrigin = await page.evaluate(() => performance.timeOrigin);
       await page.evaluate(() => {
         const holder = window as Window & { recoveryFixtureRestoreIdb?: () => void };
@@ -515,22 +568,31 @@ async function worker(init: Init) {
       } finally { await page.evaluate(() => (window as Window & { recoveryFixtureRestoreIdb?: () => void }).recoveryFixtureRestoreIdb?.()); }
     });
     await run("cookie mutation requires CSRF; offline observation never cancels or submits", "csrfOffline", async () => {
+      if (init.journey === "csrf-offline") await saveDraftThroughUi("Unsaved page-only draft after abort 中文🙂");
       const status = await page.evaluate(async () => (await fetch("/api/conversations", { method: "POST", credentials: "include", headers: { "content-type": "application/json" }, body: "{}" })).status); expect(status).toBe(403);
       const posts = postRows().length;
       await context.setOffline(true); await expect(page.getByText("Offline. Drafts and pending commands have not been cancelled.", { exact: true })).toBeVisible();
       await context.setOffline(false); await expect(input()).toHaveValue("Unsaved page-only draft after abort 中文🙂"); expect(postRows()).toHaveLength(posts);
     });
     await run("recovery dialog opens with Enter and returns focus after Escape at 390 in both themes", "themes390", async () => {
+      if (init.journey === "appearance") await saveDraftThroughUi("Saved recovery draft 中文🙂");
       await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
       for (const theme of ["light", "dark"] as const) {
         if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
         const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
+        if (init.journey === "appearance") await expect(dialog).toContainText("Saved recovery draft 中文🙂");
         const rect = await dialog.evaluate(element => ({ client: element.clientWidth, scroll: element.scrollWidth, width: element.getBoundingClientRect().width })); expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
         const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "Screenshot exceeds its retained budget"); await writeFile(join(init.directory, theme + "-390.png"), png); await page.keyboard.press("Escape"); await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
       }
     });
     expect(pageErrors).toEqual([]);
-  } catch (error) { failure = text(error); }
+  } catch (error) {
+    failure = text(error);
+    if (initialization.outcome === "RUNNING") {
+      const elapsedMs = performance.now() - workerBegan;
+      Object.assign(initialization, { outcome: "FAILED", endedOffsetMs: elapsedMs, elapsedMs });
+    }
+  }
   finally {
     clearTimeout(deadline); lifetime.abort();
     for (const stop of stopObservers) stop();
@@ -538,7 +600,7 @@ async function worker(init: Init) {
     try { await browser?.close(); } catch (error) { cleanupErrors.push("browser: " + text(error)); }
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
-    const result: WorkerResult = { checks, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss };
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });
