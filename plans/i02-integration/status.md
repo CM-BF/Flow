@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:01:40.908Z / main c6ada2b76；本批接收208登记已审差量，远端推送故障另记 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:01:40.908Z / main c6ada2b76；208登记已审接收，实际4320已载入，source push恢复成功 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 固定doc字节/链接、两限定独审与own-status解析；0重复产品测试/PG/浏览器/provider，历史UNKNOWN保持 |
-| 已集成main状态 / HEAD | 最近已核main/origin c6ada2b76；208来源登记即将本地接收，GitHub source push两次500尚未成功。固定cd27/04da、2515/098b与个人运行不改 |
+| 已集成main状态 / HEAD | 最近已核main/origin e5ecd07bc；208来源17:02:13.739Z实际载入，source8e5515550 push已成功。固定cd27/04da、2515/098b与个人运行不改 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
@@ -474,3 +474,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 同批[失败摘要规划差量](../../docs/evidence/i02/flow-failure-summary-doc-review.json)已独审；只登记原FLOW后继与真实预算结果，无产品分类实现。16:44:53.806Z实际4320读取OPS/FLOW/I02均sourceCurrent、human.missing空；父历史开工UNKNOWN保留。
 
 2026-10-07T17:01:40.908Z：D05唯一登记target29093a34d，经assignment_review独立APPROVED/0P1P2，精确接收registry及三份管理记录；source后续908248c只存原独审/推送失败事实。无产品测试或运行源变化。
+
+2026-10-07T17:02:58.990Z：归档D05实际208源部署回执；主线e5ecd07bc与source8e5515550均已push。历史两次500保持，不是当前blocker。个人端口/任务/凭据未操作。
