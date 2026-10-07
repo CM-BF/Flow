@@ -1,0 +1,144 @@
+--- /private/tmp/arc-browser-7e911-xdme2rv7/run.py
++++ /private/tmp/arc-browser-owned-cleanup-tp1sri1w/run.py
+@@ -1,5 +1,81 @@
+-import os,pathlib,subprocess,json,time,signal,shutil,selectors,datetime,errno,hashlib,sys,math
+-root=pathlib.Path(__file__).parent;binding=json.loads((root/'binding.json').read_text());grant_path=pathlib.Path(sys.argv[1]);grant=json.loads(grant_path.read_text());assert grant.get('allowRun') is True and grant['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest();assert datetime.datetime.fromisoformat(grant['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc);assert grant['totalMs']==90000 and grant['minimumFreeBytes']>=binding['limits']['minimumFreeBytes'];raw=root/'raw';scratch=root/'scratch';assert not raw.exists() and not scratch.exists();raw.mkdir(mode=0o700);scratch.mkdir(mode=0o700);start=time.monotonic();errors=[];cleanup_errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None;dropped_bytes=0
++import os,pathlib,subprocess,json,time,signal,shutil,selectors,datetime,errno,hashlib,sys,math,stat
++
++def owned_identity(info):
++ return (info.st_dev,info.st_ino,info.st_uid,stat.S_IFMT(info.st_mode))
++
++def close_owned_chain(chain):
++ for entry in reversed(chain):os.close(entry['fd'])
++
++def open_owned_chain(path):
++ path=pathlib.Path(path)
++ if not path.is_absolute() or '..' in path.parts:raise RuntimeError('owned path must be absolute without traversal')
++ flags=os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW
++ chain=[]
++ try:
++  fd=os.open('/',flags);chain.append({'fd':fd,'name':None,'identity':owned_identity(os.fstat(fd))})
++  for name in path.parts[1:]:
++   parent=chain[-1]['fd'];fd=os.open(name,flags,dir_fd=parent)
++   chain.append({'fd':fd,'name':name,'identity':owned_identity(os.fstat(fd))})
++  verify_owned_chain(chain)
++  return chain
++ except BaseException:
++  close_owned_chain(chain)
++  raise
++
++def verify_owned_chain(chain):
++ for index,entry in enumerate(chain):
++  if owned_identity(os.fstat(entry['fd']))!=entry['identity']:raise RuntimeError('owned directory descriptor changed')
++  if index:
++   current=os.stat(entry['name'],dir_fd=chain[index-1]['fd'],follow_symlinks=False)
++   if owned_identity(current)!=entry['identity'] or not stat.S_ISDIR(current.st_mode):raise RuntimeError('owned ancestor replaced or symlinked; KEEP')
++
++def create_owned_scratch(root):
++ chain=open_owned_chain(root)
++ try:
++  verify_owned_chain(chain)
++  os.mkdir('scratch',mode=0o700,dir_fd=chain[-1]['fd'])
++  fd=os.open('scratch',os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW,dir_fd=chain[-1]['fd'])
++  chain.append({'fd':fd,'name':'scratch','identity':owned_identity(os.fstat(fd))})
++  verify_owned_chain(chain)
++  return chain
++ except BaseException:
++  close_owned_chain(chain)
++  raise
++
++def remove_owned_scratch(chain,deadline):
++ # All child operations use held descriptors; never re-resolve the scratch pathname.
++ def guard():
++  if time.monotonic()>=deadline:raise RuntimeError('cleanup deadline; KEEP remaining scratch')
++  verify_owned_chain(chain)
++ def clear(directory_fd):
++  guard()
++  with os.scandir(directory_fd) as entries:
++   for entry in entries:
++    guard()
++    before=os.stat(entry.name,dir_fd=directory_fd,follow_symlinks=False)
++    if stat.S_ISDIR(before.st_mode):
++     child=os.open(entry.name,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW,dir_fd=directory_fd)
++     try:
++      if owned_identity(os.fstat(child))!=owned_identity(before):raise RuntimeError('scratch child replaced; KEEP')
++      clear(child)
++      guard()
++      if owned_identity(os.stat(entry.name,dir_fd=directory_fd,follow_symlinks=False))!=owned_identity(before):raise RuntimeError('scratch child binding changed; KEEP')
++      os.rmdir(entry.name,dir_fd=directory_fd)
++     finally:os.close(child)
++    else:
++     guard()
++     if owned_identity(os.stat(entry.name,dir_fd=directory_fd,follow_symlinks=False))!=owned_identity(before):raise RuntimeError('scratch entry changed; KEEP')
++     os.unlink(entry.name,dir_fd=directory_fd)
++ guard()
++ clear(chain[-1]['fd'])
++ guard()
++ os.rmdir('scratch',dir_fd=chain[-2]['fd'])
++ verify_owned_chain(chain[:-1])
++ try:os.stat('scratch',dir_fd=chain[-2]['fd'],follow_symlinks=False)
++ except FileNotFoundError:return
++ raise RuntimeError('scratch name reappeared; cleanup absence UNKNOWN')
++
++root=pathlib.Path(__file__).parent;binding=json.loads((root/'binding.json').read_text());grant_path=pathlib.Path(sys.argv[1]);grant=json.loads(grant_path.read_text());assert grant.get('allowRun') is True and grant['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest();assert datetime.datetime.fromisoformat(grant['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc);assert grant['totalMs']==90000 and grant['minimumFreeBytes']>=binding['limits']['minimumFreeBytes'];raw=root/'raw';scratch=root/'scratch';assert not raw.exists() and not scratch.exists();raw.mkdir(mode=0o700);scratch_owner=create_owned_scratch(root);scratch_removed=False;cache_owner=None;start=time.monotonic();errors=[];cleanup_errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None;dropped_bytes=0
+ 
+ def stop(signum,frame):
+  interrupts.append(signum)
+@@ -51,11 +127,11 @@
+  for directory in [pathlib.Path(binding['worktree']),pathlib.Path(binding['worktree'])/'apps/web']:
+   for name in ['.env','.env.local','.env.development','.env.development.local']:
+    if os.path.lexists(directory/name):raise RuntimeError('unexpected env input; not read')
+- web_modules=pathlib.Path(binding['worktree'])/'apps/web/node_modules';web_modules.mkdir(exist_ok=True)
++ web_modules=pathlib.Path(binding['worktree'])/'apps/web/node_modules';web_modules.mkdir(exist_ok=True);cache_owner=open_owned_chain(web_modules)
+  for name in ['.vite','.vite-temp']:
+   destination=scratch/name;destination.mkdir();link=web_modules/name
+   if os.path.lexists(link):raise RuntimeError('cache destination already owned')
+-  link.symlink_to(destination,target_is_directory=True);stat=link.lstat();cache_links.append((link,destination,stat.st_dev,stat.st_ino));link_receipts.append({'path':str(link),'target':str(destination),'dev':stat.st_dev,'inode':stat.st_ino})
++  link.symlink_to(destination,target_is_directory=True);link_stat=link.lstat();cache_links.append((link,destination,link_stat.st_dev,link_stat.st_ino));link_receipts.append({'path':str(link),'target':str(destination),'dev':link_stat.st_dev,'inode':link_stat.st_ino})
+  env={key:os.environ[key] for key in ['PATH','HOME','USER','LOGNAME','SHELL','LANG','LC_ALL'] if key in os.environ}
+  env.update(TMPDIR=str(scratch),TMP=str(scratch),TEMP=str(scratch),XDG_CACHE_HOME=str(scratch),NODE_DISABLE_COMPILE_CACHE='1',TSX_DISABLE_CACHE='1',MAC_CHROMIUM_TMPDIR=str(scratch),BREAKPAD_DUMP_LOCATION=str(scratch/'crashpad'))
+  process=subprocess.Popen([binding['node'],'--import',binding['tsxLoader'],str(root/'worker.mjs')],stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,env=env,cwd=binding['worktree'])
+@@ -100,19 +176,22 @@
+  selector.close()
+  try:sample()
+  except BaseException as error:errors.append('terminal sample '+type(error).__name__)
+- if absent or process is None:
++ try:
++  if process is not None and (not absent or exit_code is None or len(eof)!=2 or not all(eof.values())):raise RuntimeError('owned process/EOF incomplete; KEEP')
++  if cleanup_errors:raise RuntimeError('cleanup unknown; KEEP')
++  verify_owned_chain(scratch_owner)
++  if cache_owner:verify_owned_chain(cache_owner)
+   for link,target,dev,ino in cache_links:
+-   try:
+-    current=link.lstat()
+-    if not link.is_symlink() or os.readlink(link)!=str(target) or (current.st_dev,current.st_ino)!=(dev,ino):raise RuntimeError('cache link identity changed')
+-    link.unlink()
+-   except FileNotFoundError:pass
+-   except BaseException as error:cleanup_errors.append('cache link cleanup '+str(error))
+-  try:
+-   if cleanup_errors:raise RuntimeError('cleanup unknown; scratch retained')
+-   shutil.rmtree(scratch)
+-  except BaseException as error:errors.append('scratch cleanup '+type(error).__name__)
+- else:errors.append('owned group unknown/live; scratch retained')
++   verify_owned_chain(scratch_owner);verify_owned_chain(cache_owner)
++   current=os.stat(link.name,dir_fd=cache_owner[-1]['fd'],follow_symlinks=False)
++   if not stat.S_ISLNK(current.st_mode) or os.readlink(link.name,dir_fd=cache_owner[-1]['fd'])!=str(target) or (current.st_dev,current.st_ino)!=(dev,ino):raise RuntimeError('cache link identity changed; KEEP')
++   os.unlink(link.name,dir_fd=cache_owner[-1]['fd'])
++  remove_owned_scratch(scratch_owner,start+89)
++  scratch_removed=True
++ except BaseException as error:cleanup_errors.append('owned scratch/cache cleanup '+type(error).__name__+': '+str(error))
++ finally:
++  if cache_owner:close_owned_chain(cache_owner)
++  close_owned_chain(scratch_owner)
+  elapsed=(time.monotonic()-start)*1000
+  if elapsed>90000:errors.append('duration bound')
+  try:
+@@ -123,7 +202,7 @@
+   if scenario.get('cleanup',{}).get('contextClosed') is not True or scenario.get('cleanup',{}).get('httpClosed') is not True:errors.append('scenario resources not confirmed closed')
+  except BaseException as error:errors.append('worker result unavailable');worker={}
+  if not all(eof.values()) or len(eof)!=2:errors.append('missing EOF')
+- report={'state':'PASSED' if exit_code==0 and not errors and not cleanup_errors and not interrupts and not dropped_bytes else 'FAILED','startedAtApprox':datetime.datetime.fromtimestamp(time.time()-elapsed/1000,datetime.timezone.utc).isoformat(),'actualExit':exit_code,'elapsedMs':elapsed,'ownedGroupAbsent':absent,'scratchRemoved':not scratch.exists(),'stdoutEOF':eof.get('stdout'),'stderrEOF':eof.get('stderr'),'peakSampledLogicalBytes':peaks,'terminalFreeBytes':final_free,'errors':errors,'cleanupErrors':cleanup_errors,'discardedOutputBytes':dropped_bytes,'interrupts':interrupts,'workerState':worker.get('state'),'chromeExit':worker.get('chromeExit'),'checks':worker.get('result',{}).get('passed',[]) if worker.get('result') else [],'limits':{'totalMs':90000,'cleanupReserveMs':30000,'scratchBytes':268435456,'rawBytes':8388608},'source':binding['source'],'executionHead':grant['executionHead'],'grantSha256':hashlib.sha256(grant_path.read_bytes()).hexdigest(),'cacheLinks':link_receipts,'chargeMs':math.ceil(elapsed),'independentPortProbe':False,'PG':False}
++ report={'state':'PASSED' if exit_code==0 and not errors and not cleanup_errors and not interrupts and not dropped_bytes else 'FAILED','startedAtApprox':datetime.datetime.fromtimestamp(time.time()-elapsed/1000,datetime.timezone.utc).isoformat(),'actualExit':exit_code,'elapsedMs':elapsed,'ownedGroupAbsent':absent,'scratchRemoved':scratch_removed,'stdoutEOF':eof.get('stdout'),'stderrEOF':eof.get('stderr'),'peakSampledLogicalBytes':peaks,'terminalFreeBytes':final_free,'errors':errors,'cleanupErrors':cleanup_errors,'discardedOutputBytes':dropped_bytes,'interrupts':interrupts,'workerState':worker.get('state'),'chromeExit':worker.get('chromeExit'),'checks':worker.get('result',{}).get('passed',[]) if worker.get('result') else [],'limits':{'totalMs':90000,'cleanupReserveMs':30000,'scratchBytes':268435456,'rawBytes':8388608},'source':binding['source'],'executionHead':grant['executionHead'],'grantSha256':hashlib.sha256(grant_path.read_bytes()).hexdigest(),'cacheLinks':link_receipts,'chargeMs':math.ceil(elapsed),'independentPortProbe':False,'PG':False}
+  (raw/'result.json').write_text(json.dumps(report,indent=2)+'\n')
+  if size(root,scratch)>8388608 or time.monotonic()-start>90 or interrupts:report['state']='FAILED'
+  report['postWriteElapsedMs']=(time.monotonic()-start)*1000;report['postWriteRawBytes']=size(root,scratch)

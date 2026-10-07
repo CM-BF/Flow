@@ -1,0 +1,32 @@
+{
+  "id": "ARC-BROWSER-CLEANUP-PURE-FS-20261007",
+  "state": "CLOSED",
+  "startedAt": "2026-10-07T21:39:09.969588+00:00",
+  "returnedAt": "2026-10-07T21:39:10.048818+00:00",
+  "totalMs": 40000,
+  "maxChildMs": 20000,
+  "cleanupMinimumMs": 5000,
+  "attempts": 1,
+  "innerMeasuredMs": 81.78079100000002,
+  "toolWallMs": 314.385417,
+  "chargeMs": 315,
+  "unusedMs": 39685,
+  "creditTransferred": false,
+  "sourceCodingDeadline": "2026-10-07T21:50:55.652Z",
+  "scratchCapBytes": 2097152,
+  "rawCapBytes": 524288,
+  "PG": false,
+  "HTTP": false,
+  "Chrome": false,
+  "network": false,
+  "provider": false,
+  "checksPassed": 6,
+  "wholeBrowser": "NOT_RUN",
+  "limits": [
+    "tool wall includes fresh preflight and is not independently instrumented outer monotonic wall",
+    "regular logs not dual EOF",
+    "test helper extracted actual parent function AST, not copied mirror",
+    "test samples only; no old KEEP probe/delete",
+    "full parent lifecycle was not launched"
+  ]
+}

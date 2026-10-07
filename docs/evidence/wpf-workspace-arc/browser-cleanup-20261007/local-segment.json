@@ -1,0 +1,49 @@
+{
+  "id": "ARC-BROWSER-CLEANUP-PURE-FS-20261007",
+  "state": "CLOSED",
+  "startedAt": "2026-10-07T21:39:09.969588+00:00",
+  "returnedAt": "2026-10-07T21:39:10.048818+00:00",
+  "totalMs": 40000,
+  "maxChildMs": 20000,
+  "cleanupMinimumMs": 5000,
+  "attempts": 2,
+  "innerMeasuredMs": 81.78079100000002,
+  "toolWallMs": 314.385417,
+  "chargeMs": 564,
+  "unusedMs": 39436,
+  "creditTransferred": false,
+  "sourceCodingDeadline": "2026-10-07T21:50:55.652Z",
+  "scratchCapBytes": 2097152,
+  "rawCapBytes": 524288,
+  "PG": false,
+  "HTTP": false,
+  "Chrome": false,
+  "network": false,
+  "provider": false,
+  "checksPassed": 7,
+  "wholeBrowser": "NOT_RUN",
+  "limits": [
+    "tool wall includes fresh preflight and is not independently instrumented outer monotonic wall",
+    "regular logs not dual EOF",
+    "test helper extracted actual parent function AST, not copied mirror",
+    "test samples only; no old KEEP probe/delete",
+    "full parent lifecycle was not launched"
+  ],
+  "finalReturnedAt": "2026-10-07T21:41:49.705242+00:00",
+  "attemptAccounting": [
+    {
+      "innerMs": 81.780791,
+      "toolWallMs": 314.385417,
+      "chargedMs": 315,
+      "checks": 6,
+      "source": "204ff24df434bd2dd3bf73c63fd139c0ecb7aa1cc234236efc03cbbfc9d96569"
+    },
+    {
+      "innerMs": 77.867708,
+      "toolWallMs": 248.496959,
+      "chargedMs": 249,
+      "checks": 7,
+      "source": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+    }
+  ]
+}

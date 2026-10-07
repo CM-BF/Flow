@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:20:31.866175+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:45:12.092738+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
-| 工作树dirty状态 | 本次actual正常seal后全20 STOP保claim，0child/无后续HTTP或browsergrant |
+| 工作树dirty状态 | 本次metadata正常seal后全20 STOP保claim；0child/browser NO_GRANT |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | PASSED 7e911df40d8c0ff875ac96e0fab36a1a3a253940；第三独立HTTP2PASS/0FAIL/11未选，2912ms；首两FAIL保留，browser4 NOT_RUN |
@@ -22,7 +22,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 第三独立HTTP FIFO/hidden queued-dispose同轮2PASS；actualexit0与exact组/scratch归还；browser4/双图未运行 |
+| 当前产出 | 两项HTTP验收已通过；调用器清理缺口已修复并获独审批准，真实浏览器验收尚未运行 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -69,3 +69,9 @@
 2026-10-07T21:22:36.031590+00:00：[第三actual归档](../../docs/evidence/wpf-workspace-arc/http-third-20261007/manifest.json)。请求trace因JSON reporter未留存，不能独立重建本轮具体请求序列；声明只据实际测试断言，不补造。browser数据a4e5批准已归档，不作运行授权。
 
 2026-10-07T21:23:22.849273+00:00：root[e524限定actual独审](../../docs/evidence/wpf-workspace-arc/http-third-20261007/root-arc-http-third-result-review-20261007.json)已原样归档、0blocking；trace NOT_RETAINED等限制保留，browser4/双图NOT_RUN、原两FAIL不改。全20 STOP保claim，无后续runtime。
+
+2026-10-07T21:37:17.153577+00:00：新15min/4MiB清理窄修段，截止21:50:55.652Z；仅本次新临时样本，最多3串20s/累计40s含清理，不触旧KEEP，不跑产品HTTP/types/browser。旧第三HTTP2PASS与全部失败不改。
+
+2026-10-07T21:43:20.807362+00:00：仅调用器修复，产品source仍7e911；[新入口](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/entry.json)。首6FS PASS与最终7FS PASS原件分别保留，真实函数AST提取；child/toolexit0、exactPID/group及自有scratch归还。保守toolwall计315+249=564ms/40s CLOSED，余不转；regularlogs非双EOF、无独立outerwall。旧Arc browser身份P2见[root原审](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-timing-cleanup-review-20261007.json)，修后caller待审不冒browserPASS。
+
+2026-10-07T21:45:12.092738+00:00：[root 2b2f](../../docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/root-arc-owned-root-cleanup-final-review-20261007.json)限定接受最终e744 parent/7FS，P2 CLOSED/0blocking；207source/worker/capture不变。实际browser仍NOT_RUN、等待经理独立窗口；本段code/checks停止，仅正常seal与≤64KiB归档尾。

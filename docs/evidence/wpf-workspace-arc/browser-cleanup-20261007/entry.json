@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T21:42:35.491527+00:00",
+  "packet": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w",
+  "parent": {
+    "path": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w/run.py",
+    "bytes": 13757,
+    "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+  },
+  "diff": {
+    "path": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w/run.py.diff",
+    "bytes": 11780,
+    "sha256": "1f2de3ef3b939a151b21598d832829927743a64a7f4f5e98b796cc1d5a7a9238"
+  },
+  "oldPacketUnmodified": "/private/tmp/arc-browser-7e911-xdme2rv7",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "executionHead": "Final clean metadata bound in private execution-binding after seal",
+  "unchanged": "207 source/43 external/33 resolver; worker/capture byte identical",
+  "localEvidence": "final/raw-manifest.json",
+  "localSegment": "local-segment.json",
+  "browser": "NOT_GRANTED_NOT_RUN",
+  "review": {
+    "decision": "APPROVED_P2_CLOSED_SCOPED_CALLER_AND_PURE_FS",
+    "path": "root-arc-owned-root-cleanup-final-review-20261007.json",
+    "sha256": "2b2f3d2dbabc87900799748d5dc7826ad1de7a1070657a6d3578610e05655a1d",
+    "browser": "NOT_GRANTED_NOT_RUN"
+  },
+  "runtimeInputs": "binding source paths/hash preserved; original candidate floor is historical hard minimum until manager fresh budget binding",
+  "evidenceLimit": "regular file logs, no dualEOF or independently instrumented outer wall, no arbitrary hostile concurrency claim",
+  "manifestAtSourceReview": {
+    "path": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w/manifest.json",
+    "bytes": 2605,
+    "sha256": "2e7fdc8ec1f62151afca531c5f74d152f004d77546a0503943899782c5e37239"
+  },
+  "finalManifestPath": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w/manifest.json",
+  "routineBinding": {
+    "executionHead": "Bind actual final clean metadata after seal",
+    "historicalCandidateFloor": 19199819776,
+    "meaning": "Historical complete global combination, not an inherent incremental cost of this browser packet",
+    "admission": "Manager may rebind documented current complete sum and actual safety minimum at selection; owner does not lower physical protection threshold. No source/green rerun for documented data-only rebind.",
+    "fixed": "207 sources/43 externals; e744 parent; unchanged worker/capture;90s/60work30cleanup/256MiB scratch8MiB retained/1Chrome0PG2HTTP"
+  }
+}

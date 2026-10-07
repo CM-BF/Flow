@@ -1,0 +1,13 @@
+--- first-pureFS-204ff/run.py
++++ final-e744/run.py
+@@ -70,6 +70,10 @@
+  clear(chain[-1]['fd'])
+  guard()
+  os.rmdir('scratch',dir_fd=chain[-2]['fd'])
++ verify_owned_chain(chain[:-1])
++ try:os.stat('scratch',dir_fd=chain[-2]['fd'],follow_symlinks=False)
++ except FileNotFoundError:return
++ raise RuntimeError('scratch name reappeared; cleanup absence UNKNOWN')
+ 
+ root=pathlib.Path(__file__).parent;binding=json.loads((root/'binding.json').read_text());grant_path=pathlib.Path(sys.argv[1]);grant=json.loads(grant_path.read_text());assert grant.get('allowRun') is True and grant['bindingSha256']==hashlib.sha256((root/'binding.json').read_bytes()).hexdigest();assert datetime.datetime.fromisoformat(grant['expiresAt'].replace('Z','+00:00'))>datetime.datetime.now(datetime.timezone.utc);assert grant['totalMs']==90000 and grant['minimumFreeBytes']>=binding['limits']['minimumFreeBytes'];raw=root/'raw';scratch=root/'scratch';assert not raw.exists() and not scratch.exists();raw.mkdir(mode=0o700);scratch_owner=create_owned_scratch(root);scratch_removed=False;cache_owner=None;start=time.monotonic();errors=[];cleanup_errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None;dropped_bytes=0
+ 

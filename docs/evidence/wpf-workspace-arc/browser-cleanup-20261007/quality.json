@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T21:43:20.807362+00:00",
+  "scope": [
+    "private browser run.py owned-root cleanup",
+    "plans/wpf-workspace-arc",
+    "docs/evidence/wpf-workspace-arc/browser-cleanup-20261007"
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    }
+  ],
+  "method": "Reuse installed local skills; task/stack Python filesystem ownership and failure cleanup. No install/network. Keep one caller with held directory descriptors; no general supervisor or product abstraction. Test actual function AST, not a parallel implementation.",
+  "findingsFixed": [
+    "created scratch lacked identity/ancestor guards before rmtree",
+    "cleanup previously inferred scratchRemoved by current pathname; final owned rmdir now requires ancestor identity plus nofollow ENOENT",
+    "renamed old global stat variable to link_stat to avoid shadowing imported stat module"
+  ],
+  "reviewed": [
+    "meaningful owned_identity/verify/remove function responsibilities",
+    "all recursive operations are relative to retained FDs, no symlink traversal",
+    "group absence/exit/EOF/cleanup errors gate destructive cleanup",
+    "deadline/unknown abort remaining deletion; no falsely true scratchRemoved",
+    "cache parent ancestry and link identity/target guards",
+    "all207 source bindings and worker/capture unchanged"
+  ],
+  "unresolved": [
+    "actual browser four groups/two screenshots remain NOT_RUN",
+    "not proof of arbitrary hostile concurrent mutation atomicity"
+  ],
+  "local": "564ms cumulative closed; first6PASS and final7PASS preserved, no product green rerun",
+  "independentReview": "root-arc-owned-root-cleanup-final-review-20261007.json",
+  "sourceChecksSTOPAt": "2026-10-07T21:45:12.092738+00:00"
+}
