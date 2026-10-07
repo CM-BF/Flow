@@ -1,0 +1,25 @@
+{
+  "provenance": "faithful tool receipts in this conversation; process stdout/stderr kept separately",
+  "entries": [
+    {
+      "round": "first",
+      "startChunk": "fc7fe8",
+      "session_id": 78722,
+      "completionChunk": "d179b4",
+      "exit_code": 0,
+      "output": "{\"round\": \"first\", \"complete\": true, \"childExit\": 0, \"ownedState\": \"absent\", \"elapsedMs\": 967}\n"
+    },
+    {
+      "round": "repair",
+      "chunk_id": "03d00e",
+      "exit_code": 0,
+      "output": "{\"round\": \"repair\", \"complete\": true, \"childExit\": 0, \"ownedState\": \"absent\", \"elapsedMs\": 616}\n"
+    },
+    {
+      "round": "direct",
+      "chunk_id": "a0d66c",
+      "exit_code": 0,
+      "output": "[codex/personal-web-connection-lifecycle bad019d9] fix(svc08): preserve Web selection and unknown fences in full-start consumer\n 3 files changed, 18 insertions(+), 9 deletions(-)\n{\"round\": \"direct\", \"complete\": true, \"childExit\": 0, \"ownedState\": \"absent\", \"elapsedMs\": 699}\n"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "at": "2026-10-07T04:05:13.848533+00:00",
+  "source": "bad019d9691499bed69ae46b6c5d23944709cfe3",
+  "rounds": [
+    {
+      "round": "first",
+      "source": "2b02be30e637566e0f58d7317bb91949b0292935",
+      "selected": 8,
+      "passed": 8,
+      "newTests": 4,
+      "outerExit": 0,
+      "childExit": 0,
+      "elapsedMs": 967,
+      "rawBytes": 3557,
+      "group": 74177,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "ownedState": "absent",
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-_6fz3uwa",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "freshFreeBytes": 25849761792,
+      "fixturesRemoved": 8,
+      "largestTailFixtureBytes": 94533
+    },
+    {
+      "round": "repair",
+      "source": "d74f3be3eb8db1fc6adc8214df3b93ef612b82fc",
+      "selected": 3,
+      "passed": 3,
+      "newTests": 1,
+      "outerExit": 0,
+      "childExit": 0,
+      "elapsedMs": 616,
+      "rawBytes": 1442,
+      "group": 21524,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "ownedState": "absent",
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-dc9ef2ks",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "freshFreeBytes": 25855164416,
+      "fixturesRemoved": 3,
+      "largestTailFixtureBytes": 94982
+    },
+    {
+      "round": "direct",
+      "source": "bad019d9691499bed69ae46b6c5d23944709cfe3",
+      "selected": 3,
+      "passed": 3,
+      "newTests": 0,
+      "outerExit": 0,
+      "childExit": 0,
+      "elapsedMs": 699,
+      "rawBytes": 1423,
+      "group": 55849,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "ownedState": "absent",
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-uj_ydr_1",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "freshFreeBytes": 25857953792,
+      "fixturesRemoved": 3,
+      "largestTailFixtureBytes": 95353
+    }
+  ],
+  "selectedAcrossRounds": 14,
+  "distinct": 9,
+  "newDistinct": 5,
+  "oldDirectDistinct": 4,
+  "supervisedTotalMs": 2282,
+  "rawTotalBytes": 6422,
+  "budget": {
+    "totalSeconds": 90,
+    "privateAndRawBytes": 8388608,
+    "freshFloorBytes": 1107296256
+  },
+  "scope": [
+    "Real private FS, journal, lock, release validation; synthetic af51 state",
+    "Injected DB marker/process/runtime verifier; source-only copied eight-file host stand-in, not a built backend artifact",
+    "Existing six PG tests never selected",
+    "Last round strengthens two existing unknown tests with start/startServices direct guards, no new distinct count",
+    "Historical EPERM observations retained; final group absence and EOF separately checked",
+    "Complete result checkpoint precedes separate cleanup receipt"
+  ],
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "personalOperations": 0,
+  "artifactBuilds": 0,
+  "install": 0,
+  "remaining": [
+    "Actual sourceRepository/content/Node verification uses unchanged backendRuntime default, not exercised as full e5 artifact",
+    "Synthetic final unknown receipt models state rename before final fsync failure; not a real power-loss test",
+    "Real internal-service Web spawn/owned nonce/runtime from a complete artifact not run",
+    "e5 belongs to backend-release WT; a legitimate fixed Flow-source host artifact and deployment are still required"
+  ]
+}

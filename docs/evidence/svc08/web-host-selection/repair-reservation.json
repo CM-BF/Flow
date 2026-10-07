@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T04:03:06.955078+00:00",
+  "round": "repair",
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-selection-dc9ef2ks",
+  "scratchDev": 16777234,
+  "scratchIno": 123427919,
+  "freeBytes": 25855164416,
+  "sources": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 40949,
+      "sha256": "c3f97953175e1536c181cd5197ee3efd3aa29ffeb83baf7105bef6f259f38c17"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 51474,
+      "sha256": "3a42313207c580df94ebdbfa445642dfd3a1b3a3f8e1fd25e3967239f4f081ea"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 19576,
+      "sha256": "8d36f29d6035f8e756c0e2698437c551d3b85b7090c88fc65c9c5fcf9571c131"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "docs/evidence/svc08/web-host-selection/run-local.py",
+      "bytes": 4829,
+      "sha256": "da07a331bb9b3985e96c03c3f5a576d5042ca66e290b24fcede7b0c6e365eb0e"
+    }
+  ],
+  "selectedPlanned": 3,
+  "selection": "SVC08 host selection (final receipt unknown|pending failure)|SVC08 replace-host preserves legacy af51",
+  "legacyPgNotSelected": 6,
+  "rawBytesMax": 262144,
+  "tmpBytesMax": 8388608,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "policy": {
+    "work": 20,
+    "term": 0.5,
+    "reap": 2,
+    "parent": 24.5
+  }
+}

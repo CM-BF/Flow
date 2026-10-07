@@ -9,3 +9,5 @@
 部署缺口：e5产物sourceRepository是backend-release WT，不能用于个人config.repository=Flow；仅真实宿主smoke输入。合法个人Web宿主产物须从固定Flow来源构建并保真实性，本片不构建/安装/部署。八文件摘要不替代完整产物验证或固定动态依赖边界。
 
 验证一个本队普通local段≤90s/8MiB，0PG/Chrome/provider/真实服务；借用原OPS14与已装依赖。注入runtime端口只证明角色选择、pending与失败组合，不能替代真实artifact内容/Node身份验证。实际产物/个人操作后继开放。
+
+直接caller：bootstrap/publish/rollback、start/startServices均读同一未结算journal，最终state已保存但回执unknown仍拒绝；正常全start为Web复用serviceRuntime选择，center/runner仍原runtime。host授权在role=web且选中artifact时要求当前模块根精确相同，旧repo不能冒作新artifact wrapper。

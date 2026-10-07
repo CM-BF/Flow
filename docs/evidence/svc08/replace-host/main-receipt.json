@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-10-07T04:05:13.848533+00:00",
+  "source": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+  "main": "2f18dfe92f795e566f7779d67ebea2f556254e2a",
+  "bindings": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 39332,
+      "sha256": "247d89af6b70ecbabb9f574265d4c1c4b49411b51f1f5e4dc08d56722073c34e"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 43313,
+      "sha256": "e82691c7b2f9bf9b76ffe2dde4995a3756a4d17fbebabf6fc1f0ee35632333ec"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 18324,
+      "sha256": "84358e3347c2f294ba521f8e070b548785e9590e36f3eeee164a738733946741"
+    }
+  ],
+  "intakeSource": "Execution Lead fixed main/origin receipt; owner checked those four fixed Git blobs, not moving branch/working selector",
+  "noNewTests": true,
+  "personalDeployment": "NOT_RUN"
+}

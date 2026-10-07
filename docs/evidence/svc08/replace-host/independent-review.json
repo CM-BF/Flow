@@ -1,0 +1,167 @@
+{
+  "reviewedAt": "2026-10-07T03:58:42.481446+00:00",
+  "reviewer": "astra_ultra_execution_lead/assignment_review",
+  "author": "native_center_owner",
+  "decision": "APPROVED_LIMITED_SAME_LOCK_WEB_HOST_REPLACEMENT",
+  "target": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+  "delivery": "5752970d5d34af3cecd57535dffb15ff3a820073",
+  "comparisonBase": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+  "cleanAndPushedObserved": true,
+  "scope": [
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/cli.mjs",
+    "tools/personal-preview/README.md"
+  ],
+  "manifest": {
+    "path": "docs/evidence/svc08/replace-host/manifest.json",
+    "sha256": "9486b7953dce240a3bbb5701fc3bc1185d008d72d0aa3ba3fdaa5660a7d313f1",
+    "bindings": 54,
+    "allFixedCurrentBytesHashAndBlobMatch": true,
+    "counts": {
+      "product": 4,
+      "protected": 19,
+      "evidence": 28,
+      "metadata": 3
+    }
+  },
+  "reviewBindings": {
+    "path": "/tmp/flow-svc08-replace-host-review-bindings.json",
+    "bytes": 25848,
+    "sha256": "faef6828aca50b0bce91b221e30d1e633db047e86b93a69ec8d1609553c8f3c9"
+  },
+  "findings": [],
+  "P1": 0,
+  "P2": 0,
+  "checks": [
+    {
+      "area": "Strict authority and existing lock",
+      "locations": [
+        "preview.mjs:393-400",
+        "preview.mjs:430-471",
+        "cli.mjs:26-31"
+      ],
+      "conclusion": "Exact request keys and digests; explicit interruption consent; no caller executable/ref/env authority. Existing load, installation identity, marker, backend ownership and operation.lock precede CAS and first durable journal."
+    },
+    {
+      "area": "All retained assets and exact report binding",
+      "locations": [
+        "preview.mjs:456-468",
+        "web-release.mjs:105-129"
+      ],
+      "conclusion": "Version, pointer bytes, old Web record, release backend and current compatibility ID are fixed; loadReleaseAssets validates each precise retained report and all artifact bytes plus namespace/retention budget before any stop. The original red case is retained and the final reuse fix closes it."
+    },
+    {
+      "area": "Durable intent, process lifecycle and unknown",
+      "locations": [
+        "preview.mjs:376-427",
+        "preview.mjs:470-488",
+        "process.mjs:36-63"
+      ],
+      "conclusion": "Exclusive 0600/fsync+directory-sync journal precedes signals. Stopped must be confirmed using the existing nonce/group helper. Pending Web record and later identity are durably written. Unknown stop/spawn/persistence never automatically restarts or signals another role; previous pending/unknown blocks changed operation ID. Same-body replay only observes, with no repeat stop/spawn."
+    },
+    {
+      "area": "Protected state and default consumers",
+      "locations": [
+        "preview.mjs:324-339",
+        "preview.mjs:402-415",
+        "preview.mjs:475-483",
+        "preview.mjs:496-544"
+      ],
+      "conclusion": "The replacement changes only Web process identity and webHost source metadata. Config, optional profile/maintenance and release-pointer bytes plus remaining state are checked unchanged. Existing bootstrap/publish/rollback defaults still use original marker/process/save paths; their six original PG cases were not rerun. No center/runner stop port is called by this flow."
+    },
+    {
+      "area": "Bounded source identity and deployment limit",
+      "locations": [
+        "preview.mjs:340-371",
+        "README.md:137-143",
+        "docs/evidence/svc08/replace-host/interface.md"
+      ],
+      "conclusion": "Eight bounded host files distinguish legacy versus selected backend artifact, with before/after digests. This is a byte record, not directory immutability or full lazy dependency proof. Real deployment needs its own fixed source/runtime and compatibility inputs; existing e5 sourceRepository=backend-release cannot be substituted for personal Flow."
+    }
+  ],
+  "evidence": {
+    "distinctCases": 10,
+    "executionCount": 13,
+    "passedExecutions": 12,
+    "failedExecutions": 1,
+    "rounds": [
+      {
+        "label": "first",
+        "selected": 9,
+        "exit": 0,
+        "ms": 1113,
+        "rawBytes": 3991,
+        "sourceBindingsMatch": true,
+        "rawOutputMatches": true,
+        "fixtureCount": 9,
+        "allFixturesCleaned": true,
+        "ownedState": "absent",
+        "EOF": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "label": "repair",
+        "selected": 1,
+        "exit": 1,
+        "ms": 265,
+        "rawBytes": 1638,
+        "sourceBindingsMatch": true,
+        "rawOutputMatches": true,
+        "fixtureCount": 1,
+        "allFixturesCleaned": true,
+        "ownedState": "absent",
+        "EOF": {
+          "stdout": true,
+          "stderr": true
+        }
+      },
+      {
+        "label": "direct",
+        "selected": 3,
+        "exit": 0,
+        "ms": 366,
+        "rawBytes": 1412,
+        "sourceBindingsMatch": true,
+        "rawOutputMatches": true,
+        "fixtureCount": 3,
+        "allFixturesCleaned": true,
+        "ownedState": "absent",
+        "EOF": {
+          "stdout": true,
+          "stderr": true
+        }
+      }
+    ],
+    "elapsedMsSum": 1744,
+    "rawBytesSum": 7041,
+    "cleanup": "13 private fixtures and three outer scratch directories recorded removed; three final owned states absent and both EOF complete. Original intermediate unknown/EPERM and red exit1 remain unchanged. Red fixture bytes0 is absent tail measurement, not zero peak. No new process/port probes performed.",
+    "externalRuntimeBindings": "Two listed pg8.23.1 manifest/entry paths, realpaths, bytes and hashes verified. Not a transitive dependency proof."
+  },
+  "notApproved": [
+    "Real personal deployment or one-shot operation",
+    "Long-term connection stability or personal 64-CLOSED root cause",
+    "Independent Web backend-artifact selector or retained3 retirement",
+    "Full PG/service/browser lifecycle or compatibility validation",
+    "Whole author branch merge; scope is only four product paths and their records"
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "imports": 0,
+    "PG": 0,
+    "services": 0,
+    "provider": 0,
+    "projectMutations": 0
+  },
+  "methods": {
+    "localSkills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Reused local review methods: authority and lifecycle ownership, interface ordering, failure preservation, single shared validator, bounded data, direct-consumer scope. No installation."
+  }
+}
