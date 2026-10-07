@@ -29,7 +29,7 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 
 2026-10-06 W1已独审并集成main30b；Goal Owner确定下一最小对照为1进程声明capacity4/12任务，capacity1/16暂缓，ACK/browser各2保留。只准备新入口/预算检查，独审后申请≤30秒独立窗口，仍base115b与原总预算。
 
-以下各带时间的阶段记录是当时的历史判断；当前 idle 已交付、A/B 未运行及 S01P07 已main接收的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
+以下各带时间的阶段记录是当时的历史判断；当前 idle/A/B 已交付并main接收、S01P07 已main接收的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
 
 ## S01-06 最小 slot 调度建议（2026-10-06 07:46 UTC，只读提案）
 
@@ -122,3 +122,7 @@ S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候�
 A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗口及独审现已完成，见下方当前记录；不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。本S01架构影响仍仅实验观察；S01P07已将main0aa1d033架构target交Execution Lead更新，关联见本status。
 
 2026-10-07 A/B实际已在唯一窗口完成并归还，固定结果`914cb63824f614223b62153c770186e9d46d586e`及报告见唯一status；2026-10-07T06:09:46Z结果独审通过（0 P1/P2），[接收入口](../../docs/evidence/s01/mixed-ab-run/READY.md)已READY、main仍待真实回执；无一致延迟收益结论，原S01-04/05/06验收和未完成TODO保持，不因本局部结果改完整plan完成。
+
+## S01-04 / S01-06 连接等待与聊天响应设计（2026-10-07T12:16:51Z开工）
+
+沿原六TODO推进[最小方法设计](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)：先在固定main4fdd同负载下对照逐query IPC与中心有界累积，保留pool/SQL/同步节奏；真实conversation轻读与四cancel取用户结果。原数据只证明观察到排队，不将不同分母quantile相减归因。设计列出当前v2领取观测适配缺口、独立生命周期/预算与后继直接验证。两侧128活动fixture加各1合成聊天setup，总258task，是新的未开放预算；旧A/B256/原raw不改。当前DESIGN_READY/NOT_OPEN，不运行实验、不安装、不改产品。ACK/browser/native和完整S01仍开放。

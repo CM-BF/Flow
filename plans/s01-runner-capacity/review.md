@@ -1,5 +1,11 @@
 # S01 独立审查
 
+## 当前：连接等待方法设计
+
+状态：PENDING；范围仅 [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md) 与本轮plan/status，固定提交后交chatui01_owner只读审。新实验NOT_OPEN，0工程执行。以下A/B批准是独立历史结果，已main f2ccb673接收，不继承到新设计。
+
+## 已交付A/B结果独审
+
 状态：APPROVED（仅本次固定事件写入A/B结果忠实性；0 P1/P2，不代表main接收）
 Review target commit: `914cb63824f614223b62153c770186e9d46d586e`
 

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:58:07.672Z |
+| 最近更新 | 2026-10-07T12:24:20.957Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T11:08:24.990292+00:00（接收回执at；固定main f2ccb673已核） |
@@ -17,19 +17,19 @@
 | 工作基线 / HEAD | 结果 914cb63824f614223b62153c770186e9d46d586e；execution b75f1a2e250556265a24c825860e8549705b98cf；A/B固定历史生产输入见结果报告；当前metadata HEAD由Git读取 |
 | 工作树dirty状态 | 本段仅本status管理更新；source/raw/result manifests不变，提交后实际dirty由Git核对。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASS：唯一A/B各128fixture任务/attempt/session，全部清理通过；仅本次真实实验，不与旧64准备/128/idle合并 |
+| 检查状态 | 本段仅原始证据只读重算与metadata校验，0工程检查；历史A/B各128 fixture PASS保持，不与新设计合并。 |
 | 已集成main状态 / HEAD | INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2：本次A/B及idle结果证据已接收；历史mixed/S01P07接收保持。非新的产品性能或provider验收。 |
 | 实现目标 | 914cb63824f614223b62153c770186e9d46d586e |
 | 实现范围 | docs/evidence/s01/mixed-ab-run/A/journals.json, docs/evidence/s01/mixed-ab-run/A/observations.json, docs/evidence/s01/mixed-ab-run/A/owned-resources.json, docs/evidence/s01/mixed-ab-run/A/reservation.json, docs/evidence/s01/mixed-ab-run/A/result.json, docs/evidence/s01/mixed-ab-run/B/journals.json, docs/evidence/s01/mixed-ab-run/B/observations.json, docs/evidence/s01/mixed-ab-run/B/owned-resources.json, docs/evidence/s01/mixed-ab-run/B/reservation.json, docs/evidence/s01/mixed-ab-run/B/result.json, docs/evidence/s01/mixed-ab-run/analyze.py, docs/evidence/s01/mixed-ab-run/cli-and-time.txt, docs/evidence/s01/mixed-ab-run/comparison.json, docs/evidence/s01/mixed-ab-run/inputs.json, docs/evidence/s01/mixed-ab-run/outer-tool-receipt.json, docs/evidence/s01/mixed-ab-run/report.md, docs/evidence/s01/mixed-ab-run/reservation.json, docs/evidence/s01/mixed-ab-run/result.json, docs/evidence/s01/mixed-ab-run/result-manifest.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | A/B与空闲领取测量已接入主线；SQL调用减少，但没有一致延迟收益，原始结果与限制保留。 |
-| 下一可用交付 | 本片段已交付；完整容量、ACK/browser与真实provider验收仍按原计划另行协调，不扩大本次测量。 |
+| 当前产出 | 已固定下一测量设计：先比较两种观察方式，再决定是否需要错峰对照；原测量与已接收成果保持不变。 |
+| 下一可用交付 | 独立审查最小设计后，准备真实聊天轻读与取消测量；运行需另行协调，当前没有新实验。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 914cb63824f614223b62153c770186e9d46d586e；db_transaction_owner / gpt-6-astra，2026-10-07T06:09:46Z，0 P1/P2；仅固定A/B结果忠实性，见result-review.json |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T11:55:56.215937Z只读CLI核owner/WT/branch/全部范围保持。 |
+| Review | 新连接等待方法设计 PENDING；历史A/B结果914cb638独审APPROVED及main接收不变，不继承到本设计。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:16:51.374748Z只读CLI核owner/WT/branch/全部5范围保持。 |
 | 架构影响 | 本片只增加实验观察与证据，不改产品 Interface、FSM、数据库连接或外部依赖边界；无需更新产品架构图。S01P07已main0aa1d033，新增v2领取机会/runner自身份/持久日志语义，仍单admission loop无新scheduler；其权威status已登记架构图target/Execution Lead待更新，本树不代写图 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -114,3 +114,11 @@ Dashboard唯一来源仍为本WT/codex/runner-capacity-probe的status，当前me
 2026-10-07T11:58:07.672Z 本次唯一dashboard GET：2026-10-07T11:57:32.188787Z开始，11:57:41.468964Z返回HTTP200/3,154,680B/9.277s；generatedAt=2026-10-07T11:57:28.584Z。S01 source.mode=live/path=/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/plans/s01-runner-capacity/status.md/modifiedAt=2026-10-07T11:57:14.845Z/syncedAt=2026-10-07T11:57:28.584Z/stale=false；git.branch=codex/runner-capacity-probe、head=2ba8a79712de35973a144b4aa1701616240b5c4d、dirty=true/changedFiles=1、observedAt=2026-10-07T11:57:31.504Z。这是本轮status尚未提交时的真实观察；读到本片段delivered、blocker=none和正确主线产出摘要，NOT_COMPLETED及开放TODO均保留。此后追加记录/提交未再GET，不冒称最终metadata HEAD已同步、UI渲染或全计划验收。未保存完整响应，不补造hash或第二状态源。
 
 主线parseStatus复用blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4，本轮errors=[]/human.missing=[]、parent/co-lead正确；S01仅历史开工UNKNOWN提示保留，LAZY timing无提示。此次API发现LAZY旧实现范围分号未被literal解析、旧main字段名未识别；同轮仅修为逗号和既有标准主线字段，由最终本地parser复核，不重新GET。0工程测试/PG/清理。
+
+## 2026-10-07T12:16:51Z 连接等待归因设计段
+
+本段实际开工取工具UTC；开段HEAD db673572d1d93e06a0172c94988ec5751458ec04 = origin、clean，fresh claim508f v2/all5身份匹配。仅原计划和方法设计，15分钟以内/新增≤2MiB，0工程测试/PG/provider/新观察器运行；不改pool、SQL、原raw或实验source。已接收片段的main/review事实保持，原任务开工UNKNOWN不变。下一实验NOT_OPEN，设计固定后独立只读审查。
+
+2026-10-07T12:24:20.957Z 设计固定前质量核：复用本地find-skills/brainstorming/codebase-design/固定clean-code，按真实计时范围、Module所有权、取消/unknown和字节/时间上界核对；新设计只在本scope [pool-wait-design.md](../../docs/evidence/s01/mixed-ab-preparation/pool-wait-design.md)。GO分组数据已只读重算一致；不将quantile相减，不把acquisition冒纯queue，不把IPC phase冒共同6秒。明确现driver对当前v2 claim的观测缺口；设计READY不等实现READY。原raw/source与六TODO三完成三开放保持，原A/B预算不为本方法设计重算。Dashboard沿本文件聚合，最近成功观察仍11:57:28.584Z/旧metadata，未重复GET或宣称本设计已同步。
+
+2026-10-07T12:24:20.957Z 本地状态解析：errors=[]、human.missing=[]、implementation.errors=[]，父FLOW-001/co-lead mika正确；仅原任务开工UNKNOWN提示保持。本轮未新请求dashboard，设计source与旧结果分开，未运行工程检查。
