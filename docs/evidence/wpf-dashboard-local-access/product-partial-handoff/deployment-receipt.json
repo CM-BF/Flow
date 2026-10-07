@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T04:04:16.630273+00:00",
+  "oldPid": 43188,
+  "oldConfirmedAbsent": true,
+  "newPid": 61730,
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+  "source": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+  "port": 4320,
+  "log": "/tmp/flow-dashboard-access185-20261007.log",
+  "explicitLocalInstallation": true,
+  "bindingContainsToken": false,
+  "tokenRead": false,
+  "tabsReloaded": 0,
+  "personalChanges": 0,
+  "metadataStatus": 200,
+  "metadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "rootStatus": 200,
+  "htmlSha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+  "personalMetadataHashesUnchanged": true,
+  "personalProcessIdentitiesUnchanged": true,
+  "privateReadCheck": {
+    "at": "2026-10-07T04:08:05.046062+00:00",
+    "httpStatus": 200,
+    "noStore": true,
+    "matchesOriginalTokenInMemory": true,
+    "tokenStoredOrPrinted": false,
+    "clipboardChanged": false,
+    "productLogin": false
+  },
+  "browser": {
+    "at": "2026-10-07T04:08:05.046556+00:00",
+    "surface": "IAB temporary tab 5",
+    "observed": [
+      "Connect to Flow link 61228",
+      "Center URL blank, /api proxy instruction",
+      "Local credential dialog enabled; token not auto-loaded",
+      "Load button enabled; password/display/copy/clear disabled before load",
+      "185 sources and start/completion/elapsed fields rendered"
+    ],
+    "tokenLoadedInBrowser": false,
+    "temporaryTabClosed": true,
+    "existingTabsReloaded": 0,
+    "browserSnapshotObservedAt": "2026-10-07T04:06:23Z",
+    "claim": "actual deployed dashboard, not product login or clipboard acceptance"
+  },
+  "goalOwnerUIObservation": {
+    "source": "Goal Owner direct observation reported to Execution Lead, 2026-10-07 after deployment",
+    "observer": "root",
+    "surface": "existing IAB 4320 tab, user-facing acceptance",
+    "observed": [
+      "Open Flow and local credential entry enabled",
+      "default empty",
+      "explicit load returned masked token",
+      "Copy displayed copied",
+      "close reset credential state to not loaded"
+    ],
+    "tokenPrinted": false,
+    "clipboardRead": false,
+    "productLogin": false,
+    "productMessageSent": false,
+    "productTabReloaded": false,
+    "note": "Clipboard now contains user-requested owner token; value omitted. Separate observer and surface from Execution Lead temporary-tab check."
+  }
+}

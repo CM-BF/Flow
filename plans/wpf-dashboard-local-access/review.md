@@ -73,3 +73,9 @@ Root于03:55:16.359510Z完成固定366a组合审查，26第四次原件/归档/G
 原366a/08ec/3c0源审与35/5实证、三失败及37077/余22923完整保留；本段0runtime，主线/真实安装/发布未验。Intake只更新组合target和README blob/hash、当前Interface及本批owner记录。
 
 主线接收补充（root转Lead）：原366/12已进入451bf2，owner只读固定blob核同；README537仍待单文件增量接收。新组合批准不冒主线已含README修正；部署/真实安装仍待原Lead完成回执。
+
+## 2026-10-07 08:02:04 UTC — 部分范围交回与实际部署来源
+
+固定main8c92七产品/test源逐字等获审537与本树；实际启用归因原operator/GO回执，不复测或读取token。原claim57735经currentv1 CAS到v2，仅保README与ownplan/evidence三scope，七scope已停写移出；完整批准target537/exact12与原35/5不变，README增量仍待main。见[部分移交原件](../../docs/evidence/wpf-dashboard-local-access/product-partial-handoff/index.json)。
+
+本地find-skills/clean-code沿已读方法检查事实来源、当前/历史措辞、责任边界与范围；修正已发布但旧status仍称未验收据的陈旧表述，无产品/测试/parser运行。读取公开管理receipt不含token值；未把移出scope当另一owner已take，未把入口可用当已登录/发消息。

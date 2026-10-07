@@ -25,3 +25,9 @@
 2026-10-07 04:03:48 UTC README窄修clean-code：当前可执行Interface文档必须匹配实际导出，不能用historical解释过时签名。只改README专测段，准确说明35/5已过及fake边界；职责仍是caller拥有freshChrome/profile/预算/真实退出，fixture只接明确移交context并关闭HTTP/context。Root独立P2 CLOSED；其他11scope、101原raw逐hash未变。无产品/测试执行、不扩错误处理或运行框架，主线与真实部署未验。
 
 2026-10-07 04:07:24 UTC 元数据clean-code：无阻塞枚举必须完整等于NONE，说明文字放到下一交付/风险，不能让自由文本破坏现有small Interface。不改parser；用当前main固定纯解析模块只读当前status，保target537/exact12与所有原证据。此为metadata检查，不计产品测试/实际部署通过。
+
+## 2026-10-07 08:02:04 UTC — clean-code / metadata安全点
+
+固定main8c92七产品/test源逐字等获审537与本树；实际启用归因原operator/GO回执，不复测或读取token。原claim57735经currentv1 CAS到v2，仅保README与ownplan/evidence三scope，七scope已停写移出；完整批准target537/exact12与原35/5不变，README增量仍待main。见[部分移交原件](product-partial-handoff/index.json)。
+
+本地find-skills/clean-code沿已读方法检查事实来源、当前/历史措辞、责任边界与范围；修正已发布但旧status仍称未验收据的陈旧表述，无产品/测试/parser运行。读取公开管理receipt不含token值；未把移出scope当另一owner已take，未把入口可用当已登录/发消息。
