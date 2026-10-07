@@ -1,0 +1,17 @@
+{
+  "taskId": "X01-TRUSTED-PROCESS-HOST01",
+  "parent": "X01",
+  "parentPlan": "plans/x01-plugin-management/plan.md",
+  "trace": [
+    "X01-04",
+    "X01-05",
+    "X01-07"
+  ],
+  "coLead": "Mika",
+  "owner": "db_transaction_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+  "branch": "codex/plugin-trusted-process-host",
+  "statusPath": "plans/x01-trusted-process-host/status.md",
+  "registration": "PENDING_ORIGINAL_LEAD",
+  "scope": "Design and interface only; no product implementation or execution authorized"
+}

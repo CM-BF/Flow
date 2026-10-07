@@ -1,0 +1,48 @@
+# X01-TRUSTED-PROCESS-HOST01 状态
+
+| 字段 | 值 |
+| --- | --- |
+| 任务ID | X01-TRUSTED-PROCESS-HOST01 |
+| 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
+| co-lead | Mika |
+| 单一status owner / model | db_transaction_owner / gpt-6-astra |
+| 工作分支状态 | in-progress |
+| 阶段 | M2 |
+| 优先级 | 3 |
+| 本片段交付阶段 | planning |
+| 当前产出 | 已形成受信插件独立进程的接口与验收计划，等待只读审查。 |
+| 下一可用交付 | 可独立审查的执行接口、发布接线与验收范围；尚不执行插件。 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
+| Branch | codex/plugin-trusted-process-host |
+| Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
+| HEAD | 4fdd856293a502209d7509ea37da901bbfd89f72 |
+| 工作树dirty状态 | 本scope新计划与证据，0产品变化 |
+| 实现目标 | UNKNOWN |
+| 实现范围 | plans/x01-trusted-process-host/plan.md,docs/evidence/x01-trusted-process-host/interface.md |
+| 检查状态 | NOT_RUN design-only；0工程tests/PG/provider/服务 |
+| Review | PENDING_FIXED_PLAN_REVIEW |
+| 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
+| 最近更新时间 | 2026-10-07T12:46:04.451Z |
+| 任务开工时间 | 2026-10-07T12:38:43Z |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
+| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v1 ACTIVE/2，仅plan/evidence |
+
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| X01TP-01 | completed | db_transaction_owner | 固定main4fdd与Node24.20.0输入 |
+| X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
+| X01TP-03 | pending | db_transaction_owner | 独立计划审查；之后由Mika决定产品片 |
+
+当前授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
+
+| 时间事件 | UTC / 来源 |
+| --- | --- |
+| 实际开工 | 2026-10-07T12:38:43Z / owner clock |
+| 分支交付 | UNKNOWN |
+| 独立审查 | NOT_STARTED |
+| 主线集成 | NOT_INTEGRATED |
+| 部署 | NOT_DEPLOYED |
+| 完整完成 | NOT_COMPLETED |

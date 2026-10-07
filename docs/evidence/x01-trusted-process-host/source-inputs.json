@@ -1,0 +1,98 @@
+{
+  "sourceCommit": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "readMethod": "git show fixed object; no source materialization/import",
+  "nodeObserved": "v24.20.0",
+  "nodeCommand": "/opt/homebrew/opt/node@24/bin/node --version",
+  "files": [
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.test.ts",
+      "bytes": 16489,
+      "sha256": "b290c966c55d3c169416bd81f7e2529dd75d24436c061657dca6f29106baddcd"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 4841,
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 21786,
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 7555,
+      "sha256": "f8c4c3d73ec2fec24f59b85e6b890cd900d01a8fb7b22be59abd713d8303e7fd"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 3710,
+      "sha256": "e64fff552e2ea225c739fb8af21db25726b5b05e5573fd6f2ec16a26c3964c60"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "path": "packages/plugin-runtime/src/private-configuration.ts",
+      "bytes": 1256,
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 48201,
+      "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4145,
+      "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2"
+    }
+  ],
+  "totalBytes": 168222,
+  "officialDocumentation": [
+    "https://nodejs.org/download/release/v24.20.0/docs/api/child_process.html",
+    "https://nodejs.org/download/release/v24.20.0/docs/api/permissions.html"
+  ]
+}
