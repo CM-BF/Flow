@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 最多三pane布局与保护源码/局部已审；第三HTTP同轮两项通过。browser历次0/4→1/4→1/4分别保留，当前仅layout-navigation通过，未完成四组/双图。 |
-| 下一可用交付 | 原owner固定URL分类修正与必要局部反例，经窄审形成新候选；真实browser另选新窗口，779就绪优先。 |
-| 当前阻塞 | ACTIVE: 新body观察器未锚真实API路径，将4个Vite模块GET误计，three-pane初始0断言失败；six-flight/material未到。新修正仅测试分类，保unexpected/duplicate真实API拒绝，不改产品/超时、不复用旧90s。 |
+| 当前产出 | 三pane布局与保护源码/局部已审，第三HTTP同轮两项通过；浏览器历次失败保留。开发模块误计已修，12纯检查与相关类型通过，新四组/双图待实际。 |
+| 下一可用交付 | a322 已审候选在 Context 实际归还后运行一次四组/双图；桌面阶段图独立保留。现网页779/v4已发布，不再等待发布修复。 |
+| 当前阻塞 | ACTIVE: 原浏览器未完成四组，源码修正已审且已停写，正在排真实验收窗口；不将局部通过当产品整体通过。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |
@@ -65,3 +65,5 @@ GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先�
 当前Arc原owner已c34dv2 exact18，App/session两叶合法移交context；剩余输入固定且稳定composer父级不变。新增[可访问性检查点](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)仅收敛原tab/close/resize与隐藏生命周期验收，不增加框架、依赖或未规划collapse功能；实验性示例不当上线模板。首次最多三个pane、两条stream lease按完整有限batch FIFO轮转与六个显式正文flight边界不变。
 
 当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）。首browser0/4、0PNG/12808ms CLOSED；旧876入口候选未运行，后继d034补wiring并实际1/4、0PNG/50944ms CLOSED，22:29:52精确ownedRETURN。parent closure UNKNOWN/worker result null与raw context/httpClosed true分层保留，Chrome两流EOF false不改。历史e611已封；新两test测量c1db/最终ebcd已获源准备审并全18STOP，fa06 types3494限定PASS、c1db补充types在资源准入前0child拒绝。新90s四组/双图仍READY_NOT_GRANTED，见[计划设计](plan.md)。来源沿子task唯一status，不合成整体PASS。
+
+23:47 管理更新：原子领取仍 c34d v2 exact18，交付 a322 双端 clean/STOP，测试源码 e621。3715ms局部账闭合；实际浏览器待新独立许可。CSS隔离/顶部导航插件slot后继已进入同一 plan TODO，当前候选不改。

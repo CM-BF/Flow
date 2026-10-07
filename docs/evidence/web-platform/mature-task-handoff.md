@@ -1,21 +1,22 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T23:33:16.629Z：actual空，唯一NEXT `SVC06B-E15-WEB779-PUBLICATION-20261007-ONCE` 给Original/assignment_review原operator。fixed6491/dd6dd、锁修包83dcde0b（20517B/21bindings）已独审；冻结完整floor 12,240,683,008B，latest初次START 2026-10-07T23:37:16.629Z。按原recipe7392bb先transfer779，仅确认成功才CAS d629/v3→779/v4；两OPS14各30s+0.5TERM+2reap/只读PG≤1/0Chrome/provider/task/reload/服务stop，512MiB+2MiB新增一次，live1GiB/固有2.5GiB不降。e15/880060健康三role保持，旧04FAIL/EOF未知与4MiB仍保。只填既有许可资源/ready/inputhash字段，同调用fresh一次；未知停不重试。ContextREADY排其RETURN后，Arc/VAR仅已计普通源段。**
+**即时调度 2026-10-07T23:47:50.495Z：Context已实际START 23:47:02.152215Z，run context-history-234701-b66e19，outer96729/parent3136；fresh17,881,026,560≥冻结11,911,692,288B，PG88≥29且预检poolclosed，固定输入/claimv3exact8/remote clean齐。唯一90s窗口运行，终态与精确RETURN分别记录，不自动重试。旧缺父目录的capture失败已23:42:23RETURN并保留，原capture不改。Arc a322与VAR e33排归还后。**
 
+**Context紧前修正 2026-10-07T23:41:56.064Z：** 首次只读precheck误比D04 `ACTIVE`/实际 `active`，0业务/PG/namespace/gate/env。经理已明确允许同一未消费选择内仅修两处真实schema字面值（本claim与其他active冲突筛选），原STOP保留，fixed parent/capture/product不变；一次same-call fresh接续，原floor/latest23:45:13.079不变，非自动runtime重试。
 **Original 同ID防重派提醒：** FLOW-001 `T04-DEPENDENCY-READ-01` 在main7cbcf04仍pending/未领取的旧文案应在唯一父metadata安全点改为 GDEP4511/b01已审SOURCE_STOP待main；沿 `GDEP01MainIntake` 四叶接收与原status路径，不新派任务或复跑PG。
 **个人准入来源：** 最终548490/00dcd已独审通过，准备基线16,913,137,664B加本次512MiB+2MiB共538,968,064B，形成已消费17,452,105,728B；live1GiB保护不另重复计。22:15:59.699选择、22:17:23.713320实际启动，历史准备/gate不改。
 
-**Original/native可立即接收新四报告：** e15/880060配固定461a/caa1/d629/779与原policy的四份正式报告已[root实际限定独审APPROVED](host-i01-newpair-queue-20261007/release-e15-actual-result-review.json)（13917B/SHA2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad）。[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json)含四canonical报告路径/ID/16checks和两产物descriptor；入口已含实际批准（17583B/SHA905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186），W01已fixed b4222f7660a8e4a176285ff154c82afd95ba3d98 remoteclean/all4STOP正式交付；不需再测或等另一准备审。cold81fa3974限定结果独审同已通过。首次个人恢复已导入e15与四报告、rebind身份拒绝未写并活动RETURN；后继R2六phase实际成功并23:07:45.970561控制RETURN、accepting24；当前779未发布，不把兼容PASS或恢复通过当网页已切换。
+**Original/native可立即接收新四报告：** e15/880060配固定461a/caa1/d629/779与原policy的四份正式报告已[root实际限定独审APPROVED](host-i01-newpair-queue-20261007/release-e15-actual-result-review.json)（13917B/SHA2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad）。[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json)含四canonical报告路径/ID/16checks和两产物descriptor；入口已含实际批准（17583B/SHA905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186），W01已fixed b4222f7660a8e4a176285ff154c82afd95ba3d98 remoteclean/all4STOP正式交付；不需再测或等另一准备审。cold81fa3974限定结果独审同已通过。首次个人恢复已导入e15与四报告、rebind身份拒绝未写并活动RETURN；后继R2六phase实际成功并23:07:45.970561控制RETURN、accepting24；后继779已23:35发布为v4并23:36:06完整RETURN，完整聊天验收仍分开。
 
 **公开center后继已合法领取并源封存：** Mika/db 的 CENTER-WIRING daf9316f v1 ACTIVE6/独立树成立，f440e53d2源与局部独审封存，实际VAR依赖仍开；原仅猜未登记writer的HOLD已撤。旧16MiB池已全STOP归零，不可续用；D05同源登记待Original唯一writer回执。
 
 **Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取，其权威source已随D05三来源211登记；不与个人恢复抢写。
 
-**普通源边界：** Arc c34dv2 exact18，第三浏览器失败已972a封存，新的10min/4MiB只修测试URL分类。Context25d7v3 exact8已3655源码STOP，原23:29:09截止内仅≤64KiB审查归档；不因准备包产生actual许可。Mika client79ea已审封存、新4MiB及旧16MiB池均已归零；VAR新实际与2MiB结果seal另列。App/session双基线未组合验收。
+**普通源边界：** Arc c34dv2 exact18/source e621/final a322 全STOP；Context25d7v3 exact8/source ed5/tests ffd/final0c8b 全STOP，本次只派已审挂载候选。Mika AV main回执新3MiB已计入当前完整组合，fresh后仅metadata；VAR e33 READY未运行。App/session双基线未组合验收。
 
-**候选顺序：** 唯一NEXT是页首779两阶段发布，尚未START。Context挂载0c8b准备独审齐，排此RETURN后；Arc4MiB分类源码正在实施，VAR3MiB预检修正已syntax通过待独审/封存，两者无实际许可；K01在已有Web/VAR实际后继排队。
+**候选顺序：** 当前唯一选择见页首Context新dispatch；Arc a322与VAR e33均已审SOURCE_STOP/READY，排其精确RETURN后，K01后继。779已发布归还，不是当前前置。
 
-**未来增长对账：** 已证旧cd27/2515构建各2,317,352,960B去future后，residual仍8,806,203,392 UNKNOWN并保原DB未知。当前779选择冻结完整12,240,683,008B；新增512MiB+2MiB只计一次，固有2.5GiB/live1GiB不降。Context尾与Mika AV client已STOP去future；Arc新4MiB、VAR新3MiB和Original锁修旧4MiB未知仍列。健康个人R2旧538MiB及两旧ordinary9,568,256各尚待原owner精确分类。历史gate/失败/KEEP不改。
+**未来增长对账：** 原旧cd27/2515未来build峰值已各按固定无writer事实分类，residual仍8,806,203,392 UNKNOWN；当前精确组合见双current，旧frozen gates保留。Arc普通4MiB及779发布538,968,064B已据各作者最终STOP前向关闭，KEEP不删。个人R2旧538MiB、两旧ordinary各9,568,256B及04未知4MiB仍保守。
 
 **Original 单叶写权交接请求（不阻779）：** Mika23:32:53 main84c25bd fresh仍只有REQUEST；X01-RUNTIME后继仅需runtime/config/tests，已审client/execution不再重做。请原95fv8 assignment owner对 `apps/runner/src/runtime.ts` 立即给具体remaining-write/解除条件，或STOP→原version原子amend只移除此literal并回receipt；后继凭真实receipt再新WT/freshclaim。此写权交接独立于779资料/部署，不阻当前已选发布；闲worker不能自行受控main接收，须Original明确唯一integration权责。
 
@@ -380,3 +381,5 @@ MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-r
 
 
 **FLOW既有O12-05待领取登记：** GO新增持续目标Web会话已在本组唯一plan两层TODO与[固定研究](host-i01-newpair-queue-20261007/continuous-goal-web-research.json)落地，归FLOW-001 REQ01/22/O12-05；请原ExecutionLead下一自然父plan/status/index/dashboard批标“待领取”并引用，保持同一权威来源，不新同义大task或手填第二status。排当前恢复/Arc/context/成熟聊天后，插件新枝前；本组未建WT/take/运行。
+
+**Original 接收/部署分层（23:47）：** main97353e4f4已接AV center/client15文件，未进入当前固定 e15/880060 + Web779/v4部署。GDEP4511四叶已审待原Original接收并同步FLOW同ID；PROCESS configuration两叶23:42:42永久STOP但未amend，runtime仍95fv8，不能从STOP猜已交权。

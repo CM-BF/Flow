@@ -166,3 +166,10 @@ Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-plat
 ### 既有Arc阶段视觉证据（2026-10-07 GO补充）
 
 归本计划01/03/05与MATURE01视觉验收。正式App可见且实际pane布局稳定后，尽早保存桌面阶段画面到独立observations文件；用可见UI与pane判断ready，不等待常驻SSE的networkidle。后续失败也保留该阶段图，供桌面布局、美学与密度独立复核。原四组断言、最终390浅深两张完整通过条件、失败结果与PNG/raw总上限不变；早图不算完整PASS、不增常驻preview或单独截图审批。只改下一合法测试源包，不原地改已消费冻结包。
+
+### 当前导航边界的后继 TODO（2026-10-07 23:47）
+
+- [ ] MATURE05-01/03：依据[固定 CSS 隔离研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-workspace-css-isolation-research.json)，Arc 导航与右侧 task tabs 共用全局 `flow-workspace-tabs`，两边 gap/padding/button/flex 规则可交叉匹配。源码冲突已确认，视觉影响未观测；下一合法源码段为 Arc 使用独立命名空间，验右侧 tab 打开前后布局。当前 a322 冻结候选不改、不另建任务。
+- [ ] MATURE05/REQ22–23：顶部 WorkspaceTabs 只有 layout/onSelect/onAdd/onClose，缺少 renderActions/AppSlot；PaneTabs 已有 renderActions。现 `workspace.tabs` 是右侧 task 面板，不能代替 Arc 导航扩展点。后继沿原 host 声明独立 slot、准确 workspaceId 上下文与权限，不硬编码外部按钮；当前只是 root 固定 a322 只读研究，尚未领取/实施。
+
+URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-classifier-source-review.json)：12 pure 与 affected types 通过，保守3715ms CLOSED。a322 全18范围 STOP，新四组/两张末态图和独立桌面 observation 尚未运行；旧 c1db 同轮1/4失败、0PNG/9145ms保留。

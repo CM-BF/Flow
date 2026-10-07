@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T23:42:23.203219+00:00",
+  "state": "CAPTURE_PRESPAWN_FAILED_RETURNED_NO_BROWSER_RUNTIME",
+  "run": "context-history-234148-b70fb8",
+  "captureExit": 1,
+  "failure": "FileNotFoundError output.mkdir: prepared actual parent directory absent",
+  "captureStartedNodeParent": false,
+  "browserRuntimeStarted": false,
+  "ChromeStarted": false,
+  "markedDatabaseCreated": false,
+  "PGpreflight": {
+    "pid": 93796,
+    "group": 93796,
+    "exit": 0,
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "groupState": "ESRCH",
+    "max": 100,
+    "used": 9,
+    "reserved": 3,
+    "available": 88,
+    "poolClosed": true
+  },
+  "freshPGidentity": [
+    {
+      "kind": "pid",
+      "id": 93796,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 93796,
+      "state": "ESRCH"
+    }
+  ],
+  "adminInputDeleted": true,
+  "adminInputIdentity": {
+    "path": "/private/tmp/context-history-browser-20261007/admission-context-history-234148-b70fb8/admin.env",
+    "dev": 16777234,
+    "ino": 124641299,
+    "uid": 501,
+    "mode": 33152,
+    "nlink": 1,
+    "bytes": 84,
+    "sourceBlobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+    "field": "adminUrl"
+  },
+  "gateConsumedByBrowserParent": false,
+  "outputAbsent": true,
+  "actualParentAbsent": true,
+  "phaseBudgetConsumedMs": 0,
+  "phaseBudgetNote": "No browser parent spawned. Preflight/capture failure elapsed not measured by started outer collector; not represented as a successful attempt. No credit transfer or retry authorization inferred.",
+  "capturePID": "NOT_RECORDED_BEFORE_START",
+  "captureToolTerminal": "tool exec process exit1; tool stream completed",
+  "retry": false
+}

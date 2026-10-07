@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-07T23:42:18.144643+00:00",
+  "author": "root / Astra Ultra read-only research",
+  "task": "Existing WPF-MATURE-05 / WPF-WORKSPACEARC01; no new task or claim",
+  "source": "a32224b5b757c8f75003235b5ab00c8afbf0f785",
+  "state": "CONFIRMED_SHARED_SELECTOR_VISUAL_EFFECT_NOT_OBSERVED",
+  "finding": {
+    "summary": "Arc workspace navigation and the right-side Files/Terminal tablist use the same global flow-workspace-tabs class with separate component-specific rules.",
+    "references": [
+      {
+        "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+        "line": 18,
+        "fact": "Arc navigation outer div uses flow-workspace-tabs."
+      },
+      {
+        "path": "apps/web/src/workspace-layout/layout.css",
+        "line": 1,
+        "fact": "Global selector adds gap .5rem, border-bottom, padding .4rem .75rem; descendant buttons get min sizes, radius and padding."
+      },
+      {
+        "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+        "line": 138,
+        "fact": "Right-side workspace tablist uses identical class."
+      },
+      {
+        "path": "apps/web/src/components/workspace/workspace.css",
+        "line": 11,
+        "fact": "Global selector sets flex:1 and overflow-x:auto for right-side tablist; these also match Arc top bar."
+      },
+      {
+        "path": "apps/web/src/App.tsx",
+        "line": 77,
+        "fact": "App statically imports Arc layout.css; WorkspacePanels imports its own workspace.css at line6."
+      }
+    ],
+    "assessment": "Selectors overlap regardless of which bundle is loaded first. Property effect and layout severity need mounted observation; no screenshot or computed-style proof claimed. Plugin-local style activation should not restyle unrelated host navigation."
+  },
+  "boundedFollowup": {
+    "owner": "Existing workspace_panels_owner; manager dispatch only after current fixed candidate/window boundaries",
+    "proposal": "At next existing visual/source work segment, give Arc workspace navigation its own namespaced class and scope its descendants; leave the right-side panel contract/classes and public extension slots intact. Do not rewrite all theme or workspace APIs.",
+    "acceptance": [
+      "Observe Arc bar height/padding before and after opening the existing right-side Files/Terminal panel; opening a plugin panel must not inflate or restyle navigation.",
+      "Check right-side tab chrome and focus ring remain usable, plus 390px overflow and both themes using the planned screenshots.",
+      "Preserve same-slot plugin actions and resource authority; no new backend/contract or feature claim."
+    ],
+    "currentCandidate": "Do not mutate e621/207-pin candidate silently; its classifier review remains valid for test source. Current Context window remains unchanged. Incorporate after an explicit normal owner source handoff."
+  },
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Checked naming ownership and coupling between independent components; use a narrow component-owned selector rather than higher-specificity overrides or !important.",
+    "unverified": "Mounted visual severity and runtime CSS insertion order not observed."
+  },
+  "pins": [
+    {
+      "path": "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "bytes": 3280,
+      "sha256": "7cc73e7134012504adedf69ba79ba2640961612487c3b768164f8c5e47c1e79a"
+    },
+    {
+      "path": "apps/web/src/workspace-layout/layout.css",
+      "bytes": 2011,
+      "sha256": "81ab0360f6e3c234bab4e697af97600b50f1ffeb0505b42029cffb6ef48d40f8"
+    },
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861"
+    },
+    {
+      "path": "apps/web/src/components/workspace/workspace.css",
+      "bytes": 4589,
+      "sha256": "d80feabd1adb22a093ce7deade50a3667e44987ab6ab55e8805959a703774fa4"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    }
+  ],
+  "runtimeRuns": 0
+}
