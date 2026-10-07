@@ -1,0 +1,172 @@
+{
+  "acceptedAt": "2026-10-07T10:53:57.636073+00:00",
+  "baseMain": "6571056455be3e4289f162041746420246ac2db4",
+  "task": "X01",
+  "kind": "acceptance-evidence-only",
+  "result": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+  "packet": "ea642cff46412d5097c798e01636e1d8a3c5bd59",
+  "approvedBy": "chatui01_owner at 2026-10-07T10:42:21Z; 0P1/P2",
+  "manifestSha256": "1850251d8b44972c4b97c5f9d05bbcf60ae746a71f765a8b6b4fda1cb7e9165c",
+  "reviewedBindings": 23,
+  "reviewedBytes": 237516,
+  "bindings": [
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-acceptance-ready.json",
+      "mode": "100644",
+      "bytes": 1120,
+      "sha256": "fa71349c9addc17aac9b89b26ea16ef67f2cbd6468eb4d9ad320c1b25a96599b"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-result-manifest.json",
+      "mode": "100644",
+      "bytes": 8113,
+      "sha256": "1850251d8b44972c4b97c5f9d05bbcf60ae746a71f765a8b6b4fda1cb7e9165c"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-result-ready.md",
+      "mode": "100644",
+      "bytes": 1470,
+      "sha256": "a76c578ed3ea2b42aea31641d9352cc5bb6e90ac0d367127d7a8756b7d0b18d6"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-independent-review.json",
+      "mode": "100644",
+      "bytes": 1476,
+      "sha256": "0812e7e2dbc7d859766eaada1107053f21457a93f759820df32f6de5d5cfe3d0"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-owner-close.json",
+      "mode": "100644",
+      "bytes": 4095,
+      "sha256": "8498a0803da0f5676d65c7099ec36c90ee85c97461713f8a39ffb5ceaf3580a7"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-tool.json",
+      "mode": "100644",
+      "bytes": 1917,
+      "sha256": "f1f1f7be1ef3a07f129e0d533f461677a4274eaf81e49a2406c18243798f328a"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/acceptance-gap-20261007.md",
+      "mode": "100644",
+      "bytes": 8812,
+      "sha256": "89f42d6ecffc1edeef6171dacb442974db992691b383fbd8cc1e3bf2d1642531"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/admission.json",
+      "mode": "100644",
+      "bytes": 4268,
+      "sha256": "6c308ef17857acccfd17e9b036981027e8f5e99e65ee50744d945744f8d978c6"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/bootstrap-center.log",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/launch.json",
+      "mode": "100644",
+      "bytes": 188,
+      "sha256": "9364bc94aa3595d74286f7f6b373bec3099a2bddbbdeddeb63eee2023db71830"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/output.log",
+      "mode": "100644",
+      "bytes": 113,
+      "sha256": "2ede231fb1c14057ac5ec7457d4bd9bd7ad845125dcd31719a8e1215677836f3"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/preflight.stdout",
+      "mode": "100644",
+      "bytes": 289,
+      "sha256": "325557db821b7590f864f0df227bff90d6dadb27a08b2e89f30abc9fa2921092"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/reservation.json",
+      "mode": "100644",
+      "bytes": 283,
+      "sha256": "90c34060f5537f81771d81d2632715725ed416a21b2d65250ac62af2a4ad2016"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/result.json",
+      "mode": "100644",
+      "bytes": 15495,
+      "sha256": "522d9fdaba03d5ea4d7c4ba5adb0071f7b08460f144b233dcd786bd9c108aa4f"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runner-first.log",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runner-second.log",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-create-request.json",
+      "mode": "100644",
+      "bytes": 353,
+      "sha256": "a4b3762caf5b892becd94e589416b1e2ccfcd416e65a21ff5bb695ab56655d6e"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-created.json",
+      "mode": "100644",
+      "bytes": 402,
+      "sha256": "33368f2d44abeb42f6c5380441a556944f605a6fac0c9d0e9540bee4f7d34aba"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-reservation.json",
+      "mode": "100644",
+      "bytes": 450,
+      "sha256": "a6ee19fdbf4d051a8853bbc0903b0975dcc7bc8cc76fb799c93cd93cca5a4533"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-result.json",
+      "mode": "100644",
+      "bytes": 7986,
+      "sha256": "f84fd764f1aa85d1aee4b2e2cc2e91eba75b9208ee69fe5faac896364117f071"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/trusted-center.log",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "commit": "ab5a5c02f8706ade04e8f5f7c74e4a4e376664a9",
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/vitest.json",
+      "mode": "100644",
+      "bytes": 1061,
+      "sha256": "096a7fcdc437e6bc3a1c702259d26916a09d4731c068ddc39eb8862872cb54b5"
+    }
+  ],
+  "productDelta": [],
+  "resultScope": "One selected real two-center/two-runner process journey and six in-process management CLI calls; semver -1/+1, clean post-ACK restart. Resources returned. Full X01/unknown effects/UI not accepted.",
+  "preparedSourcePolicy": "Prepared test, source and 350 inputs remain accessible in fixed e6bfab16/902b85c4/997f commits; no source snapshot copied or active candidate files overlaid. Original result manifest references commit/path/blob/size/hash.",
+  "integrationChecks": "Fixed manifest hash+size for all23 objects; preserved approved limits and current product blobs. 0 repeated tests/PG/provider."
+}

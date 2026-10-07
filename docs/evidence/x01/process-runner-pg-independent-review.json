@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T10:42:21Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "resultCommit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+  "packet": "ea642cff46412d5097c798e01636e1d8a3c5bd59",
+  "manifestSha256": "1850251d8b44972c4b97c5f9d05bbcf60ae746a71f765a8b6b4fda1cb7e9165c",
+  "bindings": 23,
+  "bindingBytes": 237516,
+  "runToolCloseBytes": 36900,
+  "preparedBindingsUnchanged": 350,
+  "result": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "pending": 0,
+    "actualMainProcesses": 4,
+    "managementCalls": 6,
+    "semverResults": [
+      "-1",
+      "1"
+    ],
+    "cleanPostAckRestart": true
+  },
+  "confirmed": [
+    "same marked DB identity/0 connections/ordinary DROP/absence",
+    "four main exit0/nullsignal/EOF and two supervised groups absent",
+    "three lifetime listeners closed",
+    "exact own TMP absence per original owner receipt",
+    "independent before-save and post-save delivery timing",
+    "full conservative floor applied before spawn"
+  ],
+  "notExpanded": [
+    "arbitrary crash/unknown side-effect recovery",
+    "management CLI OS process",
+    "UI/TUI lifecycle",
+    "third-party isolation",
+    "complete X01",
+    "model/provider behavior"
+  ],
+  "preservedUnknowns": [
+    "historical EPERM observations",
+    "runner total HTTP/response bytes",
+    "active peak",
+    "physical DB/WAL bytes",
+    "tool wait not whole window"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "window": "f460b2a085614987a8e09b6acf99d112",
+  "sourceHead": "4949118f2101b902582cdfd744a68d0e8d29f45f",
+  "suite": "runtime",
+  "database": "flow_x01_bf9b129e60e343afa08e40af20e00a7f",
+  "facts": [
+    {
+      "kind": "tar",
+      "pid": 28418,
+      "exitCode": 0,
+      "signal": null
+    },
+    {
+      "kind": "clean-post-ACK-restart",
+      "firstTask": "bfc0907a-1434-4b41-b010-b5acc406f6eb",
+      "secondTask": "b51dd6f9-6810-4e42-a6d0-10eb010df54a",
+      "firstAttempt": "846fcbaa-7685-4654-a821-d761111a714e",
+      "secondAttempt": "92a51572-bc41-47c9-ba78-91bcf5585bf6",
+      "firstEventsUnchanged": true,
+      "firstPhasesUnchanged": true,
+      "samePinnedMaterial": true,
+      "secondArtifact": "1",
+      "unknownSideEffectsRecoveryProven": false
+    },
+    {
+      "kind": "real-public-semver",
+      "taskId": "bfc0907a-1434-4b41-b010-b5acc406f6eb",
+      "binding": {
+        "protocol": "flow.plugin-runtime.v1",
+        "bindingId": "37ddab56-4191-4280-9ab2-abb9f9871e7a",
+        "invocationId": "971068bc-fb97-4b8d-86ce-3afe192a275d",
+        "taskId": "bfc0907a-1434-4b41-b010-b5acc406f6eb",
+        "registrationId": "ed578443-dd9b-4a95-98a0-1ee70f3c6761",
+        "registrationRevision": 3,
+        "versionId": "c5a85840-194c-4c12-b649-88c813c4134e",
+        "scope": {
+          "workspaceId": "personal",
+          "projectId": null
+        },
+        "materialInstallOperationId": "dfae7dd7-063c-4887-aa3c-de6b20acf1a3",
+        "targetRunnerId": "cce0e580-ab62-4c26-a901-65bbf115450d",
+        "storeId": "x01-public-semver",
+        "materialId": "9d146e525c8330a5c9fbad16de756ed7b0a7e903e0630b2cf45ca5172f5c09c8",
+        "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+        "hostApiMajor": 1,
+        "artifact": {
+          "artifactId": "b29ebe2d-dccb-40e5-ad98-99df3a151157",
+          "name": "flow-semver-compare",
+          "version": "1.0.0",
+          "integrity": "sha512-P+WPl/P0wXs2bB/MDS4qQdFVRQNn8nvU2LOwVZEK2m9hr31gLqPB4poQx9v+eS7Gi6ClTI0cM3Q5EsFcc4j7KQ==",
+          "bytes": 5212,
+          "sha256": "3d67116cbf4452145c64ec0acac2fe22b950536a6ec9358e08136cf6aa45c544"
+        },
+        "configuration": {},
+        "inputDigest": "c56208bf91ce6b2319f2da8e854976ecc9469d2140151d06e06d39718ef1cd34",
+        "createdAt": "2026-10-07T10:38:48.060Z"
+      },
+      "material": {
+        "schemaVersion": 1,
+        "id": "dfae7dd7-063c-4887-aa3c-de6b20acf1a3",
+        "registrationId": "ed578443-dd9b-4a95-98a0-1ee70f3c6761",
+        "versionId": "c5a85840-194c-4c12-b649-88c813c4134e",
+        "admittedRevision": 1,
+        "fetchOperationId": "34531160-9c50-4022-b570-945076928859",
+        "fetchAttemptId": "f7173de9-0796-448a-bbad-c2a6ff275562",
+        "artifactId": "b29ebe2d-dccb-40e5-ad98-99df3a151157",
+        "storeId": "x01-public-semver",
+        "status": "installed",
+        "materialId": "9d146e525c8330a5c9fbad16de756ed7b0a7e903e0630b2cf45ca5172f5c09c8",
+        "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+        "hostApiMajor": 1,
+        "error": null,
+        "createdAt": "2026-10-07T10:38:47.332Z",
+        "updatedAt": "2026-10-07T10:38:47.383Z"
+      },
+      "phases": [
+        {
+          "phase": "invoke",
+          "attempt_id": "846fcbaa-7685-4654-a821-d761111a714e",
+          "owner_version": 1
+        },
+        {
+          "phase": "load",
+          "attempt_id": "846fcbaa-7685-4654-a821-d761111a714e",
+          "owner_version": 1
+        }
+      ],
+      "artifactContent": "-1",
+      "association": {
+        "artifactId": "plugin-971068bc-fb97-4b8d-86ce-3afe192a275d",
+        "artifactVersion": "1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464",
+        "pluginSource": {
+          "protocol": "flow.plugin-artifact.v1",
+          "bindingId": "37ddab56-4191-4280-9ab2-abb9f9871e7a",
+          "invocationId": "971068bc-fb97-4b8d-86ce-3afe192a275d",
+          "taskId": "bfc0907a-1434-4b41-b010-b5acc406f6eb",
+          "attemptId": "846fcbaa-7685-4654-a821-d761111a714e",
+          "ownerVersion": 1,
+          "installationId": "9d146e525c8330a5c9fbad16de756ed7b0a7e903e0630b2cf45ca5172f5c09c8",
+          "artifactId": "b29ebe2d-dccb-40e5-ad98-99df3a151157",
+          "artifactSha256": "3d67116cbf4452145c64ec0acac2fe22b950536a6ec9358e08136cf6aa45c544",
+          "treeDigest": "91915a2b310301338b2ba12f8cc1b8ba0b8024ded7d7a756f58dc81464c1dc4d",
+          "hostApiMajor": 1
+        }
+      },
+      "finalStatus": "succeeded",
+      "verificationStatus": "passed",
+      "upstream": "semver@7.8.5",
+      "wrapper": "flow-semver-compare@1.0.0",
+      "source": "fixed local npm composition served by owned loopback registry"
+    },
+    {
+      "kind": "process-traffic",
+      "registryRequests": 2,
+      "tarDownloads": 1,
+      "managementCalls": 6,
+      "runnerHttpActual": null,
+      "httpTheoreticalMaximum": 2048,
+      "responseBytesTheoreticalMaximum": 268435456,
+      "processes": [
+        {
+          "label": "bootstrap-center",
+          "pid": 28419,
+          "startedAt": "2026-10-07T10:38:44.164Z",
+          "exitCode": 0,
+          "signal": null,
+          "stdoutEof": true,
+          "stderrEof": true,
+          "closed": true,
+          "outputBytes": 0,
+          "terminationRequested": true,
+          "workDeadlineReached": false,
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "trusted-center",
+          "pid": 28492,
+          "startedAt": "2026-10-07T10:38:46.361Z",
+          "exitCode": 0,
+          "signal": null,
+          "stdoutEof": true,
+          "stderrEof": true,
+          "closed": true,
+          "outputBytes": 0,
+          "terminationRequested": true,
+          "workDeadlineReached": false,
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "runner-first",
+          "pid": 28494,
+          "startedAt": "2026-10-07T10:38:47.393Z",
+          "exitCode": 0,
+          "signal": null,
+          "stdoutEof": true,
+          "stderrEof": true,
+          "closed": true,
+          "outputBytes": 0,
+          "terminationRequested": true,
+          "workDeadlineReached": false,
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "runner-second",
+          "pid": 29109,
+          "startedAt": "2026-10-07T10:38:49.142Z",
+          "exitCode": 0,
+          "signal": null,
+          "stdoutEof": true,
+          "stderrEof": true,
+          "closed": true,
+          "outputBytes": 0,
+          "terminationRequested": true,
+          "workDeadlineReached": false,
+          "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "registry": true,
+      "runner": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1286138",
+      "owner": "flow",
+      "marker": "x01:f460b2a085614987a8e09b6acf99d112:runtime:a0d8ca91-5d71-4fe3-952a-cb3619e4297c"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:56450",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:56451",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:56451",
+      "closed": true
+    }
+  ],
+  "httpRequests": 38,
+  "responseBytes": 5381,
+  "workUntil": 1791369633184,
+  "cleanupUntil": 1791369693184,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T10:38:50.045Z"
+}

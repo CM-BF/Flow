@@ -1,0 +1,21 @@
+{
+  "state": "READY",
+  "kind": "acceptance-evidence-supplement",
+  "result": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+  "packet": "ea642cff46412d5097c798e01636e1d8a3c5bd59",
+  "preparedSource": "e6bfab16c1b783406729b0a4deb4f3c7e720446f",
+  "review": "docs/evidence/x01/process-runner-pg-independent-review.json",
+  "resultManifest": "docs/evidence/x01/process-runner-pg-result-manifest.json",
+  "resultManifestSha256": "1850251d8b44972c4b97c5f9d05bbcf60ae746a71f765a8b6b4fda1cb7e9165c",
+  "canonical": "docs/evidence/x01/process-runner-pg-result-ready.md",
+  "productDelta": [],
+  "mainProducts": {
+    "startup": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+    "management": "b67530bb",
+    "terminal": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a"
+  },
+  "meaning": "Associate reviewed actual two-entry and in-process management acceptance with already-main products; no full-file overlay or repeat PG required. Prepared new test/source and exact evidence remain in fixed commits.",
+  "resources": "CLOSED; 0PG/local/pending launch",
+  "wholeX01": "OPEN",
+  "gapMap": "docs/evidence/x01/acceptance-gap-20261007.md"
+}
