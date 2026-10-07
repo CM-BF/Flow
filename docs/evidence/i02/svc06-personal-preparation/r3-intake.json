@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T13:09:14.359906+00:00",
+  "target": "9491e03e9b27241c397b0f048cffa90dc0810ad9",
+  "canonicalWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+  "manifestPath": "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/result-manifest.json",
+  "manifestBytes": 3341,
+  "manifestSha256": "12e379a90b8d4eaa7d1db7fe63186e97b41d9050dff513b8d216d6b64d85bfbe",
+  "review": "r3-actual-review.json",
+  "originals": "Single canonical retained raw/source, fixed pushed Git target; no duplicate source/raw closure in this intake",
+  "managementRows": [
+    {
+      "path": "docs/quality/local-validation-svc06-personal-window-20261007.json",
+      "originCommit": "594e30781fe8011164ed7f4d2f34322849972fc2",
+      "bytes": 5799,
+      "sha256": "0ef6300f812b9ee1d3c9b387aa5d84aee5a13af60b2476b1085e6aa6e436eadb"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "originCommit": "594e30781fe8011164ed7f4d2f34322849972fc2",
+      "bytes": 37426,
+      "sha256": "39337d692f6a6de59e492e02b23d0cb29cc757ba231566c6e105a97706c8e0d3"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "originCommit": "594e30781fe8011164ed7f4d2f34322849972fc2",
+      "bytes": 102692,
+      "sha256": "d8336bcc9e5ee88a4f18fde0bbca408873f6eca6c1a969c24c38ff527ca2878b"
+    }
+  ]
+}
