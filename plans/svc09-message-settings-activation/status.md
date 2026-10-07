@@ -6,27 +6,27 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:38:40.299811Z |
+| 更新时间 | 2026-10-07T16:48:12.215106Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 双槽已完成隔离启动、维护和恢复，两类任务各被正确领取；最后混合断言失败，资源已停止并保留材料。 |
-| 下一可用交付 | 第三轮结果保真独审与最小SQL合同修复；完整旅程及个人激活仍未验。 |
-| 当前阻塞 | ACTIVE: 最后断言使用的任务ID类型与固定数据库定义不符；原运行只保存未知错误，需窄修和独审，禁止自动重投。 |
+| 当前产出 | 双槽生命周期与分别领取已有隔离实证；最后断言的类型错误已在调用方修复，新增局部检查通过。 |
+| 下一可用交付 | SQL合同修复及新一次性宿主候选的独审；完整旅程与个人激活仍未验。 |
+| 当前阻塞 | ACTIVE: 完整宿主旅程仍未通过；修复与新候选待独审及实际窗口，旧失败原因保持未知，不能自动重投。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 路径合同 source c6b9b084c350a631e8abeb910492fb2a858eee5a；R2 result 14f9baed0f7eca7fa9b0084402fb825cecd7ebd1。 |
+| Head | SQL/新候选source 9c73411578f2cf6552a8696511dc2af2402436da；R3 result42c181/delivery313418。 |
 | 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
-| 工作分支状态 | in-progress（产品已main停写；R3实际失败证据待审，后继SQL静态候选） |
+| 工作分支状态 | in-progress（产品已main停写；R3失败保真已独审，新caller差量待审） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | R3准备已独审main38ec8fd80；本次实际FAIL/RETURN/KEEP等待唯一结果审查。 |
+| Review | R3实际结果APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY，无P1/P2；I02 fixed17ac5917唯一原件。新SQL/R4准备待独审。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)已独审；source098b/artifact2515已生成；两次host失败保真已独审；路径合同/R3准备待审；完整host/个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)与三次host失败保真已独审；[SQL/R4局部](../../docs/evidence/svc09/message-settings-activation/host-integration/host-sql-contract-result.json)已固定待审；完整host/个人/双端/provider仍开放 |
 
 ## 等待记录
 
@@ -100,3 +100,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T16:33:21.000Z：R3准备唯一独审APPROVED/main38ec8fd80，原件`docs/evidence/i02/svc09a-host-r3-preparation-review.json`。fresh19执行/6runtime/2继承/17记录均符、claimv4/4artifact+2KEEP身份同，最新completefloor19363266560B/free20131233792B，PG100/11/89≥42且预检pool关闭。权威队列标签更新导致原prelaunch断言停止的记录保留；同一次未消费入口重核新标签后START，未生成第二旅程。actual结果待原固定operator收尾，旧KEEP不动。
 
 2026-10-07T16:38:40.299811Z：R3原件见[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-R3-RESULT.md)，原1次旅程与FAIL/KEEP完整保留。实际8generation完整生命周期、两类注入adapter正确领取、loop/journal关闭已存；最后SQL尚未给全程PASS。独立清理已停止全部实际generation，13 exact PID/组absent、库OID1334399连接[]/adminclose；16:36:44.486680Z归还窗口。静态识别末尾text任务ID对uuid[]不相容，实际SQLSTATE未保留，不追认首因。未修源、未重试。
+
+## SQL合同与R4候选差量
+
+2026-10-07T16:48:12.215106Z：R3唯一保真批准已正常引用I02 fixed17ac5917，不复制审查原件；原code:null/FAIL/DB及private KEEP不改。新source9c734115只修改own caller，实际SQL text[]/受控SQLSTATE与phase及新R4namespace。局部首次有来源时间16:44:03.206402Z；两轮8不同（5新+3受影响）全绿，256ms/raw1337B，双组absent/双EOF、两exact空scratch移除，16:46:53.482217Z RETURN。固定数据库原schema被真实查询port专测消费，未连接PG；原终态/身份/ACK与清理断言未删。旧三轮入口不复用，新候选只给差量pin并校验继承原R3准备，actual R4尚未启动/未预占。最初本次源码编辑UTC未独立保留，不用提交时间冒充工作起点。

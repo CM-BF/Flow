@@ -47,3 +47,9 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 ## R3实际结果待审
 
 2026-10-07T16:38:40.299811Z：准备源c6b9/delivery40e92获唯一APPROVED_FIXED_R3_HOST_PREPARATION/main38ec8fd80。实际一次outer150659ms失败，原UnknownError/code null保留；双槽生命周期/分别领取已保存，但最终SQL未通过。8generation停止、13 PID/组absent、DB连接[]与KEEP分开。结果包待唯一保真审查，不继承准备批准，不授权重投。
+
+## R3限定结果批准与SQL/R4新差量待审
+
+2026-10-07T16:48:12.215106Z：assignment唯一APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY/noP1P2，原件I02 fixed17ac5917 `docs/evidence/i02/svc09a-host-r3-result-review.json`（review16:41:56.399Z）；45原件+2继承/19执行+6runtime，原UnknownError/code:null、FAIL/KEEP与完整旅程未通过保持。只引用不复制。
+
+新source9c73411578f2cf6552a8696511dc2af2402436da：typed SQL/安全错误phase与SQLSTATE、R4固定新模式、校验继承pin。8不同分两轮全绿，256ms/1337B；只原5新+3受影响消费者，不重跑旧host/build。结果见host-sql-contract-result.json；新差量尚待独审，实际R4 NOT_RUN。

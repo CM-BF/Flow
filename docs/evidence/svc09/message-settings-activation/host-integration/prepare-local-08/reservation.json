@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T16:44:03.206402+00:00",
+  "argv": null,
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "--test-reporter=spec",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/mixed-query.test.mjs"
+    ]
+  ],
+  "freeBytes": 20078243840,
+  "runtimeBudgetSeconds": 10,
+  "rawBytesCap": 131072,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-prepare-eup0dxiw",
+  "dev": 16777234,
+  "ino": 124350872,
+  "pythonAST": "PASS",
+  "databaseSchema": {
+    "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+    "path": "apps/server/src/database.ts",
+    "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+  },
+  "inputs": [
+    {
+      "path": "mixed-runner.mjs",
+      "bytes": 7845,
+      "sha256": "6ca03fe106cea4c8443d24300166c26185216bb25f1acf2376d85bd983b96d81"
+    },
+    {
+      "path": "mixed-query.test.mjs",
+      "bytes": 2863,
+      "sha256": "c36254d779aca1dba8dba51e40a5b24b84c90346645a21c7ceb1688422e1ceec"
+    },
+    {
+      "path": "host-records.mjs",
+      "bytes": 3460,
+      "sha256": "3aa6a103886efedfe5cd1076855c1aef43178c4e3158fba66335554479160488"
+    },
+    {
+      "path": "host-fixture.mjs",
+      "bytes": 8739,
+      "sha256": "33756ec9e9f969b32e02ddc0f42c18046a11dcb062afd36333f62e6686b80a64"
+    },
+    {
+      "path": "prepare-run.py",
+      "bytes": 8076,
+      "sha256": "3e702d4ad93c638cece641086477fc802fa67e2084b2fe880b6dd82834e9b8b2"
+    }
+  ]
+}

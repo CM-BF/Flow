@@ -1,0 +1,12 @@
+✔ generated task IDs cross the actual final-query port with the fixed text schema (2.964708ms)
+✔ original PG SQLSTATE is retained with its operation without private error text (0.4415ms)
+✔ missing or malformed SQLSTATE stays unknown and never becomes an invented database cause (0.18175ms)
+✔ ordinary primary and cleanup diagnostics remain separate with their original phases (0.090167ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 51.862916

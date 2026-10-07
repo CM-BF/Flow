@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T16:46:53.320626+00:00",
+  "argv": null,
+  "commands": [
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "OperatorBoundary.test_attempt_arguments_bind_each_fixed_namespace_and_preparation",
+      "OperatorBoundary.test_unknown_or_user_supplied_attempt_paths_are_rejected_before_io",
+      "OperatorBoundary.test_consumed_operator_or_outer_namespace_refuses_reuse_without_touching_old_attempt",
+      "OperatorBoundary.test_delta_preparation_inherits_fixed_pins_without_dropping_or_adding_inputs"
+    ]
+  ],
+  "freeBytes": 20055318528,
+  "runtimeBudgetSeconds": 10,
+  "rawBytesCap": 131072,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-prepare-1cd6snzn",
+  "dev": 16777234,
+  "ino": 124351347,
+  "pythonAST": "PASS",
+  "databaseSchema": null,
+  "inputs": [
+    {
+      "path": "host-run.py",
+      "bytes": 9826,
+      "sha256": "9d8a51b17af3af26012ac871cc89b320634634fdc53c145adb84517d46ec5bb7"
+    },
+    {
+      "path": "host-supervise.py",
+      "bytes": 4578,
+      "sha256": "29e34c8ca8dbc065c95fa6795467efbb22102d5b2bff11cbd7fd7b27fa1a82a2"
+    },
+    {
+      "path": "host-supervise.test.py",
+      "bytes": 10773,
+      "sha256": "e03bce3f58db43bc9c176c5059e562cf9bb910763ddea64848fd0299f36099be"
+    },
+    {
+      "path": "prepare-run.py",
+      "bytes": 8365,
+      "sha256": "1bbc9f17210e1d1c45d0501583951e1caef4c0446bd30e4652074740076e4be6"
+    },
+    {
+      "path": "host-inputs.json",
+      "bytes": 6374,
+      "sha256": "fcfeeff4dcc58a070cf04b9938944ea0438d9df6a3eda44ded4249bbe8c355e9"
+    }
+  ]
+}

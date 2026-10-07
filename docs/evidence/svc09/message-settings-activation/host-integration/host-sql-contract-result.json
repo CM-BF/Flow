@@ -1,0 +1,125 @@
+{
+  "kind": "SVC09A_SQL_CONTRACT_AND_R4_PREPARATION_LOCAL_RESULT",
+  "at": "2026-10-07T16:48:12.215106Z",
+  "sourceTarget": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "observedAt": "2026-10-07T16:43:46.570Z",
+    "state": "active"
+  },
+  "scope": "Own experiment caller only; product and artifact unchanged",
+  "rounds": [
+    {
+      "directory": "prepare-local-08",
+      "source": "43de6a068142b2d3fa13715861e50dd0a7a68257",
+      "startedAt": "2026-10-07T16:44:03.206402+00:00",
+      "finishedAt": "2026-10-07T16:44:03.304885+00:00",
+      "newCases": 4,
+      "affectedCases": 0,
+      "selected": 4,
+      "passed": 4,
+      "exit": 0,
+      "elapsedMs": 96,
+      "rawBytes": 511,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "at": "2026-10-07T16:44:03.305513+00:00",
+        "state": "removed",
+        "scratch": "/private/tmp/flow-svc09a-prepare-eup0dxiw",
+        "dev": 16777234,
+        "ino": 124350872,
+        "remainingEntries": 0,
+        "ownedState": "absent",
+        "eof": [
+          {
+            "stdout": true,
+            "stderr": true
+          }
+        ]
+      }
+    },
+    {
+      "directory": "prepare-local-09",
+      "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+      "startedAt": "2026-10-07T16:46:53.320626+00:00",
+      "finishedAt": "2026-10-07T16:46:53.481646+00:00",
+      "newCases": 1,
+      "affectedCases": 3,
+      "selected": 4,
+      "passed": 4,
+      "exit": 0,
+      "elapsedMs": 160,
+      "rawBytes": 826,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "at": "2026-10-07T16:46:53.482217+00:00",
+        "state": "removed",
+        "scratch": "/private/tmp/flow-svc09a-prepare-1cd6snzn",
+        "dev": 16777234,
+        "ino": 124351347,
+        "remainingEntries": 0,
+        "ownedState": "absent",
+        "eof": [
+          {
+            "stdout": true,
+            "stderr": true
+          }
+        ]
+      }
+    }
+  ],
+  "distinctSelected": 8,
+  "newCases": 5,
+  "affectedCases": 3,
+  "selections": 8,
+  "passed": 8,
+  "elapsedMs": 256,
+  "rawBytes": 1337,
+  "groups": 2,
+  "runtimeReturnAt": "2026-10-07T16:46:53.482217Z",
+  "limits": {
+    "engineeringChildrenSeconds": 30,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072,
+    "PG": 0,
+    "host": 0,
+    "provider": 0,
+    "build": 0
+  },
+  "contract": {
+    "schemaSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+    "schemaPath": "apps/server/src/database.ts",
+    "schemaSHA256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+    "query": "Actual readMixedTaskRows uses text[] against fixed flow.tasks.id text, with generated IDs passed as one parameter array.",
+    "diagnostic": "Only exact mixed query wrapper exposes controlled phase/sourcePhase/name/code and five-character SQLSTATE. Missing/non-string/invalid code stays null. No error message/detail/environment/connection body persisted.",
+    "terminalAssertions": "Existing rows.length2/status succeeded/runnerId/submission/attemptId plus loop/journal assertions unchanged.",
+    "R3Cause": "NOT_RECOVERED; original UnknownError/code:null unchanged, no retrospective SQLSTATE assertion."
+  },
+  "R3Review": {
+    "state": "APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY",
+    "P1": 0,
+    "P2": 0,
+    "reviewAt": "2026-10-07T16:41:56.399Z",
+    "source": "I02/docs/evidence/i02/svc09a-host-r3-result-review.json",
+    "fixedRef": "17ac5917cfde1e5266dae5beed9d7d1fa997c54e",
+    "meaning": "Partial lifecycle/claims/failure/RETURN fidelity only; complete host not passed; DB/private KEEP."
+  },
+  "qualityReview": {
+    "at": "2026-10-07T16:48:12.215106Z",
+    "skills": [
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Actual query owns its typed SQL and error operation; recorder owns safe publication. No new supervisor/state machine, no product changes, no deleted terminal assertions. Fixed input inheritance replaces only named old pins and rejects unknown/duplicate/drop attempts."
+  },
+  "actualR4": "NOT_RUN; candidate only; no new actual permit/window."
+}

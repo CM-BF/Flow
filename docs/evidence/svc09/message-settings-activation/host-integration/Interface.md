@@ -78,3 +78,9 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 直接检查实际生成路径→三个消费者；3新路径例与3受影响namespace例最终均通过，7次选择，原夹具漏sourceHead失败保留。累计355ms/2361B、3组absent/双EOF、两个exact空scratch删除。旧33、host、build、PG未重跑。来源与原raw见[本轮结果](host-path-contract-result.json)。
 
 第三轮唯一候选改用`--run-host-r3-once`→`--execute-host-r3-once`，固定`host-outer-r3-once`/`actual-host-r3-once`及`host-preparation-r3.json`；R1/R2原入口仍拒已消费namespace。原215+.5+2外限、26+16连接、全部服务/DB unknown KEEP和无个人/provider界限未改。此候选没有actual许可或资源预约，必须在唯一独审后按最新完整合计floor重新协调一次实际窗口。前文原once入口与NOT_RUN为当时准备历史，不表示可重放R1/R2。
+
+## 2026-10-07T16:48:12.215106Z SQL observation / R4 delta
+
+`readMixedTaskRows(pool, taskIds)` owns the final parameterized text-ID SQL and wraps only that query failure. The existing recorder emits operation phase `mixed-final-task-query`, original source phase, controlled Error name/code and optional validated SQLSTATE; missing code remains null, error message/detail are never published. All original terminal/runner/submission/attempt/loop/journal assertions remain. R3 original unknown is immutable.
+
+R4 outer/inner arguments map only to `host-outer-r4-once` / `actual-host-r4-once`; all earlier consumed namespaces remain refused. Its preparation pins the original R3 packet by exact path/hash, substitutes only the named changed inputs and checks all 19 resulting execution pins plus the unchanged six runtime pins. No copied payload or second supervisor. Original 217.5s, resource limits and unknown/KEEP gates apply; review/fresh shared window are still required.
