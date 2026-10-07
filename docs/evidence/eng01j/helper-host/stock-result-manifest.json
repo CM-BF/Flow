@@ -1,0 +1,330 @@
+{
+  "task": "ENG01J-05-stock-one",
+  "callerSource": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+  "productSource": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "resultTarget": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+  "at": "2026-10-07T06:46:45.907487+00:00",
+  "bindings": [
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/checkpoint-before-cleanup.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 2913,
+      "sha256": "dd3ba674a009e9c827cf52320dee0d17b14a1ccb33da005424ca89f4778cf31e"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/file-facts.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 527,
+      "sha256": "e38bce417706ef8d1dd84c2f88a713ad2cae59a3b3bc27ea8391e5062b66eeb5"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/intent.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 583,
+      "sha256": "403a7d64fa05a025501bbc689dc4001ea4ba8235b5d7eaca044a2365b6a4a361"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/policy.sb",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 17971,
+      "sha256": "f57aaf9a414d4661d823d62f92461f6bf62d551be2d8cc970cce9b6c57e44066"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/prepare.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 515,
+      "sha256": "9581b49d38db15f5688cd4f24c6647c706ce69a4622b53aecf63051b4f98c152"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/prepare.stderr",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/prepare.stdout",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 199,
+      "sha256": "3e828cb2315f84f1bceb0c81d633ba2848b3b40caecb02978186cf19224522a4"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/prepared.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 1466,
+      "sha256": "7ed394d271c440b981249d2d23a419aefc35b1bf79b1eebeea79b5d5c83c8316"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/reservation.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 505,
+      "sha256": "9d11e9956555502d27f63cd5458afa59081712afede59317f706bc11cf019ed2"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/result.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 3005,
+      "sha256": "77f3c6f28fa296e4b9d37643ee70a49e9d3ef43603d7ac3dc2fc60bf4ce1ca9e"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/stock-intent.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 392,
+      "sha256": "ca31f3ab8967158b79f8a336f6f7709d9f29172427790994a6d0bfa851280d73"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/stock.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 513,
+      "sha256": "93a05060e01d2342cb45de62a72c2751d01c512a2a53cbca6f31e1bedb67b5ab"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/stock.stderr",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-run-once/stock.stdout",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "raw",
+      "bytes": 69,
+      "sha256": "c1b36b322eb0e7154c6c58de2b34f10e2d5e62a9c9aae5016ead819c0ed9548f"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-inputs-executed.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 6955,
+      "sha256": "ae3759eecc270748df73a5724a124987c2da4344dee3aff1e96491d0953607c3"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-inputs.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 7183,
+      "sha256": "d660019cab3ee0aea2a7833a99f1f46749eef93c35eeff3258095bc65654c6e0"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-result-analysis.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 2680,
+      "sha256": "4995e4e7721d147b66462c52b890f74c4f80a386a2c2b8883d3a09624cfa42a7"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-RESULT.md",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 2028,
+      "sha256": "77d367beffc8badcb3e9f69279633b137ce8649448103acdb5b7997afc38f671"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-claim-observation.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 1042,
+      "sha256": "a68ed71fcd2f3f9ae0b4724137962275c72ea59a1e24a5f0d536f551ac9d2ebb"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/caller-independent-review.json",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "result-input-or-analysis",
+      "bytes": 1935,
+      "sha256": "a6f7c41c65fc75dc98dc94aeb1f2ab0b15acfe0a7e60c67c6efdebf0c257847a"
+    },
+    {
+      "path": "plans/eng01j-native-write-authority/status.md",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "status-or-review",
+      "bytes": 10267,
+      "sha256": "efa6c73d8c1cc55b5c3cedd688d00ac9865a9c251bd97adb57351dc184ab1520"
+    },
+    {
+      "path": "plans/eng01j-native-write-authority/review.md",
+      "fixedRef": "4b97b3028f0c434c4183ca9140687f1cd4daeaab",
+      "role": "status-or-review",
+      "bytes": 3574,
+      "sha256": "ccdaefb7e273a6a1a1d9798e9faf324821e610ede73ce93434453a7f8d26404d"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/prepare-once.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 2527,
+      "sha256": "6233e0ba2d134523d3e7e0dc2266f3b7be24d9162f10e50d160cabd8076ed73c"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/stock-once.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 11028,
+      "sha256": "eba2caaeb8e5fb453faba0becbca8cb036589a1b6236c4427be96e6a1bfdf60a"
+    },
+    {
+      "path": "docs/evidence/eng01j/helper-host/startup-input.sb",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 17393,
+      "sha256": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf"
+    },
+    {
+      "path": "docs/evidence/eng01j/stock-helper/run.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 16449,
+      "sha256": "d037b8a0c0075ae0727150344ec714ed41753d3bb6a2465e30081a6b5db23ba7"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 11725,
+      "sha256": "a05b9f5be309d85934ef3e4014a6bbe2aa6844978dfd52f2ae58ee19a5cf3224"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 4288,
+      "sha256": "6c14b5ccfecbe2b70ab6861655e78bf1f1c78a7e766772a1632073e662b8f332"
+    },
+    {
+      "path": "package.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "tsconfig.json",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "fixedRef": "d44c1bc2c48f96145a519b64f9220baf468bdee8",
+      "role": "fixed-caller-input",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    }
+  ],
+  "installedBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "realpath": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+      "scope": "Exact sandbox launcher, also checked by host at preparation"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "realpath": "/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex",
+      "bytes": 222655232,
+      "sha256": "4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc",
+      "use": "Preparation hash only, never executed"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "use": "actual interpreter selected for old exec_only; standard library not exhaustively attested"
+    }
+  ],
+  "counts": {
+    "raw": 14,
+    "resultRecords": 8,
+    "fixedSourceInputs": 16,
+    "installedEntries": 6
+  },
+  "verification": "All fixed/current bytes/hash equal; prior22 execution input preserved byte-for-byte with its original hash.",
+  "resultScope": "One actual standalone helper request, no app-server/model/provider or all-writer authority.",
+  "review": "PENDING_RESULT_ONLY",
+  "unchangedProduct": "f15 four product paths unchanged; old C/R06 unchanged",
+  "outerExit": 0,
+  "runRawBytes": 268,
+  "runRecordBytes": 28658,
+  "cleanup": "Two owned groups absent/EOF, exact private root removed after checkpoint."
+}
