@@ -1,9 +1,9 @@
 # K01-06 诊断入口准备（当前）
 
 状态：NOT_STARTED
-Review target commit：8c5fa9682ad4551c6dd5f493b7144e6af9fa0ad9
+Review target commit：UNKNOWN
 
-本段新增experiments/knowledge-search，唯一pure child实际4/4通过，但OPS14首次UNKNOWN errno1使资源门禁HOLD；noEmit NOT_RUN/PG NOT_OPEN。原raw见docs/evidence/k01/query-entry-local/record.json。c2ed是下方历史设计批准，不覆盖新entry/lifecycle/measurement。Mika后续须核固定源码、实际纯检查与类型结果、18连接及factory timeout分界、生产SQL捕获、全部动态SQL输入、marked identity/丢ACK保留/OPS14 unknown门禁；尚不能申请实际PG。
+新独立段15:28:30–15:48:30正在修caller，7 caller用例/noEmit待执行，PG NOT_OPEN。前段source8c5fa与4/4 pure及原caller HOLD保留docs/evidence/k01/query-entry-local；db只读证明旧process已闭合，该后继判定不改原raw/旧TMP。c2ed是下方历史设计批准，不覆盖新entry/lifecycle/measurement。Mika后续须核固定源码、实际纯检查与类型结果、18连接及factory timeout分界、生产SQL捕获、全部动态SQL输入、marked identity/丢ACK保留/OPS14 unknown门禁；尚不能申请实际PG。
 
 # K01-06 查询计划诊断准备独立review
 
