@@ -94,3 +94,5 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 [7272共享附件投影发布影响HOLD](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json)是后到GO明确的现有验收约束；旧REQ19只读候选报告不自动排除此新缺口。需要固定可达性与最小共享修复证据，不把模块/文本通过扩成附件恢复通过，不新增批准链或临拼第三组合。
 
 [MSG第四实际失败与完整归还独审](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-fourth-failure-root-review.json)接受24raw与固定源/流/DB/四PID补观及17344ms计费，非材料组通过；cancel B持久A+B为P2，首pid键覆盖与第三fixtureUNKNOWN均保留。旧phase封闭，合法20scope后的最小消费者修复另核，不继承为浏览器已通过。
+
+[S01首次实际与活动资源归还](../../docs/evidence/web-platform/s01-first-actual-return-20261007/current.json)保O1 FAIL/O2 NOT_RUN、原UNKNOWN_RETAIN和两目录KEEP；运行组/专库归还不等全部文件删除或性能成功。MSG d576局部1selected/types通过只记录其范围，恢复held A后unmount源码P2未闭，不批准发布采用；原20s剩余与旧90s封账分别记录。

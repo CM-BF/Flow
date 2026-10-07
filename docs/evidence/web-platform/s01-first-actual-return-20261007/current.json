@@ -1,0 +1,109 @@
+{
+  "at": "2026-10-07T14:11:57.087Z",
+  "s01": {
+    "state": "O1_FAILED_O2_NOT_RUN_ACTIVE_RESOURCES_RETURNED_FILES_KEEP",
+    "window": "s01-pool-wait-delivery-once",
+    "head": "67d0c84d3e8a629d78335b8866173e04d7249e36",
+    "operatorWrapperStartedAt": "2026-10-07T14:05:05.565618Z",
+    "reportedChildStart": "2026-10-07T14:05:05.778649Z",
+    "reservationRecordedAt": "2026-10-07T14:05:06.007Z",
+    "clockOrdering": "Reservation recorded later than reported child start; retain original order, not retroactive prelaunch authorization evidence",
+    "actualEnd": "2026-10-07T14:05:30.030995Z",
+    "activeResourcesReturnedAt": "2026-10-07T14:08:08.536Z",
+    "actualExit": 1,
+    "toolTimeRealSeconds": 24.56,
+    "supervisorElapsedMs": 24289,
+    "beforeFinalPersistenceMs": 24465.793249895796,
+    "sourceResultElapsedMs": 24130.683624999998,
+    "reportedFreeBytes": 21529260032,
+    "outerFreshFreeBytes": 21529296896,
+    "gateFloorBytes": 9296871424,
+    "o1": "FAIL: insufficient_window_ack_span / admission_or_outbox_retained",
+    "o2": "NOT_RUN",
+    "tasksSentOrUnknown": 129,
+    "operatorAutomatic": "FAIL_OR_UNKNOWN / UNKNOWN_RETAIN / processClosed=false remains unchanged",
+    "activeCleanup": "Original100/center108/runner173 normalclose/groupabsent/dualEOF/no signals-secondary;14:07:56.949 exactPID ESRCH/port59253 connectEx61;14:08:08.536 target pg_database rows0/connections0/postcheck poolclosed; original normalDROP evidence retained",
+    "retainedDirectories": [
+      {
+        "path": "/tmp/flow-s01-mixed-Zwn2dy",
+        "dev": 16777234,
+        "ino": 124181018,
+        "action": "KEEP; children not accessed or deleted"
+      },
+      {
+        "path": "/tmp/flow-s01-ab-input-9145b45f-55c9-40a7-be03-74f58dd8c739",
+        "dev": 16777234,
+        "ino": 124180211,
+        "action": "KEEP; children not accessed or deleted"
+      }
+    ],
+    "runtimeHolder": false,
+    "nextGranted": false,
+    "retry": false,
+    "verdictBoundary": "No optimization PASS, complete file deletion, equal background or SLO inference",
+    "review": "Original result fidelity review not yet received",
+    "raw": "s01-outer-tool-receipt.json"
+  },
+  "msg03Local": {
+    "state": "ACTUAL_RETURNED_SOURCE_REVIEW_P2_FOLLOWUP_PENDING",
+    "task": "MSG03 projection consumer",
+    "sourcePrefix": "d5760087",
+    "claim": "7e3fbcf1 v3 exact20",
+    "freshClaimAt": "2026-10-07T14:09:16.790Z",
+    "direct": {
+      "actualStart": "2026-10-07T14:09:22.095852Z",
+      "nodePgid": 65875,
+      "actualExit": 0,
+      "selected": 1,
+      "passed": 1,
+      "notSelected": 68,
+      "chargeMs": 1701,
+      "cleanup": "Owned group and scratch absent/errors[]"
+    },
+    "types": {
+      "actualStart": "2026-10-07T14:09:36.405977Z",
+      "nodePgid": 73034,
+      "actualExit": 0,
+      "chargeMs": 5639,
+      "cleanup": "Group/scratch absent/errors[]"
+    },
+    "budgetMs": 20000,
+    "cleanupMinimumMs": 5000,
+    "network": 0,
+    "pg": 0,
+    "chrome": 0,
+    "freeBeforeBytes": 21395673088,
+    "gateFloorBytes": 9296871424,
+    "rawRoot": "/private/tmp/msg03-held-projection-local-go1nlwgu",
+    "spentMs": 7340,
+    "remainingMs": 12660,
+    "currentLocal": 0,
+    "sourceReview": "CHANGES_REQUESTED P2: restored held A membership must survive unmount; original direct test discarded held before unmount, not covering combination",
+    "nextCandidate": "Same20s remaining12660 necessary changedconsumer check/types after fixed delta; no old credit/no newChrome"
+  },
+  "releaseCandidate": {
+    "at": "2026-10-07T14:11:57.087Z",
+    "state": "MINIMAL_SHARED_DRAFT_FIX_THEN_REFIX_WEB_CANDIDATE",
+    "existingTask": "REQ19 / Release; no new task or completeMSG/Plugin gate",
+    "oldWebSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "backendSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "finding": "MSG actual B-only UI versus Recovery A+B persistence is a product all-items projection defect. Simple exclude-all-held is wrong for explicit/partial restored current drafts.",
+    "old7272Boundary": "Same attachments blob/allitems exists, but real adapter.send has no network/file await, validation precedes capture and receipt/consume precedeHTTP await. Equivalent natural old B coexistence is not established. No old actualFAIL or material-safe assertion.",
+    "concreteNext": [
+      "MSG original20scope owner completes smallest shared draftItems/guarded composer membership fix with partial-restore/unmount consumer regression; no copied session/App filter",
+      "Root reviews fixed minimal delta and scoped results; d576 prior P2 remains pending and cannot be adopted",
+      "Original existing release/artifact chain incorporates only accepted small Web protection delta into7272-based Web candidate and fixes actual new source/descriptor; do not require whole MSG functionality",
+      "Keep backend7272 lateLogout requirement and supply its immutable descriptor; exactsources/closures declared, no unreviewed6c backport composite",
+      "Original Release8964 harness actual newtuple fourApp compatibility then normal versionCAS release through existing operator"
+    ],
+    "notGranted": [
+      "No new build/artifact/personal/window approval here",
+      "No MSG browser retry from closedphase",
+      "No deployment or currentuser task operation"
+    ],
+    "descriptorState": "Both new descriptors still absent; backend source/interface preparation can proceed within existing authority",
+    "sourceReport": "msg03-fourth-membership-and-7272-peer.json",
+    "rootAcceptance": "Root independently checked key raw/source chain; research accepted, not d576source approval"
+  },
+  "resourceRule": "Keep old potential/KEEP and single reserve; separate ordinary local from new heavy admission"
+}

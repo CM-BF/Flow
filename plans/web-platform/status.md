@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:06:19.691Z；MSG已合法20scope修共享附件投影，下一网页候选HOLD其具体影响判定/必要delta，S01唯一NEXT保留。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:10:32.939Z；S01实际O1FAIL/O2未运行、运行资源归还/目录KEEP；MSG20scope普通局部检查，发布影响HOLD保留。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,9 +24,9 @@
 | 优先级 | 1 |
 | 当前产出 | 插件模块已合主线；个人后台已恢复接受任务，网页仍旧版本。逐消息设置的材料取消场景发现新旧附件混入，需要修复后再验证。 |
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
-| 当前阻塞 | ACTIVE: 逐消息设置取消后的恢复附件投影需修复；下一网页候选共享该实现，先判定旧候选影响并纳必要最小修复，再固定新产物。 |
+| 当前阻塞 | ACTIVE: 共享附件恢复投影的小修仍有部分恢复后卸载遗漏，需要精确消费者验证与源审；之后只纳这份必要小修重新固定新网页产物，不等待全部逐消息设置或插件功能。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG第四次完整归还，余38890低于最低限封账；当前无本组实际holder。S01已获唯一性能NEXT待fresh，300s/O1闭合后才可O2，futurefloor至少9296871424B；个人服务/自然用户任务保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：S01运行资源14:08:08.536Z归还，两目录KEEP、原UNKNOWN_RETAIN保留；无PG/Chrome/性能NEXT。MSG只有新20s普通局部段，旧90s封闭；futurefloor至少9296871424B，个人服务/自然用户任务不动。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

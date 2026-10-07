@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T14:06:19.691Z",
-  "state": "MSG03_FULL_RETURN_S01_UNIQUE_PERFORMANCE_NEXT_NOT_ACTUAL",
-  "groupWindowOwnership": "No current validation runtime holder after MSG fourth full return. S01 unique performance NEXT assigned for exact67d0 after owner fresh; not actual START. MSG source repair only, old90s phase closed below minimum. Persistent personal services/user task remain untouched.",
+  "recordedAt": "2026-10-07T14:11:57.087Z",
+  "state": "S01_ACTIVE_RETURN_KEEP_MSG_LOCAL_RETURNED_SOURCE_REVIEW_P2",
+  "groupWindowOwnership": "No active PG/Chrome/performance/ordinary holder reported. S01 processes/targetDB returned, two directories KEEP and original automatic UNKNOWN retained. MSG current20s local attempts returned7340ms, source d576 has P2 in restored-held draft unmount projection; samephase12660ms may fund necessary scoped followup only. Oldbrowser90s closed, no new heavy NEXT. Personal services/task untouched.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T14:06:19.691Z",
-    "record": "msg03-recovery-material-release-impact-20261007/current.json",
-    "event": "GO existing release candidate held for concrete shared attachment projection impact; MSG legal20scope/source-only"
+    "at": "2026-10-07T14:11:57.087Z",
+    "record": "s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+    "event": "Old7272 reachability uncertainty resolved to concrete minimalfix path; no indefinite general hold or material safety claim"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1711,49 +1711,48 @@
     }
   },
   "externalCurrentAdmission": {
-    "state": "FULL_RETURN",
-    "task": "WPF-MATURE-02-CORE",
-    "owner": "architecture_read",
-    "lead": "Mika",
-    "window": "4345a9e2d10447d3ac5236ba09929d95",
-    "actualStart": "2026-10-07T13:54:32.579Z",
-    "outerCallerPid": 94327,
-    "outerShellPgid": 93694,
-    "groupBoundary": "Outer shell PGID is not the Vitest owned group; checkpoint pending",
-    "head": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
-    "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
-    "caller": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
-    "manifestSha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b",
-    "claim": "651c4eb4 v1 exact4",
-    "pins": {
-      "files": 256,
-      "external": 191,
-      "links": 16
-    },
-    "budgetMs": 180000,
-    "workMs": 110000,
-    "cleanupMs": 60000,
-    "finalMs": 10000,
-    "db": 1,
-    "configuredConnections": 17,
-    "ports": 1,
-    "cases": 5,
-    "chrome": 0,
-    "provider": 0,
-    "freeBeforeBytes": 21613043712,
-    "gateFloorBytes": 7686258688,
-    "pairedFloorBytes": 6443696128,
-    "previousAdmission": "13:52 admission NOT_STARTED due to age >60s; one actual fresh spawn only",
-    "actualReturn": "2026-10-07T13:56:19.459Z",
-    "provenance": "Mika actual START relayed by root; owner checkpoint raw pending",
-    "actualEnd": "2026-10-07T13:54:36.490Z",
-    "outerElapsedMs": 3909.5613749232143,
-    "outerExit": 0,
-    "selected": 5,
-    "passed": 5,
-    "record": "svc-held1347-core-ready-20261007/core-owner-close.json",
-    "cleanup": "Marked DB owner/marker conn0 normalDROP ACK+absence; owned Git/Vitest groups absent/MERGED EOF; port58176 closed; exactTMP ENOENT; EPERM history preserved",
-    "productReview": "Pending original result fidelity review; no provider/personal activation inference"
+    "state": "O1_FAILED_O2_NOT_RUN_ACTIVE_RESOURCES_RETURNED_FILES_KEEP",
+    "window": "s01-pool-wait-delivery-once",
+    "head": "67d0c84d3e8a629d78335b8866173e04d7249e36",
+    "operatorWrapperStartedAt": "2026-10-07T14:05:05.565618Z",
+    "reportedChildStart": "2026-10-07T14:05:05.778649Z",
+    "reservationRecordedAt": "2026-10-07T14:05:06.007Z",
+    "clockOrdering": "Reservation recorded later than reported child start; retain original order, not retroactive prelaunch authorization evidence",
+    "actualEnd": "2026-10-07T14:05:30.030995Z",
+    "activeResourcesReturnedAt": "2026-10-07T14:08:08.536Z",
+    "actualExit": 1,
+    "toolTimeRealSeconds": 24.56,
+    "supervisorElapsedMs": 24289,
+    "beforeFinalPersistenceMs": 24465.793249895796,
+    "sourceResultElapsedMs": 24130.683624999998,
+    "reportedFreeBytes": 21529260032,
+    "outerFreshFreeBytes": 21529296896,
+    "gateFloorBytes": 9296871424,
+    "o1": "FAIL: insufficient_window_ack_span / admission_or_outbox_retained",
+    "o2": "NOT_RUN",
+    "tasksSentOrUnknown": 129,
+    "operatorAutomatic": "FAIL_OR_UNKNOWN / UNKNOWN_RETAIN / processClosed=false remains unchanged",
+    "activeCleanup": "Original100/center108/runner173 normalclose/groupabsent/dualEOF/no signals-secondary;14:07:56.949 exactPID ESRCH/port59253 connectEx61;14:08:08.536 target pg_database rows0/connections0/postcheck poolclosed; original normalDROP evidence retained",
+    "retainedDirectories": [
+      {
+        "path": "/tmp/flow-s01-mixed-Zwn2dy",
+        "dev": 16777234,
+        "ino": 124181018,
+        "action": "KEEP; children not accessed or deleted"
+      },
+      {
+        "path": "/tmp/flow-s01-ab-input-9145b45f-55c9-40a7-be03-74f58dd8c739",
+        "dev": 16777234,
+        "ino": 124180211,
+        "action": "KEEP; children not accessed or deleted"
+      }
+    ],
+    "runtimeHolder": false,
+    "nextGranted": false,
+    "retry": false,
+    "verdictBoundary": "No optimization PASS, complete file deletion, equal background or SLO inference",
+    "review": "Original result fidelity review not yet received",
+    "raw": "s01-outer-tool-receipt.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1763,72 +1762,8 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "at": "2026-10-07T14:03:28.118Z",
-    "state": "UNIQUE_PERFORMANCE_NEXT_PENDING_OWNER_FRESH_NOT_ACTUAL",
-    "owner": "status_read",
-    "lead": "Mika",
-    "head": "67d0c84d3e8a629d78335b8866173e04d7249e36",
-    "source": "375ecccc427acf59d687153903bd032fb6e684bc",
-    "productionBase": "4fdd856293a502209d7509ea37da901bbfd89f72",
-    "inputSha256": "970f071eb7eb275145c81a6b6d0f6193ed5737c6e0a2b48051ada414f3819512",
-    "headCheck": "HEAD=origin and clean, manager read",
-    "claimObservedAt": "2026-10-07T14:02:28.127Z",
-    "claim": {
-      "lead": "mika",
-      "next": null,
-      "role": "writer",
-      "scope": [
-        "docs/evidence/s01/idle-claim-cost",
-        "docs/evidence/s01/mixed-ab-preparation",
-        "docs/evidence/s01/mixed-ab-run",
-        "docs/evidence/s01/pool-wait-run",
-        "experiments/runner-capacity/mixed",
-        "plans/s01-runner-capacity"
-      ],
-      "state": "active",
-      "branch": "codex/runner-capacity-probe",
-      "origin": "new",
-      "taskId": "S01",
-      "worker": "status_read",
-      "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
-      "version": 3,
-      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
-      "createdAt": "2026-10-06T13:42:24.119Z",
-      "updatedAt": "2026-10-07T13:34:26.938Z",
-      "observedAt": null,
-      "needsVerification": false
-    },
-    "literalOverlap": [],
-    "sourceAndPureReview": "Original db approvals, scoped, not actual performance proof",
-    "grant": {
-      "wholeMs": 300000,
-      "preparationMs": 15000,
-      "armsMaximum": 2,
-      "armMs": 135000,
-      "armWorkMs": 105000,
-      "armCleanupMs": 30000,
-      "secondArmRequires": "O1 PASS plus all closed and remaining>=150s",
-      "logicalBytes": 536870912,
-      "commonBytes": 33554432,
-      "includedFinalReserveBytes": 4194304,
-      "additionalWalHeadroomBytes": 1073741824,
-      "markedDbSerialMaximum": 2,
-      "configuredConnectionsPerDb": 13,
-      "fixtureTaskMaximum": 258,
-      "httpPerArmMaximum": 8192,
-      "lightReadPerArmMaximum": 200,
-      "lightReadConcurrency": 2,
-      "cancellations": 4,
-      "provider": 0,
-      "chrome": 0,
-      "personalOperations": 0
-    },
-    "freshFloorBytes": 9296871424,
-    "futureGates": "Full original pins/source/claim/owned root/newoutputs absence and current complete free/storage conditions; single cleanup reserve/KEEP preserved",
-    "personalBoundary": "Three resident services continue; natural user task last reported running, current task outcome UNKNOWN; never probe/stop. Background not controlled/equal between arms, no stable performance or SLO inference.",
-    "actualStart": null,
-    "route": "Mika working thread once; no direct Original attempt",
-    "higherPriority": "REQ19 source candidate accepted but descriptors absent; MSG requires source repair and prior phase closed"
+    "state": "NONE",
+    "s01": "Consumed once, O1 failed/O2 not run, no retry"
   },
   "currentIntake": "svc-held1347-core-ready-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
@@ -1847,47 +1782,41 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "MSG20_SCOPE_SOURCE_FIX_WITH_FINITE_LOCAL_AUTHORIZATION_NOT_STARTED",
-    "currentLocal": 0,
-    "lastSegments": [
-      {
-        "task": "MSG03affected",
-        "budgetMs": 60000,
-        "spentMs": 53579,
-        "unusedClosedMs": 6421
-      },
-      {
-        "task": "MSG03fake-sentinel",
-        "budgetMs": 10000,
-        "spentMs": 219,
-        "unusedClosedMs": 9781
-      },
-      {
-        "task": "Releaseaffectedstrict",
-        "budgetMs": 20000,
-        "spentMs": 1125,
-        "unusedClosedMs": 18875
-      }
-    ],
-    "source": "msg03-mounted-browser-admission-20261007/current.json",
-    "noOldCredit": true,
-    "nextCandidate": {
-      "task": "MSG03 shared draft-membership projection",
-      "claim": "7e3fbcf1 v3 exact20",
-      "budgetMs": 20000,
-      "workMaximumMs": 15000,
-      "cleanupMinimumMs": 5000,
-      "nodeProcessMaximum": 1,
-      "temporaryBytesMaximum": 16777216,
-      "rawBytesMaximum": 2097152,
-      "network": 0,
-      "pg": 0,
-      "chrome": 0,
-      "futureMinimumBytes": 9296871424,
-      "accounting": "Already within prior Web22MiB potential; no second reserve",
-      "actualStart": null
+    "state": "ACTUAL_RETURNED_SOURCE_REVIEW_P2_FOLLOWUP_PENDING",
+    "task": "MSG03 projection consumer",
+    "sourcePrefix": "d5760087",
+    "claim": "7e3fbcf1 v3 exact20",
+    "freshClaimAt": "2026-10-07T14:09:16.790Z",
+    "direct": {
+      "actualStart": "2026-10-07T14:09:22.095852Z",
+      "nodePgid": 65875,
+      "actualExit": 0,
+      "selected": 1,
+      "passed": 1,
+      "notSelected": 68,
+      "chargeMs": 1701,
+      "cleanup": "Owned group and scratch absent/errors[]"
     },
-    "futureMinimumBytes": 7686258688
+    "types": {
+      "actualStart": "2026-10-07T14:09:36.405977Z",
+      "nodePgid": 73034,
+      "actualExit": 0,
+      "chargeMs": 5639,
+      "cleanup": "Group/scratch absent/errors[]"
+    },
+    "budgetMs": 20000,
+    "cleanupMinimumMs": 5000,
+    "network": 0,
+    "pg": 0,
+    "chrome": 0,
+    "freeBeforeBytes": 21395673088,
+    "gateFloorBytes": 9296871424,
+    "rawRoot": "/private/tmp/msg03-held-projection-local-go1nlwgu",
+    "spentMs": 7340,
+    "remainingMs": 12660,
+    "currentLocal": 0,
+    "sourceReview": "CHANGES_REQUESTED P2: restored held A membership must survive unmount; original direct test discarded held before unmount, not covering combination",
+    "nextCandidate": "Same20s remaining12660 necessary changedconsumer check/types after fixed delta; no old credit/no newChrome"
   },
   "externalPreviousReturn": {
     "task": "SVC06 exactheld continuation",
@@ -2048,24 +1977,7 @@
     "consumedMSGGateUnchanged": 7686258688
   },
   "externalOrdinaryCurrent": {
-    "source": "Mika actual receipt relayed by root; original raw sealing, fidelity review pending",
-    "state": "ACTUAL_RETURNED",
-    "actualStart": null,
-    "actualReturn": "2026-10-07T13:52:24.441Z",
-    "pid": 15216,
-    "exit": 0,
-    "selected": 5,
-    "passed": 5,
-    "rawBytes": 787,
-    "supervisorMs": 135,
-    "afterPersistenceMs": 250.935,
-    "toolWallSeconds": 0.362,
-    "cleanup": "Final group absent / MERGED EOF; exact TMP dev16777234 inode124172281 rmdir and absence; zero-byte sample",
-    "freeBeforeBytes": 21621125120,
-    "gateFloorBytes": 7686258688,
-    "runtimeNow": 0,
-    "actualStartBoundary": "13:51:52 admission is not actual start",
-    "unused": "Closed, no further credit"
+    "state": "NONE_REPORTED_BY_MIKA"
   },
   "externalPreparedCandidate": {
     "record": "core-pg-current-ready.json",
@@ -2141,18 +2053,27 @@
     "record": "svc-held1347-core-ready-20261007/msg03-fourth-post-cleanup.json"
   },
   "releaseCandidateCurrent": {
-    "at": "2026-10-07T14:06:19.691Z",
-    "state": "RELEASE_CANDIDATE_HOLD_ATTACHMENT_RECOVERY_IMPACT_AND_REQUIRED_FIX",
-    "originalRequirement": "GO via root: prevent known draft/material cross-contamination in next user-visible release; continue existing REQ19, not a new task",
-    "priorCandidate": "7272151bb1e3e59e08937dca44949dcdeb42f009",
-    "sourceObservation": "Root/GO read7272 and61185 same attachments blob da8f9555; both session recoveryMaterials take input all items. Static shared source, not yet proof of every old-candidate path.",
-    "gap": "Release Cookie journey covers text/receipt, not attachment fail/cancel projection. Must assess reachability in7272. If affected, incorporate smallest shared projection fix and re-pin candidate.",
-    "nextOwner": "MSG original panels after legal v3/20 amendment, using existing draftItems/current membership; W01 independent reachability research, root review",
-    "forbiddenShortcut": "Do not duplicate filtering in App/session, delete held A, weaken exact B expectation, or treat not waiting whole MSG as permission to release known contamination.",
-    "supply": "Original artifact/release source/interface preparation can continue; two immutable descriptors still absent.7272 is not unconditional ready.",
-    "scope": "No new task, publication system, artifact window, personal mutation or MSG browser grant",
-    "runtime": "MSG old90s closed51110/rem38890; S01 unique performance NEXT unchanged, not actual at last receipt",
-    "claimReceipt": "msg03-amend20-receipt.json",
-    "evidenceNext": "Fixed source finding and consumer proof pending; no invented result"
+    "at": "2026-10-07T14:11:57.087Z",
+    "state": "MINIMAL_SHARED_DRAFT_FIX_THEN_REFIX_WEB_CANDIDATE",
+    "existingTask": "REQ19 / Release; no new task or completeMSG/Plugin gate",
+    "oldWebSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "backendSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "finding": "MSG actual B-only UI versus Recovery A+B persistence is a product all-items projection defect. Simple exclude-all-held is wrong for explicit/partial restored current drafts.",
+    "old7272Boundary": "Same attachments blob/allitems exists, but real adapter.send has no network/file await, validation precedes capture and receipt/consume precedeHTTP await. Equivalent natural old B coexistence is not established. No old actualFAIL or material-safe assertion.",
+    "concreteNext": [
+      "MSG original20scope owner completes smallest shared draftItems/guarded composer membership fix with partial-restore/unmount consumer regression; no copied session/App filter",
+      "Root reviews fixed minimal delta and scoped results; d576 prior P2 remains pending and cannot be adopted",
+      "Original existing release/artifact chain incorporates only accepted small Web protection delta into7272-based Web candidate and fixes actual new source/descriptor; do not require whole MSG functionality",
+      "Keep backend7272 lateLogout requirement and supply its immutable descriptor; exactsources/closures declared, no unreviewed6c backport composite",
+      "Original Release8964 harness actual newtuple fourApp compatibility then normal versionCAS release through existing operator"
+    ],
+    "notGranted": [
+      "No new build/artifact/personal/window approval here",
+      "No MSG browser retry from closedphase",
+      "No deployment or currentuser task operation"
+    ],
+    "descriptorState": "Both new descriptors still absent; backend source/interface preparation can proceed within existing authority",
+    "sourceReport": "msg03-fourth-membership-and-7272-peer.json",
+    "rootAcceptance": "Root independently checked key raw/source chain; research accepted, not d576source approval"
   }
 }

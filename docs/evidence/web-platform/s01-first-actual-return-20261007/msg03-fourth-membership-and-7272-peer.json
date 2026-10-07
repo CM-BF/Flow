@@ -1,0 +1,409 @@
+{
+  "kind": "MSG03_FOURTH_MATERIAL_CANCEL_READONLY_ROOT_CAUSE",
+  "at": "2026-10-07T14:04:34.791284+00:00",
+  "reviewer": "w01 / GPT-6 Astra Ultra",
+  "fixed": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+    "metadata": "35dcec5983f93037c81d30b642bbb7415223598a",
+    "observedDirty": "Only owner untracked fourth-run evidence directory; no worker edit. Fixed Git objects used."
+  },
+  "decision": "CONFIRMED_PRODUCT_RECOVERY_DRAFT_MEMBERSHIP_PROJECTION_DEFECT_NOT_TEST_EXPECTATION_ERROR",
+  "finding": {
+    "id": "MSG03-MATERIAL-RECOVERY-MEMBERSHIP",
+    "priority": "P2",
+    "title": "Recovery saves held A material inside independent current B draft",
+    "primarySource": "apps/web/src/plugin-integration/session.ts:76–78",
+    "consumer": "apps/web/src/App.tsx:671–675",
+    "description": "recoveryMaterials returns every input.items entry. The attachment input intentionally retains captured A while B is edited, because A must remain explicitly recoverable. App serializes this backing set as B CompleteDraft.attachments. The existing draftItems projection excludes held/inTransit files except files actually in current composer, but Recovery bypasses it. UI B can be correct while its persisted complete draft contains A+B."
+  },
+  "actualEvidence": {
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "materialGroup": "FAILED; no retrospective whole-group pass",
+    "failureModeComplete": true,
+    "failureBusinessPosts": 0,
+    "cancelPrecedingAssertions": "Fixed browser.ts1198–1205 requires held recovery visible, B text/settings, exactly1visible file and no business POST before the failing savedB poll at1207–1210. Failure text matches the latter exact identity comparison.",
+    "failureAIds": [
+      "e8f0d325-d020-41e2-a263-fe74d420565d",
+      "6eb3dbff-5155-43c5-805b-fa60191b8ae3"
+    ],
+    "receivedCancelDraftExtraIds": [
+      "9f678b77-b095-441b-a345-7a6642ed1bcd",
+      "9e9f94e4-3ff5-4731-b238-7b68c9d620c2"
+    ],
+    "expectedBId": "80f48b57-29b5-456a-81e4-1e7592deeb0c",
+    "interpretation": "The extra A items are the current cancel arm uploads, not the prior failure-arm IDs. The record is selected by same conversation route + B settings + B text; it is not an arbitrary earlier A row.",
+    "businessPostCountAcrossRecordedWire": 0,
+    "pageErrors": [],
+    "lateAdapterSettlement": "The failing poll precedes probe.settle(released) at1214. This actual does NOT yet prove the subsequent late-promise or final explicit cancel-arm restore assertions.",
+    "cleanup": "Root independently verifies actual/cleanup; this report only reads the existing browser/source artifacts, does not probe processes or reopen runtime.",
+    "phase": "Original51110spent/38890remaining phase CLOSED; no further run authorized or performed here."
+  },
+  "causalChain": [
+    {
+      "basis": "ConversationThread.tsx:221–229",
+      "fact": "Capture A before send, rotate settings draft ownership, retain frozen material and A ids in pending; begin Recovery handoff before official send detaches composer."
+    },
+    {
+      "basis": "attachments.tsx:97–102,165–182,236–245",
+      "fact": "reconciliationInput deliberately protects held ids from automatic deletion. draftItems already distinguishes current composer attachments from held/inTransit items and preserves non-held unverified selections. capture stores a separate hold without consuming input."
+    },
+    {
+      "basis": "message-settings.tsx:177–200; ConversationThread.tsx:156–168,204–205",
+      "fact": "The public composer return observer removes only automatically returned A chips and restores guarded B text. bindComposer receives draftComposer, whose getState masks transient A while capture.returning is active. UI can correctly retain B while A remains in backing input for later explicit restoration."
+    },
+    {
+      "basis": "attachments.tsx:267–272",
+      "fact": "failed changes submission state but retains value and backing input; successful explicit restoration later discards hold. Retaining A is required, not itself the defect."
+    },
+    {
+      "basis": "session.ts:76–78; App.tsx:671–675",
+      "fact": "Recovery directly reads input.getSnapshot().items and maps all metadata into CompleteDraft; it does not use draftItems or the guarded composer membership. Thus B settings/text are composed with A+B attachments."
+    },
+    {
+      "basis": "recovery/binding.tsx:190–209,224–227,165–183; journal.ts:194–201",
+      "fact": "While handoff is live, changed defers current snapshot. cancelHandoff clears it and immediately rereads host.draft; enqueue saves that supplied JSON under existing CAS. Journal does not union attachments or select wrong rows; wrong membership was already in the data."
+    }
+  ],
+  "whyExpectationIsCorrect": [
+    "B is a separately owned current draft after settings.detach. Held A has its own pending/material capture and restore action. Neither a shared backing controller nor matching A/B text grants held A membership in B.",
+    "CompleteDraft is the persistent restoration payload, not a display of all recoverable project/view materials. Keeping A+B in that record can restore the wrong files after reload and conflates two draft identities.",
+    "The test uses exact id/name/reference order from the real uploaded B item and explicitly confirms current UI B one-file state. Do not loosen to containsB, filter the saved row in the test, erase A, or omit refs from persistence."
+  ],
+  "minimumRepairSuggestion": {
+    "interface": "Expose a narrow read-only current-draft material projection from existing ConversationAttachments; have session.recoveryMaterials consume it instead of raw input.items. Reuse existing draftItems membership logic and the already-bound guarded draftComposer supplied through bindComposer, rather than copying membership rules into App/Recovery or making another store.",
+    "lifetime": "Any retained composer read port is only an identity-bound view of the existing authority: bind/unbind with current composer lifetime; ignore stale release, and do not leave a stale port across view replacement. Before composer binding, preserve legitimate restored/unverified draft items; do not treat absence of chips as absence of all material.",
+    "constraints": [
+      "Keep held A input records/capture for explicit complete-A restore.",
+      "Current members override held/inTransit, including core return or explicit restored current items; MSG guarded composer intentionally excludes transient automatic A. Preserve input order and unverified pending selections.",
+      "Use guarded composer state during automatic return so transient A cannot leak to Recovery or be mistaken for explicit restore.",
+      "Do not weaken captureDraft/send order validation, held protection, prepareRestoreDraft rejection while another submission owns materials, session namespace/CAS, or old-key identity.",
+      "A metadata projection fix must not silently clear held A or allow normal Recovery restore to bypass outstanding material ownership."
+    ],
+    "scope": {
+      "additionalLiteralToCoordinate": "apps/web/src/plugin-integration/attachments.tsx",
+      "existingMSGOwnedConsumer": "apps/web/src/plugin-integration/session.ts",
+      "existingTests": "apps/web/test/conversation-recovery.test.ts and apps/web/test/conversation-recovery.browser.ts (exact claim must be checked by manager)",
+      "reason": "Fixed MSG status implementation list includes session/App/Thread/recovery binding but not attachments.tsx. Worker does not assert current external owner or take/amend it; manager must obtain actual STOP→fresh handoff/take before implementation there.",
+      "ownershipUpdate": "Root reports manager coordinating attachments.tsx no-active-writer handoff/amend; this readonly worker neither verifies a new committed claim nor edits that path."
+    },
+    "directlyAffectedChecks": [
+      "Preserve fixed mounted cancel journey B-only exactrefs, same-text/settingsB, noPOST; then settle original adapter late and verify same savedB bytes and no addedchips.",
+      "Check settings-only/emptyB after failure also persists attachments=[] while A remains held and recoverable; prior failure actual only proved later Arestore, not this B persistence property.",
+      "Explicitly clear B/omit then restore A retains original ordered A ids/refs/settings/text, retires hold once and keeps real file removal cleanup.",
+      "Guard existing restored/unverified no-chip items, inTransit exclusion, same-ID explicit-restoration and binding replacement/unbind semantics; use actual projection helper rather than a duplicate mocked filter."
+    ],
+    "notImplementation": "Suggestion only. No product/fixture code changed, no new runtime or budget, no new state authority."
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "actualSourceManifestMatches": true
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": null,
+      "actualSourceManifestMatches": null
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+      "bytes": 139230,
+      "sha256": "8b317323bebe8ded1df12ba9bc34b2d8e0cffa2d95ecd72157be277fa1fca6a5",
+      "sameAsMetadataHead": true,
+      "actualSourceManifestHash": "8b317323bebe8ded1df12ba9bc34b2d8e0cffa2d95ecd72157be277fa1fca6a5",
+      "actualSourceManifestMatches": true
+    }
+  ],
+  "artifactPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/browser.json",
+      "bytes": 14229,
+      "sha256": "c4486cd66b2148657dea9b6e223d845154eedad2e5b5c1317ca61001f064b1aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/sources.json",
+      "bytes": 3348,
+      "sha256": "263713bba3c3489d753d9b73f020250ae69eb49305d4ad19324d900c5adaaec3"
+    }
+  ],
+  "skills": {
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Reused installed local methods. Trace backing material retention vs current composer projection vs persisted complete-draft contract; preserve official material await, cancellation and exact public refs. One responsibility for membership avoids a second authority.",
+    "cleanCodeFinding": "All retained material vs current draft membership are distinct interfaces. Reuse one exact selector; do not duplicate an incomplete held-only predicate in a consumer. Preserve error/partial-restore truth rather than erasing recovery authority.",
+    "versionPolicy": "Installed local skills reused; no installation/network research. Fixed installed package source takes precedence for this historical runtime review."
+  },
+  "limits": {
+    "projectWrites": 0,
+    "claims": 0,
+    "productImports": 0,
+    "tests": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "processProbes": 0,
+    "envReads": 0,
+    "output": "One private TMP report",
+    "notClaimed": [
+      "Final cancel/late-settlement group passed",
+      "Unique full remaining product behavior verified",
+      "Scope ownership assigned by this reviewer",
+      "Any runtime allowance granted",
+      "7272 natural material failure reproduced",
+      "Partial restore interruption mounted and verified",
+      "New Web/backend immutable descriptors supplied"
+    ]
+  },
+  "updatedAt": "2026-10-07T14:10:31.276914+00:00",
+  "heldOnlyFilterReview": {
+    "decision": "REJECT_UNCONDITIONAL_EXCLUDE_HELD_AS_INCOMPLETE_MEMBERSHIP_RULE",
+    "basis": "Existing draftItems prioritizes actual current composer IDs over held and inTransit, preserves input order and includes unverified selections not yet rendered as chips (attachments.tsx165–179). Held describes recovery ownership, not exclusive absence from current draft.",
+    "counterexamples": [
+      {
+        "kind": "SOURCE_CONFIRMED_SYNCHRONOUS_SAVE_WINDOW",
+        "source": "61185 message-settings.tsx226–238; ConversationThread188–192; App774–780",
+        "facts": "Explicit restore keeps the hold until after settings.restoreCaptured, setText and each addAttachment. Settings replacement synchronously calls recovery.changed; composer additions synchronously notify draft subscribers. At those moments current A items must be persisted even while held still names A. Unconditional exclusion writes no A during these observations. A later successful onDraftChange repairs the final record, but does not make earlier observed data faithful."
+      },
+      {
+        "kind": "SOURCE_SUPPORTED_INTERRUPTED_RESTORE_RISK_NOT_NEW_ACTUAL",
+        "source": "61185 message-settings.tsx223–239; ConversationThread177–192",
+        "facts": "The per-file await is guarded by ownership/generation and current draft checks; if a lease changes or an add fails after a partial mutation, catch reports the error but does not roll back current text/files, and discardFailedSubmission is not reached. A unconditional held filter would persist the visible partial A as no files. No mounted partial-restore failure was run in this review; complete attachment add itself publishes synchronously, so this is not evidence of a long natural network wait."
+      },
+      {
+        "kind": "SOURCE_CONFIRMED_OLD_EXPLICIT_RESTORE_CONTRACT",
+        "source": "7272 plugin-integration/react.tsx276–285",
+        "facts": "Old explicit restore sets held text and adds held files but does not discardFailedSubmission afterward. A filter excluding all held IDs would continue omitting explicitly restored current A until the user separately discards the hold. Existing current-ID-first selector deliberately supports this state."
+      },
+      {
+        "kind": "CORE_RETURN_BOUNDARY",
+        "source": "installed core base-composer-runtime-core.ts502–536,554–590; attachments.tsx205–210",
+        "facts": "Core failure/cancel returns held files to current attachments before binding records failure. In plain old binding that returned A is a real current member and must not be discarded by held-only filtering. MSG03 differs: guarded draftComposer deliberately exposes B during automatic return; reuse that exact bound read port rather than raw core state."
+      }
+    ],
+    "noBQualification": "In MSG03 bindPreparedDraftReturn, even an empty B is preserved and automatic A is removed from the guarded draft; therefore no-B does NOT by itself prove A must be included immediately after cancellation. Include A once genuinely current through explicit restore, and preserve its separate held input meanwhile.",
+    "minimumCorrectInterface": "A narrow read-only projection on existing ConversationAttachments, using existing draftItems with the exact currently bound composer port; session reads it. Guard lifetime identity on bind/unbind, no second store. A session-only implementation is acceptable only if it can consume this same authoritative current/held/inTransit membership, not a copy of an incomplete held predicate.",
+    "requiredChecks": [
+      "Held A + current B saves only B without deleting A",
+      "Current A while still held is included exactly once in original order",
+      "Restored/unverified no-chip draft items remain represented",
+      "Current IDs override inTransit/held, otherwise transit/held excluded",
+      "Bound guarded return hides transient automatic A; replacement/unbind cannot read stale composer",
+      "Successful explicit restore and actual remove retire/reconcile the same IDs; interrupted restore preserves actual current members"
+    ]
+  },
+  "release7272Impact": {
+    "decision": "SHARED_RAW_PROJECTION_PRESENT_BUT_SAME_OLD_USER_REACHABLE_FAILURE_NOT_PROVEN",
+    "sharedFact": "attachments.tsx is byte-identical at 7272 and 61185. Both session.recoveryMaterials expose raw input.items; 7272 App666–668 serializes them. This proves shared projection code, not identical Thread behavior or reproduced production failure.",
+    "differenceThatMatters": "MSG03 adds a guarded automatic-return/explicit-complete-draft mechanism and fixture-only await after real adapter.send. Old 7272 Thread has neither that MSG guard nor the new material-cancel button; core return becomes actual current A under the old behavior.",
+    "originalAsyncChain": [
+      {
+        "source": "7272 attachments/adapter.ts13–25; attachments/controller.ts166–195",
+        "fact": "File validation/arrayBuffer/digest/capability/upload waits happen during add/upload before item becomes ready. Original send checks abort and item membership, then synchronously complete(item); async return adds microtask settlement but no network/file wait."
+      },
+      {
+        "source": "7272 ConversationThread161–179; attachments.tsx174–182; controller.ts265–276",
+        "fact": "Before official detach/send, captureDraft rejects any unready or missing file and ordered composer mismatch. A natural invalid-file/upload failure therefore does not establish the A-detached/B-editable material-await scenario; it remains an unsent draft validation failure."
+      },
+      {
+        "source": "installed core base-composer-runtime-core.ts326–399; attachment-send-operations.ts34–49",
+        "fact": "Core can await whenSendable and Promise.allSettled and can return a failed submission, but with the current adapter plus ready precondition the inspected normal send path has only microtask completion after ready uploads. No public human-edit task window equivalent to the fixture hold was demonstrated."
+      },
+      {
+        "source": "7272 ConversationThread111–128; conversations/projection.ts294–341; queue/projection.ts111–120; queue/commands.ts129–150",
+        "fact": "A local Outbox/Queue receipt is created synchronously before storage/network dispatch awaits. Thread consumes held A immediately after detecting that receipt. Delaying HTTP ACK is consequently a different boundary and cannot stand in for material preparation."
+      },
+      {
+        "source": "61185 conversation-recovery.fixture.ts81–94,601–603",
+        "fact": "Fourth-run fixture calls and validates original.send first, then deliberately awaits holdValidated. The cancel arm retains its promise across abort for a later-settlement check. This makes the MSG invariants genuinely exercised, but is an explicit test interleaving absent from the old original adapter."
+      },
+      {
+        "source": "7272 ConversationThread131–145,158–160; plugin-integration/react.tsx265–291",
+        "fact": "Old pre-handoff failure returns A if the destination is empty; old core failure/cancel may merge A before current text/files. No new MSG material cancel button exists here. Natural file-validation failure alone does not prove B-only visible state plus hidden A in Recovery."
+      }
+    ],
+    "boundedConclusion": "No ordinary, independently controllable original file-validation/adapter-await path was found that reproduces the fourth-run B-only UI/A+B persisted mismatch on 7272. This is NOT proof that all old failures are safe; reentrant authority changes and other schedules were not executed or exhaustively proven. Do not report old 7272 as runtime-reproduced from same blob, and do not promote 7272 material safety from Release8964 text/receipt evidence.",
+    "releaseRecommendation": "If the release promises the repaired current-draft membership boundary, carry the minimal shared projection fix plus its precise existing-session consumer into a new fixed Web source, without waiting for all MSG03 features. Review/validate the old consumer adaptation explicitly; do not copy incomplete App/session held filtering or blindly transplant MSG03 App. Backend 7272 late-logout dependency remains independently required. Until original artifact supply exists, the known 7272 source remains a source candidate rather than an immutable tested release. Whether the old unmodified candidate is acceptable must retain this unproven material boundary, not claim four-App material coverage.",
+    "mustNotClaim": [
+      "7272 natural cancellation reproduced fourth MSG failure",
+      "HTTP ACK hold equals material preparation await",
+      "Old Cookie text/receipt compat covers attachment draft membership",
+      "Current main implies a supplied immutable descriptor",
+      "6c to 7272 is only the two-line logout delta"
+    ]
+  },
+  "releaseSourcePins": [
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "gitBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "gitBlob": "f94b75d126125885bda0fc62f405c9dc59d0f293"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "gitBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "gitBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+      "gitBlob": "2e3a37130a64af0c5f2080eb64f93a7201041c30"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/attachments/adapter.ts",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3",
+      "gitBlob": "91a9a1f0526c30dc938bc511497896fb95542bfe"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "gitBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "gitBlob": "3b7288922c292387640fe909b98f9cc8bc69756e"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "bytes": 13034,
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+      "gitBlob": "bfbfea3240ad9917c257eae386ce55b38857d37d"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "gitBlob": "443341d0d2da42de08dd3144e75784856f4413cf"
+    }
+  ],
+  "additionalMSGFixturePin": {
+    "ref": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+    "path": "apps/web/test/conversation-recovery.fixture.ts",
+    "bytes": 54903,
+    "sha256": "77b78dc4d67ec3fb10f482cd7c7f52da08bcf9b438239c0ac2f8221aa1d3ae91",
+    "gitBlob": "14046571b1b078dc644238dfd480955236fd4d63"
+  },
+  "installedReadOnlyPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719",
+      "version": "@assistant-ui/core 0.3.22",
+      "scope": "source-only read of installed runtime, no import/run"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/utils/attachment-send-operations.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/utils/attachment-send-operations.ts",
+      "bytes": 1690,
+      "sha256": "01d95cfcb34d9a7695845f990400d016a2d61bbb681a78aa816c3d3175f18af1",
+      "version": "@assistant-ui/core 0.3.22",
+      "scope": "source-only read of installed runtime, no import/run"
+    }
+  ]
+}

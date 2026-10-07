@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-07T14:12:36.027010+00:00",
+  "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
+  "paths": [
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/archive-index.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/current.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/external-timing-update.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/msg03-fourth-membership-and-7272-peer.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/msg03-projection-local-7340-snapshot.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/quality.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/s01-outer-tool-receipt.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/s01-queue-actual-outer.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/s01-result.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/selected-claims.json",
+    "docs/evidence/web-platform/s01-first-actual-return-20261007/status-validation.json",
+    "plans/web-platform/plan.md",
+    "plans/web-platform/review.md",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/status.md"
+  ],
+  "links": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "resource-window-current.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "s01-first-actual-return-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "s01-first-actual-return-20261007/external-timing-update.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/plan.md",
+      "target": "../../docs/evidence/web-platform/s01-first-actual-return-20261007/release-minimal-fix-decision.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/s01-first-actual-return-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/status.md",
+      "target": "../../docs/evidence/web-platform/resource-window-current.json",
+      "exists": true
+    }
+  ],
+  "archiveHashes": [
+    {
+      "file": "s01-queue-actual-outer.json",
+      "match": true
+    },
+    {
+      "file": "s01-outer-tool-receipt.json",
+      "match": true
+    },
+    {
+      "file": "s01-result.json",
+      "match": true
+    },
+    {
+      "file": "msg03-projection-local-7340-snapshot.json",
+      "match": true
+    },
+    {
+      "file": "msg03-fourth-membership-and-7272-peer.json",
+      "match": true
+    }
+  ],
+  "errors": []
+}
