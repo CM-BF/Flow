@@ -70,6 +70,8 @@ test('AV02 untrusted material/source and unknown phase preserve explicit failure
     let phases = 0; a.authorize = async () => { phases++; };
     await expect(executePluginVerifier({ ...a, trustedAlgorithms: [] })).rejects.toMatchObject({ code: 'VERIFIER_ALGORITHM_UNTRUSTED' });
     await expect(executePluginVerifier({ ...a, verification: { ...a.verification, source: { ...a.verification.source, version: 'a'.repeat(64) } } })).rejects.toMatchObject({ code: 'SOURCE_VERSION_MISMATCH' }); expect(phases).toBe(0);
+    const escaped = '\u0001'.repeat(3000);
+    await expect(executePluginVerifier({ ...a, verification: { ...a.verification, source: { ...a.verification.source, content: escaped, version: digest(escaped) } } })).rejects.toMatchObject({ code: 'VERIFICATION_INPUT_TOO_LARGE' }); expect(phases).toBe(0);
     a.authorize = async () => { throw new PluginAuthorizationUnknown(); };
     await expect(executePluginVerifier(a)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
     await expect(executePluginVerifier({ ...a, signal: AbortSignal.abort() })).rejects.toMatchObject({ code: 'CANCELLED' });
