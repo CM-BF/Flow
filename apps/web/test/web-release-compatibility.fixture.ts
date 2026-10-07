@@ -15,7 +15,17 @@ export type Artifact = { artifactId: string; sourceHead: string; manifestDigest:
 type Identity = { dev: number; ino: number };
 export type AppInput = { label: string; artifact: Artifact; artifactRoot: string; rootIdentity: Identity; distIdentity: Identity;
   format: 1 | 2; releaseId: string | null; manifest: FilePin };
-export const RECOVERY_RELEASE_SOURCE = "7272151bb1e3e59e08937dca44949dcdeb42f009";
+const RECOVERY_WEB_ARTIFACT: Artifact = {
+  artifactId: "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+  sourceHead: "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  manifestDigest: "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+};
+const RECOVERY_BACKEND_ARTIFACT: Artifact & { policy: "flow.backend-artifact.v1" } = {
+  policy: "flow.backend-artifact.v1",
+  artifactId: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+  sourceHead: "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  manifestDigest: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+};
 export type RecoveryAdmission = Admission & { recoveryApp: AppInput };
 export type PublicContext = { format: 1; publicOrigin: string; policySha256: string };
 export type Admission = {
@@ -31,8 +41,8 @@ type AssetFile = { path: string; bytes: number; sha256: string };
 export type LoadedApp = AppInput & { files: AssetFile[]; snapshot: { index: AssetFile; assets: Map<string, AssetFile> } };
 export function assertRecoveryAdmission(input: RecoveryAdmission) {
   assert.ok(input.recoveryApp && input.finalBackend, "New Web and corrected backend descriptors required; no 6c/7d1 fallback");
-  assert.equal(input.finalBackend.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
-  assert.equal(input.recoveryApp.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
+  assert.deepEqual(input.finalBackend.artifact, RECOVERY_BACKEND_ARTIFACT);
+  assert.deepEqual(input.recoveryApp.artifact, RECOVERY_WEB_ARTIFACT);
   assert.match(input.recoveryApp.artifact.artifactId, /^[a-f0-9]{64}$/);
   assert.equal(input.recoveryApp.artifact.manifestDigest, input.recoveryApp.artifact.artifactId);
   assert.equal(input.recoveryApp.format, 2); assert.match(input.recoveryApp.releaseId ?? "", /^[a-f0-9]{32}$/);
@@ -130,7 +140,7 @@ async function loadApps(inputs: AppInput[], life: Lifetime, recoveryApp?: AppInp
       assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
       assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
     } else {
-      assert.equal(app, recoveryApp); assert.equal(app.artifact.sourceHead, RECOVERY_RELEASE_SOURCE);
+      assert.equal(app, recoveryApp); assert.deepEqual(app.artifact, RECOVERY_WEB_ARTIFACT);
       assert.equal(app.format, 2); assert.match(app.releaseId ?? "", /^[a-f0-9]{32}$/);
       assert.ok(!inputs.some(value => value.releaseId === app.releaseId), "New namespace must be distinct");
     }
