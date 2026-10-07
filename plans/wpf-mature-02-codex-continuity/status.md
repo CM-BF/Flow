@@ -22,7 +22,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 公开stream实现已固定9e212e50；89项直接行为检查通过；types因历史baseline缺件首失败，精确供给后待窄复核。 |
+| 工作树dirty状态 | 公开stream实现已固定9e212e50；89项直接行为检查通过；types因历史baseline缺件首失败，精确供给后strict0；独审待固定packet。 |
 | HEAD（最近观察） | 2b3b9db8f9a2cf8cf9ebbf85eaa13aad4d3fd599；公开stream source9e212e50已提交；检查与供给补充待本次封存。 |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v7 ACTIVE，50 literal；fresh读取仍同owner/branch；[精确receipt](../../docs/evidence/mature02c02/public-stream-exports-amend-receipt.json) |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
@@ -72,4 +72,6 @@ C02-05下一ready接线：[public-stream-next](../../docs/evidence/mature02c02/p
 
 Stream独审status_read 2026-10-07T04:20:47Z APPROVED/0P1P2，原pending-sink P2 CLOSED；[窄intake](../../docs/evidence/mature02c02/stream-intake.json)绑定6源及原检查，不含公开UI。旧片主线接收见[main-acceptance](../../docs/evidence/mature02c02/main-acceptance.json)，root组合首types失败与import修后0均保留，0PG/provider重跑。
 
-公开stream新工作段：已读本地find-skills/codebase-design/clean-code，复用前缀hash封包与单receive pump；一次来源协商/身份策略覆盖runner→中心→共享投影，旧Claude JSON与digest不变。普通local预算每新source段≤300s、最多2必要顶层进程各≤45s，TMP16MiB/raw256KiB/source-meta1MiB；本段尚未执行。X01已明确归还local，启动前fresh组合余量；0PG/native/provider/install。Web App/Thread仍RECOVERY原owner，messages renderer另需精确领取；公开reasoning不得映成正文。
+公开stream新工作段：已读本地find-skills/codebase-design/clean-code，复用前缀hash封包与单receive pump；一次来源协商/身份策略覆盖runner→中心→共享投影，旧Claude JSON与digest不变。普通local预算每新source段≤300s、最多2必要顶层进程各≤45s，TMP16MiB/raw256KiB/source-meta1MiB；首段2进程结束，输入修复后仅1次types复核；全部组/EOF/ownTMP已确认，local归还X01。每次fresh组合余量；0PG/native/provider/install。Web App/Thread仍RECOVERY原owner，messages renderer另需精确领取；公开reasoning不得映成正文。
+
+当前公开小片：[Interface](../../docs/evidence/mature02c02/public-stream-next.md)与[单段记录](../../docs/evidence/mature02c02/public-stream-segment.json)，source9e212e50/6cbe91ff。89/89仅local真实Node合成transport和注入SQL，后继strict0；原types2保留。v7/50 ACTIVE未release。独立source/results待review，真实PG动态SQL与Web/TUI仍未验；不把旧6PG作为新stream通过。

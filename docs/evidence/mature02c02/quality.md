@@ -47,3 +47,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-07T04:11:49.742540+00:00：stream安全点复用本地find-skills/brainstorming既有授权设计、codebase-design、clean-code。把长期帧计数改为已有累计字节+有限待消费队列，单接收pump按32帧让出I/O；严格固定0.154通知shape，不放开未知工具/身份/终态。私有delta与最终投影责任分开；尚未冒称public stream。103+1分轮及types2→0，首次fake不完整turn receipt和TS union诊断真实保留；产品不靠放宽超时通过。OPS14复用一段记录，无新supervisor/大闭包。
 
 2026-10-07T04:19:26.622671+00:00：独审P2修复：pending sink必须收到合并signal，abort-aware等待不等于证明sink已停止；Promise.race保留原失败unknown，不新增监督器。只2新增取消反例+strict0，原104不重跑，6process/15min原段已闭合。独立import-only92d01931获status_read04:14:09批准，旧main接线可独立应用，不混stream。
+
+2026-10-07T04:40:35.501546+00:00: public-stream安全点沿find-skills已装clean-code/codebase-design；抽取真实Claude/Codex共同前缀封包，来源/完成仍各mapper负责，不复制FSM。中心复用既有事务和outbox，v1过滤在LIMIT前，v2保完整身份/频道；sourceMessageId明确generated correlation。89局部通过、types首缺baseline后补固定原件得0，保首失败；无PG/native/UI通过声明。直接新schema/动态SQL仍需独审与专用PG验收，未知thinking不伪造。
