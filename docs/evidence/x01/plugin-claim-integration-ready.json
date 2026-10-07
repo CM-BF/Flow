@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-07T05:54:11.464595+00:00",
+  "state": "READY",
+  "sourceCommit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+  "packetCommit": "cfdade05a428c5bee721910d604259d5deff8791",
+  "comparisonBase": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+  "sourceFiles": [
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "role": "source",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "role": "source",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.test.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "d9a8c9c1605475e1ff7e78ecc7c6fba0abf1846d",
+      "role": "source",
+      "bytes": 6094,
+      "sha256": "be0401f4ea46302c92c69c199eb71e6903f217d3b731ee042ac495744d0ff02f"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "02119f49bae73cae2c27d10472b08edbeb8712fa",
+      "role": "source",
+      "bytes": 10960,
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+    },
+    {
+      "path": "apps/runner/src/admission-plugin-claim.test.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "1c8c0cb854cb32f7cdefbf417fe9b44eb148e947",
+      "role": "source",
+      "bytes": 6811,
+      "sha256": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545"
+    }
+  ],
+  "sourceCount": 5,
+  "sourceBytes": 32027,
+  "review": "docs/evidence/x01/plugin-claim-independent-review.json",
+  "manifest": {
+    "path": "docs/evidence/x01/plugin-claim-manifest.json",
+    "sha256": "e63e6224c1f89f54b922ebe60294b3f686bb779d6349e79ed1e8ae615ad1d6f7"
+  },
+  "evidence": [
+    "docs/evidence/x01/plugin-claim-local.json",
+    "docs/evidence/x01/plugin-claim-interface.md",
+    "docs/evidence/x01/plugin-claim-base.json"
+  ],
+  "checks": {
+    "focusedTypesExit": 0,
+    "selected": 11,
+    "passed": 11,
+    "actualPg": 0,
+    "actualNative": 0
+  },
+  "integrationRules": [
+    "Apply only these five reviewed source blobs and the listed evidence. Do not copy older branch product versions over main.",
+    "Compare runner-claim.ts and admission-journal.ts against fixed main bf8b before integration; owner coordinates any conflict.",
+    "Do not modify occupied contracts/index.ts, client/index.ts, runner configuration.ts/main.ts or runner.ts as part of this intake.",
+    "This activates no production v3 endpoint. Existing v2 journal API remains the default; persisted v3 refuses legacy bind rather than downgrading."
+  ],
+  "pending": [
+    "Center SQL-before-LIMIT eligibility and cross-protocol receipt fencing",
+    "Trusted runtime/client v3 request, status recovery and execution port",
+    "Live load/invoke grant ACK consumption and semver bundle vertical"
+  ],
+  "mainIntegrated": false
+}

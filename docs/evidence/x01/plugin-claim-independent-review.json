@@ -1,0 +1,38 @@
+{
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewer": "status_read",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T05:52:15.936782Z",
+  "sourceCommit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+  "packetCommit": "cfdade05a428c5bee721910d604259d5deff8791",
+  "manifestSha256": "e63e6224c1f89f54b922ebe60294b3f686bb779d6349e79ed1e8ae615ad1d6f7",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "bindings": {
+    "git": 22,
+    "gitBytes": 130692,
+    "external": 6,
+    "errors": []
+  },
+  "verified": [
+    "Complete request/host/assignment identity and unknown ACK semantics",
+    "V2 codec unchanged except task schema export; no v2 upgrade or v3 downgrade",
+    "Inputs parsed and copied before serialized writes; assignment and next key durable before memory publication",
+    "Restart and persistence failure preserve original identity",
+    "Focused types exit0; 11/11 (5 codec +6 actual filesystem journal cases), 114B raw",
+    "Two terminal groups absent with merged EOF; seven fixture and two TMP paths independently lstat ENOENT"
+  ],
+  "limits": [
+    "Only five source files and existing AdmissionJournal consumer",
+    "Production v3 server/client/runtime, SQL-before-LIMIT filters, cross-protocol receipt conflicts and actual plugin execution remain pending",
+    "Historical EPERM observations retained; final samples are not peak; postSourceAttribution and whole external wall UNKNOWN retained"
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "imports": 0,
+    "pg": 0,
+    "writes": 0
+  }
+}
