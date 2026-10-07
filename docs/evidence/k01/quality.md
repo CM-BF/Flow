@@ -15,3 +15,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07 00:14 UTC：REQ-10/K01留存规划。find-skills本地优先，已读find-skills/brainstorming/codebase-design/固定clean-code；实际路径/hash见retention-planning-inputs.json，无安装。按已获GO规划授权使用brainstorming的现状/方案取舍方法，不另建spec或重复审批。clean-code检查：knowledge原文authority与留存保护职责明确，K02/K03仍拥有冻结状态；内部永久标记避免每次冻结无限holder，外部holder有界，命令receipt生命周期明确留作跨模块依赖；不造通用GC或隐藏TTL释放。锁序/并发为待测推荐，不假称证明；归档与回收、preview与固定引用、旧产品批准与新规划区分。尚待Mika固定文档review；0工程tests/产品PG/模型/实际删除。
 
 2026-10-07 规划预审修正：Mika指出4096条永久receipt配额会把16瓶颈转成终身命令次数限制，已从推荐方案删除；原flow.commands规则不改，实施前审定该跨模块依赖，本规划不证明整个DB/命令历史永久有界。补ACK未知时不得换协议或新key。仅文档修正，无检查重跑。
+
+规划验收补充：配额只限制新增占用，不可阻断既有holder安全release；R12覆盖满额恢复、release掉ACK原key/body/协议重放、重启与真实存储故障恢复。累计4096不是可接受长期完成方案，已从推荐删除；命令生命周期仍需跨模块审定，不造GC。

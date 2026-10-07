@@ -22,7 +22,7 @@
 4. **legacy保守兼容。** 前进迁移保留全部既有号/正文/digest/ACK并标记legacy保护，不据018/021反查为空而解除。未协商managed能力的旧客户端不能在managed可回收版本上静默取得被它当永久引用的结果：首片推荐明确upgrade-required错误、无部分结果；选择保守保护后兼容暴露是另一可行策略，但不得混用成隐式保护。新客户端到旧中心仅使用原保留语义，不发送未知字段或自动改协议。send/queue的协议选择必须与body/key一起冻结，未知ACK只重试原请求；不能同key切协议，也不能在ACK未知时换新key再发。协议变化须先明确解决原未知结果，再建立新的逻辑命令。既有legacy来源继续原兼容行为；是否新建/发布managed版本须明确选择，不能批量切换旧来源。端点/协商字段由后续合法owner固定，本次不抢共享接口。
 5. **归档与回收不同。** 归档只表示退出当前检索/按需读取；保留的完整正文继续计入16/64MiB。可删除旧chunks来减少投影，但这不释放原文容量，也不是完整版本已回收。回收只删除已知managed、无内部/legacy保护且无外部holder的完整旧版本及衍生chunks。source/head不删除；冻结详情仍需它报告currentVersion。旧序号≤高水位且不在保留集合，可明确gone；未来号not-found，不为每个回收号永久增加tombstone。
 
-有界证明仅覆盖保留原文/版本/chunks/活动pin：活动holder行上限128×16×64，永久保护标记至多每保留版本一行；不新增逐次永久tombstone。新命令仍复用flow.commands原不可变ACK/重放规则，不能删除unknown回执或重写历史响应。**flow.commands既有生命周期是实施前必须审定的跨模块依赖，本方案不证明全部命令历史或整个DB永久有界。** 不以4096等新的终身命令次数上限替代16瓶颈，也不在此规划造通用命令GC。外部pin/release与发布的receipt成本应在取得后续scope前由相关owner具体评估。
+有界证明仅覆盖保留原文/版本/chunks/活动pin：活动holder行上限128×16×64，永久保护标记至多每保留版本一行；不新增逐次永久tombstone。新命令仍复用flow.commands原不可变ACK/重放规则，不能删除unknown回执或重写历史响应。**flow.commands既有生命周期是实施前必须审定的跨模块依赖，本方案不证明全部命令历史或整个DB永久有界。** 不以4096等新的终身命令次数上限替代16瓶颈，也不在此规划造通用命令GC。外部pin/release与发布的receipt成本应在取得后续scope前由相关owner具体评估。**配额只能限制新增占用，不能阻断安全释放既有holder**：版本/原文/holder满时release仍可操作，必须原子保存原ACK并释放原holder；掉ACK只用原key/body/协议重放，不重复释放、不误释放其它holder。真实存储故障或未知结果仍fail-closed/查询确认，不能凭超时声称已释放；恢复后同key可继续。任何未来命令生命周期方案必须证明耗尽后这条恢复路径可用，不能另设累计终身次数上限后宣称长期容量已解决。
 
 ## 职责、事务与异常
 
@@ -68,5 +68,6 @@ Root与chatui01只读输入已合入同一记录，不另造下游事实源。�
 | K01-R09 | citation1+currentVersionAtFreeze17和citation17穿过server/client/Web/context history；旧中心/旧client/不协商managed明确兼容或拒绝，绝不假报head16 |
 | K01-R10 | 前进迁移重启，旧015/018/021 bytes与receipt完整；直接UPDATE/DELETE/TRUNCATE保护不能绕过，current source不可删；已回收号gone/未来号not-found |
 | K01-R11 | search仍只当前source、excerpt≤512B/JSON≤48KiB，resolve≤4KiB，context详情≤8KiB/JSON≤64KiB；projection删减不改变原文authority |
+| K01-R12 | 满额只拒新增占用，已存在holder仍可release并恢复发布容量；release掉ACK同key/body/协议回原receipt，重启/未知结果不改引用身份、不换key，存储故障回滚/恢复后可继续；future receipt生命周期必须通过此恢复门槛 |
 
 只在未来获产品scope后做唯一专库/动态端口/0模型功能验证及直接消费者检查；本次未运行它们。保留纯metadata审查与产品实现/验证/集成的区别。
