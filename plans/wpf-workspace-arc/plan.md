@@ -28,3 +28,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T20:42:30.368488Z：仅test修复瞬态累计读取前置为两真实HTTP响应barrier，并在队列占用中dispose第三pane；保hidden后重新可见、第三新增读取0/peer前進/peak2。新HTTP候选等待独立30s实际窗口，旧30s已封。
 
 2026-10-07T20:50:23.889173Z：第二独立HTTP2652ms后整体FAIL；hidden/queued-dispose已实际通过，backlog次序断言失败，保首轮相反结果。下一步仅固定实际证据/窄静态归因，无自动运行或放宽验收。
+
+2026-10-07T20:54:44.938055Z：验收语义显式更正：等待者FIFO在完整batch释放点不可被reacquire插队；不要求仍inflight或刚latejoin者与全peer锁步。原旧失败保留，真实响应边界依次验C/A/B/C与持续前进，未授权第三HTTP。

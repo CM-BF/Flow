@@ -1,7 +1,5 @@
 # WPF-WORKSPACEARC01 Review
 
-IN_PROGRESS `fe7f18d564baaea7ed3ec87bedf49bd805cbdf10`。root[7b962](../../docs/evidence/wpf-workspace-arc/root-arc-http-waiter-fix-review-20261007.json)已APPROVED窄test修复、types3096与原caller；不是HTTP通过。
+IN_PROGRESS `7e911df40d8c0ff875ac96e0fab36a1a3a253940`。两次HTTP整体FAIL原件保留：首3408/第二2652均独立CLOSED，不跨轮拼PASS。第二raw只有test65谓词false，没有具体peer trace；不能定产品唯一根因。
 
-第二HTTP实际1PASS/1FAIL/11未选：hidden/queued-dispose通过，backlog test65批次次序失败；2652/30000 CLOSED，旧3408首FAIL保留，不拼跨轮全绿。[第二原件](../../docs/evidence/wpf-workspace-arc/http-second-20261007/manifest.json)及[有界静态归因](../../docs/evidence/wpf-workspace-arc/http-second-20261007/static-triage.md)待root actual审。Node/组/scratch精确归还，regularlogs不称双EOF，无portprobe。
-
-产品未改；0第三HTTP/0browsergrant。browser4/PNG/main未完成，原13local与两次types限定绿不外推；所有旧预算CLOSED不转。
+当前仅test修正验收语义，固定真实batch响应边界验waiting FIFO C→A→B→C，而不要求inflight peer锁步；保原完整11cursor/实际最终内容/peak2/cache4MiB，新增≤48公开请求trace。类型检查3362ms/exit0/精确cleanup，HTTP未重跑。[当前入口](../../docs/evidence/wpf-workspace-arc/http-fifo-boundary-20261007/entry.json)待root源/语义与routinecaller集中审。原7b962及更早source批准仅其固定范围；browser4/main仍未验。

@@ -1,6 +1,6 @@
 {
-  "state": "SECOND_HTTP_FAILED_PHASE_CLOSED_NO_NEXT",
-  "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
+  "state": "TWO_FAILED_PHASES_CLOSED_FIFO_BOUNDARY_CANDIDATE_NOT_GRANTED",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
   "localPhase": {
     "state": "CLOSED",
@@ -19,7 +19,7 @@
     "sequentialOwnedHTTP": 1,
     "fixture": "existing actual StreamHost + shared projection, not a reducer mirror",
     "noAutomaticRetry": true,
-    "caller": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "caller": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
     "scratchBytes": 8388608,
     "retainedBytes": 1048576,
     "firstActual": {
@@ -31,7 +31,7 @@
       "phase": "CLOSED",
       "unusedNotTransferred": 26592
     },
-    "retry": "no new retry grant; consumed second packet retained",
+    "retry": "new independent30s candidate; source/acceptance delta awaits review",
     "secondActual": {
       "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
       "executionHead": "09e4dc4a2aee758190d22a11ff67398d77aef958",
@@ -98,7 +98,7 @@
   "gate": null,
   "env": null,
   "reservation": null,
-  "packet": "/private/tmp/arc-http-waiter-retry-1favc0g8",
+  "packet": "/private/tmp/arc-http-fifo-boundary-udlv461a",
   "sourceReview": "891f source/local APPROVED; 7097 browser observation delta + callers awaiting focused review",
   "preparationTypes": {
     "state": "CLOSED",

@@ -1,0 +1,69 @@
+{
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "originalCaller": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "realpath": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "caller": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
+    "realpath": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "callerExact": true,
+  "sourceCount": 207,
+  "changedSource": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "bytes": 17521,
+        "sha256": "9e6654e9aa62ba59d8573cd04c494983e519c3c319c0d4b904cc306331f3cb66",
+        "gitPath": "apps/web/test/conversation-stream-integration.test.ts",
+        "blob": "deb56d3c363321fdab8d728b59ff530f63eac9d3"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts",
+        "bytes": 19433,
+        "sha256": "3c65cda68939996c9533796665f6edb25a66828bad6f0ae8765749f492c3ec7d",
+        "gitPath": "apps/web/test/conversation-stream-integration.test.ts",
+        "blob": "0eb6f3b734265d320373e22d6fa3ee5c59dee491"
+      }
+    }
+  ],
+  "externalCount": 43,
+  "resolverCount": 33,
+  "HTTPTools": 4,
+  "dataOnly": [
+    "unique packet/output sandbox path",
+    "one test sourcepin/current fixed Git",
+    "new proposal phase; no actualgrant"
+  ],
+  "closedHistory": [
+    {
+      "accounting": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-first-20261007/accounting.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-first-20261007/accounting.json",
+        "bytes": 1192,
+        "sha256": "20805a500bdc07a214f366a9ab2aac32f3734d2117d09f949a081fde84c34ccc"
+      },
+      "spentMs": 3408,
+      "unusedMs": 26592,
+      "transfer": false
+    },
+    {
+      "accounting": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-second-20261007/accounting.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/http-second-20261007/accounting.json",
+        "bytes": 1182,
+        "sha256": "5ee8a489d668a8e21e3e5351f7799b31a6ea128f8d76a4ba0ad0cd10a0094e18"
+      },
+      "spentMs": 2652,
+      "unusedMs": 27348,
+      "transfer": false
+    }
+  ]
+}

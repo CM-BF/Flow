@@ -13,3 +13,5 @@
 2026-10-07T20:42:30.368488Z：clean-code实际复核：相同server只观察指定task的原end参数，不改业务结果；barrier仅两个响应、1s到达、finally/afterEach释放；没有额外store/通用supervisor。纠正采样累计数冒并发窗口、完成后dispose冒queued关闭两处测试缺口；未判产品withdraw缺陷。类型0/3096，0新HTTP。
 
 2026-10-07T20:50:23.889173Z：clean-code实际检查本次错误与结果分层：原两case独立fixture，afterEach与组收尾无错误；childexit1/selectedFAIL不包装成产品唯一缺陷。提出eligibility与inflight的最窄证据缺口，不加新framework/不改源码/不重复绿。
+
+2026-10-07T20:54:44.938055Z：clean-code实际复核：barrier只1–2peer，cursor可选过滤为原真实响应，单一releaseTask负责恢复原end/原bytes且幂等，finally清理；测试以明确occupancy界定waiting，布局/调度产品不改；避免以全局round同步制造错误职责。trace≤48 publicrows+4indices无secret/body，noEmit0/3362；旧假设仍不冒actual根因。

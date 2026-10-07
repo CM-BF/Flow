@@ -1,0 +1,5 @@
+# Arc FIFO batch-boundary candidate — NOT_GRANTED
+
+python3 http/run.py direct-1 <fresh-grant.json>. Caller byte-exact8c0179, same two case names/config/native/loopback sandbox semantics, source207 only one test changed. Proposed new single30s=20work+10cleanup,8MiB scratch+1MiB retained,1Node/necessarysamegroup thread,1sequentialHTTP/0PGChrome/provider. Regular logs not dualEOF; fixture afterEach and exact group/scratch cleanup required; no independentportprobe. Latest futurefloor18,955,370,496 or manager future frozen higher sum. Old3408/2652 phases CLOSED and no unusedtransfer. No actualgrant/runnamespace consumed here.
+
+Acceptance correction is explicit, not a retrospective pass: original global third-before-all-second condition conflated work-conservingFIFO with lockstep peer rounds. New realHTTP holds exact fourth-page cursor72 responses of A/B, queues late C, then observes repeated eligible waiter wins C→A→B→C. It retains all11cursor pages/task, actual finaltext progression, peak2 and4MiB cache. Old twoFAILraw retained. Public trace bounded48reads records exact boundary indices; no tokens/headers/body. Actual evidence remains pending.

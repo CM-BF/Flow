@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T20:54:44.938055Z",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "changedProducts": [],
+  "changedTest": "apps/web/test/conversation-stream-integration.test.ts",
+  "delta": "39+/20-; others17source unchanged",
+  "packet": "/private/tmp/arc-http-fifo-boundary-udlv461a",
+  "manifest": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/manifest.json",
+    "realpath": "/private/tmp/arc-http-fifo-boundary-udlv461a/manifest.json",
+    "bytes": 2342,
+    "sha256": "25cd96573b22538cc1c580f4054cc85792d08083e1b74d349efbdeb49e841bb5"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/binding.json",
+    "realpath": "/private/tmp/arc-http-fifo-boundary-udlv461a/binding.json",
+    "bytes": 145776,
+    "sha256": "e8b44afe24b98f3a1731fb51ecc9d89dd648f61846208c69b6804fa112eaa167"
+  },
+  "caller": {
+    "path": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
+    "realpath": "/private/tmp/arc-http-fifo-boundary-udlv461a/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "local": "single changed test+staticimports noEmit0/3362ms,20sCLOSED",
+  "HTTP": "NOT_RUN_NOT_GRANTED",
+  "browser": "NOT_GRANTED",
+  "review": "PENDING_FIXED_SOURCE_AND_ACCEPTANCE_DELTA_REVIEW",
+  "facts": [
+    "Second raw has only predicatefalse at65, not failingpeer trace",
+    "Second removalcase passed; firstbacklog pass/secondfail remain distinct"
+  ],
+  "inference": "global peer-round predicate can fail for legitimate in-flight slow/latepeer; actual product cause was not established",
+  "newAcceptance": [
+    "Complete firstbatch end responses at72 hold both true leases before latejoin",
+    "Older queuedC wins A release before A96",
+    "QueuedA wins B release before B96",
+    "QueuedB wins C completedbatch before C96",
+    "QueuedC wins next A completedbatch before A192",
+    "All three actually finish81patches in11orderedpages, peak2 and boundedcache",
+    "Bounded public readtrace on pass/fail; no sensitive content"
+  ]
+}

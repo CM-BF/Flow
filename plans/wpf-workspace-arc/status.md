@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:49:20.590644Z；仅分支实际，不冒main核验 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T20:54:44.938055Z；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；本次metadata随后seal |
-| 工作树dirty状态 | 固定fe7f源码STOP；第二HTTP actual own metadata封存，源码STOP/0child |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
+| 工作树dirty状态 | 7e911 test已固定STOP；仅own metadata封存，0child |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | FAILED fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；修后HTTP1PASS/1FAIL/11未选，2652ms；两轮分别保留，browser4 NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | fe7f18d564baaea7ed3ec87bedf49bd805cbdf10 |
+| 实现目标 | 7e911df40d8c0ff875ac96e0fab36a1a3a253940 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 第二HTTP隐藏/queued-dispose PASS；backlog peer批次顺序test65 FAIL。首轮backlog PASS保留，不拼整体绿；exact Node/组/scratch RETURN，待窄归因 |
+| 当前产出 | 两轮HTTP整体FAIL保留；已改为真实完整batch边界下的等待者FIFO优先证据，保全部cursor/持续前进/peak/cache；types0，修后HTTP NOT_RUN |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | IN_PROGRESS fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；root7b962源修/local/复用caller批准；第二HTTP actual FAIL待独审，browser NOT_RUN |
+| Review | IN_PROGRESS 7e911df40d8c0ff875ac96e0fab36a1a3a253940；新test验收语义/原caller例行绑定待集中审，旧7b962与两个actual层级保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -59,3 +59,5 @@
 2026-10-07T20:49:20.590644Z：第二独立HTTP START2026-10-07T20:48:14.529496Z，PID/PGID7418，child/outerexit1，2652/30000 CLOSED/未用27348不转。20:48:31.490133Z exact PID/PGID ESRCH、scratchabsent，regularlogs、无独立portprobe。修后hidden/queued-dispose PASS；backlog在test65 peer second-before-third谓词FAIL，11未选。0PG/Chrome/provider，0新运行授权；旧首轮3408账与原件不改。
 
 2026-10-07T20:50:23.889173Z：第二原件已[归档](../../docs/evidence/wpf-workspace-arc/http-second-20261007/manifest.json)，当前全20scope STOP保claim；root7b962源批准保留。两轮HTTP均整体FAIL，旧3408与新2652均单独CLOSED。不存在第三NEXT或browsergrant。
+
+2026-10-07T20:54:44.938055Z：原10min/4MiB source段固定7e911，只改test39+/20-。不是已证productbug修复；明确修正全peer锁步谓词为真实waiting FIFO优先，增加≤48公共请求trace。新changed types3362/20000 CLOSED/未用16638不转，PID/PGID82919与scratch精确归还。新独立HTTP30候选[入口](../../docs/evidence/wpf-workspace-arc/http-fifo-boundary-20261007/entry.json)，无第三actualgrant/browsergrant。
