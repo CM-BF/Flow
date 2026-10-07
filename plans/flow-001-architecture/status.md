@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:19:44.585953+00:00 / main311e6215；SVC08真实Web宿主采用完成，后台与网页版本保留 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:51:08.604977+00:00 / mainf39a5dfe；工具全文领域、PG结果和原生单文件工具机制证据已接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main311e6215已接Codex公开流、插件领域及已审SVC caller修复。06:17:15.974Z个人Web宿主实际采用固定c7b产物/source422；后台af51/accepting v18、Web d629/v3及三个retained保持。主线源码、宿主产物和实际产品版本分别记录。 |
+| 已集成main状态 / HEAD | mainf39a5dfea0a33ef55631cb7e29291deca6d4e0d2已接CHAT05领域及ENG单helper证据；新增测试类型依赖P2窄修后root noEmit0。个人backend af51/v18、网页d629/v3与固定c7b宿主保持，集成不表示新模块已启用。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人网页宿主已从固定产物运行，旧网页资源仍可读取，中心和runner保持原运行版本；Codex公开流与插件启用领域已进入主线。 |
-| 下一可用交付 | 完成工具全文的三个数据库场景及公共接线；并行推进原生文件工具兼容、Codex会话和界面恢复验收。 |
+| 当前产出 | 大材料完整取回与中断恢复已通过隔离验证，模块已进入主线；原生文件工具完成一次受限写入，个人网页宿主保持已更新版本。 |
+| 下一可用交付 | 把工具全文读口接入实际聊天；继续Codex会话、界面恢复与原生工程宿主组合验收。 |
 | 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -198,3 +198,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T04:58:50.168470+00:00：mainef3a6de8已受控接收ENG01I；两PG旅程2/2与独立结果审查保持范围，真实authority/模型与业务接受仍未完成。SVC08固定Flow422产物30732ms/组absent、0PG/provider/个人操作，窗口04:54:50结束；仅结果待独审。OPS资源计量后继复用Quick/ACCESS两consumer输入，原失败不改，未新增工程检查或扩大门槛。
 
 2026-10-07T06:01:08.284257+00:00：CI启用决定仅由OPS-CI01唯一source呈现；父任务需用户决定=NONE，只在阻塞引用依赖。原用户问题仍PENDING，未获得授权或启动远程CI；不改变历史UNKNOWN时间。
+
+2026-10-07T06:51:08.604977+00:00：CHAT05原3PG于06:37:51.861095Z启动、06:37:55.330Z持久cleaned、06:37:55.362725Z结束；3/3、组absent/双EOF、marker/OID核后普通DROP/remaining[]，窗口已直接归还两co-lead。ENG独立stock于06:44:31.242028Z结束，单文件0→X/旁文件不变、574ms、两组清理；仅机制证据，writeAccess仍unknown。二者固定结果独审及主线接收见I02；组合类型原TS2307保留，类型层窄修后9991ms/exit0，不重跑PG。完整公共开通、app-server派生/模型资格/全部writer撤销仍open。历史开工UNKNOWN、CI唯一PENDING决定及原失败保持，不重复询问用户。
