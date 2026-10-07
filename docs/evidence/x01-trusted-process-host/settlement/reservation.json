@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T13:19:37.325716+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/vitest.config.mjs",
+    "--no-cache",
+    "apps/runner/src/plugins/execution.test.ts",
+    "-t",
+    "trusted settlement|trusted worker keeps current invoke grant"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+  "free": 21683843072,
+  "required": 7500000000,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/settlement/tmp",
+    "dev": 16777234,
+    "ino": 124158814
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

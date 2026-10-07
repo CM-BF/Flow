@@ -36,7 +36,7 @@
 
 `host.mjs:backendById/backendRuntime/assertInstallationSource`、maintenance bootstrap/refresh/resume 都逐产物调用 `verifyBackendArtifact`，不调用 store count 准入；该 verifier 没有全 store count 检查。因此本次正式工具演进不要求重建已审 cd27，旧 manifest 继续可读。旧固定工具的 count2 仍原样存在于旧产物：以后若错误地用它在满 store 中重新 prepare，会保守拒绝，不能偷偷绕开。
 
-旧 `migration-adapter.mjs`（5c29e13a5d251e4fb6b99d7d1277ace85dee24dc）不直接可用于本次：它固定 null backend、policy 不存在及 `[c7b,7d1]` 白名单。新薄装配需显式绑定已有 backend7d1、Web host7d1、已存在 policy 原字节与完整 `[c7b,7d1]` 集合，再加入 cd27；使用新版受信工具的共用容量门。沿原 `migrateOnce`、preview→store 双锁、完整 verify、fsync intent/checkpoint 和 exclusive no-replace rename，不复制第二状态机，不改旧装配或旧运行原件。此实际装配及新参数仍待固定/独审，本文不声称已经可执行。
+旧 `migration-adapter.mjs`（5c29e13a5d251e4fb6b99d7d1277ace85dee24dc）不直接可用于本次：它固定 null backend、policy 不存在及 `[c7b,7d1]` 白名单。新薄装配需显式绑定已有 backend7d1、Web host7d1、已存在 policy 原字节与完整 `[c7b,7d1]` 集合，再加入 cd27；使用新版受信工具的共用容量门。沿原 `migrateOnce`、preview→store 双锁、完整 verify、fsync intent/checkpoint 和 exclusive no-replace rename，不复制第二状态机，不改旧装配或旧运行原件。当前 callable Module 已固定为7324a2a0，复用原锁/协议/只读runner SQL，见[current-migration-interface](current-migration-interface.md)；6个不同直接例通过。Module待独审；实际fresh参数、报告集合和本次OPS14实例调用仍待封定，不声称现场已经可执行。
 
 ## Web 兼容的准确 tuple
 
@@ -72,4 +72,4 @@ backend 更新前至少三个 retained 的新 tuple 必须齐备；新网页发�
 
 只复用OPS14及既有持久phase receipts。失败/unknown停后继，锁按原 finally 正常释放，不能声称锁永远保留；有已消费副作用先核持久checkpoint，禁止自动新namespace重试、rollback、删journal或退役资源。监督对象仅自有operator消费者，detached个人角色只按原公开生命周期/nonce停止，不凭外层group absent猜全服务终态。
 
-当前交付：产物独审/主线receipt、尺寸/来源、集中retention工具及其直接例。仍缺：新迁入薄装配固定、三个 retained 和新网页的04da/context报告及审查、届时fresh现场事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。
+当前交付：产物独审/主线receipt、尺寸/来源、已审并main fd9dd5a9的集中retention工具；当前迁入Module及参数/guard已固定交审。仍缺：Module独审、实际参数/监督调用固定、三个 retained 和新网页的04da/context报告及审查、届时fresh现场事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。

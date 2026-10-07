@@ -124,3 +124,91 @@ test('empty real package output remains a failed flow.text verification, not a f
     expect(result.artifact.content).toBe(''); expect(result.verification).toMatchObject({ type: 'verification', result: 'failed' });
   }, () => `export const hostApiMajor=1; export function invoke(){ return ''; }`);
 });
+
+import { createTrustedProcessHost, type ProcessObservation } from './process-host.js';
+async function withProcess(code: (root: string) => string, run: (input: PluginExecutionInput, facts: ProcessObservation[], root: string) => Promise<void>) {
+  await withPackage(async ({ input, root }) => {
+    const facts: ProcessObservation[] = [];
+    const host = await createTrustedProcessHost({ resourceRoot: join(root, 'process'), observe: value => facts.push(value) });
+    input.invokeTool = host.invoke;
+    try { await run(input, facts, root); }
+    finally { await host.close(); }
+    expect(facts.length).toBeGreaterThan(0);
+    expect(facts.every(fact => fact.processClosed && fact.protocolEof && fact.stdoutEof && fact.stderrEof)).toBe(true);
+    expect(await fs.readdir(join(root, 'process/receipts'))).toEqual([]);
+  }, code);
+}
+
+test('trusted worker reaches real execution consumer with fresh module state and unchanged provenance', async () => {
+  await withProcess(() => `let count=0;export const hostApiMajor=1;export function invoke(){return String(++count)}`, async input => {
+    const first = await executePluginTool(input); expect(first.artifact).toMatchObject({ content: '1' });
+    expect(first.provenance.invocationId).toBe(input.binding.invocationId);
+    input.binding = { ...input.binding, invocationId: randomUUID() };
+    const second = await executePluginTool(input); expect(second.artifact).toMatchObject({ content: '1' });
+    expect(second.provenance.invocationId).not.toBe(first.provenance.invocationId);
+  });
+});
+test('trusted worker keeps current invoke grant and original rejection after a successful load grant', async () => {
+  await withProcess(root => `export const hostApiMajor=1;export function invoke(){throw new Error('must not invoke')}`, async input => {
+    const denial = Object.assign(new Error('denied'), { status: 403 }); const phases: string[] = [];
+    input.authorize = async request => { phases.push(request.phase); if(request.phase==='invoke')throw denial;return receipt(input,request); };
+    await expect(executePluginTool(input)).rejects.toBe(denial); expect(phases).toEqual(['load', 'invoke']);
+  });
+});
+test.each(['import', 'invoke'])('trusted worker terminates %s hang without pretending effects were rolled back', async kind => {
+  await withProcess(() => kind === 'import' ? `export const hostApiMajor=1;await new Promise(()=>{});export function invoke(){return 'never'}`
+    : `export const hostApiMajor=1;export function invoke(){while(true){}}`, async input => {
+      await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
+    });
+}, 15000);
+test('trusted worker does not inherit parent secret and never retains console body', async () => {
+  process.env.FLOW_PROCESS_TEST_SECRET = 'DO_NOT_LEAK';
+  try { await withProcess(() => `export const hostApiMajor=1;export function invoke({input,config}){console.log(input,config.prefix);return String(process.env.FLOW_PROCESS_TEST_SECRET===undefined)}`, async (input, facts) => {
+    input.binding.configuration.prefix = 'PRIVATE_CONFIG';
+    const result = await executePluginTool(input); expect(result.artifact).toMatchObject({ content: 'true' });
+    expect(facts[0]!.diagnosticBytes).toBeGreaterThan(0); expect(JSON.stringify(facts)).not.toContain('PRIVATE_CONFIG');
+  }); } finally { delete process.env.FLOW_PROCESS_TEST_SECRET; }
+});
+test('trusted worker preserves ownership loss before it can invoke', async () => {
+  await withProcess(() => `export const hostApiMajor=1;export function invoke(){return 'never'}`, async input => {
+    const lost = new Error('ownership lost'); let granted = false;
+    input.authorize = async request => { granted = true; return receipt(input, request); };
+    input.assertOwnership = () => { if(granted)throw lost; };
+    await expect(executePluginTool(input)).rejects.toBe(lost);
+  });
+});
+
+test('trusted direct parent abort settles the owned worker without claiming rollback', async () => {
+  await withProcess(() => `export const hostApiMajor=1;export function invoke(){return 'never'}`, async input => {
+    const abort = new AbortController(); input.signal = abort.signal;
+    input.authorize = async request => { if (request.phase === 'load') abort.abort(); return receipt(input, request); };
+    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
+  });
+});
+test('trusted direct diagnostic overflow discards text and retains uncertain business outcome', async () => {
+  await withProcess(() => `export const hostApiMajor=1;export function invoke(){process.stdout.write('PRIVATE'.repeat(4000));while(true){}}`, async (input, facts) => {
+    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
+    expect(facts[0]!.diagnosticBytes).toBeGreaterThan(16384); expect(JSON.stringify(facts)).not.toContain('PRIVATE');
+  });
+});
+
+
+test('trusted settlement retains package failure as cause when owned scratch cannot be cleared', async () => {
+  await withPackage(async ({ input, root }) => {
+    const facts: ProcessObservation[] = [];
+    const host = await createTrustedProcessHost({ resourceRoot: join(root, 'process'), observe: fact => facts.push(fact) });
+    input.invokeTool = host.invoke;
+    try {
+      await expect(executePluginTool(input)).rejects.toMatchObject({ name: 'PluginExecutionUnsettled',
+        bindingId: input.binding.bindingId, invocationId: input.binding.invocationId,
+        cause: { code: 'OUTCOME_UNKNOWN', cause: { code: 'PACKAGE_FAILED' } } });
+      expect(facts).toHaveLength(1); expect(facts[0]).toMatchObject({ exitCode: 0, processClosed: true,
+        protocolEof: true, stdoutEof: true, stderrEof: true });
+      expect(await fs.readFile(join(root, 'process/scratch/00/owned-note'), 'utf8')).toBe('owned test marker');
+      expect(await fs.readdir(join(root, 'process/receipts'))).toEqual(expect.arrayContaining(['owner.json', 'slot-00.json']));
+      // Resource HOLD rejects before another spawn; no automatic retry or receipt adoption.
+      await expect(executePluginTool(input)).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
+      expect(facts).toHaveLength(1);
+    } finally { await expect(host.close()).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN'); }
+  }, () => `import {writeFileSync} from 'node:fs';export const hostApiMajor=1;export function invoke(){writeFileSync('owned-note','owned test marker');throw new Error('package failed')}`);
+});

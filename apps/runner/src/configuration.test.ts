@@ -163,3 +163,11 @@ it('plugin operator file is explicitly selected and returns only strict store po
   }
   await expect(loadPluginExecutionConfiguration('')).rejects.toThrow('invalid or unavailable');
 });
+
+ it('trusted process mode requires explicit private opt-in and leaves the store DTO unchanged', async () => {
+  const { loadPluginExecutionConfiguration } = await import('./configuration.js');
+  const store = { root: '/operator/materials', storeId: 'private-store', allowedDigests: ['a'.repeat(64)] };
+  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'trusted-process' }))).toEqual({ store, executionMode: 'trusted-process' });
+  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'in-process' }))).toEqual({ store, executionMode: 'in-process' });
+  await expect(loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'sandbox' }))).rejects.toThrow('invalid or unavailable');
+ });

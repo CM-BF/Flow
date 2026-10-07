@@ -1,0 +1,326 @@
+[
+  {
+    "run": "types",
+    "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+    "sha256": "12434cf91ce27678722e959e65883ab24710642ce9b300d9d05ed8e82d9ab4e8",
+    "source": "docs/evidence/x01-trusted-process-host/run-local-v1.txt"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/process-host.ts",
+    "sha256": "866f0156759c8f0bc417c851289bba7266ca0abed220315872ace91fddb27ce7",
+    "source": "docs/evidence/x01-trusted-process-host/process-host-v1.txt"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/process-worker.ts",
+    "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "source": "apps/runner/src/plugins/process-worker.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/process-protocol.ts",
+    "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "source": "apps/runner/src/plugins/process-protocol.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/process-resources.ts",
+    "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "source": "apps/runner/src/plugins/process-resources.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/execution.ts",
+    "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "source": "apps/runner/src/plugins/execution.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/configuration.ts",
+    "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "source": "apps/runner/src/configuration.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "source": "apps/runner/src/runtime.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/process-host.test.ts",
+    "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16",
+    "source": "apps/runner/src/plugins/process-host.test.ts"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/plugins/execution.test.ts",
+    "sha256": "b5d04de0a111b7be50ea92211fcdd23b59f1d158957679a580003db7fa5ad257",
+    "source": "docs/evidence/x01-trusted-process-host/execution-v1.txt"
+  },
+  {
+    "run": "types",
+    "path": "apps/runner/src/configuration.test.ts",
+    "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+    "source": "apps/runner/src/configuration.test.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+    "sha256": "12434cf91ce27678722e959e65883ab24710642ce9b300d9d05ed8e82d9ab4e8",
+    "source": "docs/evidence/x01-trusted-process-host/run-local-v1.txt"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/process-host.ts",
+    "sha256": "866f0156759c8f0bc417c851289bba7266ca0abed220315872ace91fddb27ce7",
+    "source": "docs/evidence/x01-trusted-process-host/process-host-v1.txt"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/process-worker.ts",
+    "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "source": "apps/runner/src/plugins/process-worker.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/process-protocol.ts",
+    "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "source": "apps/runner/src/plugins/process-protocol.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/process-resources.ts",
+    "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "source": "apps/runner/src/plugins/process-resources.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/execution.ts",
+    "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "source": "apps/runner/src/plugins/execution.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/configuration.ts",
+    "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "source": "apps/runner/src/configuration.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "source": "apps/runner/src/runtime.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/process-host.test.ts",
+    "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16",
+    "source": "apps/runner/src/plugins/process-host.test.ts"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/plugins/execution.test.ts",
+    "sha256": "b5d04de0a111b7be50ea92211fcdd23b59f1d158957679a580003db7fa5ad257",
+    "source": "docs/evidence/x01-trusted-process-host/execution-v1.txt"
+  },
+  {
+    "run": "behavior",
+    "path": "apps/runner/src/configuration.test.ts",
+    "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+    "source": "apps/runner/src/configuration.test.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+    "sha256": "12434cf91ce27678722e959e65883ab24710642ce9b300d9d05ed8e82d9ab4e8",
+    "source": "docs/evidence/x01-trusted-process-host/run-local-v1.txt"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/process-host.ts",
+    "sha256": "866f0156759c8f0bc417c851289bba7266ca0abed220315872ace91fddb27ce7",
+    "source": "docs/evidence/x01-trusted-process-host/process-host-v1.txt"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/process-worker.ts",
+    "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "source": "apps/runner/src/plugins/process-worker.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/process-protocol.ts",
+    "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "source": "apps/runner/src/plugins/process-protocol.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/process-resources.ts",
+    "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "source": "apps/runner/src/plugins/process-resources.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/execution.ts",
+    "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "source": "apps/runner/src/plugins/execution.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/configuration.ts",
+    "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "source": "apps/runner/src/configuration.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "source": "apps/runner/src/runtime.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/process-host.test.ts",
+    "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16",
+    "source": "apps/runner/src/plugins/process-host.test.ts"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/plugins/execution.test.ts",
+    "sha256": "b5d04de0a111b7be50ea92211fcdd23b59f1d158957679a580003db7fa5ad257",
+    "source": "docs/evidence/x01-trusted-process-host/execution-v1.txt"
+  },
+  {
+    "run": "types-fix",
+    "path": "apps/runner/src/configuration.test.ts",
+    "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+    "source": "apps/runner/src/configuration.test.ts"
+  },
+  {
+    "run": "direct",
+    "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+    "sha256": "273f8c0dd7d72107a702b4176a893ba981dab232f0b2d3be4a51162e0b73b250",
+    "source": "docs/evidence/x01-trusted-process-host/run-local.py"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/process-host.ts",
+    "sha256": "29a2849c7a0d3587edf660997e1f6fe2ab59b98e3b3e88b8b8780259f6f40341",
+    "source": "apps/runner/src/plugins/process-host.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/process-worker.ts",
+    "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "source": "apps/runner/src/plugins/process-worker.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/process-protocol.ts",
+    "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "source": "apps/runner/src/plugins/process-protocol.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/process-resources.ts",
+    "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "source": "apps/runner/src/plugins/process-resources.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/execution.ts",
+    "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "source": "apps/runner/src/plugins/execution.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/configuration.ts",
+    "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "source": "apps/runner/src/configuration.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "source": "apps/runner/src/runtime.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/runtime.test.ts",
+    "sha256": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f",
+    "source": "apps/runner/src/plugins/runtime.test.ts"
+  },
+  {
+    "run": "direct",
+    "path": "apps/runner/src/plugins/execution.test.ts",
+    "sha256": "7aa55f523a5b9031ef19983db7c7e7987e95e1b88bc30f3a0c2f978000d9736f",
+    "source": "apps/runner/src/plugins/execution.test.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+    "sha256": "273f8c0dd7d72107a702b4176a893ba981dab232f0b2d3be4a51162e0b73b250",
+    "source": "docs/evidence/x01-trusted-process-host/run-local.py"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/process-host.ts",
+    "sha256": "29a2849c7a0d3587edf660997e1f6fe2ab59b98e3b3e88b8b8780259f6f40341",
+    "source": "apps/runner/src/plugins/process-host.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/process-worker.ts",
+    "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "source": "apps/runner/src/plugins/process-worker.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/process-protocol.ts",
+    "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "source": "apps/runner/src/plugins/process-protocol.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/process-resources.ts",
+    "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "source": "apps/runner/src/plugins/process-resources.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/execution.ts",
+    "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "source": "apps/runner/src/plugins/execution.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/configuration.ts",
+    "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "source": "apps/runner/src/configuration.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/runtime.ts",
+    "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "source": "apps/runner/src/runtime.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/process-host.test.ts",
+    "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16",
+    "source": "apps/runner/src/plugins/process-host.test.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/plugins/execution.test.ts",
+    "sha256": "7aa55f523a5b9031ef19983db7c7e7987e95e1b88bc30f3a0c2f978000d9736f",
+    "source": "apps/runner/src/plugins/execution.test.ts"
+  },
+  {
+    "run": "types-final",
+    "path": "apps/runner/src/configuration.test.ts",
+    "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b",
+    "source": "apps/runner/src/configuration.test.ts"
+  }
+]

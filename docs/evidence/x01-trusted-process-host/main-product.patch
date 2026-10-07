@@ -1,0 +1,656 @@
+diff --git a/apps/runner/src/configuration.test.ts b/apps/runner/src/configuration.test.ts
+index 29dbe4c0..39cc8711 100644
+--- a/apps/runner/src/configuration.test.ts
++++ b/apps/runner/src/configuration.test.ts
+@@ -163,3 +163,11 @@ it('plugin operator file is explicitly selected and returns only strict store po
+   }
+   await expect(loadPluginExecutionConfiguration('')).rejects.toThrow('invalid or unavailable');
+ });
++
++ it('trusted process mode requires explicit private opt-in and leaves the store DTO unchanged', async () => {
++  const { loadPluginExecutionConfiguration } = await import('./configuration.js');
++  const store = { root: '/operator/materials', storeId: 'private-store', allowedDigests: ['a'.repeat(64)] };
++  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'trusted-process' }))).toEqual({ store, executionMode: 'trusted-process' });
++  expect(await loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'in-process' }))).toEqual({ store, executionMode: 'in-process' });
++  await expect(loadPluginExecutionConfiguration(await manifest({ ...store, executionMode: 'sandbox' }))).rejects.toThrow('invalid or unavailable');
++ });
+diff --git a/apps/runner/src/configuration.ts b/apps/runner/src/configuration.ts
+index 3615844d..4e996f88 100644
+--- a/apps/runner/src/configuration.ts
++++ b/apps/runner/src/configuration.ts
+@@ -105,11 +105,16 @@ const pluginStore = z.strictObject({
+   root: z.string().min(1).max(4096).refine(path => isAbsolute(path) && resolve(path) === path),
+   storeId: z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/),
+   allowedDigests: z.array(z.string().regex(/^[a-f0-9]{64}$/)).max(512),
++  executionMode: z.enum(['in-process', 'trusted-process']).optional(),
+ });
+ 
+ /** Explicit private operator input only; actual materials remain checked by the existing package store. */
+-export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore } | undefined> {
++export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore; executionMode?: 'in-process' | 'trusted-process' } | undefined> {
+   if (filename === undefined) return undefined;
+-  try { return { store: pluginStore.parse(await readPrivateJsonConfiguration(filename)) }; }
++  try {
++    const { executionMode, ...store } = pluginStore.parse(await readPrivateJsonConfiguration(filename));
++    if (executionMode === 'trusted-process' && (process.platform !== 'darwin' || process.arch !== 'arm64' || process.version !== 'v24.20.0')) throw new Error('Unsupported trusted process host.');
++    return { store, ...(executionMode ? { executionMode } : {}) };
++  }
+   catch { throw new Error('Plugin execution configuration is invalid or unavailable. Use an owned 0600 regular JSON file.'); }
+ }
+diff --git a/apps/runner/src/plugins/execution.test.ts b/apps/runner/src/plugins/execution.test.ts
+index 561185bc..27b30715 100644
+--- a/apps/runner/src/plugins/execution.test.ts
++++ b/apps/runner/src/plugins/execution.test.ts
+@@ -124,3 +124,91 @@ test('empty real package output remains a failed flow.text verification, not a f
+     expect(result.artifact.content).toBe(''); expect(result.verification).toMatchObject({ type: 'verification', result: 'failed' });
+   }, () => `export const hostApiMajor=1; export function invoke(){ return ''; }`);
+ });
++
++import { createTrustedProcessHost, type ProcessObservation } from './process-host.js';
++async function withProcess(code: (root: string) => string, run: (input: PluginExecutionInput, facts: ProcessObservation[], root: string) => Promise<void>) {
++  await withPackage(async ({ input, root }) => {
++    const facts: ProcessObservation[] = [];
++    const host = await createTrustedProcessHost({ resourceRoot: join(root, 'process'), observe: value => facts.push(value) });
++    input.invokeTool = host.invoke;
++    try { await run(input, facts, root); }
++    finally { await host.close(); }
++    expect(facts.length).toBeGreaterThan(0);
++    expect(facts.every(fact => fact.processClosed && fact.protocolEof && fact.stdoutEof && fact.stderrEof)).toBe(true);
++    expect(await fs.readdir(join(root, 'process/receipts'))).toEqual([]);
++  }, code);
++}
++
++test('trusted worker reaches real execution consumer with fresh module state and unchanged provenance', async () => {
++  await withProcess(() => `let count=0;export const hostApiMajor=1;export function invoke(){return String(++count)}`, async input => {
++    const first = await executePluginTool(input); expect(first.artifact).toMatchObject({ content: '1' });
++    expect(first.provenance.invocationId).toBe(input.binding.invocationId);
++    input.binding = { ...input.binding, invocationId: randomUUID() };
++    const second = await executePluginTool(input); expect(second.artifact).toMatchObject({ content: '1' });
++    expect(second.provenance.invocationId).not.toBe(first.provenance.invocationId);
++  });
++});
++test('trusted worker keeps current invoke grant and original rejection after a successful load grant', async () => {
++  await withProcess(root => `export const hostApiMajor=1;export function invoke(){throw new Error('must not invoke')}`, async input => {
++    const denial = Object.assign(new Error('denied'), { status: 403 }); const phases: string[] = [];
++    input.authorize = async request => { phases.push(request.phase); if(request.phase==='invoke')throw denial;return receipt(input,request); };
++    await expect(executePluginTool(input)).rejects.toBe(denial); expect(phases).toEqual(['load', 'invoke']);
++  });
++});
++test.each(['import', 'invoke'])('trusted worker terminates %s hang without pretending effects were rolled back', async kind => {
++  await withProcess(() => kind === 'import' ? `export const hostApiMajor=1;await new Promise(()=>{});export function invoke(){return 'never'}`
++    : `export const hostApiMajor=1;export function invoke(){while(true){}}`, async input => {
++      await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
++    });
++}, 15000);
++test('trusted worker does not inherit parent secret and never retains console body', async () => {
++  process.env.FLOW_PROCESS_TEST_SECRET = 'DO_NOT_LEAK';
++  try { await withProcess(() => `export const hostApiMajor=1;export function invoke({input,config}){console.log(input,config.prefix);return String(process.env.FLOW_PROCESS_TEST_SECRET===undefined)}`, async (input, facts) => {
++    input.binding.configuration.prefix = 'PRIVATE_CONFIG';
++    const result = await executePluginTool(input); expect(result.artifact).toMatchObject({ content: 'true' });
++    expect(facts[0]!.diagnosticBytes).toBeGreaterThan(0); expect(JSON.stringify(facts)).not.toContain('PRIVATE_CONFIG');
++  }); } finally { delete process.env.FLOW_PROCESS_TEST_SECRET; }
++});
++test('trusted worker preserves ownership loss before it can invoke', async () => {
++  await withProcess(() => `export const hostApiMajor=1;export function invoke(){return 'never'}`, async input => {
++    const lost = new Error('ownership lost'); let granted = false;
++    input.authorize = async request => { granted = true; return receipt(input, request); };
++    input.assertOwnership = () => { if(granted)throw lost; };
++    await expect(executePluginTool(input)).rejects.toBe(lost);
++  });
++});
++
++test('trusted direct parent abort settles the owned worker without claiming rollback', async () => {
++  await withProcess(() => `export const hostApiMajor=1;export function invoke(){return 'never'}`, async input => {
++    const abort = new AbortController(); input.signal = abort.signal;
++    input.authorize = async request => { if (request.phase === 'load') abort.abort(); return receipt(input, request); };
++    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
++  });
++});
++test('trusted direct diagnostic overflow discards text and retains uncertain business outcome', async () => {
++  await withProcess(() => `export const hostApiMajor=1;export function invoke(){process.stdout.write('PRIVATE'.repeat(4000));while(true){}}`, async (input, facts) => {
++    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
++    expect(facts[0]!.diagnosticBytes).toBeGreaterThan(16384); expect(JSON.stringify(facts)).not.toContain('PRIVATE');
++  });
++});
++
++
++test('trusted settlement retains package failure as cause when owned scratch cannot be cleared', async () => {
++  await withPackage(async ({ input, root }) => {
++    const facts: ProcessObservation[] = [];
++    const host = await createTrustedProcessHost({ resourceRoot: join(root, 'process'), observe: fact => facts.push(fact) });
++    input.invokeTool = host.invoke;
++    try {
++      await expect(executePluginTool(input)).rejects.toMatchObject({ name: 'PluginExecutionUnsettled',
++        bindingId: input.binding.bindingId, invocationId: input.binding.invocationId,
++        cause: { code: 'OUTCOME_UNKNOWN', cause: { code: 'PACKAGE_FAILED' } } });
++      expect(facts).toHaveLength(1); expect(facts[0]).toMatchObject({ exitCode: 0, processClosed: true,
++        protocolEof: true, stdoutEof: true, stderrEof: true });
++      expect(await fs.readFile(join(root, 'process/scratch/00/owned-note'), 'utf8')).toBe('owned test marker');
++      expect(await fs.readdir(join(root, 'process/receipts'))).toEqual(expect.arrayContaining(['owner.json', 'slot-00.json']));
++      // Resource HOLD rejects before another spawn; no automatic retry or receipt adoption.
++      await expect(executePluginTool(input)).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++      expect(facts).toHaveLength(1);
++    } finally { await expect(host.close()).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN'); }
++  }, () => `import {writeFileSync} from 'node:fs';export const hostApiMajor=1;export function invoke(){writeFileSync('owned-note','owned test marker');throw new Error('package failed')}`);
++});
+diff --git a/apps/runner/src/plugins/execution.ts b/apps/runner/src/plugins/execution.ts
+index e8dc7277..c460ff5c 100644
+--- a/apps/runner/src/plugins/execution.ts
++++ b/apps/runner/src/plugins/execution.ts
+@@ -1,7 +1,7 @@
+ import type { TrustedPackageStore } from '@flow/plugin-runtime';
+ import type { Ownership, TaskSubmission, RunnerEventData } from '@flow/contracts';
+ import { isPersistablePluginText, pluginToolBindingSchema, pluginGrantReceiptSchema, type PluginToolBinding, type PluginGrantRequest, type PluginGrantReceipt } from '../../../../packages/contracts/src/plugin-runtime.js';
+-import { invokeInstalledTool, PluginToolError, type PluginToolResult } from './host.js';
++import { invokeInstalledTool, PluginToolError, type PluginToolResult, type PluginToolInput } from './host.js';
+ import { textDigest, verifyText } from '../verifier.js';
+ 
+ /** Transport supplies this only when an authorization request may have committed without an ACK. */
+@@ -21,6 +21,8 @@ export interface PluginExecutionInput {
+   runnerId: string;
+   store: TrustedPackageStore;
+   signal: AbortSignal;
++  /** Trusted local execution seam; omitted preserves the in-process host. */
++  invokeTool?(input: PluginToolInput): Promise<PluginToolResult>;
+   assertOwnership(): void | Promise<void>;
+   /** One request per phase, with a stable key supplied by the existing runtime transport. No retry here. */
+   authorize(request: PluginGrantRequest): Promise<PluginGrantReceipt>;
+@@ -40,7 +42,7 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
+     || task.engineering || task.resumeSessionId || task.messageSettings) throw new PluginToolError('BINDING_MISMATCH');
+   const verification = task.verification ? { ...task.verification } : undefined;
+   try {
+-    const result = await invokeInstalledTool({ store: input.store, input: prompt, signal: input.signal, assertOwnership: input.assertOwnership,
++    const result = await (input.invokeTool ?? invokeInstalledTool)({ store: input.store, input: prompt, signal: input.signal, assertOwnership: input.assertOwnership,
+       binding: { bindingId: binding.bindingId, invocationId: binding.invocationId, taskId: binding.taskId, ...ownership,
+         material: { installationId: binding.materialId, storeId: binding.storeId, artifact: binding.artifact, treeDigest: binding.treeDigest },
+         configuration: Object.fromEntries(Object.entries(binding.configuration).map(([key, value]) => [key, String(value)])) },
+diff --git a/apps/runner/src/plugins/process-host.test.ts b/apps/runner/src/plugins/process-host.test.ts
+new file mode 100644
+index 00000000..9095b0eb
+--- /dev/null
++++ b/apps/runner/src/plugins/process-host.test.ts
+@@ -0,0 +1,35 @@
++import fs from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import { randomUUID } from 'node:crypto';
++import { test, expect } from 'vitest';
++import { FrameReader, PROCESS_PROTOCOL } from './process-protocol.js';
++import { ProcessResources } from './process-resources.js';
++const identity = () => ({ nonce:'a'.repeat(32),bindingId:randomUUID(),invocationId:randomUUID(),taskId:randomUUID(),attemptId:randomUUID(),ownerVersion:1 });
++const framed = (value: unknown) => { const b=Buffer.from(JSON.stringify(value));const h=Buffer.alloc(4);h.writeUInt32BE(b.length);return Buffer.concat([h,b]); };
++test('trusted framing rejects length before body, truncation, bad UTF8 and wrong sequence',()=>{
++ const tooBig=Buffer.alloc(4);tooBig.writeUInt32BE(4097);expect(()=>new FrameReader(4096,()=>{}).push(tooBig)).toThrow();
++ const partial=new FrameReader(4096,()=>{});partial.push(Buffer.from([0,0]));expect(()=>partial.end()).toThrow();
++ expect(()=>new FrameReader(4096,()=>{}).push(Buffer.from([0,0,0,1,255]))).toThrow();
++ expect(()=>new FrameReader(4096,()=>{}).push(framed({protocol:PROCESS_PROTOCOL,identity:identity(),sequence:2,kind:'check'}))).toThrow();
++});
++test('trusted resource count is reusable and full capacity never prevents owned cleanup',async()=>{
++ const root=await fs.mkdtemp(join(tmpdir(),'flow-process-resources-'));const info=await fs.lstat(root);
++ try { const resources=await ProcessResources.open(join(root,'owned'));const items=[];
++  for(let n=0;n<32;n++)items.push(await resources.reserve(identity()));
++  await expect(resources.reserve(identity())).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++  for(const item of items)await resources.finish(item);
++  const next=await resources.reserve(identity());await resources.finish(next);await resources.close();
++  expect(await fs.readdir(join(root,'owned/receipts'))).toEqual([]);
++ }finally{const current=await fs.lstat(root);expect(current.ino).toBe(info.ino);expect(current.dev).toBe(info.dev);await fs.rm(root,{recursive:true});}
++});
++test('trusted resources reject linked receipts and unknown remainder without probing old PIDs',async()=>{
++ const root=await fs.mkdtemp(join(tmpdir(),'flow-process-links-'));const info=await fs.lstat(root);
++ try {const resources=await ProcessResources.open(join(root,'owned'));const item=await resources.reserve(identity());
++  await fs.link(join(root,'owned/receipts/slot-00.json'),join(root,'alias'));
++  await expect(resources.update(item,{state:'spawned'})).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++  await expect(resources.reserve(identity())).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++  await expect(resources.close()).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++  await expect(ProcessResources.open(join(root,'owned'))).rejects.toThrow('PROCESS_RESOURCE_UNKNOWN');
++ }finally{const current=await fs.lstat(root);expect(current.ino).toBe(info.ino);expect(current.dev).toBe(info.dev);await fs.rm(root,{recursive:true});}
++});
+diff --git a/apps/runner/src/plugins/process-host.ts b/apps/runner/src/plugins/process-host.ts
+new file mode 100644
+index 00000000..fa55b1d0
+--- /dev/null
++++ b/apps/runner/src/plugins/process-host.ts
+@@ -0,0 +1,121 @@
++import { spawn } from 'node:child_process';
++import { randomBytes } from 'node:crypto';
++import { createRequire } from 'node:module';
++import { fileURLToPath } from 'node:url';
++import type { Readable } from 'node:stream';
++import { z } from 'zod';
++import { PluginToolError, type PluginToolInput, type PluginToolResult } from './host.js';
++import { FrameReader, FrameWriter, sameIdentity, type ProcessFrame, type ProcessIdentity } from './process-protocol.js';
++import { ProcessResources } from './process-resources.js';
++
++export interface ProcessObservation { pid: number | undefined; exitCode: number | null; signal: string | null; protocolEof: boolean;
++  stdoutEof: boolean; stderrEof: boolean; diagnosticBytes: number; processClosed: boolean }
++const resultSchema = z.strictObject({ kind: z.literal('text'), content: z.string(), provenance: z.strictObject({ bindingId: z.uuid(),
++  invocationId: z.uuid(), taskId: z.uuid(), attemptId: z.uuid(), ownerVersion: z.number().int().positive(), installationId: z.string(),
++  artifactId: z.uuid(), artifactSha256: z.string(), treeDigest: z.string(), hostApiMajor: z.literal(1) }) });
++
++/** Explicit trusted mode. No token, arbitrary executable, current directory loader, or OS sandbox promise. */
++export async function createTrustedProcessHost(options: { resourceRoot: string; observe?: (fact: ProcessObservation) => void }) {
++  const loader = createRequire(import.meta.url).resolve('tsx');
++  const worker = fileURLToPath(new URL('./process-worker.ts', import.meta.url));
++  const resources = await ProcessResources.open(options.resourceRoot);
++  return { invoke: (input: PluginToolInput) => invoke(input), close: () => resources.close() };
++
++  async function invoke(original: PluginToolInput): Promise<PluginToolResult> {
++    const input: PluginToolInput = { ...original, binding: structuredClone(original.binding), store: { ...original.store, allowedDigests: [...original.store.allowedDigests] } };
++    if (input.signal.aborted) throw new PluginToolError('CANCELLED');
++    if (!input.store.allowedDigests.includes(input.binding.material.artifact.sha256)) throw new PluginToolError('MATERIAL_MISMATCH');
++    const identity: ProcessIdentity = { nonce: randomBytes(16).toString('hex'), bindingId: input.binding.bindingId,
++      invocationId: input.binding.invocationId, taskId: input.binding.taskId, attemptId: input.binding.attemptId, ownerVersion: input.binding.ownerVersion };
++    const item = await resources.reserve(identity);
++    let first: unknown, failed = false, settlementUnknown = false, stopping = false, signalUnknown = false, checks = 0, authorizations = 0, busy = false;
++    let result: PluginToolResult | undefined, response = false, protocolEof = false, stdoutEof = false, stderrEof = false;
++    let diagnosticBytes = 0, exitCode: number | null = null, exitSignal: string | null = null, closed = false;
++    let term: ReturnType<typeof setTimeout> | undefined, final: ReturnType<typeof setTimeout> | undefined;
++    const child = spawn(process.execPath, ['--import', loader, worker], { cwd: item.scratch,
++      env: { PATH: '/usr/bin:/bin', LANG: 'C', HOME: item.scratch, TMPDIR: item.scratch, NODE_DISABLE_COMPILE_CACHE: '1', TSX_DISABLE_CACHE: '1' },
++      stdio: ['pipe', 'pipe', 'pipe', 'pipe'], shell: false });
++    const pipe = child.stdio[3] as Readable; const writer = new FrameWriter(child.stdin!, identity);
++    let finishWait!: () => void; const finished = new Promise<void>(resolve => { finishWait = resolve; });
++    function remember(error: unknown) {
++      if (error instanceof PluginToolError && error.code === 'OUTCOME_UNKNOWN') settlementUnknown = true;
++      if (!failed) { failed = true; first = error; }
++    }
++    function kill(signal: NodeJS.Signals) {
++      if (closed || child.exitCode !== null || child.signalCode !== null) return;
++      try { if (!child.kill(signal)) signalUnknown = true; } catch { signalUnknown = true; }
++    }
++    function stop(error: unknown) {
++      remember(error); if (stopping) return; stopping = true;
++      void writer.send({ kind: 'abort' }).catch(() => {}); kill('SIGTERM');
++      term = setTimeout(() => kill('SIGKILL'), 1000);
++      final = setTimeout(() => { if (!closed) { signalUnknown = true; resources.keep(); } finishWait(); }, 2000);
++    }
++    const abort = () => stop(new PluginToolError('OUTCOME_UNKNOWN'));
++    const deadline = setTimeout(abort, 10_000); input.signal.addEventListener('abort', abort, { once: true });
++    child.on('error', error => stop(error)); child.stdin!.on('error', () => { if (!stopping && !response) stop(new PluginToolError('OUTCOME_UNKNOWN')); });
++    child.on('close', (code, signal) => { closed = true; exitCode = code; exitSignal = signal; finishWait(); });
++    const count = (chunk: Buffer) => { diagnosticBytes += chunk.length; if (diagnosticBytes > 16384) stop(new PluginToolError('OUTCOME_UNKNOWN')); };
++    // Intentionally discard body bytes: even a small console message can contain input/configuration.
++    child.stdout!.on('data', count); child.stderr!.on('data', count);
++    child.stdout!.on('end', () => { stdoutEof = true; }); child.stderr!.on('end', () => { stderrEof = true; });
++    for (const stream of [child.stdout!, child.stderr!, pipe]) stream.on('error', () => stop(new PluginToolError('OUTCOME_UNKNOWN')));
++    const reader = new FrameReader(128 * 1024, frame => {
++      if (!sameIdentity(identity, frame.identity) || busy || response || stopping) throw new Error('PROCESS_PROTOCOL_INVALID');
++      if (frame.kind === 'check' || frame.kind === 'authorize') {
++        busy = true;
++        void handle(frame).catch(error => stop(error)).finally(() => { busy = false; });
++      } else if (frame.kind === 'result') {
++        if (checks !== 5 || authorizations !== 2) throw new Error('PROCESS_PHASE_INVALID');
++        const parsed = resultSchema.parse(frame.value), p = parsed.provenance, b = input.binding;
++        if (Buffer.byteLength(parsed.content) > 16384 || p.bindingId !== b.bindingId || p.invocationId !== b.invocationId || p.taskId !== b.taskId
++          || p.attemptId !== b.attemptId || p.ownerVersion !== b.ownerVersion || p.installationId !== b.material.installationId
++          || p.artifactId !== b.material.artifact.artifactId || p.artifactSha256 !== b.material.artifact.sha256 || p.treeDigest !== b.material.treeDigest) throw new Error('PROCESS_RESULT_INVALID');
++        result = parsed; response = true;
++      } else if (frame.kind === 'error') { response = true; remember(new PluginToolError(frame.code)); }
++      else throw new Error('PROCESS_PROTOCOL_INVALID');
++    });
++    pipe.on('data', chunk => { try { reader.push(chunk); } catch { stop(new PluginToolError('OUTCOME_UNKNOWN')); } });
++    pipe.on('end', () => { protocolEof = true; try { reader.end(); } catch { stop(new PluginToolError('OUTCOME_UNKNOWN')); } });
++    async function handle(frame: Extract<ProcessFrame, { kind: 'check' | 'authorize' }>) {
++      if (input.signal.aborted) throw new PluginToolError('OUTCOME_UNKNOWN');
++      if (frame.kind === 'check') {
++        const expectedAuth = [0, 1, 1, 2, 2][checks];
++        if (expectedAuth === undefined || authorizations !== expectedAuth) throw new PluginToolError('OUTCOME_UNKNOWN');
++        checks++; await input.assertOwnership();
++      } else {
++        if (frame.phase !== (authorizations === 0 ? 'load' : 'invoke') || checks !== (authorizations === 0 ? 1 : 3) || authorizations >= 2) throw new PluginToolError('OUTCOME_UNKNOWN');
++        authorizations++; await input.assertOwnership(); await input.authorize(input.binding, frame.phase); await input.assertOwnership();
++      }
++      if (input.signal.aborted || stopping) throw new PluginToolError('OUTCOME_UNKNOWN');
++      await writer.send({ kind: 'ack', request: frame.sequence, ok: true });
++    }
++    try {
++      if (!child.pid) throw new PluginToolError('OUTCOME_UNKNOWN');
++      await resources.update(item, { state: 'spawned', childPid: child.pid, spawnedAt: new Date().toISOString() });
++      if (input.signal.aborted) abort();
++      else await writer.send({ kind: 'init', value: { store: { ...input.store, allowedDigests: [input.binding.material.artifact.sha256] }, binding: input.binding, input: input.input } });
++      await finished;
++      if (!closed || !protocolEof || !stdoutEof || !stderrEof || signalUnknown
++        || !response && !failed || response && exitCode !== 0) remember(new PluginToolError('OUTCOME_UNKNOWN'));
++      if (!failed) { await input.assertOwnership(); if (input.signal.aborted) remember(new PluginToolError('OUTCOME_UNKNOWN')); }
++    } catch (error) { stop(error); await finished; }
++    finally {
++      clearTimeout(deadline); clearTimeout(term); clearTimeout(final); input.signal.removeEventListener('abort', abort);
++      const processClosed = closed && protocolEof && stdoutEof && stderrEof && !signalUnknown;
++      try { options.observe?.({ pid: child.pid, exitCode, signal: exitSignal, protocolEof, stdoutEof, stderrEof, diagnosticBytes, processClosed }); }
++      catch { remember(new PluginToolError('OUTCOME_UNKNOWN')); }
++      if (processClosed) { try { await resources.finish(item); } catch { remember(new PluginToolError('OUTCOME_UNKNOWN')); resources.keep(); } }
++      else { resources.keep(); remember(new PluginToolError('OUTCOME_UNKNOWN')); }
++    }
++    if (settlementUnknown) {
++      // A known plugin/authorization failure cannot certify later process or resource settlement.
++      if (first instanceof PluginToolError && first.code === 'OUTCOME_UNKNOWN') throw first;
++      const unknown = new PluginToolError('OUTCOME_UNKNOWN');
++      if (failed) Object.defineProperty(unknown, 'cause', { value: first, configurable: true });
++      throw unknown;
++    }
++    if (failed) throw first;
++    if (!result) throw new PluginToolError('OUTCOME_UNKNOWN'); return result;
++  }
++}
+diff --git a/apps/runner/src/plugins/process-protocol.ts b/apps/runner/src/plugins/process-protocol.ts
+new file mode 100644
+index 00000000..a03ef600
+--- /dev/null
++++ b/apps/runner/src/plugins/process-protocol.ts
+@@ -0,0 +1,61 @@
++import { once } from 'node:events';
++import type { Writable } from 'node:stream';
++import { z } from 'zod';
++
++export const PROCESS_PROTOCOL = 'flow.trusted-plugin-process.v1';
++export const FRAME_TOTAL = 256 * 1024;
++const identity = z.strictObject({ nonce: z.string().regex(/^[a-f0-9]{32}$/), bindingId: z.uuid(), invocationId: z.uuid(),
++  taskId: z.uuid(), attemptId: z.uuid(), ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER) });
++export type ProcessIdentity = z.infer<typeof identity>;
++const envelope = { protocol: z.literal(PROCESS_PROTOCOL), identity, sequence: z.number().int().min(1).max(16) };
++export const frameSchema = z.discriminatedUnion('kind', [
++  z.strictObject({ ...envelope, kind: z.literal('init'), value: z.unknown() }),
++  z.strictObject({ ...envelope, kind: z.literal('check') }),
++  z.strictObject({ ...envelope, kind: z.literal('authorize'), phase: z.enum(['load', 'invoke']) }),
++  z.strictObject({ ...envelope, kind: z.literal('ack'), request: z.number().int().min(1).max(16), ok: z.boolean() }),
++  z.strictObject({ ...envelope, kind: z.literal('result'), value: z.unknown() }),
++  z.strictObject({ ...envelope, kind: z.literal('error'), code: z.enum(['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED']) }),
++  z.strictObject({ ...envelope, kind: z.literal('abort') }),
++]);
++export type ProcessFrame = z.infer<typeof frameSchema>;
++export function sameIdentity(a: ProcessIdentity, b: ProcessIdentity): boolean {
++  return Object.keys(a).length === Object.keys(b).length && Object.keys(a).every(key => a[key as keyof ProcessIdentity] === b[key as keyof ProcessIdentity]);
++}
++export function frameLimit(kind: ProcessFrame['kind']): number { return kind === 'init' ? 192 * 1024 : kind === 'result' ? 128 * 1024 : 4096; }
++
++/** Prefix checked before frame allocation; no concatenation of an unbounded input chunk. */
++export class FrameReader {
++  private prefix = Buffer.alloc(4); private prefixUsed = 0; private body: Buffer | undefined; private used = 0;
++  private total = 0; private sequence = 0;
++  constructor(private readonly maximumFrame: number, private readonly accept: (frame: ProcessFrame) => void) {}
++  push(chunk: Buffer): void {
++    let offset = 0;
++    while (offset < chunk.length) {
++      if (!this.body) {
++        const n = Math.min(4 - this.prefixUsed, chunk.length - offset); chunk.copy(this.prefix, this.prefixUsed, offset, offset + n);
++        offset += n; this.prefixUsed += n; if (this.prefixUsed < 4) continue;
++        const length = this.prefix.readUInt32BE();
++        if (!length || length > this.maximumFrame || this.total + length > FRAME_TOTAL || this.sequence >= 16) throw new Error('PROCESS_FRAME_LIMIT');
++        this.total += length; this.body = Buffer.alloc(length); this.used = 0;
++      }
++      const n = Math.min(this.body.length - this.used, chunk.length - offset); chunk.copy(this.body, this.used, offset, offset + n);
++      offset += n; this.used += n; if (this.used < this.body.length) continue;
++      const bytes = this.body; this.body = undefined; this.prefixUsed = 0;
++      const frame = frameSchema.parse(JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes)));
++      if (frame.sequence !== ++this.sequence || bytes.length > frameLimit(frame.kind)) throw new Error('PROCESS_FRAME_INVALID');
++      this.accept(frame);
++    }
++  }
++  end(): void { if (this.prefixUsed || this.body) throw new Error('PROCESS_FRAME_TRUNCATED'); }
++}
++export class FrameWriter {
++  private sequence = 0; private total = 0;
++  constructor(private readonly output: Writable, private readonly identity: ProcessIdentity) {}
++  async send(value: Record<string, unknown>): Promise<void> {
++    const frame = frameSchema.parse({ ...value, protocol: PROCESS_PROTOCOL, identity: this.identity, sequence: ++this.sequence });
++    const body = Buffer.from(JSON.stringify(frame)); this.total += body.length;
++    if (body.length > frameLimit(frame.kind) || this.total > FRAME_TOTAL) throw new Error('PROCESS_FRAME_LIMIT');
++    const header = Buffer.alloc(4); header.writeUInt32BE(body.length);
++    if (!this.output.write(Buffer.concat([header, body]))) await once(this.output, 'drain');
++  }
++}
+diff --git a/apps/runner/src/plugins/process-resources.ts b/apps/runner/src/plugins/process-resources.ts
+new file mode 100644
+index 00000000..99a3605b
+--- /dev/null
++++ b/apps/runner/src/plugins/process-resources.ts
+@@ -0,0 +1,104 @@
++import fs, { type FileHandle } from 'node:fs/promises';
++import { constants } from 'node:fs';
++import { join, resolve } from 'node:path';
++import { randomBytes } from 'node:crypto';
++import type { ProcessIdentity } from './process-protocol.js';
++
++type Identity = { dev: number; ino: number };
++export interface ProcessReservation { slot: string; scratch: string; identity: ProcessIdentity; scratchIdentity: Identity; recordIdentity: Identity; record: Record<string, unknown> }
++const uid = () => process.getuid!();
++const isSame = (a: Identity, b: Identity) => a.dev === b.dev && a.ino === b.ino;
++function fail(): never { throw new Error('PROCESS_RESOURCE_UNKNOWN'); }
++async function directory(path: string): Promise<FileHandle> {
++  const fd = await fs.open(path, constants.O_RDONLY | constants.O_DIRECTORY | constants.O_NOFOLLOW);
++  try { const s = await fd.stat(); if (!s.isDirectory() || s.uid !== uid() || (s.mode & 0o777) !== 0o700) fail(); return fd; }
++  catch (error) { await fd.close(); throw error; }
++}
++async function inspectFile(path: string, expected?: Identity): Promise<{ bytes: Buffer; identity: Identity }> {
++  const before = await fs.lstat(path); const fd = await fs.open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
++  try {
++    const s = await fd.stat();
++    if (!s.isFile() || s.uid !== uid() || (s.mode & 0o777) !== 0o600 || s.nlink !== 1 || !isSame(s, before) || expected && !isSame(s, expected) || s.size > 4096) fail();
++    const data = Buffer.alloc(4097); const { bytesRead } = await fd.read(data, 0, data.length, 0); if (bytesRead > 4096) fail();
++    if (!isSame(s, await fs.lstat(path))) fail(); return { bytes: data.subarray(0, bytesRead), identity: s };
++  } finally { await fd.close(); }
++}
++async function createFile(path: string, value: unknown): Promise<Identity> {
++  const bytes = Buffer.from(JSON.stringify(value)); if (bytes.length > 4096) fail();
++  const fd = await fs.open(path, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
++  try { await fd.writeFile(bytes); await fd.sync(); const s = await fd.stat(); if (!s.isFile() || s.nlink !== 1 || s.uid !== uid() || (s.mode & 0o777) !== 0o600) fail(); return s; }
++  finally { await fd.close(); }
++}
++
++/** Bounded resource facts only. No business recovery, PID reclamation, or recursive cleanup. */
++export class ProcessResources {
++  private slots = new Set<string>(); private held = false; private queued = 0; private queue = Promise.resolve();
++  private constructor(readonly root: string, private readonly folders: Map<string, FileHandle>, private readonly marker: Identity) {}
++  static async open(path: string): Promise<ProcessResources> {
++    if (resolve(path) !== path || process.platform !== 'darwin' || process.arch !== 'arm64' || process.version !== 'v24.20.0') fail();
++    const parent = await fs.realpath(join(path, '..')); if (join(parent, path.split('/').at(-1)!) !== path) fail();
++    const folders = new Map<string, FileHandle>();
++    try {
++      for (const p of [path, join(path, 'receipts'), join(path, 'scratch')]) {
++        try { await fs.mkdir(p, { mode: 0o700 }); } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'EEXIST') throw error; }
++        folders.set(p, await directory(p));
++      }
++      let count = 0, bytes = 0; const entries = await fs.opendir(join(path, 'receipts'));
++      for await (const entry of entries) {
++        if (++count > 65 || !/^(?:owner\.json|slot-\d{2}\.(?:json|next))$/.test(entry.name)) fail();
++        const record = await inspectFile(join(path, 'receipts', entry.name)); bytes += record.bytes.length; if (bytes > 266240) fail();
++        // Existing facts are deliberately not adopted or converted to business recovery.
++        JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(record.bytes));
++      }
++      if (count) fail();
++      const scratch = await fs.opendir(join(path, 'scratch')); let nonempty = false;
++      try { nonempty = (await scratch.read()) !== null; } finally { await scratch.close(); }
++      if (nonempty) fail();
++      const marker = await createFile(join(path, 'receipts/owner.json'), { protocol: 'flow.plugin-process-resource.v1', parentPid: process.pid, nonce: randomBytes(16).toString('hex') });
++      await folders.get(join(path, 'receipts'))!.sync(); return new ProcessResources(path, folders, marker);
++    } catch (error) { await Promise.allSettled([...folders.values()].map(f => f.close())); throw error; }
++  }
++  private async checkRoots(): Promise<void> {
++    for (const [path, fd] of this.folders) { const a = await fd.stat(), b = await fs.lstat(path); if (!b.isDirectory() || b.isSymbolicLink() || b.uid !== uid() || (b.mode & 0o777) !== 0o700 || !isSame(a, b)) fail(); }
++  }
++  async reserve(identity: ProcessIdentity): Promise<ProcessReservation> {
++    if (this.held || this.queued + this.slots.size >= 32) fail(); this.queued++;
++    const before = this.queue; let release!: () => void; this.queue = new Promise<void>(r => { release = r; }); await before;
++    try {
++      if (this.held) fail(); await this.checkRoots();
++      const slot = Array.from({ length: 32 }, (_, n) => String(n).padStart(2, '0')).find(s => !this.slots.has(s)); if (!slot) fail();
++      const record = { protocol: 'flow.plugin-process-resource.v1', identity, state: 'reserved', parentPid: process.pid, slot };
++      const recordIdentity = await createFile(join(this.root, `receipts/slot-${slot}.json`), record); this.slots.add(slot);
++      await this.folders.get(join(this.root, 'receipts'))!.sync();
++      const scratch = join(this.root, 'scratch', slot); await fs.mkdir(scratch, { mode: 0o700 }); const fd = await directory(scratch);
++      let scratchIdentity: Identity; try { scratchIdentity = await fd.stat(); } finally { await fd.close(); }
++      await this.checkRoots(); return { slot, scratch, identity, scratchIdentity, recordIdentity, record };
++    } catch (error) { this.held = true; throw error; } finally { this.queued--; release(); }
++  }
++  async update(item: ProcessReservation, fields: Record<string, unknown>): Promise<void> {
++    try {
++      await this.checkRoots(); const file = join(this.root, `receipts/slot-${item.slot}.json`), next = join(this.root, `receipts/slot-${item.slot}.next`);
++      await inspectFile(file, item.recordIdentity); const record = { ...item.record, ...fields };
++      const nextIdentity = await createFile(next, record); await inspectFile(next, nextIdentity); await inspectFile(file, item.recordIdentity);
++      await fs.rename(next, file); await this.folders.get(join(this.root, 'receipts'))!.sync();
++      item.record = record; item.recordIdentity = nextIdentity; await this.checkRoots();
++    } catch (error) { this.held = true; throw error; }
++  }
++  keep(): void { this.held = true; }
++  async finish(item: ProcessReservation): Promise<void> {
++    try {
++      await this.update(item, { state: 'closed' }); const s = await fs.lstat(item.scratch);
++      if (!s.isDirectory() || s.isSymbolicLink() || !isSame(s, item.scratchIdentity)) fail();
++      const dir = await fs.opendir(item.scratch); let empty: boolean; try { empty = (await dir.read()) === null; } finally { await dir.close(); }
++      if (!empty) fail(); await fs.rmdir(item.scratch);
++      const file = join(this.root, `receipts/slot-${item.slot}.json`); await inspectFile(file, item.recordIdentity); await fs.unlink(file);
++      await this.folders.get(join(this.root, 'receipts'))!.sync(); this.slots.delete(item.slot); await this.checkRoots();
++    } catch (error) { this.held = true; throw error; }
++  }
++  async close(): Promise<void> {
++    try {
++      if (this.slots.size || this.held || this.queued) fail(); await this.checkRoots();
++      const file = join(this.root, 'receipts/owner.json'); await inspectFile(file, this.marker); await fs.unlink(file); await this.folders.get(join(this.root, 'receipts'))!.sync();
++    } finally { await Promise.allSettled([...this.folders.values()].map(f => f.close())); }
++  }
++}
+diff --git a/apps/runner/src/plugins/process-worker.ts b/apps/runner/src/plugins/process-worker.ts
+new file mode 100644
+index 00000000..942168e1
+--- /dev/null
++++ b/apps/runner/src/plugins/process-worker.ts
+@@ -0,0 +1,38 @@
++import { createWriteStream } from 'node:fs';
++import { invokeInstalledTool, PluginToolError, type PluginToolInput } from './host.js';
++import { FrameReader, FrameWriter, sameIdentity, type ProcessFrame, type ProcessIdentity } from './process-protocol.js';
++
++const signal = new AbortController(); const output = createWriteStream('', { fd: 3, autoClose: false });
++let identity: ProcessIdentity | undefined, writer: FrameWriter | undefined, requested = 0;
++let waiting: { sequence: number; resolve(): void; reject(error: unknown): void } | undefined;
++async function request(value: Record<string, unknown>): Promise<void> {
++  if (!writer || waiting) throw new Error('PROCESS_PROTOCOL_INVALID');
++  const response = new Promise<void>((resolve, reject) => { waiting = { sequence: ++requested, resolve, reject }; });
++  try { await writer.send(value); await response; } finally { waiting = undefined; }
++}
++function stop() { signal.abort(); waiting?.reject(new PluginToolError('OUTCOME_UNKNOWN')); }
++async function execute(value: unknown): Promise<void> {
++  try {
++    const input = value as Omit<PluginToolInput, 'authorize' | 'assertOwnership' | 'signal'>;
++    const result = await invokeInstalledTool({ ...input, signal: signal.signal,
++      assertOwnership: () => request({ kind: 'check' }), authorize: (_, phase) => request({ kind: 'authorize', phase }) });
++    await writer!.send({ kind: 'result', value: result });
++  } catch (error) {
++    const known = ['PACKAGE_FAILED', 'OUTCOME_UNKNOWN', 'CANCELLED', 'INVALID_INPUT', 'MATERIAL_MISMATCH', 'HOST_API_MISMATCH', 'OUTPUT_REJECTED'];
++    await writer!.send({ kind: 'error', code: error instanceof PluginToolError && known.includes(error.code) ? error.code : 'PACKAGE_FAILED' }).catch(() => {});
++  } finally { output.end(() => process.exit(0)); }
++}
++function accept(frame: ProcessFrame) {
++  if (!identity) {
++    if (frame.kind !== 'init') throw new Error('PROCESS_INIT_REQUIRED'); identity = frame.identity; writer = new FrameWriter(output, identity);
++    void execute(frame.value); return;
++  }
++  if (!sameIdentity(frame.identity, identity)) throw new Error('PROCESS_IDENTITY_INVALID');
++  if (frame.kind === 'abort') { stop(); return; }
++  if (frame.kind !== 'ack' || !waiting || frame.request !== waiting.sequence) throw new Error('PROCESS_ACK_INVALID');
++  if (frame.ok) waiting.resolve(); else waiting.reject(new PluginToolError('OUTCOME_UNKNOWN'));
++}
++const reader = new FrameReader(192 * 1024, accept);
++process.stdin.on('data', chunk => { try { reader.push(chunk); } catch { stop(); process.exitCode = 1; process.stdin.destroy(); output.end(); } });
++process.stdin.on('end', () => { try { reader.end(); } catch { process.exitCode = 1; } stop(); });
++process.stdin.on('error', stop); output.on('error', stop);
+diff --git a/apps/runner/src/plugins/runtime.test.ts b/apps/runner/src/plugins/runtime.test.ts
+index cd1d5f47..3b0bc40e 100644
+--- a/apps/runner/src/plugins/runtime.test.ts
++++ b/apps/runner/src/plugins/runtime.test.ts
+@@ -18,6 +18,12 @@ vi.mock('node:fs/promises', async importOriginal => {
+     return fs.unlink(path);
+   } };
+ });
++const processState = vi.hoisted(() => ({ invokes: 0, closes: 0, roots: [] as string[] }));
++vi.mock('./process-host.js', async () => ({ createTrustedProcessHost: async ({ resourceRoot }: { resourceRoot: string }) => {
++  processState.roots.push(resourceRoot);
++  return { invoke: async (input: import('./host.js').PluginToolInput) => { processState.invokes++; return (await import('./host.js')).invokeInstalledTool(input); },
++    close: async () => { processState.closes++; } };
++} }));
+ const state = vi.hoisted(() => ({ invokes: 0, unknown: false, checkPersisted: async () => {} }));
+ vi.mock('./host.js', async importOriginal => {
+   const actual = await importOriginal<typeof import('./host.js')>();
+@@ -191,3 +197,12 @@ test('terminal owner-fenced replay retains original bytes and admission without
+   expect(await readFile(join(f.directory, textDigest(f.identity.attemptId), 'uncertain-events.json'), 'utf8')).toBe(saved);
+   expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true); expect(state.invokes).toBe(1);
+ });
++
++test('trusted direct runtime opt-in selects the process host and closes it after original outbox completion', async () => {
++  processState.invokes = 0; processState.closes = 0; processState.roots = [];
++  const f = await fixture(); f.options.pluginExecution!.executionMode = 'trusted-process'; await runRunner(f.options);
++  expect(processState.invokes).toBe(1); expect(processState.closes).toBe(1);
++  expect(processState.roots).toEqual([join(await (await import('node:fs/promises')).realpath(f.directory), 'plugin-process')]);
++  expect(f.reports.flatMap(batch => batch.events.map(event => event.type))).toEqual(['artifact', 'verification', 'completed']);
++  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
++});
+diff --git a/apps/runner/src/runtime.ts b/apps/runner/src/runtime.ts
+index 9c0fcaf3..39daff52 100644
+--- a/apps/runner/src/runtime.ts
++++ b/apps/runner/src/runtime.ts
+@@ -1,3 +1,5 @@
++import { createTrustedProcessHost } from './plugins/process-host.js';
++import type { PluginToolInput, PluginToolResult } from './plugins/host.js';
+ import type { TrustedPackageStore } from '@flow/plugin-runtime';
+ import type { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
+ import { decodePluginRunnerClaimResponse, pluginToolExecutionSchema, type PluginRunnerClaimResponse } from '../../../packages/contracts/src/plugin-runner-claim.js';
+@@ -6,7 +8,7 @@ import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js'
+ import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
+ import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
+ import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
+-import { mkdir, readdir } from 'node:fs/promises';
++import { mkdir, readdir, realpath } from 'node:fs/promises';
+ import { join } from 'node:path';
+ import { AttemptWakeup } from './attempt-wakeup.js';
+ import { FlowApiError, FlowClient } from '@flow/client';
+@@ -29,6 +31,7 @@ export interface RunnerOptions {
+   /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
+   pluginExecution?: {
+     store: TrustedPackageStore;
++    executionMode?: 'in-process' | 'trusted-process';
+     transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+   };
+   /** Explicit host opt-in; public conversation capabilities remain disabled. */
+@@ -68,6 +71,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
+   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
+   await prepareDirectory(stateDirectory);
+   const journal = await AdmissionJournal.open(stateDirectory);
++  const processHost = pluginExecution?.executionMode === 'trusted-process'
++    ? await createTrustedProcessHost({ resourceRoot: join(await realpath(stateDirectory), 'plugin-process') }) : undefined;
+   const active = new Map<string, Promise<void>>();
+   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
+   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
+@@ -81,7 +86,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
+   }
+   function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
+     const attemptId = assignment.attempt.id;
+-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }))
++    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }), processHost?.invoke)
+       .then(completed => { if (!completed) recoveryPending = true; })
+       .catch(error => { failed(error); recoveryPending = true; })
+       .finally(() => { active.delete(attemptId); });
+@@ -154,6 +159,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
+     shutdown.abort();
+     await Promise.allSettled(active.values());
+     await Promise.allSettled(requests);
++    try { await processHost?.close(); } catch (error) { stop(error); }
+   }
+   if (fatal) throw fatal;
+ }
+@@ -213,7 +219,7 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
+ }
+ 
+ type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
+-async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>): Promise<boolean> {
++async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>, invokeTool?: (input: PluginToolInput) => Promise<PluginToolResult>): Promise<boolean> {
+   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
+   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
+   await prepareDirectory(directory);
+@@ -272,7 +278,7 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
+       await control.assertOwnership();
+       const binding = assignment.pluginToolBinding;
+       const result = await executePluginTool({ binding, task: assignment.task, ownership, runnerId: assignment.attempt.runnerId,
+-        store: options.pluginExecution.store, signal: control.signal, assertOwnership: context.assertOwnership,
++        store: options.pluginExecution.store, invokeTool, signal: control.signal, assertOwnership: context.assertOwnership,
+         authorize: async request => {
+           const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
+             ownership.attemptId, ownership.ownerVersion, request.phase]));

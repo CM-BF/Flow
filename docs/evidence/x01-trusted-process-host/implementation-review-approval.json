@@ -1,0 +1,35 @@
+{
+  "reviewedAt": "2026-10-07T13:23:25Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "verdict": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closedFinding": "Original settlement uncertainty P2",
+  "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "packetCommit": "9f0a24172daecdd78e87658ff1a3871f792f753d",
+  "manifestSha256": "6bbb3d847336f43f1ba2d1816ebe3deb82c544c616b80cd4cba2ad77100e9d65",
+  "bindings": 14,
+  "bytes": 52639,
+  "checks": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 18,
+    "focusedTypesExit": 0,
+    "rawBytes": 458,
+    "supervisionMs": 2980,
+    "processIds": [
+      55153,
+      60295
+    ]
+  },
+  "resourceFacts": "Both final absent/merged EOF/complete capture; no signal-secondary errors. Same-inode empty TMP cleanup supported by original receipts; reviewer did not access roots.",
+  "scope": "Private trusted direct-child settlement fix and limited local result fidelity. Original nine other source/test leaves and original raw unchanged; inherited source review remains limited.",
+  "limitations": [
+    "T7 actual release artifact NOT_RUN",
+    "PG/center/native/provider/deployment NOT_RUN",
+    "Parent hard crash/arbitrary descendants not verified",
+    "One added distinct regression plus one old control; not a new 16-case suite"
+  ],
+  "source": "Direct reviewer message to owner, archived unchanged in meaning; reviewer performed no engineering commands/import/tests/PG/writes."
+}

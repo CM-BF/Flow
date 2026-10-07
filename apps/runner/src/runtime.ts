@@ -1,3 +1,5 @@
+import { createTrustedProcessHost } from './plugins/process-host.js';
+import type { PluginToolInput, PluginToolResult } from './plugins/host.js';
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import type { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
 import { decodePluginRunnerClaimResponse, pluginToolExecutionSchema, type PluginRunnerClaimResponse } from '../../../packages/contracts/src/plugin-runner-claim.js';
@@ -6,7 +8,7 @@ import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js'
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
-import { mkdir, readdir } from 'node:fs/promises';
+import { mkdir, readdir, realpath } from 'node:fs/promises';
 import { join } from 'node:path';
 import { AttemptWakeup } from './attempt-wakeup.js';
 import { FlowApiError, FlowClient } from '@flow/client';
@@ -29,6 +31,7 @@ export interface RunnerOptions {
   /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
   pluginExecution?: {
     store: TrustedPackageStore;
+    executionMode?: 'in-process' | 'trusted-process';
     transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
   };
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
@@ -68,6 +71,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
   const journal = await AdmissionJournal.open(stateDirectory);
+  const processHost = pluginExecution?.executionMode === 'trusted-process'
+    ? await createTrustedProcessHost({ resourceRoot: join(await realpath(stateDirectory), 'plugin-process') }) : undefined;
   const active = new Map<string, Promise<void>>();
   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
@@ -81,7 +86,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   }
   function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }))
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }), processHost?.invoke)
       .then(completed => { if (!completed) recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
@@ -154,6 +159,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
     shutdown.abort();
     await Promise.allSettled(active.values());
     await Promise.allSettled(requests);
+    try { await processHost?.close(); } catch (error) { stop(error); }
   }
   if (fatal) throw fatal;
 }
@@ -213,7 +219,7 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
 }
 
 type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
-async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>): Promise<boolean> {
+async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>, invokeTool?: (input: PluginToolInput) => Promise<PluginToolResult>): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -272,7 +278,7 @@ async function execute(assignment: PluginAssignment, client: FlowClient, adapter
       await control.assertOwnership();
       const binding = assignment.pluginToolBinding;
       const result = await executePluginTool({ binding, task: assignment.task, ownership, runnerId: assignment.attempt.runnerId,
-        store: options.pluginExecution.store, signal: control.signal, assertOwnership: context.assertOwnership,
+        store: options.pluginExecution.store, invokeTool, signal: control.signal, assertOwnership: context.assertOwnership,
         authorize: async request => {
           const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
             ownership.attemptId, ownership.ownerVersion, request.phase]));

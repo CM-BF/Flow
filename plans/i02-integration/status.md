@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:53:15.653Z / main3c9345df4；MSG03已受控接收，本批retention三leaf独审完成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:12:00.000Z / mainfbad68a68；受信插件进程宿主已审范围接收，当前后台迁入模块/登记窄审完成；远端500待恢复 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,9 +21,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 消息设置接线已进入主线；新后台保留策略已独审，旧版本继续保留且总量受限。 |
+| 当前产出 | 消息设置与后台保留策略已合入；插件独立进程执行的已审源码正接收，固定发布候选保持不变。 |
 | 下一可用交付 | 完成固定新旧网页与新后台的兼容验证，再沿受管流程发布可体验页面；消息设置双槽另做真实宿主验证。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 远端推送暂报服务错误；本地固定审查和发布准备仍可继续。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -438,3 +438,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T14:46:12.780Z：[MSG03受控接收](../../docs/evidence/i02/msg03-intake.json)复用exact18独立source/actual审查，主线18前像均匹配c130；只补sharedclient/插件前进后的Web类型组合。类型通过、进程收束；最初empty-only KEEP保持原记录，随后确认唯一Node生成缓存并同身份正常清理，不覆盖原件。SVC09A六文件main收口只核metadata，无重复测试；个人设置实际激活和新网页发布仍未完成。
 
 2026-10-07T14:53:15.653Z：本次接收SVC06B固定203ec三leaf及1a489 metadata，独审见[retention review](../../docs/evidence/i02/svc06b-retention-review.json)。原5/5和旧失败/历史产物保持；当前main前像与reviewed base一致，无冲突或消费者变化，不重跑。候选执行装配/准确Web报告仍开放，未触个人服务；MSG03已main3c而非仍待ff。
+
+## 2026-10-07T15:12:00.000Z 安全接收
+
+受信插件进程宿主固定4dc6的11源/55support与当前主线前像/直接依赖均核符，复用原独审与15distinct分轮结果，不重复工程测试。当前迁入Module固定7324/ac6限定独审通过，未具备个人实例/正式报告或现场调用；双槽宿主098b的独立构建准备b3ee审查已通过。登记仅唯一source，未reload。见本批 [插件接收](../../docs/evidence/i02/x01-trusted-process-host-intake.json)、[当前迁入审查](../../docs/evidence/i02/svc06b-current-import-module-review.json)、[构建准备审查](../../docs/evidence/i02/svc09a-fixed-build-preparation-review.json)。GitHub两owner推送500原错误保留，本地主线/远端状态分记，不称已push。旧个人7d1/source6c、Webd629/v3仍只是最后已审记录，本段未操作。

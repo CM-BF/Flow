@@ -1,0 +1,58 @@
+{
+  "startedAt": "2026-10-07T13:08:37.451866+00:00",
+  "finishedAt": "2026-10-07T13:08:39.043114+00:00",
+  "wallBeforePersistenceSeconds": 1.5909820420201868,
+  "supervision": {
+    "pid": 33669,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1559,
+    "observed_bytes": 429,
+    "retained_bytes": 429,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 429,
+    "sha256": "0d3a110fe907552d5eef5c51e0d136da9b1ee73b9b869ddea6980503f850b8a3"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-trusted-process-host/run-local.py": "273f8c0dd7d72107a702b4176a893ba981dab232f0b2d3be4a51162e0b73b250",
+    "apps/runner/src/plugins/process-host.ts": "29a2849c7a0d3587edf660997e1f6fe2ab59b98e3b3e88b8b8780259f6f40341",
+    "apps/runner/src/plugins/process-worker.ts": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8",
+    "apps/runner/src/plugins/process-protocol.ts": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+    "apps/runner/src/plugins/process-resources.ts": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+    "apps/runner/src/plugins/execution.ts": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+    "apps/runner/src/configuration.ts": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+    "apps/runner/src/runtime.ts": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+    "apps/runner/src/plugins/runtime.test.ts": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f",
+    "apps/runner/src/plugins/execution.test.ts": "7aa55f523a5b9031ef19983db7c7e7987e95e1b88bc30f3a0c2f978000d9736f"
+  }
+}

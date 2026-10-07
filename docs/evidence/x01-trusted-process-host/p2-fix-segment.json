@@ -1,0 +1,44 @@
+{
+  "startedAt": "2026-10-07T13:18:13Z",
+  "deadline": "2026-10-07T13:33:13Z",
+  "sourceBefore": "af43f7e61395125aed3f0725a9e4305c9e086cdd",
+  "packetBefore": "e97ff8954a5a6fa0bfdbd5b6c76815ab005ee681",
+  "claim": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "version": 2,
+  "scopes": 14,
+  "freshLedgerAt": "2026-10-07T13:19:23.285447+00:00",
+  "review": {
+    "reviewer": "chatui01_owner",
+    "reviewedAt": "2026-10-07T13:17:06Z",
+    "verdict": "SOURCE_CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "Known primary failure hides subsequent child/EOF/signal/cleanup uncertainty; keep primary as cause and let independent settlement uncertainty dominate."
+  },
+  "budget": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "ordinary": "CLOSED_RETURNED",
+  "engineeringRuns": 2,
+  "ordinaryHandoffFrom": "architecture_read CORE actual RETURN; latest manager floor7492599808B",
+  "ordinaryReturnedAt": "2026-10-07T13:19:59Z",
+  "supervisionElapsedMs": 2980,
+  "rawBytes": 458,
+  "results": {
+    "settlement": {
+      "selected": 2,
+      "passed": 2,
+      "unselected": 18
+    },
+    "focusedTypes": {
+      "exit": 0
+    }
+  },
+  "measurement": "2980ms is aggregate child supervision, not total segment/tool wall; final empty TMP samples not peak or realtime quotas",
+  "sourceChange": "Independent sticky settlementUnknown, original primary retained as cause. Clean known authorization denial and pre-spawn checks remain original failures.",
+  "resourceClosure": "Both final owned groups absent, merged EOF, complete raw, no signal/secondary failure. Same-inode empty TMP removed. Actual fixture child closed; product HOLD asserted and retained files owned/cleaned by that fixture only."
+}

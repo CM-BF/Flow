@@ -1,0 +1,104 @@
+{
+  "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "previousPacket": "e97ff8954a5a6fa0bfdbd5b6c76815ab005ee681",
+  "previousSource": "af43f7e61395125aed3f0725a9e4305c9e086cdd",
+  "previousManifestSha256": "b30f03ceddcc51fe04631de3aeea84e542a7b04cd359cc734876015303cee141",
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 9767,
+      "sha256": "941138dc50f201aef5d89d2a993756e492876400b14219e22922fc2196525297"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/p2-fix-notes.md",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 2486,
+      "sha256": "afb1a38456bbf0987181bf6df018bd7a1c0826e20be20319d6b585dedd7e48e3"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/p2-fix-segment.json",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 1803,
+      "sha256": "11c0802f92fbad58d4892aac23cbbfd645a544672246c604cb1e1a27bcc37508"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/quality.md",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 2456,
+      "sha256": "40c0a3614260e0573762ca7a23aa670c8e35dd8f945e9b613114ab81d2c4607b"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/run-local.py",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 5014,
+      "sha256": "f2645bf0354091ebd122e643fd1093baaea09b1073a27f078b140bfe2644d02e"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/settlement/output.log",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 458,
+      "sha256": "3c106a065fa6816aba731e541933bc5412d085b61623230dc9a7adb885961d0d"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/settlement/reservation.json",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 1090,
+      "sha256": "aec34a8810260d7d94072aa7efb3d93144bae6af569f95d2e5fe64534fcec7a5"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/settlement/result.json",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 2047,
+      "sha256": "2e64e286ac69fb2e77e4d2debe7d454001aa9a8ac7327976a4d92d3fd71555c5"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/types-settlement/output.log",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/types-settlement/reservation.json",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 947,
+      "sha256": "8a4308435566cc24a5d341904d7d1912bfd6ae731192ac44aacf53959ef53ffe"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/types-settlement/result.json",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 2274,
+      "sha256": "568d238715bf4059693c698b1177a29eb2b4500ace0fae1031d8243b0b4d995a"
+    },
+    {
+      "path": "plans/x01-trusted-process-host/review.md",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 1935,
+      "sha256": "39fee72121f97a1c8373b03207747c7ec45263ff8ebb483d091096e83f42a9c0"
+    },
+    {
+      "path": "plans/x01-trusted-process-host/status.md",
+      "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+      "bytes": 5811,
+      "sha256": "af8b33c3493c2a5d2e6ba0a48d26d8c2361703aa634d745739ef319d0401c69a"
+    }
+  ],
+  "count": 14,
+  "totalBytes": 52639,
+  "productDelta": [
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/plugins/process-host.ts"
+  ],
+  "unchangedProductScope": "All nine other source/test leaves unchanged relative to previous packet; no other project product change.",
+  "oldRawUnchanged": true,
+  "metadataAfterSeal": [
+    "plans/x01-trusted-process-host/status.md",
+    "plans/x01-trusted-process-host/review.md"
+  ]
+}
