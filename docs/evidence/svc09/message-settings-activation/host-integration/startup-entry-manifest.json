@@ -1,0 +1,265 @@
+{
+  "kind": "SVC09A_STARTUP_ENTRY_DELTA",
+  "at": "2026-10-07T20:35:26.481893+00:00",
+  "sourceCommit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+  "recordsCommit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+  "entryPreimage": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "productBindings": [
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+      "bytes": 17239,
+      "sha256": "122073baec75e1dbb829ec92c2e8495ce969e19f9a772e50398e6e4fac428a70"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "commit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+      "bytes": 4124,
+      "sha256": "f37b7b999b050655bd506d2559deee8011e6be9d8ba6a13f3a08350660997dc5"
+    },
+    {
+      "path": "apps/server/src/startup-progress.ts",
+      "commit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+      "bytes": 6664,
+      "sha256": "f0bf5adce3e8ea74bab09ffbf162dfa8502955d487cd0cf496a78cb2f5ebbd54"
+    }
+  ],
+  "recordBindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-consumer.test.mjs",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 10717,
+      "sha256": "620d6bf0355f033792850149936125dcf41ec355c7b5002342d336223866d08f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-interface.md",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 3276,
+      "sha256": "fdb8461c59c6dc0184b64a994bed68e72fa8993fdab264a007a19793c77a5df3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-result.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 11179,
+      "sha256": "07b05e8b7e93a37570f6bbd92846135d13c5c03adb938b2f14ca93ab987a9b17"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-status-parse.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 100,
+      "sha256": "0a33ddbdf32d63f75612f482a37b4a5add162e460e06d56dbb73512964ca3008"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-tsconfig.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 491,
+      "sha256": "7dad13f3ee95244c107b9e54df03b47d2e2b729f24ca26599fdd8ac98eef8bc2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-amend-receipt.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 925,
+      "sha256": "fddc355fa2088bc30d52550a120d05f67d6f5e18660e7a1d57f5d141d97ca822"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-amend-request.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 643,
+      "sha256": "583d744476a01594eab782af901d089e6f589253f7d1b4311fb893865be637b7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-inputs.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 1040,
+      "sha256": "0e05ac52065ede38a0f0a2f839932558b4115034ee0b7b56e5c0ed9b51b42a1b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-links.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 2474,
+      "sha256": "7f29eded2efee23617379cd374b0e592d4b65014b2a5ebc054075108830497d3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-preflight.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 1126,
+      "sha256": "78696fe7ce207f9caaec3a6beeae7c801ec098c597167b63681d91e066b16c08"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/01-outer.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 517,
+      "sha256": "b032efb19223159f5f863fda08fcad7014426574c2d9e206f25fe6cde152c5ff"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/01-stderr.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/01-stdout.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 1218,
+      "sha256": "2253db5e6f92895b4e3e8b89269b1b236c5335b113061946a6a8430212211698"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/02-outer.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 665,
+      "sha256": "258a85d81a57514bbbb1e18220e77f6450935507e119646a0a62a47d6de90117"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/02-stderr.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/02-stdout.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 77863,
+      "sha256": "f80d904b717a2aade76da1040db48de36255bb4f34ed2956515bd94ca7a49106"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/reservation.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 11401,
+      "sha256": "ad6dd7f4274a04d84847bedc92b873f37805ef7c738c1d349e8c8b7093b25c59"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/result.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 849,
+      "sha256": "bf4c17b215888b412ea2a4a7bcf706810469e6cab9989376aba95d435af5a169"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03/01-outer.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 512,
+      "sha256": "0b237c97f8e5464467f1fef4fade42a4ee3b14e018b2286b7304f33c8a543c0e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03/01-stderr.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03/01-stdout.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03/reservation.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 11414,
+      "sha256": "87d9fa0174df926d06abba0f125882172f390724a09cf533cbf11a794d634bc7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03/result.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 470,
+      "sha256": "caec70fbafb9ebbebeb08e5fa21e2e1b2678987e8d37893fc06762bd1ec10759"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/01-outer.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 515,
+      "sha256": "a7628bd22596018f229a37b7c92a167b80f936fe56d81daff675ed2131a30508"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/01-stderr.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/01-stdout.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 400,
+      "sha256": "2ca5eb00ca528dc29af71c091bb4e76512dec57a21e13aa58a64af828feec798"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/02-outer.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 512,
+      "sha256": "5420508fcb4afb374b519df535cd768120659977ca6c9e0ee06aebde85d69baf"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/02-stderr.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/02-stdout.txt",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/reservation.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 12551,
+      "sha256": "114c41011f1da1015b1d892639170660b93032df7be1023c230a4f57c2a21c39"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04/result.json",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 675,
+      "sha256": "33fcb9b3e52186f164bf4126488f9aa1eddccfbf4770453e7abdd033db2ebdea"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local.py",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 6336,
+      "sha256": "1fc76515e786df0473fe561ed5da3c9ff700742875337c874b455f5ea1565b1a"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/plan.md",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 1653,
+      "sha256": "d8b9040bf42f69c848f3deb962636facc7bd643c44048cbf2c55902a67081a0d"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/review.md",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 12037,
+      "sha256": "c681909c9f8a32e730c74e31c701ac045580d24048282ec42295739418625845"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/status.md",
+      "commit": "812c7959dc86a1ad511d3ff3692d818c628e8756",
+      "bytes": 28459,
+      "sha256": "6e4b5a38593aeecc1f997d43b64c6776fd6abc66de97efa9a415459254d80c55"
+    }
+  ],
+  "inherited": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-manifest.json",
+      "commit": "1631c17c32ef3820e54e47163351858de05a1313",
+      "bytes": 8587,
+      "sha256": "90b1c9263d1007ca7295c1fd6f531bb8e50140c557082309b27e78303d2525fb"
+    },
+    {
+      "path": "docs/evidence/i02/svc09a-startup-progress-review.json",
+      "commit": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+      "bytes": 1991,
+      "sha256": "5ee6667f176cfd1be5914abd0608701813161c4c18c8e034f4632c281bc39632"
+    }
+  ],
+  "actualVariantAndRuntimeBindings": {
+    "reference": "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-result.json",
+    "field": "rounds[].sourceCommit + original run reservation inputs",
+    "interpretation": "Each raw round keeps actual source bytes. 9b1 nine entry cases are inherited through the exact runtime-erased type change; 8daa CORS void callback gets its own installed Fastify case. Original nine not rerun."
+  },
+  "limits": [
+    "0PG/0services/0provider/0personal I/O/0install/0build",
+    "old artifact 2515/098b and all FAIL/KEEP unchanged",
+    "AV pending patch not applied",
+    "no real startup/phase timing/root-cause/runtime artifact proof"
+  ],
+  "review": "NOT_REVIEWED"
+}
