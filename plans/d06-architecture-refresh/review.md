@@ -11,4 +11,4 @@ Reviewer: root independent; 0 blocking; APPROVED_SCOPED_RENDERER_SOURCE_BROWSER_
 
 原5124源码与22direct批准及首轮失败记录[原样保留](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/previous-review.txt)；该历史target不覆盖本次renderer修复。原candidate/source-proof为固定历史，不追新审批重写。
 
-[首轮实际失败与清理独审](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)已接收既有renderer归因；第二候选保持原scenario及83267ms剩余额度，[静态准备](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/candidate.json)待精确包审，不是页面通过或运行预约。
+[首轮实际失败与清理独审](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)已接收既有renderer归因；第二候选保持原scenario及83267ms剩余额度，[静态准备](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/candidate.json)已获[d528精确包限定审](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/prior-preparation-review.json)，不是页面通过或运行预约。当前[并存准入修订](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/admission-contract.json)待root审；本页a28e源码批准范围不变。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 UTC | 2026-10-07T03:54:10.239499+00:00 |
+| 最近更新时间 UTC | 2026-10-07T04:15:02.185429+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root |
@@ -16,7 +16,7 @@
 | 优先级 | 2 |
 | 当前产出 | 新五图数据与定向验证已通过；页面实测发现的既有连线文字背景估宽问题已固定源码修复，已获限定源码批准，待实际复验 |
 | 下一可用交付 | 完成已获源码批准的连线背景修复页面验收，再接入主线 |
-| 当前阻塞 | 首轮页面失败保留；修复使用实际文字边界，已获源码审查，尚未实际复验。无运行占用/预约，CSS不在范围 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a28e8dac9ab3bd56231c13a0b090e986cc69eb0d |
 | 实现范围 | apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/test/architecture.test.mjs |
@@ -43,3 +43,5 @@
 当前renderer固定修复：[Interface](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)与[source proof](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/source-proof.json)。原26份首轮原件逐字不变；原90s剩83267ms含15s清理，非新运行许可。
 
 2026-10-07T03:59:21.673046+00:00：[root首轮失败实证审](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)及[a28e限定源码批准](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json)已归档；[第二静态候选](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/candidate.json)保原scenario/剩余83267ms、无gate/预约/运行。
+
+当前准入采用[同一第二包并存修订](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/admission-contract.json)：SVC06原失败保留阶段与04:13:44.010Z实际清理归还均保留来源，完整保守合计启动门槛4,053,008,384B由fresh外层准入强制；a28e源码、原scenario/6733累计/83267剩余均不变，无gate/预约/运行。原[d528准备审](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/prior-preparation-review.json)保留，新准入修订待审。

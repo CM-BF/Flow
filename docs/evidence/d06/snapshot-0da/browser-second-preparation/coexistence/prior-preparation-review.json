@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T04:00:53.785409+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_SOURCE_PREPARATION_NATIVE_BOUNDARY_NOT_RUN",
+  "target": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "metadata": "13398326cbec44c7d895f2d616f29c1c22be9e65",
+  "manifestSha256": "f2e81079558edf3d1c2fd68b337cfa74eaca12eed34709a881a459f31f8dbf87",
+  "bindingSha256": "a2c2bf3e850fdb89c161584ccdb70281bc6ccd869dddf17f5426c62322d4f35e",
+  "pinsVerified": 38,
+  "prepared": [
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py",
+      "bytes": 8136,
+      "sha256": "455ac1cc20ae5c8f072da2059377a7a3bc171e6bb33112541c46988d15fd8cca"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs",
+      "bytes": 4553,
+      "sha256": "44da36b228f197407a63d2a21238066cec1cc9e91374bf57b393862da4455ad9"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/scenario.mjs",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/scenario.mjs",
+      "bytes": 10488,
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/README.md",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/README.md",
+      "bytes": 2150,
+      "sha256": "bb8bd494ea18d9e7d8569de489b9254ff9b5b15ffed69e36f9a7203d1008884a"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/run.py.diff",
+      "bytes": 7583,
+      "sha256": "47626ef2024ad8b27895e9f9b5619b257f7403cf37b8bc0fef5779f44d7f0bfb"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/worker.mjs.diff",
+      "bytes": 863,
+      "sha256": "21072b229b4ab93f2e7f9b6afb90a782d8f4ecfd2bd8a75e59214ec8750fca52"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.diff",
+      "realpath": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.diff",
+      "bytes": 15955,
+      "sha256": "bc5e7ed5b3c4413a2243dfc209535a7abcbb62833663a4ec88d8f7f228e4d193"
+    }
+  ],
+  "reviewed": [
+    "Parent and worker diffs are source/metadata binding,remainingtime offsets,carry-forward rawbudget only; worker68267ms and parent83267incl15000cleanup consistent.",
+    "Original scenario exact1cc45 hash:fiveviews/twothemes/twowidths,actualbbox/background/canvas,20screenshots,source navigation andkeyboard unchanged.",
+    "Previous19raw/outer files retained and hash-pinned,1386844B charged against original8MiB;64KiB outer capture reserved; newrawlimit6936228B.",
+    "One-use consumedmarker, immutable pin/realpath/head/clean check, expiry gate, freshfree check retained; no runtime outputs created.",
+    "Prior original source22/direct and failedbrowser2of5 remain scoped historical evidence; newrenderersource approveda28e, no dynamicfix claim."
+  ],
+  "nativeBoundary": {
+    "acceptedForExactPreparedBytes": true,
+    "nativeChromeSandbox": true,
+    "owned": "fresh exclusiveprofile/cache and worker processgroup; dynamic local staticassetHTTP only",
+    "customOSWriteOrEgressSandbox": false,
+    "network": "Scenario allows ownloopback requests; not a claim of OS-wide egress containment",
+    "personalServicesOrTabs": false,
+    "postgres": false
+  },
+  "limits": {
+    "totalMs": 83267,
+    "workMs": 68267,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "startFloorBytes": 1350565888,
+    "stopFloorBytes": 1073741824
+  },
+  "priorSpentMs": 6733,
+  "priorRawBytes": 1386844,
+  "remainingNewRawBytes": 6936228,
+  "blockingFindings": [],
+  "cleanCode": "Reuse previously exercised supervisor and unchanged scenario. Only necessary remaining-budget binding and cumulative raw accounting changed; no additional framework or assertion weakening.",
+  "requiredBeforeActual": [
+    "Actual sharedheavy return after currentREQ15 thenSVC06; no reservation fromthisreview.",
+    "Fresh exactD06claimv2/sourcehead/pins/outputabsence/free including other concurrent declaredbudget and1GiBreserve.",
+    "One actual secondattempt; preserve actualouterexit, terminalstdout,lateelapsed,EOF/Chrome/group/HTTP/scratchcleanup; no automaticthirdrun."
+  ],
+  "runtime": "NOT_RUN; sourcepreparationapproval only, noPG/Chrome/HTTP/import/producttests byreviewer."
+}

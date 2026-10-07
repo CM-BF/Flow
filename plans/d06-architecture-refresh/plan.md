@@ -17,4 +17,6 @@ D06-01～08的完成事实与证据继续见历史，不重编号或撤销旧批
 
 首轮新布局验收发现既有renderer中文背景估宽缺口。已[原子amend v2五范围](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json)，仅新增 architecture.js；修复[Interface及来源](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md)复用挂载SVG bbox、批量读写。新source固定后独审，原22与首轮FAIL/清理/6733预算保留，未自动复跑。CSS/server/registry及五图文本数据不改，原D06-12主线交付仍待验。
 
-后继a28e renderer已获限定source批准；首轮FAIL归因/清理独审已接收。第二candidate只绑定新source/currentHEAD与剩余83267ms，scenario所有断言原样；实际运行仍待具体heavy交接，不重跑原22。
+后继a28e renderer已获限定source批准；首轮FAIL归因/清理独审已接收。第二candidate只绑定新source/currentHEAD与剩余83267ms，scenario所有断言原样；原准备时待具体heavy交接。当前Lead明确允许隔离0PG浏览器与SVC06保留资源并存，须按[完整资源合同](../../docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/admission-contract.json)复审与fresh准入；无当前gate，不重跑原22。
+
+SVC06后于04:13:44.010Z实际归还，root明确D06下一窗口；上述完整高线保守保留，新HEAD绑定修订审查后才能fresh准入，当前未运行。
