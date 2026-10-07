@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T03:38:32.727114+00:00 |
+| 最近更新时间 | 2026-10-07T03:42:55.732443+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4保持，Stage C fixture checkpoint 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8，尚未main |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；C资源源码1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8，局部执行37e4f169b97d70066fea8acbb85cc145167b7759；未main |
 | 工作树 dirty 状态 | 本段只有两test资源hooks与own helper/config/metadata；固定源码后补交审记录，最终提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | Stage A strict0+17/17、Stage B九入口noEmit0均已独审；当前C fixture types/collect/PG均NOT_RUN |
-| Review | PENDING Stage C fixture源码/局部检查；Stage B d17与Stage A 2dd587结果已APPROVED |
+| 检查状态 | Stage A strict0+17/17与Stage B九入口noEmit0已独审；C types0/collect命令0共27原case，owner旧21计数断言FAIL保留，0PG/body |
+| Review | PENDING Stage C fixture/局部记录独审；Stage B d17与Stage A 2dd587结果已APPROVED |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 插件模块与直接消费者检查已通过；数据库验收新增创建身份和安全收尾准备，尚未执行 |
-| 下一可用交付 | 在本地槽归还后做两组PG测试的类型检查和用例收集，再交独审并安排真实PG/HTTP验收 |
-| 当前阻塞 | ACTIVE: 当前本地槽由C02使用，真实PG尚未开放；生产执行链仍待共享接线 |
+| 下一可用交付 | 独审当前数据库fixture与局部结果；按实际27原用例补共同期限/HTTP预算，再申请真实PG/HTTP验收 |
+| 当前阻塞 | ACTIVE: Stage C实际PG仍未开放，共同期限/HTTP计量准备未齐；生产claim/runtime接线仍待协调 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -178,3 +178,5 @@ Mika将30秒local段正式交本owner；03:19:49.463834Z fresh账本v8 ACTIVE17�
 Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case（3锁屏障）+旧plugins11是唯一候选，保持原断言和唯一034/30已供官方SQL。现runtime fixture缺CREATE前持久reservation/OID+marker身份与外部可核完整cleanup；旧plugins fixture仍created-after-ACK/直接DROP，须在原领取两test范围窄补，不以类型通过冒充PG安全闭环。领域route仍手动注入trusted policy，不默认mount；实际安装数据是合成terminal metadata，不能称下载/真实runner完成。浏览器两label仅本轮类型覆盖，不因此跑全Chrome旅程。
 
 2026-10-07T03:38:32.727114+00:00：Stage B固定d17abf于03:34:23 UTC经chatui01_owner独立RESULT_AND_DEPENDENCY_FIDELITY_REVIEW_APPROVED/0P1P2；4绑定与14精确links/package均符，唯一九入口types0，未扩大为PG或功能通过。原结果/raw不改。fresh03:31:46.826核v8 ACTIVE/17scope后，Stage C仅共用两现有test的资源fixture：持久CREATE前请求、ACK/OID/owner/marker、全部owners/pool结束及0连接后普通DROP；异常保留。原10+11行为用例主体与ade4逐字一致，产品实现/034未改；[固定输入](../../docs/evidence/x01/enable-binding-stage-c-source.json)。本段0types/collect/PG/HTTP/provider执行；C02当前local，未占等待槽。原A/B通过不覆盖本次新fixture。
+
+2026-10-07T03:42:55.732443+00:00：C02实际local归还后，Mika给定Web完整heavy276824064B+本段9568256B+1GiB合计floor1360134144B；fresh03:40:30.849核v8后执行一次types→collect，两个child均exit0/EOF/finalabsent，两ownTMP同inode清理absent。原收集计划漏计registry参数化：实际27=10+17；owner计数断言21导致最终exit1，首[完整记录](../../docs/evidence/x01/enable-binding-stage-c-local.json)保留FAIL，另[只读纠正](../../docs/evidence/x01/enable-binding-stage-c-analysis.json)记录真实名单/原断言不变。0PG或test body；没有为计数错误复跑。原件内部4.010s/raw6396B，外部wholewall未知。实际local已直接交REQ15 owner，当前无待launch/资源残留；下一PG需按27原case和共同期限/HTTP上界重新定界，不把此前21计划自动扩大。

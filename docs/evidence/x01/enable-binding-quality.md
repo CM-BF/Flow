@@ -73,3 +73,7 @@ chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。�
 ## 2026-10-07T03:38:32.727114+00:00 Stage C资源fixture安全点
 
 沿本地find-skills/codebase-design/固定sickn33 clean-code、既有bounded设计授权，把两实际消费者重复的CREATE/DROP归属逻辑收进一个test-only Module，不复制生产DDL或监督器。资源Interface明确window/source、wx0600/fsync、创建ACK/OID/owner/marker、startup不明不假已close、pool/admin独立finally、0连接与普通DROP/absence；错误摘要最多16并保总数，单收据16KiB，不输出任意错误正文。原runtime/registry行为主体逐字对比通过，只做文件/Git审查和diff --check；没有把源码比较叫工程测试。历史A/B通过不覆盖该增量。当前C02持local，停止在固定source checkpoint等待后继检查段；没有PG/新服务/安装/依赖供给。
+
+## 2026-10-07T03:42:55.732443+00:00 Stage C局部检查与计数纠正
+
+复用固定OPS14与既有最终状态判定，同一local段顺序types→collect，命令均0。计数断言暴露旧registry it.each误计，不改用例来迁就21，不重复已过工程检查；保留原FAIL和完整stdout名单，另记27=10+17。当前fixture类型有效与可收集已证，不能称PG行为通过。按clean-code实际错误职责，将owner计数错误、业务检查命令成功及资源关闭分别记录。两root精确后核absent，14donor及targets后核不变；local直接归还REQ15。新fixture后续仍需统一工作期限/HTTP计数门禁与实际PG预算，这些是明确未完成项，不假造ready。

@@ -1,6 +1,6 @@
 # X01 Stage C：原两组 PG/HTTP 验收的资源准备
 
-产品仍固定 `ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc`。本增量只改两份测试的资源建立/收尾，新增共用 fixture 与显式 Vitest config；原 10 runtime + 11 registry 行为用例未增加、删改或运行。A 的真实包 17/17、B 的九入口 types0 是各自历史结果，不覆盖本次 fixture。
+产品仍固定 `ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc`。本增量只改两份测试的资源建立/收尾，新增共用 fixture 与显式 Vitest config；原行为用例未增加、删改或运行。原静态预估 10 runtime + 11 registry 漏计参数化展开；03:40 实际 collect 得到 10 + 17 = 27 个原 case（0 body 执行），以 [原件与纠正](enable-binding-stage-c-analysis.json) 为准。A 的真实包 17/17、B 的九入口 types0 是各自历史结果，不覆盖本次 fixture。
 
 `enable-binding-pg-fixture.ts` 是这两份测试的资源 Module，不是生产迁移或第二监督器。其 `create()/finish()` 隐藏同一组 PostgreSQL 身份规则：
 
@@ -13,6 +13,8 @@
 
 后继在 heavy 槽授予后消费现 OPS14 `supervise(Launch,Policy)`，不新增 supervision/kill 循环。一次明确 Node24/Vitest4 argv 为 `node node_modules/vitest/vitest.mjs run --config docs/evidence/x01/enable-binding-pg-vitest.config.mjs --configLoader native --reporter=json apps/server/src/plugin-runtime/runtime.test.ts apps/server/src/plugins/plugins.test.ts`。在原 source/dependency 视图下重新绑定两个 test、fixture/config 和正式 SQL，fresh claim/head/余量与无输出，预约 own root/cache/window 后运行；时间/原始输出/TMP/配对预算由下一实际 bounded 段明确，不以本页自授数值或 OPEN。
 
-实际成功必须同时是 21 selected/pass、0 skip、进程 final absent/完整 EOF/输出未截断、两个 reservation/request/created/result 的 window/suite/database/OID/marker 一致、所有 close/0 connection/DROP/absence 成立。未知不推断为空库或已清理；外层保留已知 path/dev/ino，不额外扫旧根。原断言失败仍保留失败，即使资源已安全收尾也不能称通过。
+未来实际成功必须同时是 27 selected/pass、0 skip、进程 final absent/完整 EOF/输出未截断、两个 reservation/request/created/result 的 window/suite/database/OID/marker 一致、所有 close/0 connection/DROP/absence 成立。未知不推断为空库或已清理；外层保留已知 path/dev/ino，不额外扫旧根。原断言失败仍保留失败，即使资源已安全收尾也不能称通过。
 
-当前 `SOURCE_PREPARATION / VALIDATION_NOT_RUN`。没有导入、types、collect、PG、HTTP、浏览器或 provider 执行；生产挂载、v3 claim/恢复 guard、runRunner 和完整 X01 验收仍开放。
+当前 `SOURCE_PREPARATION / PG_NOT_OPEN`。本增量已实际局部 types0、collect0/27 名；owner末尾按旧21判断而FAIL的首record原样保留，不复跑已过检查。0 PG/HTTP/body/浏览器/provider。生产挂载、v3 claim/恢复 guard、runRunner 和完整 X01 验收仍开放。
+
+后继数量/资源重新定界：两文件串行→2个随机专库，runtime一次app重启/registry一次app重启均先close旧实例。pool声明峰值runtime为admin1+fixture4+server8+scheduler3+send-boss1=17，registry为1+3+8+3=15（连接上限，不是实测）；两库不可按并行34估计。27为原有参数化用例，不新增业务场景。当前fixture只有单query/request和hook超时，尚未加入实际外层共同工作deadline、HTTP计数与完整运行收据；分页读取依赖返回cursor，异常下不能声称固定HTTP上界。下一PG段须先补这个有界执行输入/门禁，再以真实27选择数拟总时长、raw/TMP与配对预算，不能沿旧21口径自动开窗。本次不再运行types/collect、不抢占REQ15 local。

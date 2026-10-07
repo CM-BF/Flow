@@ -1,0 +1,196 @@
+{
+  "kind": "X01_STAGE_C_LOCAL",
+  "startedAt": "2026-10-07T03:40:31.049287+00:00",
+  "executionHead": "37e4f169b97d70066fea8acbb85cc145167b7759",
+  "sourceCommit": "1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8",
+  "limits": {
+    "segmentSeconds": 600,
+    "maxMeaningfulChildren": 4,
+    "childTotalSeconds": 30,
+    "tempSampleBytes": 8388608,
+    "rawBytes": 131072,
+    "metadataBytes": 1048576
+  },
+  "resourceFloorBytes": 1360134144,
+  "webHeavyReservedBytes": 276824064,
+  "claimFreshObservedBeforeCommand": true,
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "bytes": 21690,
+      "sha256": "c5ae1293722c8d1ab6f189a08b99df6162fad416fb837d0fae933c92be69bb6d"
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "bytes": 17813,
+      "sha256": "a2b6dc2789df63742fca52e43a4923d426eeb1b5db773ea262a84b59d3efe41e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "bytes": 9217,
+      "sha256": "0a3be51bdd0a618b0e5c63b76021c2674b0a915249ba7f1c1d47d536687bfe6c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-vitest.config.mjs",
+      "bytes": 534,
+      "sha256": "16b20471faf108c5827bbadac93b9105d9614a3c6ec5101b0dd7746eb9c9aed3"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c.md",
+      "bytes": 3614,
+      "sha256": "0d2e28c5016acba4c87042e89e7e6dda28d98fd3f98ec0765063fc39f639fc63"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-consumer-tsconfig.json",
+      "bytes": 604,
+      "sha256": "739704f99e6692b722ee8cd062a02be5ce4760ed9f3396ec16d69f7700212076"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "runs": [
+    {
+      "label": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/enable-binding-consumer-tsconfig.json"
+      ],
+      "startedAt": "2026-10-07T03:40:31.052262+00:00",
+      "freeBeforeBytes": 25885782016,
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-c-local-7tvsmhpq",
+        "dev": 16777234,
+        "ino": 123410159,
+        "removed": true,
+        "finalSample": {
+          "entries": 1,
+          "bytes": 0,
+          "hardPeakProven": false
+        }
+      },
+      "report": {
+        "pid": 34473,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 2216,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "stdout": "",
+      "stderr": "",
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T03:40:33.267988+00:00"
+    },
+    {
+      "label": "collect",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "list",
+        "--json",
+        "--config",
+        "docs/evidence/x01/enable-binding-pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/server/src/plugin-runtime/runtime.test.ts",
+        "apps/server/src/plugins/plugins.test.ts"
+      ],
+      "startedAt": "2026-10-07T03:40:33.268785+00:00",
+      "freeBeforeBytes": 25886482432,
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-c-local-w5yaroto",
+        "dev": 16777234,
+        "ino": 123410171,
+        "removed": true,
+        "finalSample": {
+          "entries": 1,
+          "bytes": 0,
+          "hardPeakProven": false
+        }
+      },
+      "report": {
+        "pid": 36772,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 1719,
+        "observed_bytes": 6396,
+        "retained_bytes": 6396,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "collect",
+        "rawComplete": true
+      },
+      "stdout": "[\n  {\n    \"name\": \"host publication requires an exact operator tuple before the first immutable insert\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"enable advances the same revision, preserves old operation readback and replays the original receipt\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"owner and runner roles, exact host/store/material and strict public bodies reject without revision changes\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"configuration changes invalidate new bindings while an accepted binding and original key survive disable and restart\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"phase replay rechecks grant/fence and changing key cannot authorize a second package action\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"disable preserves accepted pin permission, maintenance drains, and cancellation/expired/stale/revoked fences reject\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"binding constraint failure rolls back task and command, and immutable rows reject edits\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"lease expiry while waiting for registration-first rolls back positive authority, including cached replay\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"lease expiry while waiting for command-first rolls back positive authority, including cached replay\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"lease expiry while waiting for command-replay rolls back positive authority, including cached replay\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts\"\n  },\n  {\n    \"name\": \"registers a fixed declaration without granting capabilities or claiming the package was installed\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"versions configuration and explicit grants with CAS and original-result idempotency\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"retains immutable declarations and history while selecting a version clears configuration and grants\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"keeps the same registration receipt and immutable operation after the center restarts\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects undeclared configuration, credentials and grants without exposing input or advancing revision\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver latest\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver ^1.0.0\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver 1.0\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver 01.2.3\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver 1.0.0-01\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects non-exact npm semver file:../package\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"validates integer and enum public values and does not inherit configuration from object prototypes\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"lets only one simultaneous registration reserve the same package and scope\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"preserves owner authorization and scope in list cursors, project registrations and operation lookups\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"rejects schema ambiguity and bounds request bytes before accepting registry data\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"returns complete paginated version history within both item and UTF8 byte limits\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  },\n  {\n    \"name\": \"protects accepted version, revision and operation history from SQL mutation\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts\"\n  }\n]\n",
+      "stderr": "",
+      "stdoutSha256": "6d7b916a50f5fbc7ea42a2cc5b3c4dc6b23dc7d9ab1d34eff5435da9b304fd87",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T03:40:34.988063+00:00"
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "install": 0,
+  "failure": {
+    "type": "AssertionError",
+    "reason": ""
+  },
+  "unknown": false,
+  "finishedAt": "2026-10-07T03:40:34.988524+00:00",
+  "elapsedBeforeReceiptSeconds": 4.009817249956541,
+  "observedRawBytes": 6396,
+  "success": false,
+  "wholeExternalWallSeconds": null
+}
