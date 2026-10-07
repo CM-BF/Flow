@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T10:49:09.997Z",
+  "run": "native-plan-20261007-r2",
+  "outerTool": {
+    "exitCode": 1,
+    "sessionId": 22606,
+    "chunkId": "ae0cc9"
+  },
+  "groups": [
+    {
+      "pgid": 65502,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "pgid": 66924,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "pgid": 65501,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "database": "flow_o16_269a60ce63d345b68775b3e24fc974f7",
+  "marker": "46e0a695-7548-4e36-a7ad-7cfe7d089e2e",
+  "directory": {
+    "path": "/private/tmp/flow-o16-GSdvBz",
+    "dev": 16777234,
+    "ino": 124061319
+  },
+  "retention": "KEEP; no DROP or directory deletion performed",
+  "originalResourcesPhase": "paused-owned-resources",
+  "originalAdminClosed": true,
+  "checks": {
+    "targetConnectionsAbsent": true,
+    "ownedGroupsAbsent": true
+  },
+  "queryResult": "sdk is_error true; no successful proposal/pause; cumulative SDK entries2; no third query",
+  "directoryMatches": true,
+  "databaseObservation": [
+    {
+      "oid": "1290288",
+      "marker": "46e0a695-7548-4e36-a7ad-7cfe7d089e2e",
+      "bytes": "12935695"
+    }
+  ],
+  "connections": [],
+  "readonlyObserverPoolClosed": true,
+  "endedAt": "2026-10-07T10:49:10.010Z",
+  "windowRuntimeSettled": true
+}

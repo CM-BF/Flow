@@ -1,0 +1,177 @@
+{
+  "kind": "flow.o16.existing-result-evidence-check.v1",
+  "at": "2026-10-07T10:53:09.379790Z",
+  "root": {
+    "path": "/private/tmp/flow-o16-GSdvBz",
+    "dev": 16777234,
+    "ino": 124061319
+  },
+  "scope": "Exact current R2 scratch metadata plus bounded existing plan/report.json only; no old resources, credential/config content, process launch, auth, query or PG",
+  "entriesExcludingRoot": 22,
+  "listing": [
+    {
+      "path": "credentials.json",
+      "type": "regular",
+      "bytes": 59,
+      "uid": 501
+    },
+    {
+      "path": "intents",
+      "type": "directory",
+      "bytes": 128,
+      "uid": 501
+    },
+    {
+      "path": "journey.json",
+      "type": "regular",
+      "bytes": 4237,
+      "uid": 501
+    },
+    {
+      "path": "material.txt",
+      "type": "regular",
+      "bytes": 114,
+      "uid": 501
+    },
+    {
+      "path": "plan",
+      "type": "directory",
+      "bytes": 224,
+      "uid": 501
+    },
+    {
+      "path": "plan/home",
+      "type": "directory",
+      "bytes": 64,
+      "uid": 501
+    },
+    {
+      "path": "plan/native",
+      "type": "directory",
+      "bytes": 160,
+      "uid": 501
+    },
+    {
+      "path": "plan/report.json",
+      "type": "regular",
+      "bytes": 4100,
+      "uid": 501
+    },
+    {
+      "path": "plan/runtime",
+      "type": "directory",
+      "bytes": 96,
+      "uid": 501
+    },
+    {
+      "path": "plan/worker.json",
+      "type": "regular",
+      "bytes": 6074,
+      "uid": 501
+    },
+    {
+      "path": "plan/runtime/2e7a6336ef0747b66994ae1ec27ef92525778503162717ed59610f0b42a99e58",
+      "type": "directory",
+      "bytes": 128,
+      "uid": 501
+    },
+    {
+      "path": "plan/runtime/2e7a6336ef0747b66994ae1ec27ef92525778503162717ed59610f0b42a99e58/admission.json",
+      "type": "regular",
+      "bytes": 302,
+      "uid": 501
+    },
+    {
+      "path": "plan/runtime/2e7a6336ef0747b66994ae1ec27ef92525778503162717ed59610f0b42a99e58/cdb2f707a407d7116fad60a449d67529099a185b3fd3441b788e4b31cca9bb94",
+      "type": "directory",
+      "bytes": 64,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/config",
+      "type": "directory",
+      "bytes": 160,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/home",
+      "type": "directory",
+      "bytes": 64,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/tmp",
+      "type": "directory",
+      "bytes": 64,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/config/.claude.json",
+      "type": "regular",
+      "bytes": 719,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/config/backups",
+      "type": "directory",
+      "bytes": 96,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/config/sessions",
+      "type": "directory",
+      "bytes": 64,
+      "uid": 501
+    },
+    {
+      "path": "plan/native/config/backups/.claude.json.backup.1791370072322",
+      "type": "regular",
+      "bytes": 84,
+      "uid": 501
+    },
+    {
+      "path": "intents/8915c8d44e9c92f2bd402521102251bb225807e540c414519058c43176655d6f.json",
+      "type": "regular",
+      "bytes": 1030,
+      "uid": 501
+    },
+    {
+      "path": "intents/c71d8445df24258893182130536130cc4fa639746f928cce34e7b63e264c8965.json",
+      "type": "regular",
+      "bytes": 138,
+      "uid": 501
+    }
+  ],
+  "workerReport": {
+    "path": "plan/report.json",
+    "bytes": 4100,
+    "sha256": "cfdf3086a0073b0a62e336a53091066b5f7d286b71f38382db36629e6d74985b",
+    "matchesDurablePlanWorker": true,
+    "resultKeys": [
+      "subtype",
+      "isError",
+      "nativeSessionId",
+      "sourceMessageId",
+      "numTurns",
+      "sdkEstimatedCostUsd",
+      "modelUsage"
+    ],
+    "rawResultBodyOrErrorsPersisted": false
+  },
+  "sourceExplanation": {
+    "queryPolicy": "experiments/continuous-goal-acceptance/query-policy.mjs observeResult projects subtype/isError/session/uuid/turns/cost/modelUsage only, then rejects isError true",
+    "phaseHost": "experiments/continuous-goal-acceptance/phase-host.mjs starts worker with stdio ignore/ignore/ignore/ipc",
+    "nativeStderrFileFound": false,
+    "upstreamResultBody": "NOT_PERSISTED_IN_INSPECTED_MATERIAL",
+    "rootCause": "UNKNOWN"
+  },
+  "notRead": [
+    "credentials.json",
+    "journey.json",
+    "plan/worker.json",
+    "plan/native/config/.claude.json",
+    "plan/native/config/backups/*",
+    "intents/*"
+  ],
+  "retention": "KEEP; no resource mutation"
+}

@@ -1,0 +1,57 @@
+{
+  "reviewedAt": "2026-10-07T10:45:53.611493+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_NATIVE_CANDIDATE",
+  "candidateDelivery": "8cda6b8e07c574b01a401e0272e2c6be6da1cdea",
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "manifest": {
+    "bytes": 4326,
+    "sha256": "95704131e570295ab7070899fafc942e3555d787021341aff64f5cb78461bbe1"
+  },
+  "permit": {
+    "approvalId": "O16-GO-PLANNER-R2-20261007",
+    "bytes": 1068,
+    "sha256": "0f2df87a9ac133c70d906a57ed30aa30321ec827be68280e64a54a9085787836",
+    "expiresAt": "2026-10-07T11:11:31.796604Z"
+  },
+  "findings": [],
+  "evidence": {
+    "fixedAndCurrentBindings": 12,
+    "bytes": 102095,
+    "runtimeStatPinsUnchanged": 3,
+    "oldAndUTF8JSONParsedValuesIdentical": true,
+    "goalAndMaterialMatchFixedConfig": true,
+    "runOperatorReservationPathsAbsentAtReview": true
+  },
+  "authorization": {
+    "newPlannerQueries": 1,
+    "model": "claude-sonnet-5-5",
+    "maxTurns": 4,
+    "sdkRequestedMaxUSD": 0.2,
+    "queryMs": 90000,
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "outerMs": 150000,
+    "proposal": 1,
+    "apply": 0,
+    "children": 0,
+    "nodes": 2,
+    "edges": 1,
+    "rawBytes": 2097152,
+    "runtimeBytes": 8388608
+  },
+  "conditions": [
+    "Actual slot/startBefore and fresh claim, source, environment, native pin, namespace and resource/PG capacity must be bound before launch.",
+    "Old real SDK entry remains one, cost UNKNOWN; new actual entry makes cumulative two, with no third query or fallback authority.",
+    "Existing same-account Keychain normal refresh is separate from private runtime cap; no credential read/copy/login or API-key route.",
+    "Successful proposal must have actual source/inputs/profile/audit/usage and closure-bound 15min pause; no confirmation or children authorized.",
+    "Old FAIL/KEEP resources untouched. Candidate preparation and init declarations are not successful planning or engineering qualification."
+  ],
+  "reviewerRuns": {
+    "tests": 0,
+    "PG": 0,
+    "SDKAuthProvider": 0
+  }
+}

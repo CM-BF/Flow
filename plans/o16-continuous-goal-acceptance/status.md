@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:35:51.413710Z |
+| 最近更新 | 2026-10-07T10:54:03.571119Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,23 +11,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 修复 source ff266d1d / caller 9e15c726，7 新不同直接例分轮已绿待独审；真实首段失败保留 |
+| HEAD | source ff266d1d / candidate8cda；R2实际结果封存待独立审查，产品停写 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本次 7 新不同直接例分两轮通过；首轮 5 绿 + 文件加载失败，补原 loader 后仅 2/2；监督 695ms/raw2525B，两组 absent/双EOF/scratch removed。0PG/SDK native import/auth/provider，旧15/16/26未重跑。真实首段仍1SDK/init1，费用UNKNOWN。 |
-| Review | 真实首段限定结果忠实性已获 Lead 批准（非规划成功）；本次零模型源码修复待唯一独审 |
+| 检查状态 | R2实际1 selected/exit1，SDK本次1/累计2；初始化声明通过，isError:true，无成功proposal。SDK报告本次0/modelUsage{}，账户/旧首试费用UNKNOWN。三组absent/连接[]，DB/tmp KEEP；旧7局部与15/16/26未重跑。 |
+| Review | APPROVED_LIMITED_ZERO_MODEL_DELTA；R2候选已限定批准，实际失败结果待独立真实性审查 |
 | 实现目标 | ff266d1ddc3adf3f89012095b4ff446367c3fb7e |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | d022c8003fc4bd8ba560f1a039411ed098186659 main/origin受控接收216 own路径，与78df逐字同；原产品f5a不变，0重测；b768零模型公开旅程批准独立保留 |
+| 已集成main状态 | main/origin2f32f6b27fc79151cd1e9d26e7fb5af70a791505已受控接ff266/2841零模型修复及I02独审；650d已接d5e首轮失败。289产品仍f5a；R2新结果尚未集成。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已补齐失败调用计数与资源未知记录，并为私有环境固定声明名单；局部检查通过，等待独立审查。 |
-| 下一可用交付 | 交付本次最小修复与原始检查证据；下一真实规划需新授权。 |
-| 当前阻塞 | ACTIVE: 真实提案尚未产生；原许可已消费，本次局部修复不授权第二次请求。 |
+| 当前产出 | 第二次规划请求已结束；初始化通过，最终报告错误，未形成可确认提案。运行资源已停止，证据与专属数据保留。 |
+| 下一可用交付 | 交独立审查核对第二次失败、费用口径与错误正文缺口，再据证据决定后继。 |
+| 当前阻塞 | ACTIVE: 两次请求均未形成成功提案；第二次错误正文未保存、上游首因未知，现有预算已消费，无第三次许可。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 分阶段已main d022；[环境实现与首段候选](../../docs/evidence/o16/native-environment-implementation/Interface.md)固定0cf7已获限定独审。首段10:18窗口已消费1次SDK，init拒绝/outer失败，无成功pause；资源KEEP；children另授权，旧O08/O10封存 |
+| O16-06 | in-progress | native_center_owner | 分阶段/环境/观测修复已main；[R2实际结果](../../docs/evidence/o16/native-plan-20261007-r2/RESULT.md) SDK本次1/累计2，声明通过但isError，无成功proposal/pause，DB/tmp KEEP；费用口径与首因缺口保留，children未授权 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -58,6 +58,10 @@
 | O16-W05 | 2026-10-07T09:23:10.054477Z | 2026-10-07T09:27:34.488514Z | 独立审查 | 固定分阶段实现与原始局部证据已通过限定独审 | native-stages/independent-review.json |
 | O16-W06 | 2026-10-07T10:10:59.813650Z | 2026-10-07T10:16:07.879Z | 独立审查 | 环境delta审查，非资源等待 | native-environment-implementation/independent-review.json |
 | O16-W07 | 2026-10-07T10:18:33.342Z | 2026-10-07T10:19:10.652Z | 启动核对 | 新许可/固定输入/连接余量预检，非query耗时 | native-plan-20261007-1018/operation-input.json与operator reservation |
+| O16-W08 | 2026-10-07T10:37:40.706472Z | 2026-10-07T10:41:31.796604Z | 用户 | 修复独审通过后候选准备；原费用许可已消费，等待新GO预算；候选准备可并行，结束为本地收录新授权时刻，不冒GO决策发生时刻 | 独审原件与本次candidate |
+| O16-W09 | 2026-10-07T10:41:31.796604Z | 2026-10-07T10:47:07.022356Z | 资源 | SVC已实际归还，Lead已明确本次窗口；现fresh启动核对，尚未query | native-plan-r2-candidate/candidate.json与native-plan-20261007-r2/authorization-preparation.json |
+| O16-W10 | 2026-10-07T10:47:07.022356Z | 2026-10-07T10:47:46.949Z | 其他 | 一次fresh输入/资源/连接容量准入，非query或纯资源等待 | R2 operation-input/preflight/operator reservation |
+| O16-W11 | 2026-10-07T10:48:13.149Z | OPEN | 验证失败 | 规划isError且无成功proposal；关闭后封存、结果审查与可证后继，未许可第三次 | R2 plan/resources/result-analysis |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -93,3 +97,14 @@
 2026-10-07T10:33:06.831797Z：实际结果已获 Lead 限定忠实性批准（非规划成功）；fresh55c4v1/clean d5e 后进入最小零模型修复。修私有声明策略与失败计数/计量记录，原 raw/FAIL/KEEP 不改；[本片 Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)。本次新段60s/512KiB raw/2MiB tmp，仅相关注入/纯测，禁止 SDK/auth/provider/PG 与第二 query。
 
 2026-10-07T10:35:51.413710Z：本次修复已固定 `ff266d1ddc3adf3f89012095b4ff446367c3fb7e`，7 新不同例分轮通过，[原始结果](../../docs/evidence/o16/native-observation-repair/RESULT.md)。首轮 loader 文件失败保留，仅补未执行2例；产品未因测试失败修改。10:34:07.897Z 两组/目录实际收尾并归还 local。原 query/native/PG 0；此前真实失败/费用未知/DB与tmp KEEP不动，source待独审。
+
+2026-10-07T10:40:15.916715Z：唯一限定独审[原件](../../docs/evidence/o16/native-observation-repair/independent-review.json)已归档，source保持ff266。开始准备[新首段候选](../../docs/evidence/o16/native-plan-r2-candidate/README.md)，只读身份/固定字节，无SDK/认证/query/旧资源操作。当前等待全新预算与窗口，不复用旧once材料；新诊断仅增加可见性，未宣称旧测量首因解决。
+
+
+2026-10-07T10:41:31.796604Z：GO新授权 `O16-GO-PLANNER-R2-20261007` 已由Lead明确转达，新增仅1planner/同模型4turn/SDK$.20/query90s；[一次材料](../../docs/evidence/o16/native-plan-20261007-r2/authorization-preparation.json)已耐久，尚无operator reservation/SDK入口/PG分配。当前仅等Mika X01→SVC r2后Lead实际准入，个人/Web/X01优先；旧SDK1费用UNKNOWN与资源KEEP不变。
+
+2026-10-07T10:44:07.666894Z：Lead确认ff266/2841修复已main2f32，未重测。候选中文经纯config导出与JSON.parse逐值相等（原为合法ASCII转义）；仅改UTF-8可读表示，source/env/permit字节不变。新预算已授，实际SVC r2窗口仍运行，O16未预占/启动。
+
+2026-10-07T10:47:07.022356Z：R2候选唯一独审已归档，Lead给新实际窗口/startBefore10:55。当前进行一次fresh claim/source/runtime/namespace/disk/连接容量预检；仅匹配时执行原operator一次plan。旧SDK1费用unknown/FAIL KEEP保持，本次进入后累计2，无第三次。
+
+2026-10-07T10:54:03.571119Z：R2窗口已10:49:10.010Z归还。[原件与限定事实](../../docs/evidence/o16/native-plan-20261007-r2/RESULT.md)本次1SDK/累计2、声明通过而最终isError；SDK报告0与账户UNKNOWN分开，正文未持久。server/admin/worker关闭已持久，三组absent/连接[]，新旧DB/tmp KEEP。现从等待资源转为验证失败与结果独审；source/env不变，旧检查不重跑。

@@ -1,0 +1,51 @@
+{
+  "reviewedAt": "2026-10-07T10:37:40.706472+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_ZERO_MODEL_DELTA",
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "caller": "9e15c7261a0e73267fe60dfd901617ad54abdf36",
+  "delivery": "2841fa77668c570d19acba713e11a804e30062ea",
+  "manifest": {
+    "path": "docs/evidence/o16/native-observation-repair/delta-manifest.json",
+    "bytes": 9487,
+    "sha256": "d47e8aad3a880c40fa5e33fe51f46cfc4eae50ca8625decba41b00188965711f"
+  },
+  "findings": [],
+  "fixedChecks": {
+    "deltaAndInheritedBindings": 25,
+    "bytes": 136914,
+    "runtimeBindings": 3,
+    "matchCurrentAndGit": true,
+    "unchangedProductInputs": true
+  },
+  "readScope": [
+    "all 5 behavior sources and 3 changed direct tests",
+    "driver finally and phase-host worker report ordering",
+    "private declaration strict lists; old O10 historical records",
+    "final durable resource identity and source check; unknown metrics; earliest failure retained",
+    "two raw test runs and finite supervision/cleanup outcomes"
+  ],
+  "validation": {
+    "distinctNew": 7,
+    "round1": {
+      "pass": 5,
+      "fileLoadFailure": 1,
+      "notCollected": 2
+    },
+    "round2": {
+      "pass": 2,
+      "unchangedProductSource": true
+    },
+    "supervisedMs": 695,
+    "callerMs": 717,
+    "rawBytes": 2525,
+    "absentGroups": 2,
+    "removedExactScratch": 2
+  },
+  "limitations": [
+    "Injection and pure observation checks do not prove native planning or model qualification.",
+    "Original real query consumed once; no usage/cost result, fees UNKNOWN. Original FAIL and retained DB/tmp remain unchanged.",
+    "No second query permission. Any new native execution requires a fixed candidate and new explicit budget.",
+    "Reviewer did not rerun tests or invoke PG/SDK/auth/provider."
+  ]
+}

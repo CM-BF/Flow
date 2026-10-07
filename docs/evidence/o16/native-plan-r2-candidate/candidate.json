@@ -1,0 +1,110 @@
+{
+  "kind": "flow.o16.native-plan-candidate.v1",
+  "authorizationState": "NEW_GO_BUDGET_GRANTED_WAITING_LEAD_RUNTIME_WINDOW",
+  "preparedAt": "2026-10-07T10:40:15.916715Z",
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "proposedRun": "native-plan-20261007-r2",
+  "proposedApprovalId": "O16-GO-PLANNER-R2-20261007",
+  "phase": "plan",
+  "model": "claude-sonnet-5-5",
+  "requestedLimits": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "graph": {
+    "maxProposals": 1,
+    "maxApplications": 0,
+    "maxNewNodes": 2,
+    "maxNewEdges": 1,
+    "childQueries": 0,
+    "protocol": "flow.goal-input-proposal.v1"
+  },
+  "resources": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "rawAndStageEvidenceBytes": 2097152,
+    "privateRuntimeBytes": 8388608,
+    "liveReserveBytes": 1073741824,
+    "baselineFreshBytes": 1207959552,
+    "conservativeOtherTwoLocalTeamsBytes": 62914560,
+    "PGPlanningAllowanceBytes": 134217728,
+    "candidateFreshMinimumBytes": 1405091840,
+    "freshGateMustAlsoAccountForActualOtherHolders": true,
+    "databaseConnections": {
+      "business": 8,
+      "boss": 3,
+      "admin": 1,
+      "managementMargin": 16
+    },
+    "pauseMs": 900000
+  },
+  "sdkCostBoundIs": "requested/reported SDK ceiling, not proven provider billing hard limit",
+  "oldOncePermit": "consumed; never reused",
+  "newPermitCreated": true,
+  "newReservationCreated": false,
+  "commandAfterNewApproval": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-20261007-r2",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-20261007-r2/permit.json"
+  ],
+  "operatorEnvironmentAfterNewApproval": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot",
+    "TSX_DISABLE_CACHE": "1",
+    "NODE_DISABLE_COMPILE_CACHE": "1"
+  },
+  "approvalMustBind": [
+    "Lead actual holder handoff/startBefore and one fresh guard",
+    "matching source/env/runtime/goal/profile/tool bytes",
+    "fresh namespace/claim/free disk and actual PG connection capacity",
+    "permit not expired; if expired stop/NOT_RUN, never rewrite a consumed attempt"
+  ],
+  "priorAuthenticationEvidence": {
+    "path": "docs/evidence/o16/native-stages/auth-status-once/result.json",
+    "limitation": "prior CLI2.1.291 public status only, not fresh SDK2.1.290 route/model qualification; no auth re-probe"
+  },
+  "authenticationPolicy": {
+    "authentication": "existing-default-keychain-normal-native-refresh",
+    "credentialCopy": false,
+    "accountChange": false,
+    "privateFiles": "owned-home-config-tmp",
+    "persistSession": false,
+    "sharedKeychainMayUpdate": true,
+    "keychainIncludedInPrivateByteBudget": false,
+    "totalSystemZeroWrites": false
+  },
+  "oldResources": "All original and latest FAIL/KEEP DB/tmp untouched; no read/cleanup/resume",
+  "samplingFailure": "Prior first cause UNKNOWN remains. New stage/code/constraint distinguishes future classified limits/IO/identity/deadline only; cannot reconstruct old cause or promise future success.",
+  "passRequires": [
+    "one recorded actual SDK entry and bounded successful usage/result",
+    "one audited propose and zero apply",
+    "complete actual proposal/inputs/profile/source/audit",
+    "zero child queries",
+    "registered own runtime groups stopped, server/pools and target connections closed",
+    "durable actual-closure-bound 15min pause receipt"
+  ],
+  "failureAction": "Preserve first failure and cleanup separately; missing worker/resources remains unknown; no automatic retry, alternate environment/model, confirm/children/accept or deletion",
+  "laterChildren": "not permitted; actual proposal review and distinct new authorization required; native children hard gate unchanged",
+  "budgetRecordedAt": "2026-10-07T10:41:31.796604Z",
+  "permit": {
+    "path": "docs/evidence/o16/native-plan-20261007-r2/permit.json",
+    "sha256": "0f2df87a9ac133c70d906a57ed30aa30321ec827be68280e64a54a9085787836",
+    "expiresAt": "2026-10-07T11:11:31.796604Z"
+  },
+  "startBefore": "NOT_ASSIGNED_WAITING_RUNTIME_WINDOW",
+  "previousSDKEntries": 1,
+  "cumulativeSDKEntriesAfterActualNewEntry": 2,
+  "previousUsageAndCost": "UNKNOWN",
+  "thirdQuery": "NOT_AUTHORIZED"
+}

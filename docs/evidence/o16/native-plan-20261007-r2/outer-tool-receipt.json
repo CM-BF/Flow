@@ -1,0 +1,18 @@
+{
+  "kind": "flow.o16.outer-tool-receipt.v1",
+  "recordedAt": "2026-10-07T10:53:09.379790Z",
+  "source": "Actual exec_command / write_stdin tool results; not reconstructed from driver exit",
+  "sessionId": 22606,
+  "initialChunkId": "4ce9db",
+  "pollChunkIds": [
+    "f420d9",
+    "dc84ee"
+  ],
+  "completionChunkId": "ae0cc9",
+  "exitCode": 1,
+  "stdout": "{\"run\":\"native-plan-20261007-r2\",\"outcome\":\"unknown-retain\",\"operator\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/operators/native-plan-20261007-r2/plan\"}\n",
+  "operatorReportedElapsedMs": 26177,
+  "outerWallTimeMs": "NOT_INDEPENDENTLY_RECORDED",
+  "invocations": 1,
+  "retries": 0
+}

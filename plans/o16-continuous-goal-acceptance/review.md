@@ -1,8 +1,8 @@
 # O16 独立审查
 
-状态：当前环境实现0cf7已获APPROVED_SOURCE_AND_LOCAL_RESULTS；历史APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE（5a45/78df）已main d022；原APPROVED_ZERO_MODEL_PUBLIC_JOURNEY/b768独立保持。真实native/分阶段PG验收未覆盖。
+状态：source ff266已获APPROVED_LIMITED_ZERO_MODEL_DELTA，candidate8cda已获限定准备批准；R2实际失败结果待独立真实性审查。历史零模型/环境/分阶段批准范围不升级为真实规划成功。
 
-当前 Review target commit：0cf7e1ba3016b2439c2b383437daa3dff1483299；5a45为已main历史，下列4ae/e931等为历史。
+当前 Review target commit：R2结果固定提交见result-manifest；行为source ff266d1ddc3adf3f89012095b4ff446367c3fb7e / candidate8cda。
 
 作者 native_center_owner / gpt-6-astra，独立reviewer astra_ultra_execution_lead / gpt-6-astra。范围仅三literal中的实验实现与证据；当前Interface不是产品/模型批准。
 
@@ -49,3 +49,11 @@ Lead10:16:07Z完成独审，无P1/P2；[原样报告](../../docs/evidence/o16/na
 ## 2026-10-07T10:35:51.413710Z 私有声明与失败可观测性修复待审
 
 真实首段 89a/d5e 已获 Lead APPROVED_RESULT 限定忠实性结论，仍为失败，无提案/成功pause、费用未知、资源KEEP。新修复 source `ff266d1ddc3adf3f89012095b4ff446367c3fb7e` / caller `9e15c7261a0e73267fe60dfd901617ad54abdf36`：5行为源+3专测；[Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)与[原始分轮结果](../../docs/evidence/o16/native-observation-repair/validation.json)。7新不同局部例分两轮、首文件加载红保留，0PG/SDK native import/auth/provider。不重复旧15/16/26，不改普通adapter/预算/停止/清理权限；作者未自批，固定差量交Lead唯一独审。
+
+## 2026-10-07T10:40:15.916715Z 失败可观测性唯一限定批准与新候选
+
+Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P2；[原样JSON](../../docs/evidence/o16/native-observation-repair/independent-review.json)核25差量/继承+3runtime、7新不同例与首loader红，reviewer0执行。批准不覆盖真实规划、费用或原测量根因。新首段只读候选绑定新sourceDigest/原环境/独立namespace，待全新GO预算与排期，不生成permit或SDK进程。
+
+## 2026-10-07T10:54:03.571119Z R2实际失败待独立审查
+
+[候选独审原件](../../docs/evidence/o16/native-plan-20261007-r2/independent-review.json)不替代实际结果。[R2原件](../../docs/evidence/o16/native-plan-20261007-r2/RESULT.md)本次SDK1/累计2、init声明通过、4帧/isError:true，无成功proposal/pause。SDK报告0与账户及旧费UNKNOWN分开。上游错误正文未保存，不能猜首因。关闭事实与KEEP分开；作者未自批，交assignment唯一结果审查，0重跑、无第三次许可。

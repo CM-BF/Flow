@@ -1,0 +1,103 @@
+{
+  "kind": "flow.o16.native-plan-candidate-bindings.v1",
+  "recordedAt": "2026-10-07T10:44:19.677317+00:00",
+  "candidateTarget": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/native-observation-repair/delta-manifest.json",
+      "fixedRef": "2841fa77668c570d19acba713e11a804e30062ea",
+      "bytes": 9487,
+      "sha256": "d47e8aad3a880c40fa5e33fe51f46cfc4eae50ca8625decba41b00188965711f"
+    },
+    {
+      "path": "docs/evidence/o16/native-environment-implementation/manifest.json",
+      "fixedRef": "2841fa77668c570d19acba713e11a804e30062ea",
+      "bytes": 37627,
+      "sha256": "78b8e4359a3d44019eba90a9cf49bd8c9a3b8ce836a69001fb17be46f3152755"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-1018/result-manifest.json",
+      "fixedRef": "2841fa77668c570d19acba713e11a804e30062ea",
+      "bytes": 9002,
+      "sha256": "d4d22cf812f2b8a322ce9fe8957e1039d0aea3a31fd4a6108de9fa2b40ab6253"
+    }
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/native-observation-repair/independent-review.json",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 1860,
+      "sha256": "199ea80bde06778a2c9573152a882ae9c89cf5fb39d58396c2557f82199e0aa5"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r2/authorization-preparation.json",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 955,
+      "sha256": "2cddb78241d21cde79919dc10dc6a4eb007a4723f91089d1bd8af28cb2a0fcd7"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r2/permit.json",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 1068,
+      "sha256": "0f2df87a9ac133c70d906a57ed30aa30321ec827be68280e64a54a9085787836"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r2-candidate/README.md",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 4741,
+      "sha256": "dd6486d6830052bfa121d4dc9c405066decafaba3a19c632a0a7a85cdd62dbb3"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r2-candidate/candidate.json",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 4728,
+      "sha256": "60164b8a848f7722b422a9c843eaeedfee3d11cdca191a5dd915adf8e82d9cbf"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r2-candidate/fixed-inputs.json",
+      "fixedRef": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
+      "bytes": 4591,
+      "sha256": "07e9a5ebbb7dfbb7ff0b7aec79ef032a4425fe0125db1e2b0fd4734d05f06b26"
+    },
+    {
+      "path": "docs/evidence/o16/native-plan-r2-candidate/runtime-binding.json",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 2657,
+      "sha256": "78a1e59f75792e78635730a059260da185f6d9b57e41aadbc2b33c6c4353fedf"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+      "bytes": 9375,
+      "sha256": "0303e2d0e08941c64e0595f0e5c835e93972ae9556708d548b763f96196a0d14"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
+      "bytes": 16004,
+      "sha256": "94de93313991f2a3f7757baa4c55e63ddfb97542ed946ced4373fd696892dbcd"
+    }
+  ],
+  "bindingCount": 9,
+  "fullSourceOrRawCopiesAdded": 0,
+  "execution": "NOT_STARTED_WAITING_LEAD_RESOURCE_WINDOW",
+  "newBudgetId": "O16-GO-PLANNER-R2-20261007",
+  "permitExpiresAt": "2026-10-07T11:11:31.796604Z",
+  "SDKQueriesThisPreparation": 0,
+  "previousActualSDKQueryCalls": 1,
+  "previousUsageCost": "UNKNOWN",
+  "oldKEEP": "untouched",
+  "checksRerun": false,
+  "metadataClarification": {
+    "priorTarget": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+    "decodedRequirementAndMaterialMatchedConfigBeforeAndAfter": true,
+    "priorJSONValid": true,
+    "change": "UTF-8 readable JSON representation; exact NONE and main receipt in status",
+    "sourceEnvironmentPermitUnchanged": true,
+    "finding": "No P2; reviewer acknowledged presentation escaping only",
+    "engineeringTestsRun": 0
+  }
+}
