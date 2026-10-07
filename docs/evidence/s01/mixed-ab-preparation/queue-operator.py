@@ -105,6 +105,8 @@ def main(target, expected_input_sha, floor_text):
         work = STARTED + 295 - time.monotonic()
         if work <= 0:
             raise ValueError('caller_no_work_remaining')
+        record['launchRequested'] = True
+        record['automaticVerdict'] = 'FAIL_OR_UNKNOWN'
         report = module.supervise(module.Launch((sys.executable, '-B', str(Path(__file__).resolve()),
             '--supervised-child', target, floor_text), str(ROOT), env,
             module.Ownership.NEW_CHILD_SESSION, module.Capture.SEPARATE), module.Policy(work, 1, 1, 262144))
