@@ -17,13 +17,13 @@
 | 工作分支状态 | review-pending |
 | 当前产出 | 修复后的目录末项已通过真实专库检查并完整清理；原前五项通过证据与首次失败独立保留。 |
 | 下一可用交付 | 固定本次结果交独审，随后将已验证会话能力送主线；界面与真实Codex仍属后继。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 本次结果已固定，独审消息受全局任务槽限制未送达；待实际释放槽后接审。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
 | 工作树dirty状态 | 仅本次结果与状态归档；提交后核clean。 |
-| HEAD（最近观察） | 2a90194ed44021cd06a334cb2754bee96a28216d（实际执行cleanHEAD；结果封存commit另绑定） |
+| HEAD（最近观察） | 69fa67eb7295f2b81ec7704b0b82042aea5929d8（结果fixed/origin clean；后续仅intake与有限接口metadata） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v13 ACTIVE71；运行历史仍v12/72。adapter.ts已STOP并于06:45:25.779Z移除：[正式回执](../../docs/evidence/mature02c02/adapter-handback-receipt.json)，S01须自己fresh领取。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
@@ -73,3 +73,5 @@
 2026-10-07T07:05:10.832496+00:00 Sentinel admission OPEN_NOT_STARTED: Web Recovery resources returned; sole holder=mika/chatui01_owner. Fresh v13/71,318inputs/2external/20links/10absent; free24289361920/floor4053008384/activepair0. Original operator records real start. One selected case only, no old five rerun. See conversation-pg-sentinel-admission.json.
 
 2026-10-07T07:07:15.527977+00:00 Sentinel actual CONSUMED/CLOSED:1passed/5unselected,3HTTP. DB/child/stdio/currentTMP clean, sharedPG returned directly toWeb. Fixed report above. OldR1 FAIL/KEEP and old overallBudgetCertification=false remain.
+
+2026-10-07T07:09:24.952958+00:00 Main intake: [precise path deltas](../../docs/evidence/mature02c02/conversation-main-intake.json), original23bindings + necessary test/fixture delta, result review pending. Never overwrite main S01P08 adapter or shared index additions. Lazy reasoning is only [read-only next-interface input](../../docs/evidence/mature02c02/lazy-reasoning-interface-candidate.md), not a blocker for this intake or planned export handback.
