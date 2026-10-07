@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-07T17:14:12.000Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "verdict": "PREPARATION_CHANGES_REQUESTED",
+  "P1": 0,
+  "P2": 2,
+  "source": "411478b993dbe30c981112a0708736e6df386b63",
+  "packet": "3703ee1d1f7a00293e3387791a7818fa0b461b08",
+  "findings": [
+    {
+      "id": "PG-P2-ORDER",
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "reason": "Same-millisecond default timestamps with random UUIDs do not prove ordinary insertion order."
+    },
+    {
+      "id": "PG-P2-DTO",
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "reason": "Legacy public claim returns assignment.task, not top-level task."
+    }
+  ],
+  "inherited": "Other newly reviewed preparation surfaces and old local result fidelity have no identified P1/P2. Not READY/OPEN. Original local/raw and runtime boundaries retained."
+}

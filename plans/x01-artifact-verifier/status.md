@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:06:00.000Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:24:43.331Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 准备packet3703ee1d1已固定push；当前仅派发事实metadata，提交后STOP |
+| 工作树dirty状态 | P2修复source1ed7c221已固定；仅绑定metadata封存，push后STOP |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED ea3c4599b00505c950cc34ada8a350082fe76747：局部12 distinct分轮通过；types0绑定334，最后scope负例1/1绑定本source；SQL/PG NOT_RUN |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
@@ -22,8 +22,8 @@
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 中心领取与客户端确认接缝已局部验证；五项真实数据库验收配方已形成，等待准备审查 |
-| 下一可用交付 | 审查五项数据库验收配方后，等待独立资源窗口验证迁移、混合资格与重放保护 |
+| 当前产出 | 中心领取与客户端确认接缝已局部验证；数据库验收配方已修复两处测试错误，等待限定增量审查 |
+| 下一可用交付 | 完成测试修复的增量审查后，等待独立窗口验证数据库迁移与领取资格 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:35:53.000Z；真实PG未验，既有批准各自独立 |
@@ -131,3 +131,7 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 2026-10-07T16:53:29.000Z–17:08:29.000Z新段；source411478b（测试五例、自己的fixture），14个既审产品源未改。局部types首2→0、collect精确5（0hooks/PG），共3child5908ms/raw2416B，全ownedabsent/mergedEOF/TMP同identity删除。检查绑定161c66470；后续count-query清理保证和case期限门禁只静态核，未冒重新验证。ordinary已RETURN并交S01；现在0actual/0待launch。固定manifest/准备审查入口见[av03-pg/review-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/review-ready.json)。PG仍NOT_OPEN/NOT_RUN；准备未获独审批准，不称INTEGRATION_READY。
 
 准备分支交付 2026-10-07T17:07:22.400Z：packet3703ee1d1f7a00293e3387791a7818fa0b461b08，manifestc3d3b3d57dd6be4ecf81e8e67ffbe9bfedbfab308e8f9969a36515c17f4d8ed8。281固定输入/1511284B，191external/16links/34SQL；执行闭包259mirror/1219582B。一次db followup被threadlimit拒绝，独审PENDING，不重试；co-lead已接入口。当前STOP/保留a67v4，0ordinary/PG/待launch；未创建actual admission或RUN。
+
+## PG准备两项P2修复
+
+独审2026-10-07T17:14:12.000Z：PREPARATION_CHANGES_REQUESTED，0P1/2P2（legacy DTO及毫秒时间下随机UUID排序）；原结论完整记录在preparation-review-initial.json。新source-only段2026-10-07T17:21:23.000Z–17:29:23.000Z；17:22:16.665 fresh a67v4 ACTIVE30。修复source 1ed7c22153bd420c661133d74eb09af357f8e9a8：assignment.task按真实响应取值；四队列项显式不同秒，真实SQL同时断言插件在前、普通任务顺序及精确时间。新增delta全部NOT_RUN，0工程child/PG，旧3local及raw不改。当前限定增量review PENDING，不能把旧types/list算修后通过；原center源冻结。

@@ -1,6 +1,6 @@
 {
-  "state": "CANDIDATE_NOT_OPEN",
-  "source": "411478b993dbe30c981112a0708736e6df386b63",
+  "state": "P2_DELTA_REVIEW_PENDING_NOT_OPEN",
+  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
   "totalSeconds": 180,
   "workSeconds": 110,
   "cleanupSeconds": 60,
@@ -31,5 +31,6 @@
   "outer": "env -i + fixed Python3.13 -I -B; inner also -I -B; explicit nine owned env fields; no inherited loaders/private configuration",
   "load": "All product/fixture modules static-load before beforeAll/CREATE. Caller checkpoint precedes Node exec. No post-CREATE dynamic imports. A stalled load is outer failure, no inferred DB absence without receipts.",
   "lifecycle": "Marked reservation/create ACK; stages database/baseline start-ready-close/current start-ready/migration/work saved by fixed fixture save. factory+listen and restart close await fixture.start work deadline; afterAll settleStartup, observed actual close, bounded connection zero observation, ordinary DROP, identity absence. Promise timeout is unresolved, never proof of closure. Each case begin/end work deadline checked; statements bounded by pool limits.",
-  "limits": "No actual environment/admission/window allocated. Both original14 source and all old raw frozen. Known synthetic installed/reference seeds do not prove npm or verification admission/phase/result execution."
+  "limits": "No actual environment/admission/window allocated. Both original14 source and all old raw frozen. Known synthetic installed/reference seeds do not prove npm or verification admission/phase/result execution.",
+  "checkScope": "Original types/list bind161c; two preparation findings fixed statically only, NOT_RUN. No new child/PG."
 }

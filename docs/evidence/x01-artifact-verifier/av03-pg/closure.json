@@ -1,5 +1,5 @@
 {
-  "source": "411478b993dbe30c981112a0708736e6df386b63",
+  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
   "base": "b79121e1944f10f82a416d98d776c0f55bf9c943",
   "rows": [
     {
@@ -859,9 +859,9 @@
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
       "origin": "apps/server/src/plugin-runtime/verification-pg.test.ts",
-      "commit": "411478b993dbe30c981112a0708736e6df386b63",
-      "bytes": 19484,
-      "sha256": "a113fda81d73fea549d541287fa4cff60727cea560022422557d929f07980e45"
+      "commit": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+      "bytes": 20283,
+      "sha256": "bc66ee8514f3101296cdafa5433c24ddd902137270a7c58c0fe3014f13f659ab"
     },
     {
       "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification.test.ts",
@@ -1817,6 +1817,6 @@
     }
   ],
   "count": 259,
-  "bytes": 1219582,
+  "bytes": 1220381,
   "note": "One fixed pre036 factory byte copy; aliases resolve its relative dependencies in this same controlled input root. Static imports load before fixture.create; no dynamic import after CREATE."
 }

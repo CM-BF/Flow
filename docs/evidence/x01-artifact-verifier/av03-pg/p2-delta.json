@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T17:21:23.000Z",
+  "deadline": "2026-10-07T17:29:23.000Z",
+  "fixedAt": "2026-10-07T17:24:43.331Z",
+  "source": "1ed7c22153bd420c661133d74eb09af357f8e9a8",
+  "scope": [
+    "apps/server/src/plugin-runtime/verification-pg.test.ts",
+    "own av03-pg evidence and status"
+  ],
+  "claim": "a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30",
+  "ledgerObservedAt": "2026-10-07T17:22:16.665Z",
+  "methods": "Reuse fixed local find-skills/brainstorming/codebase-design/clean-code baseline; small fixture-only delta, no new interface/helper. Naming/lifecycle/error/assertion precision reviewed.",
+  "fixes": [
+    "Use assignment truthiness then assignment.task.id, preserving real v1 request and selection assertion.",
+    "Set four queued rows to distinct explicit seconds; real SELECT ORDER BY created_at,id must return exact plugin-first identity order and all exact timestamps before claims. No UUID ordering assumption."
+  ],
+  "staticEvidence": [
+    "inputs/apps/server/src/index.ts:208 returns actual claim envelope",
+    "inputs/apps/server/src/runners.ts:95 orders created_at,id; :113 returns assignment envelope",
+    "inputs/apps/server/src/database.ts tasks created_at is timestamptz(3)"
+  ],
+  "validation": "NOT_RUN: source-only, 0 engineering child/types/collect/hooks/PG. Prior 3 local results remain unchanged and bound to their original sources.",
+  "review": "P2_DELTA_REVIEW_PENDING",
+  "resources": "0actual/0pendinglaunch; measurement drain maintained"
+}
