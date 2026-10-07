@@ -251,13 +251,15 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
   const onError = (error: Error) => { if (report.pageErrors.length < 8) report.pageErrors.push(error.message.slice(0, 1024)); };
   page.on("pageerror", onError);
   const checkpoint = () => { assert(Date.now() < workDeadlineMs, "Diagnostic work deadline"); };
-  const snapshotScript = `(select) => {
-    if (!(select instanceof HTMLSelectElement) || select.options.length > 8) throw new Error("Expected bounded native select");
-    let open = "unsupported"; try { if (CSS.supports("selector(:open)")) open = select.matches(":open"); } catch {}
-    return { value: select.value, selectedIndex: select.selectedIndex, focused: document.activeElement === select,
-      connected: select.isConnected, disabled: select.matches(":disabled"), open,
-      options: Array.from(select.options, option => ({ value: option.value, selected: option.selected, disabled: option.disabled })) };
-  }`;
+  function snapshotSelect(element: Element): Snapshot {
+    if (!(element instanceof HTMLSelectElement) || element.options.length > 8) throw new Error("Expected bounded native select");
+    let open: Snapshot["open"] = "unsupported";
+    try { if (CSS.supports("selector(:open)")) open = element.matches(":open"); } catch {}
+    const options = [];
+    for (const option of element.options) options.push({ value: option.value, selected: option.selected, disabled: option.disabled });
+    return { value: element.value, selectedIndex: element.selectedIndex, focused: document.activeElement === element,
+      connected: element.isConnected, disabled: element.matches(":disabled"), open, options };
+  }
   // A frame is an observation boundary, not a claim that the OS popup is ready. No sleep or generated input.
   const frameScript = `new Promise((resolve, reject) => {
     const timeout = setTimeout(() => reject(new Error("Diagnostic animation-frame observation expired")), 1000);
@@ -280,11 +282,11 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
       })()`);
       record.document = { ...publicDocument, exactLocatorCount: await select.count() }; checkpoint();
       await expect(select).toHaveCount(1); await expect(select).toBeEnabled(); await select.focus(); checkpoint();
-      record.snapshots.push({ after: "focus", value: await select.evaluate<Snapshot>(snapshotScript) });
+      record.snapshots.push({ after: "focus", value: await select.evaluate(snapshotSelect) });
       for (const key of keys) {
         checkpoint(); await page.keyboard.press(key); checkpoint();
         await page.evaluate(frameScript); checkpoint();
-        record.snapshots.push({ after: key, value: await select.evaluate<Snapshot>(snapshotScript) });
+        record.snapshots.push({ after: key, value: await select.evaluate(snapshotSelect) });
       }
     } catch (error) { record.failure = String(error).slice(0, 1024); throw error; }
     finally {
