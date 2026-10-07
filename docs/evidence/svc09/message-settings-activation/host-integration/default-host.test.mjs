@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { PURPOSE, requirePurpose, defaultArguments, defaultSequence, defaultClosure, launchAccountingKnown, emptyTasks } from './default-host.mjs';
+import { PURPOSE, requirePurpose, defaultArguments, defaultSequence, defaultClosure, launchAccountingKnown, emptyTasks, cleanupDefault } from './default-host.mjs';
 import { ownedRecords } from './host-cleanup.mjs';
 import { failure } from './host-records.mjs';
 const input = { format: 1, purpose: PURPOSE, directory: '/private/tmp/flow-svc09a-host-unit_1', providerCalls: 0,
@@ -97,4 +97,30 @@ test('empty SQL error preserves only controlled SQLSTATE and source phase', asyn
   assert.deepEqual(failure(error, 'host-consumer'), { phase: 'default-empty-task-query', sourcePhase: 'host-consumer',
     name: 'Error', code: 'DEFAULT_EMPTY_QUERY_FAILED', sqlState: '42P01' });
   assert.ok(!JSON.stringify(failure(error, 'host-consumer')).includes('private'));
+});
+
+test('cold policy uses the actual mutable launch state and does not require a slots module', async () => {
+  const f = fixture(), purpose = 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE';
+  f.input = { ...f.input, purpose }; let seen = false;
+  f.policy = { purpose, validateInput: value => { assert.equal(value, f.input); }, assertReady: async args => {
+    assert.equal(args.input, f.input); assert.equal(args.controller, f.controller); assert.equal(args.preview, f.preview);
+    assert.deepEqual(Object.keys(args.state.processes).sort(), ['center', 'runner', 'web']);
+    assert.equal(args.started.runnerSlots, undefined); seen = true;
+  } };
+  const original = f.preview.statusPreview; f.preview.statusPreview = async (...args) => { const value = await original(...args); delete value.runnerSlots; return value; };
+  const result = await defaultSequence(f); assert.equal(seen, true); assert.equal(result.purpose, purpose);
+  assert.deepEqual(f.calls, ['lock', 'start', 'empty', 'stop', 'empty']);
+  assert.equal(f.records[1].fact.purpose, purpose);
+});
+test('cold policy initialization refusal is primary and cannot reach explicit stop or successful work', async () => {
+  const f = fixture(), purpose = 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE';
+  f.input = { ...f.input, purpose }; const primary = new Error('synthetic initialization unknown');
+  f.policy = { purpose, validateInput: () => {}, assertReady: async () => { throw primary; } };
+  await assert.rejects(defaultSequence(f), value => value === primary); assert.deepEqual(f.calls, ['lock', 'start']);
+});
+test('cold cleanup and sequence reject their explicit policy before private access', async () => {
+  const primary = new Error('synthetic fixed input mismatch'), purpose = 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE';
+  await assert.rejects(cleanupDefault({ purpose }, { purpose, validateInput: () => { throw primary; } }), value => value === primary);
+  const f = fixture(); f.policy = { purpose, validateInput: () => { throw primary; } };
+  await assert.rejects(defaultSequence(f), /HOST_PURPOSE_MISMATCH/); assert.deepEqual(f.calls, []);
 });

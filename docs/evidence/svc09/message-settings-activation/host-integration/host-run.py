@@ -88,10 +88,14 @@ def preparation_bindings(source, read_pin=pin):
     assert len(replacements) == len(source['bindings']) and set(replacements) <= previous_paths, 'REPLACEMENT_PIN_SET_INVALID'
     return [replacements.get(value['path'], value) for value in previous]
 
-def work_and_cleanup(child, node, namespace, directory, result, write=save, purpose=None):
-    assert purpose in (None, 'SVC09A_DEFAULT_THREE_ROLE_START_STOP'), 'HOST_PURPOSE_MISMATCH'
+def work_and_cleanup(child, node, namespace, directory, result, write=save, purpose=None, entries=None):
+    assert purpose in (None, 'SVC09A_DEFAULT_THREE_ROLE_START_STOP', 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'), 'HOST_PURPOSE_MISMATCH'
+    assert (entries is not None) == (purpose == 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'), 'EXPLICIT_COLD_ENTRIES_REQUIRED'
     work_entry = 'default-host.mjs' if purpose else 'host-entry.mjs'
     cleanup_entry = 'default-host.mjs' if purpose else 'host-cleanup.mjs'
+    if entries is not None:
+        work_entry, cleanup_entry = entries
+        assert all(Path(path).is_absolute() for path in entries), 'ABSOLUTE_COLD_ENTRIES_REQUIRED'
     work = child([*node, str(HERE / work_entry), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
     result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof, 'firstFailure': work.first_failure}
     result['persistenceFailures'] = []
@@ -109,13 +113,28 @@ def work_and_cleanup(child, node, namespace, directory, result, write=save, purp
     result['complete'] = not result['persistenceFailures'] and work.exit_code == 0 and not work.first_failure and terminated(work) and cleanup.exit_code == 0 and not cleanup.first_failure and terminated(cleanup)
     return work, cleanup
 
-def main(argv):
-    namespace_name, preparation_name = attempt_files(argv)
+def main(argv, *, attempt=None):
     deadline = time.monotonic() + 215
-    fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
-    # Final static source manifest is sealed after the bounded preparation checks.
-    source = json.loads((HERE / preparation_name).read_bytes())
-    purpose = 'SVC09A_DEFAULT_THREE_ROLE_START_STOP' if argv == ['--execute-default-host-once'] else None
+    # Optional in-process port only. The thin reviewed caller binds these pins; CLI JSON
+    # cannot supply it, and the original once-only entry mappings stay unchanged.
+    if attempt is None:
+        namespace_name, preparation_name = attempt_files(argv)
+        fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
+        source = json.loads((HERE / preparation_name).read_bytes())
+        purpose = 'SVC09A_DEFAULT_THREE_ROLE_START_STOP' if argv == ['--execute-default-host-once'] else None
+        namespace = HERE / namespace_name
+        entries = None
+    else:
+        assert argv == [] and set(attempt) == {'input', 'preparation', 'namespace', 'entries'}, 'COLD_ATTEMPT_PORT_INVALID'
+        fixed = json.loads(pin(attempt['input']))
+        source = json.loads(pin(attempt['preparation']))
+        namespace = Path(attempt['namespace'])
+        assert namespace.is_absolute() and namespace.parent == Path(attempt['preparation']['path']).parent, 'COLD_NAMESPACE_INVALID'
+        assert len(attempt['entries']) == 2 and all(Path(v).is_absolute() for v in attempt['entries']), 'COLD_ENTRY_INVALID'
+        entries = attempt['entries']
+        purpose = 'SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE'
+        effective = {v['path'] for v in preparation_bindings(source)}
+        assert set(entries) <= effective, 'COLD_ENTRY_PIN_MISSING' 
     assert source.get('purpose') == purpose, 'HOST_PURPOSE_MISMATCH'
     for value in preparation_bindings(source) + fixed['bindings']:
         pin(value)
@@ -123,8 +142,7 @@ def main(argv):
     source_root = Path(fixed['sourceDirectory']); info = source_root.lstat()
     assert stat.S_ISDIR(info.st_mode) and not source_root.is_symlink() and info.st_uid == os.getuid()
     assert {'dev': str(info.st_dev), 'ino': str(info.st_ino)} == fixed['sourceIdentity']
-    namespace = HERE / namespace_name
-    assert not namespace.exists(), 'ONCE_NAMESPACE_EXISTS'
+    assert not os.path.lexists(namespace), 'ONCE_NAMESPACE_EXISTS'
     assert os.environ.get('FLOW_SVC09A_ADMIN_URL'), 'EXPLICIT_LOCAL_ADMIN_REQUIRED'
     free = min(shutil.disk_usage(HERE).free, shutil.disk_usage('/private/tmp').free)
     assert free >= fixed['minimumFreshFloorBytes']
@@ -157,7 +175,7 @@ def main(argv):
         assert not loader.is_absolute() and '..' not in loader.parts
         node = [fixed['node']['path'], '--import', str(root / loader)]
         env['FLOW_SVC09A_ADMIN_URL'] = os.environ['FLOW_SVC09A_ADMIN_URL']
-        work, cleanup = work_and_cleanup(child, node, namespace, directory, result, purpose=purpose)
+        work, cleanup = work_and_cleanup(child, node, namespace, directory, result, purpose=purpose, entries=entries)
         if terminated(work) and terminated(cleanup):
             # Archive only checkpoint material; never config, token, environment or diagnostic bodies.
             names = sorted((directory / 'records').iterdir()); assert len(names) <= 160

@@ -53,16 +53,36 @@ def reserve_attempt(directory, outer_name, operator_name):
     return namespace
 
 
-def main(argv):
-    outer_name, operator_name, operator_argument = attempt_files(argv)
-    fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
+def main(argv, *, attempt=None):
+    if attempt is None:
+        outer_name, operator_name, operator_argument = attempt_files(argv)
+        fixed = json.loads((HERE / 'host-inputs.json').read_bytes())
+        directory, operator = HERE, HERE / 'host-run.py'
+    else:
+        assert argv == [] and set(attempt) == {'input', 'operator', 'argument', 'directory', 'outerName', 'operatorName'}, 'COLD_OUTER_PORT_INVALID'
+        def fixed_bytes(value):
+            path = Path(value['path'])
+            assert path.is_absolute() and not path.is_symlink() and str(path.resolve()) == value['realpath']
+            data = path.read_bytes()
+            assert len(data) == value['bytes'] and hashlib.sha256(data).hexdigest() == value['sha256']
+            return data
+        fixed = json.loads(fixed_bytes(attempt['input']))
+        fixed_bytes(attempt['operator'])
+        operator = Path(attempt['operator']['path'])
+        directory = Path(attempt['directory'])
+        assert directory.is_absolute() and directory == operator.parent, 'COLD_OUTER_DIRECTORY_INVALID'
+        outer_name, operator_name = attempt['outerName'], attempt['operatorName']
+        assert all(isinstance(v, str) and v and Path(v).name == v and v not in ('.', '..') for v in (outer_name, operator_name))
+        assert outer_name != operator_name
+        operator_argument = attempt['argument']
+        assert operator_argument == '--execute-cold-once', 'COLD_OPERATOR_ARGUMENT_REQUIRED' 
     ops = load_supervisor(fixed['supervisor'])
     assert os.environ.get('FLOW_SVC09A_ADMIN_URL'), 'EXPLICIT_LOCAL_ADMIN_REQUIRED'
     # A second outer invocation is refused even if the operator failed before its own reservation.
-    namespace = reserve_attempt(HERE, outer_name, operator_name)
+    namespace = reserve_attempt(directory, outer_name, operator_name)
     env = {'PATH': '/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1',
            'FLOW_SVC09A_ADMIN_URL': os.environ['FLOW_SVC09A_ADMIN_URL']}
-    report = supervise_operator(ops, [fixed['python']['path'], str(HERE / 'host-run.py'), operator_argument], env)
+    report = supervise_operator(ops, [fixed['python']['path'], str(operator), operator_argument], env)
     value = {'at': datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
              'scope': 'CALLER_PID_ONLY_NOT_DETACHED_SERVICE_GROUPS', 'limits': {'operatorSeconds': 215, 'termSeconds': .5, 'reapSeconds': 2},
              'report': {**vars(report), 'stdout': report.stdout.decode('utf8', 'replace'), 'stderr': report.stderr.decode('utf8', 'replace')},

@@ -22,10 +22,10 @@ export function assertResourceSample({ directory, databaseBytes, freeBytes }) {
   assert.ok(freeBytes >= 1024 ** 3, 'LIVE_RESERVE_LIMIT');
 }
 
-export async function main(argv, { consumer = runHostConsumer, purpose = null } = {}) {
+export async function main(argv, { consumer = runHostConsumer, purpose = null, setup = setupFixture, validateInput = validateHostInput } = {}) {
   const input = await privateJson(validateArguments(argv));
   if (purpose !== null) assert.equal(input.purpose, purpose, 'HOST_PURPOSE_MISMATCH');
-  const root = validateHostInput(input); await rootIdentity(input);
+  const root = validateInput(input); await rootIdentity(input);
   assert.equal(input.records, join(input.directory, 'records'));
   assert.equal(input.providerCalls, 0);
   const record = recorder(input, 'work');
@@ -43,10 +43,10 @@ export async function main(argv, { consumer = runHostConsumer, purpose = null } 
     // Import resolution is fixed to the verified clone, never the moving checkout.
     const { backendRuntime } = await import(pathToFileURL(join(root, 'tools/personal-preview/backend-release/host.mjs')).href);
     await backendRuntime({ directory: input.directory, repository: input.repository }, input.artifact);
-    const setup = await setupFixture({ input, root, checkpoint, adminUrl: process.env.FLOW_SVC09A_ADMIN_URL });
-    input.webArtifact = setup.webArtifact;
+    const prepared = await setup({ input, root, checkpoint, adminUrl: process.env.FLOW_SVC09A_ADMIN_URL });
+    input.webArtifact = prepared.webArtifact;
     const { Pool } = createRequire(join(root, 'package.json'))('pg');
-    pool = new Pool(poolOptions(setup.config.databaseUrl));
+    pool = new Pool(poolOptions(prepared.config.databaseUrl));
     phase = 'host-consumer';
     const result = await consumer({ input, pool, checkpoint });
     await checkpoint('work-complete', result);

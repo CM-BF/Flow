@@ -30,15 +30,16 @@ export async function emptyTasks(pool) {
 }
 
 // Trusted ports are the actual frozen artifact exports at the production call site below.
-export async function defaultSequence({ input, preview, controller, pool, checkpoint }) {
-  requirePurpose(input);
+export async function defaultSequence({ input, preview, controller, pool, checkpoint, policy = defaultPolicy }) {
+  assert.equal(input.purpose, policy.purpose, 'HOST_PURPOSE_MISMATCH');
+  policy.validateInput(input);
   const config = await preview.loadPreviewConfiguration(input.directory);
   assert.equal(config.repository, input.repository);
   const state = await preview.readPreviewJson(join(input.directory, 'state.json'));
   assert.deepEqual(state.backendArtifact, input.artifact);
   assert.deepEqual(state.processes, {}, 'FRESH_DEFAULT_STATE_REQUIRED');
   await preview.assertPreviewMarker(config);
-  await checkpoint('before-default-start', { purpose: PURPOSE, artifact: input.artifact });
+  await checkpoint('before-default-start', { purpose: policy.purpose, artifact: input.artifact });
   let started, primary;
   try {
     started = await preview.withPreviewLock(config, () => controller.startPreviewServices(config, state,
@@ -47,7 +48,7 @@ export async function defaultSequence({ input, preview, controller, pool, checkp
   try {
     // This exact object is mutated by the controller before each onSpawn save. Re-reading an
     // older state file could omit an identity when that save failed; never use it as this witness.
-    await checkpoint('default-start-observation', { purpose: PURPOSE, origin: 'controller-call-state', processes: state.processes,
+    await checkpoint('default-start-observation', { purpose: policy.purpose, origin: 'controller-call-state', processes: state.processes,
       readiness: state.startReadiness ?? null, failure: state.lastStartFailure ?? null,
       startCleanup: state.startCleanup ?? null, evidenceErrors: state.startEvidenceErrors ?? null });
   } catch (error) {
@@ -59,19 +60,26 @@ export async function defaultSequence({ input, preview, controller, pool, checkp
   assert.deepEqual(started.processes, { center: 'running', runner: 'running', web: 'running' });
   assert.equal(started.center.reachable, true); assert.equal(started.database, 'owned');
   assert.equal(started.webArtifact.serving, 'confirmed');
-  assert.equal(started.runnerSlots.state, 'configured');
-  assert.deepEqual(started.runnerSlots.slots.map(value => value.slot), ['legacy']);
+  await policy.assertReady({ input, preview, controller, config, state, started, pool, checkpoint });
   const live = await preview.readPreviewJson(join(input.directory, 'state.json'));
   assert.deepEqual(Object.keys(live.processes).sort(), roles);
-  await checkpoint('default-legacy', { purpose: PURPOSE, processes: live.processes,
+  await checkpoint('default-legacy', { purpose: policy.purpose, processes: live.processes,
     readiness: live.startReadiness ?? null, tasks: await emptyTasks(pool),
     provider: 'not-probed', actualClaim: 'unknown', web: 'SYNTHETIC_LOADER_NOT_APP' });
   const stopped = await preview.stopPreview({ directory: input.directory });
   assert.deepEqual(stopped.processes, { web: 'stopped', runner: 'stopped', center: 'stopped' });
-  await checkpoint('default-explicit-stop', { purpose: PURPOSE, processes: stopped.processes, tasks: await emptyTasks(pool) });
-  return { purpose: PURPOSE, defaultReady: true, explicitStop: true, providerCalls: 0,
+  await checkpoint('default-explicit-stop', { purpose: policy.purpose, processes: stopped.processes, tasks: await emptyTasks(pool) });
+  return { purpose: policy.purpose, defaultReady: true, explicitStop: true, providerCalls: 0,
     database: 'KEEP', directory: 'KEEP', resourceClosure: 'PENDING_INDEPENDENT_OWNER', actualClaim: 'unknown' };
 }
+
+export const defaultPolicy = Object.freeze({
+  purpose: PURPOSE, validateInput: requirePurpose, launchAccounted: launchAccountingKnown,
+  assertReady: async ({ started }) => {
+    assert.equal(started.runnerSlots.state, 'configured');
+    assert.deepEqual(started.runnerSlots.slots.map(value => value.slot), ['legacy']);
+  },
+});
 
 export async function runDefaultConsumer({ input, checkpoint, pool }) {
   const root = requirePurpose(input); await rootIdentity(input);
@@ -103,15 +111,16 @@ export function defaultClosure({ outer, recordsKnown, stateKnown, launchAccounte
     && failures.length === 0 && adminClosed === true;
 }
 
-export async function cleanupDefault(input) {
-  const root = requirePurpose(input); await rootIdentity(input);
+export async function cleanupDefault(input, policy = defaultPolicy) {
+  assert.equal(input.purpose, policy.purpose, 'HOST_PURPOSE_MISMATCH');
+  const root = policy.validateInput(input); await rootIdentity(input);
   assert.equal(input.records, join(input.directory, 'records'));
-  const checkpoint = recorder(input, 'cleanup'), result = { purpose: PURPOSE, processes: [], failures: [],
+  const checkpoint = recorder(input, 'cleanup'), result = { purpose: policy.purpose, processes: [], failures: [],
     database: 'KEEP', directory: 'KEEP', mayDrop: false, resourcesClosed: false, adminClosed: false, providerCalls: 0 };
   let records = [], state, recordsKnown = false, stateKnown = false;
   try { records = await savedWork(input); recordsKnown = true; } catch (error) { result.failures.push(failure(error, 'records-read')); }
   try { state = await privateJson(join(input.directory, 'state.json')); stateKnown = true; } catch (error) { result.failures.push(failure(error, 'state-read')); }
-  result.launchAccounted = launchAccountingKnown(records, state);
+  result.launchAccounted = policy.launchAccounted(records, state);
   const registered = ownedRecords(records, state, input.directory, ['default-start-observation', 'default-legacy']);
   assert.ok(registered.length <= 3 && registered.every(value => roles.includes(value.role)), 'DEFAULT_ROLE_SCOPE_MISMATCH');
   const load = loadFrom(root), { stopOwnedProcess } = await load('tools/personal-preview/process.mjs');

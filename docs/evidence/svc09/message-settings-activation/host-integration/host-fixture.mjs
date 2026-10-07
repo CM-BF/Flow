@@ -83,7 +83,7 @@ async function syntheticWeb({ input, root, checkpoint }) {
   return artifact;
 }
 
-export async function setupFixture({ input, root, checkpoint, adminUrl }) {
+export async function setupFixture({ input, root, checkpoint, adminUrl }, { nativeConfiguration } = {}) {
   const admin = localAdmin(adminUrl), databaseName = `flow_preview_${randomBytes(12).toString('hex')}`;
   const database = new URL(admin); database.pathname = '/' + databaseName;
   const config = { format: 1, installationId: randomUUID(), directory: input.directory, repository: input.repository,
@@ -92,8 +92,10 @@ export async function setupFixture({ input, root, checkpoint, adminUrl }) {
   assert.notEqual(config.centerPort, config.webPort);
   await exclusive(join(input.directory, 'config.json'), config);
   await exclusive(join(input.directory, 'state.json'), { backendArtifact: input.artifact, source: { head: input.sourceHead, dirty: false }, processes: {}, lastError: null });
-  const { LEGACY_NATIVE_CONFIGURATION } = await import(pathToFileURL(join(root, 'tools/personal-preview/runner-slots.mjs')).href);
-  await exclusive(join(input.directory, 'claude.json'), LEGACY_NATIVE_CONFIGURATION);
+  // The trusted cold-start caller may bind fixed04da's public configuration literal;
+  // default SVC09A still loads its actual slot module. No configuration comes from input JSON.
+  nativeConfiguration ??= (await import(pathToFileURL(join(root, 'tools/personal-preview/runner-slots.mjs')).href)).LEGACY_NATIVE_CONFIGURATION;
+  await exclusive(join(input.directory, 'claude.json'), nativeConfiguration);
   await mkdir(join(input.directory, 'runner'), { mode: 0o700 });
   await checkpoint('database-create-intent', { databaseName, installationId: config.installationId, directory: input.directory,
     centerPort: config.centerPort, webPort: config.webPort });
