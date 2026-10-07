@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:50:00 UTC；r2隔离结果已获限定独审，待主线回执与真实App兼容 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:53:26 UTC；main657105接收r2限定结果，原个人更新候选已对齐固定7d1/6c |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,19 +13,19 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2结果92a207b5bbca513efc6ac6f8191b31c51467a3ac / deliverya0117ed097ccaa26fcfe05e0374af9e336032bdb已限定独审 |
-| 工作树dirty状态 | 产品/入口/原raw全停写；本次只归档唯一review和status，提交后停写候main回执 |
+| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2结果92a207/a011已审并main657105；本段仅既有个人候选/status文档对齐 |
+| 工作树dirty状态 | 产品/入口/raw停写；仅既有candidate与唯一status，封定后候App接口材料 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | planning |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
-| 已集成main状态 / HEAD | Lead回执main/origin2f32f6b27fc79151cd1e9d26e7fb5af70a791505已接r1+review/r2准备；当前实际r2不冒主线已验证。 |
+| 已集成main状态 / HEAD | main/origin6571056455be3e4289f162041746420246ac2db4已受控接收a011同范围r2结果与review（Lead回执）；本次自然metadata更新不追新主线SHA。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 隔离环境已完成升级、三项服务刷新恢复和浏览器会话策略检查；历史数据与发布指针保持，资源正常清理。 |
-| 下一可用交付 | 接收已审隔离结果，再结合真实 App 兼容证据准备个人更新。 |
-| 当前阻塞 | ACTIVE: 真实 App 兼容证据待交付；个人发布尚未验收。 |
+| 下一可用交付 | 真实 App 报告齐全后，核个人现场并固定受控更新输入；先升级宿主，再维护后台，最后独立发布新页面。 |
+| 当前阻塞 | ACTIVE: 三个保留版本的真实 App 新配置兼容报告待Web交付；个人现场尚未核验，未就绪。 |
 | 需用户决定 | NONE |
 | Review | APPROVED_LIMITED_ISOLATED_HOST_RESULT；Lead独审92a207/a0117，39fixed/current+50private+15copies全符，无P1/P2；真实App/个人仍未验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过且限定独审，待main回执，三App配置兼容/个人仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过且限定独审并main657105，三App配置兼容/个人仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -293,3 +293,7 @@ source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领
 ## 2026-10-07 10:50:00 UTC — r2唯一结果独审接收
 
 Lead于10:49:17.625668Z完成[原件review](../../docs/evidence/svc06/diagnostics-host-bootstrap/result-independent-review.json)，APPROVED_LIMITED_ISOLATED_HOST_RESULT，无P1/P2。绑定39fixed/current+50private+15原件副本全同，reviewer0重测；本owner仅原样归档。真实27→35与三roles刷新恢复/策略与cookie合同通过；Web两代显式stop exit1、初unknown和旧两个失败保持。真实App兼容/个人仍未验，03/04/05整体不勾完；等待App兼容起点来自实际10:44:35.378972Z窗口结束，任务总开工UNKNOWN不改。当前main回执尚待，原raw/产品/入口全停写。
+
+## 2026-10-07 10:53:26 UTC — 个人受控更新候选对齐（仅文档）
+
+本准备段实际编辑起点`2026-10-07T10:53:26.485603+00:00`，来源本owner工具执行记录；不替代任务总开工UNKNOWN。main657105回执已确认r2结果接收。[既有候选](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)现固定7d1/source6c，明确历史af51/v18+d629v3/c7b参照、三真实App format2新context为执行前缺件、原迁入/锁/legacy先新host、同op bootstrap/drain→hold→refresh三role→不变量checkpoint→显式resume、第四App独立CAS。首次实际maintenanceRuntime与Webhost资格均在停服务前核；不把新CLI或synthetic报告当组合已验。0个人读写/PG/Chrome/build/provider/query；仅链接/固定源码语义核对，无新wrapper或manifest全集。等待App起点仍10:44:35.378972Z，责任Webowner/Lead接口；缺fresh个人基线不宣称ready。
