@@ -14,7 +14,7 @@ import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
 import { backendRuntime, assertInstallationSource } from './backend-release/host.mjs';
 import { prepareBackendArtifact } from './backend-release/index.mjs';
-import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility } from './web-release.mjs';
+import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility, loadReleaseAssets } from './web-release.mjs';
 
 const repository = fileURLToPath(new URL('../../', import.meta.url));
 const entry = fileURLToPath(new URL('./cli.mjs', import.meta.url));
@@ -459,8 +459,9 @@ export function createWebHostReplacement({ marker = assertMarker, processes = we
       const protectedFiles = await protectedWebHostFiles(config.directory);
       if (protectedFiles['web-release.json'] !== request.expectedPointerSha256) fail('WEB_HOST_POINTER_CHANGED');
       if (sha256(JSON.stringify(state.processes.web)) !== request.expectedWebRecordSha256) fail('WEB_HOST_RECORD_CHANGED');
-      await assertReleaseCompatibility(request.expectedBackendHead, release.artifacts, config.directory);
-      if (await findWebCompatibility({ directory: config.directory, artifact, backendHead: request.expectedBackendHead }) !== request.compatibilityId) fail('WEB_COMPATIBILITY_INVALID');
+      if (release.backendHead !== request.expectedBackendHead) fail('WEB_BACKEND_SOURCE_MISMATCH');
+      if (release.compatibilityIds[artifact.artifactId] !== request.compatibilityId) fail('WEB_COMPATIBILITY_INVALID');
+      await loadReleaseAssets({ directory: config.directory, release });
       const source = await hostSource(config, state);
       if (source.digest !== request.expectedHostSourceDigest) fail('WEB_HOST_SOURCE_CHANGED');
       const processState = await processes.inspect(state.processes.web);
