@@ -1,3 +1,5 @@
+import { readBoundedJson } from './response-json.js';
+import { PluginRunnerClient } from './plugin-runner.js';
 import { ASSISTANT_SELECTION_PROTOCOL, assistantStreamSelectionSchema, assistantStreamDataSchema, type AssistantStreamProtocol, type AssistantStreamSelection, type AssistantStreamSelectedPage, type AssistantStreamSelectedPatchPage } from '../../contracts/src/assistant-stream.js';
 import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
 import type { NativeActivityBodyDescriptor, NativeActivityBodySupport } from '@flow/contracts';
@@ -61,7 +63,18 @@ export type ClientOptions = ClientConnectionOptions & (
   | { token?: never; browserSession: { csrfToken: () => string | undefined } }
 );
 
+type JsonResponseBudget = Readonly<{ success: number; error: number }>;
+// Compact, valid center JSON fits these bounds, including escaping and identity envelopes.
+// Excess whitespace and arbitrary proxy errors are subject to the receive policy too.
+const SELECTED_RESPONSE_BYTES = Object.freeze({
+  metadata: { success: 576 * 1024, error: 4096 },
+  patches: { success: 448 * 1024, error: 4096 },
+  block: { success: 6 * 1024 * 1024 + 8192, error: 4096 },
+});
+
 export class FlowClient {
+  /** All plugin requests share this client's existing authentication, cancellation and error handling. */
+  readonly pluginRunner = new PluginRunnerClient((path, init, maximumBytes) => this.request(path, init, undefined, maximumBytes));
   private readonly baseUrl: string;
   private readonly token: string | undefined;
   private readonly csrfToken: (() => string | undefined) | undefined;
@@ -106,7 +119,7 @@ export class FlowClient {
     const selected = this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL;
     const limit = options.limit ?? 20, after = options.after;
     if (selected) signal?.throwIfAborted();
-    const page = await this.request<AssistantStreamSelectedPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal, headers: this.streamHeaders() });
+    const page = await this.request<AssistantStreamSelectedPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal, headers: this.streamHeaders() }, undefined, selected ? SELECTED_RESPONSE_BYTES.metadata : undefined);
     if (selected) {
       signal?.throwIfAborted();
       if (page.protocol !== ASSISTANT_SELECTION_PROTOCOL || page.taskId !== taskId || (page.attemptId !== null && (typeof page.attemptId !== 'string' || !page.attemptId)) || !Array.isArray(page.blocks)
@@ -136,7 +149,7 @@ export class FlowClient {
     if (!Number.isSafeInteger(after) || after < 0 || after > 2147483647 || !Number.isSafeInteger(limit) || limit < 1 || limit > 8) throw Error('Invalid selected stream cursor or limit.');
     const query = new URLSearchParams({ attemptId, after: String(after), limit: String(limit), selection: selection.kind });
     if (selection.kind === 'block') query.set('streamId', selection.streamId);
-    const page = await this.request<AssistantStreamSelectedPatchPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal, headers: this.streamHeaders() });
+    const page = await this.request<AssistantStreamSelectedPatchPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal, headers: this.streamHeaders() }, undefined, SELECTED_RESPONSE_BYTES.patches);
     signal?.throwIfAborted();
     const echoed = assistantStreamSelectionSchema.parse(page.selection);
     if (page.protocol !== ASSISTANT_SELECTION_PROTOCOL || page.taskId !== taskId || page.attemptId !== attemptId
@@ -157,7 +170,7 @@ export class FlowClient {
   async assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
     const selected = this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL;
     if (selected) signal?.throwIfAborted();
-    const block = await this.request<AssistantStreamBlock>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal, headers: this.streamHeaders() });
+    const block = await this.request<AssistantStreamBlock>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal, headers: this.streamHeaders() }, undefined, selected ? SELECTED_RESPONSE_BYTES.block : undefined);
     if (selected) signal?.throwIfAborted();
     if (selected && (block.taskId !== taskId || block.id !== blockId || block.streamId !== blockId || typeof block.content !== 'string')) throw Error('Stream block identity mismatch.');
     return block;
@@ -742,15 +755,17 @@ export class FlowClient {
     return { ...init, headers, credentials: this.csrfToken ? 'include' : 'omit' };
   }
 
-  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string, maxBytes?: number): Promise<T> {
+  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string, budget?: number | JsonResponseBudget): Promise<T> {
     if (this.conversationProtocol && (path === '/api/conversations' || path.startsWith('/api/conversations/') || path.startsWith('/api/conversations?'))) {
       const headers = new Headers(init.headers); headers.set(CONVERSATION_HEADER, this.conversationProtocol); init = { ...init, headers };
     }
-    const signal = maxBytes === undefined ? init.signal ?? AbortSignal.timeout(15_000)
+    const signal = budget === undefined ? init.signal ?? AbortSignal.timeout(15_000)
       : init.signal ? AbortSignal.any([init.signal, AbortSignal.timeout(15_000)]) : AbortSignal.timeout(15_000);
     const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal }, loginToken));
-    const boundedJson = maxBytes === undefined ? undefined : () => readBoundedNativeBodyJson(response, maxBytes, signal);
-    await assertResponse(response, boundedJson, maxBytes === undefined ? undefined : signal);
+    const boundedJson = budget === undefined ? undefined : typeof budget === 'number'
+      ? () => readBoundedNativeBodyJson(response, budget, signal)
+      : () => readBoundedJson(response, response.ok ? budget.success : budget.error, signal);
+    await assertResponse(response, boundedJson, budget === undefined ? undefined : signal);
     if (boundedJson) return await boundedJson() as T;
     return response.json() as Promise<T>;
   }
@@ -760,5 +775,5 @@ async function assertResponse(response: Response, read = () => response.json(), 
   if (response.ok) return;
   const body = await read().catch(() => ({})) as { error?: { code?: string; message?: string } };
   signal?.throwIfAborted();
-  throw new FlowApiError(response.status, body.error?.code ?? 'http_error', body.error?.message ?? `The center returned HTTP ${response.status}.`);
+  throw new FlowApiError(response.status, body?.error?.code ?? 'http_error', body?.error?.message ?? `The center returned HTTP ${response.status}.`);
 }
