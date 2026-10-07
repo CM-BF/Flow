@@ -1,0 +1,58 @@
+{
+  "kind": "SVC06B_FIXED_INPUT_DELTA",
+  "inherited": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "bytes": 40316,
+    "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+    "gitRef": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+    "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json"
+  },
+  "target": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "sourceTree": "f4b65ef65bddfc4c167b8bd7fc3a7258ad285728",
+  "sourceArchive": {
+    "files": 998,
+    "logicalBytes": 7837984
+  },
+  "fixedSourceAdditions": [
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "bytes": 3452,
+      "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8"
+    }
+  ],
+  "sharedEntry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+    "bytes": 11839,
+    "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+  },
+  "runtimeProof": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+    "bytes": 5080,
+    "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "options": {
+    "evidenceDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery",
+    "temporaryPrefix": "/private/tmp/flow-svc06b-artifact-",
+    "runtimeProof": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs"
+  },
+  "meaning": "Inherited exact 6c input bytes; override only target/tree/archive and add three reviewed browser source hashes. All 72 original source bindings, dependencies, limits and cache selection preserved."
+}
