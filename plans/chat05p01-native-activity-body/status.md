@@ -19,10 +19,10 @@
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | 9edbd709d9d52d4a6b1313d34ca97806313df310；本轮PG入口/fixture-only delta封定中，生产40af未变 |
+| HEAD | c687b1b63802298d27396aa4c40bd9075ccb1405；PG入口与fixture-only delta已固定，生产40af未变 |
 | dirty | 仅原fixture及own PG入口/plan evidence；提交后核clean |
 | 工作分支状态 | in-progress |
-| 实现目标 | 40af6d9071c621707971fd983a85dd9145f065fd |
+| 实现目标 | c687b1b63802298d27396aa4c40bd9075ccb1405 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
 | 检查状态 | 原固定40af PASSED：10/10+focused types0，28不同分轮；本次fixture/PG入口仅静态读取与Python AST，3PG及新fixture类型NOT_RUN |
