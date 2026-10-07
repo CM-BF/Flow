@@ -1,3 +1,5 @@
+import { ConversationContextHistory, type ContextHistoryPort } from "../conversation-context-history/binding";
+import { createContextHistoryPlugin, CONTEXT_HISTORY_OWNER, CONTEXT_HISTORY_PANEL } from "./context-history";
 import { ConversationMessageSettings, createMessageSettingsPlugin, type MessageSettingsPort } from "./message-settings";
 import { RecoveryWorkspace, createRecoveryPlugin, type RecoveryHost } from "../recovery/binding";
 import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
@@ -60,6 +62,7 @@ export interface AppActions {
   centerRuntime?: CenterRuntimePort;
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
+  contextHistory?: ContextHistoryPort;
   stream?: StreamReaders;
   steering?: SteeringPorts;
   attachments?: { client: AttachmentClient; storage: RecoveryStorage;
@@ -93,6 +96,7 @@ export class AppPluginSession {
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly attachmentBindings = new Map<string, { binding: ConversationAttachments; stop(): void }>();
+  private readonly contextHistoryBindings = new Map<string, { binding: ConversationContextHistory; stop(): void }>();
   private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
   private readonly recoverySubscriptions = new Map<string, () => void>();
   recoveryMaterials(viewKey: string) {
@@ -166,6 +170,12 @@ export class AppPluginSession {
       binding.open(signal);
     }));
     this.host.subscribe(() => this.settingsBindings.forEach(binding => binding.sync()));
+    this.host.register(createContextHistoryPlugin((viewId, signal) => {
+      const item = [...this.contextHistoryBindings.values()].find(({ binding }) => binding.context().viewId === viewId);
+      if (!item) throw Error("Context is unavailable in this conversation.");
+      item.binding.open(signal);
+    }));
+    this.host.subscribe(() => this.contextHistoryBindings.forEach(({ binding }) => binding.sync()));
     this.host.register(createKnowledgePlugin(viewId => {
       const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
       if (!binding) throw Error("Knowledge is not available in this composer.");
@@ -175,7 +185,7 @@ export class AppPluginSession {
     this.syncCenterRuntime();
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.syncCenterRuntime(); this.settingsBindings.forEach(binding => binding.sync()); this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.contextHistoryBindings.forEach(({ binding }) => binding.sync()); this.syncCenterRuntime(); this.settingsBindings.forEach(binding => binding.sync()); this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
   managementAvailable() {
     const port = this.actions.centerRuntime;
     return !this.closed && (!port || (this.centerRuntime.getSnapshot() !== null && this.runtimeAuthority !== null && port.authorityKey() === this.runtimeAuthority));
@@ -293,6 +303,21 @@ export class AppPluginSession {
     if (!binding) { binding = new ConversationMessageSettings(viewKey, this, () => this.actions.messageSettings); this.settingsBindings.set(viewKey, binding); }
     return binding;
   }
+  contextHistoryBinding(viewKey: string, projection: ConversationProjection) {
+    let item = this.contextHistoryBindings.get(viewKey);
+    if (!item) {
+      const binding = new ConversationContextHistory(viewKey, {
+        connectionId: this.id, signal: this.signal,
+        enabled: viewId => !this.closed && this.validContext({ kind: "composer", viewId, isDraft: true })
+          && this.host.list().some(plugin => plugin.id === CONTEXT_HISTORY_OWNER && plugin.state === "active")
+          && this.host.checkView(CONTEXT_HISTORY_PANEL, { kind: "composer", viewId, isDraft: true }).ok,
+      }, () => this.actions.contextHistory);
+      const stop = projection.subscribe(binding.sync);
+      item = { binding, stop: () => { stop(); binding.dispose(); } };
+      this.contextHistoryBindings.set(viewKey, item);
+    }
+    return item.binding;
+  }
   releaseView(viewKey: string) {
     if (this.getViewProtection(viewKey).length) throw Error("This view still owns local material.");
     const binding = this.knowledgeBindings.get(viewKey);
@@ -301,6 +326,7 @@ export class AppPluginSession {
     this.attachmentBindings.get(viewKey)?.stop(); this.attachmentBindings.delete(viewKey);
     this.steering.closeView(viewKey);
     this.recovery.release(viewKey);
+    this.contextHistoryBindings.get(viewKey)?.stop(); this.contextHistoryBindings.delete(viewKey);
     this.settingsBindings.get(viewKey)?.dispose(); this.settingsBindings.delete(viewKey);
   }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
@@ -396,6 +422,7 @@ export class AppPluginSession {
     this.closed = true;
     this.syncCenterRuntime();
     this.lifetime.abort();
+    this.contextHistoryBindings.forEach(item => item.stop()); this.contextHistoryBindings.clear();
     this.settingsBindings.forEach(binding => binding.dispose()); this.settingsBindings.clear();
     this.steering.dispose();
     this.recovery.dispose();

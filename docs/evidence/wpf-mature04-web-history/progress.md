@@ -1,6 +1,6 @@
 # MATURE04-05 Web history consumer
 
-Stage: APPROVED_LIMITED_MODULE_SOURCE_AND_LOCAL; THIN_WIRING_NOT_STARTED. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
+Stage: THIN_WIRING_IMPLEMENTATION; STANDALONE_MODULE_APPROVED. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
 
 Actual claim start: 2026-10-07T22:35:02.638Z. Conservative source-segment deadline: 2026-10-07T22:59:17Z. Fixed base: b1291faae260be8d86ada12ff63341d44efc2709. Branch: codex/web-context-history. Claim: 25d7e029-9334-479e-8872-61090c406e0a v1, exactly the new conversation-context-history directory, new plugin binding, and this evidence directory.
 
@@ -21,3 +21,5 @@ Root independent review: [root-module-review.json](root-module-review.json), 680
 Read-only handoff preimages and minimal wiring: [thin-wiring-preimages.json](thin-wiring-preimages.json). Thread is identical at b129/e611; App and session carry Arc layout/authorization differences. Future integration must preserve Arc and must not copy a whole old App/session blob. App/session handback and fresh Thread ownership remain prerequisites to a later exact-six amend; current exact-three claim is unchanged. No new public task.context.read capability is proposed. With no taskId, the real Context entry must explain that no execution observation exists; an enabled silent no-op is not accepted. Parent status/CT matrix remain exclusively with architecture_read/Mika.
 
 This natural approval tail changes evidence only, with no product edits/checks. Clean-code review: compact typed private port, session-owned lifetime, truthful unknowns and precise dual-baseline evidence; no new authority or framework. All three scopes return to STOP after this metadata seal; follow-up implementation requires the manager’s new segment and lawful handoff.
+
+New thin-wiring segment: 2026-10-07T22:49:21Z–23:14:21Z. Claim25d7 v2 exact6 committed22:49:45.308Z after global literal/prefix conflict check; receipt [wiring/amend-receipt.json](wiring/amend-receipt.json). App/session were released by Arc, Thread was separately checked conflict-free. Work remains on b129; Arc e611 comparison is preserved above. New16MiB envelope, up to4 serial20s children (at least5s cleanup), cumulative60s; no network/PG/HTTP/Chrome/install/build. Old1797ms CLOSED. Private reader, session per-view binding and real Thread insertion are in progress; no new public capability or plugin types/validation edit. Mounted browser and Arc combined integration remain NOT_RUN.

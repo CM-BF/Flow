@@ -1,3 +1,4 @@
+import { ContextHistoryComposer, ContextHistorySurface } from "../plugin-integration/context-history";
 import { bindPreparedDraftReturn, restorePreparedDraft, MessageSettingsComposer, MessageSettingsSurface } from "../plugin-integration/message-settings";
 import { MessageSettingsSummary } from "../execution-profiles/ExecutionProfilePicker";
 import { ATTACHMENT_OWNER, ATTACHMENT_OPEN, type AttachmentSubmission } from "../plugin-integration/attachments";
@@ -74,6 +75,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
   onAccepted: (id: string) => void; onInspect: (taskId: string) => void; onCurrentTask: (taskId: string) => void; onOpenTask: (taskId: string) => void;
 }) {
   const session = useContext(SessionContext)!;
+  const contextHistory = useMemo(() => session.contextHistoryBinding(viewKey, projection), [session, viewKey, projection]);
   const settings = useMemo(() => session.messageSettingsBinding(viewKey), [session, viewKey]);
   const knowledge = useMemo(() => session.knowledgeBinding(viewKey, projection), [session, viewKey, projection]);
   useLayoutEffect(() => { knowledge.configure(viewId, visible); return () => knowledge.configure(viewId, false); }, [knowledge, viewId, visible]);
@@ -249,7 +251,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     <ConversationSteering session={session} viewKey={viewKey} viewId={viewId} projection={projection} visible={visible}><ConversationStreams bindings={stream}><ConversationActivities viewId={viewId} projection={projection} visible={visible}><AttachmentComposer binding={attachments} runtime={runtime} recovery={{ restore: restorePrepared, discard: () => { if (pending.current?.returning) return; attachments?.discardFailedSubmission(); pending.current = null; setSendError(null); } }} onAttached={() => {
       const value = mention.current; mention.current = null;
       if (value && runtime.thread.composer.getState().text === value.text) runtime.thread.composer.setText(value.text.slice(0, value.start) + value.text.slice(value.end));
-    }}><MessageSettingsComposer session={session} viewKey={viewKey} viewId={viewId} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
+    }}><ContextHistoryComposer binding={contextHistory} viewId={viewId} visible={visible}><MessageSettingsComposer session={session} viewKey={viewKey} viewId={viewId} visible={visible}><KnowledgeComposer binding={knowledge} session={session} prepare={prepare} reason={reason} error={sendError}><Thread components={components} autoFocus={false} composerPlaceholder="Message Flow…" sendLabel={intent === "queue" ? "Add to queue" : "Send message"}
       composerSubmit={submit}
       composerInputOnKeyDown={event => {
         if (event.key === "Tab" && /@file$/.test(event.currentTarget.value.slice(0, event.currentTarget.selectionStart))) {
@@ -261,7 +263,7 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       }}
       beforeMessages={<>{streamState.evicted && <p className="flow-conversation-notice">Older draft text was removed from this page’s limited cache. Final replies remain available.</p>}{state.error && <p className="flow-conversation-alert" role="alert">{state.error} <button className="flow-link" onClick={() => void projection.refresh()}>Retry conversation</button></p>}{state.nextCursor !== null && <p className="flow-conversation-notice">Some turns are not loaded. <button className="flow-link" disabled={state.loadingMore} onClick={() => void projection.loadMore()}>{state.loadingMore ? "Loading…" : "Load more turns"}</button></p>}</>}
       afterMessages={<><ConversationQueue projection={projection.queue} />{last?.assistant.state === "pending" && <p className="flow-conversation-notice" role="status">Reply pending. You can keep writing below.</p>}{last?.assistant.state === "unavailable" && <p className="flow-conversation-notice" role="status">Reply unavailable · {last.assistant.reason.replaceAll("-", " ")}</p>}<MessageReceipt projection={projection} onAccepted={onAccepted} /></>}
-      composerHeader={<><MessageSettingsSurface session={session} viewId={viewId} /><ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={onIntent}
+      composerHeader={<><ContextHistorySurface host={session.host} viewId={viewId} /><MessageSettingsSurface session={session} viewId={viewId} /><ComposerConfiguration loading={!lockedProfile && !viewId.startsWith("draft-")} viewId={viewId} intent={intent} queueAvailable={queue.available} onIntent={onIntent}
         profile={{ catalog: profileCatalog, selection: profileSelection, onSelect: onProfileSelection, onRefresh: () => { void profiles.refresh(); }, onLoadMore: () => { void profiles.loadMore(); }, locked: lockedProfile,
           details: navigate => <ConversationBehavior live={streamState.enabled} recovery={session.recovery.configured()}><ExecutionSummary turns={state.turns} requested={state.snapshot?.conversation.requested}
             onInspect={id => navigate(() => onInspect(id))}
@@ -269,5 +271,5 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
       footer={<div className="flow-conversation-footer"><KnowledgeSelectionSummary binding={knowledge} />{!state.snapshot?.conversation.projectId && <p>Use Knowledge to choose and prepare a project before attaching text files.</p>}{materialState?.submission?.state === "preparing" && <p role="status">Preparing captured materials…</p>}{fixtureMode && <p className="flow-conversation-fixture">HTTP fixture · simulated · no model</p>}{recoveryState.error && <p role="alert">{recoveryState.error}</p>}{sendError && <p role="alert">{sendError}</p>}{pending.current?.failed && !pending.current.material && <section aria-label="Unsent complete draft"><pre>{pending.current.text}</pre><MessageSettingsSummary value={pending.current.settings.value} label="Held draft settings" /><button type="button" onClick={() => void restorePrepared()}>Restore complete draft into an empty draft</button><button type="button" onClick={() => { pending.current = null; setSendError(null); }}>Discard held draft</button></section>}{reason && <p role="status">{reason}</p>}</div>}
 
     />
-  </KnowledgeComposer></MessageSettingsComposer></AttachmentComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
+  </KnowledgeComposer></MessageSettingsComposer></ContextHistoryComposer></AttachmentComposer></ConversationActivities></ConversationStreams></ConversationSteering></ConversationDataRenderers></AssistantRuntimeProvider></PluginThreadScope>;
 }

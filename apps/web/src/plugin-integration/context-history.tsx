@@ -1,6 +1,7 @@
 import { createContext, useContext, useLayoutEffect, type ComponentProps, type ReactNode } from "react";
 import { ContextHistoryDialog } from "../conversation-context-history/ContextHistoryDialog";
-import type { ContextHistoryController, HistoryTarget } from "../conversation-context-history/controller";
+import type { ContextHistoryController } from "../conversation-context-history/controller";
+import type { ConversationContextHistory } from "../conversation-context-history/binding";
 import type { PluginDefinition } from "../plugins/types";
 import { PluginView } from "../plugins/react";
 
@@ -13,12 +14,12 @@ function HistoryPanel() {
   return controller ? <ContextHistoryDialog controller={controller} /> : null;
 }
 /** Session owns the controller. Unmount/visibility changes only revoke this view. */
-export function ContextHistoryComposer({ controller, target, visibleAndEnabled, children }: {
-  controller: ContextHistoryController; target: HistoryTarget | null; visibleAndEnabled: boolean; children: ReactNode;
+export function ContextHistoryComposer({ binding, viewId, visible, children }: {
+  binding: ConversationContextHistory; viewId: string; visible: boolean; children: ReactNode;
 }) {
-  useLayoutEffect(() => { controller.configure(target, visibleAndEnabled); });
-  useLayoutEffect(() => () => controller.configure(null, false), [controller]);
-  return <BoundHistory.Provider value={controller}>{children}</BoundHistory.Provider>;
+  useLayoutEffect(() => { binding.configure(viewId, visible); });
+  useLayoutEffect(() => () => binding.configure(viewId, false), [binding, viewId]);
+  return <BoundHistory.Provider value={binding.controller}>{children}</BoundHistory.Provider>;
 }
 export function ContextHistorySurface({ host, viewId }: { host: ComponentProps<typeof PluginView>["host"]; viewId: string }) {
   return <PluginView host={host} contributionId={CONTEXT_HISTORY_PANEL} context={{ kind: "composer", viewId, isDraft: true }} />;

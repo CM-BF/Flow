@@ -1,3 +1,5 @@
+import { createContextHistoryPort } from "./conversation-context-history/binding";
+import type { HistoryTarget } from "./conversation-context-history/controller";
 import { messageSettingsDraft, type MessageSettingsDraft } from "./plugin-integration/message-settings";
 import { ConnectionSession } from "./connection/session";
 import { ConversationRecoveryJournal, recoveryAddress, namespaceKey, recoveryValue, type RecoveryNamespace, type RecoveryRecord, type CommandRecord } from "./recovery/journal";
@@ -768,7 +770,24 @@ function Workspace({
       else session.steering.retryReceipt(entry[1].key, record.id);
     },
   } : undefined;
+  const historyTarget = (viewKey: string): HistoryTarget | null => {
+    const view = viewEntry(viewKey)?.[1], snapshot = view?.conversation?.getSnapshot().snapshot;
+    const taskId = snapshot?.lastTurn?.task.id;
+    if (!session || !snapshot || !taskId) return null;
+    const task = view!.projection.getSnapshot().task;
+    const attemptId = task?.id === taskId ? task.attempt?.id : undefined;
+    return { connectionId: session.id, viewKey, conversationId: snapshot.conversation.id, taskId,
+      authorityGeneration: recovery?.session.getSnapshot().generation ?? 0,
+      ...(attemptId ? { expectedAttemptId: attemptId } : {}) };
+  };
+  const historyAuthorized = (target: HistoryTarget) => {
+    const entry = viewEntry(target.viewKey);
+    return !!entry && authorizedRef.current && (!recovery || recovery.session.authorized(recovery.namespace))
+      && !overview && document.visibilityState === "visible" && currentGroups.current.some(group => group.activeId === entry[0])
+      && entry[1].conversation?.getSnapshot().connection === "live";
+  };
   const actions: AppActions = {
+    contextHistory: createContextHistoryPort(client, historyTarget, historyAuthorized),
     ...(recoveryHost ? { recovery: recoveryHost } : {}),
     ...(centerRuntime ? { centerRuntime } : {}),
     messageSettings: {
