@@ -37,6 +37,59 @@ export type Admission = {
 };
 /** The already reviewed external caller owns resource/time monitoring and native Chrome/process cleanup. */
 export type Lifetime = { signal: AbortSignal; checkpoint: () => Promise<void> };
+type DiagnosticPhase = { phase: string; step: string | null };
+/** Passive, bounded metadata only. The existing Fastify error handler keeps full ownership of the socket. */
+function observeClientErrors(server: Server, readPhase: () => DiagnosticPhase) {
+  const originalHandlers = server.listeners("clientError");
+  assert.ok(originalHandlers.length > 0, "Keep the real server clientError handler");
+  const started = performance.now(), capBytes = 32 * 1024;
+  type Connection = { connectionId: number; clientPort: number | null; serverPort: number | null };
+  const connections = new WeakMap<Socket, Connection>();
+  const errors: Array<DiagnosticPhase & Connection & { code: string; bytesParsed: number | null; elapsedMs: number }> = [];
+  const upstreams: Array<DiagnosticPhase & { wireIndex: number; clientPort: number | null; serverPort: number | null; elapsedMs: number }> = [];
+  let connectionId = 0, dropped = 0, invalidPhase = false;
+  const phase = () => {
+    const value = readPhase();
+    if (!/^[a-z-]{1,48}$/.test(value.phase) || value.step !== null && !/^[a-z-]{1,48}$/.test(value.step)) {
+      invalidPhase = true; return { phase: "unknown", step: null };
+    }
+    return { phase: value.phase, step: value.step };
+  };
+  const port = (value: number | undefined) => Number.isSafeInteger(value) && value! > 0 && value! <= 65535 ? value! : null;
+  const elapsedMs = () => Math.round(performance.now() - started);
+  const connected = (socket: Socket) => connections.set(socket, { connectionId: ++connectionId,
+    clientPort: port(socket.remotePort), serverPort: port(socket.localPort) });
+  const clientError = (error: Error & { code?: unknown; bytesParsed?: unknown }, socket: Socket) => {
+    if (errors.length >= 16) { dropped++; return; }
+    errors.push({ ...phase(), ...(connections.get(socket) ?? { connectionId: 0, clientPort: null, serverPort: null }),
+      code: typeof error.code === "string" && /^[A-Z0-9_]{1,64}$/.test(error.code) ? error.code : "UNKNOWN",
+      bytesParsed: typeof error.bytesParsed === "number" && Number.isSafeInteger(error.bytesParsed) && error.bytesParsed >= 0 ? error.bytesParsed : null,
+      elapsedMs: elapsedMs() });
+  };
+  server.on("connection", connected); server.on("clientError", clientError);
+  return {
+    upstream(socket: Socket, wireIndex: number) {
+      const capture = () => {
+        if (upstreams.length >= 128) { dropped++; return; }
+        upstreams.push({ ...phase(), wireIndex, clientPort: port(socket.localPort), serverPort: port(socket.remotePort), elapsedMs: elapsedMs() });
+      };
+      if (socket.connecting) socket.once("connect", capture); else capture();
+    },
+    finish() {
+      server.removeListener("connection", connected); server.removeListener("clientError", clientError);
+      const originalHandlersPreserved = originalHandlers.every(handler => server.listeners("clientError").includes(handler));
+      const rows = errors.map(error => {
+        const matching = upstreams.filter(row => error.clientPort !== null && error.serverPort !== null
+          && row.clientPort === error.clientPort && row.serverPort === error.serverPort);
+        return { ...error, association: matching.length === 1 ? "OWNED_PROXY" : "UNKNOWN", wireIndex: matching.length === 1 ? matching[0]!.wireIndex : null };
+      });
+      const result = { diagnosticOnly: true, complete: dropped === 0 && !invalidPhase && originalHandlersPreserved,
+        limits: { errors: 16, upstreams: 128, bytes: capBytes }, dropped, invalidPhase, originalHandlersPreserved, errors: rows, upstreams };
+      if (Buffer.byteLength(JSON.stringify(result)) > capBytes) return { ...result, complete: false, errors: [], upstreams: [], byteCapExceeded: true };
+      return result;
+    },
+  };
+}
 type AssetFile = { path: string; bytes: number; sha256: string };
 export type LoadedApp = AppInput & { files: AssetFile[]; snapshot: { index: AssetFile; assets: Map<string, AssetFile> } };
 export function assertRecoveryAdmission(input: RecoveryAdmission) {
@@ -208,7 +261,7 @@ async function closeServer(server: Server, sockets: Set<Socket>) {
   const closed = new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
   for (const socket of sockets) socket.destroy(); server.closeAllConnections(); await closed;
 }
-async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, life: Lifetime) {
+async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, life: Lifetime, diagnostic?: ReturnType<typeof observeClientErrors>) {
   assert.ok(Number.isSafeInteger(centerPort) && centerPort > 0 && centerPort <= 65535); assert.notEqual(centerPort, 61228); let app: LoadedApp | undefined, legacy = false, faultArmed = false, publicEnabled = false;
   const records: Wire[] = [], errors: string[] = [], rejected: string[] = [], sockets = new Set<Socket>(), upstreams = new Set<ReturnType<typeof httpRequest>>();
   const pending = new Set<Promise<void>>(); let captured = 0, port = 0, closing = false;
@@ -250,7 +303,7 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
           ...(!isSession && body.length ? { body: body.toString("utf8") } : {}),
           ...(headers["x-flow-assistant-stream"] ? { forwardedStream: String(headers["x-flow-assistant-stream"]) } : {}),
           ...(headers["x-flow-execution-profile"] ? { profile: String(headers["x-flow-execution-profile"]) } : {}) };
-        records.push(record);
+        const wireIndex = records.length; records.push(record);
         await new Promise<void>((resolve, reject) => {
           let downstreamClosed = false;
           const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers }, incoming => {
@@ -293,6 +346,7 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
             })().catch(reject)); });
             incoming.once("close", () => { if (record.sse) record.sse.closedAt = new Date().toISOString(); });
           });
+          if (diagnostic) upstream.once("socket", socket => diagnostic.upstream(socket, wireIndex));
           upstreams.add(upstream); upstream.once("close", () => upstreams.delete(upstream));
           upstream.once("error", error => downstreamClosed ? resolve() : reject(error));
           response.once("close", () => { downstreamClosed = true; upstream.destroy(); resolve(); }); upstream.end(body);
@@ -330,7 +384,7 @@ export async function until<T>(read: () => Promise<T>, predicate: (value: T) => 
     await new Promise(resolve => setTimeout(resolve, 30)); } while (performance.now() < end);
   throw Error("FIXTURE_CONDITION_DEADLINE");
 }
-export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime, recoveryApp?: AppInput) {
+export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime, recoveryApp?: AppInput, diagnosticPhase?: () => DiagnosticPhase) {
   life.signal.throwIfAborted(); await life.checkpoint();
   const outputInfo = await directory(input.output); assert.equal(outputInfo.mode & 0o077, 0); assert.deepEqual(await readdir(input.output), []);
   const tools = await runtime(input, life); const apps = await loadApps(input.apps, life, recoveryApp); await life.checkpoint();
@@ -341,10 +395,16 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
   const pool = (url: string) => new tools.Pool({ connectionString: url, max: 1, connectionTimeoutMillis: 3000, statement_timeout: 3000 });
   const cleanup = { databaseName, marker, create: "NOT_STARTED", markerWritten: false, databaseRemoved: false, centerClosed: false, proxyClosed: false, errors: [] as string[] };
   let app: Center | undefined, front: Awaited<ReturnType<typeof proxy>> | undefined, closed = false;
+  let diagnostic: ReturnType<typeof observeClientErrors> | undefined;
+  let diagnosticResult: ReturnType<ReturnType<typeof observeClientErrors>["finish"]> | null = null;
   const close = async () => {
     if (closed) return cleanup; closed = true;
     if (front) try { await front.close(); cleanup.proxyClosed = true; } catch (error) { cleanup.errors.push("proxy:" + errorCode(error)); }
     if (app) try { await app.close(); cleanup.centerClosed = true; } catch (error) { cleanup.errors.push("center:" + errorCode(error)); }
+    if (diagnostic) try {
+      diagnosticResult = diagnostic.finish(); await saveJson(input.output, "http-client-errors.json", diagnosticResult);
+      assert.equal(diagnosticResult.complete, true, "Incomplete passive clientError evidence");
+    } catch (error) { cleanup.errors.push("client-error-evidence:" + errorCode(error)); }
     if (cleanup.create === "CONFIRMED" && cleanup.markerWritten) try {
       const own = pool(databaseUrl.href); try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: marker }]); } finally { await own.end(); }
       const admin = pool(adminUrl); try {
@@ -363,9 +423,10 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
     await life.checkpoint(); const own = pool(databaseUrl.href);
     try { await own.query("CREATE TABLE public.release_fixture_owner(id uuid PRIMARY KEY)"); await own.query("INSERT INTO public.release_fixture_owner VALUES($1)", [marker]); cleanup.markerWritten = true; } finally { await own.end(); }
     await life.checkpoint(); app = await tools.createCenter({ databaseUrl: databaseUrl.href, ownerToken: token, browserSession: input.browserSettings, leaseMs: 300_000 });
+    if (diagnosticPhase) diagnostic = observeClientErrors(app.server, diagnosticPhase);
     await life.checkpoint(); await app.listen({ host: "127.0.0.1", port: 0 }); await life.checkpoint();
     const address = app.server.address(); assert.ok(address && typeof address !== "string" && address.port !== 61228);
-    const centerUrl = `http://127.0.0.1:${address.port}`; front = await proxy(address.port, input.context.publicOrigin, tools, life); await life.checkpoint();
+    const centerUrl = `http://127.0.0.1:${address.port}`; front = await proxy(address.port, input.context.publicOrigin, tools, life, diagnostic); await life.checkpoint();
     const owner = new tools.Client({ baseUrl: centerUrl, token });
     const runner = await owner.registerRunner({ name: "RELEASE01 fixed-origin deterministic runner", harnesses: ["claude"], capacity: 1 }); await life.checkpoint();
     const client = new tools.Client({ baseUrl: centerUrl, token: runner.token });
@@ -392,7 +453,7 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
     };
     const request = async (path: string) => { assert.ok(path.startsWith("/api/") && !path.includes("\\") && !path.includes("#")); await life.checkpoint();
       const result = await fetch(centerUrl + path, { headers: { authorization: `Bearer ${token}` }, redirect: "error", signal: life.signal }); assert.ok(result.ok); return result.json(); };
-    return { apps, profile, token, proxy: front, request, completeTask, tools, close, input };
+    return { apps, profile, token, proxy: front, request, completeTask, tools, close, input, diagnosticEvidence: () => diagnosticResult };
   } catch (error) { await close(); throw error; }
 }
 export type ReleaseFixture = Awaited<ReturnType<typeof startReleaseFixture>>;

@@ -182,7 +182,8 @@ async function restoreSavedDraft(page: Page, draft: string) {
   await page.keyboard.press("Escape"); await expect(saved).not.toBeVisible(); await expect(inputBox(page)).toHaveValue(draft);
 }
 
-async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedApp, life: Lifetime, progress: Progress, cookieApp = false) {
+async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedApp, life: Lifetime, progress: Progress, cookieApp = false, diagnosticOnly = false) {
+  assert.ok(!diagnosticOnly || cookieApp, "Only the real Cookie App is admitted to this diagnostic");
   fixture.proxy.select(app); const start = fixture.proxy.records.length;
   const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce", serviceWorkers: "block" });
   const page = await context.newPage(); page.setDefaultTimeout(10_000);
@@ -254,6 +255,13 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
       assert.equal(posts().length, 2, "Restoring the independent draft cannot send");
     } : undefined);
     const finalTask = await until(() => fixture.request(`/api/tasks/${taskId}`), value => value.status === "succeeded", life); assert.equal(finalTask.verificationStatus, "passed");
+    if (diagnosticOnly) {
+      // Capture the exact public chain; console failures remain observations, never a formal compatibility allowance.
+      await Promise.all(assetReads); assert.deepEqual(pageErrors, []); assert.ok(cookieEvidence && logoutEvidence);
+      completed = { diagnosticOnly: true, label: app.label, artifact: app.artifact, conversationId, taskId,
+        cookieEvidence, logoutEvidence, originalRequestRecovered: true, finalTaskSucceeded: true, consoleErrors, providerQueries: 0 };
+      return completed;
+    }
     advance(progress, "explicit-retry");
     if (!cookieApp) await page.getByRole("button", { name: "Retry same message", exact: true }).click();
     await expect(receipt).toHaveCount(0); await expect(inputBox(page)).toHaveValue(draft);
@@ -302,7 +310,7 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
   } finally {
     selectedObservation?.stop(); await context.close();
     await saveJson(fixture.input.output, `${app.label}-wire.json`, fixture.proxy.records.slice(start));
-    await saveJson(fixture.input.output, `${app.label}-page.json`, { pageErrors, consoleErrors, loadedAssets, completed: Boolean(completed) });
+    await saveJson(fixture.input.output, `${app.label}-page.json`, { pageErrors, consoleErrors, loadedAssets, completed: Boolean(completed), diagnosticOnly });
   }
   assert.ok(completed); return completed;
 }
@@ -332,15 +340,21 @@ export async function runReleaseCompatibility(admission: Admission, adminUrl: st
 export async function runRecoveryReleaseCompatibility(admission: RecoveryAdmission, adminUrl: string, life: OwnedBrowserLifetime) {
   assertRecoveryAdmission(admission); return runApps(admission, adminUrl, life, admission.recoveryApp);
 }
-async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowserLifetime, recoveryApp?: RecoveryAdmission["recoveryApp"]) {
-  const expected = recoveryApp ? 4 : 3;
+/** No legacy App journey or report import. Completion means bounded diagnostic capture, not compatibility approval. */
+export async function runRecoveryCookieDiagnostic(admission: RecoveryAdmission, adminUrl: string, life: OwnedBrowserLifetime) {
+  assertRecoveryAdmission(admission); return runApps(admission, adminUrl, life, admission.recoveryApp, true);
+}
+async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowserLifetime, recoveryApp?: RecoveryAdmission["recoveryApp"], diagnosticOnly = false) {
+  assert.ok(!diagnosticOnly || recoveryApp);
+  const expected = diagnosticOnly ? 1 : recoveryApp ? 4 : 3;
   const startedAt = new Date().toISOString(); await life.checkpoint();
   let fixture: ReleaseFixture | undefined, chrome: Awaited<ReturnType<OwnedBrowserLifetime["launchOwnedChrome"]>> | undefined;
   const results: Awaited<ReturnType<typeof checkApp>>[] = [], errors: string[] = []; let cleanup: unknown, reports: unknown = null;
   const progress: Progress = { phase: "not-started", app: null, step: null, completed: [] }; let failedAt: { phase: Phase; app: string | null; step: CookieStep | null } | null = null;
   try {
     advance(progress, "fixture");
-    fixture = await startReleaseFixture(admission, adminUrl, life, recoveryApp); await life.checkpoint();
+    fixture = await startReleaseFixture(admission, adminUrl, life, recoveryApp,
+      diagnosticOnly ? () => ({ phase: progress.phase, step: progress.step }) : undefined); await life.checkpoint();
     advance(progress, "chrome");
     chrome = await life.launchOwnedChrome({ proxyUrl: fixture.proxy.url, proxyBypassList: "<-loopback>" }); await life.checkpoint();
     assert.ok(chrome.receipt.pid > 0 && chrome.receipt.pgid > 0); assert.match(chrome.receipt.executableSha256, /^[a-f0-9]{64}$/);
@@ -351,8 +365,10 @@ async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowse
     const canary = await chrome.browser.newContext({ serviceWorkers: "block" });
     try { const page = await canary.newPage(); await page.goto(fixture.proxy.canaryUrl, { waitUntil: "domcontentloaded" }); await expect(page.locator("body")).toHaveText("OWNED_PROXY_ROUTE"); fixture.proxy.assertCanary(); }
     finally { await canary.close(); }
-    await cookiePolicy(chrome.browser, fixture, life, progress, Boolean(recoveryApp));
-    for (const app of fixture.apps) { await life.checkpoint(); results.push(await checkApp(chrome.browser, fixture, app, life, progress, app.artifact.artifactId === recoveryApp?.artifact.artifactId)); }
+    if (!diagnosticOnly) await cookiePolicy(chrome.browser, fixture, life, progress, Boolean(recoveryApp));
+    const selected = diagnosticOnly ? fixture.apps.filter(app => app.artifact.artifactId === recoveryApp!.artifact.artifactId) : fixture.apps;
+    assert.equal(selected.length, expected);
+    for (const app of selected) { await life.checkpoint(); results.push(await checkApp(chrome.browser, fixture, app, life, progress, app.artifact.artifactId === recoveryApp?.artifact.artifactId, diagnosticOnly)); }
     assert.equal(results.length, expected);
   } catch (error) { failedAt = { phase: progress.phase, app: progress.app, step: progress.step }; errors.push(errorCode(error)); }
   finally {
@@ -364,11 +380,14 @@ async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowse
     }
   }
   // No success reports are imported before Chrome/HTTP/DB cleanup has completed successfully.
-  if (fixture && errors.length === 0 && results.length === expected) {
+  if (!diagnosticOnly && fixture && errors.length === 0 && results.length === expected) {
     try { advance(progress, "reports", null); await life.checkpoint(); reports = await importReports(fixture, results); await life.checkpoint(); advance(progress, "done", null); } catch (error) { failedAt = { phase: progress.phase, app: progress.app, step: progress.step }; errors.push("report:" + errorCode(error)); }
   }
+  const diagnosticEvidence = diagnosticOnly ? fixture?.diagnosticEvidence() ?? null : null;
   const result = { startedAt, finishedAt: new Date().toISOString(), results, errors, progress, failedAt, reports, cleanup: cleanup ?? null,
-    passed: errors.length === 0 && results.length === expected && reports !== null, publicContext: admission.context, providerQueries: 0 };
+    diagnosticOnly, diagnosticComplete: diagnosticOnly && errors.length === 0 && results.length === 1 && diagnosticEvidence?.complete === true,
+    diagnosticEvidence, passed: !diagnosticOnly && errors.length === 0 && results.length === expected && reports !== null, publicContext: admission.context, providerQueries: 0 };
   await saveJson(admission.output, "browser-results.json", result);
-  assert.equal(result.passed, true, "Compatibility incomplete; preserve failed raw and owned cleanup"); return result;
+  assert.equal(diagnosticOnly ? result.diagnosticComplete : result.passed, true,
+    diagnosticOnly ? "Diagnostic incomplete; preserve raw and owned cleanup" : "Compatibility incomplete; preserve failed raw and owned cleanup"); return result;
 }
