@@ -1,3 +1,11 @@
+状态：PENDING（五组真实来源事务结果待独审，源码/准备已批准）
+
+Review target commit: 5068c6fa6b1cdfc7766f735a494c771892d7f3c1
+
+[唯一固定结果入口](../../docs/evidence/x01/artifact-pg-result-ready.md)。5/5仅本次真实HTTP/SQL关联与清理，不是npm执行或完整runRunner。
+
+---
+
 状态：APPROVED（仅五组PG准备及final deadline修复；尚无PG结果）
 
 Review target commit: f3f48929085a07a545b7cfd154d133ca99dcb8a2

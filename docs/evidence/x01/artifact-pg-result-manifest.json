@@ -1,0 +1,192 @@
+{
+  "resultCommit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+  "executionCommit": "14bc0ba4534bd9926d6b8508387b6fc26015ed91",
+  "sourceCommit": "f3f48929085a07a545b7cfd154d133ca99dcb8a2",
+  "productCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+  "recordedAt": "2026-10-07T08:18:57.808104+00:00",
+  "preparedManifestSha256": "95d87bb88b7cfed355860d2c9d820dffe07d8d2fc92c6b41832f3cf898f3780d",
+  "files": [
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/admission.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "faa960c3ff1b7a495781e7773b7f0342616acd10",
+      "bytes": 3439,
+      "sha256": "eaff13c5b69d4cf4e6d5086f54106db10fdf0b463bdc810a649095e746bda88a"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/launch.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "f73a99f4ac07dc8f595d8348d3033ed1fa84c043",
+      "bytes": 188,
+      "sha256": "936febeb8ea9b56d2cf4b464bcb9a658d8e9eaffa6447df1198a464e30ec893b"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/output.log",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "2ee49e0717cca72fde752b109228f6c74255326d",
+      "bytes": 144,
+      "sha256": "2cad6f4cb58cb88e30552dfaa7b5b6a83217236d76c0f667b446dba1ddd675b4"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/owner-close.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "d3e6b82bfd24fce2306630fd40deaefccfbb041e",
+      "bytes": 978,
+      "sha256": "a4dc2fdd9a045052d88bc5ccb42d2520d33da6a5e27e4006bedab8c1cf90f64e"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/preflight.stdout",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "d403139796c508d73e0a751e268bf0ac0df72fe0",
+      "bytes": 277,
+      "sha256": "7ffc9f272899c7f3a37fe594d12b05d2860e3b9da9211635783a96256363e7a4"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/reservation.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "685a80c9ec9f38e2920667c4466565a4aca36eda",
+      "bytes": 281,
+      "sha256": "4bff5eeee5ec59a931c5c78179cfb93407d51fa71e0417c24799a318c8740f80"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/result.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "b23038300a790005ba47ad808e440b7f967280f6",
+      "bytes": 6461,
+      "sha256": "9d1942e81e25876df49d9063209a29246630a87f25e9218a880ea771a4e8ef2c"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-create-request.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "d1367144a0f1f289981eb0ef1348cf3c0ab2de34",
+      "bytes": 353,
+      "sha256": "44ee3dd86e0e1c7ba013b885e4478f80ef64db27afd25ad846835ee229d8749c"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-created.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "7c1494571f375550326aecee62eda786e4d49e46",
+      "bytes": 402,
+      "sha256": "b817dc9fd41a494b6129a2370682f30c8e2b410055a986fee77084c74940a93e"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-reservation.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "420a589c64d05ed4931402af166daee19b7c864e",
+      "bytes": 450,
+      "sha256": "aa8d2770f0460493c030b3838b56188ad0eb1a4c2637b63a5f8360024247f2ba"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/runtime-result.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "6d5f3ed35d33d9148b52e44a9d160cff051482e4",
+      "bytes": 1264,
+      "sha256": "0e3c5ad0887660061c0a7f0f701da9448206db8bbda24f7bfcc5573c64e9bb18"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/tool-output.log",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "321b881e79c2b28fe4d04af2785f21f316d683fe",
+      "bytes": 652,
+      "sha256": "2e36482baec5f0a68dda14636d0e3076945e76b5d2e81e7ddddf723a6bce93eb"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/tool.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "2432aa74559a741c0b1df992c3dff3c5eae3f62d",
+      "bytes": 1578,
+      "sha256": "f6a350b3bcc6751c35d52c646b9b06b010333687f2172b24105962f9837778c9"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-run-r1/vitest.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "4ca9edf7871c140c0dd8475b2d06e04ba50867cb",
+      "bytes": 2331,
+      "sha256": "d6d0878d642ba6d7fec563c7cbdef52720fa48e81e7d6c92ce01ff5cfb83ef11"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-manifest.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "a9e60ddb47746dd452ee9495b4e1f64677f8dcf8",
+      "bytes": 96263,
+      "sha256": "95d87bb88b7cfed355860d2c9d820dffe07d8d2fc92c6b41832f3cf898f3780d"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-input.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "68d92d0133b0284fabaa35c8fe68d480577909d5",
+      "bytes": 2005,
+      "sha256": "adf881e667b4234d1d59b22282846188e6f265f7286957d41be802c71c148a9e"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-once.py",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "86fe9655e77bbe86eba8c0750e0968fe3ea5923f",
+      "bytes": 17069,
+      "sha256": "3049b162335344d072aaa98dfd1cd520a35a1d7f7c66ca68d40ea08f7b4e7cf9"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-preparation-review.json",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "c747df0fb8c6b2066d6ae0b816f761f89a02e26b",
+      "bytes": 795,
+      "sha256": "2867bdab88ed7ca8912eff91673438d85966d7a6c0cd3e0e47db0774f9e0e821"
+    },
+    {
+      "path": "docs/evidence/x01/artifact-pg-vitest.config.mjs",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "256eca08b35f8e7e45dda8d7164ca47a14135082",
+      "bytes": 1183,
+      "sha256": "514919863b0d9241d0ac9969d91769cf69e759a8b9f524a121dcf8f3e13677b2"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "2faf5fe4ea73c123101a47c8fecfc901608eb16f",
+      "bytes": 14525,
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact-pg.test.ts",
+      "commit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "blob": "fbb90d0b7b177042f351fa9a33fe25216ac16479",
+      "bytes": 15919,
+      "sha256": "1c081810f0140ade643ba8642743eec47c42085eab64f234c91daee812f01d0f"
+    }
+  ],
+  "summary": {
+    "bindings": 21,
+    "bytes": 166557,
+    "runFiles": 14,
+    "runBytes": 18798,
+    "prepared266Unchanged": true,
+    "errors": []
+  },
+  "result": {
+    "selected": 5,
+    "passed": 5,
+    "failed": 0,
+    "skipped": 0,
+    "HTTP": 56,
+    "responseBytes": 49020,
+    "tasks": 5,
+    "registrations": 5,
+    "databases": 1,
+    "listeners": 1,
+    "provider": 0,
+    "actualNpmInvocation": 0,
+    "runRunner": 0
+  },
+  "accounting": {
+    "originalCallerRawBytesBeforeReceipt": 9129,
+    "preSaveSnapshotElapsed": 5.089794290950522,
+    "postSaveDeliveryElapsed": 5.090026375022717,
+    "externalTimeRealSeconds": 5.26,
+    "sampleTemporaryBytes": 4800,
+    "sampleTemporaryEntries": 10,
+    "wholeTemporaryPeak": null,
+    "databasePhysicalBytes": null,
+    "oneMiBRawGateAppliesToAllNewRunAndToolFiles": true
+  },
+  "scope": "Five real HTTP/reportEvents/PostgreSQL association transaction cases. Synthetic bounded material/phase seed, no actual npm execution/public runRunner. Independent result review pending."
+}
