@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T13:17:39.490305+00:00",
+  "reviewer": "astra_ultra_execution_lead (gpt-6-astra), independent of assignment_review",
+  "decision": "APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR",
+  "target": "4916591ba89b2999404e3d13814968180594da98",
+  "delivery": "5fe45ea0448d1386082cab81b273cc6b3a609bc2",
+  "helperTarget": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+  "manifest": {
+    "path": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json",
+    "bytes": 6890,
+    "sha256": "af3d73d5a6693cf5724e972de9434d3ec19073f7f07fd7b61679e2980d314a3d",
+    "bindings": 18,
+    "boundBytes": 90210
+  },
+  "planSha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824",
+  "findings": [],
+  "verified": [
+    "18 bindings match current bytes/hash and fixed delivery Git. Helper dev/ino/uid/nlink/bytes/SHA match new explicit pin; original 53 runtime and 8 observer pins remain unchanged.",
+    "Full helper delta preserves default historical reader, privacy, SQL and durable output. Only explicit read-only compatibility reader port added. New caller binds modern public reader and exact three --snapshot outputs.",
+    "Legacy retained pointer proof remains af51/null; actual 6c/policy/C3 tuple independently checked by unchanged configuredTuple. Invalid bytes are rejected; no reports deleted/ignored or incompatible tuple relabelled.",
+    "Four direct cases cover v1, original v2 rejection, mixed v1/v2 separate tuples and invalid evidence. Actual Node import/output and Python 12-phase argument checks pass. First fixture-alias failure remains preserved.",
+    "Final 3 reports exit0/200ms/651B; cumulative local 312ms/3554B, four final-absent dual-EOF groups, two owned empty scratch removals. Transient EPERM preserved. No tests rerun by reviewer.",
+    "Strict idle inventory, same-operation fence, deadline, history projection, preserve conditions and no-R2-replay unchanged. Fresh r4 namespace; root source stays7524."
+  ],
+  "limits": [
+    "Approval covers preparation only; actual personal continuation NOT_RUN. Fresh exclusive holder/resource/identity gates still required.",
+    "R3 original partial read failure remains FAIL/KEEP; no new health inference. R2 migration/Web replace/report/policy are completed and cannot replay.",
+    "No new provider, credential export, cancellation, journal clearing or rollback."
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "personalIO": 0,
+    "serviceActions": 0,
+    "provider": 0
+  }
+}

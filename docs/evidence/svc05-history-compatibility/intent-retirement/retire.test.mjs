@@ -3,8 +3,8 @@ import assert from 'node:assert/strict';
 import { mkdtemp, mkdir, writeFile, readFile, lstat, rm, readdir, rename, open } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { randomUUID } from 'node:crypto';
-import { retireIntent, inspectRetirement, identity, sha, source } from './retire.mjs';
+import { randomUUID, createHash } from 'node:crypto';
+import { retireIntent, inspectRetirement, identity, sha, source, preservedQueueProtocol } from './retire.mjs';
 import { exactHistory } from './host-fence.mjs';
 
 let peakBytes = 0;
@@ -119,4 +119,54 @@ test('actual bounded inventory rejects history changes and all pending/unknown f
     await assert.rejects(exactHistory(f.request), { code: 'PENDING_OR_UNKNOWN_FILE' }); await rm(extra);
   }
   await exactHistory(f.request);
+}));
+
+function queuedConfirmation(f) {
+  const hashes = ['1'.repeat(32), '2'.repeat(32), '3'.repeat(32)];
+  const tables = [
+    ['attempts', ['id', 'task_id', 'runner_id', 'owner_version', 'completed_at']],
+    ['tasks', ['id', 'status', 'current_attempt_id']], ['conversation_queue', ['id', 'state']],
+  ].map(([name, columns], index) => ({ name, columns, count: 1, digest: createHash('md5').update(hashes[index]).digest('hex') }));
+  f.request.confirmation = { protocol: preservedQueueProtocol, baselineSha256: 'b'.repeat(64), tables,
+    queuedTasks: [{ id: randomUUID(), status: 'queued', current_attempt_id: null }] };
+  f.fact.pendingTasks = 1;
+  f.fact.centerEvidence = { ...structuredClone(f.request.confirmation), tables: tables.map((table, index) => ({ name: table.name, columns: table.columns, rowHashes: [hashes[index]] })) };
+}
+test('preserved queued v2 permits the same queued task only with complete historical evidence', () => fixture(async f => {
+  queuedConfirmation(f);
+  assert.equal((await retireIntent(f.request, f.ports)).outcome, 'retired');
+  const audit = JSON.parse(await readFile(join(f.archive, 'intent.json')));
+  assert.deepEqual(audit.initialConfirmation.centerEvidence, f.fact.centerEvidence);
+  assert.equal(audit.initialConfirmation.pendingTasks, 1);
+  assert.deepEqual(await readFile(join(f.archive, 'original.bin')), f.original);
+}));
+test('preserved queued v2 rejects a completed attempt added despite active zero and same-count replacement', () => fixture(async f => {
+  queuedConfirmation(f);
+  const original = structuredClone(f.fact.centerEvidence);
+  for (const rows of [[...original.tables[0].rowHashes, '4'.repeat(32)], ['5'.repeat(32)], []]) {
+    f.fact.centerEvidence = structuredClone(original); f.fact.centerEvidence.tables[0].rowHashes = rows;
+    assert.equal(f.fact.globalUnfinished, 0);
+    assert.equal((await retireIntent(f.request, f.ports)).code, 'PRESERVED_QUEUE_CHANGED');
+    assert.deepEqual(await readFile(f.journal), f.original);
+  }
+}));
+test('preserved queued v2 never substitutes counts, missing proof or unknown writer for evidence', () => fixture(async f => {
+  queuedConfirmation(f);
+  const original = structuredClone(f.fact);
+  const changes = [{ centerEvidence: undefined }, { soleWriterConfirmed: false }, { inventoryComplete: false }, { pendingUnknown: 1 }, { runnerStopped: false }, { pendingTasks: 0 }];
+  for (const change of changes) {
+    Object.assign(f.fact, structuredClone(original), change);
+    assert.equal((await retireIntent(f.request, f.ports)).outcome, 'not-retired');
+    assert.deepEqual(await readFile(f.journal), f.original);
+  }
+  Object.assign(f.fact, original);
+  delete f.request.confirmation; // Legacy caller still rejects this nonzero pending count.
+  assert.equal((await retireIntent(f.request, f.ports)).code, 'FENCE_UNCONFIRMED');
+}));
+test('preserved queued v2 rechecks historical evidence immediately before publication', () => fixture(async f => {
+  queuedConfirmation(f);
+  f.ports.boundary = async phase => { if (phase === 'recheck') f.fact.centerEvidence.tables[0].rowHashes.push('6'.repeat(32)); };
+  assert.equal((await retireIntent(f.request, f.ports)).outcome, 'unknown');
+  assert.deepEqual(await readFile(f.journal), f.original);
+  assert.deepEqual(await readFile(join(f.archive, 'original.bin')), f.original);
 }));

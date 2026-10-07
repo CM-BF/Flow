@@ -1,0 +1,264 @@
+{
+  "format": 1,
+  "purpose": "Same R4 operation; preserve original queue under explicit v2 evidence; no consumed stage replay",
+  "inherited": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.json",
+    "bytes": 21401,
+    "sha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824"
+  },
+  "rootHead": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1",
+  "freshBytes": 7515275264,
+  "r4Facts": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before.json",
+  "r4History": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json",
+  "idleSha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55",
+  "request": {
+    "source": "af51c621696230fbced12227670f014ca73bd8a1",
+    "root": "/Users/citrine/.flow-personal",
+    "baseUrl": "http://127.0.0.1:61227",
+    "namespace": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1",
+    "retirementId": "bab13484-e849-4527-9e6b-61faccf9f8f4",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "holdVersion": 20,
+    "originalSha256": "cad3b336e5c36bf584eadc516625cb0c24be6ff1bda71680975ed896f6b23c31",
+    "rootIdentity": {
+      "dev": 16777234,
+      "ino": 117819905,
+      "uid": 501
+    },
+    "runnerIdentity": {
+      "dev": 16777234,
+      "ino": 117819908,
+      "uid": 501
+    },
+    "namespaceIdentity": {
+      "dev": 16777234,
+      "ino": 117819985,
+      "uid": 501
+    },
+    "journalIdentity": {
+      "dev": 16777234,
+      "ino": 123285855,
+      "uid": 501
+    },
+    "stateSha256": "0d44732ee2a425ed38a5995759da749e452e26c550b2b2c15a3efea8aa874846",
+    "configSha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+    "history": [
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+        "bytes": 27,
+        "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/d784f9af8945af94d9636738d8ce68e607ffb5120087f1591af02976a907bcd8/claude-result-a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714.txt",
+        "bytes": 9,
+        "sha256": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+      }
+    ],
+    "confirmation": {
+      "protocol": "flow.intent-preserved-queued.v2",
+      "baselineSha256": "0c324d6f22b4ea966facf0d76bc799e8e823be16543debaf8d92e3291035df8c",
+      "tables": [
+        {
+          "name": "attempts",
+          "columns": [
+            "id",
+            "task_id",
+            "runner_id",
+            "owner_version",
+            "lease_expires_at",
+            "last_sequence",
+            "native_session_id",
+            "completed_at",
+            "last_heartbeat_at",
+            "last_event_at"
+          ],
+          "count": 4,
+          "digest": "03c0458fb254b2893fc378b1f5ac7705"
+        },
+        {
+          "name": "tasks",
+          "columns": [
+            "id",
+            "submission",
+            "status",
+            "verification_status",
+            "created_at",
+            "updated_at",
+            "cursor",
+            "owner_version",
+            "dispatch_ready",
+            "current_attempt_id",
+            "pending_decision",
+            "latest_artifact_id",
+            "latest_artifact_version",
+            "usage",
+            "conversation_input_id",
+            "goal_input_id"
+          ],
+          "count": 5,
+          "digest": "9fb1130e182766d1f1bffb2d21455849"
+        },
+        {
+          "name": "conversation_queue",
+          "columns": [
+            "id",
+            "conversation_id",
+            "sequence",
+            "state",
+            "user_text",
+            "turn_id",
+            "task_id",
+            "turn_number",
+            "created_at",
+            "updated_at",
+            "conversation_input_id"
+          ],
+          "count": 1,
+          "digest": "2448e5103adf3d95c1c04a03a50b1e6f"
+        }
+      ],
+      "queuedTasks": [
+        {
+          "id": "c8a0e95d-d84a-4e96-aef7-3384fbbe5291",
+          "status": "queued",
+          "current_attempt_id": null
+        }
+      ]
+    }
+  },
+  "baselines": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before.json",
+      "bytes": 30110,
+      "sha256": "b30fb17553542b2d577558f8e3e2d5fce6a70a9120a9d631396bd6a8f4c2016e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json",
+      "bytes": 21923,
+      "sha256": "0c324d6f22b4ea966facf0d76bc799e8e823be16543debaf8d92e3291035df8c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/bootstrap-outer.json",
+      "bytes": 672,
+      "sha256": "8b52db30a74015ba113f3030ae77a5399bf1f24adab645b8815aa3d22e4e0438"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/observation.json",
+      "bytes": 1595,
+      "sha256": "0bc3b427a054804cd21a0651866baac5c7c77ac3167d466274a8076775417781"
+    }
+  ],
+  "deltaPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "dev": "16777234",
+      "ino": "123190341",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12667,
+      "sha256": "2ff8b9aad27f0e80105cb17d4e6620dd0682ca1ed3df32c2509770b73f34c570"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "dev": "16777234",
+      "ino": "123190566",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 9768,
+      "sha256": "46cfdfe1732273fff061f6617fefecd3e586eb07a7156aa519f44476029a308e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+      "dev": "16777234",
+      "ino": "124168904",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 14335,
+      "sha256": "39262108ee6fb91f227a51aa6d15b6e0c0ed029903a3549009ba0b33e05b409d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/run.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/run.py",
+      "dev": "16777234",
+      "ino": "124169117",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 5120,
+      "sha256": "b509c8972d024b214be72c0faee4aacea29e3cf2d326aa08a425c004d5f8f04a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+      "dev": "16777234",
+      "ino": "124144586",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 13635,
+      "sha256": "31327493595a85a74d95416607c9b8e8b6386618d6d480b58fc5a3775655b252"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "dev": "16777234",
+      "ino": "124145270",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 7380,
+      "sha256": "f862c5964077b46431d8d446c31978469aecda40994a4340ef7b3b152f30f8ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "dev": "16777234",
+      "ino": "124150172",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "dev": "16777234",
+      "ino": "124141110",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 6842,
+      "sha256": "ccdcd30bcc51affd4a8a1e2d8e8c1718de3f60594330be2359842fa5b438016a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+      "dev": "16777234",
+      "ino": "124155217",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
+    }
+  ],
+  "limits": {
+    "operatorSeconds": 900,
+    "outerReapSeconds": 2,
+    "providerQueries": 0,
+    "privateEvidenceBytes": 1048576,
+    "rawBytes": 2097152,
+    "actualClaimRecovery": "UNKNOWN without natural receipt/assignment evidence",
+    "lateOldRequests": "Maintenance hold fences claim; before resume original refresh must terminate old center whole group and verify full old history again."
+  }
+}

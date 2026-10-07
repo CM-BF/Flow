@@ -1,0 +1,182 @@
+{
+  "recordedAt": "2026-10-07T13:15:07.139637+00:00",
+  "sourceTarget": "4916591ba89b2999404e3d13814968180594da98",
+  "helperTarget": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+  "decision": "PENDING_LIMITED_COMPATIBILITY_READER_REPAIR_REVIEW",
+  "bindings": [
+    {
+      "path": "continuation-facts.mjs",
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
+    },
+    {
+      "path": "maintenance-continuation.py",
+      "bytes": 7306,
+      "sha256": "ef3da33ab5998056c54d3f14921704d90492431cbc0360e0117fab68cbc1a0d5"
+    },
+    {
+      "path": "maintenance-continuation.json",
+      "bytes": 21401,
+      "sha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824"
+    },
+    {
+      "path": "maintenance-continuation.md",
+      "bytes": 8902,
+      "sha256": "460712575f19e2e1e6ba99c544e523e4d5b85b89fbe36ce6d38405c49ff66852"
+    },
+    {
+      "path": "candidate.md",
+      "bytes": 28354,
+      "sha256": "df3ce33ffdb0550f3d5f151eda73fadbeb1704533f45f9f7ad3545e6d7ec36b1"
+    },
+    {
+      "path": "r3-actual-independent-review.json",
+      "bytes": 1696,
+      "sha256": "7f40ef2ba508c1ff714ea8fb12a4979b85f5ad2e2dc7f59689389a1655c50b32"
+    },
+    {
+      "path": "compatibility-reader-repair/README.md",
+      "bytes": 2316,
+      "sha256": "63908f1498fc756d38a6a5e9ef6a48c5e72cbf994b25f71d2ea69cc52c7d0254"
+    },
+    {
+      "path": "compatibility-reader-repair/reader.test.mjs",
+      "bytes": 4330,
+      "sha256": "e751bf7cc95ba30ad497bfd4d3f66ee4d30792256ce9e45a5639d2653d3ecf17"
+    },
+    {
+      "path": "compatibility-reader-repair/take-receipt.json",
+      "bytes": 782,
+      "sha256": "9cf2df0750043492e79fb8f88fa625772a5cf142d68e184b69a438cc98c9a769"
+    },
+    {
+      "path": "compatibility-reader-repair/take-request.json",
+      "bytes": 454,
+      "sha256": "90d3ba5710ac8dca8119ce32076b1cc375ce666e7a5eb2aca2e577342b1e31aa"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-invocation.json",
+      "bytes": 2496,
+      "sha256": "b350f10b9cbc8b35a6c8ce5c25acbd8f40c68d27df5cfb960a92e240922af7fb"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-outer-1.json",
+      "bytes": 3682,
+      "sha256": "98b1d28a6905ef03654c4c2cb24857069f3c95cb1bca7b753b0d735b579308ae"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-r2-invocation.json",
+      "bytes": 2661,
+      "sha256": "32ce96c867b2d59385e4b5923e46dad525fef156baa532b1c2af87a522286d2d"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-r2-outer-1.json",
+      "bytes": 1097,
+      "sha256": "2ddc8663525f131a164fed6f2183cbeecee2ea0bf50cc60ab735377ae34e5a48"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-r2-outer-2.json",
+      "bytes": 630,
+      "sha256": "eac3b59ff1736cef71a58ba4abea91e3b56286d9d37e3003ba5d9d7cd23e0a5a"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-r2-outer-3.json",
+      "bytes": 625,
+      "sha256": "01ac35e9fe6bffcd3452fb514b318eb7f26197e42aba809b2b457ab306594b16"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-r2-result.json",
+      "bytes": 474,
+      "sha256": "5fd89607fc62e48e590a4a356f5a54cbcaa5e60260f7ea9b416d39c94feccaaf"
+    },
+    {
+      "path": "compatibility-reader-repair/validation-result.json",
+      "bytes": 461,
+      "sha256": "62ce7a6c543f755b1975d920aaff8e197bc88dd78b2e2ca1ea16d7d102ff03d2"
+    }
+  ],
+  "totalBytes": 90210,
+  "helperPin": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "dev": "16777234",
+    "ino": "123287084",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 9070,
+    "sha256": "e1838ec9cfa2c9b20804d5b2436d3576b5f69a58bb32f971444b2f3deca8f038",
+    "sourceCommit": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+    "previousSha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca",
+    "meaning": "Explicit new continuation pin; original 53 migration pins and R2 inputs unchanged."
+  },
+  "inherits": {
+    "approvedContinuationTarget": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+    "previousManifestPath": "maintenance-continuation-delta.json",
+    "previousManifestSha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a",
+    "migration53AndObserver8": "unchanged; modern reader closure already included; new helper is one additional pin",
+    "r3ResultTarget": "9491e03e9b27241c397b0f048cffa90dc0810ad9",
+    "r3ManifestSha256": "12e379a90b8d4eaa7d1db7fe63186e97b41d9050dff513b8d216d6b64d85bfbe"
+  },
+  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
+  "planSha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824",
+  "checks": {
+    "first": {
+      "startedAt": "2026-10-07T13:10:44.126401+00:00",
+      "endedAt": "2026-10-07T13:10:44.241568+00:00",
+      "reports": 1,
+      "exitCodes": [
+        1
+      ],
+      "elapsedMs": 112,
+      "rawBytes": 2903,
+      "ownedAbsent": true,
+      "dualEOF": true,
+      "scratch": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-reader-repair-_98ji0pi",
+        "dev": "16777234",
+        "ino": "124155852",
+        "emptyRemoved": true
+      },
+      "personalIO": 0,
+      "PG": 0,
+      "provider": 0
+    },
+    "final": {
+      "startedAt": "2026-10-07T13:11:07.610451+00:00",
+      "endedAt": "2026-10-07T13:11:07.813455+00:00",
+      "reports": 3,
+      "exitCodes": [
+        0,
+        0,
+        0
+      ],
+      "elapsedMs": 200,
+      "rawBytes": 651,
+      "ownedAbsent": true,
+      "dualEOF": true,
+      "scratch": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-reader-repair-0y8j2vh_",
+        "dev": "16777234",
+        "ino": "124156026",
+        "emptyRemoved": true
+      },
+      "personalIO": 0,
+      "PG": 0,
+      "provider": 0
+    },
+    "distinctUnitCases": 4,
+    "unitSelectionsAcrossRounds": 8,
+    "additionalEntryChecks": 2,
+    "totalElapsedMs": 312,
+    "totalRawBytes": 3554,
+    "ownedGroupsAbsent": 4,
+    "dualEof": 4,
+    "scratchRemoved": 2
+  },
+  "actualPersonalContinuation": "NOT_RUN; no current window; no R2 replay",
+  "quality": {
+    "at": "2026-10-07T13:15:07.139637+00:00",
+    "method": "find-skills/local clean-code + codebase-design methods reused; one optional reader port; original default/privacy/SQL/durable/strictIdle/deadline unchanged; explicit legacy/current tuple boundaries; no copied observer or FSM",
+    "finding": "initial fixture /var alias corrected only in fixture; raw preserved"
+  }
+}

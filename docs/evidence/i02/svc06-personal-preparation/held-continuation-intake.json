@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-07T14:00:51.129354+00:00",
+  "base": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+  "kind": "bounded-reviewed-svc06-archive-intake",
+  "sourceManifests": [
+    {
+      "commit": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation-delta.json",
+      "sha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a"
+    },
+    {
+      "commit": "9491e03e9b27241c397b0f048cffa90dc0810ad9",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/result-manifest.json",
+      "sha256": "12e379a90b8d4eaa7d1db7fe63186e97b41d9050dff513b8d216d6b64d85bfbe"
+    },
+    {
+      "commit": "5fe45ea0448d1386082cab81b273cc6b3a609bc2",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json",
+      "sha256": "af3d73d5a6693cf5724e972de9434d3ec19073f7f07fd7b61679e2980d314a3d"
+    },
+    {
+      "commit": "9f004c6ab7ea34cc679b774ea7911c7053bfb3fa",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/result-manifest.json",
+      "sha256": "710641080afe65260ad3f830175d68f5aa5b1ae36383aece8253d297fdc9485c"
+    },
+    {
+      "commit": "77f209c1e3cf4d31243299b6bc1543d22a6ccd67",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/manifest.json",
+      "sha256": "7f3b3841abb20bc3d445ea1f27a21e109e52faf463a7b7a541bd47afca643038"
+    },
+    {
+      "commit": "e7d50fe3c7fcbdc65760d3c82e463c47fda9f048",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json",
+      "sha256": "5373429039d5d87ddaf5e7c652be7cb6d97fdde3eb22fdaecfcac12384add0c7"
+    },
+    {
+      "commit": "acbdc40358a858256967a7322109331a28f4a2fb",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result-manifest.json",
+      "sha256": "9e9ab8c2df7bf1064a8af76f0ab0345f892adee8853b32ae5555363753eca34b"
+    }
+  ],
+  "selectedUniquePaths": 142,
+  "selectedBytes": 567050,
+  "writtenPaths": 136,
+  "alreadyIdentical": 6,
+  "rules": [
+    "Each bound byte/sha checked against its fixed Git commit before write.",
+    "Later already-reviewed source bindings supersede the same-path historical sources; original manifests and original Git blobs remain unchanged.",
+    "No personal originals, root production tools, historical WT tools or runtime dependencies copied.",
+    "This is a consumed operator archive, not permission or a relocatable live replay entrypoint."
+  ],
+  "latestSixSourceCommit": "f6869670963387ead92d800bd6c92fb51f0f5a1a",
+  "sourceOverrides": {
+    "5fe45ea0448d1386082cab81b273cc6b3a609bc2": [
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/README.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/reader.test.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/take-receipt.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/take-request.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-outer-1.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-r2-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-r2-outer-1.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-r2-outer-2.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-r2-outer-3.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-r2-result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/validation-result.json"
+    ],
+    "77f209c1e3cf4d31243299b6bc1543d22a6ccd67": [
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/RESULT.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/conclusion.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/observation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/read.mjs"
+    ],
+    "9491e03e9b27241c397b0f048cffa90dc0810ad9": [
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/result-manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/RESULT.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-before-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-before-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-before.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/maintenance-deadline.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/reservation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/result-analysis.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/stop.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-execution-admission.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json"
+    ],
+    "9f004c6ab7ea34cc679b774ea7911c7053bfb3fa": [
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/result-manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/RESULT.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/bootstrap-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/bootstrap-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/maintenance-deadline.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/operation-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/operation-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/preflight-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/preflight-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/preflight.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/reservation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/result-analysis.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/stop.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-r4-execution-admission.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json"
+    ],
+    "acbdc40358a858256967a7322109331a28f4a2fb": [
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/run.py",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/plan.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/Interface.md",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result-manifest.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/checkpoint.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-before.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-final.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/facts-paused.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/fresh.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-before.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-fresh.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-paused.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/history-retired.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-intent.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold-stop.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/hold.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/maintenance-deadline.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/operation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/paused-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/paused-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/refresh-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/refresh-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/reservation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/resume-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/resume-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retire-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retire-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/intent.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/pre-rename-confirmation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-audit/result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement-private-bindings.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/retirement.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-start.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-launch.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-continuation-r1-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-continuation-r1-wrapper.stderr",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-wrapper-exit.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/personal-held-return.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md"
+    ],
+    "c36f4a8109c9a75cda42a34aba27f778784f6f14": [
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation-delta.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/partial-actual-independent-review.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/remaining-arguments-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/remaining-arguments-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/remaining-entrypoints-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/remaining-entrypoints-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/remaining-result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection-repair/result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-idle.test.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-deadline.test.py",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-first-independent-review.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/outer-1.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/outer-2.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/result.json"
+    ],
+    "e7d50fe3c7fcbdc65760d3c82e463c47fda9f048": [
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.test.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-outer-1.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-outer-2.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-outer-3.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-outer-4.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller-local-result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/final-import-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/final-import-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/final-import-result.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/local-invocation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/local-outer.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/local-result.json"
+    ],
+    "f6869670963387ead92d800bd6c92fb51f0f5a1a": [
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.json",
+      "docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs"
+    ]
+  },
+  "checks": {
+    "engineeringRerun": 0,
+    "personalIO": 0,
+    "provider": 0
+  },
+  "alreadyIdenticalBoundary": "pre-write I02 working copy, including 6 exact reviewed files restored earlier in the same intake; not 6 paths already in ae850",
+  "independentReview": {
+    "reviewer": "native_center_owner / GPT-6 Astra",
+    "decision": "APPROVED_BOUNDED_ARCHIVE_INTAKE_AND_DOCS",
+    "metadataTarget": "f6869670963387ead92d800bd6c92fb51f0f5a1a",
+    "findings": [],
+    "verifiedArchiveFiles": 142,
+    "verifiedBytes": 567050,
+    "manifestCount": 7,
+    "sourceClosure": "Latest6=f686; separate reader=c51 and core4=0f589 all exact",
+    "reviewerReruns": 0,
+    "personalReads": 0,
+    "reviewedBeforeClarificationSha256": "ba8061205b9539f109516528778dcb363ae97cbb23b4f505b78d059c395fb04c"
+  },
+  "additionalExactSources": {
+    "c51bffb4f91a33eeb16d637449c0618cc99040e8": [
+      "docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs"
+    ],
+    "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0": [
+      "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs",
+      "docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.test.mjs",
+      "docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs",
+      "docs/evidence/svc05-history-compatibility/intent-retirement/retire.test.mjs"
+    ],
+    "d9911cd3": [
+      "docs/quality/local-validation-svc06-personal-window-20261007.json",
+      "plans/flow-001-architecture/status.md",
+      "plans/ops-001-status-review/status.md"
+    ]
+  }
+}

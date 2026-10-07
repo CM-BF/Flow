@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-10-07T12:40:13.849388+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra, independent of operator",
+  "target": "0455baa30dab9676b1df807e4c643131cb965244",
+  "decision": "APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE",
+  "findings": [],
+  "manifest": {
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/result-manifest.json",
+    "bytes": 11266,
+    "sha256": "f181dd6423d631dc7e2a15111a7b9a38354ca8ea9c2840a5f01f8ce879b780a9"
+  },
+  "verification": {
+    "fixedCurrentBindings": 41,
+    "bindingBytes": 108130,
+    "declaredPrivateOperatorOriginals": 11,
+    "originalIdentityBytesHashAndCopyEqual": true,
+    "migrationBeforeAfterDifferenceOnly": "at",
+    "beforeAfterWebReplacement": {
+      "centerAndRunnerRecordsUnchanged": true,
+      "configProfileMaintenanceWebPointerUnchanged": true,
+      "stateChangedForWebHost": true,
+      "same5Tasks": true,
+      "unfinished": 0,
+      "uncertain": 0,
+      "protectedTables": 64,
+      "protectedTableDifferences": []
+    },
+    "migrationMs": 23649,
+    "migrationGroup": "newChildSession absent, dualEOF; initial EPERM unknown observations retained",
+    "replacementMs": 16689,
+    "replacementOutcome": "ready,replayed=false,original backendaf51/v18 and d629/v3 retained",
+    "compatibilityImports": 3,
+    "importsExit0OwnedAbsentDualEof": true,
+    "reportsPolicyMs": 4289,
+    "policyBytes": 205,
+    "policyRawSha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a",
+    "contextPolicySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "failure": {
+    "phase": "history-before static ESM linking",
+    "code": "CommonJS Pool named export SyntaxError",
+    "elapsedMs": 62,
+    "exitCode": 1,
+    "moduleBodyExecuted": false,
+    "sqlCalls": 0,
+    "primaryAndRawRetained": true
+  },
+  "notRun": [
+    "maintenance bootstrap/drain",
+    "refresh",
+    "ready-paused preservation gate",
+    "resume"
+  ],
+  "continuation": "Completed migration/replace/import/policy must not replay. Only correct and qualify remaining read-only callable assembly, fresh check installed completed stages, then coordinate remaining maintenance under original authorization. Disk policy is not backend browser-session activation.",
+  "reviewActions": {
+    "tests": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "personalInstallationReads": 0,
+    "serviceActions": 0
+  },
+  "limits": "Read exact declared operator evidence originals only; no fresh observation of current personal services. New Web pid evidence89438 and old group absent are operator checkpoints. clone allocated401969152B/logical367041727B do not establish physical-exclusive bytes. Historical failures and KEEP preserved. Github push timeout pending is separate from local fixed commit."
+}

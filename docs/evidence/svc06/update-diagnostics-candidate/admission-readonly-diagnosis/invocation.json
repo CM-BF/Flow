@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T13:22:51.874196+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/read.mjs"
+  ],
+  "sourceSha256": "2fb341d1235e2b275c12cdf4e006f11d1915b737602042247ae9a5568563a6ea",
+  "budget": {
+    "workSeconds": 55,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "newEvidenceBytes": 262144
+  },
+  "authorization": "Lead bounded read-only diagnosis after R4; no service action or journal mutation"
+}

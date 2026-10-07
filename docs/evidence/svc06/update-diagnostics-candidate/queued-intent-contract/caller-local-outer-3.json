@@ -1,0 +1,33 @@
+{
+  "pid": 74750,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 32,
+  "stdout": "{\"outcome\": \"fixed-seven-calls-available\", \"steps\": [{\"name\": \"fresh\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs\", \"fresh\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1\"], \"cwd\": \"/Users/citrine/Projects/AgentHarness/Flow\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}, {\"name\": \"hold-stop\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs\", \"hold-stop\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1\"], \"cwd\": \"/Users/citrine/Projects/AgentHarness/Flow\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}, {\"name\": \"retire\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs\", \"retire\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1\"], \"cwd\": \"/Users/citrine/Projects/AgentHarness/Flow\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}, {\"name\": \"refresh\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs\", \"refresh\", \"/Users/citrine/.flow-personal\", \"6c0fdcda8858aac33489c48c1948e902dd6a3d7e\", \"\"], \"cwd\": \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 900}, {\"name\": \"paused\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs\", \"paused\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1\"], \"cwd\": \"/Users/citrine/Projects/AgentHarness/Flow\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}, {\"name\": \"resume\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs\", \"resume\", \"/Users/citrine/.flow-personal\", \"\", \"\"], \"cwd\": \"/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}, {\"name\": \"final\", \"argv\": [\"/opt/homebrew/Cellar/node@24/24.20.0/bin/node\", \"--import\", \"/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs\", \"final\", \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1\"], \"cwd\": \"/Users/citrine/Projects/AgentHarness/Flow\", \"ownership\": \"childPidOnly\", \"maximumWorkSeconds\": 60}], \"personalIO\": 0}\n",
+  "stderr": "",
+  "observed_bytes": 4354,
+  "retained_bytes": 4354,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

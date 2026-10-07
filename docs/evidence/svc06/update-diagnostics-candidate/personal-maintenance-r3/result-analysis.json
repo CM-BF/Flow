@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07T13:07:44.641815+00:00",
+  "window": "svc06-personal-7d1-20261007-1306",
+  "outcome": "FAILED_READ_ONLY_COMPATIBILITY_OBSERVATION_BEFORE_MAINTENANCE",
+  "reservationAt": "2026-10-07T13:05:06.328778+00:00",
+  "stoppedAt": "2026-10-07T13:05:06.750720+00:00",
+  "firstCode": "WEB_COMPATIBILITY_INVALID",
+  "firstPhase": "facts-before",
+  "outer": {
+    "pid": 97737,
+    "exitCode": 1,
+    "elapsedMs": 494,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": []
+  },
+  "factsChild": {
+    "pid": 97738,
+    "exitCode": 1,
+    "elapsedMs": 418,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": []
+  },
+  "completed": [],
+  "maintenanceCalls": 0,
+  "providerQueries": 0,
+  "personalMutations": 0,
+  "productSQL": 0,
+  "personalReads": "The facts helper read private configuration/state and process/release metadata before refusing compatibility; no credential value or user body printed/copied. Complete snapshot unavailable.",
+  "diagnosis": {
+    "basis": "Fixed source plus previously stored R2 imports/C3 original report; no new personal probe",
+    "oldFacts": "center-recovery-af51/facts.mjs:71-79 scans legacy af51 compatibility before constructing Pool",
+    "oldReader": "personal-history-compatibility/tools/personal-preview/web-release.mjs:18 format1 only; :71-77 sorts IDs and suppresses COMBINATION_UNKNOWN only",
+    "newReport": {
+      "id": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "bytes": 791,
+      "format": 2,
+      "policy": "flow-web-api-v2",
+      "backendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+      "contextDigest": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    },
+    "implication": "The fixed legacy reader rejects the known newly imported format2 report before reaching matching af51 legacy report. This is not evidence of App incompatibility or active browser-policy configuration."
+  },
+  "limits": [
+    "Only two exact supervised child PIDs confirmed absent and dual EOF; no inference that detached personal roles stopped.",
+    "No completed full personal facts or new DB snapshot in this segment; prior R2 state is historical reference, not a new successful observation.",
+    "R2 migration/Web host/report/policy remain consumed; no retry, rollback, deletion or replay.",
+    "All new namespace/raw retained; subsequent maintenance requires a corrected reviewed reader and fresh window."
+  ]
+}

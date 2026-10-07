@@ -1,0 +1,173 @@
+{
+  "at": "2026-10-07T12:57:55.237986+00:00",
+  "decision": "PENDING_DELTA_REVIEW_IDLE_AND_OUTER_DEADLINE",
+  "previousTarget": "0107daee84d2e8234e35ab500a593b61af159f96",
+  "previousReview": "continuation-first-independent-review.json",
+  "sourceBindings": [
+    {
+      "path": "history-projection.mjs",
+      "bytes": 6842,
+      "sha256": "ccdcd30bcc51affd4a8a1e2d8e8c1718de3f60594330be2359842fa5b438016a"
+    },
+    {
+      "path": "maintenance-continuation.mjs",
+      "bytes": 13579,
+      "sha256": "fa1ab8c670af1f58f0aade1e54198cf958870cb9f8d35ba60cb9226d967a08c4"
+    },
+    {
+      "path": "maintenance-continuation.py",
+      "bytes": 7268,
+      "sha256": "a4a2516d3e38615ff15b6c34667a93b307200e57a41dd2f7c566ef9feefe958a"
+    },
+    {
+      "path": "maintenance-continuation.json",
+      "bytes": 20259,
+      "sha256": "09f8c94cfb5b6c64cd8ee264ceb72ca471236b9b8723935b1922da59f9c0f1d4"
+    },
+    {
+      "path": "maintenance-continuation.md",
+      "bytes": 8300,
+      "sha256": "4d7bc9f69c72494d9aa99b42e92a2b5b8493b71186fc4dba25670adcaca3fe3a"
+    },
+    {
+      "path": "partial-actual-independent-review.json",
+      "bytes": 2835,
+      "sha256": "b1d882b124892ce93bc57e10254e17b3d00f15da3572b73d7cb84c4cad802ada"
+    },
+    {
+      "path": "history-projection-repair/invocation.json",
+      "bytes": 527,
+      "sha256": "1e9f83484844373189d4d5353435b0bb93b89f2f32a1118ef5b64ca5af410649"
+    },
+    {
+      "path": "history-projection-repair/outer.json",
+      "bytes": 789,
+      "sha256": "fea663c6dbff01864c4a106aa5d0ec48e871cdedd7b46a856d5a8b395f21951d"
+    },
+    {
+      "path": "history-projection-repair/remaining-arguments-invocation.json",
+      "bytes": 1032,
+      "sha256": "fa75490251d2c65c19c8503f535a1324ca25ee7c1308a0c46f2a2d7a169f32c4"
+    },
+    {
+      "path": "history-projection-repair/remaining-arguments-outer.json",
+      "bytes": 625,
+      "sha256": "0acf5cbd3a40ad04a7f0299aa880db318e27affb9f0c0765348c77b5b1271795"
+    },
+    {
+      "path": "history-projection-repair/remaining-entrypoints-invocation.json",
+      "bytes": 1078,
+      "sha256": "32c511a3bd786cab2687bce0662834d3bfef7f37985d23327972091dca323a56"
+    },
+    {
+      "path": "history-projection-repair/remaining-entrypoints-outer.json",
+      "bytes": 1042,
+      "sha256": "e95495f0e180f1c4f688e085608f8f8161916c807d71b9c283c1a7928cb0f549"
+    },
+    {
+      "path": "history-projection-repair/remaining-result.json",
+      "bytes": 440,
+      "sha256": "941de3c290e11d4d039ef5eecd9bf51aa3fef30fa0f098a5ee38be87d04b811a"
+    },
+    {
+      "path": "history-projection-repair/result.json",
+      "bytes": 732,
+      "sha256": "6d80dbdc16afe35f6caebd0346169af1ab027e52aeb80d5aad0e98990163b29a"
+    },
+    {
+      "path": "candidate.md",
+      "bytes": 27832,
+      "sha256": "62047adf836cc1c9c55baa3e72671269d7b6f4d15c8f054f09d71bed3b68ec76"
+    },
+    {
+      "path": "maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "continuation-idle.test.mjs",
+      "bytes": 3650,
+      "sha256": "fb1e3f4b2b5192ed8e54a295f4a65919e6da5e2578c23eb4823221f92353c69a"
+    },
+    {
+      "path": "continuation-deadline.test.py",
+      "bytes": 1788,
+      "sha256": "433fd79a1be5aa6ce321c926dc4587eb22229a880f4b712d3dd5c1122dd84c4b"
+    },
+    {
+      "path": "continuation-first-independent-review.json",
+      "bytes": 2219,
+      "sha256": "f2847e2c870e4cb20578f889c7864b6070799b4129fd4f0679428c54bd14f237"
+    },
+    {
+      "path": "continuation-guard-repair/invocation.json",
+      "bytes": 1804,
+      "sha256": "24f8a344713a038f47b17cf56979b52456830cfea7897bf31d6bd8d572f8e3b2"
+    },
+    {
+      "path": "continuation-guard-repair/outer-1.json",
+      "bytes": 1158,
+      "sha256": "ef61826e0eccfa9277dfa609a7a517f07196ed8269288b57fc35c934b24ccb43"
+    },
+    {
+      "path": "continuation-guard-repair/outer-2.json",
+      "bytes": 697,
+      "sha256": "51bae920dbfd74fabd14e759b0d1e2d9a00a43c48930727069b579495422ccda"
+    },
+    {
+      "path": "continuation-guard-repair/result.json",
+      "bytes": 474,
+      "sha256": "58118a9620f6e9e44668dfa311912d890fb9ebc9ca0500c1b5b0c38a7a89f33b"
+    }
+  ],
+  "totalBytes": 107654,
+  "inherits": {
+    "migrationInputsSha256": "f077d544b7eefc313761208f4b7c7d53c9850c8e35671666a9680190f6a607bd",
+    "completedR2ManifestSha256": "f181dd6423d631dc7e2a15111a7b9a38354ca8ea9c2840a5f01f8ce879b780a9",
+    "completedR2Target": "0455baa30dab9676b1df807e4c643131cb965244"
+  },
+  "observerClosure": "8 extra pins in maintenance-continuation.json, no retirement writer imported",
+  "actualPersonalContinuation": "NOT_RUN",
+  "checks": {
+    "previous": {
+      "elapsedMs": [
+        89,
+        31,
+        487
+      ],
+      "rawBytes": 762,
+      "ownedGroupsAbsent": 3,
+      "dualEof": 3,
+      "tmpCreated": 0,
+      "PG": 0,
+      "personalIO": 0
+    },
+    "delta": {
+      "startedAt": "2026-10-07T12:56:09.382108+00:00",
+      "endedAt": "2026-10-07T12:56:09.814515+00:00",
+      "reports": 2,
+      "exitCodes": [
+        0,
+        0
+      ],
+      "elapsedMs": 430,
+      "rawBytes": 707,
+      "groupsAbsent": true,
+      "dualEOF": true,
+      "scratch": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/svc06-continuation-guards-w8b13g5j",
+        "dev": "16777234",
+        "ino": "124150664",
+        "emptyRemoved": true
+      },
+      "personalIO": 0,
+      "PG": 0,
+      "provider": 0
+    }
+  },
+  "quality": {
+    "at": "2026-10-07T12:57:55.238364+00:00",
+    "scope": "idle gate + procedural deadline only",
+    "method": "Reused strict original reader and OPS14, fixed namespace/inventory, no copied FSM or supervision loop; exact unknown boundaries and safe output; no unresolved author finding."
+  }
+}

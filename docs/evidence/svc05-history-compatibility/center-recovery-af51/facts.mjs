@@ -38,7 +38,12 @@ export async function source() {
   const dirty = (await execute('git', ['-C', repository, 'status', '--porcelain'], opts)).stdout.length !== 0;
   return { head, dirty };
 }
-export async function snapshot() {
+// The default remains the historical reader; callers may bind a newer read-only decoder.
+export function readRetainedCompatibility(input, reader = findWebCompatibility) {
+  if (typeof reader !== 'function') throw Error('COMPATIBILITY_READER_REQUIRED');
+  return reader(input);
+}
+export async function snapshot({ findCompatibility } = {}) {
   const st = await lstat(root);
   if (!st.isDirectory() || st.isSymbolicLink() || (st.mode & 0o777) !== 0o700 || st.uid !== process.getuid() || await realpath(root) !== root) throw Error('ROOT_IDENTITY');
   const facts = { at: new Date().toISOString(), rootIdentity: { dev: st.dev, ino: st.ino }, files: {}, processes: {}, source: await source(), httpRequests: 0 };
@@ -71,7 +76,7 @@ export async function snapshot() {
   const release = await readWebRelease(root); facts.release = release; facts.retained = [];
   for (const artifact of release.artifacts) {
     const verified = await verifyWebArtifact({ directory: root, artifact });
-    const compatibilityId = await findWebCompatibility({ directory: root, artifact, backendHead: target });
+    const compatibilityId = await readRetainedCompatibility({ directory: root, artifact, backendHead: target }, findCompatibility);
     facts.retained.push({ artifact, totalBytes: verified.manifest.totalBytes, files: verified.manifest.files, compatibilityId });
   }
   const require = createRequire(new URL('../../../../package.json', import.meta.url));

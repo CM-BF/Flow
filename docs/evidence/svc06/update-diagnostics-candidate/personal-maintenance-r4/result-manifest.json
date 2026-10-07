@@ -1,0 +1,194 @@
+{
+  "at": "2026-10-07T13:21:45.905888+00:00",
+  "decision": "PENDING_INDEPENDENT_RESULT_REVIEW",
+  "preparation": {
+    "source": "4916591ba89b2999404e3d13814968180594da98",
+    "helper": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+    "manifestSha256": "af3d73d5a6693cf5724e972de9434d3ec19073f7f07fd7b61679e2980d314a3d",
+    "planSha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824"
+  },
+  "bindings": [
+    {
+      "path": "personal-maintenance-r4/RESULT.md",
+      "bytes": 1654,
+      "sha256": "19d12431f5a0c1cb9224007ce0f57e4220d932b1ff31a4aec20962a638632965",
+      "dev": "16777234",
+      "ino": "124159883",
+      "mode": "0o644"
+    },
+    {
+      "path": "personal-maintenance-r4/bootstrap-invocation.json",
+      "bytes": 571,
+      "sha256": "50d95d2af547c6770aafd426c135cfe0879c2394aec2d4ff0eaa5e6e29713541",
+      "dev": "16777234",
+      "ino": "124158976",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/bootstrap-outer.json",
+      "bytes": 672,
+      "sha256": "8b52db30a74015ba113f3030ae77a5399bf1f24adab645b8815aa3d22e4e0438",
+      "dev": "16777234",
+      "ino": "124159010",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/facts-before-invocation.json",
+      "bytes": 580,
+      "sha256": "e196e21ebdf7c9ec21526b6b772768b333ebbb79cc8e885ba4388d0001dd7ae1",
+      "dev": "16777234",
+      "ino": "124158796",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/facts-before-outer.json",
+      "bytes": 528,
+      "sha256": "b13d3d37195dab81238cadd637bc00a9feb52008efdea7fcb3c026c1f4bffcb3",
+      "dev": "16777234",
+      "ino": "124158803",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/facts-before.json",
+      "bytes": 30110,
+      "sha256": "b30fb17553542b2d577558f8e3e2d5fce6a70a9120a9d631396bd6a8f4c2016e",
+      "dev": "16777234",
+      "ino": "124158802",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/history-before-invocation.json",
+      "bytes": 584,
+      "sha256": "d3f165a69063a77ed83fd6ba35f0df2e5cdb4ed933a6a8b61513507c562b33ad",
+      "dev": "16777234",
+      "ino": "124158973",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/history-before-outer.json",
+      "bytes": 548,
+      "sha256": "601b37344009ed3041381b0b8cdbfa82581cc6d93408bba5a2153f224040f12d",
+      "dev": "16777234",
+      "ino": "124158975",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/history-before.json",
+      "bytes": 21923,
+      "sha256": "0c324d6f22b4ea966facf0d76bc799e8e823be16543debaf8d92e3291035df8c",
+      "dev": "16777234",
+      "ino": "124158974",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/maintenance-deadline.json",
+      "bytes": 166,
+      "sha256": "116ca315cdfa99e43d61245f72ee19a607249892294dca3aac25365a32cbc054",
+      "dev": "16777234",
+      "ino": "124158795",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/operation-invocation.json",
+      "bytes": 654,
+      "sha256": "06cd21294d3278cbcaae7a0baf29eb7f4be43069458af2ea511575ebd8d4e277",
+      "dev": "16777234",
+      "ino": "124159011",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/operation-outer.json",
+      "bytes": 511,
+      "sha256": "1ff72b0329a6635f8d83277f8607ebdee929a2c00302cab894e02ce24913e34a",
+      "dev": "16777234",
+      "ino": "124159013",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/preflight-invocation.json",
+      "bytes": 564,
+      "sha256": "c32305235b3c7b03c5965182b69913af0199b70b510e6cec496c93cc5d98234d",
+      "dev": "16777234",
+      "ino": "124158804",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/preflight-outer.json",
+      "bytes": 389,
+      "sha256": "95516315048d4f552066d2dc1f36b10f650333a30c9b2479bdc916d9a66ee31b",
+      "dev": "16777234",
+      "ino": "124158972",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/preflight.json",
+      "bytes": 1576,
+      "sha256": "d721de282ffa6f915e27653e2b7d71d1eb789478998324c8dda4f3d17035ec31",
+      "dev": "16777234",
+      "ino": "124158971",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/reservation.json",
+      "bytes": 265,
+      "sha256": "1ecb97d052048ec05915dcc5219f09573e8aaaa6b3b82044df5b76b340509bc3",
+      "dev": "16777234",
+      "ino": "124158794",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4/result-analysis.json",
+      "bytes": 4649,
+      "sha256": "a82199886956e844a2a7f0238f4f315577815a623d49ea62880c50686ebccfe3",
+      "dev": "16777234",
+      "ino": "124159882",
+      "mode": "0o644"
+    },
+    {
+      "path": "personal-maintenance-r4/stop.json",
+      "bytes": 323,
+      "sha256": "1bddfcb58abb3d58f263c99b1fa6cac6dddef14ec77ca5fef3cb4ca456ccb580",
+      "dev": "16777234",
+      "ino": "124159014",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r4-outer.json",
+      "bytes": 2140,
+      "sha256": "de9f39c84eda78b2d12b39bc9d1df9300523c71f8b751781e85f4372c2872309",
+      "dev": "16777234",
+      "ino": "124158792",
+      "mode": "0o600"
+    },
+    {
+      "path": "continuation-r4-execution-admission.json",
+      "bytes": 2170,
+      "sha256": "8a0f310c3dbb99654824b71b3cee695415d9c717872a7f722f7999a38e3cb59f",
+      "dev": "16777234",
+      "ino": "124158788",
+      "mode": "0o600"
+    },
+    {
+      "path": "compatibility-reader-repair/independent-review.json",
+      "bytes": 2523,
+      "sha256": "9f56985e00bf83923d71d7dfbb0c428211377459725caeb143cc75dfe82aaa4f",
+      "dev": "16777234",
+      "ino": "124158173",
+      "mode": "0o644"
+    }
+  ],
+  "boundBytes": 73100,
+  "rawFiles": 17,
+  "rawBytes": 62104,
+  "outcome": "STOP_KEEP_NO_RETRY_AFTER_BOOTSTRAP_BEFORE_REFRESH",
+  "completed": [
+    "facts-before",
+    "preflight",
+    "history-before",
+    "bootstrap"
+  ],
+  "bootstrapOperationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+  "refresh": 0,
+  "resume": 0,
+  "completedR2Replayed": false
+}

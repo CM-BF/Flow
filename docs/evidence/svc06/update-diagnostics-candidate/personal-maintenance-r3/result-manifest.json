@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-07T13:07:44.643629+00:00",
+  "decision": "PENDING_INDEPENDENT_RESULT_REVIEW",
+  "preparation": {
+    "target": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+    "manifestSha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a",
+    "planSha256": "09f8c94cfb5b6c64cd8ee264ceb72ca471236b9b8723935b1922da59f9c0f1d4"
+  },
+  "bindings": [
+    {
+      "path": "personal-maintenance-r3/RESULT.md",
+      "bytes": 1064,
+      "sha256": "a502f2580c7ffff8158b5bc64642e70e8bf809d29a35d24b6807c95071b4cea8",
+      "dev": "16777234",
+      "ino": "124154606",
+      "mode": "0o644"
+    },
+    {
+      "path": "personal-maintenance-r3/facts-before-invocation.json",
+      "bytes": 582,
+      "sha256": "f26519ed77aee5afa35e787f7c06ce4778bd7713edd63df2b4417a7711fcc7d5",
+      "dev": "16777234",
+      "ino": "124153627",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3/facts-before-outer.json",
+      "bytes": 687,
+      "sha256": "5d495cdcb86f6fb2ef58c27861af8817d8807e66c2989af942dc080202f71be2",
+      "dev": "16777234",
+      "ino": "124153632",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3/facts-before.json",
+      "bytes": 66,
+      "sha256": "ca80d39e07fa0d1bbd52decb0b325ac52cb374984329b4a5d9976681773ba945",
+      "dev": "16777234",
+      "ino": "124153631",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3/maintenance-deadline.json",
+      "bytes": 166,
+      "sha256": "1d1983213d176e106ffd4f353b22486d1430b5ed0b96cecda4b3f85283380bf9",
+      "dev": "16777234",
+      "ino": "124153626",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3/reservation.json",
+      "bytes": 265,
+      "sha256": "5456fae1052863dbcb7bff2697d94adf02431827745cc2b5b029b8fa422e0c8b",
+      "dev": "16777234",
+      "ino": "124153625",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3/result-analysis.json",
+      "bytes": 2529,
+      "sha256": "e41cda143b54f5540462e3cafe0ce9d5477e3f0e5e40358ab84fabc4c16514c9",
+      "dev": "16777234",
+      "ino": "124154605",
+      "mode": "0o644"
+    },
+    {
+      "path": "personal-maintenance-r3/stop.json",
+      "bytes": 268,
+      "sha256": "ef55c897fc990523f6f64e0dcf7f38417206839ac941b573acf56254dc77f50c",
+      "dev": "16777234",
+      "ino": "124153633",
+      "mode": "0o600"
+    },
+    {
+      "path": "personal-maintenance-r3-outer.json",
+      "bytes": 1576,
+      "sha256": "1e3420e30802c67e6ec2af2e6ff32171091340afecb7841f30d8cc09660dc8a2",
+      "dev": "16777234",
+      "ino": "124153623",
+      "mode": "0o600"
+    },
+    {
+      "path": "continuation-execution-admission.json",
+      "bytes": 855,
+      "sha256": "0420415457c9ac49e4d6a7ea0faa7e93fde6a7a79e8b9ac3422923b94b7b86cb",
+      "dev": "16777234",
+      "ino": "124153617",
+      "mode": "0o644"
+    },
+    {
+      "path": "continuation-delta-independent-review.json",
+      "bytes": 2805,
+      "sha256": "4e676365dbbb8497e39020bbf3d6627a4cf2d7176ad69b3fd69937a25d0e999a",
+      "dev": "16777234",
+      "ino": "124153122",
+      "mode": "0o644"
+    }
+  ],
+  "boundBytes": 10863,
+  "rawFiles": 7,
+  "rawBytes": 3610,
+  "outcome": "FAILED_READ_ONLY_COMPATIBILITY_OBSERVATION_BEFORE_MAINTENANCE",
+  "completed": [],
+  "actualMaintenance": "NOT_RUN",
+  "completedR2Replayed": false
+}

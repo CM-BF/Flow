@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T12:46:11.452582+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+    "--check-invocations"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "planSha256": "0c06bf2ed2da895409d4ce00edf8b66d90fd8c559427ba988da822aaa838ab06",
+  "sourceBindings": [
+    {
+      "path": "history-projection.mjs",
+      "bytes": 6842,
+      "sha256": "ccdcd30bcc51affd4a8a1e2d8e8c1718de3f60594330be2359842fa5b438016a"
+    },
+    {
+      "path": "maintenance-continuation.mjs",
+      "bytes": 11229,
+      "sha256": "afa346cfa743ee792ab2a24aa8295375cdf856943e6a1e3190dcc3f2451d63dc"
+    },
+    {
+      "path": "maintenance-continuation.py",
+      "bytes": 7081,
+      "sha256": "96a34b4f31125643020dad234802bc7cb1d239484096588643f42507e3568031"
+    }
+  ],
+  "personalIO": 0,
+  "PG": 0
+}

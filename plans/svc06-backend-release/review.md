@@ -1,3 +1,7 @@
+## 2026-10-07 12:47:40 UTC：R2限定独审接收与剩余调用待审
+
+[原样R2review](../../docs/evidence/svc06/update-diagnostics-candidate/partial-actual-independent-review.json)限定批准结果真实性、非后台更新；本次[剩余调用](../../docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md)单独待审，0个人/PG重跑，原失败不改。
+
 ## 2026-10-07 12:37 UTC：个人 R2 部分完成结果待独审
 
 [唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/RESULT.md) / [manifest](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/result-manifest.json)。固定 source5c29 不改；迁入、Web-only replace、三报告与策略实际完成，后续观察静态链接失败，maintenance 未执行。作者不自审；原 R1 与所有原件 KEEP，完成阶段不得重放。
@@ -187,3 +191,33 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 旧 e4cd0bf2da3a52d7bb0facab6cfc70c671b605d4 为 REQUEST_CHANGES（P2：仅procedure ports、旧private caller要求webHost null，缺本次可调用装配）。source 30ce7eac3405e654007abdf7a7a2ff05854200d6 补固定c7b→7d1实际ports与原clone/no-replace/双锁、完整验证；原9纯用例通过不替代个人部署。唯一 reviewer native_center_owner 待固定包增量审；原44entry/15C3reports已核范围不重审，所有旧失败/unknown不改。
 
 迁入修复中第二个P2（native静态审）：30ce新增runner查询未限定schema；最终 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 只修flow.runners与真实Pool port接缝，新增1直接纯例通过、不重跑原9、不访问PG。原finding保留，固定delta仍待native唯一复审。
+
+
+## 0107续接准备独审与窄修
+
+原[continuation-review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-first-independent-review.json)绑定0107：REQUEST_CHANGES，本地idle门1P2及900秒外层期限澄清。原件保留；当前仅补原严格idle reader/固定历史清单/同op确认与独立OPS14外层，5+2零个人I/O检查通过。新delta待Execution Lead独审；无实际后台更新。
+
+
+## c36续接准备增量独审 APPROVED
+
+2026-10-07T13:02:21.326961Z，Execution Lead（非作者）[APPROVED_REMAINING_MAINTENANCE_PREPARATION](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)，target c36f4a8109c9a75cda42a34aba27f778784f6f14；P2关闭，原0107审查保留。23bindings107654B+8原observer pins核同，7原例430ms，不重测、不个人读取。限定准备批准，实际个人剩余维护仍未运行。
+
+## R3结果限定批准与reader修复待审
+
+[R3独审原件](../../docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json)：APPROVED_LIMITED_R3_FAILURE_FIDELITY，0重跑；个人只读发生、0SQL、两直属PID absent/EOF，不证明服务全组状态。新source `4916591ba89b2999404e3d13814968180594da98` 与helper c51待Lead唯一差量审查；原失败及R2已消费阶段不改。
+
+## reader修复唯一独审批准
+
+2026-10-07T13:17:39.490305Z，Execution Lead独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR，无P1/P2；[原件](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json)绑定491/5fe/c51、18项90210B。批准仅准备，实际剩余维护待新窗口/fresh gates；原R2已完成阶段、R3只读失败/KEEP保持。作者仅转录，不重跑。
+
+## 保留排队的精确intent合同（2026-10-07）
+
+独立reviewer native_center_owner 已只读批准 secondary source `0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0` 四文件的限定guard/实际SQL生产者；旧默认pending0保持，12/12原记录核读、0reviewer运行/个人访问。本结论不批准现场操作。实际caller source `ec9c775462de61487836665973e792b4b15d616d` / delivery `e7d50fe3c7fcbdc65760d3c82e463c47fda9f048` 已交其唯一审查，manifest与原件在 [queued-intent-contract](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json)。原R4失败、drain19、旧claim结果UNKNOWN均不改。
+
+## 个人同operation续接唯一实际结果批准
+
+2026-10-07T13:56:33.910561Z，native_center_owner / GPT-6 Astra（非作者）`APPROVED_HELD_CONTINUATION_RESULT_FIDELITY`，无P1/P2。唯一[I02正式原件](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)固定于 `84d43d931bf1dc3498f562b93e00915d760e6ba4`；作者直接引用，不再复制raw或重制manifest。target `acbdc40358a858256967a7322109331a28f4a2fb`，source ec9c7754/core0f589，manifest16266B/SHA9e9ab8c2df7bf1064a8af76f0ab0345f892adee8853b32ae5555363753eca34b。
+
+53绑定302141B/42raw219088B fixed/current全同。接受七阶段实际hold20、原primitive精确intent退休、7d1/source6c刷新、旧三组停止/64表旧列保持的paused checkpoint、显式resume21及新三role运行；恢复后原queued自然running/newattempt是保存事实，operator0query不等于用户自然工作0query。原UUID结果及完整requestId/中心receipt/本地assignment链UNKNOWN保留。reviewer0新个人路径读取、0原intent正文读取、0测试/服务/provider。
+
+03/04按原范围完成；05个人部署/保留已实证并获本次批准，本批main接收待Lead，完整领取链与父FLOW总验收不冒完成。原R1–R4、Web显式stop exit1和其他历史未知不改；不因本批准再运行任何已消费阶段。

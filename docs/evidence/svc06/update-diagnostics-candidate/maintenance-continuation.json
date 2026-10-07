@@ -1,0 +1,420 @@
+{
+  "format": 1,
+  "purpose": "Continue only unconsumed maintenance after fixed R2 partial result; no migration/replace/import/policy-write entry",
+  "directory": "/Users/citrine/.flow-personal",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "sourceArtifactRoot": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+  "rootMaintenanceModule": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+  "sourceArtifactMaintenanceModule": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
+  "factsModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+  "runDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
+  "initialVersion": 18,
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "policySha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a",
+  "policyPin": {
+    "directory": "/Users/citrine/.flow-personal",
+    "rootDev": "16777234",
+    "rootIno": "117819905",
+    "file": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "uid": "501",
+      "mode": "33152",
+      "nlink": "1",
+      "bytes": "205",
+      "modifiedNs": "1791376463623390214",
+      "changedNs": "1791376463623390214",
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    }
+  },
+  "hostSourceDigest": "28c52113cf11e0b059b08e8fe0055b6afc96724948b5168ceda15e28b8bf0c0a",
+  "reportIds": [
+    "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+    "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+    "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+  ],
+  "inputs": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-inputs.json",
+    "sha256": "f077d544b7eefc313761208f4b7c7d53c9850c8e35671666a9680190f6a607bd"
+  },
+  "completedResult": {
+    "commit": "0455baa30dab9676b1df807e4c643131cb965244",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/result-manifest.json",
+    "sha256": "f181dd6423d631dc7e2a15111a7b9a38354ca8ea9c2840a5f01f8ce879b780a9"
+  },
+  "budget": {
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "privateAddedBytes": 536870912,
+    "rawBytes": 2097152,
+    "perPhaseOutputBytes": 65536,
+    "termSeconds": 0,
+    "reapSeconds": 2,
+    "entireOperatorSeconds": 900,
+    "innerFinishReserveSeconds": 5,
+    "outerCaptureBytes": 65536
+  },
+  "steps": [
+    {
+      "name": "facts-before",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-before.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "preflight",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+        "preflight",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 30,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "history-before",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "bootstrap",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "bootstrap",
+        "/Users/citrine/.flow-personal",
+        "",
+        "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 900,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "operation",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+        "operation",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "refresh",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
+        "refresh",
+        "/Users/citrine/.flow-personal",
+        "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+        ""
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+      "maximumWorkSeconds": 900,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "facts-paused",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-paused.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "history-paused",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-paused.json",
+        "--columns-from",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/history-before.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "checkpoint",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+        "checkpoint",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 30,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "resume",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
+        "resume",
+        "/Users/citrine/.flow-personal",
+        "",
+        ""
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+      "maximumWorkSeconds": 900,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "facts-final",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+        "--snapshot",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/facts-final.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 15,
+      "ownership": "childPidOnly"
+    },
+    {
+      "name": "final",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+        "final",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "maximumWorkSeconds": 30,
+      "ownership": "childPidOnly"
+    }
+  ],
+  "checkInvocation": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+    "--check-entrypoints"
+  ],
+  "sourceBindings": [
+    {
+      "path": "history-projection.mjs",
+      "bytes": 6842,
+      "sha256": "ccdcd30bcc51affd4a8a1e2d8e8c1718de3f60594330be2359842fa5b438016a"
+    },
+    {
+      "path": "maintenance-continuation.mjs",
+      "bytes": 13579,
+      "sha256": "fa1ab8c670af1f58f0aade1e54198cf958870cb9f8d35ba60cb9226d967a08c4"
+    },
+    {
+      "path": "maintenance-continuation.py",
+      "bytes": 7306,
+      "sha256": "ef3da33ab5998056c54d3f14921704d90492431cbc0360e0117fab68cbc1a0d5"
+    },
+    {
+      "path": "maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "continuation-facts.mjs",
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
+    }
+  ],
+  "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+  "runnerIdle": {
+    "module": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+    "root": "/Users/citrine/.flow-personal/runner",
+    "baseUrl": "http://127.0.0.1:61227",
+    "namespace": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1",
+    "identity": {
+      "dev": 16777234,
+      "ino": 117819908,
+      "uid": 501
+    },
+    "namespaceIdentity": {
+      "dev": 16777234,
+      "ino": 117819985,
+      "uid": 501
+    },
+    "files": [
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3adae11ef699bc5a6da493b0a7488f4a392b063827a28618834f451a825813e8/claude-result-430e01ea-30b8-495a-98d4-4d43e573f55f.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/3f17ba068480566b261a7133aa56ab695b359b1942730d2c99ef9539bb86debb/claude-result-784cd197-f10e-4b0b-833b-ab11da5a8432.txt",
+        "bytes": 27,
+        "sha256": "af5ff4cc022d0e63215d3a6e0b03bf288c3f5204ee6b1fa121aafe4a74e05631"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/4a3f3cd1b922d835ca83e1f00711fdea80344edbbf55e32856d0777a069ab253/claude-result-0e9affc6-3636-4153-8808-0a9fb2751079.txt",
+        "bytes": 29,
+        "sha256": "271973d4979a0bdfa021f64bf7cc98f77eeffd101b3d1fbcaaf178c4b061b62f"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/d784f9af8945af94d9636738d8ce68e607ffb5120087f1591af02976a907bcd8/claude-result-a9ceb1dc-79a4-4c32-9fce-b8e5f9a06714.txt",
+        "bytes": 9,
+        "sha256": "0648810164264ff1a25a62ff9f9bc5ee1dbd1abaeaaf720108d442e18418cdde"
+      }
+    ],
+    "totalBytes": 140,
+    "baseline": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+    "identitySource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+    "boundary": "Historical identity/files pin, fresh original strict-v1 reader required before refresh. New or changed files stop; no retirement or repair exception."
+  },
+  "observerPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "dev": "16777234",
+      "ino": "123171486",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 6609,
+      "sha256": "b827684f91d78908febd323865d3cf22de342997ec32b2454831e13163b08076"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery/facts.mjs",
+      "dev": "16777234",
+      "ino": "123150756",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 8419,
+      "sha256": "bb4553dbe71d2ac0063137989ab4bb1ebcf6d81d298a62a561aaef489179dc46"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "dev": "16777234",
+      "ino": "123060511",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "dev": "16777234",
+      "ino": "123060517",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "dev": "16777234",
+      "ino": "123060515",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/environment.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/environment.mjs",
+      "dev": "16777234",
+      "ino": "123060505",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/16-resumed.json",
+      "dev": "16777234",
+      "ino": "123210623",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 87590,
+      "sha256": "4af983b4f6e8bd0f15cdda9ef2834dc8c363840da08686e68e6db043a9cf3960"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/run-retirement-release-20261006T212322Z/retirement-request.json",
+      "dev": "16777234",
+      "ino": "123210248",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 3040,
+      "sha256": "f1d0769cba240fa5f2c80f1571c2eee92de03814447a6901ed50020ed1643a70"
+    }
+  ],
+  "execution": {
+    "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+    "arguments": [
+      "--execute-fixed-maintenance",
+      "<Lead actual window ID>"
+    ],
+    "outerOwnership": "childPidOnly",
+    "outerOutcomeScope": "Operator only. Inner phase sessions and detached service identities remain separate; missing phase receipt is UNKNOWN/KEEP, no automatic retry.",
+    "rawFile": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4-outer.json",
+    "rawFileMode": "exclusive 0600, redirect original stdout before launch; no output file overwrite",
+    "deadline": "900 seconds from outer child launch covers binding/fsync; inner work ends at least 5 seconds earlier including reap. No bootstrap/reset."
+  },
+  "factsCaller": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+  "factsReaderPin": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+    "dev": "16777234",
+    "ino": "123287084",
+    "uid": 501,
+    "nlink": 1,
+    "bytes": 9070,
+    "sha256": "e1838ec9cfa2c9b20804d5b2436d3576b5f69a58bb32f971444b2f3deca8f038",
+    "sourceCommit": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+    "previousSha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca",
+    "meaning": "Explicit new continuation pin; original 53 migration pins and R2 inputs unchanged."
+  }
+}

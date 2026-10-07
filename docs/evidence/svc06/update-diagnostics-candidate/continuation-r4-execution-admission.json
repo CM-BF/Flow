@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T13:19:28.653940+00:00",
+  "window": "svc06-personal-7d1-20261007-1320",
+  "windowCommit": "b57e7ab4",
+  "source": "4916591ba89b2999404e3d13814968180594da98",
+  "root": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+  "claimsObservedAt": "2026-10-07T13:19:28.625Z",
+  "claims": [
+    {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs"
+      ],
+      "state": "active",
+      "branch": "codex/personal-history-compatibility",
+      "origin": "new",
+      "taskId": "SVC05H01",
+      "worker": "assignment_review",
+      "claimId": "037f8e52-3c52-422f-bfeb-f32990d716c7",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+      "createdAt": "2026-10-07T13:08:11.847Z",
+      "updatedAt": "2026-10-07T13:08:11.847Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/svc06",
+        "plans/svc06-backend-release"
+      ],
+      "state": "active",
+      "branch": "codex/backend-release",
+      "origin": "new",
+      "taskId": "SVC06",
+      "worker": "assignment_review",
+      "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+      "version": 9,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "createdAt": "2026-10-06T12:42:47.489Z",
+      "updatedAt": "2026-10-07T11:32:29.601Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "planSha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824",
+  "exactPins": 62,
+  "ownBindings": 18,
+  "freeBytes": 21684756480,
+  "composedMinimumFreeBytes": 6953631744,
+  "namespaceAbsent": true,
+  "holderSource": "Lead current exclusive handoff plus fixed b57e7ab4 record; no intervening new-holder message received",
+  "fullPersonalGates": "Original fixed operator facts/preflight/history; not bypassed by this source/resource admission",
+  "noReplayR2": true
+}

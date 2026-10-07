@@ -1,0 +1,33 @@
+{
+  "pid": 74791,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 32,
+  "stdout": "{\"outcome\": \"exact-arguments-validated\", \"phases\": 12, \"personalIO\": 0}\n",
+  "stderr": "",
+  "observed_bytes": 72,
+  "retained_bytes": 72,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

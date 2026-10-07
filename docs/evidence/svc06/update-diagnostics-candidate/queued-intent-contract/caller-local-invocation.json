@@ -1,0 +1,36 @@
+{
+  "start": "2026-10-07T13:40:59.215171+00:00",
+  "source": "06e70f40b8231743a761dfddad12597a2d980ccd",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--import",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+      "--test",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.test.mjs"
+    ],
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--import",
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+      "--check-entrypoints"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/run.py",
+      "--check-invocations"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "--check-invocations"
+    ]
+  ],
+  "totalWorkRemainingMs": 59738,
+  "scratchLimitBytes": 8388608,
+  "rawLimitBytes": 65536,
+  "PG": 0,
+  "personalIO": 0,
+  "provider": 0
+}

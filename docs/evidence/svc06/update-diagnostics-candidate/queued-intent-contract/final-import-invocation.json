@@ -1,0 +1,16 @@
+{
+  "start": "2026-10-07T13:42:05.535087+00:00",
+  "source": "ec9c775462de61487836665973e792b4b15d616d",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/caller.mjs",
+    "--check-entrypoints"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "reason": "new static backendRuntime import + installed verification call; no personal verification invoked",
+  "PG": 0,
+  "personalIO": 0,
+  "provider": 0
+}

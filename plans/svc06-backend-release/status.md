@@ -2,32 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:37:38 UTC；main 7524 固定运行闭包；本次迁入/Web宿主/报告/策略完成，维护前观察入口失败停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:33.910561Z独审原件已固定；七步实际完成并归还，个人后台6c/accepting21；本次结果待main接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04/05尚未全部验收；阶段build/host/独审/main分别见下方原记录。 |
+| 任务时间来源 | 初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04已按原范围完成；05个人部署/保留已通过并独审，本批main接收与完整实际领取链仍待收口。阶段build/host/独审/main分别见下方原记录。 |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；迁入 source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 与产品不改；本次仅 own result/status |
-| 工作树dirty状态 | 本次实际结果/计划正常封存；产品源未变，个人已发生的四阶段见原件，不再声称个人未改 |
+| 工作基线 / HEAD | 原产品3cb/目标产物7d1/source6c不变；当前精确intent续接caller ec9c775462de61487836665973e792b4b15d616d，原core独立0f5891da；root工具上下文ae8500dd |
+| 工作树dirty状态 | actual固定acbdc403已clean/pushed；本次仅plan/status/review正常收口，源码ec9c/core0f589与原raw不变，已消费段不再执行 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 隔离 r2 与 C3 已独审；个人本次迁入/Web-host/3报告/策略完成；维护前只读观察静态链接失败，bootstrap/refresh/resume NOT_RUN |
-| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；本轮结果尚待独审/接收。 |
+| 检查状态 | 已审入口一次真实执行7阶段全部0；outer75906ms/7phase75811ms，监督直属PIDabsent/双EOF；旧三组checkpoint独立全组absent，actualClaimRecovery UNKNOWN |
+| 已集成main状态 / HEAD | R4实际与独审已main9f0fe；当前rootae8500dd管理后继、固定43工具来源不变。个人本次已实际更新到7d1/source6c、accepting21；Webd629/v3及3retained不变。本次actual固定acbdc403已独审APPROVED，尚待受控main接收，不追metadata链。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物和三份兼容报告已迁入，网页宿主已切到新产物；后台保持原版本，维护前数据留存检查失败，更新暂停。 |
-| 下一可用交付 | 修正只读历史摘要入口后，核既有完成阶段并继续后台维护和保留核验。 |
-| 当前阻塞 | ACTIVE: 维护前数据留存检查的模块导入错误；已停止后续并归还窗口，正在修正观察入口。 |
+| 当前产出 | 个人后台已更新，中心已恢复允许接单；恢复前旧数据与排队任务保持，恢复后原排队任务已自然开始运行。 |
+| 下一可用交付 | 将已独立核验的更新与保留记录接收主线；完整领取链尚未核清，不追加任务或模型调用。 |
+| 当前阻塞 | ACTIVE: 本次实际更新记录待主线接收；完整领取链仍未知，原失败和历史未决结果保留。 |
 | 需用户决定 | NONE |
-| Review | 迁入 source 5c29 准备独审 APPROVED；本次部分完成及静态链接失败的原始结果待独审，不扩大隔离/C3批准。 |
+| Review | native_center_owner对acbdc403唯一APPROVED_HELD_CONTINUATION_RESULT_FIDELITY，无P1/P2；I02原件84d43d93；0reviewer个人读取/重测，原R4失败不改。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -35,9 +35,9 @@
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
-| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
-| SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过且限定独审并main657105，C3三App配置兼容已独审；个人仍未验 |
+| SVC06-03 | completed | assignment_review | 真实完整artifact构建/校验/内部解析与三host/checkout拒读实验已限定独审并main；固定个人默认维护入口另有本次实际证据 |
+| SVC06-04 | completed | assignment_review / 独立reviewer | 自有三role refresh/resume、27→35迁移、旧列/指针/策略与失败拒绝已独审并main657105；旧失败、Web stop exit1及UNKNOWN保留 |
+| SVC06-05 | in-progress | assignment_review | C3三App已审；个人7d1/source6c更新、身份/旧数据/配置/Web与三retained保持已实证并独审acbdc403；本批main接收待办，完整实际领取链UNKNOWN，非个人未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -155,7 +155,10 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |
 | SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |
-| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | ONGOING | 审查与资源 | 迁入装配修复待独审/本次窗口；原UPSTREAM已12:13:34.420归还但不预占 | update-diagnostics-candidate/personal-readonly-preparation.json documentChecks及Lead窗口消息 |
+| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | 2026-10-07T12:27:52.330992+00:00 | 审查与资源 | 原等待已随实际窗口结束；R2四阶段完成后12:35:37归还，非持续占用 | update-diagnostics-candidate/personal-actual-r2/window.json / stop.json |
+| SVC06-WAIT-REMAINING-R3 | UNKNOWN | 2026-10-07T13:05:06.328778+00:00 | 审查与资源 | 起点无单独依据；R3只读门失败后13:05:06.750720停止并归还，无维护动作 | update-diagnostics-candidate/personal-maintenance-r3/reservation.json / stop.json |
+| SVC06-WAIT-READER-REVIEW | 2026-10-07T13:15:07.139637+00:00 | 2026-10-07T13:19:32.771546+00:00 | 审查与资源 | 审查和窗口等待已由R4实际启动结束；13:19:54停止归还，未持续占窗 | compatibility-reader-repair/independent-review.json / personal-maintenance-r4/reservation.json / stop.json |
+| SVC06-WAIT-HELD-CONTINUATION | UNKNOWN | 2026-10-07T13:47:33.200098Z | 审查与资源 | core/caller独审与新有限窗口等待已由实际七阶段启动结束；最初等待时刻无单独原件，窗口13:49:09.195637Z归还 | queued-intent-contract/manifest.json / personal-held-start.json / personal-held-return.json |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -362,3 +365,71 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 - 本次新产物迁入、Web-only 宿主替换、三份真实兼容报告导入与 205B 私有浏览器策略写入已完成。
 - 维护前只读历史检查在模块链接阶段因 CommonJS `pg/lib/index.js` 的命名导入失败；本检查 0 SQL，尚未调用 bootstrap / refresh / resume，后台仍为此前已观测的 af51。
 - 原始失败与所有已成功阶段保留；不重放迁入、替换、导入或策略创建，不自动回滚。调用者组 absent / 双 EOF，现场后续步骤停止并归还共享窗口。证据：`docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json`。
+
+## 2026-10-07 12:47:40 UTC：R2结果已审，剩余维护入口固定
+
+[唯一差量说明](../../docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md)绑定小helper与结构化参数；最终0个人I/O的实际Node/tsx导入/参数检查31+487ms，先前CJS构造89ms，3组absent/双EOF，无tmp、PG或维护调用。原R2四阶段不可重放；新namespace只续接bootstrap/refresh/checkpoint/resume，仍待独审/真实窗口。任务总开工UNKNOWN不改。
+
+
+## 续接准备P2定向修正
+
+2026-10-07T12:56:09.814515Z实际本地检查段结束，来源[单份记录](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/result.json)：5+2定向检查通过、430ms/707B、2组absent/双EOF、scratch空已清；0个人I/O/PG/provider。复用原idle reader及固定历史清单，补同drain operation前后status确认、独立外层900秒和内层缺回执UNKNOWN。原R2四阶段不重放，原0107独审P2保留，当前待此最小delta独审与新现场窗口。最初任务开工UNKNOWN、完整任务NOT_COMPLETED不变。
+
+
+## 剩余维护准备独审接收
+
+2026-10-07T13:02:21.326961Z Execution Lead独立批准固定c36f4a8109c9a75cda42a34aba27f778784f6f14，见[唯一原样review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)。23bindings/107654B与8原observer输入已核，P2 idle及whole-operator期限关闭；reviewer0重测/个人I/O。原R2已消费4阶段不重放，bootstrap/refresh/checkpoint/resume仍NOT_RUN，只有新独占窗口与fresh gates符合后才运行。产品/helper源保持c36。
+
+
+## 本次剩余维护实际段
+
+2026-10-07T13:05:02.157476+00:00 获唯一窗口svc06-personal-7d1-20261007-1306；fresh账本v9 active、固定c36/plan09f8/manifest85db与root7524一致，free 21723918336B，新run/outer未存在。下一仅原固定入口执行facts→preflight→history→bootstrap→idle→refresh→checkpoint→resume；实际开始与终态以本次reservation/outer为准。
+
+
+## R3现场只读门停止与归还
+
+2026-10-07T13:05:06.328778Z reservation，13:05:06.750720Z stop，来源[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/RESULT.md)及原raw。facts-before418ms报WEB_COMPATIBILITY_INVALID，whole-operator494ms；两PID各自absent/双EOF/无signals，completed[]，0产品SQL/维护调用/provider。facts已发生个人只读，但完整snapshot失败；旧reader只认format1与已导入C3 format2冲突，不判App不兼容。原R2四阶段未重放，所有raw/namespaceKEEP，独立结果审查待Lead。
+
+## 2026-10-07T13:15:07.139637+00:00：兼容观察接缝修正待审
+
+Source `4916591ba89b2999404e3d13814968180594da98`，helper独立`c51bffb4f91a33eeb16d637449c0618cc99040e8`；[最小差量](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json)。局部13:10:44.126401开始，13:11:07.813455实际清理归还；112ms原红+200ms四例/两入口绿，总312ms/3554B，4组absent/双EOF、2scratch removed。只修fixture canonical路径，不放宽报告guard。0个人I/O/PG/provider；R2四阶段不重放，R3真实只读失败原件及[限定独审](../../docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json)保留。总任务start UNKNOWN/完成NOT_COMPLETED不变。
+
+## 2026-10-07T13:18:09.116638+00:00：reader修复限定独审批准
+
+Lead于13:17:39.490305Z独立APPROVED_LIMITED_COMPATIBILITY_READER_REPAIR；[原样回执](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/independent-review.json)2523B/SHA9f56985e00bf83923d71d7dfbb0c428211377459725caeb143cc75dfe82aaa4f，18绑定及helper单pin核同，reviewer0重测/个人I/O。原4/4+2入口检查、首轮alias失败与53/8继承保持。当前尚无实际窗口，未创建r4 run或读取个人；R2四阶段禁止重放，R3FAIL/KEEP不改。
+
+## 2026-10-07T13:19:28.653940+00:00：R4实际窗口准入
+
+固定svc06-personal-7d1-20261007-1320已交唯一operator；source491/helperc51/原53+8+新增helper、root7524、v9/v1账本和新namespace均fresh核同。实际free 21684756480B高于组合6,953,631,744B；[准入](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-r4-execution-admission.json)。随后仅原一次剩余维护入口，R2四阶段不重放，尚未预判个人门禁/结果；原900+2秒及unknown KEEP保持。
+
+实际R4 operator已启动：2026-10-07T13:19:32.771546+00:00（原reservation）。本窗口holder为assignment_review；按原12phase顺序运行，结果待持久回执，0operator provider。
+
+## 2026-10-07T13:21:45.905888+00:00：R4实际停止与归还
+
+[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4/RESULT.md)：operator21477ms/exit1，facts/preflight/history/bootstrap已完成；真实draining19/op e6550b3c-1f67-4c2c-869d-e84d5e838113，active0/uncertain0。本地strict admission门在operation报RUNNER_ADMISSION_NOT_IDLE，原因细项未持久，不猜成格式变化或实际有工作。refresh/hold/resume均0；当前后台尚未更新，不能重放已消费bootstrap。六直属PID absent/双EOF，无pending invocation；窗口已报Lead归还。没有追加个人probe，未取消任务或清journal；新结果待独立审查。
+
+## 2026-10-07T13:24:09.729278+00:00：一次只读诊断确认未决intent
+
+[原件与边界](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/RESULT.md)：2026-10-07T13:22:52.222Z→2026-10-07T13:22:52.291Z，426ms/exit0/owned组absent/双EOF。admission80B/version1/assignments空/inFlight非null UUID（仅digest）；前后同op/draining19/active0uncertain0。不是schema错误；公开resume也不自动清本地未决intent，因此不冒实际接单恢复。没有journal写入/服务动作/模型调用。原900s截止13:34:53.793Z不变；当前仅等待此精确intent处置语义，已归还运行窗口。
+
+## 2026-10-07T13:25:53.154837+00:00：本次单intent处置提案
+
+[最小提案](../../docs/evidence/svc06/update-diagnostics-candidate/admission-readonly-diagnosis/retirement-proposal.md)固定新cad3/d52摘要、同op/CAS19和真实来源；旧退役zero-pending条件与本次保留queued任务冲突，不能原样套用或伪造计数。旧rootaf51入口与现7524也需受审适配。当前仅提案/静态核读，0新增个人读取/操作；待新语义裁决，不延长原13:34:53.793Z截止。R4结果独审原件按既有记录归档，原FAIL与raw不改。
+
+## 精确未决intent续接实现（2026-10-07 13:29–13:42 UTC）
+
+[Interface/运行顺序](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/Interface.md) / [唯一manifest](../../docs/evidence/svc06/update-diagnostics-candidate/queued-intent-contract/manifest.json)。037f v2 exact scope于13:29:15.075Z已原子领取；新合同只允许完整R4旧列证据与排队状态保持，不要求取消任务，不改变原默认零pending。局部实际1464ms，全部自有组/临时目录已清理。原R4窗口已结束；当前等待新caller独审与fresh受控窗口，不把旧900s延长。未来仅启动/accepting证据不足时actualClaimRecovery=UNKNOWN，完整任务不提前Done。
+
+## 新受控续接实际开工
+
+2026-10-07T13:47:33.200098+00:00：窗口svc06-personal-7d1-held-20261007-1347，fresh claims/71pins/4基线与实际空间通过，启动唯一原固定7阶段；900秒新截止2026-10-07T14:02:33.200098+00:00（另2秒reap）。原R4已结束且不延长，R2/bootstrap不重放。
+
+## 同operation精确处置与实际后台更新（2026-10-07 13:47–13:49 UTC）
+
+[本次RESULT](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/RESULT.md) / [唯一manifest](../../docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result-manifest.json)。新窗口13:47:33.200098Z实际开始，13:48:49.163241Z wrapper退出，13:49:09.195637Z确认并RETURN。hold20→原intent退休→6c refresh→保留checkpoint→resume21全部完成；新三roles运行，旧center/runner/Web全部组停止。新队列任务自然running如实记录，operator0query，actualClaimRecovery=UNKNOWN（未获完整receipt/assignment链），不将本片提升为完整FLOW Done。原4阶段及bootstrap不重放；旧FAIL/KEEP保留。
+
+## 本次实际部署唯一结果独审收口
+
+原件时间2026-10-07T13:56:33.910561Z；native_center_owner唯一`APPROVED_HELD_CONTINUATION_RESULT_FIDELITY`，无P1/P2，I02 fixed `84d43d931bf1dc3498f562b93e00915d760e6ba4` 的[正式记录](../../../m2-integration/docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)。target acbdc403，53绑定302141B、42raw219088B逐字同；0重跑/个人原件读取/服务动作。原raw/manifest不改，不追加现场probe。
+
+按原TODO验收，03产物/checkout独立性、04自有兼容/失败/保留与独审main已完成；05个人实际更新/保留已验且独审，本次main接收尚待Lead。完整领取链未采仍UNKNOWN，原claim outcome和历史失败不被新部署结果追认；任务完成NOT_COMPLETED与父FLOW验收分开。clean-code/计划复核只纠正当前陈述、复用唯一review和原件，历史条目不改，不新建运行器或重复测试。

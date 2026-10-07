@@ -1,0 +1,55 @@
+{
+  "startedAt": "2026-10-07T12:56:09.382108+00:00",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-idle.test.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-deadline.test.py"
+    ]
+  ],
+  "policy": {
+    "cumulativeSeconds": 30,
+    "tmpBytes": 1048576,
+    "rawBytes": 65536
+  },
+  "sourceBindings": [
+    {
+      "path": "maintenance-continuation.mjs",
+      "bytes": 13579,
+      "sha256": "fa1ab8c670af1f58f0aade1e54198cf958870cb9f8d35ba60cb9226d967a08c4"
+    },
+    {
+      "path": "maintenance-continuation.py",
+      "bytes": 7268,
+      "sha256": "a4a2516d3e38615ff15b6c34667a93b307200e57a41dd2f7c566ef9feefe958a"
+    },
+    {
+      "path": "maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "maintenance-continuation.json",
+      "bytes": 20259,
+      "sha256": "09f8c94cfb5b6c64cd8ee264ceb72ca471236b9b8723935b1922da59f9c0f1d4"
+    },
+    {
+      "path": "continuation-idle.test.mjs",
+      "bytes": 3650,
+      "sha256": "fb1e3f4b2b5192ed8e54a295f4a65919e6da5e2578c23eb4823221f92353c69a"
+    },
+    {
+      "path": "continuation-deadline.test.py",
+      "bytes": 1788,
+      "sha256": "433fd79a1be5aa6ce321c926dc4587eb22229a880f4b712d3dd5c1122dd84c4b"
+    }
+  ],
+  "personalIO": 0,
+  "PG": 0,
+  "provider": 0
+}

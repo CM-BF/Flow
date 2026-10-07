@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T13:08:31.701680+00:00",
+  "reviewer": "native_center_owner (independent read-only review) with Lead fixed-manifest binding verification",
+  "target": "9491e03e9b27241c397b0f048cffa90dc0810ad9",
+  "preparation": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+  "decision": "APPROVED_LIMITED_R3_FAILURE_FIDELITY",
+  "manifest": {
+    "bytes": 3341,
+    "sha256": "12e379a90b8d4eaa7d1db7fe63186e97b41d9050dff513b8d216d6b64d85bfbe",
+    "bindings": 11,
+    "boundBytes": 10863,
+    "rawFiles": 7,
+    "rawBytes": 3610
+  },
+  "findings": [],
+  "facts": [
+    "Earliest durable failure WEB_COMPATIBILITY_INVALID in facts-before; child97738 exit1/418ms/227B stdout,stderr0.",
+    "Operator97737 subsequently exits1/494ms/695B through PHASE_UNCONFIRMED. This does not supersede the reader first failure.",
+    "Both reports childPidOnly, directly owned PID absent, dual EOF, no signals or secondary failures. No general descendant/service-state claim.",
+    "The failed facts stage did access personal read-only metadata and process observations; partial observations were not persisted and remain unknown.",
+    "Failure occurs before Pool creation, so this path made no SQL; no preflight/history/bootstrap/refresh/resume started. R2 already completed stages absent from this callable plan.",
+    "Current services cannot be reconfirmed from failed partial snapshot. af51/v18 is last confirmed R2 state, not new R3 measurement.",
+    "Original7raw KEEP preserved. Reader repair and next namespace must be separately bound; no actual retry authority inferred from fidelity approval."
+  ],
+  "actions": {
+    "tests": 0,
+    "personalIO": 0,
+    "PG": 0,
+    "providerQueries": 0
+  }
+}
