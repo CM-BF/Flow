@@ -1,3 +1,11 @@
+状态：PENDING（中心六组真实PG结果忠实性；源码/准备批准保持）
+
+Review target commit: 2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae
+
+本次执行6/6、107HTTP与资源全部收尾；[结果入口](../../docs/evidence/x01/center-claim-pg-result.md)。固定结果commit将在结果manifest绑定。不授下一窗口/完整X01通过。
+
+---
+
 状态：APPROVED（六组center-claim PG准备；实际结果未运行）
 
 Review target commit: 967803365239cacdfc15b16bf6f4b2b3d7d92eed

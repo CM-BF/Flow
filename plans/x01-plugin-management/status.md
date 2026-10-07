@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T06:57:17.081483+00:00 |
+| 最近更新时间 | 2026-10-07T07:02:55.733878+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
-| 工作分支状态 | in-progress |
-| 检查状态 | 新PG准备types0/collect6（0hooks/PG）及配方2纯例通过；原10/11/27未重跑 |
-| Review | 967803 PG准备独审APPROVED/0P1P2，cleanup P2已关；[回执](../../docs/evidence/x01/center-claim-pg-independent-review.json) |
+| 工作树 dirty 状态 | 实际PG原件与结果封存中；产品/fixture/运行器冻结，提交push后clean待独审 |
+| 工作分支状态 | review |
+| 检查状态 | 中心实际PG 6/6；107HTTP/12tasks/7registrations；进程/专库/监听器/TMP完整收尾。原27/10/11未重跑 |
+| Review | 中心source/local及PG准备APPROVED；本次6/6结果忠实性PENDING，见center-claim-pg-result.md |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
 | 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心领取的六组验收入口已完成准备检查；已修复独审指出的清理错误覆盖问题并获批准，正在对接一次真实专库验收 |
-| 下一可用交付 | 独审后运行一次真实领取、恢复与锁等待专库验收，再接runner执行与现成npm能力 |
-| 当前阻塞 | NONE: 已审ready，正在fresh重旅程handoff；尚未OPEN/实际PG |
+| 当前产出 | 中心真实领取与恢复六组验收通过；资源已归还，正在交独立结果审查 |
+| 下一可用交付 | 独审后受控接收中心领取片；随后接生产runner与真实npm能力 |
+| 当前阻塞 | NONE: 当前结果待独审；本任务无实际资源持有/待launch |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -267,3 +267,7 @@ source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10�
 2026-10-07T06:40:24.234000+00:00：原review唯一P2窄修source967803，primaryFailed布尔与原异常直传，ROLLBACK/release失败只作为secondary，原27/6行为断言未删。仅静态核控制流/类型组合，0新types/test/PG/资源持有；原types0/list6/pure2保原件不当本增量运行。manifest仅替换test一row，其余251与27external/21links原样。
 
 2026-10-07T06:57:17.081483+00:00：恢复既有六组ready段；fresh v11/full31及252 inputs/27external/21links errors[]，新run-r1 absent。已向Web co-lead发送实际交接请求。原budget180s/base1242562560B保留，额外保守旧C02KEEP33685504B及其他actual并跑完整声明，尚未生成新gate/未actual。
+
+## 2026-10-07T07:02:55.733878+00:00 — 中心真实领取 PG R1 已收尾
+
+Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实际06:58:40.476848→06:58:49.193344（final persistence前），time real8.89s；六组原选择6/6，107HTTP、12tasks/7registrations，两个监督进程、一个markedDB/零连接普通DROPabsence、两个listener与同inodeTMP均确认收尾。历史EPERM审计保留、unknown=false；[原件与边界](../../docs/evidence/x01/center-claim-pg-result.md)。PG实际已直接交回Web/C02知悉，metadata不占窗口。旧准备/raw/源/依赖不变，不跑额外检查。结果忠实性待独审；中心片与c15尚无新main receipt。完成接收后立即STOP并部分amend交回server/index.ts给CHAT05，不等待完整runtime/semver。架构影响仍原v3 center资格/双namespace receipt，不新增运行权威；全X01未完成。

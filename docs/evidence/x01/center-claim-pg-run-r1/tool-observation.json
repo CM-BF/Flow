@@ -1,0 +1,55 @@
+{
+  "recordedAt": "2026-10-07T07:02:55.733878+00:00",
+  "source": "Original exec_command and write_stdin tool outputs transcribed without changing caller-created files",
+  "executionHead": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+  "window": "879094b24fe746629dbf483fbea371ea",
+  "command": "/usr/bin/time -p /opt/homebrew/opt/python@3.13/bin/python3.13 -B docs/evidence/x01/center-claim-pg-once.py --admission /private/tmp/flow-x01-center-claim-open-879094b24fe746629dbf483fbea371ea.json --sha256 d748794fe28aab044ea28b94f2292138c762c52962730c70e926ff67d941a271",
+  "firstTool": {
+    "output": "OUTER_START=2026-10-07T06:58:40Z\n",
+    "sessionId": 32805,
+    "waitWallSeconds": 1.001307125
+  },
+  "completionTool": {
+    "output": "{\"state\": \"PASSED\", \"run\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/center-claim-pg-run-r1\", \"elapsedBeforePersistence\": 8.71655995794572, \"retained\": []}\nreal 8.89\nuser 1.81\nsys 0.46\nOUTER_END=2026-10-07T06:58:49Z\nACTUAL_EXIT=0\n",
+    "exitCode": 0,
+    "waitWallSeconds": 6.583e-06
+  },
+  "clock": {
+    "outerStartUtcSeconds": "2026-10-07T06:58:40Z",
+    "outerEndUtcSeconds": "2026-10-07T06:58:49Z",
+    "outerUtcConservativeEnvelopeSeconds": 10,
+    "timeProcessRealSecondsRounded": 8.89,
+    "callerBeforeFinalPersistenceSeconds": 8.71655995794572,
+    "exactExternalWholeWallSeconds": null,
+    "notes": "time measures the wrapper process through exit, rounded to hundredths; UTC markers are second-resolution. Tool wait walls are not full duration. These clocks are separate and are not added."
+  },
+  "handoff": {
+    "webTaskId": "01a10ec2-ff1a-76d0-a277-446baf89b19d",
+    "runMessageDelivered": true,
+    "actualReturnMessageDelivered": true,
+    "messageTimestamps": "Not independently recorded; returned after reading final receipts and before this archive",
+    "startNoticeCorrection": "Initial live notice approximated 06:58:32; return explicitly corrected start to original shell06:58:40 and caller06:58:40.476848. Only originals are timing evidence.",
+    "returnedTo": "Web next-ready Recovery; C02 peer notified to coordinate current holder with Web",
+    "actualHolderAfterReturn": false
+  },
+  "postflight": {
+    "source": "Owner exact-path lstat after final result, before handoff; no recursive scan or extra PG/process probe",
+    "temporaryPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-dc_p9nm4",
+    "knownDev": 16777234,
+    "knownIno": 123603683,
+    "lexists": false,
+    "observedAtExactUtc": "UNKNOWN: not recorded separately"
+  },
+  "rawAccounting": {
+    "callerFiles": 11,
+    "callerFilesBytes": 19299,
+    "transcriptionBytesChargedSeparately": true,
+    "noUncapturedBytesInCaller": true
+  },
+  "newExecution": {
+    "tests": 0,
+    "pgQueries": 0,
+    "processProbes": 0,
+    "cleanup": 0
+  }
+}
