@@ -9,7 +9,7 @@
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -22,7 +22,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；188个唯一来源已加载，工具全文接线与流式授权优化状态可见，缺证时间保持未知。 |
-| 下一可用交付 | 本片段已交付；后续来源随各owner正式三件套正常登记。 |
+| 下一可用交付 | 把受信单文件写入后继的唯一进度来源加入看板。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -222,3 +222,7 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 ## 2026-10-07 两来源实际发布
 
 0b275三文件差异由native_center_owner独立只读APPROVED_DOCS_REGISTRATION_ONLY，6份固定三件套绑定无差异，0工程运行。main9816e87a已接收；4320自有旧进程51982已确认退出，新25011实际返回188源，两新canonical均live。本机登录metadata仍启用；个人配置/状态/发布指针摘要和61227/61228身份保持，未读取token endpoint或刷新原tab。见[实际回执](../../docs/evidence/d05/chat05p02-s01p08-live.json)。
+
+## ENG01K 来源候选 2026-10-07T07:19:26.639177+00:00
+
+新增原ENG大task下的受信写工具工作线，精确三件套已建立并绑定；当前实际仍188，189仅登记候选。见[来源记录](../../docs/evidence/d05/eng01k-registration.json)。未变更产品能力或原生资格。
