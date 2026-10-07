@@ -1,0 +1,109 @@
+{
+  "taskId": "X01-PLUGIN-COMMAND-ACK01",
+  "parentTaskId": "X01",
+  "coLead": "Mika",
+  "owner": "db_transaction_owner",
+  "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "reviewState": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "reviewPacket": "3608284d45b44a77a1a0c28b4e299fbe3d845713",
+  "reviewManifestSha256": "c836559927bb8c6c185d238398241def36f7f9db182738c0d8f1c48c3471fec5",
+  "productAndRequiredTestSupport": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "bytes": 67291,
+      "sha256": "0a2ae1315646ef0b5a8de79cc22b35398258e396fb8981182ac659812b9e27f0",
+      "preimage": {
+        "commit": "b67530bb025162629895d11482b5505d4a885c91",
+        "exists": true,
+        "bytes": 66568,
+        "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "bytes": 8466,
+      "sha256": "f2c8635347fcf76c09074ff5ecd5c7eb35c2d8a7e3b611092d790b488f492a11",
+      "preimage": {
+        "commit": "b67530bb025162629895d11482b5505d4a885c91",
+        "exists": true,
+        "bytes": 6240,
+        "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-command-ack.test.ts",
+      "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "bytes": 7647,
+      "sha256": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38",
+      "preimage": {
+        "commit": "b67530bb025162629895d11482b5505d4a885c91",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/cli/src/plugin-command-ack.test.ts",
+      "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "bytes": 3382,
+      "sha256": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6",
+      "preimage": {
+        "commit": "b67530bb025162629895d11482b5505d4a885c91",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "sourceCommit": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "bytes": 1228,
+      "sha256": "d95a44bf46be153c3fe509ed3de57c2578c17a6e1fdbf5527cd8fc1d0daad8c3",
+      "preimage": {
+        "commit": "b67530bb025162629895d11482b5505d4a885c91",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    }
+  ],
+  "evidencePlanScope": [
+    "docs/evidence/x01-plugin-command-acks",
+    "plans/x01-plugin-command-acks"
+  ],
+  "preserveMain": [
+    "READBOUND bounded reader and all selected reads",
+    "X01 pluginRunner and terminal",
+    "prior runtime owner methods and CLI production",
+    "unmodified register-version/select-version behavior"
+  ],
+  "validation": "41/41 initialgreen(22new+19direct), additionalsemantic1/1(41unselected), revisionboundary2/2(42unselected); finalfocusedtypes0. 44distinct across separate rounds, not a one-run44 pass. Originalred21(18fail3pass) and TS2322 retained.",
+  "runtimeBoundary": "Real FlowClient/runCli with mock Fetch; no new real PG, HTTP authorization, OS CLI, Web or provider. Prior joint startup/runtime CLI journey is independent and does not validate this configure/set-grants ACK slice.",
+  "unknown": "Frozen parsed route/key/body; no retry/currentGET. inputDigest validates64hex shape only. Max revision fake ACK becomes UNKNOWN4 after request sent; max-1 to max succeeds.",
+  "architecture": "Public signature unchanged; shared internal ACK checks extended. D06 target/owner handed through Mika after main receipt.",
+  "registration": "task-intake.json; OriginalLead owns registry, currently waiting registration",
+  "ownership": {
+    "claimId": "e81d88b7-8fdb-42b5-b9a1-364ad0fd9bdb",
+    "version": 1,
+    "state": "ACTIVE",
+    "clientLeaves": [
+      "packages/client/src/index.ts",
+      "packages/client/src/plugin-management.ts"
+    ],
+    "handoff": "Products frozen after fixed review candidate; keep writer claim through independent review/main. Only explicit STOP plus current-version amend can return leaves; no later owner may infer availability."
+  },
+  "integrationState": "READY_NOT_YET_MAIN",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T10:50:56Z",
+  "readyAt": "2026-10-07T10:52:01.309Z",
+  "remainingFindings": "0 P1/P2; original revision P2 CLOSED",
+  "cleanCode": {
+    "checkedAt": "2026-10-07T10:52:01.309Z",
+    "scope": "Two client production leaves, public client/CLI tests, shared fixture and existing caller usage",
+    "method": "Existing local find-skills / codebase-design / clean-code fixed sickn33 bdacd76; cohesive single ACK decoder, no second transport/canonical copy, preserve original errors/replay and request identity",
+    "remaining": "None in reviewed slice; whole X01 and main integration remain separate"
+  }
+}
