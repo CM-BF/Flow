@@ -1,6 +1,6 @@
 {
   "kind": "SVC09A_HOST_PREPARATION_LOCAL_EVIDENCE",
-  "at": "2026-10-07T15:33:08.834Z",
+  "at": "2026-10-07T15:35:18.732Z",
   "actual": {
     "selected": 6,
     "passed": 6,
@@ -22,7 +22,6 @@
     "mixed-runner.mjs",
     "prepare-check.mjs",
     "prepare-run.py",
-    "host-entry.mjs",
     "host-fixture.mjs",
     "host-records.mjs",
     "measure-once.py",
@@ -30,6 +29,19 @@
     "host-inputs.json"
   ],
   "postCheckChanges": [
+    {
+      "path": "host-entry.mjs",
+      "tested": {
+        "path": "host-entry.mjs",
+        "bytes": 3973,
+        "sha256": "980a3b6a49e0e5f990b89dfc55699dc01d0e600db63f7e114f2bb06b3e8579f3"
+      },
+      "final": {
+        "path": "host-entry.mjs",
+        "bytes": 3966,
+        "sha256": "6b4ea49ef5dfa2c00e90ab631402ba6fa63411106604906083e9ad5c1d3d44e2"
+      }
+    },
     {
       "path": "host-cleanup.mjs",
       "tested": {
@@ -57,7 +69,7 @@
       }
     }
   ],
-  "postCheckValidation": "STATIC_ONLY_NOT_EXECUTED: work record failure still proceeds to cleanup; absent work disposition makes DROP false. No rerun while Web owns the priority window.",
+  "postCheckValidation": "STATIC_ONLY_NOT_EXECUTED: work record failure still proceeds to cleanup; absent work disposition refuses DROP; host entry respects OPS-METER complete/bytes/entries while retaining vanished count. No rerun while Web owns the priority window.",
   "historicalTests": "33 original module cases, 5 CORE PG cases and original build/import not repeated.",
   "actualHost": "NOT_RUN",
   "originalObservations": "Initial EPERM/unknown preserved; final two absent and dual EOF observed."

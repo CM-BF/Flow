@@ -30,7 +30,7 @@ export async function main(argv) {
     const databaseBytes = pool ? Number((await pool.query('SELECT pg_database_size(current_database()) AS bytes')).rows[0].bytes) : null;
     const disk = await statfs(input.directory), freeBytes = disk.bavail * disk.bsize;
     await record(name, fact, { directory, databaseBytes, freeBytes, meaning: 'Phase observations, not atomic or physical peak limits' });
-    assert.ok(directory.state === 'complete' && directory.vanished_entries === 0 && directory.logical_bytes <= 32 * 1024 ** 2, 'PRIVATE_MEASUREMENT_LIMIT_OR_UNKNOWN');
+    assert.ok(directory.state === 'complete' && directory.entries <= 4096 && directory.logical_bytes <= 32 * 1024 ** 2, 'PRIVATE_MEASUREMENT_LIMIT_OR_UNKNOWN');
     assert.ok(databaseBytes === null || databaseBytes <= 128 * 1024 ** 2, 'OWN_DATABASE_BYTE_LIMIT');
     assert.ok(freeBytes >= 1024 ** 3, 'LIVE_RESERVE_LIMIT');
   };

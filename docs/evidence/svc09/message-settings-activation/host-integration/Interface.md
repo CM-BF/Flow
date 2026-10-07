@@ -43,7 +43,7 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 
 这些文件均无顶层artifact产品import/PG/监听动作。定义导入可测，但不得单独运行work或cleanup规避唯一入口。固定输入通过同一 `host-preparation.json` 绑定，不复制完整artifact/81源清单。原SVC06三角色cleanup不直接用于本片，四种角色完整登记；默认键与settings键白名单固定。任何未声明角色、缺失/身份变更、未闭合异步资源拒绝DROP。
 
-原6个纯/自有小文件准备例在15:26:30.391102Z选择，6/6、122ms/698B、两Python AST、组absent/双EOF、15:26:30.517468Z exact空scratch删除。[原reservation](prepare-local-02/reservation.json)固定检查时字节。[validation范围](host-preparation-evidence.json)明确其后仅两文件收尾分支变化：work报告持久失败仍尝试独立cleanup；缺失work disposition成为unknown而不DROP。这两分支尚未重新运行；遵循当时Web优先窗口只封源/只读审查，不把先前绿例扩大至新字节。
+原6个纯/自有小文件准备例在15:26:30.391102Z选择，6/6、122ms/698B、两Python AST、组absent/双EOF、15:26:30.517468Z exact空scratch删除。[原reservation](prepare-local-02/reservation.json)固定检查时字节。[validation范围](host-preparation-evidence.json)明确其后三文件小差量：work报告持久失败仍尝试独立cleanup；缺失work disposition成为unknown而不DROP；host-entry按共享meter的complete/bytes/entries判定，保留vanished计数但不将枚举后消失误判unknown。这些后置差量尚未重新运行；遵循当时Web优先窗口只封源/只读审查，不把先前绿例扩大至新字节。
 
 ## 预算、动态 SQL 与结束条件
 

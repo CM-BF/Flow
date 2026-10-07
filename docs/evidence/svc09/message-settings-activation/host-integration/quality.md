@@ -13,3 +13,5 @@
 静态核全八个generation、PID/nonce/目录身份、缺work原件拒DROP、第一失败与cleanup状态分开。源检查后发现报告持久异常会跳过cleanup，已做两文件窄修；新分支明确未运行，旧6/6绑定不重写。监督按同monotonic剩余预算扣除，但fsync/读取不提供硬实时抢占，已在Interface列为实际窗口前必须接受或解决的限制。私有目录固定KEEP；不能用通用递归删除收尾。
 
 6新检查覆盖原始定义导入/私有checkpoint、mayDrop和generation等小Interface；未运行真实artifact入口。合成loader报告不证明App、token或模型资格。每个阶段的资源测量只证明样本/逻辑字节，不承诺物理峰值与强制配额。现无产品写权，范围只原两个own目录。
+
+2026-10-07T15:35:18.732Z：Lead只读指出meter的枚举后消失与identity/I/O unknown不同；已按单一共享Interface去掉额外vanished==0门槛，complete与logical bytes/entries仍严格，原始vanished数字留证。不运行新局部段，列入第三个检查后静态source差量。

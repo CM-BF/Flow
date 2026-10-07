@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T15:33:08.834Z |
+| 更新时间 | 2026-10-07T15:35:18.732Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | review |
 | 当前产出 | 新组合产物已通过独立审查；隔离双槽宿主旅程的入口与收尾候选已准备，等待总体审查。 |
 | 下一可用交付 | 在专用安装中验证两槽登记、目录、维护与混合领取；真实运行须另协调窗口。 |
-| 当前阻塞 | ACTIVE: 宿主候选待独立审查与实际窗口；两条检查后收尾保护尚未运行，个人激活仍未执行。 |
+| 当前阻塞 | ACTIVE: 宿主候选待独立审查与实际窗口；检查后收尾保护及计量合同校准尚未运行，个人激活仍未执行。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -28,7 +28,7 @@
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
 | Review | 源码与局部消费者已main；固定产物结果2026-10-07T15:20:05.813Z获APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT；新host候选待审。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
-| 验证限制 | 原33为注入端口/自有文件；新artifact只构建/内部import通过。新6准备例无artifact runtime/PG/provider；两条后置保护静态未重跑。真实宿主/混合领取/个人激活NOT_RUN。 |
+| 验证限制 | 原33为注入端口/自有文件；新artifact只构建/内部import通过。新6准备例无artifact runtime/PG/provider；三文件后置保护/计量校准静态未重跑。真实宿主/混合领取/个人激活NOT_RUN。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
 | 运行窗口 | 2026-10-07T15:26:30.517468Z本队local已RETURN；6新准备例122ms/698B、组absent/双EOF/exact空scratch removed。构建另32,570ms/15:14:38.558644Z RETURN；artifact/root/stage KEEP。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
@@ -71,4 +71,4 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 
 2026-10-07T15:33:08.834Z：fixed构建结果获唯一独审APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT，原件在main96b424777的 `docs/evidence/i02/svc09a-fixed-build-result-review.json`，review UTC15:20:05.813Z；不复制第二份。确认仅构建/内部import，早期EPERM、保留artifact与stage事实不改，实际host/PG/个人仍NOT_RUN。后到正常push已恢复，原review时的远端500历史不回写。
 
-本片host薄入口、fixture、八generation清理与原runRunner注入接缝准备完整，见[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)。实际6/6纯准备例、两AST、122ms/698B；[原件与检查后差量](../../docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-evidence.json)明确两条收尾保护静态未重跑。Web构建优先期间只有源码/metadata，未预占PG/host。215s为共享monotonic child准入/监督界限，非filesystem I/O硬抢占保证，实际窗口前须独审确认。任务历史开工UNKNOWN与原失败不变。
+本片host薄入口、fixture、八generation清理与原runRunner注入接缝准备完整，见[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)。实际6/6纯准备例、两AST、122ms/698B；[原件与检查后差量](../../docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-evidence.json)明确三文件收尾保护/计量校准静态未重跑。Web构建优先期间只有源码/metadata，未预占PG/host。215s为共享monotonic child准入/监督界限，非filesystem I/O硬抢占保证，实际窗口前须独审确认。任务历史开工UNKNOWN与原失败不变。
