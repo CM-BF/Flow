@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-07 11:50:39 UTC",
+  "originalTaskCompleteAt": "2026-10-07 11:50:39 UTC",
+  "completionSource": "Owner directly verified fixed root consumer acceptance, exact main center receipt and all19 unchanged Web blobs during this metadata closure; not inferred from commit/claim timestamps. Original task start remains UNKNOWN.",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "main": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "centerSource": "66caee46341c91db71a3590bfcd288396b30567a",
+  "ownerPreMetadataHead": "bc25cdc1a96690f41c74a99bb3c5c708a6b42701",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+      "blob": "2e3a37130a64af0c5f2080eb64f93a7201041c30",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "blob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "blob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "blob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "blob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "blob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "blob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "blob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "blob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "blob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "blob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "blob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "blob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "blob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "blob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "584f5168574c183f284061f078b91f47259eb4e7764df5aab8dbec17f11060a8",
+      "blob": "57833f580b6e0bdb22448704676778f2e810e81f",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "5ebc9f3a6702b46a6e0f4aa5b418649c2999a6039332c5685053946cf693a6ed",
+      "blob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8",
+      "sourceMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "a20112bd30c5736f7bfbd5ca8618aae78a8cf8b1e092c1f8b93e3b0cafb46589",
+      "blob": "ccb8980c0ccab225010cfbc07b2d66cef317a92c",
+      "sourceMainCurrentEqual": true
+    }
+  ],
+  "originalTodo01to06": "completed within original Web engineering acceptance and shared contract handoff",
+  "rootDecision": "ACCEPTED_SHARED_LOGOUT_CONTRACT_FOR_EXISTING_RECOVERY_CONSUMER",
+  "limits": [
+    "No new browser cookie-jar ordering run",
+    "No general concurrent Connect response-order guarantee",
+    "No personal installation or deployment",
+    "Fixed Release6c/7d1 artifact lacks this center fix",
+    "Historical main types6024ms/0output; scratch KEEP_NONEMPTY_UNINSPECTED 3items1357748B unchanged"
+  ],
+  "newProductRuntime": 0,
+  "remainingScope": [
+    "docs/evidence/wpf-conversation-recovery",
+    "plans/wpf-conversation-recovery"
+  ]
+}

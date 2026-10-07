@@ -364,3 +364,9 @@ actual outer0/两EOF，11raw40748B；charge取outer15118.727791、late14518.9078
 复用已读本地find-skills/clean-code；核主线19源与2f8/owner exact，c544与1e89原文不变。单一status/plan06/review/入口修正过期“待main/三合同全待”措辞，历史结论仍按时点保留。未扩大产品结论，types成功与scratch保留分列；生产/test明确19STOP、保留两metadata目录，经理负责fresh原子amend而非自行release。无产品/测试/依赖/服务修改、无新工程运行；提交前仅权威own-status解析、新链接与Git diff核对。
 
 本次[权威main parser原结果](main-intake/status-parse.json)：2026-10-07T11:34:01.724Z，执行来源main62e9a83923a3c2996b4ab32610e10e2069828c66/status.mjs SHA4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef，errors[]/humanMissing[]；仅历史开工UNKNOWN的timing issue保留，不造时间。新增本地链接12项存在、Git diff --check通过、产品/test delta0；形状检查不代主线/部署证据。主线接收固定c130是此前实际remote观测，parser执行时main已前进到62e，二者来源分列。
+
+## 2026-10-07 11:50:39 UTC — 最终metadata clean-code
+
+复用本地find-skills/clean-code固定版本，无安装。核单一status/current target2f8、原01–06完成依据、历史分轮证据不改、source/main/deployment不混淆、v5仅exact2停写边界。更新原plan/status/review/单review入口并原样保存root与centerreceipt；未修改19源、生产Interface/权限/生命周期，未重复工程绿检查。完成时间来自本owner实际核实交付事件，开工UNKNOWN保留。metadata解析/链接/proof结果见[单记录](final-main-close/metadata-check.json)，proof若历史边界unknown不改parser或伪造通过。
+
+本批首metadata解析：errors[]/humanMissing[]，但完成字段空格UTC不符ISO-only task timing；固定为同一时点2026-10-07T11:50:39Z后只定向重解析，开工UNKNOWN不造值。proof识别五个历史raw/caller为范围外nonmetadata，保unknown和integration fallback false；不改proof、不改名或把raw混入19产品范围。实际source/main一致由固定Git/根审原件证明。

@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 11:33:37 UTC |
+| 最近更新 | 2026-10-07 11:50:39 UTC |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 开工：缺可靠UTC首次实际工作事件，继续UNKNOWN，不按commit或claim推算。完成：Web03/05已合法main接收，06原lateLogout中心后继/必要集成边界仍未闭，继续NOT_COMPLETED。 |
+| 任务完成时间 | 2026-10-07T11:50:39Z |
+| 任务时间来源 | 开工：缺可靠UTC首次实际工作事件，继续UNKNOWN，不按commit或claim推算。完成：本owner于2026-10-07 11:50:39 UTC直接核实root固定合同接收、main727及19源同2f8，确认原01–06工程交付完成；不是个人部署完成时间。 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前组合source2f8cc1f61d32f518998a64d0adeec582f85481f2（16生产源同a803）；本次执行291736984036d3a3d406561ace9b123fb6b5bcb7；后置metadata HEAD以Git回执为准 |
-| 工作树dirty状态 | 本批仅own main接收/停写交接/状态metadata；19源逐字等2f8及main c130；最终clean以Git回执为准 |
-| 工作分支状态 | in-progress |
+| 工作树dirty状态 | 本批仅own最终metadata；19源逐字等2f8与main727，产品/test已STOP；最终clean以Git回执为准 |
+| 工作分支状态 | completed |
 | 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | Web草稿与未决命令恢复已通过原验收并合入主线 |
-| 下一可用交付 | 中心owner收口迟到注销响应；本片源码停写并交经理安排后继合法接线 |
-| 当前阻塞 | ACTIVE: 06保留迟到注销清Cookie的中心后继与必要集成边界；不阻已接收Web实现交权 |
+| 当前产出 | 草稿和未决命令恢复已完成原工程验收并合入主线，迟到注销合同已接收 |
+| 下一可用交付 | 本片段已交付 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 原Web03/05组合证据接受；Original主线组合types6024ms/exit0/0输出，3项1357748B scratch KEEP_NONEMPTY_UNINSPECTED；本批只own-status parser/链接/Git核对，无Web/types/provider重跑 |
+| 检查状态 | 原Web03/05组合证据与06合同main交接已接受；本批仅一次own-status parser/链接/proof，无Web/types/provider重跑。历史main types6024ms/0输出，scratch三项1357748B KEEP_NONEMPTY_UNINSPECTED保真 |
 | 实现目标 | 2f8cc1f61d32f518998a64d0adeec582f85481f2 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
-| 已集成main状态 / HEAD | Original已受控接收 c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；19源逐字等2f8，03/05已接收；不冒个人安装或整中心合同已解决 |
-| Review | [review.md](review.md)，APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF；main限定接收见[原件](../../docs/evidence/wpf-conversation-recovery/main-intake/original-recovery-intake.json)，06仍in-progress |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；normal CLI 2026-10-07T11:31:55.212Z核active/本人/WTbranch/exact21/overlap[]；19源码STOP，待经理fresh原子amend保留2 metadata scope，未自行release |
+| 已集成main状态 / HEAD | Web19源已接收c130；中心66ca合同后继已main 7272151bb1e3e59e08937dca44949dcdeb42f009，19Web源仍等2f8；非个人部署/通用Connect乱序保证 |
+| Review | [review.md](review.md)，原Web组合APPROVED + [root合同接收](../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json)；原01–06 completed，限定工程交付 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v5 ACTIVE，仅docs/evidence/wpf-conversation-recovery与plans/wpf-conversation-recovery；normal CLI 2026-10-07T11:49:14.412Z核本人/WTbranch/exact2/overlap[]；19源已移出STOP，本批seal后exact2 STOP并交经理fresh release，未自行释放 |
 | 架构影响 | 沿原ConnectionSession/Journal/P01 authorities；2f8只扩test双center代理/两lease清理，本批仅组合验收metadata，无生产架构变化；D06后继来源保持原登记 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,11 +37,11 @@
 | WPF-RECOVERY01-03 | completed | workspace_panels_owner | App/P01、完整profile/project/knowledge/双文件及Steer稿已有actual；本次同origin双真实center A→B→A→B/原key与两稿隔离实际2/2，principal-only与ignore-abort受控另列，非public rotation |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
 | WPF-RECOVERY01-05 | completed | workspace_panels_owner | [2f8组合独审](../../docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)接受原工程矩阵；同页reauth/offline重连actual已在full7，后继缺项逐项补齐，principal-only与迟到ready仍明确受控 |
-| WPF-RECOVERY01-06 | in-progress | workspace_panels_owner | 19源main c130限定接收，single-origin及新建Connect32slot来源已对齐；原lateLogout响应顺序中心后继/必要集成边界保留，不重跑绿色 |
+| WPF-RECOVERY01-06 | completed | workspace_panels_owner | [root合同main接收](../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json)接受66ca→main727，现有Web2f8兼容；原03/05已main c130。无新cookiejar/个人部署/通用Connect乱序保证 |
 
 ## 阻塞 / 风险 / 未验证
 
-历史pre-provision可用1,584,984,064B、建树后1,416,241,152B仅为当时观察，历史禁运行阶段已结束；当前按新有限段与每次真实窗口/fresh准入执行，不沿旧数值推资源。Web工程原03/05已组合通过并合法main接收；中心single-origin/32slot来源已对齐，06保留lateLogout响应顺序后继/必要集成边界，不转成新Web/provider测试。旧upload journal跨tabCAS与历史metadata隔离开放，不冒本片修复。
+历史pre-provision可用1,584,984,064B、建树后1,416,241,152B仅为当时观察，历史禁运行阶段已结束；当前按新有限段与每次真实窗口/fresh准入执行，不沿旧数值推资源。Web工程原03/05与原06共享合同/main交接均完成；中心single-origin/32slot来源及lateLogout撤权不清cookie后继已对齐。不声称新native cookiejar实测、个人部署或通用Connect乱序保证，不转成额外Web/provider测试。旧upload journal跨tabCAS与历史metadata隔离开放，不冒本片修复。
 
 ## 下一步与handoff
 
@@ -450,3 +450,9 @@ Root最终组合及actual local已独立接受：[原报告](../../docs/evidence
 [Original主线原件](../../docs/evidence/wpf-conversation-recovery/main-intake/original-recovery-intake.json)和[19源核验](../../docs/evidence/wpf-conversation-recovery/main-intake/verification.json)确认c130接收2f8，c544/1e89两独审原件逐字一致。原组合types6024ms/0输出通过，但3项1357748B scratch KEEP_NONEMPTY_UNINSPECTED，不冒清理；本owner未运行或删除。
 
 [精确交权清单](../../docs/evidence/wpf-conversation-recovery/main-intake/scope-handoff.json)列16生产+3test全部STOP与保留两metadata目录；仍v4，经理fresh依赖核后原子amend，非本owner全release。[lateLogout只读差量](../../docs/evidence/wpf-conversation-recovery/main-intake/late-logout-readonly.md)复用已有候选，无实施/运行，不声称中心已修。旧raw/FAIL/phase余额不改且不授权续跑。
+
+## 2026-10-07 11:50:39 UTC — 原工程最终收口与metadata停写
+
+[root原件](../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json)认可原06满足；[主线中心receipt](../../docs/evidence/wpf-conversation-recovery/final-main-close/original-center-intake.json)与[19源核验](../../docs/evidence/wpf-conversation-recovery/final-main-close/verification.json)绑定main727/center66ca/Web2f8。01–06完成，历史FAIL、分轮checks、预算、非空scratch保留；下方旧阶段记录只表示当时时点，不重新打开已收口项。新增仅metadata解析/链接/proof；[结果](../../docs/evidence/wpf-conversation-recovery/final-main-close/metadata-check.json)。当前无运行/服务/env/预约；本次push核同clean后exact2 STOP，交经理release，释放后不补写。
+
+本批元数据首解析发现完成时间字段需ISO UTC，已仅将同一实际时点规范为Z格式并定向复核；[首原件](../../docs/evidence/wpf-conversation-recovery/final-main-close/metadata-check-first.json)保留。现proof对target2f8→metadata HEAD返回unknown，原因是五个历史raw/caller扩展名不在其metadata白名单（jsonl/py/sb/mjs）；未改parser或扩产品范围规避。[直接19源Git核验](../../docs/evidence/wpf-conversation-recovery/final-main-close/verification.json)与原main/root接收另证范围已合入，不把proof unknown说成PASS。

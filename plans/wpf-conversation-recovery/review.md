@@ -1,12 +1,16 @@
 # WPF-RECOVERY01 独立审查
 
-状态：**APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF**；Original主线c130已限定接收，06原lateLogout中心后继/必要集成边界仍IN_PROGRESS。当前唯一组合target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16生产源与已审a803完全一致，本次三test变更。精确范围见[19源checkpoint](../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)；[单一feature入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)统一当前代码、证据矩阵、原P1/P2与未验项。
+状态：**APPROVED（原Web工程03/05组合验收与06共享合同/main交接）**；原c544与新076cd独立报告分别保留原decision，Original c130已接收Web19源，main727已接收66ca lateLogout后继，原01–06完成。当前唯一组合target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16生产源与已审a803完全一致，本次三test变更。精确范围见[19源checkpoint](../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)；[单一feature入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)统一当前代码、证据矩阵、原P1/P2与未验项。
 
 [root集中源码与local独审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)固定2f8，核19pins/13raw40289B、2新增PASS/55未选、Web noEmit0、保守7481/20k及精确清理，0finding。结论只接受source与受控local；随后同origin两真实center实际selected2/2通过，见[actual原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)，已获[root本次限定actual审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)通过；此条只接受当时双中心选组，后续组合结论见下文。两DB actor/lease/迟到GET白名单边界已源码审，运行连接配置与新独立phase见[two-center preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)。
 
-此前a803真实cookieRead/steeringRecovery selected2与owned清理已[root限定接受](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)，current production同源，不重跑；更早full7/CREATE/Queue/SSE/completeDraft各保自己的target/raw。旧五次及后继所有FAIL不回写。本片Web实现与原03/05已获下述独立组合接受；中心single-origin/32slot来源已对齐且main已接收；lateLogout中心后继/必要集成边界继续按06追踪，作者不扩大到整平台批准。
+此前a803真实cookieRead/steeringRecovery selected2与owned清理已[root限定接受](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)，current production同源，不重跑；更早full7/CREATE/Queue/SSE/completeDraft各保自己的target/raw。旧五次及后继所有FAIL不回写。本片Web实现与原03/05已获下述独立组合接受；中心single-origin/32slot来源已对齐且main已接收；lateLogout后继已由独立来源收口06，作者不扩大到整平台/个人部署或通用Connect乱序批准。
 
-## 2026-10-07 11:33:37 UTC — main限定接收（当前）
+## 2026-10-07 11:50:39 UTC — 当前最终合同接收
+
+[root原文](../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json)SHA076cd9e6bf8b3562fcb9fdba9aef38327afdfe001849e609c8787c707db858f3确认原06满足；center66ca/main727与Web2f8无需消费者改源。4selected HTTP/PG与19未选是中心来源，不是本owner重跑或nativecookiejar；fixedRelease6c/7d1未含此fix，个人部署未验。19产品已交权、v5仅两metadata；本批仅必要metadata检查与正常seal，无新产品验收链。
+
+## 2026-10-07 11:33:37 UTC — 历史main限定接收
 
 [原receipt](../../docs/evidence/wpf-conversation-recovery/main-intake/original-recovery-intake.json)SHA d96022ac0dd07558bd10c32928c41368341e1cbc2125d624d8173383ddf6fa04；[中心来源审](../../docs/evidence/wpf-conversation-recovery/main-intake/center-alignment-web-review.json)SHA1e89d65635f9232a8808647802685cdaa0d9a627bea04187d76107cd17314adf。19源逐字等2f8，c544原组合审也与main字节一致。主线组合types6024ms/0输出通过、3项1357748B scratch KEEP_NONEMPTY_UNINSPECTED，保留其来源限制；本批无工程复测。19源码STOP待经理部分amend，仅保ownrecords，非全release；中心迟到注销竞态与个人部署未据此通过。
 

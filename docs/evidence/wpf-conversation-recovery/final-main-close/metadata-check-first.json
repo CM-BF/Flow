@@ -1,0 +1,371 @@
+{
+  "at": "2026-10-07T11:51:11.079Z",
+  "kind": "OWN_METADATA_ONLY",
+  "parserCommit": "99d7fa394949d4d039c3eeb88be937a1721b121d",
+  "parserPins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    }
+  ],
+  "statusSha256": "2a298c4265f802c1bd99fcab3252c3bbd735c9ccdc94fd6217b20a29f4a35efd",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录",
+    "任务完成时间不是唯一有效的 ISO UTC 时间"
+  ],
+  "timingExplanation": "Historical task start UNKNOWN retained; completedAt is the actual owner acceptance/closure event, not commit or claim inference.",
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+      "id": "WPF-MATURE-06",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "implementation": {
+    "target": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "errors": []
+  },
+  "proof": {
+    "target": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "head": "bc25cdc1a96690f41c74a99bb3c5c708a6b42701",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "observedAt": "2026-10-07T11:51:10.861Z",
+    "state": "unknown",
+    "implementationChanges": [],
+    "outsideChanges": [
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/parent.stdout.jsonl",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/run.py",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/sandbox.sb",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/vitest.config.mjs",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/parent.stdout.jsonl"
+    ],
+    "metadataChanges": [
+      "docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json",
+      "docs/evidence/wpf-conversation-recovery/acceptance05/claim-observation.json",
+      "docs/evidence/wpf-conversation-recovery/acceptance05/pins.json",
+      "docs/evidence/wpf-conversation-recovery/acceptance05/report.md",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/browser.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/budget.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/db-a/database-cleanup.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/db-a/database-owner.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/db-b/database-cleanup.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/db-b/database-owner.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/fixture-cleanup.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/launch-config.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/process-owner.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/process.log",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/scratch-owner.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/sources.json",
+      "docs/evidence/wpf-conversation-recovery/browser-runs/rectwocenter-20261007-110221-106064/supervisor.json",
+      "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "docs/evidence/wpf-conversation-recovery/main-intake/center-alignment-web-review.json",
+      "docs/evidence/wpf-conversation-recovery/main-intake/claim-observation.json",
+      "docs/evidence/wpf-conversation-recovery/main-intake/late-logout-readonly.md",
+      "docs/evidence/wpf-conversation-recovery/main-intake/original-recovery-intake.json",
+      "docs/evidence/wpf-conversation-recovery/main-intake/scope-handoff.json",
+      "docs/evidence/wpf-conversation-recovery/main-intake/status-parse.json",
+      "docs/evidence/wpf-conversation-recovery/main-intake/verification.json",
+      "docs/evidence/wpf-conversation-recovery/quality.md",
+      "docs/evidence/wpf-conversation-recovery/stale-route-phase.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-claim.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-connections.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-design-root-review.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/accounting.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/actual-exit.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/admin-env-deletion-receipt.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/admission.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/gate.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/parent.stderr.log",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/post-cleanup-observation.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/raw-index.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-parent/start.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-first-validation.md",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/actual-exit.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/direct.log",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/segment.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/types.log",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/attempt-1/vitest-results.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/cleanup-receipt.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/parent.stderr.log",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/post-check-observation.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/preflight.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-local/start.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-phase.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-preparation.json",
+      "docs/evidence/wpf-conversation-recovery/two-center-proposal.md",
+      "docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json",
+      "plans/wpf-conversation-recovery/plan.md",
+      "plans/wpf-conversation-recovery/review.md",
+      "plans/wpf-conversation-recovery/status.md",
+      "docs/evidence/wpf-conversation-recovery/final-main-close/claim-observation.json",
+      "docs/evidence/wpf-conversation-recovery/final-main-close/metadata-only-amend-receipt.json",
+      "docs/evidence/wpf-conversation-recovery/final-main-close/original-center-intake.json",
+      "docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "docs/evidence/wpf-conversation-recovery/final-main-close/verification.json"
+    ],
+    "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+  },
+  "integration": {
+    "record": "Web19源已接收c130；中心66ca合同后继已main 7272151bb1e3e59e08937dca44949dcdeb42f009，19Web源仍等2f8；非个人部署/通用Connect乱序保证",
+    "recordedHead": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "target": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "mainHead": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "scopes": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/attachments/controller.ts",
+      "apps/web/src/connection/session.ts",
+      "apps/web/src/conversation-context/controller.ts",
+      "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "apps/web/src/conversation-steering/control.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/knowledge.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugin-integration/steering.tsx",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/src/recovery/journal.ts",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts"
+    ],
+    "observedAt": "2026-10-07T11:51:10.996Z",
+    "current": false,
+    "historicalIntegrated": false,
+    "method": "unknown",
+    "reason": "无法以祖先关系证明，且 owner 实现范围存在变化或未知"
+  },
+  "addedLinks": [
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "two-center-checkpoint.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "2f8-composed-feature-root-review.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "acceptance05/report.md",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "main-intake/center-alignment-web-review.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "two-center-phase.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "two-center-connections.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "main-intake/scope-handoff.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "main-intake/late-logout-readonly.md",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "target": "final-main-close/original-center-intake.json",
+      "exists": true
+    },
+    {
+      "file": "docs/evidence/wpf-conversation-recovery/quality.md",
+      "target": "final-main-close/metadata-check.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/take-receipt.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/metadata-only-amend-receipt.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/interface.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/quality.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "status.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/plan.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/verification.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/review.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/review.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/review.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/review.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/root-consumer-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/original-center-intake.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/verification.json",
+      "exists": true
+    },
+    {
+      "file": "plans/wpf-conversation-recovery/status.md",
+      "target": "../../docs/evidence/wpf-conversation-recovery/final-main-close/metadata-check.json",
+      "exists": true
+    }
+  ],
+  "missingLinks": [],
+  "productChecks": 0
+}
