@@ -1,7 +1,8 @@
 import { randomUUID } from 'node:crypto';
 import { request as httpRequest } from 'node:http';
 import { spawn } from 'node:child_process';
-import { writeFile } from 'node:fs/promises';
+import { open, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { Pool } from 'pg';
 import { afterAll, afterEach, beforeAll, beforeEach, expect, it } from 'vitest';
 import { FlowClient } from '../../../../packages/client/src/index.js';
@@ -12,18 +13,27 @@ import { createBrowserSessionAuthentication, migrateBrowserSessions } from './in
 import { createBrowserSessionFixture } from './fixture.js';
 
 const ownerToken = 'connection01-synthetic-owner';
-const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
+const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1, connectionTimeoutMillis: 1000, statement_timeout: 5000, query_timeout: 6000 });
 const databases: { name: string; marker: string; pool: Pool; url: string; removed: boolean }[] = [];
 const fixtures: Awaited<ReturnType<typeof createBrowserSessionFixture>>[] = [];
 const facts = { providerCalls: 0, productionMount: false, samples: [] as Record<string, unknown>[], databases: [] as Record<string, unknown>[] };
 let pool: Pool;
+async function ownershipEvidence(name: string, value: unknown) {
+  const directory = process.env.FLOW_CONNECTION01_RUN_DIRECTORY;
+  if (!directory) return;
+  const file = await open(join(directory, name + '.json'), 'wx', 0o600);
+  try { await file.writeFile(JSON.stringify(value, null, 2) + '\n'); await file.sync(); }
+  finally { await file.close(); }
+}
 async function database() {
   const name = `flow_connection01_${randomUUID().replaceAll('-', '')}`, marker = randomUUID(), url = `postgresql://flow:flow-local-only@127.0.0.1:55432/${name}`;
   expect((await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [name])).rowCount).toBe(0);
+  await ownershipEvidence(name + '-allocated', { name, marker, created: false });
   await admin.query(`CREATE DATABASE ${name}`);
-  const owned = new Pool({ connectionString: url, max: 6, statement_timeout: 5000 });
+  const owned = new Pool({ connectionString: url, max: 6, connectionTimeoutMillis: 1000, statement_timeout: 5000, query_timeout: 6000 });
   const record = { name, marker, pool: owned, url, removed: false }; databases.push(record);
   await owned.query('CREATE TABLE public.connection_test_owner (marker text PRIMARY KEY)'); await owned.query('INSERT INTO public.connection_test_owner VALUES($1)', [marker]);
+  await ownershipEvidence(name + '-created', { name, marker, oid: (await admin.query('SELECT oid FROM pg_database WHERE datname=$1', [name])).rows[0].oid });
   const baseline = await createServer({ databaseUrl: url, ownerToken, automaticQueueScan: false }); await baseline.close();
   const legacyId = randomUUID();
   await owned.query('INSERT INTO flow.tasks(id,submission) VALUES($1,$2)', [legacyId, JSON.stringify({ title: 'Pre-028 preserved', prompt: 'Synthetic existing row', harness: 'fixture' })]);
@@ -40,8 +50,13 @@ afterAll(async () => {
   try {
     for (const d of databases) {
       expect((await d.pool.query('SELECT marker FROM public.connection_test_owner')).rows).toEqual([{ marker: d.marker }]);
-      await d.pool.end(); await admin.query(`DROP DATABASE ${d.name}`);
+      await d.pool.end();
+      const connections = (await admin.query('SELECT pid FROM pg_stat_activity WHERE datname=$1', [d.name])).rows;
+      await ownershipEvidence(d.name + '-before-drop', { name: d.name, markerVerified: true, connections });
+      expect(connections).toEqual([]);
+      await admin.query(`DROP DATABASE ${d.name}`);
       d.removed = !(await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [d.name])).rowCount; expect(d.removed).toBe(true);
+      await ownershipEvidence(d.name + '-removed', { name: d.name, removed: d.removed });
       facts.databases.push({ database: d.name, identityVerified: true, removed: d.removed });
     }
   } finally { await admin.end(); if (process.env.FLOW_CONNECTION01_EVIDENCE) await writeFile(process.env.FLOW_CONNECTION01_EVIDENCE, JSON.stringify(facts, null, 2) + '\n'); }
@@ -132,6 +147,40 @@ it('expires absolutely without read mutation and logout revokes only its session
   expect((await request(f, '/api/browser-session', { cookie: other.cookie })).body.state).toBe('unauthenticated');
   expect((await pool.query('SELECT * FROM flow.browser_sessions')).rows).toEqual(row);
   expect((await pool.query('SELECT status FROM flow.tasks WHERE id=$1', [id])).rows[0].status).toBe('running');
+});
+it('keeps a newer connection when an older logout response arrives late', async () => {
+  let entered!: () => void, release!: () => void;
+  const enteredPromise = new Promise<void>(resolve => { entered = resolve; });
+  const gate = new Promise<void>(resolve => { release = resolve; });
+  const f = await fixture({ async beforeLogoutResponse() { entered(); await gate; } });
+  const old = await connect(f), id = await task(), s = await stream(f, id, old.cookie);
+  let logout: Promise<Awaited<ReturnType<typeof request>>> | undefined;
+  try {
+    expect(await s.page()).toContain('running');
+    logout = request(f, '/api/browser-session/logout', { cookie: old.cookie, csrf: old.ready.csrfToken, method: 'POST', body: '{}' });
+    // Observe a possible rejection immediately, including if the gate wait fails.
+    void logout.catch(() => undefined);
+    await bounded(enteredPromise, 'revoked logout awaiting response');
+    const current = await connect(f);
+    expect(current.cookie.split('=')[0]).toBe(old.cookie.split('=')[0]);
+    expect(current.cookie).not.toBe(old.cookie);
+    release();
+    const late = await logout;
+    expect(late.status).toBe(200);
+    expect(late.body.state).toBe('unauthenticated');
+    expect(late.headers.get('set-cookie')).toBeNull();
+    expect((await request(f, '/api/browser-session', { cookie: current.cookie })).body).toEqual(current.ready);
+    expect((await request(f, '/api/protected', { cookie: current.cookie, csrf: current.ready.csrfToken, method: 'POST', body: '{}' })).status).toBe(200);
+    expect((await request(f, '/api/browser-session', { cookie: old.cookie })).body.state).toBe('unauthenticated');
+    expect((await request(f, '/api/protected', { cookie: old.cookie, csrf: old.ready.csrfToken, method: 'POST', body: '{}' })).status).toBe(401);
+    expect(await s.page()).toBeNull();
+    expect((await pool.query('SELECT status FROM flow.tasks WHERE id=$1', [id])).rows[0].status).toBe('running');
+    facts.samples.push({ case: 'late-logout-response', deletesCookie: false, newerSessionValid: true, oldSessionUnauthorized: true, oldStreamClosed: true, taskStatus: 'running' });
+  } finally {
+    release();
+    await logout?.catch(() => undefined);
+    await s.close();
+  }
 });
 it.each(['wrong', '', 'Basic secret'])('never falls back to a valid cookie from invalid explicit authorization %s', async invalid => {
   const f = await fixture(), login = await connect(f);

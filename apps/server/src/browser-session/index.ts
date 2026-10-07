@@ -106,10 +106,11 @@ export async function createBrowserSessionAuthentication(pool: Pool, options: { 
       setCookie(reply, token, row.expiresAt);
       return { protocol: BROWSER_SESSION_PROTOCOL, state: 'ready', ...store.identity, expiresAt: row.expiresAt, csrfToken: csrf(token) };
     },
-    async logout(request: FastifyRequest, reply: FastifyReply): Promise<BrowserSessionRead> {
+    async logout(request: FastifyRequest, _reply: FastifyReply): Promise<BrowserSessionRead> {
       if (!settings || !store) throw unsupported();
       const current = await session(request, true); if (!current) throw unauthorized();
-      await store.revoke(sha256(current.token), settings.cookieOrigin); setCookie(reply, '');
+      await store.revoke(sha256(current.token), settings.cookieOrigin);
+      // A delayed response must not erase a newer connection's cookie. The revoked token is inert.
       return { protocol: BROWSER_SESSION_PROTOCOL, state: 'unauthenticated' };
     },
   };
