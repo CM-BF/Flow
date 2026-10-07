@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:49:54.249365+00:00 |
+| 最近更新时间 | 2026-10-07T07:57:06.081085+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,23 +10,23 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v16 ACTIVE42scope](../../docs/evidence/x01/artifact-provenance-amend-v16.json)；v15接收C02四启动源但未改，新增5个来源合同/中心literal |
+| Claim | [v17 ACTIVE43scope](../../docs/evidence/x01/artifact-pg-amend-v17.json)；唯一追加artifact-pg.test.ts |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
 | 工作树 dirty 状态 | source 685978f6d6f9552a789e0df10da13df7a0757505固定；有限检查/元数据封存，提交后clean |
-| 工作分支状态 | review |
-| 检查状态 | 来源直接19/19、focusedtypes首2→修后0，3进程/TMP全闭合；0PG/tar，原checks不重跑 |
-| Review | provenance source/local待独审；pinning fe826/result ca851已07:40:53 APPROVED并READY |
+| 工作分支状态 | implementation |
+| 检查状态 | 新PG准备NOT_RUN；来源19/19+types0已审，不重跑 |
+| Review | 来源六源已chatui07:52:01 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；新PG准备待审/NOT_OPEN |
 | 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
 | 实现目标 | 685978f6d6f9552a789e0df10da13df7a0757505 |
 | 实现范围 | apps/runner/src/plugins/execution.ts, apps/server/src/events.ts, apps/server/src/plugin-runtime/artifact.ts, apps/server/src/plugin-runtime/artifact.test.ts, packages/contracts/src/runner.ts, packages/contracts/src/plugin-artifact.ts, docs/evidence/x01/artifact-provenance-local.py, docs/evidence/x01/artifact-provenance-tsconfig.json, docs/evidence/x01/artifact-provenance-vitest.config.mjs |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 产物来源已接入现有事件事务，核对冻结材料和同次执行的阶段授权；直接检查通过 |
-| 下一可用交付 | 来源事务片独审与主线接收；共享出口交回后接入原runner公开执行链 |
+| 当前产出 | 来源关联模块已审；正在准备真实事务重放与失败回滚验收 |
+| 下一可用交付 | 五组专库验收准备独审，再按实际资源窗口验证；来源模块独立READY接收 |
 | 当前阻塞 | ACTIVE: 生产runtime/client由CHAT05P02持有；当前来源事务片可独立交付 |
 | 需用户决定 | NONE |
 
@@ -293,3 +293,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:49:54.249365+00:00：来源source 685978f6d6f9552a789e0df10da13df7a0757505已固定，19/19、types首each类型错误2→窄修0，共3child；末07:46:58.890522Z已实际归还local，3组ownedabsent/mergedEOF/3exactTMP absent，raw1169B。仅注入SQL/storage与真实applyEvent/producer mapping，0PG/tar/native/provider；历史EPERM观察保留，external wholewall/全时TMPpeak UNKNOWN。当前main d556窄patch只读apply-check0，不能覆盖其native-body/Codex功能。独审入口将固定至[review-ready](../../docs/evidence/x01/artifact-provenance-review-ready.md)。pinning已独审，独立[READY intake](../../docs/evidence/x01/semver-pinning-integration-ready.json)不改原4fc与ca851原件。
 
 2026-10-07T07:51Z：主线d556权威parseStatus只读核本status：errors[]、humanMissing[]，仅原始任务开工时间UNKNOWN（历史缺证据，未伪造）。来源source 685978f6 / result ddace03a / packet c0c95b03已push clean并交chatui01_owner固定只读独审；本段0actual/0待launch，claim v16 ACTIVE42保留review/repair。未改共享runtime/client/index或C02交回四源，未重复原checks。
+
+2026-10-07T07:57:06.081085+00:00：来源正式[独审](../../docs/evidence/x01/artifact-provenance-independent-review.json)与[六源独立intake](../../docs/evidence/x01/artifact-provenance-integration-ready.json)READY，禁止整文件覆盖当前main native-body/Codex；需主线直接组合检查。07:55:01.176Z原子amend v17后新增5组PG源码，0actualPG，无预占。

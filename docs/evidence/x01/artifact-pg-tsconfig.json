@@ -1,0 +1,9 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../apps/server/src/plugin-runtime/artifact-pg.test.ts"
+  ],
+  "exclude": [
+    "../../../node_modules"
+  ]
+}

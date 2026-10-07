@@ -1,0 +1,11 @@
+# X01 artifact association PG candidate — NOT_OPEN
+
+Five new actual HTTP/SQL groups only: valid frozen source and exact replay/readable detail; same-sequence changed source conflict; full message-prefix rollback on wrong material; missing invoke rollback and later corrected retry; foreign historical-attempt phases rejected; legacy artifact remains unlabelled. The first group includes replay/conflict, for five selected Vitest cases total.
+
+Uses existing `PluginDatabaseFixture` and official migration closure (31 SQL), fixed main/SVC07 database donor, createServer runner credential hook and reportEvents transaction. The isolated bounded seed is adapted verbatim from the proven claim suite: public register/configure/grants/enable/bind/claim with synthetic installed-material metadata. One additional historical completed attempt is explicit SQL seed satisfying 034 FK; it is not a real invocation. Old test modules are not imported, and old 27/6/19/9/3 are not selected.
+
+One random marked database; 5 tasks/5 registrations/6 attempts; max17 total connections, one actual dynamic loopback listener and PgBoss send-client. HTTP work uses the unchanged runtime fixture partition of 256 requests, per response128KiB and suite4MiB; expected under100 calls, exact actual count required. Common180s=110work+60cleanup+10final; work check/pool timeout/bounded dispatch wait inherited. TMP32MiB/4096entries; raw1MiB with stream256KiB/final reserves; oneGiB unspendable reserve plus128MiB DB/WAL reservation (not a measured cap), plus all actual paired/retained resource budgets.
+
+Thin `artifact-pg-once.py` is the existing single-suite recipe with namespace/selector/claim-stage and five-result literals only; shared OPS14 and resource/phase cleanup modules unchanged. Fresh claim v17/43scope, clean execution HEAD, bound input manifest, 60s admission, exact new `artifact-pg-run-r1` absent, fixed donor identities and combined floor required. Same-PID launch identity, final group/EOF and exact DB OID/marker→0conn→normalDROP/absence+owners/listener closure precede own TMP deletion; unknown KEEP and no auto retry remain.
+
+Preparation local only: <=15min/2 children <=60s, types plus list; list executes no hooks/PG. Full PG awaits independent preparation review and concrete resource handoff/OPEN. Successful preparation is not SQL validation or full plugin availability.
