@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:58:24.531Z；第二中心2f8源码/局部检查已限定独审，真实双DB旅程尚未运行 |
+| 最近更新 | 2026-10-07T11:15:22.503Z；Recovery原03/05组合审接受，06保留中心合同及集成；插件局部父FAIL/超82ms封账 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。 |
@@ -17,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 实时任务详情、原七组恢复、中心选择、提交/排队丢回执及完整草稿均有各自所选通过证据；修复同页面旧路由回调后，Steer保存、恢复、丢回执同key重试与下一稿所选2/2实际通过。旧失败保留，完整功能未验收。 |
-| 下一可用交付 | 原owner已完成同入口双中心专测源码、2项受控身份/迟到检查与noEmit；集中源码/local审接受，浏览器仍未运行。完整准备固定后按27配置连接上限及新2DB/1Chrome组合fresh交接，旧routefix余额封闭。 |
+| 当前产出 | Recovery固定Web实现与原03/05工程证据矩阵已组合独审接受；已绿重新认证/离线保稿不重复跑。历史失败、真实与受控证据边界保留，06仍待三中心合同来源对齐及合法主线接收。 |
+| 下一可用交付 | Recovery原06只保callerOrigin、迟到Clear-Cookie、重复Connect32slot的中心合同来源与合法main/intake；不新增Web/provider测试。其他共享消费者仍按唯一canonical依赖排队。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -82,4 +82,4 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 共享读取上界片仅关联[MATURE06-READBOUND01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，Mika/db_transaction_owner原独立树；[原登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)已由[正式main/194登记回执](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)接收，不复制实现/TODO/运行进度，不冒MATURE06整体完成。
 
-原RECOVERY01两次Steer实际失败均清理归还，0SteerPOST/恢复验收未过；原60s段不再消费。原owner沿21scope[修复与新有限回归](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)，当前仅source，不增加第二业务status或越权占用App。
+**历史Steer修复准备快照：** 原RECOVERY01两次Steer实际失败均清理归还，0SteerPOST/恢复验收未过；原60s段不再消费。原owner沿21scope[修复与新有限回归](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)，当前仅source，不增加第二业务status或越权占用App。

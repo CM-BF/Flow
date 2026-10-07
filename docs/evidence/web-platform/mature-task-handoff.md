@@ -1,14 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T11:01:34.529Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T11:14:23.585Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+
+**Original 现成接收入口：** Recovery固定metadata `15833e947b92ae9257848c51204bde174aba9c82` 的[唯一feature-review-entry](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md)、[组合独审](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)（SHA `c5444993994d86bcf8523fb558c21fa6946acb005ffe5d7b6bbfd3ee336209eb`）和[19源checkpoint](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)，source `2f8cc1f61d32f518998a64d0adeec582f85481f2` / base `84005a260dfcb668cd38b09c21564d0754a0f513`，16产品同a803。原03/05工程证据已接受；06仅需既有中心来源确认 callerOrigin适用范围、迟到Clear-Cookie竞态合同、重复Connect/32session容量策略，再合法main/intake。Original可并行核现有中心source，不等待三App或新Web测试；本canonical是可用交接渠道，root直发被运行时拒绝不冒已送达。
 
 ## 当前窗口与用户交付
 
-[本次当前入口](recovery-second-center-preparation-20261007/current.json)：O16 R2已10:49:10.010Z归还运行窗口，DB/TMP KEEP；SVC r2已完整归还。当前无已知actual重holder。Recovery两中心源码/local及完整准备已固定，[下一唯一窗口已交原owner即时fresh](recovery-second-center-preparation-20261007/recovery-owner-segment-handoff.json)，实际开始待报；插件已由原W01正式领取七scope实施，App/session不在其中。Release固定产物/结果已审，但尚缺下列非秘密配置和自有caller，不能因准备占窗。旧KEEP UNKNOWN保留。
+[本次当前入口](recovery-two-center-actual-20261007/current.json)：Recovery双中心所选2/2实际通过，11:03:49.666Z两库/进程/Chrome/scratch/env清理归还，[限定结果独审已接受](recovery-two-center-actual-20261007/recovery-actual-root-review.json)；late GET实际为abortedWithoutDelivery，不冒已交付拒绝或完整feature。当前无Web重holder/下一预约。插件原七scope的P2源码已审；局部段类型首红后绿、direct JSON15/15与父FAIL/drop/晚清理分层保留，最终计量30082/30000超82ms已封，七scope停止且无第四跑。Release原owner7af40已解除旧配置blocker并规范时间字段、caller准备中；Original O16 R3已实际归还（DB/TMP KEEP），Mika X01现唯一NEXT/fresh未RUN，O16/C02历史KEEP保留。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
-**供Original读取的具体输入缺口：** RELEASE01需要规范化 `browserSettings` 三字段 `cookieOrigin`、`trustedOrigins`、`authEpoch` 的正式非秘密值或固定来源，须计算为 `publicOrigin=http://127.0.0.1:61228`、`policySha256=81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638`。Mika直发Original被工具拒绝，未送达且不重试；本canonical供既有读取链消费。不能复制ea6隔离epoch、从hash猜值或读取个人配置。其后仍需固定owned Chrome/lifetime caller和fresh输入，当前无重资源预约。
+**Release输入已供给：** Original已正式提供[规范化非秘密配置](recovery-two-center-actual-20261007/release-public-settings-supply.json)：cookieOrigin与唯一trustedOrigins均为 `http://127.0.0.1:61228`，authEpoch为 `svc09-b2b-20261007`，目标policySHA为81a8abe。此前缺字段与被拒直发是历史；当前不再等待同输入。W01在插件局部段安全STOP后准备自有fixed Chrome/lifetime caller与完整输入/资源包，尚无重资源预约，不重编已有三App或backend。
 
 **新来源待中央登记：** [WPF-PLUGIN-RUNTIME01精确登记请求](recovery-second-center-preparation-20261007/plugin-registration-request.json)绑定已COMMITTED的0a9a9b2c v1/7scope与唯一owner三件套；当前main registry未找到该来源、实际加载未观察。Original负责登记，manager不写registry；用户可先由此下钻[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)。
 
@@ -171,7 +173,7 @@ MATURE01/05/06视觉继续原计划；D06既有后继已由原owner在原五范�
 
 历史有界只读接收（已被b1/b2实际结果替代）：[Quick同一b1当前HEAD/已过c2原件重绑](checkpoint-0413-20261007/quick-b1-ready-report.md)仍无native边界接受/gate，少一个已存在依赖pin待root裁定，不运行；[snapshot超过5s观察研究](checkpoint-0413-20261007/snapshot-pending-sync-research.json)沿既有DPERF/D01后继，耗时归因尚未实测，保PENDING_SYNC、不重复GET全量来源。
 
-ACCESS当前真实发布source451与main422等receipt不表示README537已接收；[原owner唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json)中的README537/root92eaba仍是独立doc-only增量，owner269a停写，原35+5/token操作无需重复。
+**历史发布快照：** source451与main422等receipt当时不表示README537已接收；[原owner唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json)中的README537/root92eaba仍是独立doc-only增量，owner269a停写，原35+5/token操作无需重复。
 
 D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actual-20261007/narrow-reading-followup.json)已归原D01/REQ39，源码字号算术与实际可读性分开，未take/不阻当前591接收。当时D06时间字段UNKNOWN/NOT_COMPLETED为历史；其现已完成并释放。Recovery时间字段已由原owner panels在4c0852补UNKNOWN/NOT_COMPLETED，不由W01或管理代写。
 
@@ -185,7 +187,7 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 
 [新有限并行规则](x01-r1-return-20261007/incoming.json)允许一个实际PG重旅程与完全独立0PG浏览器按隔离及合计预算并行；不推导artifact+PG+browser三重，不改变unknown/共享依赖/性能排他。原各队一local和当前人员上限保持；当时Quick b2与仅准备ENG的排程已结束；新后继仍须按实际资源和即将执行时fresh gate，不复开已消费包。
 
-**当前具体交接供原Lead读取：** ENG01I、SVC08、Mika X01R2及Web Recovery第四次均已实际归还。Web无PG/Chrome/local holder、gate或预约；原失败/UNKNOWN/保留证据分别保真。Quick b3仅TMP准备，Recovery不自动第五次；无需等待功能修复或metadata归档才接后续实际ready窗口。
+**历史交接，禁止据此当前派工：** ENG01I、SVC08、Mika X01R2及Web Recovery第四次均已实际归还。Web无PG/Chrome/local holder、gate或预约；原失败/UNKNOWN/保留证据分别保真。Quick b3仅TMP准备，Recovery不自动第五次；无需等待功能修复或metadata归档才接后续实际ready窗口。
 
 [常用文件能力的新验收](recovery-fourth-return-20261007/attachment-practical-files-requirement.json)已写原MATURE03-02与稳定03-07、U15；GO转述的8KiB限制/项目文件字节不冒本组实测。先只读真实消费者接口，后继实用能力优先于附件装饰/插件菜单，既有Recovery/Quick失败与完整约束不降低；无新claim、产品或上传/provider动作。
 
@@ -200,3 +202,7 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 原W01在Quick实际释放后，仅做三retained真实App的只读/TMP兼容准备；[三manifest与30资产完整性](svc06-return-steer-handoff-20261007/release-three-app-integrity.json)不等真实浏览器兼容。OriginalLead的SVC06 r1诊断可能生成新backend/sourceartifact tuple，旧b2b/c2c构建历史保留，三App实际重段必须等已审最终tuple，不重build、不将动态origin手填61228、不接个人服务。当前不复用旧Release领取或新建writer。
 
 原DPERF受控部署继续原D05 operator。[已有4320发布入口](steering-diagnostic-release-preparation-20261007/dashboard-deployment-entry-handoff.json)只提供09:03:39最后观察96517、原Node24精确argv/cwd和非secret绑定receipt；不是fresh进程身份或经理启停授权，原operator须现场核验再受控替换，保ACCESS opt-in/个人服务及用户tab。
+
+[ACCESS README主线接收指针](recovery-two-center-actual-20261007/access-readme-main-pointer.json)确认Original固定f2ccb673已接537文档；原owner待Recovery证据矩阵安全停点后fresh三scope做状态收口，不恢复七产品写权或重跑旧绿。
+
+[Recovery原03/05组合独审](recovery-two-center-actual-20261007/recovery-composed-feature-review.json)已接受固定Web实现与原工程矩阵；06由Original/中心owner交既有callerOrigin/迟到Clear-Cookie/重复Connect32slot合同来源及合法main/intake。原全7重新认证/离线保稿已绿，不新增笼统重连重跑或provider前置。

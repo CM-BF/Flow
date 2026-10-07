@@ -174,4 +174,8 @@ READBOUND共享边界已[main81b/正式194登记](../../docs/evidence/web-platfo
 
 本轮原RECOVERY01-03/05的[第二中心方案](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/two-center-report.md)在固定入口A→B→A→B中使用两真实DB及公共身份，最后B显式Restore；原owner仅两harness/direct专测与记录准备。principal-only和ignore-abort迟到ready为受控检查，不冒公共rotation或真实迟到响应已投递。两个lease/独立清理原件、失败仍清另一库及新2DB/1Chrome资源差量须固定源码后集中审查；原routefix段剩余额封存，不直接沿旧1DB门槛运行。原功能边界仍03/05；provider实际consume/apply、Queuepromotion等跨owner依赖如实列未验，不临时扩成当前渲染/触发/缓存必须新跑provider的前置。
 
-第二中心固定2f8的[源码与局部独审](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/two-center-source-local-review.json)已接受三test/16产品未变、2direct通过且55未选、affected noEmit0；只核本片不扩旧测试覆盖。双DB真实旅程尚未运行，完整owner准备与最新共享窗后fresh；新90秒含30秒清理、27配置连接上限和133MiB声明增量按最终包核，原routefix未用余额不转入。
+第二中心固定2f8的[源码与局部独审](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/two-center-source-local-review.json)已接受三test/16产品未变、2direct通过且55未选、affected noEmit0；只核本片不扩旧测试覆盖。该准备时点双DB真实旅程尚未运行；后续实际见当前结果入口。该次准备要求完整owner输入与最新共享窗后fresh；新90秒含30秒清理、27配置连接上限和133MiB声明增量按最终包核，原routefix未用余额不转入。
+
+上述2f8双中心旅程已按独立新90秒段实际执行，cookieRead+secondCenterCycle两组通过、两库各自正常清理，并获[限定实际独审](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-actual-root-review.json)。A保持原key/body与同turn/task，B不含A身份；晚GET实际abort未交付，不冒迟到已交付被拒。新段计13020毫秒，旧余额与失败不变，无自动追加运行；此不代完整feature/main接收。
+
+原RECOVERY01固定2f8已获[组合功能审查](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-composed-feature-review.json)：03/05原工程矩阵完成，历史source/actual/controlled层级保留。原06仍由Original/中心owner对齐既有callerOrigin适用的single-origin/trusted-origin边界、迟到Clear-Cookie合同及重复Connect/32session容量策略来源，再合法main/intake；不以四次连接冒32slot实证，不把这些来源问题转成额外Web/provider运行或重测所有旧绿。

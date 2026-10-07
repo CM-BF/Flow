@@ -2,9 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
+**Original 现成接收入口：** Recovery固定metadata `15833e947b92ae9257848c51204bde174aba9c82` 的[唯一feature-review-entry](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/feature-review-entry.md)、[组合独审](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)（SHA `c5444993994d86bcf8523fb558c21fa6946acb005ffe5d7b6bbfd3ee336209eb`）和[19源checkpoint](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)，source `2f8cc1f61d32f518998a64d0adeec582f85481f2` / base `84005a260dfcb668cd38b09c21564d0754a0f513`，16产品同a803。原03/05工程证据已接受；06仅需既有中心来源确认 callerOrigin适用范围、迟到Clear-Cookie竞态合同、重复Connect/32session容量策略，再合法main/intake。Original可并行核现有中心source，不等待三App或新Web测试；本canonical是可用交接渠道，root直发被运行时拒绝不冒已送达。
+
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:01:34.529Z；外组运行窗已归还，Recovery下一窗口已交原owner即时fresh，实际开始待报 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:17:17.749Z；Recovery15833组合封存、Release7af40状态纠正、O16R3归还后X01唯一NEXT fresh |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 看板摘要与按需详情已入主线并发布；快速设置组件已入主线。恢复与Steer所选旅程已有实际通过证据，旧失败保留，完整功能与真实后继接线仍分开验收。 |
-| 下一可用交付 | 原Recovery owner已固定双中心准备，收到下一窗口并即时fresh后执行；插件模块七范围已正式领取、源码实施，App/session未交权。Release仍缺三个非秘密browserSettings字段与自有caller。 |
+| 当前产出 | 看板摘要/详情与快速设置组件已入主线；Recovery固定Web实现和原03/05矩阵已组合独审接受。插件类型修后通过、direct原JSON15/15，但父FAIL和82毫秒超额真实保留；App后继与主线/部署另计。 |
+| 下一可用交付 | Recovery原03/05已组合审查并封存，06保三中心合同来源及main接收；Release原owner已解除旧配置blocker并规范时间字段，继续自有caller准备。插件local父FAIL/30082ms已封，不冒JSON15/15为完整通过。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：O16 R2运行窗归还但DB/TMP KEEP；Recovery已获下一唯一2DB/1Chrome有限段交接，当前待原owner即时fresh、尚非RUN。Release未READY，插件仅source；旧KEEP UNKNOWN保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Web0PG/Chrome；O16R3已实际归还但DB/TMP KEEP；Mika X01接唯一NEXT fresh（不是RUN）。插件local已封FAILED/30082ms超82且清理归还；Release未READY，所有旧KEEP保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -91,7 +93,7 @@
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
 | 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v1 exact7已COMMITTED | [精确登记入口](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/plugin-registration-request.json)待Original接收；领取与页面实际加载分开，App/session未交权。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2仅历史。固定7d1/source6c与SVC限定结果已审；缺cookieOrigin/trustedOrigins/authEpoch规范化值（匹配61228/81a8abe）及自有caller，未READY/不占重窗。 |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2仅历史。固定7d1/source6c与SVC限定结果已审；三个非秘密配置已[正式供给](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/release-public-settings-supply.json)，仍需自有caller/完整输入，未READY/不占重窗。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |

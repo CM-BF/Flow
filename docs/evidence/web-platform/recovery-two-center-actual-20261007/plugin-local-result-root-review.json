@@ -1,0 +1,415 @@
+{
+  "at": "2026-10-07T11:15:33.830549+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent read-only",
+  "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "metadata": "4219f9f44ad5e6c5dcfa74b230511e7417155d6d",
+  "decision": "SOURCE_IMPORT_FIX_ACCEPTED_STRICT_PASS_DIRECT_JSON_ONLY_PHASE_FAILED",
+  "findings": [],
+  "sourceReview": "6544 delta only replaces absent contracts barrel exports with existing exact shared source module imports and fixes dynamic Pool type use. No shared source/export/transport/schema modified;20ac runtime observation fix unchanged.",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21430,
+      "sha256": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca"
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 38182,
+      "sha256": "e01ea0210120c32385c315022130a04aca6850ed07da7f964316c7141d24b173"
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 6791,
+      "sha256": "2f770482608dd76dc94269c6c09ec58e224408f1ff045390e9439a2b94300f6d"
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    }
+  ],
+  "rawFixedAndOriginalByteExact": true,
+  "rawCount": 51,
+  "rawBytes": 929401,
+  "rawIndex": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/binding.json",
+      "bytes": 224632,
+      "sha256": "19b4279c8a9ef9342538ffa162b7fbab2dac802ef9910f02374bfa33ac09b35f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/budget.json",
+      "bytes": 142,
+      "sha256": "02bcc1423ba1094ff21d859f97c74d144cc8fe3c232c48d024070f72c1ac291a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/claim-live.json",
+      "bytes": 172369,
+      "sha256": "754e218177e6392e77f1e465c252a5902e791354b788b0da58de797ff685c8d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/expected-tests.json",
+      "bytes": 1225,
+      "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/outer-result.json",
+      "bytes": 345,
+      "sha256": "d28507d8c9e3e992774017fc5cbd57263451c43688f9baf4bfdffbaedc85e443"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/outer-stdout.txt",
+      "bytes": 487,
+      "sha256": "38b41be702a5cd6675d25b706db8271f661e3fe1570b1f5f456d7d624ed28b15"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/result.json",
+      "bytes": 17678,
+      "sha256": "01ce8c1d9401a40f758eb7698218bd13a58d2ee0868438f1d5e42f918a0bab7a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/run.py",
+      "bytes": 8640,
+      "sha256": "7be00264760cc74f2d96b26dc86425ff0d75f2654033224b0b0d4e5f5a9ba3f5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/sandbox.sb",
+      "bytes": 168,
+      "sha256": "5a9bbad8c3ccf489e2fecb2667e3e7fb52ee0c48efca989cf1b77625d8756f5c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/started.json",
+      "bytes": 471,
+      "sha256": "34438caab02ce6b4ada9cd6bf18b716b5f41391e25b43a5e13c4deaf0380c374"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/strict-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/strict-stdout.txt",
+      "bytes": 2411,
+      "sha256": "a6a4fd8ff92e0c1959aca05a3348427efb873c5cab13bfb3dea6cc3f45456bd1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/terminal.json",
+      "bytes": 376,
+      "sha256": "8feb680689ac99869ced28195cbd3c199b7a05eae58f4c109f4e2c737fecb6a9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/tsconfig.json",
+      "bytes": 9311,
+      "sha256": "91d70199a02b70d04117e38002a90a3cc2fb7e48d5bc6b873862f5cfa933985c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-1/vitest.config.mjs",
+      "bytes": 1142,
+      "sha256": "915aef926425e936827f591db8676b476207a40bf900b0be7eb29a71747b6e26"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/binding.json",
+      "bytes": 228743,
+      "sha256": "78fd5a5481eff908ff0d28c49e423323c78ab4b7bac07283494f20eecfe50223"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/budget.json",
+      "bytes": 146,
+      "sha256": "62279c447fad5d5b13be7520a24c484ed1c715e18013232674825167efcfcfb3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/claim-live.json",
+      "bytes": 172369,
+      "sha256": "22a07c440209ddf9b3850d225fb645199797e6900ba79120e199f869e45d595b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/direct-stderr.txt",
+      "bytes": 2741,
+      "sha256": "8ca71445d9592d49ed8c146d20ea4b65c90711ca6e6375efc79a9df453d8d3ef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/direct-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/expected-tests.json",
+      "bytes": 1225,
+      "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/outer-result.json",
+      "bytes": 345,
+      "sha256": "4dce2e40ee73421c9984e1a2d9a9224b3ff93adfabd007b4800789ab2afec24f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/outer-stdout.txt",
+      "bytes": 672,
+      "sha256": "a045cd1d0291e8b4b9f5163d8508dfeffd9d81bcce8348b62130dbae37af9e97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/result.json",
+      "bytes": 19219,
+      "sha256": "05f1c280ad7140bbe10a4822099e3adc08658d6bac48d820cf7f9ed434abd21e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/run.py",
+      "bytes": 8640,
+      "sha256": "7be00264760cc74f2d96b26dc86425ff0d75f2654033224b0b0d4e5f5a9ba3f5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/sandbox.sb",
+      "bytes": 175,
+      "sha256": "2bd1ff45d0675796a65a70311a7cf3ccf02d1dbe691b126241f4995ac2ec2abb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/started.json",
+      "bytes": 16665,
+      "sha256": "b41f2255e6d7667eddff41eb157ce16a2825fe01d7a4105ef95771c68c01352d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/strict-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/strict-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/terminal.json",
+      "bytes": 396,
+      "sha256": "3f2f85313f8031d32f2cb74b6f8f5e2ad6df3682d312cd05657a1525f6953d5f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/tsconfig.json",
+      "bytes": 10290,
+      "sha256": "c43b635893438072d3fac0a8393cb5f06fa35107c36381091b3de34e92367f51"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-2/vitest.config.mjs",
+      "bytes": 1149,
+      "sha256": "9a6eaef8f4930f1979153bf09329ce17666f93d84c22d0fc9b85e70a5b1f9044"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/binding.json",
+      "bytes": 4104,
+      "sha256": "315870f7a7eab8ef00ada03bf1dbc78dd01cd6cb9a235602dddca62c5424e9f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/budget.json",
+      "bytes": 145,
+      "sha256": "4e85d3854657e252fa457d1f4bd18f7aea771dfdd93d7a20e7b37c9c40b42418"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/claim-live.json",
+      "bytes": 1345,
+      "sha256": "1bb4831271755e0a558b63c204f4522263602c8551360e063efc42477e4cba46"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/direct-recovered.json",
+      "bytes": 4883,
+      "sha256": "53c6da238bac2b5104fca87ebfc2d02d5e3acaf8663eefa1c4b95f16ceb492dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/direct-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/direct-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/expected-tests.json",
+      "bytes": 1225,
+      "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/outer-result.json",
+      "bytes": 345,
+      "sha256": "446cb64035de65c35d382b168463f0aba6ab6b694fe951e6f39318b28f70c6c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/outer-stdout.txt",
+      "bytes": 425,
+      "sha256": "a0aaf33c32d79e3c810aebe29368e9b2a0260c4a1df9705fe7b6562251b592a1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/post-terminal-owned-cleanup.json",
+      "bytes": 626,
+      "sha256": "2532582e045ac0f3e731879aa050618adbac5e01510204d2668b422c3008fbf6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/result.json",
+      "bytes": 3236,
+      "sha256": "5d652b8c5c1bda0a2e0f165cf423d6a832be759e164a61a74007037b0fd18888"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/run.py",
+      "bytes": 8821,
+      "sha256": "61210f33d84d85c6190c4ac7d40f1009c5a9757db9e7897cbcacee097c1d5297"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/sandbox.sb",
+      "bytes": 175,
+      "sha256": "8fe768233aedaf82269d73c8dd4058d10a55926629d2a6dbdae921bddd56eb85"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/started.json",
+      "bytes": 471,
+      "sha256": "a69a4f3ee8c7cf7b1ae2d57a7a219534c61b0ee99c6f8e031eb8e3f9137f4d8f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/terminal.json",
+      "bytes": 279,
+      "sha256": "935435a69f8f6da875edc8b097496b670a56c5ccf0f4a330ce20511eabeb3a30"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/attempt-3/vitest.config.mjs",
+      "bytes": 1149,
+      "sha256": "752c0f7501a81d64015866fe155197ea3446831a1c2cae6593c8bbd409270c17"
+    }
+  ],
+  "summary": {
+    "state": "CLOSED_FAILED_PARENT_TERMINAL",
+    "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "strict": {
+      "attempt": 2,
+      "exit": 0
+    },
+    "direct": {
+      "attempt": 3,
+      "jsonTests": 15,
+      "jsonPassed": 15,
+      "exactNames": true,
+      "childExit": "NOT_CAPTURED",
+      "parentExit": 1,
+      "stdoutDroppedBytes": 93,
+      "acceptance": "JSON_RESULT_ONLY_NOT_COMPLETE_RUN_PASS"
+    },
+    "records": [
+      {
+        "attempt": 1,
+        "outerExit": 1,
+        "outerMs": 4340.527000022121,
+        "terminalMs": 4236.217,
+        "chargeMs": 4341,
+        "path": "/private/tmp/plugin-runtime-local-eb1ma5iy",
+        "cleanup": {
+          "groupsAbsent": [
+            80084
+          ],
+          "allGroupsAbsent": true,
+          "scratchAbsent": true
+        }
+      },
+      {
+        "attempt": 2,
+        "outerExit": 1,
+        "outerMs": 4520.743041997775,
+        "terminalMs": 4456.445,
+        "chargeMs": 4521,
+        "path": "/private/tmp/plugin-runtime-local-second-3f6ohx3f",
+        "cleanup": {
+          "groupsAbsent": [
+            14062,
+            17426
+          ],
+          "allGroupsAbsent": true,
+          "scratchAbsent": true
+        }
+      },
+      {
+        "attempt": 3,
+        "outerExit": 1,
+        "outerMs": 863.6907499749213,
+        "terminalMs": 792.055,
+        "chargeMs": 864,
+        "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky",
+        "cleanup": {},
+        "throughSupplementalCleanupMs": 21219.727277755737,
+        "chargeWithSupplementalCleanupMs": 21220
+      }
+    ],
+    "totalLimitMs": 30000,
+    "conservativeChargedMs": 30082,
+    "overLimitMs": 82,
+    "unusedMs": 0,
+    "evidenceBytes": 929401,
+    "fourthRun": "NOT_RUN",
+    "cleanup": "Supplemental exact PID/PGID ABSENT and owned inode scratch deleted; original incomplete terminal unchanged",
+    "boundary": "0network/PG/Chrome; no grants to infer browser/App functionality"
+  },
+  "verifiedResult": {
+    "strict": "Attempt2 actual child exit0 with strict/noUnchecked/noEmit, source6544 and real fixed shared source aliases",
+    "direct": "Recovered exact15names/15PASS/0failed JSON; original child exit NOT_CAPTURED and both streams incomplete, so NOT complete accepted run",
+    "originalFailures": "Attempt1 strict missing public barrel export/Pool type plus aliases; attempt2 strict0 then Vite config write refused; attempt3 raw cap and cleanup permission failure. All three original parent exit1 preserved.",
+    "cleanup": "Supplemental owned cleanup identity receipt and current7PIDs/5groups all ESRCH; all3scratch absent. No inference of completion from partialJSON."
+  },
+  "freshProcessObservations": [
+    {
+      "pid": 79840,
+      "pidState": "ESRCH"
+    },
+    {
+      "pid": 80084,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "pid": 13891,
+      "pidState": "ESRCH"
+    },
+    {
+      "pid": 14062,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "pid": 17426,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "pid": 46358,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    },
+    {
+      "pid": 46362,
+      "pidState": "ESRCH",
+      "groupState": "ESRCH"
+    }
+  ],
+  "followupInExistingTask": [
+    "Before a future separately admitted direct-only check, reject nonpositive effective raw allowance before spawning. Account prepared bytes, stdout/report reserve and prior retained totals explicitly.",
+    "Use existing verified lifecycle/cleanup recipe; cleanup signal permission error must not prevent collecting final process identity/exit/streams. Do not create another generic supervisor.",
+    "No fourth run within the closed30000ms phase. Strict already passed; do not repeat it merely to obtain direct child final status.",
+    "Browser fixture and real App/session integration remain unexecuted/unwired; Releasecaller preparation may proceed separately under manager schedule."
+  ],
+  "resourceBoundary": "0root tests/HTTP/PG/Chrome; no resource admission. Existing phase consumed30082ms including supplementalcleanup,82over/0remaining retained.",
+  "cleanCode": "Reviewed actual failure/error and cleanup boundaries, did not mask failed parent with green assertion JSON. Source imports reuse public source and retain narrow single authority."
+}

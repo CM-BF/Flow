@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T11:14:22.770Z",
+  "run": "native-plan-20261007-r3",
+  "outerTool": {
+    "exitCode": 1,
+    "sessionId": 85328,
+    "chunkId": "59b03e"
+  },
+  "groups": [
+    {
+      "pgid": 12043,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "pgid": 14564,
+      "state": "absent",
+      "code": "ESRCH"
+    },
+    {
+      "pgid": 11982,
+      "state": "absent",
+      "code": "ESRCH"
+    }
+  ],
+  "database": "flow_o16_09a5ecedcbf64b7ea068ad1845c59211",
+  "marker": "16b993dc-e94b-47a5-8890-a4f0911854d8",
+  "directory": {
+    "path": "/private/tmp/flow-o16-5YKpcI",
+    "dev": 16777234,
+    "ino": 124073875
+  },
+  "retention": "KEEP; no DROP or directory deletion performed",
+  "originalResourcesPhase": "paused-owned-resources",
+  "originalAdminClosed": true,
+  "checks": {
+    "targetConnectionsAbsent": true,
+    "ownedGroupsAbsent": true,
+    "markerMatches": true
+  },
+  "queryResult": "SDK assistant.error authentication_failed; result subtype success/isError true, no successful proposal/pause; cumulative SDK entries3, no fourth authorization",
+  "directoryMatches": true,
+  "databaseObservation": [
+    {
+      "oid": "1295824",
+      "marker": "16b993dc-e94b-47a5-8890-a4f0911854d8",
+      "bytes": "12935695"
+    }
+  ],
+  "connections": [],
+  "readonlyObserverPoolClosed": true,
+  "endedAt": "2026-10-07T11:14:22.783Z",
+  "windowRuntimeSettled": true
+}
