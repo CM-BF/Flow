@@ -1,0 +1,64 @@
+{
+  "source": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "inputs": [
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "beforeSHA": null,
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "beforeSHA": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "beforeSHA": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    }
+  ],
+  "take": {
+    "requestId": "lazy01-main-support2-take-20261007-v1",
+    "action": "amend",
+    "committedAt": "2026-10-07T08:36:26.242Z",
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/assistant-stream/index.ts",
+        "apps/server/src/assistant-stream/queries.ts",
+        "apps/server/src/assistant-stream/selection-pg.test.ts",
+        "apps/server/src/assistant-stream/selection.test.ts",
+        "docs/evidence/mature06-lazy-reasoning",
+        "packages/client/src/assistant-stream.test.ts",
+        "packages/client/src/conversation-acknowledgement.ts",
+        "packages/client/src/index.ts",
+        "packages/contracts/src/assistant-stream-selection.test.ts",
+        "packages/contracts/src/assistant-stream.ts",
+        "packages/contracts/src/conversation-harness.ts",
+        "packages/contracts/src/conversations.ts",
+        "packages/interaction/src/stream/patches.ts",
+        "packages/interaction/src/stream/presentation.ts",
+        "packages/interaction/src/stream/projection.ts",
+        "packages/interaction/src/stream/selection.test.ts",
+        "plans/mature06-lazy-reasoning"
+      ],
+      "state": "active",
+      "branch": "codex/lazy-reasoning-reads",
+      "origin": "new",
+      "taskId": "MATURE06-LAZY01",
+      "worker": "status_read",
+      "claimId": "8436ad9e-ec1f-4cfb-b2fa-84e9f207935b",
+      "version": 7,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads",
+      "createdAt": "2026-10-07T07:20:15.218Z",
+      "updatedAt": "2026-10-07T08:36:26.242Z",
+      "observedAt": null
+    }
+  },
+  "semanticEdits": false
+}

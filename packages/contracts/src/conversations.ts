@@ -5,21 +5,25 @@ import { idSchema } from './tasks.js';
 import { conversationContextSelectionSchema, type ConversationContextReference } from './conversation-context.js';
 import { executionProfileReferenceSchema } from './execution-profiles.js';
 import type { Detail, TaskSummary } from './tasks.js';
-import type { AssistantSettings, ClaudeMessageSettingsFinal } from './assistant.js';
+import type { CodexAssistantSettings, CodexSourceIdentity, AssistantSettings, ClaudeMessageSettingsFinal } from './assistant.js';
 
 /** Requested controls are validated against the selected adapter before admission. */
 export const conversationSettingsSchema = z.strictObject({
   model: z.string().trim().min(1).max(180).default('runner-default'),
-  thinking: z.enum(['disabled', 'enabled', 'adaptive']).default('disabled'),
+  thinking: z.enum(['disabled', 'enabled', 'adaptive', 'unknown']).default('disabled'),
   tools: z.enum(['configured-readonly', 'none']).default('configured-readonly'),
 });
 export type ConversationSettings = z.infer<typeof conversationSettingsSchema>;
 export const conversationCreationSchema = z.strictObject({
   title: z.string().trim().min(1).max(180),
-  harness: z.literal('claude').default('claude'),
+  harness: z.enum(['claude', 'codex']).default('claude'),
   executionProfile: executionProfileReferenceSchema.optional(),
   projectId: idSchema.optional(),
   requested: conversationSettingsSchema.default({ model: 'runner-default', thinking: 'disabled', tools: 'configured-readonly' }),
+}).superRefine((value, context) => {
+  if (value.harness === 'codex' ? !value.executionProfile || value.requested.thinking !== 'unknown' || value.requested.tools !== 'none' : value.requested.thinking === 'unknown') {
+    context.addIssue({ code: 'custom', message: 'Codex conversations require a pinned profile, unknown thinking and requested tools none.' });
+  }
 });
 export type ConversationCreation = z.infer<typeof conversationCreationSchema>;
 export const conversationTurnSchema = z.strictObject({
@@ -78,6 +82,8 @@ export interface ConversationEffectiveSettings {
   permissionMode?: string | null;
   /** Adapter request is evidence, separate from the user's conversation.requested controls. */
   runnerRequested?: AssistantSettings['requested'];
+  /** Preserves native requested/observed/actual separation; no Claude controls are fabricated. */
+  codex?: CodexAssistantSettings;
   messageSettings?: ClaudeMessageSettingsFinal;
   source: { kind: 'recorded-adapter-session'; adapterVersion: string; taskId: string; attemptId: string; detailId: string } |
     { kind: 'assistant-final'; messageId: string; taskId: string; attemptId: string; detailId: string } | null;
@@ -98,9 +104,8 @@ export interface ConversationArtifactReplySource {
   artifactVersion: string;
   detailId: string;
 }
-export interface ConversationTypedReplySource {
+interface ConversationTypedReplyIdentity {
   kind: 'assistant-final';
-  source: 'claude.sdk.result';
   messageId: string;
   taskId: string;
   attemptId: string;
@@ -110,6 +115,9 @@ export interface ConversationTypedReplySource {
   contentDigest: string;
   detailId: string;
 }
+export type ConversationTypedReplySource = ConversationTypedReplyIdentity & (
+  { source: 'claude.sdk.result'; nativeSourceIdentity?: never } |
+  { source: 'codex.app-server.agent-message'; nativeSourceIdentity: CodexSourceIdentity });
 export type ConversationReplySource = ConversationArtifactReplySource | ConversationTypedReplySource;
 export type ConversationAssistantReply = {
   state: 'available';
