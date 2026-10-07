@@ -1,0 +1,46 @@
+{
+  "archivedAt": "2026-10-07T13:43:54.817Z",
+  "reviews": [
+    {
+      "at": "2026-10-07T13:35:47Z",
+      "reviewer": "chatui01_owner/gpt-6-astra",
+      "verdict": "OPERATOR_PREPARATION_CHANGES_REQUESTED",
+      "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+      "support": "edeff973f50fdf657a3a4d3e8356bbb0db9dea00",
+      "packet": "920a966a4d0acdd8464ae7af8c46c9e41a662bac",
+      "P1": 0,
+      "P2": 1,
+      "finding": "Inherited NODE_OPTIONS/NODE_PATH and private environment may preload code before ownership handling; no claim actual contamination"
+    },
+    {
+      "at": "2026-10-07T13:41:30Z",
+      "reviewer": "chatui01_owner/gpt-6-astra",
+      "verdict": "OPERATOR_PREPARATION_CHANGES_REQUESTED",
+      "source": "f471c30c7939eac89158d3e68130b1b971a28eac",
+      "result": "2fc9e10860ddcdb5de358ba765d41345ed6b6fb1",
+      "packet": "3f029c45a11654d4a718495d0a6955ec40ca7d80",
+      "P1": 0,
+      "P2": 1,
+      "finding": "Same startup isolation P2: inner Python lacked-I, outer-I not inherited; fixed env functions already correct",
+      "actualPureResult": "1/1 atf471;97B;58ms supervision; postpersist0.060255s; no newargv assertion covered"
+    },
+    {
+      "at": "2026-10-07T13:42:48Z",
+      "reviewer": "chatui01_owner/gpt-6-astra",
+      "verdict": "OPERATOR_PREPARATION_DELTA_REVIEW_APPROVED",
+      "source": "9af0283b1837452cbcc0be1cf9aa568dd54b0543",
+      "test": "816e72e1b749fd446d42e163ebe9ac21a97e2b9d",
+      "packet": "da7eb9fbdf37f3ff6bd93a4dd48eb53fe3eb77f9",
+      "P1": 0,
+      "P2": 0,
+      "closed": "Original unique startup environment P2",
+      "bindings": 4,
+      "bindingBytes": 22229,
+      "manifestSha256": "ea6aba24c38ce504d0d4237e52750e7771ea5d13bd1da23f5efb21f1c1db943b",
+      "basis": "Fixed inner sys.executable,-I,-B; outer env-i/-I-B; explicit base+9owned env fields; controlled samePID Node exec. Business/fixture/180s/selection/cleanup unchanged.",
+      "limits": "Added argv assertion NOT_RUN by Mika instruction; static actual argv and fixed Python stdlib proof. Original1/1 remains f471 only; no PG/operator OPEN.",
+      "preserved": "Two old manifests/localstart/local/closed/fixture/two donorhelpers; initialEPERM/wholewall UNKNOWN unchanged",
+      "reviewerActions": "0caller import/engineeringcheck/PG/privateenvfiles/write"
+    }
+  ]
+}

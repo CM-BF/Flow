@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:31:57.623Z / fixed main7524（本轮产品未集成） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:43:54.817Z / fixed main7524（本轮产品未集成） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | 产品aa741冻结；独立operator准备已固定，最终HEAD/clean以交付fresh Git为准 |
+| 工作树dirty状态 | 产品aa741/准备operator9af028冻结；仅本次review/READY元数据，最终push后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
@@ -22,11 +22,11 @@
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新旧后端领取资格改动已通过源码审查；五用例专库入口已备齐，等待执行准备审查 |
-| 下一可用交付 | 独立准备审查后申请唯一专库窗口，验证混合队列与旧会话继续执行 |
+| 当前产出 | 领取资格源码与专库执行准备均已独立审查通过，五个真实数据库用例尚未运行 |
+| 下一可用交付 | 取得唯一专库窗口后验证新旧后端混合队列与旧会话继续执行；个人激活另行验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED 2026-10-07T13:23:26Z — Mika/root，source aa741 / packet7ecbc，0P1/P2；仅source/local |
+| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；均不含实际PG |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -148,3 +148,5 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 2026-10-07T13:37:40.902Z：独立operator审查命中唯一P2：父环境可传NODE_OPTIONS预加载。本新10min窄修段13:36:56–13:46:56，仅caller固定allowlist与纯人工污染反例；aa741产品/fixture/两个donorhelper/旧manifest/raw不改。PG仍NOT_OPEN；sentinel另获10s单child普通窗口，尚未启动。
 
 2026-10-07T13:39:21.158Z：环境P2 source f471c30c已固定；唯一sentinel实际13:38:19.447Z→.507Z，PID71942/1纯例pass/exit0、97B完整mergedEOF/finalownedabsent，初EPERM保留；TMP同identity1项0B删除exactENOENT。全段含结果保存0.0603s≤10s，ordinary已向Mika RETURN。只执行人工sentinel，0PG/HTTP/真实env值读取。新manifest独立固定，旧pg-manifest及原raw不改；准备增量交chatui复审，PG继续NOT_OPEN。
+
+2026-10-07T13:43:54.817Z：两次operator CHANGES_REQUESTED与最终2026-10-07T13:42:48Z APPROVED分别归档[完整窄审记录](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-operator-independent-reviews.json)，不覆盖旧manifest/raw。inner Python已-I-B；其新增AST断言NOT_RUN，原f471 pure1/1保持旧绑定。当前唯一[可执行准备索引](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-current-ready.json)指向pg-isolated-manifest（256/191/16、33SQL），原5case依然NOT_RUN，admission与run目录均absent。无ordinary/PG/HTTP/provider/待launch；本10min段提前STOP，保claim等待唯一manager NEXT与fresh所有门禁，不按MSG03预计时间推归还。
