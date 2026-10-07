@@ -1,0 +1,205 @@
+{
+  "source": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+  "hostTools": [
+    {
+      "name": "tsx",
+      "importer": ".",
+      "dependencyKind": "devDependencies",
+      "specifier": "4.23.15",
+      "version": "4.23.15"
+    },
+    {
+      "name": "pg",
+      "importer": ".",
+      "dependencyKind": "devDependencies",
+      "specifier": "8.23.1",
+      "version": "8.23.1"
+    },
+    {
+      "name": "vite",
+      "importer": "apps/web",
+      "dependencyKind": "devDependencies",
+      "specifier": "8.3.2",
+      "version": "8.3.2(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)"
+    }
+  ],
+  "selectedImporters": [
+    ".",
+    "apps/runner",
+    "apps/server",
+    "packages/client",
+    "packages/contracts",
+    "packages/plugin-runtime",
+    "packages/protocols"
+  ],
+  "snapshots": 271,
+  "packages": 271,
+  "skippedOptional": [
+    "@anthropic-ai/claude-agent-sdk-darwin-x64@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-linux-arm64-musl@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-linux-arm64@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-linux-x64-musl@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-linux-x64@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-win32-arm64@0.3.290",
+    "@anthropic-ai/claude-agent-sdk-win32-x64@0.3.290",
+    "@esbuild/aix-ppc64@0.28.2",
+    "@esbuild/android-arm64@0.28.2",
+    "@esbuild/android-arm@0.28.2",
+    "@esbuild/android-x64@0.28.2",
+    "@esbuild/darwin-x64@0.28.2",
+    "@esbuild/freebsd-arm64@0.28.2",
+    "@esbuild/freebsd-x64@0.28.2",
+    "@esbuild/linux-arm64@0.28.2",
+    "@esbuild/linux-arm@0.28.2",
+    "@esbuild/linux-ia32@0.28.2",
+    "@esbuild/linux-loong64@0.28.2",
+    "@esbuild/linux-mips64el@0.28.2",
+    "@esbuild/linux-ppc64@0.28.2",
+    "@esbuild/linux-riscv64@0.28.2",
+    "@esbuild/linux-s390x@0.28.2",
+    "@esbuild/linux-x64@0.28.2",
+    "@esbuild/netbsd-arm64@0.28.2",
+    "@esbuild/netbsd-x64@0.28.2",
+    "@esbuild/openbsd-arm64@0.28.2",
+    "@esbuild/openbsd-x64@0.28.2",
+    "@esbuild/openharmony-arm64@0.28.2",
+    "@esbuild/sunos-x64@0.28.2",
+    "@esbuild/win32-arm64@0.28.2",
+    "@esbuild/win32-ia32@0.28.2",
+    "@esbuild/win32-x64@0.28.2",
+    "@rolldown/binding-android-arm-eabi@1.2.12",
+    "@rolldown/binding-android-arm64@1.2.12",
+    "@rolldown/binding-darwin-x64@1.2.12",
+    "@rolldown/binding-freebsd-x64@1.2.12",
+    "@rolldown/binding-linux-arm-gnueabihf@1.2.12",
+    "@rolldown/binding-linux-arm64-gnu@1.2.12",
+    "@rolldown/binding-linux-arm64-musl@1.2.12",
+    "@rolldown/binding-linux-ppc64-gnu@1.2.12",
+    "@rolldown/binding-linux-s390x-gnu@1.2.12",
+    "@rolldown/binding-linux-x64-gnu@1.2.12",
+    "@rolldown/binding-linux-x64-musl@1.2.12",
+    "@rolldown/binding-openharmony-arm64@1.2.12",
+    "@rolldown/binding-win32-arm64-msvc@1.2.12",
+    "@rolldown/binding-win32-x64-msvc@1.2.12",
+    "lightningcss-android-arm64@1.33.0",
+    "lightningcss-darwin-x64@1.33.0",
+    "lightningcss-freebsd-x64@1.33.0",
+    "lightningcss-linux-arm-gnueabihf@1.33.0",
+    "lightningcss-linux-arm64-gnu@1.33.0",
+    "lightningcss-linux-arm64-musl@1.33.0",
+    "lightningcss-linux-x64-gnu@1.33.0",
+    "lightningcss-linux-x64-musl@1.33.0",
+    "lightningcss-win32-arm64-msvc@1.33.0",
+    "lightningcss-win32-x64-msvc@1.33.0"
+  ],
+  "sourceSemanticDigest": "07469cd28578815e568664276ccdf5b029f1bd1cc51d7404fe6520dd532a3a4d",
+  "installationSemanticDigest": "0483dc3525fa7534874f179f7f1ad2a040a24567dd418fbdaae8ba459fac7bbf",
+  "inputBindings": [
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/cli/package.json",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb"
+    },
+    {
+      "ref": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4"
+    }
+  ],
+  "install": "NOT_RUN",
+  "cacheContent": "NOT_READ",
+  "runtimeResolution": "NOT_RUN",
+  "physicalSaving": "UNKNOWN"
+}

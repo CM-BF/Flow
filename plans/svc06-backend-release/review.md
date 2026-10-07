@@ -1,3 +1,7 @@
+# 本次待审：root pg 闭包
+
+Target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；仅3文件，1生产来源行和2直接测试。见[局部结果](../../docs/evidence/svc06/root-pg-checks.md)。PENDING Execution Lead；不扩大原2aff批准。
+
 # 当前宿主工具闭包：APPROVED_LIMITED_HOST_TOOL_CLOSURE
 
 Target `2affec4cc7a899082cbf48fce5bbd0f77293676c`，base `59c0fccb41e33076d50c5f782683c9f3fd25061e`。仅4产品/测试文件与本片plan/evidence；2新反例red后selector7+staging1绿、固定main只读选择1次。Execution Lead已完成本片唯一独审，[转录](../../docs/evidence/svc06/host-tools-independent-review.json)；无P1/P2，原b218批准不扩大。完整artifact未执行。
