@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:43:54.817Z / fixed main7524（本轮产品未集成） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:19.459Z / fixed main ae8500dd（只读前像核对，本轮产品未集成） |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
@@ -10,23 +10,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | 产品aa741/准备operator9af028冻结；仅本次review/READY元数据，最终push后clean |
+| 工作树dirty状态 | 产品aa741/准备operator9af028冻结；actual原件与结果交审元数据提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
-| 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：focused types0+精确list5；0hooks/PG/行为执行，原types2/2与collect1保留 |
+| 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：真实PG恰5 selected/5 passed/0skip，suitePASS/outer0；原focused types0/list5及失败均保留 |
 | 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
-| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+prepared tests，SOURCE_REVIEW_APPROVED / PG_NOT_OPEN |
+| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+tests；SOURCE_REVIEW_APPROVED / PG5_PASS_RESULT_REVIEW_PENDING |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 领取资格源码与专库执行准备均已独立审查通过，五个真实数据库用例尚未运行 |
-| 下一可用交付 | 取得唯一专库窗口后验证新旧后端混合队列与旧会话继续执行；个人激活另行验收 |
+| 当前产出 | 新旧后端混合队列与旧会话归属的五项真实数据库验收全部通过，资源已完整归还，结果待独立审查 |
+| 下一可用交付 | 独立核对本次结果后窄接收领取资格改动；个人两槽激活与用户端可用性另行验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；均不含实际PG |
+| Review | APPROVED：Mika2026-10-07T13:23:26Z source aa741；chatui2026-10-07T13:42:48Z operator9af028增量、环境P2 CLOSED/0P1P2；上述批准不含本次实际PG；结果忠实性待独审 |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -35,7 +35,7 @@
 | --- | --- | --- | --- |
 | M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
 | M02CORE-CLAIM02 | completed | architecture_read | aa74137d84cd7acc45ec23c2ff22128ce944a410固定5行SQL及5个prepared PG用例源码；没有行为执行通过 |
-| M02CORE-CLAIM03 | pending | architecture_read | source独审已通过，types0/list5；真实专库公共认证/SQL验证待独立入口批准及新NEXT |
+| M02CORE-CLAIM03 | pending | architecture_read | source独审已通过；实际5/5公共认证/SQL验证与收尾完成，结果独审待完成 |
 | M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
 
 ## 等待记录
@@ -150,3 +150,9 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 2026-10-07T13:39:21.158Z：环境P2 source f471c30c已固定；唯一sentinel实际13:38:19.447Z→.507Z，PID71942/1纯例pass/exit0、97B完整mergedEOF/finalownedabsent，初EPERM保留；TMP同identity1项0B删除exactENOENT。全段含结果保存0.0603s≤10s，ordinary已向Mika RETURN。只执行人工sentinel，0PG/HTTP/真实env值读取。新manifest独立固定，旧pg-manifest及原raw不改；准备增量交chatui复审，PG继续NOT_OPEN。
 
 2026-10-07T13:43:54.817Z：两次operator CHANGES_REQUESTED与最终2026-10-07T13:42:48Z APPROVED分别归档[完整窄审记录](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-operator-independent-reviews.json)，不覆盖旧manifest/raw。inner Python已-I-B；其新增AST断言NOT_RUN，原f471 pure1/1保持旧绑定。当前唯一[可执行准备索引](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-current-ready.json)指向pg-isolated-manifest（256/191/16、33SQL），原5case依然NOT_RUN，admission与run目录均absent。无ordinary/PG/HTTP/provider/待launch；本10min段提前STOP，保claim等待唯一manager NEXT与fresh所有门禁，不按MSG03预计时间推归还。
+
+## 2026-10-07 CORE 五例实际专库结果
+
+2026-10-07T13:56:19.459Z：唯一 R1 已于13:54:32.579Z启动，13:54:36.490Z outer exit0，5selected/5passed/0skip/suitePASS；13tasks/10attempts/10runners、67HTTP/31024B。两个owned group absent/mergedEOF，专库同OID/marker、0conn普通DROP/absence、监听及精确TMP关闭；heavy已向Mika RETURN，0actual/待launch。原全部输入和历史失败/EPERM不改。[结果与口径](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-result.md)。
+
+本次仅公共中心数据库/HTTP资格与fence验证；没有provider或个人服务操作。结果固定后交独立只读忠实性审，main未集成，不自动第二窗。顶层任务开工UNKNOWN保持。
