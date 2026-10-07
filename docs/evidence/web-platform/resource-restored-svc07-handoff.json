@@ -1,0 +1,116 @@
+{
+  "recordedAt": "2026-10-07T02:08:36Z",
+  "source": "Execution Lead incoming relayed by root; manager read-only cleanup-receipt check",
+  "reportedCapacity": {
+    "dataAvailableKiB": 26448428,
+    "sampleAt": null,
+    "reason": "UNKNOWN",
+    "webCleanupThisRound": false,
+    "webCapacitySample": false
+  },
+  "webWindow": {
+    "state": "NO_ACTIVE_HEAVY_WINDOW",
+    "holder": null,
+    "gate": null,
+    "reservation": false,
+    "basis": [
+      "recovery01-4d-window-return.json",
+      "recovery01-4d-actual/root-runtime-review.json",
+      "message-settings-b5-actual/root-runtime-review.json"
+    ],
+    "lastRecoveryRun": "rec4d-20261006-205056-a30d13",
+    "lastRecoveryCleanup": "PID10546/12234 exit0, owned groups absent, DB removed/connections0, scratch and manager admin env removed; retained receipt, no new sampling",
+    "lastSettingsCleanup": "worker20627/Chrome16283 groups absent, actual exit0, fixture/context closed, all EOF; retained receipt",
+    "subsequentWork": "Source/docs only; no later Web runtime launch or outstanding execution handle"
+  },
+  "sharedWindow": {
+    "allocatedBy": "Execution Lead",
+    "allocatedTo": "Mika SVC07 reviewed HTTP consumer",
+    "seconds": 60,
+    "provider": false,
+    "admission": "Original fresh gate and original limits",
+    "actualStarted": "NOT_CONFIRMED_BY_INBOUND",
+    "webRuntimeGrant": false,
+    "afterActualCleanup": "Coordinate C02 / Recovery / QuickControls / TUI by readiness and dependencies; not an automatic next-run grant",
+    "latestMikaStage": "Mika inbound through root confirms original input checks begun; actual runtime start/completion not received."
+  },
+  "preserved": {
+    "claims": "Existing identities and scopes unchanged; no new list/take/amend",
+    "historicalRawBudgetsFailures": true,
+    "noFullHistoryCopy": true
+  },
+  "changes": "Capacity recovery and allocation only; cause unknown; no Web run or resource sample",
+  "sourceReadiness": {
+    "QuickControls": {
+      "source": "w01_owner direct readonly report, relayed/confirmed by root",
+      "ownerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+      "clean": true,
+      "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+      "portableTarget": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+      "state": "SOURCE_READY_HOLD_ADMISSION",
+      "declaredInputs": "4 product sources and9portable unchanged; each c1/b1 117 merged own pins and58/37 external files exist with matching realpath/hash",
+      "limits": "No imports/transitive closure proof; Node24 path/realpath checked, binary not rehashed this round",
+      "c1": {
+        "path": "/private/tmp/msgquick-checks-c1",
+        "boundHeadPrefix": "3fb",
+        "state": "PREPARED",
+        "actualRuntimeMs": 0,
+        "gate": null,
+        "totalMs": 30000,
+        "cleanupMs": 5000,
+        "checks": "strict noEmit then single-file26 exact names",
+        "acceptance": "outer actualexit0 + unique complete terminal seal + matching raw hashes + two childexit0 + complete cleanup"
+      },
+      "b1": {
+        "path": "/private/tmp/msgquick-b1",
+        "boundHeadPrefix": "38bf",
+        "state": "PREPARED",
+        "actualRuntimeMs": 0,
+        "gate": null,
+        "totalMs": 60000,
+        "cleanupMs": 15000,
+        "checks": "6 actual groups/2 PNG",
+        "typesDirectEvidence": null,
+        "nativeChromeBoundaryApproval": null
+      },
+      "next": "At actual admission rebind currentHEAD60ffa; c1 accepted runtime evidence precedes b1 independent boundary/window. No oldSettings01 37/4 inherited."
+    },
+    "Recovery": {
+      "source": "workspace_panels_owner readonly report, relayed/confirmed by root",
+      "ownerHead": "000a4182a3416bf9a8f5685ae2dbbf8f5f950b06",
+      "clean": true,
+      "sourceTarget": "8ed2741327779e57d717653d10c2180e1897c26a",
+      "state": "SOURCE_READY_HOLD_ADMISSION",
+      "preparedPath": "/private/tmp/recovery-browser-next8ed-0v6ddc46",
+      "manifestSha256": "4db938e316990f45c90561fd0357035ed3de8e25d13f6450973f1a0b3afa7546",
+      "declaredInputs": "19source/9public/11package/11runtime/Node/Chrome/25oldraw/2budget match; no import/runtime proof",
+      "lateCumulativeMs": 25520.435,
+      "nextIntegerTotalMs": 64479,
+      "workMs": 49479,
+      "cleanupMs": 15000,
+      "gate": null,
+      "adminInput": "new controlled admin input required at admission; not created now",
+      "rawEvidence": [
+        {
+          "path": "/private/tmp/recovery-8ed-resume-readonly/report.md",
+          "bytes": 4815,
+          "sha256": "e2bf8da05ebd48cfa79f085ef2e204dc33f5d5a180b6556fe3530f5dc291916c"
+        },
+        {
+          "path": "/private/tmp/recovery-8ed-resume-readonly/pins-check.json",
+          "bytes": 20286,
+          "sha256": "d139f2ce9bb98bf9b9c3fcae3aaada1bf2e2a341dacbd4bbec73f26503b05820"
+        }
+      ],
+      "next": "Await actual window handback, fresh original claim/input/resource gate. Known runs cleaned; original failures/direct50 evidence/budget preserved."
+    }
+  },
+  "checks": {
+    "model": "gpt-6-astra ultra",
+    "skills": "Same local find-skills/clean-code metadata workflow; no reinstallation",
+    "authority": "Manager632a7149 v3 unchanged; identity certain from fresh observation and original handoff, no new ledger read requested",
+    "dependencyReports": "Exact two Recovery report bytes+SHA only verified; Quick current inputs attributed to owner report",
+    "runtime": "No test/build/import/HTTP/PG/Chrome/CI or capacity/process sampling",
+    "review": "Pending independent fixed metadata review"
+  }
+}

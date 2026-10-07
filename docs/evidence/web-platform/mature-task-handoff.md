@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T01:31:40Z。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-07T02:08:36Z。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 本轮管理输入
 
-[固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；仅管理验收差异获独立文档批准，产品未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。root新入站free888332KiB低于原线，本组未采样。
+[固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；仅管理验收差异获独立文档批准，产品未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。此前root入站free888332KiB属历史观察；最新资源恢复与窗口分配见下。
 
 ## 已固定源码交接
 
@@ -12,7 +12,9 @@
 
 ## 共享窗口
 
-**OPS 新终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。[Lead 后续入站](ops-ci01-web-consumer-intake/lead-incoming.json)报告 1,069,273,088 B，仍低于原小检查与 PG/Chrome 门槛；采样时点未提供，非本组重采，没有新分配或追加候选许可。
+**当前窗口：[Lead报告容量恢复，下一短窗交Mika SVC07](resource-restored-svc07-handoff.json)。** Data Available26,448,428KiB；采样时间未给、原因未知，本组本轮未清理/采样。Web无actual holder/gate/reservation，Mika已确认开始原输入核对，实际runtime启动/终态尚无回执，不作推断。本次不是Web运行grant；其actualcleanup后沿C02/Recovery/Quick/TUI按ready与依赖协调。
+
+**此前OPS终态：[Lead 三处 exact `.vite` 已处理完成](ops-three-fixture-retirement/lead-cache-results/report.md)。** 每树60生成文件，三监督exit0/双EOF/自有进程absent；原预览退役与生命周期释放[原件仍保留](ops-three-fixture-retirement/manager-confirmation.json)。[Lead 后续入站](ops-ci01-web-consumer-intake/lead-incoming.json)报告 1,069,273,088 B，当时低于原小检查与PG/Chrome门槛；采样时点未提供，非本组重采。该资源hold已由上方最新入站替代，原raw保持。
 
 [23:51 fresh D04 有界核验](architecture-snapshot-0da-intake/fresh-claim-observation.json)确认原管理632a v3与新D06原范围adf9539d v1有效且无交集；原独立owner范围未扩；三临时 lifecycle claim 已释放的[原回执](ops-three-fixture-retirement/manager-confirmation.json)保留。Recovery/QuickControls/DPERF04 源码冻结等待必要验证，领取不等于运行占用。
 
@@ -21,7 +23,7 @@
 **此前已交接回执：[Git/config 操作权已归还 + 两预览退役/释放](ops-two-fixture-retirement/lead-handoff-current.json)。** Root 一次精确建树授权已结束；W01 的源码 claim 不保留 Git/config 委派权。
 [原退役 receipt](ops-two-fixture-retirement/owner-raw/retirement-receipt.json) · [ACTIVITY CAS RELEASED](ops-two-fixture-retirement/activity-retirement-release-receipt.json) · [CHAT CAS RELEASED](ops-two-fixture-retirement/chat-retirement-release-receipt.json) · [本组冻结消费者确认](ops-two-fixture-retirement/root-known-consumers.json)。**最新 Lead fresh 审计：ACTIVITY `.vite` 仍被 PID15811 / 51452–51454 消费，STRICT KEEP；只 CHAT 保留精确缓存候选。** 仅旧53851已退役，不得停止51454或扩大服务操作。CHAT仍须 Lead 最终 fresh 核查；不重停、不扩依赖目录。
 
-**Web 无重运行、预约或 gate；Mika SVC07 为下一实际运行请求，C02 排后，均不冒已启动。** 快速设置 [fe6源码与c1精确准备均已获限定批准](message-settings02-c1-prepared/report.md)，owner已交付[portable专用候选](message-settings02-portable-prepared/report.md)，当前60ffa双端clean；本地c1/b1保持旧绑定待真正准入，全部新检查仍未运行，准入请求不等于grant或窗口。[Lead 22:12:19 已观察179来源实际加载](message-settings-quick-controls-provision/registration-request.json)，owner 解析已 errors=[] / 5 TODO，本组未复采。
+**Web 无重运行、预约或 gate；Lead已分配Mika SVC07短窗口，尚未收到实际启动/终态回执；后继依赖协调不等自动准入。** [原owner本轮只读就绪核验](resource-restored-svc07-handoff.json)确认Quick60ffa与Recovery000a声明pins匹配；都是SOURCE_READY/HOLD_ADMISSION。Quick准入时重绑当前HEAD并先c1真实通过，Recovery仍需新受控输入与原门槛；未改冻结包/旧预算。 快速设置 [fe6源码与c1精确准备均已获限定批准](message-settings02-c1-prepared/report.md)，owner已交付[portable专用候选](message-settings02-portable-prepared/report.md)，当前60ffa双端clean；本地c1/b1保持旧绑定待真正准入，全部新检查仍未运行，准入请求不等于grant或窗口。[Lead 22:12:19 已观察179来源实际加载](message-settings-quick-controls-provision/registration-request.json)，owner 解析已 errors=[] / 5 TODO，本组未复采。
 [九树原轮历史结果](ops-nine-vite-cache/report.md)：当时七棵保留预览均 KEEP；其中本轮三项的实际退役及释放已由页首新回执更新，其余保留边界不变。[两 exact cache 有界确认](ops-nine-vite-cache/two-cache-manager-confirmation.json)已由 Lead 消费并[完成回收](ops-nine-vite-cache/lead-two-cache-cleanup-intake.json)。该轮仅 workspace-cache/lifecycle-baseline 的 `.vite`，当时 source/true deps/siblings 保持；后来的 workspace-cache 依赖操作另见页首原件。
 [Fresh D04](ops-nine-vite-cache/fresh-ledger.json)核九树原 claim 均 released，但这不等于预览退役或缓存没有消费者。[owner 原文与机器决策](ops-nine-vite-cache/request.json)已齐，[root 当前准备声明](ops-nine-vite-cache/root-known-consumers.json)无直接命中不替代退役；Lead 新目录／内核原件已归档：两处当时无kernel consumer；只有 Lead 最终 fresh 检查并操作，未知路径仍 KEEP。
 [两缓存 root 正式合证](ops-nine-vite-cache/root-two-cache-confirmation.json)与历史确认均保留；当时 Lead 报 free 1,182,425,088 B仍不足原门槛；这是历史回收时点，最新依赖回收后观察见页首，本组不重采/不启动。

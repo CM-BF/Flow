@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 01:31 UTC；仅管理更新，本次未复核部署/main同步 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:08 UTC；本次只接资源/调度入站，未复采部署/main同步 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -19,7 +19,7 @@
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
 | 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情和架构新快照的必要验证；快速设置本地检查准备已获限定批准，可移植检查源码候选已获限定静态独审；实际验证等待正式准入，真实消息接线另按交权接续。 |
-| 当前阻塞 | ACTIVE: 草稿、看板（含新架构快照）和快速设置的实际验证仍待资源与正式准入；Lead 后续空间观察低于原门槛，本组无运行或预约，Mika SVC07 / C02 队列不变。现有远程 CI 候选尚不覆盖这些 Web 验收；对应消费要求已归原 TODO11。workspace-cache 依赖已回收、不可直接运行；指定用户服务保持。真实发送/排队/恢复设置全旅程仍开放。 |
+| 当前阻塞 | ACTIVE: Lead已报告容量恢复，原因未知；当前短窗口先交Mika SVC07，Web无运行或预约。草稿、看板（含新架构快照）和快速设置的实际验证等待该窗口实际清理后按ready/依赖正式准入，不能沿旧gate启动。现有远程CI候选仍不覆盖这些Web验收；workspace-cache依赖不可直接运行，指定用户服务保持，完整发送/排队/恢复设置旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -77,6 +77,8 @@
 [D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)已实际领取adf9539d v1四范围，原owner唯一status记录5124限定source-only批准/新检查NOT_RUN；管理索引不冒main或页面完成。
 
 [活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，已获本次文档限定批准；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
+
+[资源恢复与SVC07窗口来源](../../docs/evidence/web-platform/resource-restored-svc07-handoff.json)保采样时间未知、原因未知、本组未清理/未采样；原失败和累计预算不变，未新增Web运行grant。
 
 ## 当前唯一来源、写权与下一步
 

@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-06T23:22:51.244642+00:00",
-  "state": "NO_WEB_HOLDER_RESOURCE_GATE_UNMET_REMOTE_CI_WEB_CONSUMER_RESEARCH_ONLY",
-  "groupWindowOwnership": "No actual Web runtime holder, gate or reservation. Lead reported subsequent free 1069273088 bytes, below unchanged local small-check and PG/Chrome floors; no additional cache batch or run grant. SVC07/C02 queue remains unchanged.",
+  "recordedAt": "2026-10-07T02:08:36Z",
+  "state": "NO_ACTIVE_HEAVY_WINDOW_RESOURCE_RECOVERED_SVC07_ALLOCATED_NO_WEB_GRANT",
+  "groupWindowOwnership": "Lead reports Data Available26448428KiB; sample time not supplied and recovery cause unknown. Web has no heavy-runtime holder, gate or reservation and performed no cleanup/resource sample this round. Lead allocated the next short window to Mika SVC07; actual start is not inferred. Web does not start PG/Chrome/build; after actual SVC07 cleanup, coordinate C02/Recovery/QuickControls/TUI by readiness and dependencies.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,16 +407,18 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "source": "Execution Lead incoming through root; structured intake only, no Web resource resampling",
-    "state": "THREE_CACHES_COMPLETE_SUBSEQUENT_RESOURCE_HOLD_NO_NEW_GRANT",
-    "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
-    "terminalSummary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
-    "lastReportedFreeBytes": 1069273088,
-    "lastReportedSampleAt": null,
-    "sampleTimeUnknown": true,
-    "newGrant": false,
+    "source": "Execution Lead incoming through root; no Web resampling",
+    "state": "RESOURCE_RECOVERED_SVC07_ALLOCATED_ACTUAL_START_UNCONFIRMED",
+    "evidence": "resource-restored-svc07-handoff.json",
+    "reportedDataAvailableKiB": 26448428,
+    "sampleAt": null,
+    "recoveryCause": "UNKNOWN",
+    "webCleanupThisRound": false,
+    "webRuntimeGrant": false,
     "webHolder": null,
-    "next": "Preserve SVC07/C02 queue and no new runtime grant. Existing D06 source-only follow-up is now fixed/reviewed under original four-scope claim; all new runtime checks remain NOT_RUN. No further cache candidates or resource sampling."
+    "next": "Mika SVC07 original60s/gate/0provider; await actual cleanup, then ready/dependency coordination for C02/Recovery/QuickControls/TUI. No automatic Web run.",
+    "mikaStage": "Original input checking confirmed; actual runtime start/completion not received",
+    "webSourceReadiness": "Quick60ffa and Recovery000a source-ready with declared pins matched; admission held. See same small evidence record; no packet rewrite."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -870,6 +872,40 @@
       "newGrant": false,
       "webHolder": null,
       "next": "No further cache candidate authorized. Preserve SVC07/C02 queue; c1/Recovery/DPERF require fresh legitimate admission and resource floor, no repeat run or new packet."
+    },
+    {
+      "supersededAt": "2026-10-07T02:08:36Z",
+      "state": "NO_WEB_HOLDER_RESOURCE_GATE_UNMET_REMOTE_CI_WEB_CONSUMER_RESEARCH_ONLY",
+      "latestCoordination": {
+        "source": "Execution Lead incoming through root; structured intake only, no Web resource resampling",
+        "state": "THREE_CACHES_COMPLETE_SUBSEQUENT_RESOURCE_HOLD_NO_NEW_GRANT",
+        "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+        "terminalSummary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+        "lastReportedFreeBytes": 1069273088,
+        "lastReportedSampleAt": null,
+        "sampleTimeUnknown": true,
+        "newGrant": false,
+        "webHolder": null,
+        "next": "Preserve SVC07/C02 queue and no new runtime grant. Existing D06 source-only follow-up is now fixed/reviewed under original four-scope claim; all new runtime checks remain NOT_RUN. No further cache candidates or resource sampling."
+      },
+      "latestMikaQueueIntake": {
+        "source": "Mika collaboration inbound through root; no Web sampling",
+        "state": "NO_ACTUAL_HOLDER_OR_RESERVATION_PREPARED_QUEUE_ONLY",
+        "SVC07": {
+          "source": "1b3e1662",
+          "manifestPrefixSuffix": "13349864…bea06",
+          "priority": "next actual run requested; fresh gate remains necessary"
+        },
+        "C02": {
+          "source": "60e9a755",
+          "packet": "fd5bc893",
+          "checks": "six PG cases NOT_RUN",
+          "after": "SVC07 + fresh Lead/Web handoff and gate"
+        },
+        "REQ15": "Waiting Lead two SQL inputs /2681B; no entry",
+        "webStarts": 0
+      },
+      "reason": "Historical resource hold and queue observation superseded by Lead capacity recovery/SVC07 allocation; original evidence retained"
     }
   ],
   "dperf05Pure": {
@@ -1021,7 +1057,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+  "currentWindowEvidence": "resource-restored-svc07-handoff.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1132,21 +1168,19 @@
     "sourceWriterClaimIsNotGitAuthority": true
   },
   "latestMikaQueueIntake": {
-    "source": "Mika collaboration inbound through root; no Web sampling",
-    "state": "NO_ACTUAL_HOLDER_OR_RESERVATION_PREPARED_QUEUE_ONLY",
+    "source": "Execution Lead incoming through root",
+    "evidence": "resource-restored-svc07-handoff.json",
+    "state": "SVC07_ALLOCATED_INPUT_CHECKING_NO_TERMINAL_RECEIVED",
     "SVC07": {
-      "source": "1b3e1662",
-      "manifestPrefixSuffix": "13349864…bea06",
-      "priority": "next actual run requested; fresh gate remains necessary"
+      "seconds": 60,
+      "consumer": "reviewed direct HTTP consumer",
+      "provider": false,
+      "gate": "original fresh gate/limits required"
     },
-    "C02": {
-      "source": "60e9a755",
-      "packet": "fd5bc893",
-      "checks": "six PG cases NOT_RUN",
-      "after": "SVC07 + fresh Lead/Web handoff and gate"
-    },
-    "REQ15": "Waiting Lead two SQL inputs /2681B; no entry",
-    "webStarts": 0
+    "afterActualCleanup": "C02/Recovery/QuickControls/TUI by readiness and dependencies; no automatic grant",
+    "webStarts": 0,
+    "actualStartConfirmed": false,
+    "actualCompletionReceived": false
   },
   "opsWorkspaceCacheDependencies": {
     "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",
@@ -1300,14 +1334,16 @@
     "managerResourceSample": false,
     "noFurtherCandidateAuthorized": true
   },
-  "currentCoordinationAudit": "ops-ci01-web-consumer-intake/coordination-observation.json",
+  "currentCoordinationAudit": "resource-restored-svc07-handoff.json",
   "latestLeadResourceIntake": {
-    "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+    "evidence": "resource-restored-svc07-handoff.json",
     "source": "Lead incoming through root",
-    "reportedFreeBytes": 1069273088,
+    "reportedDataAvailableKiB": 26448428,
     "sampleAt": null,
+    "recoveryCause": "UNKNOWN",
     "managerResourceSample": false,
-    "newGrant": false
+    "webCleanupThisRound": false,
+    "webRuntimeGrant": false
   },
   "remoteValidationConsumerResearch": {
     "evidence": "ops-ci01-web-consumer-intake/intake.json",
