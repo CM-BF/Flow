@@ -6,27 +6,27 @@
 | 所属大task | [OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T08:57:40.341809+00:00 |
+| 更新时间 | 2026-10-07T08:59:36.684342+00:00 |
 | 任务开工时间 | 2026-10-07T08:47:14.401Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner在08:47:14实际开始fresh只读准备与两caller核对；08:49:39原子领取后开始模块实施，take仅证明领取，完成仍开放。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
-| 当前产出 | 有界目录计量已实现并通过本地验证，能区分消失、身份变化与读取异常，正交独立审查。 |
-| 下一可用交付 | 独审通过后交付共享计量模块；两个实际调用方由原owner在后继版本接入。 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 有界目录计量模块及本地验证已通过独立审查，正待主线接收。 |
+| 下一可用交付 | 主线接收共享计量模块；两个实际调用方由原owner在后继版本接入。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-resource-measurement |
 | Branch | codex/owned-resource-measurement |
-| 工作分支状态 | review |
+| 工作分支状态 | integration |
 | Base | b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
 | Head | c1699914；后续只证据/状态封存 |
-| 工作树 dirty 状态 | 本次固定提交后clean，产品停写待独审 |
+| 工作树 dirty 状态 | 本次固定提交后clean，产品停写待main |
 | 实现目标 | c1699914fefd0fd49f3842a101a298f5b7376001 |
 | 实现范围 | tools/owned-resource-measurement |
 | Claim | 694f7894-84b7-446b-a8ba-ea85a7c9ec24 v1 active；[receipt](../../docs/evidence/ops-meter01/take-receipt.json) |
-| Review | PENDING；作者完整自查完成，独立结论未到 |
+| Review | APPROVED_MODULE_AND_LOCAL_EVIDENCE，Execution Lead，2026-10-07T08:58:55.297051Z，无P1/P2，0重跑；[唯一原件](../../docs/evidence/ops-meter01/independent-review.json) |
 | 已集成 main 状态 | NOT_INTEGRATED |
 | 检查状态 | 20/20新检查，一轮；child178ms/caller205ms、raw2949B、组absent/双EOF/tmpremoved；0安装/PG/Chrome/provider |
 | 架构影响 | 新增独立纯计量port；进程监督/资源清理保持原caller职责。架构登记待Execution Lead按固定交付更新。 |
@@ -36,7 +36,7 @@
 | --- | --- | --- | --- |
 | OPS-METER01-01 | completed | native_center_owner | [Interface](../../docs/evidence/ops-meter01/interface.md)、[caller输入](../../docs/evidence/ops-meter01/caller-inputs.json) |
 | OPS-METER01-02 | completed | native_center_owner | [20/20原始结果](../../docs/evidence/ops-meter01/local-01/result.json)、[清理](../../docs/evidence/ops-meter01/local-01/cleanup.json) |
-| OPS-METER01-03 | pending | native_center_owner | 尚未独审或main |
+| OPS-METER01-03 | pending | native_center_owner | 已独审，main待受控接收 |
 | OPS-METER01-04 | pending | 原Web owners | 两caller未接入；不改历史封套 |
 
 ## 等待记录
