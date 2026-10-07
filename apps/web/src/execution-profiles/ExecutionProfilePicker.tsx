@@ -252,12 +252,12 @@ export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
     if (!opening?.isActive() || activeOpening.current !== opening) return;
     setFilters(previous => ({ ...previous, [axis]: next })); stage(null);
   }
-  const summary = value ? `${value.requested.model} · ${describeMessageChoice(value.requested)}` : "不附加消息设置";
+  const summary = value ? `${value.requested.model} · ${describeMessageChoice(value.requested)}` : "不单独设置";
   const staleOpening = opening !== null && !opening.isActive();
   return <div className="ep-picker">
     <Dialog open={dialog.open} onOpenChange={changeOpen}>
       {!hostControl && <DialogTrigger asChild><Button ref={trigger} type="button" variant="outline" className="ep-trigger" disabled={!editable} aria-label={`消息设置：${summary}`}>
-        <span>{value?.requested.model ?? "下一条消息设置"}</span><span className="ep-trigger-access">{value ? describeMessageChoice(value.requested) : "不附加"}</span><span aria-hidden="true">⌄</span>
+        <span>{value?.requested.model ?? "下一条消息设置"}</span><span className="ep-trigger-access">{value ? describeMessageChoice(value.requested) : "不单独设置"}</span><span aria-hidden="true">⌄</span>
       </Button></DialogTrigger>}
       <DialogContent className="ep-dialog ep-message-dialog" onFocusCapture={event => { if (event.target instanceof HTMLElement) focusedControl.current = event.target; }} onCloseAutoFocus={event => {
         if (hostControl) {
@@ -271,47 +271,48 @@ export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
         <DialogTitle>下一条消息设置</DialogTitle>
         <DialogDescription>筛选当前会话可用的组合，选择后按“应用”。已发送和排队的消息保持原设置。</DialogDescription>
         <div className="ep-settings-body">
-        <section aria-label="当前草稿已应用设置" style={{ minWidth: 0, overflowWrap: "anywhere" }}><strong>{value?.requested.model ?? "不附加消息设置"}</strong>{value && <p>{describeMessageChoice(value.requested)}</p>}</section>
-        <p id={noticeId} ref={notice} tabIndex={-1} role="status" className="ep-notice">{feedback ?? (!editable ? "宿主当前不可编辑。" : !available.allowed ? available.reason : pending?.kind === "choice" && !pendingAvailable ? "候选已不在当前目录中；请重新选择，当前草稿仍保留。" : "筛选和待应用选择不会改变当前草稿。")}</p>
+        <section className="ep-applied" aria-label="当前草稿已应用设置"><span className="ep-section-label">当前</span><strong className="ep-compact-model">{value?.requested.model ?? "不单独设置"}</strong>{value && <span className="ep-choice-description">{describeMessageChoice(value.requested)}</span>}</section>
+        <p id={noticeId} ref={notice} tabIndex={-1} role="status" className="ep-notice">{feedback ?? (!editable ? "宿主当前不可编辑。" : !available.allowed ? available.reason : pending?.kind === "choice" && !pendingAvailable ? "候选已不在当前目录中；请重新选择，当前草稿仍保留。" : "仅按应用后更新当前草稿。")}</p>
         <div className="ep-directory-actions"><Button type="button" variant="outline" onClick={onRefresh} disabled={catalog.loading}>{catalog.loading ? "正在加载…" : "刷新设置目录"}</Button><span>{catalog.loaded ? `已加载 ${catalog.profiles.length} 项配置${catalog.nextCursor ? "，还有更多" : ""}` : "尚未加载目录"}</span></div>
         {catalog.error && <p role="alert" className="ep-error">{catalog.error}</p>}
         {missing && <p className="ep-notice">原选择不在当前可用目录中，仍保留原值；请加载更多或刷新后核对。</p>}
-        <fieldset style={{ minWidth: 0, border: 0, padding: 0 }} disabled={staleOpening || !editable || !available.allowed}>
-          <legend>快速筛选</legend>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2,minmax(0,1fr))", gap: ".6rem", minWidth: 0 }}>
+        <fieldset className="ep-filters" disabled={staleOpening || !editable || !available.allowed}>
+          <legend className="sr-only">快速筛选</legend>
+          <div className="ep-model-filter">
             <QuickFacet label="模型" value={filters.model} onChange={next => filter("model", next)} options={[...new Set(choices.map(choice => choice.requested.model))].map<[string, string]>(model => [model, model])} />
+          </div>
+          <details className="ep-extra-filters"><summary>更多筛选<span className="ep-filter-description">思考 · 力度 · 速度</span></summary><div className="ep-facet-grid">
             <QuickFacet label="思考" value={filters.thinking} onChange={next => filter("thinking", next)} options={[...new Set(choices.map(choice => choice.requested.thinking))].map<[string, string]>(thinking => [thinking, thinking === "adaptive" ? "自适应思考" : "关闭思考"])} />
             <QuickFacet label="力度" value={filters.effort} onChange={next => filter("effort", next)} options={[...new Set(choices.map(effortKey))].map<[string, string]>(effort => [effort, effortNames[effort]])} />
             <QuickFacet label="速度" value={filters.speed} onChange={next => filter("speed", next)} options={[...new Set(choices.map(choice => choice.requested.speed))].map<[string, string]>(speed => [speed, speed === "fast" ? "快速请求" : "标准速度"])} />
-          </div>
+          </div></details>
         </fieldset>
-        <Button type="button" variant="ghost" disabled={staleOpening} onClick={() => { if (opening?.isActive() && activeOpening.current === opening) { setFilters(emptyFilters()); stage(null); } }}>清除筛选</Button>
+        <Button type="button" className="ep-clear-filters" variant="ghost" disabled={staleOpening} onClick={() => { if (opening?.isActive() && activeOpening.current === opening) { setFilters(emptyFilters()); stage(null); } }}>清除筛选</Button>
         <fieldset className="ep-options" disabled={staleOpening || !editable}>
           <legend>完整消息设置组合</legend>
-          <label className="ep-option"><input type="radio" name={groupId} checked={pending?.kind === "omit"} onChange={() => stage({ kind: "omit" })} /><span><strong>不附加消息设置</strong><small>仅在应用后省略本次设置请求，不代表重置或继承上一条设置。</small></span></label>
+          <label className="ep-option"><input type="radio" name={groupId} checked={pending?.kind === "omit"} onChange={() => stage({ kind: "omit" })} /><span><strong>不单独设置</strong><small>应用后省略本次设置请求</small></span></label>
           {visible.map(choice => <label className="ep-option" key={claudeTurnSettingsJson(choice)}>
             <input type="radio" name={groupId} checked={pending?.kind === "choice" && sameMessageSettings(pending.value, choice)} onChange={() => stage({ kind: "choice", value: choice })} />
-            <span><strong>{choice.requested.model}</strong><span>{describeMessageChoice(choice.requested)}</span>{choice.requested.model.length > 48 && <details><summary>完整模型名称</summary><span>{choice.requested.model}</span></details>}</span>
+            <span><strong className="ep-compact-model">{choice.requested.model}</strong><span>{describeMessageChoice(choice.requested)}</span>{choice.requested.model.length > 48 && <details><summary>完整模型名称<span className="ep-identity-suffix"> · …{choice.requested.model.slice(-16)}</span></summary><span>{choice.requested.model}</span></details>}</span>
           </label>)}
         </fieldset>
         {available.allowed && visible.length === 0 && <p role="status">没有匹配的已声明组合；清除筛选或调整条件，不会自动替换其他设置。</p>}
         {catalog.loaded && !catalog.loading && choices.length === 0 && <p>当前目录没有可选组合，不会自动生成默认设置。</p>}
-        <section aria-label="待应用选择" style={{ minWidth: 0, overflowWrap: "anywhere" }}>{pending?.kind === "choice" ? `${pending.value.requested.model} · ${describeMessageChoice(pending.value.requested)}` : pending?.kind === "omit" ? "不附加消息设置（待应用）" : "尚未选择，不会更改草稿"}</section>
 
         {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>加载更多设置</Button>}
-        <details className="ep-identities" style={{ minWidth: 0, overflowWrap: "anywhere" }}><summary>配置详情</summary><p>只展示当前授权配置的完整组合。这里是请求意图，实际设置与模型可用性须由执行结果确认。</p>{value && <p>当前配置 {value.profile.id} · Runner {value.profile.runnerId} · 摘要 {value.profile.configDigest}</p>}{details?.(action => {
+        <details className="ep-identities"><summary>配置详情</summary><p>只展示当前授权配置的完整组合。这里是请求意图，实际设置与模型可用性须由执行结果确认。</p><p>不单独设置只省略本次请求，不代表重置或继承上一条设置。</p>{value && <><p>当前完整模型：{value.requested.model}</p><p>当前配置 {value.profile.id} · Runner {value.profile.runnerId} · 摘要 {value.profile.configDigest}</p></>}{pending?.kind === "choice" && <p>待应用完整模型：{pending.value.requested.model} · {describeMessageChoice(pending.value.requested)}</p>}{details?.(action => {
           if (!opening || activeOpening.current !== opening) return;
           opening.navigate(() => { activeOpening.current = null; setPending(null); dialog.navigate(action); });
         })}</details>
         </div>
-        <div className="ep-settings-actions"><Button type="button" aria-describedby={noticeId} disabled={!canApply} onClick={() => apply(opening, pending)}>应用</Button><Button type="button" variant="outline" onClick={() => changeOpen(false)}>取消</Button></div>
+        <div className="ep-settings-footer"><section className="ep-pending" aria-label="待应用选择"><span className="ep-section-label">待应用</span><span className="ep-compact-model">{pending?.kind === "choice" ? `${pending.value.requested.model} · ${describeMessageChoice(pending.value.requested)}` : pending?.kind === "omit" ? "不单独设置" : "尚未选择，不会更改草稿"}</span></section><div className="ep-settings-actions"><Button type="button" aria-describedby={noticeId} disabled={!canApply} onClick={() => apply(opening, pending)}>应用</Button><Button type="button" variant="outline" onClick={() => changeOpen(false)}>取消</Button></div></div>
       </DialogContent>
     </Dialog>
   </div>;
 }
 
 function QuickFacet({ label, value, options, onChange }: { label: string; value: string; options: [string, string][]; onChange(value: string): void }) {
-  return <label style={{ display: "grid", gap: ".25rem", minWidth: 0 }}>{label}<select value={value} onChange={event => onChange(event.target.value)} style={{ width: "100%", minWidth: 0, background: "var(--background)", color: "var(--foreground)", border: "1px solid var(--border)", borderRadius: ".4rem", padding: ".45rem" }}><option value="">全部{label}</option>{value && !options.some(([key]) => key === value) && <option value={value}>已不可用：{value}</option>}{options.map(([key, text]) => <option key={key} value={key}>{text}</option>)}</select></label>;
+  return <label className="ep-facet">{label}<select value={value} onChange={event => onChange(event.target.value)}><option value="">全部{label}</option>{value && !options.some(([key]) => key === value) && <option value={value}>已不可用：{value}</option>}{options.map(([key, text]) => <option key={key} value={key}>{text}</option>)}</select></label>;
 }
 
 function describeMessageChoice(choice: Immutable<ClaudeTurnSettings["requested"]>): string {

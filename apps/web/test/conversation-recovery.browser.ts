@@ -1147,7 +1147,7 @@ async function worker(init: Init) {
         await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
       };
       const omit = async () => {
-        await open(); await dialog.getByRole("radio", { name: /不附加消息设置/ }).check();
+        await open(); await dialog.getByRole("radio", { name: /不单独设置/ }).check();
         await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).not.toBeVisible();
       };
       return { action, dialog, applied, open, choose, apply, omit };
@@ -1506,7 +1506,19 @@ async function worker(init: Init) {
         if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
         const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
         if (init.journey === "appearance") await expect(dialog).toContainText("Saved recovery draft 中文🙂");
-        const rect = await dialog.evaluate(element => ({ client: element.clientWidth, scroll: element.scrollWidth, width: element.getBoundingClientRect().width })); expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
+        const rect = await dialog.evaluate(element => {
+          const box = element.getBoundingClientRect(), css = getComputedStyle(element);
+          return { client: element.clientWidth, scroll: element.scrollWidth, width: box.width, left: box.left, right: box.right, top: box.top, bottom: box.bottom,
+            radius: parseFloat(css.borderTopLeftRadius), paddingEnd: parseFloat(css.paddingInlineEnd), scrollbarWidth: element.offsetWidth - element.clientWidth, gutter: css.scrollbarGutter };
+        });
+        expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
+        if (init.journey === "appearance") {
+          expect(rect.left).toBeGreaterThanOrEqual(0); expect(rect.right).toBeLessThanOrEqual(390);
+          expect(rect.top).toBeGreaterThanOrEqual(0); expect(rect.bottom).toBeLessThanOrEqual(844);
+          expect(rect.radius).toBeGreaterThanOrEqual(12); expect(rect.paddingEnd).toBeGreaterThanOrEqual(12);
+          await expect(dialog.getByRole("button", { name: "Close", exact: true })).toBeInViewport({ ratio: 1 });
+          await writeFile(join(init.directory, `overlay-recovery-${theme}-geometry.json`), JSON.stringify({ ...rect, scrollbarCoverage: "observed mode only" }, null, 2));
+        }
         const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "Screenshot exceeds its retained budget"); await writeFile(join(init.directory, theme + "-390.png"), png); await page.keyboard.press("Escape"); await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
       }
     });
