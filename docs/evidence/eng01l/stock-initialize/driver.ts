@@ -9,6 +9,7 @@ const scratch = process.argv[2], out = process.argv[3];
 if (!scratch || !out || !scratch.startsWith('/private/tmp/eng01l-initialize-')
   || realpathSync(scratch) !== scratch || realpathSync(out) !== out
   || out !== new URL('./run-once', import.meta.url).pathname) throw Error('OWN_PATH_REQUIRED');
+const outputDirectory = out;
 function pin(path: string) {
   const s = lstatSync(path, { bigint: true });
   if (s.uid !== BigInt(process.getuid!()) || (s.mode & 0o077n) !== 0n || s.isSymbolicLink()) throw Error('PRIVATE_OWNER_REQUIRED');
@@ -22,9 +23,9 @@ function save(name: string, value: unknown) {
   assertOwned();
   const bytes = Buffer.from(JSON.stringify(value, null, 2) + '\n');
   if (bytes.length > 4096) throw Error('DRIVER_RECORD_LIMIT');
-  const fd = openSync(join(out, name), constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
+  const fd = openSync(join(outputDirectory, name), constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
   try { writeFileSync(fd, bytes); fsyncSync(fd); } finally { closeSync(fd); }
-  const parent = openSync(out, constants.O_RDONLY | constants.O_NOFOLLOW);
+  const parent = openSync(outputDirectory, constants.O_RDONLY | constants.O_NOFOLLOW);
   try { fsyncSync(parent); } finally { closeSync(parent); }
 }
 const abort = new AbortController();

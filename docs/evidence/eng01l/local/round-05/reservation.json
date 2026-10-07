@@ -1,0 +1,34 @@
+{
+  "startedAt": "2026-10-07T07:54:23.863102+00:00",
+  "scratch": "/private/tmp/eng01l-local-rhwzv64z",
+  "dev": 16777234,
+  "ino": 123641134,
+  "freeBytes": 24211898368,
+  "priorMs": 4562,
+  "mode": "caller-types",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/stock-initialize/tsconfig.json"
+  ],
+  "sources": {
+    "apps/runner/src/engineering/native-authority.ts": "c2cf7dc6fef0c5fe86472d69f13ea84584b5688e53929d63e96723e3f5f0ba81",
+    "apps/runner/src/engineering/native-authority.test.ts": "78c84a9d0b9e149ef77ae0a9318fdf634ad6359ee6899899db9b641b3ddfae69",
+    "apps/runner/src/engineering/native-authority-darwin.ts": "22fa41b44d9793657663655b14e5f5a2657a6dace8d50b98c436904dc4d27148",
+    "apps/runner/src/engineering/native-authority-darwin.test.ts": "7693ae59ac077bc016295538d1c08f53c242bd4c3a58bcf0aca6186eb8d031c3",
+    "apps/runner/src/engineering/native-tool-host.ts": "a043fdf9f1cc31c09c07fe59ef344337720ba15a2a0a05a43fbab70171d6c71a",
+    "apps/runner/src/engineering/native-tool-host.test.ts": "cf700562b7c50d3a930032b98867e82b84ffce02fc0c7e872688dfcb4d76dd81",
+    "apps/runner/src/native-harness/codex/exchange.ts": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+    "docs/evidence/eng01j/helper-host/startup-input.sb": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+    "docs/evidence/eng01l/stock-initialize/driver.ts": "9d04105958980aa50643f5238402423b4621cbfac2af6b94b5d9ab141ab18fa3",
+    "docs/evidence/eng01l/stock-initialize/run.py": "472400aa4e9d1954d84ce9341f472cea5e6585e07dbae4497a9d3cb422a8a17d",
+    "docs/evidence/eng01l/stock-initialize/tsconfig.json": "6b4882859ade3c8a740350a4b66b980cd801734503b484ec0d93315e7429191b",
+    "docs/evidence/eng01l/local/run.py": "1ba4cf7d34e0751adac76941bd3e310a77c6de2317646b8836760debab6bf34f",
+    "docs/evidence/eng01l/local/vitest.config.mjs": "28401525a6a27237814d8620a9a443a51b2e7f1a5a17d95633a0f5ff0644ff00",
+    "docs/evidence/eng01l/local/tsconfig.json": "255fa5637994433ff5ffecaaefc5a131d3f8e4a7793311a228dfb3f7c637b8c9",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0
+}
