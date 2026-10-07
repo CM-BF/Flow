@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:33:43.875Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:06:00.000Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -21,9 +21,9 @@
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 本地安装式验证器已接收主线；显式v4资格恢复接缝已主线接收；正在连接中心领取和客户端确认 |
-| 下一可用交付 | 中心领取、来源资格和客户端确认接缝；真实数据库验证与验证任务生产链仍待完成 |
+| 本片段交付阶段 | review |
+| 当前产出 | 中心领取与客户端确认接缝已局部验证；五项真实数据库验收配方已形成，等待准备审查 |
+| 下一可用交付 | 审查五项数据库验收配方后，等待独立资源窗口验证迁移、混合资格与重放保护 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | AV03 center SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0P1P2，2026-10-07T16:35:53.000Z；真实PG未验，既有批准各自独立 |
@@ -125,3 +125,7 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 ## AV03 真实PG准备新段
 
 2026-10-07T16:53:29.000Z–17:08:29.000Z，a67v4/30 fresh有效，source75f88 clean起点。仅已claim新verification-pg.test及own证据/计划；8MiB含物化/TMP4MiB/raw512KiB，最多3serial各30s累计60s。ordinary先K01，未RETURN不launch。当前0PG/HTTP/Chrome/provider/install/build；准备5组真实迁移/资格/receipt/授权事务，原14源冻结。加载在建库之前；两factory+listen由fixture.start覆盖，阶段收据持久化；timeout只代表未settled，不冒实际close。
+
+## AV03 PG准备封存
+
+2026-10-07T16:53:29.000Z–17:08:29.000Z新段；source411478b（测试五例、自己的fixture），14个既审产品源未改。局部types首2→0、collect精确5（0hooks/PG），共3child5908ms/raw2416B，全ownedabsent/mergedEOF/TMP同identity删除。检查绑定161c66470；后续count-query清理保证和case期限门禁只静态核，未冒重新验证。ordinary已RETURN并交S01；现在0actual/0待launch。固定manifest/准备审查入口见[av03-pg/review-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/review-ready.json)。PG仍NOT_OPEN/NOT_RUN；准备未获独审批准，不称INTEGRATION_READY。

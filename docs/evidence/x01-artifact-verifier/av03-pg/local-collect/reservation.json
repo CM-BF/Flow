@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-07T17:00:26.992Z",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+    "list",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/vitest.config.mjs",
+    "--json"
+  ],
+  "floor": 14950858752,
+  "free": 20007223296,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/local-collect/tmp",
+    "dev": 16777234,
+    "ino": 124357864
+  },
+  "maxSeconds": 30,
+  "cumulativeMaxSeconds": 60,
+  "rawMaxBytes": 524288,
+  "tmpMaxBytes": 4194304
+}

@@ -1,0 +1,59 @@
+{
+  "protocol": "flow.x01.verifier-claim-pg.v1",
+  "productCommit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 5,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "av03-verifier-claim-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "name": "036 rejects unverifiable history atomically and positively backfills compatible old tool writers"
+    },
+    {
+      "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "name": "036 enforces immutable kind and exact source attempt with deferred mandatory verifier reference"
+    },
+    {
+      "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "name": "v1 v2 v3 and explicit v4 filter the mixed queue before LIMIT"
+    },
+    {
+      "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "name": "v4 concurrent receipt identity survives server restart and refuses changed protocol or qualification"
+    },
+    {
+      "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "name": "source project and grant writer lock fence allocation without attempt or receipt residue"
+    }
+  ],
+  "tasksMax": 32,
+  "attemptsMax": 20,
+  "scope": "036 exact positive kind migration/constraints and synthetic verifier source qualification, real v1-v4 SQL/HTTP/receipt fences; no verifier admission/import/runtime/verdict.",
+  "runnersMax": 10,
+  "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "metadataRunners": 10,
+  "providerCalls": 0,
+  "registrationsMax": 6
+}

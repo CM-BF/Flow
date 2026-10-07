@@ -1,0 +1,26 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "baseUrl": "./inputs",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ],
+      "@av03/pre036-server": [
+        "apps/server/src/pre036-index.ts"
+      ]
+    }
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "./inputs/apps/server/src/plugin-runtime/verification-pg.test.ts"
+  ]
+}
