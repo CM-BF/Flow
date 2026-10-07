@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-10-06T10:56:51.867631+00:00",
+  "acceptedMain": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8",
+  "implementation": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "metadataInput": "db08e7b5976ce462a0b829bbf6a5554fcaf43121",
+  "implementationAncestor": false,
+  "metadataAncestor": false,
+  "integrationMethod": "Lead accepted fixed source/evidence bytes; original commits are not ancestors of accepted main.",
+  "sourceChecks": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f",
+      "targetMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc",
+      "targetMainCurrentEqual": true
+    }
+  ],
+  "leadReceiptSource": "c450c2da7e6185b88db9f46e0299ee504ee6f3e8:docs/evidence/i02/product-web-compatibility-integration.json",
+  "leadReceiptSha256": "b18a104abdf05ecdb28cc0ab0354bf92e359e3ac70b2d69cdef240d16325a732",
+  "productRetest": false,
+  "personalPublication": false,
+  "scopeStop": "All four scopes stopped after this metadata commit; manager will release active claim."
+}

@@ -1,0 +1,69 @@
+{
+  "observedAt": "2026-10-07T14:22:06.793Z",
+  "state": "available",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "27c36b97-162d-45e0-9150-25269d3d3f34",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+    "createdAt": "2026-10-07T13:09:33.224Z",
+    "updatedAt": "2026-10-07T13:09:33.224Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "productionOwners": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/conversation-context/receipts.ts",
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/conversations/outbox.ts",
+        "apps/web/src/conversations/projection.ts",
+        "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "apps/web/src/conversations/queue/commands.ts",
+        "apps/web/src/conversations/queue/projection.ts",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/recovery/binding.tsx",
+        "apps/web/test/conversation-recovery.browser.ts",
+        "apps/web/test/conversation-recovery.fixture.ts",
+        "apps/web/test/conversation-recovery.test.ts",
+        "docs/evidence/wpf-message-settings-app",
+        "plans/wpf-message-settings-app"
+      ],
+      "state": "active",
+      "branch": "codex/web-message-settings-app",
+      "origin": "new",
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "worker": "workspace_panels_owner",
+      "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "createdAt": "2026-10-07T12:11:44.045Z",
+      "updatedAt": "2026-10-07T14:05:11.080Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ]
+}

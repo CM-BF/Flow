@@ -1,0 +1,55 @@
+{
+  "startedAt": "2026-10-07T11:49:28.189547+00:00",
+  "state": "PASS",
+  "scope": "exact generated profile compile and /usr/bin/true only",
+  "network": 0,
+  "pg": 0,
+  "chrome": 0,
+  "errors": [],
+  "freshFreeBytes": 21977624576,
+  "floor": 6190268416,
+  "childPid": 28192,
+  "childPgid": 28192,
+  "spawnedAt": "2026-10-07T11:49:28.192596+00:00",
+  "childExit": 0,
+  "streams": {
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "bothEOF": true,
+    "drop": 0
+  },
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 28192,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 28192,
+      "state": "ESRCH"
+    }
+  ],
+  "cleanup": [
+    {
+      "path": "/private/tmp/rel01-c3/syntax-raw",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124106220,
+        "uid": 501
+      },
+      "absent": true
+    },
+    {
+      "path": "/private/tmp/rel01-c3/syntax-scratch",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124106219,
+        "uid": 501
+      },
+      "absent": true
+    }
+  ],
+  "finishedAt": "2026-10-07T11:49:28.201658+00:00",
+  "elapsedMs": 12.110750074498355
+}

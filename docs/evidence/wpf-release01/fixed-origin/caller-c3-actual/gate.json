@@ -1,0 +1,36 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "release01-fixed-origin",
+  "run": "release01-c3-20261007-115305-4777b7",
+  "bindingSha256": "7877e92963777aecdded55d2274ae8d96ec975cc7c5fa22a8d19e36f5c5bc0bd",
+  "runnerSha256": "2500ca2900b4b912fdaf1a0964d2728d3b677f1a16defc36bdf0e845332062f0",
+  "totalMs": 180000,
+  "previousRuntimeMs": 0,
+  "expiresAt": "2026-10-07T11:58:05.512154+00:00",
+  "claim": {
+    "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+    "version": 1,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "overlaps": [],
+  "startFreeBytes": 6190268416,
+  "stopFreeBytes": 1207959552,
+  "claimObservation": {
+    "path": "/private/tmp/w01-release-c3-actual-live-20261007.json",
+    "sha256": "a243243f204187d432c98288ce3e66a7ed44719aa87c47cd839d75e6cd955934"
+  },
+  "adminInput": {
+    "path": "/private/tmp/rel01-c3-actual-yakasi5w/admin-input",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124107769
+    }
+  }
+}

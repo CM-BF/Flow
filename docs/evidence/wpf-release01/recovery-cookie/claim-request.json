@@ -1,0 +1,17 @@
+{
+  "requestId": "release01-recovery-cookie-81b97eb3-46e5-453d-a81e-50857e3c3d56",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-RELEASE01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+  "branch": "codex/web-release-compatibility",
+  "scope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ]
+}

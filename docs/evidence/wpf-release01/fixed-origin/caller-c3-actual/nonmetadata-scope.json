@@ -1,0 +1,36 @@
+{
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "scopes": [
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 23305,
+      "sha256": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+      "role": "implementation"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31937,
+      "sha256": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c",
+      "role": "implementation"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/sandbox.sb",
+      "bytes": 421,
+      "sha256": "934446a15251a42ae293b3a73051fa4dc684add7a7d7628e632913937022ec30",
+      "role": "generated actual profile evidence"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-profile.sb",
+      "bytes": 399,
+      "sha256": "59c3bf6081c60893f8d9b8ff9ad34d9952099f1cc7220de24692b33ff7e61231",
+      "role": "generated actual profile evidence"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/sandbox.sb",
+      "bytes": 421,
+      "sha256": "54bb8d3e0b57ec175d93890ac664ab57130667e9c5e5cee7922b24e614dcc621",
+      "role": "generated actual profile evidence"
+    }
+  ],
+  "meaning": "Two product harness sources unchanged. Three explicit generated .sb evidence files; not hidden or classified as metadata. Independent scope acceptance remains reviewer responsibility."
+}

@@ -1,0 +1,181 @@
+{
+  "at": "2026-10-07T10:21:39.416Z",
+  "scope": "metadata only",
+  "parsed": {
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": ""
+      },
+      "completed": {
+        "state": "unknown",
+        "at": null,
+        "record": ""
+      },
+      "source": {
+        "state": "unknown",
+        "record": ""
+      },
+      "issues": [
+        "任务开工时间未记录",
+        "任务完成时间未记录",
+        "任务时间来源未知"
+      ],
+      "waiting": "| 开始 UTC | 结束 UTC | 原因 | Owner | 解除条件 | 来源 |\n| UNKNOWN | OPEN | 最终后台source/artifact及非敏感会话策略设置待供应 | 原发布负责人 | 收到已审immutable tuple与实际导入入口，明确policy hash一致 | [设计输入](../../docs/evidence/wpf-release01/fixed-origin/candidate-interface.json) |"
+    },
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+        "id": "WPF-MATURE-01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "review",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "固定地址验证入口已完成限定源码审查；局部类型复验已通过，真实兼容待最终后台和受控调用器",
+      "next": "最终后台交付和受控调用器就绪后安排真实兼容验证",
+      "blocker": {
+        "state": "active",
+        "text": "最终后台产物与公开会话策略配置尚待原发布负责人提供；不阻塞本段源码实施"
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+      "scopes": [
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "apps/web/test/web-release-compatibility.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-RELEASE01",
+    "owner": "w01_owner / gpt-6-astra / ultra",
+    "branch": "codex/web-release-compatibility",
+    "branchState": "in-progress",
+    "updatedAt": "2026-10-07T10:21:39.254Z",
+    "updatedRecord": "2026-10-07T10:21:39.254787+00:00",
+    "todos": [
+      {
+        "id": "RELEASE01-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json)"
+      },
+      {
+        "id": "RELEASE01-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史两App真实兼容](../../docs/evidence/wpf-release01/README.md)"
+      },
+      {
+        "id": "RELEASE01-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json)"
+      },
+      {
+        "id": "RELEASE01-04",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS"
+      },
+      {
+        "id": "RELEASE01-05",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "最终tuple与受控caller待闭合，三App真实四项compat待完成；strict复验PASS/真实compat0actual，首红保留"
+      },
+      {
+        "id": "RELEASE01-06",
+        "state": "pending",
+        "owner": "w01_owner",
+        "evidence": "后继最终delta独审/主线接收；个人发布仍由原发布operator执行"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase",
+    "declaredDirty": "源码9658a6b763de69038778de1b0c16de64ff824c75已固定；本次metadata正常封存，提交后clean/remote回执另证",
+    "checks": {
+      "state": "passed",
+      "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+      "record": "PASSED 9658a6b763de69038778de1b0c16de64ff824c75：两harness strict/noUnchecked/noEmit实际exit0；首f3d红保留。仅类型检查，browser/PG/compat NOT_RUN"
+    },
+    "reviewRecord": "[review.md](review.md)，APPROVED（仅两harness源码）；f3d源审与9658 type-only修正已独立接受，实际compat未验",
+    "mainRecord": "NOT_INTEGRATED 当前后继；历史7805于c450c2da7e6185b88db9f46e0299ee504ee6f3e8接收",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "proof": {
+    "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "head": "362b806f3f2bb698e443b26760c5dbe24fe3cb95",
+    "scopes": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts"
+    ],
+    "observedAt": "2026-10-07T10:21:39.330Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json",
+      "docs/evidence/wpf-release01/fixed-origin/metadata-links.json",
+      "docs/evidence/wpf-release01/fixed-origin/source-manifest.json",
+      "docs/evidence/wpf-release01/fixed-origin/status-parse.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/binding.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/budget.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/claim-live.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/outer-observation.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/result.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/runtime-input-pins.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/started.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/stderr.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/stdout.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-first/terminal.json",
+      "docs/evidence/wpf-release01/quality.md",
+      "plans/wpf-release01-product-compatibility/plan.md",
+      "plans/wpf-release01-product-compatibility/review.md",
+      "plans/wpf-release01-product-compatibility/status.md",
+      "docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/binding.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/budget.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/claim-live.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/index.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/outer-stderr.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/outer-stdout.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/result.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/runtime-input-pins.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/started.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/stderr.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/stdout.txt",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/terminal.json",
+      "docs/evidence/wpf-release01/fixed-origin/types-second/tsconfig.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  }
+}

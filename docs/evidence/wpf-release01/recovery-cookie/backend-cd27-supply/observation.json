@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T14:47:33.469Z",
+  "kind": "OWNER_METADATA_BACKEND_SUPPLY_ONLY",
+  "headBefore": "4b8a11c6cdd7849dfe75ba920be952b7b802f274",
+  "claimObservation": "claim-observation.json",
+  "originalFiles": [
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+      "archive": "result-descriptor.json",
+      "bytes": 275,
+      "sha256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4"
+    },
+    {
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/actual-independent-review.json",
+      "archive": "independent-result-review.json",
+      "bytes": 2101,
+      "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566"
+    },
+    {
+      "source": "/private/tmp/root-release01-minimal-transplant-source-review-20261007.json",
+      "archive": "minimal-transplant-root-review.json",
+      "bytes": 4174,
+      "sha256": "754608bb83cc86a67c0274286b69b67d302b78f975daa290aa0fc3a2c0005b2e"
+    }
+  ],
+  "backendDescriptor": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+  },
+  "artifactRoot": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+  "newWebDescriptor": null,
+  "oldConsumerActual": "NOT_RUN",
+  "newPairCompatibility": "NOT_RUN",
+  "productSource": "8964dc1185f62ed8934c15416e9798929359ab89",
+  "productFilesUnchanged": {
+    "apps/web/test/web-release-compatibility.fixture.ts": "e9599dfee054001ea9348ab7182bdd0bf57ecbe9a3621d1f7cd483f369dd9a52",
+    "apps/web/test/web-release-compatibility.browser.ts": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08"
+  },
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "applied": "Reuse local metadata/evidence-review method; no install."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "applied": "Removed stale current two-missing description, separated receipt fidelity/static transplant/actual compatibility; preserved history and source guards."
+    }
+  ],
+  "engineeringTests": 0,
+  "resourceSamples": 0,
+  "closureHashScan": false
+}

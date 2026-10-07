@@ -1,0 +1,89 @@
+{
+  "state": "DESIGN_ONLY_NO_GATE",
+  "publicContextCandidate": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "finalBackend": null,
+  "browserSessionSettings": null,
+  "artifacts": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "format": 1,
+      "releaseId": null,
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289273
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289274
+      },
+      "manifestSha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "manifestBytes": 1604,
+      "totalBytes": 1442591
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "format": 2,
+      "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289289
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289290
+      },
+      "manifestSha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "manifestBytes": 1651,
+      "totalBytes": 1507758
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "format": 2,
+      "releaseId": "388371a4972c469b8ace623454594132",
+      "artifactRoot": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 123030663
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 123030667
+      },
+      "manifestSha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestBytes": 1651,
+      "totalBytes": 1588311
+    }
+  ],
+  "methodReferenceMain": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+  "budget": null,
+  "runtimeAuthorization": null,
+  "requiredFinalInputs": [
+    "Reviewed immutable backend descriptor/sourceHead/tree/manifest/root/Node/dependency receipt and actual factory entry",
+    "Explicit non-secret normalized cookieOrigin/trustedOrigins/authEpoch yielding candidate policy SHA; owned fixture receives it, never reads personal configuration",
+    "Reviewed harness target and fixed readonly runtime/client/contracts/runner tools from final artifact",
+    "Fresh runtime allocation combining one own DB/center/proxy/runner/Chrome and retained evidence; no old allowance inherited"
+  ],
+  "legacyBackendTuples": "Historical only: input3230/e5fe and candidateb2b/c2c are not executable final tuples",
+  "reportShape": {
+    "format": 2,
+    "policy": "flow-web-api-v2",
+    "backendHead": "FINAL_SOURCE_SHA_REQUIRED",
+    "artifact": "original 3-key Web descriptor",
+    "context": "exact observed-and-derived context above",
+    "checks": [
+      "read",
+      "send",
+      "recover",
+      "negotiation"
+    ]
+  }
+}

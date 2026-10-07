@@ -1,0 +1,127 @@
+{
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "known",
+      "at": "2026-10-07T12:17:59.709Z",
+      "record": "2026-10-07T12:17:59.709Z"
+    },
+    "source": {
+      "state": "declared",
+      "record": "整体历史开工UNKNOWN；本次工程条件核齐完成见[主线核对](../../docs/evidence/wpf-release01/fixed-origin/main-close/verification.json)，局部开工10:01:18.415296Z不倒填整体开工"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "三份保留App对固定后台的兼容验证已独立通过并接入主线，原失败与完整清理证据保留",
+    "next": "本片段已交付；个人更新与后续后台修复由原发布任务独立负责",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "scopes": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-RELEASE01",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-release-compatibility",
+  "branchState": "delivered",
+  "updatedAt": "2026-10-07T12:17:59.709Z",
+  "updatedRecord": "2026-10-07T12:17:59.709Z",
+  "todos": [
+    {
+      "id": "RELEASE01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json)"
+    },
+    {
+      "id": "RELEASE01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史两App真实兼容](../../docs/evidence/wpf-release01/README.md)"
+    },
+    {
+      "id": "RELEASE01-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json)"
+    },
+    {
+      "id": "RELEASE01-04",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS"
+    },
+    {
+      "id": "RELEASE01-05",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；[c3唯一actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)三App各4项与独立Cookie PASS/完整cleanup，全部首红保留"
+    },
+    {
+      "id": "RELEASE01-06",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase",
+  "declaredDirty": "仅own metadata主线收口；正常push/clean后全四scope STOP，actual release以账本/管理回执为准",
+  "checks": {
+    "state": "passed",
+    "target": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "record": "PASSED 9658a6b763de69038778de1b0c16de64ff824c75；两harness strict、c3三App各四项及独立Cookie已独立接收；Lead组合noEmit0/1321ms；首红全部保留"
+  },
+  "reviewRecord": "[review.md](review.md)，APPROVED 固定两harness与三App实际兼容范围，0blocking",
+  "mainRecord": "INTEGRATED e0295747200d7f0616779a712fdfd06691c3708f；188后继变更路径与c06fa逐blob相同",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

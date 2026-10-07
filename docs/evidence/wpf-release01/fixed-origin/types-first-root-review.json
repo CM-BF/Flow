@@ -1,0 +1,167 @@
+{
+  "at": "2026-10-07T10:17:53.163644+00:00",
+  "reviewer": "root / gpt-6-astra / ultra, independent read-only",
+  "decision": "ACCEPTED_FAILED_LOCAL_CHECK_AND_SOURCE_TYPE_FIX_NOT_RETESTED",
+  "executionTarget": "f3d05910b30e4e75bcbbd9ba43095d02cbb12c18",
+  "fixedSourceTarget": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "actual": {
+    "startedAt": "2026-10-07T10:16:14.824670+00:00",
+    "finishedAt": "2026-10-07T10:16:15.993180+00:00",
+    "elapsedMs": 1168.537,
+    "childExitCode": 2,
+    "streams": {
+      "stdout": {
+        "eof": true,
+        "bytes": 852,
+        "dropped": 0
+      },
+      "stderr": {
+        "eof": true,
+        "bytes": 0,
+        "dropped": 0
+      }
+    },
+    "cleanup": {
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "errors": [
+      "compiler exit 2"
+    ]
+  },
+  "lateElapsedMs": 1169.181,
+  "chargeMs": 1170,
+  "accounting": "Original manager-authorized single20s is closed; unused credit not silently reused. Necessary post-fix check is queued after DPERF metadata at a separate concrete local safe point.",
+  "rawFiles": [
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/binding.json",
+      "bytes": 4292,
+      "sha256": "6160e1d846bb503122dc3fe3bdf1f5c1132dbce50327c3955647cc0f54df7e79"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/budget.json",
+      "bytes": 118,
+      "sha256": "c54665ca134453b57b1e74a78395e2cb58e895d451f2b4fd57a0f84868c98502"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/result.json",
+      "bytes": 6789,
+      "sha256": "c49de3d9530041db1053c56d96341349e713307a0934b5da9663e9fabbb69dd9"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/run.py",
+      "bytes": 7345,
+      "sha256": "adaf1cf3a3888f41552a7b1949302489a8b2d5b8394a4da60bd5e39db8b8c28f"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/sandbox.sb",
+      "bytes": 168,
+      "sha256": "560e7561244fae7c67e764ab91056ffc424993d693ae4a36756cde1f7b88f74d"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/started.json",
+      "bytes": 400,
+      "sha256": "3f4320f773d65ab673c039556230da264c03457bac77c05748e0d9aa6d6724a9"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/stdout.txt",
+      "bytes": 852,
+      "sha256": "f1c88dac49805c8e83d89b336ac1c9648ef9b87b2fd83c0af907c62d52b3b0ec"
+    },
+    {
+      "path": "/private/tmp/release01-types-once-mtpb0338/terminal.json",
+      "bytes": 325,
+      "sha256": "b7973ee23ea668f156cde438eccaf240d72e7973e17110e0700ef84c3cc53c21"
+    }
+  ],
+  "runtimePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/typescript/lib/tsc.js",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/typescript/lib/typescript.js",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/typescript/package.json",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@types/node/package.json",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-types-20261007/tsconfig.json",
+      "method": "current read-only dependency",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.fixture.ts",
+      "method": "fixed execution Git source (live may have later type fix)",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/apps/web/test/web-release-compatibility.browser.ts",
+      "method": "fixed execution Git source (live may have later type fix)",
+      "matches": true
+    }
+  ],
+  "terminalHashesMatch": true,
+  "freshOwnedProcessChecks": [
+    {
+      "kind": "pid",
+      "id": 16208,
+      "observed": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 16208,
+      "observed": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "failure": "One TS2322 at fixture317: Runtime.adapterVersion was typed string, incompatible with ExecutionProfileConfiguration literal adapterVersion. Exact compiler output preserved.",
+  "fixPins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31937,
+      "sha256": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 23305,
+      "sha256": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7"
+    }
+  ],
+  "fixReview": "Only a type import and Runtime.adapterVersion=ExecutionProfileConfiguration[adapterVersion]; no cast, hard-coded version, runtime branch or weakened verification. Source delta accepted; actual noEmit remains failed at f3d and has not run at 9658.",
+  "limits": [
+    "No root test execution, PG, Chrome, network, provider or project changes.",
+    "Parent exit1 and compiler exit2 are distinct; dual EOF with zero dropped output.",
+    "This does not admit final backend/runtime compatibility; main interface pins and prior source review remain scoped."
+  ],
+  "cleanCodeRecord": {
+    "finding": "Fixture runtime interface widened an existing public literal type.",
+    "fix": "Reference the public field type directly and preserve dynamic artifact runtime checks.",
+    "remaining": "Necessary fixed-source noEmit still pending."
+  }
+}

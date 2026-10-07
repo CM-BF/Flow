@@ -1,0 +1,83 @@
+{
+  "at": "2026-10-07T11:51:21.204184+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "APPROVED_C3_SINGLE_RULE_DELTA_AND_ACTUAL_SYNTAX_ONLY",
+  "sourcePins": [
+    {
+      "path": "/private/tmp/rel01-c3/supervisor.py",
+      "bytes": 18546,
+      "sha256": "2500ca2900b4b912fdaf1a0964d2728d3b677f1a16defc36bdf0e845332062f0"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/inputs.json",
+      "bytes": 6894,
+      "sha256": "477c61845b1f8abebdc8a8d5f6b3089c447b9e721f1255c511829a01488dcce2"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/c2-c3.diff",
+      "bytes": 2881,
+      "sha256": "55a0c73cbab45f9d76fe2632df4934da0ac86f3a0445f8f25ac124ed8a022e1b"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/syntax-profile.sb",
+      "bytes": 399,
+      "sha256": "59c3bf6081c60893f8d9b8ff9ad34d9952099f1cc7220de24692b33ff7e61231"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/syntax-check.py",
+      "bytes": 3774,
+      "sha256": "7803987b0e26077e4c132010ed91afe18c3c517eaaf34fed05e2ff2bf771558c"
+    },
+    {
+      "path": "/private/tmp/rel01-c3/syntax-receipt.json",
+      "bytes": 2671,
+      "sha256": "71b38cf03b127dac487a8b33f9054af8a2a6338379a2fafa6e91958a36cd95a2"
+    }
+  ],
+  "previousFailureReview": {
+    "path": "/private/tmp/root-release-c2-first-actual-review-20261007.json",
+    "bytes": 4607,
+    "sha256": "563407ad1260745f38282f5a6d550a2e27656f5871ffdb177cbbebf059a27264"
+  },
+  "verified": {
+    "entireSourceDelta": "Byte comparison proves exactly one literal replacement127.0.0.1:61228→localhost:61228; all worker/input/meter bytes unchanged. Scratchownership/resource/deadline/native lifecycle unchanged.",
+    "profile": "Exact checked generated profile equals historical actual c2 profile after only its two own synthetic directory substitutions and one permitted host literal correction; all9 rules preserved.",
+    "actual": "7 raw pins+5 source pins matched. Exact sandbox-exec profile with/usr/bin/true child28192 exits0; outer0 agrees with unique terminal/result/stream hashes. Both streams0B/EOF/drop0; fresh PID+PGID ESRCH and both exact synthetic TMP lstat ENOENT.",
+    "time": {
+      "outerMs": 46.2870598,
+      "afterFinalWritesMs": 12.332416023127735,
+      "chargeMs": 47,
+      "phaseMs": 10000,
+      "state": "CLOSED"
+    },
+    "authority": "Pure compiler/true check,0Node/product import/network/PG/Chrome; no personal61228 request."
+  },
+  "resolved": [
+    {
+      "id": "REL-C2-SANDBOX-SYNTAX",
+      "state": "CLOSED_FOR_PROFILE_COMPILATION_ONLY"
+    }
+  ],
+  "findings": [],
+  "nativeBoundary": {
+    "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+    "accepted": "Same fixed design as c2; no broadened network/file allowances and no sandbox removal. Parent hash changes solely for supported remote localhost deny syntax.",
+    "limits": "Syntax PASS is not runtime proxy/CDP/connectivity/DB/threeApp compatibility or comprehensive OS egress proof. Native Chrome retains normal internal sandbox but no custom outer write/egress sandbox."
+  },
+  "remaining": [
+    "W01 may finalize only reviewed binding/head/native acceptance metadata then STOP; manager fresh claim/clean/pins/combinedresources and a new single-use runtime gate remain required.",
+    "c2 FAILED410ms and all originals remain immutable; its unused179590ms is not automatic rerun credit.",
+    "Three retained App compatibility and cookie/CSRF probe still not run; fixed backend7d1/source6c unchanged and still lacks later lateLogout fix."
+  ],
+  "quality": "Existing clean-code safety checkpoint: one supported literal, exact preserved rules and meaningful syntax validation; no general framework or repeated old green tests. Root0runtime/projectwrites."
+}

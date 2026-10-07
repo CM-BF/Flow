@@ -1,0 +1,37 @@
+{
+  "state": "SOURCE_FIXED_NOT_RUN",
+  "sourceCommit": "8964dc1185f62ed8934c15416e9798929359ab89",
+  "requiredReleaseSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "sources": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 35844,
+      "sha256": "e9599dfee054001ea9348ab7182bdd0bf57ecbe9a3621d1f7cd483f369dd9a52"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 33646,
+      "sha256": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08"
+    }
+  ],
+  "claim": {
+    "id": "27c36b97-162d-45e0-9150-25269d3d3f34",
+    "version": 1,
+    "exactScopes": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "newWebDescriptor": null,
+  "newBackendDescriptor": null,
+  "oldArtifacts": "Historical three-App identities retained; reports must be regenerated for the newly admitted backend/context.",
+  "currentChecks": "STRICT_PASSED_1125MS_BROWSER_NOT_RUN",
+  "currentReview": "APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY",
+  "metadataSeal": "Final metadata HEAD is reported after normal commit/push; this immutable source target does not chase metadata commits.",
+  "reviewReceipt": {
+    "path": "root-source-local-review.json",
+    "sha256": "20dccd8d8ff126be623fa13e97a12d9317ec53156a33f2b4299f3296740e7acd"
+  }
+}

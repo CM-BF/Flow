@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-07T14:16:16.432872+00:00",
+  "sourceTarget": "b92470377349dea17a12d0abc244f0fed7992e33",
+  "prior": "8991463e99f357227a7dfba1b93484eb30a866b3",
+  "changed": [
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/conversation-recovery.test.ts"
+  ],
+  "rootFinding": "Recovery all input inventory includes held A in current B; initial no-port fallback also lost already-restored held A after unmount.",
+  "repair": "Reuse one draftItems selector and guarded current composer port; no-port uses existing restoredDraftIds. Input order/unverified selections/current-over-held priority stay authoritative; removed input cannot resurrect; stale cleanup cannot clear replacement port.",
+  "local": {
+    "manifest": "held-projection-local-20261007/manifest.json",
+    "current": "direct-2 1 PASS /68 NOT_SELECTED; types-2 exit0 emptylog",
+    "spentMs": 14680,
+    "remainingMs": 5320,
+    "budgetMs": 20000,
+    "runtime": "0 network/PG/Chrome; regular-file logs not pipe EOF",
+    "browser": "NOT_RUN on new repair; previous four FAIL unchanged; original90s CLOSED51110/38890",
+    "state": "CLOSED"
+  },
+  "release": {
+    "candidate": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "files": [
+      {
+        "path": "apps/web/src/plugin-integration/attachments.tsx",
+        "releaseBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+        "releaseSHA256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+        "releaseBytes": 22929,
+        "resultSHA256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+        "resultBytes": 23456,
+        "method": "identical old attachment blob -> exact new blob"
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "releaseBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+        "releaseSHA256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+        "releaseBytes": 24603,
+        "resultSHA256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+        "resultBytes": 24592,
+        "method": "one exact recoveryMaterials projection replacement; other release bytes retained"
+      }
+    ],
+    "patch": "held-draft-release-minimal.patch",
+    "patchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+    "reachability": "Source-supported same inventory getter and attachment blob; old public AttachmentComposer explicit restore leaves failed hold, so restored/current priority and unmount fallback are required. Old7272 actual repro NOT_RUN. Apply only minimal patch, never whole MSG03 session.",
+    "limits": "No candidate/main/personal deployment changed; root/Release owner independently review and integrate.",
+    "finalPair": "Original fixes actual descriptor/review; backend04da per root current handoff, not required whole-tree7272"
+  },
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Local skill reuse, one membership authority rather than duplicate filter/store; bounded port lifetime and consumer regression; no install."
+  },
+  "review": {
+    "path": "source-research/root-msg03-b924-membership-source-local-review-20261007.json",
+    "sha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad",
+    "result": "APPROVED_SCOPED_SOURCE_AND_LOCAL_NOT_MOUNTED"
+  }
+}

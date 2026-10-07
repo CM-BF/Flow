@@ -1,0 +1,203 @@
+{
+  "kind": "focused-independent-source-and-local-result-review",
+  "at": "2026-10-07T14:16:04.532901+00:00",
+  "base": "8991463e99f357227a7dfba1b93484eb30a866b3",
+  "target": "b92470377349dea17a12d0abc244f0fed7992e33",
+  "decision": "APPROVED_SHARED_DRAFT_MEMBERSHIP_SOURCE_AND_CONTROLLED_LOCAL_CHECK_NOT_MOUNTED_OR_RELEASE_PASS",
+  "blockingFindings": [],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 25841,
+      "sha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 95881,
+      "sha256": "65249d1197f87f35e38c60d64a33f128442e0eb6a4149a7c579ae8fa2f4b52ce"
+    }
+  ],
+  "fixedHistoricalAndCurrentPinsVerified": 36,
+  "sourceMismatches": [],
+  "assessment": [
+    "Recovery now delegates to the same ConversationAttachments.draftItems selector used by Send/synchronization; Session does not duplicate ownership filtering.",
+    "Input inventory retains held A, while current B journal projection excludes held/inTransit A and retains unverified selections in original order. Current returned/restored IDs win over held identity.",
+    "A guarded composer port reference supplies current state while bound. Old-port release cannot clear the replacement reference. Release does not call an unmounted composer.",
+    "The first d576 implementation had a P2: an empty-current fallback lost partially/fully restored held A after unmount. b924 reuses existing restoredDraftIds in the same selector when no port is bound; input removal still wins because iteration is over retained input items. No second selection store/transport/authority is added.",
+    "The added real AppPluginSession→attachment binding→Recovery journal controlled test verifies persisted B-only identity and retention of A, invalid ordered selection, partial/full current A, detach/inTransit, replacement and release. It now explicitly covers held-failed A returned partially/fully before unmount."
+  ],
+  "resolvedFinding": {
+    "target": "d5760087392066f1e20ea846a8a2b4da94f38885",
+    "priority": "P2",
+    "title": "Restored held attachments lost from Recovery when composer unmounts",
+    "fixedBy": "b92470377349dea17a12d0abc244f0fed7992e33",
+    "verification": "New unmount assertions reached in actual direct-2 selected test; strict type-check rerun after the change."
+  },
+  "actualLocal": {
+    "id": "MSG03-HELD-PROJECTION-LOCAL-20261007",
+    "budgetMs": 20000,
+    "spentMs": 14680,
+    "unusedMs": 5320,
+    "state": "CLOSED_AFTER_REQUIRED_CHECKS",
+    "unusedTransferred": false,
+    "attempts": [
+      {
+        "label": "direct-1",
+        "gitHead": "d5760087392066f1e20ea846a8a2b4da94f38885",
+        "startedAt": "2026-10-07T14:09:22.095852+00:00",
+        "pid": 65875,
+        "actualExit": 0,
+        "elapsedMs": 1700.836208066903,
+        "chargeMs": 1701,
+        "selection": {
+          "passed": 1,
+          "failed": 0,
+          "notSelected": 68,
+          "selectedTitles": [
+            "MSG03 recovery material membership persists only B while holding A, but keeps current returns, unverified order and explicit A restoration"
+          ]
+        },
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "signals": []
+      },
+      {
+        "label": "types-1",
+        "gitHead": "d5760087392066f1e20ea846a8a2b4da94f38885",
+        "startedAt": "2026-10-07T14:09:36.405977+00:00",
+        "pid": 73034,
+        "actualExit": 0,
+        "elapsedMs": 5638.03004194051,
+        "chargeMs": 5639,
+        "selection": null,
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "signals": []
+      },
+      {
+        "label": "direct-2",
+        "gitHead": "b92470377349dea17a12d0abc244f0fed7992e33",
+        "startedAt": "2026-10-07T14:13:21.602829+00:00",
+        "pid": 18602,
+        "actualExit": 0,
+        "elapsedMs": 1740.381708019413,
+        "chargeMs": 1741,
+        "selection": {
+          "passed": 1,
+          "failed": 0,
+          "notSelected": 68,
+          "selectedTitles": [
+            "MSG03 recovery material membership persists only B while holding A, but keeps current returns, unverified order and explicit A restoration"
+          ]
+        },
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "signals": []
+      },
+      {
+        "label": "types-2",
+        "gitHead": "b92470377349dea17a12d0abc244f0fed7992e33",
+        "startedAt": "2026-10-07T14:13:36.211262+00:00",
+        "pid": 25971,
+        "actualExit": 0,
+        "elapsedMs": 5598.753749975003,
+        "chargeMs": 5599,
+        "selection": null,
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "signals": []
+      }
+    ],
+    "currentResult": {
+      "selectedPassed": 1,
+      "notSelected": 68,
+      "typesActualExit": 0,
+      "typesLogBytes": 0
+    },
+    "scope": "Controlled composer port and fake public metadata readers; no PG, HTTP, Chrome or provider. Local logs are regular files, not a claim of dual pipe EOF. Typecheck covers App/direct/browser roots and their transitive imports, not every project file."
+  },
+  "rawPins": [
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/segment.json",
+      "bytes": 14850,
+      "sha256": "6c017e14e420190ed50a2131c4b35892128e606d63df9ede18000edd43817d00"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/direct-1.json",
+      "bytes": 26859,
+      "sha256": "751344b6b09b3f23adfa6a15ba3cc52c6fb3e98fd34be207460a0557f869e144"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/direct-1.log",
+      "bytes": 87,
+      "sha256": "0e41461d445e5962f54be0929837b0e8560f396402eda1f34027d686777f8380"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/types-1.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/direct-2.json",
+      "bytes": 26861,
+      "sha256": "495ed7fffb0a79af57bb9896940df14ac7e0e946b3304f8d1b5c64aa753e5ce6"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/direct-2.log",
+      "bytes": 87,
+      "sha256": "2f993b8bf49f567652c8c10b60ab5a5a96f7e953f0c3b8ce6059ecbd58443874"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/types-2.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/types.json",
+      "bytes": 926,
+      "sha256": "6b7b26eac96cdce6c00e0c6d757e9430c96b07486523467fc18b7976bb0f59d0"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/vitest.config.mjs",
+      "bytes": 372,
+      "sha256": "ead9e4f9ba8111f0b16126fd4f5d8eb923f14f429ef5856765eb54fc213407ae"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/sandbox.sb",
+      "bytes": 167,
+      "sha256": "4bb50048ae9b15ab25a605daef3414e30146dfa5b25d9b65ab570022277f09cd"
+    },
+    {
+      "path": "/private/tmp/msg03-held-projection-local-go1nlwgu/run.py",
+      "bytes": 5467,
+      "sha256": "ac8e1023dc2cd633061d0a179cc349fb2d806ffaac304f87347bdd1bdc23448d"
+    }
+  ],
+  "releaseBoundary": [
+    "The two production-file delta can be considered separately from MSG message-settings feature changes; apply a fixed patch against the chosen older Web base, never copy the whole MSG session file.",
+    "Existing7272 natural same-shape failure has not been proven: its actual adapter.send has no network/file await and receipt capture consumes before HTTP wait. This approval does not label that historical candidate actual-failed or actual-safe.",
+    "A transplanted older-base composition still needs exact-source consumer/type validation and its own immutable artifact/compatibility evidence; this b924 test ran on MSG composition.",
+    "Original is preparing independently reviewed6c+lateLogout backend04da; final Web/backend descriptors and context must be explicitly bound in the existing release flow."
+  ],
+  "remaining": [
+    "Mounted material-return browser must be rerun on this fix, and the separate full message-settings-App journey remains unverified.",
+    "Old fourth browser remains FAILED; its source/cleanup review and closed51110/38890 phase are unchanged.",
+    "Main integration, new Web artifact and user-visible publication not claimed."
+  ],
+  "quality": {
+    "skill": "Previously read local clean-code and codebase-design",
+    "scope": "Single ownership projection, lifecycle of borrowed composer reference, preserve restoration and error state, avoid duplicated selection rules.",
+    "findings": "d576 unmount P2 repaired; no remaining blocking finding in this narrow delta.",
+    "rootRuntime": 0,
+    "rootProjectWrites": 0
+  }
+}

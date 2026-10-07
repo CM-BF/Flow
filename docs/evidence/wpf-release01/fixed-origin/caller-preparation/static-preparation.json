@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T11:24:35.404189+00:00",
+  "state": "STATIC_PREPARATION_ONLY",
+  "subjectExecution": false,
+  "syntax": "Python ast.parse only, no subject/helper execution or pycache",
+  "checks": {
+    "claimExact4": true,
+    "noOverlap": true,
+    "headClean": true,
+    "twoSourceHashesMatch": true,
+    "supervisorSyntaxParsed": true,
+    "publicHelperSyntaxParsed": true,
+    "pageRequestAPIsAbsent": true,
+    "privateEnvRemovedAfterRead": true
+  },
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "active",
+    "branch": "codex/web-release-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+    "createdAt": "2026-10-07T10:00:08.645Z",
+    "updatedAt": "2026-10-07T10:00:08.645Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "sourceCommit": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "head": "7af40cbe5f8e1aca217fb4b1e8549f1afc0e0fd0",
+  "prepared": [
+    {
+      "path": "/private/tmp/rel01-c1/supervisor.py",
+      "realpath": "/private/tmp/rel01-c1/supervisor.py",
+      "bytes": 17390,
+      "sha256": "32bff7ccf81703d1cecf98ebac1617deb9d3b9febdacbb1e72cc0f98b46b9ac9"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/worker.mjs",
+      "realpath": "/private/tmp/rel01-c1/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/inputs.json",
+      "realpath": "/private/tmp/rel01-c1/inputs.json",
+      "bytes": 6894,
+      "sha256": "477c61845b1f8abebdc8a8d5f6b3089c447b9e721f1255c511829a01488dcce2"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/measure.py",
+      "realpath": "/private/tmp/rel01-c1/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    }
+  ],
+  "limitations": [
+    "No Node import, no product/type/browser/PG/HTTP execution",
+    "No fresh space/process/service sampling",
+    "No full 30asset hash repeat; existing independently accepted asset observation reused",
+    "Sandbox policy/proxy handshake/cleanup deadlines are unexecuted candidate behavior, require source-native review and actual grant"
+  ]
+}

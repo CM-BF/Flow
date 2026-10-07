@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T11:36:43.807Z",
+  "state": "C2_SOURCE_AND_HELPER_CHECK_FIXED_NATIVE_REVIEW_PENDING",
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "sources": {
+    "apps/web/test/web-release-compatibility.browser.ts": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+    "apps/web/test/web-release-compatibility.fixture.ts": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+  },
+  "parent": {
+    "path": "/private/tmp/rel01-c2/supervisor.py",
+    "realpath": "/private/tmp/rel01-c2/supervisor.py",
+    "bytes": 18546,
+    "sha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3"
+  },
+  "worker": {
+    "path": "/private/tmp/rel01-c2/worker.mjs",
+    "realpath": "/private/tmp/rel01-c2/worker.mjs",
+    "bytes": 5411,
+    "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+  },
+  "inputs": {
+    "path": "/private/tmp/rel01-c2/inputs.json",
+    "realpath": "/private/tmp/rel01-c2/inputs.json",
+    "bytes": 6894,
+    "sha256": "477c61845b1f8abebdc8a8d5f6b3089c447b9e721f1255c511829a01488dcce2"
+  },
+  "delta": {
+    "path": "/private/tmp/rel01-c2/c1-c2.diff",
+    "realpath": "/private/tmp/rel01-c2/c1-c2.diff",
+    "bytes": 4662,
+    "sha256": "fb7b9a66b30a0173378e1dff56ea47665beeb7ccd8bab93d7adb3586c8681c8b"
+  },
+  "checkEntry": {
+    "path": "/private/tmp/rel01-c2/scratch-lifecycle-check.py",
+    "realpath": "/private/tmp/rel01-c2/scratch-lifecycle-check.py",
+    "bytes": 4284,
+    "sha256": "5efcf4bfe75d267ea46667753e955299b574316c0aa4605b36c7032b24fc9577"
+  },
+  "checkReceipt": {
+    "path": "/private/tmp/rel01-c2/check-receipt.json",
+    "realpath": "/private/tmp/rel01-c2/check-receipt.json",
+    "bytes": 1631,
+    "sha256": "63e43a740f52d2df78bcf08e5ada7d58ebb737594601d049dfe2c0c384c08b78"
+  },
+  "c1PreservedManifest": {
+    "path": "/private/tmp/rel01-c1/manifest.json",
+    "realpath": "/private/tmp/rel01-c1/manifest.json",
+    "bytes": 2549,
+    "sha256": "65f9d027c147db837fe27720eefadd48d2aa39cb20dcf70f68f363ad20782404"
+  },
+  "limits": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalEstimateBytes": 134217728,
+    "startFreeBytes": 6190268416,
+    "stopFreeBytes": 1207959552,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0
+  },
+  "pgConnections": {
+    "databases": 1,
+    "serverPoolMax": 8,
+    "fixturePoolMax": 1,
+    "fixturePoolsSequential": true,
+    "conservativeConnectionCeiling": 12,
+    "cleanupExpected": 0,
+    "budgetBytes": 134217728,
+    "budgetKind": "planning allowance, not measured DB/WAL peak or independently enforced PG quota",
+    "schedulerPoolMax": 3,
+    "schedulerUseListenNotify": false
+  },
+  "nativeBoundaryApproval": null,
+  "runtime": "ThreeApp/PG/Chrome NOT_RUN",
+  "metadataBinding": "TMP will bind final clean owner metadata HEAD after this normal commit; no recursive metadata receipt needed."
+}

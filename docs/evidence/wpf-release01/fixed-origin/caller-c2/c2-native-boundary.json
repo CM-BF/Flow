@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-07T11:38:44.969840+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3",
+  "workerSha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751",
+  "review": {
+    "path": "/private/tmp/root-release-c2-delta-review-20261007.json",
+    "bytes": 7036,
+    "sha256": "e0b530de500287d4df00239213179413ba20c3028295e2f08fd0952e57ff3e93"
+  },
+  "scope": "Only fixed c2 parent3a9d/worker5800 with existing exact fixture and fixed6c artifact/three retained Apps. No general credential/profile/sandbox exception.",
+  "limitations": "Native Chrome uses its normal internal sandbox; no custom outer OS write/egress sandbox. Proxy routing/canary and argument checks are application controls, not complete OS egress enforcement. Actual deferred launch, proxy, CDP and cleanup remain NOT_RUN.",
+  "runtimeAdmission": "NONE; d01 fresh single-use admission still required; this is source boundary acceptance only."
+}

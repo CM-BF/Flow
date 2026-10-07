@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T11:44:37.704120+00:00",
+  "actualOuterExit": 1,
+  "outerElapsedMs": 409.2979431,
+  "lateTerminalElapsedMs": 160.98537493962795,
+  "chargeMs": 410,
+  "unusedMs": 179590,
+  "phase": "FAILED_CLOSED_ONE_ATTEMPT_NO_RETRY",
+  "terminalUniqueMatch": true,
+  "terminalHashesMatch": true,
+  "outerBothEOF": true,
+  "outerBytes": 480,
+  "workerExit": 65,
+  "workerStreams": {
+    "worker.stdout": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "worker.stderr": {
+      "received": 145,
+      "kept": 145,
+      "drop": 0,
+      "eof": true
+    }
+  },
+  "ownedIdentities": [
+    {
+      "identity": 31447,
+      "kind": "PID",
+      "state": "ESRCH"
+    },
+    {
+      "identity": 31447,
+      "kind": "PGID",
+      "state": "ESRCH"
+    },
+    {
+      "identity": 31807,
+      "kind": "PID",
+      "state": "ESRCH"
+    },
+    {
+      "identity": 31807,
+      "kind": "PGID",
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "scratchCleanup": {
+    "state": "REMOVED_OWNED",
+    "removed": true
+  },
+  "adminCleanup": {
+    "path": "/private/tmp/rel01-c2-actual-jxh2t3d9/admin-input",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124103009
+    },
+    "exactDeleted": true,
+    "absent": true
+  },
+  "chrome": "NOT_SPAWNED",
+  "fixture": "NOT_ENTERED_SANDBOX_STARTUP_FAILURE; no fixture cleanup record, parent raw UNKNOWN preserved",
+  "runtimeReportPgField": "Configured allowance1, not observed PG launch",
+  "rawRoot": "/private/tmp/rel01-c2/raw/release01-c2-20261007-114405-6b2284"
+}

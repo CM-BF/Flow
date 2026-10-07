@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T11:07:22.832335+00:00",
+  "decision": "PUBLIC_SETTINGS_INPUT_COMPLETE_HASH_VERIFIED",
+  "sourceCommit": "3b68f31aef36481620ff1d43d37d9d95d2d7714d",
+  "sourceWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+  "pins": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "bytes": 14984,
+      "sha256": "f24c3e7c1479b4e17a7d392e58751f42a8a00d9cc1c1b5487474a30db9a961b7",
+      "currentMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "2276b0d397f056fff7ee61a67f0f5f6d31f3ae6adb9fb27c31f6dac1ab596ed8",
+      "currentMatches": true
+    }
+  ],
+  "normalizedBrowserSettings": {
+    "cookieOrigin": "http://127.0.0.1:61228",
+    "trustedOrigins": [
+      "http://127.0.0.1:61228"
+    ],
+    "authEpoch": "svc09-b2b-20261007"
+  },
+  "computedPolicySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638",
+  "expectedContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "expectedBackendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "backendArtifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "artifactDirectory": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+  "sourceOfSupply": "Original Execution Lead direct incoming message this turn; fixed candidate line28 independently read",
+  "supersedes": "Prior missing normalized three non-secret settings blocker. Existing retained3Apps and final backend tuple observation stay fixed.",
+  "remaining": "Original W01 builds fixed bounded caller and inputs in own Release tree. Actual runtime needs fresh unique window/admission; no blanket READY or execution claim.",
+  "runtime": "No import, build, HTTP, provider, personal config read, credentials or tests."
+}

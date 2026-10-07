@@ -1,0 +1,107 @@
+{
+  "state": "PROPOSED_NOT_RUN_NO_SLOT",
+  "sourceCommit": "8964dc1185f62ed8934c15416e9798929359ab89",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+    "--project",
+    "/private/tmp/release01-fixed-origin-types-20261007/tsconfig.json"
+  ],
+  "config": {
+    "path": "/private/tmp/release01-fixed-origin-types-20261007/tsconfig.json",
+    "realpath": "/private/tmp/release01-fixed-origin-types-20261007/tsconfig.json",
+    "bytes": 1017,
+    "sha256": "66fad00e250839fbb4377d4e58820d41dfe4e3486c8f0ae14871afd4b9878e77",
+    "dev": 16777234,
+    "ino": 123985087
+  },
+  "directLauncherPins": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "dev": 16777234,
+      "ino": 110837507
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "bytes": 267,
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+      "dev": 16777234,
+      "ino": 120478586
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "bytes": 6213092,
+      "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419",
+      "dev": 16777234,
+      "ino": 120478561
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "dev": 16777234,
+      "ino": 120478705
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978",
+      "dev": 16777234,
+      "ino": 120476911
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "dev": 16777234,
+      "ino": 120475884
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 35844,
+      "sha256": "e9599dfee054001ea9348ab7182bdd0bf57ecbe9a3621d1f7cd483f369dd9a52"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 33646,
+      "sha256": "d7b5f1d04f69876dfbbec32729327b842eb8cc58c70934daab80afd47b2ddc08"
+    }
+  ],
+  "bounds": {
+    "totalMs": 20000,
+    "cleanupMs": 5000,
+    "ownedNode": 1,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "network": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "install": 0,
+    "build": 0
+  },
+  "minimumFreshFreeBytes": 6953631744,
+  "resourceNote": "Manager latest full floor or higher fresh complete combination; no free sample taken in this preparation.",
+  "limitations": [
+    "Compiler only; no harness import or emitted files.",
+    "TypeScript shim and actual _tsc.js both pinned. Declaration/lib closure and installed native identities must be verified immediately before any granted local phase.",
+    "Dynamic final-backend artifact imports are runtime inputs; this noEmit proposal cannot verify their future bytes.",
+    "No old types/browser result is inherited. No actual local phase or browser reservation is created."
+  ],
+  "futureBrowser": {
+    "entry": "runRecoveryReleaseCompatibility",
+    "descriptors": "Original publisher must supply immutable Web and backend both at exact 7272151bb1e3e59e08937dca44949dcdeb42f009; null now.",
+    "caller": "Existing owned sibling Chrome/Node lifecycle must be rebound to this explicit entry and four-App output. No consumed caller packet is changed.",
+    "budget": "NOT_GRANTED; next finite proposal after descriptors and focused lifecycle review. Historical c2/c3 and unused time remain CLOSED."
+  }
+}

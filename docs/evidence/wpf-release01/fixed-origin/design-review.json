@@ -1,0 +1,355 @@
+{
+  "reviewedAt": "2026-10-07T09:58:11.516921+00:00",
+  "reviewer": "root / gpt-6-astra / ultra / read-only",
+  "decision": "ACCEPTED_DESIGN_FOR_SCOPED_IMPLEMENTATION_WITH_EXPLICIT_NETWORK_BOUNDARY",
+  "packet": [
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/report.md",
+      "bytes": 13438,
+      "sha256": "48f5c97ee499f14f448a0a3848debc57585a9fa6e7ea69abb1d001d2e7fcb34b",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/pins.json",
+      "bytes": 12863,
+      "sha256": "f5417b55dc8f9fafba24280817bbe4c11d1133044408476190fd46eb978d4321",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/candidate-interface.json",
+      "bytes": 3591,
+      "sha256": "7f142916530bb07d1bd4f02eff5d6e9a74b7fa346c51c72d857d92a65fa7e54d",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/scope-proposal.json",
+      "bytes": 1083,
+      "sha256": "9dc336aaf9769cf023641ed15ff7690797fd0fe3c4f827432c1c106eff06f8df",
+      "matches": true
+    }
+  ],
+  "fixedSources": [
+    {
+      "commit": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 16049,
+      "sha256": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f",
+      "matches": true
+    },
+    {
+      "commit": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 13184,
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc",
+      "matches": true
+    },
+    {
+      "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+      "path": "apps/web/test/web-current-preview.fixture.ts",
+      "bytes": 32158,
+      "sha256": "4016c7811e77e12d8c8dbf2e6d90a433f93a3559bdff1e34b3a268a651c6d974",
+      "matches": true
+    },
+    {
+      "commit": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+      "path": "apps/web/test/web-current-preview.browser.ts",
+      "bytes": 49676,
+      "sha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 9035,
+      "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 46785,
+      "sha256": "810f192a5f121b48a6c317be5a506e24346035b6793e2fb4b27dcf7a931da737",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "matches": true
+    },
+    {
+      "commit": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "matches": true
+    },
+    {
+      "commit": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "path": "packages/client/src/index.ts",
+      "bytes": 37776,
+      "sha256": "84e63baeebed37dd019e72c71b00e32cb4b3962504e916794c814520ddccd2c4",
+      "matches": true
+    },
+    {
+      "commit": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "path": "packages/client/src/index.ts",
+      "bytes": 38126,
+      "sha256": "28ac0941db1306a4276ae4217d4d680c937012c6090878c05d79cc501da6441b",
+      "matches": true
+    },
+    {
+      "commit": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "path": "packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd",
+      "matches": true
+    }
+  ],
+  "fixedInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/svc05-retained-web-compatibility/inputs/retained-af51-artifact-inputs-root.json",
+      "bytes": 4661,
+      "sha256": "cbebb23fd4dad766d94905715265e5075b43ac21277616f84b2182b45972f792",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/svc06/artifact-host-smoke/inputs.json",
+      "bytes": 4087,
+      "sha256": "51b7567ca0d8232de56f2b0f498945fd4729d707939cece0f967f8c1ccd1bfa4",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/root-svc09-retained-three-app-asset-integrity-20261007.json",
+      "bytes": 13073,
+      "sha256": "b655c872739f25d0dfc0611d988e53b88c4d096e2d2041f1c4ec76a63307a65c",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/root-svc09-fixed-origin-design-input-20261007.json",
+      "bytes": 3636,
+      "sha256": "4d01b0c6fb4b82075e8798139acdd263e2b8a809043ccfe7177ba8bc3b4977ec",
+      "matches": true
+    }
+  ],
+  "readonlyDependencyPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/pg@8.23.1/node_modules/pg/esm/index.mjs",
+      "bytes": 579,
+      "sha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "bytes": 1063,
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd",
+      "matches": true
+    }
+  ],
+  "skillPins": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "bytes": 6446,
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "bytes": 3913,
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "matches": true
+    }
+  ],
+  "roots": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "branch": "codex/web-release-compatibility",
+      "head": "41276e2ecd154087f66958339d9abfce4d44964c",
+      "dirty": "",
+      "writeAuthority": "NONE: released scopes not reused",
+      "currentHead": "41276e2ecd154087f66958339d9abfce4d44964c",
+      "currentBranch": "codex/web-release-compatibility",
+      "currentDirty": "",
+      "matchesCleanPreparation": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility",
+      "branch": "codex/web-current-preview-compatibility",
+      "head": "9d4641c9409d02049770610091ddf59537e22378",
+      "dirty": "",
+      "writeAuthority": "NONE: released scopes not reused",
+      "currentHead": "9d4641c9409d02049770610091ddf59537e22378",
+      "currentBranch": "codex/web-current-preview-compatibility",
+      "currentDirty": "",
+      "matchesCleanPreparation": true
+    }
+  ],
+  "reusedAssetAudit": {
+    "path": "/private/tmp/root-svc09-retained-three-app-asset-integrity-20261007.json",
+    "bytes": 13073,
+    "sha256": "b655c872739f25d0dfc0611d988e53b88c4d096e2d2041f1c4ec76a63307a65c",
+    "matches": true,
+    "matchMethod": "SHA256 of immutable root report; asset byte total is separate metadata"
+  },
+  "findings": [
+    {
+      "priority": "P1_IF_IMPLEMENTED_AMBIGUOUSLY",
+      "location": "report.md section3 browser context requests",
+      "finding": "BrowserContext.request/Page.request are APIRequestContext, not execution inside the page. Chrome manualproxy flags alone do not configure that Node-side request client; using it for61228 risks bypassing the owned proxy.",
+      "requiredImplementation": "For fixed public-origin reads and independent cookie probe, use actual page navigation/response or relative fetch executed inside the actual Chrome page. Forbid page.request/context.request/route.fetch or rawNodefetch to61228 in this candidate. Node actor/admin may use only owned dynamicbackend. Do not inject product functionality into retainedApps.",
+      "evidence": {
+        "localBundle": {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+          "bytes": 3477183,
+          "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+        },
+        "lines": [
+          "26396-26422 API request proxy agent constructed from defaults.proxy",
+          "26818-26845 BrowserContextAPIRequestContext reads context.options.proxy or browser.options.proxy"
+        ],
+        "primaryDocs": [
+          "https://playwright.dev/docs/api/class-browsercontext#browser-context-request",
+          "https://playwright.dev/docs/api/class-apirequestcontext",
+          "https://chromium.googlesource.com/chromium/src/+/HEAD/net/docs/proxy.md#overriding-the-implicit-bypass-rules"
+        ]
+      },
+      "state": "Requirement delivered to original owner/manager; original immutable packet retained"
+    }
+  ],
+  "acceptedBoundaries": [
+    "Original3retainedApp bytes/nativeBearer behavior; separate freshcontext realCookie/CSRF checks cannot be called migration oflegacyApps.",
+    "One explicit final backend descriptor/factory/client/contracts/context with no oldtuple/movingmain fallback; format1artifact can independently use format2compatibilityreport without inventedreleaseId.",
+    "ExactHTTP61228 target validation/Host preservation; oneowned dynamicproxy/upstream, rejectCONNECT/otherauthority/ambiguousHost/directfallback. Routingcanary againstownedproxy only before publicorigin; no personalendpoint probe.",
+    "StreamingSSE and genuine upstreamACK completevalidation thenstrictprefixbodyloss; exactsameRequest header→failed and explicit originalretry, no syntheticPASS.",
+    "Use existing report schema/importer into newlyowned output state; do not mutate retainedartifactroots/personalpointers or createcompatibilitygreen toloadunverifiedsnapshot.",
+    "One DB/Chrome phase with fresh resources, exactownedcleanup/EOF/normalDROP and unknownkept; thisdesign does not allocate runtime."
+  ],
+  "implementationDisposition": {
+    "scopeProposal": {
+      "state": "CANDIDATE_NOT_TAKEN_NOT_RUN",
+      "task": "Existing WPF-RELEASE01 / REQ19 successor only",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+      "branch": "codex/web-release-compatibility",
+      "fixedStartingHead": "41276e2ecd154087f66958339d9abfce4d44964c",
+      "originalImplementation": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+      "scope": [
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "apps/web/test/web-release-compatibility.browser.ts",
+        "plans/wpf-release01-product-compatibility",
+        "docs/evidence/wpf-release01"
+      ],
+      "noNewTreeRequired": true,
+      "backendFinalTuple": null,
+      "methodReferenceMain": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+      "sourceProvision": "No automatic reset/rebase/checkout. Runtime tools/client/contracts/runner factory are explicit fixed final artifact inputs. If original owner cannot supply those without cross-tree/moving imports, list exact missing files and request source operator; no fallback install/link/copy.",
+      "releasedClaimsCannotAuthorizeWriting": true
+    },
+    "freshClaimRequired": true,
+    "implementationCanProceedAfterClaim": "Write explicit input validation/proxy/harness/report logic within4scopes while finaltuple is awaited; no executable finalsource fallback and no PG/Chrome/HTTP/build until actual inputs and runtimeboundary ready.",
+    "finalBackendTupleStillNull": true,
+    "runtimeBudgetStillNull": true,
+    "runtimeGate": null
+  },
+  "cleanCodeRecord": {
+    "scope": "release compatibility design",
+    "applied": "Single source of backend/config identity; separateApp auth/cookieprobe/report; reuse existingnarrow modules; honestfailureandcleanup.",
+    "findingFixedAtDesignBoundary": "Clarified NodeAPIRequestContext versus browsernetwork; requirement must be visible in implementation/review."
+  },
+  "errors": []
+}

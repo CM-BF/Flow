@@ -1,0 +1,18 @@
+{
+  "requestId": "release01-fixed-origin-303d7c55-53b9-47fb-8bea-9998cbe15ff4",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-RELEASE01",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+  "branch": "codex/web-release-compatibility",
+  "scope": [
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "plans/wpf-release01-product-compatibility",
+    "docs/evidence/wpf-release01"
+  ],
+  "origin": "new"
+}

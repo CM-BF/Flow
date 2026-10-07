@@ -1,0 +1,66 @@
+{
+  "recordedAt": "2026-10-07T14:25:18.353625+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_EXACT_MINIMAL_SOURCE_TRANSPLANT_PREPARATION_NOT_OLD_CONSUMER_EXECUTION_OR_ARTIFACT",
+  "findings": [],
+  "sourceBase": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "patchProvenance": {
+    "commit": "c848024a20ac59182360d31c7e0087828bca018d",
+    "path": "docs/evidence/wpf-message-settings-app/held-draft-release-minimal.patch",
+    "bytes": 3945,
+    "sha256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8"
+  },
+  "packet": {
+    "path": "/private/tmp/release01-held-transplant-re0ej6l6/manifest.json",
+    "bytes": 4485,
+    "sha256": "1ad0569d5a785ba5bfa8518ae664e81a1534e9fb68a05373534bbae003a7b3f1"
+  },
+  "report": {
+    "path": "/private/tmp/release01-held-transplant-re0ej6l6/report.md",
+    "bytes": 5707,
+    "sha256": "ae76c63af9693d98a4ce18923a96c52cd6147e72449709e006f24d466c887c15"
+  },
+  "resultFiles": [
+    {
+      "path": "/private/tmp/release01-held-transplant-re0ej6l6/result/apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "matchesSuppliedResult": true,
+      "exactReviewedB924Attachment": true
+    },
+    {
+      "path": "/private/tmp/release01-held-transplant-re0ej6l6/result/apps/web/src/plugin-integration/session.ts",
+      "bytes": 24592,
+      "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+      "matchesSuppliedResult": true,
+      "exactOneConsumerReplacementOnly": true,
+      "notCopiedMSGSession": true
+    }
+  ],
+  "independentChecks": {
+    "fixedPatchGitHash": true,
+    "beforeFilesGitHashCount": 2,
+    "afterFilesHashCount": 2,
+    "unchangedConsumerGitPins": 6,
+    "immutableHarnessGitPins": 2,
+    "attachmentExactlyReviewedB924": true,
+    "sessionExactlyOneProjectionReplacementAndAllOtherOldBytes": true,
+    "sessionNotWholeMSGCopy": true,
+    "errors": []
+  },
+  "reasoning": [
+    "Old Thread already binds the same AttachmentComposerBinding runtime port; no new MSG auto-return or message-settings contract is copied.",
+    "Old explicit A restore can retain a failed hold, so current-member precedence and restoredDraftIds fallback are necessary; b924 includes them and avoids stale port cleanup clearing replacement.",
+    "Old App obtains CompleteDraft from AppPluginSession.recoveryMaterials; only this getter delegates to the common selector. Original Recovery namespace/CAS/subscriptions are untouched.",
+    "Static compatibility supports the narrow two-file supply. The earlier MSG actual failure neither proves old7272 actual failure nor old safety; MSG controlled direct result is not rebranded as oldconsumer execution."
+  ],
+  "harnessPlan": "Accept separate fixed exact Web source and fixed exact backend source once real approved descriptors exist, checked before fixture/PG/Chrome creation at all three existing source guards. Preserve all artifact/root/identity/fullpins/context checks and real four-App compatibility paths. No current guard or placeholder SHA mutation.",
+  "ownership": "Release currently owns two harnesses plus two metadata directories, not production attachment/session. Apply through Original controlled source integration or explicit currentowner handback/amend. This review grants no new product writer, artifact build or runtime.",
+  "outstanding": [
+    "Exact old-base consumer composition types and behavior: B-only durable refs, current A, partial/full restore and unmount, oldport replacement, input remove, unverified order.",
+    "Concrete newWeb commit and immutable descriptor, formally approved04da backend descriptor.",
+    "Update exact8964 guards after fixedpair, then actual fourApp samebackend/context compatibility with cleanup."
+  ],
+  "cleanCode": "One selector, borrowed port identity and minimal old consumer seam retained; no parallel membershipstore, duplicate filter, broad session transplant or assertion downgrade.",
+  "runtime": "Root read fixed Git objects and owned TMP output bytes only. No product imports/tests/build/PG/Chrome/privateadmin or source edits."
+}

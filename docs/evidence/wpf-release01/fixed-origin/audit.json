@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T09:55:33.495697+00:00",
+  "state": "DESIGN_ONLY_NOT_RUN",
+  "files": [
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/report.md",
+      "bytes": 13438,
+      "sha256": "48f5c97ee499f14f448a0a3848debc57585a9fa6e7ea69abb1d001d2e7fcb34b"
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/pins.json",
+      "bytes": 12863,
+      "sha256": "f5417b55dc8f9fafba24280817bbe4c11d1133044408476190fd46eb978d4321"
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/candidate-interface.json",
+      "bytes": 3591,
+      "sha256": "7f142916530bb07d1bd4f02eff5d6e9a74b7fa346c51c72d857d92a65fa7e54d"
+    },
+    {
+      "path": "/private/tmp/release01-fixed-origin-design-g74no7em/scope-proposal.json",
+      "bytes": 1083,
+      "sha256": "9dc336aaf9769cf023641ed15ff7690797fd0fe3c4f827432c1c106eff06f8df"
+    }
+  ],
+  "totalBytes": 30975,
+  "projectWrites": 0,
+  "claimChanges": 0,
+  "productRuntime": 0,
+  "assetRehash": "reused root 30-asset audit; no repeat",
+  "finalBackendTuple": null,
+  "runtimeGate": null,
+  "reviewRequested": [
+    "fixed origin isolation",
+    "three original Bearer App journeys versus separate Cookie/CSRF proof",
+    "streaming SSE and after-headers real ACK prefix",
+    "owned resources cleanup",
+    "narrow four-scope successor"
+  ]
+}

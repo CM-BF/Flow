@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T14:16:15.530Z",
+  "kind": "RELEASE01_SUPPLY_POLICY_METADATA_CALIBRATION",
+  "priorHead": "230cbce38420965a8aecb73a7c0d2fd2ea0f85d1",
+  "claimObservation": "supply-calibration-claim.json",
+  "authorization": "d01_owner task dispatch: independent SVC06B/6c lateLogout candidate now explicitly permitted; source review/artifact still pending",
+  "backendCandidate": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "candidateNumstat": [
+    "5\t0\tapps/server/src/browser-session/fixture.ts",
+    "3\t2\tapps/server/src/browser-session/index.ts",
+    "54\t4\tapps/server/src/browser-session/session.test.ts",
+    "78\t0\tdocs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts"
+  ],
+  "oldSupplyRequestSha256": "39c1d6ef1e4a9e05f457ef5ae8041dc344223cf566243d2eb5d579ae6b1c4173",
+  "descriptors": {
+    "newWeb": null,
+    "backend": null
+  },
+  "productEdits": false,
+  "engineeringChecks": false,
+  "runtime": false,
+  "resourceSampling": false,
+  "claimRemainsActive": true,
+  "stopAfterSeal": "all original four scopes",
+  "skills": {
+    "findSkills": "/Users/citrine/.agents/skills/find-skills/SKILL.md reused local discovery, no reinstall",
+    "cleanCode": "/Users/citrine/.agents/skills/clean-code/SKILL.md reapplied: distinguish requested source policy from immutable existing code guard; preserve approval and actual-evidence scope; no duplicate approval or runtime claim"
+  },
+  "findingFixed": "Current supply request incorrectly required identical 7272 sources after explicit new Original candidate authorization. Historical reviewed code and raw remain intact."
+}

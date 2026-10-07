@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-10-06T10:50:20.175135+00:00",
+  "fixedTarget": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "metadataInput": "db08e7b5976ce462a0b829bbf6a5554fcaf43121",
+  "sourceChecks": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "sha256": "565d2b7e1b9dfe0a8bbff35b290cc3e7cdef6cd7f05117c08b0248d917c3db0f",
+      "bytes": 16049,
+      "fixedMatch": true
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "sha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc",
+      "bytes": 13184,
+      "fixedMatch": true
+    }
+  ],
+  "review": "Web root independent APPROVED10:46:30UTC",
+  "reports": "2reports and8raw check hashes match fixed accepted evidence",
+  "oldBackend": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+  "newWeb": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+  "newArtifact": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+  "personalPublish": false,
+  "providerQueries": 0,
+  "limits": "Only fixed product artifact pair; no rebuild, browser/PG rerun or personal service changes; no approval for future artifact bytes."
+}
