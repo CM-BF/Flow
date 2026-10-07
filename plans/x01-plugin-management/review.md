@@ -1,12 +1,14 @@
 # X01 Stage A 后继准备增量
 
-状态：NOT_STARTED（5fcadf8f路径与新输入待静审，checks NOT_RUN）
+状态：APPROVED（5fcadf8f后继准备静审，Stage A checks NOT_RUN）
 
 Review target commit: 5fcadf8f1b8084d56670393a8ec07ebfb644015f
 
-[本次Interface](../../docs/evidence/x01/enable-binding-stage-a-r2.md)仅复用已审caller并更换独立namespace及小support输入；原产品ade4/旧HOLD/原manifest不改。正式结论等待独立固定target审查，Stage A当前NOT_OPEN。
+[本次Interface](../../docs/evidence/x01/enable-binding-stage-a-r2.md)仅复用已审caller并更换独立namespace及小support输入；原产品ade4/旧HOLD/原manifest不改。独立准备审查已通过；后继实际运行仍必须fresh claim/资源/独立admission门禁。
 
 已接历史结果独审：chatui01_owner / gpt-6-astra，2026-10-07 03:11:53 UTC，固定e484a6d263886dcd3874610d10c5f02482662d02，RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。单记录3004B/SHA8f593e420ddae45bb1b2edc896505a9d0cb6be86fe6416f706aab6d3bc1a38db，raw1232B复算正确，7/7/exit0/最终absent/完整捕获；不扩成Stage A17项/11tar或完整外部wall证明。
+
+独立SOURCE/PREPARATION_REVIEW_APPROVED：chatui01_owner / gpt-6-astra，2026-10-07 03:16:39 UTC，固定packet0fad1401444437e46b0e2db29ae91a649e7e327b/source5fcadf8f1b8084d56670393a8ec07ebfb644015f，0P1/P2。3literal、6support和3external均核符，新run absent；原产品/配置/输入未变，17/11tar尚NOT_RUN。本次Mika于实际REQ15局部资源归还后授权原30秒Stage A工作段，由owner使用真实freshledger生成同机准入，0PG/provider/安装；不复用旧已消费窗口。
 
 ---
 
