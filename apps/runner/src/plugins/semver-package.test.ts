@@ -13,6 +13,8 @@ import { textDigest } from '../verifier.js';
 
 const pack = promisify(execFile);
 const packagePath = fileURLToPath(new URL('../../../../experiments/plugins/semver-compare/package/', import.meta.url));
+let installedReceipt: Awaited<ReturnType<typeof prepareInstalledPackage>>['receipt'] | null = null;
+const observations: unknown[] = [];
 let createInput: (prompt: string) => PluginExecutionInput;
 const root: { path?: string; dev?: number; ino?: number; removed: boolean } = { removed: false };
 const children: { pid: number | undefined; exitCode: number | null; signal: string | null }[] = [];
@@ -35,7 +37,7 @@ beforeAll(async () => {
   const store = { root: join(canonical, 'store'), storeId: 'x01-semver-controlled-store', allowedDigests: [artifact.sha256] };
   const installed = await prepareInstalledPackage({ store, artifact, tarballPath });
   const readBack = await readInstalledPackage({ store, artifact });
-  expect(readBack.receipt).toEqual(installed.receipt);
+  expect(readBack.receipt).toEqual(installed.receipt); installedReceipt = installed.receipt;
   provenance = JSON.parse(await fs.readFile(join(canonical, 'package/provenance.json'), 'utf8'));
   createInput = prompt => {
     const taskId = randomUUID(); const runnerId = randomUUID();
@@ -58,7 +60,7 @@ afterAll(async () => {
   }
   const retained: string[] = [];
   if (root.path) try { await fs.lstat(root.path); retained.push(root.path); } catch (error) { if (!(error && typeof error === 'object' && 'code' in error && error.code === 'ENOENT')) throw error; }
-  if (process.env.FLOW_X01_SEMVER_FACTS) await fs.writeFile(process.env.FLOW_X01_SEMVER_FACTS, JSON.stringify({ roots: [root], children, retained }), { flag: 'wx', mode: 0o600 });
+  if (process.env.FLOW_X01_SEMVER_FACTS) await fs.writeFile(process.env.FLOW_X01_SEMVER_FACTS, JSON.stringify({ roots: [root], children, retained, installedReceipt, observations }), { flag: 'wx', mode: 0o600 });
   expect(retained).toEqual([]); expect(children).toHaveLength(1); expect(children[0]).toMatchObject({ exitCode: 0, signal: null });
 });
 
@@ -72,6 +74,7 @@ test.each([
   const phases: string[] = []; const authorize = input.authorize;
   input.authorize = async request => { phases.push(request.phase); return authorize(request); };
   const result = await executePluginTool(input);
+  observations.push({ input: input.task.prompt, phases, artifact: result.artifact, verification: result.verification, provenance: result.provenance });
   expect(phases).toEqual(['load', 'invoke']);
   expect(result.artifact.content).toBe(expected);
   expect(result.verification).toMatchObject({ type: 'verification', result: 'passed', verifierId: 'flow.text' });
@@ -83,7 +86,7 @@ test.each(['not-json', '{"left":"no-version","right":"1.0.0"}', '{"left":"1.0.0"
   await expect(executePluginTool(createInput(prompt))).rejects.toMatchObject({ code: 'PACKAGE_FAILED' });
 });
 test('distributed bundle is exact npm7.8.5 ISC composition with no external runtime imports', async () => {
-  const source = JSON.parse(await fs.readFile(fileURLToPath(new URL('../../../../docs/evidence/x01/semver-inputs.json', import.meta.url)), 'utf8')));
+  const source = JSON.parse(await fs.readFile(fileURLToPath(new URL('../../../../docs/evidence/x01/semver-inputs.json', import.meta.url)), 'utf8'));
   expect(provenance.upstream).toMatchObject({ name: 'semver', version: '7.8.5', license: 'ISC' });
   expect(provenance.upstream.files).toEqual(source.upstream.files.map(({ path, bytes, sha256 }: { path: string; bytes: number; sha256: string }) => ({ path, bytes, sha256 })));
   expect(provenance.externalRuntimeImports).toEqual([]);
