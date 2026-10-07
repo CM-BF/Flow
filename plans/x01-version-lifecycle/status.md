@@ -2,29 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:38:00.210Z |
+| 最近更新时间 | 2026-10-07T12:00:42.872Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T11:12:13Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | owner实际UTC开读；take COMMITTED11:14:49.386Z见claim-take.json |
+| 任务完成时间 | 2026-10-07T12:00:42.872Z |
+| 任务时间来源 | 原开工UTC与claim来源保留；完成为本owner核对正式main接收和原4TODO的实际UTC，见main-received.json |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle |
 | Branch | codex/plugin-version-lifecycle |
 | 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / 201674f49b538917f6f46cbdb02da4ed65191d02 |
 | 工作树dirty状态 | 源码与实际原件冻结；本次结果独审metadata提交后clean |
-| 工作分支状态 | ready |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | integrated |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 201674f49b538917f6f46cbdb02da4ed65191d02：本次真实PG单例1/1，100中心HTTP；旧types/list独立保留 |
 | Review | [review.md](review.md)，准备与实际结果APPROVED 2026-10-07T11:36:37Z，0P1/P2 |
-| 已集成main状态 / HEAD | 本片未集成；固定基线cca4ab7c968598844ca5680140ee7c06ec1dd2f4 |
+| 已集成main状态 / HEAD | INTEGRATED 183aba3a3fe0bf8dfe8fc9804aabceb84627e5df；51文件338234B精确接收 |
 | 实现目标 | 201674f49b538917f6f46cbdb02da4ed65191d02 |
 | 实现范围 | apps/server/src/plugin-runtime/version-rollback-pg.test.ts,docs/evidence/x01-version-lifecycle/execute-pg-once.py,docs/evidence/x01-version-lifecycle/run-local.py,docs/evidence/x01-version-lifecycle/tsconfig.json,docs/evidence/x01-version-lifecycle/vitest.config.mjs |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 当前产出 | 真实升级回滚旅程与清理结果已独审通过，待主线接收 |
-| 下一可用交付 | 接收本片验收源码和证据；上游包升级另作后继 |
+| 当前产出 | 真实包装版本升级与回滚验收已接入主线；原材料与授权边界保持。 |
+| 下一可用交付 | 本片段已交付；真实上游中心旅程由独立UPSTREAM片追踪。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Claim | 5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1 ACTIVE，3literal |
@@ -35,9 +35,9 @@
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | X01LIFE-01 | completed | db_transaction_owner | README.md/pg-window.md |
-| X01LIFE-02 | completed | db_transaction_owner | 准备独审11:26:41Z通过；actual未跑 |
+| X01LIFE-02 | completed | db_transaction_owner | 准备独审11:26:41Z通过；实际另见X01LIFE-03 |
 | X01LIFE-03 | completed | db_transaction_owner | 本次1/1，全部自有资源闭合 |
-| X01LIFE-04 | in-progress | db_transaction_owner | 结果独审/主线接收待完成 |
+| X01LIFE-04 | completed | db_transaction_owner | main-received.json，结果独审及主线已接收 |
 
 注册：task-intake由OriginalLead按canonical登记，当前待登记。原X01大目标未完成。
 
@@ -52,12 +52,16 @@
 | --- | --- |
 | 准备分支交付 | 2026-10-07T11:27:52.521Z，owner收口UTC |
 | 独立审查 | 2026-10-07T11:25:51Z、2026-10-07T11:26:41Z，固定peer回信 |
-| 主线集成 | NOT_INTEGRATED |
+| 主线集成 | 2026-10-07T11:56:53.515322+00:00，I02接收记录 |
 | 部署 | NOT_DEPLOYED |
-| 完整完成 | NOT_COMPLETED，实际PG/结果独审/main仍待完成 |
+| 完整完成 | 2026-10-07T12:00:42.872Z，仅本片4TODO，不是父X01完成 |
 
 2026-10-07T11:33:37.223Z 仅窗口metadata校正：2串行tar、2 loopback动态listener、单in-process public runRunner/capacity2/local concurrency2；工具链Git组/Vitest单fork与按需esbuild子进程明示。新最低5,479,333,888B通过未来admission实际pairedBytes推导落实（最低4,236,771,328B，fresh组合更高则上调），保KEEP来源/allocatedUNKNOWN。源码/manifest/原件无改；0新check/PG/NEXT/OPEN。见pg-window.md。
 
 2026-10-07T11:35:41.009Z 实际本次已OPEN后唯一执行并RETURN；历史“未OPEN”是当时状态。pg-output-manifest.json原件12项/24608B；实际1/1，resource无KEEP，旧allocatedUNKNOWN/KEEP不改。0待launch；只metadata占用claim，不占窗口。
 
 2026-10-07T11:38:00.210Z 结果独审11:36:37Z APPROVED/0P1P2，targetf09fd4a7/packet83736dc2。唯一接收入口[main-intake.json](../../docs/evidence/x01-version-lifecycle/main-intake.json)，只新增验收test与own metadata，无生产改动；当前尚未main，claim保留/source冻结。资源实际已RETURN，0holder/待launch；原raw/manifest历史待审字符串不改，本附录给固定审锚点。大X01上游真实版本差异及工具函数执行中切换仍开放，不借本片勾完。
+
+2026-10-07T12:00:42.872Z 主线收口：I02于11:56:53.515322Z记录接收deliveryfe8；main183的三个literal相对fixedfe8 git diff exit0；intake SHA匹配。限定静态适配独审确认11直接输入同基线与5处main变化兼容，0新types/PG/provider，不称latest-main复跑。原1/1同semver7.8.5包装证据不改；真正上游中心切换由UPSTREAM（尚未actual）另验，工具函数运行中升级仍父X01开放。登记/实际dashboard刷新由OriginalLead后续同批接，本片不虚构部署。唯一status parse只是聚合字段核验。
+
+本次最小metadata commit/push后本owner停止此claim全部范围（含metadata）写入，再以fresh version安全release；原Claim行仅上述ledger观察时点，实际状态以账本最终receipt为准。无资源holder、待launch或必需修复。

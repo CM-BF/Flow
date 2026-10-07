@@ -1,0 +1,24 @@
+{
+  "observedAt": "2026-10-07T12:00:42.872Z",
+  "main": "183aba3a3fe0bf8dfe8fc9804aabceb84627e5df",
+  "delivery": "fe8a15fb2cebfe512c2d62acabad0c87e47929e7",
+  "canonical": "docs/evidence/i02/x01-version-lifecycle-intake.json",
+  "canonicalSha256": "141b1436e1016cdf2246fe55bc8e18457f9da63dd3e0ad596ffa899716d47488",
+  "recordedAt": "2026-10-07T11:56:53.515322+00:00",
+  "decision": "APPROVED_TEST_AND_EVIDENCE_INTAKE",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "acceptedFiles": 51,
+  "acceptedBytes": 338234,
+  "scopeGitDiff": "fe8 delivery vs main183 across all3literal exit0",
+  "newChecks": 0,
+  "providerCalls": 0,
+  "mainAdaptation": "No additional runtime check required: exact fixture policy and harnesses fixture satisfy added guards; request paths and remaining direct inputs unchanged. This is source compatibility, not a latest-main rerun.",
+  "limits": [
+    "Only fixed three-task A/B/rollback-C journey",
+    "A stopped after load ACK before invoke",
+    "same semver 7.8.5 packaging, not upstream-version proof",
+    "not native/provider/long-running capacity or peak-resource evidence"
+  ],
+  "completion": "All4 original local plan TODO fulfilled; parent X01 and true upstream/inside-tool upgrades remain separate. Registry/actual dashboard refresh handled by OriginalLead and not asserted here.",
+  "stopIntent": "After this minimal metadata commit/push, owner stops every claim scope including metadata; fresh version release then only external receipt, no post-release write."
+}
