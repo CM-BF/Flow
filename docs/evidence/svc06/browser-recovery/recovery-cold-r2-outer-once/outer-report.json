@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T21:59:55.945463Z",
+  "scope": "CALLER_PID_ONLY_NOT_DETACHED_SERVICE_GROUPS",
+  "limits": {
+    "operatorSeconds": 215,
+    "termSeconds": 0.5,
+    "reapSeconds": 2
+  },
+  "report": {
+    "pid": 62097,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 43096,
+    "stdout": "{\"at\": \"2026-10-07T21:59:17.646479Z\", \"purpose\": \"SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE\", \"work\": {\"exit\": 0, \"ownedState\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"firstFailure\": null}, \"cleanup\": {\"exit\": 0, \"ownedState\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"firstFailure\": null}, \"directory\": \"/private/tmp/flow-svc09a-host-vm_wbsjv\", \"retention\": \"KEEP\", \"providerCalls\": 0, \"persistenceFailures\": [], \"complete\": true, \"finishedAt\": \"2026-10-07T21:59:55.939036Z\"}\n",
+    "stderr": "",
+    "observed_bytes": 495,
+    "retained_bytes": 495,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": []
+  },
+  "disposition": {
+    "operatorReturned": true,
+    "operatorOwnedState": "absent",
+    "firstFailure": null,
+    "secondaryFailures": [],
+    "servicesAndDatabase": "NOT_INFERRED_FROM_CALLER_EXIT",
+    "phaseRecordsRequired": true,
+    "retry": false
+  }
+}

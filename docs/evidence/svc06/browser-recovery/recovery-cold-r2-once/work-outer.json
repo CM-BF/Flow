@@ -1,0 +1,33 @@
+{
+  "pid": 66081,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 38034,
+  "stdout": "{\"phase\":\"host-consumer\",\"purpose\":\"SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE\",\"primary\":null,\"cleanupFailures\":[],\"workComplete\":true,\"providerCalls\":0,\"cleanup\":\"PENDING_INDEPENDENT_OWNER\",\"privateDirectory\":\"KEEP\"}\n",
+  "stderr": "",
+  "observed_bytes": 214,
+  "retained_bytes": 214,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

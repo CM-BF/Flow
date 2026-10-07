@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T22:02:27.468Z",
+  "outcome": "PASS_LIMITED_REAL_DEFAULT_THREE_ROLE_INITIALIZATION_AND_STOP",
+  "actualStart": "2026-10-07T21:59:12.729Z",
+  "terminalAt": "2026-10-07T21:59:55.939036Z",
+  "actualReturn": "2026-10-07T22:00:23.226Z",
+  "artifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+  "source": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "checks": {
+    "defaultThreeRoles": "PASS via fixed consumer assertions and mutable registration",
+    "centerIdentityAndMarker": "PASS via fixed consumer assertions",
+    "webIdentity": "PASS synthetic static loader only, not real Apps",
+    "currentRunnerInitialization": "PASS current recordKey/nonce/PID/runnerId positive receipt",
+    "tasks": 0,
+    "attempts": 0,
+    "explicitStop": true,
+    "independentCleanup": true,
+    "actualClaim": "NO_ASSIGNMENT_OBSERVED"
+  },
+  "time": {
+    "outerMs": 43096,
+    "cloneMs": 4714,
+    "workMs": 38034,
+    "cleanupMs": 251,
+    "limitMs": 217500
+  },
+  "raw": {
+    "innerRetainedBytes": 1160,
+    "outerRetainedBytes": 495,
+    "limitBytes": 2097152
+  },
+  "sampledResources": {
+    "maximumPrivateLogicalBytes": 1852413,
+    "maximumPrivateAllocatedBytes": 2670592,
+    "maximumEntries": 387,
+    "maximumDatabaseBytes": 12622871,
+    "minimumFreeBytes": 18181156864,
+    "unavailableDatabaseSamples": 6,
+    "boundary": "Available phase observations excluding artifact directory; not atomic peaks or attribution of unrelated shared-disk changes. Earlier unavailable fields remain null in original records."
+  },
+  "database": {
+    "databaseName": "flow_preview_0a7f3a230a60db70ef8cd7b6",
+    "databaseOid": 1356518,
+    "installationId": "818a0022-e399-457a-b08b-3bb92ce375ba",
+    "directory": "/private/tmp/flow-svc09a-host-vm_wbsjv",
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 4.000207999999986,
+          "rows": []
+        }
+      ]
+    },
+    "adminClosed": true,
+    "disposition": "KEEP",
+    "mayDrop": false
+  },
+  "privateDisposition": "KEEP",
+  "firstFailure": null,
+  "persistenceFailures": [],
+  "provider": 0,
+  "personal": 0,
+  "Chrome": 0,
+  "limitations": [
+    "No settings slots or four-real-App compatibility asserted.",
+    "No personal installation/maintenance/restore or task dispatch performed.",
+    "Original b692 cold failure,42P01,KEEP and previous unknown allocations unchanged.",
+    "This cold success does not retrospectively prove the root cause of prior personal failure."
+  ],
+  "derivationNote": "First metadata aggregation stopped on null pre-database sample (TypeError); no result written or runtime action. This summary filters only numeric samples; original null observations preserved."
+}

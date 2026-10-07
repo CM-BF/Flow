@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:49:09.569Z；新恢复产物e15d/source880060构建结果已获限定独审；新冷启动参数及4直接例已固定，待准备独审/实际窗口与四App兼容 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:00:23.226Z；冷启动R2默认三角色/本次runner初始化/显式停止通过，运行窗口已RETURN；DB/private KEEP，待结果独审及四App兼容 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -178,3 +178,9 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:49:09.569Z：R2 build fixed8bea已由native_center_owner限定APPROVED（9source/10raw/7实际source/33SQL，0重跑）；构建结果审查等待结束。冷启动R2 source aedb2e582f55ede91522305652f138e06dd4033b、新17执行/6runtime及准确新namespace见[单份准备](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json)。21:47:54.743Z→21:47:54.927Z本队纯局部段2Node+1Python通过，179ms/407B、两组absent/双EOF/无signals、两个exact空scratchremoved，0PG/服务/个人/provider。现在无local/heavy holder；真实cold与4App仍未运行，本次准备独审等待起点为本条实际封存时间。旧b692 FAIL/KEEP及原unknown保持。
 
 2026-10-07T21:51:18.970Z：Lead独审发现并保留e2d准备的P2：顶层新tuple对应的末manifest绑定仍旧b692，原3局部未覆盖此一致性。sourceccb8仅修该pin与依赖hash；21:50:47.960Z补1对齐例通过100ms/209B，group absent/双EOF/空scratchremoved。当前合计4distinct/279ms/616B，3组完整RETURN；17执行源码不变，6runtime中5继承、1新artifact manifest明确更新。最终准备待Lead窄复审，未启动cold，个人仍未动。
+
+2026-10-07T21:59:12.729Z：冷启动R2实际START，只有隔离默认三角色/初始化验收；17执行/6runtime/claimv8与两新namespace通过，PG available 94≥54/free 18216583168≥17128095744。原R2准备独审已批准，窗口等待至本START结束；0provider/Chrome/个人。
+
+2026-10-07T22:00:23.226Z：cold R2实际RETURN；21:59:55.939Z终态PASS，outer43096ms/exit0/直接operator absent双EOF；3内层组和3角色组全部absent，8精确PID absent。当前nonce runner初始化与真实3role均已核，task/attempt0、独立cleanup连接empty/admin关闭/无errors，DB与private按合同KEEP。个人仍未动、实际claim未观察；限定原件见[窗口归还](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-window-return.json)，等待唯一结果独审。
+
+2026-10-07T22:02:27.474Z：冷启动R2单份结果已封：[结果](../../docs/evidence/svc06/browser-recovery/RECOVERY-COLD-R2-RESULT.md)/[manifest](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json)，4输入+30原始记录+3分析；3角色私有诊断只保存身份/hash及受限字段，19checkpoint副本逐字同。等待独立结果审查；未重新启动/探测个人实例。
