@@ -1,0 +1,41 @@
+{
+  "kind": "SVC09A_HOST_PREPARATION_INDEPENDENT_REVIEW",
+  "reviewedAt": "2026-10-07T15:37:00.000Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "sourceTarget": "39a8e06b84165d9279a90379ec2b37e203194abc",
+  "deliveryTarget": "12a3b63ab28cd3893ee9655561274cf21b0079c8",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+  "canonical": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation.json",
+  "manifestBytes": 19037,
+  "manifestSha256": "2aefc120b6fc7b7ffc10d17e23dd0fd65468caeb8a1287b72aa006d01bf50821",
+  "decision": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "SVC09A-HOST-P2-01",
+      "priority": "P2",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+      "problem": "The published entry directly launches the operator. Its 215-second monotonic deadline controls child admission and supervision, but operator pin/fsync/archive I/O has no independent deadline. A blocked persistence step can prevent window return while detached fixture services remain alive. The packet explicitly acknowledges this limitation, so it is not evidence of an observed timeout or false historical claim.",
+      "requiredDelta": "Reuse OPS14 for a thin independent outer deadline around this exact operator. Own only the caller PID, never infer ownership of detached services. Preserve missing phase outcomes as unknown/KEEP and retain primary failure separately. Declare any existing small termination allowance. Cover the new deadline/failure boundary with a tiny zero-PG child; do not repeat the approved artifact build."
+    }
+  ],
+  "readOnlyChecks": {
+    "sourceBindings": 13,
+    "evidenceBindings": 9,
+    "inheritedReferences": 2,
+    "runtimeBindings": 6,
+    "fixedAndCurrentMismatches": 0,
+    "reviewerTests": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "acceptedBoundaries": [
+    "Fixed 2515 artifact and 098b source remain unchanged; prior build approval remains effective.",
+    "Real host/profile/maintenance and actual runner claim/ACK are proposed; only HarnessAdapter.run is injected, with zero provider calls.",
+    "Synthetic Web loader is expressly not production App compatibility or personal deployment evidence.",
+    "Eight process generations, complete work disposition, stopped owned services, marker/OID and bounded empty-connection observation gate normal DROP; unknown retains resources.",
+    "Shared measurement complete/bytes/entries semantics preserve vanished-entry observations separately from identity/I/O unknown."
+  ],
+  "validationBoundary": "Original six preparation cases passed in 122ms with 698 bytes and returned at 15:26:30.517468Z. Later three source deltas are explicitly STATIC_ONLY; the original pass is not extended to them. New local launch remains paused for the current Web build, then the owner may complete the narrow delta in its existing bounded local segment.",
+  "actualHost": "NOT_RUN"
+}
