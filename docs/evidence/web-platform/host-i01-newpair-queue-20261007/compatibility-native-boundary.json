@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T15:54:32.093150+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361",
+  "workerSha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6",
+  "source": "2f6792ca3f19fcd1d54563531c302937f607c892",
+  "sourceReview": {
+    "path": "/private/tmp/root-release01-recovery-c1-intake-review-20261007.json",
+    "bytes": 4137,
+    "sha256": "1ec952998f812ec6b35d0687a9e70e8bfedc95182d303c2e629a55b8f69ce6cd"
+  },
+  "scope": "Fixed source/native boundary acceptance only. No actual runtime handoff/grant. Existing dedicated profile/PGID/fixed proxy/no personal/provider constraints preserved.",
+  "freshManagerHandoffRequired": true,
+  "runtimeGranted": false
+}

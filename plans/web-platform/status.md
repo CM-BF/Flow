@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:45:09.310Z；最小新网页产物已获独审，正式新pair兼容与Plugin实际App浏览器两候选准备中；共享浮层下一独立源码位已明确。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:01:19.610Z；新网页产物已审，正式兼容与插件真实界面检查准备均通过；已按实际资源归还排顺序执行。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,10 +23,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 逐消息设置所选真实旅程已审并main3c9345，原写权已释放；最小新Web两文件修复在独立7272基底固定，后端cd27产物结果已审。个人网页仍旧版本。 |
-| 下一可用交付 | 优先完成新网页与后端的真实兼容并应用用户网页；Plugin接线局部检查已通过，待源码审与实际界面验收。W01在兼容准备安全停点后实施既有共享浮层片，不等完整Plugin。 |
+| 下一可用交付 | 优先完成新网页与后端的真实兼容并应用用户网页；插件实际管理入口已通过局部检查，浏览器检查随后执行。共享浮层源码已完成首片，待局部验证和实际视觉验收。 |
 | 当前阻塞 | ACTIVE: 新网页产物已生成，产物结果已独审通过，新pair真实兼容尚待；个人网页发布与真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：无heavy holder/NEXT；两个浏览器候选共用唯一Chrome，按已审真实READY与发布优先排程。外组ordinary按实际回执记，不以工作段时限推子进程归还；KEEP及完整floor至少14,414,970,880B保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：新网页正式兼容已实际运行，占用本组唯一数据库/浏览器窗口；I01等明确完整归还。原SVC09A数据库和私有目录KEEP保留，futurefloor至少16,175,529,984B。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

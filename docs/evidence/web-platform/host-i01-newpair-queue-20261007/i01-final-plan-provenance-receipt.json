@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T16:00:06.051561+00:00",
+  "decision": "ACCEPTED_ROUTINE_EXACT_PLAN_PROVENANCE_CORRECTION",
+  "priorPreparationApproval": "73918579217542b235d934f488eb4f4da739026c747747a446a4de3c5ec95fb2",
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "executionMetadata": "13ddb54aedad3e78797d7fe3b86775f191a30471",
+  "manifestSha256": "bdcdf71cfd0ce0bc20dd91d77f164bdd954be06aa733a038353b8ba565f50070",
+  "bindingSha256": "f6eea3905f44bbef93e81a8156ee5c6fd37970ccf078c21b9179d8964e1254aa",
+  "sourcePins": 218,
+  "externalPins": 42,
+  "removedExactly": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/plan.md",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/plan.md",
+      "bytes": 8542,
+      "sha256": "dd101cb4c8decca87e9bc9355662f08f398be3c68709811ca65847a9f480a945"
+    }
+  ],
+  "changedBindingFields": [
+    "sourcePins",
+    "historicalMetadataProvenance"
+  ],
+  "packetErrors": [],
+  "note": "Same metadata-provenance fix extended to exactplan.md before legitimate plan update; no product/external/caller changed. Earlier631b package preserved. Existing approved60s boundaries apply, fresh manager handoff/grant stillrequired. No newtests/productimports/PG/Chrome executed by root.",
+  "runtime": "NOT_RUN",
+  "runtimeGranted": false
+}

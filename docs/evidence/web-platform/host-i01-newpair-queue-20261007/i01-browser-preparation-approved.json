@@ -1,0 +1,81 @@
+{
+  "at": "2026-10-07T15:56:03.142316+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_FIXED_BROWSER_PREPARATION_NOT_RUNTIME",
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "blockingFindings": [],
+  "closedFindings": [
+    "I01-BROWSER-P2-01"
+  ],
+  "packet": "/private/tmp/i01-runtime-app-browser-0uch3mbo",
+  "manifest": {
+    "bytes": 4827,
+    "sha256": "631b226d8d528409cac4fff95899f77f5e1179da87a327d8f6c40831cc22c59d"
+  },
+  "binding": {
+    "bytes": 110265,
+    "sha256": "fd26e1498197a7043cebbeff62cfa6aa11bde58e5ac1d31d2c89ccef9b43857d"
+  },
+  "priorReview": {
+    "path": "/private/tmp/root-i01-browser-preparation-review-20261007.json",
+    "sha256": "626241dfa1bb8a9e8c35095c762f4f8017fafc5649a56cbf989c39ea0beda95c"
+  },
+  "sourceObservation": {
+    "path": "/private/tmp/root-i01-browser-static-observation-20261007.json",
+    "sha256": "062201114a4b1945ab0e004d4c7ed99fe16856452ba85f7ce752c648b69d7ee0"
+  },
+  "correction": [
+    "Prior P2 wording described both removed metadata pins asat49d71. More precise: review.md old pin matches49d71; status.md old pin is a preparation working-tree capture not equal to49d71. Neither is an execution input. Original records retained; source/local20d2 six-product approval unaffected."
+  ],
+  "verification": [
+    "New binding differs only by removing exacttwo metadata rows from sourcePins and adding historicalMetadataProvenance. All219 execution source rows and42 external rows are unchanged; earlier root independently matched219 to fixedGit and disk.",
+    "All final packet entries/realpaths/lengths/hashes checked. Original four packet files preserved byte-for-byte; template now binds corrected binding withallowRun:false.",
+    "Three caller hashes unchanged and exact approved runtime entry remainscheckPluginRuntimeApp; no product or lifecycle source changes, no green tests rerun."
+  ],
+  "callerPins": [
+    {
+      "file": "run.py",
+      "bytes": 9807,
+      "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+    },
+    {
+      "file": "worker.mjs",
+      "bytes": 4828,
+      "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+    },
+    {
+      "file": "capture.py",
+      "bytes": 8348,
+      "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+    }
+  ],
+  "runtimeBoundary": {
+    "totalMs": 60000,
+    "workMs": 45000,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "pg": 0,
+    "chrome": 1,
+    "contexts": 1,
+    "httpListeners": 2,
+    "provider": 0,
+    "privateAdminInput": false,
+    "nativeSandbox": true,
+    "grant": false
+  },
+  "admission": [
+    "Manager fresh sole Chrome handoff afterSVC09A exactRETURN; Web newpair has priority. No source approval reserves a runtime window.",
+    "Single new60s attempt, no reuse/automaticretry. Fresh clean execution metadataHEAD, claim61abv1/exact8/nooverlap, fullfixedpins, latest complete floor>=16154558464orhigher.",
+    "No personal/profile/admin inputs, no installs/fullbuild. Retained oldKEEP and potential envelopes counted once.",
+    "Require actual outerexit0/uniquefinalterminal/no signals+errors, bothEOF/no drops, all4 exact groups, context+HTTPclosed, ChromeEOF/exit and exactgroup/cachelinks/scratch closure.",
+    "Raw/resultPASSED alone insufficient because later terminal timeout/bytes/signal may downgrade. Unknowncleanup stops furtherlaunch and retains resources.",
+    "No independent individualHTTPportprobe in thisversion: report fixtureclose+groupabsence as actual evidence, never invent port observations."
+  ],
+  "browser": "NOT_RUN",
+  "integration": "NOT_ASSERTED",
+  "runtimeGranted": false,
+  "cleanCode": {
+    "finding": "Execution identity separated from mutable planning provenance; existing controller/source remains unchanged. No unresolved preparation blocker."
+  }
+}

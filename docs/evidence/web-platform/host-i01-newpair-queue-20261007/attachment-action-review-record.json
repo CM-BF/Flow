@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T15:58:40.709511+00:00",
+  "state": "READ_ONLY_EXECUTABLE_SEAM_PROPOSAL_NOT_IMPLEMENTATION",
+  "source": "9a815eca7b86791733a57b29c21a1a5cea58ec0a",
+  "tasks": [
+    "WPF-001-05",
+    "REQ22",
+    "REQ23",
+    "MATURE03-03"
+  ],
+  "sourceFiles": 7,
+  "skills": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  ],
+  "runtime": false,
+  "projectWrites": false,
+  "remainingDesignCheck": "AttachmentInput per-command signal/cache commit integration must be checked by implementation owner before exact claim; no controller read within this7-source scope."
+}

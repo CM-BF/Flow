@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T16:02:01.088400+00:00",
+  "scope": "Manager exactsix metadata only",
+  "skills": {
+    "method": "Reuse already-read local find-skills and clean-code; no installation or new stack",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Separate current actual/next from historical failed observations; preserve exact receipts and avoid duplicated product authority. Parent attachment followup remains originaltask, no extra store or task."
+  },
+  "freshClaim": {
+    "observedAt": "2026-10-07T16:01:31.186Z",
+    "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+    "version": 3,
+    "scopeCount": 6,
+    "overlapPairs": [],
+    "migrationNeedsVerificationHistorical": true
+  },
+  "cleanCodeReview": {
+    "naming": "Current state names state actualRETURN vs NEXT vs historicalFAIL",
+    "singleResponsibility": "Manager owns scheduling/index; workers own product/status; D05 solewriter ownssource mapping",
+    "errorHandling": "SVC failedjourney staysFAILED while explicit runtimeRETURN withKEEP is separate; no elapsed inference/no automaticretry",
+    "duplication": "One current resource record/firstscreen; fixed evidence archived unchanged",
+    "unresolved": "Compatibility and I01 actual pending; VISUAL engineeringNOT_RUN/live source switchpending; attachment action interface unimplemented"
+  },
+  "engineeringChecks": "NONE; only ownmetadata parser/hash/link/scope/diff",
+  "model": "gpt-6-astra"
+}

@@ -1,0 +1,221 @@
+{
+  "at": "2026-10-07T15:48:23.252505+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "state": "APPROVED_FIXED_SOURCE_AND_SCOPED_LOCAL_RESULTS_BROWSER_NOT_RUN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+  "branch": "codex/web-plugin-runtime-app",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "target": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "blockingFindings": [],
+  "sourceNotes": {
+    "path": "/private/tmp/root-i01-runtime-app-source-notes-20261007.json",
+    "bytes": 4365,
+    "sha256": "43e09d9da98670f8742d71d413361429ccafd7dea2c68b5a8e1afb9447d84028"
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "bytes": 17691,
+      "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631"
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "bytes": 25749,
+      "sha256": "f8fdfe52263264355911397d4fb5120dd7bff87b64809776deb450e312e37589"
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "bytes": 19746,
+      "sha256": "6578782e1a787f769d92f18bf53cf46d5b5f5e35b128962344880202dfaf137d"
+    }
+  ],
+  "archiveChecks": [
+    {
+      "name": "run.py",
+      "bytes": 5472,
+      "sha256": "bba5ba0a8f8f39ed9186ac3c0877c3f494420795e3b83487d33398219f9af040",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "sandbox.sb",
+      "bytes": 161,
+      "sha256": "e7f07d0ff6d69df73e37125d401c122f23ad177cd528ccb72bdc057440e2ed71",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "segment.json",
+      "bytes": 7309,
+      "sha256": "fcfabe69187c1883160191f40923e9969226b18c56317b95615ca0f03c23fb90",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "preflight.json",
+      "bytes": 15306,
+      "sha256": "1e2ebd31be36b74a225cc7d9a07a2bbd08d1fff53918ca997d7e719ee5ff5cdd",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "reuse.json",
+      "bytes": 505,
+      "sha256": "7d53c2bcf575033a73851bfa758e8350f17816d1bba3bfc7dfb11bd1d700a17a",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "resolver-static.json",
+      "bytes": 10944,
+      "sha256": "b1d385cf60048c6708b02c24ef829ecdc08ee7f05e59342c041e526d3421afbe",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "direct-1.json",
+      "bytes": 5622,
+      "sha256": "c3370d870bec2616ccdcc76023331cc14ab0e6877a7725e15d56448c8d26ac7b",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "direct-1.log",
+      "bytes": 81,
+      "sha256": "35739a109821b8e5f678ac0cec2bd09e2bb15f6486aa2decb80a378d2d26aaa0",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "types-1.log",
+      "bytes": 338,
+      "sha256": "714bc8c4099576a47073397bc384ae88f0cf480de298193567558faf60c32db1",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "types-2.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "exact-cleanup.json",
+      "bytes": 382,
+      "sha256": "ec47092a880921186f06498c4d9f6d72b260bb163ae984be0dbd7f351b6f37d1",
+      "archiveMatches": true,
+      "originalMatches": true
+    },
+    {
+      "name": "exact-cleanup-supplement.json",
+      "bytes": 740,
+      "sha256": "27f3721b9852e512b282a9f48a52fc70a735298c9c891b27f4bacad3007311e4",
+      "archiveMatches": true,
+      "originalMatches": true
+    }
+  ],
+  "observations": [
+    "Prior complete six-file review applies to final source: only fixture runtime contract import changed after first noEmit failure; other five files byte-identical. Existing barrel did not export those runtime symbols; direct plugin-runtime import corrects resolution without editing shared contract.",
+    "App retains one session-owned runtime command controller, uses private existing FlowClient port and live namespace/auth generation, rejects stale reads and command completions, preserves UNKNOWN key/body across Settings disclosure and local extension changes.",
+    "Actual selected direct tests: four passed, zero failed, ten not selected. Raw Vitest count14 does not mean fourteen executed.",
+    "First affected-source noEmit exited2 for two missing fixture barrel exports; failure retained. Final affected six-file/import-closure noEmit exited0. This is not whole-Web type checking.",
+    "All three child attempts had actual exits and absent owned groups/scratch; fresh supplemental numeric PID/PGID observation binds60940,75571,1759 and recordsESRCH. Earlier observation omitted numeric IDs and is preserved, not rewritten.",
+    "Combined regular-file child logs and parent tool completion are the log evidence; no per-stream Node EOF is claimed.",
+    "Parent caller/read-only sandbox and selected acceptance logic inspected; source/raw bytes independently matched. No product test, import, browser, PG, or implementation edit performed by reviewer."
+  ],
+  "local": {
+    "attempts": [
+      {
+        "label": "direct-1",
+        "pid": 60940,
+        "actualExit": 0,
+        "chargeMs": 1596,
+        "state": "PASS",
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      {
+        "label": "types-1",
+        "pid": 75571,
+        "actualExit": 2,
+        "chargeMs": 4556,
+        "state": "FAIL",
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      {
+        "label": "types-2",
+        "pid": 1759,
+        "actualExit": 0,
+        "chargeMs": 4682,
+        "state": "PASS",
+        "groupAbsent": true,
+        "scratchAbsent": true
+      }
+    ],
+    "spentMs": 10834,
+    "phaseBudgetMs": 30000,
+    "unusedMs": 19166,
+    "unusedIsNewPhasePermission": false,
+    "directPassed": 4,
+    "directNotSelected": 10,
+    "affectedTypesFinalExit": 0,
+    "finalCleanup": {
+      "at": "2026-10-07T15:43:35.362195+00:00",
+      "processes": [
+        {
+          "numericPid": 60940,
+          "numericPgid": 60940,
+          "label": "direct-1",
+          "pidState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "numericPid": 75571,
+          "numericPgid": 75571,
+          "label": "types-1",
+          "pidState": "ESRCH",
+          "groupState": "ESRCH"
+        },
+        {
+          "numericPid": 1759,
+          "numericPgid": 1759,
+          "label": "types-2",
+          "pidState": "ESRCH",
+          "groupState": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "correctsObservationShape": "Earlier exact-cleanup.json reused pid key for state and omitted numeric ID. It is preserved; this independent fresh observation binds exact IDs from unchanged segment."
+    }
+  },
+  "browser": "NOT_RUN",
+  "integration": "NOT_ASSERTED",
+  "limits": [
+    "Approval is source and scoped local evidence only, not mounted App journey or full main readiness.",
+    "Synthetic Cookie/CSRF fixture does not prove real center authentication, runner execution, package loading or native application.",
+    "No full keyboard/IME matrix, cross-center mounted matrix or performance gain verified.",
+    "Prepared browser caller has separate review and fresh resource admission; this report grants no runtime."
+  ],
+  "cleanCode": {
+    "scope": "App composition/private authority/controller lifetime/six-file consumer delta and local error reporting",
+    "finding": "No duplicated transport/FSM or unnecessary controller churn found. Fixture import repaired after observed type failure; evidence preserves failed attempt and observation correction.",
+    "unresolved": "Real App mounted acceptance remains pending."
+  }
+}

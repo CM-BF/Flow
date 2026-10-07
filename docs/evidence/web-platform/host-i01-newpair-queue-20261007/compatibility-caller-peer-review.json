@@ -1,0 +1,117 @@
+{
+  "recordedAt": "2026-10-07T15:53:15.800339+00:00",
+  "reviewer": "workspace_panels_owner / gpt-6-astra",
+  "decision": "APPROVED_SCOPED_STATIC_CALLER_DELTA_NOT_RUNTIME_OR_PUBLICATION",
+  "findings": [],
+  "sourceCommit": "2f6792ca3f19fcd1d54563531c302937f607c892",
+  "executionMetadata": "53980e73480d0a5af5538e4f5d3de5892c082f12",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "fixedPackage": [
+    {
+      "path": "/private/tmp/rel01-recovery-c1/manifest.json",
+      "bytes": 5539,
+      "sha256": "61bef14e3051d75c5b70eb47c4f3313fb2f007a71d4f45534a8de955daec3158"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/binding.json",
+      "bytes": 41105,
+      "sha256": "efb439c17eede5fcbef2beba75978210c482a214e6a0f08809f99ca9b28c386f"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/review-request.json",
+      "bytes": 2565,
+      "sha256": "5b5c873fc132e59d10511caef6a62e26ae71b62ce8ae74ccf8cae108ce3f364d"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c1/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    }
+  ],
+  "method": "Read-only fixed source and local installed runtime text/hash review; no candidate import, Node, products, PG, HTTP, Chrome, installs, resource probes or private admin/env reads. No project writes. Existing clean-code/source-review method applied to independent descriptor authorities, entry selection, fail-closed acceptance and owned cleanup.",
+  "verification": {
+    "manifest": {
+      "entries": 21,
+      "withManifest": 22,
+      "bytesIncludingManifest": 385010,
+      "allHashesAndRealpathsMatch": true
+    },
+    "runtimePins": 74,
+    "preparedPins": 5,
+    "sourceGitPins": 2,
+    "errors": [],
+    "browserUnchangedFrom": "8964dc1185f62ed8934c15416e9798929359ab89",
+    "currentHeadAndCleanRead": true,
+    "actualRemoteNotRefetched": "Parent supplied local=remote; local HEAD and clean independently read. No network request."
+  },
+  "deltaReview": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "lines": "18-28,41-48,143-151",
+      "conclusion": "Independent complete Web779a/sourcec231 and backendcd27/source04da descriptors are deep-compared before runApps; Web comparison repeated at new App loading. Actual manifest digest, source/release, bytes, expected retained three identities and backend full-inventory verifier remain. No caller self-asserted same-head shortcut/fallback."
+    },
+    {
+      "path": "supervisor.py",
+      "lines": "132,181",
+      "conclusion": "Full byte diff from reviewed c3 is exactly TSX_TSCONFIG_PATH and expected result/report count3->4. Original work/cleanup/EOF/group/meter/owned scratch boundary otherwise unchanged. All5 prepared files are included in existing74-pin preflight."
+    },
+    {
+      "path": "worker.mjs",
+      "lines": "41-43",
+      "conclusion": "Only import and invocation switched to runRecoveryReleaseCompatibility. This calls assertRecoveryAdmission before fixture creation; fixed browser runApps loops4 actual Apps and imports4 reports only after Chrome/HTTP/DB cleanup and successful checks."
+    },
+    {
+      "path": "tsconfig.json",
+      "conclusion": "Exact @playwright/test alias points to pinned installed1.63 index.mjs, supplied through pinnedtsx4.23.15 TSX_TSCONFIG_PATH. Installed register-nyXW-TH3.mjs statically reads that env at byte1015 and applies parsed paths to non-node_modules importers at byte14056. Actual resolver execution NOT_RUN; no NM links/install added."
+    }
+  ],
+  "acceptance": [
+    "No worker failure/throw/timeout/partial or zero-case path reaches accepted4report condition. runApps passed requires errors empty, exact expected4 results and imported reports; parent additionally requires worker statePASS/exit0, browser-result passed, count4/4, fixture databaseRemoved+centerClosed+proxyClosed and errors[].",
+    "Retained/runtime sampling errors, stream cap/drop/missingEOF, unknown group or scratch identity, reap/log failures and terminal elapsed over total all keep overallFAILED. Unknown measurement/ownership is KEEP, not fabricated cleanup.",
+    "Actual outer exit0 and unique final terminal hashes/EOF/no dropped streams remain mandatory. Existing restoration of default signal handlers before terminal means early disk PASS alone is explicitly insufficient. Actual caller collection/identity cleanup must be reviewed from real run, not inferred from prepared files.",
+    "NativeChrome remains sibling owned group with ordinary internal sandbox, exact dynamic proxy/bypass and no direct fallback in scenario. Worker denies personal61228; no custom outer Chrome write/egress sandbox is claimed."
+  ],
+  "resourceBoundary": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "newEnvelopeBytes": 210763776,
+    "scratchBytes": 67108864,
+    "retainedIncludingOuterBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalPlanningBytes": 134217728,
+    "configuredPgConnectionCeiling": 12,
+    "configuredNotMeasuredPeak": true,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0,
+    "frozenFloor": 16137781248,
+    "freshHigherManagerSumRequired": true,
+    "oldUnusedBudgetTransferred": false
+  },
+  "runtimeAdmission": "NONE. Binding remains PREPARED/nativeBoundaryApproval null; future root approval bound to new runner/worker hashes plus fresh manager handoff, higher complete floor, claim/native/input identity and exact admin handling remain necessary. Old c3 approval alone does not authorize new hashes.",
+  "limitations": [
+    "No newpair behavior, actual alias resolution, asset/runtime completeness execution, realCookie compatibility, native safety or actualcleanup has run in this peer review.",
+    "Backend15,628-entry inventory not redundantly walked: fixed manifest/direct entries/review pins checked; exact existing backend verifier must run before factory imports at actual.",
+    "Four imported reports cover their existing check contract, not whole product, deployment, provider or wider App functionality."
+  ],
+  "observation": {
+    "path": "/private/tmp/workspace-rel01-c1-peer-observation.json",
+    "bytes": 24995,
+    "sha256": "529dfa89b760f2b0cc52e1f510b65b0a94b28d842dbc47da58c626e991ed4e6a"
+  }
+}

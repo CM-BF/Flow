@@ -114,3 +114,9 @@ ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-
 沿原 MATURE03-03 与 MATURE06-04 键盘验收记录[固定源码发现](../../docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/file-tab-keyboard-followup.json)：main9a815eca7 的 ConversationThread 在已有 prevented/IME guard 之前处理 @file+Tab，且未排除修饰键；官方组件先调用消费者 onKeyDown，独立附件 fixture 的正确 guard 不能代替真实 App。此为静态控制流发现，未声称真实 IME 复现。
 
 下一合法 owner 在独立树与精确领取范围内修快捷键判断顺序和边界：普通 @file Tab 保持有效；Shift+Tab、Ctrl/Alt/Meta、已 prevented、composition/keyCode229 不抢焦点、不打开附件、不发请求；保 Enter/Queue/Steer。只测实际消费者受影响路径，不重跑完整 IME 或全库；不重建当前固定 Web 产物、不打断发布，已排用户可见共享浮层片仍优先，不新增大task。
+
+### 附件条目动作的同一插件授权边界
+
+沿 WPF-001-05 / REQ22–23 / 原03-03接受[固定七源接口研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md)。后继复用同一 `attachment.item.actions` 插槽、Host/session/binding 与有区分字段的 draft/project/recovery 上下文；首先接真实项目文件行和实际 Composer 草稿行，不把 task artifact 或恢复目录身份当草稿成员，不暴露 client/controller/任意回调。读取与草稿修改权限分开，执行及每个 await 后重验当前成员、固定版本和 lease；卸载不清草稿、已提交材料或未知回执。
+
+原 I01 react/session 写权交回后，由既有接入 owner 在独立树合法领取最小范围；先核现有 `attachments/controller.ts` 的 preview/取消 signal 接口。只有确有缺口才精确扩该文件与行为测试，不新建缓存或第二状态权威。两消费者验收包括跨项目/撤权/卸载后的迟到拒绝，移除 A 后不回填 A、不改 B 或附件顺序。此为可实施设计输入，未领取、未实现、未运行；不能阻断已固定新网页发布或当前视觉片。

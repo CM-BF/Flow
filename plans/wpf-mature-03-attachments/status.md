@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:35:57.571Z；材料草稿修复已主线接收；新增真实聊天 @file 键盘边界待后继局部修复 |
+| 最近更新 | 2026-10-07T16:01:19.610Z；附件条目插件动作的最小授权接缝已明确，等待现接入片合法交权；材料与键盘后继沿原计划。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从子片commit/claim倒推；整个附件目标尚未完成，子片时间沿各唯一owner记录。 |
@@ -32,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-03-01 | completed | Web co-lead | CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。 |
 | WPF-MATURE-03-02 | in-progress | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用；常用文件/预算的明确后继见03-07及plan。 |
-| WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口已有已审片；新固定源码发现 @file+Tab 先于IME/prevented判断且未排修饰键，按[计划](plan.md#file-快捷键的实际聊天消费者边界)待实际消费者窄修；尚非运行复现。Picker条目P01覆盖仍开放。 |
+| WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口已有已审片；新固定源码发现 @file+Tab 先于IME/prevented判断且未排修饰键，按[计划](plan.md#file-快捷键的实际聊天消费者边界)待实际消费者窄修；尚非运行复现。Picker条目P01覆盖仍开放；[七源接缝研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-report.md)明确项目行/实际草稿行两个消费者与 controller signal 待核接口，待I01交权后实施，不新建状态库。 |
 | WPF-MATURE-03-04 | in-progress | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
 | WPF-MATURE-03-05 | in-progress | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，实际App/HTTP有限矩阵已9eec独审，真实provider/跨reload恢复仍开放；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主有限fixture已审，个人部署另计。 |
 | WPF-MATURE-03-06 | in-progress | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |
