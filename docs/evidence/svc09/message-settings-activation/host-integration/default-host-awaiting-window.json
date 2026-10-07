@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-07T19:03:59.002Z",
+  "state": "APPROVED_PREPARATION_AWAITING_NEW_ACTUAL_WINDOW_NOT_ADMITTED",
+  "headObserved": "42f0d8668ea606f63a089008a0c6bf46f7e3db41",
+  "source": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+  "preparation": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json",
+    "bytes": 24186,
+    "sha256": "8257f26e39895cbb25d585b74ef66e30cde167e032464f75732117b22792e85f"
+  },
+  "reviews": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/svc09a-default-host-preparation-review.json",
+      "bytes": 2832,
+      "sha256": "39e06eed65a2ea6108b104b176a92e7ad23be710dd8e91e611278f929e0e74c7",
+      "recordedAt": "2026-10-07T18:44:52.319Z",
+      "decision": "APPROVED_LIMITED_DEFAULT_HOST_PREPARATION",
+      "source": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+      "delivery": "42f0d8668ea606f63a089008a0c6bf46f7e3db41"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/svc09a-controller-loader-review.json",
+      "bytes": 1654,
+      "sha256": "349d9385ee29721776b55cfe194065e42ffaaf4df32a6f509a43e807980440dd",
+      "recordedAt": "2026-10-07T18:14:40.665Z",
+      "decision": "APPROVED_LIMITED_FIXED_CONTROLLER_LOADER_AND_IMPORT",
+      "source": "c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792",
+      "delivery": "745ba7f61858afc2b8b833160b9722e73d8e381f"
+    }
+  ],
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 6,
+    "state": "active",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "observation": "Current ledger read in this work segment; no actual fixture/cluster probe."
+  },
+  "fixedReadOnlyChecks": {
+    "effectiveExecutionPins": 22,
+    "inheritanceReferences": 2,
+    "inputAndLoaderReferences": 2,
+    "publicRuntimePins": 5,
+    "mismatches": 0,
+    "artifactRootIdentities": [
+      {
+        "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw",
+        "dev": "16777234",
+        "ino": "124240699"
+      },
+      {
+        "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/root",
+        "dev": "16777234",
+        "ino": "124240706"
+      }
+    ],
+    "privateManifest": "existing pin inherited; mandatory fresh identity/hash at actual launch",
+    "oldR1ToR4": "not read, changed or removed"
+  },
+  "entry": {
+    "argv": [
+      "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "--run-default-host-once"
+    ],
+    "operatorArgument": "--execute-default-host-once",
+    "outerNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-outer-once",
+    "operatorNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once",
+    "preparationFile": "default-host-preparation.json",
+    "newNamespaceObservation": "both absent; recheck immediately before actual launch",
+    "oldPurpose": "Full R1-R4/default old namespaces unchanged and not selected"
+  },
+  "newNamespacesAbsent": true,
+  "limits": {
+    "operatorWorkSeconds": 215,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outerMilliseconds": 217500,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "rawBytes": 2097152,
+    "recordsBytes": 1048576,
+    "pgBytes": 134217728,
+    "pgPeakConnections": 26,
+    "pgManagementMargin": 16,
+    "roles": 3,
+    "tasks": 0,
+    "attempts": 0,
+    "providerQueries": 0
+  },
+  "retention": {
+    "database": "KEEP",
+    "directory": "KEEP",
+    "dropAuthorized": false,
+    "returnCondition": "Actual registered identities/groups stopped; complete call-state/start evidence; work group absent/EOF; marker/OID and remote connections empty; admin pool closed. Missing/unknown => keep ownership unresolved, never infer from caller exit or PASS."
+  },
+  "windowSnapshots": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "bytes": 137901,
+      "sha256": "fcf0f02227642c53049d875e738a04384094a4acf85c9b622b650ff89b18ef2a",
+      "at": "2026-10-07T18:58:01.926Z",
+      "state": "NO_ACTUAL_HOLDER_SOURCE_ORDINARY_RESUMED",
+      "forwardAdmission": {
+        "state": "NO_HEAVY_SELECTED_GROWTH_CLASSIFICATION",
+        "selectedHeavyCandidate": null,
+        "minimumFreshFreeBytes": 16663183360
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "bytes": 125944,
+      "sha256": "c24e4123955d43ab0c431316887d89baeb97b0ef9da9d5b8149cb661c1bf2675",
+      "at": "2026-10-07T18:58:01.926Z",
+      "state": "NO_ACTUAL_HOLDER_SOURCE_ORDINARY_RESUMED",
+      "forwardAdmission": {
+        "state": "NO_HEAVY_SELECTED_GROWTH_CLASSIFICATION",
+        "selectedHeavyCandidate": null,
+        "minimumFreshFreeBytes": 16663183360
+      }
+    }
+  ],
+  "resourceSnapshot": {
+    "freeBytes": 19444973568,
+    "currentForwardFloorBytes": 16663183360,
+    "selectedHeavyCandidate": null,
+    "newCandidateIncrementBytes": 1243611136,
+    "candidateNotYetSelected": true,
+    "illustrativeCombinedBytesNotAdmission": 17906794496,
+    "rule": "Latest selected-window complete forward composition and actual holders must be supplied/rechecked; no stale floor or old grant reused."
+  },
+  "pending": [
+    "Unique actual window and start condition from Lead",
+    "Latest complete forward floor and actual holder reconciliation",
+    "Actual PG capacity >=26+16 and fresh observer pool closed before work",
+    "Immediate source/claim/namespace/runtime/retained artifact identity/hash recheck"
+  ],
+  "fixturePGProbes": 0,
+  "hostLaunches": 0,
+  "providerCalls": 0,
+  "tests": 0,
+  "builds": 0,
+  "statusParse": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ]
+  }
+}

@@ -69,3 +69,7 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 2026-10-07T18:03:43.714Z：source f0e434bd04c496fbd60e8458c3f840f4d7b25e80四产品获assignment唯一APPROVED_LIMITED_STARTUP_CONTROLLER_SOURCE_AND_LOCAL_EVIDENCE（0P1/P2），原件main496b docs/evidence/i02/svc09a-startup-controller-review.json，17:57:03Z。12例只对注释前像运行，反替换精确绑定；外层KEEP/exit1不覆盖12/12。main496b逐字接收并产品scope归还。
 
 loader c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792另待review；[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-interface.md)、[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/controller-result.json)。该真实import/参数检查无PG/服务/provider，不能冒宿主或R4根因通过。
+
+## 默认三角色准备限定批准
+
+2026-10-07T19:03:59.002Z：引用I02唯一 `svc09a-controller-loader-review.json`（18:14:40.665Z）与 `svc09a-default-host-preparation-review.json`（18:44:52.319Z），不复制审查原文。默认source62373492/delivery42f0获APPROVED_LIMITED_DEFAULT_HOST_PREPARATION，0blocking；22执行/19记录及12不同/15选择已审，实际宿主不在批准范围。固定入口和本次只读准入准备见[记录](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-awaiting-window.json)。等待新的实际窗口/完整forward floor与PG准入；本次没有启动或重测，旧FAIL/KEEP原样。
