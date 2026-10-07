@@ -1,8 +1,9 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 07:27:05 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 07:34:33 UTC。
 
-- 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
+- 当前 Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。原六组首select输入语义候选，独审NOT_STARTED；单browser noEmit已过、实际browser未运行。
+- 历史产品Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0，root限定源码APPROVED_SCOPED_SOURCE_ONLY及26direct；不覆盖新输入语义。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
 - Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2/b3实际browser FAILED，0完成组/0PNG；b3原生选框诊断已完整捕获；d755后继C定向已完成并获root限定实际接收，原六组仍未通过。
 
@@ -127,3 +128,9 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 [root原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/root-actual-review.json)限定接受DIAGNOSTIC_COMPLETE与owned cleanup。Target d7556b616e018ac985519b08a2954b1810029e05 / actualHEAD2c458fb97c4e77ed43ab18a2af628419a717d87d；唯一outerexit0/seal/6hash/5runtime/两native臂与4源核符，保稿后断言完成。actual2550ms conservative，新37627/52373；旧失败/原预算不改。
 
 这不改变顶层UNKNOWN：0原六组、0PNG，MATURE02/真实App/主线未交付。此前d755SOURCE_ONLY已获得此次窄观测，无需将其推为完整产品批准。当前无新候选或自动续跑，等待原六组输入语义的有界后继。
+
+## 原六组输入语义窄修准备 · 2026-10-07 07:34:33 UTC
+
+source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
+
+受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。

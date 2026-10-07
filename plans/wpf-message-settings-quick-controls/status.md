@@ -5,7 +5,7 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 07:27:05 UTC |
+| 最近更新时间 | 2026-10-07 07:34:33 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
@@ -14,19 +14,19 @@
 | 优先级 | 1 |
 | 当前产出 | 已验证用键盘选择模型时原有草稿和消息样本保持不变；完整快速设置流程仍待验收 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
-| 当前阻塞 | ACTIVE: 模型字符键选择与保稿诊断已通过；思考、力度、速度及完整六组的键盘验收路径仍待确定，尚不能交付完整功能 |
+| 当前阻塞 | ACTIVE: 模型选择与保稿已定向验证；四个筛选框的原生字符键验收方案已固定，待源码审查及完整六组实测 |
 | 需用户决定 | NONE |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls |
 | Branch | codex/web-message-settings-quick-controls |
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
-| HEAD | d7556b616e018ac985519b08a2954b1810029e05（诊断源）；实际运行 metadata 2c458fb97c4e77ed43ab18a2af628419a717d87d；本次仅metadata后继 |
+| HEAD | dde571be8853698f8943f952ddef2c648d2e1294（四筛选框字符键验收源；metadata单独） |
 | Dirty | 源固定；metadata 收口后核 clean |
-| 实现目标 | fe6ece131c489c79cf531a184e4cf51209f9c4a0 |
+| 实现目标 | dde571be8853698f8943f952ddef2c648d2e1294 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
-| 检查状态 | FAILED fe6ece131c489c79cf531a184e4cf51209f9c4a0 原六组历史不改；d755 C定向DIAGNOSTIC_COMPLETE/actualexit0/保稿断言完成，0原六组/0PNG；旧strict26 PASS及计量helper5 PASS仅原范围 |
-| Review | UNKNOWN（root已限定接受d755 C诊断实际完成及清理；完整六组/feature仍未批准） |
+| 检查状态 | NOT_RUN dde571be8853698f8943f952ddef2c648d2e1294 浏览器；受影响单browser strict noEmit PASS1274.848ms，旧26direct/C定向诊断按原范围保留；原六组历史FAILED不改 |
+| Review | UNKNOWN（新四select输入语义源独审NOT_STARTED；root已限定接受旧d755 C诊断/清理，完整六组仍未批准） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；此前 actual parseStatus errors=[] / 5 TODO；仅解析本任务status，未采页面 |
@@ -143,3 +143,9 @@ parent11709/late11712/outer11754.596166079864ms原样；保守11755，新段累�
 07:24:00.207591Z→07:24:02.757575Z，outer2549.7872499981895ms/parent与late2507ms原件保持；ceil max计2550，新段累计37627/余52373，旧30625/未用29375封闭。fixture/context已关闭、所有日志EOF/0drop；父89866/worker90396/Chrome90194 signal0均ESRCH，scratch/profile清理，资源已先归还。root限定接受diagnostic complete与cleanup，不批准完整feature。
 
 本次metadata-only，产品三源与原六组函数不改、旧306prior哈希全同，无第二次浏览器/26/noEmit/PG或个人服务操作。W05的未知起点保留，实际解除时点见outer；新W06不虚构开始时间。Main/部署/真实宿主仍未完成，任务完成NOT_COMPLETED。
+
+## 原六组输入语义窄修准备 · 2026-10-07 07:34:33 UTC
+
+source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
+
+受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。

@@ -103,3 +103,9 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 07:24:00.207591Z→07:24:02.757575Z，outer2549.7872499981895ms/parent与late2507ms原件保持；ceil max计2550，新段累计37627/余52373，旧30625/未用29375封闭。fixture/context已关闭、所有日志EOF/0drop；父89866/worker90396/Chrome90194 signal0均ESRCH，scratch/profile清理，资源已先归还。root限定接受diagnostic complete与cleanup，不批准完整feature。
 
 本次metadata-only，产品三源与原六组函数不改、旧306prior哈希全同，无第二次浏览器/26/noEmit/PG或个人服务操作。W05的未知起点保留，实际解除时点见outer；新W06不虚构开始时间。Main/部署/真实宿主仍未完成，任务完成NOT_COMPLETED。
+
+## 原六组输入语义窄修准备 · 2026-10-07 07:34:33 UTC
+
+source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
+
+受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。

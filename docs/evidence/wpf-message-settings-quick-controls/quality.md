@@ -125,3 +125,11 @@ find-skills优先复用已装本地技能，无安装/联网：find-skills、web
 find-skills优先复用本地clean-code/webapp-testing（本段只读复核，无安装），沿已审fixture/parent/worker执行一次，不另造runner。命名和证据区分：DIAGNOSTIC_COMPLETE仅C，不写feature PASS；actualouter/seal/原始较早budget分列，保守2550计账；原306prior逐hash保持。
 
 固定d755对5个闭合details输出用一致DOM文本读法，实际后断言已完成；没有改被测值、Apply、原六组或中文输入策略。错误历史/未知起点保留；waiting表W05按真实outer完成解除，W06起点UNKNOWN。清理先归还，再档案/hash/链接/允许路径核对；所有fresh观察只精确owned3groups，未扫其他进程/容量/服务。完整功能仍未验；本段无第二browser/26/noEmit/PG/个人操作。
+
+## 2026-10-07 07:34:33 UTC · 四select原生字符键验收准备
+
+复用本地find-skills/clean-code/webapp-testing与brainstorming有界方法，root具体输入设计已授权，不重复安装/逐命令审批；技能hash记录本次manifest。独立读exact154 PDL/类型前缀选择/实际PW1.63，区分insertText与keypress，不用DOM值或合成事件凑通过。无新增通用模块/runner。
+
+实际命名/单一职责检查：snapshot、被动trace与输入编排独立小接口；CDP session finally释放且保首error。严格先验与四项后验，失败报告≤64KiB，原observer限额不放宽。静态逐字核原diagnostic、三源与首循环之后全部六组断言；只有准确checklabel变化。发现旧原623f guard已不能代表新验收口径，报告明确后继源绑定必须更新，不偷改旧packet。
+
+单browser targeted noEmit唯一actualexit0/1274.848ms，源04ed2a…，own1531与scratch absent，0B日志。未跑26/Chrome/PG、无源cache/deps写，无新浏览器budget。未解决中文CDP实际可用性与完整六组，等待root窄审/真实有限段。

@@ -1,0 +1,150 @@
+diff --git a/apps/web/test/message-settings.browser.ts b/apps/web/test/message-settings.browser.ts
+index 3f82f99e..d6a6d9a0 100644
+--- a/apps/web/test/message-settings.browser.ts
++++ b/apps/web/test/message-settings.browser.ts
+@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
+ import { fileURLToPath } from "node:url";
+ import { join } from "node:path";
+ import { writeFile } from "node:fs/promises";
+-import { expect, type Page } from "@playwright/test";
++import { expect, type Locator, type Page } from "@playwright/test";
+ import { createServer, type AliasOptions } from "vite";
+ import react from "@vitejs/plugin-react";
+ import tailwindcss from "@tailwindcss/vite";
+@@ -69,10 +69,95 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
+   } catch (error) { await server.close(); throw error; }
+ }
+ 
++type NativeFilterEvent = { eventId: number; phase: string; type: string; key: string; label: string; isTrusted: boolean; defaultPrevented: boolean; value: string; selectedIndex: number };
++type NativeFilterTrace = { state: string; events: NativeFilterEvent[]; eventBytes: number; truncated: boolean; droppedEvents: number; observerErrors: string[] };
++type NativeFilterSnapshot = { characterSet: string; value: string; selectedIndex: number; focused: boolean; connected: boolean; disabled: boolean; open: boolean; options: { value: string; text: string; disabled: boolean }[] };
++type NativeFilterRecord = { label: string; key: string; expected: string; before?: NativeFilterSnapshot; after?: NativeFilterSnapshot; events?: NativeFilterEvent[]; complete: boolean };
++type NativeFilterReport = { transport: string; physicalKeyboardOrIme: false; filters: NativeFilterRecord[]; sessionDetached: boolean; failure?: string; detachFailure?: string };
++
++async function nativeFilterTrace(page: Page): Promise<NativeFilterTrace> {
++  const encoded = await page.evaluate<string>('JSON.stringify(globalThis.__msgquickSelectTrace ?? {state:"NOT_CAPTURED"})');
++  assert(Buffer.byteLength(encoded) <= 65536, "Bounded passive filter trace");
++  const trace: NativeFilterTrace = JSON.parse(encoded);
++  assert.equal(trace.state, "INSTALLED"); assert(!trace.truncated && trace.droppedEvents === 0);
++  assert(trace.events.length <= 96 && trace.eventBytes <= 49152); assert.deepEqual(trace.observerErrors, []);
++  return trace;
++}
++
++async function nativeFilterSnapshot(select: Locator): Promise<NativeFilterSnapshot> {
++  return select.evaluate(element => {
++    if (!(element instanceof HTMLSelectElement) || element.options.length > 8) throw new Error("Expected bounded native filter");
++    const options = [];
++    for (const option of element.options) {
++      if (option.value.length > 192 || option.text.length > 192) throw new Error("Oversized public filter option");
++      options.push({ value: option.value, text: option.text, disabled: option.disabled });
++    }
++    return { characterSet: document.characterSet, value: element.value, selectedIndex: element.selectedIndex,
++      focused: document.activeElement === element, connected: element.isConnected, disabled: element.matches(":disabled"), open: element.matches(":open"), options };
++  });
++}
++
++/** Browser-native printable input. No DOM event/value injection, alternative key or OS-popup/IME claim. */
++async function typeNativeFilters(page: Page, dialog: Locator, report: NativeFilterReport) {
++  const filters = [
++    { label: "模型", key: "m", expected: model, options: [["", "全部模型"], [model, model], ["fast-model", "fast-model"]] },
++    { label: "思考", key: "自", expected: "adaptive", options: [["", "全部思考"], ["adaptive", "自适应思考"], ["disabled", "关闭思考"]] },
++    { label: "力度", key: "高", expected: "high", options: [["", "全部力度"], ["high", "高"], ["not-requested", "不请求力度"]] },
++    { label: "速度", key: "标", expected: "standard", options: [["", "全部速度"], ["standard", "标准速度"], ["fast", "快速请求"]] },
++  ] as const;
++  const session = await page.context().newCDPSession(page);
++  try {
++    for (const definition of filters) {
++      const record: NativeFilterRecord = { label: definition.label, key: definition.key, expected: definition.expected, complete: false };
++      report.filters.push(record);
++      const select = dialog.getByRole("combobox", { name: definition.label, exact: true });
++      await expect(select).toHaveCount(1); await expect(select).toBeEnabled(); await expect(select).toBeFocused();
++      record.before = await nativeFilterSnapshot(select);
++      assert.equal(record.before.characterSet, "UTF-8"); assert(record.before.connected && record.before.focused && !record.before.disabled && !record.before.open);
++      assert.equal(record.before.value, ""); assert.equal(record.before.selectedIndex, 0);
++      assert.deepEqual(record.before.options.map(option => [option.value, option.text]), definition.options);
++      assert(record.before.options.every(option => !option.disabled));
++      assert.deepEqual(record.before.options.filter(option => option.text.startsWith(definition.key)).map(option => option.value), [definition.expected]);
++      const baseline = await nativeFilterTrace(page);
++      const lastEventId = Math.max(0, ...baseline.events.map(event => event.eventId));
++      await session.send("Input.dispatchKeyEvent", { type: "keyDown", key: definition.key, text: definition.key, unmodifiedText: definition.key, modifiers: 0 });
++      await session.send("Input.dispatchKeyEvent", { type: "keyUp", key: definition.key, modifiers: 0 });
++      await expect(select).toHaveValue(definition.expected);
++      // A bounded observation frame captures final defaultPrevented; it does not generate or retry input.
++      await page.evaluate(`new Promise((resolve, reject) => {
++        const timer = setTimeout(() => reject(new Error("Filter observation frame expired")), 1000);
++        requestAnimationFrame(() => { clearTimeout(timer); resolve(true); });
++      })`);
++      record.after = await nativeFilterSnapshot(select);
++      record.events = (await nativeFilterTrace(page)).events.filter(event => event.eventId > lastEventId && event.label === definition.label);
++      assert(record.events.length > 0 && record.events.length <= 24);
++      const captured = record.events.filter(event => event.phase === "capture");
++      for (const type of ["keypress", "input", "change"]) {
++        const matching = captured.filter(event => event.type === type); assert.equal(matching.length, 1, `${definition.label}: one ${type}`);
++        const event = matching[0]!; assert(event.isTrusted && !event.defaultPrevented);
++        if (type === "keypress") assert.equal(event.key, definition.key);
++        else { assert.equal(event.value, definition.expected); assert.equal(event.selectedIndex, 1); }
++        assert(record.events.some(later => later.phase === "next-animation-frame" && later.eventId === event.eventId && !later.defaultPrevented), "Unprevented after dispatch");
++      }
++      assert.deepEqual(captured.filter(event => ["keypress", "input", "change"].includes(event.type)).map(event => event.type), ["keypress", "input", "change"]);
++      assert.equal(record.after.value, definition.expected); assert.equal(record.after.selectedIndex, 1);
++      assert(record.after.connected && record.after.focused && !record.after.disabled && !record.after.open);
++      await expect(page.getByTestId("left-current")).toHaveText("omitted"); await expect(page.getByTestId("left-commits")).toHaveText("0");
++      record.complete = true;
++      await page.keyboard.press("Tab");
++    }
++  } catch (error) { report.failure = String(error).slice(0, 2048); throw error; }
++  finally {
++    try { await session.detach(); report.sessionDetached = true; }
++    catch (error) { report.detachFailure = String(error).slice(0, 1024); if (!report.failure) throw error; }
++  }
++}
++
+ /** No launcher/budget reset here. Future admitted runner invokes this once using one owned Page. */
+ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string) {
+   const checks: string[] = [];
+   const errors: string[] = [];
++  const nativeFilters: NativeFilterReport = { transport: "CDP Input.dispatchKeyEvent keyDown(text/key) + keyUp", physicalKeyboardOrIme: false, filters: [], sessionDetached: false };
+   const onError = (error: Error) => { errors.push(error.message); };
+   page.on("pageerror", onError);
+   page.setDefaultTimeout(5000);
+@@ -90,14 +175,10 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
+     await left.getByLabel("Draft left", { exact: true }).fill("新草稿仍归我"); await open();
+     await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+     await expect(page.getByTestId("catalog-state")).toContainText("current; 1");
+-    // Real native keyboard navigation changes only the local filters/candidate, never C before Apply.
++    // Printable native input changes only local filters. Tab/radio Arrow/Space/Apply Enter remain real keys.
+     await dialog.getByRole("combobox", { name: "模型", exact: true }).focus();
+-    for (const [label, expected] of [["模型", model], ["思考", "adaptive"], ["力度", "high"], ["速度", "standard"]] as const) {
+-      await expect(dialog.getByRole("combobox", { name: label, exact: true })).toBeFocused();
+-      await page.keyboard.press("ArrowDown"); await page.keyboard.press("Enter");
+-      await expect(dialog.getByRole("combobox", { name: label, exact: true })).toHaveValue(expected);
+-      await page.keyboard.press("Tab");
+-    }
++    assert.equal(new URL(page.url()).origin, new URL(fixture.url).origin); assert.equal(new URL(page.url()).pathname, "/");
++    await typeNativeFilters(page, dialog, nativeFilters);
+     await expect(dialog.getByRole("button", { name: "清除筛选", exact: true })).toBeFocused();
+     await page.keyboard.press("Tab"); // Omit is the first native radio; ArrowDown reaches the only matching tuple.
+     await page.keyboard.press("ArrowDown"); await page.keyboard.press("Space"); await expect(standard).toBeChecked();
+@@ -121,7 +202,7 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
+     await expect(page.getByTestId("left-current")).toHaveText("omitted"); await expect(page.getByTestId("left-commits")).toHaveText("3");
+     await expect(page.getByTestId("left-sent")).toHaveText(sent!); await expect(page.getByTestId("left-queued")).toHaveText(queued!);
+     await expect(left.getByLabel("Draft left", { exact: true })).toHaveValue("新草稿仍归我");
+-    checks.push("Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots");
++    checks.push("Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots");
+ 
+     await open(); await standard.check(); await applyAndClose();
+     await open(); await dialog.getByRole("combobox", { name: "模型", exact: true }).selectOption(model);
+@@ -236,7 +317,12 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
+     checks.push("Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply");
+     assert.deepEqual(errors, []);
+     return { checks, pageErrors: errors, requests: fixture.requests, limitation: "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration." };
+-  } finally { page.off("pageerror", onError); }
++  } finally {
++    page.off("pageerror", onError);
++    const encoded = JSON.stringify(nativeFilters) + "\n";
++    assert(Buffer.byteLength(encoded) <= 65536, "Bounded native filter evidence");
++    await writeFile(join(evidence, "native-filter-inputs.json"), encoded);
++  }
+ }
+ 
+ 
