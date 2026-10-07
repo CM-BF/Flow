@@ -10,6 +10,7 @@ import { snapshot, durable } from '/Users/citrine/Projects/AgentHarness/Flow-wor
 import { boundIntent, retireIntent, readRegular, source, sha, assertPreservedQueueContract } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/retire.mjs';
 import { exactHistory, withHostFence } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/intent-retirement/host-fence.mjs';
 import { loadPreviewConfiguration, withPreviewLock, assertPreviewMarker } from '/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs';
+import { backendRuntime } from '/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/backend-release/host.mjs';
 import { inspectOwnedProcess, stopOwnedProcess } from '/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/process.mjs';
 import { readRunnerMaintenance, commandRunnerMaintenance } from '/Users/citrine/Projects/AgentHarness/Flow/apps/server/src/runner-maintenance/index.ts';
 import { legacyCompatibility } from '../continuation-facts.mjs';
@@ -92,7 +93,7 @@ async function fresh(plan) {
   const { maintainPreview } = await import(plan.rootMaintenanceModule);
   assertView(await maintainPreview({ directory: plan.directory, action: 'status' }), plan, 'draining', 19);
   await boundIntent(plan.request); await exactHistory(plan.request);
-  const tuple = await configuredTuple(plan);
+  const tuple = await configuredTuple(plan); await backendRuntime(tuple.config, plan.artifact);
   compareHistory(baseline, await history(plan, 'history-fresh'), 1, 0);
   await save(plan, 'fresh', { outcome: 'fresh-held-continuation-ready', operationId: op.operationId, operationSha256: sha((await readRegular(join(plan.directory, 'maintenance.json'))).bytes), tuple: tuple.tuple });
 }
