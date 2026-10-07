@@ -10,11 +10,11 @@ X01精确06:58:40.476848–06:58:49.193344Z完成6/6并清理；原估计时刻�
 
 本组当前0PG/Chrome、无新gate/预约，下一共享PG给C02 sentinel原owner fresh准入，未报actualRUN；C02旧outerKEEP仍留32MiB+128KiB，不冒字节已删。Recovery仅等待parent生命周期窄审/原owner同scope源修，不创建Queue或重跑gate；firstCREATE/full7/choice历史限定PASS不回滚。本次结果与功能进度仍以原owner唯一status为准。
 
-Quick现source2e71/metadata63457双端clean；[固定源与native边界](quick-typeahead-admission-20261007/quick-source-boundary-review.json)已接受，[新一次typeahead gate](quick-typeahead-admission-20261007/handoff.json)到期2026-10-07T07:12:36.189090+00:00，**ADMITTED_NOT_STARTED**。fresh原839ev1六范围、464pins与4.053GB高线核同；原parent74dc/worker53d6只重绑状态/审批pointer。新90s已耗23322/余66678，一次45s含15s清理，旧60封套30625完全保持。C结果只建立独立原生键盘测量，不能宣称原六组通过；不重复旧A/B、不写value或synthetic事件。
+**当前两条一次准入均尚未运行。** Recovery source344f/head7c7ee的parent退休与exact失败计费已[root独审](recovery-quick-paired-admission-20261007/recovery-monitor-source-local-review.json)，32受控检查/noEmit通过仅局部证据；[created-turn retry](recovery-quick-paired-admission-20261007/recovery-handoff.json)仍原两组，60s含15s清理，新段47205/余102795。Gate明确携带原b475预算false与513034失败清理审查；旧整体FAIL不改，不拿早预算回增，不串Queue。
 
-C02 sentinel本次07:05:17.959191–07:05:20.922818Z实际1选1PASS，DB/组/EOF完整closed，TMP07:05:28 exactabsent；本组当前实际PG/Chrome0。旧R1KEEP32MiB+128KiB仍留，freshgate保完整C02潜在预算与locals，是保守留额而非已在运行。[Recovery整体失败/自有清理独审](quick-typeahead-admission-20261007/recovery-created-turn-actual-review.json)已接受原件；parent窄fix属于源/局部检查，无重跑/Queuegate。
+Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不一致超时，整体仍[FAILED/0功能组](recovery-quick-paired-admission-20261007/quick-typeahead1-actual-fix-review.json)，11755计费后新35077/余54923。source d755同textContent基线窄修已审，head2c458双端clean；[下一一次45s诊断](recovery-quick-paired-admission-20261007/quick-handoff.json)含15s清理，parent8afcee仅fixed失败carry，经[manager exact routine审查](recovery-quick-paired-admission-20261007/quick-routine-binding-review.json)接受，worker53d6未变。仅诊断，不能冒原六组通过。
 
-[精确Chromium154.0.8037.99官方源码补充](quick-typeahead-admission-20261007/chromium-exact-tag-supplement.json)解释popup早退与独立typeahead路径；是与已观测结果一致的源码机制，未直接观测installedbinary分支，不冒唯一因果或Picker产品错误。原200KB源码留/tmp，项目仅报告/来源清单。
+两gate到期2026-10-07T07:25:13.945931+00:00，manager不launch，FINAL后root唤两原owner维持root+2。fresh原claims exact21/6，无overlap、双端clean；[组合观察](recovery-quick-paired-admission-20261007/observation.json)列1份reserve、RecoveryPG/WAL、两个独立64MiB scratch/8MiBraw、C02旧KEEP与locals，合计1,428,553,728B，高线仍4,053,008,384B，fresh24,222,310,400B。Quick不连PG/真实中心、两个fixture/profile/output/WT独立；不得再开第三Chrome/第二共享PG。C02后续已由OriginalLead接main4fe33178（固定consumer入口见本批incoming），X01已main转0PG源码，均不是实际PGholder；本次gate输入不变。
 
 [CHAT05大正文consumer研究](recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)归REQ43：receiving尾页不是complete，复用原授权client解码/authority与展开惰性读取，UTF8跨块和pane字节界限待原接口冻结后实现。[文件树重入研究](recovery-created-turn-admission-20261007/filetree-reentry-research.json)归REQ10/12、RS04，静态发现不冒browser复现。均未新take，不抢Recovery/Quick。
 

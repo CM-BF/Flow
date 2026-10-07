@@ -1,0 +1,32 @@
+--- before-binding.json
++++ binding.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "PREPARED",
++  "state": "REVIEWED_SOURCE_BOUND",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+@@ -354,7 +354,10 @@
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+   "previousEvidenceBytes": 3510314,
+-  "nativeChromeBoundaryApproval": null,
++  "nativeChromeBoundaryApproval": {
++    "path": "/private/tmp/web-paired-validation-admission-57hzfdhg/quick-routine-binding-review.json",
++    "sha256": "6fd89bf1a4ad39bd62aa2396c1f9c8fce770602defe13c907bc37bb066690526"
++  },
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -452,9 +455,7 @@
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "Source d755 independently accepted; parent only actual carry routine delta, manager exact binding required.",
+-    "PREPARED/no gate; source/head/claim/pins/resources/exclusiveChrome or approved combinedbudget must be fresh.",
+-    "New35077/rem54923, single<=45000 incl15000cleanup. Old30625 closed; no six-groupPASS inferred."
++    "Routineexactcurrentparent/unchangedworkeraccepted; one fresh unique gate still required. No runtimePASS."
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+   "selection": "typeahead",

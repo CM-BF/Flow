@@ -141,3 +141,5 @@ C02接口后继仅只读准备：见[固定消费接缝](../../docs/evidence/web
 GO经root新转述的同REQ43/C02后继要求（非用户逐字、未实施）：默认折叠须同时惰性传输reasoning正文，展开前网络正文零字节，不能仅CSS隐藏；metadata和普通text仍持续交付。冻结final/cursor、历史后展开、v1兼容与累计cache界限，保持身份/授权/撤权与真实终态。此前e394仅视觉折叠研究，不冒网络惰性完成；跨层接口只读研究待原co-lead供给，后续精确scope协调，不抢Recovery/App或另建流状态。
 
 同REQ43/C02惰性reasoning补[固定接口研究](../../docs/evidence/web-platform/quick-typeahead-admission-20261007/lazy-reasoning-research.json)：默认折叠并不等网络正文零字节；展开前只授权metadata与普通text，展开才读body，保final/cursor与历史晚展开、v1兼容和累计cache界限。正文解码/协议协商沿原共享owner与官方Thread，root研究为只读设计输入，未take/实现/运行；不把当前公开v2已集成误写为惰性消费完成。
+
+Lazy reasoning派工边界（本次root/Mika准确转述）：当前只有WPF-MATURE-06-03/REQ43后继，没有本组writer/claim或独立子task；父三件套仍manager唯一维护。共享惰性读取子片由Mika指定唯一ID/owner并fresh独立树与exact共享+测试范围，先协调CHAT05P02出口；收到固定canonical后本父只引用。C02树6c836的`docs/evidence/mature02c02/lazy-reasoning-interface-candidate.md`仅候选、无实现/运行/claim。旧CHAT06I01已main且旧写权关闭，Recovery原21仍panels；未来Web Thread disclosure须共享输入固定及相关Recovery交权后另fresh take，不新大task/重复store。

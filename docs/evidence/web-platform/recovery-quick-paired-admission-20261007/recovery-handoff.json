@@ -1,0 +1,127 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T07:18:13.945931+00:00",
+  "gate": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-gate.json",
+  "gateSha256": "6bb6dbdcfb6457aa0ad6d82a62f10d9b7c93c5d655ec96d05e97fa98ce28c0d2",
+  "expiresAt": "2026-10-07T07:25:13.945931+00:00",
+  "run": "recturn344-20261007-071813-d529ee",
+  "expectedRunDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recturn344-20261007-071813-d529ee",
+  "head": "7c7ee77d42e9af484237d62d30f9bfda4e613d73",
+  "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "claim": {
+    "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+    "version": 4,
+    "scopeCount": 21
+  },
+  "selection": {
+    "journey": "created-turn-ack-loss",
+    "requiredGroups": [
+      "cookieRead",
+      "createdTurnAckLoss"
+    ],
+    "originalFullSevenUnchanged": true,
+    "notSelected": [
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390",
+      "connectionChoice",
+      "createAckLoss",
+      "queueAckLoss"
+    ],
+    "selectedPassIsNotFullJourneyPass": true,
+    "fullFeatureReview": "IN_PROGRESS",
+    "singleAttemptOnly": true,
+    "otherNewJourneys": "create-ack-loss already scoped actualPASS; queue-ack-loss requires a later distinct fresh gate/attempt, not scheduled here",
+    "priorAttemptOutcome": "FAIL: worker2/2 but parent false deadline, exact accepted cleanup; not casePASS"
+  },
+  "totalMs": 60000,
+  "workMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentSpentMs": 47205,
+  "newSegmentRemainingMs": 102795,
+  "oldClosedEnvelopeMs": 64134.08675,
+  "adminEnv": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-admin.env",
+  "adminEnvIdentity": {
+    "device": 16777234,
+    "inode": 123617443,
+    "uid": 501,
+    "mode": "0600"
+  },
+  "adminValueRecorded": false,
+  "adminSource": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts:185",
+  "cleanupResponsibility": "d01_owner exactenv deletion after actual terminal/cleanup, lstat+no-follow fstat match; never readvalue; preservegate/receipts. Expired/unlaunched admission not reusable.",
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/web-paired-validation-admission-57hzfdhg/recovery-admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "outerCapture": "Reuse prior original single-file parent and the full7 outer stdout/stderr/actual-exit capture; preserve dual EOF and exact PGID/scratch/DB cleanup; no new supervisor",
+  "accounting": "ceil(max actualouter,late,parent)) charge new150s, no old90credit; originalraw unchanged",
+  "scope": "cookieRead+createdTurnAckLoss retryonly, prioroverallFAILnotrewritten; noQueue/full7/othercase",
+  "managerLaunch": false,
+  "continuousSegment": "Routine sameboundary fix/retest underexisting authorization, uniquegate andfresh actualresource/input perattempt; no blind retry or permission/cleanup/acceptance change without targeted review.",
+  "observation": "/private/tmp/web-paired-validation-admission-57hzfdhg/observation.json",
+  "reconciledFailures": [
+    {
+      "run": "recturn-20261007-070121-4aa406",
+      "budgetSha256": "b47589e353b16bd7c6c1db97c8c5ed6367d808c5037e112769a9647ab4af6537",
+      "reviewFile": "continuous-fourth-root-review.json",
+      "reviewSha256": "5130342004510bc7f4e32211ad32388a334286780c12b632571ffc5c83cb2b8f"
+    }
+  ],
+  "sourceReview": {
+    "path": "/private/tmp/root-recovery-monitor-344-source-local-review.json",
+    "sha256": "6f45225872e325c45fb19cd1351b4a19f29c64c0274a75d7589b0f109438861c"
+  },
+  "pairedBudget": {
+    "authority": "Rootexplicit paired max1sharedPGheavyRecovery+1fullyindependent0PGQuickChrome; C02sentinelactuallyreturned and nowREADYwaitingmain/noPG, X01main9816source-local/noPG. BothoriginalownersFINAL; rootwakesonlyaftermanagerFINAL forroot+2workers.",
+    "selectedStartFloorBytes": 4053008384,
+    "availableBytes": 24222310400,
+    "singleCleanupReserveBytes": 1073741824,
+    "recovery": {
+      "sharedPG": 1,
+      "chromeProfiles": 1,
+      "tmpBytes": 67108864,
+      "rawBytes": 8388608,
+      "dbWalConservativeBytes": 134217728,
+      "singleMs": 60000,
+      "cleanupMs": 15000
+    },
+    "quick": {
+      "pg": 0,
+      "chromeProfiles": 1,
+      "tmpBytes": 67108864,
+      "rawBytesIncludingOuter": 8388608,
+      "outerReserveWithinRawBytes": 2113536,
+      "singleMs": 45000,
+      "cleanupMs": 15000
+    },
+    "c02OldKeepBytes": 33685504,
+    "conservativeOtherLocalsBytes": [
+      17825792,
+      18087936
+    ],
+    "declaredSumBytes": 1428553728,
+    "retainedWithinOwnRawCaps": {
+      "quickPriorBytes": 3510314,
+      "recoveryEvidenceBytes": 2810787
+    },
+    "floorsNotAddedTwice": true,
+    "isolation": "DistinctWT/ownChromeprofile/scratch/dynamicHTTPfixtures/outputroots. QuicknoPG/realcenter/auth/privateinstallation. RecoveryonlyownmarkedDB. No sharedwritecache/source or provider.",
+    "notActualRUN": true
+  }
+}

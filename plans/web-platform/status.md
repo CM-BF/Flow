@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:07:59.811057+00:00；Recovery本次失败与清理证据已独审，Quick新键盘前提完成一次准入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:20:00.884175+00:00；两处验收前提窄修已审，Recovery与Quick各完成一次隔离准入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 完成逐消息设置的新原生键盘前提观察，保留既有失败与验收边界；恢复验证的外层监督异常由原owner窄修，历史发送恢复通过项保持。 |
+| 下一可用交付 | 核实修正后的提交丢回执监督结果，以及逐消息设置的原生键盘与保稿观察。既有失败原件和已通过恢复项均保留，尚未声称完整功能通过。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：C02已实际清理归还；Quick仅独立零PG单次浏览器准入，尚未启动。Recovery只做离线监督修复，无新PG或浏览器预约。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：一条自有专库恢复旅程与一条完全独立零PG设置诊断已配对准入，均待原owner启动；各自浏览器、输出和预算隔离，禁止额外PG或第三浏览器。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

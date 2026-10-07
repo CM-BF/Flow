@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T07:18:13.850691+00:00",
+  "reviewer": "d01_owner / gpt-6-astra ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "8afcee9141d82bc4b5e35f0c4f31ef5780501fbfea207d834666b0620b65594c",
+  "workerSha256": "53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb",
+  "source": "d7556b616e018ac985519b08a2954b1810029e05",
+  "head": "2c458fb97c4e77ed43ab18a2af628419a717d87d",
+  "basis": "Routine provenance under already-authorized finite segment; exactcurrent-sourcefix reviewed eb557. No new permission or runtimePASS.",
+  "priorBoundary": {
+    "path": "/private/tmp/root-msgquick-typeahead-source-boundary-review.json",
+    "sha256": "596044f4436b438253390ea0f3effcb15bada2006bf8214637f3af39a46d531c"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-typeahead1-actual-and-fix-review.json",
+    "sha256": "eb5572ce2be5b6325097c8f06ca06a4ab3f6466c762cde65b4e860dd4686443d"
+  },
+  "diffSha256": "80bc8e2a585c274f92a4d4db868d6ebd9f36301237f3ec7bc03d44345da8e891",
+  "changes": [
+    {
+      "oldStart": 70,
+      "oldEnd": 70,
+      "newStart": 70,
+      "newEnd": 70
+    },
+    {
+      "oldStart": 77,
+      "oldEnd": 77,
+      "newStart": 77,
+      "newEnd": 77
+    },
+    {
+      "oldStart": 93,
+      "oldEnd": 93,
+      "newStart": 93,
+      "newEnd": 94
+    },
+    {
+      "oldStart": 135,
+      "oldEnd": 136,
+      "newStart": 136,
+      "newEnd": 137
+    },
+    {
+      "oldStart": 140,
+      "oldEnd": 140,
+      "newStart": 141,
+      "newEnd": 142
+    },
+    {
+      "oldStart": 149,
+      "oldEnd": 149,
+      "newStart": 151,
+      "newEnd": 151
+    },
+    {
+      "oldStart": 156,
+      "oldEnd": 156,
+      "newStart": 158,
+      "newEnd": 161
+    }
+  ],
+  "reviewed": [
+    "Only35077segment/65702combined historicalaccounting and fourthnativefailedcarry entry.",
+    "Addedpriorroot/source review uses exacteb557 decision/actualexit1/FAILED sixseal/EOF/closedownedresources and ceil11755.",
+    "Prior306files3510314B read/hashverified; original254 unchanged by individualhash.",
+    "Allpermission/lifecycle/runtime/resource/cleanup/acceptance tail byte-identical afterpriorvalidation; worker unchanged.",
+    "Original actual remainsFAILED/0sixgroupPASS; source d755 aligns same textContent baseline, not relaxedexpectation."
+  ],
+  "findings": [],
+  "runtime": false
+}
