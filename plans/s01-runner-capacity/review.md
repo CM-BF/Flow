@@ -1,8 +1,12 @@
 # S01 独立审查
 
-## 当前：buffered packing 窄修准备
+## 当前：同policy packing ABBA准备
 
-PENDING，固定source 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff，已完成18distinct分轮+strict0；[唯一窄审入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-ready.md)和16bindings固定。只减增长prefix的重复编码，最终send完整JSON门禁保留，不是实际性能结论。
+PENDING，source `8a933df2e71e03aa3e9525649877794777ebdec4`，[唯一准备入口](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)。只读审new parent导出/workerFile、新finite ABBA、精确编译件/新caller和三局部结果；不重新审旧18/旧实际replay。Actual NOT_RUN_NOT_OPEN。
+
+## 已审：buffered packing 窄修
+
+SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0P1/P2，db_transaction_owner/gpt-6-astra，2026-10-07T15:44:49Z，packet e4883856fbb054a1965c8b79b593bb225740d38f；[正式归档](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json)。16bindings144448B/18distinct分轮/strict0/4child闭合；原夹具失败保留。无实际新replay/CPU收益结论。
 
 ## 已交付：唯一replay实际结果独审
 

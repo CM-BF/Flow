@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:50:10.137Z |
+| 最近更新 | 2026-10-07T15:57:23.533Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本轮四raw/单记录与结果metadata待封存；源码75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff已固定，最终核clean/origin。 |
+| 工作树dirty状态 | ABBA source 8a933df2e71e03aa3e9525649877794777ebdec4固定；ordinary及输入metadata封存后核clean/origin，旧actual/compiled不改。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff：18 distinct分轮（首17/18、修夹具后1/1）及最终strict0；原失败保留，非性能replay。 |
+| 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805：strict emit0、新finite plan5/5；后继8a933薄caller四项只读纯核0。仅准备，actual NOT_RUN_NOT_OPEN。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | 75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff |
-| 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs |
+| 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
+| 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 局部打包优化已独审通过，正在准备同一信息与发送策略的前后对照，避免把聚合差异误作算法收益。 |
-| 下一可用交付 | 固定旧新打包四侧顺序与相同输入，完成编译和有限调度检查；实际测量另行安排。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 同一聚合策略下的旧新打包对照已备齐，编译及有限调度检查通过；尚未运行四侧实际测量。 |
+| 下一可用交付 | 独立核对旧新仅一处打包差异、输入与收尾门禁，再在单独授权窗口取得比较结果。 |
+| 当前阻塞 | ACTIVE: 本ABBA准备包待独立审查；实际性能窗口尚未开放。 |
 | 需用户决定 | NONE |
-| Review | 前片e488于15:44:49 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2；本ABBA准备待独审。 |
+| Review | PENDING 8a933df2e71e03aa3e9525649877794777ebdec4 ABBA source/build/local；前片e48815:44:49 APPROVED仅其范围。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:39:40Z后fresh身份一致，review期保留。 |
-| 架构影响 | 仅现私有pg-delivery Module内部chunk构造；Interface/record/SQL聚合/消费者/最终完整envelope校验不变。旧生成JS属于历史actual，不以新TS替换。 |
+| 架构影响 | 已有parent arm只增加导出/显式workerFile，新四侧plan复用原receiver与OPS14。两worker闭包仅pg-delivery.js不同，原五JS与ESM精确不变；新parent compiled仅作共同调度，0生产pool/SQL变更。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -288,3 +288,7 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 新独立段15:47:10Z开始→16:02:10Z截止，不延旧段。fresh508fv3/exact6/e488 clean；[前片独审](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json)已归档。四个串行worker计划old→new→new→old，均buffered、同2048trace/64×32节奏/完整receiver；仅worker pg-delivery.js不同，旧其余五JS精确复用且原目录不改。parent arm只export并允许固定workerFile，新薄ABBA coordinator复用原生命周期/接收逻辑；不复制监督器。
 
 本段仅source+strict emit/五个有限调度pure例，最多3child/每30s/累计60s/new16MiB；最新ordinary floor至少15,927,017,472B或更高，已含本段一次。0PG/HTTP/replay/Chrome/provider/安装，未来actual60s/临时raw8MiB只是NOT_OPEN候选。源/编译/输入固定后一次独审，旧actual/compiled/KEEP保持。
+
+2026-10-07T15:57:23.533Z 本新段安全收口：[唯一ABBA准备入口](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)，14review bindings/93actual input bindings，精确五actual输出均ENOENT。3child已完整RETURN，原ordinary2个主检查于15:50:18.525Z收束，新增已授权第3只读入口核于15:54:53.480Z收束；strict emit0/新5pure全过/新caller四项read-only断言通过，共raw620B（第3为90B），监督1186ms。三组finalabsent/MERGED EOF/无failure-signals-secondary，早期EPERM保留；三TMP同identity采样后删除且owner exactENOENT，末样本非峰值。新JS+ESM82709B已绑定编译receipt和source，旧worker目录不改，所有输入/原件已固定。只有普通准入15.927GB/末次16.175GB，future actual需manager新完整sum与OPEN，不能沿用本段。
+
+应用既有find-skills/codebase-design/clean-code：旧receiver/arm与监督器单一权威，有限ABBA plan具明确停止/序列/时钟语义；新caller仅固定授权输入、已审进程/捕获predicate及自有TMP管理，不拥有PG/admin/用户任务权限。当前仅准备能力，无新CPU/时延结论，个人背景UNKNOWN。原task开工UNKNOWN、六TODO三开放及旧O1FAIL/O2NOT_RUN/所有KEEP不改。

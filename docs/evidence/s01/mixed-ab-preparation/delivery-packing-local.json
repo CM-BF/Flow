@@ -361,7 +361,8 @@
           "entries": 10,
           "logicalBytes": 50335,
           "sampleOnlyNotPeak": true
-        }
+        },
+        "ownerFinalLstat": "ENOENT"
       },
       "head": "82095227e5b865139093cc325484c9885f69e805",
       "argv": [
@@ -775,7 +776,8 @@
           "entries": 4,
           "logicalBytes": 143,
           "sampleOnlyNotPeak": true
-        }
+        },
+        "ownerFinalLstat": "ENOENT"
       },
       "head": "82095227e5b865139093cc325484c9885f69e805",
       "argv": [
@@ -825,6 +827,80 @@
       "closed": true,
       "endedAt": "2026-10-07T15:50:18.525Z",
       "elapsedMs": 501.48454192094505
+    },
+    {
+      "number": 3,
+      "kind": "caller-readonly",
+      "startedAt": "2026-10-07T15:54:53.415Z",
+      "floorBytes": 16175529984,
+      "freeBytes": 20273029120,
+      "source": {
+        "docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py": {
+          "bytes": 8963,
+          "sha256": "a24f576b3e6ecbe09abc5852839f493f412cc493fed2803686501bb1f8022e12"
+        },
+        "docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py": {
+          "bytes": 19175,
+          "sha256": "0d9afada16a67333fb2aa0b387b372b09b3b085705a25c0679ae9f16bd5260c7"
+        }
+      },
+      "tmp": {
+        "path": "/tmp/flow-s01-packing-caller-c6j1ua0w",
+        "dev": 16777234,
+        "ino": 124278412,
+        "removed": true,
+        "lastSample": {
+          "entries": 0,
+          "logicalBytes": 0,
+          "sampleOnlyNotPeak": true
+        },
+        "ownerFinalLstat": "ENOENT"
+      },
+      "argv": [
+        "/opt/homebrew/bin/python3.13",
+        "-I",
+        "-B",
+        "-c",
+        "import ast,importlib.util,sys,hashlib\nfrom pathlib import Path\np=Path('docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py')\nast.parse(p.read_text())\ns=importlib.util.spec_from_file_location('candidate',p);m=importlib.util.module_from_spec(s);sys.modules[s.name]=m;s.loader.exec_module(m)\nb=m.build_confirmed(); names=m.helper.JS_NAMES\nchanged=[n for n in names if m.helper.digest(m.HERE/'delivery-packing-js/worker'/n)!=m.helper.digest(m.helper.BUILD/n)]\nassert changed==['pg-delivery.js'],changed\nargv=m.command('a'*64);assert argv[2]=='--authorized-packing-once' and argv[4]=='a'*64 and argv[5]!=argv[6]\nprint('PASS: syntax; compile receipt; only pg-delivery worker difference; exact command identity')\n"
+      ],
+      "process": {
+        "pid": 15055,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 63,
+        "observed_bytes": 90,
+        "retained_bytes": 90,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-3.raw",
+        "bytes": 90,
+        "sha256": "ca3dcdf554a2660e189c5f3123407941f755619e233051717f6e9b8d8ff94425"
+      },
+      "closed": true,
+      "endedAt": "2026-10-07T15:54:53.480Z",
+      "elapsedMs": 66.28449994605035
     }
   ],
   "limits": {
@@ -836,5 +912,17 @@
     "newBytes": 16777216
   },
   "wholeExternalWall": null,
-  "rawBytes": 530
+  "rawBytes": 620,
+  "endedAt": "2026-10-07T15:56:07.118Z",
+  "actualClosedAt": "2026-10-07T15:54:53.480Z",
+  "supervisedCumulativeMs": 1186,
+  "callerCumulativeMs": 1325.691458885558,
+  "scope": "strict emit0; new finite ABBA pure5/5; one Python child four read-only assertions. No actual replay/PG.",
+  "toolReportedWallSeconds": [
+    0.979585292,
+    0.675378041,
+    0.104858042
+  ],
+  "toolWallScope": "First two tool calls include metadata/reads/commit; not isolated child or whole external segment.",
+  "activePeakBytes": null
 }
