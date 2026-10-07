@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring/docs/evidence/x01-verifier-center-wiring/inputs
+
+ ❯ apps/server/src/plugin-verification-wiring.test.ts (9 tests | 1 failed) 186ms
+   × factory keeps verifier routes disabled by default and rejects a partial explicit policy 105ms
+   ✓ factory migrates plugin runtime then verification under the existing observed phase and closes on failure 11ms
+   ✓ mounted owner admission preserves authentication, stable key, replay ACK and both exact policies 14ms
+   ✓ mounted verifier phase uses authenticated runner identity and keeps tool authorization separate 9ms
+   ✓ owner browser mutation inherits the same Origin and CSRF gate 12ms
+   ✓ mounted admission enforces its existing input and response bounds without repeating unknown commands 6ms
+   ✓ runtime enable, runtime read and event terminal gate receive the identical private verifier policy 8ms
+   ✓ actual main loads the explicit verifier policy at configuration and forwards the exact function 17ms
+   ✓ actual main keeps omitted verifier configuration absent and fails explicit bad configuration before factory 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/server/src/plugin-verification-wiring.test.ts > factory keeps verifier routes disabled by default and rejects a partial explicit policy
+AssertionError: expected 403 to be 404 // Object.is equality
+
+- Expected
++ Received
+
+- 404
++ 403
+
+ ❯ apps/server/src/plugin-verification-wiring.test.ts:81:147
+     79|   const app = await factory();
+     80|   expect((await app.inject({ method: 'POST', url: `/api/plugins/${regi…
+     81|   expect((await app.inject({ method: 'POST', url: '/api/runner/plugin-…
+       |                                                                                                                                                   ^
+     82|   await expect(factory({ pluginVerifierPolicy: algorithms })).rejects.…
+     83|   expect(domain.admit).not.toHaveBeenCalled(); expect(domain.authorize…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 8 passed (9)
+   Start at  15:24:35
+   Duration  1.50s (transform 676ms, setup 0ms, import 1.23s, tests 186ms, environment 0ms)
+

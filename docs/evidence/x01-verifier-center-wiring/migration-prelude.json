@@ -1,0 +1,13 @@
+{
+  "base": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+  "commit": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+  "scope": [
+    "apps/server/src/index.ts"
+  ],
+  "preimageBlob": "c12a8da1408546aedb19c48d310ad00c34863fb8",
+  "resultBlob": "9770bd2961baad58fa39baa94b1ee15766b20597",
+  "sha256": "483198deda3f56d7c022ad36ae098ccab3107abad346f5a4a17ce7f6795cf2aa",
+  "branch": "codex/plugin-verifier-center-wiring-prelude",
+  "description": "Only migration036 import and sequential034 then036 inside existing plugin migration phase. No VAR routes/policy. Source-only static split; complete wiring WT and tested bytes never changed.",
+  "validation": "STATIC_ONLY; existing full wiring local includes same ordered migration behavior with mocked migrations; not PG"
+}

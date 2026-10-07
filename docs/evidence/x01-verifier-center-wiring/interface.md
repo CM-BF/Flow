@@ -8,12 +8,12 @@ The same policy object reaches verification admission/phase, runtime enable, run
 
 ## Fixed dependencies and staged composition
 
-`fixed-inputs.json` lists the fixed base plus pending AV/VAR readonly dependency bytes under this evidence directory. No dependency source is a product owned by this feature. Pending VAR preimages match base 69a; pending AV preimages match as well. The three owned consumers and new test must be copied explicitly to their corresponding input paths only after a legitimate product change. The current fixed mirror still contains base consumers and is not a claim of runnable wiring.
+`fixed-inputs.json` lists the fixed base plus pending AV/VAR readonly dependency bytes under this evidence directory. No dependency source is a product owned by this feature. Pending VAR preimages match base 69a; pending AV preimages match as well. The three owned consumers and new test must be copied explicitly to their corresponding input paths only after a legitimate product change. The mirror now contains the four explicitly fixed owned consumers; pending dependency bytes remain separately attributed.
 
-AV R2 failed all five cases. Its migration 036 parenthesization repair is pending; this input retains the old fixed bytes until an owner supplies a new fixed target. VAR domain PG, actual producer/result chain, runtime v4 dispatch and release/deployment remain independent unmet prerequisites.
+AV R2 failed all five cases. Local runs retained the old migration with migration work mocked. Current readonly input consumes the owner-fixed ead8 repair after local checks; this dependency delta is NOT_RUN here. R3 has author-reported5/5, pending independent result review. VAR domain PG, actual producer/result chain, runtime v4 dispatch and release/deployment remain independent unmet prerequisites.
 
 ## Planned local evidence
 
 Nine real-factory/inject or actual-main consumer cases, with only domain/PG work replaced: default off and partial policy rejection; ordered migration and failure cleanup; owner auth/replay key; runner role and tool separation; browser Origin/CSRF; existing input/response limits and no retry; identical policy in enable/read/events; main explicit read/forward; main omission/invalid configuration. Tests use no listener or PG. They do not prove actual SQL or domain algorithms, which already have separate fixed source/local reviews.
 
-Source and test are NOT_RUN. Future focused types and explicit Vitest path require the separately granted ordinary budget and a source-current mirror. No isolated helper-only acceptance, no whole-repository checks, no actual PG window consumed.
+Focused types passed on the pre-fixture-fix source. Nine distinct cases passed across rounds (8 first-round plus one corrected authentication fixture); original failures remain. The final test-only delta was not separately typechecked. No isolated helper-only acceptance, no whole-repository checks, no actual PG window consumed.

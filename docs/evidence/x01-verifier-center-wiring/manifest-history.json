@@ -1,0 +1,8 @@
+{
+  "initialManifestSha256": "07c27a196093f0feb3f1f66271aacb349e938a6530448b3319fa85fedb5b2c8b",
+  "executionFinalSha256": "6dced8e14ea12ceb856891d4de8011f1537d1ade06cf980b859636be5882571d",
+  "reconstruction": "Clone fixed-inputs-execution.json; only test row remove ref, restore bytes14996 and sha2562a0c539921ec8cbab61cbba9f03ec9ef976797e9cca171d3010550781e7c30ff; JSON indent2 plus newline. Verified hash equals all first three reservations.",
+  "historicalTestSource": "704614dc337a82a0ee6095ad452398ae93fd4371",
+  "finalTestSource": "d17125c112240468444b71f6a049303158efad1c",
+  "executionManifestNote": "The final execution manifest retained old commit as historical preimage and added ref for actual source. Canonical review manifest resolves commit to ref. Each run ownedSource is exact."
+}

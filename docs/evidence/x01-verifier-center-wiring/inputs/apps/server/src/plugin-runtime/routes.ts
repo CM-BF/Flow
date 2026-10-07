@@ -10,6 +10,7 @@ import { authorizePluginPhase, admitPluginToolTask, changePluginRuntime } from '
 import { pluginHostCandidatesQuerySchema } from '../../../../packages/contracts/src/plugin-runtime-hosts.js';
 import { readPluginHostCandidates } from './host-candidates.js';
 import { publishPluginHost, readBinding, readRuntime, type TrustedPluginHostPolicy } from './store.js';
+import type { TrustedPluginVerifierPolicy } from '../plugin-verification-configuration.js';
 
 function id(value: string): string {
   if (!z.uuid().safeParse(value).success) throw new HttpError(400, 'invalid_plugin_runtime_id', 'Invalid plugin runtime identity.');
@@ -25,7 +26,7 @@ function bounded<T>(value: T): T {
  * Reuses createServer's owner auth and /api/runner/ credential hook; never accepts runnerId in a body.
  * Missing operator policy denies host publication; this port does not accept public filesystem paths.
  */
-export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss, trustedHostPolicy?: TrustedPluginHostPolicy): void {
+export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, boss: PgBoss, trustedHostPolicy?: TrustedPluginHostPolicy, verifierPolicy?: TrustedPluginVerifierPolicy): void {
   app.post('/api/runner/plugin-host', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginHostPublicationSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_host', 'Invalid plugin host publication.');
@@ -43,7 +44,7 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
   app.post<{ Params: { id: string } }>('/api/plugins/:id/runtime/commands', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginRuntimeCommandSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_runtime_command', 'Invalid plugin runtime command.');
-    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy)));
+    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy, verifierPolicy)));
   });
   app.post<{ Params: { id: string } }>('/api/plugins/:id/tool-tasks', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginToolTaskRequestSchema.safeParse(request.body);
@@ -63,7 +64,7 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
       client => readPluginRemovalReferences(client, id(request.params.id), input.data), true));
   });
   app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime', async (request, reply) => {
-    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id), trustedHostPolicy), true)));
+    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id), trustedHostPolicy, verifierPolicy), true)));
   });
   app.get<{ Params: { id: string } }>('/api/tasks/:id/plugin-binding', async (request, reply) => {
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readBinding(client, id(request.params.id)), true)));

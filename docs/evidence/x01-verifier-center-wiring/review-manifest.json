@@ -1,0 +1,200 @@
+{
+  "at": "2026-10-07T22:27:01.606Z",
+  "source": "d17125c112240468444b71f6a049303158efad1c",
+  "rows": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 18291,
+      "sha256": "24655c1a4764d3797426c0c70c38fc3e17210e9ff8fe8eaee3e4b6c599520cc1"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 4398,
+      "sha256": "475d7a434b3862103fe3d57cbc0cf7d81661f75f063aa579115a311c3e1661ba"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "bytes": 5994,
+      "sha256": "98a903a5912135df4768e56c9e291a9f75da0dd7790a5a3d39e485cd1d82a05a"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-wiring.test.ts",
+      "bytes": 15254,
+      "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior-final-reservation.json",
+      "bytes": 4844,
+      "sha256": "29d6ed6fc81863b4eb81e0971697e46686a90438117f3d46a9b9da0518b87ee0"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior-final.log",
+      "bytes": 410,
+      "sha256": "a40af4a97ca19ea6a1971677fafcdc79349503caad62f7e81a54e139bee560ba"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior-fixed-reservation.json",
+      "bytes": 4737,
+      "sha256": "5dbb5833f82dcd6a3ed1ad40f768cb083d613a92bcab0ee0721ed5ad34242872"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior-fixed.log",
+      "bytes": 2347,
+      "sha256": "ec0c8449bd7148e7a6c895d02f276ada7917b78593b2cd9726eb5a4c1caed68a"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior-reservation.json",
+      "bytes": 4731,
+      "sha256": "e85b34addb009880fbd133168dac6d176ccacfbbb5784230e122a333f3fc631d"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/behavior.log",
+      "bytes": 2348,
+      "sha256": "37fd1e3a4c0f2e58e965157fc45abf2b290c928f8945b229fcd4a335dbcb5719"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/budget-observation.json",
+      "bytes": 421,
+      "sha256": "3c68a691c6c4896df5519ef187c3e7c275a3c59acb473217fae8f16ad49c9334"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/caller-history.json",
+      "bytes": 414,
+      "sha256": "b33fa2778410331dc569c49a479a5745201e4176707f7711bff238f6b805d222"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/claim-fresh.json",
+      "bytes": 995,
+      "sha256": "3339b375bf694fdbdf1b5bc3a29bc7be30f6de83a30c25e8f90306e6f759f728"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/claim-receipt.json",
+      "bytes": 961,
+      "sha256": "691b6eb18a90e0d1e6fafaa813c73d9f2c6ff8ded9f65932d9f01ad1b6e2925b"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/dependencies.json",
+      "bytes": 7171,
+      "sha256": "765cb32c0b07bd8bbf316a619cc923f8e817222c2f8ce68fc1d5f71ca81bc487"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/fixed-inputs-execution.json",
+      "bytes": 76180,
+      "sha256": "6dced8e14ea12ceb856891d4de8011f1537d1ade06cf980b859636be5882571d"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/fixed-inputs.json",
+      "bytes": 76203,
+      "sha256": "5367b69c60cf83a1e4036b44cfc77c1920affde1fbd5777eb8f293d304552671"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/interface.md",
+      "bytes": 2970,
+      "sha256": "f152661742628b3f186cd2fd8a5a21d5be2a3f7259a6afbe0750e71825f8b1c0"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/local.json",
+      "bytes": 3886,
+      "sha256": "f24a4e9c177e11ac0a573e1f5992edcc4426bb772872f84cbd67a2dc28f4becc"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/manifest-history.json",
+      "bytes": 800,
+      "sha256": "1a31b2ecd45bcb77bed0740675afc16288d4ec2b8225f672a766e5163bc5fd8f"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/migration-036-local-input.txt",
+      "bytes": 5113,
+      "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/migration-input-delta.json",
+      "bytes": 496,
+      "sha256": "491643d52686781cf20b6fe93ee338636c183ad268a9873511844b47c6208eec"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/migration-prelude.json",
+      "bytes": 764,
+      "sha256": "e0a8f24bdbc12a652423ee1543a313aa739926e178a3aa4ec658bfb6778943fa"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/owned-source.json",
+      "bytes": 1194,
+      "sha256": "93b8691a6f5ab343d2ac52f712c880ab18b68b2d895ea446e9727669f4df7591"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/pending-inputs.json",
+      "bytes": 6534,
+      "sha256": "61d7db30ec0495cac40cab46756e328dcf8c42025ed39206297c99920e420cdd"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/preimages.json",
+      "bytes": 640,
+      "sha256": "0be78f1350df508441cd626141b216362e6fc46a0934186e3e8d66c7fad9b191"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/prelaunch-and-supply-failures.json",
+      "bytes": 649,
+      "sha256": "88e3ad9c677844bb8aacc3f3aa39e302835784136c8bdb6b3d7fc880e0c8c4bf"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/quality.md",
+      "bytes": 1458,
+      "sha256": "91deb541b23d21b333ba3e8d24167b21ee7248a7ca9dc8f347826c67066b5265"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/results.json",
+      "bytes": 1049,
+      "sha256": "d5b159cddfceb35db72b66179b728fb256f4d14e154c2f014da9712cbdb8783e"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/run-local.py",
+      "bytes": 5262,
+      "sha256": "ef55d288d8704c9d5c8ce02a3599f4debde165ee3f71fb20b7cdac74e0720d14"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/segment.json",
+      "bytes": 1140,
+      "sha256": "349dfca1739d0d0d691a670147be93c0a4ca39ad98af9a6436101bcd049cf35b"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/static-import-observation.json",
+      "bytes": 956,
+      "sha256": "ad4f48c1a8b6bf245dccfb00f96a68bbdbb1101ee4c0fb205d72a7a78d62fd11"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/status-parse.json",
+      "bytes": 357,
+      "sha256": "7575837cfa6f7ba3a849d948ea6a9bfbe79f6e0fefc3fdcd51fed154786e691f"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/task-intake.json",
+      "bytes": 555,
+      "sha256": "4c42472b5dd7bd94b27e062bbf8c74595082cbd2b59049ac16ba7f897d31a9c7"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/types-reservation.json",
+      "bytes": 4684,
+      "sha256": "e8d97a89267b21e847d6e5b719c5cac0807134f4d030741643a3ef264f0dfb5b"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/types.tsconfig.json",
+      "bytes": 611,
+      "sha256": "64689ac88f32a62ab5553b718c15c214387f7d2725e1c3d418151af1a58be781"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-center-wiring/vitest.config.ts",
+      "bytes": 574,
+      "sha256": "cada25cc1a70cecab4ee0f1c3b6073f7ca79e8e31e81d21bb8f1591bffa6d0ed"
+    }
+  ],
+  "files": 38,
+  "bytes": 265391,
+  "inputBindings": "fixed-inputs.json; 319 snapshot inputs, attribution is per row. No installed link target copied.",
+  "metadata": "status/review/ready seals excluded from manifest to avoid cyclic binding"
+}

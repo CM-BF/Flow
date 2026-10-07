@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T22:26:06.525Z",
+  "source": "d17125c112240468444b71f6a049303158efad1c",
+  "types": {
+    "exit": 0,
+    "source": "704614dc337a82a0ee6095ad452398ae93fd4371",
+    "finalFixtureTypeRecheck": "NOT_RUN; final test-only hasRoute/auth assertions; product unchanged"
+  },
+  "behavior": "9 distinct passed across rounds; first9 selected8passed1failed; accidental old-source repeat same8/1 retained; final exact1passed8unselected",
+  "children": 4,
+  "supervisionMs": 7248,
+  "rawBytes": 5105,
+  "resourceFullReturn": "2026-10-07T22:24:53.947478+00:00",
+  "wholeToolWall": "UNKNOWN",
+  "PG": "NOT_RUN",
+  "HTTPListener": false,
+  "scope": "Real factory Fastify.inject/auth and main startup configuration with synthetic database/domain; not real domain/SQL/provider/release",
+  "knownPending": [
+    "AV migration/claim PG prerequisite not passed",
+    "VAR PG not passed",
+    "VAR small malformed Zod input currently maps500; owned by VAR not this feature",
+    "runtime v4/typed settlement consumer and release remain separate"
+  ]
+}

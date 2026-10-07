@@ -1,4 +1,5 @@
 import { readPluginRuntimeConfiguration } from './plugin-runtime-configuration.js';
+import { readPluginVerificationConfiguration } from './plugin-verification-configuration.js';
 import { readPackageFetchConfiguration } from './package-fetch-configuration.js';
 import { readPluginInstallationConfiguration } from './plugin-installation-configuration.js';
 import { parseActiveSteeringConfiguration } from './active-steering-configuration.js';
@@ -20,6 +21,7 @@ try {
     const packageFetchHost = await readPackageFetchConfiguration(process.env.FLOW_PACKAGE_FETCH_CONFIG);
     const pluginInstallHost = await readPluginInstallationConfiguration(process.env.FLOW_PLUGIN_INSTALL_CONFIG);
     const pluginRuntimeHostPolicy = await readPluginRuntimeConfiguration(process.env.FLOW_PLUGIN_RUNTIME_CONFIG);
+    const pluginVerifierPolicy = await readPluginVerificationConfiguration(process.env.FLOW_PLUGIN_VERIFICATION_CONFIG);
     const activeSteering = parseActiveSteeringConfiguration(process.env.FLOW_ACTIVE_STEERING);
     // This is trusted host configuration, never a request parameter. Semantic validation lives in the auth module.
     const rawBrowserSession = process.env.FLOW_BROWSER_SESSION_JSON;
@@ -29,7 +31,7 @@ try {
       try { browserSession = JSON.parse(rawBrowserSession) as ServerOptions['browserSession']; }
       catch { throw new Error('FLOW_BROWSER_SESSION_JSON must contain valid JSON.'); }
     }
-    return { port, options: { databaseUrl, ownerToken, activeSteering, ...(pluginRuntimeHostPolicy ? { pluginRuntimeHostPolicy } : {}), ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(pluginInstallHost ? { pluginInstallHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) } satisfies ServerOptions };
+    return { port, options: { databaseUrl, ownerToken, activeSteering, ...(pluginRuntimeHostPolicy ? { pluginRuntimeHostPolicy } : {}), ...(pluginVerifierPolicy ? { pluginVerifierPolicy } : {}), ...(browserSession !== undefined ? { browserSession } : {}), ...(packageFetchHost ? { packageFetchHost } : {}), ...(pluginInstallHost ? { pluginInstallHost } : {}), ...(process.env.FLOW_ORIGIN ? { allowedOrigin: process.env.FLOW_ORIGIN } : {}) } satisfies ServerOptions };
   });
   const app = await createServer({ ...options, ...(observer ? { startupObserver: observer } : {}) });
   let closing = false;

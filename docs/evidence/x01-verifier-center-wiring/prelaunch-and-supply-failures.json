@@ -1,0 +1,15 @@
+{
+  "python39": {
+    "command": "/usr/bin/python3 -I -B run-local.py types",
+    "engineeringChildren": 0,
+    "scratchCreated": false,
+    "error": "TypeError: unsupported operand type(s) for |: type and NoneType",
+    "location": "OPS14 supervise.py:45",
+    "resolution": "existing Python3.13, helper unchanged"
+  },
+  "supply": {
+    "error": "PermissionError updating own 0444 evidence test snapshot",
+    "consequence": "following shell command ran third child behavior-fixed against unchanged old test; original failure retained, not final-source evidence",
+    "resolution": "own snapshot chmod/write/restore0444, bindings refreshed"
+  }
+}

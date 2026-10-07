@@ -1,0 +1,160 @@
+{
+  "runs": [
+    {
+      "pid": 42128,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 1961,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "types",
+      "resourceClosed": true,
+      "scratchCleanup": "EXACT_ENOENT",
+      "cleanupError": null,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "endedAt": "2026-10-07T22:24:05.648570+00:00"
+    },
+    {
+      "pid": 43304,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 1832,
+      "observed_bytes": 2348,
+      "retained_bytes": 2348,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "behavior",
+      "resourceClosed": true,
+      "scratchCleanup": "EXACT_ENOENT",
+      "cleanupError": null,
+      "rawSha256": "37fd1e3a4c0f2e58e965157fc45abf2b290c928f8945b229fcd4a335dbcb5719",
+      "endedAt": "2026-10-07T22:24:11.772444+00:00"
+    },
+    {
+      "pid": 61332,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 1825,
+      "observed_bytes": 2347,
+      "retained_bytes": 2347,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "behavior-fixed",
+      "resourceClosed": true,
+      "scratchCleanup": "EXACT_ENOENT",
+      "cleanupError": null,
+      "rawSha256": "ec0c8449bd7148e7a6c895d02f276ada7917b78593b2cd9726eb5a4c1caed68a",
+      "endedAt": "2026-10-07T22:24:36.954366+00:00"
+    },
+    {
+      "pid": 71300,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 1630,
+      "observed_bytes": 410,
+      "retained_bytes": 410,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "behavior-final",
+      "resourceClosed": true,
+      "scratchCleanup": "EXACT_ENOENT",
+      "cleanupError": null,
+      "rawSha256": "a40af4a97ca19ea6a1971677fafcdc79349503caad62f7e81a54e139bee560ba",
+      "endedAt": "2026-10-07T22:24:53.947478+00:00"
+    }
+  ]
+}

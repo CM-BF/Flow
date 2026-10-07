@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-07T22:26:06.525Z",
-  "state": "FIXED_SOURCE_AND_LOCAL_RESULTS",
+  "at": "2026-10-07T22:20:30.297Z",
+  "state": "SOURCE_CURRENT_COMBINATION_NOT_RUN",
   "base": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
   "files": 319,
-  "bytes": 1515503,
+  "bytes": 1515243,
   "rows": [
     {
       "path": "AGENTS.md",
@@ -886,10 +886,11 @@
     },
     {
       "path": "apps/server/src/plugin-verification-wiring.test.ts",
-      "commit": "d17125c112240468444b71f6a049303158efad1c",
+      "commit": "704614dc337a82a0ee6095ad452398ae93fd4371",
       "bytes": 15254,
       "sha256": "4bcd01f4db2e8792ed0ab167c0d831b23d7d7e8c608b28cb7a7e27f07dd7907e",
-      "role": "owned product/current exact test"
+      "role": "owned product/current exact test",
+      "ref": "d17125c112240468444b71f6a049303158efad1c"
     },
     {
       "path": "apps/server/src/plugins/commands.ts",
@@ -1901,10 +1902,9 @@
     },
     {
       "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
-      "commit": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
-      "bytes": 5115,
-      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
-      "role": "Pending AV fixed R3 migration input; NOT_RUN in these local checks"
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 5113,
+      "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece"
     },
     {
       "path": "pnpm-workspace.yaml",
