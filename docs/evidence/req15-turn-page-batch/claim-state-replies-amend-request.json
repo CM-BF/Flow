@@ -1,0 +1,19 @@
+{
+  "requestId": "req15-handoff-batch-read-scopes-20261007-v1",
+  "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+  "version": 1,
+  "actor": {
+    "lead": "mika",
+    "worker": "db_transaction_owner"
+  },
+  "scope": [
+    "apps/server/src/assistant/final-preview-batch.test.ts",
+    "apps/server/src/assistant/index.ts",
+    "apps/server/src/assistant/store.ts",
+    "apps/server/src/conversations/queries.ts",
+    "apps/server/src/conversations/turn-page-batch.test.ts",
+    "apps/server/src/conversations/turn-read.ts",
+    "docs/evidence/req15-turn-page-batch",
+    "plans/req15-conversation-turn-page-batch"
+  ]
+}

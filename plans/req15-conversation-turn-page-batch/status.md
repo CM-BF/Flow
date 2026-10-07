@@ -2,38 +2,38 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:19:09 UTC；主线Pool mock小增量已独审通过，11/11定向证据固定，恢复受控集成队列 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:38:11 UTC；已核main7b6接收65路径，开始最窄HTTP直接消费者准备，0新运行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原20:36:40.398Z领取仅证明claim；20:39:12UTC首份质量记录说明已开展，但没有首次实际开工的精确事件，故不猜时间。完整HTTP/main验收尚未结束 |
+| 任务时间来源 | 原20:36:40.398Z领取仅证明claim；20:39:12UTC首份质量记录说明已开展，但没有首次实际开工的精确事件，故不猜时间。公开HTTP验收尚未结束，main产品已接收 |
 | 分支交付时间 | 2026-10-07T03:07:40.672129Z为本次结果manifest封存观察；固定结果b00a181f与后续metadata提交分别见HEAD，不用Git时间冒充实际交付 |
 | 独立审查时间 | 2026-10-07T03:18:33Z，targetae899312主线mock增量；真实PG结果2026-10-07T03:08:27Z，targetb00a181f |
-| 主线集成时间 / 部署时间 | UNKNOWN / UNKNOWN；本功能未集成，未部署 |
+| 主线集成时间 / 部署时间 | 2026-10-07T03:27:47.998685Z为Lead受控接收回执事件，main7b6a196da1cc8d95da09b27fc334555a119ba4bc；部署UNKNOWN/个人runtime未改变 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；六产品d209；PG结果b00a181f；fixturefix source9e6cc60bcd1cbdef538cbce9300f09aace6c8a26；新结果ae899312a2942c112dfca6cdf5b1cb472daf3488 |
-| 工作树dirty状态 | source9e6与结果ae899已固定/push；本次仅3份metadata归档审查，提交后核clean并停写待main接收 |
+| 工作基线 / HEAD | 原base22a；当前36806867f9e20a11bdfb887d180f7404bf98552d；后继HTTP固定输入main7b6a196da1cc8d95da09b27fc334555a119ba4bc，六产品冻结 |
+| 工作树dirty状态 | 当前仅own main接收receipt、scope部分交回request/receipt与status；没有产品改动 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 实现目标 | ae899312a2942c112dfca6cdf5b1cb472daf3488 |
 | 产品验证基线 | 六产品始终d209eb7275777d50f214fd73f66d6b3c1520c459；完整8source/tests当前固定9e6cc60b（仅turn-page-batch.test mock接口变化），旧26/strict按原d209证明范围保留 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py, docs/evidence/req15-turn-page-batch/main-database.ts, docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs |
-| 检查状态 | PASSED ae899312a2942c112dfca6cdf5b1cb472daf3488 主线database固定字节下turn-page-batch.test.ts单文件11selected/11passed/exit0；旧26/strict/PG2各自历史target未重跑，HTTP/main仍开放 |
-| 已集成main状态 / HEAD | 尚未受控接收；产品d209与结果b00a181f均为分支证据，main检查由原集成owner完成 |
+| 检查状态 | NOT_RUN 新HTTP准备/运行；历史ae899单文件11/11、d209原26/strict、b00真实PG2/2分别独审且main接收，不重复运行 |
+| 已集成main状态 / HEAD | 已接收7b6a196da1cc8d95da09b27fc334555a119ba4bc；65路径307043B逐Git=delivery36806867=intake bytes/hash，SVC07 database保持，HTTP验收尚未运行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量读取测试已适配主线连接管理，定向检查与独审通过，等待主线接收 |
-| 下一可用交付 | 主线继续接收，并完成现有HTTP直接消费者验证 |
+| 当前产出 | 批量读取已进入主线，局部和真实数据库验证已通过；正在准备公开分页入口验收 |
+| 下一可用交付 | 在专用数据库与动态端口验证现有HTTP分页和详情用例 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
 | Review | [review.md](review.md)：architecture_read于2026-10-07T03:18:33Z批准source9e6/targetae899小增量，0 P1/P2；此前产品与PG结果批准范围保留 |
-| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；owner03:15:45.728Z fresh核身份/10scope全符；原[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
+| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope；2026-10-07T03:37:38.014Z原子amend移除state.ts/replies.ts，已停写并将receipt直接交C02 owner，待对方fresh领取；其它scope保留 |
 | 架构影响 | conversation读取新增内部批量Interface，外部契约/事务所有者不变；待更新target为产品d209/后续main接收，责任mika协调架构基线owner，不冒称图已同步 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -41,7 +41,7 @@
 | REQ15-01 | completed | db_transaction_owner | 20:36:40.398Z原子take，90路径既有供给，规则/技能读取完成 |
 | REQ15-02 | completed | db_transaction_owner | 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32批量接口+单项复用已固定；首红26/17/9，green待资源 |
 | REQ15-03 | completed | db_transaction_owner / mika | 依赖已核；[源码manifest](../../docs/evidence/req15-turn-page-batch/source-manifest.json)Mika21:45UTC独立APPROVED；green26/26+strict-v2 exit0，首错保留 |
-| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest已获PG_PREPARATION_SOURCE_APPROVED；真实2PG/2pass、RR与样本roundtrip/UTF8测量已完成；结果独审APPROVED，HTTP直接消费者及main仍开放 |
+| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest已获PG_PREPARATION_SOURCE_APPROVED；真实2PG/2pass、RR与样本roundtrip/UTF8测量已完成；结果独审APPROVED，main已接收，HTTP直接消费者仍开放 |
 
 ## Dashboard 与交接
 
@@ -121,3 +121,7 @@ HTTP接收入口（按fixed22a只读核）：`apps/server/src/conversations/inde
 architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pages-main payload，03:16:06.400242Z至03:16:07.202537Z单次child，11selected/11passed/exit0/0.877739s，raw1908B含donor LOADED marker；PGID87744 absent/EOF、signals/secondary空，TMP空同inode删除且owner精确lstat absent。local实际终态已直接交回architecture_read。0PG/HTTP/provider，未重跑旧26、strict/types/collect或2PG。[单份新记录](../../docs/evidence/req15-turn-page-batch/main-database-validation.json) SHAb96634b098b587e6268975b7dfae47ea190eb17d3c3e2b4ef7f620c184074933绑定完整8源55483B及2输出5332B，source9e6/结果ae899；当前小增量独审PENDING，旧PG原件/manifest未改变。新集成应以此8源为准，替代先前2abe manifest中唯一旧test blob；6产品仍d209，HTTP入口与专库适配边界保持原段。
 
 2026-10-07 03:19:09 UTC 收口：architecture_read/gpt-6-astra于2026-10-07T03:18:33Z对source9e6cc60bcd1cbdef538cbce9300f09aace6c8a26 / resultae899312a2942c112dfca6cdf5b1cb472daf3488给出SOURCE_AND_RESULT_REVIEW_APPROVED /0 P1/P2。14bindings逐Git=WT/bytes/hash，donor=main8c80=SVCe28，唯一mock修复保留全部断言，11/11真实单文件、raw1908B完整/最终group absent/无signals或secondary、精确TMP lstat absent；reviewer0运行/import/PG/写。批准限本mock兼容及局部consumer证据，非HTTP/main。最小intake现用main-database-validation.json的8源，6产品不变，仅test新blob；当前integration、claim保留，提交/push后完全停写等待接收和后续scope交回。
+
+2026-10-07 03:38:11 UTC main事实同步：[main-receipt](../../docs/evidence/req15-turn-page-batch/main-receipt.json)固定main7b6/delivery368及intake SHA94ef2d7e06f0a91fd1a472b4f0f6b67c6c72d608bbc72035afd503a968fc1334，65文件307043B逐Git/hash全符。原26、PG2及11定向证据分层接收，不等于HTTP完成或部署。后继只适配现有immutable paging/lazy detail单例，保原断言，使用固定main组合（含SVC07 transaction），不启动flow_chat01或整套suite。
+
+为C02 policy消费，在无源写入的安全点明确停止state.ts/replies.ts；fresh v1后原子amend成功为v2，[回执](../../docs/evidence/req15-turn-page-batch/claim-state-replies-amend-receipt.json) SHA9e045f0a7153060028bc4d680479db30d0313fc18716535d5776e3db67512d0c已直接交chatui01_owner。此处只证明移除，本owner不推断新writer已获权。HTTP固定main字节只读消费，不覆盖移交路径。
