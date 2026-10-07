@@ -31,3 +31,7 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 Target abc0736dfbfe4c3dcbdd11d73e9386573ef565db; status APPROVED at 2026-10-07T19:42:43.000Z by chatui01_owner / gpt-6-astra; packet 3fcdf665a1110907418b277726a86415adf0fcfe, 0 P1/P2. Canonical [review-ready](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json). Scope four process source/test leaves and this limited local result; original 4dc approval does not grant the new kind. No PG/T7/runtime/center claim.
 
 2026-10-07T20:29:18.831Z: Owner transcribed the existing review forwarded by Mika; this is not a new independent review. Canonical [transcript](../../docs/evidence/x01-trusted-process-host/verifier-extension/review-approval-transcript.json) binds 46 inputs/211580B and manifest253d88fa…57f80. Seven new plus three old direct cases are ten distinct across rounds; two types passes, five children6407ms/raw3708B, RETURN19:35:26.901Z. Original fixture failure/EPERM and unknown whole-tool wall/peak remain. Approval covers four leaves/local fidelity only, not runtime dispatch, center verdict, T7 release, this extension main or deployment.
+
+## Main intake observation（非新独审）
+
+2026-10-07T20:34:44.730Z：中央接收3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df at20:33:13.567Z，四叶与abc0736逐blob全等且此main为当前main祖先；复用19:42:43 chatui批准，不重测。原review未验证main是历史限定，当前源码集成已由实际main事实确认。T7/runtime/center/PG/部署仍未验。详见verifier-extension/main-accepted.json。

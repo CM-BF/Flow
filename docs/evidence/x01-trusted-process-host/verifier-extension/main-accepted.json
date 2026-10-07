@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-10-07T20:34:44.730Z",
+  "segmentStart": "2026-10-07T20:33:57.000Z",
+  "acceptedAt": "2026-10-07T20:33:13.567Z",
+  "acceptedMain": "3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df",
+  "observedMainAndOrigin": "3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df",
+  "acceptedMainIsAncestor": true,
+  "source": "abc0736dfbfe4c3dcbdd11d73e9386573ef565db",
+  "delivery": "3fcdf665a1110907418b277726a86415adf0fcfe",
+  "reviewArchive": "d48195622bc1d843ea3f6de783095c271ac6c45e",
+  "canonicalCentralReceipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/process-verifier-extension-intake.json",
+    "bytes": 2017,
+    "sha256": "d5798067dc627419ab11290fc23069894d99aee894a044150519ec1721255afb"
+  },
+  "fourLeaves": [
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "bytes": 9901,
+      "sha256": "7588e4ac0b4e7bdec2a5a3d8e0fb605880f8040c03fac5bcbf8d6dce7041e01f",
+      "mainBlob": "526726f70d8e9b9626ee6480e47f5c6ab2da76ec",
+      "sourceBlob": "526726f70d8e9b9626ee6480e47f5c6ab2da76ec"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-worker.ts",
+      "bytes": 2939,
+      "sha256": "a7bd2aa3cf677a8c74ffa9d30718f5aa33c0e59bac04da33ec68cb830b5dd8b6",
+      "mainBlob": "12921beb2e5abe8c47ce2eb07ec0387ded3d77d0",
+      "sourceBlob": "12921beb2e5abe8c47ce2eb07ec0387ded3d77d0"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-protocol.ts",
+      "bytes": 4278,
+      "sha256": "2c764a58ee4499df5958359bf9adc2173e1883332df297ce3b7317002031c365",
+      "mainBlob": "881f06c99b34bf0dda9532937f3b1722bcd6ae2e",
+      "sourceBlob": "881f06c99b34bf0dda9532937f3b1722bcd6ae2e"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 12898,
+      "sha256": "4c674c07198de5fd702669a335c01ac35626f44fa41ad3c6799f33d7c42d637d",
+      "mainBlob": "aaf38a9454268517e5df06f62666b0d570d2d28c",
+      "sourceBlob": "aaf38a9454268517e5df06f62666b0d570d2d28c"
+    }
+  ],
+  "scopeFact": "Only four exact approved leaves now integrated. Source commit ancestry is not asserted; controlled blob equality above is authoritative.",
+  "historicalNotValidatedClarification": "Central receipt notValidated retains the original review scope (including then-unvalidated main integration). Actual accepted commit ancestry and four main blobs now establish this extension source integration; no runtime, deployment or PG validation is inferred.",
+  "stillNotValidated": [
+    "runRunner verifier dispatch",
+    "center authorization/verdict/completion gate",
+    "T7 actual release artifact",
+    "deployment",
+    "PG"
+  ],
+  "claim": {
+    "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 4,
+    "state": "ACTIVE",
+    "scopes": 11,
+    "observedAt": "2026-10-07T20:33:58.529Z",
+    "runtimePermanentlyHandedBack": true
+  },
+  "quality": {
+    "at": "2026-10-07T20:34:44.730Z",
+    "method": "Reused local find-skills/codebase-design/clean-code: checked metadata naming, exact scope, historical vs current claims and error/unknown limits; no new helper or repeated validation.",
+    "productWrites": 0,
+    "engineeringChecks": 0,
+    "rawOrManifestChanges": 0,
+    "growthBudgetBytes": 65536,
+    "wholeChangedMetadataFilesBytes": 28200,
+    "changedMetadataFiles": 4
+  }
+}

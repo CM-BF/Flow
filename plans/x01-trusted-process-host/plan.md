@@ -67,4 +67,4 @@
 
 为落实已审32槽FS身份与回收单一职责，最大候选追加一个私有leaf `apps/runner/src/plugins/process-resources.ts`，须先amend成功。它不提供一般文件/进程恢复平台；资源factory需要明确close（runner finally调用）以清除正常owner marker，原invoke Interface仍不变。
 
-- [ ] X01TP-06：同一受信进程Host新增显式invokeVerifier，严格kind配对、真实材料验证、取消/UNKNOWN与旧tool兼容；不扩中心/公开producer/runtime分派，T7仍独立。
+- [x] X01TP-06：同一受信进程Host新增显式invokeVerifier，严格kind配对、真实材料验证、取消/UNKNOWN与旧tool兼容；不扩中心/公开producer/runtime分派，T7仍独立。

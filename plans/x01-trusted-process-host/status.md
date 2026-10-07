@@ -6,12 +6,12 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | integrated |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 受信验证器独立worker扩展已通过源码与局部结果独审，等待受控集成。 |
-| 下一可用交付 | 已审4叶扩展进入主线；runner启动与验证器完整接线由后继owner处理。 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 受信验证器独立worker源码已接收进主线；保留取消与未知结果，部署及完整runner/中心链另待验收。 |
+| 下一可用交付 | 本片段已交付；后继runner/中心接线与真实发布由各自owner继续。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
@@ -23,8 +23,8 @@
 | 实现范围 | apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-host.test.ts |
 | 检查状态 | PASSED abc0736dfbfe4c3dcbdd11d73e9386573ef565db 10distinct分轮：9pass+1fixture失败→定向1pass；typed原文定向1pass；两focusedtypes0。首次失败保留。 |
 | Review | APPROVED abc0736dfbfe4c3dcbdd11d73e9386573ef565db chatui01_owner 2026-10-07T19:42:43.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；0P1/P2。见verifier-extension/review-approval-transcript.json（原结论转录，非新审）。 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED 本verifier扩展；原4dc工具进程已在main96b424777cd2c66e603157649e5a859ca1b914f6接收，T7/部署仍NOT_RUN。 |
-| 最近更新时间 | 2026-10-07T20:29:18.831Z |
+| 已集成main状态 / HEAD | INTEGRATED 3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df；本verifier扩展4叶逐blob等批准abc0736。T7/部署/完整runtime-center链仍未验。 |
+| 最近更新时间 | 2026-10-07T20:34:44.730Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
@@ -36,7 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
-| X01TP-06 | in-progress | db_transaction_owner | 固定abc0736dfbfe4c3dcbdd11d73e9386573ef565db已独审批准；待主线集成，T7/runtime/center另界。 |
+| X01TP-06 | completed | db_transaction_owner | 固定abc0736已独审并于20:33:13.567Z接收main3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df四叶；T7/runtime/center另界。 |
 | X01TP-05 | in-progress | db_transaction_owner | 源码已入远端main96b42477；T7真实发布后继未验，完整TODO保持开放。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
@@ -48,13 +48,13 @@
 | 实际开工 | 2026-10-07T12:38:43.000Z / owner clock |
 | 分支交付 | 2026-10-07T13:10:59.985318+00:00 / fixed首产品 af43f7e61395125aed3f0725a9e4305c9e086cdd；design旧交付12:47:14.829Z保留 |
 | 独立审查 | 2026-10-07T19:42:43.000Z / chatui固定abc0736扩展批准；原4dc于13:23:25Z批准及设计历史独立保留 |
-| 主线集成 | 2026-10-07T15:10:04.671Z / 中央接收receipt；远端同步15:22:52.000Z见后继接收记录 |
+| 主线集成 | 2026-10-07T20:33:13.567Z / 本扩展中央receipt；原4dc的15:10:04.671Z接收及15:22:52远端同步仍为历史事实 |
 | 部署 | NOT_DEPLOYED |
 | 完整完成 | NOT_COMPLETED |
 
 ## 下一步
 
-当前 verifier 扩展已审待受控集成；普通资源19:35:26.901Z已归还。原两execution叶与本次runtime.ts均永久交回，不写后继scope；assignment_review须fresh take后才可改runtime。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
+当前 verifier 扩展四叶已接收main3d6e0f54；普通资源19:35:26.901Z已归还。原两execution叶与本次runtime.ts均永久交回，不写后继scope；assignment_review须fresh take后才可改runtime。原工具进程已入远端main；原T7真实artifact仍NOT_RUN，后继runtime/center完整验证链独立。架构影响：planned同Host增加verifier分派，待本片main后由原架构owner更新，未冒部署。
 
 ## 计划复审修复段
 
@@ -99,3 +99,7 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 20:28:33.852Z永久STOP `apps/runner/src/runtime.ts`；20:28:34.055Z COMMITTED v3/12→v4/11，仅移除该leaf。当前main18bf17ea26cacb4a12cd89f962b455f6688f729d与旧WT runtime均22367B/SHA24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d，未改源/覆盖旧blob。回执及前像见[handoff](../../docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json)。新owner必须fresh take；本owner不恢复该leaf写权，其余11scope保持。扩展仍NOT_INTEGRATED、runtime分派/center门禁/T7/部署未验。
 
 clean-code metadata复核：现阶段与历史分开、原审结论注明转录、身份/错误/时间证据不合并，沿本地find-skills/codebase-design/clean-code方法；未改旧raw/manifest，无新框架。提交push并核clean后全部STOP。
+
+## Verifier扩展主线接收
+
+2026-10-07T20:34:44.730Z：只读核main/origin3d6e0f546080a9dc4c6fe9c702fd68b6a447d9df clean，中央receipt at20:33:13.567Z，四叶共30016B逐blob等已审abc0736；见[接收核验](../../docs/evidence/x01-trusted-process-host/verifier-extension/main-accepted.json)。中央notValidated是原审边界历史，不能据此否认当前源码已main；本段未重测。T7、runtime分派、center判决/完成门禁及部署仍未验，X01TP-05保持开放。runtime.ts永久交回不变，claimv4/11保留；提交push后全写STOP。架构后继继续由原架构owner根据此main更新，未冒图已更新。
