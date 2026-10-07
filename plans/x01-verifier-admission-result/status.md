@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:13:37.406Z |
+| 最近更新时间 | 2026-10-07T21:21:34.260Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -15,7 +15,7 @@
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v1 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
 | 工作树 dirty 状态 | 修复source STOP；仅封存metadata，提交后clean |
-| 工作分支状态 | ready（局部核心待独审，未公开装配） |
+| 工作分支状态 | in-progress（核心已审，真实事务准备） |
 | 实现目标 | 53d50dddcefb5b1e060f45b5a7addd429aa6ec81 |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：修复3/3公共调用反例和affected strict0；旧15distinct不重跑/旧错误保留，PG NOT_RUN |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | pending | architecture_read | types/pure待执行，真实PG与装配另派 |
+| VAR-04 | in-progress | architecture_read | 新5case真实事务准备；types/list未运行，PG NOT_OPEN |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -56,3 +56,5 @@
 修复段实质进展：21:07:19恢复原tool permission helper；21:08:40首次direct失败因测试池callback形状；修fake后21:09:13 direct3/3、21:09:24.695 strict/资源RETURN。只有2产品叶变化，其余core冻结；ignored .vite缓存从新closure排除，原282声明保持历史。
 
 2026-10-07T21:13:37.406Z：在原已开修复段预留64KiB尾额归档批准，0新工程/PG。source53d、packet2128固定；源码STOP/claim保留。真实PG窗口未申请/未开，不为未发生等待编造起点。原任务首次开工20:31:27不重置，完整完成仍NOT_COMPLETED。
+
+VAR-04 新准备段：2026-10-07T21:18:50.000Z–21:43:50.000Z，8MiB含全部新增供给/TMP/raw。首次写入2026-10-07T21:21:34.260Z；Arc短hold期间仅只读，未新增growth。只新增事务测试与own evidence，已审53d产品冻结；新5case未运行，真实PG NOT_OPEN。
