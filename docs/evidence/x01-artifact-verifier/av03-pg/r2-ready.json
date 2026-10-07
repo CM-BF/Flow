@@ -13,9 +13,9 @@
   "external": 191,
   "links": 16,
   "sql": 34,
-  "deltaRows": 6,
-  "unchangedRows": 275,
-  "deltaBindingValidation": "6 rows fixedGit=currentWT/SHA/bytes;275 original rows/191external/16links metadata identical;full execution fresh required",
+  "deltaRows": 7,
+  "unchangedRows": 274,
+  "deltaBindingValidation": "Relative to original R1: six prepared R2 rows plus one current claim receipt metadata row changed,274 original rows unchanged. Relative to pre-handback R2: only claim receipt changed,280 rows unchanged. All product/test/fixture/caller bytes unchanged by handback;191external/16links metadata identical;full execution fresh required.",
   "callerValidation": "Only independent RUN/input/manifest literal replacement of approved R1 caller;unchanged environment/deadlines/cleanup;static not executed",
   "futureBudget": {
     "totalSeconds": 180,
