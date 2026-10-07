@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-07T13:39:37.231881+00:00",
+  "source": "6a258a3886f0491b8487738c19c09dc631b98f2c",
+  "previousSource": "424c6466bd28a838b91cc490a7b52021202b4d17",
+  "changed": [
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "diffSha256": "f8ae382545974564fd9f9e36033319a943a9453d697ac9710c1cab36fdbd8917",
+  "actual": "Filechooser wait rejected after4500ms while preceding click awaited; choosing promise had no rejection observer until click completed. Node process.log unhandled rejection and exit1 confirm worker result/finally bypass. Click cause is UNKNOWN without failed DOM.",
+  "minimalFix": "Assert native Add Attachment enabled before listener; immediately await Promise.all([filechooser event, real click]) then real setFiles. Both failures observed by existing worker catch/finally. No timeout/predicate weakening, product/adapters/parent/resources unchanged.",
+  "validation": "SOURCE_ONLY; related actual not rerun; missing gracefulfixture receipt remains historical, no auto retry",
+  "review": {
+    "path": "source-research/root-msg03-6a258-chooser-error-review-20261007.json",
+    "bytes": 3301,
+    "sha256": "f3d883bc6bfe7c89285b217585f6741cc06c0e014b7752e51f3cab9042bef449",
+    "decision": "APPROVED_SCOPED_ERROR_OBSERVATION_FIX_NOT_RUNTIME_PASS"
+  }
+}

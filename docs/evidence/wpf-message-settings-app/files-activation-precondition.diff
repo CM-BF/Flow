@@ -1,0 +1,16 @@
+diff --git a/apps/web/test/conversation-recovery.browser.ts b/apps/web/test/conversation-recovery.browser.ts
+index 0b918692..34a2ebb0 100644
+--- a/apps/web/test/conversation-recovery.browser.ts
++++ b/apps/web/test/conversation-recovery.browser.ts
+@@ -1173,6 +1173,11 @@ async function worker(init: Init) {
+       }, { operation, value });
+       await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+       try {
++        const files = page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "Files", exact: true });
++        await files.click();
++        const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
++        await expect(picker).toBeVisible();
++        await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+         for (const mode of ["failure", "cancel"] as const) {
+           await apply(a); await input().fill(original); await upload("held-1.txt"); await upload("held-2.txt");
+           const savedA = async () => (await records(page)).find(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`

@@ -7,7 +7,8 @@ import type { SelectedContext } from "../conversation-context/controller";
 import type { AttachmentItem } from "../attachments/controller";
 import { freezeMetadata } from "../attachments/recovery";
 import { attachmentMetadataSchema, attachmentNameSchema } from "../../../../packages/contracts/src/attachments";
-import { idSchema, knowledgeCreateSchema } from "@flow/contracts";
+import { freezeMessageSettings } from "../conversation-context/receipts";
+import { idSchema, knowledgeCreateSchema, type ClaudeTurnSettings } from "@flow/contracts";
 import { Button } from "../components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "../components/ui/dialog";
 import { ConversationRecoveryJournal, RecoveryError, recoveryValue, namespaceKey, type Json, type RecoveryNamespace, type RecoveryOwner, type RecoveryRecord, type CommandRecord, type CommandRecovery, type DraftRecord } from "./journal";
@@ -32,6 +33,7 @@ export interface RecoveryHost {
   retry(record: CommandRecord): Promise<void>;
 }
 export interface CompleteDraft {
+  messageSettings?: Readonly<ClaudeTurnSettings>;
   text: string; intent: "follow-up" | "queue"; profile: ProfileSelection;
   steering: readonly { taskId: string; turnId: string; messageId: string; text: string }[];
   projectId: string | null; projectTitle: string | null; knowledge: readonly SelectedContext[]; attachments: readonly AttachmentItem[];
@@ -66,7 +68,8 @@ export function readRecoveryDraft(value: Json): CompleteDraft {
     if (typeof item.text !== "string") throw Error("Invalid steering draft text.");
     return { taskId: idSchema.parse(item.taskId), turnId: idSchema.parse(item.turnId), messageId: idSchema.parse(item.messageId), text: item.text };
   });
-  return { steering, text: data.text, intent: data.intent as CompleteDraft["intent"], profile, projectId, projectTitle, knowledge, attachments };
+  const messageSettings = data.messageSettings === undefined ? undefined : freezeMessageSettings(data.messageSettings);
+  return { ...(messageSettings === undefined ? {} : { messageSettings }), steering, text: data.text, intent: data.intent as CompleteDraft["intent"], profile, projectId, projectTitle, knowledge, attachments };
 }
 /** The real App and controlled tests use this same awaited-read / synchronous-apply seam. */
 export async function restoreConversationDraft(record: DraftRecord, lease: RecoveryRestoreLease, target: {

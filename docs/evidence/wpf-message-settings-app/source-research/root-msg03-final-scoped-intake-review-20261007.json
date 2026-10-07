@@ -1,0 +1,348 @@
+{
+  "recordedAt": "2026-10-07T14:34:18.608697+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18_WITH_SCOPED_SELECTED_ACTUAL_EVIDENCE",
+  "blockingFindings": [],
+  "task": "WPF-MESSAGESETTINGS03",
+  "branch": "codex/web-message-settings-app",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "implementationTarget": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "productMembershipRepair": "b92470377349dea17a12d0abc244f0fed7992e33",
+  "sourcePaths": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "2e3a37130a64af0c5f2080eb64f93a7201041c30",
+        "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+        "bytes": 71948
+      },
+      "target": {
+        "blob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+        "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d",
+        "bytes": 74182
+      }
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "cb376b2a6c83c13adbab2743e9d9be27c2b8acb7",
+        "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072",
+        "bytes": 2254
+      },
+      "target": {
+        "blob": "d0f9a27344a05bfdbcddb90f671f7f4b1e205129",
+        "sha256": "b0cafed2fd93f4e34e5e87eeb7f4e5436a44db509d60730fa7eccc7c416c1229",
+        "bytes": 2761
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+        "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+        "bytes": 24416
+      },
+      "target": {
+        "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+        "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+        "bytes": 29561
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+        "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+        "bytes": 8729
+      },
+      "target": {
+        "blob": "0971cd933ac662d2735e11e15cc82a5cab3333dc",
+        "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98",
+        "bytes": 8902
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+        "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+        "bytes": 28678
+      },
+      "target": {
+        "blob": "9323ea44044224bd30447eeff4da39b721d96bb8",
+        "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2",
+        "bytes": 28820
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "847d6d0f67e0cf3ba89ec26d9939fa73dda81e8b",
+        "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1",
+        "bytes": 8924
+      },
+      "target": {
+        "blob": "a5892a63125039aab6e2321f8b8b7b4856ece6bb",
+        "sha256": "8b8f9ba36bc41cd4bac84347de76722a41d1f8e0438a8ba09f5d3b1f9b589ef5",
+        "bytes": 9267
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "443341d0d2da42de08dd3144e75784856f4413cf",
+        "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+        "bytes": 16768
+      },
+      "target": {
+        "blob": "26010ea9ae6250a5a04635f4dd5d54c1efdf3195",
+        "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9",
+        "bytes": 17132
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "bfbfea3240ad9917c257eae386ce55b38857d37d",
+        "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65",
+        "bytes": 13034
+      },
+      "target": {
+        "blob": "268eadae2744d11a85ac073f1196b148d2339029",
+        "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d",
+        "bytes": 13208
+      }
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "1a5d857a0ef3d462f82f44afd04b2cb6f949806b",
+        "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+        "bytes": 25804
+      },
+      "target": {
+        "blob": "cac888ff5efd7da63749ee8358cbf8aba88fab37",
+        "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b",
+        "bytes": 27546
+      }
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "b48661a9ece128de829e8110d70dfb88b7661e77",
+        "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+        "bytes": 2885
+      },
+      "target": {
+        "blob": "341d8b9a28dff1b6d02714920fed372879495b58",
+        "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54",
+        "bytes": 3942
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+        "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+        "bytes": 22929
+      },
+      "target": {
+        "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+        "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+        "bytes": 23456
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": false
+      },
+      "target": {
+        "blob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+        "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
+        "bytes": 15566
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "f94b75d126125885bda0fc62f405c9dc59d0f293",
+        "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+        "bytes": 23725
+      },
+      "target": {
+        "blob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+        "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7",
+        "bytes": 24400
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+        "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+        "bytes": 24603
+      },
+      "target": {
+        "blob": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+        "sha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2",
+        "bytes": 25841
+      }
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+        "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+        "bytes": 33220
+      },
+      "target": {
+        "blob": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+        "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+        "bytes": 33552
+      }
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "57833f580b6e0bdb22448704676778f2e810e81f",
+        "sha256": "584f5168574c183f284061f078b91f47259eb4e7764df5aab8dbec17f11060a8",
+        "bytes": 116556
+      },
+      "target": {
+        "blob": "08aa0e50cdc67d851ff3b4e3f30b5612c8c78753",
+        "sha256": "0ffac211bd3d3bd62ea04d17acd307decc5414b9e469e79436093b63d922669b",
+        "bytes": 139496
+      }
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8",
+        "sha256": "5ebc9f3a6702b46a6e0f4aa5b418649c2999a6039332c5685053946cf693a6ed",
+        "bytes": 48765
+      },
+      "target": {
+        "blob": "14046571b1b078dc644238dfd480955236fd4d63",
+        "sha256": "77b78dc4d67ec3fb10f482cd7c7f52da08bcf9b438239c0ac2f8221aa1d3ae91",
+        "bytes": 54903
+      }
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "current": "BASE_MATCH",
+      "base": {
+        "exists": true,
+        "blob": "ccb8980c0ccab225010cfbc07b2d66cef317a92c",
+        "sha256": "a20112bd30c5736f7bfbd5ca8618aae78a8cf8b1e092c1f8b93e3b0cafb46589",
+        "bytes": 73278
+      },
+      "target": {
+        "blob": "089f201a77a8b2246dfd0482b6978d56f0ebd71f",
+        "sha256": "65249d1197f87f35e38c60d64a33f128442e0eb6a4149a7c579ae8fa2f4b52ce",
+        "bytes": 95881
+      }
+    }
+  ],
+  "mainComparison": {
+    "fixedHead": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+    "counts": {
+      "BASE_MATCH": 18,
+      "TARGET_MATCH": 0,
+      "DIFF_REQUIRES_INTEGRATOR": 0
+    },
+    "notIntegration": "Read-only snapshot; actual integrator must freshcompare atwrite. Currentmatchisnotmainacceptance."
+  },
+  "reviewInputs": [
+    {
+      "path": "/private/tmp/root-msg03-9c46-mounted-source-local-review-20261007.json",
+      "bytes": 7399,
+      "sha256": "8488fa5656763897bf0b9a3c681ee2b7dacf80ae0db6a81eb5b6c2d928c9c981"
+    },
+    {
+      "path": "/private/tmp/root-msg03-b924-membership-source-local-review-20261007.json",
+      "bytes": 9199,
+      "sha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad"
+    },
+    {
+      "path": "/private/tmp/root-msg03-membership-phase-preparation-review-20261007.json",
+      "bytes": 4779,
+      "sha256": "f05b526dabca20c46166ead118338d1f8d88e964e5975df0ab647332e2d58193"
+    },
+    {
+      "path": "/private/tmp/root-msg03-membership-material-lifecycle-review-20261007.json",
+      "bytes": 9984,
+      "sha256": "5853c399ce0af532ef7cdeda79ecdf2c909d8592f26762873d6d285b66f1c5be"
+    },
+    {
+      "path": "/private/tmp/w01-msg03-membership-first-business-review-20261007.json",
+      "bytes": 18492,
+      "sha256": "328f80e535a0033def9d65001e1d01dee6b65c1efe51a9600392228e959ed594"
+    },
+    {
+      "path": "/private/tmp/root-msg03-membership-settings-lifecycle-visual-review-20261007.json",
+      "bytes": 13393,
+      "sha256": "fc552156fe109bce2f0c6e034568bc991b69bf0f13b0dc782c12778ee8e299bd"
+    },
+    {
+      "path": "/private/tmp/w01-msg03-membership-second-business-review-20261007.json",
+      "bytes": 21788,
+      "sha256": "5399df0bbc600b742d8d086afcc6a0f82d155a3289e13f97951f3e1e049cef66"
+    }
+  ],
+  "accepted": [
+    "PreviouslyreviewedApp perviewsettingauthority/privateCAS/P01/officialThread wiringplus reviewedb924 commonattachment membershipfix;18exact targetGitpins boundabove.",
+    "Boundeddirect/types evidence and both originallyselected actualjourneys each2/2, includingduplicatedcookieRead in separateisolated runs. Root lifecycle+W01business independentreviews jointlysupport thisscope.",
+    "Cancel heldA→B exactdurable ref/late-settlement stability;explicitrestoreA;SendA/QueueB byte-identicaloriginalkey retriesafterrealstrictACKprefixloss;currentB/C andhistoricalA remain distinct.",
+    "Expired-session publicreauth followedbyexplicitsettings-onlyrestore withoutbusinessPOST, nativeP01Enter/Escapefocusreturn, selectedgroupdual390theme/fullname/footer assertions plusrootPNGinspection.",
+    "ActualfullownedRETURN forbothruns,phase26368ms closed/no automaticrepeat;oldfourFAIL andthirdfixturegracefulUNKNOWN remainunchanged."
+  ],
+  "limits": [
+    "FirstmaterialfailurebranchB issettings-onlyUI/0chips,notaseparatefulldurableemptyB snapshotassertion;cancelbranchcontainsdurablefullB identityassertion.",
+    "Independent completeDraft/themes390/otherRecoveryjourneys remainNOT_SELECTED inthese runs;donotupgrade solelybecause checknames mentioncomplete/nativekeyboard. SelectOption/check/click doesnotprovenativeArrow/Space for everyfacet.",
+    "Syntheticprofilepublisher andfixedHTTP/PGfixture notpersonalrealmodeldirectory,providerexecution,fullsecondcenter/SSE/lateLogout/securityorold7272consumercompatibility.",
+    "Mainintake/deployment andfullArc/Codexaestheticacceptance remainopen;GOsharedoverlayfeedback+rootgutterP3 belongexistingvisualfollowup,notnewblockingfinding."
+  ],
+  "integrationInstructions": [
+    "Use18exact sourcebase/targetbindings andownsupportintake only;preserveotherownerchanges andlegalclaims. Rootdoesnotmergeorgrantnewwriter.",
+    "IfOriginalminimalreleasefirstappliescommon2filepatch:attachments mayalreadyTARGET_MATCH;sessionmaybecurrentoldbaseplusonegetterfix. Do notoverwritefromc130orblindcopyentireMSGsession;integrator mustcomposeexactcurrentchanges andvalidate resultingconsumer.",
+    "Do nothold minimalpublishedWeb forwholeMSG adoption. Separatealreadyapprovedtwofilepatch source754608remainsits ownreleasepath;newdescriptors/oldconsumeractual/fourAppcompatibilitystillrequired.",
+    "MSGAPP-06 hasindependentreviewcompletednow,butlegalmainacceptancepartstillpending;branchdone/checks/review/mainintegrationmustremainseparate."
+  ],
+  "cleanCode": "Source,authority,lifetime anderrorhandlingreview reusedfixedexistingapprovals;newshareddraftselector hasoneauthority andunmountregression, actualassertioncoverageverifiedratherthaninferredfromlabels. Noextraabstractionsorimplementationchangesrequested.",
+  "rootRuntime": "Read-onlyGit/JSON/hash/PNGinspection;no productimport/tests/PG/Chrome/privateenv/processsignal."
+}

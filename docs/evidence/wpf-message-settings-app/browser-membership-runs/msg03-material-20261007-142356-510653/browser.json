@@ -1,0 +1,769 @@
+{
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "mounted App official material failure/cancel preserve B and explicitly restore complete A"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8694.246416,
+    "elapsedMs": 8694.246416
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8694.325416,
+      "endedOffsetMs": 9671.037291,
+      "elapsedMs": 976.7118750000009,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsMaterialReturn",
+      "startedOffsetMs": 9671.055958,
+      "endedOffsetMs": 12216.186916,
+      "elapsedMs": 2545.1309579999997,
+      "outcome": "PASSED"
+    }
+  ],
+  "materialPreparation": [
+    {
+      "mode": "failure",
+      "restoredCompleteDraft": true,
+      "businessPostCount": 0,
+      "observation": {
+        "armed": null,
+        "pending": false,
+        "disposed": false,
+        "rows": [
+          {
+            "label": "failure",
+            "outcome": "failed",
+            "originalValidated": true,
+            "abortObserved": false,
+            "returned": false
+          }
+        ],
+        "ready": [
+          {
+            "id": "93ac0fb9-6c2d-4dc1-9d06-085cb632d17a",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "e32ecb5b-a926-448c-ae8d-37c2ed31864e",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "87849d4b-c063-4f1c-b18a-6116dccb666c",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "980269bc-ccb0-4203-aa5a-29e4af7d47d8",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "mode": "cancel",
+      "restoredCompleteDraft": true,
+      "businessPostCount": 0,
+      "observation": {
+        "armed": null,
+        "pending": false,
+        "disposed": false,
+        "rows": [
+          {
+            "label": "failure",
+            "outcome": "failed",
+            "originalValidated": true,
+            "abortObserved": false,
+            "returned": false
+          },
+          {
+            "label": "cancel",
+            "outcome": "released",
+            "originalValidated": true,
+            "abortObserved": true,
+            "returned": true
+          }
+        ],
+        "ready": [
+          {
+            "id": "93ac0fb9-6c2d-4dc1-9d06-085cb632d17a",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "e32ecb5b-a926-448c-ae8d-37c2ed31864e",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "87849d4b-c063-4f1c-b18a-6116dccb666c",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "980269bc-ccb0-4203-aa5a-29e4af7d47d8",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          },
+          {
+            "id": "9147338c-abf6-4f0e-86c6-3afd312a614f",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "df53eea6-aa24-43bf-8398-5e9c2150301d",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "2eb19739-ea25-499d-92f5-ffae2698fb57",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "263b2637-11c1-472c-b474-b13d61d7980b",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          },
+          {
+            "id": "b3e6ea5d-0289-4008-875c-8d14c262e490",
+            "name": "held-b.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "417e76d6-e934-40b0-b04b-94c4989520d1",
+              "version": 1,
+              "contentDigest": "caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "mode": "success",
+      "businessPostCount": 1,
+      "observation": {
+        "armed": null,
+        "pending": false,
+        "disposed": false,
+        "rows": [
+          {
+            "label": "failure",
+            "outcome": "failed",
+            "originalValidated": true,
+            "abortObserved": false,
+            "returned": false
+          },
+          {
+            "label": "cancel",
+            "outcome": "released",
+            "originalValidated": true,
+            "abortObserved": true,
+            "returned": true
+          },
+          {
+            "label": "success",
+            "outcome": "released",
+            "originalValidated": true,
+            "abortObserved": false,
+            "returned": true
+          }
+        ],
+        "ready": [
+          {
+            "id": "93ac0fb9-6c2d-4dc1-9d06-085cb632d17a",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "e32ecb5b-a926-448c-ae8d-37c2ed31864e",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "87849d4b-c063-4f1c-b18a-6116dccb666c",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "980269bc-ccb0-4203-aa5a-29e4af7d47d8",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          },
+          {
+            "id": "9147338c-abf6-4f0e-86c6-3afd312a614f",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "df53eea6-aa24-43bf-8398-5e9c2150301d",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "2eb19739-ea25-499d-92f5-ffae2698fb57",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "263b2637-11c1-472c-b474-b13d61d7980b",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          },
+          {
+            "id": "b3e6ea5d-0289-4008-875c-8d14c262e490",
+            "name": "held-b.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "417e76d6-e934-40b0-b04b-94c4989520d1",
+              "version": 1,
+              "contentDigest": "caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00"
+            }
+          },
+          {
+            "id": "880390d5-0911-4daa-9ddc-f6399dfbd75d",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c",
+              "resourceId": "f6154cac-ec21-4575-8a1a-3c6262985a42",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failure": null,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1df5e563-8684-44a9-b17c-f799950cf28b",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1df5e563-8684-44a9-b17c-f799950cf28b/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1df5e563-8684-44a9-b17c-f799950cf28b/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "0e02df86-1aed-4927-939e-2ba9775406fc",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-1.txt\",\"byteLength\":23,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "7540f6c7-54e9-4745-a031-47436016d5ce",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-2.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-2.txt\",\"byteLength\":23,\"contentDigest\":\"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "32c84cdc-26a2-4946-b09b-89f8ea760b6d",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-1.txt\",\"byteLength\":23,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "1126f757-8516-4880-a8f7-1f12691c463b",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-2.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-2.txt\",\"byteLength\":23,\"contentDigest\":\"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "5ab05a2b-dd9f-4144-8242-7f074a029f5b",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-b.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-b.txt\",\"byteLength\":23,\"contentDigest\":\"caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c/attachments",
+      "key": "0fcaee50-2d25-4ac5-a926-d10f6f529c03",
+      "body": "{\"recoveryScopeId\":\"9e765968-bfc7-425e-ae42-847b3784bf83\",\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-1.txt\",\"byteLength\":23,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387/turns",
+      "key": "63cfe6c7-8e1a-4e3d-a3a6-83cd2906b244:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"MSG03 held material A 中文🙂\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c\",\"resourceId\":\"f6154cac-ec21-4575-8a1a-3c6262985a42\",\"version\":1,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}],\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"806ddc0f-7684-47d3-80db-9ae6e7148071\",\"runnerId\":\"72b08196-792a-4da4-8ffe-da2deecd00a9\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}}}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"projectId\":\"a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c\",\"id\":\"147c4594-7be1-484c-9c4b-c66eed71d387\",\"title\":\"MSG03 real App\",\"harness\":\"claude\",\"requested\":{\"model\":\"msg03-pinned\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"executionProfile\":{\"id\":\"806ddc0f-7684-47d3-80db-9ae6e7148071\",\"runnerId\":\"72b08196-792a-4da4-8ffe-da2deecd00a9\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"revision\":1,\"createdAt\":\"2026-10-07T14:24:24.079Z\",\"updatedAt\":\"2026-10-07T14:24:26.399Z\"},\"turn\":{\"id\":\"93a33807-86c9-45f4-87af-73f8b25fd873\",\"conversationId\":\"147c4594-7be1-484c-9c4b-c66eed71d387\",\"number\":1,\"createdAt\":\"2026-10-07T14:24:26.398Z\",\"context\":{\"id\":\"9f83007e-74b7-4dc9-b0ba-0bc6de49dc1f\",\"contextDigest\":\"5a26083fccc8293f633eb058cbd4ca090f3cae535942d8657449f90632ed8f9d\",\"executionInputId\":\"86bf9184-c30b-475e-b2af-5c6914d9430e\",\"executionInputDigest\":\"6dd0afb0b130fedd387fd771cdb0d2fa715d2f8e086087e4777aa5d211073735\",\"templateVersion\":2,\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"a6bfc9c8-4a2f-45ec-996a-9fa5461ada7c\",\"resourceId\":\"f6154cac-ec21-4575-8a1a-3c6262985a42\",\"version\":1,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"},\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"byteLength\":23}]},\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"806ddc0f-7684-47d3-80db-9ae6e7148071\",\"runnerId\":\"72b08196-792a-4da4-8ffe-da2deecd00a9\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}},\"user\":{\"role\":\"user\",\"text\":\"MSG03 held material A 中文🙂\"},\"task\":{\"id\":\"5f0bf706-6880-47f5-b729-0983bf6444bc\",\"title\":\"MSG03 real App\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-07T14:24:26.392Z\",\"updatedAt\":\"2026-10-07T14:24:26.392Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"5f0bf706-6880-47f5-b729-0983bf6444bc\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "responseSha256": "d6054973c4c7f4734b8562ac1334c34a249ff3242f8c0443e687201006ff7400"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5f0bf706-6880-47f5-b729-0983bf6444bc",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5f0bf706-6880-47f5-b729-0983bf6444bc/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5f0bf706-6880-47f5-b729-0983bf6444bc/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1df5e563-8684-44a9-b17c-f799950cf28b/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1df5e563-8684-44a9-b17c-f799950cf28b",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5f0bf706-6880-47f5-b729-0983bf6444bc/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/147c4594-7be1-484c-9c4b-c66eed71d387",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/5f0bf706-6880-47f5-b729-0983bf6444bc/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "NOT_SELECTED",
+    "secondCenterCycle": "NOT_SELECTED",
+    "messageSettingsApp": "NOT_SELECTED",
+    "messageSettingsMaterialReturn": "PASSED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": null,
+    "conversationId": null,
+    "turnId": null,
+    "sameDocumentNavigation": null,
+    "originalTurnReceiptId": null,
+    "actor": null,
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": null
+  },
+  "secondCenter": {
+    "identities": [],
+    "baseUrl": null,
+    "draftA": null,
+    "draftB": null,
+    "receiptA": null,
+    "lateRead": null
+  }
+}

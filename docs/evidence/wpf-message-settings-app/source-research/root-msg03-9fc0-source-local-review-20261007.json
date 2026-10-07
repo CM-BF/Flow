@@ -1,0 +1,190 @@
+{
+  "at": "2026-10-07T12:50:36.465359+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "APPROVED_SOURCE_AND_SCOPED_LOCAL",
+  "target": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+  "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "priorReviewedTarget": "37166dde96f06290d51968c5939ea64f6cebddc3",
+  "priorReview": {
+    "path": "/private/tmp/root-msg03-37166-source-review-20261007.json",
+    "bytes": 8220,
+    "sha256": "612406bd5da03716afc58402785c7508da9a4563e0e0894c6d88e71b284593d4"
+  },
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "branch": "codex/web-message-settings-app",
+  "claim": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 exact19",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2761,
+      "sha256": "b0cafed2fd93f4e34e5e87eeb7f4e5436a44db509d60730fa7eccc7c416c1229"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29338,
+      "sha256": "85f8c353a4bcfbe71bd547106a1b961adfe4e58caa73f742a9b6c568c10c3b72"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8902,
+      "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 9267,
+      "sha256": "8b8f9ba36bc41cd4bac84347de76722a41d1f8e0438a8ba09f5d3b1f9b589ef5"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 17132,
+      "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "bytes": 13208,
+      "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23900,
+      "sha256": "06d8a6bc76693c04989eb2c87acd69760782a353dce9d0b3581bad2fe35655e9"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 127124,
+      "sha256": "e93f097810c5036b0d85d090c3190cd0ffbf83d4b92db589dfc73ed445c6a087"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 50710,
+      "sha256": "43888810f832f7e7efa58b15659a28533c7ccac6a8872621f841b63d146e3eca"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 88159,
+      "sha256": "7a1c14398c7445ba8583abd2a876d927d2c0cd39848ceafbda4e12d47b2ac73d"
+    }
+  ],
+  "findings": [],
+  "closedFindings": [
+    {
+      "id": "MSG03-R1",
+      "resolution": "Real Thread now calls the same production restorePreparedDraft used by tests. It accepts a currently empty text/files destination after explicit omit, or the still-untouched retained settings intent; explicit restoration takes current generation/ownership and uses a temporary composer-change guard plus Thread metadata identity checks across each await. No original-send generation or permanent old-owner equality is required for an explicitly cleared destination.",
+      "verified": "Both installed-core failure and cancellation checks now continue through reject-nonempty-B, explicit clear/omit, reauthentication and successful A text/files/settings restore. A separate deferred add test preserves intervening B and refuses further old-file additions. This is the production restore seam with controlled thread/material ports, not mounted App."
+    },
+    {
+      "id": "MSG03-R2",
+      "resolution": "Browser candidate uses the actual product theme button and asserts html data-theme and computed colorScheme. PNG bytes are capped at512KiB before writing. The fixture now provides three valid180-character names with identical179-character prefixes and differing suffixes.",
+      "verified": "Source only; actual dual-theme/long-name pictures and keyboard behavior remain NOT_RUN."
+    }
+  ],
+  "localEvidence": [
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/segment.json",
+      "bytes": 39324,
+      "sha256": "07f2287b440dbc1219cff63588e87de71fc4b5243c8b728f33d73065ba2a85a8"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/direct-6.json",
+      "bytes": 26761,
+      "sha256": "52e8a460e0800834f01ccdd13bb20f1ae6590b0d56e4f768f8582bfc631a12c5"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/direct-6.log",
+      "bytes": 71,
+      "sha256": "7c56d37edc502e4edcc35be9bd0cd47bc0552aecc39fcb9fb3aee19e9d17152f"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/types-5.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/run.py",
+      "bytes": 5341,
+      "sha256": "0ec75acfa7bfe6fcbab48b9eaa08b655fdf68a7ce381420fc23bd452ed37e8fc"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/types.json",
+      "bytes": 926,
+      "sha256": "6b7b26eac96cdce6c00e0c6d757e9430c96b07486523467fc18b7976bb0f59d0"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/vitest.config.mjs",
+      "bytes": 356,
+      "sha256": "8f107c4145e4f9377330e1517c2abaa62b6e1b99c1687d43f3acea64275106f2"
+    },
+    {
+      "path": "/private/tmp/msg03-local-e4z906p6/sandbox.sb",
+      "bytes": 151,
+      "sha256": "141e38b1a298bd0cd6c1e30a8ac19de4c24738a2d64d2e61071362c7c95fd7df"
+    }
+  ],
+  "localResult": {
+    "direct": "11 passed /57 NOT_SELECTED /0 failed; child exit0",
+    "types": "Explicit App/test/browser entry files with their affected transitive imports, noEmit exit0; not whole Web",
+    "sourceBinding": "types-5 pins all17 changed files exactly to target9fc0; direct-6 pins the5 changed delta files exactly, with the other12 unchanged from37166",
+    "attemptCount": 11,
+    "spentMs": 36212,
+    "remainingMs": 23788,
+    "firstFailuresRetained": [
+      "types-1",
+      "types-2",
+      "direct-1",
+      "direct-3"
+    ],
+    "cleanup": "Both latest reported owned groups absent and scratch absent, regular-file logs; no dual-EOF claim. All attempt charges sum to36212. No root rerun or process/port probe."
+  },
+  "limits": [
+    "No mounted ConversationThread material-return/explicit-restore interaction yet. Controlled installed core + production guard/restore tests are narrower evidence.",
+    "New real App HTTP/PG/browser journey has not run; screenshots, keyboard focus, actual Send/Queue ACK-loss flow and deployment remain unverified.",
+    "Reviewed browser selector/output isolation is source preparation, not fresh resource/actor admission or permission to invoke the old Recovery journeys.",
+    "Simple local caller uses logical byte polling and restores signal handlers after report writing; no OS disk quota or report-to-outer-exit signal containment claim.",
+    "Initial outbox/Queue/journal and P01 source review remains scoped to this feature; no shared contract, third-party core or main integration was performed."
+  ],
+  "metadataCompletion": "Owner may archive updated local raw/manifests and these reviews, update fixed target/status/TODO/review and seal normally. Metadata-only seal requires no product retest or recursive source review if17 source hashes remain unchanged.",
+  "cleanCode": {
+    "scope": "Fresh explicit-restore lease, single C ownership, caller interface and validation evidence",
+    "actualFixes": [
+      "Separate old send identity from current explicit-restore operation without a second C store.",
+      "Extract one narrow restore operation shared by real Thread and meaningful core regression, using public composer operations only.",
+      "Retain actual theme state and source-bound local results; distinguish source/controlled core/mounted App."
+    ],
+    "remaining": "Meaningful mounted browser integration and both-theme visual inspection."
+  }
+}

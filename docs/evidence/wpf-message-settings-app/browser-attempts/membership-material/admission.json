@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-07T14:23:56.057113+00:00",
+  "run": "msg03-material-20261007-142356-510653",
+  "head": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+  "branch": "codex/web-message-settings-app",
+  "remote": "dcdca6b1793b782591da8f9bc5fc2330adc107b9",
+  "dirty": "",
+  "claimObservedAt": "2026-10-07T14:23:56.036Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/src/plugin-integration/attachments.tsx",
+      "apps/web/src/plugin-integration/message-settings.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-message-settings-app",
+      "plans/wpf-message-settings-app"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-app",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS03",
+    "worker": "workspace_panels_owner",
+    "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "createdAt": "2026-10-07T12:11:44.045Z",
+    "updatedAt": "2026-10-07T14:05:11.080Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "checkedPins": 989,
+  "priorRawChecked": 151,
+  "retainedBefore": 849280,
+  "packetBefore": 52298,
+  "freeBefore": 21393555456,
+  "minimumFreeBytes": 9306308608,
+  "sourceReview": {
+    "path": "/private/tmp/root-msg03-membership-phase-preparation-review-20261007.json",
+    "realpath": "/private/tmp/root-msg03-membership-phase-preparation-review-20261007.json",
+    "bytes": 4779,
+    "sha256": "f05b526dabca20c46166ead118338d1f8d88e964e5975df0ab647332e2d58193"
+  },
+  "packet": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/manifest.json",
+    "realpath": "/private/tmp/msg03-membership-browser-i5d8rogr/manifest.json",
+    "bytes": 9993,
+    "sha256": "7301a07f3e4c753501b3a41820834161cb528774c76fcdb1dca333aeed356da0"
+  },
+  "adminSource": {
+    "ref": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-release-compatibility.fixture.ts",
+    "sourceSha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355",
+    "valueNotRecorded": true
+  },
+  "envIdentity": {
+    "path": "/private/tmp/msg03-membership-first-0yh7hk4h/admin.env",
+    "dev": 16777234,
+    "inode": 124191888,
+    "uid": 501,
+    "mode": "0o600"
+  },
+  "gate": {
+    "path": "/private/tmp/msg03-membership-first-0yh7hk4h/gate.json",
+    "realpath": "/private/tmp/msg03-membership-first-0yh7hk4h/gate.json",
+    "bytes": 3631,
+    "sha256": "d5e124b7e3ed0f1ab9e48a2d38408228537ddf0b46726cbf3ed4e91bbd443e92"
+  },
+  "collector": {
+    "path": "/private/tmp/msg03-membership-browser-i5d8rogr/capture.py",
+    "realpath": "/private/tmp/msg03-membership-browser-i5d8rogr/capture.py",
+    "bytes": 8900,
+    "sha256": "fb33176755019d513bcecda03ff5dc2351a6a16e06cfd394093c972ebfa9bcfc"
+  },
+  "sharedHandoff": "d01 unique membership material-return NEXT14:22:55.803Z; no new conflicting reservation received; old90/local20 CLOSED; new120000 spent0 incl30s cleanup each; floor9306308608",
+  "phase": {
+    "id": "MSG03-MEMBERSHIP-FIX-20261007",
+    "budgetMs": 120000,
+    "spentMs": 0,
+    "cleanupMs": 30000
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7910.150458,
+    "elapsedMs": 7910.150458
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7910.237125,
+      "endedOffsetMs": 8913.816167,
+      "elapsedMs": 1003.5790420000003,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsMaterialReturn",
+      "startedOffsetMs": 8913.835500000001,
+      "endedOffsetMs": 14122.046833,
+      "elapsedMs": 5208.211332999999,
+      "outcome": "FAILED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "expect(locator).toHaveCount(expected) failed\n\nLocator:  getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' })\nExpected: 1\nReceived: 0\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveCount\" getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' }) with timeout 5000ms\n  - waiting for getByRole('dialog', { name: '下一条消息设置', exact: true }).locator('.ep-option').filter({ hasText: 'msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA' })\n    14 × locator resolved to 0 elements\n       - unexpected value \"0\"\n",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_f5a116e7326b45a68d4e8ffdc0eceb8f",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 3.3649160000004485,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 2.1743329999990237,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "messageSettingsPhase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 3432,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 7305,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 7759,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 21578481664,
+  "peakScratchBytes": 27507921,
+  "logBytes": 7902,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 14894.268333,
+      "scratchBytes": 27507921,
+      "evidenceBytes": 540092,
+      "freeBytes": 21578481664,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 14962.263832999999,
+      "scratchBytes": null,
+      "evidenceBytes": 543781,
+      "freeBytes": 21606883328,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

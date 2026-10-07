@@ -8,7 +8,7 @@ import {
   type ConversationSummary,
   type ConversationTurn,
   type Detail,
-  type AttachmentReference,
+  type AttachmentReference, type ClaudeTurnSettings,
 } from "@flow/contracts";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
 import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../recovery/journal";
@@ -291,7 +291,7 @@ export class ConversationProjection {
     freezeContextSelection(knowledge, snapshot.conversation.projectId);
   }
 
-  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[]): Promise<string | undefined> {
+  async send(text: string, creation?: ConversationCreation, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[], messageSettings?: Readonly<ClaudeTurnSettings>): Promise<string | undefined> {
     const reason = this.sendDisabledReason();
     if (reason) throw Error(reason);
     this.validateKnowledge(knowledge);
@@ -299,6 +299,7 @@ export class ConversationProjection {
     freezeMaterialRequest({ knowledge, attachments }, this.state.snapshot?.conversation.projectId);
     const entry = this.outbox.begin({
       conversationId: this.id, expectedRevision: this.state.snapshot?.conversation.revision ?? 0, text,
+      ...(messageSettings === undefined ? {} : { messageSettings }),
       ...(knowledge === undefined ? {} : { knowledge }),
       ...(attachments?.length ? { attachments } : {}),
       ...(!this.id ? { creation: creation ?? { title: text.trim().split("\n")[0]!.slice(0, 180), harness: "claude" as const,

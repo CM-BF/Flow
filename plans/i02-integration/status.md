@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:37:48.376Z / main246ed0f52已推；SVC06B实际结果独审APPROVED，本批原件受控接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:46:12.780Z / mainb37e404da；MSG03精确18源组合types通过，待本批ff |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,16 +12,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main246ed0f52已接SVC09A源码与FLOW后继交接；本批接收固定后台实际构建结果 |
+| 工作基线 / HEAD | mainb37e404da已接固定后台实际产物；本批MSG03原获审18源精确接收 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | SVC09A原33不同局部例与CORE原10直接消费者复用；新固定后台实际33158ms构建/校验/内部加载通过，独审0重跑。网页兼容与真实双槽仍未验 |
-| 已集成main状态 / HEAD | main/origin246ed0f52已含SVC09A与CORE；SVC06B结果本批接收。个人7d1/source6c、Webd629/v3保持；主线不自动替换运行版本。 |
+| 检查状态 | MSG03既有两App selected各2/2独审复用；当前Web noEmit exit0/6639ms/组absent/双EOF；生成缓存后续精确清理，原KEEP记录保留。0新PG/浏览器/provider |
+| 已集成main状态 / HEAD | main/originb37e404da已含SVC09A与SVC06B结果；MSG03本批受控接收。个人7d1/source6c、Webd629/v3保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 消息设置双宿主源码已进入主线；新版网页需要的固定后台产物已独审通过，并已交网页团队验证兼容。 |
+| 当前产出 | 消息设置的发送、排队与恢复接线已获独审，并通过当前主线组合类型检查；新版网页后台产物已交兼容验证。 |
 | 下一可用交付 | 验证固定新旧网页与新后台组合，再沿受管流程把恢复能力交到个人页面；消息设置双槽仍需真实宿主验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -434,3 +434,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T14:36:26.888Z：受控接收[SVC09A固定源码](../../docs/evidence/i02/svc09a-intake.json)及[完整工具正文既有后继交接](../../docs/evidence/i02/tool-body-handoff-doc-review.json)。11源与获审record逐字相同、38直接输入和主线前像未变，复用原33不同用例，0重复工程检查；旧局部失败与未验真实双槽宿主/个人激活保留。SVC06B实际构建已归还，结果正在唯一独审，不把artifact生成冒充网页兼容。
 
 2026-10-07T14:37:48.376Z：main246ed0f52实际已push并clean；[SVC06B结果唯一独审](../../docs/evidence/i02/svc06b-actual-result-review.json)绑定a6adfd597与cd27/04da，10source/10raw/3private及三lateLogout字节一致，33158ms全部自有组收束。未重跑构建或原检查，未替换个人运行。实际descriptor已直接交Web；新旧页面兼容与真实双槽部署仍分别开放。
+
+2026-10-07T14:46:12.780Z：[MSG03受控接收](../../docs/evidence/i02/msg03-intake.json)复用exact18独立source/actual审查，主线18前像均匹配c130；只补sharedclient/插件前进后的Web类型组合。类型通过、进程收束；最初empty-only KEEP保持原记录，随后确认唯一Node生成缓存并同身份正常清理，不覆盖原件。SVC09A六文件main收口只核metadata，无重复测试；个人设置实际激活和新网页发布仍未完成。

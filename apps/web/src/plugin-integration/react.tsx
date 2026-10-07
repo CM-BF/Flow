@@ -262,9 +262,10 @@ export function PluginWorkspace({ state, activeTab, focusRequest, container, onC
 export { ConversationSteering } from "./steering";
 
 /** Uses the existing P01 panel and Dialog. Closing this disclosure never disposes draft material. */
-export function AttachmentComposer({ binding, runtime, onAttached, children }: { binding: ConversationAttachments | null; runtime: AssistantRuntime; onAttached?(): void; children: React.ReactNode }) {
+export function AttachmentComposer({ binding, runtime, onAttached, recovery, children }: { binding: ConversationAttachments | null; runtime: AssistantRuntime; onAttached?(): void; recovery?: { restore(): void | Promise<void>; discard(): void }; children: React.ReactNode }) {
   const session = useContext(SessionContext)!;
   const state = useSyncExternalStore(binding?.subscribe ?? (() => () => {}), binding?.getSnapshot ?? (() => null));
+  const hasSubmission = useSyncExternalStore(listener => runtime.thread.composer.subscribe(listener), () => runtime.thread.composer.getState().submission !== undefined);
   const active = useSyncExternalStore(session.host.subscribe, () => session.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state === "active");
   if (!binding) return <>{children}</>;
   const add = async (id: string) => { if (!binding.input) throw Error("Attachment input is unavailable."); await runtime.thread.composer.addAttachment(createExistingAttachment(binding.input, id)); onAttached?.(); };
@@ -274,15 +275,18 @@ export function AttachmentComposer({ binding, runtime, onAttached, children }: {
     binding.input?.remove(id);
   };
   const restore = async () => {
+    if (recovery) { await recovery.restore(); return; }
     const held = state?.submission?.value; if (!held || runtime.thread.composer.getState().text || runtime.thread.composer.getState().attachments.length) return;
     runtime.thread.composer.setText(held.capture.text);
     for (const id of held.ids) { if (binding.input?.getSnapshot().items.some(item => item.id === id)) await add(id); }
   };
   return <AttachmentSurfaceProvider value={{ binding, onAttach: add, onRemove: remove }}>{children}
     {state?.error && <p role="alert">{state.error}</p>}
+    {recovery && state?.submission?.state === "preparing" && hasSubmission && <button className="flow-link" type="button"
+      onClick={() => { if (binding.getSnapshot().submission?.state === "preparing" && runtime.thread.composer.getState().submission) runtime.thread.composer.cancel(); }}>Cancel material preparation</button>}
     {state?.submission?.state === "failed" && <section className="flow-conversation-receipt" aria-label="Unsent material recovery"><strong>Materials were not handed to a message receipt</strong><p>{state.submission.error}</p><pre>{state.submission.value.capture.text}</pre>
       <button className="flow-link" type="button" onClick={() => void restore()}>Restore into an empty draft</button>{" "}
-      <button className="flow-link" type="button" onClick={() => binding.discardFailedSubmission()}>Discard held submission (keep draft files)</button>
+      <button className="flow-link" type="button" onClick={() => { if (recovery) recovery.discard(); else binding.discardFailedSubmission(); }}>Discard held submission (keep draft files)</button>
     </section>}
     <Dialog open={!!state?.open && active && binding.input?.getSnapshot().readiness.visible !== false} onOpenChange={open => { if (!open) binding.close(); }}><DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-xl" onCloseAutoFocus={event => {
       event.preventDefault(); const context = binding.context(); if (context.kind === "composer") [...document.querySelectorAll<HTMLButtonElement>(`[data-composer-view="${CSS.escape(context.viewId)}"] button`)].find(button => button.textContent === "Files")?.focus();

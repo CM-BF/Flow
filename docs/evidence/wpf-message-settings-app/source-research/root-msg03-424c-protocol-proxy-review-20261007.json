@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T13:34:55.326408+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_SCOPED_ONE_LINE_FIXTURE_CORRECTION_NOT_RUNTIME_PASS",
+  "findings": [],
+  "source": "424c6466bd28a838b91cc490a7b52021202b4d17",
+  "file": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/test/conversation-recovery.fixture.ts",
+    "bytes": 54903,
+    "sha256": "77b78dc4d67ec3fb10f482cd7c7f52da08bcf9b438239c0ac2f8221aa1d3ae91"
+  },
+  "delta": "Exactly one allowlist item x-flow-execution-profile added to existing rawHeaders-preserving proxy. No product, selector, count, timeout, actor or cleanup changes.",
+  "rootEvidence": [
+    "Read fixed git diff424c one insertion/one deletion.",
+    "Read public FlowClient.claudeMessageSettingsProfiles, which sends EXECUTION_PROFILE_HEADER with CLAUDE_TURN_SETTINGS_PROTOCOL.",
+    "Read server execution-profiles GET branch: exactly one matching public header selects message settings catalogue; absent header returns legacy catalogue.",
+    "Read second actual browser.json: cookieRead PASS, settings choice count0 in5s, directory GET200, no material probe started and no pageErrors. Response header loss is a concrete fixture defect; missing captured failure DOM means it is not yet proven the only remaining cause."
+  ],
+  "actualHistory": [
+    {
+      "outcome": "FAIL_INITIALIZATION_ZERO_SELECTED",
+      "run": "msg03-material-20261007-132434-03a638",
+      "chargeMs": 3432,
+      "cleanup": "Recorded normal markedDBDROP/0connections, all ownedPIDPGID absent, scratch/env absent, true exit1/EOF/drop0; Chrome not launched.",
+      "correction": "Existing source-operator supplies only fixedc130 missing017 and019 SQL total3278B. Root independently compared full33 list and other31 exactbase; dynamic filename array in goal-graph-runs/index.ts14 explains supply omission."
+    },
+    {
+      "outcome": "FAIL_MATERIAL_SETTINGS_SELECTION",
+      "run": "msg03-material-20261007-133113-177e00",
+      "chargeMs": 15530,
+      "cookieRead": "PASS",
+      "materialReturn": "FAILED before adapter hold",
+      "cleanup": "Owner recorded parent/outer exit1, dualEOF/drop0, normal markedDBDROP/0connections, fixturecomplete, fourPIDPGID absent and scratch/env removed."
+    }
+  ],
+  "phase": {
+    "id": "MSG03-BROWSER-20261007",
+    "limitMs": 90000,
+    "spentMs": 18962,
+    "remainingMs": 71038,
+    "rule": "No reset or borrowed credit. Manager sole fresh handoff, latest complete floor>=7511998464. Each attempt45–60s inclusive30cleanup; second selector requires>=45s after actual full return. Prior failure artifacts remain unchanged."
+  },
+  "next": "Same owner may continue directly affected actual selector after normal fixed metadata/pin binding and manager resource handoff; do not rerun unrelated local greens or add new preparation approvals. This source review itself launches nothing.",
+  "unverified": [
+    "New424c actual browser behavior",
+    "Complete material return scenarios",
+    "Second settings App journey and dualtheme screenshots",
+    "Full product integration and personal deployment"
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8441.695334,
+    "elapsedMs": 8441.695334
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8441.768084000001,
+      "endedOffsetMs": 9451.717084,
+      "elapsedMs": 1009.9489999999987,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsMaterialReturn",
+      "startedOffsetMs": 9451.735709,
+      "endedOffsetMs": 16137.500167,
+      "elapsedMs": 6685.764458,
+      "outcome": "FAILED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "expect(received).toEqual(expected) // deep equality\n\n- Expected  -  0\n+ Received  + 22\n\n@@ -1,7 +1,29 @@\n  Array [\n    Object {\n+     \"id\": \"9f678b77-b095-441b-a345-7a6642ed1bcd\",\n+     \"name\": \"held-1.txt\",\n+     \"reference\": Object {\n+       \"contentDigest\": \"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\",\n+       \"kind\": \"upload\",\n+       \"projectId\": \"415f55f8-2bdf-474b-8df9-7a2c673912fa\",\n+       \"resourceId\": \"265f79ed-3f9e-4f81-8081-81382a340c62\",\n+       \"version\": 1,\n+     },\n+   },\n+   Object {\n+     \"id\": \"9e9f94e4-3ff5-4731-b238-7b68c9d620c2\",\n+     \"name\": \"held-2.txt\",\n+     \"reference\": Object {\n+       \"contentDigest\": \"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\",\n+       \"kind\": \"upload\",\n+       \"projectId\": \"415f55f8-2bdf-474b-8df9-7a2c673912fa\",\n+       \"resourceId\": \"db9f6442-b5af-44c6-92bf-8d85fa154ec1\",\n+       \"version\": 1,\n+     },\n+   },\n+   Object {\n      \"id\": \"80f48b57-29b5-456a-81e4-1e7592deeb0c\",\n      \"name\": \"held-b.txt\",\n      \"reference\": Object {\n        \"contentDigest\": \"caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00\",\n        \"kind\": \"upload\",\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_9159269b887b41e19fdde474253076a3",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3163749999985157,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.6425420000014128,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "messageSettingsPhase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 33766,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 10862,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 13878,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 21539958784,
+  "peakScratchBytes": 27524555,
+  "logBytes": 6844,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 16686.373416000002,
+      "scratchBytes": 27524555,
+      "evidenceBytes": 689541,
+      "freeBytes": 21539958784,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 16740.397291,
+      "scratchBytes": null,
+      "evidenceBytes": 693430,
+      "freeBytes": 21568299008,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

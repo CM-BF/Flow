@@ -1,3 +1,5 @@
+import { bindPreparedDraftReturn, restorePreparedDraft, messageSettingsDraft, MESSAGE_SETTINGS_OWNER, type MessageSettingsDraft, type MessageSettingsPort } from "../src/plugin-integration/message-settings";
+import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createHash } from "node:crypto";
 import { createSteeringControl, type SteeringPort } from "../src/conversation-steering/control";
@@ -12,12 +14,13 @@ import { ConversationOutbox, frozenOutbox, restoreOutbox } from "../src/conversa
 import { ConversationProjection } from "../src/conversations/projection";
 import { createContextSelection } from "../src/conversation-context/controller";
 import { themes } from "../src/themes";
-import type { CompleteAttachment, ComposerRuntime } from "@assistant-ui/react";
+import { INTERNAL, type CompleteAttachment, type ComposerRuntime } from "@assistant-ui/react";
 import type { AttachmentCapabilities, AttachmentMetadata } from "@flow/contracts";
 import { ConversationAttachments, createAttachmentPlugin, ATTACHMENT_OWNER, type AttachmentClient, type AttachmentView } from "../src/plugin-integration/attachments";
 import { PluginHost } from "../src/plugins/host";
 import type { HostPort, PluginDefinition } from "../src/plugins/types";
 import { observeRecoveryRecords } from "./conversation-recovery.fixture";
+import { createExistingAttachment } from "../src/attachments/adapter";
 
 const uuid = (n: number) => `10000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
 const ns: RecoveryNamespace = { baseUrl: "https://center.example/proxy", centerId: uuid(1), ownerPrincipalId: uuid(2) };
@@ -409,6 +412,79 @@ describe("restored attachment draft synchronization (controlled composer port)",
   });
 });
 
+describe("MSG03 recovery material membership", () => {
+  it("persists only B while holding A, but keeps current returns, unverified order and explicit A restoration", async () => {
+    const { journal: store } = journal();
+    const resources: AttachmentMetadata[] = [61, 62, 63].map(n => ({ reference: { kind: "upload", projectId: "project", resourceId: uuid(n), version: 1, contentDigest: "a".repeat(64) }, name: `file-${n}.txt`, mediaType: "text/plain", byteLength: 1, createdAt: "2026-10-06T00:00:00Z", expiresAt: "2099-01-01T00:00:00Z", state: "ready", retained: false }));
+    const forbidden = vi.fn(async () => { throw Error("No body, upload or business request in this controlled check."); });
+    const client: AttachmentClient = { attachmentCapabilities: async () => ({ protocol: "text-v1", recoveryScopeId: uuid(60), projectId: "project", requiresProject: true, mediaTypes: ["text/plain"], extensions: [".txt"], maxFileBytes: 8192, maxCombinedReferences: 4, maxCombinedBytes: 8192, order: "knowledge-then-attachments", unboundTtlSeconds: 86400, resourcesPerProject: 128, retainedBytesPerProject: 1048576 }), attachments: async () => ({ resources, nextCursor: null }), attachment: forbidden, attachmentContent: forbidden, attachmentUploadReceipt: forbidden, uploadAttachment: forbidden };
+    const snapshot: ConversationSnapshot = { conversation: { id: "chat", title: "Existing", harness: "claude", requested: { model: "default", thinking: "disabled", tools: "configured-readonly" }, projectId: "project", revision: 0, createdAt: "2026-10-06T00:00:00Z", updatedAt: "2026-10-06T00:00:00Z" }, nativeSession: null, lastTurn: null,
+      capabilities: { followUp: true, queue: false, steer: false, liveAssistantText: false, perTurnModel: false, perTurnThinking: false, perTurnTools: false, attachmentContext: true } };
+    const projection = new ConversationProjection({ conversation: async () => snapshot, conversationTurns: async () => ({ conversation: snapshot.conversation, turns: [], nextCursor: null }), createConversation: forbidden, submitConversationTurn: forbidden, conversationDetail: forbidden }, "chat");
+    cleanup.push(() => projection.dispose()); await projection.refresh();
+    const session: AppPluginSession = new AppPluginSession({ ...actions({ journal: store, namespace: () => ns, authorized: () => true, generation: () => 1, owner: () => owner,
+      draft: () => recoveryValue({ ...(draft("B") as Record<string, Json>), ...session.recoveryMaterials(owner.viewKey) }), restore: async () => {}, retry: forbidden }),
+      attachments: { client, storage: { read: () => null, write() {} }, allowed: () => true } }, themes[0]!);
+    cleanup.push(() => session.dispose()); session.knowledgeBinding(owner.viewKey, projection).configure(owner.routeId, true);
+    const binding = session.attachmentBinding(owner.viewKey, projection)!;
+    await session.host.activate(ATTACHMENT_OWNER); await session.host.activate(RECOVERY_OWNER);
+    const original = resources.slice(0, 2).map((metadata, index) => ({ id: uuid(71 + index), name: metadata.name, metadata, state: "ready" as const }));
+    binding.restoreDraft(original);
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => [item.id, item.state])).toEqual(original.map(item => [item.id, "error"]));
+    await binding.input!.browse();
+    let files: CompleteAttachment[] = [], transit: ReturnType<ComposerRuntime["getState"]>["inTransit"] = [];
+    const listeners = new Set<() => void>(), emit = () => { for (const listener of listeners) listener(); };
+    const composer: Pick<ComposerRuntime, "getState" | "subscribe" | "addAttachment"> = {
+      getState: () => ({ type: "thread", canCancel: false, canSend: false, isEditing: false, isEmpty: !files.length, text: "B", role: "user", attachments: files, runConfig: {}, attachmentAccept: ".txt", dictation: undefined, quote: undefined, queue: [], submission: undefined, inTransit: transit }),
+      subscribe: listener => { listeners.add(listener); return () => { listeners.delete(listener); }; },
+      addAttachment: async value => { if (!("content" in value) || !value.id) throw Error("Complete metadata required"); files = [...files, { ...value, id: value.id, type: value.type ?? "file", status: { type: "complete" } }]; emit(); },
+    };
+    let unbind = binding.bindComposer(composer); cleanup.push(() => unbind());
+    await binding.syncComposerDraft(composer);
+    const held = binding.captureDraft(composer, { submissionId: uuid(74), intent: "send", text: "A" }, null)!;
+    const capturedFiles = files; files = []; emit(); binding.failed(held, Error("Cancelled before dispatch"));
+    const b = binding.input!.select(resources[2]!); await binding.syncComposerDraft(composer);
+    expect(files.map(item => item.id)).toEqual([b]);
+    await session.recovery.flush();
+    const saved = (await store.list(ns)).find(record => record.kind === "draft")!;
+    expect(readRecoveryDraft(saved.data).attachments.map(item => item.id)).toEqual([b]);
+    expect(binding.input!.getSnapshot().items.map(item => item.id)).toEqual([...held.ids, b]);
+    expect(binding.getSnapshot().submission?.value).toBe(held);
+    // A rejected local file remains an ordered draft selection even without a chip.
+    const invalid = await binding.input!.upload(new File([], "empty.txt", { type: "text/plain" }));
+    expect(invalid.state).toBe("error");
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([b, invalid.id]);
+    binding.input!.remove(invalid.id); binding.input!.remove(b); files = []; emit();
+    // A current core return/partial explicit restore wins over its held identity.
+    await composer.addAttachment(createExistingAttachment(binding.input!, held.ids[0]!));
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    unbind();
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    unbind = binding.bindComposer(composer);
+    await composer.addAttachment(createExistingAttachment(binding.input!, held.ids[1]!));
+    unbind();
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual(held.ids);
+    unbind = binding.bindComposer(composer);
+    binding.discardFailedSubmission(); session.recovery.changed(owner.viewKey); await session.recovery.flush();
+    const restored = (await store.list(ns)).find(record => record.kind === "draft")!;
+    expect(readRecoveryDraft(restored.data).attachments.map(item => item.id)).toEqual(held.ids);
+    // The same original selector also excludes detached in-transit A, not current A.
+    transit = [{ id: uuid(75), role: "user", text: "A", quote: undefined, attachments: capturedFiles }]; files = [];
+    expect(session.recoveryMaterials(owner.viewKey).attachments).toEqual([]);
+    files = [capturedFiles[0]!]; expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[0]]);
+    let attached = true;
+    const replacement = binding.bindComposer({ ...composer, getState: () => {
+      if (!attached) throw Error("An unmounted composer must not be read");
+      return { ...composer.getState(), attachments: [capturedFiles[1]!] };
+    } });
+    unbind(); // A late cleanup from the old port must not remove the replacement.
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual([held.ids[1]]);
+    replacement(); attached = false;
+    expect(session.recoveryMaterials(owner.viewKey).attachments.map(item => item.id)).toEqual(held.ids);
+    expect(forbidden).not.toHaveBeenCalled();
+  });
+});
+
 describe("recovery storage barriers (controlled IDB event port)", () => {
   it("waits for strict transaction completion, including put-success followed by commit abort", async () => {
     const { port, journal: store } = journal(); const bound = store.bind(ns, () => owner, () => true);
@@ -740,5 +816,154 @@ describe("Recovery P2 steering durable deadline", () => {
     f.control.updateGate({ visible: true, online: true, authorized: true }); f.control.restore(accepted);
     expect(f.control.getSnapshot().receipts[0]).toMatchObject({ key: f.receipt.key, phase: "accepted", command: accepted.checkpoint });
     expect(f.port.accept).toHaveBeenCalledTimes(1);
+  });
+});
+
+// MSG03 checks actual host/receipt/journal seams; mounted App and native keyboard remain a separate gate.
+describe("MSG03 real App seams", () => {
+  const reference = { id: uuid(801), runnerId: uuid(802), configDigest: "a".repeat(64) };
+  const choice = (model: string): ClaudeTurnSettings => ({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference,
+    requested: { model, thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" } });
+  const a = choice("model-A"), b = choice("model-B"), c = choice("model-C");
+  const entry = claudeMessageSettingsCatalogEntrySchema.parse({ profile: {
+    reference, configuration: { harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "base", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+      materialScopeDigest: "b".repeat(64), limits: { maxTurns: 2, maxBudgetUsd: 1, timeoutMs: 90000 }, turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: [a.requested, b.requested, c.requested] } },
+    source: "runner-configured", availability: "not-probed", model: { value: "base", resolvedModel: null, displayName: "base", description: "Synthetic declarations", providerCapabilities: "unknown" },
+    controls: { access: "configured-policy", queue: false, steer: false, messageSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices: "configuration.turnSettings.choices" } }, createdAt: "2026-10-07T00:00:00Z",
+  }, conversation: { state: "existing-claude-contract", capabilitySource: "conversation-response" } });
+  async function host() {
+    vi.stubGlobal("HTMLElement", class {}); vi.stubGlobal("document", { activeElement: null });
+    let draftValue: MessageSettingsDraft = messageSettingsDraft(), generation = 1, editable = true;
+    const port: MessageSettingsPort = {
+      read: () => ({ draft: draftValue, generation, editable, context: { profile: reference, capability: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: reference, choices: "execution-profile" } } }),
+      replace: (_key, expected, value) => { if (expected !== draftValue.ownership) throw Error("stale"); return draftValue = messageSettingsDraft(value); },
+      profiles: async () => ({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profiles: [entry], nextCursor: null }),
+    };
+    const session = new AppPluginSession({ ...actions(undefined), messageSettings: port }, themes[0]!); cleanup.push(() => session.dispose());
+    const binding = session.messageSettingsBinding(owner.viewKey); binding.configure(owner.routeId, true);
+    const open = async () => { const result = await session.host.execute("flow.message-settings.open", null, { kind: "composer", viewId: owner.routeId, isDraft: true }); expect(result.ok).toBe(true); await binding.catalog.refresh(); };
+    await open();
+    return { session, binding, open, read: () => draftValue, port, revoke: () => { editable = false; generation++; }, reauth: () => { editable = true; generation++; } };
+  }
+  it("freezes A before material await, rotates equal-value ownership, and preserves B through original-key retry", async () => {
+    const f = await host(); expect(f.binding.commit(a, f.read().ownership)).toEqual({ status: "applied" });
+    const captured = f.binding.capture(), next = f.binding.detach(captured), prepared = deferred<void>();
+    expect(next).not.toBe(captured.ownership); expect(f.read().value).toEqual(a);
+    expect(f.binding.commit(undefined, captured.ownership)).toEqual({ status: "stale" });
+    expect(f.binding.commit(b, f.read().ownership)).toEqual({ status: "applied" });
+    const outbox = new ConversationOutbox(() => uuid(810)); cleanup.push(() => outbox.dispose());
+    const pending = prepared.promise.then(() => outbox.begin({ conversationId: "chat", expectedRevision: 0, text: "same text", messageSettings: captured.value }));
+    prepared.resolve(); const receipt = await pending;
+    expect(receipt.request.messageSettings).toEqual(a); expect(Object.isFrozen(receipt.request.messageSettings!.requested.effort)).toBe(true);
+    outbox.fail(receipt.id, "ACK lost", false); const original = frozenOutbox(outbox.getSnapshot()!);
+    expect(f.read().value).toEqual(b); expect(f.binding.isCurrent(next)).toBe(false);
+    const retried = outbox.retry(receipt.id)!; expect(frozenOutbox(retried)).toEqual(original); expect(f.read().value).toEqual(b);
+  });
+  it("checks live authority for omit and cannot revive an opening after disable/re-enable", async () => {
+    const f = await host(), first = f.read().ownership;
+    f.revoke(); expect(f.binding.commit(undefined, first)).toEqual({ status: "unavailable" });
+    f.reauth(); f.binding.sync(); await f.session.host.deactivate(MESSAGE_SETTINGS_OWNER); await f.session.host.activate(MESSAGE_SETTINGS_OWNER);
+    expect(f.binding.commit(a, first)).toEqual({ status: "unavailable" }); expect(f.read().value).toBeUndefined();
+    await f.open(); expect(f.binding.commit(a, first)).toEqual({ status: "applied" });
+    const captured = f.binding.capture(), next = f.binding.detach(captured);
+    f.revoke(); f.reauth();
+    expect(() => f.binding.restoreCaptured(captured, { ownership: next, generation: captured.generation })).toThrow("draft changed");
+    const stale = f.read().ownership; f.port.replace(owner.viewKey, stale, a);
+    expect(f.binding.commit(undefined, stale)).toEqual({ status: "stale" });
+  });
+  it("revokes the old opening on hide and aborts its directory read without replacing C", async () => {
+    const f = await host(); f.binding.commit(a, f.read().ownership); const before = f.read(), wait = deferred<ReturnType<typeof entryPage>>();
+    function entryPage(): Awaited<ReturnType<MessageSettingsPort["profiles"]>> { return { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profiles: [entry], nextCursor: null }; }
+    let requestSignal: AbortSignal | undefined;
+    f.port.profiles = async (_options, signal) => { requestSignal = signal; return wait.promise; };
+    const pending = f.binding.catalog.refresh(); f.binding.configure(owner.routeId, false);
+    expect(requestSignal?.aborted).toBe(true); wait.resolve(entryPage()); await pending;
+    expect(f.binding.catalog.getSnapshot().stale).toBe(true); expect(f.read()).toBe(before);
+    expect(f.binding.commit(undefined, before.ownership)).toEqual({ status: "unavailable" });
+  });
+  it("keeps legacy absent drafts but rejects malformed settings and freezes valid settings-only drafts", () => {
+    expect(readRecoveryDraft(draft("")).messageSettings).toBeUndefined();
+    const saved = readRecoveryDraft(recoveryValue({ ...(draft("") as object), messageSettings: a }));
+    expect(saved.text).toBe(""); expect(saved.messageSettings).toEqual(a); expect(Object.isFrozen(saved.messageSettings!.profile)).toBe(true);
+    expect(() => readRecoveryDraft(recoveryValue({ ...(draft("") as object), messageSettings: { ...a, requested: { ...a.requested, speed: "invented" } } }))).toThrow();
+  });
+  it.each(["settings", "omit", "ABA"])("keeps current complete draft when %s changes during real projection refresh", async kind => {
+    const f = await restoringOwner({ messageSettings: a }), pending = f.session.recovery.restore(f.saved);
+    await vi.waitFor(() => expect(f.client.conversation).toHaveBeenCalledTimes(2));
+    f.edit({ messageSettings: recoveryValue(b) });
+    if (kind === "omit") f.edit({ messageSettings: undefined as unknown as Json });
+    if (kind === "ABA") f.edit({ messageSettings: recoveryValue(a) });
+    const current = f.data(); f.read.resolve(f.snapshot); await pending;
+    expect(f.session.recovery.getSnapshot().error).toContain("complete draft changed");
+    await f.session.recovery.flush();
+    expect(await f.store.list(ns)).toMatchObject([{ id: f.saved.id, data: current }]);
+    expect(f.data()).toEqual(current); expect(f.applications()).toBe(0); expect(f.post).not.toHaveBeenCalled();
+  });
+  it.each(["failure", "cancel"] as const)("preserves B through the real installed core material %s return, keeping A explicit", async outcome => {
+    const f = await host(), prepared = deferred<CompleteAttachment>();
+    f.binding.commit(a, f.read().ownership);
+    const frozen = f.binding.capture(), next = f.binding.detach(frozen);
+    const captured = { text: "same text", ids: ["file-a"], entered: false, returning: undefined as { text: string; ids: readonly string[] } | undefined };
+    const removed = vi.fn(), delivered = vi.fn(), returned = vi.fn();
+    const core = new INTERNAL.DefaultThreadComposerRuntimeCore({ messages: [], isSendDisabled: false, capabilities: { cancel: false },
+      subscribe: () => () => {}, append: delivered,
+      adapters: { attachments: { accept: "text/plain", async *add() { yield { id: "file-a", type: "file", name: "a.txt", contentType: "text/plain", status: { type: "requires-action", reason: "composer-send" } }; },
+        send: () => prepared.promise, remove: async () => { if (!captured.returning) removed(); } } },
+    } as unknown as ConstructorParameters<typeof INTERNAL.DefaultThreadComposerRuntimeCore>[0]);
+    cleanup.push(() => core.__internal_dispose());
+    const composer = { getState: () => ({ text: core.text, attachments: core.attachments, submission: core.submission, inTransit: core.inTransit }),
+      subscribe: (listener: () => void) => core.subscribe(listener), setText: (value: string) => core.setText(value),
+      addAttachment: (value: Parameters<typeof core.addAttachment>[0]) => core.addAttachment(value),
+      getAttachmentByIndex: (index: number) => ({ remove: () => core.removeAttachment(core.attachments[index]!.id) }),
+    } as unknown as ComposerRuntime;
+    cleanup.push(bindPreparedDraftReturn(composer, () => captured, returned));
+    await core.addAttachment(new File(["a"], "a.txt", { type: "text/plain" })); core.setText(captured.text);
+    const sending = core.send(); expect(core.submission?.text).toBe(captured.text); expect(core.text).toBe("");
+    f.binding.commit(b, f.read().ownership); core.setText(outcome === "failure" ? captured.text : "");
+    const nextText = core.text;
+    if (outcome === "cancel") core.cancel(); else prepared.reject(Error("material unavailable"));
+    await vi.waitFor(() => expect(returned).toHaveBeenCalledTimes(1));
+    expect(returned.mock.calls[0]![1]).toBeUndefined(); expect(core.text).toBe(nextText); expect(core.attachments).toEqual([]);
+    expect(f.read().value).toEqual(b); expect(f.binding.isCurrent(next)).toBe(false);
+    expect(frozen.value).toEqual(a); expect(captured.text).toBe("same text"); expect(removed).not.toHaveBeenCalled(); expect(delivered).not.toHaveBeenCalled();
+    if (outcome === "cancel") prepared.resolve({ id: "file-a", type: "file", name: "a.txt", contentType: "text/plain", content: [], status: { type: "complete" } });
+    await sending;
+    const held = { ...captured, settings: frozen, nextOwnership: next };
+    const destination = { composer, settings: f.binding, assertCurrent: () => {},
+      material: (id: string) => ({ id, type: "file" as const, name: "a.txt", contentType: "text/plain", content: [] }) };
+    await expect(restorePreparedDraft(held, destination)).rejects.toThrow("next complete draft");
+    expect(f.read().value).toEqual(b); expect(core.text).toBe(nextText);
+    // The user explicitly clears B/omits C; reconnect must not permanently lock held A.
+    f.port.replace(owner.viewKey, f.read().ownership, undefined); core.setText(""); f.revoke(); f.reauth();
+    await restorePreparedDraft(held, destination);
+    expect(core.text).toBe(captured.text); expect(core.attachments.map(file => file.id)).toEqual(["file-a"]);
+    expect(f.read().value).toEqual(a); expect(f.read().ownership).not.toBe(next); expect(delivered).not.toHaveBeenCalled();
+  });
+  it("rejects late explicit restore after B changes during an attachment await without overwriting B", async () => {
+    const f = await host(); f.binding.commit(a, f.read().ownership); const frozen = f.binding.capture(), next = f.binding.detach(frozen);
+    f.port.replace(owner.viewKey, f.read().ownership, undefined);
+    let text = "", files: { id: string }[] = []; const listeners = new Set<() => void>(), wait = deferred<void>();
+    const emit = () => listeners.forEach(listener => listener());
+    const composer = { getState: () => ({ text, attachments: files }), subscribe: (listener: () => void) => { listeners.add(listener); return () => listeners.delete(listener); },
+      setText: (value: string) => { text = value; emit(); },
+      addAttachment: async (value: { id: string }) => { files.push(value); emit(); await wait.promise; },
+    } as unknown as ComposerRuntime;
+    const restoring = restorePreparedDraft({ text: "A", ids: ["a", "a2"], entered: false, settings: frozen, nextOwnership: next }, {
+      composer, settings: f.binding, assertCurrent: () => {}, material: id => ({ id, type: "file", name: id, contentType: "text/plain", content: [] }),
+    });
+    expect(text).toBe("A"); f.port.replace(owner.viewKey, f.read().ownership, b); composer.setText("B"); wait.resolve();
+    await expect(restoring).rejects.toThrow("complete draft changed");
+    expect(text).toBe("B"); expect(f.read().value).toEqual(b); expect(files.map(file => file.id)).toEqual(["a"]); expect(listeners.size).toBe(0);
+  });
+  it("retains exact Queue B across unknown acknowledgement and C changes", async () => {
+    const requests: { body: unknown; key: string }[] = [];
+    const port = { enqueueConversationTurn: async (_id: string, body: unknown, key: string) => { requests.push({ body: structuredClone(body), key }); throw Error("ACK lost"); } } as unknown as ConstructorParameters<typeof QueueCommands>[0];
+    const commands = new QueueCommands(port, async () => {}); cleanup.push(() => commands.dispose());
+    const input = structuredClone(b); await commands.execute({ kind: "enqueue", conversationId: "chat", input: { expectedQueueRevision: 3, text: "same text", messageSettings: input } });
+    input.requested.model = "mutated"; const receipt = commands.getSnapshot()[0]!; expect(receipt.state).toBe("unknown");
+    const current = messageSettingsDraft(c); await commands.retry(receipt.key);
+    expect(requests).toHaveLength(2); expect(requests[1]).toEqual(requests[0]); expect((requests[0]!.body as { messageSettings: unknown }).messageSettings).toEqual(b); expect(current.value).toEqual(c);
+    const omitted = new ConversationOutbox(); cleanup.push(() => omitted.dispose());
+    expect(omitted.begin({ conversationId: "chat", text: "legacy", expectedRevision: 0 }).request).not.toHaveProperty("messageSettings");
   });
 });

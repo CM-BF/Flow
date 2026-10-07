@@ -1,0 +1,154 @@
+{
+  "kind": "independent-failed-actual-and-owned-return-review",
+  "at": "2026-10-07T14:06:13.105837+00:00",
+  "run": "msg03-material-20261007-140004-04f4e0",
+  "implementationTarget": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "executionHead": "35dcec5983f93037c81d30b642bbb7415223598a",
+  "decision": "ACCEPTED_FAILED_ACTUAL_AND_FULL_OWNED_RETURN; PRODUCT_DRAFT_MEMBERSHIP_FINDING_OPEN",
+  "verified": {
+    "rawArchiveEntries": 24,
+    "rawBytes": 46068,
+    "manifestSha256": "e9004f552a2e9a8356f48e8908a34d2443bf7d30dcf0eb612cd055e916cb0618",
+    "fixedGitSourcePins": 26,
+    "rawAndSourceMismatches": [],
+    "stdoutBytes": 2027,
+    "stderrBytes": 0,
+    "bothEOF": true,
+    "droppedBytes": 0
+  },
+  "actual": {
+    "startedAt": "2026-10-07T14:00:09.820892+00:00",
+    "outerEndedAt": "2026-10-07T14:00:27.163441+00:00",
+    "outerExit": 1,
+    "parentExit": 1,
+    "ownedWorkerAndChromeExitCodes": [
+      0,
+      0
+    ],
+    "signals": [],
+    "initialization": {
+      "outcome": "PASSED",
+      "startedOffsetMs": 0,
+      "endedOffsetMs": 8441.695334,
+      "elapsedMs": 8441.695334
+    },
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 8441.768084000001,
+        "endedOffsetMs": 9451.717084,
+        "elapsedMs": 1009.9489999999987,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "messageSettingsMaterialReturn",
+        "startedOffsetMs": 9451.735709,
+        "endedOffsetMs": 16137.500167,
+        "elapsedMs": 6685.764458,
+        "outcome": "FAILED"
+      }
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "screenshots": []
+  },
+  "behavior": {
+    "failureSubbranch": "Raw materialPreparation records failure mode, restoredCompleteDraft true and zero business POST at that checkpoint. This is reached subbranch evidence, not a complete material group pass.",
+    "cancelSubbranch": "Before failure, source assertions require B text/settings and exactly one visible file chip. Poll then compares persisted B complete draft references with the actual B upload witness; actual diff contains current cancel A1 and A2 in addition to B. These A IDs differ from the prior failure subbranch IDs.",
+    "notReached": [
+      "late cancel settlement",
+      "explicit cancelled-A restore",
+      "success case",
+      "same-document navigation final check"
+    ],
+    "pageErrors": [],
+    "cleanupErrors": [],
+    "wholeMaterialGroup": "FAILED",
+    "wholeFeature": "NOT_PASSED"
+  },
+  "cleanup": {
+    "fixtureComplete": true,
+    "fixtureErrors": [],
+    "providerQueries": 0,
+    "database": {
+      "database": "flow_recovery_9159269b887b41e19fdde474253076a3",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.3163749999985157,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.6425420000014128,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "scratchAbsent": true,
+    "exactProcessObservationAt": "2026-10-07T14:01:00.037466+00:00",
+    "exactProcesses": [
+      {
+        "processId": 10474,
+        "pidState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 10544,
+        "pidState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 10862,
+        "pidState": "ESRCH",
+        "groupState": "ESRCH"
+      },
+      {
+        "processId": 13878,
+        "pidState": "ESRCH",
+        "groupState": "ESRCH"
+      }
+    ],
+    "initialObservationCorrection": "Original post-cleanup.json accidentally overwrote each numeric pid with ESRCH due to reused key. It is retained unmodified; fresh exact-process-identity-observation.json supplies all four IDs matched to outer/supervisor records.",
+    "portLimit": "No independent port probe; fixture close and all exact owned groups absent are the available evidence.",
+    "unknown": "No current owned-resource unknown recorded; prior third-run fixture graceful cleanup UNKNOWN remains historical."
+  },
+  "phase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "previousSpentMs": 33766,
+    "chargeMs": 17344,
+    "spentMs": 51110,
+    "unusedMs": 38890,
+    "state": "CLOSED_BELOW_45000_MINIMUM",
+    "unusedTransferred": false,
+    "newRuntimeGranted": false
+  },
+  "sourceFinding": {
+    "classification": "P2 product recovery projection; independent source diagnosis in progress",
+    "chain": [
+      "AppPluginSession.recoveryMaterials returns all attachment input items.",
+      "App recoveryHost.draft serializes those items as current CompleteDraft attachments.",
+      "Input intentionally retains held A beside B; existing ConversationAttachments.draftItems owns current/held/inTransit membership.",
+      "Recovery must reuse the same membership semantics without deleting held A, dropping unverified current items, or loosening B identity assertions."
+    ],
+    "releaseImpact": "GO requested explicit applicability review of the old7272 candidate sharing these sources. Cookie-only compatibility does not cover this failure; candidate requires necessary fix/refix if applicable, without waiting for all MSG features."
+  },
+  "reviewLimits": [
+    "No product or test execution, PG, Chrome or real env read by root.",
+    "Root verified26 fixed Git source hashes and24 archived/original raw artifacts; did not re-audit the entire943-entry supplied runtime closure.",
+    "Main integration, actual new webpage publication, dual-theme material visual acceptance and full settings-App journey remain unverified."
+  ]
+}

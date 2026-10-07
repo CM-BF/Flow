@@ -1,7 +1,7 @@
 import { freezeMaterialRequest } from "../../conversation-context/receipts";
 import { ReadCache, bodyBytes } from "../read-cache";
 import { freezeContextSelection, type FrozenCitation } from "../../conversation-context/selection";
-import { TERMINAL_STATUSES, type AttachmentReference, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
+import { TERMINAL_STATUSES, type ClaudeTurnSettings, type AttachmentReference, type ConversationQueuePage, type ConversationQueueItemDetail } from "@flow/contracts";
 import { QueueCommands, assertCurrentTurn, assertQueueItem, queueError, validRevision, type QueuePort, type QueueReceipt } from "./commands";
 
 export interface QueueState {
@@ -15,7 +15,7 @@ export interface QueueState {
   details: Readonly<Record<string, { data?: ConversationQueueItemDetail; loading?: boolean; error?: string }>>;
 }
 type QueueDetailState = QueueState["details"][string];
-const blockReasons = [null, "queue-paused", "previous-turn-active", "previous-turn-failed", "previous-turn-cancelled", "previous-turn-uncertain", "native-session-unavailable", "native-session-busy", "execution-profile-unavailable"];
+const blockReasons = [null, "queue-paused", "previous-turn-active", "previous-turn-failed", "previous-turn-cancelled", "previous-turn-uncertain", "native-session-unavailable", "native-session-busy", "execution-profile-unavailable", "message-settings-unsupported"];
 function assertPage(page: ConversationQueuePage, id: string, after: number) {
   if (!page || page.conversationId !== id || !validRevision(page.queueRevision) || typeof page.paused !== "boolean" || !blockReasons.includes(page.blocked) || !Array.isArray(page.items) || page.items.length > 20 || (page.nextCursor !== null && (!validRevision(page.nextCursor) || page.nextCursor <= after))) throw Error("Invalid queue page. Refresh before acting.");
   assertCurrentTurn(page.currentTurn);
@@ -108,7 +108,7 @@ export class ConversationQueueProjection {
     return null;
   }
   private ready(slot: string) { const reason = this.actionDisabledReason(slot); if (reason) throw Error(reason); return this.state.page!; }
-  async enqueue(text: string, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[]) {
+  async enqueue(text: string, knowledge?: readonly FrozenCitation[], attachments?: readonly AttachmentReference[], messageSettings?: Readonly<ClaudeTurnSettings>) {
     const page = this.ready("enqueue");
     if (knowledge?.length) {
       if (!this.knowledgeProject || !this.knowledgeSupported) throw Error("Knowledge requires a supported fixed conversation project.");
@@ -117,6 +117,7 @@ export class ConversationQueueProjection {
     if (attachments?.length && (!this.attachmentProject || !this.attachmentSupported)) throw Error("Files require a supported fixed conversation project.");
     freezeMaterialRequest({ knowledge, attachments }, this.attachmentProject ?? this.knowledgeProject ?? undefined);
     await this.commands!.execute({ kind: "enqueue", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision, text,
+      ...(messageSettings === undefined ? {} : { messageSettings }),
       ...(knowledge === undefined ? {} : { knowledge }), ...(attachments?.length ? { attachments } : {}) } });
   }
   async pause() { const page = this.ready("control"); await this.commands!.execute({ kind: "pause", conversationId: this.id!, input: { expectedQueueRevision: page.queueRevision } }); }

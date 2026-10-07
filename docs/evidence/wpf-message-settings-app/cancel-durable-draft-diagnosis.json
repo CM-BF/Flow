@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-07T14:04:00.942955+00:00",
+  "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "state": "STATIC_DIAGNOSIS_NO_SOURCE_CHANGE_NO_NEW_RUNTIME",
+  "pins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "blob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "blob": "59609085c43531ababd0c745d2efca91ea506376",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "blob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "blob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "blob": "34a2ebb0dfeb869e0bcd7efa0796702b14e0066f",
+      "bytes": 139230,
+      "sha256": "8b317323bebe8ded1df12ba9bc34b2d8e0cffa2d95ecd72157be277fa1fca6a5"
+    }
+  ],
+  "actual": "browser1216 persistent B identity assertion received held A1/A2 plus B. Before it, original text/settings B and one visible File attachment passed. Failure-mode restored complete A is separately recorded; cancel late adapter settlement was not reached.",
+  "sourceChain": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "lines": "1204-1216",
+      "fact": "visible B checks then savedB durable identities; failure is before probe settle released"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "lines": "667-675",
+      "fact": "RecoveryHost.draft serializes session.recoveryMaterials attachments without filtering"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "lines": "76-78",
+      "fact": "recoveryMaterials returns complete binding.input.items; held submission ids remain in this input"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "lines": "97-101,167-172,245,268-272",
+      "fact": "input intentionally retains held ids through core detach/return; draftItems distinguishes current/held/transit for composer capture, but recoveryMaterials bypasses it"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "lines": "156-167,185-191",
+      "fact": "guarded draftComposer masks returning A only for composer subscribers; complete explicit restore later clears failed hold and announces draft change"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "lines": "187-200",
+      "fact": "guard removes core-returned A from visible composer while preserving held input authority"
+    }
+  ],
+  "smallestCandidate": "Within current owned session.ts, project recovery attachments as current draft instead of complete input inventory: exclude this binding current held submission ids while held, preserve input A for explicit recovery, leave other B/unverified ordered items intact. Final successful restore already retires hold then onDraftChange, so A becomes eligible after full explicit ownership handoff. This candidate must be reviewed against original capture/partial restore/discard/default consumer behavior before implementation; no source edit in this report.",
+  "regressionProposal": [
+    "Use real AppPluginSession recoveryMaterials + attachment binding holding A and adding B: persisted projection excludes exact A ids, retains B identities/order, input still keeps A; no mirrored filter-only assertion.",
+    "Exercise complete explicit restore success and hold discard; ensure resulting projection includes A exactly once; failed/partial restore must not erase held A or falsely publish a complete draft.",
+    "Future mounted original cancel journey unchanged: durable B identity before and after late settlement, explicit A restore and subsequent distinct attachment preparation. No run authorized in closed phase."
+  ],
+  "scope": "Candidate session.ts + existing test are within exact19. attachments.tsx only read; any need to change it requires precise scope amendment, not assumed authority.",
+  "limitations": "Actual plus source strongly support projection mixing; no new reproduction or new local/browser checks. No claim that visible composer B was polluted. Root concentrated review pending.",
+  "concentratedDirection": "Root/manager确认复用ConversationAttachments现draftItems成员投影，避免session镜像过滤。manager已授权先seal此实际，再fresh原子amend追加attachments.tsx；未COMMITTED前不编辑。新local独立20s，0PG/Chrome，当前未使用。"
+}

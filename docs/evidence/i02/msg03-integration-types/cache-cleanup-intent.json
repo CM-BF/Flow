@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T14:45:33.250Z",
+  "reason": "Exact newly created TypeScript/Node compile cache; tsc shim enables compile cache and sole bounded process is absent with dual EOF. Original empty-only KEEP result remains unchanged.",
+  "root": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-msg03-intake-n0kbn6qv",
+    "dev": 16777234,
+    "ino": 124228540
+  },
+  "file": {
+    "path": "node-compile-cache/v24.20.0-arm64-964aae3f-501/b16c272a",
+    "dev": 16777234,
+    "ino": 124228561,
+    "bytes": 1357804,
+    "mode": "0600",
+    "nlink": 1,
+    "mtime": 1791384260.5514495,
+    "sha256": "f2a299b317dd58156c1440b10d47d4c4732851f6ab7a272e630ff9f729beb9a1"
+  },
+  "shim": {
+    "path": "node_modules/typescript/lib/tsc.js",
+    "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+  },
+  "action": "Remove only the verified generated file and exact now-empty directories; no other tmp or dependencies touched."
+}

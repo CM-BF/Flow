@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T13:17:00.507199+00:00",
+  "observations": [
+    {
+      "pid": 6398,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 6500,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 6561,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "childGroups": "sync child helpers inherited checker group; separate child pgid ESRCH alone does not prove no helper, PID ESRCH also checked",
+  "env": "sentinel.env is self-created nonsecret fixture, not an admin endpoint"
+}
