@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:22:00Z |
+| 最近更新时间 | 2026-10-07T11:24:08.175Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -12,14 +12,14 @@
 | 任务时间来源 | owner实际UTC开读；take COMMITTED11:14:49.386Z见claim-take.json |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle |
 | Branch | codex/plugin-version-lifecycle |
-| 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / UNKNOWN |
-| 工作树dirty状态 | own准备源码/metadata实施中 |
-| 工作分支状态 | in-progress | db_transaction_owner |
-| 本片段交付阶段 | implementation |
+| 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / f037334df65333111e115cbc568255b34eeb805e |
+| 工作树dirty状态 | source/support固定，本次packet metadata提交后clean |
+| 工作分支状态 | ready | db_transaction_owner |
+| 本片段交付阶段 | review |
 | 检查状态 | NOT_RUN PG；final focused types exit0，collect1（非pass），原首types2保留 |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，PENDING固定只读审 |
 | 已集成main状态 / HEAD | 本片未集成；固定基线cca4ab7c968598844ca5680140ee7c06ec1dd2f4 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | f037334df65333111e115cbc568255b34eeb805e |
 | 实现范围 | apps/server/src/plugin-runtime/version-rollback-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
@@ -40,3 +40,5 @@
 | X01LIFE-04 | pending | db_transaction_owner | 未交付 |
 
 注册：task-intake由OriginalLead按canonical登记，当前待登记。原X01大目标未完成。
+
+2026-10-07T11:24:08.175Z 固定准备源 f037334df65333111e115cbc568255b34eeb805e；review-ready.json/pg-manifest 40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53。4children末态闭合，types0/list1仅准备结果。11:21:07.950Z已归还local，0资源holder。单例PG仍NOT_OPEN。实际主线基线固定cca4，未追逐新main。

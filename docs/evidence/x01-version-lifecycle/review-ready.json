@@ -1,0 +1,25 @@
+{
+  "source": "f037334df65333111e115cbc568255b34eeb805e",
+  "testSource": "0ab4fcb34405db6f4697b4679445d97a1029225a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
+  "manifest": "docs/evidence/x01-version-lifecycle/pg-manifest.json",
+  "manifestSha256": "40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53",
+  "fileCount": 402,
+  "fileBytes": 1912869,
+  "externalCount": 35,
+  "links": 20,
+  "local": {
+    "children": 4,
+    "supervisionMs": 8009,
+    "rawBytes": 1296,
+    "typesFinalExit": 0,
+    "collected": 1,
+    "testsPassed": null,
+    "PG": "NOT_RUN"
+  },
+  "reviewScope": "new test/caller identity+single-case recipe deltas, source binding and local raw; inherit unchanged production main/OPS14/resource helpers",
+  "parent": "X01",
+  "claim": "5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1",
+  "actualScope": "not yet authorized",
+  "oldSource": "fixture-local-v1.txt retains first types/list exact bytes"
+}

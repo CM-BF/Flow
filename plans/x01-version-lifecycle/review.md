@@ -1,6 +1,6 @@
 # X01-VERSION-LIFECYCLE01 Review
 
-状态：NOT_STARTED
-Review target commit: UNKNOWN
+状态：PENDING
+Review target commit: f037334df65333111e115cbc568255b34eeb805e
 
-仅固定新fixture/薄准备与local结果；审者先核base/head/dirty，逐条核真实A phase、B/C版本材料与历史pin、撤权、预算/资源闭合。实际PG未OPEN，不将types/list当pass。所有修复归owner；只读独审不得写本树。
+范围：新version-rollback-pg.test.ts及execute-pg-once.py/局部配方与固定输入；生产base cca4与原OPS14/资源helper不改。审者先核head/dirty/manifest，核真实A load gate取消、B/C当前授权与冻结pin、HTTP/migration/资源完整闭包及local原件，给0P1/P2或明确finding。真实PG未OPEN；types0/list1非pass。修复回owner。入口../../docs/evidence/x01-version-lifecycle/review-ready.json。
