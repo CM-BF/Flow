@@ -1,0 +1,135 @@
+{
+  "state": "CLOSED",
+  "authority": "NOT_GRANTED: new manager150s window and fresh complete admission required",
+  "modes": [
+    "pg"
+  ],
+  "sourceHead": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
+  "segmentStartedAt": "2026-10-07T18:35:03Z",
+  "expiresAt": "2026-10-07T18:35:03Z",
+  "window": "UNASSIGNED_K01_INTEGRATED",
+  "recordDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-entry-pg-integrated-candidate",
+  "requiredFreeBytes": null,
+  "reviewed": false,
+  "integratedObservation": true,
+  "pgTotalSeconds": 150,
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "experimentFiles": [
+    {
+      "path": ".gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "README.md",
+      "bytes": 19016,
+      "sha256": "2fb56027cbe969e9ee385e2632b092ddaabaf1d1e0818ece4106dbc83c6b44dc"
+    },
+    {
+      "path": "budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "entry.py",
+      "bytes": 27781,
+      "sha256": "654c526b10d3f8831f831d7b712a3c98e3979f054bd78d25920355b7c994a434"
+    },
+    {
+      "path": "entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "measurement.ts",
+      "bytes": 13199,
+      "sha256": "fbdfbd8b567e53515e17e5b0288433d5649efbac4a2059cc2f43df11e2da7f54"
+    },
+    {
+      "path": "observing-pool.test.ts",
+      "bytes": 5872,
+      "sha256": "48017536803b8a0c2565f0c3a8fec0459cbd2eea34f5220cde9e24b47905b9ab"
+    },
+    {
+      "path": "observing-pool.ts",
+      "bytes": 2063,
+      "sha256": "007a10aa4f3bf8f730e87451447be9c25bbfc0087f3099fec227f588d369110e"
+    },
+    {
+      "path": "owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "owned-db-observation.mjs",
+      "bytes": 3701,
+      "sha256": "cdd749b95d42d9e356e940c1bc65ba4e3b6d1d2a0d585c77b835a8442a7e2283"
+    },
+    {
+      "path": "owned-db-observation.test.mjs",
+      "bytes": 3147,
+      "sha256": "194ee818bc4f5bd7fa465f04a246ffc9171756322b2f244e92e7bc513c084329"
+    },
+    {
+      "path": "postflight.test.py",
+      "bytes": 7939,
+      "sha256": "85e9be6fe246cfbf372f06532b34395ac74eb4b6f9ddbb281d525100f9bc12eb"
+    },
+    {
+      "path": "run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "vitest.config.mjs",
+      "bytes": 268,
+      "sha256": "00e228e82854ae84e4bf66c1b04cee6095611080a0893c70f324907d694d0255"
+    }
+  ],
+  "noRuntimeGrant": true
+}

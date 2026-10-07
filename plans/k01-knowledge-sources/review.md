@@ -1,16 +1,18 @@
-# K01 same-window failure observation — pending review
+# K01 same-window failure observation — approved source/local results
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：74934ecd9fd8e33f2c83e858dcc3e1b4e343581c
 
 Scope: original operator composes primary OPS14 and at most one separate readonly observer; bounded current-namespace identity/receipts, same-origin phase budgets, primary failure preservation, pure direct tests. Canonical docs/evidence/k01/query-entry-postflight-20261007T181324/manifest.json. Actual PG NOT_OPEN;29pure only. Prior callback47354 independently approved18:12:26, not this new source.
 
-# K01 callback repair — pending independent delta review
+Mika于2026-10-07T18:33:14Z给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2，绑定74934ecd9fd8e33f2c83e858dcc3e1b4e343581c / packet3f08866d；31bindings一致，29pure、3child/raw750B及18:26:24.696182Z FULLRETURN已核。只批准源码及局部结果；真实PG与总150秒生命周期仍未验证，旧失败/KEEP不变。见query-entry-postflight-independent-review.json。未来runtime候选另见query-pg-integrated-ready.md，不构成运行批准。
 
-状态：NOT_STARTED
+# K01 callback repair — approved independent delta review
+
+状态：APPROVED
 Review target commit：47354f92fed41eafbc5b03e3841ffe446dd65b61
 
-Scope: experiment observer callback/Promise checkout plus two bounded phase-start labels, direct fake-client tests using fixed production transaction, and local caller selector/config. Canonical: docs/evidence/k01/query-entry-callback-repair-20261007T175202/manifest.json. Seven pure cases and focusednoEmit passed; actual PG remains NOT_OPEN. Original failures and readonly recovery receipts are frozen. Root preliminary source inspection found no furtherP1/P2; final source-and-result review is still pending.
+Scope: experiment observer callback/Promise checkout plus two bounded phase-start labels, direct fake-client tests using fixed production transaction, and local caller selector/config. Canonical: docs/evidence/k01/query-entry-callback-repair-20261007T175202/manifest.json. Seven pure cases and focusednoEmit passed; actual PG remains NOT_OPEN. Original failures and readonly recovery receipts are frozen. Mika于18:12:26Z完成SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2；callback静态P2 CLOSED。27bindings与7pure/types及资源闭合已核，实际两次PG失败根因仍未证明。
 
 # K01 修复后实际失败原件窄审（当前）
 

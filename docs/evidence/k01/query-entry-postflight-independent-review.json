@@ -1,0 +1,14 @@
+{
+  "reviewer": "Mika / root",
+  "reviewedAt": "2026-10-07T18:33:14Z",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "target": "74934ecd9fd8e33f2c83e858dcc3e1b4e343581c",
+  "packet": "3f08866d8913033f16bbf1c9b7c4c12aa154afb9",
+  "manifestSha256": "6ca454aef2518188a82f8ad7a6240dc33e4c59a1195976c44bc22b6cec7e9217",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": "31 bindings; b6fe execution→74934/current executable equal;29pure/3child/raw750B/exact scratch absent;actualFULLRETURN18:26:24.696182Z",
+  "limitations": "pure/source only; no new PG or total150s actual lifecycle proof; oldFAIL/KEEP unchanged; noTS changes so no new noEmit"
+}
