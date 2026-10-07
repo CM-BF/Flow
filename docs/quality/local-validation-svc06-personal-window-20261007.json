@@ -1,6 +1,6 @@
 {
   "at": "2026-10-07T13:03:23.601113+00:00",
-  "state": "RESERVED_REMAINING_MAINTENANCE_ONLY",
+  "state": "RETURNED_FACTS_READER_FAILURE_BEFORE_MAINTENANCE",
   "window": "svc06-personal-7d1-20261007-1306",
   "operator": "assignment_review",
   "coLead": "astra_ultra_execution_lead",
@@ -88,5 +88,20 @@
     "three C3 report imports",
     "browserpolicy creation"
   ],
-  "maintenanceDeadline": "Whole operator independently bounded900s frombeforelaunch, +2sreap; includes bindings/fsync, never resets; missing inner phase receipt UNKNOWN/KEEP; detached services excluded from supervision stop ownership."
+  "maintenanceDeadline": "Whole operator independently bounded900s frombeforelaunch, +2sreap; includes bindings/fsync, never resets; missing inner phase receipt UNKNOWN/KEEP; detached services excluded from supervision stop ownership.",
+  "returnedAt": "2026-10-07T13:05:06.750720Z",
+  "actual": {
+    "firstStage": "facts-before",
+    "code": "WEB_COMPATIBILITY_INVALID",
+    "factsMs": 418,
+    "operatorMs": 494,
+    "completed": [],
+    "bootstrap": 0,
+    "refresh": 0,
+    "resume": 0,
+    "operatorProviderQueries": 0,
+    "helperTermination": "operator97737 andfacts97738 childPidOnly absent/dualEOF/no signals",
+    "scope": "No replay of R2; root remains frozen while fixed reader schema mismatch diagnosis is completed",
+    "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+  }
 }
