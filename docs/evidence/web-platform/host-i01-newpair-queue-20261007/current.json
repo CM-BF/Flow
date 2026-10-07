@@ -1,9 +1,9 @@
 {
-  "at": "2026-10-07T18:05:27.344Z",
-  "state": "AV03_UNIQUE_NEXT_NO_ACTUAL",
+  "at": "2026-10-07T18:42:24.886Z",
+  "state": "NO_ACTUAL_HOLDER_S01_SELECTED_DRAIN_PENDING",
   "OriginalRequestVerbatim": "Original刚请求SVC09A真实PG/host215s（0Chrome/provider/个人）：host准备独审APPROVED/main24c824035；sourceccf7/deliverybc899；2515/098b。新随机专库/动态双端口/独立clone+HOME；PG max26+管理余量16；clone≤1GiB/private32MiB/PG128MiB/raw2MiB；无安装/build/共享源写。他本队assignment15:42:48 RETURN当前0运行。",
   "originalRequestSource": "Original request relayed verbatim by root; no outgoing Original tool attempt",
-  "decision": "C3 formal4PASS+exactRETURN accepted for resource scheduling; independent result review still pending. Earlier formalREADY AV03 gets next single180s originalowner fresh grant; S01 performance candidate stays queued and requires later drain. No actual START yet.",
+  "decision": "AV03 failed and full resources returned18:23:06.969. No actual heavy holder or next grant. S01 measurement selected pending explicit three-lead ordinary/source drain; no automatic start.",
   "floor": {
     "previousComplete": 14414970880,
     "newS01Preparation16MiB": 16777216,
@@ -109,9 +109,9 @@
     "backend": "cd27/04da",
     "policy": "81a8",
     "compatibility": "FOUR_REPORTS_PASS_INDEPENDENTLY_APPROVED_NOT_DEPLOYED",
-    "state": "PASS_FOUR_REPORTS_APPROVED_COMPLETE_RETURN",
+    "state": "MAIN_INTEGRATED_CLAIM_RELEASED_PERSONAL_DEPLOYMENT_PENDING",
     "source": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
-    "metadata": "eada6fd65491f86e1a3bddead407e79090bea852 remoteequalclean",
+    "metadata": "a831c6682f22321d339c19132d97788d11241b30 remoteequalclean",
     "packet": "/private/tmp/rel01-recovery-c3",
     "binding": "a25e6420ab63d7b1c8d00cf14eb13a4deec008798416ab0cfea769acc400efa9",
     "manifest": "f9d93c5c0cb630ff56177422f61a3114c280823f928866b22b907197bb82a3ec",
@@ -121,7 +121,7 @@
     "configuredConnections": 12,
     "Chrome": 1,
     "newPotentialBytes": 210763776,
-    "claim": "7d60 v2 exact4 STOP active",
+    "claim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v3 RELEASED",
     "actual": {
       "state": "PASS_FOUR_REPORTS_APPROVED_COMPLETE_RETURN",
       "task": "WPF-RELEASE01-C3",
@@ -186,7 +186,7 @@
     "rootReceipt": "Peer/static/root/native approved; SVC09A explicit runtimeRETURN now read",
     "rootIntake": "compatibility-caller-root-intake.json",
     "nativeBoundary": "compatibility-native-boundary.json",
-    "nextAfterCurrent": "Await owner fresh admission and actual START for the single c3 phase; old formal failures preserved.",
+    "nextAfterCurrent": "Original existing SVC06B two-stage publication preparation, not actualdeployment; stableexecutor successor requires future lawful rights.",
     "grantConditions": "Routine binding plus immediatefresh claim/head/allfixedinputs/namespace/rootidentity/fullfloor. Any mismatch STOP before launch, no automaticretry; actualSTART and fullRETURN separate receipts.",
     "grantAt": "2026-10-07T16:00:16.558Z",
     "grantedTotalMs": 180000,
@@ -612,7 +612,36 @@
       "consumerAction": "Original short readonly loader review then own SVC06B fixed managed update entry; personal actual proposal separately scheduled, no currentPGrequest"
     },
     "ownerFinal": "8dfb6d580fbe79c4ed30f3499d0e0ba260b0c549",
-    "ownerState": "remoteequalclean/exact4STOP; claim retained, main/deployment pending Original"
+    "ownerState": "remoteequalclean/exact4STOP; claim retained, main/deployment pending Original",
+    "mainIntake": {
+      "state": "INTEGRATED_MAIN_ORIGIN_EXACT_TWO_HARNESSES",
+      "commit": "d669f3acb466f6f11bd6d81c1bffb7ffeedb5010",
+      "source": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+      "rootReadonlyVerification": "Two harness bytes/hash equal d882; original preimages e029 matched, no product rerun",
+      "browser": {
+        "bytes": 37253,
+        "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+      },
+      "fixture": {
+        "bytes": 41015,
+        "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+      },
+      "ownerFollowup": "After VISUAL current finite ordinary phase fullRETURN+safeSTOP, sequential Release ownmetadata main/actual completion/normalpushclean/STOP/fresh7d60release, then VISUAL. No concurrent feature writes.",
+      "personalDeployment": "NOT_DONE; Original SVC06B two-stage plan preparation, no runtime grant"
+    },
+    "mainCloseout": {
+      "state": "MAIN_INTEGRATED_CLAIM_RELEASED_PERSONAL_DEPLOYMENT_PENDING",
+      "main": "d669f3acb466f6f11bd6d81c1bffb7ffeedb5010",
+      "ownerFinal": "a831c6682f22321d339c19132d97788d11241b30",
+      "ownerState": "remoteequalclean/all4STOP/no write after release",
+      "claim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v3 RELEASED",
+      "releasedAt": "2026-10-07T18:35:22.477Z",
+      "receipt": "release-main-d669-claim-release.json",
+      "receiptSha256": "eb6e19db277610676dd5cf0d4e49767cfcc2f99a6251df198bee633d6e9881fc",
+      "canonical": "web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md",
+      "completedLeaf": "RELEASE01-08",
+      "overall": "NOT_COMPLETED: personal deployment not done; stableexecutor-10 remains open"
+    }
   },
   "I01": {
     "browser": "4/4 scoped real App groups PASS; root9019 approved; main integrated; personal deployment not changed",
@@ -1313,13 +1342,14 @@
       "Chrome": 0,
       "provider": 0,
       "scope": "Existing K01-06 caller150s source implementation/pure/types; no newheavy grant"
-    }
+    },
+    "latestDrain": "Finalwholeteamdrain0child/PG/pending,source/supply/CLI/metadataSTOP: PROCESS18:37:13/6c881, unstarted8MiBwithdrawn;AV18:38:02 known1959af0a2 pushed/no freshdirty probe4MiB;K18:39:04 known3f08866d+3dirtymetadata~74.7KB1MiB;S01c751/input842STOP"
   },
   "visual": {
     "task": "WPF-VISUAL01",
     "parent": "WPF-MATURE-01 original02/04",
     "owner": "w01_owner",
-    "state": "SOURCE_REVIEWED_BOUNDED_ORDINARY_GRANTED_NOT_STARTED",
+    "state": "TYPES_PASSED_SOURCE_SAFE_STOP_BROWSER_NOT_RUN",
     "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
     "branch": "codex/web-shared-overlays",
     "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
@@ -1335,13 +1365,13 @@
     "fixedSupplyBytes": 5230960,
     "initialState": "Fixed3c bytes allmatch/clean;0sharedconfig/install/runtime",
     "sourceSwitch": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/source-switch-intake.json",
-    "canonical": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e actualremoteequalclean",
+    "canonical": "7a8e0e8fb40816fed8dfdadc14649bc55ab278a2 remoteequalclean",
     "D05": "208liveverified17:03:22/current/issues[]/uniqueactiveclaim matchesSource=true",
-    "source": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
-    "engineeringChecks": "NOT_RUN; new30s affectedtypes grant, browser not granted",
-    "allScopes": "STOP claimretained;W01sequentiallyReleaseagentfalse",
+    "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+    "engineeringChecks": "Affected strict passed after first config/type failure;5765/30000 CLOSED; browser NOT_RUN",
+    "allScopes": "all8STOP/acce v1 retained",
     "dispatch": "AfterReleasec2STOP,owner sequentiallyprepares necessarylocal+existingrepresentativebrowseronly;no fixedsourcechange/noengineering. Releaseactual resumesfirst.",
-    "runtime": "NOT_RUN_NO_GRANT;Recoveryappearance TSX/ownignoredlinks not supplied/notready",
+    "runtime": "Browser NOT_RUN_NO_GRANT",
     "sourceSwitchState": "CLOSED_ACTUAL_LIVE_VERIFIED",
     "newSourcePreparationSegment": {
       "authorizedAt": "2026-10-07T17:11:16.001Z",
@@ -1358,14 +1388,14 @@
     "sourceReview": "visual-trusted-preset-source-review.json",
     "reviewBoundary": "Sourcepreset0blocking; fourentryaffectedtypesNOTRUN/browserNOTRUN/TSXignoredlink supplynotready",
     "ordinaryLocal": {
-      "state": "GRANTED_BOUNDED_ORDINARY_NOT_STARTED",
+      "state": "CLOSED_PASS_FIRST_FAILURE_RETAINED",
       "logicalId": "VISUAL-AFFECTED-TYPES-20261007-ONCE",
       "grantAt": "2026-10-07T18:12:30.325Z",
       "owner": "w01_owner",
       "worktree": "web-shared-overlays",
       "branch": "codex/web-shared-overlays",
       "claim": "acce2727 v1 exact8",
-      "source": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+      "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
       "executionAtPreparation": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e",
       "proposal": "docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json",
       "proposalSha256": "2a32ab6a169ecf98770b361d858f0cc93cca39634d9d77fe59287857d41a947b",
@@ -1381,7 +1411,63 @@
       "scope": "Four declared entries affected strict/noUnchecked/noEmit; Python supervisor + one Node compiler/ownedgroup, no fullsuite or Vite/Chrome/PG/HTTP/install/provider",
       "conditions": "Fresh ownclaim/clean/source/fixedread-onlycompiler/config/native/TMPidentity and current completefloor. Relevant source/config fixes and directed retry in remaining same total only; preserve firstfailure and exact total. ReturnEOF/drop/group/scratch/exit evidence. Stop futurelaunch on performance-drain instruction.",
       "minimumFreshFreeBytes": 16266821632,
-      "latestUnconsumedMinimumFreshFreeBytes": 16275210240
+      "latestUnconsumedMinimumFreshFreeBytes": 16275210240,
+      "actualStart": "2026-10-07T18:17:03.101726Z",
+      "outerPid": 52884,
+      "outerPgid": 52884,
+      "execSession": 79843,
+      "actualDirectory": "/private/tmp/visual01-types-first-ygw09t5t",
+      "fresh": "b412 HEAD/acce v1 exact8 nooverlap;276pins220own28readonlyroots+tools/config match",
+      "freeBeforeBytes": 19530014720,
+      "consumedFloorBytes": 16266821632,
+      "latestForwardBytes": 16275210240,
+      "latestHigherBoundAlsoSatisfied": true,
+      "sourceUnchanged": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+      "result": "Affected strict PASSED; first compiler2/config failure retained; browser NOT_RUN",
+      "attempts": [
+        {
+          "actualStart": "2026-10-07T18:17:03.101726Z",
+          "outerPid": 52884,
+          "outerPgid": 52884,
+          "execSession": 79843,
+          "actualDirectory": "/private/tmp/visual01-types-first-ygw09t5t",
+          "fresh": "b412 HEAD/acce v1 exact8 nooverlap;276pins220own28readonlyroots+tools/config match",
+          "freeBeforeBytes": 19530014720,
+          "consumedFloorBytes": 16266821632,
+          "latestForwardBytes": 16275210240,
+          "latestHigherBoundAlsoSatisfied": true,
+          "sourceUnchanged": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+          "state": "FAILED_ATTEMPT_COMPLETE_RETURN",
+          "actualReturn": "2026-10-07T18:18:20.078708Z",
+          "outerExit": 1,
+          "compilerExit": 2,
+          "chargeMs": 2745,
+          "compilerPid": 52888,
+          "cleanup": "52884/52888 exactPID+PGID ESRCH;scratchabsent;inner/outerdualEOF/drop0",
+          "diagnostics": "10: one own browser HTMLElement|SVGElement offsetWidth and three Vite package directory aliases missing declaration entries, cascading any; source/strict fix in same finite phase"
+        },
+        {
+          "actualStart": "2026-10-07T18:25:07.799762Z",
+          "actualReturn": "2026-10-07T18:25:58.676713Z",
+          "outerPid": 62689,
+          "compilerPid": 62693,
+          "outerExit": 0,
+          "compilerExit": 0,
+          "chargeMs": 3020,
+          "actualDirectory": "/private/tmp/visual01-types-second-df4qrklf",
+          "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+          "fresh": "279pins/acce v1 exact8; real HTMLElement guard and three installed d.ts mappings; parent851b unchanged",
+          "cleanup": "BothPID+PGID ESRCH/scratchabsent/innerouterEOFdrop0"
+        }
+      ],
+      "spentMs": 5765,
+      "remainingMs": 24235,
+      "activeChild": null,
+      "pendingAction": "No further checks. Owner7a8e safeSTOP then sequential Release ownmain metadata and fresh claimrelease, no product rerun.",
+      "actualReturn": "2026-10-07T18:25:58.676713Z",
+      "unusedTransferred": false,
+      "ownerFinal": "7a8e0e8fb40816fed8dfdadc14649bc55ab278a2",
+      "ownerFinalState": "remoteequalclean/all8STOP claimretained"
     }
   },
   "AV02Intake": {
@@ -1850,25 +1936,45 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "AV03_UNIQUE_NEXT_FRESH_REQUIRED",
-    "at": "2026-10-07T18:05:27.344Z",
-    "selectedHeavyCandidate": "AV03_VERIFIER_CLAIM_PG",
+    "state": "S01_CANDIDATE_DRAIN_PENDING_NO_GRANT",
+    "at": "2026-10-07T18:42:24.886Z",
+    "selectedHeavyCandidate": "S01_QUEUE_BUFFERED_SINGLE_ARM",
     "termsBytes": {
       "residualUnknown": 13440909312,
       "priorK01Db": 134217728,
       "secondK01Db": 134217728,
       "R4KeepPendingClassification": 1243611136,
-      "MikaPureSourceLocal": 16777216,
+      "MikaPureSourceLocal": 1048576,
       "ArcSource": 16777216,
       "OriginalOrdinaryKeepPendingClassification": 35651584,
       "ReleaseC3PendingSeal": 0,
-      "selectedAV03PG": 168820736,
       "reserveOnce": 1073741824,
-      "VisualNewAffectedTypes": 10485760
+      "AV03FailureMetadata": 4194304,
+      "ReleaseMainCloseoutMetadata": 0,
+      "selectedS01CandidateScratchAndDbWal": 1610612736
     },
-    "minimumFreshFreeBytes": 16275210240,
-    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 16777216 + 16777216 + 35651584 + 0 + 168820736 + 1073741824 + 10485760 = 16275210240",
-    "limits": "C3 exactDBDROP/scratchabsence removes old temporary128+64MiB; only8MiBraw+1MiBmetadata possible pending seal. AV03 TMP32+raw1+DBWAL128MiB=161MiB once, shared1GiB reserve once. RetainedDBbounds planning, not hardpeak. R4/Original growth remains conservative pending classification. No oldtimecredit. Release8dfb sealedSTOP removes9MiB pendingseal. VISUAL proposal explicitly TMP8+retained1+metadata1=10MiB; counted once, not earlier shorthand9MiB. If AV consumed earlier, preserve its oldgate; otherwise fresh higherbound. Later Kcallback old8MiB sealedSTOP replaced new16MiB, not added as24."
+    "minimumFreshFreeBytes": 17694982144,
+    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 1048576 + 16777216 + 35651584 + 0 + 1073741824 + 4194304 + 0 + 1610612736 = 17694982144",
+    "limits": "AV03 real DROP/ENOENT removes temporary161MiB, but new failuremetadata1MiB remains. VISUAL7a8e sealedSTOP removes10MiB ordinarycap. New Release maincloseout1MiB once. S01selectedpeak512MiB+1GiBDBWAL excludes its intrinsicreserve; shared1GiBreserve counted once. All historical consumed gates unchanged; residual/R4/OriginalKEEP retain conservative bounds. Kcaller16MiB not fully sealed remains, Arc16MiB remains. Release a831c sealedSTOP and7d60v3 released18:35:22 removes closeout1MiB; no historical gate rewritten. Final Mika drain: K source16MiB replaced1MiB dirtymetadata bound; AV former1MiB replaced4MiB source bound, no freshdirty probe; PROCESS unstarted8MiB withdrawn. All source/CLI STOP, not assumed clean from STOP.",
+    "historicalConsumedAV03": {
+      "state": "AV03_GATE_CONSUMED",
+      "at": "2026-10-07T18:05:27.344Z",
+      "termsBytes": {
+        "residualUnknown": 13440909312,
+        "priorK01Db": 134217728,
+        "secondK01Db": 134217728,
+        "R4KeepPendingClassification": 1243611136,
+        "MikaPureSourceLocal": 16777216,
+        "ArcSource": 16777216,
+        "OriginalOrdinaryKeepPendingClassification": 35651584,
+        "ReleaseC3PendingSeal": 0,
+        "selectedAV03PG": 168820736,
+        "reserveOnce": 1073741824,
+        "VisualNewAffectedTypes": 10485760
+      },
+      "minimumFreshFreeBytes": 16275210240,
+      "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 16777216 + 16777216 + 35651584 + 0 + 168820736 + 1073741824 + 10485760 = 16275210240"
+    }
   },
   "SVC09AR4": {
     "state": "FAILED_RUNTIME_RETURN_WITH_KEEP",
@@ -1994,7 +2100,7 @@
   },
   "AV03ReadyCandidate": {
     "logicalId": "AV03-VERIFIER-CLAIM-PG-20261007-ONCE",
-    "state": "UNIQUE_NEXT_GRANTED_FRESH_REQUIRED_NOT_STARTED",
+    "state": "FAILED_COMPLETE_RETURN_NO_RETRY",
     "grantAt": "2026-10-07T18:05:27.344Z",
     "owner": "Mika original AV03 owner",
     "execution": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
@@ -2021,7 +2127,26 @@
     "provider": 0,
     "minimumFreshFreeBytes": 16265773056,
     "conditions": "Mika original owner only, fresh exactclaim/currentclean execution/fixed281inputs191external16links34SQL/native/newnamespace/unusedpermit/noactualheavy/PGavailable>=17+16/free>=latest fullbound. One selected5case180s110+60+10. No extra source review/repeated greenlocals. Unknown beforelaunch STOP, unknown CREATE/cleanup KEEP, no forcedDROP/retry. Report actualSTART/terminal/exactRETURN independently. NativeRunner/npm/public verifier/deployment not covered. Functional SQL/HTTP fence check, not performance timing; isolated originallead ordinarypure may coexist.",
-    "latestUnconsumedMinimumFreshFreeBytes": 16275210240
+    "latestUnconsumedMinimumFreshFreeBytes": 16275210240,
+    "actualStart": "2026-10-07T18:21:48.308Z",
+    "outerPid": 33672,
+    "outerPgid": 33672,
+    "windowId": "16140fbb069b42da85fbe6336a4976ed",
+    "consumedFloorBytes": 16275210240,
+    "freeBeforeBytes": 19525726208,
+    "fresh": "281inputs/191external/16links/34SQL/a67v4/cleanc6ed/newnamespaceabsent match",
+    "databaseOID": 1344776,
+    "boundary": "One original functional180s17PG; no second run. Prior expiredadmission0child prePopen separate. No clocks-based return.",
+    "actualTerminal": "2026-10-07T18:21:51.385Z",
+    "actualReturn": "2026-10-07T18:23:06.969Z",
+    "outerExit": 1,
+    "elapsedMs": 3076.928,
+    "result": "beforeAll projects_current_revision foreign-key failure; 0 selected/0 pass/5 skipped; real PG ran, cases not validated",
+    "databaseName": "flow_x01_28131b96efca40c28de6f855e8ecb5e8",
+    "closure": "33672/33676/33677 exactabsent/MERGED EOF; exactowner+marker/0conn/normalDROP ACK+absence/allpool-adminclosed;port50005connectEx61;TMPflow-x01-pg-qpe25446 dev16777234 ino124405264 exactremoved/ENOENT",
+    "phaseState": "CLOSED",
+    "unusedTransferred": false,
+    "resultReview": "Owner/Mika raw and caller/tool consistency checked; sealed independent review pending"
   },
   "S01NextPerformanceCandidate": {
     "state": "READY_WAITING_NO_GRANT",

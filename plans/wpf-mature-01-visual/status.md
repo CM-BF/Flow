@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:01:19.610Z；共享浮层首片源码已固定，未运行工程或视觉检查；作者安全停写后优先执行新网页兼容。 |
+| 最近更新 | 2026-10-07T18:38:49.752Z；共享浮层源码和必要类型检查已完成，浏览器代表界面验收尚未运行；新网页兼容已通过并交原发布流程。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以计划创建或本次更新时间回填；整体视觉体验验收尚未完成。 |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 已审前端与恢复入口已合主线；Original held续接已使固定7d1/6c后台accepting v21，个人三服务继续。现网页资产仍d629/v3，新恢复网页未实际发布，不能把后台更新当全部视觉体验完成。 |
-| 下一可用交付 | 原发布链优先验证新网页与新后端并应用个人网页；共享浮层统一圆角、轻阴影、适度遮罩与正常目录层级已有首片源码，随后完成局部检查和代表界面验收。 |
-| 当前阻塞 | ACTIVE: 新网页正式兼容在迟到退出登录场景失败，尚不可发布；共享浮层首片源码固定但工程和视觉检查未运行。个人设置目录和完整视觉目标仍开放。 |
+| 当前产出 | 新网页已通过三个保留版本和新增恢复版本的兼容检查并独立验收，验证代码已进入主线；共享浮层统一圆角、轻阴影与适度遮罩的首片源码及必要类型检查已完成。个人网页尚未切换。 |
+| 下一可用交付 | 原发布流程更新已验收的新网页；随后完成共享浮层在桌面和窄屏的代表界面、焦点与主题验收。 |
+| 当前阻塞 | ACTIVE: 新网页实际发布尚未完成；共享浮层的浏览器界面验收尚未运行，个人设置目录与完整视觉目标仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -76,3 +76,6 @@ GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platfo
 [共享浮层真实消费者清单](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/shared-overlay-consumers/report.md)将既有设计落实到原02/04候选：固定main六消费文件十一处DialogContent，最少共享Dialog/assistant-ui.css与两既有browser tests四literal，实际Picker/HTTP fixture及App Recovery为代表。MSG内侧滚动留白是另一个CSS精确交权项，不靠外层圆角宣称解决；保插件、焦点和两种滚动条边界。本次只读/NOT_TAKEN/NOT_RUN，未来fresh查重并合法交权；不阻最小网页发布。
 
 GO已明确原共享浮层片进入下一执行位，设计研究停止扩展：新网页发布第一，Plugin实际App继续；W01在产物交Original且Release安全STOP后，按现有VISUAL01/MATURE01独立树与fresh精确范围实施桌面/窄屏统一圆角、轻阴影、适度遮罩，以及正常目录层级/主操作可达。尽量与不重叠Plugin并行，不等其完整完成；必要Picker/CSS要明列范围而非只修外框冒信息层级完成。仅代表性局部验证，保语义/焦点/键盘/reduced-motion，不重跑全业务、不冒个人部署；完整Arc/双主题及扩展材质仍open。无新增agent/task/take，当前发布运行需要仍优先。见[本次执行队列](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/current.json)。
+
+
+当前共享浮层片由[原VISUAL唯一来源](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md)维护：source4ca1deac、owner7a8e安全STOP，四入口affected严格类型首红保留、修复后通过；30s段5765ms CLOSED，[精确资源归还](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-types-second-return.json)已收到。此局部通过不覆盖浏览器外观、焦点或整个父任务；性能窗排干期间不启动新检查。

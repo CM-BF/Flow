@@ -1,0 +1,53 @@
+{
+  "returnedAt": "2026-10-07T18:25:58.676713+00:00",
+  "state": "FULL_RETURN",
+  "outerExitCode": 0,
+  "childExitCode": 0,
+  "terminalState": "PASSED",
+  "owned": [
+    {
+      "label": "outer",
+      "kind": "pid",
+      "id": 62689,
+      "state": "ABSENT"
+    },
+    {
+      "label": "outer",
+      "kind": "pgid",
+      "id": 62689,
+      "state": "ABSENT"
+    },
+    {
+      "label": "compiler",
+      "kind": "pid",
+      "id": 62693,
+      "state": "ABSENT"
+    },
+    {
+      "label": "compiler",
+      "kind": "pgid",
+      "id": 62693,
+      "state": "ABSENT"
+    }
+  ],
+  "scratchAbsent": true,
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "outerBothEof": true,
+  "drop": 0,
+  "chargeMs": 3020,
+  "priorChargeMs": 2745,
+  "cumulativeMs": 5765,
+  "remainingMs": 24235,
+  "terminalSha256": "fa86fa46cd72f23693bc3d4478c603e36c4ecf2b07d18cea7c6ed25333e2cf16"
+}
