@@ -1,0 +1,90 @@
+{
+  "reviewer": "/root, independent read-only",
+  "at": "2026-10-07T02:21:59.079058+00:00",
+  "decision": "ACCEPT_FAILED_RUN_EVIDENCE_AND_SOURCE_ONLY_REPAIR",
+  "actualEvidenceTarget": "a3449380d75839358f4a6df6f53c747872676efa",
+  "sourceRepairTarget": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "run": "rec8ed-20261007-021525-9c6687",
+  "verified": {
+    "rawFiles": 18,
+    "rawBytes": 42604,
+    "executionAndFixedSourcePins": 19,
+    "oldRawHashes": 25,
+    "newSourcePins": 19,
+    "sourceChangedPaths": [
+      "apps/web/test/conversation-recovery.browser.ts"
+    ],
+    "errors": []
+  },
+  "actual": {
+    "outerExit": 1,
+    "result": "FAILED",
+    "checksCompleted": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+      "text, intent and exact file reference survive reload and explicit restore without mutation",
+      "two actual tabs cannot overwrite the same restored draft version",
+      "lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays"
+    ],
+    "coverage": {
+      "cookieRead": "PASSED",
+      "cookieSseHandshake": "PASSED",
+      "cookieSseDelivery": "PENDING: only handshake is asserted",
+      "textIntentDraft": "PASSED",
+      "materialDraft": "PASSED",
+      "sameKeyTurn": "PASSED",
+      "crossTabCas": "PASSED",
+      "pageOnlyAuthLoss": "FAILED",
+      "csrfOffline": "NOT_RUN",
+      "themes390": "NOT_RUN",
+      "createTwoStage": "PENDING: direct/source only",
+      "queueSteerRecovery": "PENDING: direct/source only",
+      "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+      "secondCenter": "PENDING: one-center fixture"
+    },
+    "failure": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:172)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "pageErrors": [],
+    "cleanup": {
+      "ownedGroupsAbsent": true,
+      "scratchRemoved": true,
+      "databaseRemoved": true,
+      "connections": 0,
+      "remaining": [],
+      "errors": [],
+      "fixtureComplete": true
+    },
+    "ownedPids": [
+      {
+        "pid": 41985,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 42011,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "lateTerminalMs": 12843.615667,
+    "priorLateMs": 25520.435,
+    "cumulativeLateMs": 38364.050667,
+    "nextMaximumIntegerMsIncluding15000Cleanup": 51635,
+    "nextRunPermission": false
+  },
+  "limits": [
+    "Original parent exit capture and stdout/stderr are preserved; outer elapsed wall time was not separately measured. Timing starts after parent preflight.",
+    "budget.json serializes earlier prior/elapsed observations. Late terminal cumulative 38364.050667 ms controls future allowance; no time regained from older budget values.",
+    "SSE handshake is not event delivery. Current run has no new themes/390px/keyboard screenshot results. All pending and not-run entries remain so.",
+    "Group/database/fixture cleanup accepted from actual owned supervisor evidence. No independent new port/kernel probe or credential-content inspection. Manager separately confirms exact admin env removed/window returned.",
+    "Declared source pins are not a proof of full dynamic import closure. Allocation samples are not hard quotas."
+  ],
+  "sourceReview": {
+    "result": "APPROVED_SOURCE_ONLY_PENDING_LOCAL_SERIALIZATION",
+    "scope": "Only native method syntax for transaction descriptor and restoration hook inside page.evaluate; 3 added/2 removed lines. Other 18 sources unchanged.",
+    "reasoning": "Callback no longer uses the inferred-name function/assigned arrow at the observed failure injection. It preserves original this, arguments and returned transaction; schedules abort only for exact journal database and readwrite, restores original transaction and deletes hook. No product changes, global helper shim, scenario deletion or authority expansion.",
+    "unverified": "Exact installed tsx/esbuild serialization causal regression test not run; native browser behavior still not rerun. No runtime grant."
+  },
+  "skills": {
+    "find-skills": "Local existing find-skills, codebase-design, clean-code reused; no install.",
+    "clean-code": "2026-10-07: reviewed scope, responsibility, existing error preservation, names and unnecessary abstraction; no additional source issue found in 5-line patch. Meaningful old-negative/target-only/restore validation remains pending."
+  }
+}

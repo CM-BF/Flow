@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-07T02:17:06.526139+00:00",
+  "state": "FAILED_CLEANED_WINDOW_RETURNED",
+  "run": "rec8ed-20261007-021525-9c6687",
+  "actualStart": "2026-10-07T02:15:52.148Z",
+  "actualExecSessionId": 48222,
+  "actualExit": 1,
+  "passed": false,
+  "failure": [
+    "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:172)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  ],
+  "attribution": "Observed failure at pageOnlyAuthLoss evaluate; no product-cause conclusion or retry",
+  "source": "Original owner terminal, manager exact stdout/exit/supervisor/database/fixture-cleanup read; no new service/process/resource sample",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687",
+  "parentStdout": "/private/tmp/recovery-rec8ed-parent.stdout.jsonl",
+  "parentStderr": "/private/tmp/recovery-rec8ed-parent.stderr.log",
+  "parentExit": "/private/tmp/recovery-rec8ed-parent.exit.json",
+  "budgetRecordElapsedMs": 12838.849084,
+  "lateTerminalElapsedMs": 12843.615667,
+  "priorLateMs": 25520.435,
+  "cumulativeLateMs": 38364.050667,
+  "remainingLateMs": 51635.949333,
+  "nextIntegerMaximumMs": 51635,
+  "cleanupReserveMs": 15000,
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_b8e66ec6f6ac4d01ac1b472b1ed83837",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.9942080000000715,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 0.8878750000003492,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "processIds": [
+      {
+        "pid": 41985,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "pid": 42011,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true,
+    "errors": [],
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 50,
+      "wireBytes": 15016,
+      "providerQueries": 0
+    },
+    "managerAdminEnvRemoved": true
+  },
+  "gateUsed": true,
+  "gateReused": false,
+  "windowReturnedTo": "Mika / Execution Lead ready-and-dependency coordination; no automatic next Web run",
+  "newGrant": false,
+  "webHolder": null,
+  "webReservation": false
+}

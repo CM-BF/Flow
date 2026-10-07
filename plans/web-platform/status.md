@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:08 UTC；本次只接资源/调度入站，未复采部署/main同步 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:27 UTC；本次实际窗口结果，不复采个人部署/main |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
-| 下一可用交付 | 完成草稿辨识与回焦、看板摘要详情和架构新快照的必要验证；快速设置本地检查准备已获限定批准，可移植检查源码候选已获限定静态独审；实际验证等待正式准入，真实消息接线另按交权接续。 |
-| 当前阻塞 | ACTIVE: Lead已报告容量恢复，原因未知；当前短窗口先交Mika SVC07，Web无运行或预约。草稿、看板（含新架构快照）和快速设置的实际验证等待该窗口实际清理后按ready/依赖正式准入，不能沿旧gate启动。现有远程CI候选仍不覆盖这些Web验收；workspace-cache依赖不可直接运行，指定用户服务保持，完整发送/排队/恢复设置旅程仍开放。 |
+| 下一可用交付 | 完成Recovery已获限定审查的脚本修正验证与剩余旅程；Quick首类型检查发现隔离源码输入缺项，待原供给者补齐并重新准入，26direct尚未执行。看板摘要详情和架构新快照仍各待必要验证，不自动接跑已过检查。 |
+| 当前阻塞 | ACTIVE: Recovery本轮页面在授权丢失场景的求值步骤中断，前置保存/材料/重放/CAS已有实际进展但剩余离线和390键盘尚未执行；完整清理后已归还窗口。Quick c1实际strict失败/direct未运行且已完整清理，local槽归Mika安排OPS14，本组无holder/gate/预约。远程CI仍不覆盖这些Web验收，workspace-cache依赖不可直接运行；完整消息旅程仍开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -70,7 +70,7 @@
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
-[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls 类型/direct/浏览器仍未运行，原 owner status 保持唯一功能事实源。
+[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls本次类型检查失败、direct/浏览器仍未运行，原 owner status 保持唯一功能事实源。
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 
@@ -143,3 +143,5 @@ DPERF04直接D01子task已[原九scope COMMITTED](../../docs/evidence/web-platfo
 MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../docs/evidence/web-platform/mature02-message-settings-consumer-intake.json)保留早期C01缺口；当前固定8d84输入已供W01原8范围实现，源码ed769后UI窄修与检查准备见[当前派工](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)。App/outbox/Recovery接线仍后继串行，不把目录配置当账号资格或SDK observed。
 
 本安全点可聚合入口：[设置控件固定base/唯一owner/原8take](../../docs/evidence/web-platform/mature02-message-settings-source-request.json)、[RELEASE main/release](../../docs/evidence/web-platform/release03-main-intake.json)、[Recovery首轮失败与清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)。任务进度仍取各owner唯一status；[Lead18:15:17登记/实际来源回执](../../docs/evidence/web-platform/message-settings-registration-intake.json)只证明来源展示，未证明设置功能已交付。
+
+本轮真实检查：[Quick c1首类型失败/完整清理与供给缺项](../../docs/evidence/web-platform/message-settings02-c1-actual/report.md)；[Recovery8ed失败及9835限定源码审](../../docs/evidence/web-platform/recovery01-8ed-actual/root-actual-and-source-review.json)。两项终态已归窗，不自动接续验证。

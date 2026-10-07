@@ -1,0 +1,98 @@
+{
+  "reviewer": "/root independent read-only",
+  "at": "2026-10-07T02:26:58.000565+00:00",
+  "decision": "ACCEPT_FAILED_C1_EVIDENCE_INPUT_PROVISIONING_BLOCKED",
+  "fixedExecutionHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "actual": {
+    "outerExit": 1,
+    "terminalCount": 1,
+    "state": "FAILED",
+    "steps": [
+      {
+        "name": "strict-noEmit",
+        "exitCode": 2,
+        "signal": null,
+        "elapsedMs": 1649
+      }
+    ],
+    "direct": "NOT_RUN; no vitest result and no claimed 26 test execution",
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "pgid": 53843,
+    "serializedElapsedMs": 1874,
+    "lateTerminalElapsedMs": 1875,
+    "cumulativeSpentMs": 1875,
+    "remainingMs": 28125,
+    "nextRunPermission": false
+  },
+  "verifiedFiles": [
+    {
+      "path": "/private/tmp/quick-c1-outer.rVQ4F6/actual-exit.txt",
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    {
+      "path": "/private/tmp/quick-c1-outer.rVQ4F6/stdout.txt",
+      "bytes": 679,
+      "sha256": "8367e95b0cf2530f2b03ec51e66ac3b34765151c7e4239ff4c6fd1f99edf0796"
+    },
+    {
+      "path": "/private/tmp/quick-c1-outer.rVQ4F6/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/node.log",
+      "bytes": 397,
+      "sha256": "52664dd847e82be578499850aeba8623fce916e43b0e1f6ef583dcd768cd515a"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/result.json",
+      "bytes": 38339,
+      "sha256": "56bcd86dc2898e24e79da94d48584556007966ff2354eae8ce59e1f826f1e2eb"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/budget.json",
+      "bytes": 261,
+      "sha256": "6024136b3323c125265dd0d123399bc825f13f2c366c56734eb211d05aabfd00"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/step-results.json",
+      "bytes": 102,
+      "sha256": "7b47b8f58464d060d86de4eac4439d59ca9fe31b0fe785772f1e49de84f633ab"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/binding.json",
+      "bytes": 44796,
+      "sha256": "77cc7b771f9d60bec2383b9999029165c0bd4cb2ae5b3aafa0ea9d6c1ceb091f"
+    },
+    {
+      "path": "/private/tmp/msgquick-checks-c1/consumed-gate.json",
+      "bytes": 1205,
+      "sha256": "cc5305dad3a91b7f9ff055293207e4fea09a7a6aaf82989932918c13b118ad56"
+    }
+  ],
+  "verificationErrors": [],
+  "finding": {
+    "kind": "Fixed source input absent due sparse materialization",
+    "log": "packages/client/src/index.ts(1,15): error TS2305: Module '\"@flow/contracts\"' has no exported member 'GoalPlanConfirmation'.\npackages/client/src/index.ts(1,37): error TS2305: Module '\"@flow/contracts\"' has no exported member 'GoalPlanConfirmationResult'.\npackages/contracts/src/index.ts(41,15): error TS2307: Cannot find module './goal-plan-confirmation.js' or its corresponding type declarations.\n",
+    "path": "packages/contracts/src/goal-plan-confirmation.ts",
+    "indexFlag": "S packages/contracts/src/goal-plan-confirmation.ts",
+    "diskExists": false,
+    "fixedBlobBytes": 2388,
+    "fixedBlobSha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+    "scope": "All six relative imports of this missing fixed blob are present; this is not proof of full transitive runtime closure. Product files and contract versions were not changed.",
+    "next": "Original provisioning authority to restore exactly the existing fixed HEAD blob. Owner may then prepare a newly source-bound remainder packet; no automatic retry."
+  },
+  "limits": [
+    "Actual outer exit, unique failed terminal and four matching terminal-bound hashes independently read. No engineering command was repeated.",
+    "No direct test ran; this does not establish a product test failure or pass. Browser, full App and provider behavior remain unverified.",
+    "Late 1875 ms rather than earlier serialized 1874 ms is the conservative spending basis. Preserve both raw observations unchanged.",
+    "Group and scratch absence accepted from owned supervisor terminal evidence; no additional process probe or personal runtime interaction."
+  ],
+  "cleanCode": "Reviewed failure attribution and original-error evidence preservation; no new implementation changes or broad abstraction proposed. One exact existing source input should be provisioned by its authorized operator."
+}

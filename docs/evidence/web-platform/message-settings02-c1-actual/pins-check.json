@@ -1,0 +1,67 @@
+{
+  "head": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "branch": "codex/web-message-settings-quick-controls",
+  "remote": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+  "dirty": "",
+  "ownPins": 117,
+  "externalPins": 58,
+  "errors": [],
+  "runnerSha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+  "bindingSha256": "2bd46393c60cad848227b73dc7d2c00951d557dd8744fd8773159a9d94b0f9c1",
+  "manifestSha256": "4bf7cf408d4eb764c138c5b4cc253c1e6704d28b3575596cc74ea00dd57ab240",
+  "manifestKeys": [
+    "task",
+    "state",
+    "observedAt",
+    "implementation",
+    "head",
+    "sourceHashes",
+    "prepared",
+    "ownReadOnlyPins",
+    "externalPins",
+    "expectedExpandedTests",
+    "runtime",
+    "syntaxImports",
+    "sourceOnly",
+    "terminalRepair",
+    "terminalDiff"
+  ],
+  "preparedManifest": {
+    "run.py": {
+      "sha256": "61b25b0ec7798b675ab11a3b88a4b943945f0aeb8ff5deb978f0abc7d63ec7b0",
+      "bytes": 19168
+    },
+    "steps.mjs": {
+      "sha256": "ab0d4a4ca6cffd88ad08250014698f6a33591d56e069d9cfd30adbda0833fe5b",
+      "bytes": 1669
+    },
+    "tsconfig.json": {
+      "sha256": "1956b85af755289b2d27bd4691081aaf65fab2b0b1e9703fbe9e793db90a2672",
+      "bytes": 5943
+    },
+    "vitest.config.mjs": {
+      "sha256": "a48b1dcc1e3fa0f08a456352d49b4e8bc44fd5a10c590efbec63717ce9da42af",
+      "bytes": 4021
+    },
+    "aliases.json": {
+      "sha256": "3e9e6762944bbdd69c853db63fa1f370a5b5cb9b64bb5171b08b57c7b8f2eabb",
+      "bytes": 3341
+    },
+    "expected-tests.json": {
+      "sha256": "9e2a4aee3a3b351fbf0cdab56f09af171ea53508d37df13bfc49377f0b2cbf80",
+      "bytes": 2614
+    },
+    "sandbox.sb": {
+      "sha256": "ac60a83ac80f180a52ae21bd3da260516413f695b917a7d72fa7ca9e9fcaee0e",
+      "bytes": 303
+    },
+    "binding.json": {
+      "sha256": "2bd46393c60cad848227b73dc7d2c00951d557dd8744fd8773159a9d94b0f9c1",
+      "bytes": 44555
+    },
+    "report.md": {
+      "sha256": "2183360748ad711f38d32b38b244e1e3afb8fdaae234be042e1bb2871bbd1435",
+      "bytes": 5168
+    }
+  }
+}

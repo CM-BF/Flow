@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T02:08:36Z",
-  "state": "NO_ACTIVE_HEAVY_WINDOW_RESOURCE_RECOVERED_SVC07_ALLOCATED_NO_WEB_GRANT",
-  "groupWindowOwnership": "Lead reports Data Available26448428KiB; sample time not supplied and recovery cause unknown. Web has no heavy-runtime holder, gate or reservation and performed no cleanup/resource sample this round. Lead allocated the next short window to Mika SVC07; actual start is not inferred. Web does not start PG/Chrome/build; after actual SVC07 cleanup, coordinate C02/Recovery/QuickControls/TUI by readiness and dependencies.",
+  "recordedAt": "2026-10-07T02:17:06.526139+00:00",
+  "state": "NO_WEB_HOLDER_QUICK_C1_FAILED_CLEANED_RETURNED",
+  "groupWindowOwnership": "Quick c1 actual parent exit1; strict noEmit exit2 and no direct execution. Owned group/scratch cleanup confirmed. Local slot returned to Mika/Lead; no automatic follow-up.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,18 +407,13 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "source": "Execution Lead incoming through root; no Web resampling",
-    "state": "RESOURCE_RECOVERED_SVC07_ALLOCATED_ACTUAL_START_UNCONFIRMED",
-    "evidence": "resource-restored-svc07-handoff.json",
-    "reportedDataAvailableKiB": 26448428,
-    "sampleAt": null,
-    "recoveryCause": "UNKNOWN",
-    "webCleanupThisRound": false,
-    "webRuntimeGrant": false,
+    "state": "FAILED_CLEANED_WINDOW_RETURNED",
+    "source": "Original outer actualexit, unique terminal seal and matching result/budget/step hashes read by manager",
+    "evidence": "message-settings02-c1-actual/window.json",
     "webHolder": null,
-    "next": "Mika SVC07 original60s/gate/0provider; await actual cleanup, then ready/dependency coordination for C02/Recovery/QuickControls/TUI. No automatic Web run.",
-    "mikaStage": "Original input checking confirmed; actual runtime start/completion not received",
-    "webSourceReadiness": "Quick60ffa and Recovery000a source-ready with declared pins matched; admission held. See same small evidence record; no packet rewrite."
+    "newWebGrant": false,
+    "localCheckSlot": "Returned to Mika for separately authorized OPS14; no Web reservation",
+    "next": "Root reviews missing-input failure; original owners seal evidence. No retry or b1/Recovery check authorized."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -558,7 +553,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "recovery01-4d-window-return.json",
+  "currentWindowReturn": "message-settings02-c1-actual/window.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1057,7 +1052,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "resource-restored-svc07-handoff.json",
+  "currentWindowEvidence": "recovery01-8ed-actual/window.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1168,19 +1163,10 @@
     "sourceWriterClaimIsNotGitAuthority": true
   },
   "latestMikaQueueIntake": {
-    "source": "Execution Lead incoming through root",
-    "evidence": "resource-restored-svc07-handoff.json",
-    "state": "SVC07_ALLOCATED_INPUT_CHECKING_NO_TERMINAL_RECEIVED",
-    "SVC07": {
-      "seconds": 60,
-      "consumer": "reviewed direct HTTP consumer",
-      "provider": false,
-      "gate": "original fresh gate/limits required"
-    },
-    "afterActualCleanup": "C02/Recovery/QuickControls/TUI by readiness and dependencies; no automatic grant",
-    "webStarts": 0,
-    "actualStartConfirmed": false,
-    "actualCompletionReceived": false
+    "source": "Mika actual handback via root",
+    "SVC07": "PASS selected1/pass1 outerexit0 wall2.979205s;02:11:53.535889Z all cleanup; no pending launch",
+    "C02": "NOT_OPEN/no holder/gate/reservation; operator unavailable, explicit yield to Web one Recovery attempt",
+    "actualWebStart": "pending original owner acknowledgement"
   },
   "opsWorkspaceCacheDependencies": {
     "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",

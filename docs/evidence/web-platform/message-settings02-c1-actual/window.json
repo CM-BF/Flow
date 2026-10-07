@@ -1,0 +1,57 @@
+{
+  "state": "FAILED_CLEANED_WINDOW_RETURNED",
+  "updatedAt": "2026-10-07T02:26:03.149661+00:00",
+  "task": "WPF-MESSAGESETTINGS02",
+  "owner": "w01_owner",
+  "holder": null,
+  "gate": "gate.json",
+  "grant": "Mika actual X01 terminal/no-holder and explicit Quick c1 handback relayed by root",
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupSeconds": 5,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152
+  },
+  "mode": "strict-noEmit then single-file 26 direct; zero PG/Chrome; no b1",
+  "actualStarted": true,
+  "actualExit": 1,
+  "execSession": 88260,
+  "outerCapture": "/private/tmp/quick-c1-outer.rVQ4F6",
+  "gateConsumed": true,
+  "terminalSeal": {
+    "type": "terminal-seal",
+    "terminalContract": "msgquick-terminal-v1-external-exit-required",
+    "state": "FAILED",
+    "declaredExitCode": 1,
+    "bindingSha256": "77cc7b771f9d60bec2383b9999029165c0bd4cb2ae5b3aafa0ea9d6c1ceb091f",
+    "result": "/private/tmp/msgquick-checks-c1/result.json",
+    "resultSha256": "56bcd86dc2898e24e79da94d48584556007966ff2354eae8ce59e1f826f1e2eb",
+    "budgetSha256": "6024136b3323c125265dd0d123399bc825f13f2c366c56734eb211d05aabfd00",
+    "stepResultsSha256": "7b47b8f58464d060d86de4eac4439d59ca9fe31b0fe785772f1e49de84f633ab",
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 1875
+  },
+  "steps": [
+    {
+      "name": "strict-noEmit",
+      "exitCode": 2,
+      "signal": null,
+      "elapsedMs": 1649
+    }
+  ],
+  "startedAt": "2026-10-07T02:24:51.044887+00:00",
+  "pgid": 53843,
+  "earlyElapsedMs": 1874,
+  "lateElapsedMs": 1875,
+  "cumulativeMs": 1875,
+  "remainingMs": 28125,
+  "direct": "NOT_RUN",
+  "failure": "Strict noEmit exit2: missing transitive goal-plan-confirmation source input; direct never started",
+  "next": "Local slot returned to Mika for OPS14; no b1/Recovery check or retry authorized"
+}

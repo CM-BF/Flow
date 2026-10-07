@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 01:31 UTC |
+| 最近更新 | 2026-10-07 02:27 UTC |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,9 +14,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 保存启动、观察器和恢复期间的新编辑保护已通过50项受控检查，并获限定证据接收。 |
-| 下一可用交付 | 在新独立窗口验证已审草稿辨识与回焦修复，完成真实保存和恢复页面验收。 |
-| 当前阻塞 | ACTIVE: 50 项历史受控检查保持通过；本轮保存记录辨识与回焦已获限定源码批准，真实浏览器仍保留此前定位失败；跨中心、注销竞态及完整发送恢复旅程仍待验收。 |
+| 当前产出 | 原50项受控证据保留；本轮真实页面完成cookie读取、草稿/材料恢复、跨tab CAS及原key重放四组检查，随后中断，未完成整体旅程。 |
+| 下一可用交付 | 原owner9835页面求值脚本修正已获限定源码独审；局部序列化检查仍待local槽，再按独立准入验证剩余授权丢失、离线与390键盘流程。 |
+| 当前阻塞 | ACTIVE: rec8ed在pageOnlyAuthLoss发生page.evaluate __name未定义，actualexit1；csrfOffline/themes390未运行。原测试库、两自有组、scratch与admin输入均清理；本组已归还窗口，后继运行仍须独立排程。跨中心及完整发送恢复旅程继续开放。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -60,3 +60,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 历史17:18 [ec91 fixture固定接收](../../docs/evidence/web-platform/recovery01-ec91-intake.json)与[root独立源审](../../docs/evidence/web-platform/recovery01-ec91-native-proxy-root-review.json)只确认Host/SSE/清理接缝源码修复，未运行新fixture；原1b8受控27保原目标。丢ACK注入的浏览器透明retry前提和三中心语义仍须真实验收，full review仍NOT_STARTED。
 
 本安全点：7cc两项源码修复已获限定独审，单次[38项受控检查通过](../../docs/evidence/web-platform/recovery01-38-check-intake.json)并获[root限定实证接收](../../docs/evidence/web-platform/recovery01-38-root-evidence-review.json)，owner3896已封存。它们归原06-04，不改变[首轮真实浏览器失败及清理](../../docs/evidence/web-platform/recovery01-browser-first-intake.json)，真实IDB/浏览器与完整旅程仍未复验。[accepted queue后继](../../docs/evidence/web-platform/accepted-queue-506-intake.json)归原06-03；整体大task检查仍未通过，不继承子片绿色结果。
+
+本轮[实际失败与清理回执](../../docs/evidence/web-platform/recovery01-8ed-actual/window.json)保4项完成检查与失败阶段，不等完整feature批准；晚终态累计38364.050667ms/余51635.949333ms，未来整数上限51635ms仅算术。原owner随后固定单browser源码9835/metadata79fe，尚待独审和局部检查；该修正不改变本次8ed失败与实际预算，唯一子片status继续权威。
