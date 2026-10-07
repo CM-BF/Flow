@@ -25,7 +25,7 @@
 | 优先级 | 2 |
 | 当前产出 | 新版网页所需后台的固定来源和构建入口已通过独立审查，当前个人服务保持运行。 |
 | 下一可用交付 | 待前一旅程释放共享窗口后，构建新的固定后台并交网页团队验证组合。 |
-| 当前阻塞 | 等待前一旅程和本队局部段实际归还；准备已完成，尚未占构建窗口。 |
+| 当前阻塞 | 等待跨队共享构建窗口；本队局部已归还，准备完成但尚未占构建窗口。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；原域审复用，APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION，Lead 2026-10-07T14:26:01.460Z，main 6fd214eb6 |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v2 active，4exact source/support+1受审入口literal+own plan/evidence2范围 |
@@ -55,3 +55,5 @@
 2026-10-07T14:19:16.013Z：本片局部实际段 2026-10-07T14:16:59.782032+00:00 → 2026-10-07T14:16:59.979190+00:00，197ms/4例；之后只有固定输入只读核对与metadata。构建尚未占共享窗口；独审等待从本封定交接起，开始来源为本次记录，结束待审查事实。
 
 2026-10-07T14:28:01.673Z：记录准备批准与fresh claim v2、10本片/17runtime/75source及命名空间未消费核验，见[批准回执](../../docs/evidence/svc06/browser-recovery/approval-receipt.json)。独审等待结束（review实际时间2026-10-07T14:26:01.460Z）；本次共享窗口等待观察起点为2026-10-07T14:28:01.673Z，尚无实际运行窗口，不循环采样，不把本次读核代替执行前fresh。
+
+native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absent/双EOF/各scratch removed）；本任务仍只等Lead一次实际共享窗口交接，无新增探针。
