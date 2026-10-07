@@ -71,3 +71,7 @@ assignment_review / gpt-6-astra：**APPROVED_DOCS，无阻断finding**，target 
 ## 2026-10-07T02:52:28.328Z 时间契约与局部迭代规则独审
 
 native_center_owner / gpt-6-astra 对固定 `79da82aeb1d1943a04bc81f33bdb78fd2571af79` 相对 main943a 的7文件完整delta：APPROVED_DOCS，无P1/P2。两任务时间+来源、NOT_COMPLETED/UNKNOWN、同snapshot.generatedAt与过期/未知保守语义、阶段分离及原proof不变；普通局部迭代不降低PG/Chrome/个人服务/unknown/模型门槛。恢复描述与已审单次af51/d629事实一致，保留根因unknown、旧exit1与未刷新tab限制。6处新链接/锚有效。reviewer0测试/服务/项目写；此条忠实转录独审结果，不把看板展示或完整OPS验收改绿。
+
+## 2026-10-07T03:01:19.303Z 三队局部段限定审查
+
+native_center_owner / gpt-6-astra 对dd7538e9a4c2bc22c3b4b2d64eb8ea7db45f9058相对926d501a四文件完整delta给出APPROVED_DOCS，无P1/P2；原门槛/合计预算/unknown/重holder与agent10保持，链接可解析。0工程检查/PG/provider/采样。本条不提前批准后续新增source自助规则，其增量另由同reviewer核对。

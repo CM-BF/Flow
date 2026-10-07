@@ -71,9 +71,14 @@ O16与SVC05H中心恢复初审都发现期限依赖operator自身或证据写盘
 
 F04首验26,512ms在terminal-request-capture失败，0task；20:59:20另行有界cleanup核完整归属与空连接后正常DROP并移除精确私有目录，3组absent。此次原报告只保存停止前的bytes0/events[]，未再次保存shutdown期间可能产生的PTY输出；不能证明该输出存在，也不能从已删临时目录恢复。该诊断缺口必须如实保留并在后继原owner小修中闭合，不能由cleanup成功推断行为通过。原cleanup wrapper的PG:0标签错误另记录更正，实际有PG观察与正常DROP，不重跑操作修metadata。
 
-### 限定 source operator 委派
+<a id="source-operator"></a>
+### 本组新树的常规 source operator
 
-MATURE02C02此次仅新树codex-conversation-continuity由Mika作为受控source operator，从固定eae85567按已核291项/现有精确依赖链接准备，owner仍须fresh原子take。Execution Lead未创建该树；委派不含main、其他树、共享Git配置、个人运行源或共享PG/Chrome窗口。小源码准备与运行余量线分离，不为此新增审批往返。
+co-lead常规自助创建本组新的独立worktree并作有界源码物化，不再让普通可逆供给排队等待原Git operator逐片委派。开始前固定已审base、唯一绝对路径/独立branch、实际所属模块src/直接tests/fixtures/固定SQL/包元数据及逻辑字节预算；fresh检查目标不存在且无其他operator已在执行，存在或归属未知即停下核对，不重复创建/重置。原子scope领取仍在产品编辑前完成；同树现有dirty/untracked/固定输入保持，增补只写明确缺项，不重新套初始sparse规则。
+
+复用已有模块闭包与每worktree配置，逻辑体积不冒物理配额；若准备需要改变共享Git配置或遇实际冲突，回原归属协调，不自行放宽。此自助范围不含main集成/切换、已有他人树操作、共享Git配置、依赖安装/完整构建、个人运行源或跨owner scope移交，不增agent/模型预算。它只解除新树纯源码供给的集中串行瓶颈，不增加扫描器、逐文件审批或第二账本。
+
+历史MATURE02C02 fixed eae85567/291项与ACCESS fixed943a/27项的单次委派保留原事实；从本规则起同类本组新树无需重发专项许可。准备与后续运行门槛仍分别核对，少量source/ignored link不自动授权import/test/PG/build。
 
 <a id="bounded-local-iteration"></a>
 ## 普通本地实现的连续有界迭代（2026-10-07）
