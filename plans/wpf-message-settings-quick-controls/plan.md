@@ -28,7 +28,7 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
-当前源码fe6固定；首次c1因固定输入缺失失败保留，Lead供给后c2 strict+26direct实际通过并被root接收。strict/direct累计5119/余24881。b1首组失败、b2因监督计量中断、b3再次原生选框值失败且诊断已捕获，均无完成组/PNG；browser按外层保守累计30625/余29375，实际进程资源均已归还。PG/构建未运行，旧37/4不继承；未自动重试、不安装或扩大sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
+当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码已root限定批准，本次实际审查待收。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04等独审，MSGQUICK-05等主线；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
 
 ## 历史 MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
@@ -109,3 +109,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
 
 受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。
+
+## 完整六组实际 · 2026-10-07 07:41:46 UTC
+
+六组/双390图、所有原行为断言已完成，检查已结束并归还资源。本次只自然证据封存，不继续消耗余量；独审完成后进入主线接收，生产宿主仍为TODO-11后继。

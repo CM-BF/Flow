@@ -1,0 +1,1 @@
+Same bounded native lifecycle; full six checks and two PNGs required. Four native CDP printable input proofs sealed. Prior failures and completed C-only measurement immutable. Internal fresh admission still required; no actual result yet. Worker byte-identical. New segment 37627/90000ms, remaining52373, single45000 includes15000 cleanup. Old30625 closed.

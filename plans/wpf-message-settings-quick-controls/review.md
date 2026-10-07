@@ -1,11 +1,11 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 07:34:33 UTC。
+状态：UNKNOWN（当前完整fixture实际证据待独审）。更新时间：2026-10-07 07:41:46 UTC。
 
-- 当前 Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。原六组首select输入语义候选，独审NOT_STARTED；单browser noEmit已过、实际browser未运行。
-- 历史产品Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0，root限定源码APPROVED_SCOPED_SOURCE_ONLY及26direct；不覆盖新输入语义。
-- 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2/b3实际browser FAILED，0完成组/0PNG；b3原生选框诊断已完整捕获；d755后继C定向已完成并获root限定实际接收，原六组仍未通过。
+- 当前 Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05；四源精确范围保持。
+- [root输入语义源审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json)：APPROVED source-only/0 blocking；单browser noEmit1274.848ms已限定接收。
+- [本次完整实际](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)：actualouterexit0/PASSseal、6/6fixture组和2PNG、所有owned清理；root实际审查待收，作者不自行批准。原fe6 strict/26direct只对应未变业务源，旧全部FAIL原样保留。
+- 限制：native CDP printable键属于浏览器可信输入，非physical IME或OS-popup证明。App/Send/Queue/Recovery生产宿主、main及部署均未完成。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 

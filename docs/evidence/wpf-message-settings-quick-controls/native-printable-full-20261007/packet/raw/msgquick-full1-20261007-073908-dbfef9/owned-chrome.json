@@ -1,0 +1,77 @@
+{
+  "parentPid": 46747,
+  "chromePid": 46751,
+  "pgid": 46751,
+  "processGroup": "separate-parent-owned-session",
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/msgquick-full1/scratch/profile",
+    "--disk-cache-dir=/private/tmp/msgquick-full1/scratch/cache",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/msgquick-full1/scratch/temp",
+    "TMP": "/private/tmp/msgquick-full1/scratch/temp",
+    "TEMP": "/private/tmp/msgquick-full1/scratch/temp",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/msgquick-full1/scratch/temp",
+    "XDG_CACHE_HOME": "/private/tmp/msgquick-full1/scratch/cache",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/msgquick-full1/scratch/crash"
+  },
+  "spawnAttemptedAt": "2026-10-07T07:39:23.338860+00:00",
+  "spawnReturnedAt": "2026-10-07T07:39:23.352913+00:00",
+  "cdpPortDiscoveredAt": "2026-10-07T07:39:27.581728+00:00",
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-07T07:39:32.857416+00:00",
+    "beforeCdpPort": false
+  },
+  "close": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-07T07:39:32.859899+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "launchError": null,
+  "signals": [
+    {
+      "signal": "SIGTERM",
+      "at": "2026-10-07T07:39:32.803451+00:00",
+      "target": "owned-chrome-pgid"
+    }
+  ],
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 6753,
+      "keptBytes": 6753,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 1077,
+      "keptBytes": 1077,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "cdpEndpoint": "http://127.0.0.1:57397"
+}

@@ -5,16 +5,16 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 07:34:33 UTC |
+| 最近更新时间 | 2026-10-07 07:41:46 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已验证用键盘选择模型时原有草稿和消息样本保持不变；完整快速设置流程仍待验收 |
-| 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
-| 当前阻塞 | ACTIVE: 模型选择与保稿已定向验证；四个筛选框的原生字符键验收方案已固定，待源码审查及完整六组实测 |
+| 当前产出 | 模型、思考力度与速度快速选择已完成完整交互验证，原稿及已发送和排队样本保持不变 |
+| 下一可用交付 | 经独立审查后接入主线的快速设置受控组件 |
+| 当前阻塞 | REVIEW: 完整六组交互及双主题窄屏已通过，等待本轮实际证据独审；真实消息宿主接线仍属后继 |
 | 需用户决定 | NONE |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
@@ -22,11 +22,11 @@
 | Branch | codex/web-message-settings-quick-controls |
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
 | HEAD | dde571be8853698f8943f952ddef2c648d2e1294（四筛选框字符键验收源；metadata单独） |
-| Dirty | 源固定；metadata 收口后核 clean |
+| Dirty | 四源固定；本次metadata正常收口后核双端clean |
 | 实现目标 | dde571be8853698f8943f952ddef2c648d2e1294 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
-| 检查状态 | NOT_RUN dde571be8853698f8943f952ddef2c648d2e1294 浏览器；受影响单browser strict noEmit PASS1274.848ms，旧26direct/C定向诊断按原范围保留；原六组历史FAILED不改 |
-| Review | UNKNOWN（新四select输入语义源独审NOT_STARTED；root已限定接受旧d755 C诊断/清理，完整六组仍未批准） |
+| 检查状态 | PASS dde571 六组fixture+双390PNG、actualexit0/完整seal/ownedcleanup；单browser noEmit1274.848ms，原fe6 strict/26direct按未变业务源保留，全部历史FAIL不改 |
+| Review | UNKNOWN（dde571输入语义源码已独审通过；本次六组实际证据独审待收，未集成main） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；此前 actual parseStatus errors=[] / 5 TODO；仅解析本任务status，未采页面 |
@@ -38,7 +38,7 @@
 | MSGQUICK-01 | completed | w01_owner | [receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md) |
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
-| MSGQUICK-04 | in-progress | w01_owner | [c2实际strict/26direct通过](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)；c1原失败保留；[b1首次失败](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)与[b2计量中断/清理](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)，[b3实际键盘失败/完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，旧browser历史累计30625ms/未用29375ms封闭；新定位段37627/90000ms、余52373ms；[b3计量helper五项通过](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)，[C第二次定向完成](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/README.md)，无自动后续运行 |
+| MSGQUICK-04 | in-progress | w01_owner | [完整六组/双390PNG/清理](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)、原c2 strict/26direct；dde571源码已独审，本次实际待root独审；新段47496/90000ms、余42504ms，旧30625封闭及所有FAIL保留 |
 | MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
 
 ## 边界与架构影响
@@ -116,7 +116,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 | MSGQUICK-W03 | UNKNOWN | 2026-10-07T06:41:35.677679Z | 资源 | native3启动前等待调度/组合预算核实；责任方d01_owner，解除条件为无第二Chrome且fresh事实gate。C02当时仅计划，不宣称实际运行。 | [native3明确准入](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/admission/handoff.json)；历史起点未知 |
 | MSGQUICK-W04 | UNKNOWN | 2026-10-07T07:11:44.274841+00:00 | 验证失败 | 两条原生序列均未让独立控制页选值，真实modal对照前提未成立；责任方w01_owner/root，解除条件为有依据的不同对照输入与合法后继；不重复同样run或以selectOption替代键盘验收。 | [native3实际观测/独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/root-actual-review.json)；等待实际起点不能由失败时间自动推算；解除依据为C实际native选值且root本次限定接收时点 |
 | MSGQUICK-W05 | UNKNOWN | 2026-10-07T07:24:02.757575Z | 验证失败 | C选值后保稿基线读取差异，责任w01_owner/Web管理；本次固定DOM文本定向验证完成解除。历史开始未知，不从失败时间倒推。 | [C第二次实际退出/保稿完成](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/actual-summary.json) |
-| MSGQUICK-W06 | UNKNOWN | OPEN | 验证前提 | 完整六组仍需确定适合其各控件的真实键盘验收路径；责任w01_owner/root，解除条件为明确输入语义并完成相关合法验收；m单字符结果不扩推到中文键或原六组。 | [本次限定诊断与原六组边界](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/root-actual-review.json) |
+| MSGQUICK-W06 | UNKNOWN | 2026-10-07T07:39:32.913766Z | 验证前提 | 四筛选框真实字符键/完整六组已完成；责任w01_owner，实际验证前提已解除。历史起点未知，不推断净工时；独审和主线另列。 | [actual exit0与完整原件](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md) |
 
 等待表仅消费已有事件；各段起点UNKNOWN，不累计相加、不据此扣除净工时，OPEN仅表示本owner明确仍待解除。
 
@@ -149,3 +149,9 @@ parent11709/late11712/outer11754.596166079864ms原样；保守11755，新段累�
 source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
 
 受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。
+
+## 完整六组实际验证 · 2026-10-07 07:41:46 UTC
+
+[本次原件](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)：fixed dde571/run421e9ee，actualouterexit0/唯一PASSseal、6组和2PNG完成。m/自/高/标每个10条原生CDP可信事件、完整value/index1及零提前commit；后续键盘/Apply/CAS/双pane/A-B-C/后页profile21/双主题390均过。此为受控fixture验收，不是physical IME/OSpopup或真实App接线。旧FAIL与C诊断结论不改。
+
+本次ceil max9869ms，新段累计47496/余42504，旧30625封闭。parent/worker/Chrome三个groups ESRCH，fixture/context已关，双EOF0drop/profile+scratchabsent/errors[]；资源已实际归还，无第二轮或无关检查。原源码source-only独审已收，本次actual独审待root；Main/部署/任务完成仍未发生。

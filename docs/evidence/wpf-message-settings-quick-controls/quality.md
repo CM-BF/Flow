@@ -133,3 +133,10 @@ find-skills优先复用本地clean-code/webapp-testing（本段只读复核，�
 实际命名/单一职责检查：snapshot、被动trace与输入编排独立小接口；CDP session finally释放且保首error。严格先验与四项后验，失败报告≤64KiB，原observer限额不放宽。静态逐字核原diagnostic、三源与首循环之后全部六组断言；只有准确checklabel变化。发现旧原623f guard已不能代表新验收口径，报告明确后继源绑定必须更新，不偷改旧packet。
 
 单browser targeted noEmit唯一actualexit0/1274.848ms，源04ed2a…，own1531与scratch absent，0B日志。未跑26/Chrome/PG、无源cache/deps写，无新浏览器budget。未解决中文CDP实际可用性与完整六组，等待root窄审/真实有限段。
+
+
+## 2026-10-07 07:41:46 UTC · 原六组字符键与完整实际收口
+
+复用已读本地 find-skills、clean-code、webapp-testing 方法；既有已审native sibling/Node sandbox优先于重新造runner。本段parent仅固定source/真实C carry/新增native-filter raw+seal，worker逐字未变，生命周期/权限/cleanup未扩。角色、命名和异常职责复核：字符输入helper只做严格前置→真实CDP键→被动证据→断言；finally detach/失败JSON保留，零兜底值赋入；parent独立核exact6+2PNG和filterproof，不把磁盘PASS当actualexit。
+
+首个full run成功，不存在为过测试降低断言。6/6+2PNG与4个字符键事件实际通过；原failed诊断和旧预算全留。终态阅读脚本首个只读尝试用 owned-chrome.json 的不存在 pid 字段发生KeyError，未运行产品/改raw；立即按实际 chromePid 字段核三group并保存postrun，这仅readback字段修正。截图目视长model换行、横向无裁切/内部纵向滚动；不扩大到真实App、physical IME或OS-popup。actual独审待root、main接收另行，完整task NOT_COMPLETED。

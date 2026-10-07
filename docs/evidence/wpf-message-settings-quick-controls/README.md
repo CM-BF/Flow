@@ -1,8 +1,10 @@
 # WPF-MESSAGESETTINGS02 当前证据
 
-最新[C第二次实际诊断](native-typeahead-second-20261007/README.md)为DIAGNOSTIC_COMPLETE/actualexit0：plain与真实modal各一次m、可信keypress/input/change和全部保稿断言通过。root限定接受观测与cleanup；原六组0/PNG0，不是feature PASS。新段累计37627/余52373，旧30625闭合，历史FAIL不改；完整feature UNKNOWN、无自动续跑。
+最新 [完整六组实测](native-printable-full-20261007/README.md)：fixed dde571 / run421e9ee，actualouterexit0+唯一PASSseal、6组+双390PNG及ownedcleanup均通过。四native filters m/自/高/标有完整可信事件记录；不是物理IME/OSpopup或生产宿主证明。新段累计47496/余42504ms、旧30625闭合。输入语义源码已root独审，本次actual独审待收；主线/部署未发生。
 
-产品三源保持fe6ece131c489c79cf531a184e4cf51209f9c4a0；当前browser验收源dde571be8853698f8943f952ddef2c648d2e1294输入语义候选待窄审/NOT_RUN。原四源限定源码批准按历史保留。当前[c2实际strict/26direct](c2-actual-20261007/README.md)已由root限定接受：两个子退出0、outer actualexit0+唯一PASS seal/四hash/双EOF0drop，owned groups/scratch清理。累计5119ms/余24881ms。
+原[c2 strict/26direct](c2-actual-20261007/README.md)在未变业务范围保留；单browser noEmit1274.848ms通过，未重复26。[C定向通过](native-typeahead-second-20261007/README.md)及全部旧失败按原事实保留，portable仍NOT_RUN/remote未启用。
+
+## 历史原件（以下按当时状态保留）
 
 历史[b3实际浏览器](b3-browser-20261007/README.md)再次原生模型选择值失败；root已接受完整FAILED/trace/owned清理证据，0/6组、0PNG，累计30625/余29375ms，未授权第四次。
 
@@ -12,7 +14,7 @@
 
 历史[b1首次browser实际失败](b1-first-browser-20261007/README.md)：outerexit1/唯一FAILED seal，首组模型下拉框键盘值断言未通过，0完成组/0PNG。fixture/context、双child groups/parent/scratch均清理；browser保守累计12326/余47674。[browser preparation](browser-preparation/report.md)保留历史准备原件；本次精确native批准在b1归档中，不代表行为通过或允许续跑。旧Settings01的37direct/4browser不继承。真实App/Send/Queue/Recovery/P01宿主及MATURE02/TODO11未完成，主线/部署未发生。
 
-[审查](../../../plans/wpf-message-settings-quick-controls/review.md)、[source manifest](source-manifest.json)、[Interface](interface.md)为当前入口。历史35R3/7615locator/c1终态审查保留；后页profile仍只是browser待验，direct不冒渲染场景通过。
+[审查](../../../plans/wpf-message-settings-quick-controls/review.md)、[source manifest](source-manifest.json)、[Interface](interface.md)为当前入口。历史35R3/7615locator/c1终态审查保留；后页profile当时尚待browser，当前已由本次第六组实际覆盖；direct不单独冒渲染通过。
 
 [portable-check](portable-check/README.md)固定dc67为APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN；九候选源不改、远程未启用，本地c2通过不等远程通过。当前另有[b3第三次实际浏览器失败](b3-browser-20261007/README.md)：actualouterexit1、完整trace、正常fixture/context关闭与owned清理；0组/0PNG，累计30625/余29375。旧raw与fe6不动，没有第四次或strict26重复。
 

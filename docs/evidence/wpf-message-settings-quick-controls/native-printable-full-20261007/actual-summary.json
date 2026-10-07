@@ -1,0 +1,59 @@
+{
+  "executionHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
+  "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "run": "msgquick-full1-20261007-073908-dbfef9",
+  "actual": {
+    "startedAt": "2026-10-07T07:39:23.045263+00:00",
+    "finishedAt": "2026-10-07T07:39:32.913766+00:00",
+    "pid": 46747,
+    "pgid": 46747,
+    "exitCode": 0,
+    "elapsedMs": 9868.072332930751,
+    "stdoutBytes": 984,
+    "stderrBytes": 0,
+    "stdoutSha256": "07d28044520fca9045ae8936e8f62e9ead8a6376cf2a4dbe1e4bd906444be35c",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "conservativeAccount": {
+    "observedAt": "2026-10-07T07:39:53.880751+00:00",
+    "groups": {
+      "46747": "ABSENT_ESRCH",
+      "46751": "ABSENT_ESRCH",
+      "46821": "ABSENT_ESRCH"
+    },
+    "scratchAbsent": true,
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "actualOuterElapsedMs": 9868.072332930751,
+    "lateTerminalMs": 9828,
+    "parentBudgetMs": 9827,
+    "chargedMs": 9869,
+    "newSegmentCumulativeMs": 47496,
+    "newSegmentRemainingMs": 42504,
+    "oldClosedMs": 30625,
+    "checks": 6,
+    "png": 2,
+    "scope": "Full six fixture groups, native printable CDP input and two390PNG; no App/Queue/Recovery integration claim"
+  },
+  "resultState": "PASS",
+  "checks": [
+    "Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "pageErrors": [],
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "allEOFNoDrop": true,
+  "retainedBytesObserved": 6556783,
+  "scope": "Actual controlled fixture only: six groups and two390PNG; no physical IME/OS-popup/main/production App/Queue/Recovery integration claim",
+  "independentActualReview": "PENDING"
+}
