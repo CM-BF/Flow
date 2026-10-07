@@ -1,0 +1,126 @@
+{
+  "kind": "READ_ONLY_SOURCE_AND_EXISTING_RAW",
+  "fixedSource": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "previousSource": "8ed2741327779e57d717653d10c2180e1897c26a",
+  "sealedEvidenceHead": "a816573c872f80a934d9f1a7f73a5527215c058e",
+  "project": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "3646f92d261f46dfbf6a03107deec4775d962f74fd01d55abde1f26817c5daba",
+      "equals8ed": false
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/components/ui/tooltip.tsx",
+      "sha256": "3600484df5c2bec03d57289e49b30a182a2ce22d8e9bef50cd21819d9f2e725c",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "equals8ed": true
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858",
+      "equals8ed": true
+    }
+  ],
+  "runtime": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/dist/index.mjs",
+      "sha256": "7c039e917e92ba9e6245f2ffd94ff461b49d55fac174f07a6670d2b0ef227a88",
+      "bytes": 20936
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7",
+      "bytes": 14132
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-focus-scope@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@1_qbvbagedjtybtmrxo7daqki2aq/node_modules/@radix-ui/react-focus-scope/dist/index.mjs",
+      "sha256": "be4160427815e0f67f85fc46d941700de32863416ea62127f6012a51550ce410",
+      "bytes": 10990
+    }
+  ],
+  "raw": [
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "sha256": "adea971c8e74c2452a954a42f296f74a5d6fb8fcbd594f9540f9e933e1ec85e8",
+      "bytes": 21295,
+      "checks": [
+        "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+        "text, intent and exact file reference survive reload and explicit restore without mutation",
+        "two actual tabs cannot overwrite the same restored draft version",
+        "lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays"
+      ],
+      "coverage": {
+        "cookieRead": "PASSED",
+        "cookieSseHandshake": "PASSED",
+        "cookieSseDelivery": "PENDING: only handshake is asserted",
+        "textIntentDraft": "PASSED",
+        "materialDraft": "PASSED",
+        "sameKeyTurn": "PASSED",
+        "crossTabCas": "PASSED",
+        "pageOnlyAuthLoss": "FAILED",
+        "csrfOffline": "NOT_RUN",
+        "themes390": "NOT_RUN",
+        "createTwoStage": "PENDING: direct/source only",
+        "queueSteerRecovery": "PENDING: direct/source only",
+        "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+        "secondCenter": "PENDING: one-center fixture"
+      },
+      "failure": "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:172)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "pageErrors": [],
+      "cleanupErrors": []
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "sha256": "386a8ff54f7f01f46d7eef540d147b32d9bb9adbf07f11205a5ad9ac4f51bfe4",
+      "bytes": 8168,
+      "checks": [
+        "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+      ],
+      "coverage": {
+        "cookieRead": "PASSED",
+        "cookieSseHandshake": "NOT_RUN",
+        "cookieSseDelivery": "PENDING: only handshake is asserted",
+        "textIntentDraft": "FAILED",
+        "materialDraft": "NOT_COMPLETED",
+        "sameKeyTurn": "NOT_RUN",
+        "crossTabCas": "NOT_RUN",
+        "pageOnlyAuthLoss": "NOT_RUN",
+        "csrfOffline": "NOT_RUN",
+        "themes390": "NOT_RUN",
+        "createTwoStage": "PENDING: direct/source only",
+        "queueSteerRecovery": "PENDING: direct/source only",
+        "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+        "secondCenter": "PENDING: one-center fixture"
+      },
+      "failure": "expect(locator).toHaveText(expected) failed\n\nLocator: getByRole('tooltip')\nExpected: \"saved.txt\"\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n  - Expect \"toHaveText\" getByRole('tooltip') with timeout 5000ms\n  - waiting for getByRole('tooltip')\n",
+      "pageErrors": [],
+      "cleanupErrors": []
+    }
+  ],
+  "productExecution": false,
+  "projectWrites": false
+}

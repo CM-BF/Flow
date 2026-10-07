@@ -201,3 +201,9 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 05:06:19 UTC — 第四次失败原件clean-code收口
 
 复用本地find-skills/clean-code/webapp-testing：保持单一实际入口、原authority/断言；不把无tooltip和较早同源成功直接归因为产品bug或flaky。原raw与晚stdout/actualexit、独立group/scratch观察分别保存，较早budget不回填晚计时；缺outerwall/EOF/port证据明确说明。仅own metadata，19产品/专测不变，无重复50/10检查、无第五次运行。后续只读诊断提最小可观察性需求，不创建新通用监督器或放宽5s。
+
+## 2026-10-07 05:15:09 UTC — source-only焦点前置与依赖分析clean-code安全点
+
+复用已安装find-skills/clean-code/codebase-design/webapp-testing；实际应用为区分Dialog关闭的setup前置与Tooltip行为断言，保唯一UI/材料authority及失败事实，未增加sleep、timeout、替代hover或通用trace。仅两行已有locator断言；生产18源不动。Git diffcheck0、19current=fixed/18unchanged、旧browser-runs零diff；这不是运行检查。
+
+依赖分析发现newContext不能隔离fixture的全表expire与共享conversation/lost/wire；提出单次新DB+context有限selector，复用现真实种子与同份case操作，不复制controller或隐式IDB写入。方案未实现/未验；无Node产品import/types/tests/HTTP/PG/Chrome/free。根因不确定与35000余量不能保证全验收均明确保留。

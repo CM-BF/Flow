@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-06 21:15:21 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:15:09 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -141,4 +141,8 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 
 ## 2026-10-07 05:06:19 UTC — 原-05第四实际子集未闭合
 
-[第四次记录](../../docs/evidence/wpf-conversation-recovery/browser-fourth-validation.md)固定4c0852/9835，cookieRead通过、saved.txt tooltip超时、后续未跑。保存前三失败和原35,116ms下一整数余量（含15s清理），不重置90s；完整TODO保持开放。下一只读定位真实UI/两个hover断言及最低所缺证据，不删断言或盲重跑。
+[第四次记录](../../docs/evidence/wpf-conversation-recovery/browser-fourth-validation.md)固定4c0852/9835，cookieRead通过、saved.txt tooltip超时、后续未跑。保存前三失败和原35,116ms下一整数余量（含15s清理），不重置90s；完整TODO保持开放。下一只读定位真实UI/两个focus/tooltip断言及最低所缺证据，不删断言或盲重跑。
+
+## 2026-10-07 05:15:09 UTC — 原-05关闭焦点前置与验收解耦候选
+
+[固定两行前置](../../docs/evidence/wpf-conversation-recovery/focus-precondition-source.md)保所有原材料/名称/顺序/noPOST断言。Root仅源码批准，第四失败根因仍待证据。按GO提速要求，[独立选择提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)在原-05内区分真正相连的恢复链和可自备状态的后三组；不新增task、第二authority或通用runner，不把失败catch后污染状态继续。完整full E2E仍必需，selector尚未实现，第五包暂停，预算不增。

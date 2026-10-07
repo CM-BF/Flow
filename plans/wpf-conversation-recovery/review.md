@@ -163,3 +163,9 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 ## 2026-10-07 05:06:19 UTC — 第四次真实失败限定证据接受
 
 [root原文](../../docs/evidence/wpf-conversation-recovery/browser-fourth-root-review.json)SHA256 `2de79671c3992a61ec5986538a8f63a54f1e56a2e4fe9860a5db84711ddc61d1`，ACCEPTED_FAILED_SUBSET_ACTUAL_AND_REPORTED_OWNED_CLEANUP。核19源、11raw21906B和旧43原件保真；明确没有失败DOM/PNG、独立outerwall/每streamEOF/port观察，不补造。1组通过、后续未跑与前三历史分层；54883.199542ms晚累计控制后续最多35116含15000cleanup。下一只读诊断不先定产品bug；原feature review NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:15:09 UTC — 1bc关闭焦点前置source限定批准
+
+Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../docs/evidence/wpf-conversation-recovery/1bc-focus-precondition-root-review.json)已原样归档；两行仅确认已有picker关闭/Files自然焦点后再执行不变的chip检查，18其他source逐字等9835。批准范围仅测试前置SOURCE，不是唯一根因确诊、第五gate或完整feature批准。
+
+[真实依赖/selector提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)仅只读候选：单次选组拥有新服务端数据和context，不吞失败污染续跑；原full E2E仍保留。当前尚未实现、未审、未运行。历史四次browser FAILED/各局部通过不变；fullfeature NOT_STARTED/targetUNKNOWN。

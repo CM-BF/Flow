@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 05:06:19 UTC |
+| 最近更新 | 2026-10-07 05:15:09 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,22 +12,22 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 9835e7488dd9b0b44b3afbc285336defdd739e98；其他18源=8ed；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源仍固定9835；本批仅第四次实际失败/清理原件与own元数据封存，normalpush后核clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 1bc4f20b9257b294adcadd6b68b1b9e015e04e86；其他18源=9835；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 19源固定1bc；本批仅browser关闭/焦点两行前置与own记录，normalpush后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 会话重新连接检查再次通过；完整草稿恢复仍待定位 |
-| 下一可用交付 | 定位附件提示未出现的原因后，继续原恢复旅程 |
-| 当前阻塞 | ACTIVE: 草稿恢复检查等待附件提示超时，原因尚未确定，页面授权失效等后续验收未完成 |
+| 当前产出 | 已补附件键盘检查的关闭前置；恢复验证仍未完成 |
+| 下一可用交付 | 确认独立场景的隔离后，继续恢复旅程验证 |
+| 当前阻塞 | ACTIVE: 原恢复旅程仍失败，关闭焦点修正尚未实测，认证失效和离线等后续验收未完成 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 第四次browser仅cookieRead一组PASS，saved.txt tooltip超时，后续NOT_RUN/NOT_COMPLETED、0PNG；actualexit1/owned清理完整；原50与serialization10不变，晚累计54883.199542ms，下次最多35116含15000cleanup |
+| 检查状态 | 第四browser FAILED原样保留；1bc两行前置获限定source approval但NOT_RUN；独立场景selector仅提案。原50/serialization10不变，晚累计54883.199542ms，下次最多35116含15000cleanup，无新准入 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T05:05:01.874525Z本人安全CLI核active/owner/WT/branch/原21、overlap=[]；仅封存与只读诊断，非下一运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T05:12:13.826920Z本人安全CLI核active/owner/WT/branch/原21、overlap=[]；仅已授权source/own记录，非下一运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -269,4 +269,10 @@ Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c218
 
 执行4c0852/9835，原11raw21906B与外层/准入/静态包/root原件见[manifest](../../docs/evidence/wpf-conversation-recovery/browser-fourth-manifest.json)。实际exit1/1组PASS，textIntentDraft tooltip未找到、0PNG/pageErrors[]，后续NOT_RUN/NOT_COMPLETED。原三次失败和第三次局部通过不改；无失败DOM，不预判产品/测试原因。root限定接受失败与reported ownedcleanup，不是featurePASS。
 
-DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；manager按身份删exactenv，未读值。没有单独outerwall/per-streamEOF/port原件，边界如实保留。晚累计54883.199542/90000，下一整数最多35116含15000清理，无自动重试。下一仅只读hover/附件UI诊断；产品19源与断言不变，完整targetUNKNOWN/reviewNOT_STARTED。
+DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；manager按身份删exactenv，未读值。没有单独outerwall/per-streamEOF/port原件，边界如实保留。晚累计54883.199542/90000，下一整数最多35116含15000清理，无自动重试。当时下一为只读focus/附件UI诊断（非hover）；当时产品19源与断言不变，完整targetUNKNOWN/reviewNOT_STARTED。
+
+## 2026-10-07 05:15:09 UTC — 关闭焦点前置限定修正 / 独立场景提案
+
+固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86`，仅browser最后Escape后确认picker关闭/现Files自然回焦两行；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/focus-precondition-checkpoint.json)核18其他源不变。[Root限定源审](../../docs/evidence/wpf-conversation-recovery/1bc-focus-precondition-root-review.json)通过，未确定第四失败唯一原因，不冒产品修复或新运行通过。原第四失败/前三历史/50及serialization10全部保留。
+
+[实际依赖与选择提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)：材料→同稿CAS→lostACK仍完整相连；后三组需自己通过公开UI准备稿/行，新context不足以隔离全表session expiry，最小单次selector复用原新markedDB/fixture。默认full仍原七组，选组与全旅程通过分开；当前未实现selector，下一packet暂停待设计选择，无gate/预约/运行或资源采样。原累计54883.199542ms和最多35116含15000cleanup保持；完整targetUNKNOWN/reviewNOT_STARTED/main未接。
