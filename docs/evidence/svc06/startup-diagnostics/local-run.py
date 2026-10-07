@@ -20,6 +20,7 @@ module = importlib.util.module_from_spec(spec); sys.modules[spec.name] = module;
 commands = {
  'core': [node, '--test', '--test-concurrency=1', 'tools/personal-preview/startup-diagnostics.test.mjs', 'tools/personal-preview/process.test.mjs'],
  'host': [node, '--test', '--test-concurrency=1', '--test-name-pattern=SVC06 changed startup diagnostics|SVC09 configured host uses actual|SVC09 old independently selected|SVC09 maintenance qualification', 'tools/personal-preview/preview.test.mjs'],
+ 'spawn-code': [node, '--test', '--test-name-pattern=actual child spawn failure|actual child nonzero exit|diagnostic errors still await', 'tools/personal-preview/startup-diagnostics.test.mjs'],
  'syntax': [node, '--check', 'tools/personal-preview/preview.mjs'],
  'status': [node, '--input-type=module', '-e', "import{readFile}from'node:fs/promises';import{parseStatus}from'/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs';const s=parseStatus(await readFile('plans/svc06-backend-release/status.md','utf8'),'SVC06');console.log(JSON.stringify({errors:s.errors,humanMissing:s.human.missing,timingIssues:s.timing.issues}));if(s.errors.length||s.human.missing.length)process.exitCode=1;"],
 }

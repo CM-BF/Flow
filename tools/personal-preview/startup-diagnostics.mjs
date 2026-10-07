@@ -143,13 +143,13 @@ export async function openStartupDiagnostics({ directory, role, nonce, pid }) {
 /** Observe the actual child through exit even when diagnostic persistence fails. */
 export async function observeStartupChild(child, diagnostic) {
   const exited = new Promise(resolve => {
-    child.once('error', () => resolve({ code: null, signal: 'start-error' }));
+    child.once('error', error => resolve({ code: null, signal: 'start-error', startupError: startupErrorCode(error) }));
     child.once('exit', (code, signal) => resolve({ code, signal }));
   });
   let diagnosticError, stderr;
   try { diagnostic.capture(child.stderr); } catch (error) { diagnosticError = startupErrorCode(error); child.stderr?.on('error', () => {}); child.stderr?.resume(); }
   try { await diagnostic.stage('child-running'); } catch (error) { diagnosticError ??= startupErrorCode(error); }
   const result = await exited;
-  try { stderr = await diagnostic.finish(result); } catch (error) { diagnosticError ??= startupErrorCode(error); }
+  try { stderr = await diagnostic.finish(result, result.startupError ? { code: result.startupError } : undefined); } catch (error) { diagnosticError ??= startupErrorCode(error); }
   return { ...result, ...(stderr ? { stderr } : {}), ...(diagnosticError ? { diagnosticError } : {}) };
 }

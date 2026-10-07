@@ -133,3 +133,14 @@ test('output permission changes stop retaining bytes but still drain and preserv
   assert.equal(result.stderr.errorCode, 'STARTUP_DIAGNOSTICS_UNAVAILABLE'); assert.equal(result.stderr.complete, true);
   assert.equal((await readFile(`${input.stem}.stderr`)).length, 0);
 });
+
+
+test('actual child spawn failure retains a controlled system code without exposing the program path', async t => {
+  const input = await installation(t), diagnostic = await openStartupDiagnostics(input);
+  const child = spawn(process.execPath, ['-e', 'process.exit(0)'], { cwd: join(input.directory, 'missing-private-cwd'), stdio: ['ignore', 'ignore', 'pipe'] });
+  const result = await observeStartupChild(child, diagnostic);
+  assert.equal(child.pid, undefined); assert.equal(result.code, null); assert.equal(result.signal, 'start-error'); assert.equal(result.startupError, 'ENOENT');
+  assert.equal(JSON.stringify(result).includes(input.directory), false);
+  const record = JSON.parse(await readFile(`${input.stem}.json`));
+  assert.equal(record.phase, 'startup-failed'); assert.equal(record.errorCode, 'ENOENT');
+});
