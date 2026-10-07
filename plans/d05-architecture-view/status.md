@@ -9,7 +9,7 @@
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；188个唯一来源已加载，工具全文接线与流式授权优化状态可见，缺证时间保持未知。 |
-| 下一可用交付 | 把受信单文件写入后继的唯一进度来源加入看板。 |
+| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；189个唯一来源已加载，工具全文接线与受信工程写入状态可见，缺证时间保持未知。 |
+| 下一可用交付 | 本片段已交付；后续来源按唯一owner正式三件套登记。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -226,3 +226,7 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 ## ENG01K 来源候选 2026-10-07T07:19:26.639177+00:00
 
 新增原ENG大task下的受信写工具工作线，精确三件套已建立并绑定；当前实际仍188，189仅登记候选。见[来源记录](../../docs/evidence/d05/eng01k-registration.json)。未变更产品能力或原生资格。
+
+## 2026-10-07 ENG01K 来源实际发布
+
+2026-10-07T07:26:47.690445+00:00：main3e4362b0已接收固定登记；4320旧25011确认退出，新80450实际返回189来源，ENG01K canonical live，登录metadata仍启用。个人五项元数据摘要、61227/61228监听与进程身份逐项保持，0 token endpoint/原tab刷新/产品测试。见[实际回执](../../docs/evidence/d05/eng01k-live.json)。分支review/资格限制沿原owner，不因来源发布宣称工程授写或模型验收通过。
