@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:09:35.698753+00:00 |
+| 最近更新时间 | 2026-10-07T05:12:11.029030+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | base60ca；R3候选source37177aba665fa8d787e40c2a18c4d124bdf819ca，R2结果源d9f3a4aa/manifest e49b246d，未main |
-| 工作树 dirty 状态 | 仅归档独审，随后固定clean执行HEAD；无产品/运行输入变化 |
+| 工作树 dirty 状态 | 只新增R3原raw/outer副本/结果和intake，source/输入冻结；封包后clean停写供独审 |
 | 工作分支状态 | in-progress |
-| 检查状态 | R2原27=26过1失败保留；修后单runtime.fixture noEmit0，未重跑用例；R3 NOT_OPEN |
-| Review | status_read05:08:05 APPROVED：R2结果忠实性+37177维护fixture/R3准备，0P1P2；R3未运行 |
+| 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
+| Review | 37177/R3准备已独审；R3实际结果忠实性与最小main intake PENDING |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 维护夹具修复和前轮结果已独审通过，正在核对新一轮27项验收的资源准入 |
-| 下一可用交付 | 独立新R3单次验证原27项，终态先归还实际资源再交结果独审 |
-| 当前阻塞 | NONE: R3已获条件operator授权，尚未创建准入/运行；临启动fresh门禁保持 |
+| 当前产出 | 插件启用、冻结任务绑定与逐阶段授权的27项数据库验收已全部通过，等待结果独审和主线接收 |
+| 下一可用交付 | 受控接收领域模块、持久化绑定与执行叶片；之后接生产runner和真实现成npm能力 |
+| 当前阻塞 | ACTIVE: 本片R3结果待独审/主线接收；生产调用链与semver实用能力尚未接入，无运行资源占用 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -227,3 +227,9 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 [focused类型](../../docs/evidence/x01/enable-binding-maintenance-fix-local.json)：05:00:53.151613–55.267568Z，单runtime.fixture noEmit0/0B，PID37593最终absent/EOF、TMP同inode删，无PG/用例执行。新config仅该直接consumer，无alias或tsconfig放宽。R3只换4个namespace字面及对应input/manifest绑定，236源码/31SQL/原27cases与180s等界限不变；0admission/0reservation，需独审和新窗口。已直归还local给C02并通知Web。
 
 2026-10-07T05:09:35.698753+00:00：status_read05:08:05限定独审经Mika必要转交已归档：23 R2绑定/9窄修绑定、233/236 R3输入不变、31SQL/27external/21links无误，0P1P2。R3源37177批准不等运行通过。Mika明确委派本owner新一次R3准入；Web Recovery及SVC资源actualclosed来源已交接，启动前仍重核≤60s账本/cleanhead/runabsent/freshfloor并直接告Web。原R1/R2失败/raw不可改，不自动R4。
+
+## 2026-10-07T05:12:11.029030+00:00 R3真实27项全过
+
+[原件与范围](../../docs/evidence/x01/enable-binding-stage-c-r3-result.md)：05:10:00.481194–08.767637Z，time8.37s/exit0，27selected27passed/0skip；205HTTP。两专库、四监听、两进程和TMP全部闭合，已直接归还Web。R1/R2历史不改。先独审此结果，再沿[精确main intake](../../docs/evidence/x01/enable-binding-main-intake.json)受控接15产品/test+1直接fixture支撑；此为分支模块能力而非默认挂载/生产runRunner/semver bundle完成。
+
+后继沿已有map，不新领共享scope：可信host发布/当前授权→严格v3claim资格→冻结binding→production runtime执行port→既有outbox/typed provenance/flow.text验证；S01 release只是已知交接事实，main/config/contracts/events等任何新增路径仍需fresh协调/amend。semver7.8.5已选未build；完整X01 TODO保持。
