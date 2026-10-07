@@ -1,4 +1,10 @@
+import { ASSISTANT_SELECTION_PROTOCOL, assistantStreamSelectionSchema, assistantStreamDataSchema, type AssistantStreamProtocol, type AssistantStreamSelection, type AssistantStreamSelectedPage, type AssistantStreamSelectedPatchPage } from '../../contracts/src/assistant-stream.js';
+import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
+import type { NativeActivityBodyDescriptor, NativeActivityBodySupport } from '@flow/contracts';
+import { NativeActivityBodyReader, readNativeActivityBody, readNativeActivityBodySupport, readBoundedNativeBodyJson, type NativeBodyRequest } from './native-activity-body.js';
+export { NativeActivityBodyReader, type VerifiedNativeActivityBodyPage } from './native-activity-body.js';
 import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
+import { runnerIdentitySchema, runnerClaimRequestSchema, decodeRunnerClaimResponse, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimResponse } from '@flow/contracts';
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
 import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
 import type { TaskUsageReadout } from '@flow/contracts';
@@ -45,7 +51,8 @@ export class FlowApiError extends Error {
 interface ClientConnectionOptions {
   baseUrl: string;
   /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
-  assistantStreamProtocol?: 'patch-v1';
+  conversationProtocol?: typeof NATIVE_CONVERSATION_VERSION;
+  assistantStreamProtocol?: AssistantStreamProtocol;
 }
 
 /** Cookie authentication is explicit; the browser owns the HttpOnly session cookie. */
@@ -58,7 +65,8 @@ export class FlowClient {
   private readonly baseUrl: string;
   private readonly token: string | undefined;
   private readonly csrfToken: (() => string | undefined) | undefined;
-  private readonly assistantStreamProtocol: 'patch-v1' | undefined;
+  private readonly conversationProtocol: typeof NATIVE_CONVERSATION_VERSION | undefined;
+  private readonly assistantStreamProtocol: AssistantStreamProtocol | undefined;
 
   constructor(options: ClientOptions) {
     if ((options.token !== undefined) === (options.browserSession !== undefined)) throw new Error('Select exactly one authentication mode.');
@@ -66,6 +74,7 @@ export class FlowClient {
     this.token = options.token;
     this.csrfToken = options.browserSession?.csrfToken;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+    this.conversationProtocol = options.conversationProtocol;
   }
 
   async browserSession(signal?: AbortSignal): Promise<BrowserSessionRead> {
@@ -91,18 +100,71 @@ export class FlowClient {
     return history;
   }
 
-  assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
+  async assistantStream(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamPage> {
     const query = new URLSearchParams();
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal });
+    const selected = this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL;
+    const limit = options.limit ?? 20, after = options.after;
+    if (selected) signal?.throwIfAborted();
+    const page = await this.request<AssistantStreamSelectedPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream${query.size ? `?${query}` : ''}`, { signal, headers: this.streamHeaders() });
+    if (selected) {
+      signal?.throwIfAborted();
+      if (page.protocol !== ASSISTANT_SELECTION_PROTOCOL || page.taskId !== taskId || (page.attemptId !== null && (typeof page.attemptId !== 'string' || !page.attemptId)) || !Array.isArray(page.blocks)
+        || page.blocks.length > limit || page.blocks.some(block => block.taskId !== taskId || block.attemptId !== page.attemptId || block.id !== block.streamId)
+        || page.nextCursor !== null && (page.nextCursor !== page.blocks.at(-1)?.id || page.nextCursor === after)) throw Error('Unconfirmed selected stream metadata.');
+    }
+    return page;
+  }
+  /** Every call verifies this page's explicit ACK; no capability is inferred from route existence. */
+  async assistantStreamSelectedMetadata(taskId: string, options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<AssistantStreamSelectedPage> {
+    if (this.assistantStreamProtocol !== ASSISTANT_SELECTION_PROTOCOL) throw Error('Selected stream reads require explicit opt-in.');
+    return await this.assistantStream(taskId, options, signal) as AssistantStreamSelectedPage;
   }
   assistantStreamPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number }, signal?: AbortSignal): Promise<AssistantStreamPatchPage> {
+    if (this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL) return this.assistantStreamSelectedPatches(taskId, { ...options, selection: { kind: 'text' } }, signal);
     const query = new URLSearchParams({ attemptId: options.attemptId });
     for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal });
+    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal, headers: this.streamHeaders() });
   }
-  assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
-    return this.request(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal });
+  /** Wire validation only. The shared projection owns metadata-first negotiation, source/hash
+   * verification, generation cancellation and independent text/disclosure cursors. No retry. */
+  async assistantStreamSelectedPatches(taskId: string, options: { attemptId: string; after?: number; limit?: number; selection: AssistantStreamSelection }, signal?: AbortSignal): Promise<AssistantStreamSelectedPatchPage> {
+    if (this.assistantStreamProtocol !== ASSISTANT_SELECTION_PROTOCOL) throw Error('Selected stream reads require explicit opt-in.');
+    signal?.throwIfAborted();
+    const selection = Object.freeze(assistantStreamSelectionSchema.parse(options.selection));
+    const attemptId = options.attemptId, after = options.after ?? 0, limit = options.limit ?? 8;
+    if (!Number.isSafeInteger(after) || after < 0 || after > 2147483647 || !Number.isSafeInteger(limit) || limit < 1 || limit > 8) throw Error('Invalid selected stream cursor or limit.');
+    const query = new URLSearchParams({ attemptId, after: String(after), limit: String(limit), selection: selection.kind });
+    if (selection.kind === 'block') query.set('streamId', selection.streamId);
+    const page = await this.request<AssistantStreamSelectedPatchPage>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/patches?${query}`, { signal, headers: this.streamHeaders() });
+    signal?.throwIfAborted();
+    const echoed = assistantStreamSelectionSchema.parse(page.selection);
+    if (page.protocol !== ASSISTANT_SELECTION_PROTOCOL || page.taskId !== taskId || page.attemptId !== attemptId
+      || echoed.kind !== selection.kind || echoed.kind === 'block' && selection.kind === 'block' && echoed.streamId !== selection.streamId
+      || !Array.isArray(page.patches) || page.patches.length > limit || typeof page.hasMore !== 'boolean') throw Error('Unconfirmed selected stream acknowledgement.');
+    let cursor = after;
+    for (const patch of page.patches) {
+      const { taskId: patchTask, attemptId: patchAttempt, eventId, sequence, createdAt, ...data } = patch;
+      assistantStreamDataSchema.parse(data);
+      if (patchTask !== taskId || patchAttempt !== attemptId || typeof eventId !== 'string' || !eventId || typeof createdAt !== 'string'
+        || !Number.isSafeInteger(sequence) || sequence <= cursor || sequence > 2147483647
+        || (selection.kind === 'block' ? patch.streamId !== selection.streamId : patch.source !== 'claude.sdk.stream' && patch.channel !== 'text')) throw Error('Selected patch identity or cursor mismatch.');
+      cursor = sequence;
+    }
+    if (page.nextCursor !== cursor || page.hasMore && page.patches.length !== limit) throw Error('Selected patch cursor did not match the page.');
+    return page;
+  }
+  async assistantStreamBlock(taskId: string, blockId: string, signal?: AbortSignal): Promise<AssistantStreamBlock> {
+    const selected = this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL;
+    if (selected) signal?.throwIfAborted();
+    const block = await this.request<AssistantStreamBlock>(`/api/tasks/${encodeURIComponent(taskId)}/assistant-stream/${encodeURIComponent(blockId)}`, { signal, headers: this.streamHeaders() });
+    if (selected) signal?.throwIfAborted();
+    if (selected && (block.taskId !== taskId || block.id !== blockId || block.streamId !== blockId || typeof block.content !== 'string')) throw Error('Stream block identity mismatch.');
+    return block;
+  }
+  private streamHeaders(): HeadersInit {
+    return this.assistantStreamProtocol === 'patch-v2' || this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL
+      ? { 'X-Flow-Assistant-Stream': this.assistantStreamProtocol } : {};
   }
 
   fetchPluginPackage(pluginId: string, versionId: string, input: PackageFetchRequest, key: string, signal?: AbortSignal): Promise<PackageFetchAccepted> {
@@ -171,6 +233,16 @@ export class FlowClient {
   nativeActivity(id: string, signal?: AbortSignal): Promise<NativeActivity> {
     return this.request(`/api/native-activities/${encodeURIComponent(id)}`, { signal });
   }
+  nativeActivityBody(taskId: string, activityId: string, signal?: AbortSignal): Promise<NativeActivityBodyDescriptor> {
+    return readNativeActivityBody(this.bodyRequest, taskId, activityId, signal);
+  }
+  nativeActivityBodyPages(descriptor: NativeActivityBodyDescriptor): NativeActivityBodyReader {
+    return new NativeActivityBodyReader(this.bodyRequest, descriptor);
+  }
+  nativeActivityBodySupport(signal?: AbortSignal): Promise<NativeActivityBodySupport> {
+    return readNativeActivityBodySupport(this.bodyRequest, signal);
+  }
+  private readonly bodyRequest: NativeBodyRequest = (path, options) => this.request(path, { signal: options.signal }, undefined, options.maxBytes);
 
   runnerMaintenance(runnerId: string, signal?: AbortSignal): Promise<RunnerMaintenanceView> {
     return this.request(`/api/runners/${encodeURIComponent(runnerId)}/maintenance`, { signal });
@@ -379,6 +451,13 @@ export class FlowClient {
       signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_VERSION },
     }));
   }
+  async nativeConversationProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeExecutionProfileCatalogV2Page> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return nativeExecutionProfileCatalogV2PageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_V2 },
+    }));
+  }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
   }
@@ -473,7 +552,7 @@ export class FlowClient {
   }
   conversation(id: string, signal?: AbortSignal): Promise<ConversationSnapshot> {
     return this.request(`/api/conversations/${encodeURIComponent(id)}`, {
-      signal, ...(this.assistantStreamProtocol === 'patch-v1' ? { headers: { 'X-Flow-Assistant-Stream': 'patch-v1' } } : {}),
+      signal, ...(this.assistantStreamProtocol ? { headers: { 'X-Flow-Assistant-Stream': this.assistantStreamProtocol === ASSISTANT_SELECTION_PROTOCOL ? 'patch-v2' : this.assistantStreamProtocol } } : {}),
     });
   }
   conversationTurns(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationTurnPage> {
@@ -519,8 +598,8 @@ export class FlowClient {
   async enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
     const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationQueueEnqueue;
     const path = `/api/conversations/${encodeURIComponent(id)}/queue`;
-    if (frozen.messageSettings === undefined) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
-    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen);
+    if (frozen.messageSettings === undefined && !this.conversationProtocol) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
+    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen, this.conversationProtocol === NATIVE_CONVERSATION_VERSION);
   }
   conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
     const query = new URLSearchParams();
@@ -584,6 +663,19 @@ export class FlowClient {
   }
 
   claim(signal?: AbortSignal): Promise<ClaimResponse> { return this.request('/api/runner/claim', { method: 'POST', body: '{}', signal }); }
+  async runnerIdentity(signal?: AbortSignal): Promise<RunnerIdentity> {
+    return runnerIdentitySchema.parse(await this.request('/api/runner/identity', { method: 'GET', signal }));
+  }
+  async claimOpportunity(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'claim');
+  }
+  async claimOpportunityStatus(input: RunnerClaimRequest, signal?: AbortSignal): Promise<RunnerClaimResponse> {
+    const expected = runnerClaimRequestSchema.parse(input);
+    const response = await this.request('/api/runner/claim-opportunity/status', { method: 'POST', body: JSON.stringify(expected), signal });
+    return decodeRunnerClaimResponse(response, expected, 'status');
+  }
   heartbeat(ownership: Ownership, signal?: AbortSignal): Promise<HeartbeatResponse> { return this.request('/api/runner/heartbeat', { method: 'POST', body: JSON.stringify(ownership), signal }); }
   report(batch: EventBatch, signal?: AbortSignal): Promise<EventAcknowledgement> { return this.request('/api/runner/events', { method: 'POST', body: JSON.stringify(batch), signal }); }
 
@@ -650,15 +742,23 @@ export class FlowClient {
     return { ...init, headers, credentials: this.csrfToken ? 'include' : 'omit' };
   }
 
-  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
-    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal: init.signal ?? AbortSignal.timeout(15_000) }, loginToken));
-    await assertResponse(response);
+  private async request<T>(path: string, init: RequestInit = {}, loginToken?: string, maxBytes?: number): Promise<T> {
+    if (this.conversationProtocol && (path === '/api/conversations' || path.startsWith('/api/conversations/') || path.startsWith('/api/conversations?'))) {
+      const headers = new Headers(init.headers); headers.set(CONVERSATION_HEADER, this.conversationProtocol); init = { ...init, headers };
+    }
+    const signal = maxBytes === undefined ? init.signal ?? AbortSignal.timeout(15_000)
+      : init.signal ? AbortSignal.any([init.signal, AbortSignal.timeout(15_000)]) : AbortSignal.timeout(15_000);
+    const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal }, loginToken));
+    const boundedJson = maxBytes === undefined ? undefined : () => readBoundedNativeBodyJson(response, maxBytes, signal);
+    await assertResponse(response, boundedJson, maxBytes === undefined ? undefined : signal);
+    if (boundedJson) return await boundedJson() as T;
     return response.json() as Promise<T>;
   }
 }
 
-async function assertResponse(response: Response): Promise<void> {
+async function assertResponse(response: Response, read = () => response.json(), signal?: AbortSignal): Promise<void> {
   if (response.ok) return;
-  const body = await response.json().catch(() => ({})) as { error?: { code?: string; message?: string } };
+  const body = await read().catch(() => ({})) as { error?: { code?: string; message?: string } };
+  signal?.throwIfAborted();
   throw new FlowApiError(response.status, body.error?.code ?? 'http_error', body.error?.message ?? `The center returned HTTP ${response.status}.`);
 }
