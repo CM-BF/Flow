@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T08:33:40.006623+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "verdict": "APPROVED_CURRENT_MAIN_PREPARATION",
+  "target": "343bd43691a5a179d256a2229a4db856d869a267",
+  "delivery": "275c28ad7bcc9b6d01cd1d6baa5be51f64eae6c4",
+  "productBase": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "manifest": {
+    "path": "docs/evidence/o16/current-main-manifest.json",
+    "bytes": 147675,
+    "sha256": "0ae119cf209f23ab0b37125b2bf5b2ea35f17bdb7ec2a775663668c12db5364f"
+  },
+  "sourceDigest": "86ace9e84cde66df53eced334fdaa8ec9347d31905b1f28b93bb22f1b70c9b42",
+  "independentReview": [
+    "Read both changed experiment files: fixed base and exact current-main input identity; no journey behavior change.",
+    "Compared 27 unchanged experiment files against prior reviewed 4ae; 334 fixed Git/current bindings and 39 dependency aliases plus 3 runtime anchors independently verified.",
+    "289 actual product input files include 33 dynamic SQL resources; no product modifications.",
+    "Read default-load caller, reservation, checkpoint, result, stdout and cleanup. Imports do not call journey/operator; source identity matches."
+  ],
+  "observedEvidence": {
+    "selected": 1,
+    "passed": 1,
+    "exitCode": 0,
+    "elapsedMs": 1849,
+    "stdoutBytes": 269,
+    "pg": 0,
+    "provider": 0,
+    "group": "39238 initial pre-reap EPERM retained; subsequent absent twice and EOF, no signals",
+    "scratch": "0 bytes, exact dev/ino removed"
+  },
+  "blockingFindings": [],
+  "reviewerTests": 0,
+  "reviewerProvider": 0,
+  "limitations": [
+    "Preparation approval only; no successful public goal journey claimed.",
+    "Original 26 preparation checks not repeated.",
+    "Original failed PG journey and old KEEP namespace remain unchanged.",
+    "Synthetic journey cannot prove model planning, native semantics, long-task resume or compaction continuity."
+  ],
+  "next": "One new bounded 0-provider PG journey under the existing candidate, after fresh resource/claim/namespace checks and unique shared holder coordination."
+}
