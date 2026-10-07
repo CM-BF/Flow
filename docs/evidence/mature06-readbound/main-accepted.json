@@ -1,0 +1,72 @@
+{
+  "observedAt": "2026-10-07T10:07:46.923668+00:00",
+  "mainIntakeCommit": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a",
+  "observedMain": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+  "source": "bc213e44db2b74130836782720728f8a59b52b99",
+  "delivery": "4a1a93827f38b38ad19a4977c21b8353e2e67709",
+  "products": [
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d",
+      "bytes": 63703,
+      "mainPreimageSha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+      "bytes": 7574,
+      "mainPreimageSha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+      "bytes": 1298,
+      "mainPreimageSha256": null
+    },
+    {
+      "path": "packages/client/src/response-json.test.ts",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "sha256": "e9b57c7104f8822e87cdccc3ffa2d2e454a2960ac6b7da6bca3584bba148613c",
+      "bytes": 1866,
+      "mainPreimageSha256": null
+    },
+    {
+      "path": "packages/client/src/assistant-stream-bounds.test.ts",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "sha256": "49c1c4ec1ac967ca7d70d21d33bc03d540a1b40bb7e60e9280828d15fd217891",
+      "bytes": 8679,
+      "mainPreimageSha256": null
+    }
+  ],
+  "intakePath": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/client-terminal-intake.json",
+  "intakeSha256": "409f977a7aab54a3c01ae3012919f8c100c0999c4e86a5f5c41ae71742991570",
+  "verified": "all5product/test bytes match at both fixedmain commits",
+  "combination": {
+    "passed": true,
+    "directConsumers": 11,
+    "rootNoEmitExit": 0,
+    "source": "client-terminal-combination/result.json",
+    "elapsedMs": 10841,
+    "rawBytes": 753,
+    "scratchObservedBytes": 1357820,
+    "scratchRemoved": true,
+    "PG": 0,
+    "provider": 0,
+    "repeatedAuthorSuites": false
+  },
+  "sourceRegistration": {
+    "taskId": "MATURE06-READBOUND01",
+    "delivery": "62e32cda61c02862112412fe50410bc05b4275a3",
+    "sourceCount": 194,
+    "actualDashboard": "NOT_YET_RELOADED"
+  },
+  "scopeStop": {
+    "path": "packages/client/src/index.ts",
+    "stoppedAt": "2026-10-07T10:07:46.923668+00:00",
+    "next": "atomic amend v2 remove then independent CLI claim"
+  },
+  "limitations": "no deployment/provider/real production HTTP claim; raw and original manifest unchanged"
+}

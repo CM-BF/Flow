@@ -7,7 +7,7 @@
 - [x] **MATURE06-READBOUND01-01** 有界 JSON reader 单一实现，material 原8KiB/384KiB规则保持。
 - [x] **MATURE06-READBOUND01-02** 三个公开 selected 方法接线；成功和错误响应均有显式接收策略。
 - [x] **MATURE06-READBOUND01-03** 极值转义/envelope、分块UTF8、超限、取消、错误身份与直接消费者局部验证。
-- [ ] **MATURE06-READBOUND01-04** 固定源码/证据、独立review、受控main接收与唯一status同步。
+- [x] **MATURE06-READBOUND01-04** 固定源码/证据、独立review、受控main接收与唯一status同步。
 
 实现只在已领7literal内。client/index按X01正式STOP/v22交回后本claim v2接收，保留其2ea新增pluginRunner公开接线。普通段20min、child≤60s/累计≤120s、TMP16MiB/raw0.5MiB/source+meta2MiB；Node24/Vitest4、0PG/Chrome/provider/安装，按当前组合资源门槛。
 
