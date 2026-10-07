@@ -1,0 +1,663 @@
+{
+  "startedAt": "2026-10-07T06:38:56.935878+00:00",
+  "runs": [
+    {
+      "mode": "baseline",
+      "startedAt": "2026-10-07T06:38:56.956757+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-q7ak56e6",
+        "dev": 16777234,
+        "ino": 123590024,
+        "sampleBytes": 64,
+        "sampleCount": 1,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 6859,
+          "sha256": "060400fbf16a0c867eeff3d228fe9c1f4ed8578fc15862893e7c86c114f31289"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4130,
+          "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 766,
+          "sha256": "3ee70ab727d52baf50bc516f98a521317112d2c281646b6c6d630efc801d2e50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/runner/src/native-stream-ownership.test.ts"
+      ],
+      "finishedAt": "2026-10-07T06:38:57.687192+00:00",
+      "process": {
+        "pid": 93592,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 728,
+        "observed_bytes": 887,
+        "retained_bytes": 887,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/baseline.txt",
+        "bytes": 887,
+        "sha256": "4eae7e1c47e3b5607e28779ad78667e0b07ffed58b575cdcd9be8d4629ef57cd"
+      }
+    },
+    {
+      "mode": "types",
+      "startedAt": "2026-10-07T06:39:03.456458+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-xufomi4u",
+        "dev": 16777234,
+        "ino": 123590105,
+        "sampleBytes": 64,
+        "sampleCount": 1,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 6859,
+          "sha256": "060400fbf16a0c867eeff3d228fe9c1f4ed8578fc15862893e7c86c114f31289"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4130,
+          "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 766,
+          "sha256": "3ee70ab727d52baf50bc516f98a521317112d2c281646b6c6d630efc801d2e50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/tsconfig.json"
+      ],
+      "finishedAt": "2026-10-07T06:39:04.633644+00:00",
+      "process": {
+        "pid": 97706,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1176,
+        "observed_bytes": 1875,
+        "retained_bytes": 1875,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/types.txt",
+        "bytes": 1875,
+        "sha256": "ebb767a44d7e2c9ca2d0c54ff6271c72f2f12a6c7bd17f96c6639de2195df8d9"
+      }
+    },
+    {
+      "mode": "types-fixed",
+      "startedAt": "2026-10-07T06:40:06.470014+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-vvul9cg_",
+        "dev": 16777234,
+        "ino": 123590360,
+        "sampleBytes": 64,
+        "sampleCount": 1,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 6936,
+          "sha256": "1e695d307142a9b2af84795aa63af0b2d98a76b4ae078b8304c5f7d7affebdaf"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4130,
+          "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 688,
+          "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/tsconfig.json"
+      ],
+      "finishedAt": "2026-10-07T06:40:07.612465+00:00",
+      "process": {
+        "pid": 33511,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1141,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/types-fixed.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "mode": "focused",
+      "startedAt": "2026-10-07T06:40:22.052758+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-w7sjix8o",
+        "dev": 16777234,
+        "ino": 123590471,
+        "sampleBytes": 516,
+        "sampleCount": 5,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 6936,
+          "sha256": "1e695d307142a9b2af84795aa63af0b2d98a76b4ae078b8304c5f7d7affebdaf"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4130,
+          "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 688,
+          "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/runner/src/native-stream-ownership.test.ts"
+      ],
+      "finishedAt": "2026-10-07T06:40:22.714274+00:00",
+      "process": {
+        "pid": 45055,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 659,
+        "observed_bytes": 887,
+        "retained_bytes": 887,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/focused.txt",
+        "bytes": 887,
+        "sha256": "d2c2e73f7990a8bf523648bb989c9cd2c2d466e94da66ec1ef2e460684325ec9"
+      }
+    },
+    {
+      "segment": "optimization",
+      "mode": "optimized",
+      "startedAt": "2026-10-07T06:46:33.116260+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-wzgkpbop",
+        "dev": 16777234,
+        "ino": 123594772,
+        "sampleBytes": 516,
+        "sampleCount": 5,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 8071,
+          "sha256": "01d18d01b636fc72bb4bda7c2b4a202a080e79fb94c59aa9f222b308ffffb6de"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4132,
+          "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 688,
+          "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "apps/runner/src/native-stream-ownership.test.ts"
+      ],
+      "finishedAt": "2026-10-07T06:46:33.833532+00:00",
+      "process": {
+        "pid": 60226,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 715,
+        "observed_bytes": 832,
+        "retained_bytes": 832,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/optimized.txt",
+        "bytes": 832,
+        "sha256": "deec1a2e2ff31ca871ffa065216e36b034e4c7e566df10278eb551fcff53d082"
+      }
+    },
+    {
+      "segment": "optimization",
+      "mode": "optimized-types",
+      "startedAt": "2026-10-07T06:46:53.645961+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p08-7kqpk1bz",
+        "dev": 16777234,
+        "ino": 123594911,
+        "sampleBytes": 64,
+        "sampleCount": 1,
+        "removed": true,
+        "retained": false
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-stream-ownership.test.ts",
+          "bytes": 8071,
+          "sha256": "01d18d01b636fc72bb4bda7c2b4a202a080e79fb94c59aa9f222b308ffffb6de"
+        },
+        {
+          "path": "apps/runner/src/attempt-control.ts",
+          "bytes": 4720,
+          "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 4132,
+          "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67"
+        },
+        {
+          "path": "docs/evidence/s01p08/vitest.config.mjs",
+          "bytes": 688,
+          "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+        },
+        {
+          "path": "docs/evidence/s01p08/tsconfig.json",
+          "bytes": 832,
+          "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+        }
+      ],
+      "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/docs/evidence/s01p08/tsconfig.json"
+      ],
+      "finishedAt": "2026-10-07T06:46:54.915571+00:00",
+      "process": {
+        "pid": 72360,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1267,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "raw": {
+        "path": "docs/evidence/s01p08/optimized-types.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "limit": {
+    "children": 4,
+    "rawBytes": 262144,
+    "tmpBytes": 8388608,
+    "secondsEach": 60
+  },
+  "scope": "injected local only; no native, PG, HTTP, provider",
+  "rawBytes": 4481,
+  "baselineCacheCleanup": {
+    "path": "docs/evidence/s01p08/cache",
+    "observedAt": "2026-10-07T06:41:09.663267+00:00",
+    "dev": 16777234,
+    "ino": 123590089,
+    "closedProcessBeforeCleanup": true,
+    "files": [
+      {
+        "path": "vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 131,
+        "sha256": "57e0a97f27cc1599a531674cdece5490d28747ad59d552f3d87d93818ed18e63"
+      }
+    ],
+    "bytesIncludingDirectoryEntries": 419,
+    "absent": true
+  },
+  "finalInputs": [
+    {
+      "path": "apps/runner/src/native-stream-ownership.test.ts",
+      "bytes": 8071,
+      "sha256": "01d18d01b636fc72bb4bda7c2b4a202a080e79fb94c59aa9f222b308ffffb6de"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 4132,
+      "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67"
+    },
+    {
+      "path": "docs/evidence/s01p08/vitest.config.mjs",
+      "bytes": 688,
+      "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+    },
+    {
+      "path": "docs/evidence/s01p08/tsconfig.json",
+      "bytes": 832,
+      "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+    }
+  ],
+  "finishedAt": "2026-10-07T06:48:24.358937+00:00",
+  "actualUniqueTests": 11,
+  "types": {
+    "baselineInitialExit": 2,
+    "baselineFixedExit": 0,
+    "optimizedExit": 0
+  },
+  "result": "LOCAL_OPTIMIZATION_CHECKS_PASS_REVIEW_PENDING",
+  "temporalScope": "Four local children separately timed; segment includes source edits/wait; no whole external tool wall was captured.",
+  "segments": {
+    "optimization": {
+      "start": "2026-10-07T06:46:33.116260+00:00",
+      "seconds": 600,
+      "childLimit": 2,
+      "tmpBytes": 4194304,
+      "rawBytes": 131072
+    }
+  },
+  "baselineSummary": {
+    "target": "192d8b35101a7b870bc19c1602cbf209a75aab0a",
+    "uniqueTests": 7,
+    "types": {
+      "initialExit": 2,
+      "initialDiagnostics": 4,
+      "fixedExit": 0
+    },
+    "finalInputs": [
+      {
+        "path": "apps/runner/src/native-stream-ownership.test.ts",
+        "bytes": 6936,
+        "sha256": "1e695d307142a9b2af84795aa63af0b2d98a76b4ae078b8304c5f7d7affebdaf"
+      },
+      {
+        "path": "apps/runner/src/attempt-control.ts",
+        "bytes": 4720,
+        "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+      },
+      {
+        "path": "apps/runner/src/native-harness/codex/adapter.ts",
+        "bytes": 4130,
+        "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+      },
+      {
+        "path": "docs/evidence/s01p08/vitest.config.mjs",
+        "bytes": 688,
+        "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+      },
+      {
+        "path": "docs/evidence/s01p08/tsconfig.json",
+        "bytes": 832,
+        "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+      }
+    ],
+    "rawBytes": 3649,
+    "childLimit": 4,
+    "childCount": 4,
+    "closedAt": "2026-10-07T06:41:09.667882Z"
+  },
+  "optimization": {
+    "implementationStartedAt": "2026-10-07T06:45:48.214Z",
+    "actualChildrenFinishedAt": "2026-10-07T06:46:54.915571+00:00",
+    "closedAtObserved": "2026-10-07T06:48:24.358937+00:00",
+    "childLimit": 2,
+    "childCount": 2,
+    "tests": 11,
+    "passed": 11,
+    "rawBytes": 832,
+    "baselineHeartbeats": [
+      15,
+      15
+    ],
+    "optimizedHeartbeats": [
+      11,
+      11
+    ],
+    "fragments": [
+      32,
+      512
+    ],
+    "patchesPerSample": 5,
+    "eventsPerSample": 9,
+    "controlledClockMs": 0,
+    "realHTTP": 0,
+    "nativeProcesses": 0,
+    "performanceMeaning": "Number of mock heartbeat method calls through the real control; no latency/SQL/provider measurement."
+  }
+}

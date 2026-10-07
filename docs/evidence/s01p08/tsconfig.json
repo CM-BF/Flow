@@ -1,0 +1,27 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "../../..",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.ts"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts"
+      ]
+    },
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
+    ]
+  },
+  "include": [
+    "../../../apps/runner/src/native-stream-ownership.test.ts"
+  ],
+  "exclude": []
+}

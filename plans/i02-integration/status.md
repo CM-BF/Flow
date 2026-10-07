@@ -344,3 +344,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T06:25:25.202799+00:00：受控接收SVC08 c382实际结果、ENG f15四源/ca6封包和OPS3a4限定摘要；[唯一接收](../../docs/evidence/i02/svc08-eng01j-intake-20261007-0628.json)。个人旧Web exit1原样保留，c7b宿主采用不等于旧故障根因或完整SVC06；ENG真实helper未运行且writeAccess仍unknown。
 
 2026-10-07T06:54:38.345442+00:00：主线f39完成受控接收；本批父状态5f70两文件获assignment独立文档APPROVED，逐字接收，0产品重测。CHAT05产品停写并准备公共接线，范围交回以原owner实际receipt为准；ENG单helper不升级为完整native authority。
+
+2026-10-07T07:04:43.041048+00:00：S01P08已审e3d28f96的adapter一个授权检查移位及新直接消费者接收，前像完整匹配，21manifest绑定全部相同；87闭包仅已审CHAT05 outbox/DTO增量，直接adapter/control/turn不变。root noEmit0/9633ms，无行为/容量重跑。固定输入见[接收记录](../../docs/evidence/i02/s01p08-intake.json)。不宣称真实延迟或native容量收益。
