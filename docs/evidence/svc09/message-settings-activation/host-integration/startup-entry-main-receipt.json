@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-07T20:37:42.477Z",
+  "main": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+  "review": "docs/evidence/i02/svc09a-startup-entry-review.json",
+  "decision": "APPROVED_OPTIONAL_STARTUP_ENTRY_OBSERVATION",
+  "productsMatchMain": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 17239,
+      "sha256": "122073baec75e1dbb829ec92c2e8495ce969e19f9a772e50398e6e4fac428a70"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 4124,
+      "sha256": "f37b7b999b050655bd506d2559deee8011e6be9d8ba6a13f3a08350660997dc5"
+    },
+    {
+      "path": "apps/server/src/startup-progress-consumer.test.ts",
+      "bytes": 3823,
+      "sha256": "2bab78a86cb581fc20672d09d4fc12b456c1d421a7cef8fc212395caf832f7fe"
+    },
+    {
+      "path": "apps/server/src/startup-progress.test.ts",
+      "bytes": 6562,
+      "sha256": "bd28354c0e8311f816859f5041425a963eba30d708b673b3813904ecebb16913"
+    },
+    {
+      "path": "apps/server/src/startup-progress.ts",
+      "bytes": 6664,
+      "sha256": "f0bf5adce3e8ea74bab09ffbf162dfa8502955d487cd0cf496a78cb2f5ebbd54"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "bytes": 6560,
+      "sha256": "67c28650593900151d806411c75569ca92bc00fd6107a658d7452f632cbb6cc8"
+    }
+  ],
+  "claimBefore": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/index.ts",
+      "apps/server/src/main.ts",
+      "apps/server/src/startup-progress-consumer.test.ts",
+      "apps/server/src/startup-progress.test.ts",
+      "apps/server/src/startup-progress.ts",
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation",
+      "tools/personal-preview/environment.mjs",
+      "tools/personal-preview/environment.test.mjs"
+    ],
+    "state": "active",
+    "branch": "codex/personal-message-settings",
+    "origin": "new",
+    "taskId": "SVC09A",
+    "worker": "native_center_owner",
+    "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 8,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "createdAt": "2026-10-07T14:08:33.408Z",
+    "updatedAt": "2026-10-07T20:13:35.898Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "handback": "startup-entry-handback-receipt.json",
+  "tests": "NOT_RERUN",
+  "limits": [
+    "only source/limited direct consumers accepted",
+    "old artifact and all FAIL/KEEP unchanged",
+    "real host/root cause/new artifact not verified"
+  ]
+}

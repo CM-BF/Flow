@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T20:52:38.289075+00:00",
+  "reports": [
+    {
+      "exit": 1,
+      "elapsedMs": 510,
+      "rawBytes": 5152,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      }
+    }
+  ],
+  "scratch": {
+    "path": "/private/tmp/flow-svc09a-target-n19k2dyy",
+    "dev": 16777234,
+    "ino": 124477826,
+    "remainingEntries": 0,
+    "cleanup": "removed"
+  },
+  "pg": 0,
+  "provider": 0
+}

@@ -1,0 +1,85 @@
+(node:77628) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ held target binds one backend and Web intent while preserving old Web in a private audit under the runner lock (102.471125ms)
+✔ held target rejects version changed without rewriting the operation (8.966958ms)
+✔ held target rejects active work without rewriting the operation (12.443042ms)
+✔ held target rejects uncertain work without rewriting the operation (9.6265ms)
+✔ held target rejects unknown group without rewriting the operation (7.861333ms)
+✔ held target rejects missing new-source report without rewriting the operation (6.734042ms)
+✔ held target rejects a changed local operation and never treats an absent release as permission to build (13.162166ms)
+✔ held target retains pre-write failure as unconfirmed, without retry or rollback of the private target (7.9945ms)
+✔ held target retains post-rename failure as unconfirmed, without retry or rollback of the private target (20.068792ms)
+✔ held target retains directory sync failure as unconfirmed, without retry or rollback of the private target (13.473834ms)
+✔ held target retains commit acknowledgement failure as unconfirmed, without retry or rollback of the private target (18.018833ms)
+✔ held target preserves first write error separately from pool and lock release errors (13.139166ms)
+✖ held Web selection consumes the same target under the row lock and records selected-stopped without starting (34.558ms)
+✔ held Web selection refuses changed release before state write (20.813083ms)
+✔ interrupted Web selection retains new selected-stopped state and old pending intent, refusing blind retry (29.760458ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 463.194708
+
+✖ failing tests:
+
+test at tools/personal-preview/maintenance-target.test.mjs:155:1
+✖ held Web selection consumes the same target under the row lock and records selected-stopped without starting (34.558ms)
+  AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:
+  
+  {
+    backendArtifact: {
+      artifactId: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      manifestDigest: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+      policy: 'flow.backend-artifact.v1',
+      sourceHead: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+    },
+    processes: {
+      center: {
+        nonce: 'center',
+        pid: 500,
+        role: 'center'
+      },
+      runner: {
+        nonce: 'runner',
+        pid: 501,
+        role: 'runner'
+      },
+      web: {
+        nonce: 'web',
+        pid: 502,
+        role: 'web'
+      }
+    },
+    webHost: {
+      artifact: {
+        artifactId: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+        manifestDigest: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+        policy: 'flow.backend-artifact.v1',
+        sourceHead: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+      },
+      operationId: '11111111-1111-1111-1111-111111111111',
+      selection: 'selected-stopped',
+      source: {
+        digest: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
+        files: [],
+        policy: 'flow.web-host-source.v1'
+      },
+      targetRequestId: '33333333-3333-3333-3333-333333333333'
+    }
+  }
+  
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance-target.test.mjs:162:10
+      at async fixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance-target.test.mjs:101:9)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { backendArtifact: { policy: 'flow.backend-artifact.v1', artifactId: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', manifestDigest: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', sourceHead: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }, webHost: { operationId: '11111111-1111-1111-1111-111111111111', artifact: [Object], source: [Object], selection: 'selected-stopped', targetRequestId: '33333333-3333-3333-3333-333333333333' }, processes: { center: [Object], runner: [Object], web: [Object] } },
+    expected: { backendArtifact: { policy: 'flow.backend-artifact.v1', artifactId: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', manifestDigest: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', sourceHead: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' }, webHost: { operationId: '11111111-1111-1111-1111-111111111111', artifact: [Object], source: [Object], selection: 'selected-stopped', targetRequestId: '33333333-3333-3333-3333-333333333333' }, processes: { center: [Object], runner: [Object], web: [Object] } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

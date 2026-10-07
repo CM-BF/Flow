@@ -87,3 +87,9 @@ source `233ef91d369e7d7f58bdec8a34f523ed27017639`；claim v7。14新直接例与
 ## 五 leaf 已收审；实际入口接线待审
 
 2026-10-07T20:34:53.035420Z：正常收录 Lead 对233ef五leaf的限定 APPROVED/0P1P2，已main18bf17ea，唯一原件 `docs/evidence/i02/svc09a-startup-progress-review.json`，不复制全文；上一段 NOT_REVIEWED 是交付时历史。当前 source `8daad9b5aa43d59b9be0e4b5a76a885ef129062a` 的 main/index/startup-progress 三产品delta及十个直接消费者另待唯一独审。原types红、精确source variant和最终定向绿见 startup-entry-result；不继承五leaf批准覆盖接线或实际运行。旧默认FAIL/KEEP与根因UNKNOWN保持。
+
+## 启动入口已main
+
+2026-10-07T20:44:35.059669Z：source8daa/delivery9f848获Lead唯一APPROVED_OPTIONAL_STARTUP_ENTRY_OBSERVATION，无blocking，main86112a35effcd4d809b5e7b91d9759cdb19d2008；38绑定+2继承/10不同与类型来源如实。唯一原件 I02 svc09a-startup-entry-review.json；7产品核同后v9归还，不重复检查。新held-target两leaf属于另一个原目标内受审片，未包含在此批准。
+
+2026-10-07T20:54:31.589982+00:00：维护目标四源 `ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39` 与22不同/23选择、实际导入原件交待审。第一次断言红保留，未重跑PG或个人；04da patch与主线多槽consumer分开。实际artifact/冷启动/个人恢复不在局部批准范围。

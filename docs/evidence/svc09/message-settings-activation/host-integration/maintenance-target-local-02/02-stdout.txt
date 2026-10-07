@@ -1,0 +1,17 @@
+(node:88148) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SVC09 maintenance refresh passes the same descriptor through prepare and startup before stopping (7.951667ms)
+✔ SVC09A holds every drained slot before stopping all four services and starting once (1.788666ms)
+✔ SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting (1.740125ms)
+✔ held Web target refresh consumes selection before prepare and starts matching backend and Web (1.746292ms)
+✔ held Web target selection failure preserves pause and prevents prepare, stop and start (1.454959ms)
+✔ held Web target fixed04da refresh consumes the exact minimal delta without slots or new DDL (19.017208ms)
+✔ held Web target fixed04da failure keeps old selection and prevents lifecycle calls (18.333125ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 200.489333

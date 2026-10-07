@@ -12,3 +12,5 @@
 当前最小下一片见[隔离宿主Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)：04da+15已审路径组合，默认/显式槽真实宿主生命周期，再用既有runRunner的注入adapter证明真实中心领取与ACK，0provider。未授权修改产品或直接使用个人安装。
 
 模块与局部检查已获独审并进入主线；这不勾选个人可用性或完整 FLOW/WPF 目标。CORE 资格已主线；后继必须使用同时含本片与该资格的新固定产物，不激活旧6c。模型后验预算不继承本次0provider局部段。
+
+SVC09A-04 恢复共享宿主子片沿[同op目标Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/maintenance-target-interface.md)：受信旧loader、held/version/原tuple与私有摘要、双锁与全旧组停止、旧页报告完整，新backend/Web同artifact；不扩generic CLI。固定04da精确delta与现main多槽consumer分别验证，实际新产物冷启动后才可协调个人恢复。
