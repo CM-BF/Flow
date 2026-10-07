@@ -22,6 +22,8 @@ COMMANDS = {
     'leaf': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs'],
     'types': [NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--project', 'docs/evidence/chat05p02/focused-tsconfig.json', '--pretty', 'false'],
     'wiring': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', '-t', 'public FlowClient|public client original|actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes'],
+    'concurrency': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', '-t', 'unqualified multi-attempt'],
+    'direct': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/direct.config.mjs'],
 }
 
 def now(): return datetime.now(timezone.utc).isoformat()

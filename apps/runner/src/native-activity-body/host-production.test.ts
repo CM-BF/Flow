@@ -72,6 +72,12 @@ it('blocks new claims before a model can start when current support is unknown',
   expect((await api.journal()).assignments).toEqual([]);
 });
 
+it('rejects unqualified multi-attempt material publishing before any transport or filesystem work',async()=>{
+  const fetcher=vi.spyOn(globalThis,'fetch');
+  try {await expect(runRunner({baseUrl:'http://unused.invalid',token:'synthetic',workingDirectory:'/unused',signal:new AbortController().signal,nativeActivityBodies:true,maxConcurrentAttempts:2})).rejects.toThrow('single-attempt');expect(fetcher).not.toHaveBeenCalled();}
+  finally{fetcher.mockRestore();}
+});
+
 it('keeps an admitted attempt unresolved when the strong pre-model confirmation fails', async () => {
   const api = await peer(); let reads = 0; api.support(() => ++reads === 1 ? support() : {}); const model = vi.fn();
   await api.start(model, true, 'ownership-lost').promise;
