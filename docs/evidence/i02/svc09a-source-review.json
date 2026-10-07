@@ -1,0 +1,55 @@
+{
+  "task": "SVC09A",
+  "at": "2026-10-07T14:32:40.142Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "conclusion": "APPROVED_SOURCE_AND_BOUNDED_LOCAL_CONSUMERS",
+  "source": "8d532613e876d34812554572fb32d46bf582de44",
+  "observedRecord": "75489b8f5433fbdc76b4892cc8ae6678bd2141c3",
+  "base": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+  "manifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/source-manifest.json",
+    "sha256": "4e3057512190fc897f8c8ddd3a4cceb04e5a24cc2384e1a2680af09445170d77",
+    "bytes": 30977
+  },
+  "findings": [],
+  "reviewed": [
+    "Complete six production-module deltas and direct behavioral test additions read; two immutable slot registry preserves legacy runner/config/workdir and rejects unknown create replay",
+    "Exact settings tuple codec/digest/runner binding; configured catalog explicitly not provider or actual claim proof",
+    "All declared slots participate in start/status/stop and maintenance; partial ACK reuses persisted operation/CAS/key; unknown identities and changed slot set stop progression",
+    "Diagnostics retain separate role/finite record key and primary failure; old services untouched by failed new-slot activation",
+    "Selected artifact host qualification happens before registration/drain; deployment-inputs explicitly requires separately accepted CORE eligibility delta"
+  ],
+  "bindings": {
+    "source": 11,
+    "protectedDirectInputs": 38,
+    "records": 49,
+    "installedEntryPins": 10,
+    "currentAndFixedErrors": [],
+    "protectedProductInputsChangedAtMain": [],
+    "currentMain": "6fd214eb6",
+    "additionalRecord": "generated-cache-cleanup.json reviewed separately, making 50 record files before the manifest"
+  },
+  "validation": {
+    "rounds": 7,
+    "selections": 44,
+    "distinct": 33,
+    "newDistinct": 30,
+    "existingDirectDistinct": 3,
+    "elapsedMs": 3444,
+    "rawBytes": 11838,
+    "latestDistinctAllPass": true,
+    "firstFailure": "Original local-01 BACKEND_OPERATION_MISMATCH kept; fixture selected descriptor corrected, no weakened product gate",
+    "resources": "All seven groups absent/dual EOF, exact empty scratch removed; no physical peak inferred",
+    "sourceFidelity": "Earlier local rounds with uncommitted changes remain accurately described; final uncertainty/failure-record changes covered by final bound local rounds"
+  },
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "limits": [
+    "Approval covers source and injected external-effect ports with real synthetic private-file fixtures, not actual service/PG/network or personal activation.",
+    "Future deployment artifact must contain accepted CORE eligibility plus this host; old 7d1/source6c is not activation-ready.",
+    "Full operator and real user journey still require fixed artifact, compatibility, fresh maintenance and actual runtime evidence; catalog and PID are insufficient.",
+    "No model budget or profile access expansion."
+  ],
+  "generatedCleanup": "Only exact current-run 23243B derived pyc removed by original owner; original seven run receipts unchanged."
+}

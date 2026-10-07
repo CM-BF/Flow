@@ -1,0 +1,232 @@
+{
+  "at": "2026-10-07T14:28:33.212091Z",
+  "scope": "MODULE_AND_DIRECT_LOCAL_CONSUMERS_ONLY",
+  "source": "8d532613e876d34812554572fb32d46bf582de44",
+  "rounds": [
+    {
+      "run": "local-01",
+      "names": [
+        "SVC09A settings environment changes only explicit runner identity and owned paths",
+        "SVC09 maintenance bootstrap qualifies the selected backend and independent Web before drain",
+        "SVC09 maintenance refresh passes the same descriptor through prepare and startup before stopping",
+        "SVC09 CLI qualifies the actual selected maintenance runtime before any child spawn",
+        "SVC09A maintenance drains both immutable slot identities with one operation and distinct keys",
+        "SVC09A any busy slot prevents all stops and any hold until its work settles",
+        "SVC09A holds every drained slot before stopping all four services and starting once",
+        "SVC09A unknown settings process or extra owned record blocks refresh without any stop",
+        "SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting",
+        "SVC09A a changed slot set cannot reuse the old single-runner maintenance operation",
+        "SVC09A default legacy slot preserves the existing identity, paths and configuration bytes",
+        "SVC09A configuration preserves complete choices and rejects duplicate, partial or extra authority",
+        "SVC09A successful registration creates one immutable slot without changing legacy state",
+        "SVC09A lost registration ACK persists unknown and never repeats the create request",
+        "SVC09A rejects reuse of the old runner and detects manifest or directory replacement",
+        "SVC09A exact catalog tuple binds immutable profile and never implies provider or claim readiness",
+        "SVC09A rejects catalog configuration mismatch and treats absent capability as unconfirmed",
+        "SVC09A catalog traversal is bounded and never accepts a repeated page as fresh evidence",
+        "SVC09A diagnostics refuse arbitrary or undeclared slot keys before output",
+        "SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity"
+      ],
+      "counts": {
+        "tests": 20,
+        "pass": 19,
+        "fail": 1,
+        "skipped": 0
+      },
+      "elapsedMs": 758,
+      "rawBytes": 3439,
+      "exitCode": 1,
+      "pid": 84015,
+      "completedAt": "2026-10-07T14:17:47.178404+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-02",
+      "names": [
+        "SVC09A maintenance drains both immutable slot identities with one operation and distinct keys",
+        "SVC09A status reports both actual slot processes while catalog and claim remain unknown",
+        "SVC09A stop covers both recorded runners and preserves any unknown close",
+        "SVC09A unresolved slot registration cannot hide an already recorded runner from stop",
+        "SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn"
+      ],
+      "counts": {
+        "tests": 5,
+        "pass": 5,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 424,
+      "rawBytes": 1690,
+      "exitCode": 0,
+      "pid": 10669,
+      "completedAt": "2026-10-07T14:18:43.489310+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-03",
+      "names": [
+        "SVC09A startup launches the two declared runner identities through the existing owned process port",
+        "SVC09A startup profile mismatch preserves primary and stops all records created in that start"
+      ],
+      "counts": {
+        "tests": 2,
+        "pass": 2,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 384,
+      "rawBytes": 823,
+      "exitCode": 0,
+      "pid": 48843,
+      "completedAt": "2026-10-07T14:19:44.686916+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-04",
+      "names": [
+        "SVC09A selected runtime qualification failure precedes drain, hold and every service stop",
+        "SVC09A explicit activation starts only settings and preserves old runner config and all old process records",
+        "SVC09A failed new-slot readiness never stops the original three services"
+      ],
+      "counts": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 446,
+      "rawBytes": 1224,
+      "exitCode": 0,
+      "pid": 74344,
+      "completedAt": "2026-10-07T14:20:28.561284+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-05",
+      "names": [
+        "SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting",
+        "SVC09A a later accepting version cannot be mistaken for this operation resume receipt",
+        "SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn",
+        "SVC09A explicit activation starts only settings and preserves old runner config and all old process records",
+        "SVC09A failed new-slot readiness never stops the original three services",
+        "SVC09A CLI forwards only the explicit private settings request and rejects extra arguments",
+        "SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity"
+      ],
+      "counts": {
+        "tests": 7,
+        "pass": 7,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 647,
+      "rawBytes": 2236,
+      "exitCode": 0,
+      "pid": 51496,
+      "completedAt": "2026-10-07T14:22:28.924649+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-06",
+      "names": [
+        "SVC09A selected runtime qualification failure precedes drain, hold and every service stop",
+        "SVC09A startup profile mismatch preserves primary and stops all records created in that start",
+        "SVC09A failed new-slot readiness never stops the original three services",
+        "SVC09A controlled startup failure identifies settings without weakening legacy public fields"
+      ],
+      "counts": {
+        "tests": 4,
+        "pass": 4,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 596,
+      "rawBytes": 1452,
+      "exitCode": 0,
+      "pid": 99573,
+      "completedAt": "2026-10-07T14:23:40.381336+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    },
+    {
+      "run": "local-07",
+      "names": [
+        "SVC09A any busy slot prevents all stops and any hold until its work settles",
+        "SVC09A aggregate maintenance preserves uncertainty from either slot",
+        "SVC09A controlled startup failure identifies settings without weakening legacy public fields"
+      ],
+      "counts": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0,
+        "skipped": 0
+      },
+      "elapsedMs": 189,
+      "rawBytes": 974,
+      "exitCode": 0,
+      "pid": 26674,
+      "completedAt": "2026-10-07T14:26:57.937294+00:00",
+      "cleanup": "removed",
+      "ownedState": "absent",
+      "dualEOF": true,
+      "historicalUnknownObservations": 1
+    }
+  ],
+  "totals": {
+    "rounds": 7,
+    "selections": 44,
+    "passedSelections": 43,
+    "failedSelections": 1,
+    "distinct": 33,
+    "newDistinct": 30,
+    "existingDirectDistinct": 3,
+    "latestDistinctAllPass": true,
+    "elapsedMs": 3444,
+    "rawBytes": 11838
+  },
+  "failurePreserved": "local-01 raw retains BACKEND_OPERATION_MISMATCH. Fixture selected=null contradicted state.backendArtifact=old; set selected to the matching old descriptor. No product guard weakened. Only the failed case was repeated in local-02.",
+  "countCorrection": "local-01 result.json counts are null because the first Node reporter was spec, not TAP. This derived summary reads the intact original spec counters/names. Original result/raw unchanged. Later rounds explicitly use TAP.",
+  "sourceFidelity": "local-01 source15f20f1f; rounds02–05 record test bytes and then-current HEAD while product changes were still uncommitted. They are not represented as full fixed product snapshots. local06/07 reservation binds all six production inputs; final source8d532613 includes the final uncertainty/failure-record delta. Fixed commits and raw remain separate.",
+  "limits": {
+    "PG": 0,
+    "provider": 0,
+    "browser": 0,
+    "personalConfigurationIO": 0,
+    "install": 0,
+    "artifactBuild": 0,
+    "actualServices": 0,
+    "fullTypes": "NOT_RUN; MJS-only module change",
+    "temporaryPeak": "NOT_SAMPLED; small self-owned file fixtures, empty exact roots verified and removed. No peak or reclaimable-byte claim.",
+    "actualPublicationAndClaim": "NOT_RUN; VM ports plus real synthetic private file fixtures only"
+  },
+  "budget": {
+    "processMs": 240000,
+    "temporaryBytes": 33554432,
+    "rawBytes": 2097152,
+    "simultaneousOwnedChildren": 4
+  },
+  "actualReturn": "2026-10-07T14:26:57.937294+00:00",
+  "postRunGeneratedCache": {
+    "path": "generated-cache-cleanup.json",
+    "bytes": 23243,
+    "state": "removed",
+    "completedAt": "2026-10-07T14:31:44.022522+00:00",
+    "boundary": "All seven fixture scratch roots were already empty/removed. Final git status additionally found the importlib cache in this worktree; original OPS14 source was unchanged. No runtime processes remained."
+  }
+}

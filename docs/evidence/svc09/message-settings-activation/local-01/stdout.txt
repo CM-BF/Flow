@@ -1,0 +1,44 @@
+✔ SVC09A settings environment changes only explicit runner identity and owned paths (1.178042ms)
+(node:84017) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ SVC09 maintenance bootstrap qualifies the selected backend and independent Web before drain (8.355ms)
+✔ SVC09 maintenance refresh passes the same descriptor through prepare and startup before stopping (3.046375ms)
+✔ SVC09 CLI qualifies the actual selected maintenance runtime before any child spawn (2.359ms)
+✖ SVC09A maintenance drains both immutable slot identities with one operation and distinct keys (1.164083ms)
+✔ SVC09A any busy slot prevents all stops and any hold until its work settles (1.6405ms)
+✔ SVC09A holds every drained slot before stopping all four services and starting once (1.521583ms)
+✔ SVC09A unknown settings process or extra owned record blocks refresh without any stop (2.330833ms)
+✔ SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting (1.460125ms)
+✔ SVC09A a changed slot set cannot reuse the old single-runner maintenance operation (1.142541ms)
+✔ SVC09A default legacy slot preserves the existing identity, paths and configuration bytes (5.288625ms)
+✔ SVC09A configuration preserves complete choices and rejects duplicate, partial or extra authority (157.078125ms)
+✔ SVC09A successful registration creates one immutable slot without changing legacy state (41.523791ms)
+✔ SVC09A lost registration ACK persists unknown and never repeats the create request (19.215083ms)
+✔ SVC09A rejects reuse of the old runner and detects manifest or directory replacement (50.662625ms)
+✔ SVC09A exact catalog tuple binds immutable profile and never implies provider or claim readiness (20.875833ms)
+✔ SVC09A rejects catalog configuration mismatch and treats absent capability as unconfirmed (21.120417ms)
+✔ SVC09A catalog traversal is bounded and never accepts a repeated page as fresh evidence (22.591583ms)
+✔ SVC09A diagnostics refuse arbitrary or undeclared slot keys before output (4.870292ms)
+✔ SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity (134.398375ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 19
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 717.61875
+
+✖ failing tests:
+
+test at tools/personal-preview/maintenance.test.mjs:288:1
+✖ SVC09A maintenance drains both immutable slot identities with one operation and distinct keys (1.164083ms)
+  Error: BACKEND_OPERATION_MISMATCH
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance-host.mjs:17:37)
+      at bootstrap (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance-host.mjs:85:98)
+      at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance-host.mjs:166:32
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/tools/personal-preview/maintenance.test.mjs:289:72)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7) {
+    code: 'BACKEND_OPERATION_MISMATCH'
+  }

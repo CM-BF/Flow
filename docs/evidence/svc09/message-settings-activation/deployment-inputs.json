@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T14:28:33.212091Z",
+  "acceptance": {
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+    "ref": "fc11d15292bc8ecc3c8c1b3f3f7d1e7955491b91",
+    "path": "docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md",
+    "bytes": 6467,
+    "sha256": "ff6803d299825a78967588c22d8ff1df263a734813924c252f09a5d2ab1d915d"
+  },
+  "coreEligibility": {
+    "ref": "677a93e96f228ab76edbdde9e22beb800a320156",
+    "path": "apps/server/src/runners.ts",
+    "bytes": 20703,
+    "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096",
+    "receipt": {
+      "path": "docs/evidence/i02/core-claim-intake.json",
+      "bytes": 5831,
+      "sha256": "95c92b43ad479db6de0aaee9e414a598c75e77b29158a1d00a6fe125c5c2e852"
+    },
+    "requiredForFutureArtifact": true,
+    "localBaselineContainsThisDelta": false,
+    "notEmbeddedInProductLogic": true
+  },
+  "state": "NOT_ACTIVATION_READY",
+  "personalArtifact": "Existing 7d1/source6c lacks this slot module and CORE fix. Never activate it. Future artifact must verifiably include both reviewed SVC09A and CORE code under the original sourceRepository identity.",
+  "actualQualification": "Verified manifest/source plus reviewed deployment inputs required; profile/PID alone do not prove eligible claim or account capability."
+}

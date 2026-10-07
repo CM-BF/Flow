@@ -1,0 +1,715 @@
+{
+  "format": 1,
+  "at": "2026-10-07T14:31:06.735215Z",
+  "task": "SVC09A",
+  "sourceCommit": "8d532613e876d34812554572fb32d46bf582de44",
+  "recordCommit": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+  "base": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+  "verdict": "SOURCE_READY_PENDING_INDEPENDENT_REVIEW",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 3,
+    "scopeCount": 13
+  },
+  "source": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 5753,
+      "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 5152,
+      "sha256": "8123a6b0b02e1713e5e40bdcd0f75890cdb6508daf50d2d71f5688f6cc995732"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 12594,
+      "sha256": "9283a215ee4d10abc5563c87b982d21595b7d32fce83254f7d4134e90f984c53"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 26916,
+      "sha256": "eed405bb4df80b285e6047bd4420979823b93e2cdc947fc94c7a1ad6e53cf6f8"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 54654,
+      "sha256": "076cebff493c09dfdaeb0d803979feb9d42b0368b83a56a40e29fc343400b412"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 73747,
+      "sha256": "ba023dd358604c078f44a51151523082a39e7e3d5910372fd6a8aefcd01a6043"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.test.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 7410,
+      "sha256": "885ed96b985976c87a1846178ba33cce586320bbcb74ff23374510808f103022"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "fixedRef": "8d532613e876d34812554572fb32d46bf582de44",
+      "bytes": 13446,
+      "sha256": "d4fa4a64baf7f108126258431cadc16ffe232aa9b7fb4b690fba01d884527a3b"
+    }
+  ],
+  "protectedDirectInputs": [
+    {
+      "path": "AGENTS.md",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 18705,
+      "sha256": "4d515c46e644bbea8ed37570e340217231b462aa599f68756224df72e30e35f6"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 24739,
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 5186,
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f"
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 3555,
+      "sha256": "44b0920a744c9c162f87fd479be8e87e5c3e1175b4a145d22f6a1b175d2d17de"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 3046,
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 27331,
+      "sha256": "f1c4a26e50dc887074c6aaf5bab0cfbd824c59f9f74da5c6090f3e7f472cb8ec"
+    },
+    {
+      "path": "package.json",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 17746,
+      "sha256": "88ef69af6b42de2b1f950d6786e4ffe95737f1f22401399c101ee678a6b1b756"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 9035,
+      "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "fixedRef": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594"
+    }
+  ],
+  "records": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/amend-receipt.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1244,
+      "sha256": "67086c03a83bb1ed7828f7aad7dae6197a14529e1250e47dfde813ae0482c749"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/clean-code-review.md",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1307,
+      "sha256": "00d2f93c0e19108960b411a3f71295cc75602c4f72fcef3ff787784aa0fa73cf"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/dependencies.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1073,
+      "sha256": "d667e6d58bf64a4f36aa263ea7335e593860ded9968cab1bd03e51947cc30522"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/deployment-inputs.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1360,
+      "sha256": "69a83ff11903bcae7513872ee10cd41a398cd944f756af932b2eddca46d2a3c7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/interface.md",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 5038,
+      "sha256": "eced840f5b4012845b9d93574befdff1a0d7daa76750a2dab77b4d0974b06deb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-01/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "19f516004ad87316ce732de90a632a0010d430012b6f9ad646acabda033a08e1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-01/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1568,
+      "sha256": "47d7b3deacfcbf618af425836e2cf42575ba6cb9a0beb5258a46744bbd6b2f4a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-01/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1000,
+      "sha256": "75aa82444342afcb76895e094c27bbc519c51648dcd09eb075ef06491b53b420"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-01/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-01/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 3439,
+      "sha256": "c5da586b8576ccd1036bca69cdbee7210c34d0529c12bd5b7bdaf59e847085a1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-02/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "23d26e48f05fc78a4cdb9d23ddc81e87ab80c203ad2173be059c547d73c334b6"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-02/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1175,
+      "sha256": "07f757eacf9de69e8f66c6825a3d3629bad5c200a7f49fcd58200823d89b5c71"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-02/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 833,
+      "sha256": "5b1a48eb1f6046858393d6b9813baff110924fc71a6d3d55c2a1cf33729fa050"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-02/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-02/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1690,
+      "sha256": "828bdd4afac69d0a9aa7fdaa11ce8de4a7d894491d94818b8536747c1d195b40"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-03/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "967dae2e5d4bc73c7e45f351ccf2ebd9472152f43085a61deb146ce6f744ff48"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-03/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 864,
+      "sha256": "6b1567b3dfd10e41422c75c6176e3f67cf073f415893d7336b9400aaea53c363"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-03/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 831,
+      "sha256": "0be7290fdf4f95e98b3ea9903312cf4f1c0bb820ec7be4169268494e5daadceb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-03/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-03/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 823,
+      "sha256": "a66c5baf07657b6597019da314c3c1a57092d4660950e7e8c77b5441b725bb87"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-04/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "979c039b15f0edd5ac441f7c3b0adfad915fb7a4772a4b76507595ae4d77116c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-04/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1153,
+      "sha256": "d787cfc0902ea0db9306285f32adf8a7e06b8527b25b52be59caa7d58f74acdd"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-04/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 834,
+      "sha256": "29f59a1b2a3f3891fd74e27c5cf570e890ca57bca708264764f7fe15b077ec39"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-04/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-04/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1224,
+      "sha256": "2ccc0ff79537095811da83258a9d64e33d994bcea475268e8505dba22f4dfbec"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-05/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "0e56246ad6b3c3a59bb977ce12d4118c6f2057e19a5793027f2194270248f79f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-05/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1478,
+      "sha256": "a286d2227f3c0f2e4e8f1e1a734dbbff912cdb80a855a1963305dfb7c1c0bd9f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-05/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 834,
+      "sha256": "18ef023156fcf28f704dcdbb0a046f4de55c55b53d8b7e85099b59481d9cbb48"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-05/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-05/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 2236,
+      "sha256": "1b0021d89eba2f34ba7f738d6e911a209d5f884ae040a0bbf0f4aed7f0d0f5ea"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-06/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "21be51bf1d92b04f45e77291fdfe0431e51633d472eed0594e53065a5e25439a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-06/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 2473,
+      "sha256": "860e88fd976a1d8fae46da51a16dc9cdc64eb8009ed948c4656cb3ccce573e2b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-06/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 834,
+      "sha256": "b108d8c8926319e828814ab26454a929544d22d3dcbe7b7eda502e4231d614c5"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-06/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-06/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1452,
+      "sha256": "582b708f3c9fc5c4bbf99650d856b7c24c570aaee38b04c02c0e47c19ea9a795"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-07/cleanup.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 269,
+      "sha256": "db2e01b70c14f20d623e0afb4f88b27c8ebac556dfe9ce39e3fe726c86477a1e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-07/reservation.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 2210,
+      "sha256": "511c4152d4c712fae93aeddb49982838433f018f1b6486a5a3c1f3f654f22b30"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-07/result.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 831,
+      "sha256": "b9f4a8461efe65fbc501258ed64236d240c0e80f32d3699464ddeea8fe8605f7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-07/stderr.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/local-07/stdout.txt",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 974,
+      "sha256": "95bd575666c4a7107f1f66537378174e6a08694e7e5b65b5ee9f6f6c8cff31c3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/run.py",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 4315,
+      "sha256": "78215200906d94e3b0cf3de3da0728286d40ba46fe9e4af72b0a5f787ce65238"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/scope-return-receipt.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1140,
+      "sha256": "5bff87a77cf32173098118010da8f925079bbcd09cdf340c5aa466030a0de575"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/skills.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1268,
+      "sha256": "2c2916922709a5f7779567aca2a0e68ea64faeb35f7e12563f5723bb6da8a0fa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/status-parse.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 617,
+      "sha256": "5daa8e94621a623051670b4a010106418b5a3bec713a57f7e274b291849c4beb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/take-receipt.json",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1135,
+      "sha256": "35b7d520477787c9671a06dbb29ea1ac79e5a5260d5ef8f6221fa2baf5666b89"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/plan.md",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1092,
+      "sha256": "fcf56b9d4bdd08059efb915264f1e9bd4e3351123a3fa790f5065426096df896"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/review.md",
+      "fixedRef": "8a4b8483fa6098a792e69d476198263cedbb55e3",
+      "bytes": 1108,
+      "sha256": "f18565fc76b37462735482ab9914bc76a4a84900c9ee7612c1578e30e45c55c6"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json",
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 658,
+      "sha256": "5d45e3a32fe6d35b2b08d2a6ec18fd1243d3fb5f3acc405345efdb40805ea87a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/validation-summary.json",
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 9789,
+      "sha256": "807b9d980911a3645fd1df9217f2fbbd983182826207fa926bf7cb1cddc23389"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/status.md",
+      "fixedRef": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+      "bytes": 3912,
+      "sha256": "3685ee0af23a14f451d8af5836b6ede8d6b13a68d9b24c5928625664c387cc82"
+    }
+  ],
+  "installedEntryPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "dev": "16777234",
+      "ino": "117116296",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "dev": "16777234",
+      "ino": "117115869",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "dev": "16777234",
+      "ino": "117116014",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.cjs",
+      "dev": "16777234",
+      "ino": "117116282",
+      "bytes": 16770,
+      "sha256": "4c09cef408c1915365cda5d1769cb61a8ee0b05c6a4f57c44e6d9bffaacb5cb5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "dev": "16777234",
+      "ino": "117116391",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "dev": "16777234",
+      "ino": "117121222",
+      "bytes": 2132,
+      "sha256": "d93a8730d52c0fedab13619c8bc971cc99934c13d8dce7c97ee4d03a98d4096e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "dev": "16777234",
+      "ino": "117121278",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "dev": "16777234",
+      "ino": "117121476",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": "16777234",
+      "ino": "110837507",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": "16777234",
+      "ino": "63570890",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    }
+  ],
+  "runtimeBoundary": "Read-only package/binary entry pins and exact aliases, not a claim that every transitive runtime file or a future artifact was exercised. Package version/metadata aliases retained in dependencies.json; no installation/copy.",
+  "externalQualificationReference": "deployment-inputs.json fixes separate reviewed CORE main677 and acceptance origin; local source baseline0da intentionally unchanged.",
+  "validationReference": "validation-summary.json; 7 rounds,33 distinct,43 passing selections/1 preserved failure,3444ms,11838B,all owned groups absent/dualEOF/exact roots removed.",
+  "limits": [
+    "source/local only; actual registered two-slot host/PG/Web/TUI/personal activation NOT_RUN",
+    "source approval cannot qualify old6c; require actual new manifest/tuple with both this host and reviewed CORE claim eligibility",
+    "catalog/profile/PID do not prove account/provider eligibility or actual claim",
+    "round02–05 product edits were not independently captured as complete fixed product snapshots; reservation/raw fidelity limitation explicit in summary",
+    "temporary peak NOT_SAMPLED; no atomic snapshot/reclaimable-byte claim"
+  ],
+  "recordAmendment": {
+    "ref": "50b6b44625eb1c0a80b26962381e9069800fa6c9",
+    "paths": [
+      "docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json",
+      "docs/evidence/svc09/message-settings-activation/validation-summary.json",
+      "plans/svc09-message-settings-activation/status.md"
+    ],
+    "reason": "Final scope status identified own importlib cache; exact cleanup separate from original fixture receipts. No source/test/raw rerun."
+  }
+}

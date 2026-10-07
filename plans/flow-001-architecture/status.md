@@ -36,6 +36,7 @@
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
+| CHAT05P01-06 | pending | Execution Lead / 原端owner | 底层P01/P02已交付；[唯一后继交接](plan.md#chat05-06-完整工具原文已交付底层与下一用户交付)明确SDK/CLI开通及两端共享reader，当前发布与SVC09A优先；无新writer/运行 |
 
 ## 已完成证据与检查
 

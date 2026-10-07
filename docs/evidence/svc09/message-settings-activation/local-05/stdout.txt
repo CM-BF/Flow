@@ -1,0 +1,56 @@
+TAP version 13
+# (node:51497) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting
+ok 1 - SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting
+  ---
+  duration_ms: 4.8435
+  type: 'test'
+  ...
+# Subtest: SVC09A a later accepting version cannot be mistaken for this operation resume receipt
+ok 2 - SVC09A a later accepting version cannot be mistaken for this operation resume receipt
+  ---
+  duration_ms: 1.910041
+  type: 'test'
+  ...
+# (node:51498) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn
+ok 3 - SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn
+  ---
+  duration_ms: 9.304542
+  type: 'test'
+  ...
+# Subtest: SVC09A explicit activation starts only settings and preserves old runner config and all old process records
+ok 4 - SVC09A explicit activation starts only settings and preserves old runner config and all old process records
+  ---
+  duration_ms: 212.72675
+  type: 'test'
+  ...
+# Subtest: SVC09A failed new-slot readiness never stops the original three services
+ok 5 - SVC09A failed new-slot readiness never stops the original three services
+  ---
+  duration_ms: 27.520208
+  type: 'test'
+  ...
+# Subtest: SVC09A CLI forwards only the explicit private settings request and rejects extra arguments
+ok 6 - SVC09A CLI forwards only the explicit private settings request and rejects extra arguments
+  ---
+  duration_ms: 2.184125
+  type: 'test'
+  ...
+# Subtest: SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity
+ok 7 - SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity
+  ---
+  duration_ms: 148.668875
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 603.912833
