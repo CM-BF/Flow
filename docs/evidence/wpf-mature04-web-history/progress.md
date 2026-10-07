@@ -39,3 +39,5 @@ Mounted candidate preparation began2026-10-07T23:09:09Z, deadline23:29:09Z, new8
 ## Mounted preparation source stop candidate
 
 Two test leaves fixed at ffd73503e32907663dbc0e91d14fe2cd03cf76ba. Production ed5 remains unchanged. Eight groups/two PNG are PREPARED, not run; focused source/native review and separate actual grant pending. 38 exact ignored links are owned KEEP. Syntax-only315ms CLOSED, post-syntax tiny source/import changes static-only. Full source/budget/coverage limits: [browser/review-input.md](browser/review-input.md), [proposal](browser/proposal.json), [manifest](browser/manifest.json). Parent routing remains the original MATURE04 owner; no duplicate parent status.
+
+Mounted preparation independently approved at 23:27:32Z, source/native scope only; [root receipt](browser/root-mounted-preparation-review.json). Eight browser groups and two PNG remain NOT_RUN. Runtime requires a separate manager grant; current prepared links KEEP. Final execution HEAD is routine-bound in the TMP packet after this metadata seal.

@@ -1,0 +1,88 @@
+{
+  "schema": "flow.independent-preparation-review.v1",
+  "reviewedAt": "2026-10-07T23:27:32.692178+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "verdict": "APPROVED_LIMITED_SOURCE_AND_NATIVE_PREPARATION",
+  "blockingFindings": [],
+  "task": "MATURE04-05",
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "executionHead": "3655b1922896efb5d02fb9236d7cd932851a575e",
+  "inputs": [
+    {
+      "path": "/private/tmp/context-history-browser-20261007/manifest.json",
+      "bytes": 3744,
+      "sha256": "3523f06e842b38966cef3e17bd21e6e4924940e3b55346a6461bb632d245ae47"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/binding.json",
+      "bytes": 2362,
+      "sha256": "328ae1dec1b616dd74f23330317517288ab3ed68638d7db8652b8f147f992f4d"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/proposal.json",
+      "bytes": 3311,
+      "sha256": "843a7161aa49cd7dcf7c2789810fd8f68bd2b55cdde64de6c40ade9be8ffc3ab"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/parent.ts",
+      "bytes": 38382,
+      "sha256": "d63afec93c0b7e872709f35148d4e8beb6eb5e77fb0cfecbaa5ebbfe6762da93"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/capture.py",
+      "bytes": 9088,
+      "sha256": "0b873844714fff7bf991bb8e125662afe6bc2bb330f7cd9555ed429e946273ec"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/source-inputs.json",
+      "bytes": 6642,
+      "sha256": "96ac671f0e928b609660fd86473a68f43ebf884004329d3fb0f72c4f9fd7505d"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/final.json",
+      "bytes": 1829,
+      "sha256": "29134eb97760a88de864c14654575c0c6b32ae565b9a619e84a448df35801514"
+    }
+  ],
+  "integrity": {
+    "packetFilesVerified": 13,
+    "fixedChangedConsumerGitFilesVerified": 10,
+    "readonlyGitSupplyFilesVerified": 614,
+    "immutableDependencyReferenceManifestsVerified": 5,
+    "mismatches": 0,
+    "productionEd5ToTestSourceDiff": "Empty for apps/web/src",
+    "installedClosureNativeFreshness": "Must be checked by existing operator at actual admission; manifest integrity is not a fresh runtime check"
+  },
+  "sourceReview": {
+    "fixture": "Actual center and BrowserWorkspace ?recovery entrance, real HttpOnly Cookie authentication before two synthetic history/detail DTO reads, real FlowClient decoder, seeded real conversation/task IDs. Other API paths proxy the owned center. Does not prove observation production by the backend.",
+    "historyStates": "No-task zero reads, explicit history refresh, unknown versus zero, invalid schema and 503 error, lazy detail; actual browser outcomes NOT_RUN.",
+    "lifecycle": "Held history response, explicit close, overview hide, A/B route change, real extension disable/enable and signout. Same-document timeOrigin, no turn submission from history reading, bounded console/request evidence.",
+    "accessibility": "Real keyboard activation, focus restoration, 390px bounds, explicit html theme/class/colorScheme and reduced-motion observations, two screenshot candidates. Visual usability requires actual screenshots.",
+    "correctedDuringPreparation": [
+      "Refresh pending uses aria-disabled assertion and keyboard Enter instead of Playwright disabled click timeout.",
+      "Held response finish is serverFinished only, not browser receipt proof.",
+      "Cleanup waits own response/upstream/socket closure and requires zero pending counts.",
+      "Actual theme and reduced-motion facts are checked before screenshot naming."
+    ]
+  },
+  "nativeReview": {
+    "parent": "Task-specific MATURE04-05/CONTEXT-HISTORY-MOUNTED-20261007 preset, context-history-only accepted journey, original 4ca ownership/DB lease/IPC and cleanup structure retained with old worker removed.",
+    "launch": "One Python capture, Node parent, separately owned worker and Chrome groups; bounded IPC result, gate and source hash checks before PG/business imports; no shell interpolation of credentials.",
+    "resources": "Proposed 90s total with 60s work and 30s cleanup, one marked DB, two HTTP listeners, one owned Chrome, zero provider calls. Server pool8 + scheduler3 + conservative lease pools2 => configured13, plus16 admission headroom.",
+    "storage": "Proposed212074496B = 64MiB scratch +128MiB DB/WAL planning +9MiB inner evidence +256KiB outer streams +1MiB metadata. DB/WAL is planning, not a measured hard peak. Fresh full manager floor must include concurrent reservations.",
+    "cleanup": "Normal marker-bound DB DROP only after confirmed ownership and zero connections; unknown acknowledgement or cleanup retains facts. Parent controls known groups, bounded signals/reaping, scratch removal after absence; outer preserves EOF/drop and needs separate exact return. Prepared ignored dependency links are owned KEEP and are not runtime cleanup targets."
+  },
+  "quality": {
+    "method": "Applied existing clean-code principles to naming, narrow capability boundaries, bounded error paths and lifecycle ownership; no new framework, no product changes, no repeat of already passing local checks.",
+    "observation": "Several unused legacy journey declarations/comments remain from the retained supervisor; accepted as provenance-preserving preparation rather than a new public runtime interface."
+  },
+  "limits": [
+    "No browser, PG or HTTP execution in this review; all eight groups and two PNGs NOT_RUN.",
+    "315ms syntax parse is the only preparation check; final small edits were reviewed statically, not typechecked.",
+    "No Arc combination, same-view next-turn replacement, held detail, plugin disable during open modal read or authority revocation during in-flight read.",
+    "Earlier16 module and12 binding tests are separate fixed-source evidence, not mounted acceptance.",
+    "Fresh claim/scope, HEAD, own link identity and full referenced source/dependency/native inputs still require the normal same-call admission checks.",
+    "No runtime authorization, budget transfer, main integration or full CT01-09 closure is granted by this review."
+  ]
+}

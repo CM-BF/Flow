@@ -1,5 +1,5 @@
 {
-  "state": "SOURCE_PREPARED_REVIEW_PENDING_NO_RUNTIME_GRANT",
+  "state": "REVIEWED_SOURCE_BOUND_NO_RUNTIME_GRANT",
   "sourceCommit": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
   "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
   "startedAt": "2026-10-07T23:09:09Z",
@@ -12,5 +12,12 @@
   "linkState": "38 OWNED_PREPARATION_KEEP, exact identity receipt",
   "sourceSupplyBytes": 3089437,
   "sourceSupplyFiles": 352,
-  "installedPayloadCopiedBytes": 0
+  "installedPayloadCopiedBytes": 0,
+  "review": {
+    "path": "/private/tmp/root-context-history-mounted-preparation-review-20261007.json",
+    "bytes": 6163,
+    "sha256": "3af24f3992c0401e6db3beca3cf0848cbdfb352db83123548dd56c54049040fa",
+    "decision": "APPROVED_LIMITED_SOURCE_AND_NATIVE_PREPARATION"
+  },
+  "browser": "NOT_RUN"
 }
