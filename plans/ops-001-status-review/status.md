@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:41:34.439390+00:00 / main2f32f6b2；固定宿主首轮结果及最小修正、规划零模型修正已审接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:52:31.365765+00:00 / main65710564；新版后台隔离更新成功结果已独审接收，规划第二次实际首段已结束 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin2f32f6b2已含插件终端管理与两个实验最小修正；4320实际b67530bb/195来源，保留登录及计时。个人backend af51/v18、Web d629/v3/c7b保持；新6c/7d1产物三个角色已ready，首轮在bootstrap夹具前置失败并正常清理，整段host尚未通过。 |
+| 已集成main状态 / HEAD | main/origin65710564已接新版后台隔离更新成功证据；4320实际b67530bb/195来源，登录及计时保持。个人backend af51/v18、Web d629/v3/c7b未变。真实三App兼容仍是下一发布前置。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 看板、登录和任务时间持续可用，插件终端管理已进入主线。新后台已能独立启动，首次发布验证步骤的修正已审。 |
-| 下一可用交付 | 完成固定后台整段更新和保留页面兼容验证；规划按新批准的一次首段额度继续，仍先停下交用户确认。 |
-| 当前阻塞 | ACTIVE: 新后台完整更新及页面组合尚未验收；规划尚无可确认的真实计划。远程验证启用和工程授写资格仍各自等待原用户决定。 |
+| 当前产出 | 新版后台已在独立环境完成更新、保留历史并恢复接收，证据进入主线。第二次真实规划请求已结束并保留失败材料，未产生可确认计划。 |
+| 下一可用交付 | 完成已有页面与新版后台的真实兼容验证，准备可体验的个人更新；补齐规划失败诊断，保留独立结果审查。 |
+| 当前阻塞 | ACTIVE: 个人新版仍等待真实页面兼容；规划请求返回错误且未保存错误正文，当前无法确认原因。远程验证启用和工程授写资格仍各自等待原用户决定。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -505,3 +505,11 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T10:24:36.769323+00:00：OPS-001-16补[固定输入必要来源](../../docs/quality/local-validation.md#fixed-input-provenance)方法，真实组合逐来源绑定、Git blob按需读取，raw/非Git输入保留一份；不改既有审查/冻结包。首个产品小片的重复文件/字节对照仍待实际采用。O16首段SDK entry1、init1、无result/usage，费用未知；10:20:24自有两组absent、专库连接空后归还，原DB/tmp KEEP。唯一[O16状态](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)维护原始失败与后续修正，不消费第二次模型预算。
 
 2026-10-07T10:41:34.439390+00:00 管理收口：固定接收与实际看板部署见[I02](../../../m2-integration/docs/evidence/i02/svc06-bootstrap-o16-observation-intake.json)。SVC r1原失败/cleanup保留，r2只改首次bootstrap；Mika联合验收10:38:50资源归还后由原operator fresh接续。O16原调用1次、费用unknown、旧DB/tmp KEEP不变；零模型7新例获限定独审，新决定O16-GO-PLANNER-R2-20261007仅增加1次planner候选，未运行不计已消费，0apply/0child及确认后单独预算保持。CI决定仍只在OPS-CI01，工程资格仍只在原ENG；不复制待决问题。
+
+2026-10-07T10:52:31.365765+00:00：新版后台隔离结果已独审并由main65710564接收，见[I02结果审查](../../../m2-integration/docs/evidence/i02/svc06-bootstrap-r2-result-review.json)。O16第二次实际SDK调用返回isError，无成功proposal；本次SDK报告0/空usage不代表账户免费，累计2次且旧费用UNKNOWN，第三次未授权。10:49:10.010Z组/连接明确关闭后归还窗口，DB/tmp仍KEEP；后继仅零模型诊断修复。Web真实App兼容准备继续，窗口不因结果转录占用。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| OPS-WAIT-APP-20261007 | 2026-10-07T10:44:35.378972Z | OPEN | 接口 | 个人更新需要三个既存页面对固定新后台的真实兼容证据；Web co-lead负责，报告固定并独审后解除。准备期间其他合格检查可使用窗口。 | [SVC唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)与r2实际归还事件 |
