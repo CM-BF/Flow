@@ -141,3 +141,9 @@ stage outcome先持久保存才清理；若发布后验证/清理/回执失败�
 一次操作在原 operation.lock 内先持久记录，再停止/启动 Web；所有权或结果未知时停止，不重试。相同 operationId+同请求只观察保存结果，改变请求拒绝；未结算旧操作阻止新 ID 绕行。最多保存32项16KiB操作记录，不自动淘汰。新 Web pending record与成功后的 `state.webHost` 独立来源记录也持久写入；不会改 backend source/center/runner/config/release pointer。
 
 健康旧 `web bootstrap` 的 alreadyReady 行为保持。新命令不会自动执行于安装或发布；实际个人切换须先固定工具来源与一次运行边界。现阶段仅自有文件与注入进程端口的0PG验证，不宣称已部署、长期稳定或旧页面无连接中断。retained3退役仍未实现。
+
+显式选择Web固定宿主时，replace-host请求可另带 `webHostArtifact`：严格四字段 `policy/artifactId/manifestDigest/sourceHead`，复用现有 `flow.backend-artifact.v1`，不接收任意路径或安装参数。`inspectPreviewWebHostSource({directory, webHostArtifact})`读取同一候选；完整验证仍核内容/Node身份和 `sourceRepository === config.repository`，不是摘要替代验证。
+
+选择先写独立 `pendingWebHost`，再停止/启动；仅 `internal-service web` 能从该产物根加载。center、runner、maintenance仍使用原来源，不能从Web descriptor获得授权；不会设置 `state.backendArtifact`。成功保存 `state.webHost.artifact`并清pending，未知则保留，旧bootstrap/publish/rollback同样拒绝跨过pending。后续Web启动复用已选来源，旧不带选择的配置默认不变。
+
+既有e5产物来自backend-release worktree，不能改manifest把它当个人Flow仓库产物。本次局部注入只证明角色选择/持久顺序/错误传播；合法个人来源的新固定产物、实际marker/服务及旧后台lazy读取边界仍待独立验证，不能把默认路径用例通过当已部署。

@@ -322,9 +322,34 @@ async function hostReplacementFixture(run, options = {}) {
     const release = { format: 1, policy: 'flow-web-release-v1', version: 3, backendHead: head, compatibilityIds, artifacts, current: artifacts[2].artifactId, updatedAt: '2026-10-01T00:00:00.000Z' };
     await json('web-release.json', release);
     const protectedBytes = Object.fromEntries(await Promise.all(['config.json','claude.json','maintenance.json','web-release.json'].map(async name => [name, await readFile(join(directory,name),'utf8')])));
-    const source = await inspectPreviewWebHostSource({ directory }); assert.equal(source.location.kind, 'legacy-repository'); assert.equal(source.location.artifactId, null);
+    let runtime; let resolveRuntime; let hostRoot = root; let hostArtifact;
+    let source = await inspectPreviewWebHostSource({ directory }); assert.equal(source.location.kind, 'legacy-repository'); assert.equal(source.location.artifactId, null);
+    if (options.webHost) {
+      // Source-only stand-in, not a built/verified backend artifact. The trusted port
+      // tests selection and lifecycle; actual artifact qualification remains separate.
+      hostArtifact = { policy: 'flow.backend-artifact.v1', artifactId: 'a'.repeat(64), manifestDigest: 'a'.repeat(64), sourceHead: '4'.repeat(40) };
+      hostRoot = join(directory, 'synthetic-host-source');
+      const files = [];
+      for (const item of source.files) {
+        const path = join(hostRoot, 'tools/personal-preview', item.path);
+        await mkdir((await import('node:path')).dirname(path), { recursive: true, mode: 0o700 });
+        const bytes = await readFile(join(root, 'tools/personal-preview', item.path));
+        await writeFile(path, bytes); files.push({ path: item.path, bytes: bytes.length, sha256: hash(bytes) });
+      }
+      const location = { kind: 'backend-artifact', artifactId: hostArtifact.artifactId };
+      source = { policy: 'flow.web-host-source.v1', location, digest: hash(JSON.stringify({ location, files })), files };
+      resolveRuntime = async (_config, artifact) => {
+        if (options.runtimeFailure) throw Object.assign(new Error(options.runtimeFailure), { code: options.runtimeFailure });
+        if (!artifact) return { root, entry: join(root, 'tools/personal-preview/cli.mjs'), artifact: null };
+        assert.deepEqual(artifact, hostArtifact);
+        return { root: hostRoot, entry: join(hostRoot, 'tools/personal-preview/cli.mjs'), artifact };
+      };
+      const { serviceRuntime } = await import('./backend-release/host.mjs');
+      runtime = (input, state, role) => serviceRuntime(input, state, role, resolveRuntime);
+    }
     const request = { directory, operationId: randomUUID(), expectedVersion: 3, expectedBackendHead: head, compatibilityId: compatibilityIds[release.current],
-      expectedWebRecordSha256: hash(JSON.stringify(original.processes.web)), expectedPointerSha256: hash(protectedBytes['web-release.json']), expectedHostSourceDigest: source.digest, allowConnectionInterruption: true };
+      expectedWebRecordSha256: hash(JSON.stringify(original.processes.web)), expectedPointerSha256: hash(protectedBytes['web-release.json']), expectedHostSourceDigest: source.digest, allowConnectionInterruption: true,
+      ...(hostArtifact ? { webHostArtifact: hostArtifact } : {}) };
     const journalPath = id => join(directory, 'web-host-operations', `${id ?? request.operationId}.json`);
     const processes = {
       inspect: async () => 'running', ownsListener: async () => true,
@@ -332,10 +357,12 @@ async function hostReplacementFixture(run, options = {}) {
         calls.stop++; calls.stoppedRoles.push(record.role);
         const journal = JSON.parse(await readFile(journalPath(), 'utf8')); assert.equal(journal.phase, 'reserved'); assert.equal(journal.outcome, 'pending');
         assert.equal((await stat(journalPath())).mode & 0o777, 0o600);
-        await options.beforeStop?.(); return options.stopOutcome ?? 'stopped';
+        const pending = JSON.parse(await readFile(join(directory, 'state.json'), 'utf8')).pendingWebHost;
+        assert.equal(pending.operationId, request.operationId); assert.deepEqual(pending.artifact, hostArtifact ?? null); assert.equal(pending.source.digest, source.digest);
+        await options.beforeStop?.(directory); return options.stopOutcome ?? 'stopped';
       },
       spawn: async value => {
-        calls.spawn++; assert.deepEqual(value.args, [join(root,'tools/personal-preview/cli.mjs'),'internal-service',directory,'web']); assert.equal(value.cwd, root);
+        calls.spawn++; assert.deepEqual(value.args, [join(hostRoot,'tools/personal-preview/cli.mjs'),'internal-service',directory,'web']); assert.equal(value.cwd, hostRoot);
         const record = processRecord('web', 80004); await value.onSpawn(record);
         assert.deepEqual(JSON.parse(await readFile(join(directory,'state.json'),'utf8')).processes.web, record);
         if (options.spawnFailure) throw new Error('synthetic start failure');
@@ -344,8 +371,9 @@ async function hostReplacementFixture(run, options = {}) {
       ready: async () => { calls.ready++; await options.onReady?.(directory); },
     };
     const replace = createWebHostReplacement({ marker: async () => { calls.marker++; }, processes,
+      ...(runtime ? { runtime } : {}),
       ...(options.checkpointFailure ? { checkpoint: async () => { throw new Error('synthetic fsync failure'); } } : {}) });
-    await run({ directory, request, replace, calls, original, release, source, protectedBytes, journalPath, json, hash, randomUUID, processes });
+    await run({ directory, config, root, hostRoot, hostArtifact, runtime, resolveRuntime, request, replace, calls, original, release, source, protectedBytes, journalPath, json, hash, randomUUID, processes });
     async function size(path) { for (const item of await readdir(path, { withFileTypes: true })) { const file=join(path,item.name); if(item.isDirectory()) await size(file); else { assert.ok(item.isFile()); bytes+=(await lstat(file)).size; } } }
     await size(directory); assert.ok(bytes < 1024*1024);
   } finally {
@@ -446,4 +474,61 @@ test('SVC08 replace-host CLI rejects extra request authority before any real mar
     });
     assert.equal(f.calls.marker,0);assert.equal(f.calls.stop,0);assert.equal(f.calls.spawn,0);
   });
+});
+
+test('SVC08 host selection persists only Web artifact and authorizes only its Web service root', async () => {
+  await hostReplacementFixture(async f => {
+    const { serviceRuntime, assertInstallationSource } = await import('./backend-release/host.mjs');
+    assert.equal((await f.replace(f.request)).outcome, 'ready');
+    const state = JSON.parse(await readFile(join(f.directory, 'state.json'), 'utf8'));
+    assert.equal(state.pendingWebHost, undefined); assert.equal(state.backendArtifact, undefined);
+    assert.deepEqual(state.webHost.artifact, f.hostArtifact); assert.deepEqual(state.source, f.original.source);
+    for (const role of ['center', 'runner']) {
+      assert.equal((await serviceRuntime(f.config, state, role, f.resolveRuntime)).root, f.root);
+      assert.deepEqual(state.processes[role], f.original.processes[role]);
+      await assert.rejects(assertInstallationSource(f.config, f.hostRoot, role, f.resolveRuntime), { code: 'CONFIGURATION_IDENTITY_MISMATCH' });
+    }
+    assert.equal((await serviceRuntime(f.config, state, 'web', f.resolveRuntime)).root, f.hostRoot);
+    await assertInstallationSource(f.config, f.hostRoot, 'web', f.resolveRuntime);
+    await assert.rejects(assertInstallationSource(f.config, f.root, 'web', f.resolveRuntime), { code: 'CONFIGURATION_IDENTITY_MISMATCH' });
+    await assert.rejects(assertInstallationSource(f.config, f.hostRoot, null, f.resolveRuntime), { code: 'CONFIGURATION_IDENTITY_MISMATCH' });
+    await assert.rejects(serviceRuntime(f.config, state, 'maintenance', f.resolveRuntime), { code: 'UNKNOWN_SERVICE' });
+    for (const [name, bytes] of Object.entries(f.protectedBytes)) assert.equal(await readFile(join(f.directory, name), 'utf8'), bytes);
+    assert.equal((await f.replace(f.request)).replayed, true); assert.equal(f.calls.spawn, 1); assert.equal(f.calls.stop, 1);
+  }, { webHost: true });
+});
+
+test('SVC08 host selection pending failure cannot fall through legacy Web mutation or grant other roles', async () => {
+  await hostReplacementFixture(async f => {
+    const { assertInstallationSource } = await import('./backend-release/host.mjs');
+    const { bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb } = await import('./preview.mjs');
+    await assert.rejects(f.replace(f.request), { code: 'WEB_HOST_REPLACEMENT_UNCONFIRMED' });
+    const state = JSON.parse(await readFile(join(f.directory, 'state.json'), 'utf8'));
+    assert.deepEqual(state.pendingWebHost.artifact, f.hostArtifact); assert.equal(state.backendArtifact, undefined);
+    assert.equal(state.webHost, undefined); assert.equal(state.processes.web.pid, 80004);
+    await assertInstallationSource(f.config, f.hostRoot, 'web', f.resolveRuntime);
+    for (const role of ['center', 'runner', null]) await assert.rejects(assertInstallationSource(f.config, f.hostRoot, role, f.resolveRuntime), { code: 'CONFIGURATION_IDENTITY_MISMATCH' });
+    assert.equal((await f.replace(f.request)).outcome, 'unknown');
+    for (const mutate of [bootstrapPreviewWeb, publishPreviewWeb, rollbackPreviewWeb]) await assert.rejects(mutate(f.request), { code: 'WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED' });
+    await assert.rejects(f.replace({ ...f.request, operationId: f.randomUUID() }), { code: 'WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED' });
+    assert.equal(f.calls.stop, 1); assert.equal(f.calls.spawn, 1);
+  }, { webHost: true, spawnFailure: true });
+});
+
+test('SVC08 host selection rejects noncanonical descriptors before marker or stop', async () => {
+  await hostReplacementFixture(async f => {
+    for (const artifact of [null, { ...f.hostArtifact, path: '/untrusted' }, { ...f.hostArtifact, policy: 'other' }, { ...f.hostArtifact, manifestDigest: '0'.repeat(64) }]) {
+      await assert.rejects(f.replace({ ...f.request, webHostArtifact: artifact }), { code: 'BACKEND_DESCRIPTOR_INVALID' });
+    }
+    assert.equal(f.calls.marker, 0); assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  }, { webHost: true });
+});
+
+test('SVC08 host selection forwards source qualification failure before pending or signal', async () => {
+  await hostReplacementFixture(async f => {
+    await assert.rejects(f.replace(f.request), { code: 'BACKEND_INSTALLATION_SOURCE_MISMATCH' });
+    const state = JSON.parse(await readFile(join(f.directory, 'state.json'), 'utf8'));
+    assert.deepEqual(state, f.original); assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    await assert.rejects(readFile(f.journalPath()), { code: 'ENOENT' });
+  }, { webHost: true, runtimeFailure: 'BACKEND_INSTALLATION_SOURCE_MISMATCH' });
 });
