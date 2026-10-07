@@ -3,7 +3,7 @@
   "parentTaskId": "X01",
   "owner": "architecture_read",
   "coLead": "mika",
-  "state": "SOURCE_APPROVED_PG_PENDING",
+  "state": "SOURCE_APPROVED_R2_RESULT_REVIEW_PENDING",
   "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
   "reviewPacket": "b95c13636bed0a5ddb7ef76c9af3b1bb59743bd8",
   "review": "docs/evidence/x01-removal-references/review-approval.json",
@@ -65,6 +65,22 @@
   ],
   "statusPath": "plans/x01-removal-references/status.md",
   "dependencies": "HOST a298 now main de5475039d73caec631ba2ee64556208dbb1751d; apply only this routes delta, preserve other main routes. Fresh actual preimages at intake.",
-  "validation": "8 direct pass/types0; dynamic SQL real PG not yet run. Do not claim production PG acceptance.",
-  "requiredActual": "One prepared removal-references-pg case in newly authorized independent 180s window."
+  "validation": "Source/direct8 approved; helper1424/direct6 approved; actualR1 casepass/suiteafterAllFAIL and separatecleanupRETURN preserved; newR2 1/1 suite success/fullRETURN, result fidelity review pending.",
+  "requiredActual": "R2 executed once on8060; no additional run authorized or required while result review is pending.",
+  "actualR2": {
+    "result": "0b1e0d412c38c69b451951c4848e151ed6e2d3e7",
+    "packet": "6c7b2495fe53f1997a654479e77600aa2f365548",
+    "reviewReady": "docs/evidence/x01-removal-references/removal-r2-review-ready.json",
+    "resultReview": "PENDING"
+  },
+  "consumerDependency": {
+    "intake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json",
+    "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+    "delivery": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+    "intakeSha256": "f0a6739ac2066be0f4a4449622ecaa48210ae70a6cfa144b2e5071516be3d0b5",
+    "readAt": "2026-10-07T12:46:41.492069+00:00",
+    "contract": "81a064cb packages/contracts/src/plugin-removal.ts SHA0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc first/samebatch",
+    "review": "chatui12:30:38 source/local approved; does not substitute backend PG result review",
+    "observation": "consumerHEAD=origin clean; own contract bytes unchanged"
+  }
 }
