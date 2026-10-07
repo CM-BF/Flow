@@ -111,3 +111,7 @@ Mika已确认上述有界局部段，恢复窗口实际归还后即可采用，�
 2026-10-07 03:09:43 UTC 收到chatui01_owner于2026-10-07T03:08:27Z对b00a181f的RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2。5原件10612B Git=WT/len/hash/0600、95原inputs跨execution8da/target/WT一致、manifest固定；两case运行结果/资源closure/六组测量算术与源码约束吻合。reviewer未重连DB/扫描进程/运行测试，仅精确TMP lstat absent。原wall口径、未测HTTP/main/吞吐与完整wire边界保留。
 
 最小集成输入：产品/测试8 literal由[validation-source-manifest](../../docs/evidence/req15-turn-page-batch/validation-source-manifest.json)绑定d209（SHA2abe118da942b25be4f22c872c015dec123b8597f19a740409c2ba2213e1bfd0）；本分支这些字节未变。对应旧26/strict、01d798局部types/collect及b00a181f真实PG证据分别保留，不合并计数。主线operator应仅受控接收这8路径与本计划/证据，经当前main差异核对后完成现有HTTP直接消费者断言；未授权把其它src供给文件作为产品改动导入。REQ15-04继续开放至HTTP和main事实补齐，当前claim保留，owner提交/push后停止写入待接收。
+
+HTTP接收入口（按fixed22a只读核）：`apps/server/src/conversations/index.ts:38–40` 的 `GET /api/conversations/:id/turns?after=...&limit=...` 直接调用turnPage。最小既有消费者候选为 `apps/server/src/conversations/conversations.test.ts:134–160` 的 `pages immutable turns and returns long assistant content only through an owned lazy detail`：保留长Unicode预览/≤4000且无孤高代理、owned lazy detail、跨会话404、after空页、limit51→400与不可变user文本断言。该历史fixture硬绑flow_chat01且CREATE/DROP；不能直接在共享库启动，集成owner须沿专属库/动态port生命周期受控适配，保留断言，不在本分支另造完整fixture。
+
+产品6源固定d209且与本交付一致：assistant/{store,index}.ts、conversations/{queries,replies,state,turn-read}.ts；完整8source/tests再加assistant/final-preview-batch.test.ts和conversations/turn-page-batch.test.ts，逐literal见上述manifest。范围接收后按Mika安排交还给C02 policy消费者，当前原claim仍保留，未经amend/release不推断其写权。
