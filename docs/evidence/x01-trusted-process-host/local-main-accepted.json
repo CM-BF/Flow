@@ -1,0 +1,132 @@
+{
+  "taskId": "X01-TRUSTED-PROCESS-HOST01",
+  "observedAt": "2026-10-07T15:15:50.942Z",
+  "state": "LOCAL_MAIN_INTEGRATED_REMOTE_PENDING",
+  "source": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "delivery": "672cca6fe2c4ccb7136f281b1fc277ef9dfc20cb",
+  "localMain": "13d4327b1a8579cd7e24ca50eff5b9f95e96388d",
+  "observedOriginMain": "fbad68a68676ad4c74304662192733feeeb17b53",
+  "centralReceipt": {
+    "path": "docs/evidence/i02/x01-trusted-process-host-intake.json",
+    "sha256": "259c404025ca4a7c08e128d4edee1d886fbf56c61bb951e49f118291f3405f0c",
+    "recordedAt": "2026-10-07T15:10:04.671Z"
+  },
+  "registry": {
+    "path": "docs/evidence/d05/trusted-process-source-registration.json",
+    "sha256": "a376e257403d94a3692ef10a44e1263d2d0e843b1a08778f96e1247eceac177f",
+    "live": "NOT_RELOADED"
+  },
+  "products": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 12178,
+      "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 7963,
+      "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 5029,
+      "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 2967,
+      "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "bytes": 9767,
+      "sha256": "941138dc50f201aef5d89d2a993756e492876400b14219e22922fc2196525297"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-protocol.ts",
+      "bytes": 4208,
+      "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-resources.ts",
+      "bytes": 7933,
+      "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-worker.ts",
+      "bytes": 2748,
+      "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "bytes": 16654,
+      "sha256": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 22367,
+      "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d"
+    }
+  ],
+  "productBytes": 108365,
+  "claimObservation": {
+    "observedAt": "2026-10-07T15:15:03.793Z",
+    "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 2,
+    "state": "active",
+    "scopes": 14,
+    "worker": "db_transaction_owner"
+  },
+  "remotePush": {
+    "source": "Mika/Original handoff",
+    "failureObservedAt": "2026-10-07T15:13:52Z",
+    "error": "HTTP 500",
+    "state": "PENDING",
+    "newAttemptByThisReceipt": false
+  },
+  "scopeAction": "NO_AMEND_NO_RELEASE; product STOP; AV02 execution.ts/execution.test.ts handback awaits separate actual remote receipt",
+  "validation": "11 fixed product blobs equal local main; no new engineering checks",
+  "boundaries": [
+    "T7 released artifact invocation NOT_RUN",
+    "cd27/04da and098b artifacts do not contain this feature",
+    "No deployment, PG, provider or personal service operation",
+    "Full task remains NOT_COMPLETED"
+  ],
+  "quality": {
+    "method": "existing local find-skills/codebase-design/clean-code; separate local, remote, registration and deployment facts; preserve original raw/manifests",
+    "scope": "only own status and this receipt",
+    "issues": []
+  },
+  "statusParse": {
+    "parserSource": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+    "parserSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+        "id": "X01",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Mika",
+        "value": "Mika"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    }
+  }
+}
