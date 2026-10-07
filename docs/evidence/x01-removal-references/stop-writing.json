@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-07T13:30:55.845469+00:00",
+  "claimId": "04e46691-f4fd-46cc-808c-59c391dfd015",
+  "version": 1,
+  "scope": [
+    "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+    "apps/server/src/plugin-runtime/removal-references.test.ts",
+    "apps/server/src/plugin-runtime/removal-references.ts",
+    "apps/server/src/plugin-runtime/routes.ts",
+    "docs/evidence/x01-removal-references",
+    "packages/contracts/src/plugin-removal.ts",
+    "plans/x01-removal-references"
+  ],
+  "statement": "After this metadata commit/push, STOP all seven scoped paths. Release receipt is external; no project writes after release.",
+  "releaseRequestId": "15e502df-2daa-4697-9e51-a8147b46102c"
+}

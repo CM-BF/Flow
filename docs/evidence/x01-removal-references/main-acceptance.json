@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T13:30:55.845469+00:00",
+  "main": "9f0fe5b2c096a49195ff8060d97584de235785d2",
+  "scope": "Seven own fixed product/test/support bytes only",
+  "rows": [
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "562228945aebc41e80e877187697b348f8f756c8",
+      "bytes": 5824,
+      "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc",
+      "preimageSha256": "01e653c45aab17c60e5894b8674b170aacf431895afb7a0ff1e39aa1e9dffd6f"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "48307cecbcae4cc953ae86de7af72cf8499df27b",
+      "bytes": 5437,
+      "sha256": "b47999b523c9b908aef41b60a35a367ab7664ddee371bf88b16102b774bc5c39",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "e8cdbb5fcf0d899ef18103b73f85a37899036236",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references.test.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "d974c6ee3df36cc410f8e97ee4c13f09438f07fc",
+      "bytes": 8667,
+      "sha256": "bfdd94aa57cc1ac8ffcf9d8dee8e4fca5d858c37484b687724f46bc61aee5c06",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+      "originCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "mode": "100644",
+      "blob": "070341eb72ac378d7a19e2e307c6bc86a71f59d9",
+      "bytes": 12543,
+      "sha256": "d9ca0d41c88bf63648f7553b09057eb648fab266668704ea7bc9a4add438ebb3",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+      "originCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "mode": "100644",
+      "blob": "9f27ed6b05ef5a96575620b85ec95e3e51015677",
+      "bytes": 15702,
+      "sha256": "67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES01",
+      "path": "docs/evidence/x01-removal-references/pg-input.json",
+      "originCommit": "68f5575e65f723e2b07b4be3d37adb53a1d56521",
+      "mode": "100644",
+      "blob": "8beca3cfd89920fe8a9c250143a4532b2298ddb8",
+      "bytes": 1276,
+      "sha256": "fb0c2603e6d2cf1932e8892813169005493b578fe87c3b3d0636ab7a174495f5",
+      "preimageSha256": null
+    }
+  ],
+  "mainReceiptPath": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/plugin-removal-and-management-intake/receipt.json",
+  "mainReceiptSha256": "e40dc870123fafc7a614b8f5095397f211fce043d714ac1f3e1e834bef0683f7",
+  "mainReceiptLabel": "SCOPED_INTEGRATION_STAGED_NOT_MAIN",
+  "verifiedActualGitMain": true,
+  "allSourceMainWorktreeEqual": true,
+  "independentReviewsUnchanged": true,
+  "R1": "case PASS / afterAll FAIL / caller UNKNOWN; separate cleanup RETURN unchanged",
+  "R2": "1/1 suite PASS; APPROVED 2026-10-07T12:47:52Z",
+  "mainValidationReportedByLead": "Focused strict TypeScript combination passed: exit0,2932ms,0stderr/stdout; process group final absent/dual EOF. Original transient EPERM and initial scratch KEEP preserved; exact owned compile-cache follow-up removed only after fresh identity/absence checks. Original independent source/local/PG/browser approvals retained at fixed canonical commits, no rerun, no copied historical source closure.",
+  "ownerEngineeringRuns": 0,
+  "personalDeployment": "NOT_PERFORMED",
+  "wholeX01": "OPEN",
+  "claimObservedAt": "2026-10-07T13:30:55.526Z"
+}
