@@ -1,0 +1,14 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-wi16ib1i/flow-svc08-host-f480C4","dev":16777234,"ino":123418872,"cleaned":true,"bytes":10518,"calls":{"marker":3,"stop":1,"spawn":1,"ready":2,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation (138.686ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-wi16ib1i/flow-svc08-host-cLI0IU","dev":16777234,"ino":123418920,"cleaned":true,"bytes":8412,"calls":{"marker":1,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host validates noncurrent retained files before touching Web (42.548125ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-wi16ib1i/flow-svc08-host-A3Jywz","dev":16777234,"ino":123418960,"cleaned":true,"bytes":8422,"calls":{"marker":2,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC08 replace-host validates exact retained report and backend bindings before touching Web (53.461041ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 322.983167

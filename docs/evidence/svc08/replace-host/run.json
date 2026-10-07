@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T03:52:52.827129+00:00",
+  "source": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+  "kind": "same-lock replace-host local segment",
+  "rounds": [
+    {
+      "label": "first",
+      "source": "19c9abc6ddf86ae720f652b6a055104573c403c9",
+      "selected": 9,
+      "passed": 9,
+      "failed": 0,
+      "outerExit": 0,
+      "childExit": 0,
+      "elapsedMs": 1113,
+      "rawBytes": 3991,
+      "group": 92016,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "freshFreeBytes": 25894043648,
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-w0sx359i",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "fixtureRecords": 9,
+      "fixturesRemoved": true,
+      "maximumCompletedFixtureBytes": 10518
+    },
+    {
+      "label": "repair",
+      "source": "d6c6fe9c48ef9050a6d186168014d09cd125830a",
+      "selected": 1,
+      "passed": 0,
+      "failed": 1,
+      "outerExit": 1,
+      "childExit": 1,
+      "elapsedMs": 265,
+      "rawBytes": 1638,
+      "group": 93249,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondaryFailures": [],
+      "freshFreeBytes": 25863712768,
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-meq4cx3u",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "fixtureRecords": 1,
+      "fixturesRemoved": true,
+      "maximumCompletedFixtureBytes": 0
+    },
+    {
+      "label": "direct",
+      "source": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "selected": 3,
+      "passed": 3,
+      "failed": 0,
+      "outerExit": 0,
+      "childExit": 0,
+      "elapsedMs": 366,
+      "rawBytes": 1412,
+      "group": 535,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null,
+      "secondaryFailures": [],
+      "freshFreeBytes": 25863589888,
+      "cleanup": {
+        "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-wi16ib1i",
+        "removed": true,
+        "children": [],
+        "ownedState": "absent"
+      },
+      "fixtureRecords": 3,
+      "fixturesRemoved": true,
+      "maximumCompletedFixtureBytes": 10518
+    }
+  ],
+  "distinct": 10,
+  "firstNine": 9,
+  "newAfterFirst": 1,
+  "executions": 13,
+  "passesAcrossRounds": 12,
+  "cumulativeSupervisedMs": 1744,
+  "rawBytes": 7041,
+  "originalPgCasesUnselected": 6,
+  "finalNarrowSelection": "1 new exact-release binding + 2 adjacent; 7 other new and 6 old PG not selected",
+  "countLimitations": [
+    "Not one 10/10 run. Original first9 green is retained at its own source.",
+    "Failed round fixture bytes=0 means post-body size sample was not reached, not zero usage. Exact synthetic fixture construction bounds retained files; no measured continuous peak claimed.",
+    "Node omitted unmatched tests from report; unselected counts are source selection, not reported skips.",
+    "Each result checkpoint precedes scratch removal; separate cleanup.json records removal.",
+    "Historical EPERM observations remain; final owned_state absent and EOF define cleanup conclusion."
+  ],
+  "budget": {
+    "segmentSeconds": 60,
+    "ownBytes": 16777216,
+    "eachParentSeconds": 24.5,
+    "eachRawBytes": 262144
+  },
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "personalOperations": 0,
+  "realServiceProcessCalls": 0
+}

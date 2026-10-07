@@ -12,4 +12,4 @@
 
 限界：300ms 是有限观察，不是无限泄漏证明；小合成 artifact 不构建 App，也不验证旧保留版本切换。旧 133 次 churn 证据覆盖的是客户端断开，不能替代本次上游截断；本次不证明个人两次 64 CLOSED 的实际根因或长期稳定性。旧 `static-web.test.mjs` 包含 full build，本次不跑；新 direct consumer覆盖受影响的正常 SSE、透传、identity 与 cap。0 PG / Chrome / provider / install / build / 个人服务动作。
 
-[固定绑定](fixed-manifest.json)列 2 个产品源 +1 个 evidence-only OPS14 caller，18 个 base 保护输入、16 个原证据及 3 个安装好的 Vite runtime 文件。ignored alias 仅指向已核 Vite 8.3.2；未改 donor、lock 或 manifest。技能与安全点结构复核见 [quality](quality.json)。独立 review 和 main 接收尚待权威回执。
+[固定绑定](fixed-manifest.json)列 2 个产品源 +1 个 evidence-only OPS14 caller，18 个 base 保护输入、16 个原证据及 3 个安装好的 Vite runtime 文件。ignored alias 仅指向已核 Vite 8.3.2；未改 donor、lock 或 manifest。技能与安全点结构复核见 [quality](quality.json)。独立限定 review 已通过，main `15847da4b4aa00d42bd3e25b9bf88ea046bb19a8` 已接收；见 independent-review.json / main-receipt.json。个人部署/根因仍未证明。

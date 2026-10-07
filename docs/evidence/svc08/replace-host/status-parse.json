@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T03:55:01.294Z",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "只替换 Web 宿主的受管入口已完成局部验证；会保留旧后台、页面版本和未结算操作，个人服务未切换。",
+    "next": "固定实现交独立审查；真实部署仍需补齐 Web 独立来源与旧后台读取边界。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+    "scopes": [
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs",
+      "tools/personal-preview/cli.mjs",
+      "tools/personal-preview/README.md"
+    ],
+    "errors": []
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED；当前同锁Web宿主替换四产品已固定，待唯一独审；旧批准不扩大为本片批准。",
+    "target": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13"
+  }
+}

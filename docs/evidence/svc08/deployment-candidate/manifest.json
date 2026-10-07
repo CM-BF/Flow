@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T03:38:17.937Z",
+  "target": "ad77c8aa21d88540a890b22562e8bbb2ce56e541",
+  "scope": "docs-only candidate; no executable release, no service action",
+  "entries": [
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/candidate.md",
+      "bytes": 7260,
+      "sha256": "17f2b03edaca1869ddbdf9aa716d1287917e1daeb70406b485dfb4f14da5d871"
+    },
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/retained-three.md",
+      "bytes": 5898,
+      "sha256": "06bb544fb84967dfb936992e0bb7213544131f35abb2bfe844c49f4dd67c0c27"
+    },
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/inputs.json",
+      "bytes": 11265,
+      "sha256": "6bb1184b8a9bc60748153206c738671555da37504512db0288dea94ef0092d4a"
+    },
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/quality.json",
+      "bytes": 1685,
+      "sha256": "9bdb32d6f2e941cd22cfab753bf4ff5beacddd2ef420ab4cec82954b634dd26a"
+    },
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/take-request.json",
+      "bytes": 401,
+      "sha256": "c3916f5097f9142630a94bd6b21d91e6e041009ee729e4a217b9e8af4e1c4ec9"
+    },
+    {
+      "path": "docs/evidence/svc08/deployment-candidate/take-receipt.json",
+      "bytes": 642,
+      "sha256": "dff91346b197560a2594a3364ca33f8b632138513a17bd47ad62b586214c327c"
+    }
+  ],
+  "fixedInputs": "inputs.json contains 16 fixedGit bindings; saved runtime observation only",
+  "validation": {
+    "staticStatusParser": "errors=[]; human.complete=true; review not_started",
+    "localMarkdownLinks": "missing=[]",
+    "gitDiffWhitespace": "exit0",
+    "sourceRead": "af51 preview/CLI/process/release/artifact and reviewed static leaf",
+    "productTests": "NOT_RUN",
+    "serviceActions": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0
+  },
+  "originalProductTarget": "086ba13dc0b284d04dbc3753c66471bf6012328a",
+  "originalProductMain": "15847da4b4aa00d42bd3e25b9bf88ea046bb19a8",
+  "notes": "Metadata-only parser/link checks are not engineering or deployment validation."
+}

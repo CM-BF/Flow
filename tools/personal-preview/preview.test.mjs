@@ -277,3 +277,173 @@ await runRunner({baseUrl:process.env.FLOW_URL,token:process.env.FLOW_RUNNER_TOKE
     await admin.end(); await rm(parent, { recursive: true, force: true });
   }
 });
+
+
+// SVC08: real private files/lock/compatibility validation, injected DB marker and process ports.
+// No PG, listener, detached service, build, SDK or personal installation is started by these cases.
+async function hostReplacementFixture(run, options = {}) {
+  const { realpath, mkdir, lstat, readdir } = await import('node:fs/promises');
+  const { createHash, randomUUID } = await import('node:crypto');
+  const { createWebHostReplacement, inspectPreviewWebHostSource } = await import('./preview.mjs');
+  const hash = value => createHash('sha256').update(value).digest('hex');
+  const root = await realpath(fileURLToPath(new URL('../../', import.meta.url)));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'flow-svc08-host-')));
+  const ownership = await lstat(directory);
+  const head = 'af51c621696230fbced12227670f014ca73bd8a1';
+  const config = { format: 1, installationId: randomUUID(), directory, repository: root, databaseName: 'flow_preview_' + 'ab'.repeat(12),
+    databaseUrl: 'postgresql://synthetic:synthetic@127.0.0.1:1/flow_preview_' + 'ab'.repeat(12), adminUrl: 'postgresql://synthetic:synthetic@127.0.0.1:1/postgres',
+    centerPort: 2, webPort: 3, ownerToken: 'synthetic-not-used' };
+  const json = (name, value) => writeFile(join(directory, name), JSON.stringify(value)+'\n', { mode: 0o600 });
+  const processRecord = (role, pid) => ({ role, pid, group: pid, nonce: `synthetic-${role}`, startedAt: 'synthetic', command: `synthetic --flow-preview=synthetic-${role}` });
+  const original = { source: { head, dirty: false }, processes: { center: processRecord('center', 80001), runner: processRecord('runner', 80002), web: processRecord('web', 80003) }, startedAt: '2026-10-01T00:00:00.000Z', lastError: null };
+  const calls = { marker: 0, stop: 0, spawn: 0, ready: 0, stoppedRoles: [] };
+  let cleaned = false; let bytes = 0;
+  try {
+    await json('config.json', config); await json('state.json', original);
+    await json('claude.json', { model: 'synthetic', maxTurns: 2 }); await json('maintenance.json', { phase: 'accepting', version: 18 });
+    const artifacts = []; const compatibilityIds = {};
+    const checks = { read: ['ownerAuthenticated','conversationBound','taskBound'], send: ['acceptedTurnBound','requestedProfilePreserved'], recover: ['sameKey','sameBody','sameTurn'], negotiation: ['legacyReadable','streamHeaderHandled','profileHeaderHandled'] };
+    for (let index = 0; index < 3; index++) {
+      const content = Buffer.from(`<html>synthetic retained ${index}</html>`); const sourceHead = String(index+1).repeat(40);
+      const manifest = Buffer.from(JSON.stringify({ format: 2, policy: 'flow-static-web-v2', releaseId: String(index+1).repeat(32), sourceHead,
+        files: [{ path: 'index.html', bytes: content.length, sha256: hash(content) }], totalBytes: content.length })+'\n');
+      const artifact = { artifactId: hash(manifest), manifestDigest: hash(manifest), sourceHead }; artifacts.push(artifact);
+      const dist = join(directory, 'web-artifacts', artifact.artifactId, 'dist'); await mkdir(dist, { recursive: true, mode: 0o700 });
+      await writeFile(join(dist, 'index.html'), content); await writeFile(join(dist, '../manifest.json'), manifest, { mode: 0o600 });
+      const raw = {}; const hashes = {};
+      for (const [check, fields] of Object.entries(checks)) {
+        raw[check] = JSON.stringify({ format: 1, check, backendHead: head, artifactId: artifact.artifactId, observations: Object.fromEntries(fields.map(key => [key,true])) }); hashes[check] = hash(raw[check]);
+      }
+      const report = JSON.stringify({ format: 1, policy: 'flow-web-api-v1', backendHead: head, artifact, checks: hashes }); const id = hash(report); compatibilityIds[artifact.artifactId] = id;
+      const path = join(directory, 'web-compatibility', id); await mkdir(path, { recursive: true, mode: 0o700 });
+      for (const [check, text] of Object.entries(raw)) await writeFile(join(path, `${check}.json`), text, { mode: 0o600 });
+      await writeFile(join(path, 'report.json'), report, { mode: 0o600 });
+    }
+    const release = { format: 1, policy: 'flow-web-release-v1', version: 3, backendHead: head, compatibilityIds, artifacts, current: artifacts[2].artifactId, updatedAt: '2026-10-01T00:00:00.000Z' };
+    await json('web-release.json', release);
+    const protectedBytes = Object.fromEntries(await Promise.all(['config.json','claude.json','maintenance.json','web-release.json'].map(async name => [name, await readFile(join(directory,name),'utf8')])));
+    const source = await inspectPreviewWebHostSource({ directory }); assert.equal(source.location.kind, 'legacy-repository'); assert.equal(source.location.artifactId, null);
+    const request = { directory, operationId: randomUUID(), expectedVersion: 3, expectedBackendHead: head, compatibilityId: compatibilityIds[release.current],
+      expectedWebRecordSha256: hash(JSON.stringify(original.processes.web)), expectedPointerSha256: hash(protectedBytes['web-release.json']), expectedHostSourceDigest: source.digest, allowConnectionInterruption: true };
+    const journalPath = id => join(directory, 'web-host-operations', `${id ?? request.operationId}.json`);
+    const processes = {
+      inspect: async () => 'running', ownsListener: async () => true,
+      stop: async record => {
+        calls.stop++; calls.stoppedRoles.push(record.role);
+        const journal = JSON.parse(await readFile(journalPath(), 'utf8')); assert.equal(journal.phase, 'reserved'); assert.equal(journal.outcome, 'pending');
+        assert.equal((await stat(journalPath())).mode & 0o777, 0o600);
+        await options.beforeStop?.(); return options.stopOutcome ?? 'stopped';
+      },
+      spawn: async value => {
+        calls.spawn++; assert.deepEqual(value.args, [join(root,'tools/personal-preview/cli.mjs'),'internal-service',directory,'web']); assert.equal(value.cwd, root);
+        const record = processRecord('web', 80004); await value.onSpawn(record);
+        assert.deepEqual(JSON.parse(await readFile(join(directory,'state.json'),'utf8')).processes.web, record);
+        if (options.spawnFailure) throw new Error('synthetic start failure');
+        return record;
+      },
+      ready: async () => { calls.ready++; await options.onReady?.(directory); },
+    };
+    const replace = createWebHostReplacement({ marker: async () => { calls.marker++; }, processes,
+      ...(options.checkpointFailure ? { checkpoint: async () => { throw new Error('synthetic fsync failure'); } } : {}) });
+    await run({ directory, request, replace, calls, original, release, source, protectedBytes, journalPath, json, hash, randomUUID, processes });
+    async function size(path) { for (const item of await readdir(path, { withFileTypes: true })) { const file=join(path,item.name); if(item.isDirectory()) await size(file); else { assert.ok(item.isFile()); bytes+=(await lstat(file)).size; } } }
+    await size(directory); assert.ok(bytes < 1024*1024);
+  } finally {
+    const actual = await lstat(directory); assert.equal(actual.dev, ownership.dev); assert.equal(actual.ino, ownership.ino); assert.ok(actual.isDirectory() && !actual.isSymbolicLink());
+    await rm(directory, { recursive: true }); cleaned = true;
+    console.log('SVC08_HOST_FIXTURE', JSON.stringify({ directory, dev: ownership.dev, ino: ownership.ino, cleaned, bytes, calls, realProcessOperations: 0, PG: 0, provider: 0 }));
+  }
+}
+
+test('SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation', async () => {
+  await hostReplacementFixture(async f => {
+    const result = await f.replace(f.request); assert.equal(result.outcome,'ready'); assert.equal(result.replayed,false);
+    const state = JSON.parse(await readFile(join(f.directory,'state.json'),'utf8'));
+    assert.deepEqual(state.source,f.original.source); assert.deepEqual(state.processes.center,f.original.processes.center); assert.deepEqual(state.processes.runner,f.original.processes.runner);
+    assert.equal(state.startedAt,f.original.startedAt); assert.equal(state.lastError,null); assert.equal(state.backendArtifact,undefined);
+    assert.equal(state.webHost.source.location.kind,'legacy-repository'); assert.equal(state.webHost.source.digest,f.source.digest);
+    for(const [name,bytes] of Object.entries(f.protectedBytes))assert.equal(await readFile(join(f.directory,name),'utf8'),bytes);
+    assert.equal((await f.replace(f.request)).replayed,true); assert.equal(f.calls.stop,1); assert.equal(f.calls.spawn,1); assert.deepEqual(f.calls.stoppedRoles,['web']);
+    await assert.rejects(f.replace({...f.request,expectedVersion:4}),{code:'WEB_HOST_OPERATION_CONFLICT'});
+    assert.equal(f.calls.spawn,1);
+  });
+});
+
+test('SVC08 replace-host rejects stale CAS, source, identity, compatibility and missing interruption consent before stop', async () => {
+  await hostReplacementFixture(async f => {
+    for(const [change,code] of [ [{expectedVersion:4},'WEB_RELEASE_VERSION_CONFLICT'],[{expectedWebRecordSha256:'0'.repeat(64)},'WEB_HOST_RECORD_CHANGED'],[{expectedPointerSha256:'0'.repeat(64)},'WEB_HOST_POINTER_CHANGED'],[{expectedHostSourceDigest:'0'.repeat(64)},'WEB_HOST_SOURCE_CHANGED'],[{compatibilityId:'0'.repeat(64)},'WEB_COMPATIBILITY_INVALID'],[{allowConnectionInterruption:false},'WEB_HOST_REQUEST_INVALID'],[{argv:['unsafe']},'WEB_HOST_REQUEST_INVALID'] ]) await assert.rejects(f.replace({...f.request,operationId:f.randomUUID(),...change}),{code});
+    assert.equal(f.calls.stop,0); assert.equal(f.calls.spawn,0);
+  });
+});
+
+test('SVC08 replace-host checkpoint failure sends no signal or start', async () => {
+  await hostReplacementFixture(async f => { await assert.rejects(f.replace(f.request),/synthetic fsync failure/); assert.equal(f.calls.stop,0);assert.equal(f.calls.spawn,0); },{checkpointFailure:true});
+});
+
+test('SVC08 replace-host unknown stop cannot repeat or be bypassed by a new operation id', async () => {
+  await hostReplacementFixture(async f => {
+    await assert.rejects(f.replace(f.request),{code:'WEB_HOST_REPLACEMENT_UNCONFIRMED'});
+    assert.equal((await f.replace(f.request)).outcome,'unknown');
+    await assert.rejects(f.replace({...f.request,operationId:f.randomUUID()}),{code:'WEB_HOST_PREVIOUS_OPERATION_UNCONFIRMED'});
+    assert.equal(f.calls.stop,1);assert.equal(f.calls.spawn,0);
+    assert.equal(JSON.parse(await readFile(f.journalPath(),'utf8')).failure,'WEB_STOP_UNCONFIRMED');
+  },{stopOutcome:'unknown'});
+});
+
+test('SVC08 replace-host uncertain spawn preserves pending new record and never starts a duplicate', async () => {
+  await hostReplacementFixture(async f => {
+    await assert.rejects(f.replace(f.request),{code:'WEB_HOST_REPLACEMENT_UNCONFIRMED'});
+    const state=JSON.parse(await readFile(join(f.directory,'state.json'),'utf8'));assert.equal(state.processes.web.pid,80004);assert.deepEqual(state.source,f.original.source);
+    assert.equal((await f.replace(f.request)).outcome,'unknown'); assert.equal(f.calls.spawn,1);assert.equal(f.calls.stop,1);
+    assert.equal(JSON.parse(await readFile(f.journalPath(),'utf8')).phase,'stopped');
+  },{spawnFailure:true});
+});
+
+test('SVC08 replace-host concurrent command keeps one operation lock and one start', async () => {
+  let entered;const atStop=new Promise(resolve=>{entered=resolve;});let release;const held=new Promise(resolve=>{release=resolve;});
+  await hostReplacementFixture(async f => {
+    const first=f.replace(f.request);try{await atStop;await assert.rejects(f.replace(f.request),{code:'OPERATION_IN_PROGRESS_OR_UNCONFIRMED'});}finally{release();}
+    assert.equal((await first).outcome,'ready');assert.equal(f.calls.stop,1);assert.equal(f.calls.spawn,1);
+  },{beforeStop:async()=>{entered();await held;}});
+});
+
+test('SVC08 replace-host does not claim ready after protected data changed during launch', async () => {
+  await hostReplacementFixture(async f => {
+    await assert.rejects(f.replace(f.request),{code:'WEB_HOST_REPLACEMENT_UNCONFIRMED'});
+    const journal=JSON.parse(await readFile(f.journalPath(),'utf8'));assert.equal(journal.failure,'WEB_HOST_PROTECTED_STATE_CHANGED');assert.equal(journal.outcome,'unknown');
+    assert.equal((await f.replace(f.request)).outcome,'unknown');assert.equal(f.calls.spawn,1);
+  },{onReady:async directory=>writeFile(join(directory,'maintenance.json'),'{}\n',{mode:0o600})});
+});
+
+test('SVC08 replace-host validates noncurrent retained files before touching Web', async () => {
+  await hostReplacementFixture(async f => {
+    await writeFile(join(f.directory,'web-artifacts',f.release.artifacts[0].artifactId,'dist/index.html'),'tampered retained bytes');
+    await assert.rejects(f.replace(f.request),{code:'WEB_ARTIFACT_INTEGRITY_MISMATCH'});assert.equal(f.calls.stop,0);assert.equal(f.calls.spawn,0);
+  });
+});
+
+test('SVC08 replace-host validates exact retained report and backend bindings before touching Web', async () => {
+  await hostReplacementFixture(async f => {
+    const noncurrent = f.release.artifacts[0].artifactId;
+    const changed = { ...f.release, compatibilityIds: { ...f.release.compatibilityIds, [noncurrent]: '0'.repeat(64) } };
+    await f.json('web-release.json', changed);
+    const pointerDigest = async () => f.hash(await readFile(join(f.directory, 'web-release.json')));
+    await assert.rejects(f.replace({ ...f.request, expectedPointerSha256: await pointerDigest() }), { code: 'WEB_COMPATIBILITY_INVALID' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    await f.json('web-release.json', { ...f.release, backendHead: '0'.repeat(40) });
+    await assert.rejects(f.replace({ ...f.request, expectedPointerSha256: await pointerDigest() }), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  });
+});
+
+
+test('SVC08 replace-host CLI rejects extra request authority before any real marker or process port', async () => {
+  await hostReplacementFixture(async f => {
+    const path=join(f.directory,'request.json');const {directory,...body}=f.request;
+    await writeFile(path,JSON.stringify({...body,argv:['not-allowed']}),{mode:0o600});
+    await assert.rejects(execute(process.execPath,[cli,'web','replace-host','--directory',f.directory,'--request',path],{timeout:2500,maxBuffer:16384}),error=>{
+      assert.equal(error.code,1);assert.equal(error.stdout,'');assert.equal(JSON.parse(error.stderr).error,'WEB_HOST_REQUEST_INVALID');return true;
+    });
+    assert.equal(f.calls.marker,0);assert.equal(f.calls.stop,0);assert.equal(f.calls.spawn,0);
+  });
+});
