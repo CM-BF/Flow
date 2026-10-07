@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T02:49:12.685Z / main943a66bf；本次个人Web恢复实际事实见SVC05H唯一source |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:15:54.570730+00:00 / 已核main/origin8c80a710；当前服务版本按SVC唯一source保留 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main943a66bf保持；02:45:03UTC同版本Web-only bootstrap一次成功，d629/v3 HTTP200，center/runner af51与accepting v18及用户事实保持；root源码窗口02:45:52UTC恢复main clean。实际部署未升级新功能，根因未解决。 |
+| 已集成main状态 / HEAD | main/origin8c80a710已接后台产物宿主依赖补充，SVC07/TUI01G已main。个人服务仍af51/accepting v18、d629/v3；02:45:03UTC同版本Web恢复事实不变，没有随主线集成自动部署。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人页面已同版本恢复可访问，后台与用户记录保持；SVC07与TUI01G已进入主线。任务时间与普通局部迭代规则收口，展示由Web组沿唯一status接入。 |
-| 下一可用交付 | 继续Codex普通会话、连接恢复与快捷设置必要验证；固定后台产物接线恢复。时间规则发布与看板展示分别验收，不阻聊天关键路径。 |
-| 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
+| 当前产出 | 个人页面已恢复可访问；后台事务恢复和终端逐消息设置已进入主线。后台固定产物所需依赖补充已接收；隔离连接截断修复通过独审，但尚未部署。 |
+| 下一可用交付 | 优先完成登录入口、任务时间展示与Codex聊天必要验证；固定后台产物做真实安装和运行检查。会话批量读取已有数据库证据，正在对齐主线直接消费者。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。本地已解除旧磁盘整体HOLD；三队各一个隔离局部段，实际PG/Chrome/安装构建按各自预算及唯一重窗口执行。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 

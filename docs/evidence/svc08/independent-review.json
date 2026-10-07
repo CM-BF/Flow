@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T03:15:08.399916+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_PROXY_TERMINATION",
+  "target": "086ba13dc0b284d04dbc3753c66471bf6012328a",
+  "delivery": "0f4e1c395eca65b5031435450e17d93a823010c0",
+  "manifestSHA256": "2e433dac7b41df0115d77921e0642a43209a4e83d5a020bc56459103e8d207fa",
+  "bindingCount": 40,
+  "fixedAndCurrentBytesAndHashesMatch": true,
+  "scope": [
+    "Full product delta, complete new direct consumer and thin OPS14 caller read",
+    "Original/fixed reservation ties production source to base/target",
+    "FIN and RST after observed 13B first frame: bounded 300ms original downstream remains1/upstream0; fixed reaches0/0 before own request destruction",
+    "Normal EOF, actual identity200, Authorization/Origin forwarding and cap64 preserved",
+    "Original failure records, distinct-test count, two final group absences/EOF and exact scratch cleanup read"
+  ],
+  "tests": {
+    "different": 1,
+    "rounds": 2,
+    "original": "0/1",
+    "fixed": "1/1",
+    "requestsTotal": 8,
+    "supervisorMs": 1449,
+    "originalRecordBytes": 11175
+  },
+  "reviewerChecks": 0,
+  "provider": 0,
+  "findings": [],
+  "limitations": [
+    "Synthetic loopback with Vite8.3.2; no actual product App/build/browser/PG journey.",
+    "300ms observation does not prove permanent leakage or the personal64CLOSED root cause.",
+    "Original mutable terminal field is not used as pre-cleanup evidence; original timeout and connection snapshot retained.",
+    "Unchanged static-web.test full build not repeated.",
+    "Personal runtime and release pointer unchanged; this review does not authorize an unbound personal deployment."
+  ]
+}

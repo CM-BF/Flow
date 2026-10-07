@@ -83,7 +83,16 @@ export async function startStaticWeb({ directory, artifact, repository, webPort,
     } }],
     preview: { host: '127.0.0.1', port: webPort, strictPort: true, open: false, cors: false,
       headers: { 'Cache-Control': 'no-store' },
-      proxy: { '^/api(?:/|$)': { target: `http://127.0.0.1:${centerPort}`, changeOrigin: false, ws: false } } },
+      proxy: { '^/api(?:/|$)': { target: `http://127.0.0.1:${centerPort}`, changeOrigin: false, ws: false,
+        configure(proxy) {
+          proxy.on('proxyRes', (upstream, _request, downstream) => {
+            // A truncated upstream body must not leave its downstream response open
+            // or be represented as a successful, complete HTTP body.
+            upstream.once('aborted', () => downstream.destroy());
+            upstream.once('error', () => downstream.destroy());
+          });
+        },
+      } } },
   });
   server.httpServer.maxConnections = 64;
   return { artifact, close: async () => {
