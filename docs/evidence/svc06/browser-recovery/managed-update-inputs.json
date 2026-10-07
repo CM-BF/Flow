@@ -123,5 +123,81 @@
   "personalIO": 0,
   "providerCalls": 0,
   "engineeringTests": 0,
-  "claimReceipt": "retention-amend-receipt.json"
+  "claimReceipt": "retention-amend-receipt.json",
+  "currentEntryReceipt": {
+    "at": "2026-10-07T15:54:09.188Z",
+    "main": "72f5758bcd5e0e58f290f1197e70ad77e2f7c61d",
+    "reviewPath": "docs/evidence/i02/svc06b-current-entry-review.json",
+    "reviewSha256": "7e3a3624a8e441a8ed82c4cd15b34dcd224c402120c75ae74eb83695b18c0255",
+    "decision": "APPROVED_CURRENT_ENTRY_AND_EXPLICIT_READER_PORTS_PREPARATION_ONLY",
+    "source": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba",
+    "delivery": "4001b6a984d58cfdf73accfc2157bc2a6cbd2ad7",
+    "approvalScope": "preparation only; no personal instance/operation approval",
+    "statusCheck": {
+      "at": "2026-10-07T15:54:36.042Z",
+      "statusSha256": "1c4f87bd45c66587bef8719ec22db8f6e0f93f139da7321dae3878d55430567c",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": []
+    }
+  },
+  "webSupplyReadOnly": {
+    "at": "2026-10-07T15:54:09.188Z",
+    "descriptor": {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    "descriptorEvidence": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+      "bytes": 222,
+      "sha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b"
+    },
+    "manifest": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store/web-artifacts/779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4/manifest.json",
+      "bytes": 1651,
+      "sha256": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    "releaseId": "52a261e294324a11aead58a554f547db",
+    "assets": 10,
+    "assetBytes": 1700569,
+    "logicalBytesIncludingManifest": 1702220,
+    "sourceTree": "62b82dc967418036935edfddaf0f8bdb6d1d52dd",
+    "review": {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "git": "cecb671862c8c8608754c5e6a5450c470949ce42",
+      "path": "docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/web-artifact-result-review.json",
+      "bytes": 7119,
+      "sha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b",
+      "decision": "APPROVED_FIXED_WEB_ARTIFACT_RESULT_AND_FULLRETURN",
+      "scope": "actual build/integrity/full return only; compatibility/deployment not proven"
+    },
+    "payloadRehashed": false,
+    "descriptorAndManifestOnlyHashed": true,
+    "actualBuildReturn": "2026-10-07T15:34:52.365620Z",
+    "oldCompatibilityStatusSnapshot": {
+      "git": "9fde5174b95b81dfe1b789facaf5fef1208a34c0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
+      "observedStaleness": "top source9fde/status14:47 still says newWeb descriptor missing; later manager15:51 formal descriptor received supersedes that one supply blocker only"
+    },
+    "currentPairPreparation": {
+      "recordedAt": "2026-10-07T15:52:51.612Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "source": "2f6792ca3f19fcd1d54563531c302937f607c892",
+      "metadata": "53980e73480d0a5af5538e4f5d3de5892c082f12 actualremoteequalclean",
+      "binding": "efb439c17eede5fcbef2beba75978210c482a214e6a0f08809f99ca9b28c386f",
+      "manifest": "61bef14e3051d75c5b70eb47c4f3313fb2f007a71d4f45534a8de955daec3158",
+      "actual": "NOT_RUN",
+      "state": "FIXED_SOURCE_AND_CALLER_READY_FOR_REVIEW_NOT_GRANTED"
+    },
+    "compatibility": "NOT_RUN_IN_OBSERVED_MANAGER_SOURCE",
+    "missing": [
+      "three retained format2 reports plus all four check originals each for backend04da/context81a8, exact report IDs/directories/hash/independent review",
+      "newWeb779/c231 same backend04da/context81a8 report with actual cookie/recovery/lateLogout evidence and independent review",
+      "exact existing-public report-import arguments from those formal directories",
+      "fresh personal six files, three owned records, CAS, all runtime/installation identities and actual complete resource floor under a new authorized window"
+    ],
+    "noPersonalReadOrOperation": true,
+    "noNewTestsOrBuild": true
+  }
 }

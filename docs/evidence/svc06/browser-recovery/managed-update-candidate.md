@@ -11,7 +11,7 @@
 | 最后已审个人运行 | 13:47–13:49 held continuation：backend 与独立 Web host 均 7d1/source6c；中心 accepting/v21；Web d629/v3；三个 retained 保持 |
 | 历史出处 | main b37e404d 中 `docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/{RESULT.md,final.json,result-manifest.json}`；原结果 target acbdc40358a858256967a7322109331a28f4a2fb |
 | 配置合同 | 既有 `browser-session.json` 205 B，文件 SHA256 `ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a`；normalized context 见下表；配置及 token 不复制、不输出 |
-| 新网页 | 原 Web owner 的准确 descriptor、source、报告和独审仍待交。不得用旧 7272 候选或当前 moving main 代替 |
+| 新网页 | 准确新Web779acd5b/c231 descriptor和实际构建限定独审已到，详见本页供给记录；对04da/context的真实兼容报告和独审仍待交。不得用旧7272或moving main代替 |
 
 历史 accepting/v21、PID、任务及文件身份只是历史输入，不是当前个人 fresh gate。本准备只读固定 Git/已封原件，没有个人 I/O。旧 held 段最终观察到用户原 queued task 自然进入 running，但完整 requestId→receipt→本地 assignment 因果链未被持久证明，`actualClaimRecovery=UNKNOWN` 保持。
 
@@ -49,7 +49,7 @@
 | retained artifact A | `461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90` |
 | retained artifact B | `caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe` |
 | current retained artifact C | `d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88` |
-| 新网页 artifact D | 原 Web owner 待交的精确 descriptor/source/manifest；当前 UNKNOWN |
+| 新网页 artifact D | artifact `779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4`，source `c2311b6bd44a2a8e73e3b066be5f12bc8b153b37`；实际构建已审，兼容尚未验 |
 
 每个 report 及 read/send/recover/negotiation 四原件必须同 backend/context/artifact，完整 hash 与实际 App/cookie 证据绑定，原 owner 独审后使用。旧 C3 的 backend6c 报告不能替代；配置文件 SHA 和 normalized policy digest 也不能混写。新页面的晚到 Logout/连接 cookie 场景须由原 Web owner 明确覆盖，本构建内部加载不证明它。
 
@@ -72,6 +72,10 @@ backend 更新前至少三个 retained 的新 tuple 必须齐备；新网页发�
 
 只复用OPS14及既有持久phase receipts。失败/unknown停后继，锁按原 finally 正常释放，不能声称锁永远保留；有已消费副作用先核持久checkpoint，禁止自动新namespace重试、rollback、删journal或退役资源。监督对象仅自有operator消费者，detached个人角色只按原公开生命周期/nonce停止，不凭外层group absent猜全服务终态。
 
-本次可调用薄入口与显式依赖闭包见[current-entry-interface](current-entry-interface.md)，固定source6c417850；默认strict-v1保留，v2与history ports及原红/绿证据见[current-entry-result](current-entry-result.json)。参数模板仍ready=false，现阶段不读取个人或启动操作。
+本次可调用薄入口与显式依赖闭包见[current-entry-interface](current-entry-interface.md)，固定source6c417850；默认strict-v1保留，v2与history ports及原红/绿证据见[current-entry-result](current-entry-result.json)。参数模板仍ready=false，现阶段不读取个人或启动操作。薄入口/显式reader ports已于15:48:59Z独审批准并main72f5758bc接收；本批准只覆盖准备。
 
-当前交付：产物独审/主线receipt、尺寸/来源、已审并main fd9dd5a9的集中retention工具；当前迁入Module及参数/guard已独审通过。仍缺：可调用装配独审及现场参数/监督实例固定、三个 retained 和新网页的04da/context报告及审查、届时fresh现场事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。
+当前交付：产物独审/主线receipt、尺寸/来源、已审并main fd9dd5a9的集中retention工具；当前迁入Module及参数/guard已独审通过。仍缺：现场参数/监督实例固定、三个 retained 和新网页的04da/context报告及审查、届时fresh现场事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。
+
+## 2026-10-07T15:54:09.188Z 新网页供给只读接收
+
+已读Web原lead固定实际结果审查（APPROVED_FIXED_WEB_ARTIFACT_RESULT_AND_FULLRETURN）；descriptor222B/hash0a39b329和manifest1651B/artifact779acd5b核同。10资产1,700,569B，含manifest1,702,220B；只复用原资产完整性独审，未重hashpayload或重跑build。准确路径、来源commit与审查SHA并入唯一managed-update-inputs.json。Web15:51管理快照已准备newpair source2f6792ca/53980e73、actual NOT_RUN；旧Release status14:47仍缺descriptor是陈旧供给字段，不能据此忽略新产物，也不能把新构建结果当四App兼容。现真正缺项为old3+new779对04da/context81a8的正式报告/原件/独审、对应导入参数和获准后的个人fresh实例。

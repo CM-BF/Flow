@@ -31,3 +31,7 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## 薄入口和两读取port待独审
 
 固定source `6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba`，14source与7原证据绑定见[current-entry-result](../../docs/evidence/svc06/browser-recovery/current-entry-result.json)。9不同直接行为/10选择含已保留首红，最终9绿，另2加载/参数检查；6轮661ms/2580B，均absent/双EOF及exact空scratch清理。默认strict-v1保持，显式v2/固定artifact history依赖、旧facts解析闭包与原R2字节扣减各自有据。Reviewer尚未结论；template ready=false，不批准个人实例/执行。7324已审Module已main96b424777，本段不改其字节。
+
+## 当前入口准备已审并main
+
+2026-10-07T15:48:59Z，Lead唯一APPROVED_CURRENT_ENTRY_AND_EXPLICIT_READER_PORTS_PREPARATION_ONLY；14source/7证据/33readonly/138pg文件/14alias/42旧raw全部核同、0新检查。main/origin `72f5758bcd5e0e58f290f1197e70ad77e2f7c61d` 接收33路径对4001逐字同。唯一原件`docs/evidence/i02/svc06b-current-entry-review.json`，本scope[原字节副本](../../docs/evidence/svc06/browser-recovery/current-entry-independent-review.json)。模板ready=false；正式old3+newWeb报告、fresh实例与完整资源floor仍缺，不是个人操作批准。

@@ -37,3 +37,5 @@
 2026-10-07T15:07:37.505Z：retention工具已独审并main fd9dd5a9，v4归还全部产品，当前只保own plan/evidence。当前迁入Module见[current-migration-interface](../../docs/evidence/svc06/browser-recovery/current-migration-interface.md)，复用原协议/双锁，6个不同直接例通过；真实兼容和个人实例调用仍待固定，不占窗口。
 
 2026-10-07T15:45:43.588Z：current迁入Module7324已main96b424777；v6只保own双目录及两个reader exact/一个history exact。薄调用和可选port固定source6c417850，复用原OPS14/maintenance executor；[本次Interface](../../docs/evidence/svc06/browser-recovery/current-entry-interface.md)明确旧facts实际依赖、新产物history依赖、原R2字节扣减及12phase参数。9不同直接行为最终通过、首轮fixture红保留，另两加载/参数检查；尚待独审。模板ready=false、未生成现场namespace，SVC06B-04仍open；不把已审模块/局部入口当新网页兼容或个人更新通过。
+
+2026-10-07T15:54:09.188Z：本次薄入口和reader ports获准备限定独审并main72f5758bc。Web新779/c231产物及其构建限定独审已正式接收；四App对04da/context81a8兼容仍NOT_RUN，SVC06B-04继续等待此真实报告与现场实例。只读接收沿managed-update-inputs.json，无新payload复制/构建/个人读取。

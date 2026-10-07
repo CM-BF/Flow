@@ -1,0 +1,56 @@
+{
+  "kind": "SVC06B_CURRENT_ENTRY_INDEPENDENT_REVIEW",
+  "reviewedAt": "2026-10-07T15:48:59.000Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "sourceTarget": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba",
+  "deliveryTarget": "4001b6a984d58cfdf73accfc2157bc2a6cbd2ad7",
+  "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-entry-result.json",
+  "manifestBytes": 10662,
+  "manifestSha256": "12e473e82b058bd1fc44b328f2b9a7058202aa47cad3f7685c0aa3d2ea6e1ea7",
+  "decision": "APPROVED_CURRENT_ENTRY_AND_EXPLICIT_READER_PORTS_PREPARATION_ONLY",
+  "findings": [],
+  "readOnlyChecks": {
+    "sourceBindings": 14,
+    "evidenceBindings": 7,
+    "readonlySourceRuntime": 33,
+    "factsPgFiles": 138,
+    "factsPgAliases": 14,
+    "priorRawFiles": 42,
+    "mismatches": 0,
+    "reviewerTests": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "directEvidence": {
+    "distinctBehavior": 9,
+    "behaviorSelections": 10,
+    "finalPassingBehaviorSelections": 9,
+    "preservedFailure": "First history fixture assertion TypeError; only failing case rerun after predicate correction.",
+    "additionalLoadArgumentChecks": 2,
+    "rounds": 6,
+    "elapsedMs": 661,
+    "rawBytes": 2580,
+    "lastReturn": "2026-10-07T15:42:48.372Z",
+    "groupsAbsentAndDualEOF": 6,
+    "scratch": "Each exact owned empty directory removed."
+  },
+  "assessment": [
+    "Default strict-v1 reader remains unchanged; explicit synchronous v2 validator binds runner identity and refuses pending/final/body material without claiming actual claim recovery.",
+    "History dependencies are explicitly selected from the verified artifact. The old facts observer retains its separately pinned 14-package/138-file dependency closure; this is not silently represented as artifact-internal.",
+    "Twelve maintenance phases use 7d1 before refresh and cd27 from refresh onward. Public maintenance owns state transitions; existing OPS14/executor owns deadlines, and detached services are not inferred stopped from caller exit.",
+    "Existing migrateWithLocks/no-replace/fsync procedure remains the sole import authority. Known raw debit 119396 bytes and historical failures stay preserved."
+  ],
+  "actualPrerequisites": "Template ready=false. Three retained-Web formal reports and new Web descriptor/compatibility, precise import arguments, fresh six-file/three-process/CAS/identity pins, new namespaces and full current resource budget still required. This approval does not execute or approve an incomplete personal instance.",
+  "intake": {
+    "delivery": "4001b6a984d58cfdf73accfc2157bc2a6cbd2ad7",
+    "scope": [
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "plans/svc06-browser-recovery"
+    ],
+    "meaning": "Only reviewed changed paths in these scopes; no old branch merge or fixed artifact rebuild."
+  }
+}
