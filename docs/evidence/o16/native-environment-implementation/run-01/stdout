@@ -1,0 +1,42 @@
+✔ environment: explicit private paths and fixed executable replace all injected environment values (31.097ms)
+✔ environment: authentication booleans, old permits, wrong source or recipe never authorize native entry (4.9085ms)
+✔ environment: native children require a later separate decision and cannot inherit planner permission (3.414791ms)
+✔ environment: changed native bytes or replacement identity fail before the injected query (6.735875ms)
+✔ environment: replaced private directory, symlink and mode change retain a rejected binding (4.571459ms)
+✔ environment: existing private namespace is never overwritten and restore options never enter query (7.421459ms)
+✖ environment: cancellation during input verification starts zero queries and keeps the consumed slot (12.646334ms)
+✖ environment: injected authentication failure is one unknown entry without fallback or a second attempt (15.032333ms)
+✔ environment: exact Sonnet planner caps and proposal-only scope are accepted by the existing graph mount (137.132209ms)
+✔ native entry is durably reserved before its injected stand-in and cannot be repeated after reopening (33.481ms)
+✔ native operation refuses before source loading, permits, allocation or child startup while inputs are unresolved (326.363292ms)
+✔ the actual injected query receives persistSession false with the original hooks, abort and iterator (42.104584ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 10
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2071.680375
+
+✖ failing tests:
+
+test at experiments/continuous-goal-acceptance/native-environment.test.mjs:64:1
+✖ environment: cancellation during input verification starts zero queries and keeps the consumed slot (12.646334ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:47:31
+      at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.test.mjs:69:18)
+      at async fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.test.mjs:10:76)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)
+
+test at experiments/continuous-goal-acceptance/native-environment.test.mjs:73:1
+✖ environment: injected authentication failure is one unknown entry without fallback or a second attempt (15.032333ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:47:31
+      at <anonymous> (/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.test.mjs:78:18)
+      at async fixture (/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/native-environment.test.mjs:10:76)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)

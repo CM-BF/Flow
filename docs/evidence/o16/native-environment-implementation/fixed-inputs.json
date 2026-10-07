@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T10:09:51.041Z",
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance",
+  "verifiedProductAndExperimentFiles": 322,
+  "verifiedAliases": 39,
+  "scope": "metadata sourceIdentity read only; no driver, SDK import, authentication or process start",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "recipe": {
+    "kind": "flow.o16.native-environment.v1",
+    "sdkVersion": "0.3.290",
+    "nativeVersion": "2.1.290",
+    "files": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+        "bytes": 2546,
+        "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+        "bytes": 1230597,
+        "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+        "bytes": 233260816,
+        "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237"
+      }
+    ],
+    "writePolicy": {
+      "authentication": "existing-default-keychain-normal-native-refresh",
+      "credentialCopy": false,
+      "accountChange": false,
+      "privateFiles": "owned-home-config-tmp",
+      "persistSession": false,
+      "sharedKeychainMayUpdate": true,
+      "keychainIncludedInPrivateByteBudget": false,
+      "totalSystemZeroWrites": false
+    }
+  },
+  "plannerProfileOptions": {
+    "materialFiles": [],
+    "allowRead": false,
+    "requireReadApproval": false,
+    "goalTools": false,
+    "goalGraphTools": true,
+    "model": "claude-sonnet-5-5",
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "requirement": {
+    "originalGoal": "根据固定材料为纸鸢0.1准备一段简洁中文发布说明。先起草，再使用草稿与同一材料核对事实并给出最终修订稿；最终交付由独立用户判断。",
+    "constraints": "最多两个只读文本任务，后一步依赖前一步。不得访问未授权材料，不写文件，不调用终端、网络或子代理；不得编造日期、链接、性能承诺或新增功能。",
+    "acceptance": "完整包含材料的项目、版本、草稿预览与未正式发布状态，说明简洁不超过120个汉字；保留草稿与最终稿，独立审阅后才接受。"
+  },
+  "material": "项目：纸鸢。版本：0.1。新增能力：草稿预览。发布状态：内部测试，尚未正式发布。",
+  "graphScopeExample": {
+    "baseRevision": 1,
+    "allowedExistingNodes": [],
+    "maxProposals": 1,
+    "maxApplications": 0,
+    "maxNewNodes": 2,
+    "maxNewEdges": 1,
+    "inputProposalProtocol": "flow.goal-input-proposal.v1"
+  },
+  "stage": "prepared-not-run",
+  "PG": 0,
+  "SDKProcesses": 0,
+  "provider": 0
+}

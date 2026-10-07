@@ -3,14 +3,14 @@
 ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 所属大task：[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)；co-lead：Execution Lead。追溯 O01-05/O12-05/M02，不另立大任务。
 
-目标是从一个自然语言需求，经真实受限规划、owner 看过实际完整输入后确认、中心自动推进两项依赖任务，得到可独立判断的产物和同入口事实解释。当前仅授权零模型准备与接口实现，真实 plan 和 confirmation/children 分两段新许可；最多三次 query / SDK声明预算0.40USD只是候选，O08/O10旧预算封存。
+目标是从一个自然语言需求，经真实受限规划、owner 看过实际完整输入后确认、中心自动推进两项依赖任务，得到可独立判断的产物和同入口事实解释。当前已授权首段planner的新有限预算框架（固定Sonnet5.5、1query/4turn/$0.20/90s），真实运行仍需固定source/env/once材料和PG窗口；实际proposal后confirmation/children须新决定。旧三次query/0.40USD只是历史候选，O08/O10旧预算封存。
 
 - [x] **O16-01** 独立稀疏树、fresh原子claim、固定职责/Interface与已审输入。
 - [x] **O16-02** 有限两段许可/三槽持久reservation、unknown不可复投与观测边界。
 - [x] **O16-03** 原生产模块的public journey组合、受管资源checkpoint与独立语义输入。
 - [x] **O16-04** 零query纯检查及获串行窗口后的实际PG/MCP注入旅程，准确保存资源/原始失败。
 - [x] **O16-05** 固定manifest、唯一独立review、按批准范围交付。
-- [ ] **O16-06** 单独新许可下真实plan；实际proposal后另许可确认/children，并由独立actor验收语义。当前未授权/未运行。
+- [ ] **O16-06** 单独新许可下真实plan；实际proposal后另许可确认/children，并由独立actor验收语义。当前首段框架已授但未运行；children未授权。
 
 [设计](../../docs/evidence/o16/approved-proposal.md)与[Interface](../../docs/evidence/o16/interface.md)是本片范围说明。严格沿[根模块规则](../../AGENTS.md#modular-design)：原runner/SDK adapter/center scan单一权威，实验只拥有许可、私有资源和证据生命周期。O12没有confirmation command、中心没有独立artifact rejection reason字段；此实验不补第二领域，明确留后继。
 
@@ -25,3 +25,5 @@ ID：O16；状态：in-progress；创建/更新：2026-10-06 18:17:35 UTC。
 2026-10-07T09:00:26.182Z：O16-06原owner新take开始分阶段准备，具体最小差量/登录来源与持久会话边界见[native-stages候选](../../docs/evidence/o16/native-stages/candidate.md)。既有真实query许可尚未授；此处不是等待预算替代实现。原零模型完成与旧失败保持。
 
 2026-10-07T09:35:36.989312+00:00：O16-06分阶段实现与16不同局部证据已限定独审并main d022；O16-06仍未完成。后继[环境输入收敛](../../docs/evidence/o16/native-stages/native-environment-readonly.md)仅只读，真实plan/children仍要求独立新预算与实际登录/总写入边界；不修改已审实验源或复用旧窗口。
+
+2026-10-07T10:03:47.960Z：原环境接缝已实现并完成14不同注入/直接消费者分轮验证，原3失败保留。[环境Interface](../../docs/evidence/o16/native-environment-implementation/Interface.md)明确共享默认钥匙串正常刷新与私有8MiB分开，不读复制凭据；新v2仅plan，model固定claude-sonnet-5-5，0apply/0child。待唯一独审及固定once材料，不运行SDK/PG。
