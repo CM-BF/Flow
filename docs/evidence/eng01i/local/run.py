@@ -1,5 +1,6 @@
 import dataclasses,datetime,hashlib,importlib.util,json,os,shutil,signal,sys,tempfile
 from pathlib import Path
+sys.dont_write_bytecode=True
 ROOT=Path(__file__).resolve().parents[4]; HERE=Path(__file__).resolve().parent
 NODE='/opt/homebrew/opt/node@24/bin/node'
 def save(path,value):
@@ -9,7 +10,7 @@ def main():
  signal.signal(signal.SIGALRM,lambda *_:os._exit(124));signal.setitimer(signal.ITIMER_REAL,39)
  label,kind=sys.argv[1:3]; assert kind in ['tests','types']; assert label.isalnum()
  free=shutil.disk_usage(ROOT).free; assert free>=1107296256
- cumulative=sum(json.loads(p.read_text())['elapsed_ms'] for p in HERE.glob('*-result.json')); assert cumulative+36500<=90000
+ cumulative=sum(json.loads(p.read_text()).get('elapsed_ms',0) for p in HERE.glob('*-result.json')); assert cumulative+36500<=90000
  scratch=Path(tempfile.mkdtemp(prefix='flow-eng01i-check-')).resolve(); identity=scratch.stat()
  args=[NODE,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'vitest.config.mjs'),'apps/runner/src/engineering/native-adapter.test.ts','apps/runner/src/engineering/calculator-receipt.test.ts'] if kind=='tests' else [NODE,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(HERE/'tsconfig.json')]
  if len(sys.argv)>3: args.extend(['-t',sys.argv[3]])
