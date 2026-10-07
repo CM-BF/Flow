@@ -1,0 +1,94 @@
+{
+  "recordedAt": "2026-10-07T00:21:42.220722+00:00",
+  "kind": "K01_RETENTION_PLANNING_INTAKE",
+  "baseMain": "02c7794448d21b3a25492411cdb0aa13778bebdf",
+  "sourceHead": "67e9c37190ad598cc24df846cb0f6bcded6cc297",
+  "designReviewTarget": "fd02eb63d0e01d51c390dc5dcf5df8078a6f0063",
+  "designManifestVerified": true,
+  "files": [
+    {
+      "path": "plans/k01-knowledge-sources/plan.md",
+      "bytes": 6714,
+      "sha256": "d0a734276523780ea94349c962906320f4930ee4715efcfc2cab7eeeac0556ad"
+    },
+    {
+      "path": "plans/k01-knowledge-sources/status.md",
+      "bytes": 10698,
+      "sha256": "044609464667c7efed3ad1b84329366d6745d86cbf1d3f149ffa30f07cecdf2d"
+    },
+    {
+      "path": "plans/k01-knowledge-sources/review.md",
+      "bytes": 3445,
+      "sha256": "76524866d9cd80fb9ddc4d94ae7c5be0457374a8ab0d1d8d98d046f706ed4b79"
+    },
+    {
+      "path": "docs/evidence/k01/retention-design.md",
+      "bytes": 13543,
+      "sha256": "912d76bbd2b4984e10c4bc2e8e9764daed59cca965a1f46a5f7570fbee5a6040"
+    },
+    {
+      "path": "docs/evidence/k01/retention-planning-inputs.json",
+      "bytes": 5856,
+      "sha256": "67aff87a631986449ab4f44638f579d3ddd7cfce22e6d6d17b2de6fbcd90f166"
+    },
+    {
+      "path": "docs/evidence/k01/retention-planning-manifest.json",
+      "bytes": 1592,
+      "sha256": "bb8a9ae09a45f8f2f1f95f932a3c6661f31453c84f3a6deea48a972efbe0e61d"
+    },
+    {
+      "path": "docs/evidence/k01/retention-independent-review.json",
+      "bytes": 1504,
+      "sha256": "e6e0b1baab226236140246e790867f03c468d4a51356b039537aa3226b942e99"
+    },
+    {
+      "path": "docs/evidence/k01/retention-planning-dashboard.json",
+      "bytes": 275,
+      "sha256": "4a9565d74d96e1be7d63760735bf3344021ba7e4c06c0d3fb3a4fd0c16d8ceaf"
+    },
+    {
+      "path": "docs/evidence/k01/retention-plan-claim-receipt.json",
+      "bytes": 583,
+      "sha256": "d0eeaf2d007b36074246450a0734a61ecc6e185f1c01fe14071d6c79dae3869e"
+    },
+    {
+      "path": "docs/evidence/k01/quality.md",
+      "bytes": 4840,
+      "sha256": "f9779e5f5a41f046019871dbdb4da78a28dcfaf80d7125927597ce554378207d"
+    },
+    {
+      "path": "docs/evidence/k01/main-receipt.json",
+      "bytes": 3145,
+      "sha256": "abd17a8e66726999ce561560d1081455cd06c338336949dacc052aa4afa2fa46"
+    },
+    {
+      "path": "docs/evidence/k01/main-dashboard-receipt.json",
+      "bytes": 9348,
+      "sha256": "96715e2fc32563eb953cf29fb1da4119fcdab4d51cb83bcff075b76a17651c5b"
+    }
+  ],
+  "metadataDeltaReview": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "outcome": "APPROVED_DOCS_DELTA_ONLY",
+    "scope": "fd02 -> c587 -> 21db -> 67e9; original 3 design files unchanged",
+    "findings": [],
+    "nonblocking": "plan historic REQ-10 wording versus current status K01 hierarchy; status is current authority; do not mutate reviewed target"
+  },
+  "supportingHistory": "2 original main receipts unchanged from planning base a837e68c; needed by status links, not a new product approval",
+  "sourceProtection": "Only plan/status/review/quality and retention/supporting evidence; old K01 branch product blobs not copied; current K02/K03 source retained",
+  "remaining": [
+    "K01-08/09/10 pending",
+    "K01-R01..R12 NOT_RUN",
+    "flow.commands lifecycle dependency open",
+    "No actual retention/schema/data changes"
+  ],
+  "checks": [
+    "fixed source byte/hash match",
+    "all document links exist",
+    "git diff --check",
+    "no product source delta"
+  ],
+  "engineeringTests": 0,
+  "pgOperations": 0,
+  "modelCalls": 0
+}

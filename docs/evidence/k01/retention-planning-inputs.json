@@ -1,0 +1,152 @@
+{
+  "recordedAt": "2026-10-07T00:13:15.118452+00:00",
+  "kind": "read-only planning input; no engineering checks or PG test",
+  "fixedSourceCommit": "c3ba1adfe9374b80a955d45e20310f000fed0310",
+  "authoritativeWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+  "branch": "codex/knowledge-source-store",
+  "headBeforePlanning": "a837e68c419930f96ffe2fa71672eaa9c750c8ba",
+  "dirtyBefore": false,
+  "sourceReadMethod": "git show fixedCommit:path; original branch not merged/rebased",
+  "sourceFiles": [
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+      "bytes": 4414
+    },
+    {
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1",
+      "bytes": 2406
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21",
+      "bytes": 10068
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42",
+      "bytes": 3360
+    },
+    {
+      "path": "apps/server/src/knowledge/index.ts",
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7",
+      "bytes": 3782
+    },
+    {
+      "path": "apps/server/src/knowledge/knowledge.test.ts",
+      "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e",
+      "bytes": 21935
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e",
+      "bytes": 6621
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6",
+      "bytes": 14160
+    },
+    {
+      "path": "apps/server/src/goal-context/store.ts",
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c",
+      "bytes": 11740
+    },
+    {
+      "path": "apps/server/src/context-transparency/projection.ts",
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850",
+      "bytes": 5685
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "bytes": 9794
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "bytes": 6621
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "bytes": 7580
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "bytes": 3520
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "bytes": 14330
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "bytes": 53156
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "794fa1d0b553c323fd097f1fc1549d70b74d9a58b474585861b3caeed7acfea7",
+      "bytes": 15502
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3",
+      "bytes": 3497
+    },
+    {
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f",
+      "bytes": 2167
+    }
+  ],
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "cleanCodeSource": {
+    "repository": "https://github.com/sickn33/agentic-awesome-skills",
+    "commit": "bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5",
+    "installation": "existing local; no installation/update"
+  },
+  "collaboratorInputs": [
+    {
+      "from": "Mika lead",
+      "facts": "K02 lock order command then conversation, resolver only reads project; K03 project lock; legacy receipts already expose identity; source publication v16 may become unprotected old head after proposed new head."
+    },
+    {
+      "from": "chatui01_owner",
+      "facts": "Additional hard 16 in context-transparency/projection; ACK rejects head17 even citation1; knowledge GET typed transport is not codec validation; history detail depends on knowledge_sources head; knowledgeContext is boolean only."
+    }
+  ],
+  "constraints": {
+    "productWrites": false,
+    "engineeringTests": "NOT_RUN",
+    "pgProductDatabaseAccess": false,
+    "sourceHistoryMutations": false,
+    "cloudOrModels": 0
+  },
+  "lookupCorrection": "No packages/client/src/knowledge.ts exists at fixed source; actual methods are packages/client/src/index.ts:190-215."
+}

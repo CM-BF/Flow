@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-07T00:16:59.267415+00:00",
+  "target": "fd02eb63d0e01d51c390dc5dcf5df8078a6f0063",
+  "kind": "planning documents only",
+  "scope": [
+    {
+      "path": "plans/k01-knowledge-sources/plan.md",
+      "sha256": "d0a734276523780ea94349c962906320f4930ee4715efcfc2cab7eeeac0556ad",
+      "bytes": 6714
+    },
+    {
+      "path": "docs/evidence/k01/retention-design.md",
+      "sha256": "912d76bbd2b4984e10c4bc2e8e9764daed59cca965a1f46a5f7570fbee5a6040",
+      "bytes": 13543
+    },
+    {
+      "path": "docs/evidence/k01/retention-planning-inputs.json",
+      "sha256": "67aff87a631986449ab4f44638f579d3ddd7cfce22e6d6d17b2de6fbcd90f166",
+      "bytes": 5856
+    }
+  ],
+  "sourceBaseline": "c3ba1adfe9374b80a955d45e20310f000fed0310",
+  "worktreeBase": "a837e68c419930f96ffe2fa71672eaa9c750c8ba",
+  "productValidation": "NOT_RUN",
+  "engineeringTestsRun": 0,
+  "productPgOperations": 0,
+  "modelCalls": 0,
+  "historicalAcceptance": "Original K01 ea0c4cba 31 distinct checks and historical fb906 main receipt preserved; no new product approval claimed.",
+  "review": "NOT_STARTED",
+  "authorDocumentChecks": [
+    "All document links resolve.",
+    "git diff --check passes.",
+    "Only approved plan/evidence scopes changed; original product source untouched.",
+    "4096 lifetime receipt cap rejected during pre-review; command lifecycle remains explicit cross-module dependency.",
+    "Capacity must not prevent safe release; release ACK retry retains same key/body/protocol.",
+    "Holder instance identity is not reusable; old release cannot affect a later pin."
+  ]
+}
