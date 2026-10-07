@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:08:30.543Z |
+| 更新时间 | 2026-10-07T05:14:40.361Z |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | Web独立宿主选择已进入主线；新产物的真实构建与内部加载已获独立批准。正在准备只启动网页角色的隔离验收，个人服务未改变。 |
-| 下一可用交付 | 交付隔离网页宿主的固定运行入口，再等待共享数据库窗口；个人采用另行验证。 |
-| 当前阻塞 | NONE |
+| 当前产出 | Web独立宿主选择和新产物结果已进入主线；只启动网页角色的隔离验收入口已获独立批准，实际运行待共享窗口。个人服务未改变。 |
+| 下一可用交付 | 完成一次隔离网页宿主的实际启动、静态文件读取与受控收尾；个人采用另行验证。 |
+| 当前阻塞 | ACTIVE: 等待共享数据库运行窗口；固定入口已审，个人采用仍是后续独立验收 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
@@ -96,3 +96,7 @@
 本次parseStatus首次调用遗漏登记taskId而返回标题不符，属调用参数错误；指定SVC08后errors/human missing均[]，不改parser/标题。仅node --check、Python ast.parse与列明输入/resolve核对，0产品运行。
 
 隔离宿主entry固定 `c8542aee8354fcfcdd6fb68aac5279d108548d4b`，[manifest](../../docs/evidence/svc08/flow-host-artifact/web-host-once/manifest.json)绑定5个entry/input、12个固定直接源与现存工具/包入口/产物/Web材料；真实host/PG仍NOT_RUN，等待唯一独审及共享窗口。实际构建结果主线回执ee98保持，未重测build/import。
+
+## 2026-10-07T05:14:40.361Z：隔离Web宿主入口独审接收
+
+唯一Execution Lead批准APPROVED_FIXED_ISOLATED_WEB_HOST_PREPARATION，target c8542aee8354fcfcdd6fb68aac5279d108548d4b，delivery51f67dde71339ad3bdd598eb105652813f469e35；[原件](../../docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-independent-review.json) SHA d0cd1633620e53332d8f190b79253a84f3831efb699e1013b4834ff65923d607。完整真实调用链与38bindings一致，无P1/P2；不扩成实际host通过，当前未copy/PG/启动Web。原fixed input与120+30/2.5GiB/live1GiB/578MiB保留，等待Lead真实窗口交接。
