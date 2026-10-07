@@ -1,0 +1,334 @@
+{
+  "decision": "APPROVED",
+  "scope": "Final DPERF04 fixed composition, existing source/actual review chain, and exact nonmetadata archive closure",
+  "recordedAt": "2026-10-07T09:35:42.311491+00:00",
+  "reviewer": "/root GPT-6 Astra Ultra",
+  "reviewTargetCommit": "bc6126278c13e8c355d704dd3c371417331026b2",
+  "productTarget": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "productionTarget": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "observedHead": "bc6126278c13e8c355d704dd3c371417331026b2",
+  "dirty": "",
+  "manifest": {
+    "path": "docs/evidence/wpf-dperf04/reentry-20261007/final-composite-source-closure.json",
+    "sha256": "f856f9601bab30253b478ea5b5bfafd5e1a7c816f25a2e4f69eca84920377f3d"
+  },
+  "exactScopes": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff",
+    "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py"
+  ],
+  "verifiedFiles": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+      "bytes": 9470
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+      "bytes": 6710
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+      "bytes": 5890
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "bytes": 38207
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+      "bytes": 16447
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+      "bytes": 34832
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+      "bytes": 14087
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+      "bytes": 18159
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+      "bytes": 11227
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "bytes": 7687
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "bytes": 6064
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "bytes": 1315
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8840
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "bytes": 10492
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff",
+      "sha256": "9f610c7246fccab1290acd1856fbe751bdd7551af8aead54d0a27056407ad21c",
+      "bytes": 11753,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb",
+      "sha256": "b63b6ae3d6a83362d11694bb042597ae33036db57c1b75b3767f9fe44a84249a",
+      "bytes": 451,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff",
+      "sha256": "236e975bdfbcb56baf8fc7eb6f7e95d814879476da166b02f6ebef98bb408b6c",
+      "bytes": 10081,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py",
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+      "bytes": 26445,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "bytes": 8979,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff",
+      "sha256": "9f610c7246fccab1290acd1856fbe751bdd7551af8aead54d0a27056407ad21c",
+      "bytes": 11753,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb",
+      "sha256": "9f2ffb2efffbffa8b24325fff70477db8804566348185f92ce7068cfbe409de6",
+      "bytes": 456,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff",
+      "sha256": "236e975bdfbcb56baf8fc7eb6f7e95d814879476da166b02f6ebef98bb408b6c",
+      "bytes": 10081,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py",
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+      "bytes": 26445,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "bytes": 8979,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff",
+      "sha256": "9f610c7246fccab1290acd1856fbe751bdd7551af8aead54d0a27056407ad21c",
+      "bytes": 11753,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb",
+      "sha256": "c57d26c331bdf4147f77ee4aae80dcce8755d97285b1303ae6fbb90d407e650c",
+      "bytes": 457,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff",
+      "sha256": "236e975bdfbcb56baf8fc7eb6f7e95d814879476da166b02f6ebef98bb408b6c",
+      "bytes": 10081,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py",
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+      "bytes": 26445,
+      "provenance": "Byte-preserved run archive; original path+hash in sibling index.json; supervisor/helper approved by root-followup-source-review.json. .sb generated original run boundary; .diff unexecuted exact comparison evidence."
+    }
+  ],
+  "closure": {
+    "productPinsUnchanged": 16,
+    "additionalNonmetadataExact": 14,
+    "changedSinceProductTarget": 99,
+    "allOtherChangesRecognizedMetadata": true,
+    "proofParserUnchanged": true,
+    "indexedArchiveEntriesExact": 78,
+    "sameAsRetainedLiveOriginal": 75,
+    "historicalBudgetSnapshots": [
+      {
+        "archive": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent-budget.json",
+        "sha256": "00ed6d6f2b5cb6a5b5cc377e5cf03b67917e4aed20469b644499d713ccd60ad4",
+        "meaning": "Historical parent-observed budget before conservative outer charge. Original shared phase file has legitimately advanced; indexed snapshot remains exact."
+      },
+      {
+        "archive": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent-budget.json",
+        "sha256": "c3be7544dd06ef21821ed0e42fed55fe2ebb4259492b0e06b591b98e43389dc8",
+        "meaning": "Historical parent-observed budget before conservative outer charge. Original shared phase file has legitimately advanced; indexed snapshot remains exact."
+      },
+      {
+        "archive": "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent-budget.json",
+        "sha256": "6d8699f795e1ab19979631404b8deb29bd417b9cb2db0978fc66063682ffffc2",
+        "meaning": "Historical parent-observed budget before conservative outer charge. Original shared phase file has legitimately advanced; indexed snapshot remains exact."
+      }
+    ]
+  },
+  "reviewChain": [
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json",
+      "bytes": 4378,
+      "sha256": "c9901a2a94f189bdfa13a5969177229f955c765b238ed4c7d7d1c2f8c65fa398",
+      "decision": "APPROVED_COMPOSED_SOURCE_AND_BOUNDED_DIRECT_VALIDATION_NOT_RUNTIME_OR_BROWSER_PASS"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json",
+      "bytes": 3245,
+      "sha256": "ada66d6183091f5d3d7d17dfc78bed0d1a8e5cdc114ab7e6a1385e752f0d3448",
+      "decision": "ACCEPTED_COMPOSED_DIRECT_NODE_ACTUAL_AND_OWNED_CLEANUP_NOT_BROWSER_MAIN_OR_DEPLOYMENT"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json",
+      "bytes": 11308,
+      "sha256": "ec29cd47dd519b9ecc21982d9c3a8894804c5aed405a941e5eec04bd31612846",
+      "decision": "SCOPED_BEHAVIOR_ACTUAL_ACCEPTED_VISUAL_FOLLOWUP_OPEN"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json",
+      "bytes": 16108,
+      "sha256": "1c4c023445e9cdd4b3b8340b905b3a90a1cbe351a25862863a214f61f0fddc55",
+      "decision": "TIMING_SCOPED_ACTUAL_ACCEPTED_PRODUCT_STALE_CLOSE_FIX_ACCEPTED"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-followup-source-review.json",
+      "bytes": 4357,
+      "sha256": "04222d07e01db258ac5ef36dc5a627526f7fab54e9f405913fe8960b723a19e9",
+      "decision": "ACCEPTED"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json",
+      "bytes": 10597,
+      "sha256": "42b502d187a078b3fcfdac751c20024250e391906a5d5d1063010900bac9e2cc",
+      "decision": "ACCEPTED_SCOPED"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json",
+      "bytes": 10831,
+      "sha256": "ce7958c7d6445f60b24de2661a94f8ef8d2150284a7752311a52d5548654724e",
+      "decision": "ACCEPTED_SCOPED"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json",
+      "bytes": 11175,
+      "sha256": "67739d46aa55687a32aa9aed69521cf5989b81ca955f49dad07080dfabdd7649",
+      "decision": "ACCEPTED_SCOPED"
+    }
+  ],
+  "acceptedChecks": {
+    "node": {
+      "target": "cfd5a53323438709843828d74cab67502801060c",
+      "counts": "9 leaf + 1 parent, exit0",
+      "rerun": false
+    },
+    "browserGroups": {
+      "summary": 9,
+      "taskLinks": 6,
+      "timing": 5,
+      "access": 5,
+      "timingVisual": 1,
+      "linksVisual": 1
+    },
+    "followupPng": 5,
+    "originalFailures": "Preserved, no retrospective causal claim",
+    "allActualGroupsAndScratchClosed": true,
+    "followupSpentMs": 20383,
+    "followupUnusedMs": 24617,
+    "oldPhaseSpentMs": 40551,
+    "oldPhaseUnusedMs": 19449,
+    "bothPhasesClosed": true,
+    "allBrowserActualMs": 60934
+  },
+  "visualMeaning": "Original six of seven summary/link images remain accepted; old anomaly is retained with unknown cause. New five ACCESS/timing/home images were independently viewed and scoped accepted. No retrospective claim that the old anomalous image passed.",
+  "findings": {
+    "blocking": [],
+    "remainingWithinFixedSourceScope": []
+  },
+  "cleanCode": {
+    "scope": "Source preservation, actual evidence, archive provenance and current/historical navigation",
+    "result": "No new behavioral source after98baf. All14 nonmetadata files are exact reviewed supervisor/helper/sandbox/diff evidence, explicitly scoped instead of hidden under metadata extensions. Historical navigation now distinguishes old claims; final closure is independently approved.",
+    "runtime": "No runtime or tests were repeated for this metadata/archive closure."
+  },
+  "notProven": [
+    "Current-main merge or deployment",
+    "Live registry185/4320 performance",
+    "Actual personal installation/credential access",
+    "Public helper scratch adoption or second independent caller",
+    "Unique cause of historical screenshot anomaly"
+  ],
+  "handoff": "Original Execution Lead alone integrates current main. Author may record this exact final target and30scopes, archive this JSON, update canonical plan/status/review, perform bounded parser/link/proof validation, then stop. No new product write, rerun or claim expansion. Normal pending main intake is not a product-check failure."
+}

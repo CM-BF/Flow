@@ -1,0 +1,72 @@
+{
+  "state": "SOURCE_BOUND_NOT_RUN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "implementation": "cfd5a53323438709843828d74cab67502801060c",
+  "head": "b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "39fb148d39270d48e5174661894334146a9270c4fdbbe8d0791dabe73eafaf29",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "63b130ab7ae12560a972ef192bc2f8c362df032f6812da0a3d71d627c71642a0",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "62912f7dece3c730e2cc466101f98cb1e04adf3a0a81ec7c37f19a8260872fea",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "4266ca04c228ef574dbf0b4f2dd9a688e56b8c6abc387ac9c7cc0ba49a959dc8",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "readOnlyDependencies": {
+    "apps/execution-dashboard/src/human.mjs": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+    "apps/execution-dashboard/src/task-links.mjs": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+    "apps/execution-dashboard/src/registry.mjs": "76695b62e820b645ccf2dc764e61bf4c2638060d8416537174f3e4cca059e6e5",
+    "apps/execution-dashboard/src/proof.mjs": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+    "apps/execution-dashboard/src/git-snapshot.mjs": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+    "apps/execution-dashboard/src/documents.mjs": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+    "apps/execution-dashboard/src/coordination/ledger.mjs": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+    "apps/execution-dashboard/test/fixture.mjs": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+    "apps/execution-dashboard/public/styles.css": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+    "apps/execution-dashboard/public/architecture-data.js": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+    "package.json": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+    "pnpm-lock.yaml": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+  },
+  "expectedTestCount": 10,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "claim": {
+    "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "scopeCount": 11,
+    "worker": "w01_owner"
+  },
+  "commandArgs": [
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "finalReportReserveBytes": 131072,
+    "pollSeconds": 0.25
+  },
+  "previousRuntimeMs": 0,
+  "preparedAt": "2026-10-07T08:21:50.096312+00:00",
+  "boundary": "New composition phase; one 9 leaf + parent direct file, no PG/Chrome; original 3950ms immutable historical charge. Root c990 source approval and one-local handoff.",
+  "historicalRuntimeMs": 3950
+}

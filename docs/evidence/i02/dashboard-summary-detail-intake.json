@@ -1,0 +1,113 @@
+{
+  "kind": "flow.i02.fixed-composite-intake.v1",
+  "at": "2026-10-07T10:04:54.824546+00:00",
+  "mainBefore": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a",
+  "target": "bc6126278c13e8c355d704dd3c371417331026b2",
+  "delivery": "9f54e32bf3740122e30d6bdcb6e3754504585341",
+  "product": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+      "bytes": 9470,
+      "preimage": null
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+      "bytes": 6710,
+      "preimage": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+      "bytes": 5890,
+      "preimage": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "bytes": 38207,
+      "preimage": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+      "bytes": 16447,
+      "preimage": null
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+      "bytes": 34832,
+      "preimage": null
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+      "bytes": 14087,
+      "preimage": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+      "bytes": 18159,
+      "preimage": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+      "bytes": 11227,
+      "preimage": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0"
+    }
+  ],
+  "readOnlyInputsPreserved": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "bytes": 7687
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "bytes": 6064
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "bytes": 1315
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8840
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "bytes": 10492
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    }
+  ],
+  "review": "docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json",
+  "reviewClosure": {
+    "bindings": 30,
+    "allHashBytesFixedCurrentEqual": true
+  },
+  "integrationDeltaReview": "assignment_review independently confirmed all nine preimages and seven read-only inputs unchanged; registry remains current194",
+  "ownArchivePaths": 307,
+  "validation": "Reuse existing final source/actual approved evidence; no changed direct input or manual conflict, no engineering/browser rerun. Actual serving observation follows main deploy.",
+  "limits": [
+    "No real194source performance measurement",
+    "No claim of personal service update",
+    "Only own9products and ownplan/evidence; seven readonly inputs not written"
+  ]
+}

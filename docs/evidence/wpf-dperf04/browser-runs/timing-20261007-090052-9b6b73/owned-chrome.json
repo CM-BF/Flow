@@ -1,0 +1,77 @@
+{
+  "parentPid": 13324,
+  "chromePid": 13747,
+  "pgid": 13747,
+  "processGroup": "separate-parent-owned-session",
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "argv": [
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--headless=new",
+    "--no-first-run",
+    "--no-default-browser-check",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--disable-sync",
+    "--remote-debugging-port=0",
+    "--remote-debugging-address=127.0.0.1",
+    "--user-data-dir=/private/tmp/dperf-consumers/scratch/profile",
+    "--disk-cache-dir=/private/tmp/dperf-consumers/scratch/cache",
+    "about:blank"
+  ],
+  "temp": {
+    "TMPDIR": "/private/tmp/dperf-consumers/scratch/temp",
+    "TMP": "/private/tmp/dperf-consumers/scratch/temp",
+    "TEMP": "/private/tmp/dperf-consumers/scratch/temp",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/dperf-consumers/scratch/temp",
+    "XDG_CACHE_HOME": "/private/tmp/dperf-consumers/scratch/cache",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/dperf-consumers/scratch/crash"
+  },
+  "spawnAttemptedAt": "2026-10-07T09:00:52.632004+00:00",
+  "spawnReturnedAt": "2026-10-07T09:00:52.649453+00:00",
+  "cdpPortDiscoveredAt": "2026-10-07T09:00:57.360135+00:00",
+  "exit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-07T09:01:01.276209+00:00",
+    "beforeCdpPort": false
+  },
+  "close": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-07T09:01:01.279638+00:00",
+    "beforeCdpPort": false,
+    "meaning": "Parent observed direct-child exit plus both captured pipe EOFs; not a Node close event"
+  },
+  "launchError": null,
+  "signals": [
+    {
+      "signal": "SIGTERM",
+      "at": "2026-10-07T09:01:01.241813+00:00",
+      "target": "owned-chrome-pgid"
+    }
+  ],
+  "streams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 6433,
+      "keptBytes": 6433,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 266,
+      "keptBytes": 266,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "cdpEndpoint": "http://127.0.0.1:64634"
+}

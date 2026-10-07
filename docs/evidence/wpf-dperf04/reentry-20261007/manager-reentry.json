@@ -1,0 +1,161 @@
+{
+  "recordedAt": "2026-10-07T08:05:50.397621+00:00",
+  "task": "WPF-DPERF04",
+  "state": "ACCESS_RELEASE_DEPENDENCY_CLOSED_PENDING_OWN_AMEND_AND_COMPOSITION",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "head": "929b706a3bffcc94e31aba32467f88038bd6ea18",
+  "clean": true,
+  "freshClaim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-summary-detail",
+    "origin": "new",
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner",
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "createdAt": "2026-10-06T16:10:21.626Z",
+    "updatedAt": "2026-10-07T02:54:43.654Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "additionalCandidateScope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ],
+  "proposedScope": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "docs/evidence/wpf-dperf04",
+    "plans/wpf-dperf04-summary-detail",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ],
+  "newWriteAuthority": false,
+  "access": {
+    "head": "cb0dca62d20a3e4b8d91699190a94a7704ffc19b",
+    "headSource": "root relayed originalowner actualremoteequal/clean finalreceipt",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/README.md",
+        "docs/evidence/wpf-dashboard-local-access",
+        "plans/wpf-dashboard-local-access"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-local-access",
+      "origin": "new",
+      "taskId": "WPF-DASHBOARD-ACCESS01",
+      "worker": "workspace_panels_owner",
+      "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "createdAt": "2026-10-07T02:52:33.082Z",
+      "updatedAt": "2026-10-07T08:01:16.565Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "committedReceipt": "access-partial-receipt.json",
+    "remaining": "README + ownplan/evidence only; seven product/test paths explicitly removed, not whole task released"
+  },
+  "fixedInputCandidate": {
+    "main": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+    "fourCurrentMainPins": [
+      {
+        "commit": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "bytes": 4446,
+        "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff"
+      },
+      {
+        "commit": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+        "path": "apps/execution-dashboard/public/app.js",
+        "bytes": 22669,
+        "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945"
+      },
+      {
+        "commit": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+        "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "bytes": 10811,
+        "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+      },
+      {
+        "commit": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+        "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+        "bytes": 9875,
+        "sha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0"
+      }
+    ],
+    "olderReadonlyProposal": {
+      "path": "/private/tmp/dperf04-resume-readonly-z01ev4fu/report.md",
+      "bytes": 9820,
+      "sha256": "795197e86f45fe41a8ce59cb3d013f2af5ad08e27e5a754ffe3f3e39bef68400"
+    },
+    "meaning": "Current four main inputs may be safely composed after fresh exactamend. Oldproposal fixedc0e is historical; keep currentACCESS/TIMING behavior, never copyold929server/app or resetdirty worktree.",
+    "oldTreeComparison": [
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "existsInOldTree": true,
+        "currentMainSha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+        "oldTreeSha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994",
+        "matchesCurrentMain": false
+      },
+      {
+        "path": "apps/execution-dashboard/public/app.js",
+        "existsInOldTree": true,
+        "currentMainSha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+        "oldTreeSha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+        "matchesCurrentMain": false
+      },
+      {
+        "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "existsInOldTree": false,
+        "currentMainSha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+      },
+      {
+        "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+        "existsInOldTree": false,
+        "currentMainSha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0"
+      }
+    ],
+    "supplyGap": "Four exact currentmain targets differ/missing as listed; old feature cannot copyoldserver/app. After freshamend, originalowner composes ACCESS+TIMING interfaces into oldsummary/detail in same tree; exactread-only parser/ACCESS fixture dependencies and resolverclosure must be identified by owner beforechecks, not implied from fourtargetpins. No reset/main/sharedconfig/install granted."
+  },
+  "composition": [
+    "Preserve handleLocalAccess before generic GET-only route, private provider out of summaries/logs.",
+    "Summary only status declarations; detail fetches Git/review/proof on demand, original snapshot remains explicit compatibility.",
+    "Preserve generatedAt and independent detail-time observationcontext, unknown/stale and openedDOM/focus/selection across summaryrefresh.",
+    "Adapt timing/access fixtures with synthetic assignment observer and matching summary routes; no accidental realPG or removal of original assertions."
+  ],
+  "next": "W01 originalowner fresh CAS amend only four additional literals at currentversion, after conflictcheck; precisecurrentmain source supply/composition in originalfeature tree without reset/sharedGitconfig. Then bounded implementation/checks on affecteddirectconsumer, not new feature or runtimegrant here.",
+  "protected": [
+    "status.mjs",
+    "human/proof/ledger/registry",
+    "CSS/index",
+    "ACCESS provider/UI",
+    "dependencies/lock"
+  ],
+  "permission": "ACCESS partial removal ends that blocker; not permission for anotherwriter. Other concurrent claims must be fresh checked by originalowner at amendment."
+}

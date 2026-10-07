@@ -1,0 +1,73 @@
+{
+  "result": "APPROVED_SOURCE_SCOPED_PENDING_POPULATED_BINDING_REVIEW",
+  "target": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "base": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "metadataObserved": "032b4418f5a944150b888e10fef342b64f3e3655",
+  "dirty": "",
+  "sourceFiles": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 8802,
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6686,
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 33937,
+      "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 12804,
+      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 33817,
+      "sha256": "6d62172461fbde892168bfe296c5cd79538e36258da79717a79cc933286dfb6d"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 10845,
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+    }
+  ],
+  "supervisorDraft": {
+    "path": "/private/tmp/dperf04-browser-preparation/supervisor.py",
+    "bytes": 10938,
+    "sha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+    "state": "NOT_RUN; revised draft awaiting fixed review and per-entry binding/sandbox",
+    "delta": "Adds child gate playwrightSha256 from the pinned readOnlyFiles entry; no other intended change",
+    "deltaExactComparedToReviewedSha256": "03e72da4f38ba5c4935dc1c318f9e1eb209f4e1c6d59c042c4b9328a5478adb9"
+  },
+  "blockingFindings": [],
+  "preservation": [
+    "Six other sources byteequalabd2; summaryFixture and summaryChecks/main bodies unchanged; task-links wholefile unchanged",
+    "All code changes limited to shared browser wrapper/imports; only claimed own metadata changed elsewhere",
+    "Supervisor differs from prior reviewed03e72 only by pinned Playwright entry SHA field; no run/import/syntax execution"
+  ],
+  "reviewed": [
+    "Parent starts monotonic deadline before setup and remains sole cumulative60s budget writer; child validates parentPID/entry/time equations/exact scratch-output/source identity",
+    "Chrome inherits worker group and child signals its owned ChromePID only; parent retains groupTERM/KILL/reap/absence then scratch deletion",
+    "Child startup/work observes parent absolute time; parent gate/source/dependency pins/sandbox/scratch64MiB/retained8MiB/log1MiB monitoring remain",
+    "Playwright absolute realpath and entrydigest checked before dynamic import; parent exact readOnlyFiles digest supplies field",
+    "Child records chrome PID immediately and separately reports PIDexit/serverClosed/fixtureRemoved; parent additionally validates report and actual group/scratch absence",
+    "All failure paths remain failed; incomplete child report cannot pass parent; no child write competes for browser-budget.json"
+  ],
+  "requiredBeforeRun": [
+    "Separate peer source review, unique per-entry directory and reviewed populated binding/read-only manifest/rendered sandbox",
+    "New fresh resource/window gate for exactly one entry, precise previous budget hash and cumulative allowance; no auto-run task-links after summary-detail",
+    "Actual Chrome nested-sandbox startup/childgroup behavior/profile size and both browser behavioral checks unverified",
+    "Historical Node8PASS remains exactabd2 runtime target; no unchanged Node rerun warranted"
+  ],
+  "cleanCode": "Reviewed lifecycle and budget single ownership, bounded waits, cleanup facts and source identity; no concrete blocking delta. Internal browser close/fixture cleanup can still stall, but parent owns final deadline/group cleanup and missing report fails closed."
+}

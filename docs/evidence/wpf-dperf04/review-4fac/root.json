@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-06T16:27:55.302466+00:00",
+  "reviewer": "root independent fixed-source reviewer",
+  "target": "4facd052c25e63ea300f72ea46c03c51fb983980",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "state": "CHANGES_REQUESTED",
+  "reviewScope": "Full three server/read model sources and focused client paths for two concrete findings; client/test peer review separate. No runtime.",
+  "findings": [
+    {
+      "id": "DPERF04-RAW-SCOPE",
+      "priority": "P2",
+      "origin": "Owner self-review; independently confirmed by root fixed input.mjs and app.js",
+      "path": "apps/execution-dashboard/public/app.js",
+      "lines": "17,37-49,226",
+      "trigger": "A legal literal claim scope starts with # or - or contains a backtick. input.mjs literalScope:26-32 does not prohibit these bytes.",
+      "actual": "assignmentFacts sends every fact through addFact -> plain, stripping markdown-looking characters. The exact scope field shows a different path. This affects registered and unregistered shared fact renderers.",
+      "required": "Render assignment values verbatim via textContent, retaining escaping without Markdown cleanup. Keep ordinary authored Markdown summaries separate. Add a meaningful legal literal scope case in browser fixture."
+    },
+    {
+      "id": "DPERF04-REFRESH-READING",
+      "priority": "P2",
+      "origin": "Panels independent review; root independently confirmed named fixed paths",
+      "path": "apps/execution-dashboard/public/app.js",
+      "lines": "164-172,191-217,251-262,359",
+      "trigger": "User opens task plan/document and focuses or reads its text; the visible-page20s timer refreshes even with identical summary bytes.",
+      "actual": "refresh unconditionally invalidates detail/document and rebuilds the detail shell before and after response. The open document is hidden and focused document/navigation controls may be removed; no corresponding focus/read context preservation occurs.",
+      "required": "Keep reading context and stable focus during automatic synchronization. Proof freshness can be explicitly invalidated without closing current document. Source changes must mark retained content historical and offer deliberate refresh; reject stale in-flight results. Verify open plan/focused body through automatic refresh with unchanged and changed source, preserving document/scroll/selection where applicable."
+    }
+  ],
+  "serverSourceAssessment": {
+    "blockingFindings": 0,
+    "facts": [
+      "Live summary reads registered status only at concurrency8; missing source uses explicit bounded Git fallback; no top-level PG import. Summary declarations and status-source relationship basis stay separate from not-loaded onsite proof.",
+      "Status parsing/issues are shared; full snapshot retains Git checks, proof and original relationships. Selected detail only schedules selected task/main and binds before, actual-used and after status digests; matched does not claim atomic filesystem snapshot.",
+      "Assignment observer is independent and dynamically loads original ledger, catches import/observer errors as unknown; original PG mutation authority is not changed.",
+      "Server registers read-only GET routes, known task IDs, original document/static/Host/CSP/no-store behavior. In-flight promises are independently shared and cleared after success/error; no completed proof cache or cancelled shared job from one client disconnect."
+    ],
+    "limits": [
+      "Source inspection is not evidence of measured latency, first paint or exact runtime call counts.",
+      "Peer is separately auditing client sequencing and test coverage; full approval awaits the fixes and actual bounded checks."
+    ]
+  },
+  "sourceManifest": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "sha256": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "688998b3d8376fc9f68d8fc0e33c795a3463710a9e3fda66ae4ca1807e01f3b2"
+    }
+  ],
+  "allSevenManifestBlobsVerified": true,
+  "protectedDiffEmpty": true,
+  "validation": "NOT_RUN. Node entry requires external30s budget supervisor including5s cleanup, monitoredtmp8MiB/log2MiB, own loopback only and explicit synthetic assignment observer. Browser remains separate cumulative60s/15cleanup and fresh resource gate.",
+  "cleanCode": "Existing local clean-code/codebase-design method reused: shared parsing with explicit DTO/proof authority is sound; findings concern lossy presentation boundary and overly broad lifecycle invalidation, not stylistic refactoring. Preserve deep module boundaries and make minimal in-scope fixes."
+}

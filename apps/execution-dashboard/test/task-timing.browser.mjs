@@ -1,5 +1,8 @@
+import { pathToFileURL } from 'node:url';
+import { runBrowserCheck } from './summary-detail.browser.mjs';
 import assert from 'node:assert/strict';
 import http from 'node:http';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseStatus } from '../src/status.mjs';
@@ -34,21 +37,45 @@ function task(id, fields, overrides = {}) {
 
 export async function createTaskTimingFixture() {
   let state = { fields: {}, task: {}, generatedAt: observedAt, fail: false };
+  let readId = 0;
+  const registryFingerprint = 'isolated-timing-fixture';
   const assets = new Map([
     ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']], ['/styles.css', ['styles.css', 'text/css']],
+    ['/local-access.js', ['local-access.js', 'text/javascript']], ['/local-access.css', ['local-access.css', 'text/css']],
     ['/architecture.js', ['architecture.js', 'text/javascript']], ['/architecture-data.js', ['architecture-data.js', 'text/javascript']], ['/architecture.css', ['architecture.css', 'text/css']],
   ]);
   const server = http.createServer(async (request, response) => {
     try {
       const url = new URL(request.url, 'http://fixture.invalid');
-      if (url.pathname === '/api/snapshot') {
-        if (state.fail) { response.writeHead(503); response.end('fixture snapshot unavailable'); return; }
+      if (['/api/summary', '/api/task', '/api/assignments', '/api/snapshot'].includes(url.pathname)) {
+        if (state.fail) { response.writeHead(503); response.end('fixture observation unavailable'); return; }
         const tasks = [task('T01', state.fields, state.task), task('T02', { '任务完成时间': '2026-10-07T02:30:00Z', '任务时间来源': '开工：fixture-start；完成：fixture-done' })];
+        const overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
+        const digest = value => createHash('sha256').update(JSON.stringify(value.status)).digest('hex');
+        const common = { version: 1, readId: String(++readId), registryFingerprint, generatedAt: state.generatedAt, startedAt: state.generatedAt, completedAt: state.generatedAt };
+        let body;
+        if (url.pathname === '/api/summary') body = { ...common, kind: 'summary', overview, tasks: tasks.map(value => {
+          const { waiting, ...timing } = value.status.timing;
+          return { id: value.id, title: value.title, sourceKey: `fixture:${value.id}`, sourceCurrent: value.current,
+            source: { ...value.source, digest: digest(value), issues: [], readAt: state.generatedAt },
+            declarations: { ...value.status, timing }, progress: value.progress, links: value.links,
+            verification: { state: 'not_loaded' }, assignment: { state: 'pending' } };
+        }) };
+        else if (url.pathname === '/api/task') {
+          const value = tasks.find(item => item.id === url.searchParams.get('task'));
+          if (!value) { response.writeHead(404); response.end(); return; }
+          body = { ...common, kind: 'task-detail', taskId: value.id, sourceKey: `fixture:${value.id}`,
+            statusDigestBefore: digest(value), statusDigestAfter: digest(value), consistency: 'matched', task: value };
+        } else if (url.pathname === '/api/assignments') body = { ...common, kind: 'assignments',
+          assignments: { state: 'unknown', observedAt: state.generatedAt, claims: [], reason: 'isolated timing fixture; no PG authority' },
+          byTask: { T01: null, T02: null }, unregisteredAssignments: [] };
+        else body = { generatedAt: state.generatedAt, tasks, overview, unregisteredAssignments: [], main: { available: false, observedAt, worktree: '/fixture/main' } };
         response.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
-        response.end(JSON.stringify({ generatedAt: state.generatedAt, tasks, unregisteredAssignments: [],
-          overview: { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] },
-          main: { available: false, observedAt, worktree: '/fixture/main' },
-        })); return;
+        response.end(JSON.stringify(body)); return;
+      }
+      if (url.pathname === '/api/local-access') {
+        response.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+        response.end(JSON.stringify({ enabled: false, productUrl: 'http://127.0.0.1:61228/', centerUrl: '', centerMode: 'web-proxy' })); return;
       }
       const asset = assets.get(url.pathname);
       if (!asset) { response.writeHead(404); response.end(); return; }
@@ -60,7 +87,7 @@ export async function createTaskTimingFixture() {
     await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
   } catch (error) { server.close(); throw error; }
   return {
-    url: `http://127.0.0.1:${server.address().port}`,
+    server, url: `http://127.0.0.1:${server.address().port}`,
     setState: next => { state = { fields: {}, task: {}, generatedAt: observedAt, fail: false, ...next }; },
     close: () => new Promise((resolve, reject) => { server.close(error => error ? reject(error) : resolve()); server.closeAllConnections(); }),
   };
@@ -73,6 +100,14 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
   const checks = [], screenshots = [], errors = [];
   const onError = error => errors.push(error.message);
   page.on('pageerror', onError);
+  const closeDialog = async () => {
+    await page.evaluate(() => {
+      window.fixtureTimingClose = false;
+      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureTimingClose = true; }, { once: true });
+    });
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => window.fixtureTimingClose === true);
+  };
   const row = id => page.locator('#active-work > .task-row').filter({ has: page.locator('.task-code', { hasText: new RegExp(`^${id}$`) }) });
   const elapsed = () => row('T01').locator('.task-elapsed');
   const refresh = async () => {
@@ -133,17 +168,31 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
 
     fixture.setState({ generatedAt: '2026-10-07T04:00:00.000Z' });
     await page.evaluate(() => window.timingFixtureRefresh());
-    await page.waitForFunction(() => document.querySelector('#sync-state').textContent === '已同步'); checkpoint();
+    await page.waitForFunction(() => document.querySelector('#sync-state').textContent.startsWith('已同步')); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
     assert.match(await region.innerText(), /2026-10-07T03:00:00.000Z/);
-    await page.keyboard.press('Escape');
+    await closeDialog();
     assert.match(await elapsed().innerText(), /3小时/);
     await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
+    await region.waitFor();
+    assert.match(await region.locator('.task-elapsed').innerText(), /3小时/);
+    // Native close queues its event; reopen through the real button in the same task.
+    await row('T01').locator('button[data-open-task="T01"]').evaluate(button => {
+      const dialog = document.querySelector('#task-dialog');
+      if (!dialog.open) throw new Error('Expected an open timing detail before queued-close regression');
+      window.fixtureTimingReopenClose = false;
+      dialog.addEventListener('close', () => { window.fixtureTimingReopenClose = true; }, { once: true });
+      dialog.close();
+      button.click();
+    });
+    await page.waitForFunction(() => window.fixtureTimingReopenClose === true);
+    await region.waitFor();
+    assert.equal(await page.locator('#task-dialog').evaluate(node => node.open), true);
     assert.match(await region.locator('.task-elapsed').innerText(), /3小时/);
     checks.push('New snapshot updates cards; an open detail retains its original observation until explicitly reopened');
 
     for (const theme of ['light', 'dark']) {
-      await page.keyboard.press('Escape');
+      await closeDialog();
       await page.locator('#theme').selectOption(theme);
       await page.setViewportSize({ width: 390, height: 844 });
       await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).focus();
@@ -157,4 +206,57 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     assert.deepEqual(errors, []); checkpoint();
     return { checks, screenshots, pageErrors: errors, observation: 'fixture-only parser/UI; no PG, registry, main proof or deployment validation' };
   } finally { page.off('pageerror', onError); }
+}
+
+// Followup captures actual timing text inside the scrollable dialog; it does not
+// replay the accepted five semantic groups or replace their original screenshots.
+async function timingVisualChecks({ page, f, report, output, checkpoint }) {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(f.url);
+  await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
+  for (const theme of ['light', 'dark']) {
+    await page.locator('#theme').selectOption(theme);
+    const button = page.locator('#active-work > .task-row button[data-open-task="T01"]');
+    assert.equal(await button.count(), 1);
+    await button.focus(); await page.keyboard.press('Enter');
+    const region = page.getByRole('region', { name: '任务时间', exact: true });
+    await region.waitFor();
+    assert.match(await region.innerText(), /fixture-start/);
+    assert.match(await region.innerText(), /WAIT01/);
+    await region.getByRole('heading', { name: '任务时间', exact: true }).evaluate(node => node.scrollIntoView({ block: 'start' }));
+    const view = await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => {
+      const region = document.querySelector('#task-timing-detail');
+      const dialog = document.querySelector('#task-dialog');
+      const heading = region.querySelector('h3').getBoundingClientRect();
+      const start = region.querySelector('dd').getBoundingClientRect();
+      const bounds = dialog.getBoundingClientRect();
+      resolve({ width: innerWidth, height: innerHeight, regionTop: region.getBoundingClientRect().top,
+        heading: { top: heading.top, bottom: heading.bottom }, start: { top: start.top, bottom: start.bottom },
+        dialog: { top: bounds.top, bottom: bounds.bottom, scrollTop: dialog.scrollTop },
+        contained: dialog.scrollWidth <= dialog.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth });
+    })));
+    assert.equal(view.contained, true);
+    assert.ok(view.heading.top >= view.dialog.top && view.start.bottom <= Math.min(view.height, view.dialog.bottom));
+    report.timingVisual ??= []; report.timingVisual.push({ theme, ...view, scope: 'Visible timing heading/start/elapsed/source viewport; full waiting text remains available by scrolling and DOM assertions.' });
+    const filename = `task-timing-region-${theme}-390.png`;
+    await page.screenshot({ path: path.join(output, filename), animations: 'disabled' }); report.screenshots.push(filename);
+    await page.evaluate(() => {
+      window.fixtureTimingVisualClose = false;
+      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureTimingVisualClose = true; }, { once: true });
+    });
+    await page.keyboard.press('Escape'); await page.waitForFunction(() => window.fixtureTimingVisualClose === true); checkpoint();
+  }
+  report.checks.push('390 light/dark real timing-region text viewport, native keyboard opening and contained scrolling');
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  const visualOnly = process.argv.includes('--visual-followup');
+  await runBrowserCheck(visualOnly ? 'task-timing-visual' : 'task-timing', visualOnly ? timingVisualChecks : async ({ page, f, report, output, checkpoint }) => {
+    const result = await runTaskTimingChecks({ page, fixture: f, outputDir: output, checkpoint });
+    report.checks.push(...result.checks); report.screenshots.push(...result.screenshots);
+    report.errors.push(...result.pageErrors);
+    assert.equal(result.checks.length, 5); assert.equal(result.screenshots.length, 2);
+  }, { fixtureFactory: async owner => {
+    const fixture = await createTaskTimingFixture(); owner.after(() => fixture.close()); return fixture;
+  } });
 }

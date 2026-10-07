@@ -1,0 +1,30 @@
+{
+  "allowRun": true,
+  "mode": "node-direct",
+  "taskId": "WPF-DPERF04",
+  "singleUse": true,
+  "expiresAt": "2026-10-07T08:27:23.019354+00:00",
+  "bindingSha256": "ec0e9fdc0452f663768eb0d8e32ec9e36f6f57fc275cc05da6a72000b353a5c6",
+  "runnerSha256": "0d92e8d4af10d512cfa1e5acbfadc0cff822c9581423066fc80c66c598bda698",
+  "sandboxSha256": "1082b191802025361a84a14f5b1b8db803d91cbb26725187108d5bd7ace970e6",
+  "sourceHead": "b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679",
+  "implementation": "cfd5a53323438709843828d74cab67502801060c",
+  "claim": {
+    "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "scopeCount": 11,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "previousRuntimeMs": 0,
+  "limits": {
+    "totalSeconds": 30,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "finalReportReserveBytes": 131072,
+    "pollSeconds": 0.25
+  }
+}

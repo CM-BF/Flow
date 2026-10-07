@@ -1,0 +1,446 @@
+{
+  "budget": {
+    "processMs": 180000,
+    "scratchBytes": 16777216,
+    "rawBytes": 2097152
+  },
+  "runs": [
+    {
+      "selection": "core",
+      "startedAt": "2026-10-07T09:55:54.220064+00:00",
+      "freshFree": 23291162624,
+      "source": "953ce4d1124f4cc626d599f835b32238bcfd1118",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-diagnostics-local-4vvkpvu7",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 123975540
+      },
+      "sourceFiles": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "bytes": 48201,
+          "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "bytes": 59993,
+          "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+        },
+        {
+          "path": "tools/personal-preview/process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "tools/personal-preview/process.test.mjs",
+          "bytes": 2311,
+          "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.mjs",
+          "bytes": 9987,
+          "sha256": "c961c2f5d2751527ada53a1180c238850e6cf5a2ba0cfdec87207b5c7061e7b7"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+          "bytes": 9844,
+          "sha256": "f551d38c29244283cba06cf02c9b56e764bf27c0d16b3b6bcae634278bb62237"
+        }
+      ],
+      "report": {
+        "pid": 7543,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 1496,
+        "stdout": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-01-core.stdout",
+          "bytes": 1532,
+          "sha256": "a6e82777204a4650ccef5e0206badc22b44e1fc1e354f66605ecc7d794b70816"
+        },
+        "stderr": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-01-core.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 1532,
+        "retained_bytes": 1532,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "scratchEntriesAfter": 0,
+      "scratchRemoved": true,
+      "finishedAt": "2026-10-07T09:55:55.735135+00:00"
+    },
+    {
+      "selection": "host",
+      "startedAt": "2026-10-07T09:55:58.988277+00:00",
+      "freshFree": 23290839040,
+      "source": "953ce4d1124f4cc626d599f835b32238bcfd1118",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-diagnostics-local-_du93at8",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 123975622
+      },
+      "sourceFiles": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "bytes": 48201,
+          "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "bytes": 59993,
+          "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+        },
+        {
+          "path": "tools/personal-preview/process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "tools/personal-preview/process.test.mjs",
+          "bytes": 2311,
+          "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.mjs",
+          "bytes": 9987,
+          "sha256": "c961c2f5d2751527ada53a1180c238850e6cf5a2ba0cfdec87207b5c7061e7b7"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+          "bytes": 9844,
+          "sha256": "f551d38c29244283cba06cf02c9b56e764bf27c0d16b3b6bcae634278bb62237"
+        }
+      ],
+      "report": {
+        "pid": 11809,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 908,
+        "stdout": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-02-host.stdout",
+          "bytes": 2205,
+          "sha256": "9687c8fa669331a597b5b3d63dbdecb8946fba344d27a4a3359522c4e5b708ee"
+        },
+        "stderr": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-02-host.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 2205,
+        "retained_bytes": 2205,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "scratchEntriesAfter": 0,
+      "scratchRemoved": true,
+      "finishedAt": "2026-10-07T09:55:59.914625+00:00"
+    },
+    {
+      "selection": "syntax",
+      "startedAt": "2026-10-07T09:56:05.911398+00:00",
+      "freshFree": 23291236352,
+      "source": "953ce4d1124f4cc626d599f835b32238bcfd1118",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-diagnostics-local-1k_g8n0i",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 123976038
+      },
+      "sourceFiles": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "bytes": 48201,
+          "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "bytes": 59993,
+          "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+        },
+        {
+          "path": "tools/personal-preview/process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "tools/personal-preview/process.test.mjs",
+          "bytes": 2311,
+          "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.mjs",
+          "bytes": 9987,
+          "sha256": "c961c2f5d2751527ada53a1180c238850e6cf5a2ba0cfdec87207b5c7061e7b7"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+          "bytes": 9844,
+          "sha256": "f551d38c29244283cba06cf02c9b56e764bf27c0d16b3b6bcae634278bb62237"
+        }
+      ],
+      "report": {
+        "pid": 14932,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 35,
+        "stdout": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-03-syntax.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-03-syntax.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "scratchEntriesAfter": 0,
+      "scratchRemoved": true,
+      "finishedAt": "2026-10-07T09:56:05.962243+00:00"
+    },
+    {
+      "selection": "status",
+      "startedAt": "2026-10-07T09:56:06.094131+00:00",
+      "freshFree": 23291211776,
+      "source": "953ce4d1124f4cc626d599f835b32238bcfd1118",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-diagnostics-local-q1_tta2g",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 123976042
+      },
+      "sourceFiles": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "bytes": 48201,
+          "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "bytes": 59993,
+          "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+        },
+        {
+          "path": "tools/personal-preview/process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "tools/personal-preview/process.test.mjs",
+          "bytes": 2311,
+          "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.mjs",
+          "bytes": 9987,
+          "sha256": "c961c2f5d2751527ada53a1180c238850e6cf5a2ba0cfdec87207b5c7061e7b7"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+          "bytes": 9844,
+          "sha256": "f551d38c29244283cba06cf02c9b56e764bf27c0d16b3b6bcae634278bb62237"
+        }
+      ],
+      "report": {
+        "pid": 14954,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 44,
+        "stdout": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-04-status.stdout",
+          "bytes": 79,
+          "sha256": "2486ff5527e08cb27b7886fcc0612e9a2329533c82649fc65bc9934dc1021c6a"
+        },
+        "stderr": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-04-status.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 79,
+        "retained_bytes": 79,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "scratchEntriesAfter": 0,
+      "scratchRemoved": true,
+      "finishedAt": "2026-10-07T09:56:06.154170+00:00"
+    },
+    {
+      "selection": "spawn-code",
+      "startedAt": "2026-10-07T09:57:58.630478+00:00",
+      "freshFree": 23263744000,
+      "source": "3cb0be8f57467a0ed4703119e68a96cd8f8e560e",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-diagnostics-local-n5z_ihv6",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 123977857
+      },
+      "sourceFiles": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "bytes": 48201,
+          "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "bytes": 59993,
+          "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+        },
+        {
+          "path": "tools/personal-preview/process.mjs",
+          "bytes": 3493,
+          "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+        },
+        {
+          "path": "tools/personal-preview/process.test.mjs",
+          "bytes": 2311,
+          "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.mjs",
+          "bytes": 10094,
+          "sha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8"
+        },
+        {
+          "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+          "bytes": 10667,
+          "sha256": "18bb2c20f13e93f36e90496e608e00438f59700b4b918d443bcf08e5802411b4"
+        }
+      ],
+      "report": {
+        "pid": 84196,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 294,
+        "stdout": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-05-spawn-code.stdout",
+          "bytes": 436,
+          "sha256": "f6ce30f37a153bac2785f94aa653661f726421ecf773172d422640f375ac5fea"
+        },
+        "stderr": {
+          "path": "docs/evidence/svc06/startup-diagnostics/run-05-spawn-code.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 436,
+        "retained_bytes": 436,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "scratchEntriesAfter": 0,
+      "scratchRemoved": true,
+      "finishedAt": "2026-10-07T09:57:58.942929+00:00"
+    }
+  ],
+  "processMs": 2777,
+  "rawBytes": 4252
+}

@@ -1,3 +1,7 @@
+## r1结果限定事实批准；新启动诊断实现中
+
+[唯一独审原件](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)绑定c408，22+17+8全核；APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，无P1/P2、0重跑。原hostFAIL保持。新启动诊断尚未审，不扩大旧准备/结果批准。
+
 ## 2026-10-07 09:40:22 UTC：r1结果PENDING_RESULT_REVIEW
 
 source344不改；[result-manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)绑定22结果文件、17私有原件身份/hash、8逐字副本。实际FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED；首保存错误/缺失detached stderr、runner数值exit未观测与真实helper stopped分别记录。申请native唯一只读结果审，0重跑/新probe；真实宿主/策略/迁移结论不通过，旧准备批准不扩大。
@@ -115,3 +119,13 @@ Reviewer `native_center_owner / gpt-6-astra`，原件时间 `2026-10-07T02:55:46
 ## 2026-10-07 09:16:46 UTC — b2b结果限定批准与main
 
 Execution Lead独立 `APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING`，target5d40/deliveryb905、原件[review](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)，P1/P2=0。main9b270接收35own路径；新host/迁移/配置、三App/个人仍未验。原build/raw不改、不重跑。
+
+## 2026-10-07 09:55:39 UTC — r1结果限定批准及诊断待审
+
+原件[唯一r1结果独审](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)，native_center_owner限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE；22+17+8原绑定全符，无P1/P2，0probe。Lead回执main8c2ae379已接47own路径。原host FAIL、runner数值exit NOT_OBSERVED与cleanup确认分别保留，不当运行成功。新诊断从b2b前像实现，待固定source/局部证据/唯一独审，不继承本次r1结果批准。
+
+## 2026-10-07 09:59:03 UTC — 启动诊断新片等待唯一独审
+
+Target `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，对b2b四产品差量；preview/其直接专测、新startup-diagnostics/专测。process两文件保持字节不改，原身份/TERM两例复验。19distinct分轮、2777ms、5owned组absent/双EOF、5scratch removed，原raw见[startup-diagnostics](../../docs/evidence/svc06/startup-diagnostics/README.md)。本作者clean-code复核完成：诊断只拥有私有证据与受控摘要，不拥有spawn/停止决策；无重复监督器/FSM。唯一reviewer Execution Lead，状态NOT_STARTED，不能扩大此前r1结果批准。
+
+审查重点：首错与secondary分离、nonce身份与private保护、64KiB后继续drain、真实child退出不被记录错误掩盖、原ready10s/detach/stop不变、新模块纳入Web/maintenance资格。未执行真实PG/新artifact/host或个人更新。

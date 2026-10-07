@@ -1,0 +1,90 @@
+{
+  "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "recordedAt": "2026-10-06 19:45:45 UTC",
+  "files": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 8802,
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6686,
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 33937,
+      "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 12804,
+      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 31990,
+      "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 10845,
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+    }
+  ],
+  "protectedPaths": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/src/task-links.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/registry.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/documents.mjs",
+    "apps/execution-dashboard/src/coordination/ledger.mjs",
+    "apps/execution-dashboard/test/fixture.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/public/architecture-data.js",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "protectedDiff": "",
+  "checks": {
+    "sourceDiffCheck": 0,
+    "Node": "Historical abd2 second run PASS8/8; unchanged direct source; no rerun for wrapper",
+    "browser": "NOT_RUN 0/60000ms; root45f8 scoped lifecycle source/preparation approved, TAIL/SOFT-STOP SOURCE_ADDRESSED only; explicit Lead native boundary acceptance and new fresh window/gate pending",
+    "production4320": "NOT_OBSERVED",
+    "PG": 0,
+    "install": 0,
+    "build": 0,
+    "NodeSourceHead": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+    "NodeRuntimeTotalMs": 3950,
+    "NodeImplementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48"
+  },
+  "sourcePeakLimits": {
+    "statusFileBytes": 2097152,
+    "statusReadConcurrency": 8,
+    "summaryDeclarationChars": 512,
+    "humanOutputChars": 240,
+    "completedProofCache": false,
+    "ledgerAuthority": "Original dynamically imported PG ledger; synthetic observer is test-only and grants no writer scope"
+  },
+  "revision": "Only shared wrapper lifecycle; parent native sibling, TAIL/SOFT-STOP preparation. No browser run or new full-feature approval.",
+  "independentLifecycleReview": {
+    "target": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+    "reviewedMetadataHead": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+    "path": "browser-lifecycle-repair/root-45f8-source-review.json",
+    "sha256": "d41be7d5452f0a797a49e337e6627c60df7e8c2abaf04b095a3a77650cb3129a",
+    "verdict": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN",
+    "fullFeature": "UNKNOWN",
+    "nativeChromeBoundaryApproval": null
+  }
+}

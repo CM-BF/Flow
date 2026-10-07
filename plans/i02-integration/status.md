@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:58:22 UTC / main b1042071；已审终态恢复/读取上限组合通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:05:23 UTC / main81b4805c；看板轻摘要及启动诊断按已审固定输入接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main b1042071；X01终态恢复20b四源与READBOUND bc213五源，原main前像逐hash相符 |
+| 工作基线 / HEAD | main81b4805c；DPERF04九源全部前像及七只读输入一致；SVC06四源与b2b前像相同 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 作者两片已有独审；当前组合11个原outbox/正文host直接消费者通过、root noEmit0；0PG/provider。原失败/未覆盖范围保留。 |
-| 已集成main状态 / HEAD | main/origin b1042071已接O16环境准备；当前终态/读限额9源组合待本次受控发布。个人backend af51/v18、Web d629/v3/c7b保持。 |
+| 检查状态 | DPERF04原独审30闭包及真实Node/浏览器证据复用；SVC06独审43绑定/5运行输入与19不同直接检查成立；无新冲突，不重跑已绿矩阵。 |
+| 已集成main状态 / HEAD | main/origin81b4805c已接插件终态恢复与读取上限；当前看板/启动诊断待本次受控发布。个人backend af51/v18、Web d629/v3/c7b保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件完成结果的持久恢复和客户端读取上限已审，当前主线组合检查通过。 |
-| 下一可用交付 | 发布这两项已审接线；继续补齐固定后台启动诊断，再验证新后台与保留网页。 |
+| 当前产出 | 插件完成结果恢复和读取上限已进入主线；看板轻摘要与启动失败诊断已审待发布。 |
+| 下一可用交付 | 发布看板按需详情，继续在独立环境验证固定后台能正常启动。 |
 | 当前阻塞 | ACTIVE: 新后台尚未确认runner就绪，原owner正在补齐诊断；个人运行版本未变更。 |
 | 需用户决定 | NONE |
 
@@ -386,3 +386,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T09:37:40.693168+00:00：已审插件runtime/domain 9b639与共享接线2ea5按四公共旧像核同后窄接，8产品逐字同固定源；[接收证据](../../docs/evidence/i02/x01-runtime-wiring-intake.json)。17直接检查、根类型和完整中心入口加载均通过，0PG/provider/个人操作；不把factory import当实例/网络验收，CLI和完整pin恢复仍开放。
 
 2026-10-07 09:46:27 UTC：[SVC06结果接收](../../docs/evidence/i02/svc06-b2b-host-intake.json)保存39.646s失败与293ms独立清理，Web未启动、新迁移/策略断言未到达；不重复构建/探针，不推断runner内部首因。管理三文件有独立doc review；未改变原CI/工程授写用户决定。
+
+2026-10-07 10:05:23 UTC：本批按[看板接收](../../docs/evidence/i02/dashboard-summary-detail-intake.json)与[启动诊断独审](../../docs/evidence/i02/svc06-startup-diagnostics-review.json)接收。已有产品/测试前像无漂移，未修改registry194或七只读ACCESS/TIMING输入，未重复既有矩阵；固定诊断runtime源6c0fdcda仅b2b上的四已审文件，旧c2c/r1保留。实际看板部署和新后台宿主验证分开。

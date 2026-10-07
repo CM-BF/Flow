@@ -1,0 +1,178 @@
+{
+  "state": "PASS",
+  "errors": [],
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "pgid": 37717,
+  "chromePgid": 33199,
+  "logStreams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 2630,
+      "keptBytes": 2630,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 690,
+      "keptBytes": 690,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "elapsedMs": 6948,
+  "cumulativeMs": 6948,
+  "remainingMs": 38052,
+  "retainedBytes": 3600934,
+  "exitCode": 0,
+  "measurement": {
+    "adoption": "PARTIAL_RETAINED_ADOPTION",
+    "module": {
+      "path": "/private/tmp/dperf-f1/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "sourceCommit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+      "sourcePath": "tools/owned-resource-measurement/measure.py",
+      "adoption": "PARTIAL_RETAINED_ADOPTION"
+    },
+    "roots": {
+      "/private/tmp/dperf-f1": {
+        "device": 16777234,
+        "inode": 123721362
+      },
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04": {
+        "device": 16777234,
+        "inode": 123072075
+      }
+    },
+    "last": {
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04": {
+        "state": "complete",
+        "logical_bytes": 2338941,
+        "allocated_bytes": 2781184,
+        "entries": 239,
+        "regular_files": 214,
+        "directories": 26,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.004540333058685064,
+        "issue": null
+      },
+      "/private/tmp/dperf-f1": {
+        "state": "complete",
+        "logical_bytes": 1261993,
+        "allocated_bytes": 1490944,
+        "entries": 117,
+        "regular_files": 107,
+        "directories": 11,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.0017670410452410579,
+        "issue": null
+      }
+    },
+    "unknown": []
+  },
+  "worker": {
+    "name": "local-access",
+    "startedAt": "2026-10-07T09:23:49.266Z",
+    "workerStartedAt": "2026-10-07T09:23:54.620Z",
+    "parentPid": 32707,
+    "workerPid": 37717,
+    "chromePid": 33199,
+    "chromeProcessGroup": "separate-parent-owned-session",
+    "chromeCleanupOwner": "external-parent-native-sibling",
+    "sourceHead": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
+    "sourceHashes": {
+      "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+      "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+      "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+      "apps/execution-dashboard/public/app.js": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+      "apps/execution-dashboard/test/task-links.browser.mjs": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+      "apps/execution-dashboard/test/task-timing.browser.mjs": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+      "apps/execution-dashboard/test/local-access.browser.mjs": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+      "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+    },
+    "checks": [
+      "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+      "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+      "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+      "close aborts outstanding read; late response does not restore token; reopen needs explicit load",
+      "actual hidden page clears; no credential in browser storage"
+    ],
+    "screenshots": [
+      "390-light.png",
+      "390-dark.png"
+    ],
+    "errors": [],
+    "cleanupErrors": [],
+    "pg": 0,
+    "outcome": "passed",
+    "budgetOwner": "external-parent",
+    "cdpConnectedAt": "2026-10-07T09:23:55.123Z",
+    "access": {
+      "state": "PASSED",
+      "checks": [
+        "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+        "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+        "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+        "close aborts outstanding read; late response does not restore token; reopen needs explicit load",
+        "actual hidden page clears; no credential in browser storage"
+      ],
+      "fakeCredentialOnly": true,
+      "errors": [],
+      "cleanup": {
+        "context": "closed",
+        "http": "closed"
+      },
+      "visibility": {
+        "before": "visible",
+        "afterOwnedTabSwitch": "hidden",
+        "observedHidden": "hidden",
+        "tokenCleared": true,
+        "sessionDetached": true,
+        "otherPageClosed": true
+      },
+      "credentialReadCount": 4
+    },
+    "contextClosed": true,
+    "serverClosed": true,
+    "profileCleanupOwner": "external-parent-after-both-groups-absence",
+    "fixtureFilesystem": "not-created",
+    "fixtureRemoved": true,
+    "observedElapsedMs": 6849,
+    "finishedAt": "2026-10-07T09:23:56.115Z",
+    "retainedRunBytes": 146414
+  },
+  "ownedAbsence": {
+    "32707": "ABSENT",
+    "-32707": "ABSENT",
+    "37717": "ABSENT",
+    "-37717": "ABSENT",
+    "33199": "ABSENT",
+    "-33199": "ABSENT"
+  },
+  "scratchAbsent": true
+}

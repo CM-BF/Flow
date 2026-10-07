@@ -1,0 +1,113 @@
+{
+  "at": "2026-10-07T08:26:37.685899+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / read-only independent reviewer",
+  "decision": "ACCEPTED_COMPOSED_DIRECT_NODE_ACTUAL_AND_OWNED_CLEANUP_NOT_BROWSER_MAIN_OR_DEPLOYMENT",
+  "sourceTarget": "cfd5a53323438709843828d74cab67502801060c",
+  "actualSourceHead": "b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679",
+  "currentFinalHead": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+  "currentDirty": "",
+  "blockingFindings": [],
+  "rawArchiveOriginalPairs": [
+    {
+      "archive": "admission.json",
+      "bytes": 1570,
+      "matched": true
+    },
+    {
+      "archive": "binding.json",
+      "bytes": 4860,
+      "matched": true
+    },
+    {
+      "archive": "gate.json",
+      "bytes": 964,
+      "matched": true
+    },
+    {
+      "archive": "consumed-gate.json",
+      "bytes": 964,
+      "matched": true
+    },
+    {
+      "archive": "cleanup-resource-sample.json",
+      "bytes": 46,
+      "matched": true
+    },
+    {
+      "archive": "result.json",
+      "bytes": 4767,
+      "matched": true
+    },
+    {
+      "archive": "actual-exit.json",
+      "bytes": 354,
+      "matched": true
+    },
+    {
+      "archive": "acceptance.json",
+      "bytes": 632,
+      "matched": true
+    },
+    {
+      "archive": "node.log",
+      "bytes": 2770,
+      "matched": true
+    },
+    {
+      "archive": "outer-stdout.log",
+      "bytes": 609,
+      "matched": true
+    },
+    {
+      "archive": "outer-stderr.log",
+      "bytes": 0,
+      "matched": true
+    }
+  ],
+  "sourceAndReadonlyPinsVerified": 29,
+  "preparedRunnerAndProfileHashesMatched": true,
+  "actual": {
+    "outerExit": 0,
+    "startedAt": "2026-10-07T08:22:30.872061+00:00",
+    "endedAt": "2026-10-07T08:22:33.737598+00:00",
+    "elapsedMs": 2865.5354999937117,
+    "chargedMs": 2866,
+    "remainingMs": 27134,
+    "historicalChargePreservedMs": 3950,
+    "tests": "9 leaf + 1 parent; 10 passed, zero failed/cancelled/skipped/todo",
+    "uniqueTerminalMatchesResult": true,
+    "mergedChildOutputEOF": true,
+    "droppedObservedBytes": 0
+  },
+  "cleanup": {
+    "freshSignalZeroAbsent": {
+      "outer": true,
+      "ownedNodeGroup": true
+    },
+    "scratchAbsent": true,
+    "reported": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Fixed server and Git children remain within the terminated/reaped owned process group; no external service used"
+    },
+    "HTTP": "fixture after-hook plus process group absence; no separate port probe"
+  },
+  "resource": {
+    "maxObservedScratchBytes": 61137,
+    "minObservedFreeBytes": 24082407424
+  },
+  "covered": [
+    "summary declaration freshness, bounded timing and no proof/ledger eager read",
+    "selected detail exact-task/main observation and stale proof handling",
+    "separate assignment reads/claim multiplicity and unknown failure",
+    "ACCESS route ordering, synthetic secret exclusion, same-origin POST enforcement"
+  ],
+  "limits": [
+    "Synthetic loopback two repositories/two tasks only; zero PG and Chrome.",
+    "Does not establish production4320 latency or actual browser behavior.",
+    "All browser checks, main integration and deployment remain separate."
+  ]
+}

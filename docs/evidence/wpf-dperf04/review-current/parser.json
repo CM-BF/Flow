@@ -1,0 +1,29 @@
+{
+  "kind": "metadata parser only; no product checks",
+  "errors": [],
+  "updatedAt": "2026-10-06T17:10:34.000Z",
+  "todos": [
+    {
+      "id": "DPERF04-01",
+      "state": "completed"
+    },
+    {
+      "id": "DPERF04-02",
+      "state": "in-progress"
+    },
+    {
+      "id": "DPERF04-03",
+      "state": "pending"
+    }
+  ],
+  "review": {
+    "state": "unknown",
+    "record": "UNKNOWN（部分审查已完成；全片浏览器验收待完成）**",
+    "target": "abd2aff768f97350762b2eaddbe7ae6843902f48"
+  },
+  "checks": {
+    "state": "passed",
+    "target": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+    "record": "PASSED abd2aff768f97350762b2eaddbe7ae6843902f48；仅Node8/8，browser NOT_RUN"
+  }
+}

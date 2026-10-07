@@ -1,0 +1,15 @@
+{
+  "complete": true,
+  "spentMs": 40551,
+  "limitMs": 60000,
+  "cleanupReserveMs": 15000,
+  "run": "timing2-20261007-090444-d6da19",
+  "supervisorResult": "/private/tmp/dperf-consumer2/result.json",
+  "state": "PASS",
+  "stopSignal": null,
+  "remainingMs": 19449,
+  "accounting": "ceil(max(actual outer6933.063875, terminal6871, parent6867))=6934; original parent budget in browser-timing-second/parent-budget.json",
+  "phaseState": "CLOSED",
+  "unspentMs": 19449,
+  "nextPhase": "Any next remaining-consumer phase is separately authorized and accounted; no old credit reused"
+}

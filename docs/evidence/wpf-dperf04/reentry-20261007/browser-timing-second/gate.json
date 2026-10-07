@@ -1,0 +1,45 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "dperf-browser",
+  "entry": "task-timing",
+  "run": "timing2-20261007-090444-d6da19",
+  "expiresAt": "2026-10-07T09:08:44.087934+00:00",
+  "bindingSha256": "f9e6eb3cfb521e53984b6ed3bf0107cfb2018532020a724b659740d0de79ddc9",
+  "runnerSha256": "ee11bdf71578623fb435257445ea91c25f7d0776a0700c6fa189901108ac9f2d",
+  "claim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "sourceHead": "1341ca2f961103c62be60856bc81f9193d675417",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "54cf28b6dd4afc6e5734a0ceebd4d0c73655ac11a54ee4aa7e5dea00fd2c5ab0",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "754310776b803e800ef33597980a1c78fffb9742ea1ead2bc3113c22136a6bda",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "9a0ab360a56f337c988607d948a71b3a4cec723a3795298af8e7badb3eb84493",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "previousRuntimeMs": 33617,
+  "totalMs": 26383,
+  "startFreeBytes": 5334630400,
+  "stopFreeBytes": 1140850688,
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-dperf04-consumers-lifecycle-review-20261007.json",
+    "sha256": "2cade96f046ab2179872eed2e950bcd334fe144ee7a17810d588514c8c7ed367"
+  },
+  "previousBudgetSha256": "c9461dba28ac06e153a16296665aee8e42c017f07e484c1dd1d3e030f876b903"
+}

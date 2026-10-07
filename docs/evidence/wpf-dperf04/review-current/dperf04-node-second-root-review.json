@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-06T17:00:34.472201+00:00",
+  "reviewer": "root",
+  "state": "NODE_SECOND_PASS_EVIDENCE_ACCEPTED_SCOPED",
+  "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "runtimeHead": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+  "raw": {
+    "result.json": {
+      "bytes": 3624,
+      "sha256": "357e71486803245f72137087eda062b83f9c7a3b04ed460f20e8b1e884e15a41",
+      "archiveByteEqual": true
+    },
+    "node.log": {
+      "bytes": 2172,
+      "sha256": "829f4ba20b8636e682faeaeac6ea3d806ff692afe1720556514926d17073b883",
+      "archiveByteEqual": true
+    },
+    "binding.json": {
+      "bytes": 3945,
+      "sha256": "fbb213dfdcb2d5f0e2e8c284d177e06b2f317448286e9600d89355eea7e9db01",
+      "archiveByteEqual": true
+    },
+    "consumed-gate.json": {
+      "bytes": 970,
+      "sha256": "2659d7bf97544d6cb6bbf23372f40bfa4bf2a8ac1f4d368b85b1591fe06a3808",
+      "archiveByteEqual": true
+    }
+  },
+  "verified": [
+    "Result/log fully read;7 leaf cases plus parent passed,0skip/0cancel.",
+    "Result seven hashes equal exact binding; implementation/head and runner/binding/profile pins match consumed single gate.",
+    "Full final leaf reached real inbound Host assertion and403, document read, traversal/symlink rejection and snapshot compatibility.",
+    "Tmp four original raw files equal project archive byte-for-byte; original firstFAIL remains separate.",
+    "Cumulative1632+2318=3950ms,26.050s remains from original30s; no budget reset.",
+    "Cleanup own group/scratch confirmed by pinned supervisor; root separately checked scratch absent."
+  ],
+  "elapsedMs": 2318,
+  "cumulativeMs": 3950,
+  "remainingMs": 26050,
+  "cleanup": {
+    "state": "fulfilled",
+    "errors": [],
+    "seconds": 0.0,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "serverClosureBasis": "Fixed server and Git children remain within the terminated/reaped owned process group; no external service used"
+  },
+  "samples": {
+    "maxLogicalTmpBytes": 92642,
+    "minFreeBytes": 1191006208,
+    "meaning": "Sampled shared filesystem values; neither physical peak nor causal attribution."
+  },
+  "limits": [
+    "Controlled2repo/2task fixture and injected synthetic assignment observer,0realPG/browser/realregistry/personal4320.",
+    "No production latency benchmark, actual ledger end-to-end, dynamic claim reading DOM, dark/narrow/keyboard browser or main integration proof.",
+    "No further Node rerun needed for this unchanged source; browser remains independently queued.",
+    "Final feature integration remains original Execution Lead responsibility."
+  ],
+  "cleanCode": "Final source and behavior evidence reviewed together; failure kept explicit, transport premise repaired rather than changing expected result, one authority per resource and cumulative budget."
+}

@@ -1,0 +1,89 @@
+{
+  "name": "summary-detail",
+  "startedAt": "2026-10-07T08:41:34.775Z",
+  "workerStartedAt": "2026-10-07T08:41:39.738Z",
+  "parentPid": 17048,
+  "workerPid": 21253,
+  "chromePid": 17225,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "sourceHead": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "39fb148d39270d48e5174661894334146a9270c4fdbbe8d0791dabe73eafaf29",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "63b130ab7ae12560a972ef192bc2f8c362df032f6812da0a3d71d627c71642a0",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "62912f7dece3c730e2cc466101f98cb1e04adf3a0a81ec7c37f19a8260872fea",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "4266ca04c228ef574dbf0b4f2dd9a688e56b8c6abc387ac9c7cc0ba49a959dc8",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "checks": [
+    "Summary renders before ledger, requests no full snapshot/proof; unregistered claim exact scope and stale handoff are keyboard reachable",
+    "Unchanged unregistered claim preserves expanded 100 scopes, focus and selection during automatic sync; version changes require explicit update, unknown/released retain labelled old reading until closed",
+    "Same ID close/reopen refuses prior detail result independently of abort",
+    "A→B→A navigation rejects the first A detail",
+    "Same-task plan→review rejects late document error and keeps new document",
+    "Late previous assignment error cannot overwrite a newer available observation"
+  ],
+  "screenshots": [],
+  "errors": [],
+  "cleanupErrors": [],
+  "pg": 0,
+  "outcome": "failed",
+  "budgetOwner": "external-parent",
+  "cdpConnectedAt": "2026-10-07T08:41:40.295Z",
+  "transport": "Synthetic late transport ignores AbortSignal; exact fulfill and body settlement precede DOM assertions. Production 20s callback is invoked explicitly by this fixture.",
+  "lateResponses": [
+    {
+      "id": "closed-detail",
+      "readsBody": true,
+      "fulfilled": true,
+      "delivered": true,
+      "status": 200,
+      "body": "fulfilled"
+    },
+    {
+      "id": "aba-detail",
+      "readsBody": true,
+      "fulfilled": true,
+      "delivered": true,
+      "status": 200,
+      "body": "fulfilled"
+    },
+    {
+      "id": "old-document",
+      "readsBody": true,
+      "fulfilled": true,
+      "delivered": true,
+      "status": 500,
+      "body": "fulfilled",
+      "errorBody": "fulfilled"
+    },
+    {
+      "id": "old-assignment",
+      "readsBody": false,
+      "fulfilled": true,
+      "delivered": true,
+      "status": 500,
+      "body": "pending",
+      "errorBody": "fulfilled"
+    }
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at summaryChecks (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs:366:10)\n    at async runBrowserCheck (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs:111:5)\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs:387:95",
+  "contextClosed": true,
+  "profileCleanupOwner": "external-parent-after-both-groups-absence",
+  "serverClosed": true,
+  "fixtureRemoved": true,
+  "observedElapsedMs": 8108,
+  "finishedAt": "2026-10-07T08:41:42.883Z",
+  "retainedRunBytes": 7651
+}

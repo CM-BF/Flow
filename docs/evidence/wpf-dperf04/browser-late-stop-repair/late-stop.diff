@@ -1,0 +1,42 @@
+--- before-late-stop/supervisor.py
++++ supervisor.py
+@@ -88,6 +88,7 @@
+     def request_stop(sig, frame):
+         nonlocal stopping
+         stopping = True
++        report['state'] = 'FAILED'
+         if 'stopSignal' not in report:
+             report['stopSignal'] = signal.Signals(sig).name
+             errors.append('Cooperative stop: '+report['stopSignal'])
+@@ -283,10 +284,11 @@
+                   exitCode=process.returncode if process else None,chromeExit=chrome_facts['exit'] if chrome_facts else None,
+                   logStreams=streams,retainedBytes=retained,cleanup={'errors':cleanup,'groupAbsent':groups_absent,
+                     'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
+-                  state='PASS' if not errors and not cleanup and process and process.returncode==0 else 'FAILED')
++                  state='PASS' if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+                 save(BASE/'result.json',report)
+                 save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
+-                  'run':gate['run'],'supervisorResult':str(BASE/'result.json')})
++                  'run':gate['run'],'supervisorResult':str(BASE/'result.json'),
++                  'state':report['state'],'stopSignal':report.get('stopSignal')})
+             persist_results()
+             try: observe_resources('after-result-and-budget-write')
+             except BaseException as e: errors.append('Post-write resource observation: '+str(e))
+@@ -298,8 +300,16 @@
+                 if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
+             except BaseException as e: errors.append('Final evidence completion: '+str(e))
+             persist_results()
++            # A stop during terminal writes is monotonic: re-seal FAILED while handlers remain installed.
++            if stopping: persist_results()
+     finally:
+         for sig,handler in previous_handlers.items(): signal.signal(sig,handler)
+-    return 0 if report['state']=='PASS' else 1
++    # Close the last handled-signal gap before handler restoration. At most two extra seals; no retry loop.
++    if stopping: persist_results()
++    actual_exit = 0 if not stopping and not errors and not cleanup and report['state']=='PASS' else 1
++    print(json.dumps({'state':'PASS' if actual_exit==0 else 'FAILED','actualExitCode':actual_exit,
++      'stopping':stopping,'stopSignal':report.get('stopSignal'),'errorCount':len(errors),'cleanupErrorCount':len(cleanup),
++      'afterFinalWritesElapsedMs':round((time.monotonic()-started)*1000)}),flush=True)
++    return actual_exit
+ 
+ if __name__=='__main__': sys.exit(main())

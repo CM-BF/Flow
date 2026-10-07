@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:40:22 UTC；r1实际启动失败，原组与专库清理确认，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:59:03 UTC；r1限定失败证据已main，诊断19distinct局部完成待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅封本次r1原始结果/分析/manifest及own metadata；344入口与产品不改 |
+| 工作基线 / HEAD | 诊断前像b2b；固定实现 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；后续仅封证据，旧artifact c2c/r1保持 |
+| 工作树dirty状态 | 产品全停写；仅封最终manifest/原始结果与own metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
-| 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
-| 检查状态 | FAIL 3444895edf934c5c323639f232ef6fed7d51b022 实际r1停于默认宿主启动；独立cleanup确认，未重试；原3pure guard与构建结果保持 |
-| 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
+| 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
+| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
+| 检查状态 | PASS 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；19 distinct分轮（14+4+3选择含2重叠），preview syntax0/status parser0；2777ms，4252B raw，5组absent/双EOF/tmp removed；原host FAIL保持 |
+| 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已完成旧记录准备与新产物复制；真实启动在runner就绪检查处停止，测试进程和专库已正常清理。 |
-| 下一可用交付 | 审查本轮原始结果，并定位启动就绪失败后准备最小修复；保留旧数据与所有诊断原件。 |
-| 当前阻塞 | ACTIVE: 新宿主尚未完成启动，内部首因未被现有工具保存，需要有界诊断。 |
+| 当前产出 | 启动失败现在保留具体阶段与有界私有错误输出，直接检查通过；旧宿主失败和清理证据保持。 |
+| 下一可用交付 | 完成本诊断小片独审，再用新固定产物继续真实宿主验证。 |
+| 当前阻塞 | ACTIVE: 诊断小片待独审，真实宿主验收尚未重新执行。 |
 | 需用户决定 | NONE |
-| Review | 344准备已APPROVED；r1实际FAIL及cleanup证据PENDING_RESULT_REVIEW，交native_center_owner唯一只读核验 |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
-| 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
+| Review | 新诊断PENDING_READONLY_REVIEW，由Execution Lead唯一审；r1限定失败证据已APPROVED并main8c2ae379 |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
+| 架构影响 | 新增小型私有启动诊断Module；生命周期与TERM仍归原process，公开只受控摘要；实际宿主与后台产物不在本局部检查范围。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -233,3 +233,13 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [唯一结果](../../docs/evidence/svc06/b2b-host-policy/RESULT.md) / [原件manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)：09:37:20.428380Z调用；work39,646ms/exit1，最早保存错误START_UNCONFIRMED_CHECK_STATUS，checkpoint start-default-off；旧27迁移/自有turn取消和factory close已完成。center ready后runner身份已捕获，runner ready未完成，Web未启动；旧工具未捕获detached stderr，原因与runner数值exit不猜测。
 
 09:38:00.412Z独立cleanup293ms/exit0；两监督组absent/双EOF、center/runner原helper stopped，center匹配nonce exit0。marker/OID1274706/有界连接[]/normalDROP remaining[]；工作组absence原件先持久。实际窗已归还；原artifact/clone/root/诊断保留、不重放r1。0provider/个人，唯一fixture任务在runner前取消；后继35迁移/配置/HTTP/refresh未验，不将cleanup升格为host成功。当前结果待native独审，局部只读诊断可独立继续，原SVC06-03/04/05全部保持open。
+
+## 启动诊断窄修开工（2026-10-07T09:45:30.035Z）
+
+r1结果已native限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，原件[归档](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)。按Lead派工fresh无冲突后amend v8，当前仅启动诊断[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md)；b2b产品前像供给，原产物/r1不动，0PG/个人。实际首次任务start仍UNKNOWN；此为本小片领取/实施起点。
+
+## 2026-10-07 09:59:03 UTC — 启动诊断局部交付待独审
+
+source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领取，b2b四产品前像受控供给。[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md) / [完整范围](../../docs/evidence/svc06/startup-diagnostics/README.md) / [唯一运行记录](../../docs/evidence/svc06/startup-diagnostics/local-runs.json)。实际09:55:54.220Z至09:56:06.154Z首段和09:57:58.943Z定向结束，均为原件时间；累计2777ms/4252B，19distinct、21选择分轮，5组absent/EOF、5exact scratch空后removed。补充spawn系统code是收口修复，只跑1新+2直接受影响，旧18未重跑。原未知开工时间不改；无PG/host/build/provider/个人读取。
+
+产品四源全停写，独审待Execution Lead；原r1失败与数值runner退出未观测仍在main8c2ae379，不因局部检查而转绿。03/04/05继续open。

@@ -2,7 +2,8 @@ import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { aggregate } from './aggregate.mjs';
+import { aggregate, readTaskDetail } from './aggregate.mjs';
+import { readSummary, readAssignments, observeAssignments } from './read-model.mjs';
 import { loadRegistry } from './registry.mjs';
 import { readDocument } from './documents.mjs';
 import { createLocalAccessHandler, localInstallationFromOptions } from './local-access.mjs';
@@ -15,12 +16,22 @@ const headers = {
   'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'",
 };
 
-export function createDashboardServer(registry, { localAccess } = {}) {
+export function createDashboardServer(registry, { assignmentObserver = observeAssignments, gitContext, localAccess } = {}) {
   const handleLocalAccess = createLocalAccessHandler(localAccess);
-  let pendingSnapshot;
-  const snapshot = () => pendingSnapshot ??= aggregate(registry).finally(() => { pendingSnapshot = undefined; });
+  let pendingSnapshot, pendingSummary, pendingAssignments;
+  const pendingDetails = new Map();
+  // Only in-flight work is shared. No completed proof survives another request.
+  const context = () => gitContext?.();
+  const snapshot = () => pendingSnapshot ??= aggregate(registry, Date.now(), context(), assignmentObserver).finally(() => { pendingSnapshot = undefined; });
+  const summary = () => pendingSummary ??= readSummary(registry, Date.now(), context()).finally(() => { pendingSummary = undefined; });
+  const assignments = () => pendingAssignments ??= readAssignments(registry, Date.now(), assignmentObserver).finally(() => { pendingAssignments = undefined; });
+  const detail = id => {
+    if (!pendingDetails.has(id)) pendingDetails.set(id, readTaskDetail(registry, id, Date.now(), context()).finally(() => pendingDetails.delete(id)));
+    return pendingDetails.get(id);
+  };
   return http.createServer(async (request, response) => {
     const send = (code, body, type = 'application/json; charset=utf-8') => {
+      if (response.destroyed || response.writableEnded) return;
       response.writeHead(code, { ...headers, 'Content-Type': type });
       response.end(body);
     };
@@ -29,6 +40,13 @@ export function createDashboardServer(registry, { localAccess } = {}) {
       if (!/^(?:127\.0\.0\.1|localhost|\[::1\])(?::\d+)?$/.test(request.headers.host ?? '')) return send(403, JSON.stringify({ error: '仅允许 loopback Host' }));
       if (request.method !== 'GET') return send(405, JSON.stringify({ error: '只读接口仅接受 GET' }));
       const url = new URL(request.url, 'http://127.0.0.1');
+      if (url.pathname === '/api/summary') return send(200, JSON.stringify(await summary()));
+      if (url.pathname === '/api/assignments') return send(200, JSON.stringify(await assignments()));
+      if (url.pathname === '/api/task') {
+        const id = url.searchParams.get('task');
+        if (!registry.tasks.some(task => task.id === id)) return send(404, JSON.stringify({ error: '任务未登记' }));
+        return send(200, JSON.stringify(await detail(id)));
+      }
       if (url.pathname === '/api/snapshot') return send(200, JSON.stringify(await snapshot()));
       if (url.pathname === '/api/document') {
         const task = registry.tasks.find(item => item.id === url.searchParams.get('task'));

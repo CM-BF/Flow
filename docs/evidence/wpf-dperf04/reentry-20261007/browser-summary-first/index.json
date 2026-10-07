@@ -1,0 +1,106 @@
+{
+  "run": "summary-20261007-084117-51ac56",
+  "implementation": "cfd5a53323438709843828d74cab67502801060c",
+  "actualHead": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+  "state": "FAILED",
+  "checks": 6,
+  "screenshots": 0,
+  "chargedMs": 8258,
+  "remainingMs": 51742,
+  "files": [
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-runs/summary-20261007-084117-51ac56/browser-results.json",
+      "bytes": 5002,
+      "sha256": "2e6d4daa1487334fae581ea093a48ed07526227ee8f12e229bb0c6a79bc941fc"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-runs/summary-20261007-084117-51ac56/chrome.log",
+      "bytes": 6401,
+      "sha256": "89853ce1f3460f8b9814b6c763b2d2aa47d2b36397d436785c7007db787f1fa6"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-runs/summary-20261007-084117-51ac56/owned-chrome.json",
+      "bytes": 2252,
+      "sha256": "b20746abb180e26b1144868e6fa9fa85d5acb7fc6efe1ef2307c544f818b807b"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/admission.json",
+      "bytes": 459,
+      "sha256": "6847cc2c6c6bfa9f2b4f3232d4512d20c74eceb88fefe7751808921c2ce81426"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/binding.json",
+      "bytes": 17661,
+      "sha256": "e1418766ffc61b0d112c35ac91126bfba51c86c104d65ffc3e013938fc49c710"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/child-gate.json",
+      "bytes": 3820,
+      "sha256": "20faa634185c6bb971b78cafd143fdaaffa064f8d821ddc08100c3f32550ea62"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/consumed-gate.json",
+      "bytes": 2798,
+      "sha256": "50da861a306ed4bdde19b24c3156f25d3298a31535aea885369980f15adc103f"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/fresh-claim.json",
+      "bytes": 1106,
+      "sha256": "ee22bf162acc2c35676c4920f43f402851a19cee2135a11019702b6a32ad8e67"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/gate.json",
+      "bytes": 2937,
+      "sha256": "194b00cbcc4b01081b8b046845651229d311306ea47f88f136cfbadb1df87fb5"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/manifest.json",
+      "bytes": 3147,
+      "sha256": "a21ccf869e122bb0767833d0d42acb349504c090f13799004124622a550b413d"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/outer-actual-exit.json",
+      "bytes": 484,
+      "sha256": "ac32d9789cbf1ca23436b988a3f0e53faa63e63802f64b28496270255eb12cd5"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/outer-start.json",
+      "bytes": 120,
+      "sha256": "b7b86dda958c0d854e373696a39e273ea8625ba04ae3c2c15c75736d507584cb"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/outer-stdout.log",
+      "bytes": 156,
+      "sha256": "947c7b3b30aab3c95d81fdd042f0635544750ed4adefcebd502a5f488ea630f7"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/parent-budget.json",
+      "bytes": 236,
+      "sha256": "6767aecdae8f27d1c4c694709a042bd254b6b164e295f20ee8f3e91a0379c8fa"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/parent.diff",
+      "bytes": 3224,
+      "sha256": "4cf6426ebe9c10e5fb8e51b154bd2fce68071585d89093cd374faa01650b0557"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/result.json",
+      "bytes": 46144,
+      "sha256": "384b5c32138d17173e7c48ea431bc0f126b48a6be874ce3a329ac2b2cd6990d4"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/worker.log",
+      "bytes": 889,
+      "sha256": "233e1ceda973f1cdc13f72aa4388b678b95d9dce7a860d173783ea054be012a4"
+    }
+  ],
+  "runner": "/private/tmp/dperf-c1/supervisor.py",
+  "runnerSha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+  "cleanup": "groups absent, scratch absent, worker/context/server/fixture closed, EOF complete, zero dropped",
+  "limits": "No product cause inferred. Native close/focus test synchronization corrected separately."
+}

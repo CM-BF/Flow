@@ -1,0 +1,66 @@
+{
+  "Node": {
+    "command": "/opt/homebrew/opt/node@24/bin/node --test apps/execution-dashboard/test/summary-detail.test.mjs",
+    "budgetMs": 30000,
+    "cleanupReserveMs": 5000,
+    "temporaryBytes": 8388608,
+    "rawBytes": 2097152,
+    "repositories": 2,
+    "tasks": 2,
+    "dependencies": "Node built-ins only; actual ledger import never called; all observers explicit synthetic",
+    "current": "Second run PASS; node-second/result.json and node.log; first failure preserved; no further unchanged rerun",
+    "temporaryLayout": "One owned temporary root containing owner/main Git repositories",
+    "network": "Owned loopback HTTP only; external network and real registry/PG forbidden",
+    "supervision": "External parent runner required: 25s work + 5s cleanup, own TMPDIR/PGID, tmp8MiB/raw2MiB; node:test timeout alone is insufficient",
+    "spentMs": 3950,
+    "remainingMs": 26050,
+    "implementationTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48"
+  },
+  "browser": {
+    "commands": [
+      "Only the independently reviewed external parent runner with populated binding/sandbox and fresh single-use gate; direct child invocation is not admitted"
+    ],
+    "combinedBudgetMs": 60000,
+    "cleanupReserveMs": 15000,
+    "retainedBytes": 8388608,
+    "gateFields": [
+      "allowRun",
+      "mode=dperf-browser",
+      "singleUse",
+      "entry",
+      "expiresAt",
+      "run",
+      "sourceHead",
+      "sourceHashes",
+      "previousRuntimeMs",
+      "totalMs",
+      "chromeExecutable",
+      "playwrightModule",
+      "playwrightSha256",
+      "supervision: parentPid/startedAtMs/workDeadlineMs/hardDeadlineMs/scratch/output",
+      "nativeChromeBoundaryApproval: pinned real Lead record for exact parent/wrapper",
+      "supervision: chromePid/chromePgid/chromeEndpoint/chromeOwnership"
+    ],
+    "ownNativeChrome": true,
+    "fixture": "Same two temporary repositories and explicit unknown ledger; no real registry/PG",
+    "current": "NOT_RUN 0/60000ms; root45f8 scoped source/preparation review complete; native Chrome boundary acceptance remains null; 19:46 opportunity returned NOT_RUN; new explicit shared window and fresh admission required",
+    "temporaryBytes": 67108864,
+    "temporaryLimitMeaning": "Both logical and allocated scratch observations; polling guard, not hard quota",
+    "retainedLimitMeaning": "8MiB cumulative evidence distinct from 64MiB temporary profile/scratch",
+    "supervision": "Parent sole budget writer owns native Chrome and sandboxed Node in independent PGIDs, signals/reaps both and samples final resources before scratch deletion and after evidence writes; ordinary SIGTERM/INT fails and cleans, handlers restored; SIGKILL not guaranteed",
+    "parentDraft": {
+      "path": "/private/tmp/dperf-b2/supervisor.py",
+      "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+      "state": "PREPARED_NOT_REVIEWED_NOT_RUN",
+      "previousSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+      "stateMeaning": "Original candidate state preserved; independent source approval is recorded separately and is not promotion/admission"
+    },
+    "nativeChromeBoundaryApproval": null,
+    "boundaryDifference": "Chrome no longer has custom outer OS file-write/egress policy; native sandbox kept; explicit independent acceptance required",
+    "independentSourceReview": {
+      "path": "browser-lifecycle-repair/root-45f8-source-review.json",
+      "verdict": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN"
+    }
+  },
+  "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9"
+}

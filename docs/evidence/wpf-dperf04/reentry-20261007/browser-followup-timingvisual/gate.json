@@ -1,0 +1,51 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "dperf-browser",
+  "phase": "remaining-consumers-20261007",
+  "closedPriorRuntimeMs": 40551,
+  "closedPriorBudget": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-budget.json",
+    "sha256": "d8a9254d7d0fb5f3a84a5f52c12d658adcfd7536c53082938f7a4944650e41ed"
+  },
+  "entry": "task-timing-visual",
+  "run": "timingvisual-20261007-092540-c4c486",
+  "expiresAt": "2026-10-07T09:28:40.477068+00:00",
+  "bindingSha256": "d4373efa8fd98e7ce7f93ae872751bd9e456fca227c069398185cc40c12c1ee1",
+  "runnerSha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+  "claim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "sourceHead": "bdc4d0a394695f98a149b21c7b0150a14f2d226e",
+  "sourceHashes": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "previousRuntimeMs": 7045,
+  "totalMs": 37955,
+  "startFreeBytes": 5334630400,
+  "stopFreeBytes": 1140850688,
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-dperf04-followup-source-review-20261007.json",
+    "sha256": "04222d07e01db258ac5ef36dc5a627526f7fab54e9f405913fe8960b723a19e9"
+  },
+  "previousBudgetSha256": "f4599694e3e6f2d1a99dd08cef8af38eb04dd6d53a9ccc3fa42dfd69d60d5846"
+}

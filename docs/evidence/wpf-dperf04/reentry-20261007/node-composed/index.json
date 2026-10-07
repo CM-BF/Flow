@@ -1,0 +1,91 @@
+{
+  "kind": "composed-source-direct-actual",
+  "sourceTarget": "cfd5a53323438709843828d74cab67502801060c",
+  "actualSourceHead": "b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679",
+  "files": [
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/admission.json",
+      "archive": "admission.json",
+      "bytes": 1570,
+      "sha256": "dd5cf9806f66a4c2994e5ee583714b28c02cb2a26211636f6ef89f74e04af3d2"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/binding.json",
+      "archive": "binding.json",
+      "bytes": 4860,
+      "sha256": "ec0e9fdc0452f663768eb0d8e32ec9e36f6f57fc275cc05da6a72000b353a5c6"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/gate.json",
+      "archive": "gate.json",
+      "bytes": 964,
+      "sha256": "5ac80a7ca370d241419ecde36fcdf13a646d78c830f9e73f16abe0b3b3b98fe3"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/consumed-gate.json",
+      "archive": "consumed-gate.json",
+      "bytes": 964,
+      "sha256": "5ac80a7ca370d241419ecde36fcdf13a646d78c830f9e73f16abe0b3b3b98fe3"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/cleanup-resource-sample.json",
+      "archive": "cleanup-resource-sample.json",
+      "bytes": 46,
+      "sha256": "34346cc839e771e3d431f8a2a74c775e36917801b4e2e3fe33c7bb14602fb2f4"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/result.json",
+      "archive": "result.json",
+      "bytes": 4767,
+      "sha256": "19267413c7feccded2a98cbe19b6ca0fe8ca931496fc99de7278c9eaad84483b"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/actual-exit.json",
+      "archive": "actual-exit.json",
+      "bytes": 354,
+      "sha256": "1c9db20de5574a600a311e34f58659d40d04e75b37b907c7f04ac893cbcbc53b"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/acceptance.json",
+      "archive": "acceptance.json",
+      "bytes": 632,
+      "sha256": "8ae1e22a3876e97499b24cd740c840ce821ddec9e55ab5a5d3771b4f5e618514"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/node.log",
+      "archive": "node.log",
+      "bytes": 2770,
+      "sha256": "3136c0bfdcbda36cdabc5e41910cf8a7b28eedb6122cf8c76c34794154df8261"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/outer.stdout",
+      "archive": "outer-stdout.log",
+      "bytes": 609,
+      "sha256": "c439a62de9a6937874b43ed0c4df146044b664a13ed1046b2cacf1a8587e9110"
+    },
+    {
+      "original": "/private/tmp/dperf04-composed-node-vy5_dazj/outer.stderr",
+      "archive": "outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "outsideProjectPreparedSource": [
+    {
+      "path": "/private/tmp/dperf04-composed-node-vy5_dazj/run.py",
+      "bytes": 16176,
+      "sha256": "0d92e8d4af10d512cfa1e5acbfadc0cff822c9581423066fc80c66c598bda698"
+    },
+    {
+      "path": "/private/tmp/dperf04-composed-node-vy5_dazj/sandbox.sb",
+      "bytes": 315,
+      "sha256": "1082b191802025361a84a14f5b1b8db803d91cbb26725187108d5bd7ace970e6"
+    }
+  ],
+  "meaning": "Raw log extensions mapped explicitly; external prepared runner/profile retained at original paths, not copied as project product source. Actual outer receipt and terminal, not disk PASS alone, are accepted.",
+  "phaseChargeMs": 2866,
+  "phaseRemainingMs": 27134,
+  "historical3950MsPreserved": true,
+  "browser": "NOT_RUN/0 of 60000",
+  "HTTP": "Fixture close after-hook and absent owned group; no separate port closure probe"
+}

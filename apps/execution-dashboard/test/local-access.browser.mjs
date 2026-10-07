@@ -3,6 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createDashboardServer } from '../src/server.mjs';
+import { runBrowserCheck } from './summary-detail.browser.mjs';
 
 const FAKE_TOKEN = 'synthetic_browser_owner_token_for_checks_123456';
 const snapshot = {
@@ -32,15 +33,20 @@ export async function checkLocalAccessBrowser({ ownedDefaultContext, expect, out
       return FAKE_TOKEN;
     },
   };
-  const server = createDashboardServer({ tasks: [] }, { localAccess: provider });
+  const server = createDashboardServer({ tasks: [] }, { localAccess: provider, assignmentObserver: async () => ({ state: 'unknown', claims: [], reason: 'isolated access fixture; no PG authority' }) });
   const context = ownedDefaultContext;
   try {
     assert.ok(context, 'caller must transfer its fresh owned default context');
     await mkdir(outputDirectory, { recursive: true });
     await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
     const origin = `http://127.0.0.1:${server.address().port}`;
-    // Explicit empty snapshot keeps the real dashboard entry while preventing aggregate/Git/ledger reads.
+    // Explicit empty DTOs keep the real dashboard entry without aggregate/Git/ledger reads.
     await context.route(`${origin}/api/snapshot`, route => route.fulfill({ json: snapshot }));
+    await context.route(`${origin}/api/summary`, route => route.fulfill({ json: { ...snapshot,
+      kind: 'summary', version: 1, readId: 'access-fixture', registryFingerprint: 'access-fixture', completedAt: snapshot.generatedAt } }));
+    await context.route(`${origin}/api/assignments`, route => route.fulfill({ json: {
+      kind: 'assignments', version: 1, readId: 'access-fixture', registryFingerprint: 'access-fixture',
+      assignments: { state: 'unknown', claims: [], reason: 'isolated access fixture; no PG authority' }, byTask: {}, unregisteredAssignments: [] } }));
     await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin });
     const page = await context.newPage();
     await page.setViewportSize({ width: 1000, height: 800 });
@@ -170,5 +176,14 @@ export async function checkLocalAccessBrowser({ ownedDefaultContext, expect, out
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  throw new Error('Use the isolated browser owner to call checkLocalAccessBrowser; direct execution runs zero checks.');
+  await runBrowserCheck('local-access', async ({ context, expect, report, output }) => {
+    const result = await checkLocalAccessBrowser({ ownedDefaultContext: context, expect, outputDirectory: output });
+    report.access = result;
+    report.checks.push(...result.checks); report.errors.push(...result.errors);
+    report.contextClosed = result.cleanup.context === 'closed';
+    report.serverClosed = result.cleanup.http === 'closed';
+    assert.equal(result.state, 'PASSED'); assert.equal(result.checks.length, 5);
+    assert.equal(report.contextClosed, true); assert.equal(report.serverClosed, true);
+    report.screenshots.push('390-light.png', '390-dark.png');
+  }, { fixtureFactory: null, useDefaultContext: true });
 }

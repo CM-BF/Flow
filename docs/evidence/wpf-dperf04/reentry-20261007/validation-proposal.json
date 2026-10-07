@@ -1,0 +1,26 @@
+{
+  "state": "PROPOSED_NOT_RUN",
+  "sourceTarget": "cfd5a53323438709843828d74cab67502801060c",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "expected": {
+    "files": 1,
+    "leafTests": 9,
+    "parentTests": 1,
+    "skipTodoFail": 0,
+    "repositories": 2,
+    "tasks": 2
+  },
+  "totalWallMs": 30000,
+  "cleanupReserveMs": 5000,
+  "tmpBytes": 8388608,
+  "rawBytes": 1048576,
+  "nodeDependencies": "built-in only; production ledger import remains deferred and injected observer never imports pg",
+  "network": "owned dynamic loopback only",
+  "scope": "two new ACCESS/TIMING integration cases plus original seven summary/detail cases; no 81 unchanged parser rerun or unchanged full ACCESS suite",
+  "browser": "NOT_RUN; existing summary/task-links/timing/access behavior consumers require a new binding and actual resource handoff; no real registry/performance probe"
+}

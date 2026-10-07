@@ -1,0 +1,22 @@
+✔ stops only the recorded process identity and leaves a mismatched identity untouched (50.43525ms)
+✔ a process ignoring TERM stays unknown at the deadline instead of being force-killed (727.359333ms)
+✔ public startup failure exposes only controlled fields, never arbitrary codes or error text (1.579541ms)
+✔ readiness primary is persisted before cleanup and survives cleanup plus persistence failure (0.850917ms)
+✔ pre-spawn phases and safe failure remain bound to the owned nonce with private file permissions (66.109958ms)
+✔ insecure root permissions and symlink roots are rejected (1.984333ms)
+✔ state hardlinks, symlinks and insecure modes cannot establish a diagnostic owner (19.645792ms)
+✔ diagnostic output is exclusive and an existing symlink cannot redirect writes (4.00175ms)
+✔ actual child nonzero exit preserves private stderr bytes and emits only bounded metadata (74.695083ms)
+✔ overflow is drained without killing the child and retains exactly the first 64KiB (80.277375ms)
+✔ diagnostic errors still await the actual child exit and preserve its numeric status (98.890167ms)
+✔ missing stderr EOF is bounded and remains explicitly incomplete (138.817417ms)
+✔ ownership replacement prevents new phase publication while retaining the original private stderr (25.620666ms)
+✔ output permission changes stop retaining bytes but still drain and preserve child exit (66.933833ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1448.992458

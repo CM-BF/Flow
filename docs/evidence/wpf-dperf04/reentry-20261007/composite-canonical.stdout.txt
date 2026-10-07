@@ -1,0 +1,141 @@
+{
+  "errors": [],
+  "implementation": {
+    "target": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "scopes": [
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/src/local-access.mjs",
+      "apps/execution-dashboard/public/local-access.js",
+      "apps/execution-dashboard/public/local-access.css",
+      "apps/execution-dashboard/public/index.html",
+      "apps/execution-dashboard/test/local-access.test.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "record": "PASSED bc6126278c13e8c355d704dd3c371417331026b2：既有组合Node10/10归cfd5；summary9、关联6、Timing5、ACCESS5及视觉1+1/五新PNG由root精确闭包核验接受，未重跑；旧红保留，两个browser phase CLOSED"
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED（固定composite源码、既有实际验收与精确档案闭包；main/部署另列未完成）**",
+    "target": "bc6126278c13e8c355d704dd3c371417331026b2"
+  },
+  "proof": {
+    "target": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "head": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "scopes": [
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/src/local-access.mjs",
+      "apps/execution-dashboard/public/local-access.js",
+      "apps/execution-dashboard/public/local-access.css",
+      "apps/execution-dashboard/public/index.html",
+      "apps/execution-dashboard/test/local-access.test.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff",
+      "docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py"
+    ],
+    "observedAt": "2026-10-07T09:37:20.203Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json",
+      "docs/evidence/wpf-dperf04/reentry-20261007/quality.md",
+      "plans/wpf-dperf04-summary-detail/plan.md",
+      "plans/wpf-dperf04-summary-detail/review.md",
+      "plans/wpf-dperf04-summary-detail/status.md",
+      "docs/evidence/wpf-dperf04/reentry-20261007/composite-close-scope-observation.json",
+      "docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  },
+  "todo": [
+    {
+      "id": "DPERF04-01",
+      "state": "completed",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-02",
+      "state": "completed",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-03",
+      "state": "pending",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-04",
+      "state": "completed",
+      "owner": "w01_owner"
+    }
+  ],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "轻摘要/按需详情与ACCESS/TIMING组合源码、实际功能/视觉及精确30路径档案闭包已独立APPROVED；main未集成",
+    "next": "原Execution Lead基于固定bc612与精确接收包完成当前main接收；部署与真实registry性能另记",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  }
+}

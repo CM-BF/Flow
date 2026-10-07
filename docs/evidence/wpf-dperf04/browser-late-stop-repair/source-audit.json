@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-06 19:45:45 UTC",
+  "implementationTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "previousTarget": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+  "base": "c837b5dccaea429b0112d1c7e0c752c41334204a",
+  "sourceFiles": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 8802,
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6686,
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 33937,
+      "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 12804,
+      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 31990,
+      "sha256": "077a7b9b71adfef8419e2c97992c27545a4695eaa033578ffaf0be6f68e1dea7"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 10845,
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+    }
+  ],
+  "protectedDiff": "",
+  "sixOtherSourceFilesUnchanged": true,
+  "exactPreservedBodies": {
+    "summaryFixture": "8354cbaa49daec8b8596885ad654e24d8987d7ca73448540e0b72bfc59f2ab1f",
+    "summaryChecksAndMain": "9006982e13b6d3e2d1f88b7a89a419b03358f6f85da121897618c78382c66b6e"
+  },
+  "taskLinksWholeFileUnchanged": true,
+  "sourceDiffCheck": 0,
+  "runtime": "NOT_RUN",
+  "nodePreviousTotalMs": 3950,
+  "nodeHistoricalTarget": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "browserPreviousTotalMs": 0,
+  "browserTotalMs": 60000,
+  "cleanupMs": 15000,
+  "candidate": "/private/tmp/dperf-b2",
+  "supervisorSha256": "544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c",
+  "supervisorOldSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+  "settingsReuseSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+  "authorityBoundary": "GO native Chrome boundary was accepted for the prior exact parent; root must rebind to this changed parent under existing authorization before admission",
+  "sourceOnlyValidation": "Manual lifecycle/diff review and exact byte/hash comparisons. No AST/parser/import/Node/Chrome/PG/free probe. Initial static source diff selector included historical metadata and was corrected to apps/; no product check was run.",
+  "reviewInputs": [
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-addendum.json",
+      "sha256": "9deb7b98adfd7543fae552c8ce9a12b29238b87411ba06479bf3bde29b2ec55b",
+      "bytes": 5943
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-b17-source-review.json",
+      "sha256": "d88652010d3eed686815fd983b40bb82568021dd99bd00f4c98f1f3a0caacd12",
+      "bytes": 4238
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-populated-binding-review.json",
+      "sha256": "bf81eaba779464c641308c5b836b0772eba244b4ac16bcd24a855fc8617e1000",
+      "bytes": 2633
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-lifecycle-repair/manager-b17-source-review.json",
+      "sha256": "845d9304c21980c78390cb8dd00777287708b353ed582a1dbfa192a02af5a972",
+      "bytes": 6123
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/browser-lifecycle-repair/fresh-scope-observation.json",
+      "sha256": "f00a8fb4b0828eee978034b9fd6ef52361b56b76324fdd89976e46752688d9ce",
+      "bytes": 2296
+    }
+  ],
+  "lateStopPreviousSha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79",
+  "lateStopStatus": "SOURCE_ADDRESSED_PENDING_INDEPENDENT_REVIEW_NOT_RUN",
+  "lateStopPreservedFiles": [
+    {
+      "name": "binding-before-boundary.json",
+      "bytes": 15052,
+      "sha256": "ce84127219097e032aed35edf5836e5e8a43a2874205d4d1198ae177bb46a58e"
+    },
+    {
+      "name": "source-audit.json",
+      "bytes": 3856,
+      "sha256": "57171a8227be6d9362cb47464731a176d33fa051e9b2dc92813b88d4eebdd20e"
+    },
+    {
+      "name": "wrapper.diff",
+      "bytes": 11336,
+      "sha256": "7db306af1a0d2999dc7a6e702d1f462d0f4cde44ab70e263e4c66f22764696e8"
+    },
+    {
+      "name": "binding.json",
+      "bytes": 15302,
+      "sha256": "da8356330f14be29809e64b8bcb73b655067fa5b33e797692d8857b02ae502d5"
+    },
+    {
+      "name": "supervisor.py",
+      "bytes": 22052,
+      "sha256": "49859c79a4698f88eb379faf1489cca5f47b9c072d24bc113208fe47329acb79"
+    },
+    {
+      "name": "report.md",
+      "bytes": 4118,
+      "sha256": "b55e124864db8c96ff3b77cbdd5a5e780060b62140cfddf03078a2748903e157"
+    },
+    {
+      "name": "manifest-before-boundary.json",
+      "bytes": 2342,
+      "sha256": "4c9cfcc21cf3736343d8c6265b0e1fb7cafc7ee273d9332ebf2bd199a772391f"
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 2592,
+      "sha256": "b23539d520a340feea558b3f05ff96eb8c2e785e023c9242062f990e0e607bb9"
+    },
+    {
+      "name": "supervisor.py.diff",
+      "bytes": 29797,
+      "sha256": "c5f906dfad7bcba6d159abc25de11d675b21ba074f81638f1149b592686e1073"
+    }
+  ]
+}

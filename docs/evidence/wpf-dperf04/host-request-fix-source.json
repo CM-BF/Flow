@@ -1,0 +1,95 @@
+{
+  "at": "2026-10-06 16:57:00 UTC",
+  "target": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+  "priorMetadata": "34bac707656a7ceca36aa18a569a6c7432d839b1",
+  "method": "Git/text/hash only; no Node imports, syntax/type/test, HTTP, space sampling or service run",
+  "changed": [
+    "apps/execution-dashboard/test/summary-detail.test.mjs"
+  ],
+  "files": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 8802,
+      "sha256": "aae4938d07419aa120174200d6e84b862768909e6d202d7ce0408ef5c5da67f0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6686,
+      "sha256": "4fc5727137608cc449065de66451370e2e4bb79a4d70feccbed298d5238ec1bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5487,
+      "sha256": "3920854061fcd6ce35795baa146d207662309ea5345102db933a0e4f95425994"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 33937,
+      "sha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 12804,
+      "sha256": "12ade5b68d65ded6eb312c6548b180c68508f7c91c0552e447c25759014fc2d5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 32616,
+      "sha256": "d0a07d497b6842a581b3a52c57f44ad10a132cd7adaa0057d1b236855871d4e5"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 10845,
+      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712"
+    }
+  ],
+  "protectedPaths": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/src/task-links.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/registry.mjs",
+    "apps/execution-dashboard/src/proof.mjs",
+    "apps/execution-dashboard/src/git-snapshot.mjs",
+    "apps/execution-dashboard/src/documents.mjs",
+    "apps/execution-dashboard/src/coordination/ledger.mjs",
+    "apps/execution-dashboard/test/fixture.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/public/architecture-data.js",
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml"
+  ],
+  "protectedDiff": "",
+  "nodeFirstRaw": [
+    {
+      "path": "docs/evidence/wpf-dperf04/node-first/binding.json",
+      "bytes": 3913,
+      "sha256": "59892025f5ac3705dfd55c912dd44c17bd3725d536df56d5a1de9651446dab4b"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/node-first/consumed-gate.json",
+      "bytes": 963,
+      "sha256": "8dc999dc76ea28accefe564511efe3684043094e9bf324735335d230c606dbc1"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/node-first/node.log",
+      "bytes": 3505,
+      "sha256": "f47bd30c574b80c9607fb583d5a524d4734a31ddb6771f93160eea19bd93da5d"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/node-first/owner-live.json",
+      "bytes": 1043,
+      "sha256": "742bb5f8477d33f9462ba6ecc03a43fb6be5bdd43d01fb484531b3a6e5e18e5f"
+    },
+    {
+      "path": "docs/evidence/wpf-dperf04/node-first/result.json",
+      "bytes": 3341,
+      "sha256": "7a71e8e221f3c2afe14d1eb42a7582d117f340b16110cd79aef6afe156548c3f"
+    }
+  ],
+  "sourceDiffCheck": 0,
+  "runtimeSpentMs": 1632,
+  "runtimeRemainingMs": 28368,
+  "firstRunInterpretation": "Exact server-inbound Host not captured in first run. Transport rewrite remains hypothesis, not proven product cause."
+}

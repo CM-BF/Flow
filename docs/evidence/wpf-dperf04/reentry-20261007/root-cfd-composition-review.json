@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-07T08:20:08.306493+00:00",
+  "reviewer": "/root gpt-6-astra ultra",
+  "decision": "APPROVED_COMPOSED_SOURCE_AND_BOUNDED_DIRECT_VALIDATION_NOT_RUNTIME_OR_BROWSER_PASS",
+  "sourceTarget": "cfd5a53323438709843828d74cab67502801060c",
+  "executionMetadataHead": "b1c6c24f66e3c23afc3a50e0ad8c67f6ebcba679",
+  "blockingFindings": [],
+  "verification": {
+    "sourcePinsAgainstGitAndCurrent": 16,
+    "unchangedMainSupplyPins": 7,
+    "sourceScopeDelta": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs"
+    ],
+    "sourceManifestSha256": "8ba566afc1c930550bb05fed7948df80068271e9a11a648b8b474ac92e5880f6",
+    "claim": "b554ddb6 v4 exact11, 9 implementation paths plus original owner records; 7 input supply remains fixed-main readonly"
+  },
+  "reviewedBehavior": [
+    "ACCESS handler and private provider remain before generic GET-only routing; private values absent from summary/detail/assignment/snapshot projections.",
+    "Timing declarations use bounded summary fields and omit waiting body; detail uses its own generatedAt and full waiting declarations. Invalid timing does not falsify unrelated status progress.",
+    "Client weak per-surface observations bind source epoch; summary start/failure invalidates old elapsed estimates without replacing detail content, original timing facts, focus or selection.",
+    "Selected detail, document and assignment requests retain existing separate identity/cancellation semantics; no new finished-result cache.",
+    "Timing and ACCESS browser fixtures adapted to explicit summary/detail DTOs with synthetic assignment observers, not production PG. Original behavior assertions preserved; supplemental summary timing DOM/freshness assertions remain NOT_RUN.",
+    "Direct suite adds actual synthetic ACCESS routing/private-provider isolation and summary-v-detail timing checks to original seven cases."
+  ],
+  "directSegmentAuthorization": {
+    "meaning": "Finite composed-source validation phase. Old3950ms direct results remain historical and charged, not rebound to current source.",
+    "newPhaseMaximumMs": 30000,
+    "cleanupIncludedMs": 5000,
+    "expectedLeafTests": 9,
+    "expectedParentTests": 1,
+    "command": [
+      "node@24",
+      "--test",
+      "--test-concurrency=1",
+      "apps/execution-dashboard/test/summary-detail.test.mjs"
+    ],
+    "tmpMaximumBytes": 8388608,
+    "rawMaximumBytes": 1048576,
+    "metadataMaximumBytes": 1048576,
+    "declaredCombinedAdditionalMaximumBytes": 10485760,
+    "repositoryCount": 2,
+    "taskCount": 2,
+    "network": "Own dynamic loopback HTTP only; no production registry/ledger/PG/Chrome/provider/personal endpoints",
+    "condition": "One local segment at a time for Web. Explicit handoff from Recovery local if it has started; no assumption that pending source work reserves a local slot. Fresh original scope/input/output identities and resource floor, own bounded supervisor with process/group cleanup.",
+    "iteration": "Within phase remaining cumulative budget and unchanged scope/lifecycle, owner can fix and related-retest without per-run root approval. Failed attempts remain immutable; unknown resources stop. Charge max actual wall observations; report old+new cumulative separately."
+  },
+  "browserState": "NOT_RUN; original60000ms including15000cleanup unspent. New composed-source consumer binding required; actual browser and performance/production claims not granted by this receipt.",
+  "cleanCode": {
+    "scope": "Fixed8-file delta and current16 pins, with unchanged-main consumer fixtures diff",
+    "findings": "Existing registry/renderer/observation seams reused. No second manually maintained status source or copied ACCESS credential handler. No blocking source correction found."
+  },
+  "limits": [
+    "Source approval only, no actual9leaf result yet.",
+    "UI focus/selection, themes and delayed-response behavior require actual composed browser evidence.",
+    "No main integration or personal deployment."
+  ]
+}

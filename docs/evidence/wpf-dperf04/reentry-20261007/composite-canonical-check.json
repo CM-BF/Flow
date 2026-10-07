@@ -1,0 +1,552 @@
+{
+  "at": "2026-10-07T09:37:20.155675+00:00",
+  "elapsedMs": 123.2311250641942,
+  "actualExitCode": 0,
+  "meaning": "Own canonical parse/link/implementation proof only; no engineering suite, browser, PG or live registry",
+  "command": "import {readFile} from 'node:fs/promises'; import {parseStatus,reviewState} from './apps/execution-dashboard/src/status.mjs'; import {compareImplementation} from './apps/execution-dashboard/src/proof.mjs'; const status=parseStatus(await readFile('plans/wpf-dperf04-summary-detail/status.md','utf8'),'WPF-DPERF04'); const review=reviewState(await readFile('plans/wpf-dperf04-summary-detail/review.md','utf8'),status.reviewRecord); const target='bc6126278c13e8c355d704dd3c371417331026b2'; const proof=await compareImplementation(process.cwd(),target,target,status.implementation); console.log(JSON.stringify({errors:status.errors,implementation:status.implementation,checks:status.checks,review,proof,todo:status.todos.map(({id,state,owner})=>({id,state,owner})),human:status.human},null,2)); if(status.errors.length||status.implementation.errors.length||status.implementation.scopes.length!==30||status.checks.state!=='passed'||status.checks.target!==target||review.state!=='approved'||review.target!==target||proof.state!=='unchanged'||status.todos.length!==4)process.exitCode=1;",
+  "statusErrors": [],
+  "implementationErrors": [],
+  "implementationScopeCount": 30,
+  "checks": "passed",
+  "review": "approved",
+  "reviewTarget": "bc6126278c13e8c355d704dd3c371417331026b2",
+  "proofState": "unchanged",
+  "proofOutsideChanges": [],
+  "todoCount": 4,
+  "linksChecked": 106,
+  "linkErrors": [],
+  "links": [
+    {
+      "document": "plan.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "../../AGENTS.md#modular-design",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "../../docs/evidence/wpf-dperf04/interface.md",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "status.md",
+      "exists": true
+    },
+    {
+      "document": "plan.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "plan.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/interface.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/claim-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/source-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/validation-entrance.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "review.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-first/result.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-first/node.log",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-first/node.log",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/host-request-fix-source.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-second/result.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-second/node.log",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-second/binding.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-wrapper-source/audit.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-wrapper-source/interface.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/fresh-scope-observation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/interface.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-addendum.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-45f8-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/approval-metadata-scope-observation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/scope-observation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-addendum.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/late-stop.diff",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/before-late-stop/preserved-files.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/previous-exact-native-boundary-acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-native-boundary-rebind.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/approval-scope-observation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/manager-reentry.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/source-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-source-supply-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/validation-proposal.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-status-document-observation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/node.log",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/actual-exit.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/quality.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-second/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-task-links/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-timing-first/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-timing-second/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.md",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/index.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/final-composite-source-closure.json",
+      "exists": true
+    },
+    {
+      "document": "status.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-followup-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/b0e937-client/report.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/b0e937-client/sources.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/dperf04-1441-date-root-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/dperf04-abd2-host-root-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/dperf04-abd2-host-peer-review.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-current/dperf04-node-second-root-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-b17-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/manager-b17-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-populated-binding-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-addendum.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/audit.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/interface.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-lifecycle-repair/root-45f8-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-4fac/root.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-4fac/client.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/review-4fac/client-sources.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/node-second/result.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-wrapper-source/interface.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-addendum.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/late-stop.diff",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/report.md",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/previous-exact-native-boundary-acceptance.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-source-review.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-native-boundary-rebind.json",
+      "exists": true
+    },
+    {
+      "document": "review.md",
+      "target": "../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json",
+      "exists": true
+    }
+  ],
+  "ownedChildExited": true,
+  "tmpCreated": false
+}

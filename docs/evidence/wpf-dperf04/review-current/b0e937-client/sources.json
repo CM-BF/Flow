@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-06T16:43:12.055488+00:00",
+  "reviewer": "/root/workspace_panels_owner",
+  "decision": "APPROVED_SCOPED_SOURCE_ONLY",
+  "fixedTarget": "b0e937d53a664b3398d36a080cef1a2d4225b6f3",
+  "previousTarget": "6c18b81a11eece9c07dd047d28da099a0b6bbb24",
+  "head": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+  "branch": "codex/dashboard-summary-detail",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "targetSha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+      "currentSha256": "f3fa655d5fd358549f4d97ea99e3141a3e74269194d9fbfdce2edf71950d966a",
+      "previousSha256": "282226b050274ab87467e8673f395bb48b215cde817b04ffc402d1824f58bbf1",
+      "lines": 437
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "targetSha256": "d0a07d497b6842a581b3a52c57f44ad10a132cd7adaa0057d1b236855871d4e5",
+      "currentSha256": "d0a07d497b6842a581b3a52c57f44ad10a132cd7adaa0057d1b236855871d4e5",
+      "previousSha256": "1b081a8d168f132c0a89867e88ee342f4a49e1000452d004a7f1b1e1c8eb6025",
+      "lines": 391
+    }
+  ],
+  "c2TaggedResponseBodyAndFulfillBlockByteIdentical": true,
+  "runtime": "NOT_RUN; no product import/tests/typecheck/PG/browser/HTTP/services/resource sampling; git and file reads only"
+}

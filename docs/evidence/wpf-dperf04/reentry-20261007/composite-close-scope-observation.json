@@ -1,0 +1,40 @@
+{
+  "observedAt": "2026-10-07T09:36:05.956Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "docs/evidence/wpf-dperf04",
+      "plans/wpf-dperf04-summary-detail"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-summary-detail",
+    "origin": "new",
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner",
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "createdAt": "2026-10-06T16:10:21.626Z",
+    "updatedAt": "2026-10-07T08:09:31.783Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "writeScope": [
+    "plans/wpf-dperf04-summary-detail",
+    "docs/evidence/wpf-dperf04"
+  ],
+  "reviewScopeCount": 30,
+  "claimUnchanged": true
+}

@@ -1,0 +1,926 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "entry": "local-access",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "implementation": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "head": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "node": "/opt/homebrew/opt/node@24/bin/node",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+  "readOnlyFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/human.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "bytes": 4459
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/task-links.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "bytes": 5903
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/status.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/registry.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/registry.mjs",
+      "sha256": "76695b62e820b645ccf2dc764e61bf4c2638060d8416537174f3e4cca059e6e5",
+      "bytes": 21146
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/proof.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "bytes": 6883
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/git-snapshot.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "bytes": 2396
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/documents.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "bytes": 2917
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/coordination/ledger.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "bytes": 7058
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/fixture.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/fixture.mjs",
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "bytes": 4181
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/index.html",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8840
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/styles.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/styles.css",
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "bytes": 8947
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture-data.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "bytes": 41828
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "bytes": 729
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-lock.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-lock.yaml",
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "bytes": 279163
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-workspace.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-workspace.yaml",
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "bytes": 40
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "bytes": 7689
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "bytes": 50320
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "sha256": "ba3a11e50915fe2104fe445e026a572f3d119dc83973756c7cd5a5f038d7540d",
+      "bytes": 4261
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "sha256": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8",
+      "bytes": 67359104
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+      "bytes": 367696
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a",
+      "bytes": 18856
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "bytes": 754
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48",
+      "bytes": 679
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998",
+      "bytes": 1359
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "sha256": "1deb265617d0e87b6d05bf8b3d5bf73cd4b788665c249c609a01b94ceff2eea1",
+      "bytes": 1400
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "sha256": "b97fa53a6ab864f51c9c48b5e4647d0acae45ba2948c5d78e38bfeb56755d974",
+      "bytes": 806
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "sha256": "54bf5935cf339938408c656bde958047a1217bf77434acdf75a0c717cddaaeae",
+      "bytes": 36487
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44",
+      "bytes": 648
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b",
+      "bytes": 876
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b",
+      "bytes": 697
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "sha256": "4637f4dbfef9cfc01baeb5f5d2cb63fa0901522c96915ea2227290558d27123e",
+      "bytes": 3481
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+      "bytes": 3477183
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "bytes": 4082
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/binding.json",
+      "sha256": "ed18f7a959eb2554615090b6f2d0ab3cee710f655ae720c2167717773419d950",
+      "bytes": 29288,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/result.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/result.json",
+      "sha256": "72eb6f77b1048315c2c92e6864853ba8cda8c3c7c3c9629eaaf24aed7ab97878",
+      "bytes": 48680,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/supervisor.py",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/supervisor.py",
+      "sha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+      "bytes": 23164,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/gate.json",
+      "sha256": "373b08a3a43f2fe47adfa736eb1a483f9d3e8aeeaace757dbf4585eccc742709",
+      "bytes": 2995,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/worker.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/worker.log",
+      "sha256": "f2bde1e0fe47e078187bb81b34f7b2c0d01379548d95cc16d42c3cce9f1417f8",
+      "bytes": 944,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/sandbox.sb",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/sandbox.sb",
+      "sha256": "81b409b2c829c295e511e59320dd849a1ea6206faa01adfe1b81ed67ef8185c1",
+      "bytes": 450,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/manifest.json",
+      "sha256": "cf6c24e7b15cdd86a80029429bdb19778c1ac3661d464a932cf4911414efc647",
+      "bytes": 2466,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/consumed-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/consumed-gate.json",
+      "sha256": "6e11641fc1d50bfcf31b9c9a00761a2fef37aec3cd05d293098e137d5d77c049",
+      "bytes": 2856,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/child-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/child-gate.json",
+      "sha256": "7803b467499a336f9f7521b4216930723849ced3c4ac761e805c6839338c89c1",
+      "bytes": 3876,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/admission.json",
+      "sha256": "0b98703d6dd9949ffa4d92f558152c37d91b7e8fe1c79de31850735cde1ec60d",
+      "bytes": 1628,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/stderr.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/stdout.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/stdout.log",
+      "sha256": "37531d798a35cb6e6d5f8de761d87431c2bb08c9157ae4424908b80ebad7cb66",
+      "bytes": 154,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/actual-exit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/actual-exit.json",
+      "sha256": "4639504507ed0cf9a247ef752e677947e119f39a34453b0af06f145d5c9118b7",
+      "bytes": 484,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/start.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2-outer/start.json",
+      "sha256": "2f5267ea011f4e393eff15a696f45f1bd7f9ccb8760dbb7ed015f2da2c8081e1",
+      "bytes": 120,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/binding.json",
+      "sha256": "737e34b9690f072e1db77322ae60dd27341f4a4a11a65748ec25c73db4dfd6f5",
+      "bytes": 24439,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/result.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/result.json",
+      "sha256": "c28869c8de46ad0e7e171d8cd62302bcf7ffa42717b677aea56b73c6f7977af4",
+      "bytes": 49640,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/supervisor.py",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/supervisor.py",
+      "sha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+      "bytes": 23164,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/gate.json",
+      "sha256": "88a60cd1cd59ce442a8d0ec5829655aa59b6f312e149582cf5bccc789760ee17",
+      "bytes": 3001,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/worker.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/worker.log",
+      "sha256": "18917725deed0c05f70939c2f9be7048b5c114035a90ddc84494442d60e9fc76",
+      "bytes": 1231,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/sandbox.sb",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/sandbox.sb",
+      "sha256": "182f79b13a723003dffe828cf2526d504a769c2d6f2cab8e710e62dcda97f1ac",
+      "bytes": 453,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/manifest.json",
+      "sha256": "514acb34d99a33ad80a21ee20c1abd941176d8ee67f16baba833e94ab9eb8cbe",
+      "bytes": 2465,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/consumed-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/consumed-gate.json",
+      "sha256": "5979c154f88dcb186ba7f15366bad35c7355e22b58986bdf06197f6fe166eba5",
+      "bytes": 2862,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/child-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/child-gate.json",
+      "sha256": "3dbf76eec6103682f61170215acf335e7fccbff81b121d5d0cca30d85ed52a4d",
+      "bytes": 3885,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/admission.json",
+      "sha256": "a58c289dfce66325c6a87342523a77401ffbed680c43305ab7451143a8e0f830",
+      "bytes": 1619,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/audit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/audit.json",
+      "sha256": "4661d400db4b0d4693859d506490f19382c694670bd5189498fbbfde7864e4f0",
+      "bytes": 3775,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/binding-before-admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/binding-before-admission.json",
+      "sha256": "0baa5274c8342a348a954506f07a8a58c1839549478c8a38f5bf39574d805268",
+      "bytes": 17501,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/manifest-before-admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/manifest-before-admission.json",
+      "sha256": "9ab7d9cd6a053a4a0a4db52ef7ae4b8ca6cc0eeb1b57e6d565fcac6a46de8ca7",
+      "bytes": 2948,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/binding.json",
+      "sha256": "e1418766ffc61b0d112c35ac91126bfba51c86c104d65ffc3e013938fc49c710",
+      "bytes": 17661,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/result.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/result.json",
+      "sha256": "384b5c32138d17173e7c48ea431bc0f126b48a6be874ce3a329ac2b2cd6990d4",
+      "bytes": 46144,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/supervisor.py",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/supervisor.py",
+      "sha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+      "bytes": 23164,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/report.md",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/report.md",
+      "sha256": "4f14f15c22d3b3e2b41f56b57eba1117745528026d1adecebf68912e1251fdb7",
+      "bytes": 2691,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/gate.json",
+      "sha256": "194b00cbcc4b01081b8b046845651229d311306ea47f88f136cfbadb1df87fb5",
+      "bytes": 2937,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/worker.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/worker.log",
+      "sha256": "233e1ceda973f1cdc13f72aa4388b678b95d9dce7a860d173783ea054be012a4",
+      "bytes": 889,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/fresh-claim.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/fresh-claim.json",
+      "sha256": "ee22bf162acc2c35676c4920f43f402851a19cee2135a11019702b6a32ad8e67",
+      "bytes": 1106,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/sandbox.sb",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/sandbox.sb",
+      "sha256": "2622bf2c7166c86735ab7ae2f92cfa5db2453576e987333ea25d28d8a4e9ae55",
+      "bytes": 452,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/skills-and-inventory.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/skills-and-inventory.json",
+      "sha256": "970801069b930fce75fd81988bc07ebd29e1b2b80a8492bebed38bdc5ac3e471",
+      "bytes": 1010,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/manifest.json",
+      "sha256": "a21ccf869e122bb0767833d0d42acb349504c090f13799004124622a550b413d",
+      "bytes": 3147,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/parent.diff",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/parent.diff",
+      "sha256": "4cf6426ebe9c10e5fb8e51b154bd2fce68071585d89093cd374faa01650b0557",
+      "bytes": 3224,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/consumed-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/consumed-gate.json",
+      "sha256": "50da861a306ed4bdde19b24c3156f25d3298a31535aea885369980f15adc103f",
+      "bytes": 2798,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/child-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/child-gate.json",
+      "sha256": "20faa634185c6bb971b78cafd143fdaaffa064f8d821ddc08100c3f32550ea62",
+      "bytes": 3820,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1/admission.json",
+      "sha256": "6847cc2c6c6bfa9f2b4f3232d4512d20c74eceb88fefe7751808921c2ce81426",
+      "bytes": 459,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/stderr.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/stdout.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/stdout.log",
+      "sha256": "947c7b3b30aab3c95d81fdd042f0635544750ed4adefcebd502a5f488ea630f7",
+      "bytes": 156,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/actual-exit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/actual-exit.json",
+      "sha256": "ac32d9789cbf1ca23436b988a3f0e53faa63e63802f64b28496270255eb12cd5",
+      "bytes": 484,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/start.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3/prior-c2/prior-c1-outer/start.json",
+      "sha256": "b7b86dda958c0d854e373696a39e273ea8625ba04ae3c2c15c75736d507584cb",
+      "bytes": 120,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/stderr.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/stdout.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/stdout.log",
+      "sha256": "24e166444998b8a3da93d4b295ba0742cd6186c281f277ff050c8cd6301467a2",
+      "bytes": 154,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/actual-exit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/actual-exit.json",
+      "sha256": "db1466cc21a0338910e71ebdd8f72e3649355a2d1d0b7adf456bce43424c6ae7",
+      "bytes": 484,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/start.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/prior-c3-outer/start.json",
+      "sha256": "dc9b5435a4def0fb658df19cac9f3238cfd9ecc49581fa6f7964f868a27e036b",
+      "bytes": 120,
+      "role": "immutable prior retained within current accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/admission-not-run-lazy-overlap.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/admission-not-run-lazy-overlap.json",
+      "sha256": "b2c4aa3a5c1e9a018a60c3bc1f197efa756c2e420eaf882f3ba8748c947b82de",
+      "bytes": 1805,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/admission.json",
+      "sha256": "6c495043debc4148d14ef6539c236185f327049f6bb1addf31aa06fa3d227c9f",
+      "bytes": 1854,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-binding.json",
+      "sha256": "1854010ffe3a507989829e9e05cf505ace89f081c37e4fe9c0c490fc8d304891",
+      "bytes": 34906,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-manifest.json",
+      "sha256": "6ecc377a81be311e6e15783e93a65375b98bb202b607c8e621bce68b05b54fc4",
+      "bytes": 2998,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-report.md",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/before-reviewed-report.md",
+      "sha256": "8a9a41c25746f9fd1eb90938a4eeba0e4ef118cfcfab3da4f5ed56c527f8be65",
+      "bytes": 2704,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/binding-before-metadata-seal.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/binding-before-metadata-seal.json",
+      "sha256": "957cfd2c32f63a81c6103327bcff0df1537ed9fef80120e6526f2aba37905e71",
+      "bytes": 34906,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/binding.json",
+      "sha256": "35fb8f73fe02666318181f6d716876be008e2a4042c9d8ee8168edf1cee3e36d",
+      "bytes": 35068,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/child-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/child-gate.json",
+      "sha256": "a64c5c62f796843c7a089dde23e4809cd5581a5b98b1086aa0a1b3f0f55ed3a7",
+      "bytes": 3885,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/consumed-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/consumed-gate.json",
+      "sha256": "1f6e0d92f9522689ead682efdb851163c6d4b440effd3bc8ab0118ab9d667c5b",
+      "bytes": 2857,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/fresh-metadata-claim.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/fresh-metadata-claim.json",
+      "sha256": "88db16c3c2a76fcfdecc84e73cabfbcc553c47c6207a6bc67b56a046c0d99d14",
+      "bytes": 224721,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/gate-not-run-lazy-overlap.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/gate-not-run-lazy-overlap.json",
+      "sha256": "56c62695d476edcfaf2d915967f457b40ddac0c2becd499f52f18a30cb45f364",
+      "bytes": 2996,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/gate.json",
+      "sha256": "baf018eaf5138249d65bd8a22d8b00a98c1242449527c853f73a54e085625eed",
+      "bytes": 2996,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/manifest-before-metadata-seal.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/manifest-before-metadata-seal.json",
+      "sha256": "08a8120179c25282cece978bf6f6022f0be04b99a246e77cc0833689865cb8a0",
+      "bytes": 2998,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/manifest.json",
+      "sha256": "30eb881585915213403526aed0e2d7455224f8206a2a03cd7811666f47977ee2",
+      "bytes": 2990,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/not-run-lazy-overlap.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/not-run-lazy-overlap.json",
+      "sha256": "4624baefa1301fc4880f2e4875dd2de5bf47f439eed8968a2037b709aff97a31",
+      "bytes": 446,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/parent.diff",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/parent.diff",
+      "sha256": "345ff9d192440fa693530c714ec6096f27995f0c978c35d404e47e71a5df4142",
+      "bytes": 2279,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/report.md",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/report.md",
+      "sha256": "0cbba453e7ba06de424f3da1ff72cb9e2308147e22988e8e3c03258dfa22d5b8",
+      "bytes": 3069,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/result.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/result.json",
+      "sha256": "5c305448013c058c30e4cee3d6a770715b731c6af5ba8340d573d53ea68b1697",
+      "bytes": 55025,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/sandbox.sb",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/sandbox.sb",
+      "sha256": "bb134556a8caff017888f71aaa910e4b52096b37a3d7a075132b3dba18f75978",
+      "bytes": 458,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/source.diff",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/source.diff",
+      "sha256": "24534178309f9f010925d39fe2674ab3a21187356009d35c49510e31d991d4c8",
+      "bytes": 9992,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/supervisor.py",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/supervisor.py",
+      "sha256": "ee11bdf71578623fb435257445ea91c25f7d0776a0700c6fa189901108ac9f2d",
+      "bytes": 23752,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/worker.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers/worker.log",
+      "sha256": "14184e0e88062a99169d5a870d0e6f256a1472352fc83b02d0898c1e4452b030",
+      "bytes": 266,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/actual-exit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/actual-exit.json",
+      "sha256": "8be3434f7d6c749cf9640dd668663239ca75f256bb038457ec069146c2162792",
+      "bytes": 528,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/start.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/start.json",
+      "sha256": "055cf5ee6ee7bfce32c833501c6e0c91f211648c25d84ccf1813416021e019da",
+      "bytes": 120,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/stderr.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/stdout.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/prior-consumers-outer/stdout.log",
+      "sha256": "c8b0b876c4281e58f33f7c168232f0bfa1113b8addfca90cf1699d2f2992b510",
+      "bytes": 156,
+      "role": "immutable prior actual/outer retained within accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/admission.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/admission.json",
+      "sha256": "1aec322e274fc0cd9ddc0870227334f621db2fd663941f02c16e445757144e17",
+      "bytes": 1645,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/binding.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/binding.json",
+      "sha256": "f9e6eb3cfb521e53984b6ed3bf0107cfb2018532020a724b659740d0de79ddc9",
+      "bytes": 46273,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/child-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/child-gate.json",
+      "sha256": "8b37cf3bc1b765a86744250926fc8d97c26c4c81c624e72ac3c87b7b1f33e085",
+      "bytes": 3887,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/consumed-gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/consumed-gate.json",
+      "sha256": "743977ecbc8edfa3c7473476659d59c08e4b72a2f4931d2f59c82cbdd7d8a871",
+      "bytes": 2858,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/gate.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/gate.json",
+      "sha256": "c751f36b084eed019a1052c8b0962ae6f184769f6cb3235bf7454d5f5bf8d96c",
+      "bytes": 2997,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/manifest.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/manifest.json",
+      "sha256": "211f7974fcdca9aa059eacf29f5128941151b35138e60a7193a872e3d3101b00",
+      "bytes": 2360,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/result.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/result.json",
+      "sha256": "dcfae43c4bdfa5084ef4b1877680909b23a13f104259646ce1fbffd6bbc963b1",
+      "bytes": 54744,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/sandbox.sb",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/sandbox.sb",
+      "sha256": "304cb31be833cc51fa7c5056750789b569825d219a360edd4d04b257e1cef06f",
+      "bytes": 459,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/supervisor.py",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/supervisor.py",
+      "sha256": "ee11bdf71578623fb435257445ea91c25f7d0776a0700c6fa189901108ac9f2d",
+      "bytes": 23752,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2/worker.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2/worker.log",
+      "sha256": "363ed735a5e980b1485775dc171932630043b7fd5a73ea09306374d69698d070",
+      "bytes": 727,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2-outer/actual-exit.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2-outer/actual-exit.json",
+      "sha256": "9bd0d2fa1d252b9088cf666c835b3cc134a23e6c541e4001896fb6a3cb34994a",
+      "bytes": 528,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2-outer/start.json",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2-outer/start.json",
+      "sha256": "130fd51d4d9fb8f4a1e5a7f46e38abbf7a3e28fe51ac3ca241dedc22192fb62a",
+      "bytes": 120,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2-outer/stderr.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2-outer/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "role": "immutable closed prior actual retained inside accounting root"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/prior-consumer2-outer/stdout.log",
+      "realpath": "/private/tmp/dperf-f1/prior-consumer2-outer/stdout.log",
+      "sha256": "a23557f6c0ad0c8aed2fb8959f87a720f5a71f7da3e57669b05d68083dff7327",
+      "bytes": 154,
+      "role": "immutable closed prior actual retained inside accounting root"
+    }
+  ],
+  "previousRuntimeMs": 0,
+  "claim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner"
+  },
+  "preparedAt": "2026-10-07T08:52:27.913915+00:00",
+  "runCandidate": null,
+  "candidateOnly": true,
+  "nativeChromeBoundaryApproval": null,
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "preparedFiles": {
+    "supervisor.py": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "previousBindingProvenance": {
+    "path": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/binding.json",
+    "sha256": "ddf8e09b352e11c1d575c8a7c693e176ce3fe696d7a86269b57a21d0c5347d04",
+    "preparedAt": "2026-10-06T17:47:16.646807+00:00",
+    "runCandidate": "summary-detail-20261006-174716-candidate"
+  },
+  "nativeChromeBoundaryApprovalRebindRequired": true,
+  "sourceReview": {
+    "path": "/private/tmp/root-dperf04-consumers-lifecycle-review-20261007.json",
+    "sha256": "2cade96f046ab2179872eed2e950bcd334fe144ee7a17810d588514c8c7ed367"
+  },
+  "priorNativeBoundary": {
+    "path": "/tmp/root-dperf04-544c-native-boundary-rebind.json",
+    "sha256": "ccb92f1892be27306cc6293ca63150546b9eff715911a75db33b4e9a3e642d08"
+  },
+  "readiness": {
+    "local-access": "five original groups NOT_RUN",
+    "task-timing-visual": "one focused group/two body-region screenshots NOT_RUN",
+    "task-links-visual": "one narrow-light supplement group/one new PNG NOT_RUN"
+  },
+  "proposedAdmission": {
+    "phase": "remaining-consumers-20261007",
+    "startFreeBytes": 5334630400,
+    "stopFreeBytes": 1140850688,
+    "totalMs": 45000,
+    "cleanupMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "note": "Proposal only; prior40551 and unused19449 remain closed, no inherited runtime credit. Fresh current group budget required."
+  },
+  "sourceDelta": "Public meter retained-only adoption; exact scratch exclusion and bound roots; original scratch64MiB scanner retained. Remaining ACCESS and visual-only entries; independent45s proposal, no runtime.",
+  "phase": "remaining-consumers-20261007",
+  "measurementHelper": {
+    "path": "/private/tmp/dperf-f1/measure.py",
+    "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+    "sourceCommit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+    "sourcePath": "tools/owned-resource-measurement/measure.py",
+    "adoption": "PARTIAL_RETAINED_ADOPTION"
+  },
+  "measurementRoots": {
+    "/private/tmp/dperf-f1": {
+      "device": 16777234,
+      "inode": 123721362
+    },
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04": {
+      "device": 16777234,
+      "inode": 123072075
+    }
+  },
+  "closedPriorBudget": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-budget.json",
+    "sha256": "d8a9254d7d0fb5f3a84a5f52c12d658adcfd7536c53082938f7a4944650e41ed"
+  },
+  "closedPriorRuntimeMs": 40551,
+  "closedPriorUnspentMs": 19449
+}

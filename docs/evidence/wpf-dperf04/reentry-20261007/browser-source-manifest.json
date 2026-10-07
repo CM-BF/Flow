@@ -1,0 +1,142 @@
+{
+  "state": "SOURCE_READY_NOT_RUN",
+  "implementationTarget": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "oldSummaryTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+  "accessTimingInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+  "sourceSupplyCommit": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
+  "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+  "claimVersion": 4,
+  "writerProductPaths": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ],
+  "exactImplementationScope": [
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "bytes": 9470,
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 6710,
+      "sha256": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5890,
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 38207,
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "bytes": 16447,
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "bytes": 34832,
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 14087,
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 18159,
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "bytes": 11227,
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
+      "role": "owned-source"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "bytes": 7687,
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "bytes": 6064,
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "bytes": 1315,
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 8840,
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "bytes": 10492,
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "role": "unchanged-fixed-main-input"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 11861,
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "role": "unchanged-fixed-main-input"
+    }
+  ],
+  "oldNodeRuntimeMs": 3950,
+  "browserRuntimeMs": 40551,
+  "browserBudgetMs": 60000,
+  "runtimeState": "Old browser phase CLOSED40551/unspent19449; Timing52cdf accepted; current test visual/phase adaptation NOT_RUN, no inherited approval",
+  "previousTarget": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "followupProposedMs": 45000
+}

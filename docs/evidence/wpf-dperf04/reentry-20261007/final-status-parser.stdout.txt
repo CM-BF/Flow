@@ -1,0 +1,79 @@
+{
+  "errors": [],
+  "todo": [
+    {
+      "id": "DPERF04-01",
+      "state": "completed",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-02",
+      "state": "completed",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-03",
+      "state": "pending",
+      "owner": "w01_owner"
+    },
+    {
+      "id": "DPERF04-04",
+      "state": "completed",
+      "owner": "w01_owner"
+    }
+  ],
+  "human": {
+    "delivery": {
+      "state": "integration",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "轻摘要/按需详情与ACCESS/TIMING组合功能和必要视觉已限定独审接受；主线未接，最终档案闭包待独立确认",
+    "next": "root确认最终composite与精确档案scope后，由原Lead主线接收；不重复已通过检查",
+    "blocker": {
+      "state": "unknown",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [
+      "当前阻塞"
+    ],
+    "complete": false
+  },
+  "implementation": {
+    "target": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+    "scopes": [
+      "apps/execution-dashboard/src/read-model.mjs",
+      "apps/execution-dashboard/src/aggregate.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "apps/execution-dashboard/test/task-links.browser.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/src/local-access.mjs",
+      "apps/execution-dashboard/public/local-access.js",
+      "apps/execution-dashboard/public/local-access.css",
+      "apps/execution-dashboard/public/index.html",
+      "apps/execution-dashboard/test/local-access.test.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs"
+    ],
+    "errors": []
+  },
+  "checks": {
+    "state": "passed",
+    "target": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+    "record": "PASSED 98baf552d961ed0fa88ce2cf8bad006002d5986a：本组合browser summary9、关联6、Timing5、ACCESS5；Node10/10仍归固定cfd5未重跑；必要视觉1+1与五新PNG均root限定接受；原两红保留；新段20383/24617 CLOSED，旧40551/19449 CLOSED"
+  },
+  "review": {
+    "state": "unknown",
+    "record": "UNKNOWN（各限定source/actual已批准；最终composite非metadata档案闭包待独立确认，main/部署未发生）**",
+    "target": "98baf552d961ed0fa88ce2cf8bad006002d5986a"
+  }
+}

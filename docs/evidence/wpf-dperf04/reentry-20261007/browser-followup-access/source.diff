@@ -1,0 +1,125 @@
+diff --git a/apps/execution-dashboard/test/summary-detail.browser.mjs b/apps/execution-dashboard/test/summary-detail.browser.mjs
+index e65eb36c..69b331c6 100644
+--- a/apps/execution-dashboard/test/summary-detail.browser.mjs
++++ b/apps/execution-dashboard/test/summary-detail.browser.mjs
+@@ -75,7 +75,9 @@ export async function runBrowserCheck(name, check, { fixtureFactory = summaryFix
+   assert.ok(Number(new URL(chromeEndpoint).port) > 0 && Number(new URL(chromeEndpoint).port) <= 65535);
+   assert.ok([started, workAt, hardAt, gate.previousRuntimeMs, gate.totalMs].every(Number.isSafeInteger));
+   assert.ok(started <= Date.now() && Date.now() < workAt && gate.previousRuntimeMs >= 0);
+-  assert.equal(gate.previousRuntimeMs + gate.totalMs, 60000); assert.ok(gate.totalMs > 15000);
++  const phaseLimit = gate.phase === 'remaining-consumers-20261007' ? 45000 : 60000;
++  if (phaseLimit === 45000) assert.equal(gate.closedPriorRuntimeMs, 40551);
++  assert.equal(gate.previousRuntimeMs + gate.totalMs, phaseLimit); assert.ok(gate.totalMs > 15000);
+   assert.equal(hardAt, started + gate.totalMs); assert.equal(workAt, hardAt - 15000);
+   assert.ok(path.isAbsolute(scratch)); assert.equal(await realpath(scratch), scratch);
+   assert.equal(output, path.resolve('docs/evidence/wpf-dperf04/browser-runs', gate.run)); assert.equal(await realpath(output), output);
+@@ -129,7 +131,7 @@ export async function runBrowserCheck(name, check, { fixtureFactory = summaryFix
+     report.profileCleanupOwner = 'external-parent-after-both-groups-absence';
+     report.serverClosed = fixture ? !fixture.server.listening : report.serverClosed ?? null;
+     try {
+-      report.fixtureFilesystem = ['task-timing', 'local-access'].includes(name) ? 'not-created' : fixture?.root ? 'owned-temporary-repositories' : 'unknown';
++      report.fixtureFilesystem = ['task-timing', 'task-timing-visual', 'local-access'].includes(name) ? 'not-created' : fixture?.root ? 'owned-temporary-repositories' : 'unknown';
+       report.fixtureRemoved = fixture?.root ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : report.fixtureFilesystem === 'not-created' ? true : null;
+     }
+     catch (error) { report.cleanupErrors.push(String(error)); report.fixtureRemoved = false; }
+diff --git a/apps/execution-dashboard/test/task-links.browser.mjs b/apps/execution-dashboard/test/task-links.browser.mjs
+index 3fa46dc8..bd43a065 100644
+--- a/apps/execution-dashboard/test/task-links.browser.mjs
++++ b/apps/execution-dashboard/test/task-links.browser.mjs
+@@ -2,7 +2,39 @@ import assert from 'node:assert/strict';
+ import path from 'node:path';
+ import { runBrowserCheck } from './summary-detail.browser.mjs';
+ 
+-await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
++// This isolated supplement keeps the original anomalous PNG and all six groups.
++async function narrowLightSupplement({ page, f, report, output, checkpoint }) {
++  const [sub, parent] = f.tasks;
++  const common = { 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE', 'co-lead': 'Web /root（执行管理 d01_owner）/ technical-owner-context /Users/example/long-owner-identity' };
++  await f.writeStatus(parent, { human: { ...common, 本片段交付阶段: 'implementation', 任务层级: '大task', '大task ID': '[T02](plan.md)' } });
++  await f.writeStatus(sub, { human: { ...common, 本片段交付阶段: 'review', 所属大task: `[T02](${parent.worktree}/${parent.planDir}/plan.md)`, 当前阻塞: 'ACTIVE: 子任务待资料', 需用户决定: 'REQUIRED: 子任务需选择' } });
++  await page.setViewportSize({ width: 1280, height: 720 }); await page.goto(f.url);
++  await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
++  const other = page.locator('#other-activity');
++  if (!(await other.evaluate(node => node.open))) await other.locator('summary').click();
++  await page.setViewportSize({ width: 390, height: 844 }); await page.locator('#theme').selectOption('light');
++  assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
++  assert.match(await page.locator('#blockers').innerText(), /子任务待资料/);
++  assert.match(await page.locator('#decisions').innerText(), /子任务需选择/);
++  const frames = await page.evaluate(() => new Promise(resolve => {
++    const sample = () => ({ headers: [...document.querySelectorAll('header.topbar')].map(node => {
++      const rect = node.getBoundingClientRect(); return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right };
++    }), width: innerWidth, height: innerHeight, visualWidth: visualViewport.width, visualHeight: visualViewport.height,
++      scrollX, scrollY, documentWidth: document.documentElement.scrollWidth });
++    const before = sample(); requestAnimationFrame(() => resolve({ before, after: sample() }));
++  }));
++  for (const frame of [frames.before, frames.after]) {
++    assert.equal(frame.headers.length, 1); assert.equal(frame.width, 390); assert.equal(frame.height, 844);
++    assert.ok(frame.documentWidth <= frame.width); assert.equal(frame.scrollX, 0);
++  }
++  report.visualViewportObservation = frames; checkpoint();
++  const filename = 'home-narrow-light-supplement-390.png';
++  await page.screenshot({ path: path.join(output, filename), fullPage: false, animations: 'disabled' }); report.screenshots.push(filename);
++  report.checks.push('Independent390light home supplement: one real header, bounded viewport/frame observation and original containment assertions');
++}
++
++if (process.argv.includes('--visual-followup')) await runBrowserCheck('task-links-visual', narrowLightSupplement);
++else await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
+   const closeDialog = async () => {
+     await page.evaluate(() => {
+       window.fixtureLinkClose = false;
+diff --git a/apps/execution-dashboard/test/task-timing.browser.mjs b/apps/execution-dashboard/test/task-timing.browser.mjs
+index bb9980ec..6bdc2d4c 100644
+--- a/apps/execution-dashboard/test/task-timing.browser.mjs
++++ b/apps/execution-dashboard/test/task-timing.browser.mjs
+@@ -208,8 +208,50 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
+   } finally { page.off('pageerror', onError); }
+ }
+ 
++// Followup captures actual timing text inside the scrollable dialog; it does not
++// replay the accepted five semantic groups or replace their original screenshots.
++async function timingVisualChecks({ page, f, report, output, checkpoint }) {
++  await page.setViewportSize({ width: 390, height: 844 });
++  await page.goto(f.url);
++  await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
++  for (const theme of ['light', 'dark']) {
++    await page.locator('#theme').selectOption(theme);
++    const button = page.locator('#active-work > .task-row button[data-open-task="T01"]');
++    assert.equal(await button.count(), 1);
++    await button.focus(); await page.keyboard.press('Enter');
++    const region = page.getByRole('region', { name: '任务时间', exact: true });
++    await region.waitFor();
++    assert.match(await region.innerText(), /fixture-start/);
++    assert.match(await region.innerText(), /WAIT01/);
++    await region.getByRole('heading', { name: '任务时间', exact: true }).evaluate(node => node.scrollIntoView({ block: 'start' }));
++    const view = await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => {
++      const region = document.querySelector('#task-timing-detail');
++      const dialog = document.querySelector('#task-dialog');
++      const heading = region.querySelector('h3').getBoundingClientRect();
++      const start = region.querySelector('dd').getBoundingClientRect();
++      const bounds = dialog.getBoundingClientRect();
++      resolve({ width: innerWidth, height: innerHeight, regionTop: region.getBoundingClientRect().top,
++        heading: { top: heading.top, bottom: heading.bottom }, start: { top: start.top, bottom: start.bottom },
++        dialog: { top: bounds.top, bottom: bounds.bottom, scrollTop: dialog.scrollTop },
++        contained: dialog.scrollWidth <= dialog.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth });
++    })));
++    assert.equal(view.contained, true);
++    assert.ok(view.heading.top >= view.dialog.top && view.start.bottom <= Math.min(view.height, view.dialog.bottom));
++    report.timingVisual ??= []; report.timingVisual.push({ theme, ...view, scope: 'Visible timing heading/start/elapsed/source viewport; full waiting text remains available by scrolling and DOM assertions.' });
++    const filename = `task-timing-region-${theme}-390.png`;
++    await page.screenshot({ path: path.join(output, filename), animations: 'disabled' }); report.screenshots.push(filename);
++    await page.evaluate(() => {
++      window.fixtureTimingVisualClose = false;
++      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureTimingVisualClose = true; }, { once: true });
++    });
++    await page.keyboard.press('Escape'); await page.waitForFunction(() => window.fixtureTimingVisualClose === true); checkpoint();
++  }
++  report.checks.push('390 light/dark real timing-region text viewport, native keyboard opening and contained scrolling');
++}
++
+ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+-  await runBrowserCheck('task-timing', async ({ page, f, report, output, checkpoint }) => {
++  const visualOnly = process.argv.includes('--visual-followup');
++  await runBrowserCheck(visualOnly ? 'task-timing-visual' : 'task-timing', visualOnly ? timingVisualChecks : async ({ page, f, report, output, checkpoint }) => {
+     const result = await runTaskTimingChecks({ page, fixture: f, outputDir: output, checkpoint });
+     report.checks.push(...result.checks); report.screenshots.push(...result.screenshots);
+     report.errors.push(...result.pageErrors);
