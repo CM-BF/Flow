@@ -1,5 +1,10 @@
 # OPS-001 独立审查记录
 
+## 当前增量：固定输入来源与单份原件
+
+- native_center_owner / gpt-6-astra 于2026-10-07T10:26:05.759520Z限定APPROVED_DOCS，target `7c6ea7bd8ce225b77a16c1e90da2c74bbe00a4a8`，四文件完整delta，无P1/P2。
+- [唯一审查](../../docs/quality/ops-fixed-input-provenance-review.json)：实际组合来源、Git输入可取条件、失败与非Git原件单份引用、冻结包/运行输入保护成立；首个新小片的减少重复档案效果仍待验。O16实际1次/无结果/费用未知/KEEP与原件一致；0测试/PG/provider。
+
 ## 当前增量：隔离构建与浏览器调度
 
 - 结论：APPROVED_DOCS；native_center_owner / gpt-6-astra，回执记录时间 2026-10-07T03:37:24.401318+00:00。

@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T10:26:05.759520+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "verdict": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "base": "279cb7ed",
+  "target": "7c6ea7bd8ce225b77a16c1e90da2c74bbe00a4a8",
+  "scope": "Complete four-file 20 insertion / 8 deletion diff; readonly Git/evidence only",
+  "checks": [
+    "Combined Git inputs require actual origin commit/path/mode/size/digest and retained retrievability; no moving HEAD/old base substitution",
+    "Necessary transformed/nonGit/raw originals retained once and linked; active materialization/recovery and frozen packets stay intact",
+    "First future adoption and like-for-like logical-byte comparison remain unverified; no runtime/token/physical reclaim claim",
+    "O16 aligns with89a/d5e one SDK/init,no result/usage,cost unknown,post groups absent/target connections[],originalFAIL/KEEP,no secondquery",
+    "New internal anchor and four direct local links resolve"
+  ],
+  "historicalGitMetadataCheck": {
+    "copies": 71,
+    "logicalBytes": 307366,
+    "sameCommitModeAndBlob": 71,
+    "oldSource": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+    "oldSourceModeAndBlob": 56
+  },
+  "bindings": [
+    {
+      "path": "docs/quality/local-validation.md",
+      "bytes": 27331,
+      "sha256": "f1c4a26e50dc887074c6aaf5bab0cfbd824c59f9f74da5c6090f3e7f472cb8ec",
+      "currentMatches": true
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 33959,
+      "sha256": "15653a4583e016bd7b7f0f2c9517104730e657132515c2ddd4e78a4024e8f573",
+      "currentMatches": true
+    },
+    {
+      "path": "plans/ops-001-status-review/plan.md",
+      "bytes": 15202,
+      "sha256": "5a4e6820aa0914dcfd696002dbe88ac46054578a1a1fcde501fac19747f49106",
+      "currentMatches": true
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 96232,
+      "sha256": "ace8887a8f49bb00e5cbff5958a5b222b6016d82b53b23ed12f014d2a5d21485",
+      "currentMatches": true
+    }
+  ],
+  "findings": [],
+  "nonBlockingNote": "Display c8ba is ambiguous as a Git revision locally; underlying canonical intake binds full c8ba6bcb98f697b222cc972d517ea2891dcd8d71. Prefer that exact reference in future operational input; this document does not execute it.",
+  "reviewerRuns": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "newProbes": 0
+  }
+}
