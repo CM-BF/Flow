@@ -1,0 +1,44 @@
+{
+  "schema": "flow.ui-observation.v1",
+  "recordedAt": "2026-10-07T23:19:19.301721+00:00",
+  "observer": "root / gpt-6-astra ultra",
+  "surface": "Existing Codex IAB browser 2 tab 1, http://127.0.0.1:4320/",
+  "method": "Read DOM of existing tab; one targeted Update this detail action after the natural global sync showed a changed version. No reload/new browser/credentials/service operation.",
+  "before": {
+    "ledgerObservedAt": "2026-10-07T23:08:38Z",
+    "displayedClaimVersion": 2,
+    "availableReading": "Initially unchanged, then version-changed warning after natural 23:18:38 sync",
+    "previousPendingSync": "Historical observation retained"
+  },
+  "after": {
+    "ledgerObservedAt": "2026-10-07T23:18:58Z",
+    "task": "MATURE04-05",
+    "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+    "version": 3,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "state": "active",
+    "role": "writer",
+    "branch": "codex/web-context-history",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-context-history",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/plugin-integration/context-history.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/context-history-fixture.ts",
+      "apps/web/test/context-history.browser.ts",
+      "docs/evidence/wpf-mature04-web-history"
+    ],
+    "updatedAtShown": "2026/10/7 16:09:42 America/Los_Angeles",
+    "source": "Atomic claim",
+    "progressSource": "Not registered",
+    "result": "Latest v3 ownership is visibly available; the previously expanded v2 reading stayed intact with an explicit stale-version warning until requested update."
+  },
+  "limits": [
+    "This is claim visibility, not implementation completion, checks, independent review or main integration.",
+    "Does not establish a server cache fault or global refresh latency.",
+    "Current authorized source-only stage still does not authorize browser execution."
+  ]
+}

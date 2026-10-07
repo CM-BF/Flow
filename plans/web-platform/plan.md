@@ -637,3 +637,16 @@ MATURE04-05 Web历史消费于22:35:02.638以25d7e029v1原子领取三个新范�
 - [ ] **原任务后继待领取，不新建重复大task。** 用户在同一连续对话提交目标，阅读真实解释与计划调整，原地处理决策，查看验证产物；无需逐任务跳转。沿 FLOW-001 的权威索引/status/dashboard 和两层 task/subtasks 组织，WPF-M02 十任务总览不是本项替代。排在个人入口恢复、Arc/context和成熟聊天收口之后，优先于插件新旁支；本条只登记，无新WT/claim/运行许可。
 - [ ] 复用现 @flow/interaction/goal createGoalEntry/createGoalSession、goal-session-controller、解释历史、计划/决策/产物和 graph-plan/native-execute 接缝，以及 FlowClient/recovery/assistant-ui。Web不造调度或权限权威，不把日志或固定fixture话术当模型回答；自然语言回复、材料共享合同缺口交原中心owner。GO固定main71288a457只读观察作为输入，具体代码设计与原件后续单份引用。
 - [ ] 正文优先，tool/thinking按需可达；历史/节点/并发/字节/DOM全部有界。验收真实NL plan→execute→decision→artifact→独立接受，并覆盖恢复、迟到、冲突、双主题、键盘与窄屏。零模型公开旅程可分片交付，真实native未验则保持OPEN。仅整task blocker或Done向GO汇报，不为普通记录索取新确认。
+
+
+同项[固定研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/continuous-goal-web-research.json)记录 main71288 与已装 assistant-ui0.15.23/core0.3.22 的真实接缝。原两层结构为 FLOW-001 REQ-01/22 / O12-05 父任务及以下待领取交付片，不创建新同义task或writer：
+
+- [ ] Web共享controller消费片：真实goal入口、单会话正文/计划/决策/产物按需展示、稳定render snapshot缓存，复用既有2reads/4queued/50page/200cache边界；GoalExplanation仅解释记录，不当assistant回复。
+- [ ] 原中心owner依赖片：progression durable commands、goal级真实对话合同、材料冻结分别固定来源/权限与失败语义，Web不本地补调度或权限。
+- [ ] 实际旅程与独立接受片：先零模型公开旅程及恢复/迟到/冲突/主题键盘窄屏，再真实native授权验收；前者不能关闭后者。所有片目前待领取，先完成当前恢复、Arc/context和成熟聊天；不新WT/claim/窗口。
+
+
+- [ ] **MATURE04-05 × Arc 组合接收边界：** [固定四Git输入与断言](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-context-composition-research.json)只读记录，原两分支独立approval保持；Arc ebcd的 `currentGroups = layoutGroups(layout)` 包含隐藏workspace，context ed5自身基底的 `historyAuthorized` 对 `currentGroups.some(activeId)` 的语义不能整段移植。未来受控组合须用Arc `visibleGroups` / 当前active panes核授权，并实际覆盖held-history read期间切workspace→撤销/清空→迟到不发布→显式重开才恢复。当前Context准备段只两test，不改冻结产品或Arc；12binding PASS不代组合挂载验收。
+
+
+同一dashboard后继补[领取详情刷新语义](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-context-claim-sync-explanation.json)：当前“更新此详情”在已有available观察时只更新已加载snapshot，不发新ledger读取；Context v3已合法提交，但旧23:08:38页面观察仍v2，保持PENDING_SYNC。后继应清楚区分更新阅读详情与重新核对领取，保用户已展开内容与时间来源；本次未证服务器失效，不再重复GET或另建产品任务。

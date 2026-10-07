@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T22:45:02.863Z；第三HTTP同轮两项通过；第二browser d034实际1/4、0PNG/50944ms CLOSED并归还；e611全20STOP后新两test测量修正普通段实施。 |
+| 最近更新 | 2026-10-07T23:24:48.924Z；第三HTTP同轮2PASS保留。第三browser c1db实际1/4、0PNG/9145ms CLOSED，23:20:56.284820 exactRETURN；新URL分类修正普通段待实际开始。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；完整Arc验收尚未完成。 |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 最多三pane布局与保护源码/局部已审，第三HTTP同轮两项通过；第二browser仅layout-navigation通过，three-pane-reads以serverpeak期望6实际1失败，其余未通过/0PNG。 |
-| 下一可用交付 | 修正六逻辑读请求与服务端到达并发的测量区别，保真实UI/六identity/后续组断言；固定源独审后再择新的90s浏览器窗口，不提高超时或借旧额度。 |
-| 当前阻塞 | ACTIVE: d034第二browser1/4失败，旧1200ms timer与顺序UI不建立六逻辑pending；有常驻SSE的HTTP1下等待六server齐到有自锁风险。原作者仅两test有界instrumentation/hold修正，0实际browser授权。 |
+| 当前产出 | 最多三pane布局与保护源码/局部已审；第三HTTP同轮两项通过。browser历次0/4→1/4→1/4分别保留，当前仅layout-navigation通过，未完成四组/双图。 |
+| 下一可用交付 | 原owner固定URL分类修正与必要局部反例，经窄审形成新候选；真实browser另选新窗口，779就绪优先。 |
+| 当前阻塞 | ACTIVE: 新body观察器未锚真实API路径，将4个Vite模块GET误计，three-pane初始0断言失败；six-flight/material未到。新修正仅测试分类，保unexpected/duplicate真实API拒绝，不改产品/超时、不复用旧90s。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |

@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T23:15:25.520Z",
+  "state": "PENDING_SYNC_CURRENT_VISIBLE_V3_NOT_VERIFIED",
+  "authority": {
+    "claim": "25d7e029 v3 exact8",
+    "committedAt": "2026-10-07T23:09:42.356Z",
+    "ordinarySegmentStart": "2026-10-07T23:09:09Z"
+  },
+  "observedUIFromRoot": "ExistingIABtab1 stillv2 withledgerobservation23:08:38; one claimdetailrefresh keptv2. No newChrome/fullGET/reload.",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 43246,
+      "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+      "gitHead": "7cbcf04c89ec68f0e75c05ffc3c3964cea3ad784",
+      "gitBlobEqualsDisk": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 5890,
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+      "gitHead": "7cbcf04c89ec68f0e75c05ffc3c3964cea3ad784",
+      "gitBlobEqualsDisk": true
+    }
+  ],
+  "codeExplanation": [
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "lines": "75-80",
+      "finding": "Claimdetailrefresh copies alreadyloaded snapshot whenavailable; doesnot fetchfreshassignments inthatbranch."
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "lines": "368-394",
+      "finding": "refreshAssignments performsno-storeGET; top-levelrefresh starts it independentlyofsummary."
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "lines": "20-28",
+      "finding": "Server sharesin-flightassignments only; clearsaftercompletion. Thisread doesnot prove live server freshness."
+    }
+  ],
+  "conclusion": "UIobservation predatesv3. Detailupdate alone doesnot prove a newledgerquery. No backendstaleness orclaiminvalidity inferred; nextnaturalglobalupdate can beobservedonce.",
+  "runtime": "0GET/0browser/0PG/0productwrite",
+  "followup": "Existingdashboardclient-update TODO; clarity of detail vsledgerrefresh mayneed user-facing labels, no implementation/takehere."
+}

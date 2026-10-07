@@ -1,0 +1,88 @@
+{
+  "schema": "flow.independent-result-fidelity-review.v1",
+  "reviewedAt": "2026-10-07T23:23:26.919829+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "target": "Arc body-flight browser actual, failed run only",
+  "verdict": "APPROVED_LIMITED_FAILURE_RESULT_FIDELITY",
+  "blockingReviewFindings": [],
+  "productAcceptance": "FAILED / OPEN",
+  "source": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+  "executionHead": "ebcd746e8e74881395e61f43ab444de48b62a51c",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/failure-review-input.json",
+      "bytes": 1426,
+      "sha256": "2decd73452d609ae8282ba3b98eeb80d345ba451f54dedd107f0fef2db329e1a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/manifest.json",
+      "bytes": 12940,
+      "sha256": "1ab89a882d4b25b5d73beac9abae8a9a4236a0e3ccd0790f90e4b31c2df93901"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/diagnosis.json",
+      "bytes": 1319,
+      "sha256": "6dc9d4151a19734d045421b66c8205932df0760693b380c4bcfed437c8d99c2b"
+    }
+  ],
+  "integrity": {
+    "originalArchivePinsChecked": 42,
+    "originalFiles": 21,
+    "originalBytes": 359712,
+    "mismatches": 0
+  },
+  "actual": {
+    "startedAt": "2026-10-07T23:19:59.320169+00:00",
+    "terminalAt": "2026-10-07T23:20:08.464216+00:00",
+    "exitCode": 1,
+    "passed": [
+      "layout-navigation"
+    ],
+    "selected": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "screenshots": 0,
+    "chargedMs": 9145,
+    "totalMs": 90000,
+    "budgetState": "CLOSED",
+    "unusedTransfer": false
+  },
+  "failure": {
+    "confirmed": "Passive browser observer classifies four Vite /src/conversations/queue/*.ts(x) module loads as body reads because its body regex is not anchored to the public API namespace. The zero-body assertion fails before the six body requests are issued.",
+    "fixedSourceLocation": "apps/web/test/workspace-layout.browser.ts:42 and 120 at c1db812ca9377117af73eb692b75fd263d9ae2c3",
+    "observedMisclassifiedPaths": [
+      "/src/conversations/queue/commands.ts",
+      "/src/conversations/queue/projection.ts",
+      "/src/conversations/queue/ConversationQueue.tsx",
+      "/src/conversations/queue/queue-elements.tsx"
+    ],
+    "historicalCorrection": "Owner first oral 0/4 corrected against original raw passed array to 1/4. Original raw was not changed.",
+    "nextRepair": "Anchor classification to the actual public API route shapes while preserving detection of unexpected or duplicate API body reads. Include the four observed module URLs as negatives and expected detail/queue/stream URLs as positives in the next bounded preparation. Do not loosen the zero-body or six-flight assertions."
+  },
+  "cleanup": {
+    "fullOwnedReturnAt": "2026-10-07T23:20:56.284820+00:00",
+    "pidIdentities": 4,
+    "pgidIdentities": 2,
+    "allIdentityObservation": "ESRCH",
+    "scratchAndTwoCacheLinks": "ABSENT",
+    "scenarioContextAndHttpClosed": true,
+    "scenarioAndParentCleanupErrors": [],
+    "outerParentChromeEOF": true,
+    "droppedBytes": 0,
+    "independentPortProbe": false,
+    "workerResultNull": true,
+    "parentAggregateChecks": [],
+    "parentScenarioConfirmation": "UNKNOWN preserved in original failed aggregate; raw scenario cleanup is a separate observation"
+  },
+  "bindingChange": "Only limits.minimumFreeBytes changed from historical15953690624 to manager11983781888; original pre-change binding retained.",
+  "reviewMethod": "Read original and archive files, recompute byte lengths and SHA-256, compare binding values and fixed Git source. No application imports, test, browser launch, HTTP, PostgreSQL, process operations or project writes.",
+  "limits": [
+    "No six-flight concurrency result, material stability result or theme screenshots from this failed run.",
+    "No product success or main integration approval.",
+    "No permission to rerun the consumed window; source repair and any actual retry require the normal D01 dispatch.",
+    "Prior source-preparation approval and failed runtime evidence remain separate historical records."
+  ]
+}

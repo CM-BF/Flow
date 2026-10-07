@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-07 23:06:44 UTC",
+  "purpose": "Planning evidence for the next authorized Web continuous-goal task; queued after current recovery, Arc and context work. No new take, worktree or implementation.",
+  "route": {
+    "originalRequirements": [
+      "FLOW-001 REQ-01",
+      "FLOW-001 REQ-22",
+      "O12-05"
+    ],
+    "canonical": "D01 maintains the existing web-platform plan/status/dashboard route; this research is not another handwritten status source."
+  },
+  "reviewers": [
+    "/root: assistant-ui/local adapter and fixed main source",
+    "/root/workspace_panels_owner: independent shared-goal contract/authority gap research"
+  ],
+  "source": {
+    "main": "71288a4579d6f2a7625619642b67461b14a362af",
+    "goalOwnerWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-session-controller",
+    "goalOwnerHeadReportedByPeer": "5b394c6e9f27ec9db3531e9d61e50bcf5ed7a8ab",
+    "relevantFiles": [
+      "packages/interaction/src/goal/{entry,index,types,commands,reads}.ts",
+      "packages/interaction/src/observation/reads.ts",
+      "packages/contracts/src/{goals,goal-delivery}.ts",
+      "packages/client/src/index.ts",
+      "apps/web/src/conversations/ConversationThread.tsx"
+    ]
+  },
+  "skills": {
+    "method": "Local-first find-skills method; reused installed assistant-ui router and architecture reference. Router's sibling runtime SKILL.md absent; matching local architecture plus official runtime documentation used, no installation.",
+    "router": {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    },
+    "architecture": {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/references/architecture.md",
+      "sha256": "00cee1aff4625b7865384ede0fc064e9915f640dfc3df70f2916c1677382a56c"
+    },
+    "application": "Separate rendered Thread/adapter from shared business controller, durable host storage and center authority. Existing brainstorming, codebase-design and clean-code principles used to identify ownership, lifecycle and interface gaps."
+  },
+  "runtime": {
+    "installedReact": "0.15.23",
+    "installedCore": "0.3.22",
+    "actualLocalSourceBase": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core",
+    "pins": {
+      "src/runtimes/external-store/external-store-adapter.ts": "14c9e7f4c1e348d72ef9643fc55aae4738bc885c66f6bbbaf469d9383435abe6",
+      "src/runtimes/external-store/external-store-thread-runtime-core.ts": "11ec03e09d2c49916fd75fb768aba7ed52c2081a858f230b4490071da8d91688",
+      "src/react/runtimes/useExternalStoreRuntime.ts": "ef6d1520333557f94a70e9bc0a61d40dbf48d3e83f3c3e435ae62f8c4d5fb04a"
+    },
+    "officialReference": "https://www.assistant-ui.com/docs/runtimes/custom/external-store",
+    "referenceSummary": "ExternalStoreRuntime displays host-owned messages through an adapter. Optional callbacks enable UI capabilities such as editing, regeneration, branching and cancellation. Official Thread can be mounted within AssistantRuntimeProvider. This supports retaining Flow's authority and persistence rather than introducing a second conversation engine.",
+    "projectEvidence": "Fixed main ConversationThread already uses official Thread + useExternalStoreRuntime and its own externally owned repository; no framework upgrade needed."
+  },
+  "seams": [
+    {
+      "api": "createGoalEntry.initialize/submit/recover",
+      "ux": "Project + goal/constraints/acceptance intake; durable first, stable accepted goalId, explicit same-key/body recovery after uncertain ACK."
+    },
+    {
+      "api": "createGoalSession.plan/observe/history/planning/read",
+      "ux": "Versioned plan and selected-node state, explanation reference pages, planning runs, explicit detail reads. Observed artifact binding and body digest must match."
+    },
+    {
+      "api": "command: graph-plan / native-execute",
+      "ux": "Explicit plan or selected-node execution with known profile/input version/previous execution; never infer authorization from a visible button."
+    },
+    {
+      "api": "command: decision / cancel / goal(input.kind=accept-delivery)",
+      "ux": "Answer the exact observed decision, request cancellation of the exact observed task, independently accept the exact delivery. Mechanical verification and acceptance stay distinct."
+    },
+    {
+      "api": "recover/disconnect/dispose",
+      "ux": "Restore one unresolved durable command; disconnect stops observation, not center work."
+    }
+  ],
+  "rendererDesign": [
+    "Use one host-owned GoalSession per stable center/principal/goal namespace, with a thin presentation cache. snapshot() structuredClones on every call, so do not pass it directly as React useSyncExternalStore.getSnapshot; cache the last subscribe callback value and retain identity until a notification.",
+    "GoalEntry has no subscribe. Publish local render snapshots at explicit operation boundaries; do not build a second command/outbox authority.",
+    "Use the existing official Thread and declarative renderer/plugin surfaces. Durable operation state drives submission availability; isSendDisabled can preserve an editable next draft while an unresolved command blocks another send.",
+    "Only expose callbacks actually supported by shared contracts. Do not enable setMessages/onEdit/onReload merely to make buttons appear: they imply mutations or branching that goal history does not currently support.",
+    "Node cancellation and stop-observing are distinct. Do not map a generic Thread cancel button to disconnect or imply goal-wide cancellation when the public command only addresses an observed node/task.",
+    "Render goal text and authoritative assistant replies as text only when their provenance is supported. Explain plan revisions/decisions/artifacts as labeled structured records; logs and fixed fixture text never become invented assistant messages.",
+    "Dynamic buttons, panels and renderers must register through validated slots and a private goal-bound read/command port. Any new goal ResourceContext/slot schema requires explicit owner handoff; no arbitrary global client/ID exposure."
+  ],
+  "dependencies": [
+    {
+      "owner": "Original O12/O13 and O14/O15 shared-controller owners",
+      "gap": "confirmGoalPlan/authorizeGoalProgression/revokeGoalProgression exist on public FlowClient but are absent from the six-kind GoalSessionCommand durable-intent union.",
+      "needed": "Add the existing confirmation/progression operations to the same durable command/receipt/recovery seam. Web must not introduce a second outbox or scheduler."
+    },
+    {
+      "owner": "Original goal conversation / center contract owner",
+      "gap": "GoalCreation accepts natural-language intake, but there is no goal-level user/assistant message sequence, reply stream, follow-up ownership or arbitrary subsequent-text command in this fixed contract.",
+      "needed": "Define canonical goal-level messages and reply provenance, paging/detail references and follow-up semantics before claiming a complete continuous natural-language conversation. GoalExplanation is command history, not assistant text."
+    },
+    {
+      "owner": "K03 and original goal/material contract owner",
+      "gap": "GoalInput has node-level exact knowledge citations; GoalCreation/planning prompt has no attachment field.",
+      "needed": "Use a shared frozen material/reference contract. Do not inject chat attachments into prompt strings and claim they were frozen."
+    }
+  ],
+  "existingBounds": {
+    "entryRecordBytes": 32768,
+    "planCacheNodes": 200,
+    "pageMax": 50,
+    "pageDefault": 20,
+    "observedNodesPerReadMax": 50,
+    "actualReadsPerSession": 2,
+    "queuedReadsPerSession": 4,
+    "decodedGoalResponseBytes": 2097152,
+    "decodedPlanningPageBytes": 65536,
+    "verifiedArtifactContentBytes": 1048576,
+    "note": "These are current controller/decoder bounds, not claims of network streaming byte enforcement or a global bound across multiple sessions."
+  },
+  "proposedAcceptanceDesign": [
+    "Plan two levels under the single canonical task: shared dependency handoffs; entry/recovery adapter; bounded Thread/read surfaces; explicit decisions/cancel/acceptance; shared progression and genuine reply/material integration; full public/native journey and visual/performance acceptance.",
+    "Initial visible plan/history page at most the contract page size50; keep the existing200-node plan cache cap and only selected visible-node observations. Show continuation/truncation explicitly; never silently render an unbounded history into DOM.",
+    "One detail body panel at a time matches current controller body state. Add measured DOM/render and total cross-pane request bounds during implementation; no claim of virtualization or speedup from source review alone.",
+    "Prove refresh/disconnect/late responses/CAS conflict/unknown-write same key+body under real public HTTP fixtures without a provider first. Keep actual native natural-language→plan→execution→decision→artifact→independent acceptance as separate OPEN acceptance.",
+    "Require light/dark, narrow390px, keyboard/focus, reduced motion and plugin enable/disable/lifetime checks. Do not reuse consumed budgets or count old WPF-M02 ten-task overview as this task."
+  ],
+  "cleanCode": {
+    "result": "Identified the cloned-snapshot React interface mismatch and three shared semantic gaps early. One controller, one durable store and a read-only render adapter keep responsibilities distinct; no extra scheduler or handwritten task status proposed.",
+    "unresolved": "Shared progression/reply/material contracts and cross-session aggregate bounds require concrete owner work before full delivery."
+  },
+  "limits": "0implementation,0newtake,0tests/imports/provider/PG/newChrome. Read-only local Git/package research and one official documentation read. Plans, implementation checks and actual outcomes remain separate."
+}

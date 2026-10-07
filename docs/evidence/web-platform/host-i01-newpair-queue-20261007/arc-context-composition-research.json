@@ -1,0 +1,109 @@
+{
+  "schema": "flow.readonly-integration-research.v1",
+  "recordedAt": "2026-10-07T23:13:15.752155+00:00",
+  "author": "root / gpt-6-astra ultra",
+  "result": "FUTURE_COMPOSITION_REQUIREMENT_NOT_PRESENT_BRANCH_FAILURE",
+  "scope": "Read-only comparison of fixed Arc and context-history sources; no application import, execution, HTTP, PostgreSQL, browser or product writes.",
+  "pins": [
+    {
+      "commit": "ebcd746e8e74881395e61f43ab444de48b62a51c",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    },
+    {
+      "commit": "ebcd746e8e74881395e61f43ab444de48b62a51c",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 29877,
+      "sha256": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295"
+    },
+    {
+      "commit": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 76498,
+      "sha256": "312099f71e238537d716dfc29b0b24dbde9557ac8568effc0a0beddc19f0818c"
+    },
+    {
+      "commit": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 30788,
+      "sha256": "f7bf0edda9bc51e37cbdc0c4b085acf0f2e0406998648f3dc6daf0fd572d7f45"
+    }
+  ],
+  "finding": {
+    "arc": {
+      "path": "apps/web/src/App.tsx",
+      "lines": [
+        392,
+        394,
+        395,
+        396,
+        809,
+        1173,
+        1175,
+        1177
+      ],
+      "meaning": "currentGroups contains all workspace panes; visibleGroups contains active workspace panes. Hidden composers deliberately remain mounted with visible=false to preserve local state."
+    },
+    "context": {
+      "path": "apps/web/src/App.tsx",
+      "lines": [
+        412,
+        413,
+        414,
+        783,
+        784,
+        785,
+        786,
+        787
+      ],
+      "meaning": "currentGroups represents the currently displayed groups on this base. historyAuthorized checks activeId within these groups."
+    },
+    "hazard": "A textual merge retaining currentGroups for historyAuthorized would broaden that guard to hidden workspaces. Additional binding visible/host guards exist, so this is not evidence of an actual leak in either fixed source.",
+    "requiredComposition": "Use active workspace visibility semantics (Arc visibleGroups or equivalent) for history authorization. Preserve currentGroups all-workspace semantics for total capacity and ownership; do not globally rename it to the visible-only list.",
+    "sessionPreservation": "Keep Arc AppActions.layout, captured layout invocation, open/close/change commands and pane/conversation validity. Add context binding subscriptions, sync in updateActions and releaseView/dispose cleanup without replacing the Arc session blob."
+  },
+  "futureCombinationAcceptance": [
+    {
+      "case": "Hold a real decoded context-history response in workspace A, switch to workspace B while A remains mounted.",
+      "assert": [
+        "A context reading becomes unavailable/clears cached detail",
+        "A in-flight read is aborted or its late completion suppressed",
+        "No hidden-workspace automatic retry/read",
+        "Center task execution is not cancelled"
+      ]
+    },
+    {
+      "case": "Return to A after releasing the held response.",
+      "assert": [
+        "No old response repopulates state",
+        "Only explicit Context reopening fetches again",
+        "Draft text, view identity, attachment and recovery receipt ownership remain preserved"
+      ]
+    },
+    {
+      "case": "Move active conversation between panes, then merge/split with an open context surface.",
+      "assert": [
+        "Same viewKey does not create duplicate history readers or lose draft",
+        "Authorization follows the current visible pane",
+        "At most one history body flight per binding; detail still requires explicit selection"
+      ]
+    },
+    {
+      "case": "Release view or session while a read is held.",
+      "assert": [
+        "Bindings unsubscribe and abort",
+        "No late publication into another conversation or connection",
+        "Parent task remains independently controlled"
+      ]
+    }
+  ],
+  "status": {
+    "independentArcSourceReview": "UNCHANGED_APPROVED_LIMITED",
+    "independentContextSourceLocalReview": "UNCHANGED_APPROVED_LIMITED",
+    "combinedSource": "NOT_PREPARED",
+    "combinedBrowserChecks": "NOT_RUN",
+    "currentContextMountedPreparation": "Separate single-branch preparation; not combined Arc evidence"
+  },
+  "workflow": "D01 records in existing integration TODO and dashboard drilldown; original authorized integrator performs future exact-scope composition. W01 informed; current two-test-leaf preparation must not mutate frozen Arc or product leaves."
+}
