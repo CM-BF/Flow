@@ -46,7 +46,7 @@ export function publicStreamTransport(fragments: 32 | 512) {
         finally { state.receiving--; }
       },
       async respond() { throw Error('No fixture server requests.'); },
-      async close() { state.closed = true; start(); release(); await iterator.return(); closeResolve(report); return report; },
+      async close() { state.closed = true; start(); release(); await iterator.return(undefined); closeResolve(report); return report; },
       snapshot() { throw Error('No snapshot authority.'); },
     };
     return port;

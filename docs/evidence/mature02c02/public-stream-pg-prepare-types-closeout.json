@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-07T05:25:52.976943+00:00",
+  "record": "public-stream-pg-prepare-local.json",
+  "originalResult": "types exit2, preserved",
+  "reason": "CHILD_EXIT_NONZERO only; final owned absent and both EOF confirmed; captured diagnostics durable",
+  "root": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-public-pg-local-2kkgh6k0",
+    "dev": 16777234,
+    "ino": 123531702,
+    "removed": false
+  },
+  "removed": true,
+  "method": "same-inode rmdir empty root; no recursive cleanup",
+  "oldR1KEEP": "untouched",
+  "preparationError": "first cleanup script AttributeError before rmdir; no path mutation"
+}

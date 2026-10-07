@@ -30,7 +30,7 @@ async function assigned() {
   expect(assignment.task.id).toBe(accepted.task.id);
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   let sequence = 0, reports = 0;
-  const seal = (data: RunnerEventData) => ({ ...data, id: randomUUID(), sequence: sequence + 1 });
+  const seal = <T extends RunnerEventData>(data: T) => ({ ...data, id: randomUUID(), sequence: sequence + 1 });
   async function emit(data: RunnerEventData) {
     const event = seal(data); reports++;
     const ack = await client.report({ ...ownership, events: [event] });
