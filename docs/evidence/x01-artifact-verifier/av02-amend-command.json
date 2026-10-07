@@ -1,0 +1,23 @@
+{
+  "requestId": "x01-artifact-verifier-av02-scope-20261007-152822",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "version": 1,
+  "scope": [
+    "docs/evidence/x01-artifact-verifier",
+    "plans/x01-artifact-verifier",
+    "packages/contracts/src/plugin-verification.ts",
+    "packages/contracts/src/plugin-verification.test.ts",
+    "packages/plugin-runtime/src/json-object-verifier.ts",
+    "packages/plugin-runtime/src/json-object-verifier.test.ts",
+    "apps/runner/src/plugins/verifier.test.ts",
+    "packages/plugin-runtime/src/package-store.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "apps/runner/src/plugins/host.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts"
+  ]
+}

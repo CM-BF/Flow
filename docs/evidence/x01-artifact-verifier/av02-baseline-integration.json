@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T15:30:36.885Z",
+  "method": "Authorized fixed-main merge in own clean tree; no rebase/reset/shared config",
+  "previousHead": "9710377cddb1f134f79edc3e3fdf740a62ba2494",
+  "fixedMain": "96b424777cd2c66e603157649e5a859ca1b914f6",
+  "mergeCommit": "6915df6d08b392df8e206bac3f9141230b7b3e50",
+  "own19DocsUnchanged": true,
+  "conflicts": [],
+  "processSource": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "rows": [
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 12178,
+      "sha256": "8a497f43628c69b593faa87c98ccec5abd120538042ce8d2f2cff471bdf0386b"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 7963,
+      "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 5029,
+      "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.test.ts",
+      "bytes": 2967,
+      "sha256": "a1246a839fded8405c545d6145adeba5e2599a7c8628b3218bd97f20499bef16"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "bytes": 9767,
+      "sha256": "941138dc50f201aef5d89d2a993756e492876400b14219e22922fc2196525297"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-protocol.ts",
+      "bytes": 4208,
+      "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-resources.ts",
+      "bytes": 7933,
+      "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614"
+    },
+    {
+      "path": "apps/runner/src/plugins/process-worker.ts",
+      "bytes": 2748,
+      "sha256": "de9813b5804df04db1e8db70b31e76ae9073c0a725e31e680365148a0d91feb8"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "bytes": 16654,
+      "sha256": "cda62fd05bde5c13197073e2fe3dd0b9be61804ddf5c571c92f8892fb16a025f"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 22367,
+      "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d"
+    }
+  ],
+  "executionHandbackSha256": "9073d5230702b748f679bb475f503a0e96505268762f96da40b159c57f5f961d",
+  "T7": "NOT_RUN; dependency integration not AV product result"
+}
