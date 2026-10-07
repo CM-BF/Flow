@@ -1,0 +1,90 @@
+{
+  "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+  "parent": "X01",
+  "coLead": "Mika",
+  "owner": "db_transaction_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+  "branch": "codex/plugin-removal-references-client",
+  "statusPath": "plans/x01-removal-references-client/status.md",
+  "state": "READY",
+  "sourceCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+  "reviewPacket": "4971af18b0b8addaceebf93a303a9f69bbefbfc3",
+  "base": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+  "rows": [
+    {
+      "path": "packages/client/src/index.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+      "preimage": {
+        "commit": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+        "bytes": 68285,
+        "sha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+      "preimage": {
+        "commit": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+        "bytes": 9257,
+        "sha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-removal-references.test.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 5540,
+      "sha256": "835df85a636678100b1e02031ac53d8d20674b4fb9f4c934e5c71215ee1e3b43",
+      "preimage": "ABSENT"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 30134,
+      "sha256": "29db99392dfe37891c515a0b18e31c2520a88fd2afd45f33c1f0b187a9a8c249",
+      "preimage": {
+        "commit": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+        "bytes": 29194,
+        "sha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93"
+      }
+    },
+    {
+      "path": "apps/cli/src/plugin-removal-references.test.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 2069,
+      "sha256": "217a64008d56f60487c6d42864e32139ff617ba1d84ec8ecdfd1c21ea657c596",
+      "preimage": "ABSENT"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/fixtures.ts",
+      "source": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "bytes": 1078,
+      "sha256": "3dd49737c7427d0e0819e20a3dcb237c565468b0f41b62ed35af5f8795df2335",
+      "preimage": "ABSENT"
+    }
+  ],
+  "rowCount": 6,
+  "bytes": 118130,
+  "review": {
+    "at": "2026-10-07T12:30:38Z",
+    "reviewer": "chatui01_owner",
+    "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "requiredContract": {
+    "path": "packages/contracts/src/plugin-removal.ts",
+    "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+    "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+    "ownership": "REMOVAL backend owner; not this intake product; first or same batch exact contract bytes"
+  },
+  "evidence": "docs/evidence/x01-removal-references-client/review-ready.json / manifestc81e988bb0caf7e70ce711b9c06a254ed51da369f45b758c3ee8366dc6ae2c5c",
+  "validation": "new main baseline14/14; focusedtypes0; oldACK/HOST4selected4pass36unselected. Oldbase14red->14green/types21diag kept, not summed. MockFetch actualclient/runCli; no PG/Web/server authorization/physical removal",
+  "architecture": "Existing FlowClient->bounded request and CLI parser add read-only reference query. Lead registers exact integrated client/CLI edge; no second transport or FSM.",
+  "excludes": "All borrowed sources, contract81a, shared supervisor/dependencies, old8060 backend history; do not overwrite current main whole feature",
+  "baselineMigration": "Preserved2e57/checkpointref oldbase; rebase only own delta onto reviewedmain3b604, no aliases/compatibility product changes",
+  "registration": "task-intake.json pending OriginalLead"
+}
