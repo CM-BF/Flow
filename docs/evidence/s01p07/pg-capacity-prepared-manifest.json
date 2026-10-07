@@ -1,0 +1,157 @@
+{
+  "target": "68815dce87cc0a9498802de89448693215d028d6",
+  "at": "2026-10-07T03:35:48.719202+00:00",
+  "state": "CAPACITY_PREPARATION_REVIEW_PENDING_PG_NOT_OPEN",
+  "productTarget": "83a0799293057f7472f0329c61e566708b2a2381",
+  "mainDatabaseTarget": "15847da4b4aa00d42bd3e25b9bf88ea046bb19a8",
+  "files": [
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "bytes": 13409,
+      "sha256": "f111069487403bf585e1f742d67b7a02808127a0e655eefaffe27233122d1831"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 17776,
+      "sha256": "bea6cc9f2aeaef363e3a7f6770eaa62b53a0b871fbba7886484fa7ea91fe17f8"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dynamic-inputs.json",
+      "bytes": 7155,
+      "sha256": "d5625539c0dc7d836473295e21a95b737d7854ec2882ce448e80f46aeee3f49e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dependency-inputs.json",
+      "bytes": 7207,
+      "sha256": "fd982457966eeaa1dc86725f848984deb27d478896413a8493abe328d87df59f"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    },
+    {
+      "path": "docs/evidence/s01p07/claim-amend.json",
+      "bytes": 1211,
+      "sha256": "5cafb31ea871cabd2d103a47b78ba3476b94b19a946d5a2f8f5f902c4f660d83"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 26130,
+      "sha256": "af7a9c7791acad1524f3c33329bc7f1a1722c2bf5256483d3641aa075653e2d9"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "bytes": 6283,
+      "sha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-vitest.config.ts",
+      "bytes": 1058,
+      "sha256": "cda10a9864bdbb83395276f5ca8863b360ed21a25000b8fdd77736587c0db9c7"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-tsconfig.json",
+      "bytes": 156,
+      "sha256": "3a7841ba5b45e5766faa018075574fb2d13886b3e98c6e2305ff03a5fdb9f9e2"
+    },
+    {
+      "path": "docs/evidence/s01p07/main-database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-capacity-slot-request.json",
+      "bytes": 6438,
+      "sha256": "e45dee7ba1a1dca228357ecd0adcd6ed9d484af95e182ebf63f76d845e81c4a2"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-capacity-window-request.md",
+      "bytes": 1799,
+      "sha256": "592a6734cb2ec11d751e4db7e0e1f08b8c04e29867b9acfebb66406a9cd1cd13"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-types.stdout",
+      "bytes": 788,
+      "sha256": "d58e87346e26baf29f2c3580ca75a93d882cf23d01865dcbec3d99f29335d0a0"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-types-fixed.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-types-fixed.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-collect.stdout",
+      "bytes": 929,
+      "sha256": "a5e491af63f2afad2bc790d7873a4a650f58b357e37bf869756a8babdfe7a010"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-collect.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/capacity-local.json",
+      "bytes": 7675,
+      "sha256": "0b07eda739291499711c72b3743860e94c0152d9ce507ff99333deb871796956"
+    }
+  ],
+  "totalBytes": 113299,
+  "originalCases": {
+    "reference": "cf762765cc04cf90244cfb0ac3ba9ee2da2ed585",
+    "bytes": 4633,
+    "sha256": "2c7da25290c712db3232db38ef0dc7ea7d9377b863440f76faffa73e3439d580",
+    "bodyIdentical": true,
+    "span": "From it.each([1, 4]) through the final draining case closing line, excluding its following blank separator line."
+  },
+  "historicalPrepared": {
+    "path": "docs/evidence/s01p07/pg-prepared-manifest.json",
+    "target": "ac3b8532fb23a9c8549c0b32e225a31327bc85f9",
+    "sha256": "db1364e042fee29978785f93d260504ac12e8f1e7477bcbd7e17107a445fc65f",
+    "bindings": 65,
+    "currentlyUnchanged": 61,
+    "expectedCurrentOverrides": [
+      "apps/runner/src/runtime-capacity.test.ts",
+      "docs/evidence/s01p07/execute-pg.py",
+      "docs/evidence/s01p07/execute-pg.test.py",
+      "docs/evidence/s01p07/pg-fixture.ts"
+    ],
+    "meaning": "Historical fixedGit unchanged; diagnostic test override is previously approved, new wrapper/fixture/capacity entry are bound here. Product eight unchanged."
+  },
+  "R2": {
+    "target": "cf762765cc04cf90244cfb0ac3ba9ee2da2ed585",
+    "manifest": "docs/evidence/s01p07/pg-run-r2-manifest.json",
+    "sha256": "81c803e5a687bc90c2e97db5ab474b0c72996826869141c8f45f5c41a2c8f952",
+    "review": "architecture_read 2026-10-07T03:23:39Z RESULT_FIDELITY_REVIEW_APPROVED"
+  },
+  "checks": {
+    "strictFirstExit": 2,
+    "strictFixedExit": 0,
+    "collected": 4,
+    "PGCasesExecuted": 0,
+    "rawBytes": 1717,
+    "runs": 3,
+    "newChecksOnly": true
+  },
+  "boundary": "Preparation only. Original four PG/HTTP cases NOT_RUN, no actual OPEN. No implicit latest-main compatibility. Keep R1/old unknown root untouched."
+}
