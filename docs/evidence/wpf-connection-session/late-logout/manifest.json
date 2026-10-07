@@ -1,0 +1,273 @@
+{
+  "kind": "flow.connection.late-logout-manifest.v1",
+  "at": "2026-10-07T11:39:50.041029+00:00",
+  "sourceTarget": "66caee46341c91db71a3590bfcd288396b30567a",
+  "resultTarget": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+  "base": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "preimagesComparedMain": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "bindings": [
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 3452,
+      "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/interface.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 6278,
+      "sha256": "c806ef7feb1dc5fcf4c497f871d1314e495b42e8be2823ddcc005e7c7ae4d3ec"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/RESULT.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1456,
+      "sha256": "93428e09aca919644d8e710be2660cf04b471f5fd18d8428b49292e35e1ba799"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/connection-observer-input.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 554,
+      "sha256": "98ea0e08d4b68fb4d76fd659ee0123f5802f65f32602091291c5742e5e71b6cc"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/focused-types.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 250,
+      "sha256": "29b618772eabcbf829d9fd5f26cd9768893cb2faacd015b5a47d553dbdfca66c"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/inputs.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 10214,
+      "sha256": "4b2f341b1412d2d17292f36a4ec807cce938695a91190685945799c8d77910ca"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/interface.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1686,
+      "sha256": "fa1afdc18da22a953f2c6c2525dd0f0de865c9edd38b90a341f02e71200c7422"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/cleanup-checkpoint.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 450,
+      "sha256": "149d5c8995e9c0615743a9b313f17fe0c85f1672a5ae58a6254678b9dedb6e2a"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/flow_connection01_aa19b41525884545ba97e47c4f66bf7c-allocated.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 139,
+      "sha256": "caaf1d5560446fc61e6eaace22e98af1b968db522cd758f4b4d1caeb1d79bb33"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/flow_connection01_aa19b41525884545ba97e47c4f66bf7c-before-drop.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 243,
+      "sha256": "f5178347d23c4a37e58607d3f810ff29bff3cc9490c1f14a3c7c9535d80af171"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/flow_connection01_aa19b41525884545ba97e47c4f66bf7c-created.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 137,
+      "sha256": "4452c087d7337685affe864c40c353d2aa281f41739599a79b3ea6fc10e860a4"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/flow_connection01_aa19b41525884545ba97e47c4f66bf7c-removed.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 86,
+      "sha256": "1dd89b11c3880ac03eade918ba99f29e2aac0a7641438ee5c0ca576730f2a80f"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/operation-report.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 379,
+      "sha256": "98919bf752d86ece11165172c6d94a8ce82f4d3486b7bf0e67020471f2fc524b"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/reservation.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1531,
+      "sha256": "90e8af3194abf89f1aa84863322f8a316714a06f9525399641aed07ab3234390"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/stderr",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/stdout",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 597,
+      "sha256": "2eb7105957dc1105626f5a65b7bab276434ea010209578e833544faff28fea2f"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/supervision.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 514,
+      "sha256": "295a248d7d7205311e2d6c5001a8fb079776b4e78a952f470bc0178f5be87f0c"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-01/test-facts.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 566,
+      "sha256": "3c5e68cd099bc02711f300ab1e1a2e6eeaf1c90e983d8e65afb277fc03e8f79f"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/pg-window.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 477,
+      "sha256": "0865401e1589206fe0b929cf5ff485be61aeb68edcadce47a6ce064335a9cdf9"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/quality.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1752,
+      "sha256": "4e3d59be24c704678e46e7074846641caf2cd0adde817df98222c59e2105f542"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/result-analysis.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1131,
+      "sha256": "2f69de4ed91f4c55bbce6aeb7f4afd22da9a493970acb32ce0b3b9f0fc173a6f"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/run.py",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 5771,
+      "sha256": "a6059291e3be8618c21edc9a9e3abc6b6afbb029dfcaf6a6b16d7a8d312a6c58"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/status-check.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 100,
+      "sha256": "0a33ddbdf32d63f75612f482a37b4a5add162e460e06d56dbb73512964ca3008"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/take-receipt.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 786,
+      "sha256": "88f11352ddaf3075f9318c21d28f866c81cc56f0db407acc656b33d12cced8ad"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/tool-receipts.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 587,
+      "sha256": "24fa58dbd72099aa7a223cb69ebc0675a35b613de71d7f16250f2f49d22cbe6a"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/cleanup-checkpoint.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 450,
+      "sha256": "dc36ba47931a961587c2e38d05621c34dfc1af281a17317613352f12849ce13e"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/operation-report.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 379,
+      "sha256": "38229f4b1fad45475c729b9403e7da907eca7629996ba50d21cde0a5bbb5188b"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/reservation.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1206,
+      "sha256": "29e3e8d7ed74d0bcaec0e6824f5815b7aaf0bd489dbfe480ec498ed2a774cd47"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/stderr",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/stdout",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-01/supervision.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 512,
+      "sha256": "d196d3f0a72b1938120b436a82d1b2f9453f252815517703238cf697e1fa56d2"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/cleanup-checkpoint.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 450,
+      "sha256": "d8aa9426952c9496d91deff60916f8cc84ec1dfd5f0b405db7bbd9f37ba9dbf8"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/operation-report.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 382,
+      "sha256": "db8f8ccf1640975e9c7692d28b22ab06ba3e811204c6a021ed0c8739412ddcc1"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/reservation.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1209,
+      "sha256": "3cfb63c029150f9097d4b1d711dcb7394a5e004b1a88e1c6473fdc8910ba193a"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/stderr",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/stdout",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-connection-session/late-logout/types-02/supervision.json",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 512,
+      "sha256": "aa3883e2f8d71d0dca22a8ad4c165cd55772036073717794c4855fdab7fac362"
+    },
+    {
+      "path": "plans/wpf-connection-session/plan.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 1638,
+      "sha256": "2f3d9f0ea49303a6cba9e8eb70c449e38ec07e9f61add24564468e6df4fa46fd"
+    },
+    {
+      "path": "plans/wpf-connection-session/review.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 2336,
+      "sha256": "8ccb8656a231de5fad36e825238c85c5175a6dde70dfdad273b7800fec284dce"
+    },
+    {
+      "path": "plans/wpf-connection-session/status.md",
+      "fixedRef": "06274c8fe2f8bec8d8b423c036038cb5c9804825",
+      "bytes": 4005,
+      "sha256": "91702edc02f24fea44fe9cc07f14140d94dbddcf8cb32c426ddb86bcca915a60"
+    }
+  ],
+  "bindingCount": 43,
+  "inheritedInputs": "late-logout/inputs.json fixes12 source/runtime metadata entries and14 installedpins; all unchanged tracked fixture imports/SQL frombase239; observer source62e9",
+  "originalEvidence": "Old22/raw immutable; no prior failed outcome rewritten",
+  "scope": "4selected/4passed19unselected; twofocusedtypes0; realHTTP/PG/old1..28fixture; 0provider/browser/personal; not fullcurrentserver35 or deployment",
+  "storage": "No full source snapshot; original run outputs saved once"
+}

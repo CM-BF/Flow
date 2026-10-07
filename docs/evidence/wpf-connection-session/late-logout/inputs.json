@@ -1,0 +1,205 @@
+{
+  "at": "2026-10-07T11:35:52.598100+00:00",
+  "productSource": "66caee46341c91db71a3590bfcd288396b30567a",
+  "preimage": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "comparedCurrentMain": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "bindings": [
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "apps/server/src/browser-session/fixture.ts",
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
+      "bytes": 3452,
+      "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868"
+    },
+    {
+      "path": "apps/server/src/browser-session/session.test.ts",
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8"
+    },
+    {
+      "path": "package.json",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "path": "tsconfig.json",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "vitest.config.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 235,
+      "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1"
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "path": "apps/server/src/streams.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    }
+  ],
+  "runtime": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/typescript/bin/tsc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+      "bytes": 45,
+      "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/typescript/lib/_tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "bytes": 6213092,
+      "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/pg-boss/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/apps/server/node_modules/fastify/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/apps/server/node_modules/@fastify/cors/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "bytes": 1759,
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    }
+  ],
+  "protectedFixtureClosure": {
+    "originCommit": "239b6a818d5c0380842aa61120bf308bb9846df3",
+    "scope": "All existing tracked apps/packages imports and SQL except the three explicit products; working tracked diff checked; no snapshot copied",
+    "migrationBaseline": "1..28 old controlled fixture, not current full server35 acceptance"
+  },
+  "PG": {
+    "databases": 1,
+    "poolsMaximum": {
+      "admin": 1,
+      "test": 6,
+      "baselineCenter": 8,
+      "boss": 3
+    },
+    "managementReserve": 16,
+    "loopback": "dynamic private port; never61227/61228"
+  },
+  "selected": 4,
+  "oldTotal": 22,
+  "newTotal": 23,
+  "unselected": 19,
+  "bounds": {
+    "workSeconds": 120,
+    "cleanupSeconds": 30,
+    "outerSeconds": 150,
+    "rawBytes": 2097152,
+    "privateBytes": 16777216,
+    "freshFloorBytes": 1763704832
+  },
+  "providerCalls": 0,
+  "window": "Consumed once pg-01; actual start 2026-10-07T11:37:55.255595+00:00; actual returned2026-10-07T11:37:58.902201Z",
+  "connectionObserver": {
+    "originCommit": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+    "originPath": "apps/tui/src/task-controls/fixture-cleanup.ts",
+    "materializedPath": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+    "bytes": 4435,
+    "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+    "permission": "Lead exact readonly fixed helper supply; no edits to helper",
+    "reason": "Existing old WT lacks this main test-only leaf; isolated runtime needs one exact source file; use existing observeConnections only"
+  }
+}

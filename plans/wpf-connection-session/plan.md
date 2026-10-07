@@ -10,3 +10,9 @@
 - [x] **WPF-CONNECTION01-04** 固定原始证据/独立review/main受控挂载。
 
 详细输入输出与限制见[Interface](../../docs/evidence/wpf-connection-session/interface.md)。Web真实浏览器与Recovery后继分开，0provider/不触个人61227/61228。固定source与当前分支验证不代表生产已挂载。
+
+## Recovery TODO06 后继：迟到 Logout
+
+- [ ] **WPF-CONNECTION01-05** 精确撤销旧会话且迟到响应不删除新Cookie；4selected与focused types后独审/main。
+
+实际续接 2026-10-07T11:33:16.858479+00:00；新claim已take，旧四TODO已main不重开。详见[本片Interface](../../docs/evidence/wpf-connection-session/late-logout/interface.md)。

@@ -1,0 +1,27 @@
+{
+  "providerCalls": 0,
+  "productionMount": false,
+  "samples": [
+    {
+      "case": "late-logout-response",
+      "deletesCookie": false,
+      "newerSessionValid": true,
+      "oldSessionUnauthorized": true,
+      "oldStreamClosed": true,
+      "taskStatus": "running"
+    },
+    {
+      "case": "open-SSE-logout",
+      "closed": true,
+      "taskStatus": "running",
+      "authChecks": 4
+    }
+  ],
+  "databases": [
+    {
+      "database": "flow_connection01_aa19b41525884545ba97e47c4f66bf7c",
+      "identityVerified": true,
+      "removed": true
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T11:33:16.858479+00:00",
+  "stack": "TypeScript/Fastify/pg/Vitest; Python standard-library bounded caller",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "application": "Existing module seam; one semantic change, no copied session/store FSM. Authorized bounded design accepted by Lead; no new user confirmation or install. Direct race test and affected auth/SSE consumers; preserve old failures.",
+  "base": "239b6a818d5c0380842aa61120bf308bb9846df3",
+  "comparedMain": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "productPreimagesEqual": true,
+  "deliveryReview": {
+    "at": "2026-10-07T11:39:48.974186+00:00",
+    "scope": "3source/caller/direct consumers and naming of evidence",
+    "findings": "Logout single responsibility; no store/authority FSM copy. Reuses exact main observeConnections after Lead drain concern; first failure and cleanup preserved by supervisor. Evidence filenames semantically distinct; no case-only name aliases.",
+    "remaining": "Independent review/main/current full-server composition and browser matrix not implied; historical timing UNKNOWN preserved"
+  }
+}

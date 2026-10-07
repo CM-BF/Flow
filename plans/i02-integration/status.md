@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:42:08.530875+00:00 / main51dc0b47；本批记录196来源实际发布 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:43:18.197342+00:00 / main62ac239f；接收已独审退出竞态44路径 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main f68dbb71；Recovery2f8的19源与当前main基线逐字一致后应用精确delta |
+| 工作基线 / HEAD | main62ac239f；lateLogout三产品+自身41记录逐项前像同239，接收固定92e56865 |
 | 工作树dirty状态 | 本批已审固定Web与原始证据接收；未知既有__pycache__不纳入提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | Recovery十九源已main且组合types0；首次采用5断言与认证限定结果已接。196来源HTTP200/source current/human完整；本批0工程重测/模型。 |
-| 已集成main状态 / HEAD | main62e9已接后台首次采用实际与O16限定认证；51dc已接插件唯一来源，4320实际196项。中心竞态4/4待独审；个人backend af51/v18、Web d629/v3仍为旧部署。 |
+| 检查状态 | 中心退出竞态4/4（19未选）、两focusedtypes0与清理已独审；本接收前像44/44一致、无手工冲突，无新增工程重测。 |
+| 已集成main状态 / HEAD | main62ac已接196来源实际发布；本批限定lateLogout中心修复待fast-forward。固定7d1/6c个人候选仍是旧合同，不冒已部署。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 会话恢复界面和后台首次采用证据已入主线；看板已显示插件启停的真实进度。 |
+| 当前产出 | 会话恢复界面已入主线；退出晚响应误清新登录的中心修复已通过独立审查并接收。 |
 | 下一可用交付 | 完成旧页面兼容实际验证与后台更新；接收退出与重新登录的中心竞态修复。 |
-| 当前阻塞 | ACTIVE: 个人新版仍待真实页面兼容；退出响应与重新登录的竞态另由原中心owner修复。规划登录环境未识别认证，保留三次调用后只做零模型定位。 |
+| 当前阻塞 | ACTIVE: 个人新版仍待三个保留页面的真实兼容；固定发布候选不含本次退出竞态修复。规划认证环境未识别登录，三次调用后仅做零模型定位。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
