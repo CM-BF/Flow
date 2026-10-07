@@ -201,3 +201,7 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 ## c36续接准备增量独审 APPROVED
 
 2026-10-07T13:02:21.326961Z，Execution Lead（非作者）[APPROVED_REMAINING_MAINTENANCE_PREPARATION](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)，target c36f4a8109c9a75cda42a34aba27f778784f6f14；P2关闭，原0107审查保留。23bindings107654B+8原observer pins核同，7原例430ms，不重测、不个人读取。限定准备批准，实际个人剩余维护仍未运行。
+
+## R3结果限定批准与reader修复待审
+
+[R3独审原件](../../docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json)：APPROVED_LIMITED_R3_FAILURE_FIDELITY，0重跑；个人只读发生、0SQL、两直属PID absent/EOF，不证明服务全组状态。新source `4916591ba89b2999404e3d13814968180594da98` 与helper c51待Lead唯一差量审查；原失败及R2已消费阶段不改。

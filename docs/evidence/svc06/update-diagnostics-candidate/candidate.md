@@ -99,3 +99,7 @@ r2确实直接载入该函数，但[固定journey](../diagnostics-host-bootstrap
 ### 续接准备P2收口（固定0107后继）
 
 原[独审](continuation-first-independent-review.json)指出本地idle门缺失；[剩余维护入口](maintenance-continuation.md)现复用严格v1原reader+已存证namespace/全历史哈希，在同drain/active0前后确认后才允许refresh。独立外层900秒从operator启动前覆盖bindings/持久化；内层独立session缺回执仍UNKNOWN/KEEP，绝不由外层absent猜三角色已停。原R2四阶段、原失败与原件全部冻结；本次只是零个人I/O准备修正，真实新窗口尚未运行。
+
+### 当前剩余维护：R3读取修正后
+
+R2迁入/Web-host/三报告/策略已经实际完成，不重放。R3只读兼容观察遇旧format1 reader，已独审为失败忠实性；其completed[]不代表没有个人只读。当前仅用原facts可选reader端口复用固定现代解码器，旧af51/null报告与6c/C3配置独立判断；新r4只准备剩余维护，须新独审和实际窗口。见[端口差量及保留原红](compatibility-reader-repair/README.md)，原实际R2/R3与所有输入原件冻结。

@@ -4,7 +4,7 @@
 
 ## 固定调用消费者
 
-[maintenance-continuation.json](maintenance-continuation.json) 是唯一参数表；[maintenance-continuation.py](maintenance-continuation.py) 按固定顺序调用现 OPS14，逐阶段持久原始 Report。没有新的服务管理/维护状态机。实际命令为固定 Python3.13 + `maintenance-supervise.py --execute-fixed-maintenance <Lead实际窗口ID>`，原样外层stdout重定向至参数表固定的全新exclusive0600 `personal-maintenance-r3-outer.json`；不得预建run目录或覆盖输出；当前仅准备，真实执行须 Lead 已协调新窗口与 fresh claim/输入/资源事实。
+[maintenance-continuation.json](maintenance-continuation.json) 是唯一参数表；[maintenance-continuation.py](maintenance-continuation.py) 按固定顺序调用现 OPS14，逐阶段持久原始 Report。没有新的服务管理/维护状态机。实际命令为固定 Python3.13 + `maintenance-supervise.py --execute-fixed-maintenance <Lead实际窗口ID>`，原样外层stdout重定向至参数表固定的全新exclusive0600 `personal-maintenance-r4-outer.json`；不得预建run目录或覆盖输出；当前仅准备，真实执行须 Lead 已协调新窗口与 fresh claim/输入/资源事实。
 
 顺序是 facts-before（原 helper 必带全新 absolute exclusive output）→只读 preflight→history-before→root公开 bootstrap→真实 operation 读取→产物公开 refresh→facts-paused/history-paused→持久保护 checkpoint→产物一次 resume→facts-final/final。维护三个命令的 Node / `--import tsx` / module / cwd / 四个位置参数均在参数表固定，实际 root入口仍同6c；产物入口只有真实 bootstrap 已建立 operation 后才调用。不经旧CLI选择，不预填 backendArtifact。每个事实文件都读完整持久内容，不拿 stdout 摘要当 facts。
 
@@ -35,10 +35,14 @@ R2首错是直接对 CommonJS pg/lib/index.js 使用命名导入Pool；ESM linke
 
 ## fresh剩余资格
 
-精确R2保护事实、当前7d1库存fullverify、已替换7d1 Web-host、固定三份v2报告与策略完整pin必须仍一致；原后台af51/v18、runner与用户任务无新不安全变化才进入bootstrap。根入口53runtime沿原审核；目标产物逐manifest验证而非仅存在即通过。所有后继输出使用全新 personal-maintenance-r3，不能复用R1/R2或已消费维护步骤。最终实际操作前仍由Lead协调唯一共享窗口，不在此准备中读取个人现场。
+精确R2保护事实、当前7d1库存fullverify、已替换7d1 Web-host、固定三份v2报告与策略完整pin必须仍一致；原后台af51/v18、runner与用户任务无新不安全变化才进入bootstrap。根入口53runtime沿原审核；目标产物逐manifest验证而非仅存在即通过。所有后继输出使用全新 personal-maintenance-r4，不能复用R1/R2或已消费维护步骤。最终实际操作前仍由Lead协调唯一共享窗口，不在此准备中读取个人现场。
 
 质量安全点：仅修实际调用消费者与保留观察，复用公有维护FSM、原facts与OPS14；命名/单一职责/错误停止/有界输出已复核。第一轮89ms仅早期CJS解析差量（源hash在其invocation），最终helper由后续487ms实际入口导入检查覆盖；不将第一轮当最终完整快照SQL验证。真实SQL与剩余个人维护均未执行。
 
 ## P2修正的定向检查
 
 [continuation-guard-repair/result.json](continuation-guard-repair/result.json)：2026-10-07T12:56:09.382108Z→12:56:09.814515Z，5个原reader+精确inventory文件fixture、2个独立deadline toy通过；430ms/707B raw，2外组absent/双EOF、exact scratch空并删除。未知事件/最终提案、历史缺失变化、错误身份/namespace、非idle/v2均拒绝；阻塞operator由外层停止，持久化延误后拒绝启动下一phase。0个人I/O/PG/HTTP/provider。原31/487ms与R2已完成阶段未重跑；此处不是实际900秒或个人维护验收。
+
+## R3后仅兼容读取端口差量
+
+R3原入口只读失败已[独审](r3-actual-independent-review.json)，原件不改。当前facts三个阶段通过[continuation-facts.mjs](continuation-facts.mjs)调用原snapshot的可选findCompatibility端口，显式固定新helper c51；旧pointer/af51/null与configuredTuple的新6c/context分判。原53/8绑定不复制不修改，新helper单pin和新r4命名空间见[最小差量](compatibility-reader-repair/manifest.json)。原默认reader行为保持，坏报告仍拒绝；本轮只有4文件fixture+2实际入口参数检查，无个人读取。

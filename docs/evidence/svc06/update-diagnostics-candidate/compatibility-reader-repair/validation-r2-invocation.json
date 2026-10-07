@@ -1,0 +1,54 @@
+{
+  "startedAt": "2026-10-07T13:11:07.610451+00:00",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate",
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/reader.test.mjs"
+    ],
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+      "--check-invocation"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "--check-invocations"
+    ]
+  ],
+  "remainingCumulativeSeconds": 29.888,
+  "tmpBytes": 1048576,
+  "rawBytes": 65536,
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/continuation-facts.mjs",
+      "bytes": 2543,
+      "sha256": "542268e03e1a01b3966735249132b700515116aa67e0e9e754e08587cb5c0ee5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "bytes": 7306,
+      "sha256": "ef3da33ab5998056c54d3f14921704d90492431cbc0360e0117fab68cbc1a0d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.json",
+      "bytes": 21401,
+      "sha256": "3a53467889f3a775783a3451442209515a8f581ff3babf82bca9c3db0f0b2824"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/reader.test.mjs",
+      "bytes": 4330,
+      "sha256": "e751bf7cc95ba30ad497bfd4d3f66ee4d30792256ce9e45a5639d2653d3ecf17"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "bytes": 9070,
+      "sha256": "e1838ec9cfa2c9b20804d5b2436d3576b5f69a58bb32f971444b2f3deca8f038"
+    }
+  ],
+  "personalIO": 0,
+  "PG": 0,
+  "reason": "Only fixture root path canonicalized; actual reader realpath guard preserved. Prior 2 red retained; all four share this changed fixture."
+}

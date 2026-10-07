@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:05:06 UTC；R3只读兼容门失败并归还；后台维护仍未开始 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:15:07.139637+00:00；兼容读取接缝局部完成，原R3只读失败保留；当前无窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；迁入 source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 与产品不改；本次仅 own result/status |
-| 工作树dirty状态 | 本次实际结果/计划正常封存；产品源未变，个人已发生的四阶段见原件，不再声称个人未改 |
+| 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；当前caller source 4916591ba89b2999404e3d13814968180594da98，原迁入5c29/产品源不改；helper独立c51 |
+| 工作树dirty状态 | 本次仅自有准备/证据/计划封存；caller源码固定停写，副树helper c51已独立commit/push |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 隔离 r2 与 C3 已独审；个人本次迁入/Web-host/3报告/策略完成；维护前只读观察静态链接失败，bootstrap/refresh/resume NOT_RUN |
+| 检查状态 | C3与R2部分结果、R3只读失败已独审；reader修复4/4+2入口检查通过，首轮2正例fixture红保留；bootstrap/refresh/resume NOT_RUN |
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；剩余维护尚未运行。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；本次只读门禁发现旧观察器不能读取已导入的新格式报告，失败原件保留，后台维护未开始。 |
-| 下一可用交付 | 修正观察器的兼容读取接缝并独审后，继续尚未开始的后台维护。 |
-| 当前阻塞 | ACTIVE: 本次只读兼容观察失败，窗口已归还；待读取接缝修正和复审，已完成四阶段不重放。 |
+| 当前产出 | 已安装的新产物、网页宿主、兼容报告和策略保持；观察器已能区分旧报告与新配置报告，原失败保留，后台维护尚未开始。 |
+| 下一可用交付 | 完成读取接缝的差量审查，在新窗口继续尚未开始的后台维护。 |
+| 当前阻塞 | ACTIVE: 修正已完成局部检查，等待差量独审与新的实际窗口；当前无运行占用。 |
 | 需用户决定 | NONE |
-| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余维护c36获APPROVED_REMAINING_MAINTENANCE_PREPARATION；0107原P2已闭且原件保留，实际维护未执行。 |
+| Review | R2部分结果与R3失败忠实性已限定独审；c36原准备批准保持。当前reader/caller差量待Lead最终绑定审查，未获个人执行许可。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -155,7 +155,9 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |
 | SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |
-| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | ONGOING | 审查与资源 | 迁入装配修复待独审/本次窗口；原UPSTREAM已12:13:34.420归还但不预占 | update-diagnostics-candidate/personal-readonly-preparation.json documentChecks及Lead窗口消息 |
+| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | 2026-10-07T12:27:52.330992+00:00 | 审查与资源 | 原等待已随实际窗口结束；R2四阶段完成后12:35:37归还，非持续占用 | update-diagnostics-candidate/personal-actual-r2/window.json / stop.json |
+| SVC06-WAIT-REMAINING-R3 | UNKNOWN | 2026-10-07T13:05:06.328778+00:00 | 审查与资源 | 起点无单独依据；R3只读门失败后13:05:06.750720停止并归还，无维护动作 | update-diagnostics-candidate/personal-maintenance-r3/reservation.json / stop.json |
+| SVC06-WAIT-READER-REVIEW | 2026-10-07T13:15:07.139637+00:00 | ONGOING | 审查与资源 | reader修复已固定，等待差量审查及新窗口；无实际运行holder | update-diagnostics-candidate/compatibility-reader-repair/manifest.json |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -386,3 +388,7 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## R3现场只读门停止与归还
 
 2026-10-07T13:05:06.328778Z reservation，13:05:06.750720Z stop，来源[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/RESULT.md)及原raw。facts-before418ms报WEB_COMPATIBILITY_INVALID，whole-operator494ms；两PID各自absent/双EOF/无signals，completed[]，0产品SQL/维护调用/provider。facts已发生个人只读，但完整snapshot失败；旧reader只认format1与已导入C3 format2冲突，不判App不兼容。原R2四阶段未重放，所有raw/namespaceKEEP，独立结果审查待Lead。
+
+## 2026-10-07T13:15:07.139637+00:00：兼容观察接缝修正待审
+
+Source `4916591ba89b2999404e3d13814968180594da98`，helper独立`c51bffb4f91a33eeb16d637449c0618cc99040e8`；[最小差量](../../docs/evidence/svc06/update-diagnostics-candidate/compatibility-reader-repair/manifest.json)。局部13:10:44.126401开始，13:11:07.813455实际清理归还；112ms原红+200ms四例/两入口绿，总312ms/3554B，4组absent/双EOF、2scratch removed。只修fixture canonical路径，不放宽报告guard。0个人I/O/PG/provider；R2四阶段不重放，R3真实只读失败原件及[限定独审](../../docs/evidence/svc06/update-diagnostics-candidate/r3-actual-independent-review.json)保留。总任务start UNKNOWN/完成NOT_COMPLETED不变。

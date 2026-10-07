@@ -1,0 +1,33 @@
+{
+  "pid": 28231,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 45,
+  "stdout": "{\"outcome\":\"fixed-facts-port-and-arguments-available\",\"personalIO\":0,\"PG\":0}\n",
+  "stderr": "",
+  "observed_bytes": 77,
+  "retained_bytes": 77,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
