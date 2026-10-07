@@ -1,0 +1,47 @@
+{
+  "run": "native-plan-20261007-r2",
+  "phase": "plan",
+  "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
+  "outcome": "unknown-retain",
+  "selected": 1,
+  "process": {
+    "driverPid": 65502,
+    "outcome": "unknown-retain",
+    "phase": "cleanup",
+    "samples": 487,
+    "ownedGroups": [
+      {
+        "pgid": 65502,
+        "state": "stopped"
+      },
+      {
+        "pgid": 66924,
+        "state": "stopped"
+      }
+    ],
+    "reason": "driver-nonzero",
+    "last": {
+      "freeBytes": 22714597376,
+      "rawBytes": 12652,
+      "runtimeBytes": 16857,
+      "runtimeEntries": 23,
+      "runtimeState": "measured"
+    },
+    "stopCheckpoint": "durable",
+    "exitCode": 1,
+    "signalCode": null,
+    "elapsedMs": 26177
+  },
+  "capturedRawBytes": 94,
+  "retainedRawBytes": 94,
+  "finalMetrics": {
+    "freeBytes": 22714601472,
+    "rawBytes": 13261,
+    "runtimeBytes": 16857,
+    "runtimeEntries": 23,
+    "runtimeState": "measured"
+  },
+  "measurementFailure": null,
+  "nativeQueryCalls": 1,
+  "pause": null
+}

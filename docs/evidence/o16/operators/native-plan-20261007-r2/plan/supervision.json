@@ -1,0 +1,28 @@
+{
+  "driverPid": 65502,
+  "outcome": "unknown-retain",
+  "phase": "cleanup",
+  "samples": 487,
+  "ownedGroups": [
+    {
+      "pgid": 65502,
+      "state": "stopped"
+    },
+    {
+      "pgid": 66924,
+      "state": "stopped"
+    }
+  ],
+  "reason": "driver-nonzero",
+  "last": {
+    "freeBytes": 22714597376,
+    "rawBytes": 12652,
+    "runtimeBytes": 16857,
+    "runtimeEntries": 23,
+    "runtimeState": "measured"
+  },
+  "stopCheckpoint": "pending",
+  "exitCode": 1,
+  "signalCode": null,
+  "elapsedMs": 26177
+}

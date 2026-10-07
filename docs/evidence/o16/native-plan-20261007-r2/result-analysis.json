@@ -1,0 +1,198 @@
+{
+  "kind": "flow.o16.native-plan-result-analysis.v1",
+  "at": "2026-10-07T10:54:03.571119Z",
+  "run": "native-plan-20261007-r2",
+  "outcome": "FAILED_RETAINED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "candidateDelivery": "8cda6b8e07c574b01a401e0272e2c6be6da1cdea",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "startedAt": "2026-10-07T10:47:46.949Z",
+  "sdkSlotConsumedAt": "2026-10-07T10:47:51.988Z",
+  "resourceClosureAt": "2026-10-07T10:48:13.149Z",
+  "windowReturnedAt": "2026-10-07T10:49:10.010Z",
+  "operator": {
+    "selected": 1,
+    "exitCode": 1,
+    "elapsedMs": 26177,
+    "outcome": "unknown-retain",
+    "reason": "driver-nonzero",
+    "measurementFailure": null,
+    "finalMetrics": {
+      "freeBytes": 22714601472,
+      "rawBytes": 13261,
+      "runtimeBytes": 16857,
+      "runtimeEntries": 23,
+      "runtimeState": "measured"
+    },
+    "capturedRawBytes": 94,
+    "sealedRawCount": 14,
+    "sealedRawBytes": 16181
+  },
+  "SDK": {
+    "actualQueryEntriesThisRun": 1,
+    "cumulativeActualQueryEntries": 2,
+    "requested": {
+      "model": "claude-sonnet-5-5",
+      "maxTurns": 4,
+      "maxBudgetUsd": 0.2,
+      "permissionMode": "dontAsk",
+      "tools": [],
+      "allowedTools": [
+        "mcp__flow-graph__graph_read",
+        "mcp__flow-graph__graph_command"
+      ],
+      "settings": {
+        "enabledPlugins": {},
+        "autoMemoryEnabled": false,
+        "syncClaudeAiPlugins": false,
+        "syncClaudeAiSkills": false,
+        "disableBundledSkills": true,
+        "disableSkillShellExecution": true,
+        "claudeMdExcludes": [
+          "**"
+        ]
+      },
+      "resume": null,
+      "persistSession": false
+    },
+    "observed": {
+      "phase": "plan",
+      "declarationPolicy": "o16-private-recipe-20261007-1018",
+      "effective": {
+        "model": "claude-sonnet-5-5",
+        "permissionMode": "dontAsk",
+        "tools": [
+          "mcp__flow-graph__graph_command",
+          "mcp__flow-graph__graph_read"
+        ],
+        "plugins": [
+          "cc-plugin-agents-md",
+          "cc-plugin-plugin-authoring"
+        ],
+        "skills": [
+          "doctor",
+          "plugin-authoring"
+        ],
+        "mcpServers": [
+          {
+            "name": "flow-graph",
+            "source": "sdk",
+            "status": "connected"
+          }
+        ],
+        "runtimeVersion": "2.1.290",
+        "nativeSessionId": "9e50af61-f344-4148-84a8-336325378d45",
+        "kind": "sdk-init-declaration"
+      },
+      "reads": [],
+      "result": {
+        "subtype": "success",
+        "isError": true,
+        "nativeSessionId": "9e50af61-f344-4148-84a8-336325378d45",
+        "sourceMessageId": "7c7dfab8-9de7-4465-836c-ddaee559fc08",
+        "numTurns": 1,
+        "sdkEstimatedCostUsd": 0,
+        "modelUsage": {}
+      },
+      "permissionDenials": [],
+      "toolExecutionEvidence": "center-audit-required",
+      "semanticAcceptance": "not-evaluated",
+      "frames": 4,
+      "failure": "observation-rejected"
+    },
+    "hostToolDecisionCount": 0,
+    "resultBodyOrErrors": "NOT_PERSISTED_IN_INSPECTED_MATERIAL",
+    "accountCost": "UNKNOWN",
+    "previousRunUsageAndCost": "UNKNOWN",
+    "cumulativeAccountCost": "UNKNOWN",
+    "accountingMeaning": "SDK reports cost=0/modelUsage={} for this is_error result; not account billing proof, previous unknown fee remains unknown"
+  },
+  "failure": {
+    "primary": {
+      "state": "unconfirmed",
+      "name": "Error",
+      "code": null
+    },
+    "queryFirstFailure": {
+      "state": "unconfirmed",
+      "name": "Error",
+      "code": null
+    },
+    "observation": "observation-rejected",
+    "earliestPersistedEvidence": "SDK result isError=true with matching init/result identity; fixed observer rejects unsuccessful result. Upstream error body was not retained; provider/model/account/credential cause unknown.",
+    "cleanupFailure": null,
+    "sourceMessage": "observeResult rejection text is source inference, not a preserved exception message",
+    "workerNotices": [
+      {
+        "type": "ownership-lost",
+        "attemptId": "a57aaf31-5b65-44c7-96d3-e008c2b9f909"
+      },
+      {
+        "type": "admission-blocked"
+      }
+    ],
+    "noticeOrderingLimit": "No per-frame/notice timestamps; notices do not establish earlier SDK root cause"
+  },
+  "progress": {
+    "successfulProposalPersisted": false,
+    "successfulPauseReceipt": false,
+    "applyInvoked": false,
+    "childrenInvoked": false,
+    "confirmationInvoked": false,
+    "semanticAcceptance": "NOT_EVALUATED",
+    "centerAudit": "NOT_READ_AFTER_FAILURE; hostToolDecisions=[] and reads=[] are observation scope only"
+  },
+  "resourceClosure": {
+    "serverClosed": true,
+    "adminClosed": true,
+    "workersStopped": true,
+    "resourcePhaseMeaning": "paused-owned-resources means retained resources closed, not successful plan/pause",
+    "groups": [
+      {
+        "pgid": 65502,
+        "state": "absent",
+        "code": "ESRCH"
+      },
+      {
+        "pgid": 66924,
+        "state": "absent",
+        "code": "ESRCH"
+      },
+      {
+        "pgid": 65501,
+        "state": "absent",
+        "code": "ESRCH"
+      }
+    ],
+    "connections": [],
+    "observerPoolClosed": true,
+    "retention": "KEEP",
+    "database": "flow_o16_269a60ce63d345b68775b3e24fc974f7",
+    "marker": "46e0a695-7548-4e36-a7ad-7cfe7d089e2e",
+    "oid": "1290288",
+    "directory": {
+      "path": "/private/tmp/flow-o16-GSdvBz",
+      "dev": 16777234,
+      "ino": 124061319
+    },
+    "databaseBytesAtClosure": 13073431,
+    "databaseBytesAtReadonlyCheck": 12935695,
+    "noDropOrDirectoryDeletion": true
+  },
+  "historicalSnapshots": {
+    "supervisionStopCheckpoint": "pending",
+    "finalResultStopCheckpoint": "durable",
+    "operatorReservationNativeQueries": "not-started is immutable initial reservation, not final accounting"
+  },
+  "limits": {
+    "thirdQueryAuthorized": false,
+    "oldFailureAndKEEP": "untouched",
+    "sourceChanges": false,
+    "testsRerun": 0,
+    "authMeaning": "Same-account normal refresh separately authorized; actual shared-Keychain mutation not observed or claimed inside private byte bound",
+    "modelMeaning": "SDK declaration is not independent actual model/no-fallback qualification"
+  },
+  "sealingNote": "First metadata assembly asserted a glob count including driver-private directory; corrected to regular raw files only. No run/raw/product changed."
+}
