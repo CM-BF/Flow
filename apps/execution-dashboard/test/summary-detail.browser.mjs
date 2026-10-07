@@ -75,7 +75,9 @@ export async function runBrowserCheck(name, check, { fixtureFactory = summaryFix
   assert.ok(Number(new URL(chromeEndpoint).port) > 0 && Number(new URL(chromeEndpoint).port) <= 65535);
   assert.ok([started, workAt, hardAt, gate.previousRuntimeMs, gate.totalMs].every(Number.isSafeInteger));
   assert.ok(started <= Date.now() && Date.now() < workAt && gate.previousRuntimeMs >= 0);
-  assert.equal(gate.previousRuntimeMs + gate.totalMs, 60000); assert.ok(gate.totalMs > 15000);
+  const phaseLimit = gate.phase === 'remaining-consumers-20261007' ? 45000 : 60000;
+  if (phaseLimit === 45000) assert.equal(gate.closedPriorRuntimeMs, 40551);
+  assert.equal(gate.previousRuntimeMs + gate.totalMs, phaseLimit); assert.ok(gate.totalMs > 15000);
   assert.equal(hardAt, started + gate.totalMs); assert.equal(workAt, hardAt - 15000);
   assert.ok(path.isAbsolute(scratch)); assert.equal(await realpath(scratch), scratch);
   assert.equal(output, path.resolve('docs/evidence/wpf-dperf04/browser-runs', gate.run)); assert.equal(await realpath(output), output);
@@ -129,7 +131,7 @@ export async function runBrowserCheck(name, check, { fixtureFactory = summaryFix
     report.profileCleanupOwner = 'external-parent-after-both-groups-absence';
     report.serverClosed = fixture ? !fixture.server.listening : report.serverClosed ?? null;
     try {
-      report.fixtureFilesystem = ['task-timing', 'local-access'].includes(name) ? 'not-created' : fixture?.root ? 'owned-temporary-repositories' : 'unknown';
+      report.fixtureFilesystem = ['task-timing', 'task-timing-visual', 'local-access'].includes(name) ? 'not-created' : fixture?.root ? 'owned-temporary-repositories' : 'unknown';
       report.fixtureRemoved = fixture?.root ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : report.fixtureFilesystem === 'not-created' ? true : null;
     }
     catch (error) { report.cleanupErrors.push(String(error)); report.fixtureRemoved = false; }

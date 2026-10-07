@@ -208,8 +208,50 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
   } finally { page.off('pageerror', onError); }
 }
 
+// Followup captures actual timing text inside the scrollable dialog; it does not
+// replay the accepted five semantic groups or replace their original screenshots.
+async function timingVisualChecks({ page, f, report, output, checkpoint }) {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(f.url);
+  await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
+  for (const theme of ['light', 'dark']) {
+    await page.locator('#theme').selectOption(theme);
+    const button = page.locator('#active-work > .task-row button[data-open-task="T01"]');
+    assert.equal(await button.count(), 1);
+    await button.focus(); await page.keyboard.press('Enter');
+    const region = page.getByRole('region', { name: '任务时间', exact: true });
+    await region.waitFor();
+    assert.match(await region.innerText(), /fixture-start/);
+    assert.match(await region.innerText(), /WAIT01/);
+    await region.getByRole('heading', { name: '任务时间', exact: true }).evaluate(node => node.scrollIntoView({ block: 'start' }));
+    const view = await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => {
+      const region = document.querySelector('#task-timing-detail');
+      const dialog = document.querySelector('#task-dialog');
+      const heading = region.querySelector('h3').getBoundingClientRect();
+      const start = region.querySelector('dd').getBoundingClientRect();
+      const bounds = dialog.getBoundingClientRect();
+      resolve({ width: innerWidth, height: innerHeight, regionTop: region.getBoundingClientRect().top,
+        heading: { top: heading.top, bottom: heading.bottom }, start: { top: start.top, bottom: start.bottom },
+        dialog: { top: bounds.top, bottom: bounds.bottom, scrollTop: dialog.scrollTop },
+        contained: dialog.scrollWidth <= dialog.clientWidth + 1 && document.documentElement.scrollWidth <= innerWidth });
+    })));
+    assert.equal(view.contained, true);
+    assert.ok(view.heading.top >= view.dialog.top && view.start.bottom <= Math.min(view.height, view.dialog.bottom));
+    report.timingVisual ??= []; report.timingVisual.push({ theme, ...view, scope: 'Visible timing heading/start/elapsed/source viewport; full waiting text remains available by scrolling and DOM assertions.' });
+    const filename = `task-timing-region-${theme}-390.png`;
+    await page.screenshot({ path: path.join(output, filename), animations: 'disabled' }); report.screenshots.push(filename);
+    await page.evaluate(() => {
+      window.fixtureTimingVisualClose = false;
+      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureTimingVisualClose = true; }, { once: true });
+    });
+    await page.keyboard.press('Escape'); await page.waitForFunction(() => window.fixtureTimingVisualClose === true); checkpoint();
+  }
+  report.checks.push('390 light/dark real timing-region text viewport, native keyboard opening and contained scrolling');
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  await runBrowserCheck('task-timing', async ({ page, f, report, output, checkpoint }) => {
+  const visualOnly = process.argv.includes('--visual-followup');
+  await runBrowserCheck(visualOnly ? 'task-timing-visual' : 'task-timing', visualOnly ? timingVisualChecks : async ({ page, f, report, output, checkpoint }) => {
     const result = await runTaskTimingChecks({ page, fixture: f, outputDir: output, checkpoint });
     report.checks.push(...result.checks); report.screenshots.push(...result.screenshots);
     report.errors.push(...result.pageErrors);

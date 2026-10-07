@@ -2,7 +2,39 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { runBrowserCheck } from './summary-detail.browser.mjs';
 
-await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
+// This isolated supplement keeps the original anomalous PNG and all six groups.
+async function narrowLightSupplement({ page, f, report, output, checkpoint }) {
+  const [sub, parent] = f.tasks;
+  const common = { 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE', 'co-lead': 'Web /root（执行管理 d01_owner）/ technical-owner-context /Users/example/long-owner-identity' };
+  await f.writeStatus(parent, { human: { ...common, 本片段交付阶段: 'implementation', 任务层级: '大task', '大task ID': '[T02](plan.md)' } });
+  await f.writeStatus(sub, { human: { ...common, 本片段交付阶段: 'review', 所属大task: `[T02](${parent.worktree}/${parent.planDir}/plan.md)`, 当前阻塞: 'ACTIVE: 子任务待资料', 需用户决定: 'REQUIRED: 子任务需选择' } });
+  await page.setViewportSize({ width: 1280, height: 720 }); await page.goto(f.url);
+  await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor();
+  const other = page.locator('#other-activity');
+  if (!(await other.evaluate(node => node.open))) await other.locator('summary').click();
+  await page.setViewportSize({ width: 390, height: 844 }); await page.locator('#theme').selectOption('light');
+  assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+  assert.match(await page.locator('#blockers').innerText(), /子任务待资料/);
+  assert.match(await page.locator('#decisions').innerText(), /子任务需选择/);
+  const frames = await page.evaluate(() => new Promise(resolve => {
+    const sample = () => ({ headers: [...document.querySelectorAll('header.topbar')].map(node => {
+      const rect = node.getBoundingClientRect(); return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right };
+    }), width: innerWidth, height: innerHeight, visualWidth: visualViewport.width, visualHeight: visualViewport.height,
+      scrollX, scrollY, documentWidth: document.documentElement.scrollWidth });
+    const before = sample(); requestAnimationFrame(() => resolve({ before, after: sample() }));
+  }));
+  for (const frame of [frames.before, frames.after]) {
+    assert.equal(frame.headers.length, 1); assert.equal(frame.width, 390); assert.equal(frame.height, 844);
+    assert.ok(frame.documentWidth <= frame.width); assert.equal(frame.scrollX, 0);
+  }
+  report.visualViewportObservation = frames; checkpoint();
+  const filename = 'home-narrow-light-supplement-390.png';
+  await page.screenshot({ path: path.join(output, filename), fullPage: false, animations: 'disabled' }); report.screenshots.push(filename);
+  report.checks.push('Independent390light home supplement: one real header, bounded viewport/frame observation and original containment assertions');
+}
+
+if (process.argv.includes('--visual-followup')) await runBrowserCheck('task-links-visual', narrowLightSupplement);
+else await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
   const closeDialog = async () => {
     await page.evaluate(() => {
       window.fixtureLinkClose = false;
