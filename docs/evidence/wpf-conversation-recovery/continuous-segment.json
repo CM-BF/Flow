@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "FULL7_CHOICE_FIRST_CREATE_SCOPED_EVIDENCE_ACCEPTED",
+  "state": "CREATED_TURN_PARENT_FAILED_CLEANUP_CONFIRMED_REPAIR_IN_PROGRESS",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 36096,
-  "runtimeRemainingMs": 113904,
+  "runtimeSpentMs": 47205,
+  "runtimeRemainingMs": 102795,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -75,6 +75,26 @@
       "fullFeaturePassed": false,
       "fullJourneyPassed": false,
       "independentReview": "continuous-third-root-review.json"
+    },
+    {
+      "run": "recturn-20261007-070121-4aa406",
+      "journey": "created-turn-ack-loss",
+      "executionHead": "81f22ee89544fe48b2bc6fc55c2340df0350970e",
+      "sourceTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+      "manifest": "continuous-fourth-manifest.json",
+      "workerPassedGroups": 2,
+      "selectedPassed": false,
+      "actualExit": 1,
+      "parentLateMs": 10498.352375,
+      "outerActualMs": 11108.86074998416,
+      "serializedParentMs": 10488.9235,
+      "chargedMs": 11109,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T07:02:16.032817+00:00",
+      "fullFeaturePassed": false,
+      "fullJourneyPassed": false,
+      "independentReview": "continuous-fourth-root-review.json",
+      "originalBudgetComplete": false
     }
   ],
   "nextSelection": null,

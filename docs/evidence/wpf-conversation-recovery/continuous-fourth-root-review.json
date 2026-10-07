@@ -1,0 +1,148 @@
+{
+  "at": "2026-10-07T07:04:51.412326+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_FAILED_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_CASE_OR_FEATURE_PASS",
+  "run": "recturn-20261007-070121-4aa406",
+  "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "executionHead": "81f22ee89544fe48b2bc6fc55c2340df0350970e",
+  "actual": {
+    "exitCode": 1,
+    "outerElapsedMs": 11108.86074998416,
+    "endedAt": "2026-10-07T07:02:16.032817+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 729,
+    "stderrBytes": 0,
+    "parentPid": 7702,
+    "run": "recturn-20261007-070121-4aa406"
+  },
+  "accounting": {
+    "priorMs": 36096,
+    "chargeMs": 11109,
+    "spentMs": 47205,
+    "remainingMs": 102795,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "rule": "ceil(max outer/late/serialized parent), no credit or raw rewrite"
+  },
+  "rawManifest": {
+    "path": "/private/tmp/recovery-created-turn-parent-d3h8fotz/raw-manifest.json",
+    "sha256": "970e241ee6370f8535f760319eba2e7c4497f5f081ef5703b59ac689f67d2c8e",
+    "files": 11,
+    "bytes": 27344
+  },
+  "fixedGitSourcePinsVerified": 19,
+  "observed": {
+    "workerGroups": [
+      "cookieRead",
+      "createdTurnAckLoss"
+    ],
+    "workerChecksPassedButOverallFailed": true,
+    "parentErrors": [
+      "Work deadline reached; cleanup reserve started"
+    ],
+    "budgetComplete": false,
+    "cleanupComplete": true,
+    "bodyLoss": [
+      {
+        "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/turns",
+        "key": "176868cf-7af4-4850-a2f7-ee992a13ce38:turn",
+        "bodySha256": "104919620611ccf0c8caac9e568fb7d80f51094ad0a88159ebaf5cd8c0b7109c",
+        "status": 202,
+        "headers": {
+          "content-length": "1039",
+          "content-type": "application/json; charset=utf-8",
+          "connection": "close",
+          "cache-control": "no-store"
+        },
+        "events": [
+          "request",
+          "response-headers",
+          "requestfailed"
+        ],
+        "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+        "finished": false
+      }
+    ],
+    "businessPosts": {
+      "create": 1,
+      "turn": 2,
+      "sameTurnKeyAndBody": true,
+      "sameReplayedTurn": "2dce227c-f4e5-4729-bc50-085814d7f4e4",
+      "sameReplayedTask": "8935d557-11a3-4fc6-8c43-ec180313f9ed"
+    },
+    "fullJourneyPassed": false,
+    "png": 0
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_dc22e62130ae4d6bab7af1261e4a7b52",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.6456250000010186,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.0334160000002157,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 29,
+      "wireBytes": 8344,
+      "providerQueries": 0
+    },
+    "freshOwnedProcessObservations": [
+      {
+        "pid": 7702,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 7722,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      {
+        "pid": 7730,
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    ],
+    "scratch": "/private/tmp/flow-recovery-browser-rnLtUk",
+    "scratchAbsent": true,
+    "dualEof": true,
+    "adminEnvDeletionReceipt": {
+      "path": "/private/tmp/recovery-created-turn-admission-3l3mtu2g/admin-env-deletion-receipt.json",
+      "sha256": "ed2639e457e9fb523fe8e48a300d16f80a7ed3e3c2f71614f96eb163b339cb07",
+      "meaning": "Manager exact identity deletion receipt, not a credential value read by root."
+    }
+  },
+  "sourceFinding": {
+    "location": "conversation-recovery.browser.ts checkpoint/working and finally monitor retirement",
+    "mechanism": "finally sets stopped=true then awaits already-in-flight monitoring; checkpoint awaits filesystem reads then calls working(), which combines stopped with elapsed deadline and can record a false deadline.",
+    "confidence": "Reachable static race consistent with worker success and 11s outer below45s work deadline; actual trace lacks exact monitor interleaving, so not a uniquely observed dynamic cause.",
+    "followup": "Owner authorized narrow retirement/error separation plus controlled barrier regression and explicit historical reconciliation. No runtime retry or success reclassification authorized by this review."
+  },
+  "reconciliationRequirement": "Old complete=false stays immutable. Future preflight must use an independently accepted, exact-hash failure/cleanup/accounting receipt; fail closed if any other incomplete attempt or cleanup unknown. Do not treat this receipt as case PASS.",
+  "limits": [
+    "No independent browser/PG rerun.",
+    "New parent lifecycle fix and deterministic local evidence still require targeted fixed review before new gate.",
+    "Next shared PG was handed to C02 sentinel."
+  ]
+}

@@ -184,3 +184,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 06:51:40 UTC — first-create实际限定收口
 
 [67f8原始源审](../../docs/evidence/wpf-conversation-recovery/67f8-create-queue-source-root-review.json)0finding限定接受源码/local，不是runtime批准。本次[create-ack-loss实际2/2](../../docs/evidence/wpf-conversation-recovery/continuous-third-validation.md)已过且owned清理完成，待独立实证审；source67f8保持，B/Queue旅程NOT_RUN，完整review IN_PROGRESS。新段36096/150000、余113904，旧封套/失败不改；无自动后继，不改原full7断言。
+
+## 2026-10-07 07:06:39 UTC — created-turn父监督器收敛
+
+[本次失败与root原审](../../docs/evidence/wpf-conversation-recovery/continuous-fourth-validation.md)保overall FAIL，2 workerchecks不等casePASS。原21内只修正常monitor退休与错误混淆，新增可控barrier/资源deadline/late signal对照及exact失败reconciliation。独立local20s（含5cleanup）授权不转browser余量；browser段47205/150000、余102795，无新gate/不复跑。生命周期增量须固定独审后再launch，未知incomplete继续拒绝。

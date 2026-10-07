@@ -1,0 +1,298 @@
+{
+  "state": "ACCEPTED_FAILED_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_CASE_OR_FEATURE_PASS",
+  "executionHead": "81f22ee89544fe48b2bc6fc55c2340df0350970e",
+  "implementation": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "run": "recturn-20261007-070121-4aa406",
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "targetBlob": "d14d2550f622775e234118b155b941007030ff74",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "targetBlob": "825f1368efab2f016e55b9f5cc6bf0126d8fff53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "targetBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "bytes": 17029,
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "targetBlob": "6630f253d1566bec0245e1913403c2819ee39420",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "bytes": 5953,
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "targetBlob": "087edcca3925b140ef38003e8ea63789ef2f161b",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "targetBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "targetBlob": "d3944f7b88471eb8e6b6bde1ab2b9b19712e2d21",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8729,
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "targetBlob": "09644990c3274c7b51df9740df866e93e2e7d9d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "targetBlob": "3b7288922c292387640fe909b98f9cc8bc69756e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "targetBlob": "443341d0d2da42de08dd3144e75784856f4413cf",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "targetBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "targetBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24603,
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "targetBlob": "105e18decd3c5cf570c4f80f36e318c84cf5eb9a",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "targetBlob": "688d8498bb468fdd9ec1dd660e4b13b0f072db29",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "targetBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "targetBlob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 68127,
+      "sha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "targetBlob": "7c43ae41c4aba89f6d31da97ecea8feb09718854",
+      "unchangedFrom55b": false
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f",
+      "targetBlob": "ef320154539f174a1de7ae301d0ff3dde762ca66",
+      "unchangedFrom55b": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 65658,
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
+      "targetBlob": "0ae5746825a1607b579c4f74d8b1ae8850bdd999",
+      "unchangedFrom55b": true
+    }
+  ],
+  "originals": [
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/browser.json",
+      "bytes": 13241,
+      "sha256": "ed1aba916d42d38c7aa5619428559e3d03f821c932fe2935c24ccc2212b96900"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/budget.json",
+      "bytes": 239,
+      "sha256": "b47589e353b16bd7c6c1db97c8c5ed6367d808c5037e112769a9647ab4af6537"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "c45bcc517549235c959e5c7dbf9d115239066142e920046b1c97daadc100b5f6"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/database-owner.json",
+      "bytes": 164,
+      "sha256": "c4e58b8b2b89231e5dab696ac796eb57eed2fdc06f2bb22d2125dc88013f2435"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "c354998d5a9fcce92918c1262258bc4429e02566e1ec962a4c3cf4923f598a38"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/launch-config.json",
+      "bytes": 1215,
+      "sha256": "2764c6774cbd2831c112b4dd2ca2b4db2f2808f32df9a880b542ce6bfb9ca5f7"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/process-owner.json",
+      "bytes": 27,
+      "sha256": "eab7bb3d2c861143f4b847b1e969ee25e3b8b3d596e0470f3d65ac3c4676d038"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/process.log",
+      "bytes": 6442,
+      "sha256": "77f0eaa47c354db4b249fc86f201a9ff3ecd5b72a37cfd3f090664b36aed1f60"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "b2571132d34c85c812237ca223e631a9718995289da7b1d288ea8dee0f52f6b9"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/sources.json",
+      "bytes": 2444,
+      "sha256": "fe6d13ce3f5c48c316d8eb4b3979adffbd6fa251f36867f6e98af4719cf926fa"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406/supervisor.json",
+      "bytes": 2840,
+      "sha256": "0dd4e18c028f05fa5f3da6042a87b98e3116982c6e11ca680578147e1e1d5578"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/accounting.json",
+      "bytes": 331,
+      "sha256": "c092fcf2ac7888bdc43e8be11a7cbeef93ee4300532674332fa46d5efca43e52"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/actual-exit.json",
+      "bytes": 256,
+      "sha256": "82bb9879445ee23b84e2df886fe190531d57ab41b9bd80d97745dec08a08bbc0"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/parent.stdout.jsonl",
+      "bytes": 729,
+      "sha256": "9e7f03c6cae989557f78b70f4bd0d09e9ccb50f0bd14dd66105bce2d8c826330"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/post-cleanup-observation.json",
+      "bytes": 556,
+      "sha256": "25270c96750d6032b903fbec719aa930d7e5abdc111871db5c253454becf9d50"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/raw-manifest.json",
+      "bytes": 3517,
+      "sha256": "970e241ee6370f8535f760319eba2e7c4497f5f081ef5703b59ac689f67d2c8e"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-parent/start.json",
+      "bytes": 509,
+      "sha256": "c7336477739933200efd57b706e43d1bd4cbf79565b7b4f85c3ac9dd7b67e525"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-admission/admin-env-deletion-receipt.json",
+      "bytes": 834,
+      "sha256": "ed2639e457e9fb523fe8e48a300d16f80a7ed3e3c2f71614f96eb163b339cb07"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-admission/gate.json",
+      "bytes": 5837,
+      "sha256": "a013adbadd07189e873b00125ffcc1147e630354374e360bced802a2089c9b61"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-admission/handoff.json",
+      "bytes": 3477,
+      "sha256": "08d3f7ad9539d181ac2296cd05ec948eaf26f92485129f9448238d93aac1aeb0"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-admission/observation.json",
+      "bytes": 30870,
+      "sha256": "20d9d130db572922bcb63ab976e6c4555465bedb3f920e915d82147c1bd87d5b"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-preparation/carry.json",
+      "bytes": 450,
+      "sha256": "e8d41dbd9dd12d066109ce131fd14f5c515d2ac23690e21a93e2738d89286add"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-preparation/manifest.json",
+      "bytes": 88427,
+      "sha256": "8b4506a1195dcb8e189a45b814a5610af1ac29ca2a4844c8ce60a6144276d89b"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-preparation/packet-files.json",
+      "bytes": 993,
+      "sha256": "784433649511f9cd96375a00b5021bc1f702c394df84f63daf369958ef449877"
+    },
+    {
+      "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-preparation/report.md",
+      "bytes": 1923,
+      "sha256": "e52238251ce2b5543e64f637ef1821942d87d7797d04ea2539eb47c4b8e4f409"
+    }
+  ],
+  "fileCount": 26,
+  "bytes": 166053,
+  "priorRawPreserved": {
+    "count": 100,
+    "bytes": 349183,
+    "manifest": "continuous-fourth-preparation/manifest.json"
+  },
+  "accounting": {
+    "state": "SELECTED_FAILED_NOT_WHOLE_FEATURE",
+    "newSegmentPriorMs": 36096,
+    "outerElapsedMs": 11108.86074998416,
+    "lateParentMs": 10498.352375,
+    "serializedParentMs": 10488.9235,
+    "chargeMs": 11109,
+    "newSegmentSpentMs": 47205,
+    "newSegmentRemainingMs": 102795,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noRetry": true
+  },
+  "independentReview": {
+    "path": "docs/evidence/wpf-conversation-recovery/continuous-fourth-root-review.json",
+    "bytes": 5192,
+    "sha256": "5130342004510bc7f4e32211ad32388a334286780c12b632571ffc5c83cb2b8f"
+  },
+  "scope": "worker2 checks passed; parent stopReason/exit1 means whole selected attempt FAILED; native UI checks not reclassified as accepted case"
+}

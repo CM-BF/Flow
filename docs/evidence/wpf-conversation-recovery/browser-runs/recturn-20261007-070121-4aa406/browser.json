@@ -1,0 +1,400 @@
+{
+  "journey": "created-turn-ack-loss",
+  "requiredGroups": [
+    "cookieRead",
+    "createdTurnAckLoss"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "createdTurnAckLoss"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "persisted CREATE binding survives lost turn ACK; explicit retry never repeats CREATE"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7696.336249999999,
+    "elapsedMs": 7696.336249999999
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7696.536458,
+      "endedOffsetMs": 8701.044915999999,
+      "elapsedMs": 1004.5084579999993,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "createdTurnAckLoss",
+      "startedOffsetMs": 8701.063041,
+      "endedOffsetMs": 9894.673958,
+      "elapsedMs": 1193.610917,
+      "outcome": "PASSED"
+    }
+  ],
+  "pageErrors": [],
+  "failure": null,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/14aacce4-17eb-47a0-af91-6b283c399ac1",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/14aacce4-17eb-47a0-af91-6b283c399ac1/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/14aacce4-17eb-47a0-af91-6b283c399ac1/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations",
+      "key": "176868cf-7af4-4850-a2f7-ee992a13ce38:create",
+      "body": "{\"title\":\"Recovery two-stage turn ACK loss\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"thinking\":\"disabled\",\"tools\":\"configured-readonly\"}}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"id\":\"9890c873-3e0c-4f6a-bcb7-d3b37479d4d5\",\"title\":\"Recovery two-stage turn ACK loss\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":0,\"createdAt\":\"2026-10-07T07:02:14.421Z\",\"updatedAt\":\"2026-10-07T07:02:14.421Z\"},\"capabilities\":{\"attachmentContext\":false,\"knowledgeContext\":true,\"followUp\":true,\"queue\":true,\"steer\":false,\"liveAssistantText\":false,\"perTurnModel\":false,\"perTurnThinking\":false,\"perTurnTools\":false},\"replayed\":false}",
+      "responseSha256": "32df665700eb36634fafdef97c76d94938f081e18ed53fb9f68ee57a3cc734af"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/turns",
+      "key": "176868cf-7af4-4850-a2f7-ee992a13ce38:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Recovery two-stage turn ACK loss\",\"mode\":\"follow-up\"}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"id\":\"9890c873-3e0c-4f6a-bcb7-d3b37479d4d5\",\"title\":\"Recovery two-stage turn ACK loss\",\"harness\":\"claude\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"revision\":1,\"createdAt\":\"2026-10-07T07:02:14.421Z\",\"updatedAt\":\"2026-10-07T07:02:14.446Z\"},\"turn\":{\"id\":\"2dce227c-f4e5-4729-bc50-085814d7f4e4\",\"conversationId\":\"9890c873-3e0c-4f6a-bcb7-d3b37479d4d5\",\"number\":1,\"createdAt\":\"2026-10-07T07:02:14.446Z\",\"user\":{\"role\":\"user\",\"text\":\"Recovery two-stage turn ACK loss\"},\"task\":{\"id\":\"8935d557-11a3-4fc6-8c43-ec180313f9ed\",\"title\":\"Recovery two-stage turn ACK loss\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-07T07:02:14.442Z\",\"updatedAt\":\"2026-10-07T07:02:14.442Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"8935d557-11a3-4fc6-8c43-ec180313f9ed\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "responseSha256": "2552482f98faaf8468cbab9aeb7553929f805f60a890de3135685f439f75e605",
+      "fault": {
+        "kind": "truncated-ack-body",
+        "contentLength": 1039,
+        "contentType": "application/json; charset=utf-8",
+        "prefixBytes": 1,
+        "prefixSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+        "headersFlushed": true,
+        "prefixFlushed": true,
+        "endFlushed": true,
+        "socketClosed": true
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": true,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/8935d557-11a3-4fc6-8c43-ec180313f9ed",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/8935d557-11a3-4fc6-8c43-ec180313f9ed/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/8935d557-11a3-4fc6-8c43-ec180313f9ed/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/turns",
+      "key": "176868cf-7af4-4850-a2f7-ee992a13ce38:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Recovery two-stage turn ACK loss\",\"mode\":\"follow-up\"}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"turn\":{\"id\":\"2dce227c-f4e5-4729-bc50-085814d7f4e4\",\"task\":{\"id\":\"8935d557-11a3-4fc6-8c43-ec180313f9ed\",\"title\":\"Recovery two-stage turn ACK loss\",\"status\":\"queued\",\"harness\":\"claude\",\"createdAt\":\"2026-10-07T07:02:14.442Z\",\"updatedAt\":\"2026-10-07T07:02:14.442Z\",\"verificationStatus\":\"pending\"},\"user\":{\"role\":\"user\",\"text\":\"Recovery two-stage turn ACK loss\"},\"number\":1,\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"createdAt\":\"2026-10-07T07:02:14.446Z\",\"effective\":{\"model\":null,\"tools\":\"unknown\",\"source\":null,\"thinking\":\"unknown\"},\"telemetry\":{\"kind\":\"execution\",\"title\":\"Execution details\",\"taskId\":\"8935d557-11a3-4fc6-8c43-ec180313f9ed\"},\"conversationId\":\"9890c873-3e0c-4f6a-bcb7-d3b37479d4d5\"},\"conversation\":{\"id\":\"9890c873-3e0c-4f6a-bcb7-d3b37479d4d5\",\"title\":\"Recovery two-stage turn ACK loss\",\"harness\":\"claude\",\"revision\":1,\"createdAt\":\"2026-10-07T07:02:14.421Z\",\"requested\":{\"model\":\"runner-default\",\"tools\":\"configured-readonly\",\"thinking\":\"disabled\"},\"updatedAt\":\"2026-10-07T07:02:14.446Z\"},\"replayed\":true}",
+      "responseSha256": "18fbb54b0032d40f8a76c4ef144a56a2677919ab0b89724451d28a4951b4a105"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "PASSED",
+    "queueAckLoss": "NOT_SELECTED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "bodyLoss": [
+    {
+      "path": "/api/conversations/9890c873-3e0c-4f6a-bcb7-d3b37479d4d5/turns",
+      "key": "176868cf-7af4-4850-a2f7-ee992a13ce38:turn",
+      "bodySha256": "104919620611ccf0c8caac9e568fb7d80f51094ad0a88159ebaf5cd8c0b7109c",
+      "status": 202,
+      "headers": {
+        "content-length": "1039",
+        "content-type": "application/json; charset=utf-8",
+        "connection": "close",
+        "cache-control": "no-store"
+      },
+      "events": [
+        "request",
+        "response-headers",
+        "requestfailed"
+      ],
+      "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+      "finished": false
+    }
+  ]
+}
