@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:12 UTC / main d0573c7dcf6b051a007b44e84cba4ff74fda247d（个人运行源本轮未采样） |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:16 UTC / main 62daa860（个人运行源本轮未采样） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -18,7 +18,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 三棵已集成工作树完成有限收尾核对，全部KEEP；退役条件与证据唯一来源已独审。SVC07原HTTP直接检查已由原owner完成1/1并归还窗口；其固定证据审查、C02与其他关键路径继续。 |
+| 当前产出 | 三树退役准备已交付且全部KEEP；SVC07实际HTTP已通过并完成独审，正优先接收。恢复一个重旅程与一个有界局部检查的隔离并行，原门槛和清理不变。 |
 | 下一可用交付 | 收口SVC07必要HTTP证据并接收；随后按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI。每项保留原packet、预算、独审与实际清理回执。 |
 | 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
@@ -394,3 +394,9 @@ fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输�
 2026-10-07 02:13 UTC：三树准备文档固定a60614fe获assignment_review限定APPROVED_DOCS，无finding；4文档增量/6链接核对，0产品检查。Mika随后已回SVC07原HTTP 1选中/1通过、2.98秒，专库/两次监听/自有进程组/tmp均清理，窗口归还；只是读取原owner回执，本Lead未重跑。C02沿原packet交Mika与Web直接协调next holder，尚未在本记录宣称运行通过；TUI01G仅原小检查由原ownerfresh准入，不能借旧资源值启动。候选三树仍KEEP。
 
 02:14 UTC main接收回执：main/origin `62daa860` clean，5份固定输入逐字一致，[主线绑定](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/worktree-retirement-planning-intake.json)；4320快照02:14:19已实际读取新候选摘要，human.complete=true、missing=[]、issues=[]。此为本次有界准备收口，不代表整个OPS完成，也不执行候选回收。
+
+## 2026-10-07 02:16 UTC 局部验证与重旅程分开准入
+
+沿OPS-001-12的[同一局部方法](../../docs/quality/local-validation.md)做最小调整：一个实际PG/Chrome旅程+一个无共享端点、固定写入范围的局部项可以并行；相加声明的新增字节预算并保持原门槛/时间/选中数/清理，明确禁止并跑的原packet先由owner修订复核。共享DB/端口/服务/可写源与性能测量仍串行，不增模型费用/全局测试并行。GO新硬件/余量只作调整依据，本Lead未重新采样或归因。
+
+TUI01G原owner已接回30s/8MiB的小检查，0PG/HTTP/PTY/provider；原11pass/1Ink失败保留，确认双React依赖身份后只修本树精确ignored link到同hash I02 payload，0安装/复制/donor变化，仅失败1例补跑。X01 Stage A明确为11个tar子进程、32MiB own tmp/cache及原raw界限，由Mika在局部槽空闲后核packet，不称纯fake。SVC07固定e28/3a94结果已获Mika分层独审，Lead仅核集成输入/当前前像，不重复15fake/2PG/HTTP。
