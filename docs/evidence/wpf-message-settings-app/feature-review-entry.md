@@ -1,6 +1,6 @@
 # MSG03 固定源码独审入口
 
-当前实现 **6a258a3886f0491b8487738c19c09dc631b98f2c**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
+当前实现 **61185e5fa8a0a55e83c2196355249e6f4359a19e**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
 
 固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / material-return 三次FAIL / message-settings-app NOT_RUN / 6a修复未复验 / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
 
@@ -49,3 +49,9 @@ App每view唯一C与opaque ownership；P01现action/context私有port复用Picke
 当前target 6a258a3886f0491b8487738c19c09dc631b98f2c 只browser4+/2-：真实Add Attachment enabled前置+同时await选择事件/click。第三actual worker因选择事件unhandled rejection提前exit1，缺browser/fixture结果；不把partial log当组通过。原父DB/groups/EOF/scratch/env清理有证，fixture优雅关闭UNKNOWN；phase33766/余56234，actual HOLD；本差量已审，下一资源交接未提供。旧各source批准/FAIL原件保原归因。
 
 [6a258 root审](source-research/root-msg03-6a258-chooser-error-review-20261007.json)已接受此错误观察差量；三次actual仅绑定各自executionHead。当前17源码manifest绑定6a；phase33766/56234，NO_NEXT。fixture graceful close UNKNOWN、材料恢复/第二消息设置旅程及双主题截图尚未通过；物理DB/process/scratch/env收尾与此区分。
+
+## 当前公开Files前置差量
+
+目标 61185e5fa8a0a55e83c2196355249e6f4359a19e：fresh goto后公开Files→精确对话框可见→Escape→隐藏/回焦点，原material循环前仅5行。16其余源码逐字不变，6a错误观察审仍属历史固定目标；本差量已获root09907限定源码APPROVED，actual NOT_RUN。无产品自动激活或绕官方chooser。phase33766/56234/三FAIL原件保持，当前NO_NEXT。
+
+61185审查原件：[root](source-research/root-msg03-61185-files-precondition-review-20261007.json)；decision APPROVED_PUBLIC_FILES_ACTIVATION_PRECONDITION_FIX_NOT_BROWSER_PASS。没有继承原浏览器PASS，旧第三缺报告保持。

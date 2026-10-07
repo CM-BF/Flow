@@ -1,0 +1,432 @@
+{
+  "kind": "BOUNDED_READ_ONLY_SOURCE_DIAGNOSIS_NOT_RUN",
+  "at": "2026-10-07T13:49:14.343120+00:00",
+  "fixed": {
+    "source": "6a258a3886f0491b8487738c19c09dc631b98f2c",
+    "observedHead": "97ed4204deb34d6b49609969e2935d470abd9c64",
+    "observedDirty": [],
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "runtimeSource": "Explicit donor supplied by root, @assistant-ui/core 0.3.22 and resolved @assistant-ui/react 0.15.23; no product import or execution. Read both relevant src and published dist JS."
+  },
+  "question": "Can late snapshot.projectId / attachment adapter update / official AddAttachment disabled gating explain MSG03 third-run filechooser timeout?",
+  "conclusion": {
+    "confirmedRootCause": null,
+    "finding": "Confirmed static fixture precondition gap: the fresh-page material scenario does not invoke public Files before requiring official Add Attachment. Registration alone leaves the attachment owner registered; the only attachment PluginView is inside a closed, unmounted Radix dialog, so it cannot trigger view activation. ConversationThread gates the adapter on active state; the official Add Attachment is capability-gated. Existing late-adapter update logic supports activation after Files, rather than being the blocking mechanism.",
+    "excludedBySource": [
+      "useExternalStoreRuntime captures attachments only once at mount",
+      "initial null attachmentBinding is cached permanently",
+      "isSendDisabled/material preparation alone disables official AddAttachment",
+      "adapter.add/send network failure can prevent the pre-upload chooser callback from being called, if that callback was actually reached"
+    ],
+    "qualification": "The source chain establishes a missing activation prerequisite in the fixed material test. No failure DOM, completed-step record, or actual runtime reconstruction is available for the old third attempt; it does not prove that this is its unique observed cause, that its timed-out chooser was the first upload, or that production should autoactivate attachments. Inspected Radix is the resolved installed donor version; the failed-run browser module resolver was not independently reconstructed in this bounded report.",
+    "confirmedStaticFinding": {
+      "id": "MSG03-MATERIAL-ACTIVATION-PRECONDITION",
+      "priority": "P2",
+      "scope": "Existing mounted browser fixture/test prerequisite; product activation policy not changed or adjudicated",
+      "at": "apps/web/test/conversation-recovery.browser.ts:1174–1177",
+      "expectedCorrection": "Use the real Files action after fresh navigation, observe Project text files dialog, close it through real Escape and observe hidden dialog plus returned Files focus, then retain the unchanged official Add Attachment + real filechooser path."
+    }
+  },
+  "facts": [
+    {
+      "id": "F1",
+      "claim": "Late projectId can recreate the real binding; missing project is not cached.",
+      "basis": [
+        "ConversationThread.tsx:80–83 useSyncExternalStore snapshot + useMemo dependency state.snapshot?.conversation.projectId",
+        "session.ts:186–205 returns null before map.set; only constructed binding is cached"
+      ],
+      "boundary": "Requires a new observed snapshot/render and active plugin; this report did not observe either at failed click time."
+    },
+    {
+      "id": "F2",
+      "claim": "The adapter is stable after binding creation; its presence depends on successful input construction, while thread passes it only when attachment plugin is active.",
+      "basis": [
+        "attachments.tsx:68–96 catches input/journal construction error, exposes error and adapter undefined when input null",
+        "ConversationThread.tsx:82,105–113 attachmentActive subscription and attachments-keyed memo"
+      ],
+      "boundary": "Plugin inactive or constructor failure remains a possible absence explanation, not a proven failed-run cause. Constructor failure has a public Attachment recovery is unavailable message; no environment contents were read."
+    },
+    {
+      "id": "F3",
+      "claim": "Runtime update path recomputes attachment capability and notifies, including unchanged messageRepository.",
+      "basis": [
+        "core src/react/runtimes/useExternalStoreRuntime.ts:26–39,60–62 store-aware memo and per-render setAdapter effect",
+        "core src/runtimes/external-store/external-store-runtime-core.ts:27–32 applies current adapter to current main thread",
+        "core src/runtimes/external-store/external-store-thread-runtime-core.ts:238–250,289–314 attachments=!!adapters.attachments; 318–328 unchanged repository early-return still notifies",
+        "Published dist equivalents: useExternalStoreRuntime.js:53–55; external-store-thread-runtime-core.js:169–191"
+      ],
+      "boundary": "Update is effect-driven, not guaranteed in the initial render. Source does not support permanent stale capabilities merely because projectId arrived late; no runtime validation performed."
+    },
+    {
+      "id": "F4",
+      "claim": "Visibility gate and disabled gate are different: Thread renders AddAttachment only for thread.capabilities.attachments; official primitive disabled comes from !composer.isEditing or explicit disabled prop.",
+      "basis": [
+        "thread.aui.tsx:490–499 AuiIf attachments",
+        "core src/react/primitive-hooks/useComposerAddAttachment.ts:5–16; published dist:28–30",
+        "react src/primitives/composer/ComposerAddAttachment.ts:59–60 returns null only for disabled",
+        "react src/utils/createActionButton.tsx:41–48 disabled=primitiveProps.disabled||!callback",
+        "attachment.aui.tsx:257–271 supplies no disabled prop",
+        "core src/runtime/base/base-composer-runtime-core.ts:49 isEditing=true; composer-runtime.ts:111–126 missing runtime fallback=false"
+      ],
+      "boundary": "Default thread composer does not derive isEditing from isSendDisabled/isSubmitting; DefaultThreadComposerRuntimeCore canSend does use those flags at28–30, but AddAttachment does not use canSend. A missing/wrong composer scope could present false isEditing; no DOM/state evidence proves that happened."
+    },
+    {
+      "id": "F5",
+      "claim": "Successful callback synchronously creates/attaches a hidden file input and invokes input.click before any upload operation.",
+      "basis": [
+        "react src/primitives/composer/ComposerAddAttachment.ts:21–56; dist:22–44",
+        "attachmentAccept read before append; BaseComposerRuntimeCore:67–68 returns current adapter.accept or *; DefaultThreadComposerRuntimeCore:90–91 gets live runtime.adapters.attachments",
+        "addAttachment is only invoked in input.onchange after files exist; Flow adapter.ts:13–25 upload/add and material send are downstream"
+      ],
+      "boundary": "hidden=true is the official implementation, not evidence of failure. A synchronous getter/handler exception or click suppression would be a different observation point; no confirmed exception. No selectFiles/DOM input workaround proposed."
+    },
+    {
+      "id": "F6",
+      "claim": "Application wrapper forwards onClick/disabled/ref to Button; no app onClick or preventDefault override is supplied for this exact AddAttachment.",
+      "basis": [
+        "attachment.aui.tsx:257–270 exact aria-label and primitive asChild",
+        "tooltip-icon-button.tsx:23–40 forwards rest/ref",
+        "createActionButton.tsx:48 composes supplied onClick and callback"
+      ],
+      "boundary": "This is source-level forwarding, not proof of successful DOM handler delivery, pointer hit target, modal overlay state or browser user-activation at failure time. Radix internals not separately reaudited."
+    },
+    {
+      "id": "F7",
+      "claim": "Fixed6a258 upload now attaches observation to both chooser and click immediately via Promise.all; that does not identify whether the earlier run reached/finished enabled check or click.",
+      "basis": [
+        "conversation-recovery.browser.ts:1159–1164 unique visible composer then toBeEnabled then Promise.all(waitForEvent,click)"
+      ],
+      "boundary": "Do not infer earlier toBeEnabled PASS solely from a chooser timeout; preserve primary click/assert failure when available. Root is independently examining real setup/order and earlier raw."
+    }
+  ],
+  "minimalNextEvidenceIfOriginalOwnerLaterAuthorized": [
+    "Address the confirmed public Files activation prerequisite described in activationFollowup, then preserve the original official chooser/real upload path; a new authorized actual is necessary to connect this source finding to observed behavior.",
+    "Capture a bounded public observation at the existing upload step: current step marker, visible composer count, exact Add Attachment count/visible/disabled/aria-disabled, related public attachment error, and whether toBeEnabled and click actually completed. Preserve both settled chooser/click errors rather than losing the primary cause.",
+    "If callback delivery is still ambiguous, passive bounded capture of click target/defaultPrevented and appearance of the newly created input[type=file] distinguishes absent capability/disabled button, handler not reached, and browser chooser not emitted. Do not preventDefault, set value, invoke internal runtime, bypass official chooser, add alternative keys or replace assertion.",
+    "Observe actual projectId/attachmentActive/capability/isEditing only through an already authorized fixture/public diagnostic seam if needed; do not add a second owner or modify core based on this static exclusion. No new runtime is requested or performed here."
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 24400,
+      "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7"
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "bytes": 9213,
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/tooltip-icon-button.tsx",
+      "bytes": 1298,
+      "sha256": "5d4583d60636c5cb7fa88ce65339555b4963fcfa8e5b092b855ca04663aadac7"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 138805,
+      "sha256": "63e1630420cbaac5cd7f083292e3d8ac93050c7db286d978f8a4b63735bfa0e8"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 54903,
+      "sha256": "77b78dc4d67ec3fb10f482cd7c7f52da08bcf9b438239c0ac2f8221aa1d3ae91",
+      "inspection": "Root independently inspected setup at this fixed blob; worker hashes only for input provenance."
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "bytes": 648,
+      "sha256": "522ea511a3545424ad4215d247569ba7ced025a0b547d55624bbf67b2773890f"
+    }
+  ],
+  "readonlyDependencyPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+      "bytes": 2995,
+      "sha256": "eca9c8f55657de768140bac406c84ac18a94111eeb9f99c8d9f30be17dc07a28"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/react/runtimes/useExternalStoreRuntime.ts",
+      "bytes": 2870,
+      "sha256": "ef6d1520333557f94a70e9bc0a61d40dbf48d3e83f3c3e435ae62f8c4d5fb04a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtimes/external-store/external-store-runtime-core.ts",
+      "bytes": 1280,
+      "sha256": "362f0b193620fa7ac6ee1b257e79d1aa24b4af3cb032949b83b6c6207c01f9c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtimes/external-store/external-store-thread-runtime-core.ts",
+      "bytes": 41161,
+      "sha256": "11ec03e09d2c49916fd75fb768aba7ed52c2081a858f230b4490071da8d91688"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/react/primitive-hooks/useComposerAddAttachment.ts",
+      "bytes": 486,
+      "sha256": "f68c7efd0343fcf95423eab95afdf0d4af31064e4b22ea1771e1a6071f4b6260"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/default-thread-composer-runtime-core.ts",
+      "bytes": 5064,
+      "sha256": "b066eab15936e5886cc53382f0020993e78e6c92d147544a8055aa9b7465e4a7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/api/composer-runtime.ts",
+      "bytes": 17394,
+      "sha256": "a5c007fc5cefaefdfb3293927abb6d087ff128699f4e62ac373e9682a5b7c35e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/store/runtime-clients/thread-runtime-client.ts",
+      "bytes": 7891,
+      "sha256": "1839589e09dd976482362d3f237bc34e17783a6063f122ebb976ba85e995bbe9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/store/runtime-clients/composer-runtime-client.ts",
+      "bytes": 6558,
+      "sha256": "30936b6b48757270a0a5c4792b34b3ac2d5545cf880a330df1784f00cec600c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/react/runtimes/useExternalStoreRuntime.js",
+      "bytes": 2750,
+      "sha256": "eb5348dd4a7904ad14cf64b295fc16c5fc3c3e2dcfd9af41292fce18585ab1be"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/react/primitive-hooks/useComposerAddAttachment.js",
+      "bytes": 853,
+      "sha256": "66e250f15e65c5ba215e4952277b8b0554b265c72d950abd9fc9757ea57fc657"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtimes/external-store/external-store-thread-runtime-core.js",
+      "bytes": 26205,
+      "sha256": "57da8f46107917e39530ca16ed54b9e462ebdff905f9fa098cf24cee809d2022"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/package.json",
+      "bytes": 2635,
+      "sha256": "1d0c3747b6ce89f3e4f6c5a7b780d192b3780df1bc8cbd1092934ff4fb66eca0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/legacy-runtime/runtime-cores/external-store/useExternalStoreRuntime.ts",
+      "bytes": 83,
+      "sha256": "fe1dcb3cd94c2a63e3bc56c2d25ccfc9f639dd0c8be46a6e3b6c0e25e2b55e3e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/primitives/composer/ComposerAddAttachment.ts",
+      "bytes": 1981,
+      "sha256": "42e64ec0e113cefe080e233e69a475c720ad5cb6a79b1ce7a9665f34dac3cbf0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/utils/createActionButton.tsx",
+      "bytes": 1684,
+      "sha256": "ee7f0ceaabdb63fb2ee6909cf942d49b1a9dc392a36079f896d6bcd6a22031ae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/dist/primitives/composer/ComposerAddAttachment.js",
+      "bytes": 1975,
+      "sha256": "d9bbd79faf2abdc723cd28f856a05c9fe4afca4eac3d2f14ebe5e175a9caf55a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/dist/utils/createActionButton.js",
+      "bytes": 1503,
+      "sha256": "6bf781f8c97d44816518e20e933a9272019d028009a7ecfd9decc1884ba44213"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/package.json",
+      "bytes": 2226,
+      "sha256": "9f7cc1487d93a25d543e96beb00204a59d1b11d3e36b4161ae1c8c10c1e47bde"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.mjs",
+      "bytes": 14132,
+      "sha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-presence@1.1.11_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19._h2567e3rv3ts5mpdisdtailkxm/node_modules/@radix-ui/react-presence/package.json",
+      "bytes": 1652,
+      "sha256": "f18c8e3a59aeb29796d9b55f8be683674b994b68e43c8f9adf97f218cae15af7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-presence@1.1.11_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19._h2567e3rv3ts5mpdisdtailkxm/node_modules/@radix-ui/react-presence/dist/index.mjs",
+      "bytes": 6615,
+      "sha256": "1707d09ce8f6c4829d23cd94291f6db131b83c7e7a00ccb5a4088defcd7b1f36"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "Local-first reuse; no install or unrelated discovery."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "bytes": 9967,
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c",
+      "application": "Trace element→primitive→core runtime→adapter using installed pinned implementation; do not infer latest website API during readonly/noHTTP task."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "Separate capability/rendering, editability/disabled, chooser callback, upload and material-send stages; preserve errors and avoid speculative workaround. Followup: separate plugin declaration registration, activation, panel mounting and runtime capability; recommend one explicit public fixture precondition instead of changing production lifecycle or adding fallback behavior."
+    }
+  ],
+  "limits": {
+    "projectWrites": 0,
+    "runtime": 0,
+    "NodeImports": 0,
+    "tests": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "envReads": 0,
+    "installs": 0,
+    "output": "one private TMP report",
+    "notClaimed": [
+      "Failure DOM existed",
+      "Exact third-run root cause proved",
+      "Core or product repaired",
+      "Browser success or capacity performance",
+      "Product autoactivation policy decided"
+    ]
+  },
+  "independentRootSetupCrosscheck": {
+    "provenance": "Root concurrent readonly fixed6a report delivered in this task; not an extra worker runtime observation.",
+    "facts": [
+      "seedMessageSettings explicitly binds the same projectId whose project creation and saved.txt upload completed in fixture setup (fixture about690).",
+      "Browser1174 navigates to seeded conversation, awaits input, applies choice A and checks dialog hidden/focus/summary, then fills draft and calls upload; initial upload is before material probe arm/pending.",
+      "No static evidence of missing seed project, modal still open at first upload, or first upload after arm.",
+      "Actual third run has no browser/DOM report locating the failing upload. Ordering and coarse14s duration cannot prove it was first upload."
+    ],
+    "scope": "Root findings appended for one report; worker conclusions remain mechanism exclusions, not attribution."
+  },
+  "activationFollowup": {
+    "updatedAt": "2026-10-07T13:54:48.508551+00:00",
+    "method": "Fixed Git blobs plus installed package text only; no product import or runtime. This updates the same report after root supplied a concrete activation-chain direction.",
+    "chain": [
+      {
+        "claim": "Fresh session registers without autoactivation.",
+        "basis": [
+          "plugin-integration/session.ts:128–140 constructs PluginHost and registers attachment plugin",
+          "plugins/host.ts:89–113 creates state registered and publishes; does not call load/activate",
+          "plugins/host.ts:610–640 publishes declarative button contributions for non-disabled registrations, so public Files remains renderable"
+        ]
+      },
+      {
+        "claim": "Only explicit command/view activation is relevant to this attachment owner.",
+        "basis": [
+          "plugin-integration/attachments.tsx:305–317 declares command flow.conversation-attachments.open and view chat.composer.context; Files command calls binding.open",
+          "plugins/host.ts:344–351 execute activates only owner of the requested command",
+          "plugins/host.ts:546–565 show resolves one contribution and activates item.pluginId, not every plugin declaring the same slot",
+          "plugin-integration/message-settings.tsx:151–165 shows its own MESSAGE_SETTINGS_PANEL, not the attachment panel"
+        ]
+      },
+      {
+        "claim": "Rendering composer action contributions does not activate panels.",
+        "basis": [
+          "plugin-integration/react.tsx:108–122 AppSlot is ExtensionSlot; ComposerActions uses chat.composer.actions",
+          "plugins/react.tsx:28–47 subscribes declarations; execute is only invoked on button/menu interaction",
+          "plugins/react.tsx:49–67 renders button/menu entries, no panel show effect",
+          "plugin-integration/react.tsx:89–105 automatically mounted panels are chat.message.footer, not chat.composer.context",
+          "plugins/react.tsx:218–230 calls host.show only in mounted PluginView effect"
+        ]
+      },
+      {
+        "claim": "Attachment PluginView cannot activate itself from the initial closed dialog.",
+        "basis": [
+          "plugin-integration/attachments.tsx:51 starts state.open=false",
+          "plugin-integration/react.tsx:269 requires attachment state active",
+          "plugin-integration/react.tsx:291–295 puts the sole ATTACHMENT_PANEL PluginView inside DialogContent with open=state.open && active && visible",
+          "components/ui/dialog.tsx:32–52 uses DialogPortal and Content without forceMount",
+          "@radix-ui/react-dialog 1.2.0 dist/index.mjs:98–101 Portal Presence present=forceMount||context.open;149–154 Content same guard",
+          "@radix-ui/react-presence 1.1.11 dist/index.mjs:20–34 returns null for initial false; initialState unmounted"
+        ]
+      },
+      {
+        "claim": "The closed loop prevents official upload affordance until public activation.",
+        "basis": [
+          "conversations/ConversationThread.tsx:82/113 adapter only supplied for attachmentActive",
+          "components/assistant-ui/elements/thread.aui.tsx:497–499 renders ComposerAddAttachment only when capabilities.attachments",
+          "The prior inspected external-store core recomputes this capability from Boolean(adapter) and notifies subscribers after an update",
+          "plugin-integration/attachments.tsx:116–134 checkView gates readiness; sync does not activate the owner"
+        ]
+      },
+      {
+        "claim": "The fixed material scenario misses that activation prerequisite.",
+        "basis": [
+          "test/conversation-recovery.fixture.ts:674–694 seedMessageSettings only registers/publishes a profile and creates a project conversation via backend APIs; it never touches the browser PluginHost",
+          "test/conversation-recovery.browser.ts:1174 full page.goto;1177 apply(a),fill(original),upload(held-1.txt) without Files",
+          "test/conversation-recovery.browser.ts:1157 original text lacks @file; ConversationThread.tsx:254–256 alternative public activation requires a real Tab after @file, which fill does not supply",
+          "test/conversation-recovery.browser.ts:1161–1164 expects official Add Attachment enabled, then jointly waits for chooser and click; it does not activate the plugin itself"
+        ]
+      }
+    ],
+    "minimalOwnerChangeRecommendation": [
+      "After the existing fresh goto, use the visible composer Files button; await Project text files dialog being visible, close through real Escape, await it hidden and Files naturally focused. Then keep the existing settings/apply/fill/official chooser/upload flow and all material return assertions.",
+      "Do not call host.activate internally, forceMount the panel, mutate capabilities, bypass the official chooser, lengthen timeout, or modify production activation policy to make this fixture pass.",
+      "For any subsequent authorized runtime, preserve both chooser/click rejection and bounded step/DOM diagnostics; do not use this static review to backfill missing old-run observations."
+    ],
+    "notProven": [
+      "Which exact upload or locator stalled in the third actual attempt",
+      "A unique actual third-run cause or actual mounted DOM state",
+      "Whether product UX intends attachments to activate automatically",
+      "Any changed source or browser validation success"
+    ],
+    "installedRadixResolution": {
+      "dialogVersion": "1.2.0",
+      "dialogRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog",
+      "presenceVersion": "1.1.11",
+      "presenceRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-presence@1.1.11_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19._h2567e3rv3ts5mpdisdtailkxm/node_modules/@radix-ui/react-presence",
+      "qualification": "Resolved readonly packages in the root-specified dependency donor. MSG sparse worktree has no local apps/web/node_modules/@radix-ui/react-dialog; no failed-run alias reconstruction or import was performed."
+    }
+  }
+}

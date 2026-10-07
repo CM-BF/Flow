@@ -1,0 +1,44 @@
+{
+  "kind": "focused-independent-source-review",
+  "at": "2026-10-07T13:56:03.481696+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "base": "97ed4204deb34d6b49609969e2935d470abd9c64",
+  "target": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "changedPaths": [
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "source": {
+    "path": "apps/web/test/conversation-recovery.browser.ts",
+    "bytes": 139230,
+    "sha256": "8b317323bebe8ded1df12ba9bc34b2d8e0cffa2d95ecd72157be277fa1fca6a5"
+  },
+  "decision": "APPROVED_PUBLIC_FILES_ACTIVATION_PRECONDITION_FIX_NOT_BROWSER_PASS",
+  "blockingFindings": [],
+  "assessment": [
+    "The only delta is five lines inside the existing material scenario try/finally: real visible Files action, real exact Project text files dialog, Escape close, hidden assertion and focus return.",
+    "The original official Add Attachment locator, enabled assertion, simultaneous real chooser/click observation, files, assertions, probe, timeouts, material pending hold, cancellation and restore checks are unchanged.",
+    "Existing host registration, lazy dialog mount and active attachment capability establish why a public Files activation is needed on a fresh page; there is no internal host activation, forced button, DOM file injection or synthetic response.",
+    "Failure stays in the existing scenario and cleanup path; no new implementation, dependency, source export, capability or actor is introduced."
+  ],
+  "relatedEvidence": {
+    "path": "/private/tmp/w01-msg03-attachment-chooser-source-review-20261007.json",
+    "bytes": 31393,
+    "sha256": "a0726926184f1022366299549f687a7a1a5ad634305c3ed8454f9cd958cc7eae",
+    "rootVerifiedPins": {
+      "fixedGit": 15,
+      "installedSourceAndDist": 23,
+      "mismatches": []
+    }
+  },
+  "verification": "Source inspection and exact Git delta only; no Node import, check, browser, database, env read or product execution.",
+  "remaining": [
+    "Fresh source binding and one actual owned selected browser run are still needed after the current CORE window returns and the manager allocates it.",
+    "Third historical actual run remains failed with no browser/fixture-cleanup report; this finding does not prove its only runtime cause.",
+    "Historical browser phase remains spent 33766ms / remaining 56234ms, with no reset or grant in this review."
+  ],
+  "cleanCode": {
+    "scope": "Five-line browser prerequisite and retained error/cleanup path",
+    "findings": "No additional complexity or duplicated helper needed; existing public UI idiom reused.",
+    "fixes": "The missing public activation precondition is repaired; runtime result remains open."
+  }
+}

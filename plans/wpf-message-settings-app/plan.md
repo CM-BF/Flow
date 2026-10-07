@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T13:43:37.782Z。
+状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T13:56:05.753Z。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -25,7 +25,7 @@
 
 ## 本段固定实现与未验边界
 
-MSGAPP-02/03/04 勾选指源码实现，当前组合绑定 6a258a3886f0491b8487738c19c09dc631b98f2c，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
+MSGAPP-02/03/04 勾选指源码实现，当前组合绑定 61185e5fa8a0a55e83c2196355249e6f4359a19e，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
 
 历史11定向通过/57未选保留；新probe2六PASS/affected types8通过当时9c46的17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。首次PG初始化已实际FAIL并清理，材料旅程随后两次FAIL，消息设置旅程仍NOT_RUN，MSGAPP-06合法main仍pending。
 
@@ -46,3 +46,7 @@ MSGAPP-05历史第二次安全点：两次actual保红，第二cookieRead通过/
 MSGAPP-05第三actual：worker未处理filechooser超时提前exit1，缺场景/fixture回执；父资源回收有证但不冒优雅close。源target 6a258a3886f0491b8487738c19c09dc631b98f2c 只修错误观察；本phase33766/56234，禁止自动重试，原两selector未完成。
 
 当前6a错误观察差量已独审APPROVED；不代表修复chooser交互根因或actual通过。原phase33766/56234、第三缺fixture回执保持，当前无NEXT、不运行。
+
+MSGAPP-05同scope前置修复：仅实际Files命令初始化后再用official Add Attachment；源61185尚未actual，原3FAIL/33766/56234不变，非产品自动激活改动。
+
+61185源码聚焦审通过（root09907），仍原MSGAPP-05真实材料/消息设置验收未完成；无本批工程检查或运行。

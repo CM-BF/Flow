@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:43:37.782Z；固定base c130，未追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:53.836Z；固定base c130，未追moving main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,22 +12,22 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
-| 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；6a258a3886f0491b8487738c19c09dc631b98f2c（实现固定；metadata HEAD见Git） |
-| 工作树dirty状态 | 本次仅own原件/metadata封存；提交后以Git clean核验，随后exact19停写 |
+| 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；61185e5fa8a0a55e83c2196355249e6f4359a19e（实现固定；metadata HEAD见Git） |
+| 工作树dirty状态 | 本次公开Files前置已固定；仅own metadata待收口，normal push后核clean并停写 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 历史局部绿不重跑；前轮cookieRead PASS保留；本轮worker错误退出缺结果/fixture回执，未推任何组通过 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
-| 实现目标 | 6a258a3886f0491b8487738c19c09dc631b98f2c |
+| 实现目标 | 61185e5fa8a0a55e83c2196355249e6f4359a19e |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/projection.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversation-context/receipts.ts, apps/web/src/recovery/binding.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.test.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/src/conversations/queue/ConversationQueue.tsx |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已修复材料恢复验收的错误收尾；保留三次失败及清理证据，真实材料恢复仍待验证通过 |
-| 下一可用交付 | 在下一验证窗口复验材料恢复，再验消息设置页面；当前错误收尾修复已通过源码审查 |
+| 当前产出 | 已补齐材料验收的公开Files入口前置；保留三次失败，源码修复已审、实际复验待运行窗口 |
+| 下一可用交付 | 在后续验证窗口复验材料恢复，再验消息设置页面；原文件选择器和所有业务断言保留 |
 | 当前阻塞 | ACTIVE: 材料恢复页面验证尚未通过，下一独占验证窗口未交接 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS；6a258错误观察差量限定源码APPROVED，related actual NOT_RUN |
-| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 ACTIVE；exact19；fresh 2026-10-07T13:43:37.884Z/nooverlap |
+| Review | [review.md](review.md)，IN_PROGRESS；6a错误收尾和61185公开Files前置均已限定源码APPROVED；actual NOT_RUN |
+| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 ACTIVE；exact19；fresh 2026-10-07T13:54:50.429Z/nooverlap |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -77,3 +77,9 @@
 [最窄错误观察修复](../../docs/evidence/wpf-message-settings-app/chooser-error-observation-fix.json)用原真实Add Attachment enabled前置和同时await filechooser/click，让错误进入原catch/finally；不加timeout/取消原断言或伪造文件。实际点击未生chooser原因仍未证；当前无资源holder，局部旧绿不重跑。
 
 6a258 已获 [root聚焦源码审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-6a258-chooser-error-review-20261007.json) APPROVED/0finding；仅确认两个Promise进入原run/finally，实际按钮状态/未产生chooser原因未证。前三次FAIL与fixture gracefulclose UNKNOWN不回写；当前NO_NEXT/无holder，原90s账33766/56234不变，下一窗口由经理交接。
+
+## 公开Files激活前置（源码阶段）
+
+当前61185在fresh goto后经真实Files命令打开Project text files，关闭并确认回焦点，再走原官方上传chooser。只browser5行，未改产品自动激活/原timeout/probe或业务断言。可达的fixture前置遗漏不等第三次唯一根因已实证；该轮fixture gracefulclose UNKNOWN仍保留。0runtime/无gate-env，phase33766/56234不变。见[差量](../../docs/evidence/wpf-message-settings-app/files-activation-precondition.json)。
+
+61185已获[root限定审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-61185-files-precondition-review-20261007.json)，0finding；W01固定源码/安装包研究作为来源原样保留。源批准不授运行，下一窗口仍由经理单一交接；第三fixture UNKNOWN/三FAIL与33766/56234不变。
