@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T18:14:40.665Z / 已核main/origin496b；本批接收既有C3兼容批准与loader限定审查 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T18:44:52.319Z / 已核main/origin d669f3acb；默认三角色启动准备独审收口，实际运行待独立窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main496b1d68c；本批仅已审记录与状态，不改变冻结产物 |
+| 工作基线 / HEAD | main d669f3acb；本批仅审查记录与自身状态，不改变任何冻结产物 |
 | 工作树dirty状态 | 本次审查接收metadata；两个原有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 既有独审、固定输入与文档差量/own-status；0产品复测/PG/浏览器/provider |
-| 已集成main状态 / HEAD | main496b已含启动诊断四源；C3兼容与loader限定审查本批接收。固定cd27/779尚未个人部署，2515未改 |
+| 已集成main状态 / HEAD | main d669f3acb 已接C3两fixture精确源和既有兼容批准；固定cd27/779尚未个人部署，2515未改 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新版页面与保留页面的后台兼容验证已通过独审；固定启动诊断模块及独立加载证据已接收。 |
-| 下一可用交付 | 按已验证组合完成个人更新准备和发布；消息设置的最小启动闭环独立推进。 |
+| 当前产出 | 新版页面与保留页面的后台兼容已验证并接收；最小服务启动验证准备已通过独立审查。 |
+| 下一可用交付 | 完成固定新版页面的个人发布准备，并在独立窗口验证消息设置服务能启动和正常停止。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -488,3 +488,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 [限定源码与局部结果独审](../../docs/evidence/i02/svc09a-startup-controller-review.json)绑定f0e434bd四源；当前main前像与其父版本逐字同，受控接收后四源逐字保持。12项局部行为通过，检查后的一条注释通过原hash精确复原核对；不声称逐字f0已执行。空目录清理规则发现tsx缓存，因此caller exit1/KEEP保留，不能算完整清理。独立controller装配、真实默认启动、完整双槽和个人部署均不在本批准；原2515及个人未改，不重跑已过检查。
 
 2026-10-07T18:14:40.665Z：接收[loader限定审查](../../docs/evidence/i02/svc09a-controller-loader-review.json)及[四App兼容结果](../../docs/evidence/i02/recovery-four-app-intake.json)。唯一raw保留在原owner，未复制源码/重新运行。当前个人发布准备由原SVC06B owner接续；SVC09A新默认3role候选尚未运行，两条用户结果不互为门禁。
+
+### 2026-10-07T18:44:52.319Z SVC09A最小启动准备独审
+
+[单份限定审查](../../docs/evidence/i02/svc09a-default-host-preparation-review.json)批准固定62373492/delivery42f0的默认三角色caller；12不同局部检查/15选择均通过，原artifact与旧失败不变。真实宿主尚未启动，需最新共享窗口与fresh资源核验。SVC06B固定Web导入/显式发布仍由原owner实施，不以本准备代替个人交付。

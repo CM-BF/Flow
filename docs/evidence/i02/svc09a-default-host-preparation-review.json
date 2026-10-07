@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-07T18:44:52.319Z",
+  "task": "SVC09A",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_DEFAULT_HOST_PREPARATION",
+  "blockingFindings": [],
+  "source": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+  "recordSource": "0582a787c91b12993ba636ab04bc4c365430c571",
+  "delivery": "42f0d8668ea606f63a089008a0c6bf46f7e3db41",
+  "canonical": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json",
+  "preparation": {
+    "bytes": 24186,
+    "sha256": "8257f26e39895cbb25d585b74ef66e30cde167e032464f75732117b22792e85f",
+    "effectiveExecutionBindings": 22,
+    "recordBindings": 19,
+    "fixedCurrentRealpathBytesMatch": true
+  },
+  "reviewed": [
+    "Read minimal default purpose, controller start/status/stop ports, actual in-memory launch accounting, marker and connection closure, and failed-work cleanup without drop authorization.",
+    "Read initial source delta and final stale-state/pending identity fix, Node and Python direct tests and raw results. Missing call state, evidence errors, pending process identity, or unknown resources remain unresolved.",
+    "Inherited fixed controller-loader approval and R4 artifact input. Exact host-input and loader manifests checked; original artifact inventory not rehashed. No product/artifact changes in this packet."
+  ],
+  "localEvidence": {
+    "distinct": 12,
+    "selections": 15,
+    "passedSelections": 15,
+    "rounds": 2,
+    "elapsedMs": 289,
+    "rawBytes": 1953,
+    "groups": 3,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "emptyScratchRemoved": 3,
+    "latestReturn": "2026-10-07T18:31:50.096255Z",
+    "priorChecks": "Original12 and import not rerun; local01 cache KEEP unchanged."
+  },
+  "actualEnvelope": {
+    "purpose": "SVC09A_DEFAULT_THREE_ROLE_START_STOP",
+    "outerMs": 217500,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "pgBytes": 134217728,
+    "rawBytes": 2097152,
+    "recordsBytes": 1048576,
+    "pgConfigured": 26,
+    "pgManagementMargin": 16,
+    "roles": 3,
+    "tasks": 0,
+    "attempts": 0,
+    "provider": 0,
+    "databaseAndPrivateDisposition": "KEEP",
+    "dropAuthorized": false
+  },
+  "admission": "Preparation approval only. Actual shared window and fresh claim/pins/namespace/retained identities, complete forward resource bound and PG capacity required. Namespace absence observed during review does not replace launch-time check.",
+  "limitations": [
+    "Actual three-role start/stop NOT_RUN.",
+    "No settings/mixed SQL journey, App/browser/personal deployment or native qualification evidence.",
+    "No new conclusion about R4 root cause. R1-R4 FAIL/KEEP unchanged.",
+    "Reviewer performed 0 tests, PG, services, providers or personal operations."
+  ]
+}
