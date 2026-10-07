@@ -14,6 +14,8 @@
 
 报告中的 ownedState 是最后一次所有权范围观察；signal EPERM 保持 signal=unknown 且禁止升级，如果随后只读观察明确仍存在，ownedState=present（不会改写成 absent 或掩盖 signal failure）。
 
+`observations` 是有界历史，不是永久失败集合；caller 不得因为其中出现过 unknown 而覆盖最后的 `owned_state`。例如自己已确认退出的 leader 在 reap 前得到 EPERM，该记录保持 unknown；回收这个 child 后只读得到 ESRCH，最后 `owned_state` 可为 absent。成功仍须同时核 `first_failure` / `secondary_failures`、退出码、EOF 和业务结果；signal unknown、身份 unknown 或最终仍不可观察不会因历史整理被清除。本规则不授权重查历史进程组或把 EPERM 直接当 absent。
+
 ## Capture 后继（原309基础之上的独立增量）
 
 Launch 新增有限字段 `capture: Capture = Capture.SEPARATE`，旧4项构造默认不变。MERGED 只通过 Popen stderr=STDOUT 建立同一 OS pipe，Report.capture='merged'、stdout为合并bytes、stderr为空bytes、eof只含实际stdout；不拼接两个事后buffer，也不推测并发语义先后。SEPARATE 保原两pipe/两bytes。相同总cap、失败/停止状态与deadline逻辑不变，只有实际存在的pipe进入selector。

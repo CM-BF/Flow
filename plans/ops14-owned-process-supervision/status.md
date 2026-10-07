@@ -6,12 +6,12 @@
 | 所属大task | [OPS-001](../../../plan-status-review/plans/ops-001-status-review/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07 02:32:36 UTC |
+| 更新时间 | 2026-10-07 02:33:59 UTC |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 当前产出 | 已完成一次自有进程观察；确认未回收组长与活子进程的差异，原监督模块保持不变。 |
-| 下一可用交付 | 固定本轮证据供独审，按真实消费者绑定决定后继最小回归。 |
+| 下一可用交付 | 将已观察差异固化为一条共享回归，明确历史观察与当前状态的使用方式。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision |
@@ -44,3 +44,5 @@
 2026-10-07 02:28:37 UTC：fresh claim v2 active/当前47e clean后仅准备 evidence probe。Apple固定源码是线索而非本机精确内核证明；EPERM 不当 absent，真正权限/不可观察/逃逸保护不变。原共享源码、两个真实调用方及历史失败不改。新 probe 总≤10s、记录≤64KiB、0PG/provider，先固定再等 Lead 复核，不把准备当运行许可。
 
 2026-10-07 02:32:36 UTC：14e8 probe 准备获 Lead 限定独审后按唯一许可运行，2 case完成/0PG/provider；source未改。详见 zombie-probe-conclusion / manifest。当前 shared 已有 unknown→自有reap→只读ESRCH 的边界，不凭本结果修改产品或真权限判断。局部槽已归还；不重跑旧矩阵。
+
+2026-10-07 02:33:59 UTC：根据原 owner/Lead 源码复核，只补 shared test 与 Interface，supervise.py 不改。新1+相邻权限/活后代3个直接用例候选固定于 zombie-regression-request.json，NOT_RUN；不重跑原15或probe。
