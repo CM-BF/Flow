@@ -1,6 +1,6 @@
 # S01Q01 暂停队列扫描
 
-所属大task：[FLOW-001](../flow-001-architecture/plan.md)；co-lead：mika。来源：[S01 后继](../s01-runner-capacity/plan.md)。
+所属大task：[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)；co-lead：mika。来源：[S01 后继](../s01-runner-capacity/plan.md)。
 
 ## 用户结果与边界
 
@@ -20,3 +20,5 @@
 新增场景为 21 个 paused waiting 会话 + 1 个 ready：默认首 scan 只 inspected/promoted ready，paused 时间和 revision 不变、无 turn/task；取消某暂停项、显式空 resume 后再 enqueue，该会话重新被 scan 发现。另有真实并发 pause 与 scan 的 CAS/任务数量断言。原错误回滚/fair rotation、pause/completion/promote、resume/ACK、limit 用例全部保留。
 
 本段 2026-10-07 16:23:07 UTC 至 16:38:07 UTC，只源码；工程/PG/HTTP/浏览器/模型均 NOT_RUN。未来最小专库方案和继承 fixture 缺口见[证据入口](../../docs/evidence/s01q01-paused-queue/README.md)。没有未运行的 red/green 证据。
+
+2026-10-07后继fixture准备段17:13:13–17:28:13，资源要求17:17:38停新launch，实际0工程child。业务源predicate不变；marked专库夹具、单一证据路径和focused ES2023配置已准备，源供给/字节/未运行事实见fixture-preparation.json。S01Q01-03/04仍开放，不将本段准备当PG验收。
