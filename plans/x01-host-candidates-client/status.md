@@ -2,29 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:12:31.223Z |
+| 最近更新时间 | 2026-10-07T11:52:41.728Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T10:56:34Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 本owner实际UTC开工/建树观察；take COMMITTED10:57:27.075Z |
+| 任务完成时间 | 2026-10-07T11:52:41.728Z |
+| 任务时间来源 | 原开工事件保留；完成为本owner实际核对main receipt和原plan验收的UTC，见main-received.json |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates |
 | Branch | codex/plugin-host-candidates |
 | 工作基线 / 实现HEAD | e54f57ebbd7b100bc90c38055f2e11eb826f2b8f / bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5 |
 | 工作树dirty状态 | 产品固定；本次metadata提交后clean |
-| 工作分支状态 | ready |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | integrated |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5：green14/15+定向1/1（14未选）、finaltypes0；原15红与测试写法错误保留 |
 | Review | [review.md](review.md)，APPROVED 2026-10-07T11:06:37Z，0 P1/P2 |
-| 已集成main状态 / HEAD | 本片未集成；base为已审ACK分支，不冒ACK已main |
+| 已集成main状态 / HEAD | INTEGRATED de5475039d73caec631ba2ee64556208dbb1751d，product intake a5e1734276ef891df2ca47523b5109f0d87f84b9 |
 | 实现目标 | bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5 |
 | 实现范围 | packages/client/src/index.ts,packages/client/src/plugin-management.ts,apps/cli/src/index.ts,packages/client/src/plugin-host-candidates.test.ts,apps/cli/src/plugin-host-candidates.test.ts,docs/evidence/x01-host-candidates-client/fixtures.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 当前产出 | 候选后端查询已接入客户端与CLI，独立审查通过，保留不可选原因与手动分页 |
-| 下一可用交付 | 按固定中心合同将已审客户端查询接入主线，供CLI与Web复用 |
+| 当前产出 | 已审能力已接入主线并通过必要客户端/CLI组合检查。 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Claim | 3f0e3404-8415-4cc6-8b8f-88b8f7317dc9 v1 ACTIVE/7literal |
@@ -34,7 +34,7 @@
 | X01HOST-01 | completed | db_transaction_owner | 旧ACK/CLI STOP-amend与新take完成 |
 | X01HOST-02 | completed | db_transaction_owner | 既有parseArgs/transport seam已核 |
 | X01HOST-03 | completed | db_transaction_owner | 分轮15distinct通过、finaltypes0 |
-| X01HOST-04 | in-progress | db_transaction_owner | 独审通过；main-intake.json待接收 |
+| X01HOST-04 | completed | db_transaction_owner | 独审通过；main-intake.json待接收 |
 
 ## 等待记录
 
@@ -54,10 +54,12 @@
 | --- | --- |
 | 分支交付时间 | 2026-10-07T11:08:09.723Z，本次READY归档UTC观察 |
 | 独立审查时间 | 2026-10-07T11:06:37Z，chatui固定回信 |
-| 主线集成时间 | NOT_INTEGRATED |
+| 主线集成时间 | 2026-10-07T11:48:02.617996+00:00，主线固定receipt观察 |
 | 部署时间 | NOT_DEPLOYED |
-| 完整完成时间 | NOT_COMPLETED，本片待main；whole X01由父task追踪 |
+| 完整完成时间 | 2026-10-07T11:52:41.728Z，owner核主线接收与原计划验收；不是whole X01完成 |
 
 提交前仅核本status parseStatus errors/human/timing/parent，可解析不冒dashboard已登记/部署；旧模板UNKNOWN污染已修，无原时间改写。本片没有活动资源，metadata不占local时段；后继写权须明确STOP/当前version移交。
 
 2026-10-07T11:12:31.223Z 按Mika检查绑定收口：实现目标bc54/scope六产品与必需fixture，与检查状态及main-intake一致；caller/config/snapshot仍是原已审证据链接，不计为产品实现范围。前文c5da声明为当时历史，当前此表为准，无新检查或源变化。server修后a298的合同已由chatui核与原767固定bytes一致，intake要求合同字节而非停留旧backend commit。fresh账本11:12:13.319Z claim3f0e v1/7 ACTIVE保持；产品继续冻结。
+
+2026-10-07T11:52:41.728Z 本次只读核 main de5475039d73caec631ba2ee64556208dbb1751d 与canonical I02接收：产品按ACK→HOST→CONSUMER顺序组合，当前最终consumer bytes逐SHA相符；ACK两叶后续受审扩展不误报回退。root noEmit0 +3selected3pass/33未选的原主线检查范围继承，未重跑本分支旧组或PG。原历史尚未main/登记文字仅当时记录；当前本片原plan验收已满足。部署/registry页面暂无新证据，仍不声称最新实际UI刷新；架构后继由Mika协调D06。
