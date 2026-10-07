@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:52:41.728Z |
+| 最近更新时间 | 2026-10-07T12:12:44.421Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -34,7 +34,7 @@
 | X01ACK-01 | completed | db_transaction_owner | 已接受窄设计；不复制server canonical |
 | X01ACK-02 | completed | db_transaction_owner | 唯一transport/共用ACK module，公开签名未变 |
 | X01ACK-03 | completed | db_transaction_owner | 分轮41/41+1/1+2/2、finaltypes0，初红/type失败保留 |
-| X01ACK-04 | completed | db_transaction_owner | 独审通过；[main-intake.json](../../docs/evidence/x01-plugin-command-acks/main-intake.json)待主线接收 |
+| X01ACK-04 | completed | db_transaction_owner | 独审通过；de5475039d73caec631ba2ee64556208dbb1751d已接收，见main-received.json及I02 combined intake |
 
 | 时间事件 | 实际记录与来源 |
 | --- | --- |
