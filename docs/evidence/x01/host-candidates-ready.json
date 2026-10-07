@@ -1,0 +1,93 @@
+{
+  "state": "READY_FOR_INDEPENDENT_PG_ADMISSION",
+  "preparedAt": "2026-10-07T11:11:36.064948+00:00",
+  "source": "a2981b71b47d254356152c505ddfff29edd76446",
+  "support": "f2848f9d0406222aff54fcfb0c5650147e0ca04b",
+  "reviewPacket": "82cca2124bd7c234f21088cca53adc46f50751f6",
+  "review": "docs/evidence/x01/host-candidates-independent-review.json",
+  "manifest": {
+    "path": "docs/evidence/x01/host-candidates-pg-manifest.json",
+    "bytes": 156922,
+    "sha256": "8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1",
+    "files": 376,
+    "inputBytes": 2030211,
+    "external": 65,
+    "links": 21
+  },
+  "entry": {
+    "python": "/opt/homebrew/bin/python3.13",
+    "argv": [
+      "docs/evidence/x01/host-candidates-pg-once.py",
+      "--admission",
+      "<absolute new admission path>",
+      "--sha256",
+      "<exact new admission sha256>"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+    "branch": "codex/plugin-enable-binding",
+    "runNamespace": "docs/evidence/x01/host-candidates-pg-run-r1"
+  },
+  "claim": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 26,
+    "scopeCount": 61,
+    "observedAt": "2026-10-07T11:10:33.489Z",
+    "state": "ACTIVE"
+  },
+  "window": {
+    "requestedSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalSeconds": 10,
+    "cases": 1,
+    "connectionsMax": 17,
+    "metadataRunners": 45,
+    "tasks": 0,
+    "attempts": 0,
+    "HTTPMax": 160,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "rawBytes": 1048576,
+    "databaseWALReserveBytes": 134217728,
+    "unspendableCleanupReserveBytes": 1073741824,
+    "baseFloorBytes": 1242562560,
+    "pairedDeclarations": "All current effective declarations and manager conservative floor must be incorporated at admission; no current OPEN implied"
+  },
+  "actual": {
+    "PG": 0,
+    "local": 0,
+    "pendingLaunch": 0,
+    "OPEN": false,
+    "admissionCreated": false
+  },
+  "unmetExecutionGates": [
+    "Unique resource-manager NEXT handoff",
+    "Fresh<=60s full claim/current clean HEAD/manifest376/external65/links21",
+    "Exact new run absent; canonical owned roots; complete current combined floor",
+    "New exclusive mika/X01_HOST_CANDIDATES_PG admission identity"
+  ],
+  "consumerDependency": {
+    "owner": "db_transaction_owner",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/main-intake.json",
+    "source": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+    "delivery": "a9e044d20f78e1071a70c77cc5440b025beaf65a",
+    "reviewAt": "2026-10-07T11:06:37Z",
+    "contractCommit": "7672090bed43f28f88f16bcbd0d0cfa04a0667ac",
+    "contractSha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa"
+  },
+  "ACKDependency": {
+    "owner": "db_transaction_owner",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/main-intake.json",
+    "source": "ae1482fd",
+    "delivery": "e54f57eb",
+    "reviewAt": "2026-10-07T10:50:56Z",
+    "mainReceipt": "NOT_OBSERVED_HERE"
+  },
+  "main": "Candidate product not integrated; previous process-acceptance evidence integrated221921c0, productDelta empty",
+  "metadataSegment": {
+    "startedAt": "2026-10-07T11:10:20Z",
+    "limitSeconds": 240,
+    "engineeringChildren": 0,
+    "originalSegmentNotExtended": true
+  }
+}
