@@ -1,6 +1,6 @@
 # WPF-PLUGIN-RUNTIME01：中心插件启停模块
 
-状态：in-progress；创建/更新：2026-10-07T10:51:19.274Z。这是 [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) 的 WPF-001-05 / X01-06 有界模块子片，co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
+状态：in-progress；创建/更新：2026-10-07T10:51:19.274Z。这是原 [WPF-001 管理索引](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) 中 WPF-001-05 / X01-06 的有界模块子片；唯一大task父映射当前 UNKNOWN（索引不代替父任务），co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
 
 ## 目标与范围
 
@@ -27,7 +27,7 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 
 覆盖首次 enable/disable ACK、preflight、initial409、unknown→retry409→GET仍unknown→原ACK、重复点击、close/collapse重挂、晚session、exact输入不变。浏览器仅模块 fixture，可读性/键盘/390双主题，未获实际窗口前 NOT_RUN。单文件 direct/noEmit 提案先给准确依赖/预算，0PG/Chrome 本源码段。不执行现历史浏览器自动 DB 入口。
 
-固定 base b67530bb025162629895d11482b5505d4a885c91，已含 shared client 9f5d。当前20ac源码限定独审已完成；6544及实际检查记录待集中核验，旧任务证据不继承。技能见 evidence/skills.json；clean-code 检查命名、单一 authority、错误/取消、重复和必要场景，记录实际发现。
+固定 base b67530bb025162629895d11482b5505d4a885c91，已含 shared client 9f5d。当前20ac及6544源码限定独审已完成，strict0已接受；direct15 JSON仅部分证据/父FAILED，旧任务证据不继承。技能见 evidence/skills.json；clean-code 检查命名、单一 authority、错误/取消、重复和必要场景，记录实际发现。
 
 ## 历史：2026-10-07T11:03:07.706Z 源码安全点
 
@@ -36,3 +36,7 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## 当前验证停点
 
 当前实现6544：同revision GET新鲜度源修与公共子模块直接消费。strict已通过；实际direct JSON 15/15，但父输出/child退出记录不完整，保FAILED而不称整段绿。30s段含延迟补清理保守30082ms，超82ms/无剩余额度；无第四跑。浏览器六组和生产App接线仍未验。七范围停止写入，claim保留。
+
+## 当前调用器修正准备
+
+沿[已接受设计](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/caller-repair-peer.md)修复启动raw余量、互斥分区及清理异常后继续收尾。原产品不动，新direct-only候选20s含5cleanup未运行；完整输入/命令/保留上限见[r4准备](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/preparation-summary.json)。不重跑strict、不接后继HOST/ACK新界面。源码准备待独审后由manager安排一次有限段；旧30s封账不继承信用。

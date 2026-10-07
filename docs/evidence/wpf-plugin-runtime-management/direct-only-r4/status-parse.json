@@ -1,0 +1,26 @@
+{
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "unknown",
+    "reason": "层级或父任务声明冲突/不完整",
+    "parent": {
+      "state": "unknown",
+      "record": "UNKNOWN",
+      "reason": "须声明唯一稳定 ID 及计划链接"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web / root；external_web_d01_owner",
+      "value": "Web / root；external_web_d01_owner"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "scope": "own status parser only; no product imports/aggregate"
+}

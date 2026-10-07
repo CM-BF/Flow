@@ -1,0 +1,120 @@
+{
+  "state": "SOURCE_PREPARED_NOT_RUN",
+  "preparedAt": "2026-10-07T12:01:41.065556+00:00",
+  "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "headBeforeMetadata": "4219f9f44ad5e6c5dcfa74b230511e7417155d6d",
+  "scope": "TMP caller only; project ownrecords only; five product files unchanged",
+  "parent": {
+    "path": "/private/tmp/plugin-direct-r4/run.py",
+    "realpath": "/private/tmp/plugin-direct-r4/run.py",
+    "bytes": 15450,
+    "sha256": "e70b616c280a2ea9492a17b1ccfbc6eab46076e25c370999bf137b9670ba9aa3"
+  },
+  "config": {
+    "path": "/private/tmp/plugin-direct-r4/vitest.config.mjs",
+    "realpath": "/private/tmp/plugin-direct-r4/vitest.config.mjs",
+    "bytes": 1129,
+    "sha256": "faba2539f6afae692ee628dca2392ffebfe2807f148cc1f012a732746b5cc48c"
+  },
+  "sandbox": {
+    "path": "/private/tmp/plugin-direct-r4/sandbox.sb",
+    "realpath": "/private/tmp/plugin-direct-r4/sandbox.sb",
+    "bytes": 155,
+    "sha256": "ea7d6c99f56d305c09ff698886d8d42993b2dc6bc8705bc2c8483d82214a06ff"
+  },
+  "pinSet": {
+    "path": "/private/tmp/plugin-direct-r4/pins.json",
+    "realpath": "/private/tmp/plugin-direct-r4/pins.json",
+    "bytes": 224484,
+    "sha256": "957848c26bce76fda79ec235933b8953b6a1071e8375cdd3dcc72007d150934e"
+  },
+  "fixedInputCount": 530,
+  "expectedNames": {
+    "path": "/private/tmp/plugin-direct-r4/expected-tests.json",
+    "realpath": "/private/tmp/plugin-direct-r4/expected-tests.json",
+    "bytes": 1225,
+    "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+  },
+  "expectedFile": "apps/web/test/plugin-runtime-command.test.ts",
+  "expectedCount": 15,
+  "staticChecks": {
+    "pythonAstParse": "PASS, no execution/import/bytecode",
+    "namesFromFixedSource": "15 exact names matched; two finite each arrays expanded as declared",
+    "existing530Inputs": "all realpath/size/SHA match",
+    "currentClaim": "0a9a v1 exact7 active/nooverlap",
+    "old51Raw": "Git diff against metadata4219 empty for local-phase and all five product files; original source pins match6544"
+  },
+  "priorPhase": {
+    "phase": "CLOSED_FAILED_PARENT_TERMINAL",
+    "chargeMs": 30082,
+    "limitMs": 30000,
+    "rawBytes": 929401,
+    "unusedMs": 0,
+    "direct": "15 JSON PASS only; child exit UNKNOWN and parent FAILED",
+    "review": {
+      "path": "/private/tmp/root-plugin-runtime-6544-local-result-review-20261007.json",
+      "realpath": "/private/tmp/root-plugin-runtime-6544-local-result-review-20261007.json",
+      "bytes": 21124,
+      "sha256": "9a48b14fb8c7d990486ae5f37c08f221393501bc98850acb5f4d314399ebf6ce"
+    },
+    "index": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json",
+      "bytes": 1831,
+      "sha256": "a6afccd22240184ae3c7fe9a3ef218fd9f58d810f49a9c696aacc4be879cf710"
+    },
+    "noOldCredit": true
+  },
+  "newProposal": {
+    "totalMs": 20000,
+    "cleanupReserveMs": 5000,
+    "workMs": 15000,
+    "scratchCap": 8388608,
+    "retainedCap": 1048576,
+    "directJsonReserve": 262144,
+    "terminalReserve": 131072,
+    "outerReserve": 65536,
+    "processes": "1 Node + 1 Vitest worker thread; only required esbuild helper in same owned PGID; Python supervisor and bounded Git preflight",
+    "network": false,
+    "pg": false,
+    "chrome": false,
+    "strictRerun": false,
+    "runtimeAuthorized": false
+  },
+  "preservedDraft": "/private/tmp/plugin-direct-r4-before-resume-20261007",
+  "noOldCredit": true,
+  "remainingAcceptance": "independent source/boundary review, then manager finite local admission with fresh source/claim/resources/outer output; no runtime now",
+  "finalBinding": "TMP metadata HEAD/manifest finalized after the single ownrecords commit; no recursive metadata commit",
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/PluginManagement.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21430,
+      "sha256": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/runtime-command.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/browser.ts",
+      "bytes": 38182,
+      "sha256": "e01ea0210120c32385c315022130a04aca6850ed07da7f964316c7141d24b173"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/fixture/main.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 6791,
+      "sha256": "2f770482608dd76dc94269c6c09ec58e224408f1ff045390e9439a2b94300f6d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-runtime-command.test.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    }
+  ]
+}

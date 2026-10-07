@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T12:02:40.962Z",
+  "scope": "TMP direct-only caller and ownrecords; no product changes",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "application": "Use existing local skills, no installation. Isolate stream draining, identity probes, accounting partitions, final persistence; preserve errors instead of obscuring child results.",
+  "findingsAddressed": [
+    "Nonpositive effective raw refused before spawn",
+    "Single partition scan and JSON/terminal/outer reservations",
+    "EPERM remains UNKNOWN/FAIL; later cleanup stages continue",
+    "Owned scratch create/dev/ino guard and preexisting-output preservation",
+    "Unconditional handler restoration; explicitly require true outer exit and complete terminal"
+  ],
+  "staticOnly": [
+    "AST parse",
+    "15 source name expansion",
+    "530 read-only file/realpath/hash checks"
+  ],
+  "notRun": [
+    "Candidate/helper simulations",
+    "strict/noEmit",
+    "Vitest direct",
+    "browser",
+    "PG/network",
+    "free/process probes"
+  ],
+  "oldFailedPhase": {
+    "limitMs": 30000,
+    "chargeMs": 30082,
+    "creditMs": 0
+  },
+  "unresolved": [
+    "new finite execution not authorized",
+    "browser/production App not verified",
+    "unique big-task parent UNKNOWN"
+  ]
+}

@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:13:41.411Z；固定 b675 输入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:02:40.962Z；固定 b675 输入，产品6544不变 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) |
+| 所属大task | UNKNOWN |
 | co-lead | Web / root；external_web_d01_owner |
 | 任务开工时间 | 2026-10-07T10:48:09.218Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 实现范围 | apps/web/src/plugin-management/PluginManagement.tsx, apps/web/src/plugin-management/runtime-command.ts, apps/web/test/plugin-management/browser.ts, apps/web/test/plugin-management/fixture/main.tsx, apps/web/test/plugin-runtime-command.test.ts |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 独立启停模块已修复刷新新鲜度；类型检查通过，命令回归记录仍待完整验收 |
-| 下一可用交付 | 集中核验本次检查记录，再安排受控模块交互验收 |
-| 当前阻塞 | ACTIVE: 直接测试父流程输出不完整，浏览器验收尚未执行；等待本次证据独审与后续安排 |
+| 当前产出 | 独立启停模块已修复刷新新鲜度；类型检查通过，命令回归的记录修正已准备，完整验收仍待执行 |
+| 下一可用交付 | 完成命令回归的可靠记录，再安排受控模块交互验收 |
+| 当前阻塞 | ACTIVE: 直接测试记录不完整；修正后的调用器待独审及一次有限执行，模块浏览器尚未验收 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN；20ac 源码限定审通过，6544 为同边界导入/类型修复待实际集中核验 |
+| Review | [review.md](review.md)，UNKNOWN；6544 源码及 strict0 已独审接受，direct仅JSON部分证据，r4调用器待审/NOT_RUN |
 | 领取 | 0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1；[COMMITTED 原件](../../docs/evidence/wpf-plugin-runtime-management/take-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -48,8 +48,12 @@
 
 ## Dashboard 同步
 
-唯一手填 status 已建立；source-ready 请求随首 canonical 给 manager/Original 登记，未观察实际聚合/页面加载。
+Root 于2026-10-07T11:39:58Z已观察4320两API，模块source live/current、原claim matchesSource；本owner本段未复采服务。唯一大task父映射未核定，记录UNKNOWN，WPF-001-05/X01-06保作追溯，见[来源与缺口](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/parent-and-registration.json)。
 
-## 本次局部验证与停止点
+## 历史：原30秒局部验证与停止点
 
 固定源 6544b66b9b711ba861c67547417c3eb5c5bca074。30s有限段保守累计 30082ms（含第三次延迟补清理），超过 82ms 如实保留；不转额度、不第四跑。第二 strict exit0；第三完整 JSON 恰1文件15例passed，但父raw预留错误导致93B stdout丢弃，真实child exit未知，因此父FAILED不漂白。原cleanup EPERM后独立确认精确PID/PGID不存在并删除同inode scratch；原terminal不回改。所有七literal停止写入，claim保留；后继由管理安排。
+
+## 当前 direct-only 准备停点
+
+仅恢复并修正既有TMP调用器：[有限提案/精确入口](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/preparation-summary.json)。r4 state PREPARED_NOT_RUN；新20秒（含5秒cleanup）只是候选，0执行/0新预算消耗，不重跑strict。单文件15 exact names、互斥计量、实际child exit/EOF/owned身份及outer完整终态联合接收；旧失败原件不变。五产品源码/七范围在本次正常metadata提交后STOP，claim仍保留。App/session与新HOST合同消费不在本片。

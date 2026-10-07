@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-07T12:02:40.962Z",
+  "parent": "UNKNOWN",
+  "why": "Current registry maps task to canonical worktree/plan only; existing own plan and management index trace WPF-001-05/X01-06 but do not uniquely assign a big-task parent. Manager explicitly withdrew unverified MATURE-01 mapping.",
+  "traceability": [
+    "WPF-001-05",
+    "X01-06"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/registry.mjs",
+      "sha256": "3214082847eceed09b2f6c0bf53bb30380d4cc10f9c4f0b615edf987fa07420b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md",
+      "sha256": "25cd1a9e0e38123a58c510580c0682df68d28300300a13500e92245790ae1a7c"
+    }
+  ],
+  "registryMainAtRead": "7ffff477e834f59731d0e54d1b30b3d4e27de9ab",
+  "registrationObservation": {
+    "source": "Root message relayed by d01_owner",
+    "at": "2026-10-07T11:39:58Z",
+    "live": true,
+    "sourceCurrent": true,
+    "claimMatchesSource": true,
+    "newServiceRead": false
+  },
+  "needed": "Co-lead/Original explicit unique big-task mapping; do not change parser or invent task."
+}
