@@ -45,3 +45,7 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:16:16.432872+00:00 共享附件投影修复安全点
 
 沿本地find-skills/clean-code，未重新安装。真实职责复用原draftItems，不在session复制exclude-held规则；guarded composer只携公开getState，无第二editable store。复用restoredDraftIds解决root独审unmount反例；测试走真实Session/Journal受控边界而非镜像过滤。18源中仅2产品+1test改变，单一方法/错误路径/默认兼容已复核。1PASS/68未选+noEmit0绑定b924，20s实际14680；旧原件保持，browser未重跑。7272供给仅两文件最小patch，禁止复制整个MSG session。待集中独审，不自评完整PASS。
+
+## 2026-10-07T14:21:04.209634+00:00 新phase准备安全点
+
+原parent/capture硬码旧90s，故以最小固定新phase/120k与独立run路径承接经理新预算，不把旧余额当credit。旧账hash硬校验、总retained仍计整个own evidence；未改任何清理/断言/权限。collector仅两guard字面量改变，无新supervisor。0runtime，不重跑b924局部绿。待focused复核，全部旧raw原样。

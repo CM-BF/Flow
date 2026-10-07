@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
-完整feature状态 **IN_PROGRESS**；当前组合 target **b92470377349dea17a12d0abc244f0fed7992e33** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /18源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；材料旅程四次实际FAIL、消息设置旅程NOT_RUN、当前取消持久B投影已修复并经定向局部验证，集中source/local审已通过；页面复验待完成、主线/个人部署未验。
+完整feature状态 **IN_PROGRESS**；当前组合 target **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /18源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；材料旅程四次实际FAIL、消息设置旅程NOT_RUN、当前取消持久B投影已修复并经定向局部验证，集中source/local审已通过；页面复验待完成、主线/个人部署未验。
 
 旧[37166 CHANGES_REQUESTED](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-37166-source-review-20261007.json)、[9fc0两P2修复批准](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9fc0-source-local-review-20261007.json)及失败原件保留，旧十一direct不能替新mountedApp。root撤回exact File attachment readiness猜测，不记已证bug；保留有效B身份加强。单一[feature-review-entry](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)和[当前manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)指明源码/实际/未验范围。
 
@@ -43,3 +43,7 @@
 局部14原件见[manifest](../../docs/evidence/wpf-message-settings-app/held-projection-local-20261007/manifest.json)，本段14680/20000，最后1PASS/68未选、types0；不继承旧mounted PASS或推新browser。原20scope、四FAIL和90phase CLOSED保留。集中审者请核单一draftItems/current优先、input removal不复活、旧port释放不误清新port、旧7272最小两文件补丁。
 
 [root b924集中source/local审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-b924-membership-source-local-review-20261007.json) APPROVED，0 remaining blocking；d576未覆盖unmount的初次绿结果保持历史，b924修复后实际direct2+types2已核。本20s关闭14680/未用5320不挪。仅source/local，mounted两journey与wholefeature/main仍未通过。
+
+## 新120s阶段父入口绑定待审
+
+fcf5相对b924仅browser7+/5-，collector相对0eb3两行phase守卫；原断言与worker/DB/Chrome/EOF生命周期不变。产品批准仍固定b924。本次0检查/0runtime，需集中审准确新旧账与run路径隔离，不借历史实际。完整入口见[membership准备](../../docs/evidence/wpf-message-settings-app/membership-browser-preparation.json)。

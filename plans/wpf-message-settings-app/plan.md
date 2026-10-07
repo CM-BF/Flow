@@ -56,3 +56,7 @@ MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式�
 ## 当前 MSGAPP-04 修复安全点
 
 共享Attachment成员选择由原draftItems统一：Recovery不得把held inventory当当前稿；已returned/restored当前A优先、unbind后复用既有restoredDraftIds，未验证选择和顺序不丢。原20scope下两产品+1test完成，1 PASS/68未选、受影响noEmit0；本新20s局部14680已耗，余5320封存。旧mounted90s51110/38890 CLOSED，无新browser。当前源审/真实页面验证仍需完成，不能把局部结果勾成MSGAPP-04/05全部完成。
+
+## MSGAPP-05 修后独立页面工作段
+
+新120s仅覆盖原material-return与message-settings-app，二者同账/每attempt最多60s、至少45s且含30s清理；旧90/局部各phase封闭。新父入口明确独立ID/旧账hash/新run目录，原断言不变。准备不占资源；没有本批actual，经理统一安排。

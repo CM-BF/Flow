@@ -1,6 +1,6 @@
 # MSG03 当前固定审查入口
 
-当前实现 **b92470377349dea17a12d0abc244f0fed7992e33**，base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；唯一WT/branch web-message-settings-app / codex/web-message-settings-app；claim7e3f v3 exact20（15产品+3test+2metadata）。原MATURE02 TODO11，完整feature **IN_PROGRESS / NOT_INTEGRATED**。[18固定源码](source-manifest.json)。
+当前实现 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56**（产品修复固定b924；仅父入口phase差量），base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；唯一WT/branch web-message-settings-app / codex/web-message-settings-app；claim7e3f v3 exact20（15产品+3test+2metadata）。原MATURE02 TODO11，完整feature **IN_PROGRESS / NOT_INTEGRATED**。[18固定源码](source-manifest.json)。
 
 本次899146→b924只有 `attachments.tsx`、`session.ts`、原direct test：Recovery复用真实Send的同一draftItems成员选择。current优先held/inTransit，已卸载端口不读；无port复用现restoredDraftIds，保部分恢复的A，不纳尚未恢复held余项。输入移除不复活，unverified项保持顺序，旧port cleanup不能清新port。没有第二草稿store或重复过滤规则。
 
@@ -30,3 +30,7 @@ message-settings-app：首mount P01/ApplyCancel焦点、reload/reauth/显式恢�
 [clean-code记录](quality.md)与原TODO保持，不新建任务或扩大门槛。
 
 [root b924集中审](source-research/root-msg03-b924-membership-source-local-review-20261007.json)已批准本次两产品修复与定向local，0 blocking；新mounted phase仍待经理有限预算/资源交接。Release最终backend改为Original准备04da80692e79e2b7c3f6341c7fa76515a3f719a3（来源root通知），不要求与7272整树同源；本补丁应用后需准确Webconsumer/组合验证，不能冒用MSG检查。
+
+## 新mounted阶段准备
+
+[membership准备](membership-browser-preparation.json)与[新120s单账](browser-membership-phase.json)：0spent，两个既有selector共享，每attempt45–60s含30s cleanup。fcf5仅预算ID/常量/closed旧账pin/run目录；新collector只两个phase guard，原0eb3生命周期未变。此差量尚待focused复核，无gate/env/actual。
