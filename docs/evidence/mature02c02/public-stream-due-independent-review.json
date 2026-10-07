@@ -1,0 +1,21 @@
+{
+  "recordedAt": "2026-10-07T05:18:53.213489+00:00",
+  "reviewedAt": "2026-10-07T05:06:55Z",
+  "reviewer": "status_read/gpt-6-astra",
+  "verdict": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "source": "2ab3c6ffb3f74b02e5f6b8a9e0edd3ff51df6529",
+  "packet": "69de41a7dbc937b980f542a35ba70a0a91a7248f",
+  "p1": 0,
+  "p2": 0,
+  "closed": "silent-buffer deadline flush",
+  "bindings": 7,
+  "bindingBytes": 32695,
+  "selected": 15,
+  "passed": 15,
+  "unselected": 24,
+  "strictExit": 0,
+  "rawBytes": 11631,
+  "resources": "2 processes/EOF and own TMP confirmed closed; old raw unchanged",
+  "scope": "one dirty deadline timer, same pending receive and serialized sink, session/ownership/abort gates; no PG/native/provider/UI result",
+  "delivery": "Mika relayed the fixed independent verdict once after peer tool cap rejection"
+}
