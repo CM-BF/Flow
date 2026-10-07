@@ -1,8 +1,8 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "implementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
-  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_NOT_RUN",
+  "implementation": "1e4eb135d3517cc42aa260cbadccd0cdf001f076",
+  "state": "SOURCE_FIXED_NOT_RUN",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -18,8 +18,8 @@
     },
     {
       "path": "apps/execution-dashboard/public/index.html",
-      "bytes": 8840,
-      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8759,
+      "sha256": "e03b765605a9071e8278584c965a1330205bc90bbe47e6ef9c784639317b17b8",
       "currentEqualsFixed": true
     },
     {
@@ -55,7 +55,7 @@
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
   "browserEntry": "checkLocalAccessBrowser({browser,expect,outputDirectory}) exported from test/local-access.browser.mjs; real server/UI with explicit empty snapshot/fake token. External isolated browser owner supplies Chrome supervision; not yet prepared or run.",
-  "runtime": "35/35 dedicated Node direct PASSED; browser NOT_RUN",
+  "runtime": "NOT_RUN",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
   "deployment4320": "NOT_DEPLOYED"

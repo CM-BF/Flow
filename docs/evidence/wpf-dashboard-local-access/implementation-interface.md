@@ -10,3 +10,5 @@
 - 原生dialog使用标签/状态反馈/键盘焦点，现theme tokens与390布局；连接说明一直可见。尚未由浏览器验证。
 
 35个静态展开direct cases只用合成安装/Node built-ins/动态自有HTTP。browser函数实际消费server和public UI，fake token、空snapshot、nativeclipboard成功与显式拒绝分别检查，不访问真实产品链接。外部browser owner负责Chrome/绝对预算/资源；本函数关闭自身context/HTTP并失败保留report。真实启用/个人连接/main/4320部署均另记，不以此源码或fake测试代替。
+
+更新：`08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7` 两说明反馈已修；专用direct实际35/35通过，见 direct-first。上文第一源码checkpoint的NOT_RUN保留为历史，当前browser/安装/部署仍NOT_RUN。

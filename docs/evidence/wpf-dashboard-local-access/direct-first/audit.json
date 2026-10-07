@@ -1,8 +1,5 @@
 {
-  "task": "WPF-DASHBOARD-ACCESS01",
-  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
-  "implementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
-  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_NOT_RUN",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -47,16 +44,37 @@
       "currentEqualsFixed": true
     }
   ],
-  "checkEntry": [
-    "/opt/homebrew/opt/node@24/bin/node",
-    "--test",
-    "apps/execution-dashboard/test/local-access.test.mjs"
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "raw": [
+    {
+      "path": "result.json",
+      "bytes": 626,
+      "sha256": "6da782733994e3798d64ba5fd929eb82b2532cf348bc9b9e2f3fd083140f6e13"
+    },
+    {
+      "path": "node.log",
+      "bytes": 2591,
+      "sha256": "5fd7f7b615b6f109a8ccc15ced7d2bc71fad56198ec13fd1f27939735592bd7e"
+    }
   ],
-  "staticExpectedTests": 35,
-  "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
-  "browserEntry": "checkLocalAccessBrowser({browser,expect,outputDirectory}) exported from test/local-access.browser.mjs; real server/UI with explicit empty snapshot/fake token. External isolated browser owner supplies Chrome supervision; not yet prepared or run.",
-  "runtime": "35/35 dedicated Node direct PASSED; browser NOT_RUN",
-  "realInstallation": "NOT_READ_NOT_VERIFIED",
-  "main": "NOT_INTEGRATED",
-  "deployment4320": "NOT_DEPLOYED"
+  "observed": {
+    "tests": 35,
+    "passed": 35,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "nodeDurationMs": 118.73075,
+    "parentElapsedMs": 184.53429103828967,
+    "actualExit": 0
+  },
+  "cleanup": {
+    "ownedGroupAbsent": true,
+    "scratchRemoved": true,
+    "errors": []
+  },
+  "limits": "Node built-ins + local module only; synthetic owned config/HTTP. No browser, real installation, PG, whole server mount or deployment validation."
 }

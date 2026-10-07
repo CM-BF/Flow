@@ -15,3 +15,9 @@ Review target commit：UNKNOWN。Base：943a66bfa5f71f4a5000ff2674ac1973e85e0353
 ## 第一源码 checkpoint
 
 Review target commit：`1e4eb135d3517cc42aa260cbadccd0cdf001f076`。7源码+README已固定，root已收到独审输入。作者静态clean-code完成，所有产品检查NOT_RUN；无main/部署/真实凭据验收。35仅源码展开计数，不当运行数。
+
+## 两项源码反馈与实际检查
+
+固定 `08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7` 修正root两P2说明：实际对话框与README说明Flow管理凭据≠Claude/Codex订阅；README明确file UID只核服务端文件身份，本机原生进程可伪造headers，不声称HTTP caller OS认证。原Module/权限策略未扩大。
+
+35/35 Node专用direct实际通过，原始记录在 direct-first；当前独立review仍NOT_STARTED，等待root绑定该target结论。真实browser/安装与部署NOT_RUN，不能由35direct冒全功能批准。
