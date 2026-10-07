@@ -1,0 +1,49 @@
+{
+  "kind": "SVC09A_CALLER_PATH_REPAIR_LOCAL_RESULT",
+  "at": "2026-10-07T16:03:25.400473Z",
+  "source": "c8912fc0ef34342cc9cac371879a2811ac77f261",
+  "base": "d11e512d16181a3d4fbc0167fee0183fc3e17c5c",
+  "module": "existing host-run owned environment construction",
+  "change": "Add /usr/sbin only to fixed work PATH; expose that exact existing environment constructor for direct tests. No product/artifact change.",
+  "checks": {
+    "selected": 2,
+    "passed": 2,
+    "pythonASTFiles": 4,
+    "elapsedMs": 148,
+    "rawBytes": 466,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "exactScratch": "removed",
+    "finishedAt": "2026-10-07T16:02:10.393405Z"
+  },
+  "previousCasesNotRepeated": [
+    33,
+    6,
+    5
+  ],
+  "hostPGProviderPersonalCalls": 0,
+  "interpretation": "The old fixed PATH cannot resolve lsof; the new environment resolves the actual system file. This closes a known fixture prerequisite. Original readiness errors did not retain individual lsof failures; no retrospective actual root-cause claim.",
+  "lifecycleUnchanged": [
+    "same OPS14 outer 217.5s",
+    "same original once namespaces remain consumed",
+    "same stop/KEEP/DROP rules",
+    "same private HOME and credential allowlist",
+    "same fixed artifact2515/source098b"
+  ],
+  "newActualStatus": "NOT_AUTHORIZED_BY_THIS_DELTA; needs newly reviewed fixed entry namespace/pins and real window",
+  "reviewReuse": {
+    "R1": "main e271fb211 / docs/evidence/i02/svc09a-host-first-result-review.json / APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY",
+    "preparation": "main24c824035 / svc09a-host-preparation-delta-review.json"
+  },
+  "cleanCode": {
+    "at": "2026-10-07T16:03:25.400473Z",
+    "skills": [
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "review": "One existing environment construction seam, explicit input/output, no inherited secrets or new supervisor; original failure and unknown cleanup unchanged."
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "SVC09A_PATH_FIX_DELTA_BINDINGS",
+  "at": "2026-10-07T16:03:39.925272Z",
+  "source": "c8912fc0ef34342cc9cac371879a2811ac77f261",
+  "base": "d11e512d16181a3d4fbc0167fee0183fc3e17c5c",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+      "bytes": 8448,
+      "sha256": "c5b6d916db74f7c2b40265c2bf46c4618e7b0b53a93f75df36f589690b0badd2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "bytes": 5667,
+      "sha256": "c4baa3d94aea625c5bbed4913ed9c45bac84b1253426abe0c5bab707e167f8b9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-run.py",
+      "bytes": 5485,
+      "sha256": "eb06eda4560c2dd76b8c01b7f2f3531c85d1b5e573f81804d220ac2798936107"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-04/cleanup.json",
+      "bytes": 288,
+      "sha256": "8dac2c1dd174fe439af8a276d5ac210d7cadac0fbb9d73108670f1653c35ebda"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-04/reservation.json",
+      "bytes": 1531,
+      "sha256": "ffe6f24e50f65415297bc745acf370d5a7f0f1c37dad7f590bd96d6457b6aea2"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-04/result.json",
+      "bytes": 653,
+      "sha256": "80c9530eeb1f1bacef479339e874587a9192c6ae7a7d7054c4e7c96ce32961cb"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-04/stderr.txt",
+      "bytes": 466,
+      "sha256": "1112c8c418b898c0edbb04b7c7bd8ec5bdac66e5fad97d15ae5d1cee26551943"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-04/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-path-fix-result.json",
+      "bytes": 2044,
+      "sha256": "6cc501ff65470e238435fd34296b8ec0f4012575b2124f2441aadc6d06682e54"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-path-fix-status.json",
+      "bytes": 136,
+      "sha256": "2c28daf32da021ad2f85549e12162134e39747dc1e8a59f5932183929ae8d42c"
+    }
+  ],
+  "inherited": [
+    {
+      "target": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation.json",
+      "bytes": 29453,
+      "sha256": "facbe315b491f6e87e248dd95157ee625f7aed9d12c844bf6d8baf10d76aab5f"
+    },
+    {
+      "target": "d11e512d16181a3d4fbc0167fee0183fc3e17c5c",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-result-manifest.json",
+      "bytes": 8245,
+      "sha256": "602d12c8ec56c683e5618e0eed4254a6f14a01929ff5a73d0d2403aab33f0a99"
+    }
+  ],
+  "supersededPaths": [
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+    "docs/evidence/svc09/message-settings-activation/host-integration/prepare-run.py"
+  ],
+  "otherPreparationSourceBindingsUnchanged": 13,
+  "originalPreparationAndResultFilesUnchanged": true,
+  "runtimeUnchanged": 6,
+  "onlyNewOSDependency": {
+    "path": "/usr/sbin/lsof",
+    "bytes": 306768,
+    "sha256": "b1b9151bbc56f4749890dbe4e533af9a4f8700240ad431a6c9ddf70fe137c165"
+  },
+  "entryStatus": "Original once directories consumed. No new namespace/actual permit in this repair. Original preparation source list is superseded for these three paths; do not execute it as a new candidate.",
+  "limitMeaning": "0PG/host/provider/personal direct local only. No lifecycle/cleanup or artifact change."
+}

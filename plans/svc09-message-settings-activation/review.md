@@ -31,3 +31,7 @@
 2026-10-07T15:44:26.777Z：唯一原审查 `REQUEST_CHANGES` 固定main729d33836 / docs/evidence/i02/svc09a-host-preparation-review.json，不复制原件。source ccf7d057659d99be9c5d42fa035af352eaf647cb 完成原OPS14 caller-only独立期限；215+0.5+2与服务/DB未知分开。新5/5定向、402ms/955B、双组absent/双EOF/scratch removed；其余原6/build不重跑。Lead已读delta及raw称结构闭合，正式整体批准等待最终packet绑定，不能提前把实际host/PG标通过。
 
 2026-10-07T15:48:33.400Z：最终唯一复审已在main24c824035 / docs/evidence/i02/svc09a-host-preparation-delta-review.json，结论APPROVED_FIXED_HOST_PREPARATION，无未解P1/P2；source ccf7d、packet bc8999及16source/19evidence/2继承/6runtime均核符。原P2/STATIC_ONLY和旧raw不改。此批准只含准备与局部证据，实际host/PG未运行；下一仅fresh窗口后执行同一固定入口，不重build/import。
+
+### 2026-10-07T16:03:25.400473Z R1结果收录与PATH差量待审
+
+R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main e271fb211 `docs/evidence/i02/svc09a-host-first-result-review.json`；原FAIL/KEEP不改，不是host通过。后继c8912fc0e仅own caller工作PATH补`/usr/sbin`并保原环境隔离，2新直接例/4AST通过；148ms/466B，组absent/双EOF/exact空目录移除。等待assignment唯一差量审查，不重跑旧矩阵，不授权新host。

@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:00:31.689821Z |
+| 更新时间 | 2026-10-07T16:03:25.400473Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 隔离宿主首次启动失败；所有实际自有进程和连接已结束，失败原件与专用数据保留。 |
-| 下一可用交付 | 修复已定位的隔离入口工具路径遗漏，完成定向验证后交独审；真实双槽旅程仍待后继。 |
-| 当前阻塞 | ACTIVE: center就绪未确认，双槽与mixed领取未进入；原DB/私有目录KEEP，禁止复用本次已消费入口。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 首次隔离宿主失败记录已获独审并合入主线；入口工具路径已修复并通过直接检查，待窄审。 |
+| 下一可用交付 | 入口修复独审后固定新的单次旅程候选，再按实际窗口验证双槽；个人安装保持不变。 |
+| 当前阻塞 | ACTIVE: 入口修复待独审；原宿主旅程未通过，已消费目录不能重投，专用DB/私有目录仍保留。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 宿主fixed source ccf7d057659d99be9c5d42fa035af352eaf647cb；批准packet bc8999dbab2dfa36d1c25adcf05b5b14da40032c；本次仅own状态/准入准备metadata。 |
+| Head | PATH delta c8912fc0ef34342cc9cac371879a2811ac77f261；R1 fixed d11e512d16181a3d4fbc0167fee0183fc3e17c5c。 |
 | 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
-| 工作分支状态 | in-progress（已main源码不变，SVC09A-04隔离宿主准备） |
+| 工作分支状态 | in-progress（已main产品停写；own caller路径修复待独审） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | 准备APPROVED；本次实际失败及运行资源归还待唯一结果独审，原准备P2与修复历史保留。 |
+| Review | R1 APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY，main e271fb211 / I02 svc09a-host-first-result-review.json；不认可宿主通过。新PATH源码/2直接例待唯一delta审。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
 | 验证限制 | 本次仅clone/新DB marker/合成Web loader与center启动尝试；runner/settings/web未启动。完整宿主/mixed/App/个人/provider仍未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
-| 运行窗口 | 15:56:17.907028Z operator reservation，15:56:50.387351Z结束；15:58:29.899259Z实际运行RETURN，DB/private KEEP，0provider。 |
+| 运行窗口 | R1实际运行15:58:29.899259Z RETURN，DB/private KEEP；PATH局部16:02:10.393405Z RETURN，2/2、148ms/466B、组absent/双EOF/exact scratch removed。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)已独审；source098b/artifact2515已生成；新host候选已审，待实际窗口；host/个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)已独审；source098b/artifact2515已生成；首轮host失败已独审；PATH修复待审；完整host/个人/双端/provider仍开放 |
 
 ## 等待记录
 
@@ -84,3 +84,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T15:56:01.614895Z：唯一已审host入口实际准入，完整floor16154558464B；free20270743552B，PG100上限/10已用/90可用，满足26+16。fixed16源/6runtime与4KEEP身份一致，2namespace不存在；0个人/provider/build。见[准入](../../docs/evidence/svc09/message-settings-activation/host-integration/host-actual-admission.json)，结果尚未判定。
 
 2026-10-07T16:00:31.689821Z：R1原件封存见[失败结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-RESULT.md)。公共系统工具`/usr/sbin/lsof`不在fixture工作PATH是已核入口缺项；原ready循环未保存单次exec错误，不能倒造原运行首因。依原授权只修own caller与直接例，不改产物/个人/产品；新实际旅程需独审及另协调窗口。
+
+2026-10-07T16:03:25.400473Z：R1唯一结果独审已main e271fb211，范围仅原FAIL/RETURN/KEEP保真。PATH修复见[差量结果](../../docs/evidence/svc09/message-settings-activation/host-integration/host-path-fix-result.json)，2新直接例通过；原6/5/33及host未重跑。旧host-preparation与raw不改；尚未创建新actual namespace、未绑定新actual许可。
